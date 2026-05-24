@@ -18,13 +18,23 @@ interface Row {
   pronunciation: string;
   image_url: string;
   collocations: string[];
-  examples: { en: string; zh: string }[];
+  examples: unknown;          // jsonb — string from postgres-js
   related_words: string[];
-  confusing_words: { word: string; note: string }[];
+  confusing_words: unknown;   // jsonb — same
   note: string | null;
 }
 
+function parseJsonb<T>(v: unknown, fallback: T): T {
+  if (v == null) return fallback;
+  if (typeof v === "string") {
+    try { return JSON.parse(v) as T; } catch { return fallback; }
+  }
+  return v as T;
+}
+
 function rowToWord(r: Row): Word {
+  const examples = parseJsonb<{ en: string; zh: string }[]>(r.examples, []);
+  const confusing = parseJsonb<{ word: string; note: string }[]>(r.confusing_words, []);
   return {
     id: r.id,
     word: r.word,
@@ -35,9 +45,9 @@ function rowToWord(r: Row): Word {
     pronunciation: r.pronunciation,
     imageUrl: r.image_url,
     collocations: r.collocations.length ? r.collocations : undefined,
-    examples: r.examples,
+    examples,
     relatedWords: r.related_words.length ? r.related_words : undefined,
-    confusingWords: r.confusing_words.length ? r.confusing_words : undefined,
+    confusingWords: confusing.length ? confusing : undefined,
     note: r.note ?? undefined,
   };
 }

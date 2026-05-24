@@ -42,6 +42,9 @@ export default function RegisterForm({ next }: { next: string }) {
         options: {
           // Used by the SQL trigger handle_new_user() to seed profiles.username.
           data: { username },
+          // Make the email confirmation link land back on *this* origin
+          // (otherwise Supabase falls back to the configured Site URL).
+          emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
         },
       });
       if (e1) throw e1;

@@ -10,42 +10,62 @@
 ┌──────────────────────────────────────────────────────────────────┐
 │  Browser                                                          │
 │  ├── Public site                                                  │
-│  │   - WordsProvider (context)  ◄─── server-fetched on layout    │
-│  │   - UserProvider  (context)  ◄─── server-fetched on layout    │
-│  │   - localStorage cache (favorites / learned / quizHistory)    │
-│  │   - Web Speech API (pronunciation)                            │
-│  │   - lib/analytics.ts → POST /api/events  (sendBeacon)         │
-│  └── Admin (gated)                                                │
+│  │   - WordsProvider (context)        ◄── server-fetched         │
+│  │   - UserProvider  (context)        ◄── server-fetched         │
+│  │   - localStorage cache             (favorites / learned)      │
+│  │   - Web Speech API                 (pronunciation)            │
+│  │   - lib/supabase/client.ts         (auth signUp/signIn/OAuth) │
+│  │   - lib/analytics.ts → /api/events (sendBeacon)               │
+│  └── Admin (gated by single password)                             │
 │                                                                   │
 └─────────────────┬─────────────────────────────────────────────────┘
                   │ HTTPS
 ┌─────────────────▼─────────────────────────────────────────────────┐
 │  Vercel (Next.js 14 App Router)                                   │
 │                                                                   │
-│  middleware.ts ── gates /admin/* and /api/admin/*                 │
+│  middleware.ts                                                    │
+│    ├─ /admin/* + /api/admin/*  → admin HMAC cookie gate           │
+│    └─ everything else          → refresh Supabase session cookie  │
 │                                                                   │
-│  ┌─────────────┐  ┌────────────┐  ┌──────────────┐               │
-│  │ Server      │  │ API routes │  │ Edge routes  │               │
-│  │ Components  │  │ (Node)     │  │ (login etc.) │               │
-│  └─────────────┘  └────────────┘  └──────────────┘               │
-│            │            │              │                          │
-│            └────────────┴──────────────┘                          │
-│                         │                                         │
-│                  lib/db.ts (lazy)                                 │
-└─────────────────────────┼─────────────────────────────────────────┘
-                          │ @neondatabase/serverless (HTTPS pool)
-┌─────────────────────────▼─────────────────────────────────────────┐
-│  Neon Postgres                                                    │
-│   words, events,                                                  │
-│   users, user_favorites, user_learned, user_quiz_results,         │
-│   cards, user_cards                                               │
-└───────────────────────────────────────────────────────────────────┘
+│  ┌─────────────┐  ┌────────────────────┐                          │
+│  │ Server      │  │ API routes (Node)  │                          │
+│  │ Components  │  │  /api/users/*      │                          │
+│  │ (async)     │  │  /api/study/*      │                          │
+│  └──────┬──────┘  │  /api/events       │                          │
+│         │         │  /api/admin/*      │                          │
+│         │         └─────────┬──────────┘                          │
+│         │                   │                                     │
+│         ▼                   ▼                                     │
+│   lib/current-user.ts   lib/db.ts (postgres-js)                   │
+│         │                   │                                     │
+│         │ ┌─────────────────┘                                     │
+│         │ │                                                       │
+│         ▼ ▼                                                       │
+│   @supabase/ssr                                                   │
+│     (auth cookies)                                                │
+└─────────┬────────────────────────────────┬────────────────────────┘
+          │                                │
+          │ Auth REST (GoTrue)             │ Direct SQL (pooler:6543)
+          ▼                                ▼
+┌──────────────────────────────────────────────────────────────────┐
+│  Supabase (single backend — Postgres + Auth + RLS)               │
+│                                                                  │
+│  auth.users     ◄── managed by GoTrue (email/pw + OAuth)         │
+│       │                                                          │
+│       │ trigger handle_new_user()                                │
+│       ▼                                                          │
+│  profiles (id uuid pk → auth.users)                              │
+│                                                                  │
+│  user_favorites, user_learned, user_quiz_results,                │
+│  user_cards, user_words           (RLS: auth.uid()=user_id)      │
+│                                                                  │
+│  words, cards, events             (RLS: public read / anon ins.) │
+└──────────────────────────────────────────────────────────────────┘
 
 外部:
-  upload.wikimedia.org    ─ 圖片來源（72 字）
-  loremflickr.com         ─ 圖片 fallback（2 字 + 新增字）
-  accounts.google.com     ─ OAuth authorize
-  oauth2.googleapis.com   ─ token exchange
+  upload.wikimedia.org   ─ 圖片來源（72 字）
+  loremflickr.com        ─ 圖片 fallback
+  accounts.google.com    ─ OAuth (managed by Supabase, no DIY)
 ```
 
 ---
@@ -57,10 +77,10 @@
 | Framework | Next.js 14.2.35 (App Router) | SSG + RSC + Edge middleware + API routes 一站搞定 |
 | Language | TypeScript 5.5 (strict) | 編譯期攔錯 |
 | Style | Tailwind 3.4 | 卡片式 UI 寫起來快 |
-| DB | Neon Postgres (Vercel Marketplace) | Serverless-friendly、HTTPS driver、免 connection pool |
-| DB driver | `@neondatabase/serverless` | 支援 Edge runtime |
-| Auth | 自寫 PBKDF2-SHA256 + HMAC-signed cookie | 不引入 NextAuth；Edge-friendly Web Crypto |
-| OAuth | DIY Google OAuth (`fetch`) | 沒裝 library；流程簡單 |
+| Backend | **Supabase**（Postgres + Auth + RLS） | 一個 service 全包；省掉自寫密碼 hashing / OAuth / RLS |
+| DB driver | `postgres` (porsager/postgres) via pooler:6543 | Edge limit；Node runtime；prepare:false 配 transaction-mode pooler |
+| User Auth | `@supabase/ssr` + `@supabase/supabase-js` | 內建 email/password、Google OAuth、session cookie |
+| Admin Auth | 仍為 DIY PBKDF2 + HMAC cookie | 單一密碼，跟用戶系統解耦，故意不走 Supabase |
 | Speech | Web Speech API (`speechSynthesis`) | 不用後端 |
 | 圖片 | Wikipedia REST API（一次性下載 URL）+ Loremflickr | 都是 CC / 公有領域，免 API key |
 | 部署 | Vercel | Next.js 原生 |
@@ -277,37 +297,49 @@ middleware.ts on /admin/* or /api/admin/*:
   ↓ 失敗 + JSON → 401
 ```
 
-### User accounts（多用戶）
+### User accounts（多用戶 — Supabase Auth）
+
+密碼、Session、Google OAuth、email confirmation 全由 Supabase 的 GoTrue 服務管理。Cookie 由 `@supabase/ssr` 寫入（`sb-<project>-auth-token`），refresh 由 middleware 每次請求觸發。
 
 ```
-密碼 hash:  PBKDF2-SHA256 / 100k iter / 16-byte salt
-           儲存格式 "pbkdf2$<iter>$<salt_b64url>$<hash_b64url>"
+Client form (RegisterForm / SigninForm)
+     ↓
+supabase.auth.signUp({email, password, options:{data:{username}}})
+supabase.auth.signInWithPassword({email, password})
+     ↓
+Supabase GoTrue (auth.users)                       密碼 hash 由 Supabase 處理
+     ↓                                              （bcrypt + salt）
+Trigger handle_new_user()                          自動建 public.profiles row
+     ↓
+Set-Cookie sb-...auth-token  (httpOnly, 1h access + refresh)
 
-Session token:  "<userId>.<expiryMs>.<hmac_b64url>"
-HMAC key:       HMAC(ADMIN_PASSWORD, "eepd-user-session/v1")
-                — 名空間隔離；admin/user 簽章不可互換；admin 換密碼一次失效兩種
-Cookie:         eepd_user, HttpOnly, SameSite=Lax, Secure, 30 day
+Server: lib/current-user.ts
+     ↓
+createClient() → supabase.auth.getUser()           讀 cookie 驗 token
+     ↓
+返回 user.id (UUID) → 查 profiles + per-user 表
 ```
 
-### Google OAuth flow
+### Google OAuth flow（透過 Supabase）
 
 ```
-1. GET /api/auth/google?next=/me
-     ↓ random state (24 bytes hex)
-     ↓ Set-Cookie: eepd_oauth_state, eepd_oauth_next (10 min)
-     ↓ 302 → https://accounts.google.com/o/oauth2/v2/auth?...
-
-2. Google → GET /api/auth/google/callback?code=...&state=...
-     ↓ verify state cookie === query state
-     ↓ POST oauth2.googleapis.com/token {code, ...}  → access_token
-     ↓ GET openidconnect.googleapis.com/v1/userinfo → {sub, email, name}
-     ↓ DB upsert:
-         A) findByGoogleSub  → 已連結，登入
-         B) findByEmail      → 有同 email 帳號，linkGoogleSub
-         C) 都沒有           → createOAuthUser (no password)
-     ↓ Set-Cookie eepd_user
-     ↓ 302 → nextPath
+Client click → supabase.auth.signInWithOAuth({
+  provider: 'google',
+  options: { redirectTo: '/auth/callback?next=/me' }
+})
+     ↓
+Supabase 302 → accounts.google.com/...             Google client_id/secret 設在 Supabase dashboard
+     ↓
+Google → Supabase callback → /auth/callback?code=...
+     ↓
+exchangeCodeForSession(code)                       Supabase 寫 session cookie
+     ↓
+profiles trigger 也跟著 fire（新用戶）
+     ↓
+302 → nextPath
 ```
+
+要設 Google provider：Supabase dashboard → Authentication → Providers → Google → 貼 Client ID + Secret → 把 callback URL 加進 Google Cloud Console。
 
 ---
 

@@ -1,38 +1,58 @@
+// Server-side helper: read the currently-authenticated Supabase user from
+// the request cookies. Used by Server Components, Route Handlers, etc.
+
 import "server-only";
-import { cookies } from "next/headers";
-import { USER_COOKIE, verifyUserToken } from "./user-auth";
+import { createClient } from "./supabase/server";
 import {
-  findById,
   getFavorites,
   getLearned,
-  toPublic,
-  type PublicUser,
+  getProfile,
+  type ProfileRow,
 } from "./users-db";
 
-export async function getCurrentUserId(): Promise<number | null> {
-  const c = cookies().get(USER_COOKIE)?.value;
-  return verifyUserToken(c);
+export interface CurrentUser {
+  id: string;          // UUID
+  username: string;
+  email: string;
+  createdAt: string;
 }
 
-export async function getCurrentUser(): Promise<PublicUser | null> {
+function toCurrent(p: ProfileRow): CurrentUser {
+  return {
+    id: p.id,
+    username: p.username,
+    email: p.email,
+    createdAt: p.created_at,
+  };
+}
+
+export async function getCurrentUserId(): Promise<string | null> {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  return user?.id ?? null;
+}
+
+export async function getCurrentUser(): Promise<CurrentUser | null> {
   const id = await getCurrentUserId();
   if (!id) return null;
-  const row = await findById(id);
-  return row ? toPublic(row) : null;
+  const p = await getProfile(id);
+  return p ? toCurrent(p) : null;
 }
 
 export async function getCurrentUserBundle(): Promise<{
-  user: PublicUser;
+  user: CurrentUser;
   favorites: string[];
   learned: string[];
 } | null> {
   const id = await getCurrentUserId();
   if (!id) return null;
-  const [row, favorites, learned] = await Promise.all([
-    findById(id),
+  const [p, favorites, learned] = await Promise.all([
+    getProfile(id),
     getFavorites(id),
     getLearned(id),
   ]);
-  if (!row) return null;
-  return { user: toPublic(row), favorites, learned };
+  if (!p) return null;
+  return { user: toCurrent(p), favorites, learned };
 }

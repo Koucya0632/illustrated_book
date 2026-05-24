@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { createClient } from "@/lib/supabase/client";
 
 export default function GoogleButton({
   next,
@@ -7,9 +9,24 @@ export default function GoogleButton({
   next: string;
   label?: string;
 }) {
+  async function start() {
+    const supabase = createClient();
+    const redirectTo =
+      typeof window === "undefined"
+        ? "/auth/callback"
+        : `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`;
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo },
+    });
+    // Supabase navigates the browser to Google; if we're still here, something
+    // went wrong silently — surfaces below.
+  }
+
   return (
-    <Link
-      href={`/api/auth/google?next=${encodeURIComponent(next)}`}
+    <button
+      onClick={start}
+      type="button"
       className="w-full flex items-center justify-center gap-3 px-5 py-3 rounded-full bg-white text-ink font-medium shadow-card hover:shadow-lg border border-black/5 transition"
     >
       <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden>
@@ -31,6 +48,6 @@ export default function GoogleButton({
         />
       </svg>
       <span>{label}</span>
-    </Link>
+    </button>
   );
 }

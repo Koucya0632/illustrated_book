@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 import { getProgress } from "@/lib/storage";
 
 export default function SigninForm({ next }: { next: string }) {
-  const [identifier, setIdentifier] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -14,16 +15,14 @@ export default function SigninForm({ next }: { next: string }) {
     setError(null);
     setLoading(true);
     try {
-      const res = await fetch("/api/users/login", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ identifier, password }),
+      const supabase = createClient();
+      const { error: e1 } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       });
-      if (!res.ok) {
-        const j = await res.json().catch(() => ({}));
-        throw new Error(j.error || "登入失敗");
-      }
-      // Sync local progress to the account.
+      if (e1) throw e1;
+
+      // Sync local progress.
       try {
         const p = getProgress();
         await fetch("/api/users/sync", {
@@ -47,11 +46,12 @@ export default function SigninForm({ next }: { next: string }) {
   return (
     <form onSubmit={handle} className="space-y-3">
       <label className="block">
-        <span className="text-sm font-medium text-ink">電子郵件或用戶名</span>
+        <span className="text-sm font-medium text-ink">電子郵件</span>
         <input
           autoFocus
-          value={identifier}
-          onChange={(e) => setIdentifier(e.target.value)}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className={INPUT}
         />
       </label>
@@ -71,7 +71,7 @@ export default function SigninForm({ next }: { next: string }) {
 
       <button
         type="submit"
-        disabled={loading || !identifier || !password}
+        disabled={loading || !email || !password}
         className="w-full px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90 disabled:opacity-40"
       >
         {loading ? "登入中..." : "登入"}

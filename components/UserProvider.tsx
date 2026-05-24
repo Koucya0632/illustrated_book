@@ -3,7 +3,7 @@
 import { createContext, useContext } from "react";
 
 export interface CurrentUser {
-  id: number;
+  id: string;        // UUID
   username: string;
   email: string;
 }

@@ -14,7 +14,7 @@ export interface CardRow {
 }
 
 export interface UserCardRow {
-  user_id: number;
+  user_id: string;  // UUID
   card_id: number;
   status: Status;
   interval_days: number;
@@ -85,7 +85,7 @@ function shuffle<T>(arr: T[]): T[] {
 // already-due slice. New (unseen) cards stay at the end so review work isn't
 // drowned out by fresh material.
 export async function attachMasteryAndSort(
-  userId: number,
+  userId: string,
   due: DueCard[],
 ): Promise<DueCard[]> {
   if (due.length === 0) return due;
@@ -139,7 +139,7 @@ function requireSql() {
 // "Due" = unseen cards (no user_cards row) + cards whose next_review_at ≤ now.
 // New cards are limited per session to avoid overwhelming the user.
 export async function fetchDue(
-  userId: number,
+  userId: string,
   limit = 20,
   newLimit = 10,
 ): Promise<DueCard[]> {
@@ -155,7 +155,7 @@ export async function fetchDue(
     FROM user_cards uc
     JOIN cards c ON c.id = uc.card_id
     JOIN words w ON w.id = c.word_id
-    WHERE uc.user_id = ${userId}
+    WHERE uc.user_id = ${userId}::uuid
       AND uc.next_review_at <= now()
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
@@ -171,7 +171,7 @@ export async function fetchDue(
     JOIN words w ON w.id = c.word_id
     WHERE NOT EXISTS (
       SELECT 1 FROM user_cards uc
-      WHERE uc.user_id = ${userId} AND uc.card_id = c.id
+      WHERE uc.user_id = ${userId}::uuid AND uc.card_id = c.id
     )
     ORDER BY c.id ASC
     LIMIT ${Math.min(remaining, newLimit)}
@@ -190,7 +190,7 @@ export async function fetchDue(
     };
     const state: UserCardRow | null = hasState
       ? {
-          user_id: Number(r.user_id),
+          user_id: String(r.user_id),
           card_id: Number(r.card_id),
           status: r.status as Status,
           interval_days: Number(r.interval_days),
@@ -219,7 +219,7 @@ export async function fetchDue(
 }
 
 export async function upsertReview(
-  userId: number,
+  userId: string,
   cardId: number,
   next: {
     status: Status;
@@ -235,7 +235,7 @@ export async function upsertReview(
       user_id, card_id, status, interval_days, next_review_at,
       review_count, mistake_count, last_rating, last_reviewed_at, updated_at
     ) VALUES (
-      ${userId}, ${cardId}, ${next.status}, ${next.intervalDays}, ${next.nextReviewAt.toISOString()},
+      ${userId}::uuid, ${cardId}, ${next.status}, ${next.intervalDays}, ${next.nextReviewAt.toISOString()},
       1, ${isMistake ? 1 : 0}, ${next.rating}, now(), now()
     )
     ON CONFLICT (user_id, card_id) DO UPDATE SET
@@ -250,7 +250,7 @@ export async function upsertReview(
   `;
 }
 
-export async function getCardById(cardId: number, userId: number): Promise<DueCard | null> {
+export async function getCardById(cardId: number, userId: string): Promise<DueCard | null> {
   const sql = requireSql();
   const rows = (await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
@@ -259,7 +259,7 @@ export async function getCardById(cardId: number, userId: number): Promise<DueCa
            w.word AS w_word, w.chinese AS w_chinese, w.image_url AS w_image,
            w.pronunciation AS w_pron, w.category AS w_category
     FROM cards c
-    LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = ${userId}
+    LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
     JOIN words w ON w.id = c.word_id
     WHERE c.id = ${cardId}
     LIMIT 1
@@ -280,7 +280,7 @@ export async function getCardById(cardId: number, userId: number): Promise<DueCa
     },
     state: hasState
       ? {
-          user_id: Number(r.user_id),
+          user_id: String(r.user_id),
           card_id: Number(r.card_id),
           status: r.status as Status,
           interval_days: Number(r.interval_days),
@@ -302,18 +302,18 @@ export async function getCardById(cardId: number, userId: number): Promise<DueCa
   };
 }
 
-export async function studyStats(userId: number) {
+export async function studyStats(userId: string) {
   const sql = requireSql();
   const [{ total }] =
     (await sql`SELECT count(*)::int AS total FROM cards`) as unknown as { total: number }[];
   const [{ seen }] =
-    (await sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}`) as unknown as { seen: number }[];
+    (await sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}::uuid`) as unknown as { seen: number }[];
   const [{ due }] =
-    (await sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId} AND next_review_at <= now()`) as unknown as { due: number }[];
+    (await sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId}::uuid AND next_review_at <= now()`) as unknown as { due: number }[];
   const newCount = total - seen;
   const byStatus = (await sql`
     SELECT status, count(*)::int AS c
-    FROM user_cards WHERE user_id = ${userId}
+    FROM user_cards WHERE user_id = ${userId}::uuid
     GROUP BY status
   `) as unknown as { status: Status; c: number }[];
   return { total, seen, due, new: newCount, byStatus };

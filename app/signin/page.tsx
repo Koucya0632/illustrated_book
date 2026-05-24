@@ -13,7 +13,7 @@ export default function SigninPage({
   return (
     <div className="max-w-md mx-auto px-4 py-12">
       <h1 className="text-2xl sm:text-3xl font-bold text-ink">登入</h1>
-      <p className="text-sm text-muted mt-1">用電子郵件或用戶名登入。</p>
+      <p className="text-sm text-muted mt-1">用電子郵件登入。</p>
 
       {searchParams.error && (
         <p className="mt-4 text-sm bg-rose-50 text-rose-700 rounded-lg px-3 py-2">

@@ -1,8 +1,11 @@
 "use client";
 
+import { createClient } from "@/lib/supabase/client";
+
 export default function MeClient() {
   async function logout() {
-    await fetch("/api/users/logout", { method: "POST" });
+    const supabase = createClient();
+    await supabase.auth.signOut();
     window.location.href = "/";
   }
   return (

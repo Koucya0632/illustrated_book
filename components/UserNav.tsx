@@ -73,7 +73,8 @@ export default function UserNav() {
           </Link>
           <button
             onClick={async () => {
-              await fetch("/api/users/logout", { method: "POST" });
+              const { createClient } = await import("@/lib/supabase/client");
+              await createClient().auth.signOut();
               window.location.href = "/";
             }}
             className="block w-full text-left px-4 py-2 text-sm hover:bg-rose-50 text-rose-500 border-t border-black/5"

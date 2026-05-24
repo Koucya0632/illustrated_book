@@ -54,7 +54,9 @@ const fetchAllFromDb = unstable_cache(
     `) as unknown as Row[];
     return rows.map(rowToWord);
   },
-  ["all-words"],
+  // v2: bump to invalidate stale entries from before the postgres-js
+  // JSONB auto-parse fix (otherwise `.examples` is still a string).
+  ["all-words-v2"],
   { tags: ["words"], revalidate: 60 },
 );
 

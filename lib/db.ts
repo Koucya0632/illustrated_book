@@ -21,6 +21,17 @@ export function getSql(): ReturnType<typeof postgres> | null {
     // Disable prepared statements — Supabase transaction-mode pooler doesn't
     // support them across requests.
     prepare: false,
+    // Auto-parse JSONB (PG type 3802) and JSON (PG type 114). Without this,
+    // postgres-js returns them as raw strings and `.map`/`.length` blow up
+    // in places that expect already-parsed arrays/objects.
+    types: {
+      json: {
+        to: 114,
+        from: [114, 3802],
+        serialize: JSON.stringify,
+        parse: JSON.parse,
+      },
+    },
   });
   return cached;
 }

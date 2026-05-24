@@ -21,6 +21,7 @@ interface ApiState {
   interval_days: number;
   next_review_at: string;
   review_count: number;
+  mistake_count: number;
   last_rating: Rating | null;
 }
 interface ApiWord {
@@ -69,6 +70,15 @@ const RATING_COLOR: Record<Rating, string> = {
   熟練: "bg-emerald-500 hover:bg-emerald-600",
 };
 
+// Suggest a rating based on how long it took to answer a correct MCQ.
+// Cloze cards get more time (longer sentence to parse).
+function suggestRating(elapsedMs: number, cardType: string): Rating {
+  const isCloze = cardType === "填空卡";
+  if (elapsedMs < (isCloze ? 4000 : 3000)) return "熟練";
+  if (elapsedMs < (isCloze ? 8000 : 7000)) return "穩定";
+  return "困難";
+}
+
 export default function StudyClient() {
   const [queue, setQueue] = useState<DueCard[] | null>(null);
   const [stats, setStats] = useState<Stats | null>(null);
@@ -81,6 +91,8 @@ export default function StudyClient() {
   });
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [masteryDelta, setMasteryDelta] = useState<MasteryDelta | null>(null);
+  const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
+  const startedAtRef = useRef<number>(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const current = queue?.[idx];
@@ -104,22 +116,33 @@ export default function StudyClient() {
   useEffect(() => { loadQueue(); }, [loadQueue]);
 
   useEffect(() => {
-    if (phase === "answer" && !isMcq) inputRef.current?.focus();
+    if (phase === "answer") {
+      startedAtRef.current = performance.now();
+      setSuggestedRating(null);
+      if (!isMcq) inputRef.current?.focus();
+    }
   }, [phase, idx, isMcq]);
 
   function pickChoice(choice: string) {
-    if (phase !== "answer") return;
+    if (phase !== "answer" || !current) return;
     setPicked(choice);
     setPhase("review");
     // If wrong, auto-rate as 重來 (no need to ask user)
-    if (current && choice !== current.card.back) {
+    if (choice !== current.card.back) {
       void rate("重來", true);
+      return;
     }
-    // If right, wait for user to pick 困難/穩定/熟練 (granularity)
+    // Correct → suggest rating based on speed
+    const elapsed = performance.now() - startedAtRef.current;
+    setSuggestedRating(suggestRating(elapsed, current.card.card_type));
   }
 
   function showAnswer() {
     setPhase("review");
+    if (current) {
+      const elapsed = performance.now() - startedAtRef.current;
+      setSuggestedRating(suggestRating(elapsed, current.card.card_type));
+    }
   }
 
   function skip() {
@@ -146,7 +169,9 @@ export default function StudyClient() {
       [rating]: s[rating] + 1,
       completed: s.completed + 1,
     }));
-    setLastFeedback(`下次複習：${j.next?.humanized ?? "—"}`);
+    const penalty = j.next?.penaltyApplied ?? 0;
+    const penaltyHint = penalty > 0 ? `  (依錯誤紀錄縮短 ${penalty}%)` : "";
+    setLastFeedback(`下次複習：${j.next?.humanized ?? "—"}${penaltyHint}`);
     if (j.mastery) setMasteryDelta(j.mastery as MasteryDelta);
     // Auto-advance after delay
     const delay = isAutoFromWrong ? 1800 : 1000; // give time to see the mastery change
@@ -244,6 +269,14 @@ export default function StudyClient() {
         {typeof current.mastery === "number" && current.mastery > 0 && (
           <span className="text-muted">· 熟練度 {Math.round(current.mastery)}/100</span>
         )}
+        {current.state && current.state.mistake_count > 0 && (
+          <span
+            className="text-rose-500"
+            title="這張卡的歷史錯誤率會降低成長間隔倍率"
+          >
+            · 錯過 {current.state.mistake_count}/{current.state.review_count} 次
+          </span>
+        )}
       </div>
 
       {/* Card */}
@@ -340,18 +373,33 @@ export default function StudyClient() {
             <>
               <p className="text-sm text-muted text-center mb-2">
                 答對！這題對你來說有多容易？
+                {suggestedRating && (
+                  <span className="ml-1 text-xs">
+                    （依答題速度建議：<strong className="text-ink">{suggestedRating}</strong>）
+                  </span>
+                )}
               </p>
               <div className="grid grid-cols-3 gap-2">
-                {(["困難", "穩定", "熟練"] as const).map((r) => (
-                  <button
-                    key={r}
-                    onClick={() => rate(r)}
-                    className={`px-3 py-3 rounded-xl text-white shadow-card transition ${RATING_COLOR[r]}`}
-                  >
-                    <div className="font-bold">{r}</div>
-                    <div className="text-[10px] opacity-90 mt-0.5">{RATING_DESCRIPTIONS[r]}</div>
-                  </button>
-                ))}
+                {(["困難", "穩定", "熟練"] as const).map((r) => {
+                  const isSuggested = suggestedRating === r;
+                  return (
+                    <button
+                      key={r}
+                      onClick={() => rate(r)}
+                      className={`relative px-3 py-3 rounded-xl text-white shadow-card transition ${RATING_COLOR[r]} ${
+                        isSuggested ? "ring-4 ring-offset-2 ring-ink/30 scale-[1.02]" : ""
+                      }`}
+                    >
+                      {isSuggested && (
+                        <span className="absolute -top-2 -right-2 bg-ink text-white text-[10px] px-1.5 py-0.5 rounded-full shadow">
+                          建議
+                        </span>
+                      )}
+                      <div className="font-bold">{r}</div>
+                      <div className="text-[10px] opacity-90 mt-0.5">{RATING_DESCRIPTIONS[r]}</div>
+                    </button>
+                  );
+                })}
               </div>
               {masteryDelta && (
                 <p className="mt-3 text-center text-xs text-muted">
@@ -373,18 +421,33 @@ export default function StudyClient() {
             <>
               <p className="text-sm text-muted text-center mb-2">
                 你的答案跟標準相比如何？
+                {suggestedRating && (
+                  <span className="ml-1 text-xs">
+                    （依答題速度建議：<strong className="text-ink">{suggestedRating}</strong>）
+                  </span>
+                )}
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {(Object.keys(RATING_DESCRIPTIONS) as Rating[]).map((r) => (
-                  <button
-                    key={r}
-                    onClick={() => rate(r)}
-                    className={`px-3 py-3 rounded-xl text-white shadow-card transition ${RATING_COLOR[r]}`}
-                  >
-                    <div className="font-bold">{r}</div>
-                    <div className="text-[10px] opacity-90 mt-0.5">{RATING_DESCRIPTIONS[r]}</div>
-                  </button>
-                ))}
+                {(Object.keys(RATING_DESCRIPTIONS) as Rating[]).map((r) => {
+                  const isSuggested = suggestedRating === r;
+                  return (
+                    <button
+                      key={r}
+                      onClick={() => rate(r)}
+                      className={`relative px-3 py-3 rounded-xl text-white shadow-card transition ${RATING_COLOR[r]} ${
+                        isSuggested ? "ring-4 ring-offset-2 ring-ink/30 scale-[1.02]" : ""
+                      }`}
+                    >
+                      {isSuggested && (
+                        <span className="absolute -top-2 -right-2 bg-ink text-white text-[10px] px-1.5 py-0.5 rounded-full shadow">
+                          建議
+                        </span>
+                      )}
+                      <div className="font-bold">{r}</div>
+                      <div className="text-[10px] opacity-90 mt-0.5">{RATING_DESCRIPTIONS[r]}</div>
+                    </button>
+                  );
+                })}
               </div>
               {lastFeedback && (
                 <p className="mt-3 text-center text-sm text-emerald-700">{lastFeedback}</p>

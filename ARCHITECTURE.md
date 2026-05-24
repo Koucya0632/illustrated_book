@@ -385,7 +385,7 @@ ORDER BY random() LIMIT 9         -- 過量抽，JS 去重後取 3
 ### 排程演算法（`lib/srs.ts`）
 
 ```
-新卡（status="新卡" 或 interval=0）:
+新卡（status="新卡" 或 interval=0）— 固定步進，無錯誤懲罰:
   重來 → 10 min,  學習中
   困難 → 1 day,   學習中
   穩定 → 3 days,  複習中
@@ -393,12 +393,40 @@ ORDER BY random() LIMIT 9         -- 過量抽，JS 去重後取 3
 
 已複習過:
   重來 → 重設 10 min, 學習中
-  困難 → × 1.3, 複習中 (interval ≥ 21 時升級「穩定」)
-  穩定 → × 2.4, 同上
-  熟練 → × 3.8, 同上
+  困難 → × 1.3 × penalty
+  穩定 → × 2.4 × penalty
+  熟練 → × 3.8 × penalty
 
 封頂 5 年。humanizeInterval() 把小數天轉成「N 分鐘 / 小時 / 天 / 週 / 月 / 年」。
 ```
+
+#### 錯誤率懲罰（mistakePenalty）
+
+歷史錯誤越多的卡，成長倍率越打折，避免一次答對就跳很遠：
+
+```
+rate    = mistake_count / review_count       # lifetime ratio
+penalty = max(0.5, 1 − rate × 0.5)           # floor: 一半倍率封底
+
+rate=0     → 1.00  (no change)
+rate=0.5   → 0.75
+rate=1.0   → 0.50  (最多砍一半)
+```
+
+實例：interval=10 天的卡，答「熟練」應該變成 38 天；但如果這張卡 5 次裡錯 2 次（rate=0.4），實際間隔 = 10 × 3.8 × 0.8 = 30.4 天。
+
+API response 多帶 `next.penaltyApplied`（%），UI 在「下次複習」後面顯示「(依錯誤紀錄縮短 N%)」。
+
+### 答題速度建議（client-only）
+
+`StudyClient` 用 `performance.now()` 記從卡顯示到點選的毫秒，答對後**只是高亮建議的按鈕**（不自動評分，使用者最終決定）：
+
+```
+回想卡：  <3s → 熟練,  <7s → 穩定,  >7s → 困難
+填空卡：  <4s → 熟練,  <8s → 穩定,  >8s → 困難
+```
+
+建議按鈕有 ring + 「建議」徽章；其他鈕仍可點。Server 端完全不知道這個 elapsed — 純粹是 UX 提示。
 
 ### 答題流程（`/study`）
 

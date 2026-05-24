@@ -34,7 +34,13 @@ export async function POST(req: Request) {
   const prevState = card.state
     ? { status: card.state.status, intervalDays: Number(card.state.interval_days) || 0 }
     : { status: "新卡" as const, intervalDays: 0 };
-  const next = schedule(prevState, rating);
+  const mistakeStats = card.state
+    ? {
+        reviewCount: card.state.review_count,
+        mistakeCount: card.state.mistake_count,
+      }
+    : undefined;
+  const next = schedule(prevState, rating, mistakeStats);
   const isMistake = rating === "重來";
 
   await upsertReview(userId, cardId, {
@@ -60,6 +66,9 @@ export async function POST(req: Request) {
       intervalDays: next.intervalDays,
       nextReviewAt: next.nextReviewAt.toISOString(),
       humanized: humanizeInterval(next.intervalDays),
+      penaltyApplied: next.appliedPenalty && next.appliedPenalty < 1
+        ? Math.round((1 - next.appliedPenalty) * 100)
+        : 0,
     },
     mastery: {
       before: Math.round(masteryResult.previousDecayed),

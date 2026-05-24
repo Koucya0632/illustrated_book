@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
+import MasteryBar from "@/components/MasteryBar";
+import { masteryLevel } from "@/lib/mastery";
 import type { Rating } from "@/lib/srs";
 
 interface ApiCard {
@@ -34,6 +36,14 @@ interface DueCard {
   state: ApiState | null;
   word: ApiWord;
   choices?: string[];
+  mastery?: number;
+}
+
+interface MasteryDelta {
+  before: number;
+  after: number;
+  delta: number;
+  level: { key: string; zhLabel: string; color: string };
 }
 interface Stats {
   total: number;
@@ -70,6 +80,7 @@ export default function StudyClient() {
     重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0,
   });
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
+  const [masteryDelta, setMasteryDelta] = useState<MasteryDelta | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const current = queue?.[idx];
@@ -136,10 +147,12 @@ export default function StudyClient() {
       completed: s.completed + 1,
     }));
     setLastFeedback(`下次複習：${j.next?.humanized ?? "—"}`);
+    if (j.mastery) setMasteryDelta(j.mastery as MasteryDelta);
     // Auto-advance after delay
-    const delay = isAutoFromWrong ? 1400 : 600; // give wrong answers more reading time
+    const delay = isAutoFromWrong ? 1800 : 1000; // give time to see the mastery change
     setTimeout(() => {
       setLastFeedback(null);
+      setMasteryDelta(null);
       if (idx + 1 >= total) setPhase("done");
       else {
         setIdx(idx + 1);
@@ -213,7 +226,7 @@ export default function StudyClient() {
       </div>
 
       {/* Tags / status */}
-      <div className="mt-4 flex items-center gap-2 text-xs text-muted">
+      <div className="mt-4 flex items-center gap-2 text-xs text-muted flex-wrap">
         <span className="px-2 py-0.5 rounded-full bg-mint-soft text-emerald-700">
           {current.card.card_type}
         </span>
@@ -228,6 +241,9 @@ export default function StudyClient() {
         {current.card.tags.slice(0, 2).map((t) => (
           <span key={t} className="text-muted">· {t}</span>
         ))}
+        {typeof current.mastery === "number" && current.mastery > 0 && (
+          <span className="text-muted">· 熟練度 {Math.round(current.mastery)}/100</span>
+        )}
       </div>
 
       {/* Card */}
@@ -306,6 +322,16 @@ export default function StudyClient() {
           {isMcq && !wasCorrect && (
             <div className="text-center text-sm">
               <p className="text-rose-500 font-medium">⊗ 已記錄為「重來」</p>
+              {masteryDelta && (
+                <p className="mt-2 text-xs text-muted">
+                  熟練度 {masteryDelta.before} → <strong className="text-ink">{masteryDelta.after}</strong>
+                  {masteryDelta.delta !== 0 && (
+                    <span className={masteryDelta.delta > 0 ? "text-emerald-600" : "text-rose-500"}>
+                      {" "}({masteryDelta.delta > 0 ? "+" : ""}{masteryDelta.delta})
+                    </span>
+                  )}
+                </p>
+              )}
               {lastFeedback && <p className="text-muted mt-1">{lastFeedback}</p>}
             </div>
           )}
@@ -327,8 +353,18 @@ export default function StudyClient() {
                   </button>
                 ))}
               </div>
+              {masteryDelta && (
+                <p className="mt-3 text-center text-xs text-muted">
+                  熟練度 {masteryDelta.before} → <strong className="text-ink">{masteryDelta.after}</strong>
+                  {masteryDelta.delta !== 0 && (
+                    <span className={masteryDelta.delta > 0 ? "text-emerald-600" : "text-rose-500"}>
+                      {" "}({masteryDelta.delta > 0 ? "+" : ""}{masteryDelta.delta})
+                    </span>
+                  )}
+                </p>
+              )}
               {lastFeedback && (
-                <p className="mt-3 text-center text-sm text-emerald-700">{lastFeedback}</p>
+                <p className="mt-1 text-center text-sm text-emerald-700">{lastFeedback}</p>
               )}
             </>
           )}

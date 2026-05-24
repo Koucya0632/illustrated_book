@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
-import { attachChoices, fetchDue, studyStats } from "@/lib/cards-db";
+import {
+  attachChoices,
+  attachMasteryAndSort,
+  fetchDue,
+  studyStats,
+} from "@/lib/cards-db";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,6 +22,7 @@ export async function GET(req: Request) {
     fetchDue(userId, limit, newLimit),
     studyStats(userId),
   ]);
+  await attachMasteryAndSort(userId, queue);
   await attachChoices(queue);
 
   return NextResponse.json({ queue, stats });

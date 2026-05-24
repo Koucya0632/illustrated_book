@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FavoriteButton from "@/components/FavoriteButton";
+import MasteryBar from "@/components/MasteryBar";
 import PronunciationButton from "@/components/PronunciationButton";
 import { getCategory } from "@/lib/categories";
+import { getCurrentUserId } from "@/lib/current-user";
 import { getAllWords, getWord } from "@/lib/data";
+import { applyDecay } from "@/lib/mastery";
+import { getMasteryRow } from "@/lib/users-db";
 import MarkLearned from "./MarkLearned";
 import EventTracker from "@/components/EventTracker";
 
@@ -27,6 +31,19 @@ export default async function WordDetailPage({
   const related = (w.relatedWords ?? [])
     .map((id) => all.find((x) => x.id === id))
     .filter((x): x is NonNullable<typeof x> => Boolean(x));
+
+  // If logged in, show this user's mastery for the word.
+  let mastery: number | null = null;
+  const userId = await getCurrentUserId();
+  if (userId) {
+    const row = await getMasteryRow(userId, w.id);
+    if (row) {
+      mastery = applyDecay(
+        row.mastery,
+        row.last_reviewed_at ? new Date(row.last_reviewed_at) : null,
+      );
+    }
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
@@ -74,6 +91,12 @@ export default async function WordDetailPage({
             <span className="font-mono text-muted">{w.pronunciation}</span>
             <PronunciationButton text={w.word} size="lg" />
           </div>
+
+          {mastery !== null && (
+            <div className="mt-4 max-w-xs">
+              <MasteryBar score={mastery} size="md" />
+            </div>
+          )}
 
           {w.note && (
             <p className="mt-4 text-sm bg-amber-50 text-amber-800 rounded-lg px-3 py-2">

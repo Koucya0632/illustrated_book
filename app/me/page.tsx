@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import MasteryBar from "@/components/MasteryBar";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getAllWords } from "@/lib/data";
-import { getQuizHistory } from "@/lib/users-db";
+import { applyDecay, masteryLevel } from "@/lib/mastery";
+import { getAllMastery, getQuizHistory } from "@/lib/users-db";
 import MeClient from "./MeClient";
 
 export const dynamic = "force-dynamic";
@@ -12,9 +14,10 @@ export default async function MePage() {
   const bundle = await getCurrentUserBundle();
   if (!bundle) redirect("/signin?next=/me");
 
-  const [allWords, quizHistory] = await Promise.all([
+  const [allWords, quizHistory, masteryRows] = await Promise.all([
     getAllWords(),
     getQuizHistory(bundle.user.id, 10),
+    getAllMastery(bundle.user.id),
   ]);
   const byId = new Map(allWords.map((w) => [w.id, w]));
   const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean);
@@ -22,6 +25,31 @@ export default async function MePage() {
   const totalAttempts = quizHistory.reduce((s, q) => s + q.total, 0);
   const totalCorrect = quizHistory.reduce((s, q) => s + q.correct, 0);
   const rate = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
+
+  // Apply forgetting-curve decay to each row, then rank.
+  const now = new Date();
+  const masteredItems = masteryRows
+    .map((r) => {
+      const current = applyDecay(
+        r.mastery,
+        r.last_reviewed_at ? new Date(r.last_reviewed_at) : null,
+        now,
+      );
+      const w = byId.get(r.word_id);
+      return w ? { word: w, mastery: current } : null;
+    })
+    .filter(Boolean) as { word: NonNullable<ReturnType<typeof byId.get>>; mastery: number }[];
+  masteredItems.sort((a, b) => b.mastery - a.mastery);
+  const avgMastery =
+    masteredItems.length > 0
+      ? masteredItems.reduce((s, x) => s + x.mastery, 0) / masteredItems.length
+      : 0;
+  const topMastered = masteredItems.slice(0, 5);
+  const needsWork = [...masteredItems]
+    .filter((x) => x.mastery < 60)
+    .sort((a, b) => a.mastery - b.mastery)
+    .slice(0, 5);
+  const masteredCount = masteredItems.filter((x) => x.mastery >= 80).length;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
@@ -41,9 +69,59 @@ export default async function MePage() {
       <section className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
         <Stat label="收藏" value={String(bundle.favorites.length)} emoji="❤️" />
         <Stat label="已學單字" value={`${learnedCount}/${allWords.length}`} emoji="📚" />
+        <Stat
+          label="平均熟練度"
+          value={
+            masteredItems.length > 0
+              ? `${Math.round(avgMastery)}/100`
+              : "—"
+          }
+          emoji="🧠"
+        />
+        <Stat label="已熟練 (≥80)" value={String(masteredCount)} emoji="🌟" />
+      </section>
+
+      <section className="mt-3 grid grid-cols-2 sm:grid-cols-2 gap-3">
         <Stat label="測驗次數" value={String(quizHistory.length)} emoji="🎯" />
         <Stat label="總正確率" value={`${rate}%`} emoji="📈" />
       </section>
+
+      {masteredItems.length > 0 && (
+        <section className="mt-10">
+          <h2 className="text-lg font-bold text-ink">熟練度概覽</h2>
+          <p className="text-xs text-muted mt-0.5">
+            熟練度會隨時間自然衰減 — 久沒複習的字分數會慢慢下降。
+          </p>
+          <div className="mt-3 grid sm:grid-cols-2 gap-4">
+            {topMastered.length > 0 && (
+              <div className="bg-white rounded-xl2 shadow-card p-4">
+                <h3 className="text-sm font-semibold text-ink">🌟 最熟的字</h3>
+                <ul className="mt-3 space-y-3">
+                  {topMastered.map((item) => (
+                    <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
+                  ))}
+                </ul>
+              </div>
+            )}
+            {needsWork.length > 0 && (
+              <div className="bg-white rounded-xl2 shadow-card p-4">
+                <h3 className="text-sm font-semibold text-ink">⚠️ 需要加強</h3>
+                <ul className="mt-3 space-y-3">
+                  {needsWork.map((item) => (
+                    <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
+                  ))}
+                </ul>
+                <Link
+                  href="/study"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-sky-accent hover:underline"
+                >
+                  去複習 →
+                </Link>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="mt-10">
         <h2 className="text-lg font-bold text-ink">我的收藏</h2>
@@ -131,5 +209,31 @@ function Stat({ label, value, emoji }: { label: string; value: string; emoji: st
       <p className="mt-2 text-xs text-muted">{label}</p>
       <p className="mt-1 text-xl font-bold text-ink">{value}</p>
     </div>
+  );
+}
+
+function MasteryRow({
+  word,
+  mastery,
+}: {
+  word: { id: string; word: string; chinese: string; imageUrl: string };
+  mastery: number;
+}) {
+  return (
+    <li>
+      <Link href={`/word/${word.id}`} className="flex items-center gap-3 group">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={word.imageUrl} alt={word.word} className="w-10 h-10 rounded-lg object-cover bg-cream shrink-0" />
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-ink truncate group-hover:underline">
+            {word.word} <span className="text-muted font-normal">· {word.chinese}</span>
+          </p>
+          <MasteryBar score={mastery} size="sm" showLabel={false} />
+        </div>
+        <span className="text-xs font-mono text-muted shrink-0 tabular-nums">
+          {Math.round(mastery)}
+        </span>
+      </Link>
+    </li>
   );
 }

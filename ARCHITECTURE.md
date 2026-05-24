@@ -420,6 +420,65 @@ POST /api/study/answer {cardId, rating}
 
 ---
 
+## 10b. 單詞熟練度（Mastery）
+
+獨立於卡片 SRS 的第二層追蹤。**卡片 SRS** 決定「什麼時候再看到這張卡」；**單詞熟練度** 衡量「整體上你對這個字有多熟」，跨同一個字的所有卡型（中→英、英→中、cloze）共用一個分數。
+
+### 資料模型
+```sql
+user_words (
+  user_id BIGINT FK CASCADE,
+  word_id TEXT FK CASCADE,
+  mastery NUMERIC(5,2),      -- 0-100，stored "last known" 值
+  last_reviewed_at TIMESTAMPTZ,
+  review_count INT,
+  updated_at,
+  PRIMARY KEY (user_id, word_id)
+);
+INDEX user_words_mastery_idx (user_id, mastery)
+```
+
+### 表現分對應
+```
+重來 → 0
+困難 → 30
+穩定 → 70
+熟練 → 100
+```
+
+### 更新公式（EMA 指數加權移動平均）
+```
+α = 0.3
+mastery_decayed = applyDecay(prev_mastery, last_reviewed_at, now)
+mastery_new     = α × score + (1 − α) × mastery_decayed
+                = 0.3 × score + 0.7 × mastery_decayed
+```
+α=0.3 讓單次答題影響有限（不會被一次失誤歸零），但連續好幾次同方向會明顯移動。
+
+### 遺忘曲線（lazy decay）
+不跑批次 job、不直接寫衰減後的值進 DB。每次「讀取 / 計算」時才套用：
+```
+days_since   = (now − last_reviewed_at) / 1 day
+half_life    = max(1, mastery / 5)      -- 100 分→20 天，20 分→4 天
+mastery_now  = mastery × 2^(−days_since / half_life)
+```
+**為什麼 lazy**：不需 cron、不需要 DB trigger，只在使用者要看到分數時花一個浮點數運算。寫入的永遠是「最後一次答題後的新分數」，read 時再演化到當下。
+
+### 與卡片 SRS 的關係
+- **排程不變**：卡片自己的 `next_review_at` / `interval_days` 完全照原本的 schedule() 算
+- **隊列順序變了**：`/api/study/queue` 拿到的卡先按 (已看過 / 全新) 分組，已看過的再用 `mastery ASC` 排序 — 弱項先做
+- **答題副作用**：`POST /api/study/answer` 一次更新兩張表：`user_cards` (SRS) + `user_words` (mastery)
+
+### 暴露點
+- `lib/mastery.ts` — 純函式：`applyDecay`, `applyAnswer`, `masteryLevel`
+- `lib/users-db.ts` — `getMasteryRow`, `upsertMastery`, `getAllMastery`
+- `lib/cards-db.ts` — `attachMasteryAndSort(userId, queue)`
+- `components/MasteryBar.tsx` — UI 元件，server-renderable
+- API `/api/study/answer` 回傳體新增 `{ mastery: { before, after, delta, level } }`
+- 頁面：`/study` 顯示 delta；`/me` 顯示「最熟」+「需要加強」；`/word/[id]` 登入用戶顯示熟練度條
+
+---
+
 ## 11. 事件追蹤
 
 ```

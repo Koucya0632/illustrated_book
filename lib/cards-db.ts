@@ -37,6 +37,7 @@ export interface DueCard {
     category: string;
   };
   choices?: string[]; // multiple-choice options (shuffled, includes correct back)
+  mastery?: number;  // current (decayed) mastery for this word, 0-100
 }
 
 const MCQ_TYPES = new Set(["回想卡", "填空卡"]);
@@ -77,6 +78,40 @@ function shuffle<T>(arr: T[]): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// Pull all mastery rows for this user once, apply forgetting-curve decay,
+// attach current mastery to each due card, then sort weakest-first within the
+// already-due slice. New (unseen) cards stay at the end so review work isn't
+// drowned out by fresh material.
+export async function attachMasteryAndSort(
+  userId: number,
+  due: DueCard[],
+): Promise<DueCard[]> {
+  if (due.length === 0) return due;
+  const { getAllMastery } = await import("./users-db");
+  const { applyDecay } = await import("./mastery");
+  const rows = await getAllMastery(userId);
+  const byWord = new Map<string, { mastery: number; lastReviewedAt: Date | null }>();
+  for (const r of rows) {
+    byWord.set(r.word_id, {
+      mastery: r.mastery,
+      lastReviewedAt: r.last_reviewed_at ? new Date(r.last_reviewed_at) : null,
+    });
+  }
+  const now = new Date();
+  for (const d of due) {
+    const m = byWord.get(d.word.id);
+    d.mastery = m ? Math.round(applyDecay(m.mastery, m.lastReviewedAt, now)) : 0;
+  }
+  // Review (has state) first, sorted by mastery asc; then new (no state).
+  due.sort((a, b) => {
+    const aNew = a.state ? 0 : 1;
+    const bNew = b.state ? 0 : 1;
+    if (aNew !== bNew) return aNew - bNew;
+    return (a.mastery ?? 0) - (b.mastery ?? 0);
+  });
+  return due;
 }
 
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {

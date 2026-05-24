@@ -198,6 +198,53 @@ export async function getQuizHistory(
   `) as unknown as QuizResultRow[];
 }
 
+// ---- Per-word mastery (decay applied at read time, not stored decayed) ----
+
+export interface MasteryRow {
+  word_id: string;
+  mastery: number;
+  last_reviewed_at: string | null;
+  review_count: number;
+}
+
+export async function getMasteryRow(
+  userId: number,
+  wordId: string,
+): Promise<MasteryRow | null> {
+  const sql = requireSql();
+  const rows = (await sql`
+    SELECT word_id, mastery::float8 AS mastery, last_reviewed_at, review_count
+    FROM user_words WHERE user_id = ${userId} AND word_id = ${wordId}
+  `) as unknown as MasteryRow[];
+  return rows[0] ?? null;
+}
+
+export async function upsertMastery(
+  userId: number,
+  wordId: string,
+  newMastery: number,
+  now: Date = new Date(),
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO user_words (user_id, word_id, mastery, last_reviewed_at, review_count, updated_at)
+    VALUES (${userId}, ${wordId}, ${newMastery}, ${now.toISOString()}, 1, ${now.toISOString()})
+    ON CONFLICT (user_id, word_id) DO UPDATE SET
+      mastery          = EXCLUDED.mastery,
+      last_reviewed_at = EXCLUDED.last_reviewed_at,
+      review_count     = user_words.review_count + 1,
+      updated_at       = EXCLUDED.updated_at
+  `;
+}
+
+export async function getAllMastery(userId: number): Promise<MasteryRow[]> {
+  const sql = requireSql();
+  return (await sql`
+    SELECT word_id, mastery::float8 AS mastery, last_reviewed_at, review_count
+    FROM user_words WHERE user_id = ${userId}
+  `) as unknown as MasteryRow[];
+}
+
 export async function syncFromClient(
   userId: number,
   favorites: string[],

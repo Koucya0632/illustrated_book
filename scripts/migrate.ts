@@ -118,6 +118,18 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS user_cards_due_idx ON user_cards(user_id, next_review_at)`,
 
+  // ---- Per-user, per-word mastery (0-100, decays over time) ----
+  `CREATE TABLE IF NOT EXISTS user_words (
+     user_id          BIGINT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+     word_id          TEXT   NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     mastery          NUMERIC(5,2) NOT NULL DEFAULT 0,
+     last_reviewed_at TIMESTAMPTZ,
+     review_count     INT NOT NULL DEFAULT 0,
+     updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, word_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_words_mastery_idx ON user_words(user_id, mastery)`,
+
   // ---- One-off cleanups (idempotent) ----
   // Discontinued card types — 長文字答案、無法做 MCQ。FK cascade 會一起
   // 清掉 user_cards 的相關紀錄。

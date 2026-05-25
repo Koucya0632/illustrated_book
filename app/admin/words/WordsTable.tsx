@@ -6,16 +6,30 @@ import { useMemo, useState } from "react";
 import { categories } from "@/lib/categories";
 import type { Word } from "@/types";
 
+type SortKey = "id" | "word" | "chinese" | "category";
+type SortDir = "asc" | "desc";
+
 export default function WordsTable({ initial }: { initial: Word[] }) {
   const router = useRouter();
   const [items, setItems] = useState(initial);
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>("all");
   const [deleting, setDeleting] = useState<string | null>(null);
+  const [sortKey, setSortKey] = useState<SortKey>("id");
+  const [sortDir, setSortDir] = useState<SortDir>("asc");
+
+  function toggleSort(key: SortKey) {
+    if (key === sortKey) {
+      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortDir("asc");
+    }
+  }
 
   const rows = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    return items.filter((w) => {
+    const filtered = items.filter((w) => {
       if (cat !== "all" && w.category !== cat) return false;
       if (!needle) return true;
       const hay = [w.word, w.chinese, w.id, ...(w.alsoKnownAs ?? [])]
@@ -23,7 +37,15 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
         .toLowerCase();
       return hay.includes(needle);
     });
-  }, [items, q, cat]);
+    const sign = sortDir === "asc" ? 1 : -1;
+    // locale-aware compare so Chinese sorts sensibly and "Apple" beats "banana".
+    const collator = new Intl.Collator(["en", "zh-Hant"], { sensitivity: "base" });
+    return filtered.slice().sort((a, b) => {
+      const av = String(a[sortKey] ?? "");
+      const bv = String(b[sortKey] ?? "");
+      return sign * collator.compare(av, bv);
+    });
+  }, [items, q, cat, sortKey, sortDir]);
 
   async function handleDelete(id: string, label: string) {
     if (!confirm(`確定刪除「${label}」嗎？此操作無法復原。`)) return;
@@ -73,10 +95,17 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
           <thead className="bg-cream text-muted">
             <tr>
               <th className="text-left px-3 py-2 w-12">圖</th>
-              <th className="text-left px-3 py-2">id</th>
-              <th className="text-left px-3 py-2">英文</th>
-              <th className="text-left px-3 py-2">中文</th>
-              <th className="text-left px-3 py-2 hidden sm:table-cell">分類</th>
+              <SortHeader label="id" sortKey="id" current={sortKey} dir={sortDir} onClick={toggleSort} />
+              <SortHeader label="英文" sortKey="word" current={sortKey} dir={sortDir} onClick={toggleSort} />
+              <SortHeader label="中文" sortKey="chinese" current={sortKey} dir={sortDir} onClick={toggleSort} />
+              <SortHeader
+                label="分類"
+                sortKey="category"
+                current={sortKey}
+                dir={sortDir}
+                onClick={toggleSort}
+                className="hidden sm:table-cell"
+              />
               <th className="text-right px-3 py-2 w-28">動作</th>
             </tr>
           </thead>
@@ -119,5 +148,39 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
         </table>
       </div>
     </div>
+  );
+}
+
+function SortHeader({
+  label,
+  sortKey,
+  current,
+  dir,
+  onClick,
+  className = "",
+}: {
+  label: string;
+  sortKey: SortKey;
+  current: SortKey;
+  dir: SortDir;
+  onClick: (k: SortKey) => void;
+  className?: string;
+}) {
+  const active = current === sortKey;
+  const arrow = active ? (dir === "asc" ? "↑" : "↓") : "";
+  return (
+    <th className={`text-left px-3 py-2 ${className}`}>
+      <button
+        type="button"
+        onClick={() => onClick(sortKey)}
+        className={
+          "inline-flex items-center gap-1 hover:text-ink " +
+          (active ? "text-ink font-semibold" : "")
+        }
+      >
+        <span>{label}</span>
+        <span className="text-xs w-3 inline-block">{arrow}</span>
+      </button>
+    </th>
   );
 }

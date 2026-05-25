@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
+import NavLinks from "./NavLinks";
 
 export const dynamic = "force-dynamic";
 
@@ -12,26 +13,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link href="/admin" className="text-sm font-semibold text-ink">
               🛠️ Admin
             </Link>
-            <nav className="flex items-center gap-1 text-sm">
-              <Link
-                href="/admin"
-                className="px-3 py-1.5 rounded-md hover:bg-black/5 text-muted hover:text-ink"
-              >
-                總覽
-              </Link>
-              <Link
-                href="/admin/words"
-                className="px-3 py-1.5 rounded-md hover:bg-black/5 text-muted hover:text-ink"
-              >
-                單字管理
-              </Link>
-              <Link
-                href="/admin/stats"
-                className="px-3 py-1.5 rounded-md hover:bg-black/5 text-muted hover:text-ink"
-              >
-                統計
-              </Link>
-            </nav>
+            <NavLinks />
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Link

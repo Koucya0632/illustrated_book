@@ -5,6 +5,24 @@ import { syncFromClient } from "@/lib/users-db";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+// Total word_ids the dictionary has is in the low hundreds — anything beyond
+// this is either a bug or someone trying to flood our DB with one-at-a-time
+// INSERTs.
+const MAX_IDS = 2000;
+const MAX_ID_LEN = 64;
+
+function cleanIds(input: unknown): string[] {
+  if (!Array.isArray(input)) return [];
+  const out: string[] = [];
+  for (const v of input) {
+    if (typeof v !== "string") continue;
+    if (v.length === 0 || v.length > MAX_ID_LEN) continue;
+    out.push(v);
+    if (out.length >= MAX_IDS) break;
+  }
+  return out;
+}
+
 // Merge localStorage state with server state. Called once after login/register.
 // Client posts whatever it has; server upserts and returns the authoritative
 // merged set, which the client then writes back to localStorage.
@@ -19,8 +37,8 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
-  const fav = Array.isArray(body.favorites) ? body.favorites.filter(s => typeof s === "string") : [];
-  const learned = Array.isArray(body.learned) ? body.learned.filter(s => typeof s === "string") : [];
+  const fav = cleanIds(body.favorites);
+  const learned = cleanIds(body.learned);
   const merged = await syncFromClient(userId, fav, learned);
   return NextResponse.json(merged);
 }

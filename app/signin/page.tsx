@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GoogleButton from "@/components/GoogleButton";
+import { safeNextPath } from "@/lib/safe-redirect";
 import SigninForm from "./SigninForm";
 
 export const metadata = { title: "登入 · Everyday English Picture Dictionary" };
@@ -9,7 +10,7 @@ export default function SigninPage({
 }: {
   searchParams: { next?: string; error?: string };
 }) {
-  const next = searchParams.next ?? "/me";
+  const next = safeNextPath(searchParams.next, "/me");
   return (
     <div className="max-w-md mx-auto px-4 py-12">
       <h1 className="text-2xl sm:text-3xl font-bold text-ink">登入</h1>

@@ -286,16 +286,21 @@ user_cards
 
 ```
 POST /api/auth/login {password}
-  ↓ 比對 process.env.ADMIN_PASSWORD
+  ↓ timingSafeEqual(password, process.env.ADMIN_PASSWORD)  // constant-time
   ↓ mintAdminToken() → "<expiryMs>.<hmac_b64url>"
-  ↓ Set-Cookie: eepd_admin=...; HttpOnly; Secure; 7d
+  ↓ Set-Cookie: eepd_admin=...; HttpOnly; Secure; SameSite=Lax; 7d
 
 middleware.ts on /admin/* or /api/admin/*:
-  ↓ verifyAdminToken(cookie) — HMAC over expiry，key = ADMIN_PASSWORD
+  ↓ verifyAdminToken(cookie) — HMAC over expiry
+  ↓   key = ADMIN_SECRET (preferred) || ADMIN_PASSWORD (fallback)
   ↓ 通過 → next()
   ↓ 失敗 + HTML → 302 /login?next=...
   ↓ 失敗 + JSON → 401
 ```
+
+> 設 `ADMIN_SECRET` 之後，密碼與簽章金鑰就解耦：rotate 密碼不會把所有 admin
+> session 一次踢出，而且密碼/金鑰任何一個外洩都不會直接破掉另一個。沒設時退回
+> 用 `ADMIN_PASSWORD` 簽章，向後相容。
 
 ### User accounts（多用戶 — Supabase Auth）
 
@@ -586,6 +591,7 @@ migrate       tsx scripts/migrate.ts         (手動跑)
 Vercel 偵測 Next.js → 跑 npm run vercel-build
   ↓
 tsx scripts/migrate.ts                # DDL idempotent + seed + cards
+                                      # 用 DATABASE_URL 連 Supabase pooler
   ↓
 next build                            # 105+ word pages SSG, 其餘 ISR/dynamic
   ↓
@@ -595,16 +601,20 @@ Edge / Node functions 打包
 
 ### 環境變數（Production）
 ```
-# DB (Vercel ↔ Neon Marketplace 自動注入)
-DATABASE_URL, POSTGRES_URL, PGHOST, ...
+# Supabase (Vercel ↔ Supabase Marketplace 自動注入)
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY    # 僅 server；繞過 RLS，給 fanout / admin 工具用
+DATABASE_URL                 # Postgres pooler (port 6543)，給 lib/db.ts 直連
 
 # Admin
-ADMIN_PASSWORD               # 也拿來 derive user-session HMAC key
-
-# Google OAuth (optional — 沒設則 /api/auth/google 回 503)
-GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET
+ADMIN_PASSWORD               # 後台單一密碼
+ADMIN_SECRET                 # 選填；admin cookie HMAC 簽章金鑰
+                             # 沒設時 fallback 用 ADMIN_PASSWORD（向後相容）
 ```
+
+> Google OAuth 的 client_id / secret 設在 **Supabase Dashboard**，不是專案環境變數。
+> 換句話說只要 Supabase 端的 Google provider 開好，前端 `signInWithOAuth` 就能用。
 
 ### `next.config.js` 圖片白名單
 ```
@@ -622,8 +632,15 @@ images.unsplash.com, source.unsplash.com, placehold.co
 ### Loremflickr fallback
 `lib/words.ts` 的 `img()` 工具產生 `https://loremflickr.com/600/450/{tag1,tag2}?lock={hash}`。`lock` 用 keyword hash 保證**同一個字永遠拿到同一張照片**。
 
-### Google OAuth
-DIY，沒裝 NextAuth。整流程在 `lib/google-oauth.ts` + 兩個 route。Redirect URI 從 `request.url.origin` 推導，必須在 Google Console 註冊完全相同的字串。
+### Google OAuth（透過 Supabase）
+**不是 DIY** — 整套 OAuth 由 Supabase 的 GoTrue 處理。前端 `supabase.auth.signInWithOAuth({ provider: "google" })` 就會把用戶送去 Google；回來時打到 `/auth/callback`，那支 route 只負責 `exchangeCodeForSession(code)` 並寫 cookie。
+
+設定點：
+- **Supabase Dashboard → Authentication → Providers → Google** 貼 Client ID/Secret
+- **Google Cloud Console** 把 Supabase 的 callback URL（`https://<project>.supabase.co/auth/v1/callback`）加進授權 redirect
+- 前端傳的 `redirectTo` 必須是專案網域，且該網域要加到 **Supabase → URL Configuration → Redirect URLs** 白名單裡
+
+`/auth/callback` 自己會驗證 `next` 是同源路徑（防 open redirect）。三個表單頁面（`/signin`、`/register`、`/login`）的 `next` 也透過 `lib/safe-redirect.ts` 統一驗證。
 
 ---
 
@@ -632,6 +649,7 @@ DIY，沒裝 NextAuth。整流程在 `lib/google-oauth.ts` + 兩個 route。Redi
 - **Server-only 模組**用 `import "server-only"` 標註（`lib/words-db.ts`, `lib/users-db.ts`, `lib/current-user.ts`），誤匯入 client 端會 build error。
 - **Edge routes**（middleware、登入登出、events）不能用 `cookies()` from `next/headers`，要從 `req.cookies` 讀。
 - **`unstable_cache` tag**：admin 寫完叫 `revalidateTag("words")`，ISR 自動失效。
-- **Neon serverless driver** 不支援 transactions over multi-statement，所以 migrate 沒包 BEGIN/COMMIT；每個 statement 獨立 idempotent。
+- **Supabase pooler (transaction mode)** 不支援跨 statement 的 prepared statement，所以 `lib/db.ts` 用 `prepare:false`；migrate 也沒包 BEGIN/COMMIT，每個 statement 獨立 idempotent。
+- **`lib/db.ts` 直連繞過 RLS**：`DATABASE_URL` 用的是 service-tier 角色，所以 Postgres RLS 不會被執行。所有 user-scoped 查詢都必須**顯式**帶 `WHERE user_id = ${userId}` — 這是真正的防線，RLS 只在 supabase-js 路徑生效。
 - **`DISTINCT` + `ORDER BY random()`** 在 PG 違法。乾擾項那邊改成過量抽 + JS dedupe。
 - **`vercel env pull` 拉不到 Marketplace 注入的 Sensitive 值**（DATABASE_URL 等顯示空字串）— 只能在 build/runtime 取得。所以本地開發若要 DB 連線，得從 Vercel dashboard 手動拷貝。

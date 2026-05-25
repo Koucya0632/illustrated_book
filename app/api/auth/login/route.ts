@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import { ADMIN_COOKIE, cookieMaxAgeSeconds, mintAdminToken } from "@/lib/auth";
+import {
+  ADMIN_COOKIE,
+  cookieMaxAgeSeconds,
+  mintAdminToken,
+  timingSafeEqual,
+} from "@/lib/auth";
 
 export const runtime = "edge";
 
@@ -20,7 +25,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  if (password !== expected) {
+  // Cap input length so an attacker can't probe byte-by-byte comparison
+  // timing with a huge supplied string.
+  if (password.length > 256 || !timingSafeEqual(password, expected)) {
     return NextResponse.json({ error: "wrong password" }, { status: 401 });
   }
 

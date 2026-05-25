@@ -24,7 +24,19 @@ export async function POST(req: Request) {
   const total = Number(body.total);
   const correct = Number(body.correct);
   const quizType = String(body.quizType ?? "");
-  if (!quizType || !Number.isInteger(total) || !Number.isInteger(correct)) {
+  // Bound everything so a client can't stuff arbitrary blobs into the DB.
+  // The current UI uses three short fixed strings ("image" | "chinese" |
+  // "spelling"); 32 chars is generous headroom.
+  if (
+    !quizType ||
+    quizType.length > 32 ||
+    !Number.isInteger(total) ||
+    !Number.isInteger(correct) ||
+    total < 0 ||
+    correct < 0 ||
+    total > 1000 ||
+    correct > total
+  ) {
     return NextResponse.json({ error: "missing fields" }, { status: 400 });
   }
   await recordQuiz(userId, quizType, total, correct);

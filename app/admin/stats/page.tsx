@@ -98,7 +98,6 @@ async function loadStats(days: Days, minAttempts: MinAttempts) {
     perDay,
     sessions7d: sessions7d[0]?.c ?? 0,
     wordMap,
-    totalWords: words.length,
     trendDays,
   };
 }
@@ -130,7 +129,6 @@ export default async function StatsPage({
     perDay,
     sessions7d,
     wordMap,
-    totalWords,
     trendDays,
   } = data;
 
@@ -164,18 +162,12 @@ export default async function StatsPage({
         />
       </section>
 
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <section className="grid grid-cols-2 gap-3">
         <Stat label={`總事件 (${days}d)`} value={totalEvents.toLocaleString()} emoji="📡" />
         <Stat
           label="不同訪客 (7d)"
           value={sessions7d.toLocaleString()}
           emoji="👥"
-        />
-        <Stat label="總單字" value={totalWords.toString()} emoji="📚" />
-        <Stat
-          label="事件類型"
-          value={byType.length.toString()}
-          emoji="🏷️"
         />
       </section>
 

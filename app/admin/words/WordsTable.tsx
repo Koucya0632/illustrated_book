@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { categories } from "@/lib/categories";
 import type { Word } from "@/types";
 
-type SortKey = "id" | "word" | "chinese" | "category";
+type SortKey = "word" | "chinese" | "category";
 type SortDir = "asc" | "desc";
 
 export default function WordsTable({ initial }: { initial: Word[] }) {
@@ -15,7 +15,7 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>("all");
   const [deleting, setDeleting] = useState<string | null>(null);
-  const [sortKey, setSortKey] = useState<SortKey>("id");
+  const [sortKey, setSortKey] = useState<SortKey>("word");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
 
   function toggleSort(key: SortKey) {
@@ -95,7 +95,6 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
           <thead className="bg-cream text-muted">
             <tr>
               <th className="text-left px-3 py-2 w-12">圖</th>
-              <SortHeader label="id" sortKey="id" current={sortKey} dir={sortDir} onClick={toggleSort} />
               <SortHeader label="英文" sortKey="word" current={sortKey} dir={sortDir} onClick={toggleSort} />
               <SortHeader label="中文" sortKey="chinese" current={sortKey} dir={sortDir} onClick={toggleSort} />
               <SortHeader
@@ -114,9 +113,15 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
               <tr key={w.id} className="border-t border-black/5 hover:bg-cream/40">
                 <td className="px-3 py-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={w.imageUrl} alt={w.word} className="w-10 h-10 rounded object-cover bg-cream" />
+                  <img
+                    src={w.imageUrl}
+                    alt={w.word}
+                    title={w.id}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-10 h-10 rounded object-cover bg-cream"
+                  />
                 </td>
-                <td className="px-3 py-2 font-mono text-xs text-muted">{w.id}</td>
                 <td className="px-3 py-2 font-semibold text-ink">{w.word}</td>
                 <td className="px-3 py-2">{w.chinese}</td>
                 <td className="px-3 py-2 hidden sm:table-cell text-muted">{w.category}</td>
@@ -139,7 +144,7 @@ export default function WordsTable({ initial }: { initial: Word[] }) {
             ))}
             {rows.length === 0 && (
               <tr>
-                <td colSpan={6} className="px-3 py-8 text-center text-muted">
+                <td colSpan={5} className="px-3 py-8 text-center text-muted">
                   沒有資料
                 </td>
               </tr>

@@ -272,10 +272,15 @@ const DDL = [
    )`,
 
   // ---- word_relations: typed graph (synonym / antonym / confusing / ...) ----
+  // target_word_id is intentionally NOT a foreign key: legacy 'confusing'
+  // notes (e.g. fridge → refrigerator) point at concept words that aren't in
+  // the dictionary yet, and 'see-also' often references a category/topic.
+  // Source side keeps CASCADE so cleanup on word delete is automatic. The
+  // tgt index is still maintained for "what links here" queries.
   `CREATE TABLE IF NOT EXISTS word_relations (
      id             BIGSERIAL PRIMARY KEY,
      source_word_id TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
-     target_word_id TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     target_word_id TEXT NOT NULL,
      relation_type  TEXT NOT NULL,
      note           TEXT,
      created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -283,6 +288,17 @@ const DDL = [
      CHECK (source_word_id <> target_word_id),
      CHECK (relation_type IN ('synonym','antonym','hypernym','hyponym','confusing','see-also'))
    )`,
+  // Drop the FK on existing deployments where the original strict schema
+  // already created it. Idempotent.
+  `DO $$ BEGIN
+     IF EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conrelid = 'word_relations'::regclass
+         AND conname = 'word_relations_target_word_id_fkey'
+     ) THEN
+       ALTER TABLE word_relations DROP CONSTRAINT word_relations_target_word_id_fkey;
+     END IF;
+   END $$`,
   `CREATE INDEX IF NOT EXISTS word_rel_src_idx ON word_relations(source_word_id)`,
   `CREATE INDEX IF NOT EXISTS word_rel_tgt_idx ON word_relations(target_word_id)`,
 
@@ -450,13 +466,15 @@ async function backfillSchemaV2(sql: any) {
   console.log(`[migrate] word_examples: ${exInserted} new rows`);
 
   // 4. word_relations — related_words → see-also, confusing_words → confusing.
-  //    The WHERE EXISTS guard drops dangling targets so the FK doesn't fire.
+  //    No FK on target now, so dangling targets (concept words like
+  //    "refrigerator" or "kitchen" that aren't dictionary entries) survive.
+  //    The display layer skips entries it can't resolve when rendering
+  //    clickable links, but the note text still appears for confusing.
   const relSeeAlso = await sql`
     INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
     SELECT w.id, t, 'see-also', NULL
     FROM words w, unnest(w.related_words) AS t
-    WHERE EXISTS (SELECT 1 FROM words WHERE id = t)
-      AND t <> w.id
+    WHERE t <> w.id
     ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
     RETURNING id
   `;
@@ -473,8 +491,7 @@ async function backfillSchemaV2(sql: any) {
     INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
     SELECT n.id, (c->>'word'), 'confusing', (c->>'note')
     FROM normalized n, jsonb_array_elements(n.items) AS c
-    WHERE EXISTS (SELECT 1 FROM words WHERE id = c->>'word')
-      AND (c->>'word') <> n.id
+    WHERE (c->>'word') <> n.id
     ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
     RETURNING id
   `;

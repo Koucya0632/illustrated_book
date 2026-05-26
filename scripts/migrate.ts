@@ -195,6 +195,15 @@ const DDL = [
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS cefr_level TEXT`,
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS status     TEXT NOT NULL DEFAULT 'published'`,
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMPTZ`,
+  // ---- Images: self-hosted Storage + provenance (record-keeping) --------
+  // image_url itself now holds a Supabase Storage public URL after backfill;
+  // image_source_url records the original external URL (so we can re-fetch
+  // if needed); image_license / image_credit are free-form audit columns
+  // (currently not surfaced in UI, but stored so future legal review is
+  // possible without re-deriving from each URL).
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS image_source_url TEXT`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS image_license    TEXT`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS image_credit     TEXT`,
   // CHECK constraints — wrapped so repeated migrate runs don't blow up.
   `DO $$ BEGIN
      IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_cefr_chk') THEN

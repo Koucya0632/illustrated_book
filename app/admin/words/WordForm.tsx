@@ -218,7 +218,11 @@ export default function WordForm({
           />
         </Field>
         <Field label="圖片 URL" required>
-          <input value={w.imageUrl} onChange={(e) => set("imageUrl", e.target.value)} className={INPUT} placeholder="https://..." />
+          <ImageField
+            wordId={w.id}
+            imageUrl={w.imageUrl}
+            onChange={(url) => set("imageUrl", url)}
+          />
         </Field>
         <Field label="難度 (CEFR)">
           <select
@@ -454,5 +458,78 @@ function Field({
       </span>
       <div className="mt-1">{children}</div>
     </label>
+  );
+}
+
+function ImageField({
+  wordId,
+  imageUrl,
+  onChange,
+}: {
+  wordId: string;
+  imageUrl: string;
+  onChange: (url: string) => void;
+}) {
+  const [uploading, setUploading] = useState(false);
+  const [uploadErr, setUploadErr] = useState<string | null>(null);
+
+  async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    e.target.value = ""; // allow re-uploading the same file
+    if (!file) return;
+    if (!wordId || !/^[a-z0-9-]+$/.test(wordId)) {
+      setUploadErr("先填好 id（kebab-case）再上傳");
+      return;
+    }
+    setUploadErr(null);
+    setUploading(true);
+    try {
+      const body = new FormData();
+      body.set("id", wordId);
+      body.set("file", file);
+      const res = await fetch("/api/admin/upload", { method: "POST", body });
+      const j = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(j.error || `upload failed (${res.status})`);
+      // Cache-bust so the preview reflects the new image immediately.
+      onChange(j.url + `?v=${Date.now()}`);
+    } catch (err) {
+      setUploadErr(err instanceof Error ? err.message : "upload failed");
+    } finally {
+      setUploading(false);
+    }
+  }
+
+  return (
+    <div className="space-y-2">
+      <input
+        value={imageUrl}
+        onChange={(e) => onChange(e.target.value)}
+        className={INPUT}
+        placeholder="貼上 URL，或下方上傳檔案"
+      />
+      <div className="flex items-center gap-3">
+        <label className="text-xs px-3 py-1.5 rounded-full bg-white shadow-soft hover:shadow-card cursor-pointer">
+          {uploading ? "上傳中…" : "📤 上傳圖片"}
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            className="hidden"
+            onChange={handleFile}
+            disabled={uploading}
+          />
+        </label>
+        {imageUrl && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={imageUrl}
+            alt="preview"
+            className="w-12 h-12 rounded object-cover bg-cream"
+          />
+        )}
+      </div>
+      {uploadErr && (
+        <p className="text-xs text-rose-600 bg-rose-50 rounded px-2 py-1">{uploadErr}</p>
+      )}
+    </div>
   );
 }

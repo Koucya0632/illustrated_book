@@ -7,6 +7,7 @@
 // Skips gracefully if DATABASE_URL is not set (e.g. local dev without DB).
 
 import postgres from "postgres";
+import { categories as seedCategories } from "../lib/categories";
 import { words as seedWords } from "../lib/words";
 
 const DDL = [
@@ -182,6 +183,129 @@ const DDL = [
   `CREATE POLICY cards_public_read ON cards FOR SELECT USING (true)`,
   `DROP POLICY IF EXISTS events_anon_insert ON events`,
   `CREATE POLICY events_anon_insert ON events FOR INSERT WITH CHECK (true)`,
+
+  // =====================================================================
+  // Schema v2 (additive only — Phase 1 of the words refactor)
+  // - words.chinese / examples / related_words / confusing_words remain
+  //   until application is fully migrated. Phase 3 drops them.
+  // =====================================================================
+
+  // ---- Words: new columns (audio, CEFR, soft delete, draft/archive) ----
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS audio_url  TEXT`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS cefr_level TEXT`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS status     TEXT NOT NULL DEFAULT 'published'`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMPTZ`,
+  // CHECK constraints — wrapped so repeated migrate runs don't blow up.
+  `DO $$ BEGIN
+     IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_cefr_chk') THEN
+       ALTER TABLE words ADD CONSTRAINT words_cefr_chk
+         CHECK (cefr_level IS NULL OR cefr_level IN ('A1','A2','B1','B2','C1','C2'));
+     END IF;
+     IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_status_chk') THEN
+       ALTER TABLE words ADD CONSTRAINT words_status_chk
+         CHECK (status IN ('draft','published','archived'));
+     END IF;
+   END $$`,
+
+  // ---- categories: pull out the hardcoded enum into a reference table ----
+  `CREATE TABLE IF NOT EXISTS categories (
+     id          TEXT PRIMARY KEY,
+     name        TEXT NOT NULL,
+     name_zh     TEXT NOT NULL,
+     emoji       TEXT NOT NULL,
+     description TEXT,
+     color       TEXT,
+     image_url   TEXT,
+     sort_order  INT NOT NULL DEFAULT 0,
+     created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  // FK words.category → categories.id is added in backfillSchemaV2 after
+  // the categories rows are seeded — adding it here would fail because the
+  // categories table is empty when the DDL batch runs.
+
+  // ---- tags: free-form labels (no hardcoded list) ----
+  `CREATE TABLE IF NOT EXISTS tags (
+     id         TEXT PRIMARY KEY,
+     name       TEXT NOT NULL,
+     emoji      TEXT,
+     color      TEXT,
+     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE TABLE IF NOT EXISTS word_tags (
+     word_id TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     tag_id  TEXT NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
+     PRIMARY KEY (word_id, tag_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_tags_tag_idx ON word_tags(tag_id)`,
+
+  // ---- word_definitions: multi-language meanings ----
+  `CREATE TABLE IF NOT EXISTS word_definitions (
+     id          BIGSERIAL PRIMARY KEY,
+     word_id     TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     language    TEXT NOT NULL,
+     definition  TEXT NOT NULL,
+     cefr_level  TEXT,
+     sort_order  INT NOT NULL DEFAULT 0,
+     created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+     UNIQUE (word_id, language, sort_order),
+     CHECK (cefr_level IS NULL OR cefr_level IN ('A1','A2','B1','B2','C1','C2'))
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_defs_word_lang_idx ON word_definitions(word_id, language)`,
+
+  // ---- word_examples + translations ----
+  `CREATE TABLE IF NOT EXISTS word_examples (
+     id          BIGSERIAL PRIMARY KEY,
+     word_id     TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     sentence    TEXT NOT NULL,
+     cefr_level  TEXT,
+     sort_order  INT NOT NULL DEFAULT 0,
+     created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+     CHECK (cefr_level IS NULL OR cefr_level IN ('A1','A2','B1','B2','C1','C2'))
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_examples_word_idx ON word_examples(word_id)`,
+  `CREATE TABLE IF NOT EXISTS word_example_translations (
+     example_id  BIGINT NOT NULL REFERENCES word_examples(id) ON DELETE CASCADE,
+     language    TEXT NOT NULL,
+     translation TEXT NOT NULL,
+     PRIMARY KEY (example_id, language)
+   )`,
+
+  // ---- word_relations: typed graph (synonym / antonym / confusing / ...) ----
+  `CREATE TABLE IF NOT EXISTS word_relations (
+     id             BIGSERIAL PRIMARY KEY,
+     source_word_id TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     target_word_id TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     relation_type  TEXT NOT NULL,
+     note           TEXT,
+     created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+     UNIQUE (source_word_id, target_word_id, relation_type),
+     CHECK (source_word_id <> target_word_id),
+     CHECK (relation_type IN ('synonym','antonym','hypernym','hyponym','confusing','see-also'))
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_rel_src_idx ON word_relations(source_word_id)`,
+  `CREATE INDEX IF NOT EXISTS word_rel_tgt_idx ON word_relations(target_word_id)`,
+
+  // ---- RLS on the new tables: public SELECT, writes via service role only ----
+  `ALTER TABLE categories                ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE tags                      ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_tags                 ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_definitions          ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_examples             ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_example_translations ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_relations            ENABLE ROW LEVEL SECURITY`,
+  ...[
+    "categories",
+    "tags",
+    "word_tags",
+    "word_definitions",
+    "word_examples",
+    "word_example_translations",
+    "word_relations",
+  ].flatMap((t) => [
+    `DROP POLICY IF EXISTS ${t}_public_read ON ${t}`,
+    `CREATE POLICY ${t}_public_read ON ${t} FOR SELECT USING (true)`,
+  ]),
 ];
 
 // ---- card generator ----
@@ -241,6 +365,122 @@ function cardsForWord(w: (typeof seedWords)[number]): SeedCard[] {
     });
   }
   return out;
+}
+
+// ---- Schema v2 backfill ----
+// Reads the legacy columns on `words` and projects them into the new
+// normalized tables. Every statement is idempotent (ON CONFLICT DO NOTHING
+// or skip-if-rows-exist), so re-running migrate is safe.
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function backfillSchemaV2(sql: any) {
+  // 1. categories — seed from the static TS source
+  for (const c of seedCategories) {
+    await sql`
+      INSERT INTO categories (id, name, name_zh, emoji, description, color, image_url, sort_order)
+      VALUES (
+        ${c.id}, ${c.name}, ${c.nameZh}, ${c.emoji},
+        ${c.description}, ${c.color}, ${c.imageUrl},
+        ${seedCategories.indexOf(c)}
+      )
+      ON CONFLICT (id) DO NOTHING
+    `;
+  }
+  const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;
+  console.log(`[migrate] categories: ${catCount} rows`);
+
+  // Now that categories has rows, attach the FK (idempotent).
+  await sql.unsafe(`
+    DO $$ BEGIN
+      IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_category_fk') THEN
+        ALTER TABLE words ADD CONSTRAINT words_category_fk
+          FOREIGN KEY (category) REFERENCES categories(id) ON DELETE RESTRICT;
+      END IF;
+    END $$
+  `);
+
+  // 2. word_definitions — pull chinese into (lang='zh', sort_order=0)
+  const defRes = await sql`
+    INSERT INTO word_definitions (word_id, language, definition, sort_order)
+    SELECT id, 'zh', chinese, 0 FROM words
+    WHERE chinese IS NOT NULL AND chinese <> ''
+    ON CONFLICT (word_id, language, sort_order) DO NOTHING
+    RETURNING id
+  `;
+  console.log(`[migrate] word_definitions: ${defRes.length} new rows`);
+
+  // 3. word_examples + translations — explode the JSONB array.
+  //    Idempotency: only backfill words that have ZERO examples in the new
+  //    table yet. Some legacy rows have `examples` stored as a JSONB *string*
+  //    containing a serialized array (double-encoded); normalize both shapes
+  //    in SQL so the JS side doesn't have to branch.
+  const wordsNeedingExamples = await sql`
+    SELECT id,
+      CASE
+        WHEN jsonb_typeof(examples) = 'array'  THEN examples
+        WHEN jsonb_typeof(examples) = 'string' THEN (examples #>> '{}')::jsonb
+        ELSE '[]'::jsonb
+      END AS examples
+    FROM words w
+    WHERE examples IS NOT NULL
+      AND NOT EXISTS (SELECT 1 FROM word_examples WHERE word_id = w.id)
+  `;
+  let exInserted = 0;
+  for (const w of wordsNeedingExamples) {
+    const examples = Array.isArray(w.examples) ? w.examples : JSON.parse(w.examples);
+    if (!Array.isArray(examples) || examples.length === 0) continue;
+    for (let i = 0; i < examples.length; i++) {
+      const ex = examples[i] as { en: string; zh: string };
+      if (!ex?.en) continue;
+      const [{ id }] = await sql`
+        INSERT INTO word_examples (word_id, sentence, sort_order)
+        VALUES (${w.id}, ${ex.en}, ${i})
+        RETURNING id
+      `;
+      if (ex.zh) {
+        await sql`
+          INSERT INTO word_example_translations (example_id, language, translation)
+          VALUES (${id}, 'zh', ${ex.zh})
+          ON CONFLICT (example_id, language) DO NOTHING
+        `;
+      }
+      exInserted++;
+    }
+  }
+  console.log(`[migrate] word_examples: ${exInserted} new rows`);
+
+  // 4. word_relations — related_words → see-also, confusing_words → confusing.
+  //    The WHERE EXISTS guard drops dangling targets so the FK doesn't fire.
+  const relSeeAlso = await sql`
+    INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
+    SELECT w.id, t, 'see-also', NULL
+    FROM words w, unnest(w.related_words) AS t
+    WHERE EXISTS (SELECT 1 FROM words WHERE id = t)
+      AND t <> w.id
+    ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
+    RETURNING id
+  `;
+  const relConfusing = await sql`
+    WITH normalized AS (
+      SELECT id,
+        CASE
+          WHEN jsonb_typeof(confusing_words) = 'array'  THEN confusing_words
+          WHEN jsonb_typeof(confusing_words) = 'string' THEN (confusing_words #>> '{}')::jsonb
+          ELSE '[]'::jsonb
+        END AS items
+      FROM words
+    )
+    INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
+    SELECT n.id, (c->>'word'), 'confusing', (c->>'note')
+    FROM normalized n, jsonb_array_elements(n.items) AS c
+    WHERE EXISTS (SELECT 1 FROM words WHERE id = c->>'word')
+      AND (c->>'word') <> n.id
+    ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
+    RETURNING id
+  `;
+  console.log(
+    `[migrate] word_relations: ${relSeeAlso.length} see-also, ${relConfusing.length} confusing`,
+  );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -307,6 +547,7 @@ async function main() {
     }
 
     await generateCards(sql);
+    await backfillSchemaV2(sql);
   } finally {
     await sql.end();
   }

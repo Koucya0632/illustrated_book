@@ -78,26 +78,23 @@ function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-async function fetchWithRetry(url: string, maxRetries = 4): Promise<Response> {
-  let delay = 1000;
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const res = await fetch(url, {
-      headers: {
-        // Wikimedia 403s on requests without a User-Agent.
-        "User-Agent": "everyday-english-picture-dictionary/1.0 (backfill)",
-      },
-      redirect: "follow",
-    });
-    if (res.status !== 429 || attempt === maxRetries) return res;
-    // 429: respect Retry-After if present, else exponential backoff.
-    const retryAfter = Number(res.headers.get("retry-after"));
-    const waitMs = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : delay;
-    console.log(`    429 — waiting ${Math.round(waitMs / 1000)}s before retry ${attempt + 1}`);
-    await sleep(waitMs);
-    delay = Math.min(delay * 2, 30_000);
-  }
-  // unreachable
-  throw new Error("retry loop exhausted");
+// Fail fast on 429: one retry only, with a short wait. The script is
+// designed to be re-run repeatedly, so missing rows on a given pass are
+// fine — the next run resumes where the previous left off (via the
+// bucket-listing skip path). This avoids long stalls behind Wikimedia's
+// minutes-long backoff windows.
+async function fetchWithRetry(url: string): Promise<Response> {
+  const res = await fetch(url, {
+    headers: { "User-Agent": "everyday-english-picture-dictionary/1.0 (backfill)" },
+    redirect: "follow",
+  });
+  if (res.status !== 429) return res;
+  console.log("    429 — waiting 20s and retrying once");
+  await sleep(20_000);
+  return await fetch(url, {
+    headers: { "User-Agent": "everyday-english-picture-dictionary/1.0 (backfill)" },
+    redirect: "follow",
+  });
 }
 
 async function uploadOne(
@@ -207,8 +204,10 @@ async function main() {
       `;
       ok++;
       console.log(`  ✓ ${row.id} → ${newUrl}`);
-      // Be polite to Wikimedia between requests.
-      if (!existing.has(row.id)) await sleep(400);
+      // Aggressive politeness — 25s gap empirically keeps us under the
+      // 429 cliff for individual files. Skipped rows (already in bucket)
+      // contribute no delay so re-runs are cheap.
+      if (!existing.has(row.id)) await sleep(25_000);
     }
 
     console.log(

@@ -136,14 +136,24 @@ function requireSql() {
   return sql;
 }
 
+export interface QueueFilter {
+  /** Restrict to words with `cefr_level` in this set. Empty/undefined = no filter. */
+  cefr?: string[];
+  /** Restrict to words that have ALL of these tags. */
+  tags?: string[];
+}
+
 // "Due" = unseen cards (no user_cards row) + cards whose next_review_at ≤ now.
 // New cards are limited per session to avoid overwhelming the user.
 export async function fetchDue(
   userId: string,
   limit = 20,
   newLimit = 10,
+  filter: QueueFilter = {},
 ): Promise<DueCard[]> {
   const sql = requireSql();
+  const cefr = (filter.cefr ?? []).filter((c) => /^[A-C][12]$/.test(c));
+  const tags = (filter.tags ?? []).filter((t) => t.length > 0);
 
   // Review queue: ordered by due date asc.
   const reviewRows = (await sql`
@@ -157,6 +167,17 @@ export async function fetchDue(
     JOIN words w ON w.id = c.word_id
     WHERE uc.user_id = ${userId}::uuid
       AND uc.next_review_at <= now()
+      AND w.deleted_at IS NULL
+      AND w.status = 'published'
+      ${cefr.length ? sql`AND w.cefr_level = ANY(${cefr})` : sql``}
+      ${tags.length
+        ? sql`AND NOT EXISTS (
+            SELECT t FROM unnest(${tags}::text[]) AS t
+            WHERE NOT EXISTS (
+              SELECT 1 FROM word_tags wt WHERE wt.word_id = w.id AND wt.tag_id = t
+            )
+          )`
+        : sql``}
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
   `) as unknown as Record<string, unknown>[];
@@ -173,6 +194,17 @@ export async function fetchDue(
       SELECT 1 FROM user_cards uc
       WHERE uc.user_id = ${userId}::uuid AND uc.card_id = c.id
     )
+      AND w.deleted_at IS NULL
+      AND w.status = 'published'
+      ${cefr.length ? sql`AND w.cefr_level = ANY(${cefr})` : sql``}
+      ${tags.length
+        ? sql`AND NOT EXISTS (
+            SELECT t FROM unnest(${tags}::text[]) AS t
+            WHERE NOT EXISTS (
+              SELECT 1 FROM word_tags wt WHERE wt.word_id = w.id AND wt.tag_id = t
+            )
+          )`
+        : sql``}
     ORDER BY c.id ASC
     LIMIT ${Math.min(remaining, newLimit)}
   `) as unknown as Record<string, unknown>[]) : [];

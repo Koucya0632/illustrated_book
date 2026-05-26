@@ -17,9 +17,19 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit") || 20)));
   const newLimit = Math.min(20, Math.max(0, Number(searchParams.get("new") || 10)));
+  // Comma-separated lists, e.g. `?cefr=A1,A2&tags=daily-life,kitchen`.
+  // fetchDue validates CEFR strictly; tags are passed through (free-form).
+  const cefr = (searchParams.get("cefr") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  const tags = (searchParams.get("tags") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   const [queue, stats] = await Promise.all([
-    fetchDue(userId, limit, newLimit),
+    fetchDue(userId, limit, newLimit, { cefr, tags }),
     studyStats(userId),
   ]);
   await attachMasteryAndSort(userId, queue);

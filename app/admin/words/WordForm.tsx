@@ -3,14 +3,34 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { categories } from "@/lib/categories";
-import type { CategoryId, ConfusingWord, Example, Word } from "@/types";
+import type {
+  CEFRLevel,
+  CategoryId,
+  Definition,
+  Example,
+  RelationType,
+  Word,
+  WordRelation,
+  WordStatus,
+} from "@/types";
 
 type Mode = "create" | "edit";
 
-// Phase 2b will replace this form with new-field repeaters (CEFR, status,
-// tags, definitions, typed relations). For now the form still edits the
-// legacy fields (chinese, examples.zh, relatedWords, confusingWords) and
-// we synthesize the v2 sub-arrays at save time.
+const CEFR_LEVELS: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
+const RELATION_TYPES: { value: RelationType; label: string }[] = [
+  { value: "synonym", label: "同義 synonym" },
+  { value: "antonym", label: "反義 antonym" },
+  { value: "hypernym", label: "上位 hypernym" },
+  { value: "hyponym", label: "下位 hyponym" },
+  { value: "confusing", label: "易混淆 confusing" },
+  { value: "see-also", label: "相關 see-also" },
+];
+const COMMON_LANGUAGES = [
+  { code: "zh", label: "中文 zh" },
+  { code: "ja", label: "日文 ja" },
+  { code: "en", label: "English en" },
+];
+
 function makeExample(en = "", zh = "", sortOrder = 0): Example {
   return { en, zh, translations: { zh }, sortOrder };
 }
@@ -22,7 +42,9 @@ const empty: Word = {
   category: "kitchen" as CategoryId,
   partOfSpeech: "noun",
   pronunciation: "",
+  audioUrl: undefined,
   imageUrl: "",
+  cefrLevel: undefined,
   status: "published",
   definitions: [{ language: "zh", definition: "", sortOrder: 0 }],
   chinese: "",
@@ -30,8 +52,6 @@ const empty: Word = {
   examples: [makeExample()],
   tags: [],
   relations: [],
-  relatedWords: [],
-  confusingWords: [],
   note: "",
 };
 
@@ -51,7 +71,7 @@ export default function WordForm({
     setW((prev) => ({ ...prev, [key]: value }));
   }
 
-  function setListString(key: "alsoKnownAs" | "collocations" | "relatedWords", value: string) {
+  function setListString(key: "alsoKnownAs" | "collocations" | "tags", value: string) {
     const arr = value
       .split(",")
       .map((s) => s.trim())
@@ -59,16 +79,33 @@ export default function WordForm({
     set(key, arr as Word[typeof key]);
   }
 
+  // ----- definitions -----
+  function updateDef(i: number, patch: Partial<Definition>) {
+    set("definitions", w.definitions.map((d, idx) => (idx === i ? { ...d, ...patch } : d)));
+  }
+  function addDef() {
+    set("definitions", [
+      ...w.definitions,
+      { language: "zh", definition: "", sortOrder: w.definitions.length },
+    ]);
+  }
+  function removeDef(i: number) {
+    if (w.definitions.length <= 1) return;
+    set("definitions", w.definitions.filter((_, idx) => idx !== i));
+  }
+
+  // ----- examples (multilingual translations) -----
   function updateExample(i: number, patch: Partial<Example>) {
+    const next = w.examples.map((ex, idx) => (idx === i ? { ...ex, ...patch } : ex));
+    set("examples", next);
+  }
+  function updateExampleTranslation(i: number, lang: string, value: string) {
     const next = w.examples.map((ex, idx) => {
       if (idx !== i) return ex;
-      const merged = { ...ex, ...patch };
-      // Keep the zh shortcut and the translations map in lockstep when the
-      // legacy UI edits `zh` directly.
-      if (patch.zh !== undefined) {
-        merged.translations = { ...merged.translations, zh: patch.zh };
-      }
-      return merged;
+      const translations = { ...ex.translations, [lang]: value };
+      // Keep the convenience `zh` field in sync when zh is the one being edited.
+      const zh = lang === "zh" ? value : ex.zh;
+      return { ...ex, translations, zh };
     });
     set("examples", next);
   }
@@ -80,17 +117,15 @@ export default function WordForm({
     set("examples", w.examples.filter((_, idx) => idx !== i));
   }
 
-  function updateConfusing(i: number, patch: Partial<ConfusingWord>) {
-    const cur = w.confusingWords ?? [];
-    const next = cur.map((c, idx) => (idx === i ? { ...c, ...patch } : c));
-    set("confusingWords", next);
+  // ----- relations (typed) -----
+  function updateRel(i: number, patch: Partial<WordRelation>) {
+    set("relations", w.relations.map((r, idx) => (idx === i ? { ...r, ...patch } : r)));
   }
-  function addConfusing() {
-    set("confusingWords", [...(w.confusingWords ?? []), { word: "", note: "" }]);
+  function addRel() {
+    set("relations", [...w.relations, { wordId: "", type: "see-also" }]);
   }
-  function removeConfusing(i: number) {
-    const cur = w.confusingWords ?? [];
-    set("confusingWords", cur.filter((_, idx) => idx !== i));
+  function removeRel(i: number) {
+    set("relations", w.relations.filter((_, idx) => idx !== i));
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -102,10 +137,22 @@ export default function WordForm({
         ? "/api/admin/words"
         : `/api/admin/words/${encodeURIComponent(initial!.id)}`;
       const method = mode === "create" ? "POST" : "PATCH";
+      // Project relations down to the legacy fields so the validator + the
+      // legacy storage columns are also populated.
+      const seeAlso = w.relations.filter((r) => r.type === "see-also").map((r) => r.wordId);
+      const confusing = w.relations
+        .filter((r) => r.type === "confusing")
+        .map((r) => ({ word: r.wordId, note: r.note ?? "" }));
+      // Make sure the legacy `chinese` mirror is the first zh definition (the
+      // server still requires it until Phase 3 drops the column).
+      const zhDef = w.definitions.find((d) => d.language === "zh")?.definition ?? "";
       const cleaned: Word = {
         ...w,
-        confusingWords: (w.confusingWords ?? []).filter((c) => c.word.trim()),
+        chinese: zhDef,
         note: w.note?.trim() || undefined,
+        audioUrl: w.audioUrl?.trim() || undefined,
+        relatedWords: seeAlso,
+        confusingWords: confusing,
       };
       const res = await fetch(url, {
         method,
@@ -144,7 +191,7 @@ export default function WordForm({
           <select
             value={w.category}
             onChange={(e) => set("category", e.target.value as CategoryId)}
-            className="w-full rounded-lg bg-white px-3 py-2 outline-none border border-black/10 focus:ring-2 ring-sky-accent"
+            className={INPUT}
           >
             {categories.map((c) => (
               <option key={c.id} value={c.id}>
@@ -156,17 +203,45 @@ export default function WordForm({
         <Field label="英文" required>
           <input value={w.word} onChange={(e) => set("word", e.target.value)} className={INPUT} />
         </Field>
-        <Field label="中文" required>
-          <input value={w.chinese} onChange={(e) => set("chinese", e.target.value)} className={INPUT} />
-        </Field>
         <Field label="詞性" required>
           <input value={w.partOfSpeech} onChange={(e) => set("partOfSpeech", e.target.value)} className={INPUT} placeholder="noun, verb, adjective..." />
         </Field>
-        <Field label="音標" required>
+        <Field label="音標 (IPA)" required>
           <input value={w.pronunciation} onChange={(e) => set("pronunciation", e.target.value)} className={INPUT} placeholder="/frɪdʒ/" />
+        </Field>
+        <Field label="發音音檔 URL (選填)">
+          <input
+            value={w.audioUrl ?? ""}
+            onChange={(e) => set("audioUrl", e.target.value)}
+            className={INPUT}
+            placeholder="https://...mp3"
+          />
         </Field>
         <Field label="圖片 URL" required>
           <input value={w.imageUrl} onChange={(e) => set("imageUrl", e.target.value)} className={INPUT} placeholder="https://..." />
+        </Field>
+        <Field label="難度 (CEFR)">
+          <select
+            value={w.cefrLevel ?? ""}
+            onChange={(e) => set("cefrLevel", (e.target.value || undefined) as CEFRLevel | undefined)}
+            className={INPUT}
+          >
+            <option value="">— 未指定 —</option>
+            {CEFR_LEVELS.map((l) => (
+              <option key={l} value={l}>{l}</option>
+            ))}
+          </select>
+        </Field>
+        <Field label="狀態" required>
+          <select
+            value={w.status}
+            onChange={(e) => set("status", e.target.value as WordStatus)}
+            className={INPUT}
+          >
+            <option value="published">published（公開）</option>
+            <option value="draft">draft（草稿，不公開）</option>
+            <option value="archived">archived（封存，不公開）</option>
+          </select>
         </Field>
         <Field label="同義 / 別稱 (逗號分隔)">
           <input
@@ -184,12 +259,12 @@ export default function WordForm({
             placeholder="open the fridge, put in the fridge"
           />
         </Field>
-        <Field label="相關單字 (逗號分隔 id)">
+        <Field label="tags (逗號分隔 slug)">
           <input
-            defaultValue={(w.relatedWords ?? []).join(", ")}
-            onBlur={(e) => setListString("relatedWords", e.target.value)}
+            defaultValue={w.tags.join(", ")}
+            onBlur={(e) => setListString("tags", e.target.value)}
             className={INPUT}
-            placeholder="freezer, milk, kitchen"
+            placeholder="formal, slang, business"
           />
         </Field>
       </div>
@@ -205,59 +280,41 @@ export default function WordForm({
       </Field>
 
       <fieldset className="space-y-3">
-        <legend className="font-semibold text-ink">例句</legend>
-        {w.examples.map((ex, i) => (
-          <div key={i} className="grid sm:grid-cols-2 gap-2 bg-cream rounded-lg p-3">
-            <input
-              value={ex.en}
-              onChange={(e) => updateExample(i, { en: e.target.value })}
-              placeholder="English example"
-              className={INPUT}
-            />
-            <input
-              value={ex.zh}
-              onChange={(e) => updateExample(i, { zh: e.target.value })}
-              placeholder="中文翻譯"
-              className={INPUT}
-            />
-            <button
-              type="button"
-              onClick={() => removeExample(i)}
-              className="text-xs text-rose-500 hover:underline justify-self-start"
-            >
-              移除這句
-            </button>
-          </div>
-        ))}
-        <button
-          type="button"
-          onClick={addExample}
-          className="text-sm text-sky-accent hover:underline"
-        >
-          + 加一句例句
-        </button>
-      </fieldset>
-
-      <fieldset className="space-y-3">
-        <legend className="font-semibold text-ink">易混淆的詞</legend>
-        {(w.confusingWords ?? []).map((c, i) => (
-          <div key={i} className="grid sm:grid-cols-3 gap-2 bg-cream rounded-lg p-3">
-            <input
-              value={c.word}
-              onChange={(e) => updateConfusing(i, { word: e.target.value })}
-              placeholder="word"
-              className={INPUT}
-            />
-            <input
-              value={c.note}
-              onChange={(e) => updateConfusing(i, { note: e.target.value })}
-              placeholder="note"
+        <legend className="font-semibold text-ink">定義（多語言）</legend>
+        {w.definitions.map((d, i) => (
+          <div key={i} className="grid sm:grid-cols-12 gap-2 bg-cream rounded-lg p-3 items-center">
+            <select
+              value={d.language}
+              onChange={(e) => updateDef(i, { language: e.target.value })}
               className={INPUT + " sm:col-span-2"}
+            >
+              {COMMON_LANGUAGES.map((l) => (
+                <option key={l.code} value={l.code}>{l.label}</option>
+              ))}
+            </select>
+            <input
+              value={d.definition}
+              onChange={(e) => updateDef(i, { definition: e.target.value })}
+              placeholder="意思"
+              className={INPUT + " sm:col-span-7"}
             />
+            <select
+              value={d.cefrLevel ?? ""}
+              onChange={(e) =>
+                updateDef(i, { cefrLevel: (e.target.value || undefined) as CEFRLevel | undefined })
+              }
+              className={INPUT + " sm:col-span-2"}
+            >
+              <option value="">CEFR—</option>
+              {CEFR_LEVELS.map((l) => (
+                <option key={l} value={l}>{l}</option>
+              ))}
+            </select>
             <button
               type="button"
-              onClick={() => removeConfusing(i)}
-              className="text-xs text-rose-500 hover:underline justify-self-start"
+              onClick={() => removeDef(i)}
+              className="text-xs text-rose-500 hover:underline sm:col-span-1"
+              disabled={w.definitions.length <= 1}
             >
               移除
             </button>
@@ -265,10 +322,95 @@ export default function WordForm({
         ))}
         <button
           type="button"
-          onClick={addConfusing}
+          onClick={addDef}
           className="text-sm text-sky-accent hover:underline"
         >
-          + 加一組混淆詞
+          + 加一條定義
+        </button>
+      </fieldset>
+
+      <fieldset className="space-y-3">
+        <legend className="font-semibold text-ink">例句</legend>
+        {w.examples.map((ex, i) => (
+          <div key={i} className="space-y-2 bg-cream rounded-lg p-3">
+            <input
+              value={ex.en}
+              onChange={(e) => updateExample(i, { en: e.target.value })}
+              placeholder="English example"
+              className={INPUT}
+            />
+            <div className="grid sm:grid-cols-2 gap-2">
+              <label className="text-xs text-muted">
+                中文翻譯
+                <input
+                  value={ex.translations.zh ?? ""}
+                  onChange={(e) => updateExampleTranslation(i, "zh", e.target.value)}
+                  className={INPUT + " mt-1"}
+                />
+              </label>
+              <label className="text-xs text-muted">
+                日文翻譯（選填）
+                <input
+                  value={ex.translations.ja ?? ""}
+                  onChange={(e) => updateExampleTranslation(i, "ja", e.target.value)}
+                  className={INPUT + " mt-1"}
+                />
+              </label>
+            </div>
+            <button
+              type="button"
+              onClick={() => removeExample(i)}
+              className="text-xs text-rose-500 hover:underline"
+              disabled={w.examples.length <= 1}
+            >
+              移除這句
+            </button>
+          </div>
+        ))}
+        <button type="button" onClick={addExample} className="text-sm text-sky-accent hover:underline">
+          + 加一句例句
+        </button>
+      </fieldset>
+
+      <fieldset className="space-y-3">
+        <legend className="font-semibold text-ink">關聯字 (同義 / 反義 / 易混 / 相關)</legend>
+        {w.relations.length === 0 && (
+          <p className="text-xs text-muted">尚未加入關聯。</p>
+        )}
+        {w.relations.map((r, i) => (
+          <div key={i} className="grid sm:grid-cols-12 gap-2 bg-cream rounded-lg p-3 items-center">
+            <select
+              value={r.type}
+              onChange={(e) => updateRel(i, { type: e.target.value as RelationType })}
+              className={INPUT + " sm:col-span-3"}
+            >
+              {RELATION_TYPES.map((t) => (
+                <option key={t.value} value={t.value}>{t.label}</option>
+              ))}
+            </select>
+            <input
+              value={r.wordId}
+              onChange={(e) => updateRel(i, { wordId: e.target.value })}
+              placeholder="word id 或 概念字"
+              className={INPUT + " sm:col-span-3"}
+            />
+            <input
+              value={r.note ?? ""}
+              onChange={(e) => updateRel(i, { note: e.target.value })}
+              placeholder="附註（如「比較正式」）"
+              className={INPUT + " sm:col-span-5"}
+            />
+            <button
+              type="button"
+              onClick={() => removeRel(i)}
+              className="text-xs text-rose-500 hover:underline sm:col-span-1"
+            >
+              移除
+            </button>
+          </div>
+        ))}
+        <button type="button" onClick={addRel} className="text-sm text-sky-accent hover:underline">
+          + 加一個關聯
         </button>
       </fieldset>
 

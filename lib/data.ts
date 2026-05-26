@@ -5,28 +5,40 @@
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
 import { words as staticWords } from "./words";
-import type { Word, CategoryId } from "@/types";
+import type {
+  CEFRLevel,
+  CategoryId,
+  Definition,
+  Example,
+  RelationType,
+  Word,
+  WordRelation,
+  WordStatus,
+} from "@/types";
+import { primaryChinese } from "@/types";
 
+// Raw row shape from the v2 JOIN query. Everything jsonb_agg / array_agg
+// produces is nullable when no children exist, so we coerce in `rowToWord`.
 interface Row {
   id: string;
   word: string;
   also_known_as: string[];
-  chinese: string;
   category: string;
   part_of_speech: string;
   pronunciation: string;
+  audio_url: string | null;
   image_url: string;
+  cefr_level: string | null;
+  status: string;
   collocations: string[];
-  examples: unknown;          // jsonb — postgres-js returns as string
-  related_words: string[];
-  confusing_words: unknown;   // jsonb — same
   note: string | null;
+  definitions: unknown;   // jsonb array of { language, definition, cefr_level, sort_order }
+  examples: unknown;      // jsonb array of { sentence, cefr_level, sort_order, translations }
+  relations: unknown;     // jsonb array of { word_id, relation_type, note }
+  tags: string[] | null;
 }
 
-// postgres-js doesn't auto-parse json/jsonb (it ships them as raw strings).
-// Custom `types` config didn't override the built-in handler, so we parse
-// at the row mapper instead. Idempotent: if it's already an array/object,
-// returns as-is.
+// postgres-js sometimes hands us JSON columns as strings; tolerate both.
 function parseJsonbColumn<T>(v: unknown, fallback: T): T {
   if (v == null) return fallback;
   if (typeof v === "string") {
@@ -40,44 +52,121 @@ function parseJsonbColumn<T>(v: unknown, fallback: T): T {
 }
 
 function rowToWord(r: Row): Word {
-  const examples = parseJsonbColumn<{ en: string; zh: string }[]>(r.examples, []);
-  const confusing = parseJsonbColumn<{ word: string; note: string }[]>(
-    r.confusing_words,
-    [],
-  );
+  const rawDefs = parseJsonbColumn<
+    { language: string; definition: string; cefr_level: string | null; sort_order: number }[]
+  >(r.definitions, []);
+  const definitions: Definition[] = rawDefs.map((d) => ({
+    language: d.language,
+    definition: d.definition,
+    cefrLevel: (d.cefr_level as CEFRLevel) ?? undefined,
+    sortOrder: d.sort_order,
+  }));
+
+  const rawExamples = parseJsonbColumn<
+    {
+      sentence: string;
+      cefr_level: string | null;
+      sort_order: number;
+      translations: Record<string, string> | null;
+    }[]
+  >(r.examples, []);
+  const examples: Example[] = rawExamples.map((e) => {
+    const translations = e.translations ?? {};
+    return {
+      en: e.sentence,
+      zh: translations.zh ?? "",
+      translations,
+      cefrLevel: (e.cefr_level as CEFRLevel) ?? undefined,
+      sortOrder: e.sort_order,
+    };
+  });
+
+  const rawRelations = parseJsonbColumn<
+    { word_id: string; relation_type: string; note: string | null }[]
+  >(r.relations, []);
+  const relations: WordRelation[] = rawRelations.map((rel) => ({
+    wordId: rel.word_id,
+    type: rel.relation_type as RelationType,
+    note: rel.note ?? undefined,
+  }));
+
+  const tags = r.tags ?? [];
+  const chinese = primaryChinese(definitions);
+
+  // Legacy back-compat shims so unconverted UI code still works.
+  const seeAlso = relations.filter((rel) => rel.type === "see-also").map((rel) => rel.wordId);
+  const confusing = relations
+    .filter((rel) => rel.type === "confusing")
+    .map((rel) => ({ word: rel.wordId, note: rel.note ?? "" }));
+
   return {
     id: r.id,
     word: r.word,
     alsoKnownAs: r.also_known_as.length ? r.also_known_as : undefined,
-    chinese: r.chinese,
     category: r.category as CategoryId,
     partOfSpeech: r.part_of_speech,
     pronunciation: r.pronunciation,
+    audioUrl: r.audio_url ?? undefined,
     imageUrl: r.image_url,
-    collocations: r.collocations.length ? r.collocations : undefined,
+    cefrLevel: (r.cefr_level as CEFRLevel) ?? undefined,
+    status: r.status as WordStatus,
+    definitions,
+    chinese,
     examples,
-    relatedWords: r.related_words.length ? r.related_words : undefined,
-    confusingWords: confusing.length ? confusing : undefined,
+    tags,
+    relations,
+    collocations: r.collocations.length ? r.collocations : undefined,
     note: r.note ?? undefined,
+    relatedWords: seeAlso.length ? seeAlso : undefined,
+    confusingWords: confusing.length ? confusing : undefined,
   };
 }
 
+// One query, four correlated subqueries — each aggregating a child table to
+// jsonb. With ≤ a few thousand rows and the per-child word_id indexes this
+// stays at one round trip and EXPLAIN shows it as a single Sort + nested-
+// loop with hash-aggregated children, not N+1.
 const fetchAllFromDb = unstable_cache(
   async () => {
     const sql = getSql();
     if (!sql) return staticWords;
     const rows = (await sql`
-      SELECT id, word, also_known_as, chinese, category, part_of_speech,
-             pronunciation, image_url, collocations, examples,
-             related_words, confusing_words, note
-      FROM words
-      ORDER BY category, word
+      SELECT
+        w.id, w.word, w.also_known_as, w.category, w.part_of_speech,
+        w.pronunciation, w.audio_url, w.image_url, w.cefr_level, w.status,
+        w.collocations, w.note,
+        (SELECT jsonb_agg(jsonb_build_object(
+                  'language',   d.language,
+                  'definition', d.definition,
+                  'cefr_level', d.cefr_level,
+                  'sort_order', d.sort_order
+                ) ORDER BY d.language, d.sort_order)
+         FROM word_definitions d WHERE d.word_id = w.id) AS definitions,
+        (SELECT jsonb_agg(jsonb_build_object(
+                  'sentence',     e.sentence,
+                  'cefr_level',   e.cefr_level,
+                  'sort_order',   e.sort_order,
+                  'translations', (SELECT jsonb_object_agg(t.language, t.translation)
+                                   FROM word_example_translations t
+                                   WHERE t.example_id = e.id)
+                ) ORDER BY e.sort_order)
+         FROM word_examples e WHERE e.word_id = w.id) AS examples,
+        (SELECT jsonb_agg(jsonb_build_object(
+                  'word_id',       r.target_word_id,
+                  'relation_type', r.relation_type,
+                  'note',          r.note
+                ))
+         FROM word_relations r WHERE r.source_word_id = w.id) AS relations,
+        (SELECT array_agg(tag_id ORDER BY tag_id) FROM word_tags WHERE word_id = w.id) AS tags
+      FROM words w
+      WHERE w.deleted_at IS NULL AND w.status = 'published'
+      ORDER BY w.category, w.word
     `) as unknown as Row[];
     return rows.map(rowToWord);
   },
-  // v2: bump to invalidate stale entries from before the postgres-js
-  // JSONB auto-parse fix (otherwise `.examples` is still a string).
-  ["all-words-v2"],
+  // v3: schema v2 read path with new joined tables. Bumped from v2 (which
+  // bumped from v1 when the postgres-js JSONB auto-parse landed).
+  ["all-words-v3"],
   { tags: ["words"], revalidate: 60 },
 );
 
@@ -111,7 +200,8 @@ export async function searchWordsAsync(query: string): Promise<Word[]> {
       w.chinese,
       ...(w.alsoKnownAs ?? []),
       w.category,
-      ...(w.relatedWords ?? []),
+      ...w.relations.map((r) => r.wordId),
+      ...w.tags,
     ]
       .join(" ")
       .toLowerCase();

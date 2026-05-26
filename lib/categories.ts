@@ -1,5 +1,9 @@
 import type { Category } from "@/types";
 
+// IMPORTANT: This module is imported by client components (SearchClient,
+// WordsTable, ProgressClient, etc.). It must stay server/client neutral —
+// no Node-only imports. The DB-aware loader lives in `categories-db.ts`.
+
 export const categories: Category[] = [
   {
     id: "kitchen",

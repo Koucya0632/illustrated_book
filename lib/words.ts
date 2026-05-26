@@ -1,5 +1,27 @@
-import type { Word } from "@/types";
+import type { Example, Word, WordRelation } from "@/types";
 import wikiUrls from "./image-urls.json";
+
+// Internal: the inline seed below uses the pre-v2 shape (single Chinese
+// string, flat examples, untyped related/confusing arrays). The Word type
+// in @/types is the v2 shape. We convert lazily at the bottom of this file
+// rather than rewriting 1800 lines of inline literals.
+type LegacyExample = { en: string; zh: string };
+type LegacyConfusing = { word: string; note: string };
+type LegacyWord = {
+  id: string;
+  word: string;
+  alsoKnownAs?: string[];
+  chinese: string;
+  category: string;
+  partOfSpeech: string;
+  pronunciation: string;
+  imageUrl: string;
+  collocations?: string[];
+  examples: LegacyExample[];
+  relatedWords?: string[];
+  confusingWords?: LegacyConfusing[];
+  note?: string;
+};
 
 // Loremflickr returns real Flickr photos matching the keyword — used as a
 // fallback for words where Wikipedia doesn't have a representative image.
@@ -20,7 +42,7 @@ const img = (keyword: string, _hint?: string) => {
 
 const wikiMap = wikiUrls as Record<string, string>;
 
-const rawWords: Word[] = [
+const rawWords: LegacyWord[] = [
   // ---------- Kitchen ----------
   {
     id: "fridge",
@@ -1784,12 +1806,53 @@ const rawWords: Word[] = [
   },
 ];
 
+// Convert one legacy seed entry into the v2 Word shape (single zh definition,
+// translations object on each example, typed relations).
+function legacyToV2(legacy: LegacyWord): Word {
+  const examples: Example[] = legacy.examples.map((e, i) => ({
+    en: e.en,
+    zh: e.zh,
+    translations: { zh: e.zh },
+    sortOrder: i,
+  }));
+  const relations: WordRelation[] = [
+    ...(legacy.relatedWords ?? []).map((id) => ({ wordId: id, type: "see-also" as const })),
+    ...(legacy.confusingWords ?? []).map((c) => ({
+      wordId: c.word,
+      type: "confusing" as const,
+      note: c.note,
+    })),
+  ];
+  return {
+    id: legacy.id,
+    word: legacy.word,
+    alsoKnownAs: legacy.alsoKnownAs,
+    category: legacy.category,
+    partOfSpeech: legacy.partOfSpeech,
+    pronunciation: legacy.pronunciation,
+    imageUrl: legacy.imageUrl,
+    status: "published",
+    definitions: [
+      { language: "zh", definition: legacy.chinese, sortOrder: 0 },
+    ],
+    chinese: legacy.chinese,
+    examples,
+    tags: [],
+    relations,
+    collocations: legacy.collocations,
+    note: legacy.note,
+    relatedWords: legacy.relatedWords,
+    confusingWords: legacy.confusingWords,
+  };
+}
+
 // Prefer Wikipedia/Wikimedia reference photos when we have them; fall back to
 // the Loremflickr URL embedded in each entry. Done as a post-process pass so
 // we don't have to touch every word definition.
-export const words: Word[] = rawWords.map((w) =>
-  wikiMap[w.id] ? { ...w, imageUrl: wikiMap[w.id] } : w,
-);
+export const words: Word[] = rawWords.map((w) => {
+  const withImage = wikiMap[w.id] ? { ...w, imageUrl: wikiMap[w.id] } : w;
+  return legacyToV2(withImage);
+});
 
 export const getWord = (id: string): Word | undefined =>
   words.find((w) => w.id === id);

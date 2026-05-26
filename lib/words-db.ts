@@ -6,7 +6,7 @@
 import "server-only";
 import { revalidateTag } from "next/cache";
 import { getSql } from "./db";
-import type { Word, CategoryId } from "@/types";
+import type { CategoryId, Example, Word, WordRelation } from "@/types";
 
 interface Row {
   id: string;
@@ -32,23 +32,40 @@ function parseJsonb<T>(v: unknown, fallback: T): T {
   return v as T;
 }
 
+// Admin currently reads/writes legacy columns; Phase 2b will switch to the
+// normalized child tables. For now this fabricates the v2-shape Word from
+// the legacy columns so the admin UI keeps working.
 function rowToWord(r: Row): Word {
-  const examples = parseJsonb<{ en: string; zh: string }[]>(r.examples, []);
+  const legacyExamples = parseJsonb<{ en: string; zh: string }[]>(r.examples, []);
   const confusing = parseJsonb<{ word: string; note: string }[]>(r.confusing_words, []);
+  const examples: Example[] = legacyExamples.map((e, i) => ({
+    en: e.en,
+    zh: e.zh,
+    translations: { zh: e.zh },
+    sortOrder: i,
+  }));
+  const relations: WordRelation[] = [
+    ...r.related_words.map((id) => ({ wordId: id, type: "see-also" as const })),
+    ...confusing.map((c) => ({ wordId: c.word, type: "confusing" as const, note: c.note })),
+  ];
   return {
     id: r.id,
     word: r.word,
     alsoKnownAs: r.also_known_as.length ? r.also_known_as : undefined,
-    chinese: r.chinese,
     category: r.category as CategoryId,
     partOfSpeech: r.part_of_speech,
     pronunciation: r.pronunciation,
     imageUrl: r.image_url,
-    collocations: r.collocations.length ? r.collocations : undefined,
+    status: "published",
+    definitions: [{ language: "zh", definition: r.chinese, sortOrder: 0 }],
+    chinese: r.chinese,
     examples,
+    tags: [],
+    relations,
+    collocations: r.collocations.length ? r.collocations : undefined,
+    note: r.note ?? undefined,
     relatedWords: r.related_words.length ? r.related_words : undefined,
     confusingWords: confusing.length ? confusing : undefined,
-    note: r.note ?? undefined,
   };
 }
 

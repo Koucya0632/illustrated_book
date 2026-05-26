@@ -7,17 +7,29 @@ import type { CategoryId, ConfusingWord, Example, Word } from "@/types";
 
 type Mode = "create" | "edit";
 
+// Phase 2b will replace this form with new-field repeaters (CEFR, status,
+// tags, definitions, typed relations). For now the form still edits the
+// legacy fields (chinese, examples.zh, relatedWords, confusingWords) and
+// we synthesize the v2 sub-arrays at save time.
+function makeExample(en = "", zh = "", sortOrder = 0): Example {
+  return { en, zh, translations: { zh }, sortOrder };
+}
+
 const empty: Word = {
   id: "",
   word: "",
   alsoKnownAs: [],
-  chinese: "",
   category: "kitchen" as CategoryId,
   partOfSpeech: "noun",
   pronunciation: "",
   imageUrl: "",
+  status: "published",
+  definitions: [{ language: "zh", definition: "", sortOrder: 0 }],
+  chinese: "",
   collocations: [],
-  examples: [{ en: "", zh: "" }],
+  examples: [makeExample()],
+  tags: [],
+  relations: [],
   relatedWords: [],
   confusingWords: [],
   note: "",
@@ -48,11 +60,20 @@ export default function WordForm({
   }
 
   function updateExample(i: number, patch: Partial<Example>) {
-    const next = w.examples.map((ex, idx) => (idx === i ? { ...ex, ...patch } : ex));
+    const next = w.examples.map((ex, idx) => {
+      if (idx !== i) return ex;
+      const merged = { ...ex, ...patch };
+      // Keep the zh shortcut and the translations map in lockstep when the
+      // legacy UI edits `zh` directly.
+      if (patch.zh !== undefined) {
+        merged.translations = { ...merged.translations, zh: patch.zh };
+      }
+      return merged;
+    });
     set("examples", next);
   }
   function addExample() {
-    set("examples", [...w.examples, { en: "", zh: "" }]);
+    set("examples", [...w.examples, makeExample("", "", w.examples.length)]);
   }
   function removeExample(i: number) {
     if (w.examples.length <= 1) return;

@@ -59,7 +59,12 @@
 │  user_favorites, user_learned, user_quiz_results,                │
 │  user_cards, user_words           (RLS: auth.uid()=user_id)      │
 │                                                                  │
-│  words, cards, events             (RLS: public read / anon ins.) │
+│  words ─┬─ word_definitions  (zh / ja / en …, CEFR)              │
+│         ├─ word_examples ─ word_example_translations             │
+│         ├─ word_tags ─ tags                                      │
+│         ├─ word_relations  (synonym / antonym / confusing / …)   │
+│         └─ categories  (FK)                                      │
+│  cards, events                    (RLS: public read / anon ins.) │
 └──────────────────────────────────────────────────────────────────┘
 
 外部:
@@ -130,19 +135,24 @@ components/                   # 共用 UI
 ├── UserNav / GoogleButton
 
 lib/                          # 純邏輯，沒有 React
-├── db.ts                     # neon() lazy initializer
-├── data.ts                   # public words 讀取 (DB → static fallback)
-├── words.ts                  # 105 字靜態 seed（同時是 dev fallback）
-├── words-db.ts               # admin CRUD（server-only）
+├── db.ts                     # postgres-js lazy initializer（pooler:6543, prepare:false）
+├── data.ts                   # public words 讀取 (DB JOIN 子表 → static fallback)
+├── words.ts                  # 105 字靜態 seed (legacyToV2 normalizer 補 v2 shape)
+├── words-db.ts               # admin CRUD (transactional, server-only)
 ├── word-validate.ts
-├── users-db.ts               # users + per-user data
-├── current-user.ts           # cookie → user (server-only)
-├── auth.ts                   # admin token (HMAC)
-├── user-auth.ts              # user PBKDF2 + session HMAC
-├── google-oauth.ts
-├── cards-db.ts               # SRS card + user_card 操作
+├── users-db.ts               # profiles + per-user 資料
+├── current-user.ts           # cookie → Supabase user (server-only)
+├── auth.ts                   # admin HMAC cookie
+├── safe-redirect.ts          # 防 open redirect 的 next 驗證
+├── cards-db.ts               # SRS card + user_card 操作（含 CEFR/tag filter）
 ├── srs.ts                    # 排程演算法
-├── categories.ts             # 9 分類靜態
+├── mastery.ts                # 單詞熟練度 (EMA + forgetting curve)
+├── categories.ts             # 9 分類靜態（client-safe）
+├── categories-db.ts          # 同名 DB-aware loader（server-only，留作未來 DB-driven 切換）
+├── supabase/                 # Supabase SSR clients
+│   ├── client.ts             # browser
+│   ├── server.ts             # server (cookies-based)
+│   └── middleware.ts         # middleware-side session refresh
 ├── daily.ts                  # 每日 5 字 seeded shuffle
 ├── quiz.ts                   # 舊 quiz 隨機題
 ├── storage.ts                # localStorage + dual-write to server
@@ -222,23 +232,85 @@ types/index.ts                # 共用型別
 
 | Method | Path | Runtime | 用途 |
 |---|---|---|---|
-| GET | `/api/study/queue?limit=20&new=10` | node | 取到期 + 新卡，附 MCQ choices |
+| GET | `/api/study/queue?limit=20&new=10[&cefr=A1,A2][&tags=foo,bar]` | node | 取到期 + 新卡，附 MCQ choices；可按 CEFR / 自由 tag 過濾 |
 | POST | `/api/study/answer` | node | `{cardId, rating}` → 排下次複習 |
 
 ---
 
-## 6. Database schema
+## 6. Database schema (schema v2)
+
+> 2026-02 重構為正規化結構：原本 `words` 內的 `chinese / examples / related_words / confusing_words` 全部抽到獨立關聯表，加上 CEFR / status / 多語言 / typed relations / 自由 tag。詳細歷史見 `/Users/rex/.claude/plans/streamed-wobbling-aho.md` 的 Phase 1-3。
+
+### Words 核心 + 關聯表
 
 ```
+categories
+  id TEXT PK                  -- 'kitchen' | 'bathroom' | ...
+  name, name_zh, emoji, description, color, image_url, sort_order, created_at
+
 words
   id TEXT PK
-  word TEXT, also_known_as TEXT[], chinese TEXT, category TEXT,
-  part_of_speech TEXT, pronunciation TEXT, image_url TEXT,
-  collocations TEXT[], examples JSONB, related_words TEXT[],
-  confusing_words JSONB, note TEXT,
+  word TEXT, also_known_as TEXT[], part_of_speech TEXT,
+  category TEXT NOT NULL REFERENCES categories(id)  ON DELETE RESTRICT
+  pronunciation TEXT, audio_url TEXT NULL,
+  image_url TEXT,
+  cefr_level TEXT  CHECK IN ('A1'..'C2')  NULL,
+  status TEXT NOT NULL DEFAULT 'published'
+       CHECK IN ('draft','published','archived'),
+  deleted_at TIMESTAMPTZ NULL,                      -- soft delete
+  collocations TEXT[], note TEXT,
   created_at, updated_at
   INDEX words_category_idx, words_word_idx (lower(word))
 
+word_definitions                                      -- 多語言義項
+  id BIGSERIAL PK
+  word_id TEXT FK CASCADE
+  language TEXT NOT NULL                              -- 'zh' | 'ja' | 'en' | …
+  definition TEXT NOT NULL
+  cefr_level TEXT NULL  (CHECK A1..C2)
+  sort_order INT
+  UNIQUE (word_id, language, sort_order)
+  INDEX (word_id, language)
+
+word_examples                                         -- 例句本體
+  id BIGSERIAL PK
+  word_id TEXT FK CASCADE
+  sentence TEXT NOT NULL                              -- 英文原句
+  cefr_level TEXT NULL
+  sort_order INT
+  INDEX (word_id)
+
+word_example_translations                             -- 每句多語言翻譯
+  example_id BIGINT FK CASCADE
+  language TEXT, translation TEXT
+  PK (example_id, language)
+
+tags
+  id TEXT PK                  -- slug
+  name, emoji, color, created_at
+
+word_tags                                             -- 字 ↔ 自由 tag
+  word_id TEXT FK CASCADE, tag_id TEXT FK CASCADE
+  PK (word_id, tag_id)
+  INDEX word_tags_tag_idx (tag_id)
+
+word_relations                                        -- 強型別關係圖
+  id BIGSERIAL PK
+  source_word_id TEXT FK CASCADE                      -- 一定是真實字
+  target_word_id TEXT (no FK — 容許「概念字」)
+  relation_type TEXT CHECK IN
+    ('synonym','antonym','hypernym','hyponym','confusing','see-also')
+  note TEXT NULL
+  UNIQUE (source, target, type)
+  CHECK (source <> target)
+  INDEX src_idx, tgt_idx
+```
+
+`target_word_id` 故意不加 FK：legacy 「易混淆」備註常指 `refrigerator` 之類字典裡沒有的概念字，UI 顯示為純文字 chip 即可。Source 端仍有 CASCADE，刪字會自動清關係。
+
+### 事件 / SRS
+
+```
 events
   id BIGSERIAL PK
   type TEXT,                  -- view | favorite | pronounce | quiz_attempt
@@ -246,29 +318,19 @@ events
   session_id TEXT, ip_hash TEXT (8 bytes hex), created_at
   INDEX events_type_idx, events_word_idx, events_created_idx (DESC)
 
-users
-  id BIGSERIAL PK
-  username TEXT UNIQUE, email TEXT UNIQUE,
-  password_hash TEXT NULL,    -- NULL = OAuth-only
-  google_sub TEXT UNIQUE NULL,
-  created_at
-  INDEX users_email_lc_idx, users_username_lc_idx, users_google_sub_idx
-
-user_favorites           (user_id FK CASCADE, word_id FK CASCADE, created_at)  PK (user_id, word_id)
-user_learned             (user_id FK CASCADE, word_id FK CASCADE, learned_at)  PK 同
-user_quiz_results        (id BIGSERIAL PK, user_id FK CASCADE, quiz_type, total, correct, created_at)
-
 cards
   id BIGSERIAL PK
   word_id TEXT FK CASCADE
-  card_type TEXT             -- 回想卡 | 填空卡 (區分卡/概念卡 已停用)
+  card_type TEXT             -- 回想卡 | 填空卡
   front TEXT, back TEXT, explanation TEXT, tags TEXT[]
   deck_key TEXT              -- 'recall-zh-en' | 'recall-en-zh' | 'cloze-1' …
   created_at
   UNIQUE (word_id, deck_key) -- 讓 generator 冪等
 
 user_cards
-  user_id FK, card_id FK, PK (user_id, card_id)
+  user_id UUID FK auth.users CASCADE
+  card_id BIGINT FK cards CASCADE
+  PK (user_id, card_id)
   status TEXT                -- 新卡 | 學習中 | 複習中 | 穩定
   interval_days NUMERIC(10,4)
   next_review_at TIMESTAMPTZ
@@ -276,7 +338,40 @@ user_cards
   INDEX user_cards_due_idx (user_id, next_review_at)
 ```
 
-關鍵 FK：所有 user_* 都 `ON DELETE CASCADE` 到 `users`；所有對 `words` / `cards` 的 reference 也 cascade。刪一個字會清掉它的卡 + 所有用戶對該字的 SRS 狀態。
+### 使用者帳號
+
+```
+auth.users        ← Supabase GoTrue（不要手動 SELECT；用 RLS predicates）
+profiles
+  id UUID PK REFERENCES auth.users(id) ON DELETE CASCADE
+  username TEXT NOT NULL UNIQUE
+  created_at
+  INDEX profiles_username_lc_idx (lower(username))
+
+user_favorites    (user_id UUID FK CASCADE, word_id TEXT FK CASCADE, created_at)  PK (user_id, word_id)
+user_learned      (user_id UUID FK CASCADE, word_id TEXT FK CASCADE, learned_at)  PK 同
+user_quiz_results (id BIGSERIAL PK, user_id UUID FK CASCADE, quiz_type, total, correct, created_at)
+user_words        (user_id UUID, word_id TEXT, mastery NUMERIC(5,2), last_reviewed_at,
+                   review_count, updated_at, PK (user_id, word_id))
+```
+
+### 關鍵 FK 鏈
+
+- 刪 `auth.users` 一個 row → `profiles` + 所有 `user_*` cascade 清空
+- 刪 `words` 一個 row → `cards`、`word_definitions`、`word_examples` (→ translations)、`word_tags`、`word_relations` (source 端)、`user_favorites`、`user_learned`、`user_words`、`user_cards`(透過 cards) 全部 cascade
+- **生產上**已不用 hard delete word —`words-db.softDeleteWord()` 改打 `status='archived'` + `deleted_at`，read path（`lib/data.ts`）以 `WHERE deleted_at IS NULL AND status = 'published'` 過濾
+- 刪 `categories` 一個 row → `RESTRICT`（會拒絕，避免誤刪一整個分類）
+
+### RLS 概要
+
+| 表 | SELECT | INSERT / UPDATE |
+|---|---|---|
+| `words`、`categories`、`tags`、`word_tags`、`word_definitions`、`word_examples`、`word_example_translations`、`word_relations`、`cards` | 公開 `USING (true)` | service-role only（透過 `DATABASE_URL` 直連） |
+| `events` | 公開 `USING (true)` | anon `WITH CHECK (true)` |
+| `profiles` | 公開 `USING (true)` | self UPDATE `auth.uid() = id` |
+| `user_favorites / user_learned / user_quiz_results / user_cards / user_words` | self ALL `auth.uid() = user_id` | 同 |
+
+> **重要**：`lib/db.ts` 用 `DATABASE_URL` 直連 Supabase pooler，那條路徑跑的是 service-tier 角色，RLS **不會生效**。所有 user-scoped 查詢必須在 SQL 自己帶 `WHERE user_id = ${userId}`。Supabase JS SDK 路徑（`@supabase/ssr` createClient）會走 RLS，那是用戶端 auth cookie 帶出來的 anon/auth 角色。
 
 ---
 
@@ -351,25 +446,59 @@ profiles trigger 也跟著 fire（新用戶）
 ## 8. Word data flow
 
 ```
-DB (words 表) ────┐
-                  ├─→ lib/data.ts  getAllWords()       (unstable_cache, tag "words", 60s)
-                  │      ↓
-                  │   app/layout.tsx (async server)
-                  │      ↓
-                  │   <WordsProvider words={...}>
-                  │      ↓
-                  │   useWords() / useWord(id) / useSearchWords(q)
-                  │      ↓
-                  │   所有 client 元件直接用 (SearchBar / DailyWords / SearchClient / FavoritesClient / QuizRunner / ProgressClient)
-                  │
-lib/words.ts ─────┘  Fallback when DATABASE_URL 沒設（local dev、build 過程）
-(105 字靜態 seed)
+DB ──┐
+words + 4 個關聯子查詢 ────┐                                    cache key:
+  word_definitions        │                                    "all-words-v3"
+  word_examples + transl. ├─→ lib/data.ts  getAllWords()        unstable_cache
+  word_relations          │   單一 SQL，LATERAL jsonb_agg       tag "words"
+  word_tags               │   每個 word 一次往返組裝完          revalidate 60s
+                          │      ↓
+                          │   app/layout.tsx (async server)
+                          │      ↓
+                          │   <WordsProvider words={...}>
+                          │      ↓
+                          │   useWords() / useWord(id) / useSearchWords(q)
+                          │      ↓
+                          │   所有 client 元件直接用 (SearchBar / DailyWords /
+                          │   SearchClient / FavoritesClient / QuizRunner /
+                          │   ProgressClient)
+                          │
+lib/words.ts ─────────────┘  Fallback when DATABASE_URL 沒設（local dev、build）
+(105 字靜態 seed，legacyToV2()
+ normalizer 補上 definitions /
+ examples.translations / relations)
 ```
 
 **為什麼這樣設計：**
 - Admin 改完字 → `revalidateTag("words")` → public site 60 秒內看到
 - Client 元件**不需要**自己 fetch /api/words；server-side 拉好放 context
 - Build 不需要 DB（fallback 確保 type-check + page generation 可離線跑）
+- **一次 SQL** — 用 `(SELECT jsonb_agg(...) FROM child WHERE word_id = w.id)` 在主查詢內 aggregate，不是 N+1
+- 公開 read path filter：`WHERE deleted_at IS NULL AND status = 'published'`，admin path（`lib/words-db.ts`）不過濾，看得到 draft/archived
+
+### Word 物件 shape
+
+`lib/data.ts` 把 row 組成 `Word` 物件給上層：
+
+```ts
+interface Word {
+  id, word, alsoKnownAs?, category, partOfSpeech, pronunciation, audioUrl?, imageUrl
+  cefrLevel?: 'A1'|...|'C2'
+  status: 'draft' | 'published' | 'archived'
+
+  definitions: Array<{ language, definition, cefrLevel?, sortOrder }>
+  chinese: string                    // = primaryChinese(definitions)，便利欄位
+  examples: Array<{
+    en: string, zh: string,          // zh 是便利欄位 = translations.zh
+    translations: Record<string, string>,
+    cefrLevel?, sortOrder
+  }>
+  relations: Array<{ wordId, type, note? }>   // 6 種 type 見 §6
+  tags: string[]
+
+  collocations?, note?
+}
+```
 
 ---
 

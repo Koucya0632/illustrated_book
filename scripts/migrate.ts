@@ -322,6 +322,18 @@ const DDL = [
     `DROP POLICY IF EXISTS ${t}_public_read ON ${t}`,
     `CREATE POLICY ${t}_public_read ON ${t} FOR SELECT USING (true)`,
   ]),
+
+];
+
+// ---- Phase 3: drop legacy `words` columns ----
+// Runs AFTER backfillSchemaV2 completes — once backfill has copied any
+// remaining legacy data into the v2 sub-tables, the columns are safe to
+// remove. Idempotent so re-running migrate after the drop is a no-op.
+const POST_BACKFILL_DROPS = [
+  `ALTER TABLE words DROP COLUMN IF EXISTS chinese`,
+  `ALTER TABLE words DROP COLUMN IF EXISTS examples`,
+  `ALTER TABLE words DROP COLUMN IF EXISTS related_words`,
+  `ALTER TABLE words DROP COLUMN IF EXISTS confusing_words`,
 ];
 
 // ---- card generator ----
@@ -387,6 +399,22 @@ function cardsForWord(w: (typeof seedWords)[number]): SeedCard[] {
 // Reads the legacy columns on `words` and projects them into the new
 // normalized tables. Every statement is idempotent (ON CONFLICT DO NOTHING
 // or skip-if-rows-exist), so re-running migrate is safe.
+//
+// Steps that read legacy columns (definitions / examples / relations) are
+// short-circuited once those columns have been dropped (Phase 3+). The first
+// run on a fresh post-drop database is still correct because data is already
+// in the v2 sub-tables.
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function legacyColumnsPresent(sql: any): Promise<boolean> {
+  const [{ c }] = await sql`
+    SELECT count(*)::int AS c
+    FROM information_schema.columns
+    WHERE table_schema = 'public' AND table_name = 'words'
+      AND column_name = 'chinese'
+  `;
+  return c > 0;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function backfillSchemaV2(sql: any) {
@@ -414,6 +442,12 @@ async function backfillSchemaV2(sql: any) {
       END IF;
     END $$
   `);
+
+  const hasLegacy = await legacyColumnsPresent(sql);
+  if (!hasLegacy) {
+    console.log("[migrate] legacy columns dropped — skipping v2 backfill steps");
+    return;
+  }
 
   // 2. word_definitions — pull chinese into (lang='zh', sort_order=0)
   const defRes = await sql`
@@ -500,6 +534,63 @@ async function backfillSchemaV2(sql: any) {
   );
 }
 
+// Fresh-deployment seed: populates words + all v2 sub-tables directly from
+// the static seedWords list (which has already been normalized to v2 shape
+// by legacyToV2 in lib/words.ts). Used when the words table is empty.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function seedV2(sql: any) {
+  for (const w of seedWords) {
+    // words row (new columns only — no legacy after Phase 3 drop).
+    await sql`
+      INSERT INTO words (
+        id, word, also_known_as, category, part_of_speech,
+        pronunciation, image_url, status, collocations, note
+      ) VALUES (
+        ${w.id}, ${w.word}, ${w.alsoKnownAs ?? []}, ${w.category},
+        ${w.partOfSpeech}, ${w.pronunciation}, ${w.imageUrl},
+        'published', ${w.collocations ?? []}, ${w.note ?? null}
+      )
+      ON CONFLICT (id) DO NOTHING
+    `;
+    // definitions
+    for (const d of w.definitions ?? []) {
+      if (!d.definition) continue;
+      await sql`
+        INSERT INTO word_definitions (word_id, language, definition, sort_order)
+        VALUES (${w.id}, ${d.language}, ${d.definition}, ${d.sortOrder})
+        ON CONFLICT (word_id, language, sort_order) DO NOTHING
+      `;
+    }
+    // examples + translations
+    for (let i = 0; i < (w.examples ?? []).length; i++) {
+      const ex = w.examples[i];
+      if (!ex.en) continue;
+      const [{ id: exId }] = await sql`
+        INSERT INTO word_examples (word_id, sentence, sort_order)
+        VALUES (${w.id}, ${ex.en}, ${ex.sortOrder ?? i})
+        RETURNING id
+      `;
+      for (const [lang, text] of Object.entries(ex.translations ?? {})) {
+        if (!text) continue;
+        await sql`
+          INSERT INTO word_example_translations (example_id, language, translation)
+          VALUES (${exId}, ${lang}, ${text})
+          ON CONFLICT (example_id, language) DO NOTHING
+        `;
+      }
+    }
+    // relations
+    for (const r of w.relations ?? []) {
+      if (!r.wordId || r.wordId === w.id) continue;
+      await sql`
+        INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
+        VALUES (${w.id}, ${r.wordId}, ${r.type}, ${r.note ?? null})
+        ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
+      `;
+    }
+  }
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function generateCards(sql: any) {
   let inserted = 0;
@@ -541,23 +632,8 @@ async function main() {
       SELECT count(*)::int AS count FROM words
     `;
     if (count === 0) {
-      console.log(`[migrate] seeding ${seedWords.length} words...`);
-      for (const w of seedWords) {
-        await sql`
-          INSERT INTO words (
-            id, word, also_known_as, chinese, category, part_of_speech,
-            pronunciation, image_url, collocations, examples,
-            related_words, confusing_words, note
-          ) VALUES (
-            ${w.id}, ${w.word}, ${w.alsoKnownAs ?? []}, ${w.chinese}, ${w.category},
-            ${w.partOfSpeech}, ${w.pronunciation}, ${w.imageUrl},
-            ${w.collocations ?? []}, ${JSON.stringify(w.examples)}::jsonb,
-            ${w.relatedWords ?? []}, ${JSON.stringify(w.confusingWords ?? [])}::jsonb,
-            ${w.note ?? null}
-          )
-          ON CONFLICT (id) DO NOTHING
-        `;
-      }
+      console.log(`[migrate] seeding ${seedWords.length} words (v2 shape)...`);
+      await seedV2(sql);
       console.log(`[migrate] seed complete.`);
     } else {
       console.log(`[migrate] words table already has ${count} rows — skipping seed.`);
@@ -565,6 +641,13 @@ async function main() {
 
     await generateCards(sql);
     await backfillSchemaV2(sql);
+
+    // Final cleanup: drop the legacy columns now that everything reads from
+    // the v2 sub-tables. Idempotent (DROP COLUMN IF EXISTS).
+    for (const stmt of POST_BACKFILL_DROPS) {
+      await sql.unsafe(stmt);
+    }
+    console.log(`[migrate] legacy columns ensured dropped.`);
   } finally {
     await sql.end();
   }

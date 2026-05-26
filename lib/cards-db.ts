@@ -155,16 +155,24 @@ export async function fetchDue(
   const cefr = (filter.cefr ?? []).filter((c) => /^[A-C][12]$/.test(c));
   const tags = (filter.tags ?? []).filter((t) => t.length > 0);
 
-  // Review queue: ordered by due date asc.
+  // Review queue: ordered by due date asc. The chinese display label comes
+  // from a LATERAL pick of the first zh definition (sort_order asc).
   const reviewRows = (await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
            uc.user_id, uc.card_id, uc.status, uc.interval_days, uc.next_review_at,
            uc.review_count, uc.mistake_count, uc.last_rating, uc.last_reviewed_at,
-           w.word AS w_word, w.chinese AS w_chinese, w.image_url AS w_image,
+           w.word AS w_word,
+           COALESCE(zh.definition, '') AS w_chinese,
+           w.image_url AS w_image,
            w.pronunciation AS w_pron, w.category AS w_category
     FROM user_cards uc
     JOIN cards c ON c.id = uc.card_id
     JOIN words w ON w.id = c.word_id
+    LEFT JOIN LATERAL (
+      SELECT definition FROM word_definitions
+      WHERE word_id = w.id AND language = 'zh'
+      ORDER BY sort_order LIMIT 1
+    ) zh ON true
     WHERE uc.user_id = ${userId}::uuid
       AND uc.next_review_at <= now()
       AND w.deleted_at IS NULL
@@ -186,10 +194,17 @@ export async function fetchDue(
   const remaining = Math.max(0, limit - reviewRows.length);
   const newRows = remaining > 0 ? ((await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
-           w.word AS w_word, w.chinese AS w_chinese, w.image_url AS w_image,
+           w.word AS w_word,
+           COALESCE(zh.definition, '') AS w_chinese,
+           w.image_url AS w_image,
            w.pronunciation AS w_pron, w.category AS w_category
     FROM cards c
     JOIN words w ON w.id = c.word_id
+    LEFT JOIN LATERAL (
+      SELECT definition FROM word_definitions
+      WHERE word_id = w.id AND language = 'zh'
+      ORDER BY sort_order LIMIT 1
+    ) zh ON true
     WHERE NOT EXISTS (
       SELECT 1 FROM user_cards uc
       WHERE uc.user_id = ${userId}::uuid AND uc.card_id = c.id
@@ -288,11 +303,18 @@ export async function getCardById(cardId: number, userId: string): Promise<DueCa
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
            uc.user_id, uc.card_id, uc.status, uc.interval_days, uc.next_review_at,
            uc.review_count, uc.mistake_count, uc.last_rating, uc.last_reviewed_at,
-           w.word AS w_word, w.chinese AS w_chinese, w.image_url AS w_image,
+           w.word AS w_word,
+           COALESCE(zh.definition, '') AS w_chinese,
+           w.image_url AS w_image,
            w.pronunciation AS w_pron, w.category AS w_category
     FROM cards c
     LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
     JOIN words w ON w.id = c.word_id
+    LEFT JOIN LATERAL (
+      SELECT definition FROM word_definitions
+      WHERE word_id = w.id AND language = 'zh'
+      ORDER BY sort_order LIMIT 1
+    ) zh ON true
     WHERE c.id = ${cardId}
     LIMIT 1
   `) as unknown as Record<string, unknown>[];

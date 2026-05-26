@@ -28,7 +28,6 @@ interface WordRow {
   id: string;
   word: string;
   also_known_as: string[];
-  chinese: string;
   category: string;
   part_of_speech: string;
   pronunciation: string;
@@ -102,8 +101,8 @@ function hydrate(
     imageUrl: row.image_url,
     cefrLevel: (row.cefr_level as Word["cefrLevel"]) ?? undefined,
     status: row.status as Word["status"],
-    definitions: definitions.length ? definitions : [{ language: "zh", definition: row.chinese, sortOrder: 0 }],
-    chinese: primaryChinese(definitions) || row.chinese,
+    definitions,
+    chinese: primaryChinese(definitions),
     examples: examplesOut,
     tags,
     relations: wordRelations,
@@ -198,7 +197,7 @@ async function loadChildrenFor(sql: Sql, ids: string[]) {
 export async function listAll(): Promise<Word[]> {
   const sql = requireSql();
   const rows = (await sql`
-    SELECT id, word, also_known_as, chinese, category, part_of_speech,
+    SELECT id, word, also_known_as, category, part_of_speech,
            pronunciation, audio_url, image_url, cefr_level, status,
            collocations, note, deleted_at
     FROM words
@@ -221,7 +220,7 @@ export async function listAll(): Promise<Word[]> {
 export async function getById(id: string): Promise<Word | null> {
   const sql = requireSql();
   const rows = (await sql`
-    SELECT id, word, also_known_as, chinese, category, part_of_speech,
+    SELECT id, word, also_known_as, category, part_of_speech,
            pronunciation, audio_url, image_url, cefr_level, status,
            collocations, note, deleted_at
     FROM words WHERE id = ${id}
@@ -350,19 +349,15 @@ export async function create(w: Word): Promise<void> {
   await sql.begin(async (tx: Sql) => {
     await tx`
       INSERT INTO words (
-        id, word, also_known_as, chinese, category, part_of_speech,
+        id, word, also_known_as, category, part_of_speech,
         pronunciation, audio_url, image_url, cefr_level, status,
-        collocations, examples, related_words, confusing_words, note
+        collocations, note
       ) VALUES (
         ${w.id}, ${w.word}, ${w.alsoKnownAs ?? []},
-        ${w.chinese ?? primaryChinese(w.definitions ?? [])},
         ${w.category}, ${w.partOfSpeech}, ${w.pronunciation},
         ${w.audioUrl ?? null}, ${w.imageUrl},
         ${w.cefrLevel ?? null}, ${w.status ?? "published"},
         ${w.collocations ?? []},
-        ${JSON.stringify(w.examples ?? [])}::jsonb,
-        ${w.relatedWords ?? []},
-        ${JSON.stringify(w.confusingWords ?? [])}::jsonb,
         ${w.note ?? null}
       )
     `;
@@ -378,7 +373,6 @@ export async function update(id: string, w: Word): Promise<void> {
       UPDATE words SET
         word = ${w.word},
         also_known_as = ${w.alsoKnownAs ?? []},
-        chinese = ${w.chinese ?? primaryChinese(w.definitions ?? [])},
         category = ${w.category},
         part_of_speech = ${w.partOfSpeech},
         pronunciation = ${w.pronunciation},
@@ -387,9 +381,6 @@ export async function update(id: string, w: Word): Promise<void> {
         cefr_level = ${w.cefrLevel ?? null},
         status = ${w.status ?? "published"},
         collocations = ${w.collocations ?? []},
-        examples = ${JSON.stringify(w.examples ?? [])}::jsonb,
-        related_words = ${w.relatedWords ?? []},
-        confusing_words = ${JSON.stringify(w.confusingWords ?? [])}::jsonb,
         note = ${w.note ?? null},
         updated_at = now()
       WHERE id = ${id}

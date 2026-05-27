@@ -719,6 +719,123 @@ async function backfillSchemaV3(sql: any) {
   console.log(`[migrate v3] word_categories: ${wcRes.length} new rows`);
 }
 
+// ---- Schema v3.1: convert study_logs to monthly RANGE partitioning ----
+// Pre-emptive: study_logs is brand-new and has no application writer yet, so
+// rebuilding it as a partitioned table is risk-free now (free lunch — gets
+// expensive once real data lands). On subsequent runs this is a no-op via
+// the pg_partitioned_table check.
+//
+// Maintenance (creating next month's partition, dropping aged-out ones) is
+// handled by /api/cron/partman, scheduled in vercel.json.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function setupStudyLogsPartitioning(sql: any) {
+  // 1. Extension (Supabase has pg_partman in its allowlist; CREATE EXTENSION
+  //    is idempotent). Schema-isolated so the extension's functions stay out
+  //    of public.
+  await sql.unsafe(`CREATE SCHEMA IF NOT EXISTS partman`);
+  await sql.unsafe(`CREATE EXTENSION IF NOT EXISTS pg_partman SCHEMA partman`);
+
+  // 2. Already-partitioned? Skip. The pg_partitioned_table catalog entry only
+  //    exists for tables created with PARTITION BY.
+  const [{ partitioned }] = (await sql`
+    SELECT EXISTS (
+      SELECT 1 FROM pg_partitioned_table pt
+      JOIN pg_class c ON c.oid = pt.partrelid
+      WHERE c.relnamespace = 'public'::regnamespace
+        AND c.relname = 'study_logs'
+    ) AS partitioned
+  `) as unknown as { partitioned: boolean }[];
+
+  if (partitioned) {
+    console.log("[migrate v3.1] study_logs already partitioned — skipping");
+    return;
+  }
+
+  // 3. Safety net: only proceed if the table is empty. If real data ever
+  //    landed before this conversion ran, abort loudly so the operator can
+  //    plan a proper backfill (CREATE TABLE ... LIKE + INSERT SELECT + swap).
+  const [{ count }] = (await sql`
+    SELECT count(*)::int AS count FROM study_logs
+  `) as unknown as { count: number }[];
+  if (count > 0) {
+    console.warn(
+      `[migrate v3.1] study_logs has ${count} rows — partition conversion would lose data. Aborting v3.1 (run a manual backfill).`,
+    );
+    return;
+  }
+
+  // 4. Rebuild. Partition key must be in every UNIQUE constraint, including
+  //    PK — so the PK becomes composite (id, created_at). `id` is still a
+  //    BIGSERIAL so callers don't notice. ON DELETE CASCADE on FKs preserved.
+  await sql.unsafe(`DROP TABLE study_logs CASCADE`);
+  await sql.unsafe(`
+    CREATE TABLE study_logs (
+      id                BIGSERIAL,
+      user_id           UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+      word_id           TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+      activity          TEXT NOT NULL CHECK (activity IN
+                          ('flashcard','mcq','typing','listening','image_recall','reading')),
+      rating            SMALLINT NOT NULL CHECK (rating IN (0,1,2,3)),
+      is_correct        BOOLEAN,
+      response_ms       INT,
+      interval_before   NUMERIC(10,4),
+      interval_after    NUMERIC(10,4),
+      ease_before       NUMERIC(5,3),
+      ease_after        NUMERIC(5,3),
+      mastery_before    NUMERIC(5,2),
+      mastery_after     NUMERIC(5,2),
+      client_session_id TEXT,
+      metadata          JSONB NOT NULL DEFAULT '{}'::jsonb,
+      created_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
+      PRIMARY KEY (id, created_at)
+    ) PARTITION BY RANGE (created_at)
+  `);
+
+  // Partitioned indexes — PG 11+ propagates these to every child partition.
+  await sql.unsafe(`
+    CREATE INDEX study_logs_user_created_idx
+      ON study_logs (user_id, created_at DESC)
+  `);
+
+  // RLS re-applied (DROP TABLE wiped the policies).
+  await sql.unsafe(`ALTER TABLE study_logs ENABLE ROW LEVEL SECURITY`);
+  await sql.unsafe(`
+    CREATE POLICY study_logs_self_read ON study_logs
+      FOR SELECT USING (auth.uid() = user_id)
+  `);
+  await sql.unsafe(`
+    CREATE POLICY study_logs_self_insert ON study_logs
+      FOR INSERT WITH CHECK (auth.uid() = user_id)
+  `);
+
+  // 5. Hand the parent to pg_partman. p_premake=3 keeps 3 future months
+  //    pre-created so a worker can always insert without waiting on
+  //    maintenance.
+  await sql`
+    SELECT partman.create_parent(
+      p_parent_table := 'public.study_logs',
+      p_control      := 'created_at',
+      p_interval     := '1 month',
+      p_premake      := 3
+    )
+  `;
+
+  // 6. Retention — drop partitions older than 12 months. Set retention_keep_
+  //    table=false so they're actually DROP'd, not detached. If you'd rather
+  //    archive them, flip to true and have a separate cold-storage job pull
+  //    detached children before they're cleaned up.
+  await sql`
+    UPDATE partman.part_config
+    SET retention = '12 months',
+        retention_keep_table = false
+    WHERE parent_table = 'public.study_logs'
+  `;
+
+  console.log(
+    "[migrate v3.1] study_logs converted to monthly partitions (premake=3, retention=12mo)",
+  );
+}
+
 // Fresh-deployment seed: populates words + all v2 sub-tables directly from
 // the static seedWords list (which has already been normalized to v2 shape
 // by legacyToV2 in lib/words.ts). Used when the words table is empty.
@@ -827,6 +944,7 @@ async function main() {
     await generateCards(sql);
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);
+    await setupStudyLogsPartitioning(sql);
 
     // Final cleanup: drop the legacy columns now that everything reads from
     // the v2 sub-tables. Idempotent (DROP COLUMN IF EXISTS).

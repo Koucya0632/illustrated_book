@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useSearchWords } from "@/components/WordsProvider";
+import { useSearch } from "@/components/useSearch";
 
 export default function SearchBar({
   autoFocus = false,
@@ -15,8 +15,9 @@ export default function SearchBar({
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const matches = useSearchWords(q);
-  const results = useMemo(() => matches.slice(0, 8), [matches]);
+  // Dropdown only needs the top 8; ask the server for 8 to keep payload tight.
+  const { results: matches, loading } = useSearch(q, { limit: 8 });
+  const results = useMemo(() => matches, [matches]);
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -58,7 +59,9 @@ export default function SearchBar({
 
       {open && q && (
         <div className="absolute z-40 mt-2 w-full bg-white rounded-2xl shadow-card border border-black/5 overflow-hidden">
-          {results.length === 0 ? (
+          {loading && results.length === 0 ? (
+            <div className="p-4 text-sm text-muted text-center">搜尋中…</div>
+          ) : results.length === 0 ? (
             <div className="p-4 text-sm text-muted text-center">找不到符合的單字</div>
           ) : (
             <ul>

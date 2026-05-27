@@ -23,21 +23,3 @@ export function useWords(): Word[] {
 export function useWord(id: string): Word | undefined {
   return useWords().find((w) => w.id === id);
 }
-
-export function useSearchWords(query: string): Word[] {
-  const all = useWords();
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  return all.filter((w) => {
-    const haystack = [
-      w.word,
-      w.chinese,
-      ...(w.alsoKnownAs ?? []),
-      w.category,
-      ...(w.relatedWords ?? []),
-    ]
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(q);
-  });
-}

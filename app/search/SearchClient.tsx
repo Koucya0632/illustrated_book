@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import WordCard from "@/components/WordCard";
 import { useWords } from "@/components/WordsProvider";
+import { useSearch } from "@/components/useSearch";
 import { categories } from "@/lib/categories";
 import type { CategoryId } from "@/types";
 
@@ -11,25 +12,17 @@ export default function SearchClient() {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<CategoryId | "all">("all");
 
+  // Debounced server search (300ms, cap 50). When the query is empty, show
+  // the full set from context so the "browse by category" path still works
+  // without hitting the network.
+  const { results: searchHits, loading } = useSearch(q, { limit: 50 });
+
   const results = useMemo(() => {
-    const needle = q.trim().toLowerCase();
-    let list = !needle
-      ? allWords
-      : allWords.filter((w) => {
-          const haystack = [
-            w.word,
-            w.chinese,
-            ...(w.alsoKnownAs ?? []),
-            w.category,
-            ...(w.relatedWords ?? []),
-          ]
-            .join(" ")
-            .toLowerCase();
-          return haystack.includes(needle);
-        });
+    const needle = q.trim();
+    let list = !needle ? allWords : searchHits;
     if (cat !== "all") list = list.filter((w) => w.category === cat);
     return list;
-  }, [q, cat, allWords]);
+  }, [q, cat, allWords, searchHits]);
 
   return (
     <div className="mt-5">
@@ -80,6 +73,7 @@ export default function SearchClient() {
 
       <p className="mt-4 text-sm text-muted">
         {q ? `搜尋「${q}」` : "全部單字"} · {results.length} 個結果
+        {q && loading && <span className="ml-2">搜尋中…</span>}
       </p>
 
       {results.length === 0 ? (

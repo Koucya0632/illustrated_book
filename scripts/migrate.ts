@@ -332,6 +332,131 @@ const DDL = [
     `CREATE POLICY ${t}_public_read ON ${t} FOR SELECT USING (true)`,
   ]),
 
+  // =====================================================================
+  // Schema v3 (additive — new tables for multi-media, M:N categories,
+  // append-only study history, plus trigram indexes for substring search).
+  // Existing v2 tables (words, word_definitions, word_examples,
+  // word_example_translations, user_words, user_cards) keep their shape.
+  // Reads continue to flow through v2 until application code migrates.
+  // =====================================================================
+
+  // ---- Extensions ----
+  // pg_trgm: ILIKE '%foo%' / CJK substring substring matching via GIN indexes.
+  `CREATE EXTENSION IF NOT EXISTS pg_trgm`,
+
+  // ---- word_media: one row per image / audio / AI-generated visual ----
+  // Replaces the inline image_url + audio_url + image_source_url + image_license
+  // + image_credit columns on `words`. A word can have multiple media of each
+  // kind (e.g. classic photo + AI memory illustration + audio pronunciation);
+  // is_primary picks the default per kind.
+  `CREATE TABLE IF NOT EXISTS word_media (
+     id           BIGSERIAL PRIMARY KEY,
+     word_id      TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     kind         TEXT NOT NULL CHECK (kind IN ('image','audio','ai_memory','video')),
+     url          TEXT NOT NULL,
+     storage_path TEXT,
+     mime_type    TEXT,
+     width        INT,
+     height       INT,
+     duration_ms  INT,
+     source_url   TEXT,
+     license      TEXT,
+     credit       TEXT,
+     prompt       TEXT,
+     model        TEXT,
+     is_primary   BOOLEAN NOT NULL DEFAULT FALSE,
+     sort_order   INT NOT NULL DEFAULT 0,
+     metadata     JSONB NOT NULL DEFAULT '{}'::jsonb,
+     created_at   TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_media_word_sort_idx
+     ON word_media(word_id, sort_order)`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS word_media_primary_uniq
+     ON word_media(word_id, kind) WHERE is_primary`,
+
+  // ---- word_categories: M:N — a word can belong to multiple categories ----
+  // Backfilled from words.category (single FK) with is_primary=true. Existing
+  // FK on words.category stays for now; app reads still use it. New UIs can
+  // start reading from word_categories without breaking anything.
+  `CREATE TABLE IF NOT EXISTS word_categories (
+     word_id     TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     category_id TEXT NOT NULL REFERENCES categories(id) ON DELETE RESTRICT,
+     is_primary  BOOLEAN NOT NULL DEFAULT FALSE,
+     created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (word_id, category_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_categories_category_idx
+     ON word_categories(category_id, word_id)`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS word_categories_primary_uniq
+     ON word_categories(word_id) WHERE is_primary`,
+
+  // ---- study_logs: append-only history of every review event ----
+  // Distinct from `events` (which is anonymous public traffic). study_logs is
+  // per-user SRS / quiz history, includes the SRS snapshot so a future
+  // analytics / Anki-export job can rebuild mastery from logs alone.
+  `CREATE TABLE IF NOT EXISTS study_logs (
+     id                BIGSERIAL PRIMARY KEY,
+     user_id           UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     word_id           TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     activity          TEXT NOT NULL CHECK (activity IN
+                         ('flashcard','mcq','typing','listening','image_recall','reading')),
+     rating            SMALLINT NOT NULL CHECK (rating IN (0,1,2,3)),
+     is_correct        BOOLEAN,
+     response_ms       INT,
+     interval_before   NUMERIC(10,4),
+     interval_after    NUMERIC(10,4),
+     ease_before       NUMERIC(5,3),
+     ease_after        NUMERIC(5,3),
+     mastery_before    NUMERIC(5,2),
+     mastery_after     NUMERIC(5,2),
+     client_session_id TEXT,
+     metadata          JSONB NOT NULL DEFAULT '{}'::jsonb,
+     created_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS study_logs_user_created_idx
+     ON study_logs(user_id, created_at DESC)`,
+
+  // ---- Trigram indexes (substring + case-insensitive search) ----
+  // The plan calls for these on `words.lemma` and `word_translations.translation`;
+  // current schema names are `words.word` and `word_definitions.definition`.
+  // Partial predicate on words matches lib/data.ts public read filter exactly,
+  // so the index stays slim and draft/archived writes don't touch it.
+  `CREATE INDEX IF NOT EXISTS words_word_trgm_idx
+     ON words USING GIN (word gin_trgm_ops)
+     WHERE deleted_at IS NULL AND status = 'published'`,
+  `CREATE INDEX IF NOT EXISTS word_defs_text_trgm_idx
+     ON word_definitions USING GIN (definition gin_trgm_ops)`,
+
+  // ---- "Browse by language" — reverse-direction composite on word_definitions ----
+  // Existing word_defs_word_lang_idx (word_id, language) serves "load all
+  // definitions for one word". The reverse — "which words have a JP def" —
+  // needs language-leading.
+  `CREATE INDEX IF NOT EXISTS word_defs_lang_word_idx
+     ON word_definitions(language, word_id)`,
+
+  // ---- word_examples sort-order composite ----
+  // FK alone doesn't auto-index. (word_id, sort_order) satisfies filter + sort
+  // in one scan for the detail page.
+  `CREATE INDEX IF NOT EXISTS word_examples_word_sort_idx
+     ON word_examples(word_id, sort_order)`,
+
+  // ---- RLS on the v3 tables ----
+  `ALTER TABLE word_media       ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_categories  ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE study_logs       ENABLE ROW LEVEL SECURITY`,
+
+  `DROP POLICY IF EXISTS word_media_public_read ON word_media`,
+  `CREATE POLICY word_media_public_read ON word_media FOR SELECT USING (true)`,
+  `DROP POLICY IF EXISTS word_categories_public_read ON word_categories`,
+  `CREATE POLICY word_categories_public_read ON word_categories FOR SELECT USING (true)`,
+
+  `DROP POLICY IF EXISTS study_logs_self_read ON study_logs`,
+  `CREATE POLICY study_logs_self_read ON study_logs
+     FOR SELECT USING (auth.uid() = user_id)`,
+  `DROP POLICY IF EXISTS study_logs_self_insert ON study_logs`,
+  `CREATE POLICY study_logs_self_insert ON study_logs
+     FOR INSERT WITH CHECK (auth.uid() = user_id)`,
+
 ];
 
 // ---- Phase 3: drop legacy `words` columns ----
@@ -543,6 +668,57 @@ async function backfillSchemaV2(sql: any) {
   );
 }
 
+// ---- Schema v3 backfill ----
+// Copies inline image/audio columns on `words` into `word_media`, and the
+// single-FK `words.category` into `word_categories` (M:N). Idempotent: every
+// step is gated on the target rows being absent.
+//
+// Source columns on `words` are NOT dropped here — application reads still
+// flow through them. A later phase can drop them after lib/data.ts switches
+// to word_media as its read source.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function backfillSchemaV3(sql: any) {
+  // 1. word_media — image rows from words.image_url + provenance columns.
+  const imgRes = await sql`
+    INSERT INTO word_media (word_id, kind, url, source_url, license, credit, is_primary, sort_order)
+    SELECT w.id, 'image', w.image_url, w.image_source_url, w.image_license, w.image_credit, TRUE, 0
+    FROM words w
+    WHERE w.image_url IS NOT NULL
+      AND w.image_url <> ''
+      AND NOT EXISTS (
+        SELECT 1 FROM word_media m WHERE m.word_id = w.id AND m.kind = 'image'
+      )
+    RETURNING id
+  `;
+  console.log(`[migrate v3] word_media (image): ${imgRes.length} new rows`);
+
+  // 2. word_media — audio rows where audio_url is set.
+  const audioRes = await sql`
+    INSERT INTO word_media (word_id, kind, url, is_primary, sort_order)
+    SELECT w.id, 'audio', w.audio_url, TRUE, 0
+    FROM words w
+    WHERE w.audio_url IS NOT NULL
+      AND w.audio_url <> ''
+      AND NOT EXISTS (
+        SELECT 1 FROM word_media m WHERE m.word_id = w.id AND m.kind = 'audio'
+      )
+    RETURNING id
+  `;
+  console.log(`[migrate v3] word_media (audio): ${audioRes.length} new rows`);
+
+  // 3. word_categories — every word's existing single category becomes a primary
+  //    M:N row. Future UI can add additional non-primary category links.
+  const wcRes = await sql`
+    INSERT INTO word_categories (word_id, category_id, is_primary)
+    SELECT w.id, w.category, TRUE
+    FROM words w
+    WHERE w.category IS NOT NULL
+    ON CONFLICT (word_id, category_id) DO NOTHING
+    RETURNING word_id
+  `;
+  console.log(`[migrate v3] word_categories: ${wcRes.length} new rows`);
+}
+
 // Fresh-deployment seed: populates words + all v2 sub-tables directly from
 // the static seedWords list (which has already been normalized to v2 shape
 // by legacyToV2 in lib/words.ts). Used when the words table is empty.
@@ -650,6 +826,7 @@ async function main() {
 
     await generateCards(sql);
     await backfillSchemaV2(sql);
+    await backfillSchemaV3(sql);
 
     // Final cleanup: drop the legacy columns now that everything reads from
     // the v2 sub-tables. Idempotent (DROP COLUMN IF EXISTS).

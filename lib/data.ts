@@ -190,10 +190,19 @@ export async function getWordsByCategory(categoryId: string): Promise<Word[]> {
   return all.filter((w) => w.category === categoryId);
 }
 
-export async function searchWordsAsync(query: string): Promise<Word[]> {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  const all = await getAllWords();
+// Escape ILIKE wildcards in user input so a literal "100%" doesn't match
+// any string starting with "100". Default ESCAPE char is backslash.
+function escapeLike(s: string): string {
+  return s.replace(/[\\%_]/g, "\\$&");
+}
+
+// In-memory haystack scan — fallback for local dev (no DATABASE_URL) and for
+// the DB-error path. Searches the same fields the SQL path can't index
+// (category / relations / tags) so behaviour is roughly equivalent at the
+// 105-word scale; at production scale the SQL path is authoritative and
+// covers the high-value fields (word, alsoKnownAs, definitions).
+function inMemoryMatch(all: Word[], q: string): Word[] {
+  const needle = q.toLowerCase();
   return all.filter((w) => {
     const haystack = [
       w.word,
@@ -205,6 +214,61 @@ export async function searchWordsAsync(query: string): Promise<Word[]> {
     ]
       .join(" ")
       .toLowerCase();
-    return haystack.includes(q);
+    return haystack.includes(needle);
   });
+}
+
+export interface SearchOptions {
+  limit?: number;
+}
+
+export async function searchWordsAsync(
+  query: string,
+  options: SearchOptions = {},
+): Promise<Word[]> {
+  const q = query.trim();
+  if (!q) return [];
+  const limit = Math.max(1, Math.min(options.limit ?? 50, 200));
+  const all = await getAllWords();
+  if (!dbEnabled()) return inMemoryMatch(all, q).slice(0, limit);
+  try {
+    const sql = getSql();
+    if (!sql) return inMemoryMatch(all, q).slice(0, limit);
+
+    // Indexed ILIKEs:
+    //   words.word            → words_word_trgm_idx (GIN, partial on published)
+    //   word_definitions.def  → word_defs_text_trgm_idx (GIN)
+    // also_known_as is a small TEXT[] column scanned via unnest — no GIN
+    // index, but it runs after the words filter on a small candidate set.
+    // LIMIT is applied at the SQL layer so the planner can stop early when
+    // trigram matches saturate.
+    const pattern = `%${escapeLike(q)}%`;
+    const rows = (await sql`
+      SELECT DISTINCT id FROM (
+        SELECT w.id FROM words w
+        WHERE w.deleted_at IS NULL AND w.status = 'published'
+          AND (
+            w.word ILIKE ${pattern}
+            OR EXISTS (
+              SELECT 1 FROM unnest(w.also_known_as) AS aka
+              WHERE aka ILIKE ${pattern}
+            )
+          )
+        UNION
+        SELECT d.word_id FROM word_definitions d
+        JOIN words w2 ON w2.id = d.word_id
+        WHERE w2.deleted_at IS NULL AND w2.status = 'published'
+          AND d.definition ILIKE ${pattern}
+      ) AS m
+      LIMIT ${limit}
+    `) as unknown as { id: string }[];
+
+    const ids = new Set(rows.map((r) => r.id));
+    // Resolve against the cached Word list so callers get full shaped objects
+    // (no second join query). Preserves the existing ORDER BY category, word.
+    return all.filter((w) => ids.has(w.id));
+  } catch (err) {
+    console.warn("[data] search SQL failed, falling back to in-memory:", err);
+    return inMemoryMatch(all, q).slice(0, limit);
+  }
 }

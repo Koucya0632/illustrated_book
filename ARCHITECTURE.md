@@ -65,11 +65,12 @@
 │         ├─ word_relations  (synonym / antonym / confusing / …)   │
 │         └─ categories  (FK)                                      │
 │  cards, events                    (RLS: public read / anon ins.) │
+│                                                                  │
+│  Storage:  word-images bucket (public read)                      │
+│            ── 105 word images, self-hosted, no external deps     │
 └──────────────────────────────────────────────────────────────────┘
 
-外部:
-  upload.wikimedia.org   ─ 圖片來源（72 字）
-  loremflickr.com        ─ 圖片 fallback
+外部（runtime 沒有產品圖片依賴；只在 OAuth 流程經過）:
   accounts.google.com    ─ OAuth (managed by Supabase, no DIY)
 ```
 
@@ -82,12 +83,12 @@
 | Framework | Next.js 14.2.35 (App Router) | SSG + RSC + Edge middleware + API routes 一站搞定 |
 | Language | TypeScript 5.5 (strict) | 編譯期攔錯 |
 | Style | Tailwind 3.4 | 卡片式 UI 寫起來快 |
-| Backend | **Supabase**（Postgres + Auth + RLS） | 一個 service 全包；省掉自寫密碼 hashing / OAuth / RLS |
+| Backend | **Supabase**（Postgres + Auth + RLS + Storage） | 一個 service 全包；省掉自寫密碼 hashing / OAuth / RLS / 圖檔伺服 |
 | DB driver | `postgres` (porsager/postgres) via pooler:6543 | Edge limit；Node runtime；prepare:false 配 transaction-mode pooler |
 | User Auth | `@supabase/ssr` + `@supabase/supabase-js` | 內建 email/password、Google OAuth、session cookie |
-| Admin Auth | 仍為 DIY PBKDF2 + HMAC cookie | 單一密碼，跟用戶系統解耦，故意不走 Supabase |
+| Admin Auth | 仍為 DIY HMAC cookie + `ADMIN_SECRET` | 單一密碼，跟用戶系統解耦，故意不走 Supabase |
 | Speech | Web Speech API (`speechSynthesis`) | 不用後端 |
-| 圖片 | Wikipedia REST API（一次性下載 URL）+ Loremflickr | 都是 CC / 公有領域，免 API key |
+| 圖片 | **Supabase Storage**（`word-images` public bucket）| 自家託管、無外部依賴、合規可控；admin 透過上傳 API 寫入 |
 | 部署 | Vercel | Next.js 原生 |
 
 ---
@@ -162,7 +163,8 @@ lib/                          # 純邏輯，沒有 React
 
 scripts/
 ├── migrate.ts                # DDL + seed + 卡片生成；vercel-build 自動跑
-└── fetch-wiki-images.mjs     # 一次性抓 Wikipedia 縮圖
+├── upload-images.ts          # 一次性圖片下載 → Supabase Storage 上傳（idempotent）
+└── fetch-wiki-images.mjs     # 早期遺物：抓 Wikipedia 縮圖到 image-urls.json (已不上 runtime)
 
 middleware.ts                 # /admin/* + /api/admin/* 守門
 types/index.ts                # 共用型別
@@ -212,6 +214,8 @@ types/index.ts                # 共用型別
 | POST | `/api/auth/logout` | edge | — |
 | GET / POST | `/api/admin/words` | node | middleware |
 | GET / PATCH / DELETE | `/api/admin/words/[id]` | node | middleware |
+| POST | `/api/admin/upload` | node | middleware；multipart/form-data；寫入 `word-images` bucket |
+| POST | `/api/admin/fetch-image` | node | middleware；server-side 從 URL 下載再寫入（繞家用 IP 限流） |
 
 ### 使用者帳號
 
@@ -253,7 +257,10 @@ words
   word TEXT, also_known_as TEXT[], part_of_speech TEXT,
   category TEXT NOT NULL REFERENCES categories(id)  ON DELETE RESTRICT
   pronunciation TEXT, audio_url TEXT NULL,
-  image_url TEXT,
+  image_url TEXT,                                    -- public Supabase Storage URL
+  image_source_url TEXT NULL,                        -- original external URL (audit)
+  image_license TEXT NULL,                           -- 'wikimedia-commons' | 'unknown' | …
+  image_credit TEXT NULL,                            -- free-form attribution (audit; no UI)
   cefr_level TEXT  CHECK IN ('A1'..'C2')  NULL,
   status TEXT NOT NULL DEFAULT 'published'
        CHECK IN ('draft','published','archived'),
@@ -747,19 +754,37 @@ ADMIN_SECRET                 # 選填；admin cookie HMAC 簽章金鑰
 
 ### `next.config.js` 圖片白名單
 ```
-upload.wikimedia.org, loremflickr.com, live.staticflickr.com,
-images.unsplash.com, source.unsplash.com, placehold.co
+僅 Supabase Storage host（從 NEXT_PUBLIC_SUPABASE_URL 推導）
 ```
+所有外部 host（wikimedia / loremflickr / unsplash / …）已移除。圖片改走自家 Storage，見 §13。
 
 ---
 
 ## 13. 外部整合
 
-### Wikipedia REST API（一次性）
-`scripts/fetch-wiki-images.mjs` 為 105 個字查 `https://en.wikipedia.org/api/rest_v1/page/summary/{title}`，把 `originalimage.source` 寫進 `lib/image-urls.json`。包含 429 退避 + 增量續抓。結果：**72/105 有 Wikimedia 圖**，剩下 fallback 到 loremflickr 關鍵字。
+### 圖片儲存（自家託管，無外部 runtime 依賴）
 
-### Loremflickr fallback
-`lib/words.ts` 的 `img()` 工具產生 `https://loremflickr.com/600/450/{tag1,tag2}?lock={hash}`。`lock` 用 keyword hash 保證**同一個字永遠拿到同一張照片**。
+所有產品圖片都在自家 **Supabase Storage** 的 `word-images` public bucket。Runtime 不會再去 wikimedia / loremflickr 拉圖 — 那些只在 backfill 階段一次性使用過。
+
+```
+admin 上傳途徑 1：file picker
+  WordForm <input type="file"> → /api/admin/upload (multipart)
+    ↓ 驗 MIME (jpeg|png|webp|gif)、≤ 5 MB、id kebab-case
+    ↓ supabase.storage.from('word-images').upload({id}.{ext}, ..., upsert)
+    ↓ return public URL  → 寫入 image_url
+
+admin 上傳途徑 2：URL 抓取（被 home IP 限流時用）
+  /api/admin/fetch-image  POST { id, sourceUrl }
+    ↓ fetch from Vercel function egress（不同 IP bucket）
+    ↓ 同樣 upload 到 Storage、更新 image_url + image_source_url + image_license
+
+backfill 一次性遷移（`scripts/upload-images.ts`）
+  迭代 105 字 → 下載原 URL → 上傳 Storage → 更新 image_*
+  Idempotent：以 storage list() 為真相來源，已存在的字跳過
+  Wikimedia 429 處理：25 s 間隔 + 20 s 單次 retry；失敗就下次 run 再撿
+```
+
+`next.config.js` 的 `images.remotePatterns` 只允 Supabase 那個 host — 任何 admin 不小心貼一個外部 URL，`next/image` 會在 build/runtime 拒絕，是強制的「不准外連」護欄。
 
 ### Google OAuth（透過 Supabase）
 **不是 DIY** — 整套 OAuth 由 Supabase 的 GoTrue 處理。前端 `supabase.auth.signInWithOAuth({ provider: "google" })` 就會把用戶送去 Google；回來時打到 `/auth/callback`，那支 route 只負責 `exchangeCodeForSession(code)` 並寫 cookie。

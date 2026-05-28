@@ -107,7 +107,7 @@ export default function SettingsClient({
             <SetCard title="通知" icon="🔔" tint="#FFF4D6">
               <SetRow label="推播通知" toggle={t.push} onToggle={() => tog("push")} />
               <SetRow label="每日複習提醒" desc="21:00 提醒今天的字" toggle={t.daily} onToggle={() => tog("daily")} />
-              <SetRow label="連勝即將中斷" desc="距離斷掉前 2 小時通知" toggle={t.streak} onToggle={() => tog("streak")} />
+              <SetRow label="連續天數即將中斷" desc="距離斷掉前 2 小時通知" toggle={t.streak} onToggle={() => tog("streak")} />
               <SetRow label="Email 週報" toggle={t.weekly} onToggle={() => tog("weekly")} last />
             </SetCard>
           )}

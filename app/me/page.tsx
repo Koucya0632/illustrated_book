@@ -34,11 +34,8 @@ export default async function MePage() {
     })
     .filter(Boolean) as { word: Word; mastery: number }[];
   masteredItems.sort((a, b) => b.mastery - a.mastery);
-  const avgMastery =
-    masteredItems.length > 0 ? masteredItems.reduce((s, x) => s + x.mastery, 0) / masteredItems.length : 0;
   const topMastered = masteredItems.slice(0, 5);
   const needsWork = [...masteredItems].filter((x) => x.mastery < 60).sort((a, b) => a.mastery - b.mastery).slice(0, 5);
-  const masteredCount = masteredItems.filter((x) => x.mastery >= 80).length;
   const completion = allWords.length > 0 ? Math.round((learnedCount / allWords.length) * 100) : 0;
 
   return (
@@ -74,20 +71,13 @@ export default async function MePage() {
         <div className="flex shrink-0 gap-2 sm:flex-col">
           <div className="min-w-[88px] rounded-2xl bg-tuji-coral px-4 py-3 text-center text-white">
             <div className="font-display text-2xl font-extrabold leading-none">{streak.current}</div>
-            <div className="mt-1 text-[11px] font-extrabold">🔥 連勝</div>
+            <div className="mt-1 text-[11px] font-extrabold">🔥 連續天數</div>
           </div>
           <Link href="/cards" className="min-w-[88px] rounded-2xl bg-tuji-yellow px-4 py-3 text-center text-tuji-ink">
             <div className="font-display text-2xl font-extrabold leading-none">{learnedCount}</div>
             <div className="mt-1 text-[11px] font-extrabold">📚 已學</div>
           </Link>
         </div>
-      </div>
-
-      {/* Quick stats */}
-      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-        <MiniStat label="收藏" value={String(bundle.favorites.length)} emoji="❤️" />
-        <MiniStat label="平均熟練度" value={masteredItems.length > 0 ? `${Math.round(avgMastery)}` : "—"} emoji="🧠" />
-        <MiniStat label="已熟練 ≥80" value={String(masteredCount)} emoji="🌟" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[1.3fr_1fr]">
@@ -158,16 +148,6 @@ export default async function MePage() {
           <MeClient />
         </div>
       </div>
-    </div>
-  );
-}
-
-function MiniStat({ label, value, emoji }: { label: string; value: string; emoji: string }) {
-  return (
-    <div className="rounded-[18px] bg-white p-4 shadow-soft">
-      <span className="text-xl">{emoji}</span>
-      <p className="mt-1.5 text-xs font-bold text-tuji-ink3">{label}</p>
-      <p className="mt-0.5 font-display text-xl font-extrabold text-tuji-ink">{value}</p>
     </div>
   );
 }

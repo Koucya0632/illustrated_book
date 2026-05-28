@@ -109,13 +109,13 @@ export default async function HomePage() {
           className="relative overflow-hidden rounded-[24px] bg-tuji-yellow p-5 transition hover:brightness-[0.98]"
         >
           <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
-            連勝
+            連續天數
           </div>
           <div className="mt-1.5 font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
             {streak?.current ?? 0}
           </div>
           <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
-            🔥 {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始你的連勝"}
+            🔥 {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始累積連續天數"}
           </div>
           <div className="pointer-events-none absolute -bottom-2.5 -right-1.5 text-6xl opacity-25">🔥</div>
         </Link>

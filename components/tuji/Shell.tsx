@@ -14,25 +14,25 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
-  { id: "today", label: "今天", href: "/", icon: "🐾", match: (p) => p === "/" },
+  { id: "today", label: "今天", href: "/", icon: "☀️", match: (p) => p === "/" },
   {
     id: "cards",
     label: "單字庫",
     href: "/cards",
-    icon: "🃏",
+    icon: "📖",
     match: (p) =>
       p.startsWith("/cards") ||
       p.startsWith("/word") ||
       p.startsWith("/category") ||
       p.startsWith("/search"),
   },
-  { id: "play", label: "學習", href: "/study", icon: "🎮", match: (p) => p.startsWith("/study") },
-  { id: "dash", label: "進度", href: "/progress", icon: "✦", match: (p) => p.startsWith("/progress") },
+  { id: "play", label: "學習", href: "/study", icon: "✏️", match: (p) => p.startsWith("/study") },
+  { id: "dash", label: "進度", href: "/progress", icon: "📊", match: (p) => p.startsWith("/progress") },
   {
     id: "me",
     label: "我",
     href: "/me",
-    icon: "◉",
+    icon: "👤",
     match: (p) => p.startsWith("/me") || p.startsWith("/settings") || p.startsWith("/favorites"),
   },
 ];

@@ -53,9 +53,9 @@ export default function ProgressClient({
   });
 
   const tiles = [
-    { label: "已學單字", val: `${learnedCount}`, sub: `共 ${totalWords} 個`, bg: TUJI.pink, color: TUJI.ink, glyph: "📚" },
-    { label: "連續天數", val: `${streak?.current ?? 0}`, sub: streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "尚未開始", bg: "#FFF4D6", color: "#A86214", glyph: "🔥" },
-    { label: "收藏單字", val: `${favCount}`, sub: "我的收藏", bg: "#FFFFFF", color: TUJI.ink, glyph: "❤️" },
+    { label: "已學單字", val: `${learnedCount}`, sub: `共 ${totalWords} 個`, bg: TUJI.pink, color: TUJI.ink },
+    { label: "連續天數", val: `${streak?.current ?? 0}`, sub: streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "尚未開始", bg: "#FFF4D6", color: "#A86214" },
+    { label: "收藏單字", val: `${favCount}`, sub: "我的收藏", bg: "#FFFFFF", color: TUJI.ink },
   ];
 
   return (
@@ -104,7 +104,6 @@ export default function ProgressClient({
             <div className="mt-1.5 text-xs font-bold" style={{ color: s.color, opacity: 0.75 }}>
               {s.sub}
             </div>
-            <div className="pointer-events-none absolute -bottom-3 -right-2 text-5xl opacity-15">{s.glyph}</div>
           </div>
         ))}
       </div>

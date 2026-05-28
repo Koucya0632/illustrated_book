@@ -71,11 +71,11 @@ export default async function MePage() {
         <div className="flex shrink-0 gap-2 sm:flex-col">
           <div className="min-w-[88px] rounded-2xl bg-tuji-coral px-4 py-3 text-center text-white">
             <div className="font-display text-2xl font-extrabold leading-none">{streak.current}</div>
-            <div className="mt-1 text-[11px] font-extrabold">🔥 連續天數</div>
+            <div className="mt-1 text-[11px] font-extrabold">連續天數</div>
           </div>
           <Link href="/cards" className="min-w-[88px] rounded-2xl bg-tuji-yellow px-4 py-3 text-center text-tuji-ink">
             <div className="font-display text-2xl font-extrabold leading-none">{learnedCount}</div>
-            <div className="mt-1 text-[11px] font-extrabold">📚 已學</div>
+            <div className="mt-1 text-[11px] font-extrabold">已學</div>
           </Link>
         </div>
       </div>
@@ -87,7 +87,7 @@ export default async function MePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {topMastered.length > 0 && (
                 <div className="rounded-[18px] bg-white p-4 shadow-soft">
-                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">🌟 最熟的字</h3>
+                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">最熟的字</h3>
                   <ul className="flex flex-col gap-3">
                     {topMastered.map((item) => (
                       <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
@@ -97,7 +97,7 @@ export default async function MePage() {
               )}
               {needsWork.length > 0 && (
                 <div className="rounded-[18px] bg-white p-4 shadow-soft">
-                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">⚠️ 需要加強</h3>
+                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">需要加強</h3>
                   <ul className="flex flex-col gap-3">
                     {needsWork.map((item) => (
                       <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />

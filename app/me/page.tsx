@@ -1,14 +1,33 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import MasteryBar from "@/components/MasteryBar";
+import Mascot from "@/components/tuji/Mascot";
+import { WordTile, scoreTier, TUJI } from "@/components/tuji/ui";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getAllWords } from "@/lib/data";
-import { applyDecay, masteryLevel } from "@/lib/mastery";
-import { getAllMastery, getQuizHistory, getStudyStreak, type StudyStreak } from "@/lib/users-db";
+import { applyDecay } from "@/lib/mastery";
+import { getAllMastery, getQuizHistory, getStudyStreak } from "@/lib/users-db";
 import MeClient from "./MeClient";
+import type { Word } from "@/types";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "我的帳號" };
+export const metadata = { title: "我的帳號 · Tuji" };
+
+const TYPE_LABEL: Record<string, string> = {
+  image: "看圖選英文",
+  chinese: "看中文選英文",
+  spelling: "拼字練習",
+};
+
+const BADGES = [
+  { g: "🔥", l: "連勝 7", bg: "#FBE6E1" },
+  { g: "🌅", l: "早起 5", bg: "#FFF4D6" },
+  { g: "📚", l: "100 字", bg: TUJI.tealS },
+  { g: "⚡", l: "快速 50", bg: "#F6E6F0", off: true },
+  { g: "🎯", l: "滿分日", bg: "#F0EDE5", off: true },
+  { g: "🌙", l: "深夜學", bg: "#F0EDE5", off: true },
+  { g: "🦉", l: "貓頭鷹", bg: "#F0EDE5", off: true },
+  { g: "👑", l: "30 連勝", bg: "#F0EDE5", off: true },
+];
 
 export default async function MePage() {
   const bundle = await getCurrentUserBundle();
@@ -21,261 +40,229 @@ export default async function MePage() {
     getStudyStreak(bundle.user.id),
   ]);
   const byId = new Map(allWords.map((w) => [w.id, w]));
-  const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean);
+  const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean) as Word[];
   const learnedCount = bundle.learned.length;
   const totalAttempts = quizHistory.reduce((s, q) => s + q.total, 0);
   const totalCorrect = quizHistory.reduce((s, q) => s + q.correct, 0);
   const rate = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
 
-  // Apply forgetting-curve decay to each row, then rank.
   const now = new Date();
   const masteredItems = masteryRows
     .map((r) => {
-      const current = applyDecay(
-        r.mastery,
-        r.last_reviewed_at ? new Date(r.last_reviewed_at) : null,
-        now,
-      );
+      const current = applyDecay(r.mastery, r.last_reviewed_at ? new Date(r.last_reviewed_at) : null, now);
       const w = byId.get(r.word_id);
       return w ? { word: w, mastery: current } : null;
     })
-    .filter(Boolean) as { word: NonNullable<ReturnType<typeof byId.get>>; mastery: number }[];
+    .filter(Boolean) as { word: Word; mastery: number }[];
   masteredItems.sort((a, b) => b.mastery - a.mastery);
   const avgMastery =
-    masteredItems.length > 0
-      ? masteredItems.reduce((s, x) => s + x.mastery, 0) / masteredItems.length
-      : 0;
+    masteredItems.length > 0 ? masteredItems.reduce((s, x) => s + x.mastery, 0) / masteredItems.length : 0;
   const topMastered = masteredItems.slice(0, 5);
-  const needsWork = [...masteredItems]
-    .filter((x) => x.mastery < 60)
-    .sort((a, b) => a.mastery - b.mastery)
-    .slice(0, 5);
+  const needsWork = [...masteredItems].filter((x) => x.mastery < 60).sort((a, b) => a.mastery - b.mastery).slice(0, 5);
   const masteredCount = masteredItems.filter((x) => x.mastery >= 80).length;
+  const completion = allWords.length > 0 ? Math.round((learnedCount / allWords.length) * 100) : 0;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-      <header className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-ink">
-            👋 你好，{bundle.user.username}
-          </h1>
-          <p className="text-sm text-muted mt-1">
-            {bundle.user.email} · 自{" "}
-            {new Date(bundle.user.createdAt).toLocaleDateString("zh-TW")} 加入
-          </p>
+    <div className="mx-auto max-w-5xl px-5 py-6 sm:px-7">
+      <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">個人主頁</div>
+
+      {/* Profile hero */}
+      <div className="relative mb-4 flex flex-col items-center gap-5 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white sm:flex-row">
+        <div className="pointer-events-none absolute right-10 top-4 text-sm text-tuji-yellow/85">✦</div>
+        <div className="flex h-28 w-28 shrink-0 items-end justify-center overflow-hidden rounded-[28px] bg-tuji-teal">
+          <Mascot pose="cheer" size={116} />
         </div>
-        <MeClient />
-      </header>
-
-      <StreakBanner streak={streak} />
-
-      <section className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <Stat label="收藏" value={String(bundle.favorites.length)} emoji="❤️" />
-        <Stat label="已學單字" value={`${learnedCount}/${allWords.length}`} emoji="📚" />
-        <Stat
-          label="平均熟練度"
-          value={
-            masteredItems.length > 0
-              ? `${Math.round(avgMastery)}/100`
-              : "—"
-          }
-          emoji="🧠"
-        />
-        <Stat label="已熟練 (≥80)" value={String(masteredCount)} emoji="🌟" />
-      </section>
-
-      <section className="mt-3 grid grid-cols-2 sm:grid-cols-2 gap-3">
-        <Stat label="測驗次數" value={String(quizHistory.length)} emoji="🎯" />
-        <Stat label="總正確率" value={`${rate}%`} emoji="📈" />
-      </section>
-
-      {masteredItems.length > 0 && (
-        <section className="mt-10">
-          <h2 className="text-lg font-bold text-ink">熟練度概覽</h2>
-          <p className="text-xs text-muted mt-0.5">
-            熟練度會隨時間自然衰減 — 久沒複習的字分數會慢慢下降。
+        <div className="flex-1 text-center sm:text-left">
+          <h1 className="font-display text-3xl font-extrabold tracking-tight">{bundle.user.username}</h1>
+          <p className="mt-1 text-[13px] text-white/70">
+            {bundle.user.email} · 加入於 {new Date(bundle.user.createdAt).toLocaleDateString("zh-TW")}
           </p>
-          <div className="mt-3 grid sm:grid-cols-2 gap-4">
-            {topMastered.length > 0 && (
-              <div className="bg-white rounded-xl2 shadow-card p-4">
-                <h3 className="text-sm font-semibold text-ink">🌟 最熟的字</h3>
-                <ul className="mt-3 space-y-3">
-                  {topMastered.map((item) => (
-                    <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
-                  ))}
-                </ul>
-              </div>
-            )}
-            {needsWork.length > 0 && (
-              <div className="bg-white rounded-xl2 shadow-card p-4">
-                <h3 className="text-sm font-semibold text-ink">⚠️ 需要加強</h3>
-                <ul className="mt-3 space-y-3">
-                  {needsWork.map((item) => (
-                    <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
-                  ))}
-                </ul>
-                <Link
-                  href="/study"
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-sky-accent hover:underline"
-                >
-                  去複習 →
-                </Link>
-              </div>
-            )}
+          <div className="mt-4">
+            <div className="mb-1.5 flex justify-between text-[11px] font-extrabold text-white/80">
+              <span>圖鑑完成度</span>
+              <span>
+                {learnedCount} / {allWords.length}
+              </span>
+            </div>
+            <div className="h-2.5 overflow-hidden rounded-full bg-white/15">
+              <div
+                className="h-full rounded-full"
+                style={{ width: `${completion}%`, background: `linear-gradient(90deg, ${TUJI.yellow}, ${TUJI.coral})` }}
+              />
+            </div>
           </div>
-        </section>
-      )}
-
-      <section className="mt-10">
-        <h2 className="text-lg font-bold text-ink">我的收藏</h2>
-        {fav.length === 0 ? (
-          <p className="mt-2 text-sm text-muted">
-            還沒有收藏單字。{" "}
-            <Link href="/" className="text-sky-accent hover:underline">
-              去逛圖鑑 →
-            </Link>
-          </p>
-        ) : (
-          <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {fav.map((w) => (
-              <Link
-                key={w!.id}
-                href={`/word/${w!.id}`}
-                className="bg-white rounded-xl shadow-soft hover:shadow-card transition px-3 py-3 flex items-center gap-3"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={w!.imageUrl}
-                  alt={w!.word}
-                  className="w-12 h-12 rounded-lg object-cover bg-cream"
-                />
-                <div className="min-w-0">
-                  <p className="font-semibold text-ink truncate">{w!.word}</p>
-                  <p className="text-xs text-muted truncate">{w!.chinese}</p>
-                </div>
-              </Link>
-            ))}
+        </div>
+        <div className="flex shrink-0 gap-2 sm:flex-col">
+          <div className="min-w-[88px] rounded-2xl bg-tuji-coral px-4 py-3 text-center text-white">
+            <div className="font-display text-2xl font-extrabold leading-none">{streak.current}</div>
+            <div className="mt-1 text-[11px] font-extrabold">🔥 連勝</div>
           </div>
-        )}
-      </section>
-
-      <section className="mt-10">
-        <h2 className="text-lg font-bold text-ink">最近測驗</h2>
-        {quizHistory.length === 0 ? (
-          <p className="mt-2 text-sm text-muted">
-            還沒有測驗紀錄。{" "}
-            <Link href="/quiz" className="text-sky-accent hover:underline">
-              做一個測驗 →
-            </Link>
-          </p>
-        ) : (
-          <ul className="mt-3 space-y-2">
-            {quizHistory.map((q) => {
-              const r = q.total > 0 ? Math.round((q.correct / q.total) * 100) : 0;
-              return (
-                <li
-                  key={q.id}
-                  className="bg-white rounded-xl shadow-soft px-4 py-3 flex items-center justify-between"
-                >
-                  <div>
-                    <p className="font-semibold text-ink">{TYPE_LABEL[q.quiz_type] ?? q.quiz_type}</p>
-                    <p className="text-xs text-muted">
-                      {new Date(q.created_at).toLocaleString("zh-TW")}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-semibold text-ink">
-                      {q.correct}/{q.total}
-                    </p>
-                    <p className="text-xs text-muted">{r}%</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </section>
-    </div>
-  );
-}
-
-const TYPE_LABEL: Record<string, string> = {
-  image: "看圖選英文",
-  chinese: "看中文選英文",
-  spelling: "拼字練習",
-};
-
-function StreakBanner({ streak }: { streak: StudyStreak }) {
-  const { current, longest, totalDays, todayCount } = streak;
-
-  // Three states: studied today / streak alive but not done today / no streak.
-  let headline: string;
-  let sub: string;
-  if (todayCount > 0) {
-    headline = `🔥 連續 ${current} 天`;
-    sub = `今天已複習 ${todayCount} 張，做得好！`;
-  } else if (current > 0) {
-    headline = `🔥 連續 ${current} 天`;
-    sub = "今天還沒複習 — 把握住，別中斷連續紀錄！";
-  } else {
-    headline = "🔥 開始你的學習連續紀錄";
-    sub = totalDays > 0 ? "連續紀錄中斷了，今天重新開始吧。" : "完成第一次複習就開始計算。";
-  }
-
-  return (
-    <section className="mt-6 rounded-xl2 bg-gradient-to-br from-amber-50 to-orange-100/60 shadow-card p-5 flex items-center gap-4">
-      <div className="min-w-0 flex-1">
-        <p className="text-2xl sm:text-3xl font-bold text-ink">{headline}</p>
-        <p className="text-sm text-muted mt-1">{sub}</p>
-        {totalDays > 0 && (
-          <p className="text-xs text-muted mt-2">
-            最長 {longest} 天 · 累計學習 {totalDays} 天
-          </p>
-        )}
+          <Link href="/cards" className="min-w-[88px] rounded-2xl bg-tuji-yellow px-4 py-3 text-center text-tuji-ink">
+            <div className="font-display text-2xl font-extrabold leading-none">{learnedCount}</div>
+            <div className="mt-1 text-[11px] font-extrabold">📚 已學</div>
+          </Link>
+        </div>
       </div>
-      {(current === 0 || todayCount === 0) && (
-        <Link
-          href="/study"
-          className="shrink-0 px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90"
-        >
-          去複習
-        </Link>
-      )}
-    </section>
-  );
-}
 
-function Stat({ label, value, emoji }: { label: string; value: string; emoji: string }) {
-  return (
-    <div className="rounded-xl2 bg-white shadow-card p-4">
-      <span className="text-2xl">{emoji}</span>
-      <p className="mt-2 text-xs text-muted">{label}</p>
-      <p className="mt-1 text-xl font-bold text-ink">{value}</p>
+      {/* Quick stats */}
+      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <MiniStat label="收藏" value={String(bundle.favorites.length)} emoji="❤️" />
+        <MiniStat label="平均熟練度" value={masteredItems.length > 0 ? `${Math.round(avgMastery)}` : "—"} emoji="🧠" />
+        <MiniStat label="已熟練 ≥80" value={String(masteredCount)} emoji="🌟" />
+        <MiniStat label="總正確率" value={`${rate}%`} emoji="📈" />
+      </div>
+
+      <div className="grid gap-4 lg:grid-cols-[1.3fr_1fr]">
+        <div className="flex flex-col gap-4">
+          {/* Mastery overview */}
+          {masteredItems.length > 0 && (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {topMastered.length > 0 && (
+                <div className="rounded-[18px] bg-white p-4 shadow-soft">
+                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">🌟 最熟的字</h3>
+                  <ul className="flex flex-col gap-3">
+                    {topMastered.map((item) => (
+                      <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {needsWork.length > 0 && (
+                <div className="rounded-[18px] bg-white p-4 shadow-soft">
+                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">⚠️ 需要加強</h3>
+                  <ul className="flex flex-col gap-3">
+                    {needsWork.map((item) => (
+                      <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
+                    ))}
+                  </ul>
+                  <Link href="/study" className="mt-3 inline-block text-sm font-extrabold text-tuji-teal">
+                    去複習 →
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Badges (stub) */}
+          <div className="rounded-[18px] bg-white p-5 shadow-soft">
+            <div className="mb-3 flex items-baseline justify-between">
+              <div className="text-sm font-extrabold text-tuji-ink">勳章</div>
+              <div className="text-[11px] font-semibold text-tuji-ink3">即將推出</div>
+            </div>
+            <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
+              {BADGES.map((a) => (
+                <div key={a.l} className="rounded-xl px-1.5 py-2.5 text-center" style={{ background: a.bg, opacity: a.off ? 0.4 : 1 }}>
+                  <div className="text-xl" style={{ filter: a.off ? "grayscale(1)" : "none" }}>
+                    {a.g}
+                  </div>
+                  <div className="mt-1 text-[9px] font-extrabold text-tuji-ink">{a.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Favorites */}
+          <div>
+            <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">我的收藏</h2>
+            {fav.length === 0 ? (
+              <p className="text-sm text-tuji-ink3">
+                還沒有收藏單字。{" "}
+                <Link href="/cards" className="font-extrabold text-tuji-teal">
+                  去逛圖鑑 →
+                </Link>
+              </p>
+            ) : (
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {fav.map((w) => (
+                  <Link key={w.id} href={`/word/${w.id}`} className="rounded-[14px] bg-white p-2.5 shadow-soft transition hover:shadow-card">
+                    <WordTile imageUrl={w.imageUrl} word={w.word} height={70} rounded={10} />
+                    <div className="mt-2 truncate text-[13px] font-extrabold text-tuji-ink">{w.word}</div>
+                    <div className="truncate text-[11px] text-tuji-ink3">{w.chinese}</div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Right rail */}
+        <div className="flex flex-col gap-4">
+          <Link href="/settings" className="block rounded-[18px] bg-white p-5 shadow-soft transition hover:shadow-card">
+            <div className="flex items-baseline justify-between">
+              <div className="text-sm font-extrabold text-tuji-ink">學習偏好</div>
+              <div className="text-[11px] font-extrabold text-tuji-ink3">編輯 →</div>
+            </div>
+            <p className="mt-2 text-xs text-tuji-ink3">每日目標、提醒時間、發音口音、Tuji 出現頻率…</p>
+          </Link>
+
+          <div className="rounded-[18px] bg-white p-5 shadow-soft">
+            <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">最近測驗</h2>
+            {quizHistory.length === 0 ? (
+              <p className="text-sm text-tuji-ink3">
+                還沒有測驗紀錄。{" "}
+                <Link href="/quiz" className="font-extrabold text-tuji-teal">
+                  做一個測驗 →
+                </Link>
+              </p>
+            ) : (
+              <ul className="flex flex-col gap-1">
+                {quizHistory.map((q) => {
+                  const r = q.total > 0 ? Math.round((q.correct / q.total) * 100) : 0;
+                  return (
+                    <li key={q.id} className="flex items-center justify-between py-2">
+                      <div className="min-w-0">
+                        <p className="truncate text-[13px] font-bold text-tuji-ink">
+                          {TYPE_LABEL[q.quiz_type] ?? q.quiz_type}
+                        </p>
+                        <p className="text-[11px] text-tuji-ink3">{new Date(q.created_at).toLocaleString("zh-TW")}</p>
+                      </div>
+                      <div className="shrink-0 text-right">
+                        <p className="text-[13px] font-extrabold text-tuji-ink">
+                          {q.correct}/{q.total}
+                        </p>
+                        <p className="text-[11px] text-tuji-ink3">{r}%</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+
+          <MeClient />
+        </div>
+      </div>
     </div>
   );
 }
 
-function MasteryRow({
-  word,
-  mastery,
-}: {
-  word: { id: string; word: string; chinese: string; imageUrl: string };
-  mastery: number;
-}) {
+function MiniStat({ label, value, emoji }: { label: string; value: string; emoji: string }) {
+  return (
+    <div className="rounded-[18px] bg-white p-4 shadow-soft">
+      <span className="text-xl">{emoji}</span>
+      <p className="mt-1.5 text-xs font-bold text-tuji-ink3">{label}</p>
+      <p className="mt-0.5 font-display text-xl font-extrabold text-tuji-ink">{value}</p>
+    </div>
+  );
+}
+
+function MasteryRow({ word, mastery }: { word: Word; mastery: number }) {
+  const tier = scoreTier(mastery);
   return (
     <li>
-      <Link href={`/word/${word.id}`} className="flex items-center gap-3 group">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={word.imageUrl} alt={word.word} className="w-10 h-10 rounded-lg object-cover bg-cream shrink-0" />
-        <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-ink truncate group-hover:underline">
-            {word.word} <span className="text-muted font-normal">· {word.chinese}</span>
-          </p>
-          <MasteryBar score={mastery} size="sm" showLabel={false} />
+      <Link href={`/word/${word.id}`} className="flex items-center gap-3">
+        <div className="w-10 shrink-0">
+          <WordTile imageUrl={word.imageUrl} word={word.word} height={40} rounded={8} />
         </div>
-        <span className="text-xs font-mono text-muted shrink-0 tabular-nums">
-          {Math.round(mastery)}
-        </span>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-[13px] font-bold text-tuji-ink">
+            {word.word} <span className="font-normal text-tuji-ink3">· {word.chinese}</span>
+          </p>
+          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-tuji-bg">
+            <div className="h-full rounded-full" style={{ width: `${mastery}%`, background: tier.color }} />
+          </div>
+        </div>
+        <span className="shrink-0 font-mono text-xs text-tuji-ink3">{Math.round(mastery)}</span>
       </Link>
     </li>
   );

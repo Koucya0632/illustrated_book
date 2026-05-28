@@ -12,9 +12,6 @@ export default function SearchClient() {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<CategoryId | "all">("all");
 
-  // Debounced server search (300ms, cap 50). When the query is empty, show
-  // the full set from context so the "browse by category" path still works
-  // without hitting the network.
   const { results: searchHits, loading } = useSearch(q, { limit: 50 });
 
   const results = useMemo(() => {
@@ -24,10 +21,12 @@ export default function SearchClient() {
     return list;
   }, [q, cat, allWords, searchHits]);
 
+  const chips = [{ id: "all" as const, label: "全部" }, ...categories.map((c) => ({ id: c.id, label: `${c.emoji} ${c.nameZh}` }))];
+
   return (
     <div className="mt-5">
-      <div className="flex items-center gap-2 bg-white rounded-full px-4 py-3 shadow-card focus-within:ring-2 ring-sky-accent">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="text-muted shrink-0">
+      <div className="flex items-center gap-2 rounded-full bg-white px-5 py-3.5 shadow-card focus-within:ring-2 focus-within:ring-tuji-teal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="shrink-0 text-tuji-ink3">
           <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
           <path d="M21 21l-4.3-4.3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
@@ -36,53 +35,44 @@ export default function SearchClient() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="搜尋中文或英文，例如：冰箱、fridge"
-          className="flex-1 outline-none bg-transparent text-ink placeholder:text-muted text-sm sm:text-base"
+          className="flex-1 bg-transparent text-sm text-tuji-ink outline-none placeholder:text-tuji-ink4 sm:text-base"
         />
         {q && (
-          <button onClick={() => setQ("")} aria-label="清除" className="text-muted hover:text-ink">
+          <button onClick={() => setQ("")} aria-label="清除" className="text-tuji-ink3 hover:text-tuji-ink">
             ✕
           </button>
         )}
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        <button
-          onClick={() => setCat("all")}
-          className={`px-3 py-1.5 rounded-full text-sm transition ${
-            cat === "all"
-              ? "bg-sky-accent text-white"
-              : "bg-white text-muted hover:text-ink shadow-soft"
-          }`}
-        >
-          全部
-        </button>
-        {categories.map((c) => (
-          <button
-            key={c.id}
-            onClick={() => setCat(c.id)}
-            className={`px-3 py-1.5 rounded-full text-sm transition ${
-              cat === c.id
-                ? "bg-sky-accent text-white"
-                : "bg-white text-muted hover:text-ink shadow-soft"
-            }`}
-          >
-            {c.emoji} {c.nameZh}
-          </button>
-        ))}
+      <div className="no-scrollbar -mx-5 mt-4 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
+        {chips.map((c) => {
+          const on = c.id === cat;
+          return (
+            <button
+              key={c.id}
+              onClick={() => setCat(c.id)}
+              className={`shrink-0 rounded-full px-4 py-2 text-xs font-extrabold transition ${
+                on ? "bg-tuji-ink text-white" : "bg-white text-tuji-ink shadow-soft hover:shadow-card"
+              }`}
+            >
+              {c.label}
+            </button>
+          );
+        })}
       </div>
 
-      <p className="mt-4 text-sm text-muted">
+      <p className="mt-4 text-sm font-semibold text-tuji-ink3">
         {q ? `搜尋「${q}」` : "全部單字"} · {results.length} 個結果
         {q && loading && <span className="ml-2">搜尋中…</span>}
       </p>
 
       {results.length === 0 ? (
-        <div className="mt-12 text-center text-muted">
-          <div className="text-5xl mb-2">🔍</div>
+        <div className="mt-12 text-center text-tuji-ink3">
+          <div className="mb-2 text-5xl">🔍</div>
           找不到符合的單字，換個關鍵字試試？
         </div>
       ) : (
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="mt-4 grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4">
           {results.map((w) => (
             <WordCard key={w.id} word={w} />
           ))}

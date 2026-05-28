@@ -25,17 +25,17 @@ export default function FavoritesClient() {
   }, [allWords]);
 
   if (items === null) {
-    return <div className="mt-8 text-muted">載入中…</div>;
+    return <div className="mt-8 text-tuji-ink3">載入中…</div>;
   }
 
   if (items.length === 0) {
     return (
-      <div className="mt-12 text-center text-muted">
-        <div className="text-5xl mb-2">🤍</div>
+      <div className="mt-12 text-center text-tuji-ink3">
+        <div className="mb-2 text-5xl">🤍</div>
         <p>還沒有收藏單字。</p>
         <Link
-          href="/"
-          className="mt-4 inline-block px-4 py-2 rounded-full bg-sky-accent text-white shadow-card hover:bg-sky-accent/90"
+          href="/cards"
+          className="mt-4 inline-block rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-card"
         >
           去逛圖鑑
         </Link>
@@ -44,7 +44,7 @@ export default function FavoritesClient() {
   }
 
   return (
-    <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="mt-6 grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4">
       {items.map((w) => (
         <WordCard key={w.id} word={w} />
       ))}

@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
-import { categories, getCategory } from "@/lib/categories";
+import Mascot from "@/components/tuji/Mascot";
+import { TUJI } from "@/components/tuji/ui";
+import { categories } from "@/lib/categories";
 import { clearProgress, getProgress, subscribe } from "@/lib/storage";
 import type { Progress } from "@/types";
 
@@ -13,7 +15,30 @@ const TYPE_LABEL: Record<string, string> = {
   spelling: "拼字練習",
 };
 
-export default function ProgressClient() {
+// Deterministic placeholder heat grid — see TUJI_TODO.md (daily activity is
+// not yet tracked per-day, so this is a visual stub).
+const HEAT = Array.from({ length: 42 }, (_, i) => {
+  const seed = (i * 17 + 11) % 13;
+  return seed < 4 ? 0 : seed < 7 ? 1 : seed < 10 ? 2 : 3;
+});
+const HEAT_COLOR = ["#F0EDE5", TUJI.tealS, "#86C0C0", TUJI.teal];
+
+const BADGES = [
+  { g: "🔥", l: "連勝 7", bg: "#FBE6E1" },
+  { g: "🌅", l: "早起 5", bg: "#FFF4D6" },
+  { g: "📚", l: "100 字", bg: TUJI.tealS },
+  { g: "⚡", l: "快速 50", bg: "#F6E6F0" },
+  { g: "🎯", l: "滿分日", bg: "#F0EDE5", off: true },
+  { g: "🌙", l: "深夜學", bg: "#F0EDE5", off: true },
+  { g: "🎓", l: "500 字", bg: "#F0EDE5", off: true },
+  { g: "👑", l: "30 連勝", bg: "#F0EDE5", off: true },
+];
+
+export default function ProgressClient({
+  streak,
+}: {
+  streak: { current: number; longest: number; totalDays: number } | null;
+}) {
   const allWords = useWords();
   const [p, setP] = useState<Progress | null>(null);
 
@@ -22,7 +47,11 @@ export default function ProgressClient() {
     return subscribe(() => setP(getProgress()));
   }, []);
 
-  if (!p) return <div className="mt-8 text-muted">載入中…</div>;
+  if (!p) {
+    return (
+      <div className="flex min-h-[50vh] items-center justify-center text-sm text-tuji-ink3">載入中…</div>
+    );
+  }
 
   const totalWords = allWords.length;
   const learnedCount = p.learnedIds.length;
@@ -30,7 +59,7 @@ export default function ProgressClient() {
   const totalAttempted = p.quizHistory.reduce((s, q) => s + q.total, 0);
   const totalCorrect = p.quizHistory.reduce((s, q) => s + q.correct, 0);
   const rate = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
-  const last = p.lastCategoryVisited ? getCategory(p.lastCategoryVisited) : undefined;
+  const completion = totalWords > 0 ? Math.round((learnedCount / totalWords) * 100) : 0;
 
   const perCategory = categories.map((c) => {
     const inCat = allWords.filter((w) => w.category === c.id);
@@ -43,45 +72,82 @@ export default function ProgressClient() {
     };
   });
 
-  return (
-    <div className="mt-6 space-y-8">
-      {/* Stats */}
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <StatCard label="已學單字" value={`${learnedCount}/${totalWords}`} emoji="📚" />
-        <StatCard label="收藏單字" value={`${favCount}`} emoji="❤️" />
-        <StatCard label="測驗正確率" value={`${rate}%`} emoji="🎯" />
-        <StatCard
-          label="最近學習"
-          value={last ? `${last.emoji} ${last.nameZh}` : "—"}
-          emoji="📍"
-        />
-      </section>
+  const tiles = [
+    { label: "已學單字", val: `${learnedCount}`, sub: `共 ${totalWords} 個`, bg: TUJI.pink, color: TUJI.ink, glyph: "📚" },
+    { label: "測驗正確率", val: `${rate}%`, sub: `${p.quizHistory.length} 次測驗`, bg: TUJI.tealS, color: TUJI.teal, glyph: "🎯" },
+    { label: "連續天數", val: `${streak?.current ?? 0}`, sub: streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "尚未開始", bg: "#FFF4D6", color: "#A86214", glyph: "🔥" },
+    { label: "收藏單字", val: `${favCount}`, sub: "我的收藏", bg: "#FFFFFF", color: TUJI.ink, glyph: "❤️" },
+  ];
 
-      {/* Per category progress */}
-      <section>
-        <h2 className="text-lg font-bold text-ink">各分類進度</h2>
-        <ul className="mt-3 space-y-2">
+  return (
+    <div className="mx-auto max-w-5xl px-5 py-6 sm:px-7">
+      <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">我的進度</div>
+
+      {/* Hero — 圖鑑完成度 (real) */}
+      <div className="relative mb-4 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white">
+        <div className="pointer-events-none absolute right-8 top-5 text-sm text-tuji-yellow/80">✦</div>
+        <div className="flex items-center gap-5">
+          <div className="flex h-24 w-24 shrink-0 items-end justify-center overflow-hidden rounded-[26px] bg-tuji-teal">
+            <Mascot pose="cheer" size={104} />
+          </div>
+          <div className="flex-1">
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/65">圖鑑完成度</div>
+            <div className="mt-1 font-display text-3xl font-extrabold tracking-tight">
+              {learnedCount} <span className="text-lg font-bold text-white/60">/ {totalWords}</span>
+            </div>
+            <div className="mt-3 flex items-center gap-3">
+              <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-white/15">
+                <div
+                  className="h-full rounded-full"
+                  style={{ width: `${completion}%`, background: `linear-gradient(90deg, ${TUJI.yellow}, ${TUJI.coral})` }}
+                />
+              </div>
+              <span className="text-[11px] font-extrabold text-white/80">{completion}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stat tiles */}
+      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {tiles.map((s) => (
+          <div
+            key={s.label}
+            className="relative overflow-hidden rounded-[18px] p-4 shadow-soft"
+            style={{ background: s.bg }}
+          >
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.14em]" style={{ color: s.color, opacity: 0.7 }}>
+              {s.label}
+            </div>
+            <div className="mt-1.5 font-display text-3xl font-extrabold leading-none tracking-tight" style={{ color: s.color }}>
+              {s.val}
+            </div>
+            <div className="mt-1.5 text-xs font-bold" style={{ color: s.color, opacity: 0.75 }}>
+              {s.sub}
+            </div>
+            <div className="pointer-events-none absolute -bottom-3 -right-2 text-5xl opacity-15">{s.glyph}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Per-category progress (real) */}
+      <section className="mb-4 rounded-[18px] bg-white p-5 shadow-soft">
+        <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">各主題進度</h2>
+        <ul className="flex flex-col gap-2.5">
           {perCategory.map((row) => (
             <li key={row.cat.id}>
-              <Link
-                href={`/category/${row.cat.id}`}
-                className="block bg-white rounded-xl shadow-soft hover:shadow-card px-4 py-3 transition"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">{row.cat.emoji}</span>
-                    <span className="font-semibold text-ink">{row.cat.name}</span>
-                    <span className="text-sm text-muted">{row.cat.nameZh}</span>
-                  </div>
-                  <span className="text-sm font-medium text-ink">
+              <Link href={`/category/${row.cat.id}`} className="block">
+                <div className="mb-1.5 flex items-center justify-between text-sm">
+                  <span className="flex items-center gap-2 font-bold text-tuji-ink">
+                    <span>{row.cat.emoji}</span>
+                    {row.cat.nameZh}
+                  </span>
+                  <span className="text-xs font-extrabold text-tuji-ink3">
                     {row.learned}/{row.total}
                   </span>
                 </div>
-                <div className="mt-2 h-2 bg-cream rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-sky-accent transition-all"
-                    style={{ width: `${row.pct}%` }}
-                  />
+                <div className="h-2 overflow-hidden rounded-full bg-tuji-bg">
+                  <div className="h-full rounded-full bg-tuji-teal transition-all" style={{ width: `${row.pct}%` }} />
                 </div>
               </Link>
             </li>
@@ -89,34 +155,83 @@ export default function ProgressClient() {
         </ul>
       </section>
 
-      {/* Quiz history */}
-      <section>
-        <h2 className="text-lg font-bold text-ink">最近測驗紀錄</h2>
+      {/* Heatmap + badges (visual stubs — see TUJI_TODO.md) */}
+      <div className="mb-4 grid gap-3 lg:grid-cols-[1.6fr_1fr]">
+        <div className="rounded-[18px] bg-white p-5 shadow-soft">
+          <div className="mb-3 flex items-baseline justify-between">
+            <div>
+              <div className="text-sm font-extrabold text-tuji-ink">過去 6 週</div>
+              <div className="mt-0.5 text-[11px] font-semibold text-tuji-ink3">示意圖 · 尚未串接每日活動</div>
+            </div>
+            <div className="flex items-center gap-1.5 text-[10px] font-semibold text-tuji-ink3">
+              少
+              {HEAT_COLOR.map((c) => (
+                <span key={c} className="h-3.5 w-3.5 rounded" style={{ background: c }} />
+              ))}
+              多
+            </div>
+          </div>
+          <div className="flex gap-1.5">
+            {["日", "一", "二", "三", "四", "五", "六"].map((d, di) => (
+              <div key={di} className="flex-1">
+                <div className="mb-1.5 text-center text-[10px] font-bold text-tuji-ink3">{d}</div>
+                <div className="flex flex-col gap-1.5">
+                  {[0, 1, 2, 3, 4, 5].map((wk) => (
+                    <div key={wk} className="aspect-square rounded" style={{ background: HEAT_COLOR[HEAT[wk * 7 + di]] }} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-[18px] bg-white p-5 shadow-soft">
+          <div className="mb-3 flex items-baseline justify-between">
+            <div className="text-sm font-extrabold text-tuji-ink">勳章</div>
+            <div className="text-[11px] font-semibold text-tuji-ink3">即將推出</div>
+          </div>
+          <div className="grid grid-cols-4 gap-2">
+            {BADGES.map((a) => (
+              <div
+                key={a.l}
+                className="rounded-xl px-1.5 py-2.5 text-center"
+                style={{ background: a.bg, opacity: a.off ? 0.4 : 1 }}
+              >
+                <div className="text-2xl" style={{ filter: a.off ? "grayscale(1)" : "none" }}>
+                  {a.g}
+                </div>
+                <div className="mt-1 text-[10px] font-extrabold text-tuji-ink">{a.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Quiz history (real) */}
+      <section className="mb-4">
+        <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">最近測驗紀錄</h2>
         {p.quizHistory.length === 0 ? (
-          <p className="mt-3 text-sm text-muted">
+          <p className="text-sm text-tuji-ink3">
             還沒有測驗紀錄。{" "}
-            <Link href="/quiz" className="text-sky-accent hover:underline">
+            <Link href="/quiz" className="font-extrabold text-tuji-teal">
               去做一個測驗 →
             </Link>
           </p>
         ) : (
-          <ul className="mt-3 space-y-2">
+          <ul className="flex flex-col gap-2">
             {p.quizHistory.slice(0, 8).map((q, i) => {
               const r = q.total > 0 ? Math.round((q.correct / q.total) * 100) : 0;
               return (
-                <li
-                  key={i}
-                  className="bg-white rounded-xl shadow-soft px-4 py-3 flex items-center justify-between"
-                >
+                <li key={i} className="flex items-center justify-between rounded-[14px] bg-white px-4 py-3 shadow-soft">
                   <div>
-                    <p className="font-semibold text-ink">{TYPE_LABEL[q.type] ?? q.type}</p>
-                    <p className="text-xs text-muted">{new Date(q.date).toLocaleString("zh-TW")}</p>
+                    <p className="font-bold text-tuji-ink">{TYPE_LABEL[q.type] ?? q.type}</p>
+                    <p className="text-xs text-tuji-ink3">{new Date(q.date).toLocaleString("zh-TW")}</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold text-ink">
+                    <p className="font-extrabold text-tuji-ink">
                       {q.correct}/{q.total}
                     </p>
-                    <p className="text-xs text-muted">{r}%</p>
+                    <p className="text-xs text-tuji-ink3">{r}%</p>
                   </div>
                 </li>
               );
@@ -125,29 +240,14 @@ export default function ProgressClient() {
         )}
       </section>
 
-      {/* Reset */}
-      <section className="pt-2">
-        <button
-          onClick={() => {
-            if (confirm("確定要清除所有學習進度嗎？此操作無法復原。")) {
-              clearProgress();
-            }
-          }}
-          className="text-sm text-rose-500 hover:underline"
-        >
-          清除所有進度
-        </button>
-      </section>
-    </div>
-  );
-}
-
-function StatCard({ label, value, emoji }: { label: string; value: string; emoji: string }) {
-  return (
-    <div className="rounded-xl2 bg-white shadow-card p-4 flex flex-col">
-      <span className="text-2xl">{emoji}</span>
-      <span className="mt-2 text-xs text-muted">{label}</span>
-      <span className="mt-1 text-xl font-bold text-ink">{value}</span>
+      <button
+        onClick={() => {
+          if (confirm("確定要清除所有學習進度嗎？此操作無法復原。")) clearProgress();
+        }}
+        className="text-sm font-bold text-tuji-coral hover:underline"
+      >
+        清除所有進度
+      </button>
     </div>
   );
 }

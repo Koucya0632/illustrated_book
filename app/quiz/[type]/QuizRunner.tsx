@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
+import Mascot from "@/components/tuji/Mascot";
+import { WordTile, shade, TUJI } from "@/components/tuji/ui";
 import { useWords } from "@/components/WordsProvider";
 import { track } from "@/lib/analytics";
 import { buildQuizFrom, type QuizQuestion } from "@/lib/quiz";
@@ -34,9 +36,8 @@ export default function QuizRunner({ type }: { type: QuizType }) {
   const meta = TITLES[type];
 
   function next() {
-    if (idx + 1 >= questions.length) {
-      finish();
-    } else {
+    if (idx + 1 >= questions.length) finish();
+    else {
       setIdx((i) => i + 1);
       setChosen(null);
       setSpelling("");
@@ -46,13 +47,7 @@ export default function QuizRunner({ type }: { type: QuizType }) {
 
   function finish() {
     setDone(true);
-    recordQuiz({
-      type,
-      total: questions.length,
-      correct: correctIds.length,
-      wrongIds,
-      date: new Date().toISOString(),
-    });
+    recordQuiz({ type, total: questions.length, correct: correctIds.length, wrongIds, date: new Date().toISOString() });
   }
 
   function judgeChoice(choiceId: string) {
@@ -62,12 +57,7 @@ export default function QuizRunner({ type }: { type: QuizType }) {
     const ok = choiceId === current.answer;
     if (ok) setCorrectIds((arr) => [...arr, current.answer]);
     else setWrongIds((arr) => [...arr, current.answer]);
-    track({
-      type: "quiz_attempt",
-      wordId: current.word.id,
-      quizType: type,
-      correct: ok,
-    });
+    track({ type: "quiz_attempt", wordId: current.word.id, quizType: type, correct: ok });
   }
 
   function judgeSpelling() {
@@ -78,12 +68,7 @@ export default function QuizRunner({ type }: { type: QuizType }) {
     const ok = input === ans;
     if (ok) setCorrectIds((arr) => [...arr, current.answer]);
     else setWrongIds((arr) => [...arr, current.answer]);
-    track({
-      type: "quiz_attempt",
-      wordId: current.word.id,
-      quizType: type,
-      correct: ok,
-    });
+    track({ type: "quiz_attempt", wordId: current.word.id, quizType: type, correct: ok });
   }
 
   function restart() {
@@ -99,7 +84,10 @@ export default function QuizRunner({ type }: { type: QuizType }) {
 
   if (questions.length === 0) {
     return (
-      <div className="max-w-3xl mx-auto px-4 py-12 text-center text-muted">準備題目中…</div>
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-3 text-tuji-ink3">
+        <Mascot pose="think" size={88} />
+        <p className="text-sm font-bold">準備題目中…</p>
+      </div>
     );
   }
 
@@ -112,36 +100,39 @@ export default function QuizRunner({ type }: { type: QuizType }) {
       .filter((x): x is NonNullable<typeof x> => Boolean(x));
 
     return (
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-        <h1 className="text-2xl sm:text-3xl font-bold text-ink text-center">測驗完成！🎉</h1>
-        <p className="mt-2 text-center text-muted">{meta.title} · {meta.en}</p>
+      <div className="mx-auto max-w-3xl px-5 py-10 sm:px-7">
+        <div className="text-center">
+          <Mascot pose="cheer" size={112} className="mx-auto" />
+          <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">測驗完成！🎉</h1>
+          <p className="mt-1 text-sm text-tuji-ink3">
+            {meta.title} · {meta.en}
+          </p>
+        </div>
 
-        <div className="mt-6 rounded-xl2 bg-white shadow-card p-6 text-center">
-          <p className="text-5xl font-bold text-sky-accent">{correct}/{total}</p>
-          <p className="mt-1 text-muted">正確率 {rate}%</p>
+        <div className="mt-6 rounded-[24px] bg-white p-6 text-center shadow-card">
+          <p className="font-display text-5xl font-extrabold text-tuji-teal">
+            {correct}/{total}
+          </p>
+          <p className="mt-1 text-sm font-bold text-tuji-ink3">正確率 {rate}%</p>
         </div>
 
         {wrongs.length > 0 && (
           <section className="mt-6">
-            <h2 className="text-lg font-bold text-ink">錯題複習</h2>
-            <ul className="mt-3 space-y-3">
+            <h2 className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">錯題複習</h2>
+            <ul className="flex flex-col gap-2.5">
               {wrongs.map((w) => (
                 <li key={w.id}>
-                  <Link
-                    href={`/word/${w.id}`}
-                    className="flex items-center gap-3 rounded-xl bg-white shadow-soft hover:shadow-card px-3 py-3 transition"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={w.imageUrl}
-                      alt={w.word}
-                      className="w-14 h-14 rounded-lg object-cover bg-cream"
-                    />
-                    <div className="min-w-0 flex-1">
-                      <p className="font-semibold text-ink">{w.word}</p>
-                      <p className="text-sm text-muted">{w.chinese} · {w.pronunciation}</p>
+                  <Link href={`/word/${w.id}`} className="flex items-center gap-3 rounded-[14px] bg-white px-3 py-3 shadow-soft transition hover:shadow-card">
+                    <div className="w-14 shrink-0">
+                      <WordTile imageUrl={w.imageUrl} word={w.word} height={56} rounded={10} />
                     </div>
-                    <span className="text-sky-accent text-sm shrink-0">複習 →</span>
+                    <div className="min-w-0 flex-1">
+                      <p className="font-extrabold text-tuji-ink">{w.word}</p>
+                      <p className="text-sm text-tuji-ink3">
+                        {w.chinese} · {w.pronunciation}
+                      </p>
+                    </div>
+                    <span className="shrink-0 text-sm font-extrabold text-tuji-teal">複習 →</span>
                   </Link>
                 </li>
               ))}
@@ -149,17 +140,15 @@ export default function QuizRunner({ type }: { type: QuizType }) {
           </section>
         )}
 
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <button
             onClick={restart}
-            className="px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90"
+            className="tuji-press rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white"
+            style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
           >
             再試一次
           </button>
-          <Link
-            href="/quiz"
-            className="px-5 py-3 rounded-full bg-white text-ink font-medium shadow-card hover:shadow-lg text-center"
-          >
+          <Link href="/quiz" className="rounded-2xl bg-white px-6 py-3 text-center text-sm font-extrabold text-tuji-ink shadow-card">
             換一種測驗
           </Link>
         </div>
@@ -168,61 +157,40 @@ export default function QuizRunner({ type }: { type: QuizType }) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
-      <nav className="text-sm text-muted">
-        <Link href="/quiz" className="hover:text-ink">
+    <div className="mx-auto max-w-3xl px-5 py-6 sm:px-7">
+      <div className="mb-2 flex items-center gap-2 text-xs font-bold text-tuji-ink3">
+        <Link href="/quiz" className="hover:text-tuji-ink">
           測驗
-        </Link>{" "}
-        / <span className="text-ink">{meta.title}</span>
-      </nav>
-
-      <div className="mt-3 flex items-center justify-between">
-        <h1 className="text-xl sm:text-2xl font-bold text-ink">
-          {meta.title}
-        </h1>
-        <span className="text-sm text-muted">
-          第 {idx + 1} / {questions.length} 題
+        </Link>
+        <span>›</span>
+        <span className="font-extrabold text-tuji-ink">{meta.title}</span>
+        <span className="ml-auto font-extrabold text-tuji-ink">
+          {idx + 1} / {questions.length}
         </span>
       </div>
 
-      <div className="mt-3 h-2 bg-white rounded-full overflow-hidden shadow-soft">
+      <div className="h-3 overflow-hidden rounded-full bg-white shadow-soft">
         <div
-          className="h-full bg-sky-accent transition-all"
-          style={{ width: `${((idx + (revealed ? 1 : 0)) / questions.length) * 100}%` }}
+          className="h-full rounded-full transition-all"
+          style={{
+            width: `${((idx + (revealed ? 1 : 0)) / questions.length) * 100}%`,
+            background: `linear-gradient(90deg, ${TUJI.coral}, ${TUJI.yellow})`,
+          }}
         />
       </div>
 
-      {type === "image" && current && (
-        <ImageQuestion
-          q={current}
-          chosen={chosen}
-          revealed={revealed}
-          onPick={judgeChoice}
-        />
-      )}
-      {type === "chinese" && current && (
-        <ChineseQuestion
-          q={current}
-          chosen={chosen}
-          revealed={revealed}
-          onPick={judgeChoice}
-        />
-      )}
+      {type === "image" && current && <ImageQuestion q={current} chosen={chosen} revealed={revealed} onPick={judgeChoice} />}
+      {type === "chinese" && current && <ChineseQuestion q={current} chosen={chosen} revealed={revealed} onPick={judgeChoice} />}
       {type === "spelling" && current && (
-        <SpellingQuestion
-          q={current}
-          revealed={revealed}
-          input={spelling}
-          onInput={setSpelling}
-          onSubmit={judgeSpelling}
-        />
+        <SpellingQuestion q={current} revealed={revealed} input={spelling} onInput={setSpelling} onSubmit={judgeSpelling} />
       )}
 
       {revealed && (
         <div className="mt-6 flex justify-end">
           <button
             onClick={next}
-            className="px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90"
+            className="tuji-press rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white"
+            style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
           >
             {idx + 1 >= questions.length ? "看結果 →" : "下一題 →"}
           </button>
@@ -235,9 +203,8 @@ export default function QuizRunner({ type }: { type: QuizType }) {
 function FeedbackBanner({ ok, word }: { ok: boolean; word: string }) {
   return (
     <div
-      className={`mt-4 rounded-xl px-4 py-3 text-sm ${
-        ok ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-700"
-      }`}
+      className="mt-4 rounded-2xl px-4 py-3 text-sm font-bold"
+      style={ok ? { background: "#E8F5EC", color: TUJI.green } : { background: "#FBE6E1", color: TUJI.coral }}
     >
       {ok ? "🎉 答對了！" : `❌ 答錯了，正確答案是 ${word}`}
     </div>
@@ -255,23 +222,42 @@ function ChoiceButton({
   onClick: () => void;
   disabled: boolean;
 }) {
-  const style =
-    state === "correct"
-      ? "bg-emerald-500 text-white border-emerald-500"
-      : state === "wrong"
-      ? "bg-rose-500 text-white border-rose-500"
-      : state === "muted"
-      ? "bg-white text-muted border-black/5 opacity-60"
-      : "bg-white text-ink border-black/5 hover:border-sky-accent hover:bg-sky-soft";
+  const base = "w-full rounded-2xl px-4 py-3.5 text-left text-[17px] font-extrabold tracking-tight transition disabled:cursor-default";
+  if (state === "correct")
+    return (
+      <button onClick={onClick} disabled={disabled} className={base} style={{ background: TUJI.green, color: "#fff" }}>
+        {label}
+      </button>
+    );
+  if (state === "wrong")
+    return (
+      <button onClick={onClick} disabled={disabled} className={base} style={{ background: TUJI.coral, color: "#fff" }}>
+        {label}
+      </button>
+    );
+  if (state === "muted")
+    return (
+      <button onClick={onClick} disabled={disabled} className={`${base} bg-white text-tuji-ink4 opacity-60`}>
+        {label}
+      </button>
+    );
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`w-full text-left rounded-xl border px-4 py-3 transition font-medium ${style}`}
+      className={`${base} tuji-press bg-white text-tuji-ink hover:bg-tuji-tealS`}
+      style={{ ["--press-shadow" as string]: "rgba(15,26,26,0.12)" }}
     >
       {label}
     </button>
   );
+}
+
+function choiceState(revealed: boolean, isAnswer: boolean, isChosen: boolean): "default" | "correct" | "wrong" | "muted" {
+  if (!revealed) return "default";
+  if (isAnswer) return "correct";
+  if (isChosen) return "wrong";
+  return "muted";
 }
 
 function ImageQuestion({
@@ -287,31 +273,20 @@ function ImageQuestion({
 }) {
   return (
     <>
-      <div className="mt-6 rounded-xl2 overflow-hidden shadow-card bg-white aspect-[4/3]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={q.word.imageUrl} alt="問題圖片" className="w-full h-full object-cover" />
+      <div className="mt-6 rounded-[24px] bg-white p-4 shadow-card">
+        <WordTile imageUrl={q.word.imageUrl} word="問題圖片" height={280} rounded={18} />
       </div>
-      <p className="mt-4 text-ink font-medium">這個東西的英文是？</p>
-      <div className="mt-3 grid sm:grid-cols-2 gap-3">
-        {q.choices.map((c) => {
-          const state =
-            !revealed
-              ? "default"
-              : c.id === q.answer
-              ? "correct"
-              : c.id === chosen
-              ? "wrong"
-              : "muted";
-          return (
-            <ChoiceButton
-              key={c.id}
-              label={c.word}
-              state={state}
-              onClick={() => onPick(c.id)}
-              disabled={revealed}
-            />
-          );
-        })}
+      <p className="mt-4 font-extrabold text-tuji-ink">這個東西的英文是？</p>
+      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+        {q.choices.map((c) => (
+          <ChoiceButton
+            key={c.id}
+            label={c.word}
+            state={choiceState(revealed, c.id === q.answer, c.id === chosen)}
+            onClick={() => onPick(c.id)}
+            disabled={revealed}
+          />
+        ))}
       </div>
       {revealed && <FeedbackBanner ok={chosen === q.answer} word={q.word.word} />}
     </>
@@ -331,30 +306,20 @@ function ChineseQuestion({
 }) {
   return (
     <>
-      <div className="mt-6 rounded-xl2 bg-white shadow-card p-6 text-center">
-        <p className="text-sm text-muted">這個中文意思的英文是？</p>
-        <p className="mt-2 text-3xl sm:text-4xl font-bold text-ink">{q.word.chinese}</p>
+      <div className="mt-6 rounded-[24px] bg-white p-8 text-center shadow-card">
+        <p className="text-sm font-bold text-tuji-ink3">這個中文意思的英文是？</p>
+        <p className="mt-2 font-display text-4xl font-extrabold tracking-tight text-tuji-ink">{q.word.chinese}</p>
       </div>
-      <div className="mt-4 grid sm:grid-cols-2 gap-3">
-        {q.choices.map((c) => {
-          const state =
-            !revealed
-              ? "default"
-              : c.id === q.answer
-              ? "correct"
-              : c.id === chosen
-              ? "wrong"
-              : "muted";
-          return (
-            <ChoiceButton
-              key={c.id}
-              label={c.word}
-              state={state}
-              onClick={() => onPick(c.id)}
-              disabled={revealed}
-            />
-          );
-        })}
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        {q.choices.map((c) => (
+          <ChoiceButton
+            key={c.id}
+            label={c.word}
+            state={choiceState(revealed, c.id === q.answer, c.id === chosen)}
+            onClick={() => onPick(c.id)}
+            disabled={revealed}
+          />
+        ))}
       </div>
       {revealed && <FeedbackBanner ok={chosen === q.answer} word={q.word.word} />}
     </>
@@ -377,27 +342,24 @@ function SpellingQuestion({
   const ok = input.trim().toLowerCase() === q.word.word.toLowerCase();
   return (
     <>
-      <div className="mt-6 rounded-xl2 bg-white shadow-card p-4 sm:p-6 flex flex-col sm:flex-row gap-4 items-center">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={q.word.imageUrl}
-          alt="提示圖片"
-          className="w-full sm:w-40 aspect-[4/3] rounded-lg object-cover bg-cream"
-        />
+      <div className="mt-6 flex flex-col items-center gap-4 rounded-[24px] bg-white p-5 shadow-card sm:flex-row">
+        <div className="w-full sm:w-40 shrink-0">
+          <WordTile imageUrl={q.word.imageUrl} word="提示圖片" height={120} rounded={14} />
+        </div>
         <div className="flex-1 text-center sm:text-left">
-          <p className="text-sm text-muted">輸入這個物件的英文：</p>
-          <p className="mt-1 text-2xl sm:text-3xl font-bold text-ink">{q.word.chinese}</p>
-          <div className="mt-2 flex items-center gap-2 justify-center sm:justify-start">
-            <span className="text-xs text-muted">提示：</span>
-            <span className="font-mono text-sm">
-              {q.word.word.length} 個字母 · 第一個字母 「{q.word.word[0]}」
+          <p className="text-sm font-bold text-tuji-ink3">輸入這個物件的英文：</p>
+          <p className="mt-1 font-display text-3xl font-extrabold tracking-tight text-tuji-ink">{q.word.chinese}</p>
+          <div className="mt-2 flex items-center justify-center gap-2 sm:justify-start">
+            <span className="text-xs text-tuji-ink3">提示：</span>
+            <span className="font-mono text-sm text-tuji-ink2">
+              {q.word.word.length} 個字母 · 開頭「{q.word.word[0]}」
             </span>
             <PronunciationButton text={q.word.word} size="sm" />
           </div>
         </div>
       </div>
 
-      <div className="mt-4 flex gap-2">
+      <div className="mt-4 flex gap-2.5">
         <input
           autoFocus
           value={input}
@@ -407,12 +369,13 @@ function SpellingQuestion({
           }}
           disabled={revealed}
           placeholder="在此輸入英文…"
-          className="flex-1 rounded-full bg-white shadow-card px-5 py-3 outline-none focus:ring-2 ring-sky-accent text-ink disabled:opacity-70"
+          className="flex-1 rounded-xl bg-white px-5 py-3 text-tuji-ink shadow-soft outline-none focus:ring-2 focus:ring-tuji-teal disabled:opacity-70"
         />
         <button
           onClick={onSubmit}
           disabled={revealed || !input.trim()}
-          className="px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90 disabled:opacity-40"
+          className="tuji-press rounded-xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white disabled:opacity-40"
+          style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
         >
           檢查
         </button>

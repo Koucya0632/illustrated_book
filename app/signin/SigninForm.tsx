@@ -46,7 +46,7 @@ export default function SigninForm({ next }: { next: string }) {
   return (
     <form onSubmit={handle} className="space-y-3">
       <label className="block">
-        <span className="text-sm font-medium text-ink">電子郵件</span>
+        <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
         <input
           autoFocus
           type="email"
@@ -56,7 +56,7 @@ export default function SigninForm({ next }: { next: string }) {
         />
       </label>
       <label className="block">
-        <span className="text-sm font-medium text-ink">密碼</span>
+        <span className="text-sm font-bold text-tuji-ink">密碼</span>
         <input
           type="password"
           value={password}
@@ -66,13 +66,13 @@ export default function SigninForm({ next }: { next: string }) {
       </label>
 
       {error && (
-        <p className="text-sm bg-rose-50 text-rose-700 rounded-lg px-3 py-2">{error}</p>
+        <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
       )}
 
       <button
         type="submit"
         disabled={loading || !email || !password}
-        className="w-full px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90 disabled:opacity-40"
+        className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
       >
         {loading ? "登入中..." : "登入"}
       </button>
@@ -81,4 +81,4 @@ export default function SigninForm({ next }: { next: string }) {
 }
 
 const INPUT =
-  "mt-1 w-full rounded-lg bg-white px-3 py-2 outline-none border border-black/10 focus:ring-2 ring-sky-accent";
+  "mt-1 w-full rounded-xl bg-tuji-bg px-3.5 py-2.5 text-tuji-ink outline-none border border-black/10 focus:ring-2 focus:ring-tuji-teal";

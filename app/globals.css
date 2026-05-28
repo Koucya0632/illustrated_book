@@ -8,22 +8,44 @@
 
 html,
 body {
-  background-color: #FAF7F2;
-  color: #2D3748;
+  background-color: #FFFCF5;
+  color: #0F1A1A;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    "PingFang TC", "Noto Sans TC", sans-serif;
+  font-family: var(--font-jakarta), var(--font-noto-tc), ui-sans-serif,
+    system-ui, -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC",
+    sans-serif;
 }
 
-/* Smooth focus rings */
+/* Smooth focus rings — Tuji teal */
 *:focus-visible {
-  outline: 2px solid #7BB7E0;
+  outline: 2px solid #006F72;
   outline-offset: 2px;
   border-radius: 6px;
+}
+
+/* Chunky "pressable" button — signature of the Tuji look. The bottom solid
+   shadow reads as physical depth; pressing nudges it down to meet the shadow.
+   Pass the shadow color via --press-shadow. */
+.tuji-press {
+  box-shadow: 0 4px 0 var(--press-shadow, rgba(0, 0, 0, 0.18));
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.tuji-press:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--press-shadow, rgba(0, 0, 0, 0.18));
+}
+
+/* Hide scrollbars on horizontal chip rows while keeping scroll. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* line-clamp helpers (Tailwind 3.4 includes plugin by default, but safe fallback) */

@@ -82,7 +82,7 @@ export default function RegisterForm({ next }: { next: string }) {
   return (
     <form onSubmit={handle} className="space-y-3">
       <label className="block">
-        <span className="text-sm font-medium text-ink">用戶名</span>
+        <span className="text-sm font-bold text-tuji-ink">用戶名</span>
         <input
           autoFocus
           value={username}
@@ -92,7 +92,7 @@ export default function RegisterForm({ next }: { next: string }) {
         />
       </label>
       <label className="block">
-        <span className="text-sm font-medium text-ink">電子郵件</span>
+        <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
         <input
           type="email"
           value={email}
@@ -102,7 +102,7 @@ export default function RegisterForm({ next }: { next: string }) {
         />
       </label>
       <label className="block">
-        <span className="text-sm font-medium text-ink">密碼</span>
+        <span className="text-sm font-bold text-tuji-ink">密碼</span>
         <input
           type="password"
           value={password}
@@ -112,7 +112,7 @@ export default function RegisterForm({ next }: { next: string }) {
         />
       </label>
       <label className="block">
-        <span className="text-sm font-medium text-ink">再次輸入密碼</span>
+        <span className="text-sm font-bold text-tuji-ink">再次輸入密碼</span>
         <input
           type="password"
           value={confirm}
@@ -122,20 +122,16 @@ export default function RegisterForm({ next }: { next: string }) {
       </label>
 
       {error && (
-        <p className="text-sm bg-rose-50 text-rose-700 rounded-lg px-3 py-2">
-          {error}
-        </p>
+        <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
       )}
       {info && (
-        <p className="text-sm bg-emerald-50 text-emerald-800 rounded-lg px-3 py-2">
-          {info}
-        </p>
+        <p className="rounded-xl bg-tuji-green/10 px-3 py-2 text-sm font-semibold text-tuji-green">{info}</p>
       )}
 
       <button
         type="submit"
         disabled={loading || !username || !email || !password}
-        className="w-full px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90 disabled:opacity-40"
+        className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
       >
         {loading ? "建立中..." : "建立帳號"}
       </button>
@@ -144,4 +140,4 @@ export default function RegisterForm({ next }: { next: string }) {
 }
 
 const INPUT =
-  "mt-1 w-full rounded-lg bg-white px-3 py-2 outline-none border border-black/10 focus:ring-2 ring-sky-accent";
+  "mt-1 w-full rounded-xl bg-tuji-bg px-3.5 py-2.5 text-tuji-ink outline-none border border-black/10 focus:ring-2 focus:ring-tuji-teal";

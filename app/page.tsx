@@ -1,104 +1,176 @@
-import CategoryCard from "@/components/CategoryCard";
-import DailyWords from "@/components/DailyWords";
-import SearchBar from "@/components/SearchBar";
+import Link from "next/link";
+import TodayWords from "@/components/tuji/TodayWords";
+import Mascot from "@/components/tuji/Mascot";
+import { StreakChip, shade, TUJI } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
 import { getAllWords } from "@/lib/data";
+import { getCurrentUserBundle } from "@/lib/current-user";
+import { getStudyStreak } from "@/lib/users-db";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+
+function greeting(hour: number): string {
+  if (hour < 5) return "夜深了";
+  if (hour < 11) return "早安";
+  if (hour < 14) return "午安";
+  if (hour < 18) return "下午好";
+  return "晚安";
+}
 
 export default async function HomePage() {
-  const words = await getAllWords();
+  const [words, bundle] = await Promise.all([getAllWords(), getCurrentUserBundle()]);
+  const streak = bundle ? await getStudyStreak(bundle.user.id) : null;
+
+  const tz = "Asia/Taipei";
+  const now = new Date();
+  const hour = Number(
+    new Intl.DateTimeFormat("en-US", { hour: "numeric", hour12: false, timeZone: tz }).format(now),
+  );
+  const dateLabel = new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    timeZone: tz,
+  })
+    .format(now)
+    .toUpperCase();
+
+  const name = bundle?.user.username ?? "同學";
+  const learnedCount = bundle?.learned.length ?? 0;
+
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-      {/* Hero */}
-      <section className="text-center">
-        <span className="inline-block text-xs sm:text-sm px-3 py-1 rounded-full bg-mint-soft text-emerald-700 font-medium">
-          🌱 Picture Dictionary · 圖鑑式學英文
-        </span>
-        <h1 className="mt-4 text-3xl sm:text-5xl font-bold text-ink leading-tight">
-          Everyday English
-          <br className="sm:hidden" />
-          <span className="text-sky-accent"> Picture Dictionary</span>
-        </h1>
-        <p className="mt-3 text-lg sm:text-xl font-medium text-ink">
-          看得見的英文，記得住的單字。
-        </p>
-        <p className="mt-2 text-sm sm:text-base text-muted max-w-xl mx-auto">
-          透過圖片、分類、發音、例句與小測驗，像看圖鑑一樣學會生活英文。
-          目前共收錄 <strong className="text-ink">{words.length}</strong> 個常用單字。
-        </p>
-
-        <div className="mt-6 max-w-xl mx-auto">
-          <SearchBar />
-        </div>
-      </section>
-
-      {/* Daily 5 */}
-      <section className="mt-14">
-        <div className="flex items-end justify-between mb-4">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-ink">今日 5 個單字</h2>
-            <p className="text-sm text-muted">每天更新，跟著節奏輕鬆學。</p>
+    <div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-6 sm:px-7">
+      {/* Topbar */}
+      <header className="flex items-end justify-between gap-3">
+        <div>
+          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
+            {dateLabel}
           </div>
-          <span className="text-xs text-muted hidden sm:block">每日隨機選出</span>
+          <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">
+            {greeting(hour)}，{name} 👋
+          </h1>
         </div>
-        <DailyWords />
-      </section>
+        <div className="hidden items-center gap-2.5 sm:flex">
+          {streak && streak.current > 0 && <StreakChip n={streak.current} />}
+          <Link
+            href="/search"
+            className="rounded-xl bg-white px-4 py-2.5 text-[13px] font-bold text-tuji-ink shadow-soft"
+          >
+            🔍 搜尋
+          </Link>
+          <Link
+            href="/settings"
+            aria-label="設定"
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-tuji-ink shadow-soft"
+          >
+            ⚙
+          </Link>
+        </div>
+      </header>
 
-      {/* Categories */}
-      <section className="mt-14">
-        <div className="flex items-end justify-between mb-4">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-ink">主要分類</h2>
-            <p className="text-sm text-muted">挑一個地方，開始你的英文圖鑑之旅。</p>
+      {/* Hero strip */}
+      <div className="grid gap-3.5 lg:grid-cols-[2.4fr_1fr_1fr]">
+        {/* task card */}
+        <div className="relative flex items-center gap-4 overflow-hidden rounded-[24px] bg-tuji-teal p-6 text-white">
+          <div className="pointer-events-none absolute right-6 top-4 text-sm text-tuji-yellow/80">✦</div>
+          <div className="flex-1">
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
+              今日任務
+            </div>
+            <div className="mt-1.5 flex items-baseline gap-2.5">
+              <span className="font-display text-5xl font-extrabold leading-none tracking-tight sm:text-6xl">
+                5
+              </span>
+              <span className="text-sm text-white/85">個單字 · 約 3 分鐘</span>
+            </div>
+            <div className="mt-4 flex gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i} className="h-1.5 w-7 rounded-full bg-white/25" />
+              ))}
+            </div>
+            <div className="mt-4">
+              <Link
+                href={bundle ? "/study" : "/signin?next=/study"}
+                className="tuji-press inline-block rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold tracking-tight text-tuji-ink"
+                style={{ ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
+              >
+                出發吧！ →
+              </Link>
+            </div>
+          </div>
+          <div className="hidden shrink-0 sm:block">
+            <Mascot pose="wave" size={132} />
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {categories.map((c) => (
-            <CategoryCard
-              key={c.id}
-              category={c}
-              count={words.filter((w) => w.category === c.id).length}
-            />
-          ))}
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="mt-14 grid sm:grid-cols-3 gap-4">
-        <a
-          href="/quiz"
-          className="rounded-xl2 p-5 bg-gradient-to-br from-sky-soft to-white shadow-card hover:shadow-lg transition group"
-        >
-          <div className="text-3xl">🎯</div>
-          <h3 className="mt-2 font-bold text-ink">挑戰小測驗</h3>
-          <p className="text-sm text-muted">看圖選字、看中文選英文、拼字練習。</p>
-          <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sky-accent group-hover:gap-2 transition-all">
-            開始測驗 →
-          </span>
-        </a>
-        <a
-          href="/favorites"
-          className="rounded-xl2 p-5 bg-gradient-to-br from-rose-50 to-white shadow-card hover:shadow-lg transition group"
-        >
-          <div className="text-3xl">❤️</div>
-          <h3 className="mt-2 font-bold text-ink">我的收藏</h3>
-          <p className="text-sm text-muted">收集想複習的單字，隨時翻回來看。</p>
-          <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-rose-500 group-hover:gap-2 transition-all">
-            打開收藏 →
-          </span>
-        </a>
-        <a
+        {/* streak tile */}
+        <Link
           href="/progress"
-          className="rounded-xl2 p-5 bg-gradient-to-br from-mint-soft to-white shadow-card hover:shadow-lg transition group"
+          className="relative overflow-hidden rounded-[24px] bg-tuji-yellow p-5 transition hover:brightness-[0.98]"
         >
-          <div className="text-3xl">📈</div>
-          <h3 className="mt-2 font-bold text-ink">學習進度</h3>
-          <p className="text-sm text-muted">查看已學單字、收藏與測驗紀錄。</p>
-          <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-emerald-600 group-hover:gap-2 transition-all">
-            查看進度 →
-          </span>
-        </a>
+          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
+            連勝
+          </div>
+          <div className="mt-1.5 font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
+            {streak?.current ?? 0}
+          </div>
+          <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
+            🔥 {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始你的連勝"}
+          </div>
+          <div className="pointer-events-none absolute -bottom-2.5 -right-1.5 text-6xl opacity-25">🔥</div>
+        </Link>
+
+        {/* learned tile */}
+        <Link
+          href="/cards"
+          className="relative overflow-hidden rounded-[24px] bg-tuji-pink p-5 transition hover:brightness-[0.98]"
+        >
+          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
+            {bundle ? "已學單字" : "收錄單字"}
+          </div>
+          <div className="mt-1.5 font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
+            {bundle ? learnedCount : words.length}
+          </div>
+          <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
+            {bundle ? `共 ${words.length} 個可學` : `${categories.length} 個主題`}
+          </div>
+          <div className="pointer-events-none absolute -bottom-2.5 -right-1.5 text-6xl opacity-25">📚</div>
+        </Link>
+      </div>
+
+      {/* Today words */}
+      <section>
+        <div className="mb-3 flex items-baseline justify-between">
+          <div>
+            <h2 className="text-lg font-extrabold tracking-tight text-tuji-ink">今天會碰到</h2>
+            <p className="mt-0.5 text-xs font-semibold text-tuji-ink3">點任一張卡片預覽，或直接開始</p>
+          </div>
+          <Link href="/cards" className="text-[13px] font-extrabold text-tuji-teal">
+            看全部 →
+          </Link>
+        </div>
+        <TodayWords />
+      </section>
+
+      {/* Explore categories */}
+      <section>
+        <h2 className="mb-3 text-lg font-extrabold tracking-tight text-tuji-ink">探索主題</h2>
+        <div className="flex flex-wrap gap-2.5">
+          {categories.map((c) => {
+            const count = words.filter((w) => w.category === c.id).length;
+            return (
+              <Link
+                key={c.id}
+                href={`/category/${c.id}`}
+                className="flex items-center gap-2 rounded-2xl bg-white px-4 py-2.5 text-sm font-bold text-tuji-ink shadow-soft transition hover:-translate-y-0.5 hover:shadow-card"
+              >
+                <span className="text-base">{c.emoji}</span>
+                {c.nameZh}
+                <span className="text-xs font-extrabold text-tuji-ink4">{count}</span>
+              </Link>
+            );
+          })}
+        </div>
       </section>
     </div>
   );

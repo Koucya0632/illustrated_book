@@ -36,15 +36,15 @@ export default function LoginForm({ next }: { next: string }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="ADMIN_PASSWORD"
-        className="w-full rounded-full bg-white shadow-card px-5 py-3 outline-none focus:ring-2 ring-sky-accent"
+        className="w-full rounded-xl border border-black/10 bg-tuji-bg px-3.5 py-2.5 text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
       />
       {error && (
-        <p className="text-sm text-rose-600 bg-rose-50 rounded-lg px-3 py-2">{error}</p>
+        <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
       )}
       <button
         type="submit"
         disabled={loading || !password}
-        className="w-full px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90 disabled:opacity-40"
+        className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
       >
         {loading ? "登入中..." : "登入"}
       </button>

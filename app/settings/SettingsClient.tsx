@@ -102,9 +102,9 @@ export default function SettingsClient({
               />
               <SetRow
                 label="學習主題"
-                desc="複習只出這個主題的單字"
+                desc="選一個主題，主頁今日任務才會出現"
                 options={[
-                  { value: "all", label: "全部" },
+                  { value: "all", label: "（未選擇）" },
                   ...categories.map((c) => ({ value: c.id, label: c.nameZh })),
                 ]}
                 current={settings.studyCategory}

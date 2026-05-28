@@ -25,6 +25,10 @@ export default async function HomePage() {
   const goal = settings.dailyGoal;
   const goalMinutes = Math.max(1, Math.round(goal * 0.6));
   const goalDashes = Math.min(goal, 10);
+  // A specific category must be chosen ("all" = not selected) before the daily
+  // task appears.
+  const hasTheme = !!bundle && settings.studyCategory !== "all";
+  const themeName = categories.find((c) => c.id === settings.studyCategory)?.nameZh ?? null;
 
   const tz = "Asia/Taipei";
   const now = new Date();
@@ -74,37 +78,72 @@ export default async function HomePage() {
 
       {/* Hero strip */}
       <div className="grid gap-3.5 lg:grid-cols-[2.4fr_1fr]">
-        {/* task card */}
-        <div className="relative flex items-center gap-4 overflow-hidden rounded-[24px] bg-tuji-teal p-6 text-white">
-          <div className="flex-1">
-            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
-              今日任務
+        {hasTheme ? (
+          /* task card — a specific theme is set */
+          <div className="relative flex items-center gap-4 overflow-hidden rounded-[24px] bg-tuji-teal p-6 text-white">
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
+                  今日任務
+                </span>
+                <Link
+                  href="/settings"
+                  className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-extrabold text-white transition hover:bg-white/25"
+                >
+                  {themeName} · 更換
+                </Link>
+              </div>
+              <div className="mt-1.5 flex items-baseline gap-2.5">
+                <span className="font-display text-5xl font-extrabold leading-none tracking-tight sm:text-6xl">
+                  {goal}
+                </span>
+                <span className="text-sm text-white/85">個單字 · 約 {goalMinutes} 分鐘</span>
+              </div>
+              <div className="mt-4 flex gap-1">
+                {Array.from({ length: goalDashes }).map((_, i) => (
+                  <span key={i} className="h-1.5 w-7 rounded-full bg-white/25" />
+                ))}
+              </div>
+              <div className="mt-4">
+                <Link
+                  href="/study"
+                  className="tuji-press inline-block rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold tracking-tight text-tuji-ink"
+                  style={{ ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
+                >
+                  出發吧！ →
+                </Link>
+              </div>
             </div>
-            <div className="mt-1.5 flex items-baseline gap-2.5">
-              <span className="font-display text-5xl font-extrabold leading-none tracking-tight sm:text-6xl">
-                {goal}
-              </span>
-              <span className="text-sm text-white/85">個單字 · 約 {goalMinutes} 分鐘</span>
-            </div>
-            <div className="mt-4 flex gap-1">
-              {Array.from({ length: goalDashes }).map((_, i) => (
-                <span key={i} className="h-1.5 w-7 rounded-full bg-white/25" />
-              ))}
-            </div>
-            <div className="mt-4">
-              <Link
-                href={bundle ? "/study" : "/signin?next=/study"}
-                className="tuji-press inline-block rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold tracking-tight text-tuji-ink"
-                style={{ ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
-              >
-                出發吧！ →
-              </Link>
+            <div className="hidden shrink-0 sm:block">
+              <Mascot pose="wave" size={132} />
             </div>
           </div>
-          <div className="hidden shrink-0 sm:block">
-            <Mascot pose="wave" size={132} />
+        ) : (
+          /* no specific theme chosen — prompt to pick one */
+          <div className="relative flex items-center gap-4 overflow-hidden rounded-[24px] bg-tuji-teal p-6 text-white">
+            <div className="hidden shrink-0 sm:block">
+              <Mascot pose="think" size={108} />
+            </div>
+            <div className="flex-1">
+              <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
+                今日任務
+              </div>
+              <div className="mt-2 text-2xl font-extrabold tracking-tight">
+                {bundle ? "請先選擇學習主題" : "登入並選擇學習主題"}
+              </div>
+              <p className="mt-1.5 text-sm text-white/85">選一個主題，今日任務就會出現。</p>
+              <div className="mt-4">
+                <Link
+                  href={bundle ? "/settings" : "/signin?next=/settings"}
+                  className="tuji-press inline-block rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold tracking-tight text-tuji-ink"
+                  style={{ ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
+                >
+                  {bundle ? "去選主題 →" : "登入 →"}
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* streak + learned — stacked vertically on desktop, side by side on mobile */}
         <div className="grid grid-cols-2 gap-3.5 lg:grid-cols-1 lg:grid-rows-2">

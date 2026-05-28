@@ -4,12 +4,15 @@ export interface UserSettings {
   dailyGoal: number;
   accent: "us" | "uk";
   showZh: boolean;
+  // Study theme: "all" = no filter, otherwise a category id (words.category).
+  studyCategory: string;
 }
 
 export const DEFAULT_SETTINGS: UserSettings = {
   dailyGoal: 12,
   accent: "us",
   showZh: true,
+  studyCategory: "all",
 };
 
 export const DAILY_GOAL_MIN = 1;
@@ -31,11 +34,17 @@ export function clampDailyGoal(n: number): number {
   return Math.min(DAILY_GOAL_MAX, Math.max(DAILY_GOAL_MIN, Math.round(n)));
 }
 
+// "all" or a category id (lowercase + hyphen, e.g. "living-room").
+function normalizeStudyCategory(v: unknown): string {
+  return typeof v === "string" && /^[a-z][a-z-]{0,30}$/.test(v) ? v : "all";
+}
+
 // Coerce arbitrary input into a valid, complete settings object.
 export function normalizeSettings(raw: Partial<UserSettings> | null | undefined): UserSettings {
   return {
     dailyGoal: clampDailyGoal(Number(raw?.dailyGoal)),
     accent: raw?.accent === "uk" ? "uk" : "us",
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
+    studyCategory: normalizeStudyCategory(raw?.studyCategory),
   };
 }

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Mascot from "@/components/tuji/Mascot";
 import { useSettings, useSettingsActions } from "@/components/SettingsProvider";
 import { ACCENT_OPTIONS, DAILY_GOAL_MAX, DAILY_GOAL_MIN } from "@/lib/settings";
+import { categories } from "@/lib/categories";
 
 type SecId = "learn" | "ui" | "data" | "about";
 
@@ -98,6 +99,16 @@ export default function SettingsClient({
                 options={ACCENT_OPTIONS.map((a) => ({ value: a.value, label: a.label }))}
                 current={settings.accent}
                 onSelect={(v) => update({ accent: v as "us" | "uk" })}
+              />
+              <SetRow
+                label="學習主題"
+                desc="複習只出這個主題的單字"
+                options={[
+                  { value: "all", label: "全部" },
+                  ...categories.map((c) => ({ value: c.id, label: c.nameZh })),
+                ]}
+                current={settings.studyCategory}
+                onSelect={(v) => update({ studyCategory: v })}
               />
               <SetRow
                 label="顯示中文翻譯"

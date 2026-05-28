@@ -112,6 +112,8 @@ const DDL = [
      show_zh    BOOLEAN NOT NULL DEFAULT TRUE,
      updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
+  // Additive: study theme filter (idempotent for the already-created table).
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_category TEXT NOT NULL DEFAULT 'all'`,
 
   // ---- SRS cards (public read) + user_cards (per-user) ----
   `CREATE TABLE IF NOT EXISTS cards (

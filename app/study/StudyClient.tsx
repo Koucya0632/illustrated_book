@@ -6,6 +6,7 @@ import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
 import { WordTile, shade, TUJI } from "@/components/tuji/ui";
 import { useSettings } from "@/components/SettingsProvider";
+import { categories } from "@/lib/categories";
 import { getSessionId } from "@/lib/analytics";
 import type { Rating } from "@/lib/srs";
 
@@ -42,12 +43,6 @@ interface DueCard {
   mastery?: number;
 }
 
-interface MasteryDelta {
-  before: number;
-  after: number;
-  delta: number;
-  level: { key: string; zhLabel: string; color: string };
-}
 interface Stats {
   total: number;
   seen: number;
@@ -98,7 +93,6 @@ export default function StudyClient() {
   const [phase, setPhase] = useState<Phase>("answer");
   const [summary, setSummary] = useState({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
-  const [masteryDelta, setMasteryDelta] = useState<MasteryDelta | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const startedAtRef = useRef<number>(0);
@@ -107,7 +101,9 @@ export default function StudyClient() {
   // blocked before React re-renders (state alone has a stale-closure race).
   const answeringRef = useRef(false);
 
-  const { dailyGoal, showZh } = useSettings();
+  const { dailyGoal, showZh, studyCategory } = useSettings();
+  const themeName =
+    studyCategory === "all" ? null : categories.find((c) => c.id === studyCategory)?.nameZh ?? null;
 
   const current = queue?.[idx];
   const total = queue?.length ?? 0;
@@ -115,7 +111,9 @@ export default function StudyClient() {
   const wasCorrect = picked !== null && current ? picked === current.card.back : false;
 
   const loadQueue = useCallback(async () => {
-    const res = await fetch(`/api/study/queue?limit=${dailyGoal}&new=${Math.min(10, dailyGoal)}`);
+    const res = await fetch(
+      `/api/study/queue?limit=${dailyGoal}&new=${Math.min(10, dailyGoal)}&category=${encodeURIComponent(studyCategory)}`,
+    );
     const data = await res.json();
     setQueue(data.queue);
     setStats(data.stats);
@@ -125,7 +123,7 @@ export default function StudyClient() {
     setPicked(null);
     setLastFeedback(null);
     setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
-  }, [dailyGoal]);
+  }, [dailyGoal, studyCategory]);
 
   useEffect(() => {
     loadQueue();
@@ -178,7 +176,6 @@ export default function StudyClient() {
     answeringRef.current = true;
     setSubmitting(true);
     const responseMs = Math.round(performance.now() - startedAtRef.current);
-    let j: { next?: { humanized?: string; penaltyApplied?: number }; mastery?: MasteryDelta };
     try {
       const res = await fetch("/api/study/answer", {
         method: "POST",
@@ -186,7 +183,6 @@ export default function StudyClient() {
         body: JSON.stringify({ cardId: current.card.id, rating, responseMs, sessionId: getSessionId() }),
       });
       if (!res.ok) throw new Error(`answer ${res.status}`);
-      j = await res.json();
     } catch (err) {
       console.warn("[study] answer failed", err);
       answeringRef.current = false;
@@ -195,14 +191,9 @@ export default function StudyClient() {
       return;
     }
     setSummary((s) => ({ ...s, [rating]: s[rating] + 1, completed: s.completed + 1 }));
-    const penalty = j.next?.penaltyApplied ?? 0;
-    const penaltyHint = penalty > 0 ? `（依錯誤紀錄縮短 ${penalty}%）` : "";
-    setLastFeedback(`下次複習：${j.next?.humanized ?? "—"}${penaltyHint}`);
-    if (j.mastery) setMasteryDelta(j.mastery as MasteryDelta);
     const delay = isAutoFromWrong ? 1800 : 1000;
     setTimeout(() => {
       setLastFeedback(null);
-      setMasteryDelta(null);
       if (idx + 1 >= total) setPhase("done");
       else {
         setIdx(idx + 1);
@@ -228,7 +219,9 @@ export default function StudyClient() {
     return (
       <div className="mx-auto max-w-xl px-5 py-16 text-center">
         <Mascot pose="sleep" size={120} className="mx-auto" />
-        <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">今天沒有到期的卡片</h1>
+        <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">
+          {themeName ? `「${themeName}」沒有到期的卡片` : "今天沒有到期的卡片"}
+        </h1>
         <p className="mt-2 text-sm text-tuji-ink3">
           看起來該複習的都做完了。
           {stats && (
@@ -461,8 +454,7 @@ export default function StudyClient() {
               {isMcq && !wasCorrect ? (
                 <div className="rounded-[20px] bg-white p-5 text-center shadow-card">
                   <p className="font-bold text-tuji-coral">⊗ 已記錄為「重來」</p>
-                  {masteryDelta && <MasteryLine d={masteryDelta} />}
-                  {lastFeedback && <p className="mt-1 text-xs text-tuji-ink3">{lastFeedback}</p>}
+                  {lastFeedback && <p className="mt-1 text-xs text-tuji-coral">{lastFeedback}</p>}
                 </div>
               ) : (
                 <>
@@ -489,9 +481,6 @@ export default function StudyClient() {
                             }`}
                             style={{ background: st.bg, color: st.fg, ["--press-shadow" as string]: shade(st.bg, -16) }}
                           >
-                            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/25 font-mono text-sm font-extrabold">
-                              {rt === "重來" ? "1" : rt === "困難" ? "2" : rt === "穩定" ? "3" : "4"}
-                            </span>
                             <div className="flex-1">
                               <div className="text-[17px] font-extrabold tracking-tight">{rt}</div>
                               <div className="mt-0.5 text-[10px] font-bold opacity-85">
@@ -508,13 +497,8 @@ export default function StudyClient() {
                       },
                     )}
                   </div>
-                  {masteryDelta && (
-                    <div className="mt-2 text-center">
-                      <MasteryLine d={masteryDelta} />
-                    </div>
-                  )}
                   {lastFeedback && (
-                    <p className="mt-1 text-center text-[13px] font-bold text-tuji-teal">{lastFeedback}</p>
+                    <p className="mt-1 text-center text-[13px] font-bold text-tuji-coral">{lastFeedback}</p>
                   )}
                 </>
               )}
@@ -535,17 +519,3 @@ export default function StudyClient() {
   );
 }
 
-function MasteryLine({ d }: { d: MasteryDelta }) {
-  return (
-    <p className="text-xs text-tuji-ink3">
-      熟練度 {d.before} → <strong className="text-tuji-ink">{d.after}</strong>
-      {d.delta !== 0 && (
-        <span className={d.delta > 0 ? "text-tuji-green" : "text-tuji-coral"}>
-          {" "}
-          ({d.delta > 0 ? "+" : ""}
-          {d.delta})
-        </span>
-      )}
-    </p>
-  );
-}

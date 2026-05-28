@@ -141,6 +141,8 @@ export interface QueueFilter {
   cefr?: string[];
   /** Restrict to words that have ALL of these tags. */
   tags?: string[];
+  /** Restrict to words in any of these categories (words.category). */
+  categories?: string[];
 }
 
 // "Due" = unseen cards (no user_cards row) + cards whose next_review_at ≤ now.
@@ -154,6 +156,7 @@ export async function fetchDue(
   const sql = requireSql();
   const cefr = (filter.cefr ?? []).filter((c) => /^[A-C][12]$/.test(c));
   const tags = (filter.tags ?? []).filter((t) => t.length > 0);
+  const cats = (filter.categories ?? []).filter((c) => c.length > 0 && c !== "all");
 
   // Review queue: ordered by due date asc. The chinese display label comes
   // from a LATERAL pick of the first zh definition (sort_order asc).
@@ -186,6 +189,7 @@ export async function fetchDue(
             )
           )`
         : sql``}
+      ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
   `) as unknown as Record<string, unknown>[];
@@ -220,6 +224,7 @@ export async function fetchDue(
             )
           )`
         : sql``}
+      ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
     ORDER BY c.id ASC
     LIMIT ${Math.min(remaining, newLimit)}
   `) as unknown as Record<string, unknown>[]) : [];

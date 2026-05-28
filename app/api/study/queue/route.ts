@@ -27,9 +27,12 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
+  // Single study theme (a category id); "all"/empty = no filter.
+  const category = (searchParams.get("category") ?? "").trim();
+  const categories = category && category !== "all" ? [category] : [];
 
   const [queue, stats] = await Promise.all([
-    fetchDue(userId, limit, newLimit, { cefr, tags }),
+    fetchDue(userId, limit, newLimit, { cefr, tags, categories }),
     studyStats(userId),
   ]);
   await attachMasteryAndSort(userId, queue);

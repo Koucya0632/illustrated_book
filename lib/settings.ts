@@ -12,7 +12,8 @@ export const DEFAULT_SETTINGS: UserSettings = {
   showZh: true,
 };
 
-export const DAILY_GOAL_OPTIONS = [10, 12, 15, 20, 30] as const;
+export const DAILY_GOAL_MIN = 1;
+export const DAILY_GOAL_MAX = 100;
 
 export const ACCENT_OPTIONS: { value: UserSettings["accent"]; label: string }[] = [
   { value: "us", label: "美式英語" },
@@ -23,11 +24,17 @@ export function accentToLang(accent: UserSettings["accent"]): string {
   return accent === "uk" ? "en-GB" : "en-US";
 }
 
+// Clamp a free-form daily goal to an integer in [MIN, MAX]; fall back to the
+// default when not a finite number.
+export function clampDailyGoal(n: number): number {
+  if (!Number.isFinite(n)) return DEFAULT_SETTINGS.dailyGoal;
+  return Math.min(DAILY_GOAL_MAX, Math.max(DAILY_GOAL_MIN, Math.round(n)));
+}
+
 // Coerce arbitrary input into a valid, complete settings object.
 export function normalizeSettings(raw: Partial<UserSettings> | null | undefined): UserSettings {
-  const dg = Number(raw?.dailyGoal);
   return {
-    dailyGoal: (DAILY_GOAL_OPTIONS as readonly number[]).includes(dg) ? dg : DEFAULT_SETTINGS.dailyGoal,
+    dailyGoal: clampDailyGoal(Number(raw?.dailyGoal)),
     accent: raw?.accent === "uk" ? "uk" : "us",
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
   };

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import TodayWords from "@/components/tuji/TodayWords";
 import Mascot from "@/components/tuji/Mascot";
 import { shade, TUJI } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
 import { getAllWords } from "@/lib/data";
 import { getCurrentUserBundle } from "@/lib/current-user";
-import { getStudyStreak } from "@/lib/users-db";
+import { getStudyStreak, getSettings } from "@/lib/users-db";
+import { DEFAULT_SETTINGS } from "@/lib/settings";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +19,12 @@ function greeting(hour: number): string {
 
 export default async function HomePage() {
   const [words, bundle] = await Promise.all([getAllWords(), getCurrentUserBundle()]);
-  const streak = bundle ? await getStudyStreak(bundle.user.id) : null;
+  const [streak, settings] = bundle
+    ? await Promise.all([getStudyStreak(bundle.user.id), getSettings(bundle.user.id)])
+    : [null, DEFAULT_SETTINGS];
+  const goal = settings.dailyGoal;
+  const goalMinutes = Math.max(1, Math.round(goal * 0.6));
+  const goalDashes = Math.min(goal, 10);
 
   const tz = "Asia/Taipei";
   const now = new Date();
@@ -77,12 +82,12 @@ export default async function HomePage() {
             </div>
             <div className="mt-1.5 flex items-baseline gap-2.5">
               <span className="font-display text-5xl font-extrabold leading-none tracking-tight sm:text-6xl">
-                5
+                {goal}
               </span>
-              <span className="text-sm text-white/85">個單字 · 約 3 分鐘</span>
+              <span className="text-sm text-white/85">個單字 · 約 {goalMinutes} 分鐘</span>
             </div>
             <div className="mt-4 flex gap-1">
-              {Array.from({ length: 5 }).map((_, i) => (
+              {Array.from({ length: goalDashes }).map((_, i) => (
                 <span key={i} className="h-1.5 w-7 rounded-full bg-white/25" />
               ))}
             </div>
@@ -136,20 +141,6 @@ export default async function HomePage() {
           </Link>
         </div>
       </div>
-
-      {/* Today words */}
-      <section>
-        <div className="mb-3 flex items-baseline justify-between">
-          <div>
-            <h2 className="text-lg font-extrabold tracking-tight text-tuji-ink">今天會碰到</h2>
-            <p className="mt-0.5 text-xs font-semibold text-tuji-ink3">點任一張卡片預覽，或直接開始</p>
-          </div>
-          <Link href="/cards" className="text-[13px] font-extrabold text-tuji-teal">
-            看全部 →
-          </Link>
-        </div>
-        <TodayWords />
-      </section>
 
       {/* Explore categories */}
       <section>

@@ -3,10 +3,10 @@
 // 學習 settings (每日目標 / 發音口音 / 顯示中文翻譯) persist to the account via
 // useSettingsActions().update. 介面/資料 rows are still preview-only.
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Mascot from "@/components/tuji/Mascot";
 import { useSettings, useSettingsActions } from "@/components/SettingsProvider";
-import { ACCENT_OPTIONS, DAILY_GOAL_OPTIONS } from "@/lib/settings";
+import { ACCENT_OPTIONS, DAILY_GOAL_MAX, DAILY_GOAL_MIN } from "@/lib/settings";
 
 type SecId = "learn" | "ui" | "data" | "about";
 
@@ -85,12 +85,13 @@ export default function SettingsClient({
         <div className="min-w-0 flex-1">
           {sec === "learn" && (
             <SetCard title="學習">
-              <SetRow
+              <NumberRow
                 label="每日目標"
-                desc="每天要複習的單字量"
-                options={DAILY_GOAL_OPTIONS.map((n) => ({ value: String(n), label: `${n} 個字` }))}
-                current={String(settings.dailyGoal)}
-                onSelect={(v) => update({ dailyGoal: Number(v) })}
+                desc={`每天要複習的單字量（${DAILY_GOAL_MIN}–${DAILY_GOAL_MAX}）`}
+                value={settings.dailyGoal}
+                min={DAILY_GOAL_MIN}
+                max={DAILY_GOAL_MAX}
+                onCommit={(n) => update({ dailyGoal: n })}
               />
               <SetRow
                 label="發音口音"
@@ -139,6 +140,59 @@ export default function SettingsClient({
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function NumberRow({
+  label,
+  desc,
+  value,
+  min,
+  max,
+  onCommit,
+  last,
+}: {
+  label: string;
+  desc?: string;
+  value: number;
+  min: number;
+  max: number;
+  onCommit: (n: number) => void;
+  last?: boolean;
+}) {
+  const [draft, setDraft] = useState(String(value));
+  useEffect(() => setDraft(String(value)), [value]);
+
+  const commit = () => {
+    const parsed = Math.round(Number(draft));
+    const clamped = Number.isFinite(parsed) ? Math.min(max, Math.max(min, parsed)) : value;
+    setDraft(String(clamped));
+    if (clamped !== value) onCommit(clamped);
+  };
+
+  return (
+    <div className={`flex items-center justify-between gap-4 px-4 py-3.5 ${last ? "" : "border-b border-black/5"}`}>
+      <div className="min-w-0 flex-1">
+        <div className="text-sm font-bold text-tuji-ink">{label}</div>
+        {desc && <div className="mt-0.5 text-[11px] text-tuji-ink3">{desc}</div>}
+      </div>
+      <div className="flex shrink-0 items-center gap-1.5">
+        <input
+          type="number"
+          inputMode="numeric"
+          min={min}
+          max={max}
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onBlur={commit}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") e.currentTarget.blur();
+          }}
+          className="w-16 rounded-lg bg-tuji-bg px-3 py-1.5 text-right text-xs font-bold text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
+        />
+        <span className="text-xs font-bold text-tuji-ink3">個字</span>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
 import { WordTile, shade, TUJI } from "@/components/tuji/ui";
+import { useSettings } from "@/components/SettingsProvider";
 import { getSessionId } from "@/lib/analytics";
 import type { Rating } from "@/lib/srs";
 
@@ -106,13 +107,15 @@ export default function StudyClient() {
   // blocked before React re-renders (state alone has a stale-closure race).
   const answeringRef = useRef(false);
 
+  const { dailyGoal, showZh } = useSettings();
+
   const current = queue?.[idx];
   const total = queue?.length ?? 0;
   const isMcq = !!current?.choices && current.choices.length > 0;
   const wasCorrect = picked !== null && current ? picked === current.card.back : false;
 
   const loadQueue = useCallback(async () => {
-    const res = await fetch("/api/study/queue?limit=20&new=10");
+    const res = await fetch(`/api/study/queue?limit=${dailyGoal}&new=${Math.min(10, dailyGoal)}`);
     const data = await res.json();
     setQueue(data.queue);
     setStats(data.stats);
@@ -122,7 +125,7 @@ export default function StudyClient() {
     setPicked(null);
     setLastFeedback(null);
     setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
-  }, []);
+  }, [dailyGoal]);
 
   useEffect(() => {
     loadQueue();
@@ -434,7 +437,7 @@ export default function StudyClient() {
                 </div>
                 <div className="mt-2 flex items-center gap-2.5">
                   <span className="font-mono text-[13px] text-tuji-ink2">{current.word.pronunciation}</span>
-                  <span className="text-xs text-tuji-ink3">· {current.word.chinese}</span>
+                  {showZh && <span className="text-xs text-tuji-ink3">· {current.word.chinese}</span>}
                 </div>
                 {!isMcq && typed.trim() && (
                   <div className="mt-2 text-xs text-tuji-ink3">

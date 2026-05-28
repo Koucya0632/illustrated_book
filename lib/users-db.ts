@@ -8,6 +8,7 @@
 
 import "server-only";
 import { getSql } from "./db";
+import { DEFAULT_SETTINGS, normalizeSettings, type UserSettings } from "./settings";
 
 export interface ProfileRow {
   id: string;          // UUID
@@ -20,6 +21,40 @@ function requireSql() {
   const sql = getSql();
   if (!sql) throw new Error("DATABASE_URL is not configured.");
   return sql;
+}
+
+// ---- per-user settings ----
+
+export async function getSettings(userId: string): Promise<UserSettings> {
+  const sql = getSql();
+  if (!sql) return DEFAULT_SETTINGS;
+  try {
+    const rows = await sql<{ daily_goal: number; accent: string; show_zh: boolean }[]>`
+      SELECT daily_goal, accent, show_zh FROM user_settings WHERE user_id = ${userId}::uuid LIMIT 1
+    `;
+    const r = rows[0];
+    if (!r) return DEFAULT_SETTINGS;
+    return normalizeSettings({
+      dailyGoal: r.daily_goal,
+      accent: r.accent as UserSettings["accent"],
+      showZh: r.show_zh,
+    });
+  } catch {
+    return DEFAULT_SETTINGS;
+  }
+}
+
+export async function saveSettings(userId: string, s: UserSettings): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, updated_at)
+    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, now())
+    ON CONFLICT (user_id) DO UPDATE
+      SET daily_goal = EXCLUDED.daily_goal,
+          accent     = EXCLUDED.accent,
+          show_zh    = EXCLUDED.show_zh,
+          updated_at = now()
+  `;
 }
 
 export async function getProfile(userId: string): Promise<ProfileRow | null> {

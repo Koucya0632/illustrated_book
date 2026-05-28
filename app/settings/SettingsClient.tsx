@@ -1,19 +1,20 @@
 "use client";
 
-// Visual-only settings. None of these toggles persist yet — see TUJI_TODO.md.
-// Only "登出" is wired (Supabase sign-out).
+// 學習 settings (每日目標 / 發音口音 / 顯示中文翻譯) persist to the account via
+// useSettingsActions().update. 介面/資料 rows are still preview-only.
 import Link from "next/link";
 import { useState } from "react";
 import Mascot from "@/components/tuji/Mascot";
+import { useSettings, useSettingsActions } from "@/components/SettingsProvider";
+import { ACCENT_OPTIONS, DAILY_GOAL_OPTIONS } from "@/lib/settings";
 
-type SecId = "learn" | "notify" | "ui" | "data" | "about";
+type SecId = "learn" | "ui" | "data" | "about";
 
-const NAV: { id: SecId; l: string; icon: string }[] = [
-  { id: "learn", l: "學習", icon: "🎯" },
-  { id: "notify", l: "通知", icon: "🔔" },
-  { id: "ui", l: "介面", icon: "🎨" },
-  { id: "data", l: "資料", icon: "☁" },
-  { id: "about", l: "關於", icon: "ℹ" },
+const NAV: { id: SecId; l: string }[] = [
+  { id: "learn", l: "學習" },
+  { id: "ui", l: "介面" },
+  { id: "data", l: "資料" },
+  { id: "about", l: "關於" },
 ];
 
 export default function SettingsClient({
@@ -22,17 +23,8 @@ export default function SettingsClient({
   profile: { username: string; email: string; joined: string };
 }) {
   const [sec, setSec] = useState<SecId>("learn");
-  const [t, setT] = useState({
-    autoplay: true,
-    showZh: true,
-    autoLevel: false,
-    push: true,
-    daily: true,
-    streak: true,
-    weekly: false,
-    cloud: true,
-  });
-  const tog = (k: keyof typeof t) => setT((s) => ({ ...s, [k]: !s[k] }));
+  const settings = useSettings();
+  const { update } = useSettingsActions();
 
   async function logout() {
     const { createClient } = await import("@/lib/supabase/client");
@@ -70,7 +62,7 @@ export default function SettingsClient({
       </div>
 
       <div className="mb-4 rounded-xl bg-tuji-yellow/30 px-4 py-2.5 text-xs font-semibold text-tuji-ink2">
-        ⚠ 目前設定僅供預覽，尚未儲存到帳號（見 TUJI_TODO.md）。
+        學習設定會儲存到你的帳號；介面 / 資料 仍為預覽。
       </div>
 
       <div className="flex flex-col gap-5 sm:flex-row">
@@ -80,11 +72,10 @@ export default function SettingsClient({
             <button
               key={it.id}
               onClick={() => setSec(it.id)}
-              className={`flex shrink-0 items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm transition ${
+              className={`shrink-0 rounded-xl px-3 py-2.5 text-left text-sm transition ${
                 sec === it.id ? "bg-tuji-tealS font-extrabold text-tuji-teal" : "font-semibold text-tuji-ink2 hover:bg-white"
               }`}
             >
-              <span className="w-4 text-center">{it.icon}</span>
               {it.l}
             </button>
           ))}
@@ -93,40 +84,42 @@ export default function SettingsClient({
         {/* Section content */}
         <div className="min-w-0 flex-1">
           {sec === "learn" && (
-            <SetCard title="學習" icon="🎯" tint="#D4ECEC">
-              <SetRow label="每日目標" desc="每天要複習的單字量" value="12 個字" type="select" />
-              <SetRow label="提醒時間" desc="什麼時候推播" value="21:00" type="select" />
-              <SetRow label="發音口音" value="美式英語" type="select" />
-              <SetRow label="自動播放發音" desc="出現新字時直接念出來" toggle={t.autoplay} onToggle={() => tog("autoplay")} />
-              <SetRow label="顯示中文翻譯" toggle={t.showZh} onToggle={() => tog("showZh")} />
-              <SetRow label="難度自動調整" desc="根據答題狀況調整題型" toggle={t.autoLevel} onToggle={() => tog("autoLevel")} last />
-            </SetCard>
-          )}
-          {sec === "notify" && (
-            <SetCard title="通知" icon="🔔" tint="#FFF4D6">
-              <SetRow label="推播通知" toggle={t.push} onToggle={() => tog("push")} />
-              <SetRow label="每日複習提醒" desc="21:00 提醒今天的字" toggle={t.daily} onToggle={() => tog("daily")} />
-              <SetRow label="連續天數即將中斷" desc="距離斷掉前 2 小時通知" toggle={t.streak} onToggle={() => tog("streak")} />
-              <SetRow label="Email 週報" toggle={t.weekly} onToggle={() => tog("weekly")} last />
+            <SetCard title="學習">
+              <SetRow
+                label="每日目標"
+                desc="每天要複習的單字量"
+                options={DAILY_GOAL_OPTIONS.map((n) => ({ value: String(n), label: `${n} 個字` }))}
+                current={String(settings.dailyGoal)}
+                onSelect={(v) => update({ dailyGoal: Number(v) })}
+              />
+              <SetRow
+                label="發音口音"
+                options={ACCENT_OPTIONS.map((a) => ({ value: a.value, label: a.label }))}
+                current={settings.accent}
+                onSelect={(v) => update({ accent: v as "us" | "uk" })}
+              />
+              <SetRow
+                label="顯示中文翻譯"
+                desc="瀏覽與複習時是否顯示中文"
+                toggle={settings.showZh}
+                onToggle={() => update({ showZh: !settings.showZh })}
+                last
+              />
             </SetCard>
           )}
           {sec === "ui" && (
-            <SetCard title="介面" icon="🎨" tint="#F6E6F0">
+            <SetCard title="介面">
               <SetRow label="介面語言" value="繁體中文" type="select" />
-              <SetRow label="字級" value="標準" type="select" />
-              <SetRow label="深色模式" value="自動 (跟隨系統)" type="select" />
-              <SetRow label="Tuji 出現頻率" desc="黑貓多久跳出來說話" value="常駐" type="select" last />
+              <SetRow label="字級" value="標準" type="select" last />
             </SetCard>
           )}
           {sec === "data" && (
-            <SetCard title="資料" icon="☁" tint="#E8F1FB">
-              <SetRow label="雲端同步" desc="最後同步 今天 09:42" toggle={t.cloud} onToggle={() => tog("cloud")} />
-              <SetRow label="匯出單字" desc="下載為 CSV / Anki .apkg" value="匯出" type="button" />
+            <SetCard title="資料">
               <SetRow label="清除快取" desc="目前佔用 142 MB" value="清除" type="button" last />
             </SetCard>
           )}
           {sec === "about" && (
-            <SetCard title="關於" icon="ℹ" tint="#F0EDE5">
+            <SetCard title="關於">
               <SetRow label="版本" value="1.4.0 (2026)" />
               <SetRow label="使用條款" type="chevron" />
               <SetRow label="隱私政策" type="chevron" />
@@ -151,15 +144,10 @@ export default function SettingsClient({
   );
 }
 
-function SetCard({ title, icon, tint, children }: { title: string; icon: string; tint: string; children: React.ReactNode }) {
+function SetCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <div className="mb-2.5 flex items-center gap-2.5">
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg text-[15px]" style={{ background: tint }}>
-          {icon}
-        </span>
-        <h2 className="text-base font-extrabold tracking-tight text-tuji-ink">{title}</h2>
-      </div>
+      <h2 className="mb-2.5 text-base font-extrabold tracking-tight text-tuji-ink">{title}</h2>
       <div className="overflow-hidden rounded-[16px] bg-white shadow-soft">{children}</div>
     </section>
   );
@@ -172,17 +160,25 @@ function SetRow({
   type = "value",
   toggle,
   onToggle,
+  options,
+  current,
+  onSelect,
   last,
 }: {
   label: string;
   desc?: string;
   value?: string;
-  type?: "value" | "select" | "button" | "chevron" | "toggle";
+  type?: "value" | "select" | "button" | "chevron";
   toggle?: boolean;
   onToggle?: () => void;
+  // functional native select
+  options?: { value: string; label: string }[];
+  current?: string;
+  onSelect?: (value: string) => void;
   last?: boolean;
 }) {
-  const isToggle = type === "toggle" || toggle !== undefined;
+  const isToggle = toggle !== undefined;
+  const isFunctionalSelect = !!options && !!onSelect;
   return (
     <div className={`flex items-center justify-between gap-4 px-4 py-3.5 ${last ? "" : "border-b border-black/5"}`}>
       <div className="min-w-0 flex-1">
@@ -201,6 +197,18 @@ function SetRow({
             style={{ left: toggle ? 22 : 2 }}
           />
         </button>
+      ) : isFunctionalSelect ? (
+        <select
+          value={current}
+          onChange={(e) => onSelect!(e.target.value)}
+          className="shrink-0 rounded-lg bg-tuji-bg px-3 py-1.5 text-xs font-bold text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
+        >
+          {options!.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
       ) : type === "select" ? (
         <span className="shrink-0 rounded-lg bg-tuji-bg px-3 py-1.5 text-xs font-bold text-tuji-ink">{value} ▾</span>
       ) : type === "button" ? (

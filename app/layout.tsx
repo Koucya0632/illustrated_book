@@ -4,9 +4,12 @@ import "./globals.css";
 import TujiShell from "@/components/tuji/Shell";
 import { WordsProvider } from "@/components/WordsProvider";
 import { UserProvider } from "@/components/UserProvider";
+import { SettingsProvider } from "@/components/SettingsProvider";
 import HydrateUserState from "@/components/HydrateUserState";
 import { getAllWords } from "@/lib/data";
 import { getCurrentUserBundle } from "@/lib/current-user";
+import { getSettings } from "@/lib/users-db";
+import { DEFAULT_SETTINGS } from "@/lib/settings";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -42,6 +45,7 @@ export default async function RootLayout({
     getAllWords(),
     getCurrentUserBundle(),
   ]);
+  const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
   return (
     <html
       lang="zh-Hant"
@@ -50,21 +54,23 @@ export default async function RootLayout({
       <body className="min-h-screen bg-tuji-bg text-tuji-ink">
         <WordsProvider words={words}>
           <UserProvider user={bundle?.user ?? null}>
-            {bundle && (
-              <HydrateUserState
-                favorites={bundle.favorites}
-                learned={bundle.learned}
-              />
-            )}
-            <TujiShell
-              user={
-                bundle
-                  ? { username: bundle.user.username, email: bundle.user.email }
-                  : null
-              }
-            >
-              {children}
-            </TujiShell>
+            <SettingsProvider initial={settings} loggedIn={!!bundle}>
+              {bundle && (
+                <HydrateUserState
+                  favorites={bundle.favorites}
+                  learned={bundle.learned}
+                />
+              )}
+              <TujiShell
+                user={
+                  bundle
+                    ? { username: bundle.user.username, email: bundle.user.email }
+                    : null
+                }
+              >
+                {children}
+              </TujiShell>
+            </SettingsProvider>
           </UserProvider>
         </WordsProvider>
       </body>

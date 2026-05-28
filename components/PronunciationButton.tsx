@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { speak, speechSupported } from "@/lib/speech";
 import { track } from "@/lib/analytics";
+import { useSettings } from "@/components/SettingsProvider";
+import { accentToLang } from "@/lib/settings";
 
 export default function PronunciationButton({
   text,
@@ -17,6 +19,7 @@ export default function PronunciationButton({
 }) {
   const [active, setActive] = useState(false);
   const supported = speechSupported();
+  const { accent } = useSettings();
 
   const sizeMap = {
     sm: "w-8 h-8 text-sm",
@@ -31,7 +34,7 @@ export default function PronunciationButton({
       alert("這個瀏覽器不支援發音功能，請使用 Chrome 或 Safari。");
       return;
     }
-    speak(text);
+    speak(text, accentToLang(accent));
     setActive(true);
     setTimeout(() => setActive(false), 800);
     if (wordId) track({ type: "pronounce", wordId });

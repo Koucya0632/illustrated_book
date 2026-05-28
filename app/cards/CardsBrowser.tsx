@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
+import { useSettings } from "@/components/SettingsProvider";
 import FavoriteButton from "@/components/FavoriteButton";
 import { WordTile } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
 
 export default function CardsBrowser() {
   const all = useWords();
+  const { showZh } = useSettings();
   const [cat, setCat] = useState<string>("all");
 
   const counts = useMemo(() => {
@@ -71,7 +73,7 @@ export default function CardsBrowser() {
               <WordTile imageUrl={w.imageUrl} word={w.word} height={120} />
               <div className="mt-2.5">
                 <div className="text-[15px] font-extrabold tracking-tight text-tuji-ink">{w.word}</div>
-                <div className="mt-0.5 text-xs text-tuji-ink3">{w.chinese}</div>
+                {showZh && <div className="mt-0.5 text-xs text-tuji-ink3">{w.chinese}</div>}
               </div>
             </Link>
           ))}

@@ -104,6 +104,15 @@ const DDL = [
   // No-op on a fresh database.
   `DROP TABLE IF EXISTS user_quiz_results CASCADE`,
 
+  // Per-user app settings (one row per user; created lazily on first save).
+  `CREATE TABLE IF NOT EXISTS user_settings (
+     user_id    UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+     daily_goal INT  NOT NULL DEFAULT 12,
+     accent     TEXT NOT NULL DEFAULT 'us',
+     show_zh    BOOLEAN NOT NULL DEFAULT TRUE,
+     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+
   // ---- SRS cards (public read) + user_cards (per-user) ----
   `CREATE TABLE IF NOT EXISTS cards (
      id          BIGSERIAL PRIMARY KEY,
@@ -150,6 +159,7 @@ const DDL = [
   `ALTER TABLE profiles           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_favorites     ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_learned       ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_settings      ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_cards         ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_words         ENABLE ROW LEVEL SECURITY`,
 
@@ -159,7 +169,7 @@ const DDL = [
   `CREATE POLICY profiles_self_update ON profiles
      FOR UPDATE USING (auth.uid() = id) WITH CHECK (auth.uid() = id)`,
 
-  ...["user_favorites", "user_learned", "user_cards", "user_words"].flatMap(
+  ...["user_favorites", "user_learned", "user_settings", "user_cards", "user_words"].flatMap(
     (t) => [
       `DROP POLICY IF EXISTS ${t}_own ON ${t}`,
       `CREATE POLICY ${t}_own ON ${t} FOR ALL

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { pickDailyFrom } from "@/lib/daily";
 import { useWords } from "@/components/WordsProvider";
+import { useSettings } from "@/components/SettingsProvider";
 import FavoriteButton from "@/components/FavoriteButton";
 import { WordTile } from "./ui";
 import type { Word } from "@/types";
@@ -12,6 +13,7 @@ import type { Word } from "@/types";
 // SSR/CSR hydration mismatch on the date.
 export default function TodayWords() {
   const all = useWords();
+  const { showZh } = useSettings();
   const [items, setItems] = useState<Word[]>([]);
   useEffect(() => {
     setItems(pickDailyFrom(all, 5));
@@ -41,7 +43,7 @@ export default function TodayWords() {
           <WordTile imageUrl={w.imageUrl} word={w.word} height={120} />
           <div className="mt-2.5">
             <div className="text-[15px] font-extrabold tracking-tight text-tuji-ink">{w.word}</div>
-            <div className="mt-0.5 text-xs text-tuji-ink3">{w.chinese}</div>
+            {showZh && <div className="mt-0.5 text-xs text-tuji-ink3">{w.chinese}</div>}
           </div>
         </Link>
       ))}

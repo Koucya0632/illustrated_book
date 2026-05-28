@@ -4,7 +4,7 @@ import MasteryBar from "@/components/MasteryBar";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getAllWords } from "@/lib/data";
 import { applyDecay, masteryLevel } from "@/lib/mastery";
-import { getAllMastery, getQuizHistory } from "@/lib/users-db";
+import { getAllMastery, getQuizHistory, getStudyStreak, type StudyStreak } from "@/lib/users-db";
 import MeClient from "./MeClient";
 
 export const dynamic = "force-dynamic";
@@ -14,10 +14,11 @@ export default async function MePage() {
   const bundle = await getCurrentUserBundle();
   if (!bundle) redirect("/signin?next=/me");
 
-  const [allWords, quizHistory, masteryRows] = await Promise.all([
+  const [allWords, quizHistory, masteryRows, streak] = await Promise.all([
     getAllWords(),
     getQuizHistory(bundle.user.id, 10),
     getAllMastery(bundle.user.id),
+    getStudyStreak(bundle.user.id),
   ]);
   const byId = new Map(allWords.map((w) => [w.id, w]));
   const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean);
@@ -65,6 +66,8 @@ export default async function MePage() {
         </div>
         <MeClient />
       </header>
+
+      <StreakBanner streak={streak} />
 
       <section className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
         <Stat label="收藏" value={String(bundle.favorites.length)} emoji="❤️" />
@@ -201,6 +204,46 @@ const TYPE_LABEL: Record<string, string> = {
   chinese: "看中文選英文",
   spelling: "拼字練習",
 };
+
+function StreakBanner({ streak }: { streak: StudyStreak }) {
+  const { current, longest, totalDays, todayCount } = streak;
+
+  // Three states: studied today / streak alive but not done today / no streak.
+  let headline: string;
+  let sub: string;
+  if (todayCount > 0) {
+    headline = `🔥 連續 ${current} 天`;
+    sub = `今天已複習 ${todayCount} 張，做得好！`;
+  } else if (current > 0) {
+    headline = `🔥 連續 ${current} 天`;
+    sub = "今天還沒複習 — 把握住，別中斷連續紀錄！";
+  } else {
+    headline = "🔥 開始你的學習連續紀錄";
+    sub = totalDays > 0 ? "連續紀錄中斷了，今天重新開始吧。" : "完成第一次複習就開始計算。";
+  }
+
+  return (
+    <section className="mt-6 rounded-xl2 bg-gradient-to-br from-amber-50 to-orange-100/60 shadow-card p-5 flex items-center gap-4">
+      <div className="min-w-0 flex-1">
+        <p className="text-2xl sm:text-3xl font-bold text-ink">{headline}</p>
+        <p className="text-sm text-muted mt-1">{sub}</p>
+        {totalDays > 0 && (
+          <p className="text-xs text-muted mt-2">
+            最長 {longest} 天 · 累計學習 {totalDays} 天
+          </p>
+        )}
+      </div>
+      {(current === 0 || todayCount === 0) && (
+        <Link
+          href="/study"
+          className="shrink-0 px-5 py-3 rounded-full bg-sky-accent text-white font-medium shadow-card hover:bg-sky-accent/90"
+        >
+          去複習
+        </Link>
+      )}
+    </section>
+  );
+}
 
 function Stat({ label, value, emoji }: { label: string; value: string; emoji: string }) {
   return (

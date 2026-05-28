@@ -267,3 +267,86 @@ export async function insertStudyLog(input: StudyLogInput): Promise<void> {
     )
   `;
 }
+
+export interface StudyStreak {
+  current: number; // consecutive days up to today (alive if last day is today or yesterday)
+  longest: number; // best run ever
+  totalDays: number; // distinct days with ≥1 review
+  todayCount: number; // reviews logged today
+  lastStudyDate: string | null; // YYYY-MM-DD (local tz), null if never studied
+}
+
+const EMPTY_STREAK: StudyStreak = {
+  current: 0,
+  longest: 0,
+  totalDays: 0,
+  todayCount: 0,
+  lastStudyDate: null,
+};
+
+// Consecutive-day streak from study_logs, bucketed by calendar day in the
+// user's timezone (default Asia/Taipei — created_at is stored UTC). Uses the
+// gaps-and-islands trick: within a run of consecutive dates, (d - row_number)
+// is constant, so grouping on it isolates each run.
+//
+// "current" is alive if the most recent run ends today OR yesterday (so a day
+// you haven't studied yet doesn't break the streak until it fully elapses).
+//
+// Wrapped in try/catch returning zeros: streak is a non-critical dashboard
+// widget and must never 500 the /me page.
+export async function getStudyStreak(
+  userId: string,
+  tz = "Asia/Taipei",
+): Promise<StudyStreak> {
+  const sql = getSql();
+  if (!sql) return EMPTY_STREAK;
+  try {
+    const rows = await sql<
+      {
+        current: number;
+        longest: number;
+        total_days: number;
+        today_count: number;
+        last_study_date: string | null;
+      }[]
+    >`
+      WITH logs AS (
+        SELECT (created_at AT TIME ZONE ${tz})::date AS d
+        FROM study_logs
+        WHERE user_id = ${userId}::uuid
+      ),
+      days AS (SELECT DISTINCT d FROM logs),
+      grouped AS (
+        SELECT d, d - (row_number() OVER (ORDER BY d))::int AS grp FROM days
+      ),
+      runs AS (
+        SELECT count(*)::int AS len, max(d) AS end_d FROM grouped GROUP BY grp
+      ),
+      last_run AS (SELECT len, end_d FROM runs ORDER BY end_d DESC LIMIT 1)
+      SELECT
+        (SELECT count(*)::int FROM days)                    AS total_days,
+        COALESCE((SELECT max(len) FROM runs), 0)            AS longest,
+        COALESCE((
+          SELECT CASE
+            WHEN lr.end_d >= (now() AT TIME ZONE ${tz})::date - 1 THEN lr.len
+            ELSE 0
+          END FROM last_run lr
+        ), 0)                                               AS current,
+        (SELECT count(*)::int FROM logs
+          WHERE d = (now() AT TIME ZONE ${tz})::date)       AS today_count,
+        (SELECT to_char(end_d, 'YYYY-MM-DD') FROM last_run) AS last_study_date
+    `;
+    const r = rows[0];
+    if (!r) return EMPTY_STREAK;
+    return {
+      current: r.current,
+      longest: r.longest,
+      totalDays: r.total_days,
+      todayCount: r.today_count,
+      lastStudyDate: r.last_study_date,
+    };
+  } catch (err) {
+    console.warn("[users-db] getStudyStreak failed", err);
+    return EMPTY_STREAK;
+  }
+}

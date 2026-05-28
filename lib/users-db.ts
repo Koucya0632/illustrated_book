@@ -266,6 +266,19 @@ export async function insertStudyLog(input: StudyLogInput): Promise<void> {
   `;
 }
 
+// Wipe a user's learning progress: learned words, mastery, SRS card state,
+// and the study-log history (which drives streak + heatmap). Favorites and
+// settings are intentionally preserved. One transaction so it's all-or-nothing.
+export async function clearLearningProgress(userId: string): Promise<void> {
+  const sql = requireSql();
+  await sql.begin(async (tx) => {
+    await tx`DELETE FROM user_learned WHERE user_id = ${userId}::uuid`;
+    await tx`DELETE FROM user_words   WHERE user_id = ${userId}::uuid`;
+    await tx`DELETE FROM user_cards   WHERE user_id = ${userId}::uuid`;
+    await tx`DELETE FROM study_logs   WHERE user_id = ${userId}::uuid`;
+  });
+}
+
 // Per-day review activity for the last 6 calendar weeks (current week + 5
 // prior), Sunday-aligned, in the user's timezone. Returns exactly 42 cells
 // ordered oldest→newest, so index = week*7 + weekday (weekday 0 = Sunday) maps

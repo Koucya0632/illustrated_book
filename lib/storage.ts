@@ -74,8 +74,11 @@ export function setLastCategory(category: CategoryId) {
   write({ ...p, lastCategoryVisited: category });
 }
 
+// Clears learning progress (learned / lastCategory) from the local mirror but
+// keeps favorites — matches the server-side clear, which preserves user_favorites.
 export function clearProgress() {
-  write(defaultProgress);
+  const p = safeRead();
+  write({ ...defaultProgress, favoriteIds: p.favoriteIds });
 }
 
 // Called by HydrateUserState on every page load when the visitor is logged in:

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
+import { useCurrentUser } from "@/components/UserProvider";
 import Mascot from "@/components/tuji/Mascot";
 import { TUJI } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
@@ -32,12 +33,28 @@ export default function ProgressClient({
   heatmap: HeatCell[] | null;
 }) {
   const allWords = useWords();
+  const user = useCurrentUser();
   const [p, setP] = useState<Progress | null>(null);
+  const [clearing, setClearing] = useState(false);
 
   useEffect(() => {
     setP(getProgress());
     return subscribe(() => setP(getProgress()));
   }, []);
+
+  async function handleClear() {
+    if (!confirm("確定要清除所有學習進度嗎？（收藏會保留）此操作無法復原。")) return;
+    setClearing(true);
+    if (user) {
+      try {
+        await fetch("/api/users/progress", { method: "DELETE" });
+      } catch {
+        /* server clear failed — still clear local so the UI reflects intent */
+      }
+    }
+    clearProgress();
+    window.location.reload();
+  }
 
   if (!p) {
     return (
@@ -186,12 +203,11 @@ export default function ProgressClient({
       </div>
 
       <button
-        onClick={() => {
-          if (confirm("確定要清除所有學習進度嗎？此操作無法復原。")) clearProgress();
-        }}
-        className="text-sm font-bold text-tuji-coral hover:underline"
+        onClick={handleClear}
+        disabled={clearing}
+        className="text-sm font-bold text-tuji-coral hover:underline disabled:opacity-50"
       >
-        清除所有進度
+        {clearing ? "清除中…" : "清除所有進度"}
       </button>
     </div>
   );

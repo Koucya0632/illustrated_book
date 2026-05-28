@@ -126,8 +126,9 @@ export default function StudyClient() {
   }, [dailyGoal, studyCategory]);
 
   useEffect(() => {
-    loadQueue();
-  }, [loadQueue]);
+    // No specific theme chosen → don't load; the picker prompt renders instead.
+    if (studyCategory !== "all") loadQueue();
+  }, [loadQueue, studyCategory]);
 
   useEffect(() => {
     if (phase === "answer") {
@@ -202,6 +203,26 @@ export default function StudyClient() {
         setPhase("answer");
       }
     }, delay);
+  }
+
+  // ── No theme chosen — prompt to pick one (matches the home gate) ──
+  if (studyCategory === "all") {
+    return (
+      <div className="mx-auto max-w-xl px-5 py-16 text-center">
+        <Mascot pose="think" size={120} className="mx-auto" />
+        <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">請先選擇學習主題</h1>
+        <p className="mt-2 text-sm text-tuji-ink3">到設定選一個主題，才能開始複習。</p>
+        <div className="mt-6 flex justify-center">
+          <Link
+            href="/settings"
+            className="tuji-press rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white"
+            style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
+          >
+            去選主題 →
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   // ── Loading ──

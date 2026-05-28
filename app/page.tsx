@@ -115,9 +115,8 @@ export default async function HomePage() {
             {streak?.current ?? 0}
           </div>
           <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
-            🔥 {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始累積連續天數"}
+            {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始累積連續天數"}
           </div>
-          <div className="pointer-events-none absolute -bottom-2.5 -right-1.5 text-6xl opacity-25">🔥</div>
         </Link>
 
         {/* learned tile */}
@@ -134,7 +133,6 @@ export default async function HomePage() {
           <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
             {bundle ? `共 ${words.length} 個可學` : `${categories.length} 個主題`}
           </div>
-          <div className="pointer-events-none absolute -bottom-2.5 -right-1.5 text-6xl opacity-25">📚</div>
         </Link>
       </div>
 

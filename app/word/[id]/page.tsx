@@ -207,7 +207,6 @@ export default async function WordDetailPage({ params }: { params: { id: string 
         <div className="flex flex-col gap-4">
           {/* Mastery card (dark) */}
           <div className="relative overflow-hidden rounded-[22px] bg-tuji-ink p-5 text-white">
-            <div className="pointer-events-none absolute -right-2 -top-2 text-tuji-yellow/50">✦ ✦</div>
             <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/65">熟練度</div>
             {mastery !== null && tier ? (
               <>

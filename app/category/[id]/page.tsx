@@ -32,7 +32,6 @@ export default async function CategoryPage({ params }: { params: { id: string } 
       </nav>
 
       <div className="relative flex items-center gap-5 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white sm:p-8">
-        <div className="pointer-events-none absolute right-8 top-5 text-sm text-tuji-yellow/70">✦</div>
         <div className="text-6xl sm:text-7xl">{category.emoji}</div>
         <div>
           <h1 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">{category.name}</h1>

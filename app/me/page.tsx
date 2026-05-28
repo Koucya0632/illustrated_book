@@ -44,7 +44,6 @@ export default async function MePage() {
 
       {/* Profile hero */}
       <div className="relative mb-4 flex flex-col items-center gap-5 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white sm:flex-row">
-        <div className="pointer-events-none absolute right-10 top-4 text-sm text-tuji-yellow/85">✦</div>
         <div className="flex h-28 w-28 shrink-0 items-end justify-center overflow-hidden rounded-[28px] bg-tuji-teal">
           <Mascot pose="cheer" size={116} />
         </div>

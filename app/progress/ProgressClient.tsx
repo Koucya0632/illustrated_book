@@ -64,7 +64,6 @@ export default function ProgressClient({
 
       {/* Hero — 圖鑑完成度 (real) */}
       <div className="relative mb-4 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white">
-        <div className="pointer-events-none absolute right-8 top-5 text-sm text-tuji-yellow/80">✦</div>
         <div className="flex items-center gap-5">
           <div className="flex h-24 w-24 shrink-0 items-end justify-center overflow-hidden rounded-[26px] bg-tuji-teal">
             <Mascot pose="cheer" size={104} />

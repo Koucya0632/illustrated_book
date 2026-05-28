@@ -1,7 +1,7 @@
 import Link from "next/link";
 import TodayWords from "@/components/tuji/TodayWords";
 import Mascot from "@/components/tuji/Mascot";
-import { StreakChip, shade, TUJI } from "@/components/tuji/ui";
+import { shade, TUJI } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
 import { getAllWords } from "@/lib/data";
 import { getCurrentUserBundle } from "@/lib/current-user";
@@ -51,7 +51,6 @@ export default async function HomePage() {
           </h1>
         </div>
         <div className="hidden items-center gap-2.5 sm:flex">
-          {streak && streak.current > 0 && <StreakChip n={streak.current} />}
           <Link
             href="/search"
             className="rounded-xl bg-white px-4 py-2.5 text-[13px] font-bold text-tuji-ink shadow-soft"
@@ -69,10 +68,9 @@ export default async function HomePage() {
       </header>
 
       {/* Hero strip */}
-      <div className="grid gap-3.5 lg:grid-cols-[2.4fr_1fr_1fr]">
+      <div className="grid gap-3.5 lg:grid-cols-[2.4fr_1fr]">
         {/* task card */}
         <div className="relative flex items-center gap-4 overflow-hidden rounded-[24px] bg-tuji-teal p-6 text-white">
-          <div className="pointer-events-none absolute right-6 top-4 text-sm text-tuji-yellow/80">✦</div>
           <div className="flex-1">
             <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
               今日任務
@@ -103,37 +101,40 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* streak tile */}
-        <Link
-          href="/progress"
-          className="relative overflow-hidden rounded-[24px] bg-tuji-yellow p-5 transition hover:brightness-[0.98]"
-        >
-          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
-            連續天數
-          </div>
-          <div className="mt-1.5 font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
-            {streak?.current ?? 0}
-          </div>
-          <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
-            {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始累積連續天數"}
-          </div>
-        </Link>
+        {/* streak + learned — stacked vertically on desktop, side by side on mobile */}
+        <div className="grid grid-cols-2 gap-3.5 lg:grid-cols-1 lg:grid-rows-2">
+          {/* streak tile */}
+          <Link
+            href="/progress"
+            className="relative overflow-hidden rounded-[24px] bg-tuji-yellow p-5 transition hover:brightness-[0.98]"
+          >
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
+              連續天數
+            </div>
+            <div className="mt-1.5 font-display text-4xl font-extrabold leading-none tracking-tight text-tuji-ink">
+              {streak?.current ?? 0}
+            </div>
+            <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
+              {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始累積連續天數"}
+            </div>
+          </Link>
 
-        {/* learned tile */}
-        <Link
-          href="/cards"
-          className="relative overflow-hidden rounded-[24px] bg-tuji-pink p-5 transition hover:brightness-[0.98]"
-        >
-          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
-            {bundle ? "已學單字" : "收錄單字"}
-          </div>
-          <div className="mt-1.5 font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
-            {bundle ? learnedCount : words.length}
-          </div>
-          <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
-            {bundle ? `共 ${words.length} 個可學` : `${categories.length} 個主題`}
-          </div>
-        </Link>
+          {/* learned tile */}
+          <Link
+            href="/cards"
+            className="relative overflow-hidden rounded-[24px] bg-tuji-pink p-5 transition hover:brightness-[0.98]"
+          >
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
+              {bundle ? "已學單字" : "收錄單字"}
+            </div>
+            <div className="mt-1.5 font-display text-4xl font-extrabold leading-none tracking-tight text-tuji-ink">
+              {bundle ? learnedCount : words.length}
+            </div>
+            <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
+              {bundle ? `共 ${words.length} 個可學` : `${categories.length} 個主題`}
+            </div>
+          </Link>
+        </div>
       </div>
 
       {/* Today words */}

@@ -58,7 +58,6 @@ export default function SettingsClient({
 
       {/* Profile card */}
       <div className="relative mb-5 flex items-center gap-4 overflow-hidden rounded-[18px] bg-tuji-ink p-4 text-white">
-        <div className="pointer-events-none absolute right-8 top-3 text-sm text-tuji-yellow/65">✦</div>
         <div className="flex h-16 w-16 shrink-0 items-end justify-center overflow-hidden rounded-2xl bg-tuji-teal">
           <Mascot pose="face" size={60} />
         </div>

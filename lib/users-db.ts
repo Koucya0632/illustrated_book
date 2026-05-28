@@ -237,7 +237,7 @@ export interface StudyLogInput {
   masteryBefore?: number | null;
   masteryAfter?: number | null;
   clientSessionId?: string | null;
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, string | number | boolean | null>;
 }
 
 export async function insertStudyLog(input: StudyLogInput): Promise<void> {
@@ -263,7 +263,7 @@ export async function insertStudyLog(input: StudyLogInput): Promise<void> {
       ${input.masteryBefore ?? null},
       ${input.masteryAfter ?? null},
       ${input.clientSessionId ?? null},
-      ${JSON.stringify(input.metadata ?? {})}::jsonb
+      ${sql.json(input.metadata ?? {})}
     )
   `;
 }

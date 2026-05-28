@@ -93,8 +93,13 @@ export default function StudyClient() {
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [masteryDelta, setMasteryDelta] = useState<MasteryDelta | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const startedAtRef = useRef<number>(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  // Synchronous lock: a ref (not state) so a rapid second click within the
+  // 1–1.8s auto-advance window is blocked before React re-renders. State
+  // alone has a stale-closure race; the ref closes it.
+  const answeringRef = useRef(false);
 
   const current = queue?.[idx];
   const total = queue?.length ?? 0;
@@ -120,6 +125,8 @@ export default function StudyClient() {
     if (phase === "answer") {
       startedAtRef.current = performance.now();
       setSuggestedRating(null);
+      answeringRef.current = false; // release lock for the fresh card
+      setSubmitting(false);
       if (!isMcq) inputRef.current?.focus();
     }
   }, [phase, idx, isMcq]);
@@ -159,20 +166,40 @@ export default function StudyClient() {
 
   async function rate(rating: Rating, isAutoFromWrong = false) {
     if (!current) return;
+    // One submission per card. The ref guard is synchronous so it blocks a
+    // double-tap inside the auto-advance window even before React re-renders
+    // (state-based disabled alone would race on the stale closure).
+    if (answeringRef.current) return;
+    answeringRef.current = true;
+    setSubmitting(true);
     // Capture before the awaits so the elapsed timing isn't polluted by
     // network latency. startedAtRef resets on every new card.
     const responseMs = Math.round(performance.now() - startedAtRef.current);
-    const res = await fetch("/api/study/answer", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        cardId: current.card.id,
-        rating,
-        responseMs,
-        sessionId: getSessionId(),
-      }),
-    });
-    const j = await res.json();
+    let j: {
+      next?: { humanized?: string; penaltyApplied?: number };
+      mastery?: MasteryDelta;
+    };
+    try {
+      const res = await fetch("/api/study/answer", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          cardId: current.card.id,
+          rating,
+          responseMs,
+          sessionId: getSessionId(),
+        }),
+      });
+      if (!res.ok) throw new Error(`answer ${res.status}`);
+      j = await res.json();
+    } catch (err) {
+      // Release the lock so the user can retry this same card.
+      console.warn("[study] answer failed", err);
+      answeringRef.current = false;
+      setSubmitting(false);
+      setLastFeedback("送出失敗，再點一次試試");
+      return;
+    }
     setSummary((s) => ({
       ...s,
       [rating]: s[rating] + 1,
@@ -316,7 +343,7 @@ export default function StudyClient() {
                 <button
                   key={c}
                   onClick={() => pickChoice(c)}
-                  disabled={revealed}
+                  disabled={revealed || submitting}
                   className={cls}
                 >
                   {c}
@@ -395,7 +422,8 @@ export default function StudyClient() {
                     <button
                       key={r}
                       onClick={() => rate(r)}
-                      className={`relative px-3 py-3 rounded-xl text-white shadow-card transition ${RATING_COLOR[r]} ${
+                      disabled={submitting}
+                      className={`relative px-3 py-3 rounded-xl text-white shadow-card transition disabled:opacity-50 disabled:cursor-not-allowed ${RATING_COLOR[r]} ${
                         isSuggested ? "ring-4 ring-offset-2 ring-ink/30 scale-[1.02]" : ""
                       }`}
                     >
@@ -443,7 +471,8 @@ export default function StudyClient() {
                     <button
                       key={r}
                       onClick={() => rate(r)}
-                      className={`relative px-3 py-3 rounded-xl text-white shadow-card transition ${RATING_COLOR[r]} ${
+                      disabled={submitting}
+                      className={`relative px-3 py-3 rounded-xl text-white shadow-card transition disabled:opacity-50 disabled:cursor-not-allowed ${RATING_COLOR[r]} ${
                         isSuggested ? "ring-4 ring-offset-2 ring-ink/30 scale-[1.02]" : ""
                       }`}
                     >

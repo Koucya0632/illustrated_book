@@ -9,18 +9,27 @@ import { categories } from "@/lib/categories";
 import { clearProgress, getProgress, subscribe } from "@/lib/storage";
 import type { Progress } from "@/types";
 
-// Deterministic placeholder heat grid — see TUJI_TODO.md (daily activity is
-// not yet tracked per-day, so this is a visual stub).
-const HEAT = Array.from({ length: 42 }, (_, i) => {
-  const seed = (i * 17 + 11) % 13;
-  return seed < 4 ? 0 : seed < 7 ? 1 : seed < 10 ? 2 : 3;
-});
 const HEAT_COLOR = ["#F0EDE5", TUJI.tealS, "#86C0C0", TUJI.teal];
+
+interface HeatCell {
+  count: number;
+  future: boolean;
+}
+
+// Daily review count → 0-3 heat level (fixed thresholds).
+function heatLevel(count: number): number {
+  if (count <= 0) return 0;
+  if (count < 4) return 1;
+  if (count < 10) return 2;
+  return 3;
+}
 
 export default function ProgressClient({
   streak,
+  heatmap,
 }: {
   streak: { current: number; longest: number; totalDays: number } | null;
+  heatmap: HeatCell[] | null;
 }) {
   const allWords = useWords();
   const [p, setP] = useState<Progress | null>(null);
@@ -132,13 +141,17 @@ export default function ProgressClient({
         </ul>
       </section>
 
-      {/* Activity heatmap (visual stub — see TUJI_TODO.md) */}
+      {/* Activity heatmap — real per-day review counts from study_logs */}
       <div className="mb-4">
         <div className="rounded-[18px] bg-white p-5 shadow-soft">
           <div className="mb-3 flex items-baseline justify-between">
             <div>
               <div className="text-sm font-extrabold text-tuji-ink">過去 6 週</div>
-              <div className="mt-0.5 text-[11px] font-semibold text-tuji-ink3">示意圖 · 尚未串接每日活動</div>
+              <div className="mt-0.5 text-[11px] font-semibold text-tuji-ink3">
+                {heatmap
+                  ? `近 6 週 · ${heatmap.filter((c) => !c.future && c.count > 0).length} 天有複習`
+                  : "登入後顯示你的複習活動"}
+              </div>
             </div>
             <div className="flex items-center gap-1.5 text-[10px] font-semibold text-tuji-ink3">
               少
@@ -153,9 +166,18 @@ export default function ProgressClient({
               <div key={di} className="flex-1">
                 <div className="mb-1.5 text-center text-[10px] font-bold text-tuji-ink3">{d}</div>
                 <div className="flex flex-col gap-1.5">
-                  {[0, 1, 2, 3, 4, 5].map((wk) => (
-                    <div key={wk} className="aspect-square rounded" style={{ background: HEAT_COLOR[HEAT[wk * 7 + di]] }} />
-                  ))}
+                  {[0, 1, 2, 3, 4, 5].map((wk) => {
+                    const cell = heatmap?.[wk * 7 + di];
+                    const level = cell ? heatLevel(cell.count) : 0;
+                    return (
+                      <div
+                        key={wk}
+                        className="aspect-square rounded"
+                        title={cell ? `${cell.count} 次複習` : undefined}
+                        style={{ background: HEAT_COLOR[level], opacity: cell?.future ? 0.3 : 1 }}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             ))}

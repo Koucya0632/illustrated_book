@@ -39,8 +39,8 @@
 - **勳章 / 成就**（24 個成就）：`/progress`、`/me` 的「即將推出」假卡片**已移除**。日後若要做需成就定義 + 判定引擎 + `user_achievements`。
 
 ### 活動數據
-- **活動熱力圖（過去 6 週）**：`/progress` 目前是固定亂數示意圖（標「示意圖 · 尚未串接每日活動」）。→ 可由 `study_logs`（已按月分區）做每日聚合。
-- **最近活動時間軸**（原型 DemoMe 的 activity feed）：尚未做。→ 可由 `study_logs` / `events` 衍生。
+- **活動熱力圖（過去 6 週）**：✅ 已接 `study_logs` 真實每日複習數（`getActivityHeatmap`，Asia/Taipei，6 週 Sunday-aligned）。
+- **最近活動時間軸**：已決定**不做**。
 - **連勝起始日**（原型「🔥 自 5/11 起」）：目前只顯示 current / longest，沒有起始日字串。
 
 ### 設定（全部尚未持久化）

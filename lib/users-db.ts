@@ -266,6 +266,53 @@ export async function insertStudyLog(input: StudyLogInput): Promise<void> {
   `;
 }
 
+// Per-day review activity for the last 6 calendar weeks (current week + 5
+// prior), Sunday-aligned, in the user's timezone. Returns exactly 42 cells
+// ordered oldest→newest, so index = week*7 + weekday (weekday 0 = Sunday) maps
+// straight onto the heatmap grid. `future` marks days after today (the rest of
+// the current week) so the UI can render them blank.
+export interface HeatCell {
+  count: number;
+  future: boolean;
+}
+
+export async function getActivityHeatmap(
+  userId: string,
+  tz = "Asia/Taipei",
+): Promise<HeatCell[]> {
+  const sql = getSql();
+  if (!sql) return [];
+  try {
+    const rows = await sql<{ count: number; future: boolean }[]>`
+      WITH today AS (SELECT (now() AT TIME ZONE ${tz})::date AS d),
+      days AS (
+        SELECT gs::date AS d
+        FROM today,
+             generate_series(
+               (SELECT d FROM today) - (extract(dow FROM (SELECT d FROM today))::int) - 35,
+               (SELECT d FROM today) - (extract(dow FROM (SELECT d FROM today))::int) + 6,
+               interval '1 day'
+             ) gs
+      ),
+      counts AS (
+        SELECT (created_at AT TIME ZONE ${tz})::date AS d, count(*)::int AS c
+        FROM study_logs
+        WHERE user_id = ${userId}::uuid
+        GROUP BY 1
+      )
+      SELECT COALESCE(counts.c, 0)::int AS count,
+             (days.d > (SELECT d FROM today)) AS future
+      FROM days
+      LEFT JOIN counts USING (d)
+      ORDER BY days.d
+    `;
+    return rows;
+  } catch (err) {
+    console.warn("[users-db] getActivityHeatmap failed", err);
+    return [];
+  }
+}
+
 export interface StudyStreak {
   current: number; // consecutive days up to today (alive if last day is today or yesterday)
   longest: number; // best run ever

@@ -17,17 +17,6 @@ const HEAT = Array.from({ length: 42 }, (_, i) => {
 });
 const HEAT_COLOR = ["#F0EDE5", TUJI.tealS, "#86C0C0", TUJI.teal];
 
-const BADGES = [
-  { g: "🔥", l: "連勝 7", bg: "#FBE6E1" },
-  { g: "🌅", l: "早起 5", bg: "#FFF4D6" },
-  { g: "📚", l: "100 字", bg: TUJI.tealS },
-  { g: "⚡", l: "快速 50", bg: "#F6E6F0" },
-  { g: "🎯", l: "滿分日", bg: "#F0EDE5", off: true },
-  { g: "🌙", l: "深夜學", bg: "#F0EDE5", off: true },
-  { g: "🎓", l: "500 字", bg: "#F0EDE5", off: true },
-  { g: "👑", l: "30 連勝", bg: "#F0EDE5", off: true },
-];
-
 export default function ProgressClient({
   streak,
 }: {
@@ -145,8 +134,8 @@ export default function ProgressClient({
         </ul>
       </section>
 
-      {/* Heatmap + badges (visual stubs — see TUJI_TODO.md) */}
-      <div className="mb-4 grid gap-3 lg:grid-cols-[1.6fr_1fr]">
+      {/* Activity heatmap (visual stub — see TUJI_TODO.md) */}
+      <div className="mb-4">
         <div className="rounded-[18px] bg-white p-5 shadow-soft">
           <div className="mb-3 flex items-baseline justify-between">
             <div>
@@ -170,27 +159,6 @@ export default function ProgressClient({
                     <div key={wk} className="aspect-square rounded" style={{ background: HEAT_COLOR[HEAT[wk * 7 + di]] }} />
                   ))}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="rounded-[18px] bg-white p-5 shadow-soft">
-          <div className="mb-3 flex items-baseline justify-between">
-            <div className="text-sm font-extrabold text-tuji-ink">勳章</div>
-            <div className="text-[11px] font-semibold text-tuji-ink3">即將推出</div>
-          </div>
-          <div className="grid grid-cols-4 gap-2">
-            {BADGES.map((a) => (
-              <div
-                key={a.l}
-                className="rounded-xl px-1.5 py-2.5 text-center"
-                style={{ background: a.bg, opacity: a.off ? 0.4 : 1 }}
-              >
-                <div className="text-2xl" style={{ filter: a.off ? "grayscale(1)" : "none" }}>
-                  {a.g}
-                </div>
-                <div className="mt-1 text-[10px] font-extrabold text-tuji-ink">{a.l}</div>
               </div>
             ))}
           </div>

@@ -12,17 +12,6 @@ import type { Word } from "@/types";
 export const dynamic = "force-dynamic";
 export const metadata = { title: "我的帳號 · Tuji" };
 
-const BADGES = [
-  { g: "🔥", l: "連勝 7", bg: "#FBE6E1" },
-  { g: "🌅", l: "早起 5", bg: "#FFF4D6" },
-  { g: "📚", l: "100 字", bg: TUJI.tealS },
-  { g: "⚡", l: "快速 50", bg: "#F6E6F0", off: true },
-  { g: "🎯", l: "滿分日", bg: "#F0EDE5", off: true },
-  { g: "🌙", l: "深夜學", bg: "#F0EDE5", off: true },
-  { g: "🦉", l: "貓頭鷹", bg: "#F0EDE5", off: true },
-  { g: "👑", l: "30 連勝", bg: "#F0EDE5", off: true },
-];
-
 export default async function MePage() {
   const bundle = await getCurrentUserBundle();
   if (!bundle) redirect("/signin?next=/me");
@@ -131,24 +120,6 @@ export default async function MePage() {
               )}
             </div>
           )}
-
-          {/* Badges (stub) */}
-          <div className="rounded-[18px] bg-white p-5 shadow-soft">
-            <div className="mb-3 flex items-baseline justify-between">
-              <div className="text-sm font-extrabold text-tuji-ink">勳章</div>
-              <div className="text-[11px] font-semibold text-tuji-ink3">即將推出</div>
-            </div>
-            <div className="grid grid-cols-4 gap-2 sm:grid-cols-8">
-              {BADGES.map((a) => (
-                <div key={a.l} className="rounded-xl px-1.5 py-2.5 text-center" style={{ background: a.bg, opacity: a.off ? 0.4 : 1 }}>
-                  <div className="text-xl" style={{ filter: a.off ? "grayscale(1)" : "none" }}>
-                    {a.g}
-                  </div>
-                  <div className="mt-1 text-[9px] font-extrabold text-tuji-ink">{a.l}</div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Favorites */}
           <div>

@@ -113,9 +113,6 @@ export default function TujiShell({
                 </span>
                 <span className="truncate text-xs font-extrabold">{user.username}</span>
               </div>
-              <div className="mt-2 text-[10px] font-semibold tracking-[0.14em] text-white/60">
-                圖鑑探索中
-              </div>
               <div className="mt-2 text-[10px] text-white/60">查看我的進度 →</div>
             </Link>
           ) : (

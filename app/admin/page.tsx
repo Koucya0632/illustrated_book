@@ -8,33 +8,26 @@ async function loadStats() {
   const words = await listAll();
   const sql = getSql();
   let events7d = 0;
-  let quizzes7d = 0;
   if (sql) {
     const [{ c }] = (await sql`
       SELECT count(*)::int AS c FROM events WHERE created_at > now() - interval '7 days'
     `) as unknown as { c: number }[];
-    const [{ c: q }] = (await sql`
-      SELECT count(*)::int AS c FROM events
-      WHERE type = 'quiz_attempt' AND created_at > now() - interval '7 days'
-    `) as unknown as { c: number }[];
     events7d = c;
-    quizzes7d = q;
   }
-  return { words, events7d, quizzes7d };
+  return { words, events7d };
 }
 
 export default async function AdminHome() {
-  const { words, events7d, quizzes7d } = await loadStats();
+  const { words, events7d } = await loadStats();
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
       <h1 className="text-2xl sm:text-3xl font-bold text-ink">總覽</h1>
       <p className="text-sm text-muted mt-1">後台首頁 — 快速狀態與入口。</p>
 
-      <section className="mt-6 grid grid-cols-3 gap-3">
+      <section className="mt-6 grid grid-cols-2 gap-3">
         <Stat label="總單字數" value={String(words.length)} emoji="📚" />
         <Stat label="7 天事件" value={events7d.toLocaleString()} emoji="📡" />
-        <Stat label="7 天測驗" value={quizzes7d.toLocaleString()} emoji="🎯" />
       </section>
 
       <section className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -52,7 +45,7 @@ export default async function AdminHome() {
         >
           <div className="text-3xl">📊</div>
           <h2 className="mt-2 font-bold text-ink">統計儀表板</h2>
-          <p className="text-sm text-muted">熱門單字 / 測驗正確率 / 來源</p>
+          <p className="text-sm text-muted">熱門單字 / 來源</p>
         </Link>
       </section>
     </div>

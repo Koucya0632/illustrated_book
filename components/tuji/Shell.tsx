@@ -26,7 +26,7 @@ const NAV: NavItem[] = [
       p.startsWith("/category") ||
       p.startsWith("/search"),
   },
-  { id: "play", label: "玩法", href: "/study", icon: "🎮", match: (p) => p.startsWith("/study") || p.startsWith("/quiz") },
+  { id: "play", label: "學習", href: "/study", icon: "🎮", match: (p) => p.startsWith("/study") },
   { id: "dash", label: "進度", href: "/progress", icon: "✦", match: (p) => p.startsWith("/progress") },
   {
     id: "me",

@@ -57,11 +57,11 @@ export default async function CategoryPage({ params }: { params: { id: string } 
 
       <div className="mt-10 flex justify-center">
         <Link
-          href="/quiz"
+          href="/study"
           className="tuji-press rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white"
           style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
         >
-          學完了嗎？挑戰小測驗 🎯
+          學完了嗎？開始複習 →
         </Link>
       </div>
     </div>

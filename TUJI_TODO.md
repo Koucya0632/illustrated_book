@@ -21,11 +21,11 @@
 | 畫面 | 路由 | 對應到的既有功能 |
 | --- | --- | --- |
 | 今天 Today | `/` | 連勝（`getStudyStreak`）、已學數、每日 5 字（`pickDailyFrom`）、主題分類 |
-| 玩法 / 複習 SRS | `/study` | 完整 SRS：看圖選字 / 拼字、四個評分（重來/困難/穩定/熟練）、熟練度變化、下次複習時間（`/api/study/*`） |
+| 學習 / 複習 SRS | `/study` | 完整 SRS：看圖選字 / 拼字、四個評分（重來/困難/穩定/熟練）、熟練度變化、下次複習時間（`/api/study/*`）。側欄項已從「玩法」改名「學習」 |
 | 單字庫 Cards | `/cards`（新路由） | 分類篩選 + 全部單字卡、收藏 |
 | 單字詳情 Detail | `/word/[id]` | 圖、KK 音標、詞性、釋義、例句（關鍵字 highlight）、搭配詞、標籤、關聯詞、熟練度環、同主題、`note` 當記憶撇步 |
-| 進度 Dashboard | `/progress` | 圖鑑完成度、已學/正確率/連勝/收藏、各主題進度、測驗紀錄、清除進度 |
-| 我 Me | `/me` | 個人資料、完成度、連勝/已學、平均熟練度、最熟/需加強、收藏、測驗紀錄、登出 |
+| 進度 Dashboard | `/progress` | 圖鑑完成度、已學/連勝/收藏、各主題進度、清除進度 |
+| 我 Me | `/me` | 個人資料、完成度、連勝/已學、平均熟練度、最熟/需加強、收藏、登出 |
 | 設定 Settings | `/settings`（新路由） | 僅「登出」已接；其餘為預覽 |
 
 ---
@@ -63,14 +63,19 @@
 ## 4. 頁面改版狀態
 
 已全部改成 Tuji 風格（第二輪）：
-- `/quiz`、`/quiz/[type]`（測驗 — 邏輯保留，UI 換新）
 - `/search`（搜尋）、`/category/[id]`（分類）、`/favorites`（收藏）
 - `/signin`、`/register`、`/login`（登入/註冊/後台登入）— 改成**無側欄精簡版面**（`Shell` 對 auth 路由 early-return）+ Tuji 卡片
 - `/not-found`
 - 共用 `components/WordCard.tsx` 已換成 `WordTile` 版（search / category / favorites 共用）
 
+已**整套移除**（第三輪）：
+- 測驗 Quiz 功能全刪：`/quiz`、`/quiz/[type]`、`lib/quiz.ts`、`/api/users/quiz-results`、`users-db` 的 quiz 函式、`types` 的 `QuizType/QuizResult`、`storage` 的 `recordQuiz/quizHistory`、`analytics`/`events` 的 `quiz_attempt`、admin 測驗統計。
+- DB：`migrate.ts` 改為 `DROP TABLE IF EXISTS user_quiz_results CASCADE`（下次 prod build 生效）。
+- 側欄/底部 Tab「玩法」→「學習」。
+- `events` 表的 `quiz_type` / `correct` 欄位刻意保留（停用，不再寫入）。
+
 仍維持原樣：
-- `/admin/*`（後台管理 — 內部工具，刻意不動）
+- `/admin/*`（後台管理 — 內部工具，僅移除測驗統計）
 
 ---
 
@@ -86,5 +91,4 @@
 1. 遊戲化（XP / 等級 / 勳章）要做到什麼程度？還是先拿掉，純走「圖鑑完成度」？
 2. 設定頁要先接哪幾項持久化？（建議優先：每日目標、發音口音、顯示中文翻譯、深色模式）
 3. 熱力圖 / 活動時間軸 是否要從 `study_logs` 接真實資料？
-4. 登入/註冊頁要不要獨立成無側欄版面？
-5. 剩下的舊頁面（quiz / search / category / favorites）改版優先順序？
+4. 登入/註冊頁要不要獨立成無側欄版面？（已做：auth 走無側欄）

@@ -5,18 +5,12 @@ import { WordTile, scoreTier, TUJI } from "@/components/tuji/ui";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getAllWords } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
-import { getAllMastery, getQuizHistory, getStudyStreak } from "@/lib/users-db";
+import { getAllMastery, getStudyStreak } from "@/lib/users-db";
 import MeClient from "./MeClient";
 import type { Word } from "@/types";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "我的帳號 · Tuji" };
-
-const TYPE_LABEL: Record<string, string> = {
-  image: "看圖選英文",
-  chinese: "看中文選英文",
-  spelling: "拼字練習",
-};
 
 const BADGES = [
   { g: "🔥", l: "連勝 7", bg: "#FBE6E1" },
@@ -33,18 +27,14 @@ export default async function MePage() {
   const bundle = await getCurrentUserBundle();
   if (!bundle) redirect("/signin?next=/me");
 
-  const [allWords, quizHistory, masteryRows, streak] = await Promise.all([
+  const [allWords, masteryRows, streak] = await Promise.all([
     getAllWords(),
-    getQuizHistory(bundle.user.id, 10),
     getAllMastery(bundle.user.id),
     getStudyStreak(bundle.user.id),
   ]);
   const byId = new Map(allWords.map((w) => [w.id, w]));
   const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean) as Word[];
   const learnedCount = bundle.learned.length;
-  const totalAttempts = quizHistory.reduce((s, q) => s + q.total, 0);
-  const totalCorrect = quizHistory.reduce((s, q) => s + q.correct, 0);
-  const rate = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
 
   const now = new Date();
   const masteredItems = masteryRows
@@ -105,11 +95,10 @@ export default async function MePage() {
       </div>
 
       {/* Quick stats */}
-      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <MiniStat label="收藏" value={String(bundle.favorites.length)} emoji="❤️" />
         <MiniStat label="平均熟練度" value={masteredItems.length > 0 ? `${Math.round(avgMastery)}` : "—"} emoji="🧠" />
         <MiniStat label="已熟練 ≥80" value={String(masteredCount)} emoji="🌟" />
-        <MiniStat label="總正確率" value={`${rate}%`} emoji="📈" />
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[1.3fr_1fr]">
@@ -194,40 +183,6 @@ export default async function MePage() {
             </div>
             <p className="mt-2 text-xs text-tuji-ink3">每日目標、提醒時間、發音口音、Tuji 出現頻率…</p>
           </Link>
-
-          <div className="rounded-[18px] bg-white p-5 shadow-soft">
-            <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">最近測驗</h2>
-            {quizHistory.length === 0 ? (
-              <p className="text-sm text-tuji-ink3">
-                還沒有測驗紀錄。{" "}
-                <Link href="/quiz" className="font-extrabold text-tuji-teal">
-                  做一個測驗 →
-                </Link>
-              </p>
-            ) : (
-              <ul className="flex flex-col gap-1">
-                {quizHistory.map((q) => {
-                  const r = q.total > 0 ? Math.round((q.correct / q.total) * 100) : 0;
-                  return (
-                    <li key={q.id} className="flex items-center justify-between py-2">
-                      <div className="min-w-0">
-                        <p className="truncate text-[13px] font-bold text-tuji-ink">
-                          {TYPE_LABEL[q.quiz_type] ?? q.quiz_type}
-                        </p>
-                        <p className="text-[11px] text-tuji-ink3">{new Date(q.created_at).toLocaleString("zh-TW")}</p>
-                      </div>
-                      <div className="shrink-0 text-right">
-                        <p className="text-[13px] font-extrabold text-tuji-ink">
-                          {q.correct}/{q.total}
-                        </p>
-                        <p className="text-[11px] text-tuji-ink3">{r}%</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
 
           <MeClient />
         </div>

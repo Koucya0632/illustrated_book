@@ -99,15 +99,10 @@ const DDL = [
      learned_at TIMESTAMPTZ NOT NULL DEFAULT now(),
      PRIMARY KEY (user_id, word_id)
    )`,
-  `CREATE TABLE IF NOT EXISTS user_quiz_results (
-     id         BIGSERIAL PRIMARY KEY,
-     user_id    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
-     quiz_type  TEXT NOT NULL,
-     total      INT  NOT NULL,
-     correct    INT  NOT NULL,
-     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
-   )`,
-  `CREATE INDEX IF NOT EXISTS user_quiz_user_idx ON user_quiz_results(user_id, created_at DESC)`,
+  // user_quiz_results removed — the quiz feature was deleted. Drop it on
+  // existing deployments (idempotent; CASCADE clears its index + RLS policy).
+  // No-op on a fresh database.
+  `DROP TABLE IF EXISTS user_quiz_results CASCADE`,
 
   // ---- SRS cards (public read) + user_cards (per-user) ----
   `CREATE TABLE IF NOT EXISTS cards (
@@ -155,7 +150,6 @@ const DDL = [
   `ALTER TABLE profiles           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_favorites     ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_learned       ENABLE ROW LEVEL SECURITY`,
-  `ALTER TABLE user_quiz_results  ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_cards         ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_words         ENABLE ROW LEVEL SECURITY`,
 
@@ -165,7 +159,7 @@ const DDL = [
   `CREATE POLICY profiles_self_update ON profiles
      FOR UPDATE USING (auth.uid() = id) WITH CHECK (auth.uid() = id)`,
 
-  ...["user_favorites", "user_learned", "user_quiz_results", "user_cards", "user_words"].flatMap(
+  ...["user_favorites", "user_learned", "user_cards", "user_words"].flatMap(
     (t) => [
       `DROP POLICY IF EXISTS ${t}_own ON ${t}`,
       `CREATE POLICY ${t}_own ON ${t} FOR ALL

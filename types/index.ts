@@ -98,19 +98,8 @@ export function primaryChinese(defs: Definition[]): string {
   return zh?.definition ?? "";
 }
 
-export type QuizType = "image" | "chinese" | "spelling";
-
-export interface QuizResult {
-  type: QuizType;
-  total: number;
-  correct: number;
-  wrongIds: string[];
-  date: string;
-}
-
 export interface Progress {
   learnedIds: string[];
   favoriteIds: string[];
-  quizHistory: QuizResult[];
   lastCategoryVisited?: CategoryId;
 }

@@ -18,11 +18,9 @@ export function getSessionId(): string {
 }
 
 export interface TrackPayload {
-  type: "view" | "favorite" | "quiz_attempt" | "pronounce";
+  type: "view" | "favorite" | "pronounce";
   wordId?: string;
   category?: string;
-  quizType?: "image" | "chinese" | "spelling";
-  correct?: boolean;
 }
 
 export function track(payload: TrackPayload) {

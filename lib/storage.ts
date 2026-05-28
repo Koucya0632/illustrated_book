@@ -1,13 +1,12 @@
 "use client";
 
-import type { CategoryId, Progress, QuizResult } from "@/types";
+import type { CategoryId, Progress } from "@/types";
 
 const KEY = "eepd-progress-v1";
 
 const defaultProgress: Progress = {
   learnedIds: [],
   favoriteIds: [],
-  quizHistory: [],
 };
 
 function safeRead(): Progress {
@@ -19,7 +18,6 @@ function safeRead(): Progress {
     return {
       learnedIds: Array.isArray(parsed.learnedIds) ? parsed.learnedIds : [],
       favoriteIds: Array.isArray(parsed.favoriteIds) ? parsed.favoriteIds : [],
-      quizHistory: Array.isArray(parsed.quizHistory) ? parsed.quizHistory : [],
       lastCategoryVisited: parsed.lastCategoryVisited,
     };
   } catch {
@@ -74,17 +72,6 @@ export function markLearned(id: string) {
 export function setLastCategory(category: CategoryId) {
   const p = safeRead();
   write({ ...p, lastCategoryVisited: category });
-}
-
-export function recordQuiz(result: QuizResult) {
-  const p = safeRead();
-  const history = [result, ...p.quizHistory].slice(0, 50);
-  write({ ...p, quizHistory: history });
-  post("/api/users/quiz-results", {
-    quizType: result.type,
-    total: result.total,
-    correct: result.correct,
-  });
 }
 
 export function clearProgress() {

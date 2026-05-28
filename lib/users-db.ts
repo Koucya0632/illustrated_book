@@ -1,6 +1,6 @@
 // Per-user data access. Auth is owned by Supabase (auth.users); this module
-// is for the per-user app data tables (favorites, learned, quiz history,
-// mastery). user_id is the Supabase auth user's UUID.
+// is for the per-user app data tables (favorites, learned, mastery). user_id
+// is the Supabase auth user's UUID.
 //
 // Every query also includes `user_id = ${userId}` explicitly — defense in
 // depth against accidentally leaking another user's data if RLS is ever
@@ -77,43 +77,6 @@ export async function addLearned(userId: string, wordId: string) {
     INSERT INTO user_learned (user_id, word_id)
     VALUES (${userId}::uuid, ${wordId})
     ON CONFLICT DO NOTHING
-  `;
-}
-
-// ---- quiz history ----
-
-export interface QuizResultRow {
-  id: number;
-  quiz_type: string;
-  total: number;
-  correct: number;
-  created_at: string;
-}
-
-export async function recordQuiz(
-  userId: string,
-  quizType: string,
-  total: number,
-  correct: number,
-) {
-  const sql = requireSql();
-  await sql`
-    INSERT INTO user_quiz_results (user_id, quiz_type, total, correct)
-    VALUES (${userId}::uuid, ${quizType}, ${total}, ${correct})
-  `;
-}
-
-export async function getQuizHistory(
-  userId: string,
-  limit = 20,
-): Promise<QuizResultRow[]> {
-  const sql = requireSql();
-  return sql<QuizResultRow[]>`
-    SELECT id, quiz_type, total, correct, created_at
-    FROM user_quiz_results
-    WHERE user_id = ${userId}::uuid
-    ORDER BY created_at DESC
-    LIMIT ${limit}
   `;
 }
 

@@ -6,36 +6,23 @@ import CsvButton from "./CsvButton";
 export const dynamic = "force-dynamic";
 
 const ALLOWED_DAYS = [7, 14, 30, 90] as const;
-const ALLOWED_MIN_ATTEMPTS = [1, 3, 5, 10] as const;
 type Days = (typeof ALLOWED_DAYS)[number];
-type MinAttempts = (typeof ALLOWED_MIN_ATTEMPTS)[number];
 
 function clampDays(v: unknown): Days {
   const n = Number(v);
   return (ALLOWED_DAYS as readonly number[]).includes(n) ? (n as Days) : 30;
-}
-function clampMinAttempts(v: unknown): MinAttempts {
-  const n = Number(v);
-  return (ALLOWED_MIN_ATTEMPTS as readonly number[]).includes(n)
-    ? (n as MinAttempts)
-    : 3;
 }
 
 interface CountRow {
   label: string;
   c: number;
 }
-interface QuizRow {
-  word_id: string | null;
-  attempts: number;
-  correct: number;
-}
 interface DayRow {
   d: string;
   c: number;
 }
 
-async function loadStats(days: Days, minAttempts: MinAttempts) {
+async function loadStats(days: Days) {
   const sql = getSql();
   if (!sql) {
     return null;
@@ -46,7 +33,7 @@ async function loadStats(days: Days, minAttempts: MinAttempts) {
   // Trend bars get clamped so the chart doesn't become unreadable at 90d.
   const trendDays = Math.min(days, 30);
 
-  const [byType, topViewed, byCategory, quizPerWord, perDay, sessions7d] =
+  const [byType, topViewed, byCategory, perDay, sessions7d] =
     await Promise.all([
       sql`
         SELECT type AS label, count(*)::int AS c
@@ -67,17 +54,6 @@ async function loadStats(days: Days, minAttempts: MinAttempts) {
         GROUP BY category ORDER BY c DESC
       ` as unknown as Promise<CountRow[]>,
       sql`
-        SELECT word_id, count(*)::int AS attempts,
-               sum(CASE WHEN correct THEN 1 ELSE 0 END)::int AS correct
-        FROM events
-        WHERE type = 'quiz_attempt' AND word_id IS NOT NULL
-          AND created_at > now() - make_interval(days => ${days})
-        GROUP BY word_id
-        HAVING count(*) >= ${minAttempts}
-        ORDER BY (sum(CASE WHEN correct THEN 1 ELSE 0 END)::float / count(*)) ASC
-        LIMIT 10
-      ` as unknown as Promise<QuizRow[]>,
-      sql`
         SELECT to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS d,
                count(*)::int AS c
         FROM events WHERE created_at > now() - make_interval(days => ${trendDays})
@@ -94,7 +70,6 @@ async function loadStats(days: Days, minAttempts: MinAttempts) {
     byType,
     topViewed,
     byCategory,
-    quizPerWord,
     perDay,
     sessions7d: sessions7d[0]?.c ?? 0,
     wordMap,
@@ -105,12 +80,11 @@ async function loadStats(days: Days, minAttempts: MinAttempts) {
 export default async function StatsPage({
   searchParams,
 }: {
-  searchParams: { days?: string; minAttempts?: string };
+  searchParams: { days?: string };
 }) {
   const days = clampDays(searchParams.days);
-  const minAttempts = clampMinAttempts(searchParams.minAttempts);
 
-  const data = await loadStats(days, minAttempts);
+  const data = await loadStats(days);
   if (!data) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -125,7 +99,6 @@ export default async function StatsPage({
     byType,
     topViewed,
     byCategory,
-    quizPerWord,
     perDay,
     sessions7d,
     wordMap,
@@ -151,14 +124,7 @@ export default async function StatsPage({
           options={ALLOWED_DAYS.map((d) => ({ value: d, label: `${d}d` }))}
           current={days}
           paramKey="days"
-          otherParams={{ minAttempts: String(minAttempts) }}
-        />
-        <Segmented
-          label="最少嘗試"
-          options={ALLOWED_MIN_ATTEMPTS.map((n) => ({ value: n, label: `≥${n}` }))}
-          current={minAttempts}
-          paramKey="minAttempts"
-          otherParams={{ days: String(days) }}
+          otherParams={{}}
         />
       </section>
 
@@ -253,7 +219,7 @@ export default async function StatsPage({
         </Card>
       </section>
 
-      <section className="grid lg:grid-cols-2 gap-6">
+      <section>
         <Card
           title={`各分類熱度 (${days}d)`}
           action={
@@ -275,71 +241,6 @@ export default async function StatsPage({
               />
             ))}
           </ul>
-        </Card>
-
-        <Card
-          title={`測驗最難的單字 (≥${minAttempts} 次嘗試, 正確率低)`}
-          action={
-            <CsvButton
-              filename={`quiz-hardest-${days}d-min${minAttempts}-${today}.csv`}
-              headers={["word_id", "word", "chinese", "attempts", "correct", "rate_pct"]}
-              rows={quizPerWord.map((r) => {
-                const w = r.word_id ? wordMap.get(r.word_id) : undefined;
-                const rate = r.attempts > 0
-                  ? Math.round((r.correct / r.attempts) * 100)
-                  : 0;
-                return [
-                  r.word_id ?? "",
-                  w?.word ?? "",
-                  w?.chinese ?? "",
-                  r.attempts,
-                  r.correct,
-                  rate,
-                ];
-              })}
-            />
-          }
-        >
-          {quizPerWord.length === 0 ? (
-            <Empty />
-          ) : (
-            <ul className="space-y-1.5 text-sm">
-              {quizPerWord.map((r) => {
-                const w = r.word_id ? wordMap.get(r.word_id) : undefined;
-                const rate = r.attempts > 0
-                  ? Math.round((r.correct / r.attempts) * 100)
-                  : 0;
-                return (
-                  <li
-                    key={r.word_id ?? ""}
-                    className="flex items-center justify-between gap-3"
-                  >
-                    {w ? (
-                      <Link
-                        href={`/word/${w.id}`}
-                        className="font-medium text-ink hover:underline truncate"
-                      >
-                        {w.word}
-                        <span className="text-muted ml-1">· {w.chinese}</span>
-                      </Link>
-                    ) : (
-                      <span className="text-muted">{r.word_id}</span>
-                    )}
-                    <span className="text-xs text-muted shrink-0">
-                      {r.correct}/{r.attempts}{" "}
-                      <span
-                        className={
-                          rate < 50 ? "text-rose-500 font-semibold" : "text-ink"
-                        }
-                      >
-                        ({rate}%)
-                      </span>
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
         </Card>
       </section>
     </div>

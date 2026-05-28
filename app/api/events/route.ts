@@ -3,12 +3,7 @@ import { getSql } from "@/lib/db";
 
 export const runtime = "nodejs";
 
-const VALID_TYPES = new Set([
-  "view",
-  "favorite",
-  "quiz_attempt",
-  "pronounce",
-]);
+const VALID_TYPES = new Set(["view", "favorite", "pronounce"]);
 
 async function ipHash(ip: string): Promise<string> {
   const data = new TextEncoder().encode(ip + "::eepd");
@@ -25,8 +20,6 @@ export async function POST(req: Request) {
     type?: string;
     wordId?: string;
     category?: string;
-    quizType?: string;
-    correct?: boolean;
     sessionId?: string;
   };
   try {
@@ -47,13 +40,11 @@ export async function POST(req: Request) {
 
   try {
     await sql`
-      INSERT INTO events (type, word_id, category, quiz_type, correct, session_id, ip_hash)
+      INSERT INTO events (type, word_id, category, session_id, ip_hash)
       VALUES (
         ${body.type},
         ${body.wordId ?? null},
         ${body.category ?? null},
-        ${body.quizType ?? null},
-        ${typeof body.correct === "boolean" ? body.correct : null},
         ${body.sessionId ?? null},
         ${hash}
       )

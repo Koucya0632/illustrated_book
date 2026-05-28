@@ -9,12 +9,6 @@ import { categories } from "@/lib/categories";
 import { clearProgress, getProgress, subscribe } from "@/lib/storage";
 import type { Progress } from "@/types";
 
-const TYPE_LABEL: Record<string, string> = {
-  image: "看圖選英文",
-  chinese: "看中文選英文",
-  spelling: "拼字練習",
-};
-
 // Deterministic placeholder heat grid — see TUJI_TODO.md (daily activity is
 // not yet tracked per-day, so this is a visual stub).
 const HEAT = Array.from({ length: 42 }, (_, i) => {
@@ -56,9 +50,6 @@ export default function ProgressClient({
   const totalWords = allWords.length;
   const learnedCount = p.learnedIds.length;
   const favCount = p.favoriteIds.length;
-  const totalAttempted = p.quizHistory.reduce((s, q) => s + q.total, 0);
-  const totalCorrect = p.quizHistory.reduce((s, q) => s + q.correct, 0);
-  const rate = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
   const completion = totalWords > 0 ? Math.round((learnedCount / totalWords) * 100) : 0;
 
   const perCategory = categories.map((c) => {
@@ -74,7 +65,6 @@ export default function ProgressClient({
 
   const tiles = [
     { label: "已學單字", val: `${learnedCount}`, sub: `共 ${totalWords} 個`, bg: TUJI.pink, color: TUJI.ink, glyph: "📚" },
-    { label: "測驗正確率", val: `${rate}%`, sub: `${p.quizHistory.length} 次測驗`, bg: TUJI.tealS, color: TUJI.teal, glyph: "🎯" },
     { label: "連續天數", val: `${streak?.current ?? 0}`, sub: streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "尚未開始", bg: "#FFF4D6", color: "#A86214", glyph: "🔥" },
     { label: "收藏單字", val: `${favCount}`, sub: "我的收藏", bg: "#FFFFFF", color: TUJI.ink, glyph: "❤️" },
   ];
@@ -109,7 +99,7 @@ export default function ProgressClient({
       </div>
 
       {/* Stat tiles */}
-      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {tiles.map((s) => (
           <div
             key={s.label}
@@ -206,39 +196,6 @@ export default function ProgressClient({
           </div>
         </div>
       </div>
-
-      {/* Quiz history (real) */}
-      <section className="mb-4">
-        <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">最近測驗紀錄</h2>
-        {p.quizHistory.length === 0 ? (
-          <p className="text-sm text-tuji-ink3">
-            還沒有測驗紀錄。{" "}
-            <Link href="/quiz" className="font-extrabold text-tuji-teal">
-              去做一個測驗 →
-            </Link>
-          </p>
-        ) : (
-          <ul className="flex flex-col gap-2">
-            {p.quizHistory.slice(0, 8).map((q, i) => {
-              const r = q.total > 0 ? Math.round((q.correct / q.total) * 100) : 0;
-              return (
-                <li key={i} className="flex items-center justify-between rounded-[14px] bg-white px-4 py-3 shadow-soft">
-                  <div>
-                    <p className="font-bold text-tuji-ink">{TYPE_LABEL[q.type] ?? q.type}</p>
-                    <p className="text-xs text-tuji-ink3">{new Date(q.date).toLocaleString("zh-TW")}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-extrabold text-tuji-ink">
-                      {q.correct}/{q.total}
-                    </p>
-                    <p className="text-xs text-tuji-ink3">{r}%</p>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </section>
 
       <button
         onClick={() => {

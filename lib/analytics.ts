@@ -5,7 +5,7 @@
 
 const SESSION_KEY = "eepd-session-id";
 
-function sessionId(): string {
+export function getSessionId(): string {
   if (typeof window === "undefined") return "";
   let id = window.localStorage.getItem(SESSION_KEY);
   if (!id) {
@@ -28,7 +28,7 @@ export interface TrackPayload {
 export function track(payload: TrackPayload) {
   if (typeof window === "undefined") return;
   try {
-    const body = JSON.stringify({ ...payload, sessionId: sessionId() });
+    const body = JSON.stringify({ ...payload, sessionId: getSessionId() });
     if (navigator.sendBeacon) {
       navigator.sendBeacon(
         "/api/events",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
 import MasteryBar from "@/components/MasteryBar";
+import { getSessionId } from "@/lib/analytics";
 import { masteryLevel } from "@/lib/mastery";
 import type { Rating } from "@/lib/srs";
 
@@ -158,10 +159,18 @@ export default function StudyClient() {
 
   async function rate(rating: Rating, isAutoFromWrong = false) {
     if (!current) return;
+    // Capture before the awaits so the elapsed timing isn't polluted by
+    // network latency. startedAtRef resets on every new card.
+    const responseMs = Math.round(performance.now() - startedAtRef.current);
     const res = await fetch("/api/study/answer", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ cardId: current.card.id, rating }),
+      body: JSON.stringify({
+        cardId: current.card.id,
+        rating,
+        responseMs,
+        sessionId: getSessionId(),
+      }),
     });
     const j = await res.json();
     setSummary((s) => ({

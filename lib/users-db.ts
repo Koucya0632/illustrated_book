@@ -206,3 +206,64 @@ export async function getAllMastery(userId: string): Promise<MasteryRow[]> {
     WHERE user_id = ${userId}::uuid
   `;
 }
+
+// ----------------------------------------------------------------------------
+// study_logs — append-only event stream. One row per answered card.
+// Mirrors user_cards / user_words mutations but is never UPDATEd; the table
+// is monthly-partitioned + 12-month retention via pg_partman.
+//
+// The 0-3 rating maps from the Chinese UI labels (Rating in lib/srs.ts):
+//   重來 → 0 (again),  困難 → 1 (hard),  穩定 → 2 (good),  熟練 → 3 (easy).
+// ----------------------------------------------------------------------------
+export type StudyLogActivity =
+  | "flashcard"
+  | "mcq"
+  | "typing"
+  | "listening"
+  | "image_recall"
+  | "reading";
+
+export interface StudyLogInput {
+  userId: string;            // UUID
+  wordId: string;
+  activity: StudyLogActivity;
+  rating: 0 | 1 | 2 | 3;
+  isCorrect: boolean;
+  responseMs?: number | null;
+  intervalBefore?: number | null;
+  intervalAfter?: number | null;
+  easeBefore?: number | null;
+  easeAfter?: number | null;
+  masteryBefore?: number | null;
+  masteryAfter?: number | null;
+  clientSessionId?: string | null;
+  metadata?: Record<string, unknown>;
+}
+
+export async function insertStudyLog(input: StudyLogInput): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO study_logs (
+      user_id, word_id, activity, rating, is_correct, response_ms,
+      interval_before, interval_after,
+      ease_before, ease_after,
+      mastery_before, mastery_after,
+      client_session_id, metadata
+    ) VALUES (
+      ${input.userId}::uuid,
+      ${input.wordId},
+      ${input.activity},
+      ${input.rating},
+      ${input.isCorrect},
+      ${input.responseMs ?? null},
+      ${input.intervalBefore ?? null},
+      ${input.intervalAfter ?? null},
+      ${input.easeBefore ?? null},
+      ${input.easeAfter ?? null},
+      ${input.masteryBefore ?? null},
+      ${input.masteryAfter ?? null},
+      ${input.clientSessionId ?? null},
+      ${JSON.stringify(input.metadata ?? {})}::jsonb
+    )
+  `;
+}

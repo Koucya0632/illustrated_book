@@ -3,18 +3,43 @@ import { getCurrentUserId } from "@/lib/current-user";
 import { getCardById, upsertReview } from "@/lib/cards-db";
 import { humanizeInterval, schedule, type Rating } from "@/lib/srs";
 import { applyAnswer, masteryLevel } from "@/lib/mastery";
-import { getMasteryRow, upsertMastery } from "@/lib/users-db";
+import {
+  getMasteryRow,
+  upsertMastery,
+  insertStudyLog,
+  type StudyLogActivity,
+} from "@/lib/users-db";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const VALID_RATINGS: Rating[] = ["重來", "困難", "穩定", "熟練"];
+const RATING_TO_SMALLINT: Record<Rating, 0 | 1 | 2 | 3> = {
+  重來: 0,
+  困難: 1,
+  穩定: 2,
+  熟練: 3,
+};
+
+// Both current decks (recall + cloze) render as MCQ in StudyClient. Future
+// modes (typing, listening) should be set explicitly by the client.
+function defaultActivity(cardType: string): StudyLogActivity {
+  if (cardType === "填空卡") return "mcq";
+  if (cardType === "回想卡") return "mcq";
+  return "flashcard";
+}
 
 export async function POST(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-  let body: { cardId?: number; rating?: string };
+  let body: {
+    cardId?: number;
+    rating?: string;
+    responseMs?: number;
+    sessionId?: string;
+    activity?: StudyLogActivity;
+  };
   try {
     body = await req.json();
   } catch {
@@ -58,6 +83,32 @@ export async function POST(req: Request) {
     : null;
   const masteryResult = applyAnswer(prevMastery, prevReviewedAt, rating);
   await upsertMastery(userId, card.word.id, masteryResult.mastery);
+
+  // 3) Append-only event log. Best-effort: a logging failure must not poison
+  //    the answer flow (state is already updated). Partition-pruned writes
+  //    drop into the current month's child of study_logs.
+  try {
+    const responseMs =
+      typeof body.responseMs === "number" && Number.isFinite(body.responseMs)
+        ? Math.max(0, Math.min(body.responseMs, 600_000))
+        : null;
+    await insertStudyLog({
+      userId,
+      wordId: card.word.id,
+      activity: body.activity ?? defaultActivity(card.card.card_type),
+      rating: RATING_TO_SMALLINT[rating],
+      isCorrect: !isMistake,
+      responseMs,
+      intervalBefore: prevState.intervalDays,
+      intervalAfter: next.intervalDays,
+      masteryBefore: masteryResult.previousDecayed,
+      masteryAfter: masteryResult.mastery,
+      clientSessionId: body.sessionId?.slice(0, 64) ?? null,
+      metadata: { cardId, deckKey: card.card.deck_key },
+    });
+  } catch (err) {
+    console.warn("[study/answer] study_logs insert failed", err);
+  }
 
   return NextResponse.json({
     ok: true,

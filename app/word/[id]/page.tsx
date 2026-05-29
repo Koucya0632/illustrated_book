@@ -8,25 +8,24 @@ import { getCategory } from "@/lib/categories";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getAllWords, getWord } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
-import { getMasteryRow } from "@/lib/users-db";
+import { getMasteryRow, getSettings } from "@/lib/users-db";
+import { DEFAULT_SETTINGS } from "@/lib/settings";
+import { t } from "@/lib/i18n";
 import type { RelationType, Word } from "@/types";
 import MarkLearned from "./MarkLearned";
 import EventTracker from "@/components/EventTracker";
 
-export const revalidate = 60;
+// Dynamic so the page can render in the signed-in user's language + show their
+// mastery. (It already read cookies for mastery, so it wasn't statically cached.)
+export const dynamic = "force-dynamic";
 
-export async function generateStaticParams() {
-  const all = await getAllWords();
-  return all.map((w) => ({ id: w.id }));
-}
-
-const RELATION_GROUPS: { type: RelationType; label: string }[] = [
-  { type: "synonym", label: "同義詞" },
-  { type: "antonym", label: "反義詞" },
-  { type: "hypernym", label: "上位詞" },
-  { type: "hyponym", label: "下位詞" },
-  { type: "confusing", label: "容易混淆" },
-  { type: "see-also", label: "相關單字" },
+const RELATION_GROUPS: { type: RelationType; labelKey: string }[] = [
+  { type: "synonym", labelKey: "word.rel.synonym" },
+  { type: "antonym", labelKey: "word.rel.antonym" },
+  { type: "hypernym", labelKey: "word.rel.hypernym" },
+  { type: "hyponym", labelKey: "word.rel.hyponym" },
+  { type: "confusing", labelKey: "word.rel.confusing" },
+  { type: "see-also", labelKey: "word.rel.seeAlso" },
 ];
 
 function gatherRelations(
@@ -82,6 +81,8 @@ export default async function WordDetailPage({ params }: { params: { id: string 
 
   let mastery: number | null = null;
   const userId = await getCurrentUserId();
+  const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
+  const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   if (userId) {
     const row = await getMasteryRow(userId, w.id);
     if (row) {
@@ -89,6 +90,9 @@ export default async function WordDetailPage({ params }: { params: { id: string 
     }
   }
   const tier = mastery !== null ? scoreTier(mastery) : null;
+  // Localized mastery tier label (thresholds match scoreTier).
+  const tierKey =
+    mastery === null ? null : mastery >= 70 ? "word.tierMastered" : mastery >= 40 ? "word.tierLearning" : "word.tierWeak";
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 sm:px-7">
@@ -98,7 +102,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
       {/* Breadcrumb + actions */}
       <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-bold text-tuji-ink3">
         <Link href="/cards" className="hover:text-tuji-ink">
-          單字庫
+          {tr("nav.cards")}
         </Link>
         <span>›</span>
         {cat && (
@@ -116,7 +120,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             href="/study"
             className="rounded-xl bg-tuji-teal px-3.5 py-2 text-[13px] font-extrabold text-white shadow-soft"
           >
-            現在練
+            {tr("word.practiceNow")}
           </Link>
         </div>
       </div>
@@ -150,7 +154,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
                 <div className="mt-2 text-lg font-bold text-tuji-ink">{headlineZh}</div>
                 {w.alsoKnownAs && w.alsoKnownAs.length > 0 && (
                   <div className="mt-1 text-xs text-tuji-ink3">
-                    又稱：<span className="font-semibold text-tuji-ink2">{w.alsoKnownAs.join(", ")}</span>
+                    {tr("word.alsoKnownAs")}：<span className="font-semibold text-tuji-ink2">{w.alsoKnownAs.join(", ")}</span>
                   </div>
                 )}
               </div>
@@ -182,7 +186,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             <div>
               <div className="mb-3 flex items-center gap-2.5">
                 <Mascot pose="wave" size={36} />
-                <span className="text-base font-extrabold tracking-tight text-tuji-ink">來點例句吧～</span>
+                <span className="text-base font-extrabold tracking-tight text-tuji-ink">{tr("word.examplesTitle")}</span>
               </div>
               <div className="flex flex-col gap-2.5">
                 {w.examples.map((ex, i) => (
@@ -207,8 +211,8 @@ export default async function WordDetailPage({ params }: { params: { id: string 
         <div className="flex flex-col gap-4">
           {/* Mastery card (dark) */}
           <div className="relative overflow-hidden rounded-[22px] bg-tuji-ink p-5 text-white">
-            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/65">熟練度</div>
-            {mastery !== null && tier ? (
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/65">{tr("word.mastery")}</div>
+            {mastery !== null && tier && tierKey ? (
               <>
                 <div className="mt-3.5 flex items-center gap-4">
                   <ProfRing
@@ -220,17 +224,17 @@ export default async function WordDetailPage({ params }: { params: { id: string 
                     label={<span className="text-white">{Math.round(mastery)}%</span>}
                   />
                   <div className="flex-1">
-                    <div className="text-base font-extrabold">{tier.state}</div>
-                    <div className="mt-1 text-xs text-white/70">熟練度會隨時間自然衰減</div>
+                    <div className="text-base font-extrabold">{tr(tierKey)}</div>
+                    <div className="mt-1 text-xs text-white/70">{tr("word.masteryDecay")}</div>
                   </div>
                 </div>
                 <Link
                   href="/study"
                   className="mt-3.5 flex items-center justify-between rounded-xl bg-white/[0.08] px-3.5 py-2.5"
                 >
-                  <span className="text-sm font-bold">把它再練一次</span>
+                  <span className="text-sm font-bold">{tr("word.practiceAgain")}</span>
                   <span className="rounded-lg bg-tuji-yellow px-3 py-1.5 text-xs font-extrabold text-tuji-ink">
-                    現在練 →
+                    {tr("word.practiceNowArrow")}
                   </span>
                 </Link>
               </>
@@ -238,12 +242,12 @@ export default async function WordDetailPage({ params }: { params: { id: string 
               <div className="mt-3.5 flex items-center gap-4">
                 <Mascot pose="think" size={64} />
                 <div className="flex-1">
-                  <div className="text-sm font-bold">還沒有這個字的紀錄</div>
+                  <div className="text-sm font-bold">{tr("word.noRecord")}</div>
                   <Link
                     href="/study"
                     className="mt-2 inline-block rounded-lg bg-tuji-yellow px-3 py-1.5 text-xs font-extrabold text-tuji-ink"
                   >
-                    開始學它 →
+                    {tr("word.startLearning")}
                   </Link>
                 </div>
               </div>
@@ -255,7 +259,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             <div className="flex items-start gap-3 rounded-[22px] bg-white p-4 shadow-soft">
               <Mascot pose="think" size={48} />
               <div>
-                <div className="mb-1 text-[13px] font-extrabold text-tuji-ink">記憶小撇步</div>
+                <div className="mb-1 text-[13px] font-extrabold text-tuji-ink">{tr("word.mnemonic")}</div>
                 <div className="text-[13px] leading-relaxed text-tuji-ink2">{w.note}</div>
               </div>
             </div>
@@ -264,7 +268,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
           {/* Same theme */}
           {sameCategory.length > 0 && (
             <div>
-              <div className="mb-2.5 text-[13px] font-extrabold text-tuji-ink">同主題</div>
+              <div className="mb-2.5 text-[13px] font-extrabold text-tuji-ink">{tr("word.sameTheme")}</div>
               <div className="grid grid-cols-2 gap-2.5">
                 {sameCategory.map((rw) => (
                   <Link key={rw.id} href={`/word/${rw.id}`} className="rounded-[14px] bg-white p-2.5 shadow-soft transition hover:shadow-card">
@@ -280,12 +284,12 @@ export default async function WordDetailPage({ params }: { params: { id: string 
       </div>
 
       {/* Typed relations */}
-      {RELATION_GROUPS.map(({ type, label }) => {
+      {RELATION_GROUPS.map(({ type, labelKey }) => {
         const items = groupedRelations.get(type) ?? [];
         if (items.length === 0) return null;
         return (
           <section key={type} className="mt-8">
-            <h2 className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">{label}</h2>
+            <h2 className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">{tr(labelKey)}</h2>
             <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((item) =>
                 item.word ? (
@@ -318,7 +322,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
       {/* Other-language definitions */}
       {otherDefs.length > 0 && (
         <section className="mt-8">
-          <h2 className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">其他語言釋義</h2>
+          <h2 className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">{tr("word.otherDefs")}</h2>
           <ul className="flex flex-col gap-2">
             {otherDefs.map((d, i) => (
               <li key={`${d.language}-${i}`} className="flex items-baseline gap-3 rounded-[14px] bg-white px-4 py-3 shadow-soft">

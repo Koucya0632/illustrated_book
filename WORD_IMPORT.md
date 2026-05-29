@@ -198,3 +198,43 @@ Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受
 - **可學習 = 要有卡片**：只有走種子檔（A）並部署的字會自動產 SRS 卡片；Admin 單筆新增目前不產卡。
 - **idempotent**：migrate 與 enrich 都可重複執行；已存在的資料用 `ON CONFLICT DO NOTHING` / 「空才補」策略，不會覆蓋既有內容。
 - **快取**：公開讀取走 `unstable_cache`（tag `words`，60s revalidate）。Admin 寫入會 `revalidateTag('words')`；直接改 DB（script）則約 60s 後生效。
+
+---
+
+## 9. AI 生成圖的 Prompt（動詞 / 形容詞 / 副詞）
+
+名詞多半用實物照片即可；但**動詞、形容詞、副詞**這類動作或抽象概念，用吉祥物黑貓「演出」語意的插圖最清楚。把下面的 prompt 丟給生圖模型，填入 `[WORD]`、`[中文意思]`、`[具體動作/情境描述]`，產出的圖再上傳當該字的 `imageUrl`。
+
+> 適用：**動詞、形容詞、副詞**（名詞通常用實物照片即可）。需附上吉祥物黑貓的 reference image 以維持角色一致。
+
+```text
+Create a clean, cute educational vocabulary illustration using the same black cat character as the reference image.
+
+Character style:
+
+A kawaii black cartoon cat with a round soft body, large yellow eyes, small pink paw pads, white whiskers, rounded ears, cute facial expression, simple smooth outlines, soft shading, and a friendly learning-app mascot feeling.
+
+Scene:
+
+The black cat is clearly demonstrating the meaning of the word: [WORD].
+
+The action or emotion should be immediately understandable without any text.
+
+For the word “[WORD]” meaning “[中文意思]”, show the cat [具體動作/情境描述].
+
+Example:
+
+For “squeeze” meaning “擠壓”, show the black cat using both paws to squeeze a soft yellow lemon. The lemon is visibly squashed, juice drops are splashing out, and the cat has a cute determined expression, with one eye closed and cheeks slightly tense.
+
+Style:
+
+cute, modern, clean, rounded, educational flashcard style, soft pastel accents, simple white or very light background, minimal composition, high clarity, suitable for a language learning app, consistent mascot design, no text, no letters, no captions, no watermark.
+
+Composition:
+
+Single centered character, full body or upper body visible, clear action, enough white space around the character, simple props only, bright and friendly visual.
+
+Negative prompt:
+
+Do not include any text, words, letters, numbers, labels, captions, logo, watermark, complicated background, realistic cat, scary expression, extra characters, messy details.
+```

@@ -1,5 +1,6 @@
 import type { Example, Word, WordRelation } from "@/types";
 import wikiUrls from "./image-urls.json";
+import supplementalRawWords from "./supplemental-words.json";
 
 // Internal: the inline seed below uses the pre-v2 shape (single Chinese
 // string, flat examples, untyped related/confusing arrays). The Word type
@@ -41,6 +42,7 @@ const img = (keyword: string, _hint?: string) => {
 };
 
 const wikiMap = wikiUrls as Record<string, string>;
+const supplementalWords = supplementalRawWords as LegacyWord[];
 
 const rawWords: LegacyWord[] = [
   // ---------- Kitchen ----------
@@ -1849,7 +1851,7 @@ function legacyToV2(legacy: LegacyWord): Word {
 // Prefer Wikipedia/Wikimedia reference photos when we have them; fall back to
 // the Loremflickr URL embedded in each entry. Done as a post-process pass so
 // we don't have to touch every word definition.
-export const words: Word[] = rawWords.map((w) => {
+export const words: Word[] = [...rawWords, ...supplementalWords].map((w) => {
   const withImage = wikiMap[w.id] ? { ...w, imageUrl: wikiMap[w.id] } : w;
   return legacyToV2(withImage);
 });

@@ -1,0 +1,5456 @@
+[
+  {
+    "id": "electric-cooker",
+    "word": "electric cooker",
+    "chinese": "電鍋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɪˌlek.trɪk ˈkʊk.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/electric,cooker?lock=1493774936",
+    "examples": [
+      {
+        "en": "I use the electric cooker in the kitchen.",
+        "zh": "我在廚房使用電鍋。"
+      }
+    ]
+  },
+  {
+    "id": "rice-cooker",
+    "word": "rice cooker",
+    "chinese": "電飯鍋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈraɪs ˌkʊk.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/rice,cooker?lock=508302108",
+    "examples": [
+      {
+        "en": "I use the rice cooker in the kitchen.",
+        "zh": "我在廚房使用電飯鍋。"
+      }
+    ]
+  },
+  {
+    "id": "freezer",
+    "word": "freezer",
+    "chinese": "冷凍庫",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfriː.zɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/freezer?lock=603776837",
+    "examples": [
+      {
+        "en": "I use the freezer in the kitchen.",
+        "zh": "我在廚房使用冷凍庫。"
+      }
+    ]
+  },
+  {
+    "id": "range-hood",
+    "word": "range hood",
+    "chinese": "抽油煙機",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈreɪndʒ hʊd/",
+    "imageUrl": "https://loremflickr.com/600/450/range,hood?lock=1873614305",
+    "examples": [
+      {
+        "en": "I use the range hood in the kitchen.",
+        "zh": "我在廚房使用抽油煙機。"
+      }
+    ]
+  },
+  {
+    "id": "dishwasher",
+    "word": "dishwasher",
+    "chinese": "洗碗機",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdɪʃˌwɑː.ʃɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/dishwasher?lock=890135974",
+    "examples": [
+      {
+        "en": "I use the dishwasher in the kitchen.",
+        "zh": "我在廚房使用洗碗機。"
+      }
+    ]
+  },
+  {
+    "id": "kitchen-knife",
+    "word": "kitchen knife",
+    "chinese": "菜刀",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɪtʃ.ɪn naɪf/",
+    "imageUrl": "https://loremflickr.com/600/450/kitchen,knife?lock=135525591",
+    "examples": [
+      {
+        "en": "I use the kitchen knife in the kitchen.",
+        "zh": "我在廚房使用菜刀。"
+      }
+    ]
+  },
+  {
+    "id": "peeler",
+    "word": "peeler",
+    "chinese": "削皮器",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpiː.lɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/peeler?lock=992110839",
+    "examples": [
+      {
+        "en": "I use the peeler in the kitchen.",
+        "zh": "我在廚房使用削皮器。"
+      }
+    ]
+  },
+  {
+    "id": "grater",
+    "word": "grater",
+    "chinese": "刨絲器",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɡreɪ.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/grater?lock=1237878901",
+    "examples": [
+      {
+        "en": "I use the grater in the kitchen.",
+        "zh": "我在廚房使用刨絲器。"
+      }
+    ]
+  },
+  {
+    "id": "can-opener",
+    "word": "can opener",
+    "chinese": "開罐器",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæn ˌoʊ.pən.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/can,opener?lock=1449048377",
+    "examples": [
+      {
+        "en": "I use the can opener in the kitchen.",
+        "zh": "我在廚房使用開罐器。"
+      }
+    ]
+  },
+  {
+    "id": "scissors",
+    "word": "scissors",
+    "chinese": "剪刀",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsɪz.ɚz/",
+    "imageUrl": "https://loremflickr.com/600/450/scissors?lock=655921129",
+    "examples": [
+      {
+        "en": "I use the scissors in the kitchen.",
+        "zh": "我在廚房使用剪刀。"
+      }
+    ]
+  },
+  {
+    "id": "spatula",
+    "word": "spatula",
+    "chinese": "鍋鏟",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈspætʃ.ə.lə/",
+    "imageUrl": "https://loremflickr.com/600/450/spatula?lock=2011640998",
+    "examples": [
+      {
+        "en": "I use the spatula in the kitchen.",
+        "zh": "我在廚房使用鍋鏟。"
+      }
+    ]
+  },
+  {
+    "id": "ladle",
+    "word": "ladle",
+    "chinese": "湯勺",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈleɪ.dəl/",
+    "imageUrl": "https://loremflickr.com/600/450/ladle?lock=102729544",
+    "examples": [
+      {
+        "en": "I use the ladle in the kitchen.",
+        "zh": "我在廚房使用湯勺。"
+      }
+    ]
+  },
+  {
+    "id": "tongs",
+    "word": "tongs",
+    "chinese": "夾子",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tɑːŋz/",
+    "imageUrl": "https://loremflickr.com/600/450/tongs?lock=110544255",
+    "examples": [
+      {
+        "en": "I use the tongs in the kitchen.",
+        "zh": "我在廚房使用夾子。"
+      }
+    ]
+  },
+  {
+    "id": "whisk",
+    "word": "whisk",
+    "chinese": "打蛋器",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/wɪsk/",
+    "imageUrl": "https://loremflickr.com/600/450/whisk?lock=113101840",
+    "examples": [
+      {
+        "en": "I use the whisk in the kitchen.",
+        "zh": "我在廚房使用打蛋器。"
+      }
+    ]
+  },
+  {
+    "id": "measuring-cup",
+    "word": "measuring cup",
+    "chinese": "量杯",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmeʒ.ɚ.ɪŋ kʌp/",
+    "imageUrl": "https://loremflickr.com/600/450/measuring,cup?lock=938552121",
+    "examples": [
+      {
+        "en": "I use the measuring cup in the kitchen.",
+        "zh": "我在廚房使用量杯。"
+      }
+    ]
+  },
+  {
+    "id": "measuring-spoon",
+    "word": "measuring spoon",
+    "chinese": "量匙",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmeʒ.ɚ.ɪŋ spuːn/",
+    "imageUrl": "https://loremflickr.com/600/450/measuring,spoon?lock=20086092",
+    "examples": [
+      {
+        "en": "I use the measuring spoon in the kitchen.",
+        "zh": "我在廚房使用量匙。"
+      }
+    ]
+  },
+  {
+    "id": "strainer",
+    "word": "strainer",
+    "chinese": "濾網",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈstreɪ.nɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/strainer?lock=1787479266",
+    "examples": [
+      {
+        "en": "I use the strainer in the kitchen.",
+        "zh": "我在廚房使用濾網。"
+      }
+    ]
+  },
+  {
+    "id": "slotted-spoon",
+    "word": "slotted spoon",
+    "chinese": "漏勺",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌslɑː.tɪd ˈspuːn/",
+    "imageUrl": "https://loremflickr.com/600/450/slotted,spoon?lock=1238707066",
+    "examples": [
+      {
+        "en": "I use the slotted spoon in the kitchen.",
+        "zh": "我在廚房使用漏勺。"
+      }
+    ]
+  },
+  {
+    "id": "glass",
+    "word": "glass",
+    "chinese": "玻璃杯",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡlæs/",
+    "imageUrl": "https://loremflickr.com/600/450/glass?lock=98436988",
+    "examples": [
+      {
+        "en": "I use the glass in the kitchen.",
+        "zh": "我在廚房使用玻璃杯。"
+      }
+    ]
+  },
+  {
+    "id": "fork",
+    "word": "fork",
+    "chinese": "叉子",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fɔːrk/",
+    "imageUrl": "https://loremflickr.com/600/450/fork?lock=3148994",
+    "examples": [
+      {
+        "en": "I use the fork in the kitchen.",
+        "zh": "我在廚房使用叉子。"
+      }
+    ]
+  },
+  {
+    "id": "table-knife",
+    "word": "table knife",
+    "chinese": "餐刀",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈteɪ.bəl naɪf/",
+    "imageUrl": "https://loremflickr.com/600/450/table,knife?lock=1204934701",
+    "examples": [
+      {
+        "en": "I use the table knife in the kitchen.",
+        "zh": "我在廚房使用餐刀。"
+      }
+    ]
+  },
+  {
+    "id": "frying-pan",
+    "word": "frying pan",
+    "chinese": "平底鍋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfraɪ.ɪŋ pæn/",
+    "imageUrl": "https://loremflickr.com/600/450/frying,pan?lock=385234542",
+    "examples": [
+      {
+        "en": "I use the frying pan in the kitchen.",
+        "zh": "我在廚房使用平底鍋。"
+      }
+    ]
+  },
+  {
+    "id": "wok",
+    "word": "wok",
+    "chinese": "炒鍋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/wɑːk/",
+    "imageUrl": "https://loremflickr.com/600/450/wok?lock=117907",
+    "examples": [
+      {
+        "en": "I use the wok in the kitchen.",
+        "zh": "我在廚房使用炒鍋。"
+      }
+    ]
+  },
+  {
+    "id": "lid",
+    "word": "lid",
+    "chinese": "鍋蓋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/lɪd/",
+    "imageUrl": "https://loremflickr.com/600/450/lid?lock=107143",
+    "examples": [
+      {
+        "en": "I use the lid in the kitchen.",
+        "zh": "我在廚房使用鍋蓋。"
+      }
+    ]
+  },
+  {
+    "id": "steamer-basket",
+    "word": "steamer basket",
+    "chinese": "蒸籠",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈstiː.mɚ ˌbæs.kɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/steamer,basket?lock=198742345",
+    "examples": [
+      {
+        "en": "I use the steamer basket in the kitchen.",
+        "zh": "我在廚房使用蒸籠。"
+      }
+    ]
+  },
+  {
+    "id": "teapot",
+    "word": "teapot",
+    "chinese": "茶壺",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtiː.pɑːt/",
+    "imageUrl": "https://loremflickr.com/600/450/teapot?lock=877709243",
+    "examples": [
+      {
+        "en": "I use the teapot in the kitchen.",
+        "zh": "我在廚房使用茶壺。"
+      }
+    ]
+  },
+  {
+    "id": "kettle",
+    "word": "kettle",
+    "chinese": "水壺",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈket.əl/",
+    "imageUrl": "https://loremflickr.com/600/450/kettle?lock=1134801837",
+    "examples": [
+      {
+        "en": "I use the kettle in the kitchen.",
+        "zh": "我在廚房使用水壺。"
+      }
+    ]
+  },
+  {
+    "id": "coffee-maker",
+    "word": "coffee maker",
+    "chinese": "咖啡機",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɔː.fi ˌmeɪ.kɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/coffee,maker?lock=148415216",
+    "examples": [
+      {
+        "en": "I use the coffee maker in the kitchen.",
+        "zh": "我在廚房使用咖啡機。"
+      }
+    ]
+  },
+  {
+    "id": "toaster",
+    "word": "toaster",
+    "chinese": "烤麵包機",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtoʊ.stɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/toaster?lock=1152797420",
+    "examples": [
+      {
+        "en": "I use the toaster in the kitchen.",
+        "zh": "我在廚房使用烤麵包機。"
+      }
+    ]
+  },
+  {
+    "id": "blender",
+    "word": "blender",
+    "chinese": "果汁機",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈblen.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/blender?lock=30352194",
+    "examples": [
+      {
+        "en": "I use the blender in the kitchen.",
+        "zh": "我在廚房使用果汁機。"
+      }
+    ]
+  },
+  {
+    "id": "food-processor",
+    "word": "food processor",
+    "chinese": "食物調理機",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfuːd ˌprɑː.ses.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/food,processor?lock=813178704",
+    "examples": [
+      {
+        "en": "I use the food processor in the kitchen.",
+        "zh": "我在廚房使用食物調理機。"
+      }
+    ]
+  },
+  {
+    "id": "air-fryer",
+    "word": "air fryer",
+    "chinese": "氣炸鍋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈer ˌfraɪ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/air,fryer?lock=1807880124",
+    "examples": [
+      {
+        "en": "I use the air fryer in the kitchen.",
+        "zh": "我在廚房使用氣炸鍋。"
+      }
+    ]
+  },
+  {
+    "id": "dish-soap",
+    "word": "dish soap",
+    "chinese": "洗碗精",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdɪʃ soʊp/",
+    "imageUrl": "https://loremflickr.com/600/450/dish,soap?lock=51100079",
+    "examples": [
+      {
+        "en": "I use the dish soap in the kitchen.",
+        "zh": "我在廚房使用洗碗精。"
+      }
+    ]
+  },
+  {
+    "id": "sponge",
+    "word": "sponge",
+    "chinese": "海綿",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/spʌndʒ/",
+    "imageUrl": "https://loremflickr.com/600/450/sponge?lock=895764774",
+    "examples": [
+      {
+        "en": "I use the sponge in the kitchen.",
+        "zh": "我在廚房使用海綿。"
+      }
+    ]
+  },
+  {
+    "id": "cloth",
+    "word": "cloth",
+    "chinese": "抹布",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/klɔːθ/",
+    "imageUrl": "https://loremflickr.com/600/450/cloth?lock=94756378",
+    "examples": [
+      {
+        "en": "I use the cloth in the kitchen.",
+        "zh": "我在廚房使用抹布。"
+      }
+    ]
+  },
+  {
+    "id": "paper-towel",
+    "word": "paper towel",
+    "chinese": "廚房紙巾",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpeɪ.pɚ ˌtaʊ.əl/",
+    "imageUrl": "https://loremflickr.com/600/450/paper,towel?lock=1499575151",
+    "examples": [
+      {
+        "en": "I use the paper towel in the kitchen.",
+        "zh": "我在廚房使用廚房紙巾。"
+      }
+    ]
+  },
+  {
+    "id": "trash-bag",
+    "word": "trash bag",
+    "chinese": "垃圾袋",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtræʃ bæɡ/",
+    "imageUrl": "https://loremflickr.com/600/450/trash,bag?lock=1183555360",
+    "examples": [
+      {
+        "en": "I use the trash bag in the kitchen.",
+        "zh": "我在廚房使用垃圾袋。"
+      }
+    ]
+  },
+  {
+    "id": "plastic-wrap",
+    "word": "plastic wrap",
+    "chinese": "保鮮膜",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈplæs.tɪk ræp/",
+    "imageUrl": "https://loremflickr.com/600/450/plastic,wrap?lock=936991286",
+    "examples": [
+      {
+        "en": "I use the plastic wrap in the kitchen.",
+        "zh": "我在廚房使用保鮮膜。"
+      }
+    ],
+    "alsoKnownAs": [
+      "cling film"
+    ]
+  },
+  {
+    "id": "aluminum-foil",
+    "word": "aluminum foil",
+    "chinese": "鋁箔紙",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/əˈluː.mɪ.nəm fɔɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/aluminum,foil?lock=174142156",
+    "examples": [
+      {
+        "en": "I use the aluminum foil in the kitchen.",
+        "zh": "我在廚房使用鋁箔紙。"
+      }
+    ]
+  },
+  {
+    "id": "food-container",
+    "word": "food container",
+    "chinese": "保鮮盒",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfuːd kənˌteɪ.nɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/food,container?lock=1496981311",
+    "examples": [
+      {
+        "en": "I use the food container in the kitchen.",
+        "zh": "我在廚房使用保鮮盒。"
+      }
+    ]
+  },
+  {
+    "id": "seasoning-jar",
+    "word": "seasoning jar",
+    "chinese": "調味罐",
+    "category": "kitchen",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsiː.zən.ɪŋ dʒɑːr/",
+    "imageUrl": "https://loremflickr.com/600/450/seasoning,jar?lock=1243341670",
+    "examples": [
+      {
+        "en": "I use the seasoning jar in the kitchen.",
+        "zh": "我在廚房使用調味罐。"
+      }
+    ]
+  },
+  {
+    "id": "toilet-seat",
+    "word": "toilet seat",
+    "chinese": "馬桶蓋",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɔɪ.lət siːt/",
+    "imageUrl": "https://loremflickr.com/600/450/toilet,seat?lock=1387673544",
+    "examples": [
+      {
+        "en": "The toilet seat is in the bathroom.",
+        "zh": "馬桶蓋在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "toilet-tank",
+    "word": "toilet tank",
+    "chinese": "馬桶水箱",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɔɪ.lət tæŋk/",
+    "imageUrl": "https://loremflickr.com/600/450/toilet,tank?lock=1387647203",
+    "examples": [
+      {
+        "en": "The toilet tank is in the bathroom.",
+        "zh": "馬桶水箱在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "toilet-paper",
+    "word": "toilet paper",
+    "chinese": "衛生紙",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɔɪ.lət ˌpeɪ.pɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/toilet,paper?lock=71082567",
+    "examples": [
+      {
+        "en": "The toilet paper is in the bathroom.",
+        "zh": "衛生紙在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "tissue",
+    "word": "tissue",
+    "chinese": "面紙",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɪʃ.uː/",
+    "imageUrl": "https://loremflickr.com/600/450/tissue?lock=873475867",
+    "examples": [
+      {
+        "en": "The tissue is in the bathroom.",
+        "zh": "面紙在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "washbasin",
+    "word": "washbasin",
+    "chinese": "洗手台",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwɑːʃˌbeɪ.sən/",
+    "imageUrl": "https://loremflickr.com/600/450/washbasin?lock=1030157062",
+    "examples": [
+      {
+        "en": "The washbasin is in the bathroom.",
+        "zh": "洗手台在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "drain",
+    "word": "drain",
+    "chinese": "排水孔",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dreɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/drain?lock=95844856",
+    "examples": [
+      {
+        "en": "The drain is in the bathroom.",
+        "zh": "排水孔在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bathroom-cabinet",
+    "word": "bathroom cabinet",
+    "chinese": "浴櫃",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ.ruːm ˌkæb.ɪ.nət/",
+    "imageUrl": "https://loremflickr.com/600/450/bathroom,cabinet?lock=918575482",
+    "examples": [
+      {
+        "en": "The bathroom cabinet is in the bathroom.",
+        "zh": "浴櫃在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "towel-rack",
+    "word": "towel rack",
+    "chinese": "毛巾架",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtaʊ.əl ræk/",
+    "imageUrl": "https://loremflickr.com/600/450/towel,rack?lock=575128108",
+    "examples": [
+      {
+        "en": "The towel rack is in the bathroom.",
+        "zh": "毛巾架在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hook",
+    "word": "hook",
+    "chinese": "掛鉤",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/hʊk/",
+    "imageUrl": "https://loremflickr.com/600/450/hook?lock=3208483",
+    "examples": [
+      {
+        "en": "The hook is in the bathroom.",
+        "zh": "掛鉤在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bathtub",
+    "word": "bathtub",
+    "chinese": "浴缸",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ.tʌb/",
+    "imageUrl": "https://loremflickr.com/600/450/bathtub?lock=331582930",
+    "examples": [
+      {
+        "en": "The bathtub is in the bathroom.",
+        "zh": "浴缸在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "shower-room",
+    "word": "shower room",
+    "chinese": "淋浴間",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃaʊ.ɚ ruːm/",
+    "imageUrl": "https://loremflickr.com/600/450/shower,room?lock=1463846609",
+    "examples": [
+      {
+        "en": "The shower room is in the bathroom.",
+        "zh": "淋浴間在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "shower-head",
+    "word": "shower head",
+    "chinese": "蓮蓬頭",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃaʊ.ɚ hed/",
+    "imageUrl": "https://loremflickr.com/600/450/shower,head?lock=1463538646",
+    "examples": [
+      {
+        "en": "The shower head is in the bathroom.",
+        "zh": "蓮蓬頭在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "shower-curtain",
+    "word": "shower curtain",
+    "chinese": "浴簾",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃaʊ.ɚ ˌkɝː.tən/",
+    "imageUrl": "https://loremflickr.com/600/450/shower,curtain?lock=1896397604",
+    "examples": [
+      {
+        "en": "The shower curtain is in the bathroom.",
+        "zh": "浴簾在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "shower-curtain-rod",
+    "word": "shower curtain rod",
+    "chinese": "浴簾桿",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃaʊ.ɚ ˌkɝː.tən rɑːd/",
+    "imageUrl": "https://loremflickr.com/600/450/shower,curtain,rod?lock=98679939",
+    "examples": [
+      {
+        "en": "The shower curtain rod is in the bathroom.",
+        "zh": "浴簾桿在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bathroom-door",
+    "word": "bathroom door",
+    "chinese": "浴室門",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ.ruːm dɔːr/",
+    "imageUrl": "https://loremflickr.com/600/450/bathroom,door?lock=1429144000",
+    "examples": [
+      {
+        "en": "The bathroom door is in the bathroom.",
+        "zh": "浴室門在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bath-mat",
+    "word": "bath mat",
+    "chinese": "地墊",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ mæt/",
+    "imageUrl": "https://loremflickr.com/600/450/bath,mat?lock=1691646285",
+    "examples": [
+      {
+        "en": "The bath mat is in the bathroom.",
+        "zh": "地墊在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "non-slip-mat",
+    "word": "non-slip mat",
+    "chinese": "防滑墊",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌnɑːn ˈslɪp mæt/",
+    "imageUrl": "https://loremflickr.com/600/450/non-slip,mat?lock=1715197568",
+    "examples": [
+      {
+        "en": "The non-slip mat is in the bathroom.",
+        "zh": "防滑墊在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bath-towel",
+    "word": "bath towel",
+    "chinese": "浴巾",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ ˌtaʊ.əl/",
+    "imageUrl": "https://loremflickr.com/600/450/bath,towel?lock=2127413142",
+    "examples": [
+      {
+        "en": "The bath towel is in the bathroom.",
+        "zh": "浴巾在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hand-towel",
+    "word": "hand towel",
+    "chinese": "手巾",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhænd ˌtaʊ.əl/",
+    "imageUrl": "https://loremflickr.com/600/450/hand,towel?lock=173642734",
+    "examples": [
+      {
+        "en": "The hand towel is in the bathroom.",
+        "zh": "手巾在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "dental-floss",
+    "word": "dental floss",
+    "chinese": "牙線",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈden.təl flɑːs/",
+    "imageUrl": "https://loremflickr.com/600/450/dental,floss?lock=804372645",
+    "examples": [
+      {
+        "en": "The dental floss is in the bathroom.",
+        "zh": "牙線在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "mouthwash",
+    "word": "mouthwash",
+    "chinese": "漱口水",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmaʊθ.wɑːʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/mouthwash?lock=618796006",
+    "examples": [
+      {
+        "en": "The mouthwash is in the bathroom.",
+        "zh": "漱口水在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "facial-cleanser",
+    "word": "facial cleanser",
+    "chinese": "洗面乳",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfeɪ.ʃəl ˌklen.zɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/facial,cleanser?lock=129442613",
+    "examples": [
+      {
+        "en": "The facial cleanser is in the bathroom.",
+        "zh": "洗面乳在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "body-wash",
+    "word": "body wash",
+    "chinese": "沐浴乳",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbɑː.di wɑːʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/body,wash?lock=1194917469",
+    "examples": [
+      {
+        "en": "The body wash is in the bathroom.",
+        "zh": "沐浴乳在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "conditioner",
+    "word": "conditioner",
+    "chinese": "潤髮乳",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kənˈdɪʃ.ən.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/conditioner?lock=1208131336",
+    "examples": [
+      {
+        "en": "The conditioner is in the bathroom.",
+        "zh": "潤髮乳在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hair-conditioner",
+    "word": "hair conditioner",
+    "chinese": "護髮素",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈher kənˌdɪʃ.ən.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/hair,conditioner?lock=940750902",
+    "examples": [
+      {
+        "en": "The hair conditioner is in the bathroom.",
+        "zh": "護髮素在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "razor",
+    "word": "razor",
+    "chinese": "刮鬍刀",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈreɪ.zɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/razor?lock=108291918",
+    "examples": [
+      {
+        "en": "The razor is in the bathroom.",
+        "zh": "刮鬍刀在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "shaving-cream",
+    "word": "shaving cream",
+    "chinese": "刮鬍泡",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃeɪ.vɪŋ kriːm/",
+    "imageUrl": "https://loremflickr.com/600/450/shaving,cream?lock=1094788282",
+    "examples": [
+      {
+        "en": "The shaving cream is in the bathroom.",
+        "zh": "刮鬍泡在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hairbrush",
+    "word": "hairbrush",
+    "chinese": "髮刷",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈher.brʌʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/hairbrush?lock=313554072",
+    "examples": [
+      {
+        "en": "The hairbrush is in the bathroom.",
+        "zh": "髮刷在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cotton-swab",
+    "word": "cotton swab",
+    "chinese": "棉花棒",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɑː.tən swɑːb/",
+    "imageUrl": "https://loremflickr.com/600/450/cotton,swab?lock=1859491258",
+    "examples": [
+      {
+        "en": "The cotton swab is in the bathroom.",
+        "zh": "棉花棒在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cotton-pad",
+    "word": "cotton pad",
+    "chinese": "化妝棉",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɑː.tən pæd/",
+    "imageUrl": "https://loremflickr.com/600/450/cotton,pad?lock=1879682626",
+    "examples": [
+      {
+        "en": "The cotton pad is in the bathroom.",
+        "zh": "化妝棉在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cotton-ball",
+    "word": "cotton ball",
+    "chinese": "棉球",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɑː.tən bɔːl/",
+    "imageUrl": "https://loremflickr.com/600/450/cotton,ball?lock=1858964020",
+    "examples": [
+      {
+        "en": "The cotton ball is in the bathroom.",
+        "zh": "棉球在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "nail-clipper",
+    "word": "nail clipper",
+    "chinese": "指甲剪",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈneɪl ˌklɪp.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/nail,clipper?lock=1485755453",
+    "examples": [
+      {
+        "en": "The nail clipper is in the bathroom.",
+        "zh": "指甲剪在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "laundry-basket",
+    "word": "laundry basket",
+    "chinese": "洗衣籃",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈlɑːn.dri ˌbæs.kɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/laundry,basket?lock=36511959",
+    "examples": [
+      {
+        "en": "The laundry basket is in the bathroom.",
+        "zh": "洗衣籃在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hamper",
+    "word": "hamper",
+    "chinese": "髒衣籃",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhæm.pɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/hamper?lock=1224595959",
+    "examples": [
+      {
+        "en": "The hamper is in the bathroom.",
+        "zh": "髒衣籃在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cleaning-brush",
+    "word": "cleaning brush",
+    "chinese": "清潔刷",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkliː.nɪŋ brʌʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/cleaning,brush?lock=1526898003",
+    "examples": [
+      {
+        "en": "The cleaning brush is in the bathroom.",
+        "zh": "清潔刷在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "toilet-brush",
+    "word": "toilet brush",
+    "chinese": "馬桶刷",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɔɪ.lət brʌʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/toilet,brush?lock=83500185",
+    "examples": [
+      {
+        "en": "The toilet brush is in the bathroom.",
+        "zh": "馬桶刷在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cleaner",
+    "word": "cleaner",
+    "chinese": "清潔劑",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkliː.nɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/cleaner?lock=856773814",
+    "examples": [
+      {
+        "en": "The cleaner is in the bathroom.",
+        "zh": "清潔劑在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "disinfectant",
+    "word": "disinfectant",
+    "chinese": "消毒液",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌdɪs.ɪnˈfek.tənt/",
+    "imageUrl": "https://loremflickr.com/600/450/disinfectant?lock=146860260",
+    "examples": [
+      {
+        "en": "The disinfectant is in the bathroom.",
+        "zh": "消毒液在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "mold-remover",
+    "word": "mold remover",
+    "chinese": "除霉劑",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmoʊld rɪˌmuː.vɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/mold,remover?lock=213759208",
+    "examples": [
+      {
+        "en": "The mold remover is in the bathroom.",
+        "zh": "除霉劑在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bathroom-cleaner",
+    "word": "bathroom cleaner",
+    "chinese": "浴室清潔劑",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ.ruːm ˌkliː.nɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/bathroom,cleaner?lock=601122588",
+    "examples": [
+      {
+        "en": "The bathroom cleaner is in the bathroom.",
+        "zh": "浴室清潔劑在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bucket",
+    "word": "bucket",
+    "chinese": "水桶",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbʌk.ɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/bucket?lock=1378203158",
+    "examples": [
+      {
+        "en": "The bucket is in the bathroom.",
+        "zh": "水桶在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "wash-basin",
+    "word": "wash basin",
+    "chinese": "臉盆",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwɑːʃ ˌbeɪ.sən/",
+    "imageUrl": "https://loremflickr.com/600/450/wash,basin?lock=535742328",
+    "examples": [
+      {
+        "en": "The wash basin is in the bathroom.",
+        "zh": "臉盆在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "gloves",
+    "word": "gloves",
+    "chinese": "手套",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡlʌvz/",
+    "imageUrl": "https://loremflickr.com/600/450/gloves?lock=1243001030",
+    "examples": [
+      {
+        "en": "The gloves is in the bathroom.",
+        "zh": "手套在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hand-soap",
+    "word": "hand soap",
+    "chinese": "洗手乳",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhænd soʊp/",
+    "imageUrl": "https://loremflickr.com/600/450/hand,soap?lock=5631844",
+    "examples": [
+      {
+        "en": "The hand soap is in the bathroom.",
+        "zh": "洗手乳在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "lotion",
+    "word": "lotion",
+    "chinese": "乳液",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈloʊ.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/lotion?lock=1096947945",
+    "examples": [
+      {
+        "en": "The lotion is in the bathroom.",
+        "zh": "乳液在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "moisturizer",
+    "word": "moisturizer",
+    "chinese": "保濕乳",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmɔɪs.tʃɚ.aɪ.zɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/moisturizer?lock=1847411869",
+    "examples": [
+      {
+        "en": "The moisturizer is in the bathroom.",
+        "zh": "保濕乳在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cosmetics",
+    "word": "cosmetics",
+    "chinese": "化妝品",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kɑːzˈmet.ɪks/",
+    "imageUrl": "https://loremflickr.com/600/450/cosmetics?lock=464792700",
+    "examples": [
+      {
+        "en": "The cosmetics is in the bathroom.",
+        "zh": "化妝品在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "cleansing-oil",
+    "word": "cleansing oil",
+    "chinese": "卸妝油",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈklen.zɪŋ ɔɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/cleansing,oil?lock=1659267574",
+    "examples": [
+      {
+        "en": "The cleansing oil is in the bathroom.",
+        "zh": "卸妝油在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "micellar-water",
+    "word": "micellar water",
+    "chinese": "卸妝水",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/maɪˈsel.ɚ ˌwɔː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/micellar,water?lock=2065876838",
+    "examples": [
+      {
+        "en": "The micellar water is in the bathroom.",
+        "zh": "卸妝水在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "perfume",
+    "word": "perfume",
+    "chinese": "香水",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpɝː.fjuːm/",
+    "imageUrl": "https://loremflickr.com/600/450/perfume?lock=678822588",
+    "examples": [
+      {
+        "en": "The perfume is in the bathroom.",
+        "zh": "香水在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "deodorant",
+    "word": "deodorant",
+    "chinese": "除臭劑",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/diˈoʊ.dɚ.ənt/",
+    "imageUrl": "https://loremflickr.com/600/450/deodorant?lock=2024022834",
+    "examples": [
+      {
+        "en": "The deodorant is in the bathroom.",
+        "zh": "除臭劑在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "scale",
+    "word": "scale",
+    "chinese": "體重計",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/skeɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/scale?lock=109250890",
+    "examples": [
+      {
+        "en": "The scale is in the bathroom.",
+        "zh": "體重計在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bathrobe",
+    "word": "bathrobe",
+    "chinese": "浴袍",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ.roʊb/",
+    "imageUrl": "https://loremflickr.com/600/450/bathrobe?lock=1689201485",
+    "examples": [
+      {
+        "en": "The bathrobe is in the bathroom.",
+        "zh": "浴袍在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "slippers",
+    "word": "slippers",
+    "chinese": "拖鞋",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈslɪp.ɚz/",
+    "imageUrl": "https://loremflickr.com/600/450/slippers?lock=1261192138",
+    "examples": [
+      {
+        "en": "The slippers is in the bathroom.",
+        "zh": "拖鞋在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "ventilation-fan",
+    "word": "ventilation fan",
+    "chinese": "排風扇",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌven.təˈleɪ.ʃən fæn/",
+    "imageUrl": "https://loremflickr.com/600/450/ventilation,fan?lock=1462049232",
+    "examples": [
+      {
+        "en": "The ventilation fan is in the bathroom.",
+        "zh": "排風扇在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "water-heater",
+    "word": "water heater",
+    "chinese": "熱水器",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwɔː.tɚ ˌhiː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/water,heater?lock=993711674",
+    "examples": [
+      {
+        "en": "The water heater is in the bathroom.",
+        "zh": "熱水器在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "sanitary-pad",
+    "word": "sanitary pad",
+    "chinese": "衛生棉",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsæn.ɪ.ter.i pæd/",
+    "imageUrl": "https://loremflickr.com/600/450/sanitary,pad?lock=1919172752",
+    "examples": [
+      {
+        "en": "The sanitary pad is in the bathroom.",
+        "zh": "衛生棉在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "tampon",
+    "word": "tampon",
+    "chinese": "衛生棉條",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtæm.pɑːn/",
+    "imageUrl": "https://loremflickr.com/600/450/tampon?lock=881045841",
+    "examples": [
+      {
+        "en": "The tampon is in the bathroom.",
+        "zh": "衛生棉條在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "squeegee",
+    "word": "squeegee",
+    "chinese": "刮水器",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈskwiː.dʒiː/",
+    "imageUrl": "https://loremflickr.com/600/450/squeegee?lock=785576144",
+    "examples": [
+      {
+        "en": "The squeegee is in the bathroom.",
+        "zh": "刮水器在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bath-salts",
+    "word": "bath salts",
+    "chinese": "浴鹽",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ sɔːlts/",
+    "imageUrl": "https://loremflickr.com/600/450/bath,salts?lock=2126062448",
+    "examples": [
+      {
+        "en": "The bath salts is in the bathroom.",
+        "zh": "浴鹽在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bath-sponge",
+    "word": "bath sponge",
+    "chinese": "洗澡海綿",
+    "category": "bathroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæθ spʌndʒ/",
+    "imageUrl": "https://loremflickr.com/600/450/bath,sponge?lock=1497362599",
+    "examples": [
+      {
+        "en": "The bath sponge is in the bathroom.",
+        "zh": "洗澡海綿在浴室裡。"
+      }
+    ]
+  },
+  {
+    "id": "mattress",
+    "word": "mattress",
+    "chinese": "床墊",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmæt.rəs/",
+    "imageUrl": "https://loremflickr.com/600/450/mattress?lock=312916199",
+    "examples": [
+      {
+        "en": "The mattress is in the bedroom.",
+        "zh": "床墊在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "pillowcase",
+    "word": "pillowcase",
+    "chinese": "枕套",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpɪl.oʊ.keɪs/",
+    "imageUrl": "https://loremflickr.com/600/450/pillowcase?lock=1736947823",
+    "examples": [
+      {
+        "en": "The pillowcase is in the bedroom.",
+        "zh": "枕套在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "quilt",
+    "word": "quilt",
+    "chinese": "棉被",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kwɪlt/",
+    "imageUrl": "https://loremflickr.com/600/450/quilt?lock=107947789",
+    "examples": [
+      {
+        "en": "The quilt is in the bedroom.",
+        "zh": "棉被在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bed-sheet",
+    "word": "bed sheet",
+    "chinese": "床單",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbed ʃiːt/",
+    "imageUrl": "https://loremflickr.com/600/450/bed,sheet?lock=1525102336",
+    "examples": [
+      {
+        "en": "The bed sheet is in the bedroom.",
+        "zh": "床單在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bedspread",
+    "word": "bedspread",
+    "chinese": "床罩",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbed.spred/",
+    "imageUrl": "https://loremflickr.com/600/450/bedspread?lock=848644404",
+    "examples": [
+      {
+        "en": "The bedspread is in the bedroom.",
+        "zh": "床罩在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "headboard",
+    "word": "headboard",
+    "chinese": "床頭板",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhed.bɔːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/headboard?lock=216150778",
+    "examples": [
+      {
+        "en": "The headboard is in the bedroom.",
+        "zh": "床頭板在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "nightstand",
+    "word": "nightstand",
+    "chinese": "床頭櫃",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈnaɪt.stænd/",
+    "imageUrl": "https://loremflickr.com/600/450/nightstand?lock=583127362",
+    "examples": [
+      {
+        "en": "The nightstand is in the bedroom.",
+        "zh": "床頭櫃在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "hanger",
+    "word": "hanger",
+    "chinese": "衣架",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhæŋ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/hanger?lock=1224574817",
+    "examples": [
+      {
+        "en": "The hanger is in the bedroom.",
+        "zh": "衣架在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "drawer",
+    "word": "drawer",
+    "chinese": "抽屜",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/drɔːr/",
+    "imageUrl": "https://loremflickr.com/600/450/drawer?lock=1323763471",
+    "examples": [
+      {
+        "en": "The drawer is in the bedroom.",
+        "zh": "抽屜在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "vanity-table",
+    "word": "vanity table",
+    "chinese": "梳妝台",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈvæn.ə.ti ˌteɪ.bəl/",
+    "imageUrl": "https://loremflickr.com/600/450/vanity,table?lock=238009881",
+    "examples": [
+      {
+        "en": "The vanity table is in the bedroom.",
+        "zh": "梳妝台在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "chair",
+    "word": "chair",
+    "chinese": "椅子",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/tʃer/",
+    "imageUrl": "https://loremflickr.com/600/450/chair?lock=94623429",
+    "examples": [
+      {
+        "en": "The chair is in the bedroom.",
+        "zh": "椅子在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "desk-lamp",
+    "word": "desk lamp",
+    "chinese": "檯燈",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdesk læmp/",
+    "imageUrl": "https://loremflickr.com/600/450/desk,lamp?lock=1653259007",
+    "examples": [
+      {
+        "en": "The desk lamp is in the bedroom.",
+        "zh": "檯燈在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bedside-lamp",
+    "word": "bedside lamp",
+    "chinese": "床頭燈",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbed.saɪd læmp/",
+    "imageUrl": "https://loremflickr.com/600/450/bedside,lamp?lock=1421645920",
+    "examples": [
+      {
+        "en": "The bedside lamp is in the bedroom.",
+        "zh": "床頭燈在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "curtains",
+    "word": "curtains",
+    "chinese": "窗簾",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɝː.tənz/",
+    "imageUrl": "https://loremflickr.com/600/450/curtains?lock=577125409",
+    "examples": [
+      {
+        "en": "The curtains is in the bedroom.",
+        "zh": "窗簾在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "blinds",
+    "word": "blinds",
+    "chinese": "百葉窗",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/blaɪndz/",
+    "imageUrl": "https://loremflickr.com/600/450/blinds?lock=1386333250",
+    "examples": [
+      {
+        "en": "The blinds is in the bedroom.",
+        "zh": "百葉窗在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "pajamas",
+    "word": "pajamas",
+    "chinese": "睡衣",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pəˈdʒɑː.məz/",
+    "imageUrl": "https://loremflickr.com/600/450/pajamas?lock=800884361",
+    "examples": [
+      {
+        "en": "The pajamas is in the bedroom.",
+        "zh": "睡衣在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "robe",
+    "word": "robe",
+    "chinese": "睡袍",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/roʊb/",
+    "imageUrl": "https://loremflickr.com/600/450/robe?lock=3505984",
+    "examples": [
+      {
+        "en": "The robe is in the bedroom.",
+        "zh": "睡袍在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "storage-box",
+    "word": "storage box",
+    "chinese": "收納盒",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈstɔːr.ɪdʒ bɑːks/",
+    "imageUrl": "https://loremflickr.com/600/450/storage,box?lock=527133018",
+    "examples": [
+      {
+        "en": "The storage box is in the bedroom.",
+        "zh": "收納盒在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "bookshelf",
+    "word": "bookshelf",
+    "chinese": "書架",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbʊk.ʃelf/",
+    "imageUrl": "https://loremflickr.com/600/450/bookshelf?lock=2042924257",
+    "examples": [
+      {
+        "en": "The bookshelf is in the bedroom.",
+        "zh": "書架在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "air-conditioner",
+    "word": "air conditioner",
+    "chinese": "空調",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈer kənˌdɪʃ.ən.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/air,conditioner?lock=615195954",
+    "examples": [
+      {
+        "en": "The air conditioner is in the bedroom.",
+        "zh": "空調在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "fan",
+    "word": "fan",
+    "chinese": "電風扇",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/fæn/",
+    "imageUrl": "https://loremflickr.com/600/450/fan?lock=101139",
+    "examples": [
+      {
+        "en": "The fan is in the bedroom.",
+        "zh": "電風扇在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "heater",
+    "word": "heater",
+    "chinese": "暖氣",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhiː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/heater?lock=1221255523",
+    "examples": [
+      {
+        "en": "The heater is in the bedroom.",
+        "zh": "暖氣在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "humidifier",
+    "word": "humidifier",
+    "chinese": "加濕器",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/hjuːˈmɪd.ə.faɪ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/humidifier?lock=1626910882",
+    "examples": [
+      {
+        "en": "The humidifier is in the bedroom.",
+        "zh": "加濕器在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "air-purifier",
+    "word": "air purifier",
+    "chinese": "空氣清淨機",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈer ˌpjʊr.ə.faɪ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/air,purifier?lock=1248067646",
+    "examples": [
+      {
+        "en": "The air purifier is in the bedroom.",
+        "zh": "空氣清淨機在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "door",
+    "word": "door",
+    "chinese": "門",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dɔːr/",
+    "imageUrl": "https://loremflickr.com/600/450/door?lock=3089326",
+    "examples": [
+      {
+        "en": "The door is in the bedroom.",
+        "zh": "門在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "window",
+    "word": "window",
+    "chinese": "窗戶",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwɪn.doʊ/",
+    "imageUrl": "https://loremflickr.com/600/450/window?lock=787751952",
+    "examples": [
+      {
+        "en": "The window is in the bedroom.",
+        "zh": "窗戶在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "clothes",
+    "word": "clothes",
+    "chinese": "衣服",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kloʊðz/",
+    "imageUrl": "https://loremflickr.com/600/450/clothes?lock=866569288",
+    "examples": [
+      {
+        "en": "The clothes is in the bedroom.",
+        "zh": "衣服在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "photo-frame",
+    "word": "photo frame",
+    "chinese": "相框",
+    "category": "bedroom",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfoʊ.toʊ freɪm/",
+    "imageUrl": "https://loremflickr.com/600/450/photo,frame?lock=371585537",
+    "examples": [
+      {
+        "en": "The photo frame is in the bedroom.",
+        "zh": "相框在臥室裡。"
+      }
+    ]
+  },
+  {
+    "id": "armchair",
+    "word": "armchair",
+    "chinese": "扶手椅",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɑːrm.tʃer/",
+    "imageUrl": "https://loremflickr.com/600/450/armchair?lock=1434683927",
+    "examples": [
+      {
+        "en": "The armchair is in the living room.",
+        "zh": "扶手椅在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "tv-stand",
+    "word": "TV stand",
+    "chinese": "電視櫃",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtiː.viː stænd/",
+    "imageUrl": "https://loremflickr.com/600/450/TV,stand?lock=408975544",
+    "examples": [
+      {
+        "en": "The TV stand is in the living room.",
+        "zh": "電視櫃在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "cushion",
+    "word": "cushion",
+    "chinese": "抱枕",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkʊʃ.ən/",
+    "imageUrl": "https://loremflickr.com/600/450/cushion?lock=1127569505",
+    "examples": [
+      {
+        "en": "The cushion is in the living room.",
+        "zh": "抱枕在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "floor-lamp",
+    "word": "floor lamp",
+    "chinese": "落地燈",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈflɔːr læmp/",
+    "imageUrl": "https://loremflickr.com/600/450/floor,lamp?lock=1592392340",
+    "examples": [
+      {
+        "en": "The floor lamp is in the living room.",
+        "zh": "落地燈在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "table-lamp",
+    "word": "table lamp",
+    "chinese": "檯燈",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈteɪ.bəl læmp/",
+    "imageUrl": "https://loremflickr.com/600/450/table,lamp?lock=1562872086",
+    "examples": [
+      {
+        "en": "The table lamp is in the living room.",
+        "zh": "檯燈在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "ceiling-light",
+    "word": "ceiling light",
+    "chinese": "天花板燈",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsiː.lɪŋ laɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/ceiling,light?lock=1589492723",
+    "examples": [
+      {
+        "en": "The ceiling light is in the living room.",
+        "zh": "天花板燈在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "display-cabinet",
+    "word": "display cabinet",
+    "chinese": "展示櫃",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dɪˈspleɪ ˌkæb.ɪ.nət/",
+    "imageUrl": "https://loremflickr.com/600/450/display,cabinet?lock=785107718",
+    "examples": [
+      {
+        "en": "The display cabinet is in the living room.",
+        "zh": "展示櫃在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "wall-art",
+    "word": "wall art",
+    "chinese": "壁畫",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwɔːl ɑːrt/",
+    "imageUrl": "https://loremflickr.com/600/450/wall,art?lock=322282253",
+    "examples": [
+      {
+        "en": "The wall art is in the living room.",
+        "zh": "壁畫在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "vase",
+    "word": "vase",
+    "chinese": "花瓶",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/veɪs/",
+    "imageUrl": "https://loremflickr.com/600/450/vase?lock=3612221",
+    "examples": [
+      {
+        "en": "The vase is in the living room.",
+        "zh": "花瓶在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "potted-plant",
+    "word": "potted plant",
+    "chinese": "盆栽",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌpɑː.tɪd ˈplænt/",
+    "imageUrl": "https://loremflickr.com/600/450/potted,plant?lock=1343671959",
+    "examples": [
+      {
+        "en": "The potted plant is in the living room.",
+        "zh": "盆栽在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "dehumidifier",
+    "word": "dehumidifier",
+    "chinese": "除濕機",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌdiː.hjuːˈmɪd.ə.faɪ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/dehumidifier?lock=1587965599",
+    "examples": [
+      {
+        "en": "The dehumidifier is in the living room.",
+        "zh": "除濕機在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "power-outlet",
+    "word": "power outlet",
+    "chinese": "插座",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpaʊ.ɚ ˌaʊt.lət/",
+    "imageUrl": "https://loremflickr.com/600/450/power,outlet?lock=1658607736",
+    "examples": [
+      {
+        "en": "The power outlet is in the living room.",
+        "zh": "插座在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "extension-cord",
+    "word": "extension cord",
+    "chinese": "延長線",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɪkˈsten.ʃən kɔːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/extension,cord?lock=3714337",
+    "examples": [
+      {
+        "en": "The extension cord is in the living room.",
+        "zh": "延長線在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "charger",
+    "word": "charger",
+    "chinese": "充電器",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtʃɑːr.dʒɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/charger?lock=739062846",
+    "examples": [
+      {
+        "en": "The charger is in the living room.",
+        "zh": "充電器在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "speaker",
+    "word": "speaker",
+    "chinese": "音響",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈspiː.kɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/speaker?lock=2008522753",
+    "examples": [
+      {
+        "en": "The speaker is in the living room.",
+        "zh": "音響在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "game-console",
+    "word": "game console",
+    "chinese": "遊戲機",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɡeɪm ˌkɑːn.soʊl/",
+    "imageUrl": "https://loremflickr.com/600/450/game,console?lock=977451817",
+    "examples": [
+      {
+        "en": "The game console is in the living room.",
+        "zh": "遊戲機在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "router",
+    "word": "router",
+    "chinese": "路由器",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈruː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/router?lock=925132983",
+    "examples": [
+      {
+        "en": "The router is in the living room.",
+        "zh": "路由器在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "telephone",
+    "word": "telephone",
+    "chinese": "電話",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtel.ə.foʊn/",
+    "imageUrl": "https://loremflickr.com/600/450/telephone?lock=783201284",
+    "examples": [
+      {
+        "en": "The telephone is in the living room.",
+        "zh": "電話在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "doorbell",
+    "word": "doorbell",
+    "chinese": "門鈴",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdɔːr.bel/",
+    "imageUrl": "https://loremflickr.com/600/450/doorbell?lock=1202172337",
+    "examples": [
+      {
+        "en": "The doorbell is in the living room.",
+        "zh": "門鈴在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "doormat",
+    "word": "doormat",
+    "chinese": "玄關墊",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdɔːr.mæt/",
+    "imageUrl": "https://loremflickr.com/600/450/doormat?lock=1839905522",
+    "examples": [
+      {
+        "en": "The doormat is in the living room.",
+        "zh": "玄關墊在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "cabinet",
+    "word": "cabinet",
+    "chinese": "櫃子",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæb.ɪ.nət/",
+    "imageUrl": "https://loremflickr.com/600/450/cabinet?lock=539320920",
+    "examples": [
+      {
+        "en": "The cabinet is in the living room.",
+        "zh": "櫃子在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "back-cushion",
+    "word": "back cushion",
+    "chinese": "靠墊",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbæk ˌkʊʃ.ən/",
+    "imageUrl": "https://loremflickr.com/600/450/back,cushion?lock=218440232",
+    "examples": [
+      {
+        "en": "The back cushion is in the living room.",
+        "zh": "靠墊在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "footstool",
+    "word": "footstool",
+    "chinese": "腳凳",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfʊt.stuːl/",
+    "imageUrl": "https://loremflickr.com/600/450/footstool?lock=633896739",
+    "examples": [
+      {
+        "en": "The footstool is in the living room.",
+        "zh": "腳凳在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "recliner",
+    "word": "recliner",
+    "chinese": "躺椅",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/rɪˈklaɪ.nɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/recliner?lock=802262930",
+    "examples": [
+      {
+        "en": "The recliner is in the living room.",
+        "zh": "躺椅在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "side-table",
+    "word": "side table",
+    "chinese": "邊桌",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsaɪd ˌteɪ.bəl/",
+    "imageUrl": "https://loremflickr.com/600/450/side,table?lock=1023774661",
+    "examples": [
+      {
+        "en": "The side table is in the living room.",
+        "zh": "邊桌在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "magazine",
+    "word": "magazine",
+    "chinese": "雜誌",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmæɡ.ə.ziːn/",
+    "imageUrl": "https://loremflickr.com/600/450/magazine?lock=76567660",
+    "examples": [
+      {
+        "en": "The magazine is in the living room.",
+        "zh": "雜誌在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "newspaper",
+    "word": "newspaper",
+    "chinese": "報紙",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈnuːzˌpeɪ.pɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/newspaper?lock=316232345",
+    "examples": [
+      {
+        "en": "The newspaper is in the living room.",
+        "zh": "報紙在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "candle",
+    "word": "candle",
+    "chinese": "蠟燭",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæn.dəl/",
+    "imageUrl": "https://loremflickr.com/600/450/candle?lock=1367723251",
+    "examples": [
+      {
+        "en": "The candle is in the living room.",
+        "zh": "蠟燭在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "diffuser",
+    "word": "diffuser",
+    "chinese": "香氛擴香",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/dɪˈfjuː.zɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/diffuser?lock=96047792",
+    "examples": [
+      {
+        "en": "The diffuser is in the living room.",
+        "zh": "香氛擴香在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "smoke-detector",
+    "word": "smoke detector",
+    "chinese": "煙霧偵測器",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsmoʊk dɪˌtek.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/smoke,detector?lock=1106551977",
+    "examples": [
+      {
+        "en": "The smoke detector is in the living room.",
+        "zh": "煙霧偵測器在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "remote-control-holder",
+    "word": "remote control holder",
+    "chinese": "遙控器收納盒",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/rɪˈmoʊt kənˌtroʊl ˌhoʊl.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/remote,control,holder?lock=1445886185",
+    "examples": [
+      {
+        "en": "The remote control holder is in the living room.",
+        "zh": "遙控器收納盒在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "set-top-box",
+    "word": "set-top box",
+    "chinese": "電視盒",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈset tɑːp bɑːks/",
+    "imageUrl": "https://loremflickr.com/600/450/set-top,box?lock=1900295701",
+    "examples": [
+      {
+        "en": "The set-top box is in the living room.",
+        "zh": "電視盒在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "projector",
+    "word": "projector",
+    "chinese": "投影機",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/prəˈdʒek.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/projector?lock=894830916",
+    "examples": [
+      {
+        "en": "The projector is in the living room.",
+        "zh": "投影機在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "projector-screen",
+    "word": "projector screen",
+    "chinese": "投影幕",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/prəˈdʒek.tɚ skriːn/",
+    "imageUrl": "https://loremflickr.com/600/450/projector,screen?lock=1503697328",
+    "examples": [
+      {
+        "en": "The projector screen is in the living room.",
+        "zh": "投影幕在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "robot-vacuum",
+    "word": "robot vacuum",
+    "chinese": "掃地機器人",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈroʊ.bɑːt ˌvæk.juːm/",
+    "imageUrl": "https://loremflickr.com/600/450/robot,vacuum?lock=1203755563",
+    "examples": [
+      {
+        "en": "The robot vacuum is in the living room.",
+        "zh": "掃地機器人在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "living-room-table",
+    "word": "living room table",
+    "chinese": "客廳桌",
+    "category": "living-room",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈlɪv.ɪŋ ruːm ˌteɪ.bəl/",
+    "imageUrl": "https://loremflickr.com/600/450/living,room,table?lock=1389723104",
+    "examples": [
+      {
+        "en": "The living room table is in the living room.",
+        "zh": "客廳桌在客廳裡。"
+      }
+    ]
+  },
+  {
+    "id": "office-chair",
+    "word": "office chair",
+    "chinese": "辦公椅",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɔː.fɪs tʃer/",
+    "imageUrl": "https://loremflickr.com/600/450/office,chair?lock=363015265",
+    "examples": [
+      {
+        "en": "I need the office chair at the office.",
+        "zh": "我在辦公室需要辦公椅。"
+      }
+    ]
+  },
+  {
+    "id": "computer",
+    "word": "computer",
+    "chinese": "電腦",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kəmˈpjuː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/computer?lock=599163109",
+    "examples": [
+      {
+        "en": "I need the computer at the office.",
+        "zh": "我在辦公室需要電腦。"
+      }
+    ]
+  },
+  {
+    "id": "mouse-pad",
+    "word": "mouse pad",
+    "chinese": "滑鼠墊",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmaʊs pæd/",
+    "imageUrl": "https://loremflickr.com/600/450/mouse,pad?lock=584818328",
+    "examples": [
+      {
+        "en": "I need the mouse pad at the office.",
+        "zh": "我在辦公室需要滑鼠墊。"
+      }
+    ]
+  },
+  {
+    "id": "photocopier",
+    "word": "photocopier",
+    "chinese": "影印機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfoʊ.toʊˌkɑː.pi.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/photocopier?lock=1554827140",
+    "examples": [
+      {
+        "en": "I need the photocopier at the office.",
+        "zh": "我在辦公室需要影印機。"
+      }
+    ]
+  },
+  {
+    "id": "scanner",
+    "word": "scanner",
+    "chinese": "掃描器",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈskæn.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/scanner?lock=1910961662",
+    "examples": [
+      {
+        "en": "I need the scanner at the office.",
+        "zh": "我在辦公室需要掃描器。"
+      }
+    ]
+  },
+  {
+    "id": "mobile-phone",
+    "word": "mobile phone",
+    "chinese": "手機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmoʊ.bəl foʊn/",
+    "imageUrl": "https://loremflickr.com/600/450/mobile,phone?lock=415654000",
+    "examples": [
+      {
+        "en": "I need the mobile phone at the office.",
+        "zh": "我在辦公室需要手機。"
+      }
+    ]
+  },
+  {
+    "id": "headphones",
+    "word": "headphones",
+    "chinese": "耳機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhed.foʊnz/",
+    "imageUrl": "https://loremflickr.com/600/450/headphones?lock=2010949979",
+    "examples": [
+      {
+        "en": "I need the headphones at the office.",
+        "zh": "我在辦公室需要耳機。"
+      }
+    ]
+  },
+  {
+    "id": "microphone",
+    "word": "microphone",
+    "chinese": "麥克風",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmaɪ.krə.foʊn/",
+    "imageUrl": "https://loremflickr.com/600/450/microphone?lock=1370921258",
+    "examples": [
+      {
+        "en": "I need the microphone at the office.",
+        "zh": "我在辦公室需要麥克風。"
+      }
+    ]
+  },
+  {
+    "id": "webcam",
+    "word": "webcam",
+    "chinese": "網路攝影機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈweb.kæm/",
+    "imageUrl": "https://loremflickr.com/600/450/webcam?lock=791804933",
+    "examples": [
+      {
+        "en": "I need the webcam at the office.",
+        "zh": "我在辦公室需要網路攝影機。"
+      }
+    ]
+  },
+  {
+    "id": "whiteboard",
+    "word": "whiteboard",
+    "chinese": "白板",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwaɪt.bɔːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/whiteboard?lock=261182557",
+    "examples": [
+      {
+        "en": "I need the whiteboard at the office.",
+        "zh": "我在辦公室需要白板。"
+      }
+    ]
+  },
+  {
+    "id": "whiteboard-marker",
+    "word": "whiteboard marker",
+    "chinese": "白板筆",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwaɪt.bɔːrd ˌmɑːr.kɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/whiteboard,marker?lock=1999205725",
+    "examples": [
+      {
+        "en": "I need the whiteboard marker at the office.",
+        "zh": "我在辦公室需要白板筆。"
+      }
+    ]
+  },
+  {
+    "id": "eraser",
+    "word": "eraser",
+    "chinese": "板擦",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɪˈreɪ.sɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/eraser?lock=1295138164",
+    "examples": [
+      {
+        "en": "I need the eraser at the office.",
+        "zh": "我在辦公室需要板擦。"
+      }
+    ]
+  },
+  {
+    "id": "sticky-notes",
+    "word": "sticky notes",
+    "chinese": "便利貼",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈstɪk.i noʊts/",
+    "imageUrl": "https://loremflickr.com/600/450/sticky,notes?lock=500285898",
+    "examples": [
+      {
+        "en": "I need the sticky notes at the office.",
+        "zh": "我在辦公室需要便利貼。"
+      }
+    ]
+  },
+  {
+    "id": "ballpoint-pen",
+    "word": "ballpoint pen",
+    "chinese": "原子筆",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbɔːl.pɔɪnt pen/",
+    "imageUrl": "https://loremflickr.com/600/450/ballpoint,pen?lock=1964544874",
+    "examples": [
+      {
+        "en": "I need the ballpoint pen at the office.",
+        "zh": "我在辦公室需要原子筆。"
+      }
+    ]
+  },
+  {
+    "id": "highlighter",
+    "word": "highlighter",
+    "chinese": "螢光筆",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhaɪˌlaɪ.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/highlighter?lock=1808450463",
+    "examples": [
+      {
+        "en": "I need the highlighter at the office.",
+        "zh": "我在辦公室需要螢光筆。"
+      }
+    ]
+  },
+  {
+    "id": "marker",
+    "word": "marker",
+    "chinese": "馬克筆",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmɑːr.kɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/marker?lock=1081306054",
+    "examples": [
+      {
+        "en": "I need the marker at the office.",
+        "zh": "我在辦公室需要馬克筆。"
+      }
+    ]
+  },
+  {
+    "id": "ruler",
+    "word": "ruler",
+    "chinese": "尺",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈruː.lɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/ruler?lock=108873974",
+    "examples": [
+      {
+        "en": "I need the ruler at the office.",
+        "zh": "我在辦公室需要尺。"
+      }
+    ]
+  },
+  {
+    "id": "utility-knife",
+    "word": "utility knife",
+    "chinese": "美工刀",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/juːˈtɪl.ə.ti naɪf/",
+    "imageUrl": "https://loremflickr.com/600/450/utility,knife?lock=1094168847",
+    "examples": [
+      {
+        "en": "I need the utility knife at the office.",
+        "zh": "我在辦公室需要美工刀。"
+      }
+    ]
+  },
+  {
+    "id": "tape",
+    "word": "tape",
+    "chinese": "膠帶",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/teɪp/",
+    "imageUrl": "https://loremflickr.com/600/450/tape?lock=3552546",
+    "examples": [
+      {
+        "en": "I need the tape at the office.",
+        "zh": "我在辦公室需要膠帶。"
+      }
+    ]
+  },
+  {
+    "id": "glue",
+    "word": "glue",
+    "chinese": "膠水",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɡluː/",
+    "imageUrl": "https://loremflickr.com/600/450/glue?lock=3175989",
+    "examples": [
+      {
+        "en": "I need the glue at the office.",
+        "zh": "我在辦公室需要膠水。"
+      }
+    ]
+  },
+  {
+    "id": "staples",
+    "word": "staples",
+    "chinese": "訂書針",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsteɪ.pəlz/",
+    "imageUrl": "https://loremflickr.com/600/450/staples?lock=1897252406",
+    "examples": [
+      {
+        "en": "I need the staples at the office.",
+        "zh": "我在辦公室需要訂書針。"
+      }
+    ]
+  },
+  {
+    "id": "paper-clip",
+    "word": "paper clip",
+    "chinese": "迴紋針",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpeɪ.pɚ klɪp/",
+    "imageUrl": "https://loremflickr.com/600/450/paper,clip?lock=602052964",
+    "examples": [
+      {
+        "en": "I need the paper clip at the office.",
+        "zh": "我在辦公室需要迴紋針。"
+      }
+    ]
+  },
+  {
+    "id": "binder-clip",
+    "word": "binder clip",
+    "chinese": "長尾夾",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbaɪn.dɚ klɪp/",
+    "imageUrl": "https://loremflickr.com/600/450/binder,clip?lock=509114374",
+    "examples": [
+      {
+        "en": "I need the binder clip at the office.",
+        "zh": "我在辦公室需要長尾夾。"
+      }
+    ]
+  },
+  {
+    "id": "folder",
+    "word": "folder",
+    "chinese": "資料夾",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfoʊl.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/folder?lock=1268966290",
+    "examples": [
+      {
+        "en": "I need the folder at the office.",
+        "zh": "我在辦公室需要資料夾。"
+      }
+    ]
+  },
+  {
+    "id": "file-folder",
+    "word": "file folder",
+    "chinese": "檔案夾",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfaɪl ˌfoʊl.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/file,folder?lock=1595452306",
+    "examples": [
+      {
+        "en": "I need the file folder at the office.",
+        "zh": "我在辦公室需要檔案夾。"
+      }
+    ]
+  },
+  {
+    "id": "document",
+    "word": "document",
+    "chinese": "文件",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdɑː.kjə.mənt/",
+    "imageUrl": "https://loremflickr.com/600/450/document?lock=861720859",
+    "examples": [
+      {
+        "en": "I need the document at the office.",
+        "zh": "我在辦公室需要文件。"
+      }
+    ]
+  },
+  {
+    "id": "paper",
+    "word": "paper",
+    "chinese": "紙",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpeɪ.pɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/paper?lock=106434956",
+    "examples": [
+      {
+        "en": "I need the paper at the office.",
+        "zh": "我在辦公室需要紙。"
+      }
+    ]
+  },
+  {
+    "id": "notepad",
+    "word": "notepad",
+    "chinese": "便條紙",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈnoʊt.pæd/",
+    "imageUrl": "https://loremflickr.com/600/450/notepad?lock=2129240929",
+    "examples": [
+      {
+        "en": "I need the notepad at the office.",
+        "zh": "我在辦公室需要便條紙。"
+      }
+    ]
+  },
+  {
+    "id": "envelope",
+    "word": "envelope",
+    "chinese": "信封",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈen.və.loʊp/",
+    "imageUrl": "https://loremflickr.com/600/450/envelope?lock=2048782384",
+    "examples": [
+      {
+        "en": "I need the envelope at the office.",
+        "zh": "我在辦公室需要信封。"
+      }
+    ]
+  },
+  {
+    "id": "business-card",
+    "word": "business card",
+    "chinese": "名片",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbɪz.nɪs kɑːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/business,card?lock=571376496",
+    "examples": [
+      {
+        "en": "I need the business card at the office.",
+        "zh": "我在辦公室需要名片。"
+      }
+    ]
+  },
+  {
+    "id": "calendar",
+    "word": "calendar",
+    "chinese": "行事曆",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæl.ən.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/calendar?lock=178324674",
+    "examples": [
+      {
+        "en": "I need the calendar at the office.",
+        "zh": "我在辦公室需要行事曆。"
+      }
+    ]
+  },
+  {
+    "id": "paper-shredder",
+    "word": "paper shredder",
+    "chinese": "碎紙機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpeɪ.pɚ ˌʃred.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/paper,shredder?lock=1915175799",
+    "examples": [
+      {
+        "en": "I need the paper shredder at the office.",
+        "zh": "我在辦公室需要碎紙機。"
+      }
+    ]
+  },
+  {
+    "id": "filing-cabinet",
+    "word": "filing cabinet",
+    "chinese": "文件櫃",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfaɪ.lɪŋ ˌkæb.ɪ.nət/",
+    "imageUrl": "https://loremflickr.com/600/450/filing,cabinet?lock=566405007",
+    "examples": [
+      {
+        "en": "I need the filing cabinet at the office.",
+        "zh": "我在辦公室需要文件櫃。"
+      }
+    ]
+  },
+  {
+    "id": "conference-table",
+    "word": "conference table",
+    "chinese": "會議桌",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɑːn.fɚ.əns ˌteɪ.bəl/",
+    "imageUrl": "https://loremflickr.com/600/450/conference,table?lock=59682870",
+    "examples": [
+      {
+        "en": "I need the conference table at the office.",
+        "zh": "我在辦公室需要會議桌。"
+      }
+    ]
+  },
+  {
+    "id": "meeting-room",
+    "word": "meeting room",
+    "chinese": "會議室",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmiː.tɪŋ ruːm/",
+    "imageUrl": "https://loremflickr.com/600/450/meeting,room?lock=1663151200",
+    "examples": [
+      {
+        "en": "I need the meeting room at the office.",
+        "zh": "我在辦公室需要會議室。"
+      }
+    ]
+  },
+  {
+    "id": "reception-desk",
+    "word": "reception desk",
+    "chinese": "接待處",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/rɪˈsep.ʃən desk/",
+    "imageUrl": "https://loremflickr.com/600/450/reception,desk?lock=1101219510",
+    "examples": [
+      {
+        "en": "I need the reception desk at the office.",
+        "zh": "我在辦公室需要接待處。"
+      }
+    ]
+  },
+  {
+    "id": "water-dispenser",
+    "word": "water dispenser",
+    "chinese": "飲水機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwɔː.tɚ dɪˌspen.sɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/water,dispenser?lock=1541923564",
+    "examples": [
+      {
+        "en": "I need the water dispenser at the office.",
+        "zh": "我在辦公室需要飲水機。"
+      }
+    ]
+  },
+  {
+    "id": "coffee-machine",
+    "word": "coffee machine",
+    "chinese": "咖啡機",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɔː.fi məˌʃiːn/",
+    "imageUrl": "https://loremflickr.com/600/450/coffee,machine?lock=885797875",
+    "examples": [
+      {
+        "en": "I need the coffee machine at the office.",
+        "zh": "我在辦公室需要咖啡機。"
+      }
+    ]
+  },
+  {
+    "id": "access-card",
+    "word": "access card",
+    "chinese": "門禁卡",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈæk.ses kɑːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/access,card?lock=1091079092",
+    "examples": [
+      {
+        "en": "I need the access card at the office.",
+        "zh": "我在辦公室需要門禁卡。"
+      }
+    ]
+  },
+  {
+    "id": "employee-id-card",
+    "word": "employee ID card",
+    "chinese": "員工證",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɪmˈplɔɪ.iː ˈaɪ.diː kɑːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/employee,ID,card?lock=819474557",
+    "examples": [
+      {
+        "en": "I need the employee ID card at the office.",
+        "zh": "我在辦公室需要員工證。"
+      }
+    ]
+  },
+  {
+    "id": "office-supplies",
+    "word": "office supplies",
+    "chinese": "辦公用品",
+    "category": "office",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɔː.fɪs səˌplaɪz/",
+    "imageUrl": "https://loremflickr.com/600/450/office,supplies?lock=1063743153",
+    "examples": [
+      {
+        "en": "I need the office supplies at the office.",
+        "zh": "我在辦公室需要辦公用品。"
+      }
+    ]
+  },
+  {
+    "id": "street",
+    "word": "street",
+    "chinese": "街道",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/striːt/",
+    "imageUrl": "https://loremflickr.com/600/450/street?lock=891990013",
+    "examples": [
+      {
+        "en": "You can see the street on the street.",
+        "zh": "你可以在街上看到街道。"
+      }
+    ]
+  },
+  {
+    "id": "road",
+    "word": "road",
+    "chinese": "馬路",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/roʊd/",
+    "imageUrl": "https://loremflickr.com/600/450/road?lock=3505952",
+    "examples": [
+      {
+        "en": "You can see the road on the street.",
+        "zh": "你可以在街上看到馬路。"
+      }
+    ]
+  },
+  {
+    "id": "intersection",
+    "word": "intersection",
+    "chinese": "十字路口",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌɪn.tɚˈsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/intersection?lock=169749129",
+    "examples": [
+      {
+        "en": "You can see the intersection on the street.",
+        "zh": "你可以在街上看到十字路口。"
+      }
+    ]
+  },
+  {
+    "id": "traffic-sign",
+    "word": "traffic sign",
+    "chinese": "交通標誌",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtræf.ɪk saɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/traffic,sign?lock=779969024",
+    "examples": [
+      {
+        "en": "You can see the traffic sign on the street.",
+        "zh": "你可以在街上看到交通標誌。"
+      }
+    ]
+  },
+  {
+    "id": "stop-sign",
+    "word": "stop sign",
+    "chinese": "停車標誌",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈstɑːp saɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/stop,sign?lock=1571911451",
+    "examples": [
+      {
+        "en": "You can see the stop sign on the street.",
+        "zh": "你可以在街上看到停車標誌。"
+      }
+    ]
+  },
+  {
+    "id": "bus-stop",
+    "word": "bus stop",
+    "chinese": "公車站",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbʌs stɑːp/",
+    "imageUrl": "https://loremflickr.com/600/450/bus,stop?lock=1214084702",
+    "examples": [
+      {
+        "en": "You can see the bus stop on the street.",
+        "zh": "你可以在街上看到公車站。"
+      }
+    ]
+  },
+  {
+    "id": "station",
+    "word": "station",
+    "chinese": "車站",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsteɪ.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/station?lock=1897135820",
+    "examples": [
+      {
+        "en": "You can see the station on the street.",
+        "zh": "你可以在街上看到車站。"
+      }
+    ]
+  },
+  {
+    "id": "subway-station",
+    "word": "subway station",
+    "chinese": "地鐵站",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsʌb.weɪ ˌsteɪ.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/subway,station?lock=804134205",
+    "examples": [
+      {
+        "en": "You can see the subway station on the street.",
+        "zh": "你可以在街上看到地鐵站。"
+      }
+    ]
+  },
+  {
+    "id": "taxi-stand",
+    "word": "taxi stand",
+    "chinese": "計程車站",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtæk.si stænd/",
+    "imageUrl": "https://loremflickr.com/600/450/taxi,stand?lock=2141814956",
+    "examples": [
+      {
+        "en": "You can see the taxi stand on the street.",
+        "zh": "你可以在街上看到計程車站。"
+      }
+    ]
+  },
+  {
+    "id": "parking-lot",
+    "word": "parking lot",
+    "chinese": "停車場",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpɑːr.kɪŋ lɑːt/",
+    "imageUrl": "https://loremflickr.com/600/450/parking,lot?lock=1722267927",
+    "examples": [
+      {
+        "en": "You can see the parking lot on the street.",
+        "zh": "你可以在街上看到停車場。"
+      }
+    ]
+  },
+  {
+    "id": "parking-space",
+    "word": "parking space",
+    "chinese": "停車位",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpɑːr.kɪŋ speɪs/",
+    "imageUrl": "https://loremflickr.com/600/450/parking,space?lock=1530589538",
+    "examples": [
+      {
+        "en": "You can see the parking space on the street.",
+        "zh": "你可以在街上看到停車位。"
+      }
+    ]
+  },
+  {
+    "id": "parking-meter",
+    "word": "parking meter",
+    "chinese": "停車收費表",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpɑːr.kɪŋ ˌmiː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/parking,meter?lock=1536440031",
+    "examples": [
+      {
+        "en": "You can see the parking meter on the street.",
+        "zh": "你可以在街上看到停車收費表。"
+      }
+    ]
+  },
+  {
+    "id": "bike-lane",
+    "word": "bike lane",
+    "chinese": "自行車道",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbaɪk leɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/bike,lane?lock=672637643",
+    "examples": [
+      {
+        "en": "You can see the bike lane on the street.",
+        "zh": "你可以在街上看到自行車道。"
+      }
+    ]
+  },
+  {
+    "id": "lane",
+    "word": "lane",
+    "chinese": "車道",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/leɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/lane?lock=3314156",
+    "examples": [
+      {
+        "en": "You can see the lane on the street.",
+        "zh": "你可以在街上看到車道。"
+      }
+    ]
+  },
+  {
+    "id": "pedestrian-bridge",
+    "word": "pedestrian bridge",
+    "chinese": "天橋",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pəˈdes.tri.ən brɪdʒ/",
+    "imageUrl": "https://loremflickr.com/600/450/pedestrian,bridge?lock=1148259314",
+    "examples": [
+      {
+        "en": "You can see the pedestrian bridge on the street.",
+        "zh": "你可以在街上看到天橋。"
+      }
+    ]
+  },
+  {
+    "id": "underpass",
+    "word": "underpass",
+    "chinese": "地下道",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʌn.dɚ.pæs/",
+    "imageUrl": "https://loremflickr.com/600/450/underpass?lock=1026852119",
+    "examples": [
+      {
+        "en": "You can see the underpass on the street.",
+        "zh": "你可以在街上看到地下道。"
+      }
+    ]
+  },
+  {
+    "id": "bridge",
+    "word": "bridge",
+    "chinese": "橋",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/brɪdʒ/",
+    "imageUrl": "https://loremflickr.com/600/450/bridge?lock=1380801655",
+    "examples": [
+      {
+        "en": "You can see the bridge on the street.",
+        "zh": "你可以在街上看到橋。"
+      }
+    ]
+  },
+  {
+    "id": "tunnel",
+    "word": "tunnel",
+    "chinese": "隧道",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtʌn.əl/",
+    "imageUrl": "https://loremflickr.com/600/450/tunnel?lock=862547864",
+    "examples": [
+      {
+        "en": "You can see the tunnel on the street.",
+        "zh": "你可以在街上看到隧道。"
+      }
+    ]
+  },
+  {
+    "id": "roundabout",
+    "word": "roundabout",
+    "chinese": "圓環",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈraʊnd.ə.baʊt/",
+    "imageUrl": "https://loremflickr.com/600/450/roundabout?lock=144622913",
+    "examples": [
+      {
+        "en": "You can see the roundabout on the street.",
+        "zh": "你可以在街上看到圓環。"
+      }
+    ]
+  },
+  {
+    "id": "corner",
+    "word": "corner",
+    "chinese": "路口轉角",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɔːr.nɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/corner?lock=1354665387",
+    "examples": [
+      {
+        "en": "You can see the corner on the street.",
+        "zh": "你可以在街上看到路口轉角。"
+      }
+    ]
+  },
+  {
+    "id": "alley",
+    "word": "alley",
+    "chinese": "巷子",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈæl.i/",
+    "imageUrl": "https://loremflickr.com/600/450/alley?lock=92906005",
+    "examples": [
+      {
+        "en": "You can see the alley on the street.",
+        "zh": "你可以在街上看到巷子。"
+      }
+    ]
+  },
+  {
+    "id": "shop",
+    "word": "shop",
+    "chinese": "商店",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃɑːp/",
+    "imageUrl": "https://loremflickr.com/600/450/shop?lock=3529462",
+    "examples": [
+      {
+        "en": "You can see the shop on the street.",
+        "zh": "你可以在街上看到商店。"
+      }
+    ]
+  },
+  {
+    "id": "convenience-store",
+    "word": "convenience store",
+    "chinese": "便利商店",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kənˈviː.ni.əns stɔːr/",
+    "imageUrl": "https://loremflickr.com/600/450/convenience,store?lock=1867009672",
+    "examples": [
+      {
+        "en": "You can see the convenience store on the street.",
+        "zh": "你可以在街上看到便利商店。"
+      }
+    ]
+  },
+  {
+    "id": "restaurant",
+    "word": "restaurant",
+    "chinese": "餐廳",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈres.tər.ɑːnt/",
+    "imageUrl": "https://loremflickr.com/600/450/restaurant?lock=1772467395",
+    "examples": [
+      {
+        "en": "You can see the restaurant on the street.",
+        "zh": "你可以在街上看到餐廳。"
+      }
+    ]
+  },
+  {
+    "id": "cafe",
+    "word": "cafe",
+    "chinese": "咖啡店",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kæˈfeɪ/",
+    "imageUrl": "https://loremflickr.com/600/450/cafe?lock=3045789",
+    "examples": [
+      {
+        "en": "You can see the cafe on the street.",
+        "zh": "你可以在街上看到咖啡店。"
+      }
+    ]
+  },
+  {
+    "id": "bank",
+    "word": "bank",
+    "chinese": "銀行",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bæŋk/",
+    "imageUrl": "https://loremflickr.com/600/450/bank?lock=3016252",
+    "examples": [
+      {
+        "en": "You can see the bank on the street.",
+        "zh": "你可以在街上看到銀行。"
+      }
+    ]
+  },
+  {
+    "id": "post-office",
+    "word": "post office",
+    "chinese": "郵局",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpoʊst ˌɔː.fɪs/",
+    "imageUrl": "https://loremflickr.com/600/450/post,office?lock=480975420",
+    "examples": [
+      {
+        "en": "You can see the post office on the street.",
+        "zh": "你可以在街上看到郵局。"
+      }
+    ]
+  },
+  {
+    "id": "pharmacy",
+    "word": "pharmacy",
+    "chinese": "藥局",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfɑːr.mə.si/",
+    "imageUrl": "https://loremflickr.com/600/450/pharmacy?lock=1676983117",
+    "examples": [
+      {
+        "en": "You can see the pharmacy on the street.",
+        "zh": "你可以在街上看到藥局。"
+      }
+    ]
+  },
+  {
+    "id": "supermarket",
+    "word": "supermarket",
+    "chinese": "超市",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsuː.pɚ.mɑːr.kɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/supermarket?lock=1339606153",
+    "examples": [
+      {
+        "en": "You can see the supermarket on the street.",
+        "zh": "你可以在街上看到超市。"
+      }
+    ]
+  },
+  {
+    "id": "vending-machine",
+    "word": "vending machine",
+    "chinese": "自動販賣機",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈven.dɪŋ məˌʃiːn/",
+    "imageUrl": "https://loremflickr.com/600/450/vending,machine?lock=477077436",
+    "examples": [
+      {
+        "en": "You can see the vending machine on the street.",
+        "zh": "你可以在街上看到自動販賣機。"
+      }
+    ]
+  },
+  {
+    "id": "park",
+    "word": "park",
+    "chinese": "公園",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pɑːrk/",
+    "imageUrl": "https://loremflickr.com/600/450/park?lock=3433450",
+    "examples": [
+      {
+        "en": "You can see the park on the street.",
+        "zh": "你可以在街上看到公園。"
+      }
+    ]
+  },
+  {
+    "id": "tree",
+    "word": "tree",
+    "chinese": "樹",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/triː/",
+    "imageUrl": "https://loremflickr.com/600/450/tree?lock=3568542",
+    "examples": [
+      {
+        "en": "You can see the tree on the street.",
+        "zh": "你可以在街上看到樹。"
+      }
+    ]
+  },
+  {
+    "id": "flower-bed",
+    "word": "flower bed",
+    "chinese": "花圃",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈflaʊ.ɚ bed/",
+    "imageUrl": "https://loremflickr.com/600/450/flower,bed?lock=913956156",
+    "examples": [
+      {
+        "en": "You can see the flower bed on the street.",
+        "zh": "你可以在街上看到花圃。"
+      }
+    ]
+  },
+  {
+    "id": "pedestrian",
+    "word": "pedestrian",
+    "chinese": "行人",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pəˈdes.tri.ən/",
+    "imageUrl": "https://loremflickr.com/600/450/pedestrian?lock=1665036485",
+    "examples": [
+      {
+        "en": "You can see the pedestrian on the street.",
+        "zh": "你可以在街上看到行人。"
+      }
+    ]
+  },
+  {
+    "id": "signboard",
+    "word": "signboard",
+    "chinese": "招牌",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsaɪn.bɔːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/signboard?lock=1074339657",
+    "examples": [
+      {
+        "en": "You can see the signboard on the street.",
+        "zh": "你可以在街上看到招牌。"
+      }
+    ]
+  },
+  {
+    "id": "billboard",
+    "word": "billboard",
+    "chinese": "廣告看板",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbɪl.bɔːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/billboard?lock=1821587263",
+    "examples": [
+      {
+        "en": "You can see the billboard on the street.",
+        "zh": "你可以在街上看到廣告看板。"
+      }
+    ]
+  },
+  {
+    "id": "fire-hydrant",
+    "word": "fire hydrant",
+    "chinese": "消防栓",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfaɪr ˌhaɪ.drənt/",
+    "imageUrl": "https://loremflickr.com/600/450/fire,hydrant?lock=1205343170",
+    "examples": [
+      {
+        "en": "You can see the fire hydrant on the street.",
+        "zh": "你可以在街上看到消防栓。"
+      }
+    ]
+  },
+  {
+    "id": "construction-zone",
+    "word": "construction zone",
+    "chinese": "施工區",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kənˈstrʌk.ʃən zoʊn/",
+    "imageUrl": "https://loremflickr.com/600/450/construction,zone?lock=1876763237",
+    "examples": [
+      {
+        "en": "You can see the construction zone on the street.",
+        "zh": "你可以在街上看到施工區。"
+      }
+    ]
+  },
+  {
+    "id": "roadblock",
+    "word": "roadblock",
+    "chinese": "路障",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈroʊd.blɑːk/",
+    "imageUrl": "https://loremflickr.com/600/450/roadblock?lock=862668435",
+    "examples": [
+      {
+        "en": "You can see the roadblock on the street.",
+        "zh": "你可以在街上看到路障。"
+      }
+    ]
+  },
+  {
+    "id": "traffic-cone",
+    "word": "traffic cone",
+    "chinese": "交通錐",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtræf.ɪk koʊn/",
+    "imageUrl": "https://loremflickr.com/600/450/traffic,cone?lock=779498342",
+    "examples": [
+      {
+        "en": "You can see the traffic cone on the street.",
+        "zh": "你可以在街上看到交通錐。"
+      }
+    ]
+  },
+  {
+    "id": "manhole-cover",
+    "word": "manhole cover",
+    "chinese": "水溝蓋",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmæn.hoʊl ˌkʌv.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/manhole,cover?lock=403240655",
+    "examples": [
+      {
+        "en": "You can see the manhole cover on the street.",
+        "zh": "你可以在街上看到水溝蓋。"
+      }
+    ]
+  },
+  {
+    "id": "utility-pole",
+    "word": "utility pole",
+    "chinese": "電線桿",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/juːˈtɪl.ə.ti poʊl/",
+    "imageUrl": "https://loremflickr.com/600/450/utility,pole?lock=519043564",
+    "examples": [
+      {
+        "en": "You can see the utility pole on the street.",
+        "zh": "你可以在街上看到電線桿。"
+      }
+    ]
+  },
+  {
+    "id": "power-lines",
+    "word": "power lines",
+    "chinese": "電線",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpaʊ.ɚ laɪnz/",
+    "imageUrl": "https://loremflickr.com/600/450/power,lines?lock=1026468828",
+    "examples": [
+      {
+        "en": "You can see the power lines on the street.",
+        "zh": "你可以在街上看到電線。"
+      }
+    ]
+  },
+  {
+    "id": "security-camera",
+    "word": "security camera",
+    "chinese": "監視器",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/sɪˈkjʊr.ə.ti ˌkæm.rə/",
+    "imageUrl": "https://loremflickr.com/600/450/security,camera?lock=1318456325",
+    "examples": [
+      {
+        "en": "You can see the security camera on the street.",
+        "zh": "你可以在街上看到監視器。"
+      }
+    ]
+  },
+  {
+    "id": "pedestrian-button",
+    "word": "pedestrian button",
+    "chinese": "行人按鈕",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pəˈdes.tri.ən ˌbʌt.ən/",
+    "imageUrl": "https://loremflickr.com/600/450/pedestrian,button?lock=1145145417",
+    "examples": [
+      {
+        "en": "You can see the pedestrian button on the street.",
+        "zh": "你可以在街上看到行人按鈕。"
+      }
+    ]
+  },
+  {
+    "id": "street-vendor",
+    "word": "street vendor",
+    "chinese": "路邊攤",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈstriːt ˌven.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/street,vendor?lock=1293566981",
+    "examples": [
+      {
+        "en": "You can see the street vendor on the street.",
+        "zh": "你可以在街上看到路邊攤。"
+      }
+    ]
+  },
+  {
+    "id": "vendor",
+    "word": "vendor",
+    "chinese": "攤販",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈven.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/vendor?lock=820075192",
+    "examples": [
+      {
+        "en": "You can see the vendor on the street.",
+        "zh": "你可以在街上看到攤販。"
+      }
+    ]
+  },
+  {
+    "id": "newsstand",
+    "word": "newsstand",
+    "chinese": "報攤",
+    "category": "street",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈnuːz.stænd/",
+    "imageUrl": "https://loremflickr.com/600/450/newsstand?lock=319554787",
+    "examples": [
+      {
+        "en": "You can see the newsstand on the street.",
+        "zh": "你可以在街上看到報攤。"
+      }
+    ]
+  },
+  {
+    "id": "shopping-basket",
+    "word": "shopping basket",
+    "chinese": "購物籃",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃɑː.pɪŋ ˌbæs.kɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/shopping,basket?lock=149965694",
+    "examples": [
+      {
+        "en": "I found the shopping basket at the supermarket.",
+        "zh": "我在超市找到購物籃。"
+      }
+    ]
+  },
+  {
+    "id": "checkout-counter",
+    "word": "checkout counter",
+    "chinese": "收銀台",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtʃek.aʊt ˌkaʊn.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/checkout,counter?lock=437151454",
+    "examples": [
+      {
+        "en": "I found the checkout counter at the supermarket.",
+        "zh": "我在超市找到收銀台。"
+      }
+    ]
+  },
+  {
+    "id": "self-checkout-machine",
+    "word": "self-checkout machine",
+    "chinese": "自助結帳機",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌself ˈtʃek.aʊt məˌʃiːn/",
+    "imageUrl": "https://loremflickr.com/600/450/self-checkout,machine?lock=762888142",
+    "examples": [
+      {
+        "en": "I found the self-checkout machine at the supermarket.",
+        "zh": "我在超市找到自助結帳機。"
+      }
+    ]
+  },
+  {
+    "id": "invoice",
+    "word": "invoice",
+    "chinese": "發票",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɪn.vɔɪs/",
+    "imageUrl": "https://loremflickr.com/600/450/invoice?lock=1960198957",
+    "examples": [
+      {
+        "en": "I found the invoice at the supermarket.",
+        "zh": "我在超市找到發票。"
+      }
+    ]
+  },
+  {
+    "id": "plastic-bag",
+    "word": "plastic bag",
+    "chinese": "塑膠袋",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈplæs.tɪk bæɡ/",
+    "imageUrl": "https://loremflickr.com/600/450/plastic,bag?lock=1138624888",
+    "examples": [
+      {
+        "en": "I found the plastic bag at the supermarket.",
+        "zh": "我在超市找到塑膠袋。"
+      }
+    ]
+  },
+  {
+    "id": "reusable-bag",
+    "word": "reusable bag",
+    "chinese": "環保袋",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/riˈjuː.zə.bəl bæɡ/",
+    "imageUrl": "https://loremflickr.com/600/450/reusable,bag?lock=972809389",
+    "examples": [
+      {
+        "en": "I found the reusable bag at the supermarket.",
+        "zh": "我在超市找到環保袋。"
+      }
+    ]
+  },
+  {
+    "id": "sale",
+    "word": "sale",
+    "chinese": "特價",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/seɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/sale?lock=3522631",
+    "examples": [
+      {
+        "en": "I found the sale at the supermarket.",
+        "zh": "我在超市找到特價。"
+      }
+    ]
+  },
+  {
+    "id": "discount",
+    "word": "discount",
+    "chinese": "折扣",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdɪs.kaʊnt/",
+    "imageUrl": "https://loremflickr.com/600/450/discount?lock=273184065",
+    "examples": [
+      {
+        "en": "I found the discount at the supermarket.",
+        "zh": "我在超市找到折扣。"
+      }
+    ]
+  },
+  {
+    "id": "coupon",
+    "word": "coupon",
+    "chinese": "優惠券",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkuː.pɑːn/",
+    "imageUrl": "https://loremflickr.com/600/450/coupon?lock=1354573786",
+    "examples": [
+      {
+        "en": "I found the coupon at the supermarket.",
+        "zh": "我在超市找到優惠券。"
+      }
+    ]
+  },
+  {
+    "id": "membership-card",
+    "word": "membership card",
+    "chinese": "會員卡",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmem.bɚ.ʃɪp kɑːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/membership,card?lock=1487054566",
+    "examples": [
+      {
+        "en": "I found the membership card at the supermarket.",
+        "zh": "我在超市找到會員卡。"
+      }
+    ]
+  },
+  {
+    "id": "barcode",
+    "word": "barcode",
+    "chinese": "條碼",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbɑːr.koʊd/",
+    "imageUrl": "https://loremflickr.com/600/450/barcode?lock=333584256",
+    "examples": [
+      {
+        "en": "I found the barcode at the supermarket.",
+        "zh": "我在超市找到條碼。"
+      }
+    ]
+  },
+  {
+    "id": "refrigerated-section",
+    "word": "refrigerated section",
+    "chinese": "冷藏區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/rɪˈfrɪdʒ.ə.reɪ.tɪd ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/refrigerated,section?lock=1505825055",
+    "examples": [
+      {
+        "en": "I found the refrigerated section at the supermarket.",
+        "zh": "我在超市找到冷藏區。"
+      }
+    ]
+  },
+  {
+    "id": "frozen-section",
+    "word": "frozen section",
+    "chinese": "冷凍區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfroʊ.zən ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/frozen,section?lock=129076581",
+    "examples": [
+      {
+        "en": "I found the frozen section at the supermarket.",
+        "zh": "我在超市找到冷凍區。"
+      }
+    ]
+  },
+  {
+    "id": "produce-section",
+    "word": "produce section",
+    "chinese": "蔬果區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈproʊ.duːs ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/produce,section?lock=965212251",
+    "examples": [
+      {
+        "en": "I found the produce section at the supermarket.",
+        "zh": "我在超市找到蔬果區。"
+      }
+    ]
+  },
+  {
+    "id": "meat-section",
+    "word": "meat section",
+    "chinese": "肉品區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmiːt ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/meat,section?lock=893989776",
+    "examples": [
+      {
+        "en": "I found the meat section at the supermarket.",
+        "zh": "我在超市找到肉品區。"
+      }
+    ]
+  },
+  {
+    "id": "seafood-section",
+    "word": "seafood section",
+    "chinese": "海鮮區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsiː.fuːd ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/seafood,section?lock=1043290382",
+    "examples": [
+      {
+        "en": "I found the seafood section at the supermarket.",
+        "zh": "我在超市找到海鮮區。"
+      }
+    ]
+  },
+  {
+    "id": "deli-section",
+    "word": "deli section",
+    "chinese": "熟食區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdel.i ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/deli,section?lock=272726659",
+    "examples": [
+      {
+        "en": "I found the deli section at the supermarket.",
+        "zh": "我在超市找到熟食區。"
+      }
+    ]
+  },
+  {
+    "id": "bakery-section",
+    "word": "bakery section",
+    "chinese": "烘焙區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbeɪ.kɚ.i ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/bakery,section?lock=447298725",
+    "examples": [
+      {
+        "en": "I found the bakery section at the supermarket.",
+        "zh": "我在超市找到烘焙區。"
+      }
+    ]
+  },
+  {
+    "id": "beverage-section",
+    "word": "beverage section",
+    "chinese": "飲料區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbev.ɚ.ɪdʒ ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/beverage,section?lock=356066372",
+    "examples": [
+      {
+        "en": "I found the beverage section at the supermarket.",
+        "zh": "我在超市找到飲料區。"
+      }
+    ]
+  },
+  {
+    "id": "snack-section",
+    "word": "snack section",
+    "chinese": "零食區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsnæk ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/snack,section?lock=1066470125",
+    "examples": [
+      {
+        "en": "I found the snack section at the supermarket.",
+        "zh": "我在超市找到零食區。"
+      }
+    ]
+  },
+  {
+    "id": "household-goods-section",
+    "word": "household goods section",
+    "chinese": "日用品區",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhaʊs.hoʊld ɡʊdz ˌsek.ʃən/",
+    "imageUrl": "https://loremflickr.com/600/450/household,goods,section?lock=348432794",
+    "examples": [
+      {
+        "en": "I found the household goods section at the supermarket.",
+        "zh": "我在超市找到日用品區。"
+      }
+    ]
+  },
+  {
+    "id": "frozen-food",
+    "word": "frozen food",
+    "chinese": "冷凍食品",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfroʊ.zən fuːd/",
+    "imageUrl": "https://loremflickr.com/600/450/frozen,food?lock=2092134946",
+    "examples": [
+      {
+        "en": "I found the frozen food at the supermarket.",
+        "zh": "我在超市找到冷凍食品。"
+      }
+    ]
+  },
+  {
+    "id": "canned-food",
+    "word": "canned food",
+    "chinese": "罐頭",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkænd fuːd/",
+    "imageUrl": "https://loremflickr.com/600/450/canned,food?lock=131789537",
+    "examples": [
+      {
+        "en": "I found the canned food at the supermarket.",
+        "zh": "我在超市找到罐頭。"
+      }
+    ]
+  },
+  {
+    "id": "garbage-bag",
+    "word": "garbage bag",
+    "chinese": "垃圾袋",
+    "category": "supermarket",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɡɑːr.bɪdʒ bæɡ/",
+    "imageUrl": "https://loremflickr.com/600/450/garbage,bag?lock=52645277",
+    "examples": [
+      {
+        "en": "I found the garbage bag at the supermarket.",
+        "zh": "我在超市找到垃圾袋。"
+      }
+    ]
+  },
+  {
+    "id": "school-bus",
+    "word": "school bus",
+    "chinese": "校車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈskuːl bʌs/",
+    "imageUrl": "https://loremflickr.com/600/450/school,bus?lock=97612844",
+    "examples": [
+      {
+        "en": "The school bus is a useful way to travel.",
+        "zh": "校車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "coach",
+    "word": "coach",
+    "chinese": "長途巴士",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/koʊtʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/coach?lock=94831770",
+    "examples": [
+      {
+        "en": "The coach is a useful way to travel.",
+        "zh": "長途巴士是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "minibus",
+    "word": "minibus",
+    "chinese": "小巴",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmɪn.i.bʌs/",
+    "imageUrl": "https://loremflickr.com/600/450/minibus?lock=1064527561",
+    "examples": [
+      {
+        "en": "The minibus is a useful way to travel.",
+        "zh": "小巴是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "truck",
+    "word": "truck",
+    "chinese": "貨車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/trʌk/",
+    "imageUrl": "https://loremflickr.com/600/450/truck?lock=110640223",
+    "examples": [
+      {
+        "en": "The truck is a useful way to travel.",
+        "zh": "貨車是實用的交通工具。"
+      }
+    ],
+    "alsoKnownAs": [
+      "lorry"
+    ]
+  },
+  {
+    "id": "van",
+    "word": "van",
+    "chinese": "廂型車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/væn/",
+    "imageUrl": "https://loremflickr.com/600/450/van?lock=116515",
+    "examples": [
+      {
+        "en": "The van is a useful way to travel.",
+        "zh": "廂型車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "ambulance",
+    "word": "ambulance",
+    "chinese": "救護車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈæm.bjə.ləns/",
+    "imageUrl": "https://loremflickr.com/600/450/ambulance?lock=1991738780",
+    "examples": [
+      {
+        "en": "The ambulance is a useful way to travel.",
+        "zh": "救護車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "police-car",
+    "word": "police car",
+    "chinese": "警車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pəˈliːs kɑːr/",
+    "imageUrl": "https://loremflickr.com/600/450/police,car?lock=1573515730",
+    "examples": [
+      {
+        "en": "The police car is a useful way to travel.",
+        "zh": "警車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "fire-truck",
+    "word": "fire truck",
+    "chinese": "消防車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfaɪr trʌk/",
+    "imageUrl": "https://loremflickr.com/600/450/fire,truck?lock=2086451723",
+    "examples": [
+      {
+        "en": "The fire truck is a useful way to travel.",
+        "zh": "消防車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "garbage-truck",
+    "word": "garbage truck",
+    "chinese": "垃圾車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɡɑːr.bɪdʒ trʌk/",
+    "imageUrl": "https://loremflickr.com/600/450/garbage,truck?lock=930349900",
+    "examples": [
+      {
+        "en": "The garbage truck is a useful way to travel.",
+        "zh": "垃圾車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "tow-truck",
+    "word": "tow truck",
+    "chinese": "拖吊車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtoʊ trʌk/",
+    "imageUrl": "https://loremflickr.com/600/450/tow,truck?lock=232627355",
+    "examples": [
+      {
+        "en": "The tow truck is a useful way to travel.",
+        "zh": "拖吊車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "camper-van",
+    "word": "camper van",
+    "chinese": "露營車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæm.pɚ væn/",
+    "imageUrl": "https://loremflickr.com/600/450/camper,van?lock=1197533455",
+    "examples": [
+      {
+        "en": "The camper van is a useful way to travel.",
+        "zh": "露營車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "sports-car",
+    "word": "sports car",
+    "chinese": "跑車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈspɔːrts kɑːr/",
+    "imageUrl": "https://loremflickr.com/600/450/sports,car?lock=7207859",
+    "examples": [
+      {
+        "en": "The sports car is a useful way to travel.",
+        "zh": "跑車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "electric-car",
+    "word": "electric car",
+    "chinese": "電動車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɪˈlek.trɪk kɑːr/",
+    "imageUrl": "https://loremflickr.com/600/450/electric,car?lock=364844463",
+    "examples": [
+      {
+        "en": "The electric car is a useful way to travel.",
+        "zh": "電動車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "electric-scooter",
+    "word": "electric scooter",
+    "chinese": "電動滑板車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ɪˈlek.trɪk ˌskuː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/electric,scooter?lock=34123246",
+    "examples": [
+      {
+        "en": "The electric scooter is a useful way to travel.",
+        "zh": "電動滑板車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "scooter",
+    "word": "scooter",
+    "chinese": "滑板車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈskuː.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/scooter?lock=1923926513",
+    "examples": [
+      {
+        "en": "The scooter is a useful way to travel.",
+        "zh": "滑板車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "skateboard",
+    "word": "skateboard",
+    "chinese": "滑板",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈskeɪt.bɔːrd/",
+    "imageUrl": "https://loremflickr.com/600/450/skateboard?lock=1137740308",
+    "examples": [
+      {
+        "en": "The skateboard is a useful way to travel.",
+        "zh": "滑板是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "roller-skates",
+    "word": "roller skates",
+    "chinese": "溜冰鞋",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈroʊ.lɚ skeɪts/",
+    "imageUrl": "https://loremflickr.com/600/450/roller,skates?lock=1808603793",
+    "examples": [
+      {
+        "en": "The roller skates is a useful way to travel.",
+        "zh": "溜冰鞋是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "tram",
+    "word": "tram",
+    "chinese": "電車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/træm/",
+    "imageUrl": "https://loremflickr.com/600/450/tram?lock=3568426",
+    "examples": [
+      {
+        "en": "The tram is a useful way to travel.",
+        "zh": "電車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "light-rail",
+    "word": "light rail",
+    "chinese": "輕軌",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈlaɪt reɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/light,rail?lock=266812324",
+    "examples": [
+      {
+        "en": "The light rail is a useful way to travel.",
+        "zh": "輕軌是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "high-speed-train",
+    "word": "high-speed train",
+    "chinese": "高鐵",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhaɪ spiːd treɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/high-speed,train?lock=1027079868",
+    "examples": [
+      {
+        "en": "The high-speed train is a useful way to travel.",
+        "zh": "高鐵是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "monorail",
+    "word": "monorail",
+    "chinese": "單軌電車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmɑː.noʊ.reɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/monorail?lock=323330827",
+    "examples": [
+      {
+        "en": "The monorail is a useful way to travel.",
+        "zh": "單軌電車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "cable-car",
+    "word": "cable car",
+    "chinese": "纜車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkeɪ.bəl kɑːr/",
+    "imageUrl": "https://loremflickr.com/600/450/cable,car?lock=1328131727",
+    "examples": [
+      {
+        "en": "The cable car is a useful way to travel.",
+        "zh": "纜車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "gondola-lift",
+    "word": "gondola lift",
+    "chinese": "吊艙纜車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈɡɑːn.də.lə lɪft/",
+    "imageUrl": "https://loremflickr.com/600/450/gondola,lift?lock=1926485467",
+    "examples": [
+      {
+        "en": "The gondola lift is a useful way to travel.",
+        "zh": "吊艙纜車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "helicopter",
+    "word": "helicopter",
+    "chinese": "直升機",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhel.ɪˌkɑːp.tɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/helicopter?lock=243033129",
+    "examples": [
+      {
+        "en": "The helicopter is a useful way to travel.",
+        "zh": "直升機是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "hot-air-balloon",
+    "word": "hot air balloon",
+    "chinese": "熱氣球",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌhɑːt er bəˈluːn/",
+    "imageUrl": "https://loremflickr.com/600/450/hot,air,balloon?lock=85251078",
+    "examples": [
+      {
+        "en": "The hot air balloon is a useful way to travel.",
+        "zh": "熱氣球是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "airship",
+    "word": "airship",
+    "chinese": "飛船",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈer.ʃɪp/",
+    "imageUrl": "https://loremflickr.com/600/450/airship?lock=991584634",
+    "examples": [
+      {
+        "en": "The airship is a useful way to travel.",
+        "zh": "飛船是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "rocket",
+    "word": "rocket",
+    "chinese": "火箭",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈrɑː.kɪt/",
+    "imageUrl": "https://loremflickr.com/600/450/rocket?lock=925677868",
+    "examples": [
+      {
+        "en": "The rocket is a useful way to travel.",
+        "zh": "火箭是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "ferry",
+    "word": "ferry",
+    "chinese": "渡輪",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfer.i/",
+    "imageUrl": "https://loremflickr.com/600/450/ferry?lock=97321242",
+    "examples": [
+      {
+        "en": "The ferry is a useful way to travel.",
+        "zh": "渡輪是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "cruise-ship",
+    "word": "cruise ship",
+    "chinese": "遊輪",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkruːz ʃɪp/",
+    "imageUrl": "https://loremflickr.com/600/450/cruise,ship?lock=763789991",
+    "examples": [
+      {
+        "en": "The cruise ship is a useful way to travel.",
+        "zh": "遊輪是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "sailboat",
+    "word": "sailboat",
+    "chinese": "帆船",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈseɪl.boʊt/",
+    "imageUrl": "https://loremflickr.com/600/450/sailboat?lock=1857067185",
+    "examples": [
+      {
+        "en": "The sailboat is a useful way to travel.",
+        "zh": "帆船是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "speedboat",
+    "word": "speedboat",
+    "chinese": "快艇",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈspiːd.boʊt/",
+    "imageUrl": "https://loremflickr.com/600/450/speedboat?lock=1642086905",
+    "examples": [
+      {
+        "en": "The speedboat is a useful way to travel.",
+        "zh": "快艇是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "canoe",
+    "word": "canoe",
+    "chinese": "獨木舟",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kəˈnuː/",
+    "imageUrl": "https://loremflickr.com/600/450/canoe?lock=94427558",
+    "examples": [
+      {
+        "en": "The canoe is a useful way to travel.",
+        "zh": "獨木舟是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "kayak",
+    "word": "kayak",
+    "chinese": "皮艇",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkaɪ.æk/",
+    "imageUrl": "https://loremflickr.com/600/450/kayak?lock=101825869",
+    "examples": [
+      {
+        "en": "The kayak is a useful way to travel.",
+        "zh": "皮艇是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "submarine",
+    "word": "submarine",
+    "chinese": "潛水艇",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsʌb.mə.riːn/",
+    "imageUrl": "https://loremflickr.com/600/450/submarine?lock=341220354",
+    "examples": [
+      {
+        "en": "The submarine is a useful way to travel.",
+        "zh": "潛水艇是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "mrt",
+    "word": "MRT",
+    "chinese": "捷運",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌem.ɑːrˈtiː/",
+    "imageUrl": "https://loremflickr.com/600/450/MRT?lock=76623",
+    "examples": [
+      {
+        "en": "The MRT is a useful way to travel.",
+        "zh": "捷運是實用的交通工具。"
+      }
+    ],
+    "alsoKnownAs": [
+      "metro"
+    ]
+  },
+  {
+    "id": "rickshaw",
+    "word": "rickshaw",
+    "chinese": "人力車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈrɪk.ʃɔː/",
+    "imageUrl": "https://loremflickr.com/600/450/rickshaw?lock=1547846998",
+    "examples": [
+      {
+        "en": "The rickshaw is a useful way to travel.",
+        "zh": "人力車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "tricycle",
+    "word": "tricycle",
+    "chinese": "三輪車",
+    "category": "transportation",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtraɪ.sɪ.kəl/",
+    "imageUrl": "https://loremflickr.com/600/450/tricycle?lock=1499933211",
+    "examples": [
+      {
+        "en": "The tricycle is a useful way to travel.",
+        "zh": "三輪車是實用的交通工具。"
+      }
+    ]
+  },
+  {
+    "id": "white-sugar",
+    "word": "white sugar",
+    "chinese": "白糖",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwaɪt ˌʃʊɡ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/white,sugar?lock=1916447359",
+    "examples": [
+      {
+        "en": "Add some white sugar to the dish.",
+        "zh": "在這道菜裡加一些白糖。"
+      }
+    ]
+  },
+  {
+    "id": "brown-sugar",
+    "word": "brown sugar",
+    "chinese": "紅糖",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbraʊn ˌʃʊɡ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/brown,sugar?lock=1403822540",
+    "examples": [
+      {
+        "en": "Add some brown sugar to the dish.",
+        "zh": "在這道菜裡加一些紅糖。"
+      }
+    ]
+  },
+  {
+    "id": "dark-brown-sugar",
+    "word": "dark brown sugar",
+    "chinese": "黑糖",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌdɑːrk braʊn ˈʃʊɡ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/dark,brown,sugar?lock=1199129566",
+    "examples": [
+      {
+        "en": "Add some dark brown sugar to the dish.",
+        "zh": "在這道菜裡加一些黑糖。"
+      }
+    ]
+  },
+  {
+    "id": "rock-sugar",
+    "word": "rock sugar",
+    "chinese": "冰糖",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈrɑːk ˌʃʊɡ.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/rock,sugar?lock=1747582789",
+    "examples": [
+      {
+        "en": "Add some rock sugar to the dish.",
+        "zh": "在這道菜裡加一些冰糖。"
+      }
+    ]
+  },
+  {
+    "id": "honey",
+    "word": "honey",
+    "chinese": "蜂蜜",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈhʌn.i/",
+    "imageUrl": "https://loremflickr.com/600/450/honey?lock=99461947",
+    "examples": [
+      {
+        "en": "Add some honey to the dish.",
+        "zh": "在這道菜裡加一些蜂蜜。"
+      }
+    ]
+  },
+  {
+    "id": "thick-soy-sauce",
+    "word": "thick soy sauce",
+    "chinese": "醬油膏",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌθɪk ˈsɔɪ sɔːs/",
+    "imageUrl": "https://loremflickr.com/600/450/thick,soy,sauce?lock=284468861",
+    "examples": [
+      {
+        "en": "Add some thick soy sauce to the dish.",
+        "zh": "在這道菜裡加一些醬油膏。"
+      }
+    ]
+  },
+  {
+    "id": "dark-soy-sauce",
+    "word": "dark soy sauce",
+    "chinese": "老抽",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌdɑːrk ˈsɔɪ sɔːs/",
+    "imageUrl": "https://loremflickr.com/600/450/dark,soy,sauce?lock=1351054820",
+    "examples": [
+      {
+        "en": "Add some dark soy sauce to the dish.",
+        "zh": "在這道菜裡加一些老抽。"
+      }
+    ]
+  },
+  {
+    "id": "light-soy-sauce",
+    "word": "light soy sauce",
+    "chinese": "生抽",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌlaɪt ˈsɔɪ sɔːs/",
+    "imageUrl": "https://loremflickr.com/600/450/light,soy,sauce?lock=2020980804",
+    "examples": [
+      {
+        "en": "Add some light soy sauce to the dish.",
+        "zh": "在這道菜裡加一些生抽。"
+      }
+    ]
+  },
+  {
+    "id": "white-vinegar",
+    "word": "white vinegar",
+    "chinese": "白醋",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈwaɪt ˌvɪn.ɪ.ɡɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/white,vinegar?lock=1490479607",
+    "examples": [
+      {
+        "en": "Add some white vinegar to the dish.",
+        "zh": "在這道菜裡加一些白醋。"
+      }
+    ]
+  },
+  {
+    "id": "black-vinegar",
+    "word": "black vinegar",
+    "chinese": "黑醋",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈblæk ˌvɪn.ɪ.ɡɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/black,vinegar?lock=2139981875",
+    "examples": [
+      {
+        "en": "Add some black vinegar to the dish.",
+        "zh": "在這道菜裡加一些黑醋。"
+      }
+    ]
+  },
+  {
+    "id": "apple-cider-vinegar",
+    "word": "apple cider vinegar",
+    "chinese": "蘋果醋",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌæp.əl ˈsaɪ.dɚ ˌvɪn.ɪ.ɡɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/apple,cider,vinegar?lock=495412083",
+    "examples": [
+      {
+        "en": "Add some apple cider vinegar to the dish.",
+        "zh": "在這道菜裡加一些蘋果醋。"
+      }
+    ]
+  },
+  {
+    "id": "mirin",
+    "word": "mirin",
+    "chinese": "味醂",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmɪr.ɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/mirin?lock=103904763",
+    "examples": [
+      {
+        "en": "Add some mirin to the dish.",
+        "zh": "在這道菜裡加一些味醂。"
+      }
+    ]
+  },
+  {
+    "id": "rice-wine",
+    "word": "rice wine",
+    "chinese": "米酒",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈraɪs waɪn/",
+    "imageUrl": "https://loremflickr.com/600/450/rice,wine?lock=986589456",
+    "examples": [
+      {
+        "en": "Add some rice wine to the dish.",
+        "zh": "在這道菜裡加一些米酒。"
+      }
+    ]
+  },
+  {
+    "id": "sake",
+    "word": "sake",
+    "chinese": "清酒",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsɑː.keɪ/",
+    "imageUrl": "https://loremflickr.com/600/450/sake?lock=3522600",
+    "examples": [
+      {
+        "en": "Add some sake to the dish.",
+        "zh": "在這道菜裡加一些清酒。"
+      }
+    ]
+  },
+  {
+    "id": "vegetable-oil",
+    "word": "vegetable oil",
+    "chinese": "植物油",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈvedʒ.tə.bəl ɔɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/vegetable,oil?lock=874862253",
+    "examples": [
+      {
+        "en": "Add some vegetable oil to the dish.",
+        "zh": "在這道菜裡加一些植物油。"
+      }
+    ]
+  },
+  {
+    "id": "chili-oil",
+    "word": "chili oil",
+    "chinese": "辣椒油",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtʃɪl.i ɔɪl/",
+    "imageUrl": "https://loremflickr.com/600/450/chili,oil?lock=92096941",
+    "examples": [
+      {
+        "en": "Add some chili oil to the dish.",
+        "zh": "在這道菜裡加一些辣椒油。"
+      }
+    ]
+  },
+  {
+    "id": "yellow-mustard",
+    "word": "yellow mustard",
+    "chinese": "黃芥末",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈjel.oʊ ˌmʌs.tɚd/",
+    "imageUrl": "https://loremflickr.com/600/450/yellow,mustard?lock=318327806",
+    "examples": [
+      {
+        "en": "Add some yellow mustard to the dish.",
+        "zh": "在這道菜裡加一些黃芥末。"
+      }
+    ]
+  },
+  {
+    "id": "wasabi",
+    "word": "wasabi",
+    "chinese": "山葵",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/wəˈsɑː.bi/",
+    "imageUrl": "https://loremflickr.com/600/450/wasabi?lock=794994465",
+    "examples": [
+      {
+        "en": "Add some wasabi to the dish.",
+        "zh": "在這道菜裡加一些山葵。"
+      }
+    ]
+  },
+  {
+    "id": "sweet-chili-sauce",
+    "word": "sweet chili sauce",
+    "chinese": "甜辣醬",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌswiːt ˈtʃɪl.i sɔːs/",
+    "imageUrl": "https://loremflickr.com/600/450/sweet,chili,sauce?lock=363153818",
+    "examples": [
+      {
+        "en": "Add some sweet chili sauce to the dish.",
+        "zh": "在這道菜裡加一些甜辣醬。"
+      }
+    ]
+  },
+  {
+    "id": "chili-bean-paste",
+    "word": "chili bean paste",
+    "chinese": "豆瓣醬",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtʃɪl.i biːn peɪst/",
+    "imageUrl": "https://loremflickr.com/600/450/chili,bean,paste?lock=462247554",
+    "examples": [
+      {
+        "en": "Add some chili bean paste to the dish.",
+        "zh": "在這道菜裡加一些豆瓣醬。"
+      }
+    ]
+  },
+  {
+    "id": "shacha-sauce",
+    "word": "shacha sauce",
+    "chinese": "沙茶醬",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈʃɑː.tʃɑː sɔːs/",
+    "imageUrl": "https://loremflickr.com/600/450/shacha,sauce?lock=1406459609",
+    "examples": [
+      {
+        "en": "Add some shacha sauce to the dish.",
+        "zh": "在這道菜裡加一些沙茶醬。"
+      }
+    ]
+  },
+  {
+    "id": "peanut-butter",
+    "word": "peanut butter",
+    "chinese": "花生醬",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpiː.nʌt ˌbʌt.ɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/peanut,butter?lock=459797505",
+    "examples": [
+      {
+        "en": "Add some peanut butter to the dish.",
+        "zh": "在這道菜裡加一些花生醬。"
+      }
+    ]
+  },
+  {
+    "id": "sesame-paste",
+    "word": "sesame paste",
+    "chinese": "芝麻醬",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈses.ə.mi peɪst/",
+    "imageUrl": "https://loremflickr.com/600/450/sesame,paste?lock=1956404779",
+    "examples": [
+      {
+        "en": "Add some sesame paste to the dish.",
+        "zh": "在這道菜裡加一些芝麻醬。"
+      }
+    ]
+  },
+  {
+    "id": "miso",
+    "word": "miso",
+    "chinese": "味噌",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈmiː.soʊ/",
+    "imageUrl": "https://loremflickr.com/600/450/miso?lock=3351800",
+    "examples": [
+      {
+        "en": "Add some miso to the dish.",
+        "zh": "在這道菜裡加一些味噌。"
+      }
+    ]
+  },
+  {
+    "id": "curry-roux",
+    "word": "curry roux",
+    "chinese": "咖哩塊",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɝː.i ruː/",
+    "imageUrl": "https://loremflickr.com/600/450/curry,roux?lock=588468839",
+    "examples": [
+      {
+        "en": "Add some curry roux to the dish.",
+        "zh": "在這道菜裡加一些咖哩塊。"
+      }
+    ]
+  },
+  {
+    "id": "sichuan-peppercorn",
+    "word": "Sichuan peppercorn",
+    "chinese": "花椒",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌsɪtʃ.wɑːn ˈpep.ɚ.kɔːrn/",
+    "imageUrl": "https://loremflickr.com/600/450/Sichuan,peppercorn?lock=1147154845",
+    "examples": [
+      {
+        "en": "Add some Sichuan peppercorn to the dish.",
+        "zh": "在這道菜裡加一些花椒。"
+      }
+    ]
+  },
+  {
+    "id": "star-anise",
+    "word": "star anise",
+    "chinese": "八角",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌstɑːr ˈæn.ɪs/",
+    "imageUrl": "https://loremflickr.com/600/450/star,anise?lock=318641632",
+    "examples": [
+      {
+        "en": "Add some star anise to the dish.",
+        "zh": "在這道菜裡加一些八角。"
+      }
+    ]
+  },
+  {
+    "id": "cinnamon-bark",
+    "word": "cinnamon bark",
+    "chinese": "桂皮",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈsɪn.ə.mən bɑːrk/",
+    "imageUrl": "https://loremflickr.com/600/450/cinnamon,bark?lock=1822664903",
+    "examples": [
+      {
+        "en": "Add some cinnamon bark to the dish.",
+        "zh": "在這道菜裡加一些桂皮。"
+      }
+    ]
+  },
+  {
+    "id": "cumin-powder",
+    "word": "cumin powder",
+    "chinese": "孜然粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkjuː.mɪn ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/cumin,powder?lock=561341895",
+    "examples": [
+      {
+        "en": "Add some cumin powder to the dish.",
+        "zh": "在這道菜裡加一些孜然粉。"
+      }
+    ]
+  },
+  {
+    "id": "turmeric-powder",
+    "word": "turmeric powder",
+    "chinese": "薑黃粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɝː.mɚ.ɪk ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/turmeric,powder?lock=1410620534",
+    "examples": [
+      {
+        "en": "Add some turmeric powder to the dish.",
+        "zh": "在這道菜裡加一些薑黃粉。"
+      }
+    ]
+  },
+  {
+    "id": "shichimi",
+    "word": "shichimi",
+    "chinese": "七味粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ʃɪˈtʃiː.mi/",
+    "imageUrl": "https://loremflickr.com/600/450/shichimi?lock=528479988",
+    "examples": [
+      {
+        "en": "Add some shichimi to the dish.",
+        "zh": "在這道菜裡加一些七味粉。"
+      }
+    ]
+  },
+  {
+    "id": "coriander-seeds",
+    "word": "coriander seeds",
+    "chinese": "香菜籽",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌkɔːr.iˈæn.dɚ siːdz/",
+    "imageUrl": "https://loremflickr.com/600/450/coriander,seeds?lock=564664899",
+    "examples": [
+      {
+        "en": "Add some coriander seeds to the dish.",
+        "zh": "在這道菜裡加一些香菜籽。"
+      }
+    ]
+  },
+  {
+    "id": "fennel-seeds",
+    "word": "fennel seeds",
+    "chinese": "小茴香",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈfen.əl siːdz/",
+    "imageUrl": "https://loremflickr.com/600/450/fennel,seeds?lock=101678888",
+    "examples": [
+      {
+        "en": "Add some fennel seeds to the dish.",
+        "zh": "在這道菜裡加一些小茴香。"
+      }
+    ]
+  },
+  {
+    "id": "cloves",
+    "word": "cloves",
+    "chinese": "丁香",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/kloʊvz/",
+    "imageUrl": "https://loremflickr.com/600/450/cloves?lock=1357517634",
+    "examples": [
+      {
+        "en": "Add some cloves to the dish.",
+        "zh": "在這道菜裡加一些丁香。"
+      }
+    ]
+  },
+  {
+    "id": "cardamom",
+    "word": "cardamom",
+    "chinese": "豆蔻",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɑːr.də.məm/",
+    "imageUrl": "https://loremflickr.com/600/450/cardamom?lock=7851494",
+    "examples": [
+      {
+        "en": "Add some cardamom to the dish.",
+        "zh": "在這道菜裡加一些豆蔻。"
+      }
+    ]
+  },
+  {
+    "id": "oregano",
+    "word": "oregano",
+    "chinese": "奧勒岡",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/əˈreɡ.ə.noʊ/",
+    "imageUrl": "https://loremflickr.com/600/450/oregano?lock=1206142467",
+    "examples": [
+      {
+        "en": "Add some oregano to the dish.",
+        "zh": "在這道菜裡加一些奧勒岡。"
+      }
+    ]
+  },
+  {
+    "id": "parsley",
+    "word": "parsley",
+    "chinese": "巴西里",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpɑːrs.li/",
+    "imageUrl": "https://loremflickr.com/600/450/parsley?lock=792960786",
+    "examples": [
+      {
+        "en": "Add some parsley to the dish.",
+        "zh": "在這道菜裡加一些巴西里。"
+      }
+    ]
+  },
+  {
+    "id": "vanilla-extract",
+    "word": "vanilla extract",
+    "chinese": "香草精",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/vəˈnɪl.ə ɪkˌstrækt/",
+    "imageUrl": "https://loremflickr.com/600/450/vanilla,extract?lock=1611901148",
+    "examples": [
+      {
+        "en": "Add some vanilla extract to the dish.",
+        "zh": "在這道菜裡加一些香草精。"
+      }
+    ]
+  },
+  {
+    "id": "baking-powder",
+    "word": "baking powder",
+    "chinese": "發粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbeɪ.kɪŋ ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/baking,powder?lock=1989607997",
+    "examples": [
+      {
+        "en": "Add some baking powder to the dish.",
+        "zh": "在這道菜裡加一些發粉。"
+      }
+    ]
+  },
+  {
+    "id": "baking-soda",
+    "word": "baking soda",
+    "chinese": "小蘇打粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbeɪ.kɪŋ ˌsoʊ.də/",
+    "imageUrl": "https://loremflickr.com/600/450/baking,soda?lock=1879074461",
+    "examples": [
+      {
+        "en": "Add some baking soda to the dish.",
+        "zh": "在這道菜裡加一些小蘇打粉。"
+      }
+    ]
+  },
+  {
+    "id": "potato-starch",
+    "word": "potato starch",
+    "chinese": "太白粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/pəˈteɪ.toʊ stɑːrtʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/potato,starch?lock=1476941904",
+    "examples": [
+      {
+        "en": "Add some potato starch to the dish.",
+        "zh": "在這道菜裡加一些太白粉。"
+      }
+    ]
+  },
+  {
+    "id": "cornstarch",
+    "word": "cornstarch",
+    "chinese": "玉米粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɔːrn.stɑːrtʃ/",
+    "imageUrl": "https://loremflickr.com/600/450/cornstarch?lock=1978394657",
+    "examples": [
+      {
+        "en": "Add some cornstarch to the dish.",
+        "zh": "在這道菜裡加一些玉米粉。"
+      }
+    ]
+  },
+  {
+    "id": "flour",
+    "word": "flour",
+    "chinese": "麵粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/flaʊr/",
+    "imageUrl": "https://loremflickr.com/600/450/flour?lock=97526982",
+    "examples": [
+      {
+        "en": "Add some flour to the dish.",
+        "zh": "在這道菜裡加一些麵粉。"
+      }
+    ]
+  },
+  {
+    "id": "bouillon-powder",
+    "word": "bouillon powder",
+    "chinese": "高湯粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈbuːl.jɑːn ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/bouillon,powder?lock=1392087975",
+    "examples": [
+      {
+        "en": "Add some bouillon powder to the dish.",
+        "zh": "在這道菜裡加一些高湯粉。"
+      }
+    ]
+  },
+  {
+    "id": "chicken-bouillon-powder",
+    "word": "chicken bouillon powder",
+    "chinese": "雞粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtʃɪk.ɪn ˈbuːl.jɑːn ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/chicken,bouillon,powder?lock=567888878",
+    "examples": [
+      {
+        "en": "Add some chicken bouillon powder to the dish.",
+        "zh": "在這道菜裡加一些雞粉。"
+      }
+    ]
+  },
+  {
+    "id": "kombu-powder",
+    "word": "kombu powder",
+    "chinese": "昆布粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkɑːm.buː ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/kombu,powder?lock=1745143229",
+    "examples": [
+      {
+        "en": "Add some kombu powder to the dish.",
+        "zh": "在這道菜裡加一些昆布粉。"
+      }
+    ]
+  },
+  {
+    "id": "bonito-powder",
+    "word": "bonito powder",
+    "chinese": "柴魚粉",
+    "category": "seasonings",
+    "partOfSpeech": "noun",
+    "pronunciation": "/bəˈniː.toʊ ˌpaʊ.dɚ/",
+    "imageUrl": "https://loremflickr.com/600/450/bonito,powder?lock=1819419190",
+    "examples": [
+      {
+        "en": "Add some bonito powder to the dish.",
+        "zh": "在這道菜裡加一些柴魚粉。"
+      }
+    ]
+  }
+]

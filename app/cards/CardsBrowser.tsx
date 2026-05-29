@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
 import { useSettings } from "@/components/SettingsProvider";
+import { useT } from "@/components/I18n";
 import FavoriteButton from "@/components/FavoriteButton";
 import { WordTile } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
@@ -11,6 +12,7 @@ import { categories } from "@/lib/categories";
 export default function CardsBrowser() {
   const all = useWords();
   const { showZh } = useSettings();
+  const t = useT();
   const [cat, setCat] = useState<string>("all");
 
   const counts = useMemo(() => {
@@ -25,7 +27,7 @@ export default function CardsBrowser() {
   );
 
   const chips = [
-    { id: "all", label: "全部", n: all.length },
+    { id: "all", label: t("cards.all"), n: all.length },
     ...categories.map((c) => ({ id: c.id, label: `${c.nameZh} ${c.emoji}`, n: counts.get(c.id) ?? 0 })),
   ];
 
@@ -33,9 +35,9 @@ export default function CardsBrowser() {
     <div className="mx-auto max-w-6xl px-5 py-6 sm:px-7">
       <header className="mb-4">
         <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
-          {all.length} 個字 · {categories.length} 個主題
+          {t("cards.summary", { words: all.length, themes: categories.length })}
         </div>
-        <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">單字庫</h1>
+        <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">{t("cards.title")}</h1>
       </header>
 
       {/* Category chips */}
@@ -58,7 +60,7 @@ export default function CardsBrowser() {
 
       {/* Word grid */}
       {shown.length === 0 ? (
-        <p className="py-16 text-center text-sm text-tuji-ink3">這個主題還沒有單字。</p>
+        <p className="py-16 text-center text-sm text-tuji-ink3">{t("cards.empty")}</p>
       ) : (
         <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-5">
           {shown.map((w) => (

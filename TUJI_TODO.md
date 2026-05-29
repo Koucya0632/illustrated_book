@@ -46,7 +46,7 @@
 ### 設定
 - ✅ 已持久化並生效（`user_settings` + `/api/users/settings` + `SettingsProvider`，草稿+「保存」模式）：每日目標、發音口音、顯示中文翻譯、學習主題、**介面語言**、**字級**。
 - ✅ 清除快取（清 localStorage）已實作。
-- **i18n 進度**：基礎建設（`lib/i18n.ts` + `useT` + `<html lang>` + 字級 zoom）已就緒，**已翻譯：側欄/導覽、首頁、設定頁**（繁中/簡中/日文）。**待翻譯（逐批）**：study、cards、word detail、progress、me、favorites、search、auth、not-found 等其餘畫面字串；字典內容（簡中/日文釋義）另議。
+- **i18n 進度**：基礎建設（`lib/i18n.ts` + `useT` + `<html lang>` + 字級 zoom）已就緒，**已翻譯：側欄/導覽、首頁、設定頁、study、單字詳情、cards、progress**（繁中/簡中/日文）。**待翻譯（逐批）**：me、favorites、search、auth、not-found 等其餘畫面字串；字典內容（簡中/日文釋義）另議。
 - **通知 / 推播**：已從設定移除（無通知基礎建設）。
 - **匯出（CSV / Anki `.apkg`）**：使用者個人單字 / Anki 匯出尚未做（Admin 後台有匯出單字 CSV）。
 - **刪除帳號**：目前點了只跳 alert。

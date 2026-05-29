@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
 import { useCurrentUser } from "@/components/UserProvider";
+import { useT } from "@/components/I18n";
 import Mascot from "@/components/tuji/Mascot";
 import { TUJI } from "@/components/tuji/ui";
 import { categories } from "@/lib/categories";
@@ -34,6 +35,7 @@ export default function ProgressClient({
 }) {
   const allWords = useWords();
   const user = useCurrentUser();
+  const t = useT();
   const [p, setP] = useState<Progress | null>(null);
   const [clearing, setClearing] = useState(false);
 
@@ -43,7 +45,7 @@ export default function ProgressClient({
   }, []);
 
   async function handleClear() {
-    if (!confirm("確定要清除所有學習進度嗎？（收藏會保留）此操作無法復原。")) return;
+    if (!confirm(t("progress.clearConfirm"))) return;
     setClearing(true);
     if (user) {
       try {
@@ -58,7 +60,7 @@ export default function ProgressClient({
 
   if (!p) {
     return (
-      <div className="flex min-h-[50vh] items-center justify-center text-sm text-tuji-ink3">載入中…</div>
+      <div className="flex min-h-[50vh] items-center justify-center text-sm text-tuji-ink3">{t("common.loading")}</div>
     );
   }
 
@@ -79,14 +81,14 @@ export default function ProgressClient({
   });
 
   const tiles = [
-    { label: "已學單字", val: `${learnedCount}`, sub: `共 ${totalWords} 個`, bg: TUJI.pink, color: TUJI.ink },
-    { label: "連續天數", val: `${streak?.current ?? 0}`, sub: streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "尚未開始", bg: "#FFF4D6", color: "#A86214" },
-    { label: "收藏單字", val: `${favCount}`, sub: "我的收藏", bg: "#FFFFFF", color: TUJI.ink },
+    { label: t("progress.tile.learned"), val: `${learnedCount}`, sub: t("progress.tile.learnedSub", { n: totalWords }), bg: TUJI.pink, color: TUJI.ink },
+    { label: t("progress.tile.streak"), val: `${streak?.current ?? 0}`, sub: streak && streak.longest > 0 ? t("progress.tile.streakLongest", { n: streak.longest }) : t("progress.tile.streakNone"), bg: "#FFF4D6", color: "#A86214" },
+    { label: t("progress.tile.fav"), val: `${favCount}`, sub: t("progress.tile.favSub"), bg: "#FFFFFF", color: TUJI.ink },
   ];
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-6 sm:px-7">
-      <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">我的進度</div>
+      <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">{t("progress.title")}</div>
 
       {/* Hero — 圖鑑完成度 (real) */}
       <div className="relative mb-4 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white">
@@ -95,7 +97,7 @@ export default function ProgressClient({
             <Mascot pose="cheer" size={104} />
           </div>
           <div className="flex-1">
-            <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/65">圖鑑完成度</div>
+            <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-white/65">{t("progress.completion")}</div>
             <div className="mt-1 font-display text-3xl font-extrabold tracking-tight">
               {learnedCount} <span className="text-lg font-bold text-white/60">/ {totalWords}</span>
             </div>
@@ -135,7 +137,7 @@ export default function ProgressClient({
 
       {/* Per-category progress (real) */}
       <section className="mb-4 rounded-[18px] bg-white p-5 shadow-soft">
-        <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">各主題進度</h2>
+        <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">{t("progress.byCategory")}</h2>
         <ul className="flex flex-col gap-2.5">
           {perCategory.map((row) => (
             <li key={row.cat.id}>
@@ -163,23 +165,23 @@ export default function ProgressClient({
         <div className="rounded-[18px] bg-white p-5 shadow-soft">
           <div className="mb-3 flex items-baseline justify-between">
             <div>
-              <div className="text-sm font-extrabold text-tuji-ink">過去 6 週</div>
+              <div className="text-sm font-extrabold text-tuji-ink">{t("progress.past6weeks")}</div>
               <div className="mt-0.5 text-[11px] font-semibold text-tuji-ink3">
                 {heatmap
-                  ? `近 6 週 · ${heatmap.filter((c) => !c.future && c.count > 0).length} 天有複習`
-                  : "登入後顯示你的複習活動"}
+                  ? t("progress.activeDays", { n: heatmap.filter((c) => !c.future && c.count > 0).length })
+                  : t("progress.loginToSee")}
               </div>
             </div>
             <div className="flex items-center gap-1.5 text-[10px] font-semibold text-tuji-ink3">
-              少
+              {t("progress.heatLess")}
               {HEAT_COLOR.map((c) => (
                 <span key={c} className="h-3.5 w-3.5 rounded" style={{ background: c }} />
               ))}
-              多
+              {t("progress.heatMore")}
             </div>
           </div>
           <div className="flex gap-1.5">
-            {["日", "一", "二", "三", "四", "五", "六"].map((d, di) => (
+            {t("progress.weekdays").split(",").map((d, di) => (
               <div key={di} className="flex-1">
                 <div className="mb-1.5 text-center text-[10px] font-bold text-tuji-ink3">{d}</div>
                 <div className="flex flex-col gap-1.5">
@@ -190,7 +192,7 @@ export default function ProgressClient({
                       <div
                         key={wk}
                         className="aspect-square rounded"
-                        title={cell ? `${cell.count} 次複習` : undefined}
+                        title={cell ? t("progress.reviews", { n: cell.count }) : undefined}
                         style={{ background: HEAT_COLOR[level], opacity: cell?.future ? 0.3 : 1 }}
                       />
                     );
@@ -207,7 +209,7 @@ export default function ProgressClient({
         disabled={clearing}
         className="text-sm font-bold text-tuji-coral hover:underline disabled:opacity-50"
       >
-        {clearing ? "清除中…" : "清除所有進度"}
+        {clearing ? t("progress.clearing") : t("progress.clearAll")}
       </button>
     </div>
   );

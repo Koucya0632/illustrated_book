@@ -37,11 +37,12 @@ export async function getSettings(userId: string): Promise<UserSettings> {
         accent: string;
         show_zh: boolean;
         study_category: string;
+        study_decks: string;
         ui_lang: string;
         font_size: string;
       }[]
     >`
-      SELECT daily_goal, accent, show_zh, study_category, ui_lang, font_size
+      SELECT daily_goal, accent, show_zh, study_category, study_decks, ui_lang, font_size
       FROM user_settings WHERE user_id = ${userId}::uuid LIMIT 1
     `;
     const r = rows[0];
@@ -51,6 +52,7 @@ export async function getSettings(userId: string): Promise<UserSettings> {
       accent: r.accent as UserSettings["accent"],
       showZh: r.show_zh,
       studyCategory: r.study_category,
+      studyDecks: (r.study_decks ?? "").split(",").filter(Boolean),
       uiLang: r.ui_lang as UserSettings["uiLang"],
       fontSize: r.font_size as UserSettings["fontSize"],
     });
@@ -62,13 +64,14 @@ export async function getSettings(userId: string): Promise<UserSettings> {
 export async function saveSettings(userId: string, s: UserSettings): Promise<void> {
   const sql = requireSql();
   await sql`
-    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_category, ui_lang, font_size, updated_at)
-    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategory}, ${s.uiLang}, ${s.fontSize}, now())
+    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_category, study_decks, ui_lang, font_size, updated_at)
+    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategory}, ${s.studyDecks.join(",")}, ${s.uiLang}, ${s.fontSize}, now())
     ON CONFLICT (user_id) DO UPDATE
       SET daily_goal     = EXCLUDED.daily_goal,
           accent         = EXCLUDED.accent,
           show_zh        = EXCLUDED.show_zh,
           study_category = EXCLUDED.study_category,
+          study_decks    = EXCLUDED.study_decks,
           ui_lang        = EXCLUDED.ui_lang,
           font_size      = EXCLUDED.font_size,
           updated_at     = now()

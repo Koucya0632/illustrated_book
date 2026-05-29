@@ -9,6 +9,8 @@ export interface UserSettings {
   showZh: boolean;
   // Study theme: "all" = no filter, otherwise a category id (words.category).
   studyCategory: string;
+  // Card decks to study; empty array = all decks.
+  studyDecks: string[];
   uiLang: UiLang;
   fontSize: FontSize;
 }
@@ -18,9 +20,26 @@ export const DEFAULT_SETTINGS: UserSettings = {
   accent: "us",
   showZh: true,
   studyCategory: "all",
+  studyDecks: [],
   uiLang: "zh-Hant",
   fontSize: "md",
 };
+
+// Card decks (deck_key) the user can pick to study. Empty selection = all.
+// Labels are i18n keys resolved by the UI.
+export const STUDY_DECK_OPTIONS: { value: string; labelKey: string }[] = [
+  { value: "recall-zh-en", labelKey: "set.deckZhEn" },
+  { value: "recall-en-zh", labelKey: "set.deckEnZh" },
+  { value: "cloze-1", labelKey: "set.deckCloze" },
+];
+export const STUDY_DECK_KEYS = STUDY_DECK_OPTIONS.map((o) => o.value);
+
+// Keep only known deck keys, deduped, order following STUDY_DECK_KEYS.
+function normalizeStudyDecks(raw: unknown): string[] {
+  const arr = Array.isArray(raw) ? raw.map(String) : [];
+  const set = new Set(arr);
+  return STUDY_DECK_KEYS.filter((k) => set.has(k));
+}
 
 export const DAILY_GOAL_MIN = 1;
 export const DAILY_GOAL_MAX = 100;
@@ -56,6 +75,7 @@ export function normalizeSettings(raw: Partial<UserSettings> | null | undefined)
     accent: raw?.accent === "uk" ? "uk" : "us",
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
     studyCategory: normalizeStudyCategory(raw?.studyCategory),
+    studyDecks: normalizeStudyDecks(raw?.studyDecks),
     uiLang: UI_LANGS.includes(raw?.uiLang as UiLang) ? (raw!.uiLang as UiLang) : "zh-Hant",
     fontSize: FONT_SIZES.includes(raw?.fontSize as FontSize) ? (raw!.fontSize as FontSize) : "md",
   };

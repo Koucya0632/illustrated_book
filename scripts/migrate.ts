@@ -121,6 +121,8 @@ const DDL = [
   // Additive: interface language + font size.
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS ui_lang   TEXT NOT NULL DEFAULT 'zh-Hant'`,
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS font_size TEXT NOT NULL DEFAULT 'md'`,
+  // Additive: study deck filter (comma-joined deck_key list; '' = all decks).
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_decks TEXT NOT NULL DEFAULT ''`,
 
   // ---- SRS cards (public read) + user_cards (per-user) ----
   `CREATE TABLE IF NOT EXISTS cards (

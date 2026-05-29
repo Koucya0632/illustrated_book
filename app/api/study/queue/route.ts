@@ -30,9 +30,14 @@ export async function GET(req: Request) {
   // Single study theme (a category id); "all"/empty = no filter.
   const category = (searchParams.get("category") ?? "").trim();
   const categories = category && category !== "all" ? [category] : [];
+  // Card decks (deck_key) to study; comma-separated, "all"/empty = no filter.
+  const deckKeys = (searchParams.get("decks") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => s && s !== "all");
 
   const [queue, stats] = await Promise.all([
-    fetchDue(userId, limit, newLimit, { cefr, tags, categories }),
+    fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }),
     studyStats(userId),
   ]);
   await attachMasteryAndSort(userId, queue);

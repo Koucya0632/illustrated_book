@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
+import WordPeekModal from "@/components/WordPeekModal";
 import { WordTile, shade, TUJI } from "@/components/tuji/ui";
 import { useSettings } from "@/components/SettingsProvider";
 import { useT } from "@/components/I18n";
@@ -106,13 +107,14 @@ export default function StudyClient() {
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [peekId, setPeekId] = useState<string | null>(null);
   const startedAtRef = useRef<number>(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
   // Synchronous lock so a rapid double-click within the auto-advance window is
   // blocked before React re-renders (state alone has a stale-closure race).
   const answeringRef = useRef(false);
 
-  const { dailyGoal, showZh, studyCategory } = useSettings();
+  const { dailyGoal, showZh, studyCategory, studyDecks } = useSettings();
   const t = useT();
   const themeName =
     studyCategory === "all" ? null : categories.find((c) => c.id === studyCategory)?.nameZh ?? null;
@@ -122,9 +124,10 @@ export default function StudyClient() {
   const isMcq = !!current?.choices && current.choices.length > 0;
   const wasCorrect = picked !== null && current ? picked === current.card.back : false;
 
+  const decksParam = studyDecks.join(",");
   const loadQueue = useCallback(async () => {
     const res = await fetch(
-      `/api/study/queue?limit=${dailyGoal}&new=${Math.min(10, dailyGoal)}&category=${encodeURIComponent(studyCategory)}`,
+      `/api/study/queue?limit=${dailyGoal}&new=${Math.min(10, dailyGoal)}&category=${encodeURIComponent(studyCategory)}&decks=${encodeURIComponent(decksParam)}`,
     );
     const data = await res.json();
     setQueue(data.queue);
@@ -135,7 +138,7 @@ export default function StudyClient() {
     setPicked(null);
     setLastFeedback(null);
     setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
-  }, [dailyGoal, studyCategory]);
+  }, [dailyGoal, studyCategory, decksParam]);
 
   useEffect(() => {
     // No specific theme chosen → don't load; the picker prompt renders instead.
@@ -156,8 +159,10 @@ export default function StudyClient() {
     if (phase !== "answer" || !current) return;
     setPicked(choice);
     setPhase("review");
+    // Wrong answer no longer auto-records as「重來」— reveal the answer and let
+    // the user self-rate (重來 is pre-suggested).
     if (choice !== current.card.back) {
-      void rate("重來", true);
+      setSuggestedRating("重來");
       return;
     }
     const elapsed = performance.now() - startedAtRef.current;
@@ -183,7 +188,7 @@ export default function StudyClient() {
     }
   }
 
-  async function rate(rating: Rating, isAutoFromWrong = false) {
+  async function rate(rating: Rating) {
     if (!current) return;
     if (answeringRef.current) return;
     answeringRef.current = true;
@@ -204,7 +209,7 @@ export default function StudyClient() {
       return;
     }
     setSummary((s) => ({ ...s, [rating]: s[rating] + 1, completed: s.completed + 1 }));
-    const delay = isAutoFromWrong ? 1800 : 1000;
+    const delay = 1000;
     setTimeout(() => {
       setLastFeedback(null);
       if (idx + 1 >= total) setPhase("done");
@@ -475,21 +480,16 @@ export default function StudyClient() {
                     💡 {current.card.explanation}
                   </div>
                 )}
-                <Link
-                  href={`/word/${current.word.id}`}
+                <button
+                  onClick={() => setPeekId(current.word.id)}
                   className="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold text-tuji-teal"
                 >
                   {t("study.seeWordPage")}
-                </Link>
+                </button>
               </div>
 
-              {/* Rating */}
-              {isMcq && !wasCorrect ? (
-                <div className="rounded-[20px] bg-white p-5 text-center shadow-card">
-                  <p className="font-bold text-tuji-coral">⊗ {t("study.recorded", { label: t("study.rate.again") })}</p>
-                  {lastFeedback && <p className="mt-1 text-xs text-tuji-coral">{lastFeedback}</p>}
-                </div>
-              ) : (
+              {/* Rating — wrong answers self-rate too; all four shown on a miss */}
+              {(
                 <>
                   <div className="mb-2.5 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
                     {t("study.whenAgain")}
@@ -500,7 +500,7 @@ export default function StudyClient() {
                     )}
                   </div>
                   <div className="flex flex-col gap-2.5">
-                    {(isMcq ? (["困難", "穩定", "熟練"] as const) : ALL_RATINGS).map(
+                    {(isMcq && wasCorrect ? (["困難", "穩定", "熟練"] as const) : ALL_RATINGS).map(
                       (rt) => {
                         const st = RATING_STYLE[rt];
                         const isSuggested = suggestedRating === rt;
@@ -548,6 +548,8 @@ export default function StudyClient() {
         {summary.穩定 > 0 && <span className="text-tuji-teal">{t("study.rate.good")} {summary.穩定}</span>}
         {summary.熟練 > 0 && <span className="text-tuji-green">{t("study.rate.easy")} {summary.熟練}</span>}
       </div>
+
+      {peekId && <WordPeekModal id={peekId} onClose={() => setPeekId(null)} />}
     </div>
   );
 }

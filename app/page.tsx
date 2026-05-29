@@ -31,6 +31,10 @@ export default async function HomePage() {
   const hasTheme = !!bundle && settings.studyCategory !== "all";
   const themeName = categories.find((c) => c.id === settings.studyCategory)?.nameZh ?? null;
   const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
+  // Today's task progress (global review count today vs the daily goal).
+  const doneToday = streak?.todayCount ?? 0;
+  const taskDone = hasTheme && doneToday >= goal;
+  const filledDashes = goal > 0 ? Math.round(Math.min(doneToday / goal, 1) * goalDashes) : 0;
 
   const tz = "Asia/Taipei";
   const now = new Date();
@@ -101,8 +105,20 @@ export default async function HomePage() {
               </div>
               <div className="mt-4 flex gap-1">
                 {Array.from({ length: goalDashes }).map((_, i) => (
-                  <span key={i} className="h-1.5 w-7 rounded-full bg-white/25" />
+                  <span
+                    key={i}
+                    className={`h-1.5 w-7 rounded-full ${i < filledDashes ? "bg-tuji-yellow" : "bg-white/25"}`}
+                  />
                 ))}
+              </div>
+              <div className="mt-2.5 text-[13px] font-bold text-white/90">
+                {taskDone ? (
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1">
+                    {tr("home.taskDone")}
+                  </span>
+                ) : (
+                  tr("home.todayProgress", { done: doneToday, goal })
+                )}
               </div>
               <div className="mt-4">
                 <Link
@@ -115,7 +131,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="hidden shrink-0 sm:block">
-              <Mascot pose="wave" size={132} />
+              <Mascot pose={taskDone ? "cheer" : "wave"} size={132} />
             </div>
           </div>
         ) : (

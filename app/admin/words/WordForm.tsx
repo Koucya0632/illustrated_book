@@ -66,6 +66,26 @@ export default function WordForm({
   const [w, setW] = useState<Word>(initial ?? empty);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [enriching, setEnriching] = useState(false);
+
+  async function handleEnrich() {
+    if (mode !== "edit" || !initial) return;
+    setError(null);
+    setEnriching(true);
+    try {
+      const res = await fetch(`/api/admin/words/${encodeURIComponent(initial.id)}/enrich`, {
+        method: "POST",
+      });
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}));
+        throw new Error(j.error || "enrich failed");
+      }
+      window.location.reload();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "enrich failed");
+      setEnriching(false);
+    }
+  }
 
   function set<K extends keyof Word>(key: K, value: Word[K]) {
     setW((prev) => ({ ...prev, [key]: value }));
@@ -433,6 +453,16 @@ export default function WordForm({
         >
           取消
         </button>
+        {mode === "edit" && (
+          <button
+            type="button"
+            onClick={handleEnrich}
+            disabled={enriching || saving}
+            className="ml-auto px-5 py-3 rounded-full bg-white text-ink shadow-card hover:shadow-lg disabled:opacity-50"
+          >
+            {enriching ? "生成中..." : "AI 生成補齊"}
+          </button>
+        )}
       </div>
     </form>
   );

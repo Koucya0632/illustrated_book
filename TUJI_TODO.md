@@ -57,7 +57,8 @@
 - ✅ **答錯改自評**：MCQ 答錯不再自動記「重來」，改成揭曉答案後由使用者自評（四個評分鈕全給，預設建議「重來」）。
 - ✅ **卡片類型篩選**：設定頁「學習卡片類型」可複選（中→英 / 英→中 / 填空，`user_settings.study_decks`），queue 依 `deck_key` 篩選；不選＝全部。
 - ✅ **答後彈窗看單字**：/study 答後「看完整單字頁」改開 `WordPeekModal`（走 `/api/words/[id]`），顯示圖/發音/中文/例句/撇步，保留進完整頁入口。
-- **記憶撇步自動生成**：目前只在 `word.note` 有值時顯示，沒有自動產生。
+- ✅ **單字內容 AI 豐富化**：`lib/enrich.ts`（Vercel AI SDK + AI Gateway）生成 同義/反義/相關詞、詞形變化(`words.forms`)、記憶撇步(`words.note`)、詞源(`words.etymology`)。觸發：批次 `npm run enrich`（`scripts/enrich.ts`，撈 `etymology IS NULL`）/ admin 單字頁「AI 生成補齊」鈕（`/api/admin/words/[id]/enrich`）。顯示於單字頁（詞形變化/詞源區塊 + 既有關聯詞區塊）與學習彈窗。**需設 `AI_GATEWAY_API_KEY`**（本機批次與 Vercel 皆需）。
+- **記憶撇步自動生成**：可由上方 AI 豐富化補 `note`（僅在 note 為空時填）；尚未做「逐字自動觸發」。
 - **SRS「💡 提示」鈕**（原型問題頁）：尚未做。
 - **Today 篩選晶片（全部 / 弱字 / 新字）**：原型有，目前 Today 只顯示每日 5 字。queue API 其實支援 new/due，可延伸。
 - **單字卡上的熟練度徽章（穩/熟/弱）+ 進度條**：原型每張卡都有；目前 Today/Cards 格狀卡未顯示（client 端未載入每字熟練度）。→ 可預先 hydrate 每字 mastery。

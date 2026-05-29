@@ -32,6 +32,8 @@ interface Row {
   status: string;
   collocations: string[];
   note: string | null;
+  etymology: string | null;
+  forms: unknown;         // jsonb array of { label, value }
   definitions: unknown;   // jsonb array of { language, definition, cefr_level, sort_order }
   examples: unknown;      // jsonb array of { sentence, cefr_level, sort_order, translations }
   relations: unknown;     // jsonb array of { word_id, relation_type, note }
@@ -92,6 +94,7 @@ function rowToWord(r: Row): Word {
 
   const tags = r.tags ?? [];
   const chinese = primaryChinese(definitions);
+  const forms = parseJsonbColumn<{ label: string; value: string }[]>(r.forms, []);
 
   // Legacy back-compat shims so unconverted UI code still works.
   const seeAlso = relations.filter((rel) => rel.type === "see-also").map((rel) => rel.wordId);
@@ -117,6 +120,8 @@ function rowToWord(r: Row): Word {
     relations,
     collocations: r.collocations.length ? r.collocations : undefined,
     note: r.note ?? undefined,
+    etymology: r.etymology ?? undefined,
+    forms: forms.length ? forms : undefined,
     relatedWords: seeAlso.length ? seeAlso : undefined,
     confusingWords: confusing.length ? confusing : undefined,
   };
@@ -134,7 +139,7 @@ const fetchAllFromDb = unstable_cache(
       SELECT
         w.id, w.word, w.also_known_as, w.category, w.part_of_speech,
         w.pronunciation, w.audio_url, w.image_url, w.cefr_level, w.status,
-        w.collocations, w.note,
+        w.collocations, w.note, w.etymology, w.forms,
         (SELECT jsonb_agg(jsonb_build_object(
                   'language',   d.language,
                   'definition', d.definition,
@@ -166,7 +171,7 @@ const fetchAllFromDb = unstable_cache(
   },
   // v3: schema v2 read path with new joined tables. Bumped from v2 (which
   // bumped from v1 when the postgres-js JSONB auto-parse landed).
-  ["all-words-v3"],
+  ["all-words-v4"],
   { tags: ["words"], revalidate: 60 },
 );
 

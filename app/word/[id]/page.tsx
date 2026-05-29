@@ -265,6 +265,30 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             </div>
           )}
 
+          {/* Word forms (詞形變化) */}
+          {w.forms && w.forms.length > 0 && (
+            <div className="rounded-[22px] bg-white p-4 shadow-soft">
+              <div className="mb-2 text-[13px] font-extrabold text-tuji-ink">{tr("word.forms")}</div>
+              <div className="flex flex-wrap gap-2">
+                {w.forms.map((f, i) => (
+                  <span key={i} className="rounded-full bg-tuji-bg px-3 py-1.5 text-xs text-tuji-ink2">
+                    <span className="font-bold text-tuji-ink3">{f.label}</span>
+                    <span className="mx-1 text-tuji-ink4">·</span>
+                    <span className="font-extrabold text-tuji-ink">{f.value}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Etymology (詞源) */}
+          {w.etymology && (
+            <div className="rounded-[22px] bg-white p-4 shadow-soft">
+              <div className="mb-1 text-[13px] font-extrabold text-tuji-ink">{tr("word.etymology")}</div>
+              <div className="text-[13px] leading-relaxed text-tuji-ink2">{w.etymology}</div>
+            </div>
+          )}
+
           {/* Same theme */}
           {sameCategory.length > 0 && (
             <div>

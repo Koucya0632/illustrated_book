@@ -83,6 +83,10 @@ export interface Word {
 
   collocations?: string[];
   note?: string;
+  /** Short etymology / word-formation breakdown (zh-Hant content). */
+  etymology?: string;
+  /** Inflected forms (plural, tenses, comparative…). label is zh-Hant content. */
+  forms?: { label: string; value: string }[];
 
   /** @deprecated read `relations.filter(r => r.type === 'see-also')` instead. */
   relatedWords?: string[];

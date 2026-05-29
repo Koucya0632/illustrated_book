@@ -52,7 +52,13 @@ function requireSql(): Sql {
 }
 
 function bustCaches() {
-  revalidateTag("words");
+  // No-op outside a Next request context (e.g. the enrich CLI script), where
+  // revalidateTag throws. Deployed reads still refresh via the 60s revalidate.
+  try {
+    revalidateTag("words");
+  } catch {
+    /* not in a request/render scope */
+  }
 }
 
 // ---- Reads (admin-facing — includes drafts/archived/soft-deleted) --------
@@ -408,5 +414,53 @@ export async function softDeleteWord(id: string): Promise<void> {
 export async function remove(id: string): Promise<void> {
   const sql = requireSql();
   await sql`DELETE FROM words WHERE id = ${id}`;
+  bustCaches();
+}
+
+// ---- AI enrichment (additive; does NOT replace other children) ----------
+
+export interface EnrichmentData {
+  synonyms?: string[];
+  antonyms?: string[];
+  related?: string[];
+  forms?: { label: string; value: string }[];
+  mnemonic?: string;
+  etymology?: string;
+}
+
+/** Apply AI-generated enrichment surgically: add synonym/antonym/see-also
+ *  relations (skip dups), set etymology + forms, and fill `note` only if empty
+ *  (so a curated mnemonic is never clobbered). Unlike `update()` this does not
+ *  touch definitions/examples/tags. */
+export async function applyEnrichment(id: string, data: EnrichmentData): Promise<void> {
+  const sql = requireSql();
+  const rels: { target: string; type: RelationType }[] = [
+    ...(data.synonyms ?? []).map((w) => ({ target: w, type: "synonym" as RelationType })),
+    ...(data.antonyms ?? []).map((w) => ({ target: w, type: "antonym" as RelationType })),
+    ...(data.related ?? []).map((w) => ({ target: w, type: "see-also" as RelationType })),
+  ];
+  const forms = (data.forms ?? []).filter((f) => f?.label?.trim() && f?.value?.trim());
+  const etymology = data.etymology?.trim() || null;
+  const mnemonic = data.mnemonic?.trim() || null;
+
+  await sql.begin(async (tx: Sql) => {
+    for (const r of rels) {
+      const target = r.target.trim();
+      if (!target || target.toLowerCase() === id.toLowerCase()) continue;
+      await tx`
+        INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
+        VALUES (${id}, ${target}, ${r.type}, NULL)
+        ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
+      `;
+    }
+    await tx`
+      UPDATE words SET
+        etymology = COALESCE(${etymology}, etymology),
+        forms     = CASE WHEN ${forms.length}::int > 0 THEN ${tx.json(forms)} ELSE forms END,
+        note      = COALESCE(NULLIF(note, ''), ${mnemonic}),
+        updated_at = now()
+      WHERE id = ${id}
+    `;
+  });
   bustCaches();
 }

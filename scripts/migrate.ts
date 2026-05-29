@@ -219,6 +219,10 @@ const DDL = [
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS image_source_url TEXT`,
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS image_license    TEXT`,
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS image_credit     TEXT`,
+  // AI-enriched content: word etymology (詞源拆解) + inflected forms (詞形變化,
+  // stored as JSONB [{label,value}]). Mnemonic reuses the existing `note`.
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS etymology TEXT`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS forms     JSONB NOT NULL DEFAULT '[]'::jsonb`,
   // CHECK constraints — wrapped so repeated migrate runs don't blow up.
   `DO $$ BEGIN
      IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_cefr_chk') THEN

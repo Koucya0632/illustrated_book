@@ -41,6 +41,9 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
   }, [onClose]);
 
   const examples = word?.examples?.slice(0, 2) ?? [];
+  const synonyms = word?.relations?.filter((r) => r.type === "synonym").map((r) => r.wordId) ?? [];
+  const antonyms = word?.relations?.filter((r) => r.type === "antonym").map((r) => r.wordId) ?? [];
+  const forms = word?.forms ?? [];
 
   return (
     <div
@@ -106,6 +109,53 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+
+            {(synonyms.length > 0 || antonyms.length > 0) && (
+              <div className="mt-3 rounded-[20px] bg-white p-4 shadow-card">
+                {synonyms.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    <span className="mr-1 text-xs font-extrabold text-tuji-ink3">{t("word.rel.synonym")}</span>
+                    {synonyms.map((s, i) => (
+                      <span key={i} className="rounded-full bg-tuji-tealS px-2.5 py-1 text-xs font-bold text-tuji-teal">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {antonyms.length > 0 && (
+                  <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                    <span className="mr-1 text-xs font-extrabold text-tuji-ink3">{t("word.rel.antonym")}</span>
+                    {antonyms.map((s, i) => (
+                      <span key={i} className="rounded-full bg-tuji-bg px-2.5 py-1 text-xs font-bold text-tuji-ink2">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {forms.length > 0 && (
+              <div className="mt-3 rounded-[20px] bg-white p-4 shadow-card">
+                <div className="mb-2 text-xs font-extrabold text-tuji-ink3">{t("word.forms")}</div>
+                <div className="flex flex-wrap gap-2">
+                  {forms.map((f, i) => (
+                    <span key={i} className="rounded-full bg-tuji-bg px-2.5 py-1 text-xs text-tuji-ink2">
+                      <span className="font-bold text-tuji-ink3">{f.label}</span>
+                      <span className="mx-1 text-tuji-ink4">·</span>
+                      <span className="font-extrabold text-tuji-ink">{f.value}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {word.etymology && (
+              <div className="mt-3 rounded-[20px] bg-white p-4 shadow-card">
+                <div className="mb-1 text-xs font-extrabold text-tuji-ink3">{t("word.etymology")}</div>
+                <div className="text-[13px] leading-relaxed text-tuji-ink2">{word.etymology}</div>
               </div>
             )}
 

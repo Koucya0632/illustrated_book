@@ -105,12 +105,12 @@
 
 ## 4. 導入方式
 
-### A.（推薦）種子檔 `lib/words.ts` —— 可被學習、可批量
-把單字加進 `rawWords`（`LegacyWord` 形態，就是第 0 節那個物件）。部署時 `scripts/migrate.ts` 會：
-1. 若 `words` 表為空 → 整批 seed；否則略過 seed。
+### A.（推薦）種子檔 —— 可被學習、可批量
+把單字加進 `lib/words.ts` 的 `rawWords`，或大批用 `lib/supplemental-words.json`（會 merge 進 `words`）。兩者都是 `LegacyWord` 形態（第 0 節那個物件）。部署時 `scripts/migrate.ts` 會：
+1. **Seed 缺漏的字**：比對 DB 已有的 id，只插入「不在 DB 的 seed 詞」（idempotent，每次部署都跑，不再只在空表時 seed）。
 2. **每次**都跑 `generateCards` + v2 backfill（皆 idempotent，`ON CONFLICT DO NOTHING`）。
 
-→ 因此新增單字最穩的做法是加進這裡再部署：words / 釋義 / 例句 / 關聯 / **SRS 卡片** 都會建好。
+→ 因此新增單字最穩的做法是加進 seed 再部署：words / 釋義 / 例句 / 關聯 / **SRS 卡片** 都會自動建好（含日後增量新增）。
 
 ### B. Admin 後台單筆新增 `/admin/words`
 用 `WordForm` 填一筆 → `POST /api/admin/words`。適合臨時加一兩個字。
@@ -195,7 +195,7 @@ Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受
 - **id 不可改**：它是網址、卡片、關聯目標的鍵；改名等於換一個字。
 - **圖片**：用穩定可長期存取的網址（建議自家 Supabase Storage），避免熱連結失效。
 - **發音**：填音標字串即可；實際朗讀走瀏覽器 TTS（口音由設定的美/英控制），不需音檔。
-- **可學習 = 要有卡片**：只有走種子檔（A）並部署的字會自動產 SRS 卡片；Admin 單筆新增目前不產卡。
+- **可學習 = 要有卡片**：走種子檔（A）並部署的字會自動 seed + 產 SRS 卡片（含增量新增）；Admin 單筆新增（B/C）目前仍不產卡。
 - **idempotent**：migrate 與 enrich 都可重複執行；已存在的資料用 `ON CONFLICT DO NOTHING` / 「空才補」策略，不會覆蓋既有內容。
 - **快取**：公開讀取走 `unstable_cache`（tag `words`，60s revalidate）。Admin 寫入會 `revalidateTag('words')`；直接改 DB（script）則約 60s 後生效。
 

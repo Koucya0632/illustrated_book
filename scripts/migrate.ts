@@ -855,12 +855,15 @@ async function setupStudyLogsPartitioning(sql: any) {
   );
 }
 
-// Fresh-deployment seed: populates words + all v2 sub-tables directly from
-// the static seedWords list (which has already been normalized to v2 shape
-// by legacyToV2 in lib/words.ts). Used when the words table is empty.
+// Seeds the given words + all v2 sub-tables from the static seedWords list
+// (already normalized to v2 shape by legacyToV2 in lib/words.ts). `list`
+// defaults to every seed word (fresh DB); main() passes only the words missing
+// from the DB so this is idempotent and re-runnable on every deploy. The
+// example insert assumes the word has no existing examples — true for missing
+// words — so don't call this with words already present.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function seedV2(sql: any) {
-  for (const w of seedWords) {
+async function seedV2(sql: any, list: typeof seedWords = seedWords) {
+  for (const w of list) {
     // words row (new columns only — no legacy after Phase 3 drop).
     await sql`
       INSERT INTO words (
@@ -949,15 +952,19 @@ async function main() {
     }
     console.log(`[migrate] DDL applied (${DDL.length} statements).`);
 
-    const [{ count }] = await sql<{ count: number }[]>`
-      SELECT count(*)::int AS count FROM words
-    `;
-    if (count === 0) {
-      console.log(`[migrate] seeding ${seedWords.length} words (v2 shape)...`);
-      await seedV2(sql);
-      console.log(`[migrate] seed complete.`);
+    // Seed only the words missing from the DB — idempotent, so newly added
+    // seed entries (e.g. supplemental-words.json) get inserted on every deploy
+    // instead of only on an empty DB. This also guarantees every seed word's
+    // row exists before generateCards (which would otherwise FK-fail).
+    const existingRows = await sql<{ id: string }[]>`SELECT id FROM words`;
+    const have = new Set(existingRows.map((r) => r.id));
+    const missing = seedWords.filter((w) => !have.has(w.id));
+    if (missing.length === 0) {
+      console.log(`[migrate] all ${seedWords.length} seed words present — nothing to seed.`);
     } else {
-      console.log(`[migrate] words table already has ${count} rows — skipping seed.`);
+      console.log(`[migrate] seeding ${missing.length} missing word(s) of ${seedWords.length}...`);
+      await seedV2(sql, missing);
+      console.log(`[migrate] seed complete.`);
     }
 
     await generateCards(sql);

@@ -307,7 +307,18 @@ export async function upsertReview(
   `;
 }
 
-export async function getCardById(cardId: number, userId: string): Promise<DueCard | null> {
+// Lite per-word mastery snapshot joined into getCardById (saves a round trip
+// in the answer hot path — decay is applied by the caller).
+export interface CardMasteryRow {
+  mastery: number;
+  last_reviewed_at: string | null;
+  review_count: number;
+}
+export type CardWithMastery = DueCard & { masteryRow: CardMasteryRow | null };
+
+// Single-query fetch of a card + its SRS state + the word + the user's current
+// mastery row, so the answer endpoint needs one read instead of two.
+export async function getCardById(cardId: number, userId: string): Promise<CardWithMastery | null> {
   const sql = requireSql();
   const rows = (await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
@@ -316,10 +327,14 @@ export async function getCardById(cardId: number, userId: string): Promise<DueCa
            w.word AS w_word,
            COALESCE(zh.definition, '') AS w_chinese,
            w.image_url AS w_image,
-           w.pronunciation AS w_pron, w.category AS w_category
+           w.pronunciation AS w_pron, w.category AS w_category,
+           uw.mastery::float8 AS uw_mastery,
+           uw.last_reviewed_at AS uw_last_reviewed,
+           uw.review_count AS uw_review_count
     FROM cards c
     LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
     JOIN words w ON w.id = c.word_id
+    LEFT JOIN user_words uw ON uw.user_id = ${userId}::uuid AND uw.word_id = c.word_id
     LEFT JOIN LATERAL (
       SELECT definition FROM word_definitions
       WHERE word_id = w.id AND language = 'zh'
@@ -363,6 +378,14 @@ export async function getCardById(cardId: number, userId: string): Promise<DueCa
       pronunciation: String(r.w_pron),
       category: String(r.w_category),
     },
+    masteryRow:
+      r.uw_mastery != null
+        ? {
+            mastery: Number(r.uw_mastery),
+            last_reviewed_at: (r.uw_last_reviewed as string | null) ?? null,
+            review_count: Number(r.uw_review_count),
+          }
+        : null,
   };
 }
 

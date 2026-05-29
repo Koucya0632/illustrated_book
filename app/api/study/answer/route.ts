@@ -4,7 +4,6 @@ import { getCardById, upsertReview } from "@/lib/cards-db";
 import { humanizeInterval, schedule, type Rating } from "@/lib/srs";
 import { applyAnswer, masteryLevel } from "@/lib/mastery";
 import {
-  getMasteryRow,
   upsertMastery,
   insertStudyLog,
   type StudyLogActivity,
@@ -55,7 +54,7 @@ export async function POST(req: Request) {
   const card = await getCardById(cardId, userId);
   if (!card) return NextResponse.json({ error: "card not found" }, { status: 404 });
 
-  // 1) Card-level SRS
+  // 1) Card-level SRS schedule (pure compute).
   const prevState = card.state
     ? { status: card.state.status, intervalDays: Number(card.state.interval_days) || 0 }
     : { status: "新卡" as const, intervalDays: 0 };
@@ -68,31 +67,31 @@ export async function POST(req: Request) {
   const next = schedule(prevState, rating, mistakeStats);
   const isMistake = rating === "重來";
 
-  await upsertReview(userId, cardId, {
-    status: next.status,
-    intervalDays: next.intervalDays,
-    nextReviewAt: next.nextReviewAt,
-    rating,
-  }, isMistake);
-
-  // 2) Word-level mastery (shared across all cards of this word)
-  const prevMasteryRow = await getMasteryRow(userId, card.word.id);
-  const prevMastery = prevMasteryRow?.mastery ?? 0;
-  const prevReviewedAt = prevMasteryRow?.last_reviewed_at
-    ? new Date(prevMasteryRow.last_reviewed_at)
+  // 2) Word-level mastery — the previous row was joined into getCardById, so no
+  //    extra read here. Pure compute (decay + EMA).
+  const prevMastery = card.masteryRow?.mastery ?? 0;
+  const prevReviewedAt = card.masteryRow?.last_reviewed_at
+    ? new Date(card.masteryRow.last_reviewed_at)
     : null;
   const masteryResult = applyAnswer(prevMastery, prevReviewedAt, rating);
-  await upsertMastery(userId, card.word.id, masteryResult.mastery);
 
-  // 3) Append-only event log. Best-effort: a logging failure must not poison
-  //    the answer flow (state is already updated). Partition-pruned writes
-  //    drop into the current month's child of study_logs.
-  try {
-    const responseMs =
-      typeof body.responseMs === "number" && Number.isFinite(body.responseMs)
-        ? Math.max(0, Math.min(body.responseMs, 600_000))
-        : null;
-    await insertStudyLog({
+  const responseMs =
+    typeof body.responseMs === "number" && Number.isFinite(body.responseMs)
+      ? Math.max(0, Math.min(body.responseMs, 600_000))
+      : null;
+
+  // 3) Persist the three independent writes in parallel (one round trip instead
+  //    of three). study_logs is best-effort — it swallows its own error so a
+  //    logging failure never fails the answer.
+  await Promise.all([
+    upsertReview(userId, cardId, {
+      status: next.status,
+      intervalDays: next.intervalDays,
+      nextReviewAt: next.nextReviewAt,
+      rating,
+    }, isMistake),
+    upsertMastery(userId, card.word.id, masteryResult.mastery),
+    insertStudyLog({
       userId,
       wordId: card.word.id,
       activity: body.activity ?? defaultActivity(card.card.card_type),
@@ -105,10 +104,8 @@ export async function POST(req: Request) {
       masteryAfter: masteryResult.mastery,
       clientSessionId: body.sessionId?.slice(0, 64) ?? null,
       metadata: { cardId, deckKey: card.card.deck_key },
-    });
-  } catch (err) {
-    console.warn("[study/answer] study_logs insert failed", err);
-  }
+    }).catch((err) => console.warn("[study/answer] study_logs insert failed", err)),
+  ]);
 
   return NextResponse.json({
     ok: true,

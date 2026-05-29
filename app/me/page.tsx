@@ -5,7 +5,8 @@ import { WordTile, scoreTier, TUJI } from "@/components/tuji/ui";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getAllWords } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
-import { getAllMastery, getStudyStreak } from "@/lib/users-db";
+import { getAllMastery, getStudyStreak, getSettings } from "@/lib/users-db";
+import { t, localeTag } from "@/lib/i18n";
 import MeClient from "./MeClient";
 import type { Word } from "@/types";
 
@@ -16,11 +17,13 @@ export default async function MePage() {
   const bundle = await getCurrentUserBundle();
   if (!bundle) redirect("/signin?next=/me");
 
-  const [allWords, masteryRows, streak] = await Promise.all([
+  const [allWords, masteryRows, streak, settings] = await Promise.all([
     getAllWords(),
     getAllMastery(bundle.user.id),
     getStudyStreak(bundle.user.id),
+    getSettings(bundle.user.id),
   ]);
+  const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   const byId = new Map(allWords.map((w) => [w.id, w]));
   const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean) as Word[];
   const learnedCount = bundle.learned.length;
@@ -40,7 +43,7 @@ export default async function MePage() {
 
   return (
     <div className="mx-auto max-w-5xl px-5 py-6 sm:px-7">
-      <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">個人主頁</div>
+      <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">{tr("me.eyebrow")}</div>
 
       {/* Profile hero */}
       <div className="relative mb-4 flex flex-col items-center gap-5 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white sm:flex-row">
@@ -50,11 +53,14 @@ export default async function MePage() {
         <div className="flex-1 text-center sm:text-left">
           <h1 className="font-display text-3xl font-extrabold tracking-tight">{bundle.user.username}</h1>
           <p className="mt-1 text-[13px] text-white/70">
-            {bundle.user.email} · 加入於 {new Date(bundle.user.createdAt).toLocaleDateString("zh-TW")}
+            {tr("set.profileSub", {
+              email: bundle.user.email,
+              joined: new Date(bundle.user.createdAt).toLocaleDateString(localeTag(settings.uiLang)),
+            })}
           </p>
           <div className="mt-4">
             <div className="mb-1.5 flex justify-between text-[11px] font-extrabold text-white/80">
-              <span>圖鑑完成度</span>
+              <span>{tr("progress.completion")}</span>
               <span>
                 {learnedCount} / {allWords.length}
               </span>
@@ -70,11 +76,11 @@ export default async function MePage() {
         <div className="flex shrink-0 gap-2 sm:flex-col">
           <div className="min-w-[88px] rounded-2xl bg-tuji-coral px-4 py-3 text-center text-white">
             <div className="font-display text-2xl font-extrabold leading-none">{streak.current}</div>
-            <div className="mt-1 text-[11px] font-extrabold">連續天數</div>
+            <div className="mt-1 text-[11px] font-extrabold">{tr("progress.tile.streak")}</div>
           </div>
           <Link href="/cards" className="min-w-[88px] rounded-2xl bg-tuji-yellow px-4 py-3 text-center text-tuji-ink">
             <div className="font-display text-2xl font-extrabold leading-none">{learnedCount}</div>
-            <div className="mt-1 text-[11px] font-extrabold">已學</div>
+            <div className="mt-1 text-[11px] font-extrabold">{tr("me.learnedShort")}</div>
           </Link>
         </div>
       </div>
@@ -86,7 +92,7 @@ export default async function MePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               {topMastered.length > 0 && (
                 <div className="rounded-[18px] bg-white p-4 shadow-soft">
-                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">最熟的字</h3>
+                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">{tr("me.topMastered")}</h3>
                   <ul className="flex flex-col gap-3">
                     {topMastered.map((item) => (
                       <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
@@ -96,14 +102,14 @@ export default async function MePage() {
               )}
               {needsWork.length > 0 && (
                 <div className="rounded-[18px] bg-white p-4 shadow-soft">
-                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">需要加強</h3>
+                  <h3 className="mb-3 text-sm font-extrabold text-tuji-ink">{tr("me.needsWork")}</h3>
                   <ul className="flex flex-col gap-3">
                     {needsWork.map((item) => (
                       <MasteryRow key={item.word.id} word={item.word} mastery={item.mastery} />
                     ))}
                   </ul>
                   <Link href="/study" className="mt-3 inline-block text-sm font-extrabold text-tuji-teal">
-                    去複習 →
+                    {tr("me.goStudy")}
                   </Link>
                 </div>
               )}
@@ -112,12 +118,12 @@ export default async function MePage() {
 
           {/* Favorites */}
           <div>
-            <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">我的收藏</h2>
+            <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">{tr("progress.tile.favSub")}</h2>
             {fav.length === 0 ? (
               <p className="text-sm text-tuji-ink3">
-                還沒有收藏單字。{" "}
+                {tr("me.noFav")}{" "}
                 <Link href="/cards" className="font-extrabold text-tuji-teal">
-                  去逛圖鑑 →
+                  {tr("me.goBrowse")}
                 </Link>
               </p>
             ) : (
@@ -138,10 +144,10 @@ export default async function MePage() {
         <div className="flex flex-col gap-4">
           <Link href="/settings" className="block rounded-[18px] bg-white p-5 shadow-soft transition hover:shadow-card">
             <div className="flex items-baseline justify-between">
-              <div className="text-sm font-extrabold text-tuji-ink">學習偏好</div>
-              <div className="text-[11px] font-extrabold text-tuji-ink3">編輯 →</div>
+              <div className="text-sm font-extrabold text-tuji-ink">{tr("me.prefs")}</div>
+              <div className="text-[11px] font-extrabold text-tuji-ink3">{tr("me.edit")}</div>
             </div>
-            <p className="mt-2 text-xs text-tuji-ink3">每日目標、提醒時間、發音口音、Tuji 出現頻率…</p>
+            <p className="mt-2 text-xs text-tuji-ink3">{tr("me.prefsSub")}</p>
           </Link>
 
           <MeClient />

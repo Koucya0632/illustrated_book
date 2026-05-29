@@ -4,11 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import WordCard from "@/components/WordCard";
 import { useWords } from "@/components/WordsProvider";
+import { useT } from "@/components/I18n";
 import { getProgress, subscribe } from "@/lib/storage";
 import type { Word } from "@/types";
 
 export default function FavoritesClient() {
   const allWords = useWords();
+  const t = useT();
   const [items, setItems] = useState<Word[] | null>(null);
 
   useEffect(() => {
@@ -25,19 +27,19 @@ export default function FavoritesClient() {
   }, [allWords]);
 
   if (items === null) {
-    return <div className="mt-8 text-tuji-ink3">載入中…</div>;
+    return <div className="mt-8 text-tuji-ink3">{t("common.loading")}</div>;
   }
 
   if (items.length === 0) {
     return (
       <div className="mt-12 text-center text-tuji-ink3">
         <div className="mb-2 text-5xl">🤍</div>
-        <p>還沒有收藏單字。</p>
+        <p>{t("me.noFav")}</p>
         <Link
           href="/cards"
           className="mt-4 inline-block rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-card"
         >
-          去逛圖鑑
+          {t("fav.browseBtn")}
         </Link>
       </div>
     );

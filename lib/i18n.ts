@@ -174,6 +174,19 @@ const zhHant: Dict = {
   "progress.clearAll": "清除所有進度",
   "progress.clearing": "清除中…",
   "progress.clearConfirm": "確定要清除所有學習進度嗎？（收藏會保留）此操作無法復原。",
+  "me.eyebrow": "個人主頁",
+  "me.learnedShort": "已學",
+  "me.topMastered": "最熟的字",
+  "me.needsWork": "需要加強",
+  "me.goStudy": "去複習 →",
+  "me.noFav": "還沒有收藏單字。",
+  "me.goBrowse": "去逛圖鑑 →",
+  "me.prefs": "學習偏好",
+  "me.edit": "編輯 →",
+  "me.prefsSub": "每日目標、發音口音、介面語言、字級…",
+  "fav.title": "收藏的單字 ❤️",
+  "fav.subtitle": "所有你想複習的單字都在這裡。",
+  "fav.browseBtn": "去逛圖鑑",
 };
 
 const zhHans: Dict = {
@@ -332,6 +345,19 @@ const zhHans: Dict = {
   "progress.clearAll": "清除所有进度",
   "progress.clearing": "清除中…",
   "progress.clearConfirm": "确定要清除所有学习进度吗？（收藏会保留）此操作无法复原。",
+  "me.eyebrow": "个人主页",
+  "me.learnedShort": "已学",
+  "me.topMastered": "最熟的词",
+  "me.needsWork": "需要加强",
+  "me.goStudy": "去复习 →",
+  "me.noFav": "还没有收藏单词。",
+  "me.goBrowse": "去逛图鉴 →",
+  "me.prefs": "学习偏好",
+  "me.edit": "编辑 →",
+  "me.prefsSub": "每日目标、发音口音、界面语言、字号…",
+  "fav.title": "收藏的单词 ❤️",
+  "fav.subtitle": "所有你想复习的单词都在这里。",
+  "fav.browseBtn": "去逛图鉴",
 };
 
 const ja: Dict = {
@@ -490,6 +516,19 @@ const ja: Dict = {
   "progress.clearAll": "すべての進捗を消去",
   "progress.clearing": "消去中…",
   "progress.clearConfirm": "学習進捗をすべて消去しますか？（お気に入りは保持）この操作は元に戻せません。",
+  "me.eyebrow": "マイページ",
+  "me.learnedShort": "学習済み",
+  "me.topMastered": "得意な単語",
+  "me.needsWork": "苦手な単語",
+  "me.goStudy": "復習する →",
+  "me.noFav": "まだお気に入りがありません。",
+  "me.goBrowse": "コレクションを見る →",
+  "me.prefs": "学習設定",
+  "me.edit": "編集 →",
+  "me.prefsSub": "1日の目標・発音・表示言語・文字サイズ…",
+  "fav.title": "お気に入りの単語 ❤️",
+  "fav.subtitle": "復習したい単語がすべてここにあります。",
+  "fav.browseBtn": "コレクションを見る",
 };
 
 const messages: Record<Locale, Dict> = { "zh-Hant": zhHant, "zh-Hans": zhHans, ja };

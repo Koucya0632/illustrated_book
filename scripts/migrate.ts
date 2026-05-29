@@ -476,6 +476,46 @@ const DDL = [
   `CREATE POLICY study_logs_self_insert ON study_logs
      FOR INSERT WITH CHECK (auth.uid() = user_id)`,
 
+  // =====================================================================
+  // Schema v3+ — multi-language overlays.
+  // `category_translations`: per-language names overlaid on top of
+  //   `categories.name` (en) / `categories.name_zh` (zh-Hant). `zh-Hant` is
+  //   the fallback source; `zh-Hans` is runtime-converted via OpenCC so
+  //   nothing is stored here for it by default. Other langs (ja, …) are
+  //   filled in by `npm run translate`.
+  // `word_localized_texts`: per-language overrides for the long-form word
+  //   fields whose base columns are single-language (zh-Hant) on `words`:
+  //   `etymology` and `note`. Reads prefer (field, language) here, then
+  //   fall back to the base column.
+  // Both are append-only overlays; the base zh-Hant columns stay as the
+  // source of truth.
+  // =====================================================================
+  `CREATE TABLE IF NOT EXISTS category_translations (
+     category_id TEXT NOT NULL REFERENCES categories(id) ON DELETE CASCADE,
+     language    TEXT NOT NULL,
+     name        TEXT NOT NULL,
+     PRIMARY KEY (category_id, language)
+   )`,
+  `CREATE INDEX IF NOT EXISTS category_translations_lang_idx
+     ON category_translations(language, category_id)`,
+
+  `CREATE TABLE IF NOT EXISTS word_localized_texts (
+     word_id  TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     field    TEXT NOT NULL CHECK (field IN ('etymology','note')),
+     language TEXT NOT NULL,
+     value    TEXT NOT NULL,
+     PRIMARY KEY (word_id, field, language)
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_localized_texts_lookup_idx
+     ON word_localized_texts(word_id, language)`,
+
+  `ALTER TABLE category_translations  ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE word_localized_texts   ENABLE ROW LEVEL SECURITY`,
+  `DROP POLICY IF EXISTS category_translations_public_read ON category_translations`,
+  `CREATE POLICY category_translations_public_read ON category_translations FOR SELECT USING (true)`,
+  `DROP POLICY IF EXISTS word_localized_texts_public_read ON word_localized_texts`,
+  `CREATE POLICY word_localized_texts_public_read ON word_localized_texts FOR SELECT USING (true)`,
+
 ];
 
 // ---- Phase 3: drop legacy `words` columns ----

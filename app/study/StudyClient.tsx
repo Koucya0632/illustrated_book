@@ -484,7 +484,7 @@ export default function StudyClient() {
                   onClick={() => setPeekId(current.word.id)}
                   className="mt-3 inline-flex items-center gap-1.5 text-xs font-extrabold text-tuji-teal"
                 >
-                  {t("study.seeWordPage")}
+                  {t("study.wordDetail")}
                 </button>
               </div>
 

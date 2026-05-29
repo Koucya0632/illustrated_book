@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { WordTile } from "@/components/tuji/ui";
 import PronunciationButton from "@/components/PronunciationButton";
@@ -116,13 +115,6 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
                 <div className="text-sm text-tuji-ink2">{word.note}</div>
               </div>
             )}
-
-            <Link
-              href={`/word/${word.id}`}
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-extrabold text-tuji-teal"
-            >
-              {t("study.seeWordPage")}
-            </Link>
           </>
         )}
       </div>

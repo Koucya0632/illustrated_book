@@ -9,10 +9,13 @@ import {
   getProfile,
   type ProfileRow,
 } from "./users-db";
+import { DEFAULT_AVATAR, isAvatarPose, type AvatarPose } from "./avatars";
 
 export interface CurrentUser {
   id: string;          // UUID
   username: string;
+  nickname: string | null; // editable display name; null → use username
+  avatar: AvatarPose;
   email: string;
   createdAt: string;
 }
@@ -21,6 +24,8 @@ function toCurrent(p: ProfileRow): CurrentUser {
   return {
     id: p.id,
     username: p.username,
+    nickname: p.nickname,
+    avatar: isAvatarPose(p.avatar) ? p.avatar : DEFAULT_AVATAR,
     email: p.email,
     createdAt: p.created_at,
   };

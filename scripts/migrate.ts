@@ -56,6 +56,10 @@ const DDL = [
      created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
   `CREATE INDEX IF NOT EXISTS profiles_username_lc_idx ON profiles(lower(username))`,
+  // Additive: editable display name (non-unique; NULL falls back to username)
+  // and selectable mascot-pose avatar.
+  `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS nickname TEXT`,
+  `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar   TEXT NOT NULL DEFAULT 'face'`,
 
   // Auto-create a profile when a Supabase auth user signs up.
   `CREATE OR REPLACE FUNCTION public.handle_new_user()

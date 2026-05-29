@@ -49,8 +49,8 @@
 - **i18n 進度**：基礎建設（`lib/i18n.ts` + `useT` + `<html lang>` + 字級 zoom）已就緒，**已翻譯：側欄/導覽、首頁、設定頁、study、單字詳情、cards、progress、me、favorites**（繁中/簡中/日文）。**待翻譯（逐批）**：search、auth、not-found 等其餘畫面字串；各頁 metadata title 仍為繁中；字典內容（簡中/日文釋義）另議。
 - **通知 / 推播**：已從設定移除（無通知基礎建設）。
 - **匯出（CSV / Anki `.apkg`）**：使用者個人單字 / Anki 匯出尚未做（Admin 後台有匯出單字 CSV）。
-- **刪除帳號**：目前點了只跳 alert。
-- **編輯個人資料**：尚未接。
+- ✅ **刪除帳號**：已實作真的永久刪除（設定頁「帳號」分頁，`/api/users/delete-account` → service-role `auth.admin.deleteUser`，CASCADE 清空所有資料，含二次確認）。
+- ✅ **編輯個人資料**：已接 — 設定頁「帳號」分頁可改 `nickname`（顯示名稱，非唯一）與頭像（重用吉祥物 6 姿勢），`/api/users/profile`；ID(`@username` handle) 唯讀可複製。`profiles` 加 `nickname`/`avatar` 欄位。
 
 ### 學習流程細節
 - **記憶撇步自動生成**：目前只在 `word.note` 有值時顯示，沒有自動產生。

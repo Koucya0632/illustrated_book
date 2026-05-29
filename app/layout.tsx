@@ -66,7 +66,12 @@ export default async function RootLayout({
               <TujiShell
                 user={
                   bundle
-                    ? { username: bundle.user.username, email: bundle.user.email }
+                    ? {
+                        username: bundle.user.username,
+                        nickname: bundle.user.nickname,
+                        avatar: bundle.user.avatar,
+                        email: bundle.user.email,
+                      }
                     : null
                 }
               >

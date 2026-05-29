@@ -13,6 +13,8 @@ import { DEFAULT_SETTINGS, normalizeSettings, type UserSettings } from "./settin
 export interface ProfileRow {
   id: string;          // UUID
   username: string;
+  nickname: string | null; // editable display name; NULL → use username
+  avatar: string;          // mascot pose name
   email: string;       // pulled from auth.users (joined)
   created_at: string;
 }
@@ -76,13 +78,28 @@ export async function saveSettings(userId: string, s: UserSettings): Promise<voi
 export async function getProfile(userId: string): Promise<ProfileRow | null> {
   const sql = requireSql();
   const rows = await sql<ProfileRow[]>`
-    SELECT p.id, p.username, u.email, p.created_at
+    SELECT p.id, p.username, p.nickname, p.avatar, u.email, p.created_at
     FROM profiles p
     JOIN auth.users u ON u.id = p.id
     WHERE p.id = ${userId}::uuid
     LIMIT 1
   `;
   return rows[0] ?? null;
+}
+
+// Update the editable profile fields (display name + avatar). nickname is
+// trimmed to NULL when blank so display falls back to the username handle.
+export async function updateProfile(
+  userId: string,
+  fields: { nickname: string | null; avatar: string },
+): Promise<void> {
+  const sql = requireSql();
+  const nickname = fields.nickname && fields.nickname.trim() !== "" ? fields.nickname.trim() : null;
+  await sql`
+    UPDATE profiles
+    SET nickname = ${nickname}, avatar = ${fields.avatar}
+    WHERE id = ${userId}::uuid
+  `;
 }
 
 // ---- favorites ----

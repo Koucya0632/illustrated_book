@@ -12,6 +12,8 @@ export default async function SettingsPage() {
     <SettingsClient
       profile={{
         username: bundle.user.username,
+        nickname: bundle.user.nickname,
+        avatar: bundle.user.avatar,
         email: bundle.user.email,
         joined: new Date(bundle.user.createdAt).toLocaleDateString("zh-TW"),
       }}

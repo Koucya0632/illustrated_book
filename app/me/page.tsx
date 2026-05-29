@@ -48,10 +48,12 @@ export default async function MePage() {
       {/* Profile hero */}
       <div className="relative mb-4 flex flex-col items-center gap-5 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white sm:flex-row">
         <div className="flex h-28 w-28 shrink-0 items-end justify-center overflow-hidden rounded-[28px] bg-tuji-teal">
-          <Mascot pose="cheer" size={116} />
+          <Mascot pose={bundle.user.avatar} size={116} />
         </div>
         <div className="flex-1 text-center sm:text-left">
-          <h1 className="font-display text-3xl font-extrabold tracking-tight">{bundle.user.username}</h1>
+          <h1 className="font-display text-3xl font-extrabold tracking-tight">
+            {bundle.user.nickname?.trim() || bundle.user.username}
+          </h1>
           <p className="mt-1 text-[13px] text-white/70">
             {tr("set.profileSub", {
               email: bundle.user.email,

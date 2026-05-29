@@ -9,9 +9,10 @@ import { useSettings } from "@/components/SettingsProvider";
 import { useT } from "@/components/I18n";
 import { ACCENT_OPTIONS, DAILY_GOAL_MAX, DAILY_GOAL_MIN, type UserSettings } from "@/lib/settings";
 import { LOCALES } from "@/lib/i18n";
+import { AVATAR_POSES, type AvatarPose } from "@/lib/avatars";
 import { categories } from "@/lib/categories";
 
-type SecId = "learn" | "ui" | "data" | "about";
+type SecId = "account" | "learn" | "ui" | "data" | "about";
 
 const SETTINGS_KEYS: (keyof UserSettings)[] = [
   "dailyGoal",
@@ -25,20 +26,36 @@ const SETTINGS_KEYS: (keyof UserSettings)[] = [
 export default function SettingsClient({
   profile,
 }: {
-  profile: { username: string; email: string; joined: string };
+  profile: {
+    username: string;
+    nickname: string | null;
+    avatar: AvatarPose;
+    email: string;
+    joined: string;
+  };
 }) {
   const t = useT();
   const settings = useSettings();
-  const [sec, setSec] = useState<SecId>("learn");
+  const [sec, setSec] = useState<SecId>("account");
   const [draft, setDraft] = useState<UserSettings>(settings);
   const [saving, setSaving] = useState(false);
   useEffect(() => setDraft(settings), [settings]);
+
+  // Account (profile) draft — separate table/API from the settings draft.
+  const [nick, setNick] = useState(profile.nickname ?? "");
+  const [avatarDraft, setAvatarDraft] = useState<AvatarPose>(profile.avatar);
+  const [savingProfile, setSavingProfile] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const dirtyProfile =
+    nick.trim() !== (profile.nickname ?? "") || avatarDraft !== profile.avatar;
 
   const set = <K extends keyof UserSettings>(key: K, value: UserSettings[K]) =>
     setDraft((d) => ({ ...d, [key]: value }));
   const dirty = SETTINGS_KEYS.some((k) => draft[k] !== settings[k]);
 
   const NAV: { id: SecId; l: string }[] = [
+    { id: "account", l: t("set.account") },
     { id: "learn", l: t("tab.learn") },
     { id: "ui", l: t("tab.ui") },
     { id: "data", l: t("tab.data") },
@@ -77,6 +94,47 @@ export default function SettingsClient({
     window.location.href = "/";
   }
 
+  async function saveProfile() {
+    if (!dirtyProfile || savingProfile) return;
+    setSavingProfile(true);
+    try {
+      await fetch("/api/users/profile", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ nickname: nick, avatar: avatarDraft }),
+      });
+    } catch {
+      /* ignore — reload reflects whatever persisted */
+    }
+    window.location.reload();
+  }
+
+  async function copyId() {
+    try {
+      await navigator.clipboard.writeText(profile.username);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      /* clipboard unavailable */
+    }
+  }
+
+  async function deleteAccount() {
+    if (deleting) return;
+    if (!confirm(t("set.deleteConfirm"))) return;
+    setDeleting(true);
+    try {
+      const res = await fetch("/api/users/delete-account", { method: "POST" });
+      if (!res.ok) throw new Error("delete failed");
+      const { createClient } = await import("@/lib/supabase/client");
+      await createClient().auth.signOut();
+      window.location.href = "/";
+    } catch {
+      setDeleting(false);
+      alert(t("set.deleteFailed"));
+    }
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-5 py-6 sm:px-7">
       <div className="mb-4 flex items-center gap-3">
@@ -98,10 +156,10 @@ export default function SettingsClient({
       {/* Profile card */}
       <div className="relative mb-5 flex items-center gap-4 overflow-hidden rounded-[18px] bg-tuji-ink p-4 text-white">
         <div className="flex h-16 w-16 shrink-0 items-end justify-center overflow-hidden rounded-2xl bg-tuji-teal">
-          <Mascot pose="face" size={60} />
+          <Mascot pose={avatarDraft} size={60} />
         </div>
         <div className="min-w-0 flex-1">
-          <div className="text-lg font-extrabold">{profile.username}</div>
+          <div className="text-lg font-extrabold">{nick.trim() || profile.username}</div>
           <div className="truncate text-xs text-white/70">
             {t("set.profileSub", { email: profile.email, joined: profile.joined })}
           </div>
@@ -130,6 +188,101 @@ export default function SettingsClient({
 
         {/* Section content */}
         <div className="min-w-0 flex-1">
+          {sec === "account" && (
+            <section>
+              <h2 className="mb-2.5 text-base font-extrabold tracking-tight text-tuji-ink">
+                {t("set.account")}
+              </h2>
+              <div className="overflow-hidden rounded-[16px] bg-white shadow-soft">
+                {/* User ID — read-only handle + copy */}
+                <div className="flex items-center justify-between gap-4 border-b border-black/5 px-4 py-3.5">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-bold text-tuji-ink">{t("set.userId")}</div>
+                    <div className="mt-0.5 truncate font-mono text-[11px] text-tuji-ink3">
+                      @{profile.username}
+                    </div>
+                  </div>
+                  <button
+                    onClick={copyId}
+                    className="shrink-0 rounded-lg bg-tuji-tealS px-3.5 py-1.5 text-xs font-extrabold text-tuji-teal"
+                  >
+                    {copied ? t("set.copied") : t("set.copy")}
+                  </button>
+                </div>
+
+                {/* Nickname */}
+                <div className="flex items-center justify-between gap-4 border-b border-black/5 px-4 py-3.5">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-bold text-tuji-ink">{t("set.nickname")}</div>
+                    <div className="mt-0.5 text-[11px] text-tuji-ink3">{t("set.nicknameDesc")}</div>
+                  </div>
+                  <input
+                    type="text"
+                    maxLength={20}
+                    value={nick}
+                    onChange={(e) => setNick(e.target.value)}
+                    placeholder={t("set.nicknamePlaceholder")}
+                    className="w-36 shrink-0 rounded-lg bg-tuji-bg px-3 py-1.5 text-xs font-bold text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
+                  />
+                </div>
+
+                {/* Avatar picker */}
+                <div className="px-4 py-3.5">
+                  <div className="text-sm font-bold text-tuji-ink">{t("set.avatar")}</div>
+                  <div className="mt-3 flex flex-wrap gap-2.5">
+                    {AVATAR_POSES.map((p) => {
+                      const on = p === avatarDraft;
+                      return (
+                        <button
+                          key={p}
+                          onClick={() => setAvatarDraft(p)}
+                          aria-pressed={on}
+                          className={`flex h-14 w-14 items-end justify-center overflow-hidden rounded-2xl transition ${
+                            on
+                              ? "bg-tuji-teal ring-2 ring-tuji-teal ring-offset-2 ring-offset-white"
+                              : "bg-tuji-bg hover:bg-tuji-tealS"
+                          }`}
+                        >
+                          <Mascot pose={p} size={52} />
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Profile save */}
+              <div className="mt-5 flex items-center gap-3">
+                <button
+                  onClick={saveProfile}
+                  disabled={!dirtyProfile || savingProfile}
+                  className="rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
+                >
+                  {savingProfile ? t("set.saving") : t("set.save")}
+                </button>
+                {dirtyProfile && !savingProfile && (
+                  <span className="text-xs font-semibold text-tuji-coral">{t("set.unsaved")}</span>
+                )}
+              </div>
+
+              {/* Account actions */}
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                <button
+                  onClick={logout}
+                  className="rounded-2xl bg-tuji-coral px-6 py-3 text-sm font-extrabold text-white shadow-soft"
+                >
+                  {t("set.logout")}
+                </button>
+                <button
+                  onClick={deleteAccount}
+                  disabled={deleting}
+                  className="rounded-2xl border border-tuji-ink/15 px-6 py-3 text-sm font-extrabold text-tuji-ink3 disabled:opacity-50"
+                >
+                  {deleting ? t("set.deleting") : t("set.deleteAccount")}
+                </button>
+              </div>
+            </section>
+          )}
           {sec === "learn" && (
             <SetCard title={t("tab.learn")}>
               <NumberRow
@@ -210,31 +363,21 @@ export default function SettingsClient({
             </SetCard>
           )}
 
-          {/* Save bar */}
-          <div className="mt-5 flex items-center gap-3">
-            <button
-              onClick={save}
-              disabled={!dirty || saving}
-              className="rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
-            >
-              {saving ? t("set.saving") : t("set.save")}
-            </button>
-            {dirty && !saving && (
-              <span className="text-xs font-semibold text-tuji-coral">{t("set.unsaved")}</span>
-            )}
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-2.5">
-            <button onClick={logout} className="rounded-2xl bg-tuji-coral px-6 py-3 text-sm font-extrabold text-white shadow-soft">
-              {t("set.logout")}
-            </button>
-            <button
-              onClick={() => alert(t("set.deleteNotImpl"))}
-              className="rounded-2xl border border-tuji-ink/15 px-6 py-3 text-sm font-extrabold text-tuji-ink3"
-            >
-              {t("set.deleteAccount")}
-            </button>
-          </div>
+          {/* Save bar — settings prefs only; the account tab has its own save */}
+          {sec !== "account" && (
+            <div className="mt-5 flex items-center gap-3">
+              <button
+                onClick={save}
+                disabled={!dirty || saving}
+                className="rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
+              >
+                {saving ? t("set.saving") : t("set.save")}
+              </button>
+              {dirty && !saving && (
+                <span className="text-xs font-semibold text-tuji-coral">{t("set.unsaved")}</span>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

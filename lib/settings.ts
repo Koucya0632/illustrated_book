@@ -1,11 +1,16 @@
 // Per-user app settings. Server + client safe (no hooks, no Node imports).
 
+export type UiLang = "zh-Hant" | "zh-Hans" | "ja";
+export type FontSize = "sm" | "md" | "lg";
+
 export interface UserSettings {
   dailyGoal: number;
   accent: "us" | "uk";
   showZh: boolean;
   // Study theme: "all" = no filter, otherwise a category id (words.category).
   studyCategory: string;
+  uiLang: UiLang;
+  fontSize: FontSize;
 }
 
 export const DEFAULT_SETTINGS: UserSettings = {
@@ -13,6 +18,8 @@ export const DEFAULT_SETTINGS: UserSettings = {
   accent: "us",
   showZh: true,
   studyCategory: "all",
+  uiLang: "zh-Hant",
+  fontSize: "md",
 };
 
 export const DAILY_GOAL_MIN = 1;
@@ -39,6 +46,9 @@ function normalizeStudyCategory(v: unknown): string {
   return typeof v === "string" && /^[a-z][a-z-]{0,30}$/.test(v) ? v : "all";
 }
 
+const UI_LANGS: UiLang[] = ["zh-Hant", "zh-Hans", "ja"];
+const FONT_SIZES: FontSize[] = ["sm", "md", "lg"];
+
 // Coerce arbitrary input into a valid, complete settings object.
 export function normalizeSettings(raw: Partial<UserSettings> | null | undefined): UserSettings {
   return {
@@ -46,5 +56,7 @@ export function normalizeSettings(raw: Partial<UserSettings> | null | undefined)
     accent: raw?.accent === "uk" ? "uk" : "us",
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
     studyCategory: normalizeStudyCategory(raw?.studyCategory),
+    uiLang: UI_LANGS.includes(raw?.uiLang as UiLang) ? (raw!.uiLang as UiLang) : "zh-Hant",
+    fontSize: FONT_SIZES.includes(raw?.fontSize as FontSize) ? (raw!.fontSize as FontSize) : "md",
   };
 }

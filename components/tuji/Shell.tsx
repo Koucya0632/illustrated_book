@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Mascot from "./Mascot";
+import { useT } from "@/components/I18n";
 
 interface NavItem {
   id: string;
-  label: string;
+  labelKey: string;
   href: string;
   icon: string;
   // pathname prefixes that should light this item up
@@ -14,10 +15,10 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
-  { id: "today", label: "今天", href: "/", icon: "☀️", match: (p) => p === "/" },
+  { id: "today", labelKey: "nav.today", href: "/", icon: "☀️", match: (p) => p === "/" },
   {
     id: "cards",
-    label: "單字庫",
+    labelKey: "nav.cards",
     href: "/cards",
     icon: "📖",
     match: (p) =>
@@ -26,11 +27,11 @@ const NAV: NavItem[] = [
       p.startsWith("/category") ||
       p.startsWith("/search"),
   },
-  { id: "play", label: "學習", href: "/study", icon: "✏️", match: (p) => p.startsWith("/study") },
-  { id: "dash", label: "進度", href: "/progress", icon: "📊", match: (p) => p.startsWith("/progress") },
+  { id: "play", labelKey: "nav.study", href: "/study", icon: "✏️", match: (p) => p.startsWith("/study") },
+  { id: "dash", labelKey: "nav.progress", href: "/progress", icon: "📊", match: (p) => p.startsWith("/progress") },
   {
     id: "me",
-    label: "我",
+    labelKey: "nav.me",
     href: "/me",
     icon: "👤",
     match: (p) => p.startsWith("/me") || p.startsWith("/settings") || p.startsWith("/favorites"),
@@ -49,6 +50,7 @@ export default function TujiShell({
   children: React.ReactNode;
 }) {
   const pathname = usePathname() || "/";
+  const t = useT();
 
   if (AUTH_PREFIXES.some((p) => pathname.startsWith(p))) {
     return (
@@ -95,7 +97,7 @@ export default function TujiShell({
                 }`}
               >
                 <span className="w-4 text-center">{it.icon}</span>
-                <span className="flex-1">{it.label}</span>
+                <span className="flex-1">{t(it.labelKey)}</span>
               </Link>
             );
           })}
@@ -104,15 +106,14 @@ export default function TujiShell({
         <div className="mt-auto">
           {user ? (
             <Link
-              href="/me"
-              className="block rounded-2xl bg-white/[0.06] p-3.5 transition hover:bg-white/10"
+              href="/settings"
+              className="flex items-center gap-2 rounded-2xl bg-white/[0.06] p-3.5 transition hover:bg-white/10"
             >
-              <div className="flex items-center gap-2">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-tuji-tealS text-xs font-extrabold text-tuji-teal">
-                  {user.username.slice(0, 1).toUpperCase()}
-                </span>
-                <span className="truncate text-xs font-extrabold">{user.username}</span>
-              </div>
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tuji-tealS text-xs font-extrabold text-tuji-teal">
+                {user.username.slice(0, 1).toUpperCase()}
+              </span>
+              <span className="min-w-0 flex-1 truncate text-xs font-extrabold">{user.username}</span>
+              <span className="shrink-0 text-sm text-white/70" aria-hidden="true">⚙</span>
             </Link>
           ) : (
             <div className="flex flex-col gap-2 rounded-2xl bg-white/[0.06] p-3.5">
@@ -120,13 +121,13 @@ export default function TujiShell({
                 href="/signin"
                 className="rounded-xl bg-tuji-yellow py-2 text-center text-[13px] font-extrabold text-tuji-ink"
               >
-                登入
+                {t("nav.login")}
               </Link>
               <Link
                 href="/register"
                 className="rounded-xl py-2 text-center text-[13px] font-extrabold text-white/85 hover:bg-white/5"
               >
-                註冊新帳號
+                {t("nav.register")}
               </Link>
             </div>
           )}
@@ -146,7 +147,7 @@ export default function TujiShell({
           </Link>
           <Link
             href="/search"
-            aria-label="搜尋"
+            aria-label={t("common.search")}
             className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-tuji-ink shadow-soft"
           >
             🔍
@@ -162,7 +163,7 @@ export default function TujiShell({
             const center = it.id === "play";
             if (center) {
               return (
-                <Link key={it.id} href={it.href} className="flex justify-start" aria-label={it.label}>
+                <Link key={it.id} href={it.href} className="flex justify-start" aria-label={t(it.labelKey)}>
                   <span className="mx-auto -mt-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-tuji-teal shadow-[0_6px_18px_rgba(0,111,114,0.35)]">
                     <Mascot pose="face" size={40} />
                   </span>
@@ -174,11 +175,11 @@ export default function TujiShell({
                 key={it.id}
                 href={it.href}
                 className="flex flex-col items-center gap-0.5 pb-5"
-                aria-label={it.label}
+                aria-label={t(it.labelKey)}
               >
                 <span className={`text-lg ${on ? "" : "opacity-40 grayscale"}`}>{it.icon}</span>
                 <span className={`text-[10px] font-bold ${on ? "text-tuji-teal" : "text-tuji-ink4"}`}>
-                  {it.label}
+                  {t(it.labelKey)}
                 </span>
               </Link>
             );

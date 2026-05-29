@@ -6,15 +6,16 @@ import { getAllWords } from "@/lib/data";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getStudyStreak, getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
+import { t, localeTag } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
 
-function greeting(hour: number): string {
-  if (hour < 5) return "夜深了";
-  if (hour < 11) return "早安";
-  if (hour < 14) return "午安";
-  if (hour < 18) return "下午好";
-  return "晚安";
+function greetingKey(hour: number): string {
+  if (hour < 5) return "greeting.lateNight";
+  if (hour < 11) return "greeting.morning";
+  if (hour < 14) return "greeting.noon";
+  if (hour < 18) return "greeting.afternoon";
+  return "greeting.evening";
 }
 
 export default async function HomePage() {
@@ -29,22 +30,21 @@ export default async function HomePage() {
   // task appears.
   const hasTheme = !!bundle && settings.studyCategory !== "all";
   const themeName = categories.find((c) => c.id === settings.studyCategory)?.nameZh ?? null;
+  const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
 
   const tz = "Asia/Taipei";
   const now = new Date();
   const hour = Number(
     new Intl.DateTimeFormat("en-US", { hour: "numeric", hour12: false, timeZone: tz }).format(now),
   );
-  const dateLabel = new Intl.DateTimeFormat("en-US", {
+  const dateLabel = new Intl.DateTimeFormat(localeTag(settings.uiLang), {
     weekday: "short",
     month: "short",
     day: "numeric",
     timeZone: tz,
-  })
-    .format(now)
-    .toUpperCase();
+  }).format(now);
 
-  const name = bundle?.user.username ?? "同學";
+  const name = bundle?.user.username ?? tr("home.guestName");
   const learnedCount = bundle?.learned.length ?? 0;
 
   return (
@@ -56,7 +56,7 @@ export default async function HomePage() {
             {dateLabel}
           </div>
           <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">
-            {greeting(hour)}，{name} 👋
+            {tr(greetingKey(hour))}，{name} 👋
           </h1>
         </div>
         <div className="hidden items-center gap-2.5 sm:flex">
@@ -64,7 +64,7 @@ export default async function HomePage() {
             href="/search"
             className="rounded-xl bg-white px-4 py-2.5 text-[13px] font-bold text-tuji-ink shadow-soft"
           >
-            🔍 搜尋
+            🔍 {tr("common.search")}
           </Link>
           <Link
             href="/settings"
@@ -84,20 +84,20 @@ export default async function HomePage() {
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
-                  今日任務
+                  {tr("home.todayTask")}
                 </span>
                 <Link
                   href="/settings"
                   className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-extrabold text-white transition hover:bg-white/25"
                 >
-                  {themeName} · 更換
+                  {tr("home.changeTheme", { theme: themeName ?? "" })}
                 </Link>
               </div>
               <div className="mt-1.5 flex items-baseline gap-2.5">
                 <span className="font-display text-5xl font-extrabold leading-none tracking-tight sm:text-6xl">
                   {goal}
                 </span>
-                <span className="text-sm text-white/85">個單字 · 約 {goalMinutes} 分鐘</span>
+                <span className="text-sm text-white/85">{tr("home.wordsAboutMin", { minutes: goalMinutes })}</span>
               </div>
               <div className="mt-4 flex gap-1">
                 {Array.from({ length: goalDashes }).map((_, i) => (
@@ -110,7 +110,7 @@ export default async function HomePage() {
                   className="tuji-press inline-block rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold tracking-tight text-tuji-ink"
                   style={{ ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
                 >
-                  出發吧！ →
+                  {tr("home.go")}
                 </Link>
               </div>
             </div>
@@ -126,19 +126,19 @@ export default async function HomePage() {
             </div>
             <div className="flex-1">
               <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/80">
-                今日任務
+                {tr("home.todayTask")}
               </div>
               <div className="mt-2 text-2xl font-extrabold tracking-tight">
-                {bundle ? "請先選擇學習主題" : "登入並選擇學習主題"}
+                {bundle ? tr("home.pickThemeTitle") : tr("home.loginPickThemeTitle")}
               </div>
-              <p className="mt-1.5 text-sm text-white/85">選一個主題，今日任務就會出現。</p>
+              <p className="mt-1.5 text-sm text-white/85">{tr("home.pickThemeSub")}</p>
               <div className="mt-4">
                 <Link
                   href={bundle ? "/settings" : "/signin?next=/settings"}
                   className="tuji-press inline-block rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold tracking-tight text-tuji-ink"
                   style={{ ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
                 >
-                  {bundle ? "去選主題 →" : "登入 →"}
+                  {bundle ? tr("home.goPickTheme") : tr("home.login")}
                 </Link>
               </div>
             </div>
@@ -153,13 +153,13 @@ export default async function HomePage() {
             className="relative overflow-hidden rounded-[24px] bg-tuji-yellow p-5 transition hover:brightness-[0.98]"
           >
             <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
-              連續天數
+              {tr("home.streak")}
             </div>
             <div className="mt-1.5 font-display text-4xl font-extrabold leading-none tracking-tight text-tuji-ink">
               {streak?.current ?? 0}
             </div>
             <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
-              {streak && streak.longest > 0 ? `最長 ${streak.longest} 天` : "開始累積連續天數"}
+              {streak && streak.longest > 0 ? tr("home.longestDays", { n: streak.longest }) : tr("home.startStreak")}
             </div>
           </Link>
 
@@ -169,13 +169,13 @@ export default async function HomePage() {
             className="relative overflow-hidden rounded-[24px] bg-tuji-pink p-5 transition hover:brightness-[0.98]"
           >
             <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink">
-              {bundle ? "已學單字" : "收錄單字"}
+              {bundle ? tr("home.learnedWords") : tr("home.collectedWords")}
             </div>
             <div className="mt-1.5 font-display text-4xl font-extrabold leading-none tracking-tight text-tuji-ink">
               {bundle ? learnedCount : words.length}
             </div>
             <div className="mt-1.5 text-xs font-bold text-tuji-ink/75">
-              {bundle ? `共 ${words.length} 個可學` : `${categories.length} 個主題`}
+              {bundle ? tr("home.ofTotalLearnable", { n: words.length }) : tr("home.numThemes", { n: categories.length })}
             </div>
           </Link>
         </div>
@@ -183,7 +183,7 @@ export default async function HomePage() {
 
       {/* Explore categories */}
       <section>
-        <h2 className="mb-3 text-lg font-extrabold tracking-tight text-tuji-ink">探索主題</h2>
+        <h2 className="mb-3 text-lg font-extrabold tracking-tight text-tuji-ink">{tr("home.exploreThemes")}</h2>
         <div className="flex flex-wrap gap-2.5">
           {categories.map((c) => {
             const count = words.filter((w) => w.category === c.id).length;

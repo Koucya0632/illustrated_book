@@ -1,21 +1,25 @@
 "use client";
 
-// 學習 settings (每日目標 / 發音口音 / 顯示中文翻譯) persist to the account via
-// useSettingsActions().update. 介面/資料 rows are still preview-only.
+// Draft model: edits change a local draft; nothing takes effect until "保存"
+// (which persists then reloads so server-rendered language/scale apply too).
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Mascot from "@/components/tuji/Mascot";
-import { useSettings, useSettingsActions } from "@/components/SettingsProvider";
-import { ACCENT_OPTIONS, DAILY_GOAL_MAX, DAILY_GOAL_MIN } from "@/lib/settings";
+import { useSettings } from "@/components/SettingsProvider";
+import { useT } from "@/components/I18n";
+import { ACCENT_OPTIONS, DAILY_GOAL_MAX, DAILY_GOAL_MIN, type UserSettings } from "@/lib/settings";
+import { LOCALES } from "@/lib/i18n";
 import { categories } from "@/lib/categories";
 
 type SecId = "learn" | "ui" | "data" | "about";
 
-const NAV: { id: SecId; l: string }[] = [
-  { id: "learn", l: "學習" },
-  { id: "ui", l: "介面" },
-  { id: "data", l: "資料" },
-  { id: "about", l: "關於" },
+const SETTINGS_KEYS: (keyof UserSettings)[] = [
+  "dailyGoal",
+  "accent",
+  "showZh",
+  "studyCategory",
+  "uiLang",
+  "fontSize",
 ];
 
 export default function SettingsClient({
@@ -23,9 +27,49 @@ export default function SettingsClient({
 }: {
   profile: { username: string; email: string; joined: string };
 }) {
-  const [sec, setSec] = useState<SecId>("learn");
+  const t = useT();
   const settings = useSettings();
-  const { update } = useSettingsActions();
+  const [sec, setSec] = useState<SecId>("learn");
+  const [draft, setDraft] = useState<UserSettings>(settings);
+  const [saving, setSaving] = useState(false);
+  useEffect(() => setDraft(settings), [settings]);
+
+  const set = <K extends keyof UserSettings>(key: K, value: UserSettings[K]) =>
+    setDraft((d) => ({ ...d, [key]: value }));
+  const dirty = SETTINGS_KEYS.some((k) => draft[k] !== settings[k]);
+
+  const NAV: { id: SecId; l: string }[] = [
+    { id: "learn", l: t("tab.learn") },
+    { id: "ui", l: t("tab.ui") },
+    { id: "data", l: t("tab.data") },
+    { id: "about", l: t("tab.about") },
+  ];
+
+  async function save() {
+    if (!dirty || saving) return;
+    setSaving(true);
+    try {
+      await fetch("/api/users/settings", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(draft),
+      });
+    } catch {
+      /* ignore — reload will reflect whatever persisted */
+    }
+    window.location.reload();
+  }
+
+  function clearCache() {
+    if (!confirm(t("set.clearConfirm"))) return;
+    try {
+      localStorage.removeItem("eepd-progress-v1");
+      localStorage.removeItem("eepd-session-id");
+    } catch {
+      /* ignore */
+    }
+    window.location.reload();
+  }
 
   async function logout() {
     const { createClient } = await import("@/lib/supabase/client");
@@ -38,14 +82,16 @@ export default function SettingsClient({
       <div className="mb-4 flex items-center gap-3">
         <Link
           href="/me"
-          aria-label="返回"
+          aria-label={t("common.back")}
           className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-lg text-tuji-ink shadow-soft"
         >
           ←
         </Link>
         <div>
-          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">個人</div>
-          <h1 className="text-2xl font-extrabold tracking-tight text-tuji-ink">設定</h1>
+          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
+            {t("set.personal")}
+          </div>
+          <h1 className="text-2xl font-extrabold tracking-tight text-tuji-ink">{t("set.title")}</h1>
         </div>
       </div>
 
@@ -57,13 +103,13 @@ export default function SettingsClient({
         <div className="min-w-0 flex-1">
           <div className="text-lg font-extrabold">{profile.username}</div>
           <div className="truncate text-xs text-white/70">
-            {profile.email} · 加入於 {profile.joined}
+            {t("set.profileSub", { email: profile.email, joined: profile.joined })}
           </div>
         </div>
       </div>
 
       <div className="mb-4 rounded-xl bg-tuji-yellow/30 px-4 py-2.5 text-xs font-semibold text-tuji-ink2">
-        學習設定會儲存到你的帳號；介面 / 資料 仍為預覽。
+        {t("set.banner")}
       </div>
 
       <div className="flex flex-col gap-5 sm:flex-row">
@@ -85,69 +131,108 @@ export default function SettingsClient({
         {/* Section content */}
         <div className="min-w-0 flex-1">
           {sec === "learn" && (
-            <SetCard title="學習">
+            <SetCard title={t("tab.learn")}>
               <NumberRow
-                label="每日目標"
-                desc={`每天要複習的單字量（${DAILY_GOAL_MIN}–${DAILY_GOAL_MAX}）`}
-                value={settings.dailyGoal}
+                label={t("set.dailyGoal")}
+                desc={t("set.dailyGoalDesc", { min: DAILY_GOAL_MIN, max: DAILY_GOAL_MAX })}
+                unit={t("set.unitWords")}
+                value={draft.dailyGoal}
                 min={DAILY_GOAL_MIN}
                 max={DAILY_GOAL_MAX}
-                onCommit={(n) => update({ dailyGoal: n })}
+                onChange={(n) => set("dailyGoal", n)}
               />
               <SetRow
-                label="發音口音"
-                options={ACCENT_OPTIONS.map((a) => ({ value: a.value, label: a.label }))}
-                current={settings.accent}
-                onSelect={(v) => update({ accent: v as "us" | "uk" })}
-              />
-              <SetRow
-                label="學習主題"
-                desc="選一個主題，主頁今日任務才會出現"
+                label={t("set.accent")}
                 options={[
-                  { value: "all", label: "（未選擇）" },
+                  { value: "us", label: t("set.accentUS") },
+                  { value: "uk", label: t("set.accentUK") },
+                ]}
+                current={draft.accent}
+                onSelect={(v) => set("accent", v as UserSettings["accent"])}
+              />
+              <SetRow
+                label={t("set.studyTheme")}
+                desc={t("set.studyThemeDesc")}
+                options={[
+                  { value: "all", label: t("set.notSelected") },
                   ...categories.map((c) => ({ value: c.id, label: c.nameZh })),
                 ]}
-                current={settings.studyCategory}
-                onSelect={(v) => update({ studyCategory: v })}
+                current={draft.studyCategory}
+                onSelect={(v) => set("studyCategory", v)}
               />
               <SetRow
-                label="顯示中文翻譯"
-                desc="瀏覽與複習時是否顯示中文"
-                toggle={settings.showZh}
-                onToggle={() => update({ showZh: !settings.showZh })}
+                label={t("set.showZh")}
+                desc={t("set.showZhDesc")}
+                toggle={draft.showZh}
+                onToggle={() => set("showZh", !draft.showZh)}
                 last
               />
             </SetCard>
           )}
           {sec === "ui" && (
-            <SetCard title="介面">
-              <SetRow label="介面語言" value="繁體中文" type="select" />
-              <SetRow label="字級" value="標準" type="select" last />
+            <SetCard title={t("tab.ui")}>
+              <SetRow
+                label={t("set.uiLang")}
+                options={LOCALES.map((l) => ({ value: l.value, label: l.label }))}
+                current={draft.uiLang}
+                onSelect={(v) => set("uiLang", v as UserSettings["uiLang"])}
+              />
+              <SetRow
+                label={t("set.fontSize")}
+                options={[
+                  { value: "sm", label: t("set.fontSm") },
+                  { value: "md", label: t("set.fontMd") },
+                  { value: "lg", label: t("set.fontLg") },
+                ]}
+                current={draft.fontSize}
+                onSelect={(v) => set("fontSize", v as UserSettings["fontSize"])}
+                last
+              />
             </SetCard>
           )}
           {sec === "data" && (
-            <SetCard title="資料">
-              <SetRow label="清除快取" desc="目前佔用 142 MB" value="清除" type="button" last />
+            <SetCard title={t("tab.data")}>
+              <SetRow
+                label={t("set.clearCache")}
+                desc={t("set.clearCacheDesc")}
+                buttonLabel={t("set.clearBtn")}
+                onButtonClick={clearCache}
+                last
+              />
             </SetCard>
           )}
           {sec === "about" && (
-            <SetCard title="關於">
-              <SetRow label="版本" value="1.4.0 (2026)" />
-              <SetRow label="使用條款" type="chevron" />
-              <SetRow label="隱私政策" type="chevron" />
-              <SetRow label="聯絡我們" value="hello@tuji.app" last />
+            <SetCard title={t("tab.about")}>
+              <SetRow label={t("set.version")} value="1.4.0 (2026)" />
+              <SetRow label={t("set.terms")} type="chevron" />
+              <SetRow label={t("set.privacy")} type="chevron" />
+              <SetRow label={t("set.contact")} value="hello@tuji.app" last />
             </SetCard>
           )}
 
+          {/* Save bar */}
+          <div className="mt-5 flex items-center gap-3">
+            <button
+              onClick={save}
+              disabled={!dirty || saving}
+              className="rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
+            >
+              {saving ? t("set.saving") : t("set.save")}
+            </button>
+            {dirty && !saving && (
+              <span className="text-xs font-semibold text-tuji-coral">{t("set.unsaved")}</span>
+            )}
+          </div>
+
           <div className="mt-5 flex flex-wrap gap-2.5">
             <button onClick={logout} className="rounded-2xl bg-tuji-coral px-6 py-3 text-sm font-extrabold text-white shadow-soft">
-              登出
+              {t("set.logout")}
             </button>
             <button
-              onClick={() => alert("刪除帳號功能尚未實作（見 TUJI_TODO.md）。")}
+              onClick={() => alert(t("set.deleteNotImpl"))}
               className="rounded-2xl border border-tuji-ink/15 px-6 py-3 text-sm font-extrabold text-tuji-ink3"
             >
-              刪除帳號
+              {t("set.deleteAccount")}
             </button>
           </div>
         </div>
@@ -159,28 +244,30 @@ export default function SettingsClient({
 function NumberRow({
   label,
   desc,
+  unit,
   value,
   min,
   max,
-  onCommit,
+  onChange,
   last,
 }: {
   label: string;
   desc?: string;
+  unit: string;
   value: number;
   min: number;
   max: number;
-  onCommit: (n: number) => void;
+  onChange: (n: number) => void;
   last?: boolean;
 }) {
-  const [draft, setDraft] = useState(String(value));
-  useEffect(() => setDraft(String(value)), [value]);
+  const [text, setText] = useState(String(value));
+  useEffect(() => setText(String(value)), [value]);
 
   const commit = () => {
-    const parsed = Math.round(Number(draft));
+    const parsed = Math.round(Number(text));
     const clamped = Number.isFinite(parsed) ? Math.min(max, Math.max(min, parsed)) : value;
-    setDraft(String(clamped));
-    if (clamped !== value) onCommit(clamped);
+    setText(String(clamped));
+    if (clamped !== value) onChange(clamped);
   };
 
   return (
@@ -195,15 +282,15 @@ function NumberRow({
           inputMode="numeric"
           min={min}
           max={max}
-          value={draft}
-          onChange={(e) => setDraft(e.target.value)}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
           onBlur={commit}
           onKeyDown={(e) => {
             if (e.key === "Enter") e.currentTarget.blur();
           }}
           className="w-16 rounded-lg bg-tuji-bg px-3 py-1.5 text-right text-xs font-bold text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
         />
-        <span className="text-xs font-bold text-tuji-ink3">個字</span>
+        <span className="text-xs font-bold text-tuji-ink3">{unit}</span>
       </div>
     </div>
   );
@@ -228,22 +315,26 @@ function SetRow({
   options,
   current,
   onSelect,
+  buttonLabel,
+  onButtonClick,
   last,
 }: {
   label: string;
   desc?: string;
   value?: string;
-  type?: "value" | "select" | "button" | "chevron";
+  type?: "value" | "chevron";
   toggle?: boolean;
   onToggle?: () => void;
-  // functional native select
   options?: { value: string; label: string }[];
   current?: string;
   onSelect?: (value: string) => void;
+  buttonLabel?: string;
+  onButtonClick?: () => void;
   last?: boolean;
 }) {
   const isToggle = toggle !== undefined;
-  const isFunctionalSelect = !!options && !!onSelect;
+  const isSelect = !!options && !!onSelect;
+  const isButton = !!buttonLabel && !!onButtonClick;
   return (
     <div className={`flex items-center justify-between gap-4 px-4 py-3.5 ${last ? "" : "border-b border-black/5"}`}>
       <div className="min-w-0 flex-1">
@@ -262,7 +353,7 @@ function SetRow({
             style={{ left: toggle ? 22 : 2 }}
           />
         </button>
-      ) : isFunctionalSelect ? (
+      ) : isSelect ? (
         <select
           value={current}
           onChange={(e) => onSelect!(e.target.value)}
@@ -274,10 +365,13 @@ function SetRow({
             </option>
           ))}
         </select>
-      ) : type === "select" ? (
-        <span className="shrink-0 rounded-lg bg-tuji-bg px-3 py-1.5 text-xs font-bold text-tuji-ink">{value} ▾</span>
-      ) : type === "button" ? (
-        <span className="shrink-0 rounded-lg bg-tuji-tealS px-3.5 py-1.5 text-xs font-extrabold text-tuji-teal">{value}</span>
+      ) : isButton ? (
+        <button
+          onClick={onButtonClick}
+          className="shrink-0 rounded-lg bg-tuji-tealS px-3.5 py-1.5 text-xs font-extrabold text-tuji-teal"
+        >
+          {buttonLabel}
+        </button>
       ) : type === "chevron" ? (
         <span className="shrink-0 text-lg text-tuji-ink4">›</span>
       ) : (

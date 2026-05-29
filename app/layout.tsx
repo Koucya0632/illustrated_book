@@ -5,6 +5,7 @@ import TujiShell from "@/components/tuji/Shell";
 import { WordsProvider } from "@/components/WordsProvider";
 import { UserProvider } from "@/components/UserProvider";
 import { SettingsProvider } from "@/components/SettingsProvider";
+import AppScale from "@/components/AppScale";
 import HydrateUserState from "@/components/HydrateUserState";
 import { getAllWords } from "@/lib/data";
 import { getCurrentUserBundle } from "@/lib/current-user";
@@ -48,13 +49,14 @@ export default async function RootLayout({
   const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
   return (
     <html
-      lang="zh-Hant"
+      lang={settings.uiLang}
       className={`${jakarta.variable} ${notoTC.variable} ${jetbrains.variable}`}
     >
       <body className="min-h-screen bg-tuji-bg text-tuji-ink">
         <WordsProvider words={words}>
           <UserProvider user={bundle?.user ?? null}>
             <SettingsProvider initial={settings} loggedIn={!!bundle}>
+              <AppScale />
               {bundle && (
                 <HydrateUserState
                   favorites={bundle.favorites}

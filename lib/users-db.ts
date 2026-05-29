@@ -30,9 +30,16 @@ export async function getSettings(userId: string): Promise<UserSettings> {
   if (!sql) return DEFAULT_SETTINGS;
   try {
     const rows = await sql<
-      { daily_goal: number; accent: string; show_zh: boolean; study_category: string }[]
+      {
+        daily_goal: number;
+        accent: string;
+        show_zh: boolean;
+        study_category: string;
+        ui_lang: string;
+        font_size: string;
+      }[]
     >`
-      SELECT daily_goal, accent, show_zh, study_category
+      SELECT daily_goal, accent, show_zh, study_category, ui_lang, font_size
       FROM user_settings WHERE user_id = ${userId}::uuid LIMIT 1
     `;
     const r = rows[0];
@@ -42,6 +49,8 @@ export async function getSettings(userId: string): Promise<UserSettings> {
       accent: r.accent as UserSettings["accent"],
       showZh: r.show_zh,
       studyCategory: r.study_category,
+      uiLang: r.ui_lang as UserSettings["uiLang"],
+      fontSize: r.font_size as UserSettings["fontSize"],
     });
   } catch {
     return DEFAULT_SETTINGS;
@@ -51,13 +60,15 @@ export async function getSettings(userId: string): Promise<UserSettings> {
 export async function saveSettings(userId: string, s: UserSettings): Promise<void> {
   const sql = requireSql();
   await sql`
-    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_category, updated_at)
-    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategory}, now())
+    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_category, ui_lang, font_size, updated_at)
+    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategory}, ${s.uiLang}, ${s.fontSize}, now())
     ON CONFLICT (user_id) DO UPDATE
       SET daily_goal     = EXCLUDED.daily_goal,
           accent         = EXCLUDED.accent,
           show_zh        = EXCLUDED.show_zh,
           study_category = EXCLUDED.study_category,
+          ui_lang        = EXCLUDED.ui_lang,
+          font_size      = EXCLUDED.font_size,
           updated_at     = now()
   `;
 }

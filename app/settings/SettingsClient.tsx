@@ -43,7 +43,7 @@ export default function SettingsClient({
 }) {
   const t = useT();
   const settings = useSettings();
-  const [sec, setSec] = useState<SecId>("account");
+  const [sec, setSec] = useState<SecId>("learn");
   const [draft, setDraft] = useState<UserSettings>(settings);
   const [saving, setSaving] = useState(false);
   useEffect(() => setDraft(settings), [settings]);
@@ -74,8 +74,8 @@ export default function SettingsClient({
   });
 
   const NAV: { id: SecId; l: string }[] = [
-    { id: "account", l: t("set.account") },
     { id: "learn", l: t("tab.learn") },
+    { id: "account", l: t("set.account") },
     { id: "ui", l: t("tab.ui") },
     { id: "data", l: t("tab.data") },
     { id: "about", l: t("tab.about") },
@@ -185,10 +185,6 @@ export default function SettingsClient({
         </div>
       </div>
 
-      <div className="mb-4 rounded-xl bg-tuji-yellow/30 px-4 py-2.5 text-xs font-semibold text-tuji-ink2">
-        {t("set.banner")}
-      </div>
-
       <div className="flex flex-col gap-5 sm:flex-row">
         {/* Sub-nav */}
         <aside className="no-scrollbar -mx-5 flex gap-2 overflow-x-auto px-5 sm:mx-0 sm:w-44 sm:shrink-0 sm:flex-col sm:px-0">
@@ -279,9 +275,6 @@ export default function SettingsClient({
                 >
                   {savingProfile ? t("set.saving") : t("set.save")}
                 </button>
-                {dirtyProfile && !savingProfile && (
-                  <span className="text-xs font-semibold text-tuji-coral">{t("set.unsaved")}</span>
-                )}
               </div>
 
               {/* Account actions */}
@@ -413,9 +406,6 @@ export default function SettingsClient({
               >
                 {saving ? t("set.saving") : t("set.save")}
               </button>
-              {dirty && !saving && (
-                <span className="text-xs font-semibold text-tuji-coral">{t("set.unsaved")}</span>
-              )}
             </div>
           )}
         </div>

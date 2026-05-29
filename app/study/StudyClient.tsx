@@ -193,7 +193,8 @@ export default function StudyClient() {
     if (answeringRef.current) return;
     answeringRef.current = true;
     setSubmitting(true);
-    const responseMs = Math.round(performance.now() - startedAtRef.current);
+    const ratedAt = performance.now();
+    const responseMs = Math.round(ratedAt - startedAtRef.current);
     try {
       const res = await fetch("/api/study/answer", {
         method: "POST",
@@ -209,7 +210,10 @@ export default function StudyClient() {
       return;
     }
     setSummary((s) => ({ ...s, [rating]: s[rating] + 1, completed: s.completed + 1 }));
-    const delay = 1000;
+    // Bound the transition to ~0.45s: the feedback beat overlaps the request
+    // (which already returned here), so total ≈ max(request, 450ms) instead of
+    // request + a fixed 1000ms. Still gated on success (failure stays on card).
+    const wait = Math.max(0, 450 - (performance.now() - ratedAt));
     setTimeout(() => {
       setLastFeedback(null);
       if (idx + 1 >= total) setPhase("done");
@@ -219,7 +223,7 @@ export default function StudyClient() {
         setPicked(null);
         setPhase("answer");
       }
-    }, delay);
+    }, wait);
   }
 
   // ── No theme chosen — prompt to pick one (matches the home gate) ──

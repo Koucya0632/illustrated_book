@@ -54,6 +54,7 @@
 
 ### 學習流程細節
 - ✅ **熟練分計算/寫入加速**：`/api/study/answer` 原本 5 段串行 DB round-trip（getCardById → upsertReview → getMasteryRow → upsertMastery → insertStudyLog）。改為：`getCardById` 用 LEFT JOIN `user_words` 把熟練度一起查回（少一次讀），三個寫入（user_cards / user_words / study_logs）改 `Promise.all` 併發（pool max=5），study_logs 仍 best-effort（自帶 catch）。實測 prod DB 時間 ~71ms → ~38ms（warm，遠低於 0.5s）；行為與回傳不變。
+- ✅ **進入下一題加速**：`StudyClient.rate()` 原本「await 送出 → 固定等 1000ms → 換下一題」（總計 = 送出 + 1s）。改成回饋時間與請求重疊：成功後 `wait = max(0, 450 − 已耗時)`，總計 ≈ max(請求, 450ms)，約 0.45s 進下一題。仍維持「送出失敗就停在原卡並提示」的可靠行為。
 - ✅ **今日任務啟用**：首頁任務卡接 `getStudyStreak.todayCount`，顯示「今日 X / 目標」+ 進度填滿，達標顯示「今日任務完成 ✓」（全域計數，不分主題/牌組）。
 - ✅ **答錯改自評**：MCQ 答錯不再自動記「重來」，改成揭曉答案後由使用者自評（四個評分鈕全給，預設建議「重來」）。
 - ✅ **卡片類型篩選**：設定頁「學習卡片類型」可複選（中→英 / 英→中 / 填空，`user_settings.study_decks`），queue 依 `deck_key` 篩選；不選＝全部。

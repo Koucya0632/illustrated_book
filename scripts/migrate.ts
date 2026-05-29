@@ -247,9 +247,9 @@ const DDL = [
      sort_order  INT NOT NULL DEFAULT 0,
      created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
-  // FK words.category → categories.id is added in backfillSchemaV2 after
-  // the categories rows are seeded — adding it here would fail because the
-  // categories table is empty when the DDL batch runs.
+  // FK words.category → categories.id is added in backfillSchemaV2, after
+  // seedCategoriesIntoDb has populated the table — adding it here would fail
+  // because the categories table is empty when the DDL batch runs.
 
   // ---- tags: free-form labels (no hardcoded list) ----
   `CREATE TABLE IF NOT EXISTS tags (
@@ -569,9 +569,13 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
   return c > 0;
 }
 
+// Seed the categories reference table from the static TS source
+// (`lib/categories.ts`). Idempotent (ON CONFLICT DO NOTHING) and additive:
+// adding a new category to that file just inserts one more row on the next
+// deploy. MUST run before word seeding so words.category never references a
+// category that isn't in the table yet (the words_category_fk would reject it).
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function backfillSchemaV2(sql: any) {
-  // 1. categories — seed from the static TS source
+async function seedCategoriesIntoDb(sql: any) {
   for (const c of seedCategories) {
     await sql`
       INSERT INTO categories (id, name, name_zh, emoji, description, color, image_url, sort_order)
@@ -585,8 +589,12 @@ async function backfillSchemaV2(sql: any) {
   }
   const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;
   console.log(`[migrate] categories: ${catCount} rows`);
+}
 
-  // Now that categories has rows, attach the FK (idempotent).
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function backfillSchemaV2(sql: any) {
+  // categories are already seeded (see seedCategoriesIntoDb in the main run);
+  // now that the table has rows, attach the FK (idempotent).
   await sql.unsafe(`
     DO $$ BEGIN
       IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_category_fk') THEN
@@ -951,6 +959,11 @@ async function main() {
       await sql.unsafe(stmt);
     }
     console.log(`[migrate] DDL applied (${DDL.length} statements).`);
+
+    // Seed categories BEFORE words: words.category is FK-constrained to
+    // categories.id, so any newly added category must exist first or word
+    // seeding would fail on an existing DB where the FK is already attached.
+    await seedCategoriesIntoDb(sql);
 
     // Seed only the words missing from the DB — idempotent, so newly added
     // seed entries (e.g. supplemental-words.json) get inserted on every deploy

@@ -13,7 +13,7 @@
   id: "fridge",                       // 小寫 kebab，唯一，會變成網址 /word/fridge
   word: "fridge",                     // 英文單字
   chinese: "冰箱",                     // 中文意思（會存成 zh 釋義）
-  category: "kitchen",                // 必須是下方 9 個分類 id 之一
+  category: "kitchen",                // 現有分類 id 之一（見第 3 節）；分類可自行擴充，不限 9 類
   partOfSpeech: "noun",               // 詞性
   pronunciation: "/frɪdʒ/",          // 音標（IPA/KK 字串）
   imageUrl: "https://.../fridge.jpg", // 圖片網址
@@ -55,7 +55,7 @@
 | `id` | ✅ | string | 小寫 kebab-case，符合 `^[a-z0-9-]+$`，全站唯一。是網址與卡片的鍵，**不要事後改**。 |
 | `word` | ✅ | string | 英文單字（顯示用，可含空格，如 `alarm clock`）。 |
 | `chinese` | ✅ | string | 中文意思。多義可用「；」分隔。 |
-| `category` | ✅ | enum | 9 個分類 id 之一（見第 3 節），且必須已存在。 |
+| `category` | ✅ | string | 對應 `categories` 表裡某個已存在的分類 id（見第 3 節）。**分類可自行擴充，不限數量**；只需先把新分類加進 `lib/categories.ts`。 |
 | `partOfSpeech` | ✅ | string | 詞性，慣例：`noun` / `verb` / `adjective` / `noun / verb` / `noun (plural)`。 |
 | `pronunciation` | ✅ | string | 音標字串，如 `/ˈer.pleɪn/`。播放發音用瀏覽器 TTS，不需音檔。 |
 | `imageUrl` | ✅ | string(URL) | 代表圖。建議 Supabase Storage 公開網址或穩定外部圖。 |
@@ -81,25 +81,54 @@
 
 ## 3. 允許值清單
 
-**分類 `category`（9 種，必須擇一）**
+**分類 `category`（目前內建 9 種，可自行擴充）**
 
-| id | 中文 |
-| --- | --- |
-| `kitchen` | 廚房 |
-| `bathroom` | 浴室 |
-| `bedroom` | 臥室 |
-| `living-room` | 客廳 |
-| `office` | 辦公室 |
-| `street` | 街上 |
-| `supermarket` | 超市 |
-| `transportation` | 交通工具 |
-| `seasonings` | 調味料 |
+`category` 不是固定 enum，而是字串 id，對應 `categories` 表裡的某一列。這張表由 `lib/categories.ts` 的 `categories[]` seed 進 DB（部署時 `scripts/migrate.ts` 處理，idempotent）。目前內建：
+
+| id | 中文 | emoji |
+| --- | --- | --- |
+| `kitchen` | 廚房 | 🍳 |
+| `bathroom` | 浴室 | 🛁 |
+| `bedroom` | 臥室 | 🛏️ |
+| `living-room` | 客廳 | 🛋️ |
+| `office` | 辦公室 | 💼 |
+| `street` | 街上 | 🚶 |
+| `supermarket` | 超市 | 🛒 |
+| `transportation` | 交通工具 | 🚗 |
+| `seasonings` | 調味料 | 🧂 |
+
+> 要加新分類（不限 9 類）？見下方「3.1 新增分類」。
 
 **CEFR**：`A1 A2 B1 B2 C1 C2`
 **status**：`published` / `draft` / `archived`
 **關聯類型 `relations[].type`**：`synonym`（同義）/ `antonym`（反義）/ `hypernym`（上位）/ `hyponym`（下位）/ `confusing`（易混淆）/ `see-also`（相關）
 **語言碼**（definitions / 例句 translations）：ISO 639-1，如 `zh`、`ja`、`en`。
 **關聯目標 `relations[].wordId`**：可填字典裡的 `id`（會變成可點連結），或任意英文詞（顯示為純文字 chip）。
+
+---
+
+## 3.1 新增分類（不限 9 類）
+
+分類定義在 `lib/categories.ts` 的 `categories[]`；部署時 `scripts/migrate.ts` 會把它 seed 進 DB 的 `categories` 表（idempotent，`ON CONFLICT DO NOTHING`）。要加一個新分類：
+
+1. 在 `lib/categories.ts` 的 `categories` 陣列加一筆：
+   ```ts
+   {
+     id: "garden",                        // 小寫 kebab，唯一，是分類篩選/網址鍵
+     name: "Garden",                      // 英文名（顯示用）
+     nameZh: "花園",                       // 中文名
+     emoji: "🌱",                          // 卡片用 emoji
+     description: "種花種菜的角落",          // 一句說明
+     color: "from-green-100 to-lime-100",  // Tailwind 漸層（分類卡背景）
+     imageUrl: "https://.../garden.jpg",   // 分類封面圖
+   }
+   ```
+2.（可選）同一次就加引用它的字：到 `lib/words.ts` / `supplemental-words.json` 加 `category: "garden"` 的單字。
+3. 部署。migrate 會**先 seed 分類、再 seed 字**，所以「新分類 + 引用它的字」可在同一次部署完成。
+
+> ⚠️ **順序重點**：`words.category` 有外鍵指向 `categories.id`。某個字若用了還不存在的分類 id，seed 會失敗。只要把分類加進 `lib/categories.ts`，migrate 就會在 seed 字之前先把它建好——因此唯一要記得的是「新分類必須出現在 `lib/categories.ts`」，不能只寫在單字的 `category` 欄位。
+>
+> 型別上 `category` 是 `string`（`CategoryId = string`），不需要改任何 TS enum；分類數量無上限。
 
 ---
 

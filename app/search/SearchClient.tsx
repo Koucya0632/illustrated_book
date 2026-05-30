@@ -3,12 +3,15 @@
 import { useMemo, useState } from "react";
 import WordCard from "@/components/WordCard";
 import { useWords } from "@/components/WordsProvider";
+import { useCategories } from "@/components/CategoriesProvider";
 import { useSearch } from "@/components/useSearch";
-import { categories } from "@/lib/categories";
+import { useT } from "@/components/I18n";
 import type { CategoryId } from "@/types";
 
 export default function SearchClient() {
   const allWords = useWords();
+  const categories = useCategories();
+  const t = useT();
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<CategoryId | "all">("all");
 
@@ -21,7 +24,10 @@ export default function SearchClient() {
     return list;
   }, [q, cat, allWords, searchHits]);
 
-  const chips = [{ id: "all" as const, label: "全部" }, ...categories.map((c) => ({ id: c.id, label: `${c.emoji} ${c.nameZh}` }))];
+  const chips = [
+    { id: "all" as const, label: t("search.chipAll") },
+    ...categories.map((c) => ({ id: c.id, label: `${c.emoji} ${c.nameZh}` })),
+  ];
 
   return (
     <div className="mt-5">
@@ -34,11 +40,11 @@ export default function SearchClient() {
           autoFocus
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="搜尋中文或英文，例如：冰箱、fridge"
+          placeholder={t("search.placeholder")}
           className="flex-1 bg-transparent text-sm text-tuji-ink outline-none placeholder:text-tuji-ink4 sm:text-base"
         />
         {q && (
-          <button onClick={() => setQ("")} aria-label="清除" className="text-tuji-ink3 hover:text-tuji-ink">
+          <button onClick={() => setQ("")} aria-label={t("search.clearAria")} className="text-tuji-ink3 hover:text-tuji-ink">
             ✕
           </button>
         )}
@@ -62,14 +68,14 @@ export default function SearchClient() {
       </div>
 
       <p className="mt-4 text-sm font-semibold text-tuji-ink3">
-        {q ? `搜尋「${q}」` : "全部單字"} · {results.length} 個結果
-        {q && loading && <span className="ml-2">搜尋中…</span>}
+        {q ? t("search.titleQ", { q }) : t("search.titleAll")} · {t("search.resultCount", { n: results.length })}
+        {q && loading && <span className="ml-2">{t("search.loading")}</span>}
       </p>
 
       {results.length === 0 ? (
         <div className="mt-12 text-center text-tuji-ink3">
           <div className="mb-2 text-5xl">🔍</div>
-          找不到符合的單字，換個關鍵字試試？
+          {t("search.empty")}
         </div>
       ) : (
         <div className="mt-4 grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4">

@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
+import { useCategories } from "@/components/CategoriesProvider";
 import { useCurrentUser } from "@/components/UserProvider";
 import { useT } from "@/components/I18n";
 import Mascot from "@/components/tuji/Mascot";
 import { TUJI } from "@/components/tuji/ui";
-import { categories } from "@/lib/categories";
 import { clearProgress, getProgress, subscribe } from "@/lib/storage";
 import type { Progress } from "@/types";
 
@@ -34,6 +34,7 @@ export default function ProgressClient({
   heatmap: HeatCell[] | null;
 }) {
   const allWords = useWords();
+  const categories = useCategories();
   const user = useCurrentUser();
   const t = useT();
   const [p, setP] = useState<Progress | null>(null);

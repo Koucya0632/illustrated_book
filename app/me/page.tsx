@@ -17,11 +17,11 @@ export default async function MePage() {
   const bundle = await getCurrentUserBundle();
   if (!bundle) redirect("/signin?next=/me");
 
-  const [allWords, masteryRows, streak, settings] = await Promise.all([
-    getAllWords(),
+  const settings = await getSettings(bundle.user.id);
+  const [allWords, masteryRows, streak] = await Promise.all([
+    getAllWords(settings.uiLang),
     getAllMastery(bundle.user.id),
     getStudyStreak(bundle.user.id),
-    getSettings(bundle.user.id),
   ]);
   const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   const byId = new Map(allWords.map((w) => [w.id, w]));

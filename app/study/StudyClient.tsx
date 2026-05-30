@@ -7,8 +7,8 @@ import Mascot from "@/components/tuji/Mascot";
 import WordPeekModal from "@/components/WordPeekModal";
 import { WordTile, shade, TUJI } from "@/components/tuji/ui";
 import { useSettings } from "@/components/SettingsProvider";
+import { useCategories } from "@/components/CategoriesProvider";
 import { useT } from "@/components/I18n";
-import { categories } from "@/lib/categories";
 import { getSessionId } from "@/lib/analytics";
 import type { Rating } from "@/lib/srs";
 
@@ -115,6 +115,7 @@ export default function StudyClient() {
   const answeringRef = useRef(false);
 
   const { dailyGoal, showZh, studyCategory, studyDecks } = useSettings();
+  const categories = useCategories();
   const t = useT();
   const themeName =
     studyCategory === "all" ? null : categories.find((c) => c.id === studyCategory)?.nameZh ?? null;

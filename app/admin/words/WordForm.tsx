@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { categories } from "@/lib/categories";
+import { useCategories } from "@/components/CategoriesProvider";
 import type {
   CEFRLevel,
   CategoryId,
@@ -63,6 +63,7 @@ export default function WordForm({
   initial?: Word;
 }) {
   const router = useRouter();
+  const categories = useCategories();
   const [w, setW] = useState<Word>(initial ?? empty);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);

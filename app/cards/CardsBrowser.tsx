@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
+import { useCategories } from "@/components/CategoriesProvider";
 import { useSettings } from "@/components/SettingsProvider";
 import { useT } from "@/components/I18n";
 import FavoriteButton from "@/components/FavoriteButton";
 import { WordTile } from "@/components/tuji/ui";
-import { categories } from "@/lib/categories";
 
 export default function CardsBrowser() {
   const all = useWords();
+  const categories = useCategories();
   const { showZh } = useSettings();
   const t = useT();
   const [cat, setCat] = useState<string>("all");

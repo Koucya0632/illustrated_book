@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { categories } from "@/lib/categories";
+import { useCategories } from "@/components/CategoriesProvider";
 import type { Word } from "@/types";
 
 type SortKey = "word" | "chinese" | "category";
@@ -11,6 +11,7 @@ type SortDir = "asc" | "desc";
 
 export default function WordsTable({ initial }: { initial: Word[] }) {
   const router = useRouter();
+  const categories = useCategories();
   const [items, setItems] = useState(initial);
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>("all");

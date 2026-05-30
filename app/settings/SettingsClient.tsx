@@ -1,11 +1,15 @@
 "use client";
 
 // Draft model: edits change a local draft; nothing takes effect until "保存"
-// (which persists then reloads so server-rendered language/scale apply too).
+// (persisted to /api/users/settings, then router.refresh() re-runs the server
+// tree so server-rendered language/scale/categories pick up the new value
+// without a full browser reload).
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Mascot from "@/components/tuji/Mascot";
 import { useSettings } from "@/components/SettingsProvider";
+import { useCategories } from "@/components/CategoriesProvider";
 import { useT } from "@/components/I18n";
 import {
   ACCENT_OPTIONS,
@@ -16,7 +20,6 @@ import {
 } from "@/lib/settings";
 import { LOCALES } from "@/lib/i18n";
 import { AVATAR_POSES, type AvatarPose } from "@/lib/avatars";
-import { categories } from "@/lib/categories";
 
 type SecId = "account" | "learn" | "ui" | "data" | "about";
 
@@ -42,7 +45,9 @@ export default function SettingsClient({
   };
 }) {
   const t = useT();
+  const router = useRouter();
   const settings = useSettings();
+  const categories = useCategories();
   const [sec, setSec] = useState<SecId>("learn");
   const [draft, setDraft] = useState<UserSettings>(settings);
   const [saving, setSaving] = useState(false);
@@ -91,9 +96,10 @@ export default function SettingsClient({
         body: JSON.stringify(draft),
       });
     } catch {
-      /* ignore — reload will reflect whatever persisted */
+      /* ignore — router.refresh below will reflect whatever persisted */
     }
-    window.location.reload();
+    setSaving(false);
+    router.refresh();
   }
 
   function clearCache() {

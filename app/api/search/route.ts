@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { searchWordsAsync } from "@/lib/data";
+import { getCurrentUserId } from "@/lib/current-user";
+import { getSettings } from "@/lib/users-db";
+import { DEFAULT_SETTINGS } from "@/lib/settings";
 
 export const runtime = "nodejs";
-
-// Cache search responses at the edge for 60s, allowing 5min stale-while-revalidate.
-// Search results follow the same data freshness contract as getAllWords() (60s tag).
-export const revalidate = 60;
+// Per-user UI language now influences the response payload, so the route
+// must run dynamically rather than be edge-cached blindly.
+export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -20,7 +22,9 @@ export async function GET(req: Request) {
   }
 
   try {
-    const results = await searchWordsAsync(q, { limit });
+    const userId = await getCurrentUserId();
+    const lang = (userId ? await getSettings(userId) : DEFAULT_SETTINGS).uiLang;
+    const results = await searchWordsAsync(q, { limit }, lang);
     return NextResponse.json(
       { results, query: q, limit },
       {

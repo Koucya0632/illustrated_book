@@ -4,7 +4,7 @@ import FavoriteButton from "@/components/FavoriteButton";
 import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
 import { WordTile, ProfRing, scoreTier } from "@/components/tuji/ui";
-import { getCategory } from "@/lib/categories";
+import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getAllWords, getWord } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
@@ -67,22 +67,30 @@ function highlight(sentence: string, term: string) {
 }
 
 export default async function WordDetailPage({ params }: { params: { id: string } }) {
-  const w = await getWord(params.id);
-  if (!w) notFound();
-  const cat = getCategory(w.category);
+  const userId = await getCurrentUserId();
+  const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
+  const lang = settings.uiLang;
+  const tr = (key: string, vars?: Record<string, string | number>) => t(lang, key, vars);
 
-  const all = await getAllWords();
+  const [w, all, cats] = await Promise.all([
+    getWord(params.id, lang),
+    getAllWords(lang),
+    getCategoriesFromDb(lang),
+  ]);
+  if (!w) notFound();
+  const cat = cats.find((c) => c.id === w.category);
   const groupedRelations = gatherRelations(w, all);
   const sameCategory = all.filter((x) => x.id !== w.id && x.category === w.category).slice(0, 4);
 
-  const zhDefs = w.definitions.filter((d) => d.language === "zh");
-  const otherDefs = w.definitions.filter((d) => d.language !== "zh");
+  // After localization, `definitions` carries only the chosen language. The
+  // "other languages" panel below is reserved for definitions in OTHER
+  // languages (e.g. ja shown when the user is viewing zh), which we don't
+  // surface in this single-lang display path — keep it empty for now.
+  const zhDefs = w.definitions;
+  const otherDefs: typeof w.definitions = [];
   const headlineZh = zhDefs.length > 0 ? zhDefs.map((d) => d.definition).join("；") : w.chinese;
 
   let mastery: number | null = null;
-  const userId = await getCurrentUserId();
-  const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
-  const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   if (userId) {
     const row = await getMasteryRow(userId, w.id);
     if (row) {

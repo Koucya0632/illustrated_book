@@ -3,11 +3,13 @@ import { Plus_Jakarta_Sans, Noto_Sans_TC, JetBrains_Mono } from "next/font/googl
 import "./globals.css";
 import TujiShell from "@/components/tuji/Shell";
 import { WordsProvider } from "@/components/WordsProvider";
+import { CategoriesProvider } from "@/components/CategoriesProvider";
 import { UserProvider } from "@/components/UserProvider";
 import { SettingsProvider } from "@/components/SettingsProvider";
 import AppScale from "@/components/AppScale";
 import HydrateUserState from "@/components/HydrateUserState";
 import { getAllWords } from "@/lib/data";
+import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
@@ -42,11 +44,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [words, bundle] = await Promise.all([
-    getAllWords(),
-    getCurrentUserBundle(),
-  ]);
+  const bundle = await getCurrentUserBundle();
   const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
+  const [words, categories] = await Promise.all([
+    getAllWords(settings.uiLang),
+    getCategoriesFromDb(settings.uiLang),
+  ]);
   return (
     <html
       lang={settings.uiLang}
@@ -54,6 +57,7 @@ export default async function RootLayout({
     >
       <body className="min-h-screen bg-tuji-bg text-tuji-ink">
         <WordsProvider words={words}>
+          <CategoriesProvider categories={categories}>
           <UserProvider user={bundle?.user ?? null}>
             <SettingsProvider initial={settings} loggedIn={!!bundle}>
               <AppScale />
@@ -79,6 +83,7 @@ export default async function RootLayout({
               </TujiShell>
             </SettingsProvider>
           </UserProvider>
+          </CategoriesProvider>
         </WordsProvider>
       </body>
     </html>

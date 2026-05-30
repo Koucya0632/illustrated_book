@@ -5,6 +5,8 @@
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
 import { words as staticWords } from "./words";
+import { localizeWord, type LocalizedTextMap } from "./word-localize";
+import type { UiLang } from "./settings";
 import type {
   CEFRLevel,
   CategoryId,
@@ -38,6 +40,7 @@ interface Row {
   examples: unknown;      // jsonb array of { sentence, cefr_level, sort_order, translations }
   relations: unknown;     // jsonb array of { word_id, relation_type, note }
   tags: string[] | null;
+  localized_texts: unknown; // jsonb_object_agg: "<field>|<lang>" -> value
 }
 
 // postgres-js sometimes hands us JSON columns as strings; tolerate both.
@@ -53,7 +56,7 @@ function parseJsonbColumn<T>(v: unknown, fallback: T): T {
   return v as T;
 }
 
-function rowToWord(r: Row): Word {
+function rowToWord(r: Row): { word: Word; localizedTexts: LocalizedTextMap } {
   const rawDefs = parseJsonbColumn<
     { language: string; definition: string; cefr_level: string | null; sort_order: number }[]
   >(r.definitions, []);
@@ -102,7 +105,9 @@ function rowToWord(r: Row): Word {
     .filter((rel) => rel.type === "confusing")
     .map((rel) => ({ word: rel.wordId, note: rel.note ?? "" }));
 
-  return {
+  const localizedTexts = parseJsonbColumn<LocalizedTextMap>(r.localized_texts, {});
+
+  const word: Word = {
     id: r.id,
     word: r.word,
     alsoKnownAs: r.also_known_as.length ? r.also_known_as : undefined,
@@ -125,16 +130,25 @@ function rowToWord(r: Row): Word {
     relatedWords: seeAlso.length ? seeAlso : undefined,
     confusingWords: confusing.length ? confusing : undefined,
   };
+  return { word, localizedTexts };
 }
 
-// One query, four correlated subqueries — each aggregating a child table to
+// Raw (multi-language) entry: the Word plus a `field|lang -> value` map
+// from `word_localized_texts`. Cached as-is and localized per-request based
+// on the user's UI language; this avoids fanning the cache out by lang.
+interface RawEntry {
+  word: Word;
+  localizedTexts: LocalizedTextMap;
+}
+
+// One query, five correlated subqueries — each aggregating a child table to
 // jsonb. With ≤ a few thousand rows and the per-child word_id indexes this
 // stays at one round trip and EXPLAIN shows it as a single Sort + nested-
 // loop with hash-aggregated children, not N+1.
 const fetchAllFromDb = unstable_cache(
-  async () => {
+  async (): Promise<RawEntry[]> => {
     const sql = getSql();
-    if (!sql) return staticWords;
+    if (!sql) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
     const rows = (await sql`
       SELECT
         w.id, w.word, w.also_known_as, w.category, w.part_of_speech,
@@ -162,37 +176,50 @@ const fetchAllFromDb = unstable_cache(
                   'note',          r.note
                 ))
          FROM word_relations r WHERE r.source_word_id = w.id) AS relations,
-        (SELECT array_agg(tag_id ORDER BY tag_id) FROM word_tags WHERE word_id = w.id) AS tags
+        (SELECT array_agg(tag_id ORDER BY tag_id) FROM word_tags WHERE word_id = w.id) AS tags,
+        (SELECT jsonb_object_agg(lt.field || '|' || lt.language, lt.value)
+         FROM word_localized_texts lt WHERE lt.word_id = w.id) AS localized_texts
       FROM words w
       WHERE w.deleted_at IS NULL AND w.status = 'published'
       ORDER BY w.category, w.word
     `) as unknown as Row[];
     return rows.map(rowToWord);
   },
-  // v3: schema v2 read path with new joined tables. Bumped from v2 (which
-  // bumped from v1 when the postgres-js JSONB auto-parse landed).
-  ["all-words-v4"],
+  // v5: added per-language overlay fetch (word_localized_texts) and split
+  // RawEntry from Word so per-request localization happens above the cache.
+  ["all-words-v5"],
   { tags: ["words"], revalidate: 60 },
 );
 
-export async function getAllWords(): Promise<Word[]> {
-  if (!dbEnabled()) return staticWords;
+async function getAllRawEntries(): Promise<RawEntry[]> {
+  if (!dbEnabled()) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
   try {
     return await fetchAllFromDb();
   } catch (err) {
     console.warn("[data] DB read failed, falling back to static:", err);
-    return staticWords;
+    return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
   }
 }
 
-export async function getWord(id: string): Promise<Word | undefined> {
-  const all = await getAllWords();
-  return all.find((w) => w.id === id);
+export async function getAllWords(lang: UiLang = "zh-Hant"): Promise<Word[]> {
+  const raw = await getAllRawEntries();
+  return raw.map((r) => localizeWord(r.word, lang, r.localizedTexts));
 }
 
-export async function getWordsByCategory(categoryId: string): Promise<Word[]> {
-  const all = await getAllWords();
-  return all.filter((w) => w.category === categoryId);
+export async function getWord(id: string, lang: UiLang = "zh-Hant"): Promise<Word | undefined> {
+  const raw = await getAllRawEntries();
+  const hit = raw.find((r) => r.word.id === id);
+  return hit ? localizeWord(hit.word, lang, hit.localizedTexts) : undefined;
+}
+
+export async function getWordsByCategory(
+  categoryId: string,
+  lang: UiLang = "zh-Hant",
+): Promise<Word[]> {
+  const raw = await getAllRawEntries();
+  return raw
+    .filter((r) => r.word.category === categoryId)
+    .map((r) => localizeWord(r.word, lang, r.localizedTexts));
 }
 
 // Escape ILIKE wildcards in user input so a literal "100%" doesn't match
@@ -230,11 +257,12 @@ export interface SearchOptions {
 export async function searchWordsAsync(
   query: string,
   options: SearchOptions = {},
+  lang: UiLang = "zh-Hant",
 ): Promise<Word[]> {
   const q = query.trim();
   if (!q) return [];
   const limit = Math.max(1, Math.min(options.limit ?? 50, 200));
-  const all = await getAllWords();
+  const all = await getAllWords(lang);
   if (!dbEnabled()) return inMemoryMatch(all, q).slice(0, limit);
   try {
     const sql = getSql();

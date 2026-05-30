@@ -206,6 +206,17 @@ const zhHant: Dict = {
   "fav.title": "收藏的單字 ❤️",
   "fav.subtitle": "所有你想複習的單字都在這裡。",
   "fav.browseBtn": "去逛圖鑑",
+  "cat.empty": "這個分類還沒有單字。",
+  "cat.countWords": "共 {n} 個單字",
+  "cat.studyCta": "學完了嗎？開始複習 →",
+  "search.chipAll": "全部",
+  "search.placeholder": "搜尋中文或英文，例如：冰箱、fridge",
+  "search.clearAria": "清除",
+  "search.titleQ": "搜尋「{q}」",
+  "search.titleAll": "全部單字",
+  "search.resultCount": "{n} 個結果",
+  "search.loading": "搜尋中…",
+  "search.empty": "找不到符合的單字，換個關鍵字試試？",
 };
 
 const zhHans: Dict = {
@@ -396,6 +407,17 @@ const zhHans: Dict = {
   "fav.title": "收藏的单词 ❤️",
   "fav.subtitle": "所有你想复习的单词都在这里。",
   "fav.browseBtn": "去逛图鉴",
+  "cat.empty": "这个分类还没有单词。",
+  "cat.countWords": "共 {n} 个单词",
+  "cat.studyCta": "学完了吗？开始复习 →",
+  "search.chipAll": "全部",
+  "search.placeholder": "搜索中文或英文，例如：冰箱、fridge",
+  "search.clearAria": "清除",
+  "search.titleQ": "搜索「{q}」",
+  "search.titleAll": "全部单词",
+  "search.resultCount": "{n} 个结果",
+  "search.loading": "搜索中…",
+  "search.empty": "找不到符合的单词，换个关键字试试？",
 };
 
 const ja: Dict = {
@@ -586,6 +608,17 @@ const ja: Dict = {
   "fav.title": "お気に入りの単語 ❤️",
   "fav.subtitle": "復習したい単語がすべてここにあります。",
   "fav.browseBtn": "コレクションを見る",
+  "cat.empty": "このカテゴリにはまだ単語がありません。",
+  "cat.countWords": "全 {n} 語",
+  "cat.studyCta": "覚えた？復習を始めよう →",
+  "search.chipAll": "すべて",
+  "search.placeholder": "中国語または英語で検索（例：冰箱、fridge）",
+  "search.clearAria": "クリア",
+  "search.titleQ": "「{q}」を検索",
+  "search.titleAll": "すべての単語",
+  "search.resultCount": "{n} 件",
+  "search.loading": "検索中…",
+  "search.empty": "該当する単語が見つかりません。別のキーワードで試してみますか？",
 };
 
 const messages: Record<Locale, Dict> = { "zh-Hant": zhHant, "zh-Hans": zhHans, ja };

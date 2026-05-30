@@ -6,6 +6,8 @@ import {
   fetchDue,
   studyStats,
 } from "@/lib/cards-db";
+import { getSettings } from "@/lib/users-db";
+import { localizeStudyQueue } from "@/lib/study-localize";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -13,6 +15,7 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const settings = await getSettings(userId);
 
   const { searchParams } = new URL(req.url);
   const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit") || 20)));
@@ -42,6 +45,7 @@ export async function GET(req: Request) {
   ]);
   await attachMasteryAndSort(userId, queue);
   await attachChoices(queue);
+  const localized = await localizeStudyQueue(queue, settings.uiLang);
 
-  return NextResponse.json({ queue, stats });
+  return NextResponse.json({ queue: localized, stats });
 }

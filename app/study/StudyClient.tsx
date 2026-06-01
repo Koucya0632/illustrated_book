@@ -214,6 +214,15 @@ export default function StudyClient() {
     if (phase === "landing") refreshStats();
   }, [phase, studyCategory, refreshStats]);
 
+  // 新學 session has no MCQ: there's nothing to "recall" the first time
+  // the user sees a word. Every card lands directly in the reveal/rate
+  // view (image + English + 認識/知道). Jumping out of `"answer"` the
+  // instant a card arrives keeps the existing two-phase machine intact
+  // for 複習 without forking the render tree.
+  useEffect(() => {
+    if (mode === "new" && phase === "answer") setPhase("review");
+  }, [mode, phase, idx]);
+
   function pickReview() {
     if (!stats || stats.due <= 0) return;
     loadQueue("review");
@@ -589,7 +598,11 @@ export default function StudyClient() {
           <div className="mb-4 flex items-end gap-3">
             <Mascot pose={revealed ? "cheer" : "think"} size={72} />
             <div className="relative mb-2 rounded-[20px] bg-white px-5 py-3.5 text-lg font-extrabold tracking-tight text-tuji-ink shadow-card">
-              {revealed ? t("study.bubbleReveal") : t("study.bubbleAsk")}
+              {mode === "new"
+                ? t("study.newLearn.bubble")
+                : revealed
+                ? t("study.bubbleReveal")
+                : t("study.bubbleAsk")}
             </div>
           </div>
 

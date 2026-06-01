@@ -52,7 +52,10 @@ export async function GET(req: Request) {
     studyStats(userId),
   ]);
   await attachMasteryAndSort(userId, queue);
-  await attachChoices(queue);
+  // 新學 session skips the MCQ render entirely (StudyClient auto-reveals
+  // each card), so distractor scoring + the word_relations JOIN would be
+  // wasted work. Only attach choices for the modes that actually use them.
+  if (mode !== "new") await attachChoices(queue);
   const localized = await localizeStudyQueue(queue, settings.uiLang);
 
   return NextResponse.json({ queue: localized, stats });

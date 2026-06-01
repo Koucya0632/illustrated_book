@@ -197,13 +197,22 @@ export interface QueueFilter {
   deckKeys?: string[];
 }
 
+export type QueueMode = "new" | "review" | "both";
+
 // "Due" = unseen cards (no user_cards row) + cards whose next_review_at ≤ now.
-// New cards are limited per session to avoid overwhelming the user.
+// `mode` selects which side of the queue to populate:
+//   - "review": only due reviews (`uc.next_review_at <= now()`). `newLimit`
+//     is ignored; `limit` caps the review pull.
+//   - "new":    only never-seen cards. `limit` caps the new pull; the
+//     `newLimit` argument is unused so the caller can pass anything.
+//   - "both" (default, legacy): reviews first up to `limit`, then fill the
+//     remainder with new cards up to `newLimit`.
 export async function fetchDue(
   userId: string,
   limit = 20,
   newLimit = 10,
   filter: QueueFilter = {},
+  mode: QueueMode = "both",
 ): Promise<DueCard[]> {
   const sql = requireSql();
   const cefr = (filter.cefr ?? []).filter((c) => /^[A-C][12]$/.test(c));
@@ -213,7 +222,7 @@ export async function fetchDue(
 
   // Review queue: ordered by due date asc. The chinese display label comes
   // from a LATERAL pick of the first zh definition (sort_order asc).
-  const reviewRows = (await sql`
+  const reviewRows = mode === "new" ? [] : ((await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
            uc.user_id, uc.card_id, uc.status, uc.interval_days, uc.next_review_at,
            uc.review_count, uc.mistake_count, uc.last_rating, uc.last_reviewed_at,
@@ -246,11 +255,17 @@ export async function fetchDue(
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
-  `) as unknown as Record<string, unknown>[];
+  `) as unknown as Record<string, unknown>[]);
 
-  // Pull in new (never-seen) cards if there's room.
-  const remaining = Math.max(0, limit - reviewRows.length);
-  const newRows = remaining > 0 ? ((await sql`
+  // Pull in new (never-seen) cards. In "both" mode they fill the slack left
+  // by reviews up to newLimit; in "new" mode `limit` is the cap directly.
+  const newBudget =
+    mode === "new"
+      ? limit
+      : mode === "review"
+      ? 0
+      : Math.min(Math.max(0, limit - reviewRows.length), newLimit);
+  const newRows = newBudget > 0 ? ((await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
            w.word AS w_word,
            COALESCE(zh.definition, '') AS w_chinese,
@@ -281,7 +296,7 @@ export async function fetchDue(
       ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
     ORDER BY c.id ASC
-    LIMIT ${Math.min(remaining, newLimit)}
+    LIMIT ${newBudget}
   `) as unknown as Record<string, unknown>[]) : [];
 
   function rowToDue(r: Record<string, unknown>, hasState: boolean): DueCard {

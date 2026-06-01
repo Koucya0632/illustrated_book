@@ -10,6 +10,7 @@ import { useSettings } from "@/components/SettingsProvider";
 import { useCategories } from "@/components/CategoriesProvider";
 import { useT } from "@/components/I18n";
 import { getSessionId } from "@/lib/analytics";
+import { BACKLOG_THRESHOLDS, computeNewLimit } from "@/lib/scheduling";
 import type { Rating } from "@/lib/srs";
 
 interface ApiCard {
@@ -53,7 +54,15 @@ interface Stats {
   byStatus: { status: string; c: number }[];
 }
 
-type Phase = "answer" | "review" | "done";
+type Phase = "landing" | "answer" | "review" | "done";
+type Mode = "new" | "review";
+
+// Pause threshold — when stats.due is ≥ this, the landing surfaces a
+// warning banner + a confirmation modal on the "new learn" button.
+// Derived from the last-but-one band in BACKLOG_THRESHOLDS (the "quartered"
+// → "paused" boundary): backlog > 100 is the "please review first" zone.
+const BACKLOG_WARN_THRESHOLD =
+  BACKLOG_THRESHOLDS[BACKLOG_THRESHOLDS.length - 2].max;
 
 const ALL_RATINGS: Rating[] = ["重來", "困難", "穩定", "熟練"];
 
@@ -100,7 +109,9 @@ export default function StudyClient() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [idx, setIdx] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
-  const [phase, setPhase] = useState<Phase>("answer");
+  const [phase, setPhase] = useState<Phase>("landing");
+  const [mode, setMode] = useState<Mode | null>(null);
+  const [pendingNewLearn, setPendingNewLearn] = useState(false);
   const [summary, setSummary] = useState({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
@@ -119,28 +130,86 @@ export default function StudyClient() {
 
   const current = queue?.[idx];
   const total = queue?.length ?? 0;
-  const isMcq = !!current?.choices && current.choices.length > 0;
   const wasCorrect = picked !== null && current ? picked === current.card.back : false;
 
-  const decksParam = studyDecks.join(",");
-  const loadQueue = useCallback(async () => {
-    const res = await fetch(
-      `/api/study/queue?limit=${dailyGoal}&new=${Math.min(10, dailyGoal)}&category=${encodeURIComponent(studyCategory)}&decks=${encodeURIComponent(decksParam)}`,
-    );
-    const data = await res.json();
-    setQueue(data.queue);
-    setStats(data.stats);
-    setIdx(0);
-    setPhase("answer");
-    setPicked(null);
-    setLastFeedback(null);
-    setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
-  }, [dailyGoal, studyCategory, decksParam]);
+  // Adaptive new-card cap based on backlog. `base` mirrors the legacy
+  // hardcode (Math.min(10, dailyGoal)); `computeNewLimit` shrinks it as
+  // stats.due grows past the threshold bands.
+  const base = Math.min(10, dailyGoal);
+  const backlog = stats?.due ?? 0;
+  const { limit: newLimit, band: backlogBand } = computeNewLimit(base, backlog);
+  const backlogWarn = backlog >= BACKLOG_WARN_THRESHOLD;
 
+  const decksParam = studyDecks.join(",");
+
+  // Refresh stats only — used by landing to render N/M tiles + the warning
+  // banner. Tiny endpoint (one round-trip, no card rows / JOINs).
+  const refreshStats = useCallback(async () => {
+    try {
+      const res = await fetch("/api/study/stats");
+      if (!res.ok) return;
+      const data = await res.json();
+      setStats(data.stats);
+    } catch {
+      /* ignore — landing copes with null stats by hiding counts */
+    }
+  }, []);
+
+  // Fetch one session's worth of cards into the queue, for the chosen
+  // mode. `overrideNew` forces the legacy `base` even when backlog>=100,
+  // so the "I still want to learn new words" path bypasses the cap.
+  const loadQueue = useCallback(
+    async (m: Mode, opts: { overrideNew?: boolean } = {}) => {
+      const limitParam =
+        m === "review"
+          ? dailyGoal
+          : opts.overrideNew
+          ? base
+          : newLimit;
+      if (limitParam <= 0) {
+        // No work to do (e.g. picked "new" but backlog paused the cap and
+        // user didn't override). Stay on landing; let UI show empty hint.
+        setQueue([]);
+        return;
+      }
+      const res = await fetch(
+        `/api/study/queue?mode=${m}&limit=${limitParam}` +
+          `&category=${encodeURIComponent(studyCategory)}` +
+          `&decks=${encodeURIComponent(decksParam)}`,
+      );
+      const data = await res.json();
+      setQueue(data.queue);
+      setStats(data.stats);
+      setMode(m);
+      setIdx(0);
+      setPhase("answer");
+      setPicked(null);
+      setLastFeedback(null);
+      setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
+    },
+    [dailyGoal, studyCategory, decksParam, newLimit, base],
+  );
+
+  // Refresh stats whenever we land back on the landing screen (mount,
+  // after "done", or after the user manually navigates back).
   useEffect(() => {
-    // No specific theme chosen → don't load; the picker prompt renders instead.
-    if (studyCategory !== "all") loadQueue();
-  }, [loadQueue, studyCategory]);
+    if (studyCategory === "all") return;
+    if (phase === "landing") refreshStats();
+  }, [phase, studyCategory, refreshStats]);
+
+  function pickReview() {
+    if (!stats || stats.due <= 0) return;
+    loadQueue("review");
+  }
+
+  function pickNewLearn(opts: { override?: boolean } = {}) {
+    if (backlogWarn && !opts.override) {
+      setPendingNewLearn(true);
+      return;
+    }
+    setPendingNewLearn(false);
+    loadQueue("new", { overrideNew: opts.override });
+  }
 
   useEffect(() => {
     if (phase === "answer") {
@@ -222,6 +291,123 @@ export default function StudyClient() {
     );
   }
 
+  // ── Landing: pick 新學 / 複習 ──
+  if (phase === "landing") {
+    const newCount = Math.max(0, newLimit);
+    const reviewCount = stats?.due ?? 0;
+    const minutesPer = 0.6; // ~36s per card heuristic, matches home tile
+    return (
+      <>
+        <div className="mx-auto max-w-2xl px-5 py-10 sm:px-8 sm:py-14">
+          <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
+            {themeName}
+          </div>
+          <h1 className="text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">
+            {t("study.landing.title")}
+          </h1>
+
+          {backlogWarn && (
+            <div className="mt-5 rounded-2xl border border-tuji-coral/40 bg-tuji-coral/10 px-4 py-3 text-[13px] font-bold text-tuji-coral">
+              ⚠️ {t("study.backlog.warnBody", { n: backlog })}
+            </div>
+          )}
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {/* 新學 */}
+            <button
+              onClick={() => pickNewLearn()}
+              disabled={newCount === 0 && !backlogWarn}
+              className="tuji-press group flex flex-col items-start gap-2 rounded-3xl bg-white p-5 text-left shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
+              style={{
+                background: backlogWarn ? "#F4ECDE" : "#FFFFFF",
+                ["--press-shadow" as string]: shade(backlogWarn ? "#F4ECDE" : "#FFFFFF", -12),
+              }}
+            >
+              <div className="flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+                <span>📘 {t("study.landing.newLearn")}</span>
+                {backlogWarn && <span className="text-tuji-coral">⚠️</span>}
+              </div>
+              <div className="font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
+                {newCount}
+              </div>
+              <div className="text-[13px] font-bold text-tuji-ink3">
+                {newCount > 0
+                  ? t("study.landing.minutes", { n: Math.max(1, Math.round(newCount * minutesPer)) })
+                  : t("study.landing.newEmpty")}
+              </div>
+              <div className="mt-1 text-[11px] font-extrabold uppercase tracking-[0.1em] text-tuji-ink3">
+                {backlogBand === "halved" && "½"}
+                {backlogBand === "quartered" && "¼"}
+                {backlogBand === "paused" && t("study.backlog.warnTitle")}
+              </div>
+            </button>
+
+            {/* 複習 */}
+            <button
+              onClick={pickReview}
+              disabled={reviewCount === 0}
+              className="tuji-press group flex flex-col items-start gap-2 rounded-3xl bg-tuji-teal p-5 text-left text-white shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
+              style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
+            >
+              <div className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/80">
+                🔁 {t("study.landing.review")}
+              </div>
+              <div className="font-display text-5xl font-extrabold leading-none tracking-tight">
+                {reviewCount}
+              </div>
+              <div className="text-[13px] font-bold text-white/90">
+                {reviewCount > 0
+                  ? t("study.landing.minutes", { n: Math.max(1, Math.round(reviewCount * minutesPer)) })
+                  : t("study.landing.reviewEmpty")}
+              </div>
+            </button>
+          </div>
+
+          <div className="mt-6 flex justify-center gap-2.5">
+            <Link
+              href="/"
+              className="rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-card"
+            >
+              {t("study.backHome")}
+            </Link>
+          </div>
+        </div>
+
+        {/* Backlog confirmation modal */}
+        {pendingNewLearn && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-tuji-ink/55 px-5">
+            <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-cardHover">
+              <div className="text-base font-extrabold tracking-tight text-tuji-ink">
+                {t("study.backlog.warnTitle")}
+              </div>
+              <p className="mt-2 text-sm text-tuji-ink2">
+                {t("study.backlog.warnBody", { n: backlog })}
+              </p>
+              <div className="mt-5 flex flex-col gap-2.5">
+                <button
+                  onClick={() => {
+                    setPendingNewLearn(false);
+                    pickReview();
+                  }}
+                  className="tuji-press rounded-2xl bg-tuji-teal py-3 text-sm font-extrabold text-white"
+                  style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
+                >
+                  {t("study.backlog.preferReview")}
+                </button>
+                <button
+                  onClick={() => pickNewLearn({ override: true })}
+                  className="rounded-2xl bg-tuji-bg py-3 text-sm font-bold text-tuji-ink2"
+                >
+                  {t("study.backlog.proceedAnyway")}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
+
   // ── Loading ──
   if (!queue) {
     return (
@@ -254,7 +440,11 @@ export default function StudyClient() {
             {t("study.backHome")}
           </Link>
           <button
-            onClick={loadQueue}
+            onClick={() => {
+              setQueue(null);
+              setMode(null);
+              setPhase("landing");
+            }}
             className="tuji-press rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white"
             style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
           >
@@ -291,7 +481,11 @@ export default function StudyClient() {
         </div>
         <div className="mt-8 flex justify-center gap-2.5">
           <button
-            onClick={loadQueue}
+            onClick={() => {
+              setQueue(null);
+              setMode(null);
+              setPhase("landing");
+            }}
             className="tuji-press rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white"
             style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
           >
@@ -433,8 +627,49 @@ export default function StudyClient() {
                 </button>
               </div>
 
-              {/* Rating — wrong answers self-rate too; all four shown on a miss */}
-              {(
+              {/* Rating — 2-button self-rate for 新學 (認識 / 知道), 4-button
+                  SRS scale for 複習. Wrong MCQ answers in review mode keep
+                  all four buttons (including 重來). 認識 maps to "穩定"
+                  internally and 知道 maps to "困難"; the SRS engine and
+                  /api/study/answer don't know about the alias. */}
+              {mode === "new" ? (
+                <>
+                  <div className="mb-2.5 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+                    {t("study.whenAgain")}
+                  </div>
+                  <div className="flex flex-col gap-2.5">
+                    <button
+                      onClick={() => rate("穩定")}
+                      disabled={submitting}
+                      className="tuji-press flex items-center gap-3.5 rounded-2xl px-4 py-3.5 text-left disabled:opacity-60"
+                      style={{ background: TUJI.green, color: "#fff", ["--press-shadow" as string]: shade(TUJI.green, -16) }}
+                    >
+                      <div className="flex-1">
+                        <div className="text-[17px] font-extrabold tracking-tight">{t("study.newRate.know")}</div>
+                        <div className="mt-0.5 text-[10px] font-bold opacity-85">
+                          {t("study.newRate.knowDesc")}
+                        </div>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => rate("困難")}
+                      disabled={submitting}
+                      className="tuji-press flex items-center gap-3.5 rounded-2xl px-4 py-3.5 text-left disabled:opacity-60"
+                      style={{ background: TUJI.yellow, color: TUJI.ink, ["--press-shadow" as string]: shade(TUJI.yellow, -16) }}
+                    >
+                      <div className="flex-1">
+                        <div className="text-[17px] font-extrabold tracking-tight">{t("study.newRate.aware")}</div>
+                        <div className="mt-0.5 text-[10px] font-bold opacity-85">
+                          {t("study.newRate.awareDesc")}
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  {lastFeedback && (
+                    <p className="mt-1 text-center text-[13px] font-bold text-tuji-coral">{lastFeedback}</p>
+                  )}
+                </>
+              ) : (
                 <>
                   <div className="mb-2.5 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
                     {t("study.whenAgain")}
@@ -445,35 +680,33 @@ export default function StudyClient() {
                     )}
                   </div>
                   <div className="flex flex-col gap-2.5">
-                    {(isMcq && wasCorrect ? (["困難", "穩定", "熟練"] as const) : ALL_RATINGS).map(
-                      (rt) => {
-                        const st = RATING_STYLE[rt];
-                        const isSuggested = suggestedRating === rt;
-                        return (
-                          <button
-                            key={rt}
-                            onClick={() => rate(rt)}
-                            disabled={submitting}
-                            className={`tuji-press flex items-center gap-3.5 rounded-2xl px-4 py-3 text-left disabled:opacity-60 ${
-                              isSuggested ? "ring-2 ring-tuji-ink/30 ring-offset-2" : ""
-                            }`}
-                            style={{ background: st.bg, color: st.fg, ["--press-shadow" as string]: shade(st.bg, -16) }}
-                          >
-                            <div className="flex-1">
-                              <div className="text-[17px] font-extrabold tracking-tight">{t(RATING_LABEL_KEY[rt])}</div>
-                              <div className="mt-0.5 text-[10px] font-bold opacity-85">
-                                {st.en} · {t(RATING_DESC_KEY[rt])}
-                              </div>
+                    {(wasCorrect ? (["困難", "穩定", "熟練"] as const) : ALL_RATINGS).map((rt) => {
+                      const st = RATING_STYLE[rt];
+                      const isSuggested = suggestedRating === rt;
+                      return (
+                        <button
+                          key={rt}
+                          onClick={() => rate(rt)}
+                          disabled={submitting}
+                          className={`tuji-press flex items-center gap-3.5 rounded-2xl px-4 py-3 text-left disabled:opacity-60 ${
+                            isSuggested ? "ring-2 ring-tuji-ink/30 ring-offset-2" : ""
+                          }`}
+                          style={{ background: st.bg, color: st.fg, ["--press-shadow" as string]: shade(st.bg, -16) }}
+                        >
+                          <div className="flex-1">
+                            <div className="text-[17px] font-extrabold tracking-tight">{t(RATING_LABEL_KEY[rt])}</div>
+                            <div className="mt-0.5 text-[10px] font-bold opacity-85">
+                              {st.en} · {t(RATING_DESC_KEY[rt])}
                             </div>
-                            {isSuggested && (
-                              <span className="rounded-full bg-white/25 px-2 py-0.5 text-[10px] font-extrabold">
-                                {t("study.suggestBadge")}
-                              </span>
-                            )}
-                          </button>
-                        );
-                      },
-                    )}
+                          </div>
+                          {isSuggested && (
+                            <span className="rounded-full bg-white/25 px-2 py-0.5 text-[10px] font-extrabold">
+                              {t("study.suggestBadge")}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
                   {lastFeedback && (
                     <p className="mt-1 text-center text-[13px] font-bold text-tuji-coral">{lastFeedback}</p>

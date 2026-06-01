@@ -5,6 +5,7 @@ import {
   attachMasteryAndSort,
   fetchDue,
   studyStats,
+  type QueueMode,
 } from "@/lib/cards-db";
 import { getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
@@ -38,9 +39,14 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
+  // Mode: "new" (only first-time cards), "review" (only due reviews), or
+  // "both" (legacy mixed queue). Unknown values fall back to "both".
+  const modeParam = (searchParams.get("mode") ?? "both").trim();
+  const mode: QueueMode =
+    modeParam === "new" || modeParam === "review" ? modeParam : "both";
 
   const [queue, stats] = await Promise.all([
-    fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }),
+    fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }, mode),
     studyStats(userId),
   ]);
   await attachMasteryAndSort(userId, queue);

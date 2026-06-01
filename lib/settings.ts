@@ -25,12 +25,12 @@ export const DEFAULT_SETTINGS: UserSettings = {
   fontSize: "md",
 };
 
-// Card decks (deck_key) the user can pick to study. Empty selection = all.
-// Labels are i18n keys resolved by the UI.
+// Card decks (deck_key) the user can pick to study. Only one deck exists
+// today ("look at image, choose English"); the picker UI is hidden in the
+// settings page, but the list stays so `normalizeStudyDecks` keeps an
+// anchor for validation if the persisted value drifts.
 export const STUDY_DECK_OPTIONS: { value: string; labelKey: string }[] = [
-  { value: "recall-zh-en", labelKey: "set.deckZhEn" },
-  { value: "recall-en-zh", labelKey: "set.deckEnZh" },
-  { value: "cloze-1", labelKey: "set.deckCloze" },
+  { value: "image-en", labelKey: "set.deckImageEn" },
 ];
 export const STUDY_DECK_KEYS = STUDY_DECK_OPTIONS.map((o) => o.value);
 

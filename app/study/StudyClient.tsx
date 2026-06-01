@@ -89,10 +89,9 @@ const CHOICE_TINTS = [
 ];
 
 // Suggest a rating based on how long it took to answer a correct MCQ.
-function suggestRating(elapsedMs: number, cardType: string): Rating {
-  const isCloze = cardType === "填空卡";
-  if (elapsedMs < (isCloze ? 4000 : 3000)) return "熟練";
-  if (elapsedMs < (isCloze ? 8000 : 7000)) return "穩定";
+function suggestRating(elapsedMs: number): Rating {
+  if (elapsedMs < 3000) return "熟練";
+  if (elapsedMs < 7000) return "穩定";
   return "困難";
 }
 
@@ -100,7 +99,6 @@ export default function StudyClient() {
   const [queue, setQueue] = useState<DueCard[] | null>(null);
   const [stats, setStats] = useState<Stats | null>(null);
   const [idx, setIdx] = useState(0);
-  const [typed, setTyped] = useState("");
   const [picked, setPicked] = useState<string | null>(null);
   const [phase, setPhase] = useState<Phase>("answer");
   const [summary, setSummary] = useState({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
@@ -109,7 +107,6 @@ export default function StudyClient() {
   const [submitting, setSubmitting] = useState(false);
   const [peekId, setPeekId] = useState<string | null>(null);
   const startedAtRef = useRef<number>(0);
-  const inputRef = useRef<HTMLInputElement | null>(null);
   // Synchronous lock so a rapid double-click within the auto-advance window is
   // blocked before React re-renders (state alone has a stale-closure race).
   const answeringRef = useRef(false);
@@ -135,7 +132,6 @@ export default function StudyClient() {
     setStats(data.stats);
     setIdx(0);
     setPhase("answer");
-    setTyped("");
     setPicked(null);
     setLastFeedback(null);
     setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
@@ -152,9 +148,8 @@ export default function StudyClient() {
       setSuggestedRating(null);
       answeringRef.current = false;
       setSubmitting(false);
-      if (!isMcq) inputRef.current?.focus();
     }
-  }, [phase, idx, isMcq]);
+  }, [phase, idx]);
 
   function pickChoice(choice: string) {
     if (phase !== "answer" || !current) return;
@@ -167,26 +162,7 @@ export default function StudyClient() {
       return;
     }
     const elapsed = performance.now() - startedAtRef.current;
-    setSuggestedRating(suggestRating(elapsed, current.card.card_type));
-  }
-
-  function showAnswer() {
-    setPhase("review");
-    if (current) {
-      const elapsed = performance.now() - startedAtRef.current;
-      setSuggestedRating(suggestRating(elapsed, current.card.card_type));
-    }
-  }
-
-  function skip() {
-    if (!current) return;
-    if (idx + 1 >= total) setPhase("done");
-    else {
-      setIdx(idx + 1);
-      setTyped("");
-      setPicked(null);
-      setPhase("answer");
-    }
+    setSuggestedRating(suggestRating(elapsed));
   }
 
   async function rate(rating: Rating) {
@@ -220,7 +196,6 @@ export default function StudyClient() {
       if (idx + 1 >= total) setPhase("done");
       else {
         setIdx(idx + 1);
-        setTyped("");
         setPicked(null);
         setPhase("answer");
       }
@@ -402,68 +377,38 @@ export default function StudyClient() {
         {/* Right — interaction */}
         <div>
           {!revealed ? (
-            isMcq ? (
-              <>
-                <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                  {t("study.pickEnglish")}
-                </div>
-                <div className="flex flex-col gap-3">
-                  {current.choices!.map((c, i) => {
-                    const tint = CHOICE_TINTS[i % CHOICE_TINTS.length];
-                    return (
-                      <button
-                        key={c}
-                        onClick={() => pickChoice(c)}
-                        disabled={submitting}
-                        className="tuji-press flex items-center gap-4 rounded-[20px] px-5 py-4 text-left disabled:opacity-60"
-                        style={{ background: tint.bg, ["--press-shadow" as string]: shade(tint.bg, -10) }}
-                      >
-                        <span
-                          className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white font-mono text-base font-extrabold"
-                          style={{ color: tint.fg }}
-                        >
-                          {i + 1}
-                        </span>
-                        <span className="flex-1 text-xl font-extrabold tracking-tight" style={{ color: tint.fg }}>
-                          {c}
-                        </span>
-                        <span className="text-lg opacity-55" style={{ color: tint.fg }}>
-                          →
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </>
-            ) : (
-              <div className="rounded-[24px] bg-white p-5 shadow-card">
-                <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                  {t("study.recallAnswer")}
-                </div>
-                <input
-                  ref={inputRef}
-                  value={typed}
-                  onChange={(e) => setTyped(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") showAnswer();
-                  }}
-                  placeholder={t("study.inputPlaceholder")}
-                  className="w-full rounded-xl bg-tuji-bg px-4 py-3 text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
-                />
-                <div className="mt-3 flex gap-2.5">
-                  <button
-                    onClick={showAnswer}
-                    className="tuji-press flex-1 rounded-xl bg-tuji-teal py-3 text-sm font-extrabold text-white"
-                    style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
-                  >
-                    {t("study.showAnswer")}
-                  </button>
-                  <button onClick={skip} className="rounded-xl bg-tuji-bg px-4 py-3 text-sm font-bold text-tuji-ink3">
-                    {t("study.skip")}
-                  </button>
-                </div>
+            <>
+              <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+                {t("study.pickEnglish")}
               </div>
-            )
+              <div className="flex flex-col gap-3">
+                {(current.choices ?? []).map((c, i) => {
+                  const tint = CHOICE_TINTS[i % CHOICE_TINTS.length];
+                  return (
+                    <button
+                      key={c}
+                      onClick={() => pickChoice(c)}
+                      disabled={submitting}
+                      className="tuji-press flex items-center gap-4 rounded-[20px] px-5 py-4 text-left disabled:opacity-60"
+                      style={{ background: tint.bg, ["--press-shadow" as string]: shade(tint.bg, -10) }}
+                    >
+                      <span
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white font-mono text-base font-extrabold"
+                        style={{ color: tint.fg }}
+                      >
+                        {i + 1}
+                      </span>
+                      <span className="flex-1 text-xl font-extrabold tracking-tight" style={{ color: tint.fg }}>
+                        {c}
+                      </span>
+                      <span className="text-lg opacity-55" style={{ color: tint.fg }}>
+                        →
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
           ) : (
             <>
               {/* Answer card */}
@@ -475,11 +420,6 @@ export default function StudyClient() {
                   <span className="font-mono text-[13px] text-tuji-ink2">{current.word.pronunciation}</span>
                   {showZh && <span className="text-xs text-tuji-ink3">· {current.word.chinese}</span>}
                 </div>
-                {!isMcq && typed.trim() && (
-                  <div className="mt-2 text-xs text-tuji-ink3">
-                    {t("study.yourAnswer")}<span className="font-semibold text-tuji-ink">{typed.trim()}</span>
-                  </div>
-                )}
                 {current.card.explanation && (
                   <div className="mt-3 rounded-xl bg-tuji-bg px-3.5 py-2.5 text-[13px] text-tuji-ink2">
                     💡 {current.card.explanation}

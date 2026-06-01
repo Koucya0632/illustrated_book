@@ -20,10 +20,9 @@ const RATING_TO_SMALLINT: Record<Rating, 0 | 1 | 2 | 3> = {
   熟練: 3,
 };
 
-// Both current decks (recall + cloze) render as MCQ in StudyClient. Future
-// modes (typing, listening) should be set explicitly by the client.
+// Today's single deck (image-en) renders as MCQ via the "回想卡" card_type.
+// Future modes (typing, listening) should be set explicitly by the client.
 function defaultActivity(cardType: string): StudyLogActivity {
-  if (cardType === "填空卡") return "mcq";
   if (cardType === "回想卡") return "mcq";
   return "flashcard";
 }

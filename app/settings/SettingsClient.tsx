@@ -15,7 +15,6 @@ import {
   ACCENT_OPTIONS,
   DAILY_GOAL_MAX,
   DAILY_GOAL_MIN,
-  STUDY_DECK_OPTIONS,
   type UserSettings,
 } from "@/lib/settings";
 import { LOCALES } from "@/lib/i18n";
@@ -28,7 +27,6 @@ const SETTINGS_KEYS: (keyof UserSettings)[] = [
   "accent",
   "showZh",
   "studyCategory",
-  "studyDecks",
   "uiLang",
   "fontSize",
 ];
@@ -64,19 +62,7 @@ export default function SettingsClient({
 
   const set = <K extends keyof UserSettings>(key: K, value: UserSettings[K]) =>
     setDraft((d) => ({ ...d, [key]: value }));
-  const toggleDeck = (v: string) =>
-    setDraft((d) => ({
-      ...d,
-      studyDecks: d.studyDecks.includes(v)
-        ? d.studyDecks.filter((x) => x !== v)
-        : [...d.studyDecks, v],
-    }));
-  const dirty = SETTINGS_KEYS.some((k) => {
-    if (k === "studyDecks") {
-      return [...draft.studyDecks].sort().join(",") !== [...settings.studyDecks].sort().join(",");
-    }
-    return draft[k] !== settings[k];
-  });
+  const dirty = SETTINGS_KEYS.some((k) => draft[k] !== settings[k]);
 
   const NAV: { id: SecId; l: string }[] = [
     { id: "learn", l: t("tab.learn") },
@@ -331,27 +317,6 @@ export default function SettingsClient({
                 current={draft.studyCategory}
                 onSelect={(v) => set("studyCategory", v)}
               />
-              <div className="border-b border-black/5 px-4 py-3.5">
-                <div className="text-sm font-bold text-tuji-ink">{t("set.studyDeck")}</div>
-                <div className="mt-0.5 text-[11px] text-tuji-ink3">{t("set.studyDeckDesc")}</div>
-                <div className="mt-2.5 flex flex-wrap gap-2">
-                  {STUDY_DECK_OPTIONS.map((d) => {
-                    const on = draft.studyDecks.includes(d.value);
-                    return (
-                      <button
-                        key={d.value}
-                        onClick={() => toggleDeck(d.value)}
-                        aria-pressed={on}
-                        className={`rounded-full px-3.5 py-1.5 text-xs font-extrabold transition ${
-                          on ? "bg-tuji-teal text-white" : "bg-tuji-bg text-tuji-ink2 hover:bg-tuji-tealS"
-                        }`}
-                      >
-                        {t(d.labelKey)}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
               <SetRow
                 label={t("set.showZh")}
                 desc={t("set.showZhDesc")}

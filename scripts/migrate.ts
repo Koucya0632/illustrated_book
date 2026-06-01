@@ -540,52 +540,21 @@ interface SeedCard {
   deckKey: string;
 }
 
-function escapeRegex(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
 function cardsForWord(w: (typeof seedWords)[number]): SeedCard[] {
-  const out: SeedCard[] = [];
-  const tags = [w.category, w.partOfSpeech];
-
-  out.push({
-    cardType: "回想卡",
-    front: `「${w.chinese}」的英文是？`,
-    back: w.word,
-    explanation: `${w.word} ${w.pronunciation} — ${w.chinese}`,
-    tags: [...tags, "中譯英"],
-    deckKey: "recall-zh-en",
-  });
-
-  out.push({
-    cardType: "回想卡",
-    front: `「${w.word}」的中文意思是？`,
-    back: w.chinese,
-    explanation: w.alsoKnownAs?.length
-      ? `也可寫成 ${w.alsoKnownAs.join(" / ")}。`
-      : w.note ?? `${w.pronunciation}`,
-    tags: [...tags, "英譯中"],
-    deckKey: "recall-en-zh",
-  });
-
-  const ex = w.examples.find((e) =>
-    new RegExp(`\\b${escapeRegex(w.word)}\\b`, "i").test(e.en),
-  );
-  if (ex) {
-    const blanked = ex.en.replace(
-      new RegExp(`\\b${escapeRegex(w.word)}\\b`, "i"),
-      "_____",
-    );
-    out.push({
-      cardType: "填空卡",
-      front: `填入正確單字：\n${blanked}\n（${ex.zh}）`,
+  // One card per word: image-en (look at image → choose English MCQ).
+  // The picture itself is the prompt (rendered by WordTile in StudyClient),
+  // so `front` stays empty. The card_type remains "回想卡" so it qualifies
+  // as MCQ in lib/cards-db.ts:MCQ_TYPES.
+  return [
+    {
+      cardType: "回想卡",
+      front: "",
       back: w.word,
-      explanation: `完整句：${ex.en}`,
-      tags: [...tags, "填空"],
-      deckKey: "cloze-1",
-    });
-  }
-  return out;
+      explanation: `${w.word} ${w.pronunciation} — ${w.chinese}`,
+      tags: [w.category, w.partOfSpeech, "看圖選英文"],
+      deckKey: "image-en",
+    },
+  ];
 }
 
 // ---- Schema v2 backfill ----
@@ -965,6 +934,36 @@ async function seedV2(sql: any, list: typeof seedWords = seedWords) {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function generateCards(sql: any) {
+  // One-time + idempotent cleanup of the pre-image-en deck world.
+  // - DELETE wipes the three legacy decks; FK CASCADE on user_cards.card_id
+  //   removes the matching SRS state. Subsequent deploys find no matching
+  //   rows and become a true no-op (deleted=0).
+  // - UPDATE clears any user_settings.study_decks that still pins one of
+  //   the legacy deck keys; without this, those users' /study queue would
+  //   filter to an empty set.
+  const dropped = await sql`
+    DELETE FROM cards
+    WHERE deck_key IN ('recall-zh-en','recall-en-zh','cloze-1')
+    RETURNING id
+  `;
+  if (dropped.length > 0) {
+    console.log(`[migrate] cards: dropped ${dropped.length} legacy deck rows (+CASCADE user_cards)`);
+  }
+  const settingsReset = await sql`
+    UPDATE user_settings
+       SET study_decks = '[]'::jsonb
+     WHERE study_decks IS NOT NULL
+       AND (study_decks::text LIKE '%recall-zh-en%'
+         OR study_decks::text LIKE '%recall-en-zh%'
+         OR study_decks::text LIKE '%cloze-1%')
+    RETURNING user_id
+  `;
+  if (settingsReset.length > 0) {
+    console.log(
+      `[migrate] user_settings: cleared legacy deck filter for ${settingsReset.length} user(s)`,
+    );
+  }
+
   let inserted = 0;
   let skipped = 0;
   for (const w of seedWords) {

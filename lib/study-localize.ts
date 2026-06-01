@@ -132,50 +132,24 @@ async function fetchJaOverlays(
 
 function localizeOneJa(d: DueCard, ja: JaOverlays): DueCard {
   const jaDef = ja.defByWord.get(d.word.id);
-  let { front, back, explanation } = d.card;
 
-  // word.chinese is what the UI shows as the "meaning" of the card's word.
+  // For the image-en deck — the only deck today — front is empty, back is
+  // the English lemma, explanation is "{word} {pron} — {chinese}". There's
+  // no zh prompt segment to swap, so we only:
+  //   1) Overwrite word.chinese (the meaning label shown beside the answer
+  //      reveal) with the ja definition if we have one — falls back to the
+  //      zh-Hant base otherwise.
+  //   2) Pass choices through jaForZhDef so any zh-definition distractors
+  //      (no-op for English choices) become their ja equivalent. Image-en
+  //      backs are English, so the map won't match and choices stay as-is —
+  //      this is a defensive transform for forward-compat with future
+  //      zh-backed decks.
   const wordChinese = jaDef ?? d.word.chinese;
-
-  switch (d.card.deck_key) {
-    case "recall-zh-en":
-      // front: 「{def}」の英語は？  back stays as the English word.
-      if (jaDef) front = `「${jaDef}」の英語は？`;
-      break;
-    case "recall-en-zh":
-      front = `「${d.word.word}」の意味は？`;
-      if (jaDef) back = jaDef;
-      break;
-    case "cloze-1": {
-      // Front shape: "填入正確單字：\n{blanked en}\n（{zh hint}）"
-      const lines = front.split("\n");
-      const last = lines.length - 1;
-      const parenMatch = lines[last]?.match(/^（(.+)）$/);
-      if (parenMatch) {
-        const zhHint = parenMatch[1];
-        const jaHint = ja.exampleByWordZh.get(`${d.word.id}|${zhHint}`);
-        lines[last] = `（${jaHint ?? zhHint}）`;
-      }
-      lines[0] = "正しい単語を入れてください：";
-      front = lines.join("\n");
-      if (explanation) {
-        explanation = explanation.replace(/^完整句：/, "完全な文：");
-      }
-      break;
-    }
-  }
-
-  // Choices: substitute ja for any zh definition we have a mapping for.
-  // For decks whose choices are English (recall-zh-en) the map won't match,
-  // so they stay as-is. For recall-en-zh, the correct zh back is in the
-  // mapping (jaDef came from the same word), so it gets replaced alongside
-  // the distractors. Words missing ja stay zh — a partial-coverage fallback
-  // so the queue still works mid-translation-rollout.
   const choices = d.choices?.map((c) => ja.jaForZhDef.get(c) ?? c);
 
   return {
     ...d,
-    card: { ...d.card, front, back, explanation },
+    card: d.card,
     word: { ...d.word, chinese: wordChinese },
     choices,
   };

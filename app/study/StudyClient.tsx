@@ -522,24 +522,35 @@ export default function StudyClient() {
   // ── Done summary ──
   if (phase === "done") {
     const r = summary;
-    const tiles: { rating: Rating; value: number; color: string }[] = [
-      { rating: "重來", value: r.重來, color: TUJI.coral },
-      { rating: "困難", value: r.困難, color: "#9A6612" },
-      { rating: "穩定", value: r.穩定, color: TUJI.teal },
-      { rating: "熟練", value: r.熟練, color: TUJI.green },
-    ];
+    // 新學 session only ever fills two buckets (穩定 = 認識, 困難 = 知道),
+    // so show two tiles labelled 認識/知道 instead of four with two zeros.
+    // 複習 keeps the four SRS buckets unchanged.
+    const tiles: { value: number; color: string; labelKey: string }[] =
+      mode === "new"
+        ? [
+            { value: r.穩定, color: TUJI.green, labelKey: "study.newRate.know" },
+            { value: r.困難, color: "#A86214", labelKey: "study.newRate.aware" },
+          ]
+        : [
+            { value: r.重來, color: TUJI.coral, labelKey: RATING_LABEL_KEY["重來"] },
+            { value: r.困難, color: "#9A6612", labelKey: RATING_LABEL_KEY["困難"] },
+            { value: r.穩定, color: TUJI.teal, labelKey: RATING_LABEL_KEY["穩定"] },
+            { value: r.熟練, color: TUJI.green, labelKey: RATING_LABEL_KEY["熟練"] },
+          ];
+    const tileGridClass =
+      mode === "new" ? "mt-6 grid grid-cols-2 gap-3" : "mt-6 grid grid-cols-4 gap-3";
     return (
       <div className="mx-auto max-w-xl px-5 py-12 text-center">
         <Mascot pose="cheer" size={120} className="mx-auto" />
         <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">{t("study.doneTitle")}</h1>
         <p className="mt-1 text-sm text-tuji-ink3">{t("study.doneCount", { n: r.completed })}</p>
-        <div className="mt-6 grid grid-cols-4 gap-3">
-          {tiles.map((tile) => (
-            <div key={tile.rating} className="rounded-2xl bg-white p-3 shadow-card">
+        <div className={tileGridClass}>
+          {tiles.map((tile, i) => (
+            <div key={i} className="rounded-2xl bg-white p-3 shadow-card">
               <div className="font-display text-2xl font-extrabold" style={{ color: tile.color }}>
                 {tile.value}
               </div>
-              <div className="mt-1 text-xs font-bold text-tuji-ink3">{t(RATING_LABEL_KEY[tile.rating])}</div>
+              <div className="mt-1 text-xs font-bold text-tuji-ink3">{t(tile.labelKey)}</div>
             </div>
           ))}
         </div>
@@ -786,13 +797,32 @@ export default function StudyClient() {
         </div>
       </div>
 
-      {/* Running summary */}
+      {/* Running summary — mirrors the done tiles: 2 buckets in new mode,
+          4 in review. The summary state itself stays SRS-keyed; only the
+          chips switch their label / which bucket they read. */}
       <div className="flex items-center justify-center gap-3 pb-6 text-xs font-bold text-tuji-ink3">
         <span>{t("study.completed", { done: summary.completed, total })}</span>
-        {summary.重來 > 0 && <span className="text-tuji-coral">{t("study.rate.again")} {summary.重來}</span>}
-        {summary.困難 > 0 && <span style={{ color: "#9A6612" }}>{t("study.rate.hard")} {summary.困難}</span>}
-        {summary.穩定 > 0 && <span className="text-tuji-teal">{t("study.rate.good")} {summary.穩定}</span>}
-        {summary.熟練 > 0 && <span className="text-tuji-green">{t("study.rate.easy")} {summary.熟練}</span>}
+        {mode === "new" ? (
+          <>
+            {summary.穩定 > 0 && (
+              <span style={{ color: TUJI.green }}>
+                {t("study.newRate.know")} {summary.穩定}
+              </span>
+            )}
+            {summary.困難 > 0 && (
+              <span style={{ color: "#A86214" }}>
+                {t("study.newRate.aware")} {summary.困難}
+              </span>
+            )}
+          </>
+        ) : (
+          <>
+            {summary.重來 > 0 && <span className="text-tuji-coral">{t("study.rate.again")} {summary.重來}</span>}
+            {summary.困難 > 0 && <span style={{ color: "#9A6612" }}>{t("study.rate.hard")} {summary.困難}</span>}
+            {summary.穩定 > 0 && <span className="text-tuji-teal">{t("study.rate.good")} {summary.穩定}</span>}
+            {summary.熟練 > 0 && <span className="text-tuji-green">{t("study.rate.easy")} {summary.熟練}</span>}
+          </>
+        )}
       </div>
 
       {peekId && <WordPeekModal id={peekId} onClose={() => setPeekId(null)} />}

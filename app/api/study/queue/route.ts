@@ -19,8 +19,10 @@ export async function GET(req: Request) {
   const settings = await getSettings(userId);
 
   const { searchParams } = new URL(req.url);
-  const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit") || 20)));
-  const newLimit = Math.min(20, Math.max(0, Number(searchParams.get("new") || 10)));
+  // Hard ceiling matches DAILY_GOAL_MAX in lib/settings.ts so a user who
+  // sets dailyGoal=100 gets all 100 (used as new-card cap or review batch).
+  const limit = Math.min(100, Math.max(1, Number(searchParams.get("limit") || 20)));
+  const newLimit = Math.min(100, Math.max(0, Number(searchParams.get("new") || 10)));
   // Comma-separated lists, e.g. `?cefr=A1,A2&tags=daily-life,kitchen`.
   // fetchDue validates CEFR strictly; tags are passed through (free-form).
   const cefr = (searchParams.get("cefr") ?? "")

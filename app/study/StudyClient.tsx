@@ -64,6 +64,12 @@ type Mode = "new" | "review";
 const BACKLOG_WARN_THRESHOLD =
   BACKLOG_THRESHOLDS[BACKLOG_THRESHOLDS.length - 2].max;
 
+// Per-session review cap. dailyGoal is now reserved for new-card count, so
+// review needs its own ceiling — 50 keeps a session under ~30 min and
+// matches the queue API's hard limit clamp. Users with > 50 due can press
+// "繼續" on the done screen to start the next batch.
+const REVIEW_BATCH = 50;
+
 const ALL_RATINGS: Rating[] = ["重來", "困難", "穩定", "熟練"];
 
 // Display label / description i18n keys per rating (the rating VALUE stays the
@@ -132,10 +138,11 @@ export default function StudyClient() {
   const total = queue?.length ?? 0;
   const wasCorrect = picked !== null && current ? picked === current.card.back : false;
 
-  // Adaptive new-card cap based on backlog. `base` mirrors the legacy
-  // hardcode (Math.min(10, dailyGoal)); `computeNewLimit` shrinks it as
-  // stats.due grows past the threshold bands.
-  const base = Math.min(10, dailyGoal);
+  // Adaptive new-card cap based on backlog. `base` IS the user's dailyGoal
+  // — "每日目標" is now defined as the daily new-learning ceiling.
+  // `computeNewLimit` shrinks it as stats.due grows past the threshold
+  // bands. Review sessions are capped separately (see REVIEW_BATCH).
+  const base = dailyGoal;
   const backlog = stats?.due ?? 0;
   const { limit: newLimit, band: backlogBand } = computeNewLimit(base, backlog);
   const backlogWarn = backlog >= BACKLOG_WARN_THRESHOLD;
@@ -162,7 +169,7 @@ export default function StudyClient() {
     async (m: Mode, opts: { overrideNew?: boolean } = {}) => {
       const limitParam =
         m === "review"
-          ? dailyGoal
+          ? Math.min(REVIEW_BATCH, Math.max(1, backlog))
           : opts.overrideNew
           ? base
           : newLimit;

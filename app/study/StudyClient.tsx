@@ -51,6 +51,9 @@ interface Stats {
   seen: number;
   due: number;
   new: number;
+  /** New cards the user has introduced today (Asia/Taipei day). Used to
+   *  soft-cap the 新學 button at `dailyGoal`. */
+  todayNew: number;
   byStatus: { status: string; c: number }[];
 }
 
@@ -144,8 +147,15 @@ export default function StudyClient() {
   // bands. Review sessions are capped separately (see REVIEW_BATCH).
   const base = dailyGoal;
   const backlog = stats?.due ?? 0;
+  const todayNew = stats?.todayNew ?? 0;
   const { limit: newLimit, band: backlogBand } = computeNewLimit(base, backlog);
   const backlogWarn = backlog >= BACKLOG_WARN_THRESHOLD;
+  // Soft cap: once the user has introduced `dailyGoal` new cards today,
+  // the 新學 button gates behind a "你已完成今天的新學" modal — same
+  // override pattern as the backlog warning. Both reasons share the
+  // confirmation flow so users see at most one modal at a time.
+  const reachedDaily = todayNew >= base && base > 0;
+  const needsConfirm = backlogWarn || reachedDaily;
 
   const decksParam = studyDecks.join(",");
 
@@ -210,7 +220,7 @@ export default function StudyClient() {
   }
 
   function pickNewLearn(opts: { override?: boolean } = {}) {
-    if (backlogWarn && !opts.override) {
+    if (needsConfirm && !opts.override) {
       setPendingNewLearn(true);
       return;
     }
@@ -300,9 +310,20 @@ export default function StudyClient() {
 
   // ── Landing: pick 新學 / 複習 ──
   if (phase === "landing") {
-    const newCount = Math.max(0, newLimit);
+    // Show 0 when the daily quota is already met so the tile doesn't claim
+    // the user has more new cards than they'd actually start with. Override
+    // would unlock another base-worth via the modal.
+    const newCount = reachedDaily ? 0 : Math.max(0, newLimit);
     const reviewCount = stats?.due ?? 0;
     const minutesPer = 0.6; // ~36s per card heuristic, matches home tile
+    // Modal copy: backlog overrules dailyDone when both fire (review-first
+    // is the bigger SRS-health nudge). All paths share one confirm modal.
+    const modalKind: "backlog" | "daily" | null = pendingNewLearn
+      ? backlogWarn
+        ? "backlog"
+        : "daily"
+      : null;
+    const newTileDimmed = backlogWarn || reachedDaily;
     return (
       <>
         <div className="mx-auto max-w-2xl px-5 py-10 sm:px-8 sm:py-14">
@@ -323,16 +344,19 @@ export default function StudyClient() {
             {/* 新學 */}
             <button
               onClick={() => pickNewLearn()}
-              disabled={newCount === 0 && !backlogWarn}
-              className="tuji-press group flex flex-col items-start gap-2 rounded-3xl bg-white p-5 text-left shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={newCount === 0 && !needsConfirm}
+              className="tuji-press group flex flex-col items-start gap-2 rounded-3xl p-5 text-left shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
               style={{
-                background: backlogWarn ? "#F4ECDE" : "#FFFFFF",
-                ["--press-shadow" as string]: shade(backlogWarn ? "#F4ECDE" : "#FFFFFF", -12),
+                background: newTileDimmed ? "#F4ECDE" : "#FFFFFF",
+                ["--press-shadow" as string]: shade(newTileDimmed ? "#F4ECDE" : "#FFFFFF", -12),
               }}
             >
               <div className="flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
                 <span>📘 {t("study.landing.newLearn")}</span>
                 {backlogWarn && <span className="text-tuji-coral">⚠️</span>}
+                {!backlogWarn && reachedDaily && (
+                  <span className="text-tuji-green">{t("study.daily.doneBadge")}</span>
+                )}
               </div>
               <div className="font-display text-5xl font-extrabold leading-none tracking-tight text-tuji-ink">
                 {newCount}
@@ -342,10 +366,13 @@ export default function StudyClient() {
                   ? t("study.landing.minutes", { n: Math.max(1, Math.round(newCount * minutesPer)) })
                   : t("study.landing.newEmpty")}
               </div>
-              <div className="mt-1 text-[11px] font-extrabold uppercase tracking-[0.1em] text-tuji-ink3">
-                {backlogBand === "halved" && "½"}
-                {backlogBand === "quartered" && "¼"}
-                {backlogBand === "paused" && t("study.backlog.warnTitle")}
+              <div className="mt-1 flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.1em] text-tuji-ink3">
+                <span>{t("study.daily.chip", { n: todayNew, g: base })}</span>
+                <span>
+                  {backlogBand === "halved" && "½"}
+                  {backlogBand === "quartered" && "¼"}
+                  {backlogBand === "paused" && t("study.backlog.warnTitle")}
+                </span>
               </div>
             </button>
 
@@ -380,32 +407,53 @@ export default function StudyClient() {
           </div>
         </div>
 
-        {/* Backlog confirmation modal */}
-        {pendingNewLearn && (
+        {/* Confirmation modal — backlog warning OR daily-done overflow */}
+        {modalKind && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-tuji-ink/55 px-5">
             <div className="w-full max-w-sm rounded-3xl bg-white p-6 shadow-cardHover">
               <div className="text-base font-extrabold tracking-tight text-tuji-ink">
-                {t("study.backlog.warnTitle")}
+                {modalKind === "backlog"
+                  ? t("study.backlog.warnTitle")
+                  : t("study.daily.doneTitle")}
               </div>
               <p className="mt-2 text-sm text-tuji-ink2">
-                {t("study.backlog.warnBody", { n: backlog })}
+                {modalKind === "backlog"
+                  ? t("study.backlog.warnBody", { n: backlog })
+                  : t("study.daily.doneBody", { n: todayNew, g: base })}
               </p>
               <div className="mt-5 flex flex-col gap-2.5">
-                <button
-                  onClick={() => {
-                    setPendingNewLearn(false);
-                    pickReview();
-                  }}
-                  className="tuji-press rounded-2xl bg-tuji-teal py-3 text-sm font-extrabold text-white"
-                  style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
-                >
-                  {t("study.backlog.preferReview")}
-                </button>
+                {modalKind === "backlog" && (
+                  <button
+                    onClick={() => {
+                      setPendingNewLearn(false);
+                      pickReview();
+                    }}
+                    className="tuji-press rounded-2xl bg-tuji-teal py-3 text-sm font-extrabold text-white"
+                    style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
+                  >
+                    {t("study.backlog.preferReview")}
+                  </button>
+                )}
                 <button
                   onClick={() => pickNewLearn({ override: true })}
-                  className="rounded-2xl bg-tuji-bg py-3 text-sm font-bold text-tuji-ink2"
+                  className={
+                    modalKind === "backlog"
+                      ? "rounded-2xl bg-tuji-bg py-3 text-sm font-bold text-tuji-ink2"
+                      : "tuji-press rounded-2xl bg-tuji-teal py-3 text-sm font-extrabold text-white"
+                  }
+                  style={
+                    modalKind === "daily"
+                      ? { ["--press-shadow" as string]: shade(TUJI.teal, -16) }
+                      : undefined
+                  }
                 >
                   {t("study.backlog.proceedAnyway")}
+                </button>
+                <button
+                  onClick={() => setPendingNewLearn(false)}
+                  className="rounded-2xl bg-white py-2.5 text-sm font-bold text-tuji-ink3"
+                >
+                  {t("study.exit")}
                 </button>
               </div>
             </div>

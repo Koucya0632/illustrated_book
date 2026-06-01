@@ -155,6 +155,17 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS user_cards_due_idx ON user_cards(user_id, next_review_at)`,
 
+  // user_cards.created_at — added later so existing rows backfill to
+  // updated_at (their last real activity), not "now" of the deploy. The
+  // 4-step ordering matters: add (no default) → backfill via UPDATE →
+  // attach DEFAULT for future inserts → flip NOT NULL. Each step is
+  // idempotent so re-running migrate after the column lands is a no-op.
+  `ALTER TABLE user_cards ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ`,
+  `UPDATE user_cards SET created_at = updated_at WHERE created_at IS NULL`,
+  `ALTER TABLE user_cards ALTER COLUMN created_at SET DEFAULT now()`,
+  `ALTER TABLE user_cards ALTER COLUMN created_at SET NOT NULL`,
+  `CREATE INDEX IF NOT EXISTS user_cards_created_idx ON user_cards(user_id, created_at)`,
+
   `CREATE TABLE IF NOT EXISTS user_words (
      user_id          UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
      word_id          TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,

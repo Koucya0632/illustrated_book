@@ -462,11 +462,19 @@ export async function studyStats(userId: string) {
     (await sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}::uuid`) as unknown as { seen: number }[];
   const [{ due }] =
     (await sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId}::uuid AND next_review_at <= now()`) as unknown as { due: number }[];
+  // "Today" in Asia/Taipei — matches the date the home page renders, so
+  // the chip / cap rolls over at the user's expected midnight.
+  const [{ todayNew }] = (await sql`
+    SELECT count(*)::int AS "todayNew" FROM user_cards
+    WHERE user_id = ${userId}::uuid
+      AND (created_at AT TIME ZONE 'Asia/Taipei')::date
+        = (now() AT TIME ZONE 'Asia/Taipei')::date
+  `) as unknown as { todayNew: number }[];
   const newCount = total - seen;
   const byStatus = (await sql`
     SELECT status, count(*)::int AS c
     FROM user_cards WHERE user_id = ${userId}::uuid
     GROUP BY status
   `) as unknown as { status: Status; c: number }[];
-  return { total, seen, due, new: newCount, byStatus };
+  return { total, seen, due, new: newCount, todayNew, byStatus };
 }

@@ -221,42 +221,25 @@ export default async function WordDetailPage({ params }: { params: { id: string 
           <div className="relative overflow-hidden rounded-[22px] bg-tuji-ink p-5 text-white">
             <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/65">{tr("word.mastery")}</div>
             {mastery !== null && tier && tierKey ? (
-              <>
-                <div className="mt-3.5 flex items-center gap-4">
-                  <ProfRing
-                    value={mastery}
-                    size={84}
-                    stroke={8}
-                    color={tier.color}
-                    track="rgba(255,255,255,.15)"
-                    label={<span className="text-white">{Math.round(mastery)}%</span>}
-                  />
-                  <div className="flex-1">
-                    <div className="text-base font-extrabold">{tr(tierKey)}</div>
-                    <div className="mt-1 text-xs text-white/70">{tr("word.masteryDecay")}</div>
-                  </div>
+              <div className="mt-3.5 flex items-center gap-4">
+                <ProfRing
+                  value={mastery}
+                  size={84}
+                  stroke={8}
+                  color={tier.color}
+                  track="rgba(255,255,255,.15)"
+                  label={<span className="text-white">{Math.round(mastery)}%</span>}
+                />
+                <div className="flex-1">
+                  <div className="text-base font-extrabold">{tr(tierKey)}</div>
+                  <div className="mt-1 text-xs text-white/70">{tr("word.masteryDecay")}</div>
                 </div>
-                <Link
-                  href="/study"
-                  className="mt-3.5 flex items-center justify-between rounded-xl bg-white/[0.08] px-3.5 py-2.5"
-                >
-                  <span className="text-sm font-bold">{tr("word.practiceAgain")}</span>
-                  <span className="rounded-lg bg-tuji-yellow px-3 py-1.5 text-xs font-extrabold text-tuji-ink">
-                    {tr("word.practiceNowArrow")}
-                  </span>
-                </Link>
-              </>
+              </div>
             ) : (
               <div className="mt-3.5 flex items-center gap-4">
                 <Mascot pose="think" size={64} />
                 <div className="flex-1">
                   <div className="text-sm font-bold">{tr("word.noRecord")}</div>
-                  <Link
-                    href="/study"
-                    className="mt-2 inline-block rounded-lg bg-tuji-yellow px-3 py-1.5 text-xs font-extrabold text-tuji-ink"
-                  >
-                    {tr("word.startLearning")}
-                  </Link>
                 </div>
               </div>
             )}

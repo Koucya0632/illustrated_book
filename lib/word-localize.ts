@@ -26,10 +26,17 @@ export function localizeWord(
   lang: UiLang,
   localizedTexts?: LocalizedTextMap,
 ): Word {
-  if (lang === "zh-Hant") return w;
-
+  // Definitions always need filtering: the raw fetch returns every language
+  // we have on file (zh + ja today), so even the zh-Hant pass must drop the
+  // ja rows or the headline ends up "冰箱；冷蔵庫".
   const localizedDefs = pickDefinitions(w.definitions, lang);
   const chinese = localizedDefs[0]?.definition ?? localizeZhText(w.chinese, lang);
+
+  if (lang === "zh-Hant") {
+    // examples[].zh, etymology, note, forms[].label are all already the
+    // zh-Hant base values — pass them through untouched.
+    return { ...w, definitions: localizedDefs, chinese };
+  }
 
   const examples: Example[] = w.examples.map((e) => ({
     ...e,

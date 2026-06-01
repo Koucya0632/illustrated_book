@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useWords } from "@/components/WordsProvider";
 import { useCategories } from "@/components/CategoriesProvider";
 import { useSettings } from "@/components/SettingsProvider";
@@ -9,12 +9,20 @@ import { useT } from "@/components/I18n";
 import FavoriteButton from "@/components/FavoriteButton";
 import { WordTile } from "@/components/tuji/ui";
 
+// Progressive disclosure: render PAGE_SIZE tiles up-front, then expose a
+// "顯示更多" button that bumps the visible count by another PAGE_SIZE.
+// Keeps initial DOM + image-decode load bounded even when the user is on
+// the "all" chip (~468 words) — the previous render dumped every tile at
+// once.
+const PAGE_SIZE = 60;
+
 export default function CardsBrowser() {
   const all = useWords();
   const categories = useCategories();
   const { showZh } = useSettings();
   const t = useT();
   const [cat, setCat] = useState<string>("all");
+  const [visible, setVisible] = useState(PAGE_SIZE);
 
   const counts = useMemo(() => {
     const m = new Map<string, number>();
@@ -26,6 +34,13 @@ export default function CardsBrowser() {
     () => (cat === "all" ? all : all.filter((w) => w.category === cat)),
     [all, cat],
   );
+
+  // Reset paging when the active filter changes; otherwise switching
+  // categories keeps an unrelated "visible=180" from the previous chip.
+  useEffect(() => setVisible(PAGE_SIZE), [cat]);
+
+  const slice = shown.slice(0, visible);
+  const remaining = shown.length - slice.length;
 
   const chips = [
     { id: "all", label: t("cards.all"), n: all.length },
@@ -63,24 +78,36 @@ export default function CardsBrowser() {
       {shown.length === 0 ? (
         <p className="py-16 text-center text-sm text-tuji-ink3">{t("cards.empty")}</p>
       ) : (
-        <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-5">
-          {shown.map((w) => (
-            <Link
-              key={w.id}
-              href={`/word/${w.id}`}
-              className="group relative rounded-[18px] bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
-            >
-              <div className="absolute right-4 top-4 z-10">
-                <FavoriteButton id={w.id} size="sm" />
-              </div>
-              <WordTile imageUrl={w.imageUrl} word={w.word} height={120} />
-              <div className="mt-2.5">
-                <div className="text-[15px] font-extrabold tracking-tight text-tuji-ink">{w.word}</div>
-                {showZh && <div className="mt-0.5 text-xs text-tuji-ink3">{w.chinese}</div>}
-              </div>
-            </Link>
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-5">
+            {slice.map((w) => (
+              <Link
+                key={w.id}
+                href={`/word/${w.id}`}
+                className="group relative rounded-[18px] bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
+              >
+                <div className="absolute right-4 top-4 z-10">
+                  <FavoriteButton id={w.id} size="sm" />
+                </div>
+                <WordTile imageUrl={w.imageUrl} word={w.word} height={120} />
+                <div className="mt-2.5">
+                  <div className="text-[15px] font-extrabold tracking-tight text-tuji-ink">{w.word}</div>
+                  {showZh && <div className="mt-0.5 text-xs text-tuji-ink3">{w.chinese}</div>}
+                </div>
+              </Link>
+            ))}
+          </div>
+          {remaining > 0 && (
+            <div className="mt-6 flex justify-center">
+              <button
+                onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                className="rounded-full bg-white px-6 py-3 text-sm font-extrabold text-tuji-ink shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
+              >
+                {t("cards.showMore", { n: Math.min(PAGE_SIZE, remaining) })}
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

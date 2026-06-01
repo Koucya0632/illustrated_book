@@ -2,12 +2,14 @@
 // Reads from Postgres when DATABASE_URL is set; otherwise falls back to the
 // static lib/words.ts (this keeps `npm run dev` working without a DB).
 
+import { cache } from "react";
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
 import { words as staticWords } from "./words";
 import { localizeWord, type LocalizedTextMap } from "./word-localize";
 import type { UiLang } from "./settings";
 import type {
+  CardWord,
   CEFRLevel,
   CategoryId,
   Definition,
@@ -201,10 +203,14 @@ async function getAllRawEntries(): Promise<RawEntry[]> {
   }
 }
 
-export async function getAllWords(lang: UiLang = "zh-Hant"): Promise<Word[]> {
+// React's `cache()` amortizes the per-request localize loop within a single
+// render — every server component that asks for the same lang shares the
+// same materialized array. `getAllRawEntries` underneath is already
+// `unstable_cache`-wrapped, so cross-request reuse is also covered.
+export const getAllWords = cache(async (lang: UiLang = "zh-Hant"): Promise<Word[]> => {
   const raw = await getAllRawEntries();
   return raw.map((r) => localizeWord(r.word, lang, r.localizedTexts));
-}
+});
 
 export async function getWord(id: string, lang: UiLang = "zh-Hant"): Promise<Word | undefined> {
   const raw = await getAllRawEntries();
@@ -221,6 +227,27 @@ export async function getWordsByCategory(
     .filter((r) => r.word.category === categoryId)
     .map((r) => localizeWord(r.word, lang, r.localizedTexts));
 }
+
+// Lite shape for list-view consumers (WordsProvider). Drops definitions,
+// examples, relations, etymology, note, forms, tags — the heavy fields that
+// only the per-word detail page actually reads. At ~468 words this is the
+// single biggest payload win on first paint.
+export const getAllCardWords = cache(
+  async (lang: UiLang = "zh-Hant"): Promise<CardWord[]> => {
+    const raw = await getAllRawEntries();
+    return raw.map((r) => {
+      const w = localizeWord(r.word, lang, r.localizedTexts);
+      return {
+        id: w.id,
+        word: w.word,
+        chinese: w.chinese,
+        imageUrl: w.imageUrl,
+        category: w.category,
+        pronunciation: w.pronunciation,
+      };
+    });
+  },
+);
 
 // Escape ILIKE wildcards in user input so a literal "100%" doesn't match
 // any string starting with "100". Default ESCAPE char is backslash.

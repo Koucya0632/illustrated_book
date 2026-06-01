@@ -8,7 +8,7 @@ import { UserProvider } from "@/components/UserProvider";
 import { SettingsProvider } from "@/components/SettingsProvider";
 import AppScale from "@/components/AppScale";
 import HydrateUserState from "@/components/HydrateUserState";
-import { getAllWords } from "@/lib/data";
+import { getAllCardWords } from "@/lib/data";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
@@ -47,7 +47,7 @@ export default async function RootLayout({
   const bundle = await getCurrentUserBundle();
   const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
   const [words, categories] = await Promise.all([
-    getAllWords(settings.uiLang),
+    getAllCardWords(settings.uiLang),
     getCategoriesFromDb(settings.uiLang),
   ]);
   return (

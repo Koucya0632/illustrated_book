@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import type { Word } from "@/types";
+import type { CardWord } from "@/types";
 import PronunciationButton from "./PronunciationButton";
 import FavoriteButton from "./FavoriteButton";
 import { WordTile } from "./tuji/ui";
 import { useSettings } from "./SettingsProvider";
 
-export default function WordCard({ word }: { word: Word }) {
-  const [showExamples, setShowExamples] = useState(false);
+// Lite card for list views (/cards, /search, /favorites). Examples / etymology
+// / relations are intentionally NOT shown here — they live on the per-word
+// page and are server-fetched there. The whole point of the CardWord shape
+// is to avoid shipping those heavy fields to clients that don't need them.
+export default function WordCard({ word }: { word: CardWord }) {
   const { showZh } = useSettings();
 
   return (
@@ -31,27 +33,6 @@ export default function WordCard({ word }: { word: Word }) {
         </div>
 
         <p className="mt-1.5 font-mono text-[11px] text-tuji-ink3">{word.pronunciation}</p>
-
-        {word.examples.length > 0 && (
-          <>
-            <button
-              onClick={() => setShowExamples((s) => !s)}
-              className="mt-2 self-start text-xs font-extrabold text-tuji-teal hover:underline"
-            >
-              {showExamples ? "收起例句 ▲" : "查看例句 ▼"}
-            </button>
-            {showExamples && (
-              <ul className="mt-2 flex flex-col gap-2 text-sm">
-                {word.examples.slice(0, 2).map((ex, i) => (
-                  <li key={i} className="rounded-lg bg-tuji-bg px-3 py-2">
-                    <p className="text-tuji-ink">{ex.en}</p>
-                    {showZh && ex.zh && <p className="mt-0.5 text-xs text-tuji-ink3">{ex.zh}</p>}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </>
-        )}
       </div>
     </div>
   );

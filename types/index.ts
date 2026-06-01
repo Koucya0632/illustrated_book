@@ -56,6 +56,20 @@ export interface ConfusingWord {
   note: string;
 }
 
+/** Lite shape passed through WordsProvider — covers the fields every
+ *  list-style consumer (CardsBrowser / SearchClient / FavoritesClient /
+ *  ProgressClient / WordCard) reads. Heavy fields (definitions, examples,
+ *  relations, etymology, note, forms, tags, alsoKnownAs) live on the full
+ *  Word and are only fetched by the per-word server pages. */
+export interface CardWord {
+  id: string;
+  word: string;
+  chinese: string;
+  imageUrl: string;
+  category: CategoryId;
+  pronunciation: string;
+}
+
 export interface Word {
   id: string;
   word: string;

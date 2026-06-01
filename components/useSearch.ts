@@ -1,19 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { Word } from "@/types";
+import type { CardWord } from "@/types";
 
 export interface SearchState {
-  results: Word[];
+  results: CardWord[];
   loading: boolean;
   source: "idle" | "cache" | "server" | "error";
 }
 
 // Process-wide LRU-ish cache (cap to avoid unbounded growth on long sessions).
 const CACHE_MAX = 64;
-const cache = new Map<string, Word[]>();
+const cache = new Map<string, CardWord[]>();
 
-function readCache(key: string): Word[] | undefined {
+function readCache(key: string): CardWord[] | undefined {
   const v = cache.get(key);
   if (!v) return undefined;
   // Touch — re-insert to keep this entry "recent" in iteration order.
@@ -22,7 +22,7 @@ function readCache(key: string): Word[] | undefined {
   return v;
 }
 
-function writeCache(key: string, results: Word[]): void {
+function writeCache(key: string, results: CardWord[]): void {
   cache.delete(key);
   cache.set(key, results);
   if (cache.size > CACHE_MAX) {
@@ -69,7 +69,7 @@ export function useSearch(
         );
         if (id !== reqId.current) return;
         if (!res.ok) throw new Error(`search ${res.status}`);
-        const json = (await res.json()) as { results: Word[] };
+        const json = (await res.json()) as { results: CardWord[] };
         if (id !== reqId.current) return;
         writeCache(cacheKey, json.results);
         setState({

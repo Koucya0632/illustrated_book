@@ -328,3 +328,62 @@ export async function searchWordsAsync(
     return inMemoryMatch(all, q).slice(0, limit);
   }
 }
+
+// Lite haystack for the CardWord variant. The CardWord shape omits
+// alsoKnownAs / relations / tags, so the in-memory fallback can only match
+// on the public-facing display fields (word / chinese / category). That's
+// fine — the DB path is the primary source of truth; this fallback only
+// fires in local dev without a DB.
+function inMemoryMatchCard(all: CardWord[], q: string): CardWord[] {
+  const needle = q.toLowerCase();
+  return all.filter((w) =>
+    [w.word, w.chinese, w.category].join(" ").toLowerCase().includes(needle),
+  );
+}
+
+// Lite search: same SQL as searchWordsAsync (resolves to a set of word_ids
+// via trigram indexes), but resolves the ids against the lite CardWord
+// list so callers get the slim shape. Used by /api/search to keep the
+// search payload aligned with the /cards optimization.
+export async function searchCardWordsAsync(
+  query: string,
+  options: SearchOptions = {},
+  lang: UiLang = "zh-Hant",
+): Promise<CardWord[]> {
+  const q = query.trim();
+  if (!q) return [];
+  const limit = Math.max(1, Math.min(options.limit ?? 50, 200));
+  const all = await getAllCardWords(lang);
+  if (!dbEnabled()) return inMemoryMatchCard(all, q).slice(0, limit);
+  try {
+    const sql = getSql();
+    if (!sql) return inMemoryMatchCard(all, q).slice(0, limit);
+
+    const pattern = `%${escapeLike(q)}%`;
+    const rows = (await sql`
+      SELECT DISTINCT id FROM (
+        SELECT w.id FROM words w
+        WHERE w.deleted_at IS NULL AND w.status = 'published'
+          AND (
+            w.word ILIKE ${pattern}
+            OR EXISTS (
+              SELECT 1 FROM unnest(w.also_known_as) AS aka
+              WHERE aka ILIKE ${pattern}
+            )
+          )
+        UNION
+        SELECT d.word_id FROM word_definitions d
+        JOIN words w2 ON w2.id = d.word_id
+        WHERE w2.deleted_at IS NULL AND w2.status = 'published'
+          AND d.definition ILIKE ${pattern}
+      ) AS m
+      LIMIT ${limit}
+    `) as unknown as { id: string }[];
+
+    const ids = new Set(rows.map((r) => r.id));
+    return all.filter((w) => ids.has(w.id));
+  } catch (err) {
+    console.warn("[data] card search SQL failed, falling back to in-memory:", err);
+    return inMemoryMatchCard(all, q).slice(0, limit);
+  }
+}

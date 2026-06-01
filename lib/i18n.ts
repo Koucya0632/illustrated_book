@@ -234,6 +234,12 @@ const zhHant: Dict = {
   "search.resultCount": "{n} 個結果",
   "search.loading": "搜尋中…",
   "search.empty": "找不到符合的單字，換個關鍵字試試？",
+  "search.empty.title": "想找什麼字？",
+  "search.empty.sub": "輸入英文、中文，或挑個分類逛逛",
+  "search.empty.browseTitle": "想逛分類？",
+  "search.empty.viewAll": "看全部單字 →",
+  "search.empty.countWords": "{n} 字",
+  "search.showMore": "顯示更多 {n} 個",
 };
 
 const zhHans: Dict = {
@@ -452,6 +458,12 @@ const zhHans: Dict = {
   "search.resultCount": "{n} 个结果",
   "search.loading": "搜索中…",
   "search.empty": "找不到符合的单词，换个关键字试试？",
+  "search.empty.title": "想找什么单词？",
+  "search.empty.sub": "输入英文、中文，或挑个分类逛逛",
+  "search.empty.browseTitle": "想逛分类？",
+  "search.empty.viewAll": "看全部单词 →",
+  "search.empty.countWords": "{n} 字",
+  "search.showMore": "显示更多 {n} 个",
 };
 
 const ja: Dict = {
@@ -670,6 +682,12 @@ const ja: Dict = {
   "search.resultCount": "{n} 件",
   "search.loading": "検索中…",
   "search.empty": "該当する単語が見つかりません。別のキーワードで試してみますか？",
+  "search.empty.title": "何の単語を探しますか？",
+  "search.empty.sub": "英語・中国語で検索、またはカテゴリから探す",
+  "search.empty.browseTitle": "カテゴリで探す",
+  "search.empty.viewAll": "全単語を見る →",
+  "search.empty.countWords": "{n} 語",
+  "search.showMore": "さらに {n} 件表示",
 };
 
 const messages: Record<Locale, Dict> = { "zh-Hant": zhHant, "zh-Hans": zhHans, ja };

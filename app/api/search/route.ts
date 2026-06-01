@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { searchWordsAsync } from "@/lib/data";
+import { searchCardWordsAsync } from "@/lib/data";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
@@ -13,8 +13,10 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const q = (url.searchParams.get("q") ?? "").trim();
   const limitRaw = Number(url.searchParams.get("limit") ?? "50");
+  // Ceiling matches DAILY_GOAL_MAX-style upper bound: SearchClient's "顯示
+  // 更多" path may bump limit by 50 each click up to 200.
   const limit = Number.isFinite(limitRaw)
-    ? Math.max(1, Math.min(limitRaw, 100))
+    ? Math.max(1, Math.min(limitRaw, 200))
     : 50;
 
   if (!q) {
@@ -24,7 +26,7 @@ export async function GET(req: Request) {
   try {
     const userId = await getCurrentUserId();
     const lang = (userId ? await getSettings(userId) : DEFAULT_SETTINGS).uiLang;
-    const results = await searchWordsAsync(q, { limit }, lang);
+    const results = await searchCardWordsAsync(q, { limit }, lang);
     return NextResponse.json(
       { results, query: q, limit },
       {

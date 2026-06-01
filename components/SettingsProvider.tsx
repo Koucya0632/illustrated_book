@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { DEFAULT_SETTINGS, normalizeSettings, type UserSettings } from "@/lib/settings";
 
 interface SettingsContextValue {
@@ -26,6 +26,16 @@ export function SettingsProvider({
   children: React.ReactNode;
 }) {
   const [settings, setSettings] = useState<UserSettings>(initial);
+
+  // Sync context state when the server pushes a fresh `initial` (after a
+  // router.refresh() following a settings save). Without this, useState
+  // keeps the value it captured at mount, so callers of useSettings() /
+  // useT() never see the new uiLang, dailyGoal, etc. until a hard reload.
+  // The shallow-equality check avoids redundant re-renders when the parent
+  // re-renders with the same values but a new object reference.
+  useEffect(() => {
+    setSettings((prev) => (settingsEqual(prev, initial) ? prev : initial));
+  }, [initial]);
 
   const update = useCallback(
     (patch: Partial<UserSettings>) => {
@@ -59,4 +69,17 @@ export function useSettings(): UserSettings {
 export function useSettingsActions(): Pick<SettingsContextValue, "update" | "loggedIn"> {
   const { update, loggedIn } = useContext(SettingsContext);
   return { update, loggedIn };
+}
+
+function settingsEqual(a: UserSettings, b: UserSettings): boolean {
+  return (
+    a.dailyGoal === b.dailyGoal &&
+    a.accent === b.accent &&
+    a.showZh === b.showZh &&
+    a.studyCategory === b.studyCategory &&
+    a.uiLang === b.uiLang &&
+    a.fontSize === b.fontSize &&
+    a.studyDecks.length === b.studyDecks.length &&
+    a.studyDecks.every((d, i) => d === b.studyDecks[i])
+  );
 }

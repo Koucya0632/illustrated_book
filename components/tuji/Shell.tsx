@@ -34,7 +34,7 @@ const NAV: NavItem[] = [
     id: "fav",
     labelKey: "nav.fav",
     href: "/favorites",
-    icon: "❤️",
+    icon: "",
     match: (p) => p.startsWith("/favorites"),
   },
   {

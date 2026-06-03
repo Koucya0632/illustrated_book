@@ -122,7 +122,7 @@ export default async function MePage() {
             href="/favorites"
             className="inline-flex items-center gap-1.5 text-sm font-extrabold text-tuji-teal hover:underline"
           >
-            ❤️ {tr("progress.tile.favSub")} ({bundle.favorites.length}) →
+            {tr("progress.tile.favSub")} ({bundle.favorites.length}) →
           </Link>
         </div>
 

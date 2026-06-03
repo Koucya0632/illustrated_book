@@ -58,9 +58,9 @@ export default function CardsBrowser() {
         </div>
         <Link
           href="/favorites"
-          className="shrink-0 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-tuji-ink shadow-soft transition hover:shadow-card"
+          className="shrink-0 text-xs font-extrabold text-tuji-teal hover:underline"
         >
-          ❤️ {t("nav.fav")}
+          {t("nav.fav")}
         </Link>
       </header>
 

@@ -31,11 +31,18 @@ const NAV: NavItem[] = [
   { id: "play", labelKey: "nav.study", href: "/study", icon: "✏️", match: (p) => p.startsWith("/study") },
   { id: "dash", labelKey: "nav.progress", href: "/progress", icon: "📊", match: (p) => p.startsWith("/progress") },
   {
+    id: "fav",
+    labelKey: "nav.fav",
+    href: "/favorites",
+    icon: "❤️",
+    match: (p) => p.startsWith("/favorites"),
+  },
+  {
     id: "me",
     labelKey: "nav.me",
     href: "/me",
     icon: "👤",
-    match: (p) => p.startsWith("/me") || p.startsWith("/settings") || p.startsWith("/favorites"),
+    match: (p) => p.startsWith("/me") || p.startsWith("/settings"),
   },
 ];
 
@@ -165,7 +172,7 @@ export default function TujiShell({
         <main className="min-w-0 flex-1 pb-24 md:pb-0">{children}</main>
 
         {/* ── Mobile bottom tab bar ── */}
-        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-black/5 bg-white pb-[env(safe-area-inset-bottom)] pt-2 md:hidden">
+        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-6 border-t border-black/5 bg-white pb-[env(safe-area-inset-bottom)] pt-2 md:hidden">
           {NAV.map((it) => {
             const on = it.match(pathname);
             const center = it.id === "play";

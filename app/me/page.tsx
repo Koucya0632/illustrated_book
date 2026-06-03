@@ -25,7 +25,6 @@ export default async function MePage() {
   ]);
   const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   const byId = new Map(allWords.map((w) => [w.id, w]));
-  const fav = bundle.favorites.map((id) => byId.get(id)).filter(Boolean) as Word[];
   const learnedCount = bundle.learned.length;
 
   const now = new Date();
@@ -118,28 +117,13 @@ export default async function MePage() {
             </div>
           )}
 
-          {/* Favorites */}
-          <div>
-            <h2 className="mb-3 text-sm font-extrabold text-tuji-ink">{tr("progress.tile.favSub")}</h2>
-            {fav.length === 0 ? (
-              <p className="text-sm text-tuji-ink3">
-                {tr("me.noFav")}{" "}
-                <Link href="/cards" className="font-extrabold text-tuji-teal">
-                  {tr("me.goBrowse")}
-                </Link>
-              </p>
-            ) : (
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                {fav.map((w) => (
-                  <Link key={w.id} href={`/word/${w.id}`} className="rounded-[14px] bg-white p-2.5 shadow-soft transition hover:shadow-card">
-                    <WordTile imageUrl={w.imageUrl} word={w.word} height={70} rounded={10} />
-                    <div className="mt-2 truncate text-[13px] font-extrabold text-tuji-ink">{w.word}</div>
-                    <div className="truncate text-[11px] text-tuji-ink3">{w.chinese}</div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          {/* Favorites — entry link to /favorites */}
+          <Link
+            href="/favorites"
+            className="inline-flex items-center gap-1.5 text-sm font-extrabold text-tuji-teal hover:underline"
+          >
+            ❤️ {tr("progress.tile.favSub")} ({bundle.favorites.length}) →
+          </Link>
         </div>
 
         {/* Right rail */}

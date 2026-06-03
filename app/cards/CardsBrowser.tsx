@@ -49,11 +49,19 @@ export default function CardsBrowser() {
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 sm:px-7">
-      <header className="mb-4">
-        <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
-          {t("cards.summary", { words: all.length, themes: categories.length })}
+      <header className="mb-4 flex items-end justify-between gap-3">
+        <div>
+          <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
+            {t("cards.summary", { words: all.length, themes: categories.length })}
+          </div>
+          <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">{t("cards.title")}</h1>
         </div>
-        <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">{t("cards.title")}</h1>
+        <Link
+          href="/favorites"
+          className="shrink-0 rounded-full bg-white px-4 py-2 text-xs font-extrabold text-tuji-ink shadow-soft transition hover:shadow-card"
+        >
+          ❤️ {t("nav.fav")}
+        </Link>
       </header>
 
       {/* Category chips */}

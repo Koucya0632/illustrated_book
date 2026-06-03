@@ -222,7 +222,7 @@ Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受
 ## 8. 注意事項
 
 - **id 不可改**：它是網址、卡片、關聯目標的鍵；改名等於換一個字。
-- **圖片**：正式資料一律優先使用「乾淨教育插圖」（見第 9 節），避免關鍵字照片造成圖文不符。圖片可放在 `public/word-images/{id}.png`，並用 `/word-images/{id}.png` 寫入 `imageUrl` 或 `lib/image-urls.json` 覆蓋表。
+- **圖片**：正式資料一律優先使用「乾淨教育插圖」（見第 9 節），避免關鍵字照片造成圖文不符。生圖後存到本地 `public/word-images/{id}.png`（已 gitignore），再跑 `npx tsx scripts/upload-local-images.ts --apply`：腳本會把圖推到 Supabase Storage `word-images` bucket，並更新 `words.image_url` 與 `lib/image-urls.json`。前端最終是讀 DB 的 `image_url`。
 - **發音**：填音標字串即可；實際朗讀走瀏覽器 TTS（口音由設定的美/英控制），不需音檔。
 - **可學習 = 要有卡片**：走種子檔（A）並部署的字會自動 seed + 產 SRS 卡片（含增量新增）；Admin 單筆新增（B/C）目前仍不產卡。
 - **idempotent**：migrate 與 enrich 都可重複執行；已存在的資料用 `ON CONFLICT DO NOTHING` / 「空才補」策略，不會覆蓋既有內容。
@@ -234,17 +234,37 @@ Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受
 
 正式單字圖採用「乾淨教育插圖」作為預設方向，而不是隨機照片來源。目標是讓圖片清楚展示該單字本身，降低 `scale`、`coach`、`glass`、`mouse` 這類多義字的圖文不符風險。
 
-### 9.1 存放與覆蓋規則
+### 9.1 存放與上傳流程
 
-- 圖檔放在 `public/word-images/{id}.png`。
-- 對應路徑寫成 `/word-images/{id}.png`。
-- 若不想改單字本體，優先把覆蓋寫進 `lib/image-urls.json`：
-  ```json
-  {
-    "rice-cooker": "/word-images/rice-cooker.png"
-  }
-  ```
-- `lib/words.ts` 會優先使用 `lib/image-urls.json` 裡同 id 的圖片，因此可以只換圖片，不動單字內容與功能。
+正式圖最終存在 **Supabase Storage** 的 `word-images` bucket（公開讀取），
+DB 的 `words.image_url` 是唯一前端取圖來源。`public/word-images/` 只是本地暫存區，已被 `.gitignore` 排除（避免把 ~335 MB 的 PNG 推進 repo）。
+
+工作流：
+
+1. 用第 9.2 / 9.4 節的 prompt 生圖，存成本地 `public/word-images/{id}.png`（檔名 = 單字 id，kebab-case）。
+2. 跑上傳腳本：
+   ```bash
+   # 預設 dry run，列出會做什麼但不會動 Supabase / DB
+   npx tsx scripts/upload-local-images.ts
+
+   # 確認沒問題再 --apply 真的上傳 + 改 DB
+   npx tsx scripts/upload-local-images.ts --apply
+   ```
+   腳本會：
+   - 把每張 PNG 上傳到 `word-images/{id}.png`（已存在的會 upsert）。
+   - 把 `words.image_url` 改成 Supabase 公開 URL：`{NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/word-images/{id}.png`。
+   - 保留原 `image_url` 到 `image_source_url`，並標記 `image_license = 'local-upload'`。
+   - 找不到對應 DB row 的會跳過（會在 log 標記為 `? missing`）。
+3. 同步更新 `lib/image-urls.json`（給靜態 seed `lib/words.ts` 用）：
+   ```bash
+   node -e "const fs=require('fs'),p=require('path');const dir=p.resolve('public/word-images');const base=process.env.NEXT_PUBLIC_SUPABASE_URL+'/storage/v1/object/public/word-images/';const out={};for(const f of fs.readdirSync(dir).sort()){if(!f.toLowerCase().endsWith('.png'))continue;const id=f.replace(/\.png$/i,'');out[id]=base+id+'.png';}fs.writeFileSync('lib/image-urls.json',JSON.stringify(out,null,2)+'\n');"
+   ```
+4. `git commit lib/image-urls.json`（PNG 本身不要 commit，已被 ignore）。
+
+備註：
+- 腳本是 idempotent，可以重跑；只有「bucket 沒有」或「DB image_url 還沒對」的才會做事。
+- 需要的 env：`DATABASE_URL`、`NEXT_PUBLIC_SUPABASE_URL`、`SUPABASE_SERVICE_ROLE_KEY`（從 `.env.local` source）。
+- 若只想換一張圖、不動其他資料：覆蓋本地 PNG → 重跑腳本即可；前端會在快取 revalidate 後（~60s）看到新圖。
 
 ### 9.2 通用名詞 Prompt
 
@@ -296,7 +316,7 @@ No text, no letters, no numbers, no labels, no logo, no watermark, no brand name
 
 ### 9.4 動詞 / 形容詞 / 副詞 Prompt
 
-動詞、形容詞、副詞這類動作或抽象概念，用吉祥物黑貓「演出」語意的插圖最清楚。把下面的 prompt 丟給生圖模型，填入 `[WORD]`、`[中文意思]`、`[具體動作/情境描述]`，產出的圖再存成 `public/word-images/{id}.png`。
+動詞、形容詞、副詞這類動作或抽象概念，用吉祥物黑貓「演出」語意的插圖最清楚。把下面的 prompt 丟給生圖模型，填入 `[WORD]`、`[中文意思]`、`[具體動作/情境描述]`，產出的圖一樣存成 `public/word-images/{id}.png`，再走 9.1 的上傳腳本流程進 Supabase。
 
 > 適用：**動詞、形容詞、副詞**。需附上吉祥物黑貓的 reference image 以維持角色一致。
 

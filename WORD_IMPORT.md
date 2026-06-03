@@ -222,7 +222,7 @@ Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受
 ## 8. 注意事項
 
 - **id 不可改**：它是網址、卡片、關聯目標的鍵；改名等於換一個字。
-- **圖片**：用穩定可長期存取的網址（建議自家 Supabase Storage），避免熱連結失效。
+- **圖片**：正式資料一律優先使用「乾淨教育插圖」（見第 9 節），避免關鍵字照片造成圖文不符。圖片可放在 `public/word-images/{id}.png`，並用 `/word-images/{id}.png` 寫入 `imageUrl` 或 `lib/image-urls.json` 覆蓋表。
 - **發音**：填音標字串即可；實際朗讀走瀏覽器 TTS（口音由設定的美/英控制），不需音檔。
 - **可學習 = 要有卡片**：走種子檔（A）並部署的字會自動 seed + 產 SRS 卡片（含增量新增）；Admin 單筆新增（B/C）目前仍不產卡。
 - **idempotent**：migrate 與 enrich 都可重複執行；已存在的資料用 `ON CONFLICT DO NOTHING` / 「空才補」策略，不會覆蓋既有內容。
@@ -230,11 +230,75 @@ Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受
 
 ---
 
-## 9. AI 生成圖的 Prompt（動詞 / 形容詞 / 副詞）
+## 9. AI 生成圖規範（乾淨教育插圖）
 
-名詞多半用實物照片即可；但**動詞、形容詞、副詞**這類動作或抽象概念，用吉祥物黑貓「演出」語意的插圖最清楚。把下面的 prompt 丟給生圖模型，填入 `[WORD]`、`[中文意思]`、`[具體動作/情境描述]`，產出的圖再上傳當該字的 `imageUrl`。
+正式單字圖採用「乾淨教育插圖」作為預設方向，而不是隨機照片來源。目標是讓圖片清楚展示該單字本身，降低 `scale`、`coach`、`glass`、`mouse` 這類多義字的圖文不符風險。
 
-> 適用：**動詞、形容詞、副詞**（名詞通常用實物照片即可）。需附上吉祥物黑貓的 reference image 以維持角色一致。
+### 9.1 存放與覆蓋規則
+
+- 圖檔放在 `public/word-images/{id}.png`。
+- 對應路徑寫成 `/word-images/{id}.png`。
+- 若不想改單字本體，優先把覆蓋寫進 `lib/image-urls.json`：
+  ```json
+  {
+    "rice-cooker": "/word-images/rice-cooker.png"
+  }
+  ```
+- `lib/words.ts` 會優先使用 `lib/image-urls.json` 裡同 id 的圖片，因此可以只換圖片，不動單字內容與功能。
+
+### 9.2 通用名詞 Prompt
+
+適用：名詞、物品、場所、交通工具、調味料、辦公用品等。
+
+```text
+Create a clean educational vocabulary illustration for a language learning app.
+
+Word:
+[WORD]
+
+Meaning:
+[中文意思]
+
+Category:
+[CATEGORY]
+
+Subject:
+Show exactly one clear, recognizable [WORD] representing “[中文意思]”.
+The object must be the main subject, centered, large, and easy to identify.
+Use key visual features that distinguish it from similar objects: [關鍵特徵].
+
+Style:
+semi-realistic clean educational product illustration, accurate object proportions, realistic materials, soft studio lighting, subtle natural shadow, crisp edges, high detail but uncluttered, white or very light background, suitable for a vocabulary flashcard.
+
+Composition:
+single main subject, centered, enough white space, no clutter, no extra unrelated objects, no scene complexity.
+
+Negative prompt:
+No text, no letters, no numbers, no labels, no logo, no watermark, no brand names, no confusing alternate meaning, no extra main objects, no messy background, no childish cartoon exaggeration, no flat vector icon style.
+```
+
+### 9.3 多義字 / 易混淆字必填關鍵特徵
+
+這些字不能只用英文單字當 prompt，必須加特徵：
+
+| word | 必填特徵 |
+| --- | --- |
+| `scale` | bathroom weighing scale / digital body scale, not musical scale, not ruler |
+| `coach` | long-distance coach bus, not a sports coach |
+| `glass` | drinking glass / tumbler, not glass material or window |
+| `mouse` | computer mouse, not animal |
+| `fan` | electric fan with blades and stand, not sports fan |
+| `monitor` | computer monitor screen, not a person monitoring |
+| `station` | transit station entrance/platform, not radio station |
+| `sale` | supermarket sale sign or discount tag without readable text |
+| `MRT` | metro / rapid transit train and station, not random letters |
+| `shelf` | storage shelf with simple items, not cliff/ledge |
+
+### 9.4 動詞 / 形容詞 / 副詞 Prompt
+
+動詞、形容詞、副詞這類動作或抽象概念，用吉祥物黑貓「演出」語意的插圖最清楚。把下面的 prompt 丟給生圖模型，填入 `[WORD]`、`[中文意思]`、`[具體動作/情境描述]`，產出的圖再存成 `public/word-images/{id}.png`。
+
+> 適用：**動詞、形容詞、副詞**。需附上吉祥物黑貓的 reference image 以維持角色一致。
 
 ```text
 Create a clean, cute educational vocabulary illustration using the same black cat character as the reference image.

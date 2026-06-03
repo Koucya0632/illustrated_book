@@ -27,3 +27,8 @@ yarn-error.log*
 next-env.d.ts
 .vercel
 .env*
+
+# local image generation artifacts — served from Supabase Storage in prod,
+# kept out of the repo so we don't bloat clones / CI.
+/public/word-images/
+/reports/

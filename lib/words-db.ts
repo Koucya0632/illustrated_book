@@ -109,6 +109,9 @@ function hydrate(
     status: row.status as Word["status"],
     definitions,
     chinese: primaryChinese(definitions),
+    englishDefinition: definitions
+      .filter((d) => d.language === "en")
+      .sort((a, b) => a.sortOrder - b.sortOrder)[0]?.definition,
     examples: examplesOut,
     tags,
     relations: wordRelations,
@@ -426,6 +429,7 @@ export interface EnrichmentData {
   forms?: { label: string; value: string }[];
   mnemonic?: string;
   etymology?: string;
+  englishDefinition?: string;
 }
 
 /** Apply AI-generated enrichment surgically: add synonym/antonym/see-also
@@ -442,6 +446,7 @@ export async function applyEnrichment(id: string, data: EnrichmentData): Promise
   const forms = (data.forms ?? []).filter((f) => f?.label?.trim() && f?.value?.trim());
   const etymology = data.etymology?.trim() || null;
   const mnemonic = data.mnemonic?.trim() || null;
+  const englishDef = data.englishDefinition?.trim() || null;
 
   await sql.begin(async (tx: Sql) => {
     for (const r of rels) {
@@ -461,6 +466,14 @@ export async function applyEnrichment(id: string, data: EnrichmentData): Promise
         updated_at = now()
       WHERE id = ${id}
     `;
+    if (englishDef) {
+      await tx`
+        INSERT INTO word_definitions (word_id, language, definition, cefr_level, sort_order)
+        VALUES (${id}, 'en', ${englishDef}, NULL, 0)
+        ON CONFLICT (word_id, language, sort_order)
+        DO UPDATE SET definition = EXCLUDED.definition
+      `;
+    }
   });
   bustCaches();
 }

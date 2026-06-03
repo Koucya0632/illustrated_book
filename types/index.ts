@@ -88,6 +88,9 @@ export interface Word {
   /** Convenience accessor: first zh definition's text. Backward-compatible
    *  with the pre-Phase-2 Word shape; new code should iterate `definitions`. */
   chinese: string;
+  /** Convenience accessor: first en definition's text. Shown verbatim on the
+   *  word page under the zh headline, regardless of UI language. */
+  englishDefinition?: string;
 
   examples: Example[];
   /** Free-form tags (slug). Empty array when none. */

@@ -98,6 +98,9 @@ function rowToWord(r: Row): { word: Word; localizedTexts: LocalizedTextMap } {
 
   const tags = r.tags ?? [];
   const chinese = primaryChinese(definitions);
+  const englishDefinition = definitions
+    .filter((d) => d.language === "en")
+    .sort((a, b) => a.sortOrder - b.sortOrder)[0]?.definition;
   const forms = parseJsonbColumn<{ label: string; value: string }[]>(r.forms, []);
 
   // Legacy back-compat shims so unconverted UI code still works.
@@ -121,6 +124,7 @@ function rowToWord(r: Row): { word: Word; localizedTexts: LocalizedTextMap } {
     status: r.status as WordStatus,
     definitions,
     chinese,
+    englishDefinition,
     examples,
     tags,
     relations,

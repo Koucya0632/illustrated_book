@@ -6,50 +6,17 @@ import Mascot from "@/components/tuji/Mascot";
 import { WordTile, ProfRing, scoreTier } from "@/components/tuji/ui";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserId } from "@/lib/current-user";
-import { getAllWords, getWord } from "@/lib/data";
+import { getWord } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
 import { getMasteryRow, getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { t } from "@/lib/i18n";
-import type { RelationType, Word } from "@/types";
 import MarkLearned from "./MarkLearned";
 import EventTracker from "@/components/EventTracker";
 
 // Dynamic so the page can render in the signed-in user's language + show their
 // mastery. (It already read cookies for mastery, so it wasn't statically cached.)
 export const dynamic = "force-dynamic";
-
-const RELATION_GROUPS: { type: RelationType; labelKey: string }[] = [
-  { type: "synonym", labelKey: "word.rel.synonym" },
-  { type: "antonym", labelKey: "word.rel.antonym" },
-  { type: "hypernym", labelKey: "word.rel.hypernym" },
-  { type: "hyponym", labelKey: "word.rel.hyponym" },
-  { type: "confusing", labelKey: "word.rel.confusing" },
-  { type: "see-also", labelKey: "word.rel.seeAlso" },
-];
-
-function gatherRelations(
-  current: Word,
-  all: Word[],
-): Map<RelationType, Array<{ wordId: string; word?: Word; note?: string }>> {
-  const out = new Map<RelationType, Array<{ wordId: string; word?: Word; note?: string }>>();
-  const push = (type: RelationType, wordId: string, note?: string) => {
-    const list = out.get(type) ?? [];
-    if (!list.some((x) => x.wordId === wordId)) {
-      list.push({ wordId, word: all.find((x) => x.id === wordId), note });
-    }
-    out.set(type, list);
-  };
-  for (const r of current.relations) push(r.type, r.wordId, r.note);
-  const symmetric: RelationType[] = ["synonym", "antonym", "confusing", "see-also"];
-  for (const other of all) {
-    if (other.id === current.id) continue;
-    for (const r of other.relations) {
-      if (r.wordId === current.id && symmetric.includes(r.type)) push(r.type, other.id, r.note);
-    }
-  }
-  return out;
-}
 
 // Highlight occurrences of `term` inside a sentence with a yellow chip.
 function highlight(sentence: string, term: string) {
@@ -72,15 +39,12 @@ export default async function WordDetailPage({ params }: { params: { id: string 
   const lang = settings.uiLang;
   const tr = (key: string, vars?: Record<string, string | number>) => t(lang, key, vars);
 
-  const [w, all, cats] = await Promise.all([
+  const [w, cats] = await Promise.all([
     getWord(params.id, lang),
-    getAllWords(lang),
     getCategoriesFromDb(lang),
   ]);
   if (!w) notFound();
   const cat = cats.find((c) => c.id === w.category);
-  const groupedRelations = gatherRelations(w, all);
-  const sameCategory = all.filter((x) => x.id !== w.id && x.category === w.category).slice(0, 4);
 
   // After localization, `definitions` carries only the chosen language. The
   // "other languages" panel below is reserved for definitions in OTHER
@@ -124,12 +88,6 @@ export default async function WordDetailPage({ params }: { params: { id: string 
         <span className="font-extrabold text-tuji-ink">{w.word}</span>
         <div className="ml-auto flex items-center gap-2">
           <FavoriteButton id={w.id} size="md" />
-          <Link
-            href="/study"
-            className="rounded-xl bg-tuji-teal px-3.5 py-2 text-[13px] font-extrabold text-white shadow-soft"
-          >
-            {tr("word.practiceNow")}
-          </Link>
         </div>
       </div>
 
@@ -160,6 +118,11 @@ export default async function WordDetailPage({ params }: { params: { id: string 
                   <span className="text-[13px] italic text-tuji-ink3">{w.partOfSpeech}</span>
                 </div>
                 <div className="mt-2 text-lg font-bold text-tuji-ink">{headlineZh}</div>
+                {w.englishDefinition && (
+                  <div className="mt-1 text-[13px] leading-relaxed text-tuji-ink2">
+                    {w.englishDefinition}
+                  </div>
+                )}
                 {w.alsoKnownAs && w.alsoKnownAs.length > 0 && (
                   <div className="mt-1 text-xs text-tuji-ink3">
                     {tr("word.alsoKnownAs")}：<span className="font-semibold text-tuji-ink2">{w.alsoKnownAs.join(", ")}</span>
@@ -245,17 +208,6 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             )}
           </div>
 
-          {/* Mnemonic / note */}
-          {w.note && (
-            <div className="flex items-start gap-3 rounded-[22px] bg-white p-4 shadow-soft">
-              <Mascot pose="think" size={48} />
-              <div>
-                <div className="mb-1 text-[13px] font-extrabold text-tuji-ink">{tr("word.mnemonic")}</div>
-                <div className="text-[13px] leading-relaxed text-tuji-ink2">{w.note}</div>
-              </div>
-            </div>
-          )}
-
           {/* Word forms (詞形變化) */}
           {w.forms && w.forms.length > 0 && (
             <div className="rounded-[22px] bg-white p-4 shadow-soft">
@@ -280,59 +232,8 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             </div>
           )}
 
-          {/* Same theme */}
-          {sameCategory.length > 0 && (
-            <div>
-              <div className="mb-2.5 text-[13px] font-extrabold text-tuji-ink">{tr("word.sameTheme")}</div>
-              <div className="grid grid-cols-2 gap-2.5">
-                {sameCategory.map((rw) => (
-                  <Link key={rw.id} href={`/word/${rw.id}`} className="rounded-[14px] bg-white p-2.5 shadow-soft transition hover:shadow-card">
-                    <WordTile imageUrl={rw.imageUrl} word={rw.word} height={70} rounded={10} />
-                    <div className="mt-2 text-[13px] font-extrabold text-tuji-ink">{rw.word}</div>
-                    <div className="text-[11px] text-tuji-ink3">{rw.chinese}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
-
-      {/* Typed relations */}
-      {RELATION_GROUPS.map(({ type, labelKey }) => {
-        const items = groupedRelations.get(type) ?? [];
-        if (items.length === 0) return null;
-        return (
-          <section key={type} className="mt-8">
-            <h2 className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">{tr(labelKey)}</h2>
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-              {items.map((item) =>
-                item.word ? (
-                  <Link
-                    key={`${type}-${item.wordId}`}
-                    href={`/word/${item.word.id}`}
-                    className="flex items-center gap-3 rounded-[14px] bg-white px-3 py-3 shadow-soft transition hover:shadow-card"
-                  >
-                    <div className="w-12 shrink-0">
-                      <WordTile imageUrl={item.word.imageUrl} word={item.word.word} height={48} rounded={10} />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate font-extrabold text-tuji-ink">{item.word.word}</p>
-                      <p className="truncate text-xs text-tuji-ink3">{item.word.chinese}</p>
-                      {item.note && <p className="mt-0.5 truncate text-xs text-tuji-ink3">{item.note}</p>}
-                    </div>
-                  </Link>
-                ) : (
-                  <div key={`${type}-${item.wordId}`} className="rounded-[14px] bg-tuji-bg px-3 py-3 text-sm text-tuji-ink2 shadow-soft">
-                    <p className="font-bold">{item.wordId}</p>
-                    {item.note && <p className="mt-0.5 text-xs text-tuji-ink3">{item.note}</p>}
-                  </div>
-                ),
-              )}
-            </div>
-          </section>
-        );
-      })}
 
       {/* Other-language definitions */}
       {otherDefs.length > 0 && (

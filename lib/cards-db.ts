@@ -61,14 +61,21 @@ function shuffle<T>(arr: T[]): T[] {
 // attach current mastery to each due card, then sort weakest-first within the
 // already-due slice. New (unseen) cards stay at the end so review work isn't
 // drowned out by fresh material.
+//
+// `prefetched` lets the caller (e.g. /api/study/queue) parallelize the mastery
+// fetch with the queue fetch — when provided, this function skips the DB hit.
 export async function attachMasteryAndSort(
   userId: string,
   due: DueCard[],
+  prefetched?: { word_id: string; mastery: number; last_reviewed_at: string | null; review_count: number }[],
 ): Promise<DueCard[]> {
   if (due.length === 0) return due;
-  const { getAllMastery } = await import("./users-db");
   const { applyDecay } = await import("./mastery");
-  const rows = await getAllMastery(userId);
+  let rows = prefetched;
+  if (!rows) {
+    const { getAllMastery } = await import("./users-db");
+    rows = await getAllMastery(userId);
+  }
   const byWord = new Map<string, { mastery: number; lastReviewedAt: Date | null }>();
   for (const r of rows) {
     byWord.set(r.word_id, {
@@ -456,25 +463,34 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
 
 export async function studyStats(userId: string) {
   const sql = requireSql();
-  const [{ total }] =
-    (await sql`SELECT count(*)::int AS total FROM cards`) as unknown as { total: number }[];
-  const [{ seen }] =
-    (await sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}::uuid`) as unknown as { seen: number }[];
-  const [{ due }] =
-    (await sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId}::uuid AND next_review_at <= now()`) as unknown as { due: number }[];
-  // "Today" in Asia/Taipei — matches the date the home page renders, so
-  // the chip / cap rolls over at the user's expected midnight.
-  const [{ todayNew }] = (await sql`
-    SELECT count(*)::int AS "todayNew" FROM user_cards
-    WHERE user_id = ${userId}::uuid
-      AND (created_at AT TIME ZONE 'Asia/Taipei')::date
-        = (now() AT TIME ZONE 'Asia/Taipei')::date
-  `) as unknown as { todayNew: number }[];
+  // Five COUNTs in parallel — postgres-js dispatches them on independent
+  // connections so the wall time collapses from ~5 × round-trip to ~1 ×.
+  // "Today" in Asia/Taipei matches the date the home page renders, so the
+  // chip / cap rolls over at the user's expected midnight.
+  const [totalRows, seenRows, dueRows, todayNewRows, byStatus] = await Promise.all([
+    sql`SELECT count(*)::int AS total FROM cards` as Promise<{ total: number }[]>,
+    sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}::uuid` as Promise<
+      { seen: number }[]
+    >,
+    sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId}::uuid AND next_review_at <= now()` as Promise<
+      { due: number }[]
+    >,
+    sql`
+      SELECT count(*)::int AS "todayNew" FROM user_cards
+      WHERE user_id = ${userId}::uuid
+        AND (created_at AT TIME ZONE 'Asia/Taipei')::date
+          = (now() AT TIME ZONE 'Asia/Taipei')::date
+    ` as Promise<{ todayNew: number }[]>,
+    sql`
+      SELECT status, count(*)::int AS c
+      FROM user_cards WHERE user_id = ${userId}::uuid
+      GROUP BY status
+    ` as Promise<{ status: Status; c: number }[]>,
+  ]);
+  const total = totalRows[0].total;
+  const seen = seenRows[0].seen;
+  const due = dueRows[0].due;
+  const todayNew = todayNewRows[0].todayNew;
   const newCount = total - seen;
-  const byStatus = (await sql`
-    SELECT status, count(*)::int AS c
-    FROM user_cards WHERE user_id = ${userId}::uuid
-    GROUP BY status
-  `) as unknown as { status: Status; c: number }[];
   return { total, seen, due, new: newCount, todayNew, byStatus };
 }

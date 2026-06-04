@@ -7,7 +7,7 @@ import {
   studyStats,
   type QueueMode,
 } from "@/lib/cards-db";
-import { getSettings } from "@/lib/users-db";
+import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 
 export const runtime = "nodejs";
@@ -16,7 +16,6 @@ export const dynamic = "force-dynamic";
 export async function GET(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  const settings = await getSettings(userId);
 
   const { searchParams } = new URL(req.url);
   // Hard ceiling matches DAILY_GOAL_MAX in lib/settings.ts so a user who
@@ -47,11 +46,16 @@ export async function GET(req: Request) {
   const mode: QueueMode =
     modeParam === "new" || modeParam === "review" ? modeParam : "both";
 
-  const [queue, stats] = await Promise.all([
+  // getSettings + fetchDue + studyStats + getAllMastery have no data
+  // dependency between them — fanning them out collapses ~4 sequential
+  // round-trips into one. attachChoices / localize still depend on `queue`.
+  const [settings, queue, stats, masteryRows] = await Promise.all([
+    getSettings(userId),
     fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }, mode),
     studyStats(userId),
+    getAllMastery(userId),
   ]);
-  await attachMasteryAndSort(userId, queue);
+  await attachMasteryAndSort(userId, queue, masteryRows);
   // 新學 session skips the MCQ render entirely (StudyClient auto-reveals
   // each card), so distractor scoring + the word_relations JOIN would be
   // wasted work. Only attach choices for the modes that actually use them.

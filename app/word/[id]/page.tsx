@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import FavoriteButton from "@/components/FavoriteButton";
 import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
-import { WordTile, ProfRing, scoreTier } from "@/components/tuji/ui";
+import { WordTile, scoreTier } from "@/components/tuji/ui";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getWord } from "@/lib/data";
@@ -13,6 +13,7 @@ import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { t } from "@/lib/i18n";
 import MarkLearned from "./MarkLearned";
 import EventTracker from "@/components/EventTracker";
+import DefinitionTabs from "./DefinitionTabs";
 
 // Dynamic so the page can render in the signed-in user's language + show their
 // mastery. (It already read cookies for mastery, so it wasn't statically cached.)
@@ -62,14 +63,79 @@ export default async function WordDetailPage({ params }: { params: { id: string 
     }
   }
   const tier = mastery !== null ? scoreTier(mastery) : null;
-  // Localized mastery tier label (thresholds match scoreTier).
-  const tierKey =
-    mastery === null ? null : mastery >= 70 ? "word.tierMastered" : mastery >= 40 ? "word.tierLearning" : "word.tierWeak";
+
+  const tabs: { key: string; label: string; content: React.ReactNode }[] = [];
+  if (w.chineseDefinition || w.englishDefinition) {
+    tabs.push({
+      key: "definitions",
+      label: tr("word.tabDefinitions"),
+      content: (
+        <>
+          {w.chineseDefinition && (
+            <div className={w.englishDefinition ? "mb-3" : ""}>
+              <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
+                {tr("word.definitionLocal")}
+              </div>
+              <div className="text-[14px] leading-relaxed text-tuji-ink">{w.chineseDefinition}</div>
+            </div>
+          )}
+          {w.englishDefinition && (
+            <div>
+              <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
+                {tr("word.definitionEnglish")}
+              </div>
+              <div className="text-[14px] leading-relaxed text-tuji-ink2">{w.englishDefinition}</div>
+            </div>
+          )}
+        </>
+      ),
+    });
+  }
+  if (w.forms && w.forms.length > 0) {
+    tabs.push({
+      key: "forms",
+      label: tr("word.forms"),
+      content: (
+        <div className="flex flex-wrap gap-2">
+          {w.forms.map((f, i) => (
+            <span key={i} className="rounded-full bg-tuji-bg px-3 py-1.5 text-xs text-tuji-ink2">
+              <span className="font-bold text-tuji-ink3">{f.label}</span>
+              <span className="mx-1 text-tuji-ink4">·</span>
+              <span className="font-extrabold text-tuji-ink">{f.value}</span>
+            </span>
+          ))}
+        </div>
+      ),
+    });
+  }
+  if (w.etymology) {
+    tabs.push({
+      key: "etymology",
+      label: tr("word.etymology"),
+      content: <div className="text-[14px] leading-relaxed text-tuji-ink2">{w.etymology}</div>,
+    });
+  }
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 sm:px-7">
       <MarkLearned id={w.id} />
       <EventTracker wordId={w.id} category={w.category} />
+
+      {/* Mastery progress bar */}
+      <div className="mb-4">
+        <div className="mb-1 flex items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
+          <span>{tr("word.mastery")}</span>
+          <span>{mastery !== null ? `${Math.round(mastery)}%` : tr("word.noRecord")}</span>
+        </div>
+        <div className="h-2 w-full overflow-hidden rounded-full bg-tuji-bg">
+          {mastery !== null && tier && (
+            <div
+              className="h-full rounded-full transition-all"
+              style={{ width: `${Math.max(2, Math.round(mastery))}%`, backgroundColor: tier.color }}
+            />
+          )}
+        </div>
+      </div>
 
       {/* Breadcrumb + actions */}
       <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-bold text-tuji-ink3">
@@ -147,28 +213,6 @@ export default async function WordDetailPage({ params }: { params: { id: string 
             )}
           </div>
 
-          {/* Definitions (中文譯義 + 英文譯義) */}
-          {(w.chineseDefinition || w.englishDefinition) && (
-            <div className="rounded-[22px] bg-white p-4 shadow-soft">
-              {w.chineseDefinition && (
-                <div className={w.englishDefinition ? "mb-3" : ""}>
-                  <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
-                    {tr("word.definitionLocal")}
-                  </div>
-                  <div className="text-[14px] leading-relaxed text-tuji-ink">{w.chineseDefinition}</div>
-                </div>
-              )}
-              {w.englishDefinition && (
-                <div>
-                  <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
-                    {tr("word.definitionEnglish")}
-                  </div>
-                  <div className="text-[14px] leading-relaxed text-tuji-ink2">{w.englishDefinition}</div>
-                </div>
-              )}
-            </div>
-          )}
-
           {/* Examples */}
           {w.examples.length > 0 && (
             <div>
@@ -195,60 +239,9 @@ export default async function WordDetailPage({ params }: { params: { id: string 
           )}
         </div>
 
-        {/* Right column */}
+        {/* Right column: tabbed 譯義 / 詞形變化 / 來源故事 */}
         <div className="flex flex-col gap-4">
-          {/* Mastery card (dark) */}
-          <div className="relative overflow-hidden rounded-[22px] bg-tuji-ink p-5 text-white">
-            <div className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-white/65">{tr("word.mastery")}</div>
-            {mastery !== null && tier && tierKey ? (
-              <div className="mt-3.5 flex items-center gap-4">
-                <ProfRing
-                  value={mastery}
-                  size={84}
-                  stroke={8}
-                  color={tier.color}
-                  track="rgba(255,255,255,.15)"
-                  label={<span className="text-white">{Math.round(mastery)}%</span>}
-                />
-                <div className="flex-1">
-                  <div className="text-base font-extrabold">{tr(tierKey)}</div>
-                  <div className="mt-1 text-xs text-white/70">{tr("word.masteryDecay")}</div>
-                </div>
-              </div>
-            ) : (
-              <div className="mt-3.5 flex items-center gap-4">
-                <Mascot pose="think" size={64} />
-                <div className="flex-1">
-                  <div className="text-sm font-bold">{tr("word.noRecord")}</div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Word forms (詞形變化) */}
-          {w.forms && w.forms.length > 0 && (
-            <div className="rounded-[22px] bg-white p-4 shadow-soft">
-              <div className="mb-2 text-[13px] font-extrabold text-tuji-ink">{tr("word.forms")}</div>
-              <div className="flex flex-wrap gap-2">
-                {w.forms.map((f, i) => (
-                  <span key={i} className="rounded-full bg-tuji-bg px-3 py-1.5 text-xs text-tuji-ink2">
-                    <span className="font-bold text-tuji-ink3">{f.label}</span>
-                    <span className="mx-1 text-tuji-ink4">·</span>
-                    <span className="font-extrabold text-tuji-ink">{f.value}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Etymology (詞源) */}
-          {w.etymology && (
-            <div className="rounded-[22px] bg-white p-4 shadow-soft">
-              <div className="mb-1 text-[13px] font-extrabold text-tuji-ink">{tr("word.etymology")}</div>
-              <div className="text-[13px] leading-relaxed text-tuji-ink2">{w.etymology}</div>
-            </div>
-          )}
-
+          <DefinitionTabs tabs={tabs} />
         </div>
       </div>
 

@@ -28,6 +28,13 @@ export const EnrichSchema = z.object({
     .describe(
       "A single concise English definition, dictionary-headword style, one sentence (~10–18 words).",
     ),
+  chineseDefinition: z
+    .string()
+    .describe(
+      "A single concise Traditional Chinese definition, dictionary-style, one sentence. " +
+        "Explain what the thing is — match the depth of `englishDefinition`, not just translate the headword. " +
+        "No examples, no etymology, no parentheticals.",
+    ),
   etymology: z
     .string()
     .describe(
@@ -51,6 +58,7 @@ const SYSTEM =
   "adjective→比較級/最高級). Use an empty array when a category doesn't apply. " +
   "Keep mnemonic ≤40 characters. " +
   "`englishDefinition`: one short dictionary-style English sentence — no examples, no parenthetical usage notes. " +
+  "`chineseDefinition`: one short dictionary-style Traditional Chinese sentence that *explains* the concept, parallel in depth to `englishDefinition`. Do not merely translate the headword. " +
   "`etymology`: 2–4 sentences in Traditional Chinese. " +
   "If the word decomposes into prefix/root/suffix, briefly decompose it. " +
   "If it has a verified etymology, describe the origin's feeling (source language, original sense). " +

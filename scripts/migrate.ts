@@ -234,6 +234,7 @@ const DDL = [
   // stored as JSONB [{label,value}]). Mnemonic reuses the existing `note`.
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS etymology TEXT`,
   `ALTER TABLE words ADD COLUMN IF NOT EXISTS forms     JSONB NOT NULL DEFAULT '[]'::jsonb`,
+  `ALTER TABLE words ADD COLUMN IF NOT EXISTS chinese_definition TEXT`,
   // CHECK constraints — wrapped so repeated migrate runs don't blow up.
   `DO $$ BEGIN
      IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'words_cefr_chk') THEN

@@ -430,6 +430,7 @@ export interface EnrichmentData {
   mnemonic?: string;
   etymology?: string;
   englishDefinition?: string;
+  chineseDefinition?: string;
 }
 
 /** Apply AI-generated enrichment surgically: add synonym/antonym/see-also
@@ -447,6 +448,7 @@ export async function applyEnrichment(id: string, data: EnrichmentData): Promise
   const etymology = data.etymology?.trim() || null;
   const mnemonic = data.mnemonic?.trim() || null;
   const englishDef = data.englishDefinition?.trim() || null;
+  const chineseDef = data.chineseDefinition?.trim() || null;
 
   await sql.begin(async (tx: Sql) => {
     for (const r of rels) {
@@ -460,10 +462,11 @@ export async function applyEnrichment(id: string, data: EnrichmentData): Promise
     }
     await tx`
       UPDATE words SET
-        etymology = COALESCE(${etymology}, etymology),
-        forms     = CASE WHEN ${forms.length}::int > 0 THEN ${tx.json(forms)} ELSE forms END,
-        note      = COALESCE(NULLIF(note, ''), ${mnemonic}),
-        updated_at = now()
+        etymology          = COALESCE(${etymology}, etymology),
+        chinese_definition = COALESCE(${chineseDef}, chinese_definition),
+        forms              = CASE WHEN ${forms.length}::int > 0 THEN ${tx.json(forms)} ELSE forms END,
+        note               = COALESCE(NULLIF(note, ''), ${mnemonic}),
+        updated_at         = now()
       WHERE id = ${id}
     `;
     if (englishDef) {

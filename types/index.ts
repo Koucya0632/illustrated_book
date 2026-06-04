@@ -91,6 +91,9 @@ export interface Word {
   /** Convenience accessor: first en definition's text. Shown verbatim on the
    *  word page under the zh headline, regardless of UI language. */
   englishDefinition?: string;
+  /** Sentence-form Chinese definition stored in `words.chinese_definition`
+   *  (zh-Hant base; localized to UI lang via word_localize). */
+  chineseDefinition?: string;
 
   examples: Example[];
   /** Free-form tags (slug). Empty array when none. */

@@ -36,6 +36,7 @@ interface Row {
   collocations: string[];
   note: string | null;
   etymology: string | null;
+  chinese_definition: string | null;
   forms: unknown;         // jsonb array of { label, value }
   definitions: unknown;   // jsonb array of { language, definition, cefr_level, sort_order }
   examples: unknown;      // jsonb array of { sentence, cefr_level, sort_order, translations }
@@ -131,6 +132,7 @@ function rowToWord(r: Row): { word: Word; localizedTexts: LocalizedTextMap } {
     collocations: r.collocations.length ? r.collocations : undefined,
     note: r.note ?? undefined,
     etymology: r.etymology ?? undefined,
+    chineseDefinition: r.chinese_definition ?? undefined,
     forms: forms.length ? forms : undefined,
     relatedWords: seeAlso.length ? seeAlso : undefined,
     confusingWords: confusing.length ? confusing : undefined,
@@ -158,7 +160,7 @@ const fetchAllFromDb = unstable_cache(
       SELECT
         w.id, w.word, w.also_known_as, w.category, w.part_of_speech,
         w.pronunciation, w.audio_url, w.image_url, w.cefr_level, w.status,
-        w.collocations, w.note, w.etymology, w.forms,
+        w.collocations, w.note, w.etymology, w.chinese_definition, w.forms,
         (SELECT jsonb_agg(jsonb_build_object(
                   'language',   d.language,
                   'definition', d.definition,

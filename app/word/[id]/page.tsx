@@ -118,11 +118,6 @@ export default async function WordDetailPage({ params }: { params: { id: string 
                   <span className="text-[13px] italic text-tuji-ink3">{w.partOfSpeech}</span>
                 </div>
                 <div className="mt-2 text-lg font-bold text-tuji-ink">{headlineZh}</div>
-                {w.englishDefinition && (
-                  <div className="mt-1 text-[13px] leading-relaxed text-tuji-ink2">
-                    {w.englishDefinition}
-                  </div>
-                )}
                 {w.alsoKnownAs && w.alsoKnownAs.length > 0 && (
                   <div className="mt-1 text-xs text-tuji-ink3">
                     {tr("word.alsoKnownAs")}：<span className="font-semibold text-tuji-ink2">{w.alsoKnownAs.join(", ")}</span>
@@ -151,6 +146,28 @@ export default async function WordDetailPage({ params }: { params: { id: string 
               </div>
             )}
           </div>
+
+          {/* Definitions (中文譯義 + 英文譯義) */}
+          {(w.chineseDefinition || w.englishDefinition) && (
+            <div className="rounded-[22px] bg-white p-4 shadow-soft">
+              {w.chineseDefinition && (
+                <div className={w.englishDefinition ? "mb-3" : ""}>
+                  <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
+                    {tr("word.definitionLocal")}
+                  </div>
+                  <div className="text-[14px] leading-relaxed text-tuji-ink">{w.chineseDefinition}</div>
+                </div>
+              )}
+              {w.englishDefinition && (
+                <div>
+                  <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
+                    {tr("word.definitionEnglish")}
+                  </div>
+                  <div className="text-[14px] leading-relaxed text-tuji-ink2">{w.englishDefinition}</div>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Examples */}
           {w.examples.length > 0 && (

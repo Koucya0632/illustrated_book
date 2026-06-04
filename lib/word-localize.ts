@@ -45,6 +45,7 @@ export function localizeWord(
 
   const etymology = pickLocalizedText("etymology", w.etymology, lang, localizedTexts);
   const note = pickLocalizedText("note", w.note, lang, localizedTexts);
+  const chineseDefinition = pickLocalizedText("chineseDefinition", w.chineseDefinition, lang, localizedTexts);
   const forms = w.forms?.map((f) => ({ ...f, label: localizeZhText(f.label, lang) }));
 
   return {
@@ -54,6 +55,7 @@ export function localizeWord(
     examples,
     etymology,
     note,
+    chineseDefinition,
     forms,
   };
 }
@@ -117,7 +119,7 @@ function pickExampleZh(e: Example, lang: UiLang): string | undefined {
 }
 
 function pickLocalizedText(
-  field: "etymology" | "note",
+  field: "etymology" | "note" | "chineseDefinition",
   base: string | undefined,
   lang: UiLang,
   localizedTexts?: LocalizedTextMap,

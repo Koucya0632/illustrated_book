@@ -7,6 +7,8 @@
 //
 //   npx tsx scripts/upload-local-images.ts          (dry run by default)
 //   npx tsx scripts/upload-local-images.ts --apply  (actually upload + update)
+//   npx tsx scripts/upload-local-images.ts --apply --force-upload
+//   npx tsx scripts/upload-local-images.ts --apply --force-upload --only-file ids.txt
 //
 // Requires: DATABASE_URL, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY
 
@@ -18,6 +20,18 @@ import postgres from "postgres";
 const BUCKET = "word-images";
 const LOCAL_DIR = path.resolve(process.cwd(), "public/word-images");
 const APPLY = process.argv.includes("--apply");
+const FORCE_UPLOAD = process.argv.includes("--force-upload");
+const onlyFileArg = process.argv[process.argv.indexOf("--only-file") + 1];
+const ONLY_IDS =
+  process.argv.includes("--only-file") && onlyFileArg
+    ? new Set(
+        fs
+          .readFileSync(path.resolve(process.cwd(), onlyFileArg), "utf8")
+          .split(/\r?\n/)
+          .map((s) => s.trim())
+          .filter(Boolean),
+      )
+    : null;
 
 function envOrDie(name: string): string {
   const v = process.env[name];
@@ -53,7 +67,8 @@ async function main() {
   }
   const files = fs
     .readdirSync(LOCAL_DIR)
-    .filter((f) => f.toLowerCase().endsWith(".png"));
+    .filter((f) => f.toLowerCase().endsWith(".png"))
+    .filter((f) => !ONLY_IDS || ONLY_IDS.has(f.replace(/\.png$/i, "")));
   if (files.length === 0) {
     console.log("[upload-local-images] no .png files to upload");
     return;
@@ -83,7 +98,7 @@ async function main() {
       const newUrl = `${publicBase}${storagePath}`;
 
       // 1. Upload to Storage (skip if already present)
-      if (existing.has(storagePath)) {
+      if (existing.has(storagePath) && !FORCE_UPLOAD) {
         skippedUpload++;
       } else if (APPLY) {
         const buf = fs.readFileSync(path.join(LOCAL_DIR, filename));

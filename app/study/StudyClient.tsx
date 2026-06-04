@@ -106,6 +106,17 @@ const CHOICE_TINTS = [
   { bg: "#E8F1FB", fg: "#3A6E9F" },
 ];
 
+function Spinner({ light = false }: { light?: boolean }) {
+  return (
+    <span
+      aria-hidden
+      className={`inline-block h-3 w-3 animate-spin rounded-full border-2 border-t-transparent ${
+        light ? "border-white/70" : "border-tuji-ink3"
+      }`}
+    />
+  );
+}
+
 // Suggest a rating based on how long it took to answer a correct MCQ.
 function suggestRating(elapsedMs: number): Rating {
   if (elapsedMs < 3000) return "熟練";
@@ -126,10 +137,19 @@ export default function StudyClient() {
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [peekId, setPeekId] = useState<string | null>(null);
+  // Which button (新學/複習) is currently fetching its queue — drives the
+  // landing-tile spinner so a slow /api/study/queue doesn't look like a dead
+  // click. `null` = idle.
+  const [loadingMode, setLoadingMode] = useState<Mode | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const startedAtRef = useRef<number>(0);
   // Synchronous lock so a rapid double-click within the auto-advance window is
   // blocked before React re-renders (state alone has a stale-closure race).
   const answeringRef = useRef(false);
+  // Latest in-flight queue fetch; abort on re-click or unmount so a stale
+  // response can't overwrite a fresh one and the user isn't billed for a
+  // dropped request after they navigate away.
+  const queueAbortRef = useRef<AbortController | null>(null);
 
   const { dailyGoal, showZh, studyCategory, studyDecks } = useSettings();
   const categories = useCategories();
@@ -189,23 +209,45 @@ export default function StudyClient() {
         setQueue([]);
         return;
       }
-      const res = await fetch(
-        `/api/study/queue?mode=${m}&limit=${limitParam}` +
-          `&category=${encodeURIComponent(studyCategory)}` +
-          `&decks=${encodeURIComponent(decksParam)}`,
-      );
-      const data = await res.json();
-      setQueue(data.queue);
-      setStats(data.stats);
-      setMode(m);
-      setIdx(0);
-      setPhase("answer");
-      setPicked(null);
-      setLastFeedback(null);
-      setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
+      queueAbortRef.current?.abort();
+      const ctrl = new AbortController();
+      queueAbortRef.current = ctrl;
+      setLoadingMode(m);
+      setLoadError(null);
+      try {
+        const res = await fetch(
+          `/api/study/queue?mode=${m}&limit=${limitParam}` +
+            `&category=${encodeURIComponent(studyCategory)}` +
+            `&decks=${encodeURIComponent(decksParam)}`,
+          { signal: ctrl.signal },
+        );
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        setQueue(data.queue);
+        setStats(data.stats);
+        setMode(m);
+        setIdx(0);
+        setPhase("answer");
+        setPicked(null);
+        setLastFeedback(null);
+        setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
+      } catch (err) {
+        if ((err as Error)?.name === "AbortError") return;
+        setLoadError(t("study.loadFailed"));
+      } finally {
+        if (queueAbortRef.current === ctrl) {
+          queueAbortRef.current = null;
+          setLoadingMode(null);
+        }
+      }
     },
-    [dailyGoal, studyCategory, decksParam, newLimit, base],
+    [dailyGoal, studyCategory, decksParam, newLimit, base, backlog, t],
   );
+
+  // Abort any in-flight queue fetch on unmount so a late response can't
+  // setState on a dead component (and Vercel doesn't bill for the dropped
+  // request on the server side either).
+  useEffect(() => () => queueAbortRef.current?.abort(), []);
 
   // Refresh stats whenever we land back on the landing screen (mount,
   // after "done", or after the user manually navigates back).
@@ -349,11 +391,18 @@ export default function StudyClient() {
             </div>
           )}
 
+          {loadError && (
+            <div className="mt-5 rounded-2xl border border-tuji-coral/40 bg-tuji-coral/10 px-4 py-3 text-[13px] font-bold text-tuji-coral">
+              ⚠️ {loadError}
+            </div>
+          )}
+
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {/* 新學 */}
             <button
               onClick={() => pickNewLearn()}
-              disabled={newCount === 0 && !needsConfirm}
+              disabled={(newCount === 0 && !needsConfirm) || loadingMode !== null}
+              aria-busy={loadingMode === "new"}
               className="tuji-press group flex flex-col items-start gap-2 rounded-3xl p-5 text-left shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
               style={{
                 background: newTileDimmed ? "#F4ECDE" : "#FFFFFF",
@@ -362,8 +411,9 @@ export default function StudyClient() {
             >
               <div className="flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
                 <span>📘 {t("study.landing.newLearn")}</span>
-                {backlogWarn && <span className="text-tuji-coral">⚠️</span>}
-                {!backlogWarn && reachedDaily && (
+                {loadingMode === "new" && <Spinner />}
+                {loadingMode !== "new" && backlogWarn && <span className="text-tuji-coral">⚠️</span>}
+                {loadingMode !== "new" && !backlogWarn && reachedDaily && (
                   <span className="text-tuji-green">{t("study.daily.doneBadge")}</span>
                 )}
               </div>
@@ -371,7 +421,9 @@ export default function StudyClient() {
                 {newCount}
               </div>
               <div className="text-[13px] font-bold text-tuji-ink3">
-                {newCount > 0
+                {loadingMode === "new"
+                  ? t("study.loading")
+                  : newCount > 0
                   ? t("study.landing.minutes", { n: Math.max(1, Math.round(newCount * minutesPer)) })
                   : t("study.landing.newEmpty")}
               </div>
@@ -388,18 +440,22 @@ export default function StudyClient() {
             {/* 複習 */}
             <button
               onClick={pickReview}
-              disabled={reviewCount === 0}
+              disabled={reviewCount === 0 || loadingMode !== null}
+              aria-busy={loadingMode === "review"}
               className="tuji-press group flex flex-col items-start gap-2 rounded-3xl bg-tuji-teal p-5 text-left text-white shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
               style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
             >
-              <div className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/80">
-                🔁 {t("study.landing.review")}
+              <div className="flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.14em] text-white/80">
+                <span>🔁 {t("study.landing.review")}</span>
+                {loadingMode === "review" && <Spinner light />}
               </div>
               <div className="font-display text-5xl font-extrabold leading-none tracking-tight">
                 {reviewCount}
               </div>
               <div className="text-[13px] font-bold text-white/90">
-                {reviewCount > 0
+                {loadingMode === "review"
+                  ? t("study.loading")
+                  : reviewCount > 0
                   ? t("study.landing.minutes", { n: Math.max(1, Math.round(reviewCount * minutesPer)) })
                   : t("study.landing.reviewEmpty")}
               </div>

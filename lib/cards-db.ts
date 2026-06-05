@@ -463,34 +463,37 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
 
 export async function studyStats(userId: string) {
   const sql = requireSql();
-  // Five COUNTs in parallel — postgres-js dispatches them on independent
-  // connections so the wall time collapses from ~5 × round-trip to ~1 ×.
-  // "Today" in Asia/Taipei matches the date the home page renders, so the
-  // chip / cap rolls over at the user's expected midnight.
-  const [totalRows, seenRows, dueRows, todayNewRows, byStatus] = await Promise.all([
-    sql`SELECT count(*)::int AS total FROM cards` as Promise<{ total: number }[]>,
-    sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}::uuid` as Promise<
-      { seen: number }[]
-    >,
-    sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId}::uuid AND next_review_at <= now()` as Promise<
-      { due: number }[]
-    >,
+  // Two queries — down from five. The previous Promise.all fan-out was
+  // eating connection-pool slots: the caller (queue route) also does its
+  // own Promise.all of 4 helpers, of which this is one, so peak intra-
+  // request concurrency hit 8 vs the pool's `max=15`. Two users at once
+  // would deadlock and the function would 504. FILTER aggregates fold
+  // the four user_cards counts into a single scan; the GROUP BY stays
+  // separate because it returns N rows. `total` (a constant-ish global
+  // count) and the per-user numbers also merge into the same query via
+  // a scalar subquery — postgres plans this cheaply.
+  // "Today" in Asia/Taipei matches the date the home page renders, so
+  // the chip / cap rolls over at the user's expected midnight.
+  const [agg, byStatus] = await Promise.all([
     sql`
-      SELECT count(*)::int AS "todayNew" FROM user_cards
+      SELECT
+        (SELECT count(*)::int FROM cards) AS total,
+        count(*)::int AS seen,
+        count(*)::int FILTER (WHERE next_review_at <= now()) AS due,
+        count(*)::int FILTER (
+          WHERE (created_at AT TIME ZONE 'Asia/Taipei')::date
+              = (now() AT TIME ZONE 'Asia/Taipei')::date
+        ) AS "todayNew"
+      FROM user_cards
       WHERE user_id = ${userId}::uuid
-        AND (created_at AT TIME ZONE 'Asia/Taipei')::date
-          = (now() AT TIME ZONE 'Asia/Taipei')::date
-    ` as Promise<{ todayNew: number }[]>,
+    ` as Promise<{ total: number; seen: number; due: number; todayNew: number }[]>,
     sql`
       SELECT status, count(*)::int AS c
       FROM user_cards WHERE user_id = ${userId}::uuid
       GROUP BY status
     ` as Promise<{ status: Status; c: number }[]>,
   ]);
-  const total = totalRows[0].total;
-  const seen = seenRows[0].seen;
-  const due = dueRows[0].due;
-  const todayNew = todayNewRows[0].todayNew;
+  const { total, seen, due, todayNew } = agg[0];
   const newCount = total - seen;
   return { total, seen, due, new: newCount, todayNew, byStatus };
 }

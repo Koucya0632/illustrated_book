@@ -12,8 +12,14 @@ export function getSql(): ReturnType<typeof postgres> | null {
   const url = process.env.DATABASE_URL;
   if (!url) return null;
   cached = postgres(url, {
-    // Pooler is shared, so we keep connections lean.
-    max: 5,
+    // 15 connections per Fluid Compute worker. The /study/queue route
+    // fans out 4 helpers in parallel, one of which itself fans out
+    // internal counts — peak intra-request concurrency is ~7. At max=5
+    // (the previous value) two simultaneous users would deadlock and
+    // hit the 60s function timeout (504 in logs). Supabase's transaction-
+    // mode pooler comfortably handles 15 per worker and we still stay
+    // well under its global ceiling.
+    max: 15,
     idle_timeout: 20,
     connect_timeout: 10,
     // Supabase requires SSL.

@@ -14,6 +14,13 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
+  const t0 = performance.now();
+  // Best-effort early bail: if the browser already gave up on this request
+  // (page nav, tab close, double-click), don't bother spinning up the
+  // Promise.all of DB work. Saves Supabase compute and reduces the
+  // "status 0, 0ms" pattern in Vercel logs.
+  if (req.signal.aborted) return new NextResponse(null, { status: 499 });
+
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
@@ -46,21 +53,63 @@ export async function GET(req: Request) {
   const mode: QueueMode =
     modeParam === "new" || modeParam === "review" ? modeParam : "both";
 
-  // getSettings + fetchDue + studyStats + getAllMastery have no data
-  // dependency between them — fanning them out collapses ~4 sequential
-  // round-trips into one. attachChoices / localize still depend on `queue`.
-  const [settings, queue, stats, masteryRows] = await Promise.all([
-    getSettings(userId),
-    fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }, mode),
-    studyStats(userId),
-    getAllMastery(userId),
-  ]);
-  await attachMasteryAndSort(userId, queue, masteryRows);
-  // 新學 session skips the MCQ render entirely (StudyClient auto-reveals
-  // each card), so distractor scoring + the word_relations JOIN would be
-  // wasted work. Only attach choices for the modes that actually use them.
-  if (mode !== "new") await attachChoices(queue);
-  const localized = await localizeStudyQueue(queue, settings.uiLang);
+  try {
+    // getSettings + fetchDue + studyStats + getAllMastery have no data
+    // dependency between them — fanning them out collapses ~4 sequential
+    // round-trips into one. attachChoices / localize still depend on `queue`.
+    const tDb = performance.now();
+    const [settings, queue, stats, masteryRows] = await Promise.all([
+      getSettings(userId),
+      fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }, mode),
+      studyStats(userId),
+      getAllMastery(userId),
+    ]);
+    const dbMs = Math.round(performance.now() - tDb);
 
-  return NextResponse.json({ queue: localized, stats });
+    if (req.signal.aborted) return new NextResponse(null, { status: 499 });
+
+    const tMastery = performance.now();
+    await attachMasteryAndSort(userId, queue, masteryRows);
+    const masteryMs = Math.round(performance.now() - tMastery);
+
+    // 新學 session skips the MCQ render entirely (StudyClient auto-reveals
+    // each card), so distractor scoring + the word_relations JOIN would be
+    // wasted work. Only attach choices for the modes that actually use them.
+    const tChoices = performance.now();
+    if (mode !== "new") await attachChoices(queue);
+    const choicesMs = Math.round(performance.now() - tChoices);
+
+    const tLocalize = performance.now();
+    const localized = await localizeStudyQueue(queue, settings.uiLang);
+    const localizeMs = Math.round(performance.now() - tLocalize);
+
+    const totalMs = Math.round(performance.now() - t0);
+    return NextResponse.json(
+      { queue: localized, stats },
+      {
+        headers: {
+          "Server-Timing": [
+            `db;dur=${dbMs}`,
+            `mastery;dur=${masteryMs}`,
+            `choices;dur=${choicesMs}`,
+            `localize;dur=${localizeMs}`,
+            `total;dur=${totalMs}`,
+          ].join(", "),
+        },
+      },
+    );
+  } catch (err) {
+    // Surface a JSON error instead of letting Next return an opaque HTML 500.
+    // Client (StudyClient.loadQueue) shows a coral banner; structured log
+    // lets us correlate to Vercel runtime logs by userId + mode.
+    console.error("[study/queue] failed", {
+      userId,
+      mode,
+      limit,
+      newLimit,
+      category,
+      err: err instanceof Error ? err.message : String(err),
+    });
+    return NextResponse.json({ error: "queue_failed" }, { status: 500 });
+  }
 }

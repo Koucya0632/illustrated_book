@@ -12,9 +12,23 @@ import { studyStats } from "@/lib/cards-db";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: Request) {
+  if (req.signal.aborted) return new NextResponse(null, { status: 499 });
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  const stats = await studyStats(userId);
-  return NextResponse.json({ stats });
+  try {
+    const t0 = performance.now();
+    const stats = await studyStats(userId);
+    const dbMs = Math.round(performance.now() - t0);
+    return NextResponse.json(
+      { stats },
+      { headers: { "Server-Timing": `db;dur=${dbMs}` } },
+    );
+  } catch (err) {
+    console.error("[study/stats] failed", {
+      userId,
+      err: err instanceof Error ? err.message : String(err),
+    });
+    return NextResponse.json({ error: "stats_failed" }, { status: 500 });
+  }
 }

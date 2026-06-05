@@ -180,10 +180,23 @@ export default function StudyClient() {
   const decksParam = studyDecks.join(",");
 
   // Refresh stats only — used by landing to render N/M tiles + the warning
-  // banner. Tiny endpoint (one round-trip, no card rows / JOINs).
+  // banner. Tiny endpoint (one round-trip, no card rows / JOINs). Silent
+  // single retry on transient failure: stats failures are user-visible (the
+  // tiles render 0) so a cold-start blip would lie about backlog.
   const refreshStats = useCallback(async () => {
-    try {
+    const attempt = async () => {
       const res = await fetch("/api/study/stats");
+      if (res.ok || (res.status >= 400 && res.status < 500)) return res;
+      throw new Error(`HTTP ${res.status}`);
+    };
+    try {
+      let res: Response;
+      try {
+        res = await attempt();
+      } catch {
+        await new Promise((r) => setTimeout(r, 500));
+        res = await attempt();
+      }
       if (!res.ok) return;
       const data = await res.json();
       setStats(data.stats);
@@ -214,13 +227,30 @@ export default function StudyClient() {
       queueAbortRef.current = ctrl;
       setLoadingMode(m);
       setLoadError(null);
+      const url =
+        `/api/study/queue?mode=${m}&limit=${limitParam}` +
+        `&category=${encodeURIComponent(studyCategory)}` +
+        `&decks=${encodeURIComponent(decksParam)}`;
+      // One silent retry on transient failure (network blip / 5xx). Most
+      // queue failures we've seen are cold-start or pooler hiccups that
+      // succeed on the next try; only show the error banner if both fail.
+      // Auth errors (401) and client errors (4xx) skip the retry — they
+      // won't fix themselves.
+      const attempt = async (): Promise<Response> => {
+        const res = await fetch(url, { signal: ctrl.signal });
+        if (res.ok || (res.status >= 400 && res.status < 500)) return res;
+        throw new Error(`HTTP ${res.status}`);
+      };
       try {
-        const res = await fetch(
-          `/api/study/queue?mode=${m}&limit=${limitParam}` +
-            `&category=${encodeURIComponent(studyCategory)}` +
-            `&decks=${encodeURIComponent(decksParam)}`,
-          { signal: ctrl.signal },
-        );
+        let res: Response;
+        try {
+          res = await attempt();
+        } catch (firstErr) {
+          if ((firstErr as Error)?.name === "AbortError") return;
+          await new Promise((r) => setTimeout(r, 500));
+          if (ctrl.signal.aborted) return;
+          res = await attempt();
+        }
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setQueue(data.queue);

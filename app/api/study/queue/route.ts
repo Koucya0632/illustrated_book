@@ -102,13 +102,20 @@ export async function GET(req: Request) {
     // Surface a JSON error instead of letting Next return an opaque HTML 500.
     // Client (StudyClient.loadQueue) shows a coral banner; structured log
     // lets us correlate to Vercel runtime logs by userId + mode.
-    console.error("[study/queue] failed", {
+    //
+    // Two-line emit: Vercel's MESSAGE column truncates ~50 chars, so the
+    // postgres error message goes on its own line first.
+    const e = err as Error & { code?: string; detail?: string; severity?: string };
+    console.error(`[study/queue] ${e.message}`);
+    console.error(`[study/queue] context`, {
       userId,
       mode,
       limit,
       newLimit,
       category,
-      err: err instanceof Error ? err.message : String(err),
+      code: e.code,
+      severity: e.severity,
+      detail: e.detail,
     });
     return NextResponse.json({ error: "queue_failed" }, { status: 500 });
   }

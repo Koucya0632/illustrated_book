@@ -25,9 +25,17 @@ export async function GET(req: Request) {
       { headers: { "Server-Timing": `db;dur=${dbMs}` } },
     );
   } catch (err) {
-    console.error("[study/stats] failed", {
+    // Two-line emit: Vercel's log column truncates ~50 chars, so the
+    // message gets its own line (the part you actually want to read) and
+    // the structured context (userId + postgres code/detail) goes on a
+    // second line. Without this, [study/stats] failed hides the cause.
+    const e = err as Error & { code?: string; detail?: string; severity?: string };
+    console.error(`[study/stats] ${e.message}`);
+    console.error(`[study/stats] context`, {
       userId,
-      err: err instanceof Error ? err.message : String(err),
+      code: e.code,
+      severity: e.severity,
+      detail: e.detail,
     });
     return NextResponse.json({ error: "stats_failed" }, { status: 500 });
   }

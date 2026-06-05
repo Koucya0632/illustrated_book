@@ -2,6 +2,7 @@
 // the request cookies. Used by Server Components, Route Handlers, etc.
 
 import "server-only";
+import { headers } from "next/headers";
 import { createClient } from "./supabase/server";
 import {
   getFavorites,
@@ -10,6 +11,7 @@ import {
   type ProfileRow,
 } from "./users-db";
 import { DEFAULT_AVATAR, isAvatarPose, type AvatarPose } from "./avatars";
+import { USER_ID_HEADER } from "./supabase/middleware";
 
 export interface CurrentUser {
   id: string;          // UUID
@@ -37,6 +39,26 @@ export async function getCurrentUserId(): Promise<string | null> {
     data: { user },
   } = await supabase.auth.getUser();
   return user?.id ?? null;
+}
+
+/**
+ * Fast-path userId lookup for route handlers on the hot path
+ * (`/api/study/queue`, `/api/study/stats`, etc).
+ *
+ * Middleware (`updateSupabaseSession`) has already validated the JWT against
+ * Supabase auth and stamped `x-user-id` on the request. Reading it here is
+ * O(1) — no Supabase round trip — which removes ~170-645ms from each call
+ * (the dominant cost in the previous Vercel runtime logs).
+ *
+ * Falls back to `getCurrentUserId()` if the header is missing. That covers:
+ *   - server components that didn't go through the matcher
+ *   - local dev edge cases where middleware is bypassed
+ *   - belt-and-suspenders if a future middleware refactor stops setting it
+ */
+export async function getCurrentUserIdFast(): Promise<string | null> {
+  const headerId = headers().get(USER_ID_HEADER);
+  if (headerId) return headerId;
+  return getCurrentUserId();
 }
 
 export async function getCurrentUser(): Promise<CurrentUser | null> {

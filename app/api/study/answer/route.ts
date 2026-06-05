@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getCurrentUserId } from "@/lib/current-user";
+import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getCardById, upsertReview } from "@/lib/cards-db";
 import { humanizeInterval, schedule, type Rating } from "@/lib/srs";
 import { applyAnswer, masteryLevel } from "@/lib/mastery";
@@ -28,7 +28,7 @@ function defaultActivity(cardType: string): StudyLogActivity {
 }
 
 export async function POST(req: Request) {
-  const userId = await getCurrentUserId();
+  const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   let body: {

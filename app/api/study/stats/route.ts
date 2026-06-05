@@ -6,7 +6,7 @@
 // { total, seen, due, new, byStatus } — so the client can compute
 // `computeNewLimit(base, stats.due)` and decide which buttons to enable.
 import { NextResponse } from "next/server";
-import { getCurrentUserId } from "@/lib/current-user";
+import { getCurrentUserIdFast } from "@/lib/current-user";
 import { studyStats } from "@/lib/cards-db";
 
 export const runtime = "nodejs";
@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
   if (req.signal.aborted) return new NextResponse(null, { status: 499 });
-  const userId = await getCurrentUserId();
+  const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   try {
     const t0 = performance.now();

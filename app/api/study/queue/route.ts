@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getCurrentUserId } from "@/lib/current-user";
+import { getCurrentUserIdFast } from "@/lib/current-user";
 import {
   attachChoices,
   attachMasteryAndSort,
@@ -21,7 +21,7 @@ export async function GET(req: Request) {
   // "status 0, 0ms" pattern in Vercel logs.
   if (req.signal.aborted) return new NextResponse(null, { status: 499 });
 
-  const userId = await getCurrentUserId();
+  const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const { searchParams } = new URL(req.url);

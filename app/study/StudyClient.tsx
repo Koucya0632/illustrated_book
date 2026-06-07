@@ -142,6 +142,9 @@ export default function StudyClient() {
   // click. `null` = idle.
   const [loadingMode, setLoadingMode] = useState<Mode | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+  // Stats fetch error — distinct from `stats === null` so we can tell
+  // "still loading" from "tried and failed" on the landing screen.
+  const [statsError, setStatsError] = useState(false);
   const startedAtRef = useRef<number>(0);
   // Synchronous lock so a rapid double-click within the auto-advance window is
   // blocked before React re-renders (state alone has a stale-closure race).
@@ -189,6 +192,7 @@ export default function StudyClient() {
       if (res.ok || (res.status >= 400 && res.status < 500)) return res;
       throw new Error(`HTTP ${res.status}`);
     };
+    setStatsError(false);
     try {
       let res: Response;
       try {
@@ -197,11 +201,16 @@ export default function StudyClient() {
         await new Promise((r) => setTimeout(r, 500));
         res = await attempt();
       }
-      if (!res.ok) return;
+      if (!res.ok) {
+        setStatsError(true);
+        return;
+      }
       const data = await res.json();
       setStats(data.stats);
     } catch {
-      /* ignore — landing copes with null stats by hiding counts */
+      // Both attempts failed — surface via statsError so landing can
+      // show the retry UI instead of getting stuck on the loader.
+      setStatsError(true);
     }
   }, []);
 
@@ -285,6 +294,15 @@ export default function StudyClient() {
     if (studyCategory === "all") return;
     if (phase === "landing") refreshStats();
   }, [phase, studyCategory, refreshStats]);
+
+  // Theme switch invalidates the old stats (different deck, different
+  // due/new counts). Drop them so landing falls back to the loader
+  // instead of briefly showing the prior theme's numbers.
+  useEffect(() => {
+    if (studyCategory === "all") return;
+    setStats(null);
+    setStatsError(false);
+  }, [studyCategory]);
 
   // 新學 session has no MCQ: there's nothing to "recall" the first time
   // the user sees a word. Every card lands directly in the reveal/rate
@@ -391,6 +409,41 @@ export default function StudyClient() {
 
   // ── Landing: pick 新學 / 複習 ──
   if (phase === "landing") {
+    // Gate the tile UI on a real stats payload. Without this the new-learn
+    // tile renders `dailyGoal` (backlog defaults to 0 → full quota) and the
+    // review tile renders 0 — both wrong, both clickable. Once stats arrives
+    // we render the tiles and never show this loader again for this mount
+    // (subsequent re-entries from /done have stats cached).
+    if (stats === null && !statsError) {
+      return (
+        <div className="mx-auto flex max-w-2xl flex-col items-center gap-3 px-5 py-16 text-tuji-ink3 sm:px-8">
+          <Mascot pose="think" size={96} />
+          <div className="flex items-center gap-2 text-sm font-bold">
+            <Spinner />
+            <span>{t("study.loading")}</span>
+          </div>
+        </div>
+      );
+    }
+    if (stats === null && statsError) {
+      return (
+        <div className="mx-auto max-w-2xl px-5 py-16 text-center sm:px-8">
+          <Mascot pose="think" size={96} className="mx-auto" />
+          <div className="mt-4 rounded-2xl border border-tuji-coral/40 bg-tuji-coral/10 px-4 py-3 text-[13px] font-bold text-tuji-coral">
+            ⚠️ {t("study.loadFailed")}
+          </div>
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={refreshStats}
+              className="tuji-press rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white"
+              style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
+            >
+              {t("study.recheck")}
+            </button>
+          </div>
+        </div>
+      );
+    }
     // Show 0 when the daily quota is already met so the tile doesn't claim
     // the user has more new cards than they'd actually start with. Override
     // would unlock another base-worth via the modal.

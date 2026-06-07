@@ -93,7 +93,7 @@ export const categories: Category[] = [
     description: "讓食物變美味的小幫手",
     color: "from-rose-100 to-amber-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/seasoning-jar.png",
   },
 ];
 

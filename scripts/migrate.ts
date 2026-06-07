@@ -123,6 +123,15 @@ const DDL = [
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS font_size TEXT NOT NULL DEFAULT 'md'`,
   // Additive: study deck filter (comma-joined deck_key list; '' = all decks).
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_decks TEXT NOT NULL DEFAULT ''`,
+  // Additive: multi-theme study filter (comma-joined category id list; '' = no
+  // theme picked). Replaces the single-value `study_category`, which we keep
+  // for rollback safety. Backfill: rows that previously had a real id (not
+  // 'all') copy that id into the new column; rows with 'all' stay empty (the
+  // new gate is "pick at least one theme to study").
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_categories TEXT NOT NULL DEFAULT ''`,
+  `UPDATE user_settings
+      SET study_categories = study_category
+    WHERE study_categories = '' AND study_category <> 'all'`,
 
   // ---- SRS cards (public read) + user_cards (per-user) ----
   `CREATE TABLE IF NOT EXISTS cards (

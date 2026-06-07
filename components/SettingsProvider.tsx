@@ -76,10 +76,11 @@ function settingsEqual(a: UserSettings, b: UserSettings): boolean {
     a.dailyGoal === b.dailyGoal &&
     a.accent === b.accent &&
     a.showZh === b.showZh &&
-    a.studyCategory === b.studyCategory &&
     a.uiLang === b.uiLang &&
     a.fontSize === b.fontSize &&
     a.studyDecks.length === b.studyDecks.length &&
-    a.studyDecks.every((d, i) => d === b.studyDecks[i])
+    a.studyDecks.every((d, i) => d === b.studyDecks[i]) &&
+    a.studyCategories.length === b.studyCategories.length &&
+    a.studyCategories.every((d, i) => d === b.studyCategories[i])
   );
 }

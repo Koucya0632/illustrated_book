@@ -39,9 +39,13 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
-  // Single study theme (a category id); "all"/empty = no filter.
-  const category = (searchParams.get("category") ?? "").trim();
-  const categories = category && category !== "all" ? [category] : [];
+  // Multi-theme study filter: comma-separated category ids (words.category).
+  // Empty list = no filter. Legacy "all" sentinel still stripped for safety
+  // — clients used to send it as a single value.
+  const categories = (searchParams.get("category") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => s && s !== "all");
   // Card decks (deck_key) to study; comma-separated, "all"/empty = no filter.
   const deckKeys = (searchParams.get("decks") ?? "")
     .split(",")
@@ -61,7 +65,7 @@ export async function GET(req: Request) {
     const [settings, queue, stats, masteryRows] = await Promise.all([
       getSettings(userId),
       fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }, mode),
-      studyStats(userId),
+      studyStats(userId, categories),
       getAllMastery(userId),
     ]);
     const dbMs = Math.round(performance.now() - tDb);
@@ -112,7 +116,7 @@ export async function GET(req: Request) {
       mode,
       limit,
       newLimit,
-      category,
+      categories,
       code: e.code,
       severity: e.severity,
       detail: e.detail,

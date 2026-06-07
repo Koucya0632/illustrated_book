@@ -26,7 +26,7 @@ const SETTINGS_KEYS: (keyof UserSettings)[] = [
   "dailyGoal",
   "accent",
   "showZh",
-  "studyCategory",
+  "studyCategories",
   "uiLang",
   "fontSize",
 ];
@@ -307,15 +307,23 @@ export default function SettingsClient({
                 current={draft.accent}
                 onSelect={(v) => set("accent", v as UserSettings["accent"])}
               />
-              <SetRow
+              <ThemeChipGrid
                 label={t("set.studyTheme")}
                 desc={t("set.studyThemeDesc")}
-                options={[
-                  { value: "all", label: t("set.notSelected") },
-                  ...categories.map((c) => ({ value: c.id, label: c.nameZh })),
-                ]}
-                current={draft.studyCategory}
-                onSelect={(v) => set("studyCategory", v)}
+                countLabel={t("set.studyThemeCount", {
+                  n: draft.studyCategories.length,
+                  total: categories.length,
+                })}
+                options={categories.map((c) => ({ id: c.id, name: c.nameZh, emoji: c.emoji }))}
+                selected={draft.studyCategories}
+                onToggle={(id) =>
+                  set(
+                    "studyCategories",
+                    draft.studyCategories.includes(id)
+                      ? draft.studyCategories.filter((x) => x !== id)
+                      : [...draft.studyCategories, id],
+                  )
+                }
               />
               <SetRow
                 label={t("set.showZh")}
@@ -446,6 +454,55 @@ function SetCard({ title, children }: { title: string; children: React.ReactNode
       <h2 className="mb-2.5 text-base font-extrabold tracking-tight text-tuji-ink">{title}</h2>
       <div className="overflow-hidden rounded-[16px] bg-white shadow-soft">{children}</div>
     </section>
+  );
+}
+
+// Multi-select chip grid used by the study-theme picker. The native <select>
+// pattern can't express "pick N of M" without losing the Tuji feel, and the
+// row of chips also reads as a count at a glance ("3 of 10 active") in a
+// way checkboxes don't. Selected chips use the teal accent + ✓ prefix to
+// match the on/off language used elsewhere in the app (avatar picker, etc).
+function ThemeChipGrid({
+  label,
+  desc,
+  countLabel,
+  options,
+  selected,
+  onToggle,
+}: {
+  label: string;
+  desc?: string;
+  countLabel: string;
+  options: { id: string; name: string; emoji: string }[];
+  selected: string[];
+  onToggle: (id: string) => void;
+}) {
+  return (
+    <div className="px-4 py-3.5">
+      <div className="text-sm font-bold text-tuji-ink">{label}</div>
+      {desc && <div className="mt-0.5 text-[11px] text-tuji-ink3">{desc}</div>}
+      <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {options.map((o) => {
+          const on = selected.includes(o.id);
+          return (
+            <button
+              key={o.id}
+              onClick={() => onToggle(o.id)}
+              aria-pressed={on}
+              className={`flex items-center gap-1.5 rounded-xl px-3 py-2 text-left text-xs font-extrabold transition ${
+                on
+                  ? "bg-tuji-teal text-white shadow-soft"
+                  : "bg-tuji-bg text-tuji-ink2 hover:bg-tuji-tealS"
+              }`}
+            >
+              <span className="text-sm">{on ? "✓" : o.emoji}</span>
+              <span className="truncate">{o.name}</span>
+            </button>
+          );
+        })}
+      </div>
+      <div className="mt-2 text-[11px] font-bold text-tuji-ink3">{countLabel}</div>
+    </div>
   );
 }
 

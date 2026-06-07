@@ -154,11 +154,20 @@ export default function StudyClient() {
   // dropped request after they navigate away.
   const queueAbortRef = useRef<AbortController | null>(null);
 
-  const { dailyGoal, showZh, studyCategory, studyDecks } = useSettings();
+  const { dailyGoal, showZh, studyCategories, studyDecks } = useSettings();
   const categories = useCategories();
   const t = useT();
-  const themeName =
-    studyCategory === "all" ? null : categories.find((c) => c.id === studyCategory)?.nameZh ?? null;
+  // Pre-resolve display names so the landing / progress labels can render
+  // "廚房, 客廳 +1" without re-doing the lookup per phase.
+  const themeLabels = studyCategories
+    .map((id) => categories.find((c) => c.id === id)?.nameZh)
+    .filter((n): n is string => Boolean(n));
+  const themeLabel =
+    themeLabels.length === 0
+      ? null
+      : themeLabels.length <= 2
+      ? themeLabels.join(", ")
+      : `${themeLabels.slice(0, 2).join(", ")} +${themeLabels.length - 2}`;
 
   const current = queue?.[idx];
   const total = queue?.length ?? 0;
@@ -181,6 +190,7 @@ export default function StudyClient() {
   const needsConfirm = backlogWarn || reachedDaily;
 
   const decksParam = studyDecks.join(",");
+  const categoriesParam = studyCategories.join(",");
 
   // Refresh stats only — used by landing to render N/M tiles + the warning
   // banner. Tiny endpoint (one round-trip, no card rows / JOINs). Silent
@@ -188,7 +198,8 @@ export default function StudyClient() {
   // tiles render 0) so a cold-start blip would lie about backlog.
   const refreshStats = useCallback(async () => {
     const attempt = async () => {
-      const res = await fetch("/api/study/stats");
+      const url = `/api/study/stats?category=${encodeURIComponent(categoriesParam)}`;
+      const res = await fetch(url);
       if (res.ok || (res.status >= 400 && res.status < 500)) return res;
       throw new Error(`HTTP ${res.status}`);
     };
@@ -212,7 +223,7 @@ export default function StudyClient() {
       // show the retry UI instead of getting stuck on the loader.
       setStatsError(true);
     }
-  }, []);
+  }, [categoriesParam]);
 
   // Fetch one session's worth of cards into the queue, for the chosen
   // mode. `overrideNew` forces the legacy `base` even when backlog>=100,
@@ -238,7 +249,7 @@ export default function StudyClient() {
       setLoadError(null);
       const url =
         `/api/study/queue?mode=${m}&limit=${limitParam}` +
-        `&category=${encodeURIComponent(studyCategory)}` +
+        `&category=${encodeURIComponent(categoriesParam)}` +
         `&decks=${encodeURIComponent(decksParam)}`;
       // One silent retry on transient failure (network blip / 5xx). Most
       // queue failures we've seen are cold-start or pooler hiccups that
@@ -280,7 +291,7 @@ export default function StudyClient() {
         }
       }
     },
-    [dailyGoal, studyCategory, decksParam, newLimit, base, backlog, t],
+    [dailyGoal, categoriesParam, decksParam, newLimit, base, backlog, t],
   );
 
   // Abort any in-flight queue fetch on unmount so a late response can't
@@ -291,18 +302,20 @@ export default function StudyClient() {
   // Refresh stats whenever we land back on the landing screen (mount,
   // after "done", or after the user manually navigates back).
   useEffect(() => {
-    if (studyCategory === "all") return;
+    if (studyCategories.length === 0) return;
     if (phase === "landing") refreshStats();
-  }, [phase, studyCategory, refreshStats]);
+  }, [phase, studyCategories.length, refreshStats]);
 
-  // Theme switch invalidates the old stats (different deck, different
+  // Theme switch invalidates the old stats (different deck mix, different
   // due/new counts). Drop them so landing falls back to the loader
-  // instead of briefly showing the prior theme's numbers.
+  // instead of briefly showing the prior theme's numbers. We key the
+  // effect on the joined param so swapping the *set* of categories (not
+  // just order) triggers it.
   useEffect(() => {
-    if (studyCategory === "all") return;
+    if (studyCategories.length === 0) return;
     setStats(null);
     setStatsError(false);
-  }, [studyCategory]);
+  }, [categoriesParam, studyCategories.length]);
 
   // 新學 session has no MCQ: there's nothing to "recall" the first time
   // the user sees a word. Every card lands directly in the reveal/rate
@@ -388,7 +401,7 @@ export default function StudyClient() {
   }
 
   // ── No theme chosen — prompt to pick one (matches the home gate) ──
-  if (studyCategory === "all") {
+  if (studyCategories.length === 0) {
     return (
       <div className="mx-auto max-w-xl px-5 py-16 text-center">
         <Mascot pose="think" size={120} className="mx-auto" />
@@ -462,7 +475,7 @@ export default function StudyClient() {
       <>
         <div className="mx-auto max-w-2xl px-5 py-10 sm:px-8 sm:py-14">
           <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
-            {themeName}
+            {themeLabel}
           </div>
           <h1 className="text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">
             {t("study.landing.title")}
@@ -627,7 +640,7 @@ export default function StudyClient() {
       <div className="mx-auto max-w-xl px-5 py-16 text-center">
         <Mascot pose="sleep" size={120} className="mx-auto" />
         <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">
-          {themeName ? t("study.emptyTitleTheme", { theme: themeName }) : t("study.emptyTitle")}
+          {themeLabel ? t("study.emptyTitleTheme", { theme: themeLabel }) : t("study.emptyTitle")}
         </h1>
         <p className="mt-2 text-sm text-tuji-ink3">
           {t("study.emptySub")}

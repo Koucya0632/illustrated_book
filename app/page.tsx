@@ -30,10 +30,19 @@ export default async function HomePage() {
   const goal = settings.dailyGoal;
   const goalMinutes = Math.max(1, Math.round(goal * 0.6));
   const goalDashes = Math.min(goal, 10);
-  // A specific category must be chosen ("all" = not selected) before the daily
-  // task appears.
-  const hasTheme = !!bundle && settings.studyCategory !== "all";
-  const themeName = categories.find((c) => c.id === settings.studyCategory)?.nameZh ?? null;
+  // At least one category must be picked before the daily task appears.
+  const hasTheme = !!bundle && settings.studyCategories.length > 0;
+  // Compact summary for the "change theme" chip: up to 2 names, then a
+  // "+N" overflow so the pill never wraps on small screens.
+  const themeNamesAll = settings.studyCategories
+    .map((id) => categories.find((c) => c.id === id)?.nameZh)
+    .filter((n): n is string => Boolean(n));
+  const themeLabel =
+    themeNamesAll.length === 0
+      ? ""
+      : themeNamesAll.length <= 2
+      ? themeNamesAll.join(", ")
+      : `${themeNamesAll.slice(0, 2).join(", ")} +${themeNamesAll.length - 2}`;
   const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   // Today's task progress (global review count today vs the daily goal).
   const doneToday = streak?.todayCount ?? 0;
@@ -98,7 +107,7 @@ export default async function HomePage() {
                   href="/settings"
                   className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-extrabold text-white transition hover:bg-white/25"
                 >
-                  {tr("home.changeTheme", { theme: themeName ?? "" })}
+                  {tr("home.changeTheme", { theme: themeLabel })}
                 </Link>
               </div>
               <div className="mt-1.5 flex items-baseline gap-2.5">

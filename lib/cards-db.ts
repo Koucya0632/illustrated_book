@@ -461,7 +461,7 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
   };
 }
 
-export async function studyStats(userId: string) {
+export async function studyStats(userId: string, categories: string[] = []) {
   const sql = requireSql();
   // Five COUNTs in parallel — postgres-js dispatches them on independent
   // connections so the wall time collapses from ~5 × round-trip to ~1 ×.
@@ -473,24 +473,57 @@ export async function studyStats(userId: string) {
   // Supabase pooler (200/500 on every call). Five-query parallel is the
   // known-good shape; the pool-deadlock risk that motivated the rewrite is
   // already neutralised by max=15 in lib/db.ts (peak fan-out here = 5).
+  //
+  // The optional `categories` filter is woven into every query rather than
+  // applied once (CTE / outer JOIN), so each query stays self-contained
+  // and the five-way parallel shape is preserved. The total query JOINs
+  // cards → words; the four user_cards queries JOIN user_cards → cards →
+  // words. The filter uses `category = ANY(...)` to match fetchDue.
+  const cats = (categories ?? []).filter((c) => c.length > 0 && c !== "all");
+  const catFilter = cats.length ? sql`AND w.category = ANY(${cats})` : sql``;
+  const ucCatFilter = cats.length ? sql`AND w.category = ANY(${cats})` : sql``;
   const [totalRows, seenRows, dueRows, todayNewRows, byStatus] = await Promise.all([
-    sql`SELECT count(*)::int AS total FROM cards` as Promise<{ total: number }[]>,
-    sql`SELECT count(*)::int AS seen FROM user_cards WHERE user_id = ${userId}::uuid` as Promise<
-      { seen: number }[]
-    >,
-    sql`SELECT count(*)::int AS due FROM user_cards WHERE user_id = ${userId}::uuid AND next_review_at <= now()` as Promise<
-      { due: number }[]
-    >,
     sql`
-      SELECT count(*)::int AS "todayNew" FROM user_cards
-      WHERE user_id = ${userId}::uuid
-        AND (created_at AT TIME ZONE 'Asia/Taipei')::date
+      SELECT count(*)::int AS total
+      FROM cards c
+      JOIN words w ON w.id = c.word_id
+      WHERE w.deleted_at IS NULL AND w.status = 'published'
+      ${catFilter}
+    ` as Promise<{ total: number }[]>,
+    sql`
+      SELECT count(*)::int AS seen
+      FROM user_cards uc
+      JOIN cards c ON c.id = uc.card_id
+      JOIN words w ON w.id = c.word_id
+      WHERE uc.user_id = ${userId}::uuid
+      ${ucCatFilter}
+    ` as Promise<{ seen: number }[]>,
+    sql`
+      SELECT count(*)::int AS due
+      FROM user_cards uc
+      JOIN cards c ON c.id = uc.card_id
+      JOIN words w ON w.id = c.word_id
+      WHERE uc.user_id = ${userId}::uuid AND uc.next_review_at <= now()
+      ${ucCatFilter}
+    ` as Promise<{ due: number }[]>,
+    sql`
+      SELECT count(*)::int AS "todayNew"
+      FROM user_cards uc
+      JOIN cards c ON c.id = uc.card_id
+      JOIN words w ON w.id = c.word_id
+      WHERE uc.user_id = ${userId}::uuid
+        AND (uc.created_at AT TIME ZONE 'Asia/Taipei')::date
           = (now() AT TIME ZONE 'Asia/Taipei')::date
+      ${ucCatFilter}
     ` as Promise<{ todayNew: number }[]>,
     sql`
-      SELECT status, count(*)::int AS c
-      FROM user_cards WHERE user_id = ${userId}::uuid
-      GROUP BY status
+      SELECT uc.status, count(*)::int AS c
+      FROM user_cards uc
+      JOIN cards c ON c.id = uc.card_id
+      JOIN words w ON w.id = c.word_id
+      WHERE uc.user_id = ${userId}::uuid
+      ${ucCatFilter}
+      GROUP BY uc.status
     ` as Promise<{ status: Status; c: number }[]>,
   ]);
   const total = totalRows[0].total;

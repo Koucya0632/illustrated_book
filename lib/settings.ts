@@ -7,8 +7,10 @@ export interface UserSettings {
   dailyGoal: number;
   accent: "us" | "uk";
   showZh: boolean;
-  // Study theme: "all" = no filter, otherwise a category id (words.category).
-  studyCategory: string;
+  // Study themes: any of these category ids (words.category). Empty array
+  // means "no theme picked" — home + study gate the daily-task UI behind
+  // at least one selection.
+  studyCategories: string[];
   // Card decks to study; empty array = all decks.
   studyDecks: string[];
   uiLang: UiLang;
@@ -19,7 +21,7 @@ export const DEFAULT_SETTINGS: UserSettings = {
   dailyGoal: 12,
   accent: "us",
   showZh: true,
-  studyCategory: "all",
+  studyCategories: [],
   studyDecks: [],
   uiLang: "zh-Hant",
   fontSize: "md",
@@ -60,9 +62,21 @@ export function clampDailyGoal(n: number): number {
   return Math.min(DAILY_GOAL_MAX, Math.max(DAILY_GOAL_MIN, Math.round(n)));
 }
 
-// "all" or a category id (lowercase + hyphen, e.g. "living-room").
-function normalizeStudyCategory(v: unknown): string {
-  return typeof v === "string" && /^[a-z][a-z-]{0,30}$/.test(v) ? v : "all";
+// Validate, dedupe, and keep the input order of category ids
+// (lowercase + hyphen, e.g. "living-room"). Anything not matching the
+// id shape is dropped silently rather than coerced.
+function normalizeStudyCategories(raw: unknown): string[] {
+  if (!Array.isArray(raw)) return [];
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const v of raw) {
+    if (typeof v !== "string") continue;
+    if (!/^[a-z][a-z-]{0,30}$/.test(v)) continue;
+    if (seen.has(v)) continue;
+    seen.add(v);
+    out.push(v);
+  }
+  return out;
 }
 
 const UI_LANGS: UiLang[] = ["zh-Hant", "zh-Hans", "ja"];
@@ -74,7 +88,7 @@ export function normalizeSettings(raw: Partial<UserSettings> | null | undefined)
     dailyGoal: clampDailyGoal(Number(raw?.dailyGoal)),
     accent: raw?.accent === "uk" ? "uk" : "us",
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
-    studyCategory: normalizeStudyCategory(raw?.studyCategory),
+    studyCategories: normalizeStudyCategories(raw?.studyCategories),
     studyDecks: normalizeStudyDecks(raw?.studyDecks),
     uiLang: UI_LANGS.includes(raw?.uiLang as UiLang) ? (raw!.uiLang as UiLang) : "zh-Hant",
     fontSize: FONT_SIZES.includes(raw?.fontSize as FontSize) ? (raw!.fontSize as FontSize) : "md",

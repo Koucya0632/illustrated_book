@@ -16,9 +16,16 @@ export async function GET(req: Request) {
   if (req.signal.aborted) return new NextResponse(null, { status: 499 });
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  // Multi-theme filter — same shape as /api/study/queue. Empty list = no
+  // theme filter; landing displays global counts.
+  const { searchParams } = new URL(req.url);
+  const categories = (searchParams.get("category") ?? "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => s && s !== "all");
   try {
     const t0 = performance.now();
-    const stats = await studyStats(userId);
+    const stats = await studyStats(userId, categories);
     const dbMs = Math.round(performance.now() - t0);
     return NextResponse.json(
       { stats },

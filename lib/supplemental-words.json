@@ -5452,5 +5452,215 @@
         "zh": "在這道菜裡加一些柴魚粉。"
       }
     ]
+  },
+  {
+    "id": "aries",
+    "word": "Aries",
+    "chinese": "牡羊座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈer.iːz/",
+    "imageUrl": "/word-images/aries.png",
+    "collocations": ["Aries sign", "Aries season", "born under Aries"],
+    "examples": [
+      {
+        "en": "My zodiac sign is Aries.",
+        "zh": "我的星座是牡羊座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Taurus", "Pisces"]
+  },
+  {
+    "id": "taurus",
+    "word": "Taurus",
+    "chinese": "金牛座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈtɔːr.əs/",
+    "imageUrl": "/word-images/taurus.png",
+    "collocations": ["Taurus sign", "Taurus season", "born under Taurus"],
+    "examples": [
+      {
+        "en": "She was born under Taurus.",
+        "zh": "她是金牛座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Aries", "Gemini"]
+  },
+  {
+    "id": "gemini",
+    "word": "Gemini",
+    "chinese": "雙子座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈdʒem.ə.naɪ/",
+    "imageUrl": "/word-images/gemini.png",
+    "collocations": ["Gemini sign", "Gemini season", "born under Gemini"],
+    "examples": [
+      {
+        "en": "His zodiac sign is Gemini.",
+        "zh": "他的星座是雙子座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Taurus", "Cancer"]
+  },
+  {
+    "id": "cancer",
+    "word": "Cancer",
+    "chinese": "巨蟹座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæn.sɚ/",
+    "imageUrl": "/word-images/cancer.png",
+    "collocations": ["Cancer sign", "Cancer season", "born under Cancer"],
+    "examples": [
+      {
+        "en": "Her zodiac sign is Cancer.",
+        "zh": "她的星座是巨蟹座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Gemini", "Leo"],
+    "confusingWords": [
+      {
+        "word": "cancer",
+        "note": "Cancer 大寫時可指巨蟹座；cancer 小寫通常指癌症。"
+      }
+    ]
+  },
+  {
+    "id": "leo",
+    "word": "Leo",
+    "chinese": "獅子座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈliː.oʊ/",
+    "imageUrl": "/word-images/leo.png",
+    "collocations": ["Leo sign", "Leo season", "born under Leo"],
+    "examples": [
+      {
+        "en": "Leo is represented by a lion.",
+        "zh": "獅子座以獅子作為代表。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Cancer", "Virgo"]
+  },
+  {
+    "id": "virgo",
+    "word": "Virgo",
+    "chinese": "處女座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈvɝː.ɡoʊ/",
+    "imageUrl": "/word-images/virgo.png",
+    "collocations": ["Virgo sign", "Virgo season", "born under Virgo"],
+    "examples": [
+      {
+        "en": "My sister is a Virgo.",
+        "zh": "我妹妹是處女座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Leo", "Libra"]
+  },
+  {
+    "id": "libra",
+    "word": "Libra",
+    "chinese": "天秤座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈliː.brə/",
+    "imageUrl": "/word-images/libra.png",
+    "collocations": ["Libra sign", "Libra season", "born under Libra"],
+    "examples": [
+      {
+        "en": "Libra is represented by scales.",
+        "zh": "天秤座以天秤作為代表。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Virgo", "Scorpio"]
+  },
+  {
+    "id": "scorpio",
+    "word": "Scorpio",
+    "chinese": "天蠍座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈskɔːr.pi.oʊ/",
+    "imageUrl": "/word-images/scorpio.png",
+    "collocations": ["Scorpio sign", "Scorpio season", "born under Scorpio"],
+    "examples": [
+      {
+        "en": "He is a Scorpio.",
+        "zh": "他是天蠍座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Libra", "Sagittarius"]
+  },
+  {
+    "id": "sagittarius",
+    "word": "Sagittarius",
+    "chinese": "射手座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˌsædʒ.əˈter.i.əs/",
+    "imageUrl": "/word-images/sagittarius.png",
+    "collocations": ["Sagittarius sign", "Sagittarius season", "born under Sagittarius"],
+    "examples": [
+      {
+        "en": "Sagittarius is represented by an archer.",
+        "zh": "射手座以弓箭手作為代表。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Scorpio", "Capricorn"]
+  },
+  {
+    "id": "capricorn",
+    "word": "Capricorn",
+    "chinese": "摩羯座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈkæp.rɪ.kɔːrn/",
+    "imageUrl": "/word-images/capricorn.png",
+    "collocations": ["Capricorn sign", "Capricorn season", "born under Capricorn"],
+    "examples": [
+      {
+        "en": "My father is a Capricorn.",
+        "zh": "我爸爸是摩羯座。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Sagittarius", "Aquarius"]
+  },
+  {
+    "id": "aquarius",
+    "word": "Aquarius",
+    "chinese": "水瓶座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/əˈkwer.i.əs/",
+    "imageUrl": "/word-images/aquarius.png",
+    "collocations": ["Aquarius sign", "Aquarius season", "born under Aquarius"],
+    "examples": [
+      {
+        "en": "Aquarius is represented by a water bearer.",
+        "zh": "水瓶座以持水者作為代表。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Capricorn", "Pisces"]
+  },
+  {
+    "id": "pisces",
+    "word": "Pisces",
+    "chinese": "雙魚座",
+    "category": "zodiac",
+    "partOfSpeech": "noun",
+    "pronunciation": "/ˈpaɪ.siːz/",
+    "imageUrl": "/word-images/pisces.png",
+    "collocations": ["Pisces sign", "Pisces season", "born under Pisces"],
+    "examples": [
+      {
+        "en": "Pisces is represented by two fish.",
+        "zh": "雙魚座以兩條魚作為代表。"
+      }
+    ],
+    "relatedWords": ["zodiac", "horoscope", "Aquarius", "Aries"]
   }
 ]

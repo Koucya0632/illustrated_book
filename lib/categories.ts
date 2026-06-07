@@ -95,6 +95,16 @@ export const categories: Category[] = [
     imageUrl:
       "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/seasoning-jar.png",
   },
+  {
+    id: "zodiac",
+    name: "Zodiac",
+    nameZh: "星座",
+    emoji: "⭐",
+    description: "十二星座與英文名稱",
+    color: "from-cyan-100 to-violet-100",
+    imageUrl:
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/zodiac.png",
+  },
 ];
 
 export const getCategory = (id: string): Category | undefined =>

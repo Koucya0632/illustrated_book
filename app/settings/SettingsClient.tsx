@@ -314,6 +314,8 @@ export default function SettingsClient({
                   n: draft.studyCategories.length,
                   total: categories.length,
                 })}
+                allLabel={t("set.studyThemeAll")}
+                clearLabel={t("set.studyThemeClear")}
                 options={categories.map((c) => ({ id: c.id, name: c.nameZh, emoji: c.emoji }))}
                 selected={draft.studyCategories}
                 onToggle={(id) =>
@@ -324,6 +326,8 @@ export default function SettingsClient({
                       : [...draft.studyCategories, id],
                   )
                 }
+                onSelectAll={() => set("studyCategories", categories.map((c) => c.id))}
+                onClearAll={() => set("studyCategories", [])}
               />
               <SetRow
                 label={t("set.showZh")}
@@ -466,21 +470,43 @@ function ThemeChipGrid({
   label,
   desc,
   countLabel,
+  allLabel,
+  clearLabel,
   options,
   selected,
   onToggle,
+  onSelectAll,
+  onClearAll,
 }: {
   label: string;
   desc?: string;
   countLabel: string;
+  allLabel: string;
+  clearLabel: string;
   options: { id: string; name: string; emoji: string }[];
   selected: string[];
   onToggle: (id: string) => void;
+  onSelectAll: () => void;
+  onClearAll: () => void;
 }) {
+  // One button instead of two: when everything is on it flips to "clear",
+  // otherwise "select all". That keeps the affordance tied to whichever
+  // action moves the user further from where they are.
+  const allOn = options.length > 0 && selected.length >= options.length;
   return (
     <div className="px-4 py-3.5">
-      <div className="text-sm font-bold text-tuji-ink">{label}</div>
-      {desc && <div className="mt-0.5 text-[11px] text-tuji-ink3">{desc}</div>}
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <div className="text-sm font-bold text-tuji-ink">{label}</div>
+          {desc && <div className="mt-0.5 text-[11px] text-tuji-ink3">{desc}</div>}
+        </div>
+        <button
+          onClick={allOn ? onClearAll : onSelectAll}
+          className="shrink-0 rounded-lg bg-tuji-tealS px-3 py-1.5 text-[11px] font-extrabold text-tuji-teal transition hover:brightness-95"
+        >
+          {allOn ? clearLabel : allLabel}
+        </button>
+      </div>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
         {options.map((o) => {
           const on = selected.includes(o.id);

@@ -76,11 +76,11 @@ export async function GET(req: Request) {
     await attachMasteryAndSort(userId, queue, masteryRows);
     const masteryMs = Math.round(performance.now() - tMastery);
 
-    // 新學 session skips the MCQ render entirely (StudyClient auto-reveals
-    // each card), so distractor scoring + the word_relations JOIN would be
-    // wasted work. Only attach choices for the modes that actually use them.
+    // New-learn now uses 4-choice MCQs in Step 2 (英文辨認) and Step 3
+    // (拼字), so it needs `choices` and `spellingChoices` attached too.
+    // The +1 query for the distractor pool is paid every queue load.
     const tChoices = performance.now();
-    if (mode !== "new") await attachChoices(queue);
+    await attachChoices(queue);
     const choicesMs = Math.round(performance.now() - tChoices);
 
     const tLocalize = performance.now();

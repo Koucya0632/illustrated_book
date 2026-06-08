@@ -43,6 +43,9 @@ interface DueCard {
   state: ApiState | null;
   word: ApiWord;
   choices?: string[];
+  // Step 3 (拼字) options: correct word + 3 algorithmic misspellings,
+  // shuffled. Attached server-side by lib/misspellings + attachChoices.
+  spellingChoices?: string[];
   mastery?: number;
 }
 
@@ -59,6 +62,11 @@ interface Stats {
 
 type Phase = "landing" | "answer" | "review" | "done";
 type Mode = "new" | "review";
+// New-learn micro-curriculum step. Mode "new" iterates the whole queue
+// three times — Step 1 認識 (image + 認識/知道, writes SRS), Step 2 辨認
+// (image MCQ over `choices`, no SRS), Step 3 拼字 (image MCQ over
+// `spellingChoices`, no SRS). `newStep` is meaningless when mode==="review".
+type NewStep = 1 | 2 | 3;
 
 // Pause threshold — when stats.due is ≥ this, the landing surfaces a
 // warning banner + a confirmation modal on the "new learn" button.
@@ -132,7 +140,15 @@ export default function StudyClient() {
   const [phase, setPhase] = useState<Phase>("landing");
   const [mode, setMode] = useState<Mode | null>(null);
   const [pendingNewLearn, setPendingNewLearn] = useState(false);
-  const [summary, setSummary] = useState({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
+  // SRS buckets (重來/困難/穩定/熟練 + completed) cover review-mode + new
+  // Step 1. step2/step3 tallies only fill during the corresponding new-mode
+  // steps; they stay at 0 for review sessions.
+  const [summary, setSummary] = useState({
+    重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0,
+    step2Correct: 0, step2Wrong: 0,
+    step3Correct: 0, step3Wrong: 0,
+  });
+  const [newStep, setNewStep] = useState<NewStep>(1);
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -280,7 +296,12 @@ export default function StudyClient() {
         setPhase("answer");
         setPicked(null);
         setLastFeedback(null);
-        setSummary({ 重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0 });
+        setNewStep(1);
+        setSummary({
+          重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0,
+          step2Correct: 0, step2Wrong: 0,
+          step3Correct: 0, step3Wrong: 0,
+        });
       } catch (err) {
         if ((err as Error)?.name === "AbortError") return;
         setLoadError(t("study.loadFailed"));
@@ -317,14 +338,51 @@ export default function StudyClient() {
     setStatsError(false);
   }, [categoriesParam, studyCategories.length]);
 
-  // 新學 session has no MCQ: there's nothing to "recall" the first time
-  // the user sees a word. Every card lands directly in the reveal/rate
-  // view (image + English + 認識/知道). Jumping out of `"answer"` the
-  // instant a card arrives keeps the existing two-phase machine intact
-  // for 複習 without forking the render tree.
-  useEffect(() => {
-    if (mode === "new" && phase === "answer") setPhase("review");
-  }, [mode, phase, idx]);
+  // Advance within a new-learn session: next card → next step → done.
+  // Step 1 calls this from rate() after a successful SRS write; Step 2/3
+  // call it via setTimeout after pickStepChoice highlights the answer.
+  // Review mode keeps its own advance branch inside rate().
+  function advanceNew() {
+    if (idx + 1 < total) {
+      setIdx(idx + 1);
+      setPicked(null);
+      return;
+    }
+    if (newStep < 3) {
+      setNewStep((s) => (s + 1) as NewStep);
+      setIdx(0);
+      setPicked(null);
+      return;
+    }
+    setPhase("done");
+  }
+
+  // Step 2/3 MCQ click. No SRS write, no rating buttons after — just
+  // highlight the picked option + correct option for a short beat, then
+  // auto-advance. Re-click during the beat is ignored via `picked`.
+  function pickStepChoice(choice: string) {
+    if (!current || picked !== null) return;
+    setPicked(choice);
+    const correct = choice === current.card.back;
+    setSummary((s) => {
+      if (newStep === 2) {
+        return {
+          ...s,
+          step2Correct: s.step2Correct + (correct ? 1 : 0),
+          step2Wrong: s.step2Wrong + (correct ? 0 : 1),
+        };
+      }
+      if (newStep === 3) {
+        return {
+          ...s,
+          step3Correct: s.step3Correct + (correct ? 1 : 0),
+          step3Wrong: s.step3Wrong + (correct ? 0 : 1),
+        };
+      }
+      return s;
+    });
+    setTimeout(() => advanceNew(), 800);
+  }
 
   function pickReview() {
     if (!stats || stats.due <= 0) return;
@@ -391,6 +449,13 @@ export default function StudyClient() {
     const wait = Math.max(0, 450 - (performance.now() - ratedAt));
     setTimeout(() => {
       setLastFeedback(null);
+      if (mode === "new") {
+        // Step 1 advance: next card, then Step 2/3, then done. The
+        // setPhase("answer") branch below is review-only — new mode keeps
+        // phase pinned to "answer" until the final advanceNew → "done".
+        advanceNew();
+        return;
+      }
       if (idx + 1 >= total) setPhase("done");
       else {
         setIdx(idx + 1);
@@ -674,38 +739,58 @@ export default function StudyClient() {
   // ── Done summary ──
   if (phase === "done") {
     const r = summary;
-    // 新學 session only ever fills two buckets (穩定 = 認識, 困難 = 知道),
-    // so show two tiles labelled 認識/知道 instead of four with two zeros.
-    // 複習 keeps the four SRS buckets unchanged.
-    const tiles: { value: number; color: string; labelKey: string }[] =
-      mode === "new"
-        ? [
-            { value: r.穩定, color: TUJI.green, labelKey: "study.newRate.know" },
-            { value: r.困難, color: "#A86214", labelKey: "study.newRate.aware" },
-          ]
-        : [
-            { value: r.重來, color: TUJI.coral, labelKey: RATING_LABEL_KEY["重來"] },
-            { value: r.困難, color: "#9A6612", labelKey: RATING_LABEL_KEY["困難"] },
-            { value: r.穩定, color: TUJI.teal, labelKey: RATING_LABEL_KEY["穩定"] },
-            { value: r.熟練, color: TUJI.green, labelKey: RATING_LABEL_KEY["熟練"] },
-          ];
-    const tileGridClass =
-      mode === "new" ? "mt-6 grid grid-cols-2 gap-3" : "mt-6 grid grid-cols-4 gap-3";
+    // New-learn done summary: one row per step (認識 / 辨認 / 拼字), each
+    // showing two figures — Step 1 splits into 認識 vs 知道, Steps 2/3 into
+    // 對 vs 錯. Review keeps the existing 4-bucket SRS tile layout.
     return (
       <div className="mx-auto max-w-xl px-5 py-12 text-center">
         <Mascot pose="cheer" size={120} className="mx-auto" />
         <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">{t("study.doneTitle")}</h1>
         <p className="mt-1 text-sm text-tuji-ink3">{t("study.doneCount", { n: r.completed })}</p>
-        <div className={tileGridClass}>
-          {tiles.map((tile, i) => (
-            <div key={i} className="rounded-2xl bg-white p-3 shadow-card">
-              <div className="font-display text-2xl font-extrabold" style={{ color: tile.color }}>
-                {tile.value}
+        {mode === "new" ? (
+          <div className="mt-6 flex flex-col gap-2.5 text-left">
+            <StepSummaryRow
+              label={t("study.newRate.know") + " / " + t("study.newRate.aware")}
+              stepTag={t("study.step.recognize")}
+              leftValue={r.穩定}
+              leftColor={TUJI.green}
+              rightValue={r.困難}
+              rightColor="#A86214"
+            />
+            <StepSummaryRow
+              label={t("study.summary.correctWrong")}
+              stepTag={t("study.step.identify")}
+              leftValue={r.step2Correct}
+              leftColor={TUJI.teal}
+              rightValue={r.step2Wrong}
+              rightColor={TUJI.coral}
+            />
+            <StepSummaryRow
+              label={t("study.summary.correctWrong")}
+              stepTag={t("study.step.spell")}
+              leftValue={r.step3Correct}
+              leftColor={TUJI.teal}
+              rightValue={r.step3Wrong}
+              rightColor={TUJI.coral}
+            />
+          </div>
+        ) : (
+          <div className="mt-6 grid grid-cols-4 gap-3">
+            {[
+              { value: r.重來, color: TUJI.coral, labelKey: RATING_LABEL_KEY["重來"] },
+              { value: r.困難, color: "#9A6612", labelKey: RATING_LABEL_KEY["困難"] },
+              { value: r.穩定, color: TUJI.teal, labelKey: RATING_LABEL_KEY["穩定"] },
+              { value: r.熟練, color: TUJI.green, labelKey: RATING_LABEL_KEY["熟練"] },
+            ].map((tile, i) => (
+              <div key={i} className="rounded-2xl bg-white p-3 shadow-card">
+                <div className="font-display text-2xl font-extrabold" style={{ color: tile.color }}>
+                  {tile.value}
+                </div>
+                <div className="mt-1 text-xs font-bold text-tuji-ink3">{t(tile.labelKey)}</div>
               </div>
-              <div className="mt-1 text-xs font-bold text-tuji-ink3">{t(tile.labelKey)}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
         <div className="mt-8 flex justify-center gap-2.5">
           <button
             onClick={() => {
@@ -727,8 +812,27 @@ export default function StudyClient() {
   }
 
   if (!current) return null;
-  const pct = ((idx + (phase === "review" ? 0.5 : 0)) / total) * 100;
-  const revealed = phase === "review";
+  // New-mode progress counts every step's iteration, so a 12-card session
+  // shows the user 1/36 → 36/36 across the three passes. Review mode keeps
+  // its single-pass formula.
+  const pct =
+    mode === "new"
+      ? ((((newStep - 1) * total + idx + (picked ? 0.5 : 0)) / (total * 3)) * 100)
+      : ((idx + (phase === "review" ? 0.5 : 0)) / total) * 100;
+  // What "revealed" means depends on mode:
+  //   - Review: phase has cleanly switched from answer → review after a pick.
+  //   - New Step 1: always revealed (image + English answer card + 認識/知道).
+  //   - New Step 2/3: never revealed — the MCQ grid IS the answer surface,
+  //     and a picked card stays in the grid view with highlighting.
+  const revealed = mode === "new" ? newStep === 1 : phase === "review";
+  // Are we showing the MCQ grid (vs the post-reveal answer card)?
+  const inMcqView = mode === "new" ? newStep !== 1 : phase === "answer";
+  // The right-column choice source: Step 2 reuses Step 2/review distractors,
+  // Step 3 swaps in spelling distractors. Review always uses card.choices.
+  const mcqChoices =
+    mode === "new" && newStep === 3
+      ? current.spellingChoices ?? []
+      : current.choices ?? [];
 
   return (
     <div className="relative min-h-[calc(100vh-0px)]">
@@ -750,7 +854,9 @@ export default function StudyClient() {
           </div>
         </div>
         <span className="rounded-full bg-white px-3.5 py-1.5 text-sm font-extrabold text-tuji-ink shadow-card">
-          {idx + 1} / {total}
+          {mode === "new"
+            ? t("study.stepIndicator", { n: newStep, i: idx + 1, total })
+            : `${idx + 1} / ${total}`}
         </span>
       </div>
 
@@ -762,7 +868,11 @@ export default function StudyClient() {
             <Mascot pose={revealed ? "cheer" : "think"} size={72} />
             <div className="relative mb-2 rounded-[20px] bg-white px-5 py-3.5 text-lg font-extrabold tracking-tight text-tuji-ink shadow-card">
               {mode === "new"
-                ? t("study.newLearn.bubble")
+                ? newStep === 1
+                  ? t("study.newLearn.bubble")
+                  : newStep === 2
+                  ? t("study.step.bubbleIdentify")
+                  : t("study.step.bubbleSpell")
                 : revealed
                 ? t("study.bubbleReveal")
                 : t("study.bubbleAsk")}
@@ -801,32 +911,59 @@ export default function StudyClient() {
 
         {/* Right — interaction */}
         <div>
-          {!revealed ? (
+          {inMcqView ? (
             <>
               <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                {t("study.pickEnglish")}
+                {mode === "new" && newStep === 3
+                  ? t("study.step.pickSpelling")
+                  : t("study.pickEnglish")}
               </div>
               <div className="flex flex-col gap-3">
-                {(current.choices ?? []).map((c, i) => {
+                {mcqChoices.map((c, i) => {
                   const tint = CHOICE_TINTS[i % CHOICE_TINTS.length];
+                  // After-pick highlighting for new mode Step 2/3: the
+                  // correct answer turns green, the wrong pick turns coral,
+                  // everything else dims. Mirrors the auto-advance preview
+                  // the user gets between cards.
+                  const isPicked = picked === c;
+                  const isCorrect = current.card.back === c;
+                  const showResult = mode === "new" && newStep !== 1 && picked !== null;
+                  let bg = tint.bg;
+                  let fg = tint.fg;
+                  let opacity = 1;
+                  if (showResult) {
+                    if (isCorrect) {
+                      bg = TUJI.green;
+                      fg = "#fff";
+                    } else if (isPicked) {
+                      bg = TUJI.coral;
+                      fg = "#fff";
+                    } else {
+                      opacity = 0.4;
+                    }
+                  }
                   return (
                     <button
                       key={c}
-                      onClick={() => pickChoice(c)}
-                      disabled={submitting}
+                      onClick={() =>
+                        mode === "new" && newStep !== 1
+                          ? pickStepChoice(c)
+                          : pickChoice(c)
+                      }
+                      disabled={submitting || showResult}
                       className="tuji-press flex items-center gap-4 rounded-[20px] px-5 py-4 text-left disabled:opacity-60"
-                      style={{ background: tint.bg, ["--press-shadow" as string]: shade(tint.bg, -10) }}
+                      style={{ background: bg, opacity, ["--press-shadow" as string]: shade(bg, -10) }}
                     >
                       <span
                         className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white font-mono text-base font-extrabold"
-                        style={{ color: tint.fg }}
+                        style={{ color: fg }}
                       >
                         {i + 1}
                       </span>
-                      <span className="flex-1 text-xl font-extrabold tracking-tight" style={{ color: tint.fg }}>
+                      <span className="flex-1 text-xl font-extrabold tracking-tight" style={{ color: fg }}>
                         {c}
                       </span>
-                      <span className="text-lg opacity-55" style={{ color: tint.fg }}>
+                      <span className="text-lg opacity-55" style={{ color: fg }}>
                         →
                       </span>
                     </button>
@@ -949,24 +1086,38 @@ export default function StudyClient() {
         </div>
       </div>
 
-      {/* Running summary — mirrors the done tiles: 2 buckets in new mode,
-          4 in review. The summary state itself stays SRS-keyed; only the
-          chips switch their label / which bucket they read. */}
+      {/* Running summary — review mirrors the 4 SRS buckets. New mode
+          switches per active step: Step 1 shows 認識/知道 counts; Steps 2/3
+          show running 對/錯 for the current step so the user can see how
+          they're doing without waiting for the done screen. */}
       <div className="flex items-center justify-center gap-3 pb-6 text-xs font-bold text-tuji-ink3">
         <span>{t("study.completed", { done: summary.completed, total })}</span>
         {mode === "new" ? (
-          <>
-            {summary.穩定 > 0 && (
-              <span style={{ color: TUJI.green }}>
-                {t("study.newRate.know")} {summary.穩定}
+          newStep === 1 ? (
+            <>
+              {summary.穩定 > 0 && (
+                <span style={{ color: TUJI.green }}>
+                  {t("study.newRate.know")} {summary.穩定}
+                </span>
+              )}
+              {summary.困難 > 0 && (
+                <span style={{ color: "#A86214" }}>
+                  {t("study.newRate.aware")} {summary.困難}
+                </span>
+              )}
+            </>
+          ) : (
+            <>
+              <span style={{ color: TUJI.teal }}>
+                {t("study.summary.correct")}{" "}
+                {newStep === 2 ? summary.step2Correct : summary.step3Correct}
               </span>
-            )}
-            {summary.困難 > 0 && (
-              <span style={{ color: "#A86214" }}>
-                {t("study.newRate.aware")} {summary.困難}
+              <span className="text-tuji-coral">
+                {t("study.summary.wrong")}{" "}
+                {newStep === 2 ? summary.step2Wrong : summary.step3Wrong}
               </span>
-            )}
-          </>
+            </>
+          )
         ) : (
           <>
             {summary.重來 > 0 && <span className="text-tuji-coral">{t("study.rate.again")} {summary.重來}</span>}
@@ -978,6 +1129,45 @@ export default function StudyClient() {
       </div>
 
       {peekId && <WordPeekModal id={peekId} onClose={() => setPeekId(null)} />}
+    </div>
+  );
+}
+
+// Used by the new-learn done summary. One row per step, with a step
+// tag on the left, two big numbers on the right (left = positive bucket,
+// right = negative bucket).
+function StepSummaryRow({
+  label,
+  stepTag,
+  leftValue,
+  leftColor,
+  rightValue,
+  rightColor,
+}: {
+  label: string;
+  stepTag: string;
+  leftValue: number;
+  leftColor: string;
+  rightValue: number;
+  rightColor: string;
+}) {
+  return (
+    <div className="flex items-center justify-between rounded-2xl bg-white p-3.5 shadow-card">
+      <div>
+        <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+          {stepTag}
+        </div>
+        <div className="mt-0.5 text-xs font-bold text-tuji-ink2">{label}</div>
+      </div>
+      <div className="flex items-baseline gap-3">
+        <span className="font-display text-2xl font-extrabold" style={{ color: leftColor }}>
+          {leftValue}
+        </span>
+        <span className="text-xs font-bold text-tuji-ink3">/</span>
+        <span className="font-display text-2xl font-extrabold" style={{ color: rightColor }}>
+          {rightValue}
+        </span>
+      </div>
     </div>
   );
 }

@@ -43,6 +43,10 @@ export interface DueCard {
     category: string;
   };
   choices?: string[]; // multiple-choice options (shuffled, includes correct back)
+  // Spelling MCQ options for the new-learn Step 3 ("pick the correct
+  // spelling"). Shuffled, contains the correct back plus 3 algorithmic
+  // misspellings from lib/misspellings. Same attach trigger as `choices`.
+  spellingChoices?: string[];
   mastery?: number;  // current (decayed) mastery for this word, 0-100
 }
 
@@ -174,15 +178,23 @@ export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
           type: String(r.type),
         }));
 
-  // 3. Score + pick per card.
+  // 3. Score + pick per card. Spelling distractors come from a separate
+  //    algorithmic generator (lib/misspellings) — no DB hit, so we slot
+  //    them in beside `choices` without changing the query shape.
+  const { generateMisspellings } = await import("./misspellings");
   for (const d of mcq) {
     const pool = poolsByDeck.get(d.card.deck_key) ?? [];
     const self = pool.find((c) => c.cardId === d.card.id);
     if (!self) continue;
     const target: TargetMeta = { ...self, deckKey: d.card.deck_key };
     const distractors = selectDistractors(target, pool, relations, 3);
-    if (distractors.length === 0) continue;
-    d.choices = shuffle([d.card.back, ...distractors]);
+    if (distractors.length > 0) {
+      d.choices = shuffle([d.card.back, ...distractors]);
+    }
+    const misspells = generateMisspellings(d.card.back, 3);
+    if (misspells.length > 0) {
+      d.spellingChoices = shuffle([d.card.back, ...misspells]);
+    }
   }
   return due;
 }

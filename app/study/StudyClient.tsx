@@ -856,7 +856,7 @@ export default function StudyClient() {
           <div className="mt-6 grid grid-cols-2 gap-2.5 text-left sm:grid-cols-3">
             {queue.map((d) => (
               <div key={d.card.id} className="rounded-2xl bg-white p-2.5 shadow-card">
-                <WordTile imageUrl={d.word.image_url} word={d.word.word} height={88} rounded={14} />
+                <WordTile imageUrl={d.word.image_url} word={d.word.word} height={88} rounded={14} fit="contain" />
                 <div className="mt-2 text-sm font-extrabold tracking-tight text-tuji-ink">
                   {d.card.back}
                 </div>
@@ -987,7 +987,7 @@ export default function StudyClient() {
           </div>
 
           <div className="relative rounded-[28px] bg-white p-5 shadow-cardHover">
-            <WordTile imageUrl={current.word.image_url} word={current.word.word} height={280} rounded={20} />
+            <WordTile imageUrl={current.word.image_url} word={current.word.word} height={280} rounded={20} fit="contain" />
             {revealed && wasCorrect && (
               <span
                 className="absolute right-9 top-9 inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-extrabold text-white"

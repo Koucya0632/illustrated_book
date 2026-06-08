@@ -73,7 +73,7 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
         ) : (
           <>
             <div className="rounded-[20px] bg-white p-4 shadow-card">
-              <WordTile imageUrl={word.imageUrl} word={word.word} height={170} rounded={16} />
+              <WordTile imageUrl={word.imageUrl} word={word.word} height={170} rounded={16} fit="contain" />
               <div className="mt-3 flex items-center gap-3">
                 <PronunciationButton text={word.word} size="lg" />
                 <div className="min-w-0">

@@ -102,6 +102,11 @@ export function WordTile({
   height = 130,
   rounded = 14,
   className,
+  // `cover` (default) crops to fill — looks tidy in tile grids. `contain`
+  // letterboxes against the gradient bg so the full photo is visible, which
+  // is what the study flow needs (otherwise the key feature of the word
+  // can be cropped out).
+  fit = "cover",
 }: {
   imageUrl?: string;
   word: string;
@@ -109,6 +114,7 @@ export function WordTile({
   height?: number | string;
   rounded?: number;
   className?: string;
+  fit?: "cover" | "contain";
 }) {
   return (
     <div
@@ -133,7 +139,7 @@ export function WordTile({
           alt={word}
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover"
+          className={`absolute inset-0 h-full w-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
         />
       )}
     </div>

@@ -68,6 +68,44 @@ npm run dev
 
 ---
 
+## 學習流程（`/study`）
+
+進站先在「設定 → 學習」勾一個或多個主題，回到首頁點「今日任務」或直接到 `/study`，會看到兩顆 tile：**新學**（從沒看過的字）和**複習**（到期該再考的字）。Stats 拉完才會顯示按鈕，避免假數字一閃。
+
+### 新學（3 步走完一整批）
+
+`POST /api/study/queue?mode=new` 拉 N 張新字，每張帶 `choices`（英文 distractor）+ `spellingChoices`（拼錯 distractor，由 `lib/misspellings.ts` 算）。N 張會**連續走過 3 個 step**，每步把整批走完再進下一步。
+
+| Step | bubble | UI | 寫 SRS？ | 對錯處理 |
+|---|---|---|---|---|
+| **1 認識** | 認識這個字嗎？ | 自動翻面，圖 + 英文 + 發音 + 2 鈕（認識／知道） | ✅（認識=穩定、知道=困難） | 沒「錯」概念，按下就進下一張 |
+| **2 辨認** | 對應的英文是哪個？ | 圖 + 發音，4 個英文 MCQ | ❌ | 答對 pop 掉；**答錯推到 stepQueue 尾端，輪迴到答對為止** |
+| **3 拼字** | 哪一個拼法是對的？ | 圖 + 發音，4 個拼法 MCQ（正確 + 3 個拼錯） | ❌ | 同 Step 2 |
+
+進度條公式 `((step − 1) + 該 step 進度) / 3`，**答錯不會讓條退回去**（用 `(total − stepQueue.length) / total` 算 step 進度）。右上 chip 顯示 `Step n/3`。
+
+走完 Step 3 → done summary：所有 N 張的 **WordTile grid**（圖 + 英文 + 中文 if `showZh`），告訴你「剛學了這些字」。
+
+### 複習（單趟跑完 due 卡）
+
+`POST /api/study/queue?mode=review&limit=min(50, stats.due)` 拉到期卡，按 `next_review_at` + mastery 弱者優先排。每張兩個 phase：
+
+1. **`phase=answer`**：圖 + 發音 + 4 個英文 MCQ；點完跳到 `review` phase。
+2. **`phase=review`**：露答案卡（英文 + 發音 + 中文 + explanation），4 鈕 SRS 評分（答對時隱藏「重來」剩 3 鈕；建議的那顆有 ring + badge，依答題速度推：<3s 熟練、<7s 穩定、慢→困難；答錯則建議重來）。
+
+每選一次評分 → `POST /api/study/answer` → `lib/srs.ts` 算下次到期 + 更新 mastery / mistake_count / review_count → 0.45 秒後切下一張。
+
+走完一批 → done summary：4 個 SRS 桶 tile（重來/困難/穩定/熟練 各幾張）。
+
+### 兩者共通
+
+- 主題過濾：兩個 mode 都看 `studyCategories`；空陣列時 `/study` 直接顯示 CTA 叫你去設定挑主題。
+- Stats 也吃同樣的主題過濾（`/api/study/stats?category=foo,bar`），所以 landing 的 N/M 數字跟實際可拉到的卡數一致。
+- `/api/study/answer` 只在新學 Step 1 + 複習任一 phase 才會打。新學 Step 2/3 是純前端的 reinforcement，不動 SRS。
+- backlog 滿到 100+ 張時，新學 tile 變灰 + warning banner，點下去會跳 modal 叫你先複習；硬要新學也可以 override。
+
+---
+
 ## 部署到 Vercel
 
 ```bash

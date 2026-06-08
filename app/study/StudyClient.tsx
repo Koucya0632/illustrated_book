@@ -762,8 +762,15 @@ export default function StudyClient() {
           </Link>
           <button
             onClick={() => {
+              // Force the landing loader to reappear: the session just
+              // changed todayNew / due counts, and we want fresh numbers
+              // before the user can click 新學 / 複習 again. The landing
+              // gate (`stats === null && !statsError`) renders the spinner
+              // until refreshStats settles.
               setQueue(null);
               setMode(null);
+              setStats(null);
+              setStatsError(false);
               setPhase("landing");
             }}
             className="tuji-press rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white"
@@ -828,8 +835,15 @@ export default function StudyClient() {
         <div className="mt-8 flex justify-center gap-2.5">
           <button
             onClick={() => {
+              // Force the landing loader to reappear: the session just
+              // changed todayNew / due counts, and we want fresh numbers
+              // before the user can click 新學 / 複習 again. The landing
+              // gate (`stats === null && !statsError`) renders the spinner
+              // until refreshStats settles.
               setQueue(null);
               setMode(null);
+              setStats(null);
+              setStatsError(false);
               setPhase("landing");
             }}
             className="tuji-press rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white"

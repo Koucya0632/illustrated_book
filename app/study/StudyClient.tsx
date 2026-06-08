@@ -149,6 +149,12 @@ export default function StudyClient() {
     step3Correct: 0, step3Wrong: 0,
   });
   const [newStep, setNewStep] = useState<NewStep>(1);
+  // Pending-queue model for new-learn Steps 2/3. Holds the queue indices of
+  // cards the user hasn't yet answered correctly in the current step.
+  // Wrong picks push the head to the back so the same card returns later;
+  // correct picks drop it. Step finishes when this becomes empty.
+  // Empty when Step 1 is active or mode === "review".
+  const [stepQueue, setStepQueue] = useState<number[]>([]);
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -185,7 +191,14 @@ export default function StudyClient() {
       ? themeLabels.join(", ")
       : `${themeLabels.slice(0, 2).join(", ")} +${themeLabels.length - 2}`;
 
-  const current = queue?.[idx];
+  // In Steps 2/3 the card to render is dictated by `stepQueue` (which
+  // shuffles wrong-answers back to the tail), not by `idx`. Step 1 and
+  // review keep using `idx` as before.
+  const currentIdx =
+    mode === "new" && newStep !== 1 && stepQueue.length > 0
+      ? stepQueue[0]
+      : idx;
+  const current = queue?.[currentIdx];
   const total = queue?.length ?? 0;
   const wasCorrect = picked !== null && current ? picked === current.card.back : false;
 
@@ -297,6 +310,7 @@ export default function StudyClient() {
         setPicked(null);
         setLastFeedback(null);
         setNewStep(1);
+        setStepQueue([]);
         setSummary({
           重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0,
           step2Correct: 0, step2Wrong: 0,
@@ -338,28 +352,44 @@ export default function StudyClient() {
     setStatsError(false);
   }, [categoriesParam, studyCategories.length]);
 
-  // Advance within a new-learn session: next card → next step → done.
-  // Step 1 calls this from rate() after a successful SRS write; Step 2/3
-  // call it via setTimeout after pickStepChoice highlights the answer.
+  // Initial pending queue for a fresh Step 2 or Step 3.
+  function freshStepQueue(): number[] {
+    return Array.from({ length: total }, (_, i) => i);
+  }
+
+  // Advance the new-learn session forward. Called from:
+  //   - rate() at the end of a Step 1 card (next card / start Step 2)
+  //   - pickStepChoice when stepQueue drains (start Step 3 / finish)
   // Review mode keeps its own advance branch inside rate().
   function advanceNew() {
-    if (idx + 1 < total) {
-      setIdx(idx + 1);
-      setPicked(null);
-      return;
-    }
-    if (newStep < 3) {
-      setNewStep((s) => (s + 1) as NewStep);
+    if (newStep === 1) {
+      if (idx + 1 < total) {
+        setIdx(idx + 1);
+        setPicked(null);
+        return;
+      }
+      // Step 1 → Step 2: seed the pending queue with every card.
+      setNewStep(2);
       setIdx(0);
+      setStepQueue(freshStepQueue());
       setPicked(null);
       return;
     }
+    if (newStep === 2) {
+      setNewStep(3);
+      setStepQueue(freshStepQueue());
+      setPicked(null);
+      return;
+    }
+    // Step 3 finished — wrap up.
     setPhase("done");
   }
 
-  // Step 2/3 MCQ click. No SRS write, no rating buttons after — just
-  // highlight the picked option + correct option for a short beat, then
-  // auto-advance. Re-click during the beat is ignored via `picked`.
+  // Step 2/3 MCQ click. No SRS write, no rating buttons after. The picked
+  // option is highlighted alongside the correct option for ~0.8s, then we
+  // either pop the head (correct) or rotate it to the back (wrong) — so a
+  // card the user misses keeps cycling until they get it right. Re-clicks
+  // during the beat are blocked by `picked !== null`.
   function pickStepChoice(choice: string) {
     if (!current || picked !== null) return;
     setPicked(choice);
@@ -381,7 +411,17 @@ export default function StudyClient() {
       }
       return s;
     });
-    setTimeout(() => advanceNew(), 800);
+    setTimeout(() => {
+      setPicked(null);
+      const [head, ...rest] = stepQueue;
+      const next = correct ? rest : [...rest, head];
+      if (next.length === 0) {
+        setStepQueue([]);
+        advanceNew();
+      } else {
+        setStepQueue(next);
+      }
+    }, 800);
   }
 
   function pickReview() {
@@ -748,31 +788,25 @@ export default function StudyClient() {
         <h1 className="mt-4 text-2xl font-extrabold text-tuji-ink">{t("study.doneTitle")}</h1>
         <p className="mt-1 text-sm text-tuji-ink3">{t("study.doneCount", { n: r.completed })}</p>
         {mode === "new" ? (
-          <div className="mt-6 flex flex-col gap-2.5 text-left">
-            <StepSummaryRow
-              label={t("study.newRate.know") + " / " + t("study.newRate.aware")}
-              stepTag={t("study.step.recognize")}
-              leftValue={r.穩定}
-              leftColor={TUJI.green}
-              rightValue={r.困難}
-              rightColor="#A86214"
-            />
-            <StepSummaryRow
-              label={t("study.summary.correctWrong")}
-              stepTag={t("study.step.identify")}
-              leftValue={r.step2Correct}
-              leftColor={TUJI.teal}
-              rightValue={r.step2Wrong}
-              rightColor={TUJI.coral}
-            />
-            <StepSummaryRow
-              label={t("study.summary.correctWrong")}
-              stepTag={t("study.step.spell")}
-              leftValue={r.step3Correct}
-              leftColor={TUJI.teal}
-              rightValue={r.step3Wrong}
-              rightColor={TUJI.coral}
-            />
+          // List the words the user just touched — we want them to leave
+          // with "these are the new ones I just learned" rather than per-
+          // step accuracy stats. Shows every queue item (Step 2/3 retries
+          // keep cycling until correct, so by 'done' the user has seen
+          // each word at least 3× regardless of accuracy).
+          <div className="mt-6 grid grid-cols-2 gap-2.5 text-left sm:grid-cols-3">
+            {queue.map((d) => (
+              <div key={d.card.id} className="rounded-2xl bg-white p-2.5 shadow-card">
+                <WordTile imageUrl={d.word.image_url} word={d.word.word} height={88} rounded={14} />
+                <div className="mt-2 text-sm font-extrabold tracking-tight text-tuji-ink">
+                  {d.card.back}
+                </div>
+                {showZh && d.word.chinese && (
+                  <div className="text-[11px] font-bold text-tuji-ink3">
+                    {d.word.chinese}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         ) : (
           <div className="mt-6 grid grid-cols-4 gap-3">
@@ -812,12 +846,21 @@ export default function StudyClient() {
   }
 
   if (!current) return null;
-  // New-mode progress counts every step's iteration, so a 12-card session
-  // shows the user 1/36 → 36/36 across the three passes. Review mode keeps
-  // its single-pass formula.
+  // New-mode progress crosses three steps. Wrong picks in Steps 2/3
+  // requeue the card to the tail, so step progress = "cards already
+  // finalized" (= total - stepQueue.length), not raw answer count —
+  // that keeps the bar monotonic across retries.
   const pct =
     mode === "new"
-      ? ((((newStep - 1) * total + idx + (picked ? 0.5 : 0)) / (total * 3)) * 100)
+      ? (() => {
+          const stepFrac =
+            newStep === 1
+              ? (idx + (picked ? 0.5 : 0)) / total
+              : total === 0
+              ? 1
+              : (total - stepQueue.length) / total;
+          return (((newStep - 1) + stepFrac) / 3) * 100;
+        })()
       : ((idx + (phase === "review" ? 0.5 : 0)) / total) * 100;
   // What "revealed" means depends on mode:
   //   - Review: phase has cleanly switched from answer → review after a pick.
@@ -855,7 +898,7 @@ export default function StudyClient() {
         </div>
         <span className="rounded-full bg-white px-3.5 py-1.5 text-sm font-extrabold text-tuji-ink shadow-card">
           {mode === "new"
-            ? t("study.stepIndicator", { n: newStep, i: idx + 1, total })
+            ? t("study.stepIndicator", { n: newStep })
             : `${idx + 1} / ${total}`}
         </span>
       </div>
@@ -1133,42 +1176,4 @@ export default function StudyClient() {
   );
 }
 
-// Used by the new-learn done summary. One row per step, with a step
-// tag on the left, two big numbers on the right (left = positive bucket,
-// right = negative bucket).
-function StepSummaryRow({
-  label,
-  stepTag,
-  leftValue,
-  leftColor,
-  rightValue,
-  rightColor,
-}: {
-  label: string;
-  stepTag: string;
-  leftValue: number;
-  leftColor: string;
-  rightValue: number;
-  rightColor: string;
-}) {
-  return (
-    <div className="flex items-center justify-between rounded-2xl bg-white p-3.5 shadow-card">
-      <div>
-        <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-          {stepTag}
-        </div>
-        <div className="mt-0.5 text-xs font-bold text-tuji-ink2">{label}</div>
-      </div>
-      <div className="flex items-baseline gap-3">
-        <span className="font-display text-2xl font-extrabold" style={{ color: leftColor }}>
-          {leftValue}
-        </span>
-        <span className="text-xs font-bold text-tuji-ink3">/</span>
-        <span className="font-display text-2xl font-extrabold" style={{ color: rightColor }}>
-          {rightValue}
-        </span>
-      </div>
-    </div>
-  );
-}
 

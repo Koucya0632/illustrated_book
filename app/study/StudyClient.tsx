@@ -176,6 +176,11 @@ export default function StudyClient() {
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [peekId, setPeekId] = useState<string | null>(null);
+  // When `peekId` is opened by a wrong Step 2/3 pick, this flag tells the
+  // modal's onClose to run the requeue-and-advance flow (the timer is
+  // suppressed in that branch). User-initiated peeks via the "字卡詳情"
+  // link leave it false so closing the modal is a no-op for the queue.
+  const [peekAdvanceOnClose, setPeekAdvanceOnClose] = useState(false);
   // Which button (新學/複習) is currently fetching its queue — drives the
   // landing-tile spinner so a slow /api/study/queue doesn't look like a dead
   // click. `null` = idle.
@@ -329,6 +334,8 @@ export default function StudyClient() {
         setNewStep(1);
         setStepQueue([]);
         setDisplayedSpelling("");
+        setPeekId(null);
+        setPeekAdvanceOnClose(false);
         setSummary({
           重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0,
           step2Correct: 0, step2Wrong: 0,
@@ -446,17 +453,25 @@ export default function StudyClient() {
       }
       return s;
     });
+    if (!correct) {
+      // Step 2/3 wrong → pop the word peek modal so the user can study
+      // the card right where they stalled. The 800ms auto-advance is
+      // suppressed here; modal close handler runs the requeue + reseed
+      // (see the WordPeekModal block at the bottom of this component).
+      setPeekId(current.word.id);
+      setPeekAdvanceOnClose(true);
+      return;
+    }
     setTimeout(() => {
       setPicked(null);
-      const [head, ...rest] = stepQueue;
-      const next = correct ? rest : [...rest, head];
-      if (next.length === 0) {
+      const [, ...rest] = stepQueue;
+      if (rest.length === 0) {
         setStepQueue([]);
         advanceNew();
       } else {
-        setStepQueue(next);
-        if (newStep === 3 && queue && queue[next[0]]) {
-          setDisplayedSpelling(pickSpellingForCard(queue[next[0]]));
+        setStepQueue(rest);
+        if (newStep === 3 && queue && queue[rest[0]]) {
+          setDisplayedSpelling(pickSpellingForCard(queue[rest[0]]));
         }
       }
     }, 800);
@@ -1286,7 +1301,26 @@ export default function StudyClient() {
         )}
       </div>
 
-      {peekId && <WordPeekModal id={peekId} onClose={() => setPeekId(null)} />}
+      {peekId && (
+        <WordPeekModal
+          id={peekId}
+          onClose={() => {
+            setPeekId(null);
+            // Manual "字卡詳情" peek leaves the flag false → close is a
+            // pure dismiss. Step 2/3 wrong peek flips it on → close
+            // performs the deferred requeue + reseed + advance.
+            if (!peekAdvanceOnClose) return;
+            setPeekAdvanceOnClose(false);
+            setPicked(null);
+            const [head, ...rest] = stepQueue;
+            const next = [...rest, head];
+            setStepQueue(next);
+            if (mode === "new" && newStep === 3 && queue && queue[next[0]]) {
+              setDisplayedSpelling(pickSpellingForCard(queue[next[0]]));
+            }
+          }}
+        />
+      )}
     </div>
   );
 }

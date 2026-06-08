@@ -132,6 +132,17 @@ function suggestRating(elapsedMs: number): Rating {
   return "困難";
 }
 
+// Roll the candidate word for Step 3. 50% real spelling, 50% one of the
+// 3 misspellings from spellingChoices. Defensive fallback to card.back
+// if (somehow) no misspellings were attached.
+function pickSpellingForCard(card: DueCard): string {
+  const correct = card.card.back;
+  if (Math.random() < 0.5) return correct;
+  const misspells = (card.spellingChoices ?? []).filter((s) => s !== correct);
+  if (misspells.length === 0) return correct;
+  return misspells[Math.floor(Math.random() * misspells.length)];
+}
+
 export default function StudyClient() {
   const [queue, setQueue] = useState<DueCard[] | null>(null);
   const [stats, setStats] = useState<Stats | null>(null);
@@ -155,6 +166,12 @@ export default function StudyClient() {
   // correct picks drop it. Step finishes when this becomes empty.
   // Empty when Step 1 is active or mode === "review".
   const [stepQueue, setStepQueue] = useState<number[]>([]);
+  // Step 3 (拼字) shows ONE candidate word per card and asks the user to
+  // judge correct/wrong. The candidate is rolled 50/50 between the real
+  // spelling and a random misspelling, re-rolled on every new card (and
+  // on every requeue), so a single card can probe different spellings
+  // across its retries.
+  const [displayedSpelling, setDisplayedSpelling] = useState<string>("");
   const [lastFeedback, setLastFeedback] = useState<string | null>(null);
   const [suggestedRating, setSuggestedRating] = useState<Rating | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -311,6 +328,7 @@ export default function StudyClient() {
         setLastFeedback(null);
         setNewStep(1);
         setStepQueue([]);
+        setDisplayedSpelling("");
         setSummary({
           重來: 0, 困難: 0, 穩定: 0, 熟練: 0, completed: 0,
           step2Correct: 0, step2Wrong: 0,
@@ -377,7 +395,13 @@ export default function StudyClient() {
     }
     if (newStep === 2) {
       setNewStep(3);
-      setStepQueue(freshStepQueue());
+      const fresh = freshStepQueue();
+      setStepQueue(fresh);
+      // Seed Step 3's candidate so the first card has something to judge
+      // — pickStepChoice handles re-seeding on every subsequent advance.
+      if (queue && queue[fresh[0]]) {
+        setDisplayedSpelling(pickSpellingForCard(queue[fresh[0]]));
+      }
       setPicked(null);
       return;
     }
@@ -385,15 +409,26 @@ export default function StudyClient() {
     setPhase("done");
   }
 
-  // Step 2/3 MCQ click. No SRS write, no rating buttons after. The picked
-  // option is highlighted alongside the correct option for ~0.8s, then we
-  // either pop the head (correct) or rotate it to the back (wrong) — so a
-  // card the user misses keeps cycling until they get it right. Re-clicks
-  // during the beat are blocked by `picked !== null`.
+  // Step 2/3 click handler. No SRS write. Highlights for ~0.8s, then we
+  // either pop the head (judgment correct) or rotate it to the back
+  // (judgment wrong). Re-clicks during the beat are blocked.
+  //
+  // Step 2: `choice` is one of the 4 English MCQs — correctness compares
+  // it directly to card.back.
+  // Step 3: `choice` is the literal "對" / "錯". Correctness depends on
+  // whether the user's verdict matches reality (displayedSpelling vs
+  // card.back). On every advance Step 3 re-rolls the candidate so retries
+  // can probe different spellings of the same card.
   function pickStepChoice(choice: string) {
     if (!current || picked !== null) return;
     setPicked(choice);
-    const correct = choice === current.card.back;
+    let correct: boolean;
+    if (newStep === 3) {
+      const isActuallyCorrect = displayedSpelling === current.card.back;
+      correct = (choice === "對" && isActuallyCorrect) || (choice === "錯" && !isActuallyCorrect);
+    } else {
+      correct = choice === current.card.back;
+    }
     setSummary((s) => {
       if (newStep === 2) {
         return {
@@ -420,6 +455,9 @@ export default function StudyClient() {
         advanceNew();
       } else {
         setStepQueue(next);
+        if (newStep === 3 && queue && queue[next[0]]) {
+          setDisplayedSpelling(pickSpellingForCard(queue[next[0]]));
+        }
       }
     }, 800);
   }
@@ -884,12 +922,9 @@ export default function StudyClient() {
   const revealed = mode === "new" ? newStep === 1 : phase === "review";
   // Are we showing the MCQ grid (vs the post-reveal answer card)?
   const inMcqView = mode === "new" ? newStep !== 1 : phase === "answer";
-  // The right-column choice source: Step 2 reuses Step 2/review distractors,
-  // Step 3 swaps in spelling distractors. Review always uses card.choices.
-  const mcqChoices =
-    mode === "new" && newStep === 3
-      ? current.spellingChoices ?? []
-      : current.choices ?? [];
+  // Right-column 4-MCQ choices for Step 2 + review. Step 3 has its own
+  // judgment UI driven by `displayedSpelling`, so it doesn't read this.
+  const mcqChoices = current.choices ?? [];
 
   return (
     <div className="relative min-h-[calc(100vh-0px)]">
@@ -968,12 +1003,78 @@ export default function StudyClient() {
 
         {/* Right — interaction */}
         <div>
-          {inMcqView ? (
+          {inMcqView && mode === "new" && newStep === 3 ? (
+            // Step 3 = spelling judgment. Show ONE candidate and let the user
+            // call it correct / misspelled. The 4-option grid below is for
+            // Step 2 + review (both use the same "pick the right word" shape).
+            (() => {
+              const isActuallyCorrect = displayedSpelling === current.card.back;
+              const reveal = picked !== null;
+              const userPickedYes = picked === "對";
+              const userPickedNo = picked === "錯";
+              const judgmentRight =
+                (userPickedYes && isActuallyCorrect) || (userPickedNo && !isActuallyCorrect);
+              return (
+                <>
+                  <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+                    {t("study.step.bubbleSpell")}
+                  </div>
+                  {/* Candidate card */}
+                  <div className="mb-3.5 rounded-[20px] bg-white p-5 text-center shadow-card">
+                    <div className="font-display text-3xl font-extrabold leading-none tracking-tight text-tuji-ink">
+                      {displayedSpelling}
+                    </div>
+                    {reveal && !isActuallyCorrect && (
+                      <div className="mt-3 rounded-xl bg-tuji-bg px-3.5 py-2.5 text-[13px] text-tuji-ink2">
+                        {t("study.step.judgeReveal", { correct: current.card.back })}
+                      </div>
+                    )}
+                  </div>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => pickStepChoice("對")}
+                      disabled={reveal}
+                      className={`tuji-press flex flex-1 items-center justify-center gap-2 rounded-2xl px-4 py-4 text-lg font-extrabold disabled:opacity-60 ${
+                        reveal && userPickedYes
+                          ? judgmentRight
+                            ? "ring-4 ring-tuji-green ring-offset-2"
+                            : "ring-4 ring-tuji-coral ring-offset-2"
+                          : ""
+                      }`}
+                      style={{
+                        background: TUJI.green,
+                        color: "#fff",
+                        ["--press-shadow" as string]: shade(TUJI.green, -16),
+                      }}
+                    >
+                      ✓ {t("study.step.judgeYes")}
+                    </button>
+                    <button
+                      onClick={() => pickStepChoice("錯")}
+                      disabled={reveal}
+                      className={`tuji-press flex flex-1 items-center justify-center gap-2 rounded-2xl px-4 py-4 text-lg font-extrabold disabled:opacity-60 ${
+                        reveal && userPickedNo
+                          ? judgmentRight
+                            ? "ring-4 ring-tuji-green ring-offset-2"
+                            : "ring-4 ring-tuji-coral ring-offset-2"
+                          : ""
+                      }`}
+                      style={{
+                        background: TUJI.coral,
+                        color: "#fff",
+                        ["--press-shadow" as string]: shade(TUJI.coral, -16),
+                      }}
+                    >
+                      ✗ {t("study.step.judgeNo")}
+                    </button>
+                  </div>
+                </>
+              );
+            })()
+          ) : inMcqView ? (
             <>
               <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                {mode === "new" && newStep === 3
-                  ? t("study.step.pickSpelling")
-                  : t("study.pickEnglish")}
+                {t("study.pickEnglish")}
               </div>
               <div className="flex flex-col gap-3">
                 {mcqChoices.map((c, i) => {

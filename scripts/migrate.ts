@@ -16,7 +16,13 @@ const DDL = [
      id              TEXT PRIMARY KEY,
      word            TEXT NOT NULL,
      also_known_as   TEXT[] NOT NULL DEFAULT '{}',
-     chinese         TEXT NOT NULL,
+     -- Legacy column being phased out: seedV2 already inserts Chinese
+     -- into word_definitions (lang='zh-Hant', sort_order=0), and the
+     -- POST_BACKFILL_DROPS step at the end of main() removes this
+     -- column. Leaving it NOT NULL caused fresh-DB seeding to fail
+     -- because seedV2's INSERT no longer populates it. Existing DBs are
+     -- unaffected (CREATE TABLE IF NOT EXISTS won't alter columns).
+     chinese         TEXT,
      category        TEXT NOT NULL,
      part_of_speech  TEXT NOT NULL,
      pronunciation   TEXT NOT NULL,

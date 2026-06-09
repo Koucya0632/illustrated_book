@@ -33,7 +33,22 @@ function toCurrent(p: ProfileRow): CurrentUser {
   };
 }
 
+/**
+ * Read the current user id. Header-first so any caller (server component,
+ * route handler, action) automatically picks up both auth paths:
+ *
+ *   - cookie path (web): middleware's `updateSupabaseSession` validates the
+ *     session cookie and stamps `x-user-id`
+ *   - Bearer path (mobile): same middleware validates `Authorization: Bearer`
+ *     via service-role admin client and stamps `x-user-id`
+ *
+ * Falls back to a fresh `supabase.auth.getUser()` if the header is missing —
+ * covers server components that bypassed the middleware matcher, local dev
+ * edge cases, or future middleware refactors that stop setting the header.
+ */
 export async function getCurrentUserId(): Promise<string | null> {
+  const headerId = headers().get(USER_ID_HEADER);
+  if (headerId) return headerId;
   const supabase = createClient();
   const {
     data: { user },
@@ -42,24 +57,13 @@ export async function getCurrentUserId(): Promise<string | null> {
 }
 
 /**
- * Fast-path userId lookup for route handlers on the hot path
- * (`/api/study/queue`, `/api/study/stats`, etc).
+ * Deprecated alias kept for backwards compat with hot-path call sites.
+ * `getCurrentUserId()` now does the same header-first lookup; prefer it
+ * in new code.
  *
- * Middleware (`updateSupabaseSession`) has already validated the JWT against
- * Supabase auth and stamped `x-user-id` on the request. Reading it here is
- * O(1) — no Supabase round trip — which removes ~170-645ms from each call
- * (the dominant cost in the previous Vercel runtime logs).
- *
- * Falls back to `getCurrentUserId()` if the header is missing. That covers:
- *   - server components that didn't go through the matcher
- *   - local dev edge cases where middleware is bypassed
- *   - belt-and-suspenders if a future middleware refactor stops setting it
+ * @deprecated use `getCurrentUserId()`
  */
-export async function getCurrentUserIdFast(): Promise<string | null> {
-  const headerId = headers().get(USER_ID_HEADER);
-  if (headerId) return headerId;
-  return getCurrentUserId();
-}
+export const getCurrentUserIdFast = getCurrentUserId;
 
 export async function getCurrentUser(): Promise<CurrentUser | null> {
   const id = await getCurrentUserId();

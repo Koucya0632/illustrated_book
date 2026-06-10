@@ -192,6 +192,19 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS user_words_mastery_idx ON user_words(user_id, mastery)`,
 
+  // ---- APNs / FCM push tokens for daily-reminder fanout ----
+  // One row per (user, device). iOS sends a fresh token whenever APNs
+  // rotates it; the route upserts.
+  `CREATE TABLE IF NOT EXISTS user_push_tokens (
+     user_id    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     device_id  TEXT NOT NULL,
+     token      TEXT NOT NULL,
+     platform   TEXT NOT NULL DEFAULT 'ios',
+     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, device_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_push_tokens_user_idx ON user_push_tokens(user_id)`,
+
   // ---- RLS: per-user tables locked down ----
   `ALTER TABLE profiles           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_favorites     ENABLE ROW LEVEL SECURITY`,
@@ -199,6 +212,7 @@ const DDL = [
   `ALTER TABLE user_settings      ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_cards         ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_words         ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_push_tokens   ENABLE ROW LEVEL SECURITY`,
 
   `DROP POLICY IF EXISTS profiles_read ON profiles`,
   `CREATE POLICY profiles_read ON profiles FOR SELECT USING (true)`,
@@ -206,7 +220,7 @@ const DDL = [
   `CREATE POLICY profiles_self_update ON profiles
      FOR UPDATE USING (auth.uid() = id) WITH CHECK (auth.uid() = id)`,
 
-  ...["user_favorites", "user_learned", "user_settings", "user_cards", "user_words"].flatMap(
+  ...["user_favorites", "user_learned", "user_settings", "user_cards", "user_words", "user_push_tokens"].flatMap(
     (t) => [
       `DROP POLICY IF EXISTS ${t}_own ON ${t}`,
       `CREATE POLICY ${t}_own ON ${t} FOR ALL

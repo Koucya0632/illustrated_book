@@ -2,6 +2,7 @@
 // the request cookies. Used by Server Components, Route Handlers, etc.
 
 import "server-only";
+import { cache } from "react";
 import { headers } from "next/headers";
 import { createClient } from "./supabase/server";
 import {
@@ -46,7 +47,11 @@ function toCurrent(p: ProfileRow): CurrentUser {
  * covers server components that bypassed the middleware matcher, local dev
  * edge cases, or future middleware refactors that stop setting the header.
  */
-export async function getCurrentUserId(): Promise<string | null> {
+// Wrapped in React `cache()` so multiple call sites within a single
+// request (route handler + getProfile join + middleware-ish helpers)
+// dedupe to one lookup. The cache scope is per request, so different
+// requests still resolve independently.
+export const getCurrentUserId = cache(async (): Promise<string | null> => {
   const headerId = headers().get(USER_ID_HEADER);
   if (headerId) return headerId;
   const supabase = createClient();
@@ -54,7 +59,7 @@ export async function getCurrentUserId(): Promise<string | null> {
     data: { user },
   } = await supabase.auth.getUser();
   return user?.id ?? null;
-}
+});
 
 /**
  * Deprecated alias kept for backwards compat with hot-path call sites.

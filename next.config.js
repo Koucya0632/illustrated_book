@@ -44,10 +44,22 @@ const nextConfig = {
         { key: "Vercel-CDN-Cache-Control", value: EDGE_CACHE },
       ],
     });
+    // Defense in depth: every per-user endpoint gets `private, no-store`
+    // so no intermediate proxy can stash a response keyed on path alone
+    // and accidentally serve it back to another user. Routes are already
+    // `force-dynamic` server-side, but this keeps the contract explicit
+    // and survives a future move off Vercel.
+    const privateEntry = (source) => ({
+      source,
+      headers: [{ key: "Cache-Control", value: "private, no-store" }],
+    });
     return [
       publicEntry("/api/words"),
       publicEntry("/api/words/:id"),
       publicEntry("/api/categories"),
+      privateEntry("/api/users/:path*"),
+      privateEntry("/api/study/:path*"),
+      privateEntry("/api/events"),
     ];
   },
 };

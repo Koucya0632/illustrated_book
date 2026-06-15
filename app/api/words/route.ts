@@ -1,24 +1,24 @@
-// Public listing of every published word, localized to the caller's UI
-// language. Returns the lite CardWord shape (id / word / chinese / imageUrl
-// / category / pronunciation) — heavy fields like definitions / examples
-// / relations stay behind the per-word /api/words/[id] endpoint.
+// Public listing of every published word, localized via `?lang=`. Returns
+// the lite CardWord shape (id / word / chinese / imageUrl / category /
+// pronunciation) — heavy fields like definitions / examples / relations
+// stay behind the per-word /api/words/[id] endpoint.
 //
-// iOS WordsStore calls this once at app launch and keeps the array
-// in-memory; the next-cache wrapper inside `getAllCardWords` keeps the
-// DB hit amortized across requests.
+// CDN-cacheable: the only input is `lang`, so the same (lang, payload) pair
+// is shared across all callers. `getAllCardWords`'s `unstable_cache` layer
+// keeps origin DB hits amortized.
 
-import { NextResponse } from "next/server";
 import { getAllCardWords } from "@/lib/data";
-import { getCurrentUserId } from "@/lib/current-user";
-import { getSettings } from "@/lib/users-db";
-import { DEFAULT_SETTINGS } from "@/lib/settings";
+import type { UiLang } from "@/lib/settings";
+import { publicJson, readLang } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+// Next 14 auto-emits `Cache-Control: s-maxage=300, stale-while-revalidate=...`
+// when `revalidate` is set on a Route Handler segment. Tag-based invalidation
+// (`revalidateTag("words")`) still kicks in via the underlying unstable_cache.
+export const revalidate = 300;
 
-export async function GET() {
-  const userId = await getCurrentUserId();
-  const lang = (userId ? await getSettings(userId) : DEFAULT_SETTINGS).uiLang;
+export async function GET(req: Request) {
+  const lang = readLang(req) as UiLang;
   const words = await getAllCardWords(lang);
-  return NextResponse.json({ words, total: words.length });
+  return publicJson({ words, total: words.length }, req);
 }

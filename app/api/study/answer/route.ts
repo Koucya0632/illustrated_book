@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getCardById, upsertReview } from "@/lib/cards-db";
 import { humanizeInterval, schedule, type Rating } from "@/lib/srs";
@@ -105,6 +106,10 @@ export async function POST(req: Request) {
       metadata: { cardId, deckKey: card.card.deck_key },
     }).catch((err) => console.warn("[study/answer] study_logs insert failed", err)),
   ]);
+
+  // Streak + heatmap are derived from study_logs, so bust their cache now.
+  // Same-tick reads see fresh data instead of a stale 30/60s window.
+  revalidateTag(`progress:${userId}`);
 
   return NextResponse.json({
     ok: true,

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { WordTile } from "@/components/tuji/ui";
 import PronunciationButton from "@/components/PronunciationButton";
 import { useT } from "@/components/I18n";
+import { useSettings } from "@/components/SettingsProvider";
 import type { Word } from "@/types";
 
 // Compact "peek" at a word's key content, opened after answering a study card
@@ -12,13 +13,14 @@ import type { Word } from "@/types";
 // server-only.
 export default function WordPeekModal({ id, onClose }: { id: string; onClose: () => void }) {
   const t = useT();
+  const { uiLang } = useSettings();
   const [word, setWord] = useState<Word | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let alive = true;
     setLoading(true);
-    fetch(`/api/words/${id}`)
+    fetch(`/api/words/${id}?lang=${encodeURIComponent(uiLang)}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((w) => {
         if (alive) setWord(w);
@@ -30,7 +32,7 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
     return () => {
       alive = false;
     };
-  }, [id]);
+  }, [id, uiLang]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

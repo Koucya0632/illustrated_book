@@ -1,19 +1,16 @@
 import { NextResponse } from "next/server";
 import { getWord } from "@/lib/data";
-import { getCurrentUserId } from "@/lib/current-user";
-import { getSettings } from "@/lib/users-db";
-import { DEFAULT_SETTINGS } from "@/lib/settings";
+import type { UiLang } from "@/lib/settings";
+import { publicJson, readLang } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 // Public single-word detail as JSON — used by the study peek modal (getWord is
-// server-only, so the client fetches it through here). Localized to the
-// signed-in user's UI language (falls back to zh-Hant for anonymous callers).
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
-  const userId = await getCurrentUserId();
-  const lang = (userId ? await getSettings(userId) : DEFAULT_SETTINGS).uiLang;
+// server-only, so the client fetches it through here). Localized via `?lang=`.
+export async function GET(req: Request, { params }: { params: { id: string } }) {
+  const lang = readLang(req) as UiLang;
   const word = await getWord(params.id, lang);
   if (!word) return NextResponse.json({ error: "not found" }, { status: 404 });
-  return NextResponse.json(word);
+  return publicJson(word, req);
 }

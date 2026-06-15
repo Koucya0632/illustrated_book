@@ -7,6 +7,7 @@
 // misconfigured.
 
 import "server-only";
+import { unstable_cache } from "next/cache";
 import { getSql } from "./db";
 import { DEFAULT_SETTINGS, normalizeSettings, type UserSettings } from "./settings";
 
@@ -313,6 +314,13 @@ export async function clearLearningProgress(userId: string): Promise<void> {
     await tx`DELETE FROM user_cards   WHERE user_id = ${userId}::uuid`;
     await tx`DELETE FROM study_logs   WHERE user_id = ${userId}::uuid`;
   });
+  // Bust the streak/heatmap cache so the cleared state is visible immediately.
+  // Wrapped in try/catch because revalidateTag throws in non-request contexts
+  // (e.g. scripts). Real request-context calls won't hit the catch.
+  try {
+    const { revalidateTag } = await import("next/cache");
+    revalidateTag(`progress:${userId}`);
+  } catch {}
 }
 
 // Per-day review activity for the last 6 calendar weeks (current week + 5
@@ -325,9 +333,23 @@ export interface HeatCell {
   future: boolean;
 }
 
-export async function getActivityHeatmap(
+// Cached: 60s revalidate + tag `progress:<uid>` for explicit busting after
+// `study/answer` (writes a row to study_logs) or clearLearningProgress.
+// Heatmap moves at most once per minute of activity, so 60s is conservative.
+export function getActivityHeatmap(
   userId: string,
   tz = "Asia/Taipei",
+): Promise<HeatCell[]> {
+  return unstable_cache(
+    () => getActivityHeatmapRaw(userId, tz),
+    ["heatmap", userId, tz],
+    { tags: [`progress:${userId}`], revalidate: 60 },
+  )();
+}
+
+async function getActivityHeatmapRaw(
+  userId: string,
+  tz: string,
 ): Promise<HeatCell[]> {
   const sql = getSql();
   if (!sql) return [];
@@ -388,9 +410,23 @@ const EMPTY_STREAK: StudyStreak = {
 //
 // Wrapped in try/catch returning zeros: streak is a non-critical dashboard
 // widget and must never 500 the /me page.
-export async function getStudyStreak(
+// Cached: 30s revalidate + tag `progress:<uid>`. Streak updates the instant
+// the user logs a review (`/api/study/answer` revalidates the tag), so a
+// short 30s window only matters when a parallel device adds activity.
+export function getStudyStreak(
   userId: string,
   tz = "Asia/Taipei",
+): Promise<StudyStreak> {
+  return unstable_cache(
+    () => getStudyStreakRaw(userId, tz),
+    ["streak", userId, tz],
+    { tags: [`progress:${userId}`], revalidate: 30 },
+  )();
+}
+
+async function getStudyStreakRaw(
+  userId: string,
+  tz: string,
 ): Promise<StudyStreak> {
   const sql = getSql();
   if (!sql) return EMPTY_STREAK;

@@ -18,10 +18,37 @@ if (supabaseHost) {
   remotePatterns.push({ protocol: "https", hostname: supabaseHost });
 }
 
+// Cache directives for public GET endpoints. `max-age` drives browser /
+// iOS URLCache; `s-maxage` drives the Vercel edge CDN; `stale-while-
+// revalidate` lets the edge serve stale while it asks origin for a fresh
+// copy. Set here in next.config.js (not in the Route Handler) because
+// Next.js treats searchParam-reading handlers as dynamic and strips
+// handler-set Cache-Control.
+// Trial split: client `Cache-Control` controls iOS URLCache; Vercel's
+// own `Vercel-CDN-Cache-Control` controls the edge. Vercel forwards
+// `Cache-Control` unchanged to the client when Vercel-CDN-Cache-Control
+// is present.
+const CLIENT_CACHE = "public, max-age=60";
+const EDGE_CACHE = "public, s-maxage=300, stale-while-revalidate=3600";
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns,
+  },
+  async headers() {
+    const publicEntry = (source) => ({
+      source,
+      headers: [
+        { key: "Cache-Control", value: CLIENT_CACHE },
+        { key: "Vercel-CDN-Cache-Control", value: EDGE_CACHE },
+      ],
+    });
+    return [
+      publicEntry("/api/words"),
+      publicEntry("/api/words/:id"),
+      publicEntry("/api/categories"),
+    ];
   },
 };
 

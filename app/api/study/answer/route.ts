@@ -107,9 +107,11 @@ export async function POST(req: Request) {
     }).catch((err) => console.warn("[study/answer] study_logs insert failed", err)),
   ]);
 
-  // Streak + heatmap are derived from study_logs, so bust their cache now.
-  // Same-tick reads see fresh data instead of a stale 30/60s window.
+  // Streak + heatmap derive from study_logs; due/seen counts derive from
+  // user_cards. Both just changed, so bust both per-user tags now —
+  // same-tick reads see fresh data instead of a stale 30s window.
   revalidateTag(`progress:${userId}`);
+  revalidateTag(`stats:${userId}`);
 
   return NextResponse.json({
     ok: true,

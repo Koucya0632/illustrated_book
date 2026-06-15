@@ -1,4 +1,5 @@
 import "server-only";
+import { unstable_cache } from "next/cache";
 import { getSql } from "./db";
 import {
   selectDistractors,
@@ -473,7 +474,25 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
   };
 }
 
-export async function studyStats(userId: string, categories: string[] = []) {
+// Cached: 30s revalidate + tag `stats:<uid>` for invalidation on writes.
+// `due` is time-sensitive (cards become due as `next_review_at` rolls), so
+// 30s is the upper bound on staleness — a card that becomes due mid-window
+// won't show in the chip until the next refresh. Acceptable for UI counts.
+//
+// Cache key includes a sorted categories list so different theme filters
+// don't collide; same theme set always hits the same entry.
+export function studyStats(userId: string, categories: string[] = []) {
+  const cats = (categories ?? [])
+    .filter((c) => c.length > 0 && c !== "all")
+    .sort();
+  return unstable_cache(
+    () => studyStatsRaw(userId, cats),
+    ["studyStats", userId, cats.join(",")],
+    { tags: [`stats:${userId}`], revalidate: 30 },
+  )();
+}
+
+async function studyStatsRaw(userId: string, categories: string[]) {
   const sql = requireSql();
   // Five COUNTs in parallel — postgres-js dispatches them on independent
   // connections so the wall time collapses from ~5 × round-trip to ~1 ×.

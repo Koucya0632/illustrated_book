@@ -314,12 +314,13 @@ export async function clearLearningProgress(userId: string): Promise<void> {
     await tx`DELETE FROM user_cards   WHERE user_id = ${userId}::uuid`;
     await tx`DELETE FROM study_logs   WHERE user_id = ${userId}::uuid`;
   });
-  // Bust the streak/heatmap cache so the cleared state is visible immediately.
-  // Wrapped in try/catch because revalidateTag throws in non-request contexts
-  // (e.g. scripts). Real request-context calls won't hit the catch.
+  // Bust the streak/heatmap + due/seen caches so the cleared state is
+  // visible immediately. Wrapped in try/catch because revalidateTag
+  // throws in non-request contexts (e.g. scripts).
   try {
     const { revalidateTag } = await import("next/cache");
     revalidateTag(`progress:${userId}`);
+    revalidateTag(`stats:${userId}`);
   } catch {}
 }
 

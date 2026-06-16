@@ -192,9 +192,10 @@ const fetchAllFromDb = unstable_cache(
     `) as unknown as Row[];
     return rows.map(rowToWord);
   },
-  // v5: added per-language overlay fetch (word_localized_texts) and split
-  // RawEntry from Word so per-request localization happens above the cache.
-  ["all-words-v5"],
+  // v6: collocationsZh added on the localized Word — bump the cache key
+  // so deployments don't serve a stale jsonb-shaped payload to clients
+  // that already expect the new field.
+  ["all-words-v6"],
   { tags: ["words"], revalidate: 60 },
 );
 

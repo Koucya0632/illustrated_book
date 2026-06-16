@@ -32,10 +32,15 @@ export function localizeWord(
   const localizedDefs = pickDefinitions(w.definitions, lang);
   const chinese = localizedDefs[0]?.definition ?? localizeZhText(w.chinese, lang);
 
+  // Collocations are stored EN-only on `words.collocations`; the zh-Hant
+  // translation array is overlayed via word_localized_texts. Apply it on
+  // every lang pass (the EN list stays in `w.collocations`).
+  const collocationsZh = pickCollocationsZh(lang, localizedTexts);
+
   if (lang === "zh-Hant") {
     // examples[].zh, etymology, note, forms[].label are all already the
     // zh-Hant base values — pass them through untouched.
-    return { ...w, definitions: localizedDefs, chinese };
+    return { ...w, definitions: localizedDefs, chinese, collocationsZh };
   }
 
   const examples: Example[] = w.examples.map((e) => ({
@@ -57,7 +62,29 @@ export function localizeWord(
     note,
     chineseDefinition,
     forms,
+    collocationsZh,
   };
+}
+
+function pickCollocationsZh(
+  lang: UiLang,
+  localizedTexts?: LocalizedTextMap,
+): string[] | undefined {
+  // No ja translations seeded for collocations today; leave undefined so the
+  // client renders English-only chips.
+  if (lang === "ja") return undefined;
+  const raw = localizedTexts?.["collocations|zh-Hant"];
+  if (!raw) return undefined;
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return undefined;
+  }
+  if (!Array.isArray(parsed)) return undefined;
+  const zhHant = parsed.map(String);
+  if (lang === "zh-Hans") return zhHant.map(toZhHans);
+  return zhHant;
 }
 
 /** Localize a Category's display name. `cat.nameZh` is the zh-Hant base.

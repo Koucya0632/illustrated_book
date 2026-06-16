@@ -102,6 +102,11 @@ export interface Word {
   relations: WordRelation[];
 
   collocations?: string[];
+  /** Per-collocation zh-Hant translations parallel to `collocations`. Sourced
+   *  from `word_localized_texts(field='collocations', language='zh-Hant')`
+   *  storing a JSON-encoded array. Localized by UI lang (zh-Hans via opencc;
+   *  ja currently absent, so undefined for ja). */
+  collocationsZh?: string[];
   note?: string;
   /** Short etymology / word-formation breakdown (zh-Hant content). */
   etymology?: string;

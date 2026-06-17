@@ -1,0 +1,48 @@
+# =============================================================================
+# CODEOWNERS — Tuji Web（Next.js + Supabase）
+#
+# 規則：誰擁有某路徑，GitHub PR 自動把那個人加進 reviewers。
+# 越下方的規則覆蓋越上方。
+#
+# 單人開發：全指自己；上 ≥ 2 人時填真正的 owner。
+#
+# 語法參考：
+#   https://docs.github.com/en/repositories/managing-your-repositories-settings-and-features/customizing-your-repository/about-code-owners
+# =============================================================================
+
+# ---------- 預設 owner（fallback）----------
+*                       @rex
+
+# ---------- API / 後端合約（雙端共識，謹慎改）----------
+# 改這些會影響 iOS 端合約，需要架構 owner review
+/app/api/               @rex
+/lib/                   @rex
+/types/                 @rex
+
+# ---------- 資料庫 / migration / 腳本 ----------
+/scripts/               @rex
+
+# ---------- UI ----------
+/app/                   @rex
+/components/            @rex
+/public/                @rex
+
+# ---------- 設定 / CI / 機密相關 ----------
+/.github/               @rex
+/next.config.*          @rex
+/package.json           @rex
+/tsconfig.json          @rex
+/.env.example           @rex
+
+# ---------- 文件 ----------
+*.md                    @rex
+/reports/               @rex
+
+# =============================================================================
+# 加 owner 範例（≥ 2 人時）：
+#   /app/api/            @rex @backend-lead
+#   /components/         @rex @web-lead
+#
+# 必要 review 設定走 GitHub branch protection：
+#   Settings → Branches → main → Require review from Code Owners ✓
+# =============================================================================

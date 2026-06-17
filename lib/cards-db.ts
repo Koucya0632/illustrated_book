@@ -564,3 +564,38 @@ async function studyStatsRaw(userId: string, categories: string[]) {
   const newCount = total - seen;
   return { total, seen, due, new: newCount, todayNew, byStatus };
 }
+
+// Per-category dictionary completion. `total` = published cards in the
+// category; `seen` = those the user has a user_cards row for (i.e. has
+// studied at least once). Powers the Progress tab's completion % +
+// category breakdown — a single grouped LEFT JOIN, deliberately NOT the
+// FILTER-aggregate-with-subquery shape that broke the pooler in
+// studyStatsRaw (see note above).
+export interface CategoryProgressRow {
+  category: string;
+  total: number;
+  seen: number;
+}
+
+export function categoryProgress(userId: string): Promise<CategoryProgressRow[]> {
+  return unstable_cache(
+    () => categoryProgressRaw(userId),
+    ["categoryProgress", userId],
+    { tags: [`stats:${userId}`], revalidate: 30 },
+  )();
+}
+
+async function categoryProgressRaw(userId: string): Promise<CategoryProgressRow[]> {
+  const sql = requireSql();
+  return sql<CategoryProgressRow[]>`
+    SELECT w.category                 AS category,
+           count(*)::int              AS total,
+           count(uc.card_id)::int     AS seen
+    FROM cards c
+    JOIN words w ON w.id = c.word_id
+    LEFT JOIN user_cards uc
+      ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
+    WHERE w.deleted_at IS NULL AND w.status = 'published'
+    GROUP BY w.category
+  `;
+}

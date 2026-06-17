@@ -28,7 +28,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const BUCKET = "word-images";
-const MARGIN_PERCENT = 0.15;
+const MARGIN_PERCENT = 0.25;
 const TRIM_THRESHOLD = 10; // 0-255, lower = stricter "is white"
 const BACKUP_DIR = "/tmp/word-images-backup";
 const OUT_DIR = "/tmp/word-images-out";

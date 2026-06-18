@@ -1023,6 +1023,16 @@ async function generateCards(sql: any) {
 }
 
 async function main() {
+  // Skip schema migration on non-production Vercel builds (preview /
+  // development). The preview build environment can't reach the production DB,
+  // so running migrate there only fails the build. Production deploys still
+  // run it, and so does a local `npm run migrate` (VERCEL_ENV is unset).
+  const vercelEnv = process.env.VERCEL_ENV;
+  if (vercelEnv && vercelEnv !== "production") {
+    console.log(`[migrate] VERCEL_ENV=${vercelEnv} — skipping migrate on non-production build.`);
+    return;
+  }
+
   const url = process.env.DATABASE_URL;
   if (!url) {
     console.log("[migrate] DATABASE_URL not set — skipping (local dev mode).");

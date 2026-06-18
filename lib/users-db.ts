@@ -95,15 +95,25 @@ export async function getProfile(userId: string): Promise<ProfileRow | null> {
 // trimmed to NULL when blank so display falls back to the username handle.
 export async function updateProfile(
   userId: string,
-  fields: { nickname: string | null; avatar: string },
+  fields: { nickname: string | null; avatar?: string },
 ): Promise<void> {
   const sql = requireSql();
   const nickname = fields.nickname && fields.nickname.trim() !== "" ? fields.nickname.trim() : null;
-  await sql`
-    UPDATE profiles
-    SET nickname = ${nickname}, avatar = ${fields.avatar}
-    WHERE id = ${userId}::uuid
-  `;
+  // Avatar is optional: only overwrite the column when a value is supplied,
+  // so a nickname-only update never resets the saved pose.
+  if (fields.avatar !== undefined) {
+    await sql`
+      UPDATE profiles
+      SET nickname = ${nickname}, avatar = ${fields.avatar}
+      WHERE id = ${userId}::uuid
+    `;
+  } else {
+    await sql`
+      UPDATE profiles
+      SET nickname = ${nickname}
+      WHERE id = ${userId}::uuid
+    `;
+  }
 }
 
 // ---- favorites ----

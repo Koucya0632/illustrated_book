@@ -20,11 +20,31 @@ import { getSql } from "@/lib/db";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+/**
+ * Returns the input if it's a valid IANA timezone the runtime recognises,
+ * else null. Guards against junk/stale identifiers reaching the cron's
+ * `AT TIME ZONE`, which would otherwise throw at query time.
+ */
+function validTimezone(tz: unknown): string | null {
+  if (typeof tz !== "string" || tz.length === 0 || tz.length > 64) return null;
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: tz });
+    return tz;
+  } catch {
+    return null;
+  }
+}
+
 export async function POST(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
-  let body: { token?: string; deviceId?: string; platform?: string };
+  let body: {
+    token?: string;
+    deviceId?: string;
+    platform?: string;
+    timezone?: string;
+  };
   try {
     body = await req.json();
   } catch {
@@ -37,16 +57,21 @@ export async function POST(req: Request) {
   if (platform !== "ios" && platform !== "android") {
     return NextResponse.json({ error: "unsupported platform" }, { status: 400 });
   }
+  // IANA timezone the device reports (e.g. "Asia/Taipei"); drives the
+  // per-user 20:00-local daily-reminder cron. Validate against the runtime's
+  // tz database and fall back to Asia/Taipei if absent or unrecognised.
+  const timezone = validTimezone(body.timezone) ?? "Asia/Taipei";
 
   const sql = getSql();
   if (!sql) return NextResponse.json({ error: "db not configured" }, { status: 503 });
 
   await sql`
-    INSERT INTO user_push_tokens (user_id, device_id, token, platform, updated_at)
-    VALUES (${userId}, ${deviceId}, ${token}, ${platform}, now())
+    INSERT INTO user_push_tokens (user_id, device_id, token, platform, timezone, updated_at)
+    VALUES (${userId}, ${deviceId}, ${token}, ${platform}, ${timezone}, now())
     ON CONFLICT (user_id, device_id) DO UPDATE SET
       token = EXCLUDED.token,
       platform = EXCLUDED.platform,
+      timezone = EXCLUDED.timezone,
       updated_at = now()
   `;
 

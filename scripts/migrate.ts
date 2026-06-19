@@ -138,6 +138,13 @@ const DDL = [
   `UPDATE user_settings
       SET study_categories = study_category
     WHERE study_categories = '' AND study_category <> 'all'`,
+  // Additive: daily-reminder preferences. Enabled by default (the in-app
+  // push opt-in is the real gate — a user with no token is never selected).
+  // reminder_minute is constrained to 15-minute steps by the client; the
+  // cron buckets to 15 min, so other values would simply never match.
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS reminder_enabled BOOLEAN NOT NULL DEFAULT TRUE`,
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS reminder_hour   INT NOT NULL DEFAULT 20`,
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS reminder_minute INT NOT NULL DEFAULT 0`,
 
   // ---- SRS cards (public read) + user_cards (per-user) ----
   `CREATE TABLE IF NOT EXISTS cards (
@@ -204,6 +211,22 @@ const DDL = [
      PRIMARY KEY (user_id, device_id)
    )`,
   `CREATE INDEX IF NOT EXISTS user_push_tokens_user_idx ON user_push_tokens(user_id)`,
+  // Per-device IANA timezone (e.g. 'Asia/Taipei'), reported by iOS on every
+  // token upload. The daily-reminder cron uses the most-recently-updated
+  // device's timezone to decide when 20:00 local falls for each user.
+  `ALTER TABLE user_push_tokens ADD COLUMN IF NOT EXISTS timezone TEXT NOT NULL DEFAULT 'Asia/Taipei'`,
+
+  // ---- Daily-reminder dedupe ----
+  // One row per (user, local-day) once we've sent that day's 20:00 "you
+  // haven't studied yet" push. The cron claims a row here AFTER a successful
+  // send so a user is never reminded twice for the same local date (and a
+  // re-run of the cron within the same hour is a no-op).
+  `CREATE TABLE IF NOT EXISTS user_daily_reminders (
+     user_id     UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     reminded_on DATE NOT NULL,
+     created_at  TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, reminded_on)
+   )`,
 
   // ---- RLS: per-user tables locked down ----
   `ALTER TABLE profiles           ENABLE ROW LEVEL SECURITY`,
@@ -213,6 +236,10 @@ const DDL = [
   `ALTER TABLE user_cards         ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_words         ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_push_tokens   ENABLE ROW LEVEL SECURITY`,
+  // RLS on with no client policy: only the server's direct (table-owner)
+  // connection — i.e. the cron — can read/write it. Supabase auth/anon roles
+  // get nothing, which is correct: this table is internal bookkeeping.
+  `ALTER TABLE user_daily_reminders ENABLE ROW LEVEL SECURITY`,
 
   `DROP POLICY IF EXISTS profiles_read ON profiles`,
   `CREATE POLICY profiles_read ON profiles FOR SELECT USING (true)`,

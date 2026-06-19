@@ -15,6 +15,12 @@ export interface UserSettings {
   studyDecks: string[];
   uiLang: UiLang;
   fontSize: FontSize;
+  // Daily study reminder. When enabled, the cron pushes "今天還沒學" at
+  // reminderHour:reminderMinute in the device's local timezone if the user
+  // hasn't studied that day. Minute is stored in 15-min steps (0/15/30/45).
+  reminderEnabled: boolean;
+  reminderHour: number;
+  reminderMinute: number;
 }
 
 export const DEFAULT_SETTINGS: UserSettings = {
@@ -25,7 +31,28 @@ export const DEFAULT_SETTINGS: UserSettings = {
   studyDecks: [],
   uiLang: "zh-Hant",
   fontSize: "md",
+  reminderEnabled: true,
+  reminderHour: 20,
+  reminderMinute: 0,
 };
+
+// Allowed minute steps for the reminder time. The cron buckets the current
+// minute to the nearest lower 15, so only these values can ever fire.
+export const REMINDER_MINUTE_STEPS = [0, 15, 30, 45] as const;
+
+// Clamp the reminder hour to a valid 0–23 integer.
+export function clampReminderHour(n: unknown): number {
+  const h = Math.round(Number(n));
+  if (!Number.isFinite(h)) return DEFAULT_SETTINGS.reminderHour;
+  return Math.min(23, Math.max(0, h));
+}
+
+// Snap the reminder minute to the nearest lower 15-minute step in [0,45].
+export function clampReminderMinute(n: unknown): number {
+  const m = Math.round(Number(n));
+  if (!Number.isFinite(m)) return DEFAULT_SETTINGS.reminderMinute;
+  return Math.min(45, Math.max(0, Math.floor(m / 15) * 15));
+}
 
 // Card decks (deck_key) the user can pick to study. Only one deck exists
 // today ("look at image, choose English"); the picker UI is hidden in the
@@ -92,5 +119,11 @@ export function normalizeSettings(raw: Partial<UserSettings> | null | undefined)
     studyDecks: normalizeStudyDecks(raw?.studyDecks),
     uiLang: UI_LANGS.includes(raw?.uiLang as UiLang) ? (raw!.uiLang as UiLang) : "zh-Hant",
     fontSize: FONT_SIZES.includes(raw?.fontSize as FontSize) ? (raw!.fontSize as FontSize) : "md",
+    reminderEnabled:
+      typeof raw?.reminderEnabled === "boolean"
+        ? raw.reminderEnabled
+        : DEFAULT_SETTINGS.reminderEnabled,
+    reminderHour: clampReminderHour(raw?.reminderHour),
+    reminderMinute: clampReminderMinute(raw?.reminderMinute),
   };
 }

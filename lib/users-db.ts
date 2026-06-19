@@ -41,9 +41,13 @@ export async function getSettings(userId: string): Promise<UserSettings> {
         study_decks: string;
         ui_lang: string;
         font_size: string;
+        reminder_enabled: boolean;
+        reminder_hour: number;
+        reminder_minute: number;
       }[]
     >`
-      SELECT daily_goal, accent, show_zh, study_categories, study_decks, ui_lang, font_size
+      SELECT daily_goal, accent, show_zh, study_categories, study_decks, ui_lang, font_size,
+             reminder_enabled, reminder_hour, reminder_minute
       FROM user_settings WHERE user_id = ${userId}::uuid LIMIT 1
     `;
     const r = rows[0];
@@ -56,6 +60,9 @@ export async function getSettings(userId: string): Promise<UserSettings> {
       studyDecks: (r.study_decks ?? "").split(",").filter(Boolean),
       uiLang: r.ui_lang as UserSettings["uiLang"],
       fontSize: r.font_size as UserSettings["fontSize"],
+      reminderEnabled: r.reminder_enabled,
+      reminderHour: r.reminder_hour,
+      reminderMinute: r.reminder_minute,
     });
   } catch {
     return DEFAULT_SETTINGS;
@@ -65,8 +72,8 @@ export async function getSettings(userId: string): Promise<UserSettings> {
 export async function saveSettings(userId: string, s: UserSettings): Promise<void> {
   const sql = requireSql();
   await sql`
-    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_categories, study_decks, ui_lang, font_size, updated_at)
-    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategories.join(",")}, ${s.studyDecks.join(",")}, ${s.uiLang}, ${s.fontSize}, now())
+    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_categories, study_decks, ui_lang, font_size, reminder_enabled, reminder_hour, reminder_minute, updated_at)
+    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategories.join(",")}, ${s.studyDecks.join(",")}, ${s.uiLang}, ${s.fontSize}, ${s.reminderEnabled}, ${s.reminderHour}, ${s.reminderMinute}, now())
     ON CONFLICT (user_id) DO UPDATE
       SET daily_goal       = EXCLUDED.daily_goal,
           accent           = EXCLUDED.accent,
@@ -75,6 +82,9 @@ export async function saveSettings(userId: string, s: UserSettings): Promise<voi
           study_decks      = EXCLUDED.study_decks,
           ui_lang          = EXCLUDED.ui_lang,
           font_size        = EXCLUDED.font_size,
+          reminder_enabled = EXCLUDED.reminder_enabled,
+          reminder_hour    = EXCLUDED.reminder_hour,
+          reminder_minute  = EXCLUDED.reminder_minute,
           updated_at       = now()
   `;
 }

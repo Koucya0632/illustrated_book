@@ -252,6 +252,36 @@ export async function getAllMastery(userId: string): Promise<MasteryRow[]> {
   `;
 }
 
+export interface MasteryScheduleRow extends MasteryRow {
+  // The soonest next_review_at across all of the word's cards, or null if the
+  // word has no user_cards rows yet. SRS state is per-card; mastery is per-word.
+  next_review_at: string | null;
+}
+
+// Per-word mastery + the word's next-due review time (MIN over its cards),
+// for the iOS 圖鑑 grid. Kept separate from getAllMastery so the queue route's
+// mastery attach stays lean.
+export async function getAllMasteryWithSchedule(
+  userId: string,
+): Promise<MasteryScheduleRow[]> {
+  const sql = requireSql();
+  return sql<MasteryScheduleRow[]>`
+    SELECT
+      uw.word_id,
+      uw.mastery::float8 AS mastery,
+      uw.last_reviewed_at,
+      uw.review_count,
+      (
+        SELECT MIN(uc.next_review_at)
+        FROM user_cards uc
+        JOIN cards c ON c.id = uc.card_id
+        WHERE c.word_id = uw.word_id AND uc.user_id = ${userId}::uuid
+      ) AS next_review_at
+    FROM user_words uw
+    WHERE uw.user_id = ${userId}::uuid
+  `;
+}
+
 // ----------------------------------------------------------------------------
 // study_logs — append-only event stream. One row per answered card.
 // Mirrors user_cards / user_words mutations but is never UPDATEd; the table

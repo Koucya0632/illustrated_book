@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
-import { getAllMastery } from "@/lib/users-db";
+import { getAllMasteryWithSchedule } from "@/lib/users-db";
 import { applyDecay } from "@/lib/mastery";
 
 export const runtime = "nodejs";
@@ -17,13 +17,16 @@ export async function GET() {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ items: [] });
 
-  const rows = await getAllMastery(userId);
+  const rows = await getAllMasteryWithSchedule(userId);
   const now = new Date();
   const items = rows.map((r) => ({
     wordId: r.word_id,
     mastery: Math.round(
       applyDecay(r.mastery, r.last_reviewed_at ? new Date(r.last_reviewed_at) : null, now),
     ),
+    // Strict ISO (driver may hand back a non-strict timestamp string); null
+    // when the word has no scheduled cards. iOS humanizes client-side.
+    nextReviewAt: r.next_review_at ? new Date(r.next_review_at).toISOString() : null,
   }));
 
   return NextResponse.json({ items });

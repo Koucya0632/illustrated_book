@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
-import { getWord } from "@/lib/data";
-import type { UiLang } from "@/lib/settings";
-import { publicJson, readLang } from "@/lib/cache-headers";
+import { getLearningWord } from "@/lib/data";
+import type { LearningDirection, UiLang } from "@/lib/settings";
+import {
+  publicJson,
+  readLang,
+  readLearningDirection,
+} from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const revalidate = 300;
@@ -10,7 +14,8 @@ export const revalidate = 300;
 // server-only, so the client fetches it through here). Localized via `?lang=`.
 export async function GET(req: Request, { params }: { params: { id: string } }) {
   const lang = readLang(req) as UiLang;
-  const word = await getWord(params.id, lang);
+  const learning = readLearningDirection(req) as LearningDirection;
+  const word = await getLearningWord(params.id, lang, learning);
   if (!word) return NextResponse.json({ error: "not found" }, { status: 404 });
   return publicJson(word, req);
 }

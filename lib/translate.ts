@@ -20,6 +20,9 @@ export interface TranslateWordInput {
 
 export const TranslatedWordSchema = z.object({
   definition: z.string().describe("Japanese translation of the Chinese definition"),
+  reading: z
+    .string()
+    .describe("Hiragana reading of the Japanese headword, with no punctuation"),
   etymology: z
     .string()
     .nullable()
@@ -60,10 +63,27 @@ export async function translateWordToJa(input: TranslateWordInput): Promise<Tran
       (input.etymology ? `Etymology (zh-Hant): ${input.etymology}\n` : "Etymology: (none)\n") +
       (input.note ? `Note (zh-Hant): ${input.note}\n` : "Note: (none)\n") +
       (exampleLines ? `Examples:\n${exampleLines}\n` : "Examples: (none)\n") +
-      `\nReturn: definition (ja), etymology (ja or null), note (ja or null), ` +
+      `\nReturn: definition (the concise Japanese headword), reading (hiragana), ` +
+      `etymology (ja or null), note (ja or null), ` +
       `examples (array of ja strings, one per example, same order).`,
   });
   return object;
+}
+
+const JapaneseReadingSchema = z.object({
+  reading: z.string().describe("Hiragana reading only, no punctuation or explanation"),
+});
+
+export async function generateJapaneseReading(term: string): Promise<string> {
+  const { object } = await generateObject({
+    model: MODEL,
+    schema: JapaneseReadingSchema,
+    system:
+      "Return the standard Japanese reading of the supplied dictionary headword in hiragana only. " +
+      "Preserve long-vowel pronunciation naturally and do not add explanations or punctuation.",
+    prompt: `Japanese headword: ${term}`,
+  });
+  return object.reading.trim();
 }
 
 // ---- Category name translation ----

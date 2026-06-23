@@ -3,9 +3,11 @@ import { getCurrentUserId } from "@/lib/current-user";
 import {
   clearLearningProgress,
   getActivityHeatmap,
+  getSettings,
   getStudyStreak,
 } from "@/lib/users-db";
 import { categoryProgress } from "@/lib/cards-db";
+import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,10 +19,13 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const settings = await getSettings(userId);
+  const targetLanguage = targetLanguageFor(settings.learningDirection);
+  const deckKey = studyDeckFor(settings.learningDirection);
   const [streak, heatmap, categories] = await Promise.all([
-    getStudyStreak(userId),
-    getActivityHeatmap(userId),
-    categoryProgress(userId),
+    getStudyStreak(userId, "Asia/Taipei", targetLanguage),
+    getActivityHeatmap(userId, "Asia/Taipei", targetLanguage),
+    categoryProgress(userId, deckKey),
   ]);
   return NextResponse.json({ streak, heatmap, categories });
 }

@@ -132,6 +132,27 @@ async function main() {
           VALUES (${w.id}, ${TARGET_LANG}, ${result.definition}, 0)
           ON CONFLICT (word_id, language, sort_order) DO NOTHING
         `;
+        await sql`
+          INSERT INTO word_terms (word_id, language, term, reading, pronunciation)
+          VALUES (${w.id}, ${TARGET_LANG}, ${result.definition}, ${result.reading}, ${result.reading})
+          ON CONFLICT (word_id, language) DO UPDATE SET
+            term = EXCLUDED.term,
+            reading = EXCLUDED.reading,
+            pronunciation = EXCLUDED.pronunciation,
+            updated_at = now()
+        `;
+        await sql`
+          INSERT INTO cards (word_id, card_type, front, back, explanation, tags, deck_key)
+          VALUES (
+            ${w.id}, '回想卡', '', ${result.definition},
+            ${`${result.definition} ${result.reading}`.trim()},
+            ARRAY['image','ja']::text[], 'image-ja'
+          )
+          ON CONFLICT (word_id, deck_key) DO UPDATE SET
+            back = EXCLUDED.back,
+            explanation = EXCLUDED.explanation,
+            tags = EXCLUDED.tags
+        `;
 
         // 2. etymology / note overlay
         if (result.etymology && w.etymology) {

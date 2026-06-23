@@ -27,6 +27,7 @@ const SETTINGS_KEYS: (keyof UserSettings)[] = [
   "accent",
   "showZh",
   "studyCategories",
+  "learningDirection",
   "uiLang",
   "fontSize",
 ];
@@ -289,6 +290,18 @@ export default function SettingsClient({
           )}
           {sec === "learn" && (
             <SetCard title={t("tab.learn")}>
+              <SetRow
+                label="學習語言"
+                desc="英文與日文的學習進度會分開保留"
+                options={[
+                  { value: "zh-en", label: "中文學英文" },
+                  { value: "zh-ja", label: "中文學日文" },
+                ]}
+                current={draft.learningDirection}
+                onSelect={(v) =>
+                  set("learningDirection", v as UserSettings["learningDirection"])
+                }
+              />
               <NumberRow
                 label={t("set.dailyGoal")}
                 desc={t("set.dailyGoalDesc", { min: DAILY_GOAL_MIN, max: DAILY_GOAL_MAX })}
@@ -298,15 +311,17 @@ export default function SettingsClient({
                 max={DAILY_GOAL_MAX}
                 onChange={(n) => set("dailyGoal", n)}
               />
-              <SetRow
-                label={t("set.accent")}
-                options={[
-                  { value: "us", label: t("set.accentUS") },
-                  { value: "uk", label: t("set.accentUK") },
-                ]}
-                current={draft.accent}
-                onSelect={(v) => set("accent", v as UserSettings["accent"])}
-              />
+              {draft.learningDirection === "zh-en" && (
+                <SetRow
+                  label={t("set.accent")}
+                  options={[
+                    { value: "us", label: t("set.accentUS") },
+                    { value: "uk", label: t("set.accentUK") },
+                  ]}
+                  current={draft.accent}
+                  onSelect={(v) => set("accent", v as UserSettings["accent"])}
+                />
+              )}
               <ThemeChipGrid
                 label={t("set.studyTheme")}
                 desc={t("set.studyThemeDesc")}

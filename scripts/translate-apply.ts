@@ -28,6 +28,8 @@ interface SrcItem {
 interface TgtItem {
   id: string;
   definition_ja: string;
+  term_ja?: string;
+  reading_ja?: string;
   etymology_ja?: string | null;
   note_ja?: string | null;
   // Either an array of ja strings (preferred, paired by index with src) or
@@ -76,6 +78,30 @@ async function main() {
       ON CONFLICT (word_id, language, sort_order) DO UPDATE SET definition = EXCLUDED.definition
     `;
     defs++;
+
+    const term = it.term_ja?.trim() || it.definition_ja.trim();
+    const reading = it.reading_ja?.trim() || null;
+    await sql`
+      INSERT INTO word_terms (word_id, language, term, reading, pronunciation)
+      VALUES (${it.id}, 'ja', ${term}, ${reading}, ${reading})
+      ON CONFLICT (word_id, language) DO UPDATE SET
+        term = EXCLUDED.term,
+        reading = COALESCE(EXCLUDED.reading, word_terms.reading),
+        pronunciation = COALESCE(EXCLUDED.pronunciation, word_terms.pronunciation),
+        updated_at = now()
+    `;
+    await sql`
+      INSERT INTO cards (word_id, card_type, front, back, explanation, tags, deck_key)
+      VALUES (
+        ${it.id}, '回想卡', '', ${term},
+        ${reading ? `${term} ${reading}` : term},
+        ARRAY['image','ja']::text[], 'image-ja'
+      )
+      ON CONFLICT (word_id, deck_key) DO UPDATE SET
+        back = EXCLUDED.back,
+        explanation = EXCLUDED.explanation,
+        tags = EXCLUDED.tags
+    `;
 
     if (it.etymology_ja) {
       await sql`

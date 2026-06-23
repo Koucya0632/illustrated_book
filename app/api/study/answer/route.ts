@@ -53,6 +53,7 @@ export async function POST(req: Request) {
 
   const card = await getCardById(cardId, userId);
   if (!card) return NextResponse.json({ error: "card not found" }, { status: 404 });
+  const targetLanguage = card.word.target_language;
 
   // 1) Card-level SRS schedule (pure compute).
   const prevState = card.state
@@ -90,10 +91,11 @@ export async function POST(req: Request) {
       nextReviewAt: next.nextReviewAt,
       rating,
     }, isMistake),
-    upsertMastery(userId, card.word.id, masteryResult.mastery),
+    upsertMastery(userId, card.word.id, masteryResult.mastery, targetLanguage),
     insertStudyLog({
       userId,
       wordId: card.word.id,
+      targetLanguage,
       activity: body.activity ?? defaultActivity(card.card.card_type),
       rating: RATING_TO_SMALLINT[rating],
       isCorrect: !isMistake,

@@ -63,11 +63,14 @@ export interface ConfusingWord {
  *  Word and are only fetched by the per-word server pages. */
 export interface CardWord {
   id: string;
+  /** Target-language headword (English or Japanese depending on settings). */
   word: string;
   chinese: string;
   imageUrl: string;
   category: CategoryId;
   pronunciation: string;
+  reading?: string;
+  targetLanguage?: "en" | "ja";
 }
 
 export interface Word {
@@ -77,6 +80,8 @@ export interface Word {
   category: CategoryId;
   partOfSpeech: string;
   pronunciation: string;
+  reading?: string;
+  targetLanguage?: "en" | "ja";
   audioUrl?: string;
   imageUrl: string;
   cefrLevel?: CEFRLevel;

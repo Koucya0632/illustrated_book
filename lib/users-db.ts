@@ -39,11 +39,13 @@ export async function getSettings(userId: string): Promise<UserSettings> {
         show_zh: boolean;
         study_categories: string;
         study_decks: string;
+        learning_direction: string;
         ui_lang: string;
         font_size: string;
       }[]
     >`
-      SELECT daily_goal, accent, show_zh, study_categories, study_decks, ui_lang, font_size
+      SELECT daily_goal, accent, show_zh, study_categories, study_decks,
+             learning_direction, ui_lang, font_size
       FROM user_settings WHERE user_id = ${userId}::uuid LIMIT 1
     `;
     const r = rows[0];
@@ -54,6 +56,7 @@ export async function getSettings(userId: string): Promise<UserSettings> {
       showZh: r.show_zh,
       studyCategories: (r.study_categories ?? "").split(",").filter(Boolean),
       studyDecks: (r.study_decks ?? "").split(",").filter(Boolean),
+      learningDirection: r.learning_direction as UserSettings["learningDirection"],
       uiLang: r.ui_lang as UserSettings["uiLang"],
       fontSize: r.font_size as UserSettings["fontSize"],
     });
@@ -65,14 +68,22 @@ export async function getSettings(userId: string): Promise<UserSettings> {
 export async function saveSettings(userId: string, s: UserSettings): Promise<void> {
   const sql = requireSql();
   await sql`
-    INSERT INTO user_settings (user_id, daily_goal, accent, show_zh, study_categories, study_decks, ui_lang, font_size, updated_at)
-    VALUES (${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh}, ${s.studyCategories.join(",")}, ${s.studyDecks.join(",")}, ${s.uiLang}, ${s.fontSize}, now())
+    INSERT INTO user_settings (
+      user_id, daily_goal, accent, show_zh, study_categories, study_decks,
+      learning_direction, ui_lang, font_size, updated_at
+    )
+    VALUES (
+      ${userId}::uuid, ${s.dailyGoal}, ${s.accent}, ${s.showZh},
+      ${s.studyCategories.join(",")}, ${s.studyDecks.join(",")},
+      ${s.learningDirection}, ${s.uiLang}, ${s.fontSize}, now()
+    )
     ON CONFLICT (user_id) DO UPDATE
       SET daily_goal       = EXCLUDED.daily_goal,
           accent           = EXCLUDED.accent,
           show_zh          = EXCLUDED.show_zh,
           study_categories = EXCLUDED.study_categories,
           study_decks      = EXCLUDED.study_decks,
+          learning_direction = EXCLUDED.learning_direction,
           ui_lang          = EXCLUDED.ui_lang,
           font_size        = EXCLUDED.font_size,
           updated_at       = now()
@@ -145,19 +156,27 @@ export async function removeFavorite(userId: string, wordId: string) {
 
 // ---- learned ----
 
-export async function getLearned(userId: string): Promise<string[]> {
+export async function getLearned(
+  userId: string,
+  targetLanguage: "en" | "ja" = "en",
+): Promise<string[]> {
   const sql = requireSql();
   const rows = await sql<{ word_id: string }[]>`
-    SELECT word_id FROM user_learned WHERE user_id = ${userId}::uuid
+    SELECT word_id FROM user_learned
+    WHERE user_id = ${userId}::uuid AND target_language = ${targetLanguage}
   `;
   return rows.map((r) => r.word_id);
 }
 
-export async function addLearned(userId: string, wordId: string) {
+export async function addLearned(
+  userId: string,
+  wordId: string,
+  targetLanguage: "en" | "ja" = "en",
+) {
   const sql = requireSql();
   await sql`
-    INSERT INTO user_learned (user_id, word_id)
-    VALUES (${userId}::uuid, ${wordId})
+    INSERT INTO user_learned (user_id, word_id, target_language)
+    VALUES (${userId}::uuid, ${wordId}, ${targetLanguage})
     ON CONFLICT DO NOTHING
   `;
 }
@@ -168,6 +187,7 @@ export async function syncFromClient(
   userId: string,
   favorites: string[],
   learned: string[],
+  targetLanguage: "en" | "ja" = "en",
 ): Promise<{ favorites: string[]; learned: string[] }> {
   const favSet = Array.from(new Set(favorites)).filter(Boolean);
   const learnSet = Array.from(new Set(learned)).filter(Boolean);
@@ -187,8 +207,8 @@ export async function syncFromClient(
   for (const id of learnSet) {
     try {
       await sql`
-        INSERT INTO user_learned (user_id, word_id)
-        VALUES (${userId}::uuid, ${id})
+        INSERT INTO user_learned (user_id, word_id, target_language)
+        VALUES (${userId}::uuid, ${id}, ${targetLanguage})
         ON CONFLICT DO NOTHING
       `;
     } catch {
@@ -198,7 +218,7 @@ export async function syncFromClient(
 
   const [mergedFav, mergedLearn] = await Promise.all([
     getFavorites(userId),
-    getLearned(userId),
+    getLearned(userId, targetLanguage),
   ]);
   return { favorites: mergedFav, learned: mergedLearn };
 }
@@ -207,6 +227,7 @@ export async function syncFromClient(
 
 export interface MasteryRow {
   word_id: string;
+  target_language: "en" | "ja";
   mastery: number;
   last_reviewed_at: string | null;
   review_count: number;
@@ -215,12 +236,15 @@ export interface MasteryRow {
 export async function getMasteryRow(
   userId: string,
   wordId: string,
+  targetLanguage: "en" | "ja" = "en",
 ): Promise<MasteryRow | null> {
   const sql = requireSql();
   const rows = await sql<MasteryRow[]>`
-    SELECT word_id, mastery::float8 AS mastery, last_reviewed_at, review_count
+    SELECT word_id, target_language, mastery::float8 AS mastery, last_reviewed_at, review_count
     FROM user_words
-    WHERE user_id = ${userId}::uuid AND word_id = ${wordId}
+    WHERE user_id = ${userId}::uuid
+      AND word_id = ${wordId}
+      AND target_language = ${targetLanguage}
   `;
   return rows[0] ?? null;
 }
@@ -229,13 +253,20 @@ export async function upsertMastery(
   userId: string,
   wordId: string,
   newMastery: number,
+  targetLanguage: "en" | "ja" = "en",
   now: Date = new Date(),
 ): Promise<void> {
   const sql = requireSql();
   await sql`
-    INSERT INTO user_words (user_id, word_id, mastery, last_reviewed_at, review_count, updated_at)
-    VALUES (${userId}::uuid, ${wordId}, ${newMastery}, ${now.toISOString()}, 1, ${now.toISOString()})
-    ON CONFLICT (user_id, word_id) DO UPDATE SET
+    INSERT INTO user_words (
+      user_id, word_id, target_language, mastery,
+      last_reviewed_at, review_count, updated_at
+    )
+    VALUES (
+      ${userId}::uuid, ${wordId}, ${targetLanguage}, ${newMastery},
+      ${now.toISOString()}, 1, ${now.toISOString()}
+    )
+    ON CONFLICT (user_id, word_id, target_language) DO UPDATE SET
       mastery          = EXCLUDED.mastery,
       last_reviewed_at = EXCLUDED.last_reviewed_at,
       review_count     = user_words.review_count + 1,
@@ -243,12 +274,15 @@ export async function upsertMastery(
   `;
 }
 
-export async function getAllMastery(userId: string): Promise<MasteryRow[]> {
+export async function getAllMastery(
+  userId: string,
+  targetLanguage: "en" | "ja" = "en",
+): Promise<MasteryRow[]> {
   const sql = requireSql();
   return sql<MasteryRow[]>`
-    SELECT word_id, mastery::float8 AS mastery, last_reviewed_at, review_count
+    SELECT word_id, target_language, mastery::float8 AS mastery, last_reviewed_at, review_count
     FROM user_words
-    WHERE user_id = ${userId}::uuid
+    WHERE user_id = ${userId}::uuid AND target_language = ${targetLanguage}
   `;
 }
 
@@ -263,11 +297,13 @@ export interface MasteryScheduleRow extends MasteryRow {
 // mastery attach stays lean.
 export async function getAllMasteryWithSchedule(
   userId: string,
+  targetLanguage: "en" | "ja" = "en",
 ): Promise<MasteryScheduleRow[]> {
   const sql = requireSql();
   return sql<MasteryScheduleRow[]>`
     SELECT
       uw.word_id,
+      uw.target_language,
       uw.mastery::float8 AS mastery,
       uw.last_reviewed_at,
       uw.review_count,
@@ -275,10 +311,13 @@ export async function getAllMasteryWithSchedule(
         SELECT MIN(uc.next_review_at)
         FROM user_cards uc
         JOIN cards c ON c.id = uc.card_id
-        WHERE c.word_id = uw.word_id AND uc.user_id = ${userId}::uuid
+        WHERE c.word_id = uw.word_id
+          AND uc.user_id = ${userId}::uuid
+          AND c.deck_key = ${targetLanguage === "ja" ? "image-ja" : "image-en"}
       ) AS next_review_at
     FROM user_words uw
     WHERE uw.user_id = ${userId}::uuid
+      AND uw.target_language = ${targetLanguage}
   `;
 }
 
@@ -301,6 +340,7 @@ export type StudyLogActivity =
 export interface StudyLogInput {
   userId: string;            // UUID
   wordId: string;
+  targetLanguage: "en" | "ja";
   activity: StudyLogActivity;
   rating: 0 | 1 | 2 | 3;
   isCorrect: boolean;
@@ -319,7 +359,7 @@ export async function insertStudyLog(input: StudyLogInput): Promise<void> {
   const sql = requireSql();
   await sql`
     INSERT INTO study_logs (
-      user_id, word_id, activity, rating, is_correct, response_ms,
+      user_id, word_id, target_language, activity, rating, is_correct, response_ms,
       interval_before, interval_after,
       ease_before, ease_after,
       mastery_before, mastery_after,
@@ -327,6 +367,7 @@ export async function insertStudyLog(input: StudyLogInput): Promise<void> {
     ) VALUES (
       ${input.userId}::uuid,
       ${input.wordId},
+      ${input.targetLanguage},
       ${input.activity},
       ${input.rating},
       ${input.isCorrect},
@@ -380,10 +421,11 @@ export interface HeatCell {
 export function getActivityHeatmap(
   userId: string,
   tz = "Asia/Taipei",
+  targetLanguage: "en" | "ja" = "en",
 ): Promise<HeatCell[]> {
   return unstable_cache(
-    () => getActivityHeatmapRaw(userId, tz),
-    ["heatmap", userId, tz],
+    () => getActivityHeatmapRaw(userId, tz, targetLanguage),
+    ["heatmap", userId, tz, targetLanguage],
     { tags: [`progress:${userId}`], revalidate: 60 },
   )();
 }
@@ -391,6 +433,7 @@ export function getActivityHeatmap(
 async function getActivityHeatmapRaw(
   userId: string,
   tz: string,
+  targetLanguage: "en" | "ja",
 ): Promise<HeatCell[]> {
   const sql = getSql();
   if (!sql) return [];
@@ -410,6 +453,7 @@ async function getActivityHeatmapRaw(
         SELECT (created_at AT TIME ZONE ${tz})::date AS d, count(*)::int AS c
         FROM study_logs
         WHERE user_id = ${userId}::uuid
+          AND target_language = ${targetLanguage}
         GROUP BY 1
       )
       SELECT COALESCE(counts.c, 0)::int AS count,
@@ -457,10 +501,11 @@ const EMPTY_STREAK: StudyStreak = {
 export function getStudyStreak(
   userId: string,
   tz = "Asia/Taipei",
+  targetLanguage: "en" | "ja" = "en",
 ): Promise<StudyStreak> {
   return unstable_cache(
-    () => getStudyStreakRaw(userId, tz),
-    ["streak", userId, tz],
+    () => getStudyStreakRaw(userId, tz, targetLanguage),
+    ["streak", userId, tz, targetLanguage],
     { tags: [`progress:${userId}`], revalidate: 30 },
   )();
 }
@@ -468,6 +513,7 @@ export function getStudyStreak(
 async function getStudyStreakRaw(
   userId: string,
   tz: string,
+  targetLanguage: "en" | "ja",
 ): Promise<StudyStreak> {
   const sql = getSql();
   if (!sql) return EMPTY_STREAK;
@@ -485,6 +531,7 @@ async function getStudyStreakRaw(
         SELECT (created_at AT TIME ZONE ${tz})::date AS d
         FROM study_logs
         WHERE user_id = ${userId}::uuid
+          AND target_language = ${targetLanguage}
       ),
       days AS (SELECT DISTINCT d FROM logs),
       grouped AS (

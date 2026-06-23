@@ -6,7 +6,7 @@ import Mascot from "@/components/tuji/Mascot";
 import { WordTile, scoreTier } from "@/components/tuji/ui";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserId } from "@/lib/current-user";
-import { getWord } from "@/lib/data";
+import { getLearningWord } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
 import { getMasteryRow, getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
@@ -41,7 +41,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
   const tr = (key: string, vars?: Record<string, string | number>) => t(lang, key, vars);
 
   const [w, cats] = await Promise.all([
-    getWord(params.id, lang),
+    getLearningWord(params.id, lang, settings.learningDirection),
     getCategoriesFromDb(lang),
   ]);
   if (!w) notFound();
@@ -57,7 +57,11 @@ export default async function WordDetailPage({ params }: { params: { id: string 
 
   let mastery: number | null = null;
   if (userId) {
-    const row = await getMasteryRow(userId, w.id);
+    const row = await getMasteryRow(
+      userId,
+      w.id,
+      settings.learningDirection === "zh-ja" ? "ja" : "en",
+    );
     if (row) {
       mastery = applyDecay(row.mastery, row.last_reviewed_at ? new Date(row.last_reviewed_at) : null);
     }

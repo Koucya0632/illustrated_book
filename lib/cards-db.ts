@@ -41,6 +41,8 @@ export interface DueCard {
     chinese: string;
     image_url: string;
     pronunciation: string;
+    reading?: string;
+    target_language: "en" | "ja";
     category: string;
   };
   choices?: string[]; // multiple-choice options (shuffled, includes correct back)
@@ -247,12 +249,19 @@ export async function fetchDue(
            uc.user_id, uc.card_id, uc.status, uc.interval_days, uc.next_review_at,
            uc.review_count, uc.mistake_count, uc.last_rating, uc.last_reviewed_at,
            w.word AS w_word,
+           COALESCE(wt.term, w.word) AS w_target_word,
            COALESCE(zh.definition, '') AS w_chinese,
            w.image_url AS w_image,
-           w.pronunciation AS w_pron, w.category AS w_category
+           COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
+           wt.reading AS w_reading,
+           CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END AS w_target_language,
+           w.category AS w_category
     FROM user_cards uc
     JOIN cards c ON c.id = uc.card_id
     JOIN words w ON w.id = c.word_id
+    LEFT JOIN word_terms wt
+      ON wt.word_id = w.id
+     AND wt.language = CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END
     LEFT JOIN LATERAL (
       SELECT definition FROM word_definitions
       WHERE word_id = w.id AND language = 'zh'
@@ -288,11 +297,18 @@ export async function fetchDue(
   const newRows = newBudget > 0 ? ((await sql`
     SELECT c.id, c.word_id, c.card_type, c.front, c.back, c.explanation, c.tags, c.deck_key,
            w.word AS w_word,
+           COALESCE(wt.term, w.word) AS w_target_word,
            COALESCE(zh.definition, '') AS w_chinese,
            w.image_url AS w_image,
-           w.pronunciation AS w_pron, w.category AS w_category
+           COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
+           wt.reading AS w_reading,
+           CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END AS w_target_language,
+           w.category AS w_category
     FROM cards c
     JOIN words w ON w.id = c.word_id
+    LEFT JOIN word_terms wt
+      ON wt.word_id = w.id
+     AND wt.language = CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END
     LEFT JOIN LATERAL (
       SELECT definition FROM word_definitions
       WHERE word_id = w.id AND language = 'zh'
@@ -345,10 +361,12 @@ export async function fetchDue(
       : null;
     const word = {
       id: card.word_id,
-      word: String(r.w_word),
+      word: String(r.w_target_word ?? r.w_word),
       chinese: String(r.w_chinese),
       image_url: String(r.w_image),
       pronunciation: String(r.w_pron),
+      reading: r.w_reading ? String(r.w_reading) : undefined,
+      target_language: (r.w_target_language === "ja" ? "ja" : "en") as "en" | "ja",
       category: String(r.w_category),
     };
     return { card, state, word };
@@ -410,16 +428,26 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
            uc.user_id, uc.card_id, uc.status, uc.interval_days, uc.next_review_at,
            uc.review_count, uc.mistake_count, uc.last_rating, uc.last_reviewed_at,
            w.word AS w_word,
+           COALESCE(wt.term, w.word) AS w_target_word,
            COALESCE(zh.definition, '') AS w_chinese,
            w.image_url AS w_image,
-           w.pronunciation AS w_pron, w.category AS w_category,
+           COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
+           wt.reading AS w_reading,
+           CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END AS w_target_language,
+           w.category AS w_category,
            uw.mastery::float8 AS uw_mastery,
            uw.last_reviewed_at AS uw_last_reviewed,
            uw.review_count AS uw_review_count
     FROM cards c
     LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
     JOIN words w ON w.id = c.word_id
-    LEFT JOIN user_words uw ON uw.user_id = ${userId}::uuid AND uw.word_id = c.word_id
+    LEFT JOIN word_terms wt
+      ON wt.word_id = w.id
+     AND wt.language = CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END
+    LEFT JOIN user_words uw
+      ON uw.user_id = ${userId}::uuid
+     AND uw.word_id = c.word_id
+     AND uw.target_language = CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END
     LEFT JOIN LATERAL (
       SELECT definition FROM word_definitions
       WHERE word_id = w.id AND language = 'zh'
@@ -457,10 +485,12 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
       : null,
     word: {
       id: String(r.word_id),
-      word: String(r.w_word),
+      word: String(r.w_target_word ?? r.w_word),
       chinese: String(r.w_chinese),
       image_url: String(r.w_image),
       pronunciation: String(r.w_pron),
+      reading: r.w_reading ? String(r.w_reading) : undefined,
+      target_language: (r.w_target_language === "ja" ? "ja" : "en") as "en" | "ja",
       category: String(r.w_category),
     },
     masteryRow:
@@ -481,18 +511,26 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
 //
 // Cache key includes a sorted categories list so different theme filters
 // don't collide; same theme set always hits the same entry.
-export function studyStats(userId: string, categories: string[] = []) {
+export function studyStats(
+  userId: string,
+  categories: string[] = [],
+  deckKey = "image-en",
+) {
   const cats = (categories ?? [])
     .filter((c) => c.length > 0 && c !== "all")
     .sort();
   return unstable_cache(
-    () => studyStatsRaw(userId, cats),
-    ["studyStats", userId, cats.join(",")],
+    () => studyStatsRaw(userId, cats, deckKey),
+    ["studyStats", userId, deckKey, cats.join(",")],
     { tags: [`stats:${userId}`], revalidate: 30 },
   )();
 }
 
-async function studyStatsRaw(userId: string, categories: string[]) {
+async function studyStatsRaw(
+  userId: string,
+  categories: string[],
+  deckKey: string,
+) {
   const sql = requireSql();
   // Five COUNTs in parallel — postgres-js dispatches them on independent
   // connections so the wall time collapses from ~5 × round-trip to ~1 ×.
@@ -519,6 +557,7 @@ async function studyStatsRaw(userId: string, categories: string[]) {
       FROM cards c
       JOIN words w ON w.id = c.word_id
       WHERE w.deleted_at IS NULL AND w.status = 'published'
+        AND c.deck_key = ${deckKey}
       ${catFilter}
     ` as Promise<{ total: number }[]>,
     sql`
@@ -527,6 +566,7 @@ async function studyStatsRaw(userId: string, categories: string[]) {
       JOIN cards c ON c.id = uc.card_id
       JOIN words w ON w.id = c.word_id
       WHERE uc.user_id = ${userId}::uuid
+        AND c.deck_key = ${deckKey}
       ${ucCatFilter}
     ` as Promise<{ seen: number }[]>,
     sql`
@@ -535,6 +575,7 @@ async function studyStatsRaw(userId: string, categories: string[]) {
       JOIN cards c ON c.id = uc.card_id
       JOIN words w ON w.id = c.word_id
       WHERE uc.user_id = ${userId}::uuid AND uc.next_review_at <= now()
+        AND c.deck_key = ${deckKey}
       ${ucCatFilter}
     ` as Promise<{ due: number }[]>,
     sql`
@@ -543,6 +584,7 @@ async function studyStatsRaw(userId: string, categories: string[]) {
       JOIN cards c ON c.id = uc.card_id
       JOIN words w ON w.id = c.word_id
       WHERE uc.user_id = ${userId}::uuid
+        AND c.deck_key = ${deckKey}
         AND (uc.created_at AT TIME ZONE 'Asia/Taipei')::date
           = (now() AT TIME ZONE 'Asia/Taipei')::date
       ${ucCatFilter}
@@ -553,6 +595,7 @@ async function studyStatsRaw(userId: string, categories: string[]) {
       JOIN cards c ON c.id = uc.card_id
       JOIN words w ON w.id = c.word_id
       WHERE uc.user_id = ${userId}::uuid
+        AND c.deck_key = ${deckKey}
       ${ucCatFilter}
       GROUP BY uc.status
     ` as Promise<{ status: Status; c: number }[]>,
@@ -577,15 +620,21 @@ export interface CategoryProgressRow {
   seen: number;
 }
 
-export function categoryProgress(userId: string): Promise<CategoryProgressRow[]> {
+export function categoryProgress(
+  userId: string,
+  deckKey = "image-en",
+): Promise<CategoryProgressRow[]> {
   return unstable_cache(
-    () => categoryProgressRaw(userId),
-    ["categoryProgress", userId],
+    () => categoryProgressRaw(userId, deckKey),
+    ["categoryProgress", userId, deckKey],
     { tags: [`stats:${userId}`], revalidate: 30 },
   )();
 }
 
-async function categoryProgressRaw(userId: string): Promise<CategoryProgressRow[]> {
+async function categoryProgressRaw(
+  userId: string,
+  deckKey: string,
+): Promise<CategoryProgressRow[]> {
   const sql = requireSql();
   return sql<CategoryProgressRow[]>`
     SELECT w.category                 AS category,
@@ -596,6 +645,7 @@ async function categoryProgressRaw(userId: string): Promise<CategoryProgressRow[
     LEFT JOIN user_cards uc
       ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
     WHERE w.deleted_at IS NULL AND w.status = 'published'
+      AND c.deck_key = ${deckKey}
     GROUP BY w.category
   `;
 }

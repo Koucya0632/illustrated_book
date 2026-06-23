@@ -6,7 +6,11 @@ import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
 import { words as staticWords } from "./words";
 import { localizeWord, type LocalizedTextMap } from "./word-localize";
-import type { UiLang } from "./settings";
+import {
+  targetLanguageFor,
+  type LearningDirection,
+  type UiLang,
+} from "./settings";
 import type {
   CardWord,
   CEFRLevel,
@@ -217,38 +221,116 @@ export async function getAllWords(lang: UiLang = "zh-Hant"): Promise<Word[]> {
   return raw.map((r) => localizeWord(r.word, lang, r.localizedTexts));
 }
 
+export async function getAllLearningWords(
+  lang: UiLang = "zh-Hant",
+  direction: LearningDirection = "zh-en",
+): Promise<Word[]> {
+  const raw = await getAllRawEntries();
+  const targetLanguage = targetLanguageFor(direction);
+  const terms = await targetTermMap(direction);
+  return raw.flatMap((r) => {
+    const word = localizeWord(r.word, lang, r.localizedTexts);
+    const term = terms.get(word.id);
+    if (targetLanguage === "ja" && !term) return [];
+    return [{
+      ...word,
+      word: term?.term ?? word.word,
+      reading: term?.reading ?? undefined,
+      pronunciation: term?.pronunciation ?? term?.reading ?? word.pronunciation,
+      targetLanguage,
+    }];
+  });
+}
+
 export async function getWord(id: string, lang: UiLang = "zh-Hant"): Promise<Word | undefined> {
   const raw = await getAllRawEntries();
   const hit = raw.find((r) => r.word.id === id);
   return hit ? localizeWord(hit.word, lang, hit.localizedTexts) : undefined;
 }
 
+interface TermRow {
+  word_id: string;
+  term: string;
+  reading: string | null;
+  pronunciation: string | null;
+}
+
+const getTermRowsCached = unstable_cache(
+  async (language: "en" | "ja"): Promise<TermRow[]> => {
+    const sql = getSql();
+    if (!sql) return [];
+    return sql<TermRow[]>`
+      SELECT word_id, term, reading, pronunciation
+      FROM word_terms
+      WHERE language = ${language}
+    `;
+  },
+  ["word-terms"],
+  { tags: ["words"], revalidate: 300 },
+);
+
+async function targetTermMap(
+  direction: LearningDirection,
+): Promise<Map<string, TermRow>> {
+  if (!dbEnabled()) return new Map();
+  const rows = await getTermRowsCached(targetLanguageFor(direction));
+  return new Map(rows.map((r) => [r.word_id, r]));
+}
+
+export async function getLearningWord(
+  id: string,
+  lang: UiLang = "zh-Hant",
+  direction: LearningDirection = "zh-en",
+): Promise<Word | undefined> {
+  const base = await getWord(id, lang);
+  if (!base) return undefined;
+  const targetLanguage = targetLanguageFor(direction);
+  const term = (await targetTermMap(direction)).get(id);
+  if (!term && targetLanguage === "ja") return undefined;
+  return {
+    ...base,
+    word: term?.term ?? base.word,
+    reading: term?.reading ?? undefined,
+    pronunciation: term?.pronunciation ?? term?.reading ?? base.pronunciation,
+    targetLanguage,
+  };
+}
+
 export async function getWordsByCategory(
   categoryId: string,
   lang: UiLang = "zh-Hant",
+  direction: LearningDirection = "zh-en",
 ): Promise<Word[]> {
-  const raw = await getAllRawEntries();
-  return raw
-    .filter((r) => r.word.category === categoryId)
-    .map((r) => localizeWord(r.word, lang, r.localizedTexts));
+  const all = await getAllLearningWords(lang, direction);
+  return all.filter((w) => w.category === categoryId);
 }
 
 // Lite shape for list-view consumers (WordsProvider). Drops definitions,
 // examples, relations, etymology, note, forms, tags — the heavy fields that
 // only the per-word detail page actually reads. At ~468 words this is the
 // single biggest payload win on first paint.
-export async function getAllCardWords(lang: UiLang = "zh-Hant"): Promise<CardWord[]> {
+export async function getAllCardWords(
+  lang: UiLang = "zh-Hant",
+  direction: LearningDirection = "zh-en",
+): Promise<CardWord[]> {
   const raw = await getAllRawEntries();
-  return raw.map((r) => {
+  const targetLanguage = targetLanguageFor(direction);
+  const terms = await targetTermMap(direction);
+  return raw.flatMap((r) => {
     const w = localizeWord(r.word, lang, r.localizedTexts);
-    return {
+    const term = terms.get(w.id);
+    // Japanese mode only exposes concepts with a real Japanese target term.
+    if (targetLanguage === "ja" && !term) return [];
+    return [{
       id: w.id,
-      word: w.word,
+      word: term?.term ?? w.word,
       chinese: w.chinese,
       imageUrl: w.imageUrl,
       category: w.category,
-      pronunciation: w.pronunciation,
-    };
+      pronunciation: term?.pronunciation ?? term?.reading ?? w.pronunciation,
+      reading: term?.reading ?? undefined,
+      targetLanguage,
+    }];
   });
 }
 
@@ -356,11 +438,12 @@ export async function searchCardWordsAsync(
   query: string,
   options: SearchOptions = {},
   lang: UiLang = "zh-Hant",
+  direction: LearningDirection = "zh-en",
 ): Promise<CardWord[]> {
   const q = query.trim();
   if (!q) return [];
   const limit = Math.max(1, Math.min(options.limit ?? 50, 200));
-  const all = await getAllCardWords(lang);
+  const all = await getAllCardWords(lang, direction);
   if (!dbEnabled()) return inMemoryMatchCard(all, q).slice(0, limit);
   try {
     const sql = getSql();
@@ -378,6 +461,11 @@ export async function searchCardWordsAsync(
               WHERE aka ILIKE ${pattern}
             )
           )
+        UNION
+        SELECT t.word_id FROM word_terms t
+        JOIN words w3 ON w3.id = t.word_id
+        WHERE w3.deleted_at IS NULL AND w3.status = 'published'
+          AND (t.term ILIKE ${pattern} OR t.reading ILIKE ${pattern})
         UNION
         SELECT d.word_id FROM word_definitions d
         JOIN words w2 ON w2.id = d.word_id

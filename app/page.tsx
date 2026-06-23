@@ -2,7 +2,7 @@ import Link from "next/link";
 import Mascot from "@/components/tuji/Mascot";
 import { shade, TUJI } from "@/components/tuji/ui";
 import { getCategoriesFromDb } from "@/lib/categories-db";
-import { getAllWords } from "@/lib/data";
+import { getAllLearningWords } from "@/lib/data";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getStudyStreak, getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
@@ -20,11 +20,16 @@ function greetingKey(hour: number): string {
 
 export default async function HomePage() {
   const bundle = await getCurrentUserBundle();
-  const [streak, settings] = bundle
-    ? await Promise.all([getStudyStreak(bundle.user.id), getSettings(bundle.user.id)])
-    : [null, DEFAULT_SETTINGS];
+  const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
+  const streak = bundle
+    ? await getStudyStreak(
+        bundle.user.id,
+        "Asia/Taipei",
+        settings.learningDirection === "zh-ja" ? "ja" : "en",
+      )
+    : null;
   const [words, categories] = await Promise.all([
-    getAllWords(settings.uiLang),
+    getAllLearningWords(settings.uiLang, settings.learningDirection),
     getCategoriesFromDb(settings.uiLang),
   ]);
   const goal = settings.dailyGoal;

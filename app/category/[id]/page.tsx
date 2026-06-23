@@ -23,7 +23,7 @@ export default async function CategoryPage({ params }: { params: { id: string } 
 
   const [cats, items] = await Promise.all([
     getCategoriesFromDb(lang),
-    getWordsByCategory(params.id, lang),
+    getWordsByCategory(params.id, lang, settings.learningDirection),
   ]);
   const category = cats.find((c) => c.id === params.id);
   if (!category) notFound();

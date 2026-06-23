@@ -2,6 +2,7 @@
 
 export type UiLang = "zh-Hant" | "zh-Hans" | "ja";
 export type FontSize = "sm" | "md" | "lg";
+export type LearningDirection = "zh-en" | "zh-ja";
 
 export interface UserSettings {
   dailyGoal: number;
@@ -13,6 +14,9 @@ export interface UserSettings {
   studyCategories: string[];
   // Card decks to study; empty array = all decks.
   studyDecks: string[];
+  // The language being learned is independent from the app UI language.
+  // A user may keep a Chinese UI while learning either English or Japanese.
+  learningDirection: LearningDirection;
   uiLang: UiLang;
   fontSize: FontSize;
 }
@@ -23,6 +27,7 @@ export const DEFAULT_SETTINGS: UserSettings = {
   showZh: true,
   studyCategories: [],
   studyDecks: [],
+  learningDirection: "zh-en",
   uiLang: "zh-Hant",
   fontSize: "md",
 };
@@ -33,6 +38,7 @@ export const DEFAULT_SETTINGS: UserSettings = {
 // anchor for validation if the persisted value drifts.
 export const STUDY_DECK_OPTIONS: { value: string; labelKey: string }[] = [
   { value: "image-en", labelKey: "set.deckImageEn" },
+  { value: "image-ja", labelKey: "set.deckImageJa" },
 ];
 export const STUDY_DECK_KEYS = STUDY_DECK_OPTIONS.map((o) => o.value);
 
@@ -81,6 +87,15 @@ function normalizeStudyCategories(raw: unknown): string[] {
 
 const UI_LANGS: UiLang[] = ["zh-Hant", "zh-Hans", "ja"];
 const FONT_SIZES: FontSize[] = ["sm", "md", "lg"];
+const LEARNING_DIRECTIONS: LearningDirection[] = ["zh-en", "zh-ja"];
+
+export function targetLanguageFor(direction: LearningDirection): "en" | "ja" {
+  return direction === "zh-ja" ? "ja" : "en";
+}
+
+export function studyDeckFor(direction: LearningDirection): "image-en" | "image-ja" {
+  return direction === "zh-ja" ? "image-ja" : "image-en";
+}
 
 // Coerce arbitrary input into a valid, complete settings object.
 export function normalizeSettings(raw: Partial<UserSettings> | null | undefined): UserSettings {
@@ -90,6 +105,11 @@ export function normalizeSettings(raw: Partial<UserSettings> | null | undefined)
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
     studyCategories: normalizeStudyCategories(raw?.studyCategories),
     studyDecks: normalizeStudyDecks(raw?.studyDecks),
+    learningDirection: LEARNING_DIRECTIONS.includes(
+      raw?.learningDirection as LearningDirection,
+    )
+      ? (raw!.learningDirection as LearningDirection)
+      : "zh-en",
     uiLang: UI_LANGS.includes(raw?.uiLang as UiLang) ? (raw!.uiLang as UiLang) : "zh-Hant",
     fontSize: FONT_SIZES.includes(raw?.fontSize as FontSize) ? (raw!.fontSize as FontSize) : "md",
   };

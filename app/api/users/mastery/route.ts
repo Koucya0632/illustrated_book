@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
-import { getAllMasteryWithSchedule } from "@/lib/users-db";
+import { getAllMasteryWithSchedule, getSettings } from "@/lib/users-db";
 import { applyDecay } from "@/lib/mastery";
+import { targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,7 +18,11 @@ export async function GET() {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ items: [] });
 
-  const rows = await getAllMasteryWithSchedule(userId);
+  const settings = await getSettings(userId);
+  const rows = await getAllMasteryWithSchedule(
+    userId,
+    targetLanguageFor(settings.learningDirection),
+  );
   const now = new Date();
   const items = rows.map((r) => ({
     wordId: r.word_id,

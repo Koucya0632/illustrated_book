@@ -27,6 +27,9 @@ export default function WordCard({ word }: { word: CardWord }) {
         <div className="flex items-start justify-between gap-2">
           <Link href={`/word/${word.id}`} className="min-w-0">
             <h3 className="truncate text-[15px] font-extrabold tracking-tight text-tuji-ink">{word.word}</h3>
+            {word.reading && (
+              <p className="truncate text-xs font-semibold text-tuji-ink3">{word.reading}</p>
+            )}
             {showZh && <p className="truncate text-xs text-tuji-ink3">{word.chinese}</p>}
           </Link>
           <PronunciationButton text={word.word} size="sm" />

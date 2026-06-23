@@ -19,7 +19,7 @@ export default function PronunciationButton({
 }) {
   const [active, setActive] = useState(false);
   const supported = speechSupported();
-  const { accent } = useSettings();
+  const { accent, learningDirection } = useSettings();
 
   const sizeMap = {
     sm: "w-8 h-8 text-sm",
@@ -34,7 +34,7 @@ export default function PronunciationButton({
       alert("這個瀏覽器不支援發音功能，請使用 Chrome 或 Safari。");
       return;
     }
-    speak(text, accentToLang(accent));
+    speak(text, learningDirection === "zh-ja" ? "ja-JP" : accentToLang(accent));
     setActive(true);
     setTimeout(() => setActive(false), 800);
     if (wordId) track({ type: "pronounce", wordId });

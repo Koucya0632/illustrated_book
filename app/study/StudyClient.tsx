@@ -201,7 +201,14 @@ export default function StudyClient() {
   // dropped request after they navigate away.
   const queueAbortRef = useRef<AbortController | null>(null);
 
-  const { dailyGoal, showZh, studyCategories, studyDecks, uiLang } = useSettings();
+  const {
+    dailyGoal,
+    showZh,
+    studyCategories,
+    studyDecks,
+    uiLang,
+    learningDirection,
+  } = useSettings();
   const categories = useCategories();
   const t = useT();
   // Pre-resolve display names so the landing / progress labels can render
@@ -1152,7 +1159,7 @@ export default function StudyClient() {
           ) : inMcqView ? (
             <>
               <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                {t("study.pickEnglish")}
+                {learningDirection === "zh-ja" ? "選對的日文" : t("study.pickEnglish")}
               </div>
               <div className="flex flex-col gap-3">
                 {mcqChoices.map((c, i) => {
@@ -1390,4 +1397,3 @@ export default function StudyClient() {
     </div>
   );
 }
-

@@ -8,8 +8,12 @@
 // keeps origin DB hits amortized.
 
 import { getAllCardWords } from "@/lib/data";
-import type { UiLang } from "@/lib/settings";
-import { publicJson, readLang } from "@/lib/cache-headers";
+import type { LearningDirection, UiLang } from "@/lib/settings";
+import {
+  publicJson,
+  readLang,
+  readLearningDirection,
+} from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 // Next 14 auto-emits `Cache-Control: s-maxage=300, stale-while-revalidate=...`
@@ -19,6 +23,7 @@ export const revalidate = 300;
 
 export async function GET(req: Request) {
   const lang = readLang(req) as UiLang;
-  const words = await getAllCardWords(lang);
+  const learning = readLearningDirection(req) as LearningDirection;
+  const words = await getAllCardWords(lang, learning);
   return publicJson({ words, total: words.length }, req);
 }

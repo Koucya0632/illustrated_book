@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { syncFromClient } from "@/lib/users-db";
+import type { LearningDirection } from "@/lib/settings";
+import { targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,7 +33,11 @@ export async function POST(req: Request) {
   if (!userId) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
-  let body: { favorites?: string[]; learned?: string[] };
+  let body: {
+    favorites?: string[];
+    learned?: string[];
+    learningDirection?: LearningDirection;
+  };
   try {
     body = await req.json();
   } catch {
@@ -39,6 +45,13 @@ export async function POST(req: Request) {
   }
   const fav = cleanIds(body.favorites);
   const learned = cleanIds(body.learned);
-  const merged = await syncFromClient(userId, fav, learned);
+  const direction: LearningDirection =
+    body.learningDirection === "zh-ja" ? "zh-ja" : "zh-en";
+  const merged = await syncFromClient(
+    userId,
+    fav,
+    learned,
+    targetLanguageFor(direction),
+  );
   return NextResponse.json(merged);
 }

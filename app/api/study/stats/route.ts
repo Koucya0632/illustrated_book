@@ -8,6 +8,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { studyStats } from "@/lib/cards-db";
+import { getSettings } from "@/lib/users-db";
+import { studyDeckFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,7 +27,12 @@ export async function GET(req: Request) {
     .filter((s) => s && s !== "all");
   try {
     const t0 = performance.now();
-    const stats = await studyStats(userId, categories);
+    const settings = await getSettings(userId);
+    const stats = await studyStats(
+      userId,
+      categories,
+      studyDeckFor(settings.learningDirection),
+    );
     const dbMs = Math.round(performance.now() - t0);
     return NextResponse.json(
       { stats },

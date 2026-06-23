@@ -12,7 +12,7 @@ export function speak(text: string, lang = "en-US", rate = 0.95) {
   const preferred =
     voices.find((v) => v.lang === lang && /female|samantha|google/i.test(v.name)) ||
     voices.find((v) => v.lang === lang) ||
-    voices.find((v) => v.lang.startsWith("en"));
+    voices.find((v) => v.lang.startsWith(lang.split("-")[0]));
   if (preferred) utter.voice = preferred;
   synth.speak(utter);
 }

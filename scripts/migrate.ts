@@ -476,6 +476,41 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS study_logs_user_created_idx
      ON study_logs(user_id, created_at DESC)`,
 
+  // ---- study_reports: user-submitted content / product issue reports ----
+  // The question snapshot is intentionally stored with the report so admins
+  // can still inspect what the learner saw after the source word is edited.
+  `CREATE TABLE IF NOT EXISTS study_reports (
+     id                BIGSERIAL PRIMARY KEY,
+     request_id        UUID NOT NULL UNIQUE,
+     user_id           UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     word_id           TEXT REFERENCES words(id) ON DELETE SET NULL,
+     card_id           BIGINT REFERENCES cards(id) ON DELETE SET NULL,
+     issue_type        TEXT NOT NULL CHECK (issue_type IN
+                         ('image','content','audio','answer','ui','other')),
+     description       TEXT NOT NULL CHECK (
+                         char_length(btrim(description)) BETWEEN 1 AND 1000
+                       ),
+     mode              TEXT NOT NULL CHECK (mode IN ('new','review')),
+     phase             TEXT NOT NULL,
+     selected_answer   TEXT,
+     platform          TEXT NOT NULL CHECK (platform IN ('web','ios')),
+     app_version       TEXT,
+     ui_lang           TEXT NOT NULL,
+     snapshot          JSONB NOT NULL DEFAULT '{}'::jsonb,
+     status            TEXT NOT NULL DEFAULT 'pending' CHECK (status IN
+                         ('pending','reviewing','resolved','rejected','duplicate')),
+     internal_note     TEXT,
+     duplicate_of      BIGINT REFERENCES study_reports(id) ON DELETE SET NULL,
+     created_at        TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS study_reports_status_created_idx
+     ON study_reports(status, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS study_reports_word_type_idx
+     ON study_reports(word_id, issue_type, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS study_reports_user_created_idx
+     ON study_reports(user_id, created_at DESC)`,
+
   // ---- Trigram indexes (substring + case-insensitive search) ----
   // The plan calls for these on `words.lemma` and `word_translations.translation`;
   // current schema names are `words.word` and `word_definitions.definition`.
@@ -504,6 +539,7 @@ const DDL = [
   `ALTER TABLE word_media       ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE word_categories  ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE study_logs       ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE study_reports    ENABLE ROW LEVEL SECURITY`,
 
   `DROP POLICY IF EXISTS word_media_public_read ON word_media`,
   `CREATE POLICY word_media_public_read ON word_media FOR SELECT USING (true)`,
@@ -516,6 +552,9 @@ const DDL = [
   `DROP POLICY IF EXISTS study_logs_self_insert ON study_logs`,
   `CREATE POLICY study_logs_self_insert ON study_logs
      FOR INSERT WITH CHECK (auth.uid() = user_id)`,
+
+  // Reports are written and managed through authenticated server routes.
+  // No direct client policies are intentionally exposed in v1.
 
   // =====================================================================
   // Schema v3+ — multi-language overlays.

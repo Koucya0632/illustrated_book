@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
 import WordPeekModal from "@/components/WordPeekModal";
+import StudyReportModal, { type StudyReportContext } from "@/components/StudyReportModal";
 import { WordTile, shade, TUJI } from "@/components/tuji/ui";
 import { useSettings } from "@/components/SettingsProvider";
 import { useCategories } from "@/components/CategoriesProvider";
@@ -189,6 +190,8 @@ export default function StudyClient() {
   // Stats fetch error — distinct from `stats === null` so we can tell
   // "still loading" from "tried and failed" on the landing screen.
   const [statsError, setStatsError] = useState(false);
+  const [reportMenuOpen, setReportMenuOpen] = useState(false);
+  const [reportContext, setReportContext] = useState<StudyReportContext | null>(null);
   const startedAtRef = useRef<number>(0);
   // Synchronous lock so a rapid double-click within the auto-advance window is
   // blocked before React re-renders (state alone has a stale-closure race).
@@ -198,7 +201,7 @@ export default function StudyClient() {
   // dropped request after they navigate away.
   const queueAbortRef = useRef<AbortController | null>(null);
 
-  const { dailyGoal, showZh, studyCategories, studyDecks } = useSettings();
+  const { dailyGoal, showZh, studyCategories, studyDecks, uiLang } = useSettings();
   const categories = useCategories();
   const t = useT();
   // Pre-resolve display names so the landing / progress labels can render
@@ -941,6 +944,44 @@ export default function StudyClient() {
   // judgment UI driven by `displayedSpelling`, so it doesn't read this.
   const mcqChoices = current.choices ?? [];
 
+  function openReport() {
+    if (!mode || !current) return;
+    const reportPhase =
+      mode === "new"
+        ? newStep === 1
+          ? "recognize"
+          : newStep === 2
+          ? "identify"
+          : "spell"
+        : phase === "review"
+        ? "reveal"
+        : "answer";
+    setReportContext({
+      requestId: crypto.randomUUID(),
+      wordId: current.word.id,
+      cardId: current.card.id,
+      mode,
+      phase: reportPhase,
+      selectedAnswer: picked,
+      uiLang,
+      snapshot: {
+        word: current.word.word,
+        chinese: current.word.chinese,
+        imageUrl: current.word.image_url,
+        pronunciation: current.word.pronunciation,
+        category: current.word.category,
+        cardType: current.card.card_type,
+        front: current.card.front,
+        back: current.card.back,
+        explanation: current.card.explanation,
+        choices: current.choices ?? [],
+        spellingChoices: current.spellingChoices ?? [],
+        displayedSpelling: newStep === 3 ? displayedSpelling : null,
+      },
+    });
+    setReportMenuOpen(false);
+  }
+
   return (
     <div className="relative min-h-[calc(100vh-0px)]">
       {/* Top bar: exit + progress + count */}
@@ -960,11 +1001,33 @@ export default function StudyClient() {
             />
           </div>
         </div>
-        <span className="rounded-full bg-white px-3.5 py-1.5 text-sm font-extrabold text-tuji-ink shadow-card">
-          {mode === "new"
-            ? t("study.stepIndicator", { n: newStep })
-            : `${idx + 1} / ${total}`}
-        </span>
+        <div className="relative flex items-center gap-2">
+          <span className="rounded-full bg-white px-3.5 py-1.5 text-sm font-extrabold text-tuji-ink shadow-card">
+            {mode === "new"
+              ? t("study.stepIndicator", { n: newStep })
+              : `${idx + 1} / ${total}`}
+          </span>
+          <button
+            type="button"
+            aria-label={t("study.more")}
+            aria-expanded={reportMenuOpen}
+            onClick={() => setReportMenuOpen((v) => !v)}
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl font-black text-tuji-ink shadow-card"
+          >
+            ⋯
+          </button>
+          {reportMenuOpen && (
+            <div className="absolute right-0 top-12 z-30 min-w-32 rounded-xl bg-white p-1.5 shadow-xl ring-1 ring-black/5">
+              <button
+                type="button"
+                onClick={openReport}
+                className="w-full rounded-lg px-3 py-2 text-left text-sm font-bold text-tuji-coral hover:bg-tuji-bg"
+              >
+                {t("study.report.menu")}
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Body: 2-col on lg */}
@@ -1321,8 +1384,10 @@ export default function StudyClient() {
           }}
         />
       )}
+      {reportContext && (
+        <StudyReportModal context={reportContext} onClose={() => setReportContext(null)} />
+      )}
     </div>
   );
 }
-
 

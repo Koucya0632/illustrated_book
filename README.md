@@ -121,6 +121,7 @@ vercel --prod
 
 - **這份 README**：跑起來 + 主要功能
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)**：完整技術參考 — DB schema、所有 API、auth flow、SRS 演算法、event tracking、部署細節
+- **[ADMIN_REPORTS.md](./ADMIN_REPORTS.md)**：Admin 報錯中心操作流程、狀態規則與工程維護參考
 
 ---
 

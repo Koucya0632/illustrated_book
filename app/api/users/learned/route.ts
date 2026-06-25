@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
-import { addLearned } from "@/lib/users-db";
+import { addLearned, getSettings } from "@/lib/users-db";
+import { targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,7 +19,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "wordId required" }, { status: 400 });
   }
   try {
-    await addLearned(userId, body.wordId);
+    const settings = await getSettings(userId);
+    await addLearned(
+      userId,
+      body.wordId,
+      targetLanguageFor(settings.learningDirection),
+    );
   } catch (e) {
     if (!/foreign key/i.test(e instanceof Error ? e.message : "")) throw e;
   }

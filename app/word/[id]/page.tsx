@@ -2,11 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import FavoriteButton from "@/components/FavoriteButton";
 import PronunciationButton from "@/components/PronunciationButton";
-import Mascot from "@/components/tuji/Mascot";
 import { WordTile, scoreTier } from "@/components/tuji/ui";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserId } from "@/lib/current-user";
-import { getWord } from "@/lib/data";
+import { getLearningWord } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
 import { getMasteryRow, getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
@@ -34,6 +33,13 @@ function highlight(sentence: string, term: string) {
   );
 }
 
+function learningSentence(
+  example: { target?: string; en: string },
+  targetLanguage?: "en" | "ja",
+): string {
+  return example.target ?? (targetLanguage === "ja" ? "" : example.en);
+}
+
 export default async function WordDetailPage({ params }: { params: { id: string } }) {
   const userId = await getCurrentUserId();
   const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
@@ -41,7 +47,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
   const tr = (key: string, vars?: Record<string, string | number>) => t(lang, key, vars);
 
   const [w, cats] = await Promise.all([
-    getWord(params.id, lang),
+    getLearningWord(params.id, lang, settings.learningDirection),
     getCategoriesFromDb(lang),
   ]);
   if (!w) notFound();
@@ -57,7 +63,11 @@ export default async function WordDetailPage({ params }: { params: { id: string 
 
   let mastery: number | null = null;
   if (userId) {
-    const row = await getMasteryRow(userId, w.id);
+    const row = await getMasteryRow(
+      userId,
+      w.id,
+      settings.learningDirection === "zh-ja" ? "ja" : "en",
+    );
     if (row) {
       mastery = applyDecay(row.mastery, row.last_reviewed_at ? new Date(row.last_reviewed_at) : null);
     }
@@ -65,26 +75,34 @@ export default async function WordDetailPage({ params }: { params: { id: string 
   const tier = mastery !== null ? scoreTier(mastery) : null;
 
   const tabs: { key: string; label: string; content: React.ReactNode }[] = [];
-  if (w.chineseDefinition || w.englishDefinition) {
+  if (w.chineseDefinition || w.targetDefinition) {
     tabs.push({
       key: "definitions",
       label: tr("word.tabDefinitions"),
       content: (
         <>
+          {w.targetLanguage === "ja" && w.targetDefinition && (
+            <div>
+              <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
+                日本語
+              </div>
+              <div className="text-[14px] leading-relaxed text-tuji-ink">{w.targetDefinition}</div>
+            </div>
+          )}
           {w.chineseDefinition && (
-            <div className={w.englishDefinition ? "mb-3" : ""}>
+            <div className={w.targetDefinition ? "mt-3" : ""}>
               <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
                 {tr("word.definitionLocal")}
               </div>
               <div className="text-[14px] leading-relaxed text-tuji-ink">{w.chineseDefinition}</div>
             </div>
           )}
-          {w.englishDefinition && (
-            <div>
+          {w.targetLanguage !== "ja" && w.targetDefinition && (
+            <div className={w.chineseDefinition ? "mt-3" : ""}>
               <div className="mb-1 text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
                 {tr("word.definitionEnglish")}
               </div>
-              <div className="text-[14px] leading-relaxed text-tuji-ink2">{w.englishDefinition}</div>
+              <div className="text-[14px] leading-relaxed text-tuji-ink2">{w.targetDefinition}</div>
             </div>
           )}
         </>
@@ -190,7 +208,7 @@ export default async function WordDetailPage({ params }: { params: { id: string 
                   </div>
                 )}
               </div>
-              <PronunciationButton text={w.word} size="lg" />
+              <PronunciationButton text={w.word} audioUrls={w.audioUrls} size="lg" />
             </div>
 
             {w.collocations && w.collocations.length > 0 && (
@@ -216,24 +234,26 @@ export default async function WordDetailPage({ params }: { params: { id: string 
           {/* Examples */}
           {w.examples.length > 0 && (
             <div>
-              <div className="mb-3 flex items-center gap-2.5">
-                <Mascot pose="wave" size={36} />
-                <span className="text-base font-extrabold tracking-tight text-tuji-ink">{tr("word.examplesTitle")}</span>
+              <div className="mb-3 text-base font-extrabold tracking-tight text-tuji-ink">
+                {tr("word.examplesTitle")}
               </div>
               <div className="flex flex-col gap-2.5">
-                {w.examples.map((ex, i) => (
+                {w.examples.map((ex, i) => {
+                  const sentence = learningSentence(ex, w.targetLanguage);
+                  return (
                   <div key={i} className="flex items-center gap-3.5 rounded-[18px] bg-white px-4 py-3.5 shadow-soft">
                     <span className="shrink-0">
-                      <PronunciationButton text={ex.en} size="sm" />
+                      <PronunciationButton text={sentence} size="sm" />
                     </span>
                     <div className="min-w-0 flex-1">
                       <div className="text-[15px] font-semibold leading-relaxed text-tuji-ink">
-                        {highlight(ex.en, w.word)}
+                        {highlight(sentence, w.word)}
                       </div>
                       {ex.zh && <div className="mt-0.5 text-[13px] text-tuji-ink3">{ex.zh}</div>}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}

@@ -13,14 +13,16 @@ import type { Word } from "@/types";
 // server-only.
 export default function WordPeekModal({ id, onClose }: { id: string; onClose: () => void }) {
   const t = useT();
-  const { uiLang } = useSettings();
+  const { uiLang, learningDirection } = useSettings();
   const [word, setWord] = useState<Word | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let alive = true;
     setLoading(true);
-    fetch(`/api/words/${id}?lang=${encodeURIComponent(uiLang)}`)
+    fetch(
+      `/api/words/${id}?lang=${encodeURIComponent(uiLang)}&learning=${encodeURIComponent(learningDirection)}`,
+    )
       .then((r) => (r.ok ? r.json() : null))
       .then((w) => {
         if (alive) setWord(w);
@@ -32,7 +34,7 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
     return () => {
       alive = false;
     };
-  }, [id, uiLang]);
+  }, [id, learningDirection, uiLang]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -77,7 +79,7 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
             <div className="rounded-[20px] bg-white p-4 shadow-card">
               <WordTile imageUrl={word.imageUrl} word={word.word} height={170} rounded={16} fit="contain" />
               <div className="mt-3 flex items-center gap-3">
-                <PronunciationButton text={word.word} size="lg" />
+                <PronunciationButton text={word.word} audioUrls={word.audioUrls} size="lg" />
                 <div className="min-w-0">
                   <div className="text-2xl font-extrabold tracking-tight text-tuji-ink">{word.word}</div>
                   <div className="mt-0.5 flex flex-wrap items-center gap-2">
@@ -90,7 +92,14 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
                   </div>
                 </div>
               </div>
-              {word.chinese && <div className="mt-2.5 text-[15px] font-bold text-tuji-ink2">{word.chinese}</div>}
+              {word.targetLanguage === "ja" && word.targetDefinition && (
+                <div className="mt-2.5 text-[15px] font-semibold leading-relaxed text-tuji-ink">
+                  {word.targetDefinition}
+                </div>
+              )}
+              {word.chinese && (
+                <div className="mt-2 text-[15px] font-bold text-tuji-ink2">{word.chinese}</div>
+              )}
               {word.alsoKnownAs && word.alsoKnownAs.length > 0 && (
                 <div className="mt-1 text-xs text-tuji-ink3">
                   {t("word.alsoKnownAs")}: {word.alsoKnownAs.join(" / ")}
@@ -106,7 +115,9 @@ export default function WordPeekModal({ id, onClose }: { id: string; onClose: ()
                 <ul className="flex flex-col gap-2.5">
                   {examples.map((ex, i) => (
                     <li key={i}>
-                      <div className="text-sm font-semibold text-tuji-ink">{ex.en}</div>
+                      <div className="text-sm font-semibold text-tuji-ink">
+                        {ex.target ?? (word.targetLanguage === "ja" ? "" : ex.en)}
+                      </div>
                       {ex.zh && <div className="text-xs text-tuji-ink3">{ex.zh}</div>}
                     </li>
                   ))}

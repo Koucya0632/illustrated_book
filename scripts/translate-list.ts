@@ -1,5 +1,5 @@
 // Pull N words still missing ja, in `category, word` order, with every
-// piece needed for translation (zh_def, etymology, note, examples).
+// piece needed for translation (zh term, explanatory definition, examples).
 // Emits a JSON array on stdout so downstream tooling can consume it.
 import { getSql } from "../lib/db";
 
@@ -13,7 +13,7 @@ async function main() {
   const limit = limitArg ? Math.max(1, Number(limitArg.split("=")[1]) || 40) : 40;
 
   const words = (await sql`
-    SELECT w.id, w.word, w.etymology, w.note,
+    SELECT w.id, w.word, w.etymology, w.note, w.chinese_definition,
       (SELECT definition FROM word_definitions d
        WHERE d.word_id = w.id AND d.language = 'zh'
        ORDER BY d.sort_order LIMIT 1) AS zh_def
@@ -28,6 +28,7 @@ async function main() {
     word: string;
     etymology: string | null;
     note: string | null;
+    chinese_definition: string | null;
     zh_def: string | null;
   }[];
 
@@ -35,6 +36,7 @@ async function main() {
     id: string;
     word: string;
     zh_def: string;
+    chinese_definition: string;
     etymology: string | null;
     note: string | null;
     examples: { id: number; en: string; zh: string }[];
@@ -53,6 +55,7 @@ async function main() {
       id: w.id,
       word: w.word,
       zh_def: w.zh_def ?? "",
+      chinese_definition: w.chinese_definition ?? w.zh_def ?? "",
       etymology: w.etymology,
       note: w.note,
       examples: exs.map((e) => ({ id: Number(e.id), en: e.sentence, zh: e.zh ?? "" })),

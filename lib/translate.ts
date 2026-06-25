@@ -1,4 +1,3 @@
-import "server-only";
 import { generateObject } from "ai";
 import { z } from "zod";
 
@@ -11,15 +10,22 @@ const MODEL = process.env.TRANSLATE_MODEL || "anthropic/claude-sonnet-4-6";
 // ---- Per-word batch translation (definition + etymology + note + examples) ----
 
 export interface TranslateWordInput {
-  word: string;
-  chineseDef: string;
+  englishWord: string;
+  chineseTerm: string;
+  chineseDefinition: string;
   etymology?: string;
   note?: string;
   examples: { en: string; zh: string }[];
 }
 
 export const TranslatedWordSchema = z.object({
-  definition: z.string().describe("Japanese translation of the Chinese definition"),
+  term: z.string().describe("Concise standard Japanese dictionary headword"),
+  reading: z
+    .string()
+    .describe("Hiragana reading of the Japanese headword, with no punctuation"),
+  definition: z
+    .string()
+    .describe("A natural Japanese explanatory definition, not merely the headword"),
   etymology: z
     .string()
     .nullable()
@@ -38,10 +44,10 @@ export const TranslatedWordSchema = z.object({
 export type TranslatedWord = z.infer<typeof TranslatedWordSchema>;
 
 const WORD_SYSTEM =
-  "You translate Traditional Chinese (zh-Hant) text into natural, idiomatic Japanese for a picture " +
-  "dictionary used by Japanese-speaking English learners. Output concise, natural Japanese using the " +
-  "conventional everyday vocabulary (e.g., 冰箱 → 冷蔵庫, 廚房 → キッチン, 微波爐 → 電子レンジ). " +
-  "Definitions should be short noun phrases or single words, matching dictionary style. Example " +
+  "You create Japanese learning content for Traditional-Chinese-speaking learners. Output natural " +
+  "Japanese using conventional everyday vocabulary (e.g., 冰箱 → 冷蔵庫, 廚房 → キッチン). The term " +
+  "must be a short dictionary headword. The definition must be a concise explanatory Japanese " +
+  "sentence or phrase that explains the concept and must not merely repeat the term. Example " +
   "translations should be natural Japanese sentences that convey the same meaning as the Chinese, " +
   "not literal word-for-word translations. If the etymology or note input is empty, return null " +
   "for that field.";
@@ -55,15 +61,34 @@ export async function translateWordToJa(input: TranslateWordInput): Promise<Tran
     schema: TranslatedWordSchema,
     system: WORD_SYSTEM,
     prompt:
-      `English word: ${input.word}\n` +
-      `Chinese definition (zh-Hant): ${input.chineseDef}\n` +
+      `English reference word: ${input.englishWord}\n` +
+      `Chinese headword/short meaning (zh-Hant): ${input.chineseTerm}\n` +
+      `Chinese explanatory definition (zh-Hant): ${input.chineseDefinition}\n` +
       (input.etymology ? `Etymology (zh-Hant): ${input.etymology}\n` : "Etymology: (none)\n") +
       (input.note ? `Note (zh-Hant): ${input.note}\n` : "Note: (none)\n") +
       (exampleLines ? `Examples:\n${exampleLines}\n` : "Examples: (none)\n") +
-      `\nReturn: definition (ja), etymology (ja or null), note (ja or null), ` +
+      `\nReturn: term (the concise Japanese headword), reading (hiragana), ` +
+      `definition (a Japanese explanation distinct from the term), ` +
+      `etymology (ja or null), note (ja or null), ` +
       `examples (array of ja strings, one per example, same order).`,
   });
   return object;
+}
+
+const JapaneseReadingSchema = z.object({
+  reading: z.string().describe("Hiragana reading only, no punctuation or explanation"),
+});
+
+export async function generateJapaneseReading(term: string): Promise<string> {
+  const { object } = await generateObject({
+    model: MODEL,
+    schema: JapaneseReadingSchema,
+    system:
+      "Return the standard Japanese reading of the supplied dictionary headword in hiragana only. " +
+      "Preserve long-vowel pronunciation naturally and do not add explanations or punctuation.",
+    prompt: `Japanese headword: ${term}`,
+  });
+  return object.reading.trim();
 }
 
 // ---- Category name translation ----

@@ -9,6 +9,7 @@ import StudyReportModal, { type StudyReportContext } from "@/components/StudyRep
 import { WordTile, shade, TUJI } from "@/components/tuji/ui";
 import { useSettings } from "@/components/SettingsProvider";
 import { useCategories } from "@/components/CategoriesProvider";
+import { useWords } from "@/components/WordsProvider";
 import { useT } from "@/components/I18n";
 import { getSessionId } from "@/lib/analytics";
 import { BACKLOG_THRESHOLDS, computeNewLimit } from "@/lib/scheduling";
@@ -201,8 +202,16 @@ export default function StudyClient() {
   // dropped request after they navigate away.
   const queueAbortRef = useRef<AbortController | null>(null);
 
-  const { dailyGoal, showZh, studyCategories, studyDecks, uiLang } = useSettings();
+  const {
+    dailyGoal,
+    showZh,
+    studyCategories,
+    studyDecks,
+    uiLang,
+    learningDirection,
+  } = useSettings();
   const categories = useCategories();
+  const allWords = useWords();
   const t = useT();
   // Pre-resolve display names so the landing / progress labels can render
   // "廚房, 客廳 +1" without re-doing the lookup per phase.
@@ -1060,7 +1069,11 @@ export default function StudyClient() {
               </span>
             )}
             <div className="mt-3.5 flex items-center gap-3.5 px-1">
-              <PronunciationButton text={current.card.back} size="lg" />
+              <PronunciationButton
+                text={current.card.back}
+                audioUrls={allWords.find((w) => w.id === current.word.id)?.audioUrls}
+                size="lg"
+              />
               <div className="min-w-0">
                 <div className="text-xs font-extrabold uppercase tracking-[0.08em] text-tuji-ink3">
                   {revealed ? t("study.correctPron") : t("study.listenPron")}
@@ -1152,7 +1165,7 @@ export default function StudyClient() {
           ) : inMcqView ? (
             <>
               <div className="mb-3 text-[13px] font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                {t("study.pickEnglish")}
+                {learningDirection === "zh-ja" ? "選對的日文" : t("study.pickEnglish")}
               </div>
               <div className="flex flex-col gap-3">
                 {mcqChoices.map((c, i) => {
@@ -1390,4 +1403,3 @@ export default function StudyClient() {
     </div>
   );
 }
-

@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import Mascot from "@/components/tuji/Mascot";
 import { WordTile, scoreTier, TUJI } from "@/components/tuji/ui";
 import { getCurrentUserBundle } from "@/lib/current-user";
-import { getAllWords } from "@/lib/data";
+import { getAllLearningWords } from "@/lib/data";
 import { applyDecay } from "@/lib/mastery";
 import { getAllMastery, getStudyStreak, getSettings } from "@/lib/users-db";
 import { t, localeTag } from "@/lib/i18n";
@@ -19,9 +19,16 @@ export default async function MePage() {
 
   const settings = await getSettings(bundle.user.id);
   const [allWords, masteryRows, streak] = await Promise.all([
-    getAllWords(settings.uiLang),
-    getAllMastery(bundle.user.id),
-    getStudyStreak(bundle.user.id),
+    getAllLearningWords(settings.uiLang, settings.learningDirection),
+    getAllMastery(
+      bundle.user.id,
+      settings.learningDirection === "zh-ja" ? "ja" : "en",
+    ),
+    getStudyStreak(
+      bundle.user.id,
+      "Asia/Taipei",
+      settings.learningDirection === "zh-ja" ? "ja" : "en",
+    ),
   ]);
   const tr = (key: string, vars?: Record<string, string | number>) => t(settings.uiLang, key, vars);
   const byId = new Map(allWords.map((w) => [w.id, w]));

@@ -9,6 +9,7 @@ import {
 } from "@/lib/cards-db";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
+import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,11 +47,6 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
-  // Card decks (deck_key) to study; comma-separated, "all"/empty = no filter.
-  const deckKeys = (searchParams.get("decks") ?? "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter((s) => s && s !== "all");
   // Mode: "new" (only first-time cards), "review" (only due reviews), or
   // "both" (legacy mixed queue). Unknown values fall back to "both".
   const modeParam = (searchParams.get("mode") ?? "both").trim();
@@ -58,15 +54,25 @@ export async function GET(req: Request) {
     modeParam === "new" || modeParam === "review" ? modeParam : "both";
 
   try {
-    // getSettings + fetchDue + studyStats + getAllMastery have no data
-    // dependency between them — fanning them out collapses ~4 sequential
-    // round-trips into one. attachChoices / localize still depend on `queue`.
+    // The selected learning direction determines both the card deck and the
+    // independent mastery namespace, so resolve settings before queue work.
     const tDb = performance.now();
-    const [settings, queue, stats, masteryRows] = await Promise.all([
-      getSettings(userId),
-      fetchDue(userId, limit, newLimit, { cefr, tags, categories, deckKeys }, mode),
-      studyStats(userId, categories),
-      getAllMastery(userId),
+    const settings = await getSettings(userId);
+    const directionDeck = studyDeckFor(settings.learningDirection);
+    const targetLanguage = targetLanguageFor(settings.learningDirection);
+    // Learning direction is authoritative. Legacy client deck filters must
+    // never widen a Japanese queue back to all decks when they disagree.
+    const effectiveDecks = [directionDeck];
+    const [queue, stats, masteryRows] = await Promise.all([
+      fetchDue(
+        userId,
+        limit,
+        newLimit,
+        { cefr, tags, categories, deckKeys: effectiveDecks },
+        mode,
+      ),
+      studyStats(userId, categories, directionDeck),
+      getAllMastery(userId, targetLanguage),
     ]);
     const dbMs = Math.round(performance.now() - tDb);
 

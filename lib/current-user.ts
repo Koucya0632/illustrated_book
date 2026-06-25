@@ -9,6 +9,7 @@ import {
   getFavorites,
   getLearned,
   getProfile,
+  getSettings,
   type ProfileRow,
 } from "./users-db";
 import { DEFAULT_AVATAR, isAvatarPose, type AvatarPose } from "./avatars";
@@ -84,11 +85,15 @@ export async function getCurrentUserBundle(): Promise<{
 } | null> {
   const id = await getCurrentUserId();
   if (!id) return null;
-  const [p, favorites, learned] = await Promise.all([
+  const [p, favorites, settings] = await Promise.all([
     getProfile(id),
     getFavorites(id),
-    getLearned(id),
+    getSettings(id),
   ]);
   if (!p) return null;
+  const learned = await getLearned(
+    id,
+    settings.learningDirection === "zh-ja" ? "ja" : "en",
+  );
   return { user: toCurrent(p), favorites, learned };
 }

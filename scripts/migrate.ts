@@ -109,6 +109,21 @@ const DDL = [
      learned_at TIMESTAMPTZ NOT NULL DEFAULT now(),
      PRIMARY KEY (user_id, word_id)
    )`,
+  `ALTER TABLE user_learned
+     ADD COLUMN IF NOT EXISTS target_language TEXT NOT NULL DEFAULT 'en'`,
+  `DO $$ BEGIN
+     IF EXISTS (
+       SELECT 1
+       FROM pg_constraint
+       WHERE conrelid = 'user_learned'::regclass
+         AND conname = 'user_learned_pkey'
+         AND pg_get_constraintdef(oid) = 'PRIMARY KEY (user_id, word_id)'
+     ) THEN
+       ALTER TABLE user_learned DROP CONSTRAINT user_learned_pkey;
+       ALTER TABLE user_learned
+         ADD PRIMARY KEY (user_id, word_id, target_language);
+     END IF;
+   END $$`,
   // user_quiz_results removed — the quiz feature was deleted. Drop it on
   // existing deployments (idempotent; CASCADE clears its index + RLS policy).
   // No-op on a fresh database.
@@ -126,9 +141,27 @@ const DDL = [
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_category TEXT NOT NULL DEFAULT 'all'`,
   // Additive: interface language + font size.
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS ui_lang   TEXT NOT NULL DEFAULT 'zh-Hant'`,
+  // Retire the `ja` UI language: migrate existing users to 繁體中文. Learning
+  // Japanese is unaffected (that's `learning_direction`, not `ui_lang`).
+  // `normalizeSettings` also clamps it on read, but clean the column too so
+  // any server-rendered path stays consistent.
+  `UPDATE user_settings SET ui_lang = 'zh-Hant' WHERE ui_lang = 'ja'`,
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS font_size TEXT NOT NULL DEFAULT 'md'`,
   // Additive: study deck filter (comma-joined deck_key list; '' = all decks).
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_decks TEXT NOT NULL DEFAULT ''`,
+  // Learning target is deliberately separate from ui_lang. Existing users
+  // remain on the current Chinese→English experience after migration.
+  `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS learning_direction TEXT NOT NULL DEFAULT 'zh-en'`,
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'user_settings_learning_direction_chk'
+     ) THEN
+       ALTER TABLE user_settings
+         ADD CONSTRAINT user_settings_learning_direction_chk
+         CHECK (learning_direction IN ('zh-en','zh-ja'));
+     END IF;
+   END $$`,
   // Additive: multi-theme study filter (comma-joined category id list; '' = no
   // theme picked). Replaces the single-value `study_category`, which we keep
   // for rollback safety. Backfill: rows that previously had a real id (not
@@ -191,6 +224,23 @@ const DDL = [
      PRIMARY KEY (user_id, word_id)
    )`,
   `CREATE INDEX IF NOT EXISTS user_words_mastery_idx ON user_words(user_id, mastery)`,
+  `ALTER TABLE user_words
+     ADD COLUMN IF NOT EXISTS target_language TEXT NOT NULL DEFAULT 'en'`,
+  `DO $$ BEGIN
+     IF EXISTS (
+       SELECT 1
+       FROM pg_constraint
+       WHERE conrelid = 'user_words'::regclass
+         AND conname = 'user_words_pkey'
+         AND pg_get_constraintdef(oid) = 'PRIMARY KEY (user_id, word_id)'
+     ) THEN
+       ALTER TABLE user_words DROP CONSTRAINT user_words_pkey;
+       ALTER TABLE user_words
+         ADD PRIMARY KEY (user_id, word_id, target_language);
+     END IF;
+   END $$`,
+  `CREATE INDEX IF NOT EXISTS user_words_language_mastery_idx
+     ON user_words(user_id, target_language, mastery)`,
 
   // ---- APNs / FCM push tokens for daily-reminder fanout ----
   // One row per (user, device). iOS sends a fresh token whenever APNs
@@ -322,6 +372,24 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS word_defs_word_lang_idx ON word_definitions(word_id, language)`,
 
+  // Target-language headwords. Definitions remain explanatory text; terms
+  // are the actual answer shown/spoken by the learning flow.
+  `CREATE TABLE IF NOT EXISTS word_terms (
+     word_id       TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     language      TEXT NOT NULL,
+     term          TEXT NOT NULL,
+     reading       TEXT,
+     pronunciation TEXT,
+     audio_url     TEXT,
+     updated_at    TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (word_id, language)
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_terms_language_word_idx
+     ON word_terms(language, word_id)`,
+  `ALTER TABLE word_terms ENABLE ROW LEVEL SECURITY`,
+  `DROP POLICY IF EXISTS word_terms_public_read ON word_terms`,
+  `CREATE POLICY word_terms_public_read ON word_terms FOR SELECT USING (true)`,
+
   // ---- word_examples + translations ----
   `CREATE TABLE IF NOT EXISTS word_examples (
      id          BIGSERIAL PRIMARY KEY,
@@ -433,6 +501,12 @@ const DDL = [
      ON word_media(word_id, sort_order)`,
   `CREATE UNIQUE INDEX IF NOT EXISTS word_media_primary_uniq
      ON word_media(word_id, kind) WHERE is_primary`,
+  // Per-locale pronunciation audio (en-US / en-GB / ja-JP). One audio row per
+  // (word, locale); the partial unique index lets generate-audio.ts UPSERT
+  // idempotently. NULL locale is allowed for non-audio kinds (images etc.).
+  `ALTER TABLE word_media ADD COLUMN IF NOT EXISTS locale TEXT`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS word_media_audio_locale_uniq
+     ON word_media(word_id, kind, locale) WHERE kind = 'audio'`,
 
   // ---- word_categories: M:N — a word can belong to multiple categories ----
   // Backfilled from words.category (single FK) with is_primary=true. Existing
@@ -475,6 +549,10 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS study_logs_user_created_idx
      ON study_logs(user_id, created_at DESC)`,
+  `ALTER TABLE study_logs
+     ADD COLUMN IF NOT EXISTS target_language TEXT NOT NULL DEFAULT 'en'`,
+  `CREATE INDEX IF NOT EXISTS study_logs_user_language_created_idx
+     ON study_logs(user_id, target_language, created_at DESC)`,
 
   // ---- study_reports: user-submitted content / product issue reports ----
   // The question snapshot is intentionally stored with the report so admins
@@ -889,6 +967,7 @@ async function setupStudyLogsPartitioning(sql: any) {
       id                BIGSERIAL,
       user_id           UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
       word_id           TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+      target_language   TEXT NOT NULL DEFAULT 'en',
       activity          TEXT NOT NULL CHECK (activity IN
                           ('flashcard','mcq','typing','listening','image_recall','reading')),
       rating            SMALLINT NOT NULL CHECK (rating IN (0,1,2,3)),
@@ -911,6 +990,10 @@ async function setupStudyLogsPartitioning(sql: any) {
   await sql.unsafe(`
     CREATE INDEX study_logs_user_created_idx
       ON study_logs (user_id, created_at DESC)
+  `);
+  await sql.unsafe(`
+    CREATE INDEX study_logs_user_language_created_idx
+      ON study_logs (user_id, target_language, created_at DESC)
   `);
 
   // RLS re-applied (DROP TABLE wiped the policies).
@@ -1058,6 +1141,57 @@ async function generateCards(sql: any) {
       else skipped++;
     }
   }
+
+  // The canonical English term is the existing words.word value. Japanese
+  // terms are initially backfilled from the curated ja definition overlay;
+  // administrators can later refine reading/pronunciation independently
+  // without changing the underlying concept or English content.
+  await sql`
+    INSERT INTO word_terms (word_id, language, term, pronunciation)
+    SELECT id, 'en', word, pronunciation
+    FROM words
+    WHERE deleted_at IS NULL
+    ON CONFLICT (word_id, language) DO UPDATE SET
+      term = EXCLUDED.term,
+      pronunciation = EXCLUDED.pronunciation,
+      updated_at = now()
+  `;
+  await sql`
+    INSERT INTO word_terms (word_id, language, term)
+    SELECT DISTINCT ON (d.word_id)
+      d.word_id, 'ja', d.definition
+    FROM word_definitions d
+    JOIN words w ON w.id = d.word_id
+    WHERE d.language = 'ja'
+      AND btrim(d.definition) <> ''
+      AND w.deleted_at IS NULL
+      AND w.status = 'published'
+    ORDER BY d.word_id, d.sort_order
+    ON CONFLICT (word_id, language) DO NOTHING
+  `;
+
+  const jaInserted = await sql`
+    INSERT INTO cards (word_id, card_type, front, back, explanation, tags, deck_key)
+    SELECT
+      wt.word_id,
+      '回想卡',
+      '',
+      wt.term,
+      concat_ws(' ', wt.term, NULLIF(wt.reading, '')),
+      ARRAY['image','ja']::text[],
+      'image-ja'
+    FROM word_terms wt
+    JOIN words w ON w.id = wt.word_id
+    WHERE wt.language = 'ja'
+      AND w.deleted_at IS NULL
+      AND w.status = 'published'
+    ON CONFLICT (word_id, deck_key) DO UPDATE SET
+      back = EXCLUDED.back,
+      explanation = EXCLUDED.explanation,
+      tags = EXCLUDED.tags
+    RETURNING id
+  `;
+  console.log(`[migrate] japanese cards: ${jaInserted.length} inserted or refreshed`);
   console.log(`[migrate] cards: ${inserted} inserted, ${skipped} already existed`);
 }
 

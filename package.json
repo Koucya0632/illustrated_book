@@ -10,7 +10,10 @@
     "lint": "next lint",
     "migrate": "tsx scripts/migrate.ts",
     "enrich": "tsx scripts/enrich.ts",
-    "translate": "tsx scripts/translate.ts"
+    "translate": "tsx scripts/translate.ts",
+    "translate:audit": "tsx scripts/translate.ts --audit-only",
+    "translate:google": "tsx scripts/backfill-ja-google.ts",
+    "translate:readings": "tsx scripts/backfill-ja-readings.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.3",

@@ -25,8 +25,13 @@ export async function GET(req: Request) {
 
   try {
     const userId = await getCurrentUserId();
-    const lang = (userId ? await getSettings(userId) : DEFAULT_SETTINGS).uiLang;
-    const results = await searchCardWordsAsync(q, { limit }, lang);
+    const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
+    const results = await searchCardWordsAsync(
+      q,
+      { limit },
+      settings.uiLang,
+      settings.learningDirection,
+    );
     return NextResponse.json(
       { results, query: q, limit },
       {

@@ -30,3 +30,12 @@ export function publicJson(payload: unknown, req: Request): Response {
 export function readLang(req: Request, fallback = "zh-Hant"): string {
   return new URL(req.url).searchParams.get("lang") ?? fallback;
 }
+
+export function readLearningDirection(
+  req: Request,
+  fallback: "zh-en" | "zh-ja" = "zh-en",
+): "zh-en" | "zh-ja" {
+  return new URL(req.url).searchParams.get("learning") === "zh-ja"
+    ? "zh-ja"
+    : fallback;
+}

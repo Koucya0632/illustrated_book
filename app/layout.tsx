@@ -47,7 +47,7 @@ export default async function RootLayout({
   const bundle = await getCurrentUserBundle();
   const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
   const [words, categories] = await Promise.all([
-    getAllCardWords(settings.uiLang),
+    getAllCardWords(settings.uiLang, settings.learningDirection),
     getCategoriesFromDb(settings.uiLang),
   ]);
   return (

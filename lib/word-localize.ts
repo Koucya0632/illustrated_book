@@ -1,18 +1,15 @@
-// Localize a Word / Category to the user's UI language.
+// Localize a Word / Category to the user's UI language (zh-Hant / zh-Hans).
 //
 // The source-of-truth content is zh-Hant (stored in `words.etymology`,
 // `words.note`, `word_definitions(language='zh')`, `word_example_translations
-// (language='zh')`, `categories.name_zh`). On top of that we overlay:
-//   - `word_definitions(language='ja')` for word meanings.
-//   - `word_example_translations(language='ja')` for example sentence
-//     translations.
-//   - `word_localized_texts(field, language='ja')` for etymology / note.
-//   - `category_translations(language='ja')` for category display name.
+// (language='zh')`, `categories.name_zh`).
 //
 // zh-Hans isn't stored at all; it's runtime-converted from zh-Hant via
 // OpenCC. zh-Hant always passes through untouched.
 //
-// Fallback rule: requested lang → zh-Hant (opencc-converted if zh-Hans).
+// (The retired `ja` UI language used to overlay `language='ja'` rows here;
+// that path was removed when uiLang collapsed to zh-Hant / zh-Hans. The ja
+// content rows still live in the DB but are no longer surfaced.)
 
 import type { UiLang } from "./settings";
 import type { Category, Definition, Example, Word } from "@/types";
@@ -48,9 +45,9 @@ export function localizeWord(
     zh: pickExampleZh(e, lang) ?? localizeZhText(e.zh, lang),
   }));
 
-  const etymology = pickLocalizedText("etymology", w.etymology, lang, localizedTexts);
-  const note = pickLocalizedText("note", w.note, lang, localizedTexts);
-  const chineseDefinition = pickLocalizedText("chineseDefinition", w.chineseDefinition, lang, localizedTexts);
+  const etymology = pickLocalizedText(w.etymology, lang);
+  const note = pickLocalizedText(w.note, lang);
+  const chineseDefinition = pickLocalizedText(w.chineseDefinition, lang);
   const forms = w.forms?.map((f) => ({ ...f, label: localizeZhText(f.label, lang) }));
 
   return {
@@ -70,9 +67,6 @@ function pickCollocationsZh(
   lang: UiLang,
   localizedTexts?: LocalizedTextMap,
 ): string[] | undefined {
-  // No ja translations seeded for collocations today; leave undefined so the
-  // client renders English-only chips.
-  if (lang === "ja") return undefined;
   const raw = localizedTexts?.["collocations|zh-Hant"];
   if (!raw) return undefined;
   let parsed: unknown;
@@ -89,18 +83,8 @@ function pickCollocationsZh(
 
 /** Localize a Category's display name. `cat.nameZh` is the zh-Hant base.
  *  Returns a new Category with `nameZh` set to the chosen language's name. */
-export function localizeCategory(
-  cat: Category,
-  lang: UiLang,
-  translations?: Record<string, string>,
-): Category {
+export function localizeCategory(cat: Category, lang: UiLang): Category {
   if (lang === "zh-Hant") return cat;
-  if (lang === "ja") {
-    const ja = translations?.ja;
-    if (ja) return { ...cat, nameZh: ja };
-    // fall through to zh-Hant (no opencc for ja fallback)
-    return cat;
-  }
   // zh-Hans
   return {
     ...cat,
@@ -114,16 +98,11 @@ export function localizeCategory(
 function localizeZhText(text: string, lang: UiLang): string {
   if (!text) return text;
   if (lang === "zh-Hans") return toZhHans(text);
-  return text; // ja or zh-Hant — leave as-is (ja inline labels not translated)
+  return text; // zh-Hant — leave as-is
 }
 
 function pickDefinitions(defs: Definition[], lang: UiLang): Definition[] {
   if (!defs?.length) return defs ?? [];
-
-  if (lang === "ja") {
-    const ja = defs.filter((d) => d.language === "ja");
-    if (ja.length) return sortByOrder(ja);
-  }
 
   const zh = defs.filter((d) => d.language === "zh");
   if (!zh.length) return sortByOrder(defs);
@@ -135,10 +114,6 @@ function pickDefinitions(defs: Definition[], lang: UiLang): Definition[] {
 }
 
 function pickExampleZh(e: Example, lang: UiLang): string | undefined {
-  if (lang === "ja") {
-    const ja = e.translations?.ja;
-    if (ja) return ja;
-  }
   const zh = e.translations?.zh ?? e.zh;
   if (!zh) return undefined;
   if (lang === "zh-Hans") return toZhHans(zh);
@@ -146,15 +121,9 @@ function pickExampleZh(e: Example, lang: UiLang): string | undefined {
 }
 
 function pickLocalizedText(
-  field: "etymology" | "note" | "chineseDefinition",
   base: string | undefined,
   lang: UiLang,
-  localizedTexts?: LocalizedTextMap,
 ): string | undefined {
-  if (lang === "ja") {
-    const ja = localizedTexts?.[`${field}|ja`];
-    if (ja) return ja;
-  }
   if (!base) return undefined;
   if (lang === "zh-Hans") return toZhHans(base);
   return base;

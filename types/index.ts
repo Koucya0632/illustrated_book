@@ -34,6 +34,9 @@ export interface Definition {
 export interface Example {
   /** English source sentence. */
   en: string;
+  /** Sentence in the active learning target language. Detail views render
+   *  this as the primary line; missing means it is not ready for that mode. */
+  target?: string;
   /** Convenience: zh translation (= translations.zh). Kept for legacy UI;
    *  new code should read `translations[lang]` directly. */
   zh: string;
@@ -71,6 +74,10 @@ export interface CardWord {
   pronunciation: string;
   reading?: string;
   targetLanguage?: "en" | "ja";
+  /** Pre-generated pronunciation clips keyed by locale (e.g. "en-US",
+   *  "en-GB", "ja-JP"). Only the locales relevant to the active learning
+   *  direction are included; absent when no audio has been generated. */
+  audioUrls?: Record<string, string>;
 }
 
 export interface Word {
@@ -83,6 +90,9 @@ export interface Word {
   reading?: string;
   targetLanguage?: "en" | "ja";
   audioUrl?: string;
+  /** Pre-generated pronunciation clips keyed by locale ("en-US" / "en-GB" /
+   *  "ja-JP"). Superset of `audioUrl` (which mirrors the en-US clip). */
+  audioUrls?: Record<string, string>;
   imageUrl: string;
   cefrLevel?: CEFRLevel;
   status: WordStatus;
@@ -96,6 +106,8 @@ export interface Word {
   /** Convenience accessor: first en definition's text. Shown verbatim on the
    *  word page under the zh headline, regardless of UI language. */
   englishDefinition?: string;
+  /** Definition in the active learning target language (`en` or `ja`). */
+  targetDefinition?: string;
   /** Sentence-form Chinese definition stored in `words.chinese_definition`
    *  (zh-Hant base; localized to UI lang via word_localize). */
   chineseDefinition?: string;

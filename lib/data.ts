@@ -42,6 +42,7 @@ interface Row {
   etymology: string | null;
   chinese_definition: string | null;
   forms: unknown;         // jsonb array of { label, value }
+  audio_by_locale: unknown; // jsonb_object_agg: "<locale>" -> url (kind='audio')
   definitions: unknown;   // jsonb array of { language, definition, cefr_level, sort_order }
   examples: unknown;      // jsonb array of { sentence, cefr_level, sort_order, translations }
   relations: unknown;     // jsonb array of { word_id, relation_type, note }
@@ -102,6 +103,7 @@ function rowToWord(r: Row): { word: Word; localizedTexts: LocalizedTextMap } {
   }));
 
   const tags = r.tags ?? [];
+  const audioUrls = parseJsonbColumn<Record<string, string>>(r.audio_by_locale, {});
   const chinese = primaryChinese(definitions);
   const englishDefinition = definitions
     .filter((d) => d.language === "en")
@@ -124,6 +126,7 @@ function rowToWord(r: Row): { word: Word; localizedTexts: LocalizedTextMap } {
     partOfSpeech: r.part_of_speech,
     pronunciation: r.pronunciation,
     audioUrl: r.audio_url ?? undefined,
+    audioUrls: audioUrls && Object.keys(audioUrls).length ? audioUrls : undefined,
     imageUrl: r.image_url,
     cefrLevel: (r.cefr_level as CEFRLevel) ?? undefined,
     status: r.status as WordStatus,
@@ -188,6 +191,9 @@ const fetchAllFromDb = unstable_cache(
                 ))
          FROM word_relations r WHERE r.source_word_id = w.id) AS relations,
         (SELECT array_agg(tag_id ORDER BY tag_id) FROM word_tags WHERE word_id = w.id) AS tags,
+        (SELECT jsonb_object_agg(m.locale, m.url)
+         FROM word_media m
+         WHERE m.word_id = w.id AND m.kind = 'audio' AND m.locale IS NOT NULL) AS audio_by_locale,
         (SELECT jsonb_object_agg(lt.field || '|' || lt.language, lt.value)
          FROM word_localized_texts lt WHERE lt.word_id = w.id) AS localized_texts
       FROM words w
@@ -196,10 +202,11 @@ const fetchAllFromDb = unstable_cache(
     `) as unknown as Row[];
     return rows.map(rowToWord);
   },
-  // v6: collocationsZh added on the localized Word — bump the cache key
-  // so deployments don't serve a stale jsonb-shaped payload to clients
-  // that already expect the new field.
-  ["all-words-v6"],
+  // v7: Japanese definitions were upgraded from headword placeholders to
+  // explanatory text. Bump the persistent Vercel data-cache key so the
+  // production deploy cannot retain the pre-backfill rows.
+  // v8: added per-locale pronunciation audio (audio_by_locale).
+  ["all-words-v8"],
   { tags: ["words"], revalidate: 60 },
 );
 
@@ -282,17 +289,52 @@ export async function getLearningWord(
   lang: UiLang = "zh-Hant",
   direction: LearningDirection = "zh-en",
 ): Promise<Word | undefined> {
-  const base = await getWord(id, lang);
-  if (!base) return undefined;
+  const raw = await getAllRawEntries();
+  const hit = raw.find((r) => r.word.id === id);
+  if (!hit) return undefined;
+  const base = localizeWord(hit.word, lang, hit.localizedTexts);
   const targetLanguage = targetLanguageFor(direction);
   const term = (await targetTermMap(direction)).get(id);
   if (!term && targetLanguage === "ja") return undefined;
+
+  const japaneseDefinition = hit.word.definitions
+    .filter((d) => d.language === "ja")
+    .sort((a, b) => a.sortOrder - b.sortOrder)[0]?.definition;
+  const targetDefinition =
+    targetLanguage === "ja"
+      ? japaneseDefinition?.trim() &&
+        japaneseDefinition.trim() !== term?.term.trim()
+        ? japaneseDefinition
+        : undefined
+      : hit.word.englishDefinition;
+  const examples =
+    targetLanguage === "ja"
+      ? base.examples
+          .filter((example) => Boolean(example.translations.ja?.trim()))
+          .map((example) => ({
+            ...example,
+            // Japanese detail consumers must never fall back to rendering
+            // the English source sentence.
+            en: "",
+            target: example.translations.ja.trim(),
+          }))
+      : base.examples.map((example) => ({ ...example, target: example.en }));
+
   return {
     ...base,
     word: term?.term ?? base.word,
     reading: term?.reading ?? undefined,
     pronunciation: term?.pronunciation ?? term?.reading ?? base.pronunciation,
     targetLanguage,
+    targetDefinition,
+    examples,
+    // These fields describe English morphology/usage. Japanese detail mode
+    // hides them until genuine Japanese equivalents exist.
+    forms: targetLanguage === "ja" ? undefined : base.forms,
+    collocations: targetLanguage === "ja" ? undefined : base.collocations,
+    collocationsZh: targetLanguage === "ja" ? undefined : base.collocationsZh,
+    etymology: targetLanguage === "ja" ? undefined : base.etymology,
+    englishDefinition: targetLanguage === "ja" ? undefined : base.englishDefinition,
   };
 }
 
@@ -316,11 +358,19 @@ export async function getAllCardWords(
   const raw = await getAllRawEntries();
   const targetLanguage = targetLanguageFor(direction);
   const terms = await targetTermMap(direction);
+  // Only the locales the active deck can actually play: Japanese words use
+  // the ja-JP clip, English words the US/UK pair (the on-device accent
+  // setting picks between them). Keeps the lite payload — and its CDN cache
+  // key — independent of the client's accent choice.
+  const wanted = targetLanguage === "ja" ? ["ja-JP"] : ["en-US", "en-GB"];
   return raw.flatMap((r) => {
     const w = localizeWord(r.word, lang, r.localizedTexts);
     const term = terms.get(w.id);
     // Japanese mode only exposes concepts with a real Japanese target term.
     if (targetLanguage === "ja" && !term) return [];
+    const audioUrls = w.audioUrls
+      ? Object.fromEntries(wanted.filter((l) => w.audioUrls![l]).map((l) => [l, w.audioUrls![l]]))
+      : {};
     return [{
       id: w.id,
       word: term?.term ?? w.word,
@@ -330,6 +380,7 @@ export async function getAllCardWords(
       pronunciation: term?.pronunciation ?? term?.reading ?? w.pronunciation,
       reading: term?.reading ?? undefined,
       targetLanguage,
+      audioUrls: Object.keys(audioUrls).length ? audioUrls : undefined,
     }];
   });
 }

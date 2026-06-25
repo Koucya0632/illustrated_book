@@ -64,7 +64,7 @@ export default function TujiShell({
         <header className="px-5 py-4 sm:px-8">
           <Link href="/" className="inline-flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-tuji-teal">
-              <Mascot pose="face" size={32} />
+              <span className="font-display text-lg font-black text-white">T</span>
             </span>
             <span className="font-display text-[22px] font-extrabold tracking-tight text-tuji-ink">
               Tuji<span className="text-tuji-coral">.</span>
@@ -82,7 +82,7 @@ export default function TujiShell({
       <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col gap-5 bg-tuji-ink p-4 text-white md:flex">
         <Link href="/" className="flex items-center gap-2.5 px-1">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-tuji-teal">
-            <Mascot pose="face" size={32} />
+            <span className="font-display text-lg font-black text-white">T</span>
           </span>
           <span className="font-display text-[22px] font-extrabold tracking-tight">
             Tuji<span className="text-tuji-yellow">.</span>
@@ -147,7 +147,7 @@ export default function TujiShell({
         <header className="sticky top-0 z-40 flex items-center justify-between border-b border-black/5 bg-tuji-bg/85 px-4 py-3 backdrop-blur md:hidden">
           <Link href="/" className="flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-tuji-teal">
-              <Mascot pose="face" size={28} />
+              <span className="font-display text-base font-black text-white">T</span>
             </span>
             <span className="font-display text-lg font-extrabold tracking-tight text-tuji-ink">
               Tuji<span className="text-tuji-coral">.</span>
@@ -173,7 +173,7 @@ export default function TujiShell({
               return (
                 <Link key={it.id} href={it.href} className="flex justify-start" aria-label={t(it.labelKey)}>
                   <span className="mx-auto -mt-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-tuji-teal shadow-[0_6px_18px_rgba(0,111,114,0.35)]">
-                    <Mascot pose="face" size={40} />
+                    <span className="text-2xl" aria-hidden="true">{it.icon}</span>
                   </span>
                 </Link>
               );

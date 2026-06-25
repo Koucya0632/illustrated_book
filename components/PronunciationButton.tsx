@@ -1,18 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { speak, speechSupported } from "@/lib/speech";
+import { playClip, speechSupported } from "@/lib/speech";
 import { track } from "@/lib/analytics";
 import { useSettings } from "@/components/SettingsProvider";
 import { accentToLang } from "@/lib/settings";
 
 export default function PronunciationButton({
   text,
+  audioUrls,
   size = "md",
   label = "播放發音",
   wordId,
 }: {
   text: string;
+  /** Pre-generated clips keyed by locale ("en-US"/"en-GB"/"ja-JP"). When the
+   *  resolved locale has a clip it plays that; otherwise falls back to
+   *  on-device synthesis of `text`. */
+  audioUrls?: Record<string, string>;
   size?: "sm" | "md" | "lg";
   label?: string;
   wordId?: string;
@@ -30,11 +35,15 @@ export default function PronunciationButton({
   function handle(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
-    if (!supported) {
+    const lang = learningDirection === "zh-ja" ? "ja-JP" : accentToLang(accent);
+    const url = audioUrls?.[lang];
+    // A clip plays regardless of speechSynthesis support; only block when we'd
+    // have to fall back to synthesis and the browser can't do it.
+    if (!url && !supported) {
       alert("這個瀏覽器不支援發音功能，請使用 Chrome 或 Safari。");
       return;
     }
-    speak(text, learningDirection === "zh-ja" ? "ja-JP" : accentToLang(accent));
+    playClip(url, text, lang);
     setActive(true);
     setTimeout(() => setActive(false), 800);
     if (wordId) track({ type: "pronounce", wordId });

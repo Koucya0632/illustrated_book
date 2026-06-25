@@ -76,6 +76,7 @@ function settingsEqual(a: UserSettings, b: UserSettings): boolean {
     a.dailyGoal === b.dailyGoal &&
     a.accent === b.accent &&
     a.showZh === b.showZh &&
+    a.learningDirection === b.learningDirection &&
     a.uiLang === b.uiLang &&
     a.fontSize === b.fontSize &&
     a.studyDecks.length === b.studyDecks.length &&

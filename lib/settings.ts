@@ -1,6 +1,10 @@
 // Per-user app settings. Server + client safe (no hooks, no Node imports).
 
-export type UiLang = "zh-Hant" | "zh-Hans" | "ja";
+// Interface + content language. `ja` was retired: it only ever meant
+// "Japanese-written explanations + Japanese app chrome", which served no one
+// in a 用中文學… product, and was conflated with `learningDirection`. Learning
+// Japanese is unaffected — that's driven by `learningDirection` / target words.
+export type UiLang = "zh-Hant" | "zh-Hans";
 export type FontSize = "sm" | "md" | "lg";
 export type LearningDirection = "zh-en" | "zh-ja";
 
@@ -85,7 +89,7 @@ function normalizeStudyCategories(raw: unknown): string[] {
   return out;
 }
 
-const UI_LANGS: UiLang[] = ["zh-Hant", "zh-Hans", "ja"];
+const UI_LANGS: UiLang[] = ["zh-Hant", "zh-Hans"];
 const FONT_SIZES: FontSize[] = ["sm", "md", "lg"];
 const LEARNING_DIRECTIONS: LearningDirection[] = ["zh-en", "zh-ja"];
 

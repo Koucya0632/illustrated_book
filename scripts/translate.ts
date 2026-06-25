@@ -20,10 +20,17 @@ async function main() {
   const limit = limitArg ? Math.max(1, Number(limitArg.split("=")[1]) || 50) : 50;
   const skipCategories = process.argv.includes("--skip-categories");
   const skipWords = process.argv.includes("--skip-words");
+  const refresh = process.argv.includes("--refresh");
+  const auditOnly = process.argv.includes("--audit-only");
 
   const sql = getSql();
   if (!sql) {
     console.log("[translate] DATABASE_URL not set — nothing to do.");
+    return;
+  }
+  if (auditOnly) {
+    await printJapaneseCoverage(sql);
+    await sql.end({ timeout: 5 });
     return;
   }
 
@@ -67,40 +74,80 @@ async function main() {
   let wordsFail = 0;
   if (!skipWords) {
     // ---- Words ----
-    // Pull words that don't yet have a ja definition AND have a zh definition
-    // to translate from. The same word's etymology / note / example
-    // translations are filled in the same pass — partial overlap (e.g. a word
-    // already has ja examples from a prior partial run) is tolerated by the
-    // per-row ON CONFLICT DO NOTHING clauses below.
-    const wordRows = (await sql`
+    // Default mode selects incomplete Japanese detail payloads. --refresh
+    // intentionally regenerates existing rows too, which upgrades legacy
+    // definitions that stored only the Japanese headword.
+    const incompleteRows = await sql`
       SELECT w.id, w.word, w.etymology, w.note,
+        w.chinese_definition,
         (SELECT definition FROM word_definitions d
          WHERE d.word_id = w.id AND d.language = 'zh'
-         ORDER BY d.sort_order LIMIT 1) AS chinese_def
+         ORDER BY d.sort_order LIMIT 1) AS chinese_term
       FROM words w
       WHERE w.status = 'published' AND w.deleted_at IS NULL
         AND EXISTS (
           SELECT 1 FROM word_definitions d
           WHERE d.word_id = w.id AND d.language = 'zh'
         )
-        AND NOT EXISTS (
-          SELECT 1 FROM word_definitions d
-          WHERE d.word_id = w.id AND d.language = ${TARGET_LANG}
+        AND (
+          NOT EXISTS (
+            SELECT 1 FROM word_terms wt
+            WHERE wt.word_id = w.id AND wt.language = ${TARGET_LANG}
+          )
+          OR NOT EXISTS (
+            SELECT 1
+            FROM word_definitions d
+            JOIN word_terms wt
+              ON wt.word_id = d.word_id AND wt.language = ${TARGET_LANG}
+            WHERE d.word_id = w.id
+              AND d.language = ${TARGET_LANG}
+              AND btrim(d.definition) <> btrim(wt.term)
+          )
+          OR EXISTS (
+            SELECT 1 FROM word_examples e
+            WHERE e.word_id = w.id
+              AND NOT EXISTS (
+                SELECT 1 FROM word_example_translations t
+                WHERE t.example_id = e.id AND t.language = ${TARGET_LANG}
+              )
+          )
         )
       ORDER BY w.category, w.word
       LIMIT ${limit}
-    `) as unknown as {
+    `;
+    const refreshRows = refresh
+      ? await sql`
+          SELECT w.id, w.word, w.etymology, w.note,
+            w.chinese_definition,
+            (SELECT definition FROM word_definitions d
+             WHERE d.word_id = w.id AND d.language = 'zh'
+             ORDER BY d.sort_order LIMIT 1) AS chinese_term
+          FROM words w
+          WHERE w.status = 'published' AND w.deleted_at IS NULL
+            AND EXISTS (
+              SELECT 1 FROM word_definitions d
+              WHERE d.word_id = w.id AND d.language = 'zh'
+            )
+          ORDER BY w.category, w.word
+          LIMIT ${limit}
+        `
+      : incompleteRows;
+    const wordRows = refreshRows as unknown as {
       id: string;
       word: string;
       etymology: string | null;
       note: string | null;
-      chinese_def: string | null;
+      chinese_definition: string | null;
+      chinese_term: string | null;
     }[];
 
-    console.log(`[translate] ${wordRows.length} word(s) need ja (limit ${limit}).`);
+    console.log(
+      `[translate] ${wordRows.length} word(s) selected for ja details ` +
+        `(limit ${limit}${refresh ? ", refresh" : ""}).`,
+    );
 
     for (const w of wordRows) {
-      if (!w.chinese_def) {
+      if (!w.chinese_term) {
         console.log(`  · skip ${w.id} (no zh definition)`);
         continue;
       }
@@ -119,8 +166,9 @@ async function main() {
 
       try {
         const result = await translateWordToJa({
-          word: w.word,
-          chineseDef: w.chinese_def,
+          englishWord: w.word,
+          chineseTerm: w.chinese_term,
+          chineseDefinition: w.chinese_definition ?? w.chinese_term,
           etymology: w.etymology ?? undefined,
           note: w.note ?? undefined,
           examples,
@@ -130,11 +178,12 @@ async function main() {
         await sql`
           INSERT INTO word_definitions (word_id, language, definition, sort_order)
           VALUES (${w.id}, ${TARGET_LANG}, ${result.definition}, 0)
-          ON CONFLICT (word_id, language, sort_order) DO NOTHING
+          ON CONFLICT (word_id, language, sort_order)
+          DO UPDATE SET definition = EXCLUDED.definition, updated_at = now()
         `;
         await sql`
           INSERT INTO word_terms (word_id, language, term, reading, pronunciation)
-          VALUES (${w.id}, ${TARGET_LANG}, ${result.definition}, ${result.reading}, ${result.reading})
+          VALUES (${w.id}, ${TARGET_LANG}, ${result.term}, ${result.reading}, ${result.reading})
           ON CONFLICT (word_id, language) DO UPDATE SET
             term = EXCLUDED.term,
             reading = EXCLUDED.reading,
@@ -144,8 +193,8 @@ async function main() {
         await sql`
           INSERT INTO cards (word_id, card_type, front, back, explanation, tags, deck_key)
           VALUES (
-            ${w.id}, '回想卡', '', ${result.definition},
-            ${`${result.definition} ${result.reading}`.trim()},
+            ${w.id}, '回想卡', '', ${result.term},
+            ${`${result.term} ${result.reading}`.trim()},
             ARRAY['image','ja']::text[], 'image-ja'
           )
           ON CONFLICT (word_id, deck_key) DO UPDATE SET
@@ -178,14 +227,15 @@ async function main() {
           await sql`
             INSERT INTO word_example_translations (example_id, language, translation)
             VALUES (${exampleRows[i].id}, ${TARGET_LANG}, ${ja})
-            ON CONFLICT (example_id, language) DO NOTHING
+            ON CONFLICT (example_id, language)
+            DO UPDATE SET translation = EXCLUDED.translation
           `;
           exOk++;
         }
 
         wordsOk++;
         console.log(
-          `  ✓ ${w.id} — def✓ ` +
+          `  ✓ ${w.id} — ${result.term} (${result.reading}) def✓ ` +
             `etym${result.etymology ? "✓" : "·"} ` +
             `note${result.note ? "✓" : "·"} ` +
             `ex ${exOk}/${exampleRows.length}`,
@@ -202,7 +252,84 @@ async function main() {
     `[translate] done. categories ok=${categoriesOk} fail=${categoriesFail}; ` +
       `words ok=${wordsOk} fail=${wordsFail}.`,
   );
+  await printJapaneseCoverage(sql);
   await sql.end({ timeout: 5 });
+}
+
+async function printJapaneseCoverage(sql: NonNullable<ReturnType<typeof getSql>>) {
+  const [coverage] = (await sql`
+    SELECT
+      count(*) FILTER (
+        WHERE EXISTS (
+          SELECT 1 FROM word_terms wt
+          WHERE wt.word_id = w.id AND wt.language = 'ja'
+        )
+      )::int AS japanese_terms,
+      count(*) FILTER (
+        WHERE EXISTS (
+          SELECT 1
+          FROM word_definitions d
+          JOIN word_terms wt ON wt.word_id = d.word_id AND wt.language = 'ja'
+          WHERE d.word_id = w.id
+            AND d.language = 'ja'
+            AND btrim(d.definition) <> btrim(wt.term)
+        )
+      )::int AS japanese_definitions,
+      count(*) FILTER (
+        WHERE EXISTS (
+          SELECT 1 FROM word_terms wt
+          WHERE wt.word_id = w.id AND wt.language = 'ja'
+        )
+        AND NOT EXISTS (
+          SELECT 1 FROM word_examples e
+          WHERE e.word_id = w.id
+            AND NOT EXISTS (
+              SELECT 1 FROM word_example_translations t
+              WHERE t.example_id = e.id AND t.language = 'ja'
+            )
+        )
+      )::int AS complete_examples
+    FROM words w
+    WHERE w.status = 'published' AND w.deleted_at IS NULL
+  `) as unknown as {
+    japanese_terms: number;
+    japanese_definitions: number;
+    complete_examples: number;
+  }[];
+  const missing = (await sql`
+    SELECT w.id
+    FROM words w
+    WHERE w.status = 'published' AND w.deleted_at IS NULL
+      AND (
+        NOT EXISTS (
+          SELECT 1 FROM word_terms wt
+          WHERE wt.word_id = w.id AND wt.language = 'ja'
+        )
+        OR NOT EXISTS (
+          SELECT 1
+          FROM word_definitions d
+          JOIN word_terms wt ON wt.word_id = d.word_id AND wt.language = 'ja'
+          WHERE d.word_id = w.id
+            AND d.language = 'ja'
+            AND btrim(d.definition) <> btrim(wt.term)
+        )
+        OR EXISTS (
+          SELECT 1 FROM word_examples e
+          WHERE e.word_id = w.id
+            AND NOT EXISTS (
+              SELECT 1 FROM word_example_translations t
+              WHERE t.example_id = e.id AND t.language = 'ja'
+            )
+        )
+      )
+    ORDER BY w.category, w.word
+  `) as unknown as { id: string }[];
+  console.log(
+    `[translate] coverage: terms=${coverage?.japanese_terms ?? 0}, ` +
+      `definitions=${coverage?.japanese_definitions ?? 0}, ` +
+      `completeExamples=${coverage?.complete_examples ?? 0}.`,
+  );
+  console.log(`[translate] missing word IDs: ${missing.map((row) => row.id).join(", ") || "(none)"}`);
 }
 
 main().catch((e) => {

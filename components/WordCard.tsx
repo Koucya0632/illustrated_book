@@ -32,7 +32,7 @@ export default function WordCard({ word }: { word: CardWord }) {
             )}
             {showZh && <p className="truncate text-xs text-tuji-ink3">{word.chinese}</p>}
           </Link>
-          <PronunciationButton text={word.word} size="sm" />
+          <PronunciationButton text={word.word} audioUrls={word.audioUrls} size="sm" />
         </div>
 
         <p className="mt-1.5 font-mono text-[11px] text-tuji-ink3">{word.pronunciation}</p>

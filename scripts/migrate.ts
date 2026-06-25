@@ -141,6 +141,11 @@ const DDL = [
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_category TEXT NOT NULL DEFAULT 'all'`,
   // Additive: interface language + font size.
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS ui_lang   TEXT NOT NULL DEFAULT 'zh-Hant'`,
+  // Retire the `ja` UI language: migrate existing users to 繁體中文. Learning
+  // Japanese is unaffected (that's `learning_direction`, not `ui_lang`).
+  // `normalizeSettings` also clamps it on read, but clean the column too so
+  // any server-rendered path stays consistent.
+  `UPDATE user_settings SET ui_lang = 'zh-Hant' WHERE ui_lang = 'ja'`,
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS font_size TEXT NOT NULL DEFAULT 'md'`,
   // Additive: study deck filter (comma-joined deck_key list; '' = all decks).
   `ALTER TABLE user_settings ADD COLUMN IF NOT EXISTS study_decks TEXT NOT NULL DEFAULT ''`,
@@ -496,6 +501,12 @@ const DDL = [
      ON word_media(word_id, sort_order)`,
   `CREATE UNIQUE INDEX IF NOT EXISTS word_media_primary_uniq
      ON word_media(word_id, kind) WHERE is_primary`,
+  // Per-locale pronunciation audio (en-US / en-GB / ja-JP). One audio row per
+  // (word, locale); the partial unique index lets generate-audio.ts UPSERT
+  // idempotently. NULL locale is allowed for non-audio kinds (images etc.).
+  `ALTER TABLE word_media ADD COLUMN IF NOT EXISTS locale TEXT`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS word_media_audio_locale_uniq
+     ON word_media(word_id, kind, locale) WHERE kind = 'audio'`,
 
   // ---- word_categories: M:N — a word can belong to multiple categories ----
   // Backfilled from words.category (single FK) with is_primary=true. Existing

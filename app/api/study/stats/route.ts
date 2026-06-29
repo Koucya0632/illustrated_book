@@ -8,8 +8,9 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { studyStats } from "@/lib/cards-db";
+import { atlasStudyStats } from "@/lib/atlas-db";
 import { getSettings } from "@/lib/users-db";
-import { studyDeckFor } from "@/lib/settings";
+import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,14 +26,33 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
+  const publicCategories = categories.filter((category) => category !== "custom");
+  // Mirror /api/study/queue: no public theme filter (全部 / global stats) counts
+  // custom cards too, so Today's due/new tiles and the review batch size include
+  // 自制圖鑑 cards. A specific public theme still excludes them.
+  const wantsCustom = categories.includes("custom") || publicCategories.length === 0;
   try {
     const t0 = performance.now();
     const settings = await getSettings(userId);
-    const stats = await studyStats(
-      userId,
-      categories,
-      studyDeckFor(settings.learningDirection),
-    );
+    const [publicStats, customStats] = await Promise.all([
+      categories.length === 0 || publicCategories.length > 0
+        ? studyStats(userId, publicCategories, studyDeckFor(settings.learningDirection))
+        : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
+      wantsCustom
+        ? atlasStudyStats(userId, targetLanguageFor(settings.learningDirection))
+        : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
+    ]);
+    const byStatus = new Map<string, number>();
+    for (const row of publicStats.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
+    for (const row of customStats.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
+    const stats = {
+      total: publicStats.total + customStats.total,
+      seen: publicStats.seen + customStats.seen,
+      due: publicStats.due + customStats.due,
+      new: publicStats.new + customStats.new,
+      todayNew: publicStats.todayNew + customStats.todayNew,
+      byStatus: Array.from(byStatus, ([status, c]) => ({ status, c })),
+    };
     const dbMs = Math.round(performance.now() - t0);
     return NextResponse.json(
       { stats },

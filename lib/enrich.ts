@@ -1,5 +1,5 @@
 import "server-only";
-import { generateObject } from "ai";
+import { generateObject, type LanguageModel } from "ai";
 import { z } from "zod";
 
 // AI-generated enrichment for a single word. Runs through the Vercel AI Gateway
@@ -66,9 +66,12 @@ const SYSTEM =
   "Never fabricate etymology — when uncertain, use core feeling instead. " +
   "For etymology, do NOT output example sentences, image prompts, or memory tips.";
 
-export async function enrichWord(input: EnrichInput): Promise<EnrichResult> {
+export async function enrichWord(
+  input: EnrichInput,
+  opts: { model?: LanguageModel } = {},
+): Promise<EnrichResult> {
   const { object } = await generateObject({
-    model: MODEL,
+    model: opts.model || MODEL,
     schema: EnrichSchema,
     system: SYSTEM,
     prompt: `Word: ${input.word}\nPart of speech: ${input.partOfSpeech}\nMeaning (zh): ${input.chinese}`,

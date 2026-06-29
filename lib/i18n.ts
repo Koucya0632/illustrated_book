@@ -20,6 +20,7 @@ type Dict = Record<string, string>;
 const zhHant: Dict = {
   "nav.today": "今天",
   "nav.cards": "單字庫",
+  "nav.atlas": "自制圖鑑",
   "nav.study": "學習",
   "nav.progress": "進度",
   "nav.fav": "我的收藏 →",
@@ -285,6 +286,7 @@ const zhHant: Dict = {
 const zhHans: Dict = {
   "nav.today": "今天",
   "nav.cards": "单词库",
+  "nav.atlas": "自制图鉴",
   "nav.study": "学习",
   "nav.progress": "进度",
   "nav.fav": "我的收藏 →",

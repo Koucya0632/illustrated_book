@@ -10,7 +10,7 @@ import {
 import type { Rating, Status } from "./srs";
 
 export interface CardRow {
-  id: number;
+  id: number | string;
   word_id: string;
   card_type: string;
   front: string;
@@ -22,7 +22,7 @@ export interface CardRow {
 
 export interface UserCardRow {
   user_id: string;  // UUID
-  card_id: number;
+  card_id: number | string;
   status: Status;
   interval_days: number;
   next_review_at: string;

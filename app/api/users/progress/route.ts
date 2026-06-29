@@ -7,6 +7,7 @@ import {
   getStudyStreak,
 } from "@/lib/users-db";
 import { categoryProgress } from "@/lib/cards-db";
+import { atlasCategoryProgress } from "@/lib/atlas-db";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
@@ -22,12 +23,17 @@ export async function GET() {
   const settings = await getSettings(userId);
   const targetLanguage = targetLanguageFor(settings.learningDirection);
   const deckKey = studyDeckFor(settings.learningDirection);
-  const [streak, heatmap, categories] = await Promise.all([
+  const [streak, heatmap, categories, customCategory] = await Promise.all([
     getStudyStreak(userId, "Asia/Taipei", targetLanguage),
     getActivityHeatmap(userId, "Asia/Taipei", targetLanguage),
     categoryProgress(userId, deckKey),
+    atlasCategoryProgress(userId, targetLanguage),
   ]);
-  return NextResponse.json({ streak, heatmap, categories });
+  return NextResponse.json({
+    streak,
+    heatmap,
+    categories: customCategory ? [...categories, customCategory] : categories,
+  });
 }
 
 // Clear the signed-in user's learning progress (learned / mastery / SRS state /

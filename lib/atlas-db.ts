@@ -1,0 +1,1448 @@
+import "server-only";
+import { getSql } from "./db";
+import type { Rating, Status } from "./srs";
+import type {
+  AtlasCandidate,
+  AtlasCandidateRow,
+  AtlasCardRow,
+  AtlasCardStateRow,
+  AtlasDeckKey,
+  AtlasDueCard,
+  AtlasEnrichment,
+  AtlasImageRow,
+  AtlasItemRow,
+  AtlasMasteryRow,
+  AtlasPublicItemRow,
+  AtlasRecognitionJobRow,
+  AtlasRecognitionStage,
+  AtlasTargetLanguage,
+} from "./atlas/types";
+import type { AtlasRecognitionResult } from "./atlas/vision-provider";
+
+function requireSql() {
+  const sql = getSql();
+  if (!sql) throw new Error("DATABASE_URL is not configured.");
+  return sql;
+}
+
+export interface CreateAtlasImageInput {
+  id: string;
+  userId: string;
+  bucket: string;
+  originalPath: string;
+  thumbPath: string;
+  recognitionPath: string;
+  mimeType: string;
+  byteSize: number;
+  width: number | null;
+  height: number | null;
+  sha256: string;
+}
+
+export async function findAtlasImageByHash(
+  userId: string,
+  sha256: string,
+): Promise<AtlasImageRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasImageRow[]>`
+    SELECT *
+    FROM user_atlas_images
+    WHERE user_id = ${userId}::uuid
+      AND sha256 = ${sha256}
+      AND deleted_at IS NULL
+    ORDER BY created_at DESC
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export async function createAtlasImage(input: CreateAtlasImageInput): Promise<AtlasImageRow> {
+  const sql = requireSql();
+  const rows = await sql<AtlasImageRow[]>`
+    INSERT INTO user_atlas_images (
+      id, user_id, bucket, original_path, thumb_path, recognition_path,
+      mime_type, byte_size, width, height, sha256, updated_at
+    )
+    VALUES (
+      ${input.id}::uuid,
+      ${input.userId}::uuid,
+      ${input.bucket},
+      ${input.originalPath},
+      ${input.thumbPath},
+      ${input.recognitionPath},
+      ${input.mimeType},
+      ${input.byteSize},
+      ${input.width},
+      ${input.height},
+      ${input.sha256},
+      now()
+    )
+    RETURNING *
+  `;
+  return rows[0];
+}
+
+export async function getAtlasImage(
+  userId: string,
+  imageId: string,
+): Promise<AtlasImageRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasImageRow[]>`
+    SELECT *
+    FROM user_atlas_images
+    WHERE user_id = ${userId}::uuid
+      AND id = ${imageId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export async function listAtlasImages(
+  userId: string,
+  limit = 30,
+): Promise<AtlasImageRow[]> {
+  const sql = requireSql();
+  return sql<AtlasImageRow[]>`
+    SELECT *
+    FROM user_atlas_images
+    WHERE user_id = ${userId}::uuid
+      AND deleted_at IS NULL
+    ORDER BY created_at DESC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export async function createAtlasRecognitionJob(
+  userId: string,
+  imageId: string,
+  stage: AtlasRecognitionStage = "primary",
+): Promise<AtlasRecognitionJobRow> {
+  const sql = requireSql();
+  const rows = await sql<AtlasRecognitionJobRow[]>`
+    INSERT INTO user_atlas_recognition_jobs (
+      user_id, image_id, status, stage, strategy, updated_at
+    )
+    VALUES (
+      ${userId}::uuid,
+      ${imageId}::uuid,
+      'queued',
+      ${stage},
+      'cost_first',
+      now()
+    )
+    RETURNING *
+  `;
+  return rows[0];
+}
+
+export async function getLatestAtlasRecognitionJob(
+  userId: string,
+  imageId: string,
+): Promise<AtlasRecognitionJobRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasRecognitionJobRow[]>`
+    SELECT *
+    FROM user_atlas_recognition_jobs
+    WHERE user_id = ${userId}::uuid
+      AND image_id = ${imageId}::uuid
+    ORDER BY created_at DESC
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export async function updateAtlasImageStatus(
+  userId: string,
+  imageId: string,
+  status: AtlasImageRow["status"],
+  failureReason?: string | null,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE user_atlas_images
+    SET status = ${status},
+        failure_reason = ${failureReason ?? null},
+        updated_at = now()
+    WHERE user_id = ${userId}::uuid
+      AND id = ${imageId}::uuid
+      AND deleted_at IS NULL
+  `;
+}
+
+export async function markAtlasRecognitionRunning(
+  userId: string,
+  jobId: string,
+  provider: string,
+  stage: AtlasRecognitionStage,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE user_atlas_recognition_jobs
+    SET status = 'running',
+        provider = ${provider},
+        stage = ${stage},
+        started_at = now(),
+        updated_at = now()
+    WHERE user_id = ${userId}::uuid
+      AND id = ${jobId}::uuid
+  `;
+}
+
+export async function completeAtlasRecognitionJob(
+  userId: string,
+  jobId: string,
+  result: AtlasRecognitionResult,
+): Promise<AtlasRecognitionJobRow | null> {
+  const sql = requireSql();
+  const topPrimary = result.primary[0]?.confidence ?? null;
+  const topFine = result.fine[0]?.confidence ?? null;
+  const rows = await sql<AtlasRecognitionJobRow[]>`
+    UPDATE user_atlas_recognition_jobs
+    SET status = 'needs_review',
+        provider = ${result.provider},
+        model = ${result.model},
+        stage = ${result.stage},
+        primary_confidence = ${topPrimary},
+        fine_confidence = ${topFine},
+        uncertainty_reason = ${result.uncertainty.reason},
+        normalized_response = ${sql.json(JSON.parse(JSON.stringify(result)))},
+        raw_response = ${result.raw == null ? null : sql.json(JSON.parse(JSON.stringify(result.raw)))},
+        finished_at = now(),
+        updated_at = now()
+    WHERE user_id = ${userId}::uuid
+      AND id = ${jobId}::uuid
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export async function failAtlasRecognitionJob(
+  userId: string,
+  jobId: string,
+  error: string,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE user_atlas_recognition_jobs
+    SET status = 'failed',
+        error = ${error},
+        finished_at = now(),
+        updated_at = now()
+    WHERE user_id = ${userId}::uuid
+      AND id = ${jobId}::uuid
+  `;
+}
+
+export async function replaceAtlasCandidates(
+  userId: string,
+  imageId: string,
+  jobId: string,
+  targetLanguage: AtlasTargetLanguage,
+  result: AtlasRecognitionResult,
+): Promise<AtlasCandidateRow[]> {
+  const sql = requireSql();
+  await sql`
+    DELETE FROM user_atlas_candidates
+    WHERE user_id = ${userId}::uuid
+      AND job_id = ${jobId}::uuid
+  `;
+
+  const rows: AtlasCandidateRow[] = [];
+  async function insertCandidate(
+    level: "primary" | "fine",
+    candidate: AtlasCandidate,
+    rank: number,
+  ) {
+    const inserted = await sql<AtlasCandidateRow[]>`
+      INSERT INTO user_atlas_candidates (
+        user_id, job_id, image_id, level, label, normalized_label,
+        zh_hant, target_term, target_language, taxonomy_node_id,
+        confidence, rank, source, metadata
+      )
+      VALUES (
+        ${userId}::uuid,
+        ${jobId}::uuid,
+        ${imageId}::uuid,
+        ${level},
+        ${candidate.label},
+        ${candidate.normalizedLabel},
+        ${candidate.zhHant},
+        ${candidate.label},
+        ${targetLanguage},
+        ${candidate.taxonomyNodeId},
+        ${candidate.confidence},
+        ${rank},
+        ${result.provider},
+        ${sql.json({ stage: result.stage })}
+      )
+      RETURNING *
+    `;
+    rows.push(inserted[0]);
+  }
+
+  for (let i = 0; i < result.primary.length; i++) {
+    await insertCandidate("primary", result.primary[i], i + 1);
+  }
+  for (let i = 0; i < result.fine.length; i++) {
+    await insertCandidate("fine", result.fine[i], i + 1);
+  }
+  return rows;
+}
+
+export async function listAtlasCandidates(
+  userId: string,
+  imageId: string,
+): Promise<AtlasCandidateRow[]> {
+  const sql = requireSql();
+  return sql<AtlasCandidateRow[]>`
+    SELECT *
+    FROM user_atlas_candidates
+    WHERE user_id = ${userId}::uuid
+      AND image_id = ${imageId}::uuid
+    ORDER BY job_id, level, rank
+  `;
+}
+
+export interface ConfirmAtlasItemInput {
+  userId: string;
+  imageId: string;
+  selectedCandidateId: string | null;
+  targetLanguage: AtlasTargetLanguage;
+  primaryLabel: string;
+  fineLabel: string | null;
+  lemma: string;
+  displayZhHant: string;
+  partOfSpeech: string | null;
+  category: string | null;
+}
+
+export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<AtlasItemRow> {
+  const sql = requireSql();
+  const selectedCandidateId = input.selectedCandidateId;
+  const rows = await sql<AtlasItemRow[]>`
+    INSERT INTO user_atlas_items (
+      user_id, image_id, selected_candidate_id, target_language,
+      primary_label, fine_label, lemma, display_zh_hant,
+      part_of_speech, category, correction_source, updated_at
+    )
+    VALUES (
+      ${input.userId}::uuid,
+      ${input.imageId}::uuid,
+      ${selectedCandidateId}::uuid,
+      ${input.targetLanguage},
+      ${input.primaryLabel},
+      ${input.fineLabel},
+      ${input.lemma},
+      ${input.displayZhHant},
+      ${input.partOfSpeech},
+      ${input.category},
+      ${input.selectedCandidateId ? "candidate" : "manual"},
+      now()
+    )
+    RETURNING *
+  `;
+  await updateAtlasImageStatus(input.userId, input.imageId, "confirmed");
+  return rows[0];
+}
+
+export async function getAtlasItem(
+  userId: string,
+  itemId: string,
+): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasItemRow[]>`
+    SELECT *
+    FROM user_atlas_items
+    WHERE user_id = ${userId}::uuid
+      AND id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export interface AtlasItemEnrichmentUpdate {
+  pronunciation: string | null;
+  reading: string | null;
+  definitionTarget: string | null;
+  definitionZh: string | null;
+  enrichment: AtlasEnrichment;
+}
+
+/** Persist AI enrichment onto an item and flip backfill_status to 'filled'. */
+export async function updateAtlasItemEnrichment(
+  userId: string,
+  itemId: string,
+  fields: AtlasItemEnrichmentUpdate,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE user_atlas_items SET
+      pronunciation      = ${fields.pronunciation},
+      reading            = ${fields.reading},
+      definition_target  = ${fields.definitionTarget},
+      definition_zh_hant = ${fields.definitionZh},
+      enrichment         = ${sql.json(fields.enrichment as never)},
+      backfill_status    = 'filled',
+      backfill_error     = NULL,
+      updated_at         = now()
+    WHERE user_id = ${userId}::uuid AND id = ${itemId}::uuid
+  `;
+}
+
+export async function markAtlasItemBackfillFailed(
+  userId: string,
+  itemId: string,
+  error: string,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE user_atlas_items SET
+      backfill_status = 'failed',
+      backfill_error  = ${error.slice(0, 500)},
+      updated_at      = now()
+    WHERE user_id = ${userId}::uuid AND id = ${itemId}::uuid
+  `;
+}
+
+export async function createAtlasCardsForItem(
+  userId: string,
+  itemId: string,
+  cardTypes: ("image_recall" | "flashcard" | "spelling" | "word_recall")[],
+): Promise<AtlasCardRow[]> {
+  const sql = requireSql();
+  const item = await getAtlasItem(userId, itemId);
+  if (!item) return [];
+  const image = await getAtlasImage(userId, item.image_id);
+  if (!image) return [];
+  const deckKey: AtlasDeckKey = item.target_language === "ja" ? "atlas-image-ja" : "atlas-image-en";
+  const created: AtlasCardRow[] = [];
+
+  for (const cardType of Array.from(new Set(cardTypes))) {
+    const back = cardType === "flashcard" ? `${item.lemma}｜${item.display_zh_hant}` : item.lemma;
+    const frontText = cardType === "flashcard" ? item.display_zh_hant : null;
+    const rows = await sql<AtlasCardRow[]>`
+      INSERT INTO user_atlas_cards (
+        user_id, item_id, image_id, deck_key, card_type,
+        front_text, front_image_path, back, explanation, tags, updated_at
+      )
+      VALUES (
+        ${userId}::uuid,
+        ${item.id}::uuid,
+        ${image.id}::uuid,
+        ${deckKey},
+        ${cardType},
+        ${frontText},
+        ${image.thumb_path},
+        ${back},
+        ${item.definition_zh_hant ?? item.display_zh_hant},
+        ${["atlas"]},
+        now()
+      )
+      ON CONFLICT (user_id, item_id, deck_key, card_type)
+        WHERE deleted_at IS NULL
+      DO UPDATE SET
+        front_text = EXCLUDED.front_text,
+        front_image_path = EXCLUDED.front_image_path,
+        back = EXCLUDED.back,
+        explanation = EXCLUDED.explanation,
+        updated_at = now()
+      RETURNING *
+    `;
+    const card = rows[0];
+    created.push(card);
+    await sql`
+      INSERT INTO user_atlas_card_state (user_id, card_id, status, next_review_at, updated_at)
+      VALUES (${userId}::uuid, ${card.id}::uuid, '新卡', now(), now())
+      ON CONFLICT (user_id, card_id) DO NOTHING
+    `;
+  }
+
+  await updateAtlasImageStatus(userId, item.image_id, "cards_ready");
+  return created;
+}
+
+export async function fetchAtlasDue(
+  userId: string,
+  limit = 20,
+  mode: "new" | "review" | "both" = "both",
+): Promise<AtlasDueCard[]> {
+  const sql = requireSql();
+  const includeNew = mode === "new" || mode === "both";
+  const includeReview = mode === "review" || mode === "both";
+  const rows = await sql<Record<string, unknown>[]>`
+    SELECT
+      c.*,
+      s.status AS s_status,
+      s.interval_days AS s_interval_days,
+      s.next_review_at AS s_next_review_at,
+      s.review_count AS s_review_count,
+      s.mistake_count AS s_mistake_count,
+      s.last_rating AS s_last_rating,
+      s.last_reviewed_at AS s_last_reviewed_at,
+      s.created_at AS s_created_at,
+      s.updated_at AS s_updated_at,
+      i.id AS i_id,
+      i.user_id AS i_user_id,
+      i.image_id AS i_image_id,
+      i.selected_candidate_id AS i_selected_candidate_id,
+      i.target_language AS i_target_language,
+      i.canonical_word_id AS i_canonical_word_id,
+      i.primary_label AS i_primary_label,
+      i.fine_label AS i_fine_label,
+      i.lemma AS i_lemma,
+      i.display_zh_hant AS i_display_zh_hant,
+      i.part_of_speech AS i_part_of_speech,
+      i.cefr_level AS i_cefr_level,
+      i.pronunciation AS i_pronunciation,
+      i.reading AS i_reading,
+      i.category AS i_category,
+      i.taxonomy_path AS i_taxonomy_path,
+      i.definition_zh_hant AS i_definition_zh_hant,
+      i.definition_target AS i_definition_target,
+      i.example_target AS i_example_target,
+      i.example_zh_hant AS i_example_zh_hant,
+      i.note_zh_hant AS i_note_zh_hant,
+      i.correction_source AS i_correction_source,
+      i.backfill_status AS i_backfill_status,
+      i.backfill_error AS i_backfill_error,
+      i.visibility AS i_visibility,
+      i.review_status AS i_review_status,
+      i.published_at AS i_published_at,
+      i.public_slug AS i_public_slug,
+      i.share_image_path AS i_share_image_path,
+      i.cdn_cache_key AS i_cdn_cache_key,
+      i.created_at AS i_created_at,
+      i.updated_at AS i_updated_at,
+      i.deleted_at AS i_deleted_at,
+      img.id AS img_id,
+      img.user_id AS img_user_id,
+      img.status AS img_status,
+      img.bucket AS img_bucket,
+      img.original_path AS img_original_path,
+      img.thumb_path AS img_thumb_path,
+      img.recognition_path AS img_recognition_path,
+      img.mime_type AS img_mime_type,
+      img.byte_size AS img_byte_size,
+      img.width AS img_width,
+      img.height AS img_height,
+      img.sha256 AS img_sha256,
+      img.perceptual_hash AS img_perceptual_hash,
+      img.failure_reason AS img_failure_reason,
+      img.created_at AS img_created_at,
+      img.updated_at AS img_updated_at,
+      img.deleted_at AS img_deleted_at,
+      COALESCE(m.mastery::float8, 0) AS mastery
+    FROM user_atlas_cards c
+    JOIN user_atlas_items i ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+    JOIN user_atlas_images img ON img.id = c.image_id AND img.user_id = ${userId}::uuid
+    LEFT JOIN user_atlas_card_state s
+      ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+    LEFT JOIN user_atlas_item_mastery m
+      ON m.item_id = i.id
+     AND m.user_id = ${userId}::uuid
+     AND m.target_language = i.target_language
+    WHERE c.user_id = ${userId}::uuid
+      AND c.deleted_at IS NULL
+      AND i.deleted_at IS NULL
+      AND img.deleted_at IS NULL
+      AND (
+        (${includeNew} AND (s.card_id IS NULL OR s.status = '新卡'))
+        OR (${includeReview} AND s.next_review_at <= now())
+      )
+    ORDER BY
+      CASE WHEN s.card_id IS NULL OR s.status = '新卡' THEN 1 ELSE 0 END,
+      s.next_review_at ASC NULLS FIRST,
+      c.created_at ASC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+
+  return rows.map(rowToAtlasDueCard);
+}
+
+export async function listAtlasCustomWords(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<Array<{
+  item: AtlasItemRow;
+  originalPath: string;
+  thumbPath: string;
+  updatedAt: string;
+}>> {
+  const sql = requireSql();
+  // Returns the FULL item row (to_jsonb) plus both image paths so the
+  // custom-words route can embed the complete per-word detail
+  // (atlasItemToWord). That lets iOS render WordDetailView without a second
+  // round-trip to /api/atlas/items/{id}/detail on every open.
+  return sql`
+    SELECT DISTINCT ON (i.id)
+      to_jsonb(i) AS item,
+      img.original_path AS "originalPath",
+      img.thumb_path AS "thumbPath",
+      GREATEST(i.updated_at, c.updated_at, img.updated_at) AS "updatedAt"
+    FROM user_atlas_items i
+    JOIN user_atlas_cards c
+      ON c.item_id = i.id
+     AND c.user_id = ${userId}::uuid
+     AND c.deleted_at IS NULL
+    JOIN user_atlas_images img
+      ON img.id = i.image_id
+     AND img.user_id = ${userId}::uuid
+     AND img.deleted_at IS NULL
+    WHERE i.user_id = ${userId}::uuid
+      AND i.target_language = ${targetLanguage}
+      AND i.deleted_at IS NULL
+    ORDER BY i.id, GREATEST(i.updated_at, c.updated_at, img.updated_at) DESC
+  `;
+}
+
+export async function atlasStudyStats(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<{
+  total: number;
+  seen: number;
+  due: number;
+  new: number;
+  todayNew: number;
+  byStatus: Array<{ status: Status; c: number }>;
+}> {
+  const sql = requireSql();
+  const [totalRows, seenRows, dueRows, todayRows, byStatus] = await Promise.all([
+    sql<{ total: number }[]>`
+      SELECT count(*)::int AS total
+      FROM user_atlas_cards c
+      JOIN user_atlas_items i
+        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      WHERE c.user_id = ${userId}::uuid
+        AND c.deleted_at IS NULL
+        AND i.deleted_at IS NULL
+        AND i.target_language = ${targetLanguage}
+    `,
+    sql<{ seen: number }[]>`
+      SELECT count(*)::int AS seen
+      FROM user_atlas_cards c
+      JOIN user_atlas_items i
+        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      JOIN user_atlas_card_state s
+        ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+      WHERE c.user_id = ${userId}::uuid
+        AND c.deleted_at IS NULL
+        AND i.deleted_at IS NULL
+        AND i.target_language = ${targetLanguage}
+        AND s.last_reviewed_at IS NOT NULL
+    `,
+    sql<{ due: number }[]>`
+      SELECT count(*)::int AS due
+      FROM user_atlas_cards c
+      JOIN user_atlas_items i
+        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      JOIN user_atlas_card_state s
+        ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+      WHERE c.user_id = ${userId}::uuid
+        AND c.deleted_at IS NULL
+        AND i.deleted_at IS NULL
+        AND i.target_language = ${targetLanguage}
+        AND s.status <> '新卡'
+        AND s.next_review_at <= now()
+    `,
+    sql<{ todayNew: number }[]>`
+      SELECT count(*)::int AS "todayNew"
+      FROM user_atlas_cards c
+      JOIN user_atlas_items i
+        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      JOIN user_atlas_card_state s
+        ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+      WHERE c.user_id = ${userId}::uuid
+        AND c.deleted_at IS NULL
+        AND i.deleted_at IS NULL
+        AND i.target_language = ${targetLanguage}
+        AND s.last_reviewed_at IS NOT NULL
+        AND (s.last_reviewed_at AT TIME ZONE 'Asia/Taipei')::date
+          = (now() AT TIME ZONE 'Asia/Taipei')::date
+    `,
+    sql<{ status: Status; c: number }[]>`
+      SELECT s.status, count(*)::int AS c
+      FROM user_atlas_cards c
+      JOIN user_atlas_items i
+        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      LEFT JOIN user_atlas_card_state s
+        ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+      WHERE c.user_id = ${userId}::uuid
+        AND c.deleted_at IS NULL
+        AND i.deleted_at IS NULL
+        AND i.target_language = ${targetLanguage}
+      GROUP BY s.status
+    `,
+  ]);
+  const total = totalRows[0]?.total ?? 0;
+  const seen = seenRows[0]?.seen ?? 0;
+  return {
+    total,
+    seen,
+    due: dueRows[0]?.due ?? 0,
+    new: Math.max(0, total - seen),
+    todayNew: todayRows[0]?.todayNew ?? 0,
+    byStatus: byStatus.filter((row) => row.status),
+  };
+}
+
+export async function atlasCategoryProgress(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<{ category: "custom"; total: number; seen: number } | null> {
+  const stats = await atlasStudyStats(userId, targetLanguage);
+  if (stats.total === 0) return null;
+  return { category: "custom", total: stats.total, seen: stats.seen };
+}
+
+function rowToAtlasDueCard(r: Record<string, unknown>): AtlasDueCard {
+  const card = {
+    id: String(r.id),
+    user_id: String(r.user_id),
+    item_id: String(r.item_id),
+    image_id: String(r.image_id),
+    deck_key: r.deck_key as AtlasDeckKey,
+    card_type: r.card_type as AtlasCardRow["card_type"],
+    front_text: (r.front_text as string | null) ?? null,
+    front_image_path: (r.front_image_path as string | null) ?? null,
+    back: String(r.back),
+    explanation: (r.explanation as string | null) ?? null,
+    tags: (r.tags as string[]) ?? [],
+    metadata: r.metadata,
+    created_at: String(r.created_at),
+    updated_at: String(r.updated_at),
+    deleted_at: (r.deleted_at as string | null) ?? null,
+  };
+  const item = {
+    id: String(r.i_id),
+    user_id: String(r.i_user_id),
+    image_id: String(r.i_image_id),
+    selected_candidate_id: (r.i_selected_candidate_id as string | null) ?? null,
+    target_language: r.i_target_language as AtlasTargetLanguage,
+    canonical_word_id: (r.i_canonical_word_id as string | null) ?? null,
+    primary_label: String(r.i_primary_label),
+    fine_label: (r.i_fine_label as string | null) ?? null,
+    lemma: String(r.i_lemma),
+    display_zh_hant: String(r.i_display_zh_hant),
+    part_of_speech: (r.i_part_of_speech as string | null) ?? null,
+    cefr_level: (r.i_cefr_level as string | null) ?? null,
+    pronunciation: (r.i_pronunciation as string | null) ?? null,
+    reading: (r.i_reading as string | null) ?? null,
+    category: (r.i_category as string | null) ?? null,
+    taxonomy_path: (r.i_taxonomy_path as string[]) ?? [],
+    definition_zh_hant: (r.i_definition_zh_hant as string | null) ?? null,
+    definition_target: (r.i_definition_target as string | null) ?? null,
+    example_target: (r.i_example_target as string | null) ?? null,
+    example_zh_hant: (r.i_example_zh_hant as string | null) ?? null,
+    note_zh_hant: (r.i_note_zh_hant as string | null) ?? null,
+    correction_source: r.i_correction_source as AtlasItemRow["correction_source"],
+    backfill_status: r.i_backfill_status as AtlasItemRow["backfill_status"],
+    backfill_error: (r.i_backfill_error as string | null) ?? null,
+    visibility: r.i_visibility as AtlasItemRow["visibility"],
+    review_status: r.i_review_status as AtlasItemRow["review_status"],
+    published_at: (r.i_published_at as string | null) ?? null,
+    public_slug: (r.i_public_slug as string | null) ?? null,
+    share_image_path: (r.i_share_image_path as string | null) ?? null,
+    cdn_cache_key: (r.i_cdn_cache_key as string | null) ?? null,
+    created_at: String(r.i_created_at),
+    updated_at: String(r.i_updated_at),
+    deleted_at: (r.i_deleted_at as string | null) ?? null,
+  };
+  const image = {
+    id: String(r.img_id),
+    user_id: String(r.img_user_id),
+    status: r.img_status as AtlasImageRow["status"],
+    bucket: String(r.img_bucket),
+    original_path: String(r.img_original_path),
+    thumb_path: String(r.img_thumb_path),
+    recognition_path: String(r.img_recognition_path),
+    mime_type: String(r.img_mime_type),
+    byte_size: Number(r.img_byte_size),
+    width: r.img_width == null ? null : Number(r.img_width),
+    height: r.img_height == null ? null : Number(r.img_height),
+    sha256: String(r.img_sha256),
+    perceptual_hash: (r.img_perceptual_hash as string | null) ?? null,
+    failure_reason: (r.img_failure_reason as string | null) ?? null,
+    created_at: String(r.img_created_at),
+    updated_at: String(r.img_updated_at),
+    deleted_at: (r.img_deleted_at as string | null) ?? null,
+  };
+  const state =
+    r.s_status == null
+      ? null
+      : {
+          user_id: String(r.user_id),
+          card_id: String(r.id),
+          status: r.s_status as Status,
+          interval_days: Number(r.s_interval_days),
+          next_review_at: String(r.s_next_review_at),
+          review_count: Number(r.s_review_count),
+          mistake_count: Number(r.s_mistake_count),
+          last_rating: (r.s_last_rating as Rating | null) ?? null,
+          last_reviewed_at: (r.s_last_reviewed_at as string | null) ?? null,
+          created_at: String(r.s_created_at),
+          updated_at: String(r.s_updated_at),
+        };
+  return { card, item, image, state, mastery: Number(r.mastery) || 0 };
+}
+
+export async function getAtlasDueCardById(
+  userId: string,
+  cardId: string,
+): Promise<AtlasDueCard | null> {
+  const sql = requireSql();
+  const rows = await sql<Record<string, unknown>[]>`
+    SELECT
+      c.*,
+      s.status AS s_status,
+      s.interval_days AS s_interval_days,
+      s.next_review_at AS s_next_review_at,
+      s.review_count AS s_review_count,
+      s.mistake_count AS s_mistake_count,
+      s.last_rating AS s_last_rating,
+      s.last_reviewed_at AS s_last_reviewed_at,
+      s.created_at AS s_created_at,
+      s.updated_at AS s_updated_at,
+      i.id AS i_id,
+      i.user_id AS i_user_id,
+      i.image_id AS i_image_id,
+      i.selected_candidate_id AS i_selected_candidate_id,
+      i.target_language AS i_target_language,
+      i.canonical_word_id AS i_canonical_word_id,
+      i.primary_label AS i_primary_label,
+      i.fine_label AS i_fine_label,
+      i.lemma AS i_lemma,
+      i.display_zh_hant AS i_display_zh_hant,
+      i.part_of_speech AS i_part_of_speech,
+      i.cefr_level AS i_cefr_level,
+      i.pronunciation AS i_pronunciation,
+      i.reading AS i_reading,
+      i.category AS i_category,
+      i.taxonomy_path AS i_taxonomy_path,
+      i.definition_zh_hant AS i_definition_zh_hant,
+      i.definition_target AS i_definition_target,
+      i.example_target AS i_example_target,
+      i.example_zh_hant AS i_example_zh_hant,
+      i.note_zh_hant AS i_note_zh_hant,
+      i.correction_source AS i_correction_source,
+      i.backfill_status AS i_backfill_status,
+      i.backfill_error AS i_backfill_error,
+      i.visibility AS i_visibility,
+      i.review_status AS i_review_status,
+      i.published_at AS i_published_at,
+      i.public_slug AS i_public_slug,
+      i.share_image_path AS i_share_image_path,
+      i.cdn_cache_key AS i_cdn_cache_key,
+      i.created_at AS i_created_at,
+      i.updated_at AS i_updated_at,
+      i.deleted_at AS i_deleted_at,
+      img.id AS img_id,
+      img.user_id AS img_user_id,
+      img.status AS img_status,
+      img.bucket AS img_bucket,
+      img.original_path AS img_original_path,
+      img.thumb_path AS img_thumb_path,
+      img.recognition_path AS img_recognition_path,
+      img.mime_type AS img_mime_type,
+      img.byte_size AS img_byte_size,
+      img.width AS img_width,
+      img.height AS img_height,
+      img.sha256 AS img_sha256,
+      img.perceptual_hash AS img_perceptual_hash,
+      img.failure_reason AS img_failure_reason,
+      img.created_at AS img_created_at,
+      img.updated_at AS img_updated_at,
+      img.deleted_at AS img_deleted_at,
+      COALESCE(m.mastery::float8, 0) AS mastery
+    FROM user_atlas_cards c
+    JOIN user_atlas_items i ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+    JOIN user_atlas_images img ON img.id = c.image_id AND img.user_id = ${userId}::uuid
+    LEFT JOIN user_atlas_card_state s
+      ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+    LEFT JOIN user_atlas_item_mastery m
+      ON m.item_id = i.id
+     AND m.user_id = ${userId}::uuid
+     AND m.target_language = i.target_language
+    WHERE c.user_id = ${userId}::uuid
+      AND c.id = ${cardId}::uuid
+      AND c.deleted_at IS NULL
+      AND i.deleted_at IS NULL
+      AND img.deleted_at IS NULL
+    LIMIT 1
+  `;
+  return rows[0] ? rowToAtlasDueCard(rows[0]) : null;
+}
+
+export async function getAtlasMastery(
+  userId: string,
+  itemId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<AtlasMasteryRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasMasteryRow[]>`
+    SELECT item_id, user_id, target_language, mastery::float8 AS mastery,
+           last_reviewed_at, review_count, updated_at
+    FROM user_atlas_item_mastery
+    WHERE user_id = ${userId}::uuid
+      AND item_id = ${itemId}::uuid
+      AND target_language = ${targetLanguage}
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export async function upsertAtlasReview(
+  userId: string,
+  cardId: string,
+  next: {
+    status: Status;
+    intervalDays: number;
+    nextReviewAt: Date;
+    rating: Rating;
+  },
+  isMistake: boolean,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO user_atlas_card_state (
+      user_id, card_id, status, interval_days, next_review_at,
+      review_count, mistake_count, last_rating, last_reviewed_at, updated_at
+    )
+    VALUES (
+      ${userId}::uuid, ${cardId}::uuid, ${next.status}, ${next.intervalDays},
+      ${next.nextReviewAt.toISOString()}, 1, ${isMistake ? 1 : 0},
+      ${next.rating}, now(), now()
+    )
+    ON CONFLICT (user_id, card_id) DO UPDATE SET
+      status = EXCLUDED.status,
+      interval_days = EXCLUDED.interval_days,
+      next_review_at = EXCLUDED.next_review_at,
+      review_count = user_atlas_card_state.review_count + 1,
+      mistake_count = user_atlas_card_state.mistake_count + ${isMistake ? 1 : 0},
+      last_rating = EXCLUDED.last_rating,
+      last_reviewed_at = now(),
+      updated_at = now()
+  `;
+}
+
+export async function upsertAtlasMastery(
+  userId: string,
+  itemId: string,
+  targetLanguage: AtlasTargetLanguage,
+  mastery: number,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO user_atlas_item_mastery (
+      user_id, item_id, target_language, mastery, last_reviewed_at, review_count, updated_at
+    )
+    VALUES (
+      ${userId}::uuid, ${itemId}::uuid, ${targetLanguage}, ${mastery}, now(), 1, now()
+    )
+    ON CONFLICT (user_id, item_id, target_language) DO UPDATE SET
+      mastery = EXCLUDED.mastery,
+      last_reviewed_at = EXCLUDED.last_reviewed_at,
+      review_count = user_atlas_item_mastery.review_count + 1,
+      updated_at = now()
+  `;
+}
+
+export async function insertAtlasStudyLog(input: {
+  userId: string;
+  itemId: string;
+  cardId: string;
+  imageId: string;
+  targetLanguage: AtlasTargetLanguage;
+  activity: string;
+  rating: 0 | 1 | 2 | 3;
+  isCorrect: boolean;
+  responseMs: number | null;
+  intervalBefore: number | null;
+  intervalAfter: number | null;
+  masteryBefore: number | null;
+  masteryAfter: number | null;
+  clientSessionId: string | null;
+  metadata?: Record<string, string | number | boolean | null>;
+}): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO user_atlas_study_logs (
+      user_id, item_id, card_id, image_id, target_language, activity, rating,
+      is_correct, response_ms, interval_before, interval_after,
+      mastery_before, mastery_after, client_session_id, metadata
+    )
+    VALUES (
+      ${input.userId}::uuid,
+      ${input.itemId}::uuid,
+      ${input.cardId}::uuid,
+      ${input.imageId}::uuid,
+      ${input.targetLanguage},
+      ${input.activity},
+      ${input.rating},
+      ${input.isCorrect},
+      ${input.responseMs},
+      ${input.intervalBefore},
+      ${input.intervalAfter},
+      ${input.masteryBefore},
+      ${input.masteryAfter},
+      ${input.clientSessionId},
+      ${sql.json(input.metadata ?? {})}
+    )
+  `;
+}
+
+export async function insertAtlasAiUsage(input: {
+  userId: string;
+  jobId: string;
+  imageId: string;
+  provider: string;
+  model: string | null;
+  operation: string;
+  detailLevel: string | null;
+  inputTokens?: number;
+  outputTokens?: number;
+  imageCount?: number;
+  estimatedCostUsd?: number;
+  latencyMs?: number;
+  success: boolean;
+}): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO user_atlas_ai_usage (
+      user_id, job_id, image_id, provider, model, operation, detail_level,
+      input_tokens, output_tokens, image_count, estimated_cost_usd,
+      latency_ms, success
+    )
+    VALUES (
+      ${input.userId}::uuid,
+      ${input.jobId}::uuid,
+      ${input.imageId}::uuid,
+      ${input.provider},
+      ${input.model},
+      ${input.operation},
+      ${input.detailLevel},
+      ${input.inputTokens ?? null},
+      ${input.outputTokens ?? null},
+      ${input.imageCount ?? 1},
+      ${input.estimatedCostUsd ?? null},
+      ${input.latencyMs ?? null},
+      ${input.success}
+    )
+  `;
+}
+
+export interface AtlasStorageCleanupPaths {
+  privatePaths: string[];
+  publicPaths: string[];
+}
+
+export async function getAtlasStoragePathsForUser(
+  userId: string,
+): Promise<AtlasStorageCleanupPaths> {
+  const sql = requireSql();
+  const privateRows = await sql<{ original_path: string; thumb_path: string; recognition_path: string }[]>`
+    SELECT original_path, thumb_path, recognition_path
+    FROM user_atlas_images
+    WHERE user_id = ${userId}::uuid
+  `;
+  const publicRows = await sql<{ image_public_path: string | null }[]>`
+    SELECT image_public_path
+    FROM atlas_public_items
+    WHERE owner_user_id = ${userId}::uuid
+      AND image_public_path IS NOT NULL
+  `;
+  return {
+    privatePaths: privateRows.flatMap((row) => [
+      row.original_path,
+      row.thumb_path,
+      row.recognition_path,
+    ]),
+    publicPaths: publicRows
+      .map((row) => row.image_public_path)
+      .filter((path): path is string => Boolean(path)),
+  };
+}
+
+export async function deleteAtlasImageCascade(
+  userId: string,
+  imageId: string,
+): Promise<AtlasStorageCleanupPaths | null> {
+  const sql = requireSql();
+  const imageRows = await sql<{
+    original_path: string;
+    thumb_path: string;
+    recognition_path: string;
+  }[]>`
+    SELECT original_path, thumb_path, recognition_path
+    FROM user_atlas_images
+    WHERE user_id = ${userId}::uuid
+      AND id = ${imageId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  const image = imageRows[0];
+  if (!image) return null;
+
+  const publicRows = await sql<{ image_public_path: string | null }[]>`
+    SELECT p.image_public_path
+    FROM atlas_public_items p
+    JOIN user_atlas_items i
+      ON i.id = p.source_item_id
+     AND i.user_id = ${userId}::uuid
+     AND i.image_id = ${imageId}::uuid
+    WHERE p.owner_user_id = ${userId}::uuid
+      AND p.image_public_path IS NOT NULL
+  `;
+
+  await sql.begin(async (tx) => {
+    await tx`
+      DELETE FROM user_atlas_study_logs
+      WHERE user_id = ${userId}::uuid
+        AND image_id = ${imageId}::uuid
+    `;
+    await tx`
+      DELETE FROM user_atlas_images
+      WHERE user_id = ${userId}::uuid
+        AND id = ${imageId}::uuid
+    `;
+  });
+
+  return {
+    privatePaths: [image.original_path, image.thumb_path, image.recognition_path],
+    publicPaths: publicRows
+      .map((row) => row.image_public_path)
+      .filter((path): path is string => Boolean(path)),
+  };
+}
+
+export async function deleteAtlasItemCascade(
+  userId: string,
+  itemId: string,
+): Promise<AtlasStorageCleanupPaths | null> {
+  const sql = requireSql();
+  const rows = await sql<{ image_id: string }[]>`
+    SELECT image_id
+    FROM user_atlas_items
+    WHERE user_id = ${userId}::uuid
+      AND id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  const item = rows[0];
+  if (!item) return null;
+  return deleteAtlasImageCascade(userId, item.image_id);
+}
+
+export async function cleanupOldAtlasRawResponses(retentionDays = 30): Promise<number> {
+  const sql = requireSql();
+  const days = Math.min(365, Math.max(1, Math.floor(retentionDays)));
+  const rows = await sql<{ cleaned: number }[]>`
+    WITH cleaned AS (
+      UPDATE user_atlas_recognition_jobs
+      SET raw_response = NULL,
+          updated_at = now()
+      WHERE raw_response IS NOT NULL
+        AND COALESCE(finished_at, updated_at, created_at) < now() - (${days}::text || ' days')::interval
+      RETURNING id
+    )
+    SELECT count(*)::int AS cleaned
+    FROM cleaned
+  `;
+  return Number(rows[0]?.cleaned ?? 0);
+}
+
+function slugifyAtlas(input: string): string {
+  const base = input
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 48);
+  return base || "atlas";
+}
+
+export async function submitAtlasItemForReview(
+  userId: string,
+  itemId: string,
+): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const item = await getAtlasItem(userId, itemId);
+  if (!item) return null;
+  const slugBase = slugifyAtlas(item.lemma);
+  const publicSlug = `${slugBase}-${item.id.slice(0, 8)}`;
+  const rows = await sql<AtlasItemRow[]>`
+    UPDATE user_atlas_items
+    SET visibility = 'public',
+        review_status = 'pending',
+        public_slug = COALESCE(public_slug, ${publicSlug}),
+        updated_at = now()
+    WHERE user_id = ${userId}::uuid
+      AND id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export async function listAtlasReviewItems(
+  status: "pending" | "approved" | "rejected" | "takedown" | "" = "pending",
+  limit = 100,
+): Promise<(AtlasItemRow & { username: string | null; thumb_path: string | null })[]> {
+  const sql = requireSql();
+  return sql<(AtlasItemRow & { username: string | null; thumb_path: string | null })[]>`
+    SELECT i.*, p.username, img.thumb_path
+    FROM user_atlas_items i
+    LEFT JOIN profiles p ON p.id = i.user_id
+    LEFT JOIN user_atlas_images img ON img.id = i.image_id
+    WHERE i.deleted_at IS NULL
+      AND (${status} = '' OR i.review_status = ${status})
+      AND i.review_status <> 'draft'
+    ORDER BY
+      CASE i.review_status WHEN 'pending' THEN 0 ELSE 1 END,
+      i.updated_at DESC
+    LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export async function listAtlasFriendVisibleItems(
+  viewerUserId: string,
+  limit = 60,
+): Promise<(AtlasItemRow & { owner_username: string | null; thumb_path: string | null })[]> {
+  const sql = requireSql();
+  return sql<(AtlasItemRow & { owner_username: string | null; thumb_path: string | null })[]>`
+    SELECT i.*, p.username AS owner_username, img.thumb_path
+    FROM user_atlas_items i
+    JOIN user_atlas_images img
+      ON img.id = i.image_id
+     AND img.user_id = i.user_id
+     AND img.deleted_at IS NULL
+    LEFT JOIN profiles p ON p.id = i.user_id
+    WHERE i.deleted_at IS NULL
+      AND i.user_id <> ${viewerUserId}::uuid
+      AND i.review_status <> 'takedown'
+      AND (
+        (
+          i.visibility = 'friends'
+          AND EXISTS (
+            SELECT 1
+            FROM user_friendships f
+            WHERE f.user_id = ${viewerUserId}::uuid
+              AND f.friend_user_id = i.user_id
+              AND f.status = 'accepted'
+          )
+        )
+        OR EXISTS (
+          SELECT 1
+          FROM atlas_item_grants g
+          WHERE g.viewer_user_id = ${viewerUserId}::uuid
+            AND g.owner_user_id = i.user_id
+            AND g.item_id = i.id
+            AND g.scope = 'view'
+        )
+      )
+    ORDER BY i.updated_at DESC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export interface AtlasSyncBundle {
+  serverTime: string;
+  images: AtlasImageRow[];
+  items: AtlasItemRow[];
+  cards: AtlasCardRow[];
+  cardStates: AtlasCardStateRow[];
+  mastery: AtlasMasteryRow[];
+}
+
+function syncSinceClause(since: Date | null): string | null {
+  return since ? since.toISOString() : null;
+}
+
+export async function getAtlasSyncBundle(
+  userId: string,
+  since: Date | null,
+  limit = 500,
+): Promise<AtlasSyncBundle> {
+  const sql = requireSql();
+  const maxRows = Math.min(1000, Math.max(1, Math.floor(limit)));
+  const sinceIso = syncSinceClause(since);
+  const [images, items, cards, cardStates, mastery, nowRows] = await Promise.all([
+    sql<AtlasImageRow[]>`
+      SELECT *
+      FROM user_atlas_images
+      WHERE user_id = ${userId}::uuid
+        AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
+      ORDER BY updated_at ASC
+      LIMIT ${maxRows}
+    `,
+    sql<AtlasItemRow[]>`
+      SELECT *
+      FROM user_atlas_items
+      WHERE user_id = ${userId}::uuid
+        AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
+      ORDER BY updated_at ASC
+      LIMIT ${maxRows}
+    `,
+    sql<AtlasCardRow[]>`
+      SELECT *
+      FROM user_atlas_cards
+      WHERE user_id = ${userId}::uuid
+        AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
+      ORDER BY updated_at ASC
+      LIMIT ${maxRows}
+    `,
+    sql<AtlasCardStateRow[]>`
+      SELECT user_id, card_id, status, interval_days::float8 AS interval_days,
+             next_review_at, review_count, mistake_count, last_rating,
+             last_reviewed_at, created_at, updated_at
+      FROM user_atlas_card_state
+      WHERE user_id = ${userId}::uuid
+        AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
+      ORDER BY updated_at ASC
+      LIMIT ${maxRows}
+    `,
+    sql<AtlasMasteryRow[]>`
+      SELECT user_id, item_id, target_language, mastery::float8 AS mastery,
+             last_reviewed_at, review_count, updated_at
+      FROM user_atlas_item_mastery
+      WHERE user_id = ${userId}::uuid
+        AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
+      ORDER BY updated_at ASC
+      LIMIT ${maxRows}
+    `,
+    sql<{ now: string }[]>`SELECT now()::text AS now`,
+  ]);
+
+  return {
+    serverTime: nowRows[0]?.now ?? new Date().toISOString(),
+    images,
+    items,
+    cards,
+    cardStates,
+    mastery,
+  };
+}
+
+export async function getAtlasReviewItem(itemId: string): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasItemRow[]>`
+    SELECT *
+    FROM user_atlas_items
+    WHERE id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export async function approveAtlasPublicItem(input: {
+  itemId: string;
+  imagePublicPath: string | null;
+  attributionName: string | null;
+}): Promise<AtlasPublicItemRow | null> {
+  const sql = requireSql();
+  const item = await getAtlasReviewItem(input.itemId);
+  if (!item) return null;
+  const slug = item.public_slug ?? `${slugifyAtlas(item.lemma)}-${item.id.slice(0, 8)}`;
+  const rows = await sql<AtlasPublicItemRow[]>`
+    INSERT INTO atlas_public_items (
+      source_item_id, owner_user_id, public_slug, lemma, display_zh_hant,
+      target_language, category, image_public_path, attribution_name,
+      review_status, published_at, updated_at
+    )
+    VALUES (
+      ${item.id}::uuid,
+      ${item.user_id}::uuid,
+      ${slug},
+      ${item.lemma},
+      ${item.display_zh_hant},
+      ${item.target_language},
+      ${item.category},
+      ${input.imagePublicPath},
+      ${input.attributionName},
+      'approved',
+      now(),
+      now()
+    )
+    ON CONFLICT (public_slug) DO UPDATE SET
+      lemma = EXCLUDED.lemma,
+      display_zh_hant = EXCLUDED.display_zh_hant,
+      target_language = EXCLUDED.target_language,
+      category = EXCLUDED.category,
+      image_public_path = EXCLUDED.image_public_path,
+      attribution_name = EXCLUDED.attribution_name,
+      review_status = 'approved',
+      updated_at = now()
+    RETURNING *
+  `;
+  await sql`
+    UPDATE user_atlas_items
+    SET visibility = 'public',
+        review_status = 'approved',
+        published_at = COALESCE(published_at, now()),
+        public_slug = ${slug},
+        share_image_path = ${input.imagePublicPath},
+        cdn_cache_key = ${slug},
+        updated_at = now()
+    WHERE id = ${item.id}::uuid
+  `;
+  return rows[0] ?? null;
+}
+
+export async function rejectAtlasReviewItem(itemId: string): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasItemRow[]>`
+    UPDATE user_atlas_items
+    SET review_status = 'rejected',
+        visibility = 'private',
+        updated_at = now()
+    WHERE id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export async function takedownAtlasPublicItem(itemId: string): Promise<void> {
+  const sql = requireSql();
+  await sql.begin(async (tx) => {
+    await tx`
+      UPDATE user_atlas_items
+      SET review_status = 'takedown',
+          visibility = 'private',
+          updated_at = now()
+      WHERE id = ${itemId}::uuid
+    `;
+    await tx`
+      UPDATE atlas_public_items
+      SET review_status = 'takedown',
+          updated_at = now()
+      WHERE source_item_id = ${itemId}::uuid
+    `;
+  });
+}
+
+export async function listAtlasPublicItems(limit = 60): Promise<AtlasPublicItemRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicItemRow[]>`
+    SELECT *
+    FROM atlas_public_items
+    WHERE review_status = 'approved'
+    ORDER BY published_at DESC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export async function getAtlasPublicItem(slug: string): Promise<AtlasPublicItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasPublicItemRow[]>`
+    SELECT *
+    FROM atlas_public_items
+    WHERE public_slug = ${slug}
+      AND review_status = 'approved'
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}

@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
+import { getAtlasStoragePathsForUser } from "@/lib/atlas-db";
+import {
+  removeAtlasPrivateObjects,
+  removeAtlasPublicObjects,
+} from "@/lib/atlas/storage";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -11,6 +16,17 @@ export const dynamic = "force-dynamic";
 export async function POST() {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  try {
+    const paths = await getAtlasStoragePathsForUser(userId);
+    await Promise.all([
+      removeAtlasPrivateObjects(paths.privatePaths),
+      removeAtlasPublicObjects(paths.publicPaths),
+    ]);
+  } catch (err) {
+    console.error("[delete-account] atlas storage cleanup failed", err);
+    return NextResponse.json({ error: "delete failed" }, { status: 500 });
+  }
 
   const admin = createServiceRoleClient();
   const { error } = await admin.auth.admin.deleteUser(userId);

@@ -172,8 +172,20 @@ export async function GET(req: Request) {
     await attachChoices(queue);
     const choicesMs = Math.round(performance.now() - tChoices);
 
+    // A custom item can carry more than one card (image_recall + flashcard),
+    // but the unified study flow reviews a word once and the queue is keyed by
+    // word_id client-side. Collapse to one card per item — keep the first,
+    // since fetchAtlasDue orders in-progress reviews ahead of new cards, so we
+    // retain the card already being reviewed rather than resetting to a 新卡.
+    const seenItemIds = new Set<string>();
+    const dedupedAtlasQueue = atlasQueue.filter((row) => {
+      if (seenItemIds.has(row.item.id)) return false;
+      seenItemIds.add(row.item.id);
+      return true;
+    });
+
     const tLocalize = performance.now();
-    const atlasStudyQueue = wantsCustom ? await atlasDueToStudyQueue(userId, atlasQueue) : [];
+    const atlasStudyQueue = wantsCustom ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue) : [];
     const localized = (await localizeStudyQueue(queue, settings.uiLang))
       .concat(await localizeStudyQueue(atlasStudyQueue, settings.uiLang))
       .slice(0, limit);

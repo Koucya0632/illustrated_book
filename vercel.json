@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/partman",
       "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/atlas-cleanup",
+      "schedule": "30 3 * * *"
     }
   ]
 }

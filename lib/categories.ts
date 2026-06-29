@@ -6,6 +6,15 @@ import type { Category } from "@/types";
 
 export const categories: Category[] = [
   {
+    id: "custom",
+    name: "Custom",
+    nameZh: "自定義",
+    emoji: "🧩",
+    description: "用自己的照片建立的學習卡片",
+    color: "from-teal-100 to-yellow-100",
+    imageUrl: "",
+  },
+  {
     id: "kitchen",
     name: "Kitchen",
     nameZh: "廚房",

@@ -6,13 +6,82 @@ import {
   fetchDue,
   studyStats,
   type QueueMode,
+  type DueCard,
 } from "@/lib/cards-db";
+import { fetchAtlasDue, atlasStudyStats } from "@/lib/atlas-db";
+import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+function addStats(
+  a: Awaited<ReturnType<typeof studyStats>>,
+  b: Awaited<ReturnType<typeof atlasStudyStats>>,
+) {
+  const byStatus = new Map<string, number>();
+  for (const row of a.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
+  for (const row of b.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
+  return {
+    total: a.total + b.total,
+    seen: a.seen + b.seen,
+    due: a.due + b.due,
+    new: a.new + b.new,
+    todayNew: a.todayNew + b.todayNew,
+    byStatus: Array.from(byStatus, ([status, c]) => ({ status, c })),
+  };
+}
+
+async function atlasDueToStudyQueue(userId: string, due: Awaited<ReturnType<typeof fetchAtlasDue>>): Promise<DueCard[]> {
+  return Promise.all(
+    due.map(async (row) => {
+      const urls = await createAtlasImageSignedUrls({
+        imagePath: row.image.original_path,
+        thumbPath: row.image.thumb_path,
+      });
+      return {
+        card: {
+          id: `atlas:${row.card.id}`,
+          word_id: `atlas:${row.item.id}`,
+          card_type: row.card.card_type === "image_recall" ? "回想卡" : "單字卡",
+          front: row.card.front_text ?? row.item.display_zh_hant,
+          back: row.item.lemma,
+          explanation: row.card.explanation ?? row.item.definition_zh_hant,
+          tags: ["custom", "atlas"],
+          deck_key: row.item.target_language === "ja" ? "image-ja" : "image-en",
+        },
+        state: row.state
+          ? {
+              user_id: userId,
+              card_id: `atlas:${row.card.id}`,
+              status: row.state.status,
+              interval_days: row.state.interval_days,
+              next_review_at: row.state.next_review_at,
+              review_count: row.state.review_count,
+              mistake_count: row.state.mistake_count,
+              last_rating: row.state.last_rating,
+              last_reviewed_at: row.state.last_reviewed_at,
+            }
+          : null,
+        word: {
+          id: `atlas:${row.item.id}`,
+          word: row.item.lemma,
+          chinese: row.item.display_zh_hant,
+          image_url: urls.thumbUrl || urls.imageUrl,
+          pronunciation: row.item.pronunciation ?? "",
+          reading: row.item.reading ?? undefined,
+          target_language: row.item.target_language,
+          category: "custom",
+        },
+        choices: undefined,
+        spellingChoices: undefined,
+        mastery: Math.round(row.mastery),
+      };
+    }),
+  );
+}
 
 export async function GET(req: Request) {
   const t0 = performance.now();
@@ -47,6 +116,11 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
+  const publicCategories = categories.filter((category) => category !== "custom");
+  // "custom" cards join the queue when explicitly requested OR when there's no
+  // public theme filter at all (全部 / 復習) — i.e. custom is part of "all your
+  // studied words". A specific public theme (no "custom") still excludes them.
+  const wantsCustom = categories.includes("custom") || publicCategories.length === 0;
   // Mode: "new" (only first-time cards), "review" (only due reviews), or
   // "both" (legacy mixed queue). Unknown values fall back to "both".
   const modeParam = (searchParams.get("mode") ?? "both").trim();
@@ -63,16 +137,25 @@ export async function GET(req: Request) {
     // Learning direction is authoritative. Legacy client deck filters must
     // never widen a Japanese queue back to all decks when they disagree.
     const effectiveDecks = [directionDeck];
-    const [queue, stats, masteryRows] = await Promise.all([
-      fetchDue(
-        userId,
-        limit,
-        newLimit,
-        { cefr, tags, categories, deckKeys: effectiveDecks },
-        mode,
-      ),
-      studyStats(userId, categories, directionDeck),
+    const shouldFetchPublic = categories.length === 0 || publicCategories.length > 0;
+    const [queue, stats, masteryRows, atlasQueue, customStats] = await Promise.all([
+      shouldFetchPublic
+        ? fetchDue(
+            userId,
+            limit,
+            newLimit,
+            { cefr, tags, categories: publicCategories, deckKeys: effectiveDecks },
+            mode,
+          )
+        : Promise.resolve([]),
+      shouldFetchPublic
+        ? studyStats(userId, publicCategories, directionDeck)
+        : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       getAllMastery(userId, targetLanguage),
+      wantsCustom ? fetchAtlasDue(userId, limit, mode) : Promise.resolve([]),
+      wantsCustom
+        ? atlasStudyStats(userId, targetLanguage)
+        : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
     ]);
     const dbMs = Math.round(performance.now() - tDb);
 
@@ -89,13 +172,28 @@ export async function GET(req: Request) {
     await attachChoices(queue);
     const choicesMs = Math.round(performance.now() - tChoices);
 
+    // A custom item can carry more than one card (image_recall + flashcard),
+    // but the unified study flow reviews a word once and the queue is keyed by
+    // word_id client-side. Collapse to one card per item — keep the first,
+    // since fetchAtlasDue orders in-progress reviews ahead of new cards, so we
+    // retain the card already being reviewed rather than resetting to a 新卡.
+    const seenItemIds = new Set<string>();
+    const dedupedAtlasQueue = atlasQueue.filter((row) => {
+      if (seenItemIds.has(row.item.id)) return false;
+      seenItemIds.add(row.item.id);
+      return true;
+    });
+
     const tLocalize = performance.now();
-    const localized = await localizeStudyQueue(queue, settings.uiLang);
+    const atlasStudyQueue = wantsCustom ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue) : [];
+    const localized = (await localizeStudyQueue(queue, settings.uiLang))
+      .concat(await localizeStudyQueue(atlasStudyQueue, settings.uiLang))
+      .slice(0, limit);
     const localizeMs = Math.round(performance.now() - tLocalize);
 
     const totalMs = Math.round(performance.now() - t0);
     return NextResponse.json(
-      { queue: localized, stats },
+      { queue: localized, stats: addStats(stats, customStats) },
       {
         headers: {
           "Server-Timing": [

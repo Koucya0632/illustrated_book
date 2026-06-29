@@ -635,6 +635,335 @@ const DDL = [
   // No direct client policies are intentionally exposed in v1.
 
   // =====================================================================
+  // Schema v4 — user-owned custom atlas.
+  // Private source images + recognition candidates + user-corrected items
+  // live under user_atlas_* tables. Sharing/public discovery uses separate
+  // grants and public snapshot tables so we never relax the owner boundary
+  // around raw images, AI responses, mastery, or SRS history.
+  // =====================================================================
+  `CREATE EXTENSION IF NOT EXISTS pgcrypto`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_images (
+     id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id          UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     status           TEXT NOT NULL DEFAULT 'uploaded' CHECK (status IN
+                       ('uploaded','processing','needs_review','confirmed','cards_ready','failed','deleted')),
+     bucket           TEXT NOT NULL DEFAULT 'user-atlas-images',
+     original_path    TEXT NOT NULL,
+     thumb_path       TEXT NOT NULL,
+     recognition_path TEXT NOT NULL,
+     mime_type        TEXT NOT NULL,
+     byte_size        INT NOT NULL CHECK (byte_size > 0),
+     width            INT,
+     height           INT,
+     sha256           TEXT NOT NULL,
+     perceptual_hash  TEXT,
+     failure_reason   TEXT,
+     created_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     deleted_at       TIMESTAMPTZ
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_images_user_created_idx
+     ON user_atlas_images(user_id, created_at DESC)`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS user_atlas_images_user_sha_idx
+     ON user_atlas_images(user_id, sha256)
+     WHERE deleted_at IS NULL`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_recognition_jobs (
+     id                    UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id               UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     image_id              UUID NOT NULL REFERENCES user_atlas_images(id) ON DELETE CASCADE,
+     status                TEXT NOT NULL DEFAULT 'queued' CHECK (status IN
+                           ('queued','running','needs_review','succeeded','failed','cancelled')),
+     strategy              TEXT NOT NULL DEFAULT 'cost_first',
+     stage                 TEXT NOT NULL DEFAULT 'primary' CHECK (stage IN
+                           ('primary','fine','escalated','manual')),
+     provider              TEXT,
+     model                 TEXT,
+     detail_level          TEXT,
+     primary_confidence    NUMERIC(5,4),
+     fine_confidence       NUMERIC(5,4),
+     uncertainty_reason    TEXT,
+     escalated             BOOLEAN NOT NULL DEFAULT FALSE,
+     raw_response          JSONB,
+     normalized_response   JSONB,
+     error                 TEXT,
+     started_at            TIMESTAMPTZ,
+     finished_at           TIMESTAMPTZ,
+     created_at            TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at            TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_jobs_user_created_idx
+     ON user_atlas_recognition_jobs(user_id, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_jobs_status_idx
+     ON user_atlas_recognition_jobs(status, created_at)`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_candidates (
+     id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id             UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     job_id              UUID NOT NULL REFERENCES user_atlas_recognition_jobs(id) ON DELETE CASCADE,
+     image_id            UUID NOT NULL REFERENCES user_atlas_images(id) ON DELETE CASCADE,
+     level               TEXT NOT NULL CHECK (level IN ('primary','fine','attribute')),
+     parent_candidate_id UUID REFERENCES user_atlas_candidates(id) ON DELETE CASCADE,
+     label               TEXT NOT NULL,
+     normalized_label    TEXT NOT NULL,
+     zh_hant             TEXT,
+     target_term         TEXT,
+     target_language     TEXT NOT NULL DEFAULT 'en' CHECK (target_language IN ('en','ja')),
+     taxonomy_node_id    TEXT,
+     confidence          NUMERIC(5,4) NOT NULL CHECK (confidence >= 0 AND confidence <= 1),
+     rank                INT NOT NULL,
+     source              TEXT NOT NULL,
+     bounding_box        JSONB,
+     metadata            JSONB NOT NULL DEFAULT '{}'::jsonb,
+     created_at          TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_candidates_job_rank_idx
+     ON user_atlas_candidates(job_id, level, rank)`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_items (
+     id                    UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id               UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     image_id              UUID NOT NULL REFERENCES user_atlas_images(id) ON DELETE CASCADE,
+     selected_candidate_id UUID REFERENCES user_atlas_candidates(id) ON DELETE SET NULL,
+     target_language       TEXT NOT NULL DEFAULT 'en' CHECK (target_language IN ('en','ja')),
+     canonical_word_id     TEXT REFERENCES words(id) ON DELETE SET NULL,
+     primary_label         TEXT NOT NULL,
+     fine_label            TEXT,
+     lemma                 TEXT NOT NULL,
+     display_zh_hant       TEXT NOT NULL,
+     part_of_speech        TEXT,
+     cefr_level            TEXT,
+     pronunciation         TEXT,
+     reading               TEXT,
+     category              TEXT,
+     taxonomy_path         TEXT[] NOT NULL DEFAULT '{}',
+     definition_zh_hant    TEXT,
+     definition_target     TEXT,
+     example_target        TEXT,
+     example_zh_hant       TEXT,
+     note_zh_hant          TEXT,
+     correction_source     TEXT NOT NULL DEFAULT 'user' CHECK (correction_source IN
+                           ('candidate','manual','dictionary_match','ai_backfill')),
+     backfill_status       TEXT NOT NULL DEFAULT 'pending' CHECK (backfill_status IN
+                           ('pending','filled','failed','skipped')),
+     backfill_error        TEXT,
+     visibility            TEXT NOT NULL DEFAULT 'private' CHECK (visibility IN
+                           ('private','friends','public','unlisted')),
+     review_status         TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
+                           ('draft','pending','approved','rejected','takedown')),
+     published_at          TIMESTAMPTZ,
+     public_slug           TEXT,
+     share_image_path      TEXT,
+     cdn_cache_key         TEXT,
+     created_at            TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at            TIMESTAMPTZ NOT NULL DEFAULT now(),
+     deleted_at            TIMESTAMPTZ
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_items_user_created_idx
+     ON user_atlas_items(user_id, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_items_user_language_idx
+     ON user_atlas_items(user_id, target_language, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_items_visibility_idx
+     ON user_atlas_items(visibility, updated_at DESC)
+     WHERE deleted_at IS NULL`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS user_atlas_items_public_slug_uniq
+     ON user_atlas_items(public_slug)
+     WHERE public_slug IS NOT NULL`,
+  // AI enrichment blob (enrichWord output: forms / etymology / synonyms /
+  // antonyms / related / mnemonic). Definitions + pronunciation/reading live in
+  // the dedicated columns above; this holds the structured extras.
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS enrichment JSONB NOT NULL DEFAULT '{}'::jsonb`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_cards (
+     id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id          UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     item_id          UUID NOT NULL REFERENCES user_atlas_items(id) ON DELETE CASCADE,
+     image_id         UUID NOT NULL REFERENCES user_atlas_images(id) ON DELETE CASCADE,
+     deck_key         TEXT NOT NULL CHECK (deck_key IN ('atlas-image-en','atlas-image-ja')),
+     card_type        TEXT NOT NULL CHECK (card_type IN
+                      ('image_recall','word_recall','spelling','flashcard')),
+     front_text       TEXT,
+     front_image_path TEXT,
+     back             TEXT NOT NULL,
+     explanation      TEXT,
+     tags             TEXT[] NOT NULL DEFAULT '{}',
+     metadata         JSONB NOT NULL DEFAULT '{}'::jsonb,
+     created_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     deleted_at       TIMESTAMPTZ
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_cards_user_item_idx
+     ON user_atlas_cards(user_id, item_id)`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS user_atlas_cards_unique_type_idx
+     ON user_atlas_cards(user_id, item_id, deck_key, card_type)
+     WHERE deleted_at IS NULL`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_card_state (
+     user_id          UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     card_id          UUID NOT NULL REFERENCES user_atlas_cards(id) ON DELETE CASCADE,
+     status           TEXT NOT NULL DEFAULT '新卡' CHECK (status IN ('新卡','學習中','複習中','穩定')),
+     interval_days    NUMERIC(10,4) NOT NULL DEFAULT 0,
+     next_review_at   TIMESTAMPTZ NOT NULL DEFAULT now(),
+     review_count     INT NOT NULL DEFAULT 0,
+     mistake_count    INT NOT NULL DEFAULT 0,
+     last_rating      TEXT CHECK (last_rating IN ('重來','困難','穩定','熟練')),
+     last_reviewed_at TIMESTAMPTZ,
+     created_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, card_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_card_state_due_idx
+     ON user_atlas_card_state(user_id, next_review_at)`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_item_mastery (
+     user_id          UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     item_id          UUID NOT NULL REFERENCES user_atlas_items(id) ON DELETE CASCADE,
+     target_language  TEXT NOT NULL DEFAULT 'en' CHECK (target_language IN ('en','ja')),
+     mastery          NUMERIC(5,2) NOT NULL DEFAULT 0,
+     last_reviewed_at TIMESTAMPTZ,
+     review_count     INT NOT NULL DEFAULT 0,
+     updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, item_id, target_language)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_mastery_user_language_idx
+     ON user_atlas_item_mastery(user_id, target_language, mastery)`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_study_logs (
+     id                BIGSERIAL PRIMARY KEY,
+     user_id           UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     item_id           UUID REFERENCES user_atlas_items(id) ON DELETE SET NULL,
+     card_id           UUID REFERENCES user_atlas_cards(id) ON DELETE SET NULL,
+     image_id          UUID REFERENCES user_atlas_images(id) ON DELETE SET NULL,
+     target_language   TEXT NOT NULL DEFAULT 'en' CHECK (target_language IN ('en','ja')),
+     activity          TEXT NOT NULL CHECK (activity IN
+                         ('flashcard','mcq','typing','listening','image_recall','reading')),
+     rating            SMALLINT NOT NULL CHECK (rating IN (0,1,2,3)),
+     is_correct        BOOLEAN,
+     response_ms       INT,
+     interval_before   NUMERIC(10,4),
+     interval_after    NUMERIC(10,4),
+     mastery_before    NUMERIC(5,2),
+     mastery_after     NUMERIC(5,2),
+     client_session_id TEXT,
+     metadata          JSONB NOT NULL DEFAULT '{}'::jsonb,
+     created_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_logs_user_created_idx
+     ON user_atlas_study_logs(user_id, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_logs_user_language_created_idx
+     ON user_atlas_study_logs(user_id, target_language, created_at DESC)`,
+
+  `CREATE TABLE IF NOT EXISTS user_atlas_ai_usage (
+     id                 BIGSERIAL PRIMARY KEY,
+     user_id            UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     job_id             UUID REFERENCES user_atlas_recognition_jobs(id) ON DELETE SET NULL,
+     image_id           UUID REFERENCES user_atlas_images(id) ON DELETE SET NULL,
+     provider           TEXT NOT NULL,
+     model              TEXT,
+     operation          TEXT NOT NULL,
+     detail_level       TEXT,
+     input_tokens       INT,
+     output_tokens      INT,
+     image_count        INT NOT NULL DEFAULT 1,
+     estimated_cost_usd NUMERIC(10,6),
+     latency_ms         INT,
+     success            BOOLEAN NOT NULL DEFAULT TRUE,
+     created_at         TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_atlas_ai_usage_user_created_idx
+     ON user_atlas_ai_usage(user_id, created_at DESC)`,
+
+  `CREATE TABLE IF NOT EXISTS user_friendships (
+     user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     friend_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     status         TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','accepted','blocked')),
+     created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, friend_user_id),
+     CHECK (user_id <> friend_user_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_friendships_friend_idx
+     ON user_friendships(friend_user_id, status)`,
+
+  `CREATE TABLE IF NOT EXISTS atlas_item_grants (
+     item_id         UUID NOT NULL REFERENCES user_atlas_items(id) ON DELETE CASCADE,
+     owner_user_id   UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     viewer_user_id  UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     scope           TEXT NOT NULL DEFAULT 'view' CHECK (scope IN ('view')),
+     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (item_id, viewer_user_id),
+     CHECK (owner_user_id <> viewer_user_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_item_grants_viewer_idx
+     ON atlas_item_grants(viewer_user_id, created_at DESC)`,
+
+  `CREATE TABLE IF NOT EXISTS atlas_public_items (
+     id                UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     source_item_id    UUID NOT NULL REFERENCES user_atlas_items(id) ON DELETE CASCADE,
+     owner_user_id     UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     public_slug       TEXT NOT NULL UNIQUE,
+     lemma             TEXT NOT NULL,
+     display_zh_hant   TEXT NOT NULL,
+     target_language   TEXT NOT NULL CHECK (target_language IN ('en','ja')),
+     category          TEXT,
+     image_public_path TEXT,
+     attribution_name  TEXT,
+     review_status     TEXT NOT NULL CHECK (review_status IN ('approved','takedown')),
+     published_at      TIMESTAMPTZ NOT NULL,
+     updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_public_items_published_idx
+     ON atlas_public_items(published_at DESC)
+     WHERE review_status = 'approved'`,
+
+  `ALTER TABLE user_atlas_images           ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_recognition_jobs ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_candidates       ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_items            ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_cards            ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_card_state       ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_item_mastery     ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_study_logs       ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_atlas_ai_usage         ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_friendships            ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE atlas_item_grants           ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE atlas_public_items          ENABLE ROW LEVEL SECURITY`,
+
+  ...[
+    "user_atlas_images",
+    "user_atlas_recognition_jobs",
+    "user_atlas_candidates",
+    "user_atlas_items",
+    "user_atlas_cards",
+    "user_atlas_card_state",
+    "user_atlas_item_mastery",
+    "user_atlas_study_logs",
+    "user_atlas_ai_usage",
+  ].flatMap((t) => [
+    `DROP POLICY IF EXISTS ${t}_own ON ${t}`,
+    `CREATE POLICY ${t}_own ON ${t} FOR ALL
+       USING (auth.uid() = user_id) WITH CHECK (auth.uid() = user_id)`,
+  ]),
+
+  `DROP POLICY IF EXISTS user_friendships_own ON user_friendships`,
+  `CREATE POLICY user_friendships_own ON user_friendships FOR ALL
+     USING (auth.uid() = user_id OR auth.uid() = friend_user_id)
+     WITH CHECK (auth.uid() = user_id)`,
+  `DROP POLICY IF EXISTS atlas_item_grants_owner_or_viewer ON atlas_item_grants`,
+  `CREATE POLICY atlas_item_grants_owner_or_viewer ON atlas_item_grants FOR SELECT
+     USING (auth.uid() = owner_user_id OR auth.uid() = viewer_user_id)`,
+  `DROP POLICY IF EXISTS atlas_item_grants_owner_write ON atlas_item_grants`,
+  `CREATE POLICY atlas_item_grants_owner_write ON atlas_item_grants FOR INSERT
+     WITH CHECK (auth.uid() = owner_user_id)`,
+  `DROP POLICY IF EXISTS atlas_item_grants_owner_delete ON atlas_item_grants`,
+  `CREATE POLICY atlas_item_grants_owner_delete ON atlas_item_grants FOR DELETE
+     USING (auth.uid() = owner_user_id)`,
+  `DROP POLICY IF EXISTS atlas_public_items_public_read ON atlas_public_items`,
+  `CREATE POLICY atlas_public_items_public_read ON atlas_public_items FOR SELECT
+     USING (review_status = 'approved')`,
+
+  // =====================================================================
   // Schema v3+ — multi-language overlays.
   // `category_translations`: per-language names overlaid on top of
   //   `categories.name` (en) / `categories.name_zh` (zh-Hant). `zh-Hant` is

@@ -61,3 +61,28 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@keyframes tuji-loading-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tuji-toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tuji-loading-ring {
+  animation: tuji-loading-ring 0.82s linear infinite;
+}
+
+.tuji-toast-enter {
+  animation: tuji-toast-enter 0.18s ease-out both;
+}

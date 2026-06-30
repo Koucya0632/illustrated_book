@@ -1,353 +1,305 @@
-# 單詞導入格式與內容規範
+# Tuji 詞庫導入規範
 
-本文件說明如何為這個圖鑑式英語單字 App 準備、導入一個單字的資料：欄位、必填/選填、允許值、導入方式，以及哪些內容會「自動生成、不必手寫」。
+更新日期：2026-07-01
 
-> 一句話：**最少**只要給 `id / word / chinese / category / partOfSpeech / pronunciation / imageUrl / 至少一句例句(en+zh)`，其餘可留空或交給 AI 補。
+## 1. 目的
 
----
+詞庫資料服務：
 
-## 0. 最小範例（看這個就會了）
+- Web 公開詞庫。
+- iOS Cards/Search/Word detail。
+- Study queue 產卡。
+- Admin 管理。
+
+新增詞時要確保資料可被 iOS 正常顯示，也可產生學習卡。
+
+## 2. 最小資料
 
 ```ts
 {
-  id: "fridge",                       // 小寫 kebab，唯一，會變成網址 /word/fridge
-  word: "fridge",                     // 英文單字
-  chinese: "冰箱",                     // 中文意思（會存成 zh 釋義）
-  category: "kitchen",                // 現有分類 id 之一（見第 3 節）；分類可自行擴充，不限 9 類
-  partOfSpeech: "noun",               // 詞性
-  pronunciation: "/frɪdʒ/",          // 音標（IPA/KK 字串）
-  imageUrl: "https://.../fridge.jpg", // 圖片網址
-  examples: [                          // 至少一句，每句要有 en + zh
-    { en: "Put the milk in the fridge.", zh: "把牛奶放進冰箱。" },
+  id: "fridge",
+  word: "fridge",
+  chinese: "冰箱",
+  category: "kitchen",
+  partOfSpeech: "noun",
+  pronunciation: "/frɪdʒ/",
+  imageUrl: "https://...",
+  examples: [
+    { en: "Put the milk in the fridge.", zh: "把牛奶放進冰箱。" }
   ],
-  // —— 以下全部選填 ——
-  alsoKnownAs: ["refrigerator"],
-  collocations: ["open the fridge", "empty fridge"],
-  relatedWords: ["freezer", "kitchen"],
-  confusingWords: [{ word: "refrigerator", note: "refrigerator 較正式，fridge 較口語。" }],
-  note: "記憶撇步（可留空，之後用 AI 補）",
-  cefrLevel: "A2",                    // A1–C2，可省略
-  status: "published",               // 預設 published
+  status: "published"
 }
 ```
 
----
+要求：
 
-## 1. 資料怎麼存（正規化 v2 表）
+- `id` 小寫 kebab-case，不能隨意改。
+- `category` 必須存在。
+- 至少一個例句。
+- 圖片 URL 要穩定，正式資料建議使用 Supabase Storage 的 `word-images` bucket。
 
-一個「單字」其實散落在多張表，但你導入時用上面的扁平物件即可，系統會自動拆解：
+## 3. 可選欄位
 
-| 概念 | 對應表 | 說明 |
-| --- | --- | --- |
-| 主資料 | `words` | id, word, category, part_of_speech, pronunciation, image_url, cefr_level, status, collocations, note, **etymology, forms** |
-| 中文/多語釋義 | `word_definitions` | 每筆 `(language, definition)`；`chinese` 會存成 `language='zh'` |
-| 例句 | `word_examples` + `word_example_translations` | 英文句子 + 各語言翻譯（`zh`、可選 `ja`…） |
-| 關聯詞 | `word_relations` | synonym/antonym/hypernym/hyponym/confusing/see-also |
-| 標籤 | `word_tags`（+ `tags`） | 自由 slug |
-| SRS 卡片 | `cards` | **自動生成**（見第 5 節） |
-
----
-
-## 2. 欄位規格
-
-| 欄位 | 必填 | 型別 | 說明 / 允許值 |
-| --- | :---: | --- | --- |
-| `id` | ✅ | string | 小寫 kebab-case，符合 `^[a-z0-9-]+$`，全站唯一。是網址與卡片的鍵，**不要事後改**。 |
-| `word` | ✅ | string | 英文單字（顯示用，可含空格，如 `alarm clock`）。 |
-| `chinese` | ✅ | string | 中文意思。多義可用「；」分隔。 |
-| `category` | ✅ | string | 對應 `categories` 表裡某個已存在的分類 id（見第 3 節）。**分類可自行擴充，不限數量**；只需先把新分類加進 `lib/categories.ts`。 |
-| `partOfSpeech` | ✅ | string | 詞性，慣例：`noun` / `verb` / `adjective` / `noun / verb` / `noun (plural)`。 |
-| `pronunciation` | ✅ | string | 音標字串，如 `/ˈer.pleɪn/`。播放發音用瀏覽器 TTS，不需音檔。 |
-| `imageUrl` | ✅ | string(URL) | 代表圖。建議 Supabase Storage 公開網址或穩定外部圖。 |
-| `examples` | ✅ | array | 至少 1 句；每句 `{ en, zh }` 皆必填（zh 會存進例句翻譯）。 |
-| `alsoKnownAs` | ⬜ | string[] | 同物別名/同義拼法。 |
-| `collocations` | ⬜ | string[] | 常見搭配，如 `open the fridge`。 |
-| `relatedWords` | ⬜ | string[] | 會轉成 `see-also` 關聯。 |
-| `confusingWords` | ⬜ | `{word,note}[]` | 會轉成 `confusing` 關聯（帶說明）。 |
-| `note` | ⬜ | string | 記憶撇步；留空可由 AI 補（只在空時補）。 |
-| `cefrLevel` | ⬜ | enum | `A1 A2 B1 B2 C1 C2`（其一），否則省略。 |
-| `status` | ⬜ | enum | `published`（預設）/ `draft` / `archived`。只有 `published` 對外顯示。 |
-| `audioUrl` | ⬜ | string | 自備發音音檔網址（目前多走 TTS，可不填）。 |
-| `etymology` | ⬜ | string | 詞源/構詞拆解（繁中）。通常交給 AI 生成。 |
-| `forms` | ⬜ | `{label,value}[]` | 詞形變化，如 `{label:"複數", value:"fridges"}`。通常交給 AI 生成。 |
-
-進階（完整 v2 形態，取代上面的扁平欄位時）：
-- `definitions: { language, definition, cefrLevel?, sortOrder }[]`（多語釋義；給了就不需 `chinese`）。
-- `examples: { en, zh, translations?: {ja?:…}, cefrLevel?, sortOrder? }[]`（多語例句翻譯）。
-- `relations: { wordId, type, note? }[]`（直接給 typed 關聯，取代 relatedWords/confusingWords）。
-- `tags: string[]`。
-
----
-
-## 3. 允許值清單
-
-**分類 `category`（目前內建 9 種，可自行擴充）**
-
-`category` 不是固定 enum，而是字串 id，對應 `categories` 表裡的某一列。這張表由 `lib/categories.ts` 的 `categories[]` seed 進 DB（部署時 `scripts/migrate.ts` 處理，idempotent）。目前內建：
-
-| id | 中文 | emoji |
-| --- | --- | --- |
-| `kitchen` | 廚房 | 🍳 |
-| `bathroom` | 浴室 | 🛁 |
-| `bedroom` | 臥室 | 🛏️ |
-| `living-room` | 客廳 | 🛋️ |
-| `office` | 辦公室 | 💼 |
-| `street` | 街上 | 🚶 |
-| `supermarket` | 超市 | 🛒 |
-| `transportation` | 交通工具 | 🚗 |
-| `seasonings` | 調味料 | 🧂 |
-
-> 要加新分類（不限 9 類）？見下方「3.1 新增分類」。
-
-**CEFR**：`A1 A2 B1 B2 C1 C2`
-**status**：`published` / `draft` / `archived`
-**關聯類型 `relations[].type`**：`synonym`（同義）/ `antonym`（反義）/ `hypernym`（上位）/ `hyponym`（下位）/ `confusing`（易混淆）/ `see-also`（相關）
-**語言碼**（definitions / 例句 translations）：ISO 639-1，如 `zh`、`ja`、`en`。
-**關聯目標 `relations[].wordId`**：可填字典裡的 `id`（會變成可點連結），或任意英文詞（顯示為純文字 chip）。
-
----
-
-## 3.1 新增分類（不限 9 類）
-
-分類定義在 `lib/categories.ts` 的 `categories[]`；部署時 `scripts/migrate.ts` 會把它 seed 進 DB 的 `categories` 表（idempotent，`ON CONFLICT DO NOTHING`）。要加一個新分類：
-
-1. 在 `lib/categories.ts` 的 `categories` 陣列加一筆：
-   ```ts
-   {
-     id: "garden",                        // 小寫 kebab，唯一，是分類篩選/網址鍵
-     name: "Garden",                      // 英文名（顯示用）
-     nameZh: "花園",                       // 中文名
-     emoji: "🌱",                          // 卡片用 emoji
-     description: "種花種菜的角落",          // 一句說明
-     color: "from-green-100 to-lime-100",  // Tailwind 漸層（分類卡背景）
-     imageUrl: "https://.../garden.jpg",   // 分類封面圖
-   }
-   ```
-2.（可選）同一次就加引用它的字：到 `lib/words.ts` / `supplemental-words.json` 加 `category: "garden"` 的單字。
-3. 部署。migrate 會**先 seed 分類、再 seed 字**，所以「新分類 + 引用它的字」可在同一次部署完成。
-
-> ⚠️ **順序重點**：`words.category` 有外鍵指向 `categories.id`。某個字若用了還不存在的分類 id，seed 會失敗。只要把分類加進 `lib/categories.ts`，migrate 就會在 seed 字之前先把它建好——因此唯一要記得的是「新分類必須出現在 `lib/categories.ts`」，不能只寫在單字的 `category` 欄位。
->
-> 型別上 `category` 是 `string`（`CategoryId = string`），不需要改任何 TS enum；分類數量無上限。
-
----
+| 欄位 | 用途 |
+|---|---|
+| `alsoKnownAs` | 別名 |
+| `collocations` | 搭配詞 |
+| `relatedWords` | 相關詞 |
+| `confusingWords` | 易混淆詞 |
+| `note` | 人工撰寫的記憶撇步 |
+| `cefrLevel` | A1-C2 |
+| `audioUrl` | 自備音檔 |
+| `etymology` | 人工整理的詞源 |
+| `forms` | 人工整理的詞形變化 |
 
 ## 4. 導入方式
 
-### A.（推薦）種子檔 —— 可被學習、可批量
-把單字加進 `lib/words.ts` 的 `rawWords`，或大批用 `lib/supplemental-words.json`（會 merge 進 `words`）。兩者都是 `LegacyWord` 形態（第 0 節那個物件）。部署時 `scripts/migrate.ts` 會：
-1. **Seed 缺漏的字**：比對 DB 已有的 id，只插入「不在 DB 的 seed 詞」（idempotent，每次部署都跑，不再只在空表時 seed）。
-2. **每次**都跑 `generateCards` + v2 backfill（皆 idempotent，`ON CONFLICT DO NOTHING`）。
+推薦：
 
-→ 因此新增單字最穩的做法是加進 seed 再部署：words / 釋義 / 例句 / 關聯 / **SRS 卡片** 都會自動建好（含日後增量新增）。
+1. 加到 seed/source data。
+2. 跑 migration。
+3. 讓 `generateCards` 產生 SRS cards。
+4. 用 Web/iOS 檢查 Word detail 和 Study queue。
 
-### B. Admin 後台單筆新增 `/admin/words`
-用 `WordForm` 填一筆 → `POST /api/admin/words`。適合臨時加一兩個字。
-> ⚠️ **限制**：`generateCards` 只針對種子清單跑，**Admin 新增的字目前不會自動產生 SRS 卡片**，所以它會出現在「單字庫 / 搜尋 / 單字頁」，但**不會進入 /study 複習佇列**。要可複習，請走 A（加進種子）或日後補一個「為單字產卡」的流程。
+Admin 單筆新增適合臨時內容，但要確認是否已產生 cards；沒有 cards 的詞不會進入 Study。
 
-### C. 程式化 JSON（`POST /api/admin/words`）
-Body 就是上面的單字物件（v2 Word，可帶 legacy 鏡像欄位）。受 middleware 的 admin cookie 保護。批量導入可寫一次性 script 迴圈呼叫，或直接寫 DB（仿 `lib/words-db.ts` 的 `create`）。同樣有 B 的「不自動產卡」限制。
+## 5. 分類
 
----
+分類由 `categories` 資料控制。新增分類時：
 
-## 5. 會自動生成的內容（不必手寫）
+1. 先新增分類 definition。
+2. 再新增引用該分類的詞。
+3. 確認 `/api/categories` 與 iOS `CategoriesStore` 可顯示。
 
-- **SRS 卡片**（`scripts/migrate.ts` 的 `generateCards`）：每個（種子）單字產生
-  - `recall-zh-en`（中→英）、`recall-en-zh`（英→中）、
-  - `cloze-1`（填空；當某例句包含該單字才產生）。
-  學習頁的「卡片類型」篩選即依這些 `deck_key`。
-- **legacy → v2 轉換**：`chinese` → zh 釋義；`relatedWords` → see-also；`confusingWords` → confusing。
-- **AI 豐富化**（選用，零必填）：`同義/反義/相關詞`、`詞形變化(forms)`、`記憶撇步(note，空才補)`、`詞源(etymology)`。
-  - 批量：`AI_GATEWAY_API_KEY` 設好後 `npm run enrich`（撈 `etymology IS NULL` 的字）。
-  - 單筆：Admin 單字頁「AI 生成補齊」鈕（`/api/admin/words/[id]/enrich`）。
+## 6. 圖片與 AI 生圖規範
 
----
+詞庫圖片是 iOS Cards、Search、Word detail、Study 卡片的第一視覺線索。圖片要幫助辨識單字，不是裝飾圖。
 
-## 6. 驗證規則（`lib/word-validate.ts`）
+### 6.1 圖片來源優先級
 
-`POST/PATCH /api/admin/words` 會擋下不合法資料：
-- `id` 必須小寫 kebab（`^[a-z0-9-]+$`）。
-- `word / chinese / category / partOfSpeech / pronunciation / imageUrl` 皆必填。
-- `examples` 至少 1 筆，且每筆都要有 `en` 與 `zh`。
+| 優先級 | 來源 | 使用時機 |
+|---|---|---|
+| 1 | 自有照片/自製圖 | 最穩定，適合核心詞 |
+| 2 | 可授權照片 | 必須保留來源與授權 |
+| 3 | AI 生圖 | 找不到穩定授權圖、或需要統一風格時 |
+| 4 | 外部 hotlink | 不建議，只能作為暫存 |
 
----
-
-## 7. 完整範例
-
-**最小可用（legacy 扁平，種子/Admin 皆可）**
-```ts
-{
-  id: "spoon",
-  word: "spoon",
-  chinese: "湯匙",
-  category: "kitchen",
-  partOfSpeech: "noun",
-  pronunciation: "/spuːn/",
-  imageUrl: "https://.../spoon.jpg",
-  examples: [{ en: "Use a spoon to eat the soup.", zh: "用湯匙喝湯。" }],
-}
-```
-
-**進階（完整 v2，多語 + typed 關聯）**
-```ts
-{
-  id: "spoon",
-  word: "spoon",
-  category: "kitchen",
-  partOfSpeech: "noun",
-  pronunciation: "/spuːn/",
-  imageUrl: "https://.../spoon.jpg",
-  status: "published",
-  cefrLevel: "A1",
-  definitions: [
-    { language: "zh", definition: "湯匙", sortOrder: 0 },
-    { language: "ja", definition: "スプーン", sortOrder: 1 },
-  ],
-  examples: [
-    { en: "Use a spoon to eat the soup.", zh: "用湯匙喝湯。",
-      translations: { zh: "用湯匙喝湯。", ja: "スプーンでスープを飲む。" }, sortOrder: 0 },
-  ],
-  collocations: ["a spoonful of"],
-  tags: ["tableware"],
-  relations: [
-    { wordId: "knife", type: "see-also" },
-    { wordId: "bowl", type: "see-also" },
-  ],
-  note: "spoon 與 fork、knife 一組餐具。",
-}
-```
-
----
-
-## 8. 注意事項
-
-- **id 不可改**：它是網址、卡片、關聯目標的鍵；改名等於換一個字。
-- **圖片**：正式資料一律優先使用「乾淨教育插圖」（見第 9 節），避免關鍵字照片造成圖文不符。生圖後存到本地 `public/word-images/{id}.png`（已 gitignore），再跑 `npx tsx scripts/upload-local-images.ts --apply`：腳本會把圖推到 Supabase Storage `word-images` bucket，並更新 `words.image_url` 與 `lib/image-urls.json`。前端最終是讀 DB 的 `image_url`。
-- **發音**：填音標字串即可；實際朗讀走瀏覽器 TTS（口音由設定的美/英控制），不需音檔。
-- **可學習 = 要有卡片**：走種子檔（A）並部署的字會自動 seed + 產 SRS 卡片（含增量新增）；Admin 單筆新增（B/C）目前仍不產卡。
-- **idempotent**：migrate 與 enrich 都可重複執行；已存在的資料用 `ON CONFLICT DO NOTHING` / 「空才補」策略，不會覆蓋既有內容。
-- **快取**：公開讀取走 `unstable_cache`（tag `words`，60s revalidate）。Admin 寫入會 `revalidateTag('words')`；直接改 DB（script）則約 60s 後生效。
-
----
-
-## 9. AI 生成圖規範（乾淨教育插圖）
-
-正式單字圖採用「乾淨教育插圖」作為預設方向，而不是隨機照片來源。目標是讓圖片清楚展示該單字本身，降低 `scale`、`coach`、`glass`、`mouse` 這類多義字的圖文不符風險。
-
-### 9.1 存放與上傳流程
-
-正式圖最終存在 **Supabase Storage** 的 `word-images` bucket（公開讀取），
-DB 的 `words.image_url` 是唯一前端取圖來源。`public/word-images/` 只是本地暫存區，已被 `.gitignore` 排除（避免把 ~335 MB 的 PNG 推進 repo）。
-
-工作流：
-
-1. 用第 9.2 / 9.4 節的 prompt 生圖，存成本地 `public/word-images/{id}.png`（檔名 = 單字 id，kebab-case）。
-2. 跑上傳腳本：
-   ```bash
-   # 預設 dry run，列出會做什麼但不會動 Supabase / DB
-   npx tsx scripts/upload-local-images.ts
-
-   # 確認沒問題再 --apply 真的上傳 + 改 DB
-   npx tsx scripts/upload-local-images.ts --apply
-   ```
-   腳本會：
-   - 把每張 PNG 上傳到 `word-images/{id}.png`（已存在的會 upsert）。
-   - 把 `words.image_url` 改成 Supabase 公開 URL：`{NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/word-images/{id}.png`。
-   - 保留原 `image_url` 到 `image_source_url`，並標記 `image_license = 'local-upload'`。
-   - 找不到對應 DB row 的會跳過（會在 log 標記為 `? missing`）。
-3. 同步更新 `lib/image-urls.json`（給靜態 seed `lib/words.ts` 用）：
-   ```bash
-   node -e "const fs=require('fs'),p=require('path');const dir=p.resolve('public/word-images');const base=process.env.NEXT_PUBLIC_SUPABASE_URL+'/storage/v1/object/public/word-images/';const out={};for(const f of fs.readdirSync(dir).sort()){if(!f.toLowerCase().endsWith('.png'))continue;const id=f.replace(/\.png$/i,'');out[id]=base+id+'.png';}fs.writeFileSync('lib/image-urls.json',JSON.stringify(out,null,2)+'\n');"
-   ```
-4. `git commit lib/image-urls.json`（PNG 本身不要 commit，已被 ignore）。
-
-備註：
-- 腳本是 idempotent，可以重跑；只有「bucket 沒有」或「DB image_url 還沒對」的才會做事。
-- 需要的 env：`DATABASE_URL`、`NEXT_PUBLIC_SUPABASE_URL`、`SUPABASE_SERVICE_ROLE_KEY`（從 `.env.local` source）。
-- 若只想換一張圖、不動其他資料：覆蓋本地 PNG → 重跑腳本即可；前端會在快取 revalidate 後（~60s）看到新圖。
-
-### 9.2 通用名詞 Prompt
-
-適用：名詞、物品、場所、交通工具、調味料、辦公用品等。
+正式 `imageUrl` 應落在 Supabase Storage：
 
 ```text
-Create a clean educational vocabulary illustration for a language learning app.
-
-Word:
-[WORD]
-
-Meaning:
-[中文意思]
-
-Category:
-[CATEGORY]
-
-Subject:
-Show exactly one clear, recognizable [WORD] representing “[中文意思]”.
-The object must be the main subject, centered, large, and easy to identify.
-Use key visual features that distinguish it from similar objects: [關鍵特徵].
-
-Style:
-semi-realistic clean educational product illustration, accurate object proportions, realistic materials, soft studio lighting, subtle natural shadow, crisp edges, high detail but uncluttered, white or very light background, suitable for a vocabulary flashcard.
-
-Composition:
-single main subject, centered, enough white space, no clutter, no extra unrelated objects, no scene complexity.
-
-Negative prompt:
-No text, no letters, no numbers, no labels, no logo, no watermark, no brand names, no confusing alternate meaning, no extra main objects, no messy background, no childish cartoon exaggeration, no flat vector icon style.
+https://<project>.supabase.co/storage/v1/object/public/word-images/<id>.png
 ```
 
-### 9.3 多義字 / 易混淆字必填關鍵特徵
+Admin upload 會寫入 `word-images` bucket，路徑使用 `{id}.{ext}`。批量本地圖可放在 `public/word-images/<id>.png` 後跑上傳腳本。
 
-這些字不能只用英文單字當 prompt，必須加特徵：
+### 6.2 AI 生圖適用範圍
 
-| word | 必填特徵 |
-| --- | --- |
+可以用 AI 生圖：
+
+- 通用物品：`spoon`、`pillow`、`traffic light`。
+- 食材、調味料、工具、家具。
+- 難以找到授權一致圖片的冷門詞。
+- 需要保持同一批分類視覺一致時。
+
+不應用 AI 生圖：
+
+- 真實品牌、商標、包裝。
+- 名人、真人肖像、兒童肖像。
+- 醫療、危險、成人、暴力或政治敏感內容。
+- 會誤導學習者的抽象概念。
+- 需要精確文化/法律/安全含義的圖。
+
+### 6.3 視覺規格
+
+| 項目 | 規格 |
+|---|---|
+| 畫幅 | 1:1 正方形，建議 1024x1024 或以上 |
+| 主體 | 單一清楚物件，佔畫面 70-85% |
+| 背景 | 乾淨淺色或透明感背景，不要複雜場景 |
+| 留白 | 四周約 12-18%，避免 iOS 卡片裁切 |
+| 風格 | 寫實產品照或柔和 3D 實物感，整批保持一致 |
+| 光線 | 明亮、柔和、無強烈陰影 |
+| 文字 | 圖中不得出現文字、label、浮水印 |
+| 人物 | 預設不出現人物；必要時只用無臉、非識別性情境 |
+| 檔案 | 優先 PNG；照片可 JPEG，但不要 WebP 作為源檔 |
+
+Study 與 iOS 詞卡大量使用 `fit: contain`/等比例呈現。主體太小、背景太忙、邊緣被切掉，都會直接降低學習效果。
+
+### 6.4 Prompt 模板
+
+英文 prompt 建議：
+
+```text
+A clean educational vocabulary card image of a single {WORD}.
+The object is centered, clearly recognizable, and isolated on a warm off-white background.
+Soft natural lighting, realistic product photography, no text, no labels, no logo, no watermark.
+Square composition, 15 percent margin around the object, suitable for a mobile language-learning app.
+```
+
+中文輔助說明可附在 prompt 後：
+
+```text
+Target meaning in Traditional Chinese: {中文意思}.
+Do not show people unless the word cannot be understood without context.
+Avoid brand names, packaging text, and decorative clutter.
+```
+
+情境詞範例：
+
+```text
+A clean educational vocabulary card image of a crosswalk.
+Show a simple street crosswalk from a slightly elevated angle, clearly recognizable, no cars blocking it.
+Warm daylight, minimal background, no readable signs, no people, no logos.
+Square composition, 15 percent margin, suitable for a mobile language-learning app.
+```
+
+### 6.5 Negative prompt
+
+```text
+text, letters, label, logo, watermark, brand name, signature,
+person, face, hands, messy background, dark lighting, dramatic shadows,
+cropped object, multiple unrelated objects, duplicate object, surreal, cartoonish,
+unsafe, violent, adult, political, medical procedure
+```
+
+如果生成器不支援 negative prompt，就把禁止項寫進主 prompt。
+
+### 6.6 多義字必填特徵
+
+多義字不能只把英文單字丟給模型，必須加 disambiguation。以下是目前常見風險詞：
+
+| word | Prompt 必填特徵 |
+|---|---|
 | `scale` | bathroom weighing scale / digital body scale, not musical scale, not ruler |
-| `coach` | long-distance coach bus, not a sports coach |
-| `glass` | drinking glass / tumbler, not glass material or window |
+| `coach` | long-distance coach bus, not sports coach |
+| `glass` | drinking glass / tumbler, not window glass |
 | `mouse` | computer mouse, not animal |
 | `fan` | electric fan with blades and stand, not sports fan |
 | `monitor` | computer monitor screen, not a person monitoring |
-| `station` | transit station entrance/platform, not radio station |
-| `sale` | supermarket sale sign or discount tag without readable text |
-| `MRT` | metro / rapid transit train and station, not random letters |
-| `shelf` | storage shelf with simple items, not cliff/ledge |
+| `station` | transit station entrance or platform, not radio station |
+| `sale` | discount tag or sale shelf, no readable text |
+| `MRT` | metro train or rapid transit station, no letters |
+| `shelf` | storage shelf, not cliff or ledge |
 
-### 9.4 動詞 / 形容詞 / 副詞 Prompt
-
-動詞、形容詞、副詞這類動作或抽象概念，用吉祥物黑貓「演出」語意的插圖最清楚。把下面的 prompt 丟給生圖模型，填入 `[WORD]`、`[中文意思]`、`[具體動作/情境描述]`，產出的圖一樣存成 `public/word-images/{id}.png`，再走 9.1 的上傳腳本流程進 Supabase。
-
-> 適用：**動詞、形容詞、副詞**。需附上吉祥物黑貓的 reference image 以維持角色一致。
+範例：
 
 ```text
-Create a clean, cute educational vocabulary illustration using the same black cat character as the reference image.
+A clean educational vocabulary card image of a computer mouse.
+Show a single wireless computer mouse, centered on a warm off-white background.
+Do not show an animal mouse. No logo, no brand, no text.
+Square composition, 15 percent margin, suitable for a mobile language-learning app.
+```
 
-Character style:
+### 6.7 動詞/形容詞/副詞的吉祥物圖
 
-A kawaii black cartoon cat with a round soft body, large yellow eyes, small pink paw pads, white whiskers, rounded ears, cute facial expression, simple smooth outlines, soft shading, and a friendly learning-app mascot feeling.
+動作、情緒、狀態類單字不一定適合用單一物件圖。這類詞可以用 Tuji 黑貓吉祥物演出語意，但要保持「教育插圖」而不是貼圖表情包。
+
+適用：
+
+- 動詞：`squeeze`、`pour`、`wipe`。
+- 形容詞：`messy`、`empty`、`heavy`。
+- 副詞或狀態短語：只在圖片能清楚表達時使用。
+
+Prompt 模板：
+
+```text
+Create a clean educational vocabulary illustration using the same Tuji black cat mascot style.
+
+Word:
+{WORD}
+
+Meaning:
+{中文意思}
 
 Scene:
+The black cat is clearly demonstrating the meaning of "{WORD}".
+Show the cat {具體動作/情境描述}. The action or state must be immediately understandable without any text.
 
-The black cat is clearly demonstrating the meaning of the word: [WORD].
-
-The action or emotion should be immediately understandable without any text.
-
-For the word “[WORD]” meaning “[中文意思]”, show the cat [具體動作/情境描述].
-
-Example:
-
-For “squeeze” meaning “擠壓”, show the black cat using both paws to squeeze a soft yellow lemon. The lemon is visibly squashed, juice drops are splashing out, and the cat has a cute determined expression, with one eye closed and cheeks slightly tense.
+Character style:
+A cute black cat mascot with a round soft body, large warm eyes, small pink paw pads, white whiskers, rounded ears, simple smooth outlines, soft shading, friendly language-learning app feeling.
 
 Style:
-
-cute, modern, clean, rounded, educational flashcard style, soft pastel accents, simple white or very light background, minimal composition, high clarity, suitable for a language learning app, consistent mascot design, no text, no letters, no captions, no watermark.
+clean modern educational flashcard illustration, soft pastel accents, white or very light background, minimal props, clear silhouette, no text, no labels, no logo, no watermark.
 
 Composition:
-
-Single centered character, full body or upper body visible, clear action, enough white space around the character, simple props only, bright and friendly visual.
-
-Negative prompt:
-
-Do not include any text, words, letters, numbers, labels, captions, logo, watermark, complicated background, realistic cat, scary expression, extra characters, messy details.
+single centered character, clear action, enough white space, square image, 15 percent margin.
 ```
+
+範例：
+
+```text
+Create a clean educational vocabulary illustration using the same Tuji black cat mascot style.
+Word: squeeze
+Meaning: 擠壓
+Scene: The black cat uses both paws to squeeze a soft yellow lemon. The lemon is visibly squashed, a few juice drops splash out, and the cat has a cute determined expression.
+No text, no labels, no logo, no watermark. Square image, warm off-white background, 15 percent margin.
+```
+
+限制：
+
+- 不要讓吉祥物替代可直接拍清楚的名詞。`spoon` 應該是湯匙，不是貓拿湯匙。
+- 不要出現多隻角色或複雜故事。
+- 不要把字母或單字寫在畫面裡。
+
+### 6.8 審核清單
+
+AI 圖進詞庫前必須人工檢查：
+
+- [ ] 一眼能看出目標單字。
+- [ ] 沒有文字、logo、商標、浮水印。
+- [ ] 沒有真人可識別特徵。
+- [ ] 沒有不當、安全或審核敏感內容。
+- [ ] 圖片不會讓學習者誤解詞義。
+- [ ] 在 iOS 小卡、詳情大圖、Study 卡片中都不被裁切。
+- [ ] 已上傳到 `word-images` bucket，`imageUrl` 使用 Storage public URL。
+- [ ] 如果保留來源欄位，`image_license` 可標為 `ai-generated`，`image_credit` 記錄模型/日期/批次。
+
+### 6.9 命名、上傳與落庫
+
+建議文件命名：
+
+```text
+public/word-images/<id>.png
+```
+
+例：
+
+```text
+public/word-images/soy-sauce.png
+public/word-images/traffic-light.png
+```
+
+上傳流程：
+
+```bash
+cd tuji-web
+
+# dry run，先看會上傳哪些檔案
+npx tsx scripts/upload-local-images.ts
+
+# 確認後上傳到 Supabase Storage 並更新 DB image_url
+npx tsx scripts/upload-local-images.ts --apply
+```
+
+落庫規則：
+
+- `words.image_url`：Supabase Storage public URL。
+- `words.image_source_url`：若是 AI 圖，可留空或記錄內部生成批次。
+- `words.image_license`：建議填 `ai-generated`。
+- `words.image_credit`：建議填模型名稱、生成日期、人工審核者。
+
+## 7. 驗證
+
+```bash
+npm run build
+npm run verify:atlas
+```
+
+手工檢查：
+
+- `/api/words`
+- `/api/words/:id`
+- Web word page。
+- iOS Cards/Search/Word detail。
+- Study queue 是否出現對應 cards。
+- AI 生圖是否符合第 6 節規範。

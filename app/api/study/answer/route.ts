@@ -9,7 +9,14 @@ import {
   upsertAtlasMastery,
   upsertAtlasReview,
 } from "@/lib/atlas-db";
-import { humanizeInterval, schedule, type Rating } from "@/lib/srs";
+import {
+  humanizeInterval,
+  schedule,
+  type CardState,
+  type MistakeStats,
+  type Rating,
+  type ScheduleResult,
+} from "@/lib/srs";
 import { applyAnswer, masteryLevel } from "@/lib/mastery";
 import {
   upsertMastery,
@@ -52,6 +59,53 @@ function invalidUuid(id: string): boolean {
   return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
 }
 
+function clampResponseMs(raw: unknown): number | null {
+  return typeof raw === "number" && Number.isFinite(raw)
+    ? Math.max(0, Math.min(raw, 600_000))
+    : null;
+}
+
+// Shared pure compute for both the public and atlas (custom) answer paths:
+// the SRS reschedule, the mastery EMA, and the 重來 mistake flag. The two
+// paths persist to different tables, but the math must stay identical.
+function computeReview(input: {
+  prevState: CardState;
+  mistakeStats?: MistakeStats;
+  prevMastery: number;
+  prevReviewedAt: Date | null;
+  rating: Rating;
+}): {
+  next: ScheduleResult;
+  masteryResult: ReturnType<typeof applyAnswer>;
+  isMistake: boolean;
+} {
+  const next = schedule(input.prevState, input.rating, input.mistakeStats);
+  const masteryResult = applyAnswer(input.prevMastery, input.prevReviewedAt, input.rating);
+  return { next, masteryResult, isMistake: input.rating === "重來" };
+}
+
+// The identical `{ ok, next, mastery }` success body both paths return.
+function answerResponse(next: ScheduleResult, masteryResult: ReturnType<typeof applyAnswer>) {
+  return NextResponse.json({
+    ok: true,
+    next: {
+      status: next.status,
+      intervalDays: next.intervalDays,
+      nextReviewAt: next.nextReviewAt.toISOString(),
+      humanized: humanizeInterval(next.intervalDays),
+      penaltyApplied: next.appliedPenalty && next.appliedPenalty < 1
+        ? Math.round((1 - next.appliedPenalty) * 100)
+        : 0,
+    },
+    mastery: {
+      before: Math.round(masteryResult.previousDecayed),
+      after: Math.round(masteryResult.mastery),
+      delta: Math.round(masteryResult.delta),
+      level: masteryLevel(masteryResult.mastery),
+    },
+  });
+}
+
 async function answerAtlasCard(
   userId: string,
   cardId: string,
@@ -69,28 +123,20 @@ async function answerAtlasCard(
   const due = await getAtlasDueCardById(userId, cardId);
   if (!due) return NextResponse.json({ error: "card not found" }, { status: 404 });
 
-  const prevState = due.state
+  const prevState: CardState = due.state
     ? { status: due.state.status, intervalDays: Number(due.state.interval_days) || 0 }
-    : { status: "新卡" as const, intervalDays: 0 };
-  const mistakeStats = due.state
-    ? {
-        reviewCount: due.state.review_count,
-        mistakeCount: due.state.mistake_count,
-      }
-    : undefined;
-  const next = schedule(prevState, rating, mistakeStats);
-  const isMistake = rating === "重來";
-
+    : { status: "新卡", intervalDays: 0 };
   const masteryRow = await getAtlasMastery(userId, due.item.id, due.item.target_language);
-  const prevMastery = masteryRow?.mastery ?? 0;
-  const prevReviewedAt = masteryRow?.last_reviewed_at
-    ? new Date(masteryRow.last_reviewed_at)
-    : null;
-  const masteryResult = applyAnswer(prevMastery, prevReviewedAt, rating);
-  const responseMs =
-    typeof body.responseMs === "number" && Number.isFinite(body.responseMs)
-      ? Math.max(0, Math.min(body.responseMs, 600_000))
-      : null;
+  const { next, masteryResult, isMistake } = computeReview({
+    prevState,
+    mistakeStats: due.state
+      ? { reviewCount: due.state.review_count, mistakeCount: due.state.mistake_count }
+      : undefined,
+    prevMastery: masteryRow?.mastery ?? 0,
+    prevReviewedAt: masteryRow?.last_reviewed_at ? new Date(masteryRow.last_reviewed_at) : null,
+    rating,
+  });
+  const responseMs = clampResponseMs(body.responseMs);
   const activity = VALID_ACTIVITIES.has(body.activity ?? "")
     ? body.activity!
     : due.card.card_type === "image_recall"
@@ -134,24 +180,7 @@ async function answerAtlasCard(
   revalidateTag(`atlas-progress:${userId}`);
   revalidateTag(`atlas-stats:${userId}`);
 
-  return NextResponse.json({
-    ok: true,
-    next: {
-      status: next.status,
-      intervalDays: next.intervalDays,
-      nextReviewAt: next.nextReviewAt.toISOString(),
-      humanized: humanizeInterval(next.intervalDays),
-      penaltyApplied: next.appliedPenalty && next.appliedPenalty < 1
-        ? Math.round((1 - next.appliedPenalty) * 100)
-        : 0,
-    },
-    mastery: {
-      before: Math.round(masteryResult.previousDecayed),
-      after: Math.round(masteryResult.mastery),
-      delta: Math.round(masteryResult.delta),
-      level: masteryLevel(masteryResult.mastery),
-    },
-  });
+  return answerResponse(next, masteryResult);
 }
 
 export async function POST(req: Request) {
@@ -189,31 +218,23 @@ export async function POST(req: Request) {
   if (!card) return NextResponse.json({ error: "card not found" }, { status: 404 });
   const targetLanguage = card.word.target_language;
 
-  // 1) Card-level SRS schedule (pure compute).
-  const prevState = card.state
+  // Card-level SRS reschedule + word-level mastery (decay + EMA). The previous
+  // mastery row was joined into getCardById, so there's no extra read here.
+  const prevState: CardState = card.state
     ? { status: card.state.status, intervalDays: Number(card.state.interval_days) || 0 }
-    : { status: "新卡" as const, intervalDays: 0 };
-  const mistakeStats = card.state
-    ? {
-        reviewCount: card.state.review_count,
-        mistakeCount: card.state.mistake_count,
-      }
-    : undefined;
-  const next = schedule(prevState, rating, mistakeStats);
-  const isMistake = rating === "重來";
-
-  // 2) Word-level mastery — the previous row was joined into getCardById, so no
-  //    extra read here. Pure compute (decay + EMA).
-  const prevMastery = card.masteryRow?.mastery ?? 0;
-  const prevReviewedAt = card.masteryRow?.last_reviewed_at
-    ? new Date(card.masteryRow.last_reviewed_at)
-    : null;
-  const masteryResult = applyAnswer(prevMastery, prevReviewedAt, rating);
-
-  const responseMs =
-    typeof body.responseMs === "number" && Number.isFinite(body.responseMs)
-      ? Math.max(0, Math.min(body.responseMs, 600_000))
-      : null;
+    : { status: "新卡", intervalDays: 0 };
+  const { next, masteryResult, isMistake } = computeReview({
+    prevState,
+    mistakeStats: card.state
+      ? { reviewCount: card.state.review_count, mistakeCount: card.state.mistake_count }
+      : undefined,
+    prevMastery: card.masteryRow?.mastery ?? 0,
+    prevReviewedAt: card.masteryRow?.last_reviewed_at
+      ? new Date(card.masteryRow.last_reviewed_at)
+      : null,
+    rating,
+  });
+  const responseMs = clampResponseMs(body.responseMs);
 
   // 3) Persist the three independent writes in parallel (one round trip instead
   //    of three). study_logs is best-effort — it swallows its own error so a
@@ -249,22 +270,5 @@ export async function POST(req: Request) {
   revalidateTag(`progress:${userId}`);
   revalidateTag(`stats:${userId}`);
 
-  return NextResponse.json({
-    ok: true,
-    next: {
-      status: next.status,
-      intervalDays: next.intervalDays,
-      nextReviewAt: next.nextReviewAt.toISOString(),
-      humanized: humanizeInterval(next.intervalDays),
-      penaltyApplied: next.appliedPenalty && next.appliedPenalty < 1
-        ? Math.round((1 - next.appliedPenalty) * 100)
-        : 0,
-    },
-    mastery: {
-      before: Math.round(masteryResult.previousDecayed),
-      after: Math.round(masteryResult.mastery),
-      delta: Math.round(masteryResult.delta),
-      level: masteryLevel(masteryResult.mastery),
-    },
-  });
+  return answerResponse(next, masteryResult);
 }

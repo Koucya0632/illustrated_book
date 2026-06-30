@@ -9,7 +9,7 @@ import {
   type DueCard,
 } from "@/lib/cards-db";
 import { fetchAtlasDue, atlasStudyStats } from "@/lib/atlas-db";
-import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
+import { createAtlasImageSignedUrlsBatch } from "@/lib/atlas/storage";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
@@ -35,52 +35,55 @@ function addStats(
 }
 
 async function atlasDueToStudyQueue(userId: string, due: Awaited<ReturnType<typeof fetchAtlasDue>>): Promise<DueCard[]> {
-  return Promise.all(
-    due.map(async (row) => {
-      const urls = await createAtlasImageSignedUrls({
-        imagePath: row.image.original_path,
-        thumbPath: row.image.thumb_path,
-      });
-      return {
-        card: {
-          id: `atlas:${row.card.id}`,
-          word_id: `atlas:${row.item.id}`,
-          card_type: row.card.card_type === "image_recall" ? "回想卡" : "單字卡",
-          front: row.card.front_text ?? row.item.display_zh_hant,
-          back: row.item.lemma,
-          explanation: row.card.explanation ?? row.item.definition_zh_hant,
-          tags: ["custom", "atlas"],
-          deck_key: row.item.target_language === "ja" ? "image-ja" : "image-en",
-        },
-        state: row.state
-          ? {
-              user_id: userId,
-              card_id: `atlas:${row.card.id}`,
-              status: row.state.status,
-              interval_days: row.state.interval_days,
-              next_review_at: row.state.next_review_at,
-              review_count: row.state.review_count,
-              mistake_count: row.state.mistake_count,
-              last_rating: row.state.last_rating,
-              last_reviewed_at: row.state.last_reviewed_at,
-            }
-          : null,
-        word: {
-          id: `atlas:${row.item.id}`,
-          word: row.item.lemma,
-          chinese: row.item.display_zh_hant,
-          image_url: urls.thumbUrl || urls.imageUrl,
-          pronunciation: row.item.pronunciation ?? "",
-          reading: row.item.reading ?? undefined,
-          target_language: row.item.target_language,
-          category: "custom",
-        },
-        choices: undefined,
-        spellingChoices: undefined,
-        mastery: Math.round(row.mastery),
-      };
-    }),
+  // One batched signed-URL request for the whole queue, instead of one storage
+  // round-trip per card.
+  const signed = await createAtlasImageSignedUrlsBatch(
+    due.map((row) => ({
+      imagePath: row.image.original_path,
+      thumbPath: row.image.thumb_path,
+    })),
   );
+  return due.map((row, i) => {
+    const urls = signed[i];
+    return {
+      card: {
+        id: `atlas:${row.card.id}`,
+        word_id: `atlas:${row.item.id}`,
+        card_type: row.card.card_type === "image_recall" ? "回想卡" : "單字卡",
+        front: row.card.front_text ?? row.item.display_zh_hant,
+        back: row.item.lemma,
+        explanation: row.card.explanation ?? row.item.definition_zh_hant,
+        tags: ["custom", "atlas"],
+        deck_key: row.item.target_language === "ja" ? "image-ja" : "image-en",
+      },
+      state: row.state
+        ? {
+            user_id: userId,
+            card_id: `atlas:${row.card.id}`,
+            status: row.state.status,
+            interval_days: row.state.interval_days,
+            next_review_at: row.state.next_review_at,
+            review_count: row.state.review_count,
+            mistake_count: row.state.mistake_count,
+            last_rating: row.state.last_rating,
+            last_reviewed_at: row.state.last_reviewed_at,
+          }
+        : null,
+      word: {
+        id: `atlas:${row.item.id}`,
+        word: row.item.lemma,
+        chinese: row.item.display_zh_hant,
+        image_url: urls.thumbUrl || urls.imageUrl,
+        pronunciation: row.item.pronunciation ?? "",
+        reading: row.item.reading ?? undefined,
+        target_language: row.item.target_language,
+        category: "custom",
+      },
+      choices: undefined,
+      spellingChoices: undefined,
+      mastery: Math.round(row.mastery),
+    };
+  });
 }
 
 export async function GET(req: Request) {

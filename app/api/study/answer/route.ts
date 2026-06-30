@@ -45,7 +45,11 @@ function defaultActivity(cardType: string): StudyLogActivity {
 }
 
 function invalidUuid(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{12}$/i.test(id);
+  // 8-4-4-4-12. The previous pattern was missing the 4th group's trailing
+  // chars + the dash before the final 12, so it had only four groups and
+  // rejected EVERY valid UUID — which 400'd every custom (atlas:) answer and
+  // left their mastery permanently at 0.
+  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
 }
 
 async function answerAtlasCard(

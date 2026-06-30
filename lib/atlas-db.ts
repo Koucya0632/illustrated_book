@@ -548,8 +548,25 @@ export async function fetchAtlasDue(
       AND i.deleted_at IS NULL
       AND img.deleted_at IS NULL
       AND (
-        (${includeNew} AND (s.card_id IS NULL OR s.status = '新卡'))
-        OR (${includeReview} AND s.next_review_at <= now())
+        -- New: a 新卡 card whose ITEM has no studied card yet. An item makes two
+        -- cards (image_recall + flashcard) but the study flow dedupes to one per
+        -- item, so once any card is studied the item must leave the new pool —
+        -- otherwise its leftover 新卡 sibling resurfaces the word in 學新字 and,
+        -- being the oldest, starves never-studied items out of the limit.
+        (${includeNew} AND (s.card_id IS NULL OR s.status = '新卡')
+          AND NOT EXISTS (
+            SELECT 1
+            FROM user_atlas_cards c2
+            JOIN user_atlas_card_state s2
+              ON s2.card_id = c2.id AND s2.user_id = ${userId}::uuid
+            WHERE c2.item_id = i.id
+              AND c2.deleted_at IS NULL
+              AND s2.status <> '新卡'
+          ))
+        -- Review: genuinely scheduled cards only. 新卡 rows carry a creation-time
+        -- next_review_at (already in the past), so without the status guard they
+        -- would masquerade as due here.
+        OR (${includeReview} AND s.status <> '新卡' AND s.next_review_at <= now())
       )
     ORDER BY
       CASE WHEN s.card_id IS NULL OR s.status = '新卡' THEN 1 ELSE 0 END,
@@ -609,71 +626,80 @@ export async function atlasStudyStats(
   byStatus: Array<{ status: Status; c: number }>;
 }> {
   const sql = requireSql();
+  // Counts are per ITEM, not per card. An item makes two cards (image_recall +
+  // flashcard) but the study flow dedupes to one card per item, so card-level
+  // counts double the numbers the queue actually serves. `seen`/studied keys off
+  // last_reviewed_at, which is equivalent to "has a non-新卡 card" — the same
+  // signal fetchAtlasDue uses to drop an item from the new pool, so `new`
+  // (= total - seen) matches the new queue and `due` matches the review queue.
   const [totalRows, seenRows, dueRows, todayRows, byStatus] = await Promise.all([
     sql<{ total: number }[]>`
-      SELECT count(*)::int AS total
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      SELECT count(DISTINCT i.id)::int AS total
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
     `,
     sql<{ seen: number }[]>`
-      SELECT count(*)::int AS seen
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      SELECT count(DISTINCT i.id)::int AS seen
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
       JOIN user_atlas_card_state s
         ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
         AND s.last_reviewed_at IS NOT NULL
     `,
     sql<{ due: number }[]>`
-      SELECT count(*)::int AS due
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      SELECT count(DISTINCT i.id)::int AS due
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
       JOIN user_atlas_card_state s
         ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
         AND s.status <> '新卡'
         AND s.next_review_at <= now()
     `,
     sql<{ todayNew: number }[]>`
-      SELECT count(*)::int AS "todayNew"
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      SELECT count(DISTINCT i.id)::int AS "todayNew"
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
       JOIN user_atlas_card_state s
         ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
         AND s.last_reviewed_at IS NOT NULL
         AND (s.last_reviewed_at AT TIME ZONE 'Asia/Taipei')::date
           = (now() AT TIME ZONE 'Asia/Taipei')::date
     `,
+    // One representative status per item — the card the queue would surface
+    // (prefer an in-progress card over a leftover 新卡, then soonest due).
     sql<{ status: Status; c: number }[]>`
-      SELECT s.status, count(*)::int AS c
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
-      LEFT JOIN user_atlas_card_state s
-        ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
-        AND i.deleted_at IS NULL
-        AND i.target_language = ${targetLanguage}
-      GROUP BY s.status
+      SELECT rep.status, count(*)::int AS c
+      FROM (
+        SELECT DISTINCT ON (i.id) i.id, s.status
+        FROM user_atlas_items i
+        JOIN user_atlas_cards c
+          ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
+        LEFT JOIN user_atlas_card_state s
+          ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+        WHERE i.user_id = ${userId}::uuid
+          AND i.deleted_at IS NULL
+          AND i.target_language = ${targetLanguage}
+        ORDER BY i.id,
+          CASE WHEN s.status IS NULL OR s.status = '新卡' THEN 1 ELSE 0 END,
+          s.next_review_at ASC NULLS LAST
+      ) rep
+      GROUP BY rep.status
     `,
   ]);
   const total = totalRows[0]?.total ?? 0;
@@ -873,6 +899,47 @@ export async function getAtlasDueCardById(
     LIMIT 1
   `;
   return rows[0] ? rowToAtlasDueCard(rows[0]) : null;
+}
+
+export interface AtlasMasteryScheduleRow {
+  item_id: string;
+  mastery: number;
+  last_reviewed_at: string | null;
+  // Soonest next_review_at across the item's atlas cards, or null if none are
+  // scheduled yet. SRS state is per-card; mastery is per-item.
+  next_review_at: string | null;
+}
+
+// Per-item atlas mastery + the item's soonest next-due review time (MIN over
+// its cards), for the iOS 圖鑑 grid where custom 自制圖鑑 words render as
+// `atlas:<itemId>`. Mirrors getAllMasteryWithSchedule for dictionary words so
+// /api/users/mastery can fold both namespaces into one map.
+export async function getAllAtlasMasteryWithSchedule(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<AtlasMasteryScheduleRow[]> {
+  const sql = requireSql();
+  return sql<AtlasMasteryScheduleRow[]>`
+    SELECT
+      m.item_id,
+      m.mastery::float8 AS mastery,
+      m.last_reviewed_at,
+      (
+        SELECT MIN(s.next_review_at)
+        FROM user_atlas_cards c
+        JOIN user_atlas_card_state s
+          ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+        WHERE c.item_id = m.item_id
+          AND c.user_id = ${userId}::uuid
+          AND c.deleted_at IS NULL
+      ) AS next_review_at
+    FROM user_atlas_item_mastery m
+    JOIN user_atlas_items i
+      ON i.id = m.item_id AND i.user_id = ${userId}::uuid
+    WHERE m.user_id = ${userId}::uuid
+      AND m.target_language = ${targetLanguage}
+      AND i.deleted_at IS NULL
+  `;
 }
 
 export async function getAtlasMastery(

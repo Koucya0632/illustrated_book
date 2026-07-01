@@ -59,6 +59,9 @@ export default async function AdminAtlasPage({
           <p className="mt-1 text-sm text-muted">共顯示 {items.length} 筆；公開圖鑑只讀取已核准資料。</p>
         </div>
         <div className="flex gap-4">
+          <Link href="/admin/atlas/funnel" className="text-sm font-semibold text-sky-accent hover:underline">
+            數據
+          </Link>
           <Link href="/admin/atlas/reports" className="text-sm font-semibold text-sky-accent hover:underline">
             檢舉列表
           </Link>

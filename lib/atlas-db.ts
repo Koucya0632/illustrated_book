@@ -1608,3 +1608,101 @@ export async function updateAtlasReportStatus(
     UPDATE atlas_reports SET status = ${status} WHERE id = ${id}::bigint
   `;
 }
+
+export interface AtlasFunnelReport {
+  days: number;
+  funnel: {
+    uploads: number; // images uploaded
+    recognized: number; // images with a successful primary AI pass
+    confirmed: number; // items created
+    carded: number; // items that got cards
+  };
+  ai: {
+    calls: number;
+    successRate: number; // 0..1
+    totalCostUsd: number;
+    avgLatencyMs: number | null;
+    byOperation: { operation: string; calls: number; costUsd: number; successRate: number }[];
+  };
+  topUsersByCost: { userId: string; costUsd: number; calls: number }[];
+}
+
+/**
+ * Capture-flow funnel + AI cost, derived from existing tables over the last
+ * `days`. No separate event pipeline — the raw material is already in
+ * user_atlas_images / _ai_usage / _items / _cards.
+ */
+export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
+  const sql = requireSql();
+  const d = Math.min(365, Math.max(1, Math.floor(days)));
+  const since = sql`now() - make_interval(days => ${d})`;
+
+  const [uploads, recognized, confirmed, carded, totals, byOp, topUsers] =
+    await Promise.all([
+      sql<{ c: number }[]>`
+        SELECT count(*)::int AS c FROM user_atlas_images WHERE created_at >= ${since}
+      `,
+      sql<{ c: number }[]>`
+        SELECT count(DISTINCT image_id)::int AS c FROM user_atlas_ai_usage
+        WHERE operation = 'primary' AND success AND created_at >= ${since}
+      `,
+      sql<{ c: number }[]>`
+        SELECT count(*)::int AS c FROM user_atlas_items
+        WHERE deleted_at IS NULL AND created_at >= ${since}
+      `,
+      sql<{ c: number }[]>`
+        SELECT count(DISTINCT item_id)::int AS c FROM user_atlas_cards
+        WHERE deleted_at IS NULL AND created_at >= ${since}
+      `,
+      sql<{ calls: number; success_rate: number; total_cost: number; avg_latency: number | null }[]>`
+        SELECT
+          count(*)::int AS calls,
+          coalesce(avg(success::int), 0)::float8 AS success_rate,
+          coalesce(sum(estimated_cost_usd), 0)::float8 AS total_cost,
+          avg(latency_ms)::float8 AS avg_latency
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+      `,
+      sql<{ operation: string; calls: number; cost: number; success_rate: number }[]>`
+        SELECT
+          operation,
+          count(*)::int AS calls,
+          coalesce(sum(estimated_cost_usd), 0)::float8 AS cost,
+          coalesce(avg(success::int), 0)::float8 AS success_rate
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+        GROUP BY operation ORDER BY calls DESC
+      `,
+      sql<{ user_id: string; cost: number; calls: number }[]>`
+        SELECT user_id, coalesce(sum(estimated_cost_usd), 0)::float8 AS cost, count(*)::int AS calls
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+        GROUP BY user_id ORDER BY cost DESC LIMIT 10
+      `,
+    ]);
+
+  const t = totals[0];
+  return {
+    days: d,
+    funnel: {
+      uploads: uploads[0]?.c ?? 0,
+      recognized: recognized[0]?.c ?? 0,
+      confirmed: confirmed[0]?.c ?? 0,
+      carded: carded[0]?.c ?? 0,
+    },
+    ai: {
+      calls: t?.calls ?? 0,
+      successRate: t?.success_rate ?? 0,
+      totalCostUsd: t?.total_cost ?? 0,
+      avgLatencyMs: t?.avg_latency ?? null,
+      byOperation: byOp.map((r) => ({
+        operation: r.operation,
+        calls: r.calls,
+        costUsd: r.cost,
+        successRate: r.success_rate,
+      })),
+    },
+    topUsersByCost: topUsers.map((r) => ({
+      userId: r.user_id,
+      costUsd: r.cost,
+      calls: r.calls,
+    })),
+  };
+}

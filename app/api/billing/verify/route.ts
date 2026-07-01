@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { upsertAtlasEntitlement } from "@/lib/atlas/entitlement";
-import { decodeTransaction, entitlementFromTransaction } from "@/lib/billing/appstore";
+import { entitlementFromTransaction } from "@/lib/billing/appstore";
+import { BillingVerificationError, verifyTransaction } from "@/lib/billing/verifier";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,7 +12,7 @@ export const dynamic = "force-dynamic";
 // comes from the session; we record the entitlement and the subscription's
 // original_transaction_id so the notifications webhook can map renewals back.
 //
-// NOTE: signature verification is deferred — see lib/billing/appstore.ts.
+// Signatures are verified via lib/billing/verifier.ts (Apple SignedDataVerifier).
 export async function POST(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
@@ -29,8 +30,15 @@ export async function POST(req: Request) {
 
   let entitlement;
   try {
-    entitlement = entitlementFromTransaction(decodeTransaction(signed));
-  } catch {
+    entitlement = entitlementFromTransaction(await verifyTransaction(signed));
+  } catch (err) {
+    if (err instanceof BillingVerificationError) {
+      // Verifier not configured (missing root certs / bundleId) — a server
+      // misconfiguration, not the client's fault. Fail closed.
+      console.error("[billing/verify] not configured", err);
+      return NextResponse.json({ error: "billing not configured" }, { status: 503 });
+    }
+    // Signature invalid / untrusted transaction.
     return NextResponse.json({ error: "invalid transaction" }, { status: 400 });
   }
 

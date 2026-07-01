@@ -320,28 +320,58 @@ export interface ConfirmAtlasItemInput {
 export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<AtlasItemRow> {
   const sql = requireSql();
   const selectedCandidateId = input.selectedCandidateId;
-  const rows = await sql<AtlasItemRow[]>`
-    INSERT INTO user_atlas_items (
-      user_id, image_id, selected_candidate_id, target_language,
-      primary_label, fine_label, lemma, display_zh_hant,
-      part_of_speech, category, correction_source, updated_at
-    )
-    VALUES (
-      ${input.userId}::uuid,
-      ${input.imageId}::uuid,
-      ${selectedCandidateId}::uuid,
-      ${input.targetLanguage},
-      ${input.primaryLabel},
-      ${input.fineLabel},
-      ${input.lemma},
-      ${input.displayZhHant},
-      ${input.partOfSpeech},
-      ${input.category},
-      ${input.selectedCandidateId ? "candidate" : "manual"},
-      now()
-    )
-    RETURNING *
+  const correctionSource = input.selectedCandidateId ? "candidate" : "manual";
+
+  // Idempotent: if this image already has a (non-deleted) item, update it in
+  // place rather than inserting a duplicate. This makes AtlasCaptureQueue resume
+  // safe — a job re-run after an app kill hits the same row instead of creating
+  // a second item — and also turns a re-confirm into an edit.
+  const existing = await sql<AtlasItemRow[]>`
+    SELECT * FROM user_atlas_items
+    WHERE user_id = ${input.userId}::uuid
+      AND image_id = ${input.imageId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
   `;
+
+  const rows = existing[0]
+    ? await sql<AtlasItemRow[]>`
+        UPDATE user_atlas_items SET
+          selected_candidate_id = ${selectedCandidateId}::uuid,
+          target_language = ${input.targetLanguage},
+          primary_label = ${input.primaryLabel},
+          fine_label = ${input.fineLabel},
+          lemma = ${input.lemma},
+          display_zh_hant = ${input.displayZhHant},
+          part_of_speech = ${input.partOfSpeech},
+          category = ${input.category},
+          correction_source = ${correctionSource},
+          updated_at = now()
+        WHERE id = ${existing[0].id}::uuid
+        RETURNING *
+      `
+    : await sql<AtlasItemRow[]>`
+        INSERT INTO user_atlas_items (
+          user_id, image_id, selected_candidate_id, target_language,
+          primary_label, fine_label, lemma, display_zh_hant,
+          part_of_speech, category, correction_source, updated_at
+        )
+        VALUES (
+          ${input.userId}::uuid,
+          ${input.imageId}::uuid,
+          ${selectedCandidateId}::uuid,
+          ${input.targetLanguage},
+          ${input.primaryLabel},
+          ${input.fineLabel},
+          ${input.lemma},
+          ${input.displayZhHant},
+          ${input.partOfSpeech},
+          ${input.category},
+          ${correctionSource},
+          now()
+        )
+        RETURNING *
+      `;
   await updateAtlasImageStatus(input.userId, input.imageId, "confirmed");
   return rows[0];
 }

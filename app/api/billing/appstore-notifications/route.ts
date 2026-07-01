@@ -3,11 +3,8 @@ import {
   getUserIdByOriginalTransaction,
   upsertAtlasEntitlement,
 } from "@/lib/atlas/entitlement";
-import {
-  decodeNotification,
-  decodeTransaction,
-  entitlementFromTransaction,
-} from "@/lib/billing/appstore";
+import { entitlementFromTransaction } from "@/lib/billing/appstore";
+import { verifyNotification, verifyTransaction } from "@/lib/billing/verifier";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,9 +15,10 @@ export const dynamic = "force-dynamic";
 // re-derive the entitlement. Always 200 so Apple does not retry indefinitely on
 // a payload we simply can't map yet.
 //
-// ⚠️ This endpoint is UNAUTHENTICATED and currently trusts the JWS without
-// verifying Apple's signature (see lib/billing/appstore.ts). Add
-// SignedDataVerifier before production — until then, treat it as sandbox-only.
+// This endpoint is UNAUTHENTICATED — its trust comes from verifying Apple's JWS
+// signature (lib/billing/verifier.ts). A payload that fails verification is
+// ignored (200, handled:false) so a bad/forged POST neither mutates state nor
+// triggers Apple retries.
 export async function POST(req: Request) {
   let body: { signedPayload?: unknown };
   try {
@@ -34,14 +32,14 @@ export async function POST(req: Request) {
   }
 
   try {
-    const notification = decodeNotification(signedPayload);
+    const notification = await verifyNotification(signedPayload);
     const signedTx = notification.data?.signedTransactionInfo;
     if (!signedTx) {
       // Nothing transaction-shaped to act on (e.g. TEST notifications).
       return NextResponse.json({ ok: true, handled: false });
     }
 
-    const entitlement = entitlementFromTransaction(decodeTransaction(signedTx));
+    const entitlement = entitlementFromTransaction(await verifyTransaction(signedTx));
     if (!entitlement.originalTransactionId) {
       return NextResponse.json({ ok: true, handled: false });
     }

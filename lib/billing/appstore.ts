@@ -1,13 +1,10 @@
-// App Store (StoreKit 2) signed-payload handling for Tuji Pro subscriptions.
+// App Store (StoreKit 2) signed-payload types + mapping for Tuji Pro.
 //
-// ⚠️ SECURITY HARDENING REQUIRED BEFORE PRODUCTION ⚠️
-// This decodes the JWS payload WITHOUT verifying Apple's signature. It is safe
-// enough for sandbox/dev to prove the end-to-end flow, but a forged JWS could
-// grant Pro. Before release, replace `decodeJwsPayload` with Apple's official
-// verifier — `@apple/app-store-server-library` `SignedDataVerifier`
-// (.verifyAndDecodeTransaction / .verifyAndDecodeNotification) — which needs the
-// Apple Root CA certs, bundleId, appAppleId and environment. The rest of this
-// module (mapping → entitlement) stays the same.
+// Signature verification lives in ./verifier.ts (Apple's SignedDataVerifier),
+// which is the default path used by the routes. The `decode*` helpers below do
+// NOT verify signatures — they exist only as the fallback the verifier uses when
+// APPSTORE_ALLOW_UNVERIFIED=true (sandbox/dev). Do not call them directly from
+// routes. `entitlementFromTransaction` maps a decoded transaction either way.
 
 import type { AtlasTier } from "@/lib/atlas/entitlement";
 

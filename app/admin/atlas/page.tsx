@@ -58,9 +58,14 @@ export default async function AdminAtlasPage({
           <h1 className="text-2xl font-bold text-ink sm:text-3xl">圖鑑審核</h1>
           <p className="mt-1 text-sm text-muted">共顯示 {items.length} 筆；公開圖鑑只讀取已核准資料。</p>
         </div>
-        <Link href="/atlas/public" className="text-sm font-semibold text-sky-accent hover:underline">
-          查看公開圖鑑
-        </Link>
+        <div className="flex gap-4">
+          <Link href="/admin/atlas/reports" className="text-sm font-semibold text-sky-accent hover:underline">
+            檢舉列表
+          </Link>
+          <Link href="/atlas/public" className="text-sm font-semibold text-sky-accent hover:underline">
+            查看公開圖鑑
+          </Link>
+        </div>
       </header>
 
       <form className="flex flex-wrap items-end gap-3 rounded-xl2 bg-white p-4 shadow-card">

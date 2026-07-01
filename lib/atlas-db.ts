@@ -1513,3 +1513,98 @@ export async function getAtlasPublicItem(slug: string): Promise<AtlasPublicItemR
   `;
   return rows[0] ?? null;
 }
+
+export type AtlasReportReason =
+  | "spam"
+  | "inappropriate"
+  | "copyright"
+  | "wrong"
+  | "other";
+export type AtlasReportStatus = "open" | "reviewed" | "dismissed";
+
+/**
+ * Record a user's report on a public 圖鑑 item. One report per (item, reporter):
+ * a repeat is a no-op (returns already=true) so the button can't be spammed into
+ * duplicate rows.
+ */
+export async function createAtlasReport(input: {
+  publicItemId: string;
+  sourceItemId: string | null;
+  slug: string;
+  reporterUserId: string;
+  reason: AtlasReportReason;
+  detail: string | null;
+}): Promise<{ id: string; already: boolean }> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string }[]>`
+    INSERT INTO atlas_reports (
+      public_item_id, source_item_id, slug, reporter_user_id, reason, detail
+    )
+    VALUES (
+      ${input.publicItemId}::uuid, ${input.sourceItemId}, ${input.slug},
+      ${input.reporterUserId}::uuid, ${input.reason}, ${input.detail}
+    )
+    ON CONFLICT (public_item_id, reporter_user_id) DO NOTHING
+    RETURNING id
+  `;
+  if (rows[0]) return { id: rows[0].id, already: false };
+  const existing = await sql<{ id: string }[]>`
+    SELECT id FROM atlas_reports
+    WHERE public_item_id = ${input.publicItemId}::uuid
+      AND reporter_user_id = ${input.reporterUserId}::uuid
+    LIMIT 1
+  `;
+  return { id: existing[0]?.id ?? "", already: true };
+}
+
+export interface AtlasReportRow {
+  id: string;
+  public_item_id: string;
+  source_item_id: string | null;
+  slug: string;
+  reporter_user_id: string;
+  reason: AtlasReportReason;
+  detail: string | null;
+  status: AtlasReportStatus;
+  created_at: string;
+  lemma: string | null;
+  display_zh_hant: string | null;
+  public_review_status: string | null;
+}
+
+/** Admin: list reports, newest first, optionally filtered by status. */
+export async function listAtlasReports(
+  status: AtlasReportStatus | "",
+  limit = 200,
+): Promise<AtlasReportRow[]> {
+  const sql = requireSql();
+  const capped = Math.min(500, Math.max(1, Math.floor(limit)));
+  if (status) {
+    return sql<AtlasReportRow[]>`
+      SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status
+      FROM atlas_reports r
+      LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+      WHERE r.status = ${status}
+      ORDER BY r.created_at DESC
+      LIMIT ${capped}
+    `;
+  }
+  return sql<AtlasReportRow[]>`
+    SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status
+    FROM atlas_reports r
+    LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+    ORDER BY r.created_at DESC
+    LIMIT ${capped}
+  `;
+}
+
+/** Admin: resolve a report (reviewed / dismissed). */
+export async function updateAtlasReportStatus(
+  id: string,
+  status: AtlasReportStatus,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE atlas_reports SET status = ${status} WHERE id = ${id}::bigint
+  `;
+}

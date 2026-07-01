@@ -891,13 +891,19 @@ const DDL = [
   // subscription lapse back to free without a row delete. StoreKit / App Store
   // Server Notifications (Phase 2) write here; server stays the authority.
   `CREATE TABLE IF NOT EXISTS user_entitlements (
-     user_id    UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
-     tier       TEXT NOT NULL DEFAULT 'free' CHECK (tier IN ('free','pro')),
-     source     TEXT,
-     expires_at TIMESTAMPTZ,
-     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+     user_id                 UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+     tier                    TEXT NOT NULL DEFAULT 'free' CHECK (tier IN ('free','pro')),
+     source                  TEXT,
+     expires_at              TIMESTAMPTZ,
+     original_transaction_id TEXT,
+     created_at              TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at              TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
+  // Maps an App Store subscription back to the user so the notifications webhook
+  // (renew / refund / expire) can find them without an authenticated request.
+  `CREATE INDEX IF NOT EXISTS user_entitlements_original_txn_idx
+     ON user_entitlements(original_transaction_id)
+     WHERE original_transaction_id IS NOT NULL`,
 
   `CREATE TABLE IF NOT EXISTS user_friendships (
      user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,

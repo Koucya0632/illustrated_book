@@ -107,6 +107,51 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
   return { tier, limits: atlasLimitsForTier(tier), usage };
 }
 
+/** Write the authoritative entitlement (StoreKit verify / App Store notifications). */
+export async function upsertAtlasEntitlement(input: {
+  userId: string;
+  tier: AtlasTier;
+  source: string | null;
+  expiresAt: Date | null;
+  originalTransactionId?: string | null;
+}): Promise<void> {
+  const sql = getSql();
+  if (!sql) return;
+  await sql`
+    INSERT INTO user_entitlements (user_id, tier, source, expires_at, original_transaction_id, updated_at)
+    VALUES (
+      ${input.userId}::uuid, ${input.tier}, ${input.source}, ${input.expiresAt},
+      ${input.originalTransactionId ?? null}, now()
+    )
+    ON CONFLICT (user_id) DO UPDATE SET
+      tier = EXCLUDED.tier,
+      source = EXCLUDED.source,
+      expires_at = EXCLUDED.expires_at,
+      original_transaction_id =
+        COALESCE(EXCLUDED.original_transaction_id, user_entitlements.original_transaction_id),
+      updated_at = now()
+  `;
+}
+
+/** Reverse-map an App Store subscription to its user (webhook path). */
+export async function getUserIdByOriginalTransaction(
+  originalTransactionId: string,
+): Promise<string | null> {
+  const sql = getSql();
+  if (!sql) return null;
+  try {
+    const rows = await sql<{ user_id: string }[]>`
+      SELECT user_id FROM user_entitlements
+      WHERE original_transaction_id = ${originalTransactionId}
+      LIMIT 1
+    `;
+    return rows[0]?.user_id ?? null;
+  } catch (err) {
+    console.warn("[entitlement] txn->user lookup failed", err);
+    return null;
+  }
+}
+
 export interface AtlasCapacityGate {
   ok: boolean;
   message?: string;

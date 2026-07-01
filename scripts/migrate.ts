@@ -874,6 +874,18 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS user_atlas_ai_usage_user_created_idx
      ON user_atlas_ai_usage(user_id, created_at DESC)`,
 
+  // Generic fixed-window rate-limit counters. One row per (bucket, window):
+  // the atlas AI guards increment atlas-ai:user:<id> (daily), atlas-ai:ip:<hash>
+  // (per-minute) and atlas-ai:global (daily). Pruned by the atlas-cleanup cron.
+  `CREATE TABLE IF NOT EXISTS ratelimit_hits (
+     bucket       TEXT NOT NULL,
+     window_start TIMESTAMPTZ NOT NULL,
+     count        INT NOT NULL DEFAULT 0,
+     PRIMARY KEY (bucket, window_start)
+   )`,
+  `CREATE INDEX IF NOT EXISTS ratelimit_hits_window_idx
+     ON ratelimit_hits(window_start)`,
+
   `CREATE TABLE IF NOT EXISTS user_friendships (
      user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
      friend_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,

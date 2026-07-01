@@ -19,6 +19,7 @@ import {
 } from "@/lib/atlas/recognition";
 import { downloadAtlasObject, removeAtlasPrivateObjects } from "@/lib/atlas/storage";
 import type { AtlasRecognitionStage } from "@/lib/atlas/types";
+import { checkAtlasAiRateLimit, clientIpHash } from "@/lib/ratelimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -45,6 +46,20 @@ export async function POST(
 
   const image = await getAtlasImage(userId, params.id);
   if (!image) return NextResponse.json({ error: "not found" }, { status: 404 });
+
+  // This route always spends an AI call (unlike upload, there is no dedup path),
+  // so guard it before creating a job. 429 keeps the image intact — the user
+  // just can't run more AI right now.
+  const aiLimit = await checkAtlasAiRateLimit({ userId, ipHash: clientIpHash(req) });
+  if (!aiLimit.ok) {
+    return NextResponse.json(
+      { error: "rate_limited", scope: aiLimit.scope, message: aiLimit.message },
+      {
+        status: 429,
+        headers: { "Retry-After": String(aiLimit.retryAfterSeconds ?? 60) },
+      },
+    );
+  }
 
   const mode = body.mode === "fine" || body.mode === "escalate" ? body.mode : "primary";
   const stage: AtlasRecognitionStage =

@@ -886,6 +886,19 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS ratelimit_hits_window_idx
      ON ratelimit_hits(window_start)`,
 
+  // Atlas entitlement (Free/Pro). One row per user; absent row = free. `source`
+  // records where Pro came from (e.g. appstore); `expires_at` lets an expired
+  // subscription lapse back to free without a row delete. StoreKit / App Store
+  // Server Notifications (Phase 2) write here; server stays the authority.
+  `CREATE TABLE IF NOT EXISTS user_entitlements (
+     user_id    UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+     tier       TEXT NOT NULL DEFAULT 'free' CHECK (tier IN ('free','pro')),
+     source     TEXT,
+     expires_at TIMESTAMPTZ,
+     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+
   `CREATE TABLE IF NOT EXISTS user_friendships (
      user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
      friend_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,

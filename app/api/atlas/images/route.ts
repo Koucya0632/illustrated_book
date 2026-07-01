@@ -18,7 +18,8 @@ import {
 } from "@/lib/atlas-db";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import { createPrimaryAtlasProvider } from "@/lib/atlas/recognition";
-import { checkAtlasAiRateLimit, clientIpHash } from "@/lib/ratelimit";
+import { enforceAtlasAiLimits } from "@/lib/atlas/entitlement";
+import { clientIpHash } from "@/lib/ratelimit";
 import {
   ATLAS_PRIVATE_BUCKET,
   atlasImagePaths,
@@ -271,10 +272,11 @@ export async function POST(req: Request) {
     sha256: hash,
   });
 
-  // Sign the image URLs and evaluate the AI rate limit in parallel.
+  // Sign the image URLs and evaluate the AI limits (tier quota + backstops) in
+  // parallel.
   const [serializedImage, aiLimit] = await Promise.all([
     serializeImage(image),
-    checkAtlasAiRateLimit({ userId, ipHash: clientIpHash(req) }),
+    enforceAtlasAiLimits({ userId, ipHash: clientIpHash(req) }),
   ]);
 
   // When within limit, recognize inline on the in-memory original (no second

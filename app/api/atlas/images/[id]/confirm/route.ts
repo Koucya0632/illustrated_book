@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { confirmAtlasItem, getAtlasImage } from "@/lib/atlas-db";
+import { checkAtlasCapacity } from "@/lib/atlas/entitlement";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 
 export const runtime = "nodejs";
@@ -44,6 +45,17 @@ export async function POST(
     return NextResponse.json(
       { error: "lemma, primaryLabel and displayZhHant are required" },
       { status: 400 },
+    );
+  }
+
+  // confirmAtlasItem always inserts a new item, so this genuinely grows the
+  // collection — enforce the tier capacity here (the authoritative gate; the
+  // client also blocks at capture entry to avoid spending an AI call first).
+  const capacity = await checkAtlasCapacity(userId);
+  if (!capacity.ok) {
+    return NextResponse.json(
+      { error: "quota_exceeded", scope: "capacity", message: capacity.message },
+      { status: 402 },
     );
   }
 

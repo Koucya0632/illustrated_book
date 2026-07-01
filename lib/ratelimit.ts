@@ -88,36 +88,26 @@ function intEnv(name: string, fallback: number): number {
 
 const DAY_SECONDS = 86_400;
 
-export type AtlasAiLimitScope = "daily_user" | "ip_burst" | "global";
+export type AtlasAiBackstopScope = "ip_burst" | "global";
 
-export interface AtlasAiLimitDecision {
+export interface AtlasAiBackstopResult {
   ok: boolean;
-  scope?: AtlasAiLimitScope;
+  scope?: AtlasAiBackstopScope;
   /** User-facing (zh-Hant) copy the client can show verbatim. */
   message?: string;
   retryAfterSeconds?: number;
 }
 
 /**
- * Guard an atlas AI recognition call against three windows: per-user daily,
- * per-IP per-minute, and a global daily backstop. Returns the first violation
- * (or ok) so the route can 429 / soft-skip. Limits are env-tunable:
- *   ATLAS_AI_DAILY_PER_USER, ATLAS_AI_PER_MINUTE_PER_IP, ATLAS_AI_DAILY_GLOBAL.
+ * Abuse backstops for atlas AI recognition: per-IP per-minute burst and a
+ * global daily hard cap. These are NOT the per-user quota — that is tier-based
+ * and enforced in lib/atlas/entitlement.ts, which calls this after its own
+ * check. Env-tunable: ATLAS_AI_PER_MINUTE_PER_IP, ATLAS_AI_DAILY_GLOBAL.
  */
-export async function checkAtlasAiRateLimit(ctx: {
-  userId: string;
+export async function checkAtlasAiBackstops(ctx: {
   ipHash: string;
-}): Promise<AtlasAiLimitDecision> {
-  const rules: { scope: AtlasAiLimitScope; message: string; rule: RateRule }[] = [
-    {
-      scope: "daily_user",
-      message: "今日 AI 辨識次數已達上限，請明天再試。",
-      rule: {
-        bucket: `atlas-ai:user:${ctx.userId}`,
-        windowSeconds: DAY_SECONDS,
-        limit: intEnv("ATLAS_AI_DAILY_PER_USER", 40),
-      },
-    },
+}): Promise<AtlasAiBackstopResult> {
+  const rules: { scope: AtlasAiBackstopScope; message: string; rule: RateRule }[] = [
     {
       scope: "ip_burst",
       message: "操作太頻繁，請稍後再試。",

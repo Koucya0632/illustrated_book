@@ -48,14 +48,18 @@ export async function POST(
     );
   }
 
-  // confirmAtlasItem always inserts a new item, so this genuinely grows the
-  // collection — enforce the tier capacity here (the authoritative gate; the
-  // client also blocks at capture entry to avoid spending an AI call first).
+  // Enforce the tier capacity before growing the collection (authoritative gate;
+  // the client also blocks at capture entry). Free hitting its cap → 402
+  // (upgrade raises it); Pro at its cap → 429 (must delete, upgrade won't help).
   const capacity = await checkAtlasCapacity(userId);
   if (!capacity.ok) {
     return NextResponse.json(
-      { error: "quota_exceeded", scope: "capacity", message: capacity.message },
-      { status: 402 },
+      {
+        error: capacity.upgradeable ? "quota_exceeded" : "capacity_full",
+        scope: "capacity",
+        message: capacity.message,
+      },
+      { status: capacity.upgradeable ? 402 : 429 },
     );
   }
 

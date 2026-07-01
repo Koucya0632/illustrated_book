@@ -276,7 +276,7 @@ export async function POST(req: Request) {
   // parallel.
   const [serializedImage, aiLimit] = await Promise.all([
     serializeImage(image),
-    enforceAtlasAiLimits({ userId, ipHash: clientIpHash(req) }),
+    enforceAtlasAiLimits({ userId, ipHash: clientIpHash(req), operation: "primary" }),
   ]);
 
   // When within limit, recognize inline on the in-memory original (no second

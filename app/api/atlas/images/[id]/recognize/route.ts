@@ -49,12 +49,18 @@ export async function POST(
   if (!image) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   // This route always spends an AI call (unlike upload, there is no dedup path),
-  // so guard it before creating a job. The image is left intact either way — the
-  // user just can't run more AI right now. Daily-quota exhaustion is 402
-  // (upgrade); transient IP/global throttles are 429 (retry).
-  const aiLimit = await enforceAtlasAiLimits({ userId, ipHash: clientIpHash(req) });
+  // so guard it before creating a job. 高精度 (escalate) draws the precision
+  // quota; everything else the ordinary monthly limit. The image is left intact
+  // either way. `upgradeable` (Free hitting a Pro-only wall) → 402 (paywall);
+  // an already-maxed tier or a transient backstop → 429 (message).
+  const operation = body.mode === "escalate" ? "precision" : "primary";
+  const aiLimit = await enforceAtlasAiLimits({
+    userId,
+    ipHash: clientIpHash(req),
+    operation,
+  });
   if (!aiLimit.ok) {
-    if (aiLimit.kind === "quota") {
+    if (aiLimit.upgradeable) {
       return NextResponse.json(
         { error: "quota_exceeded", scope: aiLimit.scope, message: aiLimit.message },
         { status: 402 },

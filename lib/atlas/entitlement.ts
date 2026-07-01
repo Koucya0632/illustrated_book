@@ -1,11 +1,14 @@
 // Atlas Free/Pro entitlement + usage + enforcement. Server is the authority:
 // the client mirrors this for UI but every write path re-checks here.
-//
-// Two limits per tier:
-//   - maxItems:            capacity of the 自製圖鑑 (enforced at confirm)
-//   - dailyAiRecognitions: AI recognitions per UTC day (enforced at upload /
-//                          recognize; counted from user_atlas_ai_usage)
-// null limit = unlimited (Pro). Limits are env-tunable; see atlasLimitsForTier.
+// Model mirrors docs/ATLAS_PRICING_PLAN.md:
+//   - atlasSlotsLimit:            capacity (Free 30, Pro 300) — enforced at confirm
+//   - primaryAiSoftLimitMonthly:  ordinary AI / month, SAME both tiers (500)
+//   - precisionAiLimitMonthly:    高精度 / month (Free 0, Pro 30) — user-triggered
+//   - adsRequiredForCardGeneration: Free true / Pro false (ads deferred, §8; the
+//                                  flag is surfaced but card generation is not
+//                                  gated on it yet)
+// AI usage is counted per calendar month from user_atlas_ai_usage (operation
+// 'primary' vs 'escalated'). Limits are env-tunable; see atlasLimitsForTier.
 //
 // Fails OPEN: any DB error resolves to free-tier limits but allows the action,
 // so an entitlement outage never hard-blocks the product. The abuse backstops
@@ -17,48 +20,61 @@ import { checkAtlasAiBackstops } from "@/lib/ratelimit";
 export type AtlasTier = "free" | "pro";
 
 export interface AtlasLimits {
-  /** null = unlimited. */
-  maxItems: number | null;
-  /** null = unlimited. */
-  dailyAiRecognitions: number | null;
+  atlasSlotsLimit: number;
+  primaryAiSoftLimitMonthly: number;
+  precisionAiLimitMonthly: number;
+  adsRequiredForCardGeneration: boolean;
 }
 
 export interface AtlasUsage {
-  itemCount: number;
-  aiRecognitionsToday: number;
+  atlasSlots: number;
+  primaryAiThisMonth: number;
+  precisionAiThisMonth: number;
 }
 
 export interface AtlasEntitlementSnapshot {
-  tier: AtlasTier;
-  limits: AtlasLimits;
+  plan: AtlasTier;
+  atlasSlotsLimit: number;
+  primaryAiSoftLimitMonthly: number;
+  precisionAiLimitMonthly: number;
+  adsRequiredForCardGeneration: boolean;
+  subscriptionExpiresAt: string | null;
   usage: AtlasUsage;
 }
 
-/** Env override where a non-positive value means "unlimited" (null). */
-function limitEnv(name: string, fallback: number): number | null {
+function intEnv(name: string, fallback: number): number {
   const raw = process.env[name];
   const n = raw === undefined || raw === "" ? fallback : Number(raw);
-  if (!Number.isFinite(n)) return fallback <= 0 ? null : fallback;
-  return n <= 0 ? null : n;
+  return Number.isFinite(n) && n >= 0 ? n : fallback;
 }
 
 export function atlasLimitsForTier(tier: AtlasTier): AtlasLimits {
+  // Ordinary AI is the same soft limit for both tiers — Pro sells capacity,
+  // precision recognitions and (later) ad-free card generation, not more
+  // ordinary AI.
+  const primaryAiSoftLimitMonthly = intEnv("ATLAS_PRIMARY_AI_MONTHLY", 500);
   if (tier === "pro") {
     return {
-      maxItems: limitEnv("ATLAS_PRO_MAX_ITEMS", 0), // 0 => unlimited
-      dailyAiRecognitions: limitEnv("ATLAS_PRO_DAILY_AI", 100),
+      atlasSlotsLimit: intEnv("ATLAS_PRO_SLOTS", 300),
+      primaryAiSoftLimitMonthly,
+      precisionAiLimitMonthly: intEnv("ATLAS_PRO_PRECISION_MONTHLY", 30),
+      adsRequiredForCardGeneration: false,
     };
   }
   return {
-    maxItems: limitEnv("ATLAS_FREE_MAX_ITEMS", 30),
-    dailyAiRecognitions: limitEnv("ATLAS_FREE_DAILY_AI", 10),
+    atlasSlotsLimit: intEnv("ATLAS_FREE_SLOTS", 30),
+    primaryAiSoftLimitMonthly,
+    precisionAiLimitMonthly: intEnv("ATLAS_FREE_PRECISION_MONTHLY", 0),
+    adsRequiredForCardGeneration: true,
   };
 }
 
-/** Effective tier: an expired Pro row lapses back to free. */
-export async function getAtlasTier(userId: string): Promise<AtlasTier> {
+/** Effective tier + expiry. An expired Pro row lapses back to free. */
+async function getEntitlementRow(
+  userId: string,
+): Promise<{ tier: AtlasTier; expiresAt: string | null }> {
   const sql = getSql();
-  if (!sql) return "free";
+  if (!sql) return { tier: "free", expiresAt: null };
   try {
     const rows = await sql<{ tier: string; expires_at: string | null }[]>`
       SELECT tier, expires_at
@@ -67,20 +83,26 @@ export async function getAtlasTier(userId: string): Promise<AtlasTier> {
       LIMIT 1
     `;
     const row = rows[0];
-    if (!row || row.tier !== "pro") return "free";
-    if (row.expires_at && new Date(row.expires_at).getTime() < Date.now()) return "free";
-    return "pro";
+    if (!row || row.tier !== "pro") return { tier: "free", expiresAt: row?.expires_at ?? null };
+    if (row.expires_at && new Date(row.expires_at).getTime() < Date.now()) {
+      return { tier: "free", expiresAt: row.expires_at };
+    }
+    return { tier: "pro", expiresAt: row.expires_at };
   } catch (err) {
     console.warn("[entitlement] tier lookup failed, defaulting free", err);
-    return "free";
+    return { tier: "free", expiresAt: null };
   }
+}
+
+export async function getAtlasTier(userId: string): Promise<AtlasTier> {
+  return (await getEntitlementRow(userId)).tier;
 }
 
 export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
   const sql = getSql();
-  if (!sql) return { itemCount: 0, aiRecognitionsToday: 0 };
+  if (!sql) return { atlasSlots: 0, primaryAiThisMonth: 0, precisionAiThisMonth: 0 };
   try {
-    const [items, ai] = await Promise.all([
+    const [slots, primary, precision] = await Promise.all([
       sql<{ count: number }[]>`
         SELECT count(*)::int AS count
         FROM user_atlas_items
@@ -89,22 +111,41 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
       sql<{ count: number }[]>`
         SELECT count(*)::int AS count
         FROM user_atlas_ai_usage
-        WHERE user_id = ${userId}::uuid AND created_at >= date_trunc('day', now())
+        WHERE user_id = ${userId}::uuid
+          AND operation = 'primary'
+          AND created_at >= date_trunc('month', now())
+      `,
+      sql<{ count: number }[]>`
+        SELECT count(*)::int AS count
+        FROM user_atlas_ai_usage
+        WHERE user_id = ${userId}::uuid
+          AND operation = 'escalated'
+          AND created_at >= date_trunc('month', now())
       `,
     ]);
     return {
-      itemCount: items[0]?.count ?? 0,
-      aiRecognitionsToday: ai[0]?.count ?? 0,
+      atlasSlots: slots[0]?.count ?? 0,
+      primaryAiThisMonth: primary[0]?.count ?? 0,
+      precisionAiThisMonth: precision[0]?.count ?? 0,
     };
   } catch (err) {
     console.warn("[entitlement] usage lookup failed", err);
-    return { itemCount: 0, aiRecognitionsToday: 0 };
+    return { atlasSlots: 0, primaryAiThisMonth: 0, precisionAiThisMonth: 0 };
   }
 }
 
 export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlementSnapshot> {
-  const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
-  return { tier, limits: atlasLimitsForTier(tier), usage };
+  const [row, usage] = await Promise.all([getEntitlementRow(userId), getAtlasUsage(userId)]);
+  const limits = atlasLimitsForTier(row.tier);
+  return {
+    plan: row.tier,
+    atlasSlotsLimit: limits.atlasSlotsLimit,
+    primaryAiSoftLimitMonthly: limits.primaryAiSoftLimitMonthly,
+    precisionAiLimitMonthly: limits.precisionAiLimitMonthly,
+    adsRequiredForCardGeneration: limits.adsRequiredForCardGeneration,
+    subscriptionExpiresAt: row.tier === "pro" ? row.expiresAt : null,
+    usage,
+  };
 }
 
 /** Write the authoritative entitlement (StoreKit verify / App Store notifications). */
@@ -154,6 +195,8 @@ export async function getUserIdByOriginalTransaction(
 
 export interface AtlasCapacityGate {
   ok: boolean;
+  /** true => upgrading raises the cap (route 402 / paywall); false => 429 / message. */
+  upgradeable?: boolean;
   message?: string;
   limit?: number;
   usage?: number;
@@ -163,45 +206,63 @@ export interface AtlasCapacityGate {
 export async function checkAtlasCapacity(userId: string): Promise<AtlasCapacityGate> {
   const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
   const limits = atlasLimitsForTier(tier);
-  if (limits.maxItems === null || usage.itemCount < limits.maxItems) return { ok: true };
+  if (usage.atlasSlots < limits.atlasSlotsLimit) return { ok: true };
+  const upgradeable = tier === "free"; // Pro slots (300) > Free (30)
   return {
     ok: false,
-    message: `自製圖鑑已達上限（${limits.maxItems}），刪除一些或升級後再新增。`,
-    limit: limits.maxItems,
-    usage: usage.itemCount,
+    upgradeable,
+    message: upgradeable
+      ? `自製圖鑑已達免費上限（${limits.atlasSlotsLimit}），升級 Pro 可擴充到 ${atlasLimitsForTier("pro").atlasSlotsLimit} 格。`
+      : `自製圖鑑已達上限（${limits.atlasSlotsLimit}），刪除一些後再新增。`,
+    limit: limits.atlasSlotsLimit,
+    usage: usage.atlasSlots,
   };
 }
 
-export type AtlasAiGateKind = "quota" | "throttle";
+export type AtlasAiOperation = "primary" | "precision";
 
 export interface AtlasAiGate {
   ok: boolean;
-  /** quota => the caller should 402 (upgrade); throttle => 429 (retry). */
-  kind?: AtlasAiGateKind;
-  scope?: "daily_ai" | "ip_burst" | "global";
+  /** true => route 402 (paywall); false => 429 (retry / message). */
+  upgradeable?: boolean;
+  scope?: "primary_ai" | "precision_ai" | "ip_burst" | "global";
   message?: string;
   retryAfterSeconds?: number;
 }
 
 /**
- * Guard an atlas AI recognition: first the tier-based per-user daily quota,
- * then the IP-burst + global abuse backstops. Returns the first violation.
+ * Guard an atlas AI recognition: the tier quota for the operation (ordinary vs
+ * precision), then the IP-burst + global abuse backstops. Returns the first
+ * violation. `upgradeable` tells the route whether to 402 (Free, upgrade helps)
+ * or 429 (already maxed for this tier).
  */
 export async function enforceAtlasAiLimits(ctx: {
   userId: string;
   ipHash: string;
+  operation: AtlasAiOperation;
 }): Promise<AtlasAiGate> {
   const [tier, usage] = await Promise.all([getAtlasTier(ctx.userId), getAtlasUsage(ctx.userId)]);
   const limits = atlasLimitsForTier(tier);
-  if (
-    limits.dailyAiRecognitions !== null &&
-    usage.aiRecognitionsToday >= limits.dailyAiRecognitions
-  ) {
+
+  if (ctx.operation === "precision") {
+    if (usage.precisionAiThisMonth >= limits.precisionAiLimitMonthly) {
+      const upgradeable = tier === "free"; // Pro precision (30) > Free (0)
+      return {
+        ok: false,
+        upgradeable,
+        scope: "precision_ai",
+        message: upgradeable
+          ? "高精度辨識是 Pro 功能，升級後即可使用。"
+          : `本月高精度辨識已達上限（${limits.precisionAiLimitMonthly}），下月再試。`,
+      };
+    }
+  } else if (usage.primaryAiThisMonth >= limits.primaryAiSoftLimitMonthly) {
+    // Same soft limit for both tiers — upgrading does not raise it.
     return {
       ok: false,
-      kind: "quota",
-      scope: "daily_ai",
-      message: `今日 AI 辨識次數已達上限（${limits.dailyAiRecognitions}），明天再試或升級。`,
+      upgradeable: false,
+      scope: "primary_ai",
+      message: `本月 AI 辨識已達上限（${limits.primaryAiSoftLimitMonthly}），下月再試。`,
     };
   }
 
@@ -209,7 +270,7 @@ export async function enforceAtlasAiLimits(ctx: {
   if (!backstop.ok) {
     return {
       ok: false,
-      kind: "throttle",
+      upgradeable: false,
       scope: backstop.scope,
       message: backstop.message,
       retryAfterSeconds: backstop.retryAfterSeconds,

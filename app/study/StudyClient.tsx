@@ -641,6 +641,7 @@ export default function StudyClient() {
         : "daily"
       : null;
     const newTileDimmed = backlogWarn || reachedDaily;
+    const showBacklogAdjustment = !reachedDaily && base > 0 && newCount > 0 && newCount < base;
     return (
       <>
         <div className="mx-auto max-w-2xl px-5 py-10 sm:px-8 sm:py-14">
@@ -695,12 +696,13 @@ export default function StudyClient() {
               </div>
               <div className="mt-1 flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.1em] text-tuji-ink3">
                 <span>{t("study.daily.chip", { n: todayNew, g: base })}</span>
-                <span>
-                  {backlogBand === "halved" && "½"}
-                  {backlogBand === "quartered" && "¼"}
-                  {backlogBand === "paused" && t("study.backlog.warnTitle")}
-                </span>
+                {backlogBand === "paused" && <span>{t("study.backlog.warnTitle")}</span>}
               </div>
+              {showBacklogAdjustment && (
+                <div className="mt-1 rounded-2xl bg-white/75 px-3 py-2 text-[12px] font-bold leading-snug text-tuji-coral">
+                  {t("study.backlog.adjustedNew", { n: newCount })}
+                </div>
+              )}
             </button>
 
             {/* 複習 */}

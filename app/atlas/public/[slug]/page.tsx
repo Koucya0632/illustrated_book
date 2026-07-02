@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAtlasPublicItem } from "@/lib/atlas-db";
 import { atlasPublicImageUrl } from "@/lib/atlas/storage";
+import ReportButton from "./ReportButton";
 
 export const dynamic = "force-dynamic";
 
@@ -64,6 +65,9 @@ export default async function PublicAtlasDetailPage({
             >
               複習我的卡片
             </Link>
+          </div>
+          <div className="mt-6 border-t border-black/5 pt-4">
+            <ReportButton slug={item.public_slug} />
           </div>
         </section>
       </article>

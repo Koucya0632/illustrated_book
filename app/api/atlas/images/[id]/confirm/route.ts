@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { confirmAtlasItem, getAtlasImage } from "@/lib/atlas-db";
+import { checkAtlasCapacity } from "@/lib/atlas/entitlement";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 
 export const runtime = "nodejs";
@@ -44,6 +45,21 @@ export async function POST(
     return NextResponse.json(
       { error: "lemma, primaryLabel and displayZhHant are required" },
       { status: 400 },
+    );
+  }
+
+  // Enforce the tier capacity before growing the collection (authoritative gate;
+  // the client also blocks at capture entry). Free hitting its cap → 402
+  // (upgrade raises it); Pro at its cap → 429 (must delete, upgrade won't help).
+  const capacity = await checkAtlasCapacity(userId);
+  if (!capacity.ok) {
+    return NextResponse.json(
+      {
+        error: capacity.upgradeable ? "quota_exceeded" : "capacity_full",
+        scope: "capacity",
+        message: capacity.message,
+      },
+      { status: capacity.upgradeable ? 402 : 429 },
     );
   }
 

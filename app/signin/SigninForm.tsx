@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import LoadingToast from "@/components/tuji/LoadingToast";
 import { createClient } from "@/lib/supabase/client";
 import { getProgress } from "@/lib/storage";
 
@@ -44,39 +45,46 @@ export default function SigninForm({ next }: { next: string }) {
   }
 
   return (
-    <form onSubmit={handle} className="space-y-3">
-      <label className="block">
-        <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
-        <input
-          autoFocus
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className={INPUT}
-        />
-      </label>
-      <label className="block">
-        <span className="text-sm font-bold text-tuji-ink">密碼</span>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className={INPUT}
-        />
-      </label>
+    <>
+      <LoadingToast
+        open={loading}
+        title="登入中"
+        description="正在同步你的學習進度"
+      />
+      <form onSubmit={handle} className="space-y-3">
+        <label className="block">
+          <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
+          <input
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={INPUT}
+          />
+        </label>
+        <label className="block">
+          <span className="text-sm font-bold text-tuji-ink">密碼</span>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className={INPUT}
+          />
+        </label>
 
-      {error && (
-        <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
-      )}
+        {error && (
+          <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
+        )}
 
-      <button
-        type="submit"
-        disabled={loading || !email || !password}
-        className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
-      >
-        {loading ? "登入中..." : "登入"}
-      </button>
-    </form>
+        <button
+          type="submit"
+          disabled={loading || !email || !password}
+          className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
+        >
+          {loading ? "登入中..." : "登入"}
+        </button>
+      </form>
+    </>
   );
 }
 

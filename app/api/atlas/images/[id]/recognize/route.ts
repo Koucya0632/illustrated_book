@@ -19,6 +19,8 @@ import {
 } from "@/lib/atlas/recognition";
 import { downloadAtlasObject, removeAtlasPrivateObjects } from "@/lib/atlas/storage";
 import type { AtlasRecognitionStage } from "@/lib/atlas/types";
+import { enforceAtlasAiLimits } from "@/lib/atlas/entitlement";
+import { clientIpHash } from "@/lib/ratelimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -45,6 +47,33 @@ export async function POST(
 
   const image = await getAtlasImage(userId, params.id);
   if (!image) return NextResponse.json({ error: "not found" }, { status: 404 });
+
+  // This route always spends an AI call (unlike upload, there is no dedup path),
+  // so guard it before creating a job. 高精度 (escalate) draws the precision
+  // quota; everything else the ordinary monthly limit. The image is left intact
+  // either way. `upgradeable` (Free hitting a Pro-only wall) → 402 (paywall);
+  // an already-maxed tier or a transient backstop → 429 (message).
+  const operation = body.mode === "escalate" ? "precision" : "primary";
+  const aiLimit = await enforceAtlasAiLimits({
+    userId,
+    ipHash: clientIpHash(req),
+    operation,
+  });
+  if (!aiLimit.ok) {
+    if (aiLimit.upgradeable) {
+      return NextResponse.json(
+        { error: "quota_exceeded", scope: aiLimit.scope, message: aiLimit.message },
+        { status: 402 },
+      );
+    }
+    return NextResponse.json(
+      { error: "rate_limited", scope: aiLimit.scope, message: aiLimit.message },
+      {
+        status: 429,
+        headers: { "Retry-After": String(aiLimit.retryAfterSeconds ?? 60) },
+      },
+    );
+  }
 
   const mode = body.mode === "fine" || body.mode === "escalate" ? body.mode : "primary";
   const stage: AtlasRecognitionStage =

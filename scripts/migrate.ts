@@ -874,6 +874,37 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS user_atlas_ai_usage_user_created_idx
      ON user_atlas_ai_usage(user_id, created_at DESC)`,
 
+  // Generic fixed-window rate-limit counters. One row per (bucket, window):
+  // the atlas AI guards increment atlas-ai:user:<id> (daily), atlas-ai:ip:<hash>
+  // (per-minute) and atlas-ai:global (daily). Pruned by the atlas-cleanup cron.
+  `CREATE TABLE IF NOT EXISTS ratelimit_hits (
+     bucket       TEXT NOT NULL,
+     window_start TIMESTAMPTZ NOT NULL,
+     count        INT NOT NULL DEFAULT 0,
+     PRIMARY KEY (bucket, window_start)
+   )`,
+  `CREATE INDEX IF NOT EXISTS ratelimit_hits_window_idx
+     ON ratelimit_hits(window_start)`,
+
+  // Atlas entitlement (Free/Pro). One row per user; absent row = free. `source`
+  // records where Pro came from (e.g. appstore); `expires_at` lets an expired
+  // subscription lapse back to free without a row delete. StoreKit / App Store
+  // Server Notifications (Phase 2) write here; server stays the authority.
+  `CREATE TABLE IF NOT EXISTS user_entitlements (
+     user_id                 UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+     tier                    TEXT NOT NULL DEFAULT 'free' CHECK (tier IN ('free','pro')),
+     source                  TEXT,
+     expires_at              TIMESTAMPTZ,
+     original_transaction_id TEXT,
+     created_at              TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at              TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  // Maps an App Store subscription back to the user so the notifications webhook
+  // (renew / refund / expire) can find them without an authenticated request.
+  `CREATE INDEX IF NOT EXISTS user_entitlements_original_txn_idx
+     ON user_entitlements(original_transaction_id)
+     WHERE original_transaction_id IS NOT NULL`,
+
   `CREATE TABLE IF NOT EXISTS user_friendships (
      user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
      friend_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -917,6 +948,26 @@ const DDL = [
      ON atlas_public_items(published_at DESC)
      WHERE review_status = 'approved'`,
 
+  // User-submitted reports on public 圖鑑 items (UGC moderation, §5). One report
+  // per (public item, reporter); source_item_id lets admin jump to the existing
+  // takedown action, which keys on user_atlas_items.id.
+  `CREATE TABLE IF NOT EXISTS atlas_reports (
+     id               BIGSERIAL PRIMARY KEY,
+     public_item_id   UUID NOT NULL REFERENCES atlas_public_items(id) ON DELETE CASCADE,
+     source_item_id   UUID REFERENCES user_atlas_items(id) ON DELETE SET NULL,
+     slug             TEXT NOT NULL,
+     reporter_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     reason           TEXT NOT NULL CHECK (reason IN
+                        ('spam','inappropriate','copyright','wrong','other')),
+     detail           TEXT,
+     status           TEXT NOT NULL DEFAULT 'open' CHECK (status IN
+                        ('open','reviewed','dismissed')),
+     created_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     UNIQUE (public_item_id, reporter_user_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_reports_status_created_idx
+     ON atlas_reports(status, created_at DESC)`,
+
   `ALTER TABLE user_atlas_images           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_atlas_recognition_jobs ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_atlas_candidates       ENABLE ROW LEVEL SECURITY`,
@@ -929,6 +980,7 @@ const DDL = [
   `ALTER TABLE user_friendships            ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE atlas_item_grants           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE atlas_public_items          ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE atlas_reports               ENABLE ROW LEVEL SECURITY`,
 
   ...[
     "user_atlas_images",

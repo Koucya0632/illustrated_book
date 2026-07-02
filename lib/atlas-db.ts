@@ -320,28 +320,58 @@ export interface ConfirmAtlasItemInput {
 export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<AtlasItemRow> {
   const sql = requireSql();
   const selectedCandidateId = input.selectedCandidateId;
-  const rows = await sql<AtlasItemRow[]>`
-    INSERT INTO user_atlas_items (
-      user_id, image_id, selected_candidate_id, target_language,
-      primary_label, fine_label, lemma, display_zh_hant,
-      part_of_speech, category, correction_source, updated_at
-    )
-    VALUES (
-      ${input.userId}::uuid,
-      ${input.imageId}::uuid,
-      ${selectedCandidateId}::uuid,
-      ${input.targetLanguage},
-      ${input.primaryLabel},
-      ${input.fineLabel},
-      ${input.lemma},
-      ${input.displayZhHant},
-      ${input.partOfSpeech},
-      ${input.category},
-      ${input.selectedCandidateId ? "candidate" : "manual"},
-      now()
-    )
-    RETURNING *
+  const correctionSource = input.selectedCandidateId ? "candidate" : "manual";
+
+  // Idempotent: if this image already has a (non-deleted) item, update it in
+  // place rather than inserting a duplicate. This makes AtlasCaptureQueue resume
+  // safe — a job re-run after an app kill hits the same row instead of creating
+  // a second item — and also turns a re-confirm into an edit.
+  const existing = await sql<AtlasItemRow[]>`
+    SELECT * FROM user_atlas_items
+    WHERE user_id = ${input.userId}::uuid
+      AND image_id = ${input.imageId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
   `;
+
+  const rows = existing[0]
+    ? await sql<AtlasItemRow[]>`
+        UPDATE user_atlas_items SET
+          selected_candidate_id = ${selectedCandidateId}::uuid,
+          target_language = ${input.targetLanguage},
+          primary_label = ${input.primaryLabel},
+          fine_label = ${input.fineLabel},
+          lemma = ${input.lemma},
+          display_zh_hant = ${input.displayZhHant},
+          part_of_speech = ${input.partOfSpeech},
+          category = ${input.category},
+          correction_source = ${correctionSource},
+          updated_at = now()
+        WHERE id = ${existing[0].id}::uuid
+        RETURNING *
+      `
+    : await sql<AtlasItemRow[]>`
+        INSERT INTO user_atlas_items (
+          user_id, image_id, selected_candidate_id, target_language,
+          primary_label, fine_label, lemma, display_zh_hant,
+          part_of_speech, category, correction_source, updated_at
+        )
+        VALUES (
+          ${input.userId}::uuid,
+          ${input.imageId}::uuid,
+          ${selectedCandidateId}::uuid,
+          ${input.targetLanguage},
+          ${input.primaryLabel},
+          ${input.fineLabel},
+          ${input.lemma},
+          ${input.displayZhHant},
+          ${input.partOfSpeech},
+          ${input.category},
+          ${correctionSource},
+          now()
+        )
+        RETURNING *
+      `;
   await updateAtlasImageStatus(input.userId, input.imageId, "confirmed");
   return rows[0];
 }
@@ -548,8 +578,25 @@ export async function fetchAtlasDue(
       AND i.deleted_at IS NULL
       AND img.deleted_at IS NULL
       AND (
-        (${includeNew} AND (s.card_id IS NULL OR s.status = '新卡'))
-        OR (${includeReview} AND s.next_review_at <= now())
+        -- New: a 新卡 card whose ITEM has no studied card yet. An item makes two
+        -- cards (image_recall + flashcard) but the study flow dedupes to one per
+        -- item, so once any card is studied the item must leave the new pool —
+        -- otherwise its leftover 新卡 sibling resurfaces the word in 學新字 and,
+        -- being the oldest, starves never-studied items out of the limit.
+        (${includeNew} AND (s.card_id IS NULL OR s.status = '新卡')
+          AND NOT EXISTS (
+            SELECT 1
+            FROM user_atlas_cards c2
+            JOIN user_atlas_card_state s2
+              ON s2.card_id = c2.id AND s2.user_id = ${userId}::uuid
+            WHERE c2.item_id = i.id
+              AND c2.deleted_at IS NULL
+              AND s2.status <> '新卡'
+          ))
+        -- Review: genuinely scheduled cards only. 新卡 rows carry a creation-time
+        -- next_review_at (already in the past), so without the status guard they
+        -- would masquerade as due here.
+        OR (${includeReview} AND s.status <> '新卡' AND s.next_review_at <= now())
       )
     ORDER BY
       CASE WHEN s.card_id IS NULL OR s.status = '新卡' THEN 1 ELSE 0 END,
@@ -609,71 +656,80 @@ export async function atlasStudyStats(
   byStatus: Array<{ status: Status; c: number }>;
 }> {
   const sql = requireSql();
+  // Counts are per ITEM, not per card. An item makes two cards (image_recall +
+  // flashcard) but the study flow dedupes to one card per item, so card-level
+  // counts double the numbers the queue actually serves. `seen`/studied keys off
+  // last_reviewed_at, which is equivalent to "has a non-新卡 card" — the same
+  // signal fetchAtlasDue uses to drop an item from the new pool, so `new`
+  // (= total - seen) matches the new queue and `due` matches the review queue.
   const [totalRows, seenRows, dueRows, todayRows, byStatus] = await Promise.all([
     sql<{ total: number }[]>`
-      SELECT count(*)::int AS total
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      SELECT count(DISTINCT i.id)::int AS total
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
     `,
     sql<{ seen: number }[]>`
-      SELECT count(*)::int AS seen
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      SELECT count(DISTINCT i.id)::int AS seen
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
       JOIN user_atlas_card_state s
         ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
         AND s.last_reviewed_at IS NOT NULL
     `,
     sql<{ due: number }[]>`
-      SELECT count(*)::int AS due
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      SELECT count(DISTINCT i.id)::int AS due
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
       JOIN user_atlas_card_state s
         ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
         AND s.status <> '新卡'
         AND s.next_review_at <= now()
     `,
     sql<{ todayNew: number }[]>`
-      SELECT count(*)::int AS "todayNew"
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
+      SELECT count(DISTINCT i.id)::int AS "todayNew"
+      FROM user_atlas_items i
+      JOIN user_atlas_cards c
+        ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
       JOIN user_atlas_card_state s
         ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
+      WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
         AND s.last_reviewed_at IS NOT NULL
         AND (s.last_reviewed_at AT TIME ZONE 'Asia/Taipei')::date
           = (now() AT TIME ZONE 'Asia/Taipei')::date
     `,
+    // One representative status per item — the card the queue would surface
+    // (prefer an in-progress card over a leftover 新卡, then soonest due).
     sql<{ status: Status; c: number }[]>`
-      SELECT s.status, count(*)::int AS c
-      FROM user_atlas_cards c
-      JOIN user_atlas_items i
-        ON i.id = c.item_id AND i.user_id = ${userId}::uuid
-      LEFT JOIN user_atlas_card_state s
-        ON s.card_id = c.id AND s.user_id = ${userId}::uuid
-      WHERE c.user_id = ${userId}::uuid
-        AND c.deleted_at IS NULL
-        AND i.deleted_at IS NULL
-        AND i.target_language = ${targetLanguage}
-      GROUP BY s.status
+      SELECT rep.status, count(*)::int AS c
+      FROM (
+        SELECT DISTINCT ON (i.id) i.id, s.status
+        FROM user_atlas_items i
+        JOIN user_atlas_cards c
+          ON c.item_id = i.id AND c.user_id = ${userId}::uuid AND c.deleted_at IS NULL
+        LEFT JOIN user_atlas_card_state s
+          ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+        WHERE i.user_id = ${userId}::uuid
+          AND i.deleted_at IS NULL
+          AND i.target_language = ${targetLanguage}
+        ORDER BY i.id,
+          CASE WHEN s.status IS NULL OR s.status = '新卡' THEN 1 ELSE 0 END,
+          s.next_review_at ASC NULLS LAST
+      ) rep
+      GROUP BY rep.status
     `,
   ]);
   const total = totalRows[0]?.total ?? 0;
@@ -873,6 +929,47 @@ export async function getAtlasDueCardById(
     LIMIT 1
   `;
   return rows[0] ? rowToAtlasDueCard(rows[0]) : null;
+}
+
+export interface AtlasMasteryScheduleRow {
+  item_id: string;
+  mastery: number;
+  last_reviewed_at: string | null;
+  // Soonest next_review_at across the item's atlas cards, or null if none are
+  // scheduled yet. SRS state is per-card; mastery is per-item.
+  next_review_at: string | null;
+}
+
+// Per-item atlas mastery + the item's soonest next-due review time (MIN over
+// its cards), for the iOS 圖鑑 grid where custom 自制圖鑑 words render as
+// `atlas:<itemId>`. Mirrors getAllMasteryWithSchedule for dictionary words so
+// /api/users/mastery can fold both namespaces into one map.
+export async function getAllAtlasMasteryWithSchedule(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<AtlasMasteryScheduleRow[]> {
+  const sql = requireSql();
+  return sql<AtlasMasteryScheduleRow[]>`
+    SELECT
+      m.item_id,
+      m.mastery::float8 AS mastery,
+      m.last_reviewed_at,
+      (
+        SELECT MIN(s.next_review_at)
+        FROM user_atlas_cards c
+        JOIN user_atlas_card_state s
+          ON s.card_id = c.id AND s.user_id = ${userId}::uuid
+        WHERE c.item_id = m.item_id
+          AND c.user_id = ${userId}::uuid
+          AND c.deleted_at IS NULL
+      ) AS next_review_at
+    FROM user_atlas_item_mastery m
+    JOIN user_atlas_items i
+      ON i.id = m.item_id AND i.user_id = ${userId}::uuid
+    WHERE m.user_id = ${userId}::uuid
+      AND m.target_language = ${targetLanguage}
+      AND i.deleted_at IS NULL
+  `;
 }
 
 export async function getAtlasMastery(
@@ -1445,4 +1542,197 @@ export async function getAtlasPublicItem(slug: string): Promise<AtlasPublicItemR
     LIMIT 1
   `;
   return rows[0] ?? null;
+}
+
+export type AtlasReportReason =
+  | "spam"
+  | "inappropriate"
+  | "copyright"
+  | "wrong"
+  | "other";
+export type AtlasReportStatus = "open" | "reviewed" | "dismissed";
+
+/**
+ * Record a user's report on a public 圖鑑 item. One report per (item, reporter):
+ * a repeat is a no-op (returns already=true) so the button can't be spammed into
+ * duplicate rows.
+ */
+export async function createAtlasReport(input: {
+  publicItemId: string;
+  sourceItemId: string | null;
+  slug: string;
+  reporterUserId: string;
+  reason: AtlasReportReason;
+  detail: string | null;
+}): Promise<{ id: string; already: boolean }> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string }[]>`
+    INSERT INTO atlas_reports (
+      public_item_id, source_item_id, slug, reporter_user_id, reason, detail
+    )
+    VALUES (
+      ${input.publicItemId}::uuid, ${input.sourceItemId}, ${input.slug},
+      ${input.reporterUserId}::uuid, ${input.reason}, ${input.detail}
+    )
+    ON CONFLICT (public_item_id, reporter_user_id) DO NOTHING
+    RETURNING id
+  `;
+  if (rows[0]) return { id: rows[0].id, already: false };
+  const existing = await sql<{ id: string }[]>`
+    SELECT id FROM atlas_reports
+    WHERE public_item_id = ${input.publicItemId}::uuid
+      AND reporter_user_id = ${input.reporterUserId}::uuid
+    LIMIT 1
+  `;
+  return { id: existing[0]?.id ?? "", already: true };
+}
+
+export interface AtlasReportRow {
+  id: string;
+  public_item_id: string;
+  source_item_id: string | null;
+  slug: string;
+  reporter_user_id: string;
+  reason: AtlasReportReason;
+  detail: string | null;
+  status: AtlasReportStatus;
+  created_at: string;
+  lemma: string | null;
+  display_zh_hant: string | null;
+  public_review_status: string | null;
+}
+
+/** Admin: list reports, newest first, optionally filtered by status. */
+export async function listAtlasReports(
+  status: AtlasReportStatus | "",
+  limit = 200,
+): Promise<AtlasReportRow[]> {
+  const sql = requireSql();
+  const capped = Math.min(500, Math.max(1, Math.floor(limit)));
+  if (status) {
+    return sql<AtlasReportRow[]>`
+      SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status
+      FROM atlas_reports r
+      LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+      WHERE r.status = ${status}
+      ORDER BY r.created_at DESC
+      LIMIT ${capped}
+    `;
+  }
+  return sql<AtlasReportRow[]>`
+    SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status
+    FROM atlas_reports r
+    LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+    ORDER BY r.created_at DESC
+    LIMIT ${capped}
+  `;
+}
+
+/** Admin: resolve a report (reviewed / dismissed). */
+export async function updateAtlasReportStatus(
+  id: string,
+  status: AtlasReportStatus,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE atlas_reports SET status = ${status} WHERE id = ${id}::bigint
+  `;
+}
+
+export interface AtlasFunnelReport {
+  days: number;
+  funnel: {
+    uploads: number; // images uploaded
+    recognized: number; // images with a successful primary AI pass
+    confirmed: number; // items created
+    carded: number; // items that got cards
+  };
+  ai: {
+    calls: number;
+    successRate: number; // 0..1
+    totalCostUsd: number;
+    avgLatencyMs: number | null;
+    byOperation: { operation: string; calls: number; costUsd: number; successRate: number }[];
+  };
+  topUsersByCost: { userId: string; costUsd: number; calls: number }[];
+}
+
+/**
+ * Capture-flow funnel + AI cost, derived from existing tables over the last
+ * `days`. No separate event pipeline — the raw material is already in
+ * user_atlas_images / _ai_usage / _items / _cards.
+ */
+export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
+  const sql = requireSql();
+  const d = Math.min(365, Math.max(1, Math.floor(days)));
+  const since = sql`now() - make_interval(days => ${d})`;
+
+  const [uploads, recognized, confirmed, carded, totals, byOp, topUsers] =
+    await Promise.all([
+      sql<{ c: number }[]>`
+        SELECT count(*)::int AS c FROM user_atlas_images WHERE created_at >= ${since}
+      `,
+      sql<{ c: number }[]>`
+        SELECT count(DISTINCT image_id)::int AS c FROM user_atlas_ai_usage
+        WHERE operation = 'primary' AND success AND created_at >= ${since}
+      `,
+      sql<{ c: number }[]>`
+        SELECT count(*)::int AS c FROM user_atlas_items
+        WHERE deleted_at IS NULL AND created_at >= ${since}
+      `,
+      sql<{ c: number }[]>`
+        SELECT count(DISTINCT item_id)::int AS c FROM user_atlas_cards
+        WHERE deleted_at IS NULL AND created_at >= ${since}
+      `,
+      sql<{ calls: number; success_rate: number; total_cost: number; avg_latency: number | null }[]>`
+        SELECT
+          count(*)::int AS calls,
+          coalesce(avg(success::int), 0)::float8 AS success_rate,
+          coalesce(sum(estimated_cost_usd), 0)::float8 AS total_cost,
+          avg(latency_ms)::float8 AS avg_latency
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+      `,
+      sql<{ operation: string; calls: number; cost: number; success_rate: number }[]>`
+        SELECT
+          operation,
+          count(*)::int AS calls,
+          coalesce(sum(estimated_cost_usd), 0)::float8 AS cost,
+          coalesce(avg(success::int), 0)::float8 AS success_rate
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+        GROUP BY operation ORDER BY calls DESC
+      `,
+      sql<{ user_id: string; cost: number; calls: number }[]>`
+        SELECT user_id, coalesce(sum(estimated_cost_usd), 0)::float8 AS cost, count(*)::int AS calls
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+        GROUP BY user_id ORDER BY cost DESC LIMIT 10
+      `,
+    ]);
+
+  const t = totals[0];
+  return {
+    days: d,
+    funnel: {
+      uploads: uploads[0]?.c ?? 0,
+      recognized: recognized[0]?.c ?? 0,
+      confirmed: confirmed[0]?.c ?? 0,
+      carded: carded[0]?.c ?? 0,
+    },
+    ai: {
+      calls: t?.calls ?? 0,
+      successRate: t?.success_rate ?? 0,
+      totalCostUsd: t?.total_cost ?? 0,
+      avgLatencyMs: t?.avg_latency ?? null,
+      byOperation: byOp.map((r) => ({
+        operation: r.operation,
+        calls: r.calls,
+        costUsd: r.cost,
+        successRate: r.success_rate,
+      })),
+    },
+    topUsersByCost: topUsers.map((r) => ({
+      userId: r.user_id,
+      costUsd: r.cost,
+      calls: r.calls,
+    })),
+  };
 }

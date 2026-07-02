@@ -100,6 +100,33 @@ export async function createAtlasImageSignedUrls(paths: {
   return { imageUrl, thumbUrl };
 }
 
+/**
+ * Batched variant of {@link createAtlasImageSignedUrls} for the study queue:
+ * signs every card's image+thumb in a single `createSignedUrls` call instead
+ * of one storage round-trip per card. Results are returned in input order.
+ */
+export async function createAtlasImageSignedUrlsBatch(
+  paths: Array<{ imagePath: string; thumbPath: string }>,
+): Promise<Array<{ imageUrl: string; thumbUrl: string }>> {
+  if (paths.length === 0) return [];
+  const supabase = createServiceRoleClient();
+  // Dedupe (an item's image+thumb are distinct, but two rows could share an
+  // image) before the one request; the by-path map fans the result back out.
+  const unique = Array.from(new Set(paths.flatMap((p) => [p.imagePath, p.thumbPath])));
+  const { data, error } = await supabase.storage
+    .from(ATLAS_PRIVATE_BUCKET)
+    .createSignedUrls(unique, SIGNED_URL_TTL_SECONDS);
+  if (error) throw new Error(error.message);
+
+  const byPath = new Map((data ?? []).map((row) => [row.path, row.signedUrl]));
+  return paths.map((p) => {
+    const imageUrl = byPath.get(p.imagePath);
+    const thumbUrl = byPath.get(p.thumbPath);
+    if (!imageUrl || !thumbUrl) throw new Error("failed to create atlas signed URLs");
+    return { imageUrl, thumbUrl };
+  });
+}
+
 export async function downloadAtlasObject(path: string): Promise<Buffer> {
   const supabase = createServiceRoleClient();
   const { data, error } = await supabase.storage

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAllMasteryWithSchedule, getSettings } from "@/lib/users-db";
+import { getAllAtlasMasteryWithSchedule } from "@/lib/atlas-db";
 import { applyDecay } from "@/lib/mastery";
 import { targetLanguageFor } from "@/lib/settings";
 
@@ -19,20 +20,33 @@ export async function GET() {
   if (!userId) return NextResponse.json({ items: [] });
 
   const settings = await getSettings(userId);
-  const rows = await getAllMasteryWithSchedule(
-    userId,
-    targetLanguageFor(settings.learningDirection),
-  );
+  const targetLanguage = targetLanguageFor(settings.learningDirection);
+  const [rows, atlasRows] = await Promise.all([
+    getAllMasteryWithSchedule(userId, targetLanguage),
+    getAllAtlasMasteryWithSchedule(userId, targetLanguage),
+  ]);
   const now = new Date();
-  const items = rows.map((r) => ({
-    wordId: r.word_id,
-    mastery: Math.round(
-      applyDecay(r.mastery, r.last_reviewed_at ? new Date(r.last_reviewed_at) : null, now),
-    ),
-    // Strict ISO (driver may hand back a non-strict timestamp string); null
-    // when the word has no scheduled cards. iOS humanizes client-side.
-    nextReviewAt: r.next_review_at ? new Date(r.next_review_at).toISOString() : null,
-  }));
+  const decayedAt = (mastery: number, lastReviewedAt: string | null) =>
+    Math.round(applyDecay(mastery, lastReviewedAt ? new Date(lastReviewedAt) : null, now));
+  // Strict ISO (driver may hand back a non-strict timestamp string); null
+  // when the word has no scheduled cards. iOS humanizes client-side.
+  const isoOrNull = (value: string | null) => (value ? new Date(value).toISOString() : null);
+  const items = [
+    ...rows.map((r) => ({
+      wordId: r.word_id,
+      mastery: decayedAt(r.mastery, r.last_reviewed_at),
+      nextReviewAt: isoOrNull(r.next_review_at),
+    })),
+    // Custom 自制圖鑑 words show in the 圖鑑 grid + detail as `atlas:<itemId>`,
+    // but their mastery lives in user_atlas_item_mastery (not user_words). Fold
+    // it in under the same id the client looks up, else custom cards always
+    // render 未學 and studying them never moves the badge.
+    ...atlasRows.map((r) => ({
+      wordId: `atlas:${r.item_id}`,
+      mastery: decayedAt(r.mastery, r.last_reviewed_at),
+      nextReviewAt: isoOrNull(r.next_review_at),
+    })),
+  ];
 
   return NextResponse.json({ items });
 }

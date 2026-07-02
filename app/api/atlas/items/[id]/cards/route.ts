@@ -37,8 +37,16 @@ export async function POST(
   const requested = Array.isArray(body.cardTypes)
     ? body.cardTypes.filter((value): value is AtlasCardType => VALID_CARD_TYPES.has(value))
     : [];
-  const cardTypes = requested.length > 0 ? requested : (["image_recall", "flashcard"] as AtlasCardType[]);
-  const cards = await createAtlasCardsForItem(userId, item.id, cardTypes);
+  // 自製圖鑑 items study as a single card. The unified study flow renders every
+  // custom card as an image MCQ (see ReviewFlowView) and dedupes the queue to
+  // one card per item, so a second card_type is pure overhead — extra SRS
+  // state, doubled due counts, and wasted signed-URL work. Collapse any request
+  // (including older clients that still send both) to one canonical card,
+  // preferring image_recall.
+  const canonical: AtlasCardType = requested.includes("image_recall")
+    ? "image_recall"
+    : requested[0] ?? "image_recall";
+  const cards = await createAtlasCardsForItem(userId, item.id, [canonical]);
 
   return NextResponse.json(
     { cards },

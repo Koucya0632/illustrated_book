@@ -18,6 +18,8 @@ import {
 } from "@/lib/atlas-db";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import { createPrimaryAtlasProvider } from "@/lib/atlas/recognition";
+import { enforceAtlasAiLimits } from "@/lib/atlas/entitlement";
+import { clientIpHash } from "@/lib/ratelimit";
 import {
   ATLAS_PRIVATE_BUCKET,
   atlasImagePaths,
@@ -270,23 +272,46 @@ export async function POST(req: Request) {
     sha256: hash,
   });
 
-  // Recognize inline on the in-memory original (no second round trip, no
-  // storage re-download), in parallel with signing the image URLs.
-  const [serializedImage, recognized] = await Promise.all([
+  // Sign the image URLs and evaluate the AI limits (tier quota + backstops) in
+  // parallel.
+  const [serializedImage, aiLimit] = await Promise.all([
     serializeImage(image),
-    runPrimaryRecognition(userId, image, processed.buffers.original, targetLanguage),
+    enforceAtlasAiLimits({ userId, ipHash: clientIpHash(req), operation: "primary" }),
   ]);
+
+  // When within limit, recognize inline on the in-memory original (no second
+  // round trip, no storage re-download). When rate-limited, soft-skip the AI —
+  // the upload still succeeds and the image is kept (status needs_review) so the
+  // user can name it manually or retry recognition later, mirroring the
+  // AI-failure path. Never fail the upload just because the AI budget is spent.
+  let recognized: {
+    job: { id: string; status: string; stage: string } | null;
+    candidates: ReturnType<typeof serializeCandidate>[];
+  };
+  if (aiLimit.ok) {
+    recognized = await runPrimaryRecognition(
+      userId,
+      image,
+      processed.buffers.original,
+      targetLanguage,
+    );
+  } else {
+    await updateAtlasImageStatus(userId, image.id, "needs_review").catch(() => {});
+    recognized = { job: null, candidates: [] };
+  }
 
   return NextResponse.json(
     {
       duplicate: false,
       targetLanguage,
       image: serializedImage,
-      job: {
-        id: recognized.job.id,
-        status: recognized.job.status,
-        stage: recognized.job.stage,
-      },
+      job: recognized.job
+        ? {
+            id: recognized.job.id,
+            status: recognized.job.status,
+            stage: recognized.job.stage,
+          }
+        : null,
       candidates: recognized.candidates,
     },
     { headers: { "Cache-Control": "private, no-store" } },

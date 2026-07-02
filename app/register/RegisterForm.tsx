@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import LoadingToast from "@/components/tuji/LoadingToast";
 import { createClient } from "@/lib/supabase/client";
 import { getProgress } from "@/lib/storage";
 
@@ -80,62 +81,69 @@ export default function RegisterForm({ next }: { next: string }) {
   }
 
   return (
-    <form onSubmit={handle} className="space-y-3">
-      <label className="block">
-        <span className="text-sm font-bold text-tuji-ink">用戶名</span>
-        <input
-          autoFocus
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="3-24 字，限英數與 _ . -"
-          className={INPUT}
-        />
-      </label>
-      <label className="block">
-        <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
-          className={INPUT}
-        />
-      </label>
-      <label className="block">
-        <span className="text-sm font-bold text-tuji-ink">密碼</span>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="至少 6 個字元"
-          className={INPUT}
-        />
-      </label>
-      <label className="block">
-        <span className="text-sm font-bold text-tuji-ink">再次輸入密碼</span>
-        <input
-          type="password"
-          value={confirm}
-          onChange={(e) => setConfirm(e.target.value)}
-          className={INPUT}
-        />
-      </label>
+    <>
+      <LoadingToast
+        open={loading}
+        title="建立帳號中"
+        description="正在準備你的 Tuji 學習空間"
+      />
+      <form onSubmit={handle} className="space-y-3">
+        <label className="block">
+          <span className="text-sm font-bold text-tuji-ink">用戶名</span>
+          <input
+            autoFocus
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="3-24 字，限英數與 _ . -"
+            className={INPUT}
+          />
+        </label>
+        <label className="block">
+          <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            className={INPUT}
+          />
+        </label>
+        <label className="block">
+          <span className="text-sm font-bold text-tuji-ink">密碼</span>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="至少 6 個字元"
+            className={INPUT}
+          />
+        </label>
+        <label className="block">
+          <span className="text-sm font-bold text-tuji-ink">再次輸入密碼</span>
+          <input
+            type="password"
+            value={confirm}
+            onChange={(e) => setConfirm(e.target.value)}
+            className={INPUT}
+          />
+        </label>
 
-      {error && (
-        <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
-      )}
-      {info && (
-        <p className="rounded-xl bg-tuji-green/10 px-3 py-2 text-sm font-semibold text-tuji-green">{info}</p>
-      )}
+        {error && (
+          <p className="rounded-xl bg-tuji-coral/10 px-3 py-2 text-sm font-semibold text-tuji-coral">{error}</p>
+        )}
+        {info && (
+          <p className="rounded-xl bg-tuji-green/10 px-3 py-2 text-sm font-semibold text-tuji-green">{info}</p>
+        )}
 
-      <button
-        type="submit"
-        disabled={loading || !username || !email || !password}
-        className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
-      >
-        {loading ? "建立中..." : "建立帳號"}
-      </button>
-    </form>
+        <button
+          type="submit"
+          disabled={loading || !username || !email || !password}
+          className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
+        >
+          {loading ? "建立中..." : "建立帳號"}
+        </button>
+      </form>
+    </>
   );
 }
 

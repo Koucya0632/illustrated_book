@@ -16,7 +16,7 @@ interface NavItem {
 }
 
 const NAV: NavItem[] = [
-  { id: "today", labelKey: "nav.today", href: "/", icon: "☀️", match: (p) => p === "/" },
+  { id: "today", labelKey: "nav.today", href: "/today", icon: "☀️", match: (p) => p === "/today" },
   {
     id: "cards",
     labelKey: "nav.cards",
@@ -49,6 +49,7 @@ const NAV: NavItem[] = [
 // Auth routes get a clean, sidebar-free layout — just the brand mark + the
 // centered form, on the Tuji cream background.
 const AUTH_PREFIXES = ["/signin", "/register", "/login"];
+const PUBLIC_PATHS = new Set(["/", "/auth/confirmed", "/privacy", "/terms", "/support"]);
 
 export default function TujiShell({
   user,
@@ -64,6 +65,10 @@ export default function TujiShell({
 }) {
   const pathname = usePathname() || "/";
   const t = useT();
+
+  if (PUBLIC_PATHS.has(pathname)) {
+    return <>{children}</>;
+  }
 
   if (AUTH_PREFIXES.some((p) => pathname.startsWith(p))) {
     return (

@@ -1,12 +1,12 @@
 // Atlas Free/Pro entitlement + usage + enforcement. Server is the authority:
 // the client mirrors this for UI but every write path re-checks here.
 // Model mirrors docs/ATLAS_PRICING_PLAN.md:
-//   - atlasSlotsLimit:            capacity (Free 30, Pro 300) — enforced at confirm
-//   - primaryAiSoftLimitMonthly:  ordinary AI / month, SAME both tiers (500)
+//   - atlasSlotsLimit:            capacity (Free 3, Pro 300) — enforced at confirm
+//   - primaryAiSoftLimitMonthly:  ordinary AI / month (Free 30, Pro 500)
 //   - precisionAiLimitMonthly:    高精度 / month (Free 0, Pro 30) — user-triggered
-//   - adsRequiredForCardGeneration: Free true / Pro false (ads deferred, §8; the
-//                                  flag is surfaced but card generation is not
-//                                  gated on it yet)
+//   - adsRequiredForCardGeneration: always false — the rewarded-ad plan was
+//                                  dropped; released clients decode this as a
+//                                  required field, so it stays in the payload
 // AI usage is counted per calendar month from user_atlas_ai_usage (operation
 // 'primary' vs 'escalated'). Limits are env-tunable; see atlasLimitsForTier.
 //
@@ -23,6 +23,7 @@ export interface AtlasLimits {
   atlasSlotsLimit: number;
   primaryAiSoftLimitMonthly: number;
   precisionAiLimitMonthly: number;
+  /** Always false — ads were dropped; kept only so released clients still decode. */
   adsRequiredForCardGeneration: boolean;
 }
 
@@ -49,23 +50,20 @@ function intEnv(name: string, fallback: number): number {
 }
 
 export function atlasLimitsForTier(tier: AtlasTier): AtlasLimits {
-  // Ordinary AI is the same soft limit for both tiers — Pro sells capacity,
-  // precision recognitions and (later) ad-free card generation, not more
-  // ordinary AI.
-  const primaryAiSoftLimitMonthly = intEnv("ATLAS_PRIMARY_AI_MONTHLY", 500);
+  // Pro sells capacity, more ordinary AI (500 vs 30) and precision recognitions.
   if (tier === "pro") {
     return {
       atlasSlotsLimit: intEnv("ATLAS_PRO_SLOTS", 300),
-      primaryAiSoftLimitMonthly,
+      primaryAiSoftLimitMonthly: intEnv("ATLAS_PRO_PRIMARY_AI_MONTHLY", 500),
       precisionAiLimitMonthly: intEnv("ATLAS_PRO_PRECISION_MONTHLY", 30),
       adsRequiredForCardGeneration: false,
     };
   }
   return {
-    atlasSlotsLimit: intEnv("ATLAS_FREE_SLOTS", 30),
-    primaryAiSoftLimitMonthly,
+    atlasSlotsLimit: intEnv("ATLAS_FREE_SLOTS", 3),
+    primaryAiSoftLimitMonthly: intEnv("ATLAS_FREE_PRIMARY_AI_MONTHLY", 30),
     precisionAiLimitMonthly: intEnv("ATLAS_FREE_PRECISION_MONTHLY", 0),
-    adsRequiredForCardGeneration: true,
+    adsRequiredForCardGeneration: false,
   };
 }
 
@@ -257,12 +255,14 @@ export async function enforceAtlasAiLimits(ctx: {
       };
     }
   } else if (usage.primaryAiThisMonth >= limits.primaryAiSoftLimitMonthly) {
-    // Same soft limit for both tiers — upgrading does not raise it.
+    const upgradeable = tier === "free"; // Pro primary (500) > Free (30)
     return {
       ok: false,
-      upgradeable: false,
+      upgradeable,
       scope: "primary_ai",
-      message: `本月 AI 辨識已達上限（${limits.primaryAiSoftLimitMonthly}），下月再試。`,
+      message: upgradeable
+        ? `本月 AI 辨識已達免費上限（${limits.primaryAiSoftLimitMonthly}），升級 Pro 提升至每月 ${atlasLimitsForTier("pro").primaryAiSoftLimitMonthly} 次。`
+        : `本月 AI 辨識已達上限（${limits.primaryAiSoftLimitMonthly}），下月再試。`,
     };
   }
 

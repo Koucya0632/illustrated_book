@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "migrate": "tsx scripts/migrate.ts",
+    "sync-image-urls": "tsx scripts/sync-image-urls.ts",
     "enrich": "tsx scripts/enrich.ts",
     "translate": "tsx scripts/translate.ts",
     "translate:audit": "tsx scripts/translate.ts --audit-only",

@@ -1118,10 +1118,13 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
 }
 
 // Seed the categories reference table from the static TS source
-// (`lib/categories.ts`). Idempotent (ON CONFLICT DO NOTHING) and additive:
-// adding a new category to that file just inserts one more row on the next
-// deploy. MUST run before word seeding so words.category never references a
-// category that isn't in the table yet (the words_category_fk would reject it).
+// (`lib/categories.ts`). Idempotent and additive: adding a new category to
+// that file just inserts one more row on the next deploy. On conflict only
+// image_url is refreshed — the seed file is the sole writer of category
+// covers, so editing an imageUrl there propagates on deploy. Other fields
+// (name, emoji, description) stay DO NOTHING. MUST run before word seeding
+// so words.category never references a category that isn't in the table yet
+// (the words_category_fk would reject it).
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function seedCategoriesIntoDb(sql: any) {
   for (const c of seedCategories) {
@@ -1132,7 +1135,8 @@ async function seedCategoriesIntoDb(sql: any) {
         ${c.description}, ${c.color}, ${c.imageUrl},
         ${seedCategories.indexOf(c)}
       )
-      ON CONFLICT (id) DO NOTHING
+      ON CONFLICT (id) DO UPDATE SET image_url = EXCLUDED.image_url
+      WHERE categories.image_url IS DISTINCT FROM EXCLUDED.image_url
     `;
   }
   const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;
@@ -1576,6 +1580,42 @@ async function generateCards(sql: any) {
   console.log(`[migrate] cards: ${inserted} inserted, ${skipped} already existed`);
 }
 
+// Push seed imageUrl edits to existing rows. seedV2 only ever sees words
+// missing from the DB, so without this step editing an imageUrl in
+// lib/words.ts / supplemental-words.json would silently do nothing.
+//
+// Guard: a row whose image already lives in our Supabase Storage bucket
+// (migrated by scripts/upload-images.ts or uploaded via admin) is never
+// reverted to a non-Storage URL — the seed file usually still holds the
+// original hotlink, and every deploy runs this. Pointing the seed at a new
+// Storage URL, or editing a word still on an external URL, does propagate.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function syncSeedWordImages(sql: any) {
+  const seeded = seedWords.filter((w) => w.imageUrl);
+  const ids = seeded.map((w) => w.id);
+  const urls = seeded.map((w) => w.imageUrl);
+  const updated = await sql`
+    UPDATE words w
+    SET image_url = s.image_url
+    FROM unnest(${ids}::text[], ${urls}::text[]) AS s(id, image_url)
+    WHERE w.id = s.id
+      AND w.image_url IS DISTINCT FROM s.image_url
+      AND (
+        w.image_url IS NULL
+        OR w.image_url NOT LIKE '%/storage/v1/object/public/word-images/%'
+        OR s.image_url LIKE '%/storage/v1/object/public/word-images/%'
+      )
+    RETURNING w.id
+  `;
+  if (updated.length > 0) {
+    console.log(
+      `[migrate] image_url synced from seed: ${updated.map((r: { id: string }) => r.id).join(", ")}`,
+    );
+  } else {
+    console.log(`[migrate] image_url: no seed changes to sync.`);
+  }
+}
+
 async function main() {
   // Skip schema migration on non-production Vercel builds (preview /
   // development). The preview build environment can't reach the production DB,
@@ -1620,9 +1660,26 @@ async function main() {
       console.log(`[migrate] all ${seedWords.length} seed words present — nothing to seed.`);
     } else {
       console.log(`[migrate] seeding ${missing.length} missing word(s) of ${seedWords.length}...`);
+      // New words are expected to ship a Supabase Storage image (loremflickr
+      // and other hotlinks are retired — WORD_IMPORT.md §6). Warn, don't fail:
+      // a content slip shouldn't block a prod deploy.
+      const badImg = missing.filter(
+        (w) => !w.imageUrl || !w.imageUrl.includes("/storage/v1/object/public/word-images/"),
+      );
+      if (badImg.length > 0) {
+        console.warn(
+          `[migrate] WARNING: ${badImg.length} new word(s) without a Storage image: ${badImg
+            .map((w) => w.id)
+            .join(", ")}`,
+        );
+      }
       await seedV2(sql, missing);
       console.log(`[migrate] seed complete.`);
     }
+
+    // Runs against ALL seed words (not just missing ones) so image edits in
+    // the seed files reach rows that already exist.
+    await syncSeedWordImages(sql);
 
     await generateCards(sql);
     await backfillSchemaV2(sql);

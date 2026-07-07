@@ -1,5 +1,5 @@
 import type { Example, Word, WordRelation } from "@/types";
-import wikiUrls from "./image-urls.json";
+import imageUrls from "./image-urls.json";
 import supplementalRawWords from "./supplemental-words.json";
 
 // Internal: the inline seed below uses the pre-v2 shape (single Chinese
@@ -16,7 +16,7 @@ type LegacyWord = {
   category: string;
   partOfSpeech: string;
   pronunciation: string;
-  imageUrl: string;
+  imageUrl?: string;
   collocations?: string[];
   examples: LegacyExample[];
   relatedWords?: string[];
@@ -24,24 +24,7 @@ type LegacyWord = {
   note?: string;
 };
 
-// Loremflickr returns real Flickr photos matching the keyword — used as a
-// fallback for words where Wikipedia doesn't have a representative image.
-function hash(s: string): number {
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
-  return Math.abs(h) || 1;
-}
-
-const img = (keyword: string, _hint?: string) => {
-  const tags = keyword
-    .trim()
-    .split(/\s+/)
-    .map((t) => encodeURIComponent(t))
-    .join(",");
-  return `https://loremflickr.com/600/450/${tags}?lock=${hash(keyword)}`;
-};
-
-const wikiMap = wikiUrls as Record<string, string>;
+const imageMap = imageUrls as Record<string, string>;
 const supplementalWords = supplementalRawWords as LegacyWord[];
 
 const rawWords: LegacyWord[] = [
@@ -54,7 +37,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/frɪdʒ/",
-    imageUrl: img("refrigerator"),
     collocations: ["open the fridge", "put in the fridge", "empty fridge"],
     examples: [
       { en: "Put the milk in the fridge.", zh: "把牛奶放進冰箱。" },
@@ -73,7 +55,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/ˈmaɪ.kroʊ.weɪv/",
-    imageUrl: img("microwave"),
     collocations: ["microwave the food", "in the microwave"],
     examples: [
       { en: "Heat the soup in the microwave.", zh: "把湯放進微波爐加熱。" },
@@ -89,7 +70,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/ˈʌv.ən/",
-    imageUrl: img("oven"),
     collocations: ["preheat the oven", "in the oven"],
     examples: [
       { en: "Preheat the oven to 180 degrees.", zh: "預熱烤箱到 180 度。" },
@@ -108,7 +88,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/stoʊv/",
-    imageUrl: img("stove"),
     collocations: ["turn on the stove", "gas stove"],
     examples: [
       { en: "She is cooking on the stove.", zh: "她正在爐子上煮東西。" },
@@ -124,7 +103,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/sɪŋk/",
-    imageUrl: img("kitchen sink"),
     collocations: ["wash in the sink", "kitchen sink"],
     examples: [
       { en: "The dishes are in the sink.", zh: "碗盤在水槽裡。" },
@@ -141,7 +119,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/ˈfɔː.sət/",
-    imageUrl: img("water faucet"),
     collocations: ["turn on the faucet", "leaky faucet"],
     examples: [
       { en: "Turn off the faucet to save water.", zh: "關掉水龍頭以節省用水。" },
@@ -160,7 +137,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/pæn/",
-    imageUrl: img("frying pan"),
     collocations: ["frying pan", "non-stick pan"],
     examples: [
       { en: "Heat the oil in a pan.", zh: "把油在平底鍋裡加熱。" },
@@ -179,7 +155,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/pɑːt/",
-    imageUrl: img("cooking pot"),
     collocations: ["a pot of soup", "boil in a pot"],
     examples: [
       { en: "Boil water in the pot.", zh: "用鍋子煮開水。" },
@@ -195,7 +170,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/ˈkʌt.ɪŋ ˌbɔːrd/",
-    imageUrl: img("cutting board"),
     collocations: ["wooden cutting board", "on the cutting board"],
     examples: [
       { en: "Chop the onions on the cutting board.", zh: "在砧板上切洋蔥。" },
@@ -211,7 +185,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/naɪf/",
-    imageUrl: img("kitchen knife"),
     collocations: ["sharp knife", "kitchen knife"],
     examples: [
       { en: "Be careful with the knife.", zh: "用刀子要小心。" },
@@ -227,7 +200,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/boʊl/",
-    imageUrl: img("bowl"),
     collocations: ["a bowl of soup", "rice bowl"],
     examples: [
       { en: "I'd like a bowl of rice.", zh: "我想要一碗飯。" },
@@ -243,7 +215,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/pleɪt/",
-    imageUrl: img("dinner plate"),
     collocations: ["clean plate", "dinner plate"],
     examples: [
       { en: "Please pass me a plate.", zh: "請遞給我一個盤子。" },
@@ -262,7 +233,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun (plural)",
     pronunciation: "/ˈtʃɑːp.stɪks/",
-    imageUrl: img("chopsticks"),
     collocations: ["use chopsticks", "a pair of chopsticks"],
     examples: [
       { en: "Can you use chopsticks?", zh: "你會用筷子嗎？" },
@@ -279,7 +249,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/spuːn/",
-    imageUrl: img("spoon"),
     collocations: ["a spoon of sugar", "soup spoon"],
     examples: [
       { en: "Stir the coffee with a spoon.", zh: "用湯匙攪拌咖啡。" },
@@ -295,7 +264,6 @@ const rawWords: LegacyWord[] = [
     category: "kitchen",
     partOfSpeech: "noun",
     pronunciation: "/mʌɡ/",
-    imageUrl: img("mug"),
     collocations: ["a mug of coffee", "favorite mug"],
     examples: [
       { en: "I drink coffee from a big mug.", zh: "我用大馬克杯喝咖啡。" },
@@ -316,7 +284,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈtuːθ.brʌʃ/",
-    imageUrl: img("toothbrush", "E6F4EC"),
     collocations: ["electric toothbrush", "new toothbrush"],
     examples: [
       { en: "I need a new toothbrush.", zh: "我需要一支新牙刷。" },
@@ -332,7 +299,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈtuːθ.peɪst/",
-    imageUrl: img("toothpaste", "E6F4EC"),
     collocations: ["a tube of toothpaste"],
     examples: [
       { en: "Put toothpaste on your toothbrush.", zh: "把牙膏擠在牙刷上。" },
@@ -348,7 +314,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈtaʊ.əl/",
-    imageUrl: img("towel", "E6F4EC"),
     collocations: ["dry with a towel", "bath towel"],
     examples: [
       { en: "Dry your hands with the towel.", zh: "用毛巾擦乾手。" },
@@ -364,7 +329,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/soʊp/",
-    imageUrl: img("soap", "E6F4EC"),
     collocations: ["bar of soap", "wash with soap"],
     examples: [
       { en: "Wash your hands with soap.", zh: "用肥皂洗手。" },
@@ -380,7 +344,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ʃæmˈpuː/",
-    imageUrl: img("shampoo", "E6F4EC"),
     collocations: ["wash with shampoo"],
     examples: [
       { en: "I use this shampoo every day.", zh: "我每天都用這款洗髮精。" },
@@ -396,7 +359,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun / verb",
     pronunciation: "/ˈʃaʊ.ər/",
-    imageUrl: img("shower", "E6F4EC"),
     collocations: ["take a shower", "hot shower"],
     examples: [
       { en: "I take a shower every morning.", zh: "我每天早上洗澡。" },
@@ -415,7 +377,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈmɪr.ər/",
-    imageUrl: img("mirror", "E6F4EC"),
     collocations: ["look in the mirror"],
     examples: [
       { en: "She looked at herself in the mirror.", zh: "她在鏡子裡看著自己。" },
@@ -431,7 +392,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈtɔɪ.lət/",
-    imageUrl: img("toilet", "E6F4EC"),
     collocations: ["flush the toilet"],
     examples: [
       { en: "Please flush the toilet.", zh: "請沖馬桶。" },
@@ -450,7 +410,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/koʊm/",
-    imageUrl: img("comb", "E6F4EC"),
     collocations: ["comb your hair"],
     examples: [
       { en: "Use a comb to fix your hair.", zh: "用梳子整理頭髮。" },
@@ -467,7 +426,6 @@ const rawWords: LegacyWord[] = [
     category: "bathroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈher ˌdraɪ.ər/",
-    imageUrl: img("hair dryer", "E6F4EC"),
     collocations: ["use a hair dryer", "blow with a hair dryer"],
     examples: [
       { en: "She dried her hair with a hair dryer.", zh: "她用吹風機把頭髮吹乾。" },
@@ -485,7 +443,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/bed/",
-    imageUrl: img("bedroom bed"),
     collocations: ["go to bed", "make the bed"],
     examples: [
       { en: "I go to bed at 11 p.m.", zh: "我晚上 11 點睡覺。" },
@@ -501,7 +458,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈpɪl.oʊ/",
-    imageUrl: img("pillow", "F3E8FF"),
     collocations: ["soft pillow", "pillow case"],
     examples: [
       { en: "This pillow is too soft.", zh: "這個枕頭太軟了。" },
@@ -517,7 +473,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈblæŋ.kət/",
-    imageUrl: img("blanket", "F3E8FF"),
     collocations: ["warm blanket", "under the blanket"],
     examples: [
       { en: "It's cold; grab a blanket.", zh: "好冷，拿條毯子吧。" },
@@ -533,7 +488,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈklɑː.zət/",
-    imageUrl: img("closet", "F3E8FF"),
     collocations: ["walk-in closet", "open the closet"],
     examples: [
       { en: "Hang the coat in the closet.", zh: "把外套掛到衣櫃裡。" },
@@ -549,7 +503,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/læmp/",
-    imageUrl: img("lamp", "F3E8FF"),
     collocations: ["turn on the lamp", "bedside lamp"],
     examples: [
       { en: "Turn on the lamp.", zh: "把檯燈打開。" },
@@ -565,7 +518,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/əˈlɑːrm ˌklɑːk/",
-    imageUrl: img("alarm clock", "F3E8FF"),
     collocations: ["set the alarm clock"],
     examples: [
       { en: "I set the alarm clock for 7 a.m.", zh: "我把鬧鐘設成早上 7 點。" },
@@ -581,7 +533,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈkɝː.tən/",
-    imageUrl: img("curtain", "F3E8FF"),
     collocations: ["open the curtain", "close the curtain"],
     examples: [
       { en: "Please open the curtains.", zh: "請把窗簾拉開。" },
@@ -597,7 +548,6 @@ const rawWords: LegacyWord[] = [
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈwɔːr.droʊb/",
-    imageUrl: img("wardrobe", "F3E8FF"),
     collocations: ["open the wardrobe"],
     examples: [
       { en: "She opened her wardrobe.", zh: "她打開了衣櫥。" },
@@ -619,7 +569,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/ˈsoʊ.fə/",
-    imageUrl: img("sofa", "FEF3C7"),
     collocations: ["sit on the sofa"],
     examples: [
       { en: "Let's sit on the sofa.", zh: "我們坐在沙發上吧。" },
@@ -639,7 +588,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/ˌtiːˈviː/",
-    imageUrl: img("television"),
     collocations: ["watch TV", "turn on the TV"],
     examples: [
       { en: "We watch TV every night.", zh: "我們每天晚上看電視。" },
@@ -656,7 +604,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/rɪˈmoʊt/",
-    imageUrl: img("tv remote control"),
     collocations: ["TV remote", "find the remote"],
     examples: [
       { en: "Where is the remote?", zh: "遙控器在哪裡？" },
@@ -672,7 +619,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/ˈkɑː.fi ˌteɪ.bəl/",
-    imageUrl: img("coffee table", "FEF3C7"),
     collocations: ["on the coffee table"],
     examples: [
       { en: "Put the magazine on the coffee table.", zh: "把雜誌放在茶几上。" },
@@ -688,7 +634,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/rʌɡ/",
-    imageUrl: img("rug", "FEF3C7"),
     collocations: ["soft rug", "on the rug"],
     examples: [
       { en: "There's a rug under the table.", zh: "桌子底下有塊地毯。" },
@@ -707,7 +652,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/klɑːk/",
-    imageUrl: img("wall clock"),
     collocations: ["wall clock"],
     examples: [
       { en: "The clock says it's three.", zh: "時鐘顯示三點。" },
@@ -726,7 +670,6 @@ const rawWords: LegacyWord[] = [
     category: "living-room",
     partOfSpeech: "noun",
     pronunciation: "/ˈpɪk.tʃər ˌfreɪm/",
-    imageUrl: img("picture frame", "FEF3C7"),
     examples: [
       { en: "She put the photo in a picture frame.", zh: "她把照片放進相框。" },
       { en: "The picture frame is wooden.", zh: "相框是木製的。" },
@@ -743,7 +686,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/desk/",
-    imageUrl: img("office desk"),
     collocations: ["sit at the desk", "office desk"],
     examples: [
       { en: "I put my laptop on the desk.", zh: "我把筆電放在書桌上。" },
@@ -762,7 +704,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/ˈlæp.tɑːp/",
-    imageUrl: img("laptop", "E0E7FF"),
     collocations: ["open the laptop", "on my laptop"],
     examples: [
       { en: "I work on my laptop.", zh: "我用筆電工作。" },
@@ -778,7 +719,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/ˈkiː.bɔːrd/",
-    imageUrl: img("computer keyboard"),
     collocations: ["type on a keyboard"],
     examples: [
       { en: "I type fast on this keyboard.", zh: "我在這鍵盤上打字很快。" },
@@ -794,7 +734,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/maʊs/",
-    imageUrl: img("computer mouse"),
     collocations: ["click the mouse", "wireless mouse"],
     examples: [
       { en: "Click here with the mouse.", zh: "用滑鼠點這裡。" },
@@ -813,7 +752,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/ˈmɑː.nə.tər/",
-    imageUrl: img("computer monitor"),
     collocations: ["external monitor"],
     examples: [
       { en: "I have two monitors at my desk.", zh: "我桌上有兩台螢幕。" },
@@ -829,7 +767,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/ˈnoʊt.bʊk/",
-    imageUrl: img("notebook stationery"),
     collocations: ["write in a notebook"],
     examples: [
       { en: "Write your notes in the notebook.", zh: "把筆記寫在筆記本上。" },
@@ -845,7 +782,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/pen/",
-    imageUrl: img("ballpoint pen"),
     collocations: ["blue pen", "out of ink"],
     examples: [
       { en: "Can I borrow your pen?", zh: "可以借你的筆嗎？" },
@@ -864,7 +800,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/ˈsteɪ.plər/",
-    imageUrl: img("stapler", "E0E7FF"),
     examples: [
       { en: "Where is the stapler?", zh: "釘書機在哪裡？" },
       { en: "The stapler is out of staples.", zh: "釘書機沒釘針了。" },
@@ -879,7 +814,6 @@ const rawWords: LegacyWord[] = [
     category: "office",
     partOfSpeech: "noun",
     pronunciation: "/ˈprɪn.tər/",
-    imageUrl: img("printer", "E0E7FF"),
     collocations: ["print on the printer"],
     examples: [
       { en: "The printer is out of paper.", zh: "印表機沒紙了。" },
@@ -897,7 +831,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈtræf.ɪk ˌlaɪt/",
-    imageUrl: img("traffic light", "F1F5F9"),
     collocations: ["red traffic light"],
     examples: [
       { en: "Stop at the traffic light.", zh: "在紅綠燈前停下。" },
@@ -913,7 +846,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈkrɑːs.wɑːk/",
-    imageUrl: img("crosswalk", "F1F5F9"),
     examples: [
       { en: "Use the crosswalk to cross the road.", zh: "走斑馬線過馬路。" },
       { en: "There is a crosswalk ahead.", zh: "前方有斑馬線。" },
@@ -928,7 +860,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈsaɪd.wɑːk/",
-    imageUrl: img("sidewalk", "F1F5F9"),
     collocations: ["walk on the sidewalk"],
     examples: [
       { en: "Walk on the sidewalk.", zh: "走在人行道上。" },
@@ -947,7 +878,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈstriːt ˌsaɪn/",
-    imageUrl: img("street sign", "F1F5F9"),
     examples: [
       { en: "Read the street sign carefully.", zh: "仔細看路標。" },
       { en: "The street sign was bent.", zh: "路標彎掉了。" },
@@ -962,7 +892,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/bentʃ/",
-    imageUrl: img("park bench"),
     collocations: ["sit on a bench", "park bench"],
     examples: [
       { en: "Let's sit on the bench.", zh: "我們坐長椅吧。" },
@@ -978,7 +907,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈstriːt.laɪt/",
-    imageUrl: img("streetlight", "F1F5F9"),
     examples: [
       { en: "The streetlights turned on.", zh: "路燈亮起來了。" },
       { en: "Park under the streetlight.", zh: "把車停在路燈下。" },
@@ -993,7 +921,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈtræʃ ˌkæn/",
-    imageUrl: img("trash can", "F1F5F9"),
     collocations: ["throw in the trash can"],
     examples: [
       { en: "Throw it in the trash can.", zh: "把它丟進垃圾桶。" },
@@ -1012,7 +939,6 @@ const rawWords: LegacyWord[] = [
     category: "street",
     partOfSpeech: "noun",
     pronunciation: "/ˈmeɪl.bɑːks/",
-    imageUrl: img("mailbox", "F1F5F9"),
     examples: [
       { en: "Drop the letter in the mailbox.", zh: "把信投進信箱。" },
       { en: "The mailbox is red.", zh: "信箱是紅色的。" },
@@ -1029,7 +955,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/ˈʃɑː.pɪŋ ˌkɑːrt/",
-    imageUrl: img("shopping cart", "DCFCE7"),
     collocations: ["push the shopping cart"],
     examples: [
       { en: "Push the shopping cart slowly.", zh: "慢慢推購物車。" },
@@ -1048,7 +973,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/ˈbæs.kət/",
-    imageUrl: img("shopping basket"),
     examples: [
       { en: "Use a basket if you only buy a little.", zh: "東西不多就用購物籃。" },
       { en: "Put the apples in the basket.", zh: "把蘋果放進籃子。" },
@@ -1063,7 +987,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/kæˈʃɪr/",
-    imageUrl: img("cashier", "DCFCE7"),
     examples: [
       { en: "Pay at the cashier.", zh: "在收銀台付款。" },
       { en: "The cashier was friendly.", zh: "收銀員很親切。" },
@@ -1078,7 +1001,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/rɪˈsiːt/",
-    imageUrl: img("receipt", "DCFCE7"),
     collocations: ["keep the receipt"],
     examples: [
       { en: "Keep your receipt, please.", zh: "請保留收據。" },
@@ -1095,7 +1017,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/aɪl/",
-    imageUrl: img("supermarket aisle"),
     examples: [
       { en: "The bread is in aisle three.", zh: "麵包在第三排走道。" },
       { en: "Walk down the aisle.", zh: "沿著走道往前走。" },
@@ -1111,7 +1032,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/ʃelf/",
-    imageUrl: img("store shelf"),
     collocations: ["on the shelf", "top shelf"],
     examples: [
       { en: "The cereal is on the top shelf.", zh: "麥片在最上層架子。" },
@@ -1128,7 +1048,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/bæɡ/",
-    imageUrl: img("shopping bag"),
     collocations: ["paper bag", "plastic bag"],
     examples: [
       { en: "Paper or plastic bag?", zh: "要紙袋還是塑膠袋？" },
@@ -1144,7 +1063,6 @@ const rawWords: LegacyWord[] = [
     category: "supermarket",
     partOfSpeech: "noun",
     pronunciation: "/ˈpraɪs ˌtæɡ/",
-    imageUrl: img("price tag", "DCFCE7"),
     examples: [
       { en: "Check the price tag.", zh: "看一下價格標籤。" },
       { en: "There's no price tag on this.", zh: "這個沒有貼價格標籤。" },
@@ -1161,7 +1079,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/kɑːr/",
-    imageUrl: img("car", "E0E7FF"),
     collocations: ["drive a car", "park the car"],
     examples: [
       { en: "I drive a car to work.", zh: "我開車上班。" },
@@ -1177,7 +1094,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/bʌs/",
-    imageUrl: img("bus", "E0E7FF"),
     collocations: ["take the bus", "miss the bus"],
     examples: [
       { en: "I take the bus to school.", zh: "我搭公車上學。" },
@@ -1194,7 +1110,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/ˈbaɪ.sɪ.kəl/",
-    imageUrl: img("bicycle", "E0E7FF"),
     collocations: ["ride a bicycle"],
     examples: [
       { en: "He rides his bicycle every day.", zh: "他每天騎腳踏車。" },
@@ -1213,7 +1128,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/ˈmoʊ.tər.saɪ.kəl/",
-    imageUrl: img("motorcycle", "E0E7FF"),
     collocations: ["ride a motorcycle"],
     examples: [
       { en: "He rides a motorcycle to work.", zh: "他騎機車上班。" },
@@ -1229,7 +1143,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/treɪn/",
-    imageUrl: img("train", "E0E7FF"),
     collocations: ["take the train", "miss the train"],
     examples: [
       { en: "We took the train to Taipei.", zh: "我們搭火車去台北。" },
@@ -1246,7 +1159,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/ˈer.pleɪn/",
-    imageUrl: img("airplane", "E0E7FF"),
     collocations: ["take a plane", "by airplane"],
     examples: [
       { en: "We flew on an airplane.", zh: "我們搭飛機。" },
@@ -1262,7 +1174,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/boʊt/",
-    imageUrl: img("small boat"),
     examples: [
       { en: "We took a boat across the lake.", zh: "我們搭船渡湖。" },
       { en: "The boat is small.", zh: "船很小。" },
@@ -1281,7 +1192,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/ˈtæk.si/",
-    imageUrl: img("taxi", "E0E7FF"),
     collocations: ["take a taxi", "call a taxi"],
     examples: [
       { en: "Let's take a taxi.", zh: "我們搭計程車吧。" },
@@ -1297,7 +1207,6 @@ const rawWords: LegacyWord[] = [
     category: "transportation",
     partOfSpeech: "noun",
     pronunciation: "/ˈsʌb.weɪ/",
-    imageUrl: img("subway metro train"),
     collocations: ["take the subway"],
     examples: [
       { en: "I take the subway every day.", zh: "我每天搭地鐵。" },
@@ -1318,7 +1227,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/sɔːlt/",
-    imageUrl: img("table salt"),
     collocations: ["a pinch of salt", "table salt", "sea salt"],
     examples: [
       { en: "Pass me the salt, please.", zh: "請把鹽遞給我。" },
@@ -1334,7 +1242,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈʃʊɡ.ər/",
-    imageUrl: img("sugar"),
     collocations: ["brown sugar", "white sugar", "a spoon of sugar"],
     examples: [
       { en: "Do you take sugar in your coffee?", zh: "你的咖啡要加糖嗎？" },
@@ -1350,7 +1257,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈpep.ər/",
-    imageUrl: img("ground pepper"),
     collocations: ["salt and pepper", "ground pepper"],
     examples: [
       { en: "This dish needs more pepper.", zh: "這道菜需要多一點胡椒。" },
@@ -1369,7 +1275,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/blæk ˈpep.ər/",
-    imageUrl: img("black peppercorns"),
     collocations: ["freshly ground black pepper"],
     examples: [
       { en: "Grind some black pepper on top.", zh: "在上面磨點黑胡椒。" },
@@ -1385,7 +1290,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/waɪt ˈpep.ər/",
-    imageUrl: img("white pepper"),
     examples: [
       { en: "White pepper is common in Chinese soups.", zh: "白胡椒在中式湯品裡很常見。" },
       { en: "Use white pepper for a milder taste.", zh: "想要味道溫和一點就用白胡椒。" },
@@ -1403,7 +1307,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/sɔɪ ˌsɔːs/",
-    imageUrl: img("soy sauce bottle"),
     collocations: ["a bottle of soy sauce", "light soy sauce", "dark soy sauce"],
     examples: [
       { en: "Do you want soy sauce with that?", zh: "你要加醬油嗎？" },
@@ -1419,7 +1322,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈvɪn.ə.ɡər/",
-    imageUrl: img("vinegar"),
     collocations: ["a splash of vinegar", "white vinegar"],
     examples: [
       { en: "Add a splash of vinegar.", zh: "加一點醋。" },
@@ -1435,7 +1337,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/raɪs ˈvɪn.ə.ɡər/",
-    imageUrl: img("rice vinegar"),
     examples: [
       { en: "Use rice vinegar for sushi rice.", zh: "做壽司飯要用米醋。" },
       { en: "Rice vinegar is milder than white vinegar.", zh: "米醋比白醋來得溫和。" },
@@ -1450,7 +1351,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈtʃɪl.i ˌsɔːs/",
-    imageUrl: img("chili sauce"),
     collocations: ["hot chili sauce", "a bottle of chili sauce"],
     examples: [
       { en: "I like chili sauce on everything.", zh: "我什麼東西都愛加辣椒醬。" },
@@ -1466,7 +1366,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈtʃɪl.i ˌpaʊ.dər/",
-    imageUrl: img("chili powder"),
     examples: [
       { en: "Add a teaspoon of chili powder.", zh: "加一茶匙辣椒粉。" },
       { en: "Chili powder makes the dish spicy.", zh: "辣椒粉讓菜變辣。" },
@@ -1481,7 +1380,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun (plural)",
     pronunciation: "/ˈtʃɪl.i ˌfleɪks/",
-    imageUrl: img("chili flakes"),
     examples: [
       { en: "Sprinkle chili flakes on your pizza.", zh: "在你的披薩上撒辣椒片。" },
       { en: "Add chili flakes for extra heat.", zh: "想要更辣就加辣椒片。" },
@@ -1496,7 +1394,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈmʌs.tɚd/",
-    imageUrl: img("mustard sauce"),
     collocations: ["yellow mustard", "Dijon mustard"],
     examples: [
       { en: "Would you like mustard on your hotdog?", zh: "熱狗要加芥末嗎？" },
@@ -1512,7 +1409,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈketʃ.ʌp/",
-    imageUrl: img("ketchup"),
     collocations: ["a bottle of ketchup", "tomato ketchup"],
     examples: [
       { en: "Can I have ketchup with the fries?", zh: "薯條可以給我番茄醬嗎？" },
@@ -1529,7 +1425,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˌmeɪ.əˈneɪz/",
-    imageUrl: img("mayonnaise"),
     examples: [
       { en: "Spread mayo on the bread.", zh: "在麵包上抹美乃滋。" },
       { en: "Add mayonnaise to the salad.", zh: "在沙拉裡加美乃滋。" },
@@ -1547,7 +1442,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈɔɪ.stɚ ˌsɔːs/",
-    imageUrl: img("oyster sauce"),
     examples: [
       { en: "Add oyster sauce to the stir-fry.", zh: "在炒菜裡加蠔油。" },
       { en: "Oyster sauce makes the dish savory.", zh: "蠔油讓菜餚更鮮甜。" },
@@ -1562,7 +1456,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/fɪʃ ˌsɔːs/",
-    imageUrl: img("fish sauce"),
     examples: [
       { en: "Fish sauce is essential in Thai cooking.", zh: "魚露在泰式料理裡很重要。" },
       { en: "Just a few drops of fish sauce is enough.", zh: "只要幾滴魚露就夠了。" },
@@ -1577,7 +1470,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈsez.ə.mi ˌɔɪl/",
-    imageUrl: img("sesame oil"),
     examples: [
       { en: "Drizzle some sesame oil on top.", zh: "在上面淋點麻油。" },
       { en: "Sesame oil has a strong fragrance.", zh: "麻油香氣濃郁。" },
@@ -1592,7 +1484,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈɑː.lɪv ˌɔɪl/",
-    imageUrl: img("olive oil bottle"),
     collocations: ["extra virgin olive oil", "a bottle of olive oil"],
     examples: [
       { en: "Cook with olive oil.", zh: "用橄欖油料理。" },
@@ -1608,7 +1499,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈkʊk.ɪŋ ˌwaɪn/",
-    imageUrl: img("cooking wine"),
     examples: [
       { en: "Add cooking wine to remove the smell.", zh: "加料酒去腥。" },
       { en: "Use cooking wine, not drinking wine.", zh: "用料酒，不是飲用的酒。" },
@@ -1624,7 +1514,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˌem.esˈdʒiː/",
-    imageUrl: img("monosodium glutamate"),
     examples: [
       { en: "Some restaurants don't use MSG.", zh: "有些餐廳不用味精。" },
       { en: "MSG enhances the umami flavor.", zh: "味精能提升鮮味。" },
@@ -1640,7 +1529,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈɡɑːr.lɪk ˌpaʊ.dər/",
-    imageUrl: img("garlic powder"),
     examples: [
       { en: "Sprinkle garlic powder on the meat.", zh: "在肉上撒點蒜粉。" },
       { en: "Garlic powder is easier than fresh garlic.", zh: "蒜粉比新鮮大蒜方便。" },
@@ -1655,7 +1543,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈʌn.jən ˌpaʊ.dər/",
-    imageUrl: img("onion powder"),
     examples: [
       { en: "Add a pinch of onion powder.", zh: "加一點洋蔥粉。" },
       { en: "Onion powder is great in dry rubs.", zh: "洋蔥粉很適合做乾醃料。" },
@@ -1670,7 +1557,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈkɝː.i ˌpaʊ.dər/",
-    imageUrl: img("curry powder"),
     examples: [
       { en: "Stir in two spoons of curry powder.", zh: "拌入兩匙咖哩粉。" },
       { en: "Curry powder gives the dish its yellow color.", zh: "咖哩粉讓菜變成黃色。" },
@@ -1685,7 +1571,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˌfaɪvˈspaɪs ˌpaʊ.dər/",
-    imageUrl: img("five spice powder"),
     examples: [
       { en: "Five-spice powder is common in Chinese cooking.", zh: "五香粉在中式料理裡很常用。" },
       { en: "Use a little five-spice powder for flavor.", zh: "用一點五香粉提味。" },
@@ -1700,7 +1585,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈsɪn.ə.mən/",
-    imageUrl: img("cinnamon sticks"),
     collocations: ["a cinnamon stick", "ground cinnamon"],
     examples: [
       { en: "Sprinkle cinnamon on the latte.", zh: "在拿鐵上撒肉桂粉。" },
@@ -1716,7 +1600,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈkʌm.ɪn/",
-    imageUrl: img("cumin"),
     examples: [
       { en: "Cumin adds a warm, earthy flavor.", zh: "孜然帶來溫暖、土香的風味。" },
       { en: "Cumin is essential in chili and curry.", zh: "孜然在辣椒料理和咖哩裡不可少。" },
@@ -1732,7 +1615,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/sɪˈlæn.troʊ/",
-    imageUrl: img("cilantro"),
     examples: [
       { en: "Garnish with fresh cilantro.", zh: "用新鮮香菜裝飾。" },
       { en: "Some people hate the taste of cilantro.", zh: "有些人討厭香菜的味道。" },
@@ -1750,7 +1632,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈbeɪ.zəl/",
-    imageUrl: img("basil leaves"),
     examples: [
       { en: "Top the pizza with fresh basil.", zh: "披薩上放新鮮羅勒。" },
       { en: "Basil is the main herb in pesto.", zh: "羅勒是青醬的主要香草。" },
@@ -1765,7 +1646,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈroʊz.mer.i/",
-    imageUrl: img("rosemary"),
     collocations: ["a sprig of rosemary", "fresh rosemary"],
     examples: [
       { en: "Rosemary goes great with roasted chicken.", zh: "迷迭香配烤雞很棒。" },
@@ -1781,7 +1661,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/taɪm/",
-    imageUrl: img("thyme herb"),
     examples: [
       { en: "Thyme is good for soups and stews.", zh: "百里香適合做湯和燉菜。" },
       { en: "Add fresh thyme leaves.", zh: "加新鮮百里香葉。" },
@@ -1797,7 +1676,6 @@ const rawWords: LegacyWord[] = [
     category: "seasonings",
     partOfSpeech: "noun",
     pronunciation: "/ˈbeɪ ˌliːf/",
-    imageUrl: img("bay leaf"),
     examples: [
       { en: "Remove the bay leaf before serving.", zh: "上菜前把月桂葉拿出來。" },
       { en: "Bay leaves add depth to the broth.", zh: "月桂葉讓湯底更有層次。" },
@@ -1832,7 +1710,7 @@ function legacyToV2(legacy: LegacyWord): Word {
     category: legacy.category,
     partOfSpeech: legacy.partOfSpeech,
     pronunciation: legacy.pronunciation,
-    imageUrl: legacy.imageUrl,
+    imageUrl: legacy.imageUrl ?? "",
     status: "published",
     definitions: [
       { language: "zh", definition: legacy.chinese, sortOrder: 0 },
@@ -1848,11 +1726,12 @@ function legacyToV2(legacy: LegacyWord): Word {
   };
 }
 
-// Prefer Wikipedia/Wikimedia reference photos when we have them; fall back to
-// the Loremflickr URL embedded in each entry. Done as a post-process pass so
-// we don't have to touch every word definition.
+// lib/image-urls.json is the canonical image per word — regenerated from the
+// DB with `npm run sync-image-urls`. An inline imageUrl on a seed entry is
+// only the initial image for a brand-new word that hasn't been synced yet,
+// and must already be a Supabase Storage word-images URL (WORD_IMPORT.md §6).
 export const words: Word[] = [...rawWords, ...supplementalWords].map((w) => {
-  const withImage = wikiMap[w.id] ? { ...w, imageUrl: wikiMap[w.id] } : w;
+  const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
 });
 

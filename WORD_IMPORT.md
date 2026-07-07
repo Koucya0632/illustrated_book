@@ -36,7 +36,7 @@
 - `id` 小寫 kebab-case，不能隨意改。
 - `category` 必須存在。
 - 至少一個例句。
-- 圖片 URL 要穩定，正式資料建議使用 Supabase Storage 的 `word-images` bucket。
+- `imageUrl` 必須是 Supabase Storage `word-images` 的 URL（migrate 對非 Storage 圖會發 WARNING）。loremflickr 等外部佔位圖已全面停用。
 
 ## 3. 可選欄位
 
@@ -91,6 +91,8 @@ https://<project>.supabase.co/storage/v1/object/public/word-images/<id>.png
 ```
 
 Admin upload 會寫入 `word-images` bucket，路徑使用 `{id}.{ext}`。批量本地圖可放在 `public/word-images/<id>.png` 後跑上傳腳本。
+
+正式圖片以 `lib/image-urls.json` 為準（每次 prod deploy，migrate 會把它同步進 DB；Storage 圖不會被外部 URL 覆蓋）。凡是在 DB 端改了圖——admin 上傳新檔名、跑批量腳本——之後要跑 `npm run sync-image-urls` 回寫該檔並 commit，否則下次 deploy 會還原成舊值。新詞的 inline `imageUrl` 只是首次入庫的初始值。
 
 ### 6.2 AI 生圖適用範圍
 

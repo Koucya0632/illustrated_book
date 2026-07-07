@@ -221,6 +221,8 @@ export type AtlasAiOperation = "primary" | "precision";
 
 export interface AtlasAiGate {
   ok: boolean;
+  /** Resolved tier, so routes can pick a tier-specific provider without a second lookup. */
+  tier: AtlasTier;
   /** true => route 402 (paywall); false => 429 (retry / message). */
   upgradeable?: boolean;
   scope?: "primary_ai" | "precision_ai" | "ip_burst" | "global";
@@ -247,6 +249,7 @@ export async function enforceAtlasAiLimits(ctx: {
       const upgradeable = tier === "free"; // Pro precision (30) > Free (0)
       return {
         ok: false,
+        tier,
         upgradeable,
         scope: "precision_ai",
         message: upgradeable
@@ -258,6 +261,7 @@ export async function enforceAtlasAiLimits(ctx: {
     const upgradeable = tier === "free"; // Pro primary (500) > Free (30)
     return {
       ok: false,
+      tier,
       upgradeable,
       scope: "primary_ai",
       message: upgradeable
@@ -270,11 +274,12 @@ export async function enforceAtlasAiLimits(ctx: {
   if (!backstop.ok) {
     return {
       ok: false,
+      tier,
       upgradeable: false,
       scope: backstop.scope,
       message: backstop.message,
       retryAfterSeconds: backstop.retryAfterSeconds,
     };
   }
-  return { ok: true };
+  return { ok: true, tier };
 }

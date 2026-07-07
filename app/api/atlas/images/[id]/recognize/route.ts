@@ -80,7 +80,7 @@ export async function POST(
     mode === "fine" ? "fine" : mode === "escalate" ? "escalated" : "primary";
   const provider =
     stage === "primary"
-      ? createPrimaryAtlasProvider()
+      ? createPrimaryAtlasProvider(aiLimit.tier)
       : stage === "escalated"
       ? createEscalateAtlasProvider()
       : createFineAtlasProvider();

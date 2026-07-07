@@ -18,7 +18,7 @@ import {
 } from "@/lib/atlas-db";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import { createPrimaryAtlasProvider } from "@/lib/atlas/recognition";
-import { enforceAtlasAiLimits } from "@/lib/atlas/entitlement";
+import { enforceAtlasAiLimits, type AtlasTier } from "@/lib/atlas/entitlement";
 import { clientIpHash } from "@/lib/ratelimit";
 import {
   ATLAS_PRIVATE_BUCKET,
@@ -125,8 +125,9 @@ async function runPrimaryRecognition(
   image: AtlasImageRow,
   imageBytes: Buffer,
   targetLanguage: AtlasTargetLanguage,
+  tier: AtlasTier,
 ) {
-  const provider = createPrimaryAtlasProvider();
+  const provider = createPrimaryAtlasProvider(tier);
   const job = await createAtlasRecognitionJob(userId, image.id, "primary");
   await markAtlasRecognitionRunning(userId, job.id, provider.name, "primary");
   try {
@@ -302,6 +303,7 @@ export async function POST(req: Request) {
       image,
       processed.recognitionBytes,
       targetLanguage,
+      aiLimit.tier,
     );
   } else {
     await updateAtlasImageStatus(userId, image.id, "needs_review").catch(() => {});

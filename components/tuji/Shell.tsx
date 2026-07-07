@@ -50,6 +50,7 @@ const NAV: NavItem[] = [
 // centered form, on the Tuji cream background.
 const AUTH_PREFIXES = ["/signin", "/register", "/login"];
 const PUBLIC_PATHS = new Set(["/", "/auth/confirmed", "/privacy", "/terms", "/support"]);
+const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 
 export default function TujiShell({
   user,
@@ -75,8 +76,9 @@ export default function TujiShell({
       <div className="flex min-h-screen flex-col">
         <header className="px-5 py-4 sm:px-8">
           <Link href="/" className="inline-flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-tuji-teal">
-              <span className="font-display text-lg font-black text-white">T</span>
+            <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-soft">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
             </span>
             <span className="font-display text-[22px] font-extrabold tracking-tight text-tuji-ink">
               Tuji<span className="text-tuji-coral">.</span>
@@ -93,8 +95,9 @@ export default function TujiShell({
       {/* ── Desktop sidebar ── */}
       <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col gap-5 bg-tuji-ink p-4 text-white md:flex">
         <Link href="/" className="flex items-center gap-2.5 px-1">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-tuji-teal">
-            <span className="font-display text-lg font-black text-white">T</span>
+          <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-soft">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
           </span>
           <span className="font-display text-[22px] font-extrabold tracking-tight">
             Tuji<span className="text-tuji-yellow">.</span>
@@ -158,8 +161,9 @@ export default function TujiShell({
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 flex items-center justify-between border-b border-black/5 bg-tuji-bg/85 px-4 py-3 backdrop-blur md:hidden">
           <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-tuji-teal">
-              <span className="font-display text-base font-black text-white">T</span>
+            <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg shadow-soft">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
             </span>
             <span className="font-display text-lg font-extrabold tracking-tight text-tuji-ink">
               Tuji<span className="text-tuji-coral">.</span>

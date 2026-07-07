@@ -86,3 +86,50 @@ body {
 .tuji-toast-enter {
   animation: tuji-toast-enter 0.18s ease-out both;
 }
+
+/* Marketing marquee — the inner track holds two copies of the row, so a
+   -50% translate loops seamlessly. */
+@keyframes tuji-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tuji-marquee {
+  animation: tuji-marquee 46s linear infinite;
+}
+
+.tuji-marquee-reverse {
+  animation: tuji-marquee 52s linear infinite reverse;
+}
+
+/* Gentle bobbing for floating hero decorations. */
+@keyframes tuji-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.tuji-float {
+  animation: tuji-float 4.2s ease-in-out infinite;
+}
+
+.tuji-float-delayed {
+  animation: tuji-float 4.8s ease-in-out 1.1s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tuji-marquee,
+  .tuji-marquee-reverse,
+  .tuji-float,
+  .tuji-float-delayed {
+    animation: none;
+  }
+}

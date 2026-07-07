@@ -732,7 +732,7 @@ export default function StudyClient() {
 
           <div className="mt-6 flex justify-center gap-2.5">
             <Link
-              href="/"
+              href="/today"
               className="rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-card"
             >
               {t("study.backHome")}
@@ -824,7 +824,7 @@ export default function StudyClient() {
           )}
         </p>
         <div className="mt-6 flex justify-center gap-2.5">
-          <Link href="/" className="rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-card">
+          <Link href="/today" className="rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-card">
             {t("study.backHome")}
           </Link>
           <button
@@ -998,7 +998,7 @@ export default function StudyClient() {
       {/* Top bar: exit + progress + count */}
       <div className="flex items-center gap-4 px-5 py-5 sm:px-8">
         <Link
-          href="/"
+          href="/today"
           aria-label={t("study.exit")}
           className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-xl text-tuji-ink shadow-card"
         >

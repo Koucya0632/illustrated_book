@@ -22,12 +22,14 @@ interface GoogleVisionResponse {
   }>;
 }
 
-/// Batch-translate English labels to Traditional Chinese (zh-TW) via Google
-/// Translate v2, reusing the same API key as Vision. Returns label -> zhHant.
-/// Fails soft: on any error the map is empty and candidates keep zhHant = null.
-async function translateLabelsToZhHant(
+/// Batch-translate English labels via Google Translate v2 (zh-TW for the
+/// gloss, ja for the target term), reusing the same API key as Vision.
+/// Returns label -> translation. Fails soft: on any error the map is empty
+/// and callers fall back (zhHant = null / English label).
+async function translateLabels(
   labels: string[],
   apiKey: string,
+  target: "zh-TW" | "ja",
 ): Promise<Map<string, string>> {
   const out = new Map<string, string>();
   const unique = Array.from(new Set(labels.filter(Boolean)));
@@ -38,7 +40,7 @@ async function translateLabelsToZhHant(
       {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ q: unique, source: "en", target: "zh-TW", format: "text" }),
+        body: JSON.stringify({ q: unique, source: "en", target, format: "text" }),
       },
     );
     if (!res.ok) return out;
@@ -108,17 +110,26 @@ export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
     const ranked = Array.from(merged.entries())
       .sort((a, b) => b[1].confidence - a[1].confidence)
       .slice(0, 5);
-    const zhMap = await translateLabelsToZhHant(
-      ranked.map(([, value]) => value.label),
-      apiKey,
-    );
-    const primary = ranked.map(([normalizedLabel, value]) => ({
-      label: value.label,
-      normalizedLabel,
-      zhHant: zhMap.get(value.label) ?? null,
-      confidence: value.confidence,
-      taxonomyNodeId: null,
-    }));
+    // Vision labels are English. The learner studies the target language, so
+    // for ja the label (which becomes the item's lemma on confirm) must be
+    // rendered in Japanese; the zh-TW gloss rides along either way.
+    const names = ranked.map(([, value]) => value.label);
+    const [zhMap, jaMap] = await Promise.all([
+      translateLabels(names, apiKey, "zh-TW"),
+      input.targetLanguage === "ja"
+        ? translateLabels(names, apiKey, "ja")
+        : Promise.resolve(new Map<string, string>()),
+    ]);
+    const primary = ranked.map(([, value]) => {
+      const label = jaMap.get(value.label) ?? value.label;
+      return {
+        label,
+        normalizedLabel: normalizeAtlasLabel(label),
+        zhHant: zhMap.get(value.label) ?? null,
+        confidence: value.confidence,
+        taxonomyNodeId: null,
+      };
+    });
     const top = primary[0]?.confidence ?? 0;
     const second = primary[1]?.confidence ?? 0;
     return {

@@ -17,7 +17,7 @@ import {
   createFineAtlasProvider,
   createPrimaryAtlasProvider,
 } from "@/lib/atlas/recognition";
-import { downloadAtlasObject, removeAtlasPrivateObjects } from "@/lib/atlas/storage";
+import { downloadAtlasObject } from "@/lib/atlas/storage";
 import type { AtlasRecognitionStage } from "@/lib/atlas/types";
 import { enforceAtlasAiLimits } from "@/lib/atlas/entitlement";
 import { clientIpHash } from "@/lib/ratelimit";
@@ -93,13 +93,19 @@ export async function POST(
 
   try {
     const settingsPromise = getSettings(userId);
-    // recognition.webp (1024px) is deleted after the first successful pass, so
-    // fall back to the 1600px display for re-runs (e.g. escalate).
-    let imageBytes: Buffer;
+    // Only the 1600px display image is stored. The model needs at most ~1024px
+    // (detail=low is resized to 512px provider-side anyway, and 1024px keeps
+    // detail=high to fewer tiles), so downscale before base64-encoding to cut
+    // payload and input tokens. Soft-fails to the stored bytes.
+    let imageBytes = await downloadAtlasObject(image.original_path);
     try {
-      imageBytes = await downloadAtlasObject(image.recognition_path);
+      const sharp = (await import("sharp")).default;
+      imageBytes = await sharp(imageBytes)
+        .resize({ width: 1024, height: 1024, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toBuffer();
     } catch {
-      imageBytes = await downloadAtlasObject(image.original_path);
+      // send the stored image as-is
     }
     const settings = await settingsPromise;
     const input = {
@@ -140,12 +146,6 @@ export async function POST(
       result,
     );
     await updateAtlasImageStatus(userId, image.id, "needs_review");
-    // recognition.webp is a throwaway — drop it now that candidates are saved.
-    // Re-runs (escalate) fall back to the 1600px display (see download above).
-    // Fire-and-forget so cleanup never delays the response.
-    void removeAtlasPrivateObjects([image.recognition_path]).catch((cleanupErr) =>
-      console.warn("[atlas/recognize] recognition cleanup failed", cleanupErr),
-    );
 
     return NextResponse.json(
       {

@@ -4,7 +4,7 @@ import {
   type AtlasVisionInput,
   type AtlasVisionProvider,
 } from "../vision-provider";
-import { ATLAS_RECOGNITION_JSON_SCHEMA, AtlasRecognitionResultSchema } from "../schema";
+import { ATLAS_MODEL_OUTPUT_JSON_SCHEMA, AtlasModelOutputSchema } from "../schema";
 import { normalizeAtlasLabel } from "../normalize";
 
 interface OpenAIResponse {
@@ -56,6 +56,31 @@ function modelFor(stage: "primary" | "fine" | "escalated"): string | null {
   return process.env.ATLAS_OPENAI_FINE_MODEL || null;
 }
 
+// USD per 1M tokens (input, output), for the estimated-cost column in the
+// admin funnel. Longest-prefix entries ("-mini" / "-nano") must come before
+// their base model. Unknown models just skip the estimate.
+const MODEL_PRICES_PER_MTOK: Array<[prefix: string, input: number, output: number]> = [
+  ["gpt-4o-mini", 0.15, 0.6],
+  ["gpt-4o", 2.5, 10],
+  ["gpt-4.1-mini", 0.4, 1.6],
+  ["gpt-4.1-nano", 0.1, 0.4],
+  ["gpt-4.1", 2, 8],
+  ["gpt-5-mini", 0.25, 2],
+  ["gpt-5-nano", 0.05, 0.4],
+  ["gpt-5", 1.25, 10],
+];
+
+function estimateCostUsd(
+  model: string,
+  inputTokens: number | undefined,
+  outputTokens: number | undefined,
+): number | undefined {
+  const price = MODEL_PRICES_PER_MTOK.find(([prefix]) => model.startsWith(prefix));
+  if (!price || (inputTokens == null && outputTokens == null)) return undefined;
+  const usd = ((inputTokens ?? 0) * price[1] + (outputTokens ?? 0) * price[2]) / 1_000_000;
+  return Math.round(usd * 1e6) / 1e6;
+}
+
 function detailFor(stage: "primary" | "fine" | "escalated"): "low" | "high" | "auto" {
   const raw =
     stage === "escalated"
@@ -99,16 +124,21 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
 
     const t0 = performance.now();
     const dataUrl = `data:${input.mimeType};base64,${input.imageBytes.toString("base64")}`;
+    // The learner studies the target language, so `label` must be in it —
+    // e.g. for ja a confirmed candidate becomes the item's lemma, which
+    // downstream feeds generateJapaneseReading and must be actual Japanese.
+    const languageName = input.targetLanguage === "ja" ? "Japanese" : "English";
     const prompt = [
-      "Identify the single main object in this image as vocabulary for a Chinese-speaking language learner.",
+      `Identify the single main object in this image as ${languageName} vocabulary for a Chinese-speaking language learner.`,
       "Read any visible text, brand, or label on the object and use it to name it as specifically as a learner would in everyday life.",
       "Return a granularity ladder of up to 4 candidate names for the SAME object, from the basic everyday word to progressively more specific everyday descriptors that are clearly visible — e.g. variety, colour, age/size, type, material, breed, or brand. Examples: 'coffee' -> 'canned coffee' -> 'canned latte'; 'cat' -> 'black cat' -> 'kitten' (only if visibly young); 'shoe' -> 'sneaker'.",
       "Only add a finer rung when you can actually see evidence for it; never invent a breed, brand, or variety you cannot read or clearly see. It is fine to return only one candidate when nothing finer is visually supported.",
-      "Order most-specific / most-likely first. Put all candidates in `primary`, each with an English `label`, a Traditional Chinese `zhHant`, and `confidence` between 0 and 1.",
-      "Leave `fine` as an empty array, and set `attributes` to { colors: [], scene: null, count: null } — do NOT analyze scene, colors, or count.",
+      `Order most-specific / most-likely first. Put all candidates in \`primary\`, each with a \`label\` in ${languageName} (the word the learner will study), a Traditional Chinese \`zhHant\` gloss, and \`confidence\` between 0 and 1.`,
+      input.targetLanguage === "ja"
+        ? "Write Japanese labels in their standard everyday written form (kanji/kana as commonly written; no romaji)."
+        : "",
       "Do not identify people. Do not infer sensitive attributes. Only return candidates that are visually supported.",
       input.primaryHint ? `Primary hint from cheaper classifier: ${input.primaryHint}` : "",
-      `Target language: ${input.targetLanguage}.`,
     ].filter(Boolean).join("\n");
 
     const res = await fetch("https://api.openai.com/v1/responses", {
@@ -133,7 +163,7 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
             type: "json_schema",
             name: "atlas_recognition",
             strict: true,
-            schema: ATLAS_RECOGNITION_JSON_SCHEMA,
+            schema: ATLAS_MODEL_OUTPUT_JSON_SCHEMA,
           },
         },
       }),
@@ -164,30 +194,30 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
     } catch {
       throw new Error("OpenAI response did not contain valid JSON");
     }
-    const parsed = AtlasRecognitionResultSchema.safeParse(parsedJson);
+    const parsed = AtlasModelOutputSchema.safeParse(parsedJson);
     if (!parsed.success) {
       throw new Error("OpenAI recognition JSON failed validation");
     }
-    const normalized = {
-      ...parsed.data,
-      primary: parsed.data.primary.map((candidate) => ({
-        ...candidate,
-        normalizedLabel: normalizeAtlasLabel(candidate.normalizedLabel || candidate.label),
-      })),
-      fine: parsed.data.fine.map((candidate) => ({
-        ...candidate,
-        normalizedLabel: normalizeAtlasLabel(candidate.normalizedLabel || candidate.label),
-      })),
-    };
+    // The model only emits label/zhHant/confidence; the remaining candidate
+    // and result fields are server-side concerns filled here.
+    const primary = parsed.data.primary.map((candidate) => ({
+      ...candidate,
+      normalizedLabel: normalizeAtlasLabel(candidate.label),
+      taxonomyNodeId: null,
+    }));
     return {
       provider: this.name,
       model,
       stage,
-      ...normalized,
+      primary,
+      fine: [],
+      attributes: { colors: [], scene: null, count: null },
+      uncertainty: parsed.data.uncertainty,
       usage: {
         inputTokens: raw.usage?.input_tokens,
         outputTokens: raw.usage?.output_tokens,
         imageCount: 1,
+        estimatedCostUsd: estimateCostUsd(model, raw.usage?.input_tokens, raw.usage?.output_tokens),
         latencyMs: Math.round(performance.now() - t0),
       },
       raw,

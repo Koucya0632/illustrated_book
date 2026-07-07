@@ -55,9 +55,11 @@ async function processImage(input: Buffer) {
   const sharp = (await import("sharp")).default;
   const base = sharp(input, { limitInputPixels: MAX_PIXELS }).rotate();
 
-  // Two encodes in parallel; no separate recognition variant — the in-memory
-  // original (1600px) is fed straight to the vision provider.
-  const [original, thumb] = await Promise.all([
+  // Three encodes in parallel. The 1024px recognition variant is only fed
+  // in-memory to the vision provider, never stored — patch-billed models
+  // (gpt-4.1 family) charge by resolution, and 1600px hits the patch cap at
+  // roughly double the input cost of 1024px.
+  const [original, thumb, recognition] = await Promise.all([
     base
       .clone()
       .resize({ width: 1600, height: 1600, fit: "inside", withoutEnlargement: true })
@@ -68,10 +70,16 @@ async function processImage(input: Buffer) {
       .resize({ width: 320, height: 320, fit: "inside", withoutEnlargement: true })
       .webp({ quality: 78 })
       .toBuffer(),
+    base
+      .clone()
+      .resize({ width: 1024, height: 1024, fit: "inside", withoutEnlargement: true })
+      .webp({ quality: 82 })
+      .toBuffer(),
   ]);
 
   return {
     buffers: { original: original.data, thumb },
+    recognitionBytes: recognition,
     width: original.info.width,
     height: original.info.height,
   };
@@ -292,7 +300,7 @@ export async function POST(req: Request) {
     recognized = await runPrimaryRecognition(
       userId,
       image,
-      processed.buffers.original,
+      processed.recognitionBytes,
       targetLanguage,
     );
   } else {

@@ -104,7 +104,7 @@ export default function AtlasClient() {
     }
   }
 
-  async function recognize(mode: "primary" | "fine" | "escalate" = "primary") {
+  async function recognize(mode: "primary" | "escalate" = "primary") {
     if (!selected) return;
     setBusy(mode === "primary" ? "recognize" : mode);
     setError(null);
@@ -307,13 +307,6 @@ export default function AtlasClient() {
                     className="rounded-2xl bg-tuji-yellow px-4 py-2.5 text-sm font-extrabold text-tuji-ink disabled:opacity-50"
                   >
                     {busy === "recognize" ? "辨識中..." : "AI 識別"}
-                  </button>
-                  <button
-                    onClick={() => recognize("fine")}
-                    disabled={Boolean(busy)}
-                    className="rounded-2xl bg-tuji-tealS px-4 py-2.5 text-sm font-extrabold text-tuji-teal disabled:opacity-50"
-                  >
-                    細分類
                   </button>
                   <button
                     onClick={() => recognize("escalate")}

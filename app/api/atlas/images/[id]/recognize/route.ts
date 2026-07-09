@@ -14,7 +14,6 @@ import {
 import { targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import {
   createEscalateAtlasProvider,
-  createFineAtlasProvider,
   createPrimaryAtlasProvider,
 } from "@/lib/atlas/recognition";
 import { downloadAtlasObject } from "@/lib/atlas/storage";
@@ -75,15 +74,12 @@ export async function POST(
     );
   }
 
-  const mode = body.mode === "fine" || body.mode === "escalate" ? body.mode : "primary";
-  const stage: AtlasRecognitionStage =
-    mode === "fine" ? "fine" : mode === "escalate" ? "escalated" : "primary";
+  const mode = body.mode === "escalate" ? "escalate" : "primary";
+  const stage: AtlasRecognitionStage = mode === "escalate" ? "escalated" : "primary";
   const provider =
     stage === "primary"
       ? createPrimaryAtlasProvider(aiLimit.tier)
-      : stage === "escalated"
-      ? createEscalateAtlasProvider()
-      : createFineAtlasProvider();
+      : createEscalateAtlasProvider();
   const job = await createAtlasRecognitionJob(userId, image.id, stage);
 
   await Promise.all([
@@ -116,9 +112,9 @@ export async function POST(
     const result =
       stage === "primary"
         ? await provider.recognizePrimary(input)
-        : stage === "escalated" && provider.recognizeEscalated
+        : provider.recognizeEscalated
         ? await provider.recognizeEscalated(input)
-        : await provider.recognizeFine(input);
+        : await provider.recognizePrimary(input);
     await insertAtlasAiUsage({
       userId,
       jobId: job.id,

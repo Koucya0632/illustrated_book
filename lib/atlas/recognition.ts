@@ -32,12 +32,6 @@ export function createPrimaryAtlasProvider(tier: AtlasTier): AtlasVisionProvider
   return createAtlasVisionProvider(normalizeProviderName(name, "manual-only"));
 }
 
-export function createFineAtlasProvider(): AtlasVisionProvider {
-  return createAtlasVisionProvider(
-    normalizeProviderName(process.env.ATLAS_FINE_PROVIDER, "manual-only"),
-  );
-}
-
 export function createEscalateAtlasProvider(): AtlasVisionProvider {
   return createAtlasVisionProvider(
     normalizeProviderName(process.env.ATLAS_ESCALATE_PROVIDER, "manual-only"),

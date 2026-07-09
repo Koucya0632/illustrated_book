@@ -17,11 +17,13 @@ export function createAtlasVisionProvider(name: AtlasProviderName): AtlasVisionP
   return new ManualOnlyAtlasProvider();
 }
 
-/// Primary recognition is tier-split as an upgrade incentive: Free runs the
-/// cheaper/weaker ATLAS_PRIMARY_PROVIDER_FREE (google-vision: generic labels,
-/// machine-translated names), Pro runs ATLAS_PRIMARY_PROVIDER (openai-direct:
-/// granularity ladder, brand reading, native zh/ja). Leaving the FREE var
-/// unset collapses both tiers back to the same provider.
+/// Primary recognition (普通識別) can be tier-split via ATLAS_PRIMARY_PROVIDER_FREE:
+/// Free runs it while Pro runs ATLAS_PRIMARY_PROVIDER. Currently both are set to
+/// google-vision (generic labels, machine-translated zh/ja names), so primary is
+/// identical across tiers and Pro's upgrade incentive is the 高精度 escalate stage.
+/// Point the FREE var at a weaker provider than ATLAS_PRIMARY_PROVIDER (e.g.
+/// google-vision vs openai-direct's granularity ladder / brand reading) to
+/// re-introduce a split; unset collapses both tiers back to the same provider.
 export function createPrimaryAtlasProvider(tier: AtlasTier): AtlasVisionProvider {
   const name =
     tier === "free"

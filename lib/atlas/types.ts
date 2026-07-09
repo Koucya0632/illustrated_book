@@ -101,6 +101,10 @@ export interface AtlasEnrichment {
   forms?: { label: string; value: string }[];
   mnemonic?: string | null;
   etymology?: string | null;
+  /// Which language definition_target holds. Absent on rows enriched before JA
+  /// target definitions existed (their definition_target is stale English, so
+  /// atlasItemToWord suppresses it until a re-enrich stamps this).
+  targetDefinitionLang?: AtlasTargetLanguage | null;
 }
 
 export interface AtlasItemRow {

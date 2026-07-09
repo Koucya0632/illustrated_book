@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { listAtlasCustomWords } from "@/lib/atlas-db";
-import { atlasItemToWord } from "@/lib/atlas/enrich";
+import { atlasItemToWord, needsJaTargetDefinition } from "@/lib/atlas/enrich";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 import { getSettings } from "@/lib/users-db";
 import { targetLanguageFor } from "@/lib/settings";
@@ -40,9 +40,10 @@ export async function GET() {
         // above keeps the thumb. Only embedded once the item is enriched
         // ('filled', the usual case via capture-time enrich); otherwise we omit
         // it so iOS still falls back to the detail endpoint, which lazy-enriches
-        // the item on first open.
+        // the item on first open. Legacy JA rows (stale English definition_target)
+        // are likewise left un-embedded so that detour re-enriches them.
         detail:
-          item.backfill_status === "filled"
+          item.backfill_status === "filled" && !needsJaTargetDefinition(item)
             ? atlasItemToWord(item, urls.imageUrl || thumb)
             : undefined,
       };

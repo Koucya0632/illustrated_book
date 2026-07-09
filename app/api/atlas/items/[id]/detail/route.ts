@@ -6,7 +6,7 @@ import {
   markAtlasItemBackfillFailed,
   updateAtlasItemEnrichment,
 } from "@/lib/atlas-db";
-import { atlasItemToWord, enrichAtlasItem } from "@/lib/atlas/enrich";
+import { atlasItemToWord, enrichAtlasItem, needsJaTargetDefinition } from "@/lib/atlas/enrich";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 
 export const runtime = "nodejs";
@@ -28,8 +28,10 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   // Lazy enrich: covers cards made before enrichment existed (or that missed the
-  // background pass). First open is slower; later reads use the stored blob.
-  if (item.backfill_status !== "filled") {
+  // background pass). Also re-runs once for legacy JA cards whose definition_target
+  // predates Japanese target definitions (still English) so they self-heal.
+  // First open is slower; later reads use the stored blob.
+  if (item.backfill_status !== "filled" || needsJaTargetDefinition(item)) {
     try {
       const fields = await enrichAtlasItem(item);
       await updateAtlasItemEnrichment(userId, item.id, fields);

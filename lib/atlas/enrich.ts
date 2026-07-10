@@ -3,7 +3,6 @@ import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 import { enrichWord } from "@/lib/enrich";
-import { generateJapaneseReading } from "@/lib/translate";
 import type { AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 
@@ -11,6 +10,14 @@ import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 // directly (reuses the existing OPENAI_API_KEY — no Vercel AI Gateway billing).
 // ~$0.15/$0.60 per MTok, supports structured outputs + Traditional Chinese.
 const ATLAS_ENRICH_MODEL = openai(process.env.ATLAS_ENRICH_MODEL || "gpt-4o-mini");
+
+// Bump when enrichAtlasItem's output changes in a way existing rows should
+// re-pick-up on next open. v2: JA reading is generated on ATLAS_ENRICH_MODEL
+// (OpenAI-direct) instead of generateJapaneseReading, which routed through the
+// unusable Vercel AI Gateway and left reading null. JA rows below this version
+// are re-enriched once (see needsJaEnrichRefresh); the stamp is unconditional
+// so a failed generation can't loop.
+const ATLAS_ENRICH_VERSION = 2;
 
 const JapaneseDefinitionSchema = z.object({
   definition: z
@@ -55,6 +62,33 @@ async function generateJapaneseAtlasDefinition(input: {
   }
 }
 
+const JapaneseReadingSchema = z.object({
+  reading: z
+    .string()
+    .describe("Hiragana reading of the headword only — no punctuation, no romaji, no explanation."),
+});
+
+/// The kana reading for a JA item, on the same OpenAI-direct model. Replaces
+/// generateJapaneseReading (lib/translate.ts), which routes through the Vercel
+/// AI Gateway the project can't use, so it always threw and left reading null.
+/// Returns null on failure so the card just goes without a reading.
+async function generateJapaneseAtlasReading(lemma: string): Promise<string | null> {
+  try {
+    const { object } = await generateObject({
+      model: ATLAS_ENRICH_MODEL,
+      schema: JapaneseReadingSchema,
+      system:
+        "Return the standard Japanese reading of the supplied dictionary headword in hiragana only. " +
+        "Preserve long-vowel pronunciation naturally; no explanations, punctuation, or romaji.",
+      prompt: `Japanese headword: ${lemma}`,
+    });
+    const reading = object.reading.trim();
+    return reading || null;
+  } catch {
+    return null;
+  }
+}
+
 /// Run the existing dictionary enrichment on a custom atlas item (reusing
 /// enrichWord verbatim — no examples) and map it to the storage shape.
 export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnrichmentUpdate> {
@@ -74,11 +108,7 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
   let reading = item.reading;
   if (isJa) {
     if (!reading) {
-      try {
-        reading = await generateJapaneseReading(item.lemma);
-      } catch {
-        reading = null;
-      }
+      reading = await generateJapaneseAtlasReading(item.lemma);
     }
     definitionTarget = await generateJapaneseAtlasDefinition({
       lemma: item.lemma,
@@ -103,16 +133,20 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
       // suppress legacy JA rows (enriched before JA definitions existed, whose
       // definition_target still holds English) until they're re-enriched.
       targetDefinitionLang: item.target_language,
+      enrichVersion: ATLAS_ENRICH_VERSION,
     },
   };
 }
 
-/// True for legacy JA items whose stored definition_target predates Japanese
-/// target definitions (it's still English). Callers re-enrich these and skip
-/// embedding their detail so they self-heal instead of surfacing English
-/// mislabeled as Japanese. EN items and freshly-enriched JA items are false.
-export function needsJaTargetDefinition(item: AtlasItemRow): boolean {
-  return item.target_language === "ja" && item.enrichment?.targetDefinitionLang !== "ja";
+/// True for JA items enriched under an older scheme (missing the Japanese
+/// target definition and/or the kana reading), so callers re-enrich them once
+/// and skip embedding their stale detail. The version stamp advances on every
+/// re-enrich, so this can't loop even if a generation step fails. EN items and
+/// up-to-date JA items are false.
+export function needsJaEnrichRefresh(item: AtlasItemRow): boolean {
+  return (
+    item.target_language === "ja" && (item.enrichment?.enrichVersion ?? 0) < ATLAS_ENRICH_VERSION
+  );
 }
 
 /// Assemble the full per-word detail JSON (same shape as getLearningWord /
@@ -155,7 +189,10 @@ export function atlasItemToWord(item: AtlasItemRow, imageUrl: string) {
     alsoKnownAs: null,
     category: item.category || "custom",
     partOfSpeech: item.part_of_speech ?? null,
-    pronunciation: item.pronunciation ?? "",
+    // Fold the kana reading into pronunciation (JA items have no separate
+    // pronunciation) so the title's pronunciation slot shows it, mirroring
+    // getLearningWord's `pronunciation ?? reading` for public JA words.
+    pronunciation: item.pronunciation ?? item.reading ?? "",
     reading: item.reading ?? null,
     targetLanguage: item.target_language,
     audioUrl: null,

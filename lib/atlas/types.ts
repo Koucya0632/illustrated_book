@@ -105,6 +105,9 @@ export interface AtlasEnrichment {
   /// target definitions existed (their definition_target is stale English, so
   /// atlasItemToWord suppresses it until a re-enrich stamps this).
   targetDefinitionLang?: AtlasTargetLanguage | null;
+  /// enrichAtlasItem output-schema version (see ATLAS_ENRICH_VERSION). Rows
+  /// below the current version are re-enriched once on next open.
+  enrichVersion?: number;
 }
 
 export interface AtlasItemRow {

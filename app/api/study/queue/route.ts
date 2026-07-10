@@ -155,7 +155,7 @@ export async function GET(req: Request) {
         ? studyStats(userId, publicCategories, directionDeck)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       getAllMastery(userId, targetLanguage),
-      wantsCustom ? fetchAtlasDue(userId, limit, mode) : Promise.resolve([]),
+      wantsCustom ? fetchAtlasDue(userId, limit, mode, targetLanguage) : Promise.resolve([]),
       wantsCustom
         ? atlasStudyStats(userId, targetLanguage)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),

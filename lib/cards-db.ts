@@ -105,42 +105,80 @@ export async function attachMasteryAndSort(
   return due;
 }
 
+// Candidate pool for a deck-set: every published card in those decks, joined
+// with its word. Identical for every user/request that studies the same
+// deck(s) — only admin word/card edits change it — so it's cached instead of
+// re-queried on every /api/study/queue hit. `["words"]` is the same
+// invalidation tag words-db.ts busts on every write (see `bustCaches`), and
+// `revalidate` is a belt-and-suspenders fallback for any write path that
+// forgets to bust it.
+const getCandidatePool = unstable_cache(
+  async (decks: string[]) => {
+    const sql = requireSql();
+    return (await sql`
+      SELECT c.id AS card_id, c.back, c.deck_key, c.word_id,
+             w.word AS w_word, w.part_of_speech AS pos, w.category AS cat,
+             w.cefr_level AS cefr, w.pronunciation AS pron
+      FROM cards c
+      JOIN words w ON w.id = c.word_id
+      WHERE c.deck_key = ANY(${decks}::text[])
+        AND w.deleted_at IS NULL
+        AND w.status = 'published'
+    `) as unknown as Array<{
+      card_id: number;
+      back: string;
+      deck_key: string;
+      word_id: string;
+      w_word: string;
+      pos: string | null;
+      cat: string | null;
+      cefr: string | null;
+      pron: string | null;
+    }>;
+  },
+  ["choices-candidate-pool"],
+  { tags: ["words"], revalidate: 300 },
+);
+
+// All confusing/synonym/see-also edges — a small, curated, admin-authored
+// table. Cached wholesale (same "words" tag) and filtered to the current
+// queue's target words in memory, instead of re-querying per request.
+const getAllChoiceRelations = unstable_cache(
+  async (): Promise<RelationEdge[]> => {
+    const sql = requireSql();
+    const rows = (await sql`
+      SELECT source_word_id AS source, target_word_id AS target, relation_type AS type
+      FROM word_relations
+      WHERE relation_type IN ('confusing','synonym','see-also')
+    `) as unknown as Array<{ source: string; target: string; type: string }>;
+    return rows.map((r) => ({
+      source: String(r.source),
+      target: String(r.target),
+      type: String(r.type),
+    }));
+  },
+  ["choices-relations"],
+  { tags: ["words"], revalidate: 300 },
+);
+
 // Attach 3 distractors + the correct back to every MCQ card in the queue.
 // Distractors are picked by the metadata-aware scorer in lib/distractors —
 // curated relations + same category > same POS + spelling/pronunciation
-// similarity. Pool fetch + relation fetch are each a single round-trip; the
-// per-card scoring is O(queueSize × poolSize) in memory and trivially fast
-// at our scale (~20 × ~470).
+// similarity. Pool + relations are cached (see above), so this is normally
+// zero DB round-trips; the per-card scoring is O(queueSize × poolSize) in
+// memory and trivially fast at our scale (~20 × ~470).
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
   const mcq = due.filter((d) => MCQ_TYPES.has(d.card.card_type));
   if (mcq.length === 0) return due;
 
-  const sql = requireSql();
-  const decks = Array.from(new Set(mcq.map((d) => d.card.deck_key)));
+  // Sorted so "image-en, image-ja" and "image-ja, image-en" hit the same
+  // cache entry regardless of the queue's card order.
+  const decks = Array.from(new Set(mcq.map((d) => d.card.deck_key))).sort();
   const targetWordIds = Array.from(new Set(mcq.map((d) => d.word.id)));
 
   // 1. Candidate pool: every card in the relevant decks, joined with its
   //    word so each candidate knows its POS / category / CEFR / IPA / lemma.
-  const poolRows = (await sql`
-    SELECT c.id AS card_id, c.back, c.deck_key, c.word_id,
-           w.word AS w_word, w.part_of_speech AS pos, w.category AS cat,
-           w.cefr_level AS cefr, w.pronunciation AS pron
-    FROM cards c
-    JOIN words w ON w.id = c.word_id
-    WHERE c.deck_key = ANY(${decks}::text[])
-      AND w.deleted_at IS NULL
-      AND w.status = 'published'
-  `) as unknown as Array<{
-    card_id: number;
-    back: string;
-    deck_key: string;
-    word_id: string;
-    w_word: string;
-    pos: string | null;
-    cat: string | null;
-    cefr: string | null;
-    pron: string | null;
-  }>;
+  const poolRows = await getCandidatePool(decks);
 
   const poolsByDeck = new Map<string, CandidateMeta[]>();
   for (const r of poolRows) {
@@ -161,25 +199,15 @@ export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
   }
 
   // 2. Relations: confusing / synonym / see-also edges touching any of the
-  //    queue's target words, in either direction.
+  //    queue's target words, in either direction. Filtered in memory from
+  //    the cached full set instead of a per-request WHERE ANY(...) query.
+  const targetWordIdSet = new Set(targetWordIds);
   const relations: RelationEdge[] =
     targetWordIds.length === 0
       ? []
-      : (
-          (await sql`
-            SELECT source_word_id AS source,
-                   target_word_id AS target,
-                   relation_type AS type
-            FROM word_relations
-            WHERE relation_type IN ('confusing','synonym','see-also')
-              AND (source_word_id = ANY(${targetWordIds}::text[])
-                   OR target_word_id = ANY(${targetWordIds}::text[]))
-          `) as unknown as Array<{ source: string; target: string; type: string }>
-        ).map((r) => ({
-          source: String(r.source),
-          target: String(r.target),
-          type: String(r.type),
-        }));
+      : (await getAllChoiceRelations()).filter(
+          (r) => targetWordIdSet.has(r.source) || targetWordIdSet.has(r.target),
+        );
 
   // 3. Score + pick per card. Spelling distractors come from a separate
   //    algorithmic generator (lib/misspellings) — no DB hit, so we slot

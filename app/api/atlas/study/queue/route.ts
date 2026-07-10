@@ -15,7 +15,9 @@ export async function GET(req: Request) {
   const modeParam = (searchParams.get("mode") ?? "both").trim();
   const mode = modeParam === "new" || modeParam === "review" ? modeParam : "both";
 
-  const due = await fetchAtlasDue(userId, limit, mode);
+  // null: the dedicated atlas study page reviews every capture regardless of
+  // the current learning direction — each row carries its own target_language.
+  const due = await fetchAtlasDue(userId, limit, mode, null);
   const queue = await Promise.all(
     due.map(async (row) => {
       const urls = await createAtlasImageSignedUrls({

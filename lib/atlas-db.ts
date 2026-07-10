@@ -497,6 +497,12 @@ export async function fetchAtlasDue(
   userId: string,
   limit = 20,
   mode: "new" | "review" | "both" = "both",
+  // Required (nullable, no default) on purpose: every caller must decide the
+  // language scope explicitly. The unified study queue passes the session's
+  // learning direction — without it, EN captures surface in a JA 學新字/復習
+  // and the queue disagrees with atlasStudyStats / atlasCategoryProgress,
+  // which both filter. null = all languages (the dedicated atlas page).
+  targetLanguage: AtlasTargetLanguage | null,
 ): Promise<AtlasDueCard[]> {
   const sql = requireSql();
   const includeNew = mode === "new" || mode === "both";
@@ -577,6 +583,7 @@ export async function fetchAtlasDue(
       AND c.deleted_at IS NULL
       AND i.deleted_at IS NULL
       AND img.deleted_at IS NULL
+      ${targetLanguage ? sql`AND i.target_language = ${targetLanguage}` : sql``}
       AND (
         -- New: a 新卡 card whose ITEM has no studied card yet. An item makes two
         -- cards (image_recall + flashcard) but the study flow dedupes to one per

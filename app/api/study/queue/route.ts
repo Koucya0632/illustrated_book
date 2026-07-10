@@ -189,9 +189,15 @@ export async function GET(req: Request) {
 
     const tLocalize = performance.now();
     const atlasStudyQueue = wantsCustom ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue) : [];
-    const localized = (await localizeStudyQueue(queue, settings.uiLang))
-      .concat(await localizeStudyQueue(atlasStudyQueue, settings.uiLang))
-      .slice(0, limit);
+    const localizedPublic = await localizeStudyQueue(queue, settings.uiLang);
+    const localizedAtlas = await localizeStudyQueue(atlasStudyQueue, settings.uiLang);
+    // New-learn leads with captured 自製 cards: appended last they'd be
+    // sliced off whenever the public draw already fills `limit`, so a
+    // just-captured word would never surface in 學新字.
+    const localized = (mode === "new"
+      ? localizedAtlas.concat(localizedPublic)
+      : localizedPublic.concat(localizedAtlas)
+    ).slice(0, limit);
     const localizeMs = Math.round(performance.now() - tLocalize);
 
     const totalMs = Math.round(performance.now() - t0);

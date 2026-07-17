@@ -21,6 +21,11 @@ interface DayRow {
   d: string;
   c: number;
 }
+interface DayAccuracyRow {
+  d: string;
+  c: number;
+  accuracy: number | null;
+}
 
 async function loadStats(days: Days) {
   const sql = getSql();
@@ -33,45 +38,133 @@ async function loadStats(days: Days) {
   // Trend bars get clamped so the chart doesn't become unreadable at 90d.
   const trendDays = Math.min(days, 30);
 
-  const [byType, topViewed, byCategory, perDay, sessions7d] =
-    await Promise.all([
-      sql`
-        SELECT type AS label, count(*)::int AS c
-        FROM events WHERE created_at > now() - make_interval(days => ${days})
-        GROUP BY type ORDER BY c DESC
-      ` as unknown as Promise<CountRow[]>,
-      sql`
-        SELECT word_id AS label, count(*)::int AS c
-        FROM events
-        WHERE type = 'view' AND word_id IS NOT NULL
-          AND created_at > now() - make_interval(days => ${days})
-        GROUP BY word_id ORDER BY c DESC LIMIT 15
-      ` as unknown as Promise<CountRow[]>,
-      sql`
-        SELECT category AS label, count(*)::int AS c
-        FROM events WHERE category IS NOT NULL
-          AND created_at > now() - make_interval(days => ${days})
-        GROUP BY category ORDER BY c DESC
-      ` as unknown as Promise<CountRow[]>,
-      sql`
-        SELECT to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS d,
-               count(*)::int AS c
-        FROM events WHERE created_at > now() - make_interval(days => ${trendDays})
-        GROUP BY d ORDER BY d ASC
-      ` as unknown as Promise<DayRow[]>,
-      sql`
-        SELECT count(DISTINCT session_id)::int AS c
-        FROM events WHERE created_at > now() - interval '7 days'
-          AND session_id IS NOT NULL
-      ` as unknown as Promise<{ c: number }[]>,
-    ]);
+  const [
+    byType,
+    topViewed,
+    byCategory,
+    perDay,
+    sessionsByPlatform7d,
+    byPlatform,
+    dauPerDay,
+    answersPerDay,
+    signupsPerDay,
+    learnedPerDay,
+    activeUsers,
+    tiers,
+    pushDevices,
+  ] = await Promise.all([
+    sql`
+      SELECT type AS label, count(*)::int AS c
+      FROM events WHERE created_at > now() - make_interval(days => ${days})
+      GROUP BY type ORDER BY c DESC
+    ` as unknown as Promise<CountRow[]>,
+    sql`
+      SELECT word_id AS label, count(*)::int AS c
+      FROM events
+      WHERE type = 'view' AND word_id IS NOT NULL
+        AND created_at > now() - make_interval(days => ${days})
+      GROUP BY word_id ORDER BY c DESC LIMIT 15
+    ` as unknown as Promise<CountRow[]>,
+    sql`
+      SELECT category AS label, count(*)::int AS c
+      FROM events WHERE category IS NOT NULL
+        AND created_at > now() - make_interval(days => ${days})
+      GROUP BY category ORDER BY c DESC
+    ` as unknown as Promise<CountRow[]>,
+    sql`
+      SELECT to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS d,
+             count(*)::int AS c
+      FROM events WHERE created_at > now() - make_interval(days => ${trendDays})
+      GROUP BY d ORDER BY d ASC
+    ` as unknown as Promise<DayRow[]>,
+    // web session ids persist per browser (≈ visitors); iOS mints one per
+    // app launch (= sessions) — surfaced as separate tiles, not summed.
+    sql`
+      SELECT platform AS label, count(DISTINCT session_id)::int AS c
+      FROM events WHERE created_at > now() - interval '7 days'
+        AND session_id IS NOT NULL
+      GROUP BY platform
+    ` as unknown as Promise<CountRow[]>,
+    sql`
+      SELECT platform AS label, count(*)::int AS c
+      FROM events WHERE created_at > now() - make_interval(days => ${days})
+      GROUP BY platform ORDER BY c DESC
+    ` as unknown as Promise<CountRow[]>,
+    // Account behaviour: union both study-log streams so atlas-only
+    // studiers count. study_logs is partitioned by created_at, so the
+    // range predicate prunes partitions.
+    sql`
+      SELECT to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS d,
+             count(DISTINCT user_id)::int AS c
+      FROM (
+        SELECT user_id, created_at FROM study_logs
+          WHERE created_at > now() - make_interval(days => ${trendDays})
+        UNION ALL
+        SELECT user_id, created_at FROM user_atlas_study_logs
+          WHERE created_at > now() - make_interval(days => ${trendDays})
+      ) t
+      GROUP BY d ORDER BY d ASC
+    ` as unknown as Promise<DayRow[]>,
+    sql`
+      SELECT to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS d,
+             count(*)::int AS c,
+             round(avg(is_correct::int) * 100)::int AS accuracy
+      FROM (
+        SELECT is_correct, created_at FROM study_logs
+          WHERE created_at > now() - make_interval(days => ${trendDays})
+        UNION ALL
+        SELECT is_correct, created_at FROM user_atlas_study_logs
+          WHERE created_at > now() - make_interval(days => ${trendDays})
+      ) t
+      GROUP BY d ORDER BY d ASC
+    ` as unknown as Promise<DayAccuracyRow[]>,
+    sql`
+      SELECT to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS d,
+             count(*)::int AS c
+      FROM profiles WHERE created_at > now() - make_interval(days => ${trendDays})
+      GROUP BY d ORDER BY d ASC
+    ` as unknown as Promise<DayRow[]>,
+    sql`
+      SELECT to_char(date_trunc('day', learned_at), 'YYYY-MM-DD') AS d,
+             count(*)::int AS c
+      FROM user_learned WHERE learned_at > now() - make_interval(days => ${trendDays})
+      GROUP BY d ORDER BY d ASC
+    ` as unknown as Promise<DayRow[]>,
+    sql`
+      SELECT count(DISTINCT user_id)::int AS c FROM (
+        SELECT user_id FROM study_logs
+          WHERE created_at > now() - make_interval(days => ${days})
+        UNION ALL
+        SELECT user_id FROM user_atlas_study_logs
+          WHERE created_at > now() - make_interval(days => ${days})
+      ) t
+    ` as unknown as Promise<{ c: number }[]>,
+    sql`
+      SELECT
+        (SELECT count(*)::int FROM profiles) AS total,
+        (SELECT count(*)::int FROM user_entitlements
+          WHERE tier = 'pro' AND (expires_at IS NULL OR expires_at > now())) AS pro
+    ` as unknown as Promise<{ total: number; pro: number }[]>,
+    sql`
+      SELECT count(*)::int AS c FROM user_push_tokens
+    ` as unknown as Promise<{ c: number }[]>,
+  ]);
 
   return {
     byType,
     topViewed,
     byCategory,
     perDay,
-    sessions7d: sessions7d[0]?.c ?? 0,
+    sessionsByPlatform7d,
+    byPlatform,
+    dauPerDay,
+    answersPerDay,
+    signupsPerDay,
+    learnedPerDay,
+    activeUsers: activeUsers[0]?.c ?? 0,
+    totalUsers: tiers[0]?.total ?? 0,
+    proUsers: tiers[0]?.pro ?? 0,
+    pushDevices: pushDevices[0]?.c ?? 0,
     wordMap,
     trendDays,
   };
@@ -100,7 +193,16 @@ export default async function StatsPage({
     topViewed,
     byCategory,
     perDay,
-    sessions7d,
+    sessionsByPlatform7d,
+    byPlatform,
+    dauPerDay,
+    answersPerDay,
+    signupsPerDay,
+    learnedPerDay,
+    activeUsers,
+    totalUsers,
+    proUsers,
+    pushDevices,
     wordMap,
     trendDays,
   } = data;
@@ -108,6 +210,8 @@ export default async function StatsPage({
   const totalEvents = byType.reduce((s, r) => s + r.c, 0);
   const maxDay = Math.max(1, ...perDay.map((d) => d.c));
   const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const webSessions7d = sessionsByPlatform7d.find((r) => r.label === "web")?.c ?? 0;
+  const iosSessions7d = sessionsByPlatform7d.find((r) => r.label === "ios")?.c ?? 0;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-10">
@@ -128,16 +232,157 @@ export default async function StatsPage({
         />
       </section>
 
-      <section className="grid grid-cols-2 gap-3">
-        <Stat label={`總事件 (${days}d)`} value={totalEvents.toLocaleString()} emoji="📡" />
+      <h2 className="text-lg font-bold text-ink">產品使用（帳號行為）</h2>
+
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         <Stat
-          label="不同訪客 (7d)"
-          value={sessions7d.toLocaleString()}
+          label={`活躍用戶 (${days}d)`}
+          value={activeUsers.toLocaleString()}
+          emoji="🔥"
+        />
+        <Stat label="總註冊" value={totalUsers.toLocaleString()} emoji="🐱" />
+        <Stat
+          label="Pro / 免費"
+          value={`${proUsers.toLocaleString()} / ${(totalUsers - proUsers).toLocaleString()}`}
+          emoji="👑"
+        />
+        <Stat label="推播裝置" value={pushDevices.toLocaleString()} emoji="🔔" />
+      </section>
+
+      <section className="grid lg:grid-cols-2 gap-6">
+        <Card
+          title={`每日活躍用戶 (${trendDays}d)`}
+          action={
+            <CsvButton
+              filename={`dau-${trendDays}d-${today}.csv`}
+              headers={["date", "dau"]}
+              rows={dauPerDay.map((r) => [r.d, r.c])}
+            />
+          }
+        >
+          <ul className="space-y-2">
+            {dauPerDay.length === 0 && <Empty />}
+            {dauPerDay.map((r) => (
+              <Bar
+                key={r.d}
+                label={r.d}
+                value={r.c}
+                max={Math.max(1, ...dauPerDay.map((x) => x.c))}
+              />
+            ))}
+          </ul>
+        </Card>
+
+        <Card
+          title={`每日答題量與正確率 (${trendDays}d)`}
+          action={
+            <CsvButton
+              filename={`answers-${trendDays}d-${today}.csv`}
+              headers={["date", "answers", "accuracy_pct"]}
+              rows={answersPerDay.map((r) => [r.d, r.c, r.accuracy ?? ""])}
+            />
+          }
+        >
+          <ul className="space-y-2">
+            {answersPerDay.length === 0 && <Empty />}
+            {answersPerDay.map((r) => (
+              <Bar
+                key={r.d}
+                label={`${r.d} · ${r.accuracy ?? "–"}%`}
+                value={r.c}
+                max={Math.max(1, ...answersPerDay.map((x) => x.c))}
+              />
+            ))}
+          </ul>
+        </Card>
+
+        <Card
+          title={`每日新註冊 (${trendDays}d)`}
+          action={
+            <CsvButton
+              filename={`signups-${trendDays}d-${today}.csv`}
+              headers={["date", "signups"]}
+              rows={signupsPerDay.map((r) => [r.d, r.c])}
+            />
+          }
+        >
+          <ul className="space-y-2">
+            {signupsPerDay.length === 0 && <Empty />}
+            {signupsPerDay.map((r) => (
+              <Bar
+                key={r.d}
+                label={r.d}
+                value={r.c}
+                max={Math.max(1, ...signupsPerDay.map((x) => x.c))}
+              />
+            ))}
+          </ul>
+        </Card>
+
+        <Card
+          title={`每日學會單字 (${trendDays}d)`}
+          action={
+            <CsvButton
+              filename={`learned-${trendDays}d-${today}.csv`}
+              headers={["date", "learned"]}
+              rows={learnedPerDay.map((r) => [r.d, r.c])}
+            />
+          }
+        >
+          <ul className="space-y-2">
+            {learnedPerDay.length === 0 && <Empty />}
+            {learnedPerDay.map((r) => (
+              <Bar
+                key={r.d}
+                label={r.d}
+                value={r.c}
+                max={Math.max(1, ...learnedPerDay.map((x) => x.c))}
+              />
+            ))}
+          </ul>
+        </Card>
+      </section>
+
+      <h2 className="text-lg font-bold text-ink">事件流量（匿名）</h2>
+
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <Stat label={`總事件 (${days}d)`} value={totalEvents.toLocaleString()} emoji="📡" />
+        {/* web ids persist per browser ≈ visitors; iOS ids are per-launch = sessions */}
+        <Stat
+          label="網站訪客 (7d)"
+          value={webSessions7d.toLocaleString()}
           emoji="👥"
+        />
+        <Stat
+          label="App 工作階段 (7d)"
+          value={iosSessions7d.toLocaleString()}
+          emoji="📱"
         />
       </section>
 
       <section className="grid lg:grid-cols-2 gap-6">
+        <Card
+          title={`事件平台分佈 (${days}d)`}
+          action={
+            <CsvButton
+              filename={`platforms-${days}d-${today}.csv`}
+              headers={["platform", "count"]}
+              rows={byPlatform.map((r) => [r.label, r.c])}
+            />
+          }
+        >
+          <ul className="space-y-2">
+            {byPlatform.length === 0 && <Empty />}
+            {byPlatform.map((r) => (
+              <Bar
+                key={r.label}
+                label={r.label}
+                value={r.c}
+                max={Math.max(1, ...byPlatform.map((x) => x.c))}
+              />
+            ))}
+          </ul>
+        </Card>
         <Card
           title={`事件類型分佈 (${days}d)`}
           action={

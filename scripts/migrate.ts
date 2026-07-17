@@ -1084,6 +1084,19 @@ const DDL = [
   // Feedback is written and managed through authenticated server routes.
   // No direct client policies are intentionally exposed in v1.
 
+  // ---- events v2: platform split (web|ios) + composite index ----
+  // DEFAULT 'web' backfills all pre-existing rows (they were all web) and
+  // covers old web clients that don't send the field.
+  `ALTER TABLE events ADD COLUMN IF NOT EXISTS platform TEXT NOT NULL DEFAULT 'web'`,
+  `DO $$ BEGIN
+     IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'events_platform_chk') THEN
+       ALTER TABLE events ADD CONSTRAINT events_platform_chk
+         CHECK (platform IN ('web','ios'));
+     END IF;
+   END $$`,
+  `CREATE INDEX IF NOT EXISTS events_type_created_idx
+     ON events(type, created_at DESC)`,
+
 ];
 
 // ---- Phase 3: drop legacy `words` columns ----

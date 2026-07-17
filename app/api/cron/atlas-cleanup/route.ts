@@ -30,12 +30,18 @@ export async function GET(req: Request) {
     const retentionDays = Number(process.env.ATLAS_RAW_RESPONSE_RETENTION_DAYS || 30);
     const cleanedRawResponses = await cleanupOldAtlasRawResponses(retentionDays);
     const cleanedRateLimitHits = await cleanupOldRateLimitHits();
+    // Anonymous traffic events: keep 180 days (dashboard max window is 90d).
+    const sql = getSql()!;
+    const prunedEventsResult = await sql`
+      DELETE FROM events WHERE created_at < now() - interval '180 days'
+    `;
     return NextResponse.json({
       ok: true,
       durationMs: Date.now() - startedAt,
       retentionDays,
       cleanedRawResponses,
       cleanedRateLimitHits,
+      prunedEvents: prunedEventsResult.count,
     });
   } catch (err) {
     console.error("[cron/atlas-cleanup] cleanup failed", err);

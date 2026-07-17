@@ -1055,6 +1055,35 @@ const DDL = [
   `DROP POLICY IF EXISTS word_localized_texts_public_read ON word_localized_texts`,
   `CREATE POLICY word_localized_texts_public_read ON word_localized_texts FOR SELECT USING (true)`,
 
+  // ---- feedback: general user feedback from the app's 意見收集 form ----
+  // Account-level (not tied to a word/card) — study-card issues go through
+  // study_reports instead.
+  `CREATE TABLE IF NOT EXISTS feedback (
+     id            BIGSERIAL PRIMARY KEY,
+     request_id    UUID NOT NULL UNIQUE,
+     user_id       UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     feedback_type TEXT NOT NULL CHECK (feedback_type IN
+                     ('feature','bug','content','other')),
+     description   TEXT NOT NULL CHECK (
+                     char_length(btrim(description)) BETWEEN 1 AND 1000
+                   ),
+     platform      TEXT NOT NULL CHECK (platform IN ('web','ios')),
+     app_version   TEXT,
+     ui_lang       TEXT NOT NULL,
+     status        TEXT NOT NULL DEFAULT 'pending' CHECK (status IN
+                     ('pending','reviewing','resolved','rejected','duplicate')),
+     internal_note TEXT,
+     created_at    TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS feedback_status_created_idx
+     ON feedback(status, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS feedback_user_created_idx
+     ON feedback(user_id, created_at DESC)`,
+  `ALTER TABLE feedback ENABLE ROW LEVEL SECURITY`,
+  // Feedback is written and managed through authenticated server routes.
+  // No direct client policies are intentionally exposed in v1.
+
 ];
 
 // ---- Phase 3: drop legacy `words` columns ----

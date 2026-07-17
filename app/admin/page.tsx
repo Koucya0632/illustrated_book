@@ -9,19 +9,22 @@ async function loadStats() {
   const sql = getSql();
   let events7d = 0;
   let pendingReports = 0;
+  let pendingFeedback = 0;
   if (sql) {
-    const [events, reports] = await Promise.all([
+    const [events, reports, feedback] = await Promise.all([
       sql`SELECT count(*)::int AS c FROM events WHERE created_at > now() - interval '7 days'`,
       sql`SELECT count(*)::int AS c FROM study_reports WHERE status = 'pending'`,
+      sql`SELECT count(*)::int AS c FROM feedback WHERE status = 'pending'`,
     ]);
     events7d = Number(events[0]?.c ?? 0);
     pendingReports = Number(reports[0]?.c ?? 0);
+    pendingFeedback = Number(feedback[0]?.c ?? 0);
   }
-  return { words, events7d, pendingReports };
+  return { words, events7d, pendingReports, pendingFeedback };
 }
 
 export default async function AdminHome() {
-  const { words, events7d, pendingReports } = await loadStats();
+  const { words, events7d, pendingReports, pendingFeedback } = await loadStats();
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
@@ -50,6 +53,14 @@ export default async function AdminHome() {
           <div className="text-3xl">🚩</div>
           <h2 className="mt-2 font-bold text-ink">報錯中心</h2>
           <p className="text-sm text-muted">{pendingReports} 筆待處理</p>
+        </Link>
+        <Link
+          href="/admin/feedback"
+          className="rounded-xl2 p-5 bg-white shadow-card hover:shadow-lg transition"
+        >
+          <div className="text-3xl">💬</div>
+          <h2 className="mt-2 font-bold text-ink">意見收集</h2>
+          <p className="text-sm text-muted">{pendingFeedback} 筆待處理</p>
         </Link>
         <Link
           href="/admin/stats"

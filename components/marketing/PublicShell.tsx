@@ -31,7 +31,7 @@ export default function PublicShell({ children }: { children: React.ReactNode })
             ))}
           </nav>
           <Link
-            href="/#download"
+            href="/download"
             className="tuji-press rounded-xl bg-tuji-yellow px-4 py-2.5 text-sm font-extrabold text-tuji-ink"
             style={{ ["--press-shadow" as string]: "#d7a900" }}
           >
@@ -68,7 +68,7 @@ export default function PublicShell({ children }: { children: React.ReactNode })
                 <Link href="/#atlas" className="transition hover:text-tuji-yellow">
                   自製圖鑑
                 </Link>
-                <Link href="/#download" className="transition hover:text-tuji-yellow">
+                <Link href="/download" className="transition hover:text-tuji-yellow">
                   iOS App
                 </Link>
               </div>

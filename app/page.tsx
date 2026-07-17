@@ -9,9 +9,6 @@ export const metadata: Metadata = {
     "看得見的單字，記得住的語言。Tuji 用日常生活的圖片、間隔複習與 AI 自製圖鑑，幫中文使用者學會生活英文和日文。",
 };
 
-// App Store 上架後填入正式連結，下載區的按鈕會自動變成可點擊的徽章。
-const APP_STORE_URL: string | null = null;
-
 const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 const HERO_CAPTURE_IMAGE = "/marketing/atlas-capture-cards.webp";
 
@@ -165,11 +162,11 @@ export default function MarketingHomePage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/#download"
+                href="/download"
                 className="tuji-press inline-flex items-center justify-center gap-2 rounded-2xl bg-tuji-yellow px-7 py-4 text-base font-extrabold text-tuji-ink"
                 style={{ ["--press-shadow" as string]: "#d7a900" }}
               >
-                搶先體驗 iOS App
+                下載 iOS App
               </Link>
             </div>
             <div className="mt-10 grid max-w-lg grid-cols-3 gap-3">
@@ -353,33 +350,23 @@ export default function MarketingHomePage() {
             <img src={APP_ICON_SRC} alt="Tuji app icon" className="h-full w-full object-cover" />
           </div>
           <h2 className="mt-7 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-5xl">
-            Tuji 即將登陸 App Store<span className="text-tuji-coral">。</span>
+            Tuji 現在就在 App Store<span className="text-tuji-coral">。</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-7 text-tuji-ink2">
-            iOS 版正在進行最後準備。想第一時間收到上架消息，或搶先加入測試？歡迎寫信給我們。
+            立即下載 Tuji，用生活中的圖片開始學英文和日文。
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            {APP_STORE_URL ? (
-              <a
-                href={APP_STORE_URL}
-                className="tuji-press inline-flex items-center gap-3 rounded-2xl bg-tuji-ink px-7 py-4 text-white"
-                style={{ ["--press-shadow" as string]: "#000000" }}
-              >
-                <AppleLogo className="h-8 w-8" />
-                <span className="text-left">
-                  <span className="block text-[11px] font-bold text-white/70">Download on the</span>
-                  <span className="block text-lg font-extrabold leading-tight">App Store</span>
-                </span>
-              </a>
-            ) : (
-              <div className="inline-flex cursor-default items-center gap-3 rounded-2xl bg-tuji-ink/90 px-7 py-4 text-white">
-                <AppleLogo className="h-8 w-8" />
-                <span className="text-left">
-                  <span className="block text-[11px] font-bold text-white/70">Coming soon to the</span>
-                  <span className="block text-lg font-extrabold leading-tight">App Store</span>
-                </span>
-              </div>
-            )}
+            <a
+              href="/download"
+              className="tuji-press inline-flex items-center gap-3 rounded-2xl bg-tuji-ink px-7 py-4 text-white"
+              style={{ ["--press-shadow" as string]: "#000000" }}
+            >
+              <AppleLogo className="h-8 w-8" />
+              <span className="text-left">
+                <span className="block text-[11px] font-bold text-white/70">Download on the</span>
+                <span className="block text-lg font-extrabold leading-tight">App Store</span>
+              </span>
+            </a>
             <Link
               href="/support"
               className="inline-flex items-center justify-center rounded-2xl bg-tuji-tealS px-7 py-4 text-base font-extrabold text-tuji-teal transition hover:bg-tuji-teal hover:text-white"

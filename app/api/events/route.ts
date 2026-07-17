@@ -3,7 +3,16 @@ import { getSql } from "@/lib/db";
 
 export const runtime = "nodejs";
 
-const VALID_TYPES = new Set(["view", "favorite", "pronounce"]);
+// Raw values are the API contract — the iOS side pins them in
+// tuji-ios Tuji/Core/Analytics/AnalyticsService.swift (AnalyticsEvent).
+const VALID_TYPES = new Set([
+  // web (original)
+  "view", "favorite", "pronounce",
+  // ios (kept small & stable — server-derived metrics live in study_logs etc.)
+  "app_open", "study_start", "study_complete",
+  "paywall_view", "share_app", "atlas_capture_open",
+]);
+const VALID_PLATFORMS = new Set(["web", "ios"]);
 
 async function ipHash(ip: string): Promise<string> {
   const data = new TextEncoder().encode(ip + "::eepd");
@@ -21,6 +30,7 @@ export async function POST(req: Request) {
     wordId?: string;
     category?: string;
     sessionId?: string;
+    platform?: string;
   };
   try {
     body = await req.json();
@@ -38,15 +48,20 @@ export async function POST(req: Request) {
     "unknown";
   const hash = await ipHash(ip);
 
+  // Default (not 400) so pre-platform clients keep working.
+  const platform =
+    body.platform && VALID_PLATFORMS.has(body.platform) ? body.platform : "web";
+
   try {
     await sql`
-      INSERT INTO events (type, word_id, category, session_id, ip_hash)
+      INSERT INTO events (type, word_id, category, session_id, ip_hash, platform)
       VALUES (
         ${body.type},
         ${body.wordId ?? null},
         ${body.category ?? null},
         ${body.sessionId ?? null},
-        ${hash}
+        ${hash},
+        ${platform}
       )
     `;
   } catch (e) {

@@ -551,7 +551,9 @@ const zhHans: Dict = {
   "search.showMore": "显示更多 {n} 个",
 };
 
-const messages: Record<Locale, Dict> = { "zh-Hant": zhHant, "zh-Hans": zhHans };
+// ja/en are iOS-only interface languages for now; the web catalog falls back
+// to zh-Hant for them (see t() below).
+const messages: Partial<Record<Locale, Dict>> = { "zh-Hant": zhHant, "zh-Hans": zhHans };
 
 export function t(
   locale: Locale,

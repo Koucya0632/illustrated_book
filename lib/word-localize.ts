@@ -1,15 +1,17 @@
-// Localize a Word / Category to the user's UI language (zh-Hant / zh-Hans).
+// Localize a Word / Category to the user's UI language.
 //
 // The source-of-truth content is zh-Hant (stored in `words.etymology`,
 // `words.note`, `word_definitions(language='zh')`, `word_example_translations
 // (language='zh')`, `categories.name_zh`).
 //
 // zh-Hans isn't stored at all; it's runtime-converted from zh-Hant via
-// OpenCC. zh-Hant always passes through untouched.
+// OpenCC. Every other uiLang (zh-Hant, and the ja/en interface languages)
+// passes the zh-Hant base through untouched — ja/en localize app chrome
+// only, not study content.
 //
-// (The retired `ja` UI language used to overlay `language='ja'` rows here;
-// that path was removed when uiLang collapsed to zh-Hant / zh-Hans. The ja
-// content rows still live in the DB but are no longer surfaced.)
+// (The retired ja *content* overlay used to surface `language='ja'` rows
+// here; that path was removed. The ja content rows still live in the DB but
+// are no longer surfaced.)
 
 import type { UiLang } from "./settings";
 import type { Category, Definition, Example, Word } from "@/types";
@@ -34,9 +36,10 @@ export function localizeWord(
   // every lang pass (the EN list stays in `w.collocations`).
   const collocationsZh = pickCollocationsZh(lang, localizedTexts);
 
-  if (lang === "zh-Hant") {
-    // examples[].zh, etymology, note, forms[].label are all already the
-    // zh-Hant base values — pass them through untouched.
+  if (lang !== "zh-Hans") {
+    // zh-Hant (and ja/en, which read the zh-Hant base): examples[].zh,
+    // etymology, note, forms[].label are all already the base values —
+    // pass them through untouched.
     return { ...w, definitions: localizedDefs, chinese, collocationsZh };
   }
 
@@ -84,8 +87,7 @@ function pickCollocationsZh(
 /** Localize a Category's display name. `cat.nameZh` is the zh-Hant base.
  *  Returns a new Category with `nameZh` set to the chosen language's name. */
 export function localizeCategory(cat: Category, lang: UiLang): Category {
-  if (lang === "zh-Hant") return cat;
-  // zh-Hans
+  if (lang !== "zh-Hans") return cat;
   return {
     ...cat,
     nameZh: toZhHans(cat.nameZh),

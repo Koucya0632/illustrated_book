@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useT } from "@/components/I18n";
+import type { UiLang } from "@/lib/settings";
 import packageJson from "@/package.json";
 
 export interface StudyReportContext {
@@ -11,7 +12,7 @@ export interface StudyReportContext {
   mode: "new" | "review";
   phase: string;
   selectedAnswer: string | null;
-  uiLang: "zh-Hant" | "zh-Hans" | "ja";
+  uiLang: UiLang;
   snapshot: Record<string, unknown>;
 }
 

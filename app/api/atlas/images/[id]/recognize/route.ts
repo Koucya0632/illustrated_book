@@ -12,6 +12,7 @@ import {
   updateAtlasImageStatus,
 } from "@/lib/atlas-db";
 import { targetLanguageFromDirection } from "@/lib/atlas/normalize";
+import { readLang, readLearningDirection } from "@/lib/cache-headers";
 import {
   createEscalateAtlasProvider,
   createPrimaryAtlasProvider,
@@ -104,7 +105,14 @@ export async function POST(
       // send the stored image as-is
     }
     const settings = await settingsPromise;
-    const targetLanguage = targetLanguageFromDirection(settings.learningDirection);
+    // Take the language + learning direction from the request, falling back to
+    // the stored settings. The client's debounced settings save may not have
+    // landed yet (a just-switched uiLang), and glossLanguage must match what
+    // the user actually sees or the meaning field comes back empty.
+    const uiLang = readLang(req, settings.uiLang);
+    const targetLanguage = targetLanguageFromDirection(
+      readLearningDirection(req, settings.learningDirection),
+    );
     const input = {
       imageBytes,
       mimeType: image.mime_type,
@@ -112,9 +120,8 @@ export async function POST(
       // ja/en interfaces get candidate glosses in their own language; Chinese
       // UIs read zhHant, and UI==target needs none (the label is the gloss).
       glossLanguage:
-        (settings.uiLang === "ja" || settings.uiLang === "en") &&
-        settings.uiLang !== targetLanguage
-          ? settings.uiLang
+        (uiLang === "ja" || uiLang === "en") && uiLang !== targetLanguage
+          ? uiLang
           : null,
     };
     const result =

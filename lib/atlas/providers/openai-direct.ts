@@ -134,6 +134,9 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
       "Return a granularity ladder of up to 4 candidate names for the SAME object, from the basic everyday word to progressively more specific everyday descriptors that are clearly visible — e.g. variety, colour, age/size, type, material, breed, or brand. Examples: 'coffee' -> 'canned coffee' -> 'canned latte'; 'cat' -> 'black cat' -> 'kitten' (only if visibly young); 'shoe' -> 'sneaker'.",
       "Only add a finer rung when you can actually see evidence for it; never invent a breed, brand, or variety you cannot read or clearly see. It is fine to return only one candidate when nothing finer is visually supported.",
       `Order most-specific / most-likely first. Put all candidates in \`primary\`, each with a \`label\` in ${languageName} (the word the learner will study), a Traditional Chinese \`zhHant\` gloss, and \`confidence\` between 0 and 1.`,
+      input.glossLanguage
+        ? `Each candidate also gets a \`gloss\`: a short everyday ${input.glossLanguage === "ja" ? "Japanese" : "English"} word (or 2-3 word phrase) naming the same object — the learner's interface language.`
+        : "Set `gloss` to null for every candidate.",
       input.targetLanguage === "ja"
         ? "Write Japanese labels in their standard everyday written form (kanji/kana as commonly written; no romaji)."
         : "",
@@ -202,6 +205,7 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
     // and result fields are server-side concerns filled here.
     const primary = parsed.data.primary.map((candidate) => ({
       ...candidate,
+      gloss: candidate.gloss ?? null,
       normalizedLabel: normalizeAtlasLabel(candidate.label),
       taxonomyNodeId: null,
     }));

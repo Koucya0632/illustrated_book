@@ -12,7 +12,8 @@ import { fetchAtlasDue, atlasStudyStats } from "@/lib/atlas-db";
 import { createAtlasImageSignedUrlsBatch } from "@/lib/atlas/storage";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
-import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
+import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
+import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -34,7 +35,11 @@ function addStats(
   };
 }
 
-async function atlasDueToStudyQueue(userId: string, due: Awaited<ReturnType<typeof fetchAtlasDue>>): Promise<DueCard[]> {
+async function atlasDueToStudyQueue(
+  userId: string,
+  due: Awaited<ReturnType<typeof fetchAtlasDue>>,
+  uiLang: UiLang,
+): Promise<DueCard[]> {
   // One batched signed-URL request for the whole queue, instead of one storage
   // round-trip per card.
   const signed = await createAtlasImageSignedUrlsBatch(
@@ -50,9 +55,9 @@ async function atlasDueToStudyQueue(userId: string, due: Awaited<ReturnType<type
         id: `atlas:${row.card.id}`,
         word_id: `atlas:${row.item.id}`,
         card_type: row.card.card_type === "image_recall" ? "回想卡" : "單字卡",
-        front: row.card.front_text ?? row.item.display_zh_hant,
+        front: row.card.front_text ?? pickAtlasGloss(row.item, uiLang),
         back: row.item.lemma,
-        explanation: row.card.explanation ?? row.item.definition_zh_hant,
+        explanation: row.card.explanation ?? pickAtlasDefinition(row.item, uiLang),
         tags: ["custom", "atlas"],
         deck_key: row.item.target_language === "ja" ? "image-ja" : "image-en",
       },
@@ -72,7 +77,7 @@ async function atlasDueToStudyQueue(userId: string, due: Awaited<ReturnType<type
       word: {
         id: `atlas:${row.item.id}`,
         word: row.item.lemma,
-        chinese: row.item.display_zh_hant,
+        chinese: pickAtlasGloss(row.item, uiLang),
         image_url: urls.thumbUrl || urls.imageUrl,
         pronunciation: row.item.pronunciation ?? "",
         reading: row.item.reading ?? undefined,
@@ -188,7 +193,9 @@ export async function GET(req: Request) {
     });
 
     const tLocalize = performance.now();
-    const atlasStudyQueue = wantsCustom ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue) : [];
+    const atlasStudyQueue = wantsCustom
+      ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue, settings.uiLang)
+      : [];
     const localizedPublic = await localizeStudyQueue(queue, settings.uiLang);
     const localizedAtlas = await localizeStudyQueue(atlasStudyQueue, settings.uiLang);
     // New-learn leads with captured 自製 cards: appended last they'd be

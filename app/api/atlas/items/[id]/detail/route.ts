@@ -6,7 +6,9 @@ import {
   markAtlasItemBackfillFailed,
   updateAtlasItemEnrichment,
 } from "@/lib/atlas-db";
-import { atlasItemToWord, enrichAtlasItem, needsJaEnrichRefresh } from "@/lib/atlas/enrich";
+import { atlasItemToWord, enrichAtlasItem, needsEnrichRefresh } from "@/lib/atlas/enrich";
+import { getSettings } from "@/lib/users-db";
+import { readLang } from "@/lib/cache-headers";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 
 export const runtime = "nodejs";
@@ -19,19 +21,21 @@ function invalidId(id: string): boolean {
 
 // Full per-word detail for a custom atlas item, in the same shape as
 // /api/words/[id] (the iOS `Word`). Auth-gated (user-owned); no-store.
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: { id: string } }) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   let item = await getAtlasItem(userId, params.id);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const settings = await getSettings(userId);
+  const uiLang = readLang(req, settings.uiLang);
 
   // Lazy enrich: covers cards made before enrichment existed (or that missed the
   // background pass). Also re-runs once for JA cards enriched under an older
   // scheme (missing the Japanese target definition and/or kana reading) so they
   // self-heal. First open is slower; later reads use the stored blob.
-  if (item.backfill_status !== "filled" || needsJaEnrichRefresh(item)) {
+  if (item.backfill_status !== "filled" || needsEnrichRefresh(item)) {
     try {
       const fields = await enrichAtlasItem(item);
       await updateAtlasItemEnrichment(userId, item.id, fields);
@@ -61,7 +65,7 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
     }
   }
 
-  return NextResponse.json(atlasItemToWord(item, imageUrl), {
+  return NextResponse.json(atlasItemToWord(item, imageUrl, uiLang), {
     headers: { "Cache-Control": "private, no-store" },
   });
 }

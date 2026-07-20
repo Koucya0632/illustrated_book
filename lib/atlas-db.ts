@@ -257,7 +257,7 @@ export async function replaceAtlasCandidates(
     const inserted = await sql<AtlasCandidateRow[]>`
       INSERT INTO user_atlas_candidates (
         user_id, job_id, image_id, level, label, normalized_label,
-        zh_hant, target_term, target_language, taxonomy_node_id,
+        zh_hant, gloss, target_term, target_language, taxonomy_node_id,
         confidence, rank, source, metadata
       )
       VALUES (
@@ -268,6 +268,7 @@ export async function replaceAtlasCandidates(
         ${candidate.label},
         ${candidate.normalizedLabel},
         ${candidate.zhHant},
+        ${candidate.gloss},
         ${candidate.label},
         ${targetLanguage},
         ${candidate.taxonomyNodeId},
@@ -313,6 +314,10 @@ export interface ConfirmAtlasItemInput {
   fineLabel: string | null;
   lemma: string;
   displayZhHant: string;
+  /// Gloss in the capturing user's UI language, written into display_ja /
+  /// display_en; both null for Chinese UIs (displayZhHant is the gloss there).
+  displayJa: string | null;
+  displayEn: string | null;
   partOfSpeech: string | null;
   category: string | null;
 }
@@ -343,6 +348,8 @@ export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<At
           fine_label = ${input.fineLabel},
           lemma = ${input.lemma},
           display_zh_hant = ${input.displayZhHant},
+          display_ja = ${input.displayJa},
+          display_en = ${input.displayEn},
           part_of_speech = ${input.partOfSpeech},
           category = ${input.category},
           correction_source = ${correctionSource},
@@ -354,6 +361,7 @@ export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<At
         INSERT INTO user_atlas_items (
           user_id, image_id, selected_candidate_id, target_language,
           primary_label, fine_label, lemma, display_zh_hant,
+          display_ja, display_en,
           part_of_speech, category, correction_source, updated_at
         )
         VALUES (
@@ -365,6 +373,8 @@ export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<At
           ${input.fineLabel},
           ${input.lemma},
           ${input.displayZhHant},
+          ${input.displayJa},
+          ${input.displayEn},
           ${input.partOfSpeech},
           ${input.category},
           ${correctionSource},
@@ -397,10 +407,16 @@ export interface AtlasItemEnrichmentUpdate {
   reading: string | null;
   definitionTarget: string | null;
   definitionZh: string | null;
+  definitionJa: string | null;
+  definitionEn: string | null;
+  displayJa: string | null;
+  displayEn: string | null;
   enrichment: AtlasEnrichment;
 }
 
-/** Persist AI enrichment onto an item and flip backfill_status to 'filled'. */
+/** Persist AI enrichment onto an item and flip backfill_status to 'filled'.
+ *  Gloss columns use COALESCE so a confirm-time user edit (display_ja/en from
+ *  the capture sheet) isn't clobbered by the generated value. */
 export async function updateAtlasItemEnrichment(
   userId: string,
   itemId: string,
@@ -413,6 +429,10 @@ export async function updateAtlasItemEnrichment(
       reading            = ${fields.reading},
       definition_target  = ${fields.definitionTarget},
       definition_zh_hant = ${fields.definitionZh},
+      definition_ja      = ${fields.definitionJa},
+      definition_en      = ${fields.definitionEn},
+      display_ja         = COALESCE(display_ja, ${fields.displayJa}),
+      display_en         = COALESCE(display_en, ${fields.displayEn}),
       enrichment         = ${sql.json(fields.enrichment as never)},
       backfill_status    = 'filled',
       backfill_error     = NULL,
@@ -529,6 +549,8 @@ export async function fetchAtlasDue(
       i.fine_label AS i_fine_label,
       i.lemma AS i_lemma,
       i.display_zh_hant AS i_display_zh_hant,
+      i.display_ja AS i_display_ja,
+      i.display_en AS i_display_en,
       i.part_of_speech AS i_part_of_speech,
       i.cefr_level AS i_cefr_level,
       i.pronunciation AS i_pronunciation,
@@ -536,6 +558,8 @@ export async function fetchAtlasDue(
       i.category AS i_category,
       i.taxonomy_path AS i_taxonomy_path,
       i.definition_zh_hant AS i_definition_zh_hant,
+      i.definition_ja AS i_definition_ja,
+      i.definition_en AS i_definition_en,
       i.definition_target AS i_definition_target,
       i.example_target AS i_example_target,
       i.example_zh_hant AS i_example_zh_hant,
@@ -789,6 +813,8 @@ function rowToAtlasDueCard(r: Record<string, unknown>): AtlasDueCard {
     fine_label: (r.i_fine_label as string | null) ?? null,
     lemma: String(r.i_lemma),
     display_zh_hant: String(r.i_display_zh_hant),
+    display_ja: (r.i_display_ja as string | null) ?? null,
+    display_en: (r.i_display_en as string | null) ?? null,
     part_of_speech: (r.i_part_of_speech as string | null) ?? null,
     cefr_level: (r.i_cefr_level as string | null) ?? null,
     pronunciation: (r.i_pronunciation as string | null) ?? null,
@@ -796,6 +822,8 @@ function rowToAtlasDueCard(r: Record<string, unknown>): AtlasDueCard {
     category: (r.i_category as string | null) ?? null,
     taxonomy_path: (r.i_taxonomy_path as string[]) ?? [],
     definition_zh_hant: (r.i_definition_zh_hant as string | null) ?? null,
+    definition_ja: (r.i_definition_ja as string | null) ?? null,
+    definition_en: (r.i_definition_en as string | null) ?? null,
     definition_target: (r.i_definition_target as string | null) ?? null,
     example_target: (r.i_example_target as string | null) ?? null,
     example_zh_hant: (r.i_example_zh_hant as string | null) ?? null,
@@ -878,6 +906,8 @@ export async function getAtlasDueCardById(
       i.fine_label AS i_fine_label,
       i.lemma AS i_lemma,
       i.display_zh_hant AS i_display_zh_hant,
+      i.display_ja AS i_display_ja,
+      i.display_en AS i_display_en,
       i.part_of_speech AS i_part_of_speech,
       i.cefr_level AS i_cefr_level,
       i.pronunciation AS i_pronunciation,
@@ -885,6 +915,8 @@ export async function getAtlasDueCardById(
       i.category AS i_category,
       i.taxonomy_path AS i_taxonomy_path,
       i.definition_zh_hant AS i_definition_zh_hant,
+      i.definition_ja AS i_definition_ja,
+      i.definition_en AS i_definition_en,
       i.definition_target AS i_definition_target,
       i.example_target AS i_example_target,
       i.example_zh_hant AS i_example_zh_hant,

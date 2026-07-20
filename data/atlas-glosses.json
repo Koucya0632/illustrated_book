@@ -1,0 +1,87 @@
+{
+"97fc445a-1aea-40dc-be9b-7380e705f548": {
+  "display_ja": "メガネ", "display_en": "glasses",
+  "definition_ja": "視力を補正するために目にかける、レンズのついた道具。",
+  "mnemonic_ja": "目のためのフランチャイズ代理店", "mnemonic_en": "franchise reps for your eyes",
+  "etymology_ja": "古英語の 'glas'（ガラス）に由来し、レンズがガラスで作られていたことから。", "etymology_en": "From Old English 'glas' (glass), because the lenses were made of glass."
+},
+"0dc2881c-529f-4f94-8ce2-504ce675bb96": {
+  "display_ja": "Mac Mini", "display_en": "Apple Mac Mini",
+  "definition_ja": "アップル社が作る小型のデスクトップパソコン。",
+  "mnemonic_ja": "アップルの小さなパソコン", "mnemonic_en": "Apple's little computer",
+  "etymology_ja": "'Mac' はアップルの Macintosh シリーズを指し、'Mini' は小型であることを表す。", "etymology_en": "'Mac' refers to Apple's Macintosh line; 'Mini' marks its small size."
+},
+"20b77f28-2bc2-442e-a9a4-26ea65d380b2": {
+  "display_ja": "ラテ", "display_en": "latte",
+  "definition_ja": "エスプレッソにスチームミルクを加えて作るコーヒー飲料。",
+  "mnemonic_ja": "コーヒーにミルクを足したラテ", "mnemonic_en": "coffee with milk added — a latte",
+  "etymology_ja": "ラテン語の 'latte'（牛乳）に由来し、飲み物の中のミルクを強調している。", "etymology_en": "From Latin 'latte' (milk), stressing the milk in the drink."
+},
+"c6c05688-d17b-4269-a0ce-1b467a59b3b8": {
+  "display_ja": "紙", "display_en": "paper",
+  "definition_ja": "書いたり印刷したり包んだりするのに使う、繊維で作られた薄い素材。",
+  "mnemonic_ja": "紙で手紙を書く。便箋は大切。", "mnemonic_en": "write letters on paper — stationery matters",
+  "etymology_ja": "植物繊維から作られる書写材料を指す漢語「紙」に由来する。", "etymology_en": "From the Chinese 紙, originally a writing material made from plant fiber."
+},
+"025a7e09-7198-46aa-bf93-b53c6d48b4db": {
+  "display_ja": "キーボード", "display_en": "computer keyboard",
+  "definition_ja": "文字や記号を入力するためのキーが並んだコンピュータの入力装置。",
+  "definition_en_cross": "A computer input device with an arrangement of keys for typing characters and commands.",
+  "mnemonic_ja": "", "mnemonic_en": "",
+  "etymology_ja": "", "etymology_en": ""
+},
+"e5ba9c40-4dcc-45d5-b9ef-1a4dea840447": {
+  "display_ja": "滝", "display_en": "waterfall",
+  "definition_ja": "高い所から流れ落ちる水の流れで、しばしば壮観な景観をつくる。",
+  "mnemonic_ja": "水が絶えず下へ流れる", "mnemonic_en": "water falling ceaselessly down",
+  "etymology_ja": "'water'（水）と 'fall'（落ちる）から成る複合語。", "etymology_en": "A compound of 'water' and 'fall'."
+},
+"e9080aca-a913-4d6f-af21-acc975694188": {
+  "display_ja": "花", "display_en": "flower",
+  "definition_ja": "顕花植物の生殖器官で、色鮮やかで香りを放つことが多い。",
+  "mnemonic_ja": "色とりどりの花が春を美しくする", "mnemonic_en": "colorful flowers make spring lovely",
+  "etymology_ja": "植物の咲く部分を意味する語に由来し、美しさの感覚を帯びている。", "etymology_en": "From a root for the blooming part of a plant, carrying a sense of beauty."
+},
+"f34e5c04-36f0-4a3f-a94a-50899962c51c": {
+  "display_ja": "葉", "display_en": "leaf",
+  "definition_ja": "植物の平たい器官で、光合成を担う。",
+  "mnemonic_ja": "緑の葉を思い浮かべて", "mnemonic_en": "picture a green leaf",
+  "etymology_ja": "古英語 'leaf' に由来し、ゲルマン語の「葉」を表す語につながる。", "etymology_en": "From Old English 'leaf', tracing to a Germanic word for foliage."
+},
+"cd38045c-5353-4849-950d-4792c820fefa": {
+  "display_ja": "猫", "display_en": "cat",
+  "definition_en_cross": "A small domesticated carnivore of the cat family, kept as a pet, with soft fur and sharp claws.",
+  "mnemonic_ja": "猫はネズミを捕り、柔らかくてかわいい", "mnemonic_en": "cats catch mice — soft and cute",
+  "etymology_ja": "小型の肉食哺乳類を表す古い漢語に由来する。", "etymology_en": "From an old Chinese word for the small carnivorous mammal."
+},
+"ddacb970-9a28-4d08-b1fb-c13fbb841500": {
+  "display_ja": "入力デバイス", "display_en": "input device",
+  "definition_en_cross": "A device for entering data or information into a computer or machine.",
+  "mnemonic_ja": "入力するための装置", "mnemonic_en": "a device for putting data in",
+  "etymology_ja": "「入力」（データを入れる）と「デバイス」（装置）から成る。", "etymology_en": "From 入力 (to input) + デバイス (device)."
+},
+"6261aa8a-d931-45db-b5aa-570e6bf1c5ff": {
+  "display_ja": "アイウェア", "display_en": "eyewear",
+  "definition_en_cross": "A general term for items worn over the eyes to aid or protect vision, such as glasses.",
+  "mnemonic_ja": "アイウェアをかけて、すべてをはっきり見る", "mnemonic_en": "put on eyewear and see it all clearly",
+  "etymology_ja": "英語の 'eyewear'（目の装身具）に由来し、視力を助ける道具全般を指す。", "etymology_en": "From English 'eyewear', covering anything worn to help vision."
+},
+"3c0d274b-5013-4ea8-90c0-85934e762ecf": {
+  "display_ja": "バッグ", "display_en": "bag",
+  "definition_en_cross": "A bag or case for carrying personal belongings.",
+  "mnemonic_ja": "バッグは持ち運べて、身につけていける", "mnemonic_en": "a bag goes with you, carried along",
+  "etymology_ja": "英語 'bag'（容器・袋）に由来する。", "etymology_en": "From English 'bag' (a container or sack)."
+},
+"b42e7b9d-57e6-41df-ae5e-86c68e4fb374": {
+  "display_ja": "炭酸飲料", "display_en": "soft drink",
+  "definition_ja": "甘みのある、通常は炭酸入りのノンアルコール飲料。",
+  "mnemonic_ja": "ソフトドリンクは口当たりがやわらかい", "mnemonic_en": "a soft drink goes down soft",
+  "etymology_ja": "'soft' はノンアルコール、'drink' は飲み物を意味する。", "etymology_en": "'Soft' means non-alcoholic; 'drink' means a beverage."
+},
+"b88e3a76-b7b5-436f-8483-0a02cf5558ff": {
+  "display_ja": "あられ", "display_en": "arare (rice crackers)",
+  "definition_en_cross": "A traditional Japanese snack of small, crunchy rice crackers in various shapes and flavors.",
+  "mnemonic_ja": "米の「米」に「雷」であられ", "mnemonic_en": "'rice' plus 'hail' gives arare",
+  "etymology_ja": "古い日本語で小さく軽い物を指し、後に米で作る菓子を指すようになった。", "etymology_en": "From old Japanese for small light things, later the rice snack specifically."
+}
+}

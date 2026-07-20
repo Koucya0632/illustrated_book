@@ -9,6 +9,7 @@
 
 import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
+import { normalizeUiLang, type UiLang } from "./settings";
 
 export function publicJson(payload: unknown, req: Request): Response {
   const body = JSON.stringify(payload);
@@ -27,8 +28,9 @@ export function publicJson(payload: unknown, req: Request): Response {
   });
 }
 
-export function readLang(req: Request, fallback = "zh-Hant"): string {
-  return new URL(req.url).searchParams.get("lang") ?? fallback;
+export function readLang(req: Request, fallback: UiLang = "zh-Hant"): UiLang {
+  const raw = new URL(req.url).searchParams.get("lang");
+  return raw == null ? fallback : normalizeUiLang(raw);
 }
 
 export function readLearningDirection(

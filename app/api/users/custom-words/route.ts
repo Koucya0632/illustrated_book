@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { listAtlasCustomWords } from "@/lib/atlas-db";
-import { atlasItemToWord, needsJaEnrichRefresh } from "@/lib/atlas/enrich";
+import { atlasItemToWord, needsEnrichRefresh } from "@/lib/atlas/enrich";
+import { pickAtlasGloss } from "@/lib/atlas/gloss";
+import { toZhHans } from "@/lib/opencc";
+import { readLang } from "@/lib/cache-headers";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 import { getSettings } from "@/lib/users-db";
 import { targetLanguageFor } from "@/lib/settings";
@@ -9,12 +12,15 @@ import { targetLanguageFor } from "@/lib/settings";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const settings = await getSettings(userId);
   const targetLanguage = targetLanguageFor(settings.learningDirection);
+  // ?lang= wins over the stored setting: right after an in-app language
+  // switch the debounced settings save may not have landed yet.
+  const uiLang = readLang(req, settings.uiLang);
   const rows = await listAtlasCustomWords(userId, targetLanguage);
   const words = await Promise.all(
     rows.map(async (row) => {
@@ -27,7 +33,10 @@ export async function GET() {
       return {
         id: `atlas:${item.id}`,
         word: item.lemma,
-        chinese: item.display_zh_hant,
+        chinese:
+          uiLang === "zh-Hans"
+            ? toZhHans(pickAtlasGloss(item, uiLang))
+            : pickAtlasGloss(item, uiLang),
         imageUrl: thumb,
         category: "custom",
         pronunciation: item.pronunciation ?? item.reading ?? "",
@@ -44,8 +53,8 @@ export async function GET() {
         // Japanese definition and/or reading) are likewise left un-embedded so
         // that detour re-enriches them.
         detail:
-          item.backfill_status === "filled" && !needsJaEnrichRefresh(item)
-            ? atlasItemToWord(item, urls.imageUrl || thumb)
+          item.backfill_status === "filled" && !needsEnrichRefresh(item)
+            ? atlasItemToWord(item, urls.imageUrl || thumb, uiLang)
             : undefined,
       };
     }),

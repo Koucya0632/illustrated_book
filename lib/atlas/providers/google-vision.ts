@@ -126,6 +126,9 @@ export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
         label,
         normalizedLabel: normalizeAtlasLabel(label),
         zhHant: zhMap.get(value.label) ?? null,
+        // Google Vision labels are English: they double as the en gloss.
+        // No ja gloss here — the confirm/enrich pass fills display_ja.
+        gloss: input.glossLanguage === "en" ? value.label : null,
         confidence: value.confidence,
         taxonomyNodeId: null,
       };

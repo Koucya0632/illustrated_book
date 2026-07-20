@@ -307,7 +307,7 @@ export async function getLearningWord(
         ? japaneseDefinition
         : undefined
       : hit.word.englishDefinition;
-  const examples =
+  let examples =
     targetLanguage === "ja"
       ? base.examples
           .filter((example) => Boolean(example.translations.ja?.trim()))
@@ -319,6 +319,16 @@ export async function getLearningWord(
             target: example.translations.ja.trim(),
           }))
       : base.examples.map((example) => ({ ...example, target: example.en }));
+  if (lang === "ja" || lang === "en") {
+    // Monolingual mode (UI language == sentence language): a gloss that
+    // merely repeats the displayed sentence is noise — blank it so clients
+    // hide the line.
+    examples = examples.map((example) =>
+      example.zh?.trim() && example.zh.trim() === example.target?.trim()
+        ? { ...example, zh: "" }
+        : example,
+    );
+  }
 
   return {
     ...base,

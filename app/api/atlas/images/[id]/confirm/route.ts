@@ -67,6 +67,10 @@ export async function POST(
     typeof body.selectedCandidateId === "string" && !invalidId(body.selectedCandidateId)
       ? body.selectedCandidateId
       : null;
+  // The capture sheet's gloss field, in the capturing user's UI language
+  // (candidate gloss or a user edit). Routed into the matching per-language
+  // column; the enrich gloss pack fills whichever stays null.
+  const displayGloss = cleanText(body.displayGloss, 80);
   const item = await confirmAtlasItem({
     userId,
     imageId: image.id,
@@ -76,6 +80,8 @@ export async function POST(
     fineLabel: cleanText(body.fineLabel) || null,
     lemma,
     displayZhHant,
+    displayJa: settings.uiLang === "ja" && displayGloss ? displayGloss : null,
+    displayEn: settings.uiLang === "en" && displayGloss ? displayGloss : null,
     partOfSpeech: cleanText(body.partOfSpeech, 40) || null,
     category: cleanText(body.category, 60) || null,
   });

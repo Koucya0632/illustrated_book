@@ -720,6 +720,9 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS user_atlas_candidates_job_rank_idx
      ON user_atlas_candidates(job_id, level, rank)`,
+  // Gloss of the candidate in the capturing user's UI language (ja/en UIs
+  // only; zh_hant above stays the universal base gloss).
+  `ALTER TABLE user_atlas_candidates ADD COLUMN IF NOT EXISTS gloss TEXT`,
 
   `CREATE TABLE IF NOT EXISTS user_atlas_items (
      id                    UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -774,6 +777,15 @@ const DDL = [
   // antonyms / related / mnemonic). Definitions + pronunciation/reading live in
   // the dedicated columns above; this holds the structured extras.
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS enrichment JSONB NOT NULL DEFAULT '{}'::jsonb`,
+  // Gloss language follows the UI language: ja/en glosses of the lemma
+  // (display_*) and dictionary definitions (definition_*) for interface
+  // languages other than Chinese. zh-Hant stays the base columns above;
+  // zh-Hans is OpenCC-derived at read time and never stored. Per-language
+  // mnemonic/etymology live in enrichment.glossI18n.
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS display_ja TEXT`,
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS display_en TEXT`,
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS definition_ja TEXT`,
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS definition_en TEXT`,
 
   `CREATE TABLE IF NOT EXISTS user_atlas_cards (
      id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -1054,6 +1066,14 @@ const DDL = [
   `CREATE POLICY category_translations_public_read ON category_translations FOR SELECT USING (true)`,
   `DROP POLICY IF EXISTS word_localized_texts_public_read ON word_localized_texts`,
   `CREATE POLICY word_localized_texts_public_read ON word_localized_texts FOR SELECT USING (true)`,
+
+  // Japanese category names the translate pipeline never generated (it skips
+  // zodiac + custom). English names come from categories.name at read time,
+  // so only ja needs a stored row. Idempotent; leaves manual edits alone.
+  `INSERT INTO category_translations (category_id, language, name) VALUES
+     ('zodiac', 'ja', '星座'),
+     ('custom', 'ja', 'カスタム')
+   ON CONFLICT (category_id, language) DO NOTHING`,
 
   // ---- feedback: general user feedback from the app's 意見收集 form ----
   // Account-level (not tied to a word/card) — study-card issues go through

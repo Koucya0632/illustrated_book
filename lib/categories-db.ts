@@ -18,6 +18,7 @@ interface CategoryRow {
   color: string | null;
   image_url: string | null;
   sort_order: number;
+  translations: Record<string, string> | null; // language -> localized name (ja today)
 }
 
 export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Category[]> {
@@ -25,7 +26,9 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
   if (!sql) return staticCategories.map((c) => localizeCategory(c, lang));
   try {
     const rows = (await sql`
-      SELECT c.id, c.name, c.name_zh, c.emoji, c.description, c.color, c.image_url, c.sort_order
+      SELECT c.id, c.name, c.name_zh, c.emoji, c.description, c.color, c.image_url, c.sort_order,
+        (SELECT jsonb_object_agg(ct.language, ct.name)
+           FROM category_translations ct WHERE ct.category_id = c.id) AS translations
       FROM categories c
       ORDER BY c.sort_order, c.id
     `) as unknown as CategoryRow[];
@@ -40,7 +43,7 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         color: r.color ?? "",
         imageUrl: r.image_url ?? "",
       };
-      return localizeCategory(base, lang);
+      return localizeCategory(base, lang, r.translations ?? undefined);
     });
   } catch {
     return staticCategories.map((c) => localizeCategory(c, lang));

@@ -104,10 +104,18 @@ export async function POST(
       // send the stored image as-is
     }
     const settings = await settingsPromise;
+    const targetLanguage = targetLanguageFromDirection(settings.learningDirection);
     const input = {
       imageBytes,
       mimeType: image.mime_type,
-      targetLanguage: targetLanguageFromDirection(settings.learningDirection),
+      targetLanguage,
+      // ja/en interfaces get candidate glosses in their own language; Chinese
+      // UIs read zhHant, and UI==target needs none (the label is the gloss).
+      glossLanguage:
+        (settings.uiLang === "ja" || settings.uiLang === "en") &&
+        settings.uiLang !== targetLanguage
+          ? settings.uiLang
+          : null,
     };
     const result =
       stage === "primary"

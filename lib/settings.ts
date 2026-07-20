@@ -91,6 +91,11 @@ function normalizeStudyCategories(raw: unknown): string[] {
 }
 
 const UI_LANGS: UiLang[] = ["zh-Hant", "zh-Hans", "ja", "en"];
+
+/** Clamp an arbitrary code to a supported UI language (unknown → zh-Hant). */
+export function normalizeUiLang(raw: unknown): UiLang {
+  return UI_LANGS.includes(raw as UiLang) ? (raw as UiLang) : "zh-Hant";
+}
 const FONT_SIZES: FontSize[] = ["sm", "md", "lg"];
 const LEARNING_DIRECTIONS: LearningDirection[] = ["zh-en", "zh-ja"];
 
@@ -115,7 +120,7 @@ export function normalizeSettings(raw: Partial<UserSettings> | null | undefined)
     )
       ? (raw!.learningDirection as LearningDirection)
       : "zh-en",
-    uiLang: UI_LANGS.includes(raw?.uiLang as UiLang) ? (raw!.uiLang as UiLang) : "zh-Hant",
+    uiLang: normalizeUiLang(raw?.uiLang),
     fontSize: FONT_SIZES.includes(raw?.fontSize as FontSize) ? (raw!.fontSize as FontSize) : "md",
   };
 }

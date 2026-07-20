@@ -8,6 +8,9 @@ import { z } from "zod";
 export const AtlasModelCandidateSchema = z.object({
   label: z.string().trim().min(1).max(80),
   zhHant: z.string().trim().max(80).nullable(),
+  // Gloss in the capturing user's UI language (ja/en); null unless the
+  // prompt asked for one (see AtlasVisionInput.glossLanguage).
+  gloss: z.string().trim().max(80).nullable(),
   confidence: z.number().min(0).max(1),
 });
 
@@ -30,10 +33,11 @@ export const ATLAS_MODEL_OUTPUT_JSON_SCHEMA = {
       items: {
         type: "object",
         additionalProperties: false,
-        required: ["label", "zhHant", "confidence"],
+        required: ["label", "zhHant", "gloss", "confidence"],
         properties: {
           label: { type: "string" },
           zhHant: { type: ["string", "null"] },
+          gloss: { type: ["string", "null"] },
           confidence: { type: "number", minimum: 0, maximum: 1 },
         },
       },

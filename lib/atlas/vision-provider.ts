@@ -12,6 +12,11 @@ export interface AtlasVisionInput {
   imageBytes: Buffer;
   mimeType: string;
   targetLanguage: AtlasTargetLanguage;
+  /// The capturing user's UI language when it needs its own candidate gloss:
+  /// "ja"/"en" UIs whose language differs from targetLanguage. Chinese UIs
+  /// (zhHant is their gloss) and UI==target (the label is the gloss) pass
+  /// null, and the model is told to leave `gloss` null.
+  glossLanguage?: "ja" | "en" | null;
   taxonomyHint?: AtlasTaxonomyHint[];
   primaryHint?: string;
 }

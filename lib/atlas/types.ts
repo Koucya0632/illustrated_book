@@ -75,6 +75,8 @@ export interface AtlasCandidateRow {
   label: string;
   normalized_label: string;
   zh_hant: string | null;
+  /// Gloss in the capturing user's UI language (ja/en UIs only).
+  gloss: string | null;
   target_term: string | null;
   target_language: AtlasTargetLanguage;
   taxonomy_node_id: string | null;
@@ -90,6 +92,9 @@ export interface AtlasCandidate {
   label: string;
   normalizedLabel: string;
   zhHant: string | null;
+  /// Gloss in the capturing user's UI language; null for Chinese UIs (zhHant
+  /// is the gloss there) and when the UI language equals the target language.
+  gloss: string | null;
   confidence: number;
   taxonomyNodeId: string | null;
 }
@@ -101,6 +106,10 @@ export interface AtlasEnrichment {
   forms?: { label: string; value: string }[];
   mnemonic?: string | null;
   etymology?: string | null;
+  /// Per-UI-language mnemonic/etymology for ja/en interfaces (zh stays the
+  /// top-level fields; zh-Hans is OpenCC-derived). Written by the gloss-pack
+  /// step of enrichAtlasItem / the backfill script.
+  glossI18n?: Partial<Record<"ja" | "en", { mnemonic?: string | null; etymology?: string | null }>>;
   /// Which language definition_target holds. Absent on rows enriched before JA
   /// target definitions existed (their definition_target is stale English, so
   /// atlasItemToWord suppresses it until a re-enrich stamps this).
@@ -121,6 +130,11 @@ export interface AtlasItemRow {
   fine_label: string | null;
   lemma: string;
   display_zh_hant: string;
+  /// Gloss-language variants of display/definition for ja/en interfaces.
+  display_ja: string | null;
+  display_en: string | null;
+  definition_ja: string | null;
+  definition_en: string | null;
   part_of_speech: string | null;
   cefr_level: string | null;
   pronunciation: string | null;

@@ -14,6 +14,7 @@ import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
+import { readLang } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -140,6 +141,9 @@ export async function GET(req: Request) {
     // independent mastery namespace, so resolve settings before queue work.
     const tDb = performance.now();
     const settings = await getSettings(userId);
+    // Gloss language follows the live UI language: ?lang= wins over the stored
+    // setting so a just-switched uiLang isn't stuck on the debounced save.
+    const uiLang = readLang(req, settings.uiLang);
     const directionDeck = studyDeckFor(settings.learningDirection);
     const targetLanguage = targetLanguageFor(settings.learningDirection);
     // Learning direction is authoritative. Legacy client deck filters must
@@ -194,10 +198,10 @@ export async function GET(req: Request) {
 
     const tLocalize = performance.now();
     const atlasStudyQueue = wantsCustom
-      ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue, settings.uiLang)
+      ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue, uiLang)
       : [];
-    const localizedPublic = await localizeStudyQueue(queue, settings.uiLang);
-    const localizedAtlas = await localizeStudyQueue(atlasStudyQueue, settings.uiLang);
+    const localizedPublic = await localizeStudyQueue(queue, uiLang);
+    const localizedAtlas = await localizeStudyQueue(atlasStudyQueue, uiLang);
     // New-learn leads with captured 自製 cards: appended last they'd be
     // sliced off whenever the public draw already fills `limit`, so a
     // just-captured word would never surface in 學新字.

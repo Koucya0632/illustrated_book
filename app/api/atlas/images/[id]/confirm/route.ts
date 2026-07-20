@@ -4,6 +4,7 @@ import { getSettings } from "@/lib/users-db";
 import { confirmAtlasItem, getAtlasImage } from "@/lib/atlas-db";
 import { checkAtlasCapacity } from "@/lib/atlas/entitlement";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
+import { readLang } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -69,7 +70,9 @@ export async function POST(
       : null;
   // The capture sheet's gloss field, in the capturing user's UI language
   // (candidate gloss or a user edit). Routed into the matching per-language
-  // column; the enrich gloss pack fills whichever stays null.
+  // column; the enrich gloss pack fills whichever stays null. ?lang= wins over
+  // the stored setting so a just-switched uiLang routes the gloss correctly.
+  const uiLang = readLang(req, settings.uiLang);
   const displayGloss = cleanText(body.displayGloss, 80);
   const item = await confirmAtlasItem({
     userId,
@@ -80,8 +83,8 @@ export async function POST(
     fineLabel: cleanText(body.fineLabel) || null,
     lemma,
     displayZhHant,
-    displayJa: settings.uiLang === "ja" && displayGloss ? displayGloss : null,
-    displayEn: settings.uiLang === "en" && displayGloss ? displayGloss : null,
+    displayJa: uiLang === "ja" && displayGloss ? displayGloss : null,
+    displayEn: uiLang === "en" && displayGloss ? displayGloss : null,
     partOfSpeech: cleanText(body.partOfSpeech, 40) || null,
     category: cleanText(body.category, 60) || null,
   });

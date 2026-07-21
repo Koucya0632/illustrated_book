@@ -110,25 +110,32 @@ export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
     const ranked = Array.from(merged.entries())
       .sort((a, b) => b[1].confidence - a[1].confidence)
       .slice(0, 5);
-    // Vision labels are English. The learner studies the target language, so
-    // for ja the label (which becomes the item's lemma on confirm) must be
-    // rendered in Japanese; the zh-TW gloss rides along either way.
+    // Vision labels are English. Translate them to Japanese whenever Japanese
+    // is needed either as the atlas label or as the interface-language gloss.
+    // The zh-TW gloss rides along either way.
     const names = ranked.map(([, value]) => value.label);
     const [zhMap, jaMap] = await Promise.all([
       translateLabels(names, apiKey, "zh-TW"),
-      input.targetLanguage === "ja"
+      input.targetLanguage === "ja" || input.glossLanguage === "ja"
         ? translateLabels(names, apiKey, "ja")
         : Promise.resolve(new Map<string, string>()),
     ]);
     const primary = ranked.map(([, value]) => {
-      const label = jaMap.get(value.label) ?? value.label;
+      const label =
+        input.targetLanguage === "ja"
+          ? jaMap.get(value.label) ?? value.label
+          : value.label;
+      const gloss =
+        input.glossLanguage === "en"
+          ? value.label
+          : input.glossLanguage === "ja"
+          ? jaMap.get(value.label) ?? null
+          : null;
       return {
         label,
         normalizedLabel: normalizeAtlasLabel(label),
         zhHant: zhMap.get(value.label) ?? null,
-        // Google Vision labels are English: they double as the en gloss.
-        // No ja gloss here — the confirm/enrich pass fills display_ja.
-        gloss: input.glossLanguage === "en" ? value.label : null,
+        gloss,
         confidence: value.confidence,
         taxonomyNodeId: null,
       };

@@ -130,6 +130,13 @@ export async function POST(
         : provider.recognizeEscalated
         ? await provider.recognizeEscalated(input)
         : await provider.recognizePrimary(input);
+    (result as unknown as Record<string, unknown>).__diag = {
+      inputGloss: input.glossLanguage,
+      inputTarget: input.targetLanguage,
+      stage,
+      providerName: provider.name,
+      firstGloss: result.primary[0]?.gloss ?? "MISSING_KEY",
+    };
     await insertAtlasAiUsage({
       userId,
       jobId: job.id,

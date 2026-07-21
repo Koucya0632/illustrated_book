@@ -4,7 +4,7 @@ import { listAtlasCustomWords } from "@/lib/atlas-db";
 import { atlasItemToWord, needsEnrichRefresh } from "@/lib/atlas/enrich";
 import { pickAtlasGloss } from "@/lib/atlas/gloss";
 import { toZhHans } from "@/lib/opencc";
-import { readLang } from "@/lib/cache-headers";
+import { readLang, readLearningDirection } from "@/lib/cache-headers";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 import { getSettings } from "@/lib/users-db";
 import { targetLanguageFor } from "@/lib/settings";
@@ -17,9 +17,13 @@ export async function GET(req: Request) {
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const settings = await getSettings(userId);
-  const targetLanguage = targetLanguageFor(settings.learningDirection);
-  // ?lang= wins over the stored setting: right after an in-app language
-  // switch the debounced settings save may not have landed yet.
+  // ?lang= / ?learning= win over the stored setting: right after an in-app
+  // switch the debounced settings save may not have landed yet, so reading the
+  // stored learningDirection here would return the custom 圖鑑 for the *old*
+  // target language until the POST lands (mirrors /api/words).
+  const targetLanguage = targetLanguageFor(
+    readLearningDirection(req, settings.learningDirection),
+  );
   const uiLang = readLang(req, settings.uiLang);
   const rows = await listAtlasCustomWords(userId, targetLanguage);
   const words = await Promise.all(

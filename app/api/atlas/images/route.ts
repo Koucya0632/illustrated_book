@@ -111,6 +111,7 @@ function serializeCandidate(row: AtlasCandidateRow) {
     label: row.label,
     normalizedLabel: row.normalized_label,
     zhHant: row.zh_hant,
+    gloss: row.gloss,
     confidence: Number(row.confidence),
     rank: row.rank,
   };
@@ -125,6 +126,7 @@ async function runPrimaryRecognition(
   image: AtlasImageRow,
   imageBytes: Buffer,
   targetLanguage: AtlasTargetLanguage,
+  glossLanguage: "ja" | "en" | null,
   tier: AtlasTier,
 ) {
   const provider = createPrimaryAtlasProvider(tier);
@@ -135,6 +137,7 @@ async function runPrimaryRecognition(
       imageBytes,
       mimeType: "image/webp",
       targetLanguage,
+      glossLanguage,
     });
     await insertAtlasAiUsage({
       userId,
@@ -218,9 +221,29 @@ export async function POST(req: Request) {
   }
 
   const settings = await getSettings(userId);
+  const requestedUiLang = form.get("lang");
+  const uiLang =
+    requestedUiLang === "zh-Hant" ||
+    requestedUiLang === "zh-Hans" ||
+    requestedUiLang === "ja" ||
+    requestedUiLang === "en"
+      ? requestedUiLang
+      : settings.uiLang;
+  const requestedLearningDirection = form.get("learning");
+  const learningDirection =
+    requestedLearningDirection === "zh-en" || requestedLearningDirection === "zh-ja"
+      ? requestedLearningDirection
+      : settings.learningDirection;
   const targetLanguage =
     normalizeTargetLanguage(form.get("targetLanguage")) ??
-    targetLanguageFromDirection(settings.learningDirection);
+    targetLanguageFromDirection(learningDirection);
+  // ja/en interfaces need a same-language meaning when the atlas target is
+  // different. Chinese interfaces use zhHant; monolingual captures can use the
+  // target-language label itself.
+  const glossLanguage =
+    (uiLang === "ja" || uiLang === "en") && uiLang !== targetLanguage
+      ? uiLang
+      : null;
 
   const input = Buffer.from(await file.arrayBuffer());
   const hash = sha256(input);
@@ -303,6 +326,7 @@ export async function POST(req: Request) {
       image,
       processed.recognitionBytes,
       targetLanguage,
+      glossLanguage,
       aiLimit.tier,
     );
   } else {

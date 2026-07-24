@@ -3,102 +3,78 @@ import Link from "next/link";
 import Mascot from "@/components/tuji/Mascot";
 import PublicShell from "@/components/marketing/PublicShell";
 import imageUrls from "@/lib/image-urls.json";
+import { getPublicLang } from "@/lib/public-lang";
+import { mt } from "@/lib/marketing-i18n";
+import type { UiLang } from "@/lib/settings";
 
 // Word images live in Supabase Storage (see next.config.js). `/public/word-images/`
 // is gitignored and never deployed, so local paths 404 in prod — resolve the
 // deployed URL from the canonical id→URL map instead.
 const wordImg = (id: string) => (imageUrls as Record<string, string>)[id];
 
-export const metadata: Metadata = {
-  title: "Tuji · 圖鑑式單字學習",
-  description:
-    "看得見的單字，記得住的語言。Tuji 用日常生活的圖片、間隔複習與 AI 自製圖鑑，幫中文使用者學會生活英文和日文。",
-};
+export function generateMetadata(): Metadata {
+  const lang = getPublicLang();
+  return {
+    title: mt(lang, "meta.title"),
+    description: mt(lang, "meta.desc"),
+  };
+}
 
 const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 const HERO_CAPTURE_IMAGE = "/marketing/atlas-capture-cards.webp";
 
+// Marquee showcase: English headword (constant) + a per-language gloss looked up
+// as `mq.<id>` (hidden for the English UI). `src` resolves from the word id.
 const marqueeRowA = [
-  { src: wordImg("alarm-clock"), en: "alarm clock", zh: "鬧鐘" },
-  { src: wordImg("headphones"), en: "headphones", zh: "耳機" },
-  { src: wordImg("rice-cooker"), en: "rice cooker", zh: "電鍋" },
-  { src: wordImg("bicycle"), en: "bicycle", zh: "腳踏車" },
-  { src: wordImg("mug"), en: "mug", zh: "馬克杯" },
-  { src: wordImg("vending-machine"), en: "vending machine", zh: "販賣機" },
-  { src: wordImg("scissors"), en: "scissors", zh: "剪刀" },
-  { src: wordImg("toaster"), en: "toaster", zh: "烤麵包機" },
+  { id: "alarm-clock", en: "alarm clock" },
+  { id: "headphones", en: "headphones" },
+  { id: "rice-cooker", en: "rice cooker" },
+  { id: "bicycle", en: "bicycle" },
+  { id: "mug", en: "mug" },
+  { id: "vending-machine", en: "vending machine" },
+  { id: "scissors", en: "scissors" },
+  { id: "toaster", en: "toaster" },
 ];
 
 const marqueeRowB = [
-  { src: wordImg("convenience-store"), en: "convenience store", zh: "便利商店" },
-  { src: wordImg("subway"), en: "subway", zh: "捷運" },
-  { src: wordImg("frying-pan"), en: "frying pan", zh: "平底鍋" },
-  { src: wordImg("towel"), en: "towel", zh: "毛巾" },
-  { src: wordImg("bookshelf"), en: "bookshelf", zh: "書櫃" },
-  { src: wordImg("taxi"), en: "taxi", zh: "計程車" },
-  { src: wordImg("kettle"), en: "kettle", zh: "熱水壺" },
-  { src: wordImg("shopping-cart"), en: "shopping cart", zh: "購物車" },
+  { id: "convenience-store", en: "convenience store" },
+  { id: "subway", en: "subway" },
+  { id: "frying-pan", en: "frying pan" },
+  { id: "towel", en: "towel" },
+  { id: "bookshelf", en: "bookshelf" },
+  { id: "taxi", en: "taxi" },
+  { id: "kettle", en: "kettle" },
+  { id: "shopping-cart", en: "shopping cart" },
 ];
 
 const howSteps = [
-  {
-    step: "01",
-    title: "打開 App，領取今日單字",
-    body: "每天一份剛剛好的學習量。單字來自你選的生活分類——廚房、車站、超市，都是你真的會遇到的東西。",
-    pose: "face" as const,
-  },
-  {
-    step: "02",
-    title: "看圖記憶，一次記牢",
-    body: "每個單字都有圖片、發音與例句。用眼睛建立連結，比死背單字表記得更久。",
-    pose: "think" as const,
-  },
-  {
-    step: "03",
-    title: "到期自動複習",
-    body: "間隔重複演算法在你快忘記之前安排複習。你只要出現，Tuji 負責記得該複習什麼。",
-    pose: "cheer" as const,
-  },
+  { step: "01", tKey: "how.s1t", bKey: "how.s1b", pose: "face" as const },
+  { step: "02", tKey: "how.s2t", bKey: "how.s2b", pose: "think" as const },
+  { step: "03", tKey: "how.s3t", bKey: "how.s3b", pose: "cheer" as const },
 ];
 
 const features = [
-  {
-    icon: "🖼️",
-    title: "圖像優先記憶",
-    body: "從真實生活物品學單字，不是抽象的單字列表。看見圖片，想起單字。",
-  },
-  {
-    icon: "⏰",
-    title: "間隔重複複習",
-    body: "科學化的複習排程，在遺忘曲線的關鍵點提醒你，讓短期記憶變成長期記憶。",
-  },
-  {
-    icon: "✏️",
-    title: "多種練習模式",
-    body: "認圖、辨識、拼寫輪流上陣，同一個單字用不同角度練習，記憶更立體。",
-  },
-  {
-    icon: "🔊",
-    title: "發音與例句",
-    body: "每個單字都能聽發音、看例句，學會怎麼念、怎麼用，而不只是認得。",
-  },
-  {
-    icon: "🌏",
-    title: "英文・日文",
-    body: "同一套圖鑑，支援英文與日文兩種學習目標，隨時切換學習方向。",
-  },
-  {
-    icon: "📈",
-    title: "進度看得見",
-    body: "每個單字的熟練度、每天的學習紀錄一目瞭然，累積的努力不會消失。",
-  },
+  { icon: "🖼️", tKey: "feat.f1t", bKey: "feat.f1b" },
+  { icon: "⏰", tKey: "feat.f2t", bKey: "feat.f2b" },
+  { icon: "✏️", tKey: "feat.f3t", bKey: "feat.f3b" },
+  { icon: "🔊", tKey: "feat.f4t", bKey: "feat.f4b" },
+  { icon: "🌏", tKey: "feat.f5t", bKey: "feat.f5b" },
+  { icon: "📈", tKey: "feat.f6t", bKey: "feat.f6b" },
 ];
 
+const atlasTagKeys = ["atlas.tag1", "atlas.tag2", "atlas.tag3", "atlas.tag4"];
+
 const atlasSteps = [
-  { step: "1", title: "拍下照片", body: "廚房的鍋子、巷口的招牌，拍下你想學的東西。" },
-  { step: "2", title: "AI 辨識物品", body: "AI 自動辨認照片裡的物品，並給出對應的單字。" },
-  { step: "3", title: "確認與修正", body: "AI 猜錯了？直接改。你永遠有最後決定權。" },
-  { step: "4", title: "變成單字卡", body: "照片進入你的專屬圖鑑，加入每天的學習與複習。" },
+  { step: "1", tKey: "atlas.s1t", bKey: "atlas.s1b" },
+  { step: "2", tKey: "atlas.s2t", bKey: "atlas.s2b" },
+  { step: "3", tKey: "atlas.s3t", bKey: "atlas.s3b" },
+  { step: "4", tKey: "atlas.s4t", bKey: "atlas.s4b" },
+];
+
+const heroStats = [
+  { value: "500+", lKey: "hero.stat1l" },
+  { value: "EN·JA", lKey: "hero.stat2l" },
+  { value: "AI", lKey: "hero.stat3l" },
 ];
 
 function AppleLogo({ className }: { className?: string }) {
@@ -109,19 +85,20 @@ function AppleLogo({ className }: { className?: string }) {
   );
 }
 
-function MarqueeCard({ item }: { item: { src: string; en: string; zh: string } }) {
+function MarqueeCard({ item, lang }: { item: { id: string; en: string }; lang: UiLang }) {
+  const gloss = mt(lang, `mq.${item.id}`);
   return (
     <div className="flex w-44 shrink-0 items-center gap-3 rounded-2xl bg-white p-2.5 shadow-soft">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={item.src}
+        src={wordImg(item.id)}
         alt=""
         loading="lazy"
         className="h-12 w-12 shrink-0 rounded-xl object-cover"
       />
       <div className="min-w-0">
         <div className="truncate text-sm font-extrabold text-tuji-ink">{item.en}</div>
-        <div className="text-xs font-bold text-tuji-ink3">{item.zh}</div>
+        {gloss && <div className="text-xs font-bold text-tuji-ink3">{gloss}</div>}
       </div>
     </div>
   );
@@ -129,9 +106,11 @@ function MarqueeCard({ item }: { item: { src: string; en: string; zh: string } }
 
 function MarqueeRow({
   items,
+  lang,
   reverse,
 }: {
-  items: { src: string; en: string; zh: string }[];
+  items: { id: string; en: string }[];
+  lang: UiLang;
   reverse?: boolean;
 }) {
   const track = [...items, ...items];
@@ -139,7 +118,7 @@ function MarqueeRow({
     <div className="overflow-hidden" aria-hidden="true">
       <div className={`flex w-max gap-3 ${reverse ? "tuji-marquee-reverse" : "tuji-marquee"}`}>
         {track.map((item, index) => (
-          <MarqueeCard key={`${item.en}-${index}`} item={item} />
+          <MarqueeCard key={`${item.id}-${index}`} item={item} lang={lang} />
         ))}
       </div>
     </div>
@@ -147,6 +126,7 @@ function MarqueeRow({
 }
 
 export default function MarketingHomePage() {
+  const lang = getPublicLang();
   return (
     <PublicShell>
       {/* ── Hero ─────────────────────────────────────────────── */}
@@ -155,16 +135,16 @@ export default function MarketingHomePage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-tuji-tealS px-3.5 py-1.5 text-xs font-extrabold tracking-wide text-tuji-teal">
               <span className="h-2 w-2 rounded-full bg-tuji-teal" />
-              圖鑑式單字學習 · Picture-first
+              {mt(lang, "hero.badge")}
             </div>
             <h1 className="mt-6 max-w-2xl font-display text-5xl font-extrabold leading-[1.08] tracking-tight text-tuji-ink sm:text-6xl">
-              看見什麼，
+              {mt(lang, "hero.title1")}
               <br />
-              就學什麼<span className="text-tuji-coral">。</span>
+              {mt(lang, "hero.title2")}
+              <span className="text-tuji-coral">{mt(lang, "hero.accent")}</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg font-semibold leading-8 text-tuji-ink2">
-              Tuji 把日常生活變成你的單字圖鑑——圖片記憶、真人發音、間隔複習，
-              再加上 AI 幫你把自己拍的照片變成單字卡。學英文和日文，從你眼前的世界開始。
+              {mt(lang, "hero.subhead")}
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -172,18 +152,14 @@ export default function MarketingHomePage() {
                 className="tuji-press inline-flex items-center justify-center gap-2 rounded-2xl bg-tuji-yellow px-7 py-4 text-base font-extrabold text-tuji-ink"
                 style={{ ["--press-shadow" as string]: "#d7a900" }}
               >
-                下載 iOS App
+                {mt(lang, "cta.download")}
               </Link>
             </div>
             <div className="mt-10 grid max-w-lg grid-cols-3 gap-3">
-              {[
-                { value: "500+", label: "生活單字" },
-                { value: "EN·JA", label: "雙語言學習" },
-                { value: "AI", label: "圖鑑辨識" },
-              ].map((stat) => (
-                <div key={stat.label} className="rounded-2xl bg-white p-4 shadow-soft">
+              {heroStats.map((stat) => (
+                <div key={stat.lKey} className="rounded-2xl bg-white p-4 shadow-soft">
                   <div className="text-2xl font-extrabold text-tuji-ink">{stat.value}</div>
-                  <div className="mt-1 text-xs font-bold text-tuji-ink3">{stat.label}</div>
+                  <div className="mt-1 text-xs font-bold text-tuji-ink3">{mt(lang, stat.lKey)}</div>
                 </div>
               ))}
             </div>
@@ -195,27 +171,27 @@ export default function MarketingHomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={HERO_CAPTURE_IMAGE}
-                alt="用手機拍攝桌上的物品，Tuji 將馬克杯、蘋果與筆記本轉成學習卡片"
+                alt={mt(lang, "hero.imgAlt")}
                 className="aspect-[16/9] w-full rounded-[28px] object-cover object-center"
                 decoding="async"
               />
               <div className="absolute left-4 top-4 hidden items-center gap-2 rounded-full bg-white/90 px-3.5 py-2 text-xs font-extrabold text-tuji-ink shadow-soft backdrop-blur sm:flex">
                 <span className="h-2 w-2 rounded-full bg-tuji-teal" />
-                AI 圖鑑辨識中
+                {mt(lang, "hero.aiBadge")}
               </div>
             </div>
 
             <div className="tuji-float relative mx-3 -mt-6 flex items-center gap-3 rounded-2xl bg-tuji-ink p-4 text-white shadow-card sm:absolute sm:-bottom-6 sm:left-8 sm:mx-0 sm:mt-0 sm:w-max sm:pr-6">
               <div>
                 <div className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/60">
-                  拍照學習
+                  {mt(lang, "hero.floatLabel")}
                 </div>
                 <div className="text-lg font-extrabold leading-tight">mug · apple · notebook</div>
               </div>
             </div>
 
             <div className="tuji-float-delayed absolute -right-1 -top-4 rotate-2 rounded-2xl bg-tuji-coral px-4 py-2.5 text-sm font-extrabold text-white shadow-card sm:-right-3 sm:-top-5">
-              新增單字卡 3 張 ✓
+              {mt(lang, "hero.floatTag")}
             </div>
           </div>
         </div>
@@ -223,8 +199,8 @@ export default function MarketingHomePage() {
 
       {/* ── 單字牆跑馬燈 ─────────────────────────────────────── */}
       <section className="space-y-3 pb-16">
-        <MarqueeRow items={marqueeRowA} />
-        <MarqueeRow items={marqueeRowB} reverse />
+        <MarqueeRow items={marqueeRowA} lang={lang} />
+        <MarqueeRow items={marqueeRowB} lang={lang} reverse />
       </section>
 
       {/* ── 怎麼學 ───────────────────────────────────────────── */}
@@ -232,13 +208,13 @@ export default function MarketingHomePage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-7">
           <div className="max-w-2xl">
             <div className="text-sm font-extrabold uppercase tracking-[0.16em] text-tuji-teal">
-              How it works
+              {mt(lang, "how.eyebrow")}
             </div>
             <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
-              每天幾分鐘，讓複習自己找上門。
+              {mt(lang, "how.title")}
             </h2>
             <p className="mt-4 text-base font-semibold leading-7 text-tuji-ink2">
-              Tuji 的流程刻意保持簡單：打開、學習、離開。剩下的排程交給演算法。
+              {mt(lang, "how.subtitle")}
             </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -254,9 +230,11 @@ export default function MarketingHomePage() {
                   <Mascot pose={item.pose} size={56} />
                 </div>
                 <h3 className="mt-5 text-xl font-extrabold tracking-tight text-tuji-ink">
-                  {item.title}
+                  {mt(lang, item.tKey)}
                 </h3>
-                <p className="mt-3 text-sm font-semibold leading-6 text-tuji-ink2">{item.body}</p>
+                <p className="mt-3 text-sm font-semibold leading-6 text-tuji-ink2">
+                  {mt(lang, item.bKey)}
+                </p>
               </div>
             ))}
           </div>
@@ -268,28 +246,30 @@ export default function MarketingHomePage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-7">
           <div className="max-w-2xl">
             <div className="text-sm font-extrabold uppercase tracking-[0.16em] text-tuji-teal">
-              Features
+              {mt(lang, "feat.eyebrow")}
             </div>
             <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
-              為了「每天都想打開」而設計。
+              {mt(lang, "feat.title")}
             </h2>
             <p className="mt-4 text-base font-semibold leading-7 text-tuji-ink2">
-              從拍下真實物品、生成單字卡，到安排複習，Tuji 把學習流程做得像整理照片一樣自然。
+              {mt(lang, "feat.subtitle")}
             </p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((item) => (
               <div
-                key={item.title}
+                key={item.tKey}
                 className="rounded-[28px] bg-white p-7 shadow-soft transition hover:shadow-card"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-tuji-tealS text-2xl">
                   {item.icon}
                 </div>
                 <h3 className="mt-5 text-lg font-extrabold tracking-tight text-tuji-ink">
-                  {item.title}
+                  {mt(lang, item.tKey)}
                 </h3>
-                <p className="mt-2.5 text-sm font-semibold leading-6 text-tuji-ink2">{item.body}</p>
+                <p className="mt-2.5 text-sm font-semibold leading-6 text-tuji-ink2">
+                  {mt(lang, item.bKey)}
+                </p>
               </div>
             ))}
           </div>
@@ -303,24 +283,23 @@ export default function MarketingHomePage() {
             <div className="grid items-center gap-8 p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr] lg:p-14">
               <div className="text-white">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-extrabold tracking-wide">
-                  自製圖鑑 · Custom Atlas
+                  {mt(lang, "atlas.badge")}
                 </div>
                 <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  拍下你的世界，
+                  {mt(lang, "atlas.title1")}
                   <br />
-                  變成你的單字卡。
+                  {mt(lang, "atlas.title2")}
                 </h2>
                 <p className="mt-5 max-w-md text-base font-semibold leading-7 text-white/85">
-                  課本不會教你家廚房裡的東西。用相機把身邊的物品收進圖鑑，AI
-                  幫你辨識命名，一起加入每天的複習。照片預設私人，只有你決定要不要分享。
+                  {mt(lang, "atlas.body")}
                 </p>
                 <div className="mt-7 flex flex-wrap gap-2">
-                  {["預設私人", "AI 輔助辨識", "手動修正", "分享自主控制"].map((label) => (
+                  {atlasTagKeys.map((tagKey) => (
                     <span
-                      key={label}
+                      key={tagKey}
                       className="rounded-full bg-white/15 px-3.5 py-1.5 text-sm font-extrabold"
                     >
-                      {label}
+                      {mt(lang, tagKey)}
                     </span>
                   ))}
                 </div>
@@ -335,10 +314,10 @@ export default function MarketingHomePage() {
                       {item.step}
                     </div>
                     <h3 className="mt-4 text-lg font-extrabold tracking-tight text-tuji-ink">
-                      {item.title}
+                      {mt(lang, item.tKey)}
                     </h3>
                     <p className="mt-2 text-sm font-semibold leading-6 text-tuji-ink2">
-                      {item.body}
+                      {mt(lang, item.bKey)}
                     </p>
                   </div>
                 ))}
@@ -356,10 +335,11 @@ export default function MarketingHomePage() {
             <img src={APP_ICON_SRC} alt="Tuji app icon" className="h-full w-full object-cover" />
           </div>
           <h2 className="mt-7 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-5xl">
-            Tuji 現在就在 App Store<span className="text-tuji-coral">。</span>
+            {mt(lang, "dl.title")}
+            <span className="text-tuji-coral">{mt(lang, "dl.accent")}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base font-semibold leading-7 text-tuji-ink2">
-            立即下載 Tuji，用生活中的圖片開始學英文和日文。
+            {mt(lang, "dl.subhead")}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
@@ -377,7 +357,7 @@ export default function MarketingHomePage() {
               href="/support"
               className="inline-flex items-center justify-center rounded-2xl bg-tuji-tealS px-7 py-4 text-base font-extrabold text-tuji-teal transition hover:bg-tuji-teal hover:text-white"
             >
-              聯絡我們
+              {mt(lang, "dl.contact")}
             </Link>
           </div>
         </div>

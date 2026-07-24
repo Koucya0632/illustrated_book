@@ -20,6 +20,14 @@ body {
     sans-serif;
 }
 
+/* Japanese UI (marketing surface): prefer Noto Sans JP so kana + JP kanji
+   render with Japanese glyph forms instead of Traditional-Chinese ones. */
+.font-ja {
+  font-family: var(--font-jakarta), var(--font-noto-jp), var(--font-noto-tc),
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Hiragino Sans",
+    "Noto Sans JP", sans-serif;
+}
+
 /* Smooth focus rings — Tuji teal */
 *:focus-visible {
   outline: 2px solid #006F72;

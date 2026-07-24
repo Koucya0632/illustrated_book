@@ -12,7 +12,16 @@ export const LOCALES: { value: Locale; label: string }[] = [
 
 // BCP-47 tag for <html lang> and Intl formatting.
 export function localeTag(l: Locale): string {
-  return l === "zh-Hans" ? "zh-CN" : "zh-TW";
+  switch (l) {
+    case "zh-Hans":
+      return "zh-CN";
+    case "ja":
+      return "ja";
+    case "en":
+      return "en";
+    default:
+      return "zh-TW";
+  }
 }
 
 type Dict = Record<string, string>;

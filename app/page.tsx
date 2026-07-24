@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Mascot from "@/components/tuji/Mascot";
 import PublicShell from "@/components/marketing/PublicShell";
+import imageUrls from "@/lib/image-urls.json";
+
+// Word images live in Supabase Storage (see next.config.js). `/public/word-images/`
+// is gitignored and never deployed, so local paths 404 in prod — resolve the
+// deployed URL from the canonical id→URL map instead.
+const wordImg = (id: string) => (imageUrls as Record<string, string>)[id];
 
 export const metadata: Metadata = {
   title: "Tuji · 圖鑑式單字學習",
@@ -13,25 +19,25 @@ const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 const HERO_CAPTURE_IMAGE = "/marketing/atlas-capture-cards.webp";
 
 const marqueeRowA = [
-  { src: "/word-images/alarm-clock.png", en: "alarm clock", zh: "鬧鐘" },
-  { src: "/word-images/headphones.png", en: "headphones", zh: "耳機" },
-  { src: "/word-images/rice-cooker.png", en: "rice cooker", zh: "電鍋" },
-  { src: "/word-images/bicycle.png", en: "bicycle", zh: "腳踏車" },
-  { src: "/word-images/mug.png", en: "mug", zh: "馬克杯" },
-  { src: "/word-images/vending-machine.png", en: "vending machine", zh: "販賣機" },
-  { src: "/word-images/scissors.png", en: "scissors", zh: "剪刀" },
-  { src: "/word-images/toaster.png", en: "toaster", zh: "烤麵包機" },
+  { src: wordImg("alarm-clock"), en: "alarm clock", zh: "鬧鐘" },
+  { src: wordImg("headphones"), en: "headphones", zh: "耳機" },
+  { src: wordImg("rice-cooker"), en: "rice cooker", zh: "電鍋" },
+  { src: wordImg("bicycle"), en: "bicycle", zh: "腳踏車" },
+  { src: wordImg("mug"), en: "mug", zh: "馬克杯" },
+  { src: wordImg("vending-machine"), en: "vending machine", zh: "販賣機" },
+  { src: wordImg("scissors"), en: "scissors", zh: "剪刀" },
+  { src: wordImg("toaster"), en: "toaster", zh: "烤麵包機" },
 ];
 
 const marqueeRowB = [
-  { src: "/word-images/convenience-store.png", en: "convenience store", zh: "便利商店" },
-  { src: "/word-images/subway.png", en: "subway", zh: "捷運" },
-  { src: "/word-images/frying-pan.png", en: "frying pan", zh: "平底鍋" },
-  { src: "/word-images/towel.png", en: "towel", zh: "毛巾" },
-  { src: "/word-images/bookshelf.png", en: "bookshelf", zh: "書櫃" },
-  { src: "/word-images/taxi.png", en: "taxi", zh: "計程車" },
-  { src: "/word-images/kettle.png", en: "kettle", zh: "熱水壺" },
-  { src: "/word-images/shopping-cart.png", en: "shopping cart", zh: "購物車" },
+  { src: wordImg("convenience-store"), en: "convenience store", zh: "便利商店" },
+  { src: wordImg("subway"), en: "subway", zh: "捷運" },
+  { src: wordImg("frying-pan"), en: "frying pan", zh: "平底鍋" },
+  { src: wordImg("towel"), en: "towel", zh: "毛巾" },
+  { src: wordImg("bookshelf"), en: "bookshelf", zh: "書櫃" },
+  { src: wordImg("taxi"), en: "taxi", zh: "計程車" },
+  { src: wordImg("kettle"), en: "kettle", zh: "熱水壺" },
+  { src: wordImg("shopping-cart"), en: "shopping cart", zh: "購物車" },
 ];
 
 const howSteps = [

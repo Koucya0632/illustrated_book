@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Noto_Sans_TC, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Noto_Sans_TC, Noto_Sans_JP, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import TujiShell from "@/components/tuji/Shell";
 import { WordsProvider } from "@/components/WordsProvider";
@@ -13,6 +13,8 @@ import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
+import { localeTag } from "@/lib/i18n";
+import { getPublicLang } from "@/lib/public-lang";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -24,6 +26,12 @@ const notoTC = Noto_Sans_TC({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
   variable: "--font-noto-tc",
+  display: "swap",
+});
+const notoJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  variable: "--font-noto-jp",
   display: "swap",
 });
 const jetbrains = JetBrains_Mono({
@@ -50,10 +58,14 @@ export default async function RootLayout({
     getAllCardWords(settings.uiLang, settings.learningDirection),
     getCategoriesFromDb(settings.uiLang),
   ]);
+  // Logged-in users get their saved UI language; anonymous visitors (e.g. the
+  // marketing page) get the cookie-based public language so <html lang> is
+  // correct for SEO/screen-readers.
+  const htmlLang = localeTag(bundle ? settings.uiLang : getPublicLang());
   return (
     <html
-      lang={settings.uiLang}
-      className={`${jakarta.variable} ${notoTC.variable} ${jetbrains.variable}`}
+      lang={htmlLang}
+      className={`${jakarta.variable} ${notoTC.variable} ${notoJP.variable} ${jetbrains.variable}`}
     >
       <body className="min-h-screen bg-tuji-bg text-tuji-ink">
         <WordsProvider words={words}>

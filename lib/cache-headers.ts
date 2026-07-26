@@ -37,7 +37,6 @@ export function readLearningDirection(
   req: Request,
   fallback: "zh-en" | "zh-ja" = "zh-en",
 ): "zh-en" | "zh-ja" {
-  return new URL(req.url).searchParams.get("learning") === "zh-ja"
-    ? "zh-ja"
-    : fallback;
+  const raw = new URL(req.url).searchParams.get("learning");
+  return raw === "zh-en" || raw === "zh-ja" ? raw : fallback;
 }

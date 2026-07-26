@@ -4,6 +4,7 @@ import { getSql } from "@/lib/db";
 import {
   createAtlasReport,
   getAtlasPublicItem,
+  maybeEscalateAtlasReport,
   type AtlasReportReason,
 } from "@/lib/atlas-db";
 import { hitRateLimit } from "@/lib/ratelimit";
@@ -71,6 +72,15 @@ export async function POST(
     reason: reason as AtlasReportReason,
     detail,
   });
+
+  // Only a new report can move the needle; a duplicate must not re-trigger.
+  if (!result.already) {
+    await maybeEscalateAtlasReport({
+      publicItemId: item.id,
+      sourceItemId: item.source_item_id ?? null,
+      reason,
+    });
+  }
 
   return NextResponse.json(
     { ok: true, already: result.already },

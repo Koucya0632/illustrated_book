@@ -753,8 +753,13 @@ const DDL = [
      backfill_error        TEXT,
      visibility            TEXT NOT NULL DEFAULT 'private' CHECK (visibility IN
                            ('private','friends','public','unlisted')),
+     -- 'pending' is the legacy single review queue; the moderation pipeline
+     -- (docs/COMMUNITY_ATLAS_PLAN.md §5) splits it into pending_auto (waiting
+     -- on the classifiers) and pending_review (classifier flagged → human).
+     -- Legacy value kept so in-flight rows stay valid.
      review_status         TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
-                           ('draft','pending','approved','rejected','takedown')),
+                           ('draft','pending','pending_auto','pending_review',
+                            'approved','rejected','takedown')),
      published_at          TIMESTAMPTZ,
      public_slug           TEXT,
      share_image_path      TEXT,
@@ -786,6 +791,52 @@ const DDL = [
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS display_en TEXT`,
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS definition_ja TEXT`,
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS definition_en TEXT`,
+
+  // ---- Moderation pipeline (docs/COMMUNITY_ATLAS_PLAN.md §5) ----
+  // Existing DBs carry the inline CHECK created with the table, which predates
+  // pending_auto / pending_review. CREATE TABLE IF NOT EXISTS never alters it,
+  // so swap the auto-named constraint for an explicitly named one. Guarded so
+  // re-runs are no-ops.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'user_atlas_items_review_status_chk'
+     ) THEN
+       ALTER TABLE user_atlas_items
+         DROP CONSTRAINT IF EXISTS user_atlas_items_review_status_check;
+       ALTER TABLE user_atlas_items
+         ADD CONSTRAINT user_atlas_items_review_status_chk
+         CHECK (review_status IN
+           ('draft','pending','pending_auto','pending_review',
+            'approved','rejected','takedown'));
+     END IF;
+   END $$`,
+  // Machine + human moderation audit trail. Used to tune thresholds and to
+  // show admins why an item was flagged. Privacy: never store raw image URLs
+  // or free-text payloads here (same rule as the events table).
+  `CREATE TABLE IF NOT EXISTS atlas_moderation_events (
+     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     item_id     UUID NOT NULL REFERENCES user_atlas_items(id) ON DELETE CASCADE,
+     phase       TEXT NOT NULL CHECK (phase IN ('auto','report','heat','admin')),
+     verdict     TEXT NOT NULL CHECK (verdict IN ('approved','flagged','rejected','takedown','cleared')),
+     categories  JSONB NOT NULL DEFAULT '[]'::jsonb,
+     scores      JSONB NOT NULL DEFAULT '{}'::jsonb,
+     actor       TEXT,
+     created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_moderation_events_item_idx
+     ON atlas_moderation_events(item_id, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS atlas_moderation_events_phase_idx
+     ON atlas_moderation_events(phase, created_at DESC)`,
+  // Per-author moderation standing. Repeat offenders get restricted (cannot
+  // submit for review) or banned. Absence of a row means "good standing".
+  `CREATE TABLE IF NOT EXISTS user_moderation_state (
+     user_id      UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+     state        TEXT NOT NULL DEFAULT 'ok' CHECK (state IN ('ok','warned','restricted','banned')),
+     strikes      INTEGER NOT NULL DEFAULT 0,
+     reason       TEXT,
+     updated_at   TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
 
   `CREATE TABLE IF NOT EXISTS user_atlas_cards (
      id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -959,6 +1010,62 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS atlas_public_items_published_idx
      ON atlas_public_items(published_at DESC)
      WHERE review_status = 'approved'`,
+  // Community aggregation (docs/COMMUNITY_ATLAS_PLAN.md §1 原則 2): the word
+  // detail page asks "who else published this lemma?", so the hot lookup is
+  // (lemma, target_language) among approved rows. Lowercased to match the
+  // case-insensitive lookup in listAtlasPublicItemsByLemma.
+  `CREATE INDEX IF NOT EXISTS atlas_public_items_lemma_lang_idx
+     ON atlas_public_items(lower(lemma), target_language, published_at DESC)
+     WHERE review_status = 'approved'`,
+
+  // Saved community items — the CONSUMPTION quota (docs/COMMUNITY_ATLAS_PLAN.md
+  // §4.1). Deliberately its own table rather than rows in user_atlas_items:
+  // getAtlasUsage() counts user_atlas_items to enforce the *creation* limit
+  // (Free 3 slots), so storing saves there would make collecting other people's
+  // photos eat the free tier's creation budget — the exact red line the plan
+  // forbids. Keeping them separate means saves can never consume creation slots.
+  `CREATE TABLE IF NOT EXISTS atlas_saves (
+     user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     public_item_id UUID NOT NULL REFERENCES atlas_public_items(id) ON DELETE CASCADE,
+     created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, public_item_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_saves_user_idx
+     ON atlas_saves(user_id, created_at DESC)`,
+  // Supports the "N people saved this" counter per public item.
+  `CREATE INDEX IF NOT EXISTS atlas_saves_item_idx
+     ON atlas_saves(public_item_id)`,
+
+  // SRS rows for saved community items — the review side of a save.
+  //
+  // Card + state live in ONE row because the cards are virtual: a saved public
+  // item always yields exactly image_recall + flashcard, derived from the
+  // public row rather than generated (no AI cost, no duplicated image). Rows
+  // are materialised when the item is saved so every card has a real UUID the
+  // existing answer path can address, and deleted when it is unsaved.
+  //
+  // Crucially this table — not user_atlas_items — is where saved study data
+  // lives, which is what makes it structurally impossible for saving to eat
+  // the creation quota (docs/COMMUNITY_ATLAS_PLAN.md §4.1).
+  `CREATE TABLE IF NOT EXISTS atlas_saved_cards (
+     id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id          UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     public_item_id   UUID NOT NULL REFERENCES atlas_public_items(id) ON DELETE CASCADE,
+     card_type        TEXT NOT NULL CHECK (card_type IN ('image_recall','flashcard')),
+     status           TEXT NOT NULL DEFAULT '新卡' CHECK (status IN ('新卡','學習中','複習中','穩定')),
+     interval_days    NUMERIC(10,4) NOT NULL DEFAULT 0,
+     next_review_at   TIMESTAMPTZ NOT NULL DEFAULT now(),
+     review_count     INT NOT NULL DEFAULT 0,
+     mistake_count    INT NOT NULL DEFAULT 0,
+     last_rating      TEXT CHECK (last_rating IN ('重來','困難','穩定','熟練')),
+     last_reviewed_at TIMESTAMPTZ,
+     mastery          NUMERIC(6,2) NOT NULL DEFAULT 0,
+     created_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+     UNIQUE (user_id, public_item_id, card_type)
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_saved_cards_due_idx
+     ON atlas_saved_cards(user_id, next_review_at)`,
 
   // User-submitted reports on public 圖鑑 items (UGC moderation, §5). One report
   // per (public item, reporter); source_item_id lets admin jump to the existing

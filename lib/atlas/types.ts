@@ -18,7 +18,30 @@ export type AtlasJobStatus =
   | "cancelled";
 export type AtlasRecognitionStage = "primary" | "fine" | "escalated" | "manual";
 export type AtlasVisibility = "private" | "friends" | "public" | "unlisted";
-export type AtlasReviewStatus = "draft" | "pending" | "approved" | "rejected" | "takedown";
+/**
+ * `pending` is the legacy single review queue. The moderation pipeline
+ * (docs/COMMUNITY_ATLAS_PLAN.md §5) splits it: `pending_auto` is awaiting the
+ * classifiers, `pending_review` means a classifier flagged it for a human.
+ */
+export type AtlasReviewStatus =
+  | "draft"
+  | "pending"
+  | "pending_auto"
+  | "pending_review"
+  | "approved"
+  | "rejected"
+  | "takedown";
+
+/** Which stage produced a moderation event (atlas_moderation_events.phase). */
+export type AtlasModerationPhase = "auto" | "report" | "heat" | "admin";
+
+/** Outcome recorded for a moderation event (atlas_moderation_events.verdict). */
+export type AtlasModerationVerdict =
+  | "approved"
+  | "flagged"
+  | "rejected"
+  | "takedown"
+  | "cleared";
 export type AtlasCardType = "image_recall" | "word_recall" | "spelling" | "flashcard";
 export type AtlasDeckKey = "atlas-image-en" | "atlas-image-ja";
 

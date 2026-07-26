@@ -11,6 +11,11 @@ const VALID_TYPES = new Set([
   // ios (kept small & stable — server-derived metrics live in study_logs etc.)
   "app_open", "study_start", "study_complete",
   "paywall_view", "share_app", "atlas_capture_open",
+  // community 圖鑑 funnel (docs/COMMUNITY_ATLAS_PLAN.md §6). These exist to
+  // answer one question: do publishers convert to Pro better than
+  // non-publishers? Counts only — no ids, no text, no image URLs.
+  "atlas_publish_submitted", "atlas_public_item_viewed", "atlas_public_saved",
+  "author_profile_viewed",
 ]);
 const VALID_PLATFORMS = new Set(["web", "ios"]);
 

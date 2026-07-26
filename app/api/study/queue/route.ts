@@ -8,7 +8,13 @@ import {
   type QueueMode,
   type DueCard,
 } from "@/lib/cards-db";
-import { fetchAtlasDue, atlasStudyStats } from "@/lib/atlas-db";
+import {
+  fetchAtlasDue,
+  atlasStudyStats,
+  fetchSavedCommunityDue,
+  savedCommunityStats,
+} from "@/lib/atlas-db";
+import { atlasPublicImageUrl } from "@/lib/atlas/storage";
 import { createAtlasImageSignedUrlsBatch } from "@/lib/atlas/storage";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
@@ -92,6 +98,55 @@ async function atlasDueToStudyQueue(
   });
 }
 
+/**
+ * Saved community items as study cards (docs/COMMUNITY_ATLAS_PLAN.md).
+ *
+ * Mirrors atlasDueToStudyQueue but sources from atlas_saved_cards. Images are
+ * already public, so no signed URLs. Card ids are prefixed `saved:` so the
+ * answer route can tell which table a rating belongs to.
+ */
+function savedCommunityToStudyQueue(
+  userId: string,
+  due: Awaited<ReturnType<typeof fetchSavedCommunityDue>>,
+): DueCard[] {
+  return due.map((row) => ({
+    card: {
+      id: `saved:${row.id}`,
+      word_id: `saved:${row.public_item_id}`,
+      card_type: row.card_type === "image_recall" ? "回想卡" : "單字卡",
+      front: row.display_zh_hant,
+      back: row.lemma,
+      explanation: null,
+      tags: ["community", "atlas"],
+      deck_key: row.target_language === "ja" ? "image-ja" : "image-en",
+    },
+    state: {
+      user_id: userId,
+      card_id: `saved:${row.id}`,
+      status: row.status,
+      interval_days: row.interval_days,
+      next_review_at: row.next_review_at,
+      review_count: row.review_count,
+      mistake_count: row.mistake_count,
+      last_rating: null,
+      last_reviewed_at: null,
+    },
+    word: {
+      id: `saved:${row.public_item_id}`,
+      word: row.lemma,
+      chinese: row.display_zh_hant,
+      image_url: atlasPublicImageUrl(row.image_public_path) ?? "",
+      pronunciation: "",
+      reading: undefined,
+      target_language: row.target_language,
+      category: "community",
+    },
+    choices: undefined,
+    spellingChoices: undefined,
+    mastery: Math.round(row.mastery),
+  })) as DueCard[];
+}
+
 export async function GET(req: Request) {
   const t0 = performance.now();
   // Best-effort early bail: if the browser already gave up on this request
@@ -125,11 +180,17 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
-  const publicCategories = categories.filter((category) => category !== "custom");
+  const publicCategories = categories.filter(
+    (category) => category !== "custom" && category !== "community",
+  );
   // "custom" cards join the queue when explicitly requested OR when there's no
   // public theme filter at all (全部 / 復習) — i.e. custom is part of "all your
   // studied words". A specific public theme (no "custom") still excludes them.
   const wantsCustom = categories.includes("custom") || publicCategories.length === 0;
+  // 社群圖鑑 is opt-in ONLY: unlike "custom", it never joins the queue by
+  // default. Someone who has saved nothing shouldn't see an empty extra theme,
+  // and community content is other people's work — the user chooses to study it.
+  const wantsCommunity = categories.includes("community");
   // Mode: "new" (only first-time cards), "review" (only due reviews), or
   // "both" (legacy mixed queue). Unknown values fall back to "both".
   const modeParam = (searchParams.get("mode") ?? "both").trim();
@@ -150,7 +211,15 @@ export async function GET(req: Request) {
     // never widen a Japanese queue back to all decks when they disagree.
     const effectiveDecks = [directionDeck];
     const shouldFetchPublic = categories.length === 0 || publicCategories.length > 0;
-    const [queue, stats, masteryRows, atlasQueue, customStats] = await Promise.all([
+    const [
+      queue,
+      stats,
+      masteryRows,
+      atlasQueue,
+      customStats,
+      savedQueue,
+      savedStats,
+    ] = await Promise.all([
       shouldFetchPublic
         ? fetchDue(
             userId,
@@ -168,6 +237,12 @@ export async function GET(req: Request) {
       wantsCustom
         ? atlasStudyStats(userId, targetLanguage)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
+      wantsCommunity
+        ? fetchSavedCommunityDue(userId, limit, mode, targetLanguage)
+        : Promise.resolve([]),
+      wantsCommunity
+        ? savedCommunityStats(userId, targetLanguage)
+        : Promise.resolve({ total: 0, seen: 0 }),
     ]);
     const dbMs = Math.round(performance.now() - tDb);
 
@@ -202,18 +277,34 @@ export async function GET(req: Request) {
       : [];
     const localizedPublic = await localizeStudyQueue(queue, uiLang);
     const localizedAtlas = await localizeStudyQueue(atlasStudyQueue, uiLang);
+    // Saved community cards carry the publisher's own gloss; they are not part
+    // of the localizable dictionary, so they skip localizeStudyQueue.
+    // One card per item, same reason as the atlas dedupe above.
+    const seenSavedItems = new Set<string>();
+    const localizedSaved = savedCommunityToStudyQueue(
+      userId,
+      savedQueue.filter((row) => {
+        if (seenSavedItems.has(row.public_item_id)) return false;
+        seenSavedItems.add(row.public_item_id);
+        return true;
+      }),
+    );
     // New-learn leads with captured 自製 cards: appended last they'd be
     // sliced off whenever the public draw already fills `limit`, so a
     // just-captured word would never surface in 學新字.
     const localized = (mode === "new"
-      ? localizedAtlas.concat(localizedPublic)
-      : localizedPublic.concat(localizedAtlas)
+      ? localizedAtlas.concat(localizedSaved, localizedPublic)
+      : localizedPublic.concat(localizedAtlas, localizedSaved)
     ).slice(0, limit);
     const localizeMs = Math.round(performance.now() - tLocalize);
 
     const totalMs = Math.round(performance.now() - t0);
     return NextResponse.json(
-      { queue: localized, stats: addStats(stats, customStats) },
+      {
+        queue: localized,
+        stats: addStats(stats, customStats),
+        communityStats: wantsCommunity ? savedStats : undefined,
+      },
       {
         headers: {
           "Server-Timing": [

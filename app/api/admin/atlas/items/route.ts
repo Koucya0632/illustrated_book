@@ -7,14 +7,18 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const rawStatus = searchParams.get("status") ?? "pending";
+  // "pending" is still accepted from older admin bookmarks; it maps to the
+  // human queue, which listAtlasReviewItems folds legacy rows into.
+  const rawStatus = searchParams.get("status") ?? "pending_review";
   const status =
     rawStatus === "approved" ||
     rawStatus === "rejected" ||
     rawStatus === "takedown" ||
-    rawStatus === "pending"
+    rawStatus === "pending_review"
       ? rawStatus
-      : "";
+      : rawStatus === "pending"
+        ? "pending_review"
+        : "";
   const rows = await listAtlasReviewItems(status);
   const items = await Promise.all(
     rows.map(async (row) => {

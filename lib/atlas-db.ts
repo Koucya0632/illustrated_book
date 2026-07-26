@@ -12,9 +12,12 @@ import type {
   AtlasImageRow,
   AtlasItemRow,
   AtlasMasteryRow,
+  AtlasModerationPhase,
+  AtlasModerationVerdict,
   AtlasPublicItemRow,
   AtlasRecognitionJobRow,
   AtlasRecognitionStage,
+  AtlasReviewStatus,
   AtlasTargetLanguage,
 } from "./atlas/types";
 import type { AtlasRecognitionResult } from "./atlas/vision-provider";
@@ -1311,7 +1314,9 @@ export async function submitAtlasItemForReview(
   const rows = await sql<AtlasItemRow[]>`
     UPDATE user_atlas_items
     SET visibility = 'public',
-        review_status = 'pending',
+        -- 'pending_auto' = handed to the machine gate; processAtlasSubmission
+        -- immediately moves it to approved / pending_review / rejected.
+        review_status = 'pending_auto',
         public_slug = COALESCE(public_slug, ${publicSlug}),
         updated_at = now()
     WHERE user_id = ${userId}::uuid
@@ -1322,21 +1327,36 @@ export async function submitAtlasItemForReview(
   return rows[0] ?? null;
 }
 
+/**
+ * Admin review queue. The default filter is `pending_review` — items the
+ * machine gate flagged for a human. Legacy `pending` rows (submitted before the
+ * gate existed) are folded into that same filter so nothing gets stranded.
+ */
 export async function listAtlasReviewItems(
-  status: "pending" | "approved" | "rejected" | "takedown" | "" = "pending",
+  status: "pending_review" | "approved" | "rejected" | "takedown" | "" = "pending_review",
   limit = 100,
 ): Promise<(AtlasItemRow & { username: string | null; thumb_path: string | null })[]> {
   const sql = requireSql();
+  const legacyPending = status === "pending_review";
   return sql<(AtlasItemRow & { username: string | null; thumb_path: string | null })[]>`
     SELECT i.*, p.username, img.thumb_path
     FROM user_atlas_items i
     LEFT JOIN profiles p ON p.id = i.user_id
     LEFT JOIN user_atlas_images img ON img.id = i.image_id
     WHERE i.deleted_at IS NULL
-      AND (${status} = '' OR i.review_status = ${status})
+      AND (
+        ${status} = ''
+        OR i.review_status = ${status}
+        OR (${legacyPending} AND i.review_status IN ('pending','pending_auto'))
+      )
       AND i.review_status <> 'draft'
     ORDER BY
-      CASE i.review_status WHEN 'pending' THEN 0 ELSE 1 END,
+      CASE i.review_status
+        WHEN 'pending_review' THEN 0
+        WHEN 'pending' THEN 0
+        WHEN 'pending_auto' THEN 0
+        ELSE 1
+      END,
       i.updated_at DESC
     LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
   `;
@@ -1527,6 +1547,63 @@ export async function approveAtlasPublicItem(input: {
   return rows[0] ?? null;
 }
 
+/**
+ * Moves an item into a review state without touching visibility. Used by the
+ * machine gate (docs/COMMUNITY_ATLAS_PLAN.md §5): a flagged item stays
+ * visibility='public' but is not in atlas_public_items, so it is not reachable
+ * publicly until a human approves it.
+ */
+export async function setAtlasItemReviewStatus(
+  itemId: string,
+  status: AtlasReviewStatus,
+): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasItemRow[]>`
+    UPDATE user_atlas_items
+    SET review_status = ${status},
+        updated_at = now()
+    WHERE id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+/**
+ * Audit trail for moderation decisions (machine + human). Used to tune
+ * thresholds and to show admins why an item was flagged.
+ *
+ * Privacy: categories/scores only — never raw image URLs or free-text payloads
+ * (same rule as the events table).
+ */
+export async function recordAtlasModerationEvent(input: {
+  itemId: string;
+  phase: AtlasModerationPhase;
+  verdict: AtlasModerationVerdict;
+  categories: string[];
+  scores: Record<string, number>;
+  actor?: string | null;
+}): Promise<void> {
+  const sql = getSql();
+  if (!sql) return;
+  try {
+    await sql`
+      INSERT INTO atlas_moderation_events
+        (item_id, phase, verdict, categories, scores, actor)
+      VALUES (
+        ${input.itemId}::uuid,
+        ${input.phase},
+        ${input.verdict},
+        ${JSON.stringify(input.categories)}::jsonb,
+        ${JSON.stringify(input.scores)}::jsonb,
+        ${input.actor ?? null}
+      )
+    `;
+  } catch {
+    // Audit logging must never break the submission path.
+  }
+}
+
 export async function rejectAtlasReviewItem(itemId: string): Promise<AtlasItemRow | null> {
   const sql = requireSql();
   const rows = await sql<AtlasItemRow[]>`
@@ -1568,6 +1645,446 @@ export async function listAtlasPublicItems(limit = 60): Promise<AtlasPublicItemR
     WHERE review_status = 'approved'
     ORDER BY published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/**
+ * Community aggregation for the word detail page: every approved public item
+ * teaching the same lemma in the same target language (docs/COMMUNITY_ATLAS_PLAN.md
+ * §1 原則 2 — aggregate by word, not by individual photo).
+ *
+ * Lemma match is case-insensitive; the supporting index is on lower(lemma).
+ */
+export async function listAtlasPublicItemsByLemma(
+  lemma: string,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 24,
+): Promise<AtlasPublicItemRow[]> {
+  const sql = requireSql();
+  const trimmed = lemma.trim();
+  if (!trimmed) return [];
+  return sql<AtlasPublicItemRow[]>`
+    SELECT *
+    FROM atlas_public_items
+    WHERE lower(lemma) = lower(${trimmed})
+      AND target_language = ${targetLanguage}
+      AND review_status = 'approved'
+    ORDER BY published_at DESC
+    LIMIT ${Math.min(60, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+// MARK: - Report escalation (docs/COMMUNITY_ATLAS_PLAN.md §5.5)
+
+/** High-risk reasons escalate on the first report; the rest need a threshold. */
+const ATLAS_HIGH_RISK_REASONS = new Set(["inappropriate", "copyright"]);
+
+function reportEscalationThreshold(): number {
+  const raw = process.env.ATLAS_REPORT_ESCALATE_AT;
+  const n = raw === undefined || raw === "" ? 3 : Number(raw);
+  return Number.isFinite(n) && n >= 1 ? Math.floor(n) : 3;
+}
+
+/**
+ * Pulls a reported item back for human review once it crosses the escalation
+ * bar. Harm scales with reach, so this deliberately errs toward re-reviewing:
+ * the cost is a queue entry, the cost of not doing it is public bad content.
+ *
+ * Returns true when the item was escalated.
+ */
+export async function maybeEscalateAtlasReport(input: {
+  publicItemId: string;
+  sourceItemId: string | null;
+  reason: string;
+}): Promise<boolean> {
+  const sql = getSql();
+  if (!sql || !input.sourceItemId) return false;
+
+  try {
+    const highRisk = ATLAS_HIGH_RISK_REASONS.has(input.reason);
+    let escalate = highRisk;
+
+    if (!escalate) {
+      const rows = await sql<{ count: number }[]>`
+        SELECT count(*)::int AS count
+        FROM atlas_reports
+        WHERE public_item_id = ${input.publicItemId}::uuid
+      `;
+      escalate = (rows[0]?.count ?? 0) >= reportEscalationThreshold();
+    }
+    if (!escalate) return false;
+
+    // Only pull back items that are currently live; don't resurrect a
+    // takedown or re-queue something already awaiting review.
+    const updated = await sql<{ id: string }[]>`
+      UPDATE user_atlas_items
+      SET review_status = 'pending_review',
+          updated_at = now()
+      WHERE id = ${input.sourceItemId}::uuid
+        AND review_status = 'approved'
+        AND deleted_at IS NULL
+      RETURNING id
+    `;
+    if (updated.length === 0) return false;
+
+    // Hide it from the public feed while it waits for a human.
+    await sql`
+      UPDATE atlas_public_items
+      SET review_status = 'takedown', updated_at = now()
+      WHERE source_item_id = ${input.sourceItemId}::uuid
+    `;
+
+    await recordAtlasModerationEvent({
+      itemId: input.sourceItemId,
+      phase: "report",
+      verdict: "flagged",
+      categories: [input.reason],
+      scores: {},
+      actor: highRisk ? "report:high-risk" : "report:threshold",
+    });
+    return true;
+  } catch {
+    // Escalation is best-effort; a failure must not break the report path.
+    return false;
+  }
+}
+
+/**
+ * Author standing. Absence of a row means good standing, so this only has to
+ * answer "is this user restricted or banned from publishing?".
+ */
+export async function isAtlasAuthorBlocked(userId: string): Promise<boolean> {
+  const sql = getSql();
+  if (!sql) return false;
+  try {
+    const rows = await sql<{ state: string }[]>`
+      SELECT state FROM user_moderation_state
+      WHERE user_id = ${userId}::uuid
+      LIMIT 1
+    `;
+    const state = rows[0]?.state;
+    return state === "restricted" || state === "banned";
+  } catch {
+    return false;
+  }
+}
+
+// MARK: - Author profiles (community identity)
+
+export interface AtlasAuthorRow {
+  user_id: string;
+  username: string;
+  nickname: string | null;
+  avatar: string;
+  joined_at: string;
+  published_count: number;
+  /** Total times this author's public items have been saved by others. */
+  save_count: number;
+}
+
+/**
+ * Public author profile: identity plus the aggregate feedback signals
+ * (docs/COMMUNITY_ATLAS_PLAN.md §3C). Counts only approved items — a takedown
+ * must not keep inflating an author's numbers.
+ *
+ * Returns null for unknown usernames and for authors with nothing public, so
+ * the endpoint can't be used to enumerate accounts.
+ */
+export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasAuthorRow[]>`
+    SELECT
+      pr.id                              AS user_id,
+      pr.username,
+      pr.nickname,
+      pr.avatar,
+      pr.created_at                      AS joined_at,
+      count(DISTINCT p.id)::int          AS published_count,
+      count(s.public_item_id)::int       AS save_count
+    FROM profiles pr
+    JOIN atlas_public_items p
+      ON p.owner_user_id = pr.id
+     AND p.review_status = 'approved'
+    LEFT JOIN atlas_saves s ON s.public_item_id = p.id
+    WHERE lower(pr.username) = lower(${username})
+    GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.created_at
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+/** An author's approved public items, newest first. */
+export async function listAtlasAuthorItems(
+  userId: string,
+  limit = 60,
+): Promise<AtlasPublicItemRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicItemRow[]>`
+    SELECT *
+    FROM atlas_public_items
+    WHERE owner_user_id = ${userId}::uuid
+      AND review_status = 'approved'
+    ORDER BY published_at DESC
+    LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+// MARK: - Saves (consumption quota)
+//
+// Saving someone else's public item is the CONSUMPTION side of the quota split
+// (docs/COMMUNITY_ATLAS_PLAN.md §4.1). These rows live in atlas_saves and are
+// never written to user_atlas_items, so they cannot consume the creation slots
+// that getAtlasUsage() counts.
+
+/** The two virtual cards every saved public item yields. */
+export const ATLAS_SAVED_CARD_TYPES = ["image_recall", "flashcard"] as const;
+
+/**
+ * Idempotent: saving twice is a no-op, not an error.
+ *
+ * Also materialises the item's SRS rows so it enters the review queue right
+ * away. They carry their own UUIDs, which is what lets the existing answer
+ * endpoint address a saved card.
+ */
+export async function saveAtlasPublicItem(
+  userId: string,
+  publicItemId: string,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO atlas_saves (user_id, public_item_id)
+    VALUES (${userId}::uuid, ${publicItemId}::uuid)
+    ON CONFLICT (user_id, public_item_id) DO NOTHING
+  `;
+  for (const cardType of ATLAS_SAVED_CARD_TYPES) {
+    await sql`
+      INSERT INTO atlas_saved_cards (user_id, public_item_id, card_type)
+      VALUES (${userId}::uuid, ${publicItemId}::uuid, ${cardType})
+      ON CONFLICT (user_id, public_item_id, card_type) DO NOTHING
+    `;
+  }
+}
+
+/** Removes the save and its review progress. */
+export async function unsaveAtlasPublicItem(
+  userId: string,
+  publicItemId: string,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    DELETE FROM atlas_saved_cards
+    WHERE user_id = ${userId}::uuid
+      AND public_item_id = ${publicItemId}::uuid
+  `;
+  await sql`
+    DELETE FROM atlas_saves
+    WHERE user_id = ${userId}::uuid
+      AND public_item_id = ${publicItemId}::uuid
+  `;
+}
+
+export async function isAtlasPublicItemSaved(
+  userId: string,
+  publicItemId: string,
+): Promise<boolean> {
+  const sql = getSql();
+  if (!sql) return false;
+  const rows = await sql<{ one: number }[]>`
+    SELECT 1 AS one
+    FROM atlas_saves
+    WHERE user_id = ${userId}::uuid
+      AND public_item_id = ${publicItemId}::uuid
+    LIMIT 1
+  `;
+  return rows.length > 0;
+}
+
+// MARK: - Saved community deck (SRS)
+//
+// Mirrors fetchAtlasDue's new/review split so the community deck behaves like
+// the rest of the app, but reads from atlas_saved_cards joined to the public
+// item. Images come from the public bucket, so no signed URLs are needed.
+
+export interface AtlasSavedDueCard {
+  id: string;
+  card_type: string;
+  public_item_id: string;
+  slug: string;
+  lemma: string;
+  display_zh_hant: string;
+  target_language: AtlasTargetLanguage;
+  image_public_path: string | null;
+  attribution_name: string | null;
+  status: string;
+  interval_days: number;
+  next_review_at: string;
+  review_count: number;
+  mistake_count: number;
+  mastery: number;
+}
+
+export async function fetchSavedCommunityDue(
+  userId: string,
+  limit = 20,
+  mode: "new" | "review" | "both" = "both",
+  targetLanguage: AtlasTargetLanguage | null = null,
+): Promise<AtlasSavedDueCard[]> {
+  const sql = requireSql();
+  const includeNew = mode === "new" || mode === "both";
+  const includeReview = mode === "review" || mode === "both";
+  return sql<AtlasSavedDueCard[]>`
+    SELECT
+      sc.id,
+      sc.card_type,
+      sc.public_item_id,
+      p.public_slug         AS slug,
+      p.lemma,
+      p.display_zh_hant,
+      p.target_language,
+      p.image_public_path,
+      p.attribution_name,
+      sc.status,
+      sc.interval_days::float8 AS interval_days,
+      sc.next_review_at,
+      sc.review_count,
+      sc.mistake_count,
+      sc.mastery::float8    AS mastery
+    FROM atlas_saved_cards sc
+    JOIN atlas_public_items p ON p.id = sc.public_item_id
+    WHERE sc.user_id = ${userId}::uuid
+      -- A taken-down item must stop appearing in study immediately.
+      AND p.review_status = 'approved'
+      ${targetLanguage ? sql`AND p.target_language = ${targetLanguage}` : sql``}
+      AND (
+        -- New: dedupe to one card per item, same rule as fetchAtlasDue —
+        -- otherwise the sibling card resurfaces the same word.
+        (${includeNew} AND sc.status = '新卡'
+          AND NOT EXISTS (
+            SELECT 1 FROM atlas_saved_cards sc2
+            WHERE sc2.user_id = sc.user_id
+              AND sc2.public_item_id = sc.public_item_id
+              AND sc2.status <> '新卡'
+          ))
+        OR (${includeReview} AND sc.status <> '新卡' AND sc.next_review_at <= now())
+      )
+    ORDER BY
+      CASE WHEN sc.status = '新卡' THEN 1 ELSE 0 END,
+      sc.next_review_at ASC,
+      sc.created_at ASC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/** Single saved card for the answer path (ownership enforced by user_id). */
+export async function getSavedCommunityCardById(
+  userId: string,
+  cardId: string,
+): Promise<AtlasSavedDueCard | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasSavedDueCard[]>`
+    SELECT
+      sc.id, sc.card_type, sc.public_item_id,
+      p.public_slug AS slug, p.lemma, p.display_zh_hant, p.target_language,
+      p.image_public_path, p.attribution_name,
+      sc.status, sc.interval_days::float8 AS interval_days, sc.next_review_at,
+      sc.review_count, sc.mistake_count, sc.mastery::float8 AS mastery
+    FROM atlas_saved_cards sc
+    JOIN atlas_public_items p ON p.id = sc.public_item_id
+    WHERE sc.id = ${cardId}::uuid
+      AND sc.user_id = ${userId}::uuid
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+export async function recordSavedCommunityReview(
+  userId: string,
+  cardId: string,
+  next: {
+    status: string;
+    intervalDays: number;
+    nextReviewAt: Date;
+    rating: string;
+    mastery: number;
+  },
+  isMistake: boolean,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    UPDATE atlas_saved_cards
+    SET status = ${next.status},
+        interval_days = ${next.intervalDays},
+        next_review_at = ${next.nextReviewAt},
+        last_rating = ${next.rating},
+        last_reviewed_at = now(),
+        review_count = review_count + 1,
+        mistake_count = mistake_count + ${isMistake ? 1 : 0},
+        mastery = ${next.mastery},
+        updated_at = now()
+    WHERE id = ${cardId}::uuid
+      AND user_id = ${userId}::uuid
+  `;
+}
+
+/** Totals for the 社群圖鑑 theme's progress row. */
+export async function savedCommunityStats(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<{ total: number; seen: number }> {
+  const sql = getSql();
+  if (!sql) return { total: 0, seen: 0 };
+  const rows = await sql<{ total: number; seen: number }[]>`
+    SELECT
+      count(DISTINCT sc.public_item_id)::int AS total,
+      count(DISTINCT sc.public_item_id)
+        FILTER (WHERE sc.status <> '新卡')::int AS seen
+    FROM atlas_saved_cards sc
+    JOIN atlas_public_items p ON p.id = sc.public_item_id
+    WHERE sc.user_id = ${userId}::uuid
+      AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage}
+  `;
+  return { total: rows[0]?.total ?? 0, seen: rows[0]?.seen ?? 0 };
+}
+
+/** "N people saved this" for a single public item. */
+export async function countAtlasSaves(publicItemId: string): Promise<number> {
+  const sql = getSql();
+  if (!sql) return 0;
+  const rows = await sql<{ count: number }[]>`
+    SELECT count(*)::int AS count
+    FROM atlas_saves
+    WHERE public_item_id = ${publicItemId}::uuid
+  `;
+  return rows[0]?.count ?? 0;
+}
+
+/** How many community items this user has saved (their consumption usage). */
+export async function countAtlasSavesByUser(userId: string): Promise<number> {
+  const sql = getSql();
+  if (!sql) return 0;
+  const rows = await sql<{ count: number }[]>`
+    SELECT count(*)::int AS count
+    FROM atlas_saves
+    WHERE user_id = ${userId}::uuid
+  `;
+  return rows[0]?.count ?? 0;
+}
+
+/** The user's saved community items, newest first. */
+export async function listAtlasSavedItems(
+  userId: string,
+  limit = 60,
+): Promise<AtlasPublicItemRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicItemRow[]>`
+    SELECT p.*
+    FROM atlas_saves s
+    JOIN atlas_public_items p ON p.id = s.public_item_id
+    WHERE s.user_id = ${userId}::uuid
+      AND p.review_status = 'approved'
+    ORDER BY s.created_at DESC
+    LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
   `;
 }
 

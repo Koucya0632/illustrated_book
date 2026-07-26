@@ -15,6 +15,20 @@ export const categories: Category[] = [
     imageUrl: "",
   },
   {
+    // Saved 公開圖鑑 items (docs/COMMUNITY_ATLAS_PLAN.md). A source rather than
+    // a topic, same shortcut as "custom" above — it rides the existing theme
+    // machinery instead of adding a parallel deck concept. Unlike "custom" it
+    // is strictly opt-in: the study queue only includes it when explicitly
+    // selected, so users who have saved nothing never study an empty theme.
+    id: "community",
+    name: "Community",
+    nameZh: "社群圖鑑",
+    emoji: "🌏",
+    description: "你從公開圖鑑收藏的卡片",
+    color: "from-teal-100 to-sky-100",
+    imageUrl: "",
+  },
+  {
     id: "kitchen",
     name: "Kitchen",
     nameZh: "廚房",

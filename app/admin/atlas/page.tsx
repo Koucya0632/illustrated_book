@@ -6,18 +6,22 @@ import AtlasReviewActions from "./AtlasReviewActions";
 
 export const dynamic = "force-dynamic";
 
-type ReviewFilterStatus = Exclude<AtlasReviewStatus, "draft">;
+// The queue only offers the states a human acts on. pending / pending_auto are
+// folded into the pending_review filter by listAtlasReviewItems.
+type ReviewFilterStatus = "pending_review" | "approved" | "rejected" | "takedown";
 
 const STATUS_LABELS: Record<AtlasReviewStatus, string> = {
   draft: "草稿",
-  pending: "待審核",
+  pending: "待審核（舊）",
+  pending_auto: "機審中",
+  pending_review: "待人工審核",
   approved: "已公開",
   rejected: "已退回",
   takedown: "已下架",
 };
 
 function allowedStatus(value: unknown): ReviewFilterStatus | "" {
-  return value === "pending" ||
+  return value === "pending_review" ||
     value === "approved" ||
     value === "rejected" ||
     value === "takedown"
@@ -30,7 +34,7 @@ export default async function AdminAtlasPage({
 }: {
   searchParams: { status?: string };
 }) {
-  const status = allowedStatus(searchParams.status ?? "pending");
+  const status = allowedStatus(searchParams.status ?? "pending_review");
   const rows = await listAtlasReviewItems(status, 120);
   const items = await Promise.all(
     rows.map(async (row) => {
@@ -76,7 +80,7 @@ export default async function AdminAtlasPage({
           <span className="mb-1 block font-medium text-ink">審核狀態</span>
           <select name="status" defaultValue={status} className="w-48 rounded-lg border border-black/10 bg-white px-3 py-2">
             <option value="">全部</option>
-            <option value="pending">待審核</option>
+            <option value="pending_review">待人工審核</option>
             <option value="approved">已公開</option>
             <option value="rejected">已退回</option>
             <option value="takedown">已下架</option>

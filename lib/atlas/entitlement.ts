@@ -23,14 +23,29 @@ export interface AtlasLimits {
   atlasSlotsLimit: number;
   primaryAiSoftLimitMonthly: number;
   precisionAiLimitMonthly: number;
+  /**
+   * CONSUMPTION quota: how many community items the user may save into their
+   * own review queue (docs/COMMUNITY_ATLAS_PLAN.md §4.1). Deliberately generous
+   * on Free and tracked separately from atlasSlotsLimit — saving other people's
+   * photos must never eat the free tier's creation budget, or the free plan
+   * loses the very thing that makes the community worth joining.
+   */
+  savedItemsLimit: number;
   /** Always false — ads were dropped; kept only so released clients still decode. */
   adsRequiredForCardGeneration: boolean;
 }
 
 export interface AtlasUsage {
+  /** CREATION usage: the user's own captured items. Drives the paywall. */
   atlasSlots: number;
   primaryAiThisMonth: number;
   precisionAiThisMonth: number;
+  /**
+   * CONSUMPTION usage: community items saved. Counted from atlas_saves, which
+   * is a different table from user_atlas_items — so this can never inflate
+   * atlasSlots (docs/COMMUNITY_ATLAS_PLAN.md §4.1).
+   */
+  savedItems: number;
 }
 
 export interface AtlasEntitlementSnapshot {
@@ -38,6 +53,7 @@ export interface AtlasEntitlementSnapshot {
   atlasSlotsLimit: number;
   primaryAiSoftLimitMonthly: number;
   precisionAiLimitMonthly: number;
+  savedItemsLimit: number;
   adsRequiredForCardGeneration: boolean;
   subscriptionExpiresAt: string | null;
   usage: AtlasUsage;
@@ -56,6 +72,7 @@ export function atlasLimitsForTier(tier: AtlasTier): AtlasLimits {
       atlasSlotsLimit: intEnv("ATLAS_PRO_SLOTS", 300),
       primaryAiSoftLimitMonthly: intEnv("ATLAS_PRO_PRIMARY_AI_MONTHLY", 500),
       precisionAiLimitMonthly: intEnv("ATLAS_PRO_PRECISION_MONTHLY", 30),
+      savedItemsLimit: intEnv("ATLAS_PRO_SAVED_ITEMS", 5000),
       adsRequiredForCardGeneration: false,
     };
   }
@@ -63,6 +80,10 @@ export function atlasLimitsForTier(tier: AtlasTier): AtlasLimits {
     atlasSlotsLimit: intEnv("ATLAS_FREE_SLOTS", 3),
     primaryAiSoftLimitMonthly: intEnv("ATLAS_FREE_PRIMARY_AI_MONTHLY", 30),
     precisionAiLimitMonthly: intEnv("ATLAS_FREE_PRECISION_MONTHLY", 0),
+    // Generous on purpose (see savedItemsLimit doc): the free tier's appeal is
+    // a growing library of other people's photos, so this is effectively a
+    // safety rail against abuse, not a monetisation lever.
+    savedItemsLimit: intEnv("ATLAS_FREE_SAVED_ITEMS", 1000),
     adsRequiredForCardGeneration: false,
   };
 }
@@ -98,9 +119,14 @@ export async function getAtlasTier(userId: string): Promise<AtlasTier> {
 
 export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
   const sql = getSql();
-  if (!sql) return { atlasSlots: 0, primaryAiThisMonth: 0, precisionAiThisMonth: 0 };
+  if (!sql) {
+    return { atlasSlots: 0, primaryAiThisMonth: 0, precisionAiThisMonth: 0, savedItems: 0 };
+  }
   try {
-    const [slots, primary, precision] = await Promise.all([
+    const [slots, primary, precision, saved] = await Promise.all([
+      // CREATION count. Reads user_atlas_items only — saved community items
+      // live in atlas_saves and must never appear here, or collecting other
+      // people's photos would consume the free tier's 3 creation slots.
       sql<{ count: number }[]>`
         SELECT count(*)::int AS count
         FROM user_atlas_items
@@ -120,15 +146,22 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
           AND operation = 'escalated'
           AND created_at >= date_trunc('month', now())
       `,
+      // CONSUMPTION count — separate table, separate limit.
+      sql<{ count: number }[]>`
+        SELECT count(*)::int AS count
+        FROM atlas_saves
+        WHERE user_id = ${userId}::uuid
+      `,
     ]);
     return {
       atlasSlots: slots[0]?.count ?? 0,
       primaryAiThisMonth: primary[0]?.count ?? 0,
       precisionAiThisMonth: precision[0]?.count ?? 0,
+      savedItems: saved[0]?.count ?? 0,
     };
   } catch (err) {
     console.warn("[entitlement] usage lookup failed", err);
-    return { atlasSlots: 0, primaryAiThisMonth: 0, precisionAiThisMonth: 0 };
+    return { atlasSlots: 0, primaryAiThisMonth: 0, precisionAiThisMonth: 0, savedItems: 0 };
   }
 }
 
@@ -140,6 +173,7 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
     atlasSlotsLimit: limits.atlasSlotsLimit,
     primaryAiSoftLimitMonthly: limits.primaryAiSoftLimitMonthly,
     precisionAiLimitMonthly: limits.precisionAiLimitMonthly,
+    savedItemsLimit: limits.savedItemsLimit,
     adsRequiredForCardGeneration: limits.adsRequiredForCardGeneration,
     subscriptionExpiresAt: row.tier === "pro" ? row.expiresAt : null,
     usage,
@@ -201,6 +235,27 @@ export interface AtlasCapacityGate {
 }
 
 /** Guard 自製圖鑑 capacity before creating a new item (confirm). */
+/**
+ * Gate for SAVING a community item. Separate from checkAtlasCapacity on
+ * purpose: this consults savedItemsLimit, never atlasSlotsLimit, so a Free user
+ * who has used all 3 creation slots can still save community content.
+ *
+ * This is an abuse rail, not a paywall — hitting it is not upgradeable and the
+ * message must not push Pro.
+ */
+export async function checkAtlasSaveCapacity(userId: string): Promise<AtlasCapacityGate> {
+  const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
+  const limits = atlasLimitsForTier(tier);
+  if (usage.savedItems < limits.savedItemsLimit) return { ok: true };
+  return {
+    ok: false,
+    upgradeable: false,
+    message: `收藏已達上限（${limits.savedItemsLimit}），移除一些後再收藏。`,
+    limit: limits.savedItemsLimit,
+    usage: usage.savedItems,
+  };
+}
+
 export async function checkAtlasCapacity(userId: string): Promise<AtlasCapacityGate> {
   const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
   const limits = atlasLimitsForTier(tier);

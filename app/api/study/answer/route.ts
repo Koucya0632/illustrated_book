@@ -5,7 +5,9 @@ import { getCardById, upsertReview } from "@/lib/cards-db";
 import {
   getAtlasDueCardById,
   getAtlasMastery,
+  getSavedCommunityCardById,
   insertAtlasStudyLog,
+  recordSavedCommunityReview,
   upsertAtlasMastery,
   upsertAtlasReview,
 } from "@/lib/atlas-db";
@@ -104,6 +106,68 @@ function answerResponse(next: ScheduleResult, masteryResult: ReturnType<typeof a
       level: masteryLevel(masteryResult.mastery),
     },
   });
+}
+
+/**
+ * Rating a saved community card (docs/COMMUNITY_ATLAS_PLAN.md). Its SRS state
+ * lives in atlas_saved_cards — deliberately not in the user's own item tables,
+ * so studying other people's content never touches their creation quota.
+ */
+async function answerSavedCommunityCard(
+  userId: string,
+  cardId: string,
+  rating: Rating,
+) {
+  if (invalidUuid(cardId)) {
+    return NextResponse.json({ error: "missing/invalid cardId or rating" }, { status: 400 });
+  }
+  const card = await getSavedCommunityCardById(userId, cardId);
+  if (!card) return NextResponse.json({ error: "card not found" }, { status: 404 });
+
+  const prevState: CardState = {
+    // DB CHECK constrains status to the same set as Status; the driver just
+    // types it as string.
+    status: card.status as CardState["status"],
+    intervalDays: Number(card.interval_days) || 0,
+  };
+  const next = schedule(prevState, rating, {
+    reviewCount: card.review_count,
+    mistakeCount: card.mistake_count,
+  });
+  const isMistake = rating === "重來";
+  const masteryResult = applyAnswer(card.mastery, null, rating);
+
+  await recordSavedCommunityReview(
+    userId,
+    cardId,
+    {
+      status: next.status,
+      intervalDays: next.intervalDays,
+      nextReviewAt: next.nextReviewAt,
+      rating,
+      mastery: masteryResult.mastery,
+    },
+    isMistake,
+  );
+
+  return NextResponse.json(
+    {
+      ok: true,
+      next: {
+        status: next.status,
+        intervalDays: next.intervalDays,
+        nextReviewAt: next.nextReviewAt.toISOString(),
+        humanized: humanizeInterval(next.intervalDays),
+      },
+      mastery: {
+        before: Math.round(masteryResult.previousDecayed),
+        after: Math.round(masteryResult.mastery),
+        delta: Math.round(masteryResult.delta),
+        level: masteryLevel(masteryResult.mastery),
+      },
+    },
+    { headers: { "Cache-Control": "private, no-store" } },
+  );
 }
 
 async function answerAtlasCard(
@@ -207,6 +271,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "missing/invalid cardId or rating" }, { status: 400 });
     }
     return answerAtlasCard(userId, rawCardId.slice("atlas:".length), rating, body);
+  }
+  if (typeof rawCardId === "string" && rawCardId.startsWith("saved:")) {
+    if (!VALID_RATINGS.includes(rating)) {
+      return NextResponse.json({ error: "missing/invalid cardId or rating" }, { status: 400 });
+    }
+    return answerSavedCommunityCard(userId, rawCardId.slice("saved:".length), rating);
   }
 
   const cardId = Number(rawCardId);

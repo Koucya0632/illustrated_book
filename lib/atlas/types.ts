@@ -269,3 +269,26 @@ export interface AtlasDueCard {
   image: AtlasImageRow;
   mastery: number;
 }
+
+// Community collections (合集): a user-authored, named grouping over their own
+// approved public items. See scripts/migrate.ts (atlas_collections).
+export type AtlasCollectionReviewStatus =
+  | "draft"
+  | "pending_review"
+  | "approved"
+  | "rejected"
+  | "takedown";
+
+export interface AtlasCollectionRow {
+  id: string;
+  owner_user_id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  target_language: AtlasTargetLanguage;
+  cover_public_item_id: string | null;
+  review_status: AtlasCollectionReviewStatus;
+  created_at: string;
+  updated_at: string;
+  published_at: string | null;
+}

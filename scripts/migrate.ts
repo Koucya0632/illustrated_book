@@ -1134,6 +1134,71 @@ const DDL = [
   `CREATE POLICY atlas_public_items_public_read ON atlas_public_items FOR SELECT
      USING (review_status = 'approved')`,
 
+  // Community collections (合集): a user-authored, named grouping over their OWN
+  // approved public items. Unlike atlas_public_items — which only ever holds
+  // approved/takedown rows because drafts live in user_atlas_items — a collection
+  // IS the authored entity, so it carries the full review lifecycle in this row.
+  // Cover is a chosen member item's already-public image (no separate upload), so
+  // publishing only needs a text gate on title/description.
+  `CREATE TABLE IF NOT EXISTS atlas_collections (
+     id                   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     owner_user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     slug                 TEXT NOT NULL UNIQUE,
+     title                TEXT NOT NULL,
+     description          TEXT,
+     target_language      TEXT NOT NULL CHECK (target_language IN ('en','ja')),
+     cover_public_item_id UUID REFERENCES atlas_public_items(id) ON DELETE SET NULL,
+     review_status        TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
+                            ('draft','pending_review','approved','rejected','takedown')),
+     created_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
+     published_at         TIMESTAMPTZ
+   )`,
+  // Browse hot path: approved collections for one learning language, newest first.
+  `CREATE INDEX IF NOT EXISTS atlas_collections_browse_idx
+     ON atlas_collections(target_language, published_at DESC)
+     WHERE review_status = 'approved'`,
+  `CREATE INDEX IF NOT EXISTS atlas_collections_owner_idx
+     ON atlas_collections(owner_user_id, updated_at DESC)`,
+
+  // Ordered membership. Members must be the owner's own approved public items
+  // sharing the collection's target_language — enforced at the API layer.
+  `CREATE TABLE IF NOT EXISTS atlas_collection_items (
+     collection_id  UUID NOT NULL REFERENCES atlas_collections(id) ON DELETE CASCADE,
+     public_item_id UUID NOT NULL REFERENCES atlas_public_items(id) ON DELETE CASCADE,
+     position       INT NOT NULL DEFAULT 0,
+     created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (collection_id, public_item_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_collection_items_order_idx
+     ON atlas_collection_items(collection_id, position)`,
+
+  // Machine-gate audit for collection submissions. Text-only (title + description),
+  // mirroring atlas_moderation_events for items.
+  `CREATE TABLE IF NOT EXISTS atlas_collection_moderation_events (
+     id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     collection_id UUID NOT NULL REFERENCES atlas_collections(id) ON DELETE CASCADE,
+     phase         TEXT NOT NULL CHECK (phase IN ('auto','report','heat','admin')),
+     verdict       TEXT NOT NULL CHECK (verdict IN ('approved','flagged','rejected','takedown','cleared')),
+     categories    JSONB NOT NULL DEFAULT '[]'::jsonb,
+     scores        JSONB NOT NULL DEFAULT '{}'::jsonb,
+     actor         TEXT,
+     created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_collection_moderation_events_idx
+     ON atlas_collection_moderation_events(collection_id, created_at DESC)`,
+
+  // RLS mirrors atlas_public_items: owner-owns-their-rows + public read of
+  // approved. The membership/audit tables are server-only (service-role reads),
+  // matching atlas_saves / atlas_saved_cards which likewise carry no RLS.
+  `ALTER TABLE atlas_collections ENABLE ROW LEVEL SECURITY`,
+  `DROP POLICY IF EXISTS atlas_collections_owner ON atlas_collections`,
+  `CREATE POLICY atlas_collections_owner ON atlas_collections FOR ALL
+     USING (auth.uid() = owner_user_id) WITH CHECK (auth.uid() = owner_user_id)`,
+  `DROP POLICY IF EXISTS atlas_collections_public_read ON atlas_collections`,
+  `CREATE POLICY atlas_collections_public_read ON atlas_collections FOR SELECT
+     USING (review_status = 'approved')`,
+
   // =====================================================================
   // Schema v3+ — multi-language overlays.
   // `category_translations`: per-language names overlaid on top of

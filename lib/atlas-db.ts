@@ -1,4 +1,5 @@
 import "server-only";
+import { randomUUID } from "node:crypto";
 import { getSql } from "./db";
 import type { Rating, Status } from "./srs";
 import type {
@@ -6,6 +7,8 @@ import type {
   AtlasCandidateRow,
   AtlasCardRow,
   AtlasCardStateRow,
+  AtlasCollectionReviewStatus,
+  AtlasCollectionRow,
   AtlasDeckKey,
   AtlasDueCard,
   AtlasEnrichment,
@@ -2291,4 +2294,359 @@ export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
       calls: r.calls,
     })),
   };
+}
+
+// =====================================================================
+// Community collections (合集) — a user-authored, named grouping over the
+// author's OWN approved public items (scripts/migrate.ts atlas_collections).
+// Cover = a chosen member item's already-public image, so publishing only needs
+// a text gate on title/description (lib/atlas/collection-submit-pipeline.ts).
+// =====================================================================
+
+/** Browse-card projection. Counts are ::int so Postgres NUMERIC never serialises
+ *  as a JSON string and breaks the iOS Int decode. */
+export interface AtlasPublicCollectionCardRow {
+  id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  target_language: AtlasTargetLanguage;
+  author_username: string;
+  author_nickname: string | null;
+  author_avatar: string | null;
+  item_count: number;
+  save_count: number;
+  cover_image_path: string | null;
+  published_at: string | null;
+}
+
+export interface AtlasMyCollectionRow extends AtlasCollectionRow {
+  item_count: number;
+  cover_image_path: string | null;
+}
+
+export interface AtlasPublicCollectionDetail {
+  collection: AtlasPublicCollectionCardRow;
+  items: AtlasPublicItemRow[];
+}
+
+/** Card projection + member items, ordered by position (approved members only). */
+const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
+  c.id, c.slug, c.title, c.description, c.target_language, c.published_at,
+  pr.username AS author_username,
+  pr.nickname AS author_nickname,
+  pr.avatar   AS author_avatar,
+  (SELECT count(*)::int FROM atlas_collection_items ci
+    WHERE ci.collection_id = c.id) AS item_count,
+  (SELECT count(*)::int FROM atlas_collection_items ci
+    JOIN atlas_saves s ON s.public_item_id = ci.public_item_id
+    WHERE ci.collection_id = c.id) AS save_count,
+  COALESCE(
+    cover.image_public_path,
+    (SELECT pi.image_public_path FROM atlas_collection_items ci
+       JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+      WHERE ci.collection_id = c.id ORDER BY ci.position ASC LIMIT 1)
+  ) AS cover_image_path
+`;
+
+// MARK: - Collections: author-side CRUD
+
+/** Create a draft collection. Slug = slug(title)-<8 hex>, unique per collection. */
+export async function createAtlasCollection(input: {
+  ownerUserId: string;
+  title: string;
+  description: string | null;
+  targetLanguage: AtlasTargetLanguage;
+}): Promise<AtlasCollectionRow> {
+  const sql = requireSql();
+  const slug = `${slugifyAtlas(input.title)}-${randomUUID().slice(0, 8)}`;
+  const rows = await sql<AtlasCollectionRow[]>`
+    INSERT INTO atlas_collections
+      (owner_user_id, slug, title, description, target_language, review_status)
+    VALUES (
+      ${input.ownerUserId}::uuid, ${slug}, ${input.title},
+      ${input.description}, ${input.targetLanguage}, 'draft'
+    )
+    RETURNING *
+  `;
+  return rows[0];
+}
+
+/** Owner-gated edit. target_language is fixed at creation to preserve the
+ *  member-language invariant, so it is intentionally not updatable here. */
+export async function updateAtlasCollection(input: {
+  id: string;
+  ownerUserId: string;
+  title: string;
+  description: string | null;
+  coverPublicItemId: string | null;
+}): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET title = ${input.title},
+        description = ${input.description},
+        cover_public_item_id = ${input.coverPublicItemId}::uuid,
+        updated_at = now()
+    WHERE id = ${input.id}::uuid
+      AND owner_user_id = ${input.ownerUserId}::uuid
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export async function deleteAtlasCollection(id: string, ownerUserId: string): Promise<boolean> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string }[]>`
+    DELETE FROM atlas_collections
+    WHERE id = ${id}::uuid AND owner_user_id = ${ownerUserId}::uuid
+    RETURNING id
+  `;
+  return rows.length > 0;
+}
+
+/** Add a member. Guarded insert: the collection must belong to the user AND the
+ *  public item must be the user's own approved item in the collection's language. */
+export async function addAtlasCollectionItem(input: {
+  collectionId: string;
+  ownerUserId: string;
+  publicItemId: string;
+}): Promise<boolean> {
+  const sql = requireSql();
+  const rows = await sql<{ collection_id: string }[]>`
+    INSERT INTO atlas_collection_items (collection_id, public_item_id, position)
+    SELECT c.id, pi.id,
+           COALESCE((SELECT max(position) + 1 FROM atlas_collection_items
+                     WHERE collection_id = c.id), 0)
+    FROM atlas_collections c
+    JOIN atlas_public_items pi
+      ON pi.id = ${input.publicItemId}::uuid
+     AND pi.owner_user_id = c.owner_user_id
+     AND pi.review_status = 'approved'
+     AND pi.target_language = c.target_language
+    WHERE c.id = ${input.collectionId}::uuid
+      AND c.owner_user_id = ${input.ownerUserId}::uuid
+      AND c.review_status <> 'takedown'
+    ON CONFLICT (collection_id, public_item_id) DO NOTHING
+    RETURNING collection_id
+  `;
+  return rows.length > 0;
+}
+
+export async function removeAtlasCollectionItem(input: {
+  collectionId: string;
+  ownerUserId: string;
+  publicItemId: string;
+}): Promise<boolean> {
+  const sql = requireSql();
+  const rows = await sql<{ public_item_id: string }[]>`
+    DELETE FROM atlas_collection_items ci
+    USING atlas_collections c
+    WHERE ci.collection_id = c.id
+      AND c.id = ${input.collectionId}::uuid
+      AND c.owner_user_id = ${input.ownerUserId}::uuid
+      AND ci.public_item_id = ${input.publicItemId}::uuid
+    RETURNING ci.public_item_id
+  `;
+  return rows.length > 0;
+}
+
+/** The author's own collections (all statuses), newest-updated first. */
+export async function listMyAtlasCollections(ownerUserId: string): Promise<AtlasMyCollectionRow[]> {
+  const sql = requireSql();
+  return sql<AtlasMyCollectionRow[]>`
+    SELECT c.*,
+      (SELECT count(*)::int FROM atlas_collection_items ci WHERE ci.collection_id = c.id) AS item_count,
+      COALESCE(
+        cover.image_public_path,
+        (SELECT pi.image_public_path FROM atlas_collection_items ci
+           JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+          WHERE ci.collection_id = c.id ORDER BY ci.position ASC LIMIT 1)
+      ) AS cover_image_path
+    FROM atlas_collections c
+    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+    WHERE c.owner_user_id = ${ownerUserId}::uuid
+    ORDER BY c.updated_at DESC
+  `;
+}
+
+/** The owner's approved public items in one language — the pool a collection
+ *  can draw members from (the authoring picker). Fresh (no cache) so a
+ *  just-approved item is immediately addable. */
+export async function listUserApprovedPublicItems(
+  ownerUserId: string,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 200,
+): Promise<AtlasPublicItemRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicItemRow[]>`
+    SELECT * FROM atlas_public_items
+    WHERE owner_user_id = ${ownerUserId}::uuid
+      AND review_status = 'approved'
+      AND target_language = ${targetLanguage}
+    ORDER BY published_at DESC
+    LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/** Owner-scoped fetch with members, for the edit screen. */
+export async function getOwnedAtlasCollection(
+  id: string,
+  ownerUserId: string,
+): Promise<{ collection: AtlasCollectionRow; items: AtlasPublicItemRow[] } | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    SELECT * FROM atlas_collections
+    WHERE id = ${id}::uuid AND owner_user_id = ${ownerUserId}::uuid
+    LIMIT 1
+  `;
+  const collection = rows[0];
+  if (!collection) return null;
+  const items = await sql<AtlasPublicItemRow[]>`
+    SELECT pi.* FROM atlas_collection_items ci
+    JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+    WHERE ci.collection_id = ${id}::uuid
+    ORDER BY ci.position ASC, pi.published_at DESC
+  `;
+  return { collection, items };
+}
+
+// MARK: - Collections: public reads (CDN-cached routes)
+
+export async function listPublicAtlasCollections(
+  targetLanguage: AtlasTargetLanguage,
+  limit = 60,
+): Promise<AtlasPublicCollectionCardRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicCollectionCardRow[]>`
+    SELECT ${collectionCardSelect(sql)}
+    FROM atlas_collections c
+    JOIN profiles pr ON pr.id = c.owner_user_id
+    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+    WHERE c.target_language = ${targetLanguage}
+      AND c.review_status = 'approved'
+    ORDER BY c.published_at DESC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export async function getPublicAtlasCollection(
+  slug: string,
+): Promise<AtlasPublicCollectionDetail | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasPublicCollectionCardRow[]>`
+    SELECT ${collectionCardSelect(sql)}
+    FROM atlas_collections c
+    JOIN profiles pr ON pr.id = c.owner_user_id
+    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+    WHERE c.slug = ${slug} AND c.review_status = 'approved'
+    LIMIT 1
+  `;
+  const collection = rows[0];
+  if (!collection) return null;
+  const items = await sql<AtlasPublicItemRow[]>`
+    SELECT pi.* FROM atlas_collection_items ci
+    JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+    WHERE ci.collection_id = ${collection.id}::uuid
+      AND pi.review_status = 'approved'
+    ORDER BY ci.position ASC, pi.published_at DESC
+  `;
+  return { collection, items };
+}
+
+// MARK: - Collections: admin review + moderation
+
+export async function listAtlasCollectionReviewItems(
+  status: AtlasCollectionReviewStatus | "" = "pending_review",
+  limit = 120,
+): Promise<
+  (AtlasCollectionRow & {
+    author_username: string | null;
+    item_count: number;
+    cover_image_path: string | null;
+  })[]
+> {
+  const sql = requireSql();
+  return sql`
+    SELECT c.*,
+      pr.username AS author_username,
+      (SELECT count(*)::int FROM atlas_collection_items ci WHERE ci.collection_id = c.id) AS item_count,
+      COALESCE(
+        cover.image_public_path,
+        (SELECT pi.image_public_path FROM atlas_collection_items ci
+           JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+          WHERE ci.collection_id = c.id ORDER BY ci.position ASC LIMIT 1)
+      ) AS cover_image_path
+    FROM atlas_collections c
+    LEFT JOIN profiles pr ON pr.id = c.owner_user_id
+    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+    WHERE (${status} = '' OR c.review_status = ${status})
+      AND c.review_status <> 'draft'
+    ORDER BY CASE c.review_status WHEN 'pending_review' THEN 0 ELSE 1 END, c.updated_at DESC
+    LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export async function setAtlasCollectionReviewStatus(
+  id: string,
+  status: AtlasCollectionReviewStatus,
+): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET review_status = ${status}, updated_at = now()
+    WHERE id = ${id}::uuid
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export async function approveAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET review_status = 'approved',
+        published_at = COALESCE(published_at, now()),
+        updated_at = now()
+    WHERE id = ${id}::uuid
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export function rejectAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {
+  return setAtlasCollectionReviewStatus(id, "rejected");
+}
+
+export function takedownAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {
+  return setAtlasCollectionReviewStatus(id, "takedown");
+}
+
+/** Audit trail for collection moderation (categories/scores only — no free text). */
+export async function recordAtlasCollectionModerationEvent(input: {
+  collectionId: string;
+  phase: AtlasModerationPhase;
+  verdict: AtlasModerationVerdict;
+  categories: string[];
+  scores: Record<string, number>;
+  actor?: string | null;
+}): Promise<void> {
+  const sql = getSql();
+  if (!sql) return;
+  try {
+    await sql`
+      INSERT INTO atlas_collection_moderation_events
+        (collection_id, phase, verdict, categories, scores, actor)
+      VALUES (
+        ${input.collectionId}::uuid,
+        ${input.phase},
+        ${input.verdict},
+        ${JSON.stringify(input.categories)}::jsonb,
+        ${JSON.stringify(input.scores)}::jsonb,
+        ${input.actor ?? null}
+      )
+    `;
+  } catch {
+    // Audit logging must never break the submission path.
+  }
 }

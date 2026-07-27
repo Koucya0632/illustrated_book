@@ -66,6 +66,9 @@ export default async function AdminAtlasPage({
           <Link href="/admin/atlas/funnel" className="text-sm font-semibold text-sky-accent hover:underline">
             數據
           </Link>
+          <Link href="/admin/atlas/collections" className="text-sm font-semibold text-sky-accent hover:underline">
+            合集審核
+          </Link>
           <Link href="/admin/atlas/reports" className="text-sm font-semibold text-sky-accent hover:underline">
             檢舉列表
           </Link>

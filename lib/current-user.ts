@@ -22,6 +22,8 @@ export interface CurrentUser {
   avatar: AvatarPose;
   email: string;
   createdAt: string;
+  /** Has the user accepted a public author identity? Gates every publish. */
+  publicAuthorConfirmed: boolean;
 }
 
 function toCurrent(p: ProfileRow): CurrentUser {
@@ -32,6 +34,7 @@ function toCurrent(p: ProfileRow): CurrentUser {
     avatar: isAvatarPose(p.avatar) ? p.avatar : DEFAULT_AVATAR,
     email: p.email,
     createdAt: p.created_at,
+    publicAuthorConfirmed: p.public_author_confirmed_at !== null,
   };
 }
 

@@ -66,8 +66,22 @@ const DDL = [
   // and selectable mascot-pose avatar.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS nickname TEXT`,
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar   TEXT NOT NULL DEFAULT 'face'`,
+  // Consent gate for the community atlas. NULL = this user has never agreed to
+  // show an identity publicly, so no public endpoint may name them and no
+  // publish may proceed. Stamped by the one-time 公開作者身分 screen.
+  //
+  // Why a gate at all: `username` and `nickname` were built as *private* fields
+  // (a login handle and an in-app greeting), and `nickname` is seeded silently
+  // from the Apple Sign-In full name. Publishing either without asking would
+  // leak a real name or an email prefix the user never offered to the world.
+  `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_author_confirmed_at TIMESTAMPTZ`,
 
   // Auto-create a profile when a Supabase auth user signs up.
+  //
+  // The fallback handle is deliberately random rather than the email local
+  // part: this column is the public handle once a user opts into publishing,
+  // and `split_part(email,'@',1)` made every account's handle a piece of their
+  // email address by default.
   `CREATE OR REPLACE FUNCTION public.handle_new_user()
    RETURNS TRIGGER
    LANGUAGE plpgsql
@@ -76,7 +90,7 @@ const DDL = [
    DECLARE
      base TEXT := COALESCE(
        NEW.raw_user_meta_data->>'username',
-       split_part(NEW.email, '@', 1)
+       'tuji-' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12)
      );
      candidate TEXT := regexp_replace(lower(base), '[^a-z0-9_.-]', '', 'g');
      i INT := 0;
@@ -91,6 +105,21 @@ const DDL = [
      RETURN NEW;
    END;
    $$`,
+  // One-shot backfill for accounts created before the change above. Only
+  // touches handles that are STILL the email local part and were never chosen
+  // by the user (email signup passes an explicit username in user metadata;
+  // Apple/Google signups do not). Self-limiting: once rewritten the row no
+  // longer matches, so re-running the migration is a no-op.
+  //
+  // Nothing has ever been published, so no public URL or attribution breaks.
+  `UPDATE profiles p
+     SET username = 'tuji-' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12)
+     FROM auth.users u
+    WHERE u.id = p.id
+      AND p.public_author_confirmed_at IS NULL
+      AND u.raw_user_meta_data->>'username' IS NULL
+      AND u.email IS NOT NULL
+      AND lower(p.username) = regexp_replace(lower(split_part(u.email, '@', 1)), '[^a-z0-9_.-]', '', 'g')`,
   `DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users`,
   `CREATE TRIGGER on_auth_user_created
      AFTER INSERT ON auth.users

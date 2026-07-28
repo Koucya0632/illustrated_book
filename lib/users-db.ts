@@ -18,6 +18,8 @@ export interface ProfileRow {
   avatar: string;          // mascot pose name
   email: string;       // pulled from auth.users (joined)
   created_at: string;
+  /** NULL until the user accepts a public author identity. Gates every publish. */
+  public_author_confirmed_at: string | null;
 }
 
 function requireSql() {
@@ -93,13 +95,81 @@ export async function saveSettings(userId: string, s: UserSettings): Promise<voi
 export async function getProfile(userId: string): Promise<ProfileRow | null> {
   const sql = requireSql();
   const rows = await sql<ProfileRow[]>`
-    SELECT p.id, p.username, p.nickname, p.avatar, u.email, p.created_at
+    SELECT p.id, p.username, p.nickname, p.avatar, u.email, p.created_at,
+           p.public_author_confirmed_at
     FROM profiles p
     JOIN auth.users u ON u.id = p.id
     WHERE p.id = ${userId}::uuid
     LIMIT 1
   `;
   return rows[0] ?? null;
+}
+
+// ---- public author identity (community atlas consent) ----
+//
+// The handle rules and the public projection live in lib/public-author.ts so
+// they stay pure and testable; this module only persists them.
+
+/**
+ * True once the user has agreed to appear publicly as an author.
+ *
+ * Every publish path checks this: `username` and `nickname` exist for private
+ * reasons (a login handle, an in-app greeting seeded from the Apple full name),
+ * so publishing before the user has seen and accepted what will be shown would
+ * put a real name or an email prefix on the community wall without asking.
+ */
+export async function hasConfirmedPublicAuthor(userId: string): Promise<boolean> {
+  const sql = requireSql();
+  const rows = await sql<{ confirmed: boolean }[]>`
+    SELECT (public_author_confirmed_at IS NOT NULL) AS confirmed
+    FROM profiles
+    WHERE id = ${userId}::uuid
+    LIMIT 1
+  `;
+  return rows[0]?.confirmed ?? false;
+}
+
+/**
+ * Write the public author identity and stamp the consent.
+ *
+ * Handle uniqueness is enforced by the `profiles.username` UNIQUE index; a
+ * collision surfaces as `taken` rather than an exception so the caller can put
+ * the message in front of the user. Re-confirming keeps the original timestamp
+ * — consent is not re-granted by editing a display name.
+ */
+export async function setPublicAuthorIdentity(
+  userId: string,
+  fields: { handle: string; displayName: string; avatar?: string },
+): Promise<{ ok: true } | { ok: false; reason: "taken" }> {
+  const sql = requireSql();
+  const handle = fields.handle.trim();
+  const displayName = fields.displayName.trim();
+  const taken = await sql<{ id: string }[]>`
+    SELECT id FROM profiles
+    WHERE lower(username) = lower(${handle}) AND id <> ${userId}::uuid
+    LIMIT 1
+  `;
+  if (taken.length > 0) return { ok: false, reason: "taken" };
+
+  if (fields.avatar !== undefined) {
+    await sql`
+      UPDATE profiles
+      SET username = ${handle},
+          nickname = ${displayName},
+          avatar = ${fields.avatar},
+          public_author_confirmed_at = COALESCE(public_author_confirmed_at, now())
+      WHERE id = ${userId}::uuid
+    `;
+  } else {
+    await sql`
+      UPDATE profiles
+      SET username = ${handle},
+          nickname = ${displayName},
+          public_author_confirmed_at = COALESCE(public_author_confirmed_at, now())
+      WHERE id = ${userId}::uuid
+    `;
+  }
+  return { ok: true };
 }
 
 // Update the editable profile fields (display name + avatar). nickname is

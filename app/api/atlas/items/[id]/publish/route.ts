@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { isAtlasAuthorBlocked, submitAtlasItemForReview } from "@/lib/atlas-db";
+import { hasConfirmedPublicAuthor } from "@/lib/users-db";
 import { processAtlasSubmission } from "@/lib/atlas/submit-pipeline";
 
 export const runtime = "nodejs";
@@ -24,6 +25,15 @@ export async function POST(
     return NextResponse.json(
       { error: "publishing_restricted", message: "你的帳號目前無法公開內容。" },
       { status: 403, headers: { "Cache-Control": "private, no-store" } },
+    );
+  }
+
+  // Consent gate: publishing names the author, so it may not run before the
+  // user has accepted a public identity (the one-time 公開作者身分 screen).
+  if (!(await hasConfirmedPublicAuthor(userId))) {
+    return NextResponse.json(
+      { error: "author_identity_required", message: "請先設定你的公開作者身分。" },
+      { status: 409, headers: { "Cache-Control": "private, no-store" } },
     );
   }
 

@@ -6,7 +6,7 @@
 
 import { NextResponse } from "next/server";
 import { getAtlasAuthor, listAtlasAuthorItems } from "@/lib/atlas-db";
-import { atlasPublicImageUrl } from "@/lib/atlas/storage";
+import { serializeAtlasPublicItem } from "@/lib/atlas/public-serialize";
 
 export const runtime = "nodejs";
 
@@ -29,25 +29,18 @@ export async function GET(
 
   return NextResponse.json(
     {
+      // No fallback to the handle: a profile that reached this route has a
+      // confirmed identity, so the display name is set. Falling back would put
+      // the handle — historically an email local part — on screen as a name.
       author: {
-        username: author.username,
-        displayName: author.nickname?.trim() || author.username,
+        handle: author.username,
+        displayName: author.nickname?.trim() ?? "",
         avatar: author.avatar,
         joinedAt: author.joined_at,
         publishedCount: author.published_count,
         saveCount: author.save_count,
       },
-      items: rows.map((row) => ({
-        id: row.id,
-        slug: row.public_slug,
-        lemma: row.lemma,
-        displayZhHant: row.display_zh_hant,
-        targetLanguage: row.target_language,
-        category: row.category,
-        imageUrl: atlasPublicImageUrl(row.image_public_path),
-        attributionName: row.attribution_name,
-        publishedAt: row.published_at,
-      })),
+      items: rows.map(serializeAtlasPublicItem),
     },
     {
       headers: {

@@ -49,10 +49,7 @@ function toScores(hits: AtlasModerationHit[]): Record<string, number> {
  * (fail-closed), because the alternative — publishing unscreened content — is
  * irreversible once seen.
  */
-export async function processAtlasSubmission(
-  item: AtlasItemRow,
-  attributionName: string | null = null,
-): Promise<AtlasSubmitOutcome> {
+export async function processAtlasSubmission(item: AtlasItemRow): Promise<AtlasSubmitOutcome> {
   let hits: AtlasModerationHit[] = [];
   let degraded = false;
   let thumbPath: string | null = null;
@@ -73,14 +70,10 @@ export async function processAtlasSubmission(
   }
 
   // Text fields ride along with the image; a clean photo with a spam caption
-  // still needs a human.
+  // still needs a human. The author's name is not among them: it is screened
+  // once at the 公開作者身分 step, not per submission.
   hits = hits.concat(
-    runAtlasTextModeration([
-      item.lemma,
-      item.display_zh_hant,
-      item.note_zh_hant,
-      attributionName,
-    ]),
+    runAtlasTextModeration([item.lemma, item.display_zh_hant, item.note_zh_hant]),
   );
 
   const decision = decideAtlasModeration(hits, { degraded });
@@ -112,7 +105,6 @@ export async function processAtlasSubmission(
     await approveAtlasPublicItem({
       itemId: item.id,
       imagePublicPath: published.path,
-      attributionName,
     });
     return { reviewStatus: "approved", published: true, categories };
   } catch {

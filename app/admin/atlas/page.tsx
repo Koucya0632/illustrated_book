@@ -144,11 +144,7 @@ export default async function AdminAtlasPage({
                     查看公開頁
                   </Link>
                 )}
-                <AtlasReviewActions
-                  id={item.id}
-                  reviewStatus={item.review_status}
-                  initialAttributionName={item.username ?? ""}
-                />
+                <AtlasReviewActions id={item.id} reviewStatus={item.review_status} />
               </div>
             </div>
           </article>

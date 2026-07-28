@@ -6,7 +6,7 @@
 
 import { NextResponse } from "next/server";
 import { listAtlasPublicItemsByLemma } from "@/lib/atlas-db";
-import { atlasPublicImageUrl } from "@/lib/atlas/storage";
+import { serializeAtlasPublicItem } from "@/lib/atlas/public-serialize";
 import { parseAtlasByLemmaQuery } from "@/lib/atlas/public-query";
 
 export const runtime = "nodejs";
@@ -26,17 +26,7 @@ export async function GET(req: Request) {
     {
       lemma,
       targetLanguage: lang,
-      items: rows.map((row) => ({
-        id: row.id,
-        slug: row.public_slug,
-        lemma: row.lemma,
-        displayZhHant: row.display_zh_hant,
-        targetLanguage: row.target_language,
-        category: row.category,
-        imageUrl: atlasPublicImageUrl(row.image_public_path),
-        attributionName: row.attribution_name,
-        publishedAt: row.published_at,
-      })),
+      items: rows.map(serializeAtlasPublicItem),
     },
     {
       headers: {

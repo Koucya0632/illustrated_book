@@ -1,4 +1,5 @@
 import type { Rating, Status } from "@/lib/srs";
+import type { PublicAuthorColumns } from "@/lib/public-author";
 
 export type AtlasTargetLanguage = "en" | "ja";
 export type AtlasImageStatus =
@@ -237,11 +238,24 @@ export interface AtlasPublicItemRow {
   target_language: AtlasTargetLanguage;
   category: string | null;
   image_public_path: string | null;
+  /**
+   * @deprecated Dead column. Author identity is resolved by joining `profiles`
+   * (see AtlasPublicItemAuthorColumns) so a rename updates every past item at
+   * once; a snapshot would split one author into several names. Kept only
+   * because dropping a column is not worth a migration on unshipped data.
+   */
   attribution_name: string | null;
   review_status: "approved" | "takedown";
   published_at: string;
   updated_at: string;
 }
+
+/**
+ * A public item carrying its author — the only shape the public API
+ * serializes. `owner_user_id` was always the real link; the joined columns are
+ * what `publicAuthor()` is allowed to show, and only once the user confirmed.
+ */
+export type AtlasPublicItemWithAuthorRow = AtlasPublicItemRow & PublicAuthorColumns;
 
 export interface AtlasImageWithUrls {
   id: string;

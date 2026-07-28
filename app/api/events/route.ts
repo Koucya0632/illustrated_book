@@ -14,7 +14,8 @@ const VALID_TYPES = new Set([
   // community 圖鑑 funnel (docs/COMMUNITY_ATLAS_PLAN.md §6). These exist to
   // answer one question: do publishers convert to Pro better than
   // non-publishers? Counts only — no ids, no text, no image URLs.
-  "atlas_publish_submitted", "atlas_public_item_viewed", "atlas_public_saved",
+  "atlas_publish_submitted", "atlas_publish_withdrawn",
+  "atlas_public_item_viewed", "atlas_public_saved",
   "author_profile_viewed",
 ]);
 const VALID_PLATFORMS = new Set(["web", "ios"]);

@@ -31,7 +31,10 @@ export type AtlasReviewStatus =
   | "pending_review"
   | "approved"
   | "rejected"
-  | "takedown";
+  /** Moderation removed it. Final — the item may not be submitted again. */
+  | "takedown"
+  /** The author took it down. Reversible — they may publish it again. */
+  | "withdrawn";
 
 /** Which stage produced a moderation event (atlas_moderation_events.phase). */
 export type AtlasModerationPhase = "auto" | "report" | "heat" | "admin";
@@ -245,7 +248,7 @@ export interface AtlasPublicItemRow {
    * because dropping a column is not worth a migration on unshipped data.
    */
   attribution_name: string | null;
-  review_status: "approved" | "takedown";
+  review_status: "approved" | "takedown" | "withdrawn";
   published_at: string;
   updated_at: string;
 }

@@ -1326,6 +1326,12 @@ export async function submitAtlasItemForReview(
     WHERE user_id = ${userId}::uuid
       AND id = ${itemId}::uuid
       AND deleted_at IS NULL
+      -- A moderation takedown is not re-submittable. The client already hides
+      -- the button, but the client is not the enforcement point: without this
+      -- guard, POSTing to the publish route walks removed content straight
+      -- back into the machine gate. 'withdrawn' is deliberately absent —
+      -- taking your own item down and putting it back is the whole point.
+      AND review_status <> 'takedown'
     RETURNING *
   `;
   return rows[0] ?? null;
@@ -1624,6 +1630,66 @@ export async function rejectAtlasReviewItem(itemId: string): Promise<AtlasItemRo
     RETURNING *
   `;
   return rows[0] ?? null;
+}
+
+/**
+ * The author taking their own item off the wall.
+ *
+ * Deliberately NOT `takedown`, which means "moderation removed this" and is
+ * final (`canSubmit` refuses it). Withdrawal is reversible: the item goes back
+ * to a state it can be submitted from, and nothing about it is recorded
+ * against the author — an author who is scared to withdraw publishes less.
+ *
+ * Savers keep their rows in atlas_saved_cards (every study read filters on
+ * `approved`, so the card simply stops being scheduled). Deleting the item
+ * instead would cascade those rows away and destroy other people's review
+ * progress — which today is the only way to un-publish anything.
+ *
+ * Returns the public image path to unlink from the public bucket, or null when
+ * there was nothing published. Ownership is enforced here, not by the caller.
+ */
+export async function withdrawAtlasPublicItem(
+  userId: string,
+  itemId: string,
+): Promise<{ ok: boolean; publicPath: string | null }> {
+  const sql = requireSql();
+  const owned = await sql<{ id: string }[]>`
+    SELECT id FROM user_atlas_items
+    WHERE id = ${itemId}::uuid
+      AND user_id = ${userId}::uuid
+      AND deleted_at IS NULL
+      AND review_status <> 'takedown'
+    LIMIT 1
+  `;
+  if (owned.length === 0) return { ok: false, publicPath: null };
+
+  return sql.begin(async (tx) => {
+    // Read the path BEFORE the update: RETURNING would hand back the new
+    // (null) value, and then nothing would ever unlink the public object.
+    const [publicRow] = await tx<{ image_public_path: string | null }[]>`
+      SELECT image_public_path FROM atlas_public_items
+      WHERE source_item_id = ${itemId}::uuid
+        AND owner_user_id = ${userId}::uuid
+      LIMIT 1
+    `;
+    await tx`
+      UPDATE atlas_public_items
+      SET review_status = 'withdrawn',
+          image_public_path = NULL,
+          updated_at = now()
+      WHERE source_item_id = ${itemId}::uuid
+        AND owner_user_id = ${userId}::uuid
+    `;
+    await tx`
+      UPDATE user_atlas_items
+      SET review_status = 'withdrawn',
+          visibility = 'private',
+          updated_at = now()
+      WHERE id = ${itemId}::uuid
+        AND user_id = ${userId}::uuid
+    `;
+    return { ok: true, publicPath: publicRow?.image_public_path ?? null };
+  });
 }
 
 export async function takedownAtlasPublicItem(itemId: string): Promise<void> {

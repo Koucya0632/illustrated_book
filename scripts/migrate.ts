@@ -786,9 +786,12 @@ const DDL = [
      -- (docs/COMMUNITY_ATLAS_PLAN.md §5) splits it into pending_auto (waiting
      -- on the classifiers) and pending_review (classifier flagged → human).
      -- Legacy value kept so in-flight rows stay valid.
+     -- 'withdrawn' is the author taking their own item down; 'takedown' is
+     -- moderation removing it. Same visible effect, opposite meaning: only
+     -- 'withdrawn' may be published again.
      review_status         TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
                            ('draft','pending','pending_auto','pending_review',
-                            'approved','rejected','takedown')),
+                            'approved','rejected','takedown','withdrawn')),
      published_at          TIMESTAMPTZ,
      public_slug           TEXT,
      share_image_path      TEXT,
@@ -826,18 +829,25 @@ const DDL = [
   // pending_auto / pending_review. CREATE TABLE IF NOT EXISTS never alters it,
   // so swap the auto-named constraint for an explicitly named one. Guarded so
   // re-runs are no-ops.
+  //
+  // Guarded on the constraint's DEFINITION rather than its name, because the
+  // name already exists on databases migrated before 'withdrawn' — a
+  // name-only guard would silently skip them.
   `DO $$ BEGIN
      IF NOT EXISTS (
        SELECT 1 FROM pg_constraint
        WHERE conname = 'user_atlas_items_review_status_chk'
+         AND pg_get_constraintdef(oid) LIKE '%withdrawn%'
      ) THEN
        ALTER TABLE user_atlas_items
          DROP CONSTRAINT IF EXISTS user_atlas_items_review_status_check;
        ALTER TABLE user_atlas_items
+         DROP CONSTRAINT IF EXISTS user_atlas_items_review_status_chk;
+       ALTER TABLE user_atlas_items
          ADD CONSTRAINT user_atlas_items_review_status_chk
          CHECK (review_status IN
            ('draft','pending','pending_auto','pending_review',
-            'approved','rejected','takedown'));
+            'approved','rejected','takedown','withdrawn'));
      END IF;
    END $$`,
   // Machine + human moderation audit trail. Used to tune thresholds and to
@@ -1032,10 +1042,30 @@ const DDL = [
      category          TEXT,
      image_public_path TEXT,
      attribution_name  TEXT,
-     review_status     TEXT NOT NULL CHECK (review_status IN ('approved','takedown')),
+     -- 'withdrawn' = the author took it down themselves and may republish;
+     -- 'takedown' = moderation removed it and they may not.
+     review_status     TEXT NOT NULL CHECK (review_status IN ('approved','takedown','withdrawn')),
      published_at      TIMESTAMPTZ NOT NULL,
      updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
+  // Existing databases carry the auto-named inline CHECK from CREATE TABLE,
+  // which predates 'withdrawn'. Guarded on the definition so re-runs are
+  // no-ops (same pattern as user_atlas_items above).
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'atlas_public_items_review_status_chk'
+         AND pg_get_constraintdef(oid) LIKE '%withdrawn%'
+     ) THEN
+       ALTER TABLE atlas_public_items
+         DROP CONSTRAINT IF EXISTS atlas_public_items_review_status_check;
+       ALTER TABLE atlas_public_items
+         DROP CONSTRAINT IF EXISTS atlas_public_items_review_status_chk;
+       ALTER TABLE atlas_public_items
+         ADD CONSTRAINT atlas_public_items_review_status_chk
+         CHECK (review_status IN ('approved','takedown','withdrawn'));
+     END IF;
+   END $$`,
   `CREATE INDEX IF NOT EXISTS atlas_public_items_published_idx
      ON atlas_public_items(published_at DESC)
      WHERE review_status = 'approved'`,

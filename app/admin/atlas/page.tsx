@@ -18,6 +18,8 @@ const STATUS_LABELS: Record<AtlasReviewStatus, string> = {
   approved: "已公開",
   rejected: "已退回",
   takedown: "已下架",
+  // Author's own doing, not a moderation outcome — never treat it as one.
+  withdrawn: "作者已收回",
 };
 
 function allowedStatus(value: unknown): ReviewFilterStatus | "" {

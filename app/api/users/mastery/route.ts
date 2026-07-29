@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAllMasteryWithSchedule, getSettings } from "@/lib/users-db";
-import { getAllAtlasMasteryWithSchedule } from "@/lib/atlas-db";
+import { getAllAtlasMasteryWithSchedule, getSavedCommunityMastery } from "@/lib/atlas-db";
 import { applyDecay } from "@/lib/mastery";
 import { targetLanguageFor } from "@/lib/settings";
 
@@ -21,9 +21,10 @@ export async function GET() {
 
   const settings = await getSettings(userId);
   const targetLanguage = targetLanguageFor(settings.learningDirection);
-  const [rows, atlasRows] = await Promise.all([
+  const [rows, atlasRows, savedRows] = await Promise.all([
     getAllMasteryWithSchedule(userId, targetLanguage),
     getAllAtlasMasteryWithSchedule(userId, targetLanguage),
+    getSavedCommunityMastery(userId, targetLanguage),
   ]);
   const now = new Date();
   const decayedAt = (mastery: number, lastReviewedAt: string | null) =>
@@ -45,6 +46,15 @@ export async function GET() {
       wordId: `atlas:${r.item_id}`,
       mastery: decayedAt(r.mastery, r.last_reviewed_at),
       nextReviewAt: isoOrNull(r.next_review_at),
+    })),
+    // Saved 社群圖鑑 items show as `saved:<slug>` and their mastery lives per
+    // CARD in atlas_saved_cards — a third namespace. Without this the community
+    // theme renders a grid of 0% over words the user has been reviewing all
+    // week, which reads as "studying this does nothing".
+    ...savedRows.map((r) => ({
+      wordId: `saved:${r.slug}`,
+      mastery: decayedAt(r.mastery, r.last_reviewed_at),
+      nextReviewAt: null,
     })),
   ];
 

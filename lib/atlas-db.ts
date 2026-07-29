@@ -2167,10 +2167,18 @@ export async function countAtlasSavesByUser(userId: string): Promise<number> {
   return rows[0]?.count ?? 0;
 }
 
-/** The user's saved community items, newest first. */
+/**
+ * The user's saved community items, newest first.
+ *
+ * Language-scoped like every other study surface, and approved-only: an item
+ * the author withdrew simply stops appearing here, the same way it stops being
+ * scheduled. Their `atlas_saved_cards` rows survive, so republishing restores
+ * the entry with its review progress intact.
+ */
 export async function listAtlasSavedItems(
   userId: string,
-  limit = 60,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 200,
 ): Promise<AtlasPublicItemRow[]> {
   const sql = requireSql();
   return sql<AtlasPublicItemRow[]>`
@@ -2179,9 +2187,60 @@ export async function listAtlasSavedItems(
     JOIN atlas_public_items p ON p.id = s.public_item_id
     WHERE s.user_id = ${userId}::uuid
       AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage}
     ORDER BY s.created_at DESC
-    LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
+    LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
   `;
+}
+
+/**
+ * Per-ITEM mastery for saved community items, keyed by public slug.
+ *
+ * `atlas_saved_cards` stores mastery per CARD and every item yields two
+ * (image_recall + flashcard), so the 圖鑑 grid — which shows one badge per
+ * item — needs them averaged. Averaged rather than maxed: practising only one
+ * card type shouldn't read as having mastered the word.
+ *
+ * Aggregated at read time instead of in a `user_saved_item_mastery` table
+ * because the card rows are already the single source of truth; a second copy
+ * is a second thing to keep in sync.
+ */
+export async function getSavedCommunityMastery(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<{ slug: string; mastery: number; last_reviewed_at: string | null }[]> {
+  const sql = requireSql();
+  return sql<{ slug: string; mastery: number; last_reviewed_at: string | null }[]>`
+    SELECT p.public_slug AS slug,
+           avg(sc.mastery)::float8 AS mastery,
+           max(sc.last_reviewed_at) AS last_reviewed_at
+    FROM atlas_saved_cards sc
+    JOIN atlas_public_items p ON p.id = sc.public_item_id
+    WHERE sc.user_id = ${userId}::uuid
+      AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage}
+    GROUP BY p.public_slug
+  `;
+}
+
+/** Saved-community totals for the 進度 page: one category row's worth. */
+export async function savedCommunityCategoryProgress(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+): Promise<{ total: number; seen: number }> {
+  const sql = requireSql();
+  const [row] = await sql<{ total: number; seen: number }[]>`
+    SELECT count(DISTINCT p.id)::int AS total,
+           count(DISTINCT p.id) FILTER (WHERE sc.review_count > 0)::int AS seen
+    FROM atlas_saves s
+    JOIN atlas_public_items p ON p.id = s.public_item_id
+    LEFT JOIN atlas_saved_cards sc
+      ON sc.public_item_id = p.id AND sc.user_id = ${userId}::uuid
+    WHERE s.user_id = ${userId}::uuid
+      AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage}
+  `;
+  return { total: row?.total ?? 0, seen: row?.seen ?? 0 };
 }
 
 export async function getAtlasPublicItem(

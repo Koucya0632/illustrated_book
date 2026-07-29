@@ -7,7 +7,7 @@ import {
   getStudyStreak,
 } from "@/lib/users-db";
 import { categoryProgress } from "@/lib/cards-db";
-import { atlasCategoryProgress } from "@/lib/atlas-db";
+import { atlasCategoryProgress, savedCommunityCategoryProgress } from "@/lib/atlas-db";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 
 export const runtime = "nodejs";
@@ -23,16 +23,25 @@ export async function GET() {
   const settings = await getSettings(userId);
   const targetLanguage = targetLanguageFor(settings.learningDirection);
   const deckKey = studyDeckFor(settings.learningDirection);
-  const [streak, heatmap, categories, customCategory] = await Promise.all([
+  const [streak, heatmap, categories, customCategory, savedCommunity] = await Promise.all([
     getStudyStreak(userId, "Asia/Taipei", targetLanguage),
     getActivityHeatmap(userId, "Asia/Taipei", targetLanguage),
     categoryProgress(userId, deckKey),
     atlasCategoryProgress(userId, targetLanguage),
+    savedCommunityCategoryProgress(userId, targetLanguage),
   ]);
+  // 社群圖鑑 counts like 自製圖鑑: its own {total, seen} row, appended. Saving
+  // raises the denominator before you study it, so the completion figure dips
+  // — the same shape capturing a photo already has, and the reason the number
+  // is worth trusting: it counts everything you took on, not just the easy
+  // parts. Rows with nothing saved are dropped so an empty theme never appears.
+  const synthetic = [customCategory, savedCommunity.total > 0
+    ? { category: "community", ...savedCommunity }
+    : null].filter((c): c is NonNullable<typeof c> => c !== null);
   return NextResponse.json({
     streak,
     heatmap,
-    categories: customCategory ? [...categories, customCategory] : categories,
+    categories: [...categories, ...synthetic],
   });
 }
 

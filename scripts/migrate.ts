@@ -66,8 +66,22 @@ const DDL = [
   // and selectable mascot-pose avatar.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS nickname TEXT`,
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar   TEXT NOT NULL DEFAULT 'face'`,
+  // Consent gate for the community atlas. NULL = this user has never agreed to
+  // show an identity publicly, so no public endpoint may name them and no
+  // publish may proceed. Stamped by the one-time 公開作者身分 screen.
+  //
+  // Why a gate at all: `username` and `nickname` were built as *private* fields
+  // (a login handle and an in-app greeting), and `nickname` is seeded silently
+  // from the Apple Sign-In full name. Publishing either without asking would
+  // leak a real name or an email prefix the user never offered to the world.
+  `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_author_confirmed_at TIMESTAMPTZ`,
 
   // Auto-create a profile when a Supabase auth user signs up.
+  //
+  // The fallback handle is deliberately random rather than the email local
+  // part: this column is the public handle once a user opts into publishing,
+  // and `split_part(email,'@',1)` made every account's handle a piece of their
+  // email address by default.
   `CREATE OR REPLACE FUNCTION public.handle_new_user()
    RETURNS TRIGGER
    LANGUAGE plpgsql
@@ -76,7 +90,7 @@ const DDL = [
    DECLARE
      base TEXT := COALESCE(
        NEW.raw_user_meta_data->>'username',
-       split_part(NEW.email, '@', 1)
+       'tuji-' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12)
      );
      candidate TEXT := regexp_replace(lower(base), '[^a-z0-9_.-]', '', 'g');
      i INT := 0;
@@ -91,6 +105,21 @@ const DDL = [
      RETURN NEW;
    END;
    $$`,
+  // One-shot backfill for accounts created before the change above. Only
+  // touches handles that are STILL the email local part and were never chosen
+  // by the user (email signup passes an explicit username in user metadata;
+  // Apple/Google signups do not). Self-limiting: once rewritten the row no
+  // longer matches, so re-running the migration is a no-op.
+  //
+  // Nothing has ever been published, so no public URL or attribution breaks.
+  `UPDATE profiles p
+     SET username = 'tuji-' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12)
+     FROM auth.users u
+    WHERE u.id = p.id
+      AND p.public_author_confirmed_at IS NULL
+      AND u.raw_user_meta_data->>'username' IS NULL
+      AND u.email IS NOT NULL
+      AND lower(p.username) = regexp_replace(lower(split_part(u.email, '@', 1)), '[^a-z0-9_.-]', '', 'g')`,
   `DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users`,
   `CREATE TRIGGER on_auth_user_created
      AFTER INSERT ON auth.users
@@ -757,9 +786,12 @@ const DDL = [
      -- (docs/COMMUNITY_ATLAS_PLAN.md §5) splits it into pending_auto (waiting
      -- on the classifiers) and pending_review (classifier flagged → human).
      -- Legacy value kept so in-flight rows stay valid.
+     -- 'withdrawn' is the author taking their own item down; 'takedown' is
+     -- moderation removing it. Same visible effect, opposite meaning: only
+     -- 'withdrawn' may be published again.
      review_status         TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
                            ('draft','pending','pending_auto','pending_review',
-                            'approved','rejected','takedown')),
+                            'approved','rejected','takedown','withdrawn')),
      published_at          TIMESTAMPTZ,
      public_slug           TEXT,
      share_image_path      TEXT,
@@ -797,18 +829,25 @@ const DDL = [
   // pending_auto / pending_review. CREATE TABLE IF NOT EXISTS never alters it,
   // so swap the auto-named constraint for an explicitly named one. Guarded so
   // re-runs are no-ops.
+  //
+  // Guarded on the constraint's DEFINITION rather than its name, because the
+  // name already exists on databases migrated before 'withdrawn' — a
+  // name-only guard would silently skip them.
   `DO $$ BEGIN
      IF NOT EXISTS (
        SELECT 1 FROM pg_constraint
        WHERE conname = 'user_atlas_items_review_status_chk'
+         AND pg_get_constraintdef(oid) LIKE '%withdrawn%'
      ) THEN
        ALTER TABLE user_atlas_items
          DROP CONSTRAINT IF EXISTS user_atlas_items_review_status_check;
        ALTER TABLE user_atlas_items
+         DROP CONSTRAINT IF EXISTS user_atlas_items_review_status_chk;
+       ALTER TABLE user_atlas_items
          ADD CONSTRAINT user_atlas_items_review_status_chk
          CHECK (review_status IN
            ('draft','pending','pending_auto','pending_review',
-            'approved','rejected','takedown'));
+            'approved','rejected','takedown','withdrawn'));
      END IF;
    END $$`,
   // Machine + human moderation audit trail. Used to tune thresholds and to
@@ -1003,10 +1042,30 @@ const DDL = [
      category          TEXT,
      image_public_path TEXT,
      attribution_name  TEXT,
-     review_status     TEXT NOT NULL CHECK (review_status IN ('approved','takedown')),
+     -- 'withdrawn' = the author took it down themselves and may republish;
+     -- 'takedown' = moderation removed it and they may not.
+     review_status     TEXT NOT NULL CHECK (review_status IN ('approved','takedown','withdrawn')),
      published_at      TIMESTAMPTZ NOT NULL,
      updated_at        TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
+  // Existing databases carry the auto-named inline CHECK from CREATE TABLE,
+  // which predates 'withdrawn'. Guarded on the definition so re-runs are
+  // no-ops (same pattern as user_atlas_items above).
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'atlas_public_items_review_status_chk'
+         AND pg_get_constraintdef(oid) LIKE '%withdrawn%'
+     ) THEN
+       ALTER TABLE atlas_public_items
+         DROP CONSTRAINT IF EXISTS atlas_public_items_review_status_check;
+       ALTER TABLE atlas_public_items
+         DROP CONSTRAINT IF EXISTS atlas_public_items_review_status_chk;
+       ALTER TABLE atlas_public_items
+         ADD CONSTRAINT atlas_public_items_review_status_chk
+         CHECK (review_status IN ('approved','takedown','withdrawn'));
+     END IF;
+   END $$`,
   `CREATE INDEX IF NOT EXISTS atlas_public_items_published_idx
      ON atlas_public_items(published_at DESC)
      WHERE review_status = 'approved'`,
@@ -1148,12 +1207,33 @@ const DDL = [
      description          TEXT,
      target_language      TEXT NOT NULL CHECK (target_language IN ('en','ja')),
      cover_public_item_id UUID REFERENCES atlas_public_items(id) ON DELETE SET NULL,
+     -- Same 'withdrawn' vs 'takedown' split as items: the author's own removal
+     -- is reversible, moderation's is not.
      review_status        TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
-                            ('draft','pending_review','approved','rejected','takedown')),
+                            ('draft','pending_review','approved','rejected',
+                             'takedown','withdrawn')),
      created_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
      updated_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
      published_at         TIMESTAMPTZ
    )`,
+  // Same definition-guarded swap as the item tables: databases created before
+  // 'withdrawn' carry the narrower inline CHECK under the auto-generated name.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'atlas_collections_review_status_chk'
+         AND pg_get_constraintdef(oid) LIKE '%withdrawn%'
+     ) THEN
+       ALTER TABLE atlas_collections
+         DROP CONSTRAINT IF EXISTS atlas_collections_review_status_check;
+       ALTER TABLE atlas_collections
+         DROP CONSTRAINT IF EXISTS atlas_collections_review_status_chk;
+       ALTER TABLE atlas_collections
+         ADD CONSTRAINT atlas_collections_review_status_chk
+         CHECK (review_status IN
+           ('draft','pending_review','approved','rejected','takedown','withdrawn'));
+     END IF;
+   END $$`,
   // Browse hot path: approved collections for one learning language, newest first.
   `CREATE INDEX IF NOT EXISTS atlas_collections_browse_idx
      ON atlas_collections(target_language, published_at DESC)

@@ -18,6 +18,7 @@ import type {
   AtlasModerationPhase,
   AtlasModerationVerdict,
   AtlasPublicItemRow,
+  AtlasPublicItemWithAuthorRow,
   AtlasRecognitionJobRow,
   AtlasRecognitionStage,
   AtlasReviewStatus,
@@ -1325,6 +1326,12 @@ export async function submitAtlasItemForReview(
     WHERE user_id = ${userId}::uuid
       AND id = ${itemId}::uuid
       AND deleted_at IS NULL
+      -- A moderation takedown is not re-submittable. The client already hides
+      -- the button, but the client is not the enforcement point: without this
+      -- guard, POSTing to the publish route walks removed content straight
+      -- back into the machine gate. 'withdrawn' is deliberately absent —
+      -- taking your own item down and putting it back is the whole point.
+      AND review_status <> 'takedown'
     RETURNING *
   `;
   return rows[0] ?? null;
@@ -1496,10 +1503,16 @@ export async function getAtlasReviewItem(itemId: string): Promise<AtlasItemRow |
   return rows[0] ?? null;
 }
 
+/**
+ * Publish (or re-publish) the public row for an approved item.
+ *
+ * Deliberately writes no author name: identity is joined live from `profiles`
+ * at read time, so a rename updates everything the author ever published
+ * instead of leaving old rows under an old name.
+ */
 export async function approveAtlasPublicItem(input: {
   itemId: string;
   imagePublicPath: string | null;
-  attributionName: string | null;
 }): Promise<AtlasPublicItemRow | null> {
   const sql = requireSql();
   const item = await getAtlasReviewItem(input.itemId);
@@ -1508,7 +1521,7 @@ export async function approveAtlasPublicItem(input: {
   const rows = await sql<AtlasPublicItemRow[]>`
     INSERT INTO atlas_public_items (
       source_item_id, owner_user_id, public_slug, lemma, display_zh_hant,
-      target_language, category, image_public_path, attribution_name,
+      target_language, category, image_public_path,
       review_status, published_at, updated_at
     )
     VALUES (
@@ -1520,7 +1533,6 @@ export async function approveAtlasPublicItem(input: {
       ${item.target_language},
       ${item.category},
       ${input.imagePublicPath},
-      ${input.attributionName},
       'approved',
       now(),
       now()
@@ -1531,7 +1543,6 @@ export async function approveAtlasPublicItem(input: {
       target_language = EXCLUDED.target_language,
       category = EXCLUDED.category,
       image_public_path = EXCLUDED.image_public_path,
-      attribution_name = EXCLUDED.attribution_name,
       review_status = 'approved',
       updated_at = now()
     RETURNING *
@@ -1621,6 +1632,66 @@ export async function rejectAtlasReviewItem(itemId: string): Promise<AtlasItemRo
   return rows[0] ?? null;
 }
 
+/**
+ * The author taking their own item off the wall.
+ *
+ * Deliberately NOT `takedown`, which means "moderation removed this" and is
+ * final (`canSubmit` refuses it). Withdrawal is reversible: the item goes back
+ * to a state it can be submitted from, and nothing about it is recorded
+ * against the author — an author who is scared to withdraw publishes less.
+ *
+ * Savers keep their rows in atlas_saved_cards (every study read filters on
+ * `approved`, so the card simply stops being scheduled). Deleting the item
+ * instead would cascade those rows away and destroy other people's review
+ * progress — which today is the only way to un-publish anything.
+ *
+ * Returns the public image path to unlink from the public bucket, or null when
+ * there was nothing published. Ownership is enforced here, not by the caller.
+ */
+export async function withdrawAtlasPublicItem(
+  userId: string,
+  itemId: string,
+): Promise<{ ok: boolean; publicPath: string | null }> {
+  const sql = requireSql();
+  const owned = await sql<{ id: string }[]>`
+    SELECT id FROM user_atlas_items
+    WHERE id = ${itemId}::uuid
+      AND user_id = ${userId}::uuid
+      AND deleted_at IS NULL
+      AND review_status <> 'takedown'
+    LIMIT 1
+  `;
+  if (owned.length === 0) return { ok: false, publicPath: null };
+
+  return sql.begin(async (tx) => {
+    // Read the path BEFORE the update: RETURNING would hand back the new
+    // (null) value, and then nothing would ever unlink the public object.
+    const [publicRow] = await tx<{ image_public_path: string | null }[]>`
+      SELECT image_public_path FROM atlas_public_items
+      WHERE source_item_id = ${itemId}::uuid
+        AND owner_user_id = ${userId}::uuid
+      LIMIT 1
+    `;
+    await tx`
+      UPDATE atlas_public_items
+      SET review_status = 'withdrawn',
+          image_public_path = NULL,
+          updated_at = now()
+      WHERE source_item_id = ${itemId}::uuid
+        AND owner_user_id = ${userId}::uuid
+    `;
+    await tx`
+      UPDATE user_atlas_items
+      SET review_status = 'withdrawn',
+          visibility = 'private',
+          updated_at = now()
+      WHERE id = ${itemId}::uuid
+        AND user_id = ${userId}::uuid
+    `;
+    return { ok: true, publicPath: publicRow?.image_public_path ?? null };
+  });
+}
+
 export async function takedownAtlasPublicItem(itemId: string): Promise<void> {
   const sql = requireSql();
   await sql.begin(async (tx) => {
@@ -1640,13 +1711,32 @@ export async function takedownAtlasPublicItem(itemId: string): Promise<void> {
   });
 }
 
-export async function listAtlasPublicItems(limit = 60): Promise<AtlasPublicItemRow[]> {
+/**
+ * Item columns + the author's identity, joined live from `profiles`.
+ *
+ * Live rather than snapshotted on purpose: an author who renames must rename
+ * across everything they ever published, or the community sees one person as
+ * several. `publicAuthor()` decides what of this is allowed out — this
+ * fragment only carries the raw columns.
+ *
+ * Requires the item table to be aliased `pi`.
+ */
+const publicItemWithAuthorSelect = (sql: ReturnType<typeof requireSql>) => sql`
+  pi.*,
+  pr.username                   AS author_username,
+  pr.nickname                   AS author_nickname,
+  pr.avatar                     AS author_avatar,
+  pr.public_author_confirmed_at AS author_confirmed_at
+`;
+
+export async function listAtlasPublicItems(limit = 60): Promise<AtlasPublicItemWithAuthorRow[]> {
   const sql = requireSql();
-  return sql<AtlasPublicItemRow[]>`
-    SELECT *
-    FROM atlas_public_items
-    WHERE review_status = 'approved'
-    ORDER BY published_at DESC
+  return sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE pi.review_status = 'approved'
+    ORDER BY pi.published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
   `;
 }
@@ -1662,17 +1752,18 @@ export async function listAtlasPublicItemsByLemma(
   lemma: string,
   targetLanguage: AtlasTargetLanguage,
   limit = 24,
-): Promise<AtlasPublicItemRow[]> {
+): Promise<AtlasPublicItemWithAuthorRow[]> {
   const sql = requireSql();
   const trimmed = lemma.trim();
   if (!trimmed) return [];
-  return sql<AtlasPublicItemRow[]>`
-    SELECT *
-    FROM atlas_public_items
-    WHERE lower(lemma) = lower(${trimmed})
-      AND target_language = ${targetLanguage}
-      AND review_status = 'approved'
-    ORDER BY published_at DESC
+  return sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE lower(pi.lemma) = lower(${trimmed})
+      AND pi.target_language = ${targetLanguage}
+      AND pi.review_status = 'approved'
+    ORDER BY pi.published_at DESC
     LIMIT ${Math.min(60, Math.max(1, Math.floor(limit)))}
   `;
 }
@@ -1791,7 +1882,9 @@ export interface AtlasAuthorRow {
  * must not keep inflating an author's numbers.
  *
  * Returns null for unknown usernames and for authors with nothing public, so
- * the endpoint can't be used to enumerate accounts.
+ * the endpoint can't be used to enumerate accounts. Also null when the account
+ * never confirmed a public identity: without consent there is no author to
+ * show, and answering would turn this route into a handle oracle.
  */
 export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow | null> {
   const sql = requireSql();
@@ -1810,6 +1903,7 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
      AND p.review_status = 'approved'
     LEFT JOIN atlas_saves s ON s.public_item_id = p.id
     WHERE lower(pr.username) = lower(${username})
+      AND pr.public_author_confirmed_at IS NOT NULL
     GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.created_at
     LIMIT 1
   `;
@@ -1820,14 +1914,15 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
 export async function listAtlasAuthorItems(
   userId: string,
   limit = 60,
-): Promise<AtlasPublicItemRow[]> {
+): Promise<AtlasPublicItemWithAuthorRow[]> {
   const sql = requireSql();
-  return sql<AtlasPublicItemRow[]>`
-    SELECT *
-    FROM atlas_public_items
-    WHERE owner_user_id = ${userId}::uuid
-      AND review_status = 'approved'
-    ORDER BY published_at DESC
+  return sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE pi.owner_user_id = ${userId}::uuid
+      AND pi.review_status = 'approved'
+    ORDER BY pi.published_at DESC
     LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
   `;
 }
@@ -2091,13 +2186,16 @@ export async function listAtlasSavedItems(
   `;
 }
 
-export async function getAtlasPublicItem(slug: string): Promise<AtlasPublicItemRow | null> {
+export async function getAtlasPublicItem(
+  slug: string,
+): Promise<AtlasPublicItemWithAuthorRow | null> {
   const sql = requireSql();
-  const rows = await sql<AtlasPublicItemRow[]>`
-    SELECT *
-    FROM atlas_public_items
-    WHERE public_slug = ${slug}
-      AND review_status = 'approved'
+  const rows = await sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE pi.public_slug = ${slug}
+      AND pi.review_status = 'approved'
     LIMIT 1
   `;
   return rows[0] ?? null;
@@ -2314,6 +2412,7 @@ export interface AtlasPublicCollectionCardRow {
   author_username: string;
   author_nickname: string | null;
   author_avatar: string | null;
+  author_confirmed_at: string | null;
   item_count: number;
   save_count: number;
   cover_image_path: string | null;
@@ -2327,15 +2426,16 @@ export interface AtlasMyCollectionRow extends AtlasCollectionRow {
 
 export interface AtlasPublicCollectionDetail {
   collection: AtlasPublicCollectionCardRow;
-  items: AtlasPublicItemRow[];
+  items: AtlasPublicItemWithAuthorRow[];
 }
 
 /** Card projection + member items, ordered by position (approved members only). */
 const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
   c.id, c.slug, c.title, c.description, c.target_language, c.published_at,
-  pr.username AS author_username,
-  pr.nickname AS author_nickname,
-  pr.avatar   AS author_avatar,
+  pr.username                   AS author_username,
+  pr.nickname                   AS author_nickname,
+  pr.avatar                     AS author_avatar,
+  pr.public_author_confirmed_at AS author_confirmed_at,
   (SELECT count(*)::int FROM atlas_collection_items ci
     WHERE ci.collection_id = c.id) AS item_count,
   (SELECT count(*)::int FROM atlas_collection_items ci
@@ -2477,14 +2577,16 @@ export async function listUserApprovedPublicItems(
   ownerUserId: string,
   targetLanguage: AtlasTargetLanguage,
   limit = 200,
-): Promise<AtlasPublicItemRow[]> {
+): Promise<AtlasPublicItemWithAuthorRow[]> {
   const sql = requireSql();
-  return sql<AtlasPublicItemRow[]>`
-    SELECT * FROM atlas_public_items
-    WHERE owner_user_id = ${ownerUserId}::uuid
-      AND review_status = 'approved'
-      AND target_language = ${targetLanguage}
-    ORDER BY published_at DESC
+  return sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE pi.owner_user_id = ${ownerUserId}::uuid
+      AND pi.review_status = 'approved'
+      AND pi.target_language = ${targetLanguage}
+    ORDER BY pi.published_at DESC
     LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
   `;
 }
@@ -2493,7 +2595,7 @@ export async function listUserApprovedPublicItems(
 export async function getOwnedAtlasCollection(
   id: string,
   ownerUserId: string,
-): Promise<{ collection: AtlasCollectionRow; items: AtlasPublicItemRow[] } | null> {
+): Promise<{ collection: AtlasCollectionRow; items: AtlasPublicItemWithAuthorRow[] } | null> {
   const sql = requireSql();
   const rows = await sql<AtlasCollectionRow[]>`
     SELECT * FROM atlas_collections
@@ -2502,9 +2604,11 @@ export async function getOwnedAtlasCollection(
   `;
   const collection = rows[0];
   if (!collection) return null;
-  const items = await sql<AtlasPublicItemRow[]>`
-    SELECT pi.* FROM atlas_collection_items ci
+  const items = await sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_collection_items ci
     JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
     WHERE ci.collection_id = ${id}::uuid
     ORDER BY ci.position ASC, pi.published_at DESC
   `;
@@ -2513,19 +2617,39 @@ export async function getOwnedAtlasCollection(
 
 // MARK: - Collections: public reads (CDN-cached routes)
 
+/**
+ * How many members a 合集 needs to sort above the rest of the browse feed.
+ *
+ * A guess, deliberately: it only affects ordering, never whether something can
+ * be published, so getting it wrong costs a tuning change rather than a
+ * blocked author.
+ */
+export const ATLAS_COLLECTION_FEATURED_MIN_ITEMS = 3;
+
 export async function listPublicAtlasCollections(
   targetLanguage: AtlasTargetLanguage,
   limit = 60,
 ): Promise<AtlasPublicCollectionCardRow[]> {
   const sql = requireSql();
   return sql<AtlasPublicCollectionCardRow[]>`
-    SELECT ${collectionCardSelect(sql)}
-    FROM atlas_collections c
-    JOIN profiles pr ON pr.id = c.owner_user_id
-    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
-    WHERE c.target_language = ${targetLanguage}
-      AND c.review_status = 'approved'
-    ORDER BY c.published_at DESC
+    SELECT * FROM (
+      SELECT ${collectionCardSelect(sql)}
+      FROM atlas_collections c
+      JOIN profiles pr ON pr.id = c.owner_user_id
+      LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+      WHERE c.target_language = ${targetLanguage}
+        AND c.review_status = 'approved'
+    ) cards
+    -- Two tiers, then newest first. A one-item 合集 is legal — publishing must
+    -- never be blocked on size (docs/COMMUNITY_ATLAS_PLAN.md §4: the community
+    -- supplies content, it doesn't gate it) — but it shouldn't fill the first
+    -- screen either. Ranking costs exposure; a size floor would cost supply.
+    --
+    -- No save_count term on purpose: at this stage every collection has zero
+    -- saves, so any popularity weighting is dead code that can't be tuned
+    -- against real data. Add it as a middle tier once the counts move.
+    ORDER BY (cards.item_count >= ${ATLAS_COLLECTION_FEATURED_MIN_ITEMS}) DESC,
+             cards.published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
   `;
 }
@@ -2544,9 +2668,11 @@ export async function getPublicAtlasCollection(
   `;
   const collection = rows[0];
   if (!collection) return null;
-  const items = await sql<AtlasPublicItemRow[]>`
-    SELECT pi.* FROM atlas_collection_items ci
+  const items = await sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_collection_items ci
     JOIN atlas_public_items pi ON pi.id = ci.public_item_id
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
     WHERE ci.collection_id = ${collection.id}::uuid
       AND pi.review_status = 'approved'
     ORDER BY ci.position ASC, pi.published_at DESC
@@ -2616,6 +2742,30 @@ export async function approveAtlasCollection(id: string): Promise<AtlasCollectio
 
 export function rejectAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {
   return setAtlasCollectionReviewStatus(id, "rejected");
+}
+
+/**
+ * The author unpublishing their own collection.
+ *
+ * Members are untouched: withdrawing the 合集 retires the shelf, not the items
+ * on it — each of those is published in its own right and may still be reached
+ * by word or by author. Reversible, and refused for a moderation takedown,
+ * which is not the author's to undo.
+ */
+export async function withdrawAtlasCollection(
+  id: string,
+  ownerUserId: string,
+): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET review_status = 'withdrawn', updated_at = now()
+    WHERE id = ${id}::uuid
+      AND owner_user_id = ${ownerUserId}::uuid
+      AND review_status <> 'takedown'
+    RETURNING *
+  `;
+  return rows[0] ?? null;
 }
 
 export function takedownAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {

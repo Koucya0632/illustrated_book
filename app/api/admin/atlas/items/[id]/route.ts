@@ -21,7 +21,7 @@ export async function PATCH(
 ) {
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
-  let body: { action?: string; attributionName?: string | null };
+  let body: { action?: string };
   try {
     body = await req.json();
   } catch {
@@ -56,9 +56,6 @@ export async function PATCH(
   const publicItem = await approveAtlasPublicItem({
     itemId: item.id,
     imagePublicPath: published.path,
-    attributionName: typeof body.attributionName === "string"
-      ? body.attributionName.trim().slice(0, 80) || null
-      : null,
   });
 
   return NextResponse.json({ ok: true, item: publicItem, imageUrl: published.publicUrl });

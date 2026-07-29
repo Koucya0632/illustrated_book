@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getAtlasPublicItem } from "@/lib/atlas-db";
-import { atlasPublicImageUrl } from "@/lib/atlas/storage";
+import { serializeAtlasPublicItem } from "@/lib/atlas/public-serialize";
 
 export const runtime = "nodejs";
 
@@ -16,19 +16,7 @@ export async function GET(
   if (!row) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   return NextResponse.json(
-    {
-      item: {
-        id: row.id,
-        slug: row.public_slug,
-        lemma: row.lemma,
-        displayZhHant: row.display_zh_hant,
-        targetLanguage: row.target_language,
-        category: row.category,
-        imageUrl: atlasPublicImageUrl(row.image_public_path),
-        attributionName: row.attribution_name,
-        publishedAt: row.published_at,
-      },
-    },
+    { item: serializeAtlasPublicItem(row) },
     {
       headers: {
         "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",

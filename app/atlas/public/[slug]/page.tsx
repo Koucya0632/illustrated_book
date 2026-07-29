@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAtlasPublicItem } from "@/lib/atlas-db";
 import { atlasPublicImageUrl } from "@/lib/atlas/storage";
+import { publicAuthor } from "@/lib/public-author";
 import ReportButton from "./ReportButton";
 
 export const dynamic = "force-dynamic";
@@ -17,6 +18,7 @@ export default async function PublicAtlasDetailPage({
   if (!item) notFound();
 
   const imageUrl = atlasPublicImageUrl(item.image_public_path);
+  const author = publicAuthor(item);
 
   return (
     <main className="mx-auto max-w-5xl px-5 py-6 sm:px-7">
@@ -50,7 +52,9 @@ export default async function PublicAtlasDetailPage({
           <p className="mt-2 text-xl font-bold text-tuji-ink3">{item.display_zh_hant}</p>
           <dl className="mt-6 grid gap-3 text-sm">
             <Meta label="公開日期" value={new Date(item.published_at).toLocaleDateString("zh-TW")} />
-            <Meta label="來源" value={item.attribution_name ? `由 ${item.attribution_name} 分享` : "Tuji 公開圖鑑"} />
+            {/* Anonymous unless the author confirmed a public identity —
+                `publicAuthor` is the only thing allowed to name them. */}
+            <Meta label="來源" value={author ? `由 ${author.displayName} 分享` : "Tuji 公開圖鑑"} />
           </dl>
           <div className="mt-6 flex flex-wrap gap-2">
             <Link

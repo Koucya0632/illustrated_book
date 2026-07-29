@@ -18,6 +18,8 @@ const STATUS_LABELS: Record<AtlasReviewStatus, string> = {
   approved: "已公開",
   rejected: "已退回",
   takedown: "已下架",
+  // Author's own doing, not a moderation outcome — never treat it as one.
+  withdrawn: "作者已收回",
 };
 
 function allowedStatus(value: unknown): ReviewFilterStatus | "" {
@@ -144,11 +146,7 @@ export default async function AdminAtlasPage({
                     查看公開頁
                   </Link>
                 )}
-                <AtlasReviewActions
-                  id={item.id}
-                  reviewStatus={item.review_status}
-                  initialAttributionName={item.username ?? ""}
-                />
+                <AtlasReviewActions id={item.id} reviewStatus={item.review_status} />
               </div>
             </div>
           </article>

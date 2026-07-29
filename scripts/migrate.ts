@@ -1041,6 +1041,10 @@ const DDL = [
      target_language   TEXT NOT NULL CHECK (target_language IN ('en','ja')),
      category          TEXT,
      image_public_path TEXT,
+     -- DEAD. Author identity is joined live from profiles (lib/public-author.ts)
+     -- so a rename updates everything the author ever published. Kept only
+     -- because dropping a column is irreversible and nothing reads this one;
+     -- do not wire anything to it.
      attribution_name  TEXT,
      -- 'withdrawn' = the author took it down themselves and may republish;
      -- 'takedown' = moderation removed it and they may not.

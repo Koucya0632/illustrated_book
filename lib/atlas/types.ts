@@ -242,10 +242,10 @@ export interface AtlasPublicItemRow {
   category: string | null;
   image_public_path: string | null;
   /**
-   * @deprecated Dead column. Author identity is resolved by joining `profiles`
-   * (see AtlasPublicItemAuthorColumns) so a rename updates every past item at
-   * once; a snapshot would split one author into several names. Kept only
-   * because dropping a column is not worth a migration on unshipped data.
+   * @deprecated Dead column, and the last reader is gone. Author identity is
+   * resolved by joining `profiles` (see `publicAuthor`) so a rename updates
+   * every past item at once; a snapshot would split one author into several
+   * names. Kept only because dropping a column is irreversible.
    */
   attribution_name: string | null;
   review_status: "approved" | "takedown" | "withdrawn";

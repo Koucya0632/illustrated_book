@@ -75,6 +75,12 @@ const DDL = [
   // from the Apple Sign-In full name. Publishing either without asking would
   // leak a real name or an email prefix the user never offered to the world.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_author_confirmed_at TIMESTAMPTZ`,
+  // Last time the PUBLIC identity (handle or display name) changed. Author
+  // identity is joined live, so a rename rewrites the byline on everything the
+  // author ever published — which is what makes "build a reputation under a
+  // clean name, then switch to an ad" a one-step move. This column is what the
+  // cooldown measures from. NULL = never changed since confirming.
+  `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_identity_changed_at TIMESTAMPTZ`,
 
   // Auto-create a profile when a Supabase auth user signs up.
   //

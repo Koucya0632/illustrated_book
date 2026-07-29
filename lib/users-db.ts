@@ -129,6 +129,48 @@ export async function hasConfirmedPublicAuthor(userId: string): Promise<boolean>
   return rows[0]?.confirmed ?? false;
 }
 
+/** Days an author with public content must wait between identity changes. */
+export const PUBLIC_IDENTITY_COOLDOWN_DAYS = 30;
+
+export interface PublicIdentityRenameState {
+  /** False only while a cooldown is running. */
+  allowed: boolean;
+  /** When the next change becomes possible, or null when it already is. */
+  nextChangeAt: string | null;
+}
+
+/**
+ * Whether this user may change their public handle / display name right now.
+ *
+ * The cooldown applies ONLY to authors with at least one approved public item.
+ * Reputation is the thing being protected — a rename rewrites the byline on
+ * everything they ever published — and someone with nothing published has no
+ * reputation to launder, while being exactly the person who just typed their
+ * name for the first time and wants to fix a typo. Throttling them would cost
+ * real goodwill to prevent nothing.
+ */
+export async function publicIdentityRenameState(
+  userId: string,
+): Promise<PublicIdentityRenameState> {
+  const sql = requireSql();
+  const rows = await sql<{ next_change_at: string | null }[]>`
+    SELECT (p.public_identity_changed_at
+              + ${PUBLIC_IDENTITY_COOLDOWN_DAYS} * INTERVAL '1 day') AS next_change_at
+    FROM profiles p
+    WHERE p.id = ${userId}::uuid
+      AND p.public_identity_changed_at IS NOT NULL
+      AND p.public_identity_changed_at
+            > now() - ${PUBLIC_IDENTITY_COOLDOWN_DAYS} * INTERVAL '1 day'
+      AND EXISTS (
+        SELECT 1 FROM atlas_public_items pi
+        WHERE pi.owner_user_id = p.id AND pi.review_status = 'approved'
+      )
+    LIMIT 1
+  `;
+  const next = rows[0]?.next_change_at ?? null;
+  return { allowed: next === null, nextChangeAt: next };
+}
+
 /**
  * Write the public author identity and stamp the consent.
  *
@@ -136,14 +178,38 @@ export async function hasConfirmedPublicAuthor(userId: string): Promise<boolean>
  * collision surfaces as `taken` rather than an exception so the caller can put
  * the message in front of the user. Re-confirming keeps the original timestamp
  * — consent is not re-granted by editing a display name.
+ *
+ * `public_identity_changed_at` is stamped only when the handle or display name
+ * actually differs, so re-saving the same values (or only the avatar) never
+ * starts a cooldown. The FIRST confirmation is not a change — there was no
+ * public identity before it — so it leaves the column NULL.
  */
 export async function setPublicAuthorIdentity(
   userId: string,
   fields: { handle: string; displayName: string; avatar?: string },
-): Promise<{ ok: true } | { ok: false; reason: "taken" }> {
+): Promise<{ ok: true } | { ok: false; reason: "taken" | "cooldown"; nextChangeAt?: string }> {
   const sql = requireSql();
   const handle = fields.handle.trim();
   const displayName = fields.displayName.trim();
+
+  const [current] = await sql<
+    { username: string; nickname: string | null; confirmed: boolean }[]
+  >`
+    SELECT username, nickname, (public_author_confirmed_at IS NOT NULL) AS confirmed
+    FROM profiles WHERE id = ${userId}::uuid LIMIT 1
+  `;
+  if (!current) return { ok: false, reason: "taken" };
+
+  const isRename =
+    current.confirmed &&
+    (current.username !== handle || (current.nickname ?? "") !== displayName);
+  if (isRename) {
+    const state = await publicIdentityRenameState(userId);
+    if (!state.allowed) {
+      return { ok: false, reason: "cooldown", nextChangeAt: state.nextChangeAt ?? undefined };
+    }
+  }
+
   const taken = await sql<{ id: string }[]>`
     SELECT id FROM profiles
     WHERE lower(username) = lower(${handle}) AND id <> ${userId}::uuid
@@ -151,50 +217,60 @@ export async function setPublicAuthorIdentity(
   `;
   if (taken.length > 0) return { ok: false, reason: "taken" };
 
-  if (fields.avatar !== undefined) {
-    await sql`
-      UPDATE profiles
-      SET username = ${handle},
-          nickname = ${displayName},
-          avatar = ${fields.avatar},
-          public_author_confirmed_at = COALESCE(public_author_confirmed_at, now())
-      WHERE id = ${userId}::uuid
-    `;
-  } else {
-    await sql`
-      UPDATE profiles
-      SET username = ${handle},
-          nickname = ${displayName},
-          public_author_confirmed_at = COALESCE(public_author_confirmed_at, now())
-      WHERE id = ${userId}::uuid
-    `;
-  }
+  const stamp = isRename ? sql`, public_identity_changed_at = now()` : sql``;
+  const avatarSet = fields.avatar !== undefined ? sql`, avatar = ${fields.avatar}` : sql``;
+  await sql`
+    UPDATE profiles
+    SET username = ${handle},
+        nickname = ${displayName},
+        public_author_confirmed_at = COALESCE(public_author_confirmed_at, now())
+        ${avatarSet}
+        ${stamp}
+    WHERE id = ${userId}::uuid
+  `;
   return { ok: true };
 }
 
-// Update the editable profile fields (display name + avatar). nickname is
-// trimmed to NULL when blank so display falls back to the username handle.
+/**
+ * Update the editable profile fields (display name + avatar).
+ *
+ * Once the user has confirmed a public identity, `nickname` IS their public
+ * display name — so this route is a second door onto the same public field and
+ * carries the same cooldown. Without that, the whole rename limit is bypassed
+ * by editing 暱稱 in 編輯個人資料 instead of in 公開作者身分.
+ *
+ * The avatar is deliberately never throttled: it can only be one of six
+ * official mascot poses, so there is no reputation to launder through it.
+ */
 export async function updateProfile(
   userId: string,
   fields: { nickname: string | null; avatar?: string },
-): Promise<void> {
+): Promise<{ ok: true } | { ok: false; reason: "cooldown"; nextChangeAt?: string }> {
   const sql = requireSql();
   const nickname = fields.nickname && fields.nickname.trim() !== "" ? fields.nickname.trim() : null;
+
+  const [current] = await sql<{ nickname: string | null; confirmed: boolean }[]>`
+    SELECT nickname, (public_author_confirmed_at IS NOT NULL) AS confirmed
+    FROM profiles WHERE id = ${userId}::uuid LIMIT 1
+  `;
+  const isPublicRename = Boolean(current?.confirmed) && (current?.nickname ?? null) !== nickname;
+  if (isPublicRename) {
+    const state = await publicIdentityRenameState(userId);
+    if (!state.allowed) {
+      return { ok: false, reason: "cooldown", nextChangeAt: state.nextChangeAt ?? undefined };
+    }
+  }
+
+  const stamp = isPublicRename ? sql`, public_identity_changed_at = now()` : sql``;
   // Avatar is optional: only overwrite the column when a value is supplied,
   // so a nickname-only update never resets the saved pose.
-  if (fields.avatar !== undefined) {
-    await sql`
-      UPDATE profiles
-      SET nickname = ${nickname}, avatar = ${fields.avatar}
-      WHERE id = ${userId}::uuid
-    `;
-  } else {
-    await sql`
-      UPDATE profiles
-      SET nickname = ${nickname}
-      WHERE id = ${userId}::uuid
-    `;
-  }
+  const avatarSet = fields.avatar !== undefined ? sql`, avatar = ${fields.avatar}` : sql``;
+  await sql`
+    UPDATE profiles
+    SET nickname = ${nickname} ${avatarSet} ${stamp}
+    WHERE id = ${userId}::uuid
+  `;
+  return { ok: true };
 }
 
 // ---- favorites ----

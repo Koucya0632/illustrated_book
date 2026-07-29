@@ -10,7 +10,12 @@
 
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
-import { getProfile, setPublicAuthorIdentity } from "@/lib/users-db";
+import {
+  PUBLIC_IDENTITY_COOLDOWN_DAYS,
+  getProfile,
+  publicIdentityRenameState,
+  setPublicAuthorIdentity,
+} from "@/lib/users-db";
 import { PUBLIC_HANDLE_MAX, isValidPublicHandle } from "@/lib/public-author";
 import { isAvatarPose } from "@/lib/avatars";
 import { createServiceRoleClient } from "@/lib/supabase/server";
@@ -30,6 +35,9 @@ export async function GET() {
   if (!profile) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   const confirmed = profile.public_author_confirmed_at !== null;
+  // Reported so the sheet can disable the fields and say when they unlock,
+  // rather than letting someone retype their name and only then be refused.
+  const rename = await publicIdentityRenameState(userId);
   return NextResponse.json(
     {
       confirmed,
@@ -39,6 +47,9 @@ export async function GET() {
       handle: profile.username,
       displayName: profile.nickname ?? "",
       avatar: profile.avatar,
+      canChange: rename.allowed,
+      nextChangeAt: rename.nextChangeAt,
+      cooldownDays: PUBLIC_IDENTITY_COOLDOWN_DAYS,
     },
     { headers: noStore },
   );
@@ -87,6 +98,16 @@ export async function POST(req: Request) {
     avatar: pose,
   });
   if (!result.ok) {
+    if (result.reason === "cooldown") {
+      return NextResponse.json(
+        {
+          error: "rename_cooldown",
+          message: `公開身分每 ${PUBLIC_IDENTITY_COOLDOWN_DAYS} 天只能修改一次。`,
+          nextChangeAt: result.nextChangeAt,
+        },
+        { status: 429, headers: noStore },
+      );
+    }
     return NextResponse.json(
       { error: "handle_taken", message: "這個帳號代碼已經有人用了。" },
       { status: 409, headers: noStore },

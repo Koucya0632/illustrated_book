@@ -16,8 +16,9 @@ import {
   publicIdentityRenameState,
   setPublicAuthorIdentity,
 } from "@/lib/users-db";
-import { PUBLIC_HANDLE_MAX, isValidPublicHandle } from "@/lib/public-author";
+import { PUBLIC_BIO_MAX, PUBLIC_HANDLE_MAX, isValidPublicHandle } from "@/lib/public-author";
 import { isAvatarPose } from "@/lib/avatars";
+import { runAtlasTextModeration } from "@/lib/atlas/moderation";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -47,6 +48,10 @@ export async function GET() {
       handle: profile.username,
       displayName: profile.nickname ?? "",
       avatar: profile.avatar,
+      // Already public once written, so unlike handle/displayName this is not a
+      // suggestion the user must accept — it is what is on their page today.
+      bio: profile.bio ?? "",
+      bioMax: PUBLIC_BIO_MAX,
       canChange: rename.allowed,
       nextChangeAt: rename.nextChangeAt,
       cooldownDays: PUBLIC_IDENTITY_COOLDOWN_DAYS,
@@ -65,10 +70,11 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
-  const { handle, displayName, avatar } = (body ?? {}) as {
+  const { handle, displayName, avatar, bio } = (body ?? {}) as {
     handle?: unknown;
     displayName?: unknown;
     avatar?: unknown;
+    bio?: unknown;
   };
 
   const trimmedHandle = typeof handle === "string" ? handle.trim() : "";
@@ -92,10 +98,46 @@ export async function POST(req: Request) {
   }
   const pose = isAvatarPose(avatar) ? avatar : undefined;
 
+  // `undefined` means the client isn't managing the bio on this call and it is
+  // left as-is; an empty string is a deliberate clear.
+  let nextBio: string | null | undefined;
+  if (bio !== undefined) {
+    if (typeof bio !== "string") {
+      return NextResponse.json({ error: "invalid bio" }, { status: 400, headers: noStore });
+    }
+    const trimmedBio = bio.trim();
+    if (trimmedBio.length > PUBLIC_BIO_MAX) {
+      return NextResponse.json(
+        { error: "invalid bio", message: `簡介最多 ${PUBLIC_BIO_MAX} 字。` },
+        { status: 400, headers: noStore },
+      );
+    }
+    // Refused outright rather than queued for a human. The gate only catches
+    // links and personal information — both of which are things a bio must not
+    // carry at all — so there is no verdict a reviewer could reach that this
+    // check cannot. Saying so now beats a bio sitting invisible in a queue, and
+    // it saves standing up a review surface for a single line of text.
+    const hits = runAtlasTextModeration([trimmedBio]);
+    if (hits.length > 0) {
+      const hasPii = hits.some((h) => h.category === "pii");
+      return NextResponse.json(
+        {
+          error: "bio_rejected",
+          message: hasPii
+            ? "簡介不能包含個人資訊（電話、email、地址等）。"
+            : "簡介不能包含網址或連結。",
+        },
+        { status: 400, headers: noStore },
+      );
+    }
+    nextBio = trimmedBio === "" ? null : trimmedBio;
+  }
+
   const result = await setPublicAuthorIdentity(userId, {
     handle: trimmedHandle,
     displayName: trimmedName,
     avatar: pose,
+    bio: nextBio,
   });
   if (!result.ok) {
     if (result.reason === "cooldown") {

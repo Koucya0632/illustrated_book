@@ -12,6 +12,15 @@
 /** Longest handle accepted; the public author route matches this shape too. */
 export const PUBLIC_HANDLE_MAX = 40;
 
+/**
+ * Longest public bio accepted. Short on purpose: this is a one-line self
+ * introduction under a name on a profile card, not a page. It also lives here
+ * rather than in the route because a Next.js route module may only export the
+ * handler names, and the iOS sheet needs the same number for its counter — the
+ * server sends it down in the identity payload.
+ */
+export const PUBLIC_BIO_MAX = 80;
+
 const HANDLE_PATTERN = /^[A-Za-z0-9_.-]{2,40}$/;
 
 export function isValidPublicHandle(handle: string): boolean {

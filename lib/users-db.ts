@@ -20,6 +20,8 @@ export interface ProfileRow {
   created_at: string;
   /** NULL until the user accepts a public author identity. Gates every publish. */
   public_author_confirmed_at: string | null;
+  /** Public self-introduction shown on the author profile. NULL = never set. */
+  bio: string | null;
 }
 
 function requireSql() {
@@ -96,7 +98,7 @@ export async function getProfile(userId: string): Promise<ProfileRow | null> {
   const sql = requireSql();
   const rows = await sql<ProfileRow[]>`
     SELECT p.id, p.username, p.nickname, p.avatar, u.email, p.created_at,
-           p.public_author_confirmed_at
+           p.public_author_confirmed_at, p.bio
     FROM profiles p
     JOIN auth.users u ON u.id = p.id
     WHERE p.id = ${userId}::uuid
@@ -186,7 +188,7 @@ export async function publicIdentityRenameState(
  */
 export async function setPublicAuthorIdentity(
   userId: string,
-  fields: { handle: string; displayName: string; avatar?: string },
+  fields: { handle: string; displayName: string; avatar?: string; bio?: string | null },
 ): Promise<{ ok: true } | { ok: false; reason: "taken" | "cooldown"; nextChangeAt?: string }> {
   const sql = requireSql();
   const handle = fields.handle.trim();
@@ -200,6 +202,11 @@ export async function setPublicAuthorIdentity(
   `;
   if (!current) return { ok: false, reason: "taken" };
 
+  // Only the handle and display name count as a rename. The bio is written by
+  // the same call but is deliberately absent from this comparison: the cooldown
+  // protects the byline on already-published work, which a bio does not touch.
+  // Including it here would freeze someone's name for 30 days because they fixed
+  // a typo in their self-introduction.
   const isRename =
     current.confirmed &&
     (current.username !== handle || (current.nickname ?? "") !== displayName);
@@ -219,12 +226,17 @@ export async function setPublicAuthorIdentity(
 
   const stamp = isRename ? sql`, public_identity_changed_at = now()` : sql``;
   const avatarSet = fields.avatar !== undefined ? sql`, avatar = ${fields.avatar}` : sql``;
+  // `undefined` leaves the bio alone (a caller that doesn't manage it); an
+  // explicit `null` clears it. Distinguishing the two is what lets someone
+  // delete their bio without also being unable to express "don't touch it".
+  const bioSet = fields.bio !== undefined ? sql`, bio = ${fields.bio}` : sql``;
   await sql`
     UPDATE profiles
     SET username = ${handle},
         nickname = ${displayName},
         public_author_confirmed_at = COALESCE(public_author_confirmed_at, now())
         ${avatarSet}
+        ${bioSet}
         ${stamp}
     WHERE id = ${userId}::uuid
   `;

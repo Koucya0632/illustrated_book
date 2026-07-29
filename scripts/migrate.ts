@@ -81,6 +81,13 @@ const DDL = [
   // clean name, then switch to an ad" a one-step move. This column is what the
   // cooldown measures from. NULL = never changed since confirming.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_identity_changed_at TIMESTAMPTZ`,
+  // Public author bio — a short self-introduction shown on the author profile.
+  // Deliberately NOT covered by the rename cooldown above: that cooldown exists
+  // because handle/display name are joined live into the byline of everything
+  // the author ever published, so a rename rewrites history. A bio appears in
+  // exactly one place and rewrites nothing, so freezing it for 30 days would be
+  // punishment for a typo. NULL = never written.
+  `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS bio TEXT`,
 
   // Auto-create a profile when a Supabase auth user signs up.
   //

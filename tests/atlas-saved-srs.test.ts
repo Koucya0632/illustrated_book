@@ -67,16 +67,39 @@ test("taken-down items stop appearing in study immediately", () => {
   }
 });
 
-test("the community theme is opt-in, unlike custom", () => {
+test("the community theme is opt-in for NEW cards, unlike custom", () => {
   // custom joins the queue when no public theme is selected; community must
   // require an explicit selection so an empty theme never appears.
   assert.match(
     queueRoute,
-    /const wantsCustom = categories\.includes\("custom"\) \|\| publicCategories\.length === 0;/,
+    /const wantsCustom = reviewOnly \|\| categories\.includes\("custom"\) \|\| publicCategories\.length === 0;/,
   );
   assert.match(
     queueRoute,
-    /const wantsCommunity = categories\.includes\("community"\);/,
+    /const wantsCommunity = reviewOnly \|\| categories\.includes\("community"\);/,
+  );
+});
+
+// Themes scope learning, not review — the promise the theme picker makes in so
+// many words. Before this, iOS sent no categories for review and `wantsCommunity`
+// required an explicit mention, so a saved community card could be learned once
+// and was then never scheduled again: the SRS loop silently dropped it.
+test("review ignores the theme filter for every source", () => {
+  assert.match(queueRoute, /const reviewOnly = mode === "review";/);
+  // Public words: unfiltered in review, so reviewing with only 社群圖鑑 ticked
+  // cannot lose every official word the user has learned.
+  assert.match(queueRoute, /const publicCategories = reviewOnly\s*\n?\s*\? \[\]/);
+  assert.match(
+    queueRoute,
+    /const shouldFetchPublic =\s*\n?\s*reviewOnly \|\| categories\.length === 0 \|\| publicCategories\.length > 0;/,
+  );
+});
+
+// mode is parsed before the filters are derived; deriving them first would read
+// `reviewOnly` from the temporal dead zone.
+test("mode is resolved before the theme filters depend on it", () => {
+  assert.ok(
+    queueRoute.indexOf("const mode: QueueMode") < queueRoute.indexOf("const reviewOnly"),
   );
 });
 

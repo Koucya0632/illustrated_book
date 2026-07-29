@@ -180,22 +180,38 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
-  const publicCategories = categories.filter(
-    (category) => category !== "custom" && category !== "community",
-  );
-  // "custom" cards join the queue when explicitly requested OR when there's no
-  // public theme filter at all (全部 / 復習) — i.e. custom is part of "all your
-  // studied words". A specific public theme (no "custom") still excludes them.
-  const wantsCustom = categories.includes("custom") || publicCategories.length === 0;
-  // 社群圖鑑 is opt-in ONLY: unlike "custom", it never joins the queue by
-  // default. Someone who has saved nothing shouldn't see an empty extra theme,
-  // and community content is other people's work — the user chooses to study it.
-  const wantsCommunity = categories.includes("community");
   // Mode: "new" (only first-time cards), "review" (only due reviews), or
   // "both" (legacy mixed queue). Unknown values fall back to "both".
   const modeParam = (searchParams.get("mode") ?? "both").trim();
   const mode: QueueMode =
     modeParam === "new" || modeParam === "review" ? modeParam : "both";
+
+  // THEMES SCOPE LEARNING, NOT REVIEW. This is what the theme picker promises
+  // in so many words ("複習不分主題，所有學過的字都會排進來"), and review is
+  // the half where it matters most: a card you have already learned must come
+  // back on schedule, or the SRS silently drops it. Unticking a theme means
+  // "stop teaching me new ones", never "abandon what I already learned".
+  //
+  // Enforced here rather than per-source because the three sources disagreed
+  // about what an empty filter means (custom: include, community: exclude,
+  // public: include), and the clients disagreed too — iOS sends no categories
+  // for review, the web sends them for every mode. The result was that saved
+  // 社群圖鑑 cards were learnable but never reviewable.
+  const reviewOnly = mode === "review";
+  const publicCategories = reviewOnly
+    ? []
+    : categories.filter(
+        (category) => category !== "custom" && category !== "community",
+      );
+  // "custom" cards join the queue when explicitly requested OR when there's no
+  // public theme filter at all (全部 / 復習) — i.e. custom is part of "all your
+  // studied words". A specific public theme (no "custom") still excludes them.
+  const wantsCustom = reviewOnly || categories.includes("custom") || publicCategories.length === 0;
+  // 社群圖鑑 is opt-in for NEW cards only: unlike "custom", it never joins by
+  // default, because someone who has saved nothing shouldn't see an empty extra
+  // theme and community content is other people's work. Review is not opt-in —
+  // see above.
+  const wantsCommunity = reviewOnly || categories.includes("community");
 
   try {
     // The selected learning direction determines both the card deck and the
@@ -210,7 +226,12 @@ export async function GET(req: Request) {
     // Learning direction is authoritative. Legacy client deck filters must
     // never widen a Japanese queue back to all decks when they disagree.
     const effectiveDecks = [directionDeck];
-    const shouldFetchPublic = categories.length === 0 || publicCategories.length > 0;
+    // In review every source is in, so an unfiltered public fetch is exactly
+    // what "all your studied words" means. (Without `reviewOnly` here, a client
+    // reviewing with only 社群圖鑑 ticked would send one category, leaving
+    // publicCategories empty, and lose every official word it had learned.)
+    const shouldFetchPublic =
+      reviewOnly || categories.length === 0 || publicCategories.length > 0;
     const [
       queue,
       stats,

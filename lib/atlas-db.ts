@@ -2012,7 +2012,6 @@ export interface AtlasSavedDueCard {
   display_zh_hant: string;
   target_language: AtlasTargetLanguage;
   image_public_path: string | null;
-  attribution_name: string | null;
   status: string;
   interval_days: number;
   next_review_at: string;
@@ -2040,7 +2039,6 @@ export async function fetchSavedCommunityDue(
       p.display_zh_hant,
       p.target_language,
       p.image_public_path,
-      p.attribution_name,
       sc.status,
       sc.interval_days::float8 AS interval_days,
       sc.next_review_at,
@@ -2083,7 +2081,7 @@ export async function getSavedCommunityCardById(
     SELECT
       sc.id, sc.card_type, sc.public_item_id,
       p.public_slug AS slug, p.lemma, p.display_zh_hant, p.target_language,
-      p.image_public_path, p.attribution_name,
+      p.image_public_path,
       sc.status, sc.interval_days::float8 AS interval_days, sc.next_review_at,
       sc.review_count, sc.mistake_count, sc.mastery::float8 AS mastery
     FROM atlas_saved_cards sc

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
-import { updateProfile } from "@/lib/users-db";
+import { PUBLIC_IDENTITY_COOLDOWN_DAYS, updateProfile } from "@/lib/users-db";
 import { isAvatarPose } from "@/lib/avatars";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
@@ -36,7 +36,21 @@ export async function POST(req: Request) {
   // Avatar editing is currently disabled client-side; only persist a pose
   // when a valid one is explicitly sent, otherwise leave it untouched.
   const pose = isAvatarPose(avatar) ? avatar : undefined;
-  await updateProfile(userId, { nickname: nick, avatar: pose });
+  // Once a public identity is confirmed, this endpoint edits the PUBLIC
+  // display name, so it enforces the same rename cooldown as
+  // /api/users/public-author. Skipping it here would leave the limit
+  // bypassable from 編輯個人資料.
+  const saved = await updateProfile(userId, { nickname: nick, avatar: pose });
+  if (!saved.ok) {
+    return NextResponse.json(
+      {
+        error: "rename_cooldown",
+        message: `公開身分每 ${PUBLIC_IDENTITY_COOLDOWN_DAYS} 天只能修改一次。`,
+        nextChangeAt: saved.nextChangeAt,
+      },
+      { status: 429 },
+    );
+  }
 
   // Mirror the editable display name (and pose, when changed) into Supabase
   // user_metadata so the client's SessionUser — which reads

@@ -5,8 +5,15 @@
 // no email, no user id beyond what's already implicit in public items.
 
 import { NextResponse } from "next/server";
-import { getAtlasAuthor, listAtlasAuthorItems } from "@/lib/atlas-db";
-import { serializeAtlasPublicItem } from "@/lib/atlas/public-serialize";
+import {
+  getAtlasAuthor,
+  listAtlasAuthorCollections,
+  listAtlasAuthorItems,
+} from "@/lib/atlas-db";
+import {
+  serializeAtlasPublicCollectionCard,
+  serializeAtlasPublicItem,
+} from "@/lib/atlas/public-serialize";
 
 export const runtime = "nodejs";
 
@@ -25,7 +32,10 @@ export async function GET(
   // confirm whether an arbitrary username exists.
   if (!author) return NextResponse.json({ error: "not found" }, { status: 404 });
 
-  const rows = await listAtlasAuthorItems(author.user_id);
+  const [rows, collections] = await Promise.all([
+    listAtlasAuthorItems(author.user_id),
+    listAtlasAuthorCollections(author.user_id),
+  ]);
 
   return NextResponse.json(
     {
@@ -36,10 +46,15 @@ export async function GET(
         handle: author.username,
         displayName: author.nickname?.trim() ?? "",
         avatar: author.avatar,
+        bio: author.bio ?? "",
         joinedAt: author.joined_at,
         publishedCount: author.published_count,
         saveCount: author.save_count,
       },
+      // Additive: clients shipped before this key existed ignore it, and the
+      // client that expects it defaults to [] when it is absent — so this can
+      // deploy in either order relative to the app release.
+      collections: collections.map(serializeAtlasPublicCollectionCard),
       items: rows.map(serializeAtlasPublicItem),
     },
     {

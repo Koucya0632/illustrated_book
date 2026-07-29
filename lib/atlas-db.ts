@@ -1870,6 +1870,8 @@ export interface AtlasAuthorRow {
   username: string;
   nickname: string | null;
   avatar: string;
+  /** Author-written self-introduction, already text-gated on write. */
+  bio: string | null;
   joined_at: string;
   published_count: number;
   /** Total times this author's public items have been saved by others. */
@@ -1894,6 +1896,7 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
       pr.username,
       pr.nickname,
       pr.avatar,
+      pr.bio,
       pr.created_at                      AS joined_at,
       count(DISTINCT p.id)::int          AS published_count,
       count(s.public_item_id)::int       AS save_count
@@ -1904,16 +1907,29 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
     LEFT JOIN atlas_saves s ON s.public_item_id = p.id
     WHERE lower(pr.username) = lower(${username})
       AND pr.public_author_confirmed_at IS NOT NULL
-    GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.created_at
+    GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.bio, pr.created_at
     LIMIT 1
   `;
   return rows[0] ?? null;
 }
 
-/** An author's approved public items, newest first. */
+/**
+ * An author's approved public items, newest first.
+ *
+ * The cap is 300 because that is the Pro 自製圖鑑 capacity, and a published item
+ * cannot outlive its custom one (deleting a 自製圖鑑 item cascades the public row
+ * — see `deleteAtlasImageCascade`). So published ≤ live custom items ≤ 300, and
+ * the limit is unreachable rather than merely generous. That matters on the
+ * profile: the header's `published_count` is an unbounded `count(*)`, so any
+ * truncation here would put "公開 200" over a grid of 60 — and the client groups
+ * these by language, which would silently eat whichever language is older.
+ *
+ * If capacity ever rises above 300, this needs real pagination, not a bigger
+ * number.
+ */
 export async function listAtlasAuthorItems(
   userId: string,
-  limit = 60,
+  limit = 300,
 ): Promise<AtlasPublicItemWithAuthorRow[]> {
   const sql = requireSql();
   return sql<AtlasPublicItemWithAuthorRow[]>`
@@ -1923,7 +1939,7 @@ export async function listAtlasAuthorItems(
     WHERE pi.owner_user_id = ${userId}::uuid
       AND pi.review_status = 'approved'
     ORDER BY pi.published_at DESC
-    LIMIT ${Math.min(200, Math.max(1, Math.floor(limit)))}
+    LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
   `;
 }
 
@@ -2708,6 +2724,37 @@ export async function listPublicAtlasCollections(
     ORDER BY (cards.item_count >= ${ATLAS_COLLECTION_FEATURED_MIN_ITEMS}) DESC,
              cards.published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/**
+ * One author's approved collections, for their public profile. Newest first.
+ *
+ * NOT language-scoped, unlike the browse feed: that feed is study material and
+ * follows the viewer's learning direction, but a profile is a body of work, and
+ * "who is this person" should not be cropped by what the visitor happens to be
+ * studying. The client separates the languages visually instead.
+ *
+ * The LIMIT is a real cap, not a formality. Items are bounded by the 自製圖鑑
+ * capacity, but collections have no per-author quota at all — `createAtlasCollection`
+ * checks nothing — so without this an author could grow this array without bound
+ * inside a CDN-cached public payload. 50 approved collections is far past any
+ * plausible use.
+ */
+export async function listAtlasAuthorCollections(
+  ownerUserId: string,
+  limit = 50,
+): Promise<AtlasPublicCollectionCardRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicCollectionCardRow[]>`
+    SELECT ${collectionCardSelect(sql)}
+    FROM atlas_collections c
+    JOIN profiles pr ON pr.id = c.owner_user_id
+    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+    WHERE c.owner_user_id = ${ownerUserId}::uuid
+      AND c.review_status = 'approved'
+    ORDER BY c.published_at DESC NULLS LAST
+    LIMIT ${Math.min(50, Math.max(1, Math.floor(limit)))}
   `;
 }
 

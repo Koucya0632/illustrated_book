@@ -1207,12 +1207,33 @@ const DDL = [
      description          TEXT,
      target_language      TEXT NOT NULL CHECK (target_language IN ('en','ja')),
      cover_public_item_id UUID REFERENCES atlas_public_items(id) ON DELETE SET NULL,
+     -- Same 'withdrawn' vs 'takedown' split as items: the author's own removal
+     -- is reversible, moderation's is not.
      review_status        TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
-                            ('draft','pending_review','approved','rejected','takedown')),
+                            ('draft','pending_review','approved','rejected',
+                             'takedown','withdrawn')),
      created_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
      updated_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
      published_at         TIMESTAMPTZ
    )`,
+  // Same definition-guarded swap as the item tables: databases created before
+  // 'withdrawn' carry the narrower inline CHECK under the auto-generated name.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'atlas_collections_review_status_chk'
+         AND pg_get_constraintdef(oid) LIKE '%withdrawn%'
+     ) THEN
+       ALTER TABLE atlas_collections
+         DROP CONSTRAINT IF EXISTS atlas_collections_review_status_check;
+       ALTER TABLE atlas_collections
+         DROP CONSTRAINT IF EXISTS atlas_collections_review_status_chk;
+       ALTER TABLE atlas_collections
+         ADD CONSTRAINT atlas_collections_review_status_chk
+         CHECK (review_status IN
+           ('draft','pending_review','approved','rejected','takedown','withdrawn'));
+     END IF;
+   END $$`,
   // Browse hot path: approved collections for one learning language, newest first.
   `CREATE INDEX IF NOT EXISTS atlas_collections_browse_idx
      ON atlas_collections(target_language, published_at DESC)

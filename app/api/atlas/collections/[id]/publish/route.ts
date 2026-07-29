@@ -40,6 +40,11 @@ export async function POST(_req: Request, { params }: { params: { id: string } }
 
   const owned = await getOwnedAtlasCollection(params.id, userId);
   if (!owned) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // A moderation takedown is not re-submittable. The client hides the button;
+  // this is what actually stops a plain POST from re-publishing it.
+  if (owned.collection.review_status === "takedown") {
+    return NextResponse.json({ error: "not found" }, { status: 404 });
+  }
   if (owned.items.length === 0) {
     return NextResponse.json(
       { error: "empty_collection", message: "合集至少要有一個項目才能公開。" },

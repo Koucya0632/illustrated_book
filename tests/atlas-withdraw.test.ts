@@ -74,6 +74,17 @@ test("a moderation takedown cannot be re-submitted, a withdrawal can", () => {
   assert.doesNotMatch(submit, /review_status <> 'withdrawn'/);
 });
 
+// A 合集 is a shelf over items that are each public in their own right.
+// Retiring the shelf must not quietly unpublish the photos on it.
+test("withdrawing a collection leaves its members published", () => {
+  const body = fnBody(atlasDb, "withdrawAtlasCollection");
+  assert.match(body, /review_status = 'withdrawn'/);
+  assert.doesNotMatch(body, /atlas_collection_items/);
+  assert.doesNotMatch(body, /atlas_public_items/);
+  assert.match(body, /owner_user_id = \$\{ownerUserId\}::uuid/);
+  assert.match(body, /review_status <> 'takedown'/);
+});
+
 test("both review_status constraints accept withdrawn", () => {
   assert.match(
     migrate,

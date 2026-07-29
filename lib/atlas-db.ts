@@ -2617,19 +2617,39 @@ export async function getOwnedAtlasCollection(
 
 // MARK: - Collections: public reads (CDN-cached routes)
 
+/**
+ * How many members a 合集 needs to sort above the rest of the browse feed.
+ *
+ * A guess, deliberately: it only affects ordering, never whether something can
+ * be published, so getting it wrong costs a tuning change rather than a
+ * blocked author.
+ */
+export const ATLAS_COLLECTION_FEATURED_MIN_ITEMS = 3;
+
 export async function listPublicAtlasCollections(
   targetLanguage: AtlasTargetLanguage,
   limit = 60,
 ): Promise<AtlasPublicCollectionCardRow[]> {
   const sql = requireSql();
   return sql<AtlasPublicCollectionCardRow[]>`
-    SELECT ${collectionCardSelect(sql)}
-    FROM atlas_collections c
-    JOIN profiles pr ON pr.id = c.owner_user_id
-    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
-    WHERE c.target_language = ${targetLanguage}
-      AND c.review_status = 'approved'
-    ORDER BY c.published_at DESC
+    SELECT * FROM (
+      SELECT ${collectionCardSelect(sql)}
+      FROM atlas_collections c
+      JOIN profiles pr ON pr.id = c.owner_user_id
+      LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+      WHERE c.target_language = ${targetLanguage}
+        AND c.review_status = 'approved'
+    ) cards
+    -- Two tiers, then newest first. A one-item 合集 is legal — publishing must
+    -- never be blocked on size (docs/COMMUNITY_ATLAS_PLAN.md §4: the community
+    -- supplies content, it doesn't gate it) — but it shouldn't fill the first
+    -- screen either. Ranking costs exposure; a size floor would cost supply.
+    --
+    -- No save_count term on purpose: at this stage every collection has zero
+    -- saves, so any popularity weighting is dead code that can't be tuned
+    -- against real data. Add it as a middle tier once the counts move.
+    ORDER BY (cards.item_count >= ${ATLAS_COLLECTION_FEATURED_MIN_ITEMS}) DESC,
+             cards.published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
   `;
 }
@@ -2722,6 +2742,30 @@ export async function approveAtlasCollection(id: string): Promise<AtlasCollectio
 
 export function rejectAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {
   return setAtlasCollectionReviewStatus(id, "rejected");
+}
+
+/**
+ * The author unpublishing their own collection.
+ *
+ * Members are untouched: withdrawing the 合集 retires the shelf, not the items
+ * on it — each of those is published in its own right and may still be reached
+ * by word or by author. Reversible, and refused for a moderation takedown,
+ * which is not the author's to undo.
+ */
+export async function withdrawAtlasCollection(
+  id: string,
+  ownerUserId: string,
+): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET review_status = 'withdrawn', updated_at = now()
+    WHERE id = ${id}::uuid
+      AND owner_user_id = ${ownerUserId}::uuid
+      AND review_status <> 'takedown'
+    RETURNING *
+  `;
+  return rows[0] ?? null;
 }
 
 export function takedownAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {

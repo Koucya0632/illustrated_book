@@ -294,7 +294,10 @@ export type AtlasCollectionReviewStatus =
   | "pending_review"
   | "approved"
   | "rejected"
-  | "takedown";
+  /** Moderation removed it. Final. */
+  | "takedown"
+  /** The author took it down. Reversible. */
+  | "withdrawn";
 
 export interface AtlasCollectionRow {
   id: string;

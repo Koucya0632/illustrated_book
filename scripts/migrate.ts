@@ -66,73 +66,101 @@ const DDL = [
   // and selectable mascot-pose avatar.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS nickname TEXT`,
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar   TEXT NOT NULL DEFAULT 'face'`,
-  // Consent gate for the community atlas. NULL = this user has never agreed to
-  // show an identity publicly, so no public endpoint may name them and no
-  // publish may proceed. Stamped by the one-time 公開作者身分 screen.
+  // RETIRED consent gate. Kept, not dropped: the nickname wipe further down
+  // uses it to find accounts that never agreed to be named, and this DDL array
+  // re-runs on every deploy — dropping the column would make that statement
+  // fail on the next run. Nothing reads it any more.
   //
-  // Why a gate at all: `username` and `nickname` were built as *private* fields
-  // (a login handle and an in-app greeting), and `nickname` is seeded silently
-  // from the Apple Sign-In full name. Publishing either without asking would
-  // leak a real name or an email prefix the user never offered to the world.
+  // It existed because `username` and `nickname` were private fields the
+  // community layer wanted to publish: a handle that defaulted to the email
+  // local part, and a display name silently seeded from the Apple Sign-In full
+  // name. Both of those causes are removed in this same migration — the handle
+  // is now a machine-minted UID and the seeding is gone — so the gate has
+  // nothing left to protect.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_author_confirmed_at TIMESTAMPTZ`,
-  // Last time the PUBLIC identity (handle or display name) changed. Author
-  // identity is joined live, so a rename rewrites the byline on everything the
-  // author ever published — which is what makes "build a reputation under a
-  // clean name, then switch to an ad" a one-step move. This column is what the
-  // cooldown measures from. NULL = never changed since confirming.
+  // RETIRED rename cooldown. Same reason for keeping the column. The cooldown
+  // throttled renames because they rewrite the byline on already-published
+  // work; with an immutable UID anchoring every author page, changing a display
+  // name no longer launders an identity.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_identity_changed_at TIMESTAMPTZ`,
-  // Public author bio — a short self-introduction shown on the author profile.
-  // Deliberately NOT covered by the rename cooldown above: that cooldown exists
-  // because handle/display name are joined live into the byline of everything
-  // the author ever published, so a rename rewrites history. A bio appears in
-  // exactly one place and rewrites nothing, so freezing it for 30 days would be
-  // punishment for a typo. NULL = never written.
+  // Public 簽名 — a short self-introduction shown on the author profile.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS bio TEXT`,
 
   // Auto-create a profile when a Supabase auth user signs up.
   //
-  // The fallback handle is deliberately random rather than the email local
-  // part: this column is the public handle once a user opts into publishing,
-  // and `split_part(email,'@',1)` made every account's handle a piece of their
-  // email address by default.
+  // The handle is a machine-minted UID — `TJ` + 8 digits — and is never derived
+  // from anything the user supplied. Two earlier defaults are deliberately gone:
+  // `split_part(email,'@',1)` put a piece of everyone's email address in a field
+  // the community layer later wanted to publish, and honouring
+  // `raw_user_meta_data->>'username'` let the registration form choose a handle
+  // that is now supposed to be system-assigned and immutable.
+  //
+  // `nickname` IS seeded from metadata, and that is a different thing: it is
+  // whatever the user typed into a field labelled 暱稱 on the signup form. The
+  // rule being enforced is not "never seed" — it is "never publish a name the
+  // user did not type", which is exactly why the Apple full-name capture is
+  // gone while this stays.
+  //
+  // Collisions re-roll rather than append a suffix: `TJ00000042-2` would fail
+  // the UID pattern every reader validates against. 10^8 addresses means the
+  // loop effectively never runs twice at this scale.
   `CREATE OR REPLACE FUNCTION public.handle_new_user()
    RETURNS TRIGGER
    LANGUAGE plpgsql
    SECURITY DEFINER SET search_path = public
    AS $$
    DECLARE
-     base TEXT := COALESCE(
-       NEW.raw_user_meta_data->>'username',
-       'tuji-' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12)
-     );
-     candidate TEXT := regexp_replace(lower(base), '[^a-z0-9_.-]', '', 'g');
-     i INT := 0;
+     candidate TEXT := 'TJ' || lpad(floor(random() * 100000000)::bigint::text, 8, '0');
    BEGIN
-     IF candidate = '' THEN candidate := 'user'; END IF;
-     -- Find a free username by appending -2, -3, ...
-     WHILE EXISTS (SELECT 1 FROM public.profiles WHERE lower(username) = candidate) LOOP
-       i := i + 1;
-       candidate := regexp_replace(lower(base), '[^a-z0-9_.-]', '', 'g') || '-' || (i + 1);
+     WHILE EXISTS (SELECT 1 FROM public.profiles WHERE username = candidate) LOOP
+       candidate := 'TJ' || lpad(floor(random() * 100000000)::bigint::text, 8, '0');
      END LOOP;
-     INSERT INTO public.profiles (id, username) VALUES (NEW.id, candidate);
+     INSERT INTO public.profiles (id, username, nickname)
+     VALUES (NEW.id, candidate, nullif(trim(NEW.raw_user_meta_data->>'nickname'), ''));
      RETURN NEW;
    END;
    $$`,
-  // One-shot backfill for accounts created before the change above. Only
-  // touches handles that are STILL the email local part and were never chosen
-  // by the user (email signup passes an explicit username in user metadata;
-  // Apple/Google signups do not). Self-limiting: once rewritten the row no
-  // longer matches, so re-running the migration is a no-op.
+  // Migrate every pre-UID handle. Self-limiting: a row that already matches the
+  // pattern is skipped, so re-running the migration is a no-op.
   //
-  // Nothing has ever been published, so no public URL or attribution breaks.
-  `UPDATE profiles p
-     SET username = 'tuji-' || substr(replace(gen_random_uuid()::text, '-', ''), 1, 12)
-     FROM auth.users u
-    WHERE u.id = p.id
-      AND p.public_author_confirmed_at IS NULL
-      AND u.raw_user_meta_data->>'username' IS NULL
-      AND u.email IS NOT NULL
-      AND lower(p.username) = regexp_replace(lower(split_part(u.email, '@', 1)), '[^a-z0-9_.-]', '', 'g')`,
+  // Safe to rewrite in bulk because a handle is never persisted anywhere but
+  // this column — iOS reads it from each payload and there is no web author
+  // page — so no external URL and no client cache points at the old value.
+  //
+  // Wrapped in DO rather than a plain UPDATE because each row needs its own
+  // re-roll loop, and it still executes as one idempotent statement like the
+  // rest of this array.
+  `DO $$
+   DECLARE
+     r RECORD;
+     candidate TEXT;
+   BEGIN
+     FOR r IN SELECT id FROM profiles WHERE username !~ '^TJ[0-9]{8}$' LOOP
+       LOOP
+         candidate := 'TJ' || lpad(floor(random() * 100000000)::bigint::text, 8, '0');
+         EXIT WHEN NOT EXISTS (SELECT 1 FROM profiles WHERE username = candidate);
+       END LOOP;
+       UPDATE profiles SET username = candidate WHERE id = r.id;
+     END LOOP;
+   END $$`,
+  // Clear display names nobody ever agreed to publish.
+  //
+  // `captureAppleNameIfNeeded` used to write the Apple Sign-In full name into
+  // `nickname` silently, and that was tolerable only while a consent gate stood
+  // between `nickname` and the public wall. This migration removes the gate, so
+  // any name still sitting there unconsented would become public the moment it
+  // deploys. We cannot tell a seeded name from one the user typed into the old
+  // private greeting field, and guessing wrong publishes a real name — so every
+  // unconfirmed nickname is cleared and those users pick one again, this time
+  // in a field that says what it is.
+  //
+  // Self-limiting, and it MUST NOT be reordered after the gate removal: the two
+  // have to land in the same deploy or there is a window where seeded names are
+  // live.
+  `UPDATE profiles
+      SET nickname = NULL
+    WHERE public_author_confirmed_at IS NULL
+      AND nickname IS NOT NULL`,
   `DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users`,
   `CREATE TRIGGER on_auth_user_created
      AFTER INSERT ON auth.users

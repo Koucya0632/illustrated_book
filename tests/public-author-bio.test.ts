@@ -1,12 +1,10 @@
-// Pins the public bio: its text gate, and — the load-bearing one — that it is
-// NOT covered by the rename cooldown.
+// Pins the public 簽名: its text gate, and where it is edited.
 //
-// The cooldown exists because `handle`/`nickname` are joined live into the
-// byline of everything the author ever published, so a rename rewrites history
-// and "build a reputation, then switch to an ad" becomes a one-step move. A bio
-// appears on exactly one page and rewrites no attribution. Folding it into the
-// same lock would freeze someone's public identity for 30 days because they
-// fixed a typo in their self-introduction — all cost, no protection.
+// The previous version of this file spent most of its assertions proving the
+// 簽名 was exempt from the 30-day rename cooldown. That cooldown no longer
+// exists — an immutable UID anchors every author page, so changing a display
+// name cannot launder an identity and there is nothing left to throttle. What
+// survives is the gate, which is about content rather than identity.
 
 // Source-reading for the DB layer: lib/users-db.ts is `server-only`, which
 // throws outside a server component. The moderation helper is pure, so it is
@@ -19,7 +17,7 @@ import { PUBLIC_BIO_MAX } from "../lib/public-author";
 
 const usersDb = readFileSync(new URL("../lib/users-db.ts", import.meta.url), "utf8");
 const route = readFileSync(
-  new URL("../app/api/users/public-author/route.ts", import.meta.url),
+  new URL("../app/api/users/profile/route.ts", import.meta.url),
   "utf8",
 );
 
@@ -30,39 +28,31 @@ function fnBody(source: string, name: string): string {
   return source.slice(start, next === -1 ? undefined : next);
 }
 
-const setIdentity = fnBody(usersDb, "setPublicAuthorIdentity");
+const updateProfile = fnBody(usersDb, "updateProfile");
 
-// MARK: - The cooldown exemption
-
-test("the rename check compares only the handle and display name", () => {
-  const isRename = setIdentity.slice(
-    setIdentity.indexOf("const isRename"),
-    setIdentity.indexOf("if (isRename)"),
-  );
-  assert.match(isRename, /current\.username !== handle/);
-  assert.match(isRename, /current\.nickname \?\? ""\) !== displayName/);
-  // The whole point: a bio edit must not read as a rename.
-  assert.doesNotMatch(isRename, /bio/);
-});
-
-test("the cooldown stamp is tied to the rename, not to the write", () => {
-  assert.match(setIdentity, /const stamp = isRename \? sql`, public_identity_changed_at = now\(\)`/);
-});
-
-test("the bio is still written by the same call", () => {
-  assert.match(setIdentity, /bio = \$\{fields\.bio\}/);
-});
+// MARK: - The write path
 
 // undefined vs null is the difference between "don't touch it" and "clear it".
-// Collapsing them would make deleting a bio impossible.
+// Collapsing them would make deleting a 簽名 impossible.
 test("an absent bio leaves the column alone, an explicit null clears it", () => {
-  assert.match(setIdentity, /fields\.bio !== undefined \? sql`, bio = /);
+  assert.match(updateProfile, /fields\.bio !== undefined \? sql`, bio = /);
   assert.match(route, /nextBio = trimmedBio === "" \? null : trimmedBio/);
+});
+
+test("the same call writes nickname, avatar and bio", () => {
+  assert.match(route, /updateProfile\(userId, \{ nickname: nick, avatar: pose, bio: nextBio \}\)/);
+});
+
+// The cooldown and the consent flag are gone; nothing may quietly reintroduce
+// a throttle on an ordinary profile edit.
+test("editing a profile is no longer rate-limited or gated", () => {
+  assert.doesNotMatch(updateProfile, /cooldown|public_identity_changed_at|confirmed/i);
+  assert.doesNotMatch(route, /cooldown|429|author_identity_required/i);
 });
 
 // MARK: - The text gate
 
-test("a clean bio passes the gate", () => {
+test("a clean 簽名 passes the gate", () => {
   assert.equal(runAtlasTextModeration(["喜歡拍街上的招牌，慢慢學日文"]).length, 0);
 });
 
@@ -77,13 +67,11 @@ test("personal information is caught", () => {
 });
 
 // Rejected synchronously rather than queued: the gate only catches links and
-// PII, both of which a bio must not carry at all, so there is no verdict a
-// human reviewer could reach that this check cannot. A queue would also mean
-// building a review surface for one line of text.
-test("a rejected bio is refused outright, not held for review", () => {
+// PII, both of which a 簽名 must not carry at all, so there is no verdict a
+// human reviewer could reach that this check cannot.
+test("a rejected 簽名 is refused outright, not held for review", () => {
   assert.match(route, /error: "bio_rejected"/);
   assert.match(route, /status: 400/);
-  // No pending/review state anywhere in this route.
   assert.doesNotMatch(route, /pending_review/);
 });
 
@@ -97,12 +85,5 @@ test("the refusal says which rule was broken", () => {
 
 test("the length limit is shared with the client rather than duplicated", () => {
   assert.equal(PUBLIC_BIO_MAX, 80);
-  // Sent down in the identity payload so the client counter cannot promise a
-  // length the route then rejects.
-  assert.match(route, /bioMax: PUBLIC_BIO_MAX/);
   assert.match(route, /trimmedBio\.length > PUBLIC_BIO_MAX/);
-});
-
-test("the bio is returned so the sheet edits the live value, not a blank", () => {
-  assert.match(route, /bio: profile\.bio \?\? ""/);
 });

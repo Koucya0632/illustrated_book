@@ -5,7 +5,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getOwnedAtlasCollection, isAtlasAuthorBlocked } from "@/lib/atlas-db";
-import { hasConfirmedPublicAuthor } from "@/lib/users-db";
 import { processAtlasCollectionSubmission } from "@/lib/atlas/collection-submit-pipeline";
 
 export const runtime = "nodejs";
@@ -25,16 +24,6 @@ export async function POST(_req: Request, { params }: { params: { id: string } }
     return NextResponse.json(
       { error: "publishing_restricted", message: "你的帳號目前無法公開內容。" },
       { status: 403, headers: { "Cache-Control": "private, no-store" } },
-    );
-  }
-
-  // Same consent gate as item publishing: the collection card carries the
-  // author's name and avatar, so it may not go public before that identity
-  // exists by the user's own choice.
-  if (!(await hasConfirmedPublicAuthor(userId))) {
-    return NextResponse.json(
-      { error: "author_identity_required", message: "請先設定你的公開作者身分。" },
-      { status: 409, headers: { "Cache-Control": "private, no-store" } },
     );
   }
 

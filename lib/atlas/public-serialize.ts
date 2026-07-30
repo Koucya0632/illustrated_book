@@ -44,7 +44,6 @@ export function serializeAtlasPublicCollectionCard(row: AtlasPublicCollectionCar
       author_username: row.author_username,
       author_nickname: row.author_nickname,
       author_avatar: row.author_avatar,
-      author_confirmed_at: row.author_confirmed_at,
     }),
     itemCount: row.item_count,
     saveCount: row.save_count,

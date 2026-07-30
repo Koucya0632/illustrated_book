@@ -1725,8 +1725,7 @@ const publicItemWithAuthorSelect = (sql: ReturnType<typeof requireSql>) => sql`
   pi.*,
   pr.username                   AS author_username,
   pr.nickname                   AS author_nickname,
-  pr.avatar                     AS author_avatar,
-  pr.public_author_confirmed_at AS author_confirmed_at
+  pr.avatar                     AS author_avatar
 `;
 
 export async function listAtlasPublicItems(limit = 60): Promise<AtlasPublicItemWithAuthorRow[]> {
@@ -1905,8 +1904,7 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
       ON p.owner_user_id = pr.id
      AND p.review_status = 'approved'
     LEFT JOIN atlas_saves s ON s.public_item_id = p.id
-    WHERE lower(pr.username) = lower(${username})
-      AND pr.public_author_confirmed_at IS NOT NULL
+    WHERE pr.username = ${username}
     GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.bio, pr.created_at
     LIMIT 1
   `;
@@ -2485,7 +2483,6 @@ export interface AtlasPublicCollectionCardRow {
   author_username: string;
   author_nickname: string | null;
   author_avatar: string | null;
-  author_confirmed_at: string | null;
   item_count: number;
   save_count: number;
   cover_image_path: string | null;
@@ -2508,7 +2505,6 @@ const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
   pr.username                   AS author_username,
   pr.nickname                   AS author_nickname,
   pr.avatar                     AS author_avatar,
-  pr.public_author_confirmed_at AS author_confirmed_at,
   (SELECT count(*)::int FROM atlas_collection_items ci
     WHERE ci.collection_id = c.id) AS item_count,
   (SELECT count(*)::int FROM atlas_collection_items ci

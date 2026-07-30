@@ -5,10 +5,7 @@ import LoadingToast from "@/components/tuji/LoadingToast";
 import { createClient } from "@/lib/supabase/client";
 import { getProgress } from "@/lib/storage";
 
-const USERNAME_RE = /^[A-Za-z0-9_.-]{3,24}$/;
-
 export default function RegisterForm({ next }: { next: string }) {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -21,10 +18,6 @@ export default function RegisterForm({ next }: { next: string }) {
     setError(null);
     setInfo(null);
 
-    if (!USERNAME_RE.test(username)) {
-      setError("用戶名須為 3-24 字，限英數與 _ . -");
-      return;
-    }
     if (password.length < 6) {
       setError("密碼至少 6 個字元");
       return;
@@ -41,8 +34,9 @@ export default function RegisterForm({ next }: { next: string }) {
         email,
         password,
         options: {
-          // Used by the SQL trigger handle_new_user() to seed profiles.username.
-          data: { username },
+          // No `data.username`: the handle is a machine-minted TJ UID assigned
+          // by handle_new_user(), not something the user picks. A field here
+          // would be collected, ignored, and then contradicted by the profile.
           // Make the email confirmation link land back on *this* origin
           // (otherwise Supabase falls back to the configured Site URL).
           emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
@@ -89,18 +83,9 @@ export default function RegisterForm({ next }: { next: string }) {
       />
       <form onSubmit={handle} className="space-y-3">
         <label className="block">
-          <span className="text-sm font-bold text-tuji-ink">用戶名</span>
-          <input
-            autoFocus
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="3-24 字，限英數與 _ . -"
-            className={INPUT}
-          />
-        </label>
-        <label className="block">
           <span className="text-sm font-bold text-tuji-ink">電子郵件</span>
           <input
+            autoFocus
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -137,7 +122,7 @@ export default function RegisterForm({ next }: { next: string }) {
 
         <button
           type="submit"
-          disabled={loading || !username || !email || !password}
+          disabled={loading || !email || !password}
           className="w-full rounded-xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-soft transition hover:brightness-105 disabled:opacity-40"
         >
           {loading ? "建立中..." : "建立帳號"}

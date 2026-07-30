@@ -117,6 +117,16 @@ const DDL = [
      END LOOP;
      INSERT INTO public.profiles (id, username, nickname)
      VALUES (NEW.id, candidate, nullif(trim(NEW.raw_user_meta_data->>'nickname'), ''));
+     -- Mirror the UID into user_metadata: that is where the iOS client reads it
+     -- (SessionUser is built from the session, not from a profiles fetch), so a
+     -- profiles-only write leaves every new account with no visible UID at all.
+     -- Safe from recursion: this trigger is AFTER INSERT, so an UPDATE here
+     -- cannot re-fire it.
+     UPDATE auth.users
+        SET raw_user_meta_data =
+              coalesce(raw_user_meta_data, '{}'::jsonb)
+              || jsonb_build_object('username', candidate)
+      WHERE id = NEW.id;
      RETURN NEW;
    END;
    $$`,
@@ -161,6 +171,24 @@ const DDL = [
       SET nickname = NULL
     WHERE public_author_confirmed_at IS NULL
       AND nickname IS NOT NULL`,
+  // Re-point the user_metadata mirror at the migrated UID.
+  //
+  // The iOS client reads the UID from the session's user_metadata, not from
+  // profiles, so rewriting only profiles left signed-in users with a mirror
+  // holding their PRE-migration handle — which resolves to a 404 author page —
+  // and OAuth accounts with no `username` key at all, which the app renders as a
+  // disabled 我的公開主頁 row. Two writers used to keep this in sync (the email
+  // signup payload and the retired public-author route) and both are gone, so
+  // the trigger above and this statement are now the only ones.
+  //
+  // Self-limiting: rows already matching are skipped.
+  `UPDATE auth.users u
+      SET raw_user_meta_data =
+            coalesce(u.raw_user_meta_data, '{}'::jsonb)
+            || jsonb_build_object('username', p.username)
+     FROM profiles p
+    WHERE p.id = u.id
+      AND coalesce(u.raw_user_meta_data->>'username', '') <> p.username`,
   `DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users`,
   `CREATE TRIGGER on_auth_user_created
      AFTER INSERT ON auth.users

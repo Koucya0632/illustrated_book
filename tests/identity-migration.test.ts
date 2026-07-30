@@ -97,3 +97,39 @@ test("the retired columns are kept, because the wipe still reads one", () => {
   assert.match(migrate, /ADD COLUMN IF NOT EXISTS public_author_confirmed_at/);
   assert.doesNotMatch(migrate, /DROP COLUMN IF EXISTS public_author_confirmed_at/);
 });
+
+// MARK: - The user_metadata mirror
+//
+// The UID is authoritative in `profiles`, but the iOS client reads it from the
+// session's `user_metadata`. Two writers used to keep that mirror fresh — the
+// email signup payload and the public-author route — and BOTH were removed when
+// the handle became machine-minted, with nothing put back. The result shipped:
+// OAuth accounts had no `username` key at all (a permanently disabled
+// 我的公開主頁 row) and email accounts held a pre-migration handle that now 404s.
+//
+// So the mirror needs exactly two writers, and these pin both.
+
+test("the trigger mirrors the freshly minted UID into user_metadata", () => {
+  assert.match(trigger, /UPDATE auth\.users/);
+  assert.match(trigger, /jsonb_build_object\('username', candidate\)/);
+  // Merged into whatever is already there — a bare assignment would discard the
+  // nickname the signup form just sent in the same payload.
+  assert.match(trigger, /coalesce\(raw_user_meta_data, '\{\}'::jsonb\)/);
+});
+
+test("existing accounts have their mirror re-pointed at the migrated UID", () => {
+  const backfill = migrate.indexOf("UPDATE auth.users u");
+  assert.notEqual(backfill, -1, "the metadata backfill should exist");
+  const stmt = migrate.slice(backfill, backfill + 400);
+  assert.match(stmt, /FROM profiles p/);
+  // Self-limiting, so re-running the migration is a no-op.
+  assert.match(stmt, /<> p\.username/);
+});
+
+// Ordering: the mirror must be re-pointed AFTER handles are rewritten, or it
+// would faithfully copy the old value.
+test("the mirror is updated after the UID rewrite, not before", () => {
+  const uidBackfill = indexOfStatement("WHERE username !~ '^TJ[0-9]{8}$'");
+  const mirror = migrate.indexOf("UPDATE auth.users u");
+  assert.ok(uidBackfill < mirror, "UID rewrite must precede the metadata mirror");
+});

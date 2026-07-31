@@ -1326,6 +1326,21 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS atlas_collection_items_order_idx
      ON atlas_collection_items(collection_id, position)`,
 
+  // Saved public collections are bookmarks to the collection itself. They are
+  // intentionally separate from atlas_saves / atlas_saved_cards: saving a
+  // shelf must never save its member items, create study cards, or consume the
+  // saved-item quota.
+  `CREATE TABLE IF NOT EXISTS atlas_collection_saves (
+     user_id      UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     collection_id UUID NOT NULL REFERENCES atlas_collections(id) ON DELETE CASCADE,
+     created_at   TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, collection_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_collection_saves_user_idx
+     ON atlas_collection_saves(user_id, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS atlas_collection_saves_collection_idx
+     ON atlas_collection_saves(collection_id)`,
+
   // Machine-gate audit for collection submissions. Text-only (title + description),
   // mirroring atlas_moderation_events for items.
   `CREATE TABLE IF NOT EXISTS atlas_collection_moderation_events (
@@ -1342,8 +1357,8 @@ const DDL = [
      ON atlas_collection_moderation_events(collection_id, created_at DESC)`,
 
   // RLS mirrors atlas_public_items: owner-owns-their-rows + public read of
-  // approved. The membership/audit tables are server-only (service-role reads),
-  // matching atlas_saves / atlas_saved_cards which likewise carry no RLS.
+  // approved. The membership/save/audit tables are server-only (service-role
+  // reads), matching atlas_saves / atlas_saved_cards which likewise carry no RLS.
   `ALTER TABLE atlas_collections ENABLE ROW LEVEL SECURITY`,
   `DROP POLICY IF EXISTS atlas_collections_owner ON atlas_collections`,
   `CREATE POLICY atlas_collections_owner ON atlas_collections FOR ALL
@@ -1506,10 +1521,11 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
 
 // Seed the categories reference table from the static TS source
 // (`lib/categories.ts`). Idempotent and additive: adding a new category to
-// that file just inserts one more row on the next deploy. On conflict only
-// image_url is refreshed — the seed file is the sole writer of category
-// covers, so editing an imageUrl there propagates on deploy. Other fields
-// (name, emoji, description) stay DO NOTHING. MUST run before word seeding
+// that file just inserts one more row on the next deploy. On conflict,
+// image_url and sort_order are refreshed — the seed file is the sole writer of
+// category covers and canonical theme order, so either kind of edit propagates
+// on deploy. Other fields (name, emoji, description) stay untouched. MUST run
+// before word seeding
 // so words.category never references a category that isn't in the table yet
 // (the words_category_fk would reject it).
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -1522,8 +1538,11 @@ async function seedCategoriesIntoDb(sql: any) {
         ${c.description}, ${c.color}, ${c.imageUrl},
         ${seedCategories.indexOf(c)}
       )
-      ON CONFLICT (id) DO UPDATE SET image_url = EXCLUDED.image_url
+      ON CONFLICT (id) DO UPDATE SET
+        image_url = EXCLUDED.image_url,
+        sort_order = EXCLUDED.sort_order
       WHERE categories.image_url IS DISTINCT FROM EXCLUDED.image_url
+         OR categories.sort_order IS DISTINCT FROM EXCLUDED.sort_order
     `;
   }
   const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;

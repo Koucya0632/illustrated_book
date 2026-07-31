@@ -243,14 +243,18 @@ export interface AtlasCapacityGate {
  * This is an abuse rail, not a paywall — hitting it is not upgradeable and the
  * message must not push Pro.
  */
-export async function checkAtlasSaveCapacity(userId: string): Promise<AtlasCapacityGate> {
+export async function checkAtlasSaveCapacity(
+  userId: string,
+  additionalItems = 1,
+): Promise<AtlasCapacityGate> {
   const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
   const limits = atlasLimitsForTier(tier);
-  if (usage.savedItems < limits.savedItemsLimit) return { ok: true };
+  const requested = Math.max(0, Math.floor(additionalItems));
+  if (usage.savedItems + requested <= limits.savedItemsLimit) return { ok: true };
   return {
     ok: false,
     upgradeable: false,
-    message: `收藏已達上限（${limits.savedItemsLimit}），移除一些後再收藏。`,
+    message: `學習項目已達上限（${limits.savedItemsLimit}），移除一些後再加入。`,
     limit: limits.savedItemsLimit,
     usage: usage.savedItems,
   };

@@ -11,6 +11,7 @@ import { getSql } from "@/lib/db";
 import {
   countAtlasSaves,
   getAtlasPublicItem,
+  isAtlasPublicItemSaved,
   saveAtlasPublicItem,
   unsaveAtlasPublicItem,
 } from "@/lib/atlas-db";
@@ -23,6 +24,31 @@ export const dynamic = "force-dynamic";
 function normalizeSlug(raw: string): string | null {
   const slug = raw.trim().toLowerCase();
   return /^[a-z0-9-]{1,80}$/.test(slug) ? slug : null;
+}
+
+export async function GET(
+  _req: Request,
+  { params }: { params: { slug: string } },
+) {
+  const userId = await getCurrentUserId();
+  if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
+
+  const slug = normalizeSlug(params.slug);
+  if (!slug) return NextResponse.json({ error: "not found" }, { status: 404 });
+
+  const item = await getAtlasPublicItem(slug);
+  if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
+
+  const [saved, saveCount] = await Promise.all([
+    isAtlasPublicItemSaved(userId, item.id),
+    countAtlasSaves(item.id),
+  ]);
+
+  return NextResponse.json(
+    { ok: true, saved, saveCount },
+    { headers: { "Cache-Control": "private, no-store" } },
+  );
 }
 
 export async function POST(

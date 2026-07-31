@@ -2,7 +2,8 @@
 // (approved members only). Powers the MOJi-style 目錄/簡介 detail page.
 
 import { NextResponse } from "next/server";
-import { getPublicAtlasCollection } from "@/lib/atlas-db";
+import { getCurrentUserId } from "@/lib/current-user";
+import { livePublicCollectionModule } from "@/lib/atlas/public-collection-live";
 import {
   serializeAtlasPublicCollectionCard,
   serializeAtlasPublicItem,
@@ -15,18 +16,19 @@ export async function GET(_req: Request, { params }: { params: { slug: string } 
   if (!/^[a-z0-9-]{1,80}$/.test(slug)) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
-
-  const detail = await getPublicAtlasCollection(slug);
-  if (!detail) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const userId = await getCurrentUserId();
+  const result = await livePublicCollectionModule.detail({ slug, userId });
+  if (!result.ok) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   return NextResponse.json(
     {
-      collection: serializeAtlasPublicCollectionCard(detail.collection),
-      items: detail.items.map(serializeAtlasPublicItem),
+      collection: serializeAtlasPublicCollectionCard(result.value.collection),
+      items: result.value.items.map(serializeAtlasPublicItem),
+      access: result.value.access,
     },
     {
       headers: {
-        "Cache-Control": "public, s-maxage=60",
+        "Cache-Control": "private, no-store",
       },
     },
   );

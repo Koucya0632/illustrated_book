@@ -62,8 +62,8 @@ test("nothing in the publish path enforces a minimum collection size", () => {
   assert.ok(Number(declared[1]) > 1 && Number(declared[1]) <= 10);
 });
 
-// Every collection has zero saves right now, so a popularity term would be
-// untunable dead weight. It earns its place when the counts move.
+// Bookmark totals are feedback, not a ranking policy. They remain absent until
+// popularity is deliberately introduced as an exposure signal.
 test("ordering carries no popularity term yet", () => {
   const orderBy = feed.slice(feed.indexOf("ORDER BY"));
   assert.doesNotMatch(orderBy, /save_count/);

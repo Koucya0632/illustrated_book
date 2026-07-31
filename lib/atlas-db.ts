@@ -1873,7 +1873,7 @@ export interface AtlasAuthorRow {
   bio: string | null;
   joined_at: string;
   published_count: number;
-  /** Total times this author's public items have been saved by others. */
+  /** Total saves across this author's public items and public collections. */
   save_count: number;
 }
 
@@ -1898,12 +1898,25 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
       pr.bio,
       pr.created_at                      AS joined_at,
       count(DISTINCT p.id)::int          AS published_count,
-      count(s.public_item_id)::int       AS save_count
+      (
+        SELECT count(*)::int
+        FROM atlas_saves item_saves
+        JOIN atlas_public_items saved_item
+          ON saved_item.id = item_saves.public_item_id
+        WHERE saved_item.owner_user_id = pr.id
+          AND saved_item.review_status = 'approved'
+      ) + (
+        SELECT count(*)::int
+        FROM atlas_collection_saves collection_saves
+        JOIN atlas_collections saved_collection
+          ON saved_collection.id = collection_saves.collection_id
+        WHERE saved_collection.owner_user_id = pr.id
+          AND saved_collection.review_status = 'approved'
+      )                                  AS save_count
     FROM profiles pr
     JOIN atlas_public_items p
       ON p.owner_user_id = pr.id
      AND p.review_status = 'approved'
-    LEFT JOIN atlas_saves s ON s.public_item_id = p.id
     WHERE pr.username = ${username}
     GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.bio, pr.created_at
     LIMIT 1
@@ -2272,6 +2285,28 @@ export async function getAtlasPublicItem(
   return rows[0] ?? null;
 }
 
+/**
+ * Full source content behind an already-approved public item.
+ *
+ * Callers must resolve the public row first; this intentionally does not accept
+ * a slug or perform its own publication check. It exists so the public detail
+ * route can render the same stored learning content as the owner's atlas
+ * without triggering another enrichment pass.
+ */
+export async function getAtlasPublicSourceItem(
+  sourceItemId: string,
+): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasItemRow[]>`
+    SELECT *
+    FROM user_atlas_items
+    WHERE id = ${sourceItemId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
 export type AtlasReportReason =
   | "spam"
   | "inappropriate"
@@ -2476,6 +2511,8 @@ export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
  *  as a JSON string and breaks the iOS Int decode. */
 export interface AtlasPublicCollectionCardRow {
   id: string;
+  /** Internal authorization field; public serializers deliberately omit it. */
+  owner_user_id: string;
   slug: string;
   title: string;
   description: string | null;
@@ -2501,15 +2538,14 @@ export interface AtlasPublicCollectionDetail {
 
 /** Card projection + member items, ordered by position (approved members only). */
 const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
-  c.id, c.slug, c.title, c.description, c.target_language, c.published_at,
+  c.id, c.owner_user_id, c.slug, c.title, c.description, c.target_language, c.published_at,
   pr.username                   AS author_username,
   pr.nickname                   AS author_nickname,
   pr.avatar                     AS author_avatar,
   (SELECT count(*)::int FROM atlas_collection_items ci
     WHERE ci.collection_id = c.id) AS item_count,
-  (SELECT count(*)::int FROM atlas_collection_items ci
-    JOIN atlas_saves s ON s.public_item_id = ci.public_item_id
-    WHERE ci.collection_id = c.id) AS save_count,
+  (SELECT count(*)::int FROM atlas_collection_saves cs
+    WHERE cs.collection_id = c.id) AS save_count,
   COALESCE(
     cover.image_public_path,
     (SELECT pi.image_public_path FROM atlas_collection_items ci
@@ -2714,9 +2750,9 @@ export async function listPublicAtlasCollections(
     -- supplies content, it doesn't gate it) — but it shouldn't fill the first
     -- screen either. Ranking costs exposure; a size floor would cost supply.
     --
-    -- No save_count term on purpose: at this stage every collection has zero
-    -- saves, so any popularity weighting is dead code that can't be tuned
-    -- against real data. Add it as a middle tier once the counts move.
+    -- No save_count term on purpose: collection saves are a reader bookmark,
+    -- not a popularity ranking signal. Keep exposure based on useful size and
+    -- recency until a separate ranking decision is made.
     ORDER BY (cards.item_count >= ${ATLAS_COLLECTION_FEATURED_MIN_ITEMS}) DESC,
              cards.published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
@@ -2778,6 +2814,240 @@ export async function getPublicAtlasCollection(
     ORDER BY ci.position ASC, pi.published_at DESC
   `;
   return { collection, items };
+}
+
+// MARK: - Collections: reader bookmarks
+
+/** Idempotently bookmark an approved public collection. */
+export async function saveAtlasPublicCollection(
+  userId: string,
+  collectionId: string,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    INSERT INTO atlas_collection_saves (user_id, collection_id)
+    VALUES (${userId}::uuid, ${collectionId}::uuid)
+    ON CONFLICT (user_id, collection_id) DO NOTHING
+  `;
+}
+
+export async function unsaveAtlasPublicCollection(
+  userId: string,
+  collectionId: string,
+): Promise<void> {
+  const sql = requireSql();
+  await sql`
+    DELETE FROM atlas_collection_saves
+    WHERE user_id = ${userId}::uuid
+      AND collection_id = ${collectionId}::uuid
+  `;
+}
+
+export async function isAtlasPublicCollectionSaved(
+  userId: string,
+  collectionId: string,
+): Promise<boolean> {
+  const sql = getSql();
+  if (!sql) return false;
+  const rows = await sql<{ one: number }[]>`
+    SELECT 1 AS one
+    FROM atlas_collection_saves
+    WHERE user_id = ${userId}::uuid
+      AND collection_id = ${collectionId}::uuid
+    LIMIT 1
+  `;
+  return rows.length > 0;
+}
+
+export async function countAtlasCollectionSaves(collectionId: string): Promise<number> {
+  const sql = getSql();
+  if (!sql) return 0;
+  const rows = await sql<{ count: number }[]>`
+    SELECT count(*)::int AS count
+    FROM atlas_collection_saves
+    WHERE collection_id = ${collectionId}::uuid
+  `;
+  return rows[0]?.count ?? 0;
+}
+
+export interface AtlasCollectionLearningState {
+  totalCount: number;
+  learningCount: number;
+}
+
+/** How many live collection members this reader has already added to study. */
+export async function getAtlasCollectionLearningState(
+  userId: string,
+  collectionId: string,
+): Promise<AtlasCollectionLearningState> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionLearningState[]>`
+    SELECT
+      count(DISTINCT pi.id)::int AS "totalCount",
+      count(DISTINCT s.public_item_id)::int AS "learningCount"
+    FROM atlas_collection_items ci
+    JOIN atlas_public_items pi
+      ON pi.id = ci.public_item_id
+     AND pi.review_status = 'approved'
+    LEFT JOIN atlas_saves s
+      ON s.public_item_id = pi.id
+     AND s.user_id = ${userId}::uuid
+    WHERE ci.collection_id = ${collectionId}::uuid
+  `;
+  return rows[0] ?? { totalCount: 0, learningCount: 0 };
+}
+
+/**
+ * Atomically adds every not-yet-saved live member to the reader's study queue.
+ *
+ * The per-user advisory lock serializes collection batch-learning requests so
+ * the saved-item capacity check and both writes observe one snapshot. The two
+ * inserts remain idempotent: retrying also repairs card rows left by requests
+ * from before this transaction existed.
+ */
+export async function learnAtlasPublicCollectionItemsAtomically(
+  userId: string,
+  collectionId: string,
+  savedItemsLimit: number,
+): Promise<
+  | {
+      ok: true;
+      addedCount: number;
+      learningCount: number;
+      totalCount: number;
+    }
+  | {
+      ok: false;
+      error: "capacityExceeded";
+      limit: number;
+      usage: number;
+    }
+> {
+  const sql = requireSql();
+  const limit = Math.max(0, Math.floor(savedItemsLimit));
+  return sql.begin(async (tx) => {
+    await tx`
+      SELECT pg_advisory_xact_lock(
+        hashtextextended(${userId}::text, 0::bigint)
+      )
+    `;
+
+    const rows = await tx<{
+      allowed: boolean;
+      usage: number;
+      total_count: number;
+      added_count: number;
+    }[]>`
+      WITH eligible AS MATERIALIZED (
+        SELECT pi.id
+        FROM atlas_collection_items ci
+        JOIN atlas_public_items pi
+          ON pi.id = ci.public_item_id
+         AND pi.review_status = 'approved'
+        WHERE ci.collection_id = ${collectionId}::uuid
+      ),
+      current_state AS (
+        SELECT
+          count(e.id)::int AS total_count,
+          count(s.public_item_id)::int AS learning_count
+        FROM eligible e
+        LEFT JOIN atlas_saves s
+          ON s.public_item_id = e.id
+         AND s.user_id = ${userId}::uuid
+      ),
+      current_usage AS (
+        SELECT count(*)::int AS usage
+        FROM atlas_saves
+        WHERE user_id = ${userId}::uuid
+      ),
+      capacity_gate AS (
+        SELECT
+          state.total_count,
+          usage.usage,
+          (
+            usage.usage
+            + greatest(0, state.total_count - state.learning_count)
+            <= ${limit}
+          ) AS allowed
+        FROM current_state state
+        CROSS JOIN current_usage usage
+      ),
+      inserted_saves AS (
+        INSERT INTO atlas_saves (user_id, public_item_id)
+        SELECT ${userId}::uuid, eligible.id
+        FROM eligible
+        CROSS JOIN capacity_gate gate
+        WHERE gate.allowed
+        ON CONFLICT (user_id, public_item_id) DO NOTHING
+        RETURNING public_item_id
+      ),
+      inserted_cards AS (
+        INSERT INTO atlas_saved_cards (user_id, public_item_id, card_type)
+        SELECT ${userId}::uuid, eligible.id, card_types.card_type
+        FROM eligible
+        CROSS JOIN capacity_gate gate
+        CROSS JOIN (
+          VALUES ('image_recall'::text), ('flashcard'::text)
+        ) AS card_types(card_type)
+        WHERE gate.allowed
+        ON CONFLICT (user_id, public_item_id, card_type) DO NOTHING
+        RETURNING public_item_id
+      )
+      SELECT
+        gate.allowed,
+        gate.usage,
+        gate.total_count,
+        (SELECT count(*)::int FROM inserted_saves) AS added_count,
+        (SELECT count(*)::int FROM inserted_cards) AS inserted_card_count
+      FROM capacity_gate gate
+    `;
+    const result = rows[0] ?? {
+      allowed: true,
+      usage: 0,
+      total_count: 0,
+      added_count: 0,
+    };
+    if (!result.allowed) {
+      return {
+        ok: false as const,
+        error: "capacityExceeded" as const,
+        limit,
+        usage: result.usage,
+      };
+    }
+
+    return {
+      ok: true as const,
+      addedCount: result.added_count,
+      learningCount: result.total_count,
+      totalCount: result.total_count,
+    };
+  });
+}
+
+/**
+ * The reader's bookmarked collections in the current learning language.
+ * The join makes a withdrawn/deleted/taken-down collection disappear
+ * automatically while preserving a live link to an author's later edits.
+ */
+export async function listSavedAtlasCollections(
+  userId: string,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 100,
+): Promise<AtlasPublicCollectionCardRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicCollectionCardRow[]>`
+    SELECT ${collectionCardSelect(sql)}
+    FROM atlas_collection_saves saved
+    JOIN atlas_collections c ON c.id = saved.collection_id
+    JOIN profiles pr ON pr.id = c.owner_user_id
+    LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+    WHERE saved.user_id = ${userId}::uuid
+      AND c.target_language = ${targetLanguage}
+      AND c.review_status = 'approved'
+    ORDER BY saved.created_at DESC
+    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
 }
 
 // MARK: - Collections: admin review + moderation

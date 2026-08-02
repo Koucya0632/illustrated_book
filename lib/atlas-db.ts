@@ -1914,7 +1914,7 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
           AND saved_collection.review_status = 'approved'
       )                                  AS save_count
     FROM profiles pr
-    JOIN atlas_public_items p
+    LEFT JOIN atlas_public_items p
       ON p.owner_user_id = pr.id
      AND p.review_status = 'approved'
     WHERE pr.username = ${username}

@@ -26,6 +26,7 @@ import {
   PUBLIC_UID_DIGITS,
   isValidPublicUid,
   mintPublicUid,
+  projectAuthorIdentity,
   publicAuthor,
 } from "../lib/public-author";
 
@@ -59,8 +60,29 @@ test("a missing handle is the one anonymous case left", () => {
   assert.equal(publicAuthor({ ...author, author_username: "  " }), null);
 });
 
-test("a blank avatar is allowed and serializes as empty", () => {
-  assert.equal(publicAuthor({ ...author, author_avatar: null })?.avatar, "");
+test("a blank avatar projects to the one default black cat", () => {
+  assert.equal(publicAuthor({ ...author, author_avatar: null })?.avatar, "face");
+  assert.equal(publicAuthor({ ...author, author_avatar: "wave" })?.avatar, "face");
+});
+
+test("the complete projection trims nickname and never needs an email fallback", () => {
+  assert.deepEqual(
+    projectAuthorIdentity({
+      username: "TJ00000042",
+      nickname: "  Mika  ",
+      avatar: null,
+      bio: "  喜歡拍招牌  ",
+    }),
+    {
+      handle: "TJ00000042",
+      displayName: "Mika",
+      avatar: "face",
+      bio: "喜歡拍招牌",
+      joinedAt: null,
+      publishedCount: 0,
+      saveCount: 0,
+    },
+  );
 });
 
 test("handles are trimmed of surrounding whitespace", () => {

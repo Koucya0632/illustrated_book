@@ -14,6 +14,7 @@ export default async function SettingsPage() {
         username: bundle.user.username,
         nickname: bundle.user.nickname,
         avatar: bundle.user.avatar,
+        bio: bundle.user.bio,
         email: bundle.user.email,
         joined: new Date(bundle.user.createdAt).toLocaleDateString("zh-TW"),
       }}

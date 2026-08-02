@@ -1,89 +1,103 @@
-// Pins the public 簽名: its text gate, and where it is edited.
-//
-// The previous version of this file spent most of its assertions proving the
-// 簽名 was exempt from the 30-day rename cooldown. That cooldown no longer
-// exists — an immutable UID anchors every author page, so changing a display
-// name cannot launder an identity and there is nothing left to throttle. What
-// survives is the gate, which is about content rather than identity.
-
-// Source-reading for the DB layer: lib/users-db.ts is `server-only`, which
-// throws outside a server component. The moderation helper is pure, so it is
-// imported and actually run.
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFileSync } from "node:fs";
+import {
+  createProfileEditModule,
+  ProfileEditError,
+  type ProfileEditDependencies,
+} from "../lib/profile/profile-edit-core";
 import { runAtlasTextModeration } from "../lib/atlas/moderation";
-import { PUBLIC_BIO_MAX } from "../lib/public-author";
 
-const usersDb = readFileSync(new URL("../lib/users-db.ts", import.meta.url), "utf8");
-const route = readFileSync(
-  new URL("../app/api/users/profile/route.ts", import.meta.url),
-  "utf8",
-);
-
-function fnBody(source: string, name: string): string {
-  const start = source.indexOf(`export async function ${name}`);
-  assert.notEqual(start, -1, `${name} should exist`);
-  const next = source.indexOf("\nexport ", start + 1);
-  return source.slice(start, next === -1 ? undefined : next);
+function harness(overrides: Partial<ProfileEditDependencies> = {}) {
+  const calls: string[] = [];
+  let saved = { nickname: null as string | null, bio: null as string | null, avatar: "face" };
+  const dependencies: ProfileEditDependencies = {
+    moderateText(value) {
+      return runAtlasTextModeration([value]);
+    },
+    async processImage(bytes) {
+      calls.push("process");
+      return bytes;
+    },
+    async moderateImage() {
+      calls.push("moderate-image");
+      return "accepted";
+    },
+    async uploadImage() {
+      calls.push("upload");
+      return "https://example.supabase.co/storage/v1/object/public/user-avatars/u1/new.webp";
+    },
+    async persist(_userId, fields) {
+      calls.push("persist");
+      saved = { ...saved, ...fields };
+    },
+    async read() {
+      calls.push("read");
+      return {
+        username: "TJ00000042",
+        nickname: saved.nickname,
+        avatar: saved.avatar,
+        bio: saved.bio,
+        publishedCount: 3,
+        saveCount: 7,
+      };
+    },
+    async mirror() {
+      calls.push("mirror");
+    },
+    async cleanupImages() {
+      calls.push("cleanup");
+    },
+    reportRepairableFailure(kind) {
+      calls.push(`repair:${kind}`);
+    },
+    ...overrides,
+  };
+  return { module: createProfileEditModule(dependencies), calls };
 }
 
-const updateProfile = fnBody(usersDb, "updateProfile");
+test("nickname, bio and image become one projected identity", async () => {
+  const { module, calls } = harness();
+  const result = await module.edit("u1", {
+    nickname: "  Mika  ",
+    bio: "  喜歡拍招牌  ",
+    image: { bytes: new Uint8Array([1]), mimeType: "image/jpeg", size: 1 },
+  });
 
-// MARK: - The write path
-
-// undefined vs null is the difference between "don't touch it" and "clear it".
-// Collapsing them would make deleting a 簽名 impossible.
-test("an absent bio leaves the column alone, an explicit null clears it", () => {
-  assert.match(updateProfile, /fields\.bio !== undefined \? sql`, bio = /);
-  assert.match(route, /nextBio = trimmedBio === "" \? null : trimmedBio/);
+  assert.equal(result.author.displayName, "Mika");
+  assert.equal(result.author.bio, "喜歡拍招牌");
+  assert.equal(result.author.publishedCount, 3);
+  assert.deepEqual(calls.slice(0, 5), ["process", "moderate-image", "upload", "persist", "read"]);
 });
 
-test("the same call writes nickname, avatar and bio", () => {
-  assert.match(route, /updateProfile\(userId, \{ nickname: nick, avatar: pose, bio: nextBio \}\)/);
+test("nickname and bio cross the same public-text moderation seam", async () => {
+  for (const command of [
+    { nickname: "mika@example.com", bio: "乾淨" },
+    { nickname: "Mika", bio: "https://example.com" },
+  ]) {
+    const { module, calls } = harness();
+    await assert.rejects(module.edit("u1", command), ProfileEditError);
+    assert.equal(calls.includes("persist"), false);
+  }
 });
 
-// The cooldown and the consent flag are gone; nothing may quietly reintroduce
-// a throttle on an ordinary profile edit.
-test("editing a profile is no longer rate-limited or gated", () => {
-  assert.doesNotMatch(updateProfile, /cooldown|public_identity_changed_at|confirmed/i);
-  assert.doesNotMatch(route, /cooldown|429|author_identity_required/i);
+test("blank nickname falls back to UID and blank bio clears", async () => {
+  const { module } = harness();
+  const result = await module.edit("u1", { nickname: "   ", bio: "  " });
+  assert.equal(result.author.displayName, "TJ00000042");
+  assert.equal(result.author.bio, "");
 });
 
-// MARK: - The text gate
-
-test("a clean 簽名 passes the gate", () => {
-  assert.equal(runAtlasTextModeration(["喜歡拍街上的招牌，慢慢學日文"]).length, 0);
-});
-
-test("links are caught — this is the anti-spam reason the gate exists", () => {
-  assert.ok(runAtlasTextModeration(["follow me at https://example.com"]).length > 0);
-  assert.ok(runAtlasTextModeration(["www.example.com"]).length > 0);
-});
-
-test("personal information is caught", () => {
-  const hits = runAtlasTextModeration(["reach me at mika@example.com"]);
-  assert.ok(hits.some((h) => h.category === "pii"));
-});
-
-// Rejected synchronously rather than queued: the gate only catches links and
-// PII, both of which a 簽名 must not carry at all, so there is no verdict a
-// human reviewer could reach that this check cannot.
-test("a rejected 簽名 is refused outright, not held for review", () => {
-  assert.match(route, /error: "bio_rejected"/);
-  assert.match(route, /status: 400/);
-  assert.doesNotMatch(route, /pending_review/);
-});
-
-test("the refusal says which rule was broken", () => {
-  assert.match(route, /h\.category === "pii"/);
-  assert.match(route, /個人資訊/);
-  assert.match(route, /網址/);
-});
-
-// MARK: - Length
-
-test("the length limit is shared with the client rather than duplicated", () => {
-  assert.equal(PUBLIC_BIO_MAX, 80);
-  assert.match(route, /trimmedBio\.length > PUBLIC_BIO_MAX/);
+test("derived mirror and cleanup failures do not roll back an accepted edit", async () => {
+  const { module, calls } = harness({
+    async mirror() {
+      throw new Error("mirror down");
+    },
+    async cleanupImages() {
+      throw new Error("cleanup down");
+    },
+  });
+  const result = await module.edit("u1", { nickname: "Mika", bio: "", avatar: "face" });
+  assert.equal(result.ok, true);
+  assert.ok(calls.includes("repair:mirror"));
+  assert.ok(calls.includes("repair:cleanup"));
 });

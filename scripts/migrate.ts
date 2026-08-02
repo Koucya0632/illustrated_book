@@ -9,6 +9,7 @@
 import postgres from "postgres";
 import { categories as seedCategories } from "../lib/categories";
 import { words as seedWords } from "../lib/words";
+import { runAtlasTextModeration } from "../lib/atlas/moderation";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -63,13 +64,12 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS profiles_username_lc_idx ON profiles(lower(username))`,
   // Additive: editable display name (non-unique; NULL falls back to username)
-  // and selectable mascot-pose avatar.
+  // and avatar. `face` is the one built-in default; other accepted values are
+  // server-minted URLs in the user-avatars bucket.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS nickname TEXT`,
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar   TEXT NOT NULL DEFAULT 'face'`,
-  // RETIRED consent gate. Kept, not dropped: the nickname wipe further down
-  // uses it to find accounts that never agreed to be named, and this DDL array
-  // re-runs on every deploy — dropping the column would make that statement
-  // fail on the next run. Nothing reads it any more.
+  // RETIRED consent gate. Kept for one rollback window; nothing reads it and
+  // no current migration derives publication state from it.
   //
   // It existed because `username` and `nickname` were private fields the
   // community layer wanted to publish: a handle that defaulted to the email
@@ -85,6 +85,11 @@ const DDL = [
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS public_identity_changed_at TIMESTAMPTZ`,
   // Public 簽名 — a short self-introduction shown on the author profile.
   `ALTER TABLE profiles ADD COLUMN IF NOT EXISTS bio TEXT`,
+  // The old picker offered several mascot poses. They now all collapse to the
+  // single black-cat default; uploaded photo URLs remain untouched.
+  `UPDATE profiles
+      SET avatar = 'face'
+    WHERE avatar IN ('peek', 'wave', 'cheer', 'sleep', 'think')`,
 
   // Auto-create a profile when a Supabase auth user signs up.
   //
@@ -95,11 +100,9 @@ const DDL = [
   // `raw_user_meta_data->>'username'` let the registration form choose a handle
   // that is now supposed to be system-assigned and immutable.
   //
-  // `nickname` IS seeded from metadata, and that is a different thing: it is
-  // whatever the user typed into a field labelled 暱稱 on the signup form. The
-  // rule being enforced is not "never seed" — it is "never publish a name the
-  // user did not type", which is exactly why the Apple full-name capture is
-  // gone while this stays.
+  // Registration creates only the immutable UID and default avatar. A nickname
+  // is optional and can be written only through the moderated Profile-edit
+  // module after authentication; auth metadata is never promoted implicitly.
   //
   // Collisions re-roll rather than append a suffix: `TJ00000042-2` would fail
   // the UID pattern every reader validates against. 10^8 addresses means the
@@ -115,8 +118,8 @@ const DDL = [
      WHILE EXISTS (SELECT 1 FROM public.profiles WHERE username = candidate) LOOP
        candidate := 'TJ' || lpad(floor(random() * 100000000)::bigint::text, 8, '0');
      END LOOP;
-     INSERT INTO public.profiles (id, username, nickname)
-     VALUES (NEW.id, candidate, nullif(trim(NEW.raw_user_meta_data->>'nickname'), ''));
+     INSERT INTO public.profiles (id, username)
+     VALUES (NEW.id, candidate);
      -- Mirror the UID into user_metadata: that is where the iOS client reads it
      -- (SessionUser is built from the session, not from a profiles fetch), so a
      -- profiles-only write leaves every new account with no visible UID at all.
@@ -153,24 +156,6 @@ const DDL = [
        UPDATE profiles SET username = candidate WHERE id = r.id;
      END LOOP;
    END $$`,
-  // Clear display names nobody ever agreed to publish.
-  //
-  // `captureAppleNameIfNeeded` used to write the Apple Sign-In full name into
-  // `nickname` silently, and that was tolerable only while a consent gate stood
-  // between `nickname` and the public wall. This migration removes the gate, so
-  // any name still sitting there unconsented would become public the moment it
-  // deploys. We cannot tell a seeded name from one the user typed into the old
-  // private greeting field, and guessing wrong publishes a real name — so every
-  // unconfirmed nickname is cleared and those users pick one again, this time
-  // in a field that says what it is.
-  //
-  // Self-limiting, and it MUST NOT be reordered after the gate removal: the two
-  // have to land in the same deploy or there is a window where seeded names are
-  // live.
-  `UPDATE profiles
-      SET nickname = NULL
-    WHERE public_author_confirmed_at IS NULL
-      AND nickname IS NOT NULL`,
   // Re-point the user_metadata mirror at the migrated UID.
   //
   // The iOS client reads the UID from the session's user_metadata, not from
@@ -1470,6 +1455,30 @@ const POST_BACKFILL_DROPS = [
   `ALTER TABLE words DROP COLUMN IF EXISTS confusing_words`,
 ];
 
+// Existing public nicknames cross the exact same moderation seam as a new
+// Profile edit before zero-item profiles become visible. Session-only metadata
+// is deliberately ignored: profiles is the sole authoritative source.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function moderateExistingProfileNicknames(sql: any) {
+  const rows = await sql<{ id: string; nickname: string }[]>`
+    SELECT id, nickname FROM profiles WHERE nickname IS NOT NULL
+  `;
+  let cleared = 0;
+  let normalized = 0;
+  for (const row of rows) {
+    const nickname = row.nickname.trim();
+    const rejected = nickname !== "" && runAtlasTextModeration([nickname]).length > 0;
+    if (!nickname || rejected) {
+      await sql`UPDATE profiles SET nickname = NULL WHERE id = ${row.id}::uuid`;
+      cleared += 1;
+    } else if (nickname !== row.nickname) {
+      await sql`UPDATE profiles SET nickname = ${nickname} WHERE id = ${row.id}::uuid`;
+      normalized += 1;
+    }
+  }
+  console.log(`[migrate] profile nicknames moderated (${cleared} cleared, ${normalized} normalized).`);
+}
+
 // ---- card generator ----
 
 interface SeedCard {
@@ -2090,6 +2099,7 @@ async function main() {
     await generateCards(sql);
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);
+    await moderateExistingProfileNicknames(sql);
     await setupStudyLogsPartitioning(sql);
 
     // Final cleanup: drop the legacy columns now that everything reads from

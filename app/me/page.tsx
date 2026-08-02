@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import Mascot from "@/components/tuji/Mascot";
+import ProfileAvatar from "@/components/tuji/ProfileAvatar";
 import { WordTile, scoreTier, TUJI } from "@/components/tuji/ui";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getAllLearningWords } from "@/lib/data";
@@ -54,7 +54,7 @@ export default async function MePage() {
       {/* Profile hero */}
       <div className="relative mb-4 flex flex-col items-center gap-5 overflow-hidden rounded-[24px] bg-tuji-ink p-6 text-white sm:flex-row">
         <div className="flex h-28 w-28 shrink-0 items-end justify-center overflow-hidden rounded-[28px] bg-tuji-teal">
-          <Mascot pose={bundle.user.avatar} size={116} />
+          <ProfileAvatar avatar={bundle.user.avatar} size={112} className="h-28 w-28" />
         </div>
         <div className="flex-1 text-center sm:text-left">
           <h1 className="font-display text-3xl font-extrabold tracking-tight">

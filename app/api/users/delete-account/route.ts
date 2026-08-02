@@ -6,6 +6,7 @@ import {
   removeAtlasPublicObjects,
 } from "@/lib/atlas/storage";
 import { createServiceRoleClient } from "@/lib/supabase/server";
+import { pruneAvatarImages } from "@/lib/avatar-storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -22,6 +23,7 @@ export async function POST() {
     await Promise.all([
       removeAtlasPrivateObjects(paths.privatePaths),
       removeAtlasPublicObjects(paths.publicPaths),
+      pruneAvatarImages(userId),
     ]);
   } catch (err) {
     console.error("[delete-account] atlas storage cleanup failed", err);

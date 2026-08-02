@@ -98,12 +98,14 @@ Endpoint：
 iOS 對應：
 
 - `UserRepository`
+- `LiveProfileModule` / `AuthorProfileModule`
 - `AuthService`
 - `SettingsStore`
 - Settings/Me/Onboarding
 
 審核注意：
 
+- `/api/users/profile` 是暱稱、簽名與頭像的唯一編輯入口；公開作者資料由同一投影產生。
 - 刪除帳號必須可用。
 - Push token endpoint 不等於 Push 已可上架，iOS entitlement/profile 也要完整。
 

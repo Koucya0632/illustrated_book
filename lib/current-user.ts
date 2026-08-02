@@ -12,14 +12,14 @@ import {
   getSettings,
   type ProfileRow,
 } from "./users-db";
-import { DEFAULT_AVATAR, isAvatarPose, type AvatarPose } from "./avatars";
+import { publicAvatar } from "./avatars";
 import { USER_ID_HEADER } from "./supabase/middleware";
 
 export interface CurrentUser {
   id: string;          // UUID
   username: string;
   nickname: string | null; // editable display name; null → use username
-  avatar: AvatarPose;
+  avatar: string;
   email: string;
   createdAt: string;
   /** Public 簽名 shown on the author profile. */
@@ -31,7 +31,7 @@ function toCurrent(p: ProfileRow): CurrentUser {
     id: p.id,
     username: p.username,
     nickname: p.nickname,
-    avatar: isAvatarPose(p.avatar) ? p.avatar : DEFAULT_AVATAR,
+    avatar: publicAvatar(p.avatar),
     email: p.email,
     createdAt: p.created_at,
     bio: p.bio,

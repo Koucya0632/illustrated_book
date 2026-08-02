@@ -26,6 +26,14 @@ const authorRoute = readFileSync(
   new URL("../app/api/atlas/public/authors/[username]/route.ts", import.meta.url),
   "utf8",
 );
+const authorModule = readFileSync(
+  new URL("../lib/profile/author-profile.ts", import.meta.url),
+  "utf8",
+);
+const liveAuthorModule = readFileSync(
+  new URL("../lib/profile/live-author-profile.ts", import.meta.url),
+  "utf8",
+);
 
 function fnBody(source: string, name: string): string {
   const start = source.indexOf(`export async function ${name}`);
@@ -55,6 +63,11 @@ test("the header count and the item list cannot disagree", () => {
   // consistent with the returned rows is that the cap is out of reach.
   assert.match(authorRow, /count\(DISTINCT p\.id\)::int\s+AS published_count/);
   assert.ok(Number(cap[1]) >= 300);
+});
+
+test("an account with zero approved items still resolves", () => {
+  const authorRow = fnBody(atlasDb, "getAtlasAuthor");
+  assert.match(authorRow, /LEFT JOIN atlas_public_items p/);
 });
 
 // MARK: - Collections: capped, unscoped, approved-only
@@ -93,18 +106,19 @@ test("collections order newest first without floating nulls to the top", () => {
 // MARK: - The route
 
 test("the route returns collections alongside items", () => {
-  assert.match(authorRoute, /listAtlasAuthorCollections/);
-  assert.match(authorRoute, /collections: collections\.map\(serializeAtlasPublicCollectionCard\)/);
+  assert.match(authorRoute, /authorProfile\.load/);
+  assert.match(liveAuthorModule, /listAtlasAuthorCollections/);
+  assert.match(liveAuthorModule, /serializeAtlasPublicCollectionCard/);
 });
 
 // The two reads are independent; awaiting them in series would add a round trip
 // to a route that is already the slowest public read.
 test("items and collections are fetched concurrently", () => {
-  assert.match(authorRoute, /Promise\.all\(\[/);
+  assert.match(authorModule, /Promise\.all\(\[/);
 });
 
 // The whole point of reusing the browse-feed serializer: the client already
 // decodes that shape, so the collection cards need no new model.
 test("collections reuse the browse-feed card shape", () => {
-  assert.match(authorRoute, /serializeAtlasPublicCollectionCard/);
+  assert.match(liveAuthorModule, /serializeAtlasPublicCollectionCard/);
 });

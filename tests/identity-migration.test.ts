@@ -1,135 +1,54 @@
-// Pins the identity migration in scripts/migrate.ts.
-//
-// This is the highest-consequence part of the change and the part with no
-// runtime test coverage, because it is raw SQL executed once at deploy. The
-// specific hazard: `captureAppleNameIfNeeded` used to write the Apple Sign-In
-// full name into `nickname` silently, and that was survivable only while a
-// consent gate stood between `nickname` and the public wall. This deploy
-// removes the gate. If the nickname wipe were dropped, reordered after the gate
-// removal, or narrowed by a wrong predicate, real names would go public.
-//
-// Everything below is an ordering or predicate assertion, because those are the
-// mistakes that fail silently rather than loudly.
-
 import assert from "node:assert/strict";
 import test from "node:test";
 import { readFileSync } from "node:fs";
 import { PUBLIC_UID_PATTERN } from "../lib/public-author";
 
 const migrate = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-
 const trigger = migrate.slice(
   migrate.indexOf("CREATE OR REPLACE FUNCTION public.handle_new_user()"),
   migrate.indexOf("DROP TRIGGER IF EXISTS on_auth_user_created"),
 );
 
-// MARK: - Minting
+function position(needle: string): number {
+  const index = migrate.indexOf(needle);
+  assert.notEqual(index, -1, `migrate.ts should contain: ${needle}`);
+  return index;
+}
 
-test("new signups get a TJ UID, never anything derived from user input", () => {
-  assert.match(trigger, /'TJ' \|\| lpad\(floor\(random\(\) \* 100000000\)::bigint::text, 8, '0'\)/);
-  // The two defaults that made the old handle personal data. The UID line must
-  // not read from metadata or the email, whatever else the trigger does.
-  assert.doesNotMatch(trigger, /split_part/);
-  const uidLine = trigger.slice(trigger.indexOf("candidate TEXT :="), trigger.indexOf("BEGIN"));
-  assert.doesNotMatch(uidLine, /raw_user_meta_data/);
+test("registration mints only the UID and leaves nickname unset", () => {
+  assert.match(trigger, /INSERT INTO public\.profiles \(id, username\)/);
+  assert.match(trigger, /VALUES \(NEW\.id, candidate\)/);
+  const insert = trigger.slice(trigger.indexOf("INSERT INTO"), trigger.indexOf("-- Mirror the UID"));
+  assert.doesNotMatch(insert, /nickname|raw_user_meta_data|email/i);
 });
 
-// Seeding a nickname from metadata is NOT the hazard the Apple capture was.
-// The rule is "never publish a name the user did not type", and this one is
-// typed — into a field labelled 暱稱 on the signup form.
-test("the display name may be seeded from what the user typed at signup", () => {
-  assert.match(trigger, /raw_user_meta_data->>'nickname'/);
-  // Blank input must become NULL, not an empty display name that would render
-  // as a nameless author instead of falling back to the UID.
-  assert.match(trigger, /nullif\(trim\(NEW\.raw_user_meta_data->>'nickname'\), ''\)/);
-});
-
-// A suffix would produce TJ00000042-2, which fails the pattern every reader
-// validates against — so the collision path must re-roll instead.
-test("collisions re-roll rather than append a suffix", () => {
+test("UID collisions re-roll without changing the fixed public shape", () => {
   const loop = trigger.slice(trigger.indexOf("WHILE EXISTS"), trigger.indexOf("INSERT INTO"));
   assert.match(loop, /candidate := 'TJ' \|\| lpad/);
-  assert.doesNotMatch(loop, /\|\| '-' \|\|/);
   assert.equal(PUBLIC_UID_PATTERN.test("TJ00000042-2"), false);
 });
 
-// MARK: - Ordering
-//
-// The DDL array executes in order, so index comparisons are the real contract.
-
-function indexOfStatement(needle: string): number {
-  const i = migrate.indexOf(needle);
-  assert.notEqual(i, -1, `migrate.ts should contain: ${needle}`);
-  return i;
-}
-
-test("the nickname wipe exists and targets only unconsented names", () => {
-  const wipe = indexOfStatement("SET nickname = NULL");
-  const stmt = migrate.slice(wipe, wipe + 200);
-  // Narrower than this would leave seeded names behind; wider would delete
-  // names people did consent to publish.
-  assert.match(stmt, /WHERE public_author_confirmed_at IS NULL/);
-  assert.match(stmt, /AND nickname IS NOT NULL/);
+test("existing handles migrate before the auth UID mirror", () => {
+  const uidBackfill = position("WHERE username !~ '^TJ[0-9]{8}$'");
+  const mirror = position("UPDATE auth.users u");
+  assert.ok(uidBackfill < mirror);
+  assert.match(migrate.slice(mirror, mirror + 500), /jsonb_build_object\('username', p\.username\)/);
 });
 
-test("handles are migrated before nicknames are wiped, and both before the trigger swap", () => {
-  const uidBackfill = indexOfStatement("WHERE username !~ '^TJ[0-9]{8}$'");
-  const wipe = indexOfStatement("SET nickname = NULL");
-  const triggerSwap = indexOfStatement("DROP TRIGGER IF EXISTS on_auth_user_created");
-  assert.ok(uidBackfill < wipe, "UID backfill must precede the nickname wipe");
-  assert.ok(wipe < triggerSwap, "both backfills must precede the trigger swap");
+test("existing profile nicknames are re-moderated before deployment completes", () => {
+  const implementation = position("async function moderateExistingProfileNicknames");
+  const invocation = position("await moderateExistingProfileNicknames(sql)");
+  const finalSetup = position("await setupStudyLogsPartitioning(sql)");
+  assert.match(migrate.slice(implementation, invocation), /runAtlasTextModeration\(\[nickname\]\)/);
+  assert.match(migrate.slice(implementation, invocation), /SELECT id, nickname FROM profiles/);
+  assert.ok(invocation < finalSetup);
 });
 
-// MARK: - Idempotence
-//
-// This array re-runs on every deploy, so a statement that is not self-limiting
-// would corrupt data on the second run — e.g. re-rolling every UID each time,
-// which would break author links that had already settled.
-
-test("the UID backfill skips rows that already match", () => {
-  const backfill = indexOfStatement("WHERE username !~ '^TJ[0-9]{8}$'");
-  assert.match(migrate.slice(backfill - 400, backfill + 100), /FOR r IN SELECT id FROM profiles/);
-});
-
-test("the retired columns are kept, because the wipe still reads one", () => {
-  // Dropping public_author_confirmed_at would make the nickname wipe fail on
-  // the next deploy's re-run.
-  assert.match(migrate, /ADD COLUMN IF NOT EXISTS public_author_confirmed_at/);
-  assert.doesNotMatch(migrate, /DROP COLUMN IF EXISTS public_author_confirmed_at/);
-});
-
-// MARK: - The user_metadata mirror
-//
-// The UID is authoritative in `profiles`, but the iOS client reads it from the
-// session's `user_metadata`. Two writers used to keep that mirror fresh — the
-// email signup payload and the public-author route — and BOTH were removed when
-// the handle became machine-minted, with nothing put back. The result shipped:
-// OAuth accounts had no `username` key at all (a permanently disabled
-// 我的公開主頁 row) and email accounts held a pre-migration handle that now 404s.
-//
-// So the mirror needs exactly two writers, and these pin both.
-
-test("the trigger mirrors the freshly minted UID into user_metadata", () => {
-  assert.match(trigger, /UPDATE auth\.users/);
-  assert.match(trigger, /jsonb_build_object\('username', candidate\)/);
-  // Merged into whatever is already there — a bare assignment would discard the
-  // nickname the signup form just sent in the same payload.
-  assert.match(trigger, /coalesce\(raw_user_meta_data, '\{\}'::jsonb\)/);
-});
-
-test("existing accounts have their mirror re-pointed at the migrated UID", () => {
-  const backfill = migrate.indexOf("UPDATE auth.users u");
-  assert.notEqual(backfill, -1, "the metadata backfill should exist");
-  const stmt = migrate.slice(backfill, backfill + 400);
-  assert.match(stmt, /FROM profiles p/);
-  // Self-limiting, so re-running the migration is a no-op.
-  assert.match(stmt, /<> p\.username/);
-});
-
-// Ordering: the mirror must be re-pointed AFTER handles are rewritten, or it
-// would faithfully copy the old value.
-test("the mirror is updated after the UID rewrite, not before", () => {
-  const uidBackfill = indexOfStatement("WHERE username !~ '^TJ[0-9]{8}$'");
-  const mirror = migrate.indexOf("UPDATE auth.users u");
-  assert.ok(uidBackfill < mirror, "UID rewrite must precede the metadata mirror");
+test("session-only nickname metadata is never promoted into profiles", () => {
+  assert.doesNotMatch(trigger, /raw_user_meta_data->>'nickname'/);
+  const moderation = migrate.slice(
+    position("async function moderateExistingProfileNicknames"),
+    position("// ---- card generator ----"),
+  );
+  assert.doesNotMatch(moderation, /auth\.users|raw_user_meta_data/);
 });

@@ -7,7 +7,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Mascot from "@/components/tuji/Mascot";
+import ProfileAvatar from "@/components/tuji/ProfileAvatar";
 import { useSettings } from "@/components/SettingsProvider";
 import { useCategories } from "@/components/CategoriesProvider";
 import { useT } from "@/components/I18n";
@@ -18,7 +18,6 @@ import {
   type UserSettings,
 } from "@/lib/settings";
 import { LOCALES } from "@/lib/i18n";
-import { AVATAR_POSES, type AvatarPose } from "@/lib/avatars";
 
 type SecId = "account" | "learn" | "ui" | "data" | "about";
 
@@ -38,7 +37,8 @@ export default function SettingsClient({
   profile: {
     username: string;
     nickname: string | null;
-    avatar: AvatarPose;
+    avatar: string;
+    bio: string | null;
     email: string;
     joined: string;
   };
@@ -54,12 +54,25 @@ export default function SettingsClient({
 
   // Account (profile) draft — separate table/API from the settings draft.
   const [nick, setNick] = useState(profile.nickname ?? "");
-  const [avatarDraft, setAvatarDraft] = useState<AvatarPose>(profile.avatar);
+  const [bio, setBio] = useState(profile.bio ?? "");
+  const [avatarDraft, setAvatarDraft] = useState(profile.avatar);
+  const [avatarFile, setAvatarFile] = useState<File>();
+  const [avatarPreview, setAvatarPreview] = useState<string>();
   const [savingProfile, setSavingProfile] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [copied, setCopied] = useState(false);
   const dirtyProfile =
-    nick.trim() !== (profile.nickname ?? "") || avatarDraft !== profile.avatar;
+    nick.trim() !== (profile.nickname ?? "") ||
+    bio.trim() !== (profile.bio ?? "") ||
+    avatarDraft !== profile.avatar ||
+    avatarFile !== undefined;
+
+  useEffect(
+    () => () => {
+      if (avatarPreview) URL.revokeObjectURL(avatarPreview);
+    },
+    [avatarPreview],
+  );
 
   const set = <K extends keyof UserSettings>(key: K, value: UserSettings[K]) =>
     setDraft((d) => ({ ...d, [key]: value }));
@@ -110,15 +123,36 @@ export default function SettingsClient({
     if (!dirtyProfile || savingProfile) return;
     setSavingProfile(true);
     try {
-      await fetch("/api/users/profile", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ nickname: nick, avatar: avatarDraft }),
-      });
-    } catch {
-      /* ignore — reload reflects whatever persisted */
+      const body = new FormData();
+      body.append("nickname", nick);
+      body.append("bio", bio);
+      if (avatarFile) body.append("image", avatarFile);
+      else if (avatarDraft !== profile.avatar) body.append("avatar", avatarDraft);
+      const response = await fetch("/api/users/profile", { method: "POST", body });
+      const result = (await response.json()) as {
+        author?: { displayName: string; avatar: string; bio: string };
+        message?: string;
+      };
+      if (!response.ok || !result.author) throw new Error(result.message || "儲存失敗");
+      setNick(result.author.displayName === profile.username ? "" : result.author.displayName);
+      setBio(result.author.bio);
+      setAvatarDraft(result.author.avatar);
+      setAvatarFile(undefined);
+      if (avatarPreview) URL.revokeObjectURL(avatarPreview);
+      setAvatarPreview(undefined);
+      router.refresh();
+    } catch (error) {
+      alert(error instanceof Error ? error.message : "目前無法儲存個人資料");
+    } finally {
+      setSavingProfile(false);
     }
-    window.location.reload();
+  }
+
+  function selectAvatar(file: File | undefined) {
+    if (!file) return;
+    if (avatarPreview) URL.revokeObjectURL(avatarPreview);
+    setAvatarFile(file);
+    setAvatarPreview(URL.createObjectURL(file));
   }
 
   async function copyId() {
@@ -167,9 +201,27 @@ export default function SettingsClient({
 
       {/* Profile card */}
       <div className="relative mb-5 flex items-center gap-4 overflow-hidden rounded-[18px] bg-tuji-ink p-4 text-white">
-        <div className="flex h-16 w-16 shrink-0 items-end justify-center overflow-hidden rounded-2xl bg-tuji-teal">
-          <Mascot pose={avatarDraft} size={60} />
-        </div>
+        <label className="relative flex h-16 w-16 shrink-0 cursor-pointer items-end justify-center overflow-hidden rounded-full bg-tuji-teal">
+          {avatarPreview ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={avatarPreview} alt="" className="h-16 w-16 object-cover" />
+          ) : (
+            <ProfileAvatar avatar={avatarDraft} size={64} className="h-16 w-16" />
+          )}
+          <span className="absolute bottom-0 right-0 flex h-6 w-6 items-center justify-center rounded-full bg-tuji-teal text-[11px] ring-2 ring-tuji-ink">
+            📷
+          </span>
+          <input
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+            className="sr-only"
+            disabled={savingProfile}
+            onChange={(event) => {
+              selectAvatar(event.target.files?.[0]);
+              event.currentTarget.value = "";
+            }}
+          />
+        </label>
         <div className="min-w-0 flex-1">
           <div className="text-lg font-extrabold">{nick.trim() || profile.username}</div>
           <div className="truncate text-xs text-white/70">
@@ -234,27 +286,41 @@ export default function SettingsClient({
                   />
                 </div>
 
+                {/* Public bio */}
+                <div className="border-b border-black/5 px-4 py-3.5">
+                  <div className="text-sm font-bold text-tuji-ink">簽名</div>
+                  <div className="mt-0.5 text-[11px] text-tuji-ink3">公開顯示，不能包含網址或個人資訊</div>
+                  <textarea
+                    maxLength={80}
+                    value={bio}
+                    onChange={(event) => setBio(event.target.value)}
+                    placeholder="介紹一下你自己"
+                    className="mt-2 min-h-20 w-full resize-none rounded-lg bg-tuji-bg px-3 py-2 text-xs font-bold text-tuji-ink outline-none focus:ring-2 focus:ring-tuji-teal"
+                  />
+                </div>
+
                 {/* Avatar picker */}
                 <div className="px-4 py-3.5">
                   <div className="text-sm font-bold text-tuji-ink">{t("set.avatar")}</div>
-                  <div className="mt-3 flex flex-wrap gap-2.5">
-                    {AVATAR_POSES.map((p) => {
-                      const on = p === avatarDraft;
-                      return (
-                        <button
-                          key={p}
-                          onClick={() => setAvatarDraft(p)}
-                          aria-pressed={on}
-                          className={`flex h-14 w-14 items-end justify-center overflow-hidden rounded-2xl transition ${
-                            on
-                              ? "bg-tuji-teal ring-2 ring-tuji-teal ring-offset-2 ring-offset-white"
-                              : "bg-tuji-bg hover:bg-tuji-tealS"
-                          }`}
-                        >
-                          <Mascot pose={p} size={52} />
-                        </button>
-                      );
-                    })}
+                  <div className="mt-1 text-[11px] text-tuji-ink3">
+                    選好照片後，按儲存才會一起更新公開資料。
+                  </div>
+                  <div className="mt-3">
+                    <button
+                      onClick={() => {
+                        if (avatarPreview) URL.revokeObjectURL(avatarPreview);
+                        setAvatarPreview(undefined);
+                        setAvatarFile(undefined);
+                        setAvatarDraft("face");
+                      }}
+                      aria-pressed={avatarDraft === "face"}
+                      className="flex items-center gap-3 rounded-xl bg-tuji-bg px-3 py-2 text-xs font-extrabold text-tuji-ink transition hover:bg-tuji-tealS"
+                    >
+                      <span className="flex h-11 w-11 items-end justify-center overflow-hidden rounded-full bg-tuji-tealS">
+                        <ProfileAvatar avatar="face" size={44} />
+                      </span>
+                      使用預設黑貓頭像
+                    </button>
                   </div>
                 </div>
               </div>

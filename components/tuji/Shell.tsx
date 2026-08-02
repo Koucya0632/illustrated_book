@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Mascot from "./Mascot";
+import ProfileAvatar from "./ProfileAvatar";
 import { useT } from "@/components/I18n";
-import type { AvatarPose } from "@/lib/avatars";
 
 interface NavItem {
   id: string;
@@ -59,7 +58,7 @@ export default function TujiShell({
   user: {
     username: string;
     nickname: string | null;
-    avatar: AvatarPose;
+    avatar: string;
     email: string;
   } | null;
   children: React.ReactNode;
@@ -131,7 +130,7 @@ export default function TujiShell({
               className="flex items-center gap-2 rounded-2xl bg-white/[0.06] p-3.5 transition hover:bg-white/10"
             >
               <span className="flex h-7 w-7 shrink-0 items-end justify-center overflow-hidden rounded-full bg-tuji-tealS">
-                <Mascot pose={user.avatar} size={26} />
+                <ProfileAvatar avatar={user.avatar} size={28} className="h-7 w-7" />
               </span>
               <span className="min-w-0 flex-1 truncate text-xs font-extrabold">
                 {user.nickname?.trim() || user.username}

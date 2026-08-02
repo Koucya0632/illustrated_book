@@ -1,13 +1,19 @@
-// Selectable avatars reuse the mascot's cat poses (PNGs at
-// /public/mascot/tuji-{pose}.png). Shared by the picker UI, the profile API
-// validation, and the stored avatar type. Same string set as Mascot's
-// MascotPose, so a value here can be passed straight to <Mascot pose=…>.
-export const AVATAR_POSES = ["face", "peek", "wave", "cheer", "sleep", "think"] as const;
+/** The only built-in profile avatar. Everything else must be an owned photo. */
+export const DEFAULT_AVATAR = "face" as const;
 
-export type AvatarPose = (typeof AVATAR_POSES)[number];
+export const AVATAR_BUCKET = "user-avatars";
 
-export const DEFAULT_AVATAR: AvatarPose = "face";
+export function isAvatarImage(v: unknown): v is string {
+  if (typeof v !== "string") return false;
+  try {
+    const url = new URL(v);
+    return url.protocol === "https:" && url.pathname.includes(`/storage/v1/object/public/${AVATAR_BUCKET}/`);
+  } catch {
+    return false;
+  }
+}
 
-export function isAvatarPose(v: unknown): v is AvatarPose {
-  return typeof v === "string" && (AVATAR_POSES as readonly string[]).includes(v);
+/** Canonical public avatar projection: an owned photo or the one black cat. */
+export function publicAvatar(v: unknown): string {
+  return isAvatarImage(v) ? v : DEFAULT_AVATAR;
 }

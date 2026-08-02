@@ -17,6 +17,8 @@
 // back was forbidden because the handle used to be half of an email address;
 // falling back to TJ00000042 discloses nothing.
 
+import { publicAvatar } from "@/lib/avatars";
+
 /**
  * Longest public 簽名 accepted. Short on purpose: this is a one-line self
  * introduction under a name on a profile card, not a page. It lives here rather
@@ -63,6 +65,44 @@ export interface PublicAuthor {
   avatar: string;
 }
 
+/** The complete public identity returned by author-profile reads and edits. */
+export interface AuthorIdentity extends PublicAuthor {
+  bio: string;
+  joinedAt: string | null;
+  publishedCount: number;
+  saveCount: number;
+}
+
+/** Authoritative profile columns before they cross the public interface. */
+export interface AuthorIdentitySource {
+  username: string;
+  nickname: string | null;
+  avatar: string | null;
+  bio?: string | null;
+  joinedAt?: string | null;
+  publishedCount?: number;
+  saveCount?: number;
+}
+
+/**
+ * The one public identity projection. Routes and clients receive this result;
+ * they never derive a display name, expose an email fallback, or choose an
+ * avatar default independently.
+ */
+export function projectAuthorIdentity(source: AuthorIdentitySource): AuthorIdentity {
+  const handle = source.username.trim();
+  const nickname = source.nickname?.trim();
+  return {
+    handle,
+    displayName: nickname ? nickname : handle,
+    avatar: publicAvatar(source.avatar?.trim()),
+    bio: source.bio?.trim() ?? "",
+    joinedAt: source.joinedAt ?? null,
+    publishedCount: source.publishedCount ?? 0,
+    saveCount: source.saveCount ?? 0,
+  };
+}
+
 /**
  * The author block for a public payload, or `null` when there is nobody to
  * name — which now means only one thing: the account was deleted, so the
@@ -74,12 +114,10 @@ export interface PublicAuthor {
 export function publicAuthor(row: PublicAuthorColumns): PublicAuthor | null {
   const handle = row.author_username?.trim();
   if (!handle) return null;
-  const displayName = row.author_nickname?.trim();
-  return {
-    handle,
-    // An empty 暱稱 is not an error and must not make someone anonymous — it
-    // just means they never picked a name, so the UID stands in for one.
-    displayName: displayName && displayName !== "" ? displayName : handle,
-    avatar: row.author_avatar ?? "",
-  };
+  const identity = projectAuthorIdentity({
+    username: handle,
+    nickname: row.author_nickname,
+    avatar: row.author_avatar,
+  });
+  return { handle: identity.handle, displayName: identity.displayName, avatar: identity.avatar };
 }

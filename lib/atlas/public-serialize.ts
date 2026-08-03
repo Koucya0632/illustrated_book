@@ -14,7 +14,7 @@
 //      whenever it held a display name.
 
 import "server-only";
-import { atlasPublicImageUrl } from "./storage";
+import { atlasPublicImageUrl, collectionAvatarPublicUrl } from "./storage";
 import { publicAuthor } from "../public-author";
 import type { AtlasPublicItemWithAuthorRow } from "./types";
 import type { AtlasPublicCollectionCardRow } from "../atlas-db";
@@ -47,6 +47,8 @@ export function serializeAtlasPublicCollectionCard(row: AtlasPublicCollectionCar
     }),
     itemCount: row.item_count,
     saveCount: row.save_count,
+    avatarColor: row.avatar_color,
+    avatarImageUrl: collectionAvatarPublicUrl(row.avatar_image_path),
     coverImageUrl: atlasPublicImageUrl(row.cover_image_path),
     publishedAt: row.published_at,
   };

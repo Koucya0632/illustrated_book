@@ -54,7 +54,6 @@ export default function AtlasClient() {
   const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
   const [form, setForm] = useState(EMPTY_FORM);
   const [createdItem, setCreatedItem] = useState<AtlasItem | null>(null);
-  const [publishStatus, setPublishStatus] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -88,7 +87,6 @@ export default function AtlasClient() {
     setError(null);
     setCandidates([]);
     setCreatedItem(null);
-    setPublishStatus(null);
     try {
       const body = new FormData();
       body.append("file", file);
@@ -108,8 +106,7 @@ export default function AtlasClient() {
     if (!selected) return;
     setBusy(mode === "primary" ? "recognize" : mode);
     setError(null);
-      setCreatedItem(null);
-      setPublishStatus(null);
+    setCreatedItem(null);
     try {
       const res = await fetch(`/api/atlas/images/${selected.id}/recognize`, {
         method: "POST",
@@ -142,7 +139,6 @@ export default function AtlasClient() {
       setSelected(null);
       setCandidates([]);
       setCreatedItem(null);
-      setPublishStatus(null);
       await loadImages();
     } catch (err) {
       setError(err instanceof Error ? err.message : "刪除失敗");
@@ -183,28 +179,9 @@ export default function AtlasClient() {
       const cardsData = await cardsRes.json();
       if (!cardsRes.ok) throw new Error(cardsData.error || "生成卡片失敗");
       setCreatedItem(item);
-      setPublishStatus(null);
       await loadImages();
     } catch (err) {
       setError(err instanceof Error ? err.message : "校正或生成卡片失敗");
-    } finally {
-      setBusy(null);
-    }
-  }
-
-  async function submitPublicReview() {
-    if (!createdItem) return;
-    setBusy("publish");
-    setError(null);
-    try {
-      const res = await fetch(`/api/atlas/items/${createdItem.id}/publish`, {
-        method: "POST",
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "送審失敗");
-      setPublishStatus("已送出公開圖鑑審核");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "送審失敗");
     } finally {
       setBusy(null);
     }
@@ -361,13 +338,6 @@ export default function AtlasClient() {
                         去複習
                       </Link>
                     </div>
-                    <button
-                      onClick={submitPublicReview}
-                      disabled={busy === "publish" || Boolean(publishStatus)}
-                      className="mt-3 rounded-2xl bg-white px-4 py-2 text-xs font-extrabold text-[#2F7D4A] shadow-soft disabled:opacity-50"
-                    >
-                      {publishStatus ?? (busy === "publish" ? "送審中..." : "送公開圖鑑審核")}
-                    </button>
                   </div>
                 )}
               </section>

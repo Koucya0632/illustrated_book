@@ -49,7 +49,10 @@ function toScores(hits: AtlasModerationHit[]): Record<string, number> {
  * (fail-closed), because the alternative — publishing unscreened content — is
  * irreversible once seen.
  */
-export async function processAtlasSubmission(item: AtlasItemRow): Promise<AtlasSubmitOutcome> {
+export async function processAtlasSubmission(
+  item: AtlasItemRow,
+  options: { deferPublication?: boolean } = {},
+): Promise<AtlasSubmitOutcome> {
   let hits: AtlasModerationHit[] = [];
   let degraded = false;
   let thumbPath: string | null = null;
@@ -93,6 +96,13 @@ export async function processAtlasSubmission(item: AtlasItemRow): Promise<AtlasS
     return { reviewStatus: decision.reviewStatus, published: false, categories };
   }
 
+  // A collection batch first reviews every member. Do not copy any image into
+  // public storage until all member decisions are clean.
+  if (options.deferPublication) {
+    await setAtlasItemReviewStatus(item.id, "approved");
+    return { reviewStatus: "approved", published: false, categories };
+  }
+
   // Clean → publish now. thumbPath is guaranteed non-null here: a missing thumb
   // sets degraded, which never reaches an approved verdict.
   try {
@@ -102,10 +112,7 @@ export async function processAtlasSubmission(item: AtlasItemRow): Promise<AtlasS
       publicItemId: item.public_slug ?? item.id,
       privateThumbPath: thumbPath,
     });
-    await approveAtlasPublicItem({
-      itemId: item.id,
-      imagePublicPath: published.path,
-    });
+    await approveAtlasPublicItem({ itemId: item.id, imagePublicPath: published.path });
     return { reviewStatus: "approved", published: true, categories };
   } catch {
     // Publishing failed after a clean verdict — park it for a human rather

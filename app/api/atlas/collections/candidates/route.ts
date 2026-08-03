@@ -1,6 +1,6 @@
 // The pool of items the current user can add to a collection: their own
-// approved public items in the given language. Fresh (private, no-store) so a
-// just-approved item shows up in the picker immediately.
+// confirmed public, pending, and private items in the given language. Fresh
+// (private, no-store) so a just-confirmed item appears immediately.
 //
 // Static `candidates` segment takes precedence over the sibling `[id]` route,
 // so this never collides with GET /api/atlas/collections/{uuid}.
@@ -8,8 +8,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
-import { listUserApprovedPublicItems } from "@/lib/atlas-db";
-import { serializeAtlasPublicItem } from "@/lib/atlas/public-serialize";
+import { listAtlasCollectionCandidates } from "@/lib/atlas-db";
+import { atlasPublicImageUrl, createAtlasImageSignedUrlsBatch } from "@/lib/atlas/storage";
 import type { AtlasTargetLanguage } from "@/lib/atlas/types";
 
 export const runtime = "nodejs";
@@ -27,9 +27,36 @@ export async function GET(req: Request) {
   const lang = targetLanguage(new URL(req.url).searchParams.get("lang"));
   if (!lang) return NextResponse.json({ error: "invalid lang" }, { status: 400 });
 
-  const rows = await listUserApprovedPublicItems(userId, lang);
+  const rows = await listAtlasCollectionCandidates(userId, lang);
+  const signed = await createAtlasImageSignedUrlsBatch(
+    rows.map((row) => ({ imagePath: row.thumb_path, thumbPath: row.thumb_path })),
+  );
   return NextResponse.json(
-    { items: rows.map(serializeAtlasPublicItem) },
+    {
+      items: rows.map((row, index) => ({
+        id: row.id,
+        slug: row.public_item_id ?? row.id,
+        publicItemId: row.public_item_id,
+        lemma: row.lemma,
+        displayZhHant: row.display_zh_hant,
+        targetLanguage: row.target_language,
+        category: row.category,
+        reviewStatus: row.review_status,
+        publicationState: row.public_item_id
+          ? "public"
+          : row.review_status === "pending" ||
+              row.review_status === "pending_auto" ||
+              row.review_status === "pending_review"
+            ? "pending"
+            : "private",
+        eligible: row.eligible,
+        imageUrl: row.image_public_path
+          ? atlasPublicImageUrl(row.image_public_path)
+          : signed[index]?.thumbUrl ?? null,
+        author: null,
+        publishedAt: null,
+      })),
+    },
     { headers: { "Cache-Control": "private, no-store" } },
   );
 }

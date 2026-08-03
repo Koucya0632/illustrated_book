@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import {
   approveAtlasPublicItem,
+  finalizeReadyCollectionsForItem,
   getAtlasReviewItem,
+  pendingCollectionIdsForItem,
+  prepareAtlasItemForCollectionPublication,
   rejectAtlasReviewItem,
   takedownAtlasPublicItem,
 } from "@/lib/atlas-db";
@@ -53,6 +56,16 @@ export async function PATCH(
     publicItemId,
     privateThumbPath: image.thumb_path,
   });
+  const pendingCollectionIds = await pendingCollectionIdsForItem(item.id);
+  if (pendingCollectionIds.length > 0) {
+    await prepareAtlasItemForCollectionPublication(item.id, published.path);
+    const publishedCollectionIds = await finalizeReadyCollectionsForItem(item.id);
+    return NextResponse.json({
+      ok: true,
+      deferredToCollections: true,
+      publishedCollectionIds,
+    });
+  }
   const publicItem = await approveAtlasPublicItem({
     itemId: item.id,
     imagePublicPath: published.path,

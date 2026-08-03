@@ -8,6 +8,7 @@ import type {
   AtlasCardRow,
   AtlasCardStateRow,
   AtlasCollectionReviewStatus,
+  AtlasCollectionMemberRow,
   AtlasCollectionRow,
   AtlasDeckKey,
   AtlasDueCard,
@@ -1196,15 +1197,27 @@ export async function getAtlasStoragePathsForUser(
     WHERE owner_user_id = ${userId}::uuid
       AND image_public_path IS NOT NULL
   `;
+  const collectionAvatarRows = await sql<{ avatar_private_path: string | null }[]>`
+    SELECT avatar_private_path
+    FROM atlas_collections
+    WHERE owner_user_id = ${userId}::uuid
+      AND avatar_private_path IS NOT NULL
+  `;
+  const collectionAvatarPaths = collectionAvatarRows
+    .map((row) => row.avatar_private_path)
+    .filter((path): path is string => Boolean(path));
   return {
     privatePaths: privateRows.flatMap((row) => [
       row.original_path,
       row.thumb_path,
       row.recognition_path,
-    ]),
+    ]).concat(
+      collectionAvatarPaths.filter((path) => !path.startsWith("collections/")),
+    ),
     publicPaths: publicRows
       .map((row) => row.image_public_path)
-      .filter((path): path is string => Boolean(path)),
+      .filter((path): path is string => Boolean(path))
+      .concat(collectionAvatarPaths.filter((path) => path.startsWith("collections/"))),
   };
 }
 
@@ -1309,6 +1322,7 @@ function slugifyAtlas(input: string): string {
 export async function submitAtlasItemForReview(
   userId: string,
   itemId: string,
+  options: { deferPublication?: boolean } = {},
 ): Promise<AtlasItemRow | null> {
   const sql = requireSql();
   const item = await getAtlasItem(userId, itemId);
@@ -1317,7 +1331,7 @@ export async function submitAtlasItemForReview(
   const publicSlug = `${slugBase}-${item.id.slice(0, 8)}`;
   const rows = await sql<AtlasItemRow[]>`
     UPDATE user_atlas_items
-    SET visibility = 'public',
+    SET visibility = ${options.deferPublication ? "private" : "public"},
         -- 'pending_auto' = handed to the machine gate; processAtlasSubmission
         -- immediately moves it to approved / pending_review / rejected.
         review_status = 'pending_auto',
@@ -1335,6 +1349,26 @@ export async function submitAtlasItemForReview(
     RETURNING *
   `;
   return rows[0] ?? null;
+}
+
+/** Stores a reviewed public image without exposing the item yet. */
+export async function prepareAtlasItemForCollectionPublication(
+  itemId: string,
+  imagePublicPath: string,
+): Promise<boolean> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string }[]>`
+    UPDATE user_atlas_items
+    SET visibility = 'private',
+        review_status = 'approved',
+        public_slug = COALESCE(public_slug, 'atlas-' || left(id::text, 8)),
+        share_image_path = ${imagePublicPath},
+        updated_at = now()
+    WHERE id = ${itemId}::uuid
+      AND deleted_at IS NULL
+    RETURNING id
+  `;
+  return rows.length > 0;
 }
 
 /**
@@ -2523,6 +2557,8 @@ export interface AtlasPublicCollectionCardRow {
   item_count: number;
   save_count: number;
   cover_image_path: string | null;
+  avatar_image_path: string | null;
+  avatar_color: string | null;
   published_at: string | null;
 }
 
@@ -2539,6 +2575,7 @@ export interface AtlasPublicCollectionDetail {
 /** Card projection + member items, ordered by position (approved members only). */
 const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
   c.id, c.owner_user_id, c.slug, c.title, c.description, c.target_language, c.published_at,
+  c.avatar_color, c.avatar_private_path AS avatar_image_path,
   pr.username                   AS author_username,
   pr.nickname                   AS author_nickname,
   pr.avatar                     AS author_avatar,
@@ -2600,6 +2637,25 @@ export async function updateAtlasCollection(input: {
   return rows[0] ?? null;
 }
 
+export async function updateAtlasCollectionAvatar(input: {
+  id: string;
+  ownerUserId: string;
+  avatarPath: string;
+  avatarColor: string;
+}): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET avatar_private_path = ${input.avatarPath},
+        avatar_color = ${input.avatarColor},
+        updated_at = now()
+    WHERE id = ${input.id}::uuid
+      AND owner_user_id = ${input.ownerUserId}::uuid
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
 export async function deleteAtlasCollection(id: string, ownerUserId: string): Promise<boolean> {
   const sql = requireSql();
   const rows = await sql<{ id: string }[]>`
@@ -2610,29 +2666,41 @@ export async function deleteAtlasCollection(id: string, ownerUserId: string): Pr
   return rows.length > 0;
 }
 
-/** Add a member. Guarded insert: the collection must belong to the user AND the
- *  public item must be the user's own approved item in the collection's language. */
+/** Guarded insert of the owner's confirmed source item in the collection language. */
 export async function addAtlasCollectionItem(input: {
   collectionId: string;
   ownerUserId: string;
-  publicItemId: string;
+  sourceItemId: string;
 }): Promise<boolean> {
   const sql = requireSql();
   const rows = await sql<{ collection_id: string }[]>`
-    INSERT INTO atlas_collection_items (collection_id, public_item_id, position)
-    SELECT c.id, pi.id,
+    INSERT INTO atlas_collection_items (collection_id, source_item_id, public_item_id, position)
+    SELECT c.id, i.id, pi.id,
            COALESCE((SELECT max(position) + 1 FROM atlas_collection_items
                      WHERE collection_id = c.id), 0)
     FROM atlas_collections c
-    JOIN atlas_public_items pi
-      ON pi.id = ${input.publicItemId}::uuid
-     AND pi.owner_user_id = c.owner_user_id
+    JOIN user_atlas_items i
+      ON i.id = COALESCE(
+           (SELECT source_item_id FROM atlas_public_items WHERE id = ${input.sourceItemId}::uuid),
+           ${input.sourceItemId}::uuid
+         )
+     AND i.user_id = c.owner_user_id
+     AND i.target_language = c.target_language
+     AND i.deleted_at IS NULL
+     AND i.review_status NOT IN ('rejected', 'takedown')
+    JOIN user_atlas_images img
+      ON img.id = i.image_id
+     AND img.user_id = i.user_id
+     AND img.deleted_at IS NULL
+     AND img.status IN ('confirmed', 'cards_ready')
+    LEFT JOIN atlas_public_items pi
+      ON pi.source_item_id = i.id
      AND pi.review_status = 'approved'
-     AND pi.target_language = c.target_language
     WHERE c.id = ${input.collectionId}::uuid
       AND c.owner_user_id = ${input.ownerUserId}::uuid
       AND c.review_status <> 'takedown'
-    ON CONFLICT (collection_id, public_item_id) DO NOTHING
+      AND (pi.id IS NOT NULL OR c.review_status IN ('draft', 'rejected', 'withdrawn'))
+    ON CONFLICT (collection_id, source_item_id) DO NOTHING
     RETURNING collection_id
   `;
   return rows.length > 0;
@@ -2641,19 +2709,70 @@ export async function addAtlasCollectionItem(input: {
 export async function removeAtlasCollectionItem(input: {
   collectionId: string;
   ownerUserId: string;
-  publicItemId: string;
+  sourceItemId: string;
 }): Promise<boolean> {
   const sql = requireSql();
-  const rows = await sql<{ public_item_id: string }[]>`
+  const rows = await sql<{ source_item_id: string }[]>`
     DELETE FROM atlas_collection_items ci
     USING atlas_collections c
     WHERE ci.collection_id = c.id
       AND c.id = ${input.collectionId}::uuid
       AND c.owner_user_id = ${input.ownerUserId}::uuid
-      AND ci.public_item_id = ${input.publicItemId}::uuid
-    RETURNING ci.public_item_id
+      AND ci.source_item_id = COALESCE(
+        (SELECT source_item_id FROM atlas_public_items WHERE id = ${input.sourceItemId}::uuid),
+        ${input.sourceItemId}::uuid
+      )
+    RETURNING ci.source_item_id
   `;
   return rows.length > 0;
+}
+
+export async function listAtlasCollectionCandidates(
+  ownerUserId: string,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 300,
+): Promise<AtlasCollectionMemberRow[]> {
+  const sql = requireSql();
+  return sql<AtlasCollectionMemberRow[]>`
+    SELECT i.id, pi.id AS public_item_id, i.lemma, i.display_zh_hant,
+           i.target_language, i.category, i.review_status, i.visibility,
+           img.thumb_path, pi.image_public_path, true AS eligible
+    FROM user_atlas_items i
+    JOIN user_atlas_images img
+      ON img.id = i.image_id AND img.user_id = i.user_id
+    LEFT JOIN atlas_public_items pi
+      ON pi.source_item_id = i.id AND pi.review_status = 'approved'
+    WHERE i.user_id = ${ownerUserId}::uuid
+      AND i.target_language = ${targetLanguage}
+      AND i.deleted_at IS NULL
+      AND img.deleted_at IS NULL
+      AND img.status IN ('confirmed', 'cards_ready')
+      AND i.review_status NOT IN ('rejected', 'takedown')
+    ORDER BY i.created_at DESC
+    LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+export async function listOwnedAtlasCollectionMembers(
+  collectionId: string,
+): Promise<AtlasCollectionMemberRow[]> {
+  const sql = requireSql();
+  return sql<AtlasCollectionMemberRow[]>`
+    SELECT i.id, pi.id AS public_item_id, i.lemma, i.display_zh_hant,
+           i.target_language, i.category, i.review_status, i.visibility,
+           img.thumb_path, pi.image_public_path, ci.position,
+           (i.deleted_at IS NULL
+             AND img.deleted_at IS NULL
+             AND img.status IN ('confirmed', 'cards_ready')
+             AND i.review_status NOT IN ('rejected', 'takedown')) AS eligible
+    FROM atlas_collection_items ci
+    JOIN user_atlas_items i ON i.id = ci.source_item_id
+    JOIN user_atlas_images img ON img.id = i.image_id
+    LEFT JOIN atlas_public_items pi
+      ON pi.source_item_id = i.id AND pi.review_status = 'approved'
+    WHERE ci.collection_id = ${collectionId}::uuid
+    ORDER BY ci.position ASC, i.created_at DESC
+  `;
 }
 
 /** The author's own collections (all statuses), newest-updated first. */
@@ -2700,7 +2819,7 @@ export async function listUserApprovedPublicItems(
 export async function getOwnedAtlasCollection(
   id: string,
   ownerUserId: string,
-): Promise<{ collection: AtlasCollectionRow; items: AtlasPublicItemWithAuthorRow[] } | null> {
+): Promise<{ collection: AtlasCollectionRow; items: AtlasPublicItemWithAuthorRow[]; members: AtlasCollectionMemberRow[] } | null> {
   const sql = requireSql();
   const rows = await sql<AtlasCollectionRow[]>`
     SELECT * FROM atlas_collections
@@ -2717,7 +2836,8 @@ export async function getOwnedAtlasCollection(
     WHERE ci.collection_id = ${id}::uuid
     ORDER BY ci.position ASC, pi.published_at DESC
   `;
-  return { collection, items };
+  const members = await listOwnedAtlasCollectionMembers(id);
+  return { collection, items, members };
 }
 
 // MARK: - Collections: public reads (CDN-cached routes)
@@ -3090,7 +3210,12 @@ export async function setAtlasCollectionReviewStatus(
   const sql = requireSql();
   const rows = await sql<AtlasCollectionRow[]>`
     UPDATE atlas_collections
-    SET review_status = ${status}, updated_at = now()
+    SET review_status = ${status},
+        content_review_approved_at = CASE
+          WHEN ${status} IN ('draft', 'rejected', 'takedown', 'withdrawn') THEN NULL
+          ELSE content_review_approved_at
+        END,
+        updated_at = now()
     WHERE id = ${id}::uuid
     RETURNING *
   `;
@@ -3108,6 +3233,129 @@ export async function approveAtlasCollection(id: string): Promise<AtlasCollectio
     RETURNING *
   `;
   return rows[0] ?? null;
+}
+
+/**
+ * Final publication gate for a collection. Every source member must either
+ * already be public or have an approved review plus a prepared public image.
+ * The public rows, memberships, source visibility, and collection become live
+ * in one database transaction.
+ */
+export async function publishAtlasCollectionAtomically(
+  id: string,
+): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  return sql.begin(async (tx) => {
+    await tx`SELECT pg_advisory_xact_lock(hashtextextended(${id}::text, 0::bigint))`;
+    const [collectionGate] = await tx<{ content_ready: boolean }[]>`
+      SELECT (content_review_approved_at IS NOT NULL) AS content_ready
+      FROM atlas_collections
+      WHERE id = ${id}::uuid
+        AND review_status <> 'takedown'
+      FOR UPDATE
+    `;
+    if (!collectionGate?.content_ready) return null;
+    const [gate] = await tx<{ item_count: number; blocked_count: number }[]>`
+      SELECT count(*)::int AS item_count,
+             count(*) FILTER (
+               WHERE i.deleted_at IS NOT NULL
+                  OR img.deleted_at IS NOT NULL
+                  OR img.status NOT IN ('confirmed', 'cards_ready')
+                  OR i.review_status IN ('rejected', 'takedown')
+                  OR (pi.id IS NULL
+                    AND (i.review_status <> 'approved' OR i.share_image_path IS NULL))
+             )::int AS blocked_count
+      FROM atlas_collection_items ci
+      JOIN user_atlas_items i ON i.id = ci.source_item_id
+      JOIN user_atlas_images img ON img.id = i.image_id
+      LEFT JOIN atlas_public_items pi
+        ON pi.source_item_id = i.id AND pi.review_status = 'approved'
+      WHERE ci.collection_id = ${id}::uuid
+    `;
+    if (!gate || gate.item_count === 0 || gate.blocked_count > 0) return null;
+
+    await tx`
+      INSERT INTO atlas_public_items (
+        source_item_id, owner_user_id, public_slug, lemma, display_zh_hant,
+        target_language, category, image_public_path, review_status,
+        published_at, updated_at
+      )
+      SELECT i.id, i.user_id, i.public_slug, i.lemma, i.display_zh_hant,
+             i.target_language, i.category, i.share_image_path, 'approved', now(), now()
+      FROM atlas_collection_items ci
+      JOIN user_atlas_items i ON i.id = ci.source_item_id
+      WHERE ci.collection_id = ${id}::uuid
+      ON CONFLICT (public_slug) DO UPDATE SET
+        lemma = EXCLUDED.lemma,
+        display_zh_hant = EXCLUDED.display_zh_hant,
+        category = EXCLUDED.category,
+        image_public_path = EXCLUDED.image_public_path,
+        review_status = 'approved',
+        updated_at = now()
+    `;
+    await tx`
+      UPDATE atlas_collection_items ci
+      SET public_item_id = pi.id
+      FROM atlas_public_items pi
+      WHERE ci.source_item_id = pi.source_item_id
+        AND pi.review_status = 'approved'
+    `;
+    await tx`
+      UPDATE user_atlas_items i
+      SET visibility = 'public', review_status = 'approved',
+          published_at = COALESCE(i.published_at, now()),
+          cdn_cache_key = i.public_slug, updated_at = now()
+      FROM atlas_collection_items ci
+      WHERE ci.collection_id = ${id}::uuid AND ci.source_item_id = i.id
+    `;
+    const rows = await tx<AtlasCollectionRow[]>`
+      UPDATE atlas_collections
+      SET review_status = 'approved',
+          published_at = COALESCE(published_at, now()), updated_at = now()
+      WHERE id = ${id}::uuid
+        AND content_review_approved_at IS NOT NULL
+      RETURNING *
+    `;
+    return rows[0] ?? null;
+  });
+}
+
+export async function markAtlasCollectionContentApproved(
+  id: string,
+): Promise<AtlasCollectionRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasCollectionRow[]>`
+    UPDATE atlas_collections
+    SET content_review_approved_at = now(),
+        review_status = 'pending_review',
+        updated_at = now()
+    WHERE id = ${id}::uuid
+      AND review_status <> 'takedown'
+    RETURNING *
+  `;
+  return rows[0] ?? null;
+}
+
+export async function pendingCollectionIdsForItem(itemId: string): Promise<string[]> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string }[]>`
+    SELECT DISTINCT c.id
+    FROM atlas_collection_items ci
+    JOIN atlas_collections c ON c.id = ci.collection_id
+    WHERE ci.source_item_id = ${itemId}::uuid
+      AND c.review_status = 'pending_review'
+  `;
+  return rows.map((row) => row.id);
+}
+
+export async function finalizeReadyCollectionsForItem(itemId: string): Promise<string[]> {
+  const ids = await pendingCollectionIdsForItem(itemId);
+  const published: string[] = [];
+  for (const id of ids) {
+    const row = await publishAtlasCollectionAtomically(id);
+    if (row) published.push(row.id);
+  }
+  return published;
 }
 
 export function rejectAtlasCollection(id: string): Promise<AtlasCollectionRow | null> {

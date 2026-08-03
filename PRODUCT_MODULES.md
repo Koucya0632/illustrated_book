@@ -120,7 +120,6 @@ Endpoint：
 - `/api/atlas/items/:id/cards`
 - `/api/atlas/items/:id/detail`
 - `/api/atlas/items/:id/enrich`
-- `/api/atlas/items/:id/publish`
 - `/api/atlas/sync`
 - `/api/atlas/public/*`
 

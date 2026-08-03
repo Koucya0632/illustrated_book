@@ -189,6 +189,22 @@ export interface AtlasItemRow {
   deleted_at: string | null;
 }
 
+/** Owner-only collection member/candidate. Private image paths never leave the server. */
+export interface AtlasCollectionMemberRow {
+  id: string;
+  public_item_id: string | null;
+  lemma: string;
+  display_zh_hant: string;
+  target_language: AtlasTargetLanguage;
+  category: string | null;
+  review_status: AtlasReviewStatus;
+  visibility: AtlasVisibility;
+  thumb_path: string;
+  image_public_path: string | null;
+  eligible: boolean;
+  position?: number;
+}
+
 export interface AtlasCardRow {
   id: string;
   user_id: string;
@@ -307,6 +323,9 @@ export interface AtlasCollectionRow {
   description: string | null;
   target_language: AtlasTargetLanguage;
   cover_public_item_id: string | null;
+  avatar_private_path: string | null;
+  avatar_color: string | null;
+  content_review_approved_at: string | null;
   review_status: AtlasCollectionReviewStatus;
   created_at: string;
   updated_at: string;

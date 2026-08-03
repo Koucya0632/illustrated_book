@@ -24,7 +24,7 @@ export async function DELETE(
   const removed = await removeAtlasCollectionItem({
     collectionId: params.id,
     ownerUserId: userId,
-    publicItemId: params.publicItemId,
+    sourceItemId: params.publicItemId,
   });
   if (!removed) return NextResponse.json({ error: "not found" }, { status: 404 });
   return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "private, no-store" } });

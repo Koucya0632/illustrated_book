@@ -1,17 +1,16 @@
 // Collection submit → text gate → auto-publish or human queue.
 //
-// A collection groups the author's OWN already-approved public items, so the
-// images are already vetted. The only unscreened content a collection adds is
-// its title and description, so the machine gate here is text-only — no Vision
-// call. Same publish mechanics as the admin approve action (approveAtlasCollection),
-// so both paths produce identical public rows.
+// Member images cross the item gate first. This module reviews the collection's
+// title/description, then asks the atomic publication gate to expose the set
+// only when every member is ready.
 //
 // Mirrors lib/atlas/submit-pipeline.ts for items. Never throws: any unexpected
 // failure leaves the collection in the human queue (fail-closed).
 
 import "server-only";
 import {
-  approveAtlasCollection,
+  publishAtlasCollectionAtomically,
+  markAtlasCollectionContentApproved,
   recordAtlasCollectionModerationEvent,
   setAtlasCollectionReviewStatus,
 } from "../atlas-db";
@@ -61,7 +60,12 @@ export async function processAtlasCollectionSubmission(
       return { reviewStatus: decision.reviewStatus, published: false, categories };
     }
 
-    await approveAtlasCollection(collection.id);
+    await markAtlasCollectionContentApproved(collection.id);
+    const published = await publishAtlasCollectionAtomically(collection.id);
+    if (!published) {
+      await setAtlasCollectionReviewStatus(collection.id, "pending_review");
+      return { reviewStatus: "pending_review", published: false, categories };
+    }
     outcome = { reviewStatus: "approved", published: true, categories };
   } catch {
     // Fail closed: park it for a human rather than publishing unscreened text.

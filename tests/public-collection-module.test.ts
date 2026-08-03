@@ -29,6 +29,8 @@ function collectionDetail(itemCount = 5): AtlasPublicCollectionDetail {
       author_avatar: "face",
       item_count: itemCount,
       save_count: 4,
+      avatar_color: null,
+      avatar_image_path: null,
       cover_image_path: null,
       published_at: "2026-07-31T00:00:00.000Z",
     },

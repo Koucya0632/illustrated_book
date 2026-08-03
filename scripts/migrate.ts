@@ -1265,6 +1265,8 @@ const DDL = [
      description          TEXT,
      target_language      TEXT NOT NULL CHECK (target_language IN ('en','ja')),
      cover_public_item_id UUID REFERENCES atlas_public_items(id) ON DELETE SET NULL,
+     avatar_private_path  TEXT,
+     avatar_color         TEXT,
      -- Same 'withdrawn' vs 'takedown' split as items: the author's own removal
      -- is reversible, moderation's is not.
      review_status        TEXT NOT NULL DEFAULT 'draft' CHECK (review_status IN
@@ -1274,6 +1276,20 @@ const DDL = [
      updated_at           TIMESTAMPTZ NOT NULL DEFAULT now(),
      published_at         TIMESTAMPTZ
    )`,
+  `ALTER TABLE atlas_collections ADD COLUMN IF NOT EXISTS avatar_private_path TEXT`,
+  `ALTER TABLE atlas_collections ADD COLUMN IF NOT EXISTS avatar_color TEXT`,
+  `ALTER TABLE atlas_collections ADD COLUMN IF NOT EXISTS content_review_approved_at TIMESTAMPTZ`,
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'atlas_collections_avatar_color_chk'
+         AND conrelid = 'atlas_collections'::regclass
+     ) THEN
+       ALTER TABLE atlas_collections
+         ADD CONSTRAINT atlas_collections_avatar_color_chk
+         CHECK (avatar_color IS NULL OR avatar_color ~ '^#[0-9a-f]{6}$');
+     END IF;
+   END $$`,
   // Same definition-guarded swap as the item tables: databases created before
   // 'withdrawn' carry the narrower inline CHECK under the auto-generated name.
   `DO $$ BEGIN
@@ -1299,8 +1315,8 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS atlas_collections_owner_idx
      ON atlas_collections(owner_user_id, updated_at DESC)`,
 
-  // Ordered membership. Members must be the owner's own approved public items
-  // sharing the collection's target_language — enforced at the API layer.
+  // Ordered membership. Members are the owner's own confirmed source items in
+  // the collection language; public_item_id is attached only after approval.
   `CREATE TABLE IF NOT EXISTS atlas_collection_items (
      collection_id  UUID NOT NULL REFERENCES atlas_collections(id) ON DELETE CASCADE,
      public_item_id UUID NOT NULL REFERENCES atlas_public_items(id) ON DELETE CASCADE,
@@ -1308,6 +1324,40 @@ const DDL = [
      created_at     TIMESTAMPTZ NOT NULL DEFAULT now(),
      PRIMARY KEY (collection_id, public_item_id)
    )`,
+  // A collection is authored from the owner's confirmed source items. The
+  // public row is attached only when the item and collection pass moderation.
+  `ALTER TABLE atlas_collection_items
+     ADD COLUMN IF NOT EXISTS source_item_id UUID REFERENCES user_atlas_items(id) ON DELETE CASCADE`,
+  `UPDATE atlas_collection_items ci
+      SET source_item_id = pi.source_item_id
+     FROM atlas_public_items pi
+    WHERE ci.public_item_id = pi.id
+      AND ci.source_item_id IS NULL`,
+  `ALTER TABLE atlas_collection_items ALTER COLUMN source_item_id SET NOT NULL`,
+  `DO $$ BEGIN
+     IF EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conrelid = 'atlas_collection_items'::regclass
+         AND conname = 'atlas_collection_items_pkey'
+         AND pg_get_constraintdef(oid) = 'PRIMARY KEY (collection_id, public_item_id)'
+     ) THEN
+       ALTER TABLE atlas_collection_items DROP CONSTRAINT atlas_collection_items_pkey;
+     END IF;
+   END $$`,
+  `ALTER TABLE atlas_collection_items ALTER COLUMN public_item_id DROP NOT NULL`,
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conrelid = 'atlas_collection_items'::regclass
+         AND conname = 'atlas_collection_items_pkey'
+     ) THEN
+       ALTER TABLE atlas_collection_items
+         ADD CONSTRAINT atlas_collection_items_pkey PRIMARY KEY (collection_id, source_item_id);
+     END IF;
+   END $$`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS atlas_collection_items_public_unique_idx
+     ON atlas_collection_items(collection_id, public_item_id)
+     WHERE public_item_id IS NOT NULL`,
   `CREATE INDEX IF NOT EXISTS atlas_collection_items_order_idx
      ON atlas_collection_items(collection_id, position)`,
 

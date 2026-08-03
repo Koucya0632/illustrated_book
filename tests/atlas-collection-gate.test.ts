@@ -1,10 +1,8 @@
 // Pins the collection submit gate (lib/atlas/collection-submit-pipeline.ts).
 //
-// A collection groups the author's own already-approved public items, so the
-// only unscreened content is its title + description. The gate is therefore
-// text-only: a clean title/description auto-publishes, a URL (spam) or PII sends
-// it to a human. This mirrors runAtlasTextModeration + decideAtlasModeration,
-// which the pipeline composes.
+// Member images cross the item gate separately. This test pins the collection's
+// own title/description gate: a clean value clears, while spam or PII waits for
+// a human.
 
 import assert from "node:assert/strict";
 import test from "node:test";

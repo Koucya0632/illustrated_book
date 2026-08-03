@@ -4,8 +4,15 @@
 
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
-import { getOwnedAtlasCollection, isAtlasAuthorBlocked } from "@/lib/atlas-db";
+import {
+  getOwnedAtlasCollection,
+  isAtlasAuthorBlocked,
+  prepareAtlasItemForCollectionPublication,
+  submitAtlasItemForReview,
+} from "@/lib/atlas-db";
 import { processAtlasCollectionSubmission } from "@/lib/atlas/collection-submit-pipeline";
+import { processAtlasSubmission } from "@/lib/atlas/submit-pipeline";
+import { publishAtlasShareImage, removeAtlasPublicObjects } from "@/lib/atlas/storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -34,11 +41,64 @@ export async function POST(_req: Request, { params }: { params: { id: string } }
   if (owned.collection.review_status === "takedown") {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
-  if (owned.items.length === 0) {
+  const items = owned.members;
+  if (items.length === 0) {
     return NextResponse.json(
       { error: "empty_collection", message: "合集至少要有一個項目才能公開。" },
       { status: 400, headers: { "Cache-Control": "private, no-store" } },
     );
+  }
+
+  const unpublishedMembers = owned.members.filter((member) => !member.public_item_id);
+  const problemItemIds: string[] = [];
+  for (const member of unpublishedMembers) {
+    if (!member.eligible) {
+      problemItemIds.push(member.id);
+      continue;
+    }
+    if (member.review_status === "rejected" || member.review_status === "takedown") {
+      problemItemIds.push(member.id);
+      continue;
+    }
+    if (
+      member.review_status === "pending" ||
+      member.review_status === "pending_auto" ||
+      member.review_status === "pending_review"
+    ) {
+      problemItemIds.push(member.id);
+      continue;
+    }
+    if (member.review_status === "approved") continue;
+    const submitted = await submitAtlasItemForReview(userId, member.id, {
+      deferPublication: true,
+    });
+    if (!submitted) {
+      problemItemIds.push(member.id);
+      continue;
+    }
+    const itemOutcome = await processAtlasSubmission(submitted, { deferPublication: true });
+    if (itemOutcome.reviewStatus !== "approved") problemItemIds.push(member.id);
+  }
+
+  if (problemItemIds.length === 0) {
+    const uploaded: Array<{ itemId: string; path: string }> = [];
+    let uploadingItemId: string | null = null;
+    try {
+      for (const member of unpublishedMembers) {
+        uploadingItemId = member.id;
+        const image = await publishAtlasShareImage({
+          publicItemId: member.id,
+          privateThumbPath: member.thumb_path,
+        });
+        uploaded.push({ itemId: member.id, path: image.path });
+      }
+      for (const image of uploaded) {
+        await prepareAtlasItemForCollectionPublication(image.itemId, image.path);
+      }
+    } catch {
+      if (uploadingItemId) problemItemIds.push(uploadingItemId);
+      await removeAtlasPublicObjects(uploaded.map((image) => image.path)).catch(() => {});
+    }
   }
 
   // Text gate: clean submissions publish immediately, risky ones wait for a
@@ -52,6 +112,8 @@ export async function POST(_req: Request, { params }: { params: { id: string } }
         reviewStatus: outcome.reviewStatus,
         published: outcome.published,
         categories: outcome.categories,
+        unpublishedItemCount: unpublishedMembers.length,
+        problemItemIds,
       },
     },
     { headers: { "Cache-Control": "private, no-store" } },

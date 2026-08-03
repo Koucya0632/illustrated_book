@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import {
-  approveAtlasCollection,
+  markAtlasCollectionContentApproved,
+  publishAtlasCollectionAtomically,
   rejectAtlasCollection,
   takedownAtlasCollection,
 } from "@/lib/atlas-db";
@@ -35,7 +36,11 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
     return NextResponse.json({ ok: true, collection: c });
   }
   if (body.action === "approve") {
-    const c = await approveAtlasCollection(params.id);
+    await markAtlasCollectionContentApproved(params.id);
+    const c = await publishAtlasCollectionAtomically(params.id);
+    if (!c) {
+      return NextResponse.json({ ok: true, pendingMembers: true });
+    }
     if (!c) return NextResponse.json({ error: "not found" }, { status: 404 });
     return NextResponse.json({ ok: true, collection: c });
   }

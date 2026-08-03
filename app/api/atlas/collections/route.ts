@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import { createAtlasCollection, listMyAtlasCollections, type AtlasMyCollectionRow } from "@/lib/atlas-db";
-import { atlasPublicImageUrl } from "@/lib/atlas/storage";
+import { atlasPublicImageUrl, collectionAvatarPublicUrl } from "@/lib/atlas/storage";
 import type { AtlasTargetLanguage } from "@/lib/atlas/types";
 
 export const runtime = "nodejs";
@@ -25,6 +25,8 @@ function serializeMine(row: AtlasMyCollectionRow) {
     targetLanguage: row.target_language,
     reviewStatus: row.review_status,
     itemCount: row.item_count,
+    avatarColor: row.avatar_color,
+    avatarImageUrl: collectionAvatarPublicUrl(row.avatar_private_path),
     coverImageUrl: atlasPublicImageUrl(row.cover_image_path),
     publishedAt: row.published_at,
     updatedAt: row.updated_at,

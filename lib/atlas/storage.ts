@@ -1,4 +1,5 @@
 import "server-only";
+import { randomUUID } from "crypto";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
 export const ATLAS_PRIVATE_BUCKET = "user-atlas-images";
@@ -77,6 +78,45 @@ async function removeStorageObjects(bucket: string, paths: string[]): Promise<vo
 
 export async function removeAtlasPrivateObjects(paths: string[]): Promise<void> {
   await removeStorageObjects(ATLAS_PRIVATE_BUCKET, paths);
+}
+
+export async function uploadCollectionAvatar(
+  _userId: string,
+  collectionId: string,
+  body: Buffer,
+): Promise<string> {
+  await ensureAtlasPublicBucket();
+  const path = `collections/${collectionId}/avatars/${randomUUID()}.webp`;
+  const supabase = createServiceRoleClient();
+  const { error } = await supabase.storage.from(ATLAS_PUBLIC_BUCKET).upload(path, body, {
+    contentType: "image/webp",
+    cacheControl: "31536000",
+    upsert: false,
+  });
+  if (error) throw new Error(error.message);
+  return path;
+}
+
+export async function createCollectionAvatarSignedUrl(path: string): Promise<string> {
+  const publicUrl = collectionAvatarPublicUrl(path);
+  if (publicUrl) return publicUrl;
+
+  // Compatibility for avatars uploaded by the short-lived private-avatar
+  // implementation. A new upload moves the collection onto the public path.
+  const supabase = createServiceRoleClient();
+  const { data, error } = await supabase.storage
+    .from(ATLAS_PRIVATE_BUCKET)
+    .createSignedUrl(path, SIGNED_URL_TTL_SECONDS);
+  if (error) throw new Error(error.message);
+  if (!data?.signedUrl) throw new Error("failed to create collection avatar signed URL");
+  return data.signedUrl;
+}
+
+export async function removeCollectionAvatar(path: string): Promise<void> {
+  await removeStorageObjects(
+    isPublicCollectionAvatarPath(path) ? ATLAS_PUBLIC_BUCKET : ATLAS_PRIVATE_BUCKET,
+    [path],
+  );
 }
 
 export async function removeAtlasPublicObjects(paths: string[]): Promise<void> {
@@ -177,4 +217,12 @@ export function atlasPublicImageUrl(path: string | null): string | null {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   if (!supabaseUrl) return null;
   return `${supabaseUrl}/storage/v1/object/public/${ATLAS_PUBLIC_BUCKET}/${path}`;
+}
+
+export function isPublicCollectionAvatarPath(path: string): boolean {
+  return path.startsWith("collections/") && path.includes("/avatars/");
+}
+
+export function collectionAvatarPublicUrl(path: string | null): string | null {
+  return path && isPublicCollectionAvatarPath(path) ? atlasPublicImageUrl(path) : null;
 }

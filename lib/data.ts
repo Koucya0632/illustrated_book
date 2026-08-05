@@ -235,6 +235,13 @@ export async function getAllLearningWords(
   const raw = await getAllRawEntries();
   const targetLanguage = targetLanguageFor(direction);
   const terms = await targetTermMap(direction);
+  // The list gloss must be a *word*. `localizeWord` falls back to the first ja
+  // definition, and those are explanatory sentences by design — lib/translate.ts
+  // asks for a definition that "must not merely repeat the term" — so every row
+  // in a ja UI read「電話」は、長距離の音声通信…, truncated mid-clause, where 電話
+  // belongs. The short headword is already stored in `word_terms`; it just was
+  // not being loaded unless the user happened to be learning Japanese.
+  const jaGloss = await jaGlossTermMap(lang);
   return raw.flatMap((r) => {
     const word = localizeWord(r.word, lang, r.localizedTexts);
     const term = terms.get(word.id);
@@ -281,6 +288,21 @@ async function targetTermMap(
 ): Promise<Map<string, TermRow>> {
   if (!dbEnabled()) return new Map();
   const rows = await getTermRowsCached(targetLanguageFor(direction));
+  return new Map(rows.map((r) => [r.word_id, r]));
+}
+
+/**
+ * Short Japanese headwords, keyed by word id — the gloss a ja-UI reader needs,
+ * regardless of which language they are learning.
+ *
+ * `targetTermMap` only loads these when the *learning target* is Japanese. A
+ * Japanese speaker studying English is a different case: the target is English
+ * and the gloss is Japanese, so the ja terms have to be loaded on the strength
+ * of the UI language alone.
+ */
+async function jaGlossTermMap(lang: UiLang): Promise<Map<string, TermRow> | null> {
+  if (lang !== "ja" || !dbEnabled()) return null;
+  const rows = await getTermRowsCached("ja");
   return new Map(rows.map((r) => [r.word_id, r]));
 }
 
@@ -368,6 +390,13 @@ export async function getAllCardWords(
   const raw = await getAllRawEntries();
   const targetLanguage = targetLanguageFor(direction);
   const terms = await targetTermMap(direction);
+  // The list gloss must be a *word*. `localizeWord` falls back to the first ja
+  // definition, and those are explanatory sentences by design — lib/translate.ts
+  // asks for a definition that "must not merely repeat the term" — so every row
+  // in a ja UI read「電話」は、長距離の音声通信…, truncated mid-clause, where 電話
+  // belongs. The short headword is already stored in `word_terms`; it just was
+  // not being loaded unless the user happened to be learning Japanese.
+  const jaGloss = await jaGlossTermMap(lang);
   // Only the locales the active deck can actually play: Japanese words use
   // the ja-JP clip, English words the US/UK pair (the on-device accent
   // setting picks between them). Keeps the lite payload — and its CDN cache
@@ -384,7 +413,7 @@ export async function getAllCardWords(
     return [{
       id: w.id,
       word: term?.term ?? w.word,
-      chinese: w.chinese,
+      chinese: jaGloss?.get(w.id)?.term ?? w.chinese,
       imageUrl: w.imageUrl,
       category: w.category,
       pronunciation: term?.pronunciation ?? term?.reading ?? w.pronunciation,

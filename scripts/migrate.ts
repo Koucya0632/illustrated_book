@@ -1445,9 +1445,16 @@ const DDL = [
   // Japanese category names the translate pipeline never generated (it skips
   // zodiac + custom). English names come from categories.name at read time,
   // so only ja needs a stored row. Idempotent; leaves manual edits alone.
+  //
+  // 物見 is here for the opposite reason: it is already Japanese, so the right
+  // ja name is the zh-Hant one unchanged. Without a stored row `translate.ts`
+  // would see a category missing ja, hand 物見 to the model, and store the
+  // paraphrase it comes back with — replacing a native word with a translation
+  // of itself.
   `INSERT INTO category_translations (category_id, language, name) VALUES
      ('zodiac', 'ja', '星座'),
-     ('custom', 'ja', 'カスタム')
+     ('custom', 'ja', 'カスタム'),
+     ('community', 'ja', '物見')
    ON CONFLICT (category_id, language) DO NOTHING`,
 
   // ---- feedback: general user feedback from the app's 意見收集 form ----
@@ -1579,14 +1586,25 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
 }
 
 // Seed the categories reference table from the static TS source
-// (`lib/categories.ts`). Idempotent and additive: adding a new category to
-// that file just inserts one more row on the next deploy. On conflict,
-// image_url and sort_order are refreshed — the seed file is the sole writer of
-// category covers and canonical theme order, so either kind of edit propagates
-// on deploy. Other fields (name, emoji, description) stay untouched. MUST run
-// before word seeding
-// so words.category never references a category that isn't in the table yet
-// (the words_category_fk would reject it).
+// (`lib/categories.ts`). Idempotent and additive: adding a new category to that
+// file just inserts one more row on the next deploy.
+//
+// On conflict, **every display field** is refreshed, so the seed file is the
+// source of truth for all of them. It used to refresh only image_url and
+// sort_order, which quietly made the other fields code-shaped decoration: an
+// edit to a name or a description was a no-op against any database that already
+// had the row, and since `/api/categories` serves DB rows (the static list is
+// just the no-DB fallback), production kept serving the original seed forever.
+// Renaming the 社群圖鑑 theme to 物見 is the bug that found it — the code said
+// 物見, production said 社群圖鑑, and nothing in between complained. Adding a
+// display field to `Category` means adding it to the conflict clause too.
+//
+// Nothing else writes this table (only this function and `translate.ts`, which
+// touches `category_translations`), so there are no hand-made edits to clobber.
+//
+// MUST run before word seeding so words.category never references a category
+// that isn't in the table yet (the words_category_fk would reject it).
+//
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function seedCategoriesIntoDb(sql: any) {
   for (const c of seedCategories) {
@@ -1598,10 +1616,20 @@ async function seedCategoriesIntoDb(sql: any) {
         ${seedCategories.indexOf(c)}
       )
       ON CONFLICT (id) DO UPDATE SET
+        name = EXCLUDED.name,
+        name_zh = EXCLUDED.name_zh,
+        emoji = EXCLUDED.emoji,
+        description = EXCLUDED.description,
+        color = EXCLUDED.color,
         image_url = EXCLUDED.image_url,
         sort_order = EXCLUDED.sort_order
-      WHERE categories.image_url IS DISTINCT FROM EXCLUDED.image_url
-         OR categories.sort_order IS DISTINCT FROM EXCLUDED.sort_order
+      WHERE (categories.name, categories.name_zh, categories.emoji,
+             categories.description, categories.color,
+             categories.image_url, categories.sort_order)
+        IS DISTINCT FROM
+            (EXCLUDED.name, EXCLUDED.name_zh, EXCLUDED.emoji,
+             EXCLUDED.description, EXCLUDED.color,
+             EXCLUDED.image_url, EXCLUDED.sort_order)
     `;
   }
   const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;

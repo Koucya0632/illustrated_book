@@ -3,6 +3,13 @@ import type { Category } from "@/types";
 // IMPORTANT: This module is imported by client components (SearchClient,
 // WordsTable, ProgressClient, etc.). It must stay server/client neutral —
 // no Node-only imports. The DB-aware loader lives in `categories-db.ts`.
+//
+// This list is the source of truth for the display fields, but **nothing here
+// reaches a user until migrate.ts syncs it into the `categories` table** —
+// `/api/categories` serves DB rows and only falls back to this array when
+// there is no database or no rows. Editing a name here and deploying is not
+// enough on its own; `seedCategoriesIntoDb` has to run (prod deploys only).
+// It used to not even be enough then: the upsert ignored every display field.
 
 export const categories: Category[] = [
   {

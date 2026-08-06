@@ -39,7 +39,9 @@ function fnBody(source: string, name: string): string {
 test("community is a pickable theme with the expected id", () => {
   const community = categories.find((c) => c.id === "community");
   assert.ok(community, "community must be a pickable theme");
-  assert.equal(community.nameZh, "社群圖鑑");
+  // 物見 is the user-facing name; the id stays "community" because it is a
+  // wire value stored on user rows. The id is what this test is really about.
+  assert.equal(community.nameZh, "物見");
 });
 
 test("saved items are returned as words under the community theme", () => {

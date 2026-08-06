@@ -101,20 +101,43 @@ function pickCollocationsZh(
   return zhHant;
 }
 
-/** Localize a Category's display name. `cat.nameZh` is the zh-Hant base;
- *  `cat.name` is the English name; ja names live in `translations`.
- *  Returns a new Category with `nameZh` set to the chosen language's name. */
+/** One language's overlay row for a category. `description` is nullable on its
+ *  own: a category can have a translated name and no translated description. */
+export interface CategoryTranslation {
+  name: string;
+  description?: string | null;
+}
+
+/** Localize a Category's display name **and description**. `cat.nameZh` /
+ *  `cat.description` are the zh-Hant base, `cat.name` / `cat.descriptionEn` are
+ *  English, and every other language is an overlay row in `translations`.
+ *  Returns a new Category with `nameZh` and `description` set to the chosen
+ *  language's text.
+ *
+ *  Each field falls back on its own. A category whose ja overlay has a name but
+ *  no description shows the Japanese name over the zh-Hant description, which is
+ *  what every category did for both fields until the description columns
+ *  existed — a missing translation must never blank the line out. */
 export function localizeCategory(
   cat: Category,
   lang: UiLang,
-  translations?: Record<string, string>,
+  translations?: Record<string, CategoryTranslation>,
 ): Category {
   if (lang === "ja") {
     const ja = translations?.ja;
-    return ja ? { ...cat, nameZh: ja } : cat; // fall back to zh-Hant
+    if (!ja) return cat; // fall back to zh-Hant for both fields
+    return {
+      ...cat,
+      nameZh: ja.name || cat.nameZh,
+      description: ja.description || cat.description,
+    };
   }
   if (lang === "en") {
-    return cat.name ? { ...cat, nameZh: cat.name } : cat;
+    return {
+      ...cat,
+      nameZh: cat.name || cat.nameZh,
+      description: cat.descriptionEn || cat.description,
+    };
   }
   if (lang !== "zh-Hans") return cat;
   return {

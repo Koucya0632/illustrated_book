@@ -4,10 +4,16 @@ export type CategoryId = string;
 
 export interface Category {
   id: CategoryId;
+  /** English display name. The base table carries zh-Hant and English; every
+   *  other language is an overlay row in `category_translations`. */
   name: string;
   nameZh: string;
   emoji: string;
   description: string;
+  /** English description, alongside `name` for the same reason. Optional so a
+   *  category without one falls back to the zh-Hant `description`, which is
+   *  what every category did before these existed. */
+  descriptionEn?: string;
   color: string;
   imageUrl: string;
 }

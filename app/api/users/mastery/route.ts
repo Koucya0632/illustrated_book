@@ -51,10 +51,15 @@ export async function GET() {
     // CARD in atlas_saved_cards — a third namespace. Without this the community
     // theme renders a grid of 0% over words the user has been reviewing all
     // week, which reads as "studying this does nothing".
+    //
+    // The schedule comes from the same rows. It used to be hard-coded null,
+    // which meant a saved word could be due tomorrow and still show no
+    // countdown anywhere in the app — the one namespace of the three that
+    // silently had none.
     ...savedRows.map((r) => ({
       wordId: `saved:${r.slug}`,
       mastery: decayedAt(r.mastery, r.last_reviewed_at),
-      nextReviewAt: null,
+      nextReviewAt: isoOrNull(r.next_review_at),
     })),
   ];
 

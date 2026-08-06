@@ -2269,12 +2269,29 @@ export async function listAtlasSavedItems(
 export async function getSavedCommunityMastery(
   userId: string,
   targetLanguage: AtlasTargetLanguage,
-): Promise<{ slug: string; mastery: number; last_reviewed_at: string | null }[]> {
+): Promise<
+  {
+    slug: string;
+    mastery: number;
+    last_reviewed_at: string | null;
+    next_review_at: string | null;
+  }[]
+> {
   const sql = requireSql();
-  return sql<{ slug: string; mastery: number; last_reviewed_at: string | null }[]>`
+  return sql<
+    {
+      slug: string;
+      mastery: number;
+      last_reviewed_at: string | null;
+      next_review_at: string | null;
+    }[]
+  >`
     SELECT p.public_slug AS slug,
            avg(sc.mastery)::float8 AS mastery,
-           max(sc.last_reviewed_at) AS last_reviewed_at
+           max(sc.last_reviewed_at) AS last_reviewed_at,
+           -- Soonest of the item's two cards, matching what the client means by
+           -- "next review" everywhere else (see getAllAtlasMasteryWithSchedule).
+           min(sc.next_review_at) AS next_review_at
     FROM atlas_saved_cards sc
     JOIN atlas_public_items p ON p.id = sc.public_item_id
     WHERE sc.user_id = ${userId}::uuid

@@ -20,11 +20,17 @@ export const categories: Category[] = [
     // machinery instead of adding a parallel deck concept. Unlike "custom" it
     // is strictly opt-in: the study queue only includes it when explicitly
     // selected, so users who have saved nothing never study an empty theme.
+    //
+    // 物見 is the iOS UI name for the public half (the third tab); the id stays
+    // "community" because it is a wire value stored on user rows. The
+    // description deliberately does *not* name the tab: this string ships ahead
+    // of the iOS rename, so it has to read correctly to someone whose app still
+    // calls that tab 社群.
     id: "community",
-    name: "Community",
-    nameZh: "社群圖鑑",
+    name: "Sightings",
+    nameZh: "物見",
     emoji: "🌏",
-    description: "你從公開圖鑑收藏的卡片",
+    description: "你從其他人公開的圖鑑收藏的卡片",
     color: "from-teal-100 to-sky-100",
     imageUrl: "",
   },

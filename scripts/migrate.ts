@@ -1457,6 +1457,49 @@ const DDL = [
      ('community', 'ja', '物見')
    ON CONFLICT (category_id, language) DO NOTHING`,
 
+  // ---- localized category descriptions ----
+  // The one-line description under a theme's title used to be zh-Hant for every
+  // reader: `localizeCategory` swapped the *name* for ja/en and left the
+  // description alone, because there was nowhere to put a translated one. These
+  // two columns are that somewhere, and they follow the split the names already
+  // use — English on the base row next to `name`, other languages on the
+  // overlay next to the overlay's `name`.
+  `ALTER TABLE categories ADD COLUMN IF NOT EXISTS description_en TEXT`,
+  `ALTER TABLE category_translations ADD COLUMN IF NOT EXISTS description TEXT`,
+
+  // Hand-written rather than run through `translate.ts`: twelve fixed lines of
+  // product copy, where a model's paraphrase is worse than a person's sentence.
+  //
+  // Descriptions only. The name column is carried over from whatever row is
+  // already there (`translate.ts` wrote most of them) and only falls back to
+  // the zh-Hant name when the overlay row does not exist yet, which is the same
+  // thing a reader would have seen anyway. Writing names here would have
+  // overwritten the pipeline's work — 交通 for 乗り物, and so on.
+  //
+  // Only fills a description that is still NULL, so a later edit survives.
+  `INSERT INTO category_translations (category_id, language, name, description)
+   SELECT v.id, 'ja', COALESCE(ct.name, c.name_zh), v.description
+     FROM (VALUES
+       ('custom',         '自分の写真から作った単語カード'),
+       ('community',      'ほかの人が公開した図鑑から保存したカード'),
+       ('kitchen',        '料理をする場所'),
+       ('bathroom',       '洗面と身支度の空間'),
+       ('bedroom',        '休息と睡眠の場所'),
+       ('living-room',    '家族が集まる空間'),
+       ('office',         '仕事と勉強の環境'),
+       ('street',         '街を歩く'),
+       ('supermarket',    '日々の買い物'),
+       ('transportation', '世界を移動する手段'),
+       ('seasonings',     '料理をおいしくする名脇役'),
+       ('zodiac',         '十二星座と英語の名前')
+     ) AS v(id, description)
+     JOIN categories c ON c.id = v.id
+     LEFT JOIN category_translations ct
+       ON ct.category_id = v.id AND ct.language = 'ja'
+   ON CONFLICT (category_id, language) DO UPDATE SET
+     description = EXCLUDED.description
+   WHERE category_translations.description IS NULL`,
+
   // ---- feedback: general user feedback from the app's 意見收集 form ----
   // Account-level (not tied to a word/card) — study-card issues go through
   // study_reports instead.
@@ -1609,10 +1652,11 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
 async function seedCategoriesIntoDb(sql: any) {
   for (const c of seedCategories) {
     await sql`
-      INSERT INTO categories (id, name, name_zh, emoji, description, color, image_url, sort_order)
+      INSERT INTO categories
+        (id, name, name_zh, emoji, description, description_en, color, image_url, sort_order)
       VALUES (
         ${c.id}, ${c.name}, ${c.nameZh}, ${c.emoji},
-        ${c.description}, ${c.color}, ${c.imageUrl},
+        ${c.description}, ${c.descriptionEn ?? null}, ${c.color}, ${c.imageUrl},
         ${seedCategories.indexOf(c)}
       )
       ON CONFLICT (id) DO UPDATE SET
@@ -1620,15 +1664,16 @@ async function seedCategoriesIntoDb(sql: any) {
         name_zh = EXCLUDED.name_zh,
         emoji = EXCLUDED.emoji,
         description = EXCLUDED.description,
+        description_en = EXCLUDED.description_en,
         color = EXCLUDED.color,
         image_url = EXCLUDED.image_url,
         sort_order = EXCLUDED.sort_order
       WHERE (categories.name, categories.name_zh, categories.emoji,
-             categories.description, categories.color,
+             categories.description, categories.description_en, categories.color,
              categories.image_url, categories.sort_order)
         IS DISTINCT FROM
             (EXCLUDED.name, EXCLUDED.name_zh, EXCLUDED.emoji,
-             EXCLUDED.description, EXCLUDED.color,
+             EXCLUDED.description, EXCLUDED.description_en, EXCLUDED.color,
              EXCLUDED.image_url, EXCLUDED.sort_order)
     `;
   }

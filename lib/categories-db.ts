@@ -5,7 +5,7 @@
 import "server-only";
 import type { Category } from "@/types";
 import { categories as staticCategories } from "./categories";
-import { localizeCategory } from "./word-localize";
+import { localizeCategory, type CategoryTranslation } from "./word-localize";
 import type { UiLang } from "./settings";
 import { getSql } from "./db";
 
@@ -15,10 +15,14 @@ interface CategoryRow {
   name_zh: string;
   emoji: string;
   description: string | null;
+  description_en: string | null;
   color: string | null;
   image_url: string | null;
   sort_order: number;
-  translations: Record<string, string> | null; // language -> localized name (ja today)
+  /** language -> localized name and description (ja today). The description is
+   *  nullable per row, so a language can have a translated name and still fall
+   *  back to the zh-Hant description. */
+  translations: Record<string, CategoryTranslation> | null;
 }
 
 export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Category[]> {
@@ -26,8 +30,11 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
   if (!sql) return staticCategories.map((c) => localizeCategory(c, lang));
   try {
     const rows = (await sql`
-      SELECT c.id, c.name, c.name_zh, c.emoji, c.description, c.color, c.image_url, c.sort_order,
-        (SELECT jsonb_object_agg(ct.language, ct.name)
+      SELECT c.id, c.name, c.name_zh, c.emoji, c.description, c.description_en,
+             c.color, c.image_url, c.sort_order,
+        (SELECT jsonb_object_agg(
+                  ct.language,
+                  jsonb_build_object('name', ct.name, 'description', ct.description))
            FROM category_translations ct WHERE ct.category_id = c.id) AS translations
       FROM categories c
       ORDER BY c.sort_order, c.id
@@ -40,6 +47,7 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         nameZh: r.name_zh,
         emoji: r.emoji,
         description: r.description ?? "",
+        descriptionEn: r.description_en ?? undefined,
         color: r.color ?? "",
         imageUrl: r.image_url ?? "",
       };

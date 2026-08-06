@@ -18,6 +18,7 @@ export const categories: Category[] = [
     nameZh: "自定義",
     emoji: "🧩",
     description: "用自己的照片建立的學習卡片",
+    descriptionEn: "Cards you built from your own photos",
     color: "from-teal-100 to-yellow-100",
     imageUrl: "",
   },
@@ -38,6 +39,7 @@ export const categories: Category[] = [
     nameZh: "物見",
     emoji: "🌏",
     description: "你從其他人公開的圖鑑收藏的卡片",
+    descriptionEn: "Cards you saved from other people's atlases",
     color: "from-teal-100 to-sky-100",
     imageUrl: "",
   },
@@ -47,6 +49,7 @@ export const categories: Category[] = [
     nameZh: "廚房",
     emoji: "🍳",
     description: "煮飯做菜的好地方",
+    descriptionEn: "Where the cooking happens",
     color: "from-orange-100 to-rose-100",
     imageUrl:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
@@ -57,6 +60,7 @@ export const categories: Category[] = [
     nameZh: "浴室",
     emoji: "🛁",
     description: "盥洗與梳理的空間",
+    descriptionEn: "Washing up and getting ready",
     color: "from-sky-100 to-cyan-100",
     imageUrl:
       "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
@@ -67,6 +71,7 @@ export const categories: Category[] = [
     nameZh: "臥室",
     emoji: "🛏️",
     description: "休息與睡眠的角落",
+    descriptionEn: "The corner for rest and sleep",
     color: "from-purple-100 to-pink-100",
     imageUrl:
       "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
@@ -77,6 +82,7 @@ export const categories: Category[] = [
     nameZh: "客廳",
     emoji: "🛋️",
     description: "與家人相聚的空間",
+    descriptionEn: "Where the family gathers",
     color: "from-amber-100 to-yellow-100",
     imageUrl:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
@@ -87,6 +93,7 @@ export const categories: Category[] = [
     nameZh: "辦公室",
     emoji: "💼",
     description: "工作與學習的環境",
+    descriptionEn: "Where you work and study",
     color: "from-slate-100 to-blue-100",
     imageUrl:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
@@ -97,6 +104,7 @@ export const categories: Category[] = [
     nameZh: "街上",
     emoji: "🚶",
     description: "走在城市的街道",
+    descriptionEn: "Out walking the city streets",
     color: "from-gray-100 to-stone-100",
     imageUrl:
       "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
@@ -107,6 +115,7 @@ export const categories: Category[] = [
     nameZh: "超市",
     emoji: "🛒",
     description: "日常採購的好夥伴",
+    descriptionEn: "Your everyday shopping run",
     color: "from-emerald-100 to-lime-100",
     imageUrl:
       "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80",
@@ -117,6 +126,7 @@ export const categories: Category[] = [
     nameZh: "交通工具",
     emoji: "🚗",
     description: "移動世界的方式",
+    descriptionEn: "Ways of getting around",
     color: "from-indigo-100 to-blue-100",
     imageUrl:
       "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
@@ -127,6 +137,7 @@ export const categories: Category[] = [
     nameZh: "調味料",
     emoji: "🧂",
     description: "讓食物變美味的小幫手",
+    descriptionEn: "The little helpers that make food taste good",
     color: "from-rose-100 to-amber-100",
     imageUrl:
       "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/seasoning-jar.png",
@@ -137,6 +148,7 @@ export const categories: Category[] = [
     nameZh: "星座",
     emoji: "⭐",
     description: "十二星座與英文名稱",
+    descriptionEn: "The twelve signs and their English names",
     color: "from-cyan-100 to-violet-100",
     imageUrl:
       "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/zodiac.png",

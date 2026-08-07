@@ -1877,6 +1877,52 @@ export async function maybeEscalateAtlasReport(input: {
 }
 
 /**
+ * The 合集 counterpart. Symmetric with items on purpose — a collection carries
+ * its own `review_status`, so the same "pull it back for a human and hide it
+ * meanwhile" move is available and means the same thing.
+ *
+ * There is deliberately no author equivalent. An author identity has no review
+ * state to flip, and hiding a person's whole presence is not the same act as
+ * hiding one thing they made: three coordinated reports should not be able to
+ * erase someone from 物見. Author reports wait for a human.
+ */
+export async function maybeEscalateCollectionReport(input: {
+  collectionId: string;
+  reason: string;
+}): Promise<boolean> {
+  const sql = getSql();
+  if (!sql) return false;
+
+  try {
+    let escalate = ATLAS_HIGH_RISK_REASONS.has(input.reason);
+    if (!escalate) {
+      const rows = await sql<{ count: number }[]>`
+        SELECT count(*)::int AS count
+        FROM atlas_reports
+        WHERE target_type = 'collection'
+          AND target_id = ${input.collectionId}::uuid
+      `;
+      escalate = (rows[0]?.count ?? 0) >= reportEscalationThreshold();
+    }
+    if (!escalate) return false;
+
+    // Only pull back what is currently live — never resurrect a takedown or
+    // re-queue something already waiting.
+    const updated = await sql<{ id: string }[]>`
+      UPDATE atlas_collections
+      SET review_status = 'pending_review',
+          updated_at = now()
+      WHERE id = ${input.collectionId}::uuid
+        AND review_status = 'approved'
+      RETURNING id
+    `;
+    return updated.length > 0;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Author standing. Absence of a row means good standing, so this only has to
  * answer "is this user restricted or banned from publishing?".
  */
@@ -2236,16 +2282,35 @@ export async function countAtlasSavesByUser(userId: string): Promise<number> {
  * scheduled. Their `atlas_saved_cards` rows survive, so republishing restores
  * the entry with its review progress intact.
  */
+/**
+ * A saved public item plus the kana its source item carries.
+ *
+ * `atlas_public_items` is a publication snapshot of lemma + gloss and has no
+ * reading column, so a saved Japanese word used to arrive on the consumer's
+ * 圖鑑 with no kana at all — the same card taught the author more than the
+ * person who saved it. The reading is not private (it is how the published
+ * word is read), so it comes back over the join.
+ */
+export type AtlasSavedItemRow = AtlasPublicItemRow & {
+  source_reading: string | null;
+  source_pronunciation: string | null;
+};
+
 export async function listAtlasSavedItems(
   userId: string,
   targetLanguage: AtlasTargetLanguage,
   limit = 200,
-): Promise<AtlasPublicItemRow[]> {
+): Promise<AtlasSavedItemRow[]> {
   const sql = requireSql();
-  return sql<AtlasPublicItemRow[]>`
-    SELECT p.*
+  // LEFT JOIN: an item the author later deleted must not drop the word the
+  // saver is still studying — it just loses the kana line.
+  return sql<AtlasSavedItemRow[]>`
+    SELECT p.*,
+           i.reading       AS source_reading,
+           i.pronunciation AS source_pronunciation
     FROM atlas_saves s
     JOIN atlas_public_items p ON p.id = s.public_item_id
+    LEFT JOIN atlas_items i ON i.id = p.source_item_id
     WHERE s.user_id = ${userId}::uuid
       AND p.review_status = 'approved'
       AND p.target_language = ${targetLanguage}
@@ -2367,12 +2432,49 @@ export type AtlasReportReason =
 export type AtlasReportStatus = "open" | "reviewed" | "dismissed";
 
 /**
- * Record a user's report on a public 圖鑑 item. One report per (item, reporter):
- * a repeat is a no-op (returns already=true) so the button can't be spammed into
- * duplicate rows.
+ * What a report points at. Everything publicly readable that a user did not
+ * write themselves needs an out: the photo, the 合集 that curates it, and the
+ * author identity (暱稱/簽名/頭像) attached to both.
+ */
+export type AtlasReportTarget = "item" | "collection" | "author";
+
+/**
+ * Just enough of a public 合集 to file a report against it — deliberately not
+ * `getPublicAtlasCollection`, which also fetches every member.
+ */
+export async function getPublicCollectionRef(
+  slug: string,
+): Promise<{ id: string; title: string } | null> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string; title: string }[]>`
+    SELECT id, title FROM atlas_collections
+    WHERE slug = ${slug} AND review_status = 'approved'
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+/** Resolve a public author handle (`profiles.username`) to their user id. */
+export async function getAuthorIdByHandle(handle: string): Promise<string | null> {
+  const sql = requireSql();
+  const rows = await sql<{ id: string }[]>`
+    SELECT id FROM profiles WHERE username = ${handle} LIMIT 1
+  `;
+  return rows[0]?.id ?? null;
+}
+
+/**
+ * Record a user's report. One report per (target, reporter): a repeat is a no-op
+ * (returns already=true) so the button can't be spammed into duplicate rows.
+ *
+ * `publicItemId`/`sourceItemId`/`slug` stay item-only — they are what the admin
+ * takedown action keys on. A collection or author report carries its id in
+ * `targetId` and leaves them null.
  */
 export async function createAtlasReport(input: {
-  publicItemId: string;
+  targetType?: AtlasReportTarget;
+  targetId: string;
+  publicItemId: string | null;
   sourceItemId: string | null;
   slug: string;
   reporterUserId: string;
@@ -2380,21 +2482,25 @@ export async function createAtlasReport(input: {
   detail: string | null;
 }): Promise<{ id: string; already: boolean }> {
   const sql = requireSql();
+  const targetType = input.targetType ?? "item";
   const rows = await sql<{ id: string }[]>`
     INSERT INTO atlas_reports (
+      target_type, target_id,
       public_item_id, source_item_id, slug, reporter_user_id, reason, detail
     )
     VALUES (
-      ${input.publicItemId}::uuid, ${input.sourceItemId}, ${input.slug},
+      ${targetType}, ${input.targetId}::uuid,
+      ${input.publicItemId}, ${input.sourceItemId}, ${input.slug},
       ${input.reporterUserId}::uuid, ${input.reason}, ${input.detail}
     )
-    ON CONFLICT (public_item_id, reporter_user_id) DO NOTHING
+    ON CONFLICT (target_type, target_id, reporter_user_id) DO NOTHING
     RETURNING id
   `;
   if (rows[0]) return { id: rows[0].id, already: false };
   const existing = await sql<{ id: string }[]>`
     SELECT id FROM atlas_reports
-    WHERE public_item_id = ${input.publicItemId}::uuid
+    WHERE target_type = ${targetType}
+      AND target_id = ${input.targetId}::uuid
       AND reporter_user_id = ${input.reporterUserId}::uuid
     LIMIT 1
   `;
@@ -2403,7 +2509,9 @@ export async function createAtlasReport(input: {
 
 export interface AtlasReportRow {
   id: string;
-  public_item_id: string;
+  target_type: AtlasReportTarget;
+  target_id: string | null;
+  public_item_id: string | null;
   source_item_id: string | null;
   slug: string;
   reporter_user_id: string;
@@ -2414,6 +2522,10 @@ export interface AtlasReportRow {
   lemma: string | null;
   display_zh_hant: string | null;
   public_review_status: string | null;
+  collection_title: string | null;
+  collection_slug: string | null;
+  collection_review_status: string | null;
+  author_handle: string | null;
 }
 
 /** Admin: list reports, newest first, optionally filtered by status. */
@@ -2423,20 +2535,37 @@ export async function listAtlasReports(
 ): Promise<AtlasReportRow[]> {
   const sql = requireSql();
   const capped = Math.min(500, Math.max(1, Math.floor(limit)));
+  // One queue, three kinds of target, so each row has to name itself: the item's
+  // lemma, the 合集's title, or the author's handle. Joined on target_id rather
+  // than public_item_id — only item rows have the latter.
   if (status) {
     return sql<AtlasReportRow[]>`
-      SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status
+      SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status,
+             c.title AS collection_title, c.slug AS collection_slug,
+             c.review_status AS collection_review_status,
+             pr.username AS author_handle
       FROM atlas_reports r
       LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+      LEFT JOIN atlas_collections c
+        ON r.target_type = 'collection' AND c.id = r.target_id
+      LEFT JOIN profiles pr
+        ON r.target_type = 'author' AND pr.id = r.target_id
       WHERE r.status = ${status}
       ORDER BY r.created_at DESC
       LIMIT ${capped}
     `;
   }
   return sql<AtlasReportRow[]>`
-    SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status
+    SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status,
+           c.title AS collection_title, c.slug AS collection_slug,
+           c.review_status AS collection_review_status,
+           pr.username AS author_handle
     FROM atlas_reports r
     LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+    LEFT JOIN atlas_collections c
+      ON r.target_type = 'collection' AND c.id = r.target_id
+    LEFT JOIN profiles pr
+      ON r.target_type = 'author' AND pr.id = r.target_id
     ORDER BY r.created_at DESC
     LIMIT ${capped}
   `;

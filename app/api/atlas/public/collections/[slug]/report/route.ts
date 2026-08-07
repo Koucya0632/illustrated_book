@@ -1,10 +1,18 @@
+// 檢舉一個公開合集 — its title, 簡介 and 頭像 are public UGC in their own right,
+// separate from the items it curates.
+//
+// Same shape as the item report (auth, reason whitelist, per-user daily cap,
+// one report per reporter) and the same escalation, because a collection has a
+// `review_status` too: enough reports pulls it back for a human and hides it
+// meanwhile.
+
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import {
   createAtlasReport,
-  getAtlasPublicItem,
-  maybeEscalateAtlasReport,
+  getPublicCollectionRef,
+  maybeEscalateCollectionReport,
   type AtlasReportReason,
 } from "@/lib/atlas-db";
 import { hitRateLimit } from "@/lib/ratelimit";
@@ -49,7 +57,8 @@ export async function POST(
       ? body.detail.trim().slice(0, 1000)
       : null;
 
-  // Light per-user daily cap so the button can't be used to flood moderation.
+  // Shares the item report's bucket: the cap is on how much moderation work one
+  // account can generate, not on any single kind of report.
   const limit = await hitRateLimit({
     bucket: `atlas-report:user:${userId}`,
     windowSeconds: 86_400,
@@ -62,34 +71,29 @@ export async function POST(
     );
   }
 
-  const item = await getAtlasPublicItem(slug);
-  if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const collection = await getPublicCollectionRef(slug);
+  if (!collection) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   const result = await createAtlasReport({
-    targetType: "item",
-    targetId: item.id,
-    publicItemId: item.id,
-    sourceItemId: item.source_item_id ?? null,
-    slug: item.public_slug,
+    targetType: "collection",
+    targetId: collection.id,
+    publicItemId: null,
+    sourceItemId: null,
+    slug,
     reporterUserId: userId,
     reason: reason as AtlasReportReason,
     detail,
   });
 
-  // Only a new report can move the needle; a duplicate must not re-trigger.
   if (!result.already) {
-    const escalated = await maybeEscalateAtlasReport({
-      publicItemId: item.id,
-      sourceItemId: item.source_item_id ?? null,
+    const escalated = await maybeEscalateCollectionReport({
+      collectionId: collection.id,
       reason,
     });
-    // After escalation, so the message can say whether anything already
-    // happened — an item that auto-hid needs a different kind of attention from
-    // one still sitting live on the feed.
     await notifyModeration(
       [
-        escalated ? "🚨 檢舉（已自動下架）" : "⚠️ 新檢舉",
-        `項目：${item.lemma} (${item.public_slug})`,
+        escalated ? "🚨 合集檢舉（已自動下架）" : "⚠️ 合集檢舉",
+        `合集：${collection.title} (${slug})`,
         `原因：${reason}${detail ? ` — ${detail}` : ""}`,
         adminReportsUrl(),
       ].join("\n"),

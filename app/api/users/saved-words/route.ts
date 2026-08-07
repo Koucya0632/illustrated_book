@@ -48,9 +48,11 @@ export async function GET(req: Request) {
     // Public bucket — no signed URL needed, unlike the owner's private originals.
     imageUrl: atlasPublicImageUrl(row.image_public_path) ?? "",
     category: "community",
-    // The public item row carries no reading; the detail screen fetches the
-    // full item by slug when opened.
-    pronunciation: "",
+    // Carried over from the source item: the publication snapshot has no kana
+    // of its own, and without this a saved Japanese word showed up on the
+    // saver's 圖鑑 with no reading while the author's copy had one.
+    pronunciation: row.source_pronunciation ?? row.source_reading ?? "",
+    reading: row.source_reading ?? undefined,
     targetLanguage: row.target_language,
   }));
 

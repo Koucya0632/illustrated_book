@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { listAtlasReports, type AtlasReportStatus } from "@/lib/atlas-db";
+import {
+  listAtlasReports,
+  type AtlasReportRow,
+  type AtlasReportStatus,
+} from "@/lib/atlas-db";
 import AtlasReportActions from "./AtlasReportActions";
 
 export const dynamic = "force-dynamic";
@@ -17,6 +21,35 @@ const STATUS_LABELS: Record<string, string> = {
   reviewed: "已處理",
   dismissed: "已忽略",
 };
+
+const TARGET_LABELS: Record<string, string> = {
+  item: "項目",
+  collection: "合集",
+  author: "作者身分",
+};
+
+/** One queue, three kinds of target — each row has to say what it is about. */
+function targetTitle(r: AtlasReportRow): string {
+  switch (r.target_type) {
+    case "collection":
+      return r.collection_title ?? "（合集已移除）";
+    case "author":
+      return r.author_handle ?? "（帳號已移除）";
+    default:
+      return r.lemma ?? "（內容已移除）";
+  }
+}
+
+function publicHref(r: AtlasReportRow): string | null {
+  switch (r.target_type) {
+    case "collection":
+      return r.collection_slug ? `/atlas/collections/${r.collection_slug}` : null;
+    case "author":
+      return r.author_handle ? `/atlas/authors/${r.author_handle}` : null;
+    default:
+      return `/atlas/public/${r.slug}`;
+  }
+}
 
 function allowedStatus(value: unknown): AtlasReportStatus | "" {
   return value === "open" || value === "reviewed" || value === "dismissed" ? value : "";
@@ -72,36 +105,52 @@ export default async function AdminAtlasReportsPage({
         {reports.map((r) => (
           <article key={r.id} className="rounded-xl2 bg-white p-5 shadow-card">
             <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-ink px-2.5 py-1 text-xs font-bold text-white">
+                {TARGET_LABELS[r.target_type] ?? r.target_type}
+              </span>
               <span className="rounded-full bg-tuji-coral/15 px-2.5 py-1 text-xs font-bold text-tuji-coral">
                 {REASON_LABELS[r.reason] ?? r.reason}
               </span>
               <span className="rounded-full bg-cream px-2.5 py-1 text-xs font-bold text-ink">
                 {STATUS_LABELS[r.status] ?? r.status}
               </span>
-              {r.public_review_status === "takedown" && (
+              {(r.public_review_status === "takedown" ||
+                r.collection_review_status === "pending_review") && (
                 <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
-                  已下架
+                  已自動下架
+                </span>
+              )}
+              {r.target_type === "author" && (
+                <span className="rounded-full bg-sky-100 px-2.5 py-1 text-xs font-semibold text-sky-800">
+                  需人工判斷
                 </span>
               )}
             </div>
             <h2 className="mt-3 text-lg font-bold text-ink">
-              {r.lemma ?? "（內容已移除）"}
-              {r.display_zh_hant && <span className="ml-2 text-base font-medium text-muted">{r.display_zh_hant}</span>}
+              {targetTitle(r)}
+              {r.target_type === "item" && r.display_zh_hant && (
+                <span className="ml-2 text-base font-medium text-muted">{r.display_zh_hant}</span>
+              )}
             </h2>
             {r.detail && <p className="mt-2 whitespace-pre-wrap text-sm text-ink">{r.detail}</p>}
             <dl className="mt-4 grid gap-x-6 gap-y-2 rounded-lg bg-cream/60 p-4 text-sm sm:grid-cols-2">
-              <Meta label="Item ID（下架用）" value={r.source_item_id ?? "—"} />
-              <Meta label="公開 slug" value={r.slug} />
+              {r.target_type === "item" && (
+                <Meta label="Item ID（下架用）" value={r.source_item_id ?? "—"} />
+              )}
+              <Meta label="Target ID" value={r.target_id ?? "—"} />
+              <Meta label="slug / handle" value={r.slug} />
               <Meta label="檢舉者" value={r.reporter_user_id} />
               <Meta label="時間" value={new Date(r.created_at).toLocaleString("zh-TW")} />
             </dl>
             <div className="mt-3 flex flex-wrap items-center gap-3">
-              <Link
-                href={`/atlas/public/${r.slug}`}
-                className="text-sm font-semibold text-sky-accent hover:underline"
-              >
-                查看公開頁
-              </Link>
+              {publicHref(r) && (
+                <Link
+                  href={publicHref(r)!}
+                  className="text-sm font-semibold text-sky-accent hover:underline"
+                >
+                  查看公開頁
+                </Link>
+              )}
               {r.status === "open" && <AtlasReportActions id={r.id} />}
             </div>
           </article>

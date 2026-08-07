@@ -1204,6 +1204,60 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS atlas_reports_status_created_idx
      ON atlas_reports(status, created_at DESC)`,
 
+  // Reports go polymorphic: an item, a 合集, or an author identity. One table
+  // and therefore ONE admin queue — a moderator who has to remember to check
+  // three lists will eventually check two.
+  //
+  // Additive and ordered so a half-applied run is still consistent: add the
+  // columns, backfill them from the item columns every existing row already
+  // has, and only then relax the old NOT NULL and swap the uniqueness rule.
+  `ALTER TABLE atlas_reports
+     ADD COLUMN IF NOT EXISTS target_type TEXT NOT NULL DEFAULT 'item'`,
+  `ALTER TABLE atlas_reports ADD COLUMN IF NOT EXISTS target_id UUID`,
+  `UPDATE atlas_reports
+     SET target_id = public_item_id
+     WHERE target_id IS NULL AND public_item_id IS NOT NULL`,
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'atlas_reports_target_type_chk'
+     ) THEN
+       ALTER TABLE atlas_reports
+         ADD CONSTRAINT atlas_reports_target_type_chk
+         CHECK (target_type IN ('item','collection','author'));
+     END IF;
+   END $$`,
+  // A collection or author report has no public item to point at.
+  `ALTER TABLE atlas_reports ALTER COLUMN public_item_id DROP NOT NULL`,
+  // The old key only understood items; uniqueness is now per target.
+  `ALTER TABLE atlas_reports
+     DROP CONSTRAINT IF EXISTS atlas_reports_public_item_id_reporter_user_id_key`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS atlas_reports_target_reporter_key
+     ON atlas_reports(target_type, target_id, reporter_user_id)`,
+  `CREATE INDEX IF NOT EXISTS atlas_reports_target_idx
+     ON atlas_reports(target_type, target_id)`,
+
+  // 封鎖: one-way "never show me this author again".
+  //
+  // Tuji has no comments, no messages and no follows — the only thing one user
+  // can do to another is publish something the other sees. So a block cannot
+  // mean "stop them contacting me"; it means "stop surfacing them to me", and
+  // it is deliberately one-way: hiding my atlas from someone I blocked would
+  // punish them without protecting me.
+  //
+  // Discovery only. Anything already saved stays, because it is already the
+  // blocker's own study material and the author is just its provenance — the
+  // same principle that makes 取消公開 reversible instead of destructive.
+  `CREATE TABLE IF NOT EXISTS user_blocks (
+     blocker_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     blocked_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (blocker_user_id, blocked_user_id),
+     CHECK (blocker_user_id <> blocked_user_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_blocks_blocker_idx
+     ON user_blocks(blocker_user_id, created_at DESC)`,
+
   `ALTER TABLE user_atlas_images           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_atlas_recognition_jobs ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE user_atlas_candidates       ENABLE ROW LEVEL SECURITY`,
@@ -1217,6 +1271,12 @@ const DDL = [
   `ALTER TABLE atlas_item_grants           ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE atlas_public_items          ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE atlas_reports               ENABLE ROW LEVEL SECURITY`,
+  `ALTER TABLE user_blocks                 ENABLE ROW LEVEL SECURITY`,
+  `DROP POLICY IF EXISTS user_blocks_own ON user_blocks`,
+  // Only the blocker ever reads or writes their own list. The blocked user must
+  // not be able to tell — a block is invisible by design.
+  `CREATE POLICY user_blocks_own ON user_blocks FOR ALL
+     USING (auth.uid() = blocker_user_id) WITH CHECK (auth.uid() = blocker_user_id)`,
 
   ...[
     "user_atlas_images",

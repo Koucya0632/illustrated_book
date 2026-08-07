@@ -1,10 +1,17 @@
+// 檢舉一個作者身分 — the 暱稱, 簽名 and 頭像 on a public author profile.
+//
+// **No auto-escalation, by design.** An author identity has no review status to
+// flip, and hiding someone's whole presence is a different act from hiding one
+// thing they made: three coordinated reports must not be able to erase a person
+// from 物見. These wait for a human, which is exactly why the webhook matters
+// here more than anywhere else.
+
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import {
   createAtlasReport,
-  getAtlasPublicItem,
-  maybeEscalateAtlasReport,
+  getAuthorIdByHandle,
   type AtlasReportReason,
 } from "@/lib/atlas-db";
 import { hitRateLimit } from "@/lib/ratelimit";
@@ -23,14 +30,14 @@ const REASONS = new Set<AtlasReportReason>([
 
 export async function POST(
   req: Request,
-  { params }: { params: { slug: string } },
+  { params }: { params: { username: string } },
 ) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
 
-  const slug = params.slug.trim().toLowerCase();
-  if (!/^[a-z0-9-]{1,80}$/.test(slug)) {
+  const handle = params.username.trim();
+  if (!/^[A-Za-z0-9_-]{1,32}$/.test(handle)) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
 
@@ -49,7 +56,6 @@ export async function POST(
       ? body.detail.trim().slice(0, 1000)
       : null;
 
-  // Light per-user daily cap so the button can't be used to flood moderation.
   const limit = await hitRateLimit({
     bucket: `atlas-report:user:${userId}`,
     windowSeconds: 86_400,
@@ -62,34 +68,29 @@ export async function POST(
     );
   }
 
-  const item = await getAtlasPublicItem(slug);
-  if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
+  const authorId = await getAuthorIdByHandle(handle);
+  if (!authorId) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // Reporting yourself is a no-op, not an error worth explaining.
+  if (authorId === userId) {
+    return NextResponse.json({ ok: true, already: true }, { status: 200 });
+  }
 
   const result = await createAtlasReport({
-    targetType: "item",
-    targetId: item.id,
-    publicItemId: item.id,
-    sourceItemId: item.source_item_id ?? null,
-    slug: item.public_slug,
+    targetType: "author",
+    targetId: authorId,
+    publicItemId: null,
+    sourceItemId: null,
+    slug: handle,
     reporterUserId: userId,
     reason: reason as AtlasReportReason,
     detail,
   });
 
-  // Only a new report can move the needle; a duplicate must not re-trigger.
   if (!result.already) {
-    const escalated = await maybeEscalateAtlasReport({
-      publicItemId: item.id,
-      sourceItemId: item.source_item_id ?? null,
-      reason,
-    });
-    // After escalation, so the message can say whether anything already
-    // happened — an item that auto-hid needs a different kind of attention from
-    // one still sitting live on the feed.
     await notifyModeration(
       [
-        escalated ? "🚨 檢舉（已自動下架）" : "⚠️ 新檢舉",
-        `項目：${item.lemma} (${item.public_slug})`,
+        "⚠️ 作者身分檢舉（不會自動處理，需人工判斷）",
+        `作者：${handle}`,
         `原因：${reason}${detail ? ` — ${detail}` : ""}`,
         adminReportsUrl(),
       ].join("\n"),

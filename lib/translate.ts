@@ -1,5 +1,7 @@
 import { generateObject } from "ai";
 import { z } from "zod";
+import { isKanaOnly, readingKeepsKana, restoreKanaRuns } from "./kana";
+import { overrideReading } from "./ja-reading-overrides";
 
 // AI-powered zh-Hant → ja translation for dictionary content. Mirrors the
 // shape of lib/enrich.ts — runs through the Vercel AI Gateway using a
@@ -22,7 +24,10 @@ export const TranslatedWordSchema = z.object({
   term: z.string().describe("Concise standard Japanese dictionary headword"),
   reading: z
     .string()
-    .describe("Hiragana reading of the Japanese headword, with no punctuation"),
+    .describe(
+      "Furigana reading of the headword: kanji spelled in hiragana, kana copied " +
+        "verbatim (katakana stays katakana, ー stays ー), no punctuation",
+    ),
   definition: z
     .string()
     .describe("A natural Japanese explanatory definition, not merely the headword"),
@@ -67,7 +72,9 @@ export async function translateWordToJa(input: TranslateWordInput): Promise<Tran
       (input.etymology ? `Etymology (zh-Hant): ${input.etymology}\n` : "Etymology: (none)\n") +
       (input.note ? `Note (zh-Hant): ${input.note}\n` : "Note: (none)\n") +
       (exampleLines ? `Examples:\n${exampleLines}\n` : "Examples: (none)\n") +
-      `\nReturn: term (the concise Japanese headword), reading (hiragana), ` +
+      `\nReturn: term (the concise Japanese headword), ` +
+      `reading (furigana: kanji in hiragana, existing kana copied verbatim — ` +
+      `katakana stays katakana and ー stays ー; a kana-only term is its own reading), ` +
       `definition (a Japanese explanation distinct from the term), ` +
       `etymology (ja or null), note (ja or null), ` +
       `examples (array of ja strings, one per example, same order).`,
@@ -76,19 +83,50 @@ export async function translateWordToJa(input: TranslateWordInput): Promise<Tran
 }
 
 const JapaneseReadingSchema = z.object({
-  reading: z.string().describe("Hiragana reading only, no punctuation or explanation"),
+  reading: z
+    .string()
+    .describe("Furigana reading: kanji spelled in hiragana, existing kana copied verbatim"),
 });
 
+// "in hiragana only" is what produced えあふらいやあ for エアフライヤー and
+// しゃんぷう for シャンプー: ー is not a hiragana character, so demanding
+// hiragana forces the model to flatten it into a vowel — and a katakana
+// loanword has no business being respelled at all. Ask for furigana instead:
+// kanji get hiragana, everything already kana is copied.
+const READING_SYSTEM =
+  "Give the furigana reading of the supplied Japanese dictionary headword.\n" +
+  "Rules:\n" +
+  "1. Kanji are spelled out in hiragana.\n" +
+  "2. Characters already written in kana are copied EXACTLY as they appear — " +
+  "katakana stays katakana, and the long-vowel mark ー stays ー. Never convert " +
+  "katakana to hiragana and never rewrite ー as あ/い/う/え/お.\n" +
+  "3. A headword containing no kanji is its own reading; return it unchanged.\n" +
+  "4. Return only the reading: no spaces, punctuation, or explanation.\n" +
+  "Examples: バスマット → バスマット; シャンプー → シャンプー; " +
+  "掃除ブラシ → そうじブラシ; 洗面台 → せんめんだい; 歯ブラシ → はブラシ.";
+
 export async function generateJapaneseReading(term: string): Promise<string> {
+  const decided = overrideReading(term);
+  if (decided) return decided; // hand-corrected; never ask again
+  if (isKanaOnly(term)) return term; // nothing to read out; don't burn a call
+
   const { object } = await generateObject({
     model: MODEL,
     schema: JapaneseReadingSchema,
-    system:
-      "Return the standard Japanese reading of the supplied dictionary headword in hiragana only. " +
-      "Preserve long-vowel pronunciation naturally and do not add explanations or punctuation.",
+    system: READING_SYSTEM,
     prompt: `Japanese headword: ${term}`,
   });
-  return object.reading.trim();
+  const reading = object.reading.trim();
+
+  // Cheap, deterministic guard against the model regressing to hiragana: every
+  // kana the headword already spells must survive verbatim. Try to repair a
+  // flattened answer before giving up on it.
+  if (readingKeepsKana(term, reading)) return reading;
+  const repaired = restoreKanaRuns(term, reading);
+  if (repaired && readingKeepsKana(term, repaired)) return repaired;
+  throw new Error(
+    `generated reading drops kana from the headword: ${term} → ${reading}`,
+  );
 }
 
 // ---- Category name translation ----

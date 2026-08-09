@@ -22,6 +22,14 @@ Admin 不是 iOS 使用者入口，不應被一般使用者看到。
 | `/admin/stats` | 統計 |
 | `/admin/reports` | 回報/檢舉 |
 | `/admin/atlas` | Atlas 內容管理 |
+| `/admin/members` | 會員 Pro 狀態查詢、手動贈與／收回 |
+
+會員頁支援用 **Email 或 TJ UID** 查詢。多數 Apple 登入帳號是 private relay 信箱，
+用對方寄信的地址查不到人 —— 請他提供 UID，或直接從 `/admin/feedback` 處理（App 內
+意見回饋一定帶著帳號，列表上也直接顯示方案）。
+
+訂閱的營收、續訂與流失數字看 App Store Connect，後台不重做。退款與取消由 App Store
+通知自動降級，後台沒有也不需要「取消訂閱」。
 
 ## 3. API
 
@@ -34,6 +42,7 @@ Admin 不是 iOS 使用者入口，不應被一般使用者看到。
 | `/api/admin/reports/:id` | 處理 report |
 | `/api/admin/atlas/items` | Atlas item 管理 |
 | `/api/admin/atlas/items/:id` | Atlas item 更新 |
+| `/api/admin/members/:id/entitlement` | 手動贈與／收回 Pro（理由必填） |
 
 ## 4. 審核用途
 

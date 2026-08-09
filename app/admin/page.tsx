@@ -63,6 +63,14 @@ export default async function AdminHome() {
           <p className="text-sm text-muted">{pendingFeedback} 筆待處理</p>
         </Link>
         <Link
+          href="/admin/members"
+          className="rounded-xl2 p-5 bg-white shadow-card hover:shadow-lg transition"
+        >
+          <div className="text-3xl">🎟️</div>
+          <h2 className="mt-2 font-bold text-ink">會員</h2>
+          <p className="text-sm text-muted">Pro 狀態查詢 / 手動贈與</p>
+        </Link>
+        <Link
           href="/admin/stats"
           className="rounded-xl2 p-5 bg-white shadow-card hover:shadow-lg transition"
         >

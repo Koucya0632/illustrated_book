@@ -18,6 +18,7 @@ const LINKS: NavLink[] = [
   { href: "/admin/reports", label: "報錯中心", prefix: true },
   { href: "/admin/feedback", label: "意見收集", prefix: true },
   { href: "/admin/atlas", label: "圖鑑審核", prefix: true },
+  { href: "/admin/members", label: "會員", prefix: true },
   { href: "/admin/stats", label: "統計", prefix: true },
 ];
 

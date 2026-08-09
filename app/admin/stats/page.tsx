@@ -139,12 +139,23 @@ async function loadStats(days: Days) {
           WHERE created_at > now() - make_interval(days => ${days})
       ) t
     ` as unknown as Promise<{ c: number }[]>,
+    // Pro counts BOTH sources (subscription and live manual grant) and
+    // de-duplicates, matching resolveEntitlement — counting only
+    // user_entitlements would silently omit every comped account.
+    // `paid` is broken out because a comped user is not a customer.
     sql`
+      WITH pro_users AS (
+        SELECT user_id, TRUE AS paid FROM user_entitlements
+         WHERE tier = 'pro' AND (expires_at IS NULL OR expires_at > now())
+        UNION
+        SELECT user_id, FALSE FROM user_entitlement_grants
+         WHERE revoked_at IS NULL AND expires_at > now()
+      )
       SELECT
         (SELECT count(*)::int FROM profiles) AS total,
-        (SELECT count(*)::int FROM user_entitlements
-          WHERE tier = 'pro' AND (expires_at IS NULL OR expires_at > now())) AS pro
-    ` as unknown as Promise<{ total: number; pro: number }[]>,
+        (SELECT count(DISTINCT user_id)::int FROM pro_users) AS pro,
+        (SELECT count(DISTINCT user_id)::int FROM pro_users WHERE paid) AS paid
+    ` as unknown as Promise<{ total: number; pro: number; paid: number }[]>,
     sql`
       SELECT count(*)::int AS c FROM user_push_tokens
     ` as unknown as Promise<{ c: number }[]>,
@@ -164,6 +175,7 @@ async function loadStats(days: Days) {
     activeUsers: activeUsers[0]?.c ?? 0,
     totalUsers: tiers[0]?.total ?? 0,
     proUsers: tiers[0]?.pro ?? 0,
+    paidUsers: tiers[0]?.paid ?? 0,
     pushDevices: pushDevices[0]?.c ?? 0,
     wordMap,
     trendDays,
@@ -202,6 +214,7 @@ export default async function StatsPage({
     activeUsers,
     totalUsers,
     proUsers,
+    paidUsers,
     pushDevices,
     wordMap,
     trendDays,
@@ -245,6 +258,12 @@ export default async function StatsPage({
           label="Pro / 免費"
           value={`${proUsers.toLocaleString()} / ${(totalUsers - proUsers).toLocaleString()}`}
           emoji="👑"
+        />
+        {/* Split out so a run of comped accounts never reads as revenue. */}
+        <Stat
+          label="其中付費訂閱"
+          value={`${paidUsers.toLocaleString()} / 贈與 ${(proUsers - paidUsers).toLocaleString()}`}
+          emoji="🎟️"
         />
         <Stat label="推播裝置" value={pushDevices.toLocaleString()} emoji="🔔" />
       </section>

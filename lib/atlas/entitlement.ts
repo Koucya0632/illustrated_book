@@ -10,12 +10,31 @@
 // AI usage is counted per calendar month from user_atlas_ai_usage (operation
 // 'primary' vs 'escalated'). Limits are env-tunable; see atlasLimitsForTier.
 //
+// TWO SOURCES, ONE TIER. Pro can come from either of two independent places
+// and the effective tier is their UNION (later expiry wins):
+//   - user_entitlements       — the App Store subscription. Apple owns it;
+//                               only verify / the notifications webhook write it.
+//   - user_entitlement_grants — manual grants (comps, apology credit). Only an
+//                               operator writes them.
+// They are separate tables because they used to be one row, and one row meant
+// compensating a paying subscriber overwrote their real expiry — then Apple's
+// next renewal silently erased the compensation. See docs/adr/0004 in tuji-ios.
+//
+// Every transition is appended to user_entitlement_events. That ledger is the
+// only history that exists (both tables above are mutated in place) and it
+// cannot be backfilled, so writers must not skip it.
+//
 // Fails OPEN: any DB error resolves to free-tier limits but allows the action,
 // so an entitlement outage never hard-blocks the product. The abuse backstops
 // in lib/ratelimit.ts remain the runaway-cost guard.
 
 import { getSql } from "@/lib/db";
 import { checkAtlasAiBackstops } from "@/lib/ratelimit";
+
+// postgres-js types the pool handle (Sql) and a transaction handle
+// (TransactionSql) as mutually unassignable, so helpers that must run in both
+// take this alias. Same convention as lib/words-db.ts.
+type SqlExecutor = any;
 
 export type AtlasTier = "free" | "pro";
 
@@ -88,29 +107,109 @@ export function atlasLimitsForTier(tier: AtlasTier): AtlasLimits {
   };
 }
 
-/** Effective tier + expiry. An expired Pro row lapses back to free. */
-async function getEntitlementRow(
+export interface EffectiveEntitlement {
+  tier: AtlasTier;
+  /**
+   * When Pro lapses. null while Pro means "no expiry", which is only reachable
+   * via a subscription row Apple gave no expiresDate for.
+   */
+  expiresAt: string | null;
+  /** The subscription's own expiry, whether or not it is the winning source. */
+  subscriptionExpiresAt: string | null;
+  /** The latest live grant's expiry, whether or not it is the winning source. */
+  grantExpiresAt: string | null;
+}
+
+/** Shape returned by the union query; also the input to the pure resolver. */
+interface EntitlementSourceRow {
+  sub_tier: string | null;
+  sub_expires_at: string | null;
+  grant_expires_at: string | null;
+}
+
+const FREE_ENTITLEMENT: EffectiveEntitlement = {
+  tier: "free",
+  expiresAt: null,
+  subscriptionExpiresAt: null,
+  grantExpiresAt: null,
+};
+
+function laterOf(a: string | null, b: string | null): string | null {
+  if (!a) return b;
+  if (!b) return a;
+  return new Date(a).getTime() >= new Date(b).getTime() ? a : b;
+}
+
+/**
+ * The union rule: Pro if EITHER source is live, and the later expiry wins.
+ *
+ * Pure and exported so the rule can be tested without a database — it is the
+ * one piece of logic that decides whether a paying customer keeps their access.
+ */
+export function resolveEntitlement(row: EntitlementSourceRow | null): EffectiveEntitlement {
+  const subscriptionExpiresAt = row?.sub_expires_at ?? null;
+  // Already filtered to un-revoked, unexpired rows by the query, so non-null
+  // here means "there is a live grant".
+  const grantExpiresAt = row?.grant_expires_at ?? null;
+
+  const subscriptionLive =
+    row?.sub_tier === "pro" &&
+    (subscriptionExpiresAt === null ||
+      new Date(subscriptionExpiresAt).getTime() > Date.now());
+  const grantLive = grantExpiresAt !== null;
+
+  if (!subscriptionLive && !grantLive) {
+    return { tier: "free", expiresAt: null, subscriptionExpiresAt, grantExpiresAt };
+  }
+  // An unbounded subscription outlasts any dated grant.
+  const expiresAt =
+    subscriptionLive && subscriptionExpiresAt === null
+      ? null
+      : laterOf(subscriptionLive ? subscriptionExpiresAt : null, grantExpiresAt);
+  return { tier: "pro", expiresAt, subscriptionExpiresAt, grantExpiresAt };
+}
+
+/**
+ * The union query. Deliberately ONE round trip: this sits on the hot path
+ * (every AI recognition and every capacity check calls it), so the union
+ * happens in SQL rather than as a second query. Takes an executor so callers
+ * inside a transaction can reuse it.
+ */
+async function readEntitlementSources(
+  exec: SqlExecutor,
   userId: string,
-): Promise<{ tier: AtlasTier; expiresAt: string | null }> {
+): Promise<EffectiveEntitlement> {
+  const rows = (await exec`
+    SELECT e.tier       AS sub_tier,
+           e.expires_at AS sub_expires_at,
+           g.expires_at AS grant_expires_at
+      FROM (SELECT ${userId}::uuid AS uid) u
+      LEFT JOIN user_entitlements e ON e.user_id = u.uid
+      LEFT JOIN LATERAL (
+        SELECT max(expires_at) AS expires_at
+          FROM user_entitlement_grants
+         WHERE user_id = u.uid AND revoked_at IS NULL AND expires_at > now()
+      ) g ON TRUE
+  `) as EntitlementSourceRow[];
+  return resolveEntitlement(rows[0] ?? null);
+}
+
+async function getEntitlementRow(userId: string): Promise<EffectiveEntitlement> {
   const sql = getSql();
-  if (!sql) return { tier: "free", expiresAt: null };
+  if (!sql) return FREE_ENTITLEMENT;
   try {
-    const rows = await sql<{ tier: string; expires_at: string | null }[]>`
-      SELECT tier, expires_at
-      FROM user_entitlements
-      WHERE user_id = ${userId}::uuid
-      LIMIT 1
-    `;
-    const row = rows[0];
-    if (!row || row.tier !== "pro") return { tier: "free", expiresAt: row?.expires_at ?? null };
-    if (row.expires_at && new Date(row.expires_at).getTime() < Date.now()) {
-      return { tier: "free", expiresAt: row.expires_at };
-    }
-    return { tier: "pro", expiresAt: row.expires_at };
+    return await readEntitlementSources(sql, userId);
   } catch (err) {
     console.warn("[entitlement] tier lookup failed, defaulting free", err);
-    return { tier: "free", expiresAt: null };
+    return FREE_ENTITLEMENT;
   }
+}
+
+/** Effective entitlement without the fail-open swallow — for admin reads. */
+export async function getEffectiveEntitlement(userId: string): Promise<EffectiveEntitlement> {
+  const sql = getSql();
+  if (!sql) throw new Error("database unavailable");
+  return readEntitlementSources(sql, userId);
 }
 
 export async function getAtlasTier(userId: string): Promise<AtlasTier> {
@@ -175,12 +274,30 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
     precisionAiLimitMonthly: limits.precisionAiLimitMonthly,
     savedItemsLimit: limits.savedItemsLimit,
     adsRequiredForCardGeneration: limits.adsRequiredForCardGeneration,
-    subscriptionExpiresAt: row.tier === "pro" ? row.expiresAt : null,
+    // Wire name kept for released clients, but the value is the EFFECTIVE
+    // expiry — the later of the subscription and any live grant. A comped user
+    // with no subscription gets their grant's date here, which is the date
+    // their Pro actually ends and therefore the only honest answer.
+    subscriptionExpiresAt: row.expiresAt,
     usage,
   };
 }
 
-/** Write the authoritative entitlement (StoreKit verify / App Store notifications). */
+/**
+ * Write the authoritative SUBSCRIPTION entitlement (StoreKit verify / App Store
+ * notifications). Manual grants do NOT come through here — see grantProAccess.
+ *
+ * Does three things atomically:
+ *  1. Transfers the subscription binding. An Apple subscription belongs to a
+ *     device's Apple ID, not to a Tuji account, and the paywall re-syncs it to
+ *     whoever is logged in — so the same original_transaction_id can arrive for
+ *     a second account. One subscription entitles exactly one account, so the
+ *     previous holder is released back to free (docs/adr/0005 in tuji-ios).
+ *  2. Upserts the subscription row.
+ *  3. Appends to the ledger, but only when the tier or expiry actually moved —
+ *     background renewals fire this constantly and an unchanged row is not an
+ *     event worth recording.
+ */
 export async function upsertAtlasEntitlement(input: {
   userId: string;
   tier: AtlasTier;
@@ -190,23 +307,174 @@ export async function upsertAtlasEntitlement(input: {
 }): Promise<void> {
   const sql = getSql();
   if (!sql) return;
-  await sql`
-    INSERT INTO user_entitlements (user_id, tier, source, expires_at, original_transaction_id, updated_at)
-    VALUES (
-      ${input.userId}::uuid, ${input.tier}, ${input.source}, ${input.expiresAt},
-      ${input.originalTransactionId ?? null}, now()
-    )
-    ON CONFLICT (user_id) DO UPDATE SET
-      tier = EXCLUDED.tier,
-      source = EXCLUDED.source,
-      expires_at = EXCLUDED.expires_at,
-      original_transaction_id =
-        COALESCE(EXCLUDED.original_transaction_id, user_entitlements.original_transaction_id),
-      updated_at = now()
-  `;
+  const txnId = input.originalTransactionId ?? null;
+
+  await sql.begin(async (tx) => {
+    if (txnId) {
+      const released = await tx<{ user_id: string; tier: string }[]>`
+        UPDATE user_entitlements
+           SET tier = 'free',
+               source = 'transferred',
+               original_transaction_id = NULL,
+               updated_at = now()
+         WHERE original_transaction_id = ${txnId}
+           AND user_id <> ${input.userId}::uuid
+        RETURNING user_id, tier
+      `;
+      for (const prior of released) {
+        console.warn("[entitlement] subscription transferred away from", prior.user_id);
+        await tx`
+          INSERT INTO user_entitlement_events
+            (user_id, from_tier, to_tier, channel, reason, actor, original_transaction_id)
+          VALUES (${prior.user_id}::uuid, ${prior.tier}, 'free', 'transfer',
+                  'subscription re-bound to another account', 'system', ${txnId})
+        `;
+      }
+    }
+
+    const prior = await tx<{ tier: string; expires_at: string | null }[]>`
+      SELECT tier, expires_at FROM user_entitlements
+       WHERE user_id = ${input.userId}::uuid
+       FOR UPDATE
+    `;
+
+    await tx`
+      INSERT INTO user_entitlements (user_id, tier, source, expires_at, original_transaction_id, updated_at)
+      VALUES (
+        ${input.userId}::uuid, ${input.tier}, ${input.source}, ${input.expiresAt},
+        ${txnId}, now()
+      )
+      ON CONFLICT (user_id) DO UPDATE SET
+        tier = EXCLUDED.tier,
+        source = EXCLUDED.source,
+        expires_at = EXCLUDED.expires_at,
+        original_transaction_id =
+          COALESCE(EXCLUDED.original_transaction_id, user_entitlements.original_transaction_id),
+        updated_at = now()
+    `;
+
+    const before = prior[0] ?? null;
+    const expiryMoved =
+      (before?.expires_at ?? null) === null
+        ? input.expiresAt !== null
+        : input.expiresAt === null ||
+          new Date(before!.expires_at!).getTime() !== input.expiresAt.getTime();
+    if (before?.tier === input.tier && !expiryMoved) return;
+
+    await tx`
+      INSERT INTO user_entitlement_events
+        (user_id, from_tier, to_tier, from_expires_at, to_expires_at,
+         channel, reason, actor, original_transaction_id)
+      VALUES (
+        ${input.userId}::uuid, ${before?.tier ?? null}, ${input.tier},
+        ${before?.expires_at ?? null}, ${input.expiresAt},
+        'appstore', ${input.source}, 'appstore', ${txnId}
+      )
+    `;
+  });
 }
 
-/** Reverse-map an App Store subscription to its user (webhook path). */
+export const MAX_GRANT_DAYS = 3650;
+
+/**
+ * Give a user Pro for N days, independently of any App Store subscription.
+ *
+ * A grant NEVER touches user_entitlements, so it cannot overwrite a paying
+ * subscriber's real expiry and Apple's next renewal cannot erase it — that
+ * mutual clobbering is exactly why the two live in separate tables.
+ *
+ * `reason` is mandatory: a year from now the only way to answer "why is this
+ * person Pro" is what gets written here.
+ */
+export async function grantProAccess(input: {
+  userId: string;
+  days: number;
+  reason: string;
+  grantedBy: string;
+}): Promise<{ expiresAt: string }> {
+  const sql = getSql();
+  if (!sql) throw new Error("database unavailable");
+
+  const days = Math.floor(input.days);
+  if (!Number.isFinite(days) || days < 1 || days > MAX_GRANT_DAYS) {
+    throw new Error("invalid days");
+  }
+  const reason = input.reason.trim().slice(0, 500);
+  if (!reason) throw new Error("reason required");
+
+  return sql.begin(async (tx) => {
+    const before = await readEntitlementSources(tx, input.userId);
+    const rows = await tx<{ expires_at: string }[]>`
+      INSERT INTO user_entitlement_grants (user_id, expires_at, reason, granted_by)
+      VALUES (
+        ${input.userId}::uuid, now() + make_interval(days => ${days}),
+        ${reason}, ${input.grantedBy}
+      )
+      RETURNING expires_at
+    `;
+    const after = await readEntitlementSources(tx, input.userId);
+    // Recorded even when the effective tier does not move (compensating an
+    // existing subscriber) — that case is precisely what the ledger is for.
+    await tx`
+      INSERT INTO user_entitlement_events
+        (user_id, from_tier, to_tier, from_expires_at, to_expires_at, channel, reason, actor)
+      VALUES (
+        ${input.userId}::uuid, ${before.tier}, ${after.tier},
+        ${before.expiresAt}, ${after.expiresAt}, 'grant', ${reason}, ${input.grantedBy}
+      )
+    `;
+    return { expiresAt: rows[0].expires_at };
+  });
+}
+
+/**
+ * Revoke every live grant for a user. Does not touch their subscription — a
+ * paying subscriber stays Pro, which is the correct outcome: revoking a comp
+ * should never cancel someone's purchase.
+ */
+export async function revokeProGrants(input: {
+  userId: string;
+  reason: string;
+  revokedBy: string;
+}): Promise<{ revoked: number }> {
+  const sql = getSql();
+  if (!sql) throw new Error("database unavailable");
+  const reason = input.reason.trim().slice(0, 500);
+  if (!reason) throw new Error("reason required");
+
+  return sql.begin(async (tx) => {
+    const before = await readEntitlementSources(tx, input.userId);
+    const revoked = await tx<{ id: string }[]>`
+      UPDATE user_entitlement_grants
+         SET revoked_at = now(), revoke_reason = ${reason}
+       WHERE user_id = ${input.userId}::uuid
+         AND revoked_at IS NULL
+         AND expires_at > now()
+      RETURNING id
+    `;
+    if (revoked.length === 0) return { revoked: 0 };
+
+    const after = await readEntitlementSources(tx, input.userId);
+    await tx`
+      INSERT INTO user_entitlement_events
+        (user_id, from_tier, to_tier, from_expires_at, to_expires_at, channel, reason, actor)
+      VALUES (
+        ${input.userId}::uuid, ${before.tier}, ${after.tier},
+        ${before.expiresAt}, ${after.expiresAt}, 'grant_revoke', ${reason}, ${input.revokedBy}
+      )
+    `;
+    return { revoked: revoked.length };
+  });
+}
+
+/**
+ * Reverse-map an App Store subscription to its user (webhook path).
+ *
+ * Exactly one row can hold a given original_transaction_id — enforced by a
+ * UNIQUE index and by the transfer in upsertAtlasEntitlement — so this lookup
+ * is deterministic. It was not always: before that invariant, two accounts
+ * could hold the same subscription and a refund could land on the wrong one.
+ */
 export async function getUserIdByOriginalTransaction(
   originalTransactionId: string,
 ): Promise<string | null> {

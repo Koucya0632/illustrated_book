@@ -29,6 +29,17 @@ export default function SupportPage() {
           >
             nexflow0632@gmail.com
           </a>
+          {/* Sign in with Apple hides the real address behind a private relay,
+              so the inbox someone writes from usually matches no account. The
+              UID is the only identifier that always resolves — and in-app
+              feedback carries it automatically. */}
+          <p className="mt-5 max-w-xl text-sm font-semibold leading-6 text-tuji-ink2">
+            Fastest route for anything account- or subscription-related: send it from inside the
+            app (我的 → 意見回饋). That way your account is attached automatically. If you email
+            instead, please include your Tuji UID — find it under 我的 → 編輯個人檔案. Without it we
+            often cannot match your message to an account, because Sign in with Apple hides your
+            real address from us.
+          </p>
         </div>
 
         <div className="rounded-[28px] bg-white p-6 shadow-card">

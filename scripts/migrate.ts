@@ -1057,9 +1057,65 @@ const DDL = [
    )`,
   // Maps an App Store subscription back to the user so the notifications webhook
   // (renew / refund / expire) can find them without an authenticated request.
+  // Superseded by the UNIQUE index created in enforceSubscriptionBinding() —
+  // kept here so a fresh DB has the lookup index before that step runs.
   `CREATE INDEX IF NOT EXISTS user_entitlements_original_txn_idx
      ON user_entitlements(original_transaction_id)
      WHERE original_transaction_id IS NOT NULL`,
+
+  // Manual Pro grants (comps, apology credit, reviewer access). Deliberately a
+  // SEPARATE table from user_entitlements, which holds the App Store
+  // subscription — see docs/adr/0004 in tuji-ios. One row per grant, kept
+  // append-only: revoking sets revoked_at rather than deleting, so "why was
+  // this person Pro last March" stays answerable. A user's effective tier is
+  // the UNION of their subscription and their live grants (later expiry wins),
+  // which is what makes compensating a paying subscriber actually work.
+  `CREATE TABLE IF NOT EXISTS user_entitlement_grants (
+     id            BIGSERIAL PRIMARY KEY,
+     user_id       UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     tier          TEXT NOT NULL DEFAULT 'pro' CHECK (tier = 'pro'),
+     expires_at    TIMESTAMPTZ NOT NULL,
+     reason        TEXT NOT NULL CHECK (char_length(btrim(reason)) BETWEEN 1 AND 500),
+     granted_by    TEXT NOT NULL,
+     granted_at    TIMESTAMPTZ NOT NULL DEFAULT now(),
+     revoked_at    TIMESTAMPTZ,
+     revoke_reason TEXT
+   )`,
+  // Partial index: the hot read is "does this user have a live grant right
+  // now", which only ever looks at un-revoked rows.
+  `CREATE INDEX IF NOT EXISTS user_entitlement_grants_live_idx
+     ON user_entitlement_grants(user_id, expires_at DESC)
+     WHERE revoked_at IS NULL`,
+
+  // Append-only ledger of entitlement transitions. user_entitlements is
+  // upserted in place and therefore has no history; without this table
+  // questions like "how many upgraded this month" are unanswerable forever,
+  // because this data cannot be backfilled after the fact. Written by
+  // upsertAtlasEntitlement / the grant helpers, never updated or deleted.
+  //
+  // NOT a billing record: App Store Connect remains the authority for revenue,
+  // refunds and churn. This exists to join entitlement changes to OUR user ids,
+  // which is the one thing Apple's reports can never do.
+  `CREATE TABLE IF NOT EXISTS user_entitlement_events (
+     id                      BIGSERIAL PRIMARY KEY,
+     user_id                 UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     from_tier               TEXT,
+     to_tier                 TEXT NOT NULL CHECK (to_tier IN ('free','pro')),
+     from_expires_at         TIMESTAMPTZ,
+     to_expires_at           TIMESTAMPTZ,
+     -- Which mechanism moved it: appstore | grant | grant_revoke | transfer.
+     channel                 TEXT NOT NULL,
+     -- Free text from the writer: the App Store source, or an admin's reason.
+     reason                  TEXT,
+     -- Who caused it: 'appstore', 'system', or an admin identifier.
+     actor                   TEXT NOT NULL DEFAULT 'system',
+     original_transaction_id TEXT,
+     created_at              TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_entitlement_events_user_idx
+     ON user_entitlement_events(user_id, created_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS user_entitlement_events_created_idx
+     ON user_entitlement_events(created_at DESC)`,
 
   `CREATE TABLE IF NOT EXISTS user_friendships (
      user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -1905,6 +1961,111 @@ async function backfillSchemaV3(sql: any) {
 // Maintenance (creating next month's partition, dropping aged-out ones) is
 // handled by /api/cron/partman, scheduled in vercel.json.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+/**
+ * Move pre-existing manual grants out of user_entitlements and into
+ * user_entitlement_grants, where they now belong.
+ *
+ * Before the split, a comp was written straight into the subscription row with
+ * a made-up source ('manual-test-grant'). Left there it would read as a paying
+ * subscriber forever — every "how many customers do we have" answer would be
+ * off by the number of accounts we gave away.
+ *
+ * Idempotent via the granted_by = 'migration' marker.
+ */
+async function migrateManualGrantsOutOfSubscriptions(sql: any) {
+  const moved = await sql`
+    WITH manual AS (
+      SELECT e.user_id, e.expires_at, e.source
+        FROM user_entitlements e
+       WHERE e.tier = 'pro'
+         AND e.source LIKE 'manual-%'
+         AND e.original_transaction_id IS NULL
+         AND NOT EXISTS (
+           SELECT 1 FROM user_entitlement_grants g
+            WHERE g.user_id = e.user_id AND g.granted_by = 'migration'
+         )
+    ),
+    inserted AS (
+      INSERT INTO user_entitlement_grants (user_id, expires_at, reason, granted_by)
+      SELECT user_id,
+             COALESCE(expires_at, now() + interval '365 days'),
+             'migrated from user_entitlements (' || source || ')',
+             'migration'
+        FROM manual
+      RETURNING user_id
+    )
+    UPDATE user_entitlements e
+       SET tier = 'free', source = 'migrated-to-grant', expires_at = NULL, updated_at = now()
+      FROM inserted i
+     WHERE e.user_id = i.user_id
+    RETURNING e.user_id
+  `;
+  if (moved.length > 0) {
+    console.log(`[migrate] moved ${moved.length} manual grant(s) into user_entitlement_grants`);
+  }
+}
+
+/**
+ * Enforce "one App Store subscription entitles exactly one account".
+ *
+ * The device-bound Apple subscription and our app-level accounts are different
+ * identities, and PaywallView re-syncs the device's entitlement to *whoever is
+ * logged in* on open. So signing in with a second provider and opening the
+ * paywall used to bind the same original_transaction_id to a second account,
+ * leaving both Pro — and the renewal webhook then picked one of them
+ * arbitrarily (LIMIT 1, no ORDER BY), so a refund could fail to reach the
+ * account that was actually still entitled.
+ *
+ * upsertAtlasEntitlement now transfers the binding on write, but this backfill
+ * makes the invariant structural. Runs de-dup FIRST because the UNIQUE index
+ * would otherwise fail the build on a DB that already has duplicates.
+ */
+async function enforceSubscriptionBinding(sql: any) {
+  // Keep the most recently updated binding; release the losers back to free.
+  // They keep their entitlement history in user_entitlement_events.
+  const released = await sql`
+    WITH ranked AS (
+      SELECT user_id, original_transaction_id,
+             row_number() OVER (
+               PARTITION BY original_transaction_id ORDER BY updated_at DESC, user_id
+             ) AS rn
+      FROM user_entitlements
+      WHERE original_transaction_id IS NOT NULL
+    ),
+    losers AS (SELECT user_id FROM ranked WHERE rn > 1)
+    UPDATE user_entitlements e
+       SET tier = 'free',
+           source = 'transferred',
+           original_transaction_id = NULL,
+           updated_at = now()
+      FROM losers l
+     WHERE e.user_id = l.user_id
+    RETURNING e.user_id
+  `;
+  if (released.length > 0) {
+    console.log(
+      `[migrate] subscription binding: released ${released.length} duplicate account(s) to free`,
+    );
+    await sql`
+      INSERT INTO user_entitlement_events
+        (user_id, from_tier, to_tier, channel, reason, actor)
+      SELECT user_id, 'pro', 'free', 'transfer',
+             'migration: subscription already bound to another account', 'system'
+      FROM unnest(${released.map((r: { user_id: string }) => r.user_id)}::uuid[]) AS user_id
+    `;
+  }
+
+  await sql.unsafe(`
+    CREATE UNIQUE INDEX IF NOT EXISTS user_entitlements_original_txn_uniq
+      ON user_entitlements(original_transaction_id)
+      WHERE original_transaction_id IS NOT NULL
+  `);
+  // The old non-unique index is now redundant — the UNIQUE one serves the
+  // webhook's txn -> user lookup.
+  await sql.unsafe(`DROP INDEX IF EXISTS user_entitlements_original_txn_idx`);
+  console.log(`[migrate] subscription binding: unique constraint ensured.`);
+}
+
 async function setupStudyLogsPartitioning(sql: any) {
   // 1. Extension (Supabase has pg_partman in its allowlist; CREATE EXTENSION
   //    is idempotent). Schema-isolated so the extension's functions stay out
@@ -2283,6 +2444,8 @@ async function main() {
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);
     await moderateExistingProfileNicknames(sql);
+    await migrateManualGrantsOutOfSubscriptions(sql);
+    await enforceSubscriptionBinding(sql);
     await setupStudyLogsPartitioning(sql);
 
     // Final cleanup: drop the legacy columns now that everything reads from

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getSql } from "@/lib/db";
+import { resolveEntitlement } from "@/lib/atlas/entitlement";
 import FeedbackActions from "./FeedbackActions";
 
 export const dynamic = "force-dynamic";
@@ -29,7 +30,11 @@ interface FeedbackRow {
   internal_note: string | null;
   created_at: string;
   updated_at: string;
+  user_id: string | null;
   username: string | null;
+  sub_tier: string | null;
+  sub_expires_at: string | null;
+  grant_expires_at: string | null;
 }
 
 function allowed(value: unknown, values: string[]): string {
@@ -51,10 +56,23 @@ export default async function FeedbackPage({
     return <main className="mx-auto max-w-6xl px-4 py-8 text-rose-600">DB 尚未連線。</main>;
   }
 
+  // The entitlement join is why this page can usually answer a billing
+  // complaint without leaving it: in-app feedback always carries a user_id, so
+  // the sender's Pro state is knowable here even when their email is an Apple
+  // private-relay address that matches nothing.
   const rows = await sql`
-    SELECT f.*, p.username
+    SELECT f.*, p.username,
+           e.tier       AS sub_tier,
+           e.expires_at AS sub_expires_at,
+           g.expires_at AS grant_expires_at
     FROM feedback f
     LEFT JOIN profiles p ON p.id = f.user_id
+    LEFT JOIN user_entitlements e ON e.user_id = f.user_id
+    LEFT JOIN LATERAL (
+      SELECT max(expires_at) AS expires_at
+        FROM user_entitlement_grants
+       WHERE user_id = f.user_id AND revoked_at IS NULL AND expires_at > now()
+    ) g ON TRUE
     WHERE (${status} = '' OR f.status = ${status})
       AND (${feedbackType} = '' OR f.feedback_type = ${feedbackType})
       AND (${platform} = '' OR f.platform = ${platform})
@@ -102,7 +120,22 @@ export default async function FeedbackPage({
             </div>
 
             <dl className="mt-4 grid gap-x-6 gap-y-2 rounded-lg bg-cream/60 p-4 text-sm sm:grid-cols-2 lg:grid-cols-3">
-              <Meta label="使用者" value={feedback.username ?? "已刪除帳號"} />
+              <div>
+                <dt className="text-xs text-muted">使用者</dt>
+                <dd className="flex flex-wrap items-center gap-2 font-medium text-ink">
+                  {feedback.user_id && feedback.username ? (
+                    <Link
+                      href={`/admin/members/${feedback.user_id}`}
+                      className="break-all font-mono text-sky-accent hover:underline"
+                    >
+                      {feedback.username}
+                    </Link>
+                  ) : (
+                    <span className="break-all">已刪除帳號</span>
+                  )}
+                  <TierTag row={feedback} />
+                </dd>
+              </div>
               <Meta label="環境" value={`${feedback.platform} · ${feedback.app_version ?? "unknown"} · ${feedback.ui_lang}`} />
               <Meta label="最後更新" value={new Date(feedback.updated_at).toLocaleString("zh-TW")} />
             </dl>
@@ -138,6 +171,27 @@ function Filter({
         {Object.entries(options).map(([v, l]) => <option key={v} value={v}>{l}</option>)}
       </select>
     </label>
+  );
+}
+
+/** Reuses the same union rule as the entitlement layer, so the badge here and
+ *  the member page can never disagree about who is Pro. */
+function TierTag({ row }: { row: FeedbackRow }) {
+  if (!row.username) return null;
+  const { tier, grantExpiresAt, subscriptionExpiresAt } = resolveEntitlement(row);
+  if (tier !== "pro") {
+    return <span className="rounded-full bg-cream px-2 py-0.5 text-xs text-muted">免費</span>;
+  }
+  const viaSubscription =
+    row.sub_tier === "pro" &&
+    (subscriptionExpiresAt === null ||
+      new Date(subscriptionExpiresAt).getTime() > Date.now());
+  const source =
+    viaSubscription && grantExpiresAt ? "訂閱＋贈與" : viaSubscription ? "訂閱" : "贈與";
+  return (
+    <span className="rounded-full bg-sky-soft px-2 py-0.5 text-xs font-bold text-sky-accent">
+      Pro · {source}
+    </span>
   );
 }
 

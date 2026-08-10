@@ -70,6 +70,35 @@ test("the saved list is language-scoped and approved-only", () => {
   assert.match(body, /review_status = 'approved'/);
 });
 
+// The saved list spent its whole life joining `atlas_items`, a table that has
+// never existed — the real one is `user_atlas_items` — so every call to
+// GET /api/users/saved-words threw `relation "atlas_items" does not exist` and
+// the theme could not load at all. The tests above did not catch it because
+// they read the SQL as *text*: a name that is merely wrong still matches a
+// regex. Nothing here can reach a database, so the check is against the DDL —
+// every relation the module names must be one migrate.ts creates.
+test("every table atlas-db queries is one the migration creates", () => {
+  const migrate = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
+  const created = new Set(
+    [...migrate.matchAll(/CREATE TABLE IF NOT EXISTS\s+([a-z_][a-z0-9_]*)/g)].map((m) => m[1]),
+  );
+  // `WITH x AS (` / `, x AS (` / `WITH x AS MATERIALIZED (` — query-local names,
+  // defined in the query itself.
+  const cte = new Set(
+    [
+      ...atlasDb.matchAll(
+        /(?:WITH|,)\s+([a-z_][a-z0-9_]*)\s+AS\s+(?:(?:NOT\s+)?MATERIALIZED\s*)?\(/g,
+      ),
+    ].map((m) => m[1]),
+  );
+  const referenced = [
+    ...atlasDb.matchAll(/\b(?:FROM|JOIN|INTO|UPDATE)\s+([a-z_][a-z0-9_]*)\b/g),
+  ].map((m) => m[1]);
+
+  const unknown = [...new Set(referenced)].filter((t) => !created.has(t) && !cte.has(t));
+  assert.deepEqual(unknown, [], `atlas-db queries relations nothing creates: ${unknown}`);
+});
+
 // Three mastery namespaces now: user_words, user_atlas_item_mastery (custom),
 // and atlas_saved_cards (community). Missing the third renders a grid of 0%
 // over words the user has been reviewing.

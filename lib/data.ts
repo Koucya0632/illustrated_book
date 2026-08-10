@@ -17,6 +17,7 @@ import type {
   CategoryId,
   Definition,
   Example,
+  FuriganaSegment,
   RelationType,
   Word,
   WordRelation,
@@ -250,6 +251,7 @@ export async function getAllLearningWords(
       ...word,
       word: term?.term ?? word.word,
       reading: term?.reading ?? undefined,
+      readingSegments: term?.reading_segments ?? undefined,
       pronunciation: term?.pronunciation ?? term?.reading ?? word.pronunciation,
       targetLanguage,
     }];
@@ -267,6 +269,7 @@ interface TermRow {
   term: string;
   reading: string | null;
   pronunciation: string | null;
+  reading_segments: FuriganaSegment[] | null;
 }
 
 const getTermRowsCached = unstable_cache(
@@ -274,7 +277,7 @@ const getTermRowsCached = unstable_cache(
     const sql = getSql();
     if (!sql) return [];
     return sql<TermRow[]>`
-      SELECT word_id, term, reading, pronunciation
+      SELECT word_id, term, reading, pronunciation, reading_segments
       FROM word_terms
       WHERE language = ${language}
     `;
@@ -356,6 +359,7 @@ export async function getLearningWord(
     ...base,
     word: term?.term ?? base.word,
     reading: term?.reading ?? undefined,
+    readingSegments: term?.reading_segments ?? undefined,
     pronunciation: term?.pronunciation ?? term?.reading ?? base.pronunciation,
     targetLanguage,
     targetDefinition,
@@ -418,6 +422,7 @@ export async function getAllCardWords(
       category: w.category,
       pronunciation: term?.pronunciation ?? term?.reading ?? w.pronunciation,
       reading: term?.reading ?? undefined,
+      readingSegments: term?.reading_segments ?? undefined,
       targetLanguage,
       audioUrls: Object.keys(audioUrls).length ? audioUrls : undefined,
     }];

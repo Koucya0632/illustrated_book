@@ -8,6 +8,7 @@ import {
   type TargetMeta,
 } from "./distractors";
 import type { Rating, Status } from "./srs";
+import type { FuriganaSegment } from "./kana";
 
 export interface CardRow {
   id: number | string;
@@ -42,6 +43,7 @@ export interface DueCard {
     image_url: string;
     pronunciation: string;
     reading?: string;
+    readingSegments?: FuriganaSegment[];
     target_language: "en" | "ja";
     category: string;
   };
@@ -282,6 +284,7 @@ export async function fetchDue(
            w.image_url AS w_image,
            COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
            wt.reading AS w_reading,
+           wt.reading_segments AS w_reading_segments,
            CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END AS w_target_language,
            w.category AS w_category
     FROM user_cards uc
@@ -330,6 +333,7 @@ export async function fetchDue(
            w.image_url AS w_image,
            COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
            wt.reading AS w_reading,
+           wt.reading_segments AS w_reading_segments,
            CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END AS w_target_language,
            w.category AS w_category
     FROM cards c
@@ -394,6 +398,7 @@ export async function fetchDue(
       image_url: String(r.w_image),
       pronunciation: String(r.w_pron),
       reading: r.w_reading ? String(r.w_reading) : undefined,
+      readingSegments: (r.w_reading_segments as FuriganaSegment[] | null) ?? undefined,
       target_language: (r.w_target_language === "ja" ? "ja" : "en") as "en" | "ja",
       category: String(r.w_category),
     };
@@ -461,6 +466,7 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
            w.image_url AS w_image,
            COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
            wt.reading AS w_reading,
+           wt.reading_segments AS w_reading_segments,
            CASE WHEN c.deck_key = 'image-ja' THEN 'ja' ELSE 'en' END AS w_target_language,
            w.category AS w_category,
            uw.mastery::float8 AS uw_mastery,
@@ -518,6 +524,7 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
       image_url: String(r.w_image),
       pronunciation: String(r.w_pron),
       reading: r.w_reading ? String(r.w_reading) : undefined,
+      readingSegments: (r.w_reading_segments as FuriganaSegment[] | null) ?? undefined,
       target_language: (r.w_target_language === "ja" ? "ja" : "en") as "en" | "ja",
       category: String(r.w_category),
     },

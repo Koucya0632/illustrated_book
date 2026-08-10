@@ -20,11 +20,21 @@ export const JA_READING_OVERRIDES: Record<string, string> = {
   制汗剤: "せいかんざい",
   // 洗 is セン; しょくあらいき is not a word.
   食洗機: "しょくせんき",
-  // 酢 takes rendaku after a modifier.
+  // 酢 takes rendaku after a modifier. JMdict lists 穀物酢 as こくもつす and
+  // リンゴ酢 as りんごす; kept voiced deliberately, because the four of these
+  // are one family and splitting it would be worse than either choice alone.
   黒酢: "くろず",
   米酢: "こめず",
   穀物酢: "こくもつず",
   リンゴ酢: "リンゴず",
+  // 連濁 the model missed, confirmed against JMdict.
+  目覚まし時計: "めざましどけい",
+  書類棚: "しょるいだな",
+  // …and the mirror-image error, a rendaku the model added that does not occur.
+  写真立て: "しゃしんたて",
+  爪切り: "つめきり",
+  // 口 is コウ in this compound; ぐち is the standalone-suffix reading.
+  排水口: "はいすいこう",
   // Standard readings.
   日本酒: "にほんしゅ",
   白砂糖: "しろざとう",

@@ -2,6 +2,7 @@ import "server-only";
 import { randomUUID } from "node:crypto";
 import { getSql } from "./db";
 import type { Rating, Status } from "./srs";
+import type { FuriganaSegment } from "./kana";
 import type {
   AtlasCandidate,
   AtlasCandidateRow,
@@ -413,6 +414,7 @@ export async function getAtlasItem(
 export interface AtlasItemEnrichmentUpdate {
   pronunciation: string | null;
   reading: string | null;
+  readingSegments: FuriganaSegment[] | null;
   definitionTarget: string | null;
   definitionZh: string | null;
   definitionJa: string | null;
@@ -435,6 +437,7 @@ export async function updateAtlasItemEnrichment(
     UPDATE user_atlas_items SET
       pronunciation      = ${fields.pronunciation},
       reading            = ${fields.reading},
+      reading_segments   = ${fields.readingSegments ? sql.json(fields.readingSegments as never) : null},
       definition_target  = ${fields.definitionTarget},
       definition_zh_hant = ${fields.definitionZh},
       definition_ja      = ${fields.definitionJa},
@@ -563,6 +566,7 @@ export async function fetchAtlasDue(
       i.cefr_level AS i_cefr_level,
       i.pronunciation AS i_pronunciation,
       i.reading AS i_reading,
+      i.reading_segments AS i_reading_segments,
       i.category AS i_category,
       i.taxonomy_path AS i_taxonomy_path,
       i.definition_zh_hant AS i_definition_zh_hant,
@@ -827,6 +831,7 @@ function rowToAtlasDueCard(r: Record<string, unknown>): AtlasDueCard {
     cefr_level: (r.i_cefr_level as string | null) ?? null,
     pronunciation: (r.i_pronunciation as string | null) ?? null,
     reading: (r.i_reading as string | null) ?? null,
+    reading_segments: (r.i_reading_segments as FuriganaSegment[] | null) ?? null,
     category: (r.i_category as string | null) ?? null,
     taxonomy_path: (r.i_taxonomy_path as string[]) ?? [],
     definition_zh_hant: (r.i_definition_zh_hant as string | null) ?? null,
@@ -920,6 +925,7 @@ export async function getAtlasDueCardById(
       i.cefr_level AS i_cefr_level,
       i.pronunciation AS i_pronunciation,
       i.reading AS i_reading,
+      i.reading_segments AS i_reading_segments,
       i.category AS i_category,
       i.taxonomy_path AS i_taxonomy_path,
       i.definition_zh_hant AS i_definition_zh_hant,
@@ -2293,6 +2299,7 @@ export async function countAtlasSavesByUser(userId: string): Promise<number> {
  */
 export type AtlasSavedItemRow = AtlasPublicItemRow & {
   source_reading: string | null;
+  source_reading_segments: FuriganaSegment[] | null;
   source_pronunciation: string | null;
 };
 
@@ -2306,11 +2313,12 @@ export async function listAtlasSavedItems(
   // saver is still studying — it just loses the kana line.
   return sql<AtlasSavedItemRow[]>`
     SELECT p.*,
-           i.reading       AS source_reading,
+           i.reading          AS source_reading,
+           i.reading_segments AS source_reading_segments,
            i.pronunciation AS source_pronunciation
     FROM atlas_saves s
     JOIN atlas_public_items p ON p.id = s.public_item_id
-    LEFT JOIN atlas_items i ON i.id = p.source_item_id
+    LEFT JOIN user_atlas_items i ON i.id = p.source_item_id
     WHERE s.user_id = ${userId}::uuid
       AND p.review_status = 'approved'
       AND p.target_language = ${targetLanguage}

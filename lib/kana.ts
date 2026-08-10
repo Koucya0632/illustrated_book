@@ -182,3 +182,215 @@ export function restoreKanaRuns(term: string, oldReading: string): string | null
   if (cursor !== oldReading.length) return null;
   return out;
 }
+
+// ---------------------------------------------------------------------------
+// Furigana segmentation: which kana belong to which kanji.
+//
+// `reading` is one string for the whole headword, so it cannot say that 歯 is
+// は and 磨 is みが. That split is a separate fact, and no rule derives it from
+// the two strings — it needs a dictionary. What the strings *do* provide is a
+// hard constraint on any proposed split: the pieces must concatenate back to
+// exactly the reading we already hold. That constraint is the whole reason a
+// dictionary beats asking a model, which can only ever propose.
+// ---------------------------------------------------------------------------
+
+/** One run of the headword and the kana read over it (`null` for bare kana). */
+export type FuriganaSegment = { text: string; ruby: string | null };
+
+/**
+ * A dictionary entry in JmdictFurigana's own notation: `0:は;1:みが` indexes
+ * into the surface, and a range (`0-1:とけい`) covers characters no rule can
+ * split. Stored verbatim so the reference data and our copy stay comparable.
+ */
+export type FuriganaEntry = { reading: string; segments: string };
+
+/** Surface form → every reading the dictionary holds for it. */
+export type FuriganaDict = ReadonlyMap<string, readonly FuriganaEntry[]>;
+
+/** Expand `0:は;1:みが` over `surface`, filling uncovered characters as bare kana. */
+export function parseFuriganaEntry(surface: string, spec: string): FuriganaSegment[] {
+  const covered = new Map<number, { end: number; ruby: string }>();
+  for (const part of spec.split(";")) {
+    const [range, ruby] = part.split(":");
+    if (ruby === undefined) continue;
+    const [start, end] = range.includes("-")
+      ? range.split("-").map((n) => Number(n))
+      : [Number(range), Number(range)];
+    if (!Number.isInteger(start) || !Number.isInteger(end)) continue;
+    covered.set(start, { end, ruby });
+  }
+  const out: FuriganaSegment[] = [];
+  const chars = [...surface];
+  let i = 0;
+  while (i < chars.length) {
+    const hit = covered.get(i);
+    if (hit && hit.end >= i && hit.end < chars.length) {
+      out.push({ text: chars.slice(i, hit.end + 1).join(""), ruby: hit.ruby });
+      i = hit.end + 1;
+    } else {
+      out.push({ text: chars[i], ruby: null });
+      i += 1;
+    }
+  }
+  return out;
+}
+
+const VOICED: Record<string, string> = {
+  か: "が", き: "ぎ", く: "ぐ", け: "げ", こ: "ご",
+  さ: "ざ", し: "じ", す: "ず", せ: "ぜ", そ: "ぞ",
+  た: "だ", ち: "ぢ", つ: "づ", て: "で", と: "ど",
+  は: "ば", ひ: "び", ふ: "ぶ", へ: "べ", ほ: "ぼ",
+};
+const HALF_VOICED: Record<string, string> = {
+  は: "ぱ", ひ: "ぴ", ふ: "ぷ", へ: "ぺ", ほ: "ぽ",
+};
+
+/**
+ * How a sub-word's dictionary reading may legitimately be written when it sits
+ * inside a compound: 連濁 voices its first kana (袋 ふくろ → ゴミ袋 …ぶくろ), and
+ * a final つ/く geminates before the next element (食 しょく → 食器 しょっ…).
+ *
+ * Both keep the length, which is what lets `retime` locate the change.
+ */
+function compoundVariants(reading: string): string[] {
+  const out = [reading];
+  const first = reading[0];
+  if (first && VOICED[first]) out.push(VOICED[first] + reading.slice(1));
+  if (first && HALF_VOICED[first]) out.push(HALF_VOICED[first] + reading.slice(1));
+  if (reading.endsWith("つ") || reading.endsWith("く")) {
+    out.push(reading.slice(0, -1) + "っ");
+  }
+  return out;
+}
+
+/**
+ * Move a one-character variation into whichever segment owns it.
+ *
+ * Returns null when the changed character lands on kana the headword spells
+ * itself — the headword is fixed, so a split that would rewrite it is wrong,
+ * and the caller should try a different decomposition instead.
+ */
+function retime(
+  segments: FuriganaSegment[],
+  dictReading: string,
+  actual: string
+): FuriganaSegment[] | null {
+  if (dictReading === actual) return segments;
+  if (dictReading.length !== actual.length) return null;
+  const differing: number[] = [];
+  for (let i = 0; i < actual.length; i++) {
+    if (actual[i] !== dictReading[i]) differing.push(i);
+  }
+  if (differing.length !== 1) return null;
+  const at = differing[0];
+
+  const out: FuriganaSegment[] = [];
+  let pos = 0;
+  for (const seg of segments) {
+    const spelled = seg.ruby ?? seg.text;
+    const start = pos;
+    pos += spelled.length;
+    if (at < start || at >= pos) {
+      out.push(seg);
+      continue;
+    }
+    if (seg.ruby === null) return null;
+    const k = at - start;
+    out.push({ text: seg.text, ruby: seg.ruby.slice(0, k) + actual[at] + seg.ruby.slice(k + 1) });
+  }
+  return out;
+}
+
+/** Longest-first so 洗面台 wins over 洗, and a compound is not split more than it must be. */
+function dictionarySplit(
+  term: string,
+  reading: string,
+  dict: FuriganaDict
+): FuriganaSegment[] | null {
+  const chars = [...term];
+
+  const walk = (i: number, pos: number): FuriganaSegment[] | null => {
+    if (i === chars.length) return pos === reading.length ? [] : null;
+
+    // A character the headword already spells in kana reads as itself.
+    if (!isKanji(chars[i]) && reading.startsWith(chars[i], pos)) {
+      const rest = walk(i + 1, pos + chars[i].length);
+      if (rest) return [{ text: chars[i], ruby: null }, ...rest];
+    }
+
+    for (let j = chars.length; j > i; j--) {
+      const sub = chars.slice(i, j).join("");
+      const entries = dict.get(sub);
+      if (!entries) continue;
+      for (const entry of entries) {
+        for (const variant of compoundVariants(entry.reading)) {
+          if (!reading.startsWith(variant, pos)) continue;
+          const parsed = retime(parseFuriganaEntry(sub, entry.segments), entry.reading, variant);
+          if (!parsed) continue;
+          const rest = walk(j, pos + variant.length);
+          if (rest) return [...parsed, ...rest];
+        }
+      }
+    }
+    return null;
+  };
+
+  return walk(0, 0);
+}
+
+/**
+ * Anchor each kanji run against the kana run that follows it. Needs no
+ * dictionary, so it still answers for a word nothing holds — but it can only
+ * ever say "these kana belong to this run of kanji", never which kanji.
+ */
+function runSplit(term: string, reading: string): FuriganaSegment[] | null {
+  const parts = runs(term);
+  const out: FuriganaSegment[] = [];
+  let cursor = 0;
+
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    if (!part.kanji) {
+      if (!reading.startsWith(part.text, cursor)) return null;
+      out.push({ text: part.text, ruby: null });
+      cursor += part.text.length;
+      continue;
+    }
+    const next = parts[i + 1];
+    if (!next) {
+      out.push({ text: part.text, ruby: reading.slice(cursor) });
+      cursor = reading.length;
+      continue;
+    }
+    const at = reading.indexOf(next.text, cursor);
+    if (at < 0) return null;
+    out.push({ text: part.text, ruby: reading.slice(cursor, at) });
+    cursor = at;
+  }
+
+  if (cursor !== reading.length) return null;
+  return out.every((s) => s.ruby !== "") ? out : null;
+}
+
+/**
+ * Split a headword and its reading into ruby segments, as finely as the
+ * evidence allows.
+ *
+ * Degrades one segment at a time rather than all-or-nothing: 目覚まし時計 gets
+ * 目→め and 覚→ざ per character and 時計→とけい as one block, because 熟字訓
+ * genuinely cannot be split further. JmdictFurigana itself emits such blocks,
+ * so "one range, one ruby" is the format — per-character is the case where the
+ * range happens to be one character long.
+ *
+ * Returns null when the headword has no kanji (nothing to annotate) or when
+ * even run-level anchoring fails, which is the caller's signal to fall back to
+ * printing the reading as its own line.
+ */
+export function segmentFurigana(
+  term: string,
+  reading: string,
+  dict: FuriganaDict
+): FuriganaSegment[] | null {
+  if (!term || !reading || isKanaOnly(term)) return null;
+  return dictionarySplit(term, reading, dict) ?? runSplit(term, reading);
+}

@@ -1,3 +1,8 @@
+// The furigana segment shape is defined beside the rules that produce it, and
+// re-exported here so a consumer of the word types needs only one import.
+export type { FuriganaSegment } from "../lib/kana";
+import type { FuriganaSegment } from "../lib/kana";
+
 // CategoryId is now just a string alias — categories live in the DB and can
 // be extended without a TS change. The seed list still uses these 9 ids.
 export type CategoryId = string;
@@ -79,6 +84,11 @@ export interface CardWord {
   category: CategoryId;
   pronunciation: string;
   reading?: string;
+  /** Which kana sit over which characters of `word`, when a trustworthy split
+   *  exists. Segments re-spell `word` and their ruby re-spells `reading`, so a
+   *  client can render either from this alone. Absent means "print the reading
+   *  as its own line" — the pre-furigana behaviour. */
+  readingSegments?: FuriganaSegment[];
   targetLanguage?: "en" | "ja";
   /** Pre-generated pronunciation clips keyed by locale (e.g. "en-US",
    *  "en-GB", "ja-JP"). Only the locales relevant to the active learning
@@ -94,6 +104,11 @@ export interface Word {
   partOfSpeech: string;
   pronunciation: string;
   reading?: string;
+  /** Which kana sit over which characters of `word`, when a trustworthy split
+   *  exists. Segments re-spell `word` and their ruby re-spells `reading`, so a
+   *  client can render either from this alone. Absent means "print the reading
+   *  as its own line" — the pre-furigana behaviour. */
+  readingSegments?: FuriganaSegment[];
   targetLanguage?: "en" | "ja";
   audioUrl?: string;
   /** Pre-generated pronunciation clips keyed by locale ("en-US" / "en-GB" /

@@ -469,9 +469,29 @@ const DDL = [
    )`,
   `CREATE INDEX IF NOT EXISTS word_terms_language_word_idx
      ON word_terms(language, word_id)`,
+  // Which kana sit over which characters of `term`. Derived from `reading`,
+  // never a replacement for it: the 拼字 stage still quizzes the whole string.
+  // NULL means "no trustworthy split", which is a display fallback, not an error.
+  `ALTER TABLE word_terms ADD COLUMN IF NOT EXISTS reading_segments JSONB`,
   `ALTER TABLE word_terms ENABLE ROW LEVEL SECURITY`,
   `DROP POLICY IF EXISTS word_terms_public_read ON word_terms`,
   `CREATE POLICY word_terms_public_read ON word_terms FOR SELECT USING (true)`,
+
+  // ---- Furigana reference dictionary (JmdictFurigana, CC BY-SA) ----
+  // Reference data, not user data: loaded once by scripts/import-furigana-dict.ts
+  // and read only through lib/furigana-dict.ts. It lives here rather than in the
+  // bundle because splitting a headword probes every substring of it — one
+  // `surface = ANY(...)` answers all of them, where a 12 MB file would be parsed
+  // into memory again on every cold start of the enrich path.
+  `CREATE TABLE IF NOT EXISTS furigana_dict (
+     surface  TEXT NOT NULL,
+     reading  TEXT NOT NULL,
+     segments TEXT NOT NULL,
+     PRIMARY KEY (surface, reading)
+   )`,
+  `CREATE INDEX IF NOT EXISTS furigana_dict_surface_idx ON furigana_dict(surface)`,
+  // RLS on with no policy: nothing reaches this through the anon API surface.
+  `ALTER TABLE furigana_dict ENABLE ROW LEVEL SECURITY`,
 
   // ---- word_examples + translations ----
   `CREATE TABLE IF NOT EXISTS word_examples (
@@ -877,6 +897,8 @@ const DDL = [
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS display_en TEXT`,
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS definition_ja TEXT`,
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS definition_en TEXT`,
+  // Furigana split of `reading` over `lemma`; see word_terms.reading_segments.
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS reading_segments JSONB`,
 
   // ---- Moderation pipeline (docs/COMMUNITY_ATLAS_PLAN.md §5) ----
   // Existing DBs carry the inline CHECK created with the table, which predates

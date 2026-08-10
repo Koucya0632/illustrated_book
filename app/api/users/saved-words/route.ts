@@ -53,6 +53,7 @@ export async function GET(req: Request) {
     // saver's 圖鑑 with no reading while the author's copy had one.
     pronunciation: row.source_pronunciation ?? row.source_reading ?? "",
     reading: row.source_reading ?? undefined,
+    readingSegments: row.source_reading_segments ?? undefined,
     targetLanguage: row.target_language,
   }));
 

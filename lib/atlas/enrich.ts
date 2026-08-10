@@ -6,6 +6,14 @@ import { enrichWord } from "@/lib/enrich";
 import { toZhHans } from "@/lib/opencc";
 import type { UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
+import {
+  JA_READING_SYSTEM,
+  JapaneseReadingSchema,
+  readingWithoutAsking,
+  settleJapaneseReading,
+} from "@/lib/ja-reading";
+import { segmentFurigana } from "@/lib/kana";
+import { loadFuriganaDict } from "@/lib/furigana-dict";
 import type { AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 
@@ -145,28 +153,28 @@ async function generateAtlasGlossPack(input: {
   }
 }
 
-const JapaneseReadingSchema = z.object({
-  reading: z
-    .string()
-    .describe("Hiragana reading of the headword only — no punctuation, no romaji, no explanation."),
-});
-
-/// The kana reading for a JA item, on the same OpenAI-direct model. Replaces
-/// generateJapaneseReading (lib/translate.ts), which routes through the Vercel
-/// AI Gateway the project can't use, so it always threw and left reading null.
-/// Returns null on failure so the card just goes without a reading.
+/// The kana reading for a JA item, on the OpenAI-direct model this module uses
+/// (lib/translate.ts's own path routes through the Vercel AI Gateway the project
+/// can't use). The *rules* are shared — see lib/ja-reading.ts, which exists
+/// because this function used to carry its own "in hiragana only" wording, the
+/// exact instruction that flattened 284 katakana headwords in the catalogue.
+///
+/// Returns null on failure so the card still gets made, just without kana.
 async function generateJapaneseAtlasReading(lemma: string): Promise<string | null> {
+  const decided = readingWithoutAsking(lemma);
+  if (decided) return decided; // hand-corrected, or already its own reading
+
   try {
     const { object } = await generateObject({
       model: ATLAS_ENRICH_MODEL,
       schema: JapaneseReadingSchema,
-      system:
-        "Return the standard Japanese reading of the supplied dictionary headword in hiragana only. " +
-        "Preserve long-vowel pronunciation naturally; no explanations, punctuation, or romaji.",
+      system: JA_READING_SYSTEM,
       prompt: `Japanese headword: ${lemma}`,
     });
-    const reading = object.reading.trim();
-    return reading || null;
+    // An unrepairable answer is discarded rather than stored: a reading that
+    // does not keep the headword's own kana cannot be aligned to it, and the
+    // 拼字 stage would drill a spelling that does not exist.
+    return settleJapaneseReading(lemma, object.reading);
   } catch {
     return null;
   }
@@ -193,6 +201,13 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
   if (isJa && !reading) {
     reading = await generateJapaneseAtlasReading(item.lemma);
   }
+  // Which kana sit over which characters. Only meaningful for JA, and only
+  // when a reading survived — a null here is a display fallback, not a failure,
+  // so it never stops the item being enriched.
+  const readingSegments =
+    isJa && reading
+      ? segmentFurigana(item.lemma, reading, await loadFuriganaDict([item.lemma]))
+      : null;
   // Every item gets a Japanese definition (the ja-UI gloss); for JA items it
   // doubles as the target definition.
   const definitionJa = await generateJapaneseAtlasDefinition({
@@ -215,6 +230,7 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
   return {
     pronunciation: item.pronunciation ?? null,
     reading: reading ?? null,
+    readingSegments,
     definitionTarget,
     definitionZh: result.chineseDefinition || null,
     definitionJa,

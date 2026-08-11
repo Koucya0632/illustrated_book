@@ -9,6 +9,7 @@ import {
 import { categoryProgress } from "@/lib/cards-db";
 import { atlasCategoryProgress, savedCommunityCategoryProgress } from "@/lib/atlas-db";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
+import { readLearningDirection } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,12 +18,16 @@ export const dynamic = "force-dynamic";
 // 42-cell heatmap + per-category completion come from the same payload so
 // iOS renders the whole Progress tab from one round-trip. `categories`
 // gives {category,total,seen} where seen = words studied at least once.
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const settings = await getSettings(userId);
-  const targetLanguage = targetLanguageFor(settings.learningDirection);
-  const deckKey = studyDeckFor(settings.learningDirection);
+  // `?learning=` wins over the stored setting — see /api/users/mastery. Streak
+  // and completion are per-direction, and the client asks for them immediately
+  // after a switch, before its debounced settings POST has landed.
+  const direction = readLearningDirection(req, settings.learningDirection);
+  const targetLanguage = targetLanguageFor(direction);
+  const deckKey = studyDeckFor(direction);
   const [streak, heatmap, categories, customCategory, savedCommunity] = await Promise.all([
     getStudyStreak(userId, "Asia/Taipei", targetLanguage),
     getActivityHeatmap(userId, "Asia/Taipei", targetLanguage),

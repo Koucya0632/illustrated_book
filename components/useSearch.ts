@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CardWord } from "@/types";
+import { useSettings } from "./SettingsProvider";
 
 export interface SearchState {
   results: CardWord[];
@@ -36,6 +37,12 @@ export function useSearch(
   options: { debounceMs?: number; limit?: number } = {},
 ): SearchState {
   const { debounceMs = 300, limit = 50 } = options;
+  // Search results are scoped to the learning direction, so it belongs in the
+  // request *and* in the cache key. Neither carried it: switching 學習語言 and
+  // repeating a search was answered out of this map with the other language's
+  // rows, and the request left the scope for the server to guess from settings
+  // it may not have received yet.
+  const { uiLang, learningDirection } = useSettings();
   const [state, setState] = useState<SearchState>({
     results: [],
     loading: false,
@@ -51,7 +58,7 @@ export function useSearch(
       return;
     }
 
-    const cacheKey = `${q}|${limit}`;
+    const cacheKey = `${q}|${limit}|${uiLang}|${learningDirection}`;
     const cached = readCache(cacheKey);
     if (cached) {
       setState({ results: cached, loading: false, source: "cache" });
@@ -64,7 +71,9 @@ export function useSearch(
     const timer = setTimeout(async () => {
       try {
         const res = await fetch(
-          `/api/search?q=${encodeURIComponent(q)}&limit=${limit}`,
+          `/api/search?q=${encodeURIComponent(q)}&limit=${limit}` +
+            `&lang=${encodeURIComponent(uiLang)}` +
+            `&learning=${encodeURIComponent(learningDirection)}`,
           { signal: controller.signal },
         );
         if (id !== reqId.current) return;
@@ -89,7 +98,9 @@ export function useSearch(
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query, debounceMs, limit]);
+    // A direction switch re-runs the search rather than leaving the previous
+    // language's rows on screen.
+  }, [query, debounceMs, limit, uiLang, learningDirection]);
 
   return state;
 }

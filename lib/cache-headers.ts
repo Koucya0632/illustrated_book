@@ -40,3 +40,19 @@ export function readLearningDirection(
   const raw = new URL(req.url).searchParams.get("learning");
   return raw === "zh-en" || raw === "zh-ja" ? raw : fallback;
 }
+
+/**
+ * Whether the request states its own language scope, so no fallback to the
+ * caller's stored settings is needed.
+ *
+ * Presence, not validity: a bad `learning=klingon` still says the caller
+ * intended to scope itself, and `readLearningDirection` clamps it. The
+ * distinction decides two things at once — whether the route pays for a user
+ * lookup, and whether the URL is a complete cache key. Anything reading this
+ * for the second reason must agree with the `has`/`missing` split in
+ * next.config.js, which is keyed on `learning`.
+ */
+export function hasExplicitLanguageScope(req: Request): boolean {
+  const params = new URL(req.url).searchParams;
+  return params.has("lang") && params.has("learning");
+}

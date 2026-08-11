@@ -11,6 +11,7 @@ import { studyStats } from "@/lib/cards-db";
 import { atlasStudyStats } from "@/lib/atlas-db";
 import { getSettings } from "@/lib/users-db";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
+import { readLearningDirection } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -34,12 +35,14 @@ export async function GET(req: Request) {
   try {
     const t0 = performance.now();
     const settings = await getSettings(userId);
+    // `?learning=` wins over the stored setting — see /api/users/mastery.
+    const direction = readLearningDirection(req, settings.learningDirection);
     const [publicStats, customStats] = await Promise.all([
       categories.length === 0 || publicCategories.length > 0
-        ? studyStats(userId, publicCategories, studyDeckFor(settings.learningDirection))
+        ? studyStats(userId, publicCategories, studyDeckFor(direction))
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       wantsCustom
-        ? atlasStudyStats(userId, targetLanguageFor(settings.learningDirection))
+        ? atlasStudyStats(userId, targetLanguageFor(direction))
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
     ]);
     const byStatus = new Map<string, number>();

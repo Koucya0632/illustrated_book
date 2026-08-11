@@ -4,6 +4,7 @@ import { getAllMasteryWithSchedule, getSettings } from "@/lib/users-db";
 import { getAllAtlasMasteryWithSchedule, getSavedCommunityMastery } from "@/lib/atlas-db";
 import { applyDecay } from "@/lib/mastery";
 import { targetLanguageFor } from "@/lib/settings";
+import { readLearningDirection } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -15,12 +16,19 @@ export const dynamic = "force-dynamic";
 // Decay is applied at read (same as the web word page), so the score reflects
 // the forgetting curve as of now rather than the last-write value. Guests get
 // an empty map → every word renders as 未學 client-side.
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ items: [] });
 
   const settings = await getSettings(userId);
-  const targetLanguage = targetLanguageFor(settings.learningDirection);
+  // Direction follows the caller when it states one: mastery lives in a
+  // per-direction namespace, and the client re-fetches this the instant the
+  // user switches 學習語言 — ahead of the debounced settings POST. Reading only
+  // the stored setting handed back the old language's scores, and the client
+  // caches them for 30s, so 圖鑑 badges stayed on the deck you just left.
+  // Same rule as ?lang= on /api/study/queue.
+  const direction = readLearningDirection(req, settings.learningDirection);
+  const targetLanguage = targetLanguageFor(direction);
   const [rows, atlasRows, savedRows] = await Promise.all([
     getAllMasteryWithSchedule(userId, targetLanguage),
     getAllAtlasMasteryWithSchedule(userId, targetLanguage),

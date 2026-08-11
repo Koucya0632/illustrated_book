@@ -20,7 +20,7 @@ import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
-import { readLang } from "@/lib/cache-headers";
+import { readLang, readLearningDirection } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -221,8 +221,12 @@ export async function GET(req: Request) {
     // Gloss language follows the live UI language: ?lang= wins over the stored
     // setting so a just-switched uiLang isn't stuck on the debounced save.
     const uiLang = readLang(req, settings.uiLang);
-    const directionDeck = studyDeckFor(settings.learningDirection);
-    const targetLanguage = targetLanguageFor(settings.learningDirection);
+    // And the deck follows the live direction, for the same reason: a queue
+    // fetched in the seconds after a 學習語言 switch would otherwise be built
+    // from the deck the user just left.
+    const direction = readLearningDirection(req, settings.learningDirection);
+    const directionDeck = studyDeckFor(direction);
+    const targetLanguage = targetLanguageFor(direction);
     // Learning direction is authoritative. Legacy client deck filters must
     // never widen a Japanese queue back to all decks when they disagree.
     const effectiveDecks = [directionDeck];

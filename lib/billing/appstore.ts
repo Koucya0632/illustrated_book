@@ -8,7 +8,12 @@
 
 import type { AtlasTier } from "@/lib/atlas/entitlement";
 
-const PRO_PRODUCT_IDS = new Set(["app.tuji.pro.monthly", "app.tuji.pro.yearly"]);
+const PRO_PRODUCT_IDS = new Set([
+  "app.tuji.pro.monthly",
+  "app.tuji.pro.quarterly",
+  "app.tuji.pro.semiannual",
+  "app.tuji.pro.yearly",
+]);
 
 /** JWSTransactionDecodedPayload subset we rely on. */
 export interface AppleTransaction {

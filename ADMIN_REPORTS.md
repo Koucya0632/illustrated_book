@@ -1,70 +1,70 @@
 # Tuji Web Admin 與 Reports
 
-更新日期：2026-07-01
+更新日期：2026-08-12
 
 ## 1. Admin 的角色
 
-Web admin 是內部工具，服務三件事：
+Web admin 是內部工具，服務詞庫維護、UGC 審核、使用者問題排查、會員權限與營運觀測。它不是一般產品頁，不應被 iOS 使用者或搜尋引擎當成公開入口。
 
-- 詞庫管理。
-- Atlas/UGC 管理與下架。
-- 數據與問題排查。
-
-Admin 不是 iOS 使用者入口，不應被一般使用者看到。
-
-## 2. 目前主要入口
+## 2. 主要入口
 
 | 路徑 | 用途 |
 |---|---|
 | `/admin` | 管理首頁 |
-| `/admin/words` | 詞庫列表與管理 |
-| `/admin/words/new` | 新增詞 |
-| `/admin/stats` | 統計 |
-| `/admin/reports` | 回報/檢舉 |
-| `/admin/atlas` | Atlas 內容管理 |
-| `/admin/members` | 會員 Pro 狀態查詢、手動贈與／收回 |
+| `/admin/words` | 詞庫 CRUD 與 enrich |
+| `/admin/reports` | Study／內容回報 |
+| `/admin/feedback` | App 內意見回饋 |
+| `/admin/atlas` | 公開項目審核 |
+| `/admin/atlas/collections` | 合集審核 |
+| `/admin/atlas/reports` | 項目／合集／作者檢舉 |
+| `/admin/atlas/funnel` | upload → recognize → confirm → cards 漏斗與 AI 成本 |
+| `/admin/members` | 會員搜尋與有效權限摘要 |
+| `/admin/members/:id` | 訂閱、贈與、到期日與權限流水帳 |
+| `/admin/stats` | 產品統計；付費客戶數只計訂閱，不把贈與算收入 |
 
-會員頁支援用 **Email 或 TJ UID** 查詢。多數 Apple 登入帳號是 private relay 信箱，
-用對方寄信的地址查不到人 —— 請他提供 UID，或直接從 `/admin/feedback` 處理（App 內
-意見回饋一定帶著帳號，列表上也直接顯示方案）。
+會員搜尋支援 Email 與 TJ UID。Apple private relay 地址常與使用者聯絡地址不同；查不到時請使用 App 內 feedback 已附帶的帳號，或請對方提供 UID。
 
-訂閱的營收、續訂與流失數字看 App Store Connect，後台不重做。退款與取消由 App Store
-通知自動降級，後台沒有也不需要「取消訂閱」。
+## 3. 會員權限
 
-## 3. API
+Pro 有兩個獨立來源：
+
+- App Store 訂閱：由 verify／notification 更新，取消、退款與續訂由 Apple 決定。
+- 手動贈與：管理員可指定天數贈與或收回，理由必填。
+
+後台顯示兩個來源與合併後的有效權限。收回贈與不會取消訂閱；後台也不提供「取消訂閱」。營收、續訂、退款與流失以 App Store Connect 為準。
+
+## 4. Reports 與 moderation
+
+使用者端目前可提交：
+
+- Study 題目回報。
+- App feedback。
+- 物見公開項目檢舉。
+- 公開合集檢舉。
+- 作者身分檢舉。
+
+項目與合集送審會先經機器政策，結果可直接批准、轉人工或拒絕。檢舉的高風險理由／累積門檻可把內容升級到人工佇列；admin 依 target 類型前往項目、合集或作者處理並保留 moderation event。
+
+iOS 的檢舉 UI 只有在伺服器成功接受後才顯示「已收到檢舉」。429、401 或網路失敗不能冒充成功。
+
+## 5. 代表 API
 
 | API | 用途 |
 |---|---|
-| `/api/admin/words` | 詞 CRUD |
-| `/api/admin/words/:id` | 單詞更新/刪除/補充 |
-| `/api/admin/upload` | 圖片上傳 |
-| `/api/admin/fetch-image` | 服務端抓圖 |
-| `/api/admin/reports/:id` | 處理 report |
-| `/api/admin/atlas/items` | Atlas item 管理 |
-| `/api/admin/atlas/items/:id` | Atlas item 更新 |
-| `/api/admin/members/:id/entitlement` | 手動贈與／收回 Pro（理由必填） |
+| `/api/admin/words*` | 詞庫 CRUD／enrich |
+| `/api/admin/reports/:id` | Study report 處理 |
+| `/api/admin/feedback/:id` | Feedback 處理 |
+| `/api/admin/atlas/items*` | 公開項目審核與管理 |
+| `/api/admin/atlas/collections/:id` | 合集審核 |
+| `/api/admin/atlas/reports/:id` | Atlas report 狀態處理 |
+| `/api/admin/atlas/funnel` | 漏斗與 AI 用量 |
+| `/api/admin/members/:id/entitlement` | 手動贈與／收回 Pro |
 
-## 4. 審核用途
+## 6. 安全與操作規則
 
-App Store 若問 Atlas/UGC：
-
-- 使用者可刪除自己的 Atlas item。
-- Admin 可查看、處理、下架公開內容。
-- AI 生成內容需要使用者確認。
-
-如果 iOS 開放公開圖鑑，必須讓使用者也能在 App 內找到檢舉入口；只有 admin 後台不夠。
-
-## 5. 安全規則
-
-- Admin route 必須與一般 auth 分開。
-- 不把 service role client 暴露到 client component。
-- 所有 admin write 都要驗證身份。
-- 圖片上傳限制 MIME/type/size。
-- 操作應可追蹤，至少保留 created/updated timestamp。
-
-## 6. 待補
-
-- Report list 的處理狀態標準化。
-- Atlas 公開內容的使用者端檢舉入口。
-- Admin 操作審計事件。
-- 更清楚的 TestFlight Review 說明素材。
+- Admin route 與一般 auth 分開，所有管理 write 都要驗證身份。
+- Service role client 只存在 server side。
+- 上傳限制 MIME、size 與處理後尺寸；不信任檔名。
+- 權限贈與、收回、審核與下架必須保留 actor、理由與時間。
+- 不在 log 或產品事件保存 token、email、原圖簽名 URL、自由輸入全文。
+- Reports 的處理狀態、moderation 狀態與內容 visibility 是不同概念，不應互相覆寫。

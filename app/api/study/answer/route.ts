@@ -178,6 +178,7 @@ async function answerAtlasCard(
     responseMs?: number;
     sessionId?: string;
     activity?: string;
+    hinted?: boolean;
   },
 ) {
   if (invalidUuid(cardId)) {
@@ -235,7 +236,12 @@ async function answerAtlasCard(
       masteryBefore: masteryResult.previousDecayed,
       masteryAfter: masteryResult.mastery,
       clientSessionId: body.sessionId?.slice(0, 64) ?? null,
-      metadata: { cardId: due.card.id, itemId: due.item.id, source: "custom" },
+      metadata: {
+        cardId: due.card.id,
+        itemId: due.item.id,
+        source: "custom",
+        ...(body.hinted ? { hinted: true } : {}),
+      },
     }).catch((err) => console.warn("[study/answer] atlas study log insert failed", err)),
   ]);
 
@@ -257,6 +263,13 @@ export async function POST(req: Request) {
     responseMs?: number;
     sessionId?: string;
     activity?: StudyLogActivity;
+    // 複習's 求救提示: the user turned the card over for the gloss before
+    // answering. Recorded in study_logs.metadata rather than as a new
+    // `activity` value — activity names the question type, and this is a
+    // modifier on it. metadata is also unconstrained, so no migration and no
+    // CHECK change; study_logs is append-only, so an unrecorded hint is
+    // unrecoverable.
+    hinted?: boolean;
   };
   try {
     body = await req.json();
@@ -330,7 +343,11 @@ export async function POST(req: Request) {
       masteryBefore: masteryResult.previousDecayed,
       masteryAfter: masteryResult.mastery,
       clientSessionId: body.sessionId?.slice(0, 64) ?? null,
-      metadata: { cardId, deckKey: card.card.deck_key },
+      metadata: {
+        cardId,
+        deckKey: card.card.deck_key,
+        ...(body.hinted ? { hinted: true } : {}),
+      },
     }).catch((err) => console.warn("[study/answer] study_logs insert failed", err)),
   ]);
 

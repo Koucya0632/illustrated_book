@@ -16,24 +16,32 @@ const NAV = [
 export default function PublicShell({ children }: { children: React.ReactNode }) {
   const lang = getPublicLang();
   return (
-    <div className={`min-h-screen bg-tuji-bg text-tuji-ink${lang === "ja" ? " font-ja" : ""}`}>
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-tuji-bg/90 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-7">
+    <div className={`min-h-screen bg-tuji-paper text-tuji-ink${lang === "ja" ? " font-ja" : ""}`}>
+      {/* One hairline, no shadow: the header is separated from the page by
+          tuji-rule, which is the only line the system has. */}
+      <header className="sticky top-0 z-50 border-b border-tuji-rule bg-tuji-paper">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-soft">
+            <span className="flex h-9 w-9 items-center justify-center overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
             </span>
             <span className="font-display text-[22px] font-extrabold tracking-tight text-tuji-ink">
-              Tuji<span className="text-tuji-coral">.</span>
+              {/* Identity, not state: the wordmark's period is the one place
+                  brand yellow appears without meaning "here is the next step". */}
+              Tuji<span className="text-tuji-brand">.</span>
             </span>
           </Link>
           {/* lg, not md: five items at English label widths (~460px) plus the
               logo, language switcher and CTA overflow a 768px header. Every
               target here is also in the footer, so hiding it costs no reach. */}
-          <nav className="hidden items-center gap-6 text-sm font-extrabold text-tuji-ink2 lg:flex">
+          <nav className="hidden items-center gap-6 text-sm font-bold text-tuji-ink2 lg:flex">
             {NAV.map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-tuji-teal">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="transition duration-120 hover:text-tuji-ink"
+              >
                 {mt(lang, item.key)}
               </Link>
             ))}
@@ -42,8 +50,7 @@ export default function PublicShell({ children }: { children: React.ReactNode })
             <LangSwitcher current={lang} />
             <Link
               href="/download"
-              className="tuji-press rounded-xl bg-tuji-yellow px-4 py-2.5 text-sm font-extrabold text-tuji-ink"
-              style={{ ["--press-shadow" as string]: "#d7a900" }}
+              className="tuji-press bg-tuji-current px-4 py-2.5 text-sm font-extrabold text-tuji-ink"
             >
               {mt(lang, "cta.getApp")}
             </Link>
@@ -51,60 +58,60 @@ export default function PublicShell({ children }: { children: React.ReactNode })
         </div>
       </header>
       <main>{children}</main>
-      <footer className="bg-tuji-ink text-white">
-        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-7">
+      <footer className="bg-tuji-ink text-tuji-paper">
+        <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="grid gap-10 sm:grid-cols-[1.2fr_1fr_1fr]">
             <div>
               <div className="flex items-center gap-2.5">
-                <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-soft">
+                <span className="flex h-9 w-9 items-center justify-center overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
                 </span>
                 <span className="font-display text-xl font-extrabold tracking-tight">
-                  Tuji<span className="text-tuji-yellow">.</span>
+                  Tuji<span className="text-tuji-brand">.</span>
                 </span>
               </div>
-              <p className="mt-4 max-w-xs text-sm font-semibold leading-6 text-white/70">
+              <p className="mt-4 max-w-xs text-sm leading-6 text-tuji-paper/70">
                 {mt(lang, "foot.tagline")}
               </p>
             </div>
             <div>
-              <div className="text-xs font-extrabold uppercase tracking-[0.16em] text-white/50">
+              <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-paper/50">
                 {mt(lang, "foot.product")}
               </div>
-              <div className="mt-4 flex flex-col gap-3 text-sm font-bold text-white/80">
-                <Link href="/#features" className="transition hover:text-tuji-yellow">
+              <div className="mt-4 flex flex-col gap-3 text-sm font-bold text-tuji-paper/80">
+                <Link href="/#features" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "nav.features")}
                 </Link>
-                <Link href="/#atlas" className="transition hover:text-tuji-yellow">
+                <Link href="/#atlas" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "nav.atlas")}
                 </Link>
-                <Link href="/#community" className="transition hover:text-tuji-yellow">
+                <Link href="/#community" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "nav.community")}
                 </Link>
-                <Link href="/download" className="transition hover:text-tuji-yellow">
+                <Link href="/download" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "foot.iosApp")}
                 </Link>
               </div>
             </div>
             <div>
-              <div className="text-xs font-extrabold uppercase tracking-[0.16em] text-white/50">
+              <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-paper/50">
                 {mt(lang, "foot.supportLegal")}
               </div>
-              <div className="mt-4 flex flex-col gap-3 text-sm font-bold text-white/80">
-                <Link href="/support" className="transition hover:text-tuji-yellow">
+              <div className="mt-4 flex flex-col gap-3 text-sm font-bold text-tuji-paper/80">
+                <Link href="/support" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "foot.supportCenter")}
                 </Link>
-                <Link href="/privacy" className="transition hover:text-tuji-yellow">
+                <Link href="/privacy" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "foot.privacy")}
                 </Link>
-                <Link href="/terms" className="transition hover:text-tuji-yellow">
+                <Link href="/terms" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "foot.terms")}
                 </Link>
               </div>
             </div>
           </div>
-          <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs font-semibold text-white/50 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col gap-2 border-t border-tuji-paper/15 pt-6 text-[13px] text-tuji-paper/50 sm:flex-row sm:items-center sm:justify-between">
             <p>Provided by Hong Kuok Wai · nexflow0632@gmail.com</p>
             <p>© {new Date().getFullYear()} Tuji</p>
           </div>

@@ -39,19 +39,19 @@ export default function MarkdownDocument({ source }: { source: string }) {
 
     if (line.startsWith("# ")) {
       nodes.push(
-        <h1 key={key} className="text-4xl font-extrabold tracking-tight text-tuji-ink sm:text-5xl">
+        <h1 key={key} className="font-display text-4xl font-extrabold tracking-tight text-tuji-ink sm:text-5xl">
           {line.slice(2)}
         </h1>,
       );
     } else if (line.startsWith("## ")) {
       nodes.push(
-        <h2 key={key} className="mt-10 border-t border-black/10 pt-8 text-2xl font-extrabold tracking-tight text-tuji-ink">
+        <h2 key={key} className="mt-10 border-t border-tuji-rule pt-8 text-2xl font-bold tracking-tight text-tuji-ink">
           {line.slice(3)}
         </h2>,
       );
     } else if (line.startsWith("### ")) {
       nodes.push(
-        <h3 key={key} className="mt-7 text-lg font-extrabold tracking-tight text-tuji-ink">
+        <h3 key={key} className="mt-7 text-lg font-bold tracking-tight text-tuji-ink">
           {line.slice(4)}
         </h3>,
       );
@@ -66,5 +66,6 @@ export default function MarkdownDocument({ source }: { source: string }) {
 
   flushList(nodes, listItems, keyRef);
 
-  return <article className="mx-auto max-w-3xl px-5 py-12 sm:px-7">{nodes}</article>;
+  // Page margin is s4 (24) everywhere — the system has one horizontal boundary.
+  return <article className="mx-auto max-w-3xl px-6 py-12">{nodes}</article>;
 }

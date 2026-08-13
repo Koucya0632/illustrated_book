@@ -1,15 +1,15 @@
 [
   {
     "id": "electric-cooker",
-    "word": "electric cooker",
-    "chinese": "電鍋",
+    "word": "slow cooker",
+    "chinese": "慢燉鍋",
     "category": "kitchen",
     "partOfSpeech": "noun",
-    "pronunciation": "/ɪˌlek.trɪk ˈkʊk.ɚ/",
+    "pronunciation": "/ˈsloʊ ˌkʊk.ɚ/",
     "examples": [
       {
-        "en": "I use the electric cooker in the kitchen.",
-        "zh": "我在廚房使用電鍋。"
+        "en": "I use the slow cooker in the kitchen.",
+        "zh": "我在廚房使用慢燉鍋。"
       }
     ]
   },
@@ -579,14 +579,14 @@
   {
     "id": "toilet-seat",
     "word": "toilet seat",
-    "chinese": "馬桶蓋",
+    "chinese": "馬桶座圈",
     "category": "bathroom",
     "partOfSpeech": "noun",
     "pronunciation": "/ˈtɔɪ.lət siːt/",
     "examples": [
       {
         "en": "The toilet seat is in the bathroom.",
-        "zh": "馬桶蓋在浴室裡。"
+        "zh": "馬桶座圈在浴室裡。"
       }
     ]
   },
@@ -1279,14 +1279,14 @@
   {
     "id": "deodorant",
     "word": "deodorant",
-    "chinese": "除臭劑",
+    "chinese": "體香劑",
     "category": "bathroom",
     "partOfSpeech": "noun",
     "pronunciation": "/diˈoʊ.dɚ.ənt/",
     "examples": [
       {
         "en": "The deodorant is in the bathroom.",
-        "zh": "除臭劑在浴室裡。"
+        "zh": "體香劑在浴室裡。"
       }
     ]
   },
@@ -2482,15 +2482,15 @@
   },
   {
     "id": "eraser",
-    "word": "eraser",
-    "chinese": "板擦",
+    "word": "whiteboard eraser",
+    "chinese": "白板擦",
     "category": "office",
     "partOfSpeech": "noun",
-    "pronunciation": "/ɪˈreɪ.sɚ/",
+    "pronunciation": "/ˈwaɪt.bɔːrd ɪˌreɪ.sɚ/",
     "examples": [
       {
-        "en": "I need the eraser at the office.",
-        "zh": "我在辦公室需要板擦。"
+        "en": "I need the whiteboard eraser at the office.",
+        "zh": "我在辦公室需要白板擦。"
       }
     ]
   },
@@ -3434,14 +3434,14 @@
   },
   {
     "id": "roadblock",
-    "word": "roadblock",
+    "word": "barricade",
     "chinese": "路障",
     "category": "street",
     "partOfSpeech": "noun",
-    "pronunciation": "/ˈroʊd.blɑːk/",
+    "pronunciation": "/ˌber.əˈkeɪd/",
     "examples": [
       {
-        "en": "You can see the roadblock on the street.",
+        "en": "You can see the barricade on the street.",
         "zh": "你可以在街上看到路障。"
       }
     ]
@@ -3532,29 +3532,29 @@
   },
   {
     "id": "street-vendor",
-    "word": "street vendor",
-    "chinese": "路邊攤",
+    "word": "food cart",
+    "chinese": "餐車",
     "category": "street",
     "partOfSpeech": "noun",
-    "pronunciation": "/ˈstriːt ˌven.dɚ/",
+    "pronunciation": "/ˈfuːd ˌkɑːrt/",
     "examples": [
       {
-        "en": "You can see the street vendor on the street.",
-        "zh": "你可以在街上看到路邊攤。"
+        "en": "You can see the food cart on the street.",
+        "zh": "你可以在街上看到餐車。"
       }
     ]
   },
   {
     "id": "vendor",
-    "word": "vendor",
-    "chinese": "攤販",
+    "word": "market stall",
+    "chinese": "市場攤位",
     "category": "street",
     "partOfSpeech": "noun",
-    "pronunciation": "/ˈven.dɚ/",
+    "pronunciation": "/ˈmɑːr.kɪt ˌstɔːl/",
     "examples": [
       {
-        "en": "You can see the vendor on the street.",
-        "zh": "你可以在街上看到攤販。"
+        "en": "You can see the market stall on the street.",
+        "zh": "你可以在街上看到市場攤位。"
       }
     ]
   },
@@ -3617,14 +3617,14 @@
   {
     "id": "invoice",
     "word": "invoice",
-    "chinese": "發票",
-    "category": "supermarket",
+    "chinese": "請款單",
+    "category": "office",
     "partOfSpeech": "noun",
     "pronunciation": "/ˈɪn.vɔɪs/",
     "examples": [
       {
-        "en": "I found the invoice at the supermarket.",
-        "zh": "我在超市找到發票。"
+        "en": "I received the invoice at the office.",
+        "zh": "我在辦公室收到請款單。"
       }
     ]
   },
@@ -4812,15 +4812,15 @@
   },
   {
     "id": "cinnamon-bark",
-    "word": "cinnamon bark",
-    "chinese": "桂皮",
+    "word": "cinnamon sticks",
+    "chinese": "肉桂棒",
     "category": "seasonings",
     "partOfSpeech": "noun",
-    "pronunciation": "/ˈsɪn.ə.mən bɑːrk/",
+    "pronunciation": "/ˈsɪn.ə.mən ˌstɪks/",
     "examples": [
       {
-        "en": "Add some cinnamon bark to the dish.",
-        "zh": "在這道菜裡加一些桂皮。"
+        "en": "Add some cinnamon sticks to the dish.",
+        "zh": "在這道菜裡加一些肉桂棒。"
       }
     ]
   },
@@ -5009,14 +5009,14 @@
   {
     "id": "cornstarch",
     "word": "cornstarch",
-    "chinese": "玉米粉",
+    "chinese": "玉米澱粉",
     "category": "seasonings",
     "partOfSpeech": "noun",
     "pronunciation": "/ˈkɔːrn.stɑːrtʃ/",
     "examples": [
       {
         "en": "Add some cornstarch to the dish.",
-        "zh": "在這道菜裡加一些玉米粉。"
+        "zh": "在這道菜裡加一些玉米澱粉。"
       }
     ]
   },

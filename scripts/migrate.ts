@@ -10,6 +10,7 @@ import postgres from "postgres";
 import { categories as seedCategories } from "../lib/categories";
 import { words as seedWords } from "../lib/words";
 import { runAtlasTextModeration } from "../lib/atlas/moderation";
+import { applyMainWordCorrections } from "../lib/main-word-corrections";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -2463,6 +2464,8 @@ async function main() {
     await syncSeedWordImages(sql);
 
     await generateCards(sql);
+    const correctedWords = await applyMainWordCorrections(sql);
+    console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);
     await moderateExistingProfileNicknames(sql);

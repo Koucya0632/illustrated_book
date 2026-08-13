@@ -18,6 +18,7 @@
     "translate:readings": "tsx scripts/backfill-ja-readings.ts",
     "apply:texts": "tsx scripts/apply-localized-texts.ts",
     "apply:atlas-glosses": "tsx scripts/apply-atlas-glosses.ts",
+    "fix:main-words": "tsx --env-file=.env.local scripts/apply-main-word-corrections.ts",
     "verify:atlas": "node scripts/verify-atlas-privacy.mjs"
   },
   "dependencies": {

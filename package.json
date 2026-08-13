@@ -19,6 +19,7 @@
     "apply:texts": "tsx scripts/apply-localized-texts.ts",
     "apply:atlas-glosses": "tsx scripts/apply-atlas-glosses.ts",
     "fix:main-words": "tsx --env-file=.env.local scripts/apply-main-word-corrections.ts",
+    "audit:main-words": "tsx --env-file=.env.local scripts/audit-main-words.ts",
     "verify:atlas": "node scripts/verify-atlas-privacy.mjs"
   },
   "dependencies": {

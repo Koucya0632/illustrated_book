@@ -1,0 +1,3 @@
+# Local audit and image-generation artifacts are not runtime dependencies.
+output/
+reports/

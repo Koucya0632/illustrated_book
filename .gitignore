@@ -32,3 +32,4 @@ next-env.d.ts
 # kept out of the repo so we don't bloat clones / CI.
 /public/word-images/
 /reports/
+/output/

@@ -47,15 +47,17 @@ export default function LangSwitcher({ current }: { current: UiLang }) {
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Language"
-        className="flex items-center gap-1.5 rounded-xl border border-black/10 bg-white/60 px-3 py-2 text-sm font-extrabold text-tuji-ink2 transition hover:text-tuji-teal"
+        className="flex items-center gap-1.5 bg-tuji-paper2 px-3 py-2 text-sm font-bold text-tuji-ink2 transition duration-120 hover:bg-tuji-paper3 hover:text-tuji-ink"
       >
         <span aria-hidden="true">🌐</span>
         <span>{label}</span>
       </button>
       {open && (
+        // A small sheet, so it wears what sheets wear: a square paper surface
+        // with a 3px ink top edge (bw3). No shadow lifts it off the page.
         <ul
           role="listbox"
-          className="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-2xl border border-black/5 bg-white p-1.5 shadow-card"
+          className="absolute right-0 z-50 mt-2 w-40 overflow-hidden border-t-3 border-tuji-ink bg-tuji-paper2 p-1.5"
         >
           {PUBLIC_LOCALES.map((l) => (
             <li key={l.value}>
@@ -64,10 +66,12 @@ export default function LangSwitcher({ current }: { current: UiLang }) {
                 role="option"
                 aria-selected={l.value === current}
                 onClick={() => pick(l.value)}
-                className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-extrabold transition ${
+                // Selected = the ink block. It is the only "this one is chosen"
+                // language in the system, so it is the one used here too.
+                className={`flex w-full items-center justify-between px-3 py-2 text-left text-sm font-bold transition duration-120 ${
                   l.value === current
-                    ? "bg-tuji-tealS text-tuji-teal"
-                    : "text-tuji-ink2 hover:bg-tuji-bg"
+                    ? "bg-tuji-ink text-tuji-paper"
+                    : "text-tuji-ink2 hover:bg-tuji-paper3"
                 }`}
               >
                 {l.label}

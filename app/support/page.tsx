@@ -12,21 +12,21 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return (
     <PublicShell>
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-7 lg:grid-cols-[0.95fr_1.05fr] lg:py-16">
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:py-16">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-tuji-tealS px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.14em] text-tuji-teal">
+          <div className="inline-flex items-center gap-2 border-l-3 border-tuji-current bg-tuji-paper2 py-1.5 pl-3 pr-3.5 text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink2">
             Support
           </div>
           <h1 className="mt-5 text-5xl font-extrabold leading-[0.98] tracking-tight text-tuji-ink sm:text-6xl">
             We can help with your Tuji account.
           </h1>
-          <p className="mt-5 max-w-xl text-lg font-semibold leading-8 text-tuji-ink2">
+          <p className="mt-5 max-w-xl text-lg leading-8 text-tuji-ink2">
             For support, privacy requests, billing questions, or account deletion help, contact
             the Tuji operator by email.
           </p>
           <a
             href="mailto:nexflow0632@gmail.com"
-            className="mt-8 inline-flex rounded-2xl bg-tuji-yellow px-6 py-4 text-base font-extrabold text-tuji-ink shadow-soft transition hover:shadow-card"
+            className="mt-8 inline-flex bg-tuji-current px-6 py-4 text-base font-extrabold text-tuji-ink transition duration-120 hover:bg-tuji-currentDeep"
           >
             nexflow0632@gmail.com
           </a>
@@ -34,7 +34,7 @@ export default function SupportPage() {
               so the inbox someone writes from usually matches no account. The
               UID is the only identifier that always resolves — and in-app
               feedback carries it automatically. */}
-          <p className="mt-5 max-w-xl text-sm font-semibold leading-6 text-tuji-ink2">
+          <p className="mt-5 max-w-xl text-sm leading-6 text-tuji-ink2">
             Fastest route for anything account- or subscription-related: send it from inside the
             app (我的 → 意見回饋). That way your account is attached automatically. If you email
             instead, please include your Tuji UID — find it under 我的 → 編輯個人檔案. Without it we
@@ -44,13 +44,13 @@ export default function SupportPage() {
         </div>
 
         <div className="space-y-6">
-          <div className="rounded-[28px] bg-white p-6 shadow-card">
+          <div className="bg-tuji-paper2 p-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-20 w-20 items-end justify-center overflow-hidden rounded-3xl bg-tuji-tealS">
+              <div className="flex h-20 w-20 items-end justify-center overflow-hidden bg-tuji-paper">
                 <Mascot pose="wave" size={82} />
               </div>
               <div>
-                <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+                <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
                   Account deletion
                 </div>
                 <h2 className="text-2xl font-extrabold tracking-tight text-tuji-ink">
@@ -58,7 +58,7 @@ export default function SupportPage() {
                 </h2>
               </div>
             </div>
-            <div className="mt-6 space-y-4 text-sm font-semibold leading-7 text-tuji-ink2">
+            <div className="mt-6 space-y-4 text-sm leading-7 text-tuji-ink2">
               <p>
                 You can delete your account from inside the app where the feature is available.
                 You may also contact support and request account deletion.
@@ -75,21 +75,21 @@ export default function SupportPage() {
               </p>
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <Link href="/privacy" className="rounded-2xl bg-tuji-ink px-5 py-3 text-center text-sm font-extrabold text-white">
+              <Link href="/privacy" className="bg-tuji-ink px-5 py-3 text-center text-sm font-bold text-tuji-paper">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="rounded-2xl bg-tuji-tealS px-5 py-3 text-center text-sm font-extrabold text-tuji-teal">
+              <Link href="/terms" className="bg-tuji-paper3 px-5 py-3 text-center text-sm font-bold text-tuji-ink2">
                 Terms of Service
               </Link>
             </div>
           </div>
 
-          <div className="rounded-[28px] bg-white p-6 shadow-card">
-            <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+          <div className="bg-tuji-paper2 p-6">
+            <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
               Subscription &amp; billing
             </div>
             <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink">Tuji Pro</h2>
-            <div className="mt-5 space-y-4 text-sm font-semibold leading-7 text-tuji-ink2">
+            <div className="mt-5 space-y-4 text-sm leading-7 text-tuji-ink2">
               <p>
                 Tuji Pro is an auto-renewable subscription sold through the App Store. It is
                 currently offered in four lengths — 1 month, 3 months, 6 months, and 1 year. Prices

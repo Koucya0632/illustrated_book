@@ -8,6 +8,7 @@ const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 const NAV = [
   { href: "/#features", key: "nav.features" },
   { href: "/#atlas", key: "nav.atlas" },
+  { href: "/#community", key: "nav.community" },
   { href: "/#how", key: "nav.how" },
   { href: "/support", key: "nav.support" },
 ];
@@ -27,7 +28,10 @@ export default function PublicShell({ children }: { children: React.ReactNode })
               Tuji<span className="text-tuji-coral">.</span>
             </span>
           </Link>
-          <nav className="hidden items-center gap-6 text-sm font-extrabold text-tuji-ink2 md:flex">
+          {/* lg, not md: five items at English label widths (~460px) plus the
+              logo, language switcher and CTA overflow a 768px header. Every
+              target here is also in the footer, so hiding it costs no reach. */}
+          <nav className="hidden items-center gap-6 text-sm font-extrabold text-tuji-ink2 lg:flex">
             {NAV.map((item) => (
               <Link key={item.href} href={item.href} className="transition hover:text-tuji-teal">
                 {mt(lang, item.key)}
@@ -74,6 +78,9 @@ export default function PublicShell({ children }: { children: React.ReactNode })
                 </Link>
                 <Link href="/#atlas" className="transition hover:text-tuji-yellow">
                   {mt(lang, "nav.atlas")}
+                </Link>
+                <Link href="/#community" className="transition hover:text-tuji-yellow">
+                  {mt(lang, "nav.community")}
                 </Link>
                 <Link href="/download" className="transition hover:text-tuji-yellow">
                   {mt(lang, "foot.iosApp")}

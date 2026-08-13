@@ -5,7 +5,8 @@ import Mascot from "@/components/tuji/Mascot";
 
 export const metadata: Metadata = {
   title: "Support · Tuji",
-  description: "Contact Tuji support and learn how to request account deletion.",
+  description:
+    "Contact Tuji support, get help with a Tuji Pro subscription, and learn how to request account deletion.",
 };
 
 export default function SupportPage() {
@@ -42,43 +43,75 @@ export default function SupportPage() {
           </p>
         </div>
 
-        <div className="rounded-[28px] bg-white p-6 shadow-card">
-          <div className="flex items-center gap-4">
-            <div className="flex h-20 w-20 items-end justify-center overflow-hidden rounded-3xl bg-tuji-tealS">
-              <Mascot pose="wave" size={82} />
-            </div>
-            <div>
-              <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
-                Account deletion
+        <div className="space-y-6">
+          <div className="rounded-[28px] bg-white p-6 shadow-card">
+            <div className="flex items-center gap-4">
+              <div className="flex h-20 w-20 items-end justify-center overflow-hidden rounded-3xl bg-tuji-tealS">
+                <Mascot pose="wave" size={82} />
               </div>
-              <h2 className="text-2xl font-extrabold tracking-tight text-tuji-ink">
-                Delete your account
-              </h2>
+              <div>
+                <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+                  Account deletion
+                </div>
+                <h2 className="text-2xl font-extrabold tracking-tight text-tuji-ink">
+                  Delete your account
+                </h2>
+              </div>
+            </div>
+            <div className="mt-6 space-y-4 text-sm font-semibold leading-7 text-tuji-ink2">
+              <p>
+                You can delete your account from inside the app where the feature is available.
+                You may also contact support and request account deletion.
+              </p>
+              <p>
+                Account deletion is intended to remove account-linked data such as profile
+                information, learning progress, private Atlas images, settings, push tokens, and
+                custom content, except where retention is required or permitted for legal,
+                security, billing, backup, dispute resolution, or moderation purposes.
+              </p>
+              <p>
+                App Store subscriptions are managed by Apple. Deleting your Tuji account does not
+                automatically cancel an App Store subscription.
+              </p>
+            </div>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link href="/privacy" className="rounded-2xl bg-tuji-ink px-5 py-3 text-center text-sm font-extrabold text-white">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="rounded-2xl bg-tuji-tealS px-5 py-3 text-center text-sm font-extrabold text-tuji-teal">
+                Terms of Service
+              </Link>
             </div>
           </div>
-          <div className="mt-6 space-y-4 text-sm font-semibold leading-7 text-tuji-ink2">
-            <p>
-              You can delete your account from inside the app where the feature is available.
-              You may also contact support and request account deletion.
-            </p>
-            <p>
-              Account deletion is intended to remove account-linked data such as profile
-              information, learning progress, private Atlas images, settings, push tokens, and
-              custom content, except where retention is required or permitted for legal,
-              security, billing, backup, dispute resolution, or moderation purposes.
-            </p>
-            <p>
-              App Store subscriptions are managed by Apple. Deleting your Tuji account does not
-              automatically cancel an App Store subscription.
-            </p>
-          </div>
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link href="/privacy" className="rounded-2xl bg-tuji-ink px-5 py-3 text-center text-sm font-extrabold text-white">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="rounded-2xl bg-tuji-tealS px-5 py-3 text-center text-sm font-extrabold text-tuji-teal">
-              Terms of Service
-            </Link>
+
+          <div className="rounded-[28px] bg-white p-6 shadow-card">
+            <div className="text-xs font-extrabold uppercase tracking-[0.14em] text-tuji-ink3">
+              Subscription &amp; billing
+            </div>
+            <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink">Tuji Pro</h2>
+            <div className="mt-5 space-y-4 text-sm font-semibold leading-7 text-tuji-ink2">
+              <p>
+                Tuji Pro is an auto-renewable subscription sold through the App Store. It is
+                currently offered in four lengths — 1 month, 3 months, 6 months, and 1 year. Prices
+                are shown in the App Store for your region.
+              </p>
+              <p>
+                Billing, renewal, cancellation, and refunds are handled by Apple. Cancel or switch
+                plans in your Apple account settings; we cannot cancel or refund a subscription on
+                your behalf.
+              </p>
+              <p>
+                New device, or reinstalled the app? Open 設定 → Tuji Pro → 恢復購買 to restore your
+                subscription. One App Store subscription unlocks Pro on one Tuji account at a
+                time — restoring it on another account moves the entitlement there.
+              </p>
+              {/* Same reasoning as the UID note above: a payment receipt does not
+                  identify the Tuji account that should have been unlocked. */}
+              <p>
+                Paid but still not unlocked? Send it from 我的 → 意見回饋 inside the app so your
+                account comes attached, or email us with your Tuji UID.
+              </p>
+            </div>
           </div>
         </div>
       </section>

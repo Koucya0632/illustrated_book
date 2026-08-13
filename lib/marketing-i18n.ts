@@ -444,7 +444,7 @@ const STRINGS: Record<string, Row> = {
   "mq.toaster": { "zh-Hant": "烤麵包機", "zh-Hans": "烤面包机", ja: "トースター", en: "" },
   "mq.convenience-store": { "zh-Hant": "便利商店", "zh-Hans": "便利店", ja: "コンビニ", en: "" },
   "mq.subway": { "zh-Hant": "捷運", "zh-Hans": "地铁", ja: "地下鉄", en: "" },
-  "mq.frying-pan": { "zh-Hant": "平底鍋", "zh-Hans": "平底锅", ja: "フライパン", en: "" },
+  "mq.pan": { "zh-Hant": "平底鍋", "zh-Hans": "平底锅", ja: "フライパン", en: "" },
   "mq.towel": { "zh-Hant": "毛巾", "zh-Hans": "毛巾", ja: "タオル", en: "" },
   "mq.bookshelf": { "zh-Hant": "書櫃", "zh-Hans": "书柜", ja: "本棚", en: "" },
   "mq.taxi": { "zh-Hant": "計程車", "zh-Hans": "出租车", ja: "タクシー", en: "" },

@@ -1,5 +1,6 @@
 import { isKanaOnly, type FuriganaSegment } from "./kana";
 import { MAIN_WORD_CORRECTIONS } from "./main-word-corrections";
+import { MAIN_WORD_MERGES } from "./main-word-merges";
 
 const JAPANESE_RENAMES = new Map(
   MAIN_WORD_CORRECTIONS.filter(
@@ -40,6 +41,19 @@ function issue(id: string, field: string, message: string): MainWordAuditIssue {
 
 export function auditMainWordRows(rows: readonly MainWordAuditRow[]): MainWordAuditIssue[] {
   const issues: MainWordAuditIssue[] = [];
+  const publishedIds = new Set(rows.map((row) => row.id));
+
+  for (const merge of MAIN_WORD_MERGES) {
+    if (publishedIds.has(merge.sourceId) && publishedIds.has(merge.targetId)) {
+      issues.push(
+        issue(
+          merge.sourceId,
+          "duplicateMainWord",
+          `duplicates canonical main word ${merge.targetId}: ${merge.reason}`,
+        ),
+      );
+    }
+  }
 
   for (const row of rows) {
     if (!row.jaTerm) issues.push(issue(row.id, "jaTerm", "missing Japanese headword"));

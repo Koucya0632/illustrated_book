@@ -11,6 +11,7 @@ import { categories as seedCategories } from "../lib/categories";
 import { words as seedWords } from "../lib/words";
 import { runAtlasTextModeration } from "../lib/atlas/moderation";
 import { applyMainWordCorrections } from "../lib/main-word-corrections";
+import { applyMainWordMerges } from "../lib/main-word-merges";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -2493,6 +2494,8 @@ async function main() {
     await syncSeedWordImages(sql);
 
     await generateCards(sql);
+    const mergedWords = await applyMainWordMerges(sql);
+    console.log(`[migrate] main-word merges checked (${mergedWords} rows).`);
     const correctedWords = await applyMainWordCorrections(sql);
     console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
     await backfillSchemaV2(sql);

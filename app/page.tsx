@@ -39,7 +39,7 @@ const marqueeRowA = [
 const marqueeRowB = [
   { id: "convenience-store", en: "convenience store" },
   { id: "subway", en: "subway" },
-  { id: "frying-pan", en: "frying pan" },
+  { id: "pan", en: "pan" },
   { id: "towel", en: "towel" },
   { id: "bookshelf", en: "bookshelf" },
   { id: "taxi", en: "taxi" },
@@ -78,10 +78,10 @@ const commSteps = [
   { step: "4", tKey: "comm.s4t", bKey: "comm.s4b" },
 ];
 
-// 480 words per learning language, from /api/words `total`. Keep this honest —
-// it is the one number on the page a visitor could check against the app.
+// Keep the public count in sync with the generated canonical image map instead
+// of baking a catalog size into the marketing page.
 const heroStats = [
-  { value: "480+", lKey: "hero.stat1l" },
+  { value: String(Object.keys(imageUrls).length), lKey: "hero.stat1l" },
   { value: "EN·JA", lKey: "hero.stat2l" },
   { value: "AI", lKey: "hero.stat3l" },
 ];

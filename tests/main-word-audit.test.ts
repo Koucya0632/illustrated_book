@@ -2,6 +2,21 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { auditMainWordRows, type MainWordAuditRow } from "../lib/main-word-audit";
 import { MAIN_WORD_CORRECTIONS } from "../lib/main-word-corrections";
+import { MAIN_WORD_MERGES } from "../lib/main-word-merges";
+
+function validRow(id: string): MainWordAuditRow {
+  return {
+    id,
+    jaTerm: "フライパン",
+    jaReading: "フライパン",
+    readingSegments: [],
+    jaDefinition: "「フライパン」は、食材を焼いたり炒めたりする調理器具です。",
+    zhDefinition: "平底鍋",
+    exampleId: 1,
+    jaExample: "フライパンで卵を焼きます。",
+    zhExample: "我用平底鍋煎蛋。",
+  };
+}
 
 const staleSlowCooker: MainWordAuditRow = {
   id: "electric-cooker",
@@ -42,6 +57,21 @@ test("a fully synchronized slow-cooker payload passes", () => {
       },
     ]),
     [],
+  );
+});
+
+test("the retired frying-pan row cannot be published beside canonical pan", () => {
+  const merge = MAIN_WORD_MERGES.find(({ sourceId }) => sourceId === "frying-pan");
+  assert.deepEqual(merge, {
+    sourceId: "frying-pan",
+    targetId: "pan",
+    reason: "Both rows display as フライパン / 平底鍋 in the Japanese atlas.",
+  });
+
+  const issues = auditMainWordRows([validRow("frying-pan"), validRow("pan")]);
+  assert.deepEqual(
+    issues.map(({ id, field }) => ({ id, field })),
+    [{ id: "frying-pan", field: "duplicateMainWord" }],
   );
 });
 

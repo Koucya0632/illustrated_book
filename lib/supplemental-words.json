@@ -294,20 +294,6 @@
     ]
   },
   {
-    "id": "frying-pan",
-    "word": "frying pan",
-    "chinese": "平底鍋",
-    "category": "kitchen",
-    "partOfSpeech": "noun",
-    "pronunciation": "/ˈfraɪ.ɪŋ pæn/",
-    "examples": [
-      {
-        "en": "I use the frying pan in the kitchen.",
-        "zh": "我在廚房使用平底鍋。"
-      }
-    ]
-  },
-  {
     "id": "wok",
     "word": "wok",
     "chinese": "炒鍋",

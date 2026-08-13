@@ -1964,15 +1964,44 @@ async function backfillSchemaV3(sql: any) {
 
   // 3. word_categories — every word's existing single category becomes a primary
   //    M:N row. Future UI can add additional non-primary category links.
+  //
+  // Two statements, not one, because this table carries TWO uniqueness rules:
+  // the PK (word_id, category_id) and the partial index
+  // word_categories_primary_uniq ON (word_id) WHERE is_primary. A single
+  // `ON CONFLICT (word_id, category_id) DO NOTHING` only ever named the first
+  // one, so the moment a seed word moved category the insert missed the PK
+  // (different category_id) and slammed straight into the partial index:
+  //   duplicate key value violates unique constraint word_categories_primary_uniq
+  // That is a deploy-stopper — migrate runs inside vercel-build, so the whole
+  // production build fails on a one-word category edit. It stayed invisible
+  // only because no word had ever changed category before.
+  //
+  // Demote first so the partial index is free, then upsert; a row that already
+  // exists as non-primary gets promoted rather than skipped, which is what the
+  // old DO NOTHING would have gotten wrong in the other direction (leaving the
+  // word with no primary at all).
+  const demoted = await sql`
+    UPDATE word_categories wc
+       SET is_primary = FALSE
+      FROM words w
+     WHERE wc.word_id = w.id
+       AND wc.is_primary
+       AND w.category IS NOT NULL
+       AND wc.category_id <> w.category
+    RETURNING wc.word_id
+  `;
+  if (demoted.length > 0) {
+    console.log(`[migrate v3] word_categories: ${demoted.length} primaries demoted (category moved)`);
+  }
   const wcRes = await sql`
     INSERT INTO word_categories (word_id, category_id, is_primary)
     SELECT w.id, w.category, TRUE
     FROM words w
     WHERE w.category IS NOT NULL
-    ON CONFLICT (word_id, category_id) DO NOTHING
+    ON CONFLICT (word_id, category_id) DO UPDATE SET is_primary = TRUE
     RETURNING word_id
   `;
-  console.log(`[migrate v3] word_categories: ${wcRes.length} new rows`);
+  console.log(`[migrate v3] word_categories: ${wcRes.length} rows upserted`);
 }
 
 // ---- Schema v3.1: convert study_logs to monthly RANGE partitioning ----

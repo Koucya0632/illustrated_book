@@ -1,6 +1,6 @@
 # Terms of Service
 
-Last updated: July 3, 2026
+Last updated: August 13, 2026
 
 These Terms of Service govern your access to and use of Tuji, including the Tuji mobile app, website, APIs, subscriptions, AI features, Atlas features, and related services.
 
@@ -127,6 +127,15 @@ Do not use AI features for legal, medical, financial, safety-critical, emergency
 ## 9. Subscriptions and Paid Features
 
 Tuji may offer paid features, including Tuji Pro subscriptions.
+
+Tuji Pro is currently offered as an auto-renewable subscription in the following lengths:
+
+- 1 month.
+- 3 months.
+- 6 months.
+- 12 months.
+
+The price of each subscription length is shown in the App Store for your region and may differ between regions. All lengths provide the same Tuji Pro features. We may add, change, or stop offering a subscription length at any time, subject to applicable law and platform requirements; a change does not affect the length or price of a subscription period you have already been charged for.
 
 Subscriptions purchased through the Apple App Store are processed by Apple. Your purchase, billing, renewal, cancellation, refund, and payment method are handled by Apple and are subject to Apple's terms and policies.
 

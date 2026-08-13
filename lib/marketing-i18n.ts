@@ -43,6 +43,9 @@ const STRINGS: Record<string, Row> = {
   // ── Header / footer nav ─────────────────────────────────────
   "nav.features": { "zh-Hant": "產品特色", "zh-Hans": "产品特色", ja: "特長", en: "Features" },
   "nav.atlas": { "zh-Hant": "自製圖鑑", "zh-Hans": "自制图鉴", ja: "自作図鑑", en: "Custom Atlas" },
+  // 物見 is the in-app name for the community surface; the app catalog renders it
+  // as Sightings / 物見 / 物见, so the marketing page must say the same words.
+  "nav.community": { "zh-Hant": "物見", "zh-Hans": "物见", ja: "物見", en: "Sightings" },
   "nav.how": { "zh-Hant": "怎麼學", "zh-Hans": "怎么学", ja: "使い方", en: "How it works" },
   "nav.support": { "zh-Hant": "支援", "zh-Hans": "支持", ja: "サポート", en: "Support" },
 
@@ -311,6 +314,78 @@ const STRINGS: Record<string, Row> = {
     "zh-Hans": "照片进入你的专属图鉴，加入每天的学习与复习。",
     ja: "写真はあなた専用の図鑑に入り、毎日の学習と復習に加わります。",
     en: "The photo joins your personal atlas and enters your daily study and review.",
+  },
+  // Quotas mirror atlasLimitsForTier() in lib/atlas/entitlement.ts and the iOS
+  // paywall benefits. Deliberately no amounts: App Store prices are per-region,
+  // so anything written here would be wrong for most visitors.
+  "atlas.proNote": {
+    "zh-Hant":
+      "免費方案可建立 3 格自製圖鑑、每月 30 次 AI 辨識。Tuji Pro 擴充到 300 格與每月 500 次，並解鎖高精度辨識（每月 30 次）；提供月、3 個月、半年與年方案，價格請見 App Store。",
+    "zh-Hans":
+      "免费方案可建立 3 格自制图鉴、每月 30 次 AI 识别。Tuji Pro 扩充到 300 格与每月 500 次，并解锁高精度识别（每月 30 次）；提供月、3 个月、半年与年方案，价格请见 App Store。",
+    ja: "無料プランは自作図鑑 3 枠、AI 認識は月 30 回まで。Tuji Pro なら 300 枠・月 500 回に広がり、高精度認識（月 30 回）も使えます。1 か月・3 か月・6 か月・1 年のプランがあり、価格は App Store でご確認ください。",
+    en: "The free plan covers 3 custom atlas slots and 30 AI recognitions a month. Tuji Pro raises that to 300 slots and 500 a month and unlocks precision recognition (30 a month), in 1-month, 3-month, 6-month, and yearly plans — see the App Store for pricing.",
+  },
+
+  // ── Sightings (community) ───────────────────────────────────
+  "comm.badge": {
+    "zh-Hant": "物見 · Sightings",
+    "zh-Hans": "物见 · Sightings",
+    ja: "物見 · Sightings",
+    en: "Sightings",
+  },
+  "comm.title1": {
+    "zh-Hant": "別人拍下的世界，",
+    "zh-Hans": "别人拍下的世界，",
+    ja: "誰かが撮った世界も、",
+    en: "Someone else's photos,",
+  },
+  "comm.title2": {
+    "zh-Hant": "也能變成你的教材。",
+    "zh-Hans": "也能变成你的教材。",
+    ja: "あなたの教材になる。",
+    en: "your next flashcards.",
+  },
+  "comm.body": {
+    "zh-Hant":
+      "物見是大家公開出來的圖鑑。看到喜歡的卡片就收進自己的複習排程，或整本收藏別人整理好的合集。所有公開內容都經過審核，你也隨時能檢舉或封鎖。",
+    "zh-Hans":
+      "物见是大家公开出来的图鉴。看到喜欢的卡片就收进自己的复习排程，或整本收藏别人整理好的合集。所有公开内容都经过审核，你也随时能举报或屏蔽。",
+    ja: "物見は、みんなが公開した図鑑です。気に入ったカードは自分の復習に取り込み、誰かがまとめたコレクションはまるごと保存。公開される内容はすべて審査を通り、報告やブロックもいつでもできます。",
+    en: "Sightings is everyone's published atlas. Take any card you like into your own review queue, or save a whole collection someone else curated. Everything public passes review, and you can report or block at any time.",
+  },
+  "comm.s1t": { "zh-Hant": "逛物見", "zh-Hans": "逛物见", ja: "物見をのぞく", en: "Browse Sightings" },
+  "comm.s1b": {
+    "zh-Hant": "別人拍下的真實物品，課本上不會有的那些。",
+    "zh-Hans": "别人拍下的真实物品，课本上不会有的那些。",
+    ja: "誰かが撮った実物の写真。教科書には載っていないものばかり。",
+    en: "Real objects other people photographed — the ones no textbook covers.",
+  },
+  "comm.s2t": { "zh-Hant": "一鍵收進來", "zh-Hans": "一键收进来", ja: "ワンタップで取り込む", en: "Take it in" },
+  "comm.s2b": {
+    "zh-Hant": "收藏的卡片直接進入每日複習，跟自己拍的一起排程。",
+    "zh-Hans": "收藏的卡片直接进入每日复习，跟自己拍的一起排程。",
+    ja: "取り込んだカードは毎日の復習に入り、自分で撮ったものと一緒に出題されます。",
+    en: "Saved cards drop straight into your daily review, scheduled alongside your own.",
+  },
+  "comm.s3t": { "zh-Hant": "整本合集", "zh-Hans": "整本合集", ja: "コレクション単位で", en: "Whole collections" },
+  "comm.s3b": {
+    "zh-Hant": "同主題的卡片收成一本，整本收藏、整本追蹤進度。",
+    "zh-Hans": "同主题的卡片收成一本，整本收藏、整本追踪进度。",
+    ja: "同じテーマのカードを一冊に。まるごと保存して、まるごと進捗を追えます。",
+    en: "Cards on one theme, bound into a book — save it whole, track it whole.",
+  },
+  "comm.s4t": {
+    "zh-Hant": "公開與否你決定",
+    "zh-Hans": "公开与否你决定",
+    ja: "公開するかはあなた次第",
+    en: "You decide what's public",
+  },
+  "comm.s4b": {
+    "zh-Hant": "拍下的東西預設私人。公開需經審核，遇到不舒服的內容可以檢舉或封鎖作者。",
+    "zh-Hans": "拍下的东西默认私密。公开需经审核，遇到不舒服的内容可以举报或屏蔽作者。",
+    ja: "撮ったものは初期設定で非公開。公開には審査があり、不快な内容は報告や作者のブロックができます。",
+    en: "What you capture stays private by default. Publishing goes through review, and you can report content or block an author.",
   },
 
   // ── Download CTA ────────────────────────────────────────────

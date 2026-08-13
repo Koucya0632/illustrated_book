@@ -71,8 +71,17 @@ const atlasSteps = [
   { step: "4", tKey: "atlas.s4t", bKey: "atlas.s4b" },
 ];
 
+const commSteps = [
+  { step: "1", tKey: "comm.s1t", bKey: "comm.s1b" },
+  { step: "2", tKey: "comm.s2t", bKey: "comm.s2b" },
+  { step: "3", tKey: "comm.s3t", bKey: "comm.s3b" },
+  { step: "4", tKey: "comm.s4t", bKey: "comm.s4b" },
+];
+
+// 480 words per learning language, from /api/words `total`. Keep this honest —
+// it is the one number on the page a visitor could check against the app.
 const heroStats = [
-  { value: "500+", lKey: "hero.stat1l" },
+  { value: "480+", lKey: "hero.stat1l" },
   { value: "EN·JA", lKey: "hero.stat2l" },
   { value: "AI", lKey: "hero.stat3l" },
 ];
@@ -311,6 +320,53 @@ export default function MarketingHomePage() {
                 {atlasSteps.map((item) => (
                   <div key={item.step} className="rounded-[24px] bg-white p-6">
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-tuji-yellow font-display text-base font-extrabold text-tuji-ink">
+                      {item.step}
+                    </div>
+                    <h3 className="mt-4 text-lg font-extrabold tracking-tight text-tuji-ink">
+                      {mt(lang, item.tKey)}
+                    </h3>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-tuji-ink2">
+                      {mt(lang, item.bKey)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Free/Pro quotas, no prices: App Store pricing is per-region. */}
+            <div className="px-7 pb-7 sm:px-10 sm:pb-10 lg:px-14 lg:pb-12">
+              <p className="border-t border-white/20 pt-6 text-sm font-semibold leading-6 text-white/75">
+                {mt(lang, "atlas.proNote")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 物見 ─────────────────────────────────────────────── */}
+      <section id="community" className="scroll-mt-20 pb-16 lg:pb-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-7">
+          <div className="rounded-[36px] bg-white p-7 shadow-card sm:p-10 lg:p-14">
+            <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr]">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-tuji-tealS px-3.5 py-1.5 text-xs font-extrabold tracking-wide text-tuji-teal">
+                  {mt(lang, "comm.badge")}
+                </div>
+                <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
+                  {mt(lang, "comm.title1")}
+                  <br />
+                  {mt(lang, "comm.title2")}
+                </h2>
+                <p className="mt-5 max-w-md text-base font-semibold leading-7 text-tuji-ink2">
+                  {mt(lang, "comm.body")}
+                </p>
+                <div className="mt-8 hidden lg:block">
+                  <Mascot pose="peek" size={104} />
+                </div>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {commSteps.map((item) => (
+                  <div key={item.step} className="rounded-[24px] bg-tuji-bg p-6">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-tuji-coral font-display text-base font-extrabold text-white">
                       {item.step}
                     </div>
                     <h3 className="mt-4 text-lg font-extrabold tracking-tight text-tuji-ink">

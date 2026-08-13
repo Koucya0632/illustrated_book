@@ -6,10 +6,13 @@ type Sql = ReturnType<typeof postgres>;
 type ExampleCorrection = {
   sortOrder: number;
   oldEn: string;
+  previousEn?: string;
   en: string;
   oldZh: string;
+  previousZh?: string;
   zh: string;
   oldJa?: string;
+  previousJa?: string;
   ja?: string;
 };
 
@@ -40,6 +43,25 @@ type MainWordCorrection = {
   pronunciation?: string;
   examples?: ExampleCorrection[];
 };
+
+function dailySeasoningExample(
+  oldEnIngredient: string,
+  oldZhIngredient: string,
+  oldJaIngredient: string,
+  en: string,
+  zh: string,
+  ja: string,
+): ExampleCorrection {
+  return {
+    sortOrder: 0,
+    oldEn: `Add some ${oldEnIngredient} to the dish.`,
+    en,
+    oldZh: `在這道菜裡加一些${oldZhIngredient}。`,
+    zh,
+    oldJa: `この料理に${oldJaIngredient}を少し加えます。`,
+    ja,
+  };
+}
 
 export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   {
@@ -535,6 +557,708 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     ],
   },
   {
+    id: "apple-cider-vinegar",
+    jaDefinition: {
+      old: "「リンゴ酢」はリンゴ酢を発酵させて醸造した酢です。",
+      value: "「リンゴ酢」は、リンゴ果汁を発酵させて造る酢です。",
+    },
+    chineseDefinition: {
+      old: "以發酵的蘋果酒釀製而成的醋。",
+      value: "以蘋果汁發酵釀製而成的醋。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "apple cider vinegar",
+        "蘋果醋",
+        "リンゴ酢",
+        "I use apple cider vinegar in salad dressing.",
+        "我用蘋果醋做沙拉醬。",
+        "サラダのドレッシングにリンゴ酢を使います。",
+      ),
+    ],
+  },
+  {
+    id: "baking-powder",
+    examples: [
+      dailySeasoningExample(
+        "baking powder",
+        "發粉",
+        "ベーキングパウダー",
+        "Add baking powder to the cake batter.",
+        "在蛋糕麵糊裡加入發粉。",
+        "ケーキの生地にベーキングパウダーを入れます。",
+      ),
+    ],
+  },
+  {
+    id: "baking-soda",
+    examples: [
+      dailySeasoningExample(
+        "baking soda",
+        "小蘇打粉",
+        "重曹",
+        "Add baking soda to the cookie dough.",
+        "在餅乾麵糰裡加入小蘇打粉。",
+        "クッキーの生地に重曹を入れます。",
+      ),
+    ],
+  },
+  {
+    id: "black-vinegar",
+    examples: [
+      dailySeasoningExample(
+        "black vinegar",
+        "黑醋",
+        "黒酢",
+        "Dip the dumplings in black vinegar.",
+        "水餃沾黑醋吃。",
+        "餃子に黒酢をつけて食べます。",
+      ),
+    ],
+  },
+  {
+    id: "bonito-powder",
+    jaDefinition: {
+      old: "「鰹節粉」は、かつお節を燻製した粉末調味料です。",
+      value: "「鰹節粉」は、鰹節を細かく粉末にした調味料です。",
+    },
+    chineseDefinition: {
+      old: "以柴魚乾燻製後磨成的調味粉。",
+      value: "將柴魚乾磨成細粉的調味料。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "bonito powder",
+        "柴魚粉",
+        "鰹節粉",
+        "Sprinkle bonito powder on the okonomiyaki.",
+        "在大阪燒上撒柴魚粉。",
+        "お好み焼きに鰹節粉をかけます。",
+      ),
+    ],
+  },
+  {
+    id: "bouillon-powder",
+    examples: [
+      dailySeasoningExample(
+        "bouillon powder",
+        "高湯粉",
+        "ブイヨンパウダー",
+        "Dissolve the bouillon powder in the soup.",
+        "把高湯粉溶進湯裡。",
+        "スープにブイヨンパウダーを溶かします。",
+      ),
+    ],
+  },
+  {
+    id: "brown-sugar",
+    examples: [
+      dailySeasoningExample(
+        "brown sugar",
+        "紅糖",
+        "ブラウンシュガー",
+        "Stir brown sugar into the milk tea.",
+        "在奶茶裡加入紅糖。",
+        "ミルクティーにブラウンシュガーを入れます。",
+      ),
+    ],
+  },
+  {
+    id: "cardamom",
+    jaDefinition: {
+      old: "カルダモンは、南アジアや中東の料理でよく見られる、さやと​​種子を含むスパイスです。",
+      value:
+        "「カルダモン」は、爽やかで甘い香りが特徴のスパイスで、南アジアや中東の料理によく使われます。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "cardamom",
+        "豆蔻",
+        "カルダモン",
+        "Add cardamom to the chai.",
+        "在印度奶茶裡加入豆蔻。",
+        "チャイにカルダモンを加えます。",
+      ),
+    ],
+  },
+  {
+    id: "chicken-bouillon-powder",
+    oldJa: "鶏ガラスープの素",
+    ja: "鶏ガラスープの素",
+    oldJaReading: "にわとりガラスープのもと",
+    jaReading: "とりガラスープのもと",
+    jaDefinition: {
+      old: "「鶏ガラスープの素」は鶏ガラを濃縮した粉末調味料です。",
+      value: "「鶏ガラスープの素」は、鶏ガラのだしを濃縮して粉末にした調味料です。",
+    },
+    chineseDefinition: {
+      old: "由濃縮雞高湯製成的調味粉。",
+      value: "將雞骨高湯濃縮成粉末的調味料。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "chicken bouillon powder",
+        "雞粉",
+        "鶏ガラスープの素",
+        "Add chicken bouillon powder to the stir-fry.",
+        "炒菜時加入雞粉。",
+        "炒め物に鶏ガラスープの素を加えます。",
+      ),
+    ],
+  },
+  {
+    id: "chili-bean-paste",
+    examples: [
+      dailySeasoningExample(
+        "chili bean paste",
+        "豆瓣醬",
+        "豆板醤",
+        "Use chili bean paste in mapo tofu.",
+        "麻婆豆腐要用豆瓣醬。",
+        "麻婆豆腐に豆板醤を使います。",
+      ),
+    ],
+  },
+  {
+    id: "chili-oil",
+    examples: [
+      dailySeasoningExample(
+        "chili oil",
+        "辣椒油",
+        "ラー油",
+        "Add chili oil to the dumpling sauce.",
+        "在水餃沾醬裡加入辣椒油。",
+        "餃子のたれにラー油を入れます。",
+      ),
+    ],
+  },
+  {
+    id: "cloves",
+    examples: [
+      dailySeasoningExample(
+        "cloves",
+        "丁香",
+        "クローブ",
+        "Add one clove to the curry.",
+        "在咖哩裡放一顆丁香。",
+        "カレーにクローブを一粒入れます。",
+      ),
+    ],
+  },
+  {
+    id: "cooking-wine",
+    jaDefinition: {
+      old: "「料理酒」は料理に風味を加えるために使用されるワインで、多くの場合塩を加えて作られます。",
+      value:
+        "「料理酒」は、料理の臭みを抑え、風味やうま味を加えるために使う酒です。商品によっては塩分を含みます。",
+    },
+    chineseDefinition: {
+      old: "用於烹飪以增添風味的酒，常加鹽製成。",
+      value: "用於去腥並增添風味或鮮味的料理用酒，有些產品含鹽。",
+    },
+  },
+  {
+    id: "coriander-seeds",
+    examples: [
+      dailySeasoningExample(
+        "coriander seeds",
+        "香菜籽",
+        "コリアンダーシード",
+        "Crush the coriander seeds before adding them to the curry.",
+        "把香菜籽壓碎後加入咖哩。",
+        "コリアンダーシードを砕いてカレーに加えます。",
+      ),
+    ],
+  },
+  {
+    id: "cumin-powder",
+    examples: [
+      dailySeasoningExample(
+        "cumin powder",
+        "孜然粉",
+        "クミンパウダー",
+        "Add cumin powder to the curry.",
+        "在咖哩裡加入孜然粉。",
+        "カレーにクミンパウダーを加えます。",
+      ),
+    ],
+  },
+  {
+    id: "curry-roux",
+    jaDefinition: {
+      old: "「カレールー」は、カレースパイス、小麦粉、油脂を塊にしてカレーソースをとろみ付けた調味料です。",
+      value:
+        "「カレールー」は、カレースパイス、小麦粉、油脂などを固めた、カレーに味ととろみを付ける調味料です。",
+    },
+    chineseDefinition: {
+      old: "以咖哩香料、麵粉與油脂壓製成塊的調味物，用以為咖哩醬增稠。",
+      value: "以咖哩香料、麵粉與油脂等固化成塊，為咖哩增加味道與濃稠度的調味料。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "curry roux",
+        "咖哩塊",
+        "カレールー",
+        "Add the curry roux to the pot and let it melt.",
+        "把咖哩塊放進鍋裡煮化。",
+        "鍋にカレールーを入れて溶かします。",
+      ),
+    ],
+  },
+  {
+    id: "dark-brown-sugar",
+    examples: [
+      dailySeasoningExample(
+        "dark brown sugar",
+        "黑糖",
+        "黒糖",
+        "Stir dark brown sugar into the coffee.",
+        "在咖啡裡加入黑糖。",
+        "コーヒーに黒糖を入れます。",
+      ),
+    ],
+  },
+  {
+    id: "fennel-seeds",
+    examples: [
+      dailySeasoningExample(
+        "fennel seeds",
+        "小茴香",
+        "フェンネルシード",
+        "Mix fennel seeds into the bread dough.",
+        "把小茴香拌進麵包麵糰。",
+        "パン生地にフェンネルシードを混ぜます。",
+      ),
+    ],
+  },
+  {
+    id: "fish-sauce",
+    jaDefinition: {
+      old: "「ナンプラー」は、魚を発酵させて作るスパイシーで塩辛いソースで、東南アジア料理によく見られます。",
+      value:
+        "「ナンプラー」は、魚を塩漬けにして発酵させた、塩味とうま味、独特の香りがある調味料です。",
+    },
+    chineseDefinition: {
+      old: "由發酵魚製成的辛鹹醬料，常見於東南亞料理。",
+      value: "以魚鹽漬發酵製成，具有鹹味、鮮味和獨特香氣的調味料。",
+    },
+  },
+  {
+    id: "flour",
+    jaDefinition: {
+      old: "小麦粉は穀物を挽いて作られた細かい白い粉末で、パンや料理に使用されます。",
+      value: "「小麦粉」は、小麦を挽いて作る粉で、パンやお菓子、料理に使われます。",
+    },
+    chineseDefinition: {
+      old: "由穀物研磨而成的細白粉末，用於烘焙與烹飪。",
+      value: "由小麥研磨而成的粉末，用於做麵包、點心和各種料理。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "flour",
+        "麵粉",
+        "小麦粉",
+        "I use flour to make bread.",
+        "我用麵粉做麵包。",
+        "小麦粉でパンを作ります。",
+      ),
+    ],
+  },
+  {
+    id: "honey",
+    jaDefinition: {
+      old: "「蜂蜜」はミツバチが花蜜から醸造する甘くてねばねばした物質です。",
+      value: "「蜂蜜」は、ミツバチが集めた花の蜜から作る、甘くとろみのある食品です。",
+    },
+    chineseDefinition: {
+      old: "蜜蜂以花蜜釀製而成的甜膩黏稠物質。",
+      value: "蜜蜂採集花蜜後製成的香甜濃稠食品。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "honey",
+        "蜂蜜",
+        "蜂蜜",
+        "Drizzle honey over the yogurt.",
+        "在優格上淋蜂蜜。",
+        "ヨーグルトに蜂蜜をかけます。",
+      ),
+    ],
+  },
+  {
+    id: "kombu-powder",
+    examples: [
+      dailySeasoningExample(
+        "kombu powder",
+        "昆布粉",
+        "昆布パウダー",
+        "Add a little kombu powder to the miso soup.",
+        "在味噌湯裡加一點昆布粉。",
+        "味噌汁に昆布パウダーを少し入れます。",
+      ),
+    ],
+  },
+  {
+    id: "mayonnaise",
+    jaDefinition: {
+      old: "「マヨネーズ」は、卵黄、油、酢から作られた濃厚なミルキーソースです。",
+      value:
+        "「マヨネーズ」は、卵黄、油、酢などを混ぜて作る、濃厚でクリーミーな調味料です。",
+    },
+    chineseDefinition: {
+      old: "由蛋黃、油與醋打發成的濃稠乳狀醬料。",
+      value: "由蛋黃、油和醋等混合製成的濃郁滑順調味醬。",
+    },
+  },
+  {
+    id: "mirin",
+    jaDefinition: {
+      old: "「みりん」は日本料理に使用される甘酒です。",
+      value: "「みりん」は、もち米、米こうじ、焼酎などから作る、甘みのある酒類調味料です。",
+    },
+    chineseDefinition: {
+      old: "日本料理中使用的甜味米酒。",
+      value: "由糯米、米麴和燒酎等製成，帶有甜味的酒類調味料。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "mirin",
+        "味醂",
+        "みりん",
+        "Add mirin to the simmered dish.",
+        "在燉煮料理裡加入味醂。",
+        "煮物にみりんを加えます。",
+      ),
+    ],
+  },
+  {
+    id: "miso",
+    examples: [
+      dailySeasoningExample(
+        "miso",
+        "味噌",
+        "味噌",
+        "Dissolve the miso to make miso soup.",
+        "把味噌化開來煮味噌湯。",
+        "味噌を溶いて味噌汁を作ります。",
+      ),
+    ],
+  },
+  {
+    id: "oregano",
+    examples: [
+      dailySeasoningExample(
+        "oregano",
+        "奧勒岡",
+        "オレガノ",
+        "Sprinkle oregano on the pizza.",
+        "在披薩上撒奧勒岡。",
+        "ピザにオレガノをふりかけます。",
+      ),
+    ],
+  },
+  {
+    id: "parsley",
+    examples: [
+      dailySeasoningExample(
+        "parsley",
+        "巴西里",
+        "パセリ",
+        "Sprinkle parsley over the soup.",
+        "在湯上撒巴西里。",
+        "スープにパセリを散らします。",
+      ),
+    ],
+  },
+  {
+    id: "peanut-butter",
+    examples: [
+      dailySeasoningExample(
+        "peanut butter",
+        "花生醬",
+        "ピーナッツバター",
+        "Spread peanut butter on the toast.",
+        "在吐司上抹花生醬。",
+        "トーストにピーナッツバターを塗ります。",
+      ),
+    ],
+  },
+  {
+    id: "potato-starch",
+    examples: [
+      dailySeasoningExample(
+        "potato starch",
+        "太白粉",
+        "片栗粉",
+        "Thicken the sauce with potato starch.",
+        "用太白粉把醬汁勾芡。",
+        "片栗粉であんにとろみをつけます。",
+      ),
+    ],
+  },
+  {
+    id: "rice-vinegar",
+    examples: [
+      {
+        sortOrder: 1,
+        oldEn: "Rice vinegar is milder than white vinegar.",
+        en: "Rice vinegar is milder than grain vinegar.",
+        oldZh: "米醋比白醋來得溫和。",
+        zh: "米醋比穀物醋溫和。",
+        oldJa: "米酢は穀物酢よりまろやかです。",
+        ja: "米酢は穀物酢よりまろやかです。",
+      },
+    ],
+  },
+  {
+    id: "rice-wine",
+    oldJa: "料理酒（米酒）",
+    ja: "台湾米酒",
+    oldJaReading: "りょうりしゅ（べいしゅ）",
+    jaReading: "たいわんミーチュウ",
+    jaDefinition: {
+      old: "「料理酒（米酒）」はお米を発酵させて作られたお酒で、料理にも使えます。",
+      value:
+        "「台湾米酒」は、米を原料にして造る台湾の酒で、三杯鶏や麻油鶏などの料理によく使われます。",
+    },
+    chineseDefinition: {
+      old: "由米發酵釀成的酒精飲料，也可用於烹飪。",
+      value: "以米為原料釀製或蒸餾而成的台灣酒類，常用於三杯雞、麻油雞等料理。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "rice wine",
+        "米酒",
+        "料理酒",
+        "Add Taiwanese rice wine to three cup chicken.",
+        "三杯雞裡要加入米酒。",
+        "三杯鶏に台湾米酒を加えます。",
+      ),
+    ],
+  },
+  {
+    id: "rock-sugar",
+    examples: [
+      dailySeasoningExample(
+        "rock sugar",
+        "冰糖",
+        "氷砂糖",
+        "Add one piece of rock sugar to the tea.",
+        "在茶裡放一顆冰糖。",
+        "お茶に氷砂糖を一つ入れます。",
+      ),
+    ],
+  },
+  {
+    id: "sake",
+    examples: [
+      dailySeasoningExample(
+        "sake",
+        "清酒",
+        "日本酒",
+        "Add sake when simmering the fish.",
+        "煮魚時加入清酒。",
+        "魚を煮るときに日本酒を加えます。",
+      ),
+    ],
+  },
+  {
+    id: "sesame-paste",
+    examples: [
+      dailySeasoningExample(
+        "sesame paste",
+        "芝麻醬",
+        "ごまペースト",
+        "Use sesame paste to make the dressing.",
+        "用芝麻醬做拌醬。",
+        "ごまペーストで和え物のたれを作ります。",
+      ),
+    ],
+  },
+  {
+    id: "shacha-sauce",
+    examples: [
+      dailySeasoningExample(
+        "shacha sauce",
+        "沙茶醬",
+        "沙茶醤",
+        "Add shacha sauce to the hot pot dipping sauce.",
+        "在火鍋沾醬裡加入沙茶醬。",
+        "火鍋のつけだれに沙茶醤を加えます。",
+      ),
+    ],
+  },
+  {
+    id: "shichimi",
+    jaDefinition: {
+      old: "「七味唐辛子」は7種類の香辛料を配合した和の総合スパイスパウダーです。パスタやご飯にふりかけることが多いです。",
+      value:
+        "「七味唐辛子」は、唐辛子や山椒、ごまなどを混ぜた日本の香辛料で、うどん、そば、焼き鳥、汁物、鍋物などに振りかけて使います。",
+    },
+    chineseDefinition: {
+      old: "由七種香料混合而成的日本綜合辛香粉，常撒在麵食或飯上。",
+      value: "由辣椒、山椒、芝麻等混合而成的日本辛香料，常撒在烏龍麵、蕎麥麵、烤雞串、湯品或鍋物上。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "shichimi",
+        "七味粉",
+        "七味唐辛子",
+        "Sprinkle shichimi over the udon.",
+        "在烏龍麵上撒七味粉。",
+        "うどんに七味唐辛子をふりかけます。",
+      ),
+    ],
+  },
+  {
+    id: "sichuan-peppercorn",
+    jaDefinition: {
+      old: "「花椒」は、食べるとピリピリとした刺激を感じる小さなドライフルーツです。",
+      value:
+        "「花椒」は、乾燥させた果皮を香辛料として使い、舌がしびれるような刺激と爽やかな香りがあります。",
+    },
+    chineseDefinition: {
+      old: "乾燥的小型果實，入口時會帶來酥麻刺激的感受。",
+      value: "將乾燥果皮作為辛香料使用，帶有使舌頭發麻的刺激與清爽香氣。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "Sichuan peppercorn",
+        "花椒",
+        "花椒",
+        "Add Sichuan peppercorns to the mapo tofu.",
+        "在麻婆豆腐裡加入花椒。",
+        "麻婆豆腐に花椒を加えます。",
+      ),
+    ],
+  },
+  {
+    id: "star-anise",
+    examples: [
+      dailySeasoningExample(
+        "star anise",
+        "八角",
+        "八角",
+        "Add one star anise to the braised pork.",
+        "在滷肉裡放一顆八角。",
+        "豚の角煮に八角を一つ入れます。",
+      ),
+    ],
+  },
+  {
+    id: "sweet-chili-sauce",
+    examples: [
+      dailySeasoningExample(
+        "sweet chili sauce",
+        "甜辣醬",
+        "スイートチリソース",
+        "Dip the spring rolls in sweet chili sauce.",
+        "把春捲沾甜辣醬吃。",
+        "生春巻きをスイートチリソースにつけます。",
+      ),
+    ],
+  },
+  {
+    id: "thick-soy-sauce",
+    oldJa: "醤油膏",
+    ja: "台湾とろみ醤油",
+    oldJaReading: "しょうゆあぶら",
+    jaReading: "たいわんとろみしょうゆ",
+    jaDefinition: {
+      old: "「醤油膏」は、台湾料理でよく使われる濃厚でほんのり甘い醤油です。",
+      value:
+        "「台湾とろみ醤油」は、台湾でよく使われる、とろみと甘みのある醤油です。現地では醤油膏（ジャンヨウガオ）と呼ばれます。",
+    },
+    examples: [
+      dailySeasoningExample(
+        "thick soy sauce",
+        "醬油膏",
+        "醤油膏",
+        "Drizzle Taiwanese thick soy sauce over the turnip cake.",
+        "在蘿蔔糕上淋醬油膏。",
+        "大根餅に台湾とろみ醤油をかけます。",
+      ),
+    ],
+  },
+  {
+    id: "turmeric-powder",
+    examples: [
+      dailySeasoningExample(
+        "turmeric powder",
+        "薑黃粉",
+        "ターメリックパウダー",
+        "Add turmeric powder to the curry.",
+        "在咖哩裡加入薑黃粉。",
+        "カレーにターメリックパウダーを加えます。",
+      ),
+    ],
+  },
+  {
+    id: "vanilla-extract",
+    examples: [
+      dailySeasoningExample(
+        "vanilla extract",
+        "香草精",
+        "バニラエッセンス",
+        "Add vanilla extract to the cake batter.",
+        "在蛋糕麵糊裡加入香草精。",
+        "ケーキの生地にバニラエッセンスを加えます。",
+      ),
+    ],
+  },
+  {
+    id: "vegetable-oil",
+    examples: [
+      dailySeasoningExample(
+        "vegetable oil",
+        "植物油",
+        "植物油",
+        "Coat the pan with vegetable oil.",
+        "在平底鍋裡抹上植物油。",
+        "フライパンに植物油をひきます。",
+      ),
+    ],
+  },
+  {
+    id: "wasabi",
+    examples: [
+      dailySeasoningExample(
+        "wasabi",
+        "山葵",
+        "わさび",
+        "Eat the sashimi with wasabi.",
+        "生魚片沾山葵吃。",
+        "刺身にわさびをつけて食べます。",
+      ),
+    ],
+  },
+  {
+    id: "white-sugar",
+    examples: [
+      dailySeasoningExample(
+        "white sugar",
+        "白糖",
+        "白砂糖",
+        "Stir a teaspoon of white sugar into the coffee.",
+        "在咖啡裡加入一茶匙白糖。",
+        "コーヒーに白砂糖を小さじ一杯入れます。",
+      ),
+    ],
+  },
+  {
+    id: "yellow-mustard",
+    examples: [
+      dailySeasoningExample(
+        "yellow mustard",
+        "黃芥末",
+        "イエローマスタード",
+        "Squeeze yellow mustard onto the hot dog.",
+        "在熱狗上擠黃芥末。",
+        "ホットドッグにイエローマスタードをかけます。",
+      ),
+    ],
+  },
+  {
     id: "dark-soy-sauce",
     oldJa: "濃口醤油（老抽）",
     ja: "老抽",
@@ -549,11 +1273,12 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "Add some dark soy sauce to the dish.",
-        en: "Add some dark soy sauce to the dish.",
+        en: "Use dark soy sauce to give the braised pork a deeper color.",
         oldZh: "在這道菜裡加一些老抽。",
-        zh: "在這道菜裡加一些老抽。",
+        zh: "用老抽替滷肉上色。",
         oldJa: "この料理に濃口醤油を少し加えます。",
-        ja: "老抽を少し加えて、料理に色とコクをつけます。",
+        previousJa: "老抽を少し加えて、料理に色とコクをつけます。",
+        ja: "老抽を加えて、煮込み料理に色とコクをつけます。",
       },
     ],
   },
@@ -572,11 +1297,12 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "Add some light soy sauce to the dish.",
-        en: "Add some light soy sauce to the dish.",
+        en: "Use light soy sauce to season the stir-fry.",
         oldZh: "在這道菜裡加一些生抽。",
-        zh: "在這道菜裡加一些生抽。",
+        zh: "炒菜時用生抽調味。",
         oldJa: "この料理に薄口醤油を少し加えます。",
-        ja: "生抽を少し加えて、料理に味をつけます。",
+        previousJa: "生抽を少し加えて、料理に味をつけます。",
+        ja: "生抽で炒め物に味をつけます。",
       },
     ],
   },
@@ -586,6 +1312,16 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     ja: "ホワイトビネガー",
     oldJaReading: "こくもつず",
     jaReading: "ホワイトビネガー",
+    examples: [
+      dailySeasoningExample(
+        "white vinegar",
+        "白醋",
+        "ホワイトビネガー",
+        "Use white vinegar for the pickles.",
+        "醃漬物要用白醋。",
+        "ピクルスにホワイトビネガーを使います。",
+      ),
+    ],
   },
   {
     id: "cinnamon-bark",
@@ -627,9 +1363,13 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "Add some cinnamon bark to the dish.",
-        en: "Add some cinnamon sticks to the dish.",
+        previousEn: "Add some cinnamon sticks to the dish.",
+        en: "Put a cinnamon stick in the tea.",
         oldZh: "在這道菜裡加一些桂皮。",
-        zh: "在這道菜裡加一些肉桂棒。",
+        previousZh: "在這道菜裡加一些肉桂棒。",
+        zh: "在茶裡放一根肉桂棒。",
+        oldJa: "この料理にシナモンスティックを少し加えます。",
+        ja: "紅茶にシナモンスティックを入れます。",
       },
     ],
   },
@@ -637,13 +1377,21 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     id: "cornstarch",
     oldZh: "玉米粉",
     zh: "玉米澱粉",
+    jaDefinition: {
+      old: "「コーンスターチ」はトウモロコシから作られる細か​​い白い粉末で、グレービーソースを濃くするために使用されます。",
+      value:
+        "「コーンスターチ」は、トウモロコシのでんぷんから作る細かい白い粉で、料理にとろみをつけるために使います。",
+    },
     examples: [
       {
         sortOrder: 0,
         oldEn: "Add some cornstarch to the dish.",
-        en: "Add some cornstarch to the dish.",
+        en: "Thicken the soup with cornstarch.",
         oldZh: "在這道菜裡加一些玉米粉。",
-        zh: "在這道菜裡加一些玉米澱粉。",
+        previousZh: "在這道菜裡加一些玉米澱粉。",
+        zh: "用玉米澱粉把湯勾芡。",
+        oldJa: "この料理にコーンスターチを少し加えます。",
+        ja: "コーンスターチでスープにとろみをつけます。",
       },
     ],
   },
@@ -856,7 +1604,11 @@ export async function applyMainWordCorrections(sql: Sql): Promise<number> {
             ORDER BY id
             LIMIT 1
           )
-            AND sentence IN (${example.oldEn}, ${example.en})
+            AND sentence IN (
+              ${example.oldEn},
+              ${example.previousEn ?? example.oldEn},
+              ${example.en}
+            )
           RETURNING id
         `;
         if (exampleRows.length === 0) continue;
@@ -866,7 +1618,11 @@ export async function applyMainWordCorrections(sql: Sql): Promise<number> {
           VALUES (${exampleId}, 'zh', ${example.zh})
           ON CONFLICT (example_id, language) DO UPDATE SET
             translation = EXCLUDED.translation
-          WHERE word_example_translations.translation IN (${example.oldZh}, ${example.zh})
+          WHERE word_example_translations.translation IN (
+            ${example.oldZh},
+            ${example.previousZh ?? example.oldZh},
+            ${example.zh}
+          )
         `;
 
         if (example.ja) {
@@ -877,6 +1633,7 @@ export async function applyMainWordCorrections(sql: Sql): Promise<number> {
               translation = EXCLUDED.translation
             WHERE word_example_translations.translation IN (
               ${example.oldJa ?? example.ja},
+              ${example.previousJa ?? example.oldJa ?? example.ja},
               ${example.ja}
             )
           `;

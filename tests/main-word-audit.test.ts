@@ -3,6 +3,7 @@ import test from "node:test";
 import { auditMainWordRows, type MainWordAuditRow } from "../lib/main-word-audit";
 import { MAIN_WORD_CORRECTIONS } from "../lib/main-word-corrections";
 import { MAIN_WORD_MERGES } from "../lib/main-word-merges";
+import { segmentFurigana } from "../lib/kana";
 
 function validRow(id: string): MainWordAuditRow {
   return {
@@ -133,4 +134,144 @@ test("slow cooker correction replaces the whole concept, not only its label", ()
   assert.match(correction.chineseDefinition?.value ?? "", /低溫/);
   assert.match(correction.examples?.[0]?.ja ?? "", /スロークッカー/);
   assert.match(correction.examples?.[0]?.zh ?? "", /慢燉鍋/);
+});
+
+const GENERIC_SEASONING_EXAMPLE_IDS = [
+  "apple-cider-vinegar",
+  "baking-powder",
+  "baking-soda",
+  "black-vinegar",
+  "bonito-powder",
+  "bouillon-powder",
+  "brown-sugar",
+  "cardamom",
+  "chicken-bouillon-powder",
+  "chili-bean-paste",
+  "chili-oil",
+  "cinnamon-bark",
+  "cloves",
+  "coriander-seeds",
+  "cornstarch",
+  "cumin-powder",
+  "curry-roux",
+  "dark-brown-sugar",
+  "fennel-seeds",
+  "flour",
+  "honey",
+  "kombu-powder",
+  "mirin",
+  "miso",
+  "oregano",
+  "parsley",
+  "peanut-butter",
+  "potato-starch",
+  "rice-wine",
+  "rock-sugar",
+  "sake",
+  "sesame-paste",
+  "shacha-sauce",
+  "shichimi",
+  "sichuan-peppercorn",
+  "star-anise",
+  "sweet-chili-sauce",
+  "thick-soy-sauce",
+  "turmeric-powder",
+  "vanilla-extract",
+  "vegetable-oil",
+  "wasabi",
+  "white-sugar",
+  "white-vinegar",
+  "yellow-mustard",
+] as const;
+
+test("seasoning corrections replace every generic template with a concrete daily example", () => {
+  for (const id of GENERIC_SEASONING_EXAMPLE_IDS) {
+    const correction = MAIN_WORD_CORRECTIONS.find((entry) => entry.id === id);
+    assert.ok(correction, `missing correction for ${id}`);
+    const example = correction.examples?.find(({ sortOrder }) => sortOrder === 0);
+    assert.ok(example, `missing primary example correction for ${id}`);
+    assert.match(example.oldEn, /^Add some .+ to the dish\.$/);
+    assert.doesNotMatch(example.en, /^Add some .+ to the dish\.$/);
+    assert.match(example.oldJa ?? "", /^この料理に.+を少し加えます。$/);
+    assert.doesNotMatch(example.ja ?? "", /^この料理に.+を少し加えます。$/);
+    assert.match(example.oldZh, /^在這道菜裡加一些.+。$/);
+    assert.doesNotMatch(example.zh, /^在這道菜裡加一些.+。$/);
+  }
+});
+
+test("seasoning concept corrections keep headword, reading, definition, and example aligned", () => {
+  const chicken = MAIN_WORD_CORRECTIONS.find(
+    ({ id }) => id === "chicken-bouillon-powder",
+  );
+  assert.equal(chicken?.ja, "鶏ガラスープの素");
+  assert.equal(chicken?.jaReading, "とりガラスープのもと");
+  assert.deepEqual(
+    segmentFurigana(chicken?.ja ?? "", chicken?.jaReading ?? "", new Map()),
+    [
+      { text: "鶏", ruby: "とり" },
+      { text: "ガラスープの", ruby: null },
+      { text: "素", ruby: "もと" },
+    ],
+  );
+  assert.match(chicken?.examples?.[0]?.ja ?? "", /鶏ガラスープの素/);
+
+  const riceWine = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "rice-wine");
+  assert.equal(riceWine?.ja, "台湾米酒");
+  assert.equal(riceWine?.jaReading, "たいわんミーチュウ");
+  assert.deepEqual(
+    segmentFurigana(riceWine?.ja ?? "", riceWine?.jaReading ?? "", new Map()),
+    [{ text: "台湾米酒", ruby: "たいわんミーチュウ" }],
+  );
+  assert.match(riceWine?.jaDefinition?.value ?? "", /^「台湾米酒」/);
+  assert.match(riceWine?.chineseDefinition?.value ?? "", /台灣/);
+  assert.match(riceWine?.examples?.[0]?.ja ?? "", /台湾米酒/);
+  assert.match(riceWine?.examples?.[0]?.zh ?? "", /米酒/);
+
+  const thickSoy = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "thick-soy-sauce");
+  assert.equal(thickSoy?.ja, "台湾とろみ醤油");
+  assert.equal(thickSoy?.jaReading, "たいわんとろみしょうゆ");
+  assert.deepEqual(
+    segmentFurigana(thickSoy?.ja ?? "", thickSoy?.jaReading ?? "", new Map()),
+    [
+      { text: "台湾", ruby: "たいわん" },
+      { text: "とろみ", ruby: null },
+      { text: "醤油", ruby: "しょうゆ" },
+    ],
+  );
+  assert.match(thickSoy?.jaDefinition?.value ?? "", /^「台湾とろみ醤油」/);
+  assert.match(thickSoy?.examples?.[0]?.ja ?? "", /台湾とろみ醤油/);
+});
+
+test("seasoning corrections remove factual definition errors and invisible characters", () => {
+  const byId = new Map(MAIN_WORD_CORRECTIONS.map((entry) => [entry.id, entry]));
+  assert.match(byId.get("apple-cider-vinegar")?.jaDefinition?.value ?? "", /リンゴ果汁/);
+  assert.doesNotMatch(
+    byId.get("bonito-powder")?.jaDefinition?.value ?? "",
+    /かつお節を燻製した/,
+  );
+  assert.match(byId.get("mirin")?.jaDefinition?.value ?? "", /酒類調味料/);
+  assert.doesNotMatch(byId.get("mirin")?.jaDefinition?.value ?? "", /甘酒です/);
+  assert.match(byId.get("shichimi")?.jaDefinition?.value ?? "", /うどん/);
+  assert.doesNotMatch(byId.get("shichimi")?.jaDefinition?.value ?? "", /パスタやご飯/);
+  assert.match(byId.get("sichuan-peppercorn")?.jaDefinition?.value ?? "", /果皮/);
+  assert.doesNotMatch(byId.get("sichuan-peppercorn")?.jaDefinition?.value ?? "", /ドライフルーツ/);
+
+  const serialized = JSON.stringify(
+    MAIN_WORD_CORRECTIONS.filter(({ id }) =>
+      ["cardamom", "cornstarch"].includes(id),
+    ).map(({ jaDefinition }) => jaDefinition?.value),
+  );
+  assert.doesNotMatch(serialized, /\u200B/);
+});
+
+test("rice vinegar Japanese and Chinese comparison examples describe the same vinegar", () => {
+  const correction = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "rice-vinegar");
+  const comparison = correction?.examples?.find(({ sortOrder }) => sortOrder === 1);
+  assert.equal(comparison?.ja, "米酢は穀物酢よりまろやかです。");
+  assert.equal(comparison?.zh, "米醋比穀物醋溫和。");
+});
+
+test("main-word corrections contain only one guarded correction per id", () => {
+  const ids = MAIN_WORD_CORRECTIONS.map(({ id }) => id);
+  assert.equal(new Set(ids).size, ids.length);
 });

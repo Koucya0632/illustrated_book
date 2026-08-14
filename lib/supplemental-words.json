@@ -2299,20 +2299,6 @@
     ]
   },
   {
-    "id": "living-room-table",
-    "word": "living room table",
-    "chinese": "客廳桌",
-    "category": "living-room",
-    "partOfSpeech": "noun",
-    "pronunciation": "/ˈlɪv.ɪŋ ruːm ˌteɪ.bəl/",
-    "examples": [
-      {
-        "en": "The living room table is in the living room.",
-        "zh": "客廳桌在客廳裡。"
-      }
-    ]
-  },
-  {
     "id": "office-chair",
     "word": "office chair",
     "chinese": "辦公椅",

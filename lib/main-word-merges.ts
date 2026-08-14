@@ -21,6 +21,11 @@ export const MAIN_WORD_MERGES: readonly MainWordMerge[] = [
     targetId: "pan",
     reason: "Both rows display as フライパン / 平底鍋 in the Japanese atlas.",
   },
+  {
+    sourceId: "living-room-table",
+    targetId: "coffee-table",
+    reason: "Both rows describe the same low table used in front of a living-room sofa.",
+  },
 ];
 
 /**

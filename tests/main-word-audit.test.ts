@@ -492,6 +492,123 @@ test("seasoning corrections remove factual definition errors and invisible chara
   assert.doesNotMatch(serialized, /\u200B/);
 });
 
+const GENERIC_LIVING_ROOM_EXAMPLE_IDS = [
+  "armchair",
+  "back-cushion",
+  "cabinet",
+  "candle",
+  "ceiling-light",
+  "charger",
+  "cushion",
+  "dehumidifier",
+  "diffuser",
+  "display-cabinet",
+  "doorbell",
+  "doormat",
+  "extension-cord",
+  "floor-lamp",
+  "footstool",
+  "game-console",
+  "magazine",
+  "newspaper",
+  "potted-plant",
+  "power-outlet",
+  "projector",
+  "projector-screen",
+  "recliner",
+  "remote-control-holder",
+  "robot-vacuum",
+  "router",
+  "set-top-box",
+  "side-table",
+  "smoke-detector",
+  "speaker",
+  "table-lamp",
+  "telephone",
+  "tv-stand",
+  "vase",
+  "wall-art",
+] as const;
+
+test("living-room corrections replace every remaining generic template with a concrete daily example", () => {
+  for (const id of GENERIC_LIVING_ROOM_EXAMPLE_IDS) {
+    const correction = MAIN_WORD_CORRECTIONS.find((entry) => entry.id === id);
+    assert.ok(correction, `missing correction for ${id}`);
+    const example = correction.examples?.find(({ sortOrder }) => sortOrder === 0);
+    assert.ok(example, `missing primary example correction for ${id}`);
+    assert.match(example.oldEn, /^The .+ is in the living room\.$/);
+    assert.doesNotMatch(example.en, /^The .+ is in the living room\.$/);
+    assert.match(example.oldJa ?? "", /^.+はリビングにあります。$/);
+    assert.doesNotMatch(example.ja ?? "", /^.+はリビングにあります。$/);
+    assert.match(example.oldZh, /^.+在客廳裡。$/);
+    assert.doesNotMatch(example.zh, /^.+在客廳裡。$/);
+  }
+});
+
+test("living-room corrections keep labels, definitions, and Japanese daily concepts aligned", () => {
+  const byId = new Map(MAIN_WORD_CORRECTIONS.map((entry) => [entry.id, entry]));
+
+  const candle = byId.get("candle");
+  assert.match(candle?.enDefinition?.value ?? "", /wick/);
+  assert.doesNotMatch(candle?.enDefinition?.value ?? "", /stick of wax/);
+  assert.match(candle?.jaDefinition?.value ?? "", /^「ろうそく」/);
+  assert.doesNotMatch(candle?.jaDefinition?.value ?? "", /蝋の柱/);
+
+  assert.equal(byId.get("ceiling-light")?.zh, "吸頂燈");
+  assert.doesNotMatch(byId.get("cushion")?.jaDefinition?.value ?? "", /座り心地も安心/);
+  assert.doesNotMatch(byId.get("display-cabinet")?.jaDefinition?.value ?? "", /商品/);
+  assert.doesNotMatch(byId.get("doormat")?.jaDefinition?.value ?? "", /玄関に玄関に/);
+  assert.doesNotMatch(byId.get("extension-cord")?.jaDefinition?.value ?? "", /電源延長コードです/);
+  assert.doesNotMatch(byId.get("game-console")?.jaDefinition?.value ?? "", /ビデオ ゲーム/);
+  assert.doesNotMatch(byId.get("power-outlet")?.jaDefinition?.value ?? "", /壁に設置されたコンセント/);
+  assert.match(byId.get("projector")?.jaDefinition?.value ?? "", /スクリーンや壁/);
+  assert.doesNotMatch(byId.get("projector")?.jaDefinition?.value ?? "", /カーテン/);
+  assert.doesNotMatch(byId.get("router")?.jaDefinition?.value ?? "", /ホーム ネットワーク/);
+  assert.equal(byId.get("rug")?.zh, "小地毯");
+  assert.equal(byId.get("speaker")?.zh, "喇叭");
+  assert.doesNotMatch(byId.get("tv")?.jaDefinition?.value ?? "", /\u200B/);
+  assert.match(byId.get("tv-stand")?.jaDefinition?.value ?? "", /テレビを置/);
+  assert.equal(byId.get("wall-art")?.zh, "牆面藝術");
+
+  const diffuser = byId.get("diffuser");
+  assert.equal(diffuser?.word, "reed diffuser");
+  assert.equal(diffuser?.ja, "リードディフューザー");
+  assert.equal(diffuser?.zh, "擴香瓶");
+  assert.match(diffuser?.jaDefinition?.value ?? "", /^「リードディフューザー」/);
+  assert.match(diffuser?.examples?.[0]?.ja ?? "", /リードディフューザー/);
+
+  const doorbell = byId.get("doorbell");
+  assert.equal(doorbell?.word, "video doorbell");
+  assert.equal(doorbell?.ja, "テレビドアホン");
+  assert.equal(doorbell?.zh, "視訊門鈴");
+  assert.match(doorbell?.jaDefinition?.value ?? "", /^「テレビドアホン」/);
+  assert.match(doorbell?.examples?.[0]?.ja ?? "", /テレビドアホン/);
+
+  const smokeDetector = byId.get("smoke-detector");
+  assert.equal(smokeDetector?.ja, "煙式火災警報器");
+  assert.equal(smokeDetector?.jaReading, "けむりしきかさいけいほうき");
+  assert.equal(smokeDetector?.zh, "煙霧警報器");
+  assert.match(smokeDetector?.jaDefinition?.value ?? "", /^「煙式火災警報器」/);
+});
+
+test("living-room table is retired in favor of the existing coffee-table concept", () => {
+  const merge = MAIN_WORD_MERGES.find(({ sourceId }) => sourceId === "living-room-table");
+  assert.deepEqual(merge, {
+    sourceId: "living-room-table",
+    targetId: "coffee-table",
+    reason: "Both rows describe the same low table used in front of a living-room sofa.",
+  });
+
+  const issues = auditMainWordRows([
+    validRow("living-room-table"),
+    validRow("coffee-table"),
+  ]);
+  assert.deepEqual(
+    issues.map(({ id, field }) => ({ id, field })),
+    [{ id: "living-room-table", field: "duplicateMainWord" }],
+  );
+});
+
 test("rice vinegar Japanese and Chinese comparison examples describe the same vinegar", () => {
   const correction = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "rice-vinegar");
   const comparison = correction?.examples?.find(({ sortOrder }) => sortOrder === 1);

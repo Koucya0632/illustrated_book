@@ -1,5 +1,6 @@
 import type postgres from "postgres";
 import { segmentFurigana } from "./kana";
+import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "./living-room-main-word-corrections";
 import { OFFICE_MAIN_WORD_CORRECTIONS } from "./office-main-word-corrections";
 
 type Sql = ReturnType<typeof postgres>;
@@ -271,27 +272,6 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     jaReading: "ベッドサイドテーブル",
   },
   {
-    id: "display-cabinet",
-    oldJa: "ディスプレイキャビネット",
-    ja: "飾り棚",
-    oldJaReading: "ディスプレイキャビネット",
-    jaReading: "かざりだな",
-  },
-  {
-    id: "wall-art",
-    oldJa: "壁面アート",
-    ja: "壁飾り",
-    oldJaReading: "へきめんアート",
-    jaReading: "かべかざり",
-  },
-  {
-    id: "footstool",
-    oldJa: "フットスツール",
-    ja: "足置き",
-    oldJaReading: "フットスツール",
-    jaReading: "あしおき",
-  },
-  {
     id: "computer",
     oldJa: "コンピューター",
     ja: "パソコン",
@@ -380,6 +360,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       },
     ],
   },
+  ...LIVING_ROOM_MAIN_WORD_CORRECTIONS,
   ...OFFICE_MAIN_WORD_CORRECTIONS,
   {
     id: "cashier",

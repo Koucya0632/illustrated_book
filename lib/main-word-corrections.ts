@@ -33,6 +33,7 @@ type MainWordCorrection = {
   ja?: string;
   oldJaReading?: string;
   jaReading?: string;
+  jaReadingSegments?: { text: string; ruby: string | null }[] | null;
   enDefinition?: TextCorrection;
   jaDefinition?: TextCorrection;
   chineseDefinition?: TextCorrection;
@@ -59,6 +60,25 @@ function dailySeasoningExample(
     oldZh: `在這道菜裡加一些${oldZhIngredient}。`,
     zh,
     oldJa: `この料理に${oldJaIngredient}を少し加えます。`,
+    ja,
+  };
+}
+
+function dailyStreetExample(
+  oldEnWord: string,
+  oldZhWord: string,
+  oldJaWord: string,
+  en: string,
+  zh: string,
+  ja: string,
+): ExampleCorrection {
+  return {
+    sortOrder: 0,
+    oldEn: `You can see the ${oldEnWord} on the street.`,
+    en,
+    oldZh: `你可以在街上看到${oldZhWord}。`,
+    zh,
+    oldJa: `街で${oldJaWord}を見ることができます。`,
     ja,
   };
 }
@@ -355,9 +375,688 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     ],
   },
   {
+    id: "alley",
+    examples: [
+      dailyStreetExample(
+        "alley",
+        "巷子",
+        "路地",
+        "Let's take the alley as a shortcut.",
+        "走這條巷子比較近。",
+        "近道なので、この路地を通りましょう。",
+      ),
+    ],
+  },
+  {
+    id: "bank",
+    examples: [
+      dailyStreetExample(
+        "bank",
+        "銀行",
+        "銀行",
+        "I need to stop by the bank.",
+        "我回家前要去一趟銀行。",
+        "銀行に寄ってから帰ります。",
+      ),
+    ],
+  },
+  {
+    id: "bike-lane",
+    examples: [
+      dailyStreetExample(
+        "bike lane",
+        "自行車道",
+        "自転車専用レーン",
+        "Please keep out of the bike lane.",
+        "請不要走進自行車道。",
+        "自転車専用レーンには入らないでください。",
+      ),
+    ],
+  },
+  {
+    id: "billboard",
+    oldJa: "看板",
+    ja: "広告看板",
+    oldJaReading: "かんばん",
+    jaReading: "こうこくかんばん",
+    jaDefinition: {
+      old: "「看板」とは、広告を目的として屋外に設置される大型の看板のことです。",
+      value: "「広告看板」とは、広告を表示するために屋外に設置される大型の看板です。",
+    },
+    examples: [
+      dailyStreetExample(
+        "billboard",
+        "廣告看板",
+        "看板",
+        "That billboard is easy to see from the station.",
+        "從車站就能清楚看到那面廣告看板。",
+        "あの広告看板は駅からよく見えます。",
+      ),
+    ],
+  },
+  {
+    id: "bridge",
+    examples: [
+      dailyStreetExample(
+        "bridge",
+        "橋",
+        "橋",
+        "We crossed the bridge on foot.",
+        "我們走路過了那座橋。",
+        "橋を歩いて渡りました。",
+      ),
+    ],
+  },
+  {
+    id: "bus-stop",
+    examples: [
+      dailyStreetExample(
+        "bus stop",
+        "公車站",
+        "バス停",
+        "The bus stop is in front of the convenience store.",
+        "公車站在便利商店前面。",
+        "バス停はコンビニの前です。",
+      ),
+    ],
+  },
+  {
+    id: "cafe",
+    examples: [
+      dailyStreetExample(
+        "cafe",
+        "咖啡店",
+        "カフェ",
+        "Let's have coffee at that cafe.",
+        "我們去那間咖啡店喝咖啡吧。",
+        "あのカフェでコーヒーを飲みましょう。",
+      ),
+    ],
+  },
+  {
+    id: "construction-zone",
+    examples: [
+      dailyStreetExample(
+        "construction zone",
+        "施工區",
+        "工事現場",
+        "Be careful near the construction zone.",
+        "經過施工區附近時請小心。",
+        "工事現場の近くでは気をつけてください。",
+      ),
+    ],
+  },
+  {
+    id: "convenience-store",
+    examples: [
+      dailyStreetExample(
+        "convenience store",
+        "便利商店",
+        "コンビニ",
+        "I'll buy some water at the convenience store.",
+        "我去便利商店買水。",
+        "コンビニで水を買ってきます。",
+      ),
+    ],
+  },
+  {
+    id: "corner",
+    examples: [
+      dailyStreetExample(
+        "corner",
+        "路口轉角",
+        "角",
+        "Turn right at the next corner.",
+        "請在下一個轉角右轉。",
+        "次の角を右に曲がってください。",
+      ),
+    ],
+  },
+  {
+    id: "crosswalk",
+    jaDefinition: {
+      old: "「横断歩道」とは、歩行者が安全に道路を横断できるように道路上に標識された水路のことです。",
+      value: "「横断歩道」とは、歩行者が道路を安全に横断できるよう、路面に標示された通行区域です。",
+    },
+  },
+  {
+    id: "fire-hydrant",
+    examples: [
+      dailyStreetExample(
+        "fire hydrant",
+        "消防栓",
+        "消火栓",
+        "Don't park in front of the fire hydrant.",
+        "請不要停在消防栓前面。",
+        "消火栓の前に駐車しないでください。",
+      ),
+    ],
+  },
+  {
+    id: "flower-bed",
+    examples: [
+      dailyStreetExample(
+        "flower bed",
+        "花圃",
+        "花壇",
+        "Don't step into the flower bed.",
+        "請不要踩進花圃。",
+        "花壇の中に入らないでください。",
+      ),
+    ],
+  },
+  {
+    id: "intersection",
+    examples: [
+      dailyStreetExample(
+        "intersection",
+        "十字路口",
+        "交差点",
+        "Turn left at the next intersection.",
+        "請在下一個路口左轉。",
+        "次の交差点を左に曲がってください。",
+      ),
+    ],
+  },
+  {
+    id: "lane",
+    oldZh: "車道",
+    zh: "車線",
+    enDefinition: {
+      old: "A narrow strip of road or path, often part of a larger road.",
+      value: "One of the marked sections of a road used by a single line of traffic.",
+    },
+    jaDefinition: {
+      old: "「車線」とは、道路の狭いセクションであり、多くの場合、大きな道路の一部です。",
+      value: "「車線」とは、車が一列で通行できるよう、道路上の線などで区切られた部分です。",
+    },
+    chineseDefinition: {
+      old: "道路中較窄的一條，常為較大道路的一部分。",
+      value: "道路上以標線等區隔、供車輛成列行駛的區域。",
+    },
+    examples: [
+      dailyStreetExample(
+        "lane",
+        "車道",
+        "車線",
+        "Move into the left lane.",
+        "請切換到左側車線。",
+        "左の車線に移ってください。",
+      ),
+    ],
+  },
+  {
+    id: "manhole-cover",
+    oldZh: "水溝蓋",
+    zh: "人孔蓋",
+    jaDefinition: {
+      old: "「マンホールの蓋」は、道路の地下道の入り口を覆う取り外し可能な板状のカバーです。",
+      value: "「マンホールの蓋」は、地下設備を点検するための開口部を覆う、取り外し可能な蓋です。",
+    },
+    chineseDefinition: {
+      old: "覆蓋於街道地下通道入口、可拆下的板狀蓋子。",
+      value: "覆蓋地下設施檢修孔、可移動或拆下的蓋子。",
+    },
+    examples: [
+      dailyStreetExample(
+        "manhole cover",
+        "水溝蓋",
+        "マンホールの蓋",
+        "The manhole cover is slippery when wet.",
+        "人孔蓋濕了會很滑。",
+        "マンホールの蓋はぬれると滑りやすいです。",
+      ),
+    ],
+  },
+  {
+    id: "newsstand",
+    examples: [
+      dailyStreetExample(
+        "newsstand",
+        "報攤",
+        "新聞売店",
+        "I bought a newspaper at the newsstand.",
+        "我在報攤買了報紙。",
+        "新聞売店で新聞を買いました。",
+      ),
+    ],
+  },
+  {
+    id: "park",
+    examples: [
+      dailyStreetExample(
+        "park",
+        "公園",
+        "公園",
+        "Let's eat lunch in the park.",
+        "我們去公園吃午餐吧。",
+        "公園でお昼を食べましょう。",
+      ),
+    ],
+  },
+  {
+    id: "parking-lot",
+    examples: [
+      dailyStreetExample(
+        "parking lot",
+        "停車場",
+        "駐車場",
+        "The parking lot is full.",
+        "停車場已經滿了。",
+        "駐車場は満車です。",
+      ),
+    ],
+  },
+  {
+    id: "parking-meter",
+    examples: [
+      dailyStreetExample(
+        "parking meter",
+        "停車收費表",
+        "パーキングメーター",
+        "Put a 100-yen coin in the parking meter.",
+        "把一百日圓硬幣投入停車收費表。",
+        "パーキングメーターに百円硬貨を入れます。",
+      ),
+    ],
+  },
+  {
+    id: "parking-space",
+    examples: [
+      dailyStreetExample(
+        "parking space",
+        "停車位",
+        "駐車スペース",
+        "There's an empty parking space over there.",
+        "那邊有一個空的停車位。",
+        "あそこに空いている駐車スペースがあります。",
+      ),
+    ],
+  },
+  {
+    id: "pedestrian",
+    examples: [
+      dailyStreetExample(
+        "pedestrian",
+        "行人",
+        "歩行者",
+        "Pedestrians have the right of way here.",
+        "這裡行人優先。",
+        "ここでは歩行者が優先です。",
+      ),
+    ],
+  },
+  {
+    id: "pedestrian-bridge",
+    examples: [
+      dailyStreetExample(
+        "pedestrian bridge",
+        "天橋",
+        "歩道橋",
+        "Use the pedestrian bridge to cross the road.",
+        "走天橋到馬路對面吧。",
+        "歩道橋を渡って向こう側へ行きましょう。",
+      ),
+    ],
+  },
+  {
+    id: "pharmacy",
+    examples: [
+      dailyStreetExample(
+        "pharmacy",
+        "藥局",
+        "薬局",
+        "I'll pick up my medicine at the pharmacy.",
+        "我要去藥局領藥。",
+        "薬局で薬を受け取ります。",
+      ),
+    ],
+  },
+  {
+    id: "post-office",
+    examples: [
+      dailyStreetExample(
+        "post office",
+        "郵局",
+        "郵便局",
+        "I mailed the package at the post office.",
+        "我在郵局寄了包裹。",
+        "郵便局で荷物を送りました。",
+      ),
+    ],
+  },
+  {
+    id: "power-lines",
+    examples: [
+      dailyStreetExample(
+        "power lines",
+        "電線",
+        "電線",
+        "The power lines are swaying in the wind.",
+        "電線被風吹得搖晃。",
+        "電線が風で揺れています。",
+      ),
+    ],
+  },
+  {
+    id: "restaurant",
+    examples: [
+      dailyStreetExample(
+        "restaurant",
+        "餐廳",
+        "レストラン",
+        "I booked a table at the restaurant.",
+        "我已經訂好餐廳了。",
+        "レストランを予約しました。",
+      ),
+    ],
+  },
+  {
+    id: "road",
+    examples: [
+      dailyStreetExample(
+        "road",
+        "馬路",
+        "道路",
+        "This road is closed at night.",
+        "這條馬路晚上禁止通行。",
+        "この道路は夜間通行止めです。",
+      ),
+    ],
+  },
+  {
+    id: "roundabout",
+    examples: [
+      dailyStreetExample(
+        "roundabout",
+        "圓環",
+        "ロータリー",
+        "Take the second exit at the roundabout.",
+        "請從圓環的第二個出口出去。",
+        "ロータリーの二つ目の出口を出てください。",
+      ),
+    ],
+  },
+  {
+    id: "security-camera",
+    examples: [
+      dailyStreetExample(
+        "security camera",
+        "監視器",
+        "防犯カメラ",
+        "A security camera is installed above the entrance.",
+        "入口上方裝有監視器。",
+        "入口の上に防犯カメラが付いています。",
+      ),
+    ],
+  },
+  {
+    id: "shop",
+    examples: [
+      dailyStreetExample(
+        "shop",
+        "商店",
+        "店",
+        "That shop closes at eight.",
+        "那間商店八點關門。",
+        "あの店は八時に閉まります。",
+      ),
+    ],
+  },
+  {
+    id: "signboard",
+    examples: [
+      dailyStreetExample(
+        "signboard",
+        "招牌",
+        "看板",
+        "The shop's signboard is easy to spot.",
+        "那間店的招牌很顯眼。",
+        "店の看板がよく目立ちます。",
+      ),
+    ],
+  },
+  {
+    id: "station",
+    examples: [
+      dailyStreetExample(
+        "station",
+        "車站",
+        "駅",
+        "I'll meet you in front of the station.",
+        "我們在車站前碰面吧。",
+        "駅の前で待ち合わせましょう。",
+      ),
+    ],
+  },
+  {
+    id: "stop-sign",
+    enDefinition: {
+      old: "An octagonal red sign instructing drivers to stop.",
+      value: "In Japan, a red inverted triangular sign instructing drivers to stop.",
+    },
+    jaDefinition: {
+      old: "「一時停止標識」は、ドライバーに停止する必要があることを示す八角形の赤い標識です。",
+      value: "「一時停止標識」は、運転者に一時停止を指示する赤い逆三角形の標識です。",
+    },
+    chineseDefinition: {
+      old: "八角形紅色標誌，指示駕駛人必須停車。",
+      value: "日本用來指示駕駛人必須停車的紅色倒三角形標誌。",
+    },
+    examples: [
+      dailyStreetExample(
+        "stop sign",
+        "停車標誌",
+        "一時停止標識",
+        "Come to a complete stop at the stop sign.",
+        "看到停車標誌時一定要完全停下。",
+        "一時停止標識では必ず止まってください。",
+      ),
+    ],
+  },
+  {
+    id: "street",
+    examples: [
+      dailyStreetExample(
+        "street",
+        "街道",
+        "通り",
+        "This street is quiet at night.",
+        "這條街晚上很安靜。",
+        "この通りは夜になると静かです。",
+      ),
+    ],
+  },
+  {
+    id: "street-sign",
+    oldJa: "道路標識",
+    ja: "案内標識",
+    oldJaReading: "どうろひょうしき",
+    jaReading: "あんないひょうしき",
+    jaDefinition: {
+      old: "「道路標識」とは、道路上に設置され、通りの名前や関連情報を表示する標識です。",
+      value: "「案内標識」とは、道路上で地名、方向、施設などの案内情報を示す標識です。",
+    },
+    examples: [
+      {
+        sortOrder: 0,
+        oldEn: "Read the street sign carefully.",
+        en: "Follow the directions on the street sign.",
+        oldZh: "仔細看路標。",
+        zh: "請依照路標上的指示前進。",
+        oldJa: "道路標識をよく見てください。",
+        ja: "案内標識に従って進んでください。",
+      },
+      {
+        sortOrder: 1,
+        oldEn: "The street sign was bent.",
+        en: "The street sign points to the station.",
+        oldZh: "路標彎掉了。",
+        zh: "路標指向車站的方向。",
+        oldJa: "道路標識が曲がっていました。",
+        ja: "案内標識は駅の方向を示しています。",
+      },
+      {
+        sortOrder: 2,
+        oldEn: "There's a stop sign at the corner.",
+        en: "There's a street sign at the intersection.",
+        oldZh: "轉角有停車標誌。",
+        zh: "路口設有路標。",
+        oldJa: "角に一時停止標識があります。",
+        ja: "交差点に案内標識があります。",
+      },
+    ],
+  },
+  {
+    id: "subway-station",
+    examples: [
+      dailyStreetExample(
+        "subway station",
+        "地鐵站",
+        "地下鉄の駅",
+        "The subway station entrance is across the street.",
+        "地鐵站入口在街道對面。",
+        "地下鉄の駅の入口は通りの向こう側です。",
+      ),
+    ],
+  },
+  {
+    id: "supermarket",
+    jaDefinition: {
+      old: "「スーパー」とは、食料品や日用品を販売し、セルフサービスサービスを提供する大型小売店です。",
+      value: "「スーパー」とは、食料品や日用品などをセルフサービス方式で販売する大型小売店です。",
+    },
+    examples: [
+      dailyStreetExample(
+        "supermarket",
+        "超市",
+        "スーパー",
+        "I'm going to the supermarket after work.",
+        "我下班後要去超市。",
+        "仕事のあとでスーパーに寄ります。",
+      ),
+    ],
+  },
+  {
+    id: "taxi-stand",
+    examples: [
+      dailyStreetExample(
+        "taxi stand",
+        "計程車站",
+        "タクシー乗り場",
+        "Let's wait at the taxi stand.",
+        "我們在計程車站等吧。",
+        "タクシー乗り場で待ちましょう。",
+      ),
+    ],
+  },
+  {
+    id: "traffic-cone",
+    examples: [
+      dailyStreetExample(
+        "traffic cone",
+        "交通錐",
+        "カラーコーン",
+        "The traffic cones mark the work area.",
+        "交通錐把施工區圍了起來。",
+        "カラーコーンで作業区域が囲まれています。",
+      ),
+    ],
+  },
+  {
+    id: "traffic-sign",
+    examples: [
+      dailyStreetExample(
+        "traffic sign",
+        "交通標誌",
+        "交通標識",
+        "Follow the traffic signs.",
+        "請依照交通標誌行駛。",
+        "交通標識に従って進んでください。",
+      ),
+    ],
+  },
+  {
+    id: "tree",
+    examples: [
+      dailyStreetExample(
+        "tree",
+        "樹",
+        "木",
+        "Let's rest in the shade of that tree.",
+        "我們去那棵樹下休息吧。",
+        "あの木の下で休みましょう。",
+      ),
+    ],
+  },
+  {
+    id: "tunnel",
+    examples: [
+      dailyStreetExample(
+        "tunnel",
+        "隧道",
+        "トンネル",
+        "Turn on the headlights in the tunnel.",
+        "進隧道時請開車燈。",
+        "トンネルではライトをつけてください。",
+      ),
+    ],
+  },
+  {
+    id: "underpass",
+    examples: [
+      dailyStreetExample(
+        "underpass",
+        "地下道",
+        "地下道",
+        "Use the underpass to cross the road.",
+        "走地下道到馬路對面。",
+        "地下道を通って道路の向こう側へ行きます。",
+      ),
+    ],
+  },
+  {
+    id: "utility-pole",
+    examples: [
+      dailyStreetExample(
+        "utility pole",
+        "電線桿",
+        "電柱",
+        "I'm waiting by the utility pole.",
+        "我在電線桿旁邊等。",
+        "電柱のそばで待っています。",
+      ),
+    ],
+  },
+  {
+    id: "vending-machine",
+    examples: [
+      dailyStreetExample(
+        "vending machine",
+        "自動販賣機",
+        "自動販売機",
+        "I bought a bottle of tea from the vending machine.",
+        "我在自動販賣機買了一瓶茶。",
+        "自動販売機でお茶を買いました。",
+      ),
+    ],
+  },
+  {
     id: "mailbox",
     oldZh: "信箱",
     zh: "郵筒",
+    enDefinition: {
+      old: "A box for receiving or sending mail.",
+      value: "A public box where people post letters and other mail for collection.",
+    },
+    jaDefinition: {
+      old: "「郵便ポスト」とは、郵便物を受信または送信するために使用されるボックスです。",
+      value: "「郵便ポスト」は、手紙やはがきなどの郵便物を投函するための公共の箱です。",
+    },
+    chineseDefinition: {
+      old: "用以收取或寄送郵件的箱子。",
+      value: "供人投入信件、明信片等郵件，等待郵務人員收取的公共箱體。",
+    },
     examples: [
       {
         sortOrder: 0,
@@ -379,6 +1078,8 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
         en: "The mailbox is on the corner.",
         oldZh: "明天去看信箱。",
         zh: "郵筒在街角。",
+        oldJa: "明日、郵便ポストを確認してください。",
+        ja: "郵便ポストは街角にあります。",
       },
     ],
   },
@@ -388,6 +1089,28 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     ja: "歩行者用押しボタン",
     oldJaReading: "おしボタンしきしんごう",
     jaReading: "ほこうしゃようおしボタン",
+    jaReadingSegments: [
+      { text: "歩", ruby: "ほ" },
+      { text: "行", ruby: "こう" },
+      { text: "者", ruby: "しゃ" },
+      { text: "用", ruby: "よう" },
+      { text: "押", ruby: "お" },
+      { text: "しボタン", ruby: null },
+    ],
+    jaDefinition: {
+      old: "「歩行者用押しボタン」は横断歩道の横にあるボタンです。これを押すと、青信号の通過を要求できます。",
+      value: "「歩行者用押しボタン」は横断歩道のそばにあるボタンです。押すと、歩行者用信号が青信号に変わるよう要求できます。",
+    },
+    examples: [
+      dailyStreetExample(
+        "pedestrian button",
+        "行人按鈕",
+        "歩行者用押しボタン",
+        "Press the pedestrian button and wait.",
+        "按下行人按鈕後等一下。",
+        "歩行者用押しボタンを押して待ちましょう。",
+      ),
+    ],
   },
   {
     id: "roadblock",
@@ -430,9 +1153,12 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "You can see the roadblock on the street.",
-        en: "You can see the barricade on the street.",
+        previousEn: "You can see the barricade on the street.",
+        en: "The barricade is blocking the road.",
         oldZh: "你可以在街上看到路障。",
-        zh: "你可以在街上看到路障。",
+        zh: "路障把道路封住了。",
+        oldJa: "街でバリケードを見ることができます。",
+        ja: "バリケードで道路がふさがれています。",
       },
     ],
   },
@@ -488,9 +1214,13 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "You can see the street vendor on the street.",
-        en: "You can see the food cart on the street.",
+        previousEn: "You can see the food cart on the street.",
+        en: "Let's get ramen at the food cart.",
         oldZh: "你可以在街上看到路邊攤。",
-        zh: "你可以在街上看到餐車。",
+        previousZh: "你可以在街上看到餐車。",
+        zh: "我們去餐車吃拉麵吧。",
+        oldJa: "街で屋台を見ることができます。",
+        ja: "屋台でラーメンを食べましょう。",
       },
     ],
   },
@@ -548,11 +1278,14 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "You can see the vendor on the street.",
-        en: "You can see the market stall on the street.",
+        previousEn: "You can see the market stall on the street.",
+        en: "I bought vegetables at the market stall.",
         oldZh: "你可以在街上看到攤販。",
-        zh: "你可以在街上看到市場攤位。",
+        previousZh: "你可以在街上看到市場攤位。",
+        zh: "我在市場攤位買了蔬菜。",
         oldJa: "街で売り手を見ることができます。",
-        ja: "街で露店を見ることができます。",
+        previousJa: "街で露店を見ることができます。",
+        ja: "露店で野菜を買いました。",
       },
     ],
   },
@@ -1542,7 +2275,10 @@ export async function applyMainWordCorrections(sql: Sql): Promise<number> {
 
       if (correction.ja) {
         const reading = correction.jaReading ?? correction.ja;
-        const readingSegments = segmentFurigana(correction.ja, reading, new Map());
+        const readingSegments =
+          correction.jaReadingSegments !== undefined
+            ? correction.jaReadingSegments
+            : segmentFurigana(correction.ja, reading, new Map());
         await tx`
           INSERT INTO word_terms (
             word_id, language, term, reading, pronunciation, reading_segments

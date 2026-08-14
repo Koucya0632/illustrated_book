@@ -136,6 +136,124 @@ test("slow cooker correction replaces the whole concept, not only its label", ()
   assert.match(correction.examples?.[0]?.zh ?? "", /慢燉鍋/);
 });
 
+const GENERIC_STREET_EXAMPLE_IDS = [
+  "alley",
+  "bank",
+  "bike-lane",
+  "billboard",
+  "bridge",
+  "bus-stop",
+  "cafe",
+  "construction-zone",
+  "convenience-store",
+  "corner",
+  "fire-hydrant",
+  "flower-bed",
+  "intersection",
+  "lane",
+  "manhole-cover",
+  "newsstand",
+  "park",
+  "parking-lot",
+  "parking-meter",
+  "parking-space",
+  "pedestrian",
+  "pedestrian-bridge",
+  "pedestrian-button",
+  "pharmacy",
+  "post-office",
+  "power-lines",
+  "restaurant",
+  "road",
+  "roadblock",
+  "roundabout",
+  "security-camera",
+  "shop",
+  "signboard",
+  "station",
+  "stop-sign",
+  "street",
+  "street-vendor",
+  "subway-station",
+  "supermarket",
+  "taxi-stand",
+  "traffic-cone",
+  "traffic-sign",
+  "tree",
+  "tunnel",
+  "underpass",
+  "utility-pole",
+  "vending-machine",
+  "vendor",
+] as const;
+
+test("street corrections replace every generic template with a concrete daily example", () => {
+  for (const id of GENERIC_STREET_EXAMPLE_IDS) {
+    const correction = MAIN_WORD_CORRECTIONS.find((entry) => entry.id === id);
+    assert.ok(correction, `missing correction for ${id}`);
+    const example = correction.examples?.find(({ sortOrder }) => sortOrder === 0);
+    assert.ok(example, `missing primary example correction for ${id}`);
+    assert.doesNotMatch(example.en, /^You can see .+ on the street\.$/);
+    assert.doesNotMatch(example.ja ?? "", /^街で.+を見ることができます。$/);
+    assert.doesNotMatch(example.zh, /^你可以在街上看到.+。$/);
+  }
+});
+
+test("street concept corrections keep regional facts, labels, and examples aligned", () => {
+  const byId = new Map(MAIN_WORD_CORRECTIONS.map((entry) => [entry.id, entry]));
+
+  assert.match(byId.get("crosswalk")?.jaDefinition?.value ?? "", /道路/);
+  assert.doesNotMatch(byId.get("crosswalk")?.jaDefinition?.value ?? "", /水路/);
+
+  const mailbox = byId.get("mailbox");
+  assert.match(mailbox?.jaDefinition?.value ?? "", /投函/);
+  const mailboxCorner = mailbox?.examples?.find(({ sortOrder }) => sortOrder === 2);
+  assert.equal(mailboxCorner?.ja, "郵便ポストは街角にあります。");
+  assert.equal(mailboxCorner?.zh, "郵筒在街角。");
+
+  const manhole = byId.get("manhole-cover");
+  assert.equal(manhole?.zh, "人孔蓋");
+  assert.doesNotMatch(manhole?.jaDefinition?.value ?? "", /地下道/);
+  assert.match(manhole?.jaDefinition?.value ?? "", /地下設備/);
+
+  const lane = byId.get("lane");
+  assert.equal(lane?.zh, "車線");
+  assert.match(lane?.jaDefinition?.value ?? "", /区切/);
+
+  const stopSign = byId.get("stop-sign");
+  assert.match(stopSign?.jaDefinition?.value ?? "", /逆三角形/);
+  assert.doesNotMatch(stopSign?.jaDefinition?.value ?? "", /八角形/);
+  assert.match(stopSign?.chineseDefinition?.value ?? "", /倒三角形/);
+
+  assert.doesNotMatch(
+    byId.get("supermarket")?.jaDefinition?.value ?? "",
+    /サービスサービス/,
+  );
+
+  const pedestrianButton = byId.get("pedestrian-button");
+  assert.deepEqual(
+    pedestrianButton?.jaReadingSegments,
+    [
+      { text: "歩", ruby: "ほ" },
+      { text: "行", ruby: "こう" },
+      { text: "者", ruby: "しゃ" },
+      { text: "用", ruby: "よう" },
+      { text: "押", ruby: "お" },
+      { text: "しボタン", ruby: null },
+    ],
+  );
+  assert.match(pedestrianButton?.jaDefinition?.value ?? "", /青信号に変わる/);
+
+  const streetSign = byId.get("street-sign");
+  assert.equal(streetSign?.ja, "案内標識");
+  assert.equal(streetSign?.jaReading, "あんないひょうしき");
+  assert.match(streetSign?.jaDefinition?.value ?? "", /^「案内標識」/);
+  assert.doesNotMatch(streetSign?.examples?.[0]?.ja ?? "", /一時停止/);
+
+  assert.equal(byId.get("billboard")?.ja, "広告看板");
+  assert.notEqual(byId.get("billboard")?.ja, byId.get("signboard")?.ja ?? "看板");
+});
+
 const GENERIC_SEASONING_EXAMPLE_IDS = [
   "apple-cider-vinegar",
   "baking-powder",

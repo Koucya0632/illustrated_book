@@ -254,6 +254,116 @@ test("street concept corrections keep regional facts, labels, and examples align
   assert.notEqual(byId.get("billboard")?.ja, byId.get("signboard")?.ja ?? "看板");
 });
 
+const GENERIC_OFFICE_EXAMPLE_IDS = [
+  "access-card",
+  "ballpoint-pen",
+  "binder-clip",
+  "business-card",
+  "calendar",
+  "coffee-machine",
+  "computer",
+  "conference-table",
+  "document",
+  "employee-id-card",
+  "envelope",
+  "eraser",
+  "file-folder",
+  "filing-cabinet",
+  "folder",
+  "glue",
+  "headphones",
+  "highlighter",
+  "marker",
+  "meeting-room",
+  "microphone",
+  "mobile-phone",
+  "mouse-pad",
+  "notepad",
+  "office-chair",
+  "office-supplies",
+  "paper",
+  "paper-clip",
+  "paper-shredder",
+  "photocopier",
+  "reception-desk",
+  "ruler",
+  "scanner",
+  "staples",
+  "sticky-notes",
+  "tape",
+  "utility-knife",
+  "water-dispenser",
+  "webcam",
+  "whiteboard",
+  "whiteboard-marker",
+] as const;
+
+test("office corrections replace every generic template with a concrete daily example", () => {
+  for (const id of GENERIC_OFFICE_EXAMPLE_IDS) {
+    const correction = MAIN_WORD_CORRECTIONS.find((entry) => entry.id === id);
+    assert.ok(correction, `missing correction for ${id}`);
+    const example = correction.examples?.find(({ sortOrder }) => sortOrder === 0);
+    assert.ok(example, `missing primary example correction for ${id}`);
+    assert.doesNotMatch(example.en, /^I need .+ at the office\.$/);
+    assert.doesNotMatch(example.ja ?? "", /^オフィスで.+が必要です。$/);
+    assert.doesNotMatch(example.zh, /^我在辦公室需要.+。$/);
+  }
+});
+
+test("office concept corrections keep adjacent objects and daily Japanese distinct", () => {
+  const byId = new Map(MAIN_WORD_CORRECTIONS.map((entry) => [entry.id, entry]));
+
+  const accessCard = byId.get("access-card");
+  assert.equal(accessCard?.ja, "入館カード");
+  assert.equal(accessCard?.jaReading, "にゅうかんカード");
+  assert.doesNotMatch(accessCard?.jaDefinition?.value ?? "", /身分証明書/);
+
+  assert.equal(byId.get("calendar")?.zh, "日曆");
+  assert.equal(byId.get("desk")?.zh, "辦公桌");
+
+  const filingCabinet = byId.get("filing-cabinet");
+  assert.equal(filingCabinet?.ja, "ファイリングキャビネット");
+  assert.equal(filingCabinet?.jaReading, "ファイリングキャビネット");
+  assert.match(filingCabinet?.jaDefinition?.value ?? "", /引き出し/);
+
+  assert.equal(byId.get("file-folder")?.ja, "個別フォルダー");
+  assert.equal(byId.get("folder")?.ja, "クリアファイル");
+  assert.notEqual(byId.get("file-folder")?.ja, byId.get("folder")?.ja);
+
+  assert.doesNotMatch(byId.get("headphones")?.jaDefinition?.value ?? "", /耳に挿入/);
+  assert.doesNotMatch(byId.get("keyboard")?.jaDefinition?.value ?? "", /鍵盤楽器/);
+  assert.equal(byId.get("notepad")?.zh, "便條本");
+
+  assert.equal(byId.get("paper-clip")?.ja, "ゼムクリップ");
+  assert.equal(byId.get("pen")?.zh, "筆");
+  assert.notEqual(byId.get("pen")?.zh, byId.get("ballpoint-pen")?.zh);
+
+  assert.doesNotMatch(byId.get("utility-knife")?.jaDefinition?.value ?? "", /ポケットナイフ/);
+  assert.equal(byId.get("marker")?.ja, "油性マーカー");
+  assert.notEqual(byId.get("marker")?.ja, byId.get("whiteboard-marker")?.ja);
+  assert.equal(byId.get("mobile-phone")?.ja, "スマートフォン");
+
+  for (const id of ["access-card", "file-folder", "marker"]) {
+    const correction = byId.get(id);
+    const segments = segmentFurigana(
+      correction?.ja ?? "",
+      correction?.jaReading ?? "",
+      new Map(),
+    );
+    assert.ok(segments, `expected furigana segments for ${id}`);
+    assert.equal(
+      segments.map(({ text }) => text).join(""),
+      correction?.ja,
+      `furigana headword mismatch for ${id}`,
+    );
+    assert.equal(
+      segments.map(({ text, ruby }) => ruby ?? text).join(""),
+      correction?.jaReading,
+      `furigana reading mismatch for ${id}`,
+    );
+  }
+});
+
 const GENERIC_SEASONING_EXAMPLE_IDS = [
   "apple-cider-vinegar",
   "baking-powder",

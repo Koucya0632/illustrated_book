@@ -1,9 +1,10 @@
 import type postgres from "postgres";
 import { segmentFurigana } from "./kana";
+import { OFFICE_MAIN_WORD_CORRECTIONS } from "./office-main-word-corrections";
 
 type Sql = ReturnType<typeof postgres>;
 
-type ExampleCorrection = {
+export type ExampleCorrection = {
   sortOrder: number;
   oldEn: string;
   previousEn?: string;
@@ -16,22 +17,24 @@ type ExampleCorrection = {
   ja?: string;
 };
 
-type TextCorrection = { old: string; value: string };
+export type TextCorrection = { old: string; value: string };
 
-type LocalizedTextCorrection = TextCorrection & {
+export type LocalizedTextCorrection = TextCorrection & {
   field: "etymology" | "note";
   language: "en" | "ja";
 };
 
-type MainWordCorrection = {
+export type MainWordCorrection = {
   id: string;
   oldWord?: string;
   word?: string;
   oldZh?: string;
   zh?: string;
   oldJa?: string;
+  previousJa?: string;
   ja?: string;
   oldJaReading?: string;
+  previousJaReading?: string;
   jaReading?: string;
   jaReadingSegments?: { text: string; ruby: string | null }[] | null;
   enDefinition?: TextCorrection;
@@ -242,11 +245,14 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
       {
         sortOrder: 0,
         oldEn: "I need the eraser at the office.",
-        en: "I need the whiteboard eraser at the office.",
+        previousEn: "I need the whiteboard eraser at the office.",
+        en: "Please erase the whiteboard after the meeting.",
         oldZh: "我在辦公室需要板擦。",
-        zh: "我在辦公室需要白板擦。",
+        previousZh: "我在辦公室需要白板擦。",
+        zh: "會議結束後請把白板擦乾淨。",
         oldJa: "オフィスで消しゴムが必要です。",
-        ja: "オフィスでホワイトボード用イレーザーが必要です。",
+        previousJa: "オフィスでホワイトボード用イレーザーが必要です。",
+        ja: "会議のあと、ホワイトボード用イレーザーで消してください。",
       },
     ],
   },
@@ -291,21 +297,90 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     ja: "パソコン",
     oldJaReading: "コンピューター",
     jaReading: "パソコン",
+    examples: [
+      {
+        sortOrder: 0,
+        oldEn: "I need the computer at the office.",
+        en: "Please restart the computer.",
+        oldZh: "我在辦公室需要電腦。",
+        zh: "請重新啟動電腦。",
+        oldJa: "オフィスでパソコンが必要です。",
+        ja: "パソコンを再起動してください。",
+      },
+    ],
   },
   {
     id: "paper-clip",
     oldJa: "ペーパークリップ",
-    ja: "クリップ",
+    previousJa: "クリップ",
+    ja: "ゼムクリップ",
     oldJaReading: "ペーパークリップ",
-    jaReading: "クリップ",
+    previousJaReading: "クリップ",
+    jaReading: "ゼムクリップ",
+    enDefinition: {
+      old: "A small metal or plastic clip used to hold papers together.",
+      value: "A small looped wire clip used to hold a few sheets of paper together.",
+    },
+    jaDefinition: {
+      old: "「クリップ」は、紙の束を保持するために使用される小さな金属またはプラスチックのクランプです。",
+      value: "「ゼムクリップ」は、数枚の紙をまとめて留めるための、針金を曲げて作った小さな文房具です。",
+    },
+    chineseDefinition: {
+      old: "金屬或塑膠製的小型夾具，用以夾住一疊紙張。",
+      value: "以彎曲金屬線製成、用來夾住少量紙張的文具。",
+    },
+    localizedTexts: [
+      {
+        field: "etymology",
+        language: "ja",
+        old: "複合語 paper + clip。",
+        value: "ゼム（Gem）+ クリップ。紙を留める針金製のクリップ。",
+      },
+      {
+        field: "note",
+        language: "ja",
+        old: "paper（紙）+ clip（クリップ）。",
+        value: "紙を留める針金製のクリップ。",
+      },
+    ],
+    examples: [
+      {
+        sortOrder: 0,
+        oldEn: "I need the paper clip at the office.",
+        en: "Fasten these pages with a paper clip.",
+        oldZh: "我在辦公室需要迴紋針。",
+        zh: "請用迴紋針夾住這幾張紙。",
+        oldJa: "オフィスでペーパークリップが必要です。",
+        previousJa: "オフィスでクリップが必要です。",
+        ja: "この書類はゼムクリップで留めてください。",
+      },
+    ],
   },
   {
     id: "reception-desk",
+    oldZh: "接待處",
+    zh: "接待櫃檯",
     oldJa: "受付",
     ja: "受付カウンター",
     oldJaReading: "うけつけ",
     jaReading: "うけつけカウンター",
+    chineseDefinition: {
+      old: "建築物入口處用以迎接訪客的櫃台。",
+      value: "設於建築物入口、供訪客報到或詢問事項的櫃檯。",
+    },
+    examples: [
+      {
+        sortOrder: 0,
+        oldEn: "I need the reception desk at the office.",
+        en: "Please check in at the reception desk.",
+        oldZh: "我在辦公室需要接待處。",
+        zh: "請先到接待櫃檯報到。",
+        oldJa: "オフィスで受付カウンターが必要です。",
+        ja: "受付カウンターで手続きをしてください。",
+      },
+    ],
   },
+  ...OFFICE_MAIN_WORD_CORRECTIONS,
   {
     id: "cashier",
     oldZh: "收銀員 / 收銀台",
@@ -2297,11 +2372,19 @@ export async function applyMainWordCorrections(sql: Sql): Promise<number> {
             pronunciation = EXCLUDED.pronunciation,
             reading_segments = EXCLUDED.reading_segments,
             updated_at = now()
-          WHERE word_terms.term IN (${correction.oldJa ?? correction.ja}, ${correction.ja})
+          WHERE word_terms.term IN (
+              ${correction.oldJa ?? correction.ja},
+              ${correction.previousJa ?? correction.oldJa ?? correction.ja},
+              ${correction.ja}
+            )
             AND (
               ${correction.oldJaReading ?? reading}::text IS NULL
               OR word_terms.reading IS NULL
-              OR word_terms.reading IN (${correction.oldJaReading ?? reading}, ${reading})
+              OR word_terms.reading IN (
+                ${correction.oldJaReading ?? reading},
+                ${correction.previousJaReading ?? correction.oldJaReading ?? reading},
+                ${reading}
+              )
             )
         `;
       }

@@ -5,7 +5,8 @@
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
 import { words as staticWords } from "./words";
-import { localizeWord, type LocalizedTextMap } from "./word-localize";
+import { SPANS_VERSION, spansCoverSentence, unlinkSelfReference } from "./example-spans";
+import { localizeSpans, localizeWord, type LocalizedTextMap } from "./word-localize";
 import {
   targetLanguageFor,
   type LearningDirection,
@@ -13,11 +14,13 @@ import {
 } from "./settings";
 import type {
   CardWord,
+  GlossSpan,
   CEFRLevel,
   CategoryId,
   Definition,
   Example,
   FuriganaSegment,
+  GlossSpanRow,
   RelationType,
   Word,
   WordRelation,
@@ -294,6 +297,88 @@ async function targetTermMap(
   return new Map(rows.map((r) => [r.word_id, r]));
 }
 
+// ---- 詞塊 (sentence annotation) -----------------------------------------
+
+interface SpanRow {
+  sentence_language: string;
+  sentence: string;
+  text: string;
+  base_form: string | null;
+  part_of_speech: string | null;
+  reading: string | null;
+  word_id: string | null;
+  glosses: Record<string, string> | null;
+}
+
+/**
+ * 詞塊 for a set of sentences, fetched by the sentences themselves.
+ *
+ * Deliberately **not** folded into `fetchAllFromDb`. That query loads the
+ * entire catalogue into one `unstable_cache` entry, and spans are roughly an
+ * order of magnitude more rows than everything else in it put together — the
+ * blob would grow past the 2 MB Vercel data-cache ceiling and silently stop
+ * being cached at all, for data that only the word-detail screen reads. Lists,
+ * search and the study queue render no sentences.
+ *
+ * The caller passes the exact strings it is about to render — one word's
+ * example sentences plus its `targetDefinition` — so there is no join to a
+ * source table and no way to pair an annotation with the wrong sentence.
+ */
+const getSpanRowsCached = unstable_cache(
+  async (language: string, sentences: string[]): Promise<SpanRow[]> => {
+    const sql = getSql();
+    if (!sql || sentences.length === 0) return [];
+    return sql<SpanRow[]>`
+      SELECT
+        s.sentence_language, s.sentence,
+        s.text, s.base_form, s.part_of_speech, s.reading, s.word_id,
+        (SELECT jsonb_object_agg(g.language, g.gloss)
+         FROM sentence_span_glosses g
+         WHERE g.sentence_language = s.sentence_language
+           AND g.sentence = s.sentence
+           AND g.sort_order = s.sort_order) AS glosses
+      FROM sentence_spans s
+      WHERE s.sentence_language = ${language}
+        AND s.sentence = ANY(${sentences})
+        AND s.version >= ${SPANS_VERSION}
+      ORDER BY s.sentence, s.sort_order
+    `;
+  },
+  ["sentence-spans-v1"],
+  { tags: ["words"], revalidate: 300 },
+);
+
+async function spansForSentences(
+  language: string,
+  sentences: string[],
+): Promise<Map<string, GlossSpanRow[]>> {
+  const out = new Map<string, GlossSpanRow[]>();
+  const wanted = [...new Set(sentences.filter(Boolean))];
+  if (!dbEnabled() || wanted.length === 0) return out;
+  let rows: SpanRow[];
+  try {
+    rows = await getSpanRowsCached(language, wanted);
+  } catch (err) {
+    // An un-annotated sentence and an unreachable annotation look the same on
+    // screen — plain text — so this must never take the detail down with it.
+    console.warn("[data] span read failed", err);
+    return out;
+  }
+  for (const r of rows) {
+    const list = out.get(r.sentence) ?? [];
+    list.push({
+      text: r.text,
+      glosses: r.glosses ?? {},
+      baseForm: r.base_form ?? undefined,
+      partOfSpeech: r.part_of_speech ?? undefined,
+      reading: r.reading ?? undefined,
+      wordId: r.word_id ?? undefined,
+    });
+    out.set(r.sentence, list);
+  }
+  return out;
+}
+
 /**
  * Short Japanese headwords, keyed by word id — the gloss a ja-UI reader needs,
  * regardless of which language they are learning.
@@ -355,6 +440,38 @@ export async function getLearningWord(
     );
   }
 
+  // 詞塊 last, once the sentences a reader will actually see are settled:
+  // `example.target` (the Japanese translation for a 日文 learner, not `en`)
+  // and the 譯義 line. Both are sentences in the language being learned, both
+  // are fetched by their own text, so an annotation can never be paired with a
+  // sentence it does not describe.
+  const annotated = await spansForSentences(targetLanguage, [
+    ...examples.map((e) => e.target ?? ""),
+    targetDefinition ?? "",
+  ]);
+  let targetDefinitionSpans: GlossSpan[] | undefined;
+  if (annotated.size) {
+    // Checked here as well as on the client. The client's check is what
+    // actually protects the render, but a set that fails is a data fault worth
+    // not shipping — and this is the layer that can still tell the difference
+    // between "no annotation" and "a broken one".
+    const attach = (sentence: string | undefined): GlossSpan[] | undefined => {
+      if (!sentence) return undefined;
+      const rows = annotated.get(sentence);
+      if (!rows?.length) return undefined;
+      if (!spansCoverSentence(rows, sentence)) {
+        console.warn("[data] spans do not cover sentence", id, sentence);
+        return undefined;
+      }
+      return localizeSpans(rows, lang);
+    };
+    examples = examples.map((example) => {
+      const spans = unlinkSelfReference(attach(example.target), id);
+      return spans ? { ...example, spans } : example;
+    });
+    targetDefinitionSpans = unlinkSelfReference(attach(targetDefinition), id);
+  }
+
   return {
     ...base,
     word: term?.term ?? base.word,
@@ -363,6 +480,7 @@ export async function getLearningWord(
     pronunciation: term?.pronunciation ?? term?.reading ?? base.pronunciation,
     targetLanguage,
     targetDefinition,
+    targetDefinitionSpans,
     examples,
     // These fields describe English morphology/usage. Japanese detail mode
     // hides them until genuine Japanese equivalents exist.

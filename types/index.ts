@@ -42,6 +42,48 @@ export interface Definition {
   sortOrder: number;
 }
 
+/** One tappable (or untappable) unit of an annotated example sentence — 詞塊.
+ *
+ *  Not "one word": `look forward to` is a single span, because to a learner it
+ *  is one unit and glossing the bare `to` inside it is wrong rather than
+ *  merely useless.
+ *
+ *  A span is tappable exactly when it has a gloss. There is no separate flag,
+ *  and the answer must not vary by interface language — see `glosses`. */
+export interface GlossSpan {
+  /** This span's slice of the sentence, verbatim, including whatever spaces
+   *  and punctuation belong to it. The spans of one sentence concatenate back
+   *  into it exactly; a set that does not is discarded whole. */
+  text: string;
+  /** The meaning *in this sentence*, in the requested UI language. Filled by
+   *  `localizeWord`; absent on function words and punctuation, which is what
+   *  makes them untappable. */
+  gloss?: string;
+  /** `running` → `run`. Absent when the span is already its own base form.
+   *  Deliberately not called `lemma`: that name is taken by the 自製圖鑑 item
+   *  headword (`atlas_items.lemma`). */
+  baseForm?: string;
+  /** Canonical English part of speech, as iOS `localizedPartOfSpeech` expects. */
+  partOfSpeech?: string;
+  /** Kana reading. Japanese sentences only. */
+  reading?: string;
+  /** The catalogue word this span teaches, when it is one — lets the client
+   *  offer a way into the word's own entry. Resolved by the annotation script
+   *  against the catalogue, never by the model. */
+  wordId?: string;
+}
+
+/** A 詞塊 as stored: every gloss language, none picked yet.
+ *
+ *  Never leaves the server. `localizeSpans` turns a list of these into
+ *  `GlossSpan[]` for one UI language, so the wire carries the one language
+ *  `?lang=` asked for rather than all three. */
+export interface GlossSpanRow extends Omit<GlossSpan, "gloss"> {
+  /** Keyed by UI language: 'zh-Hant' (the source of truth), 'ja', 'en'.
+   *  zh-Hans is never stored — OpenCC derives it at request time. */
+  glosses: Record<string, string>;
+}
+
 export interface Example {
   /** English source sentence. */
   en: string;
@@ -53,6 +95,11 @@ export interface Example {
   zh: string;
   /** Multilingual translations keyed by ISO 639-1 language code. */
   translations: Record<string, string>;
+  /** 詞塊 covering the sentence actually being served — i.e. `target`, which
+   *  for a 日文 learner is the Japanese translation and not `en`. Absent for
+   *  anything the annotation backfill has not reached, which is normal and
+   *  renders as the plain sentence. */
+  spans?: GlossSpan[];
   cefrLevel?: CEFRLevel;
   sortOrder: number;
 }
@@ -129,6 +176,11 @@ export interface Word {
   englishDefinition?: string;
   /** Definition in the active learning target language (`en` or `ja`). */
   targetDefinition?: string;
+  /** 詞塊 for `targetDefinition` — the 譯義 line is a sentence in the language
+   *  being learned, so it is tappable on the same terms an example is. The
+   *  Chinese explainer beside it is not: glossing Chinese for a Chinese reader
+   *  teaches nothing, and ja/en interfaces never see that line at all. */
+  targetDefinitionSpans?: GlossSpan[];
   /** Sentence-form Chinese definition stored in `words.chinese_definition`
    *  (zh-Hant base; localized to UI lang via word_localize). */
   chineseDefinition?: string;

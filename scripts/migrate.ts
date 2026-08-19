@@ -513,6 +513,73 @@ const DDL = [
      PRIMARY KEY (example_id, language)
    )`,
 
+  // ---- 詞塊: the tappable split of a sentence -------------------------
+  // Written by scripts/load-example-spans.ts, read only through lib/data.ts.
+  //
+  // **Keyed by the sentence itself, not by the row it came from.** The
+  // annotation is a property of the string: the same sentence always splits the
+  // same way, wherever it appears. That is what lets one table serve both the
+  // example sentences and the `targetDefinition` shown in 譯義 — the latter
+  // lives in word_definitions and has no example_id to hang off.
+  //
+  // It is also the safer identity. Keyed by id, editing a sentence leaves the
+  // *old* split attached to the new text; keyed by the sentence, an edit simply
+  // has no annotation yet. Absent beats wrong.
+  //
+  // `sentence_language` is which language the sentence is in ('en' | 'ja') —
+  // distinct from the gloss language below. An example is two sentences (the
+  // English source and its Japanese translation) and each has its own split.
+  //
+  // The rows for one sentence **cover the whole of it**: concatenating `text`
+  // in sort_order re-spells it exactly. Same invariant word_terms
+  // .reading_segments carries, and for the same reason — it is the half of the
+  // answer that can be checked. Clients that find it broken render plain text.
+  `CREATE TABLE IF NOT EXISTS sentence_spans (
+     sentence_language TEXT NOT NULL,
+     sentence          TEXT NOT NULL,
+     sort_order        INT NOT NULL,
+     text              TEXT NOT NULL,
+     base_form         TEXT,
+     part_of_speech    TEXT,
+     reading           TEXT,
+     word_id           TEXT,
+     version           INT NOT NULL DEFAULT 1,
+     PRIMARY KEY (sentence_language, sentence, sort_order)
+   )`,
+  `ALTER TABLE sentence_spans ENABLE ROW LEVEL SECURITY`,
+  `DROP POLICY IF EXISTS sentence_spans_public_read ON sentence_spans`,
+  `CREATE POLICY sentence_spans_public_read ON sentence_spans FOR SELECT USING (true)`,
+
+  // One row per span per gloss language. zh-Hant is the source of truth, ja and
+  // en are overlays, and zh-Hans is never stored (OpenCC converts it at request
+  // time) — the same split lib/word-localize.ts already applies to definitions
+  // and example translations.
+  //
+  // A span missing the requested language falls back to zh-Hant rather than
+  // going untappable: whether a word can be tapped must not depend on the
+  // interface language, or the same sentence loses half its live words in 日本語.
+  `CREATE TABLE IF NOT EXISTS sentence_span_glosses (
+     sentence_language TEXT NOT NULL,
+     sentence          TEXT NOT NULL,
+     sort_order        INT NOT NULL,
+     language          TEXT NOT NULL,
+     gloss             TEXT NOT NULL,
+     PRIMARY KEY (sentence_language, sentence, sort_order, language),
+     FOREIGN KEY (sentence_language, sentence, sort_order)
+       REFERENCES sentence_spans(sentence_language, sentence, sort_order)
+       ON DELETE CASCADE
+   )`,
+  `ALTER TABLE sentence_span_glosses ENABLE ROW LEVEL SECURITY`,
+  `DROP POLICY IF EXISTS sentence_span_glosses_public_read ON sentence_span_glosses`,
+  `CREATE POLICY sentence_span_glosses_public_read ON sentence_span_glosses
+     FOR SELECT USING (true)`,
+
+  // The example-keyed first cut, replaced by the pair above. Dropped rather
+  // than left behind: the data regenerates from data/example-spans.json in
+  // seconds, so a stale copy is only a second answer to the same question.
+  `DROP TABLE IF EXISTS word_example_span_glosses`,
+  `DROP TABLE IF EXISTS word_example_spans`,
+
   // ---- word_relations: typed graph (synonym / antonym / confusing / ...) ----
   // target_word_id is intentionally NOT a foreign key: legacy 'confusing'
   // notes (e.g. fridge → refrigerator) point at concept words that aren't in
@@ -1652,7 +1719,7 @@ const DDL = [
      description   TEXT NOT NULL CHECK (
                      char_length(btrim(description)) BETWEEN 1 AND 1000
                    ),
-     platform      TEXT NOT NULL CHECK (platform IN ('web','ios')),
+     platform      TEXT NOT NULL CHECK (platform IN ('web','ios','android')),
      app_version   TEXT,
      ui_lang       TEXT NOT NULL,
      status        TEXT NOT NULL DEFAULT 'pending' CHECK (status IN
@@ -1668,15 +1735,44 @@ const DDL = [
   `ALTER TABLE feedback ENABLE ROW LEVEL SECURITY`,
   // Feedback is written and managed through authenticated server routes.
   // No direct client policies are intentionally exposed in v1.
+  // Widen the platform CHECK for the Android client. The CREATE TABLE above
+  // only applies to a fresh DB, so an existing deployment needs the constraint
+  // replaced or every Android 意見回報 fails at insert time with a 500.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'feedback_platform_chk'
+         AND pg_get_constraintdef(oid) LIKE '%android%'
+     ) THEN
+       ALTER TABLE feedback DROP CONSTRAINT IF EXISTS feedback_platform_check;
+       ALTER TABLE feedback DROP CONSTRAINT IF EXISTS feedback_platform_chk;
+       ALTER TABLE feedback ADD CONSTRAINT feedback_platform_chk
+         CHECK (platform IN ('web','ios','android'));
+     END IF;
+   END $$`,
 
-  // ---- events v2: platform split (web|ios) + composite index ----
+  // ---- events v2: platform split (web|ios|android) + composite index ----
   // DEFAULT 'web' backfills all pre-existing rows (they were all web) and
   // covers old web clients that don't send the field.
   `ALTER TABLE events ADD COLUMN IF NOT EXISTS platform TEXT NOT NULL DEFAULT 'web'`,
   `DO $$ BEGIN
      IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'events_platform_chk') THEN
        ALTER TABLE events ADD CONSTRAINT events_platform_chk
-         CHECK (platform IN ('web','ios'));
+         CHECK (platform IN ('web','ios','android'));
+     END IF;
+   END $$`,
+  // Same widening for deployments that already have the two-value constraint.
+  // Without it the events route's fallback quietly relabels every Android
+  // event as 'web', which is worse than an error: the data looks fine.
+  `DO $$ BEGIN
+     IF EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'events_platform_chk'
+         AND pg_get_constraintdef(oid) NOT LIKE '%android%'
+     ) THEN
+       ALTER TABLE events DROP CONSTRAINT events_platform_chk;
+       ALTER TABLE events ADD CONSTRAINT events_platform_chk
+         CHECK (platform IN ('web','ios','android'));
      END IF;
    END $$`,
   `CREATE INDEX IF NOT EXISTS events_type_created_idx

@@ -20,7 +20,14 @@
 // because they can't read Chinese.
 
 import type { UiLang } from "./settings";
-import type { Category, Definition, Example, Word } from "@/types";
+import type {
+  Category,
+  Definition,
+  Example,
+  GlossSpan,
+  GlossSpanRow,
+  Word,
+} from "@/types";
 import { toZhHans } from "./opencc";
 
 /** Key shape inside `localizedTexts`: `"<field>|<language>"`. */
@@ -31,6 +38,29 @@ type GlossLang = "ja" | "en";
 
 function glossLang(lang: UiLang): GlossLang | null {
   return lang === "ja" || lang === "en" ? lang : null;
+}
+
+/**
+ * Pick one gloss language for a sentence's 詞塊.
+ *
+ * Lives here rather than beside the query so every gloss-language rule stays
+ * in one file. It follows the same shape as the rest: zh-Hant is the stored
+ * base, zh-Hans is an OpenCC conversion of it, ja and en are overlays.
+ *
+ * **The fallback is load-bearing.** A span whose requested language is missing
+ * falls back to zh-Hant rather than losing its gloss, because losing the gloss
+ * is losing the tap — and whether a word can be tapped must not depend on the
+ * interface language, or the same sentence goes half-dead in 日本語 and reads
+ * as a bug. A span with no gloss in *any* language is a function word, and
+ * stays untappable by design.
+ */
+export function localizeSpans(spans: GlossSpanRow[], lang: UiLang): GlossSpan[] {
+  return spans.map(({ glosses, ...rest }) => {
+    const base = glosses["zh-Hant"];
+    const picked = lang === "zh-Hans" ? undefined : (glosses[lang] ?? base);
+    const gloss = lang === "zh-Hans" ? (base ? toZhHans(base) : undefined) : picked;
+    return gloss ? { ...rest, gloss } : rest;
+  });
 }
 
 export function localizeWord(

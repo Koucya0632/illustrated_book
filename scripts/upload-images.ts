@@ -1,7 +1,11 @@
-// One-shot backfill: download every word's external image, upload to our own
-// Supabase Storage bucket, then rewrite words.image_url to the Storage public
-// URL. Records the original URL in image_source_url and a coarse license tag
-// in image_license for audit purposes.
+// One-shot backfill: download every word's external image, re-encode it as
+// WebP, upload to our own Supabase Storage bucket, then rewrite
+// words.image_url to the Storage public URL. Records the original URL in
+// image_source_url and a coarse license tag in image_license for audit
+// purposes.
+//
+// The re-encode is not optional and not a size tweak: uploading originals is
+// what put 741 MB of PNG in this bucket and got the project egress-restricted.
 //
 // Idempotent: if image_url already points at our Storage host, it skips.
 // Re-running picks up failed rows.
@@ -12,6 +16,11 @@
 
 import { createClient } from "@supabase/supabase-js";
 import postgres from "postgres";
+import {
+  WORD_IMAGE_BUCKET_RULES,
+  WORD_IMAGE_CONTENT_TYPE,
+  encodeWordImage,
+} from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
 
@@ -28,15 +37,6 @@ function envOrDie(name: string): string {
     process.exit(1);
   }
   return v;
-}
-
-function extFromContentType(ct: string | null): string {
-  if (!ct) return "jpg";
-  if (ct.includes("png")) return "png";
-  if (ct.includes("gif")) return "gif";
-  if (ct.includes("webp")) return "webp";
-  if (ct.includes("svg")) return "svg";
-  return "jpg";
 }
 
 function licenseTagForUrl(url: string): string {
@@ -61,15 +61,15 @@ async function ensureBucket(supabase: SB) {
   const { data: buckets, error } = await supabase.storage.listBuckets();
   if (error) throw error;
   if (buckets?.some((b: { name: string }) => b.name === BUCKET)) {
-    console.log(`[upload-images] bucket "${BUCKET}" already exists`);
+    // `createBucket` options apply only at creation, and this bucket was
+    // created long ago — so a rule stated only there would never reach the
+    // live bucket. Push it every run instead.
+    const { error: updateErr } = await supabase.storage.updateBucket(BUCKET, WORD_IMAGE_BUCKET_RULES);
+    if (updateErr) throw updateErr;
+    console.log(`[upload-images] bucket "${BUCKET}" exists — rules re-applied (webp only, 2MB)`);
     return;
   }
-  const { error: createErr } = await supabase.storage.createBucket(BUCKET, {
-    public: true,
-    // ~10 MB per file is generous for these illustrations.
-    fileSizeLimit: 10 * 1024 * 1024,
-    allowedMimeTypes: ["image/jpeg", "image/png", "image/webp", "image/gif"],
-  });
+  const { error: createErr } = await supabase.storage.createBucket(BUCKET, WORD_IMAGE_BUCKET_RULES);
   if (createErr) throw createErr;
   console.log(`[upload-images] created public bucket "${BUCKET}"`);
 }
@@ -119,14 +119,13 @@ async function uploadOne(
     if (!res.ok) {
       return { failed: `HTTP ${res.status} fetching ${row.image_url}` };
     }
-    const ct = res.headers.get("content-type");
-    const ext = extFromContentType(ct);
+    const ext = "webp";
     const path = `${row.id}.${ext}`;
-    const buf = Buffer.from(await res.arrayBuffer());
+    const buf = await encodeWordImage(Buffer.from(await res.arrayBuffer()));
     const { error: upErr } = await supabase.storage
       .from(BUCKET)
       .upload(path, buf, {
-        contentType: ct ?? "image/jpeg",
+        contentType: WORD_IMAGE_CONTENT_TYPE,
         upsert: true,
         cacheControl: "31536000",
       });
@@ -148,7 +147,14 @@ async function listExistingObjects(supabase: SB): Promise<Map<string, string>> {
   }
   for (const obj of data as Array<{ name: string }>) {
     const m = obj.name.match(/^(.+)\.([a-z]+)$/i);
-    if (m) out.set(m[1], m[2].toLowerCase());
+    if (!m) continue;
+    const id = m[1];
+    const ext = m[2].toLowerCase();
+    // Until the retired PNGs are deleted, a word has an object under both
+    // extensions. WebP is the live one — without this the first-listed `.png`
+    // could win and a new word would be recorded as already uploaded.
+    if (out.get(id) === "webp") continue;
+    out.set(id, ext);
   }
   return out;
 }

@@ -10,8 +10,10 @@
 //   npx tsx scripts/replace-main-word-images.ts --rollback <manifest.json>
 //
 // The source directory defaults to output/imagegen/atlas-replacements and
-// expects files named <word-id>-v2.png. New Storage object names contain a
-// SHA-256 prefix so CDN and device caches always see a new URL.
+// expects files named <word-id>-v2.png. Those get re-encoded to WebP on the
+// way up — the bucket is WebP-only since the 2026-08 egress incident. New
+// Storage object names contain a SHA-256 prefix (of the PNG source) so CDN and
+// device caches always see a new URL.
 
 import { createHash } from "node:crypto";
 import fs from "node:fs";
@@ -19,6 +21,7 @@ import path from "node:path";
 import { loadEnvConfig } from "@next/env";
 import { createClient } from "@supabase/supabase-js";
 import postgres from "postgres";
+import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "../lib/word-image-encode";
 
 loadEnvConfig(process.cwd());
 
@@ -174,7 +177,7 @@ async function main() {
       const id = filename.replace(/-v2\.png$/, "");
       const fullPath = path.join(sourceDir, filename);
       const sha256 = createHash("sha256").update(fs.readFileSync(fullPath)).digest("hex");
-      const storagePath = `${id}-ai-${sha256.slice(0, 12)}.png`;
+      const storagePath = `${id}-ai-${sha256.slice(0, 12)}.webp`;
       const old = rowById.get(id)!;
       return {
         id,
@@ -210,9 +213,12 @@ async function main() {
         console.log(`  = ${item.storagePath} already uploaded`);
         continue;
       }
-      const bytes = fs.readFileSync(item.localFile);
+      // Source stays PNG (that is what the generator emits, and the sha256 in
+      // the manifest addresses it); the stored object is WebP, because the
+      // bucket is WebP-only since the 2026-08 egress incident.
+      const bytes = await encodeWordImage(fs.readFileSync(item.localFile));
       const { error } = await supabase.storage.from(BUCKET).upload(item.storagePath, bytes, {
-        contentType: "image/png",
+        contentType: WORD_IMAGE_CONTENT_TYPE,
         upsert: false,
         cacheControl: "31536000",
       });

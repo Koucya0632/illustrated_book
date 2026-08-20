@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Mascot from "@/components/tuji/Mascot";
 import PublicShell from "@/components/marketing/PublicShell";
@@ -98,10 +99,16 @@ function MarqueeCard({ item, lang }: { item: { id: string; en: string }; lang: U
   const gloss = mt(lang, `mq.${item.id}`);
   return (
     <div className="flex w-44 shrink-0 items-center gap-3 bg-tuji-paper2 p-2.5">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      {/* `next/image`, not `<img>`: these render at 48x48 but the bucket objects
+          are ~1.5MB at 1536x1024, and this page is public and crawlable — a
+          single view pulled ~24MB straight from Supabase Storage, which is what
+          exhausted the egress quota on 2026-08-19. The optimizer serves an
+          actual 48px WebP and bills the transfer to Vercel instead. */}
+      <Image
         src={wordImg(item.id)}
         alt=""
+        width={48}
+        height={48}
         loading="lazy"
         className="h-12 w-12 shrink-0 bg-tuji-paper3 object-cover"
       />

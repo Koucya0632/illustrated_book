@@ -6,11 +6,11 @@
 // behaves identically in iOS WordDetail / ReviewFlow heroes.
 //
 // Pipeline per image:
-//   1. Download from Supabase Storage word-images/{id}.png
+//   1. Download from Supabase Storage word-images/{id}.webp
 //   2. Backup raw bytes to tmp/word-images-backup/{id}.png
 //   3. sharp.trim(threshold:10)  → strip near-white border
-//   4. sharp.extend(pad: 15% of max dim) → add uniform white margin
-//   5. Output to tmp/word-images-out/{id}.png
+//   4. sharp.extend(pad: 25% of max dim) → add uniform white margin
+//   5. Output to tmp/word-images-out/{id}.webp
 //   6. If --apply: re-upload to Supabase with upsert and same cache-control
 //
 // Idempotent on re-run: trim strips whatever we added, then re-adds 15%.
@@ -26,10 +26,14 @@ import sharp from "sharp";
 import postgres from "postgres";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { WORD_IMAGE_CONTENT_TYPE, WORD_IMAGE_QUALITY } from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
 const MARGIN_PERCENT = 0.25;
 const TRIM_THRESHOLD = 10; // 0-255, lower = stricter "is white"
+// The bucket is WebP-only since the 2026-08 egress incident; re-uploading PNG
+// here would now be rejected outright. The object key comes from the DB, which
+// already ends in `.webp`, so only the encode had to change.
 const BACKUP_DIR = "/tmp/word-images-backup";
 const OUT_DIR = "/tmp/word-images-out";
 
@@ -79,7 +83,7 @@ async function normalize(buf: Buffer): Promise<Buffer> {
       right: pad,
       background: { r: 255, g: 255, b: 255, alpha: 1 },
     })
-    .png({ compressionLevel: 9 })
+    .webp({ quality: WORD_IMAGE_QUALITY })
     .toBuffer();
 }
 
@@ -130,12 +134,12 @@ async function main() {
       await fs.writeFile(path.join(BACKUP_DIR, `${row.id}.png`), buf);
 
       const out = await normalize(buf);
-      await fs.writeFile(path.join(OUT_DIR, `${row.id}.png`), out);
+      await fs.writeFile(path.join(OUT_DIR, `${row.id}.webp`), out);
 
       if (apply) {
         const { error } = await supabase.storage.from(BUCKET).upload(key, out, {
           upsert: true,
-          contentType: "image/png",
+          contentType: WORD_IMAGE_CONTENT_TYPE,
           cacheControl: "31536000",
         });
         if (error) throw error;

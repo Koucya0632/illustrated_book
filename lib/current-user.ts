@@ -81,11 +81,15 @@ export async function getCurrentUser(): Promise<CurrentUser | null> {
   return p ? toCurrent(p) : null;
 }
 
-export async function getCurrentUserBundle(): Promise<{
+// React `cache()` for the same reason `getCurrentUserId` has it: the root
+// layout and a route layout both need the bundle within one request, and this
+// does four queries. Without memoization, moving `WordsProvider` out of the
+// root layout would have doubled them on every catalogue route.
+export const getCurrentUserBundle = cache(async (): Promise<{
   user: CurrentUser;
   favorites: string[];
   learned: string[];
-} | null> {
+} | null> => {
   const id = await getCurrentUserId();
   if (!id) return null;
   const [p, favorites, settings] = await Promise.all([
@@ -99,4 +103,4 @@ export async function getCurrentUserBundle(): Promise<{
     settings.learningDirection === "zh-ja" ? "ja" : "en",
   );
   return { user: toCurrent(p), favorites, learned };
-}
+});

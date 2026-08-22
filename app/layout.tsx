@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Noto_Sans_TC, Noto_Sans_JP, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import TujiShell from "@/components/tuji/Shell";
-import { WordsProvider } from "@/components/WordsProvider";
 import { CategoriesProvider } from "@/components/CategoriesProvider";
 import { UserProvider } from "@/components/UserProvider";
 import { SettingsProvider } from "@/components/SettingsProvider";
 import AppScale from "@/components/AppScale";
 import HydrateUserState from "@/components/HydrateUserState";
-import { getAllCardWords } from "@/lib/data";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserBundle } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
@@ -54,10 +52,12 @@ export default async function RootLayout({
 }) {
   const bundle = await getCurrentUserBundle();
   const settings = bundle ? await getSettings(bundle.user.id) : DEFAULT_SETTINGS;
-  const [words, categories] = await Promise.all([
-    getAllCardWords(settings.uiLang, settings.learningDirection),
-    getCategoriesFromDb(settings.uiLang),
-  ]);
+  // The word catalogue is NOT fetched here. It used to be, and every page on
+  // the site — including the public marketing page, which uses none of it —
+  // shipped all 478 word objects in its HTML: ~295KB of a 376KB homepage, 78%
+  // of the bytes. `useWords()` has exactly five consumers, so each of them now
+  // provides it from its own layout. See app/cards/layout.tsx.
+  const categories = await getCategoriesFromDb(settings.uiLang);
   // Logged-in users get their saved UI language; anonymous visitors (e.g. the
   // marketing page) get the cookie-based public language so <html lang> is
   // correct for SEO/screen-readers.
@@ -68,7 +68,6 @@ export default async function RootLayout({
       className={`${jakarta.variable} ${notoTC.variable} ${notoJP.variable} ${jetbrains.variable}`}
     >
       <body className="min-h-screen bg-tuji-bg text-tuji-ink">
-        <WordsProvider words={words}>
           <CategoriesProvider categories={categories}>
           <UserProvider user={bundle?.user ?? null}>
             <SettingsProvider initial={settings} loggedIn={!!bundle}>
@@ -96,7 +95,6 @@ export default async function RootLayout({
             </SettingsProvider>
           </UserProvider>
           </CategoriesProvider>
-        </WordsProvider>
       </body>
     </html>
   );

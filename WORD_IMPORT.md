@@ -1,6 +1,6 @@
 # Tuji 詞庫導入規範
 
-更新日期：2026-07-01
+更新日期：2026-08-24
 
 ## 1. 目的
 
@@ -23,7 +23,7 @@
   category: "kitchen",
   partOfSpeech: "noun",
   pronunciation: "/frɪdʒ/",
-  imageUrl: "https://...",
+  imageUrl: "https://...",  // Storage 上一律是 .webp，見 §6
   examples: [
     { en: "Put the milk in the fridge.", zh: "把牛奶放進冰箱。" }
   ],
@@ -87,10 +87,14 @@ Admin 單筆新增適合臨時內容，但要確認是否已產生 cards；沒�
 正式 `imageUrl` 應落在 Supabase Storage：
 
 ```text
-https://<project>.supabase.co/storage/v1/object/public/word-images/<id>.png
+https://<project>.supabase.co/storage/v1/object/public/word-images/<id>.webp
 ```
 
-Admin upload 會寫入 `word-images` bucket，路徑使用 `{id}.{ext}`。批量本地圖可放在 `public/word-images/<id>.png` 後跑上傳腳本。
+**bucket 裡一律是 WebP。** 來源檔可以是 PNG/JPEG（生圖工具吐什麼都行），但所有寫入路徑都會先過 `lib/word-image-encode.ts` 轉成 1200px WebP 再上傳——admin 上傳、admin 遠端抓圖、四支批次腳本，七個寫入點共用同一個編碼器。路徑一律 `{id}.webp`。
+
+這不是風格偏好：2026-08 這個 bucket 有 496 張平均 1.5MB 的 PNG、共 741MB，直接把專案的 egress 配額燒穿、服務被停權。重編碼後同一批內容是 20.6MB（28×）。詳見 `lib/word-image-encode.ts` 檔頭。
+
+批量本地圖放在 `public/word-images/<id>.png`（或 .jpg/.webp）後跑上傳腳本，轉檔由腳本負責。
 
 正式圖片以 `lib/image-urls.json` 為準（每次 prod deploy，migrate 會把它同步進 DB；Storage 圖不會被外部 URL 覆蓋）。凡是在 DB 端改了圖——admin 上傳新檔名、跑批量腳本——之後要跑 `npm run sync-image-urls` 回寫該檔並 commit，否則下次 deploy 會還原成舊值。新詞的 inline `imageUrl` 只是首次入庫的初始值。
 
@@ -123,7 +127,8 @@ Admin upload 會寫入 `word-images` bucket，路徑使用 `{id}.{ext}`。批量
 | 光線 | 明亮、柔和、無強烈陰影 |
 | 文字 | 圖中不得出現文字、label、浮水印 |
 | 人物 | 預設不出現人物；必要時只用無臉、非識別性情境 |
-| 檔案 | 優先 PNG；照片可 JPEG，但不要 WebP 作為源檔 |
+| 來源檔 | PNG 或 JPEG 皆可（上傳時一律轉 WebP，來源格式不影響結果） |
+| 尺寸 | 產出 1024x1024 以上；上傳時會等比縮到寬邊 1200px |
 
 Study 與 iOS 詞卡大量使用 `fit: contain`/等比例呈現。主體太小、背景太忙、邊緣被切掉，都會直接降低學習效果。
 
@@ -258,7 +263,7 @@ AI 圖進詞庫前必須人工檢查：
 
 ### 6.9 命名、上傳與落庫
 
-建議文件命名：
+建議文件命名（來源檔，副檔名不拘）：
 
 ```text
 public/word-images/<id>.png
@@ -270,6 +275,8 @@ public/word-images/<id>.png
 public/word-images/soy-sauce.png
 public/word-images/traffic-light.png
 ```
+
+上傳後在 Storage 上會變成 `soy-sauce.webp`、`traffic-light.webp`。
 
 上傳流程：
 
@@ -285,7 +292,7 @@ npx tsx scripts/upload-local-images.ts --apply
 
 落庫規則：
 
-- `words.image_url`：Supabase Storage public URL。
+- `words.image_url`：Supabase Storage public URL，副檔名一定是 `.webp`。
 - `words.image_source_url`：若是 AI 圖，可留空或記錄內部生成批次。
 - `words.image_license`：建議填 `ai-generated`。
 - `words.image_credit`：建議填模型名稱、生成日期、人工審核者。

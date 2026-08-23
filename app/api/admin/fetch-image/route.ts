@@ -8,6 +8,7 @@
 //   and writes the row's image_url / image_source_url / image_license.
 
 import { NextResponse } from "next/server";
+import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "@/lib/word-image-encode";
 import postgres from "postgres";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
@@ -18,14 +19,6 @@ export const maxDuration = 30;
 const BUCKET = "word-images";
 const ID_RE = /^[a-z0-9-]{1,64}$/;
 
-function extFromContentType(ct: string | null): string {
-  if (!ct) return "jpg";
-  if (ct.includes("png")) return "png";
-  if (ct.includes("gif")) return "gif";
-  if (ct.includes("webp")) return "webp";
-  if (ct.includes("svg")) return "svg";
-  return "jpg";
-}
 
 function licenseTagForUrl(url: string): string {
   try {
@@ -72,14 +65,14 @@ export async function POST(req: Request) {
       { status: res.status === 429 ? 429 : 502 },
     );
   }
-  const ct = res.headers.get("content-type");
-  const ext = extFromContentType(ct);
-  const buf = Buffer.from(await res.arrayBuffer());
+  // Whatever the remote host served, what lands in the bucket is WebP at
+  // 1200px — same encoder every other writer uses.
+  const buf = await encodeWordImage(Buffer.from(await res.arrayBuffer()));
 
   const supabase = createServiceRoleClient();
-  const path = `${id}.${ext}`;
+  const path = `${id}.webp`;
   const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, buf, {
-    contentType: ct ?? "image/jpeg",
+    contentType: WORD_IMAGE_CONTENT_TYPE,
     upsert: true,
     cacheControl: "31536000",
   });

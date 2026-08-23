@@ -12,6 +12,17 @@
 // them. Same reason `lib/avatar-storage.ts` owns the avatar encode instead of
 // each caller doing its own resize.
 
+// Three tables hold `word-images` URLs, not one. Anything that prunes this
+// bucket must build its keep-set from all of them:
+//
+//   words.image_url        480 rows — the primary image
+//   categories.image_url    10 rows — category covers (`category-<id>.webp`)
+//   word_media.url         480 rows — a mirror of the above from the schema-v3
+//                                     backfill; nothing reads the `image` kind
+//
+// A 2026-08 cleanup keyed only on `words.image_url` and deleted the two objects
+// the `categories` rows pointed at, 404-ing those covers in the shipped app.
+
 import sharp from "sharp";
 
 /// Wide enough for the iOS detail hero (~430pt @3x) and the web word page.

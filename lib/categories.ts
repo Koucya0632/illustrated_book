@@ -10,6 +10,25 @@ import type { Category } from "@/types";
 // there is no database or no rows. Editing a name here and deploying is not
 // enough on its own; `seedCategoriesIntoDb` has to run (prod deploys only).
 // It used to not even be enough then: the upsert ignored every display field.
+//
+// ---- Cover images ----
+// Every `imageUrl` here is self-hosted in the `word-images` bucket as
+// `category-<id>.webp`. They used to hotlink `images.unsplash.com`, which meant
+// a shipped iOS app's category heroes depended on a photo a stranger could
+// delete at any time. Rehosted 2026-08-24; the originals were:
+//
+//   kitchen        photo-1556909114-f6e7ad7d3136
+//   bathroom       photo-1552321554-5fefe8c9ef14
+//   bedroom        photo-1505693416388-ac5ce068fe85
+//   living-room    photo-1586023492125-27b2c045efd7
+//   office         photo-1497366216548-37526070297c
+//   street         photo-1449824913935-59a10b8d2000
+//   supermarket    photo-1542838132-92c53300491e
+//   transportation photo-1502877338535-766e1452684a
+//
+// (Unsplash License. seasonings / zodiac were already ours.) Only iOS renders
+// these — `CategoryView.categoryArtwork`, which special-cases `kitchen` to a
+// bundled asset, so kitchen's URL is currently unused but kept consistent.
 
 export const categories: Category[] = [
   {
@@ -52,7 +71,7 @@ export const categories: Category[] = [
     descriptionEn: "Where the cooking happens",
     color: "from-orange-100 to-rose-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-kitchen.webp",
   },
   {
     id: "bathroom",
@@ -63,7 +82,7 @@ export const categories: Category[] = [
     descriptionEn: "Washing up and getting ready",
     color: "from-sky-100 to-cyan-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-bathroom.webp",
   },
   {
     id: "bedroom",
@@ -74,7 +93,7 @@ export const categories: Category[] = [
     descriptionEn: "The corner for rest and sleep",
     color: "from-purple-100 to-pink-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-bedroom.webp",
   },
   {
     id: "living-room",
@@ -85,7 +104,7 @@ export const categories: Category[] = [
     descriptionEn: "Where the family gathers",
     color: "from-amber-100 to-yellow-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-living-room.webp",
   },
   {
     id: "office",
@@ -96,7 +115,7 @@ export const categories: Category[] = [
     descriptionEn: "Where you work and study",
     color: "from-slate-100 to-blue-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-office.webp",
   },
   {
     id: "street",
@@ -107,7 +126,7 @@ export const categories: Category[] = [
     descriptionEn: "Out walking the city streets",
     color: "from-gray-100 to-stone-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-street.webp",
   },
   {
     id: "supermarket",
@@ -118,7 +137,7 @@ export const categories: Category[] = [
     descriptionEn: "Your everyday shopping run",
     color: "from-emerald-100 to-lime-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-supermarket.webp",
   },
   {
     id: "transportation",
@@ -129,7 +148,7 @@ export const categories: Category[] = [
     descriptionEn: "Ways of getting around",
     color: "from-indigo-100 to-blue-100",
     imageUrl:
-      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-transportation.webp",
   },
   {
     id: "seasonings",
@@ -140,7 +159,7 @@ export const categories: Category[] = [
     descriptionEn: "The little helpers that make food taste good",
     color: "from-rose-100 to-amber-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/seasoning-jar.png",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-seasonings.webp",
   },
   {
     id: "zodiac",
@@ -151,7 +170,7 @@ export const categories: Category[] = [
     descriptionEn: "The twelve signs and their English names",
     color: "from-cyan-100 to-violet-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/zodiac.png",
+      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-zodiac.webp",
   },
 ];
 

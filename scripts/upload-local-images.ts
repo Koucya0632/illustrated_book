@@ -1,6 +1,11 @@
-// Backfill: upload every local PNG in public/word-images/ to the Supabase
-// Storage "word-images" bucket, then rewrite words.image_url to the Storage
-// public URL.
+// Backfill: upload every local source image in public/word-images/ to the
+// Supabase Storage "word-images" bucket as WebP, then rewrite words.image_url
+// to the Storage public URL.
+//
+// Source files stay PNG/JPEG — that is what the generator emits. What lands in
+// the bucket is always WebP, via the one encoder in lib/word-image-encode.ts.
+// Uploading originals is what put 741MB of PNG in this bucket and got the
+// project egress-restricted in 2026-08.
 //
 // Idempotent: if image_url already points at our Storage host AND the object
 // exists in the bucket, the file is skipped. Re-running picks up failed rows.
@@ -16,6 +21,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import postgres from "postgres";
+import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
 const LOCAL_DIR = path.resolve(process.cwd(), "public/word-images");
@@ -67,10 +73,10 @@ async function main() {
   }
   const files = fs
     .readdirSync(LOCAL_DIR)
-    .filter((f) => f.toLowerCase().endsWith(".png"))
-    .filter((f) => !ONLY_IDS || ONLY_IDS.has(f.replace(/\.png$/i, "")));
+    .filter((f) => /\.(png|jpe?g|webp)$/i.test(f))
+    .filter((f) => !ONLY_IDS || ONLY_IDS.has(f.replace(/\.[a-z0-9]+$/i, "")));
   if (files.length === 0) {
-    console.log("[upload-local-images] no .png files to upload");
+    console.log("[upload-local-images] no source images to upload");
     return;
   }
   console.log(`[upload-local-images] mode: ${APPLY ? "APPLY" : "DRY RUN"}`);
@@ -93,17 +99,17 @@ async function main() {
     const failures: Array<{ id: string; reason: string }> = [];
 
     for (const filename of files) {
-      const id = filename.replace(/\.png$/i, "");
-      const storagePath = `${id}.png`;
+      const id = filename.replace(/\.[a-z0-9]+$/i, "");
+      const storagePath = `${id}.webp`;
       const newUrl = `${publicBase}${storagePath}`;
 
       // 1. Upload to Storage (skip if already present)
       if (existing.has(storagePath) && !FORCE_UPLOAD) {
         skippedUpload++;
       } else if (APPLY) {
-        const buf = fs.readFileSync(path.join(LOCAL_DIR, filename));
+        const buf = await encodeWordImage(fs.readFileSync(path.join(LOCAL_DIR, filename)));
         const { error: upErr } = await supabase.storage.from(BUCKET).upload(storagePath, buf, {
-          contentType: "image/png",
+          contentType: WORD_IMAGE_CONTENT_TYPE,
           upsert: true,
           cacheControl: "31536000",
         });
@@ -114,7 +120,7 @@ async function main() {
         }
         uploaded++;
         existing.add(storagePath);
-        console.log(`  ↑ ${id}.png uploaded`);
+        console.log(`  ↑ ${id}.webp uploaded`);
       } else {
         uploaded++; // counted as "would upload"
       }

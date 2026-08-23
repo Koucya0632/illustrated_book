@@ -5,11 +5,12 @@
 //   file:  the image File (image/jpeg | image/png | image/webp | image/gif)
 //   id:    word id (kebab-case slug; determines the storage path)
 //
-// Writes to the `word-images` bucket at `{id}.{ext}` (upsert) and returns
+// Writes to the `word-images` bucket at `{id}.webp` (upsert) and returns
 // the public Storage URL. The caller (WordForm) puts that URL into the
 // image_url field of the word being edited.
 
 import { NextResponse } from "next/server";
+import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "@/lib/word-image-encode";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -25,12 +26,6 @@ const ALLOWED_MIME = new Set([
 ]);
 const ID_RE = /^[a-z0-9-]{1,64}$/;
 
-function extFor(mime: string): string {
-  if (mime === "image/png") return "png";
-  if (mime === "image/webp") return "webp";
-  if (mime === "image/gif") return "gif";
-  return "jpg";
-}
 
 export async function POST(req: Request) {
   let form: FormData;
@@ -62,11 +57,12 @@ export async function POST(req: Request) {
   }
 
   const supabase = createServiceRoleClient();
-  const ext = extFor(file.type);
-  const path = `${id}.${ext}`;
-  const buf = Buffer.from(await file.arrayBuffer());
+  // Whatever the admin picked, what lands in the bucket is WebP at 1200px —
+  // same encoder every other writer uses. See lib/word-image-encode.ts.
+  const path = `${id}.webp`;
+  const buf = await encodeWordImage(Buffer.from(await file.arrayBuffer()));
   const { error } = await supabase.storage.from(BUCKET).upload(path, buf, {
-    contentType: file.type,
+    contentType: WORD_IMAGE_CONTENT_TYPE,
     upsert: true,
     cacheControl: "31536000",
   });

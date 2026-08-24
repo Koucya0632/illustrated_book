@@ -386,6 +386,16 @@ test("every current main-word example uses natural learning phrases", () => {
   assert.deepEqual(poor, []);
 });
 
+test("desk's katakana reading is the ordinary ですく, not a generated misspelling", () => {
+  const pair = MAIN_WORD_EXAMPLE_PAIRS.find(({ id }) => id === "desk");
+  assert.ok(pair);
+  const readings = pair.examples.flatMap((example) =>
+    authored.ja[example.ja].map(({ r }) => r ?? ""),
+  );
+  assert.ok(readings.some((reading) => reading.includes("ですく")));
+  assert.ok(readings.every((reading) => !reading.includes("でぇすく") && !reading.includes("でぃすく")));
+});
+
 // All three or none. A span glossed in one language only goes dark for every
 // other reader, and whether a word is tappable must not vary by interface
 // language — the rule `localizeSpans` exists to protect.

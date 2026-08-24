@@ -13,9 +13,10 @@ export const MIN_SPANS_VERSION = 1;
 /** Version assigned by writers after the natural-phrase prompt upgrade.
  *
  * Readers intentionally continue accepting v1 while the example transaction
- * upgrades the current examples to v2. Definition annotations can therefore
- * remain visible until the full-corpus loader refreshes them separately. */
-export const SPANS_VERSION = 3;
+ * upgrades current examples to the latest authored version. Definition
+ * annotations can therefore remain visible until the full-corpus loader
+ * refreshes them separately. */
+export const SPANS_VERSION = 4;
 
 /**
  * Do these spans cover the whole sentence?

@@ -34,6 +34,7 @@ export const EXAMPLE_SPAN_PARTS_OF_SPEECH = new Set([
 
 export const MIN_LEARNING_SPANS = 2;
 export const MAX_LEARNING_SPANS = 8;
+export const MAX_LEARNING_SPAN_FRACTION = 0.83;
 
 const ENGLISH_DETACHED_GRAMMAR = new Set([
   "a",
@@ -75,10 +76,14 @@ const ENGLISH_DETACHED_GRAMMAR = new Set([
   "or",
   "but",
   "because",
+  "since",
   "although",
+  "though",
   "if",
+  "unless",
   "when",
   "while",
+  "until",
   "than",
 ]);
 
@@ -116,6 +121,16 @@ function learningText(text: string): string {
     .trim();
 }
 
+export function isStandaloneGrammarSpan(
+  language: SentenceLanguage,
+  text: string,
+): boolean {
+  const normalized = learningText(text);
+  return language === "en"
+    ? ENGLISH_DETACHED_GRAMMAR.has(normalized.toLocaleLowerCase("en"))
+    : JAPANESE_DETACHED_GRAMMAR.has(normalized);
+}
+
 function kanaSequence(text: string): string {
   return [...text.normalize("NFKC")]
     .map((character) => {
@@ -138,45 +153,78 @@ function semanticCharacterCount(text: string): number {
   return [...text.normalize("NFKC")].filter((character) => /[\p{L}\p{N}ー]/u.test(character)).length;
 }
 
+function hasLexicalTrailingPeriod(text: string): boolean {
+  const trimmed = text.trim();
+  return text === trimmed && /(?:\b[ap]\.m\.|(?:\b[A-Za-z]\.){2,})$/iu.test(trimmed);
+}
+
+function isTappableSpan(span: AuthoredSpan): boolean {
+  return Boolean(span.z || span.j || span.e);
+}
+
 /**
  * Reject technically valid but pedagogically poor splits.
  *
- * Coverage and gloss completeness protect the wire format. These rules protect
- * the lesson itself: readers should tap a small number of natural phrases, not
- * every article, particle, auxiliary, or punctuation mark separately.
+ * Definition and example annotations deliberately share one interaction
+ * model: content words and fixed expressions are tappable, while function
+ * words, whitespace and punctuation remain present as untappable spans. Count
+ * and size limits therefore apply to tappable learning units, not the complete
+ * set of spans needed to reproduce the sentence exactly.
  */
 export function validateLearningSpanQuality(
   language: SentenceLanguage,
   spans: AuthoredSpan[],
 ): string[] {
   const issues: string[] = [];
-  if (spans.length < MIN_LEARNING_SPANS) {
-    issues.push(`sentence has ${spans.length} span; minimum is ${MIN_LEARNING_SPANS}`);
+  const tappableSpans = spans.filter(isTappableSpan);
+  if (tappableSpans.length < MIN_LEARNING_SPANS) {
+    issues.push(`sentence has ${tappableSpans.length} tappable span; minimum is ${MIN_LEARNING_SPANS}`);
   }
-  if (spans.length > MAX_LEARNING_SPANS) {
-    issues.push(`sentence has ${spans.length} spans; maximum is ${MAX_LEARNING_SPANS}`);
+  if (tappableSpans.length > MAX_LEARNING_SPANS) {
+    issues.push(`sentence has ${tappableSpans.length} tappable spans; maximum is ${MAX_LEARNING_SPANS}`);
+  }
+
+  const sentenceSemanticLength = spans.reduce(
+    (total, span) => total + semanticCharacterCount(span.t),
+    0,
+  );
+  const largestSemanticLength = Math.max(
+    0,
+    ...tappableSpans.map((span) => semanticCharacterCount(span.t)),
+  );
+  if (
+    tappableSpans.length > 1 &&
+    sentenceSemanticLength >= 8 &&
+    largestSemanticLength / sentenceSemanticLength >= MAX_LEARNING_SPAN_FRACTION
+  ) {
+    issues.push(
+      `near-sentence span covers ${largestSemanticLength}/${sentenceSemanticLength} semantic characters; maximum fraction is below ${MAX_LEARNING_SPAN_FRACTION}`,
+    );
   }
 
   const detached: string[] = [];
   const nonSemantic: string[] = [];
   for (const [index, span] of spans.entries()) {
+    if (!isTappableSpan(span)) continue;
     const text = learningText(span.t);
     if (!/[\p{L}\p{N}]/u.test(text)) {
       nonSemantic.push(`${index}:${JSON.stringify(span.t)}`);
       continue;
     }
-    if (
-      (language === "en" && ENGLISH_DETACHED_GRAMMAR.has(text.toLocaleLowerCase("en"))) ||
-      (language === "ja" && JAPANESE_DETACHED_GRAMMAR.has(text))
-    ) {
+    if (text !== span.t && !hasLexicalTrailingPeriod(span.t)) {
+      issues.push(
+        `tappable span ${index} includes surrounding function text, spacing, or punctuation: ${JSON.stringify(span.t)}`,
+      );
+    }
+    if (isStandaloneGrammarSpan(language, text)) {
       detached.push(`${index}:${JSON.stringify(span.t)}`);
     }
   }
   if (nonSemantic.length > 0) {
-    issues.push(`punctuation or whitespace is isolated: ${nonSemantic.join(", ")}`);
+    issues.push(`punctuation or whitespace is tappable: ${nonSemantic.join(", ")}`);
   }
   if (detached.length > 0) {
-    issues.push(`grammar is detached from its phrase: ${detached.join(", ")}`);
+    issues.push(`grammar fragment is tappable: ${detached.join(", ")}`);
   }
   return issues;
 }
@@ -238,9 +286,12 @@ export function validateAuthoredSentence(
   return issues;
 }
 
-/** Restore whitespace and punctuation a model may leave between semantic
- * chunks. The model still has to return every chunk in the original order;
- * this only assigns the untouched gaps to the following/last span. */
+/** Restore function words, whitespace and punctuation between semantic chunks.
+ *
+ * The gaps intentionally become their own untappable spans. This is the same
+ * representation used by target-definition annotations and prevents a tap on
+ * a content word from silently expanding into an entire clause translation.
+ */
 export function alignAuthoredSpans(
   language: SentenceLanguage,
   sentence: string,
@@ -255,23 +306,13 @@ export function alignAuthoredSpans(
       throw new Error(`span ${index} text is not present in sentence order: ${span.t}`);
     }
     const gap = sentence.slice(cursor, found);
-    if (gap && aligned.length > 0) {
-      aligned[aligned.length - 1] = {
-        ...aligned[aligned.length - 1],
-        t: aligned[aligned.length - 1].t + gap,
-      };
-    }
-    const next = { ...span, t: (aligned.length === 0 ? gap : "") + span.t };
+    if (gap) aligned.push({ t: gap });
+    const next = { ...span };
     if (language === "en") delete next.r;
     aligned.push(next);
     cursor = found + span.t.length;
   }
-  if (aligned.length > 0 && cursor < sentence.length) {
-    aligned[aligned.length - 1] = {
-      ...aligned[aligned.length - 1],
-      t: aligned[aligned.length - 1].t + sentence.slice(cursor),
-    };
-  }
+  if (cursor < sentence.length) aligned.push({ t: sentence.slice(cursor) });
   return aligned;
 }
 

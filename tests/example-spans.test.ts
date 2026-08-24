@@ -80,28 +80,34 @@ test("model chunks are aligned back onto the exact sentence", () => {
   assert.ok(aligned.every((span) => !span.r));
 });
 
-test("alignment keeps punctuation and spacing with the phrase before it", () => {
+test("alignment restores punctuation and function-word gaps as untappable spans", () => {
   const aligned = alignAuthoredSpans("en", "Before work, I charge my laptop.", [
     { t: "Before work", z: "上班前", j: "仕事の前に", e: "before work" },
     { t: "I charge my laptop", z: "我替筆電充電", j: "ノートパソコンを充電する", e: "I charge my laptop" },
   ]);
-  assert.deepEqual(aligned.map(({ t }) => t), ["Before work, ", "I charge my laptop."]);
+  assert.deepEqual(aligned.map(({ t }) => t), ["Before work", ", ", "I charge my laptop", "."]);
+  assert.deepEqual(aligned.filter(({ z }) => z).map(({ t }) => t), ["Before work", "I charge my laptop"]);
 });
 
-test("token-by-token English splits are rejected", () => {
+test("too many tappable English units are rejected, while grammar gaps stay untappable", () => {
   const issues = validateLearningSpanQuality("en", [
-    { t: "Since" },
+    { t: "Since", z: "因為" },
     { t: " the" },
-    { t: " hook" },
+    { t: " hook", z: "掛鉤" },
     { t: " is" },
-    { t: " loose" },
+    { t: " loose", z: "鬆動" },
     { t: ", do not" },
-    { t: " hang" },
+    { t: " hang", z: "懸掛" },
     { t: " a" },
-    { t: " heavy bag." },
+    { t: " heavy", z: "重的" },
+    { t: " bag", z: "袋子" },
+    { t: " near", z: "靠近" },
+    { t: " this", z: "這個" },
+    { t: " door", z: "門" },
+    { t: "." },
   ]);
-  assert.ok(issues.some((issue) => issue.includes("maximum is 8")));
-  assert.ok(issues.some((issue) => issue.includes("grammar is detached")));
+  assert.ok(issues.some((issue) => issue.includes("tappable spans; maximum is 8")));
+  assert.ok(issues.some((issue) => issue.includes("grammar fragment is tappable")));
 });
 
 test("a whole sentence is not left as one oversized tap", () => {
@@ -111,31 +117,49 @@ test("a whole sentence is not left as one oversized tap", () => {
   );
 });
 
-test("Japanese particles and auxiliary fragments stay inside natural phrases", () => {
+test("a short lead-in cannot disguise a near-sentence Japanese tap", () => {
+  const issues = validateLearningSpanQuality("ja", [
+    { t: "私は", z: "我" },
+    { t: "毎朝シャワーを浴びます。", z: "每天早上洗澡。" },
+  ]);
+  assert.ok(
+    issues.some((issue) => issue.includes("near-sentence span")),
+    "the time expression and shower action must remain separately tappable",
+  );
+});
+
+test("Japanese particles are untappable while verb inflection remains intact", () => {
   const poor = validateLearningSpanQuality("ja", [
-    { t: "冬" },
-    { t: "は" },
-    { t: "洗面所" },
+    { t: "冬", z: "冬天" },
+    { t: "は", z: "主題" },
+    { t: "洗面所", z: "洗手間" },
     { t: "の" },
-    { t: "床" },
+    { t: "床", z: "地板" },
     { t: "が" },
-    { t: "冷たいので、" },
-    { t: "スリッパを" },
-    { t: "置い" },
+    { t: "冷たい", z: "冰冷" },
+    { t: "ので、" },
+    { t: "スリッパ", z: "拖鞋" },
+    { t: "を" },
+    { t: "置い", z: "放" },
     { t: "て" },
     { t: "います。" },
   ]);
-  assert.ok(poor.some((issue) => issue.includes("maximum is 8")));
-  assert.ok(poor.some((issue) => issue.includes("grammar is detached")));
+  assert.ok(poor.some((issue) => issue.includes("grammar fragment is tappable")));
 
   assert.deepEqual(
     validateLearningSpanQuality("ja", [
-      { t: "冬は" },
-      { t: "洗面所の床が" },
-      { t: "冷たいので、" },
-      { t: "ドアのそばに" },
-      { t: "スリッパを" },
-      { t: "置いています。" },
+      { t: "冬", z: "冬天" },
+      { t: "は" },
+      { t: "洗面所", z: "洗手間" },
+      { t: "の" },
+      { t: "床", z: "地板" },
+      { t: "が" },
+      { t: "冷たい", z: "冰冷" },
+      { t: "ので、" },
+      { t: "スリッパ", z: "拖鞋" },
+      { t: "を" },
+      { t: "置いています", z: "放著" },
+      { t: "。" },
     ]),
     [],
   );
@@ -158,19 +182,29 @@ test("a Japanese reading covers the entire phrase, not only its last verb", () =
   assert.deepEqual(
     validateAuthoredSentence("ja", sentence, [
       {
-        t: "歯ブラシに",
-        z: "在牙刷上",
-        j: "歯ブラシに",
-        e: "on the toothbrush",
-        r: "はぶらしに",
+        t: "歯ブラシ",
+        z: "牙刷",
+        j: "歯を磨くブラシ",
+        e: "toothbrush",
+        r: "はぶらし",
       },
+      { t: "に" },
       {
-        t: "歯磨き粉をつけてください。",
-        z: "請把牙膏擠在牙刷上。",
-        j: "歯磨き粉をつけてください。",
-        e: "Please put on toothpaste.",
-        r: "はみがきこをつけてください",
+        t: "歯磨き粉",
+        z: "牙膏",
+        j: "歯を磨くためのペースト",
+        e: "toothpaste",
+        r: "はみがきこ",
       },
+      { t: "を" },
+      {
+        t: "つけてください",
+        z: "請擠上",
+        j: "付けてください",
+        e: "please put on",
+        r: "つけてください",
+      },
+      { t: "。" },
     ]),
     [],
   );
@@ -191,19 +225,21 @@ test("a Japanese reading spells kanji and Latin letters in kana", () => {
   assert.deepEqual(
     validateAuthoredSentence("ja", sentence, [
       {
-        t: "入館カードを",
-        r: "にゅうかんカードを",
+        t: "入館カード",
+        r: "にゅうかんカード",
         z: "門禁卡",
-        j: "入館カードを",
-        e: "my access card",
+        j: "建物に入るためのカード",
+        e: "access card",
       },
+      { t: "を" },
       {
-        t: "忘れました。",
+        t: "忘れました",
         r: "わすれました",
-        z: "我忘了。",
-        j: "忘れました。",
-        e: "I forgot.",
+        z: "忘記了",
+        j: "持ってくるのを忘れました",
+        e: "forgot",
       },
+      { t: "。" },
     ]),
     [],
   );
@@ -386,14 +422,35 @@ test("every current main-word example uses natural learning phrases", () => {
   assert.deepEqual(poor, []);
 });
 
-test("desk's katakana reading is the ordinary ですく, not a generated misspelling", () => {
+test("the shower example keeps frequency separate from the shower action", () => {
+  assert.deepEqual(
+    authored.ja["私は毎朝シャワーを浴びます。"].map(({ t, z, j, e }) => ({ t, z, j, e })),
+    [
+      { t: "私", z: "我", j: "話し手自身", e: "I" },
+      { t: "は", z: undefined, j: undefined, e: undefined },
+      { t: "毎朝", z: "每天早上", j: "毎日の朝", e: "every morning" },
+      { t: "シャワー", z: "淋浴", j: "シャワー", e: "shower" },
+      { t: "を", z: undefined, j: undefined, e: undefined },
+      { t: "浴びます", z: "洗澡", j: "体に水をかけます", e: "take a shower" },
+      { t: "。", z: undefined, j: undefined, e: undefined },
+    ],
+  );
+});
+
+test("desk's katakana reading is the ordinary デスク, not a generated misspelling", () => {
   const pair = MAIN_WORD_EXAMPLE_PAIRS.find(({ id }) => id === "desk");
   assert.ok(pair);
   const readings = pair.examples.flatMap((example) =>
     authored.ja[example.ja].map(({ r }) => r ?? ""),
   );
-  assert.ok(readings.some((reading) => reading.includes("ですく")));
-  assert.ok(readings.every((reading) => !reading.includes("でぇすく") && !reading.includes("でぃすく")));
+  const hiraganaReadings = readings.map((reading) =>
+    [...reading].map((character) => {
+      const code = character.charCodeAt(0);
+      return code >= 0x30a1 && code <= 0x30f6 ? String.fromCharCode(code - 0x60) : character;
+    }).join(""),
+  );
+  assert.ok(hiraganaReadings.some((reading) => reading.includes("ですく")));
+  assert.ok(hiraganaReadings.every((reading) => !reading.includes("でぇすく") && !reading.includes("でぃすく")));
 });
 
 // All three or none. A span glossed in one language only goes dark for every

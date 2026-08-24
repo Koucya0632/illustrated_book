@@ -13,6 +13,7 @@ import {
   type AuthoredSpan,
   type ExampleSpanCorpus,
   EXAMPLE_SPAN_PARTS_OF_SPEECH,
+  isStandaloneGrammarSpan,
   MIN_LEARNING_SPANS,
   MAX_LEARNING_SPANS,
   loadExampleSpanCorpus,
@@ -156,24 +157,30 @@ const RESPONSE_SCHEMA = {
   },
 } as const;
 
-async function generateBatch(apiKey: string, batch: Candidate[]): Promise<Map<string, AuthoredSpan[]>> {
+type BatchGeneration = {
+  generated: Map<string, AuthoredSpan[]>;
+  failures: Map<string, string>;
+};
+
+async function generateBatch(apiKey: string, batch: Candidate[]): Promise<BatchGeneration> {
   const prompt = [
-    "Split each exact sentence into tappable learning spans for an English/Japanese picture dictionary.",
-    "The t values must concatenate character-for-character to the original sentence, including every space and punctuation mark.",
-    "Break the sentence into 2-7 natural learning phrases, never fewer than 2 or more than 8. Prefer clause-level or phrase-level meaning over token-by-token analysis.",
-    "At least 2 spans is a hard requirement even for a very short sentence. For example, split English 'Turn on the lamp.' as 'Turn on' + ' the lamp.' and Japanese 'ランプをつけてください。' as 'ランプを' + 'つけてください。'. Never return the whole sentence as one span.",
-    "Return only meaningful everyday phrases as spans. Do not return whitespace-only or punctuation-only spans; the program restores untouched gaps.",
-    "For English, attach articles, auxiliaries, prepositions, conjunctions, and pronouns to the phrase they belong to. Keep phrasal verbs, collocations, and short clauses together.",
-    "Keep a transitive verb with its direct object when separating them would leave an incomplete fragment. For example, split 'I put my laptop on the desk.' as 'I put my laptop' + ' on the desk.', never 'I put' + ' my laptop on the desk.'.",
-    "For Japanese, attach particles to the noun phrase before them and keep verb stems, conjugations, auxiliaries, and sentence endings together. Never split forms such as 置いています, 確認してください, or 読まなかった into separate spans.",
-    "Each span should answer what that whole phrase means in context. Do not create separate taps for grammar fragments such as the, is, を, の, て, or います.",
-    "Every returned span is tappable and must provide all three contextual glosses: z in Traditional Chinese, j in natural Japanese, and e in English.",
-    "Translate only the phrase meaning in context. Never add grammar labels, parenthetical notes, or explanations such as 格助詞, 主語, object marker, polite form, or topic marker.",
+    "Annotate each exact sentence with the same lexical tap segmentation used by the picture dictionary's definition text.",
+    "Return only tappable content units: normally one content word, compound word, or fixed lexical expression per span. Do not return whole clauses or sentence translations as one span.",
+    "The t values must be exact, non-overlapping substrings in sentence order. You may and should omit function words, spaces, and punctuation; the program restores every omitted gap as an untappable span and verifies exact full-sentence coverage.",
+    "Return 2-8 tappable units. The minimum of 2 is not a target: expose every useful everyday noun, main verb, adjective, adverb, numeral, content pronoun, compound, and genuinely fixed expression, up to 8.",
+    "Articles, auxiliaries, ordinary prepositions and conjunctions, Japanese particles, sentence endings, whitespace, and punctuation are not tappable by themselves. Omit them unless they are inseparable parts of a fixed expression.",
+    "For English, keep genuine phrasal verbs and fixed collocations together, such as 'look forward to' and 'take a shower'. Do not merge an ordinary subject, object, location, time expression, and action into one tap.",
+    "For Japanese, return nouns, time words, adjectives, adverbs, and main verbs separately. Omit particles such as は, が, を, に, で, と, and の; the program will restore them as untappable text. Keep a verb's inflection and auxiliaries with that verb, for example 浴びます, 置いています, 確認してください, and 読まなかった.",
+    "Exact example: for '私は毎朝シャワーを浴びます。', return '私' + '毎朝' + 'シャワー' + '浴びます'. Do not return '毎朝シャワーを浴びます。' or 'シャワーを浴びます。' as one tap.",
+    "Exact English counterpart: for 'I take a shower every morning.', return 'I' + 'take a shower' + 'every morning'. The program restores the spaces and final period as untappable spans.",
+    "For '私はキッチンで計量カップを使います。', return '私' + 'キッチン' + '計量カップ' + '使います'. For 'Add baking soda to the cookie dough.', return 'Add' + 'baking soda' + 'cookie dough'.",
+    "Every returned span is tappable and must provide all three contextual glosses: z in Traditional Chinese, j in natural Japanese, and e in English. The j field is a short Japanese definition or contextual synonym written in normal Japanese; it is never a kana reading or a duplicate of r. The r field alone carries pronunciation.",
+    "Translate only that word or fixed expression in its sentence context. A gloss must never paraphrase the remainder of the sentence. Never add grammar labels, parenthetical notes, or explanations such as 格助詞, 主語, object marker, polite form, or topic marker.",
     "The z, j, and e glosses must not contain ( ), （ ）, or any other parenthetical annotation. Write a clean translation only.",
     "Traditional Chinese glosses must be natural Taiwan usage. Translate temporal 前に as 之前 or 前, never as the literal spatial 前面.",
     "Translate roles and fixed expressions by meaning rather than character by character; for example, 清掃の人 means 清潔人員／清潔人員之一 (cleaner), never 清潔的人.",
     "Use b for the dictionary base form only when useful. Use p only from the permitted enum.",
-    "For every glossed Japanese span, r must read the ENTIRE t phrase from its first character to its last, including every noun, particle, inflection, auxiliary, and ending—not only the headword or final verb.",
+    "For every glossed Japanese span, r must read the ENTIRE t lexical unit from its first character to its last, including every inflection and auxiliary that belongs to its verb—not only the base form.",
     "In r, spell the complete phrase in kana. Convert every kanji and Latin letter to its kana reading; do not copy any kanji or Latin letters into r. Katakana loanwords may remain katakana. Preserve kana already present in t in the same order, including particles は/へ/を and the long-vowel mark ー. Omit punctuation only. English spans must have r=null.",
     "Do not rewrite, normalize, translate, or omit any part of the sentence.",
     JSON.stringify(batch.map(({ key, language, sentence }) => ({ key, language, sentence }))),
@@ -205,28 +212,43 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<Map<st
   };
   const expected = new Map(batch.map((candidate) => [candidate.key, candidate]));
   const generated = new Map<string, AuthoredSpan[]>();
+  const failures = new Map<string, string>();
   for (const item of parsed.items) {
     const candidate = expected.get(item.key);
-    if (!candidate || generated.has(item.key)) throw new Error(`unexpected generated key: ${item.key}`);
-    const spans = alignAuthoredSpans(
-      candidate.language,
-      candidate.sentence,
-      item.spans
-        .filter((span) => /[\p{L}\p{N}]/u.test(span.t))
-        .map((span) =>
-          Object.fromEntries(
-            Object.entries(span).filter(([, value]) => value !== null),
-          ) as unknown as AuthoredSpan,
-        ),
-    );
-    const issues = validateAuthoredSentence(candidate.language, candidate.sentence, spans);
-    if (issues.length > 0) throw new Error(`${item.key}: ${issues.join("; ")}`);
-    generated.set(item.key, spans);
+    if (!candidate || generated.has(item.key) || failures.has(item.key)) {
+      console.warn(`[example-spans] ignoring unexpected or duplicate generated key: ${item.key}`);
+      continue;
+    }
+    try {
+      const spans = alignAuthoredSpans(
+        candidate.language,
+        candidate.sentence,
+        item.spans
+          .filter(
+            (span) =>
+              /[\p{L}\p{N}]/u.test(span.t) &&
+              !isStandaloneGrammarSpan(candidate.language, span.t),
+          )
+          .map((span) =>
+            Object.fromEntries(
+              Object.entries(span).filter(([, value]) => value !== null),
+            ) as unknown as AuthoredSpan,
+          ),
+      );
+      const issues = validateAuthoredSentence(candidate.language, candidate.sentence, spans);
+      if (issues.length > 0) {
+        failures.set(item.key, issues.join("; "));
+        continue;
+      }
+      generated.set(item.key, spans);
+    } catch (error) {
+      failures.set(item.key, error instanceof Error ? error.message : String(error));
+    }
   }
   for (const key of expected.keys()) {
-    if (!generated.has(key)) throw new Error(`model omitted generated key: ${key}`);
+    if (!generated.has(key) && !failures.has(key)) failures.set(key, "model omitted generated key");
   }
-  return generated;
+  return { generated, failures };
 }
 
 async function generateResilient(
@@ -235,7 +257,36 @@ async function generateResilient(
   retries = 10,
 ): Promise<Map<string, AuthoredSpan[]>> {
   try {
-    return await generateBatch(apiKey, batch);
+    const { generated, failures } = await generateBatch(apiKey, batch);
+    if (failures.size === 0) return generated;
+
+    const failed = batch.filter(({ key }) => failures.has(key));
+    if (generated.size > 0) {
+      console.warn(
+        `[example-spans] retrying ${failed.length}/${batch.length} rejected item(s): ${[...failures.entries()].slice(0, 3).map(([key, issue]) => `${key}: ${issue}`).join(" | ")}`,
+      );
+      const retried = await generateResilient(apiKey, failed, retries);
+      return new Map([...generated, ...retried]);
+    }
+
+    const failureSummary = [...failures.entries()]
+      .slice(0, 3)
+      .map(([key, issue]) => `${key}: ${issue}`)
+      .join(" | ");
+    if (batch.length === 1) {
+      if (retries <= 0) throw new Error(failureSummary);
+      console.warn(
+        `[example-spans] retrying ${batch[0].key} (${retries} attempt${retries === 1 ? "" : "s"} left): ${failureSummary}`,
+      );
+      return generateResilient(apiKey, batch, retries - 1);
+    }
+    console.warn(`[example-spans] splitting rejected batch of ${batch.length}: ${failureSummary}`);
+    const middle = Math.ceil(batch.length / 2);
+    const [left, right] = await Promise.all([
+      generateResilient(apiKey, batch.slice(0, middle), retries),
+      generateResilient(apiKey, batch.slice(middle), retries),
+    ]);
+    return new Map([...left, ...right]);
   } catch (error) {
     if (batch.length === 1) {
       if (retries <= 0) throw error;

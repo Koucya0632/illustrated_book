@@ -1,4 +1,4 @@
-// Replace published main-word images with versioned, content-addressed PNGs.
+// Replace published main-word images with versioned, content-addressed WebPs.
 //
 // Dry run (default):
 //   npx tsx scripts/replace-main-word-images.ts --expected-count 32
@@ -10,18 +10,17 @@
 //   npx tsx scripts/replace-main-word-images.ts --rollback <manifest.json>
 //
 // The source directory defaults to output/imagegen/atlas-replacements and
-// expects files named <word-id>-v2.png. Those get re-encoded to WebP on the
-// way up — the bucket is WebP-only since the 2026-08 egress incident. New
-// Storage object names contain a SHA-256 prefix (of the PNG source) so CDN and
-// device caches always see a new URL.
+// expects files named <word-id>-v2.webp. Candidates are normalized once more
+// before upload, and Storage object names contain a SHA-256 prefix of the exact
+// uploaded WebP bytes so CDN and device caches always see a new URL.
 
-import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { loadEnvConfig } from "@next/env";
 import { createClient } from "@supabase/supabase-js";
 import postgres from "postgres";
-import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "../lib/word-image-encode";
+import { prepareMainWordImageCandidate } from "../lib/main-word-image-replacement";
+import { WORD_IMAGE_CONTENT_TYPE } from "../lib/word-image-encode";
 
 loadEnvConfig(process.cwd());
 
@@ -141,14 +140,22 @@ async function main() {
 
   const filenames = fs
     .readdirSync(sourceDir)
-    .filter((name) => name.endsWith("-v2.png"))
+    .filter((name) => name.endsWith("-v2.webp"))
     .sort();
-  if (filenames.length === 0) throw new Error("no *-v2.png candidates found");
+  if (filenames.length === 0) throw new Error("no *-v2.webp candidates found");
   if (expectedCount !== null && filenames.length !== expectedCount) {
     throw new Error(`expected ${expectedCount} candidates, found ${filenames.length}`);
   }
 
-  const ids = filenames.map((name) => name.replace(/-v2\.png$/, ""));
+  const prepared = await Promise.all(
+    filenames.map(async (filename) =>
+      prepareMainWordImageCandidate(
+        filename,
+        fs.readFileSync(path.join(sourceDir, filename)),
+      ),
+    ),
+  );
+  const ids = prepared.map(({ id }) => id);
   if (new Set(ids).size !== ids.length) throw new Error("duplicate word IDs in source directory");
   for (const id of ids) {
     if (!/^[a-z0-9-]+$/.test(id)) throw new Error(`invalid word ID derived from filename: ${id}`);
@@ -173,16 +180,17 @@ async function main() {
     const missing = ids.filter((id) => !rowById.has(id));
     if (missing.length) throw new Error(`published main-word rows not found: ${missing.join(", ")}`);
 
-    const items: ManifestItem[] = filenames.map((filename) => {
-      const id = filename.replace(/-v2\.png$/, "");
+    const preparedById = new Map(prepared.map((candidate) => [candidate.id, candidate]));
+    const items: ManifestItem[] = filenames.map((filename, index) => {
+      const candidate = prepared[index];
+      const id = candidate.id;
       const fullPath = path.join(sourceDir, filename);
-      const sha256 = createHash("sha256").update(fs.readFileSync(fullPath)).digest("hex");
-      const storagePath = `${id}-ai-${sha256.slice(0, 12)}.webp`;
+      const storagePath = `${id}-ai-${candidate.sha256.slice(0, 12)}.webp`;
       const old = rowById.get(id)!;
       return {
         id,
         localFile: fullPath,
-        sha256,
+        sha256: candidate.sha256,
         storagePath,
         oldUrl: old.image_url,
         newUrl: `${publicBase}${storagePath}`,
@@ -213,10 +221,8 @@ async function main() {
         console.log(`  = ${item.storagePath} already uploaded`);
         continue;
       }
-      // Source stays PNG (that is what the generator emits, and the sha256 in
-      // the manifest addresses it); the stored object is WebP, because the
-      // bucket is WebP-only since the 2026-08 egress incident.
-      const bytes = await encodeWordImage(fs.readFileSync(item.localFile));
+      const bytes = preparedById.get(item.id)?.bytes;
+      if (!bytes) throw new Error(`${item.id}: prepared WebP bytes are missing`);
       const { error } = await supabase.storage.from(BUCKET).upload(item.storagePath, bytes, {
         contentType: WORD_IMAGE_CONTENT_TYPE,
         upsert: false,

@@ -2,6 +2,7 @@ import type { CEFRLevel } from "@/types";
 import { MAIN_WORD_LEGACY_EXAMPLE_SETS } from "./main-word-legacy-example-sets";
 import {
   BATHROOM_COMPLEX_EXAMPLES,
+  BATHROOM_PREVIOUS_COMPLEX_EXAMPLES,
   BATHROOM_SIMPLE_OVERRIDES,
 } from "./main-word-example-pairs/bathroom";
 import {
@@ -164,6 +165,24 @@ export function isKnownPreviousTargetExamplePair(
   current: StoredMainWordExample[],
 ): boolean {
   if (current.length !== 2) return false;
+  const currentPair = MAIN_WORD_EXAMPLE_PAIRS.find((row) => row.id === id);
+  const auditedPreviousComplex = BATHROOM_PREVIOUS_COMPLEX_EXAMPLES.find(
+    (row) => row.id === id,
+  );
+  if (currentPair && auditedPreviousComplex) {
+    const simpleActual = current.find(({ sortOrder }) => sortOrder === 0);
+    const complexActual = current.find(({ sortOrder }) => sortOrder === 1);
+    if (
+      simpleActual &&
+      complexActual &&
+      simpleActual.cefrLevel === currentPair.examples[0].cefrLevel &&
+      complexActual.cefrLevel === currentPair.examples[1].cefrLevel &&
+      sameText(simpleActual, currentPair.examples[0]) &&
+      sameText(complexActual, auditedPreviousComplex)
+    ) {
+      return true;
+    }
+  }
   const legacySimple = MAIN_WORD_LEGACY_EXAMPLE_SETS
     .find((row) => row.id === id)
     ?.examples.find(({ sortOrder }) => sortOrder === 0);

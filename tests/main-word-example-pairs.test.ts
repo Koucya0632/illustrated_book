@@ -15,6 +15,7 @@ import {
   validateMainWordExampleSpanCoverage,
 } from "../lib/example-span-corpus";
 import { BATHROOM_SIMPLE_OVERRIDES } from "../lib/main-word-example-pairs/bathroom";
+import { BATHROOM_PREVIOUS_COMPLEX_EXAMPLES } from "../lib/main-word-example-pairs/bathroom";
 import { words } from "../lib/words";
 
 test("every published main word has one complete simple/complex example pair", () => {
@@ -94,6 +95,25 @@ test("the deployed bathroom template pair is a guarded previous target", () => {
   assert.equal(classifyMainWordExamplePair(id, previous), "legacy");
 
   previous[0] = { ...previous[0], en: `${previous[0].en} Edited.` };
+  assert.equal(isKnownPreviousTargetExamplePair(id, previous), false);
+  assert.equal(classifyMainWordExamplePair(id, previous), "conflict");
+});
+
+test("the audited bathroom pair corrections accept only their exact deployed predecessor", () => {
+  const id = "bucket";
+  const pair = MAIN_WORD_EXAMPLE_PAIRS.find((row) => row.id === id);
+  const previousComplex = BATHROOM_PREVIOUS_COMPLEX_EXAMPLES.find((row) => row.id === id);
+  assert.ok(pair);
+  assert.ok(previousComplex);
+
+  const previous: StoredMainWordExample[] = [
+    { ...pair.examples[0] },
+    { ...previousComplex, cefrLevel: "B1", sortOrder: 1 },
+  ];
+  assert.equal(isKnownPreviousTargetExamplePair(id, previous), true);
+  assert.equal(classifyMainWordExamplePair(id, previous), "legacy");
+
+  previous[1] = { ...previous[1], ja: `${previous[1].ja}編集` };
   assert.equal(isKnownPreviousTargetExamplePair(id, previous), false);
   assert.equal(classifyMainWordExamplePair(id, previous), "conflict");
 });

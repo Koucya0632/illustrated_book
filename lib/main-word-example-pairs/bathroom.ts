@@ -3,6 +3,17 @@ import type {
   MainWordSimpleExampleOverride,
 } from "./types";
 
+// Exact complex examples deployed before the 2026-08-25 bathroom semantic
+// review. The apply transaction accepts only these known values when moving
+// the five corrected pairs forward; any other live edit remains a conflict.
+export const BATHROOM_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  { id: "bucket", en: "Since the water was dirty, I emptied the bucket before rinsing the floor again.", ja: "水が汚れていたので、床をもう一度流す前にバケツの水を替えました。", zh: "水已經髒了，所以我再次沖地板前先換掉水桶裡的水。" },
+  { id: "cleansing-oil", en: "Massage the cleansing oil onto dry skin before adding water to rinse off the makeup.", ja: "メイクを落とすときは、乾いた肌にクレンジングオイルをなじませてから水を加えます。", zh: "卸妝時先把卸妝油按摩在乾燥皮膚上，再加水沖掉。" },
+  { id: "conditioner", en: "After rinsing out the shampoo, I apply conditioner mainly to the ends of my hair.", ja: "シャンプーを流したあと、コンディショナーを毛先を中心につけます。", zh: "沖掉洗髮精後，我主要把潤髮乳抹在髮尾。" },
+  { id: "scale", en: "To compare my weight fairly, I use the scale at the same time each morning.", ja: "体重を正しく比べられるように、毎朝同じ時間に体重計に乗ります。", zh: "為了公平比較體重，我每天早上固定時間量體重。" },
+  { id: "wash-basin", en: "I filled the wash basin with warm water so I could soak the stained shirt by hand.", ja: "汚れたシャツを手洗いするために、洗面器へぬるま湯を入れました。", zh: "為了手洗有污漬的襯衫，我在臉盆裡裝了溫水浸泡。" },
+];
+
 export const BATHROOM_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "toothbrush", en: "I replace my toothbrush when the bristles spread out because it no longer cleans well.", ja: "毛先が広がるときれいに磨けないので、歯ブラシを交換します。", zh: "牙刷刷毛張開後就刷不乾淨，所以我會更換牙刷。" },
   { id: "toothpaste", en: "If your teeth are sensitive, choose a toothpaste made for sensitive teeth.", ja: "歯がしみる場合は、知覚過敏用の歯磨き粉を選んでください。", zh: "如果牙齒敏感，請選擇抗敏感牙膏。" },
@@ -37,7 +48,7 @@ export const BATHROOM_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "mouthwash", en: "Because this mouthwash is concentrated, dilute it according to the directions before using it.", ja: "このマウスウォッシュは濃縮タイプなので、説明どおりに薄めてから使います。", zh: "這款漱口水是濃縮型，使用前要依照說明稀釋。" },
   { id: "facial-cleanser", en: "When my skin feels irritated, I stop using the facial cleanser and rinse with warm water.", ja: "肌に刺激を感じたら、洗顔料の使用をやめてぬるま湯で流します。", zh: "皮膚感到刺激時，我會停用洗面乳並用溫水沖洗。" },
   { id: "body-wash", en: "If the body wash bottle is empty, refill it before the next person takes a shower.", ja: "ボディソープが空になったら、次の人がシャワーを浴びる前に補充してください。", zh: "沐浴乳空了的話，請在下一個人洗澡前補充。" },
-  { id: "conditioner", en: "After rinsing out the shampoo, I apply conditioner mainly to the ends of my hair.", ja: "シャンプーを流したあと、コンディショナーを毛先を中心につけます。", zh: "沖掉洗髮精後，我主要把潤髮乳抹在髮尾。" },
+  { id: "conditioner", en: "After rinsing out the shampoo, I apply conditioner mainly to the ends of my hair.", ja: "シャンプーを流したあと、コンディショナーを毛先中心になじませます。", zh: "沖掉洗髮精後，我主要把潤髮乳抹在髮尾。" },
   { id: "hair-conditioner", en: "Because my hair was damaged by coloring, I left the hair conditioner on for a few minutes.", ja: "カラーで髪が傷んでいたので、ヘアコンディショナーを数分なじませました。", zh: "頭髮因染髮受損，所以我讓護髮素停留了幾分鐘。" },
   { id: "razor", en: "Replace the razor blade when it starts pulling your skin instead of cutting smoothly.", ja: "カミソリが滑らかにそれず肌を引っ張るようになったら、刃を交換します。", zh: "刮鬍刀開始拉扯皮膚、刮不順時就要換刀片。" },
   { id: "shaving-cream", en: "Leave the shaving cream on for a minute so the hair softens before you shave.", ja: "毛が柔らかくなるように、そる前にシェービングクリームを一分ほどなじませます。", zh: "刮鬍前讓刮鬍泡停留一分鐘，使毛髮變軟。" },
@@ -54,18 +65,18 @@ export const BATHROOM_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "disinfectant", en: "After wiping the handle with disinfectant, wait until it dries before touching it.", ja: "取っ手を消毒液で拭いたら、乾くまで触らないでください。", zh: "用消毒液擦過把手後，等它乾了再碰。" },
   { id: "mold-remover", en: "Because mold remover has a strong smell, open the window and wear gloves while using it.", ja: "カビ取り剤はにおいが強いので、窓を開けて手袋をして使ってください。", zh: "除霉劑味道很重，使用時請開窗並戴手套。" },
   { id: "bathroom-cleaner", en: "Let the bathroom cleaner sit on the soap stains before scrubbing them with a sponge.", ja: "石けんかすをスポンジでこする前に、浴室用洗剤をしばらくなじませます。", zh: "刷洗皂垢前，先讓浴室清潔劑停留一會兒。" },
-  { id: "bucket", en: "Since the water was dirty, I emptied the bucket before rinsing the floor again.", ja: "水が汚れていたので、床をもう一度流す前にバケツの水を替えました。", zh: "水已經髒了，所以我再次沖地板前先換掉水桶裡的水。" },
-  { id: "wash-basin", en: "I filled the wash basin with warm water so I could soak the stained shirt by hand.", ja: "汚れたシャツを手洗いするために、洗面器へぬるま湯を入れました。", zh: "為了手洗有污漬的襯衫，我在臉盆裡裝了溫水浸泡。" },
+  { id: "bucket", en: "Since the water was dirty, I changed the water in the bucket before rinsing the floor again.", ja: "水が汚れていたので、床をもう一度流す前にバケツの水を替えました。", zh: "水已經髒了，所以我再次沖地板前先換掉水桶裡的水。" },
+  { id: "wash-basin", en: "I filled the wash basin with warm water so I could hand-wash the stained shirt.", ja: "汚れたシャツを手洗いするために、洗面器へぬるま湯を入れました。", zh: "為了手洗有污漬的襯衫，我在臉盆裡裝了溫水。" },
   { id: "gloves", en: "Wear the gloves when using strong cleaner so it does not irritate your hands.", ja: "強い洗剤で手が荒れないように、掃除するときは手袋をしてください。", zh: "使用強效清潔劑時請戴手套，以免刺激雙手。" },
   { id: "hand-soap", en: "If the hand soap pump is clogged, rinse the nozzle with warm water.", ja: "ハンドソープのポンプが詰まったら、ノズルをぬるま湯で洗ってください。", zh: "洗手乳壓頭堵住時，用溫水沖洗噴嘴。" },
   { id: "lotion", en: "I apply body lotion after bathing while my skin is still slightly damp.", ja: "入浴後、肌が少し湿っているうちにボディローションを塗ります。", zh: "洗澡後趁皮膚還微濕時，我會擦乳液。" },
   { id: "moisturizer", en: "When the air is dry, I use moisturizer before bed to keep my skin from feeling tight.", ja: "空気が乾燥している日は、肌がつっぱらないように寝る前に保湿クリームを塗ります。", zh: "空氣乾燥時，我睡前會擦保濕乳，避免皮膚緊繃。" },
   { id: "cosmetics", en: "Because heat can damage cosmetics, I store them away from the sunny window.", ja: "熱で化粧品が傷むことがあるので、日の当たる窓辺には置きません。", zh: "高溫可能使化妝品變質，所以我不把它們放在有陽光的窗邊。" },
-  { id: "cleansing-oil", en: "Massage the cleansing oil onto dry skin before adding water to rinse off the makeup.", ja: "メイクを落とすときは、乾いた肌にクレンジングオイルをなじませてから水を加えます。", zh: "卸妝時先把卸妝油按摩在乾燥皮膚上，再加水沖掉。" },
+  { id: "cleansing-oil", en: "Massage the cleansing oil onto dry skin before adding water to rinse off the makeup.", ja: "メイクを落とすときは、乾いた肌にクレンジングオイルをなじませてから、水を加えて洗い流します。", zh: "卸妝時先把卸妝油按摩在乾燥皮膚上，再加水沖洗乾淨。" },
   { id: "micellar-water", en: "When I only wear light makeup, I remove it with micellar water instead of cleansing oil.", ja: "薄いメイクの日は、クレンジングオイルではなくクレンジングウォーターで落とします。", zh: "只化淡妝時，我會用卸妝水而不是卸妝油。" },
   { id: "perfume", en: "Since the perfume is strong, I use only one spray before going to the office.", ja: "香りが強い香水なので、出勤前は一度だけつけます。", zh: "這款香水味道很濃，所以上班前我只噴一次。" },
   { id: "deodorant", en: "I carry deodorant in summer because I often walk to the station in the heat.", ja: "夏は暑い中を駅まで歩くことが多いので、デオドラントを持ち歩いています。", zh: "夏天我常冒著熱氣走到車站，所以會隨身帶體香劑。" },
-  { id: "scale", en: "To compare my weight fairly, I use the scale at the same time each morning.", ja: "体重を正しく比べられるように、毎朝同じ時間に体重計に乗ります。", zh: "為了公平比較體重，我每天早上固定時間量體重。" },
+  { id: "scale", en: "To compare my weight accurately, I use the scale at the same time each morning.", ja: "体重を正しく比べられるように、毎朝同じ時間に体重計に乗ります。", zh: "為了準確比較體重，我每天早上固定時間量體重。" },
   { id: "bathrobe", en: "I put on the bathrobe after getting out of the bath so I do not get cold.", ja: "湯冷めしないように、お風呂から出たらバスローブを着ます。", zh: "為了不著涼，我洗完澡後會穿上浴袍。" },
   { id: "slippers", en: "Because the bathroom floor is cold in winter, I leave a pair of slippers by the door.", ja: "冬は洗面所の床が冷たいので、ドアのそばにスリッパを置いています。", zh: "冬天浴室地板很冷，所以我在門邊放一雙拖鞋。" },
   { id: "ventilation-fan", en: "Leave the ventilation fan running after a shower until the moisture has cleared.", ja: "湿気がなくなるまで、シャワーのあともしばらく換気扇を回しておきます。", zh: "洗完澡後讓排風扇繼續運轉，直到濕氣散去。" },

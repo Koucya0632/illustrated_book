@@ -546,3 +546,119 @@ test("an example span does not link back to the word it demonstrates", () => {
   assert.equal(out[1].gloss, "浴室地墊", "and is still tappable");
   assert.equal(out[3].wordId, "bathtub", "a different word still links");
 });
+
+function exampleFor(wordId: string, sortOrder: 0 | 1) {
+  const pair = MAIN_WORD_EXAMPLE_PAIRS.find(({ id }) => id === wordId);
+  assert.ok(pair, `missing pair for ${wordId}`);
+  return pair.examples[sortOrder];
+}
+
+function tappable(language: "en" | "ja", sentence: string, text: string) {
+  const span = authored[language][sentence]?.find((candidate) => candidate.t === text);
+  assert.ok(span?.z && span.j && span.e, `${language}: ${JSON.stringify(text)} must be tappable in ${sentence}`);
+  return span;
+}
+
+test("the audited bathroom translations stay aligned and natural", () => {
+  assert.deepEqual(exampleFor("bucket", 1), {
+    en: "Since the water was dirty, I changed the water in the bucket before rinsing the floor again.",
+    ja: "水が汚れていたので、床をもう一度流す前にバケツの水を替えました。",
+    zh: "水已經髒了，所以我再次沖地板前先換掉水桶裡的水。",
+    cefrLevel: "B1",
+    sortOrder: 1,
+  });
+  assert.equal(
+    exampleFor("cleansing-oil", 1).ja,
+    "メイクを落とすときは、乾いた肌にクレンジングオイルをなじませてから、水を加えて洗い流します。",
+  );
+  assert.equal(
+    exampleFor("conditioner", 1).ja,
+    "シャンプーを流したあと、コンディショナーを毛先中心になじませます。",
+  );
+  assert.equal(
+    exampleFor("scale", 1).en,
+    "To compare my weight accurately, I use the scale at the same time each morning.",
+  );
+  assert.equal(exampleFor("scale", 1).zh, "為了準確比較體重，我每天早上固定時間量體重。");
+  assert.equal(
+    exampleFor("wash-basin", 1).en,
+    "I filled the wash basin with warm water so I could hand-wash the stained shirt.",
+  );
+  assert.equal(
+    exampleFor("wash-basin", 1).zh,
+    "為了手洗有污漬的襯衫，我在臉盆裡裝了溫水。",
+  );
+});
+
+test("the audited bathroom click translations preserve contextual meaning and boundaries", () => {
+  const bathSalts = exampleFor("bath-salts", 1);
+  assert.equal(tappable("en", bathSalts.en, "bathtub").j, "バスタブ");
+  assert.equal(tappable("ja", bathSalts.ja, "ためてから").z, "放滿後");
+
+  const cleaner = exampleFor("cleaner", 0);
+  assert.equal(tappable("en", cleaner.en, "cleaner").z, "清潔劑");
+
+  const cottonBallSimple = exampleFor("cotton-ball", 0);
+  assert.deepEqual(
+    authored.ja[cottonBallSimple.ja].filter(({ z }) => z).map(({ t }) => t),
+    ["コットンボール", "傷口", "消毒液", "つけました"],
+  );
+  const cottonBallComplex = exampleFor("cotton-ball", 1);
+  assert.deepEqual(
+    authored.ja[cottonBallComplex.ja].filter(({ z }) => z).map(({ t }) => t),
+    ["袋", "開けたあと", "コットンボール", "ぬれないように", "清潔な", "容器", "入れます"],
+  );
+
+  for (const sortOrder of [0, 1] as const) {
+    const cottonPad = exampleFor("cotton-pad", sortOrder);
+    const tapped = authored.ja[cottonPad.ja].filter(({ z }) => z).map(({ t }) => t);
+    assert.ok(tapped.includes("化粧用コットン"));
+    assert.ok(tapped.includes("リムーバー"));
+    assert.ok(tapped.every((text) => !/[をにへで]$/.test(text)), `${cottonPad.ja}: particle inside tap`);
+  }
+
+  const cottonSwab = exampleFor("cotton-swab", 1);
+  assert.ok(!authored.en[cottonSwab.en].some(({ t }) => t.endsWith(", be")));
+  assert.equal(tappable("en", cottonSwab.en, "cause").j, "引き起こす");
+
+  const disinfectant = exampleFor("disinfectant", 1);
+  assert.equal(tappable("ja", disinfectant.ja, "消毒液").z, "消毒液");
+  const mirror = exampleFor("mirror", 0);
+  assert.equal(tappable("ja", mirror.ja, "自分").e, "herself");
+  const perfume = exampleFor("perfume", 1);
+  assert.equal(tappable("ja", perfume.ja, "出勤前").e, "before going to the office");
+  const sanitaryPad = exampleFor("sanitary-pad", 1);
+  assert.equal(tappable("en", sanitaryPad.en, "my period").z, "月經");
+  assert.equal(tappable("en", sanitaryPad.en, "starts").j, "始まる");
+  assert.equal(tappable("en", sanitaryPad.en, "while I am out").z, "外出時");
+
+  const shavingCream = exampleFor("shaving-cream", 1);
+  assert.equal(tappable("en", shavingCream.en, "hair softens").z, "毛髮變軟");
+  const shower = exampleFor("shower", 1);
+  assert.equal(tappable("en", shower.en, "running late").z, "快遲到了");
+  assert.equal(tappable("en", shower.en, "quick shower").j, "短いシャワー");
+  assert.equal(tappable("ja", shower.ja, "済ませました").e, "finished with");
+
+  const showerCurtain = exampleFor("shower-curtain", 0);
+  assert.equal(tappable("ja", showerCurtain.ja, "お湯").e, "hot water");
+  assert.equal(tappable("ja", showerCurtain.ja, "出す").e, "turn on");
+  const squeegee = exampleFor("squeegee", 1);
+  assert.equal(tappable("en", squeegee.en, "form mold").j, "カビが生える");
+  const tampon = exampleFor("tampon", 0);
+  assert.equal(tappable("ja", tampon.ja, "出る前").r, "でるまえ");
+
+  for (const sortOrder of [0, 1] as const) {
+    const toilet = exampleFor("toilet", sortOrder);
+    assert.equal(tappable("en", toilet.en, "toilet").z, "馬桶");
+    assert.equal(tappable("ja", toilet.ja, "トイレ").j, "便器");
+  }
+  const toiletSeat = exampleFor("toilet-seat", 1);
+  assert.equal(tappable("en", toiletSeat.en, "toilet seat").z, "馬桶座圈");
+  assert.equal(tappable("en", toiletSeat.en, "toilet seat").j, "便座");
+  const toiletTank = exampleFor("toilet-tank", 0);
+  assert.equal(tappable("en", toiletTank.en, "toilet tank").z, "馬桶水箱");
+
+  const washBasin = exampleFor("wash-basin", 1);
+  assert.equal(tappable("en", washBasin.en, "hand-wash").j, "手洗いする");
+  assert.equal(tappable("ja", washBasin.ja, "手洗いする").e, "hand-wash");
+});

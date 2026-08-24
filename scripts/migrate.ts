@@ -2597,7 +2597,7 @@ async function main() {
     console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
     const pairedExamples = await applyMainWordExamplePairs(sql);
     console.log(
-      `[migrate] main-word examples checked (${pairedExamples.updated} updated, ${pairedExamples.unchanged} unchanged).`,
+      `[migrate] main-word examples checked (${pairedExamples.updated} updated, ${pairedExamples.unchanged} unchanged, ${pairedExamples.spanSentencesUpdated} span sentences updated).`,
     );
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);

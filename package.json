@@ -22,6 +22,8 @@
     "fix:main-word-examples": "tsx --env-file=.env.local scripts/apply-main-word-corrections.ts",
     "fix:main-word-merges": "tsx --env-file=.env.local scripts/apply-main-word-merges.ts",
     "audit:main-words": "tsx --env-file=.env.local scripts/audit-main-words.ts",
+    "audio:generate": "tsx --env-file=.env.local scripts/generate-audio.ts",
+    "examples:spans": "tsx --env-file=.env.local scripts/generate-example-spans.ts",
     "verify:atlas": "node scripts/verify-atlas-privacy.mjs"
   },
   "dependencies": {

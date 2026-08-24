@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readFileSync } from "node:fs";
 import { spansCoverSentence, unlinkSelfReference } from "../lib/example-spans";
+import { alignAuthoredSpans } from "../lib/example-span-corpus";
 import { localizeSpans } from "../lib/word-localize";
 import type { GlossSpanRow } from "../types";
 
@@ -56,6 +57,22 @@ test("Japanese sentences carry no spaces to lean on", () => {
     span("。"),
   ];
   assert.ok(spansCoverSentence(spans, "猫が窓を見ている。"));
+});
+
+test("model chunks are aligned back onto the exact sentence", () => {
+  const sentence = "I replace my toothbrush when it wears out.";
+  const aligned = alignAuthoredSpans("en", sentence, [
+    { t: "I", r: "should be removed" },
+    { t: "replace", z: "更換", j: "交換する", e: "replace", p: "verb" },
+    { t: "my" },
+    { t: "toothbrush", z: "牙刷", j: "歯ブラシ", e: "toothbrush", p: "noun" },
+    { t: "when" },
+    { t: "it" },
+    { t: "wears", z: "磨損", j: "すり減る", e: "wears out", b: "wear out", p: "phrasal verb" },
+    { t: "out" },
+  ]);
+  assert.equal(aligned.map(({ t }) => t).join(""), sentence);
+  assert.ok(aligned.every((span) => !span.r));
 });
 
 // ---- gloss language ------------------------------------------------------

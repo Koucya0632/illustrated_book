@@ -155,6 +155,34 @@ export function isKnownLegacyExampleSet(
   });
 }
 
+/** The first two-example rollout kept each legacy simple sentence and paired
+ * it with the current complex sentence. A later category-specific simple
+ * rewrite must recognize that exact deployed state without accepting arbitrary
+ * edits as migration input. */
+export function isKnownPreviousTargetExamplePair(
+  id: string,
+  current: StoredMainWordExample[],
+): boolean {
+  if (current.length !== 2) return false;
+  const legacySimple = MAIN_WORD_LEGACY_EXAMPLE_SETS
+    .find((row) => row.id === id)
+    ?.examples.find(({ sortOrder }) => sortOrder === 0);
+  const complex = MAIN_WORD_EXAMPLE_PAIRS
+    .find((row) => row.id === id)
+    ?.examples.find(({ sortOrder }) => sortOrder === 1);
+  if (!legacySimple || !complex) return false;
+  const simpleActual = current.find(({ sortOrder }) => sortOrder === 0);
+  const complexActual = current.find(({ sortOrder }) => sortOrder === 1);
+  return Boolean(
+    simpleActual &&
+      complexActual &&
+      simpleActual.cefrLevel === "A2" &&
+      complexActual.cefrLevel === complex.cefrLevel &&
+      sameText(simpleActual, legacySimple) &&
+      sameText(complexActual, complex),
+  );
+}
+
 export function classifyMainWordExamplePair(
   id: string,
   current: StoredMainWordExample[],
@@ -162,6 +190,7 @@ export function classifyMainWordExamplePair(
   const pair = MAIN_WORD_EXAMPLE_PAIRS.find((row) => row.id === id);
   if (!pair) return "conflict";
   if (isTargetExamplePair(current, pair)) return "target";
+  if (isKnownPreviousTargetExamplePair(id, current)) return "legacy";
   if (isKnownLegacyExampleSet(id, current)) return "legacy";
   return "conflict";
 }

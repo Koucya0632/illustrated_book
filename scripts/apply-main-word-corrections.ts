@@ -12,7 +12,7 @@ async function main() {
     console.log(`[main-word-corrections] checked ${count} main-word rows`);
     const examples = await applyMainWordExamplePairs(sql);
     console.log(
-      `[main-word-examples] checked ${examples.checked}, updated ${examples.updated}, unchanged ${examples.unchanged}`,
+      `[main-word-examples] checked ${examples.checked}, updated ${examples.updated}, unchanged ${examples.unchanged}, span sentences updated ${examples.spanSentencesUpdated}`,
     );
   } finally {
     await sql.end();

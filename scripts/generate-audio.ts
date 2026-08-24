@@ -13,6 +13,10 @@
 //   node --env-file=.env.local --import tsx scripts/generate-audio.ts
 //   node --env-file=.env.local --import tsx scripts/generate-audio.ts --limit=5
 //   node --env-file=.env.local --import tsx scripts/generate-audio.ts --refresh
+//   node --env-file=.env.local --import tsx scripts/generate-audio.ts \
+//     --refresh --word-id=access-card --locale=ja-JP
+//   node --env-file=.env.local --import tsx scripts/generate-audio.ts \
+//     --dry-run --refresh --word-id=access-card --locale=ja-JP
 //
 // Requires: DATABASE_URL, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
 // GOOGLE_TTS_API_KEY (a Google Cloud API key with the Text-to-Speech API
@@ -21,6 +25,13 @@
 
 import { createClient } from "@supabase/supabase-js";
 import postgres from "postgres";
+import {
+  assertAudioSelection,
+  buildAudioArtifact,
+  buildAudioJobs,
+  parseAudioGenerationOptions,
+  selectAudioJobs,
+} from "../lib/audio-generation";
 
 const BUCKET = "word-audio";
 const TTS_URL = "https://texttospeech.googleapis.com/v1/text:synthesize";
@@ -36,30 +47,14 @@ function voiceFor(locale: string): { languageCode: string; name: string } {
   return { languageCode: locale, name: `${locale}-Chirp3-HD-${CHIRP_VOICE}` };
 }
 
-interface Job {
-  wordId: string;
-  locale: string;
-  text: string;
-}
-
-function envOrDie(name: string): string {
+function envOrThrow(name: string): string {
   const v = process.env[name];
-  if (!v) {
-    console.error(`[generate-audio] missing env ${name}`);
-    process.exit(1);
-  }
+  if (!v) throw new Error(`missing env ${name}`);
   return v;
 }
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
-}
-
-function parseLimit(): number | null {
-  const arg = process.argv.find((a) => a.startsWith("--limit="));
-  if (!arg) return null;
-  const n = Number(arg.split("=")[1]);
-  return Number.isFinite(n) && n > 0 ? n : null;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -113,24 +108,12 @@ async function synthesize(apiKey: string, locale: string, text: string): Promise
 }
 
 async function main() {
-  const refresh = process.argv.includes("--refresh");
-  const limit = parseLimit();
+  const options = parseAudioGenerationOptions(process.argv.slice(2));
 
-  const dbUrl = envOrDie("DATABASE_URL");
-  const supabaseUrl = envOrDie("NEXT_PUBLIC_SUPABASE_URL");
-  const serviceKey = envOrDie("SUPABASE_SERVICE_ROLE_KEY");
-  const apiKey = envOrDie("GOOGLE_TTS_API_KEY");
-
-  const supabase = createClient(supabaseUrl, serviceKey, {
-    auth: { autoRefreshToken: false, persistSession: false },
-  });
+  const dbUrl = envOrThrow("DATABASE_URL");
   const sql = postgres(dbUrl, { ssl: "require", prepare: false, max: 1 });
-  const publicBase = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`;
 
   try {
-    await ensureBucket(supabase);
-    console.log(`[generate-audio] voice = <locale>-Chirp3-HD-${CHIRP_VOICE}`);
-
     // Build the full job list: en-US + en-GB headwords, plus ja-JP terms.
     const words = await sql<{ id: string; word: string }[]>`
       SELECT id, word FROM words
@@ -143,30 +126,45 @@ async function main() {
       JOIN words w ON w.id = t.word_id
       WHERE t.language = 'ja' AND t.term <> ''
         AND w.deleted_at IS NULL AND w.status = 'published'
+      ORDER BY t.word_id
     `;
 
-    let jobs: Job[] = [];
-    for (const w of words) {
-      if (!w.word) continue;
-      jobs.push({ wordId: w.id, locale: "en-US", text: w.word });
-      jobs.push({ wordId: w.id, locale: "en-GB", text: w.word });
-    }
-    for (const t of jaTerms) {
-      jobs.push({ wordId: t.word_id, locale: "ja-JP", text: t.term });
-    }
+    const allJobs = buildAudioJobs(words, jaTerms);
 
     // Idempotency: drop jobs that already have a word_media audio row.
-    if (!refresh) {
+    let existing = new Set<string>();
+    if (!options.refresh) {
       const have = await sql<{ word_id: string; locale: string | null }[]>`
         SELECT word_id, locale FROM word_media
         WHERE kind = 'audio' AND locale IS NOT NULL
       `;
-      const haveSet = new Set(have.map((r) => `${r.word_id}|${r.locale}`));
-      jobs = jobs.filter((j) => !haveSet.has(`${j.wordId}|${j.locale}`));
+      existing = new Set(have.map((r) => `${r.word_id}|${r.locale}`));
     }
 
-    if (limit) jobs = jobs.slice(0, limit);
-    console.log(`[generate-audio] ${jobs.length} clips to generate${refresh ? " (refresh)" : ""}`);
+    const jobs = selectAudioJobs(allJobs, existing, options);
+    assertAudioSelection(allJobs, jobs, options);
+    console.log(
+      `[generate-audio] ${jobs.length} clips to generate${options.refresh ? " (refresh)" : ""}`,
+    );
+    if (options.dryRun) {
+      for (const job of jobs) {
+        console.log(`  • ${job.wordId} ${job.locale}: ${job.text}`);
+      }
+      console.log("[generate-audio] dry run: no audio, storage, or database changes were made");
+      return;
+    }
+    if (jobs.length === 0) return;
+
+    const supabaseUrl = envOrThrow("NEXT_PUBLIC_SUPABASE_URL");
+    const serviceKey = envOrThrow("SUPABASE_SERVICE_ROLE_KEY");
+    const apiKey = envOrThrow("GOOGLE_TTS_API_KEY");
+    const supabase = createClient(supabaseUrl, serviceKey, {
+      auth: { autoRefreshToken: false, persistSession: false },
+    });
+    const publicBase = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`;
+
+    await ensureBucket(supabase);
+    console.log(`[generate-audio] voice = <locale>-Chirp3-HD-${CHIRP_VOICE}`);
 
     let ok = 0;
     const failures: Array<{ key: string; reason: string }> = [];
@@ -175,7 +173,8 @@ async function main() {
       const key = `${job.wordId} ${job.locale}`;
       try {
         const mp3 = await synthesize(apiKey, job.locale, job.text);
-        const path = `${job.wordId}/${job.locale}.mp3`;
+        const artifact = buildAudioArtifact(job, mp3);
+        const path = artifact.storagePath;
         const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, mp3, {
           contentType: "audio/mpeg",
           upsert: true,
@@ -183,18 +182,33 @@ async function main() {
         });
         if (upErr) throw new Error(`upload: ${upErr.message}`);
         const url = `${publicBase}${path}`;
+        const generatedAt = new Date().toISOString();
+        const metadata = {
+          sourceText: job.text,
+          voice: voiceFor(job.locale).name,
+          sha256: artifact.sha256,
+          generatedAt,
+        };
 
-        await sql`
-          INSERT INTO word_media (word_id, kind, url, storage_path, mime_type, model, locale)
-          VALUES (${job.wordId}, 'audio', ${url}, ${path}, 'audio/mpeg', ${MODEL}, ${job.locale})
-          ON CONFLICT (word_id, kind, locale) WHERE kind = 'audio'
-          DO UPDATE SET url = EXCLUDED.url, storage_path = EXCLUDED.storage_path,
-                        mime_type = EXCLUDED.mime_type, model = EXCLUDED.model
-        `;
-        // Mirror the US clip onto words.audio_url for back-compat consumers.
-        if (job.locale === "en-US") {
-          await sql`UPDATE words SET audio_url = ${url} WHERE id = ${job.wordId}`;
-        }
+        await sql.begin(async (tx) => {
+          await tx`
+            INSERT INTO word_media (word_id, kind, url, storage_path, mime_type, model, locale, metadata)
+            VALUES (${job.wordId}, 'audio', ${url}, ${path}, 'audio/mpeg', ${MODEL}, ${job.locale}, ${tx.json(metadata)})
+            ON CONFLICT (word_id, kind, locale) WHERE kind = 'audio'
+            DO UPDATE SET url = EXCLUDED.url, storage_path = EXCLUDED.storage_path,
+                          mime_type = EXCLUDED.mime_type, model = EXCLUDED.model,
+                          metadata = EXCLUDED.metadata
+          `;
+          // Mirror generated clips onto legacy columns while older clients still read them.
+          if (job.locale === "en-US") {
+            await tx`UPDATE words SET audio_url = ${url} WHERE id = ${job.wordId}`;
+          } else if (job.locale === "ja-JP") {
+            await tx`
+              UPDATE word_terms SET audio_url = ${url}, updated_at = now()
+              WHERE word_id = ${job.wordId} AND language = 'ja'
+            `;
+          }
+        });
 
         ok++;
         console.log(`  ✓ ${key} → ${url}`);
@@ -211,7 +225,7 @@ async function main() {
     if (failures.length) {
       console.log("[generate-audio] failures:");
       for (const f of failures) console.log(`  - ${f.key}: ${f.reason}`);
-      process.exit(1);
+      throw new Error(`${failures.length} audio clip${failures.length === 1 ? "" : "s"} failed`);
     }
   } finally {
     await sql.end();
@@ -220,5 +234,5 @@ async function main() {
 
 main().catch((e) => {
   console.error("[generate-audio] failed:", e);
-  process.exit(1);
+  process.exitCode = 1;
 });

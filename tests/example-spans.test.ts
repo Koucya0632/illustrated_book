@@ -2,7 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { readFileSync } from "node:fs";
 import { spansCoverSentence, unlinkSelfReference } from "../lib/example-spans";
-import { alignAuthoredSpans } from "../lib/example-span-corpus";
+import {
+  alignAuthoredSpans,
+  validateAuthoredSentence,
+  validateLearningSpanQuality,
+} from "../lib/example-span-corpus";
+import { MAIN_WORD_EXAMPLE_PAIRS } from "../lib/main-word-example-pairs";
 import { localizeSpans } from "../lib/word-localize";
 import type { GlossSpanRow } from "../types";
 
@@ -73,6 +78,156 @@ test("model chunks are aligned back onto the exact sentence", () => {
   ]);
   assert.equal(aligned.map(({ t }) => t).join(""), sentence);
   assert.ok(aligned.every((span) => !span.r));
+});
+
+test("alignment keeps punctuation and spacing with the phrase before it", () => {
+  const aligned = alignAuthoredSpans("en", "Before work, I charge my laptop.", [
+    { t: "Before work", z: "上班前", j: "仕事の前に", e: "before work" },
+    { t: "I charge my laptop", z: "我替筆電充電", j: "ノートパソコンを充電する", e: "I charge my laptop" },
+  ]);
+  assert.deepEqual(aligned.map(({ t }) => t), ["Before work, ", "I charge my laptop."]);
+});
+
+test("token-by-token English splits are rejected", () => {
+  const issues = validateLearningSpanQuality("en", [
+    { t: "Since" },
+    { t: " the" },
+    { t: " hook" },
+    { t: " is" },
+    { t: " loose" },
+    { t: ", do not" },
+    { t: " hang" },
+    { t: " a" },
+    { t: " heavy bag." },
+  ]);
+  assert.ok(issues.some((issue) => issue.includes("maximum is 8")));
+  assert.ok(issues.some((issue) => issue.includes("grammar is detached")));
+});
+
+test("a whole sentence is not left as one oversized tap", () => {
+  assert.ok(
+    validateLearningSpanQuality("en", [{ t: "I use the microwave." }])
+      .some((issue) => issue.includes("minimum is 2")),
+  );
+});
+
+test("Japanese particles and auxiliary fragments stay inside natural phrases", () => {
+  const poor = validateLearningSpanQuality("ja", [
+    { t: "冬" },
+    { t: "は" },
+    { t: "洗面所" },
+    { t: "の" },
+    { t: "床" },
+    { t: "が" },
+    { t: "冷たいので、" },
+    { t: "スリッパを" },
+    { t: "置い" },
+    { t: "て" },
+    { t: "います。" },
+  ]);
+  assert.ok(poor.some((issue) => issue.includes("maximum is 8")));
+  assert.ok(poor.some((issue) => issue.includes("grammar is detached")));
+
+  assert.deepEqual(
+    validateLearningSpanQuality("ja", [
+      { t: "冬は" },
+      { t: "洗面所の床が" },
+      { t: "冷たいので、" },
+      { t: "ドアのそばに" },
+      { t: "スリッパを" },
+      { t: "置いています。" },
+    ]),
+    [],
+  );
+});
+
+test("a Japanese reading covers the entire phrase, not only its last verb", () => {
+  const sentence = "歯ブラシに歯磨き粉をつけてください。";
+  const poor = validateAuthoredSentence("ja", sentence, [
+    {
+      t: sentence,
+      z: "請把牙膏擠在牙刷上。",
+      j: sentence,
+      e: "Please put toothpaste on the toothbrush.",
+      r: "つけてください",
+    },
+  ]);
+  assert.ok(poor.some((issue) => issue.includes("reading omits kana")));
+  assert.ok(poor.some((issue) => issue.includes("reading is too short")));
+
+  assert.deepEqual(
+    validateAuthoredSentence("ja", sentence, [
+      {
+        t: "歯ブラシに",
+        z: "在牙刷上",
+        j: "歯ブラシに",
+        e: "on the toothbrush",
+        r: "はぶらしに",
+      },
+      {
+        t: "歯磨き粉をつけてください。",
+        z: "請把牙膏擠在牙刷上。",
+        j: "歯磨き粉をつけてください。",
+        e: "Please put on toothpaste.",
+        r: "はみがきこをつけてください",
+      },
+    ]),
+    [],
+  );
+});
+
+test("a Japanese reading spells kanji and Latin letters in kana", () => {
+  const sentence = "入館カードを忘れました。";
+  const glosses = {
+    z: "我忘了門禁卡。",
+    j: sentence,
+    e: "I forgot my access card.",
+  };
+  assert.ok(
+    validateAuthoredSentence("ja", sentence, [
+      { t: sentence, r: "入館カードを忘れました", ...glosses },
+    ]).some((issue) => issue.includes("without kanji or Latin letters")),
+  );
+  assert.deepEqual(
+    validateAuthoredSentence("ja", sentence, [
+      {
+        t: "入館カードを",
+        r: "にゅうかんカードを",
+        z: "門禁卡",
+        j: "入館カードを",
+        e: "my access card",
+      },
+      {
+        t: "忘れました。",
+        r: "わすれました",
+        z: "我忘了。",
+        j: "忘れました。",
+        e: "I forgot.",
+      },
+    ]),
+    [],
+  );
+});
+
+test("contextual glosses reject parenthetical grammar notes", () => {
+  const sentence = "牛乳を冷蔵庫に入れてください。";
+  const issues = validateAuthoredSentence("ja", sentence, [
+    {
+      t: "牛乳を",
+      z: "牛奶（加格助詞）",
+      j: "牛乳を",
+      e: "milk (object marker)",
+      r: "ぎゅうにゅうを",
+    },
+    {
+      t: "冷蔵庫に入れてください。",
+      z: "請放進冰箱。",
+      j: "冷蔵庫に入れてください。",
+      e: "Please put it in the fridge.",
+      r: "れいぞうこにいれてください",
+    },
+  ]);
+  assert.ok(issues.some((issue) => issue.includes("grammar note")));
 });
 
 // ---- gloss language ------------------------------------------------------
@@ -214,6 +369,21 @@ test("every authored sentence is re-spelled by its spans", () => {
     }
   }
   assert.deepEqual(broken, []);
+});
+
+test("every current main-word example uses natural learning phrases", () => {
+  const poor: string[] = [];
+  for (const pair of MAIN_WORD_EXAMPLE_PAIRS) {
+    for (const example of pair.examples) {
+      for (const language of ["en", "ja"] as const) {
+        const sentence = example[language];
+        for (const issue of validateAuthoredSentence(language, sentence, authored[language][sentence])) {
+          poor.push(`${pair.id}/${example.sortOrder}/${language}: ${issue}`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(poor, []);
 });
 
 // All three or none. A span glossed in one language only goes dark for every

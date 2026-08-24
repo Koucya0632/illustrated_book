@@ -13,6 +13,8 @@ import {
   type AuthoredSpan,
   type ExampleSpanCorpus,
   EXAMPLE_SPAN_PARTS_OF_SPEECH,
+  MIN_LEARNING_SPANS,
+  MAX_LEARNING_SPANS,
   loadExampleSpanCorpus,
   type SentenceLanguage,
   validateAuthoredSentence,
@@ -64,7 +66,15 @@ function parsePositiveInteger(argv: string[], name: string, fallback: number): n
 function candidatesFor(argv: string[], corpus: ExampleSpanCorpus): Candidate[] {
   const category = valueFor(argv, "--category");
   const wordId = valueFor(argv, "--word-id");
+  const languageFilter = valueFor(argv, "--language");
+  if (languageFilter && languageFilter !== "en" && languageFilter !== "ja") {
+    throw new Error("--language must be en or ja");
+  }
   const refresh = argv.includes("--refresh");
+  const invalidOnly = argv.includes("--invalid-only");
+  if (invalidOnly && !refresh) {
+    throw new Error("--invalid-only requires --refresh");
+  }
   const allowed = new Set(
     words
       .filter((word) => (!category || word.category === category) && (!wordId || word.id === wordId))
@@ -80,7 +90,12 @@ function candidatesFor(argv: string[], corpus: ExampleSpanCorpus): Candidate[] {
         ["en", example.en],
         ["ja", example.ja],
       ] as const) {
+        if (languageFilter && language !== languageFilter) continue;
         if (!refresh && corpus[language][sentence]) continue;
+        if (
+          invalidOnly &&
+          validateAuthoredSentence(language, sentence, corpus[language][sentence] ?? []).length === 0
+        ) continue;
         candidates.push({
           key: `${pair.id}:${example.sortOrder}:${language}`,
           wordId: pair.id,
@@ -118,8 +133,8 @@ const RESPONSE_SCHEMA = {
           key: { type: "string" },
           spans: {
             type: "array",
-            minItems: 1,
-            maxItems: 20,
+            minItems: MIN_LEARNING_SPANS,
+            maxItems: MAX_LEARNING_SPANS,
             items: {
               type: "object",
               additionalProperties: false,
@@ -145,11 +160,21 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<Map<st
   const prompt = [
     "Split each exact sentence into tappable learning spans for an English/Japanese picture dictionary.",
     "The t values must concatenate character-for-character to the original sentence, including every space and punctuation mark.",
-    "Return only meaningful everyday words or short phrases as spans. Do not return whitespace-only or punctuation-only spans; the program restores untouched gaps.",
-    "Aim for 5-12 semantic spans per sentence and never return more than 20; keep natural multiword expressions together instead of splitting every token.",
+    "Break the sentence into 2-7 natural learning phrases, never fewer than 2 or more than 8. Prefer clause-level or phrase-level meaning over token-by-token analysis.",
+    "At least 2 spans is a hard requirement even for a very short sentence. For example, split English 'Turn on the lamp.' as 'Turn on' + ' the lamp.' and Japanese 'ランプをつけてください。' as 'ランプを' + 'つけてください。'. Never return the whole sentence as one span.",
+    "Return only meaningful everyday phrases as spans. Do not return whitespace-only or punctuation-only spans; the program restores untouched gaps.",
+    "For English, attach articles, auxiliaries, prepositions, conjunctions, and pronouns to the phrase they belong to. Keep phrasal verbs, collocations, and short clauses together.",
+    "Keep a transitive verb with its direct object when separating them would leave an incomplete fragment. For example, split 'I put my laptop on the desk.' as 'I put my laptop' + ' on the desk.', never 'I put' + ' my laptop on the desk.'.",
+    "For Japanese, attach particles to the noun phrase before them and keep verb stems, conjugations, auxiliaries, and sentence endings together. Never split forms such as 置いています, 確認してください, or 読まなかった into separate spans.",
+    "Each span should answer what that whole phrase means in context. Do not create separate taps for grammar fragments such as the, is, を, の, て, or います.",
     "Every returned span is tappable and must provide all three contextual glosses: z in Traditional Chinese, j in natural Japanese, and e in English.",
+    "Translate only the phrase meaning in context. Never add grammar labels, parenthetical notes, or explanations such as 格助詞, 主語, object marker, polite form, or topic marker.",
+    "The z, j, and e glosses must not contain ( ), （ ）, or any other parenthetical annotation. Write a clean translation only.",
+    "Traditional Chinese glosses must be natural Taiwan usage. Translate temporal 前に as 之前 or 前, never as the literal spatial 前面.",
+    "Translate roles and fixed expressions by meaning rather than character by character; for example, 清掃の人 means 清潔人員／清潔人員之一 (cleaner), never 清潔的人.",
     "Use b for the dictionary base form only when useful. Use p only from the permitted enum.",
-    "For every glossed Japanese span, provide r as its complete hiragana reading. English spans must have r=null.",
+    "For every glossed Japanese span, r must read the ENTIRE t phrase from its first character to its last, including every noun, particle, inflection, auxiliary, and ending—not only the headword or final verb.",
+    "In r, spell the complete phrase in kana. Convert every kanji and Latin letter to its kana reading; do not copy any kanji or Latin letters into r. Katakana loanwords may remain katakana. Preserve kana already present in t in the same order, including particles は/へ/を and the long-vowel mark ー. Omit punctuation only. English spans must have r=null.",
     "Do not rewrite, normalize, translate, or omit any part of the sentence.",
     JSON.stringify(batch.map(({ key, language, sentence }) => ({ key, language, sentence }))),
   ].join("\n");
@@ -207,18 +232,25 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<Map<st
 async function generateResilient(
   apiKey: string,
   batch: Candidate[],
+  retries = 10,
 ): Promise<Map<string, AuthoredSpan[]>> {
   try {
     return await generateBatch(apiKey, batch);
   } catch (error) {
-    if (batch.length === 1) throw error;
+    if (batch.length === 1) {
+      if (retries <= 0) throw error;
+      console.warn(
+        `[example-spans] retrying ${batch[0].key} (${retries} attempt${retries === 1 ? "" : "s"} left): ${error instanceof Error ? error.message : String(error)}`,
+      );
+      return generateResilient(apiKey, batch, retries - 1);
+    }
     console.warn(
       `[example-spans] splitting failed batch of ${batch.length}: ${error instanceof Error ? error.message : String(error)}`,
     );
     const middle = Math.ceil(batch.length / 2);
     const [left, right] = await Promise.all([
-      generateResilient(apiKey, batch.slice(0, middle)),
-      generateResilient(apiKey, batch.slice(middle)),
+      generateResilient(apiKey, batch.slice(0, middle), retries),
+      generateResilient(apiKey, batch.slice(middle), retries),
     ]);
     return new Map([...left, ...right]);
   }

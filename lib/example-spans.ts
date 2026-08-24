@@ -7,11 +7,15 @@
 // serve one. (The iOS client applies it a third time, in
 // `SentenceAnnotation.spans(_:for:)`, on the payload it actually renders.)
 
-/** Bump when the annotation schema or the prompt changes.
+/** Oldest annotation schema readers may safely render. */
+export const MIN_SPANS_VERSION = 1;
+
+/** Version assigned by writers after the natural-phrase prompt upgrade.
  *
- *  `scripts/load-example-spans.ts` rewrites anything below this and readers
- *  ignore anything below it, so an upgrade is never half-visible on screen. */
-export const SPANS_VERSION = 1;
+ * Readers intentionally continue accepting v1 while the example transaction
+ * upgrades the current examples to v2. Definition annotations can therefore
+ * remain visible until the full-corpus loader refreshes them separately. */
+export const SPANS_VERSION = 2;
 
 /**
  * Do these spans cover the whole sentence?

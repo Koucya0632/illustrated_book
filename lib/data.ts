@@ -5,7 +5,7 @@
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
 import { words as staticWords } from "./words";
-import { SPANS_VERSION, spansCoverSentence, unlinkSelfReference } from "./example-spans";
+import { MIN_SPANS_VERSION, spansCoverSentence, unlinkSelfReference } from "./example-spans";
 import { localizeSpans, localizeWord, type LocalizedTextMap } from "./word-localize";
 import {
   targetLanguageFor,
@@ -340,7 +340,7 @@ const getSpanRowsCached = unstable_cache(
       FROM sentence_spans s
       WHERE s.sentence_language = ${language}
         AND s.sentence = ANY(${sentences})
-        AND s.version >= ${SPANS_VERSION}
+        AND s.version >= ${MIN_SPANS_VERSION}
       ORDER BY s.sentence, s.sort_order
     `;
   },

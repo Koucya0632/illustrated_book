@@ -12,6 +12,7 @@ import { words as seedWords } from "../lib/words";
 import { runAtlasTextModeration } from "../lib/atlas/moderation";
 import { applyMainWordCorrections } from "../lib/main-word-corrections";
 import { applyMainWordMerges } from "../lib/main-word-merges";
+import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -2594,6 +2595,10 @@ async function main() {
     console.log(`[migrate] main-word merges checked (${mergedWords} rows).`);
     const correctedWords = await applyMainWordCorrections(sql);
     console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
+    const pairedExamples = await applyMainWordExamplePairs(sql);
+    console.log(
+      `[migrate] main-word examples checked (${pairedExamples.updated} updated, ${pairedExamples.unchanged} unchanged).`,
+    );
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);
     await moderateExistingProfileNicknames(sql);

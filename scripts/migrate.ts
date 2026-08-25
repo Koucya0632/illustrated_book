@@ -13,6 +13,7 @@ import { runAtlasTextModeration } from "../lib/atlas/moderation";
 import { applyMainWordCorrections } from "../lib/main-word-corrections";
 import { applyMainWordMerges } from "../lib/main-word-merges";
 import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
+import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -2506,6 +2507,47 @@ async function generateCards(sql: any) {
 // original hotlink, and every deploy runs this. Pointing the seed at a new
 // Storage URL, or editing a word still on an external URL, does propagate.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+/// Push the declared storage-bucket rules at the bucket that is supposed to
+/// obey them. `WORD_IMAGE_BUCKET_RULES` says "webp only, 2 MB", and its comment
+/// promises that "a future uploader that forgets encodeWordImage is rejected by
+/// Storage rather than quietly re-creating the problem" — but the only code that
+/// ever applied it was scripts/upload-images.ts, a manual seeding script that
+/// had not run since the rules were tightened. The live bucket still accepted
+/// jpeg/png/gif up to 10 MB, which is how two 1 MB PNGs sat in there.
+///
+/// Every other bucket (atlas public/private, avatars, word-audio) already
+/// carries its rules; word-images was the one that never got them. Applied here
+/// rather than lazily from an upload path so it lands once per deploy instead of
+/// depending on someone remembering to run a script.
+///
+/// Only affects NEW uploads — Storage does not re-validate objects already
+/// stored, so tightening cannot break anything already served.
+async function syncStorageBucketRules(sql: any) {
+  const rules = [{ id: "word-images", ...WORD_IMAGE_BUCKET_RULES }];
+  for (const r of rules) {
+    const updated = await sql`
+      UPDATE storage.buckets
+      SET public             = ${r.public},
+          file_size_limit    = ${r.fileSizeLimit},
+          allowed_mime_types = ${r.allowedMimeTypes}
+      WHERE id = ${r.id}
+        AND (
+          public             IS DISTINCT FROM ${r.public}
+          OR file_size_limit IS DISTINCT FROM ${r.fileSizeLimit}
+          OR allowed_mime_types IS DISTINCT FROM ${r.allowedMimeTypes}
+        )
+      RETURNING id
+    `;
+    if (updated.length > 0) {
+      console.log(
+        `[migrate] bucket rules applied to ${r.id}: ${r.allowedMimeTypes.join(", ")}, ${r.fileSizeLimit} bytes`,
+      );
+    } else {
+      console.log(`[migrate] bucket rules: ${r.id} already matches.`);
+    }
+  }
+}
+
 async function syncSeedWordImages(sql: any) {
   const seeded = seedWords.filter((w) => w.imageUrl);
   const ids = seeded.map((w) => w.id);
@@ -2619,6 +2661,8 @@ async function main() {
       await sql.unsafe(stmt);
     }
     console.log(`[migrate] legacy columns ensured dropped.`);
+
+    await syncStorageBucketRules(sql);
   } finally {
     await sql.end();
   }

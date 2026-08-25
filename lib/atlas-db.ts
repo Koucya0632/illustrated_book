@@ -27,6 +27,7 @@ import type {
   AtlasTargetLanguage,
 } from "./atlas/types";
 import type { AtlasRecognitionResult } from "./atlas/vision-provider";
+import { nextBackfillAttempt } from "./atlas/enrich-policy";
 
 function requireSql() {
   const sql = getSql();
@@ -447,23 +448,35 @@ export async function updateAtlasItemEnrichment(
       enrichment         = ${sql.json(fields.enrichment as never)},
       backfill_status    = 'filled',
       backfill_error     = NULL,
+      backfill_attempts  = 0,
+      backfill_attempts_version = ${fields.enrichment.enrichVersion ?? 0},
       updated_at         = now()
     WHERE user_id = ${userId}::uuid AND id = ${itemId}::uuid
   `;
 }
 
+/** Spend one unit of the item's 補充 budget and record why the pass failed.
+ *  Takes the row rather than an id because the budget is computed from it (see
+ *  nextBackfillAttempt) — running out is what writes 'skipped'.
+ *
+ *  Read-then-write, so two concurrent 詳情 opens can each count as attempt 1.
+ *  Left that way on purpose: this is a cost ceiling, not an invariant, and
+ *  moving the arithmetic into SQL would mean writing the budget rule twice. */
 export async function markAtlasItemBackfillFailed(
   userId: string,
-  itemId: string,
+  item: AtlasItemRow,
   error: string,
 ): Promise<void> {
   const sql = requireSql();
+  const next = nextBackfillAttempt(item);
   await sql`
     UPDATE user_atlas_items SET
-      backfill_status = 'failed',
+      backfill_status = ${next.status},
       backfill_error  = ${error.slice(0, 500)},
+      backfill_attempts = ${next.attempts},
+      backfill_attempts_version = ${next.version},
       updated_at      = now()
-    WHERE user_id = ${userId}::uuid AND id = ${itemId}::uuid
+    WHERE user_id = ${userId}::uuid AND id = ${item.id}::uuid
   `;
 }
 

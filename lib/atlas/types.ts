@@ -176,6 +176,15 @@ export interface AtlasItemRow {
   correction_source: "candidate" | "manual" | "dictionary_match" | "ai_backfill";
   backfill_status: "pending" | "filled" | "failed" | "skipped";
   backfill_error: string | null;
+  /// 補充 passes spent under the current ATLAS_ENRICH_VERSION. Optional for the
+  /// same reason `enrichment` is: aliased study/sync mappers don't select it.
+  /// Absent reads as 0, which only ever grants an extra attempt.
+  backfill_attempts?: number;
+  /// Which ATLAS_ENRICH_VERSION `backfill_attempts` was accrued under. A budget
+  /// belongs to a recipe: when the recipe moves on, the count reads as 0 and a
+  /// `skipped` item revives. Storing the pair is what keeps that derivable from
+  /// the row instead of hiding it in whoever writes the failure.
+  backfill_attempts_version?: number;
   // Present on full-row reads (SELECT *); omitted by aliased study/sync mappers.
   enrichment?: AtlasEnrichment;
   visibility: AtlasVisibility;

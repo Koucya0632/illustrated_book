@@ -16,22 +16,13 @@ import { segmentFurigana } from "@/lib/kana";
 import { loadFuriganaDict } from "@/lib/furigana-dict";
 import type { AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
+import { ATLAS_ENRICH_VERSION } from "@/lib/atlas/enrich-policy";
 
 // Cost-effective model for custom-card enrichment: OpenAI gpt-4o-mini called
 // directly (reuses the existing OPENAI_API_KEY — no Vercel AI Gateway billing).
 // ~$0.15/$0.60 per MTok, supports structured outputs + Traditional Chinese.
 const ATLAS_ENRICH_MODEL = openai(process.env.ATLAS_ENRICH_MODEL || "gpt-4o-mini");
 
-// Bump when enrichAtlasItem's output changes in a way existing rows should
-// re-pick-up on next open. v2: JA reading is generated on ATLAS_ENRICH_MODEL
-// (OpenAI-direct) instead of generateJapaneseReading, which routed through the
-// unusable Vercel AI Gateway and left reading null. v3: gloss language follows
-// the UI language — every item now also gets display_ja/display_en,
-// definition_ja/definition_en and enrichment.glossI18n so ja/en interfaces
-// read glosses they can understand. Rows below this version are re-enriched
-// once (see needsEnrichRefresh); the stamp is unconditional so a failed
-// generation can't loop.
-const ATLAS_ENRICH_VERSION = 3;
 
 const JapaneseDefinitionSchema = z.object({
   definition: z
@@ -263,14 +254,6 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
       enrichVersion: ATLAS_ENRICH_VERSION,
     },
   };
-}
-
-/// True for items enriched under an older scheme (v3 added the ja/en gloss
-/// layer), so callers re-enrich them once and skip embedding their stale
-/// detail. The version stamp advances on every re-enrich, so this can't loop
-/// even if a generation step fails.
-export function needsEnrichRefresh(item: AtlasItemRow): boolean {
-  return (item.enrichment?.enrichVersion ?? 0) < ATLAS_ENRICH_VERSION;
 }
 
 /// Assemble the full per-word detail JSON (same shape as getLearningWord /

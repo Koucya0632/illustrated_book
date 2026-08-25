@@ -38,6 +38,12 @@ export const WORD_IMAGE_CONTENT_TYPE = "image/webp";
 
 /// Bucket-level enforcement, so a future uploader that forgets `encodeWordImage`
 /// is rejected by Storage rather than quietly re-creating the problem.
+///
+/// Applied by `syncStorageBucketRules` in scripts/migrate.ts, i.e. once per
+/// deploy. It used to be applied only by scripts/upload-images.ts — a manual
+/// seeding script — so the promise above went unkept for as long as nobody ran
+/// it: the live bucket accepted jpeg/png/gif up to 10 MB, and two 1 MB PNGs got
+/// in that way. Declaring a rule and applying it are different things.
 /// 2 MB: a 1200px WebP of these illustrations lands well under 200 KB, so
 /// anything near this ceiling means something skipped the encode.
 export const WORD_IMAGE_BUCKET_RULES = {

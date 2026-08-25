@@ -970,6 +970,13 @@ const DDL = [
   // Furigana split of `reading` over `lemma`; see word_terms.reading_segments.
   `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS reading_segments JSONB`,
 
+  // How many 補充 passes this item has spent under the current ATLAS_ENRICH_VERSION.
+  // The budget is what makes enrichment spend finite per item rather than a rate;
+  // backfill_status = 'skipped' is where it lands when the budget runs out.
+  // See docs/adr/0011 in tuji-ios.
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS backfill_attempts INT NOT NULL DEFAULT 0`,
+  `ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS backfill_attempts_version INT NOT NULL DEFAULT 0`,
+
   // ---- Moderation pipeline (docs/COMMUNITY_ATLAS_PLAN.md §5) ----
   // Existing DBs carry the inline CHECK created with the table, which predates
   // pending_auto / pending_review. CREATE TABLE IF NOT EXISTS never alters it,

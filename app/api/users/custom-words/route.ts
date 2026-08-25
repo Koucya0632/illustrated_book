@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { listAtlasCustomWords } from "@/lib/atlas-db";
-import { atlasItemToWord, needsEnrichRefresh } from "@/lib/atlas/enrich";
+import { atlasItemToWord } from "@/lib/atlas/enrich";
+import { needsEnrichRefresh } from "@/lib/atlas/enrich-policy";
 import { pickAtlasGloss } from "@/lib/atlas/gloss";
 import { toZhHans } from "@/lib/opencc";
 import { readLang, readLearningDirection } from "@/lib/cache-headers";

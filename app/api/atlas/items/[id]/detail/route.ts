@@ -6,7 +6,9 @@ import {
   markAtlasItemBackfillFailed,
   updateAtlasItemEnrichment,
 } from "@/lib/atlas-db";
-import { atlasItemToWord, enrichAtlasItem, needsEnrichRefresh } from "@/lib/atlas/enrich";
+import { atlasItemToWord, enrichAtlasItem } from "@/lib/atlas/enrich";
+import { shouldEnrichAtlasItem } from "@/lib/atlas/enrich-policy";
+import { checkAtlasAiBackstops, clientIpHash } from "@/lib/ratelimit";
 import { getSettings } from "@/lib/users-db";
 import { readLang } from "@/lib/cache-headers";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
@@ -35,19 +37,30 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   // background pass). Also re-runs once for JA cards enriched under an older
   // scheme (missing the Japanese target definition and/or kana reading) so they
   // self-heal. First open is slower; later reads use the stored blob.
-  if (item.backfill_status !== "filled" || needsEnrichRefresh(item)) {
-    try {
-      const fields = await enrichAtlasItem(item);
-      await updateAtlasItemEnrichment(userId, item.id, fields);
-      const refreshed = await getAtlasItem(userId, item.id);
-      if (refreshed) item = refreshed;
-    } catch (err) {
-      await markAtlasItemBackfillFailed(
-        userId,
-        item.id,
-        err instanceof Error ? err.message : "enrich failed",
-      ).catch(() => {});
-      // fall through — still return name + image so the page isn't empty
+  //
+  // This is a GET with a paid side effect (3-4 model calls), so the ceiling has
+  // to hold here rather than at the POST: shouldEnrichAtlasItem gives the item
+  // a finite budget, and the abuse backstop is consumed ONLY on the branch that
+  // actually spends — charging it at the top of the route would throttle plain
+  // browsing, which is legitimate and costs nothing. See docs/adr/0011.
+  if (shouldEnrichAtlasItem(item)) {
+    // A denied backstop is not an error for a reader: skip the paid pass and
+    // serve name + image, exactly as a failed one does.
+    const backstop = await checkAtlasAiBackstops({ ipHash: clientIpHash(req) });
+    if (backstop.ok) {
+      try {
+        const fields = await enrichAtlasItem(item);
+        await updateAtlasItemEnrichment(userId, item.id, fields);
+        const refreshed = await getAtlasItem(userId, item.id);
+        if (refreshed) item = refreshed;
+      } catch (err) {
+        await markAtlasItemBackfillFailed(
+          userId,
+          item,
+          err instanceof Error ? err.message : "enrich failed",
+        ).catch(() => {});
+        // fall through — still return name + image so the page isn't empty
+      }
     }
   }
 

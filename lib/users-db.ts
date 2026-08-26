@@ -10,6 +10,7 @@ import "server-only";
 import { unstable_cache } from "next/cache";
 import { getSql } from "./db";
 import { DEFAULT_SETTINGS, normalizeSettings, type UserSettings } from "./settings";
+import type { StreakMilestoneFacts } from "./streak-milestone";
 
 export interface ProfileRow {
   id: string;          // UUID
@@ -575,5 +576,85 @@ async function getStudyStreakRaw(
   } catch (err) {
     console.warn("[users-db] getStudyStreak failed", err);
     return EMPTY_STREAK;
+  }
+}
+
+// The two facts lib/streak-milestone.ts needs, read as one round trip.
+//
+// **Call this before writing the answer's study log**, never after. The rule it
+// feeds is "was today already on the board" and the answer's own row would
+// otherwise be indistinguishable from a second device's — see the note on
+// streakAfterAnswer for why the after-write version loses milestones instead of
+// duplicating them.
+//
+// Deliberately NOT cached, and deliberately not getStudyStreak(): that one is
+// tagged `progress:<uid>`, which /api/study/answer revalidates on every answer,
+// so inside a session it would miss every time anyway — and it computes
+// longest/total_days/last_study_date that nobody here reads.
+//
+// The CASE is load-bearing, not decoration. Postgres does not evaluate a CASE
+// branch it does not need, so the expensive half — DISTINCT over every day the
+// user has ever studied, across all of study_logs' monthly partitions — runs
+// only on the first answer of a day. Every later answer in a session pays for
+// the count alone, which is one index scan on
+// study_logs_user_language_created_idx over a single partition, because the
+// created_at bound is written to stay sargable rather than as a date cast.
+//
+// One coupling to keep in mind if this is ever split up: run_ending_yesterday
+// is only meaningful when today_count is 0. Once today has logs the run in the
+// data ends today, so this column reads 0 for a user mid-streak. Nothing
+// depends on that being sensible, because crossedStreakMilestone checks
+// todayLogCount first — but the two travel together for that reason.
+//
+// Same non-critical contract as the streak itself: a failure here returns "no
+// milestone" and never fails the answer that carries it.
+export async function getStreakMilestoneFacts(
+  userId: string,
+  tz: string,
+  targetLanguage: "en" | "ja",
+): Promise<StreakMilestoneFacts> {
+  const none: StreakMilestoneFacts = { todayLogCount: 0, runEndingYesterday: 0 };
+  const sql = getSql();
+  if (!sql) return none;
+  try {
+    const rows = await sql<{ today_count: number; run_ending_yesterday: number }[]>`
+      WITH today AS (
+        SELECT count(*)::int AS n
+        FROM study_logs
+        WHERE user_id = ${userId}::uuid
+          AND target_language = ${targetLanguage}
+          AND created_at >= (((now() AT TIME ZONE ${tz})::date)::timestamp AT TIME ZONE ${tz})
+      )
+      SELECT
+        t.n AS today_count,
+        CASE WHEN t.n = 0 THEN (
+          WITH days AS (
+            SELECT DISTINCT (created_at AT TIME ZONE ${tz})::date AS d
+            FROM study_logs
+            WHERE user_id = ${userId}::uuid
+              AND target_language = ${targetLanguage}
+          ),
+          grouped AS (
+            SELECT d, d - (row_number() OVER (ORDER BY d))::int AS grp FROM days
+          ),
+          runs AS (
+            SELECT count(*)::int AS len, max(d) AS end_d FROM grouped GROUP BY grp
+          )
+          SELECT COALESCE(
+            (SELECT len FROM runs WHERE end_d = (now() AT TIME ZONE ${tz})::date - 1),
+            0
+          )
+        ) ELSE 0 END AS run_ending_yesterday
+      FROM today t
+    `;
+    const r = rows[0];
+    if (!r) return none;
+    return {
+      todayLogCount: r.today_count,
+      runEndingYesterday: r.run_ending_yesterday,
+    };
+  } catch (err) {
+    console.warn("[users-db] getStreakMilestoneFacts failed", err);
+    return none;
   }
 }

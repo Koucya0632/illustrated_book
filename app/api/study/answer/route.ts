@@ -23,8 +23,10 @@ import { applyAnswer, masteryLevel } from "@/lib/mastery";
 import {
   upsertMastery,
   insertStudyLog,
+  getStreakMilestoneFacts,
   type StudyLogActivity,
 } from "@/lib/users-db";
+import { crossedStreakMilestone } from "@/lib/streak-milestone";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -87,9 +89,20 @@ function computeReview(input: {
 }
 
 // The identical `{ ok, next, mastery }` success body both paths return.
-function answerResponse(next: ScheduleResult, masteryResult: ReturnType<typeof applyAnswer>) {
+//
+// `milestone` rides along only on the answer that crossed a streak threshold
+// (lib/streak-milestone.ts). It is omitted rather than sent as null: iOS
+// decodes it as an optional and a present-but-null key would read the same, but
+// omitting keeps "the server flagged something" and "the server said nothing"
+// distinguishable in a log or a proxy.
+function answerResponse(
+  next: ScheduleResult,
+  masteryResult: ReturnType<typeof applyAnswer>,
+  milestone: number | null = null,
+) {
   return NextResponse.json({
     ok: true,
+    ...(milestone !== null ? { milestone: { streak: milestone } } : {}),
     next: {
       status: next.status,
       intervalDays: next.intervalDays,
@@ -319,6 +332,21 @@ export async function POST(req: Request) {
   });
   const responseMs = clampResponseMs(body.responseMs);
 
+  // Streak milestone, read *before* the write below and awaited serially rather
+  // than folded into the Promise.all. Both are deliberate: the rule is "was
+  // today already on the board", and racing this read against the insert that
+  // puts today on the board is precisely the way to get the wrong answer.
+  //
+  // Only this path emits milestones, because only this path writes study_logs —
+  // which is the sole table the streak is computed from. The atlas and saved
+  // paths write user_atlas_study_logs and nothing respectively, so they do not
+  // move the streak and must not claim to. (Whether they *should* count toward
+  // it is a real open question, but it changes every existing user's streak
+  // number and belongs in its own change.)
+  const milestone = crossedStreakMilestone(
+    await getStreakMilestoneFacts(userId, "Asia/Taipei", targetLanguage),
+  );
+
   // 3) Persist the three independent writes in parallel (one round trip instead
   //    of three). study_logs is best-effort — it swallows its own error so a
   //    logging failure never fails the answer.
@@ -357,5 +385,5 @@ export async function POST(req: Request) {
   revalidateTag(`progress:${userId}`);
   revalidateTag(`stats:${userId}`);
 
-  return answerResponse(next, masteryResult);
+  return answerResponse(next, masteryResult, milestone);
 }

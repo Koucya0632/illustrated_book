@@ -33,6 +33,7 @@ import {
 } from "./main-word-example-pairs/street";
 import {
   SUPERMARKET_COMPLEX_EXAMPLES,
+  SUPERMARKET_PREVIOUS_COMPLEX_EXAMPLES,
   SUPERMARKET_SIMPLE_OVERRIDES,
 } from "./main-word-example-pairs/supermarket";
 import {
@@ -92,6 +93,7 @@ const PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   ...LIVING_ROOM_PREVIOUS_COMPLEX_EXAMPLES,
   ...OFFICE_PREVIOUS_COMPLEX_EXAMPLES,
   ...STREET_PREVIOUS_COMPLEX_EXAMPLES,
+  ...SUPERMARKET_PREVIOUS_COMPLEX_EXAMPLES,
 ];
 
 function uniqueById<T extends { id: string }>(rows: T[], label: string): Map<string, T> {

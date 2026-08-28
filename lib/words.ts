@@ -967,20 +967,6 @@ const rawWords: LegacyWord[] = [
     ],
   },
   {
-    id: "basket",
-    word: "basket",
-    chinese: "購物籃",
-    category: "supermarket",
-    partOfSpeech: "noun",
-    pronunciation: "/ˈbæs.kət/",
-    examples: [
-      { en: "Use a basket if you only buy a little.", zh: "東西不多就用購物籃。" },
-      { en: "Put the apples in the basket.", zh: "把蘋果放進籃子。" },
-      { en: "The basket is heavy.", zh: "籃子很重。" },
-    ],
-    relatedWords: ["shopping cart", "shop"],
-  },
-  {
     id: "cashier",
     word: "cashier",
     chinese: "收銀員",

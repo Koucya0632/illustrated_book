@@ -4,16 +4,15 @@ import type {
 } from "./types";
 
 export const SUPERMARKET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
-  { id: "shopping-cart", en: "Before returning the shopping cart, take out the reusable bag you left underneath.", ja: "ショッピングカートを戻す前に、下の段へ置いたエコバッグを取り出してください。", zh: "歸還購物車前，記得拿出放在下層的環保袋。" },
-  { id: "basket", en: "If the basket becomes too heavy, change to a shopping cart before adding more bottles.", ja: "買い物かごが重くなったら、飲み物を追加する前にカートへ替えてください。", zh: "購物籃太重時，在放更多瓶裝飲料前改用購物車。" },
+  { id: "shopping-cart", en: "Before returning the shopping cart, take out the reusable bag you left underneath.", ja: "ショッピングカートを戻す前に、下の段に置いたエコバッグを取り出してください。", zh: "歸還購物車前，記得拿出放在下層的環保袋。" },
   { id: "cashier", en: "When the cashier asks whether you need a bag, show the reusable one you brought.", ja: "レジ係に袋が必要か聞かれたら、持ってきたエコバッグを見せてください。", zh: "收銀員問是否需要袋子時，出示你帶來的環保袋。" },
   { id: "receipt", en: "Keep the receipt until you have checked that the discounted price was applied correctly.", ja: "割引価格が正しく適用されたか確認するまで、レシートを保管してください。", zh: "確認折扣價格正確套用以前，請保留收據。" },
   { id: "aisle", en: "Because the aisle is narrow, leave the cart at the end while you choose the cereal.", ja: "通路が狭いので、シリアルを選ぶ間はカートを端に置いてください。", zh: "走道很窄，挑麥片時請把購物車停在邊上。" },
   { id: "shelf", en: "If the item on the top shelf is out of reach, ask a staff member instead of climbing.", ja: "一番上の棚の商品に手が届かなければ、登らず店員に頼んでください。", zh: "最上層架子的商品拿不到時，請找店員，不要攀爬。" },
   { id: "bag", en: "Since the bag contains eggs, carry it separately so heavier groceries do not crush them.", ja: "袋に卵が入っているので、重い商品につぶされないよう別に持ってください。", zh: "袋裡有雞蛋，請分開提，免得被較重的商品壓破。" },
   { id: "price-tag", en: "When the price tag differs from the shelf label, ask the cashier which price is correct.", ja: "商品の値札と棚の表示が違う場合は、どちらが正しいかレジ係に確認してください。", zh: "價格標籤和貨架標示不同時，請問收銀員哪個價格正確。" },
-  { id: "shopping-basket", en: "I chose a shopping basket because I only needed milk and a loaf of bread.", ja: "牛乳とパンだけ必要だったので、ショッピングカートではなく買い物かごを使いました。", zh: "我只需要牛奶和一條麵包，所以選了購物籃。" },
-  { id: "checkout-counter", en: "Before reaching the checkout counter, put your membership card where you can find it quickly.", ja: "会計カウンターへ着く前に、会員カードをすぐ出せる場所へ用意しておきます。", zh: "到收銀台前，把會員卡放在能快速拿出的地方。" },
+  { id: "shopping-basket", en: "I chose a shopping basket because I only needed milk and bread.", ja: "牛乳とパンだけ必要だったので、ショッピングカートではなく買い物かごを使いました。", zh: "我只需要牛奶和麵包，所以選了購物籃。" },
+  { id: "checkout-counter", en: "Before reaching the checkout counter, I put my membership card where I can take it out quickly.", ja: "会計カウンターへ着く前に、会員カードをすぐ取り出せる場所に入れておきます。", zh: "到收銀台前，我會把會員卡放在方便快速拿出的地方。" },
   { id: "self-checkout-machine", en: "If the self-checkout machine cannot read an item, leave it on the scale and call the attendant.", ja: "セルフレジで商品を読み取れない場合は、台に置いたまま係員を呼んでください。", zh: "自助結帳機讀不到商品時，把商品留在秤臺上並呼叫服務人員。" },
   { id: "plastic-bag", en: "Because the meat package was leaking, the cashier put it in a separate plastic bag.", ja: "肉のパックから汁が出ていたので、レジ係が別のビニール袋へ入れました。", zh: "肉品包裝滲出汁液，所以收銀員另裝一個塑膠袋。" },
   { id: "reusable-bag", en: "I keep a reusable bag by the front door so I remember it when I go shopping.", ja: "買い物へ行くとき忘れないように、エコバッグを玄関に置いています。", zh: "我把環保袋放在門口，去購物時才不會忘記。" },
@@ -27,17 +26,18 @@ export const SUPERMARKET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "produce-section", en: "When choosing tomatoes in the produce section, I avoid the ones with damaged skin.", ja: "青果コーナーでトマトを選ぶときは、皮に傷があるものを避けます。", zh: "在蔬果區挑番茄時，我會避開表皮受損的。" },
   { id: "meat-section", en: "If you need thinly sliced pork for hot pot, ask at the meat section counter.", ja: "鍋用の薄切り豚肉が必要なら、精肉コーナーの売り場で聞いてください。", zh: "火鍋需要薄切豬肉時，可以在肉品區櫃檯詢問。" },
   { id: "seafood-section", en: "Because the fish is for sashimi, I confirmed at the seafood section that it can be eaten raw.", ja: "刺身にするので、生で食べられるか鮮魚コーナーで確認しました。", zh: "因為要做生魚片，我在海鮮區確認魚能否生食。" },
-  { id: "deli-section", en: "When I work late, I buy a small dinner from the deli section on my way home.", ja: "残業の日は、帰りにデリコーナーで夕食を少し買います。", zh: "加班的日子，我回家路上會在熟食區買一份簡單晚餐。" },
+  { id: "deli-section", en: "When I work late, I stop at the deli section on my way home so I can buy dinner without cooking.", ja: "残業で帰りが遅くなった日は、料理をしなくて済むように、帰りにデリコーナーで夕食用の総菜を買います。", zh: "加班晚歸時，我會在回家路上到熟食區買晚餐用的熟食，這樣就不用煮飯。" },
   { id: "bakery-section", en: "If you want fresh bread, check the baking times posted in the bakery section.", ja: "焼きたてのパンが欲しければ、ベーカリーコーナーに出ている焼き上がり時間を確認してください。", zh: "想買剛出爐的麵包，可以查看烘焙區公布的出爐時間。" },
-  { id: "beverage-section", en: "Since the juice is heavy, I pick it up from the beverage section after choosing lighter items.", ja: "ジュースは重いので、軽い商品を選んだあと飲料コーナーへ行きます。", zh: "果汁很重，所以我挑完較輕的商品後才去飲料區拿。" },
+  { id: "beverage-section", en: "Since the juice is heavy, I pick it up from the beverage section after choosing lighter items.", ja: "ジュースは重いので、軽い商品を選んだあとで飲料コーナーから取ります。", zh: "果汁很重，所以我挑完較輕的商品後才去飲料區拿。" },
   { id: "snack-section", en: "Before entering the snack section, we agreed that each child could choose only one item.", ja: "お菓子コーナーへ行く前に、子ども一人につき一つだけ選ぶと決めました。", zh: "進零食區前，我們說好每個孩子只能選一樣。" },
-  { id: "household-goods-section", en: "If you cannot find the correct garbage bags, compare the size label in the household goods section.", ja: "合うゴミ袋が分からなければ、日用品コーナーでサイズ表示を比べてください。", zh: "找不到合適垃圾袋時，在日用品區比較尺寸標示。" },
+  { id: "household-goods-section", en: "If you are not sure which garbage bags fit, compare the size labels in the household goods section.", ja: "合うゴミ袋が分からなければ、日用品コーナーでサイズ表示を比べてください。", zh: "不確定哪種垃圾袋合用時，請在日用品區比較尺寸標示。" },
   { id: "frozen-food", en: "Put the frozen food in an insulated bag if it will take more than thirty minutes to get home.", ja: "帰宅まで三十分以上かかるなら、冷凍食品を保冷バッグへ入れてください。", zh: "回家超過三十分鐘時，請把冷凍食品放進保冷袋。" },
   { id: "canned-food", en: "Although canned food keeps for a long time, I use the older cans before the newer ones.", ja: "缶詰は長持ちしますが、新しい物より先に古い物から使います。", zh: "罐頭雖然能久放，我還是先使用較早買的。" },
   { id: "garbage-bag", en: "Before buying a garbage bag, check the local rules because some cities require designated bags.", ja: "指定袋が必要な地域もあるので、ゴミ袋を買う前に自治体のルールを確認してください。", zh: "有些城市規定使用專用垃圾袋，購買前請先確認當地規則。" },
 ];
 
 export const SUPERMARKET_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  { id: "aisle", en: "The bread is in aisle three.", ja: "パンは3番通路にあります。", zh: "麵包在3號走道。" },
   { id: "shopping-basket", en: "I put the bread in my shopping basket.", ja: "パンを買い物かごに入れました。", zh: "我把麵包放進購物籃。" },
   { id: "checkout-counter", en: "The checkout counter is near the exit.", ja: "会計カウンターは出口の近くです。", zh: "收銀台在出口附近。" },
   { id: "self-checkout-machine", en: "I paid at the self-checkout machine.", ja: "セルフレジで会計しました。", zh: "我在自助結帳機付款。" },
@@ -61,4 +61,13 @@ export const SUPERMARKET_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
   { id: "frozen-food", en: "I put the frozen food in an insulated bag.", ja: "冷凍食品を保冷バッグに入れました。", zh: "我把冷凍食品放進保冷袋。" },
   { id: "canned-food", en: "We keep canned food for emergencies.", ja: "非常時のために缶詰を置いています。", zh: "我們備有罐頭以應付緊急情況。" },
   { id: "garbage-bag", en: "I bought a pack of garbage bags.", ja: "ゴミ袋を一パック買いました。", zh: "我買了一包垃圾袋。" },
+];
+
+export const SUPERMARKET_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  { id: "shopping-cart", en: "Before returning the shopping cart, take out the reusable bag you left underneath.", ja: "ショッピングカートを戻す前に、下の段へ置いたエコバッグを取り出してください。", zh: "歸還購物車前，記得拿出放在下層的環保袋。" },
+  { id: "shopping-basket", en: "I chose a shopping basket because I only needed milk and a loaf of bread.", ja: "牛乳とパンだけ必要だったので、ショッピングカートではなく買い物かごを使いました。", zh: "我只需要牛奶和一條麵包，所以選了購物籃。" },
+  { id: "checkout-counter", en: "Before reaching the checkout counter, put your membership card where you can find it quickly.", ja: "会計カウンターへ着く前に、会員カードをすぐ出せる場所へ用意しておきます。", zh: "到收銀台前，把會員卡放在能快速拿出的地方。" },
+  { id: "deli-section", en: "When I work late, I buy a small dinner from the deli section on my way home.", ja: "残業の日は、帰りにデリコーナーで夕食を少し買います。", zh: "加班的日子，我回家路上會在熟食區買一份簡單晚餐。" },
+  { id: "beverage-section", en: "Since the juice is heavy, I pick it up from the beverage section after choosing lighter items.", ja: "ジュースは重いので、軽い商品を選んだあと飲料コーナーへ行きます。", zh: "果汁很重，所以我挑完較輕的商品後才去飲料區拿。" },
+  { id: "household-goods-section", en: "If you cannot find the correct garbage bags, compare the size label in the household goods section.", ja: "合うゴミ袋が分からなければ、日用品コーナーでサイズ表示を比べてください。", zh: "找不到合適垃圾袋時，在日用品區比較尺寸標示。" },
 ];

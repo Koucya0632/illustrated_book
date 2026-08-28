@@ -31,6 +31,11 @@ export const MAIN_WORD_MERGES: readonly MainWordMerge[] = [
     targetId: "curtain",
     reason: "Both rows display as カーテン / 窗簾 and teach the same window-covering concept.",
   },
+  {
+    sourceId: "basket",
+    targetId: "shopping-basket",
+    reason: "Both rows teach the same plastic supermarket shopping basket concept.",
+  },
 ];
 
 /**

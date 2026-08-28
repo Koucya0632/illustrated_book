@@ -2,6 +2,7 @@ import type postgres from "postgres";
 import { segmentFurigana } from "./kana";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "./living-room-main-word-corrections";
 import { OFFICE_MAIN_WORD_CORRECTIONS } from "./office-main-word-corrections";
+import { SUPERMARKET_MAIN_WORD_CORRECTIONS } from "./supermarket-main-word-corrections";
 
 type Sql = ReturnType<typeof postgres>;
 
@@ -565,6 +566,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   ...LIVING_ROOM_MAIN_WORD_CORRECTIONS,
   ...OFFICE_MAIN_WORD_CORRECTIONS,
+  ...SUPERMARKET_MAIN_WORD_CORRECTIONS,
   {
     id: "cashier",
     oldZh: "收銀員 / 收銀台",

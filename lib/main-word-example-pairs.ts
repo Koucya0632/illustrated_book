@@ -7,13 +7,30 @@ import {
 } from "./main-word-example-pairs/bathroom";
 import {
   BEDROOM_COMPLEX_EXAMPLES,
+  BEDROOM_PREVIOUS_COMPLEX_EXAMPLES,
   BEDROOM_SIMPLE_OVERRIDES,
 } from "./main-word-example-pairs/bedroom";
-import { KITCHEN_COMPLEX_EXAMPLES } from "./main-word-example-pairs/kitchen";
-import { LIVING_ROOM_COMPLEX_EXAMPLES } from "./main-word-example-pairs/living-room";
-import { OFFICE_COMPLEX_EXAMPLES } from "./main-word-example-pairs/office";
+import {
+  KITCHEN_COMPLEX_EXAMPLES,
+  KITCHEN_PREVIOUS_COMPLEX_EXAMPLES,
+  KITCHEN_SIMPLE_OVERRIDES,
+} from "./main-word-example-pairs/kitchen";
+import {
+  LIVING_ROOM_COMPLEX_EXAMPLES,
+  LIVING_ROOM_PREVIOUS_COMPLEX_EXAMPLES,
+  LIVING_ROOM_SIMPLE_OVERRIDES,
+} from "./main-word-example-pairs/living-room";
+import {
+  OFFICE_COMPLEX_EXAMPLES,
+  OFFICE_PREVIOUS_COMPLEX_EXAMPLES,
+  OFFICE_SIMPLE_OVERRIDES,
+} from "./main-word-example-pairs/office";
 import { SEASONINGS_COMPLEX_EXAMPLES } from "./main-word-example-pairs/seasonings";
-import { STREET_COMPLEX_EXAMPLES } from "./main-word-example-pairs/street";
+import {
+  STREET_COMPLEX_EXAMPLES,
+  STREET_PREVIOUS_COMPLEX_EXAMPLES,
+  STREET_SIMPLE_OVERRIDES,
+} from "./main-word-example-pairs/street";
 import {
   SUPERMARKET_COMPLEX_EXAMPLES,
   SUPERMARKET_SIMPLE_OVERRIDES,
@@ -58,10 +75,23 @@ const COMPLEX_EXAMPLES: MainWordComplexExample[] = [
 ];
 
 const SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  ...KITCHEN_SIMPLE_OVERRIDES,
   ...BATHROOM_SIMPLE_OVERRIDES,
   ...BEDROOM_SIMPLE_OVERRIDES,
+  ...LIVING_ROOM_SIMPLE_OVERRIDES,
+  ...OFFICE_SIMPLE_OVERRIDES,
+  ...STREET_SIMPLE_OVERRIDES,
   ...SUPERMARKET_SIMPLE_OVERRIDES,
   ...TRANSPORTATION_SIMPLE_OVERRIDES,
+];
+
+const PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  ...KITCHEN_PREVIOUS_COMPLEX_EXAMPLES,
+  ...BATHROOM_PREVIOUS_COMPLEX_EXAMPLES,
+  ...BEDROOM_PREVIOUS_COMPLEX_EXAMPLES,
+  ...LIVING_ROOM_PREVIOUS_COMPLEX_EXAMPLES,
+  ...OFFICE_PREVIOUS_COMPLEX_EXAMPLES,
+  ...STREET_PREVIOUS_COMPLEX_EXAMPLES,
 ];
 
 function uniqueById<T extends { id: string }>(rows: T[], label: string): Map<string, T> {
@@ -94,6 +124,14 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
       ],
     };
   });
+
+export function selectMainWordExamplePairs(
+  wordIds?: ReadonlySet<string>,
+): MainWordExamplePair[] {
+  return wordIds
+    ? MAIN_WORD_EXAMPLE_PAIRS.filter(({ id }) => wordIds.has(id))
+    : MAIN_WORD_EXAMPLE_PAIRS;
+}
 
 export function validateMainWordExampleCoverage(publishedIds: Iterable<string>): string[] {
   const issues: string[] = [];
@@ -166,10 +204,13 @@ export function isKnownPreviousTargetExamplePair(
 ): boolean {
   if (current.length !== 2) return false;
   const currentPair = MAIN_WORD_EXAMPLE_PAIRS.find((row) => row.id === id);
-  const auditedPreviousComplex = BATHROOM_PREVIOUS_COMPLEX_EXAMPLES.find(
+  const legacySimple = MAIN_WORD_LEGACY_EXAMPLE_SETS
+    .find((row) => row.id === id)
+    ?.examples.find(({ sortOrder }) => sortOrder === 0);
+  const auditedPreviousComplex = PREVIOUS_COMPLEX_EXAMPLES.find(
     (row) => row.id === id,
   );
-  if (currentPair && auditedPreviousComplex) {
+  if (currentPair && legacySimple && auditedPreviousComplex) {
     const simpleActual = current.find(({ sortOrder }) => sortOrder === 0);
     const complexActual = current.find(({ sortOrder }) => sortOrder === 1);
     if (
@@ -177,15 +218,13 @@ export function isKnownPreviousTargetExamplePair(
       complexActual &&
       simpleActual.cefrLevel === currentPair.examples[0].cefrLevel &&
       complexActual.cefrLevel === currentPair.examples[1].cefrLevel &&
-      sameText(simpleActual, currentPair.examples[0]) &&
+      (sameText(simpleActual, currentPair.examples[0]) ||
+        sameText(simpleActual, legacySimple)) &&
       sameText(complexActual, auditedPreviousComplex)
     ) {
       return true;
     }
   }
-  const legacySimple = MAIN_WORD_LEGACY_EXAMPLE_SETS
-    .find((row) => row.id === id)
-    ?.examples.find(({ sortOrder }) => sortOrder === 0);
   const complex = MAIN_WORD_EXAMPLE_PAIRS
     .find((row) => row.id === id)
     ?.examples.find(({ sortOrder }) => sortOrder === 1);

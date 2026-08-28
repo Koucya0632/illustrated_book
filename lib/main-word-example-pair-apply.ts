@@ -8,6 +8,7 @@ import { SPANS_VERSION } from "./example-spans";
 import {
   classifyMainWordExamplePair,
   MAIN_WORD_EXAMPLE_PAIRS,
+  selectMainWordExamplePairs,
   type StoredMainWordExample,
   validateMainWordExampleCoverage,
 } from "./main-word-example-pairs";
@@ -37,11 +38,18 @@ export type MainWordExamplePairApplyResult = {
  */
 export async function applyMainWordExamplePairs(
   sql: Sql,
+  wordIds?: ReadonlySet<string>,
 ): Promise<MainWordExamplePairApplyResult> {
   return sql.begin(async (tx) => {
     const spanCorpus = loadExampleSpanCorpus();
+    const pairs = selectMainWordExamplePairs(wordIds);
+    if (wordIds && pairs.length !== wordIds.size) {
+      const known = new Set(pairs.map(({ id }) => id));
+      const missing = [...wordIds].filter((id) => !known.has(id));
+      throw new Error(`Missing target pair for scoped word(s): ${missing.join(", ")}`);
+    }
     const spanCoverageIssues = validateMainWordExampleSpanCoverage(
-      MAIN_WORD_EXAMPLE_PAIRS,
+      pairs,
       spanCorpus,
     );
     if (spanCoverageIssues.length > 0) {
@@ -56,9 +64,12 @@ export async function applyMainWordExamplePairs(
       WHERE status = 'published' AND deleted_at IS NULL
       ORDER BY id
     `;
-    const coverageIssues = validateMainWordExampleCoverage(
-      publishedRows.map(({ id }) => id),
-    );
+    const publishedIds = new Set(publishedRows.map(({ id }) => id));
+    const coverageIssues = wordIds
+      ? [...wordIds]
+          .filter((id) => !publishedIds.has(id))
+          .map((id) => `scoped target is not published: ${id}`)
+      : validateMainWordExampleCoverage(publishedIds);
     if (coverageIssues.length > 0) {
       throw new Error(`Example-pair coverage failed:\n${coverageIssues.join("\n")}`);
     }
@@ -95,7 +106,7 @@ export async function applyMainWordExamplePairs(
     const conflicts: string[] = [];
     const legacyIds: string[] = [];
     let unchanged = 0;
-    for (const pair of MAIN_WORD_EXAMPLE_PAIRS) {
+    for (const pair of pairs) {
       const classification = classifyMainWordExamplePair(
         pair.id,
         currentById.get(pair.id) ?? [],
@@ -110,7 +121,7 @@ export async function applyMainWordExamplePairs(
       );
     }
 
-    const pairById = new Map(MAIN_WORD_EXAMPLE_PAIRS.map((pair) => [pair.id, pair]));
+    const pairById = new Map(pairs.map((pair) => [pair.id, pair]));
     for (const id of legacyIds) {
       const pair = pairById.get(id);
       if (!pair) throw new Error(`Missing target pair for ${id}`);
@@ -138,7 +149,7 @@ export async function applyMainWordExamplePairs(
       string,
       { language: SentenceLanguage; sentence: string }
     >();
-    for (const pair of MAIN_WORD_EXAMPLE_PAIRS) {
+    for (const pair of pairs) {
       for (const example of pair.examples) {
         for (const [language, sentence] of [
           ["en", example.en],
@@ -286,7 +297,7 @@ export async function applyMainWordExamplePairs(
     }
 
     return {
-      checked: MAIN_WORD_EXAMPLE_PAIRS.length,
+      checked: pairs.length,
       updated: legacyIds.length,
       unchanged,
       spanSentencesUpdated: needsSync.length,

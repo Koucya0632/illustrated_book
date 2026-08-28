@@ -469,7 +469,7 @@ const rawWords: LegacyWord[] = [
   {
     id: "blanket",
     word: "blanket",
-    chinese: "毯子 / 被子",
+    chinese: "毯子",
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/ˈblæŋ.kət/",
@@ -499,15 +499,15 @@ const rawWords: LegacyWord[] = [
   {
     id: "lamp",
     word: "lamp",
-    chinese: "檯燈",
+    chinese: "燈",
     category: "bedroom",
     partOfSpeech: "noun",
     pronunciation: "/læmp/",
     collocations: ["turn on the lamp", "bedside lamp"],
     examples: [
-      { en: "Turn on the lamp.", zh: "把檯燈打開。" },
-      { en: "She reads under a lamp.", zh: "她在檯燈下看書。" },
-      { en: "The lamp is broken.", zh: "檯燈壞了。" },
+      { en: "Turn on the lamp.", zh: "把燈打開。" },
+      { en: "She reads under a lamp.", zh: "她在燈下看書。" },
+      { en: "The lamp is broken.", zh: "燈壞了。" },
     ],
     relatedWords: ["light", "bulb", "desk"],
   },

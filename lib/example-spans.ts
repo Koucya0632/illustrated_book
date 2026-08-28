@@ -16,7 +16,7 @@ export const MIN_SPANS_VERSION = 1;
  * upgrades current examples to the latest authored version. Definition
  * annotations can therefore remain visible until the full-corpus loader
  * refreshes them separately. */
-export const SPANS_VERSION = 5;
+export const SPANS_VERSION = 9;
 
 /**
  * Do these spans cover the whole sentence?

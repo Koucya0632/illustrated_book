@@ -112,6 +112,18 @@ const JAPANESE_DETACHED_GRAMMAR = new Set([
 ]);
 
 const META_GLOSS_PATTERN = /[（）()]|(?:助詞|主語標示|做主語|做受詞|作為受詞|賓語|主格|賓格|目的格|敬語|代名詞|持續狀態|持続状態|主題標示|賦予目的)/u;
+const GENERATED_META_GLOSS_PATTERN = /(?:動作|表現|文法|活用|意味|テ形|て形|タ形|た形|依頼形|丁寧な依頼|動作の依頼|ように頼む|ようお願い|ことを頼む|頼み$|語りかけ|行為|条件表現|条件を示す|否定形|過去形|現在形|未来形|連用形|辞書形|基本形|命令形|受身形|受け身形|可能形|意向形|助動詞)/u;
+
+/** Reject generator narration that is structurally valid but not a learnable gloss. */
+export function containsGeneratedMetaGloss(spans: AuthoredSpan[] | undefined): boolean {
+  return Boolean(
+    spans?.some((span) =>
+      [span.z, span.j, span.e].some(
+        (gloss) => typeof gloss === "string" && GENERATED_META_GLOSS_PATTERN.test(gloss),
+      ),
+    ),
+  );
+}
 
 function learningText(text: string): string {
   return text

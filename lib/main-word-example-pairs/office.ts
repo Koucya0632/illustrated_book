@@ -1,4 +1,28 @@
-import type { MainWordComplexExample } from "./types";
+import type {
+  MainWordComplexExample,
+  MainWordSimpleExampleOverride,
+} from "./types";
+
+export const OFFICE_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  {
+    id: "eraser",
+    en: "Please erase the whiteboard with the whiteboard eraser after the meeting.",
+    ja: "会議のあと、ホワイトボード用イレーザーでホワイトボードを消してください。",
+    zh: "會議結束後，請用白板擦把白板擦乾淨。",
+  },
+];
+
+// Exact production values from the first office rollout. Keeping these here
+// lets the pair migration accept only the reviewed predecessor, while still
+// refusing arbitrary admin edits.
+export const OFFICE_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  { id: "eraser", en: "If the whiteboard eraser leaves marks, clean its felt surface before using it again.", ja: "ホワイトボード用イレーザーで跡が残るなら、もう一度使う前に表面のフェルトを掃除します。", zh: "白板擦留下痕跡時，再用以前先清潔它的絨布表面。" },
+  { id: "photocopier", en: "If the photocopier jams again, leave the paper inside and call the maintenance desk.", ja: "コピー機がまた詰まったら、紙を無理に取らず保守窓口へ連絡してください。", zh: "影印機如果又卡紙，不要硬拉，請聯絡維修窗口。" },
+  { id: "filing-cabinet", en: "Because these records contain personal information, the filing cabinet must remain locked.", ja: "この記録には個人情報が含まれるので、ファイリングキャビネットには常に鍵をかけます。", zh: "這些紀錄含個人資料，所以文件櫃必須一直上鎖。" },
+  { id: "utility-knife", en: "Because the utility knife blade is exposed, retract it immediately after cutting the box.", ja: "刃が出たままだと危ないので、箱を切ったらすぐカッターナイフへ戻してください。", zh: "美工刀刀片露在外面很危險，裁完紙箱後請立刻收回。" },
+  { id: "conference-table", en: "Before the guests arrive, arrange the name cards around the conference table.", ja: "来客が到着する前に、会議テーブルへ名札を並べてください。", zh: "客人抵達前，請在會議桌周圍擺好名牌。" },
+  { id: "reception-desk", en: "Since the visitor arrived early, the reception desk asked him to wait in the lobby.", ja: "来客が早く着いたので、受付カウンターでロビーに待つよう案内しました。", zh: "訪客提早抵達，接待櫃檯請他在大廳等候。" },
+];
 
 export const OFFICE_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "desk", en: "Before leaving the office, I clear my desk so the cleaner can wipe it easily.", ja: "清掃の人が拭きやすいように、退社前にデスクの上を片づけます。", zh: "下班前我會清空辦公桌，讓清潔人員容易擦拭。" },
@@ -13,7 +37,7 @@ export const OFFICE_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "office-chair", en: "I adjusted the office chair so my feet rest flat on the floor while I type.", ja: "入力中に足の裏が床につくように、オフィスチェアの高さを調節しました。", zh: "我調整辦公椅高度，讓打字時雙腳能平放在地上。" },
   { id: "computer", en: "Before the computer installs the update, save your files because it may restart automatically.", ja: "パソコンが自動で再起動することがあるので、更新前にファイルを保存してください。", zh: "電腦安裝更新前請先儲存檔案，因為它可能自動重開。" },
   { id: "mouse-pad", en: "When the pointer started jumping, I cleaned the mouse pad and the sensor underneath the mouse.", ja: "ポインターが飛ぶようになったので、マウスパッドとマウス底面のセンサーを掃除しました。", zh: "游標開始亂跳，所以我清潔了滑鼠墊和滑鼠底部感應器。" },
-  { id: "photocopier", en: "If the photocopier jams again, leave the paper inside and call the maintenance desk.", ja: "コピー機がまた詰まったら、紙を無理に取らず保守窓口へ連絡してください。", zh: "影印機如果又卡紙，不要硬拉，請聯絡維修窗口。" },
+  { id: "photocopier", en: "If the photocopier jams again, leave the paper inside and call the maintenance desk.", ja: "コピー機がまた詰まったら、紙は中に残したまま、保守窓口へ連絡してください。", zh: "影印機如果又卡紙，請把紙留在機器裡並聯絡維修窗口。" },
   { id: "scanner", en: "After scanning the contract, check that every page is readable before deleting the original file.", ja: "契約書をスキャンしたら、元のファイルを消す前に全ページが読めるか確認します。", zh: "掃描合約後，刪除原檔前先確認每一頁都清楚可讀。" },
   { id: "mobile-phone", en: "Since the meeting is confidential, leave your smartphone outside the room before it begins.", ja: "機密の会議なので、始まる前にスマートフォンを部屋の外へ置いてください。", zh: "這場會議涉及機密，開始前請把手機留在會議室外。" },
   { id: "headphones", en: "I use headphones in the open office so my online meeting does not disturb anyone nearby.", ja: "周りの人の邪魔にならないように、オープンオフィスでのオンライン会議にはヘッドホンを使います。", zh: "在開放式辦公室開線上會議時我會戴耳機，避免打擾附近的人。" },
@@ -21,13 +45,13 @@ export const OFFICE_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "webcam", en: "Before joining the interview, I checked the webcam angle so the background looked tidy.", ja: "面接に参加する前に、背景が整って見えるようウェブカメラの角度を確認しました。", zh: "加入面試前，我檢查網路攝影機角度，讓背景看起來整潔。" },
   { id: "whiteboard", en: "After the discussion, we photographed the whiteboard so nobody would lose the decisions we made.", ja: "決めた内容を残せるように、話し合いのあとホワイトボードを撮影しました。", zh: "討論後我們拍下白板，才不會遺失做出的決定。" },
   { id: "whiteboard-marker", en: "Because the whiteboard marker was nearly dry, the writing could not be seen from the back row.", ja: "ホワイトボードマーカーのインクが薄く、後ろの席から文字が見えませんでした。", zh: "白板筆快沒水了，坐在後排看不清楚字。" },
-  { id: "eraser", en: "If the whiteboard eraser leaves marks, clean its felt surface before using it again.", ja: "ホワイトボード用イレーザーで跡が残るなら、もう一度使う前に表面のフェルトを掃除します。", zh: "白板擦留下痕跡時，再用以前先清潔它的絨布表面。" },
+  { id: "eraser", en: "If the whiteboard eraser leaves marks, clean its felt surface before using it again.", ja: "ホワイトボード用イレーザーで跡が残るなら、もう一度使う前に表面のフェルトを掃除してください。", zh: "白板擦留下痕跡時，再用以前先清潔它的絨布表面。" },
   { id: "sticky-notes", en: "I use different colors of sticky notes so urgent tasks stand out from ordinary reminders.", ja: "急ぎの仕事が普通のメモと区別できるように、付箋の色を変えています。", zh: "我用不同顏色的便利貼，讓緊急工作能從一般提醒中顯眼。" },
   { id: "ballpoint-pen", en: "Since the form will be copied, fill it in with a dark ballpoint pen rather than a pencil.", ja: "この用紙はコピーするので、鉛筆ではなく濃い色のボールペンで記入してください。", zh: "這張表格之後要影印，請用深色原子筆填寫，不要用鉛筆。" },
   { id: "highlighter", en: "When reviewing the contract, use the highlighter only on sections that need a decision.", ja: "契約書を確認するときは、判断が必要な箇所だけ蛍光ペンで印を付けてください。", zh: "檢查合約時，只用螢光筆標出需要決定的部分。" },
   { id: "marker", en: "I wrote the room number with a permanent marker so rain would not wash it off the box.", ja: "雨で消えないように、油性マーカーで箱に部屋番号を書きました。", zh: "我用油性筆在箱子上寫房號，這樣雨水不會沖掉。" },
   { id: "ruler", en: "Before cutting the label, measure it with a ruler so it fits the folder tab.", ja: "フォルダーの見出しに合うように、ラベルを切る前に定規で測ります。", zh: "裁標籤前先用尺量，讓它能放進資料夾標籤處。" },
-  { id: "utility-knife", en: "Because the utility knife blade is exposed, retract it immediately after cutting the box.", ja: "刃が出たままだと危ないので、箱を切ったらすぐカッターナイフへ戻してください。", zh: "美工刀刀片露在外面很危險，裁完紙箱後請立刻收回。" },
+  { id: "utility-knife", en: "Because the utility knife blade is exposed, retract it immediately after cutting the box.", ja: "刃が出たままだと危ないので、箱を切ったら刃をすぐ本体に戻してください。", zh: "美工刀刀片露在外面很危險，裁完紙箱後請立刻把刀片收回刀身。" },
   { id: "tape", en: "If the tape will not stick, wipe the dust off the surface before trying again.", ja: "セロテープが付かないときは、もう一度貼る前に表面のほこりを拭いてください。", zh: "膠帶黏不住時，先擦掉表面灰塵再試一次。" },
   { id: "glue", en: "Let the glue dry completely before putting the repaired document back in the folder.", ja: "直した書類をフォルダーへ戻す前に、のりを完全に乾かしてください。", zh: "修好的文件放回資料夾前，要讓膠水完全乾燥。" },
   { id: "staples", en: "When you refill the stapler, make sure the staples are the correct size for that model.", ja: "ホチキスの針を補充するときは、その機種に合うサイズか確認してください。", zh: "補充訂書針時，請確認尺寸適合那臺釘書機。" },
@@ -42,10 +66,10 @@ export const OFFICE_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "business-card", en: "After receiving the business card, I repeated the client's name to make sure I pronounced it correctly.", ja: "名刺を受け取ったあと、読み方を確認するために取引先の名前を繰り返しました。", zh: "收到名片後，我重複念了客戶姓名，確認發音正確。" },
   { id: "calendar", en: "When the deadline changed, I updated the shared calendar so everyone saw the new date.", ja: "締め切りが変わったので、全員に新しい日付が伝わるよう共有カレンダーを更新しました。", zh: "截止日改變後，我更新共用日曆，讓大家看到新日期。" },
   { id: "paper-shredder", en: "If the paper shredder becomes hot, stop feeding paper and let the motor cool down.", ja: "シュレッダーが熱くなったら、紙を入れるのをやめてモーターを冷ましてください。", zh: "碎紙機變熱時停止放紙，讓馬達冷卻。" },
-  { id: "filing-cabinet", en: "Because these records contain personal information, the filing cabinet must remain locked.", ja: "この記録には個人情報が含まれるので、ファイリングキャビネットには常に鍵をかけます。", zh: "這些紀錄含個人資料，所以文件櫃必須一直上鎖。" },
-  { id: "conference-table", en: "Before the guests arrive, arrange the name cards around the conference table.", ja: "来客が到着する前に、会議テーブルへ名札を並べてください。", zh: "客人抵達前，請在會議桌周圍擺好名牌。" },
+  { id: "filing-cabinet", en: "Because these records contain personal information, the filing cabinet must remain locked.", ja: "この記録には個人情報が含まれるので、ファイリングキャビネットは常に施錠しておかなければなりません。", zh: "這些紀錄含個人資料，所以文件櫃必須一直上鎖。" },
+  { id: "conference-table", en: "Before the guests arrive, arrange the place cards around the conference table.", ja: "来客が到着する前に、会議テーブルの周りに席札を並べてください。", zh: "客人抵達前，請在會議桌周圍擺好席卡。" },
   { id: "meeting-room", en: "If the meeting room is still occupied at three, call me instead of interrupting them.", ja: "三時になっても会議室が使用中なら、中へ入らず私に連絡してください。", zh: "三點時會議室如果還有人，請聯絡我，不要打斷他們。" },
-  { id: "reception-desk", en: "Since the visitor arrived early, the reception desk asked him to wait in the lobby.", ja: "来客が早く着いたので、受付カウンターでロビーに待つよう案内しました。", zh: "訪客提早抵達，接待櫃檯請他在大廳等候。" },
+  { id: "reception-desk", en: "Since the visitor arrived early, the reception desk asked him to wait in the lobby.", ja: "来客が早く着いたので、受付カウンターの担当者がロビーで待つよう案内しました。", zh: "訪客提早抵達，接待櫃檯請他在大廳等候。" },
   { id: "water-dispenser", en: "When the water dispenser bottle is empty, notify facilities rather than lifting it alone.", ja: "ウォーターサーバーのボトルが空になったら、一人で持ち上げず設備担当へ連絡してください。", zh: "飲水機水桶空了時，請通知總務，不要一個人搬。" },
   { id: "coffee-machine", en: "After using the coffee machine, empty the grounds so it is ready for the next person.", ja: "次の人がすぐ使えるように、コーヒーマシンを使ったらかすを捨ててください。", zh: "咖啡機用完後請倒掉咖啡渣，讓下一個人可以直接使用。" },
   { id: "access-card", en: "If the access card does not open the door, ask security to check its expiration date.", ja: "入館カードでドアが開かない場合は、警備員に有効期限を確認してもらってください。", zh: "門禁卡如果打不開門，請警衛檢查有效期限。" },

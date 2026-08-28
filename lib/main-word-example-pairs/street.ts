@@ -1,4 +1,39 @@
-import type { MainWordComplexExample } from "./types";
+import type {
+  MainWordComplexExample,
+  MainWordSimpleExampleOverride,
+} from "./types";
+
+export const STREET_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  {
+    id: "bank",
+    en: "I need to stop by the bank.",
+    ja: "銀行に寄ります。",
+    zh: "我要去一趟銀行。",
+  },
+  {
+    id: "station",
+    en: "Let's meet in front of the station.",
+    ja: "駅の前で待ち合わせましょう。",
+    zh: "我們在車站前碰面吧。",
+  },
+  {
+    id: "underpass",
+    en: "Use the underpass to cross the road.",
+    ja: "地下道を通って道路の向こう側へ行きましょう。",
+    zh: "走地下道到馬路對面。",
+  },
+];
+
+// Exact production values from the first street rollout. The transaction may
+// migrate these reviewed predecessors, but still refuses any unrelated admin
+// edit instead of silently overwriting it.
+export const STREET_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  { id: "cafe", en: "If the cafe is full, we can order our drinks to go and sit in the park.", ja: "カフェが満席なら、飲み物を持ち帰りにして公園で飲めます。", zh: "咖啡店如果客滿，我們可以外帶飲料去公園坐。" },
+  { id: "flower-bed", en: "The volunteers planted seasonal flowers in the flower bed so the entrance looks welcoming.", ja: "入口が明るく見えるように、ボランティアが花壇へ季節の花を植えました。", zh: "志工在花圃種下當季花卉，讓入口看起來更親切。" },
+  { id: "newsstand", en: "Although the newsstand is small, it also sells transit cards and bottled drinks.", ja: "その新聞売店は小さいですが、交通カードや飲み物も売っています。", zh: "那間報攤雖小，也販售交通卡和瓶裝飲料。" },
+  { id: "pedestrian-bridge", en: "Although the pedestrian bridge has stairs, it is safer than crossing this wide road below.", ja: "歩道橋には階段がありますが、この広い道路を下で渡るより安全です。", zh: "天橋雖然有樓梯，但比直接穿越下面的寬馬路安全。" },
+  { id: "traffic-sign", en: "Although the road looks open, the traffic sign says vehicles may not enter after six.", ja: "道は開いているように見えますが、交通標識では六時以降車両進入禁止です。", zh: "道路看起來開放，但交通標誌寫著六點後車輛禁止進入。" },
+];
 
 export const STREET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "traffic-light", en: "Even when the street is empty, wait until the traffic light turns green before crossing.", ja: "車がいなくても、信号機が青になるまで待ってから渡ってください。", zh: "即使路上沒有車，也要等紅綠燈變綠再過馬路。" },
@@ -12,7 +47,7 @@ export const STREET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "street", en: "Because this street becomes one-way during the morning rush, we take another route to school.", ja: "この通りは朝の混雑時に一方通行になるので、学校へは別の道を使います。", zh: "這條街早晨尖峰時段會變成單行道，所以我們走別條路去學校。" },
   { id: "road", en: "If the road is closed because of snow, follow the detour signs rather than turning around here.", ja: "雪で道路が通行止めなら、ここで引き返さず迂回の標識に従ってください。", zh: "馬路因雪封閉時，請依繞道標誌前進，不要在這裡迴轉。" },
   { id: "intersection", en: "When you reach the large intersection, stay in the right lane because we will turn soon.", ja: "大きな交差点に着いたら、すぐ曲がるので右の車線を走ってください。", zh: "到大十字路口時請走右側車道，因為很快要轉彎。" },
-  { id: "traffic-sign", en: "Although the road looks open, the traffic sign says vehicles may not enter after six.", ja: "道は開いているように見えますが、交通標識では六時以降車両進入禁止です。", zh: "道路看起來開放，但交通標誌寫著六點後車輛禁止進入。" },
+  { id: "traffic-sign", en: "Although the road looks open, the traffic sign says vehicles may not enter after six.", ja: "道は開いているように見えますが、交通標識には「六時以降、車両進入禁止」とあります。", zh: "道路看起來開放，但交通標誌寫著六點後車輛禁止進入。" },
   { id: "stop-sign", en: "After stopping at the stop sign, look both ways before entering the narrow road.", ja: "一時停止標識で止まったら、左右を確認してから細い道へ入ってください。", zh: "在停車標誌前停下後，左右查看再進入窄路。" },
   { id: "bus-stop", en: "Since the bus stop has moved temporarily, we need to wait in front of the bank today.", ja: "バス停が一時的に移動したので、今日は銀行の前で待つ必要があります。", zh: "公車站暫時移位，今天我們要在銀行前等車。" },
   { id: "station", en: "If you arrive at the station first, wait by the central ticket gate where it is easy to meet.", ja: "先に駅へ着いたら、見つけやすい中央改札のそばで待っていてください。", zh: "如果你先到車站，請在容易會合的中央剪票口旁等。" },
@@ -23,7 +58,7 @@ export const STREET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "parking-meter", en: "Before the parking meter expires, return to the car or pay for more time if allowed.", ja: "パーキングメーターの時間が切れる前に車へ戻るか、可能なら時間を追加してください。", zh: "停車收費表時間到以前回到車上，若規定允許就加付時間。" },
   { id: "bike-lane", en: "When turning across a bike lane, check behind you because a bicycle may be approaching.", ja: "自転車専用レーンを横切って曲がるときは、自転車が来ていないか後ろを確認してください。", zh: "轉彎穿過自行車道時要查看後方，因為可能有腳踏車接近。" },
   { id: "lane", en: "Since our exit is coming up, change to the left lane when it is safe.", ja: "もうすぐ出口なので、安全を確認して左の車線へ移ってください。", zh: "出口快到了，確認安全後切換到左側車線。" },
-  { id: "pedestrian-bridge", en: "Although the pedestrian bridge has stairs, it is safer than crossing this wide road below.", ja: "歩道橋には階段がありますが、この広い道路を下で渡るより安全です。", zh: "天橋雖然有樓梯，但比直接穿越下面的寬馬路安全。" },
+  { id: "pedestrian-bridge", en: "Although the pedestrian bridge has stairs, it is safer than crossing this wide road below.", ja: "歩道橋には階段がありますが、この広い道路を地上で渡るより安全です。", zh: "天橋雖然有樓梯，但比直接穿越這條寬馬路安全。" },
   { id: "underpass", en: "If heavy rain floods the underpass, use the crossing above instead of entering it.", ja: "大雨で地下道が冠水していたら、中へ入らず地上の横断歩道を使ってください。", zh: "大雨使地下道淹水時，不要進入，改走地面斑馬線。" },
   { id: "bridge", en: "Because the bridge is closed for inspection, pedestrians must use the temporary path beside it.", ja: "橋は点検のため通行止めなので、歩行者は横の仮設通路を使います。", zh: "橋梁因檢查封閉，行人必須走旁邊的臨時通道。" },
   { id: "tunnel", en: "Keep a safe distance in the tunnel because sudden braking is harder to see ahead.", ja: "トンネル内では前方の急ブレーキが見えにくいので、十分な車間距離を取ってください。", zh: "隧道內較難看見前車突然煞車，請保持安全距離。" },
@@ -33,7 +68,7 @@ export const STREET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "shop", en: "If the shop does not have your size, the staff can order it from another branch.", ja: "店に合うサイズがなければ、店員が別の店舗から取り寄せてくれます。", zh: "商店沒有你的尺寸時，店員可以從其他分店調貨。" },
   { id: "convenience-store", en: "Since the station cafe was closed, I bought breakfast at the convenience store.", ja: "駅のカフェが閉まっていたので、コンビニで朝ご飯を買いました。", zh: "車站咖啡店沒開，所以我在便利商店買早餐。" },
   { id: "restaurant", en: "Because the restaurant is popular on weekends, book a table before you go.", ja: "週末はそのレストランが混むので、行く前に予約してください。", zh: "那間餐廳週末很熱門，去以前請先訂位。" },
-  { id: "cafe", en: "If the cafe is full, we can order our drinks to go and sit in the park.", ja: "カフェが満席なら、飲み物を持ち帰りにして公園で飲めます。", zh: "咖啡店如果客滿，我們可以外帶飲料去公園坐。" },
+  { id: "cafe", en: "If the cafe is full, we can order our drinks to go and drink them in the park.", ja: "カフェが満席なら、飲み物を持ち帰りにして公園で飲めます。", zh: "咖啡店如果客滿，我們可以外帶飲料去公園喝。" },
   { id: "bank", en: "Before going to the bank, check whether the counter is open or only the ATM is available.", ja: "銀行へ行く前に、窓口が開いているかATMだけ使えるのか確認します。", zh: "去銀行前先確認櫃檯是否營業，還是只有提款機可用。" },
   { id: "post-office", en: "If you want the package to arrive tomorrow, ask the post office about express delivery.", ja: "荷物を明日届けたいなら、郵便局で速達について聞いてください。", zh: "如果希望包裹明天抵達，可以到郵局詢問快捷寄送。" },
   { id: "pharmacy", en: "Because this pharmacy keeps my prescription on file, I can collect the refill after work.", ja: "この薬局には処方箋の記録があるので、仕事帰りに追加の薬を受け取れます。", zh: "這家藥局保有我的處方紀錄，所以我下班後可以領補充藥品。" },
@@ -41,7 +76,7 @@ export const STREET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "vending-machine", en: "If the vending machine takes your money without giving a drink, call the number on the front.", ja: "自動販売機にお金を入れても飲み物が出ない場合は、正面の番号へ連絡してください。", zh: "自動販賣機吃錢卻沒出飲料時，請打正面的聯絡電話。" },
   { id: "park", en: "Although the park closes at sunset, the path along the river remains open.", ja: "公園は日没で閉まりますが、川沿いの道はそのあとも通れます。", zh: "公園日落時關閉，但河邊步道仍然開放。" },
   { id: "tree", en: "Because a branch had broken in the wind, we stayed away from the tree and called the city.", ja: "風で枝が折れていたので、木から離れて市役所へ連絡しました。", zh: "樹枝被風吹斷了，所以我們遠離那棵樹並通知市公所。" },
-  { id: "flower-bed", en: "The volunteers planted seasonal flowers in the flower bed so the entrance looks welcoming.", ja: "入口が明るく見えるように、ボランティアが花壇へ季節の花を植えました。", zh: "志工在花圃種下當季花卉，讓入口看起來更親切。" },
+  { id: "flower-bed", en: "To brighten the entrance, the volunteers planted seasonal flowers in the flower bed.", ja: "入口を明るくするために、ボランティアが花壇へ季節の花を植えました。", zh: "為了讓入口更明亮，志工在花圃種下當季花卉。" },
   { id: "pedestrian", en: "When a pedestrian is waiting at the crossing, slow down and be ready to stop.", ja: "横断歩道で歩行者が待っているときは、速度を落として止まれるようにしてください。", zh: "行人在斑馬線等待時要減速，並準備停車。" },
   { id: "signboard", en: "Since the shop moved upstairs, its signboard now points toward the side entrance.", ja: "店が二階へ移ったので、看板は横の入口を示しています。", zh: "商店搬到二樓，所以招牌現在指向側門。" },
   { id: "billboard", en: "The billboard is being replaced, so the sidewalk below it is temporarily closed.", ja: "広告看板を交換しているため、その下の歩道は一時的に通れません。", zh: "廣告看板正在更換，所以下方人行道暫時封閉。" },
@@ -56,5 +91,5 @@ export const STREET_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "pedestrian-button", en: "After pressing the pedestrian button, wait for the green signal instead of pressing it again.", ja: "歩行者用押しボタンを押したら、何度も押さず青信号を待ってください。", zh: "按下行人按鈕後請等綠燈，不要一直重按。" },
   { id: "street-vendor", en: "Since the food cart accepts cash only, I withdrew money before ordering ramen.", ja: "屋台は現金しか使えないので、ラーメンを注文する前にお金を下ろしました。", zh: "餐車只收現金，所以點拉麵前我先領了錢。" },
   { id: "vendor", en: "If you buy several items from the market stall, the vendor may put them in one bag.", ja: "露店でいくつか買うと、店の人が一つの袋にまとめてくれることがあります。", zh: "如果在市場攤位買好幾樣，攤販可能會裝在同一個袋子裡。" },
-  { id: "newsstand", en: "Although the newsstand is small, it also sells transit cards and bottled drinks.", ja: "その新聞売店は小さいですが、交通カードや飲み物も売っています。", zh: "那間報攤雖小，也販售交通卡和瓶裝飲料。" },
+  { id: "newsstand", en: "Although the newsstand is small, it also sells transit cards and bottled drinks.", ja: "その新聞売店は小さいですが、交通系ICカードや飲み物も売っています。", zh: "那間報攤雖小，也販售交通卡和瓶裝飲料。" },
 ];

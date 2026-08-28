@@ -229,7 +229,6 @@ export const MAIN_WORD_LEGACY_EXAMPLE_SETS: Array<{
   { id: "chair", examples: [{"sortOrder":0,"en":"The chair is in the bedroom.","ja":"椅子は寝室にあります。","zh":"椅子在臥室裡。"}] },
   { id: "desk-lamp", examples: [{"sortOrder":0,"en":"The desk lamp is in the bedroom.","ja":"デスクランプは寝室にあります。","zh":"檯燈在臥室裡。"}] },
   { id: "bedside-lamp", examples: [{"sortOrder":0,"en":"The bedside lamp is in the bedroom.","ja":"ベッドサイドランプは寝室にあります。","zh":"床頭燈在臥室裡。"}] },
-  { id: "curtains", examples: [{"sortOrder":0,"en":"The curtains is in the bedroom.","ja":"カーテンは寝室にあります。","zh":"窗簾在臥室裡。"}] },
   { id: "blinds", examples: [{"sortOrder":0,"en":"The blinds is in the bedroom.","ja":"ブラインドは寝室にあります。","zh":"百葉窗在臥室裡。"}] },
   { id: "pajamas", examples: [{"sortOrder":0,"en":"The pajamas is in the bedroom.","ja":"パジャマは寝室にあります。","zh":"睡衣在臥室裡。"}] },
   { id: "robe", examples: [{"sortOrder":0,"en":"The robe is in the bedroom.","ja":"ローブは寝室にあります。","zh":"睡袍在臥室裡。"}] },

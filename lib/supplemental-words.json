@@ -1446,15 +1446,15 @@
   },
   {
     "id": "quilt",
-    "word": "quilt",
+    "word": "duvet",
     "chinese": "棉被",
     "category": "bedroom",
     "partOfSpeech": "noun",
-    "pronunciation": "/kwɪlt/",
+    "pronunciation": "/ˈduː.veɪ/",
     "examples": [
       {
-        "en": "The quilt is in the bedroom.",
-        "zh": "棉被在臥室裡。"
+        "en": "I pulled the duvet up because I was cold.",
+        "zh": "我覺得冷，便把棉被拉到肩膀。"
       }
     ]
   },
@@ -1599,20 +1599,6 @@
     ]
   },
   {
-    "id": "curtains",
-    "word": "curtains",
-    "chinese": "窗簾",
-    "category": "bedroom",
-    "partOfSpeech": "noun",
-    "pronunciation": "/ˈkɝː.tənz/",
-    "examples": [
-      {
-        "en": "The curtains is in the bedroom.",
-        "zh": "窗簾在臥室裡。"
-      }
-    ]
-  },
-  {
     "id": "blinds",
     "word": "blinds",
     "chinese": "百葉窗",
@@ -1642,15 +1628,15 @@
   },
   {
     "id": "robe",
-    "word": "robe",
+    "word": "dressing gown",
     "chinese": "睡袍",
     "category": "bedroom",
     "partOfSpeech": "noun",
-    "pronunciation": "/roʊb/",
+    "pronunciation": "/ˈdres.ɪŋ ɡaʊn/",
     "examples": [
       {
-        "en": "The robe is in the bedroom.",
-        "zh": "睡袍在臥室裡。"
+        "en": "I put on my dressing gown after getting out of bed.",
+        "zh": "我起床後穿上睡袍。"
       }
     ]
   },
@@ -1713,14 +1699,14 @@
   {
     "id": "heater",
     "word": "heater",
-    "chinese": "暖氣",
+    "chinese": "電暖器",
     "category": "bedroom",
     "partOfSpeech": "noun",
     "pronunciation": "/ˈhiː.tɚ/",
     "examples": [
       {
-        "en": "The heater is in the bedroom.",
-        "zh": "暖氣在臥室裡。"
+        "en": "I turned on the heater before changing clothes.",
+        "zh": "換衣服前我打開了電暖器。"
       }
     ]
   },

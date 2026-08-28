@@ -333,6 +333,10 @@ export const LIVING_ROOM_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "floor-lamp",
+    jaDefinition: {
+      old: "「フロアランプ」とは、地面に立って設置する背の高いランプのことです。",
+      value: "「フロアランプ」とは、床に置いて使う背の高いランプです。",
+    },
     examples: [
       dailyLivingRoomExample(
         "floor lamp",
@@ -406,6 +410,18 @@ export const LIVING_ROOM_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "potted-plant",
+    enDefinition: {
+      old: "A plant grown in a container, kept indoors or as decoration.",
+      value: "A plant grown in a flowerpot or other container.",
+    },
+    jaDefinition: {
+      old: "「鉢植え」とは、屋内での展示や観賞用に鉢植えで栽培される植物のことです。",
+      value: "「鉢植え」とは、植物を鉢などの容器に植えて育てたものです。",
+    },
+    chineseDefinition: {
+      old: "種植於盆器中、用於室內擺設或裝飾的植物。",
+      value: "種植在花盆或其他容器中的植物。",
+    },
     examples: [
       dailyLivingRoomExample(
         "potted plant",
@@ -492,6 +508,10 @@ export const LIVING_ROOM_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "robot-vacuum",
+    jaDefinition: {
+      old: "「ロボット掃除機」は自律的に地面を掃除できるスマート掃除機です。",
+      value: "「ロボット掃除機」とは、床を自動で掃除する掃除機です。",
+    },
     examples: [
       dailyLivingRoomExample(
         "robot vacuum",
@@ -524,6 +544,10 @@ export const LIVING_ROOM_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     id: "rug",
     oldZh: "地毯（小）",
     zh: "小地毯",
+    jaDefinition: {
+      old: "「ラグ」は、厚手の生地で作られた小さな床材です。",
+      value: "「ラグ」とは、厚手の織物などで作られ、床の一部に敷く敷物です。",
+    },
   },
   {
     id: "set-top-box",
@@ -609,6 +633,10 @@ export const LIVING_ROOM_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "table-lamp",
+    jaDefinition: {
+      old: "「テーブルランプ」とは、机の上に置くように設計された小型のランプです。",
+      value: "「テーブルランプ」とは、テーブルや台の上に置いて使う小型のランプです。",
+    },
     examples: [
       dailyLivingRoomExample(
         "table lamp",

@@ -616,6 +616,50 @@ test("rice vinegar Japanese and Chinese comparison examples describe the same vi
   assert.equal(comparison?.zh, "米醋比穀物醋溫和。");
 });
 
+test("bedroom concept corrections keep each multilingual record aligned", () => {
+  const byId = new Map(MAIN_WORD_CORRECTIONS.map((entry) => [entry.id, entry]));
+
+  assert.equal(byId.get("alarm-clock")?.jaReading, "めざましどけい");
+  assert.equal(byId.get("photo-frame")?.jaReading, "しゃしんたて");
+  assert.match(byId.get("blanket")?.jaDefinition?.value ?? "", /寝具/);
+
+  const duvet = byId.get("quilt");
+  assert.equal(duvet?.word, "duvet");
+  assert.equal(duvet?.ja, "掛け布団");
+  assert.equal(duvet?.zh, "棉被");
+  assert.match(duvet?.jaDefinition?.value ?? "", /^「掛け布団」/);
+  assert.match(
+    duvet?.localizedTexts?.find(({ field, language }) => field === "etymology" && language === "en")?.value ?? "",
+    /^From French duvet/,
+  );
+
+  const dressingGown = byId.get("robe");
+  assert.equal(dressingGown?.word, "dressing gown");
+  assert.equal(dressingGown?.ja, "ガウン");
+  assert.equal(dressingGown?.zh, "睡袍");
+  assert.match(
+    dressingGown?.localizedTexts?.find(({ field, language }) => field === "note" && language === "en")?.value ?? "",
+    /^dressing \+ gown/,
+  );
+
+  const heater = byId.get("heater");
+  assert.equal(heater?.zh, "電暖器");
+  assert.match(heater?.jaDefinition?.value ?? "", /部屋/);
+
+  const lamp = byId.get("lamp");
+  assert.equal(lamp?.zh, "燈");
+  assert.doesNotMatch(lamp?.chineseDefinition?.value ?? "", /桌|書桌/);
+});
+
+test("plural curtains are retired in favor of the canonical curtain concept", () => {
+  const merge = MAIN_WORD_MERGES.find(({ sourceId }) => sourceId === "curtains");
+  assert.deepEqual(merge, {
+    sourceId: "curtains",
+    targetId: "curtain",
+    reason: "Both rows display as カーテン / 窗簾 and teach the same window-covering concept.",
+  });
+});
+
 test("main-word corrections contain only one guarded correction per id", () => {
   const ids = MAIN_WORD_CORRECTIONS.map(({ id }) => id);
   assert.equal(new Set(ids).size, ids.length);

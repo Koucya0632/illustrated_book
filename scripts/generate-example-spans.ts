@@ -10,6 +10,7 @@
 import { renameSync, writeFileSync } from "node:fs";
 import {
   alignAuthoredSpans,
+  containsGeneratedMetaGloss,
   type AuthoredSpan,
   type ExampleSpanCorpus,
   EXAMPLE_SPAN_PARTS_OF_SPEECH,
@@ -95,7 +96,8 @@ function candidatesFor(argv: string[], corpus: ExampleSpanCorpus): Candidate[] {
         if (!refresh && corpus[language][sentence]) continue;
         if (
           invalidOnly &&
-          validateAuthoredSentence(language, sentence, corpus[language][sentence] ?? []).length === 0
+          validateAuthoredSentence(language, sentence, corpus[language][sentence] ?? []).length === 0 &&
+          !containsGeneratedMetaGloss(corpus[language][sentence])
         ) continue;
         candidates.push({
           key: `${pair.id}:${example.sortOrder}:${language}`,
@@ -171,11 +173,13 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<BatchG
     "Articles, auxiliaries, ordinary prepositions and conjunctions, Japanese particles, sentence endings, whitespace, and punctuation are not tappable by themselves. Omit them unless they are inseparable parts of a fixed expression.",
     "For English, keep genuine phrasal verbs and fixed collocations together, such as 'look forward to' and 'take a shower'. Do not merge an ordinary subject, object, location, time expression, and action into one tap.",
     "For Japanese, return nouns, time words, adjectives, adverbs, and main verbs separately. Omit particles such as は, が, を, に, で, と, and の; the program will restore them as untappable text. Keep a verb's inflection and auxiliaries with that verb, for example 浴びます, 置いています, 確認してください, and 読まなかった.",
+    "Never split one inflected word at an ending in either language: English crispy stays crispy, and Japanese units such as むいてください, 結んでください, 使い終わったら, and 洗って乾かして stay complete. Every main predicate and concrete noun should normally be tappable; do not hide the sentence's core action in an omitted gap.",
     "Exact example: for '私は毎朝シャワーを浴びます。', return '私' + '毎朝' + 'シャワー' + '浴びます'. Do not return '毎朝シャワーを浴びます。' or 'シャワーを浴びます。' as one tap.",
     "Exact English counterpart: for 'I take a shower every morning.', return 'I' + 'take a shower' + 'every morning'. The program restores the spaces and final period as untappable spans.",
     "For '私はキッチンで計量カップを使います。', return '私' + 'キッチン' + '計量カップ' + '使います'. For 'Add baking soda to the cookie dough.', return 'Add' + 'baking soda' + 'cookie dough'.",
     "Every returned span is tappable and must provide all three contextual glosses: z in Traditional Chinese, j in natural Japanese, and e in English. The j field is a short Japanese definition or contextual synonym written in normal Japanese; it is never a kana reading or a duplicate of r. The r field alone carries pronunciation.",
     "Translate only that word or fixed expression in its sentence context. A gloss must never paraphrase the remainder of the sentence. Never add grammar labels, parenthetical notes, or explanations such as 格助詞, 主語, object marker, polite form, or topic marker.",
+    "A Japanese j gloss must be the clean contextual meaning itself. It must never describe conjugation or usage with meta-words such as 動作, 表現, 意味, 文法, 形, 丁寧, 依頼, 条件, 理由, 状態, 主語, 目的語, or 助詞.",
     "The z, j, and e glosses must not contain ( ), （ ）, or any other parenthetical annotation. Write a clean translation only.",
     "Traditional Chinese glosses must be natural Taiwan usage. Translate temporal 前に as 之前 or 前, never as the literal spatial 前面.",
     "Translate roles and fixed expressions by meaning rather than character by character; for example, 清掃の人 means 清潔人員／清潔人員之一 (cleaner), never 清潔的人.",
@@ -236,6 +240,9 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<BatchG
           ),
       );
       const issues = validateAuthoredSentence(candidate.language, candidate.sentence, spans);
+      if (containsGeneratedMetaGloss(spans)) {
+        issues.push("generated gloss contains a usage or conjugation explanation");
+      }
       if (issues.length > 0) {
         failures.set(item.key, issues.join("; "));
         continue;

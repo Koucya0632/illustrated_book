@@ -89,6 +89,209 @@ function dailyStreetExample(
 
 export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   {
+    id: "bowl",
+    oldZh: "碗",
+    zh: "攪拌盆",
+    chineseDefinition: {
+      old: "圓形且較深的器皿，用來盛裝食物或液體。",
+      value: "用於混合或盛放食材的深型調理容器。",
+    },
+  },
+  {
+    id: "grater",
+    oldZh: "刨絲器",
+    zh: "磨泥器",
+    chineseDefinition: {
+      old: "表面粗糙的廚房工具，用來把食材刨成細絲或細屑。",
+      value: "表面帶有細小刃孔的廚房工具，用來把薑、蘿蔔等食材磨成泥或細末。",
+    },
+  },
+  {
+    id: "kettle",
+    oldZh: "水壺",
+    zh: "燒水壺",
+    chineseDefinition: {
+      old: "附壺嘴的容器，用來煮沸水。",
+      value: "附有壺嘴、可在爐火上加熱並煮沸水的容器。",
+    },
+  },
+  {
+    id: "alarm-clock",
+    oldJa: "目覚まし時計",
+    ja: "目覚まし時計",
+    oldJaReading: "めざましどけい",
+    jaReading: "めざましどけい",
+    jaReadingSegments: [
+      { text: "目", ruby: "め" },
+      { text: "覚", ruby: "ざ" },
+      { text: "ま", ruby: null },
+      { text: "し", ruby: null },
+      { text: "時計", ruby: "どけい" },
+    ],
+  },
+  {
+    id: "photo-frame",
+    oldJa: "写真立て",
+    ja: "写真立て",
+    oldJaReading: "しゃしんたて",
+    jaReading: "しゃしんたて",
+    jaReadingSegments: [
+      { text: "写", ruby: "しゃ" },
+      { text: "真", ruby: "しん" },
+      { text: "立", ruby: "た" },
+      { text: "て", ruby: null },
+    ],
+  },
+  {
+    id: "blanket",
+    oldZh: "毯子 / 被子",
+    zh: "毯子",
+    jaDefinition: {
+      old: "「毛布」は、特に掛け布団カバーとしてベッドを覆うために使用される、大きな暖かい布地です。",
+      value: "「毛布」とは、寝るときや休むときに体を覆って暖かくする寝具です。",
+    },
+    chineseDefinition: {
+      old: "大片保暖布料，特別用於蓋在床上作為被子的覆蓋物。",
+      value: "用來覆蓋身體保暖的大塊柔軟布料，常在睡覺或休息時使用。",
+    },
+  },
+  {
+    id: "quilt",
+    oldWord: "quilt",
+    word: "duvet",
+    oldZh: "棉被",
+    zh: "棉被",
+    oldJa: "掛け布団",
+    ja: "掛け布団",
+    oldJaReading: "かけぶとん",
+    jaReading: "かけぶとん",
+    oldPronunciation: "/kwɪlt/",
+    pronunciation: "/ˈduː.veɪ/",
+    enDefinition: {
+      old: "A thick, padded bed covering, often stitched in decorative patterns.",
+      value: "A soft, thick bed covering filled with down or synthetic material.",
+    },
+    jaDefinition: {
+      old: "「掛け布団」は、厚みのあるサンドイッチ状のベッドキルトで、多くの場合、表面に装飾的なステッチが施されています。",
+      value: "「掛け布団」とは、寝るときに体の上に掛けて暖かくする、綿や羽毛などが入った寝具です。",
+    },
+    chineseDefinition: {
+      old: "厚實有夾層的床上被蓋，表面常以裝飾性針線縫製。",
+      value: "內填羽絨或化纖、睡覺時覆蓋身體保暖的厚被子。",
+    },
+    localizedTexts: [
+      {
+        field: "etymology",
+        language: "en",
+        old: "From Old French cuilte, tracing back to Latin culcita (stuffing, a cushion). So quilt has emphasized 'stuffed inside' from the very start — unlike a thin blanket, its core feeling is a padded, thick cover.",
+        value: "From French duvet, originally meaning down feathers. The word came to mean a soft bed covering filled with down or similar material.",
+      },
+      {
+        field: "etymology",
+        language: "ja",
+        old: "古フランス語 cuilte（中綿入り寝具）に由来。",
+        value: "フランス語 duvet（羽毛）に由来。",
+      },
+      {
+        field: "note",
+        language: "en",
+        old: "qu-ilt: the padded quilt",
+        value: "duvet: the soft filled bed cover",
+      },
+      {
+        field: "note",
+        language: "ja",
+        old: "中に綿を入れた厚手の寝具。",
+        value: "羽毛や化繊を詰めた掛け布団。",
+      },
+    ],
+  },
+  {
+    id: "robe",
+    oldWord: "robe",
+    word: "dressing gown",
+    oldZh: "睡袍",
+    zh: "睡袍",
+    oldJa: "ローブ",
+    ja: "ガウン",
+    oldJaReading: "ローブ",
+    jaReading: "ガウン",
+    oldPronunciation: "/roʊb/",
+    pronunciation: "/ˈdres.ɪŋ ɡaʊn/",
+    enDefinition: {
+      old: "A long, loose outer garment.",
+      value: "A loose garment worn over sleepwear while relaxing at home.",
+    },
+    jaDefinition: {
+      old: "「ローブ」は、長くゆったりとした上着です。",
+      value: "「ガウン」とは、部屋着や寝間着の上に羽織る、ゆったりした衣服です。",
+    },
+    chineseDefinition: {
+      old: "寬鬆的長型外衣。",
+      value: "穿在睡衣外、在家休息時保暖的寬鬆外衣。",
+    },
+    localizedTexts: [
+      {
+        field: "etymology",
+        language: "en",
+        old: "From Old French robe, originally 'plundered garments, spoils' — Germanic warriors took the enemy's clothes as loot. It later broadened to any loose long garment. The core feeling: a long sheet of cloth draped over you.",
+        value: "Dressing refers to getting dressed; gown comes from Old French goune, a long garment. Together, dressing gown means a loose garment worn over sleepwear at home.",
+      },
+      {
+        field: "etymology",
+        language: "ja",
+        old: "古フランス語 robe（衣服）に由来。",
+        value: "dressing（身支度）と gown（ゆったりした上着）を組み合わせた語。",
+      },
+      {
+        field: "note",
+        language: "en",
+        old: "r-obe: the loose robe",
+        value: "dressing + gown: a gown worn over sleepwear",
+      },
+      {
+        field: "note",
+        language: "ja",
+        old: "ゆったりした上着。",
+        value: "寝間着の上に羽織るゆったりした衣服。",
+      },
+    ],
+  },
+  {
+    id: "heater",
+    oldZh: "暖氣",
+    zh: "電暖器",
+    enDefinition: {
+      old: "A device that produces heat to warm a room or water.",
+      value: "A portable device that produces heat to warm a room.",
+    },
+    jaDefinition: {
+      old: "「ヒーター」とは、熱エネルギーを発生させて部屋や水を温める機器です。",
+      value: "「ヒーター」とは、部屋を暖めるために使う暖房器具です。",
+    },
+    chineseDefinition: {
+      old: "產生熱能以加熱房間或水的裝置。",
+      value: "產生熱能以加熱房間的可攜式暖房設備。",
+    },
+  },
+  {
+    id: "lamp",
+    oldZh: "檯燈",
+    zh: "燈",
+    enDefinition: {
+      old: "A device that produces light, usually placed on a table or desk.",
+      value: "A device that produces light.",
+    },
+    jaDefinition: {
+      old: "「ランプ」は、通常テーブルまたは机の上に置かれる、光を生成する器具です。",
+      value: "「ランプ」とは、光を出して周囲を照らす器具です。",
+    },
+    chineseDefinition: {
+      old: "產生光線的器具，通常擺放在桌面或書桌上。",
+      value: "用來發出光線、照亮周圍的器具。",
+    },
+  },
+  {
     id: "electric-cooker",
     oldWord: "electric cooker",
     word: "slow cooker",
@@ -451,8 +654,8 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
         "銀行",
         "銀行",
         "I need to stop by the bank.",
-        "我回家前要去一趟銀行。",
-        "銀行に寄ってから帰ります。",
+        "我要去一趟銀行。",
+        "銀行に寄ります。",
       ),
     ],
   },
@@ -557,6 +760,11 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "corner",
+    oldJa: "角",
+    ja: "角",
+    oldJaReading: "かく",
+    jaReading: "かど",
+    jaReadingSegments: [{ text: "角", ruby: "かど" }],
     examples: [
       dailyStreetExample(
         "corner",
@@ -879,7 +1087,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
         "station",
         "車站",
         "駅",
-        "I'll meet you in front of the station.",
+        "Let's meet in front of the station.",
         "我們在車站前碰面吧。",
         "駅の前で待ち合わせましょう。",
       ),
@@ -1067,7 +1275,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
         "地下道",
         "Use the underpass to cross the road.",
         "走地下道到馬路對面。",
-        "地下道を通って道路の向こう側へ行きます。",
+        "地下道を通って道路の向こう側へ行きましょう。",
       ),
     ],
   },
@@ -2186,15 +2394,27 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
 ];
 
+export function selectMainWordCorrections(
+  wordIds?: ReadonlySet<string>,
+): MainWordCorrection[] {
+  return wordIds
+    ? MAIN_WORD_CORRECTIONS.filter(({ id }) => wordIds.has(id))
+    : MAIN_WORD_CORRECTIONS;
+}
+
 /**
  * Applies curated corrections only while a field is still at the known old
  * value (or already at the corrected value). Later admin edits are preserved.
  */
-export async function applyMainWordCorrections(sql: Sql): Promise<number> {
+export async function applyMainWordCorrections(
+  sql: Sql,
+  wordIds?: ReadonlySet<string>,
+): Promise<number> {
   const touched = new Set<string>();
+  const corrections = selectMainWordCorrections(wordIds);
 
   await sql.begin(async (tx) => {
-    for (const correction of MAIN_WORD_CORRECTIONS) {
+    for (const correction of corrections) {
       const rows = await tx`
         UPDATE words
         SET

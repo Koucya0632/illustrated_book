@@ -26,6 +26,11 @@ export const MAIN_WORD_MERGES: readonly MainWordMerge[] = [
     targetId: "coffee-table",
     reason: "Both rows describe the same low table used in front of a living-room sofa.",
   },
+  {
+    sourceId: "curtains",
+    targetId: "curtain",
+    reason: "Both rows display as カーテン / 窗簾 and teach the same window-covering concept.",
+  },
 ];
 
 /**

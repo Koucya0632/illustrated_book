@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { spansCoverSentence, unlinkSelfReference } from "../lib/example-spans";
 import {
   alignAuthoredSpans,
+  containsGeneratedMetaGloss,
   validateAuthoredSentence,
   validateLearningSpanQuality,
 } from "../lib/example-span-corpus";
@@ -264,6 +265,51 @@ test("contextual glosses reject parenthetical grammar notes", () => {
     },
   ]);
   assert.ok(issues.some((issue) => issue.includes("grammar note")));
+});
+
+test("Japanese contextual glosses reject conjugation and usage explanations", () => {
+  const sentence = "牛乳を開けたら冷蔵庫へ戻してください。";
+  const issues = validateAuthoredSentence("ja", sentence, [
+    {
+      t: "牛乳",
+      z: "牛奶",
+      j: "牛乳",
+      e: "milk",
+      r: "ぎゅうにゅう",
+    },
+    { t: "を" },
+    {
+      t: "開けたら",
+      z: "打開後",
+      j: "開ける条件表現",
+      e: "after opening",
+      r: "あけたら",
+    },
+    {
+      t: "冷蔵庫",
+      z: "冰箱",
+      j: "冷蔵庫",
+      e: "fridge",
+      r: "れいぞうこ",
+    },
+    { t: "へ" },
+    {
+      t: "戻してください",
+      z: "請放回去",
+      j: "戻す動作の依頼形",
+      e: "put back",
+      r: "もどしてください",
+    },
+    { t: "。" },
+  ]);
+  assert.equal(issues.filter((issue) => issue.includes("grammar note")).length, 0);
+  assert.equal(
+    containsGeneratedMetaGloss([
+      { t: "開けたら", j: "開ける条件表現" },
+      { t: "戻してください", j: "戻す動作の依頼形" },
+    ]),
+    true,
+  );
 });
 
 // ---- gloss language ------------------------------------------------------
@@ -661,4 +707,156 @@ test("the audited bathroom click translations preserve contextual meaning and bo
   const washBasin = exampleFor("wash-basin", 1);
   assert.equal(tappable("en", washBasin.en, "hand-wash").j, "手洗いする");
   assert.equal(tappable("ja", washBasin.ja, "手洗いする").e, "hand-wash");
+});
+
+test("the audited bedroom click translations preserve words, context, and inflection", () => {
+  const bed = exampleFor("bed", 1);
+  assert.equal(tappable("en", bed.en, "going to bed").z, "上床睡覺");
+  assert.ok(!authored.en[bed.en].some(({ t, z }) => t === "go" && z));
+
+  const bedSheet = exampleFor("bed-sheet", 1);
+  assert.equal(tappable("en", bedSheet.en, "fewer wrinkles").z, "較少皺褶");
+  const bedsideLamp = exampleFor("bedside-lamp", 1);
+  assert.equal(tappable("ja", bedsideLamp.ja, "使います").z, "使用");
+  const bedspread = exampleFor("bedspread", 1);
+  assert.ok(!authored.en[bedspread.en].some(({ t, z }) => t === "does not end up on the floor" && z));
+  const blanket = exampleFor("blanket", 1);
+  assert.equal(tappable("en", blanket.en, "extra blanket").z, "備用毯子");
+
+  const blinds = exampleFor("blinds", 1);
+  assert.equal(tappable("en", blinds.en, "enters").e, "enters");
+  assert.equal(tappable("ja", blinds.ja, "ブラインド").z, "百葉窗");
+  assert.equal(tappable("ja", blinds.ja, "調整します").e, "adjust");
+  assert.ok(!authored.ja[blinds.ja].some(({ t, z }) => t === "だけ" && z));
+
+  const curtainSimple = exampleFor("curtain", 0);
+  assert.ok(!authored.en[curtainSimple.en].some(({ t, z }) => t === "Please" && z));
+  const curtainComplex = exampleFor("curtain", 1);
+  assert.ok(!authored.en[curtainComplex.en].some(({ t, z }) => t === "before" && z));
+
+  const door = exampleFor("door", 1);
+  assert.equal(tappable("ja", door.ja, "直す").z, "修好");
+  assert.equal(tappable("ja", door.ja, "閉めてください").e, "please close");
+  const drawer = exampleFor("drawer", 1);
+  assert.equal(tappable("ja", drawer.ja, "付けました").z, "貼上了");
+  const hanger = exampleFor("hanger", 1);
+  assert.equal(tappable("ja", hanger.ja, "崩れにくくなります").e, "keeps its shape");
+  const humidifier = exampleFor("humidifier", 1);
+  assert.equal(tappable("ja", humidifier.ja, "毎朝").z, "每天早上");
+  const mattress = exampleFor("mattress", 1);
+  assert.equal(tappable("ja", mattress.ja, "買い替える").z, "換買新的");
+  const nightstand = exampleFor("nightstand", 1);
+  assert.equal(tappable("ja", nightstand.ja, "喉が渇いた").z, "口渴");
+  const photoFrame = exampleFor("photo-frame", 1);
+  assert.equal(tappable("ja", photoFrame.ja, "落ちるおそれ").z, "掉落的風險");
+  const vanity = exampleFor("vanity-table", 1);
+  assert.equal(tappable("ja", vanity.ja, "選びました").j, "選んだ");
+
+  for (const id of [
+    "bed", "bed-sheet", "bedside-lamp", "bedspread", "blanket", "blinds",
+    "curtain", "door", "drawer", "hanger", "humidifier", "mattress",
+    "nightstand", "photo-frame", "quilt", "robe", "vanity-table", "window",
+  ]) {
+    const pair = MAIN_WORD_EXAMPLE_PAIRS.find((entry) => entry.id === id);
+    assert.ok(pair, id);
+    for (const example of pair.examples) {
+      assert.equal(containsGeneratedMetaGloss(authored.en[example.en]), false, `${id}/en`);
+      assert.equal(containsGeneratedMetaGloss(authored.ja[example.ja]), false, `${id}/ja`);
+    }
+  }
+});
+
+test("the audited living-room click translations expose content words with contextual glosses", () => {
+  const armchair = exampleFor("armchair", 1);
+  assert.equal(tappable("en", armchair.en, "gives").z, "提供");
+  assert.equal(tappable("ja", armchair.ja, "支えてくれる").e, "supports me");
+
+  const cabinet = exampleFor("cabinet", 1);
+  assert.equal(tappable("en", cabinet.en, "cabinet").z, "櫃子");
+  assert.equal(tappable("ja", cabinet.ja, "一番上の棚").e, "top shelf");
+
+  const ceiling = exampleFor("ceiling-light", 0);
+  assert.ok(!authored.en[ceiling.en].some(({ t, z }) => t === "Please" && z));
+
+  const chargerSimple = exampleFor("charger", 0);
+  assert.equal(tappable("en", chargerSimple.en, "phone charger").j, "スマートフォン用充電器");
+  const chargerComplex = exampleFor("charger", 1);
+  assert.equal(tappable("en", chargerComplex.en, "tonight").z, "今晚");
+  assert.equal(tappable("ja", chargerComplex.ja, "コンセント").e, "power outlet");
+
+  const coffeeTable = exampleFor("coffee-table", 1);
+  assert.ok(!authored.en[coffeeTable.en].some(({ t, z }) => t === "Before" && z));
+
+  const doorbell = exampleFor("doorbell", 1);
+  assert.equal(tappable("en", doorbell.en, "monitor").z, "螢幕");
+  assert.equal(tappable("ja", doorbell.ja, "ドア").e, "door");
+  assert.equal(tappable("ja", doorbell.ja, "開けずに").e, "without opening");
+  assert.ok(!authored.ja[doorbell.ja].some(({ t, z }) => t === "ドアを開けずに" && z));
+
+  const doormat = exampleFor("doormat", 0);
+  assert.equal(tappable("en", doormat.en, "coming in").z, "進門");
+  assert.equal(tappable("ja", doormat.ja, "入る").z, "進門");
+
+  const floorLamp = exampleFor("floor-lamp", 1);
+  assert.equal(tappable("en", floorLamp.en, "chair").z, "椅子");
+  assert.ok(!authored.en[floorLamp.en].some(({ t, z }) => t === "behind the chair" && z));
+
+  const footstool = exampleFor("footstool", 1);
+  assert.equal(tappable("en", footstool.en, "includes").z, "包含");
+  assert.equal(tappable("en", footstool.en, "keep").z, "存放");
+  assert.equal(tappable("en", footstool.en, "extra blankets").j, "予備の毛布");
+
+  const gameConsole = exampleFor("game-console", 1);
+  assert.equal(tappable("en", gameConsole.en, "leaving").z, "讓它維持");
+  assert.equal(tappable("ja", gameConsole.ja, "切ってください").e, "please turn off");
+
+  const pictureFrame = exampleFor("picture-frame", 0);
+  assert.equal(tappable("en", pictureFrame.en, "put").z, "放入");
+
+  const pottedPlantSimple = exampleFor("potted-plant", 0);
+  assert.equal(tappable("ja", pottedPlantSimple.ja, "水").e, "water");
+  assert.equal(tappable("ja", pottedPlantSimple.ja, "やってください").e, "please give");
+  const pottedPlantComplex = exampleFor("potted-plant", 1);
+  assert.equal(tappable("ja", pottedPlantComplex.ja, "明るい日陰").e, "bright indirect light");
+
+  const outlet = exampleFor("power-outlet", 1);
+  assert.equal(tappable("ja", outlet.ja, "つながないでください").j, "接続しないでください");
+
+  const projector = exampleFor("projector", 0);
+  assert.equal(tappable("en", projector.en, "projector").z, "投影機");
+  const projectorScreen = exampleFor("projector-screen", 0);
+  assert.equal(tappable("ja", projectorScreen.ja, "見る").z, "看");
+
+  const recliner = exampleFor("recliner", 1);
+  assert.equal(tappable("en", recliner.en, "reclining").z, "把椅背往後放");
+  assert.equal(tappable("ja", recliner.ja, "足置き").e, "footrest");
+
+  const remote = exampleFor("remote", 1);
+  assert.equal(tappable("en", remote.en, "remote").z, "遙控器");
+  const robotVacuum = exampleFor("robot-vacuum", 1);
+  assert.equal(tappable("ja", robotVacuum.ja, "引っかからない").e, "does not get stuck");
+
+  const sideTable = exampleFor("side-table", 1);
+  assert.equal(tappable("en", sideTable.en, "use").z, "使用");
+  assert.equal(tappable("en", sideTable.en, "non-slip coaster").z, "防滑杯墊");
+  assert.equal(tappable("ja", sideTable.ja, "滑り止め付きのコースター").e, "non-slip coaster");
+
+  const smokeDetector = exampleFor("smoke-detector", 0);
+  assert.equal(tappable("ja", smokeDetector.ja, "煙式火災警報器").r, "けむりしきかさいけいほうき");
+
+  const sofa = exampleFor("sofa", 1);
+  assert.ok(!authored.en[sofa.en].some(({ t, z }) => t === "around" && z));
+  assert.equal(tappable("en", sofa.en, "make").z, "騰出");
+
+  const telephone = exampleFor("telephone", 1);
+  assert.equal(tappable("ja", telephone.ja, "出て").z, "接聽");
+  assert.equal(tappable("ja", telephone.ja, "伝言を預かっておいてください").e, "please take a message");
+
+  const tvStand = exampleFor("tv-stand", 1);
+  assert.ok(!authored.en[tvStand.en].some(({ t, z }) => t === "behind" && z));
+  const vase = exampleFor("vase", 1);
+  assert.equal(tappable("en", vase.en, "longer").z, "更久");
+  const wallArt = exampleFor("wall-art", 1);
+  assert.ok(!authored.en[wallArt.en].some(({ t, z }) => t === "Before hanging" && z));
+  assert.equal(tappable("en", wallArt.en, "hanging").z, "懸掛");
 });

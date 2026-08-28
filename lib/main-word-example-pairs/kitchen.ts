@@ -1,4 +1,61 @@
-import type { MainWordComplexExample } from "./types";
+import type {
+  MainWordComplexExample,
+  MainWordSimpleExampleOverride,
+} from "./types";
+
+// Exact complex examples deployed before the 2026-08-26 kitchen semantic
+// review. The apply transaction accepts only these known values when moving
+// the corrected pairs forward; any other live edit remains a conflict.
+export const KITCHEN_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  {
+    id: "faucet",
+    en: "If the faucet keeps dripping after you close it, ask the landlord to repair it.",
+    ja: "蛇口を閉めても水が止まらない場合は、大家さんに修理を頼んでください。",
+    zh: "如果關上水龍頭後仍一直滴水，請請房東修理。",
+  },
+  {
+    id: "knife",
+    en: "Because this knife is very sharp, hold the handle firmly while you cut the pumpkin.",
+    ja: "このナイフはよく切れるので、かぼちゃを切るときは柄をしっかり握ってください。",
+    zh: "這把刀很鋒利，切南瓜時請握緊刀柄。",
+  },
+  {
+    id: "bowl",
+    en: "If there is any salad left, cover the bowl and keep it in the fridge.",
+    ja: "サラダが残ったら、ボウルにふたをして冷蔵庫に入れてください。",
+    zh: "如果沙拉還有剩，請把碗蓋好放進冰箱。",
+  },
+  {
+    id: "grater",
+    en: "When the curry is finished, I use the grater to add a little fresh ginger.",
+    ja: "カレーができたら、おろし器ですったしょうがを少し加えます。",
+    zh: "咖哩煮好後，我會用刨絲器磨一點新鮮薑加進去。",
+  },
+  {
+    id: "kettle",
+    en: "When the kettle starts whistling, turn off the heat before the water boils away.",
+    ja: "やかんが鳴り始めたら、お湯がなくなる前に火を止めてください。",
+    zh: "水壺開始鳴叫時，請在水燒乾前把火關掉。",
+  },
+  {
+    id: "fork",
+    en: "If the pasta is hard to pick up, turn the fork against the edge of the plate.",
+    ja: "パスタが取りにくければ、フォークをお皿の端に当てて巻いてください。",
+    zh: "如果義大利麵不好叉起來，可以把叉子靠著盤邊捲起來。",
+  },
+  {
+    id: "teapot",
+    en: "After pouring hot water into the teapot, wait a few minutes before serving the tea.",
+    ja: "ティーポットにお湯を注いだら、数分待ってからお茶を入れます。",
+    zh: "把熱水倒進茶壺後，等幾分鐘再倒茶。",
+  },
+  {
+    id: "food-container",
+    en: "Let the curry cool before closing the food container, or steam will collect inside.",
+    ja: "中に水滴がたまるので、カレーを冷ましてから保存容器の蓋を閉めます。",
+    zh: "咖哩放涼後再蓋上保鮮盒，否則水蒸氣會積在裡面。",
+  },
+];
 
 export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   {
@@ -35,7 +92,7 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
     id: "faucet",
     en: "If the faucet keeps dripping after you close it, ask the landlord to repair it.",
     ja: "蛇口を閉めても水が止まらない場合は、大家さんに修理を頼んでください。",
-    zh: "如果關上水龍頭後仍一直滴水，請請房東修理。",
+    zh: "如果關上水龍頭後仍一直滴水，請房東修理。",
   },
   {
     id: "pan",
@@ -57,15 +114,15 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   },
   {
     id: "knife",
-    en: "Because this knife is very sharp, hold the handle firmly while you cut the pumpkin.",
-    ja: "このナイフはよく切れるので、かぼちゃを切るときは柄をしっかり握ってください。",
-    zh: "這把刀很鋒利，切南瓜時請握緊刀柄。",
+    en: "When you finish using the knife, wash it and dry it before putting it away.",
+    ja: "ナイフを使い終わったら、洗って乾かしてから片づけてください。",
+    zh: "刀子用完後，清洗並擦乾再收好。",
   },
   {
     id: "bowl",
-    en: "If there is any salad left, cover the bowl and keep it in the fridge.",
-    ja: "サラダが残ったら、ボウルにふたをして冷蔵庫に入れてください。",
-    zh: "如果沙拉還有剩，請把碗蓋好放進冰箱。",
+    en: "Use a large bowl so the batter does not spill while you mix it.",
+    ja: "生地を混ぜるときにこぼれないように、大きなボウルを使ってください。",
+    zh: "攪拌麵糊時請使用大攪拌盆，以免灑出來。",
   },
   {
     id: "plate",
@@ -135,9 +192,9 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   },
   {
     id: "grater",
-    en: "When the curry is finished, I use the grater to add a little fresh ginger.",
-    ja: "カレーができたら、おろし器ですったしょうがを少し加えます。",
-    zh: "咖哩煮好後，我會用刨絲器磨一點新鮮薑加進去。",
+    en: "When the curry is finished, grate a little fresh ginger into it.",
+    ja: "カレーができたら、おろし器でしょうがを少しすりおろして加えます。",
+    zh: "咖哩煮好後，用磨泥器磨一點新鮮薑加進去。",
   },
   {
     id: "can-opener",
@@ -207,7 +264,7 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   },
   {
     id: "fork",
-    en: "If the pasta is hard to pick up, turn the fork against the edge of the plate.",
+    en: "If the pasta is hard to pick up, press the fork against the edge of the plate and twirl it.",
     ja: "パスタが取りにくければ、フォークをお皿の端に当てて巻いてください。",
     zh: "如果義大利麵不好叉起來，可以把叉子靠著盤邊捲起來。",
   },
@@ -237,15 +294,15 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   },
   {
     id: "teapot",
-    en: "After pouring hot water into the teapot, wait a few minutes before serving the tea.",
-    ja: "ティーポットにお湯を注いだら、数分待ってからお茶を入れます。",
-    zh: "把熱水倒進茶壺後，等幾分鐘再倒茶。",
+    en: "After pouring hot water into the teapot, wait a few minutes before pouring the tea into cups.",
+    ja: "ティーポットにお湯を注いだら、数分待ってからカップにお茶を注ぎます。",
+    zh: "把熱水倒進茶壺後，等幾分鐘再把茶倒進杯子。",
   },
   {
     id: "kettle",
     en: "When the kettle starts whistling, turn off the heat before the water boils away.",
     ja: "やかんが鳴り始めたら、お湯がなくなる前に火を止めてください。",
-    zh: "水壺開始鳴叫時，請在水燒乾前把火關掉。",
+    zh: "燒水壺開始鳴響時，請在水燒乾前關火。",
   },
   {
     id: "coffee-maker",
@@ -321,7 +378,7 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   },
   {
     id: "food-container",
-    en: "Let the curry cool before closing the food container, or steam will collect inside.",
+    en: "Cool the curry before closing the food container, or steam will collect inside.",
     ja: "中に水滴がたまるので、カレーを冷ましてから保存容器の蓋を閉めます。",
     zh: "咖哩放涼後再蓋上保鮮盒，否則水蒸氣會積在裡面。",
   },
@@ -331,4 +388,51 @@ export const KITCHEN_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
     ja: "料理中に塩と砂糖を間違えないように、調味料入れにラベルを付けています。",
     zh: "我會在每個調味罐貼上標籤，做飯時才不會把鹽和糖弄混。",
   },
+];
+
+export const KITCHEN_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  { id: "air-fryer", en: "I cooked frozen fries in the air fryer.", ja: "冷凍ポテトをエアフライヤーで調理しました。", zh: "我用氣炸鍋料理冷凍薯條。" },
+  { id: "aluminum-foil", en: "Cover the fish with aluminum foil.", ja: "魚にアルミホイルをかぶせてください。", zh: "用鋁箔紙蓋住魚。" },
+  { id: "blender", en: "I made a banana smoothie in the blender.", ja: "ブレンダーでバナナスムージーを作りました。", zh: "我用果汁機打了一杯香蕉冰沙。" },
+  { id: "bowl", en: "Mix the eggs in the bowl.", ja: "ボウルで卵を混ぜてください。", zh: "請在攪拌盆裡把蛋拌勻。" },
+  { id: "can-opener", en: "Open this can with the can opener.", ja: "缶切りでこの缶を開けてください。", zh: "請用開罐器打開這個罐頭。" },
+  { id: "cloth", en: "Wipe the counter with this cloth.", ja: "このふきんで調理台を拭いてください。", zh: "用這條抹布擦流理臺。" },
+  { id: "coffee-maker", en: "Put the filter in the coffee maker.", ja: "コーヒーメーカーにフィルターを入れてください。", zh: "把濾紙放進咖啡機。" },
+  { id: "dish-soap", en: "Wash the greasy plate with dish soap.", ja: "食器用洗剤で油のついたお皿を洗ってください。", zh: "用洗碗精清洗油膩的盤子。" },
+  { id: "dishwasher", en: "Put the dirty plates in the dishwasher.", ja: "汚れたお皿を食洗機に入れてください。", zh: "把髒盤子放進洗碗機。" },
+  { id: "faucet", en: "Turn off the faucet after washing the dishes.", ja: "食器を洗ったら蛇口を閉めてください。", zh: "洗完碗後請關上水龍頭。" },
+  { id: "food-container", en: "Put the leftovers in this food container.", ja: "残り物をこの保存容器に入れてください。", zh: "把剩菜放進這個保鮮盒。" },
+  { id: "food-processor", en: "I chopped the onions in the food processor.", ja: "フードプロセッサーで玉ねぎを刻みました。", zh: "我用食物調理機切碎洋蔥。" },
+  { id: "fork", en: "Eat the pasta with a fork.", ja: "フォークでパスタを食べてください。", zh: "請用叉子吃義大利麵。" },
+  { id: "freezer", en: "Put the ice cream in the freezer.", ja: "アイスクリームを冷凍庫に入れてください。", zh: "把冰淇淋放進冷凍庫。" },
+  { id: "fridge", en: "Keep the milk in the fridge.", ja: "牛乳は冷蔵庫に入れておいてください。", zh: "牛奶要放在冰箱裡。" },
+  { id: "glass", en: "Pour some water into the glass.", ja: "コップに水を注いでください。", zh: "倒一些水進玻璃杯。" },
+  { id: "grater", en: "Grate the ginger with this grater.", ja: "このおろし器でしょうがをすってください。", zh: "請用這個磨泥器磨薑。" },
+  { id: "kettle", en: "Boil water in the kettle.", ja: "やかんでお湯を沸かしてください。", zh: "用燒水壺把水煮開。" },
+  { id: "kitchen-knife", en: "Slice the cabbage with a kitchen knife.", ja: "包丁でキャベツを切ってください。", zh: "用菜刀切高麗菜。" },
+  { id: "knife", en: "Be careful with this sharp knife.", ja: "この鋭いナイフに気をつけてください。", zh: "小心這把鋒利的刀子。" },
+  { id: "ladle", en: "Serve the soup with a ladle.", ja: "お玉でスープをよそってください。", zh: "用湯勺盛湯。" },
+  { id: "lid", en: "Put the lid on the pot.", ja: "鍋に蓋をしてください。", zh: "把鍋蓋蓋上。" },
+  { id: "measuring-cup", en: "Measure the water with a measuring cup.", ja: "計量カップで水を量ってください。", zh: "用量杯量水。" },
+  { id: "measuring-spoon", en: "Measure one teaspoon of salt.", ja: "計量スプーンで塩を小さじ一杯量ってください。", zh: "用量匙量一小匙鹽。" },
+  { id: "paper-towel", en: "Wipe up the spilled milk with a paper towel.", ja: "こぼれた牛乳をキッチンペーパーで拭いてください。", zh: "用廚房紙巾擦掉灑出的牛奶。" },
+  { id: "peeler", en: "Peel the potato with a peeler.", ja: "ピーラーでじゃがいもの皮をむいてください。", zh: "用削皮器削馬鈴薯皮。" },
+  { id: "plastic-wrap", en: "Cover the cut fruit with plastic wrap.", ja: "切った果物にラップをかけてください。", zh: "用保鮮膜包住切好的水果。" },
+  { id: "plate", en: "Put the toast on a plate.", ja: "トーストをお皿にのせてください。", zh: "把吐司放在盤子上。" },
+  { id: "range-hood", en: "Turn on the range hood before frying fish.", ja: "魚を焼く前にレンジフードをつけてください。", zh: "煎魚前請打開抽油煙機。" },
+  { id: "rice-cooker", en: "Wash the rice before putting it in the rice cooker.", ja: "炊飯器に入れる前に米を洗ってください。", zh: "把米放進電飯鍋前先洗米。" },
+  { id: "scissors", en: "Cut open the food package with scissors.", ja: "はさみで食品の袋を切って開けてください。", zh: "用剪刀剪開食品包裝。" },
+  { id: "seasoning-jar", en: "Fill the seasoning jar with salt.", ja: "調味料入れに塩を入れてください。", zh: "把鹽裝進調味罐。" },
+  { id: "slotted-spoon", en: "Lift the dumplings with a slotted spoon.", ja: "穴あきお玉で団子をすくってください。", zh: "用漏勺撈起丸子。" },
+  { id: "spatula", en: "Flip the pancake with a spatula.", ja: "フライ返しでパンケーキを裏返してください。", zh: "用鍋鏟把鬆餅翻面。" },
+  { id: "sponge", en: "Scrub the pan with a sponge.", ja: "スポンジでフライパンをこすってください。", zh: "用海綿刷洗平底鍋。" },
+  { id: "steamer-basket", en: "Put the buns in the steamer basket.", ja: "肉まんを蒸し器に入れてください。", zh: "把包子放進蒸籠。" },
+  { id: "strainer", en: "Drain the noodles in a strainer.", ja: "ザルで麺の水を切ってください。", zh: "用濾網把麵瀝乾。" },
+  { id: "table-knife", en: "Spread butter with a table knife.", ja: "テーブルナイフでバターを塗ってください。", zh: "用餐刀抹奶油。" },
+  { id: "teapot", en: "Pour hot water into the teapot.", ja: "ティーポットにお湯を注いでください。", zh: "把熱水倒進茶壺。" },
+  { id: "toaster", en: "Toast two slices of bread in the toaster.", ja: "トースターでパンを二枚焼いてください。", zh: "用烤麵包機烤兩片吐司。" },
+  { id: "tongs", en: "Turn the meat with the tongs.", ja: "トングで肉を裏返してください。", zh: "用夾子把肉翻面。" },
+  { id: "trash-bag", en: "Put the food scraps in the trash bag.", ja: "生ごみをゴミ袋に入れてください。", zh: "把廚餘放進垃圾袋。" },
+  { id: "whisk", en: "Beat the eggs with a whisk.", ja: "泡立て器で卵を混ぜてください。", zh: "用打蛋器把蛋打勻。" },
+  { id: "wok", en: "Stir-fry the vegetables in the wok.", ja: "中華鍋で野菜を炒めてください。", zh: "用炒鍋炒蔬菜。" },
 ];

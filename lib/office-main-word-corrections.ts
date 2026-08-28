@@ -173,6 +173,10 @@ export const OFFICE_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "document",
+    jaDefinition: {
+      old: "「書類」とは、情報を提供したり証拠として機能する、書かれたまたは印刷された紙です。",
+      value: "「書類」は、情報を伝えたり証拠として残したりするために、文字や図を記録した紙の文書です。",
+    },
     examples: [
       dailyOfficeExample(
         "document",
@@ -589,6 +593,10 @@ export const OFFICE_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "office-chair",
+    jaDefinition: {
+      old: "「オフィスチェア」とは、デスクでの使用に特化して設計された椅子のことです。多くの場合、ローラーが装備されており、高さを調整できます。",
+      value: "「オフィスチェア」は、デスク作業用に設計された椅子です。多くはキャスターが付き、高さを調節できます。",
+    },
     examples: [
       dailyOfficeExample(
         "office chair",
@@ -711,6 +719,10 @@ export const OFFICE_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "tape",
+    jaDefinition: {
+      old: "「セロテープ」は、物を貼り付けるために使用される長い片面粘着アイテムです。",
+      value: "「セロテープ」は、片面に粘着剤が付いた透明な帯状のテープで、物を貼り付けるために使います。",
+    },
     examples: [
       dailyOfficeExample(
         "tape",
@@ -792,6 +804,10 @@ export const OFFICE_MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   },
   {
     id: "whiteboard-marker",
+    jaDefinition: {
+      old: "「ホワイトボードマーカー」は、ホワイトボードへの書き込みに特化した、消せるインクを搭載したペンです。",
+      value: "「ホワイトボードマーカー」は、ホワイトボードに書き、専用のイレーザーで消せるインクを使ったペンです。",
+    },
     examples: [
       dailyOfficeExample(
         "whiteboard marker",

@@ -3883,14 +3883,14 @@
   {
     "id": "coach",
     "word": "coach",
-    "chinese": "長途巴士",
+    "chinese": "遊覽車",
     "category": "transportation",
     "partOfSpeech": "noun",
     "pronunciation": "/koʊtʃ/",
     "examples": [
       {
         "en": "The coach is a useful way to travel.",
-        "zh": "長途巴士是實用的交通工具。"
+        "zh": "遊覽車是實用的交通工具。"
       }
     ]
   },
@@ -4110,14 +4110,14 @@
   {
     "id": "tram",
     "word": "tram",
-    "chinese": "電車",
+    "chinese": "路面電車",
     "category": "transportation",
     "partOfSpeech": "noun",
     "pronunciation": "/træm/",
     "examples": [
       {
         "en": "The tram is a useful way to travel.",
-        "zh": "電車是實用的交通工具。"
+        "zh": "路面電車是實用的交通工具。"
       }
     ]
   },

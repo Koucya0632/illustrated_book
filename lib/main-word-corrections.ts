@@ -2258,6 +2258,50 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
     ],
   },
   {
+    id: "coach",
+    oldZh: "長途巴士",
+    zh: "遊覽車",
+    enDefinition: {
+      old: "A long-distance bus or a large enclosed horse-drawn carriage.",
+      value: "A comfortable bus used for long trips or sightseeing tours.",
+    },
+    jaDefinition: {
+      old: "「観光バス」とは、長距離を移動するバスや大型の馬車のことです。",
+      value: "「観光バス」とは、観光旅行や長距離の団体移動に使う大型バスです。",
+    },
+    chineseDefinition: {
+      old: "行駛長途路線的巴士，或封閉式的大型馬車。",
+      value: "用於觀光旅行或長途團體移動的大型巴士。",
+    },
+  },
+  {
+    id: "tram",
+    oldZh: "電車",
+    zh: "路面電車",
+  },
+  {
+    id: "scooter",
+    jaDefinition: {
+      old: "「キックボード」は、2つの車輪とペダルを備え、ペダルをこぐことによって駆動する小型の移動ツールです。",
+      value: "「キックボード」とは、二つの車輪と足を載せるデッキがあり、片足で地面を蹴って進む小型の乗り物です。",
+    },
+  },
+  {
+    id: "train",
+    enDefinition: {
+      old: "A connected series of railroad cars pulled by a locomotive.",
+      value: "A connected series of rail cars that carries passengers along tracks.",
+    },
+    jaDefinition: {
+      old: "「電車」とは、機関車が牽引する鉄道車両であり、複数の車両が連結されて構成されています。",
+      value: "「電車」とは、電気で線路を走り、乗客を運ぶ複数の車両が連結された乗り物です。",
+    },
+    chineseDefinition: {
+      old: "由機車頭牽引、由多節車廂相連組成的軌道交通工具。",
+      value: "由多節車廂相連、在軌道上運送乘客的交通工具。",
+    },
+  },
+  {
     id: "dark-soy-sauce",
     oldJa: "濃口醤油（老抽）",
     ja: "老抽",

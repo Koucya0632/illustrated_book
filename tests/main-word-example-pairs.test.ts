@@ -28,6 +28,11 @@ import {
   LIVING_ROOM_PREVIOUS_COMPLEX_EXAMPLES,
   LIVING_ROOM_SIMPLE_OVERRIDES,
 } from "../lib/main-word-example-pairs/living-room";
+import {
+  TRANSPORTATION_PREVIOUS_COMPLEX_EXAMPLES,
+  TRANSPORTATION_PREVIOUS_SIMPLE_OVERRIDES,
+} from "../lib/main-word-example-pairs/transportation";
+import { MAIN_WORD_CORRECTIONS } from "../lib/main-word-corrections";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "../lib/living-room-main-word-corrections";
 import { words } from "../lib/words";
 
@@ -195,6 +200,61 @@ test("the audited living-room pair corrections accept only the exact deployed pr
     assert.equal(isKnownPreviousTargetExamplePair(id, edited), false, id);
     assert.equal(classifyMainWordExamplePair(id, edited), "conflict", id);
   }
+});
+
+test("the audited transportation pair corrections accept only their exact deployed predecessors", () => {
+  const previousSimpleById = new Map(
+    TRANSPORTATION_PREVIOUS_SIMPLE_OVERRIDES.map((example) => [example.id, example]),
+  );
+  for (const previousComplex of TRANSPORTATION_PREVIOUS_COMPLEX_EXAMPLES) {
+    const { id } = previousComplex;
+    const pair = MAIN_WORD_EXAMPLE_PAIRS.find((row) => row.id === id);
+    assert.ok(pair, id);
+    const previousSimple = previousSimpleById.get(id) ?? pair.examples[0];
+    const previous: StoredMainWordExample[] = [
+      { ...previousSimple, cefrLevel: "A2", sortOrder: 0 },
+      { ...previousComplex, cefrLevel: "B1", sortOrder: 1 },
+    ];
+    assert.equal(isKnownPreviousTargetExamplePair(id, previous), true, id);
+    assert.equal(classifyMainWordExamplePair(id, previous), "legacy", id);
+
+    const edited = previous.map((example) => ({ ...example }));
+    edited[1].zh = `${edited[1].zh}編輯`;
+    assert.equal(isKnownPreviousTargetExamplePair(id, edited), false, id);
+    assert.equal(classifyMainWordExamplePair(id, edited), "conflict", id);
+  }
+});
+
+test("transportation terminology and revised examples stay aligned in all three languages", () => {
+  assert.equal(words.find(({ id }) => id === "coach")?.chinese, "遊覽車");
+  assert.equal(words.find(({ id }) => id === "tram")?.chinese, "路面電車");
+
+  const expected = new Map([
+    ["coach", ["我們搭遊覽車去溫泉。", "遊覽車車程四小時，中途會停一次讓乘客休息。"]],
+    ["tram", ["路面電車停在博物館前。", "路面電車和汽車共用道路時，穿越軌道前要仔細查看。"]],
+    ["van", ["我們把箱子搬上廂型車。", "五個人和所有行李塞不進小車，所以我們租了廂型車。"]],
+    ["sports-car", ["一輛紅色跑車超過我們。", "跑車雖然很快，但車身低，很難駛上陡峭的停車場斜坡。"]],
+    ["rocket", ["我們在電視上看火箭發射。", "火箭發射因天氣延期，所以我們從新聞確認了新的發射時間。"]],
+    ["rickshaw", ["我們搭人力車遊覽老街。", "搭人力車前，我們先和車伕確認路線和價格。"]],
+  ]);
+  for (const [id, expectedZh] of expected) {
+    const pair = MAIN_WORD_EXAMPLE_PAIRS.find((row) => row.id === id);
+    assert.ok(pair, id);
+    assert.deepEqual(pair.examples.map(({ zh }) => zh), expectedZh, id);
+  }
+
+  const coach = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "coach");
+  const tram = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "tram");
+  const scooter = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "scooter");
+  const train = MAIN_WORD_CORRECTIONS.find(({ id }) => id === "train");
+  assert.equal(coach?.zh, "遊覽車");
+  assert.equal(tram?.zh, "路面電車");
+  assert.match(coach?.enDefinition?.value ?? "", /long trips or sightseeing tours/);
+  assert.match(scooter?.jaDefinition?.value ?? "", /地面を蹴って進む/);
+  assert.doesNotMatch(scooter?.jaDefinition?.value ?? "", /ペダルをこぐ/);
+  assert.match(train?.enDefinition?.value ?? "", /carries passengers along tracks/);
+  assert.match(train?.jaDefinition?.value ?? "", /電気で線路を走り/);
+  assert.doesNotMatch(train?.chineseDefinition?.value ?? "", /機車頭牽引/);
 });
 
 test("coverage follows the current published ID set rather than a fixed count", () => {

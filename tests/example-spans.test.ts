@@ -312,6 +312,49 @@ test("Japanese contextual glosses reject conjugation and usage explanations", ()
   );
 });
 
+test("audited transportation spans contain contextual glosses and keep grammar untappable", () => {
+  const corpus = JSON.parse(
+    readFileSync(new URL("../data/example-spans.json", import.meta.url), "utf8"),
+  ) as Record<"en" | "ja", Record<string, Array<Record<string, string>>>>;
+  const transportationIds = new Set(
+    MAIN_WORD_EXAMPLE_PAIRS
+      .filter(({ id }) => [
+        "airplane", "ambulance", "bicycle", "bus", "cable-car", "camper-van",
+        "canoe", "cruise-ship", "electric-scooter", "ferry", "fire-truck",
+        "garbage-truck", "gondola-lift", "helicopter", "high-speed-train",
+        "hot-air-balloon", "kayak", "monorail", "motorcycle", "police-car",
+        "rickshaw", "rocket", "train", "van",
+      ].includes(id))
+      .map(({ id }) => id),
+  );
+  const forbidden = /(?:過去形|過去進行|条件形|否定のて形|可能形|受け身|所有物を示す語|女性の三人称|理由を示す|可能性を示す表現|鳴らすこと|出発すると|停車していた|小貨車|大きな水たまり)/u;
+
+  for (const pair of MAIN_WORD_EXAMPLE_PAIRS) {
+    if (!transportationIds.has(pair.id)) continue;
+    for (const example of pair.examples) {
+      for (const [language, sentence] of [["en", example.en], ["ja", example.ja]] as const) {
+        const spans = corpus[language][sentence];
+        assert.ok(spans, `${pair.id}:${language}: missing spans`);
+        assert.doesNotMatch(JSON.stringify(spans), forbidden, `${pair.id}:${language}`);
+      }
+    }
+  }
+
+  for (const [sentence, grammar] of [
+    ["火曜日はゴミ収集車が早く来るので、前の晩に袋を出しておいてください。", "ので"],
+    ["電車が遅れているときは、駅のアプリで使うホームが表示されることが多いです。", "こと"],
+  ] as const) {
+    const span = corpus.ja[sentence].find(({ t }) => t === grammar);
+    assert.ok(span, `${grammar}: missing span`);
+    assert.deepEqual(Object.keys(span), ["t"], `${grammar}: must stay untappable`);
+  }
+  assert.equal(
+    corpus.ja["ゴンドラリフトがスキー客を山の上へ運びます。"]
+      .find(({ t }) => t === "上")?.z,
+    "上方",
+  );
+});
+
 // ---- gloss language ------------------------------------------------------
 
 const rows: GlossSpanRow[] = [

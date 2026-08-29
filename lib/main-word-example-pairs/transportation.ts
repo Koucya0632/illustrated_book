@@ -14,23 +14,23 @@ export const TRANSPORTATION_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "taxi", en: "Since we have several heavy suitcases, taking a taxi will be easier than changing trains.", ja: "重いスーツケースがいくつもあるので、電車を乗り換えるよりタクシーのほうが楽です。", zh: "我們有好幾個重行李箱，搭計程車會比轉乘火車輕鬆。" },
   { id: "subway", en: "Although the subway is crowded in the morning, it is still faster than driving downtown.", ja: "朝の地下鉄は混んでいますが、中心部へは車より早く着きます。", zh: "早晨地鐵雖然擁擠，去市中心還是比開車快。" },
   { id: "school-bus", en: "If my daughter misses the school bus, I have to drive her to school before work.", ja: "娘がスクールバスに乗り遅れると、出勤前に学校まで送らなければなりません。", zh: "女兒如果錯過校車，我上班前就得開車送她去學校。" },
-  { id: "coach", en: "Because the coach ride takes four hours, it stops once so passengers can take a break.", ja: "観光バスは四時間走るので、乗客が休憩できるよう途中で一度止まります。", zh: "長途巴士車程四小時，中途會停一次讓乘客休息。" },
+  { id: "coach", en: "Because the coach ride takes four hours, it stops once so passengers can take a break.", ja: "観光バスは四時間走るので、乗客が休憩できるよう途中で一度止まります。", zh: "遊覽車車程四小時，中途會停一次讓乘客休息。" },
   { id: "minibus", en: "When the hotel minibus is full, it makes another trip to the station twenty minutes later.", ja: "ホテルのマイクロバスが満席になると、二十分後にもう一度駅へ向かいます。", zh: "飯店小巴客滿時，二十分鐘後會再跑一趟車站。" },
   { id: "truck", en: "Since the truck is too tall for this bridge, the driver must use the road around it.", ja: "トラックはこの橋を通るには高すぎるので、運転手は迂回路を使わなければなりません。", zh: "貨車太高無法通過這座橋，司機必須繞道。" },
-  { id: "van", en: "We rented a van because five people and all their luggage would not fit in a small car.", ja: "五人分の荷物が小さい車に入らないので、バンを借りました。", zh: "五個人和所有行李塞不進小車，所以我們租了廂型車。" },
+  { id: "van", en: "We rented a van because five people and all their luggage would not fit in a small car.", ja: "五人と全員分の荷物が小さい車に収まらないので、バンを借りました。", zh: "五個人和所有行李塞不進小車，所以我們租了廂型車。" },
   { id: "ambulance", en: "When the ambulance approaches with its siren on, move aside and let it pass.", ja: "サイレンを鳴らした救急車が近づいたら、道を空けて通してください。", zh: "救護車鳴笛接近時，請靠邊讓它通過。" },
   { id: "police-car", en: "Because a police car was stopped ahead, drivers slowed down and changed lanes carefully.", ja: "前方にパトカーが止まっていたので、運転手は速度を落として慎重に車線を変えました。", zh: "前方停著警車，駕駛都減速並小心換道。" },
   { id: "fire-truck", en: "As the fire truck left the station, all the cars stopped to give it a clear path.", ja: "消防車が消防署を出ると、道を空けるためにすべての車が止まりました。", zh: "消防車離開消防局時，所有車輛都停下來讓出通道。" },
   { id: "garbage-truck", en: "Since the garbage truck comes early on Tuesdays, put the bags outside the night before.", ja: "火曜日はゴミ収集車が早く来るので、前の晩に袋を出しておいてください。", zh: "垃圾車星期二很早來，請前一晚把垃圾袋放出去。" },
   { id: "tow-truck", en: "Because the car would not start, we called a tow truck to take it to the repair shop.", ja: "車のエンジンがかからなかったので、レッカー車を呼んで修理工場まで運んでもらいました。", zh: "汽車發不動，所以我們叫拖吊車把它送到修車廠。" },
   { id: "camper-van", en: "Before sleeping in the camper van, we opened the roof vent to let fresh air inside.", ja: "キャンピングカーで寝る前に、新しい空気が入るよう天井の換気口を開けました。", zh: "在露營車裡睡覺前，我們打開車頂通風口讓新鮮空氣進來。" },
-  { id: "sports-car", en: "Although the sports car is fast, its low body makes steep parking ramps difficult.", ja: "スポーツカーは速いですが、車体が低いため急な駐車場の坂では注意が必要です。", zh: "跑車雖然很快，但車身低，遇到陡峭停車場斜坡很不方便。" },
+  { id: "sports-car", en: "Although the sports car is fast, its low body makes steep parking ramps difficult.", ja: "スポーツカーは速いですが、車体が低いため急な駐車場の坂を上りにくいです。", zh: "跑車雖然很快，但車身低，很難駛上陡峭的停車場斜坡。" },
   { id: "electric-car", en: "If we charge the electric car overnight, it has enough power for tomorrow's trip.", ja: "夜のうちに電気自動車を充電すれば、明日の移動に十分な電力がたまります。", zh: "如果整晚為電動車充電，電量就足夠明天出門。" },
   { id: "electric-scooter", en: "Before renting an electric scooter, check where local rules allow you to ride it.", ja: "電動キックボードを借りる前に、地域のルールで走れる場所を確認してください。", zh: "租電動滑板車前，先確認當地規定允許在哪裡騎。" },
   { id: "scooter", en: "Because the sidewalk was crowded, the child carried his scooter until he reached the park.", ja: "歩道が混んでいたので、子どもは公園に着くまでキックボードを持って歩きました。", zh: "人行道很擁擠，所以孩子把滑板車提到公園才騎。" },
   { id: "skateboard", en: "If you practice on a skateboard near other people, wear protection and keep your speed low.", ja: "人の近くでスケートボードを練習するなら、防具を着けて速度を落としてください。", zh: "在人群附近練滑板時，要戴護具並降低速度。" },
   { id: "roller-skates", en: "Since the path was wet, we waited for it to dry before using the roller skates.", ja: "道がぬれていたので、乾くまで待ってからローラースケートを使いました。", zh: "路面是濕的，所以我們等乾了才穿溜冰鞋。" },
-  { id: "tram", en: "When the tram shares the road with cars, look carefully before crossing its tracks.", ja: "路面電車が車と同じ道路を走る場所では、線路を渡る前によく確認してください。", zh: "電車和汽車共用道路時，穿越軌道前要仔細查看。" },
+  { id: "tram", en: "When the tram shares the road with cars, look carefully before crossing its tracks.", ja: "路面電車が車と同じ道路を走る場所では、線路を渡る前によく確認してください。", zh: "路面電車和汽車共用道路時，穿越軌道前要仔細查看。" },
   { id: "light-rail", en: "Because the light rail runs every ten minutes, we do not need to check the timetable closely.", ja: "ライトレールは十分おきに来るので、時刻表を細かく確認する必要はありません。", zh: "輕軌每十分鐘一班，所以不必仔細查時刻表。" },
   { id: "high-speed-train", en: "If we take the high-speed train, we can arrive before noon without flying.", ja: "新幹線に乗れば、飛行機を使わなくても昼前に着けます。", zh: "如果搭高鐵，不用坐飛機也能在中午前抵達。" },
   { id: "monorail", en: "Since the monorail connects directly to the airport, we avoided carrying bags up station stairs.", ja: "モノレールは空港へ直通するので、駅の階段で荷物を運ばずに済みました。", zh: "單軌電車直達機場，我們不用扛行李走車站樓梯。" },
@@ -39,7 +39,7 @@ export const TRANSPORTATION_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "helicopter", en: "Because the mountain road was blocked, a helicopter delivered supplies to the village.", ja: "山道がふさがれていたので、ヘリコプターが村へ物資を運びました。", zh: "山路被封，所以直升機把物資送到村莊。" },
   { id: "hot-air-balloon", en: "Although we booked a hot air balloon ride, it was canceled because the wind was too strong.", ja: "熱気球を予約していましたが、風が強すぎたため中止になりました。", zh: "我們雖然預訂了熱氣球行程，但風太強所以取消。" },
   { id: "airship", en: "When the airship appeared above the stadium, everyone looked up to see the advertisement.", ja: "飛行船がスタジアムの上に現れると、広告を見るためにみんなが空を見上げました。", zh: "飛船出現在體育場上空時，大家都抬頭看廣告。" },
-  { id: "rocket", en: "Because the rocket launch was delayed by weather, we watched the new time on the news.", ja: "天候でロケットの打ち上げが延期されたので、ニュースで新しい時刻を確認しました。", zh: "火箭發射因天氣延期，所以我們在新聞確認新時間。" },
+  { id: "rocket", en: "Because the rocket launch was delayed by weather, we checked the new launch time on the news.", ja: "天候でロケットの打ち上げが延期されたので、ニュースで新しい打ち上げ時刻を確認しました。", zh: "火箭發射因天氣延期，所以我們從新聞確認了新的發射時間。" },
   { id: "ferry", en: "If the bridge traffic is heavy, taking the ferry across the bay may be faster.", ja: "橋が渋滞しているなら、湾を渡るフェリーのほうが早いかもしれません。", zh: "橋上塞車時，搭渡輪過海灣可能更快。" },
   { id: "cruise-ship", en: "Before returning to the cruise ship, passengers must pass security at the port.", ja: "クルーズ船へ戻る前に、乗客は港で保安検査を受けなければなりません。", zh: "回到遊輪前，乘客必須在港口通過安檢。" },
   { id: "sailboat", en: "Since there was almost no wind, the sailboat returned to the harbor using its motor.", ja: "風がほとんどなかったので、ヨットはエンジンを使って港へ戻りました。", zh: "幾乎沒有風，所以帆船用引擎回到港口。" },
@@ -48,13 +48,13 @@ export const TRANSPORTATION_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "kayak", en: "Before taking the kayak onto the lake, we checked that the drain plug was closed.", ja: "カヤックを湖へ出す前に、水抜き栓が閉まっているか確認しました。", zh: "把皮艇推進湖裡前，我們檢查排水塞是否關好。" },
   { id: "submarine", en: "Although the submarine at the museum no longer sails, visitors can walk through its cabins.", ja: "博物館の潜水艦はもう航行しませんが、見学者は船内を歩けます。", zh: "博物館裡的潛水艇已不航行，但遊客可以走進艙內參觀。" },
   { id: "mrt", en: "If you use the MRT during rush hour, stand away from the doors until people get off.", ja: "ラッシュ時にMRTを使うなら、乗客が降りるまでドアの前を空けてください。", zh: "尖峰時段搭捷運時，等乘客下車前請讓開車門。" },
-  { id: "rickshaw", en: "Before riding the rickshaw, we agreed on the route and price with the driver.", ja: "人力車に乗る前に、車夫とコースと料金を確認しました。", zh: "搭人力車前，我們先和車伕確認路線和價格。" },
+  { id: "rickshaw", en: "Before riding the rickshaw, we confirmed the route and price with the driver.", ja: "人力車に乗る前に、車夫とコースと料金を確認しました。", zh: "搭人力車前，我們先和車伕確認路線和價格。" },
   { id: "tricycle", en: "Because the child is still learning to balance, she practices on a tricycle in the park.", ja: "子どもはまだバランスの練習中なので、公園で三輪車に乗っています。", zh: "孩子還在學平衡，所以在公園騎三輪車練習。" },
 ];
 
 export const TRANSPORTATION_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
   { id: "school-bus", en: "The school bus picks up the children at eight.", ja: "スクールバスは八時に子どもたちを迎えに来ます。", zh: "校車八點來接孩子。" },
-  { id: "coach", en: "We took a coach to the hot spring.", ja: "観光バスで温泉へ行きました。", zh: "我們搭長途巴士去溫泉。" },
+  { id: "coach", en: "We took a coach to the hot spring.", ja: "観光バスで温泉へ行きました。", zh: "我們搭遊覽車去溫泉。" },
   { id: "minibus", en: "The hotel minibus goes to the station.", ja: "ホテルのマイクロバスは駅まで行きます。", zh: "飯店小巴開往車站。" },
   { id: "truck", en: "A truck delivered our new table.", ja: "トラックが新しいテーブルを届けました。", zh: "貨車送來我們的新桌子。" },
   { id: "van", en: "We loaded the boxes into the van.", ja: "箱をバンに積みました。", zh: "我們把箱子搬上廂型車。" },
@@ -70,7 +70,7 @@ export const TRANSPORTATION_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = 
   { id: "scooter", en: "The child rides a scooter in the park.", ja: "子どもは公園でキックボードに乗ります。", zh: "孩子在公園騎滑板車。" },
   { id: "skateboard", en: "He practices on his skateboard after school.", ja: "彼は放課後スケートボードを練習します。", zh: "他放學後練滑板。" },
   { id: "roller-skates", en: "She put on her roller skates.", ja: "彼女はローラースケートを履きました。", zh: "她穿上溜冰鞋。" },
-  { id: "tram", en: "The tram stops in front of the museum.", ja: "路面電車は博物館の前に止まります。", zh: "電車停在博物館前。" },
+  { id: "tram", en: "The tram stops in front of the museum.", ja: "路面電車は博物館の前に止まります。", zh: "路面電車停在博物館前。" },
   { id: "light-rail", en: "We took the light rail downtown.", ja: "ライトレールで中心部へ行きました。", zh: "我們搭輕軌去市中心。" },
   { id: "high-speed-train", en: "The high-speed train leaves at nine.", ja: "新幹線は九時に出発します。", zh: "高鐵九點出發。" },
   { id: "monorail", en: "The monorail goes to the airport.", ja: "モノレールは空港まで行きます。", zh: "單軌電車開往機場。" },
@@ -90,4 +90,20 @@ export const TRANSPORTATION_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = 
   { id: "mrt", en: "I take the MRT to work.", ja: "MRTで会社へ行きます。", zh: "我搭捷運上班。" },
   { id: "rickshaw", en: "We toured the old town by rickshaw.", ja: "人力車で古い町を観光しました。", zh: "我們搭人力車遊覽老街。" },
   { id: "tricycle", en: "My son rides his tricycle in the yard.", ja: "息子は庭で三輪車に乗ります。", zh: "我兒子在院子裡騎三輪車。" },
+];
+
+/** Exact transportation pair deployed before the 2026-08 semantic audit. */
+export const TRANSPORTATION_PREVIOUS_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  { id: "coach", en: "We took a coach to the hot spring.", ja: "観光バスで温泉へ行きました。", zh: "我們搭長途巴士去溫泉。" },
+  { id: "tram", en: "The tram stops in front of the museum.", ja: "路面電車は博物館の前に止まります。", zh: "電車停在博物館前。" },
+];
+
+/** Exact transportation complex examples deployed before the 2026-08 semantic audit. */
+export const TRANSPORTATION_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  { id: "coach", en: "Because the coach ride takes four hours, it stops once so passengers can take a break.", ja: "観光バスは四時間走るので、乗客が休憩できるよう途中で一度止まります。", zh: "長途巴士車程四小時，中途會停一次讓乘客休息。" },
+  { id: "van", en: "We rented a van because five people and all their luggage would not fit in a small car.", ja: "五人分の荷物が小さい車に入らないので、バンを借りました。", zh: "五個人和所有行李塞不進小車，所以我們租了廂型車。" },
+  { id: "sports-car", en: "Although the sports car is fast, its low body makes steep parking ramps difficult.", ja: "スポーツカーは速いですが、車体が低いため急な駐車場の坂では注意が必要です。", zh: "跑車雖然很快，但車身低，遇到陡峭停車場斜坡很不方便。" },
+  { id: "tram", en: "When the tram shares the road with cars, look carefully before crossing its tracks.", ja: "路面電車が車と同じ道路を走る場所では、線路を渡る前によく確認してください。", zh: "電車和汽車共用道路時，穿越軌道前要仔細查看。" },
+  { id: "rocket", en: "Because the rocket launch was delayed by weather, we watched the new time on the news.", ja: "天候でロケットの打ち上げが延期されたので、ニュースで新しい時刻を確認しました。", zh: "火箭發射因天氣延期，所以我們在新聞確認新時間。" },
+  { id: "rickshaw", en: "Before riding the rickshaw, we agreed on the route and price with the driver.", ja: "人力車に乗る前に、車夫とコースと料金を確認しました。", zh: "搭人力車前，我們先和車伕確認路線和價格。" },
 ];

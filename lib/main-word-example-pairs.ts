@@ -38,6 +38,8 @@ import {
 } from "./main-word-example-pairs/supermarket";
 import {
   TRANSPORTATION_COMPLEX_EXAMPLES,
+  TRANSPORTATION_PREVIOUS_COMPLEX_EXAMPLES,
+  TRANSPORTATION_PREVIOUS_SIMPLE_OVERRIDES,
   TRANSPORTATION_SIMPLE_OVERRIDES,
 } from "./main-word-example-pairs/transportation";
 import type {
@@ -94,6 +96,11 @@ const PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   ...OFFICE_PREVIOUS_COMPLEX_EXAMPLES,
   ...STREET_PREVIOUS_COMPLEX_EXAMPLES,
   ...SUPERMARKET_PREVIOUS_COMPLEX_EXAMPLES,
+  ...TRANSPORTATION_PREVIOUS_COMPLEX_EXAMPLES,
+];
+
+const PREVIOUS_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  ...TRANSPORTATION_PREVIOUS_SIMPLE_OVERRIDES,
 ];
 
 function uniqueById<T extends { id: string }>(rows: T[], label: string): Map<string, T> {
@@ -212,6 +219,9 @@ export function isKnownPreviousTargetExamplePair(
   const auditedPreviousComplex = PREVIOUS_COMPLEX_EXAMPLES.find(
     (row) => row.id === id,
   );
+  const auditedPreviousSimple = PREVIOUS_SIMPLE_OVERRIDES.find(
+    (row) => row.id === id,
+  );
   if (currentPair && legacySimple && auditedPreviousComplex) {
     const simpleActual = current.find(({ sortOrder }) => sortOrder === 0);
     const complexActual = current.find(({ sortOrder }) => sortOrder === 1);
@@ -220,8 +230,8 @@ export function isKnownPreviousTargetExamplePair(
       complexActual &&
       simpleActual.cefrLevel === currentPair.examples[0].cefrLevel &&
       complexActual.cefrLevel === currentPair.examples[1].cefrLevel &&
-      (sameText(simpleActual, currentPair.examples[0]) ||
-        sameText(simpleActual, legacySimple)) &&
+      [currentPair.examples[0], auditedPreviousSimple, legacySimple]
+        .some((example) => Boolean(example && sameText(simpleActual, example))) &&
       sameText(complexActual, auditedPreviousComplex)
     ) {
       return true;

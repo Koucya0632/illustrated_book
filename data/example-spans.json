@@ -872,7 +872,7 @@
    {
     "t": "baking powder",
     "z": "泡打粉",
-    "j": "料理で使う粉末",
+    "j": "ベーキングパウダー",
     "e": "baking powder",
     "b": "baking powder",
     "p": "noun"
@@ -1490,7 +1490,7 @@
    {
     "t": "bay leaf",
     "z": "月桂葉",
-    "j": "料理に使う常緑樹の葉",
+    "j": "ローリエ",
     "e": "bay leaf",
     "b": "bay leaf",
     "p": "noun"
@@ -1500,11 +1500,11 @@
    },
    {
     "t": "serving",
-    "z": "上桌",
-    "j": "料理を人に配ること",
+    "z": "上菜",
+    "j": "盛り付け",
     "e": "serving",
-    "b": "serve",
-    "p": "verb"
+    "b": "serving",
+    "p": "noun"
    },
    {
     "t": "."
@@ -2196,7 +2196,7 @@
    {
     "t": "Dip",
     "z": "沾",
-    "j": "つけます",
+    "j": "つける",
     "e": "Dip",
     "b": "dip",
     "p": "verb"
@@ -2206,7 +2206,7 @@
    },
    {
     "t": "dumplings",
-    "z": "餃子",
+    "z": "水餃子",
     "j": "餃子",
     "e": "dumplings",
     "b": "dumpling",
@@ -3737,9 +3737,9 @@
   "Use chili bean paste in mapo tofu.": [
    {
     "t": "Use",
-    "z": "用",
-    "j": "使う",
-    "e": "use",
+    "z": "使用",
+    "j": "使います",
+    "e": "Use",
     "b": "use",
     "p": "verb"
    },
@@ -3927,15 +3927,15 @@
     "p": "verb"
    },
    {
-    "t": " "
+    "t": " a "
    },
    {
-    "t": "a teaspoon",
-    "z": "一茶匙",
-    "j": "小さじ一杯",
-    "e": "a teaspoon",
-    "b": "a teaspoon",
-    "p": "phrase"
+    "t": "teaspoon",
+    "z": "茶匙",
+    "j": "小さじ",
+    "e": "teaspoon",
+    "b": "teaspoon",
+    "p": "noun"
    },
    {
     "t": " of "
@@ -4233,8 +4233,8 @@
    {
     "t": "Garnish",
     "z": "裝飾",
-    "j": "飾りつけてください",
-    "e": "Garnish",
+    "j": "飾ること",
+    "e": "decorate or add to food",
     "b": "garnish",
     "p": "verb"
    },
@@ -4242,12 +4242,23 @@
     "t": " with "
    },
    {
-    "t": "fresh cilantro",
-    "z": "新鮮香菜",
-    "j": "新鮮なパクチー",
-    "e": "fresh cilantro",
-    "b": "fresh cilantro",
-    "p": "phrase"
+    "t": "fresh",
+    "z": "新鮮的",
+    "j": "新しくてできたての",
+    "e": "recently made or obtained",
+    "b": "fresh",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cilantro",
+    "z": "香菜",
+    "j": "タイや中南米の香草",
+    "e": "an herb also called coriander",
+    "b": "cilantro",
+    "p": "noun"
    },
    {
     "t": "."
@@ -4334,8 +4345,8 @@
   "Sprinkle cinnamon on the latte.": [
    {
     "t": "Sprinkle",
-    "z": "灑",
-    "j": "ふりかけます",
+    "z": "撒",
+    "j": "まく",
     "e": "Sprinkle",
     "b": "sprinkle",
     "p": "verb"
@@ -4345,8 +4356,8 @@
    },
    {
     "t": "cinnamon",
-    "z": "肉桂粉",
-    "j": "シナモン",
+    "z": "肉桂",
+    "j": "シナモンの香辛料",
     "e": "cinnamon",
     "b": "cinnamon",
     "p": "noun"
@@ -4357,7 +4368,7 @@
    {
     "t": "latte",
     "z": "拿鐵咖啡",
-    "j": "ラテ",
+    "j": "ラテコーヒー",
     "e": "latte",
     "b": "latte",
     "p": "noun"
@@ -5458,7 +5469,7 @@
    {
     "t": "Thicken",
     "z": "使變稠",
-    "j": "濃くする",
+    "j": "とろみをつけます",
     "e": "Thicken",
     "b": "thicken",
     "p": "verb"
@@ -5469,7 +5480,7 @@
    {
     "t": "soup",
     "z": "湯",
-    "j": "汁物料理",
+    "j": "スープ",
     "e": "soup",
     "b": "soup",
     "p": "noun"
@@ -5480,7 +5491,7 @@
    {
     "t": "cornstarch",
     "z": "玉米澱粉",
-    "j": "コーンから作られた澱粉",
+    "j": "コーンスターチ",
     "e": "cornstarch",
     "b": "cornstarch",
     "p": "noun"
@@ -5768,7 +5779,7 @@
    {
     "t": "Cumin",
     "z": "孜然",
-    "j": "クミン",
+    "j": "クミンの種子",
     "e": "Cumin",
     "b": "cumin",
     "p": "noun"
@@ -5779,7 +5790,7 @@
    {
     "t": "adds",
     "z": "增加",
-    "j": "加えます",
+    "j": "加える",
     "e": "adds",
     "b": "add",
     "p": "verb"
@@ -5790,7 +5801,7 @@
    {
     "t": "warm",
     "z": "溫暖的",
-    "j": "温かい",
+    "j": "温かみのある",
     "e": "warm",
     "b": "warm",
     "p": "adjective"
@@ -5799,12 +5810,23 @@
     "t": ", "
    },
    {
-    "t": "earthy flavor",
-    "z": "土味風味",
-    "j": "土のような風味",
-    "e": "earthy flavor",
-    "b": "earthy flavor",
-    "p": "phrase"
+    "t": "earthy",
+    "z": "泥土味的",
+    "j": "土っぽい",
+    "e": "earthy",
+    "b": "earthy",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "flavor",
+    "z": "風味",
+    "j": "風味",
+    "e": "flavor",
+    "b": "flavor",
+    "p": "noun"
    },
    {
     "t": "."
@@ -6380,7 +6402,7 @@
    {
     "t": "Use",
     "z": "使用",
-    "j": "利用すること",
+    "j": "使います",
     "e": "Use",
     "b": "use",
     "p": "verb"
@@ -6390,8 +6412,8 @@
    },
    {
     "t": "dark soy sauce",
-    "z": "老抽醬油",
-    "j": "濃い色の醤油",
+    "z": "老抽",
+    "j": "老抽",
     "e": "dark soy sauce",
     "b": "dark soy sauce",
     "p": "noun"
@@ -6401,8 +6423,8 @@
    },
    {
     "t": "give",
-    "z": "赋予",
-    "j": "与えること",
+    "z": "給予",
+    "j": "つけます",
     "e": "give",
     "b": "give",
     "p": "verb"
@@ -6412,8 +6434,8 @@
    },
    {
     "t": "braised pork",
-    "z": "紅燒豬肉",
-    "j": "煮込み豚肉料理",
+    "z": "紅燒肉",
+    "j": "豚の角煮",
     "e": "braised pork",
     "b": "braised pork",
     "p": "noun"
@@ -6423,11 +6445,11 @@
    },
    {
     "t": "deeper color",
-    "z": "較深色",
-    "j": "色を濃くすること",
+    "z": "比較深的顏色",
+    "j": "濃い色",
     "e": "deeper color",
     "b": "deeper color",
-    "p": "noun"
+    "p": "phrase"
    },
    {
     "t": "."
@@ -8085,7 +8107,7 @@
    },
    {
     "t": "make",
-    "z": "做",
+    "z": "製作",
     "j": "作ります",
     "e": "make",
     "b": "make",
@@ -9710,7 +9732,14 @@
   ],
   "Can I have ketchup with the fries?": [
    {
-    "t": "Can I have "
+    "t": "Can I have",
+    "z": "我可以要",
+    "j": "ください",
+    "e": "can I have",
+    "b": "can I have"
+   },
+   {
+    "t": " "
    },
    {
     "t": "ketchup",
@@ -10508,8 +10537,8 @@
    },
    {
     "t": "light soy sauce",
-    "z": "生抽",
-    "j": "生抽醤油",
+    "z": "淡色醬油",
+    "j": "生抽",
     "e": "light soy sauce",
     "b": "light soy sauce",
     "p": "noun"
@@ -10811,8 +10840,8 @@
    {
     "t": "Spread",
     "z": "塗抹",
-    "j": "塗ります",
-    "e": "spread",
+    "j": "塗る",
+    "e": "Spread",
     "b": "spread",
     "p": "verb"
    },
@@ -10824,7 +10853,7 @@
     "z": "美乃滋",
     "j": "マヨネーズ",
     "e": "mayo",
-    "b": "mayonnaise",
+    "b": "mayo",
     "p": "noun"
    },
    {
@@ -11326,8 +11355,8 @@
   "Add mirin to the simmered dish.": [
    {
     "t": "Add",
-    "z": "添加",
-    "j": "加えます",
+    "z": "加",
+    "j": "加える",
     "e": "Add",
     "b": "add",
     "p": "verb"
@@ -11340,18 +11369,29 @@
     "z": "味醂",
     "j": "みりん",
     "e": "mirin",
-    "b": "みりん",
+    "b": "mirin",
     "p": "noun"
    },
    {
     "t": " to the "
    },
    {
-    "t": "simmered dish",
-    "z": "煮物",
-    "j": "煮物",
-    "e": "simmered dish",
-    "b": "煮物",
+    "t": "simmered",
+    "z": "燉煮的",
+    "j": "煮た",
+    "e": "simmered",
+    "b": "simmer",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dish",
+    "z": "菜餚",
+    "j": "料理",
+    "e": "dish",
+    "b": "dish",
     "p": "noun"
    },
    {
@@ -12792,7 +12832,7 @@
    },
    {
     "t": "pinch",
-    "z": "少許",
+    "z": "一小撮",
     "j": "ひとつまみ",
     "e": "pinch",
     "b": "pinch",
@@ -13519,8 +13559,8 @@
   "Sprinkle parsley over the soup.": [
    {
     "t": "Sprinkle",
-    "z": "撒",
-    "j": "ふりかける",
+    "z": "灑",
+    "j": "振りかける",
     "e": "Sprinkle",
     "b": "sprinkle",
     "p": "verb"
@@ -13530,7 +13570,7 @@
    },
    {
     "t": "parsley",
-    "z": "歐芹",
+    "z": "香芹",
     "j": "パセリ",
     "e": "parsley",
     "b": "parsley",
@@ -14689,8 +14729,8 @@
    {
     "t": "Thicken",
     "z": "使變稠",
-    "j": "濃くする",
-    "e": "Thicken",
+    "j": "とろみをつける",
+    "e": "thicken",
     "b": "thicken",
     "p": "verb"
    },
@@ -14700,7 +14740,7 @@
    {
     "t": "sauce",
     "z": "醬汁",
-    "j": "料理の液体調味料",
+    "j": "ソース",
     "e": "sauce",
     "b": "sauce",
     "p": "noun"
@@ -14711,7 +14751,7 @@
    {
     "t": "potato starch",
     "z": "馬鈴薯澱粉",
-    "j": "じゃがいものでんぷん",
+    "j": "片栗粉",
     "e": "potato starch",
     "b": "potato starch",
     "p": "noun"
@@ -15611,7 +15651,7 @@
     "t": "Use",
     "z": "使用",
     "j": "使う",
-    "e": "Use",
+    "e": "use",
     "b": "use",
     "p": "verb"
    },
@@ -15721,7 +15761,7 @@
    {
     "t": "Taiwanese rice wine",
     "z": "台灣米酒",
-    "j": "台湾の米酒",
+    "j": "台湾米酒",
     "e": "Taiwanese rice wine",
     "b": "Taiwanese rice wine",
     "p": "noun"
@@ -15920,8 +15960,8 @@
   "Add one piece of rock sugar to the tea.": [
    {
     "t": "Add",
-    "z": "添加",
-    "j": "加えること",
+    "z": "加入",
+    "j": "加える",
     "e": "Add",
     "b": "add",
     "p": "verb"
@@ -15932,10 +15972,10 @@
    {
     "t": "one piece",
     "z": "一塊",
-    "j": "数の単位の一つ",
+    "j": "一つ",
     "e": "one piece",
     "b": "one piece",
-    "p": "numeral"
+    "p": "phrase"
    },
    {
     "t": " of "
@@ -15943,7 +15983,7 @@
    {
     "t": "rock sugar",
     "z": "冰糖",
-    "j": "固い砂糖の一種",
+    "j": "氷砂糖",
     "e": "rock sugar",
     "b": "rock sugar",
     "p": "noun"
@@ -15954,7 +15994,7 @@
    {
     "t": "tea",
     "z": "茶",
-    "j": "飲み物としての茶",
+    "j": "お茶",
     "e": "tea",
     "b": "tea",
     "p": "noun"
@@ -16400,8 +16440,8 @@
   "Add sake when simmering the fish.": [
    {
     "t": "Add",
-    "z": "加入",
-    "j": "加えます",
+    "z": "加",
+    "j": "加える",
     "e": "Add",
     "b": "add",
     "p": "verb"
@@ -16411,7 +16451,7 @@
    },
    {
     "t": "sake",
-    "z": "日本清酒",
+    "z": "清酒",
     "j": "日本酒",
     "e": "sake",
     "b": "sake",
@@ -16423,7 +16463,7 @@
    {
     "t": "simmering",
     "z": "燉煮",
-    "j": "煮ています",
+    "j": "煮ること",
     "e": "simmering",
     "b": "simmer",
     "p": "verb"
@@ -17156,9 +17196,9 @@
   "Add shacha sauce to the hot pot dipping sauce.": [
    {
     "t": "Add",
-    "z": "加",
+    "z": "添加",
     "j": "加える",
-    "e": "add",
+    "e": "Add",
     "b": "add",
     "p": "verb"
    },
@@ -17419,7 +17459,7 @@
     "t": "Sprinkle",
     "z": "撒",
     "j": "ふりかける",
-    "e": "Sprinkle",
+    "e": "sprinkle",
     "b": "sprinkle",
     "p": "verb"
    },
@@ -17428,7 +17468,7 @@
    },
    {
     "t": "shichimi",
-    "z": "七味辣椒粉",
+    "z": "七味粉",
     "j": "七味唐辛子",
     "e": "shichimi",
     "b": "shichimi",
@@ -17798,7 +17838,7 @@
   "Add Sichuan peppercorns to the mapo tofu.": [
    {
     "t": "Add",
-    "z": "加入",
+    "z": "添加",
     "j": "加える",
     "e": "Add",
     "b": "add",
@@ -18449,10 +18489,24 @@
   ],
   "Do you want soy sauce with that?": [
    {
-    "t": "Do you want",
-    "z": "你需要嗎",
-    "j": "いりますか",
-    "e": "Do you want",
+    "t": "Do "
+   },
+   {
+    "t": "you",
+    "z": "你",
+    "j": "あなた",
+    "e": "you",
+    "b": "you",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "want",
+    "z": "想要",
+    "j": "ほしい",
+    "e": "want",
     "b": "want",
     "p": "verb"
    },
@@ -18462,8 +18516,10 @@
    {
     "t": "soy sauce",
     "z": "醬油",
-    "j": "醤油",
-    "e": "soy sauce"
+    "j": "しょうゆ",
+    "e": "soy sauce",
+    "b": "soy sauce",
+    "p": "noun"
    },
    {
     "t": " with that?"
@@ -18995,7 +19051,7 @@
    {
     "t": "Add",
     "z": "加入",
-    "j": "入れる",
+    "j": "加える",
     "e": "Add",
     "b": "add",
     "p": "verb"
@@ -19006,7 +19062,7 @@
    {
     "t": "one",
     "z": "一個",
-    "j": "一つ",
+    "j": "ひとつ",
     "e": "one",
     "b": "one",
     "p": "numeral"
@@ -19016,8 +19072,8 @@
    },
    {
     "t": "star anise",
-    "z": "八角",
-    "j": "八角",
+    "z": "大茴香",
+    "j": "スターアニス",
     "e": "star anise",
     "b": "star anise",
     "p": "noun"
@@ -19027,8 +19083,8 @@
    },
    {
     "t": "braised pork",
-    "z": "紅燒豬肉",
-    "j": "角煮",
+    "z": "滷肉",
+    "j": "豚の角煮",
     "e": "braised pork",
     "b": "braised pork",
     "p": "noun"
@@ -20313,8 +20369,8 @@
   "Drizzle Taiwanese thick soy sauce over the turnip cake.": [
    {
     "t": "Drizzle",
-    "z": "細淋",
-    "j": "細くかけること",
+    "z": "淋上",
+    "j": "かける",
     "e": "Drizzle",
     "b": "drizzle",
     "p": "verb"
@@ -20323,11 +20379,22 @@
     "t": " "
    },
    {
-    "t": "Taiwanese thick soy sauce",
-    "z": "臺灣濃厚醬油",
-    "j": "台湾のとろみのある醤油",
-    "e": "Taiwanese thick soy sauce",
-    "b": "Taiwanese thick soy sauce",
+    "t": "Taiwanese",
+    "z": "臺灣的",
+    "j": "台湾の",
+    "e": "Taiwanese",
+    "b": "Taiwanese",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "thick soy sauce",
+    "z": "濃醬油",
+    "j": "とろみ醤油",
+    "e": "thick soy sauce",
+    "b": "thick soy sauce",
     "p": "noun"
    },
    {
@@ -20336,7 +20403,7 @@
    {
     "t": "turnip cake",
     "z": "蘿蔔糕",
-    "j": "大根を使った料理",
+    "j": "大根餅",
     "e": "turnip cake",
     "b": "turnip cake",
     "p": "noun"
@@ -20349,8 +20416,8 @@
    {
     "t": "Thyme",
     "z": "百里香",
-    "j": "ハーブの一種で、香り高い",
-    "e": "thyme",
+    "j": "タイムのハーブ",
+    "e": "Thyme",
     "b": "thyme",
     "p": "noun"
    },
@@ -20360,8 +20427,8 @@
    {
     "t": "good",
     "z": "適合",
-    "j": "よい状態であること",
-    "e": "good",
+    "j": "合う",
+    "e": "good for",
     "b": "good",
     "p": "adjective"
    },
@@ -20370,8 +20437,8 @@
    },
    {
     "t": "soups",
-    "z": "湯",
-    "j": "汁物の料理",
+    "z": "湯品",
+    "j": "スープ",
     "e": "soups",
     "b": "soup",
     "p": "noun"
@@ -20382,7 +20449,7 @@
    {
     "t": "stews",
     "z": "燉菜",
-    "j": "じっくり煮込んだ料理",
+    "j": "煮込み料理",
     "e": "stews",
     "b": "stew",
     "p": "noun"
@@ -22206,9 +22273,9 @@
   "Add a splash of vinegar.": [
    {
     "t": "Add",
-    "z": "加",
-    "j": "加えること",
-    "e": "add",
+    "z": "加入",
+    "j": "加える",
+    "e": "Add",
     "b": "add",
     "p": "verb"
    },
@@ -22218,7 +22285,7 @@
    {
     "t": "splash",
     "z": "少許",
-    "j": "少量の水分や液体",
+    "j": "少量",
     "e": "splash",
     "b": "splash",
     "p": "noun"
@@ -22699,27 +22766,31 @@
     "t": "White pepper",
     "z": "白胡椒",
     "j": "白胡椒",
-    "e": "White pepper"
+    "e": "white pepper",
+    "b": "white pepper",
+    "p": "noun"
    },
    {
-    "t": " "
+    "t": " is "
    },
    {
-    "t": "is common",
-    "z": "很常見",
-    "j": "よく使われる",
-    "e": "is common",
-    "b": "be common",
-    "p": "phrase"
+    "t": "common",
+    "z": "普遍",
+    "j": "普通",
+    "e": "common",
+    "b": "common",
+    "p": "adjective"
    },
    {
-    "t": " "
+    "t": " in "
    },
    {
-    "t": "in Chinese soups",
-    "z": "在中華湯裡",
-    "j": "中華スープで",
-    "e": "in Chinese soups"
+    "t": "Chinese soups",
+    "z": "中國湯",
+    "j": "中華スープ",
+    "e": "Chinese soups",
+    "b": "Chinese soup",
+    "p": "noun"
    },
    {
     "t": "."
@@ -23023,8 +23094,8 @@
   "Squeeze yellow mustard onto the hot dog.": [
    {
     "t": "Squeeze",
-    "z": "擠壓",
-    "j": "かけます",
+    "z": "擠出",
+    "j": "しぼり出す",
     "e": "Squeeze",
     "b": "squeeze",
     "p": "verb"
@@ -23034,7 +23105,7 @@
    },
    {
     "t": "yellow mustard",
-    "z": "黃芥末醬",
+    "z": "黃芥末",
     "j": "イエローマスタード",
     "e": "yellow mustard",
     "b": "yellow mustard",
@@ -66043,37 +66114,56 @@
     "t": " "
    },
    {
-    "t": "use white pepper",
-    "z": "使用白胡椒",
-    "j": "白胡椒を使う",
-    "e": "use white pepper"
+    "t": "use",
+    "z": "使用",
+    "j": "使う",
+    "e": "use",
+    "b": "use",
+    "p": "verb"
    },
    {
     "t": " "
    },
    {
-    "t": "in this pale soup",
-    "z": "在這白色湯裡",
-    "j": "この白いスープで",
-    "e": "in this pale soup"
+    "t": "white pepper",
+    "z": "白胡椒",
+    "j": "白胡椒",
+    "e": "white pepper",
+    "b": "white pepper",
+    "p": "noun"
    },
    {
-    "t": " "
+    "t": " in this "
    },
    {
-    "t": "so dark specks",
-    "z": "黑色斑點",
+    "t": "pale soup",
+    "z": "淡色湯",
+    "j": "白いスープ",
+    "e": "pale soup",
+    "b": "pale soup",
+    "p": "noun"
+   },
+   {
+    "t": " so "
+   },
+   {
+    "t": "dark specks",
+    "z": "黑斑點",
     "j": "黒い粒",
-    "e": "dark specks"
+    "e": "dark specks",
+    "b": "dark speck",
+    "p": "noun"
    },
    {
-    "t": " "
+    "t": " do not "
    },
    {
-    "t": "do not show",
-    "z": "不明顯",
-    "j": "目立たないように",
-    "e": "do not show"
+    "t": "show",
+    "z": "顯現",
+    "j": "目立つ",
+    "e": "show",
+    "b": "show",
+    "p": "verb"
    },
    {
     "t": " on top."
@@ -66081,40 +66171,70 @@
   ],
   "Since the soy sauce is concentrated, add it gradually while tasting the sauce.": [
    {
-    "t": "Since "
+    "t": "Since the "
    },
    {
-    "t": "the soy sauce",
+    "t": "soy sauce",
     "z": "醬油",
-    "j": "この醤油",
-    "e": "the soy sauce"
+    "j": "日本の調味料",
+    "e": "soy sauce",
+    "b": "soy sauce",
+    "p": "noun"
    },
    {
-    "t": " "
+    "t": " is "
    },
    {
-    "t": "is concentrated",
-    "z": "很濃",
-    "j": "味が濃い",
-    "e": "is concentrated"
+    "t": "concentrated",
+    "z": "濃縮的",
+    "j": "濃くなった",
+    "e": "concentrated",
+    "b": "concentrate",
+    "p": "adjective"
    },
    {
     "t": ", "
    },
    {
-    "t": "add it gradually",
-    "z": "慢慢加入",
-    "j": "少しずつ加えてください",
-    "e": "add it gradually"
+    "t": "add",
+    "z": "加",
+    "j": "足す",
+    "e": "add",
+    "b": "add",
+    "p": "verb"
    },
    {
-    "t": " "
+    "t": " it "
    },
    {
-    "t": "while tasting the sauce",
-    "z": "嘗試醬汁時",
-    "j": "味見しながら",
-    "e": "while tasting the sauce"
+    "t": "gradually",
+    "z": "逐漸地",
+    "j": "少しずつ",
+    "e": "gradually",
+    "b": "gradually",
+    "p": "adverb"
+   },
+   {
+    "t": " while "
+   },
+   {
+    "t": "tasting",
+    "z": "嘗味",
+    "j": "味をみる",
+    "e": "tasting",
+    "b": "taste",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "sauce",
+    "z": "調味料",
+    "j": "料理のたれ",
+    "e": "sauce",
+    "b": "sauce",
+    "p": "noun"
    },
    {
     "t": "."
@@ -66122,70 +66242,94 @@
   ],
   "If the salad tastes flat, a small amount of vinegar can brighten the flavor without more salt.": [
    {
-    "t": "If "
+    "t": "If the "
    },
    {
-    "t": "the salad",
+    "t": "salad",
     "z": "沙拉",
-    "j": "サラダの",
-    "e": "the salad"
+    "j": "サラダ",
+    "e": "salad",
+    "b": "salad",
+    "p": "noun"
    },
    {
     "t": " "
    },
    {
-    "t": "tastes flat",
-    "z": "味道乏味",
-    "j": "味がぼんやりしている",
-    "e": "tastes flat"
-   },
-   {
-    "t": ", "
-   },
-   {
-    "t": "a small amount of vinegar",
-    "z": "少量的醋",
-    "j": "酢を少し",
-    "e": "a small amount of vinegar"
+    "t": "tastes",
+    "z": "嘗起來",
+    "j": "味がする",
+    "e": "tastes",
+    "b": "taste",
+    "p": "verb"
    },
    {
     "t": " "
    },
    {
-    "t": "can brighten the flavor",
-    "z": "可以使味道清晰",
-    "j": "味がはっきりします",
-    "e": "can brighten the flavor"
+    "t": "flat",
+    "z": "乏味",
+    "j": "ぼんやりした",
+    "e": "flat",
+    "b": "flat",
+    "p": "adjective"
    },
    {
-    "t": " "
+    "t": ", a "
    },
    {
-    "t": "without more salt",
-    "z": "不加鹽",
-    "j": "塩を足さずに",
-    "e": "without more salt"
+    "t": "small amount",
+    "z": "少量",
+    "j": "少量",
+    "e": "small amount",
+    "b": "small amount",
+    "p": "phrase"
    },
    {
-    "t": "."
-   }
-  ],
-  "After the rice is cooked, fold in the rice vinegar while the grains are still warm.": [
+    "t": " of "
+   },
    {
-    "t": "After",
-    "z": "之後",
-    "j": "あとで",
-    "e": "After",
-    "b": "after",
-    "p": "adverb"
+    "t": "vinegar",
+    "z": "醋",
+    "j": "酢",
+    "e": "vinegar",
+    "b": "vinegar",
+    "p": "noun"
+   },
+   {
+    "t": " can "
+   },
+   {
+    "t": "brighten",
+    "z": "提味",
+    "j": "味をはっきりさせる",
+    "e": "brighten",
+    "b": "brighten",
+    "p": "verb"
    },
    {
     "t": " the "
    },
    {
+    "t": "flavor",
+    "z": "味道",
+    "j": "味",
+    "e": "flavor",
+    "b": "flavor",
+    "p": "noun"
+   },
+   {
+    "t": " without more salt."
+   }
+  ],
+  "After the rice is cooked, fold in the rice vinegar while the grains are still warm.": [
+   {
+    "t": "After the "
+   },
+   {
     "t": "rice",
-    "z": "米飯",
-    "j": "ご飯",
+    "z": "米",
+    "j": "米",
     "e": "rice",
     "b": "rice",
     "p": "noun"
@@ -66195,10 +66339,10 @@
    },
    {
     "t": "is cooked",
-    "z": "煮熟了",
-    "j": "炊けた",
+    "z": "煮熟",
+    "j": "炊ける",
     "e": "is cooked",
-    "b": "炊ける",
+    "b": "cook",
     "p": "verb"
    },
    {
@@ -66206,7 +66350,7 @@
    },
    {
     "t": "fold in",
-    "z": "摺入",
+    "z": "拌入",
     "j": "切るように混ぜる",
     "e": "fold in",
     "b": "fold in",
@@ -66228,8 +66372,8 @@
    },
    {
     "t": "grains",
-    "z": "顆粒",
-    "j": "粒",
+    "z": "米粒",
+    "j": "ご飯の粒",
     "e": "grains",
     "b": "grain",
     "p": "noun"
@@ -66240,10 +66384,10 @@
    {
     "t": "still warm",
     "z": "仍然溫熱",
-    "j": "温かい",
+    "j": "温かいうちに",
     "e": "still warm",
-    "b": "温かい",
-    "p": "adjective"
+    "b": "still warm",
+    "p": "phrase"
    },
    {
     "t": "."
@@ -66313,10 +66457,10 @@
    {
     "t": "Wear gloves",
     "z": "戴手套",
-    "j": "手袋をつける",
+    "j": "手袋をする",
     "e": "Wear gloves",
     "b": "wear gloves",
-    "p": "phrase"
+    "p": "phrasal verb"
    },
    {
     "t": " when "
@@ -66346,35 +66490,46 @@
    {
     "t": "marinade",
     "z": "醃料",
-    "j": "下味",
+    "j": "漬けだれ",
     "e": "marinade",
     "b": "marinade",
     "p": "noun"
    },
    {
-    "t": " so it "
+    "t": " so it does not "
    },
    {
-    "t": "does not irritate",
-    "z": "不刺激",
-    "j": "刺激しない",
-    "e": "does not irritate",
-    "b": "刺激する",
-    "p": "phrase"
+    "t": "irritate",
+    "z": "刺激",
+    "j": "刺激する",
+    "e": "irritate",
+    "b": "irritate",
+    "p": "verb"
+   },
+   {
+    "t": " your "
+   },
+   {
+    "t": "eyes",
+    "z": "眼睛",
+    "j": "目",
+    "e": "eyes",
+    "b": "eye",
+    "p": "noun"
    },
    {
     "t": " "
    },
    {
-    "t": "your eyes",
-    "z": "你的眼睛",
-    "j": "目",
-    "e": "your eyes",
-    "b": "eye",
-    "p": "noun"
+    "t": "later",
+    "z": "之後",
+    "j": "あとで",
+    "e": "later",
+    "b": "あとで",
+    "p": "adverb"
    },
    {
-    "t": " later."
+    "t": "."
    }
   ],
   "If you want only mild heat, sprinkle chili flakes on your own slice rather than the whole pizza.": [
@@ -66523,40 +66678,40 @@
    {
     "t": "almost done",
     "z": "快熟了",
-    "j": "ほぼ焼けた",
+    "j": "ほとんどできている",
     "e": "almost done",
     "b": "almost done",
-    "p": "phrase"
+    "p": "adjective"
    },
    {
     "t": ", "
    },
    {
     "t": "brush ketchup",
-    "z": "塗番茄醬",
-    "j": "ケチャップを塗って",
+    "z": "刷上番茄醬",
+    "j": "ケチャップを塗る",
     "e": "brush ketchup",
     "b": "brush ketchup",
     "p": "phrasal verb"
    },
    {
-    "t": " on "
+    "t": " "
    },
    {
-    "t": "top",
-    "z": "上方",
-    "j": "上",
-    "e": "top",
-    "b": "top",
-    "p": "noun"
+    "t": "on top",
+    "z": "在上面",
+    "j": "上に",
+    "e": "on top",
+    "b": "on top",
+    "p": "phrase"
    },
    {
     "t": " and "
    },
    {
     "t": "bake",
-    "z": "烤",
-    "j": "焼きます",
+    "z": "烘烤",
+    "j": "焼く",
     "e": "bake",
     "b": "bake",
     "p": "verb"
@@ -66567,7 +66722,7 @@
    {
     "t": "five more minutes",
     "z": "再五分鐘",
-    "j": "あと五分",
+    "j": "あと5分間",
     "e": "five more minutes",
     "b": "five more minutes",
     "p": "phrase"
@@ -66579,9 +66734,9 @@
   "Keep the mayonnaise refrigerated after opening because it contains egg.": [
    {
     "t": "Keep",
-    "z": "保存",
-    "j": "保存してください",
-    "e": "keep",
+    "z": "保持",
+    "j": "保持する",
+    "e": "Keep",
     "b": "keep",
     "p": "verb"
    },
@@ -66602,32 +66757,43 @@
    {
     "t": "refrigerated",
     "z": "冷藏",
-    "j": "冷蔵庫",
+    "j": "冷蔵する",
     "e": "refrigerated",
     "b": "refrigerate",
-    "p": "adjective"
+    "p": "verb"
    },
    {
-    "t": " after "
+    "t": " "
    },
    {
-    "t": "opening",
+    "t": "after opening",
     "z": "開封後",
     "j": "開封後",
     "e": "after opening",
-    "b": "open",
+    "b": "開封後",
     "p": "phrase"
    },
    {
     "t": " because it "
    },
    {
-    "t": "contains egg",
-    "z": "含蛋",
-    "j": "卵が入っている",
-    "e": "contains egg",
-    "b": "contain egg",
-    "p": "phrase"
+    "t": "contains",
+    "z": "含有",
+    "j": "含む",
+    "e": "contains",
+    "b": "contain",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "egg",
+    "z": "蛋",
+    "j": "卵",
+    "e": "egg",
+    "b": "egg",
+    "p": "noun"
    },
    {
     "t": "."
@@ -67093,11 +67259,19 @@
   ],
   "I use onion powder in the dry rub because fresh onion would make the mixture wet.": [
    {
-    "t": "I "
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
    },
    {
     "t": "use",
-    "z": "使用",
+    "z": "用",
     "j": "使う",
     "e": "use",
     "b": "use",
@@ -67109,7 +67283,7 @@
    {
     "t": "onion powder",
     "z": "洋蔥粉",
-    "j": "オニオンパウダー",
+    "j": "玉ねぎパウダー",
     "e": "onion powder",
     "b": "onion powder",
     "p": "noun"
@@ -67119,8 +67293,8 @@
    },
    {
     "t": "dry rub",
-    "z": "乾香料醃料",
-    "j": "乾燥した下味",
+    "z": "乾式調味料",
+    "j": "ドライラブ",
     "e": "dry rub",
     "b": "dry rub",
     "p": "noun"
@@ -67131,19 +67305,19 @@
    {
     "t": "fresh onion",
     "z": "新鮮洋蔥",
-    "j": "生の玉ねぎ",
+    "j": "新鮮な玉ねぎ",
     "e": "fresh onion",
     "b": "fresh onion",
     "p": "noun"
    },
    {
-    "t": " "
+    "t": " would "
    },
    {
-    "t": "would make",
-    "z": "會導致",
-    "j": "出る",
-    "e": "would make",
+    "t": "make",
+    "z": "使得",
+    "j": "作る",
+    "e": "make",
     "b": "make",
     "p": "verb"
    },
@@ -67151,12 +67325,23 @@
     "t": " the "
    },
    {
-    "t": "mixture wet",
-    "z": "混合物潮濕",
-    "j": "水分が出る",
-    "e": "mixture wet",
-    "b": "mixture wet",
-    "p": "phrase"
+    "t": "mixture",
+    "z": "混合物",
+    "j": "混合物",
+    "e": "mixture",
+    "b": "mixture",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wet",
+    "z": "濕的",
+    "j": "濡れた",
+    "e": "wet",
+    "b": "wet",
+    "p": "adjective"
    },
    {
     "t": "."
@@ -67296,7 +67481,7 @@
    },
    {
     "t": "oatmeal",
-    "z": "燕麥片",
+    "z": "燕麥粥",
     "j": "オートミール",
     "e": "oatmeal",
     "b": "oatmeal",
@@ -67306,33 +67491,55 @@
     "t": " "
    },
    {
-    "t": "needs sweetness",
-    "z": "需要甜味",
-    "j": "甘みが欲しい",
-    "e": "needs sweetness",
-    "b": "欲しい",
-    "p": "phrase"
-   },
-   {
-    "t": ", "
-   },
-   {
-    "t": "try cinnamon first",
-    "z": "先試試肉桂粉",
-    "j": "シナモンを試します",
-    "e": "try cinnamon first",
-    "b": "試す",
-    "p": "phrase"
+    "t": "needs",
+    "z": "需要",
+    "j": "必要とする",
+    "e": "needs",
+    "b": "need",
+    "p": "verb"
    },
    {
     "t": " "
    },
    {
-    "t": "before adding extra sugar",
-    "z": "再加糖之前",
-    "j": "砂糖を増やす前に",
-    "e": "before adding extra sugar",
-    "b": "増やす",
+    "t": "sweetness",
+    "z": "甜味",
+    "j": "あまみ",
+    "e": "sweetness",
+    "b": "sweetness",
+    "p": "noun"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "try cinnamon",
+    "z": "試肉桂",
+    "j": "シナモンを試す",
+    "e": "try cinnamon",
+    "b": "try cinnamon",
+    "p": "phrase"
+   },
+   {
+    "t": " first before "
+   },
+   {
+    "t": "adding",
+    "z": "加入",
+    "j": "加えること",
+    "e": "adding",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "extra sugar",
+    "z": "額外糖",
+    "j": "追加の砂糖",
+    "e": "extra sugar",
+    "b": "extra sugar",
     "p": "phrase"
    },
    {
@@ -67345,8 +67552,8 @@
    },
    {
     "t": "crushing",
-    "z": "搗碎",
-    "j": "材料を細かくつぶすこと",
+    "z": "壓碎",
+    "j": "つぶすこと",
     "e": "crushing",
     "b": "crush",
     "p": "verb"
@@ -67368,7 +67575,7 @@
    {
     "t": "toast",
     "z": "烘烤",
-    "j": "火で熱して香ばしくする",
+    "j": "軽く炒ること",
     "e": "toast",
     "b": "toast",
     "p": "verb"
@@ -67379,7 +67586,7 @@
    {
     "t": "smell fragrant",
     "z": "聞起來香",
-    "j": "いい香りがする",
+    "j": "よい香りがする",
     "e": "smell fragrant",
     "b": "smell fragrant",
     "p": "phrase"
@@ -67407,7 +67614,7 @@
     "t": "guest",
     "z": "客人",
     "j": "訪問者",
-    "e": "guest",
+    "e": "visitor",
     "b": "guest",
     "p": "noun"
    },
@@ -67418,7 +67625,7 @@
     "t": "dislikes",
     "z": "不喜歡",
     "j": "好まない",
-    "e": "dislikes",
+    "e": "does not like",
     "b": "dislike",
     "p": "verb"
    },
@@ -67428,8 +67635,8 @@
    {
     "t": "cilantro",
     "z": "香菜",
-    "j": "パクチーの葉",
-    "e": "cilantro",
+    "j": "タイや中南米の香草",
+    "e": "an herb also called coriander",
     "b": "cilantro",
     "p": "noun"
    },
@@ -67438,9 +67645,9 @@
    },
    {
     "t": "serve",
-    "z": "供應",
-    "j": "料理を出すこと",
-    "e": "serve",
+    "z": "提供",
+    "j": "料理を出す",
+    "e": "offer food or drink",
     "b": "serve",
     "p": "verb"
    },
@@ -67449,20 +67656,20 @@
    },
    {
     "t": "separate bowl",
-    "z": "分開碗",
-    "j": "別々の器",
-    "e": "separate bowl",
+    "z": "獨立碗碟",
+    "j": "分けられた器",
+    "e": "a distinct dish",
     "b": "separate bowl",
-    "p": "noun"
+    "p": "phrase"
    },
    {
     "t": " for people to "
    },
    {
     "t": "add themselves",
-    "z": "自己添加",
-    "j": "自分で入れる",
-    "e": "add themselves",
+    "z": "自行添加",
+    "j": "自分で足す",
+    "e": "put in by oneself",
     "b": "add themselves",
     "p": "phrasal verb"
    },
@@ -67575,12 +67782,20 @@
   ],
   "When using fresh thyme, strip the leaves from the stems before stirring them into the soup.": [
    {
-    "t": "When using "
+    "t": "When using",
+    "z": "當使用",
+    "j": "使う時",
+    "e": "When using",
+    "b": "use",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
    },
    {
     "t": "fresh thyme",
     "z": "新鮮百里香",
-    "j": "摘みたてのタイム",
+    "j": "新しいタイム",
     "e": "fresh thyme",
     "b": "thyme",
     "p": "noun"
@@ -67589,12 +67804,23 @@
     "t": ", "
    },
    {
-    "t": "strip the leaves",
-    "z": "去除葉子",
-    "j": "葉を茎から外すこと",
-    "e": "strip the leaves",
+    "t": "strip",
+    "z": "剝下",
+    "j": "取り外す",
+    "e": "strip",
     "b": "strip",
-    "p": "phrasal verb"
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "leaves",
+    "z": "葉子",
+    "j": "葉っぱ",
+    "e": "leaves",
+    "b": "leaf",
+    "p": "noun"
    },
    {
     "t": " from the "
@@ -67602,29 +67828,29 @@
    {
     "t": "stems",
     "z": "莖",
-    "j": "植物の茎",
+    "j": "茎",
     "e": "stems",
     "b": "stem",
     "p": "noun"
    },
    {
-    "t": " before "
+    "t": " "
    },
    {
-    "t": "stirring",
-    "z": "攪拌",
-    "j": "混ぜること",
-    "e": "stirring",
+    "t": "before stirring",
+    "z": "在攪拌前",
+    "j": "混ぜる前",
+    "e": "before stirring",
     "b": "stir",
-    "p": "verb"
+    "p": "phrasal verb"
    },
    {
     "t": " them into the "
    },
    {
     "t": "soup",
-    "z": "湯",
-    "j": "汁物料理",
+    "z": "湯品",
+    "j": "スープ",
     "e": "soup",
     "b": "soup",
     "p": "noun"
@@ -67640,7 +67866,7 @@
    {
     "t": "count",
     "z": "數數",
-    "j": "数を確認すること",
+    "j": "数える",
     "e": "count",
     "b": "count",
     "p": "verb"
@@ -67651,7 +67877,7 @@
    {
     "t": "bay leaves",
     "z": "月桂葉",
-    "j": "複数のローリエの葉",
+    "j": "ローリエの葉",
     "e": "bay leaves",
     "b": "bay leaf",
     "p": "noun"
@@ -67662,17 +67888,28 @@
    {
     "t": "cooking",
     "z": "烹調",
-    "j": "料理をすること",
+    "j": "料理",
     "e": "cooking",
-    "b": "cook",
+    "b": "cooking",
+    "p": "noun"
+   },
+   {
+    "t": " so I "
+   },
+   {
+    "t": "know",
+    "z": "知道",
+    "j": "知る",
+    "e": "know",
+    "b": "know",
     "p": "verb"
    },
    {
-    "t": " so I know how many to "
+    "t": " how many to "
    },
    {
     "t": "remove",
-    "z": "去除",
+    "z": "移除",
     "j": "取り除く",
     "e": "remove",
     "b": "remove",
@@ -85727,7 +85964,7 @@
    {
     "t": "rock sugar",
     "z": "冰糖",
-    "j": "固い砂糖の一種",
+    "j": "氷砂糖",
     "e": "rock sugar",
     "b": "rock sugar",
     "p": "noun"
@@ -85737,19 +85974,19 @@
    },
    {
     "t": "dissolves slowly",
-    "z": "慢慢溶解",
-    "j": "ゆっくり溶けること",
+    "z": "溶解很慢",
+    "j": "溶けにくい",
     "e": "dissolves slowly",
     "b": "dissolve slowly",
-    "p": "verb"
+    "p": "phrase"
    },
    {
     "t": ", "
    },
    {
     "t": "add",
-    "z": "添加",
-    "j": "加える動作",
+    "z": "加入",
+    "j": "加える",
     "e": "add",
     "b": "add",
     "p": "verb"
@@ -85759,19 +85996,30 @@
    },
    {
     "t": "early",
-    "z": "早",
-    "j": "時間的に早い",
+    "z": "早早",
+    "j": "早く",
     "e": "early",
     "b": "early",
     "p": "adverb"
    },
    {
-    "t": " while the soup is still "
+    "t": " while the "
+   },
+   {
+    "t": "soup",
+    "z": "湯",
+    "j": "スープ",
+    "e": "soup",
+    "b": "soup",
+    "p": "noun"
+   },
+   {
+    "t": " is still "
    },
    {
     "t": "simmering",
-    "z": "燉煮",
-    "j": "弱火で煮ること",
+    "z": "慢慢煮",
+    "j": "煮始め",
     "e": "simmering",
     "b": "simmer",
     "p": "verb"
@@ -85842,68 +86090,90 @@
     "t": "Because "
    },
    {
-    "t": "Taiwanese thick soy sauce",
-    "z": "臺灣濃厚醬油",
-    "j": "台湾のとろみのある醤油",
-    "e": "Taiwanese thick soy sauce",
-    "b": "Taiwanese thick soy sauce",
+    "t": "Taiwanese",
+    "z": "臺灣的",
+    "j": "台湾の",
+    "e": "Taiwanese",
+    "b": "Taiwanese",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "thick soy sauce",
+    "z": "濃醬油",
+    "j": "とろみ醤油",
+    "e": "thick soy sauce",
+    "b": "thick soy sauce",
     "p": "noun"
    },
    {
     "t": " is "
    },
    {
-    "t": "already sweet",
-    "z": "已經甜",
-    "j": "甘みがある状態",
-    "e": "already sweet",
-    "b": "already sweet",
+    "t": "already",
+    "z": "已經",
+    "j": "すでに",
+    "e": "already",
+    "b": "already",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sweet",
+    "z": "甜的",
+    "j": "甘い",
+    "e": "sweet",
+    "b": "sweet",
     "p": "adjective"
    },
    {
-    "t": ", I "
+    "t": ", "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
    },
    {
     "t": "do not add sugar",
     "z": "不加糖",
-    "j": "砂糖を加えない",
+    "j": "砂糖を加えません",
     "e": "do not add sugar",
-    "b": "do not add sugar",
-    "p": "verb"
+    "b": "add sugar",
+    "p": "phrasal verb"
    },
    {
-    "t": " to the "
-   },
-   {
-    "t": "dipping sauce",
-    "z": "蘸醬",
-    "j": "つけだれ",
-    "e": "dipping sauce",
-    "b": "dipping sauce",
-    "p": "noun"
-   },
-   {
-    "t": "."
+    "t": " to the dipping sauce."
    }
   ],
   "Use only a little dark soy sauce because too much will make the braised dish nearly black.": [
    {
     "t": "Use",
     "z": "使用",
-    "j": "利用すること",
-    "e": "Use",
+    "j": "使う",
+    "e": "use",
     "b": "use",
     "p": "verb"
    },
    {
-    "t": " "
+    "t": " only "
    },
    {
-    "t": "only a little",
-    "z": "只有少量",
-    "j": "わずかな量だけ",
-    "e": "only a little",
-    "b": "only a little",
+    "t": "a little",
+    "z": "一點點",
+    "j": "少しだけ",
+    "e": "a little",
+    "b": "a little",
     "p": "adverb"
    },
    {
@@ -85911,8 +86181,8 @@
    },
    {
     "t": "dark soy sauce",
-    "z": "老抽醬油",
-    "j": "濃い色の醤油",
+    "z": "深色醬油",
+    "j": "濃口醤油",
     "e": "dark soy sauce",
     "b": "dark soy sauce",
     "p": "noun"
@@ -85923,18 +86193,29 @@
    {
     "t": "too much",
     "z": "太多",
-    "j": "過剰な量",
+    "j": "多すぎる",
     "e": "too much",
     "b": "too much",
     "p": "adjective"
    },
    {
-    "t": " will make the "
+    "t": " will "
+   },
+   {
+    "t": "make",
+    "z": "讓",
+    "j": "させる",
+    "e": "make",
+    "b": "make",
+    "p": "verb"
+   },
+   {
+    "t": " the "
    },
    {
     "t": "braised dish",
-    "z": "燉煮料理",
-    "j": "長時間煮る料理",
+    "z": "燉菜",
+    "j": "煮物",
     "e": "braised dish",
     "b": "braised dish",
     "p": "noun"
@@ -85944,8 +86225,8 @@
    },
    {
     "t": "nearly black",
-    "z": "幾乎全黑",
-    "j": "非常黒くなること",
+    "z": "幾乎黑色",
+    "j": "ほとんど黒い",
     "e": "nearly black",
     "b": "nearly black",
     "p": "adjective"
@@ -85960,8 +86241,8 @@
    },
    {
     "t": "light soy sauce",
-    "z": "生抽",
-    "j": "生抽醤油",
+    "z": "淡色醬油",
+    "j": "生抽",
     "e": "light soy sauce",
     "b": "light soy sauce",
     "p": "noun"
@@ -86000,18 +86281,7 @@
     "p": "noun"
    },
    {
-    "t": " when you "
-   },
-   {
-    "t": "use",
-    "z": "使用",
-    "j": "使う",
-    "e": "use",
-    "b": "use",
-    "p": "verb"
-   },
-   {
-    "t": " it in the "
+    "t": " when you use it in the "
    },
    {
     "t": "marinade",
@@ -86091,8 +86361,8 @@
    },
    {
     "t": "noodle soup",
-    "z": "麵條湯",
-    "j": "めんのスープ",
+    "z": "麵湯",
+    "j": "麺のスープ",
     "e": "noodle soup",
     "b": "noodle soup",
     "p": "noun"
@@ -86101,23 +86371,12 @@
     "t": " "
    },
    {
-    "t": "taste",
-    "z": "味道",
-    "j": "味わう",
-    "e": "taste",
-    "b": "taste",
-    "p": "verb"
-   },
-   {
-    "t": "s "
-   },
-   {
-    "t": "heavy",
-    "z": "濃重的",
-    "j": "こってりした",
-    "e": "heavy",
-    "b": "heavy",
-    "p": "adjective"
+    "t": "tastes heavy",
+    "z": "口味濃重",
+    "j": "重く感じる",
+    "e": "tastes heavy",
+    "b": "taste heavy",
+    "p": "phrase"
    },
    {
     "t": ", a "
@@ -86125,8 +86384,8 @@
    {
     "t": "spoonful",
     "z": "一匙",
-    "j": "スプーン1杯",
-    "e": "spoonful",
+    "j": "一さじ",
+    "e": "a spoonful",
     "b": "spoonful",
     "p": "noun"
    },
@@ -86142,18 +86401,18 @@
     "p": "noun"
    },
    {
-    "t": " makes it "
+    "t": " "
    },
    {
-    "t": "feel lighter",
-    "z": "感覺比較輕",
+    "t": "makes",
+    "z": "使得",
     "j": "さっぱりします",
-    "e": "feel lighter",
-    "b": "feel lighter",
-    "p": "expression"
+    "e": "makes it feel lighter",
+    "b": "make feel lighter",
+    "p": "phrase"
    },
    {
-    "t": "."
+    "t": " it feel lighter."
    }
   ],
   "Because apple cider vinegar is sharp, I mix it with olive oil before dressing the salad.": [
@@ -86163,20 +86422,20 @@
    {
     "t": "apple cider vinegar",
     "z": "蘋果醋",
-    "j": "リンゴから作られた酢",
+    "j": "リンゴ酢",
     "e": "apple cider vinegar",
     "b": "apple cider vinegar",
     "p": "noun"
    },
    {
-    "t": " is "
+    "t": " "
    },
    {
-    "t": "sharp",
-    "z": "刺鼻",
-    "j": "強く刺激的な味",
-    "e": "sharp",
-    "b": "sharp",
+    "t": "is sharp",
+    "z": "是酸的",
+    "j": "酸味が強い",
+    "e": "is sharp",
+    "b": "be sharp",
     "p": "adjective"
    },
    {
@@ -86185,7 +86444,7 @@
    {
     "t": "mix",
     "z": "混合",
-    "j": "複数の材料を合わせること",
+    "j": "混ぜます",
     "e": "mix",
     "b": "mix",
     "p": "verb"
@@ -86196,7 +86455,7 @@
    {
     "t": "olive oil",
     "z": "橄欖油",
-    "j": "オリーブからできた油",
+    "j": "オリーブオイル",
     "e": "olive oil",
     "b": "olive oil",
     "p": "noun"
@@ -86206,11 +86465,11 @@
    },
    {
     "t": "dressing the salad",
-    "z": "為沙拉調味",
-    "j": "サラダにドレッシングをかけること",
+    "z": "淋沙拉",
+    "j": "サラダにかける",
     "e": "dressing the salad",
     "b": "dress the salad",
-    "p": "phrase"
+    "p": "phrasal verb"
    },
    {
     "t": "."
@@ -86223,18 +86482,29 @@
    {
     "t": "adding mirin",
     "z": "加入味醂",
-    "j": "みりんを加える",
+    "j": "味醂を加えること",
     "e": "adding mirin",
-    "b": "add mirin",
+    "b": "adding mirin",
     "p": "phrase"
    },
    {
-    "t": " to the sauce, "
+    "t": " to the "
+   },
+   {
+    "t": "sauce",
+    "z": "醬汁",
+    "j": "ソース",
+    "e": "sauce",
+    "b": "sauce",
+    "p": "noun"
+   },
+   {
+    "t": ", "
    },
    {
     "t": "simmer",
-    "z": "小火燉煮",
-    "j": "煮詰めます",
+    "z": "用文火燉煮",
+    "j": "弱火で煮る",
     "e": "simmer",
     "b": "simmer",
     "p": "verb"
@@ -86244,7 +86514,7 @@
    },
    {
     "t": "briefly",
-    "z": "稍微",
+    "z": "稍微地",
     "j": "少しの間",
     "e": "briefly",
     "b": "briefly",
@@ -86267,7 +86537,7 @@
    {
     "t": "cooks off",
     "z": "揮發掉",
-    "j": "とばします",
+    "j": "飛ばす",
     "e": "cooks off",
     "b": "cook off",
     "p": "phrasal verb"
@@ -86282,8 +86552,8 @@
    },
    {
     "t": "making",
-    "z": "做",
-    "j": "作ること",
+    "z": "製作",
+    "j": "作る",
     "e": "making",
     "b": "make",
     "p": "verb"
@@ -86293,8 +86563,8 @@
    },
    {
     "t": "three cup chicken",
-    "z": "三杯鶏",
-    "j": "三杯鶏の料理",
+    "z": "三杯雞",
+    "j": "三杯鶏",
     "e": "three cup chicken",
     "b": "three cup chicken",
     "p": "noun"
@@ -86305,7 +86575,7 @@
    {
     "t": "Taiwanese rice wine",
     "z": "台灣米酒",
-    "j": "台湾で作られる米からの酒",
+    "j": "台湾米酒",
     "e": "Taiwanese rice wine",
     "b": "Taiwanese rice wine",
     "p": "noun"
@@ -86315,8 +86585,8 @@
    },
    {
     "t": "reduce",
-    "z": "減少",
-    "j": "減らすこと",
+    "z": "蒸發",
+    "j": "飛ばします",
     "e": "reduce",
     "b": "reduce",
     "p": "verb"
@@ -86327,9 +86597,9 @@
    {
     "t": "turning off the heat",
     "z": "關火",
-    "j": "火を消すこと",
+    "j": "火を止める",
     "e": "turning off the heat",
-    "b": "turning off the heat",
+    "b": "turn off heat",
     "p": "phrase"
    },
    {
@@ -86342,7 +86612,7 @@
    },
    {
     "t": "yellow mustard",
-    "z": "黃芥末醬",
+    "z": "黃芥末",
     "j": "イエローマスタード",
     "e": "yellow mustard",
     "b": "yellow mustard",
@@ -86353,7 +86623,7 @@
    },
    {
     "t": "mild",
-    "z": "不辣",
+    "z": "溫和",
     "j": "辛さが弱い",
     "e": "mild",
     "b": "mild",
@@ -86367,7 +86637,7 @@
     "z": "孩子們",
     "j": "子どもたち",
     "e": "children",
-    "b": "children",
+    "b": "child",
     "p": "noun"
    },
    {
@@ -86375,7 +86645,7 @@
    },
    {
     "t": "add",
-    "z": "加在",
+    "z": "加",
     "j": "かけます",
     "e": "add",
     "b": "add",
@@ -86393,18 +86663,7 @@
     "p": "noun"
    },
    {
-    "t": " "
-   },
-   {
-    "t": "themselves",
-    "z": "自己",
-    "j": "自分で",
-    "e": "themselves",
-    "b": "themselves",
-    "p": "adverb"
-   },
-   {
-    "t": "."
+    "t": " themselves."
    }
   ],
   "If the wasabi is too strong, mix a smaller amount into the soy sauce.": [
@@ -86638,15 +86897,15 @@
     "p": "noun"
    },
    {
-    "t": " before "
+    "t": " "
    },
    {
-    "t": "grinding",
-    "z": "磨碎",
-    "j": "ひく",
-    "e": "grinding",
+    "t": "before grinding",
+    "z": "磨碎之前",
+    "j": "ひく前に",
+    "e": "before grinding",
     "b": "grind",
-    "p": "verb"
+    "p": "phrasal verb"
    },
    {
     "t": " them so their "
@@ -86657,21 +86916,10 @@
     "j": "柑橘のような香り",
     "e": "citrus-like aroma",
     "b": "citrus-like aroma",
-    "p": "noun"
+    "p": "phrase"
    },
    {
-    "t": " "
-   },
-   {
-    "t": "becomes stronger",
-    "z": "變強",
-    "j": "強くなる",
-    "e": "becomes stronger",
-    "b": "become strong",
-    "p": "verb"
-   },
-   {
-    "t": "."
+    "t": " becomes stronger."
    }
   ],
   "Please show your membership card.": [
@@ -86855,8 +87103,8 @@
    {
     "t": "Fry",
     "z": "炒",
-    "j": "炒める",
-    "e": "fry",
+    "j": "炒めます",
+    "e": "Fry",
     "b": "fry",
     "p": "verb"
    },
@@ -86876,33 +87124,22 @@
    },
    {
     "t": "briefly",
-    "z": "稍微",
-    "j": "短く",
+    "z": "簡短地",
+    "j": "さっと",
     "e": "briefly",
-    "b": "briefly",
+    "b": "さっと",
     "p": "adverb"
    },
    {
     "t": " before "
    },
    {
-    "t": "adding",
-    "z": "添加",
-    "j": "入れる",
-    "e": "adding",
-    "b": "add",
-    "p": "verb"
-   },
-   {
-    "t": " "
-   },
-   {
-    "t": "tofu",
-    "z": "豆腐",
-    "j": "豆腐",
-    "e": "tofu",
-    "b": "tofu",
-    "p": "noun"
+    "t": "adding tofu",
+    "z": "加入豆腐",
+    "j": "豆腐を入れる",
+    "e": "adding tofu",
+    "b": "豆腐を入れる",
+    "p": "phrase"
    },
    {
     "t": " so its "
@@ -86920,8 +87157,8 @@
    },
    {
     "t": "spreads",
-    "z": "擴散",
-    "j": "移す",
+    "z": "散布到整鍋油中",
+    "j": "油全体に広がる",
     "e": "spreads",
     "b": "spread",
     "p": "verb"
@@ -86958,7 +87195,7 @@
    },
    {
     "t": "rich",
-    "z": "濃厚",
+    "z": "濃郁",
     "j": "味が濃い",
     "e": "rich",
     "b": "rich",
@@ -86970,7 +87207,7 @@
    {
     "t": "thin",
     "z": "稀釋",
-    "j": "のばす",
+    "j": "のばします",
     "e": "thin",
     "b": "thin",
     "p": "verb"
@@ -86980,7 +87217,7 @@
    },
    {
     "t": "broth",
-    "z": "高湯",
+    "z": "湯",
     "j": "スープ",
     "e": "broth",
     "b": "broth",
@@ -87004,8 +87241,8 @@
   "Remove the star anise when the braise is finished because biting into it is unpleasant.": [
    {
     "t": "Remove",
-    "z": "拿走",
-    "j": "取り出す",
+    "z": "去除",
+    "j": "取り除く",
     "e": "Remove",
     "b": "remove",
     "p": "verb"
@@ -87016,7 +87253,7 @@
    {
     "t": "star anise",
     "z": "八角",
-    "j": "八角",
+    "j": "八角の調味料",
     "e": "star anise",
     "b": "star anise",
     "p": "noun"
@@ -87026,41 +87263,30 @@
    },
    {
     "t": "braise",
-    "z": "燉煮",
-    "j": "煮込み",
+    "z": "煮炊き",
+    "j": "煮込む料理法",
     "e": "braise",
     "b": "braise",
     "p": "noun"
    },
    {
-    "t": " is "
+    "t": " is finished because "
    },
    {
-    "t": "finished",
-    "z": "完成",
-    "j": "終わる",
-    "e": "finished",
-    "b": "finish",
-    "p": "verb"
-   },
-   {
-    "t": " because "
-   },
-   {
-    "t": "biting",
+    "t": "biting into",
     "z": "咬",
-    "j": "かむ",
-    "e": "biting",
-    "b": "bite",
-    "p": "verb"
+    "j": "かむこと",
+    "e": "biting into",
+    "b": "bite into",
+    "p": "phrasal verb"
    },
    {
-    "t": " into it is "
+    "t": " it is "
    },
    {
     "t": "unpleasant",
-    "z": "不舒服",
-    "j": "食べにくい",
+    "z": "不愉快な",
+    "j": "不快な",
     "e": "unpleasant",
     "b": "unpleasant",
     "p": "adjective"
@@ -87264,31 +87490,42 @@
    {
     "t": "already spicy",
     "z": "已經辣了",
-    "j": "すでに辛みがある",
+    "j": "すでに辛い",
     "e": "already spicy",
     "b": "already spicy",
-    "p": "phrase"
+    "p": "adjective"
    },
    {
     "t": ", "
    },
    {
     "t": "taste",
-    "z": "嚐味",
+    "z": "品嘗",
     "j": "味見する",
     "e": "taste",
     "b": "taste",
     "p": "verb"
    },
    {
-    "t": " it "
+    "t": " it before "
    },
    {
-    "t": "before sprinkling more shichimi",
-    "z": "在多灑七味之前",
-    "j": "七味唐辛子を足す前に",
-    "e": "before sprinkling more shichimi",
-    "b": "before sprinkling more shichimi",
+    "t": "sprinkling",
+    "z": "撒",
+    "j": "ふりかける",
+    "e": "sprinkle",
+    "b": "sprinkle",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "more shichimi",
+    "z": "更多七味粉",
+    "j": "七味唐辛子を足す",
+    "e": "more shichimi",
+    "b": "more shichimi",
     "p": "phrase"
    },
    {
@@ -87610,7 +87847,7 @@
    {
     "t": "baking powder",
     "z": "泡打粉",
-    "j": "料理で使う粉末",
+    "j": "ベーキングパウダー",
     "e": "baking powder",
     "b": "baking powder",
     "p": "noun"
@@ -87619,20 +87856,20 @@
     "t": " is "
    },
    {
-    "t": "mixed into",
-    "z": "混合進去",
-    "j": "まざり込むこと",
-    "e": "mixed into",
+    "t": "mixed",
+    "z": "混合",
+    "j": "混ぜる",
+    "e": "mixed",
     "b": "mix",
-    "p": "phrase"
+    "p": "verb"
    },
    {
-    "t": " the "
+    "t": " into the "
    },
    {
     "t": "batter",
     "z": "麵糊",
-    "j": "ケーキの材料の混合物",
+    "j": "生地",
     "e": "batter",
     "b": "batter",
     "p": "noun"
@@ -87643,7 +87880,7 @@
    {
     "t": "bake",
     "z": "烘烤",
-    "j": "火で加熱して料理する",
+    "j": "焼く",
     "e": "bake",
     "b": "bake",
     "p": "verb"
@@ -87652,11 +87889,22 @@
     "t": " it soon so the "
    },
    {
-    "t": "cake rises well",
-    "z": "蛋糕膨鬆",
-    "j": "ケーキがよく膨らむ",
-    "e": "cake rises well",
-    "b": "rise",
+    "t": "cake",
+    "z": "蛋糕",
+    "j": "ケーキ",
+    "e": "cake",
+    "b": "cake",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "rises well",
+    "z": "膨脹良好",
+    "j": "よく膨らむ",
+    "e": "rises well",
+    "b": "よく膨らむ",
     "p": "phrase"
    },
    {
@@ -87716,8 +87964,8 @@
    {
     "t": "Mix",
     "z": "攪拌",
-    "j": "混ぜること",
-    "e": "Mix",
+    "j": "混ぜる",
+    "e": "mix",
     "b": "mix",
     "p": "verb"
    },
@@ -87727,7 +87975,7 @@
    {
     "t": "potato starch",
     "z": "馬鈴薯澱粉",
-    "j": "じゃがいものでんぷん",
+    "j": "片栗粉",
     "e": "potato starch",
     "b": "potato starch",
     "p": "noun"
@@ -87748,20 +87996,31 @@
    },
    {
     "t": "before adding",
-    "z": "加え前に",
-    "j": "いれる前に",
+    "z": "加入之前",
+    "j": "加える前に",
     "e": "before adding",
-    "b": "add",
+    "b": "before adding",
     "p": "phrase"
    },
    {
     "t": " it so the "
    },
    {
-    "t": "sauce does not form lumps",
-    "z": "醬汁不結塊",
-    "j": "あんがだまにならない",
-    "e": "sauce does not form lumps",
+    "t": "sauce",
+    "z": "醬汁",
+    "j": "あん",
+    "e": "sauce",
+    "b": "sauce",
+    "p": "noun"
+   },
+   {
+    "t": " does not "
+   },
+   {
+    "t": "form lumps",
+    "z": "結塊",
+    "j": "だまになる",
+    "e": "form lumps",
     "b": "form lumps",
     "p": "phrase"
    },
@@ -87963,7 +88222,7 @@
   "Add the parsley after the soup is in the bowls so its green color stays bright.": [
    {
     "t": "Add",
-    "z": "加入",
+    "z": "加",
     "j": "加える",
     "e": "Add",
     "b": "add",
@@ -87974,25 +88233,14 @@
    },
    {
     "t": "parsley",
-    "z": "歐芹",
-    "j": "パセリの葉",
+    "z": "香芹",
+    "j": "パセリ",
     "e": "parsley",
     "b": "parsley",
     "p": "noun"
    },
    {
-    "t": " "
-   },
-   {
-    "t": "after",
-    "z": "在……之後",
-    "j": "〜の後で",
-    "e": "after",
-    "b": "after",
-    "p": "preposition"
-   },
-   {
-    "t": " the "
+    "t": " after the "
    },
    {
     "t": "soup",
@@ -88008,7 +88256,7 @@
    {
     "t": "bowls",
     "z": "碗",
-    "j": "器の一種",
+    "j": "器",
     "e": "bowls",
     "b": "bowl",
     "p": "noun"
@@ -88019,7 +88267,7 @@
    {
     "t": "green color",
     "z": "綠色",
-    "j": "緑の色",
+    "j": "緑色",
     "e": "green color",
     "b": "green color",
     "p": "phrase"
@@ -88030,10 +88278,10 @@
    {
     "t": "stays bright",
     "z": "保持明亮",
-    "j": "明るさを保つ",
+    "j": "きれいに残る",
     "e": "stays bright",
     "b": "stay bright",
-    "p": "phrasal verb"
+    "p": "phrase"
    },
    {
     "t": "."
@@ -88245,7 +88493,7 @@
    {
     "t": "adding",
     "z": "加入",
-    "j": "加えること",
+    "j": "加えます",
     "e": "adding",
     "b": "add",
     "p": "verb"
@@ -88255,8 +88503,8 @@
    },
    {
     "t": "cornstarch mixture",
-    "z": "玉米澱粉混合物",
-    "j": "水と混ぜたコーンスターチ",
+    "z": "玉米粉混合物",
+    "j": "コーンスターチの混合物",
     "e": "cornstarch mixture",
     "b": "cornstarch mixture",
     "p": "noun"
@@ -88266,21 +88514,32 @@
    },
    {
     "t": "keep stirring",
-    "z": "繼續攪拌",
-    "j": "混ぜ続けること",
+    "z": "持續攪拌",
+    "j": "混ぜ続けます",
     "e": "keep stirring",
-    "b": "stir",
-    "p": "phrase"
+    "b": "keep stirring",
+    "p": "phrasal verb"
    },
    {
     "t": " until the "
    },
    {
-    "t": "soup becomes clear and thick",
-    "z": "湯變透明且濃稠",
-    "j": "スープが透明かつ濃くなる",
-    "e": "soup becomes clear and thick",
-    "b": "become",
+    "t": "soup",
+    "z": "湯",
+    "j": "スープ",
+    "e": "soup",
+    "b": "soup",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "becomes clear and thick",
+    "z": "變得透明且濃稠",
+    "j": "透明感ととろみが出る",
+    "e": "becomes clear and thick",
+    "b": "become clear and thick",
     "p": "phrase"
    },
    {
@@ -88293,7 +88552,7 @@
    },
    {
     "t": "dough",
-    "z": "麵團",
+    "z": "生麵糰",
     "j": "生地",
     "e": "dough",
     "b": "dough",
@@ -88307,7 +88566,7 @@
     "z": "黏的",
     "j": "べたつく",
     "e": "sticky",
-    "b": "べたつく",
+    "b": "sticky",
     "p": "adjective"
    },
    {
@@ -88315,14 +88574,25 @@
    },
    {
     "t": "dust",
-    "z": "灑",
+    "z": "撒布",
     "j": "振ります",
     "e": "dust",
     "b": "dust",
     "p": "verb"
    },
    {
-    "t": " the table with "
+    "t": " the "
+   },
+   {
+    "t": "table",
+    "z": "桌子",
+    "j": "台",
+    "e": "table",
+    "b": "table",
+    "p": "noun"
+   },
+   {
+    "t": " with "
    },
    {
     "t": "flour",
@@ -88333,15 +88603,26 @@
     "p": "noun"
    },
    {
-    "t": " before you begin "
+    "t": " before you "
+   },
+   {
+    "t": "begin",
+    "z": "開始",
+    "j": "始める",
+    "e": "begin",
+    "b": "begin",
+    "p": "verb"
+   },
+   {
+    "t": " "
    },
    {
     "t": "kneading",
-    "z": "揉麵",
-    "j": "こね始める",
+    "z": "揉捏",
+    "j": "こね",
     "e": "kneading",
     "b": "knead",
-    "p": "phrasal verb"
+    "p": "verb"
    },
    {
     "t": " it."
@@ -89688,8 +89969,8 @@
    },
    {
     "t": "sake",
-    "z": "日本清酒",
-    "j": "日本の酒",
+    "z": "清酒",
+    "j": "日本酒",
     "e": "sake",
     "b": "sake",
     "p": "noun"
@@ -89698,11 +89979,22 @@
     "t": " "
    },
    {
-    "t": "helps reduce",
-    "z": "幫助減少",
-    "j": "減らすのを助ける",
-    "e": "helps reduce",
-    "b": "help reduce",
+    "t": "helps",
+    "z": "幫助",
+    "j": "助ける",
+    "e": "helps",
+    "b": "help",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "reduce",
+    "z": "減少",
+    "j": "減らす",
+    "e": "reduce",
+    "b": "reduce",
     "p": "verb"
    },
    {
@@ -89710,11 +90002,11 @@
    },
    {
     "t": "fishy smell",
-    "z": "腥味",
-    "j": "魚のにおい",
+    "z": "魚腥味",
+    "j": "魚の臭み",
     "e": "fishy smell",
     "b": "fishy smell",
-    "p": "noun"
+    "p": "phrase"
    },
    {
     "t": ", I "
@@ -89722,7 +90014,7 @@
    {
     "t": "pour",
     "z": "倒入",
-    "j": "注ぎます",
+    "j": "かける",
     "e": "pour",
     "b": "pour",
     "p": "verb"
@@ -89731,23 +90023,34 @@
     "t": " it "
    },
    {
-    "t": "over the fish",
-    "z": "在魚上",
-    "j": "魚にかける",
-    "e": "over the fish",
-    "b": "over the fish",
-    "p": "phrase"
+    "t": "over",
+    "z": "在…上方",
+    "j": "上に",
+    "e": "over",
+    "b": "over",
+    "p": "preposition"
    },
    {
-    "t": " before "
+    "t": " the "
    },
    {
-    "t": "simmering",
-    "z": "慢煮",
-    "j": "弱火で煮ること",
-    "e": "simmering",
-    "b": "simmer",
-    "p": "verb"
+    "t": "fish",
+    "z": "魚",
+    "j": "魚",
+    "e": "fish",
+    "b": "fish",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before simmering",
+    "z": "燉煮之前",
+    "j": "煮る前",
+    "e": "before simmering",
+    "b": "before simmering",
+    "p": "expression"
    },
    {
     "t": "."
@@ -95465,19 +95768,7 @@
     "r": "サラダ"
    },
    {
-    "t": "の"
-   },
-   {
-    "t": "ドレッシング",
-    "z": "沙拉醬",
-    "j": "ドレッシング",
-    "e": "dressing",
-    "b": "ドレッシング",
-    "p": "noun",
-    "r": "ドレッシング"
-   },
-   {
-    "t": "に"
+    "t": "のドレッシングに"
    },
    {
     "t": "リンゴ酢",
@@ -95486,14 +95777,14 @@
     "e": "apple cider vinegar",
     "b": "リンゴ酢",
     "p": "noun",
-    "r": "リンゴす"
+    "r": "リンゴス"
    },
    {
     "t": "を"
    },
    {
     "t": "使います",
-    "z": "用",
+    "z": "使用",
     "j": "使います",
     "e": "use",
     "b": "使う",
@@ -95799,7 +96090,7 @@
    {
     "t": "ケーキ",
     "z": "蛋糕",
-    "j": "菓子の一種",
+    "j": "焼き菓子の種類",
     "e": "cake",
     "b": "ケーキ",
     "p": "noun",
@@ -95811,8 +96102,8 @@
    {
     "t": "生地",
     "z": "麵糊",
-    "j": "料理の材料のもと",
-    "e": "batter",
+    "j": "ケーキの生地",
+    "e": "cake batter",
     "b": "生地",
     "p": "noun",
     "r": "きじ"
@@ -95823,7 +96114,7 @@
    {
     "t": "ベーキングパウダー",
     "z": "泡打粉",
-    "j": "焼き菓子に使う粉",
+    "j": "パンやケーキを膨らませる粉",
     "e": "baking powder",
     "b": "ベーキングパウダー",
     "p": "noun",
@@ -95835,8 +96126,8 @@
    {
     "t": "入れます",
     "z": "放入",
-    "j": "中に加える",
-    "e": "add",
+    "j": "物を中に入れる",
+    "e": "put in",
     "b": "入れる",
     "p": "verb",
     "r": "いれます"
@@ -96609,33 +96900,30 @@
   ],
   "盛り付ける前にローリエを取り除いてください。": [
    {
-    "t": "盛り付ける",
-    "z": "擺盤",
-    "j": "料理を皿にのせる",
-    "e": "serve",
-    "b": "盛り付ける",
-    "p": "verb",
-    "r": "もりつける"
-   },
-   {
-    "t": "前に"
+    "t": "盛り付ける前に",
+    "z": "擺盤之前",
+    "j": "料理を皿に置く前の時間",
+    "e": "before serving",
+    "b": "盛り付ける前に",
+    "p": "phrase",
+    "r": "もりつけるまえに"
    },
    {
     "t": "ローリエ",
     "z": "月桂葉",
-    "j": "香りのある葉のスパイス",
+    "j": "料理に使う葉の香辛料",
     "e": "bay leaf",
     "b": "ローリエ",
     "p": "noun",
-    "r": "ローリエ"
+    "r": "ろーりえ"
    },
    {
     "t": "を"
    },
    {
     "t": "取り除いてください",
-    "z": "請去除",
-    "j": "取り払ってほしい",
+    "z": "請取出",
+    "j": "取り除く",
     "e": "please remove",
     "b": "取り除く",
     "p": "verb",
@@ -97393,7 +97681,7 @@
   "餃子に黒酢をつけて食べます。": [
    {
     "t": "餃子",
-    "z": "餃子",
+    "z": "水餃子",
     "j": "餃子",
     "e": "dumplings",
     "b": "餃子",
@@ -97416,22 +97704,13 @@
     "t": "を"
    },
    {
-    "t": "つけて",
-    "z": "沾",
-    "j": "つけます",
-    "e": "dip",
-    "b": "つける",
+    "t": "つけて食べます",
+    "z": "沾著吃",
+    "j": "つけて食べます",
+    "e": "dip and eat",
+    "b": "つけて食べます",
     "p": "verb",
-    "r": "つけて"
-   },
-   {
-    "t": "食べます",
-    "z": "吃",
-    "j": "食べます",
-    "e": "eat",
-    "b": "食べる",
-    "p": "verb",
-    "r": "たべます"
+    "r": "つけてたべます"
    },
    {
     "t": "。"
@@ -99163,8 +99442,8 @@
    {
     "t": "使います",
     "z": "使用",
-    "j": "使う",
-    "e": "use",
+    "j": "使います",
+    "e": "Use",
     "b": "使う",
     "p": "verb",
     "r": "つかいます"
@@ -99367,14 +99646,14 @@
     "j": "小さじ一杯",
     "e": "a teaspoon",
     "b": "小さじ一杯",
-    "p": "phrase",
+    "p": "noun",
     "r": "こさじいっぱい"
    },
    {
     "t": "加えます",
-    "z": "添加",
+    "z": "加入",
     "j": "加える",
-    "e": "add",
+    "e": "Add",
     "b": "加える",
     "p": "verb",
     "r": "くわえます"
@@ -99669,18 +99948,21 @@
   ],
   "新鮮なパクチーで飾りつけてください。": [
    {
-    "t": "新鮮な",
-    "z": "新鮮的",
-    "j": "新鮮な",
+    "t": "新鮮",
+    "z": "新鮮",
+    "j": "みずみずしい",
     "e": "fresh",
-    "b": "新鮮な",
+    "b": "新鮮",
     "p": "adjective",
-    "r": "しんせんな"
+    "r": "しんせん"
+   },
+   {
+    "t": "な"
    },
    {
     "t": "パクチー",
     "z": "香菜",
-    "j": "パクチー",
+    "j": "パクチーの葉",
     "e": "cilantro",
     "b": "パクチー",
     "p": "noun",
@@ -99691,9 +99973,9 @@
    },
    {
     "t": "飾りつけてください",
-    "z": "請裝飾上",
-    "j": "飾りつけてください",
-    "e": "Please garnish",
+    "z": "請裝飾",
+    "j": "飾りつけなさい",
+    "e": "please decorate",
     "b": "飾りつける",
     "p": "verb",
     "r": "かざりつけてください"
@@ -99784,32 +100066,32 @@
    {
     "t": "ラテ",
     "z": "拿鐵咖啡",
-    "j": "ラテ",
+    "j": "ラテコーヒー",
     "e": "latte",
     "b": "ラテ",
     "p": "noun",
-    "r": "ラテ"
+    "r": "らて"
    },
    {
     "t": "に"
    },
    {
     "t": "シナモン",
-    "z": "肉桂粉",
-    "j": "シナモン",
+    "z": "肉桂",
+    "j": "シナモンの香辛料",
     "e": "cinnamon",
     "b": "シナモン",
     "p": "noun",
-    "r": "シナモン"
+    "r": "しなもん"
    },
    {
     "t": "を"
    },
    {
     "t": "ふりかけます",
-    "z": "灑上",
-    "j": "ふりかけます",
-    "e": "Sprinkle",
+    "z": "撒、灑",
+    "j": "まきます",
+    "e": "sprinkle",
     "b": "ふりかける",
     "p": "verb",
     "r": "ふりかけます"
@@ -101066,7 +101348,7 @@
    {
     "t": "コーンスターチ",
     "z": "玉米澱粉",
-    "j": "コーン由来の粉",
+    "j": "コーンスターチ",
     "e": "cornstarch",
     "b": "コーンスターチ",
     "p": "noun",
@@ -101078,7 +101360,7 @@
    {
     "t": "スープ",
     "z": "湯",
-    "j": "汁物料理",
+    "j": "スープ",
     "e": "soup",
     "b": "スープ",
     "p": "noun",
@@ -101089,11 +101371,11 @@
    },
    {
     "t": "とろみをつけます",
-    "z": "使變稠",
-    "j": "濃くすること",
+    "z": "加濃稠感",
+    "j": "とろみをつけます",
     "e": "Thicken",
-    "b": "つける",
-    "p": "phrase",
+    "b": "とろみをつけます",
+    "p": "verb",
     "r": "とろみをつけます"
    },
    {
@@ -103925,7 +104207,7 @@
    },
    {
     "t": "作ります",
-    "z": "做",
+    "z": "製作",
     "j": "作ります",
     "e": "make",
     "b": "作る",
@@ -106623,12 +106905,12 @@
   "生抽で炒め物に味をつけます。": [
    {
     "t": "生抽",
-    "z": "生抽",
-    "j": "生抽醤油",
+    "z": "淡色醬油",
+    "j": "生抽",
     "e": "light soy sauce",
     "b": "生抽",
     "p": "noun",
-    "r": "せいちゅう"
+    "r": "シェンチョウ"
    },
    {
     "t": "で"
@@ -106636,7 +106918,7 @@
    {
     "t": "炒め物",
     "z": "炒菜",
-    "j": "炒めた料理",
+    "j": "炒め物",
     "e": "stir-fry",
     "b": "炒め物",
     "p": "noun",
@@ -106648,7 +106930,7 @@
    {
     "t": "味をつけます",
     "z": "調味",
-    "j": "味をつける",
+    "j": "味をつけます",
     "e": "season",
     "b": "味をつける",
     "p": "verb",
@@ -106981,7 +107263,7 @@
    {
     "t": "塗ります",
     "z": "塗抹",
-    "j": "塗ります",
+    "j": "塗る",
     "e": "spread",
     "b": "塗る",
     "p": "verb",
@@ -107509,7 +107791,7 @@
   "煮物にみりんを加えます。": [
    {
     "t": "煮物",
-    "z": "煮物",
+    "z": "燉菜",
     "j": "煮物",
     "e": "simmered dish",
     "b": "煮物",
@@ -107533,9 +107815,9 @@
    },
    {
     "t": "加えます",
-    "z": "添加",
-    "j": "加えます",
-    "e": "Add",
+    "z": "加入",
+    "j": "加える",
+    "e": "add",
     "b": "加える",
     "p": "verb",
     "r": "くわえます"
@@ -109216,7 +109498,7 @@
    {
     "t": "少し",
     "z": "少量",
-    "j": "少し",
+    "j": "すこし",
     "e": "a little",
     "b": "少し",
     "p": "adverb",
@@ -109224,9 +109506,9 @@
    },
    {
     "t": "加えます",
-    "z": "加入",
+    "z": "添加",
     "j": "加える",
-    "e": "Add",
+    "e": "add",
     "b": "加える",
     "p": "verb",
     "r": "くわえます"
@@ -110034,28 +110316,28 @@
     "e": "soup",
     "b": "スープ",
     "p": "noun",
-    "r": "すーぷ"
+    "r": "スープ"
    },
    {
     "t": "に"
    },
    {
     "t": "パセリ",
-    "z": "歐芹",
+    "z": "香芹",
     "j": "パセリ",
     "e": "parsley",
     "b": "パセリ",
     "p": "noun",
-    "r": "ぱせり"
+    "r": "パセリ"
    },
    {
     "t": "を"
    },
    {
     "t": "散らします",
-    "z": "撒上",
+    "z": "灑落",
     "j": "散らす",
-    "e": "Sprinkle",
+    "e": "sprinkle",
     "b": "散らす",
     "p": "verb",
     "r": "ちらします"
@@ -111283,7 +111565,7 @@
    {
     "t": "片栗粉",
     "z": "馬鈴薯澱粉",
-    "j": "じゃがいものでんぷん",
+    "j": "片栗粉",
     "e": "potato starch",
     "b": "片栗粉",
     "p": "noun",
@@ -111294,8 +111576,8 @@
    },
    {
     "t": "あん",
-    "z": "あん",
-    "j": "とろみのある液体",
+    "z": "芡汁",
+    "j": "あん",
     "e": "sauce",
     "b": "あん",
     "p": "noun",
@@ -111307,10 +111589,10 @@
    {
     "t": "とろみをつけます",
     "z": "使變稠",
-    "j": "濃くすること",
-    "e": "Thicken",
-    "b": "つける",
-    "p": "phrase",
+    "j": "とろみをつける",
+    "e": "thicken",
+    "b": "とろみをつける",
+    "p": "verb",
     "r": "とろみをつけます"
    },
    {
@@ -112308,7 +112590,7 @@
    {
     "t": "寿司飯",
     "z": "壽司飯",
-    "j": "寿司飯",
+    "j": "寿司のご飯",
     "e": "sushi rice",
     "b": "寿司飯",
     "p": "noun",
@@ -112417,11 +112699,11 @@
    {
     "t": "三杯鶏",
     "z": "三杯雞",
-    "j": "三杯鶏の料理名",
+    "j": "三杯鶏",
     "e": "three cup chicken",
     "b": "三杯鶏",
     "p": "noun",
-    "r": "さんばいどり"
+    "r": "さんばいつけい"
    },
    {
     "t": "に"
@@ -112429,11 +112711,11 @@
    {
     "t": "台湾米酒",
     "z": "台灣米酒",
-    "j": "台湾で作られる米から造った酒",
+    "j": "台湾米酒",
     "e": "Taiwanese rice wine",
     "b": "台湾米酒",
     "p": "noun",
-    "r": "たいわんまいしゅ"
+    "r": "たいわんミーチュウ"
    },
    {
     "t": "を"
@@ -112441,7 +112723,7 @@
    {
     "t": "加えます",
     "z": "加入",
-    "j": "付け足します",
+    "j": "加えます",
     "e": "Add",
     "b": "加える",
     "p": "verb",
@@ -112640,7 +112922,7 @@
    {
     "t": "お茶",
     "z": "茶",
-    "j": "飲み物の茶",
+    "j": "お茶",
     "e": "tea",
     "b": "お茶",
     "p": "noun",
@@ -112652,11 +112934,11 @@
    {
     "t": "氷砂糖",
     "z": "冰糖",
-    "j": "固形の砂糖",
+    "j": "氷砂糖",
     "e": "rock sugar",
     "b": "氷砂糖",
     "p": "noun",
-    "r": "ひょうざとう"
+    "r": "こおりざとう"
    },
    {
     "t": "を"
@@ -112664,7 +112946,7 @@
    {
     "t": "一つ",
     "z": "一個",
-    "j": "数の単位の一つ",
+    "j": "一つ",
     "e": "one piece",
     "b": "一つ",
     "p": "numeral",
@@ -112673,7 +112955,7 @@
    {
     "t": "入れます",
     "z": "放入",
-    "j": "中に入れる動作",
+    "j": "入れます",
     "e": "put in",
     "b": "入れる",
     "p": "verb",
@@ -113181,7 +113463,7 @@
    {
     "t": "煮る",
     "z": "燉煮",
-    "j": "ゆっくり煮ます",
+    "j": "煮る",
     "e": "simmer",
     "b": "煮る",
     "p": "verb",
@@ -113192,8 +113474,8 @@
    },
    {
     "t": "日本酒",
-    "z": "日本清酒",
-    "j": "日本のお酒",
+    "z": "日本酒",
+    "j": "日本酒",
     "e": "sake",
     "b": "日本酒",
     "p": "noun",
@@ -113205,8 +113487,8 @@
    {
     "t": "加えます",
     "z": "加入",
-    "j": "付け足します",
-    "e": "Add",
+    "j": "加える",
+    "e": "add",
     "b": "加える",
     "p": "verb",
     "r": "くわえます"
@@ -114000,19 +114282,7 @@
     "r": "ひなべ"
    },
    {
-    "t": "の"
-   },
-   {
-    "t": "つけだれ",
-    "z": "沾醬",
-    "j": "つけだれ",
-    "e": "dipping sauce",
-    "b": "つけだれ",
-    "p": "noun",
-    "r": "つけだれ"
-   },
-   {
-    "t": "に"
+    "t": "のつけだれに"
    },
    {
     "t": "沙茶醤",
@@ -114021,7 +114291,7 @@
     "e": "shacha sauce",
     "b": "沙茶醤",
     "p": "noun",
-    "r": "さちゃじゃん"
+    "r": "サーチャージャン"
    },
    {
     "t": "を"
@@ -114304,7 +114574,7 @@
    },
    {
     "t": "七味唐辛子",
-    "z": "七味辣椒粉",
+    "z": "七味粉",
     "j": "七味唐辛子",
     "e": "shichimi",
     "b": "七味唐辛子",
@@ -114316,9 +114586,9 @@
    },
    {
     "t": "ふりかけます",
-    "z": "撒",
+    "z": "撒上",
     "j": "ふりかける",
-    "e": "Sprinkle",
+    "e": "sprinkle",
     "b": "ふりかける",
     "p": "verb",
     "r": "ふりかけます"
@@ -114761,14 +115031,14 @@
     "e": "Sichuan peppercorn",
     "b": "花椒",
     "p": "noun",
-    "r": "かしょう"
+    "r": "ホアジャオ"
    },
    {
     "t": "を"
    },
    {
     "t": "加えます",
-    "z": "加入",
+    "z": "加",
     "j": "加える",
     "e": "add",
     "b": "加える",
@@ -115490,7 +115760,7 @@
    {
     "t": "醤油",
     "z": "醬油",
-    "j": "醤油",
+    "j": "しょうゆ",
     "e": "soy sauce",
     "b": "醤油",
     "p": "noun",
@@ -115500,16 +115770,16 @@
     "t": "は"
    },
    {
-    "t": "要りますか",
-    "z": "需要嗎",
-    "j": "要る",
-    "e": "Do you want",
+    "t": "要ります",
+    "z": "需要",
+    "j": "いる",
+    "e": "need",
     "b": "要る",
     "p": "verb",
-    "r": "いりますか"
+    "r": "いります"
    },
    {
-    "t": "？"
+    "t": "か？"
    }
   ],
   "餃子を醤油につけてください。": [
@@ -116061,8 +116331,8 @@
   "豚の角煮に八角を一つ入れます。": [
    {
     "t": "豚",
-    "z": "豬肉",
-    "j": "豚",
+    "z": "豬",
+    "j": "ぶた",
     "e": "pork",
     "b": "豚",
     "p": "noun",
@@ -116074,7 +116344,7 @@
    {
     "t": "角煮",
     "z": "紅燒肉",
-    "j": "角煮",
+    "j": "かくに",
     "e": "braised pork",
     "b": "角煮",
     "p": "noun",
@@ -116085,8 +116355,8 @@
    },
    {
     "t": "八角",
-    "z": "八角",
-    "j": "八角",
+    "z": "八角茴香",
+    "j": "はっかく",
     "e": "star anise",
     "b": "八角",
     "p": "noun",
@@ -116098,7 +116368,7 @@
    {
     "t": "一つ",
     "z": "一個",
-    "j": "一つ",
+    "j": "ひとつ",
     "e": "one",
     "b": "一つ",
     "p": "numeral",
@@ -116106,9 +116376,9 @@
    },
    {
     "t": "入れます",
-    "z": "加入",
-    "j": "入れる",
-    "e": "add",
+    "z": "放入",
+    "j": "いれます",
+    "e": "put in",
     "b": "入れる",
     "p": "verb",
     "r": "いれます"
@@ -117531,7 +117801,7 @@
    {
     "t": "大根餅",
     "z": "蘿蔔糕",
-    "j": "大根を主材料にした蒸し物",
+    "j": "大根餅",
     "e": "turnip cake",
     "b": "大根餅",
     "p": "noun",
@@ -117541,30 +117811,21 @@
     "t": "に"
    },
    {
-    "t": "台湾",
-    "z": "台湾",
-    "j": "地域名",
-    "e": "Taiwan",
-    "b": "台湾",
+    "t": "台湾とろみ醤油",
+    "z": "臺灣醬油膏",
+    "j": "台湾のとろみ醤油",
+    "e": "Taiwanese thick soy sauce",
+    "b": "台湾とろみ醤油",
     "p": "noun",
-    "r": "たいわん"
-   },
-   {
-    "t": "とろみ醤油",
-    "z": "濃稠醬油",
-    "j": "とろみのある醤油",
-    "e": "thick soy sauce",
-    "b": "とろみ醤油",
-    "p": "noun",
-    "r": "とろみしょうゆ"
+    "r": "たいわんとろみしょうゆ"
    },
    {
     "t": "を"
    },
    {
     "t": "かけます",
-    "z": "かける",
-    "j": "かける動作",
+    "z": "淋上",
+    "j": "かける",
     "e": "drizzle",
     "b": "かける",
     "p": "verb",
@@ -117578,20 +117839,20 @@
    {
     "t": "タイム",
     "z": "百里香",
-    "j": "香りの強いハーブの一種",
-    "e": "thyme",
+    "j": "タイムのハーブ",
+    "e": "Thyme",
     "b": "タイム",
     "p": "noun",
-    "r": "タイム"
+    "r": "たいむ"
    },
    {
     "t": "は"
    },
    {
     "t": "スープ",
-    "z": "湯",
-    "j": "汁物の料理",
-    "e": "soup",
+    "z": "湯品",
+    "j": "スープ",
+    "e": "soups",
     "b": "スープ",
     "p": "noun",
     "r": "スープ"
@@ -117602,7 +117863,7 @@
    {
     "t": "煮込み",
     "z": "燉菜",
-    "j": "長時間煮た料理",
+    "j": "ゆっくり煮る料理",
     "e": "stew",
     "b": "煮込み",
     "p": "noun",
@@ -117614,8 +117875,8 @@
    {
     "t": "合います",
     "z": "合適",
-    "j": "よく調和する",
-    "e": "go well",
+    "j": "適合する",
+    "e": "is good for",
     "b": "合う",
     "p": "verb",
     "r": "あいます"
@@ -119645,7 +119906,7 @@
    {
     "t": "少し",
     "z": "一點點",
-    "j": "わずかな量",
+    "j": "少し",
     "e": "a little",
     "b": "少し",
     "p": "adverb",
@@ -119654,7 +119915,7 @@
    {
     "t": "加えてください",
     "z": "請加",
-    "j": "物を足す動作の丁寧表現",
+    "j": "加えてください",
     "e": "please add",
     "b": "加える",
     "p": "verb",
@@ -120229,16 +120490,28 @@
     "r": "しろこしょう"
    },
    {
-    "t": "は中華スープに"
+    "t": "は"
    },
    {
-    "t": "よく使われます",
-    "z": "經常使用",
-    "j": "よく使われる",
-    "e": "is often used",
+    "t": "中華スープ",
+    "z": "中華湯",
+    "j": "中華スープ",
+    "e": "Chinese soup",
+    "b": "中華スープ",
+    "p": "noun",
+    "r": "ちゅうかスープ"
+   },
+   {
+    "t": "によく"
+   },
+   {
+    "t": "使われます",
+    "z": "被使用",
+    "j": "使います",
+    "e": "use",
     "b": "使う",
     "p": "verb",
-    "r": "よくつかわれます"
+    "r": "つかわれます"
    },
    {
     "t": "。"
@@ -120582,7 +120855,7 @@
    {
     "t": "ホットドッグ",
     "z": "熱狗",
-    "j": "アメリカのサンドイッチ",
+    "j": "ホットドッグ",
     "e": "hot dog",
     "b": "ホットドッグ",
     "p": "noun",
@@ -120593,8 +120866,8 @@
    },
    {
     "t": "イエローマスタード",
-    "z": "黃芥末醬",
-    "j": "黄のマスタード",
+    "z": "黃芥末",
+    "j": "イエローマスタード",
     "e": "yellow mustard",
     "b": "イエローマスタード",
     "p": "noun",
@@ -120605,9 +120878,9 @@
    },
    {
     "t": "かけます",
-    "z": "かける",
+    "z": "加在…上",
     "j": "かけます",
-    "e": "Squeeze",
+    "e": "sprinkle on",
     "b": "かける",
     "p": "verb",
     "r": "かけます"
@@ -172804,9 +173077,9 @@
   "黒い粒が目立たないように、この白いスープには白胡椒を使います。": [
    {
     "t": "黒い粒",
-    "z": "黑色顆粒",
+    "z": "黑色小顆粒",
     "j": "黒い粒",
-    "e": "black specks",
+    "e": "dark specks",
     "b": "黒い粒",
     "p": "noun",
     "r": "くろいつぶ"
@@ -172817,21 +173090,26 @@
    {
     "t": "目立たないように",
     "z": "為了不顯眼",
-    "j": "目立たないように",
-    "e": "so as not to stand out",
-    "b": "目立つ",
+    "j": "見えにくいように",
+    "e": "so do not show",
+    "b": "目立たないように",
     "p": "phrase",
     "r": "めだたないように"
    },
    {
-    "t": "、"
+    "t": "、この"
    },
    {
-    "t": "この白いスープには",
-    "z": "在這個白色湯裡",
-    "j": "この白いスープには",
-    "e": "in this white soup",
-    "r": "このしろいスープには"
+    "t": "白いスープ",
+    "z": "白色湯",
+    "j": "白いスープ",
+    "e": "pale soup",
+    "b": "白いスープ",
+    "p": "noun",
+    "r": "しろいスープ"
+   },
+   {
+    "t": "には"
    },
    {
     "t": "白胡椒",
@@ -172860,40 +173138,82 @@
   ],
   "この醤油は味が濃いので、たれを味見しながら少しずつ加えてください。": [
    {
-    "t": "この醤油",
-    "z": "這個醬油",
-    "j": "この醤油",
-    "e": "this soy sauce",
-    "r": "このしょうゆ"
+    "t": "この"
+   },
+   {
+    "t": "醤油",
+    "z": "醬油",
+    "j": "しょうゆ",
+    "e": "soy sauce",
+    "b": "醤油",
+    "p": "noun",
+    "r": "しょうゆ"
    },
    {
     "t": "は"
    },
    {
-    "t": "味が濃いので",
-    "z": "因為味道濃",
-    "j": "味が濃いので",
-    "e": "because it is strong in flavor",
+    "t": "味",
+    "z": "味道",
+    "j": "あじ",
+    "e": "taste",
+    "b": "味",
+    "p": "noun",
+    "r": "あじ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "濃い",
+    "z": "濃的",
+    "j": "こい",
+    "e": "concentrated",
     "b": "濃い",
     "p": "adjective",
-    "r": "あじがこいので"
+    "r": "こい"
    },
    {
-    "t": "、"
+    "t": "ので、"
    },
    {
-    "t": "たれを味見しながら",
-    "z": "邊嘗調味醬",
-    "j": "たれを味見しながら",
-    "e": "while tasting the sauce",
-    "r": "たれをあじみしながら"
+    "t": "たれ",
+    "z": "醬汁",
+    "j": "たれ",
+    "e": "sauce",
+    "b": "たれ",
+    "p": "noun",
+    "r": "たれ"
    },
    {
-    "t": "少しずつ加えてください",
-    "z": "請一點一點加入",
-    "j": "少しずつ加えてください",
-    "e": "please add little by little",
-    "r": "すこしずつくわえてください"
+    "t": "を"
+   },
+   {
+    "t": "味見しながら",
+    "z": "一邊品嚐",
+    "j": "あじみしながら",
+    "e": "while tasting",
+    "b": "味見する",
+    "p": "verb",
+    "r": "あじみしながら"
+   },
+   {
+    "t": "少しずつ",
+    "z": "一點一點地",
+    "j": "すこしずつ",
+    "e": "gradually",
+    "b": "少しずつ",
+    "p": "adverb",
+    "r": "すこしずつ"
+   },
+   {
+    "t": "加えてください",
+    "z": "請加入",
+    "j": "くわえてください",
+    "e": "please add",
+    "b": "加える",
+    "p": "verb",
+    "r": "くわえてください"
    },
    {
     "t": "。"
@@ -172901,63 +173221,102 @@
   ],
   "サラダの味がぼんやりしているなら、塩を足さずに酢を少し入れると味がはっきりします。": [
    {
-    "t": "サラダの",
-    "z": "沙拉的",
-    "j": "サラダの",
+    "t": "サラダ",
+    "z": "沙拉",
+    "j": "サラダ",
     "e": "salad",
     "b": "サラダ",
     "p": "noun",
-    "r": "サラダの"
+    "r": "サラダ"
    },
    {
-    "t": "味がぼんやりしているなら",
-    "z": "味道淡薄的話",
-    "j": "味がぼんやりしているなら",
-    "e": "if tastes bland",
+    "t": "の"
+   },
+   {
+    "t": "味",
+    "z": "味道",
+    "j": "味",
+    "e": "flavor",
+    "b": "味",
+    "p": "noun",
+    "r": "あじ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ぼんやりしている",
+    "z": "味道淡",
+    "j": "はっきりしない",
+    "e": "flat",
     "b": "ぼんやりする",
-    "p": "phrase",
-    "r": "あじがぼんやりしているなら"
+    "p": "adjective",
+    "r": "ぼんやりしている"
    },
    {
-    "t": "、"
+    "t": "なら、"
    },
    {
-    "t": "塩を足さずに",
-    "z": "不加鹽",
-    "j": "塩を足さずに",
-    "e": "without adding salt",
+    "t": "塩",
+    "z": "鹽",
+    "j": "塩",
+    "e": "salt",
+    "b": "塩",
+    "p": "noun",
+    "r": "しお"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "足さずに",
+    "z": "不加",
+    "j": "加えないで",
+    "e": "without adding",
     "b": "足す",
-    "p": "phrase",
-    "r": "しおをたさずに"
+    "p": "verb",
+    "r": "たさずに"
    },
    {
-    "t": "酢を少し入れると",
-    "z": "加入少許醋的話",
-    "j": "酢を少し入れると",
-    "e": "if add a little vinegar",
+    "t": "酢",
+    "z": "醋",
+    "j": "酢",
+    "e": "vinegar",
+    "b": "酢",
+    "p": "noun",
+    "r": "す"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "少し",
+    "z": "少許",
+    "j": "少し",
+    "e": "a little",
+    "b": "少し",
+    "p": "adverb",
+    "r": "すこし"
+   },
+   {
+    "t": "入れると",
+    "z": "加入時",
+    "j": "入れると",
+    "e": "if you put in",
     "b": "入れる",
-    "p": "phrase",
-    "r": "すをすこしいれると"
+    "p": "verb",
+    "r": "いれると"
    },
    {
-    "t": "味がはっきりします",
-    "z": "味道變清晰",
-    "j": "味がはっきりする",
-    "e": "flavor becomes clear",
-    "b": "はっきりする",
-    "p": "phrase",
-    "r": "あじがはっきりします"
-   },
-   {
-    "t": "。"
+    "t": "味がはっきりします。"
    }
   ],
   "ご飯が炊けたら、温かいうちに米酢を切るように混ぜます。": [
    {
     "t": "ご飯",
-    "z": "米飯",
-    "j": "ご飯",
-    "e": "rice",
+    "z": "飯",
+    "j": "炊いた米",
+    "e": "cooked rice",
     "b": "ご飯",
     "p": "noun",
     "r": "ごはん"
@@ -172967,7 +173326,7 @@
    },
    {
     "t": "炊けたら",
-    "z": "煮熟了",
+    "z": "煮熟之後",
     "j": "炊ける",
     "e": "is cooked",
     "b": "炊ける",
@@ -172978,16 +173337,13 @@
     "t": "、"
    },
    {
-    "t": "温かい",
-    "z": "溫熱的",
-    "j": "温かい",
-    "e": "warm",
-    "b": "温かい",
-    "p": "adjective",
-    "r": "あたたかい"
-   },
-   {
-    "t": "うちに"
+    "t": "温かいうちに",
+    "z": "趁溫熱時",
+    "j": "温かい状態の間に",
+    "e": "while still warm",
+    "b": "温かいうちに",
+    "p": "phrase",
+    "r": "あたたかいうちに"
    },
    {
     "t": "米酢",
@@ -173002,22 +173358,13 @@
     "t": "を"
    },
    {
-    "t": "切るように",
-    "z": "像切一樣",
-    "j": "切るように",
+    "t": "切るように混ぜます",
+    "z": "切拌",
+    "j": "切るように混ぜる",
     "e": "fold in",
-    "b": "切るように",
-    "p": "expression",
-    "r": "きるように"
-   },
-   {
-    "t": "混ぜます",
-    "z": "攪拌",
-    "j": "混ぜる",
-    "e": "mix",
-    "b": "混ぜる",
+    "b": "切るように混ぜる",
     "p": "verb",
-    "r": "まぜます"
+    "r": "きるようにまぜます"
    },
    {
     "t": "。"
@@ -173325,11 +173672,11 @@
    },
    {
     "t": "ほぼ焼けた",
-    "z": "快熟了",
-    "j": "ほぼ焼けた",
+    "z": "幾乎烤熟了",
+    "j": "ほぼ焼けた状態",
     "e": "almost done",
-    "b": "ほぼ焼けた",
-    "p": "phrase",
+    "b": "ほぼ焼ける",
+    "p": "adjective",
     "r": "ほぼやけた"
    },
    {
@@ -173362,8 +173709,8 @@
    {
     "t": "塗って",
     "z": "塗抹",
-    "j": "塗って",
-    "e": "brush",
+    "j": "塗る",
+    "e": "apply",
     "b": "塗る",
     "p": "verb",
     "r": "ぬって"
@@ -173382,8 +173729,8 @@
    },
    {
     "t": "焼きます",
-    "z": "烤",
-    "j": "焼きます",
+    "z": "烘烤",
+    "j": "焼く",
     "e": "bake",
     "b": "焼く",
     "p": "verb",
@@ -173396,7 +173743,7 @@
   "卵が入っているので、マヨネーズは開封後冷蔵庫で保存してください。": [
    {
     "t": "卵",
-    "z": "雞蛋",
+    "z": "蛋",
     "j": "卵",
     "e": "egg",
     "b": "卵",
@@ -173409,7 +173756,7 @@
    {
     "t": "入っている",
     "z": "含有",
-    "j": "入っている",
+    "j": "含まれている",
     "e": "contains",
     "b": "入る",
     "p": "verb",
@@ -173433,7 +173780,7 @@
    {
     "t": "開封後",
     "z": "開封後",
-    "j": "開封後",
+    "j": "開封した後",
     "e": "after opening",
     "b": "開封後",
     "p": "phrase",
@@ -173453,9 +173800,9 @@
    },
    {
     "t": "保存してください",
-    "z": "請保存",
-    "j": "保存してください",
-    "e": "please keep",
+    "z": "請冷藏保存",
+    "j": "保存する",
+    "e": "keep refrigerated",
     "b": "保存する",
     "p": "verb",
     "r": "ほぞんしてください"
@@ -174261,45 +174608,93 @@
   "オートミールに甘みが欲しいときは、砂糖を増やす前にシナモンを試します。": [
    {
     "t": "オートミール",
-    "z": "燕麥片",
+    "z": "燕麥粥",
     "j": "オートミール",
     "e": "oatmeal",
     "b": "オートミール",
     "p": "noun",
-    "r": "オートミール"
+    "r": "おーとみーる"
    },
    {
     "t": "に"
    },
    {
-    "t": "甘みが欲しいときは",
-    "z": "想要甜味的時候",
-    "j": "甘みが欲しいときは",
-    "e": "needs sweetness",
-    "b": "欲しい",
-    "p": "phrase",
-    "r": "あまみがほしいときは"
+    "t": "甘み",
+    "z": "甜味",
+    "j": "あまみ",
+    "e": "sweetness",
+    "b": "甘み",
+    "p": "noun",
+    "r": "あまみ"
    },
    {
-    "t": "、"
+    "t": "が"
    },
    {
-    "t": "砂糖を増やす前に",
-    "z": "在加糖之前",
-    "j": "砂糖を増やす前に",
-    "e": "before adding extra sugar",
+    "t": "欲しい",
+    "z": "想要",
+    "j": "ほしい",
+    "e": "want",
+    "b": "ほしい",
+    "p": "adjective",
+    "r": "ほしい"
+   },
+   {
+    "t": "ときは、"
+   },
+   {
+    "t": "砂糖",
+    "z": "砂糖",
+    "j": "さとう",
+    "e": "sugar",
+    "b": "砂糖",
+    "p": "noun",
+    "r": "さとう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "増やす",
+    "z": "增加",
+    "j": "ふやす",
+    "e": "increase",
     "b": "増やす",
-    "p": "phrase",
-    "r": "さとうをふやすまえに"
+    "p": "verb",
+    "r": "ふやす"
    },
    {
-    "t": "シナモンを試します",
-    "z": "試試肉桂粉",
-    "j": "シナモンを試します",
-    "e": "try cinnamon",
+    "t": "前",
+    "z": "之前",
+    "j": "まえ",
+    "e": "before",
+    "b": "前",
+    "p": "adverb",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "シナモン",
+    "z": "肉桂",
+    "j": "シナモンの香辛料",
+    "e": "cinnamon",
+    "b": "シナモン",
+    "p": "noun",
+    "r": "しなもん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "試します",
+    "z": "試試看",
+    "j": "ためします",
+    "e": "try",
     "b": "試す",
-    "p": "phrase",
-    "r": "シナモンをためします"
+    "p": "verb",
+    "r": "ためします"
    },
    {
     "t": "。"
@@ -174307,39 +174702,54 @@
   ],
   "クミンを砕いたら、焦がさないよう香りが出るまで炒ります。": [
    {
-    "t": "クミンを砕いたら",
-    "z": "孜然搗碎後",
-    "j": "クミンを砕いたら",
-    "e": "after crushing cumin",
+    "t": "クミン",
+    "z": "孜然",
+    "j": "クミンの種子",
+    "e": "Cumin",
+    "b": "クミン",
+    "p": "noun",
+    "r": "くみん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "砕いたら",
+    "z": "搗碎後",
+    "j": "細かく割った後",
+    "e": "crushing",
     "b": "砕く",
-    "p": "phrase",
-    "r": "クミンをくだいたら"
+    "p": "verb",
+    "r": "くだいたら"
    },
    {
     "t": "、"
    },
    {
     "t": "焦がさないよう",
-    "z": "為了不燒焦",
-    "j": "焦がさないよう",
-    "e": "without burning",
+    "z": "不要燒焦",
+    "j": "焼けないようにする",
+    "e": "not burn",
     "b": "焦がす",
-    "p": "phrase",
+    "p": "verb",
     "r": "こがさないよう"
    },
    {
-    "t": "香りが出るまで",
-    "z": "直到出香味",
-    "j": "香りが出るまで",
-    "e": "until fragrant",
-    "b": "出る",
+    "t": "香りが出る",
+    "z": "香味散發",
+    "j": "匂いが出る",
+    "e": "smell fragrant",
+    "b": "香りが出る",
     "p": "phrase",
-    "r": "かおりがでるまで"
+    "r": "かおりがでる"
+   },
+   {
+    "t": "まで"
    },
    {
     "t": "炒ります",
-    "z": "炒",
-    "j": "炒ります",
+    "z": "乾炒",
+    "j": "乾煎りする",
     "e": "toast",
     "b": "炒る",
     "p": "verb",
@@ -174351,34 +174761,79 @@
   ],
   "パクチーが苦手な客がいるので、各自で足せるよう別の器に入れます。": [
    {
-    "t": "パクチーが苦手な客がいるので",
-    "z": "因為有討厭香菜的客人",
-    "j": "パクチーが苦手な客がいるので",
-    "e": "because some guests dislike cilantro",
-    "b": "苦手",
-    "p": "phrase",
-    "r": "パクチーがにがてなきゃくがいるので"
+    "t": "パクチー",
+    "z": "香菜",
+    "j": "香菜の一種",
+    "e": "cilantro",
+    "b": "パクチー",
+    "p": "noun",
+    "r": "パクチー"
    },
    {
-    "t": "、"
+    "t": "が"
    },
    {
-    "t": "各自で足せるよう",
-    "z": "可以自行添加",
-    "j": "各自で足せるよう",
-    "e": "so they can add it themselves",
+    "t": "苦手な",
+    "z": "不喜歡的",
+    "j": "好みではない",
+    "e": "dislikes",
+    "b": "苦手な",
+    "p": "adjective",
+    "r": "にがてな"
+   },
+   {
+    "t": "客",
+    "z": "客人",
+    "j": "訪問客",
+    "e": "guest",
+    "b": "客",
+    "p": "noun",
+    "r": "きゃく"
+   },
+   {
+    "t": "がいるので、"
+   },
+   {
+    "t": "各自で",
+    "z": "各自",
+    "j": "それぞれ自分で",
+    "e": "by themselves",
+    "b": "各自で",
+    "p": "adverb",
+    "r": "かくじで"
+   },
+   {
+    "t": "足せる",
+    "z": "可以添加",
+    "j": "加えることができる",
+    "e": "can add",
     "b": "足す",
-    "p": "phrase",
-    "r": "かくじでたせるよう"
+    "p": "verb",
+    "r": "たせる"
    },
    {
-    "t": "別の器に入れます",
-    "z": "放在另一個碗裡",
-    "j": "別の器に入れます",
-    "e": "serve in separate bowl",
-    "b": "入れる",
+    "t": "よう"
+   },
+   {
+    "t": "別の器",
+    "z": "另外的碗",
+    "j": "別に用意した器",
+    "e": "a separate bowl",
+    "b": "別の器",
     "p": "phrase",
-    "r": "べつのうつわにいれます"
+    "r": "べつのうつわ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れます",
+    "z": "放入",
+    "j": "中に入れる",
+    "e": "put",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれます"
    },
    {
     "t": "。"
@@ -174526,8 +174981,8 @@
   "生のタイムを使うときは、スープへ混ぜる前に茎から葉を外します。": [
    {
     "t": "生",
-    "z": "新鮮的",
-    "j": "そのままの状態の",
+    "z": "生的",
+    "j": "新鮮な",
     "e": "fresh",
     "b": "生",
     "p": "adjective",
@@ -174539,11 +174994,11 @@
    {
     "t": "タイム",
     "z": "百里香",
-    "j": "ハーブの一種",
+    "j": "タイムのハーブ",
     "e": "thyme",
     "b": "タイム",
     "p": "noun",
-    "r": "タイム"
+    "r": "たいむ"
    },
    {
     "t": "を"
@@ -174551,7 +175006,7 @@
    {
     "t": "使う",
     "z": "使用",
-    "j": "用いる",
+    "j": "利用する",
     "e": "use",
     "b": "使う",
     "p": "verb",
@@ -174562,8 +175017,8 @@
    },
    {
     "t": "スープ",
-    "z": "湯",
-    "j": "汁物料理",
+    "z": "湯品",
+    "j": "スープ",
     "e": "soup",
     "b": "スープ",
     "p": "noun",
@@ -174574,8 +175029,8 @@
    },
    {
     "t": "混ぜる",
-    "z": "混合",
-    "j": "かき混ぜる",
+    "z": "攪拌",
+    "j": "混ぜる",
     "e": "stir",
     "b": "混ぜる",
     "p": "verb",
@@ -174587,8 +175042,8 @@
    {
     "t": "茎",
     "z": "莖",
-    "j": "植物の茎",
-    "e": "stem",
+    "j": "茎",
+    "e": "stems",
     "b": "茎",
     "p": "noun",
     "r": "くき"
@@ -174599,8 +175054,8 @@
    {
     "t": "葉",
     "z": "葉子",
-    "j": "植物の葉",
-    "e": "leaf",
+    "j": "葉っぱ",
+    "e": "leaves",
     "b": "葉",
     "p": "noun",
     "r": "は"
@@ -174611,7 +175066,7 @@
    {
     "t": "外します",
     "z": "取下",
-    "j": "取り除く",
+    "j": "取り外す",
     "e": "remove",
     "b": "外す",
     "p": "verb",
@@ -174628,18 +175083,18 @@
    {
     "t": "全部",
     "z": "全部",
-    "j": "全てのもの",
+    "j": "全部",
     "e": "all",
     "b": "全部",
-    "p": "adjective",
+    "p": "adverb",
     "r": "ぜんぶ"
    },
    {
     "t": "取り出せる",
-    "z": "取出",
-    "j": "中から出せる",
+    "z": "能取出",
+    "j": "取って出せる",
     "e": "can remove",
-    "b": "取り出せる",
+    "b": "取り出す",
     "p": "verb",
     "r": "とりだせる"
    },
@@ -174647,21 +175102,18 @@
     "t": "ように、"
    },
    {
-    "t": "料理",
-    "z": "料理",
-    "j": "食べ物を作ること",
-    "e": "cooking",
-    "b": "料理",
-    "p": "noun",
-    "r": "りょうり"
-   },
-   {
-    "t": "前に"
+    "t": "料理前に",
+    "z": "料理之前",
+    "j": "料理する前の時間",
+    "e": "before cooking",
+    "b": "料理前",
+    "p": "adverb",
+    "r": "りょうりまえに"
    },
    {
     "t": "ローリエ",
     "z": "月桂葉",
-    "j": "スパイス用の葉",
+    "j": "ローリエ",
     "e": "bay leaf",
     "b": "ローリエ",
     "p": "noun",
@@ -174672,9 +175124,9 @@
    },
    {
     "t": "枚数",
-    "z": "枚數",
-    "j": "薄いものの数",
-    "e": "number of sheets",
+    "z": "葉片數",
+    "j": "葉の数",
+    "e": "number of leaves",
     "b": "枚数",
     "p": "noun",
     "r": "まいすう"
@@ -174685,7 +175137,7 @@
    {
     "t": "数えます",
     "z": "數",
-    "j": "数をかぞえる",
+    "j": "数える",
     "e": "count",
     "b": "数える",
     "p": "verb",
@@ -195197,22 +195649,13 @@
   ],
   "台湾とろみ醤油には甘みがあるので、つけだれには砂糖を加えません。": [
    {
-    "t": "台湾",
-    "z": "台湾",
-    "j": "地域名",
-    "e": "Taiwan",
-    "b": "台湾",
+    "t": "台湾とろみ醤油",
+    "z": "臺灣醬油膏",
+    "j": "台湾のとろみ醤油",
+    "e": "Taiwanese thick soy sauce",
+    "b": "台湾とろみ醤油",
     "p": "noun",
-    "r": "たいわん"
-   },
-   {
-    "t": "とろみ醤油",
-    "z": "濃稠醤油",
-    "j": "とろみのある醤油",
-    "e": "thick soy sauce",
-    "b": "とろみ醤油",
-    "p": "noun",
-    "r": "とろみしょうゆ"
+    "r": "たいわんとろみしょうゆ"
    },
    {
     "t": "には"
@@ -195220,19 +195663,31 @@
    {
     "t": "甘み",
     "z": "甜味",
-    "j": "甘い味",
-    "e": "sweetness",
+    "j": "甘み",
+    "e": "sweet",
     "b": "甘み",
     "p": "noun",
     "r": "あまみ"
    },
    {
-    "t": "があるので、"
+    "t": "が"
+   },
+   {
+    "t": "ある",
+    "z": "有",
+    "j": "ある",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "ある"
+   },
+   {
+    "t": "ので、"
    },
    {
     "t": "つけだれ",
     "z": "沾醬",
-    "j": "料理をつけるたれ",
+    "j": "つけだれ",
     "e": "dipping sauce",
     "b": "つけだれ",
     "p": "noun",
@@ -195244,7 +195699,7 @@
    {
     "t": "砂糖",
     "z": "砂糖",
-    "j": "甘い調味料",
+    "j": "砂糖",
     "e": "sugar",
     "b": "砂糖",
     "p": "noun",
@@ -195255,8 +195710,8 @@
    },
    {
     "t": "加えません",
-    "z": "不添加",
-    "j": "加えない動作",
+    "z": "不加",
+    "j": "加えない",
     "e": "do not add",
     "b": "加える",
     "p": "verb",
@@ -195269,17 +195724,17 @@
   "入れすぎると煮物が黒くなるので、老抽は少量だけ使います。": [
    {
     "t": "入れすぎると",
-    "z": "放太多的話",
-    "j": "多量に入れる場合",
-    "e": "if put in too much",
-    "b": "入れすぎる",
-    "p": "verb",
+    "z": "放太多會",
+    "j": "入れすぎると",
+    "e": "if put too much",
+    "b": "入れすぎると",
+    "p": "phrase",
     "r": "いれすぎると"
    },
    {
     "t": "煮物",
-    "z": "煮物",
-    "j": "煮て作る料理",
+    "z": "燉菜",
+    "j": "煮物料理",
     "e": "braised dish",
     "b": "煮物",
     "p": "noun",
@@ -195291,10 +195746,10 @@
    {
     "t": "黒くなる",
     "z": "變黑",
-    "j": "色が黒くなること",
-    "e": "become black",
+    "j": "黒くなる",
+    "e": "will become black",
     "b": "黒くなる",
-    "p": "verb",
+    "p": "phrasal verb",
     "r": "くろくなる"
    },
    {
@@ -195302,29 +195757,32 @@
    },
    {
     "t": "老抽",
-    "z": "老抽醬油",
-    "j": "濃厚な醤油の一種",
+    "z": "老抽",
+    "j": "老抽",
     "e": "dark soy sauce",
     "b": "老抽",
     "p": "noun",
-    "r": "らおちゅう"
+    "r": "ラオチョウ"
    },
    {
     "t": "は"
    },
    {
-    "t": "少量だけ",
-    "z": "少量だけ",
-    "j": "ごく少しだけ",
-    "e": "only a little",
-    "b": "少量だけ",
-    "p": "adverb",
-    "r": "しょうりょうだけ"
+    "t": "少量",
+    "z": "少量",
+    "j": "少し",
+    "e": "small amount",
+    "b": "少量",
+    "p": "noun",
+    "r": "しょうりょう"
+   },
+   {
+    "t": "だけ"
    },
    {
     "t": "使います",
-    "z": "使う",
-    "j": "用いる動作",
+    "z": "使用",
+    "j": "使います",
     "e": "use",
     "b": "使う",
     "p": "verb",
@@ -195338,32 +195796,44 @@
    {
     "t": "生抽",
     "z": "生抽",
-    "j": "生抽醤油",
+    "j": "薄口しょうゆの一種",
     "e": "light soy sauce",
     "b": "生抽",
     "p": "noun",
-    "r": "せいちゅう"
+    "r": "シェンチョウ"
    },
    {
     "t": "には"
    },
    {
-    "t": "塩味がある",
+    "t": "塩味",
     "z": "鹹味",
-    "j": "塩味がある",
-    "e": "salty",
-    "b": "塩味がある",
-    "p": "phrase",
-    "r": "しおあじがある"
+    "j": "しおからい味",
+    "e": "salty taste",
+    "b": "塩味",
+    "p": "noun",
+    "r": "しおあじ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ある",
+    "z": "有",
+    "j": "存在する",
+    "e": "have",
+    "b": "ある",
+    "p": "verb",
+    "r": "ある"
    },
    {
     "t": "ので、"
    },
    {
     "t": "下味",
-    "z": "醃料",
-    "j": "料理の前の味付け",
-    "e": "marinade",
+    "z": "底味",
+    "j": "料理の基本的な味つけ",
+    "e": "base seasoning",
     "b": "下味",
     "p": "noun",
     "r": "したあじ"
@@ -195374,7 +195844,7 @@
    {
     "t": "使う",
     "z": "使用",
-    "j": "使います",
+    "j": "用いる",
     "e": "use",
     "b": "使う",
     "p": "verb",
@@ -195386,7 +195856,7 @@
    {
     "t": "塩",
     "z": "鹽",
-    "j": "塩",
+    "j": "調味料の一種",
     "e": "salt",
     "b": "塩",
     "p": "noun",
@@ -195398,7 +195868,7 @@
    {
     "t": "減らします",
     "z": "減少",
-    "j": "減らします",
+    "j": "少なくする",
     "e": "reduce",
     "b": "減らす",
     "p": "verb",
@@ -195536,23 +196006,35 @@
    {
     "t": "リンゴ酢",
     "z": "蘋果醋",
-    "j": "リンゴ酢",
+    "j": "リンゴから作った酢",
     "e": "apple cider vinegar",
     "b": "リンゴ酢",
     "p": "noun",
-    "r": "リンゴす"
+    "r": "りんごす"
    },
    {
     "t": "は"
    },
    {
-    "t": "酸味が強い",
-    "z": "酸味重",
-    "j": "酸味が強い",
-    "e": "sharp",
-    "b": "酸味が強い",
-    "p": "phrase",
-    "r": "さんみがつよい"
+    "t": "酸味",
+    "z": "酸味",
+    "j": "すっぱい味",
+    "e": "sourness",
+    "b": "酸味",
+    "p": "noun",
+    "r": "さんみ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "強い",
+    "z": "強烈",
+    "j": "力が強い",
+    "e": "strong",
+    "b": "強い",
+    "p": "adjective",
+    "r": "つよい"
    },
    {
     "t": "ので、"
@@ -195560,35 +196042,23 @@
    {
     "t": "サラダ",
     "z": "沙拉",
-    "j": "サラダ",
+    "j": "野菜の盛り合わせ料理",
     "e": "salad",
     "b": "サラダ",
     "p": "noun",
-    "r": "サラダ"
+    "r": "さらだ"
    },
    {
-    "t": "に"
-   },
-   {
-    "t": "かける前",
-    "z": "灑前",
-    "j": "かける前に",
-    "e": "before dressing",
-    "b": "かける前",
-    "p": "phrase",
-    "r": "かけるまえ"
-   },
-   {
-    "t": "に"
+    "t": "にかける前に"
    },
    {
     "t": "オリーブオイル",
     "z": "橄欖油",
-    "j": "オリーブオイル",
+    "j": "オリーブから作った油",
     "e": "olive oil",
     "b": "オリーブオイル",
     "p": "noun",
-    "r": "オリーブオイル"
+    "r": "おりーぶおいる"
    },
    {
     "t": "と"
@@ -195596,7 +196066,7 @@
    {
     "t": "混ぜます",
     "z": "混合",
-    "j": "混ぜます",
+    "j": "複数の物を一緒にする",
     "e": "mix",
     "b": "混ぜる",
     "p": "verb",
@@ -195608,25 +196078,28 @@
   ],
   "たれにみりんを加えたら、アルコールを飛ばすために少し煮ます。": [
    {
-    "t": "たれ",
-    "z": "醬汁",
-    "j": "たれ",
-    "e": "sauce",
-    "b": "たれ",
+    "t": "たれに"
+   },
+   {
+    "t": "みりん",
+    "z": "味醂",
+    "j": "みりん",
+    "e": "mirin",
+    "b": "みりん",
     "p": "noun",
-    "r": "たれ"
+    "r": "みりん"
    },
    {
-    "t": "に"
+    "t": "を"
    },
    {
-    "t": "みりんを加えたら",
-    "z": "加入味醂之後",
-    "j": "みりんをくわえたら",
-    "e": "After adding mirin",
-    "b": "みりんを加える",
-    "p": "phrase",
-    "r": "みりんをくわえたら"
+    "t": "加えたら",
+    "z": "加入之後",
+    "j": "加える",
+    "e": "after adding",
+    "b": "加える",
+    "p": "verb",
+    "r": "くわえたら"
    },
    {
     "t": "、"
@@ -195645,7 +196118,7 @@
    },
    {
     "t": "飛ばす",
-    "z": "揮發",
+    "z": "去除",
     "j": "飛ばす",
     "e": "cook off",
     "b": "飛ばす",
@@ -195657,7 +196130,7 @@
    },
    {
     "t": "少し",
-    "z": "少量",
+    "z": "一點",
     "j": "少し",
     "e": "briefly",
     "b": "少し",
@@ -195666,8 +196139,8 @@
    },
    {
     "t": "煮ます",
-    "z": "煮",
-    "j": "煮ます",
+    "z": "燉煮",
+    "j": "煮る",
     "e": "simmer",
     "b": "煮る",
     "p": "verb",
@@ -195680,20 +196153,20 @@
   "三杯鶏を作るときは、火を止める前に台湾米酒の水分を飛ばします。": [
    {
     "t": "三杯鶏",
-    "z": "三杯鶏",
-    "j": "台湾の鶏料理の名前",
+    "z": "三杯雞",
+    "j": "三杯鶏",
     "e": "three cup chicken",
     "b": "三杯鶏",
     "p": "noun",
-    "r": "さんばいどり"
+    "r": "さんばいつけい"
    },
    {
     "t": "を"
    },
    {
     "t": "作る",
-    "z": "做",
-    "j": "作ります",
+    "z": "製作",
+    "j": "作る",
     "e": "making",
     "b": "作る",
     "p": "verb",
@@ -195706,7 +196179,7 @@
     "t": "火",
     "z": "火",
     "j": "火",
-    "e": "fire",
+    "e": "heat",
     "b": "火",
     "p": "noun",
     "r": "ひ"
@@ -195717,32 +196190,23 @@
    {
     "t": "止める",
     "z": "關閉",
-    "j": "止めます",
-    "e": "stop",
+    "j": "止める",
+    "e": "turn off",
     "b": "止める",
     "p": "verb",
     "r": "とめる"
    },
    {
-    "t": "前",
-    "z": "之前",
-    "j": "前の時間",
-    "e": "before",
-    "b": "前",
-    "p": "adverb",
-    "r": "まえ"
-   },
-   {
-    "t": "に"
+    "t": "前に"
    },
    {
     "t": "台湾米酒",
     "z": "台灣米酒",
-    "j": "台湾産の米酒",
+    "j": "台湾米酒",
     "e": "Taiwanese rice wine",
     "b": "台湾米酒",
     "p": "noun",
-    "r": "たいわんまいしゅ"
+    "r": "たいわんミーチュウ"
    },
    {
     "t": "の"
@@ -195760,16 +196224,16 @@
     "t": "を"
    },
    {
-    "t": "飛ばし",
-    "z": "蒸発",
+    "t": "飛ばします",
+    "z": "蒸發",
     "j": "飛ばします",
-    "e": "let reduce",
+    "e": "reduce",
     "b": "飛ばす",
     "p": "verb",
-    "r": "とばし"
+    "r": "とばします"
    },
    {
-    "t": "ます。"
+    "t": "。"
    }
   ],
   "ラー油はとても辛いので、数滴入れてからたれを味見します。": [
@@ -195856,7 +196320,7 @@
    {
     "t": "イエローマスタード",
     "z": "黃芥末醬",
-    "j": "黄のマスタード",
+    "j": "黄色の辛み調味料",
     "e": "yellow mustard",
     "b": "イエローマスタード",
     "p": "noun",
@@ -195866,13 +196330,25 @@
     "t": "は"
    },
    {
-    "t": "辛さが弱い",
-    "z": "不辣",
-    "j": "辛味が少ない",
-    "e": "mild",
-    "b": "辛さが弱い",
-    "p": "phrase",
-    "r": "からさがよわい"
+    "t": "辛さ",
+    "z": "辣度",
+    "j": "味の辛い程度",
+    "e": "spiciness",
+    "b": "辛さ",
+    "p": "noun",
+    "r": "からさ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "弱い",
+    "z": "弱",
+    "j": "強さが足りない",
+    "e": "weak",
+    "b": "弱い",
+    "p": "adjective",
+    "r": "よわい"
    },
    {
     "t": "ので、"
@@ -195880,7 +196356,7 @@
    {
     "t": "子どもたち",
     "z": "孩子們",
-    "j": "子どもたち",
+    "j": "子供の複数形",
     "e": "children",
     "b": "子どもたち",
     "p": "noun",
@@ -195890,22 +196366,34 @@
     "t": "が"
    },
    {
-    "t": "自分で",
+    "t": "自分",
     "z": "自己",
-    "j": "自分で",
+    "j": "本人自身",
     "e": "themselves",
-    "b": "自分で",
-    "p": "adverb",
-    "r": "じぶんで"
+    "b": "自分",
+    "p": "pronoun",
+    "r": "じぶん"
    },
    {
-    "t": "ホットドッグに"
+    "t": "で"
+   },
+   {
+    "t": "ホットドッグ",
+    "z": "熱狗",
+    "j": "パンに挟んだソーセージ料理",
+    "e": "hot dog",
+    "b": "ホットドッグ",
+    "p": "noun",
+    "r": "ホットドッグ"
+   },
+   {
+    "t": "に"
    },
    {
     "t": "かけます",
-    "z": "かける",
-    "j": "かけます",
-    "e": "add",
+    "z": "淋上",
+    "j": "液体を上からかける",
+    "e": "put on",
     "b": "かける",
     "p": "verb",
     "r": "かけます"
@@ -196502,25 +196990,13 @@
   ],
   "柑橘のような香りを引き出すために、花椒をひいて使う前に炒ります。": [
    {
-    "t": "柑橘",
-    "z": "柑橘",
-    "j": "柑橘",
-    "e": "citrus",
-    "b": "柑橘",
-    "p": "noun",
-    "r": "かんきつ"
-   },
-   {
-    "t": "のような"
-   },
-   {
-    "t": "香り",
-    "z": "香氣",
-    "j": "香り",
-    "e": "aroma",
-    "b": "香り",
-    "p": "noun",
-    "r": "かおり"
+    "t": "柑橘のような香り",
+    "z": "柑橘香氣",
+    "j": "柑橘のような香り",
+    "e": "citrus-like aroma",
+    "b": "柑橘のような香り",
+    "p": "phrase",
+    "r": "かんきつのようなかおり"
    },
    {
     "t": "を"
@@ -196544,46 +197020,28 @@
     "e": "Sichuan peppercorn",
     "b": "花椒",
     "p": "noun",
-    "r": "かしょう"
+    "r": "ホアジャオ"
    },
    {
     "t": "を"
    },
    {
-    "t": "ひいて",
-    "z": "磨碎",
-    "j": "ひく",
-    "e": "grind",
-    "b": "ひく",
-    "p": "verb",
-    "r": "ひいて"
+    "t": "ひいて使う",
+    "z": "磨碎使用",
+    "j": "ひいて使う",
+    "e": "grind and use",
+    "b": "ひいて使う",
+    "p": "phrasal verb",
+    "r": "ひいてつかう"
    },
    {
-    "t": "使う",
-    "z": "使用",
-    "j": "使う",
-    "e": "use",
-    "b": "使う",
-    "p": "verb",
-    "r": "つかう"
-   },
-   {
-    "t": "前",
-    "z": "之前",
-    "j": "前",
-    "e": "before",
-    "b": "前",
-    "p": "adverb",
-    "r": "まえ"
-   },
-   {
-    "t": "に"
+    "t": "前に"
    },
    {
     "t": "炒ります",
     "z": "炒",
     "j": "炒る",
-    "e": "Toast",
+    "e": "toast",
     "b": "炒る",
     "p": "verb",
     "r": "いります"
@@ -196594,27 +197052,24 @@
   ],
   "そのままかむと食べにくいので、煮込みが終わったら八角を取り出します。": [
    {
-    "t": "そのまま",
-    "z": "就那樣",
-    "j": "そのまま",
-    "e": "as is",
-    "b": "そのまま",
-    "p": "expression",
-    "r": "そのまま"
+    "t": "そのまま"
    },
    {
-    "t": "かむと",
-    "z": "咬的話",
-    "j": "かむと",
-    "e": "if bite",
-    "b": "かむ",
+    "t": "かむ",
+    "z": "咬",
+    "j": "かみます",
+    "e": "bite",
+    "b": "噛む",
     "p": "verb",
-    "r": "かむと"
+    "r": "かむ"
+   },
+   {
+    "t": "と"
    },
    {
     "t": "食べにくい",
-    "z": "不好吃",
-    "j": "食べにくい",
+    "z": "難以吃",
+    "j": "食べづらいです",
     "e": "hard to eat",
     "b": "食べにくい",
     "p": "adjective",
@@ -196626,8 +197081,8 @@
    {
     "t": "煮込み",
     "z": "燉煮",
-    "j": "煮込み",
-    "e": "braise",
+    "j": "じっくり煮ること",
+    "e": "stewing",
     "b": "煮込み",
     "p": "noun",
     "r": "にこみ"
@@ -196638,7 +197093,7 @@
    {
     "t": "終わったら",
     "z": "結束後",
-    "j": "終わったら",
+    "j": "終わってから",
     "e": "after finishing",
     "b": "終わる",
     "p": "verb",
@@ -196647,7 +197102,7 @@
    {
     "t": "八角",
     "z": "八角",
-    "j": "八角",
+    "j": "はっかくの実",
     "e": "star anise",
     "b": "八角",
     "p": "noun",
@@ -196658,9 +197113,9 @@
    },
    {
     "t": "取り出します",
-    "z": "拿出",
-    "j": "取り出す",
-    "e": "remove",
+    "z": "取出",
+    "j": "取り出します",
+    "e": "take out",
     "b": "取り出す",
     "p": "verb",
     "r": "とりだします"
@@ -196899,12 +197354,21 @@
     "r": "うどん"
    },
    {
-    "t": "にすでに"
+    "t": "に"
+   },
+   {
+    "t": "すでに",
+    "z": "已經",
+    "j": "もう",
+    "e": "already",
+    "b": "すでに",
+    "p": "adverb",
+    "r": "すでに"
    },
    {
     "t": "辛み",
     "z": "辣味",
-    "j": "辛み",
+    "j": "辛い味",
     "e": "spiciness",
     "b": "辛み",
     "p": "noun",
@@ -196916,8 +197380,8 @@
    {
     "t": "ある",
     "z": "有",
-    "j": "ある",
-    "e": "is",
+    "j": "存在する",
+    "e": "has",
     "b": "ある",
     "p": "verb",
     "r": "ある"
@@ -196927,7 +197391,7 @@
    },
    {
     "t": "七味唐辛子",
-    "z": "七味辣椒粉",
+    "z": "七味粉",
     "j": "七味唐辛子",
     "e": "shichimi",
     "b": "七味唐辛子",
@@ -196935,25 +197399,28 @@
     "r": "しちみとうがらし"
    },
    {
-    "t": "を足す前に"
+    "t": "を"
    },
    {
-    "t": "味見",
-    "z": "試味",
-    "j": "味見",
-    "e": "taste",
-    "b": "味見",
-    "p": "noun",
-    "r": "あじみ"
-   },
-   {
-    "t": "してください",
-    "z": "請做",
-    "j": "する",
-    "e": "please do",
-    "b": "する",
+    "t": "足す",
+    "z": "添加",
+    "j": "加える",
+    "e": "add",
+    "b": "足す",
     "p": "verb",
-    "r": "してください"
+    "r": "たす"
+   },
+   {
+    "t": "前に"
+   },
+   {
+    "t": "味見してください",
+    "z": "請先試味道",
+    "j": "味を確かめる",
+    "e": "taste first",
+    "b": "味見する",
+    "p": "verb",
+    "r": "あじみしてください"
    },
    {
     "t": "。"
@@ -197590,7 +198057,7 @@
    {
     "t": "緑色",
     "z": "綠色",
-    "j": "緑",
+    "j": "緑色",
     "e": "green color",
     "b": "緑色",
     "p": "noun",
@@ -197600,16 +198067,16 @@
     "t": "を"
    },
    {
-    "t": "きれいに残すために",
-    "z": "為了保持漂亮",
-    "j": "きれいに残すため",
-    "e": "to keep bright",
+    "t": "きれいに残す",
+    "z": "保持漂亮",
+    "j": "きれいに残す",
+    "e": "stays bright",
     "b": "残す",
-    "p": "verb",
-    "r": "きれいにのこすために"
+    "p": "phrase",
+    "r": "きれいにのこす"
    },
    {
-    "t": "、"
+    "t": "ために、"
    },
    {
     "t": "スープ",
@@ -197618,15 +198085,15 @@
     "e": "soup",
     "b": "スープ",
     "p": "noun",
-    "r": "すーぷ"
+    "r": "スープ"
    },
    {
     "t": "を"
    },
    {
     "t": "器",
-    "z": "碗",
-    "j": "うつわ",
+    "z": "器皿",
+    "j": "器",
     "e": "bowl",
     "b": "器",
     "p": "noun",
@@ -197638,29 +198105,29 @@
    {
     "t": "入れてから",
     "z": "放入之後",
-    "j": "入れる後",
-    "e": "after putting in",
+    "j": "入れる",
+    "e": "is in",
     "b": "入れる",
-    "p": "verb",
+    "p": "phrase",
     "r": "いれてから"
    },
    {
     "t": "パセリ",
-    "z": "歐芹",
+    "z": "香芹",
     "j": "パセリ",
     "e": "parsley",
     "b": "パセリ",
     "p": "noun",
-    "r": "ぱせり"
+    "r": "パセリ"
    },
    {
     "t": "を"
    },
    {
     "t": "散らします",
-    "z": "撒上",
+    "z": "灑落",
     "j": "散らす",
-    "e": "Sprinkle",
+    "e": "sprinkle",
     "b": "散らす",
     "p": "verb",
     "r": "ちらします"
@@ -197953,8 +198420,8 @@
   "あんがだまにならないように、片栗粉を冷水で溶いてから加えます。": [
    {
     "t": "あん",
-    "z": "醬汁",
-    "j": "とろみのあるもの",
+    "z": "芡汁",
+    "j": "あん",
     "e": "sauce",
     "b": "あん",
     "p": "noun",
@@ -197965,9 +198432,9 @@
    },
    {
     "t": "だまにならないように",
-    "z": "不結塊的樣子",
-    "j": "固まらないように",
-    "e": "does not form lumps",
+    "z": "為避免結塊",
+    "j": "だまにならないように",
+    "e": "so it does not form lumps",
     "b": "だまになる",
     "p": "phrase",
     "r": "だまにならないように"
@@ -197978,7 +198445,7 @@
    {
     "t": "片栗粉",
     "z": "馬鈴薯澱粉",
-    "j": "じゃがいものでんぷん",
+    "j": "片栗粉",
     "e": "potato starch",
     "b": "片栗粉",
     "p": "noun",
@@ -197990,7 +198457,7 @@
    {
     "t": "冷水",
     "z": "冷水",
-    "j": "冷たくした水",
+    "j": "冷たい水",
     "e": "cold water",
     "b": "冷水",
     "p": "noun",
@@ -198000,18 +198467,21 @@
     "t": "で"
    },
    {
-    "t": "溶いてから",
-    "z": "溶解後",
-    "j": "水に溶かしてから",
-    "e": "mix before",
+    "t": "溶いて",
+    "z": "溶解",
+    "j": "溶かす",
+    "e": "dissolve",
     "b": "溶く",
-    "p": "phrase",
-    "r": "といてから"
+    "p": "verb",
+    "r": "といて"
+   },
+   {
+    "t": "から"
    },
    {
     "t": "加えます",
     "z": "加入",
-    "j": "足すこと",
+    "j": "加える",
     "e": "add",
     "b": "加える",
     "p": "verb",
@@ -198023,18 +198493,30 @@
   ],
   "水で溶いたコーンスターチを加えたら、スープに透明感ととろみが出るまで混ぜ続けます。": [
    {
-    "t": "水で溶いた",
-    "z": "用水溶解的",
-    "j": "水でといた",
-    "e": "dissolved in water",
+    "t": "水",
+    "z": "水",
+    "j": "水",
+    "e": "water",
+    "b": "水",
+    "p": "noun",
+    "r": "みず"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "溶いた",
+    "z": "溶解",
+    "j": "とかすこと",
+    "e": "dissolved",
     "b": "溶く",
-    "p": "phrase",
-    "r": "みずでといた"
+    "p": "verb",
+    "r": "といた"
    },
    {
     "t": "コーンスターチ",
     "z": "玉米澱粉",
-    "j": "コーン由来の粉",
+    "j": "トウモロコシの澱粉",
     "e": "cornstarch",
     "b": "コーンスターチ",
     "p": "noun",
@@ -198045,11 +198527,11 @@
    },
    {
     "t": "加えたら",
-    "z": "加えた場合は",
-    "j": "入れたら",
-    "e": "after adding",
+    "z": "加入",
+    "j": "加えること",
+    "e": "add",
     "b": "加える",
-    "p": "phrase",
+    "p": "verb",
     "r": "くわえたら"
    },
    {
@@ -198058,7 +198540,7 @@
    {
     "t": "スープ",
     "z": "湯",
-    "j": "汁物料理",
+    "j": "汁物",
     "e": "soup",
     "b": "スープ",
     "p": "noun",
@@ -198070,8 +198552,8 @@
    {
     "t": "透明感",
     "z": "透明感",
-    "j": "見た目の透き通る感じ",
-    "e": "clear",
+    "j": "透き通った感じ",
+    "e": "transparency",
     "b": "透明感",
     "p": "noun",
     "r": "とうめいかん"
@@ -198081,32 +198563,23 @@
    },
    {
     "t": "とろみ",
-    "z": "濃稠",
-    "j": "粘り気が出ること",
-    "e": "thick",
+    "z": "黏稠感",
+    "j": "濃くて粘る感じ",
+    "e": "thickness",
     "b": "とろみ",
     "p": "noun",
     "r": "とろみ"
    },
    {
-    "t": "が"
-   },
-   {
-    "t": "出るまで",
-    "z": "出現前",
-    "j": "生じるまでの時間",
-    "e": "until it appears",
-    "b": "出る",
-    "p": "phrase",
-    "r": "でるまで"
+    "t": "が出るまで"
    },
    {
     "t": "混ぜ続けます",
     "z": "持續攪拌",
-    "j": "ずっとかき混ぜる",
+    "j": "混ぜ続けること",
     "e": "keep stirring",
-    "b": "混ぜる",
-    "p": "phrase",
+    "b": "混ぜ続ける",
+    "p": "verb",
     "r": "まぜつづけます"
    },
    {
@@ -199775,7 +200248,7 @@
    {
     "t": "魚",
     "z": "魚",
-    "j": "魚",
+    "j": "さかな",
     "e": "fish",
     "b": "魚",
     "p": "noun",
@@ -199787,11 +200260,11 @@
    {
     "t": "臭み",
     "z": "腥味",
-    "j": "悪いにおい",
+    "j": "いやなにおい",
     "e": "fishy smell",
     "b": "臭み",
     "p": "noun",
-    "r": "におみ"
+    "r": "くさみ"
    },
    {
     "t": "を"
@@ -199799,8 +200272,8 @@
    {
     "t": "抑える",
     "z": "抑制",
-    "j": "弱めます",
-    "e": "helps reduce",
+    "j": "おさえる",
+    "e": "suppress",
     "b": "抑える",
     "p": "verb",
     "r": "おさえる"
@@ -199809,30 +200282,21 @@
     "t": "ために、"
    },
    {
-    "t": "煮る",
-    "z": "燉煮",
-    "j": "ゆっくり煮ます",
-    "e": "simmer",
-    "b": "煮る",
-    "p": "verb",
-    "r": "にる"
-   },
-   {
-    "t": "前",
-    "z": "之前",
-    "j": "前に",
-    "e": "before",
-    "b": "前",
-    "p": "noun",
-    "r": "まえ"
+    "t": "煮る前",
+    "z": "煮之前",
+    "j": "にるまえ",
+    "e": "before cooking",
+    "b": "煮る前",
+    "p": "phrase",
+    "r": "にるまえ"
    },
    {
     "t": "に"
    },
    {
     "t": "日本酒",
-    "z": "日本清酒",
-    "j": "日本のお酒",
+    "z": "日本酒",
+    "j": "にほんしゅ",
     "e": "sake",
     "b": "日本酒",
     "p": "noun",
@@ -199843,8 +200307,8 @@
    },
    {
     "t": "かけます",
-    "z": "倒入",
-    "j": "上にかけます",
+    "z": "澆上",
+    "j": "かけます",
     "e": "pour",
     "b": "かける",
     "p": "verb",
@@ -200204,11 +200668,11 @@
    {
     "t": "沙茶醤",
     "z": "沙茶醬",
-    "j": "中華調味料の一種",
+    "j": "ピリ辛の調味料",
     "e": "shacha sauce",
     "b": "沙茶醤",
     "p": "noun",
-    "r": "サチャジャン"
+    "r": "サーチャージャン"
    },
    {
     "t": "は"
@@ -200216,8 +200680,8 @@
    {
     "t": "味",
     "z": "味道",
-    "j": "味の感じ",
-    "e": "flavor",
+    "j": "食べ物の味",
+    "e": "taste",
     "b": "味",
     "p": "noun",
     "r": "あじ"
@@ -200227,7 +200691,7 @@
    },
    {
     "t": "濃い",
-    "z": "濃厚",
+    "z": "濃",
     "j": "味が強い",
     "e": "strong",
     "b": "濃い",
@@ -200239,8 +200703,8 @@
    },
    {
     "t": "麺",
-    "z": "麵條",
-    "j": "小麦や米で作った細長い食べ物",
+    "z": "麵",
+    "j": "麺類",
     "e": "noodles",
     "b": "麺",
     "p": "noun",
@@ -200252,7 +200716,7 @@
    {
     "t": "加える",
     "z": "加入",
-    "j": "他の物に加える",
+    "j": "足す",
     "e": "add",
     "b": "加える",
     "p": "verb",
@@ -200261,7 +200725,7 @@
    {
     "t": "前",
     "z": "之前",
-    "j": "ある時点の前",
+    "j": "ある時点より前",
     "e": "before",
     "b": "前",
     "p": "noun",
@@ -200272,8 +200736,8 @@
    },
    {
     "t": "スープ",
-    "z": "湯汁",
-    "j": "料理に使う液体食品",
+    "z": "湯、湯汁",
+    "j": "汁物",
     "e": "soup",
     "b": "スープ",
     "p": "noun",
@@ -200285,7 +200749,7 @@
    {
     "t": "のばします",
     "z": "稀釋",
-    "j": "液体を薄くする",
+    "j": "薄める",
     "e": "dilute",
     "b": "のばす",
     "p": "verb",
@@ -206520,6 +206984,719 @@
     "b": "確認する",
     "p": "verb",
     "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ベーキングパウダーを生地に混ぜたら、よく膨らむように早めに焼きます。": [
+   {
+    "t": "ベーキングパウダー",
+    "z": "泡打粉",
+    "j": "パンやケーキを膨らませる粉",
+    "e": "baking powder",
+    "b": "ベーキングパウダー",
+    "p": "noun",
+    "r": "ベーキングパウダー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "生地",
+    "z": "麵糰",
+    "j": "材料を混ぜたもの",
+    "e": "dough",
+    "b": "生地",
+    "p": "noun",
+    "r": "きじ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "混ぜたら",
+    "z": "混合後",
+    "j": "材料を混ぜる",
+    "e": "mix",
+    "b": "混ぜる",
+    "p": "verb",
+    "r": "まぜたら"
+   },
+   {
+    "t": "、よく"
+   },
+   {
+    "t": "膨らむ",
+    "z": "膨脹",
+    "j": "大きくふくらむ",
+    "e": "rise",
+    "b": "膨らむ",
+    "p": "verb",
+    "r": "ふくらむ"
+   },
+   {
+    "t": "ように"
+   },
+   {
+    "t": "早めに",
+    "z": "提早",
+    "j": "普通より早い時間にする",
+    "e": "early",
+    "b": "早め",
+    "p": "adverb",
+    "r": "はやめに"
+   },
+   {
+    "t": "焼きます",
+    "z": "烤",
+    "j": "加熱して調理する",
+    "e": "bake",
+    "b": "焼く",
+    "p": "verb",
+    "r": "やきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "麺のスープが重く感じるときは、黒酢を一さじ入れるとさっぱりします。": [
+   {
+    "t": "麺",
+    "z": "麵",
+    "j": "麺",
+    "e": "noodle",
+    "b": "麺",
+    "p": "noun",
+    "r": "めん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "スープ",
+    "z": "湯",
+    "j": "スープ",
+    "e": "soup",
+    "b": "スープ",
+    "p": "noun",
+    "r": "スープ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "重く感じるとき",
+    "z": "口味濃重時",
+    "j": "重く感じるとき",
+    "e": "tastes heavy",
+    "b": "重く感じるとき",
+    "p": "phrase",
+    "r": "おもくかんじるとき"
+   },
+   {
+    "t": "は、"
+   },
+   {
+    "t": "黒酢",
+    "z": "黑醋",
+    "j": "黒酢",
+    "e": "black vinegar",
+    "b": "黒酢",
+    "p": "noun",
+    "r": "くろず"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一さじ",
+    "z": "一匙",
+    "j": "一さじ",
+    "e": "a spoonful",
+    "b": "一さじ",
+    "p": "noun",
+    "r": "ひとさじ"
+   },
+   {
+    "t": "入れる",
+    "z": "加進",
+    "j": "入れる",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれる"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "さっぱりします",
+    "z": "變得清爽",
+    "j": "さっぱりする",
+    "e": "makes it feel lighter",
+    "b": "さっぱりする",
+    "p": "verb",
+    "r": "さっぱりします"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "豆板醤の香りを油に移すため、豆腐を入れる前にさっと炒めます。": [
+   {
+    "t": "豆板醤",
+    "z": "辣豆瓣醬",
+    "j": "豆板醤",
+    "e": "chili bean paste",
+    "b": "豆板醤",
+    "p": "noun",
+    "r": "とうばんじゃん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "香り",
+    "z": "香氣",
+    "j": "香り",
+    "e": "aroma",
+    "b": "香り",
+    "p": "noun",
+    "r": "かおり"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "油",
+    "z": "油",
+    "j": "油",
+    "e": "oil",
+    "b": "油",
+    "p": "noun",
+    "r": "あぶら"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "移す",
+    "z": "轉移",
+    "j": "移す",
+    "e": "transfer",
+    "b": "移す",
+    "p": "verb",
+    "r": "うつす"
+   },
+   {
+    "t": "ため、"
+   },
+   {
+    "t": "豆腐",
+    "z": "豆腐",
+    "j": "豆腐",
+    "e": "tofu",
+    "b": "豆腐",
+    "p": "noun",
+    "r": "とうふ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入れる",
+    "z": "放入",
+    "j": "入れる",
+    "e": "adding",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれる"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "adverb",
+    "r": "まえ"
+   },
+   {
+    "t": "にさっと"
+   },
+   {
+    "t": "炒めます",
+    "z": "炒",
+    "j": "炒めます",
+    "e": "Fry",
+    "b": "炒める",
+    "p": "verb",
+    "r": "いためます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "あとで目を刺激しないように、チリパウダーを漬けだれに混ぜるときは手袋をしてください。": [
+   {
+    "t": "あとで",
+    "z": "之後",
+    "j": "後で",
+    "e": "later",
+    "b": "あとで",
+    "p": "adverb",
+    "r": "あとで"
+   },
+   {
+    "t": "目",
+    "z": "眼睛",
+    "j": "目",
+    "e": "eyes",
+    "b": "目",
+    "p": "noun",
+    "r": "め"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "刺激しない",
+    "z": "不刺激",
+    "j": "刺激しない",
+    "e": "not irritate",
+    "b": "刺激する",
+    "p": "verb",
+    "r": "しげきしない"
+   },
+   {
+    "t": "ように、"
+   },
+   {
+    "t": "チリパウダー",
+    "z": "辣椒粉",
+    "j": "チリパウダー",
+    "e": "chili powder",
+    "b": "チリパウダー",
+    "p": "noun",
+    "r": "チリパウダー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "漬けだれ",
+    "z": "醃料",
+    "j": "漬けだれ",
+    "e": "marinade",
+    "b": "漬けだれ",
+    "p": "noun",
+    "r": "つけだれ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "混ぜる",
+    "z": "拌入",
+    "j": "混ぜる",
+    "e": "mix",
+    "b": "混ぜる",
+    "p": "verb",
+    "r": "まぜる"
+   },
+   {
+    "t": "ときは"
+   },
+   {
+    "t": "手袋をしてください",
+    "z": "請戴手套",
+    "j": "手袋を着用してください",
+    "e": "wear gloves",
+    "b": "手袋をする",
+    "p": "expression",
+    "r": "てぶくろをしてください"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "クミンは温かみのある土っぽい風味を加えます。": [
+   {
+    "t": "クミン",
+    "z": "孜然",
+    "j": "クミンの種子",
+    "e": "Cumin",
+    "b": "クミン",
+    "p": "noun",
+    "r": "くみん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "温かみ",
+    "z": "溫暖",
+    "j": "感じる暖かさ",
+    "e": "warmth",
+    "b": "温かみ",
+    "p": "noun",
+    "r": "あたたかみ"
+   },
+   {
+    "t": "のある"
+   },
+   {
+    "t": "土っぽい",
+    "z": "泥土味的",
+    "j": "土のような味の",
+    "e": "earthy",
+    "b": "土っぽい",
+    "p": "adjective",
+    "r": "つちっぽい"
+   },
+   {
+    "t": "風味",
+    "z": "風味",
+    "j": "味の特徴",
+    "e": "flavor",
+    "b": "風味",
+    "p": "noun",
+    "r": "ふうみ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "加えます",
+    "z": "加",
+    "j": "入れる",
+    "e": "adds",
+    "b": "加える",
+    "p": "verb",
+    "r": "くわえます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "老抽を使って、豚の角煮に濃い色をつけます。": [
+   {
+    "t": "老抽",
+    "z": "老抽",
+    "j": "老抽",
+    "e": "dark soy sauce",
+    "b": "老抽",
+    "p": "noun",
+    "r": "ラオチョウ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使って",
+    "z": "使用",
+    "j": "使います",
+    "e": "use",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかって"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "豚",
+    "z": "豬肉",
+    "j": "豚肉",
+    "e": "pork",
+    "b": "豚",
+    "p": "noun",
+    "r": "ぶた"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "角煮",
+    "z": "紅燒肉",
+    "j": "角煮料理",
+    "e": "braised pork",
+    "b": "角煮",
+    "p": "noun",
+    "r": "かくに"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "濃い色",
+    "z": "深色",
+    "j": "濃い色",
+    "e": "deep color",
+    "b": "濃い色",
+    "p": "phrase",
+    "r": "こいいろ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "つけます",
+    "z": "附加",
+    "j": "つけます",
+    "e": "give",
+    "b": "つける",
+    "p": "verb",
+    "r": "つけます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "生地がべたつくので、こね始める前に台に小麦粉を振ります。": [
+   {
+    "t": "生地",
+    "z": "生麵糰",
+    "j": "生地",
+    "e": "dough",
+    "b": "生地",
+    "p": "noun",
+    "r": "きじ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "べたつく",
+    "z": "黏的",
+    "j": "べたつく",
+    "e": "sticky",
+    "b": "べたつく",
+    "p": "adjective",
+    "r": "べたつく"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "こね始める",
+    "z": "開始揉",
+    "j": "こねて始める",
+    "e": "begin kneading",
+    "b": "こね始める",
+    "p": "verb",
+    "r": "こねはじめる"
+   },
+   {
+    "t": "前に"
+   },
+   {
+    "t": "台",
+    "z": "工作臺",
+    "j": "台",
+    "e": "table",
+    "b": "台",
+    "p": "noun",
+    "r": "だい"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "小麦粉",
+    "z": "麵粉",
+    "j": "小麦粉",
+    "e": "flour",
+    "b": "小麦粉",
+    "p": "noun",
+    "r": "こむぎこ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "振ります",
+    "z": "撒布",
+    "j": "振ります",
+    "e": "dust",
+    "b": "振る",
+    "p": "verb",
+    "r": "ふります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "フライドポテト用にケチャップをもらえますか？": [
+   {
+    "t": "フライドポテト",
+    "z": "薯條",
+    "j": "フライドポテト",
+    "e": "fries",
+    "b": "フライドポテト",
+    "p": "noun",
+    "r": "フライドポテト"
+   },
+   {
+    "t": "用に"
+   },
+   {
+    "t": "ケチャップ",
+    "z": "番茄醬",
+    "j": "ケチャップ",
+    "e": "ketchup",
+    "b": "ケチャップ",
+    "p": "noun",
+    "r": "ケチャップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "もらえます",
+    "z": "可以給我",
+    "j": "受け取ることができる",
+    "e": "can I have",
+    "b": "もらう",
+    "p": "verb",
+    "r": "もらえます"
+   },
+   {
+    "t": "か？"
+   }
+  ],
+  "生の玉ねぎでは水分が出るので、ドライラブにはオニオンパウダーを使います。": [
+   {
+    "t": "生の玉ねぎ",
+    "z": "新鮮洋蔥",
+    "j": "新鮮な玉ねぎ",
+    "e": "fresh onion",
+    "b": "玉ねぎ",
+    "p": "noun",
+    "r": "なまのたまねぎ"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "水分",
+    "z": "水分",
+    "j": "水分",
+    "e": "water content",
+    "b": "水分",
+    "p": "noun",
+    "r": "すいぶん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "出る",
+    "z": "出現",
+    "j": "出る",
+    "e": "come out",
+    "b": "出る",
+    "p": "verb",
+    "r": "でる"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "ドライラブ",
+    "z": "乾擦料",
+    "j": "ドライラブ",
+    "e": "dry rub",
+    "b": "ドライラブ",
+    "p": "noun",
+    "r": "ドライラブ"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "オニオンパウダー",
+    "z": "洋蔥粉",
+    "j": "オニオンパウダー",
+    "e": "onion powder",
+    "b": "オニオンパウダー",
+    "p": "noun",
+    "r": "オニオンパウダー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使います",
+    "z": "使用",
+    "j": "使う",
+    "e": "use",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかいます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "氷砂糖は溶けにくいので、スープの煮始めに加えます。": [
+   {
+    "t": "氷砂糖",
+    "z": "冰糖",
+    "j": "氷砂糖",
+    "e": "rock sugar",
+    "b": "氷砂糖",
+    "p": "noun",
+    "r": "こおりざとう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "溶けにくい",
+    "z": "難溶解",
+    "j": "溶けにくい",
+    "e": "dissolves slowly",
+    "b": "溶けにくい",
+    "p": "phrase",
+    "r": "とけにくい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "スープ",
+    "z": "湯",
+    "j": "スープ",
+    "e": "soup",
+    "b": "スープ",
+    "p": "noun",
+    "r": "スープ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "煮始め",
+    "z": "開始煮",
+    "j": "煮始め",
+    "e": "starting to simmer",
+    "b": "煮始め",
+    "p": "phrase",
+    "r": "にはじめ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "加えます",
+    "z": "加入",
+    "j": "加えます",
+    "e": "add",
+    "b": "加える",
+    "p": "verb",
+    "r": "くわえます"
    },
    {
     "t": "。"

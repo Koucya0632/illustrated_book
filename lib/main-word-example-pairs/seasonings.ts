@@ -1,4 +1,49 @@
-import type { MainWordComplexExample } from "./types";
+import type {
+  MainWordComplexExample,
+  MainWordSimpleExampleOverride,
+} from "./types";
+
+export const SEASONINGS_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  {
+    id: "cumin",
+    en: "Cumin adds a warm, earthy flavor.",
+    ja: "クミンは温かみのある土っぽい風味を加えます。",
+    zh: "孜然帶來溫暖、土香的風味。",
+  },
+  {
+    id: "dark-soy-sauce",
+    en: "Use dark soy sauce to give the braised pork a deeper color.",
+    ja: "老抽を使って、豚の角煮に濃い色をつけます。",
+    zh: "用老抽替滷肉上色。",
+  },
+  {
+    id: "ketchup",
+    en: "Can I have ketchup with the fries?",
+    ja: "フライドポテト用にケチャップをもらえますか？",
+    zh: "薯條可以給我番茄醬嗎？",
+  },
+];
+
+export const SEASONINGS_PREVIOUS_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  {
+    id: "cumin",
+    en: "Cumin adds a warm, earthy flavor.",
+    ja: "クミンは温かくて土のような風味を加えます。",
+    zh: "孜然帶來溫暖、土香的風味。",
+  },
+  {
+    id: "dark-soy-sauce",
+    en: "Use dark soy sauce to give the braised pork a deeper color.",
+    ja: "老抽を加えて、煮込み料理に色とコクをつけます。",
+    zh: "用老抽替滷肉上色。",
+  },
+  {
+    id: "ketchup",
+    en: "Can I have ketchup with the fries?",
+    ja: "フライドポテトにケチャップをもらえますか？",
+    zh: "薯條可以給我番茄醬嗎？",
+  },
+];
 
 export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "salt", en: "Taste the soup before adding salt because the stock is already quite salty.", ja: "だしに塩味があるので、塩を足す前にスープを味見してください。", zh: "高湯已經很鹹，加鹽前先嘗一下湯。" },
@@ -10,7 +55,7 @@ export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "vinegar", en: "If the salad tastes flat, a small amount of vinegar can brighten the flavor without more salt.", ja: "サラダの味がぼんやりしているなら、塩を足さずに酢を少し入れると味がはっきりします。", zh: "沙拉味道平淡時，加一點醋就能提味，不必再加鹽。" },
   { id: "rice-vinegar", en: "After the rice is cooked, fold in the rice vinegar while the grains are still warm.", ja: "ご飯が炊けたら、温かいうちに米酢を切るように混ぜます。", zh: "飯煮好後趁熱用切拌方式拌入米醋。" },
   { id: "chili-sauce", en: "Because not everyone likes spicy food, serve the chili sauce on the side.", ja: "辛い物が苦手な人もいるので、チリソースは別添えにします。", zh: "不是每個人都吃辣，所以辣椒醬另外放在旁邊。" },
-  { id: "chili-powder", en: "Wear gloves when mixing the chili powder into the marinade so it does not irritate your eyes later.", ja: "あとで目を刺激しないように、チリパウダーを下味へ混ぜるときは手袋をしてください。", zh: "把辣椒粉拌進醃料時要戴手套，免得之後刺激眼睛。" },
+  { id: "chili-powder", en: "Wear gloves when mixing the chili powder into the marinade so it does not irritate your eyes later.", ja: "あとで目を刺激しないように、チリパウダーを漬けだれに混ぜるときは手袋をしてください。", zh: "把辣椒粉拌進醃料時要戴手套，免得之後刺激眼睛。" },
   { id: "chili-flakes", en: "If you want only mild heat, sprinkle chili flakes on your own slice rather than the whole pizza.", ja: "少しだけ辛くしたいなら、ピザ全体ではなく自分の一切れにクラッシュドチリをかけます。", zh: "只想要微辣時，把辣椒片撒在自己那片披薩上，不要撒整張。" },
   { id: "mustard", en: "Although the mustard looks mild, taste a little before spreading it over the whole sandwich.", ja: "見た目は辛くなさそうでも、サンドイッチ全体に塗る前にマスタードを少し味見してください。", zh: "芥末看起來不辣，也要先嘗一點再抹滿整個三明治。" },
   { id: "ketchup", en: "Since the meatloaf is almost done, brush ketchup on top and bake it for five more minutes.", ja: "ミートローフがほぼ焼けたので、上にケチャップを塗ってあと五分焼きます。", zh: "肉餅快烤好了，在表面刷上番茄醬再烤五分鐘。" },
@@ -22,7 +67,7 @@ export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "cooking-wine", en: "After adding cooking wine, let it simmer briefly so the alcohol smell fades.", ja: "料理酒を加えたら、アルコールのにおいが弱くなるまで少し煮立てます。", zh: "加入料酒後稍微煮一下，讓酒精味散去。" },
   { id: "msg", en: "Because the broth already has plenty of flavor, taste it before deciding whether to add MSG.", ja: "だしに十分うま味があるので、うま味調味料を入れるか決める前に味見します。", zh: "高湯已經很鮮，所以決定是否加味精前先試味道。" },
   { id: "garlic-powder", en: "When fresh garlic is unavailable, garlic powder adds flavor without changing the sauce's texture.", ja: "生にんにくがないときは、ソースの食感を変えずにガーリックパウダーで風味を足せます。", zh: "沒有新鮮大蒜時，蒜粉能增添風味又不改變醬汁口感。" },
-  { id: "onion-powder", en: "I use onion powder in the dry rub because fresh onion would make the mixture wet.", ja: "生の玉ねぎでは水分が出るので、乾燥した下味にはオニオンパウダーを使います。", zh: "新鮮洋蔥會讓乾式醃料變濕，所以我使用洋蔥粉。" },
+  { id: "onion-powder", en: "I use onion powder in the dry rub because fresh onion would make the mixture wet.", ja: "生の玉ねぎでは水分が出るので、ドライラブにはオニオンパウダーを使います。", zh: "新鮮洋蔥會讓乾式醃料變濕，所以我使用洋蔥粉。" },
   { id: "curry-powder", en: "Toast the curry powder briefly before adding liquid so the spices become more fragrant.", ja: "香りを引き出すために、水分を加える前にカレー粉を短時間炒めます。", zh: "加入液體前先短暫炒香咖哩粉，香料味會更明顯。" },
   { id: "five-spice-powder", en: "Since five-spice powder is strong, start with a small amount and add more only after tasting.", ja: "五香粉は香りが強いので、少量から始めて味見後に足してください。", zh: "五香粉味道很強，先放少量，試味道後再增加。" },
   { id: "cinnamon", en: "If the oatmeal needs sweetness, try cinnamon first before adding extra sugar.", ja: "オートミールに甘みが欲しいときは、砂糖を増やす前にシナモンを試します。", zh: "燕麥粥想增加甜味時，先試加肉桂再加糖。" },
@@ -35,13 +80,13 @@ export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "white-sugar", en: "If the jam is still too tart after cooking, add white sugar a little at a time.", ja: "ジャムを煮ても酸っぱすぎるなら、白砂糖を少しずつ足してください。", zh: "果醬煮好後仍太酸，可以一點一點加入白糖。" },
   { id: "brown-sugar", en: "Because brown sugar holds moisture, the cookies stay softer after they cool.", ja: "ブラウンシュガーは水分を保つので、クッキーは冷めても柔らかく仕上がります。", zh: "紅糖能保留水分，所以餅乾冷卻後仍較柔軟。" },
   { id: "dark-brown-sugar", en: "I dissolve the dark brown sugar in warm water before adding it to the cold milk.", ja: "冷たい牛乳へ加える前に、黒糖をぬるま湯で溶かします。", zh: "我先用溫水溶解黑糖，再加入冷牛奶。" },
-  { id: "rock-sugar", en: "Since rock sugar dissolves slowly, add it early while the soup is still simmering.", ja: "氷砂糖は溶けにくいので、スープを煮ている早い段階で加えます。", zh: "冰糖溶得慢，所以在湯還燉煮的前段就加入。" },
+  { id: "rock-sugar", en: "Since rock sugar dissolves slowly, add it early while the soup is still simmering.", ja: "氷砂糖は溶けにくいので、スープの煮始めに加えます。", zh: "冰糖溶得慢，所以在湯還燉煮的前段就加入。" },
   { id: "honey", en: "Wait until the tea cools slightly before adding honey so its aroma remains noticeable.", ja: "香りを残すために、お茶が少し冷めてから蜂蜜を加えます。", zh: "茶稍微放涼後再加蜂蜜，香氣比較能保留。" },
   { id: "thick-soy-sauce", en: "Because Taiwanese thick soy sauce is already sweet, I do not add sugar to the dipping sauce.", ja: "台湾とろみ醤油には甘みがあるので、つけだれには砂糖を加えません。", zh: "醬油膏本身有甜味，所以我不在沾醬裡加糖。" },
   { id: "dark-soy-sauce", en: "Use only a little dark soy sauce because too much will make the braised dish nearly black.", ja: "入れすぎると煮物が黒くなるので、老抽は少量だけ使います。", zh: "老抽放太多會讓滷味變得很黑，所以只用一點。" },
   { id: "light-soy-sauce", en: "Since light soy sauce is salty, reduce the salt when you use it in the marinade.", ja: "生抽には塩味があるので、下味に使うときは塩を減らします。", zh: "生抽本身很鹹，用在醃料時要減少鹽量。" },
   { id: "white-vinegar", en: "If the kettle has mineral deposits, soak them with diluted white vinegar before rinsing.", ja: "やかんに水あかが付いたら、薄めたホワイトビネガーにつけてからすすぎます。", zh: "水壺有水垢時，用稀釋白醋浸泡後再沖洗。" },
-  { id: "black-vinegar", en: "When the noodle soup tastes heavy, a spoonful of black vinegar makes it feel lighter.", ja: "麺のスープが重く感じるときは、黒酢を一杯入れるとさっぱりします。", zh: "麵湯太厚重時，加一匙黑醋會更清爽。" },
+  { id: "black-vinegar", en: "When the noodle soup tastes heavy, a spoonful of black vinegar makes it feel lighter.", ja: "麺のスープが重く感じるときは、黒酢を一さじ入れるとさっぱりします。", zh: "麵湯太厚重時，加一匙黑醋會更清爽。" },
   { id: "apple-cider-vinegar", en: "Because apple cider vinegar is sharp, I mix it with olive oil before dressing the salad.", ja: "リンゴ酢は酸味が強いので、サラダにかける前にオリーブオイルと混ぜます。", zh: "蘋果醋酸味強，所以淋沙拉前我會先和橄欖油混合。" },
   { id: "mirin", en: "After adding mirin to the sauce, simmer it briefly so the alcohol cooks off.", ja: "たれにみりんを加えたら、アルコールを飛ばすために少し煮ます。", zh: "味醂加進醬汁後稍微煮一下，讓酒精揮發。" },
   { id: "rice-wine", en: "When making three cup chicken, let the Taiwanese rice wine reduce before turning off the heat.", ja: "三杯鶏を作るときは、火を止める前に台湾米酒の水分を飛ばします。", zh: "做三杯雞時，關火前要讓米酒收乾。" },
@@ -51,7 +96,7 @@ export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "yellow-mustard", en: "Because yellow mustard is mild, the children add it to their hot dogs themselves.", ja: "イエローマスタードは辛さが弱いので、子どもたちが自分でホットドッグにかけます。", zh: "黃芥末味道溫和，所以孩子自己加在熱狗上。" },
   { id: "wasabi", en: "If the wasabi is too strong, mix a smaller amount into the soy sauce.", ja: "わさびが辛すぎるなら、少量を醤油へ混ぜてください。", zh: "山葵太嗆時，取少量拌進醬油。" },
   { id: "sweet-chili-sauce", en: "Although sweet chili sauce is mild, check the label because some brands are much hotter.", ja: "スイートチリソースは甘めですが、辛い商品もあるので表示を確認してください。", zh: "甜辣醬通常溫和，但有些品牌很辣，請查看標示。" },
-  { id: "chili-bean-paste", en: "Fry the chili bean paste briefly before adding tofu so its aroma spreads through the oil.", ja: "香りを油へ移すために、豆腐を入れる前に豆板醤を短く炒めます。", zh: "放豆腐前先短暫炒豆瓣醬，讓香氣融入油裡。" },
+  { id: "chili-bean-paste", en: "Fry the chili bean paste briefly before adding tofu so its aroma spreads through the oil.", ja: "豆板醤の香りを油に移すため、豆腐を入れる前にさっと炒めます。", zh: "放豆腐前先短暫炒豆瓣醬，讓香氣融入油裡。" },
   { id: "shacha-sauce", en: "Because shacha sauce is rich, I thin it with broth before adding it to noodles.", ja: "沙茶醤は味が濃いので、麺へ加える前にスープでのばします。", zh: "沙茶醬味道濃，所以加進麵前我會用高湯調稀。" },
   { id: "peanut-butter", en: "If the peanut butter is too firm to spread, warm the toast rather than adding water.", ja: "ピーナッツバターが固くて塗れないときは、水を加えずトーストを温めます。", zh: "花生醬太硬不好抹時，把吐司加熱，不要加水。" },
   { id: "sesame-paste", en: "Stir the sesame paste well because the oil often separates while it is stored.", ja: "保存中に油が分離しやすいので、ごまペーストをよく混ぜてから使います。", zh: "芝麻醬存放時常會油水分離，使用前要充分攪拌。" },
@@ -70,13 +115,26 @@ export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "oregano", en: "Since dried oregano is stronger than fresh leaves, I use a smaller amount in the sauce.", ja: "乾燥オレガノは生の葉より香りが強いので、ソースには少なめに使います。", zh: "乾燥奧勒岡比新鮮葉味道濃，所以醬汁裡放較少。" },
   { id: "parsley", en: "Add the parsley after the soup is in the bowls so its green color stays bright.", ja: "緑色をきれいに残すために、スープを器へ入れてからパセリを散らします。", zh: "湯盛進碗後再撒巴西里，綠色才會保持鮮亮。" },
   { id: "vanilla-extract", en: "Because vanilla extract is concentrated, measure it instead of pouring it straight into the batter.", ja: "バニラエッセンスは濃縮されているので、生地へ直接注がず量って使います。", zh: "香草精很濃縮，要量好再加，不要直接倒進麵糊。" },
-  { id: "baking-powder", en: "Once the baking powder is mixed into the batter, bake it soon so the cake rises well.", ja: "ベーキングパウダーを生地へ混ぜたら、よく膨らむように早めに焼きます。", zh: "發粉拌進麵糊後要盡快烘烤，蛋糕才會膨得好。" },
+  { id: "baking-powder", en: "Once the baking powder is mixed into the batter, bake it soon so the cake rises well.", ja: "ベーキングパウダーを生地に混ぜたら、よく膨らむように早めに焼きます。", zh: "發粉拌進麵糊後要盡快烘烤，蛋糕才會膨得好。" },
   { id: "baking-soda", en: "If the recipe has no acidic ingredient, too much baking soda can leave a bitter taste.", ja: "酸味のある材料がないレシピでは、重曹を入れすぎると苦味が残ることがあります。", zh: "食譜沒有酸性材料時，小蘇打粉放太多可能留下苦味。" },
   { id: "potato-starch", en: "Mix the potato starch with cold water before adding it so the sauce does not form lumps.", ja: "あんがだまにならないように、片栗粉を冷水で溶いてから加えます。", zh: "太白粉先用冷水調開再加入，醬汁才不會結塊。" },
   { id: "cornstarch", en: "After adding the cornstarch mixture, keep stirring until the soup becomes clear and thick.", ja: "水で溶いたコーンスターチを加えたら、スープに透明感ととろみが出るまで混ぜ続けます。", zh: "加入玉米澱粉水後持續攪拌，直到湯變透明濃稠。" },
-  { id: "flour", en: "Because the dough is sticky, dust the table with flour before you begin kneading it.", ja: "生地がべたつくので、こね始める前に台へ小麦粉を振ります。", zh: "麵糰很黏，開始揉以前先在桌面撒麵粉。" },
+  { id: "flour", en: "Because the dough is sticky, dust the table with flour before you begin kneading it.", ja: "生地がべたつくので、こね始める前に台に小麦粉を振ります。", zh: "麵糰很黏，開始揉以前先在桌面撒麵粉。" },
   { id: "bouillon-powder", en: "Since bouillon powder already contains salt, taste the soup before seasoning it again.", ja: "ブイヨンパウダーには塩分があるので、さらに味を付ける前にスープを味見します。", zh: "高湯粉已含鹽，進一步調味前先嘗湯。" },
   { id: "chicken-bouillon-powder", en: "If you use chicken bouillon powder in the stir-fry, reduce both the salt and soy sauce.", ja: "炒め物に鶏ガラスープの素を使うなら、塩と醤油の両方を減らしてください。", zh: "炒菜使用雞粉時，鹽和醬油都要減量。" },
   { id: "kombu-powder", en: "I add kombu powder when the miso soup needs more depth but I have no time to make stock.", ja: "だしを取る時間がなく、味噌汁にコクが足りないときは昆布パウダーを加えます。", zh: "沒時間熬高湯、味噌湯又不夠有層次時，我會加昆布粉。" },
   { id: "bonito-powder", en: "Sprinkle the bonito powder just before eating so its smoky aroma remains strong.", ja: "香ばしい香りを残すために、食べる直前に鰹節粉をかけます。", zh: "吃以前才撒柴魚粉，煙燻香氣會較濃。" },
+];
+
+export const SEASONINGS_PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
+  { id: "baking-powder", en: "Once the baking powder is mixed into the batter, bake it soon so the cake rises well.", ja: "ベーキングパウダーを生地へ混ぜたら、よく膨らむように早めに焼きます。", zh: "發粉拌進麵糊後要盡快烘烤，蛋糕才會膨得好。" },
+  { id: "black-vinegar", en: "When the noodle soup tastes heavy, a spoonful of black vinegar makes it feel lighter.", ja: "麺のスープが重く感じるときは、黒酢を一杯入れるとさっぱりします。", zh: "麵湯太厚重時，加一匙黑醋會更清爽。" },
+  { id: "chili-bean-paste", en: "Fry the chili bean paste briefly before adding tofu so its aroma spreads through the oil.", ja: "香りを油へ移すために、豆腐を入れる前に豆板醤を短く炒めます。", zh: "放豆腐前先短暫炒豆瓣醬，讓香氣融入油裡。" },
+  { id: "chili-powder", en: "Wear gloves when mixing the chili powder into the marinade so it does not irritate your eyes later.", ja: "あとで目を刺激しないように、チリパウダーを下味へ混ぜるときは手袋をしてください。", zh: "把辣椒粉拌進醃料時要戴手套，免得之後刺激眼睛。" },
+  { id: "cumin", en: "After crushing the cumin seeds, toast them until they smell fragrant but do not let them burn.", ja: "クミンを砕いたら、焦がさないよう香りが出るまで炒ります。", zh: "孜然壓碎後炒到散發香氣，但不要燒焦。" },
+  { id: "dark-soy-sauce", en: "Use only a little dark soy sauce because too much will make the braised dish nearly black.", ja: "入れすぎると煮物が黒くなるので、老抽は少量だけ使います。", zh: "老抽放太多會讓滷味變得很黑，所以只用一點。" },
+  { id: "flour", en: "Because the dough is sticky, dust the table with flour before you begin kneading it.", ja: "生地がべたつくので、こね始める前に台へ小麦粉を振ります。", zh: "麵糰很黏，開始揉以前先在桌面撒麵粉。" },
+  { id: "ketchup", en: "Since the meatloaf is almost done, brush ketchup on top and bake it for five more minutes.", ja: "ミートローフがほぼ焼けたので、上にケチャップを塗ってあと五分焼きます。", zh: "肉餅快烤好了，在表面刷上番茄醬再烤五分鐘。" },
+  { id: "onion-powder", en: "I use onion powder in the dry rub because fresh onion would make the mixture wet.", ja: "生の玉ねぎでは水分が出るので、乾燥した下味にはオニオンパウダーを使います。", zh: "新鮮洋蔥會讓乾式醃料變濕，所以我使用洋蔥粉。" },
+  { id: "rock-sugar", en: "Since rock sugar dissolves slowly, add it early while the soup is still simmering.", ja: "氷砂糖は溶けにくいので、スープを煮ている早い段階で加えます。", zh: "冰糖溶得慢，所以在湯還燉煮的前段就加入。" },
 ];

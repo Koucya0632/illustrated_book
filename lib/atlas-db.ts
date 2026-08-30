@@ -1425,47 +1425,6 @@ export async function listAtlasReviewItems(
   `;
 }
 
-export async function listAtlasFriendVisibleItems(
-  viewerUserId: string,
-  limit = 60,
-): Promise<(AtlasItemRow & { owner_username: string | null; thumb_path: string | null })[]> {
-  const sql = requireSql();
-  return sql<(AtlasItemRow & { owner_username: string | null; thumb_path: string | null })[]>`
-    SELECT i.*, p.username AS owner_username, img.thumb_path
-    FROM user_atlas_items i
-    JOIN user_atlas_images img
-      ON img.id = i.image_id
-     AND img.user_id = i.user_id
-     AND img.deleted_at IS NULL
-    LEFT JOIN profiles p ON p.id = i.user_id
-    WHERE i.deleted_at IS NULL
-      AND i.user_id <> ${viewerUserId}::uuid
-      AND i.review_status <> 'takedown'
-      AND (
-        (
-          i.visibility = 'friends'
-          AND EXISTS (
-            SELECT 1
-            FROM user_friendships f
-            WHERE f.user_id = ${viewerUserId}::uuid
-              AND f.friend_user_id = i.user_id
-              AND f.status = 'accepted'
-          )
-        )
-        OR EXISTS (
-          SELECT 1
-          FROM atlas_item_grants g
-          WHERE g.viewer_user_id = ${viewerUserId}::uuid
-            AND g.owner_user_id = i.user_id
-            AND g.item_id = i.id
-            AND g.scope = 'view'
-        )
-      )
-    ORDER BY i.updated_at DESC
-    LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
-  `;
-}
-
 export interface AtlasSyncBundle {
   serverTime: string;
   images: AtlasImageRow[];

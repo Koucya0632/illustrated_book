@@ -200,12 +200,6 @@ export default function AtlasClient() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Link
-            href="/atlas/friends"
-            className="inline-flex items-center justify-center rounded-2xl bg-tuji-pink px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-soft transition hover:-translate-y-0.5"
-          >
-            朋友圖鑑
-          </Link>
-          <Link
             href="/atlas/public"
             className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-soft transition hover:-translate-y-0.5"
           >

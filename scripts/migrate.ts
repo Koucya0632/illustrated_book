@@ -1217,6 +1217,9 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS user_entitlement_events_created_idx
      ON user_entitlement_events(created_at DESC)`,
 
+  // 好友可見從未上線，這兩張表沒有任何寫入端，讀路徑已於 2026-08 移除。
+  // 分享是二值的：私有，或通過審核閘門對所有人公開（tuji-ios docs/adr/0012）。
+  // 表留著是因為 migration 是 append-only，刪掉換不到任何東西。
   `CREATE TABLE IF NOT EXISTS user_friendships (
      user_id        UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
      friend_user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,

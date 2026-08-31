@@ -1,12 +1,36 @@
 {
   "target": "atlas-spans",
   "source": "generated",
-  "recordedAt": "2026-08-31T01:29:09.678Z",
-  "fixtureSha256": "6c4e0cdb80e4b9fb6dbbebd8343dab041e54ada7fac7ead021b795c693cc8964",
+  "recordedAt": "2026-08-31T08:35:23.815Z",
+  "runs": 3,
+  "aggregatedFrom": "three runs of the identical slice at temperature 0 with escalating retries",
   "sentencesSha256": "f616ab479d2799f4e699fb853fa7eb991218e035e9c281abfe10f6a4a6b5ce46",
-  "graderSha256": "d2dead5e8ad62db2c5de0413a976650019f6dae308071856d9586ccc6fb1340a",
-  "generatorSha256": "88110fb2c0baaf64ef992541cf357191092299125ca1b1f63f361bae8ab94945",
   "promptSha256": "9d2eff59af3c37c3398679a56b26e24ecaf92b2e7413959bc171895dd4335ce3",
+  "graderSha256": "d2dead5e8ad62db2c5de0413a976650019f6dae308071856d9586ccc6fb1340a",
+  "generatorSha256": "7a2698ef499220b72c61355ccf5f7ad6156505ec5ade384fdffe0d4f67d071d6",
+  "noiseBand": {
+    "measuredAt": "2026-08-31T08:35:23.816Z",
+    "note": "three runs of the identical slice, temperature 0 with escalating retries",
+    "observations": [
+      0.8938,
+      0.8625,
+      0.8812
+    ],
+    "mean": 0.8792,
+    "sd": 0.0157,
+    "spread": 0.0313,
+    "previous": {
+      "note": "same slice at the API default temperature of 1.0",
+      "observations": [
+        0.8812,
+        0.7875,
+        0.8375
+      ],
+      "mean": 0.8354,
+      "sd": 0.0469,
+      "spread": 0.0937
+    }
+  },
   "score": {
     "scope": {
       "words": 40,
@@ -23,42 +47,28 @@
     "issueKeys": [],
     "generation": {
       "sentences": 480,
-      "firstPassAccepted": 401,
-      "firstPassYield": 0.8354,
-      "totalAttempts": 604,
-      "attemptsPerSentence": 1.258,
-      "retriedSentences": 79,
+      "firstPassAccepted": 422,
+      "firstPassYield": 0.8792,
+      "totalAttempts": 641,
+      "attemptsPerSentence": 1.336,
+      "retriedSentences": 58,
       "rejectionReasons": {
-        "generated gloss contains a usage or conjugation explanation": 89,
-        "span j gloss contains a grammar note instead of only contextual meaning": 16,
-        "span text is not present in sentence order": 14,
-        "span reading omits kana from the complete phrase": 8,
-        "span e gloss contains a grammar note instead of only contextual meaning": 1,
-        "span reading is too short for the complete phrase": 1
+        "generated gloss contains a usage or conjugation explanation": 127,
+        "span text is not present in sentence order": 22,
+        "span e gloss contains a grammar note instead of only contextual meaning": 17,
+        "span j gloss contains a grammar note instead of only contextual meaning": 7,
+        "span reading omits kana from the complete phrase": 1,
+        "model omitted generated key": 1
       },
       "usage": {
-        "requests": 172,
-        "input": 224677,
-        "output": 120487,
-        "estimatedCostUsd": 0.2826
+        "requests": 224,
+        "input": 288074,
+        "output": 130420,
+        "estimatedCostUsd": 0.3239
       },
       "model": "gpt-4.1-mini",
-      "elapsedSeconds": 145,
+      "elapsedSeconds": 162,
       "rewrittenSentences": 0
     }
-  },
-  "noiseBand": {
-    "measuredAt": "2026-08-31T01:36:03.873Z",
-    "note": "three runs of the identical slice with nothing changed between them",
-    "observations": [
-      0.8812,
-      0.7875,
-      0.8375
-    ],
-    "mean": 0.8354,
-    "sd": 0.0469,
-    "spread": 0.0937
-  },
-  "runs": 3,
-  "aggregatedFrom": "three runs of the identical slice, aggregated so the baseline is not one lucky sample"
+  }
 }

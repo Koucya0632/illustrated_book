@@ -41,18 +41,15 @@ const HOLDOUT = path.join(EVALS_DIR, "fixtures", "spans-holdout.json");
 const CATALOG_FIXTURE = path.join(EVALS_DIR, "fixtures", "atlas-examples.json");
 const BASELINE = path.join(EVALS_DIR, "baselines", "atlas-spans.generated.json");
 
-// Measured, not guessed. Three runs of the identical 160-sentence slice — same prompt,
-// same grader, same model, nothing changed between them — returned 88.1%, 78.8% and
-// 83.8%: a 9.4 point spread, sd 4.7 points. That is wider than the 2.9 points pure
-// binomial sampling would give at n=160, because the generator batches five sentences per
-// request and a bad batch fails together.
+// Measured, not guessed, and re-measured after the fix. Three runs of the identical
+// 160-sentence slice used to return 88.1 / 78.8 / 83.8 — sd 4.7 points — because the
+// generator sampled at the API's default temperature of 1.0. It now sends temperature 0
+// on the first attempt and only raises it on a retry, and the same three runs return
+// 89.4 / 86.3 / 88.1: sd 1.57.
 //
-// Comparing one run against a one-run baseline compounds that (sd ~6.6 points), so a 95%
-// band is roughly +/-13. Hence the tolerance. It is honest rather than useful: at this
-// width the eval catches a prompt change that breaks generation outright, and cannot see
-// a real five-point degradation. Narrowing it means removing the noise at its source —
-// running generation at temperature 0 — not tightening the number.
-const YIELD_TOLERANCE = 0.13;
+// One run against a one-run baseline compounds that to sd ~2.2, so 95% is +/-4.4 points.
+// Rounded up, hence this number. Tighten it only against another measurement.
+const YIELD_TOLERANCE = 0.05;
 
 // gpt-4.1-mini list price per million tokens, for reporting a run's cost only.
 const PRICE_PER_MTOK = { input: 0.4, output: 1.6 };

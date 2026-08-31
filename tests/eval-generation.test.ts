@@ -1,13 +1,14 @@
 import assert from "node:assert/strict";
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import test from "node:test";
 
 import { MAIN_WORD_EXAMPLE_PAIRS } from "../lib/main-word-example-pairs";
 import { auditFromSpans, verifyAgainstAudited } from "../evals/corpus-to-audit.mjs";
 import { compare } from "../evals/run-eval.mjs";
-import { readAttemptLog } from "../evals/run-generation-eval.mjs";
+import { promptSha256, readAttemptLog } from "../evals/run-generation-eval.mjs";
 
 function loadPair() {
   const fixture = JSON.parse(
@@ -194,4 +195,43 @@ test("a stochastic target never fails on key-set noise alone", () => {
   current.score.issueKeys = ["some-category|word|1||field"];
   assert.equal(compare(baseline, current, RATE).verdict, "unchanged");
   assert.equal(compare(baseline, current).verdict, "regressed");
+});
+
+test("the prompt hash covers the model's instructions and nothing else", () => {
+  // This returned null for a while: the extraction searched for `].join("\n")` written
+  // with a real newline instead of a literal backslash-n, found nothing, and reported
+  // no hash rather than an error. A null hash silently disables the whole check, so the
+  // contract is pinned from both sides — it must move for a prompt edit, and must not
+  // move for an edit anywhere else in the file.
+  const generator = new URL("../scripts/generate-example-spans.ts", import.meta.url);
+  const original = readFileSync(generator, "utf8");
+  const baseline = promptSha256(fileURLToPath(generator));
+  assert.match(baseline ?? "", /^[0-9a-f]{64}$/);
+
+  const dir = mkdtempSync(path.join(tmpdir(), "tuji-prompt-"));
+  const editedPrompt = path.join(dir, "prompt-edited.ts");
+  writeFileSync(
+    editedPrompt,
+    original.replace(
+      "Do not rewrite, normalize, translate, or omit any part of the sentence.",
+      "Do not rewrite or omit any part of the sentence.",
+    ),
+    "utf8",
+  );
+  assert.notEqual(promptSha256(editedPrompt), baseline, "a prompt edit must move the hash");
+
+  const editedElsewhere = path.join(dir, "flag-added.ts");
+  writeFileSync(
+    editedElsewhere,
+    original.replace(
+      'const apply = argv.includes("--apply");',
+      'const apply = argv.includes("--apply");\n  const unusedFlag = argv.includes("--nothing");',
+    ),
+    "utf8",
+  );
+  assert.equal(
+    promptSha256(editedElsewhere),
+    baseline,
+    "an edit outside the prompt must not move the hash",
+  );
 });

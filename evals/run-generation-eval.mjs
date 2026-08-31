@@ -41,9 +41,18 @@ const HOLDOUT = path.join(EVALS_DIR, "fixtures", "spans-holdout.json");
 const CATALOG_FIXTURE = path.join(EVALS_DIR, "fixtures", "atlas-examples.json");
 const BASELINE = path.join(EVALS_DIR, "baselines", "atlas-spans.generated.json");
 
-// A first-pass yield that drops by more than this is a regression; anything inside it is
-// sampling noise from a model that runs at the API's default temperature.
-const YIELD_TOLERANCE = 0.05;
+// Measured, not guessed. Three runs of the identical 160-sentence slice — same prompt,
+// same grader, same model, nothing changed between them — returned 88.1%, 78.8% and
+// 83.8%: a 9.4 point spread, sd 4.7 points. That is wider than the 2.9 points pure
+// binomial sampling would give at n=160, because the generator batches five sentences per
+// request and a bad batch fails together.
+//
+// Comparing one run against a one-run baseline compounds that (sd ~6.6 points), so a 95%
+// band is roughly +/-13. Hence the tolerance. It is honest rather than useful: at this
+// width the eval catches a prompt change that breaks generation outright, and cannot see
+// a real five-point degradation. Narrowing it means removing the noise at its source —
+// running generation at temperature 0 — not tightening the number.
+const YIELD_TOLERANCE = 0.13;
 
 // gpt-4.1-mini list price per million tokens, for reporting a run's cost only.
 const PRICE_PER_MTOK = { input: 0.4, output: 1.6 };
@@ -72,10 +81,10 @@ function sha256(file) {
 // The whole generator file's hash moves for any edit, including a new CLI flag, so it
 // cannot say whether the model's instructions changed. Hashing the prompt block alone
 // can: a moved yield either has a moved prompt behind it or it does not.
-function promptSha256(generatorFile) {
+export function promptSha256(generatorFile) {
   const source = fs.readFileSync(generatorFile, "utf8");
   const start = source.indexOf("const prompt = [");
-  const end = source.indexOf('].join("\n");', start);
+  const end = source.indexOf('].join("\\n");', start);
   if (start === -1 || end === -1) return null;
   return createHash("sha256").update(source.slice(start, end)).digest("hex");
 }

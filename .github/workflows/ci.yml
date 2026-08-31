@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # next lint is deliberately not run: this repo has no ESLint config, and the
+      # command drops into an interactive setup wizard that would hang the job.
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Tests
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee test.log
+          # The test script passes a ** glob straight through to the runner. If it ever
+          # matches nothing, every assertion disappears and the job still exits 0 — a
+          # green tick over zero tests. Count them and refuse a suspiciously small run.
+          # node --test prints the spec reporter on a TTY and TAP when piped, so the
+          # count line is "ℹ tests N" locally and "# tests N" here. Matching only the
+          # first is how this guard failed the first time it ever ran.
+          ran=$(grep -oE '^(ℹ|#) tests [0-9]+' test.log | grep -oE '[0-9]+' | tail -1)
+          echo "test count: ${ran:-0}"
+          if [ "${ran:-0}" -lt 300 ]; then
+            echo "::error::only ${ran:-0} tests ran; expected 300+. The glob probably matched nothing."
+            exit 1
+          fi
+
+      # Scores the frozen catalog snapshot with the vendored grader: no network, no
+      # database, about a second. Exits non-zero when a finding appears that the
+      # recorded baseline does not have. The database and generator targets are not
+      # here on purpose — one needs production credentials, the other spends money.
+      - name: Catalog eval (frozen fixture)
+        run: npm run eval

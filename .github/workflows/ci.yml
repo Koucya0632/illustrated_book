@@ -35,7 +35,10 @@ jobs:
           # The test script passes a ** glob straight through to the runner. If it ever
           # matches nothing, every assertion disappears and the job still exits 0 — a
           # green tick over zero tests. Count them and refuse a suspiciously small run.
-          ran=$(grep -oE '^ℹ tests [0-9]+' test.log | grep -oE '[0-9]+' | tail -1)
+          # node --test prints the spec reporter on a TTY and TAP when piped, so the
+          # count line is "ℹ tests N" locally and "# tests N" here. Matching only the
+          # first is how this guard failed the first time it ever ran.
+          ran=$(grep -oE '^(ℹ|#) tests [0-9]+' test.log | grep -oE '[0-9]+' | tail -1)
           echo "test count: ${ran:-0}"
           if [ "${ran:-0}" -lt 300 ]; then
             echo "::error::only ${ran:-0} tests ran; expected 300+. The glob probably matched nothing."

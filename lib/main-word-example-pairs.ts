@@ -52,7 +52,12 @@ import type {
   MainWordExampleText,
   MainWordSimpleExampleOverride,
 } from "./main-word-example-pairs/types";
-import { ZODIAC_COMPLEX_EXAMPLES } from "./main-word-example-pairs/zodiac";
+import {
+  ZODIAC_COMPLEX_EXAMPLES,
+  ZODIAC_PREVIOUS_COMPLEX_EXAMPLES,
+  ZODIAC_PREVIOUS_SIMPLE_OVERRIDES,
+  ZODIAC_SIMPLE_OVERRIDES,
+} from "./main-word-example-pairs/zodiac";
 
 export type MainWordTargetExample = MainWordExampleText & {
   cefrLevel: CEFRLevel;
@@ -92,6 +97,7 @@ const SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
   ...SUPERMARKET_SIMPLE_OVERRIDES,
   ...TRANSPORTATION_SIMPLE_OVERRIDES,
   ...SEASONINGS_SIMPLE_OVERRIDES,
+  ...ZODIAC_SIMPLE_OVERRIDES,
 ];
 
 const PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
@@ -104,11 +110,13 @@ const PREVIOUS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   ...SUPERMARKET_PREVIOUS_COMPLEX_EXAMPLES,
   ...TRANSPORTATION_PREVIOUS_COMPLEX_EXAMPLES,
   ...SEASONINGS_PREVIOUS_COMPLEX_EXAMPLES,
+  ...ZODIAC_PREVIOUS_COMPLEX_EXAMPLES,
 ];
 
 const PREVIOUS_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
   ...TRANSPORTATION_PREVIOUS_SIMPLE_OVERRIDES,
   ...SEASONINGS_PREVIOUS_SIMPLE_OVERRIDES,
+  ...ZODIAC_PREVIOUS_SIMPLE_OVERRIDES,
 ];
 
 function uniqueById<T extends { id: string }>(rows: T[], label: string): Map<string, T> {

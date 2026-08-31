@@ -615,35 +615,46 @@
     "t": "."
    }
   ],
-  "Aquarius is represented by a water bearer.": [
+  "My friend drew the Aquarius symbol on my birthday card.": [
    {
-    "t": "Aquarius",
-    "z": "寶瓶座",
-    "j": "みずがめざ",
-    "e": "Aquarius",
-    "b": "Aquarius",
+    "t": "My friend",
+    "z": "我的朋友",
+    "j": "私の友達",
+    "e": "my friend",
+    "b": "friend",
     "p": "noun"
    },
    {
     "t": " "
    },
    {
-    "t": "is represented",
-    "z": "由...代表",
-    "j": "あらわされます",
-    "e": "is represented",
-    "b": "represent",
+    "t": "drew",
+    "z": "畫了",
+    "j": "描いた",
+    "e": "drew",
+    "b": "draw",
     "p": "verb"
    },
    {
-    "t": " by a "
+    "t": " the "
    },
    {
-    "t": "water bearer",
-    "z": "水瓶",
-    "j": "みずかめ",
-    "e": "water bearer",
-    "b": "water bearer",
+    "t": "Aquarius symbol",
+    "z": "水瓶座符號",
+    "j": "水瓶座の記号",
+    "e": "Aquarius symbol",
+    "b": "Aquarius symbol",
+    "p": "noun"
+   },
+   {
+    "t": " on "
+   },
+   {
+    "t": "my birthday card",
+    "z": "我的生日卡",
+    "j": "私の誕生日カード",
+    "e": "my birthday card",
+    "b": "birthday card",
     "p": "noun"
    },
    {
@@ -3177,28 +3188,47 @@
     "t": "."
    }
   ],
-  "Her zodiac sign is Cancer.": [
+  "My mother checks the Cancer horoscope every morning.": [
    {
-    "t": "Her "
-   },
-   {
-    "t": "zodiac sign",
-    "z": "星座",
-    "j": "星座",
-    "e": "zodiac sign",
-    "b": "zodiac sign",
+    "t": "My mother",
+    "z": "我的媽媽",
+    "j": "私の母",
+    "e": "my mother",
+    "b": "mother",
     "p": "noun"
    },
    {
-    "t": " is "
+    "t": " "
    },
    {
-    "t": "Cancer",
-    "z": "巨蟹座",
-    "j": "蟹座",
-    "e": "Cancer",
-    "b": "Cancer",
+    "t": "checks",
+    "z": "查看",
+    "j": "確認する",
+    "e": "checks",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Cancer horoscope",
+    "z": "巨蟹座運勢",
+    "j": "蟹座の運勢",
+    "e": "Cancer horoscope",
+    "b": "Cancer horoscope",
     "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every morning",
+    "z": "每天早上",
+    "j": "毎朝",
+    "e": "every morning",
+    "b": "every morning",
+    "p": "phrase"
    },
    {
     "t": "."
@@ -10394,17 +10424,28 @@
     "t": "."
    }
   ],
-  "Leo is represented by a lion.": [
+  "My nephew drew a lion next to the Leo symbol.": [
    {
-    "t": "Leo",
-    "z": "獅子座",
-    "j": "獅子座",
-    "e": "Leo",
-    "b": "Leo",
+    "t": "My nephew",
+    "z": "我的外甥",
+    "j": "おい",
+    "e": "my nephew",
+    "b": "nephew",
     "p": "noun"
    },
    {
-    "t": " is represented by a "
+    "t": " "
+   },
+   {
+    "t": "drew",
+    "z": "畫了",
+    "j": "描いた",
+    "e": "drew",
+    "b": "draw",
+    "p": "verb"
+   },
+   {
+    "t": " a "
    },
    {
     "t": "lion",
@@ -10415,27 +10456,60 @@
     "p": "noun"
    },
    {
-    "t": "."
-   }
-  ],
-  "Libra is represented by scales.": [
+    "t": " next to the "
+   },
    {
-    "t": "Libra",
-    "z": "天秤座",
-    "j": "てんびんざのせいざ",
-    "e": "Libra",
-    "b": "Libra",
+    "t": "Leo symbol",
+    "z": "獅子座符號",
+    "j": "獅子座の記号",
+    "e": "Leo symbol",
+    "b": "Leo symbol",
     "p": "noun"
    },
    {
-    "t": " is represented by "
+    "t": "."
+   }
+  ],
+  "I found the Libra symbol on the horoscope poster.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
    },
    {
-    "t": "scales",
-    "z": "天秤",
-    "j": "てんびん",
-    "e": "scales",
-    "b": "天秤",
+    "t": " "
+   },
+   {
+    "t": "found",
+    "z": "找到了",
+    "j": "見つけた",
+    "e": "found",
+    "b": "find",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Libra symbol",
+    "z": "天秤座符號",
+    "j": "天秤座の記号",
+    "e": "Libra symbol",
+    "b": "Libra symbol",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "horoscope poster",
+    "z": "占星海報",
+    "j": "占いのポスター",
+    "e": "horoscope poster",
+    "b": "horoscope poster",
     "p": "noun"
    },
    {
@@ -16378,24 +16452,49 @@
     "t": "."
    }
   ],
-  "Sagittarius is represented by an archer.": [
+  "The magazine uses a bow and arrow for Sagittarius.": [
    {
-    "t": "Sagittarius",
-    "z": "射手座",
-    "j": "いてざのせいざ",
-    "e": "Sagittarius",
-    "b": "Sagittarius",
+    "t": "The "
+   },
+   {
+    "t": "magazine",
+    "z": "雜誌",
+    "j": "雑誌",
+    "e": "magazine",
+    "b": "magazine",
     "p": "noun"
    },
    {
-    "t": " is represented by an "
+    "t": " "
    },
    {
-    "t": "archer",
-    "z": "射手",
-    "j": "いて",
-    "e": "archer",
-    "b": "archer",
+    "t": "uses",
+    "z": "使用",
+    "j": "使う",
+    "e": "uses",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "bow and arrow",
+    "z": "弓箭",
+    "j": "弓矢",
+    "e": "bow and arrow",
+    "b": "bow and arrow",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "Sagittarius",
+    "z": "射手座",
+    "j": "射手座",
+    "e": "Sagittarius",
+    "b": "Sagittarius",
     "p": "noun"
    },
    {
@@ -20144,34 +20243,47 @@
     "t": "."
    }
   ],
-  "She was born under Taurus.": [
+  "My friend chose Taurus in the horoscope app.": [
    {
-    "t": "She",
-    "z": "她",
-    "j": "彼女",
-    "e": "She",
-    "p": "pronoun"
+    "t": "My friend",
+    "z": "我的朋友",
+    "j": "私の友達",
+    "e": "my friend",
+    "b": "friend",
+    "p": "noun"
    },
    {
     "t": " "
    },
    {
-    "t": "was born",
-    "z": "出生",
-    "j": "生まれました",
-    "e": "was born",
-    "b": "be born",
+    "t": "chose",
+    "z": "選了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
     "p": "verb"
    },
    {
     "t": " "
    },
    {
-    "t": "under Taurus",
+    "t": "Taurus",
     "z": "金牛座",
-    "j": "おうしざのもとで",
-    "e": "under Taurus",
-    "p": "phrase"
+    "j": "牡牛座",
+    "e": "Taurus",
+    "b": "Taurus",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "horoscope app",
+    "z": "占星 App",
+    "j": "占いアプリ",
+    "e": "horoscope app",
+    "b": "horoscope app",
+    "p": "noun"
    },
    {
     "t": "."
@@ -22373,13 +22485,14 @@
     "t": "."
    }
   ],
-  "My sister is a Virgo.": [
+  "My younger sister is a Virgo.": [
    {
-    "t": "My sister",
-    "z": "我的姊姊",
-    "j": "わたしのあね",
-    "e": "My sister",
-    "p": "pronoun"
+    "t": "My younger sister",
+    "z": "我的妹妹",
+    "j": "いもうと",
+    "e": "my younger sister",
+    "b": "younger sister",
+    "p": "noun"
    },
    {
     "t": " is a "
@@ -22387,7 +22500,7 @@
    {
     "t": "Virgo",
     "z": "處女座",
-    "j": "おとめざのせいざ",
+    "j": "乙女座",
     "e": "Virgo",
     "b": "Virgo",
     "p": "noun"
@@ -88404,9 +88517,42 @@
     "t": "."
    }
   ],
-  "When the form asked for my zodiac sign, I chose Aries because my birthday is in early April.": [
+  "When I filled in my zodiac sign on the form, I chose Aries because I was born in early April.": [
    {
-    "t": "When the "
+    "t": "When "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "filled in",
+    "z": "填寫了",
+    "j": "記入した",
+    "e": "filled in",
+    "b": "fill in",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my zodiac sign",
+    "z": "我的星座",
+    "j": "私の星座",
+    "e": "my zodiac sign",
+    "b": "zodiac sign",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
    },
    {
     "t": "form",
@@ -88417,34 +88563,12 @@
     "p": "noun"
    },
    {
-    "t": " asked for my "
-   },
-   {
-    "t": "zodiac sign",
-    "z": "星座",
-    "j": "星座",
-    "e": "zodiac sign",
-    "b": "zodiac sign",
-    "p": "noun"
-   },
-   {
-    "t": ", "
-   },
-   {
-    "t": "I",
-    "z": "我",
-    "j": "私",
-    "e": "I",
-    "b": "私",
-    "p": "pronoun"
-   },
-   {
-    "t": " "
+    "t": ", I "
    },
    {
     "t": "chose",
-    "z": "選擇了",
-    "j": "選びました",
+    "z": "選了",
+    "j": "選んだ",
     "e": "chose",
     "b": "choose",
     "p": "verb"
@@ -88461,25 +88585,25 @@
     "p": "noun"
    },
    {
-    "t": " because my "
+    "t": " because I "
    },
    {
-    "t": "birthday",
-    "z": "生日",
-    "j": "誕生日",
-    "e": "birthday",
-    "b": "birthday",
-    "p": "noun"
+    "t": "was born",
+    "z": "出生",
+    "j": "生まれた",
+    "e": "was born",
+    "b": "be born",
+    "p": "verb"
    },
    {
-    "t": " is in "
+    "t": " in "
    },
    {
     "t": "early April",
-    "z": "四月上旬",
+    "z": "四月初",
     "j": "四月上旬",
     "e": "early April",
-    "b": "四月上旬",
+    "b": "early April",
     "p": "phrase"
    },
    {
@@ -88688,134 +88812,165 @@
     "t": "."
    }
   ],
-  "Since my father is a Capricorn, he reads that section whenever someone leaves the newspaper open.": [
+  "When my father reads the horoscope in the newspaper, he always starts with the Capricorn section.": [
    {
-    "t": "Since "
+    "t": "When "
    },
    {
     "t": "my father",
-    "z": "我的父親",
-    "j": "わたしのちち",
+    "z": "我的爸爸",
+    "j": "私の父",
     "e": "my father",
-    "p": "pronoun"
+    "b": "father",
+    "p": "noun"
    },
    {
-    "t": " is a "
+    "t": " "
    },
    {
-    "t": "Capricorn",
-    "z": "摩羯座",
-    "j": "やぎざのせいざ",
-    "e": "Capricorn",
-    "b": "Capricorn",
+    "t": "reads",
+    "z": "閱讀",
+    "j": "読む",
+    "e": "reads",
+    "b": "read",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "horoscope",
+    "z": "運勢",
+    "j": "占い",
+    "e": "horoscope",
+    "b": "horoscope",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "newspaper",
+    "z": "報紙",
+    "j": "新聞",
+    "e": "newspaper",
+    "b": "newspaper",
     "p": "noun"
    },
    {
     "t": ", he "
    },
    {
-    "t": "reads",
-    "z": "閱讀",
-    "j": "よみます",
-    "e": "reads",
-    "b": "読む",
-    "p": "verb"
+    "t": "always",
+    "z": "總是",
+    "j": "いつも",
+    "e": "always",
+    "b": "always",
+    "p": "adverb"
    },
    {
-    "t": " that "
+    "t": " "
    },
    {
-    "t": "section",
-    "z": "欄",
-    "j": "らん",
-    "e": "section",
-    "b": "欄",
-    "p": "noun"
+    "t": "starts with",
+    "z": "先從…開始",
+    "j": "最初に読む",
+    "e": "starts with",
+    "b": "start with",
+    "p": "phrasal verb"
    },
    {
-    "t": " whenever someone leaves the "
+    "t": " the "
    },
    {
-    "t": "newspaper",
-    "z": "報紙",
-    "j": "しんぶん",
-    "e": "newspaper",
-    "b": "新聞",
-    "p": "noun"
-   },
-   {
-    "t": " open."
-   }
-  ],
-  "Although Aquarius has water in its symbol, the astronomy book classifies it as an air sign.": [
-   {
-    "t": "Although "
-   },
-   {
-    "t": "Aquarius",
-    "z": "寶瓶座",
-    "j": "みずがめざ",
-    "e": "Aquarius",
-    "b": "Aquarius",
-    "p": "noun"
-   },
-   {
-    "t": " has "
-   },
-   {
-    "t": "water",
-    "z": "水",
-    "j": "みず",
-    "e": "water",
-    "b": "water",
-    "p": "noun"
-   },
-   {
-    "t": " in its "
-   },
-   {
-    "t": "symbol",
-    "z": "符號",
-    "j": "きごう",
-    "e": "symbol",
-    "b": "symbol",
-    "p": "noun"
-   },
-   {
-    "t": ", the "
-   },
-   {
-    "t": "astronomy book",
-    "z": "天文書",
-    "j": "てんもんしょ",
-    "e": "astronomy book",
-    "b": "astronomy book",
-    "p": "noun"
-   },
-   {
-    "t": " classifies it as an "
-   },
-   {
-    "t": "air sign",
-    "z": "風象星座",
-    "j": "かぜのせいざ",
-    "e": "air sign",
-    "b": "air sign",
+    "t": "Capricorn section",
+    "z": "摩羯座欄位",
+    "j": "山羊座の欄",
+    "e": "Capricorn section",
+    "b": "Capricorn section",
     "p": "noun"
    },
    {
     "t": "."
    }
   ],
-  "Although my friend is a Taurus, she does not believe that zodiac signs decide personality.": [
+  "I checked a horoscope app because I wanted to know this week's forecast for Aquarius.": [
    {
-    "t": "Although my "
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
    },
    {
-    "t": "friend",
-    "z": "朋友",
-    "j": "友達",
-    "e": "friend",
+    "t": " "
+   },
+   {
+    "t": "checked",
+    "z": "查看了",
+    "j": "確認した",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "horoscope app",
+    "z": "占星 App",
+    "j": "占いアプリ",
+    "e": "horoscope app",
+    "b": "horoscope app",
+    "p": "noun"
+   },
+   {
+    "t": " because I "
+   },
+   {
+    "t": "wanted to know",
+    "z": "想知道",
+    "j": "知りたかった",
+    "e": "wanted to know",
+    "b": "want to know",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "this week's forecast",
+    "z": "本週運勢",
+    "j": "今週の運勢",
+    "e": "this week's forecast",
+    "b": "weekly forecast",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "Aquarius",
+    "z": "水瓶座",
+    "j": "水瓶座",
+    "e": "Aquarius",
+    "b": "Aquarius",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although my friend is a Taurus, she does not think zodiac signs decide her personality.": [
+   {
+    "t": "Although "
+   },
+   {
+    "t": "my friend",
+    "z": "我的朋友",
+    "j": "私の友達",
+    "e": "my friend",
     "b": "friend",
     "p": "noun"
    },
@@ -88824,25 +88979,25 @@
    },
    {
     "t": "Taurus",
-    "z": "牡牛座",
+    "z": "金牛座",
     "j": "牡牛座",
     "e": "Taurus",
     "b": "Taurus",
     "p": "noun"
    },
    {
-    "t": ", she does not "
+    "t": ", she "
    },
    {
-    "t": "believe",
-    "z": "相信",
-    "j": "信じていません",
-    "e": "believe",
-    "b": "believe",
+    "t": "does not think",
+    "z": "不認為",
+    "j": "そう考えていない",
+    "e": "does not think",
+    "b": "think",
     "p": "verb"
    },
    {
-    "t": " that "
+    "t": " "
    },
    {
     "t": "zodiac signs",
@@ -88858,7 +89013,7 @@
    {
     "t": "decide",
     "z": "決定",
-    "j": "決まる",
+    "j": "決める",
     "e": "decide",
     "b": "decide",
     "p": "verb"
@@ -88867,10 +89022,10 @@
     "t": " "
    },
    {
-    "t": "personality",
-    "z": "性格",
-    "j": "性格",
-    "e": "personality",
+    "t": "her personality",
+    "z": "她的個性",
+    "j": "彼女の性格",
+    "e": "her personality",
     "b": "personality",
     "p": "noun"
    },
@@ -88878,15 +89033,15 @@
     "t": "."
    }
   ],
-  "If your birthday is at the end of May, the calendar app will usually show Gemini.": [
+  "If your birthday is at the end of May, a horoscope app will usually show Gemini as your zodiac sign.": [
    {
-    "t": "If your "
+    "t": "If "
    },
    {
-    "t": "birthday",
-    "z": "生日",
-    "j": "誕生日",
-    "e": "birthday",
+    "t": "your birthday",
+    "z": "你的生日",
+    "j": "あなたの誕生日",
+    "e": "your birthday",
     "b": "birthday",
     "p": "noun"
    },
@@ -88895,31 +89050,42 @@
    },
    {
     "t": "end of May",
-    "z": "五月下旬",
+    "z": "五月底",
     "j": "五月下旬",
     "e": "end of May",
-    "b": "五月下旬",
+    "b": "end of May",
     "p": "phrase"
    },
    {
-    "t": ", the "
+    "t": ", a "
    },
    {
-    "t": "calendar app",
-    "z": "行事曆應用程式",
-    "j": "カレンダーアプリ",
-    "e": "calendar app",
-    "b": "カレンダーアプリ",
+    "t": "horoscope app",
+    "z": "占星 App",
+    "j": "占いアプリ",
+    "e": "horoscope app",
+    "b": "horoscope app",
     "p": "noun"
    },
    {
     "t": " will "
    },
    {
-    "t": "usually show",
-    "z": "通常顯示",
-    "j": "通常表示されます",
-    "e": "usually show",
+    "t": "usually",
+    "z": "通常",
+    "j": "通常",
+    "e": "usually",
+    "b": "usually",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "show",
+    "z": "顯示",
+    "j": "表示する",
+    "e": "show",
     "b": "show",
     "p": "verb"
    },
@@ -88935,78 +89101,122 @@
     "p": "noun"
    },
    {
-    "t": "."
-   }
-  ],
-  "Because her birthday falls in July, she checked the Cancer horoscope in the morning paper.": [
-   {
-    "t": "Because her "
+    "t": " as "
    },
    {
-    "t": "birthday",
-    "z": "生日",
-    "j": "誕生日",
-    "e": "birthday",
-    "b": "birthday",
+    "t": "your zodiac sign",
+    "z": "你的星座",
+    "j": "あなたの星座",
+    "e": "your zodiac sign",
+    "b": "zodiac sign",
     "p": "noun"
    },
    {
-    "t": " falls in "
+    "t": "."
+   }
+  ],
+  "Because my sister was born in July, she chose Cancer when the app asked for her zodiac sign.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "my sister",
+    "z": "我的妹妹",
+    "j": "私の妹",
+    "e": "my sister",
+    "b": "sister",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was born",
+    "z": "出生",
+    "j": "生まれた",
+    "e": "was born",
+    "b": "be born",
+    "p": "verb"
+   },
+   {
+    "t": " in "
    },
    {
     "t": "July",
     "z": "七月",
     "j": "七月",
     "e": "July",
-    "b": "七月",
-    "p": "numeral"
+    "b": "July",
+    "p": "noun"
    },
    {
     "t": ", she "
    },
    {
-    "t": "checked",
-    "z": "查看了",
-    "j": "確認しました",
-    "e": "checked",
-    "b": "check",
+    "t": "chose",
+    "z": "選了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
     "p": "verb"
    },
    {
-    "t": " the "
+    "t": " "
    },
    {
-    "t": "Cancer horoscope",
-    "z": "巨蟹座運勢",
-    "j": "蟹座の占い",
-    "e": "Cancer horoscope",
-    "b": "Cancer horoscope",
+    "t": "Cancer",
+    "z": "巨蟹座",
+    "j": "蟹座",
+    "e": "Cancer",
+    "b": "Cancer",
     "p": "noun"
    },
    {
-    "t": " in the "
+    "t": " when the "
    },
    {
-    "t": "morning paper",
-    "z": "晨報",
-    "j": "朝刊",
-    "e": "morning paper",
-    "b": "朝刊",
+    "t": "app",
+    "z": "App",
+    "j": "アプリ",
+    "e": "app",
+    "b": "app",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "asked for",
+    "z": "詢問",
+    "j": "尋ねた",
+    "e": "asked for",
+    "b": "ask for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "her zodiac sign",
+    "z": "她的星座",
+    "j": "彼女の星座",
+    "e": "her zodiac sign",
+    "b": "zodiac sign",
     "p": "noun"
    },
    {
     "t": "."
    }
   ],
-  "When my nephew learned that Leo is represented by a lion, he remembered the sign immediately.": [
+  "When my nephew learned that a lion represents Leo, he remembered the sign immediately.": [
    {
-    "t": "When my "
+    "t": "When "
    },
    {
-    "t": "nephew",
-    "z": "侄子",
-    "j": "甥",
-    "e": "nephew",
+    "t": "my nephew",
+    "z": "我的外甥",
+    "j": "私の甥",
+    "e": "my nephew",
     "b": "nephew",
     "p": "noun"
    },
@@ -89015,36 +89225,14 @@
    },
    {
     "t": "learned",
-    "z": "知道了",
-    "j": "知ると",
+    "z": "得知",
+    "j": "知った",
     "e": "learned",
     "b": "learn",
     "p": "verb"
    },
    {
-    "t": " that "
-   },
-   {
-    "t": "Leo",
-    "z": "獅子座",
-    "j": "獅子座",
-    "e": "Leo",
-    "b": "Leo",
-    "p": "noun"
-   },
-   {
-    "t": " is "
-   },
-   {
-    "t": "represented by",
-    "z": "被……表現",
-    "j": "表される",
-    "e": "represented by",
-    "b": "表される",
-    "p": "verb"
-   },
-   {
-    "t": " a "
+    "t": " that a "
    },
    {
     "t": "lion",
@@ -89055,30 +89243,75 @@
     "p": "noun"
    },
    {
+    "t": " "
+   },
+   {
+    "t": "represents",
+    "z": "代表",
+    "j": "表す",
+    "e": "represents",
+    "b": "represent",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "Leo",
+    "z": "獅子座",
+    "j": "獅子座",
+    "e": "Leo",
+    "b": "Leo",
+    "p": "noun"
+   },
+   {
     "t": ", he "
    },
    {
     "t": "remembered",
-    "z": "記住",
-    "j": "覚えました",
+    "z": "記住了",
+    "j": "覚えた",
     "e": "remembered",
     "b": "remember",
     "p": "verb"
    },
    {
-    "t": " the sign immediately."
-   }
-  ],
-  "Although my sister is a Virgo, our birthdays are only two weeks apart.": [
-   {
-    "t": "Although "
+    "t": " the "
    },
    {
-    "t": "my sister",
-    "z": "我的姊姊",
-    "j": "わたしのあね",
-    "e": "my sister",
-    "p": "pronoun"
+    "t": "sign",
+    "z": "星座",
+    "j": "星座",
+    "e": "sign",
+    "b": "sign",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "immediately",
+    "z": "立刻",
+    "j": "すぐに",
+    "e": "immediately",
+    "b": "immediately",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my younger sister is a Virgo, she checks the Virgo horoscope first in the app.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "my younger sister",
+    "z": "我的妹妹",
+    "j": "私の妹",
+    "e": "my younger sister",
+    "b": "younger sister",
+    "p": "noun"
    },
    {
     "t": " is a "
@@ -89086,59 +89319,117 @@
    {
     "t": "Virgo",
     "z": "處女座",
-    "j": "おとめざのせいざ",
+    "j": "乙女座",
     "e": "Virgo",
     "b": "Virgo",
     "p": "noun"
    },
    {
-    "t": ", "
+    "t": ", she "
    },
    {
-    "t": "our birthdays",
-    "z": "我們的生日",
-    "j": "わたしたちのたんじょうび",
-    "e": "our birthdays",
+    "t": "checks",
+    "z": "查看",
+    "j": "確認する",
+    "e": "checks",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Virgo horoscope",
+    "z": "處女座運勢",
+    "j": "乙女座の運勢",
+    "e": "Virgo horoscope",
+    "b": "Virgo horoscope",
     "p": "noun"
    },
    {
-    "t": " are only "
+    "t": " "
    },
    {
-    "t": "two weeks",
-    "z": "兩週",
-    "j": "にしゅうかん",
-    "e": "two weeks",
-    "b": "週",
-    "p": "numeral"
+    "t": "first",
+    "z": "先",
+    "j": "最初に",
+    "e": "first",
+    "b": "first",
+    "p": "adverb"
    },
    {
-    "t": " apart."
+    "t": " in the "
+   },
+   {
+    "t": "app",
+    "z": "App",
+    "j": "アプリ",
+    "e": "app",
+    "b": "app",
+    "p": "noun"
+   },
+   {
+    "t": "."
    }
   ],
-  "Because the Libra symbol is a pair of scales, I could identify it on the poster.": [
+  "Because the Libra symbol looks like a pair of scales, I could identify it quickly on the poster.": [
    {
     "t": "Because the "
    },
    {
     "t": "Libra symbol",
-    "z": "天秤座的符號",
-    "j": "てんびんざのきごう",
+    "z": "天秤座符號",
+    "j": "天秤座の記号",
     "e": "Libra symbol",
+    "b": "Libra symbol",
     "p": "noun"
    },
    {
-    "t": " is a "
+    "t": " "
+   },
+   {
+    "t": "looks like",
+    "z": "看起來像",
+    "j": "似ている",
+    "e": "looks like",
+    "b": "look like",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
    },
    {
     "t": "pair of scales",
-    "z": "一對天秤",
-    "j": "いっついのてんびん",
+    "z": "一座天秤",
+    "j": "一組の天秤",
     "e": "pair of scales",
-    "p": "phrase"
+    "b": "scales",
+    "p": "noun"
    },
    {
-    "t": ", I could identify it on the "
+    "t": ", I could "
+   },
+   {
+    "t": "identify",
+    "z": "認出",
+    "j": "見分ける",
+    "e": "identify",
+    "b": "identify",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "quickly",
+    "z": "很快",
+    "j": "すぐに",
+    "e": "quickly",
+    "b": "quickly",
+    "p": "adverb"
+   },
+   {
+    "t": " on the "
    },
    {
     "t": "poster",
@@ -89152,37 +89443,26 @@
     "t": "."
    }
   ],
-  "When he entered his birthday in the app, it said his zodiac sign was Scorpio.": [
+  "When he entered his birthday in the horoscope app, it showed that his zodiac sign was Scorpio.": [
    {
-    "t": "W"
-   },
-   {
-    "t": "he",
-    "z": "他",
-    "j": "かれ",
-    "e": "he",
-    "b": "he",
-    "p": "pronoun"
-   },
-   {
-    "t": "n he "
+    "t": "When he "
    },
    {
     "t": "entered",
-    "z": "輸入",
-    "j": "にゅうりょくした",
+    "z": "輸入了",
+    "j": "入力した",
     "e": "entered",
     "b": "enter",
     "p": "verb"
    },
    {
-    "t": " his "
+    "t": " "
    },
    {
-    "t": "birthday",
-    "z": "生日",
-    "j": "たんじょうび",
-    "e": "birthday",
+    "t": "his birthday",
+    "z": "他的生日",
+    "j": "彼の誕生日",
+    "e": "his birthday",
     "b": "birthday",
     "p": "noun"
    },
@@ -89190,22 +89470,33 @@
     "t": " in the "
    },
    {
-    "t": "app",
-    "z": "應用程式",
-    "j": "アプリ",
-    "e": "app",
-    "b": "app",
+    "t": "horoscope app",
+    "z": "占星 App",
+    "j": "占いアプリ",
+    "e": "horoscope app",
+    "b": "horoscope app",
     "p": "noun"
    },
    {
-    "t": ", it said his "
+    "t": ", it "
    },
    {
-    "t": "zodiac sign",
-    "z": "星座",
-    "j": "せいざ",
-    "e": "zodiac sign",
-    "b": "星座",
+    "t": "showed",
+    "z": "顯示",
+    "j": "表示した",
+    "e": "showed",
+    "b": "show",
+    "p": "verb"
+   },
+   {
+    "t": " that "
+   },
+   {
+    "t": "his zodiac sign",
+    "z": "他的星座",
+    "j": "彼の星座",
+    "e": "his zodiac sign",
+    "b": "zodiac sign",
     "p": "noun"
    },
    {
@@ -89214,7 +89505,7 @@
    {
     "t": "Scorpio",
     "z": "天蠍座",
-    "j": "さそりざのせいざ",
+    "j": "蠍座",
     "e": "Scorpio",
     "b": "Scorpio",
     "p": "noun"
@@ -89223,15 +89514,27 @@
     "t": "."
    }
   ],
-  "If you look for the archer symbol in the magazine, you will find the Sagittarius section.": [
+  "If you look for the bow-and-arrow symbol in the magazine, you can find the Sagittarius horoscope.": [
    {
-    "t": "If you look for the "
+    "t": "If you "
    },
    {
-    "t": "archer symbol",
-    "z": "射手符號",
-    "j": "いてのきごう",
-    "e": "archer symbol",
+    "t": "look for",
+    "z": "尋找",
+    "j": "探す",
+    "e": "look for",
+    "b": "look for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "bow-and-arrow symbol",
+    "z": "弓箭符號",
+    "j": "弓矢の記号",
+    "e": "bow-and-arrow symbol",
+    "b": "bow-and-arrow symbol",
     "p": "noun"
    },
    {
@@ -89240,19 +89543,31 @@
    {
     "t": "magazine",
     "z": "雜誌",
-    "j": "ざっし",
+    "j": "雑誌",
     "e": "magazine",
     "b": "magazine",
     "p": "noun"
    },
    {
-    "t": ", you will find the "
+    "t": ", you can "
    },
    {
-    "t": "Sagittarius section",
-    "z": "射手座欄位",
-    "j": "いてざのらん",
-    "e": "Sagittarius section",
+    "t": "find",
+    "z": "找到",
+    "j": "見つける",
+    "e": "find",
+    "b": "find",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Sagittarius horoscope",
+    "z": "射手座運勢",
+    "j": "射手座の占い",
+    "e": "Sagittarius horoscope",
+    "b": "Sagittarius horoscope",
     "p": "noun"
    },
    {
@@ -95795,51 +96110,63 @@
     "t": "。"
    }
   ],
-  "水瓶座は水を運ぶ人によって表されます。": [
+  "友達が誕生日カードに水瓶座の記号を描きました。": [
+   {
+    "t": "友達",
+    "z": "朋友",
+    "j": "友達",
+    "e": "friend",
+    "b": "友達",
+    "p": "noun",
+    "r": "ともだち"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "誕生日カード",
+    "z": "生日卡",
+    "j": "誕生日カード",
+    "e": "birthday card",
+    "b": "誕生日カード",
+    "p": "noun",
+    "r": "たんじょうびカード"
+   },
+   {
+    "t": "に"
+   },
    {
     "t": "水瓶座",
-    "z": "寶瓶座",
-    "j": "みずがめざ",
+    "z": "水瓶座",
+    "j": "水瓶座",
     "e": "Aquarius",
     "b": "水瓶座",
     "p": "noun",
     "r": "みずがめざ"
    },
    {
-    "t": "は"
+    "t": "の"
    },
    {
-    "t": "水",
-    "z": "水",
-    "j": "みず",
-    "e": "water",
-    "b": "水",
+    "t": "記号",
+    "z": "符號",
+    "j": "記号",
+    "e": "symbol",
+    "b": "記号",
     "p": "noun",
-    "r": "みず"
+    "r": "きごう"
    },
    {
     "t": "を"
    },
    {
-    "t": "運ぶ人",
-    "z": "運水的人",
-    "j": "はこぶひと",
-    "e": "water bearer",
-    "b": "運ぶ人",
-    "p": "noun",
-    "r": "はこぶひと"
-   },
-   {
-    "t": "によって"
-   },
-   {
-    "t": "表されます",
-    "z": "被表示",
-    "j": "あらわされます",
-    "e": "is represented",
-    "b": "表れる",
+    "t": "描きました",
+    "z": "畫了",
+    "j": "絵にしました",
+    "e": "drew",
+    "b": "描く",
     "p": "verb",
-    "r": "あらわされます"
+    "r": "えがきました"
    },
    {
     "t": "。"
@@ -98775,34 +99102,34 @@
     "t": "。"
    }
   ],
-  "彼女の星座は蟹座です。": [
+  "母は毎朝、蟹座の運勢を確認します。": [
    {
-    "t": "彼女",
-    "z": "她",
-    "j": "彼女",
-    "e": "she",
-    "b": "彼女",
-    "p": "pronoun",
-    "r": "かのじょ"
-   },
-   {
-    "t": "の"
-   },
-   {
-    "t": "星座",
-    "z": "星座",
-    "j": "星座",
-    "e": "zodiac sign",
-    "b": "星座",
+    "t": "母",
+    "z": "媽媽",
+    "j": "母",
+    "e": "mother",
+    "b": "母",
     "p": "noun",
-    "r": "せいざ"
+    "r": "はは"
    },
    {
     "t": "は"
    },
    {
+    "t": "毎朝",
+    "z": "每天早上",
+    "j": "毎日の朝",
+    "e": "every morning",
+    "b": "毎朝",
+    "p": "adverb",
+    "r": "まいあさ"
+   },
+   {
+    "t": "、"
+   },
+   {
     "t": "蟹座",
-    "z": "蟹座",
+    "z": "巨蟹座",
     "j": "蟹座",
     "e": "Cancer",
     "b": "蟹座",
@@ -98810,7 +99137,31 @@
     "r": "かにざ"
    },
    {
-    "t": "です。"
+    "t": "の"
+   },
+   {
+    "t": "運勢",
+    "z": "運勢",
+    "j": "運勢",
+    "e": "horoscope",
+    "b": "運勢",
+    "p": "noun",
+    "r": "うんせい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認します",
+    "z": "查看",
+    "j": "確かめます",
+    "e": "checks",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんします"
+   },
+   {
+    "t": "。"
    }
   ],
   "夕食後にろうそくに火をつけます。": [
@@ -106755,7 +107106,19 @@
     "t": "。"
    }
   ],
-  "獅子座はライオンで表現されています。": [
+  "甥が獅子座の記号の隣にライオンを描きました。": [
+   {
+    "t": "甥",
+    "z": "外甥",
+    "j": "甥",
+    "e": "nephew",
+    "b": "甥",
+    "p": "noun",
+    "r": "おい"
+   },
+   {
+    "t": "が"
+   },
    {
     "t": "獅子座",
     "z": "獅子座",
@@ -106766,7 +107129,31 @@
     "r": "ししざ"
    },
    {
-    "t": "は"
+    "t": "の"
+   },
+   {
+    "t": "記号",
+    "z": "符號",
+    "j": "記号",
+    "e": "symbol",
+    "b": "記号",
+    "p": "noun",
+    "r": "きごう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣",
+    "z": "旁邊",
+    "j": "すぐ横",
+    "e": "next to",
+    "b": "隣",
+    "p": "noun",
+    "r": "となり"
+   },
+   {
+    "t": "に"
    },
    {
     "t": "ライオン",
@@ -106778,45 +107165,81 @@
     "r": "ライオン"
    },
    {
-    "t": "で"
+    "t": "を"
    },
    {
-    "t": "表現されています",
-    "z": "受到表現",
-    "j": "表現されています",
-    "e": "is represented",
-    "b": "表現される",
+    "t": "描きました",
+    "z": "畫了",
+    "j": "絵にしました",
+    "e": "drew",
+    "b": "描く",
     "p": "verb",
-    "r": "ひょうげんされています"
+    "r": "えがきました"
    },
    {
     "t": "。"
    }
   ],
-  "天秤座は天秤で表されます。": [
+  "占いのポスターで天秤座の記号を見つけました。": [
+   {
+    "t": "占い",
+    "z": "占星",
+    "j": "運勢占い",
+    "e": "horoscope",
+    "b": "占い",
+    "p": "noun",
+    "r": "うらない"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ポスター",
+    "z": "海報",
+    "j": "ポスター",
+    "e": "poster",
+    "b": "ポスター",
+    "p": "noun",
+    "r": "ポスター"
+   },
+   {
+    "t": "で"
+   },
    {
     "t": "天秤座",
     "z": "天秤座",
-    "j": "てんびんざのせいざ",
+    "j": "天秤座",
     "e": "Libra",
     "b": "天秤座",
     "p": "noun",
     "r": "てんびんざ"
    },
    {
-    "t": "は"
+    "t": "の"
    },
    {
-    "t": "天秤",
-    "z": "天秤",
-    "j": "てんびん",
-    "e": "scales",
-    "b": "天秤",
+    "t": "記号",
+    "z": "符號",
+    "j": "記号",
+    "e": "symbol",
+    "b": "記号",
     "p": "noun",
-    "r": "てんびん"
+    "r": "きごう"
    },
    {
-    "t": "で表されます。"
+    "t": "を"
+   },
+   {
+    "t": "見つけました",
+    "z": "找到了",
+    "j": "発見しました",
+    "e": "found",
+    "b": "見つける",
+    "p": "verb",
+    "r": "みつけました"
+   },
+   {
+    "t": "。"
    }
   ],
   "私はキッチンで蓋を使います。": [
@@ -113388,30 +113811,57 @@
     "t": "。"
    }
   ],
-  "射手座は射手によって表されます。": [
+  "その雑誌では、射手座を弓矢で表しています。": [
+   {
+    "t": "その"
+   },
+   {
+    "t": "雑誌",
+    "z": "雜誌",
+    "j": "雑誌",
+    "e": "magazine",
+    "b": "雑誌",
+    "p": "noun",
+    "r": "ざっし"
+   },
+   {
+    "t": "では、"
+   },
    {
     "t": "射手座",
     "z": "射手座",
-    "j": "いてざのせいざ",
+    "j": "射手座",
     "e": "Sagittarius",
     "b": "射手座",
     "p": "noun",
     "r": "いてざ"
    },
    {
-    "t": "は"
+    "t": "を"
    },
    {
-    "t": "射手",
-    "z": "射手",
-    "j": "いて",
-    "e": "archer",
-    "b": "射手",
+    "t": "弓矢",
+    "z": "弓箭",
+    "j": "弓と矢",
+    "e": "bow and arrow",
+    "b": "弓矢",
     "p": "noun",
-    "r": "いて"
+    "r": "ゆみや"
    },
    {
-    "t": "によって表されます。"
+    "t": "で"
+   },
+   {
+    "t": "表しています",
+    "z": "表示為",
+    "j": "示しています",
+    "e": "represents with",
+    "b": "表す",
+    "p": "verb",
+    "r": "あらわしています"
+   },
+   {
+    "t": "。"
    }
   ],
   "ヨットは便利な交通手段です。": [
@@ -117573,22 +118023,34 @@
     "t": "。"
    }
   ],
-  "彼女はおうし座です。": [
+  "友達は占いアプリで牡牛座を選びました。": [
    {
-    "t": "彼女",
-    "z": "她",
-    "j": "彼女",
-    "e": "she",
-    "b": "彼女",
-    "p": "pronoun",
-    "r": "かのじょ"
+    "t": "友達",
+    "z": "朋友",
+    "j": "友達",
+    "e": "friend",
+    "b": "友達",
+    "p": "noun",
+    "r": "ともだち"
    },
    {
     "t": "は"
    },
    {
-    "t": "おうし座",
-    "z": "牡牛座",
+    "t": "占いアプリ",
+    "z": "占星 App",
+    "j": "運勢を見るアプリ",
+    "e": "horoscope app",
+    "b": "占いアプリ",
+    "p": "noun",
+    "r": "うらないアプリ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "牡牛座",
+    "z": "金牛座",
     "j": "牡牛座",
     "e": "Taurus",
     "b": "牡牛座",
@@ -117596,7 +118058,19 @@
     "r": "おうしざ"
    },
    {
-    "t": "です。"
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
    }
   ],
   "タクシーに乗りましょう。": [
@@ -120000,23 +120474,11 @@
     "t": "。"
    }
   ],
-  "私の妹は乙女座です。": [
-   {
-    "t": "私",
-    "z": "我",
-    "j": "わたし",
-    "e": "I",
-    "b": "私",
-    "p": "pronoun",
-    "r": "わたし"
-   },
-   {
-    "t": "の"
-   },
+  "妹は乙女座です。": [
    {
     "t": "妹",
     "z": "妹妹",
-    "j": "いもうと",
+    "j": "妹",
     "e": "younger sister",
     "b": "妹",
     "p": "noun",
@@ -120028,7 +120490,7 @@
    {
     "t": "乙女座",
     "z": "處女座",
-    "j": "おとめざのせいざ",
+    "j": "乙女座",
     "e": "Virgo",
     "b": "乙女座",
     "p": "noun",
@@ -198343,18 +198805,18 @@
     "t": "。"
    }
   ],
-  "申込書で星座を聞かれたので、四月上旬生まれの私は牡羊座を選びました。": [
+  "申込書に星座を記入するとき、四月上旬生まれなので牡羊座を選びました。": [
    {
     "t": "申込書",
     "z": "申請表",
-    "j": "申込書",
-    "e": "form",
+    "j": "申し込みに使う書類",
+    "e": "application form",
     "b": "申込書",
     "p": "noun",
     "r": "もうしこみしょ"
    },
    {
-    "t": "で"
+    "t": "に"
    },
    {
     "t": "星座",
@@ -198366,31 +198828,31 @@
     "r": "せいざ"
    },
    {
-    "t": "を聞かれたので、"
+    "t": "を"
    },
    {
-    "t": "四月上旬",
-    "z": "四月上旬",
-    "j": "四月上旬",
-    "e": "early April",
-    "b": "四月上旬",
+    "t": "記入するとき",
+    "z": "填寫時",
+    "j": "書き入れるとき",
+    "e": "when filling in",
+    "b": "記入する",
     "p": "phrase",
-    "r": "しがつじょうじゅん"
+    "r": "きにゅうするとき"
    },
    {
-    "t": "生まれの"
+    "t": "、"
    },
    {
-    "t": "私",
-    "z": "我",
-    "j": "私",
-    "e": "I",
-    "b": "私",
-    "p": "pronoun",
-    "r": "わたし"
+    "t": "四月上旬生まれ",
+    "z": "四月初出生",
+    "j": "四月の初めに生まれた",
+    "e": "born in early April",
+    "b": "四月上旬生まれ",
+    "p": "phrase",
+    "r": "しがつじょうじゅんうまれ"
    },
    {
-    "t": "は"
+    "t": "なので"
    },
    {
     "t": "牡羊座",
@@ -198406,8 +198868,8 @@
    },
    {
     "t": "選びました",
-    "z": "選擇了",
-    "j": "選びました",
+    "z": "選了",
+    "j": "選んだ",
     "e": "chose",
     "b": "選ぶ",
     "p": "verb",
@@ -198660,11 +199122,11 @@
     "t": "。"
    }
   ],
-  "誕生日カードに二匹の魚を見て、それが魚座を表すと彼女は分かりました。": [
+  "誕生日カードに描かれた二匹の魚を見て、彼女はそれが魚座を表すと分かりました。": [
    {
     "t": "誕生日カード",
-    "z": "生日卡片",
-    "j": "たんじょうびカード",
+    "z": "生日卡",
+    "j": "誕生日カード",
     "e": "birthday card",
     "b": "誕生日カード",
     "p": "noun",
@@ -198674,45 +199136,54 @@
     "t": "に"
    },
    {
-    "t": "二匹",
-    "z": "兩隻",
-    "j": "にひき",
+    "t": "描かれた",
+    "z": "畫著的",
+    "j": "絵にされた",
+    "e": "drawn",
+    "b": "描く",
+    "p": "verb",
+    "r": "えがかれた"
+   },
+   {
+    "t": "二匹の魚",
+    "z": "兩條魚",
+    "j": "二匹の魚",
     "e": "two fish",
-    "b": "二匹",
-    "p": "numeral",
-    "r": "にひき"
-   },
-   {
-    "t": "の"
-   },
-   {
-    "t": "魚",
-    "z": "魚",
-    "j": "さかな",
-    "e": "fish",
-    "b": "魚",
+    "b": "二匹の魚",
     "p": "noun",
-    "r": "さかな"
+    "r": "にひきのさかな"
    },
    {
     "t": "を"
    },
    {
     "t": "見て",
-    "z": "看見",
-    "j": "みて",
+    "z": "看到",
+    "j": "見て",
     "e": "saw",
     "b": "見る",
     "p": "verb",
     "r": "みて"
    },
    {
-    "t": "、それが"
+    "t": "、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "はそれが"
    },
    {
     "t": "魚座",
     "z": "雙魚座",
-    "j": "うおざ",
+    "j": "魚座",
     "e": "Pisces",
     "b": "魚座",
     "p": "noun",
@@ -198724,19 +199195,19 @@
    {
     "t": "表す",
     "z": "代表",
-    "j": "あらわす",
+    "j": "示す",
     "e": "represent",
     "b": "表す",
     "p": "verb",
     "r": "あらわす"
    },
    {
-    "t": "と彼女は"
+    "t": "と"
    },
    {
     "t": "分かりました",
-    "z": "知道",
-    "j": "わかりました",
+    "z": "知道了",
+    "j": "理解しました",
     "e": "knew",
     "b": "分かる",
     "p": "verb",
@@ -198746,7 +199217,7 @@
     "t": "。"
    }
   ],
-  "雑誌で射手の記号を探せば、射手座の欄が見つかります。": [
+  "雑誌で弓矢の記号を探せば、射手座の占いが見つかります。": [
    {
     "t": "雑誌",
     "z": "雜誌",
@@ -198760,21 +199231,21 @@
     "t": "で"
    },
    {
-    "t": "射手",
-    "z": "射手",
-    "j": "弓を使う人物",
-    "e": "archer",
-    "b": "射手",
+    "t": "弓矢",
+    "z": "弓箭",
+    "j": "弓と矢",
+    "e": "bow and arrow",
+    "b": "弓矢",
     "p": "noun",
-    "r": "しゃしゅ"
+    "r": "ゆみや"
    },
    {
     "t": "の"
    },
    {
     "t": "記号",
-    "z": "記號",
-    "j": "記號やシンボル",
+    "z": "符號",
+    "j": "記号",
     "e": "symbol",
     "b": "記号",
     "p": "noun",
@@ -198786,7 +199257,7 @@
    {
     "t": "探せば",
     "z": "如果尋找",
-    "j": "探すことができれば",
+    "j": "探すと",
     "e": "if you look for",
     "b": "探す",
     "p": "verb",
@@ -198796,25 +199267,13 @@
     "t": "、"
    },
    {
-    "t": "射手座",
-    "z": "射手座",
-    "j": "星座の一つ",
-    "e": "Sagittarius",
-    "b": "射手座",
+    "t": "射手座の占い",
+    "z": "射手座運勢",
+    "j": "射手座の運勢",
+    "e": "Sagittarius horoscope",
+    "b": "射手座の占い",
     "p": "noun",
-    "r": "いてざ"
-   },
-   {
-    "t": "の"
-   },
-   {
-    "t": "欄",
-    "z": "欄",
-    "j": "表などの区切られた場所",
-    "e": "column",
-    "b": "欄",
-    "p": "noun",
-    "r": "らん"
+    "r": "いてざのうらない"
    },
    {
     "t": "が"
@@ -198822,7 +199281,7 @@
    {
     "t": "見つかります",
     "z": "能找到",
-    "j": "発見されること",
+    "j": "発見できます",
     "e": "can be found",
     "b": "見つかる",
     "p": "verb",
@@ -198832,11 +199291,11 @@
     "t": "。"
    }
   ],
-  "父は山羊座なので、新聞が開いているといつもその欄を読みます。": [
+  "父は新聞の占いを読むとき、いつも山羊座の欄から読みます。": [
    {
     "t": "父",
-    "z": "父親",
-    "j": "ちち",
+    "z": "爸爸",
+    "j": "父",
     "e": "father",
     "b": "父",
     "p": "noun",
@@ -198846,47 +199305,92 @@
     "t": "は"
    },
    {
-    "t": "山羊座",
-    "z": "摩羯座",
-    "j": "やぎざのせいざ",
-    "e": "Capricorn",
-    "b": "山羊座",
-    "p": "noun",
-    "r": "やぎざ"
-   },
-   {
-    "t": "なので、"
-   },
-   {
     "t": "新聞",
     "z": "報紙",
-    "j": "しんぶん",
+    "j": "新聞",
     "e": "newspaper",
     "b": "新聞",
     "p": "noun",
     "r": "しんぶん"
    },
    {
-    "t": "が開いているといつもその"
+    "t": "の"
    },
    {
-    "t": "欄",
-    "z": "欄",
-    "j": "らん",
-    "e": "section",
-    "b": "欄",
+    "t": "占い",
+    "z": "運勢",
+    "j": "運勢占い",
+    "e": "horoscope",
+    "b": "占い",
     "p": "noun",
-    "r": "らん"
+    "r": "うらない"
    },
    {
-    "t": "を読みます。"
+    "t": "を"
+   },
+   {
+    "t": "読むとき",
+    "z": "閱讀時",
+    "j": "読むとき",
+    "e": "when reading",
+    "b": "読む",
+    "p": "phrase",
+    "r": "よむとき"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "いつも",
+    "z": "總是",
+    "j": "いつも",
+    "e": "always",
+    "b": "いつも",
+    "p": "adverb",
+    "r": "いつも"
+   },
+   {
+    "t": "山羊座の欄",
+    "z": "摩羯座欄位",
+    "j": "山羊座の欄",
+    "e": "Capricorn section",
+    "b": "山羊座の欄",
+    "p": "noun",
+    "r": "やぎざのらん"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "読みます",
+    "z": "閱讀",
+    "j": "読みます",
+    "e": "reads",
+    "b": "読む",
+    "p": "verb",
+    "r": "よみます"
+   },
+   {
+    "t": "。"
    }
   ],
-  "水瓶座の記号には水がありますが、その本では風の星座に分類されています。": [
+  "今週の水瓶座の運勢が気になったので、占いアプリで確認しました。": [
+   {
+    "t": "今週",
+    "z": "本週",
+    "j": "今の週",
+    "e": "this week",
+    "b": "今週",
+    "p": "noun",
+    "r": "こんしゅう"
+   },
+   {
+    "t": "の"
+   },
    {
     "t": "水瓶座",
-    "z": "寶瓶座",
-    "j": "みずがめざ",
+    "z": "水瓶座",
+    "j": "水瓶座",
     "e": "Aquarius",
     "b": "水瓶座",
     "p": "noun",
@@ -198896,67 +199400,55 @@
     "t": "の"
    },
    {
-    "t": "記号",
-    "z": "符號",
-    "j": "きごう",
-    "e": "symbol",
-    "b": "記号",
+    "t": "運勢",
+    "z": "運勢",
+    "j": "運勢",
+    "e": "forecast",
+    "b": "運勢",
     "p": "noun",
-    "r": "きごう"
+    "r": "うんせい"
    },
    {
-    "t": "には"
+    "t": "が"
    },
    {
-    "t": "水",
-    "z": "水",
-    "j": "みず",
-    "e": "water",
-    "b": "水",
+    "t": "気になったので",
+    "z": "因為想知道",
+    "j": "知りたいと思ったので",
+    "e": "because I wanted to know",
+    "b": "気になる",
+    "p": "phrase",
+    "r": "きになったので"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "占いアプリ",
+    "z": "占星 App",
+    "j": "運勢を見るアプリ",
+    "e": "horoscope app",
+    "b": "占いアプリ",
     "p": "noun",
-    "r": "みず"
+    "r": "うらないアプリ"
    },
    {
-    "t": "がありますが、その"
+    "t": "で"
    },
    {
-    "t": "本",
-    "z": "書",
-    "j": "ほん",
-    "e": "book",
-    "b": "本",
-    "p": "noun",
-    "r": "ほん"
-   },
-   {
-    "t": "では"
-   },
-   {
-    "t": "風の星座",
-    "z": "風星座",
-    "j": "かぜのせいざ",
-    "e": "air sign",
-    "b": "風の星座",
-    "p": "noun",
-    "r": "かぜのせいざ"
-   },
-   {
-    "t": "に"
-   },
-   {
-    "t": "分類されています",
-    "z": "被分類",
-    "j": "ぶんるいされています",
-    "e": "is classified",
-    "b": "分類する",
+    "t": "確認しました",
+    "z": "查看了",
+    "j": "確かめました",
+    "e": "checked",
+    "b": "確認する",
     "p": "verb",
-    "r": "ぶんるいされています"
+    "r": "かくにんしました"
    },
    {
     "t": "。"
    }
   ],
-  "友達は牡牛座ですが、星座で性格が決まるとは信じていません。": [
+  "友達は牡牛座ですが、星座で自分の性格が決まるとは思っていません。": [
    {
     "t": "友達",
     "z": "朋友",
@@ -198971,12 +199463,12 @@
    },
    {
     "t": "牡牛座",
-    "z": "牡牛座",
+    "z": "金牛座",
     "j": "牡牛座",
     "e": "Taurus",
     "b": "牡牛座",
     "p": "noun",
-    "r": "ぼくぎゅうざ"
+    "r": "おうしざ"
    },
    {
     "t": "ですが、"
@@ -198985,7 +199477,7 @@
     "t": "星座",
     "z": "星座",
     "j": "星座",
-    "e": "zodiac signs",
+    "e": "zodiac sign",
     "b": "星座",
     "p": "noun",
     "r": "せいざ"
@@ -198994,9 +199486,21 @@
     "t": "で"
    },
    {
+    "t": "自分",
+    "z": "自己",
+    "j": "自分自身",
+    "e": "oneself",
+    "b": "自分",
+    "p": "pronoun",
+    "r": "じぶん"
+   },
+   {
+    "t": "の"
+   },
+   {
     "t": "性格",
-    "z": "性格",
-    "j": "性格",
+    "z": "個性",
+    "j": "人の性質",
     "e": "personality",
     "b": "性格",
     "p": "noun",
@@ -199007,9 +199511,9 @@
    },
    {
     "t": "決まる",
-    "z": "決定",
-    "j": "決まる",
-    "e": "decide",
+    "z": "被決定",
+    "j": "決定される",
+    "e": "be decided",
     "b": "決まる",
     "p": "verb",
     "r": "きまる"
@@ -199018,23 +199522,23 @@
     "t": "とは"
    },
    {
-    "t": "信じていません",
-    "z": "不相信",
-    "j": "信じていません",
-    "e": "do not believe",
-    "b": "信じる",
+    "t": "思っていません",
+    "z": "不認為",
+    "j": "考えていません",
+    "e": "does not think",
+    "b": "思う",
     "p": "verb",
-    "r": "しんじていません"
+    "r": "おもっていません"
    },
    {
     "t": "。"
    }
   ],
-  "誕生日が五月下旬なら、カレンダーアプリには通常双子座と表示されます。": [
+  "誕生日が五月下旬なら、占いアプリでは通常、星座が双子座と表示されます。": [
    {
     "t": "誕生日",
     "z": "生日",
-    "j": "誕生日",
+    "j": "生まれた日",
     "e": "birthday",
     "b": "誕生日",
     "p": "noun",
@@ -199045,9 +199549,9 @@
    },
    {
     "t": "五月下旬",
-    "z": "五月下旬",
-    "j": "五月下旬",
-    "e": "end of May",
+    "z": "五月底",
+    "j": "五月の終わりごろ",
+    "e": "late May",
     "b": "五月下旬",
     "p": "phrase",
     "r": "ごがつげじゅん"
@@ -199056,25 +199560,40 @@
     "t": "なら、"
    },
    {
-    "t": "カレンダーアプリ",
-    "z": "行事曆應用程式",
-    "j": "カレンダーアプリ",
-    "e": "calendar app",
-    "b": "カレンダーアプリ",
+    "t": "占いアプリ",
+    "z": "占星 App",
+    "j": "運勢を見るアプリ",
+    "e": "horoscope app",
+    "b": "占いアプリ",
     "p": "noun",
-    "r": "カレンダーアプリ"
+    "r": "うらないアプリ"
    },
    {
-    "t": "には"
+    "t": "では"
    },
    {
     "t": "通常",
     "z": "通常",
-    "j": "通常",
+    "j": "ふつうは",
     "e": "usually",
     "b": "通常",
     "p": "adverb",
     "r": "つうじょう"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "星座",
+    "z": "星座",
+    "j": "星座",
+    "e": "zodiac sign",
+    "b": "星座",
+    "p": "noun",
+    "r": "せいざ"
+   },
+   {
+    "t": "が"
    },
    {
     "t": "双子座",
@@ -199090,10 +199609,10 @@
    },
    {
     "t": "表示されます",
-    "z": "顯示",
-    "j": "表示されます",
-    "e": "show",
-    "b": "表示される",
+    "z": "會顯示",
+    "j": "画面に出ます",
+    "e": "will be shown",
+    "b": "表示する",
     "p": "verb",
     "r": "ひょうじされます"
    },
@@ -199101,34 +199620,70 @@
     "t": "。"
    }
   ],
-  "彼女は七月生まれなので、朝刊で蟹座の占いを確認しました。": [
+  "妹は七月生まれなので、アプリで星座を聞かれたときに蟹座を選びました。": [
    {
-    "t": "彼女",
-    "z": "她",
-    "j": "彼女",
-    "e": "she",
-    "b": "彼女",
-    "p": "pronoun",
-    "r": "かのじょ"
+    "t": "妹",
+    "z": "妹妹",
+    "j": "妹",
+    "e": "younger sister",
+    "b": "妹",
+    "p": "noun",
+    "r": "いもうと"
    },
    {
     "t": "は"
    },
    {
-    "t": "七月",
-    "z": "七月",
-    "j": "七月",
-    "e": "July",
-    "b": "七月",
-    "p": "numeral",
-    "r": "しちがつ"
+    "t": "七月生まれ",
+    "z": "七月出生",
+    "j": "七月に生まれた",
+    "e": "born in July",
+    "b": "七月生まれ",
+    "p": "phrase",
+    "r": "しちがつうまれ"
    },
    {
-    "t": "生まれなので、朝刊で"
+    "t": "なので、"
+   },
+   {
+    "t": "アプリ",
+    "z": "App",
+    "j": "アプリ",
+    "e": "app",
+    "b": "アプリ",
+    "p": "noun",
+    "r": "アプリ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "星座",
+    "z": "星座",
+    "j": "星座",
+    "e": "zodiac sign",
+    "b": "星座",
+    "p": "noun",
+    "r": "せいざ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "聞かれたとき",
+    "z": "被問到時",
+    "j": "尋ねられたとき",
+    "e": "when asked",
+    "b": "聞く",
+    "p": "phrase",
+    "r": "きかれたとき"
+   },
+   {
+    "t": "に"
    },
    {
     "t": "蟹座",
-    "z": "蟹座",
+    "z": "巨蟹座",
     "j": "蟹座",
     "e": "Cancer",
     "b": "蟹座",
@@ -199136,37 +199691,25 @@
     "r": "かにざ"
    },
    {
-    "t": "の"
-   },
-   {
-    "t": "占い",
-    "z": "占卜",
-    "j": "占い",
-    "e": "horoscope",
-    "b": "占い",
-    "p": "noun",
-    "r": "うらない"
-   },
-   {
     "t": "を"
    },
    {
-    "t": "確認しました",
-    "z": "確認了",
-    "j": "確認しました",
-    "e": "checked",
-    "b": "確認する",
+    "t": "選びました",
+    "z": "選了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "選ぶ",
     "p": "verb",
-    "r": "かくにんしました"
+    "r": "えらびました"
    },
    {
     "t": "。"
    }
   ],
-  "甥は獅子座がライオンで表されると知ると、すぐにその星座を覚えました。": [
+  "甥はライオンが獅子座を表すと知って、すぐにその星座を覚えました。": [
    {
     "t": "甥",
-    "z": "侄子",
+    "z": "外甥",
     "j": "甥",
     "e": "nephew",
     "b": "甥",
@@ -199175,18 +199718,6 @@
    },
    {
     "t": "は"
-   },
-   {
-    "t": "獅子座",
-    "z": "獅子座",
-    "j": "獅子座",
-    "e": "Leo",
-    "b": "獅子座",
-    "p": "noun",
-    "r": "ししざ"
-   },
-   {
-    "t": "が"
    },
    {
     "t": "ライオン",
@@ -199198,36 +199729,72 @@
     "r": "ライオン"
    },
    {
-    "t": "で"
+    "t": "が"
    },
    {
-    "t": "表される",
-    "z": "被表現",
-    "j": "表される",
-    "e": "represented by",
-    "b": "表される",
+    "t": "獅子座",
+    "z": "獅子座",
+    "j": "獅子座",
+    "e": "Leo",
+    "b": "獅子座",
+    "p": "noun",
+    "r": "ししざ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "表す",
+    "z": "代表",
+    "j": "示す",
+    "e": "represents",
+    "b": "表す",
     "p": "verb",
-    "r": "あらわされる"
+    "r": "あらわす"
    },
    {
     "t": "と"
    },
    {
-    "t": "知ると",
-    "z": "知道了",
-    "j": "知ると",
-    "e": "when [he] learned",
+    "t": "知って",
+    "z": "得知",
+    "j": "知って",
+    "e": "learned",
     "b": "知る",
     "p": "verb",
-    "r": "しると"
+    "r": "しって"
    },
    {
-    "t": "、すぐにその星座を"
+    "t": "、"
+   },
+   {
+    "t": "すぐに",
+    "z": "立刻",
+    "j": "すぐに",
+    "e": "immediately",
+    "b": "すぐに",
+    "p": "adverb",
+    "r": "すぐに"
+   },
+   {
+    "t": "その"
+   },
+   {
+    "t": "星座",
+    "z": "星座",
+    "j": "星座",
+    "e": "sign",
+    "b": "星座",
+    "p": "noun",
+    "r": "せいざ"
+   },
+   {
+    "t": "を"
    },
    {
     "t": "覚えました",
     "z": "記住了",
-    "j": "覚えました",
+    "j": "覚えた",
     "e": "remembered",
     "b": "覚える",
     "p": "verb",
@@ -199237,11 +199804,11 @@
     "t": "。"
    }
   ],
-  "妹は乙女座ですが、私たちの誕生日は二週間しか離れていません。": [
+  "妹は乙女座なので、アプリでは最初に乙女座の運勢を確認します。": [
    {
     "t": "妹",
     "z": "妹妹",
-    "j": "いもうと",
+    "j": "妹",
     "e": "younger sister",
     "b": "妹",
     "p": "noun",
@@ -199253,57 +199820,66 @@
    {
     "t": "乙女座",
     "z": "處女座",
-    "j": "おとめざのせいざ",
+    "j": "乙女座",
     "e": "Virgo",
     "b": "乙女座",
     "p": "noun",
     "r": "おとめざ"
    },
    {
-    "t": "ですが、"
+    "t": "なので、"
    },
    {
-    "t": "私たち",
-    "z": "我們",
-    "j": "わたしたち",
-    "e": "we",
-    "b": "私たち",
-    "p": "pronoun",
-    "r": "わたしたち"
-   },
-   {
-    "t": "の"
-   },
-   {
-    "t": "誕生日",
-    "z": "生日",
-    "j": "たんじょうび",
-    "e": "birthday",
-    "b": "誕生日",
+    "t": "アプリ",
+    "z": "App",
+    "j": "アプリ",
+    "e": "app",
+    "b": "アプリ",
     "p": "noun",
-    "r": "たんじょうび"
+    "r": "アプリ"
    },
    {
-    "t": "は"
+    "t": "では"
    },
    {
-    "t": "二週間",
-    "z": "兩週",
-    "j": "にしゅうかん",
-    "e": "two weeks",
-    "b": "二週間",
-    "p": "numeral",
-    "r": "にしゅうかん"
+    "t": "最初に",
+    "z": "先",
+    "j": "一番先に",
+    "e": "first",
+    "b": "最初に",
+    "p": "adverb",
+    "r": "さいしょに"
    },
    {
-    "t": "しか離れていません。"
+    "t": "乙女座の運勢",
+    "z": "處女座運勢",
+    "j": "乙女座の運勢",
+    "e": "Virgo horoscope",
+    "b": "乙女座の運勢",
+    "p": "noun",
+    "r": "おとめざのうんせい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認します",
+    "z": "查看",
+    "j": "確かめます",
+    "e": "checks",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんします"
+   },
+   {
+    "t": "。"
    }
   ],
-  "天秤座の記号は天秤なので、ポスターの中ですぐ見分けられました。": [
+  "天秤座の記号は天秤の形なので、ポスターですぐに見分けられました。": [
    {
     "t": "天秤座",
     "z": "天秤座",
-    "j": "てんびんざのせいざ",
+    "j": "天秤座",
     "e": "Libra",
     "b": "天秤座",
     "p": "noun",
@@ -199314,8 +199890,8 @@
    },
    {
     "t": "記号",
-    "z": "記號",
-    "j": "きごう",
+    "z": "符號",
+    "j": "記号",
     "e": "symbol",
     "b": "記号",
     "p": "noun",
@@ -199325,13 +199901,13 @@
     "t": "は"
    },
    {
-    "t": "天秤",
-    "z": "天秤",
-    "j": "てんびん",
-    "e": "scales",
-    "b": "天秤",
-    "p": "noun",
-    "r": "てんびん"
+    "t": "天秤の形",
+    "z": "天秤形狀",
+    "j": "天秤のような形",
+    "e": "shape of scales",
+    "b": "天秤の形",
+    "p": "phrase",
+    "r": "てんびんのかたち"
    },
    {
     "t": "なので、"
@@ -199341,43 +199917,52 @@
     "z": "海報",
     "j": "ポスター",
     "e": "poster",
-    "b": "poster",
+    "b": "ポスター",
     "p": "noun",
     "r": "ポスター"
    },
    {
-    "t": "の中ですぐ見分けられました。"
+    "t": "で"
+   },
+   {
+    "t": "すぐに",
+    "z": "很快",
+    "j": "すぐに",
+    "e": "quickly",
+    "b": "すぐに",
+    "p": "adverb",
+    "r": "すぐに"
+   },
+   {
+    "t": "見分けられました",
+    "z": "認出來了",
+    "j": "区別できました",
+    "e": "could identify",
+    "b": "見分ける",
+    "p": "verb",
+    "r": "みわけられました"
+   },
+   {
+    "t": "。"
    }
   ],
-  "彼がアプリへ誕生日を入力すると、星座は蠍座だと表示されました。": [
+  "占いアプリに誕生日を入力すると、星座は蠍座だと表示されました。": [
    {
-    "t": "彼",
-    "z": "他",
-    "j": "かれ",
-    "e": "he",
-    "b": "彼",
-    "p": "pronoun",
-    "r": "かれ"
-   },
-   {
-    "t": "が"
-   },
-   {
-    "t": "アプリ",
-    "z": "應用程式",
-    "j": "アプリ",
-    "e": "app",
-    "b": "app",
+    "t": "占いアプリ",
+    "z": "占星 App",
+    "j": "運勢を見るアプリ",
+    "e": "horoscope app",
+    "b": "占いアプリ",
     "p": "noun",
-    "r": "アプリ"
+    "r": "うらないアプリ"
    },
    {
-    "t": "へ"
+    "t": "に"
    },
    {
     "t": "誕生日",
     "z": "生日",
-    "j": "たんじょうび",
+    "j": "生まれた日",
     "e": "birthday",
     "b": "誕生日",
     "p": "noun",
@@ -199387,21 +199972,21 @@
     "t": "を"
    },
    {
-    "t": "入力",
-    "z": "輸入",
-    "j": "にゅうりょく",
-    "e": "enter",
-    "b": "入力",
-    "p": "verb",
-    "r": "にゅうりょく"
+    "t": "入力すると",
+    "z": "輸入後",
+    "j": "入力したところ",
+    "e": "when entered",
+    "b": "入力する",
+    "p": "phrase",
+    "r": "にゅうりょくすると"
    },
    {
-    "t": "すると、"
+    "t": "、"
    },
    {
     "t": "星座",
     "z": "星座",
-    "j": "せいざ",
+    "j": "星座",
     "e": "zodiac sign",
     "b": "星座",
     "p": "noun",
@@ -199413,14 +199998,26 @@
    {
     "t": "蠍座",
     "z": "天蠍座",
-    "j": "さそりざのせいざ",
+    "j": "蠍座",
     "e": "Scorpio",
     "b": "蠍座",
     "p": "noun",
     "r": "さそりざ"
    },
    {
-    "t": "だと表示されました。"
+    "t": "だと"
+   },
+   {
+    "t": "表示されました",
+    "z": "顯示了",
+    "j": "画面に出ました",
+    "e": "was shown",
+    "b": "表示する",
+    "p": "verb",
+    "r": "ひょうじされました"
+   },
+   {
+    "t": "。"
    }
   ],
   "クルーズ船へ戻る前に、乗客は港で保安検査を受けなければなりません。": [

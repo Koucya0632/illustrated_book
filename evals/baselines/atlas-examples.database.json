@@ -1,0 +1,22 @@
+{
+  "target": "atlas-examples",
+  "source": "database",
+  "recordedAt": "2026-08-31T01:11:35.795Z",
+  "fixtureSha256": "1b66734774f07a6ecde9c08cb29075b80ac6a819830bccc7e7935ab2e0cae52a",
+  "graderSha256": "d2dead5e8ad62db2c5de0413a976650019f6dae308071856d9586ccc6fb1340a",
+  "score": {
+    "scope": {
+      "words": 476,
+      "examples": 952
+    },
+    "tiers": {
+      "mechanical": "passed",
+      "semantic": "not-scored"
+    },
+    "passRate": 1,
+    "failingWords": 0,
+    "issueCount": 0,
+    "categories": {},
+    "issueKeys": []
+  }
+}

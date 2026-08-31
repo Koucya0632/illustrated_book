@@ -6,8 +6,13 @@
 //   npm run examples:spans
 //   npm run examples:spans -- --category=bathroom --apply
 //   npm run examples:spans -- --word-id=access-card --refresh --apply
+//
+// --out= redirects the write so a run can be reviewed before it touches the corpus,
+// --word-ids= takes a comma-separated set, and --attempt-log= records one JSONL row per
+// model attempt so a run's first-pass yield can be measured instead of only warned about.
 
-import { renameSync, writeFileSync } from "node:fs";
+import { appendFileSync, renameSync, writeFileSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 import {
   alignAuthoredSpans,
   containsGeneratedMetaGloss,
@@ -50,6 +55,22 @@ type ResponsesPayload = {
 const MODEL = process.env.EXAMPLE_SPANS_MODEL?.trim() || "gpt-4.1-mini";
 const OUTPUT_PATH = new URL("../data/example-spans.json", import.meta.url);
 
+// Set from --attempt-log. Every accept and every rejection is appended here, so the
+// share of sentences the model gets right without a retry stops being a console warning
+// that scrolls past and becomes a number a baseline can hold.
+let attemptLogPath: string | null = null;
+
+function logAttempt(record: {
+  key?: string;
+  accepted?: boolean;
+  batchSize: number;
+  issues?: string;
+  usage?: unknown;
+}): void {
+  if (!attemptLogPath) return;
+  appendFileSync(attemptLogPath, `${JSON.stringify({ ...record, at: Date.now() })}\n`, "utf8");
+}
+
 function valueFor(argv: string[], name: string): string | null {
   const value = argv.find((arg) => arg.startsWith(`${name}=`));
   return value?.slice(name.length + 1).trim() || null;
@@ -68,6 +89,10 @@ function parsePositiveInteger(argv: string[], name: string, fallback: number): n
 function candidatesFor(argv: string[], corpus: ExampleSpanCorpus): Candidate[] {
   const category = valueFor(argv, "--category");
   const wordId = valueFor(argv, "--word-id");
+  const wordIds = valueFor(argv, "--word-ids")
+    ?.split(",")
+    .map((id) => id.trim())
+    .filter(Boolean);
   const languageFilter = valueFor(argv, "--language");
   if (languageFilter && languageFilter !== "en" && languageFilter !== "ja") {
     throw new Error("--language must be en or ja");
@@ -77,12 +102,21 @@ function candidatesFor(argv: string[], corpus: ExampleSpanCorpus): Candidate[] {
   if (invalidOnly && !refresh) {
     throw new Error("--invalid-only requires --refresh");
   }
+  const requested = wordIds ? new Set(wordIds) : null;
   const allowed = new Set(
     words
-      .filter((word) => (!category || word.category === category) && (!wordId || word.id === wordId))
+      .filter(
+        (word) =>
+          (!category || word.category === category) &&
+          (!wordId || word.id === wordId) &&
+          (!requested || requested.has(word.id)),
+      )
       .map(({ id }) => id),
   );
   if (wordId && !allowed.has(wordId)) throw new Error(`unknown or filtered word id: ${wordId}`);
+  for (const id of requested ?? []) {
+    if (!allowed.has(id)) throw new Error(`unknown or filtered word id: ${id}`);
+  }
 
   const candidates: Candidate[] = [];
   for (const pair of MAIN_WORD_EXAMPLE_PAIRS) {
@@ -211,7 +245,9 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<BatchG
     const detail = await response.text().catch(() => "");
     throw new Error(`OpenAI Responses HTTP ${response.status}: ${detail.slice(0, 300)}`);
   }
-  const parsed = JSON.parse(responseText((await response.json()) as ResponsesPayload)) as {
+  const body = (await response.json()) as ResponsesPayload & { usage?: unknown };
+  logAttempt({ batchSize: batch.length, usage: body.usage });
+  const parsed = JSON.parse(responseText(body)) as {
     items: Array<{ key: string; spans: GeneratedSpan[] }>;
   };
   const expected = new Map(batch.map((candidate) => [candidate.key, candidate]));
@@ -245,15 +281,22 @@ async function generateBatch(apiKey: string, batch: Candidate[]): Promise<BatchG
       }
       if (issues.length > 0) {
         failures.set(item.key, issues.join("; "));
+        logAttempt({ key: item.key, accepted: false, batchSize: batch.length, issues: issues.join("; ") });
         continue;
       }
       generated.set(item.key, spans);
+      logAttempt({ key: item.key, accepted: true, batchSize: batch.length });
     } catch (error) {
-      failures.set(item.key, error instanceof Error ? error.message : String(error));
+      const message = error instanceof Error ? error.message : String(error);
+      failures.set(item.key, message);
+      logAttempt({ key: item.key, accepted: false, batchSize: batch.length, issues: message });
     }
   }
   for (const key of expected.keys()) {
-    if (!generated.has(key) && !failures.has(key)) failures.set(key, "model omitted generated key");
+    if (!generated.has(key) && !failures.has(key)) {
+      failures.set(key, "model omitted generated key");
+      logAttempt({ key, accepted: false, batchSize: batch.length, issues: "model omitted generated key" });
+    }
   }
   return { generated, failures };
 }
@@ -314,15 +357,18 @@ async function generateResilient(
   }
 }
 
-function writeCorpus(corpus: ExampleSpanCorpus): void {
-  const temp = new URL(`${OUTPUT_PATH.pathname}.tmp`, "file://");
+function writeCorpus(corpus: ExampleSpanCorpus, destination: URL = OUTPUT_PATH): void {
+  const temp = new URL(`${destination.pathname}.tmp`, "file://");
   writeFileSync(temp, `${JSON.stringify(corpus, null, 1)}\n`, "utf8");
-  renameSync(temp, OUTPUT_PATH);
+  renameSync(temp, destination);
 }
 
 async function main() {
   const argv = process.argv.slice(2);
   const apply = argv.includes("--apply");
+  const outValue = valueFor(argv, "--out");
+  const destination = outValue ? pathToFileURL(outValue) : OUTPUT_PATH;
+  attemptLogPath = valueFor(argv, "--attempt-log");
   const batchSize = parsePositiveInteger(argv, "--batch-size", 5);
   const concurrency = parsePositiveInteger(argv, "--concurrency", 4);
   const corpus = loadExampleSpanCorpus();
@@ -357,7 +403,7 @@ async function main() {
         corpus[candidate.language][candidate.sentence] = generated.get(candidate.key)!;
       }
       completed += batch.length;
-      writeCorpus(corpus);
+      writeCorpus(corpus, destination);
       console.log(`[example-spans] generated ${completed}/${candidates.length}`);
     }
   }

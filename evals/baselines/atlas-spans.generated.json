@@ -1,0 +1,47 @@
+{
+  "target": "atlas-spans",
+  "source": "generated",
+  "recordedAt": "2026-08-31T00:02:52.377Z",
+  "fixtureSha256": "6c4e0cdb80e4b9fb6dbbebd8343dab041e54ada7fac7ead021b795c693cc8964",
+  "graderSha256": "d2dead5e8ad62db2c5de0413a976650019f6dae308071856d9586ccc6fb1340a",
+  "generatorSha256": "88110fb2c0baaf64ef992541cf357191092299125ca1b1f63f361bae8ab94945",
+  "score": {
+    "scope": {
+      "words": 40,
+      "examples": 80
+    },
+    "tiers": {
+      "mechanical": "passed",
+      "semantic": "not-scored"
+    },
+    "passRate": 1,
+    "failingWords": 0,
+    "issueCount": 0,
+    "categories": {},
+    "issueKeys": [],
+    "generation": {
+      "sentences": 160,
+      "firstPassAccepted": 138,
+      "firstPassYield": 0.8625,
+      "totalAttempts": 208,
+      "attemptsPerSentence": 1.3,
+      "retriedSentences": 22,
+      "rejectionReasons": {
+        "generated gloss contains a usage or conjugation explanation": 29,
+        "span text is not present in sentence order": 13,
+        "span reading omits kana from the complete phrase": 6,
+        "span j gloss contains a grammar note instead of only contextual meaning": 2,
+        "span e gloss contains a grammar note instead of only contextual meaning": 2
+      },
+      "usage": {
+        "input": 86623,
+        "output": 41793,
+        "requests": 67,
+        "estimatedCostUsd": 0.1015
+      },
+      "model": "gpt-4.1-mini",
+      "elapsedSeconds": 134
+    }
+  },
+  "stale": "measured on the zodiac sentences that b43eb82 replaced; re-record with --update once OPENAI_API_KEY has credit again"
+}

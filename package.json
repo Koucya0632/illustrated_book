@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "test": "tsx --test tests/**/*.test.ts",
+    "eval": "node evals/run-eval.mjs",
+    "eval:db": "node evals/run-eval.mjs --source database",
+    "eval:spans": "node evals/run-generation-eval.mjs",
     "dev": "next dev",
     "build": "next build",
     "vercel-build": "tsx scripts/migrate.ts && next build",

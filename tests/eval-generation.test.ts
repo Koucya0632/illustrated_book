@@ -270,3 +270,19 @@ test("escalation always moves, so a retry is never a repeat of its own attempt",
   }
   assert.deepEqual(seen, [0, 0.25, 0.5, 0.75, 1]);
 });
+
+test("the two held-out slices share no words", () => {
+  // Slice A is where generation failures are read; slice B is where a change is scored.
+  // The first prompt change in this repo was written from slice A's failures and then
+  // measured on slice A, which reports fit rather than improvement. Overlap would let
+  // that happen again without anyone noticing, so it is checked rather than remembered.
+  const a = JSON.parse(
+    readFileSync(new URL("../evals/fixtures/spans-holdout.json", import.meta.url), "utf8"),
+  ) as { wordIds: string[] };
+  const b = JSON.parse(
+    readFileSync(new URL("../evals/fixtures/spans-holdout-b.json", import.meta.url), "utf8"),
+  ) as { wordIds: string[] };
+  const overlap = b.wordIds.filter((id) => new Set(a.wordIds).has(id));
+  assert.deepEqual(overlap, []);
+  assert.equal(new Set([...a.wordIds, ...b.wordIds]).size, a.wordIds.length + b.wordIds.length);
+});

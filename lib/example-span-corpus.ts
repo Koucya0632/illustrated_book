@@ -114,15 +114,30 @@ const JAPANESE_DETACHED_GRAMMAR = new Set([
 const META_GLOSS_PATTERN = /[（）()]|(?:助詞|主語標示|做主語|做受詞|作為受詞|賓語|主格|賓格|目的格|敬語|代名詞|持續狀態|持続状態|主題標示|賦予目的)/u;
 const GENERATED_META_GLOSS_PATTERN = /(?:動作|表現|文法|活用|意味|テ形|て形|タ形|た形|依頼形|丁寧な依頼|動作の依頼|ように頼む|ようお願い|ことを頼む|頼み$|語りかけ|行為|条件表現|条件を示す|否定形|過去形|現在形|未来形|連用形|辞書形|基本形|命令形|受身形|受け身形|可能形|意向形|助動詞)/u;
 
+/** Every gloss that reads as generator narration, with enough context to see why.
+ *
+ * The boolean form below answers "reject this?", which is all the pipeline needs, and
+ * nothing at all when you are trying to work out what the model keeps writing. Both
+ * views read the same pattern so they can never disagree about what counts.
+ */
+export function generatedMetaGlossHits(
+  spans: AuthoredSpan[] | undefined,
+): Array<{ index: number; field: "z" | "j" | "e"; text: string; gloss: string }> {
+  const hits: Array<{ index: number; field: "z" | "j" | "e"; text: string; gloss: string }> = [];
+  for (const [index, span] of (spans ?? []).entries()) {
+    for (const field of ["z", "j", "e"] as const) {
+      const gloss = span[field];
+      if (typeof gloss === "string" && GENERATED_META_GLOSS_PATTERN.test(gloss)) {
+        hits.push({ index, field, text: span.t, gloss });
+      }
+    }
+  }
+  return hits;
+}
+
 /** Reject generator narration that is structurally valid but not a learnable gloss. */
 export function containsGeneratedMetaGloss(spans: AuthoredSpan[] | undefined): boolean {
-  return Boolean(
-    spans?.some((span) =>
-      [span.z, span.j, span.e].some(
-        (gloss) => typeof gloss === "string" && GENERATED_META_GLOSS_PATTERN.test(gloss),
-      ),
-    ),
-  );
+  return generatedMetaGlossHits(spans).length > 0;
 }
 
 function learningText(text: string): string {

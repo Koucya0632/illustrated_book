@@ -1,0 +1,72 @@
+{
+  "target": "atlas-spans",
+  "source": "generated",
+  "slice": "b",
+  "recordedAt": "2026-09-01T06:14:12.320Z",
+  "runs": 2,
+  "aggregatedFrom": "two runs on slice B, which no prompt has been tuned on",
+  "sentencesSha256": "2d0b9709df868a84a38b8a52297a63f8aaeb6f480232bdb8dedfaf602d046261",
+  "promptSha256": "f5cb5429630c78f1aed7dcc5454c10d68f505544eaedc306b1c1069e2e5b14e2",
+  "graderSha256": "d2dead5e8ad62db2c5de0413a976650019f6dae308071856d9586ccc6fb1340a",
+  "generatorSha256": "8286ca002d4e6acd60338cbbe7362cf1e5b745905b13cc3c1abeb51bc9626e4f",
+  "noiseBand": {
+    "measuredAt": "2026-09-01T06:14:12.320Z",
+    "note": "two runs on slice B, which no prompt has been tuned on",
+    "observations": [
+      0.8875,
+      0.9313
+    ],
+    "mean": 0.9094,
+    "sd": 0.031,
+    "spread": 0.0438,
+    "previous": {
+      "note": "same slice, prompt before the inflection rule",
+      "observations": [
+        0.85,
+        0.8313
+      ],
+      "mean": 0.8407,
+      "sd": 0.0132
+    }
+  },
+  "score": {
+    "scope": {
+      "words": 40,
+      "examples": 80
+    },
+    "tiers": {
+      "mechanical": "passed",
+      "semantic": "not-scored"
+    },
+    "passRate": 1,
+    "failingWords": 0,
+    "issueCount": 0,
+    "categories": {},
+    "issueKeys": [],
+    "generation": {
+      "sentences": 320,
+      "firstPassAccepted": 291,
+      "firstPassYield": 0.9094,
+      "totalAttempts": 414,
+      "attemptsPerSentence": 1.294,
+      "retriedSentences": 29,
+      "rejectionReasons": {
+        "generated gloss contains a usage or conjugation explanation": 70,
+        "span reading omits kana from the complete phrase": 27,
+        "span text is not present in sentence order": 10,
+        "span e gloss contains a grammar note instead of only contextual meaning": 5,
+        "span j gloss contains a grammar note instead of only contextual meaning": 4,
+        "span reading is too short for the complete phrase": 3
+      },
+      "usage": {
+        "requests": 142,
+        "input": 208475,
+        "output": 87602,
+        "estimatedCostUsd": 0.2236
+      },
+      "model": "gpt-4.1-mini",
+      "elapsedSeconds": 283,
+      "rewrittenSentences": 0
+    }
+  }
+}

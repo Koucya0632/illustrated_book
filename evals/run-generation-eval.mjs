@@ -38,6 +38,10 @@ const GRADER = SKILL_ROOT
   ? path.join(SKILL_ROOT, "audit-tuji-atlas", "scripts", "check-example-contract.mjs")
   : path.join(EVALS_DIR, "grader", "check-example-contract.mjs");
 const HOLDOUT = path.join(EVALS_DIR, "fixtures", "spans-holdout.json");
+// Slice A is where failures are read; slice B is where a change is scored. A prompt
+// written from the failures of the slice it is then measured on reports its own fit,
+// not an improvement — which is exactly what happened the first time this was measured.
+const HOLDOUT_B = path.join(EVALS_DIR, "fixtures", "spans-holdout-b.json");
 const CATALOG_FIXTURE = path.join(EVALS_DIR, "fixtures", "atlas-examples.json");
 const BASELINE = path.join(EVALS_DIR, "baselines", "atlas-spans.generated.json");
 
@@ -55,13 +59,14 @@ const YIELD_TOLERANCE = 0.05;
 const PRICE_PER_MTOK = { input: 0.4, output: 1.6 };
 
 function parseArgs(argv) {
-  const options = { update: false, json: false, dry: false, limit: null };
+  const options = { update: false, json: false, dry: false, limit: null, slice: "a" };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === "--update") options.update = true;
     else if (arg === "--json") options.json = true;
     else if (arg === "--dry") options.dry = true;
     else if (arg === "--limit") options.limit = Number(argv[++i]);
+    else if (arg === "--slice") options.slice = argv[++i];
     else if (arg === "--help" || arg === "-h") options.help = true;
     else throw new Error(`unknown argument: ${arg}`);
   }
@@ -222,6 +227,7 @@ function main() {
       `Usage:\n  node evals/run-generation-eval.mjs [--limit N] [--dry] [--update] [--json]\n\n` +
         `  --dry     report the slice and stop, without calling the model\n` +
         `  --limit   generate only the first N held-out words (a cheap smoke run)\n` +
+        `  --slice   a (default, where failures are read) or b (measurement only)\n` +
         `  --update  record this run as the new baseline\n\n` +
         `Calls OpenAI with OPENAI_API_KEY from .env.local and never writes data/example-spans.json.`,
     );
@@ -229,7 +235,11 @@ function main() {
   }
 
   if (!fs.existsSync(GRADER)) throw new Error(`grader not found: ${GRADER}`);
-  const holdout = JSON.parse(fs.readFileSync(HOLDOUT, "utf8"));
+  if (options.slice !== "a" && options.slice !== "b") {
+    throw new Error(`unknown slice: ${options.slice} (known: a, b)`);
+  }
+  const holdoutFile = options.slice === "b" ? HOLDOUT_B : HOLDOUT;
+  const holdout = JSON.parse(fs.readFileSync(holdoutFile, "utf8"));
   const wordIds = options.limit ? holdout.wordIds.slice(0, options.limit) : holdout.wordIds;
 
   if (options.dry) {
@@ -303,7 +313,8 @@ function main() {
     target: "atlas-spans",
     source: "generated",
     recordedAt: new Date().toISOString(),
-    fixtureSha256: sha256(HOLDOUT),
+    slice: options.slice,
+    fixtureSha256: sha256(holdoutFile),
     sentencesSha256,
     graderSha256: sha256(GRADER),
     generatorSha256: sha256(path.join(PROJECT_ROOT, "scripts", "generate-example-spans.ts")),
@@ -311,7 +322,8 @@ function main() {
     score,
   };
 
-  const baseline = fs.existsSync(BASELINE) ? JSON.parse(fs.readFileSync(BASELINE, "utf8")) : null;
+  const baselineFile = options.slice === "b" ? BASELINE.replace(".json", ".b.json") : BASELINE;
+  const baseline = fs.existsSync(baselineFile) ? JSON.parse(fs.readFileSync(baselineFile, "utf8")) : null;
   // A baseline someone marked stale describes a world that no longer exists. Comparing to
   // it would produce a delta with nothing behind it.
   const result = baseline?.stale

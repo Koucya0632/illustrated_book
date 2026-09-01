@@ -6,6 +6,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { MAIN_WORD_EXAMPLE_PAIRS } from "../lib/main-word-example-pairs";
+import { nextTemperature } from "../scripts/generate-example-spans";
 import { auditFromSpans, verifyAgainstAudited } from "../evals/corpus-to-audit.mjs";
 import { compare } from "../evals/run-eval.mjs";
 import { promptSha256, readAttemptLog } from "../evals/run-generation-eval.mjs";
@@ -234,4 +235,38 @@ test("the prompt hash covers the model's instructions and nothing else", () => {
     baseline,
     "an edit outside the prompt must not move the hash",
   );
+});
+
+test("a retry raises the temperature, because nothing else about the request changes", () => {
+  // Determinism is what makes the first attempt a stable measurement, and it is also what
+  // makes a retry pointless: the same input to a temperature-0 model returns the same
+  // rejection. Before this escalation existed, intersection:0:ja was rejected twenty
+  // identical times and took the whole generation run down with it.
+  assert.equal(nextTemperature(0), 0.25);
+  assert.equal(nextTemperature(0.25), 0.5);
+  assert.equal(nextTemperature(0.5), 0.75);
+  assert.equal(nextTemperature(0.75), 1);
+});
+
+test("escalation stops at 1 rather than climbing past the API's range", () => {
+  assert.equal(nextTemperature(1), 1);
+  assert.equal(nextTemperature(0.9), 1);
+});
+
+test("escalation always moves, so a retry is never a repeat of its own attempt", () => {
+  // The loop retries up to ten times; every step must differ from the one before it or
+  // the deadlock comes back.
+  let temperature = 0;
+  const seen = [temperature];
+  for (let i = 0; i < 10; i += 1) {
+    const next = nextTemperature(temperature);
+    if (next === temperature) {
+      // Only legal once the ceiling is reached, where batch splitting is what varies.
+      assert.equal(temperature, 1, "temperature stalled below the ceiling");
+      break;
+    }
+    temperature = next;
+    seen.push(temperature);
+  }
+  assert.deepEqual(seen, [0, 0.25, 0.5, 0.75, 1]);
 });

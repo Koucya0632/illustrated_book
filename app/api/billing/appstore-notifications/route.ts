@@ -44,7 +44,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true, handled: false });
     }
 
-    const userId = await getUserIdByOriginalTransaction(entitlement.originalTransactionId);
+    const mappedUserId = await getUserIdByOriginalTransaction(entitlement.originalTransactionId);
+    // New purchases carry the Supabase UUID in Apple's signed appAccountToken,
+    // so notifications can be routed before the client verify call. Legacy
+    // purchases fall back to their immutable first binding.
+    const userId = entitlement.appAccountToken ?? mappedUserId;
     if (!userId) {
       // We have not seen this subscription via an authenticated verify yet.
       console.warn(
@@ -55,17 +59,21 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true, handled: false });
     }
 
-    await upsertAtlasEntitlement({
+    const result = await upsertAtlasEntitlement({
       userId,
       tier: entitlement.tier,
       source: entitlement.source,
       expiresAt: entitlement.expiresAt,
       originalTransactionId: entitlement.originalTransactionId,
+      transactionId: entitlement.transactionId,
+      signedAt: entitlement.signedAt,
+      appAccountToken: entitlement.appAccountToken,
     });
 
     return NextResponse.json({
       ok: true,
       handled: true,
+      state: result.status,
       notificationType: notification.notificationType ?? null,
     });
   } catch (err) {

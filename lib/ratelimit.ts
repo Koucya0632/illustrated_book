@@ -3,9 +3,9 @@
 // whether the caller is still within limit. No Redis — the atlas AI cost
 // guards run at low volume, so a single upsert per call is plenty.
 //
-// Fails OPEN: if the DB is unavailable or the query errors, callers are allowed
-// through. A limiter outage must never take the product down; the global daily
-// cap is the backstop for runaway cost.
+// Cost guards fail open by default so a limiter outage does not take the main
+// product down. Security-sensitive callers opt into failClosed and receive an
+// explicit unavailable result instead.
 
 import { createHash } from "crypto";
 import { getSql } from "@/lib/db";
@@ -15,6 +15,8 @@ export interface RateRule {
   bucket: string;
   windowSeconds: number;
   limit: number;
+  /** Security-sensitive boundaries may reject when the limiter is unavailable. */
+  failClosed?: boolean;
 }
 
 export interface RateResult {
@@ -24,6 +26,8 @@ export interface RateResult {
   limit: number;
   /** Seconds until the current window rolls over. */
   retryAfterSeconds: number;
+  /** False when no counter could be recorded. */
+  available: boolean;
 }
 
 /** Start of the fixed window containing `nowMs`. */
@@ -46,15 +50,16 @@ export async function hitRateLimit(rule: RateRule): Promise<RateResult> {
     Math.ceil((start.getTime() + rule.windowSeconds * 1000 - now) / 1000),
   );
   const base: RateResult = {
-    ok: true,
+    ok: !rule.failClosed,
     bucket: rule.bucket,
     count: 0,
     limit: rule.limit,
     retryAfterSeconds,
+    available: false,
   };
 
   const sql = getSql();
-  if (!sql) return base; // fail open without a DB
+  if (!sql) return base;
 
   try {
     const rows = await sql<{ count: number }[]>`
@@ -65,10 +70,10 @@ export async function hitRateLimit(rule: RateRule): Promise<RateResult> {
       RETURNING count
     `;
     const count = rows[0]?.count ?? 1;
-    return { ...base, ok: count <= rule.limit, count };
+    return { ...base, ok: count <= rule.limit, count, available: true };
   } catch (err) {
-    console.warn("[ratelimit] hit failed, allowing through", err);
-    return base; // fail open on error
+    console.warn(`[ratelimit] hit failed (${rule.failClosed ? "closed" : "open"})`, err);
+    return base;
   }
 }
 

@@ -42,16 +42,29 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid transaction" }, { status: 400 });
   }
 
-  await upsertAtlasEntitlement({
+  const result = await upsertAtlasEntitlement({
     userId,
     tier: entitlement.tier,
     source: entitlement.source,
     expiresAt: entitlement.expiresAt,
     originalTransactionId: entitlement.originalTransactionId,
+    transactionId: entitlement.transactionId,
+    signedAt: entitlement.signedAt,
+    appAccountToken: entitlement.appAccountToken,
   });
 
+  if (result.status === "account_mismatch") {
+    return NextResponse.json({ error: "purchase belongs to another account" }, { status: 403 });
+  }
+  if (result.status === "already_bound") {
+    return NextResponse.json({ error: "subscription already linked" }, { status: 409 });
+  }
+  if (result.status === "unbound_legacy") {
+    return NextResponse.json({ error: "legacy subscription needs account migration" }, { status: 409 });
+  }
+
   return NextResponse.json(
-    { tier: entitlement.tier, expiresAt: entitlement.expiresAt },
+    { tier: result.tier, expiresAt: result.expiresAt },
     { headers: { "Cache-Control": "private, no-store" } },
   );
 }

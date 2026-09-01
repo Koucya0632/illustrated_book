@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { studyAnswerOwnerMatches } from "@/lib/study-answer-owner";
 import { revalidateTag } from "next/cache";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getCardById, upsertReview } from "@/lib/cards-db";
@@ -276,6 +277,7 @@ export async function POST(req: Request) {
     responseMs?: number;
     sessionId?: string;
     activity?: StudyLogActivity;
+    ownerUserId?: string;
     // 複習's 求救提示: the user turned the card over for the gloss before
     // answering. Recorded in study_logs.metadata rather than as a new
     // `activity` value — activity names the question type, and this is a
@@ -288,6 +290,13 @@ export async function POST(req: Request) {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
+  }
+
+  // Durable iOS replays carry the account that originally queued the answer.
+  // If auth changed while an async replay was building its request, reject it
+  // instead of applying account A's answer under account B's access token.
+  if (!studyAnswerOwnerMatches(body.ownerUserId, userId)) {
+    return NextResponse.json({ error: "answer belongs to another account" }, { status: 403 });
   }
 
   const rawCardId = body.cardId;

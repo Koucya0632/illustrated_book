@@ -70,21 +70,31 @@ and measures nothing.**
 So the number this eval keeps is **first-pass yield**: the share of sentences the model
 got right on its first attempt, with no retry. It is the real model and prompt quality
 signal, it sets the run's cost and latency, and until now it existed only as console
-warnings that scrolled past. The recorded baseline is **83.5%** on gpt-4.1-mini — the mean of three runs, 401 of 480
-sentences accepted with no retry, $0.28 and about 145s per run.
+warnings that scrolled past. The recorded baseline is **87.9%** on gpt-4.1-mini — the mean of three runs, 422 of 480
+sentences accepted with no retry, about $0.11 and 160s per run.
 
-**The baseline is a mean because a single run is not a measurement.** Three runs of the
-identical slice, with the prompt, grader, model and sentences all byte-identical,
-returned 88.1%, 78.8% and 83.8%: a 9.4 point spread, sd 4.7. Pure binomial sampling at
-n=160 would give 2.9 points; the extra comes from the generator batching five sentences
-per request, so a bad batch fails together. The numbers are kept in the baseline's
-`noiseBand` field.
+**The baseline is a mean because a single run is not a measurement.** That mattered far
+more before the generator stopped sampling. Three runs of the identical slice, everything
+byte-identical:
+
+| | temperature 1.0 (API default) | temperature 0, escalating retries |
+|---|---|---|
+| yields | 88.1 / 78.8 / 83.8 | 89.4 / 86.3 / 88.1 |
+| mean | 83.5% | **87.9%** |
+| spread | 9.4 points | **3.1 points** |
+| sd | 4.69 | **1.57** |
+| requests per run | 57 | 75 |
+
+Annotating a fixed sentence against a strict schema has one right answer, so sampling had
+nothing to explore — it only added noise, and cost yield. Both `noiseBand` and its
+`previous` reading are kept in the baseline.
 
 The run also keeps a rejection histogram bucketed by rule rather than by span index, which
-is where the actionable part lives. Across the three baseline runs, **106 of 129 rejections (82%) were one family** — the
+is where the actionable part lives. Across the three baseline runs, **151 of 175 rejections (86%) were one family** — the
 model writing a grammar note or conjugation explanation where a contextual meaning
 belongs. The prompt already forbids this in three separate sentences, so a fourth is
-unlikely to help; the lever is a different mechanism, not more wording.
+unlikely to help; the lever is a different mechanism, not more wording. This is now the
+only thing standing between the generator and a first-pass yield in the nineties.
 
 The structural grade of the accepted output is still recorded, and is still expected to
 be exactly 100% every run. It is kept as a drift alarm: the day it is not 100%, the
@@ -96,13 +106,17 @@ Because a model at the API's default temperature produces different spans every 
 target's verdict comes from the yield against a tolerance, not from issue-key equality.
 Key comparison would report a regression on sampling noise alone.
 
-The tolerance is **±0.13**, derived from the spread above: one run against a one-run
-baseline compounds the sd to about 6.6 points, and 95% of that is ±13. That width is
-honest rather than useful — at ±13 the eval catches a prompt change that breaks
-generation outright and cannot see a real five-point degradation. **Narrowing it means
-removing the noise at its source, not tightening the number**: the generator sends no
-`temperature`, so it runs at the API default of 1.0. Setting it to 0 for generation would
-collapse most of this spread, and is a product decision, not an eval one.
+The tolerance is **±0.05**, derived from the spread above: one run against a one-run
+baseline compounds sd 1.57 to about 2.2 points, and 95% of that is ±4.4. It was ±0.13
+while the generator sampled at 1.0, which was too wide to see a real five-point
+degradation. Tighten it only against another measurement.
+
+**Retries deliberately do not run at temperature 0.** Retrying a deterministic function
+with identical input returns the identical rejection, so each same-batch retry raises the
+temperature by 0.25 up to 1.0. Without that, the generator repeats one wrong answer until
+it exhausts its ten retries and fails the whole run — which is exactly what happened on
+`intersection:0:ja`, twenty identical rejections in a row. A batch *split* keeps the
+temperature, because a different set of sentences is already a different prompt.
 
 Four hashes sit in this target's baseline, and each one answers a different "why did the
 number move": `sentencesSha256` (the held-out text was rewritten), `promptSha256` (the

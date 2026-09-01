@@ -179,6 +179,46 @@ by a description of the inflection. 開けた is 開いた, never 開けるの�
 Requests per run fell about 20% alongside the yield rise, because the retries stopped
 happening.
 
+## Where prompt tuning stops paying
+
+The inflection fix worked, so the obvious next move was the next-biggest failure family.
+Reading slice A's **first-attempt** failures — the retry-inflated histogram is misleading,
+see the caution above — gives a very different picture from the raw counts:
+
+| count | rule |
+|---|---|
+| 4 | span text not present in sentence order |
+| 3 | usage or conjugation explanation |
+| 2 | reading omits kana |
+| 2 | e gloss carries a grammar note |
+| 2 | j gloss carries a grammar note |
+
+Only 13 of 160 sentences fail at all, spread across five rules. Two things came out of
+trying to fix the largest of them anyway.
+
+**The prompt has a capacity, and adding to it costs the rules already there.** Two more
+lines about span alignment dropped slice B from 90.9% to **76.9%** — and not by failing
+at alignment. The inflection failures the previous change had fixed came *back* (3 → 14),
+and the model began omitting requested keys outright (0 → 14). Removing just the longer
+of the two lines restored 90.0%. Adding instructions is not free.
+
+**And the remaining targets are below what this eval can resolve.** Slice B's run-to-run
+sd is 3.1 points, so the smallest detectable difference is:
+
+| runs per measurement | detectable at 95% |
+|---|---|
+| 2 | 6.1 points |
+| 3 | 5.0 points |
+| 10 | 2.7 points |
+
+Fixing the *entire* alignment family perfectly is worth 5/160 = **3.1 points**. Detecting
+that needs about ten runs per candidate, roughly $1 a measurement, and every other
+remaining family is smaller still. Below this line you are shipping changes on noise.
+
+Going further means changing the instrument, not the prompt: a larger slice (160 → ~500
+sentences) or many more runs per reading. Until then the honest position is that
+`eval:spans` can confirm a change did no harm, and can no longer prove one helps.
+
 ## What this does not cover
 
 - **The semantic tier.** The per-item human/agent review (`semantic-review.json`) is

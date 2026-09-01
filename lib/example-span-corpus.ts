@@ -330,7 +330,18 @@ export function alignAuthoredSpans(
     if (!span.t) throw new Error(`span ${index} has empty text`);
     const found = sentence.indexOf(span.t, cursor);
     if (found < 0) {
-      throw new Error(`span ${index} text is not present in sentence order: ${span.t}`);
+      // Two very different mistakes land here and the message used to blur them: text
+      // that is nowhere in the sentence at all (a split phrasal verb rejoined, say),
+      // versus text that exists but earlier — a span reclaiming characters an earlier
+      // one already took. Saying which turns this into something a prompt can address.
+      const earlier = sentence.includes(span.t);
+      throw new Error(
+        `span ${index} text is not present in sentence order: ${span.t} (${
+          earlier
+            ? `it appears earlier than the cursor at ${cursor}, after ${JSON.stringify(sentence.slice(0, cursor).slice(-24))} — an earlier span already claimed it`
+            : "it is not a contiguous substring of the sentence at all"
+        })`,
+      );
     }
     const gap = sentence.slice(cursor, found);
     if (gap) aligned.push({ t: gap });

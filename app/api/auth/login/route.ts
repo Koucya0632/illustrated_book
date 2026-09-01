@@ -5,8 +5,10 @@ import {
   mintAdminToken,
   timingSafeEqual,
 } from "@/lib/auth";
+import { clientIpHash, hitRateLimit } from "@/lib/ratelimit";
+import { readLimitedJson, RequestBodyTooLargeError } from "@/lib/request-body";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function POST(req: Request) {
   const expected = process.env.ADMIN_PASSWORD;
@@ -17,11 +19,34 @@ export async function POST(req: Request) {
     );
   }
 
+  const ipHash = clientIpHash(req);
+  for (const rule of [
+    { bucket: `admin-login:ip:${ipHash}`, windowSeconds: 900, limit: 8, failClosed: true },
+    { bucket: "admin-login:global", windowSeconds: 900, limit: 200, failClosed: true },
+  ]) {
+    const rate = await hitRateLimit(rule);
+    if (!rate.available) {
+      return NextResponse.json({ error: "login temporarily unavailable" }, { status: 503 });
+    }
+    if (!rate.ok) {
+      return NextResponse.json(
+        { error: "too many attempts" },
+        { status: 429, headers: { "Retry-After": String(rate.retryAfterSeconds) } },
+      );
+    }
+  }
+
   let password = "";
   try {
-    const body = await req.json();
-    password = String(body.password ?? "");
-  } catch {
+    const body = await readLimitedJson(req, 1_024);
+    if (typeof body !== "object" || body === null || Array.isArray(body)) {
+      return NextResponse.json({ error: "invalid body" }, { status: 400 });
+    }
+    password = String((body as Record<string, unknown>).password ?? "");
+  } catch (error) {
+    if (error instanceof RequestBodyTooLargeError) {
+      return NextResponse.json({ error: "body too large" }, { status: 413 });
+    }
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 

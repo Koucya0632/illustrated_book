@@ -30,6 +30,10 @@
 
 import { getSql } from "@/lib/db";
 import { checkAtlasAiBackstops } from "@/lib/ratelimit";
+import {
+  decideStoreKitBinding,
+  decideStoreKitState,
+} from "@/lib/billing/storekit-state";
 
 // postgres-js types the pool handle (Sql) and a transaction handle
 // (TransactionSql) as mutually unassignable, so helpers that must run in both
@@ -288,29 +292,96 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
  * notifications). Manual grants do NOT come through here — see grantProAccess.
  *
  * Does three things atomically:
- *  1. Transfers the subscription binding. An Apple subscription belongs to a
- *     device's Apple ID, not to a Tuji account, and the paywall re-syncs it to
- *     whoever is logged in — so the same original_transaction_id can arrive for
- *     a second account. One subscription entitles exactly one account, so the
- *     previous holder is released back to free (docs/adr/0005 in tuji-ios).
+ *  1. Enforces the immutable legacy binding or Apple's signed appAccountToken.
+ *     Only a token-proven destination may move an existing subscription.
  *  2. Upserts the subscription row.
  *  3. Appends to the ledger, but only when the tier or expiry actually moved —
  *     background renewals fire this constantly and an unchanged row is not an
  *     event worth recording.
  */
+export interface StoreKitEntitlementWriteResult {
+  status:
+    | "applied"
+    | "duplicate"
+    | "stale"
+    | "account_mismatch"
+    | "already_bound"
+    | "unbound_legacy";
+  tier: AtlasTier;
+  expiresAt: Date | null;
+}
+
 export async function upsertAtlasEntitlement(input: {
   userId: string;
   tier: AtlasTier;
   source: string | null;
   expiresAt: Date | null;
-  originalTransactionId?: string | null;
-}): Promise<void> {
+  originalTransactionId: string;
+  transactionId: string;
+  signedAt: Date;
+  appAccountToken: string | null;
+}): Promise<StoreKitEntitlementWriteResult> {
   const sql = getSql();
-  if (!sql) return;
-  const txnId = input.originalTransactionId ?? null;
+  if (!sql) throw new Error("database unavailable");
+  const txnId = input.originalTransactionId;
 
-  await sql.begin(async (tx) => {
-    if (txnId) {
+  return sql.begin(async (tx) => {
+    // Serialize both existing and first-time claims of this subscription. A
+    // SELECT ... FOR UPDATE cannot lock an absent row, so the advisory lock is
+    // what keeps two concurrent first claims from racing the UNIQUE index.
+    await tx`SELECT pg_advisory_xact_lock(hashtextextended(${txnId}, 0))`;
+
+    const owners = await tx<
+      {
+        user_id: string;
+        tier: AtlasTier;
+        expires_at: string | null;
+        storekit_transaction_id: string | null;
+        storekit_signed_at: string | null;
+      }[]
+    >`
+      SELECT user_id, tier, expires_at, storekit_transaction_id, storekit_signed_at
+        FROM user_entitlements
+       WHERE original_transaction_id = ${txnId}
+       FOR UPDATE
+    `;
+    const owner = owners[0] ?? null;
+
+    const stateDecision = decideStoreKitState(
+      owner
+        ? {
+            tier: owner.tier,
+            transactionId: owner.storekit_transaction_id,
+            signedAt: owner.storekit_signed_at ? new Date(owner.storekit_signed_at) : null,
+          }
+        : null,
+      { tier: input.tier, transactionId: input.transactionId, signedAt: input.signedAt },
+    );
+    if (stateDecision === "stale" || (stateDecision === "duplicate" && owner?.user_id === input.userId)) {
+      return {
+        status: stateDecision,
+        tier: owner?.tier ?? "free",
+        expiresAt: owner?.expires_at ? new Date(owner.expires_at) : null,
+      };
+    }
+
+    const bindingDecision = decideStoreKitBinding({
+      authenticatedUserId: input.userId,
+      appAccountToken: input.appAccountToken,
+      existingUserId: owner?.user_id ?? null,
+    });
+    if (bindingDecision !== "allow") {
+      return {
+        status: bindingDecision,
+        tier: owner?.tier ?? "free",
+        expiresAt: owner?.expires_at ? new Date(owner.expires_at) : null,
+      };
+    }
+
+    // A different current owner can be released only when Apple's signed
+    // appAccountToken proves the destination account. Untokened legacy JWSes
+    // can never trigger this branch.
+    if (owner && owner.user_id !== input.userId) {
       const released = await tx<{ user_id: string; tier: string }[]>`
         UPDATE user_entitlements
            SET tier = 'free',
@@ -318,7 +389,7 @@ export async function upsertAtlasEntitlement(input: {
                original_transaction_id = NULL,
                updated_at = now()
          WHERE original_transaction_id = ${txnId}
-           AND user_id <> ${input.userId}::uuid
+           AND user_id = ${owner.user_id}::uuid
         RETURNING user_id, tier
       `;
       for (const prior of released) {
@@ -339,10 +410,14 @@ export async function upsertAtlasEntitlement(input: {
     `;
 
     await tx`
-      INSERT INTO user_entitlements (user_id, tier, source, expires_at, original_transaction_id, updated_at)
+      INSERT INTO user_entitlements (
+        user_id, tier, source, expires_at, original_transaction_id,
+        storekit_transaction_id, storekit_signed_at, storekit_app_account_token, updated_at
+      )
       VALUES (
         ${input.userId}::uuid, ${input.tier}, ${input.source}, ${input.expiresAt},
-        ${txnId}, now()
+        ${txnId}, ${input.transactionId}, ${input.signedAt},
+        ${input.appAccountToken}::uuid, now()
       )
       ON CONFLICT (user_id) DO UPDATE SET
         tier = EXCLUDED.tier,
@@ -350,6 +425,12 @@ export async function upsertAtlasEntitlement(input: {
         expires_at = EXCLUDED.expires_at,
         original_transaction_id =
           COALESCE(EXCLUDED.original_transaction_id, user_entitlements.original_transaction_id),
+        storekit_transaction_id = EXCLUDED.storekit_transaction_id,
+        storekit_signed_at = EXCLUDED.storekit_signed_at,
+        storekit_app_account_token = COALESCE(
+          EXCLUDED.storekit_app_account_token,
+          user_entitlements.storekit_app_account_token
+        ),
         updated_at = now()
     `;
 
@@ -359,7 +440,9 @@ export async function upsertAtlasEntitlement(input: {
         ? input.expiresAt !== null
         : input.expiresAt === null ||
           new Date(before!.expires_at!).getTime() !== input.expiresAt.getTime();
-    if (before?.tier === input.tier && !expiryMoved) return;
+    if (before?.tier === input.tier && !expiryMoved) {
+      return { status: "applied", tier: input.tier, expiresAt: input.expiresAt };
+    }
 
     await tx`
       INSERT INTO user_entitlement_events
@@ -371,6 +454,7 @@ export async function upsertAtlasEntitlement(input: {
         'appstore', ${input.source}, 'appstore', ${txnId}
       )
     `;
+    return { status: "applied", tier: input.tier, expiresAt: input.expiresAt };
   });
 }
 

@@ -7,6 +7,7 @@
 // routes. `entitlementFromTransaction` maps a decoded transaction either way.
 
 import type { AtlasTier } from "@/lib/atlas/entitlement";
+import { normalizeStoreKitAccountToken } from "@/lib/billing/storekit-state";
 
 const PRO_PRODUCT_IDS = new Set([
   "app.tuji.pro.monthly",
@@ -20,6 +21,10 @@ export interface AppleTransaction {
   productId?: string;
   transactionId?: string;
   originalTransactionId?: string;
+  /** ms since epoch; Apple signs every decoded transaction with this ordering value. */
+  signedDate?: number;
+  /** UUID supplied by Product.PurchaseOption.appAccountToken. */
+  appAccountToken?: string;
   /** ms since epoch; present for auto-renewable subscriptions. */
   expiresDate?: number;
   /** ms since epoch; set when refunded / revoked. */
@@ -61,7 +66,10 @@ export interface EntitlementFromTransaction {
   tier: AtlasTier;
   source: string;
   expiresAt: Date | null;
-  originalTransactionId: string | null;
+  originalTransactionId: string;
+  transactionId: string;
+  signedAt: Date;
+  appAccountToken: string | null;
 }
 
 /**
@@ -71,6 +79,18 @@ export interface EntitlementFromTransaction {
  * reads (which also lapse on expiry) stay consistent.
  */
 export function entitlementFromTransaction(t: AppleTransaction): EntitlementFromTransaction {
+  if (
+    !t.originalTransactionId ||
+    !t.transactionId ||
+    typeof t.signedDate !== "number" ||
+    !Number.isFinite(t.signedDate)
+  ) {
+    throw new Error("transaction identity/order fields required");
+  }
+  const appAccountToken = normalizeStoreKitAccountToken(t.appAccountToken ?? null);
+  if (t.appAccountToken && appAccountToken === null) {
+    throw new Error("invalid appAccountToken");
+  }
   const now = Date.now();
   const isProProduct = t.productId ? PRO_PRODUCT_IDS.has(t.productId) : false;
   const revoked = typeof t.revocationDate === "number" && t.revocationDate <= now;
@@ -80,6 +100,9 @@ export function entitlementFromTransaction(t: AppleTransaction): EntitlementFrom
     tier: active ? "pro" : "free",
     source: "appstore",
     expiresAt: typeof t.expiresDate === "number" ? new Date(t.expiresDate) : null,
-    originalTransactionId: t.originalTransactionId ?? null,
+    originalTransactionId: t.originalTransactionId,
+    transactionId: t.transactionId,
+    signedAt: new Date(t.signedDate),
+    appAccountToken,
   };
 }

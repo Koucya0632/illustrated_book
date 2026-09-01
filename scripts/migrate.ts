@@ -57,6 +57,17 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS events_type_idx ON events(type)`,
   `CREATE INDEX IF NOT EXISTS events_word_idx ON events(word_id)`,
   `CREATE INDEX IF NOT EXISTS events_created_idx ON events(created_at DESC)`,
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint WHERE conname = 'events_payload_lengths_chk'
+     ) THEN
+       ALTER TABLE events ADD CONSTRAINT events_payload_lengths_chk CHECK (
+         char_length(coalesce(word_id, '')) <= 128 AND
+         char_length(coalesce(category, '')) <= 64 AND
+         char_length(coalesce(session_id, '')) <= 128
+       ) NOT VALID;
+     END IF;
+   END $$`,
 
   // ---- User profile (display data; auth lives in auth.users) ----
   // Supabase auth.users(id) is UUID. We mirror display fields here for joins
@@ -1152,6 +1163,9 @@ const DDL = [
      source                  TEXT,
      expires_at              TIMESTAMPTZ,
      original_transaction_id TEXT,
+     storekit_transaction_id  TEXT,
+     storekit_signed_at       TIMESTAMPTZ,
+     storekit_app_account_token UUID,
      created_at              TIMESTAMPTZ NOT NULL DEFAULT now(),
      updated_at              TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
@@ -1162,6 +1176,9 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS user_entitlements_original_txn_idx
      ON user_entitlements(original_transaction_id)
      WHERE original_transaction_id IS NOT NULL`,
+  `ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_transaction_id TEXT`,
+  `ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_signed_at TIMESTAMPTZ`,
+  `ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_app_account_token UUID`,
 
   // Manual Pro grants (comps, apology credit, reviewer access). Deliberately a
   // SEPARATE table from user_entitlements, which holds the App Store

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import test from "node:test";
 
+import { alignAuthoredSpans } from "../lib/example-span-corpus";
 import { MAIN_WORD_EXAMPLE_PAIRS } from "../lib/main-word-example-pairs";
 import { nextTemperature } from "../scripts/generate-example-spans";
 import { auditFromSpans, verifyAgainstAudited } from "../evals/corpus-to-audit.mjs";
@@ -285,4 +286,24 @@ test("the two held-out slices share no words", () => {
   const overlap = b.wordIds.filter((id) => new Set(a.wordIds).has(id));
   assert.deepEqual(overlap, []);
   assert.equal(new Set([...a.wordIds, ...b.wordIds]).size, a.wordIds.length + b.wordIds.length);
+});
+
+test("an alignment failure says which of its two causes it is", () => {
+  // "not present in sentence order" covers two unrelated mistakes: text that is nowhere
+  // in the sentence (a phrasal verb split by its object, rejoined) and text that is
+  // there but before the cursor (spans listed out of order). Telling them apart is what
+  // made the difference between guessing at a prompt rule and knowing which one.
+  const sentence = "When the bath mat becomes damp, hang it up before mold starts to grow.";
+  assert.throws(
+    () => alignAuthoredSpans("en", sentence, [{ t: "hang up", z: "掛", j: "かける", e: "hang" }]),
+    /not a contiguous substring of the sentence at all/,
+  );
+  assert.throws(
+    () =>
+      alignAuthoredSpans("en", sentence, [
+        { t: "damp", z: "潮濕", j: "しめった", e: "damp" },
+        { t: "bath mat", z: "浴室地墊", j: "バスマット", e: "bath mat" },
+      ]),
+    /an earlier span already claimed it/,
+  );
 });

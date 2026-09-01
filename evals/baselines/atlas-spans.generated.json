@@ -1,34 +1,33 @@
 {
   "target": "atlas-spans",
   "source": "generated",
-  "recordedAt": "2026-08-31T08:35:23.815Z",
+  "recordedAt": "2026-09-01T06:14:12.317Z",
   "runs": 3,
-  "aggregatedFrom": "three runs of the identical slice at temperature 0 with escalating retries",
+  "aggregatedFrom": "three runs on slice A after the inflection rule was added to the prompt",
   "sentencesSha256": "f616ab479d2799f4e699fb853fa7eb991218e035e9c281abfe10f6a4a6b5ce46",
-  "promptSha256": "9d2eff59af3c37c3398679a56b26e24ecaf92b2e7413959bc171895dd4335ce3",
+  "promptSha256": "f5cb5429630c78f1aed7dcc5454c10d68f505544eaedc306b1c1069e2e5b14e2",
   "graderSha256": "d2dead5e8ad62db2c5de0413a976650019f6dae308071856d9586ccc6fb1340a",
-  "generatorSha256": "7a2698ef499220b72c61355ccf5f7ad6156505ec5ade384fdffe0d4f67d071d6",
+  "generatorSha256": "8286ca002d4e6acd60338cbbe7362cf1e5b745905b13cc3c1abeb51bc9626e4f",
   "noiseBand": {
-    "measuredAt": "2026-08-31T08:35:23.816Z",
-    "note": "three runs of the identical slice, temperature 0 with escalating retries",
+    "measuredAt": "2026-09-01T06:14:12.318Z",
+    "note": "three runs on slice A after the inflection rule was added to the prompt",
     "observations": [
-      0.8938,
-      0.8625,
-      0.8812
+      0.9125,
+      0.9187,
+      0.9375
     ],
-    "mean": 0.8792,
-    "sd": 0.0157,
-    "spread": 0.0313,
+    "mean": 0.9229,
+    "sd": 0.013,
+    "spread": 0.025,
     "previous": {
-      "note": "same slice at the API default temperature of 1.0",
+      "note": "same slice, prompt before the inflection rule",
       "observations": [
-        0.8812,
-        0.7875,
-        0.8375
+        0.8938,
+        0.8625,
+        0.8812
       ],
-      "mean": 0.8354,
-      "sd": 0.0469,
-      "spread": 0.0937
+      "mean": 0.8792,
+      "sd": 0.0157
     }
   },
   "score": {
@@ -47,28 +46,28 @@
     "issueKeys": [],
     "generation": {
       "sentences": 480,
-      "firstPassAccepted": 422,
-      "firstPassYield": 0.8792,
-      "totalAttempts": 641,
-      "attemptsPerSentence": 1.336,
-      "retriedSentences": 58,
+      "firstPassAccepted": 443,
+      "firstPassYield": 0.9229,
+      "totalAttempts": 590,
+      "attemptsPerSentence": 1.229,
+      "retriedSentences": 37,
       "rejectionReasons": {
-        "generated gloss contains a usage or conjugation explanation": 127,
-        "span text is not present in sentence order": 22,
-        "span e gloss contains a grammar note instead of only contextual meaning": 17,
-        "span j gloss contains a grammar note instead of only contextual meaning": 7,
-        "span reading omits kana from the complete phrase": 1,
-        "model omitted generated key": 1
+        "generated gloss contains a usage or conjugation explanation": 66,
+        "span text is not present in sentence order": 26,
+        "span e gloss contains a grammar note instead of only contextual meaning": 9,
+        "span j gloss contains a grammar note instead of only contextual meaning": 9,
+        "span reading omits kana from the complete phrase": 2
       },
       "usage": {
-        "requests": 224,
-        "input": 288074,
-        "output": 130420,
-        "estimatedCostUsd": 0.3239
+        "requests": 187,
+        "input": 275560,
+        "output": 119794,
+        "estimatedCostUsd": 0.3019
       },
       "model": "gpt-4.1-mini",
-      "elapsedSeconds": 162,
+      "elapsedSeconds": 223,
       "rewrittenSentences": 0
     }
-  }
+  },
+  "caveat": "slice A is where this prompt change was diagnosed, so this number carries its own fit. The unbiased reading is the slice B baseline."
 }

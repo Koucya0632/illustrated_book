@@ -70,8 +70,9 @@ and measures nothing.**
 So the number this eval keeps is **first-pass yield**: the share of sentences the model
 got right on its first attempt, with no retry. It is the real model and prompt quality
 signal, it sets the run's cost and latency, and until now it existed only as console
-warnings that scrolled past. The recorded baseline is **87.9%** on gpt-4.1-mini — the mean of three runs, 422 of 480
-sentences accepted with no retry, about $0.11 and 160s per run.
+warnings that scrolled past. The recorded baseline is **90.9%** on gpt-4.1-mini, measured on slice B — the slice no
+prompt has been tuned on. Slice A reads 92.3%, and is caveated in its own baseline file,
+because slice A is where the current prompt's counter-examples were found.
 
 **The baseline is a mean because a single run is not a measurement.** That mattered far
 more before the generator stopped sampling. Three runs of the identical slice, everything
@@ -90,11 +91,10 @@ nothing to explore — it only added noise, and cost yield. Both `noiseBand` and
 `previous` reading are kept in the baseline.
 
 The run also keeps a rejection histogram bucketed by rule rather than by span index, which
-is where the actionable part lives. Across the three baseline runs, **151 of 175 rejections (86%) were one family** — the
-model writing a grammar note or conjugation explanation where a contextual meaning
-belongs. The prompt already forbids this in three separate sentences, so a fourth is
-unlikely to help; the lever is a different mechanism, not more wording. This is now the
-only thing standing between the generator and a first-pass yield in the nineties.
+is where the actionable part lives. That histogram is what drove the prompt change described below; the family it named has
+roughly halved. One caution reading it: it counts **attempts**, not sentences, so a
+single span that keeps failing inflates its own bucket. In the latest slice A runs, 81 of
+88 remaining hits were one span — `曲がる` glossed as 「曲がる動作」 — retrying.
 
 The structural grade of the accepted output is still recorded, and is still expected to
 be exactly 100% every run. It is kept as a drift alarm: the day it is not 100%, the
@@ -111,6 +111,12 @@ baseline compounds sd 1.57 to about 2.2 points, and 95% of that is ±4.4. It was
 while the generator sampled at 1.0, which was too wide to see a real five-point
 degradation. Tighten it only against another measurement.
 
+**Note on schema-level enforcement.** Putting the prohibition in the JSON schema was
+tried and does not work. OpenAI strict structured outputs accepts a `pattern` keyword,
+and accepts negative lookahead in it, but a constrained decode against one returns
+`status: incomplete, reason: max_output_tokens` having produced nothing at all — it burns
+the whole output budget. The rule has to live in the prompt.
+
 **Retries deliberately do not run at temperature 0.** Retrying a deterministic function
 with identical input returns the identical rejection, so each same-batch retry raises the
 temperature by 0.25 up to 1.0. Without that, the generator repeats one wrong answer until
@@ -126,6 +132,52 @@ not, so look at the gate), and `graderSha256` (the ruler changed).
 The held-out slice is `fixtures/spans-holdout.json`: 40 words, 4 evenly spaced ids from
 each of the 10 categories, 160 sentences. Word metadata for grading comes from the frozen
 catalog fixture, so only the spans come from the model.
+
+## Two slices, and why
+
+`fixtures/spans-holdout.json` (slice A) is where generation failures are **read**.
+`fixtures/spans-holdout-b.json` (slice B) is where a change is **scored**. They are
+disjoint, 40 words each, and a test enforces that.
+
+The split exists because the first prompt change made here skipped it. The failures were
+read off slice A, counter-examples were written from them, and the result was scored on
+slice A — which measures fit, not improvement. Re-running the same comparison on slice B
+gave the honest answer:
+
+| | prompt before | prompt after | delta |
+|---|---|---|---|
+| slice A (tuned on) | 87.9% | 92.3% | +4.4 |
+| **slice B (untouched)** | **84.1%** | **90.9%** | **+6.9** |
+
+Here the gain survived — it was larger on the untouched slice, so the counter-examples
+generalised rather than fitting. That is the outcome you hope for and cannot assume.
+Read failures from A; quote B.
+
+## What the prompt change was
+
+The rejection histogram said 86% of failures were one family, and the prompt already
+forbade that family in three separate sentences. The useful question was not how to
+forbid it a fourth time but what the model was actually writing, so the validator was
+given a view that names the offending gloss instead of only counting it
+(`generatedMetaGlossHits`). One run answered it:
+
+| span | model wrote | means |
+|---|---|---|
+| `開けた` | 開ける**の過去形** | "past form of 開ける" — 10× |
+| `入れてください` | 中に入れる**ように頼む** | "asking someone to put in" |
+| `すくってください` | すくう**動作**をしてください | "do the action of scooping" |
+
+Every one was an inflected verb, and the prompt caused it: it requires a verb's
+inflection to stay inside the span (`確認してください`, `読まなかった`), forbids naming the
+inflection in the gloss, and never says what to write instead. The model was not
+disobeying — it was answering an impossible instruction.
+
+The fix was one rule and five counter-examples taken from the model's own output: an
+inflected span is glossed by an inflected phrase that could stand in the sentence, never
+by a description of the inflection. 開けた is 開いた, never 開けるの過去形.
+
+Requests per run fell about 20% alongside the yield rise, because the retries stopped
+happening.
 
 ## What this does not cover
 

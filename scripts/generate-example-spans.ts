@@ -16,6 +16,7 @@ import { pathToFileURL } from "node:url";
 import {
   alignAuthoredSpans,
   containsGeneratedMetaGloss,
+  generatedMetaGlossHits,
   type AuthoredSpan,
   type ExampleSpanCorpus,
   EXAMPLE_SPAN_PARTS_OF_SPEECH,
@@ -258,6 +259,8 @@ async function generateBatch(
     "Every returned span is tappable and must provide all three contextual glosses: z in Traditional Chinese, j in natural Japanese, and e in English. The j field is a short Japanese definition or contextual synonym written in normal Japanese; it is never a kana reading or a duplicate of r. The r field alone carries pronunciation.",
     "Translate only that word or fixed expression in its sentence context. A gloss must never paraphrase the remainder of the sentence. Never add grammar labels, parenthetical notes, or explanations such as 格助詞, 主語, object marker, polite form, or topic marker.",
     "A Japanese j gloss must be the clean contextual meaning itself. It must never describe conjugation or usage with meta-words such as 動作, 表現, 意味, 文法, 形, 丁寧, 依頼, 条件, 理由, 状態, 主語, 目的語, or 助詞.",
+    "An inflected span must be glossed by an inflected phrase, never by a description of its inflection. Because a span keeps its own tense, politeness and request endings, its j gloss must keep the same ones and must still read as something that could stand in the sentence in place of the span.",
+    "These are the rewrites the model gets wrong most often. 開けた is 開いた, never 開けるの過去形. 閉めてください is 閉じてください, never 閉じるように頼む. すくってください is 取ってください, never すくう動作をしてください. 履いてください is 足に着けてください, never 足に履く動作の依頼. つけました is 点けました, never つける動作の過去形.",
     "The z, j, and e glosses must not contain ( ), （ ）, or any other parenthetical annotation. Write a clean translation only.",
     "Traditional Chinese glosses must be natural Taiwan usage. Translate temporal 前に as 之前 or 前, never as the literal spatial 前面.",
     "Translate roles and fixed expressions by meaning rather than character by character; for example, 清掃の人 means 清潔人員／清潔人員之一 (cleaner), never 清潔的人.",
@@ -321,8 +324,16 @@ async function generateBatch(
           ),
       );
       const issues = validateAuthoredSentence(candidate.language, candidate.sentence, spans);
-      if (containsGeneratedMetaGloss(spans)) {
-        issues.push("generated gloss contains a usage or conjugation explanation");
+      const metaHits = generatedMetaGlossHits(spans);
+      if (metaHits.length > 0) {
+        // Naming the offending gloss is the difference between a histogram that says
+        // this happens a lot and one you can actually act on.
+        issues.push(
+          `generated gloss contains a usage or conjugation explanation: ${metaHits
+            .slice(0, 3)
+            .map((hit) => `${hit.field}[${JSON.stringify(hit.text)}]=${JSON.stringify(hit.gloss)}`)
+            .join(", ")}`,
+        );
       }
       if (issues.length > 0) {
         failures.set(item.key, issues.join("; "));

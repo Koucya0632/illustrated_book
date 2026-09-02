@@ -398,6 +398,21 @@ test("localizeSpans never leaks the stored gloss map to the wire", () => {
   }
 });
 
+// localizeSpans strips one field and forwards the rest by spread. Spelling the
+// forwarded fields out instead would look tidier and would silently drop every
+// future one — starting with this one, whose absence renders as no line at all
+// rather than as an error.
+test("localizeSpans forwards a span's pronunciation, with or without a gloss", () => {
+  const withGloss: GlossSpanRow = {
+    text: "bucket",
+    glosses: { "zh-Hant": "水桶" },
+    pronunciation: "/ˈbʌk.ɪt/",
+  };
+  const functionWord: GlossSpanRow = { text: " the ", glosses: {}, pronunciation: "/ðə/" };
+  assert.equal(localizeSpans([withGloss], "zh-Hant")[0].pronunciation, "/ˈbʌk.ɪt/");
+  assert.equal(localizeSpans([functionWord], "zh-Hant")[0].pronunciation, "/ðə/");
+});
+
 // The same class of bug tests/saved-community-words.test.ts was written for:
 // SQL read as text still matches a regex when the table name is wrong, so the
 // only real check is against the DDL. Nothing here reaches a database.

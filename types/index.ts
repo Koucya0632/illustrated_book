@@ -71,6 +71,19 @@ export interface GlossSpan {
    *  offer a way into the word's own entry. Resolved by the annotation script
    *  against the catalogue, never by the model. */
   wordId?: string;
+  /** IPA for English, a copy of the kana reading for Japanese — the catalogue's
+   *  own `word_terms.pronunciation`, never authored per span and never produced
+   *  by a model.
+   *
+   *  Present only when the span **is spelled exactly like the headword it links
+   *  to**, which is a stricter test than `wordId`. `wordId` is resolved from the
+   *  span's *base form*, so `documents` links to `document` and `next corner` to
+   *  `corner`; printing the headword's transcription under an inflection or a
+   *  longer phrase would be teaching the wrong pronunciation. That gate is here
+   *  rather than on the client because it is a fact about the catalogue, and the
+   *  client holds no dictionary (ADR-0009). Roughly one tappable span in five
+   *  qualifies; the rest simply have no line, the same way they have no 書籤. */
+  pronunciation?: string;
 }
 
 /** A 詞塊 as stored: every gloss language, none picked yet.

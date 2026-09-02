@@ -308,6 +308,7 @@ interface SpanRow {
   reading: string | null;
   word_id: string | null;
   glosses: Record<string, string> | null;
+  pronunciation: string | null;
 }
 
 /**
@@ -332,19 +333,32 @@ const getSpanRowsCached = unstable_cache(
       SELECT
         s.sentence_language, s.sentence,
         s.text, s.base_form, s.part_of_speech, s.reading, s.word_id,
+        t.pronunciation,
         (SELECT jsonb_object_agg(g.language, g.gloss)
          FROM sentence_span_glosses g
          WHERE g.sentence_language = s.sentence_language
            AND g.sentence = s.sentence
            AND g.sort_order = s.sort_order) AS glosses
       FROM sentence_spans s
+      -- The transcription comes from the catalogue, and only when the span is
+      -- spelled like the headword: word_id was resolved from the span's base
+      -- form, so joining on it alone would print the transcription of "document"
+      -- under "documents" and of "corner" under "next corner". 124 spans in the
+      -- current corpus would be wrong that way. (No backticks in here: this is
+      -- a JS template literal, and one would end the string.)
+      LEFT JOIN word_terms t
+        ON t.word_id = s.word_id
+       AND t.language = s.sentence_language
+       AND lower(t.term) = lower(s.text)
       WHERE s.sentence_language = ${language}
         AND s.sentence = ANY(${sentences})
         AND s.version >= ${MIN_SPANS_VERSION}
       ORDER BY s.sentence, s.sort_order
     `;
   },
-  ["sentence-spans-v1"],
+  // v2: the cached blob gained `pronunciation`. Reusing v1 would serve rows
+  // without the column until the tag happened to be revalidated.
+  ["sentence-spans-v2"],
   { tags: ["words"], revalidate: 300 },
 );
 
@@ -373,6 +387,7 @@ async function spansForSentences(
       partOfSpeech: r.part_of_speech ?? undefined,
       reading: r.reading ?? undefined,
       wordId: r.word_id ?? undefined,
+      pronunciation: r.pronunciation ?? undefined,
     });
     out.set(r.sentence, list);
   }

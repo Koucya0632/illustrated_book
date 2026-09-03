@@ -5,11 +5,12 @@
 // SRS state), so we transform the payload at the read boundary instead:
 //
 //   - zh-Hans: convert every zh string via OpenCC.
-//   - ja / en: overlay `word.chinese` with the first gloss-language
-//     definition (the study flows render only the structured word fields,
-//     never card front/back/explanation, so that one field is the whole
-//     swap). Custom atlas rows arrive pre-glossed from atlasDueToStudyQueue
-//     and are skipped here.
+//   - ja / en: overlay `word.chinese` with the gloss-language *headword*
+//     (`word_terms`), falling back to the first gloss-language definition
+//     (the study flows render only the structured word fields, never card
+//     front/back/explanation, so that one field is the whole swap). Custom
+//     atlas rows arrive pre-glossed from atlasDueToStudyQueue and are skipped
+//     here.
 //   - zh-Hant: pass through untouched.
 
 import "server-only";
@@ -45,6 +46,14 @@ function localizeOneZhHans(d: DueCard): DueCard {
 /// One batched lookup per queue; rows without a gloss-language definition
 /// keep their zh-Hant gloss (load-bearing fallback). Any failure degrades to
 /// the zh-Hant payload rather than failing the queue.
+///
+/// The headword comes first because this gloss is read at a glance: 複習's
+/// 求救提示 flips the picture over to `word.chinese` and 學新字 prints it under
+/// the image, and the stored ja definition is a whole explanatory sentence by
+/// design (lib/translate.ts). A ja reader was getting 「バケツ」は、液体を積み込ん
+/// だり運ぶために使用される… where a zh reader gets 水桶. `word_terms` holds no en
+/// headword distinct from the word itself, so en keeps the definition — for a
+/// monolingual reader that sentence *is* the gloss.
 async function overlayGlossDefinitions(
   due: DueCard[],
   lang: "ja" | "en",
@@ -62,9 +71,24 @@ async function overlayGlossDefinitions(
       WHERE language = ${lang} AND word_id = ANY(${ids})
       ORDER BY word_id, sort_order
     `) as unknown as { word_id: string; definition: string }[];
-    const glossById = new Map(rows.map((r) => [r.word_id, r.definition]));
+    const definitionById = new Map(rows.map((r) => [r.word_id, r.definition]));
+    const termById = new Map<string, string>();
+    if (lang === "ja") {
+      const termRows = (await sql`
+        SELECT word_id, term
+        FROM word_terms
+        WHERE language = 'ja' AND word_id = ANY(${ids})
+      `) as unknown as { word_id: string; term: string }[];
+      for (const { word_id, term } of termRows) {
+        if (term.trim()) termById.set(word_id, term.trim());
+      }
+    }
     return due.map((d) => {
-      const gloss = glossById.get(d.word.id);
+      const term = termById.get(d.word.id);
+      // A 日文 learner is being tested on the ja term itself, so there the
+      // headword is the answer rather than a gloss — that deck keeps the
+      // explanatory definition it has always had.
+      const gloss = term && term !== d.word.word ? term : definitionById.get(d.word.id);
       return gloss ? { ...d, word: { ...d.word, chinese: gloss } } : d;
     });
   } catch {

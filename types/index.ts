@@ -191,11 +191,14 @@ export interface Word {
   targetDefinition?: string;
   /** 詞塊 for `targetDefinition` — the 譯義 line is a sentence in the language
    *  being learned, so it is tappable on the same terms an example is. The
-   *  Chinese explainer beside it is not: glossing Chinese for a Chinese reader
-   *  teaches nothing, and ja/en interfaces never see that line at all. */
+   *  explainer beside it is not: it is written in the reader's own language,
+   *  and glossing that teaches nothing. */
   targetDefinitionSpans?: GlossSpan[];
-  /** Sentence-form Chinese definition stored in `words.chinese_definition`
-   *  (zh-Hant base; localized to UI lang via word_localize). */
+  /** The explainer sentence under the headline gloss, in the reader's language:
+   *  `words.chinese_definition` for a zh reader, and for ja the stored ja
+   *  definition — which is explanatory prose, so it sits here rather than in
+   *  `chinese`, where the short `word_terms` headword belongs. Named for the
+   *  zh case it shipped with; see lib/word-localize.ts. */
   chineseDefinition?: string;
 
   examples: Example[];

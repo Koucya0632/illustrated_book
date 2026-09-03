@@ -75,11 +75,15 @@ function clampReplayCount(raw: unknown): number | null {
 function listeningMetadata(body: {
   replayCount?: number;
   audioFailed?: boolean;
+  listeningOptedOut?: boolean;
+  convertedFromListening?: boolean;
 }): Record<string, number | boolean> {
   const replays = clampReplayCount(body.replayCount);
   return {
     ...(replays === null ? {} : { replayCount: replays }),
     ...(body.audioFailed === true ? { audioFailed: true } : {}),
+    ...(body.listeningOptedOut === true ? { listeningOptedOut: true } : {}),
+    ...(body.convertedFromListening === true ? { convertedFromListening: true } : {}),
   };
 }
 
@@ -216,8 +220,14 @@ async function answerAtlasCard(
     // example sentences, so they are never asked as 聽句 and these are always
     // absent — but the parameter list has to match the caller's body, or the
     // next question type to add these lands in one writer and not the other.
+    //
+    // `listeningOptedOut` is the exception that proves it: a session can switch
+    // listening off and then answer a 自製圖鑑 card, so this one genuinely does
+    // arrive here.
     replayCount?: number;
     audioFailed?: boolean;
+    listeningOptedOut?: boolean;
+    convertedFromListening?: boolean;
   },
 ) {
   if (invalidUuid(cardId)) {
@@ -322,6 +332,15 @@ export async function POST(req: Request) {
     // that answer is not evidence about listening in either direction.
     replayCount?: number;
     audioFailed?: boolean;
+    // 這輪不做聽句題. Unlike the two above these arrive on **every** activity,
+    // because that is the point: a session with listening switched off answers
+    // the rest of its cards as 選字, and rows that cannot be told apart from a
+    // session that never met a listening question are what make an aggregate
+    // listening accuracy lie. `convertedFromListening` marks the single card
+    // the user bailed on — its `activity` truthfully says `mcq`, so this is the
+    // only place that fact survives.
+    listeningOptedOut?: boolean;
+    convertedFromListening?: boolean;
   };
   try {
     body = await req.json();

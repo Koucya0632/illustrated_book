@@ -146,3 +146,87 @@ export function buildAudioArtifact(job: AudioJob, mp3: Uint8Array): AudioArtifac
     storagePath: `${job.wordId}/${job.locale}/${sha256.slice(0, 20)}.mp3`,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Example-sentence clips (聽句)
+//
+// A second job type rather than a wider `AudioJob`, because the two are keyed
+// on different things: a headword clip is one per (word, locale) and lives in
+// `word_media`; a sentence clip is one per (example, locale) and lives in
+// `word_example_media`. Forcing both through one type would mean an optional
+// `exampleId` that half the code has to remember to check — and the cost of
+// forgetting is a sentence filed as a word's pronunciation, which is exactly
+// the failure docs/adr/0015 (iOS repo) exists to prevent.
+// ---------------------------------------------------------------------------
+
+export interface ExampleAudioJob {
+  exampleId: number;
+  locale: AudioLocale;
+  text: string;
+  /** For `--word-id` targeting and readable logs; not part of the key. */
+  wordId: string;
+}
+
+export interface ExampleSentenceRow {
+  id: number;
+  word_id: string;
+  /** `word_examples.sentence` — always the English source. */
+  sentence: string;
+  /** The ja translation from `word_example_translations`, when there is one. */
+  ja: string | null;
+}
+
+/**
+ * One job per (example, locale). English sentences get both accents, exactly as
+ * headwords do — a learner who set 發音口音 to UK should not be handed an
+ * American sentence next to a British word.
+ */
+export function buildExampleAudioJobs(rows: ExampleSentenceRow[]): ExampleAudioJob[] {
+  const jobs: ExampleAudioJob[] = [];
+  for (const row of rows) {
+    const wordId = row.word_id.trim();
+    const english = row.sentence?.trim() ?? "";
+    if (wordId && english) {
+      jobs.push({ exampleId: row.id, locale: "en-US", text: english, wordId });
+      jobs.push({ exampleId: row.id, locale: "en-GB", text: english, wordId });
+    }
+    const japanese = row.ja?.trim() ?? "";
+    if (wordId && japanese) {
+      jobs.push({ exampleId: row.id, locale: "ja-JP", text: japanese, wordId });
+    }
+  }
+  return jobs;
+}
+
+export function selectExampleAudioJobs(
+  jobs: ExampleAudioJob[],
+  existing: Set<string>,
+  options: AudioGenerationOptions,
+): ExampleAudioJob[] {
+  let selected = jobs.filter(
+    (job) =>
+      (!options.wordId || job.wordId === options.wordId) &&
+      (!options.locale || job.locale === options.locale),
+  );
+  if (!options.refresh) {
+    selected = selected.filter((job) => !existing.has(`${job.exampleId}|${job.locale}`));
+  }
+  return options.limit ? selected.slice(0, options.limit) : selected;
+}
+
+/**
+ * Storage path. Namespaced under `examples/` so a sentence clip can never
+ * collide with the `<wordId>/<locale>/` tree the headword clips own — the same
+ * separation the two tables make, carried into the bucket.
+ */
+export function buildExampleAudioArtifact(
+  job: ExampleAudioJob,
+  mp3: Uint8Array,
+): AudioArtifact {
+  if (mp3.byteLength === 0) throw new Error("TTS response decoded to an empty MP3");
+  const sha256 = createHash("sha256").update(mp3).digest("hex");
+  return {
+    sha256,
+    storagePath: `examples/${job.exampleId}/${job.locale}/${sha256.slice(0, 20)}.mp3`,
+  };
+}

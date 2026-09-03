@@ -64,6 +64,25 @@ function invalidUuid(id: string): boolean {
   return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
 }
 
+/** 聽句 replay count: a small non-negative integer, or nothing. */
+function clampReplayCount(raw: unknown): number | null {
+  if (typeof raw !== "number" || !Number.isFinite(raw)) return null;
+  return Math.max(0, Math.min(Math.round(raw), 999));
+}
+
+/** The `metadata` keys 聽句 adds. Empty for every other activity, so a 選字
+ *  row is not left claiming zero replays of audio it never played. */
+function listeningMetadata(body: {
+  replayCount?: number;
+  audioFailed?: boolean;
+}): Record<string, number | boolean> {
+  const replays = clampReplayCount(body.replayCount);
+  return {
+    ...(replays === null ? {} : { replayCount: replays }),
+    ...(body.audioFailed === true ? { audioFailed: true } : {}),
+  };
+}
+
 function clampResponseMs(raw: unknown): number | null {
   return typeof raw === "number" && Number.isFinite(raw)
     ? Math.max(0, Math.min(raw, 600_000))
@@ -193,6 +212,12 @@ async function answerAtlasCard(
     sessionId?: string;
     activity?: string;
     hinted?: boolean;
+    // Carried through for the same reason `hinted` is: 自製圖鑑 cards have no
+    // example sentences, so they are never asked as 聽句 and these are always
+    // absent — but the parameter list has to match the caller's body, or the
+    // next question type to add these lands in one writer and not the other.
+    replayCount?: number;
+    audioFailed?: boolean;
   },
 ) {
   if (invalidUuid(cardId)) {
@@ -255,6 +280,7 @@ async function answerAtlasCard(
         itemId: due.item.id,
         source: "custom",
         ...(body.hinted ? { hinted: true } : {}),
+        ...listeningMetadata(body),
       },
     }).catch((err) => console.warn("[study/answer] atlas study log insert failed", err)),
   ]);
@@ -285,6 +311,17 @@ export async function POST(req: Request) {
     // CHECK change; study_logs is append-only, so an unrecorded hint is
     // unrecoverable.
     hinted?: boolean;
+    // 聽句 only. Same mechanism and same reason as `hinted`: `metadata` is
+    // unconstrained so this needs no migration, and `study_logs` is
+    // append-only so a signal not written now cannot be recovered.
+    // `replayCount` is how often the sentence was played again before
+    // answering — deliberately *not* subtracted from the response time,
+    // because needing three listens is itself the difficulty signal.
+    // `audioFailed` means the clip was missing and the sentence was read by
+    // on-device synthesis, whose Japanese kanji readings nothing can correct:
+    // that answer is not evidence about listening in either direction.
+    replayCount?: number;
+    audioFailed?: boolean;
   };
   try {
     body = await req.json();
@@ -384,6 +421,7 @@ export async function POST(req: Request) {
         cardId,
         deckKey: card.card.deck_key,
         ...(body.hinted ? { hinted: true } : {}),
+        ...listeningMetadata(body),
       },
     }).catch((err) => console.warn("[study/answer] study_logs insert failed", err)),
   ]);

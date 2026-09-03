@@ -63,16 +63,32 @@ export function localizeSpans(spans: GlossSpanRow[], lang: UiLang): GlossSpan[] 
   });
 }
 
+/**
+ * Localize one word.
+ *
+ * `glossTerm` is the short headword in the gloss language (`word_terms`), and
+ * it is what makes a ja headline read 「バケツ」 rather than 「バケツ」は、液体を
+ * 積み込んだり運ぶために使用される…: the stored ja *definition* is an explanatory
+ * sentence by design (lib/translate.ts asks for one that "must not merely
+ * repeat the term"), so it belongs on the explainer line the zh-Hant layout
+ * gives 中文釋義 — never in the slot where zh prints 水桶. Callers that have no
+ * term map pass nothing and get the old definition-as-headline behaviour,
+ * which is still the right fallback for a word whose gloss language has a
+ * definition but no headword.
+ */
 export function localizeWord(
   w: Word,
   lang: UiLang,
   localizedTexts?: LocalizedTextMap,
+  glossTerm?: string,
 ): Word {
   // Definitions always need filtering: the raw fetch returns every language
   // we have on file (zh + en + ja), so even the zh-Hant pass must drop the
   // foreign rows or the headline ends up "冰箱；冷蔵庫".
   const localizedDefs = pickDefinitions(w.definitions, lang);
-  const chinese = localizedDefs[0]?.definition ?? localizeZhText(w.chinese, lang);
+  const headword = glossLang(lang) ? glossTerm?.trim() : undefined;
+  const glossDefinition = localizedDefs[0]?.definition;
+  const chinese = headword || glossDefinition || localizeZhText(w.chinese, lang);
 
   // Collocations are stored EN-only on `words.collocations`; the zh-Hant
   // translation array is overlayed via word_localized_texts. ja/en UIs read
@@ -92,10 +108,14 @@ export function localizeWord(
 
   const etymology = pickLocalizedText("etymology", w.etymology, lang, localizedTexts);
   const note = pickLocalizedText("note", w.note, lang, localizedTexts);
-  // For ja/en the headline `chinese` already carries the gloss-language
-  // definition; the zh explainer line would reintroduce Chinese.
+  // The explainer line under the headline. For zh it is the zh 釋義; for ja/en
+  // the zh 釋義 would reintroduce Chinese, so the slot carries the gloss
+  // language's own explanatory definition instead — but only once the headline
+  // is a term, or the two lines would print the same sentence twice.
   const chineseDefinition = glossLang(lang)
-    ? undefined
+    ? headword && glossDefinition !== headword
+      ? glossDefinition
+      : undefined
     : pickZhOnlyText(w.chineseDefinition, lang);
   const forms = w.forms?.map((f) => ({ ...f, label: localizeZhText(f.label, lang) }));
 

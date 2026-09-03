@@ -9,6 +9,7 @@ import {
 } from "./distractors";
 import type { Rating, Status } from "./srs";
 import type { FuriganaSegment } from "./kana";
+import { hintDefinition } from "./study-hint";
 
 export interface CardRow {
   id: number | string;
@@ -46,6 +47,13 @@ export interface DueCard {
     readingSegments?: FuriganaSegment[];
     target_language: "en" | "ja";
     category: string;
+    /// The 釋義 — the explanatory sentence the detail page prints under the
+    /// headline, in the reader's own language. 複習's 求救提示 prints this
+    /// instead of the gloss: 附提把、開口朝上的圓柱形容器 is a hint, 水桶 is the
+    /// answer translated. Absent when the catalogue has none, and when it would
+    /// only repeat `chinese` — see lib/study-hint.ts for why those are the same
+    /// rule rather than two.
+    definition?: string;
   };
   choices?: string[]; // multiple-choice options (shuffled, includes correct back)
   // Spelling MCQ options for the new-learn Step 3 ("pick the correct
@@ -281,6 +289,7 @@ export async function fetchDue(
            w.word AS w_word,
            COALESCE(wt.term, w.word) AS w_target_word,
            COALESCE(zh.definition, '') AS w_chinese,
+           w.chinese_definition AS w_definition,
            w.image_url AS w_image,
            COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
            wt.reading AS w_reading,
@@ -330,6 +339,7 @@ export async function fetchDue(
            w.word AS w_word,
            COALESCE(wt.term, w.word) AS w_target_word,
            COALESCE(zh.definition, '') AS w_chinese,
+           w.chinese_definition AS w_definition,
            w.image_url AS w_image,
            COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
            wt.reading AS w_reading,
@@ -391,10 +401,12 @@ export async function fetchDue(
           last_reviewed_at: (r.last_reviewed_at as string | null) ?? null,
         }
       : null;
+    const chinese = String(r.w_chinese);
     const word = {
       id: card.word_id,
       word: String(r.w_target_word ?? r.w_word),
-      chinese: String(r.w_chinese),
+      chinese,
+      definition: hintDefinition(chinese, r.w_definition as string | null),
       image_url: String(r.w_image),
       pronunciation: String(r.w_pron),
       reading: r.w_reading ? String(r.w_reading) : undefined,
@@ -463,6 +475,7 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
            w.word AS w_word,
            COALESCE(wt.term, w.word) AS w_target_word,
            COALESCE(zh.definition, '') AS w_chinese,
+           w.chinese_definition AS w_definition,
            w.image_url AS w_image,
            COALESCE(wt.pronunciation, wt.reading, w.pronunciation) AS w_pron,
            wt.reading AS w_reading,
@@ -521,6 +534,9 @@ export async function getCardById(cardId: number, userId: string): Promise<CardW
       id: String(r.word_id),
       word: String(r.w_target_word ?? r.w_word),
       chinese: String(r.w_chinese),
+      // The answer path does not render the word, but a `DueCard` that carries
+      // a 釋義 only when `fetchDue` built it is a shape with two meanings.
+      definition: hintDefinition(String(r.w_chinese), r.w_definition as string | null),
       image_url: String(r.w_image),
       pronunciation: String(r.w_pron),
       reading: r.w_reading ? String(r.w_reading) : undefined,

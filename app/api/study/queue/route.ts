@@ -22,6 +22,7 @@ import { fetchStudyExamples } from "@/lib/study-examples";
 import { resolveQueueThemeScope } from "@/lib/study-sources";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
+import { hintDefinition } from "@/lib/study-hint";
 import { readLang, readLearningDirection } from "@/lib/cache-headers";
 
 export const runtime = "nodejs";
@@ -59,14 +60,20 @@ async function atlasDueToStudyQueue(
   );
   return due.map((row, i) => {
     const urls = signed[i];
+    const gloss = pickAtlasGloss(row.item, uiLang);
+    // Same rule as the catalogue (lib/study-hint.ts): the 釋義 rides along only
+    // when it says something the gloss does not. pickAtlasGloss already returns
+    // the definition in monolingual mode, so that case drops out on its own —
+    // the two modules agree because they ask the same function.
+    const definition = pickAtlasDefinition(row.item, uiLang);
     return {
       card: {
         id: `atlas:${row.card.id}`,
         word_id: `atlas:${row.item.id}`,
         card_type: row.card.card_type === "image_recall" ? "回想卡" : "單字卡",
-        front: row.card.front_text ?? pickAtlasGloss(row.item, uiLang),
+        front: row.card.front_text ?? gloss,
         back: row.item.lemma,
-        explanation: row.card.explanation ?? pickAtlasDefinition(row.item, uiLang),
+        explanation: row.card.explanation ?? definition,
         tags: ["custom", "atlas"],
         deck_key: row.item.target_language === "ja" ? "image-ja" : "image-en",
       },
@@ -86,7 +93,8 @@ async function atlasDueToStudyQueue(
       word: {
         id: `atlas:${row.item.id}`,
         word: row.item.lemma,
-        chinese: pickAtlasGloss(row.item, uiLang),
+        chinese: gloss,
+        definition: hintDefinition(gloss, definition),
         image_url: urls.thumbUrl || urls.imageUrl,
         pronunciation: row.item.pronunciation ?? "",
         reading: row.item.reading ?? undefined,

@@ -12,12 +12,18 @@
 //     atlas rows arrive pre-glossed from atlasDueToStudyQueue and are skipped
 //     here.
 //   - zh-Hant: pass through untouched.
+//
+// `word.definition` (the 釋義 複習's 求救提示 prints) follows `word.chinese`
+// through all of it: a reader who is shown a ja headline must not be handed a
+// zh explainer underneath it, which is the same rule lib/word-localize.ts
+// applies to `chineseDefinition` on the detail page.
 
 import "server-only";
 import type { DueCard } from "./cards-db";
 import type { UiLang } from "./settings";
 import { getSql } from "./db";
 import { toZhHans } from "./opencc";
+import { glossForReader } from "./study-hint";
 
 export async function localizeStudyQueue(
   due: DueCard[],
@@ -38,7 +44,11 @@ function localizeOneZhHans(d: DueCard): DueCard {
       back: toZhHans(d.card.back),
       explanation: d.card.explanation ? toZhHans(d.card.explanation) : d.card.explanation,
     },
-    word: { ...d.word, chinese: toZhHans(d.word.chinese) },
+    word: {
+      ...d.word,
+      chinese: toZhHans(d.word.chinese),
+      definition: d.word.definition ? toZhHans(d.word.definition) : undefined,
+    },
     choices: d.choices?.map(toZhHans),
   };
 }
@@ -54,6 +64,10 @@ function localizeOneZhHans(d: DueCard): DueCard {
 /// だり運ぶために使用される… where a zh reader gets 水桶. `word_terms` holds no en
 /// headword distinct from the word itself, so en keeps the definition — for a
 /// monolingual reader that sentence *is* the gloss.
+///
+/// Which of the two a row lands on, and what 釋義 (if any) rides along with it,
+/// is `glossForReader` in lib/study-hint.ts — pure, so the case analysis is
+/// reachable from a test without a database.
 async function overlayGlossDefinitions(
   due: DueCard[],
   lang: "ja" | "en",
@@ -84,12 +98,18 @@ async function overlayGlossDefinitions(
       }
     }
     return due.map((d) => {
-      const term = termById.get(d.word.id);
-      // A 日文 learner is being tested on the ja term itself, so there the
-      // headword is the answer rather than a gloss — that deck keeps the
-      // explanatory definition it has always had.
-      const gloss = term && term !== d.word.word ? term : definitionById.get(d.word.id);
-      return gloss ? { ...d, word: { ...d.word, chinese: gloss } } : d;
+      // Custom atlas rows are glossed *and* defined upstream, in this same
+      // language, by pickAtlasGloss / pickAtlasDefinition. The header above has
+      // always said they are skipped here; until `definition` existed, dropping
+      // out of the lookup was the same thing as skipping. It no longer is —
+      // falling through would wipe the definition the route just attached.
+      if (d.word.id.startsWith("atlas:")) return d;
+      const pair = glossForReader(
+        d.word,
+        termById.get(d.word.id),
+        definitionById.get(d.word.id),
+      );
+      return { ...d, word: { ...d.word, ...pair } };
     });
   } catch {
     return due;

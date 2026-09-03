@@ -798,14 +798,53 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS word_examples_word_sort_idx
      ON word_examples(word_id, sort_order)`,
 
+  // ---- word_example_media: one pre-generated clip per (example, locale) ----
+  // Separate from `word_media` on purpose — see
+  // docs/adr/0015-sentence-audio-is-not-word-media.md in the iOS repo. Short
+  // version: `word_media` allows one audio row per (word, locale) and
+  // `lib/data.ts` folds those rows with `jsonb_object_agg(locale, url)`, which
+  // silently keeps the *last* value on a duplicate key. Sentence clips filed
+  // there would make a word's own pronunciation button read out a whole
+  // sentence, with no error and no failing test.
+  //
+  // The shape is `word_example_translations`, which already says "one row per
+  // (example, language)". `locale` rather than `language` because a clip is
+  // per accent: an English sentence gets en-US *and* en-GB, exactly as a
+  // headword does.
+  //
+  // NOTE `word_examples.sentence` holds the English sentence; the ja and zh
+  // texts live in `word_example_translations`. So the ja-JP row here is the
+  // audio of this example's **ja translation**, not of `sentence`.
+  `CREATE TABLE IF NOT EXISTS word_example_media (
+     id           BIGSERIAL PRIMARY KEY,
+     example_id   BIGINT NOT NULL REFERENCES word_examples(id) ON DELETE CASCADE,
+     locale       TEXT NOT NULL,
+     url          TEXT NOT NULL,
+     storage_path TEXT,
+     mime_type    TEXT,
+     duration_ms  INT,
+     model        TEXT,
+     created_at   TIMESTAMPTZ NOT NULL DEFAULT now(),
+     UNIQUE (example_id, locale)
+   )`,
+  `CREATE INDEX IF NOT EXISTS word_example_media_example_idx
+     ON word_example_media(example_id)`,
+
   // ---- RLS on the v3 tables ----
   `ALTER TABLE word_media       ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE word_categories  ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE study_logs       ENABLE ROW LEVEL SECURITY`,
   `ALTER TABLE study_reports    ENABLE ROW LEVEL SECURITY`,
 
+  `ALTER TABLE word_example_media ENABLE ROW LEVEL SECURITY`,
+
   `DROP POLICY IF EXISTS word_media_public_read ON word_media`,
   `CREATE POLICY word_media_public_read ON word_media FOR SELECT USING (true)`,
+  // An example clip is public content on the same terms a headword clip is —
+  // it is the dictionary read aloud, not anybody's data.
+  `DROP POLICY IF EXISTS word_example_media_public_read ON word_example_media`,
+  `CREATE POLICY word_example_media_public_read ON word_example_media
+     FOR SELECT USING (true)`,
   `DROP POLICY IF EXISTS word_categories_public_read ON word_categories`,
   `CREATE POLICY word_categories_public_read ON word_categories FOR SELECT USING (true)`,
 

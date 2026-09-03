@@ -18,6 +18,7 @@ import { atlasPublicImageUrl } from "@/lib/atlas/storage";
 import { createAtlasImageSignedUrlsBatch } from "@/lib/atlas/storage";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
+import { fetchStudyExamples } from "@/lib/study-examples";
 import { resolveQueueThemeScope } from "@/lib/study-sources";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
@@ -297,10 +298,23 @@ export async function GET(req: Request) {
     ).slice(0, limit);
     const localizeMs = Math.round(performance.now() - tLocalize);
 
+    // 聽句's payload. Only the public catalogue carries authored examples —
+    // 自製圖鑑 and 物見 cards have none, which is why the listening question
+    // needs a per-card fallback rather than a gate at the session's entrance.
+    // One batched read for the slice actually being sent, after the limit.
+    const publicIds = localized
+      .filter((row) => row.word.category !== "custom" && row.word.category !== "community")
+      .map((row) => row.word.id);
+    const examplesByWord = await fetchStudyExamples(publicIds, targetLanguage);
+    const withExamples = localized.map((row) => {
+      const examples = examplesByWord.get(row.word.id);
+      return examples?.length ? { ...row, examples } : row;
+    });
+
     const totalMs = Math.round(performance.now() - t0);
     return NextResponse.json(
       {
-        queue: localized,
+        queue: withExamples,
         stats: addStats(stats, customStats),
         communityStats: wantsCommunity ? savedStats : undefined,
       },

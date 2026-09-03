@@ -29,8 +29,13 @@ import {
   assertAudioSelection,
   buildAudioArtifact,
   buildAudioJobs,
+  buildExampleAudioArtifact,
+  buildExampleAudioJobs,
   parseAudioGenerationOptions,
   selectAudioJobs,
+  selectExampleAudioJobs,
+  type ExampleAudioJob,
+  type ExampleSentenceRow,
 } from "../lib/audio-generation";
 
 const BUCKET = "word-audio";
@@ -107,6 +112,61 @@ async function synthesize(apiKey: string, locale: string, text: string): Promise
   return Buffer.from(json.audioContent, "base64");
 }
 
+interface Clients {
+  supabase: SB;
+  apiKey: string;
+  publicBase: string;
+}
+
+/**
+ * Pass 2's worker: one clip per (example, locale) into `word_example_media`.
+ *
+ * Structurally the same as the headword loop but deliberately not shared with
+ * it. The insert is the whole difference — a different table, a different
+ * conflict target, and no legacy mirror-back onto `words.audio_url` — and a
+ * merged loop would be one that has to ask which kind of clip it is holding at
+ * every step, on a path whose failure mode is filing a sentence as a word's
+ * pronunciation.
+ */
+async function generateExampleClips(
+  jobs: ExampleAudioJob[],
+  ctx: Clients & { sql: ReturnType<typeof postgres> },
+): Promise<Array<{ key: string; reason: string }>> {
+  const failures: Array<{ key: string; reason: string }> = [];
+  let ok = 0;
+  for (const job of jobs) {
+    const key = `example ${job.exampleId} ${job.locale}`;
+    try {
+      const mp3 = await synthesize(ctx.apiKey, job.locale, job.text);
+      const artifact = buildExampleAudioArtifact(job, mp3);
+      const path = artifact.storagePath;
+      const { error: upErr } = await ctx.supabase.storage.from(BUCKET).upload(path, mp3, {
+        contentType: "audio/mpeg",
+        upsert: true,
+        cacheControl: "31536000",
+      });
+      if (upErr) throw new Error(`upload: ${upErr.message}`);
+      const url = `${ctx.publicBase}${path}`;
+      await ctx.sql`
+        INSERT INTO word_example_media (example_id, locale, url, storage_path, mime_type, model)
+        VALUES (${job.exampleId}, ${job.locale}, ${url}, ${path}, 'audio/mpeg', ${MODEL})
+        ON CONFLICT (example_id, locale)
+        DO UPDATE SET url = EXCLUDED.url, storage_path = EXCLUDED.storage_path,
+                      mime_type = EXCLUDED.mime_type, model = EXCLUDED.model
+      `;
+      ok++;
+      console.log(`  ✓ ${key} → ${url}`);
+      await sleep(150);
+    } catch (e) {
+      const reason = e instanceof Error ? e.message : String(e);
+      failures.push({ key, reason });
+      console.log(`  ✗ ${key}: ${reason}`);
+    }
+  }
+  console.log(`[generate-audio] examples: ${ok} generated, ${failures.length} failed`);
+  return failures;
+}
+
 async function main() {
   const options = parseAudioGenerationOptions(process.argv.slice(2));
 
@@ -150,26 +210,40 @@ async function main() {
       for (const job of jobs) {
         console.log(`  • ${job.wordId} ${job.locale}: ${job.text}`);
       }
-      console.log("[generate-audio] dry run: no audio, storage, or database changes were made");
-      return;
     }
-    if (jobs.length === 0) return;
 
-    const supabaseUrl = envOrThrow("NEXT_PUBLIC_SUPABASE_URL");
-    const serviceKey = envOrThrow("SUPABASE_SERVICE_ROLE_KEY");
-    const apiKey = envOrThrow("GOOGLE_TTS_API_KEY");
-    const supabase = createClient(supabaseUrl, serviceKey, {
-      auth: { autoRefreshToken: false, persistSession: false },
-    });
-    const publicBase = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`;
-
-    await ensureBucket(supabase);
-    console.log(`[generate-audio] voice = <locale>-Chirp3-HD-${CHIRP_VOICE}`);
+    // Deliberately not an early return when `jobs` is empty. The headword
+    // clips are a one-off backfill that finished long ago, so on every run
+    // after it this list is empty — returning here is how the example pass
+    // below would never execute at all.
+    //
+    // The clients are built on first need instead of up front so a run with
+    // nothing to do still requires no TTS key: `--dry-run` and a fully
+    // backfilled corpus both stay credential-free.
+    let clients: Clients | null = null;
+    const ensureClients = async (): Promise<Clients> => {
+      if (clients) return clients;
+      const supabaseUrl = envOrThrow("NEXT_PUBLIC_SUPABASE_URL");
+      const serviceKey = envOrThrow("SUPABASE_SERVICE_ROLE_KEY");
+      const supabase = createClient(supabaseUrl, serviceKey, {
+        auth: { autoRefreshToken: false, persistSession: false },
+      });
+      await ensureBucket(supabase);
+      console.log(`[generate-audio] voice = <locale>-Chirp3-HD-${CHIRP_VOICE}`);
+      clients = {
+        supabase,
+        apiKey: envOrThrow("GOOGLE_TTS_API_KEY"),
+        publicBase: `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`,
+      };
+      return clients;
+    };
 
     let ok = 0;
     const failures: Array<{ key: string; reason: string }> = [];
 
-    for (const job of jobs) {
+    if (!options.dryRun && jobs.length > 0) await ensureClients();
+    for (const job of options.dryRun ? [] : jobs) {
+      const { supabase, apiKey, publicBase } = await ensureClients();
       const key = `${job.wordId} ${job.locale}`;
       try {
         const mp3 = await synthesize(apiKey, job.locale, job.text);
@@ -222,6 +296,74 @@ async function main() {
     }
 
     console.log(`[generate-audio] done: ${ok} generated, ${failures.length} failed`);
+
+    // ---- Pass 2: example-sentence clips (聽句) -------------------------
+    //
+    // Separate pass, separate table. `word_media` allows exactly one audio row
+    // per (word, locale) and lib/data.ts folds those rows with
+    // jsonb_object_agg(locale, url), which keeps the LAST value on a duplicate
+    // key — a sentence filed there would make a word's pronunciation button
+    // read out a whole sentence, silently. See docs/adr/0015 in the iOS repo.
+    //
+    // Published words only: an archived word's leftover examples are outside
+    // every guard that keeps this data uniform (applyMainWordExamplePairs looks
+    // at published rows and nothing else), so they must not be recorded either.
+    const exampleRows = await sql<ExampleSentenceRow[]>`
+      SELECT
+        e.id,
+        e.word_id,
+        e.sentence,
+        max(t.translation) FILTER (WHERE t.language = 'ja') AS ja
+      FROM word_examples e
+      JOIN words w ON w.id = e.word_id
+      LEFT JOIN word_example_translations t ON t.example_id = e.id
+      WHERE w.deleted_at IS NULL AND w.status = 'published'
+      GROUP BY e.id, e.word_id, e.sentence, e.sort_order
+      ORDER BY e.word_id, e.sort_order, e.id
+    `;
+    const allExampleJobs = buildExampleAudioJobs(exampleRows);
+
+    // The table arrives with the next production migrate, and this script is
+    // most useful *before* that: a --dry-run is how you see the plan (and the
+    // TTS bill) before deciding to deploy at all. Missing table = nothing is
+    // recorded yet, which is the honest answer rather than a crash.
+    const [{ exists: mediaTableExists }] = await sql<{ exists: boolean }[]>`
+      SELECT to_regclass('public.word_example_media') IS NOT NULL AS exists
+    `;
+    let existingExamples = new Set<string>();
+    if (!mediaTableExists) {
+      console.log(
+        "[generate-audio] word_example_media does not exist yet — every example clip is pending",
+      );
+    } else if (!options.refresh) {
+      const have = await sql<{ example_id: string; locale: string }[]>`
+        SELECT example_id, locale FROM word_example_media
+      `;
+      existingExamples = new Set(have.map((r) => `${r.example_id}|${r.locale}`));
+    }
+    if (!mediaTableExists && !options.dryRun) {
+      throw new Error(
+        "word_example_media is missing — run the migration (deploy) before generating example clips",
+      );
+    }
+    const exampleJobs = selectExampleAudioJobs(allExampleJobs, existingExamples, options);
+    console.log(
+      `[generate-audio] ${exampleJobs.length} example clips to generate` +
+        `${options.refresh ? " (refresh)" : ""}`,
+    );
+
+    if (options.dryRun) {
+      for (const job of exampleJobs) {
+        console.log(`  • example ${job.exampleId} ${job.locale}: ${job.text}`);
+      }
+      console.log("[generate-audio] dry run: no audio, storage, or database changes were made");
+      return;
+    } else if (exampleJobs.length > 0) {
+      failures.push(
+        ...(await generateExampleClips(exampleJobs, { ...(await ensureClients()), sql })),
+      );
+    }
+
     if (failures.length) {
       console.log("[generate-audio] failures:");
       for (const f of failures) console.log(`  - ${f.key}: ${f.reason}`);

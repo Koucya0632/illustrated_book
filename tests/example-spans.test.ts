@@ -5,6 +5,7 @@ import { spansCoverSentence, unlinkSelfReference } from "../lib/example-spans";
 import {
   alignAuthoredSpans,
   containsGeneratedMetaGloss,
+  loadExampleSpanCorpus,
   validateAuthoredSentence,
   validateLearningSpanQuality,
 } from "../lib/example-span-corpus";
@@ -487,14 +488,15 @@ test("no source file contains stray control characters", () => {
 
 // ---- the authored corpus ------------------------------------------------
 
-// data/example-spans.json is product content, not a fixture: it is what every
+// data/example-spans*.json is product content, not a fixture: it is what every
 // reader actually sees. The coverage rule is checked at load and again on the
 // client, but both of those run somewhere nobody watches — a broken sentence
 // just silently renders plain. This is the only place a bad edit fails loudly.
 type AuthoredSpan = { t: string; z?: string; j?: string; e?: string; b?: string; p?: string; r?: string };
-const authored = JSON.parse(
-  readFileSync(new URL("../data/example-spans.json", import.meta.url), "utf8"),
-) as Record<"en" | "ja", Record<string, AuthoredSpan[]>>;
+const authored = loadExampleSpanCorpus() as Record<
+  "en" | "ja",
+  Record<string, AuthoredSpan[]>
+>;
 
 const POS = new Set([
   "noun", "verb", "phrasal verb", "adjective", "adverb", "pronoun", "preposition",

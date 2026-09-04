@@ -1,6 +1,7 @@
 import type postgres from "postgres";
 import { segmentFurigana } from "./kana";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "./living-room-main-word-corrections";
+import { MAIN_WORD_EXPANSION_CORRECTIONS } from "./main-word-expansion-2026-09";
 import { OFFICE_MAIN_WORD_CORRECTIONS } from "./office-main-word-corrections";
 import { SUPERMARKET_MAIN_WORD_CORRECTIONS } from "./supermarket-main-word-corrections";
 
@@ -89,6 +90,7 @@ function dailyStreetExample(
 }
 
 export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
+  ...MAIN_WORD_EXPANSION_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",

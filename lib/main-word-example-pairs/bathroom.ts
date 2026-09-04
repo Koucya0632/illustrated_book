@@ -89,6 +89,9 @@ export const BATHROOM_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
 ];
 
 export const BATHROOM_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
+  { id: "bath-stool", en: "Sit on the bath stool while you wash.", ja: "体を洗うときは風呂いすに座ります。", zh: "洗澡時坐在浴室凳上。" },
+  { id: "bathtub-cover", en: "Put the bathtub cover on after filling the tub.", ja: "お湯を張ったら、風呂ふたを閉めてください。", zh: "浴缸放好熱水後，請蓋上浴缸蓋。" },
+  { id: "toothbrush-holder", en: "Put your toothbrush back in the toothbrush holder.", ja: "歯磨きのあと、歯ブラシを歯ブラシスタンドに戻します。", zh: "刷牙後，把牙刷放回牙刷架。" },
   { id: "toothbrush", en: "I need a new toothbrush.", ja: "新しい歯ブラシが必要です。", zh: "我需要一支新牙刷。" },
   { id: "toothpaste", en: "Put toothpaste on your toothbrush.", ja: "歯ブラシに歯磨き粉をつけてください。", zh: "把牙膏擠在牙刷上。" },
   { id: "towel", en: "Dry your hands with the towel.", ja: "タオルで手を拭いてください。", zh: "用毛巾擦乾手。" },

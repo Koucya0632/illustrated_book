@@ -1,12 +1,18 @@
 import type { Example, Word, WordRelation } from "@/types";
 import imageUrls from "./image-urls.json";
+import { MAIN_WORD_EXPANSION_WORDS } from "./main-word-expansion-2026-09";
 import supplementalRawWords from "./supplemental-words.json";
 
 // Internal: the inline seed below uses the pre-v2 shape (single Chinese
 // string, flat examples, untyped related/confusing arrays). The Word type
 // in @/types is the v2 shape. We convert lazily at the bottom of this file
 // rather than rewriting 1800 lines of inline literals.
-type LegacyExample = { en: string; zh: string };
+type LegacyExample = {
+  en: string;
+  zh: string;
+  ja?: string;
+  cefrLevel?: Example["cefrLevel"];
+};
 type LegacyConfusing = { word: string; note: string };
 type LegacyWord = {
   id: string;
@@ -17,6 +23,8 @@ type LegacyWord = {
   partOfSpeech: string;
   pronunciation: string;
   imageUrl?: string;
+  chineseDefinition?: string;
+  definitions?: Word["definitions"];
   collocations?: string[];
   examples: LegacyExample[];
   relatedWords?: string[];
@@ -1678,7 +1686,8 @@ function legacyToV2(legacy: LegacyWord): Word {
   const examples: Example[] = legacy.examples.map((e, i) => ({
     en: e.en,
     zh: e.zh,
-    translations: { zh: e.zh },
+    translations: { zh: e.zh, ...(e.ja ? { ja: e.ja } : {}) },
+    cefrLevel: e.cefrLevel,
     sortOrder: i,
   }));
   const relations: WordRelation[] = [
@@ -1698,10 +1707,11 @@ function legacyToV2(legacy: LegacyWord): Word {
     pronunciation: legacy.pronunciation,
     imageUrl: legacy.imageUrl ?? "",
     status: "published",
-    definitions: [
+    definitions: legacy.definitions ?? [
       { language: "zh", definition: legacy.chinese, sortOrder: 0 },
     ],
     chinese: legacy.chinese,
+    chineseDefinition: legacy.chineseDefinition,
     examples,
     tags: [],
     relations,
@@ -1716,7 +1726,11 @@ function legacyToV2(legacy: LegacyWord): Word {
 // DB with `npm run sync-image-urls`. An inline imageUrl on a seed entry is
 // only the initial image for a brand-new word that hasn't been synced yet,
 // and must already be a Supabase Storage word-images URL (WORD_IMPORT.md §6).
-export const words: Word[] = [...rawWords, ...supplementalWords].map((w) => {
+export const words: Word[] = [
+  ...rawWords,
+  ...supplementalWords,
+  ...(MAIN_WORD_EXPANSION_WORDS as LegacyWord[]),
+].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
 });

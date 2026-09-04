@@ -1,7 +1,7 @@
 // Load the authored 詞塊 for every sentence a learner reads into Postgres.
 //
 // The annotations are *data*, not generation: they live in
-// data/example-spans.json, are reviewed in a diff like any other content, and
+// data/example-spans*.json, are reviewed in a diff like any other content, and
 // nothing calls a model at load time or at request time. Same shape as
 // data/etymology-en.json, and for the same reason — a closed corpus of a few
 // hundred sentences is worth writing down once and owning.
@@ -28,8 +28,8 @@
 //   node --env-file=.env.local --import tsx scripts/load-example-spans.ts
 //   node --env-file=.env.local --import tsx scripts/load-example-spans.ts --apply
 
-import { readFileSync } from "node:fs";
 import { getSql } from "../lib/db";
+import { loadExampleSpanCorpus } from "../lib/example-span-corpus";
 import { SPANS_VERSION, spansCoverSentence } from "../lib/example-spans";
 
 /** One authored span. Short keys because the file has ~9,000 of them and a
@@ -59,8 +59,7 @@ interface SentenceRow {
 }
 
 function loadAuthored(): Authored {
-  const path = new URL("../data/example-spans.json", import.meta.url);
-  return JSON.parse(readFileSync(path, "utf8")) as Authored;
+  return loadExampleSpanCorpus();
 }
 
 async function main() {

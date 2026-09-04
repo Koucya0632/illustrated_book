@@ -256,9 +256,53 @@ export function validateLearningSpanQuality(
   return issues;
 }
 
-export function loadExampleSpanCorpus(): ExampleSpanCorpus {
-  const path = new URL("../data/example-spans.json", import.meta.url);
+const EXAMPLE_SPAN_OVERLAY_PATHS = [
+  new URL("../data/example-spans-expansion-2026-09.json", import.meta.url),
+];
+
+function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {
   return JSON.parse(readFileSync(path, "utf8")) as ExampleSpanCorpus;
+}
+
+function loadExampleSpanOverlays(): Array<{ path: URL; corpus: ExampleSpanCorpus }> {
+  return EXAMPLE_SPAN_OVERLAY_PATHS.map((path) => ({
+    path,
+    corpus: readExampleSpanCorpus(path),
+  }));
+}
+
+export function loadExampleSpanCorpus(): ExampleSpanCorpus {
+  const basePath = new URL("../data/example-spans.json", import.meta.url);
+  const base = readExampleSpanCorpus(basePath);
+  const overlays = loadExampleSpanOverlays();
+  return {
+    en: Object.assign({}, base.en, ...overlays.map(({ corpus }) => corpus.en)),
+    ja: Object.assign({}, base.ja, ...overlays.map(({ corpus }) => corpus.ja)),
+  };
+}
+
+/** Split the merged corpus back into its reviewable files before persisting it.
+ * Existing overlay sentence keys remain owned by that overlay, so a targeted
+ * refresh updates the right file instead of being discarded or duplicated in
+ * the 3 MB base corpus. */
+export function partitionExampleSpanCorpus(
+  corpus: ExampleSpanCorpus,
+): {
+  base: ExampleSpanCorpus;
+  overlays: Array<{ path: URL; corpus: ExampleSpanCorpus }>;
+} {
+  const base: ExampleSpanCorpus = { en: { ...corpus.en }, ja: { ...corpus.ja } };
+  const overlays = loadExampleSpanOverlays().map(({ path, corpus: authored }) => {
+    const updated: ExampleSpanCorpus = { en: {}, ja: {} };
+    for (const language of ["en", "ja"] as const) {
+      for (const sentence of Object.keys(authored[language])) {
+        updated[language][sentence] = corpus[language][sentence];
+        delete base[language][sentence];
+      }
+    }
+    return { path, corpus: updated };
+  });
+  return { base, overlays };
 }
 
 export function validateAuthoredSentence(

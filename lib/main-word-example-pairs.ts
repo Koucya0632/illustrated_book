@@ -1,4 +1,5 @@
 import type { CEFRLevel } from "@/types";
+import { MAIN_WORD_EXPANSION_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09";
 import { MAIN_WORD_LEGACY_EXAMPLE_SETS } from "./main-word-legacy-example-sets";
 import {
   BATHROOM_COMPLEX_EXAMPLES,
@@ -134,7 +135,7 @@ const complexById = uniqueById(COMPLEX_EXAMPLES, "complex example");
 const simpleOverrideById = uniqueById(SIMPLE_OVERRIDES, "simple override");
 
 export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
-  MAIN_WORD_LEGACY_EXAMPLE_SETS.map(({ id, examples }) => {
+  MAIN_WORD_LEGACY_EXAMPLE_SETS.map<MainWordExamplePair>(({ id, examples }) => {
     const legacySimple = examples.find(({ sortOrder }) => sortOrder === 0);
     const complex = complexById.get(id);
     if (!legacySimple) throw new Error(`Missing legacy simple example for ${id}`);
@@ -148,7 +149,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
         { en: complex.en, ja: complex.ja, zh: complex.zh, cefrLevel: "B1", sortOrder: 1 },
       ],
     };
-  });
+  }).concat(MAIN_WORD_EXPANSION_EXAMPLE_PAIRS);
 
 export function selectMainWordExamplePairs(
   wordIds?: ReadonlySet<string>,

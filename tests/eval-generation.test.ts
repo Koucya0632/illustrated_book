@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import test from "node:test";
 
-import { alignAuthoredSpans } from "../lib/example-span-corpus";
+import { alignAuthoredSpans, loadExampleSpanCorpus } from "../lib/example-span-corpus";
 import { MAIN_WORD_EXAMPLE_PAIRS } from "../lib/main-word-example-pairs";
 import { nextTemperature } from "../scripts/generate-example-spans";
 import { auditFromSpans, verifyAgainstAudited } from "../evals/corpus-to-audit.mjs";
@@ -16,9 +16,7 @@ function loadPair() {
   const fixture = JSON.parse(
     readFileSync(new URL("../evals/fixtures/atlas-examples.json", import.meta.url), "utf8"),
   );
-  const corpus = JSON.parse(
-    readFileSync(new URL("../data/example-spans.json", import.meta.url), "utf8"),
-  );
+  const corpus = loadExampleSpanCorpus();
   return { fixture, corpus };
 }
 

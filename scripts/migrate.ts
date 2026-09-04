@@ -2409,11 +2409,11 @@ async function seedV2(sql: any, list: typeof seedWords = seedWords) {
     await sql`
       INSERT INTO words (
         id, word, also_known_as, category, part_of_speech,
-        pronunciation, image_url, status, collocations, note
+        pronunciation, image_url, status, collocations, note, chinese_definition
       ) VALUES (
         ${w.id}, ${w.word}, ${w.alsoKnownAs ?? []}, ${w.category},
         ${w.partOfSpeech}, ${w.pronunciation}, ${w.imageUrl},
-        'published', ${w.collocations ?? []}, ${w.note ?? null}
+        'published', ${w.collocations ?? []}, ${w.note ?? null}, ${w.chineseDefinition ?? null}
       )
       ON CONFLICT (id) DO NOTHING
     `;
@@ -2431,8 +2431,8 @@ async function seedV2(sql: any, list: typeof seedWords = seedWords) {
       const ex = w.examples[i];
       if (!ex.en) continue;
       const [{ id: exId }] = await sql`
-        INSERT INTO word_examples (word_id, sentence, sort_order)
-        VALUES (${w.id}, ${ex.en}, ${ex.sortOrder ?? i})
+        INSERT INTO word_examples (word_id, sentence, cefr_level, sort_order)
+        VALUES (${w.id}, ${ex.en}, ${ex.cefrLevel ?? null}, ${ex.sortOrder ?? i})
         RETURNING id
       `;
       for (const [lang, text] of Object.entries(ex.translations ?? {})) {

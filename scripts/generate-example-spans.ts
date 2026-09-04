@@ -1,6 +1,6 @@
 // Generate the tappable three-language gloss spans that must ship with every
 // main-catalog English/Japanese example sentence. Dry by default; --apply
-// writes only data/example-spans.json. Loading database rows remains a
+// writes the base and expansion corpus files. Loading database rows remains a
 // separate, explicitly write-enabled step.
 //
 //   npm run examples:spans
@@ -24,6 +24,7 @@ import {
   MIN_LEARNING_SPANS,
   MAX_LEARNING_SPANS,
   loadExampleSpanCorpus,
+  partitionExampleSpanCorpus,
   type SentenceLanguage,
   validateAuthoredSentence,
 } from "../lib/example-span-corpus";
@@ -414,10 +415,22 @@ async function generateResilient(
   }
 }
 
-function writeCorpus(corpus: ExampleSpanCorpus, destination: URL = OUTPUT_PATH): void {
+function writeCorpusFile(corpus: ExampleSpanCorpus, destination: URL): void {
   const temp = new URL(`${destination.pathname}.tmp`, "file://");
   writeFileSync(temp, `${JSON.stringify(corpus, null, 1)}\n`, "utf8");
   renameSync(temp, destination);
+}
+
+function writeCorpus(corpus: ExampleSpanCorpus, destination: URL = OUTPUT_PATH): void {
+  if (destination.href !== OUTPUT_PATH.href) {
+    writeCorpusFile(corpus, destination);
+    return;
+  }
+  const partitioned = partitionExampleSpanCorpus(corpus);
+  writeCorpusFile(partitioned.base, OUTPUT_PATH);
+  for (const overlay of partitioned.overlays) {
+    writeCorpusFile(overlay.corpus, overlay.path);
+  }
 }
 
 async function main() {

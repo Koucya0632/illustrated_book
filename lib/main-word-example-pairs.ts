@@ -1,4 +1,5 @@
 import type { CEFRLevel } from "@/types";
+import { MAIN_WORD_EXPANSION_BATCH_2_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-2";
 import { MAIN_WORD_EXPANSION_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09";
 import { MAIN_WORD_LEGACY_EXAMPLE_SETS } from "./main-word-legacy-example-sets";
 import {
@@ -149,7 +150,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
         { en: complex.en, ja: complex.ja, zh: complex.zh, cefrLevel: "B1", sortOrder: 1 },
       ],
     };
-  }).concat(MAIN_WORD_EXPANSION_EXAMPLE_PAIRS);
+  }).concat(MAIN_WORD_EXPANSION_EXAMPLE_PAIRS, MAIN_WORD_EXPANSION_BATCH_2_EXAMPLE_PAIRS);
 
 export function selectMainWordExamplePairs(
   wordIds?: ReadonlySet<string>,

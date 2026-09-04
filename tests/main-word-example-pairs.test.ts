@@ -284,13 +284,17 @@ test("every bathroom simple example teaches a concrete daily use", () => {
     .filter(({ category, status }) => category === "bathroom" && status === "published")
     .map(({ id }) => id)
     .sort();
-  assert.deepEqual(BATHROOM_SIMPLE_OVERRIDES.map(({ id }) => id).sort(), bathroomIds);
+  const bathroomPairs = MAIN_WORD_EXAMPLE_PAIRS
+    .filter(({ id }) => bathroomIds.includes(id))
+    .sort((left, right) => left.id.localeCompare(right.id));
+  assert.deepEqual(bathroomPairs.map(({ id }) => id), bathroomIds);
 
   const generic = /\bis in the bathroom\b|バスルームにあります|在浴室裡/;
-  for (const example of BATHROOM_SIMPLE_OVERRIDES) {
-    assert.doesNotMatch(example.en, generic, example.id);
-    assert.doesNotMatch(example.ja, generic, example.id);
-    assert.doesNotMatch(example.zh, generic, example.id);
+  for (const pair of bathroomPairs) {
+    const example = pair.examples[0];
+    assert.doesNotMatch(example.en, generic, pair.id);
+    assert.doesNotMatch(example.ja, generic, pair.id);
+    assert.doesNotMatch(example.zh, generic, pair.id);
   }
 });
 

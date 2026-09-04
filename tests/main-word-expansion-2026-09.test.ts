@@ -87,14 +87,15 @@ test("new-word migration persists explanations and CEFR levels", () => {
 test("expansion spans stay in their reviewable overlay without losing generator updates", () => {
   const corpus = loadExampleSpanCorpus();
   const { base, overlays } = partitionExampleSpanCorpus(corpus);
-  assert.equal(overlays.length, 1);
+  const overlay = overlays.find(({ path }) => path.pathname.endsWith("example-spans-expansion-2026-09.json"));
+  assert.ok(overlay, "missing first September expansion overlay");
 
   for (const pair of MAIN_WORD_EXPANSION_EXAMPLE_PAIRS) {
     for (const example of pair.examples) {
       for (const [language, sentence] of [["en", example.en], ["ja", example.ja]] as const) {
         assert.equal(base[language][sentence], undefined, `${pair.id}/${language}: duplicated in base`);
         assert.deepEqual(
-          overlays[0].corpus[language][sentence],
+          overlay.corpus[language][sentence],
           corpus[language][sentence],
           `${pair.id}/${language}: overlay lost the merged value`,
         );

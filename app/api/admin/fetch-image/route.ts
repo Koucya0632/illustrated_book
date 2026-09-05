@@ -11,6 +11,7 @@ import { NextResponse } from "next/server";
 import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "@/lib/word-image-encode";
 import postgres from "postgres";
 import { createServiceRoleClient } from "@/lib/supabase/server";
+import { publicObjectUrl } from "@/lib/storage/public-objects";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -80,8 +81,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: upErr.message }, { status: 500 });
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  const publicUrl = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/${path}`;
+  const publicUrl = publicObjectUrl(BUCKET, path);
   const license = licenseTagForUrl(sourceUrl);
 
   // Also update the DB row so subsequent runs skip it.

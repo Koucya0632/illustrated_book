@@ -1,6 +1,7 @@
 import "server-only";
 import { randomUUID } from "crypto";
 import { AVATAR_BUCKET } from "@/lib/avatars";
+import { publicObjectUrl } from "@/lib/storage/public-objects";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 
 const MAX_PIXELS = 24_000_000;
@@ -39,7 +40,7 @@ export async function uploadAvatarImage(userId: string, body: Buffer): Promise<s
     upsert: false,
   });
   if (error) throw new Error(error.message);
-  return supabase.storage.from(AVATAR_BUCKET).getPublicUrl(path).data.publicUrl;
+  return publicObjectUrl(AVATAR_BUCKET, path);
 }
 
 /** Keep storage bounded to the currently selected custom avatar. */

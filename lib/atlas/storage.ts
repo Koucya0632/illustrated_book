@@ -1,6 +1,7 @@
 import "server-only";
 import { randomUUID } from "crypto";
 import { createServiceRoleClient } from "@/lib/supabase/server";
+import { publicObjectUrl } from "@/lib/storage/public-objects";
 
 export const ATLAS_PRIVATE_BUCKET = "user-atlas-images";
 export const ATLAS_PUBLIC_BUCKET = "atlas-public-images";
@@ -205,18 +206,11 @@ export async function publishAtlasShareImage(input: {
     upsert: true,
   });
   if (error) throw new Error(error.message);
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  return {
-    path,
-    publicUrl: `${supabaseUrl}/storage/v1/object/public/${ATLAS_PUBLIC_BUCKET}/${path}`,
-  };
+  return { path, publicUrl: publicObjectUrl(ATLAS_PUBLIC_BUCKET, path) };
 }
 
 export function atlasPublicImageUrl(path: string | null): string | null {
-  if (!path) return null;
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (!supabaseUrl) return null;
-  return `${supabaseUrl}/storage/v1/object/public/${ATLAS_PUBLIC_BUCKET}/${path}`;
+  return path ? publicObjectUrl(ATLAS_PUBLIC_BUCKET, path) : null;
 }
 
 export function isPublicCollectionAvatarPath(path: string): boolean {

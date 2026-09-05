@@ -11,8 +11,7 @@
 
 import { NextResponse } from "next/server";
 import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "@/lib/word-image-encode";
-import { createServiceRoleClient } from "@/lib/supabase/server";
-import { publicObjectUrl } from "@/lib/storage/public-objects";
+import { putPublicObject } from "@/lib/storage/public-writer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -57,19 +56,18 @@ export async function POST(req: Request) {
     );
   }
 
-  const supabase = createServiceRoleClient();
   // Whatever the admin picked, what lands in the bucket is WebP at 1200px —
   // same encoder every other writer uses. See lib/word-image-encode.ts.
   const path = `${id}.webp`;
   const buf = await encodeWordImage(Buffer.from(await file.arrayBuffer()));
-  const { error } = await supabase.storage.from(BUCKET).upload(path, buf, {
-    contentType: WORD_IMAGE_CONTENT_TYPE,
-    upsert: true,
-    cacheControl: "31536000",
-  });
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  let publicUrl: string;
+  try {
+    publicUrl = await putPublicObject(BUCKET, path, buf, {
+      contentType: WORD_IMAGE_CONTENT_TYPE,
+      upsert: true,
+    });
+  } catch (e) {
+    return NextResponse.json({ error: e instanceof Error ? e.message : "upload failed" }, { status: 500 });
   }
-  const publicUrl = publicObjectUrl(BUCKET, path);
   return NextResponse.json({ url: publicUrl, path });
 }

@@ -39,6 +39,8 @@ import {
 } from "../lib/audio-generation";
 
 const BUCKET = "word-audio";
+import { putPublicObject } from "../lib/storage/public-writer";
+import { publicObjectUrl } from "../lib/storage/public-objects";
 const TTS_URL = "https://texttospeech.googleapis.com/v1/text:synthesize";
 const MODEL = "chirp-3-hd";
 
@@ -115,7 +117,6 @@ async function synthesize(apiKey: string, locale: string, text: string): Promise
 interface Clients {
   supabase: SB;
   apiKey: string;
-  publicBase: string;
 }
 
 /**
@@ -140,13 +141,15 @@ async function generateExampleClips(
       const mp3 = await synthesize(ctx.apiKey, job.locale, job.text);
       const artifact = buildExampleAudioArtifact(job, mp3);
       const path = artifact.storagePath;
-      const { error: upErr } = await ctx.supabase.storage.from(BUCKET).upload(path, mp3, {
-        contentType: "audio/mpeg",
-        upsert: true,
-        cacheControl: "31536000",
-      });
-      if (upErr) throw new Error(`upload: ${upErr.message}`);
-      const url = `${ctx.publicBase}${path}`;
+      try {
+        await putPublicObject(BUCKET, path, mp3, {
+          contentType: "audio/mpeg",
+          upsert: true,
+        });
+      } catch (e) {
+        throw new Error(`upload: ${e instanceof Error ? e.message : String(e)}`);
+      }
+      const url = publicObjectUrl(BUCKET, path);
       await ctx.sql`
         INSERT INTO word_example_media (example_id, locale, url, storage_path, mime_type, model)
         VALUES (${job.exampleId}, ${job.locale}, ${url}, ${path}, 'audio/mpeg', ${MODEL})
@@ -233,7 +236,6 @@ async function main() {
       clients = {
         supabase,
         apiKey: envOrThrow("GOOGLE_TTS_API_KEY"),
-        publicBase: `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`,
       };
       return clients;
     };
@@ -243,19 +245,21 @@ async function main() {
 
     if (!options.dryRun && jobs.length > 0) await ensureClients();
     for (const job of options.dryRun ? [] : jobs) {
-      const { supabase, apiKey, publicBase } = await ensureClients();
+      const { supabase, apiKey } = await ensureClients();
       const key = `${job.wordId} ${job.locale}`;
       try {
         const mp3 = await synthesize(apiKey, job.locale, job.text);
         const artifact = buildAudioArtifact(job, mp3);
         const path = artifact.storagePath;
-        const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, mp3, {
-          contentType: "audio/mpeg",
-          upsert: true,
-          cacheControl: "31536000",
-        });
-        if (upErr) throw new Error(`upload: ${upErr.message}`);
-        const url = `${publicBase}${path}`;
+        try {
+          await putPublicObject(BUCKET, path, mp3, {
+            contentType: "audio/mpeg",
+            upsert: true,
+          });
+        } catch (e) {
+          throw new Error(`upload: ${e instanceof Error ? e.message : String(e)}`);
+        }
+        const url = publicObjectUrl(BUCKET, path);
         const generatedAt = new Date().toISOString();
         const metadata = {
           sourceText: job.text,

@@ -10,8 +10,7 @@
 import { NextResponse } from "next/server";
 import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "@/lib/word-image-encode";
 import postgres from "postgres";
-import { createServiceRoleClient } from "@/lib/supabase/server";
-import { publicObjectUrl } from "@/lib/storage/public-objects";
+import { putPublicObject } from "@/lib/storage/public-writer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -70,18 +69,16 @@ export async function POST(req: Request) {
   // 1200px — same encoder every other writer uses.
   const buf = await encodeWordImage(Buffer.from(await res.arrayBuffer()));
 
-  const supabase = createServiceRoleClient();
   const path = `${id}.webp`;
-  const { error: upErr } = await supabase.storage.from(BUCKET).upload(path, buf, {
-    contentType: WORD_IMAGE_CONTENT_TYPE,
-    upsert: true,
-    cacheControl: "31536000",
-  });
-  if (upErr) {
-    return NextResponse.json({ error: upErr.message }, { status: 500 });
+  let publicUrl: string;
+  try {
+    publicUrl = await putPublicObject(BUCKET, path, buf, {
+      contentType: WORD_IMAGE_CONTENT_TYPE,
+      upsert: true,
+    });
+  } catch (e) {
+    return NextResponse.json({ error: e instanceof Error ? e.message : "upload failed" }, { status: 500 });
   }
-
-  const publicUrl = publicObjectUrl(BUCKET, path);
   const license = licenseTagForUrl(sourceUrl);
 
   // Also update the DB row so subsequent runs skip it.

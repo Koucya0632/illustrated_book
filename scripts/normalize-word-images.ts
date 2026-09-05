@@ -29,6 +29,7 @@ import path from "node:path";
 import { WORD_IMAGE_CONTENT_TYPE, WORD_IMAGE_QUALITY } from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
+import { putPublicObject } from "../lib/storage/public-writer";
 const MARGIN_PERCENT = 0.25;
 const TRIM_THRESHOLD = 10; // 0-255, lower = stricter "is white"
 // The bucket is WebP-only since the 2026-08 egress incident; re-uploading PNG
@@ -117,7 +118,7 @@ async function main() {
   for (const row of subset) {
     const url = row.image_url;
     // Storage key inside the bucket = the part after `/word-images/`. The
-    // public URL pattern is https://<proj>.supabase.co/storage/v1/object/public/word-images/<key>
+    // holds for both the Supabase and the asset-host spelling.
     const m = url.match(/\/word-images\/(.+)$/);
     if (!m) {
       console.warn(`  [${row.id}] non-storage url, skip:`, url);
@@ -137,12 +138,10 @@ async function main() {
       await fs.writeFile(path.join(OUT_DIR, `${row.id}.webp`), out);
 
       if (apply) {
-        const { error } = await supabase.storage.from(BUCKET).upload(key, out, {
+        await putPublicObject(BUCKET, key, out, {
           upsert: true,
           contentType: WORD_IMAGE_CONTENT_TYPE,
-          cacheControl: "31536000",
         });
-        if (error) throw error;
       }
       ok++;
       if (ok % 20 === 0) console.log(`  ${ok}/${subset.length}…`);

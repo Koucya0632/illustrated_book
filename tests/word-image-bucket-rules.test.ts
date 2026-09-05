@@ -48,7 +48,9 @@ test("every upload into word-images declares the WebP content type", () => {
   for (const rel of sources) {
     const src = readFileSync(join(ROOT, rel), "utf8");
     if (!src.includes('"word-images"')) continue;
-    if (!/\.upload\(/.test(src)) continue;
+    // Writers go through lib/storage/public-writer.ts now; the older direct
+    // `.upload(` still counts so a reintroduced one is not missed.
+    if (!/\.upload\(|putPublicObject\(/.test(src)) continue;
     examined.push(rel);
     // A file that uploads must name the shared content-type constant; a literal
     // "image/png" or a missing contentType is what this test is here to catch.

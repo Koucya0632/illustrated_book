@@ -23,6 +23,8 @@ import {
 } from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
+import { listPublicObjects, putPublicObject } from "../lib/storage/public-writer";
+import { isPublicObjectUrl, publicObjectUrl } from "../lib/storage/public-objects";
 
 interface WordRow {
   id: string;
@@ -98,13 +100,12 @@ async function fetchWithRetry(url: string): Promise<Response> {
 }
 
 async function uploadOne(
-  supabase: SB,
-  publicBase: string,
   existing: Map<string, string>,  // word_id → ext we already have on Storage
   row: WordRow,
 ): Promise<{ skipped?: true; ok?: true; ext?: string; failed?: string }> {
-  // Skip if image_url already points at our Storage host.
-  if (row.image_url.startsWith(publicBase)) {
+  // Already one of ours — in either spelling, so a migrated URL is not
+  // re-downloaded and re-uploaded on the next run.
+  if (isPublicObjectUrl(row.image_url, BUCKET)) {
     return { skipped: true };
   }
   // Skip download if the storage object already exists from a prior partial
@@ -122,14 +123,14 @@ async function uploadOne(
     const ext = "webp";
     const path = `${row.id}.${ext}`;
     const buf = await encodeWordImage(Buffer.from(await res.arrayBuffer()));
-    const { error: upErr } = await supabase.storage
-      .from(BUCKET)
-      .upload(path, buf, {
+    try {
+      await putPublicObject(BUCKET, path, buf, {
         contentType: WORD_IMAGE_CONTENT_TYPE,
         upsert: true,
-        cacheControl: "31536000",
       });
-    if (upErr) return { failed: `upload: ${upErr.message}` };
+    } catch (e) {
+      return { failed: `upload: ${e instanceof Error ? e.message : String(e)}` };
+    }
     existing.set(row.id, ext);
     return { ok: true, ext };
   } catch (e) {
@@ -137,16 +138,10 @@ async function uploadOne(
   }
 }
 
-async function listExistingObjects(supabase: SB): Promise<Map<string, string>> {
+async function listExistingObjects(): Promise<Map<string, string>> {
   const out = new Map<string, string>();
-  // The list API paginates; for ≤ a few thousand files one call is enough.
-  const { data, error } = await supabase.storage.from(BUCKET).list("", { limit: 5000 });
-  if (error) {
-    console.warn(`[upload-images] could not list bucket: ${error.message}`);
-    return out;
-  }
-  for (const obj of data as Array<{ name: string }>) {
-    const m = obj.name.match(/^(.+)\.([a-z]+)$/i);
+  for (const name of await listPublicObjects(BUCKET, "")) {
+    const m = name.match(/^(.+)\.([a-z]+)$/i);
     if (!m) continue;
     const id = m[1];
     const ext = m[2].toLowerCase();
@@ -168,11 +163,10 @@ async function main() {
     auth: { autoRefreshToken: false, persistSession: false },
   });
   const sql = postgres(dbUrl, { ssl: "require", prepare: false, max: 1 });
-  const publicBase = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`;
 
   try {
     await ensureBucket(supabase);
-    const existing = await listExistingObjects(supabase);
+    const existing = await listExistingObjects();
     console.log(`[upload-images] ${existing.size} objects already in bucket`);
 
     const rows = await sql<WordRow[]>`
@@ -188,7 +182,7 @@ async function main() {
     const failures: Array<{ id: string; reason: string }> = [];
 
     for (const row of rows) {
-      const r = await uploadOne(supabase, publicBase, existing, row);
+      const r = await uploadOne(existing, row);
       if (r.skipped) {
         skipped++;
         continue;
@@ -199,7 +193,7 @@ async function main() {
         continue;
       }
       const ext = r.ext ?? "jpg";
-      const newUrl = `${publicBase}${row.id}.${ext}`;
+      const newUrl = publicObjectUrl(BUCKET, `${row.id}.${ext}`);
       const license = licenseTagForUrl(row.image_url);
       await sql`
         UPDATE words SET

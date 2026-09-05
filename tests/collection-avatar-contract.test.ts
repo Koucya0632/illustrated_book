@@ -43,6 +43,6 @@ test("new collection avatars use the public image bucket, not the legacy private
     storage.indexOf("export async function createCollectionAvatarSignedUrl"),
   );
   assert.match(upload, /ensureAtlasPublicBucket/);
-  assert.match(upload, /from\(ATLAS_PUBLIC_BUCKET\)/);
+  assert.match(upload, /putPublicObject\(ATLAS_PUBLIC_BUCKET/);
   assert.doesNotMatch(upload, /ATLAS_PRIVATE_BUCKET/);
 });

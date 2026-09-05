@@ -25,6 +25,8 @@ import { WORD_IMAGE_CONTENT_TYPE } from "../lib/word-image-encode";
 loadEnvConfig(process.cwd());
 
 const BUCKET = "word-images";
+import { listPublicObjects, putPublicObject } from "../lib/storage/public-writer";
+import { publicObjectUrl } from "../lib/storage/public-objects";
 const APPLY = process.argv.includes("--apply");
 
 function argValue(name: string): string | null {
@@ -164,7 +166,6 @@ async function main() {
   const databaseUrl = envOrDie("DATABASE_URL");
   const supabaseUrl = envOrDie("NEXT_PUBLIC_SUPABASE_URL");
   const serviceKey = envOrDie("SUPABASE_SERVICE_ROLE_KEY");
-  const publicBase = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`;
   const sql = postgres(databaseUrl, { ssl: "require", prepare: false, max: 1 });
   const supabase = createClient(supabaseUrl, serviceKey, {
     auth: { autoRefreshToken: false, persistSession: false },
@@ -193,7 +194,7 @@ async function main() {
         sha256: candidate.sha256,
         storagePath,
         oldUrl: old.image_url,
-        newUrl: `${publicBase}${storagePath}`,
+        newUrl: publicObjectUrl(BUCKET, storagePath),
         oldSourceUrl: old.image_source_url,
         oldLicense: old.image_license,
         oldCredit: old.image_credit,
@@ -210,11 +211,7 @@ async function main() {
       return;
     }
 
-    const { data: existingData, error: listError } = await supabase.storage
-      .from(BUCKET)
-      .list("", { limit: 5000 });
-    if (listError) throw new Error(`could not list Storage bucket: ${listError.message}`);
-    const existing = new Set((existingData ?? []).map((object) => object.name));
+    const existing = new Set(await listPublicObjects(BUCKET, ""));
 
     for (const item of items) {
       if (existing.has(item.storagePath)) {
@@ -223,12 +220,14 @@ async function main() {
       }
       const bytes = preparedById.get(item.id)?.bytes;
       if (!bytes) throw new Error(`${item.id}: prepared WebP bytes are missing`);
-      const { error } = await supabase.storage.from(BUCKET).upload(item.storagePath, bytes, {
+      try {
+        await putPublicObject(BUCKET, item.storagePath, bytes, {
         contentType: WORD_IMAGE_CONTENT_TYPE,
         upsert: false,
-        cacheControl: "31536000",
-      });
-      if (error) throw new Error(`${item.id}: upload failed: ${error.message}`);
+        });
+      } catch (e) {
+        throw new Error(`${item.id}: upload failed: ${e instanceof Error ? e.message : String(e)}`);
+      }
       console.log(`  ↑ ${item.storagePath}`);
     }
 

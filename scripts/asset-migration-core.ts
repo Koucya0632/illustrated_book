@@ -67,3 +67,84 @@ export function verifyIntegrity(
 }
 
 export const CACHE_CONTROL_IMMUTABLE = "public, max-age=31536000, immutable";
+
+/** Buckets whose objects are served by absolute public URL. */
+export const PUBLIC_BUCKETS = [
+  "word-images",
+  "word-audio",
+  "atlas-public-images",
+  "user-avatars",
+] as const;
+
+export type PublicBucket = (typeof PUBLIC_BUCKETS)[number];
+
+const SUPABASE_PUBLIC_PREFIX = "/storage/v1/object/public/";
+
+/**
+ * Recognise a stored value as a Supabase public URL, with the origin supplied
+ * explicitly rather than read from the environment.
+ *
+ * That explicitness is the point: `lib/storage/public-objects.ts` resolves the
+ * *current* host, and once the asset host is configured it stops recognising
+ * anything as Supabase. A rewrite that used it would quietly match nothing and
+ * report "0 rows to change" as if the job were already done.
+ *
+ * Whole-value only. A column that merely *contains* a URL inside longer text
+ * is left alone and reported, because a blind substring replacement is how a
+ * migration corrupts a field nobody remembered was free text.
+ */
+export function parseSupabasePublicUrl(
+  value: string,
+  supabaseBase: string,
+): { bucket: PublicBucket; path: string } | null {
+  let url: URL;
+  try {
+    url = new URL(value);
+  } catch {
+    return null;
+  }
+  if (url.origin.replace(/\/+$/, "") !== supabaseBase.replace(/\/+$/, "")) return null;
+  if (!url.pathname.startsWith(SUPABASE_PUBLIC_PREFIX)) return null;
+
+  const [bucket, ...rest] = url.pathname.slice(SUPABASE_PUBLIC_PREFIX.length).split("/");
+  if (!bucket || rest.length === 0) return null;
+  if (!(PUBLIC_BUCKETS as readonly string[]).includes(bucket)) return null;
+
+  return {
+    bucket: bucket as PublicBucket,
+    path: rest.map(decodeURIComponent).join("/"),
+  };
+}
+
+export type RewriteOutcome =
+  | { kind: "rewrite"; from: string; to: string; key: string }
+  | { kind: "leave"; reason: "not-ours" | "already-migrated" | "embedded" };
+
+/**
+ * Decide what a single stored value becomes. Idempotent by construction: a
+ * value already on the asset host no longer parses as Supabase, so a re-run
+ * is a no-op rather than a double rewrite.
+ */
+export function planRewrite(
+  value: string,
+  supabaseBase: string,
+  assetBase: string,
+): RewriteOutcome {
+  const trimmedAsset = assetBase.replace(/\/+$/, "");
+  if (value.startsWith(`${trimmedAsset}/`)) return { kind: "leave", reason: "already-migrated" };
+
+  const parsed = parseSupabasePublicUrl(value, supabaseBase);
+  if (parsed === null) {
+    return value.includes(SUPABASE_PUBLIC_PREFIX)
+      ? { kind: "leave", reason: "embedded" }
+      : { kind: "leave", reason: "not-ours" };
+  }
+
+  const encoded = parsed.path.split("/").map(encodeURIComponent).join("/");
+  return {
+    kind: "rewrite",
+    from: value,
+    to: `${trimmedAsset}/${parsed.bucket}/${encoded}`,
+    key: r2KeyFor(parsed.bucket, parsed.path),
+  };
+}

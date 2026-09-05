@@ -5,6 +5,8 @@ import {
   normalizeEtag,
   r2KeyFor,
   verifyIntegrity,
+  planRewrite,
+  PUBLIC_BUCKETS,
   type SourceObject,
 } from "../scripts/asset-migration-core";
 import { publicObjectUrl } from "../lib/storage/public-objects";
@@ -76,4 +78,57 @@ test("minted URLs address exactly the keys the copy job writes", () => {
   } finally {
     process.env = prev;
   }
+});
+
+const SB = "https://project.supabase.co";
+const ASSET = "https://img.example.com";
+const plan = (v: string) => planRewrite(v, SB, ASSET);
+
+test("rewrites a stored Supabase URL onto the asset host", () => {
+  const r = plan(`${SB}/storage/v1/object/public/word-images/curtains.webp`);
+  assert.deepEqual(r, {
+    kind: "rewrite",
+    from: `${SB}/storage/v1/object/public/word-images/curtains.webp`,
+    to: `${ASSET}/word-images/curtains.webp`,
+    key: "word-images/curtains.webp",
+  });
+});
+
+test("nested audio paths keep their separators", () => {
+  const r = plan(`${SB}/storage/v1/object/public/word-audio/access-card/en-GB.mp3`);
+  assert.equal(r.kind === "rewrite" && r.to, `${ASSET}/word-audio/access-card/en-GB.mp3`);
+  assert.equal(r.kind === "rewrite" && r.key, "word-audio/access-card/en-GB.mp3");
+});
+
+// A partially-completed run must be safe to resume, so a second pass over an
+// already-rewritten row has to be a no-op rather than a double rewrite.
+test("re-running does not rewrite what is already migrated", () => {
+  assert.deepEqual(plan(`${ASSET}/word-images/curtains.webp`), {
+    kind: "leave",
+    reason: "already-migrated",
+  });
+});
+
+test("leaves alone anything that is not ours", () => {
+  for (const v of [
+    "face",
+    "https://evil.example.com/storage/v1/object/public/word-images/curtains.webp",
+    `${SB}/storage/v1/object/public/user-atlas-images/u1/original.webp`, // private bucket
+    `${SB}/storage/v1/object/sign/word-images/curtains.webp`, // signed, not public
+    "not a url at all",
+  ]) {
+    assert.equal(plan(v).kind, "leave", `should leave: ${v}`);
+  }
+});
+
+// Blind substring replacement is how a migration corrupts a free-text column
+// that happened to mention a URL.
+test("a URL embedded in longer text is reported, never edited", () => {
+  const r = plan(`see ${SB}/storage/v1/object/public/word-images/curtains.webp for details`);
+  assert.deepEqual(r, { kind: "leave", reason: "embedded" });
+});
+
+test("the private bucket is not in the public allowlist", () => {
+  assert.equal((PUBLIC_BUCKETS as readonly string[]).includes("user-atlas-images"), false);
+  assert.equal(PUBLIC_BUCKETS.length, 4);
 });

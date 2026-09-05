@@ -2619,8 +2619,8 @@ async function syncSeedWordImages(sql: any) {
       AND w.image_url IS DISTINCT FROM s.image_url
       AND (
         w.image_url IS NULL
-        OR w.image_url NOT LIKE '%/storage/v1/object/public/word-images/%'
-        OR s.image_url LIKE '%/storage/v1/object/public/word-images/%'
+        OR w.image_url NOT LIKE '%/word-images/%'
+        OR s.image_url LIKE '%/word-images/%'
       )
     RETURNING w.id
   `;
@@ -2681,7 +2681,7 @@ async function main() {
       // and other hotlinks are retired — WORD_IMPORT.md §6). Warn, don't fail:
       // a content slip shouldn't block a prod deploy.
       const badImg = missing.filter(
-        (w) => !w.imageUrl || !w.imageUrl.includes("/storage/v1/object/public/word-images/"),
+        (w) => !w.imageUrl || !w.imageUrl.includes("/word-images/"),
       );
       if (badImg.length > 0) {
         console.warn(

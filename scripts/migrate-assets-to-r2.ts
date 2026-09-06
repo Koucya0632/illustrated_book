@@ -26,7 +26,7 @@ import {
   S3Client,
 } from "@aws-sdk/client-s3";
 import { writeFileSync, readFileSync } from "node:fs";
-import { listAllObjects, putObject, restConfig, type RestConfig } from "./r2-rest";
+import { listAllObjects, putObject, restConfig, type RestConfig } from "../lib/storage/r2-rest";
 import {
   CACHE_CONTROL_IMMUTABLE,
   decideCopy,

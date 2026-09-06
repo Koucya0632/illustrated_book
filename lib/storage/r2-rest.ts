@@ -11,9 +11,10 @@
  * api.cloudflare.com serves a normal certificate and exposes the same object
  * operations, so the migration is not blocked on Cloudflare fixing theirs.
  *
- * Deliberately not wired into lib/storage/public-writer.ts: runtime writes only
- * move to R2 when NEXT_PUBLIC_ASSET_BASE_URL is set, which is after this
- * migration, and by then the S3 endpoint is the right long-term transport.
+ * Used by both the migration script and lib/storage/public-writer.ts. Runtime
+ * writes need it for the same reason the migration did: the switch that points
+ * URLs at R2 also points writes there, and a write path that cannot reach R2
+ * would mint URLs for objects it failed to store.
  */
 import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
@@ -75,13 +76,17 @@ export interface RemoteObject {
  * One listing instead of a request per object: the API has no HEAD (it answers
  * 405), and a GET to test existence would download the body it is checking.
  */
-export async function listAllObjects(config: RestConfig): Promise<Map<string, RemoteObject>> {
+export async function listAllObjects(
+  config: RestConfig,
+  prefix?: string,
+): Promise<Map<string, RemoteObject>> {
   const found = new Map<string, RemoteObject>();
   let cursor: string | undefined;
 
   for (;;) {
     const url = new URL(`${API}/accounts/${config.accountId}/r2/buckets/${config.bucket}/objects`);
     url.searchParams.set("per_page", "1000");
+    if (prefix) url.searchParams.set("prefix", prefix);
     if (cursor) url.searchParams.set("cursor", cursor);
 
     const res = await fetch(url, { headers: { Authorization: `Bearer ${config.token}` } });
@@ -192,6 +197,24 @@ export async function putObject(
         throw new Error(`put failed: ${detail}`);
       }
       return payload.result?.etag ?? null;
+    }),
+  );
+}
+
+/** Delete one object. A key that is already gone is not an error. */
+export async function deleteObject(config: RestConfig, key: string): Promise<void> {
+  await withRetry(`delete ${key}`, () =>
+    rateLimited(async () => {
+      const res = await fetch(objectUrl(config, key), {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${config.token}` },
+      });
+      if (res.status === 429 || res.status >= 500) {
+        const header = res.headers.get("retry-after");
+        const retryAfterMs = header ? Number(header) * 1000 : null;
+        throw new RetryableError(`HTTP ${res.status}`, Number.isFinite(retryAfterMs) ? retryAfterMs : null);
+      }
+      if (!res.ok && res.status !== 404) throw new Error(`delete failed: HTTP ${res.status}`);
     }),
   );
 }

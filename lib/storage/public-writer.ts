@@ -15,12 +15,20 @@
  */
 import {
   DeleteObjectsCommand,
+  HeadBucketCommand,
   ListObjectsV2Command,
   PutObjectCommand,
   S3Client,
 } from "@aws-sdk/client-s3";
 import { createServiceRoleClient } from "@/lib/supabase/server";
 import { publicObjectUrl, type PublicBucket } from "./public-objects";
+import {
+  deleteObject,
+  listAllObjects,
+  putObject as restPutObject,
+  restConfig,
+  type RestConfig,
+} from "./r2-rest";
 
 export const DEFAULT_CACHE_CONTROL = "31536000";
 
@@ -32,6 +40,18 @@ export interface PutPublicObjectOptions {
 }
 
 export type WriteBackend = "supabase" | "r2";
+
+/**
+ * How R2 is reached. S3 is the intended transport; REST exists because the
+ * per-account S3 endpoint is currently refusing TLS (a Cloudflare-side
+ * certificate provisioning bug), and a public asset host that cannot accept
+ * new uploads is not a usable cutover.
+ *
+ * Probed once per process: the answer cannot change mid-process, and probing
+ * per request would add a round trip to every upload.
+ */
+type R2Transport = { via: "s3" } | { via: "rest"; config: RestConfig };
+let cachedTransport: Promise<R2Transport> | null = null;
 
 interface R2Config {
   bucket: string;
@@ -68,12 +88,39 @@ export function writeBackend(): WriteBackend {
  * producing objects nobody can fetch.
  */
 export function assertWriterConfigured(): void {
-  if (writeBackend() === "r2" && r2Config() === null) {
+  if (writeBackend() !== "r2") return;
+  if (r2Config() === null && restConfig() === null) {
     throw new Error(
-      "NEXT_PUBLIC_ASSET_BASE_URL is set (URLs point at the asset host) but R2_* credentials are missing. " +
-        "Objects would be written to Supabase while their URLs named R2.",
+      "NEXT_PUBLIC_ASSET_BASE_URL is set (URLs point at the asset host) but no R2 transport is configured. " +
+        "Set R2_ACCOUNT_ID + R2_BUCKET and either R2_ACCESS_KEY_ID/R2_SECRET_ACCESS_KEY (S3) " +
+        "or CLOUDFLARE_API_TOKEN (REST). Objects would be written to Supabase while their URLs named R2.",
     );
   }
+}
+
+async function r2Transport(): Promise<R2Transport> {
+  cachedTransport ??= (async (): Promise<R2Transport> => {
+    const config = r2Config();
+    if (config) {
+      try {
+        await r2Client(config).send(new HeadBucketCommand({ Bucket: config.bucket }));
+        return { via: "s3" };
+      } catch (e) {
+        const rest = restConfig();
+        if (!rest) throw e;
+        console.warn(
+          `[storage] S3 endpoint unusable, falling back to the Cloudflare REST API: ${
+            e instanceof Error ? e.message.slice(0, 120) : String(e)
+          }`,
+        );
+        return { via: "rest", config: rest };
+      }
+    }
+    const rest = restConfig();
+    if (rest) return { via: "rest", config: rest };
+    throw new Error("no R2 transport configured");
+  })();
+  return cachedTransport;
 }
 
 let cachedClient: S3Client | null = null;
@@ -98,18 +145,27 @@ export async function putPublicObject(
   const cacheControl = options.cacheControl ?? DEFAULT_CACHE_CONTROL;
 
   if (writeBackend() === "r2") {
-    const config = r2Config()!;
-    await r2Client(config).send(
-      new PutObjectCommand({
-        Bucket: config.bucket,
-        // Key must equal the URL path, or the object is unreachable at the URL
-        // this function returns. tests/asset-migration-core.test.ts pins that.
-        Key: `${bucket}/${path}`,
-        Body: body,
-        ContentType: options.contentType,
-        CacheControl: `public, max-age=${cacheControl}, immutable`,
-      }),
-    );
+    // Key must equal the URL path, or the object is unreachable at the URL
+    // this function returns. tests/asset-migration-core.test.ts pins that.
+    const key = `${bucket}/${path}`;
+    const transport = await r2Transport();
+    if (transport.via === "s3") {
+      const config = r2Config()!;
+      await r2Client(config).send(
+        new PutObjectCommand({
+          Bucket: config.bucket,
+          Key: key,
+          Body: body,
+          ContentType: options.contentType,
+          CacheControl: `public, max-age=${cacheControl}, immutable`,
+        }),
+      );
+    } else {
+      await restPutObject(transport.config, key, body, {
+        contentType: options.contentType,
+        cacheControl: `public, max-age=${cacheControl}, immutable`,
+      });
+    }
   } else {
     const supabase = createServiceRoleClient();
     const { error } = await supabase.storage.from(bucket).upload(path, body, {
@@ -133,15 +189,22 @@ export async function removePublicObjects(
   assertWriterConfigured();
 
   if (writeBackend() === "r2") {
-    const config = r2Config()!;
-    for (let i = 0; i < unique.length; i += 1000) {
-      await r2Client(config).send(
-        new DeleteObjectsCommand({
-          Bucket: config.bucket,
-          Delete: { Objects: unique.slice(i, i + 1000).map((p) => ({ Key: `${bucket}/${p}` })) },
-        }),
-      );
+    const transport = await r2Transport();
+    if (transport.via === "s3") {
+      const config = r2Config()!;
+      for (let i = 0; i < unique.length; i += 1000) {
+        await r2Client(config).send(
+          new DeleteObjectsCommand({
+            Bucket: config.bucket,
+            Delete: { Objects: unique.slice(i, i + 1000).map((p) => ({ Key: `${bucket}/${p}` })) },
+          }),
+        );
+      }
+      return;
     }
+    // The REST API deletes one key per call; these lists are a handful of
+    // stale avatars, not a bulk purge.
+    for (const p of unique) await deleteObject(transport.config, `${bucket}/${p}`);
     return;
   }
 
@@ -165,8 +228,13 @@ export async function listPublicObjects(
   assertWriterConfigured();
 
   if (writeBackend() === "r2") {
-    const config = r2Config()!;
     const withSlash = prefix === "" ? "" : prefix.endsWith("/") ? prefix : `${prefix}/`;
+    const transport = await r2Transport();
+    if (transport.via === "rest") {
+      const remote = await listAllObjects(transport.config, `${bucket}/${withSlash}`);
+      return [...remote.keys()].map((key) => key.slice(bucket.length + 1));
+    }
+    const config = r2Config()!;
     const found: string[] = [];
     let token: string | undefined;
     do {

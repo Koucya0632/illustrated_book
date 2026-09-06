@@ -33,3 +33,6 @@ next-env.d.ts
 /public/word-images/
 /reports/
 /output/
+
+# Revert logs from scripts/migrate-assets-to-r2.ts — operational artefacts, not source.
+asset-rewrite-journal-*.json

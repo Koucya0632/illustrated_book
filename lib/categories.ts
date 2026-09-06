@@ -71,7 +71,7 @@ export const categories: Category[] = [
     descriptionEn: "Where the cooking happens",
     color: "from-orange-100 to-rose-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-kitchen.webp",
+      "https://img.nexflow.team/word-images/category-kitchen.webp",
   },
   {
     id: "bathroom",
@@ -82,7 +82,7 @@ export const categories: Category[] = [
     descriptionEn: "Washing up and getting ready",
     color: "from-sky-100 to-cyan-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-bathroom.webp",
+      "https://img.nexflow.team/word-images/category-bathroom.webp",
   },
   {
     id: "bedroom",
@@ -93,7 +93,7 @@ export const categories: Category[] = [
     descriptionEn: "The corner for rest and sleep",
     color: "from-purple-100 to-pink-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-bedroom.webp",
+      "https://img.nexflow.team/word-images/category-bedroom.webp",
   },
   {
     id: "living-room",
@@ -104,7 +104,7 @@ export const categories: Category[] = [
     descriptionEn: "Where the family gathers",
     color: "from-amber-100 to-yellow-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-living-room.webp",
+      "https://img.nexflow.team/word-images/category-living-room.webp",
   },
   {
     id: "office",
@@ -115,7 +115,7 @@ export const categories: Category[] = [
     descriptionEn: "Where you work and study",
     color: "from-slate-100 to-blue-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-office.webp",
+      "https://img.nexflow.team/word-images/category-office.webp",
   },
   {
     id: "street",
@@ -126,7 +126,7 @@ export const categories: Category[] = [
     descriptionEn: "Out walking the city streets",
     color: "from-gray-100 to-stone-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-street.webp",
+      "https://img.nexflow.team/word-images/category-street.webp",
   },
   {
     id: "supermarket",
@@ -137,7 +137,7 @@ export const categories: Category[] = [
     descriptionEn: "Your everyday shopping run",
     color: "from-emerald-100 to-lime-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-supermarket.webp",
+      "https://img.nexflow.team/word-images/category-supermarket.webp",
   },
   {
     id: "transportation",
@@ -148,7 +148,7 @@ export const categories: Category[] = [
     descriptionEn: "Ways of getting around",
     color: "from-indigo-100 to-blue-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-transportation.webp",
+      "https://img.nexflow.team/word-images/category-transportation.webp",
   },
   {
     id: "seasonings",
@@ -159,7 +159,7 @@ export const categories: Category[] = [
     descriptionEn: "The little helpers that make food taste good",
     color: "from-rose-100 to-amber-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-seasonings.webp",
+      "https://img.nexflow.team/word-images/category-seasonings.webp",
   },
   {
     id: "zodiac",
@@ -170,7 +170,7 @@ export const categories: Category[] = [
     descriptionEn: "The twelve signs and their English names",
     color: "from-cyan-100 to-violet-100",
     imageUrl:
-      "https://pobmxnxdftnvdmnbkmvi.supabase.co/storage/v1/object/public/word-images/category-zodiac.webp",
+      "https://img.nexflow.team/word-images/category-zodiac.webp",
   },
 ];
 

@@ -68,9 +68,13 @@ jobs:
           # the framework announces that something is going away. The tree is
           # warning-free as of Next.js 16.3.4; hold that line rather than discover
           # the next removal during an upgrade.
-          if grep -q '⚠' build.log; then
+          #
+          # "No build cache found" is excluded because it describes the runner, not
+          # the tree: every CI run is a fresh checkout with no .next/cache, so it
+          # fires unconditionally and would make this guard permanently red.
+          if grep '⚠' build.log | grep -qv 'No build cache found'; then
             echo "::error::next build emitted warnings"
-            grep -n '⚠' build.log
+            grep '⚠' build.log | grep -v 'No build cache found'
             exit 1
           fi
 

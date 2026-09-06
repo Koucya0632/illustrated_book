@@ -295,10 +295,10 @@ async function answerAtlasCard(
     }).catch((err) => console.warn("[study/answer] atlas study log insert failed", err)),
   ]);
 
-  revalidateTag(`progress:${userId}`);
-  revalidateTag(`stats:${userId}`);
-  revalidateTag(`atlas-progress:${userId}`);
-  revalidateTag(`atlas-stats:${userId}`);
+  revalidateTag(`progress:${userId}`, "max");
+  revalidateTag(`stats:${userId}`, "max");
+  revalidateTag(`atlas-progress:${userId}`, "max");
+  revalidateTag(`atlas-stats:${userId}`, "max");
 
   return answerResponse(next, masteryResult);
 }
@@ -448,8 +448,8 @@ export async function POST(req: Request) {
   // Streak + heatmap derive from study_logs; due/seen counts derive from
   // user_cards. Both just changed, so bust both per-user tags now —
   // same-tick reads see fresh data instead of a stale 30s window.
-  revalidateTag(`progress:${userId}`);
-  revalidateTag(`stats:${userId}`);
+  revalidateTag(`progress:${userId}`, "max");
+  revalidateTag(`stats:${userId}`, "max");
 
   return answerResponse(next, masteryResult, milestone);
 }

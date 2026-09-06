@@ -18,7 +18,7 @@ import {
 export const runtime = "nodejs";
 // Next 14 auto-emits `Cache-Control: s-maxage=300, stale-while-revalidate=...`
 // when `revalidate` is set on a Route Handler segment. Tag-based invalidation
-// (`revalidateTag("words")`) still kicks in via the underlying unstable_cache.
+// (`revalidateTag("words", "max")`) still kicks in via the underlying unstable_cache.
 export const revalidate = 300;
 
 export async function GET(req: Request) {

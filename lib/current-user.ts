@@ -56,9 +56,9 @@ function toCurrent(p: ProfileRow): CurrentUser {
 // dedupe to one lookup. The cache scope is per request, so different
 // requests still resolve independently.
 export const getCurrentUserId = cache(async (): Promise<string | null> => {
-  const headerId = headers().get(USER_ID_HEADER);
+  const headerId = (await headers()).get(USER_ID_HEADER);
   if (headerId) return headerId;
-  const supabase = createClient();
+  const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

@@ -13,8 +13,8 @@ import type { UiLang } from "@/lib/settings";
 // deployed URL from the canonical id→URL map instead.
 const wordImg = (id: string) => (imageUrls as Record<string, string>)[id];
 
-export function generateMetadata(): Metadata {
-  const lang = getPublicLang();
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getPublicLang();
   return {
     title: mt(lang, "meta.title"),
     description: mt(lang, "meta.desc"),
@@ -141,8 +141,8 @@ function MarqueeRow({
   );
 }
 
-export default function MarketingHomePage() {
-  const lang = getPublicLang();
+export default async function MarketingHomePage() {
+  const lang = await getPublicLang();
   return (
     <PublicShell>
       {/* ── Hero ─────────────────────────────────────────────── */}

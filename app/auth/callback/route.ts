@@ -15,7 +15,7 @@ export async function GET(req: Request) {
     return NextResponse.redirect(new URL("/signin?error=missing_code", req.url));
   }
 
-  const supabase = createClient();
+  const supabase = await createClient();
   const { error } = await supabase.auth.exchangeCodeForSession(code);
   if (error) {
     const errUrl = new URL("/signin", req.url);

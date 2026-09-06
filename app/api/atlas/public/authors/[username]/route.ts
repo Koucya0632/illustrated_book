@@ -9,10 +9,8 @@ import { authorProfile } from "@/lib/profile/live-author-profile";
 
 export const runtime = "nodejs";
 
-export async function GET(
-  _req: Request,
-  { params }: { params: { username: string } },
-) {
+export async function GET(_req: Request, props: { params: Promise<{ username: string }> }) {
+  const params = await props.params;
   const profile = await authorProfile.load(params.username);
   if (!profile) return NextResponse.json({ error: "not found" }, { status: 404 });
 

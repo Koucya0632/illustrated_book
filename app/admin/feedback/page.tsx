@@ -41,11 +41,12 @@ function allowed(value: unknown, values: string[]): string {
   return typeof value === "string" && values.includes(value) ? value : "";
 }
 
-export default async function FeedbackPage({
-  searchParams,
-}: {
-  searchParams: { status?: string; type?: string; platform?: string; days?: string };
-}) {
+export default async function FeedbackPage(
+  props: {
+    searchParams: Promise<{ status?: string; type?: string; platform?: string; days?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const status = allowed(searchParams.status, Object.keys(STATUS_LABELS));
   const feedbackType = allowed(searchParams.type, Object.keys(TYPE_LABELS));
   const platform = allowed(searchParams.platform, ["web", "ios"]);

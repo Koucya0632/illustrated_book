@@ -7,7 +7,8 @@ export const dynamic = "force-dynamic";
 
 // Admin-gated by middleware (/api/admin/*). Generates AI enrichment for one
 // word and applies it (relations + etymology + forms + mnemonic).
-export async function POST(_req: Request, { params }: { params: { id: string } }) {
+export async function POST(_req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const word = await getById(params.id);
   if (!word) return NextResponse.json({ error: "not found" }, { status: 404 });
   try {

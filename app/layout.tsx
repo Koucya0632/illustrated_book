@@ -61,7 +61,7 @@ export default async function RootLayout({
   // Logged-in users get their saved UI language; anonymous visitors (e.g. the
   // marketing page) get the cookie-based public language so <html lang> is
   // correct for SEO/screen-readers.
-  const htmlLang = localeTag(bundle ? settings.uiLang : getPublicLang());
+  const htmlLang = localeTag(bundle ? settings.uiLang : await getPublicLang());
   return (
     <html
       lang={htmlLang}

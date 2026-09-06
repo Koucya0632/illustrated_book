@@ -11,10 +11,8 @@ export const dynamic = "force-dynamic";
 
 const HANDLE = /^[A-Za-z0-9_-]{1,32}$/;
 
-export async function DELETE(
-  _req: Request,
-  { params }: { params: { handle: string } },
-) {
+export async function DELETE(_req: Request, props: { params: Promise<{ handle: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });

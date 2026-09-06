@@ -6,11 +6,12 @@ import SigninForm from "./SigninForm";
 
 export const metadata = { title: "登入 · Tuji" };
 
-export default function SigninPage({
-  searchParams,
-}: {
-  searchParams: { next?: string; error?: string };
-}) {
+export default async function SigninPage(
+  props: {
+    searchParams: Promise<{ next?: string; error?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const next = safeNextPath(searchParams.next, "/me");
   return (
     <div className="w-full max-w-md">

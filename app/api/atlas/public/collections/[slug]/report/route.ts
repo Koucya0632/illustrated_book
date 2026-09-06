@@ -29,10 +29,8 @@ const REASONS = new Set<AtlasReportReason>([
   "other",
 ]);
 
-export async function POST(
-  req: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function POST(req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });

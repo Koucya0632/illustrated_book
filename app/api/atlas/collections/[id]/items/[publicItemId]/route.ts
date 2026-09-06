@@ -13,8 +13,9 @@ function invalidId(id: string): boolean {
 
 export async function DELETE(
   _req: Request,
-  { params }: { params: { id: string; publicItemId: string } },
+  props: { params: Promise<{ id: string; publicItemId: string }> }
 ) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (invalidId(params.id) || invalidId(params.publicItemId)) {

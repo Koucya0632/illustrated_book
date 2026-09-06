@@ -10,11 +10,12 @@ function pct(part: number, whole: number): string {
   return `${((part / whole) * 100).toFixed(1)}%`;
 }
 
-export default async function AdminAtlasFunnelPage({
-  searchParams,
-}: {
-  searchParams: { days?: string };
-}) {
+export default async function AdminAtlasFunnelPage(
+  props: {
+    searchParams: Promise<{ days?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const days = Number(searchParams.days ?? 30);
   const report = await getAtlasFunnel(Number.isFinite(days) ? days : 30);
   const { funnel, ai } = report;

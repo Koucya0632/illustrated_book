@@ -15,7 +15,8 @@ import VisitTracker from "./VisitTracker";
 // signed-in user's UI language.
 export const dynamic = "force-dynamic";
 
-export default async function CategoryPage({ params }: { params: { id: string } }) {
+export default async function CategoryPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
   const lang = settings.uiLang;

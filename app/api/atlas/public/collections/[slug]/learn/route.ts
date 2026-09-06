@@ -13,10 +13,8 @@ function normalizeSlug(raw: string): string | null {
   return /^[a-z0-9-]{1,80}$/.test(slug) ? slug : null;
 }
 
-export async function POST(
-  _req: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function POST(_req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });

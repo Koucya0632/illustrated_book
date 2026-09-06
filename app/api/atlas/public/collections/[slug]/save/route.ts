@@ -33,10 +33,8 @@ function privateJSON(saved: boolean, saveCount: number) {
   );
 }
 
-export async function GET(
-  _req: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function GET(_req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const result = await context(params.slug);
   if ("response" in result) return result.response;
   const outcome = await livePublicCollectionModule.bookmarkState(result);
@@ -46,10 +44,8 @@ export async function GET(
   return privateJSON(outcome.value.saved, outcome.value.saveCount);
 }
 
-export async function POST(
-  _req: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function POST(_req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const result = await context(params.slug);
   if ("response" in result) return result.response;
   const outcome = await livePublicCollectionModule.bookmark(result);
@@ -71,10 +67,8 @@ export async function POST(
   return privateJSON(outcome.value.saved, outcome.value.saveCount);
 }
 
-export async function DELETE(
-  _req: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function DELETE(_req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const result = await context(params.slug);
   if ("response" in result) return result.response;
   const outcome = await livePublicCollectionModule.removeBookmark(result);

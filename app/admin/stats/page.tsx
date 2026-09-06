@@ -182,11 +182,12 @@ async function loadStats(days: Days) {
   };
 }
 
-export default async function StatsPage({
-  searchParams,
-}: {
-  searchParams: { days?: string };
-}) {
+export default async function StatsPage(
+  props: {
+    searchParams: Promise<{ days?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const days = clampDays(searchParams.days);
 
   const data = await loadStats(days);

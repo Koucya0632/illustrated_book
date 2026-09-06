@@ -47,11 +47,12 @@ function allowed(value: unknown, values: string[]): string {
   return typeof value === "string" && values.includes(value) ? value : "";
 }
 
-export default async function ReportsPage({
-  searchParams,
-}: {
-  searchParams: { status?: string; type?: string; platform?: string; days?: string };
-}) {
+export default async function ReportsPage(
+  props: {
+    searchParams: Promise<{ status?: string; type?: string; platform?: string; days?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const status = allowed(searchParams.status, Object.keys(STATUS_LABELS));
   const issueType = allowed(searchParams.type, Object.keys(ISSUE_LABELS));
   const platform = allowed(searchParams.platform, ["web", "ios"]);

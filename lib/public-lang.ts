@@ -23,8 +23,8 @@ function fromAcceptLanguage(header: string | null): UiLang {
 }
 
 /** Resolve the marketing UI language: cookie first, then Accept-Language, else zh-Hant. */
-export function getPublicLang(): UiLang {
-  const cookie = cookies().get(PUBLIC_LANG_COOKIE)?.value;
+export async function getPublicLang(): Promise<UiLang> {
+  const cookie = (await cookies()).get(PUBLIC_LANG_COOKIE)?.value;
   if (cookie) return normalizeUiLang(cookie);
-  return fromAcceptLanguage(headers().get("accept-language"));
+  return fromAcceptLanguage((await headers()).get("accept-language"));
 }

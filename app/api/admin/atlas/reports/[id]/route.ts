@@ -8,10 +8,8 @@ export const dynamic = "force-dynamic";
 // dismissed. Takedown of the underlying item is done on the 圖鑑審核 page.
 const STATUSES = new Set<AtlasReportStatus>(["open", "reviewed", "dismissed"]);
 
-export async function POST(
-  req: Request,
-  { params }: { params: { id: string } },
-) {
+export async function POST(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   if (!/^\d+$/.test(params.id)) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }

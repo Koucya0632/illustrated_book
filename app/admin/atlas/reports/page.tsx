@@ -55,11 +55,12 @@ function allowedStatus(value: unknown): AtlasReportStatus | "" {
   return value === "open" || value === "reviewed" || value === "dismissed" ? value : "";
 }
 
-export default async function AdminAtlasReportsPage({
-  searchParams,
-}: {
-  searchParams: { status?: string };
-}) {
+export default async function AdminAtlasReportsPage(
+  props: {
+    searchParams: Promise<{ status?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const status = allowedStatus(searchParams.status ?? "open");
   const reports = await listAtlasReports(status, 200);
 

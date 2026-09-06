@@ -410,8 +410,8 @@ export async function clearLearningProgress(userId: string): Promise<void> {
   // throws in non-request contexts (e.g. scripts).
   try {
     const { revalidateTag } = await import("next/cache");
-    revalidateTag(`progress:${userId}`);
-    revalidateTag(`stats:${userId}`);
+    revalidateTag(`progress:${userId}`, "max");
+    revalidateTag(`stats:${userId}`, "max");
   } catch {}
 }
 

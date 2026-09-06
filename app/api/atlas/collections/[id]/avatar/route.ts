@@ -30,7 +30,8 @@ async function imageFrom(req: Request): Promise<CollectionAvatarImage> {
   };
 }
 
-export async function POST(req: Request, { params }: { params: { id: string } }) {
+export async function POST(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (!validId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });

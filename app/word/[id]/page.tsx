@@ -40,7 +40,8 @@ function learningSentence(
   return example.target ?? (targetLanguage === "ja" ? "" : example.en);
 }
 
-export default async function WordDetailPage({ params }: { params: { id: string } }) {
+export default async function WordDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserId();
   const settings = userId ? await getSettings(userId) : DEFAULT_SETTINGS;
   const lang = settings.uiLang;

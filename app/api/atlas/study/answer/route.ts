@@ -119,8 +119,8 @@ export async function POST(req: Request) {
     }).catch((err) => console.warn("[atlas/study/answer] study log insert failed", err)),
   ]);
 
-  revalidateTag(`atlas-progress:${userId}`);
-  revalidateTag(`atlas-stats:${userId}`);
+  revalidateTag(`atlas-progress:${userId}`, "max");
+  revalidateTag(`atlas-stats:${userId}`, "max");
 
   return NextResponse.json(
     {

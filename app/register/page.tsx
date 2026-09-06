@@ -6,7 +6,8 @@ import RegisterForm from "./RegisterForm";
 
 export const metadata = { title: "註冊 · Tuji" };
 
-export default function RegisterPage({ searchParams }: { searchParams: { next?: string } }) {
+export default async function RegisterPage(props: { searchParams: Promise<{ next?: string }> }) {
+  const searchParams = await props.searchParams;
   const next = safeNextPath(searchParams.next, "/me");
   return (
     <div className="w-full max-w-md">

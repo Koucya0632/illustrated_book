@@ -1,6 +1,12 @@
 import "server-only";
 import { randomUUID } from "crypto";
 import { createServiceRoleClient } from "@/lib/supabase/server";
+import { publicObjectUrl } from "@/lib/storage/public-objects";
+import {
+  ensurePublicBucket,
+  putPublicObject,
+  removePublicObjects,
+} from "@/lib/storage/public-writer";
 
 export const ATLAS_PRIVATE_BUCKET = "user-atlas-images";
 export const ATLAS_PUBLIC_BUCKET = "atlas-public-images";
@@ -87,13 +93,7 @@ export async function uploadCollectionAvatar(
 ): Promise<string> {
   await ensureAtlasPublicBucket();
   const path = `collections/${collectionId}/avatars/${randomUUID()}.webp`;
-  const supabase = createServiceRoleClient();
-  const { error } = await supabase.storage.from(ATLAS_PUBLIC_BUCKET).upload(path, body, {
-    contentType: "image/webp",
-    cacheControl: "31536000",
-    upsert: false,
-  });
-  if (error) throw new Error(error.message);
+  await putPublicObject(ATLAS_PUBLIC_BUCKET, path, body, { contentType: "image/webp" });
   return path;
 }
 
@@ -113,14 +113,17 @@ export async function createCollectionAvatarSignedUrl(path: string): Promise<str
 }
 
 export async function removeCollectionAvatar(path: string): Promise<void> {
-  await removeStorageObjects(
-    isPublicCollectionAvatarPath(path) ? ATLAS_PUBLIC_BUCKET : ATLAS_PRIVATE_BUCKET,
-    [path],
-  );
+  // The private bucket is signed-URL only and stays on Supabase; only the
+  // public one follows the asset-host switch.
+  if (isPublicCollectionAvatarPath(path)) {
+    await removePublicObjects(ATLAS_PUBLIC_BUCKET, [path]);
+    return;
+  }
+  await removeStorageObjects(ATLAS_PRIVATE_BUCKET, [path]);
 }
 
 export async function removeAtlasPublicObjects(paths: string[]): Promise<void> {
-  await removeStorageObjects(ATLAS_PUBLIC_BUCKET, paths);
+  await removePublicObjects(ATLAS_PUBLIC_BUCKET, paths);
 }
 
 export async function createAtlasImageSignedUrls(paths: {
@@ -177,18 +180,10 @@ export async function downloadAtlasObject(path: string): Promise<Buffer> {
 }
 
 export async function ensureAtlasPublicBucket(): Promise<void> {
-  const supabase = createServiceRoleClient();
-  const { error: getError } = await supabase.storage.getBucket(ATLAS_PUBLIC_BUCKET);
-  if (!getError) return;
-
-  const { error: createError } = await supabase.storage.createBucket(ATLAS_PUBLIC_BUCKET, {
-    public: true,
+  await ensurePublicBucket(ATLAS_PUBLIC_BUCKET, {
     fileSizeLimit: "4MB",
     allowedMimeTypes: ["image/webp"],
   });
-  if (createError && !/already exists/i.test(createError.message)) {
-    throw new Error(createError.message);
-  }
 }
 
 export async function publishAtlasShareImage(input: {
@@ -196,27 +191,17 @@ export async function publishAtlasShareImage(input: {
   privateThumbPath: string;
 }): Promise<{ path: string; publicUrl: string }> {
   await ensureAtlasPublicBucket();
-  const supabase = createServiceRoleClient();
   const bytes = await downloadAtlasObject(input.privateThumbPath);
   const path = `${input.publicItemId}/thumb.webp`;
-  const { error } = await supabase.storage.from(ATLAS_PUBLIC_BUCKET).upload(path, bytes, {
+  const publicUrl = await putPublicObject(ATLAS_PUBLIC_BUCKET, path, bytes, {
     contentType: "image/webp",
-    cacheControl: "31536000",
     upsert: true,
   });
-  if (error) throw new Error(error.message);
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  return {
-    path,
-    publicUrl: `${supabaseUrl}/storage/v1/object/public/${ATLAS_PUBLIC_BUCKET}/${path}`,
-  };
+  return { path, publicUrl };
 }
 
 export function atlasPublicImageUrl(path: string | null): string | null {
-  if (!path) return null;
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (!supabaseUrl) return null;
-  return `${supabaseUrl}/storage/v1/object/public/${ATLAS_PUBLIC_BUCKET}/${path}`;
+  return path ? publicObjectUrl(ATLAS_PUBLIC_BUCKET, path) : null;
 }
 
 export function isPublicCollectionAvatarPath(path: string): boolean {

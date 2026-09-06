@@ -46,11 +46,14 @@ import {
 } from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
+import { listPublicObjects, putPublicObject } from "../lib/storage/public-writer";
 const BACKUP_DIR = "/tmp/word-images-png-backup";
 const OUT_DIR = "/tmp/word-images-webp-out";
 
 // Same marker sync-image-urls.ts uses to decide what is "ours".
-const STORAGE_MARKER = "/storage/v1/object/public/word-images/";
+// Host-agnostic: matches the bucket segment, so rows already moved to the
+// asset host are still selected instead of the query silently returning none.
+const STORAGE_MARKER = "/word-images/";
 
 function envOrDie(name: string): string {
   const v = process.env[name];
@@ -145,15 +148,9 @@ async function main() {
   // rather than a HEAD per image.
   const existing = new Set<string>();
   if (supabase && !force) {
-    for (let offset = 0; ; offset += 100) {
-      const { data, error } = await supabase.storage
-        .from(BUCKET)
-        .list("", { limit: 100, offset });
-      if (error) throw new Error(`list: ${error.message}`);
-      if (!data || data.length === 0) break;
-      for (const f of data) if (f.name.endsWith(".webp")) existing.add(f.name);
-      if (data.length < 100) break;
-    }
+      for (const name of await listPublicObjects(BUCKET, "")) {
+        if (name.endsWith(".webp")) existing.add(name);
+      }
   }
 
   const mode = localArg ? `LOCAL(${localArg.slice("--local=".length)})` : apply ? "APPLY" : "dry-run";
@@ -183,12 +180,10 @@ async function main() {
       await fs.writeFile(path.join(OUT_DIR, target), out);
 
       if (apply && supabase) {
-        const { error } = await supabase.storage.from(BUCKET).upload(target, out, {
+        await putPublicObject(BUCKET, target, out, {
           upsert: true,
           contentType: WORD_IMAGE_CONTENT_TYPE,
-          cacheControl: "31536000",
         });
-        if (error) throw error;
       }
       ok++;
       if (ok % 50 === 0) console.log(`  ${ok}/${jobs.length}…`);

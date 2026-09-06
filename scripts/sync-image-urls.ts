@@ -14,7 +14,12 @@ import { join } from "node:path";
 import postgres from "postgres";
 import { words as seedWords } from "../lib/words";
 
-const STORAGE_MARKER = "/storage/v1/object/public/word-images/";
+// Host-agnostic on purpose: the assets are moving to their own domain, so the
+// marker matches the bucket segment rather than the Supabase URL shape. A
+// marker that only knew the Supabase spelling would read every migrated row as
+// "not a real image URL" — and in syncSeedWordImages that reads as drift to be
+// healed, which would push the pre-migration URLs back on the next deploy.
+const STORAGE_MARKER = "/word-images/";
 const OUT_PATH = join(process.cwd(), "lib", "image-urls.json");
 
 const url = process.env.DATABASE_URL;

@@ -33,6 +33,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",
     "@apple/app-store-server-library": "^3.1.0",
+    "@aws-sdk/client-s3": "^3.1127.0",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.106.1",
     "ai": "^6.0.193",

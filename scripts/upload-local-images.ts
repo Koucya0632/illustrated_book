@@ -24,6 +24,8 @@ import postgres from "postgres";
 import { WORD_IMAGE_CONTENT_TYPE, encodeWordImage } from "../lib/word-image-encode";
 
 const BUCKET = "word-images";
+import { listPublicObjects, putPublicObject } from "../lib/storage/public-writer";
+import { publicObjectUrl } from "../lib/storage/public-objects";
 const LOCAL_DIR = path.resolve(process.cwd(), "public/word-images");
 const APPLY = process.argv.includes("--apply");
 const FORCE_UPLOAD = process.argv.includes("--force-upload");
@@ -51,15 +53,8 @@ function envOrDie(name: string): string {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SB = any;
 
-async function listExistingObjects(supabase: SB): Promise<Set<string>> {
-  const out = new Set<string>();
-  const { data, error } = await supabase.storage.from(BUCKET).list("", { limit: 5000 });
-  if (error) {
-    console.warn(`[upload-local-images] could not list bucket: ${error.message}`);
-    return out;
-  }
-  for (const obj of data as Array<{ name: string }>) out.add(obj.name);
-  return out;
+async function listExistingObjects(): Promise<Set<string>> {
+  return new Set(await listPublicObjects(BUCKET, ""));
 }
 
 async function main() {
@@ -86,10 +81,9 @@ async function main() {
     auth: { autoRefreshToken: false, persistSession: false },
   });
   const sql = postgres(dbUrl, { ssl: "require", prepare: false, max: 1 });
-  const publicBase = `${supabaseUrl}/storage/v1/object/public/${BUCKET}/`;
 
   try {
-    const existing = await listExistingObjects(supabase);
+    const existing = await listExistingObjects();
     console.log(`[upload-local-images] bucket currently holds ${existing.size} objects`);
 
     let uploaded = 0;
@@ -101,21 +95,22 @@ async function main() {
     for (const filename of files) {
       const id = filename.replace(/\.[a-z0-9]+$/i, "");
       const storagePath = `${id}.webp`;
-      const newUrl = `${publicBase}${storagePath}`;
+      const newUrl = publicObjectUrl(BUCKET, storagePath);
 
       // 1. Upload to Storage (skip if already present)
       if (existing.has(storagePath) && !FORCE_UPLOAD) {
         skippedUpload++;
       } else if (APPLY) {
         const buf = await encodeWordImage(fs.readFileSync(path.join(LOCAL_DIR, filename)));
-        const { error: upErr } = await supabase.storage.from(BUCKET).upload(storagePath, buf, {
+        try {
+          await putPublicObject(BUCKET, storagePath, buf, {
           contentType: WORD_IMAGE_CONTENT_TYPE,
           upsert: true,
-          cacheControl: "31536000",
-        });
-        if (upErr) {
-          failures.push({ id, reason: `upload: ${upErr.message}` });
-          console.log(`  ✗ ${id}: upload failed — ${upErr.message}`);
+          });
+        } catch (e) {
+          const reason = e instanceof Error ? e.message : String(e);
+          failures.push({ id, reason: `upload: ${reason}` });
+          console.log(`  ✗ ${id}: upload failed — ${reason}`);
           continue;
         }
         uploaded++;

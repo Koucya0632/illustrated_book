@@ -23,11 +23,12 @@ function allowedStatus(value: unknown): AtlasCollectionReviewStatus | "" {
     : "";
 }
 
-export default async function AdminAtlasCollectionsPage({
-  searchParams,
-}: {
-  searchParams: { status?: string };
-}) {
+export default async function AdminAtlasCollectionsPage(
+  props: {
+    searchParams: Promise<{ status?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const status = allowedStatus(searchParams.status ?? "pending_review");
   const rows = await listAtlasCollectionReviewItems(status, 120);
 

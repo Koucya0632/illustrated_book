@@ -13,7 +13,8 @@ export const dynamic = "force-dynamic";
 // defaulting it. Do not "helpfully" supply a fallback reason here.
 const ACTOR = "admin";
 
-export async function POST(req: Request, { params }: { params: { id: string } }) {
+export async function POST(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const sql = getSql();
   if (!sql) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
 

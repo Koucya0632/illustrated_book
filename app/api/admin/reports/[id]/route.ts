@@ -3,10 +3,8 @@ import { getSql } from "@/lib/db";
 
 const STATUSES = new Set(["pending", "reviewing", "resolved", "rejected", "duplicate"]);
 
-export async function PATCH(
-  req: Request,
-  { params }: { params: { id: string } },
-) {
+export async function PATCH(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const sql = getSql();
   if (!sql) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
 

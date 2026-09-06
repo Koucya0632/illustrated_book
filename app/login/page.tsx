@@ -4,7 +4,8 @@ import LoginForm from "./LoginForm";
 
 export const metadata = { title: "後台登入 · Tuji" };
 
-export default function LoginPage({ searchParams }: { searchParams: { next?: string } }) {
+export default async function LoginPage(props: { searchParams: Promise<{ next?: string }> }) {
+  const searchParams = await props.searchParams;
   const next = safeNextPath(searchParams.next, "/admin");
   return (
     <div className="w-full max-w-md">

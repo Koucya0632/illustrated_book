@@ -20,8 +20,8 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   const userId = await getCurrentUserIdFast();
-  const headerId = headers().get(USER_ID_HEADER);
-  const auth = headers().get("authorization");
+  const headerId = (await headers()).get(USER_ID_HEADER);
+  const auth = (await headers()).get("authorization");
 
   return NextResponse.json({
     userId,

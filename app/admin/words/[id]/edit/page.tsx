@@ -4,11 +4,12 @@ import WordForm from "../../WordForm";
 
 export const dynamic = "force-dynamic";
 
-export default async function EditWordPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function EditWordPage(
+  props: {
+    params: Promise<{ id: string }>;
+  }
+) {
+  const params = await props.params;
   const w = await getById(params.id);
   if (!w) notFound();
   return (

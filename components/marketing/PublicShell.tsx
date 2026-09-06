@@ -13,8 +13,8 @@ const NAV = [
   { href: "/support", key: "nav.support" },
 ];
 
-export default function PublicShell({ children }: { children: React.ReactNode }) {
-  const lang = getPublicLang();
+export default async function PublicShell({ children }: { children: React.ReactNode }) {
+  const lang = await getPublicLang();
   return (
     <div className={`min-h-screen bg-tuji-paper text-tuji-ink${lang === "ja" ? " font-ja" : ""}`}>
       {/* One hairline, no shadow: the header is separated from the page by

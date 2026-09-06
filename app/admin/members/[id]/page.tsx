@@ -17,7 +17,8 @@ function fmt(value: string | null | undefined): string {
   return value ? new Date(value).toLocaleString("zh-TW") : "—";
 }
 
-export default async function MemberDetailPage({ params }: { params: { id: string } }) {
+export default async function MemberDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const detail = await getMemberDetail(params.id).catch(() => null);
   if (!detail) notFound();
 

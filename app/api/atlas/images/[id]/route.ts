@@ -14,10 +14,8 @@ function invalidId(id: string): boolean {
   return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
 }
 
-export async function GET(
-  _req: Request,
-  { params }: { params: { id: string } },
-) {
+export async function GET(_req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
@@ -60,10 +58,8 @@ export async function GET(
   );
 }
 
-export async function DELETE(
-  _req: Request,
-  { params }: { params: { id: string } },
-) {
+export async function DELETE(_req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });

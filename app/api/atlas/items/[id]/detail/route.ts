@@ -23,7 +23,8 @@ function invalidId(id: string): boolean {
 
 // Full per-word detail for a custom atlas item, in the same shape as
 // /api/words/[id] (the iOS `Word`). Auth-gated (user-owned); no-store.
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });

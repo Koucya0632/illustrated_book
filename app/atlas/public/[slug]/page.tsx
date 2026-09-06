@@ -7,11 +7,12 @@ import ReportButton from "./ReportButton";
 
 export const dynamic = "force-dynamic";
 
-export default async function PublicAtlasDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function PublicAtlasDetailPage(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const slug = params.slug.trim().toLowerCase();
   if (!/^[a-z0-9-]{1,80}$/.test(slug)) notFound();
   const item = await getAtlasPublicItem(slug);

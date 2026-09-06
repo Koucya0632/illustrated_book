@@ -55,7 +55,7 @@ function bustCaches() {
   // No-op outside a Next request context (e.g. the enrich CLI script), where
   // revalidateTag throws. Deployed reads still refresh via the 60s revalidate.
   try {
-    revalidateTag("words");
+    revalidateTag("words", "max");
   } catch {
     /* not in a request/render scope */
   }

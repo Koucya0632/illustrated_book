@@ -31,11 +31,12 @@ function allowedStatus(value: unknown): ReviewFilterStatus | "" {
     : "";
 }
 
-export default async function AdminAtlasPage({
-  searchParams,
-}: {
-  searchParams: { status?: string };
-}) {
+export default async function AdminAtlasPage(
+  props: {
+    searchParams: Promise<{ status?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const status = allowedStatus(searchParams.status ?? "pending_review");
   const rows = await listAtlasReviewItems(status, 120);
   const items = await Promise.all(

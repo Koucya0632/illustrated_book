@@ -3,11 +3,12 @@ import { searchMembers } from "@/lib/admin/members";
 
 export const dynamic = "force-dynamic";
 
-export default async function MembersPage({
-  searchParams,
-}: {
-  searchParams: { q?: string; pro?: string };
-}) {
+export default async function MembersPage(
+  props: {
+    searchParams: Promise<{ q?: string; pro?: string }>;
+  }
+) {
+  const searchParams = await props.searchParams;
   const q = typeof searchParams.q === "string" ? searchParams.q : "";
   const proOnly = searchParams.pro === "1";
 

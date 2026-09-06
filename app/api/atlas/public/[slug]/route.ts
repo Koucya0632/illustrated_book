@@ -8,10 +8,8 @@ import type { LearningDirection, UiLang } from "@/lib/settings";
 
 export const runtime = "nodejs";
 
-export async function GET(
-  req: Request,
-  { params }: { params: { slug: string } },
-) {
+export async function GET(req: Request, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const slug = params.slug.trim().toLowerCase();
   if (!/^[a-z0-9-]{1,80}$/.test(slug)) {
     return NextResponse.json({ error: "not found" }, { status: 404 });

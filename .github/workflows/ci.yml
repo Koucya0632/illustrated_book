@@ -23,8 +23,8 @@ jobs:
 
       - run: npm ci
 
-      # next lint is deliberately not run: this repo has no ESLint config, and the
-      # command drops into an interactive setup wizard that would hang the job.
+      # Linting is deliberately absent: this repo has no ESLint config, and
+      # Next.js 16 removed the `next lint` command that used to stand in for one.
       - name: Typecheck
         run: npx tsc --noEmit
 
@@ -42,6 +42,35 @@ jobs:
           echo "test count: ${ran:-0}"
           if [ "${ran:-0}" -lt 300 ]; then
             echo "::error::only ${ran:-0} tests ran; expected 300+. The glob probably matched nothing."
+            exit 1
+          fi
+
+      # `next build` is what actually exercises the framework: the 14 → 16 upgrade
+      # shipped two deprecation warnings and a rewritten tsconfig.json past a green
+      # CI, because typecheck and tests never build. It runs without secrets — every
+      # page here is dynamic, so nothing is fetched at build time.
+      - name: Build
+        run: |
+          set -o pipefail
+          npx next build 2>&1 | tee build.log
+
+          # next build rewrites tsconfig.json when it drifts from what the installed
+          # Next.js expects. Locally that edit lands in the working tree and gets
+          # committed by accident or on purpose; in CI a dirty tree is the only sign
+          # the committed config is stale.
+          if ! git diff --quiet; then
+            echo "::error::next build modified tracked files — commit the result"
+            git --no-pager diff --stat
+            exit 1
+          fi
+
+          # Deprecations are warnings, not errors, so a plain build stays green while
+          # the framework announces that something is going away. The tree is
+          # warning-free as of Next.js 16.3.4; hold that line rather than discover
+          # the next removal during an upgrade.
+          if grep -q '⚠' build.log; then
+            echo "::error::next build emitted warnings"
+            grep -n '⚠' build.log
             exit 1
           fi
 

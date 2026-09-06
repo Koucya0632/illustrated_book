@@ -437,18 +437,32 @@ async function rewrite() {
 
     // Rewriting a row to a key that is not in R2 turns a working image into a
     // 404. Check before writing, not after.
-    const target = r2();
+    //
+    // This shares copy()'s transport selection rather than reaching for S3
+    // directly: while the S3 endpoint is refusing TLS, a HEAD-per-key check
+    // would report all 5,857 targets as missing and abort a migration that is
+    // actually complete — a safety check that fails closed on its own outage
+    // is just an outage.
+    const transport = await chooseTransport();
     const missingTargets: string[] = [];
-    if (target) {
-      const keys = [...new Set(journal.map((j) => j.key))];
+    const keys = [...new Set(journal.map((j) => j.key))];
+
+    if (transport.via === "s3") {
       await pooled(keys, CONCURRENCY, async (key) => {
         try {
-          await target.client.send(new HeadObjectCommand({ Bucket: target.bucket, Key: key }));
+          await transport.target.client.send(
+            new HeadObjectCommand({ Bucket: transport.target.bucket, Key: key }),
+          );
         } catch {
           missingTargets.push(key);
         }
       });
+    } else if (transport.via === "rest") {
+      // No HEAD on this API, and one listing beats 5,857 requests anyway.
+      const remote = await listAllObjects(transport.config);
+      for (const key of keys) if (!remote.has(key)) missingTargets.push(key);
     }
+    const checked = transport.via !== "none";
 
     const totalRows = journal.reduce((a, j) => a + j.rows, 0);
     console.log(`\n=== ${execute ? "改寫結果" : "改寫計畫"} ===`);
@@ -458,8 +472,8 @@ async function rewrite() {
     console.log(`  夾在長文字裡 ${String(left["embedded"]).padStart(5)} 列（一律不動，只回報）`);
     for (const e of embedded.slice(0, 10)) console.log(`      ${e}`);
 
-    if (!target) {
-      console.log("\n  ⚠️  沒有 R2 憑證，略過「目標物件是否存在」的檢查。");
+    if (!checked) {
+      console.log("\n  ⚠️  沒有可用的 R2 傳輸方式，略過「目標物件是否存在」的檢查。");
     } else if (missingTargets.length > 0) {
       console.log(`\n  ❗ 有 ${missingTargets.length} 個目標物件不在 R2：改寫過去就是 404`);
       for (const m of missingTargets.slice(0, 10)) console.log(`      ${m}`);

@@ -13,9 +13,24 @@ const supabaseHost = (() => {
   }
 })();
 
+const assetHost = (() => {
+  try {
+    return new URL(process.env.NEXT_PUBLIC_ASSET_BASE_URL || "").hostname;
+  } catch {
+    return null;
+  }
+})();
+
+// Both hosts stay allowed for as long as both spellings are live: the iOS app
+// has absolute Supabase URLs in its own cache, so dropping that host would
+// break images this deploy cannot reach. next/image refuses any host not
+// listed here, and the refusal looks like a broken image, not a config error.
 const remotePatterns = [];
 if (supabaseHost) {
   remotePatterns.push({ protocol: "https", hostname: supabaseHost });
+}
+if (assetHost) {
+  remotePatterns.push({ protocol: "https", hostname: assetHost });
 }
 
 // Cache directives for public GET endpoints. `max-age` drives browser /

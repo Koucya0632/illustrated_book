@@ -20,11 +20,13 @@
 import { createHash } from "node:crypto";
 import postgres from "postgres";
 import {
+  HeadBucketCommand,
   HeadObjectCommand,
   PutObjectCommand,
   S3Client,
 } from "@aws-sdk/client-s3";
 import { writeFileSync, readFileSync } from "node:fs";
+import { listAllObjects, putObject, restConfig, type RestConfig } from "./r2-rest";
 import {
   CACHE_CONTROL_IMMUTABLE,
   decideCopy,
@@ -152,16 +154,66 @@ async function inventory() {
   }
 }
 
+/**
+ * Which transport can actually reach R2.
+ *
+ * S3 is the right long-term answer, so it is tried first and only abandoned
+ * when the endpoint itself is unusable — currently a Cloudflare-side TLS
+ * provisioning bug that fails before any credential is presented. The reason
+ * is printed rather than silently swallowed: a fallback that hides an
+ * authentication problem would be worse than no fallback.
+ */
+async function chooseTransport(): Promise<
+  | { via: "s3"; target: NonNullable<ReturnType<typeof r2>> }
+  | { via: "rest"; config: RestConfig }
+  | { via: "none" }
+> {
+  const target = r2();
+  if (target) {
+    try {
+      await target.client.send(new HeadBucketCommand({ Bucket: target.bucket }));
+      return { via: "s3", target };
+    } catch (e) {
+      const message = e instanceof Error ? e.message : String(e);
+      console.log(`\n⚠️  S3 端點不可用，改走 Cloudflare REST API。原因：${message.slice(0, 90)}`);
+    }
+  }
+  const config = restConfig();
+  if (config) {
+    console.log(`   REST 傳輸就緒（token 來源：${config.tokenSource}）`);
+    return { via: "rest", config };
+  }
+  return { via: "none" };
+}
+
 async function copy() {
   const sql = db();
-  const target = r2();
   const objects = await listSourceObjects(sql).finally(() => sql.end());
+  const transport = await chooseTransport();
 
-  if (!target) {
-    console.log("\n⚠️  R2 憑證未設定，改用「目的地是空的」來估算計畫。");
-    console.log("   設定 R2_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY / R2_BUCKET 後可得真實差異。");
+  if (transport.via === "none") {
+    console.log("\n⚠️  兩種傳輸都不可用，改用「目的地是空的」來估算計畫。");
+    console.log("   S3 需要 R2_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY / R2_BUCKET；");
+    console.log("   REST 需要 R2_ACCOUNT_ID + R2_BUCKET，加上 CLOUDFLARE_API_TOKEN 或已登入的 wrangler。");
+  }
+  if (transport.via === "none" && execute) {
+    // Without this the run would report every object as "copied" while writing
+    // nothing, and the rewrite phase would then point the catalogue at an empty
+    // bucket. Planning with no transport is fine; executing is not.
+    console.log("\n❌ 沒有可用的傳輸方式，無法執行搬遷。先設定憑證再跑。\n");
+    process.exit(1);
   }
   if (!execute) console.log("\n🔍 dry-run：不會寫入任何東西（要真的搬請加 --execute）");
+
+  // Narrowed once, so the write path cannot be reached without a transport —
+  // the guard above is the only place that decision is made.
+  const writer = transport.via === "none" ? null : transport;
+
+  // REST has no HEAD (405), so existence comes from one listing rather than a
+  // request per object — which also makes the resumability check cheap.
+  const remote =
+    writer?.via === "rest" ? await listAllObjects(writer.config) : null;
+  if (remote) console.log(`   目的地現有 ${remote.size} 個物件`);
 
   const stats = { copied: 0, skipped: 0, failed: 0, bytes: 0 };
   const failures: string[] = [];
@@ -170,15 +222,18 @@ async function copy() {
     const key = r2KeyFor(obj.bucket, obj.name);
 
     let head: TargetHead | null = null;
-    if (target) {
+    if (writer?.via === "s3") {
       try {
-        const r = await target.client.send(
-          new HeadObjectCommand({ Bucket: target.bucket, Key: key }),
+        const r = await writer.target.client.send(
+          new HeadObjectCommand({ Bucket: writer.target.bucket, Key: key }),
         );
         head = { size: Number(r.ContentLength ?? 0), etag: r.ETag ?? null };
       } catch {
         head = null; // 404 or no access — treat as absent; a real auth problem surfaces on PUT.
       }
+    } else if (remote) {
+      const hit = remote.get(key);
+      head = hit ? { size: hit.size, etag: hit.etag } : null;
     }
 
     const decision = decideCopy(obj, head);
@@ -193,25 +248,53 @@ async function copy() {
     }
 
     try {
-      const res = await fetch(supabaseObjectUrl(obj.bucket, obj.name));
-      if (!res.ok) throw new Error(`source HTTP ${res.status}`);
-      const body = Buffer.from(await res.arrayBuffer());
+      // Supabase drops connections under a sustained pull; a first run lost
+      // objects to bare "fetch failed" rather than to any HTTP status.
+      let body: Buffer | null = null;
+      let sourceError: unknown;
+      for (let attempt = 1; attempt <= 4; attempt++) {
+        try {
+          const res = await fetch(supabaseObjectUrl(obj.bucket, obj.name));
+          if (res.status === 429 || res.status >= 500) throw new Error(`source HTTP ${res.status}`);
+          if (!res.ok) {
+            // A 404 will not become a 200 by asking again.
+            sourceError = new Error(`source HTTP ${res.status}`);
+            break;
+          }
+          body = Buffer.from(await res.arrayBuffer());
+          break;
+        } catch (e) {
+          sourceError = e;
+          if (attempt < 4) await new Promise((r) => setTimeout(r, 400 * 2 ** (attempt - 1)));
+        }
+      }
+      if (!body) throw sourceError instanceof Error ? sourceError : new Error(String(sourceError));
       if (obj.size > 0 && body.byteLength !== obj.size) {
         throw new Error(`source size ${body.byteLength} != catalogued ${obj.size}`);
       }
       const md5 = createHash("md5").update(body).digest("hex");
 
-      const put = await target!.client.send(
-        new PutObjectCommand({
-          Bucket: target!.bucket,
-          Key: key,
-          Body: body,
-          ContentType: obj.contentType ?? "application/octet-stream",
-          CacheControl: CACHE_CONTROL_IMMUTABLE,
-        }),
-      );
+      if (!writer) throw new Error("no transport configured");
+      const contentType = obj.contentType ?? "application/octet-stream";
+      const etag =
+        writer.via === "s3"
+          ? (
+              await writer.target.client.send(
+                new PutObjectCommand({
+                  Bucket: writer.target.bucket,
+                  Key: key,
+                  Body: body,
+                  ContentType: contentType,
+                  CacheControl: CACHE_CONTROL_IMMUTABLE,
+                }),
+              )
+            ).ETag ?? null
+          : await putObject(writer.config, key, body, {
+              contentType,
+              cacheControl: CACHE_CONTROL_IMMUTABLE,
+            });
 
-      const integrity = verifyIntegrity(md5, put.ETag ?? null);
+      const integrity = verifyIntegrity(md5, etag);
       if (!integrity.ok) throw new Error(integrity.reason);
 
       stats.copied++;

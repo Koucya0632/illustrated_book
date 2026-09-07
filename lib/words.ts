@@ -1,5 +1,6 @@
 import type { Example, Word, WordRelation } from "@/types";
 import imageUrls from "./image-urls.json";
+import { MAIN_WORD_EXPANSION_BATCH_3_WORDS } from "./main-word-expansion-2026-09-batch-3";
 import { MAIN_WORD_EXPANSION_BATCH_2_WORDS } from "./main-word-expansion-2026-09-batch-2";
 import { MAIN_WORD_EXPANSION_WORDS } from "./main-word-expansion-2026-09";
 import supplementalRawWords from "./supplemental-words.json";
@@ -1732,6 +1733,7 @@ export const words: Word[] = [
   ...supplementalWords,
   ...(MAIN_WORD_EXPANSION_WORDS as LegacyWord[]),
   ...(MAIN_WORD_EXPANSION_BATCH_2_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_EXPANSION_BATCH_3_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);

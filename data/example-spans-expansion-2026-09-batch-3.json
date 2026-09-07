@@ -1,0 +1,6239 @@
+{
+  "en": {
+    "I empty the sink strainer every evening.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "empty",
+        "z": "清空",
+        "j": "空にします",
+        "e": "empty",
+        "b": "empty",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sink strainer",
+        "z": "水槽濾渣籃",
+        "j": "排水口のゴミ受け",
+        "e": "sink strainer",
+        "b": "sink strainer",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "every evening",
+        "z": "每晚",
+        "j": "毎晩",
+        "e": "every evening",
+        "b": "every evening",
+        "p": "adverb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After washing the dishes, I remove the sink strainer and rinse off the food scraps.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "washing",
+        "z": "清洗",
+        "j": "洗う",
+        "e": "washing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "dishes",
+        "z": "碗盤",
+        "j": "食器",
+        "e": "dishes",
+        "b": "dish",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "remove",
+        "z": "取出",
+        "j": "外して",
+        "e": "remove",
+        "b": "remove",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sink strainer",
+        "z": "水槽濾渣籃",
+        "j": "排水口のゴミ受け",
+        "e": "sink strainer",
+        "b": "sink strainer",
+        "p": "noun"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "rinse off",
+        "z": "沖洗掉",
+        "j": "洗い流します",
+        "e": "rinse off",
+        "b": "rinse off",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "food scraps",
+        "z": "食物殘渣",
+        "j": "食べ物のくず",
+        "e": "food scraps",
+        "b": "food scrap",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I cover the frying pan with a splatter screen.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cover",
+        "z": "蓋上",
+        "j": "覆います",
+        "e": "cover",
+        "b": "cover",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "frying pan",
+        "z": "煎鍋",
+        "j": "フライパン",
+        "e": "frying pan",
+        "b": "frying pan",
+        "p": "noun"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "splatter screen",
+        "z": "防油噴網",
+        "j": "油はね防止網",
+        "e": "splatter screen",
+        "b": "splatter screen",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When frying fish, I use a splatter screen to keep oil off the stove.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "frying",
+        "z": "煎",
+        "j": "焼く",
+        "e": "frying"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fish",
+        "z": "魚",
+        "j": "魚",
+        "e": "fish"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使います",
+        "e": "use",
+        "b": "use",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "splatter screen",
+        "z": "防油噴網",
+        "j": "油はね防止網",
+        "e": "splatter screen",
+        "b": "splatter screen",
+        "p": "noun"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "keep",
+        "z": "使保持不沾上",
+        "j": "付かないようにする",
+        "e": "keep"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "oil",
+        "z": "油",
+        "j": "油",
+        "e": "oil"
+      },
+      {
+        "t": " off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "stove",
+        "z": "爐子",
+        "j": "コンロ",
+        "e": "stove",
+        "b": "stove",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put the hot pot on a trivet.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置きます",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hot",
+        "z": "熱的",
+        "j": "熱い",
+        "e": "hot"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pot",
+        "z": "鍋子",
+        "j": "鍋",
+        "e": "pot"
+      },
+      {
+        "t": " on a "
+      },
+      {
+        "t": "trivet",
+        "z": "鍋墊",
+        "j": "鍋敷き",
+        "e": "trivet",
+        "b": "trivet",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before bringing the soup to the table, I set out a trivet for the pot.": [
+      {
+        "t": "Before"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bringing",
+        "z": "帶來",
+        "j": "持ってくること",
+        "e": "bringing",
+        "b": "bring",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "soup",
+        "z": "湯",
+        "j": "スープ",
+        "e": "soup",
+        "b": "soup",
+        "p": "noun"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "table",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table",
+        "b": "table",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "set out",
+        "z": "擺放",
+        "j": "並べる",
+        "e": "set out",
+        "b": "set out",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "trivet",
+        "z": "鍋墊",
+        "j": "鍋敷き",
+        "e": "trivet",
+        "b": "trivet",
+        "p": "noun"
+      },
+      {
+        "t": " for the "
+      },
+      {
+        "t": "pot",
+        "z": "鍋子",
+        "j": "鍋",
+        "e": "pot",
+        "b": "pot",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put the shampoo in the shower caddy.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shampoo",
+        "z": "洗髮精",
+        "j": "シャンプー",
+        "e": "shampoo",
+        "b": "shampoo",
+        "p": "noun"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "shower caddy",
+        "z": "淋浴置物架",
+        "j": "シャワーラック",
+        "e": "shower caddy",
+        "b": "shower caddy",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bottles no longer sit on the floor because I keep them in a shower caddy.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bottles",
+        "z": "瓶子",
+        "j": "ボトル",
+        "e": "bottles",
+        "b": "bottle",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "no longer",
+        "z": "不再",
+        "j": "もう…ない",
+        "e": "no longer",
+        "b": "no longer",
+        "p": "adverb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sit",
+        "z": "放置",
+        "j": "置く",
+        "e": "sit",
+        "b": "sit",
+        "p": "verb"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "floor",
+        "z": "地板",
+        "j": "床",
+        "e": "floor",
+        "b": "floor",
+        "p": "noun"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "keep",
+        "z": "放置",
+        "j": "置く",
+        "e": "keep",
+        "b": "keep",
+        "p": "verb"
+      },
+      {
+        "t": " them in a "
+      },
+      {
+        "t": "shower caddy",
+        "z": "淋浴置物架",
+        "j": "シャワーラック",
+        "e": "shower caddy",
+        "b": "shower caddy",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put my shirt in a laundry net.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my "
+      },
+      {
+        "t": "shirt",
+        "z": "襯衫",
+        "j": "シャツ",
+        "e": "shirt"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "laundry net",
+        "z": "洗衣網袋",
+        "j": "洗濯ネット",
+        "e": "laundry net",
+        "b": "laundry net",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before starting the wash, I check that the laundry net is zipped shut.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "starting",
+        "z": "開始",
+        "j": "始める",
+        "e": "starting"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wash",
+        "z": "洗衣",
+        "j": "洗濯",
+        "e": "wash",
+        "b": "wash",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "check",
+        "z": "檢查",
+        "j": "確認する",
+        "e": "check",
+        "b": "check",
+        "p": "verb"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "laundry net",
+        "z": "洗衣網袋",
+        "j": "洗濯ネット",
+        "e": "laundry net",
+        "b": "laundry net",
+        "p": "noun"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "zipped shut",
+        "z": "拉鍊關閉",
+        "j": "ファスナーが閉まっている",
+        "e": "zipped shut",
+        "b": "zip shut",
+        "p": "phrasal verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The shower hose is twisted.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "shower hose",
+        "z": "淋浴軟管",
+        "j": "シャワーホース",
+        "e": "shower hose",
+        "b": "shower hose",
+        "p": "noun"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "twisted",
+        "z": "扭曲的",
+        "j": "ねじれている",
+        "e": "twisted",
+        "b": "twist",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When replacing the shower hose, I first turn off the water at the tap.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "replacing",
+        "z": "更換",
+        "j": "交換する",
+        "e": "replacing",
+        "b": "replace",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shower hose",
+        "z": "淋浴軟管",
+        "j": "シャワーホース",
+        "e": "shower hose",
+        "b": "shower hose",
+        "p": "noun"
+      },
+      {
+        "t": ", I first "
+      },
+      {
+        "t": "turn off",
+        "z": "關閉",
+        "j": "閉める",
+        "e": "turn off",
+        "b": "turn off",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "b": "water",
+        "p": "noun"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "tap",
+        "z": "水龍頭",
+        "j": "蛇口",
+        "e": "tap",
+        "b": "tap",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wear an eye mask when I sleep.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wear",
+        "z": "戴",
+        "j": "つける",
+        "e": "wear",
+        "b": "wear",
+        "p": "verb"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "eye mask",
+        "z": "眼罩",
+        "j": "アイマスク",
+        "e": "eye mask",
+        "b": "eye mask",
+        "p": "noun"
+      },
+      {
+        "t": " when I "
+      },
+      {
+        "t": "sleep",
+        "z": "睡覺",
+        "j": "寝る",
+        "e": "sleep",
+        "b": "sleep",
+        "p": "verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The room is still bright, so I put on an eye mask before my nap.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "b": "room",
+        "p": "noun"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "still",
+        "z": "仍然",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bright",
+        "z": "明亮",
+        "j": "明るい",
+        "e": "bright"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "put on",
+        "z": "戴上",
+        "j": "身につける",
+        "e": "put on",
+        "b": "put on",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "eye mask",
+        "z": "眼罩",
+        "j": "目を覆うマスク",
+        "e": "eye mask",
+        "b": "eye mask",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "before my "
+      },
+      {
+        "t": "nap",
+        "z": "午睡",
+        "j": "昼寝",
+        "e": "nap"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put a cover on the hot-water bottle.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "cover",
+        "z": "套子",
+        "j": "カバー",
+        "e": "cover",
+        "b": "cover",
+        "p": "noun"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "hot-water bottle",
+        "z": "熱水暖袋",
+        "j": "湯たんぽ",
+        "e": "hot-water bottle",
+        "b": "hot-water bottle",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After warming the bedding with a hot-water bottle, I take it out before going to sleep.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "warming",
+        "z": "加熱",
+        "j": "温めること",
+        "e": "warming",
+        "b": "warm",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bedding",
+        "z": "寢具",
+        "j": "寝るための布団など",
+        "e": "bedding",
+        "b": "bedding",
+        "p": "noun"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "hot-water bottle",
+        "z": "熱水暖袋",
+        "j": "湯たんぽ",
+        "e": "hot-water bottle",
+        "b": "hot-water bottle",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "take",
+        "z": "取",
+        "j": "取り出す",
+        "e": "take"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "out",
+        "z": "出來",
+        "j": "外へ",
+        "e": "out"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "going to sleep",
+        "z": "去睡覺",
+        "j": "寝ること",
+        "e": "going to sleep",
+        "b": "go to sleep",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I secure the futon with a futon clip.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "secure",
+        "z": "固定",
+        "j": "しっかりと留める",
+        "e": "secure",
+        "b": "secure",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "futon",
+        "z": "被子",
+        "j": "寝具の一種",
+        "e": "futon",
+        "b": "futon",
+        "p": "noun"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "futon clip",
+        "z": "被子夾",
+        "j": "布団を留める道具",
+        "e": "futon clip",
+        "b": "futon clip",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After airing the futon, I bring the futon clips inside with it.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "airing",
+        "z": "晾曬",
+        "j": "風に当てて乾かすこと",
+        "e": "airing",
+        "b": "air",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "futon",
+        "z": "被子",
+        "j": "寝具の一種",
+        "e": "futon",
+        "b": "futon",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "bring",
+        "z": "帶來",
+        "j": "持ってくる",
+        "e": "bring",
+        "b": "bring",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "futon clips",
+        "z": "被子夾",
+        "j": "布団を留める道具",
+        "e": "futon clips",
+        "b": "futon clip",
+        "p": "noun"
+      },
+      {
+        "t": " inside with it."
+      }
+    ],
+    "I put a coaster under my glass.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "coaster",
+        "z": "杯墊",
+        "j": "コップの下に敷くもの",
+        "e": "coaster",
+        "b": "coaster",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "under"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "glass",
+        "z": "玻璃杯",
+        "j": "飲み物を入れる容器",
+        "e": "glass",
+        "b": "glass",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I use a coaster for iced tea so the water drops do not leave a ring on the table.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使います",
+        "e": "use",
+        "b": "use",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "coaster",
+        "z": "杯墊",
+        "j": "グラスの下に敷くもの",
+        "e": "coaster",
+        "b": "coaster",
+        "p": "noun"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "iced tea",
+        "z": "冰茶",
+        "j": "冷たい紅茶",
+        "e": "iced tea",
+        "b": "iced tea",
+        "p": "noun"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "water drops",
+        "z": "水滴",
+        "j": "水の小さな粒",
+        "e": "water drops",
+        "b": "water drop",
+        "p": "noun"
+      },
+      {
+        "t": " do not "
+      },
+      {
+        "t": "leave",
+        "z": "留下",
+        "j": "残す",
+        "e": "leave"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "ring",
+        "z": "環狀水痕",
+        "j": "輪状の水跡",
+        "e": "water ring"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "table",
+        "z": "桌子",
+        "j": "家具の一種",
+        "e": "table",
+        "b": "table",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I clean the sofa with a lint roller.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "clean",
+        "z": "清理",
+        "j": "掃除します",
+        "e": "clean",
+        "b": "clean",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sofa",
+        "z": "沙發",
+        "j": "ソファ",
+        "e": "sofa",
+        "b": "sofa",
+        "p": "noun"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "lint roller",
+        "z": "黏毛滾輪",
+        "j": "粘着クリーナー",
+        "e": "lint roller",
+        "b": "lint roller",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the lint roller stops picking up hair, I peel off the used sheet.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "lint roller",
+        "z": "黏毛滾輪",
+        "j": "粘着クリーナー",
+        "e": "lint roller",
+        "b": "lint roller",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stops",
+        "z": "停止",
+        "j": "止まります",
+        "e": "stops",
+        "b": "stop",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "picking up",
+        "z": "黏起",
+        "j": "くっつけて取る",
+        "e": "picking up"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair",
+        "z": "毛髮",
+        "j": "毛",
+        "e": "hair",
+        "b": "hair",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "peel off",
+        "z": "撕下",
+        "j": "はがします",
+        "e": "peel off",
+        "b": "peel off",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "used",
+        "z": "用過的",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sheet",
+        "z": "黏紙",
+        "j": "粘着テープ",
+        "e": "sticky sheet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put the power strip in a cable management box.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放入",
+        "j": "入れます",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "power strip",
+        "z": "延長插座",
+        "j": "電源タップ",
+        "e": "power strip",
+        "b": "power strip",
+        "p": "noun"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "cable management box",
+        "z": "電線收納盒",
+        "j": "ケーブルボックス",
+        "e": "cable management box",
+        "b": "cable management box",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since I put the loose cords in a cable management box, the floor beside the TV looks tidier.": [
+      {
+        "t": "Since I "
+      },
+      {
+        "t": "put",
+        "z": "放入",
+        "j": "入れます",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "loose",
+        "z": "未整理好的",
+        "j": "まとまっていない",
+        "e": "loose"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cords",
+        "z": "電線",
+        "j": "コード",
+        "e": "cords"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "cable management box",
+        "z": "電線收納盒",
+        "j": "ケーブルボックス",
+        "e": "cable management box",
+        "b": "cable management box",
+        "p": "noun"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "floor",
+        "z": "地板",
+        "j": "床の部分",
+        "e": "floor",
+        "b": "floor",
+        "p": "noun"
+      },
+      {
+        "t": " beside the "
+      },
+      {
+        "t": "TV",
+        "z": "電視",
+        "j": "テレビ",
+        "e": "TV",
+        "b": "TV",
+        "p": "noun"
+      },
+      {
+        "t": " looks "
+      },
+      {
+        "t": "tidier",
+        "z": "更整齊",
+        "j": "もっとすっきりしている",
+        "e": "tidier",
+        "b": "tidy",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I mark the envelope with a rubber stamp.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "mark",
+        "z": "蓋印",
+        "j": "印を押します",
+        "e": "mark",
+        "b": "mark",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "envelope",
+        "z": "信封",
+        "j": "封筒",
+        "e": "envelope",
+        "b": "envelope",
+        "p": "noun"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "rubber stamp",
+        "z": "橡皮印章",
+        "j": "ゴム印",
+        "e": "rubber stamp",
+        "b": "rubber stamp",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "To save time, I use an address rubber stamp instead of writing each envelope by hand.": [
+      {
+        "t": "To "
+      },
+      {
+        "t": "save",
+        "z": "節省",
+        "j": "節約する",
+        "e": "save"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "time",
+        "z": "時間",
+        "j": "時間",
+        "e": "time"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "address",
+        "z": "地址",
+        "j": "住所",
+        "e": "address"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rubber stamp",
+        "z": "橡皮印章",
+        "j": "ゴム印",
+        "e": "rubber stamp"
+      },
+      {
+        "t": " instead of "
+      },
+      {
+        "t": "writing",
+        "z": "書寫",
+        "j": "書く",
+        "e": "writing"
+      },
+      {
+        "t": " each "
+      },
+      {
+        "t": "envelope",
+        "z": "信封",
+        "j": "封筒",
+        "e": "envelope"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "by hand",
+        "z": "手寫",
+        "j": "手書きで",
+        "e": "by hand"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I lightly press the rubber stamp onto the stamp pad.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lightly",
+        "z": "輕輕地",
+        "j": "軽く",
+        "e": "lightly"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "press",
+        "z": "按壓",
+        "j": "押し当てる",
+        "e": "press"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "rubber stamp",
+        "z": "橡皮章",
+        "j": "ゴム印",
+        "e": "rubber stamp",
+        "b": "rubber stamp",
+        "p": "noun"
+      },
+      {
+        "t": " onto the "
+      },
+      {
+        "t": "stamp pad",
+        "z": "印台",
+        "j": "スタンプ台",
+        "e": "stamp pad",
+        "b": "stamp pad",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After stamping the documents, I close the stamp pad so the ink does not dry out.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "stamping",
+        "z": "蓋章",
+        "j": "印を押す",
+        "e": "stamping"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "documents",
+        "z": "文件",
+        "j": "書類",
+        "e": "documents",
+        "b": "document",
+        "p": "noun"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "close",
+        "z": "關閉",
+        "j": "閉じます",
+        "e": "close",
+        "b": "close",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "stamp pad",
+        "z": "印台",
+        "j": "スタンプ台",
+        "e": "stamp pad",
+        "b": "stamp pad",
+        "p": "noun"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "ink",
+        "z": "墨水",
+        "j": "インク",
+        "e": "ink",
+        "b": "ink",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "does not "
+      },
+      {
+        "t": "dry out",
+        "z": "乾掉",
+        "j": "乾く",
+        "e": "dry out"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I keep the books upright with a bookend.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "keep",
+        "z": "保持",
+        "j": "保つ",
+        "e": "keep",
+        "b": "keep",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "books",
+        "z": "書籍",
+        "j": "本",
+        "e": "books",
+        "b": "book",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "upright",
+        "z": "直立",
+        "j": "まっすぐ立てる",
+        "e": "upright",
+        "b": "upright",
+        "p": "adjective"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "bookend",
+        "z": "書擋",
+        "j": "ブックエンド",
+        "e": "bookend",
+        "b": "bookend",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I take out a thick file, I move the bookend so the other files do not fall over.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "take out",
+        "z": "拿出",
+        "j": "取り出す",
+        "e": "take out",
+        "b": "take out",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "thick",
+        "z": "厚的",
+        "j": "厚い",
+        "e": "thick",
+        "b": "thick",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "file",
+        "z": "資料夾",
+        "j": "ファイル",
+        "e": "file",
+        "b": "file",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "move",
+        "z": "移動",
+        "j": "動かす",
+        "e": "move",
+        "b": "move",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bookend",
+        "z": "書擋",
+        "j": "ブックエンド",
+        "e": "bookend",
+        "b": "bookend",
+        "p": "noun"
+      },
+      {
+        "t": " so the other "
+      },
+      {
+        "t": "files",
+        "z": "資料夾",
+        "j": "ファイル",
+        "e": "files",
+        "b": "file",
+        "p": "noun"
+      },
+      {
+        "t": " do not "
+      },
+      {
+        "t": "fall over",
+        "z": "倒下",
+        "j": "倒れる",
+        "e": "fall over",
+        "b": "fall over",
+        "p": "phrasal verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put the front wheel in the bicycle parking rack.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放入",
+        "j": "入れます",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "front wheel",
+        "z": "前輪",
+        "j": "前輪",
+        "e": "front wheel",
+        "b": "front wheel",
+        "p": "noun"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "bicycle parking rack",
+        "z": "自行車停車架",
+        "j": "駐輪ラック",
+        "e": "bicycle parking rack",
+        "b": "bicycle parking rack",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the bicycle parking rack near the entrance is full, I use the one at the back.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "bicycle parking rack",
+        "z": "自行車停車架",
+        "j": "駐輪ラック",
+        "e": "bicycle parking rack",
+        "b": "bicycle parking rack",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "near the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "full",
+        "z": "滿了",
+        "j": "埋まっている",
+        "e": "full",
+        "b": "full",
+        "p": "adjective"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使います",
+        "e": "use",
+        "b": "use",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "one",
+        "z": "那個架子",
+        "j": "そのラック",
+        "e": "one"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "back",
+        "z": "裡面",
+        "j": "奥",
+        "e": "back"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I step over the wheel stop.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "step over",
+        "z": "跨過",
+        "j": "またぎます",
+        "e": "step over",
+        "b": "step over",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wheel stop",
+        "z": "停車輪擋",
+        "j": "輪止め",
+        "e": "wheel stop",
+        "b": "wheel stop",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When walking through the parking lot at night, I watch out for the low wheel stops.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "walking",
+        "z": "步行",
+        "j": "歩く",
+        "e": "walking"
+      },
+      {
+        "t": " through"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "parking lot",
+        "z": "停車場",
+        "j": "車を停める場所",
+        "e": "parking lot",
+        "b": "parking lot",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "at "
+      },
+      {
+        "t": "night",
+        "z": "夜晚",
+        "j": "夜",
+        "e": "night"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "watch out",
+        "z": "小心",
+        "j": "注意する",
+        "e": "watch out",
+        "b": "watch out",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " for the "
+      },
+      {
+        "t": "low",
+        "z": "低的",
+        "j": "高さが低い",
+        "e": "low",
+        "b": "low",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wheel stops",
+        "z": "停車輪擋",
+        "j": "輪止め",
+        "e": "wheel stops",
+        "b": "wheel stop",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wait under the bus stop shelter.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wait",
+        "z": "等待",
+        "j": "待ちます",
+        "e": "wait",
+        "b": "wait",
+        "p": "verb"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "bus stop shelter",
+        "z": "公車候車亭",
+        "j": "バス停の上屋",
+        "e": "bus stop shelter",
+        "b": "bus stop shelter",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "It started raining while I was waiting, so I moved under the bus stop shelter.": [
+      {
+        "t": "It "
+      },
+      {
+        "t": "started",
+        "z": "開始",
+        "j": "始まった",
+        "e": "started"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "raining",
+        "z": "下雨",
+        "j": "雨が降る",
+        "e": "raining"
+      },
+      {
+        "t": " while I was "
+      },
+      {
+        "t": "waiting",
+        "z": "等待",
+        "j": "待っています",
+        "e": "waiting",
+        "b": "wait",
+        "p": "verb"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "moved",
+        "z": "移動",
+        "j": "移動しました",
+        "e": "moved",
+        "b": "move",
+        "p": "verb"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "bus stop shelter",
+        "z": "公車候車亭",
+        "j": "バス停の上屋",
+        "e": "bus stop shelter",
+        "b": "bus stop shelter",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I tear a bag off the produce bag roll.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "tear",
+        "z": "撕開",
+        "j": "切り取ります",
+        "e": "tear",
+        "b": "tear",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bag",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "b": "bag",
+        "p": "noun"
+      },
+      {
+        "t": " off the "
+      },
+      {
+        "t": "produce bag roll",
+        "z": "蔬果袋卷",
+        "j": "ポリ袋ロール",
+        "e": "produce bag roll",
+        "b": "produce bag roll",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before choosing loose carrots, I take one bag from the produce bag roll.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "choosing",
+        "z": "挑選",
+        "j": "選ぶ",
+        "e": "choosing",
+        "b": "choose",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "loose",
+        "z": "散裝的",
+        "j": "ばら売りの",
+        "e": "loose"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "carrots",
+        "z": "胡蘿蔔",
+        "j": "にんじん",
+        "e": "carrots"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "take",
+        "z": "拿取",
+        "j": "取ります",
+        "e": "take",
+        "b": "take",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "one",
+        "z": "一個",
+        "j": "一枚",
+        "e": "one"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bag",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "produce bag roll",
+        "z": "蔬果袋卷",
+        "j": "ポリ袋ロール",
+        "e": "produce bag roll",
+        "b": "produce bag roll",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I rinse the empty food tray.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rinse",
+        "z": "沖洗",
+        "j": "すすぎます",
+        "e": "rinse",
+        "b": "rinse",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空の",
+        "e": "empty",
+        "b": "empty",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "food tray",
+        "z": "食物托盤",
+        "j": "食品トレー",
+        "e": "food tray",
+        "b": "food tray",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before taking the food trays to the collection box, I wash and dry them.": [
+      {
+        "t": "Before"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "taking",
+        "z": "帶去",
+        "j": "持っていく",
+        "e": "taking",
+        "b": "take",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "food trays",
+        "z": "食物托盤",
+        "j": "食品トレー",
+        "e": "food trays",
+        "b": "food tray",
+        "p": "noun"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "collection box",
+        "z": "回收箱",
+        "j": "回収ボックス",
+        "e": "collection box",
+        "b": "collection box",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "wash",
+        "z": "洗",
+        "j": "洗います",
+        "e": "wash",
+        "b": "wash",
+        "p": "verb"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "dry",
+        "z": "乾燥",
+        "j": "乾かします",
+        "e": "dry",
+        "b": "dry",
+        "p": "verb"
+      },
+      {
+        "t": " them."
+      }
+    ],
+    "I open the egg carton.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "open",
+        "z": "打開",
+        "j": "開けます",
+        "e": "open",
+        "b": "open",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "egg carton",
+        "z": "蛋盒",
+        "j": "卵パック",
+        "e": "egg carton",
+        "b": "egg carton",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When packing my shopping bag, I put the egg carton on top so the eggs do not break.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "packing",
+        "z": "裝袋",
+        "j": "袋に詰める",
+        "e": "packing"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "shopping bag",
+        "z": "購物袋",
+        "j": "買い物袋",
+        "e": "shopping bag",
+        "b": "shopping bag",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置きます",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "egg carton",
+        "z": "蛋盒",
+        "j": "卵パック",
+        "e": "egg carton",
+        "b": "egg carton",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "on top",
+        "z": "在上面",
+        "j": "上に",
+        "e": "on top",
+        "b": "on top",
+        "p": "phrase"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "eggs",
+        "z": "雞蛋",
+        "j": "卵",
+        "e": "eggs",
+        "b": "egg",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "do not "
+      },
+      {
+        "t": "break",
+        "z": "破裂",
+        "j": "割れる",
+        "e": "break"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I fasten my bicycle helmet's chin strap.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fasten",
+        "z": "繫緊",
+        "j": "締めます",
+        "e": "fasten",
+        "b": "fasten",
+        "p": "verb"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "bicycle helmet",
+        "z": "自行車安全帽",
+        "j": "自転車のヘルメット",
+        "e": "bicycle helmet",
+        "b": "bicycle helmet",
+        "p": "noun"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "chin strap",
+        "z": "下巴帶",
+        "j": "あごひも",
+        "e": "chin strap",
+        "b": "chin strap",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before cycling to the station, I check that my bicycle helmet fits snugly.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "cycling",
+        "z": "騎自行車",
+        "j": "自転車に乗る",
+        "e": "cycling"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "station",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "b": "station",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確かめます",
+        "e": "check",
+        "b": "check",
+        "p": "verb"
+      },
+      {
+        "t": " that my "
+      },
+      {
+        "t": "bicycle helmet",
+        "z": "自行車安全帽",
+        "j": "自転車用ヘルメット",
+        "e": "bicycle helmet",
+        "b": "bicycle helmet",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fits",
+        "z": "合身",
+        "j": "合う",
+        "e": "fits"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "snugly",
+        "z": "貼合穩固地",
+        "j": "ぴったりと",
+        "e": "snugly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I buy a ticket from the ticket machine.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "buy",
+        "z": "買",
+        "j": "買います",
+        "e": "buy",
+        "b": "buy",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "ticket",
+        "z": "票",
+        "j": "切符",
+        "e": "ticket",
+        "b": "ticket",
+        "p": "noun"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "ticket machine",
+        "z": "售票機",
+        "j": "券売機",
+        "e": "ticket machine",
+        "b": "ticket machine",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since there is a queue at the ticket machine, I arrive at the station a little early.": [
+      {
+        "t": "Since there is a "
+      },
+      {
+        "t": "queue",
+        "z": "隊伍",
+        "j": "人の列",
+        "e": "queue"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "ticket machine",
+        "z": "售票機",
+        "j": "切符を買う機械",
+        "e": "ticket machine",
+        "b": "ticket machine",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "arrive",
+        "z": "到達",
+        "j": "到着する",
+        "e": "arrive",
+        "b": "arrive",
+        "p": "verb"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "station",
+        "z": "車站",
+        "j": "電車やバスの停車場",
+        "e": "station",
+        "b": "station",
+        "p": "noun"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "little",
+        "z": "稍微",
+        "j": "少し",
+        "e": "little"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I press the bus stop button.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "press",
+        "z": "按",
+        "j": "押す",
+        "e": "press",
+        "b": "press",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bus stop button",
+        "z": "下車按鈕",
+        "j": "バスの降車用ボタン",
+        "e": "bus stop button",
+        "b": "bus stop button",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When my stop is announced, I press the bus stop button near my seat.": [
+      {
+        "t": "When my "
+      },
+      {
+        "t": "stop",
+        "z": "停靠站",
+        "j": "バスの停留所",
+        "e": "stop",
+        "b": "stop",
+        "p": "noun"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "announced",
+        "z": "廣播告知",
+        "j": "放送で案内される",
+        "e": "announced"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "press",
+        "z": "按",
+        "j": "押す",
+        "e": "press",
+        "b": "press",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bus stop button",
+        "z": "下車按鈕",
+        "j": "バスの降車用ボタン",
+        "e": "bus stop button",
+        "b": "bus stop button",
+        "p": "noun"
+      },
+      {
+        "t": " near my "
+      },
+      {
+        "t": "seat",
+        "z": "座位",
+        "j": "座る場所",
+        "e": "seat",
+        "b": "seat",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I sprinkle roasted sesame seeds over the rice.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sprinkle",
+        "z": "灑",
+        "j": "まく",
+        "e": "sprinkle",
+        "b": "sprinkle",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "roasted sesame seeds",
+        "z": "炒芝麻",
+        "j": "いりごま",
+        "e": "roasted sesame seeds",
+        "b": "roasted sesame seeds",
+        "p": "noun"
+      },
+      {
+        "t": " over the "
+      },
+      {
+        "t": "rice",
+        "z": "米飯",
+        "j": "ご飯",
+        "e": "rice",
+        "b": "rice",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Just before serving the spinach, I mix in roasted sesame seeds for extra aroma.": [
+      {
+        "t": "Just before "
+      },
+      {
+        "t": "serving",
+        "z": "上桌",
+        "j": "出す",
+        "e": "serving"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "spinach",
+        "z": "菠菜",
+        "j": "ほうれん草",
+        "e": "spinach",
+        "b": "spinach",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "mix in",
+        "z": "混入",
+        "j": "混ぜる",
+        "e": "mix in",
+        "b": "mix in",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "roasted sesame seeds",
+        "z": "炒芝麻",
+        "j": "いりごま",
+        "e": "roasted sesame seeds",
+        "b": "roasted sesame seeds",
+        "p": "noun"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "extra",
+        "z": "更多的",
+        "j": "さらに加わる",
+        "e": "extra"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "aroma",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put bonito flakes on the tofu.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放",
+        "j": "置く",
+        "e": "put",
+        "b": "put",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bonito flakes",
+        "z": "柴魚片",
+        "j": "かつお節",
+        "e": "bonito flakes",
+        "b": "bonito flakes",
+        "p": "noun"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "tofu",
+        "z": "豆腐",
+        "j": "豆腐",
+        "e": "tofu",
+        "b": "tofu",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After opening the bag of bonito flakes, I seal it tightly to keep the aroma in.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "opening",
+        "z": "打開",
+        "j": "開ける",
+        "e": "opening"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bag",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "b": "bag",
+        "p": "noun"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "bonito flakes",
+        "z": "柴魚片",
+        "j": "かつお節",
+        "e": "bonito flakes",
+        "b": "bonito flakes",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "seal",
+        "z": "封",
+        "j": "閉じる",
+        "e": "seal",
+        "b": "seal",
+        "p": "verb"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "tightly",
+        "z": "緊緊地",
+        "j": "しっかり",
+        "e": "tightly",
+        "b": "しっかり",
+        "p": "adverb"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "keep",
+        "z": "保持",
+        "j": "逃げないようにする",
+        "e": "keep",
+        "b": "keep",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "aroma",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "aroma",
+        "p": "noun"
+      },
+      {
+        "t": " in."
+      }
+    ],
+    "I sprinkle aonori over the fried noodles.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sprinkle",
+        "z": "撒",
+        "j": "ふりかける",
+        "e": "sprinkle",
+        "b": "sprinkle",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "aonori",
+        "z": "青海苔粉",
+        "j": "青のり",
+        "e": "aonori",
+        "b": "aonori",
+        "p": "noun"
+      },
+      {
+        "t": " over the "
+      },
+      {
+        "t": "fried noodles",
+        "z": "炒麵",
+        "j": "焼きそば",
+        "e": "fried noodles",
+        "b": "fried noodles",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After adding the sauce to the okonomiyaki, I finish it with a little aonori.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "adding",
+        "z": "加入",
+        "j": "加えること",
+        "e": "adding",
+        "b": "add",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sauce",
+        "z": "醬汁",
+        "j": "ソース",
+        "e": "sauce",
+        "b": "sauce",
+        "p": "noun"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "okonomiyaki",
+        "z": "大阪燒",
+        "j": "お好み焼き",
+        "e": "okonomiyaki"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "finish",
+        "z": "完成",
+        "j": "仕上げる",
+        "e": "finish",
+        "b": "finish",
+        "p": "verb"
+      },
+      {
+        "t": " it with a "
+      },
+      {
+        "t": "little",
+        "z": "少量",
+        "j": "少し",
+        "e": "little",
+        "b": "little",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "aonori",
+        "z": "青海苔粉",
+        "j": "青のり",
+        "e": "aonori",
+        "b": "aonori",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "毎晩、排水口のゴミ受けを空にします。": [
+      {
+        "t": "毎晩",
+        "z": "每晚",
+        "j": "毎晩",
+        "e": "every evening",
+        "b": "毎晩",
+        "p": "adverb",
+        "r": "まいばん"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "排水口",
+        "z": "排水口",
+        "j": "排水口",
+        "e": "sink outlet",
+        "b": "排水口",
+        "p": "noun",
+        "r": "はいすいこう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ゴミ受け",
+        "z": "濾渣籃",
+        "j": "ゴミ受け",
+        "e": "strainer basket",
+        "b": "ゴミ受け",
+        "p": "noun",
+        "r": "ゴミうけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "空にします",
+        "z": "清空",
+        "j": "空にします",
+        "e": "empty",
+        "b": "空にする",
+        "p": "verb",
+        "r": "からにします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食器を洗った後、排水口のゴミ受けを外して、食べ物のくずを洗い流します。": [
+      {
+        "t": "食器",
+        "z": "碗盤",
+        "j": "食器",
+        "e": "dishes",
+        "b": "食器",
+        "p": "noun",
+        "r": "しょっき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗った",
+        "z": "洗完",
+        "j": "洗った",
+        "e": "washed",
+        "r": "あらった"
+      },
+      {
+        "t": "後"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "排水口",
+        "z": "排水口",
+        "j": "排水口",
+        "e": "sink outlet",
+        "b": "排水口",
+        "p": "noun",
+        "r": "はいすいこう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ゴミ受け",
+        "z": "濾渣籃",
+        "j": "ゴミ受け",
+        "e": "strainer basket",
+        "b": "ゴミ受け",
+        "p": "noun",
+        "r": "ゴミうけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "外して",
+        "z": "取下",
+        "j": "外して",
+        "e": "remove",
+        "b": "外す",
+        "p": "verb",
+        "r": "はずして"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "食べ物",
+        "z": "食物",
+        "j": "食べ物",
+        "e": "food",
+        "b": "食べ物",
+        "p": "noun",
+        "r": "たべもの"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "くず",
+        "z": "殘渣",
+        "j": "くず",
+        "e": "scraps",
+        "b": "くず",
+        "p": "noun",
+        "r": "くず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗い流します",
+        "z": "沖洗掉",
+        "j": "洗い流します",
+        "e": "rinse off",
+        "b": "洗い流す",
+        "p": "verb",
+        "r": "あらいながします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "フライパンに油はね防止網をかぶせます。": [
+      {
+        "t": "フライパン",
+        "z": "平底鍋",
+        "j": "平底の調理用鍋",
+        "e": "frying pan",
+        "b": "フライパン",
+        "p": "noun",
+        "r": "ふらいぱん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "油はね防止網",
+        "z": "防油噴網",
+        "j": "油はね防止網",
+        "e": "splatter screen",
+        "b": "油はね防止網",
+        "p": "noun",
+        "r": "あぶらはねぼうしあみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "かぶせます",
+        "z": "蓋上",
+        "j": "上にかぶせます",
+        "e": "cover",
+        "b": "かぶせる",
+        "p": "verb",
+        "r": "かぶせます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "魚を焼くときは、コンロに油が飛ばないように油はね防止網を使います。": [
+      {
+        "t": "魚",
+        "z": "魚",
+        "j": "魚",
+        "e": "fish",
+        "b": "魚",
+        "p": "noun",
+        "r": "さかな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "焼く",
+        "z": "煎",
+        "j": "フライパンで焼く",
+        "e": "fry",
+        "r": "やく"
+      },
+      {
+        "t": "ときは、"
+      },
+      {
+        "t": "コンロ",
+        "z": "爐子",
+        "j": "調理用の火口",
+        "e": "stove",
+        "b": "コンロ",
+        "p": "noun",
+        "r": "こんろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "油",
+        "z": "油",
+        "j": "油",
+        "e": "oil",
+        "b": "油",
+        "p": "noun",
+        "r": "あぶら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "飛ばない",
+        "z": "不飛濺",
+        "j": "飛び散らない",
+        "e": "does not splatter",
+        "r": "とばない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "油はね防止網",
+        "z": "防油噴網",
+        "j": "油はね防止網",
+        "e": "splatter screen",
+        "b": "油はね防止網",
+        "p": "noun",
+        "r": "あぶらはねぼうしあみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使います",
+        "z": "使用",
+        "j": "使います",
+        "e": "use",
+        "b": "使う",
+        "p": "verb",
+        "r": "つかいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "熱い鍋を鍋敷きの上に置きます。": [
+      {
+        "t": "熱い",
+        "z": "熱的",
+        "j": "熱い",
+        "e": "hot",
+        "b": "熱い",
+        "p": "adjective",
+        "r": "あつい"
+      },
+      {
+        "t": "鍋",
+        "z": "鍋子",
+        "j": "鍋",
+        "e": "pot",
+        "b": "鍋",
+        "p": "noun",
+        "r": "なべ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "鍋敷き",
+        "z": "鍋墊",
+        "j": "鍋を置く台",
+        "e": "trivet",
+        "b": "鍋敷き",
+        "p": "noun",
+        "r": "なべしき"
+      },
+      {
+        "t": "の上に"
+      },
+      {
+        "t": "置きます",
+        "z": "放置",
+        "j": "置きます",
+        "e": "put",
+        "b": "置く",
+        "p": "verb",
+        "r": "おきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スープをテーブルに運ぶ前に、鍋を置くための鍋敷きを用意します。": [
+      {
+        "t": "スープ",
+        "z": "湯",
+        "j": "スープ",
+        "e": "soup",
+        "b": "スープ",
+        "p": "noun",
+        "r": "スープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "テーブル",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table",
+        "b": "テーブル",
+        "p": "noun",
+        "r": "テーブル"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "運ぶ",
+        "z": "搬運",
+        "j": "運ぶ",
+        "e": "carry",
+        "b": "運ぶ",
+        "p": "verb",
+        "r": "はこぶ"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "b": "前",
+        "p": "noun",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "鍋",
+        "z": "鍋子",
+        "j": "鍋",
+        "e": "pot",
+        "b": "鍋",
+        "p": "noun",
+        "r": "なべ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置く",
+        "z": "放置",
+        "j": "置く",
+        "e": "put",
+        "b": "置く",
+        "p": "verb",
+        "r": "おく"
+      },
+      {
+        "t": "ための"
+      },
+      {
+        "t": "鍋敷き",
+        "z": "鍋墊",
+        "j": "鍋敷き",
+        "e": "trivet",
+        "b": "鍋敷き",
+        "p": "noun",
+        "r": "なべしき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "用意します",
+        "z": "準備",
+        "j": "用意します",
+        "e": "prepare",
+        "b": "用意する",
+        "p": "verb",
+        "r": "よういします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シャワーラックにシャンプーを置きます。": [
+      {
+        "t": "シャワーラック",
+        "z": "淋浴置物架",
+        "j": "シャワーラック",
+        "e": "shower caddy",
+        "b": "シャワーラック",
+        "p": "noun",
+        "r": "シャワーラック"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "シャンプー",
+        "z": "洗髮精",
+        "j": "シャンプー",
+        "e": "shampoo",
+        "b": "シャンプー",
+        "p": "noun",
+        "r": "シャンプー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置きます",
+        "z": "放置",
+        "j": "置きます",
+        "e": "put",
+        "b": "置く",
+        "p": "verb",
+        "r": "おきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ボトルをシャワーラックに置くようにしたので、床に置かずに済むようになりました。": [
+      {
+        "t": "ボトル",
+        "z": "瓶罐",
+        "j": "ボトル",
+        "e": "bottles",
+        "r": "ボトル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "シャワーラック",
+        "z": "淋浴置物架",
+        "j": "シャワーラック",
+        "e": "shower caddy",
+        "r": "シャワーラック"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置くようにした",
+        "z": "改為放置",
+        "j": "置くことにした",
+        "e": "started keeping",
+        "r": "おくようにした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "床",
+        "z": "地板",
+        "j": "床",
+        "e": "floor",
+        "r": "ゆか"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置かずに済むようになりました",
+        "z": "變得不用再放",
+        "j": "置く必要がなくなりました",
+        "e": "no longer need to put",
+        "r": "おかずにすむようになりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シャツを洗濯ネットに入れます。": [
+      {
+        "t": "シャツ",
+        "z": "襯衫",
+        "j": "シャツ",
+        "e": "shirt",
+        "r": "シャツ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗濯ネット",
+        "z": "洗衣網袋",
+        "j": "洗濯ネット",
+        "e": "laundry net",
+        "b": "洗濯ネット",
+        "p": "noun",
+        "r": "せんたくネット"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れます",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put in",
+        "b": "入れる",
+        "p": "verb",
+        "r": "いれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "洗濯を始める前に、洗濯ネットのファスナーが閉まっているか確認します。": [
+      {
+        "t": "洗濯",
+        "z": "洗衣",
+        "j": "洗濯",
+        "e": "wash",
+        "b": "洗濯",
+        "p": "noun",
+        "r": "せんたく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "始める",
+        "z": "開始",
+        "j": "始める",
+        "e": "start",
+        "r": "はじめる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "洗濯ネット",
+        "z": "洗衣網袋",
+        "j": "洗濯ネット",
+        "e": "laundry net",
+        "b": "洗濯ネット",
+        "p": "noun",
+        "r": "せんたくネット"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ファスナー",
+        "z": "拉鍊",
+        "j": "ファスナー",
+        "e": "zipper",
+        "b": "ファスナー",
+        "p": "noun",
+        "r": "ファスナー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "閉まっている",
+        "z": "關閉著",
+        "j": "閉まっている状態",
+        "e": "is closed",
+        "b": "閉まる",
+        "p": "verb",
+        "r": "しまっている"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認します",
+        "z": "確認",
+        "j": "確かめる",
+        "e": "check",
+        "b": "確認する",
+        "p": "verb",
+        "r": "かくにんします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シャワーホースがねじれています。": [
+      {
+        "t": "シャワーホース",
+        "z": "淋浴軟管",
+        "j": "シャワーホース",
+        "e": "shower hose",
+        "b": "シャワーホース",
+        "p": "noun",
+        "r": "シャワーホース"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ねじれています",
+        "z": "扭曲著",
+        "j": "ねじれている",
+        "e": "twisted",
+        "b": "ねじれる",
+        "p": "adjective",
+        "r": "ねじれています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シャワーホースを交換するときは、まず蛇口を閉めて水を止めます。": [
+      {
+        "t": "シャワーホース",
+        "z": "淋浴軟管",
+        "j": "シャワーホース",
+        "e": "shower hose",
+        "r": "シャワーホース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換する",
+        "z": "更換",
+        "j": "取り替える",
+        "e": "replace",
+        "r": "こうかんする"
+      },
+      {
+        "t": "ときは、"
+      },
+      {
+        "t": "まず",
+        "z": "首先",
+        "j": "最初に",
+        "e": "first",
+        "r": "まず"
+      },
+      {
+        "t": "蛇口",
+        "z": "水龍頭",
+        "j": "蛇口",
+        "e": "tap",
+        "r": "じゃぐち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "閉めて",
+        "z": "關上",
+        "j": "閉める",
+        "e": "close",
+        "r": "しめて"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "止めます",
+        "z": "止住",
+        "j": "止めます",
+        "e": "stop",
+        "r": "とめます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "寝るときはアイマスクをつけます。": [
+      {
+        "t": "寝る",
+        "z": "睡覺",
+        "j": "眠る",
+        "e": "sleep",
+        "r": "ねる"
+      },
+      {
+        "t": "とき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "アイマスク",
+        "z": "眼罩",
+        "j": "目を覆うマスク",
+        "e": "eye mask",
+        "b": "アイマスク",
+        "p": "noun",
+        "r": "アイマスク"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つけます",
+        "z": "戴上",
+        "j": "身につけます",
+        "e": "put on",
+        "b": "つける",
+        "p": "verb",
+        "r": "つけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "部屋がまだ明るいので、昼寝の前にアイマスクをつけます。": [
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "b": "部屋",
+        "p": "noun",
+        "r": "へや"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ",
+        "z": "還是",
+        "j": "まだ",
+        "e": "still",
+        "b": "まだ",
+        "p": "adverb",
+        "r": "まだ"
+      },
+      {
+        "t": "明るい",
+        "z": "明亮",
+        "j": "明るい",
+        "e": "bright",
+        "b": "明るい",
+        "p": "adjective",
+        "r": "あかるい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "昼寝",
+        "z": "午睡",
+        "j": "昼寝",
+        "e": "nap",
+        "b": "昼寝",
+        "p": "noun",
+        "r": "ひるね"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "b": "前",
+        "p": "noun",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "アイマスク",
+        "z": "眼罩",
+        "j": "目を覆うマスク",
+        "e": "eye mask",
+        "b": "アイマスク",
+        "p": "noun",
+        "r": "アイマスク"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つけます",
+        "z": "戴上",
+        "j": "身につけます",
+        "e": "put on",
+        "b": "つける",
+        "p": "verb",
+        "r": "つけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "湯たんぽにカバーをつけます。": [
+      {
+        "t": "湯たんぽ",
+        "z": "熱水暖袋",
+        "j": "湯たんぽ",
+        "e": "hot-water bottle",
+        "b": "湯たんぽ",
+        "p": "noun",
+        "r": "ゆたんぽ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "カバー",
+        "z": "套子",
+        "j": "カバー",
+        "e": "cover",
+        "b": "カバー",
+        "p": "noun",
+        "r": "カバー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つけます",
+        "z": "套上",
+        "j": "かぶせます",
+        "e": "put on",
+        "r": "つけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "湯たんぽで布団を温めた後、寝る前に湯たんぽを布団から出します。": [
+      {
+        "t": "湯たんぽ",
+        "z": "熱水暖袋",
+        "j": "湯たんぽ",
+        "e": "hot-water bottle",
+        "r": "ゆたんぽ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "布団",
+        "z": "寢具",
+        "j": "布団",
+        "e": "bedding",
+        "r": "ふとん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "温めた",
+        "z": "暖好",
+        "j": "温めた",
+        "e": "warmed",
+        "r": "あたためた"
+      },
+      {
+        "t": "後、"
+      },
+      {
+        "t": "寝る",
+        "z": "睡覺",
+        "j": "眠る",
+        "e": "sleep",
+        "r": "ねる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "湯たんぽ",
+        "z": "熱水暖袋",
+        "j": "湯たんぽ",
+        "e": "hot-water bottle",
+        "r": "ゆたんぽ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "布団",
+        "z": "寢具",
+        "j": "布団",
+        "e": "bedding",
+        "r": "ふとん"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "出します",
+        "z": "拿出",
+        "j": "取り出します",
+        "e": "take out",
+        "r": "だします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "布団ばさみで布団を留めます。": [
+      {
+        "t": "布団ばさみ",
+        "z": "被子夾",
+        "j": "布団を留める道具",
+        "e": "futon clip",
+        "b": "布団ばさみ",
+        "p": "noun",
+        "r": "ふとんばさみ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "布団",
+        "z": "被子",
+        "j": "寝具の一種",
+        "e": "futon",
+        "b": "布団",
+        "p": "noun",
+        "r": "ふとん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "留めます",
+        "z": "固定",
+        "j": "しっかりと留めます",
+        "e": "secure",
+        "b": "留める",
+        "p": "verb",
+        "r": "とめます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "布団を干した後は、布団ばさみも一緒に部屋に取り込みます。": [
+      {
+        "t": "布団",
+        "z": "棉被",
+        "j": "寝具の一種",
+        "e": "futon",
+        "b": "布団",
+        "p": "noun",
+        "r": "ふとん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "干した",
+        "z": "晾曬後",
+        "j": "外に干した",
+        "e": "aired",
+        "r": "ほした"
+      },
+      {
+        "t": "後は、"
+      },
+      {
+        "t": "布団ばさみ",
+        "z": "棉被夾",
+        "j": "布団を挟む道具",
+        "e": "futon clip",
+        "b": "布団ばさみ",
+        "p": "noun",
+        "r": "ふとんばさみ"
+      },
+      {
+        "t": "も"
+      },
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "同時に",
+        "e": "together",
+        "b": "一緒に",
+        "p": "adverb",
+        "r": "いっしょに"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "室内の空間",
+        "e": "room",
+        "b": "部屋",
+        "p": "noun",
+        "r": "へや"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "取り込みます",
+        "z": "收進來",
+        "j": "中に入れます",
+        "e": "bring in",
+        "b": "取り込む",
+        "p": "verb",
+        "r": "とりこみます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "グラスの下にコースターを敷きます。": [
+      {
+        "t": "グラス",
+        "z": "玻璃杯",
+        "j": "飲み物を入れる容器",
+        "e": "glass",
+        "b": "グラス",
+        "p": "noun",
+        "r": "グラス"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下面",
+        "j": "下の位置",
+        "e": "under",
+        "b": "下",
+        "p": "noun",
+        "r": "した"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "コースター",
+        "z": "杯墊",
+        "j": "グラスの下に敷くもの",
+        "e": "coaster",
+        "b": "コースター",
+        "p": "noun",
+        "r": "コースター"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "敷きます",
+        "z": "墊上",
+        "j": "下に敷きます",
+        "e": "place underneath",
+        "b": "敷く",
+        "p": "verb",
+        "r": "しきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アイスティーにはコースターを使って、水滴でテーブルに跡がつかないようにします。": [
+      {
+        "t": "アイスティー",
+        "z": "冰茶",
+        "j": "冷たい紅茶",
+        "e": "iced tea",
+        "r": "アイスティー"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "コースター",
+        "z": "杯墊",
+        "j": "コースター",
+        "e": "coaster",
+        "r": "コースター"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "z": "使用",
+        "j": "使う",
+        "e": "use",
+        "r": "つかって"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "水滴",
+        "z": "水滴",
+        "j": "水滴",
+        "e": "water drops",
+        "r": "すいてき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "テーブル",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table",
+        "r": "テーブル"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "跡",
+        "z": "水痕",
+        "j": "水の跡",
+        "e": "marks",
+        "r": "あと"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "つかないようにします",
+        "z": "避免留下",
+        "j": "残らないようにします",
+        "e": "keep from forming",
+        "r": "つかないようにします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "粘着クリーナーでソファを掃除します。": [
+      {
+        "t": "粘着クリーナー",
+        "z": "黏毛滾輪",
+        "j": "粘着クリーナー",
+        "e": "lint roller",
+        "b": "粘着クリーナー",
+        "p": "noun",
+        "r": "ねんちゃくクリーナー"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ソファ",
+        "z": "沙發",
+        "j": "ソファ",
+        "e": "sofa",
+        "b": "ソファ",
+        "p": "noun",
+        "r": "ソファ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "掃除します",
+        "z": "打掃",
+        "j": "掃除します",
+        "e": "clean",
+        "b": "掃除する",
+        "p": "verb",
+        "r": "そうじします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "粘着クリーナーで毛が取れなくなったら、使ったテープを一枚はがします。": [
+      {
+        "t": "粘着クリーナー",
+        "z": "黏毛滾輪",
+        "j": "粘着クリーナー",
+        "e": "lint roller",
+        "b": "粘着クリーナー",
+        "p": "noun",
+        "r": "ねんちゃくクリーナー"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "毛",
+        "z": "毛髮",
+        "j": "毛",
+        "e": "hair",
+        "b": "毛",
+        "p": "noun",
+        "r": "け"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "取れなくなったら",
+        "z": "黏不起來時",
+        "j": "取れなくなったら",
+        "e": "when it stops picking up",
+        "r": "とれなくなったら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "使った",
+        "z": "用過的",
+        "j": "使った",
+        "e": "used",
+        "b": "使う",
+        "p": "adjective",
+        "r": "つかった"
+      },
+      {
+        "t": "テープ",
+        "z": "膠帶",
+        "j": "テープ",
+        "e": "sheet",
+        "b": "テープ",
+        "p": "noun",
+        "r": "テープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一枚",
+        "z": "一張",
+        "j": "一枚",
+        "e": "one sheet",
+        "b": "一枚",
+        "p": "numeral",
+        "r": "いちまい"
+      },
+      {
+        "t": "はがします",
+        "z": "撕下",
+        "j": "はがします",
+        "e": "peel off",
+        "b": "はがす",
+        "p": "verb",
+        "r": "はがします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "電源タップをケーブルボックスに入れます。": [
+      {
+        "t": "電源タップ",
+        "z": "延長插座",
+        "j": "電源タップ",
+        "e": "power strip",
+        "b": "電源タップ",
+        "p": "noun",
+        "r": "でんげんたっぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ケーブルボックス",
+        "z": "電線收納盒",
+        "j": "ケーブルボックス",
+        "e": "cable management box",
+        "b": "ケーブルボックス",
+        "p": "noun",
+        "r": "ケーブルボックス"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れます",
+        "z": "放入",
+        "j": "中に入れます",
+        "e": "put in",
+        "b": "入れる",
+        "p": "verb",
+        "r": "いれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "余ったコードをケーブルボックスにまとめたので、テレビの横の床がすっきりしました。": [
+      {
+        "t": "余った",
+        "z": "多餘的",
+        "j": "余っている",
+        "e": "excess",
+        "r": "あまった"
+      },
+      {
+        "t": "コード",
+        "z": "電線",
+        "j": "コード",
+        "e": "cords",
+        "r": "コード"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ケーブルボックス",
+        "z": "電線收納盒",
+        "j": "ケーブルボックス",
+        "e": "cable management box",
+        "b": "ケーブルボックス",
+        "p": "noun",
+        "r": "ケーブルボックス"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "まとめた",
+        "z": "整理了",
+        "j": "一つにまとめました",
+        "e": "gathered",
+        "b": "まとめる",
+        "p": "verb",
+        "r": "まとめた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "テレビ",
+        "z": "電視",
+        "j": "テレビ",
+        "e": "TV",
+        "b": "テレビ",
+        "p": "noun",
+        "r": "テレビ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "z": "旁邊",
+        "j": "側面",
+        "e": "beside",
+        "b": "横",
+        "p": "noun",
+        "r": "よこ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "床",
+        "z": "地板",
+        "j": "床の部分",
+        "e": "floor",
+        "b": "床",
+        "p": "noun",
+        "r": "ゆか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "すっきりしました",
+        "z": "變整齊了",
+        "j": "きれいになりました",
+        "e": "became tidier",
+        "b": "すっきりする",
+        "p": "verb",
+        "r": "すっきりしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "封筒にゴム印を押します。": [
+      {
+        "t": "封筒",
+        "z": "信封",
+        "j": "手紙を入れる袋",
+        "e": "envelope",
+        "b": "封筒",
+        "p": "noun",
+        "r": "ふうとう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ゴム印",
+        "z": "橡皮印章",
+        "j": "ゴムでできた印章",
+        "e": "rubber stamp",
+        "b": "ゴム印",
+        "p": "noun",
+        "r": "ゴムいん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押します",
+        "z": "蓋印",
+        "j": "印を押します",
+        "e": "stamp",
+        "b": "押す",
+        "p": "verb",
+        "r": "おします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "時間を節約するため、封筒に一枚ずつ手書きせず、住所のゴム印を使います。": [
+      {
+        "t": "時間",
+        "z": "時間",
+        "j": "時間",
+        "e": "time",
+        "r": "じかん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "節約する",
+        "z": "節省",
+        "j": "節約する",
+        "e": "save",
+        "r": "せつやくする"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "封筒",
+        "z": "信封",
+        "j": "封筒",
+        "e": "envelope",
+        "r": "ふうとう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "一枚ずつ",
+        "z": "逐一",
+        "j": "一枚ずつ",
+        "e": "one by one",
+        "r": "いちまいずつ"
+      },
+      {
+        "t": "手書きせず",
+        "z": "不手寫",
+        "j": "手で書かず",
+        "e": "without writing by hand",
+        "r": "てがきせず"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "住所",
+        "z": "地址",
+        "j": "住所",
+        "e": "address",
+        "r": "じゅうしょ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ゴム印",
+        "z": "橡皮印章",
+        "j": "ゴム印",
+        "e": "rubber stamp",
+        "r": "ゴムいん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使います",
+        "z": "使用",
+        "j": "使います",
+        "e": "use",
+        "r": "つかいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スタンプ台にゴム印を軽く押し当てます。": [
+      {
+        "t": "スタンプ台",
+        "z": "印台",
+        "j": "スタンプ台",
+        "e": "stamp pad",
+        "b": "スタンプ台",
+        "p": "noun",
+        "r": "スタンプだい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ゴム印",
+        "z": "橡皮章",
+        "j": "ゴム印",
+        "e": "rubber stamp",
+        "b": "ゴム印",
+        "p": "noun",
+        "r": "ゴムいん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "軽く",
+        "z": "輕輕地",
+        "j": "軽く",
+        "e": "lightly",
+        "b": "軽い",
+        "p": "adverb",
+        "r": "かるく"
+      },
+      {
+        "t": "押し当てます",
+        "z": "按壓",
+        "j": "押し当てます",
+        "e": "press",
+        "b": "押し当てる",
+        "p": "verb",
+        "r": "おしあてます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "書類に印を押した後は、インクが乾かないようにスタンプ台のふたを閉めます。": [
+      {
+        "t": "書類",
+        "z": "文件",
+        "j": "書類",
+        "e": "document",
+        "b": "書類",
+        "p": "noun",
+        "r": "しょるい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "印",
+        "z": "印記",
+        "j": "押した印",
+        "e": "imprint",
+        "r": "いん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押した",
+        "z": "蓋印",
+        "j": "押しました",
+        "e": "pressed",
+        "b": "押す",
+        "p": "verb",
+        "r": "おした"
+      },
+      {
+        "t": "後は、"
+      },
+      {
+        "t": "インク",
+        "z": "墨水",
+        "j": "インク",
+        "e": "ink",
+        "b": "インク",
+        "p": "noun",
+        "r": "インク"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乾かない",
+        "z": "不乾",
+        "j": "乾きません",
+        "e": "not dry",
+        "b": "乾く",
+        "p": "verb",
+        "r": "かわかない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "スタンプ台",
+        "z": "印台",
+        "j": "スタンプ台",
+        "e": "stamp pad",
+        "b": "スタンプ台",
+        "p": "noun",
+        "r": "スタンプだい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ふた",
+        "z": "蓋子",
+        "j": "ふた",
+        "e": "lid",
+        "b": "ふた",
+        "p": "noun",
+        "r": "ふた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "閉めます",
+        "z": "關閉",
+        "j": "閉めます",
+        "e": "close",
+        "b": "閉める",
+        "p": "verb",
+        "r": "しめます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ブックエンドで本を立てておきます。": [
+      {
+        "t": "ブックエンド",
+        "z": "書擋",
+        "j": "ブックエンド",
+        "e": "bookend",
+        "r": "ブックエンド"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "本",
+        "z": "書本",
+        "j": "本",
+        "e": "books",
+        "r": "ほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "立てておきます",
+        "z": "保持直立",
+        "j": "立てたままにします",
+        "e": "keep upright",
+        "r": "たてておきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "厚いファイルを抜いたら、ほかのファイルが倒れないようにブックエンドを動かします。": [
+      {
+        "t": "厚い",
+        "z": "厚的",
+        "j": "厚い",
+        "e": "thick",
+        "b": "厚い",
+        "p": "adjective",
+        "r": "あつい"
+      },
+      {
+        "t": "ファイル",
+        "z": "資料夾",
+        "j": "ファイル",
+        "e": "file",
+        "b": "ファイル",
+        "p": "noun",
+        "r": "ファイル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "抜いたら",
+        "z": "拔出後",
+        "j": "抜いたら",
+        "e": "when take out",
+        "b": "抜く",
+        "p": "verb",
+        "r": "ぬいたら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "ほか",
+        "z": "其他",
+        "j": "ほか",
+        "e": "other",
+        "b": "ほか",
+        "p": "noun",
+        "r": "ほか"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ファイル",
+        "z": "資料夾",
+        "j": "ファイル",
+        "e": "file",
+        "r": "ファイル"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "倒れない",
+        "z": "不倒",
+        "j": "倒れない",
+        "e": "do not fall over",
+        "b": "倒れる",
+        "p": "verb",
+        "r": "たおれない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "ブックエンド",
+        "z": "書擋",
+        "j": "ブックエンド",
+        "e": "bookend",
+        "b": "ブックエンド",
+        "p": "noun",
+        "r": "ブックエンド"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "動かします",
+        "z": "移動",
+        "j": "動かします",
+        "e": "move",
+        "b": "動かす",
+        "p": "verb",
+        "r": "うごかします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "駐輪ラックに前輪を入れます。": [
+      {
+        "t": "駐輪ラック",
+        "z": "自行車停車架",
+        "j": "駐輪ラック",
+        "e": "bicycle parking rack",
+        "b": "駐輪ラック",
+        "p": "noun",
+        "r": "ちゅうりんらっく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "前輪",
+        "z": "前輪",
+        "j": "前輪",
+        "e": "front wheel",
+        "b": "前輪",
+        "p": "noun",
+        "r": "ぜんりん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れます",
+        "z": "放入",
+        "j": "入れます",
+        "e": "put",
+        "b": "入れる",
+        "p": "verb",
+        "r": "いれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "入口の近くの駐輪ラックが埋まっているので、奥のラックを使います。": [
+      {
+        "t": "入口",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance",
+        "b": "入口",
+        "p": "noun",
+        "r": "いりぐち"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "near",
+        "b": "近く",
+        "p": "adverb",
+        "r": "ちかく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "駐輪ラック",
+        "z": "自行車停車架",
+        "j": "駐輪ラック",
+        "e": "bicycle parking rack",
+        "b": "駐輪ラック",
+        "p": "noun",
+        "r": "ちゅうりんらっく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "埋まっている",
+        "z": "滿了",
+        "j": "埋まっている",
+        "e": "is full",
+        "b": "埋まる",
+        "p": "verb",
+        "r": "うまっている"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "奥",
+        "z": "裡面",
+        "j": "奥",
+        "e": "back",
+        "b": "奥",
+        "p": "noun",
+        "r": "おく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ラック",
+        "z": "架子",
+        "j": "ラック",
+        "e": "rack",
+        "b": "ラック",
+        "p": "noun",
+        "r": "らっく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使います",
+        "z": "使用",
+        "j": "使います",
+        "e": "use",
+        "b": "使う",
+        "p": "verb",
+        "r": "つかいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "輪止めをまたぎます。": [
+      {
+        "t": "輪止め",
+        "z": "停車輪擋",
+        "j": "輪止め",
+        "e": "wheel stop",
+        "b": "輪止め",
+        "p": "noun",
+        "r": "わどめ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "またぎます",
+        "z": "跨過",
+        "j": "足をかけて越えます",
+        "e": "step over",
+        "b": "またぐ",
+        "p": "verb",
+        "r": "またぎます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "夜に駐車場を歩くときは、低い輪止めにつまずかないように気をつけます。": [
+      {
+        "t": "夜",
+        "z": "夜晚",
+        "j": "夜の時間",
+        "e": "night",
+        "b": "夜",
+        "p": "noun",
+        "r": "よる"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "駐車場",
+        "z": "停車場",
+        "j": "車を停める場所",
+        "e": "parking lot",
+        "b": "駐車場",
+        "p": "noun",
+        "r": "ちゅうしゃじょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "歩く",
+        "z": "走路",
+        "j": "足で進みます",
+        "e": "walk",
+        "b": "歩く",
+        "p": "verb",
+        "r": "あるく"
+      },
+      {
+        "t": "ときは、"
+      },
+      {
+        "t": "低い",
+        "z": "低的",
+        "j": "高さが低い",
+        "e": "low",
+        "b": "低い",
+        "p": "adjective",
+        "r": "ひくい"
+      },
+      {
+        "t": "輪止め",
+        "z": "停車輪擋",
+        "j": "輪止め",
+        "e": "wheel stop",
+        "b": "輪止め",
+        "p": "noun",
+        "r": "わどめ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つまずかない",
+        "z": "不絆倒",
+        "j": "足を引っかけません",
+        "e": "not trip",
+        "b": "つまずく",
+        "p": "verb",
+        "r": "つまずかない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "気をつけます",
+        "z": "注意",
+        "j": "注意します",
+        "e": "watch out",
+        "b": "気をつける",
+        "p": "verb",
+        "r": "きをつけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "バス停の上屋の下で待ちます。": [
+      {
+        "t": "バス停",
+        "z": "公車站",
+        "j": "バスの停まる場所",
+        "e": "bus stop",
+        "b": "バス停",
+        "p": "noun",
+        "r": "バスてい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "上屋",
+        "z": "遮雨棚",
+        "j": "屋根のある設備",
+        "e": "shelter",
+        "b": "上屋",
+        "p": "noun",
+        "r": "うわや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下面",
+        "j": "下の場所",
+        "e": "under",
+        "b": "下",
+        "p": "noun",
+        "r": "した"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちます",
+        "z": "等待",
+        "j": "待ちます",
+        "e": "wait",
+        "b": "待つ",
+        "p": "verb",
+        "r": "まちます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "待っている間に雨が降り出したので、バス停の上屋の下に移動しました。": [
+      {
+        "t": "待っている",
+        "z": "等待",
+        "j": "待っています",
+        "e": "waiting",
+        "b": "待つ",
+        "p": "verb",
+        "r": "まっている"
+      },
+      {
+        "t": "間に"
+      },
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "b": "雨",
+        "p": "noun",
+        "r": "あめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "降り出した",
+        "z": "開始下雨",
+        "j": "雨が降り始めました",
+        "e": "started raining",
+        "b": "降り出す",
+        "p": "verb",
+        "r": "ふりだした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "バス停",
+        "z": "公車站",
+        "j": "バス停",
+        "e": "bus stop",
+        "b": "バス停",
+        "p": "noun",
+        "r": "バスてい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "上屋",
+        "z": "遮雨棚",
+        "j": "屋根のある設備",
+        "e": "shelter",
+        "b": "上屋",
+        "p": "noun",
+        "r": "うわや"
+      },
+      {
+        "t": "の下に"
+      },
+      {
+        "t": "移動しました",
+        "z": "移動",
+        "j": "移動しました",
+        "e": "moved",
+        "b": "移動する",
+        "p": "verb",
+        "r": "いどうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ポリ袋ロールから袋を一枚切り取ります。": [
+      {
+        "t": "ポリ袋ロール",
+        "z": "塑膠袋卷",
+        "j": "ポリ袋ロール",
+        "e": "produce bag roll",
+        "b": "ポリ袋ロール",
+        "p": "noun",
+        "r": "ポリぶくろロール"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "袋",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "b": "袋",
+        "p": "noun",
+        "r": "ふくろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一枚",
+        "z": "一張",
+        "j": "一枚",
+        "e": "one",
+        "b": "一枚",
+        "p": "numeral",
+        "r": "いちまい"
+      },
+      {
+        "t": "切り取ります",
+        "z": "撕取",
+        "j": "切り離します",
+        "e": "tear off",
+        "b": "切り取る",
+        "p": "verb",
+        "r": "きりとります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ばら売りのにんじんを選ぶ前に、ポリ袋ロールから袋を一枚取ります。": [
+      {
+        "t": "ばら売り",
+        "z": "散裝",
+        "j": "ばらばらに売ること",
+        "e": "loose sale",
+        "b": "ばら売り",
+        "p": "noun",
+        "r": "ばらうり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "にんじん",
+        "z": "胡蘿蔔",
+        "j": "にんじん",
+        "e": "carrot",
+        "b": "にんじん",
+        "p": "noun",
+        "r": "にんじん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選ぶ",
+        "z": "選擇",
+        "j": "選びます",
+        "e": "choose",
+        "b": "選ぶ",
+        "p": "verb",
+        "r": "えらぶ"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "ポリ袋ロール",
+        "z": "塑膠袋卷",
+        "j": "ポリ袋のロール",
+        "e": "plastic bag roll",
+        "b": "ポリ袋ロール",
+        "p": "noun",
+        "r": "ポリぶくろロール"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "袋",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "b": "袋",
+        "p": "noun",
+        "r": "ふくろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一枚",
+        "z": "一張",
+        "j": "一枚",
+        "e": "one sheet",
+        "b": "一枚",
+        "p": "numeral",
+        "r": "いちまい"
+      },
+      {
+        "t": "取ります",
+        "z": "拿取",
+        "j": "取ります",
+        "e": "take",
+        "b": "取る",
+        "p": "verb",
+        "r": "とります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "空になった食品トレーをすすぎます。": [
+      {
+        "t": "空になった",
+        "z": "變空的",
+        "j": "空になった",
+        "e": "became empty",
+        "b": "空になる",
+        "p": "adjective",
+        "r": "からになった"
+      },
+      {
+        "t": "食品トレー",
+        "z": "食品托盤",
+        "j": "食品トレー",
+        "e": "food tray",
+        "b": "食品トレー",
+        "p": "noun",
+        "r": "しょくひんトレー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "すすぎます",
+        "z": "沖洗",
+        "j": "すすぎます",
+        "e": "rinse",
+        "b": "すすぐ",
+        "p": "verb",
+        "r": "すすぎます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食品トレーを回収ボックスに持っていく前に、洗って乾かします。": [
+      {
+        "t": "食品トレー",
+        "z": "食品托盤",
+        "j": "食品トレー",
+        "e": "food tray",
+        "b": "食品トレー",
+        "p": "noun",
+        "r": "しょくひんトレー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "回収ボックス",
+        "z": "回收箱",
+        "j": "回収ボックス",
+        "e": "collection box",
+        "b": "回収ボックス",
+        "p": "noun",
+        "r": "かいしゅうボックス"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "持っていく",
+        "z": "帶去",
+        "j": "持っていきます",
+        "e": "take",
+        "b": "持っていく",
+        "p": "verb",
+        "r": "もっていく"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "洗って",
+        "z": "洗",
+        "j": "洗います",
+        "e": "wash",
+        "b": "洗う",
+        "p": "verb",
+        "r": "あらって"
+      },
+      {
+        "t": "乾かします",
+        "z": "乾燥",
+        "j": "乾かします",
+        "e": "dry",
+        "b": "乾かす",
+        "p": "verb",
+        "r": "かわかします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "卵パックを開けます。": [
+      {
+        "t": "卵パック",
+        "z": "蛋盒",
+        "j": "卵の入れ物",
+        "e": "egg carton",
+        "b": "卵パック",
+        "p": "noun",
+        "r": "たまごパック"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けます",
+        "z": "打開",
+        "j": "開けます",
+        "e": "open",
+        "b": "開ける",
+        "p": "verb",
+        "r": "あけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "買い物袋に詰めるときは、卵が割れないように卵パックを上に載せます。": [
+      {
+        "t": "買い物袋",
+        "z": "購物袋",
+        "j": "買い物に使う袋",
+        "e": "shopping bag",
+        "b": "買い物袋",
+        "p": "noun",
+        "r": "かいものぶくろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "詰める",
+        "z": "裝入",
+        "j": "袋に詰める",
+        "e": "pack",
+        "r": "つめる"
+      },
+      {
+        "t": "とき"
+      },
+      {
+        "t": "は、"
+      },
+      {
+        "t": "卵",
+        "z": "雞蛋",
+        "j": "鳥の卵",
+        "e": "egg",
+        "b": "卵",
+        "p": "noun",
+        "r": "たまご"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "割れない",
+        "z": "不破裂",
+        "j": "割れない",
+        "e": "do not break",
+        "r": "われない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "卵パック",
+        "z": "蛋盒",
+        "j": "卵を入れる容器",
+        "e": "egg carton",
+        "b": "卵パック",
+        "p": "noun",
+        "r": "たまごパック"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "上",
+        "z": "上面",
+        "j": "上の部分",
+        "e": "top",
+        "b": "上",
+        "p": "noun",
+        "r": "うえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "載せます",
+        "z": "放置",
+        "j": "物を上に置きます",
+        "e": "place on top",
+        "b": "載せる",
+        "p": "verb",
+        "r": "のせます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自転車用ヘルメットのあごひもを締めます。": [
+      {
+        "t": "自転車用ヘルメット",
+        "z": "自行車用安全帽",
+        "j": "自転車に使うヘルメット",
+        "e": "bicycle helmet",
+        "b": "自転車用ヘルメット",
+        "p": "noun",
+        "r": "じてんしゃようヘルメット"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "あごひも",
+        "z": "下巴帶",
+        "j": "あごにかけるひも",
+        "e": "chin strap",
+        "b": "あごひも",
+        "p": "noun",
+        "r": "あごひも"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "締めます",
+        "z": "扣緊",
+        "j": "しっかり留めます",
+        "e": "fasten",
+        "r": "しめます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自転車で駅に向かう前に、自転車用ヘルメットがしっかり合っているか確認します。": [
+      {
+        "t": "自転車",
+        "z": "自行車",
+        "j": "自転車",
+        "e": "bicycle",
+        "b": "自転車",
+        "p": "noun",
+        "r": "じてんしゃ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "b": "駅",
+        "p": "noun",
+        "r": "えき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "向かう",
+        "z": "前往",
+        "j": "行きます",
+        "e": "go toward",
+        "b": "向かう",
+        "p": "verb",
+        "r": "むかう"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "b": "前",
+        "p": "noun",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "自転車用ヘルメット",
+        "z": "自行車用安全帽",
+        "j": "自転車に使うヘルメット",
+        "e": "bicycle helmet",
+        "b": "自転車用ヘルメット",
+        "p": "noun",
+        "r": "じてんしゃようヘルメット"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "しっかり",
+        "z": "確實地",
+        "j": "しっかり",
+        "e": "firmly",
+        "b": "しっかり",
+        "p": "adverb",
+        "r": "しっかり"
+      },
+      {
+        "t": "合っている",
+        "z": "合適",
+        "j": "ぴったり合っています",
+        "e": "fits",
+        "b": "合う",
+        "p": "verb",
+        "r": "あっている"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認します",
+        "z": "確認",
+        "j": "確かめます",
+        "e": "check",
+        "b": "確認する",
+        "p": "verb",
+        "r": "かくにんします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "券売機で切符を買います。": [
+      {
+        "t": "券売機",
+        "z": "售票機",
+        "j": "切符を売る機械",
+        "e": "ticket machine",
+        "b": "券売機",
+        "p": "noun",
+        "r": "けんばいき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "切符",
+        "z": "票",
+        "j": "乗車券",
+        "e": "ticket",
+        "b": "切符",
+        "p": "noun",
+        "r": "きっぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買います",
+        "z": "買",
+        "j": "買います",
+        "e": "buy",
+        "b": "買う",
+        "p": "verb",
+        "r": "かいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "券売機に列ができるので、少し早めに駅に着くようにします。": [
+      {
+        "t": "券売機",
+        "z": "自動售票機",
+        "j": "券売機",
+        "e": "ticket machine",
+        "r": "けんばいき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "列",
+        "z": "隊伍",
+        "j": "人の列",
+        "e": "queue",
+        "r": "れつ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "できる",
+        "z": "形成",
+        "j": "できる",
+        "e": "forms",
+        "r": "できる"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "少し",
+        "z": "稍微",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "早めに",
+        "z": "提早一點",
+        "j": "早めに",
+        "e": "early",
+        "r": "はやめに"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "着くようにします",
+        "z": "會設法到達",
+        "j": "着くことを心がけます",
+        "e": "make sure to arrive",
+        "r": "つくようにします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "降車ボタンを押します。": [
+      {
+        "t": "降車ボタン",
+        "z": "下車按鈕",
+        "j": "バスを降りるためのボタン",
+        "e": "bus stop button",
+        "b": "降車ボタン",
+        "p": "noun",
+        "r": "こうしゃボタン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押します",
+        "z": "按",
+        "j": "ボタンを押す",
+        "e": "press",
+        "b": "押す",
+        "p": "verb",
+        "r": "おします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "降りる停留所が案内されたら、席の近くの降車ボタンを押します。": [
+      {
+        "t": "降りる",
+        "z": "下車",
+        "j": "降りる",
+        "e": "get off",
+        "b": "降りる",
+        "p": "verb",
+        "r": "おりる"
+      },
+      {
+        "t": "停留所",
+        "z": "公車站",
+        "j": "バスの止まる場所",
+        "e": "bus stop",
+        "b": "停留所",
+        "p": "noun",
+        "r": "ていりゅうじょ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "案内されたら",
+        "z": "廣播到時",
+        "j": "放送で案内されたら",
+        "e": "when announced",
+        "r": "あんないされたら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "席",
+        "z": "座位",
+        "j": "座る場所",
+        "e": "seat",
+        "b": "席",
+        "p": "noun",
+        "r": "せき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近い場所",
+        "e": "near",
+        "b": "近く",
+        "p": "noun",
+        "r": "ちかく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "降車ボタン",
+        "z": "下車按鈕",
+        "j": "降りるためのボタン",
+        "e": "get-off button",
+        "b": "降車ボタン",
+        "p": "noun",
+        "r": "こうしゃボタン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押します",
+        "z": "按",
+        "j": "押す",
+        "e": "press",
+        "b": "押す",
+        "p": "verb",
+        "r": "おします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ご飯にいりごまを振りかけます。": [
+      {
+        "t": "ご飯",
+        "z": "米飯",
+        "j": "ご飯",
+        "e": "rice",
+        "b": "ご飯",
+        "p": "noun",
+        "r": "ごはん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "いりごま",
+        "z": "炒芝麻",
+        "j": "いりごま",
+        "e": "roasted sesame seeds",
+        "b": "いりごま",
+        "p": "noun",
+        "r": "いりごま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "振りかけます",
+        "z": "灑",
+        "j": "振りかける",
+        "e": "sprinkle",
+        "b": "振りかける",
+        "p": "verb",
+        "r": "ふりかけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ほうれん草を出す直前に、香りをよくするためにいりごまを混ぜます。": [
+      {
+        "t": "ほうれん草",
+        "z": "菠菜",
+        "j": "ほうれん草",
+        "e": "spinach",
+        "b": "ほうれん草",
+        "p": "noun",
+        "r": "ほうれんそう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出す",
+        "z": "上桌",
+        "j": "食卓に出す",
+        "e": "serve",
+        "r": "だす"
+      },
+      {
+        "t": "直前",
+        "z": "就在之前",
+        "j": "直前",
+        "e": "just before",
+        "r": "ちょくぜん"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "r": "かおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "よくする",
+        "z": "增添",
+        "j": "よくする",
+        "e": "improve",
+        "r": "よくする"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "いりごま",
+        "z": "炒芝麻",
+        "j": "いりごま",
+        "e": "roasted sesame seeds",
+        "b": "いりごま",
+        "p": "noun",
+        "r": "いりごま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "混ぜます",
+        "z": "混合",
+        "j": "混ぜる",
+        "e": "mix",
+        "b": "混ぜる",
+        "p": "verb",
+        "r": "まぜます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "豆腐にかつお節を載せます。": [
+      {
+        "t": "豆腐",
+        "z": "豆腐",
+        "j": "豆腐",
+        "e": "tofu",
+        "b": "豆腐",
+        "p": "noun",
+        "r": "とうふ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "かつお節",
+        "z": "柴魚片",
+        "j": "かつお節",
+        "e": "bonito flakes",
+        "b": "かつお節",
+        "p": "noun",
+        "r": "かつおぶし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "載せます",
+        "z": "放上",
+        "j": "載せます",
+        "e": "put on",
+        "b": "載せる",
+        "p": "verb",
+        "r": "のせます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "かつお節の袋を開けた後は、香りが逃げないようにしっかり閉じます。": [
+      {
+        "t": "かつお節",
+        "z": "柴魚片",
+        "j": "かつお節",
+        "e": "bonito flakes",
+        "b": "かつお節",
+        "p": "noun",
+        "r": "かつおぶし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "袋",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "b": "袋",
+        "p": "noun",
+        "r": "ふくろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けた",
+        "z": "打開了",
+        "j": "開けた",
+        "e": "opened",
+        "b": "開ける",
+        "p": "verb",
+        "r": "あけた"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "b": "後",
+        "p": "noun",
+        "r": "あと"
+      },
+      {
+        "t": "は、"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "逃げない",
+        "z": "不散失",
+        "j": "外に逃げない",
+        "e": "does not escape",
+        "r": "にげない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "しっかり",
+        "z": "確實地",
+        "j": "しっかり",
+        "e": "tightly",
+        "b": "しっかり",
+        "p": "adverb",
+        "r": "しっかり"
+      },
+      {
+        "t": "閉じます",
+        "z": "關閉",
+        "j": "閉じます",
+        "e": "close",
+        "b": "閉じる",
+        "p": "verb",
+        "r": "とじます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "焼きそばに青のりを振りかけます。": [
+      {
+        "t": "焼きそば",
+        "z": "炒麵",
+        "j": "焼きそば",
+        "e": "yakisoba",
+        "b": "焼きそば",
+        "p": "noun",
+        "r": "やきそば"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "青のり",
+        "z": "青海苔粉",
+        "j": "青のり",
+        "e": "aonori",
+        "b": "青のり",
+        "p": "noun",
+        "r": "あおのり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "振りかけます",
+        "z": "灑上",
+        "j": "振りかけます",
+        "e": "sprinkle",
+        "b": "振りかける",
+        "p": "verb",
+        "r": "ふりかけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お好み焼きにソースを塗った後、仕上げに青のりを少し振りかけます。": [
+      {
+        "t": "お好み焼き",
+        "z": "大阪燒",
+        "j": "お好み焼き",
+        "e": "okonomiyaki",
+        "b": "お好み焼き",
+        "p": "noun",
+        "r": "おこのみやき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ソース",
+        "z": "醬汁",
+        "j": "ソース",
+        "e": "sauce",
+        "b": "ソース",
+        "p": "noun",
+        "r": "ソース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗った",
+        "z": "塗抹",
+        "j": "塗った",
+        "e": "spread",
+        "b": "塗る",
+        "p": "verb",
+        "r": "ぬった"
+      },
+      {
+        "t": "後、"
+      },
+      {
+        "t": "仕上げ",
+        "z": "最後調味",
+        "j": "仕上げ",
+        "e": "finishing touch",
+        "b": "仕上げ",
+        "p": "noun",
+        "r": "しあげ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "青のり",
+        "z": "青海苔粉",
+        "j": "青のり",
+        "e": "aonori",
+        "b": "青のり",
+        "p": "noun",
+        "r": "あおのり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "少し",
+        "z": "少量",
+        "j": "少し",
+        "e": "a little",
+        "b": "少し",
+        "p": "adverb",
+        "r": "すこし"
+      },
+      {
+        "t": "振りかけます",
+        "z": "灑上",
+        "j": "振りかけます",
+        "e": "sprinkle",
+        "b": "振りかける",
+        "p": "verb",
+        "r": "ふりかけます"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

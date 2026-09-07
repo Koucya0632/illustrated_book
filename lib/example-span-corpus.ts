@@ -259,6 +259,7 @@ export function validateLearningSpanQuality(
 const EXAMPLE_SPAN_OVERLAY_PATHS = [
   new URL("../data/example-spans-expansion-2026-09.json", import.meta.url),
   new URL("../data/example-spans-expansion-2026-09-batch-2.json", import.meta.url),
+  new URL("../data/example-spans-expansion-2026-09-batch-3.json", import.meta.url),
 ];
 
 function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {

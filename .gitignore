@@ -36,3 +36,7 @@ next-env.d.ts
 
 # Revert logs from scripts/migrate-assets-to-r2.ts — operational artefacts, not source.
 asset-rewrite-journal-*.json
+
+# CI step artefacts (npm test / next build tee their output here).
+build.log
+test.log

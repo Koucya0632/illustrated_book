@@ -31,6 +31,26 @@ test("a targeted refresh regenerates only access-card's current Japanese term", 
   );
 });
 
+test("targeted refreshes use the current English headwords after street-word renames", () => {
+  const renamedWords = [
+    { id: "vendor", word: "market stall" },
+    { id: "street-vendor", word: "food cart" },
+    { id: "roadblock", word: "barricade" },
+  ];
+  const jobs = buildAudioJobs(renamedWords, []);
+
+  for (const word of renamedWords) {
+    const options = parseAudioGenerationOptions([
+      "--refresh",
+      `--word-id=${word.id}`,
+    ]);
+    assert.deepEqual(selectAudioJobs(jobs, new Set(), options), [
+      { wordId: word.id, locale: "en-US", text: word.word },
+      { wordId: word.id, locale: "en-GB", text: word.word },
+    ]);
+  }
+});
+
 test("generation options default to an idempotent live run", () => {
   assert.deepEqual(parseAudioGenerationOptions([]), {
     refresh: false,

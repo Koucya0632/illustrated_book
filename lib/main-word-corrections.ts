@@ -1,4 +1,5 @@
 import type postgres from "postgres";
+import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS } from "./main-word-expansion-2026-09-batch-3";
 import { segmentFurigana } from "./kana";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "./living-room-main-word-corrections";
@@ -95,6 +96,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_EXPANSION_CORRECTIONS,
   ...MAIN_WORD_EXPANSION_BATCH_2_CORRECTIONS,
   ...MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS,
+  ...MAIN_WORD_FRUITS_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",
@@ -2639,6 +2641,21 @@ export async function applyMainWordCorrections(
                 ${reading}
               )
             )
+        `;
+
+        // New words initially seed the long Japanese definition as their term,
+        // and generateCards runs before corrections. Refresh the Japanese card
+        // after the concise reviewed headword has replaced that seed value.
+        await tx`
+          UPDATE cards c
+          SET
+            back = wt.term,
+            explanation = concat_ws(' ', wt.term, NULLIF(wt.reading, ''))
+          FROM word_terms wt
+          WHERE c.word_id = wt.word_id
+            AND c.word_id = ${correction.id}
+            AND c.deck_key = 'image-ja'
+            AND wt.language = 'ja'
         `;
       }
 

@@ -162,6 +162,17 @@ export const categories: Category[] = [
       "https://img.nexflow.team/word-images/category-seasonings.webp",
   },
   {
+    id: "fruits",
+    name: "Fruits",
+    nameZh: "水果",
+    emoji: "🍎",
+    description: "從日常經典到四季旬味",
+    descriptionEn: "Everyday favorites and fruits through the seasons",
+    color: "from-red-100 to-lime-100",
+    imageUrl:
+      "https://img.nexflow.team/word-images/category-fruits-fruits-20260911-c743cc88063d.webp",
+  },
+  {
     id: "zodiac",
     name: "Zodiac",
     nameZh: "星座",

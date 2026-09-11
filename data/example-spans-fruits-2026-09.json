@@ -1,0 +1,7923 @@
+{
+ "en": {
+  "I slice an apple for breakfast.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "slice",
+    "z": "切片",
+    "j": "切ります",
+    "e": "slice",
+    "b": "slice",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "apple",
+    "z": "蘋果",
+    "j": "りんご",
+    "e": "apple",
+    "b": "apple",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "breakfast",
+    "z": "早餐",
+    "j": "朝ごはん",
+    "e": "breakfast",
+    "b": "breakfast",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "If the apples are still firm, I keep them in the refrigerator so they stay fresh longer.": [
+   {
+    "t": "If the "
+   },
+   {
+    "t": "apples",
+    "z": "蘋果",
+    "j": "りんご",
+    "e": "apples",
+    "b": "apple",
+    "p": "noun"
+   },
+   {
+    "t": " are still "
+   },
+   {
+    "t": "firm",
+    "z": "硬",
+    "j": "硬い",
+    "e": "firm",
+    "b": "firm",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "keep",
+    "z": "保存",
+    "j": "保ちます",
+    "e": "keep",
+    "b": "keep",
+    "p": "verb"
+   },
+   {
+    "t": " them in the "
+   },
+   {
+    "t": "refrigerator",
+    "z": "冰箱",
+    "j": "冷蔵庫",
+    "e": "refrigerator",
+    "b": "refrigerator",
+    "p": "noun"
+   },
+   {
+    "t": " so they "
+   },
+   {
+    "t": "stay fresh",
+    "z": "保持新鮮",
+    "j": "新鮮に保つ",
+    "e": "stay fresh",
+    "b": "stay fresh",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "longer",
+    "z": "更久",
+    "j": "長く",
+    "e": "longer",
+    "b": "long",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I put a banana in my lunch bag.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "put",
+    "z": "放",
+    "j": "入れます",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "banana",
+    "z": "香蕉",
+    "j": "バナナ",
+    "e": "banana",
+    "b": "banana",
+    "p": "noun"
+   },
+   {
+    "t": " in my "
+   },
+   {
+    "t": "lunch bag",
+    "z": "午餐袋",
+    "j": "お弁当袋",
+    "e": "lunch bag",
+    "b": "lunch bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the bananas were getting soft, I used them to make a smoothie.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "bananas",
+    "z": "香蕉",
+    "j": "バナナ",
+    "e": "bananas",
+    "b": "banana",
+    "p": "noun"
+   },
+   {
+    "t": " were "
+   },
+   {
+    "t": "getting soft",
+    "z": "變軟",
+    "j": "柔らかくなっている状態",
+    "e": "getting soft",
+    "b": "get soft",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "used",
+    "z": "使用",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " them to "
+   },
+   {
+    "t": "make a smoothie",
+    "z": "做冰沙",
+    "j": "スムージーを作る",
+    "e": "make a smoothie",
+    "b": "make a smoothie",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I peel a mandarin orange after dinner.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "peel",
+    "z": "剝皮",
+    "j": "皮をむく",
+    "e": "peel",
+    "b": "peel",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "mandarin orange",
+    "z": "橘子",
+    "j": "みかん",
+    "e": "mandarin orange",
+    "b": "mandarin orange",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "after dinner",
+    "z": "晚餐後",
+    "j": "夕食の後",
+    "e": "after dinner",
+    "b": "after dinner",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When mandarins are in season, I buy a bag because everyone at home eats them.": [
+   {
+    "t": "When "
+   },
+   {
+    "t": "mandarins",
+    "z": "橘子",
+    "j": "みかん",
+    "e": "mandarins",
+    "b": "mandarin",
+    "p": "noun"
+   },
+   {
+    "t": " are in "
+   },
+   {
+    "t": "season",
+    "z": "季節",
+    "j": "旬の時期",
+    "e": "season",
+    "b": "season",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "buy",
+    "z": "買",
+    "j": "買います",
+    "e": "buy",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "bag",
+    "z": "袋",
+    "j": "袋",
+    "e": "bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": " because "
+   },
+   {
+    "t": "everyone",
+    "z": "每個人",
+    "j": "みんな",
+    "e": "everyone",
+    "b": "everyone",
+    "p": "pronoun"
+   },
+   {
+    "t": " at "
+   },
+   {
+    "t": "home",
+    "z": "家",
+    "j": "家",
+    "e": "home",
+    "b": "home",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "eat",
+    "z": "吃",
+    "j": "食べる",
+    "e": "eat",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": "s them."
+   }
+  ],
+  "I squeeze an orange for fresh juice.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "squeeze",
+    "z": "擠壓",
+    "j": "搾る",
+    "e": "squeeze",
+    "b": "squeeze",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "orange",
+    "z": "橙子",
+    "j": "オレンジ",
+    "e": "orange",
+    "b": "orange",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "fresh juice",
+    "z": "新鮮果汁",
+    "j": "生ジュース",
+    "e": "fresh juice",
+    "b": "fresh juice",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before putting the orange segments in the lunch box, I remove the seeds.": [
+   {
+    "t": "Before",
+    "z": "之前",
+    "j": "前に",
+    "e": "before",
+    "b": "before",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "putting",
+    "z": "放入",
+    "j": "入れる",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "orange segments",
+    "z": "柳橙瓣",
+    "j": "オレンジの房",
+    "e": "orange segments",
+    "b": "orange segment",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "lunch box",
+    "z": "便當盒",
+    "j": "弁当箱",
+    "e": "lunch box",
+    "b": "lunch box",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "remove",
+    "z": "去除",
+    "j": "取る",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "seeds",
+    "z": "籽",
+    "j": "種",
+    "e": "seeds",
+    "b": "seed",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I wash the grapes before eating them.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wash",
+    "z": "洗",
+    "j": "洗います",
+    "e": "wash",
+    "b": "wash",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "grapes",
+    "z": "葡萄",
+    "j": "ぶどう",
+    "e": "grapes",
+    "b": "grape",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before eating",
+    "z": "在吃之前",
+    "j": "食べる前に",
+    "e": "before eating",
+    "b": "eat",
+    "p": "phrase"
+   },
+   {
+    "t": " them."
+   }
+  ],
+  "Since these grapes have no seeds, I can put them straight into the children's snack box.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "these grapes",
+    "z": "這些葡萄",
+    "j": "このぶどう",
+    "e": "these grapes",
+    "b": "grape",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "have no seeds",
+    "z": "沒有種子",
+    "j": "種がない",
+    "e": "have no seeds",
+    "b": "have no seeds",
+    "p": "phrase"
+   },
+   {
+    "t": ", I can "
+   },
+   {
+    "t": "put",
+    "z": "放入",
+    "j": "入れます",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " them straight into the "
+   },
+   {
+    "t": "children's snack box",
+    "z": "孩子的點心盒",
+    "j": "子どものおやつ箱",
+    "e": "children's snack box",
+    "b": "snack box",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I add strawberries to my yogurt.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "add",
+    "z": "加",
+    "j": "加えます",
+    "e": "add",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "strawberries",
+    "z": "草莓",
+    "j": "いちご",
+    "e": "strawberries",
+    "b": "strawberry",
+    "p": "noun"
+   },
+   {
+    "t": " to my "
+   },
+   {
+    "t": "yogurt",
+    "z": "優格",
+    "j": "ヨーグルト",
+    "e": "yogurt",
+    "b": "yogurt",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After washing the strawberries, I remove the green tops and cut the large ones in half.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "washing",
+    "z": "洗",
+    "j": "洗うこと",
+    "e": "washing",
+    "b": "wash",
+    "p": "noun"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "strawberries",
+    "z": "草莓",
+    "j": "いちご",
+    "e": "strawberries",
+    "b": "strawberry",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "remove",
+    "z": "去除",
+    "j": "取ります",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "green tops",
+    "z": "綠色頂端",
+    "j": "へた",
+    "e": "green tops",
+    "b": "green top",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切ります",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "large ones",
+    "z": "大顆的",
+    "j": "大きいもの",
+    "e": "large ones",
+    "b": "large one",
+    "p": "noun"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "half",
+    "z": "一半",
+    "j": "半分",
+    "e": "half",
+    "b": "half",
+    "p": "numeral"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This peach is soft and ready to eat.": [
+   {
+    "t": "This",
+    "z": "這",
+    "j": "この",
+    "e": "this",
+    "b": "this",
+    "p": "determiner"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "peach",
+    "z": "桃子",
+    "j": "もも",
+    "e": "peach",
+    "b": "peach",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "soft",
+    "z": "軟",
+    "j": "柔らかい",
+    "e": "soft",
+    "b": "soft",
+    "p": "adjective"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "ready to eat",
+    "z": "可以吃了",
+    "j": "食べごろ",
+    "e": "ready to eat",
+    "b": "ready to eat",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the peach bruises easily, I carry it home in a separate bag.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "peach",
+    "z": "桃子",
+    "j": "桃",
+    "e": "peach",
+    "b": "peach",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bruises easily",
+    "z": "容易瘀傷",
+    "j": "傷みやすい",
+    "e": "bruises easily",
+    "b": "bruise",
+    "p": "phrasal verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "carry",
+    "z": "攜帶",
+    "j": "持ち帰ります",
+    "e": "carry",
+    "b": "carry",
+    "p": "verb"
+   },
+   {
+    "t": " it home in a "
+   },
+   {
+    "t": "separate bag",
+    "z": "分開袋子",
+    "j": "別の袋",
+    "e": "separate bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I chill the Japanese pear before serving it.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "chill",
+    "z": "冷藏",
+    "j": "冷やします",
+    "e": "chill",
+    "b": "chill",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Japanese pear",
+    "z": "日本梨",
+    "j": "梨",
+    "e": "Japanese pear",
+    "b": "pear",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before serving",
+    "z": "上桌前",
+    "j": "食べる前に",
+    "e": "before serving",
+    "b": "serve",
+    "p": "phrase"
+   },
+   {
+    "t": " it."
+   }
+  ],
+  "The Japanese pear was so juicy that I cut it over a plate to catch the juice.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "Japanese pear",
+    "z": "日本梨",
+    "j": "日本の梨",
+    "e": "Japanese pear",
+    "b": "Japanese pear",
+    "p": "noun"
+   },
+   {
+    "t": " was so "
+   },
+   {
+    "t": "juicy",
+    "z": "多汁的",
+    "j": "みずみずしい",
+    "e": "juicy",
+    "b": "juicy",
+    "p": "adjective"
+   },
+   {
+    "t": " that I "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " it over a "
+   },
+   {
+    "t": "plate",
+    "z": "盤子",
+    "j": "皿",
+    "e": "plate",
+    "b": "plate",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "catch",
+    "z": "接住",
+    "j": "受け止める",
+    "e": "catch",
+    "b": "catch",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "juice",
+    "z": "果汁",
+    "j": "果汁",
+    "e": "juice",
+    "b": "juice",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The pear needs two more days to ripen.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "pear",
+    "z": "梨",
+    "j": "梨",
+    "e": "pear",
+    "b": "pear",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "needs",
+    "z": "需要",
+    "j": "必要とする",
+    "e": "needs",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "two more days",
+    "z": "再兩天",
+    "j": "あと二日",
+    "e": "two more days",
+    "b": "two more days",
+    "p": "numeral"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "ripen",
+    "z": "成熟",
+    "j": "熟す",
+    "e": "ripen",
+    "b": "ripen",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the pear gives slightly near the stem, I know it is ready to eat.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "pear",
+    "z": "梨",
+    "j": "梨",
+    "e": "pear",
+    "b": "pear",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "gives slightly",
+    "z": "稍微軟",
+    "j": "少し柔らかい",
+    "e": "gives slightly",
+    "b": "give slightly",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "near the stem",
+    "z": "靠近果梗",
+    "j": "茎の近く",
+    "e": "near the stem",
+    "b": "near the stem",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "know",
+    "z": "知道",
+    "j": "知る",
+    "e": "know",
+    "b": "know",
+    "p": "verb"
+   },
+   {
+    "t": " it is "
+   },
+   {
+    "t": "ready to eat",
+    "z": "可以吃了",
+    "j": "食べ頃",
+    "e": "ready to eat",
+    "b": "ready to eat",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I peel the persimmon and cut it into wedges.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "peel",
+    "z": "剝皮",
+    "j": "皮をむく",
+    "e": "peel",
+    "b": "peel",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "persimmon",
+    "z": "柿子",
+    "j": "柿",
+    "e": "persimmon",
+    "b": "persimmon",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "cut",
+    "z": "切割",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " it into "
+   },
+   {
+    "t": "wedges",
+    "z": "楔形",
+    "j": "くし形の切り方",
+    "e": "wedges",
+    "b": "wedge",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "If the persimmon is too firm, I leave it at room temperature until it becomes sweeter.": [
+   {
+    "t": "If the "
+   },
+   {
+    "t": "persimmon",
+    "z": "柿子",
+    "j": "柿",
+    "e": "persimmon",
+    "b": "persimmon",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "too firm",
+    "z": "太硬",
+    "j": "硬すぎる状態",
+    "e": "too firm",
+    "b": "firm",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "leave",
+    "z": "放置",
+    "j": "置いておく",
+    "e": "leave",
+    "b": "leave",
+    "p": "verb"
+   },
+   {
+    "t": " it at "
+   },
+   {
+    "t": "room temperature",
+    "z": "室溫",
+    "j": "常温",
+    "e": "room temperature",
+    "b": "room temperature",
+    "p": "noun"
+   },
+   {
+    "t": " until it "
+   },
+   {
+    "t": "becomes sweeter",
+    "z": "變甜",
+    "j": "甘くなる",
+    "e": "becomes sweeter",
+    "b": "become sweet",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "We eat cold watermelon on hot days.": [
+   {
+    "t": "We "
+   },
+   {
+    "t": "eat",
+    "z": "吃",
+    "j": "食べる",
+    "e": "eat",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cold",
+    "z": "冰冷的",
+    "j": "冷たい",
+    "e": "cold",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "watermelon",
+    "z": "西瓜",
+    "j": "すいか",
+    "e": "watermelon",
+    "b": "watermelon",
+    "p": "noun"
+   },
+   {
+    "t": " on "
+   },
+   {
+    "t": "hot days",
+    "z": "炎熱的日子",
+    "j": "暑い日",
+    "e": "hot days",
+    "b": "hot day",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the watermelon was too large for the refrigerator, I cut it before storing it there.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "watermelon",
+    "z": "西瓜",
+    "j": "スイカ",
+    "e": "watermelon",
+    "b": "watermelon",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "too",
+    "z": "太",
+    "j": "あまりにも",
+    "e": "too",
+    "b": "too",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "large",
+    "z": "大",
+    "j": "大きい",
+    "e": "large",
+    "b": "large",
+    "p": "adjective"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "refrigerator",
+    "z": "冰箱",
+    "j": "冷蔵庫",
+    "e": "refrigerator",
+    "b": "refrigerator",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " it before "
+   },
+   {
+    "t": "storing it there",
+    "z": "冷藏在那裡",
+    "j": "冷蔵庫に保存する",
+    "e": "storing it there",
+    "b": "store",
+    "p": "phrasal verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I cut the melon into six slices.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "melon",
+    "z": "甜瓜",
+    "j": "メロン",
+    "e": "melon",
+    "b": "melon",
+    "p": "noun"
+   },
+   {
+    "t": " into "
+   },
+   {
+    "t": "six slices",
+    "z": "六片",
+    "j": "六切れ",
+    "e": "six slices",
+    "b": "six slice",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the melon smelled sweet, I waited another day before cutting it.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "melon",
+    "z": "甜瓜",
+    "j": "メロン",
+    "e": "melon",
+    "b": "melon",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "smelled sweet",
+    "z": "聞起來甜",
+    "j": "あまいかおりがしました",
+    "e": "smelled sweet",
+    "b": "smell sweet",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "waited",
+    "z": "等待",
+    "j": "まちました",
+    "e": "waited",
+    "b": "wait",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "another day",
+    "z": "另一日",
+    "j": "もういちにち",
+    "e": "another day",
+    "b": "another day",
+    "p": "phrase"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "cutting",
+    "z": "切",
+    "j": "きる",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " it."
+   }
+  ],
+  "I remove the pineapple skin with a knife.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "remove",
+    "z": "去除",
+    "j": "とります",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "pineapple skin",
+    "z": "鳳梨皮",
+    "j": "パイナップルのかわ",
+    "e": "pineapple skin",
+    "b": "pineapple skin",
+    "p": "phrase"
+   },
+   {
+    "t": " with a "
+   },
+   {
+    "t": "knife",
+    "z": "刀子",
+    "j": "ナイフ",
+    "e": "knife",
+    "b": "knife",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After cutting the pineapple into bite-sized pieces, I store them in a covered container.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "cutting",
+    "z": "切割",
+    "j": "切ること",
+    "e": "cutting",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "pineapple",
+    "z": "鳳梨",
+    "j": "パイナップル",
+    "e": "pineapple",
+    "b": "pineapple",
+    "p": "noun"
+   },
+   {
+    "t": " into "
+   },
+   {
+    "t": "bite-sized pieces",
+    "z": "一口大小的塊狀",
+    "j": "一口大のかたまり",
+    "e": "bite-sized pieces",
+    "b": "bite-sized piece",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "store",
+    "z": "保存",
+    "j": "保存する",
+    "e": "store",
+    "b": "store",
+    "p": "verb"
+   },
+   {
+    "t": " them in a "
+   },
+   {
+    "t": "covered container",
+    "z": "有蓋容器",
+    "j": "ふた付きの容器",
+    "e": "covered container",
+    "b": "covered container",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I eat the kiwi fruit with a spoon.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "eat",
+    "z": "吃",
+    "j": "食べる",
+    "e": "eat",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "kiwi fruit",
+    "z": "奇異果",
+    "j": "キウイフルーツ",
+    "e": "kiwi fruit",
+    "b": "kiwi fruit",
+    "p": "noun"
+   },
+   {
+    "t": " with a "
+   },
+   {
+    "t": "spoon",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "spoon",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "If the kiwi fruit is still hard, I leave it beside an apple to help it ripen.": [
+   {
+    "t": "If the "
+   },
+   {
+    "t": "kiwi fruit",
+    "z": "奇異果",
+    "j": "キウイフルーツ",
+    "e": "kiwi fruit",
+    "b": "kiwi fruit",
+    "p": "noun"
+   },
+   {
+    "t": " is still "
+   },
+   {
+    "t": "hard",
+    "z": "硬的",
+    "j": "かたい",
+    "e": "hard",
+    "b": "hard",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "leave",
+    "z": "放置",
+    "j": "置いておく",
+    "e": "leave",
+    "b": "leave",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "beside",
+    "z": "在旁邊",
+    "j": "そばに",
+    "e": "beside",
+    "b": "beside",
+    "p": "preposition"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "apple",
+    "z": "蘋果",
+    "j": "りんご",
+    "e": "apple",
+    "b": "apple",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "help",
+    "z": "幫助",
+    "j": "助ける",
+    "e": "help",
+    "b": "help",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "ripen",
+    "z": "成熟",
+    "j": "熟す",
+    "e": "ripen",
+    "b": "ripen",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I add a slice of lemon to my tea.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "add",
+    "z": "加",
+    "j": "加える",
+    "e": "add",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a slice",
+    "z": "一片",
+    "j": "一切れ",
+    "e": "a slice",
+    "b": "slice",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "lemon",
+    "z": "檸檬",
+    "j": "レモン",
+    "e": "lemon",
+    "b": "lemon",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "my tea",
+    "z": "我的茶",
+    "j": "私の紅茶",
+    "e": "my tea",
+    "b": "tea",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After squeezing the lemon over the fish, I put the unused half in the refrigerator.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "squeezing",
+    "z": "擠壓",
+    "j": "果汁を絞ること",
+    "e": "squeezing",
+    "b": "squeeze",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "lemon",
+    "z": "檸檬",
+    "j": "レモン",
+    "e": "lemon",
+    "b": "lemon",
+    "p": "noun"
+   },
+   {
+    "t": " over the "
+   },
+   {
+    "t": "fish",
+    "z": "魚",
+    "j": "魚の肉",
+    "e": "fish",
+    "b": "fish",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "put",
+    "z": "放置",
+    "j": "置くこと",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "unused",
+    "z": "未使用的",
+    "j": "使っていない",
+    "e": "unused",
+    "b": "unused",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "half",
+    "z": "一半",
+    "j": "半分",
+    "e": "half",
+    "b": "half",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "refrigerator",
+    "z": "冰箱",
+    "j": "冷蔵庫",
+    "e": "refrigerator",
+    "b": "refrigerator",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I scoop out the grapefruit with a spoon.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "scoop out",
+    "z": "挖出",
+    "j": "すくい出す",
+    "e": "scoop out",
+    "b": "scoop out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "grapefruit",
+    "z": "葡萄柚",
+    "j": "グレープフルーツ",
+    "e": "grapefruit",
+    "b": "grapefruit",
+    "p": "noun"
+   },
+   {
+    "t": " with a "
+   },
+   {
+    "t": "spoon",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "spoon",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because grapefruit can affect some medicines, I checked the label before eating it.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "grapefruit",
+    "z": "葡萄柚",
+    "j": "グレープフルーツ",
+    "e": "grapefruit",
+    "b": "grapefruit",
+    "p": "noun"
+   },
+   {
+    "t": " can "
+   },
+   {
+    "t": "affect",
+    "z": "影響",
+    "j": "影響する",
+    "e": "affect",
+    "b": "affect",
+    "p": "verb"
+   },
+   {
+    "t": " some "
+   },
+   {
+    "t": "medicines",
+    "z": "藥物",
+    "j": "薬",
+    "e": "medicines",
+    "b": "medicine",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認",
+    "j": "確認した",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "label",
+    "z": "標籤",
+    "j": "注意書き",
+    "e": "label",
+    "b": "label",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "eating",
+    "z": "吃",
+    "j": "食べる",
+    "e": "eating",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": " it."
+   }
+  ],
+  "I remove the cherry pits before baking.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "remove",
+    "z": "去除",
+    "j": "取り除く",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "cherry pits",
+    "z": "櫻桃核",
+    "j": "さくらんぼの種",
+    "e": "cherry pits",
+    "b": "cherry pit",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "baking",
+    "z": "烘焙",
+    "j": "焼く",
+    "e": "baking",
+    "b": "bake",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When cherries are in season, I buy a small pack and eat them the same day.": [
+   {
+    "t": "When "
+   },
+   {
+    "t": "cherries",
+    "z": "櫻桃",
+    "j": "さくらんぼ",
+    "e": "cherries",
+    "b": "cherry",
+    "p": "noun"
+   },
+   {
+    "t": " are "
+   },
+   {
+    "t": "in season",
+    "z": "當季",
+    "j": "旬である",
+    "e": "in season",
+    "b": "in season",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "buy",
+    "z": "買",
+    "j": "買う",
+    "e": "buy",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "small pack",
+    "z": "小包裝",
+    "j": "小さいパック",
+    "e": "small pack",
+    "b": "small pack",
+    "p": "phrase"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "eat",
+    "z": "吃",
+    "j": "食べる",
+    "e": "eat",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": " them the "
+   },
+   {
+    "t": "same day",
+    "z": "同一天",
+    "j": "その日",
+    "e": "the same day",
+    "b": "same day",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I wash the Japanese plums for syrup.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "wash",
+    "z": "洗",
+    "j": "洗う",
+    "e": "wash",
+    "b": "wash",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Japanese plums",
+    "z": "日本梅子",
+    "j": "梅",
+    "e": "Japanese plums",
+    "b": "Japanese plum",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "syrup",
+    "z": "糖漿",
+    "j": "シロップ",
+    "e": "syrup",
+    "b": "syrup",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before putting the Japanese plums in the jar, I remove each stem with a toothpick.": [
+   {
+    "t": "Before putting",
+    "z": "在放入之前",
+    "j": "入れる前に",
+    "e": "Before putting",
+    "b": "put",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "Japanese plums",
+    "z": "日本梅子",
+    "j": "梅",
+    "e": "Japanese plums",
+    "b": "Japanese plum",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "jar",
+    "z": "罐子",
+    "j": "瓶",
+    "e": "jar",
+    "b": "jar",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "remove",
+    "z": "去除",
+    "j": "取ります",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "each stem",
+    "z": "每個果梗",
+    "j": "一つずつへた",
+    "e": "each stem",
+    "b": "stem",
+    "p": "noun"
+   },
+   {
+    "t": " with a "
+   },
+   {
+    "t": "toothpick",
+    "z": "牙籤",
+    "j": "つまようじ",
+    "e": "toothpick",
+    "b": "toothpick",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This plum tastes sweet and a little sour.": [
+   {
+    "t": "This plum",
+    "z": "這個李子",
+    "j": "このすもも",
+    "e": "This plum",
+    "b": "plum",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "tastes",
+    "z": "嘗起來",
+    "j": "味がする",
+    "e": "tastes",
+    "b": "taste",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sweet",
+    "z": "甜的",
+    "j": "甘い",
+    "e": "sweet",
+    "b": "sweet",
+    "p": "adjective"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "a little sour",
+    "z": "有點酸",
+    "j": "少し酸っぱい",
+    "e": "a little sour",
+    "b": "sour",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the plums were very ripe, I cooked them into jam instead of carrying them to work.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "plums",
+    "z": "李子",
+    "j": "すもも",
+    "e": "plums",
+    "b": "plum",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "were very ripe",
+    "z": "非常熟了",
+    "j": "とても熟していた",
+    "e": "were very ripe",
+    "b": "be ripe",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "cooked",
+    "z": "煮熟了",
+    "j": "煮た",
+    "e": "cooked",
+    "b": "cook",
+    "p": "verb"
+   },
+   {
+    "t": " them into "
+   },
+   {
+    "t": "jam",
+    "z": "果醬",
+    "j": "ジャム",
+    "e": "jam",
+    "b": "jam",
+    "p": "noun"
+   },
+   {
+    "t": " instead of "
+   },
+   {
+    "t": "carrying",
+    "z": "帶去",
+    "j": "持っていく",
+    "e": "carrying",
+    "b": "carry",
+    "p": "verb"
+   },
+   {
+    "t": " them to "
+   },
+   {
+    "t": "work",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I peel the loquat with my fingers.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "peel",
+    "z": "剝皮",
+    "j": "皮をむく",
+    "e": "peel",
+    "b": "peel",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "loquat",
+    "z": "枇杷",
+    "j": "びわ",
+    "e": "loquat",
+    "b": "loquat",
+    "p": "noun"
+   },
+   {
+    "t": " with "
+   },
+   {
+    "t": "my fingers",
+    "z": "我的手指",
+    "j": "私の指",
+    "e": "my fingers",
+    "b": "finger",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After removing the large seeds from the loquat, I cut the flesh into small pieces for the children.": [
+   {
+    "t": "After removing",
+    "z": "去除之後",
+    "j": "取り除いた後",
+    "e": "After removing",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "large seeds",
+    "z": "大種子",
+    "j": "大きな種",
+    "e": "large seeds",
+    "b": "seed",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "loquat",
+    "z": "枇杷",
+    "j": "びわ",
+    "e": "loquat",
+    "b": "loquat",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "cut",
+    "z": "切割",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "flesh",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "flesh",
+    "b": "flesh",
+    "p": "noun"
+   },
+   {
+    "t": " into "
+   },
+   {
+    "t": "small pieces",
+    "z": "小塊",
+    "j": "小さく切ったもの",
+    "e": "small pieces",
+    "b": "piece",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "children",
+    "z": "孩子們",
+    "j": "子ども",
+    "e": "children",
+    "b": "child",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I cut the fig in half for dessert.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切ります",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "fig",
+    "z": "無花果",
+    "j": "いちじく",
+    "e": "fig",
+    "b": "fig",
+    "p": "noun"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "half",
+    "z": "一半",
+    "j": "半分",
+    "e": "half",
+    "b": "half",
+    "p": "adjective"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "dessert",
+    "z": "甜點",
+    "j": "デザート",
+    "e": "dessert",
+    "b": "dessert",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the fig was very soft, I carried it in a container so it would not be crushed.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "fig",
+    "z": "無花果",
+    "j": "いちじく",
+    "e": "fig",
+    "b": "fig",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "very soft",
+    "z": "非常柔軟",
+    "j": "とても柔らかかった",
+    "e": "very soft",
+    "b": "soft",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "carried",
+    "z": "攜帶",
+    "j": "運びました",
+    "e": "carried",
+    "b": "carry",
+    "p": "verb"
+   },
+   {
+    "t": " it in a "
+   },
+   {
+    "t": "container",
+    "z": "容器",
+    "j": "容器",
+    "e": "container",
+    "b": "container",
+    "p": "noun"
+   },
+   {
+    "t": " so it would not be "
+   },
+   {
+    "t": "crushed",
+    "z": "壓碎",
+    "j": "つぶれない",
+    "e": "crushed",
+    "b": "つぶれる",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I cut the mango around the stone.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切ります",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "mango",
+    "z": "芒果",
+    "j": "マンゴー",
+    "e": "mango",
+    "b": "mango",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "around",
+    "z": "圍繞",
+    "j": "周り",
+    "e": "around",
+    "b": "around",
+    "p": "preposition"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "stone",
+    "z": "核",
+    "j": "種",
+    "e": "stone",
+    "b": "stone",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the mango started to smell sweet, I chilled it before serving it for dessert.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "mango",
+    "z": "芒果",
+    "j": "マンゴー",
+    "e": "mango",
+    "b": "mango",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "started to smell sweet",
+    "z": "開始散發甜香",
+    "j": "甘い香りがしてきた",
+    "e": "started to smell sweet",
+    "b": "smell sweet",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chilled",
+    "z": "冷藏",
+    "j": "冷やしました",
+    "e": "chilled",
+    "b": "chill",
+    "p": "verb"
+   },
+   {
+    "t": " it before "
+   },
+   {
+    "t": "serving",
+    "z": "供應",
+    "j": "出す",
+    "e": "serving",
+    "b": "serve",
+    "p": "verb"
+   },
+   {
+    "t": " it for "
+   },
+   {
+    "t": "dessert",
+    "z": "甜點",
+    "j": "デザート",
+    "e": "dessert",
+    "b": "dessert",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I scoop the seeds out of the papaya.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "scoop",
+    "z": "挖出",
+    "j": "すくう",
+    "e": "scoop",
+    "b": "scoop",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "seeds",
+    "z": "種子",
+    "j": "たね",
+    "e": "seeds",
+    "b": "seed",
+    "p": "noun"
+   },
+   {
+    "t": " out of the "
+   },
+   {
+    "t": "papaya",
+    "z": "木瓜",
+    "j": "パパイヤ",
+    "e": "papaya",
+    "b": "papaya",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After cutting the papaya, I added lime juice because the flavor was mild.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "cutting",
+    "z": "切割",
+    "j": "切ること",
+    "e": "cutting",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "papaya",
+    "z": "木瓜",
+    "j": "パパイヤ",
+    "e": "papaya",
+    "b": "papaya",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "added",
+    "z": "添加",
+    "j": "加えること",
+    "e": "added",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "lime juice",
+    "z": "萊姆汁",
+    "j": "ライムの果汁",
+    "e": "lime juice",
+    "b": "lime juice",
+    "p": "noun"
+   },
+   {
+    "t": " because the "
+   },
+   {
+    "t": "flavor",
+    "z": "味道",
+    "j": "味",
+    "e": "flavor",
+    "b": "flavor",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "mild",
+    "z": "溫和的",
+    "j": "あっさりした",
+    "e": "mild",
+    "b": "mild",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I put avocado on my toast.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "put",
+    "z": "放置",
+    "j": "置きます",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "avocado",
+    "z": "酪梨",
+    "j": "アボカド",
+    "e": "avocado",
+    "b": "avocado",
+    "p": "noun"
+   },
+   {
+    "t": " on my "
+   },
+   {
+    "t": "toast",
+    "z": "吐司",
+    "j": "トースト",
+    "e": "toast",
+    "b": "toast",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "If the avocado is still hard, I leave it on the counter instead of cutting it.": [
+   {
+    "t": "If the "
+   },
+   {
+    "t": "avocado",
+    "z": "酪梨",
+    "j": "アボカド",
+    "e": "avocado",
+    "b": "avocado",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "still hard",
+    "z": "仍然硬",
+    "j": "まだ硬い",
+    "e": "still hard",
+    "b": "hard",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "leave",
+    "z": "放置",
+    "j": "置きます",
+    "e": "leave",
+    "b": "leave",
+    "p": "verb"
+   },
+   {
+    "t": " it on the "
+   },
+   {
+    "t": "counter",
+    "z": "流理台",
+    "j": "調理台",
+    "e": "counter",
+    "b": "counter",
+    "p": "noun"
+   },
+   {
+    "t": " instead of "
+   },
+   {
+    "t": "cutting",
+    "z": "切割",
+    "j": "切ること",
+    "e": "cutting",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " it."
+   }
+  ],
+  "I sprinkle blueberries over my cereal.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sprinkle",
+    "z": "灑",
+    "j": "ふりかける",
+    "e": "sprinkle",
+    "b": "sprinkle",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "blueberries",
+    "z": "藍莓",
+    "j": "ブルーベリー",
+    "e": "blueberries",
+    "b": "blueberry",
+    "p": "noun"
+   },
+   {
+    "t": " over my "
+   },
+   {
+    "t": "cereal",
+    "z": "穀片",
+    "j": "シリアル",
+    "e": "cereal",
+    "b": "cereal",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since fresh blueberries were expensive, I bought a bag of frozen blueberries for smoothies.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "fresh blueberries",
+    "z": "新鮮藍莓",
+    "j": "新鮮なブルーベリー",
+    "e": "fresh blueberries",
+    "b": "blueberry",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "were expensive",
+    "z": "很貴",
+    "j": "高かった",
+    "e": "were expensive",
+    "b": "expensive",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a bag of "
+   },
+   {
+    "t": "frozen blueberries",
+    "z": "冷凍藍莓",
+    "j": "冷凍ブルーベリー",
+    "e": "frozen blueberries",
+    "b": "blueberry",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "smoothies",
+    "z": "冰沙",
+    "j": "スムージー",
+    "e": "smoothies",
+    "b": "smoothie",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I decorate the cake with raspberries.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "decorate",
+    "z": "裝飾",
+    "j": "飾ります",
+    "e": "decorate",
+    "b": "decorate",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "cake",
+    "z": "蛋糕",
+    "j": "ケーキ",
+    "e": "cake",
+    "b": "cake",
+    "p": "noun"
+   },
+   {
+    "t": " with "
+   },
+   {
+    "t": "raspberries",
+    "z": "覆盆子",
+    "j": "ラズベリー",
+    "e": "raspberries",
+    "b": "raspberry",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because raspberries crush easily, I rinse them gently just before eating them.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "raspberries",
+    "z": "覆盆子",
+    "j": "ラズベリー",
+    "e": "raspberries",
+    "b": "raspberry",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "crush",
+    "z": "壓碎",
+    "j": "つぶれます",
+    "e": "crush",
+    "b": "crush",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "easily",
+    "z": "容易地",
+    "j": "やすい",
+    "e": "easily",
+    "b": "easy",
+    "p": "adverb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "rinse",
+    "z": "沖洗",
+    "j": "洗います",
+    "e": "rinse",
+    "b": "rinse",
+    "p": "verb"
+   },
+   {
+    "t": " them "
+   },
+   {
+    "t": "gently",
+    "z": "輕輕地",
+    "j": "優しく",
+    "e": "gently",
+    "b": "gentle",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "just before eating",
+    "z": "吃之前",
+    "j": "食べる直前",
+    "e": "just before eating",
+    "b": "just before eating",
+    "p": "phrase"
+   },
+   {
+    "t": " them."
+   }
+  ],
+  "I add pomegranate seeds to the salad.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "add",
+    "z": "加入",
+    "j": "加えます",
+    "e": "add",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "pomegranate seeds",
+    "z": "石榴籽",
+    "j": "ザクロの種",
+    "e": "pomegranate seeds",
+    "b": "pomegranate seed",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "salad",
+    "z": "沙拉",
+    "j": "サラダ",
+    "e": "salad",
+    "b": "salad",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "To keep the juice from splashing, I opened the pomegranate in a bowl of water.": [
+   {
+    "t": "To "
+   },
+   {
+    "t": "keep",
+    "z": "保持",
+    "j": "保つ",
+    "e": "keep",
+    "b": "keep",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "juice",
+    "z": "果汁",
+    "j": "果汁",
+    "e": "juice",
+    "b": "juice",
+    "p": "noun"
+   },
+   {
+    "t": " from "
+   },
+   {
+    "t": "splashing",
+    "z": "飛濺",
+    "j": "飛び散ること",
+    "e": "splashing",
+    "b": "splash",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "opened",
+    "z": "打開",
+    "j": "開きました",
+    "e": "opened",
+    "b": "open",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "pomegranate",
+    "z": "石榴",
+    "j": "ざくろ",
+    "e": "pomegranate",
+    "b": "pomegranate",
+    "p": "noun"
+   },
+   {
+    "t": " in a "
+   },
+   {
+    "t": "bowl",
+    "z": "碗",
+    "j": "ボウル",
+    "e": "bowl",
+    "b": "bowl",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "water",
+    "z": "水",
+    "j": "水",
+    "e": "water",
+    "b": "water",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I scoop the dragon fruit out of its skin.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "scoop",
+    "z": "舀取",
+    "j": "すくう",
+    "e": "scoop",
+    "b": "scoop",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "dragon fruit",
+    "z": "火龍果",
+    "j": "ドラゴンフルーツ",
+    "e": "dragon fruit",
+    "b": "dragon fruit",
+    "p": "noun"
+   },
+   {
+    "t": " out of its "
+   },
+   {
+    "t": "skin",
+    "z": "皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "skin",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After chilling the dragon fruit, I cut it into cubes and shared it with my family.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "chilling",
+    "z": "冷藏",
+    "j": "冷やすこと",
+    "e": "chilling",
+    "b": "chill",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "dragon fruit",
+    "z": "火龍果",
+    "j": "ドラゴンフルーツ",
+    "e": "dragon fruit",
+    "b": "dragon fruit",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "cut",
+    "z": "切割",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " it into "
+   },
+   {
+    "t": "cubes",
+    "z": "方塊",
+    "j": "角切り",
+    "e": "cubes",
+    "b": "cube",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "shared",
+    "z": "分享",
+    "j": "分ける",
+    "e": "shared",
+    "b": "share",
+    "p": "verb"
+   },
+   {
+    "t": " it with my "
+   },
+   {
+    "t": "family",
+    "z": "家人",
+    "j": "家族",
+    "e": "family",
+    "b": "family",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I spoon the passion fruit pulp over yogurt.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "spoon",
+    "z": "用湯匙舀",
+    "j": "スプーンですくう",
+    "e": "spoon",
+    "b": "spoon",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "passion fruit pulp",
+    "z": "百香果果肉",
+    "j": "パッションフルーツの果肉",
+    "e": "passion fruit pulp",
+    "b": "passion fruit pulp",
+    "p": "noun"
+   },
+   {
+    "t": " over "
+   },
+   {
+    "t": "yogurt",
+    "z": "優格",
+    "j": "ヨーグルト",
+    "e": "yogurt",
+    "b": "yogurt",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the passion fruit skin becomes wrinkled, the pulp inside is usually sweeter.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "passion fruit",
+    "z": "百香果",
+    "j": "パッションフルーツ",
+    "e": "passion fruit",
+    "b": "passion fruit",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "skin",
+    "z": "果皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "skin",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "becomes wrinkled",
+    "z": "變皺",
+    "j": "しわしわになります",
+    "e": "becomes wrinkled",
+    "b": "wrinkle",
+    "p": "verb"
+   },
+   {
+    "t": ", the "
+   },
+   {
+    "t": "pulp",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "pulp",
+    "b": "pulp",
+    "p": "noun"
+   },
+   {
+    "t": " inside is usually "
+   },
+   {
+    "t": "sweeter",
+    "z": "更甜",
+    "j": "より甘い",
+    "e": "sweeter",
+    "b": "sweet",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I peel the lychee and remove the seed.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "peel",
+    "z": "剝皮",
+    "j": "皮をむく",
+    "e": "peel",
+    "b": "peel",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "lychee",
+    "z": "荔枝",
+    "j": "ライチ",
+    "e": "lychee",
+    "b": "lychee",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "remove",
+    "z": "去除",
+    "j": "取り除く",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "seed",
+    "z": "種子",
+    "j": "種",
+    "e": "seed",
+    "b": "seed",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because fresh lychees do not keep long, I ate them soon after buying them.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "fresh lychees",
+    "z": "新鮮荔枝",
+    "j": "新鮮なライチ",
+    "e": "fresh lychees",
+    "b": "fresh lychee",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "do not keep long",
+    "z": "不易保存",
+    "j": "長く保存できない",
+    "e": "do not keep long",
+    "b": "keep long",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "ate",
+    "z": "吃了",
+    "j": "食べた",
+    "e": "ate",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": " them "
+   },
+   {
+    "t": "soon after buying",
+    "z": "買後不久",
+    "j": "買ってからすぐに",
+    "e": "soon after buying",
+    "b": "buy",
+    "p": "phrase"
+   },
+   {
+    "t": " them."
+   }
+  ],
+  "I eat the kumquat with its peel.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "eat",
+    "z": "吃",
+    "j": "食べます",
+    "e": "eat",
+    "b": "eat",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "kumquat",
+    "z": "金柑",
+    "j": "金柑",
+    "e": "kumquat",
+    "b": "kumquat",
+    "p": "noun"
+   },
+   {
+    "t": " with its "
+   },
+   {
+    "t": "peel",
+    "z": "皮",
+    "j": "皮",
+    "e": "peel",
+    "b": "peel",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When my neighbor gave me many kumquats, I simmered them with sugar.": [
+   {
+    "t": "When my "
+   },
+   {
+    "t": "neighbor",
+    "z": "鄰居",
+    "j": "近所の人",
+    "e": "neighbor",
+    "b": "neighbor",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "gave",
+    "z": "給",
+    "j": "くれた",
+    "e": "gave",
+    "b": "give",
+    "p": "verb"
+   },
+   {
+    "t": " me "
+   },
+   {
+    "t": "many",
+    "z": "許多",
+    "j": "たくさん",
+    "e": "many",
+    "b": "many",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "kumquats",
+    "z": "金柑",
+    "j": "金柑",
+    "e": "kumquats",
+    "b": "kumquat",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "simmered",
+    "z": "燉煮",
+    "j": "煮ました",
+    "e": "simmered",
+    "b": "simmer",
+    "p": "verb"
+   },
+   {
+    "t": " them with "
+   },
+   {
+    "t": "sugar",
+    "z": "砂糖",
+    "j": "砂糖",
+    "e": "sugar",
+    "b": "sugar",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I grate a little yuzu peel over the soup.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "grate",
+    "z": "擦碎",
+    "j": "すりおろします",
+    "e": "grate",
+    "b": "grate",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a little",
+    "z": "一點",
+    "j": "少し",
+    "e": "a little",
+    "b": "little",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "yuzu peel",
+    "z": "柚子皮",
+    "j": "柚子の皮",
+    "e": "yuzu peel",
+    "b": "yuzu peel",
+    "p": "noun"
+   },
+   {
+    "t": " over the "
+   },
+   {
+    "t": "soup",
+    "z": "湯",
+    "j": "汁物",
+    "e": "soup",
+    "b": "soup",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I grate coconut flesh for the curry.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "grate",
+    "z": "刨絲",
+    "j": "すりおろす",
+    "e": "grate",
+    "b": "grate",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "coconut flesh",
+    "z": "椰子果肉",
+    "j": "ココナッツの果肉",
+    "e": "coconut flesh",
+    "b": "coconut flesh",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "curry",
+    "z": "咖哩",
+    "j": "カレー",
+    "e": "curry",
+    "b": "curry",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since opening a whole coconut is difficult, I bought ready-cut pieces at the supermarket.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "opening",
+    "z": "打開",
+    "j": "開けること",
+    "e": "opening",
+    "b": "open",
+    "p": "noun"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "whole coconut",
+    "z": "整顆椰子",
+    "j": "丸ごとのココナッツ",
+    "e": "whole coconut",
+    "b": "coconut",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "difficult",
+    "z": "困難的",
+    "j": "難しい",
+    "e": "difficult",
+    "b": "difficult",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "ready-cut pieces",
+    "z": "預先切好的片",
+    "j": "カット済みのもの",
+    "e": "ready-cut pieces",
+    "b": "ready-cut pieces",
+    "p": "phrase"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "supermarket",
+    "z": "超市",
+    "j": "スーパー",
+    "e": "supermarket",
+    "b": "supermarket",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I cut the apricot and remove the stone.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "cut",
+    "z": "切",
+    "j": "切る",
+    "e": "cut",
+    "b": "cut",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "apricot",
+    "z": "杏子",
+    "j": "あんず",
+    "e": "apricot",
+    "b": "apricot",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "remove",
+    "z": "取出",
+    "j": "取ります",
+    "e": "remove",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "stone",
+    "z": "核",
+    "j": "種",
+    "e": "stone",
+    "b": "stone",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because fresh apricots were not available, I used dried ones in the bread.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "fresh apricots",
+    "z": "新鮮杏子",
+    "j": "新鮮なあんず",
+    "e": "fresh apricots",
+    "b": "apricot",
+    "p": "noun"
+   },
+   {
+    "t": " were "
+   },
+   {
+    "t": "not available",
+    "z": "沒有",
+    "j": "なかった",
+    "e": "were not available",
+    "b": "be",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "used",
+    "z": "使用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dried ones",
+    "z": "乾杏子",
+    "j": "乾燥したもの",
+    "e": "dried ones",
+    "b": "dried ones",
+    "p": "phrase"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "bread",
+    "z": "麵包",
+    "j": "パン",
+    "e": "bread",
+    "b": "bread",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the winter solstice arrives, we put yuzu in the bath and enjoy its fragrance.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "winter solstice",
+    "z": "冬至",
+    "j": "冬至",
+    "e": "winter solstice",
+    "b": "winter solstice",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "arrives",
+    "z": "到來",
+    "j": "なります",
+    "e": "arrives",
+    "b": "arrive",
+    "p": "verb"
+   },
+   {
+    "t": ", we "
+   },
+   {
+    "t": "put",
+    "z": "放入",
+    "j": "浮かべて",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "yuzu",
+    "z": "柚子",
+    "j": "柚子",
+    "e": "yuzu",
+    "b": "yuzu",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "bath",
+    "z": "浴缸",
+    "j": "風呂",
+    "e": "bath",
+    "b": "bath",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "enjoy",
+    "z": "享受",
+    "j": "楽しみます",
+    "e": "enjoy",
+    "b": "enjoy",
+    "p": "verb"
+   },
+   {
+    "t": " its "
+   },
+   {
+    "t": "fragrance",
+    "z": "香氣",
+    "j": "香り",
+    "e": "fragrance",
+    "b": "fragrance",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ]
+ },
+ "ja": {
+  "朝ごはんにりんごを切ります。": [
+   {
+    "t": "朝ごはん",
+    "z": "早餐",
+    "j": "朝ごはん",
+    "e": "breakfast",
+    "b": "朝ごはん",
+    "p": "noun",
+    "r": "あさごはん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "りんご",
+    "z": "蘋果",
+    "j": "りんご",
+    "e": "apple",
+    "b": "りんご",
+    "p": "noun",
+    "r": "りんご"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "切ります",
+    "z": "切",
+    "j": "切ります",
+    "e": "slice",
+    "b": "切る",
+    "p": "verb",
+    "r": "きります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "りんごがまだ硬ければ、長く新鮮に保てるように冷蔵庫に入れておきます。": [
+   {
+    "t": "りんご",
+    "z": "蘋果",
+    "j": "りんご",
+    "e": "apple",
+    "b": "りんご",
+    "p": "noun",
+    "r": "りんご"
+   },
+   {
+    "t": "がまだ"
+   },
+   {
+    "t": "硬ければ",
+    "z": "硬的話",
+    "j": "硬ければ",
+    "e": "if firm",
+    "b": "硬い",
+    "p": "adjective",
+    "r": "かたければ"
+   },
+   {
+    "t": "、長く"
+   },
+   {
+    "t": "新鮮に",
+    "z": "新鮮地",
+    "j": "新鮮に",
+    "e": "freshly",
+    "b": "新鮮",
+    "p": "adverb",
+    "r": "しんせんに"
+   },
+   {
+    "t": "保てる",
+    "z": "能保持",
+    "j": "保てる",
+    "e": "can keep",
+    "b": "保つ",
+    "p": "verb",
+    "r": "たもてる"
+   },
+   {
+    "t": "ように"
+   },
+   {
+    "t": "冷蔵庫",
+    "z": "冰箱",
+    "j": "冷蔵庫",
+    "e": "refrigerator",
+    "b": "冷蔵庫",
+    "p": "noun",
+    "r": "れいぞうこ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れておきます",
+    "z": "放入並保留",
+    "j": "入れておきます",
+    "e": "put in and keep",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれておきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ランチバッグにバナナを一本入れます。": [
+   {
+    "t": "ランチバッグ",
+    "z": "便當袋",
+    "j": "お弁当を入れる袋",
+    "e": "lunch bag",
+    "b": "ランチバッグ",
+    "p": "noun",
+    "r": "ランチバッグ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "バナナ",
+    "z": "香蕉",
+    "j": "バナナ",
+    "e": "banana",
+    "b": "バナナ",
+    "p": "noun",
+    "r": "バナナ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一本",
+    "z": "一根",
+    "j": "細長い物の数え方",
+    "e": "one",
+    "b": "一本",
+    "p": "numeral",
+    "r": "いっぽん"
+   },
+   {
+    "t": "入れます",
+    "z": "放入",
+    "j": "中に入れます",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "バナナが柔らかくなってきたので、スムージーにして飲みました。": [
+   {
+    "t": "バナナ",
+    "z": "香蕉",
+    "j": "バナナ",
+    "e": "banana",
+    "b": "バナナ",
+    "p": "noun",
+    "r": "バナナ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "柔らかくなってきた",
+    "z": "變軟了",
+    "j": "柔らかくなってきた状態",
+    "e": "got soft",
+    "b": "柔らかくなる",
+    "p": "verb",
+    "r": "やわらかくなってきた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "スムージー",
+    "z": "冰沙",
+    "j": "果物などを混ぜた飲み物",
+    "e": "smoothie",
+    "b": "スムージー",
+    "p": "noun",
+    "r": "スムージー"
+   },
+   {
+    "t": "にして"
+   },
+   {
+    "t": "飲みました",
+    "z": "喝了",
+    "j": "飲みました",
+    "e": "drank",
+    "b": "飲む",
+    "p": "verb",
+    "r": "のみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "夕食の後にみかんの皮をむきます。": [
+   {
+    "t": "夕食",
+    "z": "晚餐",
+    "j": "夜の食事",
+    "e": "dinner",
+    "b": "夕食",
+    "p": "noun",
+    "r": "ゆうしょく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "後",
+    "z": "之後",
+    "j": "後の時間",
+    "e": "after",
+    "b": "後",
+    "p": "adverb",
+    "r": "あと"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "みかん",
+    "z": "橘子",
+    "j": "みかん",
+    "e": "mandarin orange",
+    "b": "みかん",
+    "p": "noun",
+    "r": "みかん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "皮",
+    "j": "皮",
+    "e": "peel",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "むきます",
+    "z": "剝",
+    "j": "皮をむきます",
+    "e": "peel",
+    "b": "むく",
+    "p": "verb",
+    "r": "むきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "みかんが旬になると、家族みんなが食べるので袋で買います。": [
+   {
+    "t": "みかん",
+    "z": "橘子",
+    "j": "みかん",
+    "e": "mandarins",
+    "b": "みかん",
+    "p": "noun",
+    "r": "みかん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "旬",
+    "z": "旬",
+    "j": "旬の時期",
+    "e": "season",
+    "b": "旬",
+    "p": "noun",
+    "r": "しゅん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "なる",
+    "z": "成為",
+    "j": "なります",
+    "e": "become",
+    "b": "なる",
+    "p": "verb",
+    "r": "なる"
+   },
+   {
+    "t": "と、"
+   },
+   {
+    "t": "家族",
+    "z": "家人",
+    "j": "家族",
+    "e": "family",
+    "b": "家族",
+    "p": "noun",
+    "r": "かぞく"
+   },
+   {
+    "t": "みんな",
+    "z": "大家",
+    "j": "みんな",
+    "e": "everyone",
+    "b": "みんな",
+    "p": "pronoun",
+    "r": "みんな"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "食べる",
+    "z": "吃",
+    "j": "食べる",
+    "e": "eat",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべる"
+   },
+   {
+    "t": "ので"
+   },
+   {
+    "t": "袋",
+    "z": "袋",
+    "j": "袋",
+    "e": "bag",
+    "b": "袋",
+    "p": "noun",
+    "r": "ふくろ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "買います",
+    "z": "買",
+    "j": "買います",
+    "e": "buy",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "オレンジを搾って生ジュースを作ります。": [
+   {
+    "t": "オレンジ",
+    "z": "橙子",
+    "j": "オレンジ",
+    "e": "orange",
+    "b": "オレンジ",
+    "p": "noun",
+    "r": "オレンジ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "搾って",
+    "z": "擠壓",
+    "j": "搾る",
+    "e": "squeeze",
+    "b": "搾る",
+    "p": "verb",
+    "r": "しぼって"
+   },
+   {
+    "t": "生ジュース",
+    "z": "新鮮果汁",
+    "j": "生ジュース",
+    "e": "fresh juice",
+    "b": "生ジュース",
+    "p": "noun",
+    "r": "なまジュース"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "作ります",
+    "z": "做",
+    "j": "作ります",
+    "e": "make",
+    "b": "作る",
+    "p": "verb",
+    "r": "つくります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "オレンジの房をお弁当箱に入れる前に、種を取り除きます。": [
+   {
+    "t": "オレンジ",
+    "z": "柳橙",
+    "j": "オレンジ",
+    "e": "orange",
+    "b": "オレンジ",
+    "p": "noun",
+    "r": "オレンジ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "房",
+    "z": "果瓣",
+    "j": "房",
+    "e": "segment",
+    "b": "房",
+    "p": "noun",
+    "r": "ふさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "お弁当箱",
+    "z": "便當盒",
+    "j": "食べ物を入れる箱",
+    "e": "lunch box",
+    "b": "お弁当箱",
+    "p": "noun",
+    "r": "おべんとうばこ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れる",
+    "z": "放入",
+    "j": "中に入れます",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれる"
+   },
+   {
+    "t": "前に、"
+   },
+   {
+    "t": "種",
+    "z": "種子",
+    "j": "種",
+    "e": "seed",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取り除きます",
+    "z": "去除",
+    "j": "取り去ります",
+    "e": "remove",
+    "b": "取り除く",
+    "p": "verb",
+    "r": "とりのぞきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ぶどうを食べる前に洗います。": [
+   {
+    "t": "ぶどう",
+    "z": "葡萄",
+    "j": "ぶどう",
+    "e": "grape",
+    "b": "ぶどう",
+    "p": "noun",
+    "r": "ぶどう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "食べる前に",
+    "z": "吃之前",
+    "j": "食べる前に",
+    "e": "before eating",
+    "b": "食べる前に",
+    "p": "phrase",
+    "r": "たべるまえに"
+   },
+   {
+    "t": "洗います",
+    "z": "洗",
+    "j": "洗います",
+    "e": "wash",
+    "b": "洗う",
+    "p": "verb",
+    "r": "あらいます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このぶどうは種がないので、子どものおやつ箱にそのまま入れられます。": [
+   {
+    "t": "このぶどう",
+    "z": "這葡萄",
+    "j": "このぶどう",
+    "e": "these grapes",
+    "b": "ぶどう",
+    "p": "phrase",
+    "r": "このぶどう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "種",
+    "z": "種子",
+    "j": "種",
+    "e": "seed",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ない",
+    "z": "沒有",
+    "j": "ありません",
+    "e": "no",
+    "b": "ない",
+    "p": "adjective",
+    "r": "ない"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "子ども",
+    "z": "孩子",
+    "j": "子ども",
+    "e": "child",
+    "b": "子ども",
+    "p": "noun",
+    "r": "こども"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "おやつ箱",
+    "z": "點心盒",
+    "j": "おやつを入れる箱",
+    "e": "snack box",
+    "b": "おやつ箱",
+    "p": "noun",
+    "r": "おやつばこ"
+   },
+   {
+    "t": "にそのまま"
+   },
+   {
+    "t": "入れられます",
+    "z": "能放入",
+    "j": "入れられます",
+    "e": "can put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれられます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ヨーグルトにいちごを入れます。": [
+   {
+    "t": "ヨーグルト",
+    "z": "優格",
+    "j": "ヨーグルト",
+    "e": "yogurt",
+    "b": "ヨーグルト",
+    "p": "noun",
+    "r": "ヨーグルト"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "いちご",
+    "z": "草莓",
+    "j": "いちご",
+    "e": "strawberry",
+    "b": "いちご",
+    "p": "noun",
+    "r": "いちご"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入れます",
+    "z": "放入",
+    "j": "入れます",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "いちごを洗った後、へたを取って、大きいものは半分に切ります。": [
+   {
+    "t": "いちご",
+    "z": "草莓",
+    "j": "いちご",
+    "e": "strawberry",
+    "b": "いちご",
+    "p": "noun",
+    "r": "いちご"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "洗った",
+    "z": "洗過",
+    "j": "洗いました",
+    "e": "washed",
+    "b": "洗う",
+    "p": "verb",
+    "r": "あらった"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "へた",
+    "z": "果蒂",
+    "j": "へた",
+    "e": "green tops",
+    "b": "へた",
+    "p": "noun",
+    "r": "へた"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取って",
+    "z": "取下",
+    "j": "取って",
+    "e": "remove",
+    "b": "取る",
+    "p": "verb",
+    "r": "とって"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "大きいもの",
+    "z": "大顆的",
+    "j": "大きいもの",
+    "e": "large ones",
+    "b": "大きいもの",
+    "p": "noun",
+    "r": "おおきいもの"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "半分",
+    "z": "一半",
+    "j": "半分",
+    "e": "half",
+    "b": "半分",
+    "p": "numeral",
+    "r": "はんぶん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "切ります",
+    "z": "切",
+    "j": "切ります",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "この桃は柔らかくて食べ頃です。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "桃",
+    "z": "桃子",
+    "j": "桃",
+    "e": "peach",
+    "b": "桃",
+    "p": "noun",
+    "r": "もも"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "柔らかくて",
+    "z": "柔軟，而且",
+    "j": "柔らかくて",
+    "e": "soft and",
+    "b": "柔らかい",
+    "p": "adjective",
+    "r": "やわらかくて"
+   },
+   {
+    "t": "食べ頃",
+    "z": "適合食用時機",
+    "j": "食べ頃",
+    "e": "ripe",
+    "b": "食べ頃",
+    "p": "noun",
+    "r": "たべごろ"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "桃は傷みやすいので、ほかの荷物と分けて持ち帰ります。": [
+   {
+    "t": "桃",
+    "z": "桃子",
+    "j": "桃",
+    "e": "peach",
+    "b": "桃",
+    "p": "noun",
+    "r": "もも"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "傷みやすい",
+    "z": "容易壞掉",
+    "j": "傷みやすい",
+    "e": "bruises easily",
+    "b": "傷む",
+    "p": "adjective",
+    "r": "いたみやすい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "ほかの荷物",
+    "z": "其他行李",
+    "j": "ほかの荷物",
+    "e": "other luggage",
+    "b": "荷物",
+    "p": "noun",
+    "r": "ほかのにもつ"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "分けて",
+    "z": "分開",
+    "j": "分けて",
+    "e": "separately",
+    "b": "分ける",
+    "p": "verb",
+    "r": "わけて"
+   },
+   {
+    "t": "持ち帰ります",
+    "z": "帶回家",
+    "j": "持ち帰ります",
+    "e": "carry home",
+    "b": "持ち帰る",
+    "p": "verb",
+    "r": "もちかえります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "梨を食べる前に冷やします。": [
+   {
+    "t": "梨",
+    "z": "梨子",
+    "j": "梨",
+    "e": "Japanese pear",
+    "b": "梨",
+    "p": "noun",
+    "r": "なし"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "食べる前に",
+    "z": "吃之前",
+    "j": "食べる前に",
+    "e": "before eating",
+    "b": "食べる",
+    "p": "phrase",
+    "r": "たべるまえに"
+   },
+   {
+    "t": "冷やします",
+    "z": "冷藏",
+    "j": "冷やします",
+    "e": "chill",
+    "b": "冷やす",
+    "p": "verb",
+    "r": "ひやします"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "梨はとてもみずみずしかったので、果汁がこぼれないように皿の上で切りました。": [
+   {
+    "t": "梨",
+    "z": "梨",
+    "j": "なし",
+    "e": "pear",
+    "b": "梨",
+    "p": "noun",
+    "r": "なし"
+   },
+   {
+    "t": "はとても"
+   },
+   {
+    "t": "みずみずしかった",
+    "z": "多汁的",
+    "j": "みずみずしい",
+    "e": "juicy",
+    "b": "みずみずしい",
+    "p": "adjective",
+    "r": "みずみずしかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "果汁",
+    "z": "果汁",
+    "j": "果汁",
+    "e": "juice",
+    "b": "果汁",
+    "p": "noun",
+    "r": "かじゅう"
+   },
+   {
+    "t": "がこぼれないように"
+   },
+   {
+    "t": "皿",
+    "z": "盤子",
+    "j": "皿",
+    "e": "plate",
+    "b": "皿",
+    "p": "noun",
+    "r": "さら"
+   },
+   {
+    "t": "の上で"
+   },
+   {
+    "t": "切りました",
+    "z": "切",
+    "j": "切る",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "この洋梨は食べ頃まであと二日です。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "洋梨",
+    "z": "洋梨",
+    "j": "洋梨",
+    "e": "pear",
+    "b": "洋梨",
+    "p": "noun",
+    "r": "ようなし"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "食べ頃",
+    "z": "適合食用的時候",
+    "j": "食べ頃",
+    "e": "ripe",
+    "b": "食べ頃",
+    "p": "noun",
+    "r": "たべごろ"
+   },
+   {
+    "t": "まであと"
+   },
+   {
+    "t": "二日",
+    "z": "兩天",
+    "j": "二日",
+    "e": "two days",
+    "b": "二日",
+    "p": "numeral",
+    "r": "ふつか"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "洋梨の軸の近くを押して少し柔らかければ、食べ頃だと分かります。": [
+   {
+    "t": "洋梨",
+    "z": "洋梨",
+    "j": "洋梨",
+    "e": "pear",
+    "b": "洋梨",
+    "p": "noun",
+    "r": "ようなし"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "軸",
+    "z": "果梗",
+    "j": "果梗",
+    "e": "stem",
+    "b": "軸",
+    "p": "noun",
+    "r": "じく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "近く",
+    "z": "附近",
+    "j": "近く",
+    "e": "nearby",
+    "b": "近く",
+    "p": "adverb",
+    "r": "ちかく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "押して",
+    "z": "按壓",
+    "j": "押して",
+    "e": "press",
+    "b": "押す",
+    "p": "verb",
+    "r": "おして"
+   },
+   {
+    "t": "少し",
+    "z": "稍微",
+    "j": "少し",
+    "e": "a little",
+    "b": "少し",
+    "p": "adverb",
+    "r": "すこし"
+   },
+   {
+    "t": "柔らかければ",
+    "z": "柔軟的話",
+    "j": "柔らかければ",
+    "e": "if soft",
+    "b": "柔らかい",
+    "p": "adjective",
+    "r": "やわらかければ"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "食べ頃",
+    "z": "適合食用的時機",
+    "j": "食べ頃",
+    "e": "ripe",
+    "b": "食べ頃",
+    "p": "noun",
+    "r": "たべごろ"
+   },
+   {
+    "t": "だと"
+   },
+   {
+    "t": "分かります",
+    "z": "知道",
+    "j": "分かります",
+    "e": "know",
+    "b": "分かる",
+    "p": "verb",
+    "r": "わかります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "柿の皮をむいて、くし形に切ります。": [
+   {
+    "t": "柿",
+    "z": "柿子",
+    "j": "柿",
+    "e": "persimmon",
+    "b": "柿",
+    "p": "noun",
+    "r": "かき"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "むいて",
+    "z": "剝去",
+    "j": "むいて",
+    "e": "peel",
+    "b": "むく",
+    "p": "verb",
+    "r": "むいて"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "くし形",
+    "z": "楔形",
+    "j": "くし形",
+    "e": "wedge shape",
+    "b": "くし形",
+    "p": "noun",
+    "r": "くしがた"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "切ります",
+    "z": "切",
+    "j": "切ります",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "柿が硬すぎるときは、甘くなるまで常温に置いておきます。": [
+   {
+    "t": "柿",
+    "z": "柿子",
+    "j": "柿の実",
+    "e": "persimmon",
+    "b": "柿",
+    "p": "noun",
+    "r": "かき"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "硬すぎる",
+    "z": "太硬",
+    "j": "硬い状態が過ぎる",
+    "e": "too hard",
+    "b": "硬い",
+    "p": "adjective",
+    "r": "かたすぎる"
+   },
+   {
+    "t": "ときは、"
+   },
+   {
+    "t": "甘くなる",
+    "z": "變甜",
+    "j": "甘い状態になる",
+    "e": "become sweet",
+    "b": "甘くなる",
+    "p": "verb",
+    "r": "あまくなる"
+   },
+   {
+    "t": "まで"
+   },
+   {
+    "t": "常温",
+    "z": "常溫",
+    "j": "普通の室温",
+    "e": "room temperature",
+    "b": "常温",
+    "p": "noun",
+    "r": "じょうおん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "置いておきます",
+    "z": "放置",
+    "j": "そのままの状態にしておく",
+    "e": "leave",
+    "b": "置く",
+    "p": "verb",
+    "r": "おいておきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "暑い日は冷たいすいかを食べます。": [
+   {
+    "t": "暑い日",
+    "z": "炎熱的日子",
+    "j": "暑い日",
+    "e": "hot days",
+    "b": "暑い日",
+    "p": "phrase",
+    "r": "あついひ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "冷たい",
+    "z": "冰冷的",
+    "j": "冷たい",
+    "e": "cold",
+    "b": "冷たい",
+    "p": "adjective",
+    "r": "つめたい"
+   },
+   {
+    "t": "すいか",
+    "z": "西瓜",
+    "j": "すいか",
+    "e": "watermelon",
+    "b": "すいか",
+    "p": "noun",
+    "r": "すいか"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "食べます",
+    "z": "吃",
+    "j": "食べます",
+    "e": "eat",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "すいかは冷蔵庫に入らないほど大きかったので、切ってから保存しました。": [
+   {
+    "t": "すいか",
+    "z": "西瓜",
+    "j": "すいか",
+    "e": "watermelon",
+    "b": "すいか",
+    "p": "noun",
+    "r": "すいか"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "冷蔵庫",
+    "z": "冰箱",
+    "j": "冷蔵庫",
+    "e": "refrigerator",
+    "b": "冷蔵庫",
+    "p": "noun",
+    "r": "れいぞうこ"
+   },
+   {
+    "t": "に入らないほど"
+   },
+   {
+    "t": "大きかった",
+    "z": "太大了",
+    "j": "大きかった",
+    "e": "was large",
+    "b": "大きい",
+    "p": "adjective",
+    "r": "おおきかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "切って",
+    "z": "切",
+    "j": "切る",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きって"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "保存しました",
+    "z": "保存了",
+    "j": "保存しました",
+    "e": "put away",
+    "b": "保存する",
+    "p": "verb",
+    "r": "ほぞんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "メロンを六つに切り分けます。": [
+   {
+    "t": "メロン",
+    "z": "甜瓜",
+    "j": "メロン",
+    "e": "melon",
+    "b": "メロン",
+    "p": "noun",
+    "r": "メロン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "六つ",
+    "z": "六個",
+    "j": "むっつ",
+    "e": "six",
+    "b": "六つ",
+    "p": "numeral",
+    "r": "むっつ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "切り分けます",
+    "z": "切開分成",
+    "j": "きりわけます",
+    "e": "cut into pieces",
+    "b": "切り分ける",
+    "p": "verb",
+    "r": "きりわけます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "メロンは甘い香りがしましたが、切る前にもう一日待ちました。": [
+   {
+    "t": "メロン",
+    "z": "甜瓜",
+    "j": "メロン",
+    "e": "melon",
+    "b": "メロン",
+    "p": "noun",
+    "r": "メロン"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "甘い香り",
+    "z": "甜香味",
+    "j": "あまいかおり",
+    "e": "sweet smell",
+    "b": "甘い香り",
+    "p": "phrase",
+    "r": "あまいかおり"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "しました",
+    "z": "有",
+    "j": "しました",
+    "e": "had",
+    "b": "する",
+    "p": "verb",
+    "r": "しました"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "切る前",
+    "z": "切之前",
+    "j": "きるまえ",
+    "e": "before cutting",
+    "b": "切る前",
+    "p": "phrase",
+    "r": "きるまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "もう一日",
+    "z": "再一天",
+    "j": "もういちにち",
+    "e": "another day",
+    "b": "もう一日",
+    "p": "phrase",
+    "r": "もういちにち"
+   },
+   {
+    "t": "待ちました",
+    "z": "等待了",
+    "j": "まちました",
+    "e": "waited",
+    "b": "待つ",
+    "p": "verb",
+    "r": "まちました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "包丁でパイナップルの皮をむきます。": [
+   {
+    "t": "包丁",
+    "z": "菜刀",
+    "j": "ほうちょう",
+    "e": "kitchen knife",
+    "b": "包丁",
+    "p": "noun",
+    "r": "ほうちょう"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "パイナップル",
+    "z": "鳳梨",
+    "j": "パイナップル",
+    "e": "pineapple",
+    "b": "パイナップル",
+    "p": "noun",
+    "r": "パイナップル"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "皮",
+    "j": "かわ",
+    "e": "skin",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "むきます",
+    "z": "剝",
+    "j": "むきます",
+    "e": "peel",
+    "b": "むく",
+    "p": "verb",
+    "r": "むきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "パイナップルを一口大に切った後、ふた付きの容器に入れて保存します。": [
+   {
+    "t": "パイナップル",
+    "z": "鳳梨",
+    "j": "パイナップル",
+    "e": "pineapple",
+    "b": "パイナップル",
+    "p": "noun",
+    "r": "パイナップル"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一口大",
+    "z": "一口大小",
+    "j": "一口大のかたまり",
+    "e": "bite-sized pieces",
+    "b": "一口大",
+    "p": "phrase",
+    "r": "ひとくちだい"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "切った",
+    "z": "切了",
+    "j": "切りました",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きった"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "ふた付き",
+    "z": "有蓋的",
+    "j": "ふたがついている",
+    "e": "covered",
+    "b": "ふた付き",
+    "p": "adjective",
+    "r": "ふたつき"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "容器",
+    "z": "容器",
+    "j": "容器",
+    "e": "container",
+    "b": "容器",
+    "p": "noun",
+    "r": "ようき"
+   },
+   {
+    "t": "に入れて"
+   },
+   {
+    "t": "保存します",
+    "z": "保存",
+    "j": "保存します",
+    "e": "store",
+    "b": "保存する",
+    "p": "verb",
+    "r": "ほぞんします"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "キウイフルーツをスプーンで食べます。": [
+   {
+    "t": "キウイフルーツ",
+    "z": "奇異果",
+    "j": "キウイフルーツ",
+    "e": "kiwi fruit",
+    "b": "キウイフルーツ",
+    "p": "noun",
+    "r": "キウイフルーツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "スプーン",
+    "z": "湯匙",
+    "j": "食べる道具の一つ",
+    "e": "spoon",
+    "b": "スプーン",
+    "p": "noun",
+    "r": "スプーン"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "食べます",
+    "z": "吃",
+    "j": "口に入れて味わいます",
+    "e": "eat",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "キウイフルーツがまだ硬ければ、熟しやすくするためにりんごのそばに置きます。": [
+   {
+    "t": "キウイフルーツ",
+    "z": "奇異果",
+    "j": "キウイフルーツ",
+    "e": "kiwi fruit",
+    "b": "キウイフルーツ",
+    "p": "noun",
+    "r": "キウイフルーツ"
+   },
+   {
+    "t": "がまだ"
+   },
+   {
+    "t": "硬ければ",
+    "z": "硬的話",
+    "j": "かたいならば",
+    "e": "is hard",
+    "b": "硬い",
+    "p": "adjective",
+    "r": "かたければ"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "熟しやすくする",
+    "z": "使變熟",
+    "j": "熟れるようにする",
+    "e": "make ripe easily",
+    "b": "熟しやすくする",
+    "p": "verb",
+    "r": "じゅくしやすくする"
+   },
+   {
+    "t": "ために"
+   },
+   {
+    "t": "りんご",
+    "z": "蘋果",
+    "j": "りんご",
+    "e": "apple",
+    "b": "りんご",
+    "p": "noun",
+    "r": "りんご"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "そばに",
+    "z": "旁邊",
+    "j": "近くに",
+    "e": "near",
+    "b": "そば",
+    "p": "preposition",
+    "r": "そばに"
+   },
+   {
+    "t": "置きます",
+    "z": "放置",
+    "j": "置く",
+    "e": "put",
+    "b": "置く",
+    "p": "verb",
+    "r": "おきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "紅茶にレモンを一切れ入れます。": [
+   {
+    "t": "紅茶",
+    "z": "紅茶",
+    "j": "紅茶",
+    "e": "black tea",
+    "b": "紅茶",
+    "p": "noun",
+    "r": "こうちゃ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "レモン",
+    "z": "檸檬",
+    "j": "レモン",
+    "e": "lemon",
+    "b": "レモン",
+    "p": "noun",
+    "r": "レモン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一切れ",
+    "z": "一片",
+    "j": "一切れの量",
+    "e": "one slice",
+    "b": "一切れ",
+    "p": "numeral",
+    "r": "ひときれ"
+   },
+   {
+    "t": "入れます",
+    "z": "放入",
+    "j": "入れる",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "魚にレモンを搾った後、残った半分を冷蔵庫に入れます。": [
+   {
+    "t": "魚",
+    "z": "魚",
+    "j": "魚の肉",
+    "e": "fish",
+    "b": "魚",
+    "p": "noun",
+    "r": "さかな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "レモン",
+    "z": "檸檬",
+    "j": "レモン",
+    "e": "lemon",
+    "b": "レモン",
+    "p": "noun",
+    "r": "レモン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "搾った",
+    "z": "擠壓了",
+    "j": "絞り出しました",
+    "e": "squeezed",
+    "b": "搾る",
+    "p": "verb",
+    "r": "しぼった"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "残った半分",
+    "z": "剩下的一半",
+    "j": "残っている半分",
+    "e": "remaining half",
+    "b": "残る半分",
+    "p": "phrase",
+    "r": "のこったはんぶん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "冷蔵庫",
+    "z": "冰箱",
+    "j": "冷蔵庫",
+    "e": "refrigerator",
+    "b": "冷蔵庫",
+    "p": "noun",
+    "r": "れいぞうこ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れます",
+    "z": "放入",
+    "j": "入れます",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "グレープフルーツをスプーンですくって食べます。": [
+   {
+    "t": "グレープフルーツ",
+    "z": "葡萄柚",
+    "j": "グレープフルーツ",
+    "e": "grapefruit",
+    "b": "グレープフルーツ",
+    "p": "noun",
+    "r": "グレープフルーツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "スプーン",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "スプーン",
+    "p": "noun",
+    "r": "スプーン"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "すくって",
+    "z": "挖出",
+    "j": "すくい出して",
+    "e": "scoop out",
+    "b": "すくう",
+    "p": "verb",
+    "r": "すくって"
+   },
+   {
+    "t": "食べます",
+    "z": "吃",
+    "j": "食べます",
+    "e": "eat",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "グレープフルーツは薬に影響することがあるので、食べる前に注意書きを確認しました。": [
+   {
+    "t": "グレープフルーツ",
+    "z": "葡萄柚",
+    "j": "グレープフルーツ",
+    "e": "grapefruit",
+    "b": "グレープフルーツ",
+    "p": "noun",
+    "r": "グレープフルーツ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "薬",
+    "z": "藥物",
+    "j": "薬",
+    "e": "medicine",
+    "b": "薬",
+    "p": "noun",
+    "r": "くすり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "影響する",
+    "z": "影響",
+    "j": "影響する",
+    "e": "affect",
+    "b": "影響する",
+    "p": "verb",
+    "r": "えいきょうする"
+   },
+   {
+    "t": "ことがあるので、"
+   },
+   {
+    "t": "食べる前",
+    "z": "吃之前",
+    "j": "食べる前",
+    "e": "before eating",
+    "b": "食べる前",
+    "p": "phrase",
+    "r": "たべるまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "注意書き",
+    "z": "注意事項",
+    "j": "注意書き",
+    "e": "label",
+    "b": "注意書き",
+    "p": "noun",
+    "r": "ちゅういがき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "お菓子を焼く前にさくらんぼの種を取ります。": [
+   {
+    "t": "お菓子",
+    "z": "點心",
+    "j": "おやつ",
+    "e": "sweets",
+    "b": "お菓子",
+    "p": "noun",
+    "r": "おかし"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "焼く",
+    "z": "烤",
+    "j": "やく",
+    "e": "bake",
+    "b": "焼く",
+    "p": "verb",
+    "r": "やく"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "まえ",
+    "e": "before",
+    "b": "前",
+    "p": "noun",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "さくらんぼ",
+    "z": "櫻桃",
+    "j": "さくらんぼ",
+    "e": "cherry",
+    "b": "さくらんぼ",
+    "p": "noun",
+    "r": "さくらんぼ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "種",
+    "z": "種子",
+    "j": "たね",
+    "e": "seed",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取ります",
+    "z": "取",
+    "j": "とります",
+    "e": "take",
+    "b": "取る",
+    "p": "verb",
+    "r": "とります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "さくらんぼが旬の時期は、小さいパックを買ってその日のうちに食べます。": [
+   {
+    "t": "さくらんぼ",
+    "z": "櫻桃",
+    "j": "さくらんぼ",
+    "e": "cherry",
+    "b": "さくらんぼ",
+    "p": "noun",
+    "r": "さくらんぼ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "旬",
+    "z": "當季",
+    "j": "旬",
+    "e": "in season",
+    "b": "旬",
+    "p": "noun",
+    "r": "しゅん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "時期",
+    "z": "時期",
+    "j": "じき",
+    "e": "season",
+    "b": "時期",
+    "p": "noun",
+    "r": "じき"
+   },
+   {
+    "t": "は、"
+   },
+   {
+    "t": "小さい",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさい"
+   },
+   {
+    "t": "パック",
+    "z": "包裝",
+    "j": "パック",
+    "e": "pack",
+    "b": "パック",
+    "p": "noun",
+    "r": "パック"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買って",
+    "z": "買",
+    "j": "買う",
+    "e": "buy",
+    "b": "買う",
+    "p": "verb",
+    "r": "かって"
+   },
+   {
+    "t": "その日",
+    "z": "那天",
+    "j": "その日",
+    "e": "that day",
+    "b": "その日",
+    "p": "noun",
+    "r": "そのひ"
+   },
+   {
+    "t": "のうちに"
+   },
+   {
+    "t": "食べます",
+    "z": "吃",
+    "j": "食べます",
+    "e": "eat",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "シロップ用の梅を洗います。": [
+   {
+    "t": "シロップ用",
+    "z": "糖漿用",
+    "j": "シロップ用",
+    "e": "for syrup",
+    "b": "シロップ用",
+    "p": "phrase",
+    "r": "シロップよう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "梅",
+    "z": "梅子",
+    "j": "うめ",
+    "e": "Japanese plum",
+    "b": "梅",
+    "p": "noun",
+    "r": "うめ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "洗います",
+    "z": "洗",
+    "j": "あらいます",
+    "e": "wash",
+    "b": "洗う",
+    "p": "verb",
+    "r": "あらいます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "梅を瓶に入れる前に、つまようじで一つずつへたを取ります。": [
+   {
+    "t": "梅",
+    "z": "梅子",
+    "j": "梅",
+    "e": "Japanese plum",
+    "b": "梅",
+    "p": "noun",
+    "r": "うめ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "瓶",
+    "z": "罐子",
+    "j": "瓶",
+    "e": "jar",
+    "b": "瓶",
+    "p": "noun",
+    "r": "びん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れる前に",
+    "z": "在放入之前",
+    "j": "入れる前に",
+    "e": "Before putting",
+    "b": "入れる前に",
+    "p": "phrase",
+    "r": "いれるまえに"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "つまようじ",
+    "z": "牙籤",
+    "j": "つまようじ",
+    "e": "toothpick",
+    "b": "つまようじ",
+    "p": "noun",
+    "r": "つまようじ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "一つずつ",
+    "z": "一個一個地",
+    "j": "一つずつ",
+    "e": "each",
+    "b": "一つずつ",
+    "p": "adverb",
+    "r": "ひとつずつ"
+   },
+   {
+    "t": "へたを取ります",
+    "z": "去除果梗",
+    "j": "へたを取ります",
+    "e": "remove stems",
+    "b": "取る",
+    "p": "verb",
+    "r": "へたをとります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このすももは甘くて少し酸っぱいです。": [
+   {
+    "t": "このすもも",
+    "z": "這個李子",
+    "j": "このすもも",
+    "e": "This plum",
+    "b": "すもも",
+    "p": "noun",
+    "r": "このすもも"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "甘くて",
+    "z": "甜的且",
+    "j": "甘くて",
+    "e": "sweet and",
+    "b": "甘い",
+    "p": "adjective",
+    "r": "あまくて"
+   },
+   {
+    "t": "少し酸っぱい",
+    "z": "有點酸",
+    "j": "少し酸っぱい",
+    "e": "a little sour",
+    "b": "酸っぱい",
+    "p": "adjective",
+    "r": "すこしすっぱい"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "すももがよく熟していたので、職場に持って行かずジャムにしました。": [
+   {
+    "t": "すもも",
+    "z": "李子",
+    "j": "すもも",
+    "e": "plum",
+    "b": "すもも",
+    "p": "noun",
+    "r": "すもも"
+   },
+   {
+    "t": "がよく"
+   },
+   {
+    "t": "熟していた",
+    "z": "熟透了",
+    "j": "よく熟していた",
+    "e": "was ripe",
+    "b": "熟する",
+    "p": "verb",
+    "r": "じゅくしていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "職場",
+    "z": "工作場所",
+    "j": "仕事をする場所",
+    "e": "workplace",
+    "b": "職場",
+    "p": "noun",
+    "r": "しょくば"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "持って行かず",
+    "z": "沒有帶去",
+    "j": "持って行かないで",
+    "e": "without taking",
+    "b": "持って行く",
+    "p": "verb",
+    "r": "もっていかず"
+   },
+   {
+    "t": "ジャム",
+    "z": "果醬",
+    "j": "ジャム",
+    "e": "jam",
+    "b": "ジャム",
+    "p": "noun",
+    "r": "ジャム"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "しました",
+    "z": "做了",
+    "j": "しました",
+    "e": "made",
+    "b": "する",
+    "p": "verb",
+    "r": "しました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "びわの皮を指でむきます。": [
+   {
+    "t": "びわ",
+    "z": "枇杷",
+    "j": "びわ",
+    "e": "loquat",
+    "b": "びわ",
+    "p": "noun",
+    "r": "びわ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "指",
+    "z": "手指",
+    "j": "指",
+    "e": "finger",
+    "b": "指",
+    "p": "noun",
+    "r": "ゆび"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "むきます",
+    "z": "剝",
+    "j": "むきます",
+    "e": "peel",
+    "b": "むく",
+    "p": "verb",
+    "r": "むきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "びわの大きな種を取った後、子ども用に果肉を小さく切ります。": [
+   {
+    "t": "びわ",
+    "z": "枇杷",
+    "j": "びわ",
+    "e": "loquat",
+    "b": "びわ",
+    "p": "noun",
+    "r": "びわ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "大きな種",
+    "z": "大種子",
+    "j": "大きな種",
+    "e": "large seeds",
+    "b": "種",
+    "p": "noun",
+    "r": "おおきなたね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取った",
+    "z": "取走了",
+    "j": "取った",
+    "e": "removed",
+    "b": "取る",
+    "p": "verb",
+    "r": "とった"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "子ども用",
+    "z": "給孩子用的",
+    "j": "子ども用",
+    "e": "for children",
+    "b": "子ども用",
+    "p": "phrase",
+    "r": "こどもよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "果肉",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "flesh",
+    "b": "果肉",
+    "p": "noun",
+    "r": "かにく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "小さく切ります",
+    "z": "切成小塊",
+    "j": "小さく切ります",
+    "e": "cut into small pieces",
+    "b": "切る",
+    "p": "verb",
+    "r": "ちいさくきります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "デザートにいちじくを半分に切ります。": [
+   {
+    "t": "デザート",
+    "z": "甜點",
+    "j": "デザート",
+    "e": "dessert",
+    "b": "デザート",
+    "p": "noun",
+    "r": "デザート"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "いちじく",
+    "z": "無花果",
+    "j": "いちじく",
+    "e": "fig",
+    "b": "いちじく",
+    "p": "noun",
+    "r": "いちじく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "半分",
+    "z": "一半",
+    "j": "半分",
+    "e": "half",
+    "b": "半分",
+    "p": "adjective",
+    "r": "はんぶん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "切ります",
+    "z": "切",
+    "j": "切ります",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "いちじくがとても柔らかかったので、つぶれないように容器に入れて運びました。": [
+   {
+    "t": "いちじく",
+    "z": "無花果",
+    "j": "いちじく",
+    "e": "fig",
+    "b": "いちじく",
+    "p": "noun",
+    "r": "いちじく"
+   },
+   {
+    "t": "がとても"
+   },
+   {
+    "t": "柔らかかった",
+    "z": "很軟",
+    "j": "やわらかい状態でした",
+    "e": "was soft",
+    "b": "柔らかい",
+    "p": "adjective",
+    "r": "やわらかかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "つぶれないように",
+    "z": "為了不壞掉",
+    "j": "つぶれないために",
+    "e": "so as not to be crushed",
+    "b": "つぶれる",
+    "p": "phrase",
+    "r": "つぶれないように"
+   },
+   {
+    "t": "容器",
+    "z": "容器",
+    "j": "ものを入れるもの",
+    "e": "container",
+    "b": "容器",
+    "p": "noun",
+    "r": "ようき"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れて",
+    "z": "放入",
+    "j": "なかにいれます",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれて"
+   },
+   {
+    "t": "運びました",
+    "z": "搬運了",
+    "j": "はこびました",
+    "e": "carried",
+    "b": "運ぶ",
+    "p": "verb",
+    "r": "はこびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "マンゴーの種を避けて切ります。": [
+   {
+    "t": "マンゴー",
+    "z": "芒果",
+    "j": "マンゴー",
+    "e": "mango",
+    "b": "マンゴー",
+    "p": "noun",
+    "r": "マンゴー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "種",
+    "z": "種子",
+    "j": "たね",
+    "e": "seed",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "避けて",
+    "z": "避開",
+    "j": "さけて",
+    "e": "avoid",
+    "b": "避ける",
+    "p": "verb",
+    "r": "さけて"
+   },
+   {
+    "t": "切ります",
+    "z": "切",
+    "j": "きります",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "マンゴーから甘い香りがしてきたので、デザートに出す前に冷やしました。": [
+   {
+    "t": "マンゴー",
+    "z": "芒果",
+    "j": "マンゴー",
+    "e": "mango",
+    "b": "マンゴー",
+    "p": "noun",
+    "r": "マンゴー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "甘い香り",
+    "z": "甜香",
+    "j": "あまいかおり",
+    "e": "sweet smell",
+    "b": "甘い香り",
+    "p": "phrase",
+    "r": "あまいかおり"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "してきた",
+    "z": "開始",
+    "j": "してきた",
+    "e": "started",
+    "b": "する",
+    "p": "verb",
+    "r": "してきた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "デザート",
+    "z": "甜點",
+    "j": "デザート",
+    "e": "dessert",
+    "b": "デザート",
+    "p": "noun",
+    "r": "デザート"
+   },
+   {
+    "t": "に出す前に"
+   },
+   {
+    "t": "冷やしました",
+    "z": "冷藏",
+    "j": "冷やしました",
+    "e": "chilled",
+    "b": "冷やす",
+    "p": "verb",
+    "r": "ひやしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "パパイヤの種をスプーンで取り出します。": [
+   {
+    "t": "パパイヤ",
+    "z": "木瓜",
+    "j": "パパイヤ",
+    "e": "papaya",
+    "b": "パパイヤ",
+    "p": "noun",
+    "r": "パパイヤ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "種",
+    "z": "種子",
+    "j": "たね",
+    "e": "seed",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "スプーン",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "スプーン",
+    "p": "noun",
+    "r": "スプーン"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "取り出します",
+    "z": "取出",
+    "j": "とりだします",
+    "e": "take out",
+    "b": "取り出す",
+    "p": "verb",
+    "r": "とりだします"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "パパイヤを切った後、味があっさりしていたのでライム果汁をかけました。": [
+   {
+    "t": "パパイヤ",
+    "z": "木瓜",
+    "j": "パパイヤ",
+    "e": "papaya",
+    "b": "パパイヤ",
+    "p": "noun",
+    "r": "パパイヤ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "切った",
+    "z": "切了",
+    "j": "切りました",
+    "e": "cutting",
+    "b": "切る",
+    "p": "verb",
+    "r": "きった"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "味",
+    "z": "味道",
+    "j": "味",
+    "e": "flavor",
+    "b": "味",
+    "p": "noun",
+    "r": "あじ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "あっさりしていた",
+    "z": "清淡的",
+    "j": "あっさりしていました",
+    "e": "was mild",
+    "b": "あっさりする",
+    "p": "adjective",
+    "r": "あっさりしていた"
+   },
+   {
+    "t": "ので"
+   },
+   {
+    "t": "ライム果汁",
+    "z": "萊姆汁",
+    "j": "ライムの果汁",
+    "e": "lime juice",
+    "b": "ライム果汁",
+    "p": "noun",
+    "r": "ライムかじゅう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かけました",
+    "z": "淋上了",
+    "j": "かけました",
+    "e": "added",
+    "b": "かける",
+    "p": "verb",
+    "r": "かけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "トーストにアボカドをのせます。": [
+   {
+    "t": "トースト",
+    "z": "吐司",
+    "j": "トースト",
+    "e": "toast",
+    "b": "トースト",
+    "p": "noun",
+    "r": "トースト"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "アボカド",
+    "z": "酪梨",
+    "j": "アボカド",
+    "e": "avocado",
+    "b": "アボカド",
+    "p": "noun",
+    "r": "アボカド"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "のせます",
+    "z": "放上",
+    "j": "のせます",
+    "e": "put on",
+    "b": "のせる",
+    "p": "verb",
+    "r": "のせます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "アボカドがまだ硬ければ、切らずに調理台の上で追熟させます。": [
+   {
+    "t": "アボカド",
+    "z": "酪梨",
+    "j": "アボカド",
+    "e": "avocado",
+    "b": "アボカド",
+    "p": "noun",
+    "r": "アボカド"
+   },
+   {
+    "t": "がまだ"
+   },
+   {
+    "t": "硬ければ",
+    "z": "硬的話",
+    "j": "かたいなら",
+    "e": "if hard",
+    "b": "硬い",
+    "p": "adjective",
+    "r": "かたければ"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "切らずに",
+    "z": "不切開",
+    "j": "きらないで",
+    "e": "without cutting",
+    "b": "切る",
+    "p": "verb",
+    "r": "きらずに"
+   },
+   {
+    "t": "調理台の上",
+    "z": "流理台上",
+    "j": "調理台の上",
+    "e": "on the counter",
+    "b": "調理台の上",
+    "p": "phrase",
+    "r": "ちょうりだいのうえ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "追熟させます",
+    "z": "催熟",
+    "j": "ついじゅくさせます",
+    "e": "let ripen",
+    "b": "追熟させる",
+    "p": "verb",
+    "r": "ついじゅくさせます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "シリアルにブルーベリーをのせます。": [
+   {
+    "t": "シリアル",
+    "z": "穀片",
+    "j": "シリアル",
+    "e": "cereal",
+    "b": "シリアル",
+    "p": "noun",
+    "r": "シリアル"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ブルーベリー",
+    "z": "藍莓",
+    "j": "ブルーベリー",
+    "e": "blueberry",
+    "b": "ブルーベリー",
+    "p": "noun",
+    "r": "ブルーベリー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "のせます",
+    "z": "放上",
+    "j": "のせます",
+    "e": "put on",
+    "b": "のせる",
+    "p": "verb",
+    "r": "のせます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "生のブルーベリーが高かったので、スムージー用に冷凍ブルーベリーを一袋買いました。": [
+   {
+    "t": "生のブルーベリー",
+    "z": "生藍莓",
+    "j": "なまのブルーベリー",
+    "e": "fresh blueberries",
+    "b": "ブルーベリー",
+    "p": "noun",
+    "r": "なまのブルーベリー"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "高かった",
+    "z": "很貴",
+    "j": "たかかった",
+    "e": "were expensive",
+    "b": "高い",
+    "p": "adjective",
+    "r": "たかかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "スムージー用",
+    "z": "冰沙用",
+    "j": "スムージーよう",
+    "e": "for smoothies",
+    "b": "スムージー用",
+    "p": "phrase",
+    "r": "スムージーよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "冷凍ブルーベリー",
+    "z": "冷凍藍莓",
+    "j": "冷凍ブルーベリー",
+    "e": "frozen blueberries",
+    "b": "冷凍ブルーベリー",
+    "p": "noun",
+    "r": "れいとうブルーベリー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一袋",
+    "z": "一袋",
+    "j": "一袋",
+    "e": "one bag",
+    "b": "一袋",
+    "p": "noun",
+    "r": "ひとふくろ"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "かいました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ケーキをラズベリーで飾ります。": [
+   {
+    "t": "ケーキ",
+    "z": "蛋糕",
+    "j": "ケーキ",
+    "e": "cake",
+    "b": "ケーキ",
+    "p": "noun",
+    "r": "ケーキ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "ラズベリー",
+    "z": "覆盆子",
+    "j": "ラズベリー",
+    "e": "raspberries",
+    "b": "ラズベリー",
+    "p": "noun",
+    "r": "ラズベリー"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "飾ります",
+    "z": "裝飾",
+    "j": "飾ります",
+    "e": "decorate",
+    "b": "飾る",
+    "p": "verb",
+    "r": "かざります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ラズベリーはつぶれやすいので、食べる直前に優しく洗います。": [
+   {
+    "t": "ラズベリー",
+    "z": "覆盆子",
+    "j": "ラズベリー",
+    "e": "raspberries",
+    "b": "ラズベリー",
+    "p": "noun",
+    "r": "ラズベリー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "つぶれやすい",
+    "z": "容易壓碎",
+    "j": "つぶれやすい",
+    "e": "crush easily",
+    "b": "つぶれる",
+    "p": "adjective",
+    "r": "つぶれやすい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "食べる直前",
+    "z": "吃之前",
+    "j": "食べる直前",
+    "e": "just before eating",
+    "b": "食べる直前",
+    "p": "phrase",
+    "r": "たべるちょくぜん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "優しく",
+    "z": "輕輕地",
+    "j": "優しく",
+    "e": "gently",
+    "b": "優しい",
+    "p": "adverb",
+    "r": "やさしく"
+   },
+   {
+    "t": "洗います",
+    "z": "洗",
+    "j": "洗います",
+    "e": "rinse",
+    "b": "洗う",
+    "p": "verb",
+    "r": "あらいます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "サラダにざくろの粒を加えます。": [
+   {
+    "t": "サラダ",
+    "z": "沙拉",
+    "j": "サラダ",
+    "e": "salad",
+    "b": "サラダ",
+    "p": "noun",
+    "r": "サラダ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ざくろ",
+    "z": "石榴",
+    "j": "ざくろ",
+    "e": "pomegranate",
+    "b": "ざくろ",
+    "p": "noun",
+    "r": "ザクロ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "粒",
+    "z": "顆粒",
+    "j": "つぶ",
+    "e": "seed",
+    "b": "粒",
+    "p": "noun",
+    "r": "つぶ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "加えます",
+    "z": "加入",
+    "j": "加えます",
+    "e": "add",
+    "b": "加える",
+    "p": "verb",
+    "r": "くわえます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "果汁が飛び散らないように、水を張ったボウルの中でざくろを開きました。": [
+   {
+    "t": "果汁",
+    "z": "果汁",
+    "j": "果汁",
+    "e": "juice",
+    "b": "果汁",
+    "p": "noun",
+    "r": "かじゅう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "飛び散らないように",
+    "z": "為了不飛濺",
+    "j": "飛び散らないように",
+    "e": "to prevent splashing",
+    "b": "飛び散る",
+    "p": "phrase",
+    "r": "とびちらないように"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "水",
+    "z": "水",
+    "j": "水",
+    "e": "water",
+    "b": "水",
+    "p": "noun",
+    "r": "みず"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "張った",
+    "z": "裝滿",
+    "j": "張った",
+    "e": "filled",
+    "b": "張る",
+    "p": "verb",
+    "r": "はった"
+   },
+   {
+    "t": "ボウル",
+    "z": "碗",
+    "j": "ボウル",
+    "e": "bowl",
+    "b": "ボウル",
+    "p": "noun",
+    "r": "ボウル"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "中",
+    "z": "裡面",
+    "j": "中",
+    "e": "inside",
+    "b": "中",
+    "p": "noun",
+    "r": "なか"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "ざくろ",
+    "z": "石榴",
+    "j": "ざくろ",
+    "e": "pomegranate",
+    "b": "ざくろ",
+    "p": "noun",
+    "r": "ザクロ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "開きました",
+    "z": "打開了",
+    "j": "開きました",
+    "e": "opened",
+    "b": "開く",
+    "p": "verb",
+    "r": "ひらきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ドラゴンフルーツの果肉を皮からすくい取ります。": [
+   {
+    "t": "ドラゴンフルーツ",
+    "z": "火龍果",
+    "j": "ドラゴンフルーツ",
+    "e": "dragon fruit",
+    "b": "ドラゴンフルーツ",
+    "p": "noun",
+    "r": "ドラゴンフルーツ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "果肉",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "flesh",
+    "b": "果肉",
+    "p": "noun",
+    "r": "かにく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "皮",
+    "z": "皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "すくい取ります",
+    "z": "舀取",
+    "j": "すくい取ります",
+    "e": "scoop out",
+    "b": "すくい取る",
+    "p": "phrasal verb",
+    "r": "すくいとります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ドラゴンフルーツを冷やした後、角切りにして家族と分けました。": [
+   {
+    "t": "ドラゴンフルーツ",
+    "z": "火龍果",
+    "j": "ドラゴンフルーツ",
+    "e": "dragon fruit",
+    "b": "ドラゴンフルーツ",
+    "p": "noun",
+    "r": "ドラゴンフルーツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "冷やした",
+    "z": "冷藏了",
+    "j": "冷やしました",
+    "e": "chilled",
+    "b": "冷やす",
+    "p": "verb",
+    "r": "ひやした"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "角切り",
+    "z": "切成方塊",
+    "j": "角切り",
+    "e": "cut into cubes",
+    "b": "角切り",
+    "p": "noun",
+    "r": "かくぎり"
+   },
+   {
+    "t": "にして"
+   },
+   {
+    "t": "家族",
+    "z": "家人",
+    "j": "家族",
+    "e": "family",
+    "b": "家族",
+    "p": "noun",
+    "r": "かぞく"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "分けました",
+    "z": "分了",
+    "j": "分けました",
+    "e": "shared",
+    "b": "分ける",
+    "p": "verb",
+    "r": "わけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "パッションフルーツの果肉をスプーンですくってヨーグルトにかけます。": [
+   {
+    "t": "パッションフルーツ",
+    "z": "百香果",
+    "j": "パッションフルーツ",
+    "e": "passion fruit",
+    "b": "パッションフルーツ",
+    "p": "noun",
+    "r": "パッションフルーツ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "果肉",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "pulp",
+    "b": "果肉",
+    "p": "noun",
+    "r": "かにく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "スプーン",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "スプーン",
+    "p": "noun",
+    "r": "スプーン"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "すくって",
+    "z": "舀取",
+    "j": "すくって",
+    "e": "scoop",
+    "b": "すくう",
+    "p": "verb",
+    "r": "すくって"
+   },
+   {
+    "t": "ヨーグルト",
+    "z": "優格",
+    "j": "ヨーグルト",
+    "e": "yogurt",
+    "b": "ヨーグルト",
+    "p": "noun",
+    "r": "ヨーグルト"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "かけます",
+    "z": "淋上",
+    "j": "かけます",
+    "e": "spoon over",
+    "b": "かける",
+    "p": "verb",
+    "r": "かけます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "パッションフルーツの皮にしわが出ると、中の果肉はたいてい甘くなっています。": [
+   {
+    "t": "パッションフルーツ",
+    "z": "百香果",
+    "j": "パッションフルーツ",
+    "e": "passion fruit",
+    "b": "パッションフルーツ",
+    "p": "noun",
+    "r": "ぱっしょんふるーつ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "果皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "しわ",
+    "z": "皺",
+    "j": "表面の小さな折れ目",
+    "e": "wrinkle",
+    "b": "しわ",
+    "p": "noun",
+    "r": "しわ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "出る",
+    "z": "出現",
+    "j": "現れる",
+    "e": "appear",
+    "b": "出る",
+    "p": "verb",
+    "r": "でる"
+   },
+   {
+    "t": "と、"
+   },
+   {
+    "t": "中",
+    "z": "裡面",
+    "j": "内側",
+    "e": "inside",
+    "b": "中",
+    "p": "noun",
+    "r": "なか"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "果肉",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "pulp",
+    "b": "果肉",
+    "p": "noun",
+    "r": "かにく"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "たいてい",
+    "z": "大多數",
+    "j": "ほとんどの場合",
+    "e": "usually",
+    "b": "たいてい",
+    "p": "adverb",
+    "r": "たいてい"
+   },
+   {
+    "t": "甘くなっています",
+    "z": "變甜",
+    "j": "甘い状態になっている",
+    "e": "become sweet",
+    "b": "甘くなる",
+    "p": "verb",
+    "r": "あまくなっています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ライチの皮をむいて種を取ります。": [
+   {
+    "t": "ライチ",
+    "z": "荔枝",
+    "j": "ライチ",
+    "e": "lychee",
+    "b": "ライチ",
+    "p": "noun",
+    "r": "らいち"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "果皮",
+    "j": "皮",
+    "e": "skin",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "むいて",
+    "z": "剝",
+    "j": "皮をむく",
+    "e": "peel",
+    "b": "むく",
+    "p": "verb",
+    "r": "むいて"
+   },
+   {
+    "t": "種",
+    "z": "種子",
+    "j": "種",
+    "e": "seed",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取ります",
+    "z": "取",
+    "j": "取る",
+    "e": "take",
+    "b": "取る",
+    "p": "verb",
+    "r": "とります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "生のライチは日持ちしないので、買ってから早めに食べました。": [
+   {
+    "t": "生",
+    "z": "生的",
+    "j": "新鮮な",
+    "e": "fresh",
+    "b": "生",
+    "p": "adjective",
+    "r": "なま"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ライチ",
+    "z": "荔枝",
+    "j": "ライチ",
+    "e": "lychee",
+    "b": "ライチ",
+    "p": "noun",
+    "r": "らいち"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "日持ちしない",
+    "z": "不易保存",
+    "j": "長く保存できない",
+    "e": "do not keep long",
+    "b": "日持ちする",
+    "p": "verb",
+    "r": "ひもちしない"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "買ってから",
+    "z": "買之後",
+    "j": "買った後",
+    "e": "after buying",
+    "b": "買う",
+    "p": "phrase",
+    "r": "かってから"
+   },
+   {
+    "t": "早めに",
+    "z": "盡早",
+    "j": "早く",
+    "e": "soon",
+    "b": "早め",
+    "p": "adverb",
+    "r": "はやめに"
+   },
+   {
+    "t": "食べました",
+    "z": "吃了",
+    "j": "食べた",
+    "e": "ate",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "金柑を皮ごと食べます。": [
+   {
+    "t": "金柑",
+    "z": "金柑",
+    "j": "金柑",
+    "e": "kumquat",
+    "b": "金柑",
+    "p": "noun",
+    "r": "きんかん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "皮ごと",
+    "z": "連皮",
+    "j": "皮ごと",
+    "e": "with peel",
+    "b": "皮ごと",
+    "p": "phrase",
+    "r": "かわごと"
+   },
+   {
+    "t": "食べます",
+    "z": "吃",
+    "j": "食べます",
+    "e": "eat",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "近所の人に金柑をたくさんもらったので、砂糖で甘く煮ました。": [
+   {
+    "t": "近所の人",
+    "z": "鄰居",
+    "j": "近所の人",
+    "e": "neighbor",
+    "b": "近所の人",
+    "p": "noun",
+    "r": "きんじょのひと"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "金柑",
+    "z": "金柑",
+    "j": "金柑",
+    "e": "kumquat",
+    "b": "金柑",
+    "p": "noun",
+    "r": "きんかん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "たくさん",
+    "z": "許多",
+    "j": "たくさん",
+    "e": "many",
+    "b": "たくさん",
+    "p": "adverb",
+    "r": "たくさん"
+   },
+   {
+    "t": "もらった",
+    "z": "收到了",
+    "j": "もらった",
+    "e": "received",
+    "b": "もらう",
+    "p": "verb",
+    "r": "もらった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "砂糖",
+    "z": "砂糖",
+    "j": "砂糖",
+    "e": "sugar",
+    "b": "砂糖",
+    "p": "noun",
+    "r": "さとう"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "甘く",
+    "z": "甜",
+    "j": "甘く",
+    "e": "sweetly",
+    "b": "甘い",
+    "p": "adverb",
+    "r": "あまく"
+   },
+   {
+    "t": "煮ました",
+    "z": "煮",
+    "j": "煮ました",
+    "e": "simmered",
+    "b": "煮る",
+    "p": "verb",
+    "r": "にました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "汁物に柚子の皮を少しすりおろします。": [
+   {
+    "t": "汁物",
+    "z": "湯",
+    "j": "汁物",
+    "e": "soup",
+    "b": "汁物",
+    "p": "noun",
+    "r": "しるもの"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "柚子",
+    "z": "柚子",
+    "j": "柚子",
+    "e": "yuzu",
+    "b": "柚子",
+    "p": "noun",
+    "r": "ゆず"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "皮",
+    "z": "皮",
+    "j": "皮",
+    "e": "peel",
+    "b": "皮",
+    "p": "noun",
+    "r": "かわ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "少し",
+    "z": "一點",
+    "j": "少し",
+    "e": "a little",
+    "b": "少し",
+    "p": "adverb",
+    "r": "すこし"
+   },
+   {
+    "t": "すりおろします",
+    "z": "擦碎",
+    "j": "すりおろします",
+    "e": "grate",
+    "b": "すりおろす",
+    "p": "verb",
+    "r": "すりおろします"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "カレー用にココナッツの果肉をすりおろします。": [
+   {
+    "t": "カレー用",
+    "z": "咖哩用",
+    "j": "カレーのための",
+    "e": "for curry",
+    "b": "カレー用",
+    "p": "phrase",
+    "r": "カレーよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ココナッツ",
+    "z": "椰子",
+    "j": "ココナッツ",
+    "e": "coconut",
+    "b": "ココナッツ",
+    "p": "noun",
+    "r": "ココナッツ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "果肉",
+    "z": "果肉",
+    "j": "果肉",
+    "e": "flesh",
+    "b": "果肉",
+    "p": "noun",
+    "r": "かにく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "すりおろします",
+    "z": "刨絲",
+    "j": "すりおろします",
+    "e": "grate",
+    "b": "すりおろす",
+    "p": "verb",
+    "r": "すりおろします"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "丸ごとのココナッツは開けるのが難しいので、スーパーでカット済みのものを買いました。": [
+   {
+    "t": "丸ごとのココナッツ",
+    "z": "整顆椰子",
+    "j": "丸ごとのココナッツ",
+    "e": "whole coconut",
+    "b": "ココナッツ",
+    "p": "noun",
+    "r": "まるごとのココナッツ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "開けるのが難しい",
+    "z": "打開很困難",
+    "j": "開けるのが難しい",
+    "e": "opening is difficult",
+    "b": "開ける",
+    "p": "phrase",
+    "r": "あけるのがむずかしい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "スーパー",
+    "z": "超市",
+    "j": "スーパー",
+    "e": "supermarket",
+    "b": "スーパー",
+    "p": "noun",
+    "r": "スーパー"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "カット済み",
+    "z": "已切好的",
+    "j": "カット済み",
+    "e": "ready-cut",
+    "b": "カット済み",
+    "p": "adjective",
+    "r": "カットずみ"
+   },
+   {
+    "t": "のものを"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "あんずを切って種を取ります。": [
+   {
+    "t": "あんず",
+    "z": "杏子",
+    "j": "あんず",
+    "e": "apricot",
+    "b": "あんず",
+    "p": "noun",
+    "r": "あんず"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "切って",
+    "z": "切",
+    "j": "切って",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きって"
+   },
+   {
+    "t": "種",
+    "z": "核",
+    "j": "種",
+    "e": "stone",
+    "b": "種",
+    "p": "noun",
+    "r": "たね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取ります",
+    "z": "取",
+    "j": "取ります",
+    "e": "remove",
+    "b": "取る",
+    "p": "verb",
+    "r": "とります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "生のあんずが売っていなかったので、パンには乾燥したものを使いました。": [
+   {
+    "t": "生",
+    "z": "生的",
+    "j": "新鮮な",
+    "e": "fresh",
+    "b": "生",
+    "p": "adjective",
+    "r": "なま"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "あんず",
+    "z": "杏子",
+    "j": "あんず",
+    "e": "apricot",
+    "b": "あんず",
+    "p": "noun",
+    "r": "あんず"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "売っていなかった",
+    "z": "沒有賣",
+    "j": "売っていなかった",
+    "e": "was not selling",
+    "b": "売る",
+    "p": "verb",
+    "r": "うっていなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "パン",
+    "z": "麵包",
+    "j": "パン",
+    "e": "bread",
+    "b": "パン",
+    "p": "noun",
+    "r": "パン"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "乾燥した",
+    "z": "乾燥的",
+    "j": "乾燥した",
+    "e": "dried",
+    "b": "乾燥する",
+    "p": "adjective",
+    "r": "かんそうした"
+   },
+   {
+    "t": "もの",
+    "z": "東西",
+    "j": "もの",
+    "e": "thing",
+    "b": "もの",
+    "p": "noun",
+    "r": "もの"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使いました",
+    "z": "使用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冬至の日になると、風呂に柚子を浮かべて香りを楽しみます。": [
+   {
+    "t": "冬至",
+    "z": "冬至",
+    "j": "冬至",
+    "e": "winter solstice",
+    "b": "冬至",
+    "p": "noun",
+    "r": "とうじ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "日",
+    "z": "日",
+    "j": "日",
+    "e": "day",
+    "b": "日",
+    "p": "noun",
+    "r": "ひ"
+   },
+   {
+    "t": "になると、"
+   },
+   {
+    "t": "風呂",
+    "z": "浴缸",
+    "j": "風呂",
+    "e": "bath",
+    "b": "風呂",
+    "p": "noun",
+    "r": "ふろ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "柚子",
+    "z": "柚子",
+    "j": "柚子",
+    "e": "yuzu",
+    "b": "柚子",
+    "p": "noun",
+    "r": "ゆず"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "浮かべて",
+    "z": "放入",
+    "j": "浮かべて",
+    "e": "put",
+    "b": "浮かべる",
+    "p": "verb",
+    "r": "うかべて"
+   },
+   {
+    "t": "香り",
+    "z": "香氣",
+    "j": "香り",
+    "e": "fragrance",
+    "b": "香り",
+    "p": "noun",
+    "r": "かおり"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "楽しみます",
+    "z": "享受",
+    "j": "楽しみます",
+    "e": "enjoy",
+    "b": "楽しむ",
+    "p": "verb",
+    "r": "たのしみます"
+   },
+   {
+    "t": "。"
+   }
+  ]
+ }
+}

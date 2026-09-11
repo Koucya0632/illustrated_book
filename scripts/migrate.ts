@@ -1717,21 +1717,6 @@ const DDL = [
   `DROP POLICY IF EXISTS word_localized_texts_public_read ON word_localized_texts`,
   `CREATE POLICY word_localized_texts_public_read ON word_localized_texts FOR SELECT USING (true)`,
 
-  // Japanese category names the translate pipeline never generated (it skips
-  // zodiac + custom). English names come from categories.name at read time,
-  // so only ja needs a stored row. Idempotent; leaves manual edits alone.
-  //
-  // 物見 is here for the opposite reason: it is already Japanese, so the right
-  // ja name is the zh-Hant one unchanged. Without a stored row `translate.ts`
-  // would see a category missing ja, hand 物見 to the model, and store the
-  // paraphrase it comes back with — replacing a native word with a translation
-  // of itself.
-  `INSERT INTO category_translations (category_id, language, name) VALUES
-     ('zodiac', 'ja', '星座'),
-     ('custom', 'ja', 'カスタム'),
-     ('community', 'ja', '物見')
-   ON CONFLICT (category_id, language) DO NOTHING`,
-
   // ---- localized category descriptions ----
   // The one-line description under a theme's title used to be zh-Hant for every
   // reader: `localizeCategory` swapped the *name* for ja/en and left the
@@ -1741,39 +1726,6 @@ const DDL = [
   // overlay next to the overlay's `name`.
   `ALTER TABLE categories ADD COLUMN IF NOT EXISTS description_en TEXT`,
   `ALTER TABLE category_translations ADD COLUMN IF NOT EXISTS description TEXT`,
-
-  // Hand-written rather than run through `translate.ts`: twelve fixed lines of
-  // product copy, where a model's paraphrase is worse than a person's sentence.
-  //
-  // Descriptions only. The name column is carried over from whatever row is
-  // already there (`translate.ts` wrote most of them) and only falls back to
-  // the zh-Hant name when the overlay row does not exist yet, which is the same
-  // thing a reader would have seen anyway. Writing names here would have
-  // overwritten the pipeline's work — 交通 for 乗り物, and so on.
-  //
-  // Only fills a description that is still NULL, so a later edit survives.
-  `INSERT INTO category_translations (category_id, language, name, description)
-   SELECT v.id, 'ja', COALESCE(ct.name, c.name_zh), v.description
-     FROM (VALUES
-       ('custom',         '自分の写真から作った単語カード'),
-       ('community',      'ほかの人が公開した図鑑から保存したカード'),
-       ('kitchen',        '料理をする場所'),
-       ('bathroom',       '洗面と身支度の空間'),
-       ('bedroom',        '休息と睡眠の場所'),
-       ('living-room',    '家族が集まる空間'),
-       ('office',         '仕事と勉強の環境'),
-       ('street',         '街を歩く'),
-       ('supermarket',    '日々の買い物'),
-       ('transportation', '世界を移動する手段'),
-       ('seasonings',     '料理をおいしくする名脇役'),
-       ('zodiac',         '十二星座と英語の名前')
-     ) AS v(id, description)
-     JOIN categories c ON c.id = v.id
-     LEFT JOIN category_translations ct
-       ON ct.category_id = v.id AND ct.language = 'ja'
-   ON CONFLICT (category_id, language) DO UPDATE SET
-     description = EXCLUDED.description
-   WHERE category_translations.description IS NULL`,
 
   // ---- feedback: general user feedback from the app's 意見收集 form ----
   // Account-level (not tied to a word/card) — study-card issues go through
@@ -1983,6 +1935,51 @@ async function seedCategoriesIntoDb(sql: any) {
   }
   const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;
   console.log(`[migrate] categories: ${catCount} rows`);
+}
+
+// These rows depend on categories, so they must run after
+// seedCategoriesIntoDb. Keeping them in the DDL batch makes a clean database
+// fail its category_translations foreign key before the seed rows exist.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function seedCategoryTranslationsIntoDb(sql: any) {
+  // Japanese names the translate pipeline never generated (it skips zodiac +
+  // custom). 物見 is already Japanese and must not be paraphrased by the model.
+  await sql`
+    INSERT INTO category_translations (category_id, language, name) VALUES
+      ('zodiac', 'ja', '星座'),
+      ('fruits', 'ja', '果物'),
+      ('custom', 'ja', 'カスタム'),
+      ('community', 'ja', '物見')
+    ON CONFLICT (category_id, language) DO NOTHING
+  `;
+
+  // Hand-written product copy. Preserve translated names and only fill a
+  // description that is still missing, so later editorial changes survive.
+  await sql`
+    INSERT INTO category_translations (category_id, language, name, description)
+    SELECT v.id, 'ja', COALESCE(ct.name, c.name_zh), v.description
+      FROM (VALUES
+        ('custom',         '自分の写真から作った単語カード'),
+        ('community',      'ほかの人が公開した図鑑から保存したカード'),
+        ('kitchen',        '料理をする場所'),
+        ('bathroom',       '洗面と身支度の空間'),
+        ('bedroom',        '休息と睡眠の場所'),
+        ('living-room',    '家族が集まる空間'),
+        ('office',         '仕事と勉強の環境'),
+        ('street',         '街を歩く'),
+        ('supermarket',    '日々の買い物'),
+        ('transportation', '世界を移動する手段'),
+        ('seasonings',     '料理をおいしくする名脇役'),
+        ('fruits',         '日常の定番と四季の旬を楽しむ果物'),
+        ('zodiac',         '十二星座と英語の名前')
+      ) AS v(id, description)
+      JOIN categories c ON c.id = v.id
+      LEFT JOIN category_translations ct
+        ON ct.category_id = v.id AND ct.language = 'ja'
+    ON CONFLICT (category_id, language) DO UPDATE SET
+      description = EXCLUDED.description
+    WHERE category_translations.description IS NULL
+  `;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -2665,6 +2662,7 @@ async function main() {
     // categories.id, so any newly added category must exist first or word
     // seeding would fail on an existing DB where the FK is already attached.
     await seedCategoriesIntoDb(sql);
+    await seedCategoryTranslationsIntoDb(sql);
 
     // Seed only the words missing from the DB — idempotent, so newly added
     // seed entries (e.g. supplemental-words.json) get inserted on every deploy

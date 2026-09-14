@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
+import { isClientPlatform } from "@/lib/client-platforms";
 
 export const runtime = "nodejs";
 
 const FEEDBACK_TYPES = new Set(["feature", "bug", "content", "other"]);
-const PLATFORMS = new Set(["web", "ios"]);
 const LANGS = new Set(["zh-Hant", "zh-Hans", "ja", "en"]);
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     !requestId || !UUID_RE.test(requestId) ||
     !feedbackType || !FEEDBACK_TYPES.has(feedbackType) ||
     !description ||
-    !platform || !PLATFORMS.has(platform) ||
+    !isClientPlatform(platform) ||
     !uiLang || !LANGS.has(uiLang)
   ) {
     return NextResponse.json({ error: "invalid feedback" }, { status: 400 });

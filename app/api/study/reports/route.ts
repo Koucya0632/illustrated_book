@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
+import { isClientPlatform } from "@/lib/client-platforms";
 
 export const runtime = "nodejs";
 
 const ISSUE_TYPES = new Set(["image", "content", "audio", "answer", "ui", "other"]);
 const MODES = new Set(["new", "review"]);
-const PLATFORMS = new Set(["web", "ios"]);
 const LANGS = new Set(["zh-Hant", "zh-Hans", "ja", "en"]);
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -94,7 +94,7 @@ export async function POST(req: Request) {
     !description ||
     !mode || !MODES.has(mode) ||
     !phase ||
-    !platform || !PLATFORMS.has(platform) ||
+    !isClientPlatform(platform) ||
     !uiLang || !LANGS.has(uiLang) ||
     !Number.isSafeInteger(cardId) || cardId <= 0
   ) {

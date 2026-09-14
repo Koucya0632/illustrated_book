@@ -756,7 +756,7 @@ const DDL = [
      mode              TEXT NOT NULL CHECK (mode IN ('new','review')),
      phase             TEXT NOT NULL,
      selected_answer   TEXT,
-     platform          TEXT NOT NULL CHECK (platform IN ('web','ios')),
+     platform          TEXT NOT NULL CHECK (platform IN ('web','ios','android')),
      app_version       TEXT,
      ui_lang           TEXT NOT NULL,
      snapshot          JSONB NOT NULL DEFAULT '{}'::jsonb,
@@ -1767,6 +1767,23 @@ const DDL = [
        ALTER TABLE feedback DROP CONSTRAINT IF EXISTS feedback_platform_check;
        ALTER TABLE feedback DROP CONSTRAINT IF EXISTS feedback_platform_chk;
        ALTER TABLE feedback ADD CONSTRAINT feedback_platform_chk
+         CHECK (platform IN ('web','ios','android'));
+     END IF;
+   END $$`,
+  // The same widening for study_reports, which the feedback one above missed:
+  // production still had CHECK (platform IN ('web','ios')) on 2026-09-14, so
+  // once the route let android through, an Android 回報問題 would have failed at
+  // insert with a 500.
+  // tests/client-platforms.test.ts now holds every platform CHECK to one list.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'study_reports_platform_chk'
+         AND pg_get_constraintdef(oid) LIKE '%android%'
+     ) THEN
+       ALTER TABLE study_reports DROP CONSTRAINT IF EXISTS study_reports_platform_check;
+       ALTER TABLE study_reports DROP CONSTRAINT IF EXISTS study_reports_platform_chk;
+       ALTER TABLE study_reports ADD CONSTRAINT study_reports_platform_chk
          CHECK (platform IN ('web','ios','android'));
      END IF;
    END $$`,

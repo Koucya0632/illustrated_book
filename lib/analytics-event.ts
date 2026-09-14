@@ -1,3 +1,5 @@
+import { isClientPlatform } from "./client-platforms";
+
 export const ANALYTICS_EVENT_MAX_BODY_BYTES = 4_096;
 
 const VALID_TYPES = new Set([
@@ -8,7 +10,6 @@ const VALID_TYPES = new Set([
   "atlas_public_item_viewed", "atlas_public_saved",
   "author_profile_viewed",
 ]);
-const VALID_PLATFORMS = new Set(["web", "ios", "android"]);
 
 export interface AnalyticsEventInput {
   type: string;
@@ -50,7 +51,7 @@ export function parseAnalyticsEvent(input: unknown): AnalyticsEventParseResult {
   const sessionId = optionalString(body.sessionId, "sessionId", 128);
   if (!sessionId.ok) return sessionId;
   const platform = body.platform === undefined ? "web" : body.platform;
-  if (typeof platform !== "string" || !VALID_PLATFORMS.has(platform)) {
+  if (typeof platform !== "string" || !isClientPlatform(platform)) {
     return { ok: false, error: "invalid platform" };
   }
 

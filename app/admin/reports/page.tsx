@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getSql } from "@/lib/db";
 import ReportActions from "./ReportActions";
+import { CLIENT_PLATFORMS, PLATFORM_LABELS } from "@/lib/client-platforms";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +56,7 @@ export default async function ReportsPage(
   const searchParams = await props.searchParams;
   const status = allowed(searchParams.status, Object.keys(STATUS_LABELS));
   const issueType = allowed(searchParams.type, Object.keys(ISSUE_LABELS));
-  const platform = allowed(searchParams.platform, ["web", "ios"]);
+  const platform = allowed(searchParams.platform, [...CLIENT_PLATFORMS]);
   const days = allowed(searchParams.days, ["7", "30", "90"]);
   const sql = getSql();
 
@@ -113,7 +114,7 @@ export default async function ReportsPage(
       <form className="grid gap-3 rounded-xl2 bg-white p-4 shadow-card sm:grid-cols-4">
         <Filter name="status" label="狀態" value={status} options={STATUS_LABELS} />
         <Filter name="type" label="問題類型" value={issueType} options={ISSUE_LABELS} />
-        <Filter name="platform" label="平台" value={platform} options={{ web: "網頁", ios: "iOS" }} />
+        <Filter name="platform" label="平台" value={platform} options={PLATFORM_LABELS} />
         <Filter name="days" label="日期" value={days} options={{ "7": "近 7 天", "30": "近 30 天", "90": "近 90 天" }} />
         <div className="flex gap-2 sm:col-span-4">
           <button className="rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white">套用篩選</button>

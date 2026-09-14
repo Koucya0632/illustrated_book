@@ -1,13 +1,19 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { addFavorite, getFavorites, removeFavorite } from "@/lib/users-db";
+import { presentsBearerToken } from "@/lib/refused-bearer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: Request) {
   const userId = await getCurrentUserId();
-  if (!userId) return NextResponse.json({ favorites: [] });
+  if (!userId) {
+    // A refused token is not a guest: see lib/refused-bearer.ts.
+    return presentsBearerToken(req)
+      ? NextResponse.json({ error: "unauthorized" }, { status: 401 })
+      : NextResponse.json({ favorites: [] });
+  }
   const favorites = await getFavorites(userId);
   return NextResponse.json({ favorites });
 }

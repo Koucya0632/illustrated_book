@@ -5,6 +5,7 @@ import { getAllAtlasMasteryWithSchedule, getSavedCommunityMastery } from "@/lib/
 import { applyDecay } from "@/lib/mastery";
 import { targetLanguageFor } from "@/lib/settings";
 import { readLearningDirection } from "@/lib/cache-headers";
+import { presentsBearerToken } from "@/lib/refused-bearer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,7 +19,12 @@ export const dynamic = "force-dynamic";
 // an empty map → every word renders as 未學 client-side.
 export async function GET(req: Request) {
   const userId = await getCurrentUserIdFast();
-  if (!userId) return NextResponse.json({ items: [] });
+  if (!userId) {
+    // A refused token is not a guest: see lib/refused-bearer.ts.
+    return presentsBearerToken(req)
+      ? NextResponse.json({ error: "unauthorized" }, { status: 401 })
+      : NextResponse.json({ items: [] });
+  }
 
   const settings = await getSettings(userId);
   // Direction follows the caller when it states one: mastery lives in a

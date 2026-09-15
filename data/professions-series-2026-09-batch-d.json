@@ -1,0 +1,1132 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "D",
+  "state": "candidate-data-reviewed",
+  "entries": [
+    {
+      "id": "construction-worker",
+      "word": "construction worker",
+      "chinese": "建築工人",
+      "chineseDefinition": "在建築或土木工程現場搬運材料、操作工具，並依安全規範協助興建或修繕設施的工人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈstrʌk.ʃən ˌwɝː.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "建築工人",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who handles materials and tools to help build or repair structures at a construction site.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「建設作業員」とは、建築や土木の工事現場で資材を運び、工具や機械を使って建物や設備を造る作業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The construction worker carries materials at the building site.",
+          "ja": "建設作業員が工事現場で資材を運びます。",
+          "zh": "建築工人在工地搬運材料。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before the concrete truck arrived, the construction worker checked that no one was in the work area.",
+          "ja": "生コン車が到着する前に、建設作業員は作業場所に人がいないことを確認しました。",
+          "zh": "混凝土車抵達前，建築工人確認了作業區內沒有人。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "carpenter",
+        "electrician",
+        "roofer"
+      ],
+      "ja": "建設作業員",
+      "jaReading": "けんせつさぎょういん",
+      "jaReadingSegments": [
+        {
+          "text": "建設",
+          "ruby": "けんせつ"
+        },
+        {
+          "text": "作業員",
+          "ruby": "さぎょういん"
+        }
+      ]
+    },
+    {
+      "id": "carpenter",
+      "word": "carpenter",
+      "chinese": "木工",
+      "chineseDefinition": "使用木材、鋸子、刨刀與量具製作或修繕建築木構、門窗及其他木製部分的工匠。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːr.pən.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "木工",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled worker who cuts, shapes, and joins wood to build or repair wooden parts of buildings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「大工」とは、木材を測って切り、組み立てることで、建物の木造部分などを造ったり修理したりする職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The carpenter measures a wooden board with a tape measure.",
+          "ja": "大工が巻尺で木の板を測ります。",
+          "zh": "木工拿捲尺測量一塊木板。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the door frame was uneven, the carpenter trimmed the wood until it fit properly.",
+          "ja": "ドア枠がゆがんでいたので、大工が木材を削ってぴったり収まるように調整しました。",
+          "zh": "因為門框不平整，木工削整木料，直到能妥善嵌合。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "construction-worker",
+        "roofer",
+        "plasterer"
+      ],
+      "ja": "大工",
+      "jaReading": "だいく",
+      "jaReadingSegments": [
+        {
+          "text": "大工",
+          "ruby": "だいく"
+        }
+      ]
+    },
+    {
+      "id": "electrician",
+      "word": "electrician",
+      "chinese": "電工",
+      "chineseDefinition": "安裝、檢查與維修建築物的電線、插座、開關及配電設備，並依電氣安全規範施工的技術人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˌlekˈtrɪʃ.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電工",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled worker who installs, checks, and repairs electrical wiring, outlets, switches, and related equipment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「電気工事士」とは、電気配線やコンセント、分電盤などを安全基準に従って設置、点検、修理する技術者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The electrician checks the breaker panel with a tester.",
+          "ja": "電気工事士がテスターで分電盤を点検します。",
+          "zh": "電工使用測試器檢查配電盤。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After turning off the power, the electrician replaced the damaged outlet and tested the circuit.",
+          "ja": "電源を切ったあと、電気工事士が壊れたコンセントを交換して回路を確認しました。",
+          "zh": "關閉電源後，電工更換了損壞的插座並測試電路。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "construction-worker",
+        "plumber",
+        "appliance-repair-technician"
+      ],
+      "ja": "電気工事士",
+      "jaReading": "でんきこうじし",
+      "jaReadingSegments": [
+        {
+          "text": "電気",
+          "ruby": "でんき"
+        },
+        {
+          "text": "工事士",
+          "ruby": "こうじし"
+        }
+      ]
+    },
+    {
+      "id": "plumber",
+      "word": "plumber",
+      "chinese": "水管工",
+      "chineseDefinition": "安裝與維修供水、排水管線及相關設備，並處理漏水或阻塞問題的技術人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplʌm.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "水管工",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled worker who installs and repairs water and drainage pipes and fixes leaks or blockages.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「配管工」とは、給水管や排水管などを設置、修理し、水漏れや詰まりを直す技術者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The plumber repairs the drainpipe under the sink.",
+          "ja": "配管工が流し台の下の排水管を修理します。",
+          "zh": "水管工修理流理臺下方的排水管。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because water was leaking, the plumber shut off the main valve before replacing the damaged pipe.",
+          "ja": "水漏れしていたので、配管工は傷んだ管を交換する前に元栓を閉めました。",
+          "zh": "因為正在漏水，水管工在更換損壞的管線前先關閉了總閥。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "electrician",
+        "appliance-repair-technician",
+        "construction-worker"
+      ],
+      "ja": "配管工",
+      "jaReading": "はいかんこう",
+      "jaReadingSegments": [
+        {
+          "text": "配管工",
+          "ruby": "はいかんこう"
+        }
+      ]
+    },
+    {
+      "id": "painter",
+      "word": "painter",
+      "chinese": "油漆工",
+      "chineseDefinition": "使用滾筒、刷具或噴塗設備為建築牆面與其他表面上漆，並事先遮蔽保護周圍物品的工人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpeɪn.t̬ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "油漆工",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who prepares and paints walls or other building surfaces using brushes, rollers, or spray equipment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「塗装工」とは、周囲を養生してから、ローラーや刷毛などで建物の壁や設備の表面に塗料を塗る作業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The painter applies white paint to the wall with a roller.",
+          "ja": "塗装工がローラーで壁に白い塗料を塗ります。",
+          "zh": "油漆工用滾筒把白色油漆塗到牆上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the furniture was still in the room, the painter covered the floor and shelves before starting.",
+          "ja": "家具がまだ部屋にあったので、塗装工は作業前に床と棚を養生しました。",
+          "zh": "因為家具仍在房間裡，油漆工在開工前遮蓋保護了地板與層架。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "plasterer",
+        "construction-worker",
+        "roofer"
+      ],
+      "ja": "塗装工",
+      "jaReading": "とそうこう",
+      "jaReadingSegments": [
+        {
+          "text": "塗装工",
+          "ruby": "とそうこう"
+        }
+      ]
+    },
+    {
+      "id": "plasterer",
+      "word": "plasterer",
+      "chinese": "泥作師傅",
+      "chineseDefinition": "使用抹刀把灰泥、砂漿或類似材料塗抹在牆面與地面，使表面平整或形成所需質感的工匠。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplæs.tɚ.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "泥作師傅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled worker who applies and smooths plaster, mortar, or similar materials on walls and other surfaces.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「左官」とは、こてを使って壁や床にしっくいやモルタルなどを塗り、表面を平らに仕上げる職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The plasterer smooths the wall with a trowel.",
+          "ja": "左官がこてで壁の表面を平らにします。",
+          "zh": "泥作師傅用抹刀把牆面抹平。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the base coat had dried, the plasterer applied another layer of plaster to make the wall even.",
+          "ja": "下塗りが乾いたので、左官が壁を平らにするためにしっくいをもう一層塗りました。",
+          "zh": "因為底層已經乾了，泥作師傅又塗上一層灰泥，使牆面平整。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "painter",
+        "construction-worker",
+        "carpenter"
+      ],
+      "ja": "左官",
+      "jaReading": "さかん",
+      "jaReadingSegments": [
+        {
+          "text": "左官",
+          "ruby": "さかん"
+        }
+      ]
+    },
+    {
+      "id": "roofer",
+      "word": "roofer",
+      "chinese": "屋頂工",
+      "chineseDefinition": "在屋頂安裝、修繕與更換屋瓦、防水層等材料，並使用防墜裝備安全作業的工人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈruː.fɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "屋頂工",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled worker who installs and repairs roofs, including roof tiles and waterproof layers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「屋根職人」とは、屋根瓦や防水材などを取り付け、屋根の傷んだ部分を修理する職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The roofer replaces a broken roof tile.",
+          "ja": "屋根職人が割れた屋根瓦を交換します。",
+          "zh": "屋頂工更換一片破裂的屋瓦。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before climbing onto the roof, the roofer attached the safety harness and checked the anchor point.",
+          "ja": "屋根に上がる前に、屋根職人は安全帯を装着して固定箇所を確認しました。",
+          "zh": "爬上屋頂前，屋頂工穿戴好安全吊帶並檢查了固定點。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "construction-worker",
+        "carpenter",
+        "painter"
+      ],
+      "ja": "屋根職人",
+      "jaReading": "やねしょくにん",
+      "jaReadingSegments": [
+        {
+          "text": "屋根",
+          "ruby": "やね"
+        },
+        {
+          "text": "職人",
+          "ruby": "しょくにん"
+        }
+      ]
+    },
+    {
+      "id": "welder",
+      "word": "welder",
+      "chinese": "焊接工",
+      "chineseDefinition": "使用焊接設備接合或修補金屬構件，並依安全程序配戴防護面罩與手套的技術人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwel.dɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "焊接工",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled worker who uses welding equipment to join or repair metal parts while following safety procedures.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「溶接工」とは、溶接機器を使って金属部品を接合・修理し、防護具を着用して安全に作業する技術者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The welder puts on a protective mask before starting work.",
+          "ja": "溶接工は作業を始める前に防護面を着けます。",
+          "zh": "焊接工開始工作前戴上防護面罩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After checking that the area was safe, the welder repaired the damaged metal railing.",
+          "ja": "周囲の安全を確認してから、溶接工は壊れた金属製の手すりを修理しました。",
+          "zh": "確認周圍環境安全後，焊接工修好了損壞的金屬欄杆。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "construction-worker",
+        "electrician",
+        "carpenter"
+      ],
+      "ja": "溶接工",
+      "jaReading": "ようせつこう",
+      "jaReadingSegments": [
+        {
+          "text": "溶接工",
+          "ruby": "ようせつこう"
+        }
+      ]
+    },
+    {
+      "id": "crane-operator",
+      "word": "crane operator",
+      "chinese": "起重機操作員",
+      "chineseDefinition": "在工地或貨場操作起重機，依照指揮信號安全吊起、移動並放置重物的專業操作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkreɪn ˌɑː.pə.reɪ.t̬ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "起重機操作員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A trained operator who controls a crane to lift, move, and place heavy loads safely.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「クレーン運転士」とは、合図を確認しながらクレーンを操作し、重量物を安全につり上げて移動させる専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The crane operator lifts a steel beam at the construction site.",
+          "ja": "クレーン運転士が工事現場で鉄骨をつり上げます。",
+          "zh": "起重機操作員在工地吊起一根鋼樑。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the ground worker gave the signal, the crane operator slowly moved the load to the designated area.",
+          "ja": "地上の作業員が合図を出すと、クレーン運転士は吊り荷を指定場所へゆっくり移動させました。",
+          "zh": "地面作業員發出信號後，起重機操作員緩慢地把吊掛物移到指定區域。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "construction-worker",
+        "surveyor",
+        "truck-driver"
+      ],
+      "ja": "クレーン運転士",
+      "jaReading": "クレーンうんてんし",
+      "jaReadingSegments": [
+        {
+          "text": "クレーン",
+          "ruby": null
+        },
+        {
+          "text": "運転士",
+          "ruby": "うんてんし"
+        }
+      ]
+    },
+    {
+      "id": "surveyor",
+      "word": "surveyor",
+      "chinese": "測量員",
+      "chineseDefinition": "使用測量儀器測定土地的位置、高度與邊界，並記錄工程或地圖製作所需資料的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/sɚˈveɪ.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "測量員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who measures land positions, heights, and boundaries for construction, mapping, or property records.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「測量士」とは、測量機器で土地の位置、高さ、境界などを測り、工事や地図に必要なデータを記録する専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The surveyor sets up a tripod beside the road.",
+          "ja": "測量士が道路脇に三脚を設置します。",
+          "zh": "測量員在道路旁架設三腳架。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before construction began, the surveyor recorded the boundary and checked each measurement twice.",
+          "ja": "工事が始まる前に、測量士は境界を記録し、それぞれの測定値を二度確認しました。",
+          "zh": "施工開始前，測量員記錄了邊界，並逐一複核每項測量值。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "construction-worker",
+        "crane-operator",
+        "carpenter"
+      ],
+      "ja": "測量士",
+      "jaReading": "そくりょうし",
+      "jaReadingSegments": [
+        {
+          "text": "測量士",
+          "ruby": "そくりょうし"
+        }
+      ]
+    },
+    {
+      "id": "building-cleaner",
+      "word": "building cleaner",
+      "chinese": "大樓清潔員",
+      "chineseDefinition": "在辦公大樓等建築物內清潔大廳、走廊、洗手間與公共區域，並處理室內髒污的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɪl.dɪŋ ˌkliː.nɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "大樓清潔員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who cleans indoor shared areas such as lobbies, corridors, and restrooms in office buildings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ビル清掃員」とは、オフィスビルなどのロビー、廊下、トイレといった建物内の共用部分を清掃する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The building cleaner mops the lobby before the office opens.",
+          "ja": "ビル清掃員がオフィスの始業前にロビーをモップで拭きます。",
+          "zh": "大樓清潔員在辦公大樓開放前拖洗大廳地板。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After noticing a spill near the elevator, the building cleaner placed a warning sign and cleaned the floor.",
+          "ja": "エレベーターの近くで液体がこぼれているのを見つけ、ビル清掃員は注意看板を置いて床を清掃しました。",
+          "zh": "發現電梯附近有液體灑出後，大樓清潔員放置警示牌並清理地板。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "street-cleaner",
+        "hotel-housekeeper",
+        "window-cleaner"
+      ],
+      "ja": "ビル清掃員",
+      "jaReading": "ビルせいそういん",
+      "jaReadingSegments": [
+        {
+          "text": "ビル",
+          "ruby": null
+        },
+        {
+          "text": "清掃員",
+          "ruby": "せいそういん"
+        }
+      ]
+    },
+    {
+      "id": "street-cleaner",
+      "word": "street cleaner",
+      "chinese": "道路清潔員",
+      "chineseDefinition": "在道路、人行道與路邊清掃落葉、泥沙及散落垃圾，維持公共道路環境整潔的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈstriːt ˌkliː.nɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "道路清潔員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who sweeps leaves, dirt, and loose litter from streets, sidewalks, and roadside areas.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「道路清掃員」とは、道路や歩道、路肩にある落ち葉、土砂、散乱ごみなどを清掃する作業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The street cleaner sweeps leaves from the sidewalk.",
+          "ja": "道路清掃員が歩道の落ち葉を掃きます。",
+          "zh": "道路清潔員清掃人行道上的落葉。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the festival ended, the street cleaners collected litter before the morning traffic became heavy.",
+          "ja": "祭りが終わった後、道路清掃員たちは朝の交通量が増える前に散乱ごみを集めました。",
+          "zh": "祭典結束後，道路清潔員趕在早晨車流變多前收集散落的垃圾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "building-cleaner",
+        "garbage-collector",
+        "parking-attendant"
+      ],
+      "ja": "道路清掃員",
+      "jaReading": "どうろせいそういん",
+      "jaReadingSegments": [
+        {
+          "text": "道路",
+          "ruby": "どうろ"
+        },
+        {
+          "text": "清掃員",
+          "ruby": "せいそういん"
+        }
+      ]
+    },
+    {
+      "id": "garbage-collector",
+      "word": "garbage collector",
+      "chinese": "垃圾清運員",
+      "chineseDefinition": "依固定路線收取住家或商家的袋裝垃圾與垃圾桶內容物，並裝入垃圾車運往處理設施的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɡɑːr.bɪdʒ kəˌlek.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "垃圾清運員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who collects household or business waste along a route and loads it into a garbage truck for transport.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ごみ収集作業員」とは、決められた経路で家庭や事業所のごみを回収し、ごみ収集車に積み込む作業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The garbage collector loads the bags into the garbage truck.",
+          "ja": "ごみ収集作業員がごみ袋を収集車に積み込みます。",
+          "zh": "垃圾清運員把垃圾袋裝上垃圾車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the street was narrow, the garbage collectors carried the garbage bags to the truck parked at the corner.",
+          "ja": "道幅が狭かったため、ごみ収集作業員たちはごみ袋を角に止めた収集車まで運びました。",
+          "zh": "因為道路狹窄，垃圾清運員把垃圾袋搬到停在轉角的垃圾車旁。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "street-cleaner",
+        "building-cleaner",
+        "truck-driver"
+      ],
+      "ja": "ごみ収集作業員",
+      "jaReading": "ごみしゅうしゅうさぎょういん",
+      "jaReadingSegments": [
+        {
+          "text": "ごみ",
+          "ruby": null
+        },
+        {
+          "text": "収集",
+          "ruby": "しゅうしゅう"
+        },
+        {
+          "text": "作業員",
+          "ruby": "さぎょういん"
+        }
+      ]
+    },
+    {
+      "id": "window-cleaner",
+      "word": "window cleaner",
+      "chinese": "玻璃清潔員",
+      "chineseDefinition": "使用刮水器與清潔工具清洗建築物窗戶及大片玻璃表面，高處作業時需使用安全繩與防墜裝備。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwɪn.doʊ ˌkliː.nɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "玻璃清潔員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who cleans windows and large glass surfaces, using fall-protection equipment when working at height.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「窓清掃員」とは、スクイージーなどで窓や大きなガラス面を清掃し、高所では安全器具を使用する作業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The window cleaner wipes the shop window with a squeegee.",
+          "ja": "窓清掃員がスクイージーで店の窓を拭きます。",
+          "zh": "玻璃清潔員用刮水器擦拭商店櫥窗。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before cleaning the upper-floor windows, the window cleaner checked the harness and secured the rope.",
+          "ja": "上階の窓を清掃する前に、窓清掃員は安全帯を点検してロープを固定しました。",
+          "zh": "清潔高樓層窗戶前，玻璃清潔員檢查安全吊帶並固定繩索。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "building-cleaner",
+        "painter",
+        "roofer"
+      ],
+      "ja": "窓清掃員",
+      "jaReading": "まどせいそういん",
+      "jaReadingSegments": [
+        {
+          "text": "窓",
+          "ruby": "まど"
+        },
+        {
+          "text": "清掃員",
+          "ruby": "せいそういん"
+        }
+      ]
+    },
+    {
+      "id": "hotel-housekeeper",
+      "word": "hotel housekeeper",
+      "chinese": "飯店房務員",
+      "chineseDefinition": "在飯店客房內更換床單與毛巾、清潔房間並補充盥洗用品的房務工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/hoʊˈtel ˈhaʊsˌkiː.pɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飯店房務員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hotel worker who cleans guest rooms, makes beds, replaces towels, and restocks room supplies.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「客室清掃員」とは、ホテルの客室を清掃し、ベッドを整え、タオルや備品を補充する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The hotel housekeeper replaced the towels in my room.",
+          "ja": "客室清掃員が私の部屋のタオルを交換しました。",
+          "zh": "飯店房務員更換了我房間裡的毛巾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the guests checked out, the hotel housekeeper made the bed and restocked the toiletries.",
+          "ja": "客がチェックアウトしたあと、客室清掃員はベッドを整え、アメニティーを補充しました。",
+          "zh": "房客退房後，飯店房務員整理床鋪並補齊盥洗用品。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "building-cleaner",
+        "hotel-receptionist",
+        "laundry-worker"
+      ],
+      "ja": "客室清掃員",
+      "jaReading": "きゃくしつせいそういん",
+      "jaReadingSegments": [
+        {
+          "text": "客室",
+          "ruby": "きゃくしつ"
+        },
+        {
+          "text": "清掃員",
+          "ruby": "せいそういん"
+        }
+      ]
+    },
+    {
+      "id": "gardener",
+      "word": "gardener",
+      "chinese": "園丁",
+      "chineseDefinition": "照料庭園與綠地，負責修剪植物、除草、澆水及維持步道周邊整潔的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɡɑːr.dən.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "園丁",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who cares for gardens by planting, watering, weeding, and trimming plants.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「庭師」とは、庭の植物を植え、手入れし、木や生け垣を剪定して景観を整える職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The gardener trimmed the hedge by the gate.",
+          "ja": "庭師が門のそばの生け垣を刈り込みました。",
+          "zh": "園丁修剪了大門旁的樹籬。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because several branches blocked the path, the gardener cut them back before the park opened.",
+          "ja": "数本の枝が通路をふさいでいたので、庭師は開園前に枝を切り戻しました。",
+          "zh": "因為幾根樹枝擋住步道，園丁在公園開放前將它們剪短。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "street-cleaner",
+        "pest-control-worker",
+        "construction-worker"
+      ],
+      "ja": "庭師",
+      "jaReading": "にわし",
+      "jaReadingSegments": [
+        {
+          "text": "庭師",
+          "ruby": "にわし"
+        }
+      ]
+    },
+    {
+      "id": "auto-mechanic",
+      "word": "auto mechanic",
+      "chinese": "汽車修理技師",
+      "chineseDefinition": "檢查汽車的引擎、煞車與底盤等系統，找出異常並進行保養或修理的技術人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɑː.t̬oʊ məˌkæn.ɪk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "汽車修理技師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A technician who inspects, maintains, and repairs cars and their mechanical systems.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「自動車整備士」とは、自動車のエンジンやブレーキ、足回りなどを点検し、整備や修理を行う技術者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The auto mechanic checked the brakes on my car.",
+          "ja": "自動車整備士が私の車のブレーキを点検しました。",
+          "zh": "汽車修理技師檢查了我車子的煞車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After hearing a strange noise, the auto mechanic lifted the car to inspect the underside.",
+          "ja": "異音を聞いたあと、自動車整備士は車を持ち上げて下回りを点検しました。",
+          "zh": "聽到異音後，汽車修理技師抬升車輛檢查底盤。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "bicycle-mechanic",
+        "appliance-repair-technician",
+        "truck-driver"
+      ],
+      "ja": "自動車整備士",
+      "jaReading": "じどうしゃせいびし",
+      "jaReadingSegments": [
+        {
+          "text": "自動車",
+          "ruby": "じどうしゃ"
+        },
+        {
+          "text": "整備士",
+          "ruby": "せいびし"
+        }
+      ]
+    },
+    {
+      "id": "bicycle-mechanic",
+      "word": "bicycle mechanic",
+      "chinese": "自行車修理師",
+      "chineseDefinition": "檢查並修理自行車的輪胎、煞車、鏈條與變速系統，也進行調整與試車的技術人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbaɪ.sɪ.kəl məˌkæn.ɪk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "自行車修理師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A technician who inspects, adjusts, and repairs bicycles, including tires, brakes, chains, and gears.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「自転車整備士」とは、自転車のタイヤやブレーキ、チェーン、変速機などを点検し、調整や修理を行う技術者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The bicycle mechanic fixed my flat tire.",
+          "ja": "自転車整備士が私のパンクしたタイヤを直しました。",
+          "zh": "自行車修理師修好了我漏氣的輪胎。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the chain kept slipping off, the bicycle mechanic adjusted the derailleur and tested the gears.",
+          "ja": "チェーンが何度も外れたので、自転車整備士は変速機を調整し、変速を確認しました。",
+          "zh": "鏈條一再脫落時，自行車修理師調整了變速器並測試檔位。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "auto-mechanic",
+        "appliance-repair-technician",
+        "delivery-driver"
+      ],
+      "ja": "自転車整備士",
+      "jaReading": "じてんしゃせいびし",
+      "jaReadingSegments": [
+        {
+          "text": "自転車",
+          "ruby": "じてんしゃ"
+        },
+        {
+          "text": "整備士",
+          "ruby": "せいびし"
+        }
+      ]
+    },
+    {
+      "id": "appliance-repair-technician",
+      "word": "appliance repair technician",
+      "chinese": "家電維修技師",
+      "chineseDefinition": "檢測洗衣機、冰箱、冷氣等家用電器的故障，並清潔、調整或更換零件的維修技術人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/əˈplaɪ.əns rɪˈper tekˌnɪʃ.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "家電維修技師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A technician who diagnoses faults and repairs household appliances such as washing machines and air conditioners.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「家電修理技術者」とは、洗濯機や冷蔵庫、エアコンなどの故障を調べ、部品交換や修理を行う技術者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The appliance repair technician replaced the washing machine hose.",
+          "ja": "家電修理技術者が洗濯機のホースを交換しました。",
+          "zh": "家電維修技師更換了洗衣機的水管。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finding that the filter was blocked, the appliance repair technician cleaned it and ran the air conditioner again.",
+          "ja": "フィルターが詰まっていると分かったので、家電修理技術者は掃除してエアコンをもう一度作動させました。",
+          "zh": "發現濾網堵塞後，家電維修技師清潔了濾網並再次啟動冷氣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "electrician",
+        "auto-mechanic",
+        "bicycle-mechanic"
+      ],
+      "ja": "家電修理技術者",
+      "jaReading": "かでんしゅうりぎじゅつしゃ",
+      "jaReadingSegments": [
+        {
+          "text": "家電",
+          "ruby": "かでん"
+        },
+        {
+          "text": "修理",
+          "ruby": "しゅうり"
+        },
+        {
+          "text": "技術者",
+          "ruby": "ぎじゅつしゃ"
+        }
+      ]
+    },
+    {
+      "id": "pest-control-worker",
+      "word": "pest control worker",
+      "chinese": "害蟲防治人員",
+      "chineseDefinition": "檢查建築物中的害蟲跡象，設置捕捉設備、封住縫隙並依安全程序進行防治的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpest kənˌtroʊl ˌwɝː.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "害蟲防治人員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who inspects buildings for pests and uses traps, sealing, or approved treatments to control them.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「害虫駆除作業員」とは、建物内の害虫を調査し、わなの設置や隙間の封鎖、薬剤処理などで駆除や予防を行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pest control worker placed pest traps under the kitchen sink.",
+          "ja": "害虫駆除作業員が台所の流し台の下に害虫用のわなを置きました。",
+          "zh": "害蟲防治人員在廚房水槽下方放置了捕蟲器。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finding a gap near the pipe, the pest control worker sealed it to keep insects out.",
+          "ja": "配管の近くに隙間を見つけたあと、害虫駆除作業員は虫が入らないように塞ぎました。",
+          "zh": "發現管線附近有縫隙後，害蟲防治人員將它封住，避免昆蟲進入。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "gardener",
+        "building-cleaner",
+        "plumber"
+      ],
+      "ja": "害虫駆除作業員",
+      "jaReading": "がいちゅうくじょさぎょういん",
+      "jaReadingSegments": [
+        {
+          "text": "害虫",
+          "ruby": "がいちゅう"
+        },
+        {
+          "text": "駆除",
+          "ruby": "くじょ"
+        },
+        {
+          "text": "作業員",
+          "ruby": "さぎょういん"
+        }
+      ]
+    }
+  ]
+}

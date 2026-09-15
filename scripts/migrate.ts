@@ -13,7 +13,12 @@ import { runAtlasTextModeration } from "../lib/atlas/moderation";
 import { applyMainWordCorrections } from "../lib/main-word-corrections";
 import { applyMainWordMerges } from "../lib/main-word-merges";
 import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
+import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
+
+const GUARDED_PUBLISH_WORD_IDS = new Set<string>(MAIN_WORD_PROFESSIONS_IDS);
+const isGuardedPublishWord = (word: { id: string; category: string }) =>
+  GUARDED_PUBLISH_WORD_IDS.has(word.id) || word.category === "professions";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -1923,7 +1928,23 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
 //
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function seedCategoriesIntoDb(sql: any) {
+  const guardedPublishedRows = await sql<{ id: string }[]>`
+    SELECT id FROM words
+    WHERE id = ANY(${MAIN_WORD_PROFESSIONS_IDS})
+      AND category = 'professions'
+      AND status = 'published'
+      AND deleted_at IS NULL
+  `;
+  const guardedPublishedIds = new Set(
+    guardedPublishedRows.map(({ id }: { id: string }) => id),
+  );
+  const guardedCategoryIsPublished =
+    MAIN_WORD_PROFESSIONS_IDS.every((id) => guardedPublishedIds.has(id));
   for (const c of seedCategories) {
+    // The professions category and its 100 words are released together by the
+    // guarded publisher. A routine deploy must not expose the empty category
+    // or become an alternate path around that publisher.
+    if (c.id === "professions" && !guardedCategoryIsPublished) continue;
     await sql`
       INSERT INTO categories
         (id, name, name_zh, emoji, description, description_en, color, image_url, sort_order)
@@ -1969,6 +1990,12 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
       ('community', 'ja', '物見')
     ON CONFLICT (category_id, language) DO NOTHING
   `;
+  await sql`
+    INSERT INTO category_translations (category_id, language, name)
+    SELECT 'professions', 'ja', '職業'
+    WHERE EXISTS (SELECT 1 FROM categories WHERE id = 'professions')
+    ON CONFLICT (category_id, language) DO NOTHING
+  `;
 
   // Hand-written product copy. Preserve translated names and only fill a
   // description that is still missing, so later editorial changes survive.
@@ -1988,6 +2015,7 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
         ('transportation', '世界を移動する手段'),
         ('seasonings',     '料理をおいしくする名脇役'),
         ('fruits',         '日常の定番と四季の旬を楽しむ果物'),
+        ('professions',    '日常生活を支えるさまざまな仕事'),
         ('zodiac',         '十二星座と英語の名前')
       ) AS v(id, description)
       JOIN categories c ON c.id = v.id
@@ -2022,7 +2050,9 @@ async function backfillSchemaV2(sql: any) {
   const defRes = await sql`
     INSERT INTO word_definitions (word_id, language, definition, sort_order)
     SELECT id, 'zh', chinese, 0 FROM words
-    WHERE chinese IS NOT NULL AND chinese <> ''
+    WHERE status = 'published'
+      AND deleted_at IS NULL
+      AND chinese IS NOT NULL AND chinese <> ''
     ON CONFLICT (word_id, language, sort_order) DO NOTHING
     RETURNING id
   `;
@@ -2041,7 +2071,9 @@ async function backfillSchemaV2(sql: any) {
         ELSE '[]'::jsonb
       END AS examples
     FROM words w
-    WHERE examples IS NOT NULL
+    WHERE w.status = 'published'
+      AND w.deleted_at IS NULL
+      AND examples IS NOT NULL
       AND NOT EXISTS (SELECT 1 FROM word_examples WHERE word_id = w.id)
   `;
   let exInserted = 0;
@@ -2077,7 +2109,9 @@ async function backfillSchemaV2(sql: any) {
     INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
     SELECT w.id, t, 'see-also', NULL
     FROM words w, unnest(w.related_words) AS t
-    WHERE t <> w.id
+    WHERE w.status = 'published'
+      AND w.deleted_at IS NULL
+      AND t <> w.id
     ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
     RETURNING id
   `;
@@ -2090,6 +2124,7 @@ async function backfillSchemaV2(sql: any) {
           ELSE '[]'::jsonb
         END AS items
       FROM words
+      WHERE status = 'published' AND deleted_at IS NULL
     )
     INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
     SELECT n.id, (c->>'word'), 'confusing', (c->>'note')
@@ -2118,7 +2153,9 @@ async function backfillSchemaV3(sql: any) {
     INSERT INTO word_media (word_id, kind, url, source_url, license, credit, is_primary, sort_order)
     SELECT w.id, 'image', w.image_url, w.image_source_url, w.image_license, w.image_credit, TRUE, 0
     FROM words w
-    WHERE w.image_url IS NOT NULL
+    WHERE w.status = 'published'
+      AND w.deleted_at IS NULL
+      AND w.image_url IS NOT NULL
       AND w.image_url <> ''
       AND NOT EXISTS (
         SELECT 1 FROM word_media m WHERE m.word_id = w.id AND m.kind = 'image'
@@ -2132,7 +2169,9 @@ async function backfillSchemaV3(sql: any) {
     INSERT INTO word_media (word_id, kind, url, is_primary, sort_order)
     SELECT w.id, 'audio', w.audio_url, TRUE, 0
     FROM words w
-    WHERE w.audio_url IS NOT NULL
+    WHERE w.status = 'published'
+      AND w.deleted_at IS NULL
+      AND w.audio_url IS NOT NULL
       AND w.audio_url <> ''
       AND NOT EXISTS (
         SELECT 1 FROM word_media m WHERE m.word_id = w.id AND m.kind = 'audio'
@@ -2164,6 +2203,8 @@ async function backfillSchemaV3(sql: any) {
        SET is_primary = FALSE
       FROM words w
      WHERE wc.word_id = w.id
+       AND w.status = 'published'
+       AND w.deleted_at IS NULL
        AND wc.is_primary
        AND w.category IS NOT NULL
        AND wc.category_id <> w.category
@@ -2176,7 +2217,9 @@ async function backfillSchemaV3(sql: any) {
     INSERT INTO word_categories (word_id, category_id, is_primary)
     SELECT w.id, w.category, TRUE
     FROM words w
-    WHERE w.category IS NOT NULL
+    WHERE w.status = 'published'
+      AND w.deleted_at IS NULL
+      AND w.category IS NOT NULL
     ON CONFLICT (word_id, category_id) DO UPDATE SET is_primary = TRUE
     RETURNING word_id
   `;
@@ -2502,9 +2545,16 @@ async function generateCards(sql: any) {
     );
   }
 
+  const publishedRows = await sql<{ id: string }[]>`
+    SELECT id FROM words WHERE status = 'published' AND deleted_at IS NULL
+  `;
+  const publishedIds = new Set(publishedRows.map(({ id }: { id: string }) => id));
   let inserted = 0;
   let skipped = 0;
   for (const w of seedWords) {
+    // Never create cards for absent/draft words. In particular, the guarded
+    // professions publisher owns both cards and the draft-to-published flip.
+    if (!publishedIds.has(w.id)) continue;
     for (const c of cardsForWord(w)) {
       const r = await sql`
         INSERT INTO cards (word_id, card_type, front, back, explanation, tags, deck_key)
@@ -2525,7 +2575,7 @@ async function generateCards(sql: any) {
     INSERT INTO word_terms (word_id, language, term, pronunciation)
     SELECT id, 'en', word, pronunciation
     FROM words
-    WHERE deleted_at IS NULL
+    WHERE status = 'published' AND deleted_at IS NULL
     ON CONFLICT (word_id, language) DO UPDATE SET
       term = EXCLUDED.term,
       pronunciation = EXCLUDED.pronunciation,
@@ -2630,6 +2680,8 @@ async function syncSeedWordImages(sql: any) {
     SET image_url = s.image_url
     FROM unnest(${ids}::text[], ${urls}::text[]) AS s(id, image_url)
     WHERE w.id = s.id
+      AND w.status = 'published'
+      AND w.deleted_at IS NULL
       AND w.image_url IS DISTINCT FROM s.image_url
       AND (
         w.image_url IS NULL
@@ -2687,9 +2739,23 @@ async function main() {
     // row exists before generateCards (which would otherwise FK-fail).
     const existingRows = await sql<{ id: string }[]>`SELECT id FROM words`;
     const have = new Set(existingRows.map((r) => r.id));
-    const missing = seedWords.filter((w) => !have.has(w.id));
+    const guardedMissing = seedWords.filter(
+      (w) => isGuardedPublishWord(w) && !have.has(w.id),
+    );
+    const missing = seedWords.filter(
+      (w) => !isGuardedPublishWord(w) && !have.has(w.id),
+    );
+    if (guardedMissing.length > 0) {
+      console.log(
+        `[migrate] deferring ${guardedMissing.length} guarded profession word(s) to professions:publish.`,
+      );
+    }
     if (missing.length === 0) {
-      console.log(`[migrate] all ${seedWords.length} seed words present — nothing to seed.`);
+      console.log(
+        guardedMissing.length > 0
+          ? "[migrate] all routine seed words present; guarded professions remain deferred."
+          : `[migrate] all ${seedWords.length} seed words present — nothing to seed.`,
+      );
     } else {
       console.log(`[migrate] seeding ${missing.length} missing word(s) of ${seedWords.length}...`);
       // New words are expected to ship a Supabase Storage image (loremflickr
@@ -2716,9 +2782,16 @@ async function main() {
     await generateCards(sql);
     const mergedWords = await applyMainWordMerges(sql);
     console.log(`[migrate] main-word merges checked (${mergedWords} rows).`);
-    const correctedWords = await applyMainWordCorrections(sql);
+    const publishedWordRows = await sql<{ id: string }[]>`
+      SELECT id FROM words WHERE status = 'published' AND deleted_at IS NULL
+    `;
+    const publishedWordIds = new Set(publishedWordRows.map(({ id }) => id));
+    const correctedWords = await applyMainWordCorrections(sql, publishedWordIds);
     console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
-    const pairedExamples = await applyMainWordExamplePairs(sql);
+    const pairedExamples = await applyMainWordExamplePairs(
+      sql,
+      publishedWordIds,
+    );
     console.log(
       `[migrate] main-word examples checked (${pairedExamples.updated} updated, ${pairedExamples.unchanged} unchanged, ${pairedExamples.spanSentencesUpdated} span sentences updated).`,
     );

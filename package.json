@@ -25,6 +25,10 @@
     "fix:main-word-merges": "tsx --env-file=.env.local scripts/apply-main-word-merges.ts",
     "audit:main-words": "tsx --env-file=.env.local scripts/audit-main-words.ts",
     "audio:generate": "tsx --env-file=.env.local scripts/generate-audio.ts",
+    "audio:plan:professions": "node scripts/plan-professions-audio.mjs",
+    "audio:generate:professions:local": "node --env-file=.env.local scripts/generate-professions-candidate-audio.mjs",
+    "professions:prepare-publish": "tsx --env-file=.env.local scripts/prepare-professions-publish-plan.ts",
+    "professions:publish": "tsx --env-file=.env.local scripts/publish-professions-series.ts",
     "examples:spans": "tsx --env-file=.env.local scripts/generate-example-spans.ts",
     "fix:seasonings-example-spans": "tsx scripts/correct-seasonings-example-spans.ts",
     "verify:atlas": "node scripts/verify-atlas-privacy.mjs"

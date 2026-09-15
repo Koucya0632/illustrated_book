@@ -1,0 +1,1111 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "B",
+  "state": "candidate-data-reviewed",
+  "entries": [
+    {
+      "id": "doctor",
+      "word": "doctor",
+      "chinese": "醫師",
+      "chineseDefinition": "受過醫學訓練，負責診察病人、判斷病情並安排治療的醫療專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdɑːk.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "醫師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A medical professional who examines patients, diagnoses illnesses, and plans treatment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「医師」とは、患者を診察し、病気を診断して治療方針を決める医療の専門家です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The doctor examined my sore throat.",
+          "ja": "医師が喉の痛みを診てくれました。",
+          "zh": "醫師檢查了我疼痛的喉嚨。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my fever had lasted for three days, the doctor ordered a blood test.",
+          "ja": "熱が三日間続いていたので、医師は血液検査を指示しました。",
+          "zh": "因為我發燒已持續三天，醫師安排了血液檢查。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "nurse",
+        "paramedic",
+        "pharmacist"
+      ],
+      "ja": "医師",
+      "jaReading": "いし",
+      "jaReadingSegments": [
+        {
+          "text": "医師",
+          "ruby": "いし"
+        }
+      ]
+    },
+    {
+      "id": "nurse",
+      "word": "nurse",
+      "chinese": "護理師",
+      "chineseDefinition": "在醫院或其他照護場所協助病人、執行護理處置並觀察其狀況的醫療專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/nɝːs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "護理師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A healthcare professional who cares for patients, performs nursing procedures, and monitors their condition.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「看護師」とは、患者の世話をし、看護処置や体調の観察を行う医療の専門家です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The nurse changed the bandage on my arm.",
+          "ja": "看護師が私の腕の包帯を交換しました。",
+          "zh": "護理師更換了我手臂上的繃帶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before I left the hospital, the nurse showed me how to use the crutches safely.",
+          "ja": "退院する前に、看護師が松葉杖の安全な使い方を教えてくれました。",
+          "zh": "出院前，護理師教我如何安全使用拐杖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "doctor",
+        "paramedic",
+        "school-nurse"
+      ],
+      "ja": "看護師",
+      "jaReading": "かんごし",
+      "jaReadingSegments": [
+        {
+          "text": "看護師",
+          "ruby": "かんごし"
+        }
+      ]
+    },
+    {
+      "id": "dentist",
+      "word": "dentist",
+      "chinese": "牙醫師",
+      "chineseDefinition": "負責檢查、診斷並治療牙齒及口腔問題的醫療專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.tɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙醫師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A medical professional who examines, diagnoses, and treats problems with teeth and the mouth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「歯科医師」とは、歯や口の中を診察し、問題を診断して治療する医療の専門家です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dentist examined my aching tooth.",
+          "ja": "歯科医師が痛む歯を診察しました。",
+          "zh": "牙醫師檢查了我疼痛的牙齒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finding a small cavity, the dentist showed me its location on the X-ray.",
+          "ja": "小さな虫歯が見つかったあと、歯科医師はレントゲン写真でその場所を見せてくれました。",
+          "zh": "發現一個小蛀牙後，牙醫師在X光片上指給我看它的位置。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "dental-hygienist",
+        "doctor",
+        "pharmacist"
+      ],
+      "ja": "歯科医師",
+      "jaReading": "しかいし",
+      "jaReadingSegments": [
+        {
+          "text": "歯科",
+          "ruby": "しか"
+        },
+        {
+          "text": "医師",
+          "ruby": "いし"
+        }
+      ]
+    },
+    {
+      "id": "dental-hygienist",
+      "word": "dental hygienist",
+      "chinese": "牙科衛生師",
+      "chineseDefinition": "在牙科診所協助潔牙、預防性口腔照護並指導清潔方法的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.t̬əl haɪˈdʒen.ɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科衛生師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A dental professional who cleans teeth, provides preventive care, and teaches oral hygiene.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「歯科衛生士」とは、歯のクリーニングや予防処置を行い、口腔ケアを指導する専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dental hygienist cleaned my teeth.",
+          "ja": "歯科衛生士が私の歯をクリーニングしました。",
+          "zh": "牙科衛生師幫我清潔了牙齒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "While cleaning my teeth, the dental hygienist showed me how to hold the toothbrush.",
+          "ja": "歯をクリーニングしながら、歯科衛生士が歯ブラシの持ち方を見せてくれました。",
+          "zh": "潔牙時，牙科衛生師示範了牙刷的握法。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "dentist",
+        "nurse",
+        "pharmacist"
+      ],
+      "ja": "歯科衛生士",
+      "jaReading": "しかえいせいし",
+      "jaReadingSegments": [
+        {
+          "text": "歯科",
+          "ruby": "しか"
+        },
+        {
+          "text": "衛生士",
+          "ruby": "えいせいし"
+        }
+      ]
+    },
+    {
+      "id": "pharmacist",
+      "word": "pharmacist",
+      "chinese": "藥師",
+      "chineseDefinition": "在藥局或醫療機構調劑藥品、核對處方並向病人說明用藥方式的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɑːr.mə.sɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "藥師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A healthcare professional who prepares medicines, checks prescriptions, and explains how medicines are used.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「薬剤師」とは、薬を調剤し、処方内容を確認して薬の使い方を説明する専門家です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pharmacist explained how to take my medicine.",
+          "ja": "薬剤師が薬の飲み方を説明してくれました。",
+          "zh": "藥師向我說明了藥的服用方式。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I picked up my prescription, the pharmacist checked whether I had any questions about the medicine.",
+          "ja": "処方薬を受け取るとき、薬剤師は薬について質問があるか確認しました。",
+          "zh": "我領取處方藥時，藥師確認我是否對藥品有任何疑問。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "doctor",
+        "nurse",
+        "pharmacy-clerk"
+      ],
+      "ja": "薬剤師",
+      "jaReading": "やくざいし",
+      "jaReadingSegments": [
+        {
+          "text": "薬剤師",
+          "ruby": "やくざいし"
+        }
+      ]
+    },
+    {
+      "id": "veterinarian",
+      "word": "veterinarian",
+      "chinese": "獸醫師",
+      "chineseDefinition": "負責檢查、診斷並治療動物疾病或傷勢的醫療專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌvet.ər.əˈner.i.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "獸醫師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A medical professional who examines, diagnoses, and treats illnesses or injuries in animals.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「獣医師」とは、動物を診察し、病気やけがを診断して治療する医療の専門家です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The veterinarian examined my cat's paw.",
+          "ja": "獣医師が私の猫の足を診察しました。",
+          "zh": "獸醫師檢查了我家貓的腳掌。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my dog had stopped eating, the veterinarian ran several tests at the animal clinic.",
+          "ja": "犬が餌を食べなくなったので、獣医師は動物病院でいくつか検査をしました。",
+          "zh": "因為我的狗不再吃東西，獸醫師在動物醫院做了幾項檢查。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "doctor",
+        "zookeeper",
+        "pet-groomer"
+      ],
+      "ja": "獣医師",
+      "jaReading": "じゅういし",
+      "jaReadingSegments": [
+        {
+          "text": "獣医",
+          "ruby": "じゅうい"
+        },
+        {
+          "text": "師",
+          "ruby": "し"
+        }
+      ]
+    },
+    {
+      "id": "paramedic",
+      "word": "paramedic",
+      "chinese": "救護技術員",
+      "chineseDefinition": "在救護車及緊急現場提供到院前急救、監測病患狀況並協助送醫的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌper.əˈmed.ɪk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "救護技術員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An emergency medical professional who gives prehospital care and monitors patients during ambulance transport.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「救急救命士」とは、救急現場や救急車内で応急処置を行い、搬送中の患者を観察する専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The paramedic put an oxygen mask on the patient.",
+          "ja": "救急救命士が患者に酸素マスクを付けました。",
+          "zh": "救護技術員為病患戴上氧氣面罩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "While the ambulance was heading to the hospital, the paramedic kept monitoring the patient's breathing.",
+          "ja": "救急車が病院へ向かう間、救急救命士は患者の呼吸を確認し続けました。",
+          "zh": "救護車前往醫院途中，救護技術員持續監測病患的呼吸。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "firefighter",
+        "doctor",
+        "nurse"
+      ],
+      "ja": "救急救命士",
+      "jaReading": "きゅうきゅうきゅうめいし",
+      "jaReadingSegments": [
+        {
+          "text": "救急",
+          "ruby": "きゅうきゅう"
+        },
+        {
+          "text": "救命士",
+          "ruby": "きゅうめいし"
+        }
+      ]
+    },
+    {
+      "id": "physical-therapist",
+      "word": "physical therapist",
+      "chinese": "物理治療師",
+      "chineseDefinition": "評估動作與活動能力，並透過運動、姿勢與復健活動協助人們恢復或維持身體功能的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌfɪz.ɪ.kəl ˈθer.ə.pɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "物理治療師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A health professional who helps people improve movement and physical function through rehabilitation activities.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「理学療法士」とは、体の動きや生活動作を評価し、運動などを通して機能の回復や維持を支援する専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The physical therapist showed me how to use the exercise band.",
+          "ja": "理学療法士が運動用のバンドの使い方を教えてくれました。",
+          "zh": "物理治療師教我如何使用運動彈力帶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After checking how I walked, the physical therapist adjusted the height of my cane.",
+          "ja": "歩き方を確認した後、理学療法士が私のつえの高さを調整してくれました。",
+          "zh": "物理治療師看過我的走路方式後，調整了我的手杖高度。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "doctor",
+        "nurse",
+        "paramedic"
+      ],
+      "ja": "理学療法士",
+      "jaReading": "りがくりょうほうし",
+      "jaReadingSegments": [
+        {
+          "text": "理学療法士",
+          "ruby": "りがくりょうほうし"
+        }
+      ]
+    },
+    {
+      "id": "caregiver",
+      "word": "caregiver",
+      "chinese": "照護員",
+      "chineseDefinition": "在照護機構或居家環境中，協助長者或需要支持者進行移動、用餐與其他日常生活活動的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkerˌɡɪv.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "照護員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who assists older people or others who need support with everyday activities and personal care.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「介護職員」とは、高齢者など日常生活に支援が必要な人の移動や食事、身の回りのことを手伝う職業です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The caregiver helped my grandfather into his wheelchair.",
+          "ja": "介護職員は祖父が車いすに乗るのを手伝ってくれました。",
+          "zh": "照護員協助祖父移坐到輪椅上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When my grandmother felt tired, the caregiver moved lunch to a table near her room.",
+          "ja": "祖母が疲れていたので、介護職員は昼食を部屋の近くのテーブルに運んでくれました。",
+          "zh": "祖母覺得疲累時，照護員把午餐移到她房間附近的桌上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "nurse",
+        "physical-therapist",
+        "school-nurse"
+      ],
+      "ja": "介護職員",
+      "jaReading": "かいごしょくいん",
+      "jaReadingSegments": [
+        {
+          "text": "介護職員",
+          "ruby": "かいごしょくいん"
+        }
+      ]
+    },
+    {
+      "id": "midwife",
+      "word": "midwife",
+      "chinese": "助產師",
+      "chineseDefinition": "具專業資格，為孕婦及其家庭提供孕期、生產與產後照護，並支持母嬰適應的醫療專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɪd.waɪf/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "助產師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A qualified health professional who supports women and families during pregnancy, childbirth, and the period after birth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「助産師」とは、妊娠中から出産、産後まで、母親と赤ちゃんや家族を専門的に支援する医療職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The midwife showed us how to hold the baby.",
+          "ja": "助産師が赤ちゃんの抱き方を教えてくれました。",
+          "zh": "助產師教我們如何抱寶寶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before we left the hospital, the midwife explained where to call if we had questions.",
+          "ja": "退院する前に、助産師は質問があるときの連絡先を説明してくれました。",
+          "zh": "我們離開醫院前，助產師說明了有問題時可以打電話到哪裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "doctor",
+        "nurse",
+        "pharmacist"
+      ],
+      "ja": "助産師",
+      "jaReading": "じょさんし",
+      "jaReadingSegments": [
+        {
+          "text": "助産師",
+          "ruby": "じょさんし"
+        }
+      ]
+    },
+    {
+      "id": "teacher",
+      "word": "teacher",
+      "chinese": "老師",
+      "chineseDefinition": "在學校等教育場所規劃課程、教授知識與技能，並支持學生學習的教育工作者。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtiː.tʃɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "老師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person whose job is to teach students and support their learning, usually in a school.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「教師」とは、学校などで授業を行い、児童や生徒の学習と成長を支える教育の専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Our teacher wrote the homework on the board.",
+          "ja": "先生が黒板に宿題を書きました。",
+          "zh": "老師把作業寫在黑板上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because several students found the chapter difficult, the teacher reviewed it with another example.",
+          "ja": "何人かの生徒がその章を難しいと感じたので、教師は別の例を使って一緒に復習しました。",
+          "zh": "因為幾位學生覺得這一章很難，老師用另一個例子帶大家複習。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cram-school-teacher",
+        "nursery-teacher",
+        "kindergarten-teacher"
+      ],
+      "ja": "教師",
+      "jaReading": "きょうし",
+      "jaReadingSegments": [
+        {
+          "text": "教師",
+          "ruby": "きょうし"
+        }
+      ]
+    },
+    {
+      "id": "nursery-teacher",
+      "word": "nursery teacher",
+      "chinese": "保育員",
+      "chineseDefinition": "持有保育士資格，在托兒所等兒童福利設施中照顧幼兒日常生活，並依發展階段提供遊戲與學習支持的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈnɝː.sɚ.i ˌtiː.tʃɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "保育員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A qualified childcare professional who cares for young children and supports their daily development in a nursery or similar setting.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「保育士」とは、保育所などの児童福祉施設で、乳幼児の生活を世話し、遊びや活動を通して成長を支える資格職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The nursery teacher read a picture book to the children.",
+          "ja": "保育士が子どもたちに絵本を読みました。",
+          "zh": "保育員讀了一本圖畫書給孩子們聽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When my son began to cry at drop-off, the nursery teacher welcomed him with his favorite toy.",
+          "ja": "登園時に息子が泣き始めると、保育士はお気に入りのおもちゃで迎えてくれました。",
+          "zh": "送到托兒所時，兒子開始哭，保育員便拿他最喜歡的玩具迎接他。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "kindergarten-teacher",
+        "teacher",
+        "caregiver"
+      ],
+      "ja": "保育士",
+      "jaReading": "ほいくし",
+      "jaReadingSegments": [
+        {
+          "text": "保育士",
+          "ruby": "ほいくし"
+        }
+      ]
+    },
+    {
+      "id": "kindergarten-teacher",
+      "word": "kindergarten teacher",
+      "chinese": "幼兒園老師",
+      "chineseDefinition": "持有幼稚園教諭執照，在幼兒園依教育課程帶領遊戲、創作與團體活動，支持學齡前兒童學習與發展的教師。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɪn.dɚˌɡɑːr.tən ˌtiː.tʃɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "幼兒園老師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A licensed teacher who plans educational play and activities for preschool children in a kindergarten.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「幼稚園教諭」とは、幼稚園で教育課程に基づく遊びや活動を計画し、幼児の学びと発達を支える教員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The kindergarten teacher taught the children a new song.",
+          "ja": "幼稚園の先生が子どもたちに新しい歌を教えました。",
+          "zh": "幼兒園老師教孩子們一首新歌。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "For the class exhibition, the kindergarten teacher helped the children plan how to display their drawings.",
+          "ja": "クラスの作品展に向けて、幼稚園教諭は子どもたちと絵の飾り方を考えました。",
+          "zh": "為了班級作品展，幼兒園老師和孩子們一起規劃如何展示畫作。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "nursery-teacher",
+        "teacher",
+        "school-nurse"
+      ],
+      "ja": "幼稚園教諭",
+      "jaReading": "ようちえんきょうゆ",
+      "jaReadingSegments": [
+        {
+          "text": "幼稚園",
+          "ruby": "ようちえん"
+        },
+        {
+          "text": "教諭",
+          "ruby": "きょうゆ"
+        }
+      ]
+    },
+    {
+      "id": "school-nurse",
+      "word": "school nurse",
+      "chinese": "校護",
+      "chineseDefinition": "在日本學校保健室負責健康管理、健康教育、簡易處置與聯絡家庭的養護教諭；此職務屬學校教職，資格制度與一般護理師不同。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈskuːl ˌnɝːs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "校護",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school health teacher who runs the health room, supports student health, provides basic first aid, and coordinates with families when needed.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「養護教諭」とは、学校の保健室を担当し、児童生徒の健康管理、保健教育、応急手当などを行う教員です。看護師とは異なる教員免許の職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The school nurse put a bandage on my knee.",
+          "ja": "養護教諭が私のひざにばんそうこうを貼ってくれました。",
+          "zh": "校護幫我的膝蓋貼上了OK繃。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I felt unwell during class, the school nurse let me rest in the health room and contacted my family.",
+          "ja": "授業中に気分が悪くなったとき、養護教諭は私を保健室で休ませ、家族に連絡してくれました。",
+          "zh": "我上課時覺得不舒服，校護讓我在保健室休息，並聯絡了家人。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "teacher",
+        "nurse",
+        "paramedic"
+      ],
+      "ja": "養護教諭",
+      "jaReading": "ようごきょうゆ",
+      "jaReadingSegments": [
+        {
+          "text": "養護",
+          "ruby": "ようご"
+        },
+        {
+          "text": "教諭",
+          "ruby": "きょうゆ"
+        }
+      ]
+    },
+    {
+      "id": "librarian",
+      "word": "librarian",
+      "chinese": "圖書館員",
+      "chineseDefinition": "在圖書館整理與管理館藏、協助讀者查找資料，並辦理借還書等服務的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/laɪˈbrer.i.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "圖書館員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who organizes library collections and helps people find, borrow, and return books or other materials.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「図書館司書」とは、図書館の資料を整理し、利用者の資料探しや貸し出し、返却を支援する専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The librarian helps me find a book.",
+          "ja": "図書館司書が本を探すのを手伝ってくれます。",
+          "zh": "圖書館員幫我找一本書。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I asked the librarian whether I could return the books at another branch.",
+          "ja": "別の分館でも本を返せるか、図書館司書に聞きました。",
+          "zh": "我詢問圖書館員是否可以在另一間分館還書。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "teacher",
+        "museum-guide",
+        "bookstore-clerk"
+      ],
+      "ja": "図書館司書",
+      "jaReading": "としょかんししょ",
+      "jaReadingSegments": [
+        {
+          "text": "図書館",
+          "ruby": "としょかん"
+        },
+        {
+          "text": "司書",
+          "ruby": "ししょ"
+        }
+      ]
+    },
+    {
+      "id": "cram-school-teacher",
+      "word": "cram school teacher",
+      "chinese": "補習班老師",
+      "chineseDefinition": "在課後補習班教授學科、講解題目，並協助學生準備學校考試或升學考試的教師。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkræm ˌskuːl ˈtiː.tʃɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "補習班老師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A teacher at a private after-school academy who helps students review subjects and prepare for examinations.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「塾講師」とは、学習塾で教科を教え、学校の試験や入学試験に向けた学習を支援する教師です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The cram school teacher explains the math problem.",
+          "ja": "塾講師が数学の問題を説明します。",
+          "zh": "補習班老師講解這道數學題。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I did not understand the homework, the cram school teacher showed me another way to solve it.",
+          "ja": "宿題が分からなかったとき、塾講師が別の解き方を教えてくれました。",
+          "zh": "我不懂作業時，補習班老師教了我另一種解法。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "teacher",
+        "kindergarten-teacher",
+        "university-professor"
+      ],
+      "ja": "塾講師",
+      "jaReading": "じゅくこうし",
+      "jaReadingSegments": [
+        {
+          "text": "塾",
+          "ruby": "じゅく"
+        },
+        {
+          "text": "講師",
+          "ruby": "こうし"
+        }
+      ]
+    },
+    {
+      "id": "sports-coach",
+      "word": "sports coach",
+      "chinese": "運動教練",
+      "chineseDefinition": "指導選手或隊伍進行體能、技術與戰術訓練，並協助他們為比賽做好準備的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈspɔːrts ˌkoʊtʃ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "運動教練",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who trains athletes or a team in sports skills, fitness, and tactics.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「スポーツコーチ」とは、選手やチームに技術、体力、戦術を指導し、試合に向けた準備を支える人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The sports coach shows the team a new drill.",
+          "ja": "スポーツコーチがチームに新しい練習を教えます。",
+          "zh": "運動教練向隊員示範一項新的訓練動作。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because our next game is important, the sports coach reviewed our defensive positions after practice.",
+          "ja": "次の試合が大切なので、スポーツコーチが練習後に守備の位置を確認しました。",
+          "zh": "因為下一場比賽很重要，運動教練在練習後確認了我們的防守站位。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "swimming-instructor",
+        "fitness-trainer",
+        "teacher"
+      ],
+      "ja": "スポーツコーチ",
+      "jaReading": "スポーツコーチ",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "driving-instructor",
+      "word": "driving instructor",
+      "chinese": "駕駛教練",
+      "chineseDefinition": "在駕訓班教授交通規則、車輛操作與安全駕駛技巧，並陪同學員進行道路練習的教練。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdraɪ.vɪŋ ɪnˌstrʌk.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "駕駛教練",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who teaches learners how to operate a vehicle safely and follow traffic rules.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「自動車教習指導員」とは、自動車教習所で運転操作や交通ルール、安全確認の方法を教える指導員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The driving instructor shows me how to park.",
+          "ja": "自動車教習指導員が駐車の仕方を教えてくれます。",
+          "zh": "駕駛教練教我如何停車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before we entered a busy road, the driving instructor reminded me to check the mirrors and blind spot.",
+          "ja": "交通量の多い道路に入る前に、自動車教習指導員がミラーと死角を確認するよう声をかけてくれました。",
+          "zh": "在我們駛入車流量大的道路前，駕駛教練提醒我確認後視鏡和死角。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "taxi-driver",
+        "bus-driver",
+        "sports-coach"
+      ],
+      "ja": "自動車教習指導員",
+      "jaReading": "じどうしゃきょうしゅうしどういん",
+      "jaReadingSegments": [
+        {
+          "text": "自動車",
+          "ruby": "じどうしゃ"
+        },
+        {
+          "text": "教習",
+          "ruby": "きょうしゅう"
+        },
+        {
+          "text": "指導員",
+          "ruby": "しどういん"
+        }
+      ]
+    },
+    {
+      "id": "swimming-instructor",
+      "word": "swimming instructor",
+      "chinese": "游泳教練",
+      "chineseDefinition": "在游泳池等場所教授水中安全、呼吸、踢水與各種泳姿，並指導學員練習的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈswɪm.ɪŋ ɪnˌstrʌk.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "游泳教練",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who teaches swimming skills, safe behavior in the water, and different strokes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「水泳指導員」とは、水中での安全、呼吸やバタ足、泳ぎ方を教え、練習を指導する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The swimming instructor shows the children how to kick.",
+          "ja": "水泳指導員が子どもたちにバタ足のやり方を見せます。",
+          "zh": "游泳教練示範給孩子們看如何踢水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since my daughter was afraid of deep water, the swimming instructor let her practice near the wall.",
+          "ja": "娘が深い場所を怖がっていたので、水泳指導員が壁の近くで練習させてくれました。",
+          "zh": "因為我女兒害怕深水區，游泳教練讓她在池壁附近練習。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sports-coach",
+        "lifeguard",
+        "fitness-trainer"
+      ],
+      "ja": "水泳指導員",
+      "jaReading": "すいえいしどういん",
+      "jaReadingSegments": [
+        {
+          "text": "水泳",
+          "ruby": "すいえい"
+        },
+        {
+          "text": "指導員",
+          "ruby": "しどういん"
+        }
+      ]
+    },
+    {
+      "id": "museum-guide",
+      "word": "museum guide",
+      "chinese": "博物館導覽員",
+      "chineseDefinition": "在博物館帶領參觀者認識展品、解說其背景，並提供參觀動線與館內規則等資訊的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/mjuˈziː.əm ˌɡaɪd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "博物館導覽員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who guides museum visitors and explains exhibits, their background, and museum rules.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「博物館ガイド」とは、来館者を案内し、展示品の内容や背景、館内の見学ルールなどを説明する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The museum guide tells us about an old vase.",
+          "ja": "博物館ガイドが古い花瓶について説明します。",
+          "zh": "博物館導覽員向我們介紹一個老花瓶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The museum guide explained why visitors could not use flash near the paintings.",
+          "ja": "博物館ガイドが絵の近くでフラッシュを使えない理由を説明してくれました。",
+          "zh": "博物館導覽員解釋了參觀者不能在畫作附近使用閃光燈的原因。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "tour-guide",
+        "librarian",
+        "concierge"
+      ],
+      "ja": "博物館ガイド",
+      "jaReading": "はくぶつかんガイド",
+      "jaReadingSegments": [
+        {
+          "text": "博物館",
+          "ruby": "はくぶつかん"
+        },
+        {
+          "text": "ガイド",
+          "ruby": null
+        }
+      ]
+    }
+  ]
+}

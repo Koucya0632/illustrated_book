@@ -1,6 +1,7 @@
 import type { Example, Word, WordRelation } from "@/types";
 import imageUrls from "./image-urls.json";
 import { MAIN_WORD_FRUITS_WORDS } from "./main-word-fruits-2026-09";
+import { MAIN_WORD_PROFESSIONS_WORDS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_WORDS } from "./main-word-expansion-2026-09-batch-3";
 import { MAIN_WORD_EXPANSION_BATCH_2_WORDS } from "./main-word-expansion-2026-09-batch-2";
 import { MAIN_WORD_EXPANSION_WORDS } from "./main-word-expansion-2026-09";
@@ -1736,21 +1737,31 @@ export const words: Word[] = [
   ...(MAIN_WORD_EXPANSION_BATCH_2_WORDS as LegacyWord[]),
   ...(MAIN_WORD_EXPANSION_BATCH_3_WORDS as LegacyWord[]),
   ...(MAIN_WORD_FRUITS_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_PROFESSIONS_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
 });
 
+// The full static list is also the publication/migration source. Keep guarded
+// one-time releases out of the public no-DB / DB-error fallback, because a
+// fallback cannot prove that the matching database rows have been published.
+// Once published, production reads the database; during an outage it is safer
+// to serve an incomplete catalogue than to expose an unreleased series.
+export const publicFallbackWords: Word[] = words.filter(
+  (word) => word.category !== "professions",
+);
+
 export const getWord = (id: string): Word | undefined =>
-  words.find((w) => w.id === id);
+  publicFallbackWords.find((w) => w.id === id);
 
 export const getWordsByCategory = (categoryId: string): Word[] =>
-  words.filter((w) => w.category === categoryId);
+  publicFallbackWords.filter((w) => w.category === categoryId);
 
 export const searchWords = (query: string): Word[] => {
   const q = query.trim().toLowerCase();
   if (!q) return [];
-  return words.filter((w) => {
+  return publicFallbackWords.filter((w) => {
     const haystack = [
       w.word,
       w.chinese,

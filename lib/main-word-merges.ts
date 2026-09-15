@@ -51,6 +51,7 @@ export async function applyMainWordMerges(sql: Sql): Promise<number> {
         SELECT id
         FROM words
         WHERE id = ${entry.sourceId}
+          AND status = 'published'
           AND deleted_at IS NULL
         FOR UPDATE
       `;

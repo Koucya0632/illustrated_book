@@ -4,7 +4,7 @@
 
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
-import { words as staticWords } from "./words";
+import { publicFallbackWords as staticWords } from "./words";
 import { MIN_SPANS_VERSION, spansCoverSentence, unlinkSelfReference } from "./example-spans";
 import { localizeSpans, localizeWord, type LocalizedTextMap } from "./word-localize";
 import {

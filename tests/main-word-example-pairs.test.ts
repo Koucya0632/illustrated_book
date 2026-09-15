@@ -64,7 +64,7 @@ test("every published main word has one complete simple/complex example pair", (
 
 test("complex examples express a real relationship instead of only being longer", () => {
   const relationship =
-    /(^to\b|\bin case\b|\b(after|although|as|because|before|even|if|instead|once|rather|since|so|until|when|whenever|where|while|without)\b)/i;
+    /(^to\b|^for\b|\bin case\b|\b(after|although|as|because|before|even|if|instead|once|rather|since|so|until|when|whenever|where|whether|while|why|without)\b)/i;
   const missing = MAIN_WORD_EXAMPLE_PAIRS.filter(
     ({ examples }) => !relationship.test(examples[1].en),
   ).map(({ id }) => id);

@@ -1,5 +1,6 @@
 import type postgres from "postgres";
 import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
+import { MAIN_WORD_PROFESSIONS_CORRECTIONS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS } from "./main-word-expansion-2026-09-batch-3";
 import { segmentFurigana } from "./kana";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "./living-room-main-word-corrections";
@@ -97,6 +98,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_EXPANSION_BATCH_2_CORRECTIONS,
   ...MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS,
   ...MAIN_WORD_FRUITS_CORRECTIONS,
+  ...MAIN_WORD_PROFESSIONS_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",

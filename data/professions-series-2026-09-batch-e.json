@@ -1,0 +1,1075 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "E",
+  "state": "candidate-data-reviewed",
+  "entries": [
+    {
+      "id": "hairdresser",
+      "word": "hairdresser",
+      "chinese": "美髮師",
+      "chineseDefinition": "在美髮沙龍為顧客剪髮、染髮、吹整並提供髮型建議的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈherˌdres.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "美髮師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A salon professional who cuts, colors, dries, and styles clients' hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「美容師」とは、美容室で客の髪を切ったり、染めたり、乾かして整えたりする専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The hairdresser dries my hair after the haircut.",
+          "ja": "美容師がカットのあとで私の髪を乾かします。",
+          "zh": "美髮師剪完頭髮後幫我吹乾頭髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I showed the style I wanted, the hairdresser explained how much hair needed to be cut.",
+          "ja": "希望の髪型を見せると、美容師がどのくらい切る必要があるか説明してくれました。",
+          "zh": "我給美髮師看想要的髮型後，美髮師向我說明需要剪掉多少頭髮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "barber",
+        "makeup-artist",
+        "beautician"
+      ],
+      "ja": "美容師",
+      "jaReading": "びようし",
+      "jaReadingSegments": [
+        {
+          "text": "美容師",
+          "ruby": "びようし"
+        }
+      ]
+    },
+    {
+      "id": "barber",
+      "word": "barber",
+      "chinese": "理髮師",
+      "chineseDefinition": "在理髮店使用剪刀與電推剪修剪短髮、整理鬢角或鬍鬚，並可提供刮臉服務的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑːr.bɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "理髮師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who cuts and trims hair, especially short hair, and may shave or groom facial hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「理容師」とは、理容室で髪や襟足を整え、ひげそりなども行う専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barber trims my hair with clippers.",
+          "ja": "理容師がバリカンで私の髪を整えます。",
+          "zh": "理髮師用電推剪修整我的頭髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before shaving my neckline, the barber wrapped a warm towel around my neck.",
+          "ja": "襟足をそる前に、理容師が首に温かいタオルを巻いてくれました。",
+          "zh": "在修整我的後頸髮際前，理髮師用熱毛巾包住我的脖子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hairdresser",
+        "beautician",
+        "makeup-artist"
+      ],
+      "ja": "理容師",
+      "jaReading": "りようし",
+      "jaReadingSegments": [
+        {
+          "text": "理容師",
+          "ruby": "りようし"
+        }
+      ]
+    },
+    {
+      "id": "beautician",
+      "word": "beautician",
+      "chinese": "美容保養師",
+      "chineseDefinition": "在美容沙龍為顧客進行臉部與身體肌膚保養、清潔及護理療程的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bjuːˈtɪʃ.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "美容保養師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A beauty professional who provides skin-care and body-care treatments, such as facials and masks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「エステティシャン」とは、客の肌の状態に合わせて、顔や体の美容ケアや施術を行う専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The beautician applies a face mask.",
+          "ja": "エステティシャンが顔にパックを塗ります。",
+          "zh": "美容保養師在我的臉上敷面膜。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After checking my skin, the beautician recommended a gentle treatment for the dry areas.",
+          "ja": "肌を確認したあと、エステティシャンが乾燥している部分に低刺激の施術を勧めてくれました。",
+          "zh": "檢查我的皮膚狀況後，美容保養師為乾燥部位推薦了較溫和的療程。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hairdresser",
+        "makeup-artist",
+        "massage-therapist"
+      ],
+      "ja": "エステティシャン",
+      "jaReading": "エステティシャン",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "nail-technician",
+      "word": "nail technician",
+      "chinese": "美甲師",
+      "chineseDefinition": "為顧客修整指甲、塗指甲油或凝膠，並進行指甲造型與基礎護理的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈneɪl tekˌnɪʃ.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "美甲師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who shapes, cares for, and decorates clients' fingernails and toenails.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ネイリスト」とは、客の爪を整え、ネイルカラーやジェルを塗り、デザインや手入れを行う専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The nail technician applies a light pink polish.",
+          "ja": "ネイリストが淡いピンクのネイルカラーを塗ります。",
+          "zh": "美甲師塗上淺粉紅色的指甲油。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because one nail was cracked, the nail technician repaired it before applying the gel.",
+          "ja": "爪が一本割れていたので、ネイリストがジェルを塗る前に補修してくれました。",
+          "zh": "因為有一根指甲裂了，美甲師在上凝膠前先修補好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beautician",
+        "makeup-artist",
+        "hairdresser"
+      ],
+      "ja": "ネイリスト",
+      "jaReading": "ネイリスト",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "makeup-artist",
+      "word": "makeup artist",
+      "chinese": "彩妝師",
+      "chineseDefinition": "依照拍攝、舞台或活動需求，使用彩妝品與刷具為人物設計並完成妝容的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmeɪk.ʌp ˌɑːr.tɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "彩妝師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who applies makeup for photo shoots, performances, events, or other specific looks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「メイクアップアーティスト」とは、撮影や舞台、イベントなどの目的に合わせて人のメイクを仕上げる専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The makeup artist applies eye shadow with a brush.",
+          "ja": "メイクアップアーティストがブラシでアイシャドーを塗ります。",
+          "zh": "彩妝師用刷具上眼影。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before the photo shoot began, the makeup artist adjusted the foundation to match the studio lighting.",
+          "ja": "撮影が始まる前に、メイクアップアーティストがスタジオの照明に合うようファンデーションを調整しました。",
+          "zh": "拍攝開始前，彩妝師調整了粉底，使妝效配合攝影棚的燈光。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beautician",
+        "hairdresser",
+        "photographer"
+      ],
+      "ja": "メイクアップアーティスト",
+      "jaReading": "メイクアップアーティスト",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "massage-therapist",
+      "word": "massage therapist",
+      "chinese": "按摩師",
+      "chineseDefinition": "依照顧客身體緊繃的位置調整力道，以手技按壓與放鬆肌肉的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/məˈsɑːʒ ˌθer.ə.pɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "按摩師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who uses controlled hand pressure and massage techniques to relax tight muscles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「マッサージ師」とは、客の体のこりや希望に合わせて力加減を調整し、手技で筋肉をほぐす専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The massage therapist presses my shoulders gently.",
+          "ja": "マッサージ師が私の肩を優しく押します。",
+          "zh": "按摩師輕柔地按壓我的肩膀。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After I explained where my back felt stiff, the massage therapist adjusted the pressure.",
+          "ja": "背中のこっている場所を伝えると、マッサージ師が力加減を調整してくれました。",
+          "zh": "我說明背部僵硬的位置後，按摩師調整了按壓力道。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beautician",
+        "physical-therapist",
+        "fitness-trainer"
+      ],
+      "ja": "マッサージ師",
+      "jaReading": "マッサージし",
+      "jaReadingSegments": [
+        {
+          "text": "マッサージ",
+          "ruby": null
+        },
+        {
+          "text": "師",
+          "ruby": "し"
+        }
+      ]
+    },
+    {
+      "id": "fitness-trainer",
+      "word": "fitness trainer",
+      "chinese": "健身教練",
+      "chineseDefinition": "在健身房依照學員的體能目標安排訓練，示範器材用法並修正動作姿勢的教練。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɪt.nəs ˌtreɪ.nɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "健身教練",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who plans fitness training, demonstrates exercises, and helps clients use gym equipment safely.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「フィットネストレーナー」とは、利用者の目標に合わせて運動を指導し、器具の使い方や姿勢を教える専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The fitness trainer shows me how to lift the dumbbells safely.",
+          "ja": "フィットネストレーナーがダンベルを安全に持ち上げる方法を教えてくれます。",
+          "zh": "健身教練教我如何安全地舉起啞鈴。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my knees hurt during squats, the fitness trainer corrected my posture and reduced the weight.",
+          "ja": "スクワット中に膝が痛んだので、フィットネストレーナーが姿勢を直して重量を下げました。",
+          "zh": "因為深蹲時膝蓋痛，健身教練修正了我的姿勢並減輕重量。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sports-coach",
+        "physical-therapist",
+        "yoga-instructor"
+      ],
+      "ja": "フィットネストレーナー",
+      "jaReading": "フィットネストレーナー",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "yoga-instructor",
+      "word": "yoga instructor",
+      "chinese": "瑜伽老師",
+      "chineseDefinition": "在瑜伽課示範姿勢、呼吸與伸展，並依學員狀況調整動作的指導者。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈjoʊ.ɡə ɪnˌstrʌk.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "瑜伽老師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who teaches yoga postures, breathing, and safe movement in classes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ヨガインストラクター」とは、ヨガの姿勢や呼吸法を示し、安全な練習を指導する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The yoga instructor shows us a simple stretch.",
+          "ja": "ヨガインストラクターが簡単なストレッチを見せてくれます。",
+          "zh": "瑜伽老師向我們示範簡單的伸展動作。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my knee felt uncomfortable, the yoga instructor suggested an easier version of the pose.",
+          "ja": "膝に違和感があったので、ヨガインストラクターはそのポーズのもっと簡単なやり方を提案してくれました。",
+          "zh": "因為我的膝蓋不舒服，瑜伽老師建議較簡單的姿勢做法。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sports-coach",
+        "swimming-instructor",
+        "fitness-trainer"
+      ],
+      "ja": "ヨガインストラクター",
+      "jaReading": "ヨガインストラクター",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "tailor",
+      "word": "tailor",
+      "chinese": "裁縫師",
+      "chineseDefinition": "依顧客尺寸製作、修改或修補衣物的專業工匠。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈteɪ.lɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "裁縫師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A skilled person who makes, alters, and repairs clothing to fit customers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「仕立屋」とは、客の寸法に合わせて衣服を作り、丈や幅を直す職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The tailor shortened the sleeves of my jacket.",
+          "ja": "仕立屋が私のジャケットの袖を短くしました。",
+          "zh": "裁縫師把我外套的袖子改短了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After measuring my waist, the tailor adjusted the trousers so they would fit better.",
+          "ja": "ウエストを測った後、仕立屋はもっと体に合うようズボンを調整しました。",
+          "zh": "量過腰圍後，裁縫師調整褲子，讓它更合身。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "laundry-worker",
+        "shoe-repairer",
+        "fashion-designer"
+      ],
+      "ja": "仕立屋",
+      "jaReading": "したてや",
+      "jaReadingSegments": [
+        {
+          "text": "仕立屋",
+          "ruby": "したてや"
+        }
+      ]
+    },
+    {
+      "id": "shoe-repairer",
+      "word": "shoe repairer",
+      "chinese": "修鞋師傅",
+      "chineseDefinition": "修補鞋底、鞋跟、縫線與皮革的專業工匠。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃuː rɪˌper.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "修鞋師傅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A craftsperson who repairs soles, heels, stitching, and leather on shoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「靴修理職人」とは、靴底やかかと、縫い目、革などを修理する職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The shoe repairer replaced the heel on my boot.",
+          "ja": "靴修理職人が私のブーツのかかとを交換しました。",
+          "zh": "修鞋師傅更換了我靴子的鞋跟。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the leather was worn, the shoe repairer reinforced it and polished the shoes.",
+          "ja": "革がすり減っていましたが、靴修理職人は補強して靴を磨きました。",
+          "zh": "雖然皮革已磨損，修鞋師傅仍加以補強並擦亮鞋子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "tailor",
+        "leather-worker",
+        "sales-clerk"
+      ],
+      "ja": "靴修理職人",
+      "jaReading": "くつしゅうりしょくにん",
+      "jaReadingSegments": [
+        {
+          "text": "靴",
+          "ruby": "くつ"
+        },
+        {
+          "text": "修理",
+          "ruby": "しゅうり"
+        },
+        {
+          "text": "職人",
+          "ruby": "しょくにん"
+        }
+      ]
+    },
+    {
+      "id": "farmer",
+      "word": "farmer",
+      "chinese": "農夫",
+      "chineseDefinition": "在農地種植、照料並收穫作物，以農業生產為工作的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɑːr.mɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "農夫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who grows crops and manages farmland for agricultural production.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「農家」とは、田畑で作物を育て、農産物を収穫することを仕事とする人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The farmer waters the vegetables early in the morning.",
+          "ja": "農家が朝早く畑の野菜に水をやります。",
+          "zh": "農夫一早為田裡的蔬菜澆水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since heavy rain was expected, the farmer harvested the ripe tomatoes before evening.",
+          "ja": "大雨が予想されたため、農家は夕方までに熟したトマトを収穫しました。",
+          "zh": "因為預計會下大雨，農夫在傍晚前採收成熟番茄。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "forestry-worker",
+        "fisherman",
+        "gardener"
+      ],
+      "ja": "農家",
+      "jaReading": "のうか",
+      "jaReadingSegments": [
+        {
+          "text": "農家",
+          "ruby": "のうか"
+        }
+      ]
+    },
+    {
+      "id": "fisherman",
+      "word": "fisherman",
+      "chinese": "漁夫",
+      "chineseDefinition": "使用船隻、漁網或釣具捕撈魚類與海產，以漁業為工作的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɪʃ.ɚ.mən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "漁夫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who catches fish or seafood for work using boats, nets, or fishing equipment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「漁師」とは、船や網などを使って魚介類を捕り、漁業を仕事とする人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The fisherman pulls the net onto the boat.",
+          "ja": "漁師が網を船に引き上げます。",
+          "zh": "漁夫把漁網拉上船。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After checking the weather forecast, the fisherman decided to return to the harbor before noon.",
+          "ja": "天気予報を確認した後、漁師は正午前に港へ戻ることにしました。",
+          "zh": "查看天氣預報後，漁夫決定在中午前返回港口。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "farmer",
+        "coast-guard-officer",
+        "fishmonger"
+      ],
+      "ja": "漁師",
+      "jaReading": "りょうし",
+      "jaReadingSegments": [
+        {
+          "text": "漁師",
+          "ruby": "りょうし"
+        }
+      ]
+    },
+    {
+      "id": "forestry-worker",
+      "word": "forestry worker",
+      "chinese": "林業工作者",
+      "chineseDefinition": "在森林進行植樹、修枝、伐木與搬運等森林管理工作的人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɔːr.ə.stri ˌwɝː.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "林業工作者",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who plants, maintains, cuts, and transports trees as part of forest management.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「林業作業員」とは、森林で植林、枝打ち、伐採、運搬などを行う作業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The forestry worker plants a young tree on the hillside.",
+          "ja": "林業作業員が斜面に苗木を植えます。",
+          "zh": "林業工作者在山坡種下一棵樹苗。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before cutting the damaged tree, the forestry worker marked a safe area around it.",
+          "ja": "傷んだ木を伐採する前に、林業作業員は周囲に安全な作業区域を示しました。",
+          "zh": "砍伐受損樹木前，林業工作者在周圍標示安全區域。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "farmer",
+        "gardener",
+        "lumberjack"
+      ],
+      "ja": "林業作業員",
+      "jaReading": "りんぎょうさぎょういん",
+      "jaReadingSegments": [
+        {
+          "text": "林業",
+          "ruby": "りんぎょう"
+        },
+        {
+          "text": "作業員",
+          "ruby": "さぎょういん"
+        }
+      ]
+    },
+    {
+      "id": "factory-worker",
+      "word": "factory worker",
+      "chinese": "工廠作業員",
+      "chineseDefinition": "在工廠操作設備、組裝或包裝產品並依流程檢查品質的人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfæk.tɚ.i ˌwɝː.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "工廠作業員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who operates equipment, assembles or packages products, and checks quality in a factory.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「工場作業員」とは、工場で機械を操作し、製品の組立、包装、検品などを行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The factory worker packs the bottles into a box.",
+          "ja": "工場作業員がボトルを箱に詰めます。",
+          "zh": "工廠作業員把瓶子裝進紙箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When an unusual sound occurred, the factory worker stopped the line and notified the supervisor.",
+          "ja": "異常な音がしたとき、工場作業員はラインを止めて責任者に連絡しました。",
+          "zh": "出現異常聲響時，工廠作業員停止生產線並通知主管。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "welder",
+        "construction-worker",
+        "quality-inspector"
+      ],
+      "ja": "工場作業員",
+      "jaReading": "こうじょうさぎょういん",
+      "jaReadingSegments": [
+        {
+          "text": "工場",
+          "ruby": "こうじょう"
+        },
+        {
+          "text": "作業員",
+          "ruby": "さぎょういん"
+        }
+      ]
+    },
+    {
+      "id": "food-factory-worker",
+      "word": "food factory worker",
+      "chinese": "食品工廠作業員",
+      "chineseDefinition": "在食品工廠依衛生規範進行加工、分裝、包裝與生產線檢查的作業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfuːd ˌfæk.tɚ.i ˌwɝː.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "食品工廠作業員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A factory worker who processes, portions, or packages food while following strict hygiene procedures.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「食品工場作業員」とは、衛生管理を守りながら、食品の加工、盛り付け、包装などを生産ラインで行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The food factory worker packed the rice balls into boxes.",
+          "ja": "食品工場作業員がおにぎりを箱に詰めました。",
+          "zh": "食品工廠作業員把飯糰裝進盒子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before the production line started, the food factory worker checked that the gloves and work surface were clean.",
+          "ja": "生産ラインの開始前に、食品工場作業員は手袋と作業台の清潔さを確認しました。",
+          "zh": "生產線啟動前，食品工廠作業員確認手套和工作臺是否乾淨。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "factory-worker",
+        "baker",
+        "chef"
+      ],
+      "ja": "食品工場作業員",
+      "jaReading": "しょくひんこうじょうさぎょういん",
+      "jaReadingSegments": [
+        {
+          "text": "食品",
+          "ruby": "しょくひん"
+        },
+        {
+          "text": "工場",
+          "ruby": "こうじょう"
+        },
+        {
+          "text": "作業員",
+          "ruby": "さぎょういん"
+        }
+      ]
+    },
+    {
+      "id": "baker",
+      "word": "baker",
+      "chinese": "麵包師",
+      "chineseDefinition": "準備麵糰、控制發酵與烘烤流程，製作麵包及其他烘焙食品的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbeɪ.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "麵包師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who prepares dough and bakes bread and other baked goods professionally.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「パン職人」とは、生地を作って発酵や焼成を管理し、パンを専門的に作る人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The baker put the bread dough into the oven.",
+          "ja": "パン職人がパン生地をオーブンに入れました。",
+          "zh": "麵包師把麵包麵糰放進烤箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the dough had not risen enough, the baker waited a little longer before shaping it.",
+          "ja": "生地の膨らみが足りなかったので、パン職人は成形せずにもう少し待ちました。",
+          "zh": "因為麵糰發得不夠，麵包師在整形前又多等了一會兒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "food-factory-worker",
+        "pastry-chef",
+        "chef"
+      ],
+      "ja": "パン職人",
+      "jaReading": "パンしょくにん",
+      "jaReadingSegments": [
+        {
+          "text": "パン",
+          "ruby": null
+        },
+        {
+          "text": "職人",
+          "ruby": "しょくにん"
+        }
+      ]
+    },
+    {
+      "id": "photographer",
+      "word": "photographer",
+      "chinese": "攝影師",
+      "chineseDefinition": "使用相機、鏡頭與光線安排拍攝人物、活動或商品，並挑選和處理照片的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/fəˈtɑː.ɡrə.fɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "攝影師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who plans and takes photographs of people, events, places, or products.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「写真家」とは、カメラや光を使い、人物、行事、風景、商品などの写真を撮る専門家です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The photographer took our family photo in the park.",
+          "ja": "写真家が公園で私たちの家族写真を撮りました。",
+          "zh": "攝影師在公園拍了我們的全家福。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When sunlight came in, the photographer moved us closer to the window to use the natural light.",
+          "ja": "日が差してきたとき、写真家は自然光を使うために私たちを窓際へ移動させました。",
+          "zh": "陽光照進來時，攝影師把我們移到窗邊，以利用自然光。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "reporter",
+        "manga-artist",
+        "makeup-artist"
+      ],
+      "ja": "写真家",
+      "jaReading": "しゃしんか",
+      "jaReadingSegments": [
+        {
+          "text": "写真家",
+          "ruby": "しゃしんか"
+        }
+      ]
+    },
+    {
+      "id": "reporter",
+      "word": "reporter",
+      "chinese": "記者",
+      "chineseDefinition": "採訪當事人與目擊者、查證資訊並撰寫或播報新聞內容的媒體工作者。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/rɪˈpɔːr.t̬ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "記者",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A media professional who interviews sources, verifies information, and writes or presents news reports.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「記者」とは、関係者を取材し、情報を確認して、新聞や放送などのニュースを作る人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The reporter interviewed a shop owner at the market.",
+          "ja": "記者が市場で店主に取材しました。",
+          "zh": "記者在市場採訪了一位店主。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After confirming the details with two witnesses, the reporter submitted the article.",
+          "ja": "二人の目撃者に詳細を確認したあと、記者は記事を提出しました。",
+          "zh": "向兩名目擊者確認細節後，記者提交了報導。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "photographer",
+        "manga-artist",
+        "teacher"
+      ],
+      "ja": "記者",
+      "jaReading": "きしゃ",
+      "jaReadingSegments": [
+        {
+          "text": "記者",
+          "ruby": "きしゃ"
+        }
+      ]
+    },
+    {
+      "id": "musician",
+      "word": "musician",
+      "chinese": "音樂家",
+      "chineseDefinition": "以演奏、創作或錄製音樂為專業，並參與排練、演出或製作的音樂工作者。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/mjuˈzɪʃ.ən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "音樂家",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional who performs, composes, or records music, often rehearsing and appearing in concerts.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「音楽家」とは、音楽の演奏、作曲、録音などを専門とし、練習や公演を行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The musician practiced the new song before rehearsal.",
+          "ja": "音楽家がリハーサル前に新しい曲を練習しました。",
+          "zh": "音樂家在彩排前練習了新曲子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When a string broke during the performance, the musician changed instruments and continued playing.",
+          "ja": "演奏中に弦が切れたので、音楽家は楽器を持ち替えて演奏を続けました。",
+          "zh": "演出中有一根弦斷了，音樂家換了一件樂器後繼續演奏。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "photographer",
+        "manga-artist",
+        "yoga-instructor"
+      ],
+      "ja": "音楽家",
+      "jaReading": "おんがくか",
+      "jaReadingSegments": [
+        {
+          "text": "音楽家",
+          "ruby": "おんがくか"
+        }
+      ]
+    },
+    {
+      "id": "manga-artist",
+      "word": "manga artist",
+      "chinese": "漫畫家",
+      "chineseDefinition": "構思故事與分鏡、繪製角色和背景，並依編輯意見完成漫畫作品的創作者。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɑːŋ.ɡə ˌɑːr.tɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "漫畫家",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A creator who develops stories and draws characters, panels, and backgrounds for manga.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「漫画家」とは、物語やコマ割りを考え、人物や背景を描いて漫画作品を作る人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The manga artist drew the main character's face.",
+          "ja": "漫画家が主人公の顔を描きました。",
+          "zh": "漫畫家畫了主角的臉。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the editor suggested a clearer ending, the manga artist redrew the final page.",
+          "ja": "編集者がもっと分かりやすい結末を提案したので、漫画家は最後のページを描き直しました。",
+          "zh": "編輯建議採用更清楚的結局後，漫畫家重畫了最後一頁。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "photographer",
+        "reporter",
+        "makeup-artist"
+      ],
+      "ja": "漫画家",
+      "jaReading": "まんがか",
+      "jaReadingSegments": [
+        {
+          "text": "漫画家",
+          "ruby": "まんがか"
+        }
+      ]
+    }
+  ]
+}

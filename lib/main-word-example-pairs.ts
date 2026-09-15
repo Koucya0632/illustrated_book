@@ -1,5 +1,6 @@
 import type { CEFRLevel } from "@/types";
 import { MAIN_WORD_FRUITS_EXAMPLE_PAIRS } from "./main-word-fruits-2026-09";
+import { MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-3";
 import { MAIN_WORD_EXPANSION_BATCH_2_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-2";
 import { MAIN_WORD_EXPANSION_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09";
@@ -157,6 +158,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_EXPANSION_BATCH_2_EXAMPLE_PAIRS,
     MAIN_WORD_EXPANSION_BATCH_3_EXAMPLE_PAIRS,
     MAIN_WORD_FRUITS_EXAMPLE_PAIRS,
+    MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS,
   );
 
 export function selectMainWordExamplePairs(

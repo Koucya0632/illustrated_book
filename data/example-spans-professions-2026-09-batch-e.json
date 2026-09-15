@@ -1,0 +1,4637 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "E",
+  "en": {
+    "The hairdresser dries my hair after the haircut.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hairdresser",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "hairdresser"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dries",
+        "z": "吹乾",
+        "j": "乾かす",
+        "e": "dries"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " after the "
+      },
+      {
+        "t": "haircut",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I showed the style I wanted, the hairdresser explained how much hair needed to be cut.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "showed",
+        "z": "給對方看",
+        "j": "見せた",
+        "e": "showed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "style",
+        "z": "髮型",
+        "j": "髪型",
+        "e": "style"
+      },
+      {
+        "t": " I "
+      },
+      {
+        "t": "wanted",
+        "z": "想要的",
+        "j": "希望する",
+        "e": "wanted"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "hairdresser",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "hairdresser"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "說明了",
+        "j": "説明した",
+        "e": "explained"
+      },
+      {
+        "t": " how much "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "needed",
+        "z": "需要",
+        "j": "必要だった",
+        "e": "needed"
+      },
+      {
+        "t": " to be "
+      },
+      {
+        "t": "cut",
+        "z": "剪掉",
+        "j": "切る",
+        "e": "cut"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The barber trims my hair with clippers.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "trims",
+        "z": "修整",
+        "j": "整える",
+        "e": "trims"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "clippers",
+        "z": "電推剪",
+        "j": "バリカン",
+        "e": "clippers"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before shaving my neckline, the barber wrapped a warm towel around my neck.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "shaving",
+        "z": "修整",
+        "j": "そる",
+        "e": "shaving"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "neckline",
+        "z": "後頸髮際",
+        "j": "襟足",
+        "e": "neckline"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wrapped",
+        "z": "包住了",
+        "j": "巻いた",
+        "e": "wrapped"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "warm towel",
+        "z": "熱毛巾",
+        "j": "温かいタオル",
+        "e": "warm towel"
+      },
+      {
+        "t": " around my "
+      },
+      {
+        "t": "neck",
+        "z": "脖子",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The beautician applies a face mask.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "beautician",
+        "z": "美容保養師",
+        "j": "エステティシャン",
+        "e": "beautician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "applies",
+        "z": "敷上",
+        "j": "塗る",
+        "e": "applies"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "face mask",
+        "z": "面膜",
+        "j": "顔用パック",
+        "e": "face mask"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After checking my skin, the beautician recommended a gentle treatment for the dry areas.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "checking",
+        "z": "檢查",
+        "j": "確認した",
+        "e": "checking"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "skin",
+        "z": "皮膚狀況",
+        "j": "肌の状態",
+        "e": "skin"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "beautician",
+        "z": "美容保養師",
+        "j": "エステティシャン",
+        "e": "beautician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "recommended",
+        "z": "推薦了",
+        "j": "勧めた",
+        "e": "recommended"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "gentle",
+        "z": "較溫和的",
+        "j": "低刺激の",
+        "e": "gentle"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "treatment",
+        "z": "療程",
+        "j": "施術",
+        "e": "treatment"
+      },
+      {
+        "t": " for the "
+      },
+      {
+        "t": "dry areas",
+        "z": "乾燥部位",
+        "j": "乾燥している部分",
+        "e": "dry areas"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The nail technician applies a light pink polish.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "nail technician",
+        "z": "美甲師",
+        "j": "ネイリスト",
+        "e": "nail technician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "applies",
+        "z": "塗上",
+        "j": "塗る",
+        "e": "applies"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "light pink",
+        "z": "淺粉紅色的",
+        "j": "薄いピンクの",
+        "e": "light pink"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "polish",
+        "z": "指甲油",
+        "j": "ネイルカラー",
+        "e": "polish"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because one nail was cracked, the nail technician repaired it before applying the gel.": [
+      {
+        "t": "Because "
+      },
+      {
+        "t": "one nail",
+        "z": "一根指甲",
+        "j": "爪一本",
+        "e": "one nail"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "cracked",
+        "z": "裂了",
+        "j": "割れていた",
+        "e": "cracked"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "nail technician",
+        "z": "美甲師",
+        "j": "ネイリスト",
+        "e": "nail technician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "repaired",
+        "z": "修補好",
+        "j": "補修した",
+        "e": "repaired"
+      },
+      {
+        "t": " it before "
+      },
+      {
+        "t": "applying",
+        "z": "塗上",
+        "j": "塗る",
+        "e": "applying"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "gel",
+        "z": "凝膠",
+        "j": "ジェル",
+        "e": "gel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The makeup artist applies eye shadow with a brush.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "makeup artist",
+        "z": "彩妝師",
+        "j": "メイクアップアーティスト",
+        "e": "makeup artist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "applies",
+        "z": "上妝",
+        "j": "塗る",
+        "e": "applies"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "eye shadow",
+        "z": "眼影",
+        "j": "アイシャドー",
+        "e": "eye shadow"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "brush",
+        "z": "刷具",
+        "j": "ブラシ",
+        "e": "brush"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before the photo shoot began, the makeup artist adjusted the foundation to match the studio lighting.": [
+      {
+        "t": "Before the "
+      },
+      {
+        "t": "photo shoot",
+        "z": "拍攝",
+        "j": "撮影",
+        "e": "photo shoot"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "began",
+        "z": "開始",
+        "j": "始まった",
+        "e": "began"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "makeup artist",
+        "z": "彩妝師",
+        "j": "メイクアップアーティスト",
+        "e": "makeup artist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "foundation",
+        "z": "粉底",
+        "j": "ファンデーション",
+        "e": "foundation"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "match",
+        "z": "配合",
+        "j": "合わせる",
+        "e": "match"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "studio lighting",
+        "z": "攝影棚燈光",
+        "j": "スタジオの照明",
+        "e": "studio lighting"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The massage therapist presses my shoulders gently.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "massage therapist",
+        "z": "按摩師",
+        "j": "マッサージ師",
+        "e": "massage therapist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "presses",
+        "z": "按壓",
+        "j": "押す",
+        "e": "presses"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "shoulders",
+        "z": "肩膀",
+        "j": "肩",
+        "e": "shoulders"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gently",
+        "z": "輕柔地",
+        "j": "ゆっくり",
+        "e": "gently"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After I explained where my back felt stiff, the massage therapist adjusted the pressure.": [
+      {
+        "t": "After I "
+      },
+      {
+        "t": "explained",
+        "z": "說明",
+        "j": "伝えた",
+        "e": "explained"
+      },
+      {
+        "t": " where my "
+      },
+      {
+        "t": "back",
+        "z": "背部",
+        "j": "背中",
+        "e": "back"
+      },
+      {
+        "t": " felt "
+      },
+      {
+        "t": "stiff",
+        "z": "僵硬的",
+        "j": "こっている",
+        "e": "stiff"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "massage therapist",
+        "z": "按摩師",
+        "j": "マッサージ師",
+        "e": "massage therapist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "pressure",
+        "z": "按壓力道",
+        "j": "力加減",
+        "e": "pressure"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The fitness trainer shows me how to lift the dumbbells safely.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "fitness trainer",
+        "z": "健身教練",
+        "j": "フィットネストレーナー",
+        "e": "fitness trainer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "教導",
+        "j": "教える",
+        "e": "shows"
+      },
+      {
+        "t": " me how to "
+      },
+      {
+        "t": "lift",
+        "z": "舉起",
+        "j": "持ち上げる",
+        "e": "lift"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "dumbbells",
+        "z": "啞鈴",
+        "j": "ダンベル",
+        "e": "dumbbells"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "safely",
+        "z": "安全地",
+        "j": "安全に",
+        "e": "safely"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because my knees hurt during squats, the fitness trainer corrected my posture and reduced the weight.": [
+      {
+        "t": "Because my "
+      },
+      {
+        "t": "knees",
+        "z": "膝蓋",
+        "j": "膝",
+        "e": "knees"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hurt",
+        "z": "痛",
+        "j": "痛んだ",
+        "e": "hurt"
+      },
+      {
+        "t": " during "
+      },
+      {
+        "t": "squats",
+        "z": "深蹲",
+        "j": "スクワット",
+        "e": "squats"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "fitness trainer",
+        "z": "健身教練",
+        "j": "フィットネストレーナー",
+        "e": "fitness trainer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "corrected",
+        "z": "修正了",
+        "j": "直した",
+        "e": "corrected"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "posture",
+        "z": "姿勢",
+        "j": "姿勢",
+        "e": "posture"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "reduced",
+        "z": "減輕了",
+        "j": "軽くした",
+        "e": "reduced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "weight",
+        "z": "重量",
+        "j": "重量",
+        "e": "weight"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The yoga instructor shows us a simple stretch.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "yoga instructor",
+        "z": "瑜伽老師",
+        "j": "ヨガインストラクター",
+        "e": "yoga instructor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "示範",
+        "j": "見せる",
+        "e": "shows"
+      },
+      {
+        "t": " us a "
+      },
+      {
+        "t": "simple",
+        "z": "簡單的",
+        "j": "簡単な",
+        "e": "simple"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stretch",
+        "z": "伸展動作",
+        "j": "ストレッチ",
+        "e": "stretch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because my knee felt uncomfortable, the yoga instructor suggested an easier version of the pose.": [
+      {
+        "t": "Because my "
+      },
+      {
+        "t": "knee",
+        "z": "膝蓋",
+        "j": "膝",
+        "e": "knee"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "felt uncomfortable",
+        "z": "感到不舒服",
+        "j": "違和感があった",
+        "e": "felt uncomfortable"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "yoga instructor",
+        "z": "瑜伽老師",
+        "j": "ヨガインストラクター",
+        "e": "yoga instructor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "suggested",
+        "z": "建議了",
+        "j": "提案した",
+        "e": "suggested"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "easier",
+        "z": "較簡單的",
+        "j": "もっと簡単な",
+        "e": "easier"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "version",
+        "z": "做法",
+        "j": "やり方",
+        "e": "version"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "pose",
+        "z": "姿勢",
+        "j": "ポーズ",
+        "e": "pose"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The tailor shortened the sleeves of my jacket.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "tailor",
+        "z": "裁縫師",
+        "j": "仕立屋",
+        "e": "tailor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shortened",
+        "z": "改短了",
+        "j": "短くした",
+        "e": "shortened"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sleeves",
+        "z": "袖子",
+        "j": "袖",
+        "e": "sleeves"
+      },
+      {
+        "t": " of my "
+      },
+      {
+        "t": "jacket",
+        "z": "外套",
+        "j": "ジャケット",
+        "e": "jacket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After measuring my waist, the tailor adjusted the trousers so they would fit better.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "measuring",
+        "z": "量過",
+        "j": "測った",
+        "e": "measuring"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "waist",
+        "z": "腰圍",
+        "j": "ウエスト",
+        "e": "waist"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "tailor",
+        "z": "裁縫師",
+        "j": "仕立屋",
+        "e": "tailor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "trousers",
+        "z": "褲子",
+        "j": "ズボン",
+        "e": "trousers"
+      },
+      {
+        "t": " so they would "
+      },
+      {
+        "t": "fit",
+        "z": "合身",
+        "j": "体に合う",
+        "e": "fit"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "better",
+        "z": "更好地",
+        "j": "もっと",
+        "e": "better"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The shoe repairer replaced the heel on my boot.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "shoe repairer",
+        "z": "修鞋師傅",
+        "j": "靴修理職人",
+        "e": "shoe repairer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replaced",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "replaced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "heel",
+        "z": "鞋跟",
+        "j": "かかと",
+        "e": "heel"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "boot",
+        "z": "靴子",
+        "j": "ブーツ",
+        "e": "boot"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Although the leather was worn, the shoe repairer reinforced it and polished the shoes.": [
+      {
+        "t": "Although the "
+      },
+      {
+        "t": "leather",
+        "z": "皮革",
+        "j": "革",
+        "e": "leather"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "worn",
+        "z": "磨損的",
+        "j": "すり減っていた",
+        "e": "worn"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "shoe repairer",
+        "z": "修鞋師傅",
+        "j": "靴修理職人",
+        "e": "shoe repairer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reinforced",
+        "z": "補強了",
+        "j": "補強した",
+        "e": "reinforced"
+      },
+      {
+        "t": " it and "
+      },
+      {
+        "t": "polished",
+        "z": "擦亮了",
+        "j": "磨いた",
+        "e": "polished"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shoes",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The farmer waters the vegetables early in the morning.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "farmer",
+        "z": "農夫",
+        "j": "農家",
+        "e": "farmer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "waters",
+        "z": "澆水",
+        "j": "水をやる",
+        "e": "waters"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "vegetables",
+        "z": "蔬菜",
+        "j": "野菜",
+        "e": "vegetables"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "一早",
+        "j": "早く",
+        "e": "early"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "morning",
+        "z": "早晨",
+        "j": "朝",
+        "e": "morning"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since heavy rain was expected, the farmer harvested the ripe tomatoes before evening.": [
+      {
+        "t": "Since "
+      },
+      {
+        "t": "heavy rain",
+        "z": "大雨",
+        "j": "大雨",
+        "e": "heavy rain"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "expected",
+        "z": "預計會發生",
+        "j": "予想された",
+        "e": "expected"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "farmer",
+        "z": "農夫",
+        "j": "農家",
+        "e": "farmer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "harvested",
+        "z": "採收了",
+        "j": "収穫した",
+        "e": "harvested"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ripe",
+        "z": "成熟的",
+        "j": "熟した",
+        "e": "ripe"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tomatoes",
+        "z": "番茄",
+        "j": "トマト",
+        "e": "tomatoes"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "evening",
+        "z": "傍晚",
+        "j": "夕方",
+        "e": "evening"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The fisherman pulls the net onto the boat.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "fisherman",
+        "z": "漁夫",
+        "j": "漁師",
+        "e": "fisherman"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pulls",
+        "z": "拉上",
+        "j": "引き上げる",
+        "e": "pulls"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "net",
+        "z": "漁網",
+        "j": "網",
+        "e": "net"
+      },
+      {
+        "t": " onto the "
+      },
+      {
+        "t": "boat",
+        "z": "船",
+        "j": "船",
+        "e": "boat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After checking the weather forecast, the fisherman decided to return to the harbor before noon.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "checking",
+        "z": "查看",
+        "j": "確認した",
+        "e": "checking"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "weather forecast",
+        "z": "天氣預報",
+        "j": "天気予報",
+        "e": "weather forecast"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "fisherman",
+        "z": "漁夫",
+        "j": "漁師",
+        "e": "fisherman"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "decided",
+        "z": "決定",
+        "j": "ことにした",
+        "e": "decided"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "return",
+        "z": "返回",
+        "j": "戻る",
+        "e": "return"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "harbor",
+        "z": "港口",
+        "j": "港",
+        "e": "harbor"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "noon",
+        "z": "中午",
+        "j": "正午",
+        "e": "noon"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The forestry worker plants a young tree on the hillside.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "forestry worker",
+        "z": "林業工作者",
+        "j": "林業作業員",
+        "e": "forestry worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "plants",
+        "z": "種下",
+        "j": "植える",
+        "e": "plants"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "young tree",
+        "z": "樹苗",
+        "j": "苗木",
+        "e": "young tree"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "hillside",
+        "z": "山坡",
+        "j": "斜面",
+        "e": "hillside"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before cutting the damaged tree, the forestry worker marked a safe area around it.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "cutting",
+        "z": "砍伐",
+        "j": "伐採する",
+        "e": "cutting"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "damaged",
+        "z": "受損的",
+        "j": "傷んだ",
+        "e": "damaged"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tree",
+        "z": "樹木",
+        "j": "木",
+        "e": "tree"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "forestry worker",
+        "z": "林業工作者",
+        "j": "林業作業員",
+        "e": "forestry worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "marked",
+        "z": "標示了",
+        "j": "印を付けた",
+        "e": "marked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "safe area",
+        "z": "安全區域",
+        "j": "安全区域",
+        "e": "safe area"
+      },
+      {
+        "t": " around it."
+      }
+    ],
+    "The factory worker packs the bottles into a box.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "factory worker",
+        "z": "工廠作業員",
+        "j": "工場作業員",
+        "e": "factory worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "packs",
+        "z": "裝進",
+        "j": "詰める",
+        "e": "packs"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bottles",
+        "z": "瓶子",
+        "j": "ボトル",
+        "e": "bottles"
+      },
+      {
+        "t": " into a "
+      },
+      {
+        "t": "box",
+        "z": "紙箱",
+        "j": "箱",
+        "e": "box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When an unusual sound occurred, the factory worker stopped the line and notified the supervisor.": [
+      {
+        "t": "When an "
+      },
+      {
+        "t": "unusual",
+        "z": "異常的",
+        "j": "異常な",
+        "e": "unusual"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sound",
+        "z": "聲響",
+        "j": "音",
+        "e": "sound"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "occurred",
+        "z": "出現",
+        "j": "した",
+        "e": "occurred"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "factory worker",
+        "z": "工廠作業員",
+        "j": "工場作業員",
+        "e": "factory worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stopped",
+        "z": "停止了",
+        "j": "止めた",
+        "e": "stopped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "line",
+        "z": "生產線",
+        "j": "ライン",
+        "e": "line"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "notified",
+        "z": "通知了",
+        "j": "連絡した",
+        "e": "notified"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "supervisor",
+        "z": "主管",
+        "j": "責任者",
+        "e": "supervisor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The food factory worker packed the rice balls into boxes.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "food factory worker",
+        "z": "食品工廠作業員",
+        "j": "食品工場作業員",
+        "e": "food factory worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "packed",
+        "z": "裝進",
+        "j": "詰めた",
+        "e": "packed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "rice balls",
+        "z": "飯糰",
+        "j": "おにぎり",
+        "e": "rice balls"
+      },
+      {
+        "t": " into "
+      },
+      {
+        "t": "boxes",
+        "z": "盒子",
+        "j": "箱",
+        "e": "boxes"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before the production line started, the food factory worker checked that the gloves and work surface were clean.": [
+      {
+        "t": "Before the "
+      },
+      {
+        "t": "production line",
+        "z": "生產線",
+        "j": "生産ライン",
+        "e": "production line"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "started",
+        "z": "啟動",
+        "j": "開始した",
+        "e": "started"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "food factory worker",
+        "z": "食品工廠作業員",
+        "j": "食品工場作業員",
+        "e": "food factory worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "確認",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "gloves",
+        "z": "手套",
+        "j": "手袋",
+        "e": "gloves"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "work surface",
+        "z": "工作臺",
+        "j": "作業台",
+        "e": "work surface"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "clean",
+        "z": "乾淨",
+        "j": "清潔",
+        "e": "clean"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The baker put the bread dough into the oven.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "baker",
+        "z": "麵包師",
+        "j": "パン職人",
+        "e": "baker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放進",
+        "j": "入れた",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bread dough",
+        "z": "麵包麵糰",
+        "j": "パン生地",
+        "e": "bread dough"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "oven",
+        "z": "烤箱",
+        "j": "オーブン",
+        "e": "oven"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the dough had not risen enough, the baker waited a little longer before shaping it.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "dough",
+        "z": "麵糰",
+        "j": "生地",
+        "e": "dough"
+      },
+      {
+        "t": " had not "
+      },
+      {
+        "t": "risen",
+        "z": "發酵膨脹",
+        "j": "膨らんだ",
+        "e": "risen"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "enough",
+        "z": "足夠",
+        "j": "十分に",
+        "e": "enough"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "baker",
+        "z": "麵包師",
+        "j": "パン職人",
+        "e": "baker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "waited",
+        "z": "等待",
+        "j": "待った",
+        "e": "waited"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "little longer",
+        "z": "再久一點",
+        "j": "もう少し",
+        "e": "little longer"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "shaping",
+        "z": "整形",
+        "j": "成形する",
+        "e": "shaping"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "The photographer took our family photo in the park.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "photographer",
+        "z": "攝影師",
+        "j": "写真家",
+        "e": "photographer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "took",
+        "z": "拍攝了",
+        "j": "撮った",
+        "e": "took"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "family photo",
+        "z": "全家福",
+        "j": "家族写真",
+        "e": "family photo"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "park",
+        "z": "公園",
+        "j": "公園",
+        "e": "park"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When sunlight came in, the photographer moved us closer to the window to use the natural light.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "sunlight",
+        "z": "陽光",
+        "j": "日",
+        "e": "sunlight"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "came in",
+        "z": "照進來",
+        "j": "差してきた",
+        "e": "came in"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "photographer",
+        "z": "攝影師",
+        "j": "写真家",
+        "e": "photographer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "moved us",
+        "z": "把我們移到",
+        "j": "私たちを移動させた",
+        "e": "moved us"
+      },
+      {
+        "t": " closer to the "
+      },
+      {
+        "t": "window",
+        "z": "窗邊",
+        "j": "窓際",
+        "e": "window"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "use",
+        "z": "利用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "natural light",
+        "z": "自然光",
+        "j": "自然光",
+        "e": "natural light"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The reporter interviewed a shop owner at the market.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "reporter",
+        "z": "記者",
+        "j": "記者",
+        "e": "reporter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "interviewed",
+        "z": "採訪了",
+        "j": "取材した",
+        "e": "interviewed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "shop owner",
+        "z": "店主",
+        "j": "店主",
+        "e": "shop owner"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "market",
+        "z": "市場",
+        "j": "市場",
+        "e": "market"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After confirming the details with two witnesses, the reporter submitted the article.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "confirming",
+        "z": "確認",
+        "j": "確認した",
+        "e": "confirming"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "details",
+        "z": "細節",
+        "j": "事實",
+        "e": "details"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "two witnesses",
+        "z": "兩名目擊者",
+        "j": "二人の目撃者",
+        "e": "two witnesses"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "reporter",
+        "z": "記者",
+        "j": "記者",
+        "e": "reporter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "submitted",
+        "z": "提交了",
+        "j": "提出した",
+        "e": "submitted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "article",
+        "z": "報導",
+        "j": "記事",
+        "e": "article"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The musician practiced the new song before rehearsal.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "musician",
+        "z": "音樂家",
+        "j": "音楽家",
+        "e": "musician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "practiced",
+        "z": "練習了",
+        "j": "練習した",
+        "e": "practiced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "new song",
+        "z": "新曲子",
+        "j": "新しい曲",
+        "e": "new song"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "rehearsal",
+        "z": "彩排",
+        "j": "リハーサル",
+        "e": "rehearsal"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When a string broke during the performance, the musician changed instruments and continued playing.": [
+      {
+        "t": "When a "
+      },
+      {
+        "t": "string",
+        "z": "弦",
+        "j": "弦",
+        "e": "string"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "broke",
+        "z": "斷了",
+        "j": "切れた",
+        "e": "broke"
+      },
+      {
+        "t": " during the "
+      },
+      {
+        "t": "performance",
+        "z": "演出",
+        "j": "演奏",
+        "e": "performance"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "musician",
+        "z": "音樂家",
+        "j": "音楽家",
+        "e": "musician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "changed",
+        "z": "更換了",
+        "j": "持ち替えた",
+        "e": "changed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "instruments",
+        "z": "樂器",
+        "j": "楽器",
+        "e": "instruments"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "continued",
+        "z": "繼續",
+        "j": "続けた",
+        "e": "continued"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "playing",
+        "z": "演奏",
+        "j": "演奏",
+        "e": "playing"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The manga artist drew the main character's face.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "manga artist",
+        "z": "漫畫家",
+        "j": "漫画家",
+        "e": "manga artist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "drew",
+        "z": "畫了",
+        "j": "描いた",
+        "e": "drew"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "main character",
+        "z": "主角",
+        "j": "主人公",
+        "e": "main character"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "face",
+        "z": "臉",
+        "j": "顔",
+        "e": "face"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the editor suggested a clearer ending, the manga artist redrew the final page.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "editor",
+        "z": "編輯",
+        "j": "編集者",
+        "e": "editor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "suggested",
+        "z": "建議了",
+        "j": "提案した",
+        "e": "suggested"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "clearer",
+        "z": "更清楚的",
+        "j": "もっと分かりやすい",
+        "e": "clearer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ending",
+        "z": "結局",
+        "j": "結末",
+        "e": "ending"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "manga artist",
+        "z": "漫畫家",
+        "j": "漫画家",
+        "e": "manga artist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "redrew",
+        "z": "重畫了",
+        "j": "描き直した",
+        "e": "redrew"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "final page",
+        "z": "最後一頁",
+        "j": "最後のページ",
+        "e": "final page"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "美容師がカットのあとで私の髪を乾かします。": [
+      {
+        "t": "美容師",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "hairdresser",
+        "r": "びようし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "カット",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut",
+        "r": "カット"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "あと",
+        "z": "之後",
+        "j": "あと",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair",
+        "r": "かみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "乾かします",
+        "z": "吹乾",
+        "j": "乾かす",
+        "e": "dries",
+        "r": "かわかします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "希望の髪型を見せると、美容師がどのくらい切る必要があるか説明してくれました。": [
+      {
+        "t": "希望",
+        "z": "想要的",
+        "j": "希望",
+        "e": "wanted",
+        "r": "きぼう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪型",
+        "z": "髮型",
+        "j": "髪型",
+        "e": "style",
+        "r": "かみがた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せる",
+        "z": "給對方看",
+        "j": "見せる",
+        "e": "showed",
+        "r": "みせる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "美容師",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "hairdresser",
+        "r": "びようし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "どのくらい",
+        "z": "多少",
+        "j": "どのくらい",
+        "e": "how much",
+        "r": "どのくらい"
+      },
+      {
+        "t": "切る",
+        "z": "剪掉",
+        "j": "切る",
+        "e": "cut",
+        "r": "きる"
+      },
+      {
+        "t": "必要",
+        "z": "需要",
+        "j": "必要",
+        "e": "needed",
+        "r": "ひつよう"
+      },
+      {
+        "t": "があるか"
+      },
+      {
+        "t": "説明してくれました",
+        "z": "向我說明了",
+        "j": "説明してくれた",
+        "e": "explained",
+        "r": "せつめいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理容師がバリカンで私の髪を整えます。": [
+      {
+        "t": "理容師",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber",
+        "r": "りようし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "バリカン",
+        "z": "電推剪",
+        "j": "バリカン",
+        "e": "clippers",
+        "r": "バリカン"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair",
+        "r": "かみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "整えます",
+        "z": "修整",
+        "j": "整える",
+        "e": "trims",
+        "r": "ととのえます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "襟足をそる前に、理容師が首に温かいタオルを巻いてくれました。": [
+      {
+        "t": "襟足",
+        "z": "後頸髮際",
+        "j": "襟足",
+        "e": "neckline",
+        "r": "えりあし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "そる",
+        "z": "修整",
+        "j": "そる",
+        "e": "shaving",
+        "r": "そる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "理容師",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber",
+        "r": "りようし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "首",
+        "z": "脖子",
+        "j": "首",
+        "e": "neck",
+        "r": "くび"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "温かい",
+        "z": "溫熱的",
+        "j": "温かい",
+        "e": "warm",
+        "r": "あたたかい"
+      },
+      {
+        "t": "タオル",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towel",
+        "r": "タオル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "巻いてくれました",
+        "z": "為我包住了",
+        "j": "巻いてくれた",
+        "e": "wrapped",
+        "r": "まいてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "エステティシャンが顔にパックを塗ります。": [
+      {
+        "t": "エステティシャン",
+        "z": "美容保養師",
+        "j": "エステティシャン",
+        "e": "beautician",
+        "r": "エステティシャン"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "顔",
+        "z": "臉",
+        "j": "顔",
+        "e": "face",
+        "r": "かお"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "パック",
+        "z": "面膜",
+        "j": "パック",
+        "e": "face mask",
+        "r": "パック"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗ります",
+        "z": "敷上",
+        "j": "塗る",
+        "e": "applies",
+        "r": "ぬります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "肌を確認したあと、エステティシャンが乾燥している部分に低刺激の施術を勧めてくれました。": [
+      {
+        "t": "肌",
+        "z": "皮膚狀況",
+        "j": "肌",
+        "e": "skin",
+        "r": "はだ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認した",
+        "z": "檢查了",
+        "j": "確認した",
+        "e": "checking",
+        "r": "かくにんした"
+      },
+      {
+        "t": "あと、"
+      },
+      {
+        "t": "エステティシャン",
+        "z": "美容保養師",
+        "j": "エステティシャン",
+        "e": "beautician",
+        "r": "エステティシャン"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乾燥している",
+        "z": "乾燥的",
+        "j": "乾燥している",
+        "e": "dry",
+        "r": "かんそうしている"
+      },
+      {
+        "t": "部分",
+        "z": "部位",
+        "j": "部分",
+        "e": "areas",
+        "r": "ぶぶん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "低刺激",
+        "z": "較溫和的",
+        "j": "低刺激",
+        "e": "gentle",
+        "r": "ていしげき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "施術",
+        "z": "療程",
+        "j": "施術",
+        "e": "treatment",
+        "r": "せじゅつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれました",
+        "z": "向我推薦了",
+        "j": "勧めてくれた",
+        "e": "recommended",
+        "r": "すすめてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ネイリストが淡いピンクのネイルカラーを塗ります。": [
+      {
+        "t": "ネイリスト",
+        "z": "美甲師",
+        "j": "ネイリスト",
+        "e": "nail technician",
+        "r": "ネイリスト"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "淡い",
+        "z": "淺的",
+        "j": "淡い",
+        "e": "light",
+        "r": "あわい"
+      },
+      {
+        "t": "ピンク",
+        "z": "粉紅色",
+        "j": "ピンク",
+        "e": "pink",
+        "r": "ピンク"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ネイルカラー",
+        "z": "指甲油",
+        "j": "ネイルカラー",
+        "e": "polish",
+        "r": "ネイルカラー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗ります",
+        "z": "塗上",
+        "j": "塗る",
+        "e": "applies",
+        "r": "ぬります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "爪が一本割れていたので、ネイリストがジェルを塗る前に補修してくれました。": [
+      {
+        "t": "爪",
+        "z": "指甲",
+        "j": "爪",
+        "e": "nail",
+        "r": "つめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "一本",
+        "z": "一片",
+        "j": "一本",
+        "e": "one",
+        "r": "いっぽん"
+      },
+      {
+        "t": "割れていた",
+        "z": "裂了",
+        "j": "割れていた",
+        "e": "cracked",
+        "r": "われていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ネイリスト",
+        "z": "美甲師",
+        "j": "ネイリスト",
+        "e": "nail technician",
+        "r": "ネイリスト"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ジェル",
+        "z": "凝膠",
+        "j": "ジェル",
+        "e": "gel",
+        "r": "ジェル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗る",
+        "z": "塗上",
+        "j": "塗る",
+        "e": "applying",
+        "r": "ぬる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "補修してくれました",
+        "z": "為我修補好",
+        "j": "補修してくれた",
+        "e": "repaired",
+        "r": "ほしゅうしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "メイクアップアーティストがブラシでアイシャドーを塗ります。": [
+      {
+        "t": "メイクアップアーティスト",
+        "z": "彩妝師",
+        "j": "メイクアップアーティスト",
+        "e": "makeup artist",
+        "r": "メイクアップアーティスト"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ブラシ",
+        "z": "刷具",
+        "j": "ブラシ",
+        "e": "brush",
+        "r": "ブラシ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "アイシャドー",
+        "z": "眼影",
+        "j": "アイシャドー",
+        "e": "eye shadow",
+        "r": "アイシャドー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗ります",
+        "z": "上妝",
+        "j": "塗る",
+        "e": "applies",
+        "r": "ぬります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "撮影が始まる前に、メイクアップアーティストがスタジオの照明に合うようファンデーションを調整しました。": [
+      {
+        "t": "撮影",
+        "z": "拍攝",
+        "j": "撮影",
+        "e": "photo shoot",
+        "r": "さつえい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "始まる",
+        "z": "開始",
+        "j": "始まる",
+        "e": "began",
+        "r": "はじまる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "メイクアップアーティスト",
+        "z": "彩妝師",
+        "j": "メイクアップアーティスト",
+        "e": "makeup artist",
+        "r": "メイクアップアーティスト"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "スタジオ",
+        "z": "攝影棚",
+        "j": "スタジオ",
+        "e": "studio",
+        "r": "スタジオ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "照明",
+        "z": "燈光",
+        "j": "照明",
+        "e": "lighting",
+        "r": "しょうめい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "合う",
+        "z": "配合",
+        "j": "合う",
+        "e": "match",
+        "r": "あう"
+      },
+      {
+        "t": "よう"
+      },
+      {
+        "t": "ファンデーション",
+        "z": "粉底",
+        "j": "ファンデーション",
+        "e": "foundation",
+        "r": "ファンデーション"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整しました",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted",
+        "r": "ちょうせいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "マッサージ師が私の肩を優しく押します。": [
+      {
+        "t": "マッサージ師",
+        "z": "按摩師",
+        "j": "マッサージ師",
+        "e": "massage therapist",
+        "r": "マッサージし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "肩",
+        "z": "肩膀",
+        "j": "肩",
+        "e": "shoulders",
+        "r": "かた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "優しく",
+        "z": "輕柔地",
+        "j": "優しく",
+        "e": "gently",
+        "r": "やさしく"
+      },
+      {
+        "t": "押します",
+        "z": "按壓",
+        "j": "押す",
+        "e": "presses",
+        "r": "おします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "背中のこっている場所を伝えると、マッサージ師が力加減を調整してくれました。": [
+      {
+        "t": "背中",
+        "z": "背部",
+        "j": "背中",
+        "e": "back",
+        "r": "せなか"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "こっている",
+        "z": "僵硬的",
+        "j": "こっている",
+        "e": "stiff",
+        "r": "こっている"
+      },
+      {
+        "t": "場所",
+        "z": "位置",
+        "j": "場所",
+        "e": "where",
+        "r": "ばしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "伝える",
+        "z": "說明",
+        "j": "伝える",
+        "e": "explained",
+        "r": "つたえる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "マッサージ師",
+        "z": "按摩師",
+        "j": "マッサージ師",
+        "e": "massage therapist",
+        "r": "マッサージし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "力加減",
+        "z": "按壓力道",
+        "j": "力加減",
+        "e": "pressure",
+        "r": "ちからかげん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整してくれました",
+        "z": "為我調整了",
+        "j": "調整してくれた",
+        "e": "adjusted",
+        "r": "ちょうせいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "フィットネストレーナーがダンベルを安全に持ち上げる方法を教えてくれます。": [
+      {
+        "t": "フィットネストレーナー",
+        "z": "健身教練",
+        "j": "フィットネストレーナー",
+        "e": "fitness trainer",
+        "r": "フィットネストレーナー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ダンベル",
+        "z": "啞鈴",
+        "j": "ダンベル",
+        "e": "dumbbells",
+        "r": "ダンベル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "安全",
+        "z": "安全地",
+        "j": "安全",
+        "e": "safely",
+        "r": "あんぜん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "持ち上げる",
+        "z": "舉起",
+        "j": "持ち上げる",
+        "e": "lift",
+        "r": "もちあげる"
+      },
+      {
+        "t": "方法",
+        "z": "方法",
+        "j": "方法",
+        "e": "how",
+        "r": "ほうほう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれます",
+        "z": "教我",
+        "j": "教えてくれる",
+        "e": "shows me",
+        "r": "おしえてくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スクワット中に膝が痛んだので、フィットネストレーナーが姿勢を直して重量を下げました。": [
+      {
+        "t": "スクワット中",
+        "z": "深蹲時",
+        "j": "スクワット中",
+        "e": "during squats",
+        "r": "スクワットちゅう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "膝",
+        "z": "膝蓋",
+        "j": "膝",
+        "e": "knees",
+        "r": "ひざ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "痛んだ",
+        "z": "痛",
+        "j": "痛んだ",
+        "e": "hurt",
+        "r": "いたんだ"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "フィットネストレーナー",
+        "z": "健身教練",
+        "j": "フィットネストレーナー",
+        "e": "fitness trainer",
+        "r": "フィットネストレーナー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "姿勢",
+        "z": "姿勢",
+        "j": "姿勢",
+        "e": "posture",
+        "r": "しせい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "直して",
+        "z": "修正了",
+        "j": "直して",
+        "e": "corrected",
+        "r": "なおして"
+      },
+      {
+        "t": "重量",
+        "z": "重量",
+        "j": "重量",
+        "e": "weight",
+        "r": "じゅうりょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "下げました",
+        "z": "減輕了",
+        "j": "下げた",
+        "e": "reduced",
+        "r": "さげました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ヨガインストラクターが簡単なストレッチを見せてくれます。": [
+      {
+        "t": "ヨガインストラクター",
+        "z": "瑜伽老師",
+        "j": "ヨガインストラクター",
+        "e": "yoga instructor",
+        "r": "ヨガインストラクター"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "簡単",
+        "z": "簡單的",
+        "j": "簡単",
+        "e": "simple",
+        "r": "かんたん"
+      },
+      {
+        "t": "な"
+      },
+      {
+        "t": "ストレッチ",
+        "z": "伸展動作",
+        "j": "ストレッチ",
+        "e": "stretch",
+        "r": "ストレッチ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せてくれます",
+        "z": "向我們示範",
+        "j": "見せてくれる",
+        "e": "shows us",
+        "r": "みせてくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "膝に違和感があったので、ヨガインストラクターはそのポーズのもっと簡単なやり方を提案してくれました。": [
+      {
+        "t": "膝",
+        "z": "膝蓋",
+        "j": "膝",
+        "e": "knee",
+        "r": "ひざ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "違和感",
+        "z": "不舒服的感覺",
+        "j": "違和感",
+        "e": "discomfort",
+        "r": "いわかん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あった",
+        "z": "感到",
+        "j": "あった",
+        "e": "felt",
+        "r": "あった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ヨガインストラクター",
+        "z": "瑜伽老師",
+        "j": "ヨガインストラクター",
+        "e": "yoga instructor",
+        "r": "ヨガインストラクター"
+      },
+      {
+        "t": "はその"
+      },
+      {
+        "t": "ポーズ",
+        "z": "姿勢",
+        "j": "ポーズ",
+        "e": "pose",
+        "r": "ポーズ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "もっと簡単な",
+        "z": "較簡單的",
+        "j": "もっと簡単な",
+        "e": "easier",
+        "r": "もっとかんたんな"
+      },
+      {
+        "t": "やり方",
+        "z": "做法",
+        "j": "やり方",
+        "e": "version",
+        "r": "やりかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "提案してくれました",
+        "z": "向我建議了",
+        "j": "提案してくれた",
+        "e": "suggested",
+        "r": "ていあんしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "仕立屋が私のジャケットの袖を短くしました。": [
+      {
+        "t": "仕立屋",
+        "z": "裁縫師",
+        "j": "仕立屋",
+        "e": "tailor",
+        "r": "したてや"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ジャケット",
+        "z": "外套",
+        "j": "ジャケット",
+        "e": "jacket",
+        "r": "ジャケット"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "袖",
+        "z": "袖子",
+        "j": "袖",
+        "e": "sleeves",
+        "r": "そで"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "短くしました",
+        "z": "改短了",
+        "j": "短くした",
+        "e": "shortened",
+        "r": "みじかくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ウエストを測った後、仕立屋はもっと体に合うようズボンを調整しました。": [
+      {
+        "t": "ウエスト",
+        "z": "腰圍",
+        "j": "ウエスト",
+        "e": "waist",
+        "r": "ウエスト"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "測った",
+        "z": "量過",
+        "j": "測った",
+        "e": "measuring",
+        "r": "はかった"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "仕立屋",
+        "z": "裁縫師",
+        "j": "仕立屋",
+        "e": "tailor",
+        "r": "したてや"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "もっと",
+        "z": "更",
+        "j": "もっと",
+        "e": "better",
+        "r": "もっと"
+      },
+      {
+        "t": "体に合う",
+        "z": "合身",
+        "j": "体に合う",
+        "e": "fit",
+        "r": "からだにあう"
+      },
+      {
+        "t": "よう"
+      },
+      {
+        "t": "ズボン",
+        "z": "褲子",
+        "j": "ズボン",
+        "e": "trousers",
+        "r": "ズボン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整しました",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted",
+        "r": "ちょうせいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "靴修理職人が私のブーツのかかとを交換しました。": [
+      {
+        "t": "靴修理職人",
+        "z": "修鞋師傅",
+        "j": "靴修理職人",
+        "e": "shoe repairer",
+        "r": "くつしゅうりしょくにん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ブーツ",
+        "z": "靴子",
+        "j": "ブーツ",
+        "e": "boot",
+        "r": "ブーツ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "かかと",
+        "z": "鞋跟",
+        "j": "かかと",
+        "e": "heel",
+        "r": "かかと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換しました",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "replaced",
+        "r": "こうかんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "革がすり減っていましたが、靴修理職人は補強して靴を磨きました。": [
+      {
+        "t": "革",
+        "z": "皮革",
+        "j": "革",
+        "e": "leather",
+        "r": "かわ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "すり減っていました",
+        "z": "已磨損",
+        "j": "すり減っていた",
+        "e": "was worn",
+        "r": "すりへっていました"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "靴修理職人",
+        "z": "修鞋師傅",
+        "j": "靴修理職人",
+        "e": "shoe repairer",
+        "r": "くつしゅうりしょくにん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "補強して",
+        "z": "加以補強",
+        "j": "補強して",
+        "e": "reinforced",
+        "r": "ほきょうして"
+      },
+      {
+        "t": "靴",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes",
+        "r": "くつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "磨きました",
+        "z": "擦亮了",
+        "j": "磨いた",
+        "e": "polished",
+        "r": "みがきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "農家が朝早く畑の野菜に水をやります。": [
+      {
+        "t": "農家",
+        "z": "農夫",
+        "j": "農家",
+        "e": "farmer",
+        "r": "のうか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "朝早く",
+        "z": "一早",
+        "j": "朝早く",
+        "e": "early in the morning",
+        "r": "あさはやく"
+      },
+      {
+        "t": "畑",
+        "z": "田裡",
+        "j": "畑",
+        "e": "field",
+        "r": "はたけ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "野菜",
+        "z": "蔬菜",
+        "j": "野菜",
+        "e": "vegetables",
+        "r": "やさい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "やります",
+        "z": "澆",
+        "j": "やる",
+        "e": "waters",
+        "r": "やります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大雨が予想されたため、農家は夕方までに熟したトマトを収穫しました。": [
+      {
+        "t": "大雨",
+        "z": "大雨",
+        "j": "大雨",
+        "e": "heavy rain",
+        "r": "おおあめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "予想された",
+        "z": "預計會發生",
+        "j": "予想された",
+        "e": "was expected",
+        "r": "よそうされた"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "農家",
+        "z": "農夫",
+        "j": "農家",
+        "e": "farmer",
+        "r": "のうか"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "夕方",
+        "z": "傍晚",
+        "j": "夕方",
+        "e": "evening",
+        "r": "ゆうがた"
+      },
+      {
+        "t": "までに"
+      },
+      {
+        "t": "熟した",
+        "z": "成熟的",
+        "j": "熟した",
+        "e": "ripe",
+        "r": "じゅくした"
+      },
+      {
+        "t": "トマト",
+        "z": "番茄",
+        "j": "トマト",
+        "e": "tomatoes",
+        "r": "トマト"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "収穫しました",
+        "z": "採收了",
+        "j": "収穫した",
+        "e": "harvested",
+        "r": "しゅうかくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "漁師が網を船に引き上げます。": [
+      {
+        "t": "漁師",
+        "z": "漁夫",
+        "j": "漁師",
+        "e": "fisherman",
+        "r": "りょうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "網",
+        "z": "漁網",
+        "j": "網",
+        "e": "net",
+        "r": "あみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "船",
+        "z": "船",
+        "j": "船",
+        "e": "boat",
+        "r": "ふね"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "引き上げます",
+        "z": "拉上",
+        "j": "引き上げる",
+        "e": "pulls up",
+        "r": "ひきあげます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "天気予報を確認した後、漁師は正午前に港へ戻ることにしました。": [
+      {
+        "t": "天気予報",
+        "z": "天氣預報",
+        "j": "天気予報",
+        "e": "weather forecast",
+        "r": "てんきよほう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認した",
+        "z": "查看了",
+        "j": "確認した",
+        "e": "checked",
+        "r": "かくにんした"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "漁師",
+        "z": "漁夫",
+        "j": "漁師",
+        "e": "fisherman",
+        "r": "りょうし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "正午前",
+        "z": "中午前",
+        "j": "正午前",
+        "e": "before noon",
+        "r": "しょうごまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "港",
+        "z": "港口",
+        "j": "港",
+        "e": "harbor",
+        "r": "みなと"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "戻る",
+        "z": "返回",
+        "j": "戻る",
+        "e": "return",
+        "r": "もどる"
+      },
+      {
+        "t": "ことにしました",
+        "z": "決定了",
+        "j": "ことにした",
+        "e": "decided",
+        "r": "ことにしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "林業作業員が斜面に苗木を植えます。": [
+      {
+        "t": "林業作業員",
+        "z": "林業工作者",
+        "j": "林業作業員",
+        "e": "forestry worker",
+        "r": "りんぎょうさぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "斜面",
+        "z": "山坡",
+        "j": "斜面",
+        "e": "hillside",
+        "r": "しゃめん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "苗木",
+        "z": "樹苗",
+        "j": "苗木",
+        "e": "young tree",
+        "r": "なえぎ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "植えます",
+        "z": "種下",
+        "j": "植える",
+        "e": "plants",
+        "r": "うえます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "傷んだ木を伐採する前に、林業作業員は周囲に安全な作業区域を示しました。": [
+      {
+        "t": "傷んだ",
+        "z": "受損的",
+        "j": "傷んだ",
+        "e": "damaged",
+        "r": "いたんだ"
+      },
+      {
+        "t": "木",
+        "z": "樹木",
+        "j": "木",
+        "e": "tree",
+        "r": "き"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "伐採する",
+        "z": "砍伐",
+        "j": "伐採する",
+        "e": "cutting",
+        "r": "ばっさいする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "林業作業員",
+        "z": "林業工作者",
+        "j": "林業作業員",
+        "e": "forestry worker",
+        "r": "りんぎょうさぎょういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "周囲",
+        "z": "周圍",
+        "j": "周囲",
+        "e": "around it",
+        "r": "しゅうい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "安全な作業区域",
+        "z": "安全作業區",
+        "j": "安全な作業区域",
+        "e": "safe work area",
+        "r": "あんぜんなさぎょうくいき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "示しました",
+        "z": "標示了",
+        "j": "示した",
+        "e": "marked",
+        "r": "しめしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "工場作業員がボトルを箱に詰めます。": [
+      {
+        "t": "工場作業員",
+        "z": "工廠作業員",
+        "j": "工場作業員",
+        "e": "factory worker",
+        "r": "こうじょうさぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ボトル",
+        "z": "瓶子",
+        "j": "ボトル",
+        "e": "bottles",
+        "r": "ボトル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "箱",
+        "z": "紙箱",
+        "j": "箱",
+        "e": "box",
+        "r": "はこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "詰めます",
+        "z": "裝進",
+        "j": "詰める",
+        "e": "packs",
+        "r": "つめます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "異常な音がしたとき、工場作業員はラインを止めて責任者に連絡しました。": [
+      {
+        "t": "異常な",
+        "z": "異常的",
+        "j": "異常な",
+        "e": "unusual",
+        "r": "いじょうな"
+      },
+      {
+        "t": "音",
+        "z": "聲響",
+        "j": "音",
+        "e": "sound",
+        "r": "おと"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "した",
+        "z": "出現",
+        "j": "した",
+        "e": "occurred",
+        "r": "した"
+      },
+      {
+        "t": "とき",
+        "z": "時",
+        "j": "とき",
+        "e": "when",
+        "r": "とき"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "工場作業員",
+        "z": "工廠作業員",
+        "j": "工場作業員",
+        "e": "factory worker",
+        "r": "こうじょうさぎょういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ライン",
+        "z": "生產線",
+        "j": "ライン",
+        "e": "line",
+        "r": "ライン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "止めて",
+        "z": "停止了",
+        "j": "止めて",
+        "e": "stopped",
+        "r": "とめて"
+      },
+      {
+        "t": "責任者に連絡しました",
+        "z": "聯絡了主管",
+        "j": "責任者に連絡した",
+        "e": "notified the supervisor",
+        "r": "せきにんしゃにれんらくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食品工場作業員がおにぎりを箱に詰めました。": [
+      {
+        "t": "食品工場作業員",
+        "z": "食品工廠作業員",
+        "j": "食品工場作業員",
+        "e": "food factory worker",
+        "r": "しょくひんこうじょうさぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "おにぎり",
+        "z": "飯糰",
+        "j": "おにぎり",
+        "e": "rice balls",
+        "r": "おにぎり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "箱",
+        "z": "盒子",
+        "j": "箱",
+        "e": "boxes",
+        "r": "はこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "詰めました",
+        "z": "裝進了",
+        "j": "詰めた",
+        "e": "packed",
+        "r": "つめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "生産ラインの開始前に、食品工場作業員は手袋と作業台の清潔さを確認しました。": [
+      {
+        "t": "生産ライン",
+        "z": "生產線",
+        "j": "生産ライン",
+        "e": "production line",
+        "r": "せいさんライン"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "開始前",
+        "z": "啟動前",
+        "j": "開始前",
+        "e": "before starting",
+        "r": "かいしまえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "食品工場作業員",
+        "z": "食品工廠作業員",
+        "j": "食品工場作業員",
+        "e": "food factory worker",
+        "r": "しょくひんこうじょうさぎょういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "手袋",
+        "z": "手套",
+        "j": "手袋",
+        "e": "gloves",
+        "r": "てぶくろ"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "作業台",
+        "z": "工作臺",
+        "j": "作業台",
+        "e": "work surface",
+        "r": "さぎょうだい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "清潔さ",
+        "z": "乾淨程度",
+        "j": "清潔さ",
+        "e": "cleanliness",
+        "r": "せいけつさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パン職人がパン生地をオーブンに入れました。": [
+      {
+        "t": "パン職人",
+        "z": "麵包師",
+        "j": "パン職人",
+        "e": "baker",
+        "r": "パンしょくにん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "パン生地",
+        "z": "麵包麵糰",
+        "j": "パン生地",
+        "e": "bread dough",
+        "r": "パンきじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "オーブン",
+        "z": "烤箱",
+        "j": "オーブン",
+        "e": "oven",
+        "r": "オーブン"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "放進了",
+        "j": "入れた",
+        "e": "put",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "生地の膨らみが足りなかったので、パン職人は成形せずにもう少し待ちました。": [
+      {
+        "t": "生地",
+        "z": "麵糰",
+        "j": "生地",
+        "e": "dough",
+        "r": "きじ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "膨らみ",
+        "z": "膨脹程度",
+        "j": "膨らみ",
+        "e": "rise",
+        "r": "ふくらみ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "足りなかった",
+        "z": "不夠",
+        "j": "足りなかった",
+        "e": "had not risen enough",
+        "r": "たりなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "パン職人",
+        "z": "麵包師",
+        "j": "パン職人",
+        "e": "baker",
+        "r": "パンしょくにん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "成形せずに",
+        "z": "尚未整形",
+        "j": "成形せずに",
+        "e": "before shaping",
+        "r": "せいけいせずに"
+      },
+      {
+        "t": "もう少し",
+        "z": "再久一點",
+        "j": "もう少し",
+        "e": "a little longer",
+        "r": "もうすこし"
+      },
+      {
+        "t": "待ちました",
+        "z": "等待了",
+        "j": "待った",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "写真家が公園で私たちの家族写真を撮りました。": [
+      {
+        "t": "写真家",
+        "z": "攝影師",
+        "j": "写真家",
+        "e": "photographer",
+        "r": "しゃしんか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "公園",
+        "z": "公園",
+        "j": "公園",
+        "e": "park",
+        "r": "こうえん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "私たち",
+        "z": "我們的",
+        "j": "私たち",
+        "e": "our",
+        "r": "わたしたち"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "家族写真",
+        "z": "全家福",
+        "j": "家族写真",
+        "e": "family photo",
+        "r": "かぞくしゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮りました",
+        "z": "拍攝了",
+        "j": "撮った",
+        "e": "took",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "日が差してきたとき、写真家は自然光を使うために私たちを窓際へ移動させました。": [
+      {
+        "t": "日",
+        "z": "陽光",
+        "j": "日",
+        "e": "sunlight",
+        "r": "ひ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "差してきたとき",
+        "z": "照進來時",
+        "j": "差してきたとき",
+        "e": "when it came in",
+        "r": "さしてきたとき"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "写真家",
+        "z": "攝影師",
+        "j": "写真家",
+        "e": "photographer",
+        "r": "しゃしんか"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "自然光",
+        "z": "自然光",
+        "j": "自然光",
+        "e": "natural light",
+        "r": "しぜんこう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使う",
+        "z": "利用",
+        "j": "使う",
+        "e": "use",
+        "r": "つかう"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "私たち",
+        "z": "我們",
+        "j": "私たち",
+        "e": "us",
+        "r": "わたしたち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "窓際",
+        "z": "窗邊",
+        "j": "窓際",
+        "e": "by the window",
+        "r": "まどぎわ"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "移動させました",
+        "z": "移動了",
+        "j": "移動させた",
+        "e": "moved",
+        "r": "いどうさせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "記者が市場で店主に取材しました。": [
+      {
+        "t": "記者",
+        "z": "記者",
+        "j": "記者",
+        "e": "reporter",
+        "r": "きしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "市場",
+        "z": "市場",
+        "j": "市場",
+        "e": "market",
+        "r": "いちば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "店主",
+        "z": "店主",
+        "j": "店主",
+        "e": "shop owner",
+        "r": "てんしゅ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "取材しました",
+        "z": "採訪了",
+        "j": "取材した",
+        "e": "interviewed",
+        "r": "しゅざいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "二人の目撃者に詳細を確認したあと、記者は記事を提出しました。": [
+      {
+        "t": "二人",
+        "z": "兩名",
+        "j": "二人",
+        "e": "two",
+        "r": "ふたり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "目撃者",
+        "z": "目擊者",
+        "j": "目撃者",
+        "e": "witnesses",
+        "r": "もくげきしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "詳細",
+        "z": "細節",
+        "j": "詳細",
+        "e": "details",
+        "r": "しょうさい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認した",
+        "z": "確認",
+        "j": "確認した",
+        "e": "confirmed",
+        "r": "かくにんした"
+      },
+      {
+        "t": "あと",
+        "z": "之後",
+        "j": "あと",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "記者",
+        "z": "記者",
+        "j": "記者",
+        "e": "reporter",
+        "r": "きしゃ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "記事",
+        "z": "報導",
+        "j": "記事",
+        "e": "article",
+        "r": "きじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "提出しました",
+        "z": "提交了",
+        "j": "提出した",
+        "e": "submitted",
+        "r": "ていしゅつしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "音楽家がリハーサル前に新しい曲を練習しました。": [
+      {
+        "t": "音楽家",
+        "z": "音樂家",
+        "j": "音楽家",
+        "e": "musician",
+        "r": "おんがくか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "リハーサル前",
+        "z": "彩排前",
+        "j": "リハーサル前",
+        "e": "before rehearsal",
+        "r": "リハーサルまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "新しい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new",
+        "r": "あたらしい"
+      },
+      {
+        "t": "曲",
+        "z": "曲子",
+        "j": "曲",
+        "e": "song",
+        "r": "きょく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "練習しました",
+        "z": "練習了",
+        "j": "練習した",
+        "e": "practiced",
+        "r": "れんしゅうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "演奏中に弦が切れたので、音楽家は楽器を持ち替えて演奏を続けました。": [
+      {
+        "t": "演奏中",
+        "z": "演出中",
+        "j": "演奏中",
+        "e": "during the performance",
+        "r": "えんそうちゅう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "弦",
+        "z": "弦",
+        "j": "弦",
+        "e": "string",
+        "r": "げん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "切れた",
+        "z": "斷了",
+        "j": "切れた",
+        "e": "broke",
+        "r": "きれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "音楽家",
+        "z": "音樂家",
+        "j": "音楽家",
+        "e": "musician",
+        "r": "おんがくか"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "楽器",
+        "z": "樂器",
+        "j": "楽器",
+        "e": "instrument",
+        "r": "がっき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ち替えて",
+        "z": "更換了",
+        "j": "持ち替えて",
+        "e": "changed",
+        "r": "もちかえて"
+      },
+      {
+        "t": "演奏",
+        "z": "演奏",
+        "j": "演奏",
+        "e": "playing",
+        "r": "えんそう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "続けました",
+        "z": "繼續",
+        "j": "続けた",
+        "e": "continued",
+        "r": "つづけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "漫画家が主人公の顔を描きました。": [
+      {
+        "t": "漫画家",
+        "z": "漫畫家",
+        "j": "漫画家",
+        "e": "manga artist",
+        "r": "まんがか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "主人公",
+        "z": "主角",
+        "j": "主人公",
+        "e": "main character",
+        "r": "しゅじんこう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "顔",
+        "z": "臉",
+        "j": "顔",
+        "e": "face",
+        "r": "かお"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "描きました",
+        "z": "畫了",
+        "j": "描いた",
+        "e": "drew",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "編集者がもっと分かりやすい結末を提案したので、漫画家は最後のページを描き直しました。": [
+      {
+        "t": "編集者",
+        "z": "編輯",
+        "j": "編集者",
+        "e": "editor",
+        "r": "へんしゅうしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "もっと分かりやすい",
+        "z": "更清楚的",
+        "j": "もっと分かりやすい",
+        "e": "clearer",
+        "r": "もっとわかりやすい"
+      },
+      {
+        "t": "結末",
+        "z": "結局",
+        "j": "結末",
+        "e": "ending",
+        "r": "けつまつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "提案した",
+        "z": "建議了",
+        "j": "提案した",
+        "e": "suggested",
+        "r": "ていあんした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "漫画家",
+        "z": "漫畫家",
+        "j": "漫画家",
+        "e": "manga artist",
+        "r": "まんがか"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "最後",
+        "z": "最後的",
+        "j": "最後",
+        "e": "final",
+        "r": "さいご"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ページ",
+        "z": "一頁",
+        "j": "ページ",
+        "e": "page",
+        "r": "ページ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "描き直しました",
+        "z": "重畫了",
+        "j": "描き直した",
+        "e": "redrew",
+        "r": "かきなおしました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

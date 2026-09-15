@@ -1,0 +1,4346 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "A",
+  "en": {
+    "The convenience store clerk heated my lunch.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "convenience store clerk",
+        "z": "便利商店店員",
+        "j": "コンビニ店員",
+        "e": "convenience store clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "heated",
+        "z": "加熱了",
+        "j": "温めた",
+        "e": "heated"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my lunch",
+        "z": "我的午餐",
+        "j": "私の昼食",
+        "e": "my lunch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I forgot my umbrella, the convenience store clerk showed me where the plastic umbrellas were.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "forgot",
+        "z": "忘了帶",
+        "j": "忘れた",
+        "e": "forgot"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my umbrella",
+        "z": "我的傘",
+        "j": "私の傘",
+        "e": "my umbrella"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "convenience store clerk",
+        "z": "便利商店店員",
+        "j": "コンビニ店員",
+        "e": "convenience store clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "告訴",
+        "j": "教えた",
+        "e": "showed"
+      },
+      {
+        "t": " me where the "
+      },
+      {
+        "t": "plastic umbrellas",
+        "z": "塑膠傘",
+        "j": "ビニール傘",
+        "e": "plastic umbrellas"
+      },
+      {
+        "t": " were."
+      }
+    ],
+    "The supermarket clerk is stocking milk on the shelf.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "supermarket clerk",
+        "z": "超市店員",
+        "j": "スーパー店員",
+        "e": "supermarket clerk"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "stocking",
+        "z": "正在補貨",
+        "j": "補充している",
+        "e": "stocking"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "milk",
+        "z": "牛奶",
+        "j": "牛乳",
+        "e": "milk"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "shelf",
+        "z": "貨架",
+        "j": "棚",
+        "e": "shelf"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the rice was sold out, a supermarket clerk checked the stockroom for me.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "rice",
+        "z": "米",
+        "j": "お米",
+        "e": "rice"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "sold out",
+        "z": "賣完了",
+        "j": "売り切れていた",
+        "e": "sold out"
+      },
+      {
+        "t": ", a "
+      },
+      {
+        "t": "supermarket clerk",
+        "z": "超市店員",
+        "j": "スーパー店員",
+        "e": "supermarket clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "查看了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "stockroom",
+        "z": "後場庫房",
+        "j": "バックヤード",
+        "e": "stockroom"
+      },
+      {
+        "t": " for me."
+      }
+    ],
+    "The sales clerk found my size.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "sales clerk",
+        "z": "門市店員",
+        "j": "販売員",
+        "e": "sales clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "found",
+        "z": "找到了",
+        "j": "見つけた",
+        "e": "found"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my size",
+        "z": "適合我的尺寸",
+        "j": "私に合うサイズ",
+        "e": "my size"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After I tried on the jacket, the sales clerk brought me a different color.": [
+      {
+        "t": "After I "
+      },
+      {
+        "t": "tried on",
+        "z": "試穿了",
+        "j": "試着した",
+        "e": "tried on"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "jacket",
+        "z": "外套",
+        "j": "ジャケット",
+        "e": "jacket"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "sales clerk",
+        "z": "門市店員",
+        "j": "販売員",
+        "e": "sales clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "brought",
+        "z": "拿來了",
+        "j": "持ってきた",
+        "e": "brought"
+      },
+      {
+        "t": " me a "
+      },
+      {
+        "t": "different color",
+        "z": "另一種顏色",
+        "j": "別の色",
+        "e": "different color"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The department store clerk wrapped the gift.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "department store clerk",
+        "z": "百貨公司店員",
+        "j": "百貨店店員",
+        "e": "department store clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wrapped",
+        "z": "包裝了",
+        "j": "包んだ",
+        "e": "wrapped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "gift",
+        "z": "禮物",
+        "j": "贈り物",
+        "e": "gift"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since it was a birthday present, the department store clerk tied a ribbon around the package.": [
+      {
+        "t": "Since it was a "
+      },
+      {
+        "t": "birthday present",
+        "z": "生日禮物",
+        "j": "誕生日の贈り物",
+        "e": "birthday present"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "department store clerk",
+        "z": "百貨公司店員",
+        "j": "百貨店店員",
+        "e": "department store clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tied",
+        "z": "繫上了",
+        "j": "かけた",
+        "e": "tied"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "ribbon",
+        "z": "緞帶",
+        "j": "リボン",
+        "e": "ribbon"
+      },
+      {
+        "t": " around the "
+      },
+      {
+        "t": "package",
+        "z": "包裝",
+        "j": "包み",
+        "e": "package"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bank teller helped me deposit cash.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bank teller",
+        "z": "銀行櫃員",
+        "j": "銀行窓口係",
+        "e": "bank teller"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "helped",
+        "z": "協助了",
+        "j": "手伝った",
+        "e": "helped"
+      },
+      {
+        "t": " me "
+      },
+      {
+        "t": "deposit",
+        "z": "存入",
+        "j": "預け入れる",
+        "e": "deposit"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cash",
+        "z": "現金",
+        "j": "現金",
+        "e": "cash"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I noticed an error on the form, the bank teller explained how to correct it.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "noticed",
+        "z": "發現了",
+        "j": "気づいた",
+        "e": "noticed"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "error",
+        "z": "錯誤",
+        "j": "間違い",
+        "e": "error"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "form",
+        "z": "表格",
+        "j": "書類",
+        "e": "form"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "bank teller",
+        "z": "銀行櫃員",
+        "j": "銀行窓口係",
+        "e": "bank teller"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "說明了",
+        "j": "説明した",
+        "e": "explained"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "how to correct it",
+        "z": "修改方法",
+        "j": "直し方",
+        "e": "how to correct it"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The postal clerk weighed my package.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "postal clerk",
+        "z": "郵局櫃員",
+        "j": "郵便窓口係",
+        "e": "postal clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "weighed",
+        "z": "秤了重量",
+        "j": "量った",
+        "e": "weighed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my package",
+        "z": "我的包裹",
+        "j": "私の荷物",
+        "e": "my package"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I was sending a fragile item, the postal clerk recommended a sturdier box.": [
+      {
+        "t": "Because I was "
+      },
+      {
+        "t": "sending",
+        "z": "寄送",
+        "j": "送る",
+        "e": "sending"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "fragile item",
+        "z": "易碎物品",
+        "j": "壊れやすい物",
+        "e": "fragile item"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "postal clerk",
+        "z": "郵局櫃員",
+        "j": "郵便窓口係",
+        "e": "postal clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "recommended",
+        "z": "建議",
+        "j": "勧めた",
+        "e": "recommended"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "sturdier box",
+        "z": "更堅固的箱子",
+        "j": "もっと丈夫な箱",
+        "e": "sturdier box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pharmacy clerk showed me the sunscreen aisle.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pharmacy clerk",
+        "z": "藥妝店店員",
+        "j": "ドラッグストア店員",
+        "e": "pharmacy clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "帶往",
+        "j": "案内した",
+        "e": "showed"
+      },
+      {
+        "t": " me the "
+      },
+      {
+        "t": "sunscreen aisle",
+        "z": "防曬用品貨架",
+        "j": "日焼け止めの売り場",
+        "e": "sunscreen aisle"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I wanted advice about cold medicine, the pharmacy clerk showed me the counter where I could speak to a pharmacist.": [
+      {
+        "t": "Because I "
+      },
+      {
+        "t": "wanted advice",
+        "z": "想要諮詢",
+        "j": "相談したかった",
+        "e": "wanted advice"
+      },
+      {
+        "t": " about "
+      },
+      {
+        "t": "cold medicine",
+        "z": "感冒藥",
+        "j": "風邪薬",
+        "e": "cold medicine"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "pharmacy clerk",
+        "z": "藥妝店店員",
+        "j": "ドラッグストア店員",
+        "e": "pharmacy clerk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "帶往",
+        "j": "案内した",
+        "e": "showed"
+      },
+      {
+        "t": " me the "
+      },
+      {
+        "t": "counter",
+        "z": "櫃台",
+        "j": "カウンター",
+        "e": "counter"
+      },
+      {
+        "t": " where I could "
+      },
+      {
+        "t": "speak",
+        "z": "詢問",
+        "j": "相談する",
+        "e": "speak"
+      },
+      {
+        "t": " to a "
+      },
+      {
+        "t": "pharmacist",
+        "z": "藥師",
+        "j": "薬剤師",
+        "e": "pharmacist"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked the florist to make a bouquet for my mother.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "asked",
+        "z": "請",
+        "j": "頼みました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "florist",
+        "z": "花店店員",
+        "j": "花屋",
+        "e": "florist"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "make",
+        "z": "製作",
+        "j": "作る",
+        "e": "make"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bouquet",
+        "z": "花束",
+        "j": "花束",
+        "e": "bouquet"
+      },
+      {
+        "t": " for my "
+      },
+      {
+        "t": "mother",
+        "z": "母親",
+        "j": "母",
+        "e": "mother"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The florist suggested seasonal flowers because I wanted the bouquet to last all week.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "florist",
+        "z": "花店店員",
+        "j": "花屋",
+        "e": "florist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "suggested",
+        "z": "建議",
+        "j": "勧めました",
+        "e": "suggested"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "seasonal flowers",
+        "z": "當季的花",
+        "j": "旬の花",
+        "e": "seasonal flowers"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "wanted",
+        "z": "希望",
+        "j": "望んでいました",
+        "e": "wanted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bouquet",
+        "z": "花束",
+        "j": "花束",
+        "e": "bouquet"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "last",
+        "z": "保持新鮮",
+        "j": "長持ちする",
+        "e": "last"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "all week",
+        "z": "一整週",
+        "j": "一週間",
+        "e": "all week"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The butcher cut the pork into thin slices for me.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "butcher",
+        "z": "肉店師傅",
+        "j": "肉屋",
+        "e": "butcher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cut",
+        "z": "切成",
+        "j": "切りました",
+        "e": "cut"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "pork",
+        "z": "豬肉",
+        "j": "豚肉",
+        "e": "pork"
+      },
+      {
+        "t": " into "
+      },
+      {
+        "t": "thin slices",
+        "z": "薄片",
+        "j": "薄切り",
+        "e": "thin slices"
+      },
+      {
+        "t": " for me."
+      }
+    ],
+    "When I told the butcher I was making curry, he recommended a tender cut of beef.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "told",
+        "z": "告訴",
+        "j": "伝えました",
+        "e": "told"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "butcher",
+        "z": "肉店師傅",
+        "j": "肉屋",
+        "e": "butcher"
+      },
+      {
+        "t": " I was "
+      },
+      {
+        "t": "making",
+        "z": "做",
+        "j": "作る",
+        "e": "making"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "curry",
+        "z": "咖哩",
+        "j": "カレー",
+        "e": "curry"
+      },
+      {
+        "t": ", he "
+      },
+      {
+        "t": "recommended",
+        "z": "推薦",
+        "j": "勧めました",
+        "e": "recommended"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "tender cut",
+        "z": "柔嫩的部位",
+        "j": "柔らかい部位",
+        "e": "tender cut"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "beef",
+        "z": "牛肉",
+        "j": "牛肉",
+        "e": "beef"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The fishmonger cleaned the fish for dinner.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "fishmonger",
+        "z": "魚販",
+        "j": "魚屋",
+        "e": "fishmonger"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cleaned",
+        "z": "處理",
+        "j": "下処理しました",
+        "e": "cleaned"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "fish",
+        "z": "魚",
+        "j": "魚",
+        "e": "fish"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I wanted to grill fish tonight, the fishmonger chose the freshest mackerel for me.": [
+      {
+        "t": "Because I "
+      },
+      {
+        "t": "wanted",
+        "z": "想要",
+        "j": "したかった",
+        "e": "wanted"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "grill",
+        "z": "烤",
+        "j": "焼く",
+        "e": "grill"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fish",
+        "z": "魚",
+        "j": "魚",
+        "e": "fish"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tonight",
+        "z": "今晚",
+        "j": "今夜",
+        "e": "tonight"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "fishmonger",
+        "z": "魚販",
+        "j": "魚屋",
+        "e": "fishmonger"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chose",
+        "z": "挑選",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "freshest mackerel",
+        "z": "最新鮮的鯖魚",
+        "j": "一番新鮮なサバ",
+        "e": "freshest mackerel"
+      },
+      {
+        "t": " for me."
+      }
+    ],
+    "The chef is preparing today's soup in the kitchen.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "chef",
+        "z": "主廚",
+        "j": "シェフ",
+        "e": "chef"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "preparing",
+        "z": "準備",
+        "j": "作っています",
+        "e": "preparing"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "today's soup",
+        "z": "今天的湯",
+        "j": "今日のスープ",
+        "e": "today's soup"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "kitchen",
+        "z": "廚房",
+        "j": "厨房",
+        "e": "kitchen"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before dinner service began, the chef checked each dish to make sure it was seasoned properly.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "dinner service",
+        "z": "晚餐營業",
+        "j": "ディナー営業",
+        "e": "dinner service"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "began",
+        "z": "開始",
+        "j": "始まりました",
+        "e": "began"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "chef",
+        "z": "主廚",
+        "j": "シェフ",
+        "e": "chef"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "each dish",
+        "z": "每道菜",
+        "j": "一皿ずつ",
+        "e": "each dish"
+      },
+      {
+        "t": " to make sure it was "
+      },
+      {
+        "t": "seasoned",
+        "z": "調味",
+        "j": "味付けされた",
+        "e": "seasoned"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "properly",
+        "z": "恰當地",
+        "j": "適切に",
+        "e": "properly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cook is stir-frying vegetables for an order.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cook",
+        "z": "廚師",
+        "j": "調理師",
+        "e": "cook"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "stir-frying",
+        "z": "炒",
+        "j": "炒めています",
+        "e": "stir-frying"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "vegetables",
+        "z": "蔬菜",
+        "j": "野菜",
+        "e": "vegetables"
+      },
+      {
+        "t": " for an "
+      },
+      {
+        "t": "order",
+        "z": "訂單",
+        "j": "注文",
+        "e": "order"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Although the kitchen was busy, the cook prepared my allergy-friendly meal separately.": [
+      {
+        "t": "Although the "
+      },
+      {
+        "t": "kitchen",
+        "z": "廚房",
+        "j": "厨房",
+        "e": "kitchen"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "busy",
+        "z": "忙碌",
+        "j": "忙しい",
+        "e": "busy"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "cook",
+        "z": "廚師",
+        "j": "調理師",
+        "e": "cook"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "prepared",
+        "z": "準備",
+        "j": "作りました",
+        "e": "prepared"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "allergy-friendly meal",
+        "z": "避開過敏原的餐點",
+        "j": "アレルギー対応の料理",
+        "e": "allergy-friendly meal"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "separately",
+        "z": "另外",
+        "j": "別に",
+        "e": "separately"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The restaurant server brought us water and menus.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "restaurant server",
+        "z": "餐廳服務生",
+        "j": "ホールスタッフ",
+        "e": "restaurant server"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "brought",
+        "z": "送來",
+        "j": "持ってきました",
+        "e": "brought"
+      },
+      {
+        "t": " us "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "menus",
+        "z": "菜單",
+        "j": "メニュー",
+        "e": "menus"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I mentioned my food allergy, the restaurant server checked the ingredients with the kitchen.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "mentioned",
+        "z": "提到",
+        "j": "伝えました",
+        "e": "mentioned"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "food allergy",
+        "z": "食物過敏",
+        "j": "食物アレルギー",
+        "e": "food allergy"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "restaurant server",
+        "z": "餐廳服務生",
+        "j": "ホールスタッフ",
+        "e": "restaurant server"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "確認",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ingredients",
+        "z": "食材",
+        "j": "食材",
+        "e": "ingredients"
+      },
+      {
+        "t": " with the "
+      },
+      {
+        "t": "kitchen",
+        "z": "廚房人員",
+        "j": "厨房のスタッフ",
+        "e": "the kitchen staff"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The barista made my latte with soy milk.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barista",
+        "z": "咖啡師",
+        "j": "バリスタ",
+        "e": "barista"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "made",
+        "z": "製作",
+        "j": "作りました",
+        "e": "made"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "latte",
+        "z": "拿鐵",
+        "j": "ラテ",
+        "e": "latte"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "soy milk",
+        "z": "豆漿",
+        "j": "豆乳",
+        "e": "soy milk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the café was crowded, the barista called my name when my drink was ready.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "café",
+        "z": "咖啡店",
+        "j": "カフェ",
+        "e": "café"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠",
+        "j": "混んでいました",
+        "e": "crowded"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "barista",
+        "z": "咖啡師",
+        "j": "バリスタ",
+        "e": "barista"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "called",
+        "z": "叫",
+        "j": "呼びました",
+        "e": "called"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "name",
+        "z": "名字",
+        "j": "名前",
+        "e": "name"
+      },
+      {
+        "t": " when my "
+      },
+      {
+        "t": "drink",
+        "z": "飲料",
+        "j": "ドリンク",
+        "e": "drink"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "ready",
+        "z": "做好",
+        "j": "できた",
+        "e": "ready"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The sushi chef makes nigiri at the counter.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "sushi chef",
+        "z": "壽司師傅",
+        "j": "寿司職人",
+        "e": "sushi chef"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "makes",
+        "z": "製作",
+        "j": "作っています",
+        "e": "makes"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "nigiri",
+        "z": "握壽司",
+        "j": "握り寿司",
+        "e": "nigiri"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "counter",
+        "z": "吧檯",
+        "j": "カウンター",
+        "e": "counter"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked the sushi chef to leave out wasabi because my child does not eat it.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "asked",
+        "z": "請求",
+        "j": "お願いしました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sushi chef",
+        "z": "壽司師傅",
+        "j": "寿司職人",
+        "e": "sushi chef"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "leave out",
+        "z": "不要放",
+        "j": "抜きにする",
+        "e": "leave out"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wasabi",
+        "z": "芥末",
+        "j": "わさび",
+        "e": "wasabi"
+      },
+      {
+        "t": " because my "
+      },
+      {
+        "t": "child",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child"
+      },
+      {
+        "t": " does not "
+      },
+      {
+        "t": "eat",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "it",
+        "z": "它",
+        "j": "それ",
+        "e": "it"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pastry chef decorates a birthday cake.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pastry chef",
+        "z": "甜點師",
+        "j": "パティシエ",
+        "e": "pastry chef"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "decorates",
+        "z": "裝飾",
+        "j": "飾ります",
+        "e": "decorates"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "birthday cake",
+        "z": "生日蛋糕",
+        "j": "誕生日のケーキ",
+        "e": "birthday cake"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I picked up the cake, the pastry chef told me how to keep it cool until I got home.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "picked up",
+        "z": "取走",
+        "j": "受け取った",
+        "e": "picked up"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cake",
+        "z": "蛋糕",
+        "j": "ケーキ",
+        "e": "cake"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "pastry chef",
+        "z": "甜點師",
+        "j": "パティシエ",
+        "e": "pastry chef"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "told",
+        "z": "告訴",
+        "j": "教えた",
+        "e": "told"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "me",
+        "z": "我",
+        "j": "私",
+        "e": "me"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "keep",
+        "z": "讓……保持",
+        "j": "保つ",
+        "e": "keep"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "cool",
+        "z": "低溫",
+        "j": "冷えた状態",
+        "e": "cool"
+      },
+      {
+        "t": " until I "
+      },
+      {
+        "t": "got home",
+        "z": "到家",
+        "j": "家に着く",
+        "e": "got home"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bartender mixes a cocktail at the bar.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "mixes",
+        "z": "調製",
+        "j": "作っています",
+        "e": "mixes"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "cocktail",
+        "z": "雞尾酒",
+        "j": "カクテル",
+        "e": "cocktail"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "bar",
+        "z": "吧檯",
+        "j": "カウンター",
+        "e": "bar"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I was driving home, I asked the bartender to make me a nonalcoholic drink.": [
+      {
+        "t": "Because I was "
+      },
+      {
+        "t": "driving home",
+        "z": "開車回家",
+        "j": "車を運転して帰る",
+        "e": "driving home"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "asked",
+        "z": "請求",
+        "j": "お願いした",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "make",
+        "z": "調製",
+        "j": "作る",
+        "e": "make"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "me",
+        "z": "給我",
+        "j": "私に",
+        "e": "me"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "nonalcoholic drink",
+        "z": "無酒精飲料",
+        "j": "ノンアルコールの飲み物",
+        "e": "nonalcoholic drink"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The hotel receptionist gives me a room key.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hotel receptionist",
+        "z": "飯店櫃台人員",
+        "j": "ホテルフロント係",
+        "e": "hotel receptionist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gives",
+        "z": "交給",
+        "j": "渡してくれます",
+        "e": "gives"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "me",
+        "z": "我",
+        "j": "私",
+        "e": "me"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "room key",
+        "z": "房間鑰匙",
+        "j": "部屋の鍵",
+        "e": "room key"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I arrived before check-in, the hotel receptionist stored my suitcase until I could enter my room.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "抵達",
+        "j": "着いた",
+        "e": "arrived"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "check-in",
+        "z": "入住時間",
+        "j": "チェックイン",
+        "e": "check-in"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "hotel receptionist",
+        "z": "飯店櫃台人員",
+        "j": "ホテルフロント係",
+        "e": "hotel receptionist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stored",
+        "z": "保管",
+        "j": "預かってくれました",
+        "e": "stored"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "suitcase",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase"
+      },
+      {
+        "t": " until I could "
+      },
+      {
+        "t": "enter",
+        "z": "進入",
+        "j": "入れる",
+        "e": "enter"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "客室",
+        "e": "room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The concierge shows us a map of the area.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "concierge",
+        "z": "禮賓人員",
+        "j": "コンシェルジュ",
+        "e": "concierge"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "展示",
+        "j": "見せてくれます",
+        "e": "shows"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "us",
+        "z": "我們",
+        "j": "私たち",
+        "e": "us"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "map",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "area",
+        "z": "附近地區",
+        "j": "周辺",
+        "e": "area"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the restaurant we wanted was full, the concierge booked a nearby Italian restaurant for us.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "restaurant",
+        "z": "餐廳",
+        "j": "店",
+        "e": "restaurant"
+      },
+      {
+        "t": " we "
+      },
+      {
+        "t": "wanted",
+        "z": "想去",
+        "j": "行きたかった",
+        "e": "wanted"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "was "
+      },
+      {
+        "t": "full",
+        "z": "客滿",
+        "j": "満席",
+        "e": "full"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "concierge",
+        "z": "禮賓人員",
+        "j": "コンシェルジュ",
+        "e": "concierge"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "booked",
+        "z": "預訂",
+        "j": "予約してくれました",
+        "e": "booked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "nearby",
+        "z": "附近的",
+        "j": "近くの",
+        "e": "nearby"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "Italian restaurant",
+        "z": "義大利餐廳",
+        "j": "イタリア料理店",
+        "e": "Italian restaurant"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "us",
+        "z": "我們",
+        "j": "私たち",
+        "e": "us"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The tour guide holds up a small flag.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "tour guide",
+        "z": "導遊",
+        "j": "ツアーガイド",
+        "e": "tour guide"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "holds up",
+        "z": "舉起",
+        "j": "掲げています",
+        "e": "holds up"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "flag",
+        "z": "旗子",
+        "j": "旗",
+        "e": "flag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the group reached the temple, the tour guide explained where we could take photos.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "group",
+        "z": "團體",
+        "j": "一行",
+        "e": "group"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reached",
+        "z": "抵達",
+        "j": "着く",
+        "e": "reached"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "temple",
+        "z": "寺院",
+        "j": "寺",
+        "e": "temple"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "tour guide",
+        "z": "導遊",
+        "j": "ツアーガイド",
+        "e": "tour guide"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "說明",
+        "j": "教えてくれました",
+        "e": "explained"
+      },
+      {
+        "t": " where "
+      },
+      {
+        "t": "we",
+        "z": "我們",
+        "j": "私たち",
+        "e": "we"
+      },
+      {
+        "t": " could "
+      },
+      {
+        "t": "take photos",
+        "z": "拍照",
+        "j": "写真を撮影する",
+        "e": "take photos"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "コンビニ店員が私のお弁当を温めてくれました。": [
+      {
+        "t": "コンビニ店員",
+        "z": "便利商店店員",
+        "j": "コンビニ店員",
+        "e": "convenience store clerk",
+        "r": "コンビニてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "お弁当",
+        "z": "午餐便當",
+        "j": "お弁当",
+        "e": "lunch",
+        "r": "おべんとう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "温めてくれました",
+        "z": "幫忙加熱了",
+        "j": "温めてくれた",
+        "e": "heated for me",
+        "r": "あたためてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "傘を忘れたとき、コンビニ店員がビニール傘の売り場を教えてくれました。": [
+      {
+        "t": "傘",
+        "z": "傘",
+        "j": "傘",
+        "e": "umbrella",
+        "r": "かさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "忘れた",
+        "z": "忘記了",
+        "j": "忘れた",
+        "e": "forgot",
+        "r": "わすれた"
+      },
+      {
+        "t": "とき",
+        "z": "時",
+        "j": "とき",
+        "e": "when",
+        "r": "とき"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "コンビニ店員",
+        "z": "便利商店店員",
+        "j": "コンビニ店員",
+        "e": "convenience store clerk",
+        "r": "コンビニてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ビニール傘",
+        "z": "塑膠傘",
+        "j": "ビニール傘",
+        "e": "plastic umbrellas",
+        "r": "ビニールがさ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "売り場",
+        "z": "販售區",
+        "j": "売り場",
+        "e": "sales area",
+        "r": "うりば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴了我",
+        "j": "教えてくれた",
+        "e": "showed me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スーパー店員が牛乳を棚に補充しています。": [
+      {
+        "t": "スーパー店員",
+        "z": "超市店員",
+        "j": "スーパー店員",
+        "e": "supermarket clerk",
+        "r": "スーパーてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "牛乳",
+        "z": "牛奶",
+        "j": "牛乳",
+        "e": "milk",
+        "r": "ぎゅうにゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "棚",
+        "z": "貨架",
+        "j": "棚",
+        "e": "shelf",
+        "r": "たな"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "補充しています",
+        "z": "正在補貨",
+        "j": "補充している",
+        "e": "is stocking",
+        "r": "ほじゅうしています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お米が売り切れていたので、スーパー店員が私のためにバックヤードの在庫を確認してくれました。": [
+      {
+        "t": "お米",
+        "z": "米",
+        "j": "お米",
+        "e": "rice",
+        "r": "おこめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "売り切れていた",
+        "z": "賣完了",
+        "j": "売り切れていた",
+        "e": "was sold out",
+        "r": "うりきれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "スーパー店員",
+        "z": "超市店員",
+        "j": "スーパー店員",
+        "e": "supermarket clerk",
+        "r": "スーパーてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "me",
+        "r": "わたし"
+      },
+      {
+        "t": "のために"
+      },
+      {
+        "t": "バックヤード",
+        "z": "後場庫房",
+        "j": "バックヤード",
+        "e": "stockroom",
+        "r": "バックヤード"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "在庫",
+        "z": "庫存",
+        "j": "在庫",
+        "e": "stock",
+        "r": "ざいこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認してくれました",
+        "z": "幫忙確認了",
+        "j": "確認してくれた",
+        "e": "checked for me",
+        "r": "かくにんしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "販売員が私に合うサイズを見つけてくれました。": [
+      {
+        "t": "販売員",
+        "z": "門市店員",
+        "j": "販売員",
+        "e": "sales clerk",
+        "r": "はんばいいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "me",
+        "r": "わたし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "合う",
+        "z": "適合",
+        "j": "合う",
+        "e": "fit",
+        "r": "あう"
+      },
+      {
+        "t": "サイズ",
+        "z": "尺寸",
+        "j": "サイズ",
+        "e": "size",
+        "r": "サイズ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見つけてくれました",
+        "z": "幫忙找到了",
+        "j": "見つけてくれた",
+        "e": "found for me",
+        "r": "みつけてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ジャケットを試着したあと、販売員が別の色を持ってきてくれました。": [
+      {
+        "t": "ジャケット",
+        "z": "外套",
+        "j": "ジャケット",
+        "e": "jacket",
+        "r": "ジャケット"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "試着した",
+        "z": "試穿了",
+        "j": "試着した",
+        "e": "tried on",
+        "r": "しちゃくした"
+      },
+      {
+        "t": "あと",
+        "z": "之後",
+        "j": "あと",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "販売員",
+        "z": "門市店員",
+        "j": "販売員",
+        "e": "sales clerk",
+        "r": "はんばいいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "別",
+        "z": "不同的",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "色",
+        "z": "顏色",
+        "j": "色",
+        "e": "color",
+        "r": "いろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてくれました",
+        "z": "幫忙拿來了",
+        "j": "持ってきてくれた",
+        "e": "brought for me",
+        "r": "もってきてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "百貨店店員が贈り物を包んでくれました。": [
+      {
+        "t": "百貨店店員",
+        "z": "百貨公司店員",
+        "j": "百貨店店員",
+        "e": "department store clerk",
+        "r": "ひゃっかてんてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "贈り物",
+        "z": "禮物",
+        "j": "贈り物",
+        "e": "gift",
+        "r": "おくりもの"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "包んでくれました",
+        "z": "幫忙包裝了",
+        "j": "包んでくれた",
+        "e": "wrapped for me",
+        "r": "つつんでくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "誕生日の贈り物だったので、百貨店店員が包みにリボンをかけてくれました。": [
+      {
+        "t": "誕生日",
+        "z": "生日",
+        "j": "誕生日",
+        "e": "birthday",
+        "r": "たんじょうび"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "贈り物",
+        "z": "禮物",
+        "j": "贈り物",
+        "e": "present",
+        "r": "おくりもの"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "百貨店店員",
+        "z": "百貨公司店員",
+        "j": "百貨店店員",
+        "e": "department store clerk",
+        "r": "ひゃっかてんてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "包み",
+        "z": "包裝",
+        "j": "包み",
+        "e": "package",
+        "r": "つつみ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "リボン",
+        "z": "緞帶",
+        "j": "リボン",
+        "e": "ribbon",
+        "r": "リボン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "かけてくれました",
+        "z": "幫忙繫上了",
+        "j": "かけてくれた",
+        "e": "tied for me",
+        "r": "かけてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "銀行窓口係が現金の預け入れを手伝ってくれました。": [
+      {
+        "t": "銀行窓口係",
+        "z": "銀行櫃員",
+        "j": "銀行窓口係",
+        "e": "bank teller",
+        "r": "ぎんこうまどぐちがかり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "現金",
+        "z": "現金",
+        "j": "現金",
+        "e": "cash",
+        "r": "げんきん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "預け入れ",
+        "z": "存款",
+        "j": "預け入れ",
+        "e": "deposit",
+        "r": "あずけいれ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "手伝ってくれました",
+        "z": "協助了我",
+        "j": "手伝ってくれた",
+        "e": "helped me",
+        "r": "てつだってくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "書類の間違いに気づいたとき、銀行窓口係が直し方を説明してくれました。": [
+      {
+        "t": "書類",
+        "z": "表格",
+        "j": "書類",
+        "e": "form",
+        "r": "しょるい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "間違い",
+        "z": "錯誤",
+        "j": "間違い",
+        "e": "error",
+        "r": "まちがい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "気づいた",
+        "z": "發現了",
+        "j": "気づいた",
+        "e": "noticed",
+        "r": "きづいた"
+      },
+      {
+        "t": "とき",
+        "z": "時",
+        "j": "とき",
+        "e": "when",
+        "r": "とき"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "銀行窓口係",
+        "z": "銀行櫃員",
+        "j": "銀行窓口係",
+        "e": "bank teller",
+        "r": "ぎんこうまどぐちがかり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "直し方",
+        "z": "修改方法",
+        "j": "直し方",
+        "e": "how to correct it",
+        "r": "なおしかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明してくれました",
+        "z": "向我說明了",
+        "j": "説明してくれた",
+        "e": "explained to me",
+        "r": "せつめいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "郵便窓口係が私の荷物を量りました。": [
+      {
+        "t": "郵便窓口係",
+        "z": "郵局櫃員",
+        "j": "郵便窓口係",
+        "e": "postal clerk",
+        "r": "ゆうびんまどぐちがかり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "me",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "荷物",
+        "z": "包裹",
+        "j": "荷物",
+        "e": "package",
+        "r": "にもつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "量りました",
+        "z": "秤了重量",
+        "j": "量った",
+        "e": "weighed",
+        "r": "はかりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "壊れやすい物を送るので、郵便窓口係がもっと丈夫な箱を勧めてくれました。": [
+      {
+        "t": "壊れやすい",
+        "z": "易碎的",
+        "j": "壊れやすい",
+        "e": "fragile",
+        "r": "こわれやすい"
+      },
+      {
+        "t": "物",
+        "z": "物品",
+        "j": "物",
+        "e": "item",
+        "r": "もの"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "送る",
+        "z": "寄送",
+        "j": "送る",
+        "e": "send",
+        "r": "おくる"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "郵便窓口係",
+        "z": "郵局櫃員",
+        "j": "郵便窓口係",
+        "e": "postal clerk",
+        "r": "ゆうびんまどぐちがかり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "もっと",
+        "z": "更",
+        "j": "もっと",
+        "e": "more",
+        "r": "もっと"
+      },
+      {
+        "t": "丈夫",
+        "z": "堅固的",
+        "j": "丈夫",
+        "e": "sturdy",
+        "r": "じょうぶ"
+      },
+      {
+        "t": "な"
+      },
+      {
+        "t": "箱",
+        "z": "箱子",
+        "j": "箱",
+        "e": "box",
+        "r": "はこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれました",
+        "z": "向我推薦了",
+        "j": "勧めてくれた",
+        "e": "recommended to me",
+        "r": "すすめてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドラッグストア店員が日焼け止めの売り場を案内してくれました。": [
+      {
+        "t": "ドラッグストア店員",
+        "z": "藥妝店店員",
+        "j": "ドラッグストア店員",
+        "e": "pharmacy clerk",
+        "r": "ドラッグストアてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "日焼け止め",
+        "z": "防曬用品",
+        "j": "日焼け止め",
+        "e": "sunscreen",
+        "r": "ひやけどめ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "売り場",
+        "z": "販售區",
+        "j": "売り場",
+        "e": "aisle",
+        "r": "うりば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "案内してくれました",
+        "z": "帶我前往了",
+        "j": "案内してくれた",
+        "e": "showed me",
+        "r": "あんないしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "風邪薬について相談したかったので、ドラッグストア店員が薬剤師に相談できるカウンターを案内してくれました。": [
+      {
+        "t": "風邪薬",
+        "z": "感冒藥",
+        "j": "風邪薬",
+        "e": "cold medicine",
+        "r": "かぜぐすり"
+      },
+      {
+        "t": "について"
+      },
+      {
+        "t": "相談したかった",
+        "z": "想要諮詢",
+        "j": "相談したかった",
+        "e": "wanted advice",
+        "r": "そうだんしたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ドラッグストア店員",
+        "z": "藥妝店店員",
+        "j": "ドラッグストア店員",
+        "e": "pharmacy clerk",
+        "r": "ドラッグストアてんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "薬剤師",
+        "z": "藥師",
+        "j": "薬剤師",
+        "e": "pharmacist",
+        "r": "やくざいし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "相談できる",
+        "z": "可以詢問",
+        "j": "相談できる",
+        "e": "could speak to",
+        "r": "そうだんできる"
+      },
+      {
+        "t": "カウンター",
+        "z": "櫃台",
+        "j": "カウンター",
+        "e": "counter",
+        "r": "カウンター"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "案内してくれました",
+        "z": "帶我前往了",
+        "j": "案内してくれた",
+        "e": "showed me",
+        "r": "あんないしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花屋さんに母への花束を作ってもらいました。": [
+      {
+        "t": "花屋",
+        "z": "花店店員",
+        "j": "花屋",
+        "e": "florist",
+        "r": "はなや"
+      },
+      {
+        "t": "さんに"
+      },
+      {
+        "t": "母",
+        "z": "母親",
+        "j": "母",
+        "e": "mother",
+        "r": "はは"
+      },
+      {
+        "t": "への"
+      },
+      {
+        "t": "花束",
+        "z": "花束",
+        "j": "花束",
+        "e": "bouquet",
+        "r": "はなたば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作ってもらいました",
+        "z": "請對方製作",
+        "j": "作ってもらいました",
+        "e": "asked to make",
+        "r": "つくってもらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花束を一週間長持ちさせたかったので、花屋さんが旬の花を勧めてくれました。": [
+      {
+        "t": "花束",
+        "z": "花束",
+        "j": "花束",
+        "e": "bouquet",
+        "r": "はなたば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一週間",
+        "z": "一整週",
+        "j": "一週間",
+        "e": "all week",
+        "r": "いっしゅうかん"
+      },
+      {
+        "t": "長持ちさせたかった",
+        "z": "希望維持更久",
+        "j": "長持ちさせたかった",
+        "e": "wanted to last",
+        "r": "ながもちさせたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "花屋",
+        "z": "花店店員",
+        "j": "花屋",
+        "e": "florist",
+        "r": "はなや"
+      },
+      {
+        "t": "さんが"
+      },
+      {
+        "t": "旬",
+        "z": "當季",
+        "j": "旬",
+        "e": "seasonal",
+        "r": "しゅん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "花",
+        "z": "花",
+        "j": "花",
+        "e": "flowers",
+        "r": "はな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれました",
+        "z": "建議給我",
+        "j": "勧めてくれました",
+        "e": "suggested",
+        "r": "すすめてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "肉屋さんが豚肉を薄切りにしてくれました。": [
+      {
+        "t": "肉屋",
+        "z": "肉店師傅",
+        "j": "肉屋",
+        "e": "butcher",
+        "r": "にくや"
+      },
+      {
+        "t": "さんが"
+      },
+      {
+        "t": "豚肉",
+        "z": "豬肉",
+        "j": "豚肉",
+        "e": "pork",
+        "r": "ぶたにく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "薄切り",
+        "z": "薄片",
+        "j": "薄切り",
+        "e": "thin slices",
+        "r": "うすぎり"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "してくれました",
+        "z": "幫我切成",
+        "j": "してくれました",
+        "e": "cut for me",
+        "r": "してくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カレーを作ると伝えると、肉屋さんが柔らかい牛肉の部位を勧めてくれました。": [
+      {
+        "t": "カレー",
+        "z": "咖哩",
+        "j": "カレー",
+        "e": "curry",
+        "r": "カレー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作る",
+        "z": "做",
+        "j": "作る",
+        "e": "make",
+        "r": "つくる"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "伝える",
+        "z": "告訴",
+        "j": "伝える",
+        "e": "tell",
+        "r": "つたえる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "肉屋",
+        "z": "肉店師傅",
+        "j": "肉屋",
+        "e": "butcher",
+        "r": "にくや"
+      },
+      {
+        "t": "さんが"
+      },
+      {
+        "t": "柔らかい",
+        "z": "柔嫩的",
+        "j": "柔らかい",
+        "e": "tender",
+        "r": "やわらかい"
+      },
+      {
+        "t": "牛肉",
+        "z": "牛肉",
+        "j": "牛肉",
+        "e": "beef",
+        "r": "ぎゅうにく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "部位",
+        "z": "部位",
+        "j": "部位",
+        "e": "cut",
+        "r": "ぶい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれました",
+        "z": "推薦給我",
+        "j": "勧めてくれました",
+        "e": "recommended",
+        "r": "すすめてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "魚屋さんが夕食用の魚を下処理してくれました。": [
+      {
+        "t": "魚屋",
+        "z": "魚販",
+        "j": "魚屋",
+        "e": "fishmonger",
+        "r": "さかなや"
+      },
+      {
+        "t": "さんが"
+      },
+      {
+        "t": "夕食用",
+        "z": "晚餐用的",
+        "j": "夕食用",
+        "e": "for dinner",
+        "r": "ゆうしょくよう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "魚",
+        "z": "魚",
+        "j": "魚",
+        "e": "fish",
+        "r": "さかな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "下処理してくれました",
+        "z": "幫我處理",
+        "j": "下処理してくれました",
+        "e": "cleaned for me",
+        "r": "したしょりしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "今夜は魚を焼きたかったので、魚屋さんが一番新鮮なサバを選んでくれました。": [
+      {
+        "t": "今夜",
+        "z": "今晚",
+        "j": "今夜",
+        "e": "tonight",
+        "r": "こんや"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "魚",
+        "z": "魚",
+        "j": "魚",
+        "e": "fish",
+        "r": "さかな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "焼きたかった",
+        "z": "想烤",
+        "j": "焼きたかった",
+        "e": "wanted to grill",
+        "r": "やきたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "魚屋",
+        "z": "魚販",
+        "j": "魚屋",
+        "e": "fishmonger",
+        "r": "さかなや"
+      },
+      {
+        "t": "さんが"
+      },
+      {
+        "t": "一番",
+        "z": "最",
+        "j": "一番",
+        "e": "most",
+        "r": "いちばん"
+      },
+      {
+        "t": "新鮮な",
+        "z": "新鮮的",
+        "j": "新鮮な",
+        "e": "fresh",
+        "r": "しんせんな"
+      },
+      {
+        "t": "サバ",
+        "z": "鯖魚",
+        "j": "サバ",
+        "e": "mackerel",
+        "r": "サバ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選んでくれました",
+        "z": "幫我挑選",
+        "j": "選んでくれました",
+        "e": "chose for me",
+        "r": "えらんでくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シェフは厨房で今日のスープを作っています。": [
+      {
+        "t": "シェフ",
+        "z": "主廚",
+        "j": "シェフ",
+        "e": "chef",
+        "r": "シェフ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "厨房",
+        "z": "廚房",
+        "j": "厨房",
+        "e": "kitchen",
+        "r": "ちゅうぼう"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "今日",
+        "z": "今天",
+        "j": "今日",
+        "e": "today",
+        "r": "きょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "スープ",
+        "z": "湯",
+        "j": "スープ",
+        "e": "soup",
+        "r": "スープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作っています",
+        "z": "正在製作",
+        "j": "作っています",
+        "e": "is preparing",
+        "r": "つくっています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ディナー営業が始まる前に、シェフは味付けが適切かどうか一皿ずつ確認しました。": [
+      {
+        "t": "ディナー営業",
+        "z": "晚餐營業",
+        "j": "ディナー営業",
+        "e": "dinner service",
+        "r": "ディナーえいぎょう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "始まる",
+        "z": "開始",
+        "j": "始まる",
+        "e": "begins",
+        "r": "はじまる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "シェフ",
+        "z": "主廚",
+        "j": "シェフ",
+        "e": "chef",
+        "r": "シェフ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "味付け",
+        "z": "調味",
+        "j": "味付け",
+        "e": "seasoning",
+        "r": "あじつけ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "適切",
+        "z": "恰當",
+        "j": "適切",
+        "e": "proper",
+        "r": "てきせつ"
+      },
+      {
+        "t": "かどうか"
+      },
+      {
+        "t": "一皿ずつ",
+        "z": "每道菜",
+        "j": "一皿ずつ",
+        "e": "each dish",
+        "r": "ひとさらずつ"
+      },
+      {
+        "t": "確認しました",
+        "z": "檢查了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "調理師は注文された野菜を炒めています。": [
+      {
+        "t": "調理師",
+        "z": "廚師",
+        "j": "調理師",
+        "e": "cook",
+        "r": "ちょうりし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "注文された",
+        "z": "被點的",
+        "j": "注文された",
+        "e": "ordered",
+        "r": "ちゅうもんされた"
+      },
+      {
+        "t": "野菜",
+        "z": "蔬菜",
+        "j": "野菜",
+        "e": "vegetables",
+        "r": "やさい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "炒めています",
+        "z": "正在炒",
+        "j": "炒めています",
+        "e": "is stir-frying",
+        "r": "いためています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "厨房は忙しかったものの、調理師はアレルギー対応の料理を別に作ってくれました。": [
+      {
+        "t": "厨房",
+        "z": "廚房",
+        "j": "厨房",
+        "e": "kitchen",
+        "r": "ちゅうぼう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "忙しかった",
+        "z": "很忙",
+        "j": "忙しかった",
+        "e": "was busy",
+        "r": "いそがしかった"
+      },
+      {
+        "t": "ものの、"
+      },
+      {
+        "t": "調理師",
+        "z": "廚師",
+        "j": "調理師",
+        "e": "cook",
+        "r": "ちょうりし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "アレルギー対応",
+        "z": "避開過敏原",
+        "j": "アレルギー対応",
+        "e": "allergy-friendly",
+        "r": "アレルギーたいおう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "料理",
+        "z": "餐點",
+        "j": "料理",
+        "e": "meal",
+        "r": "りょうり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "別に",
+        "z": "另外",
+        "j": "別に",
+        "e": "separately",
+        "r": "べつに"
+      },
+      {
+        "t": "作ってくれました",
+        "z": "幫我製作",
+        "j": "作ってくれました",
+        "e": "prepared for me",
+        "r": "つくってくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ホールスタッフが水とメニューを持ってきてくれました。": [
+      {
+        "t": "ホールスタッフ",
+        "z": "餐廳服務生",
+        "j": "ホールスタッフ",
+        "e": "restaurant server",
+        "r": "ホールスタッフ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "メニュー",
+        "z": "菜單",
+        "j": "メニュー",
+        "e": "menus",
+        "r": "メニュー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてくれました",
+        "z": "為我們送來",
+        "j": "持ってきてくれました",
+        "e": "brought us",
+        "r": "もってきてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食物アレルギーがあると伝えると、ホールスタッフが厨房に食材について確認してくれました。": [
+      {
+        "t": "食物アレルギー",
+        "z": "食物過敏",
+        "j": "食物アレルギー",
+        "e": "food allergy",
+        "r": "しょくもつアレルギー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ある",
+        "z": "有",
+        "j": "ある",
+        "e": "have",
+        "r": "ある"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "伝える",
+        "z": "告知",
+        "j": "伝える",
+        "e": "mention",
+        "r": "つたえる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "ホールスタッフ",
+        "z": "餐廳服務生",
+        "j": "ホールスタッフ",
+        "e": "restaurant server",
+        "r": "ホールスタッフ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "厨房",
+        "z": "廚房人員",
+        "j": "厨房のスタッフ",
+        "e": "the kitchen staff",
+        "r": "ちゅうぼう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "食材",
+        "z": "食材",
+        "j": "食材",
+        "e": "ingredients",
+        "r": "しょくざい"
+      },
+      {
+        "t": "について"
+      },
+      {
+        "t": "確認してくれました",
+        "z": "為我確認",
+        "j": "確認してくれました",
+        "e": "checked for me",
+        "r": "かくにんしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "バリスタが豆乳でラテを作ってくれました。": [
+      {
+        "t": "バリスタ",
+        "z": "咖啡師",
+        "j": "バリスタ",
+        "e": "barista",
+        "r": "バリスタ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "豆乳",
+        "z": "豆漿",
+        "j": "豆乳",
+        "e": "soy milk",
+        "r": "とうにゅう"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ラテ",
+        "z": "拿鐵",
+        "j": "ラテ",
+        "e": "latte",
+        "r": "ラテ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作ってくれました",
+        "z": "為我製作",
+        "j": "作ってくれました",
+        "e": "made for me",
+        "r": "つくってくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カフェが混んでいたので、ドリンクができるとバリスタが私の名前を呼びました。": [
+      {
+        "t": "カフェ",
+        "z": "咖啡店",
+        "j": "カフェ",
+        "e": "café",
+        "r": "カフェ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "很擁擠",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ドリンク",
+        "z": "飲料",
+        "j": "ドリンク",
+        "e": "drink",
+        "r": "ドリンク"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "できる",
+        "z": "做好",
+        "j": "できる",
+        "e": "is ready",
+        "r": "できる"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "バリスタ",
+        "z": "咖啡師",
+        "j": "バリスタ",
+        "e": "barista",
+        "r": "バリスタ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "名前",
+        "z": "名字",
+        "j": "名前",
+        "e": "name",
+        "r": "なまえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "呼びました",
+        "z": "叫了",
+        "j": "呼びました",
+        "e": "called",
+        "r": "よびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "寿司職人がカウンターで握り寿司を作っています。": [
+      {
+        "t": "寿司職人",
+        "z": "壽司師傅",
+        "j": "寿司職人",
+        "e": "sushi chef",
+        "r": "すししょくにん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "カウンター",
+        "z": "吧檯",
+        "j": "カウンター",
+        "e": "counter",
+        "r": "カウンター"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "握り寿司",
+        "z": "握壽司",
+        "j": "握り寿司",
+        "e": "nigiri",
+        "r": "にぎりずし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作っています",
+        "z": "正在製作",
+        "j": "作っています",
+        "e": "is making",
+        "r": "つくっています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子どもがわさびを食べないので、寿司職人にわさび抜きでお願いしました。": [
+      {
+        "t": "子ども",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child",
+        "r": "こども"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "わさび",
+        "z": "芥末",
+        "j": "わさび",
+        "e": "wasabi",
+        "r": "わさび"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べない",
+        "z": "不吃",
+        "j": "食べない",
+        "e": "does not eat",
+        "r": "たべない"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "寿司職人",
+        "z": "壽司師傅",
+        "j": "寿司職人",
+        "e": "sushi chef",
+        "r": "すししょくにん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "わさび抜き",
+        "z": "不加芥末",
+        "j": "わさび抜き",
+        "e": "without wasabi",
+        "r": "わさびぬき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "お願いしました",
+        "z": "提出了請求",
+        "j": "お願いしました",
+        "e": "asked",
+        "r": "おねがいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パティシエが誕生日のケーキを飾ります。": [
+      {
+        "t": "パティシエ",
+        "z": "甜點師",
+        "j": "パティシエ",
+        "e": "pastry chef",
+        "r": "パティシエ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "誕生日",
+        "z": "生日",
+        "j": "誕生日",
+        "e": "birthday",
+        "r": "たんじょうび"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ケーキ",
+        "z": "蛋糕",
+        "j": "ケーキ",
+        "e": "cake",
+        "r": "ケーキ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "飾ります",
+        "z": "裝飾",
+        "j": "飾ります",
+        "e": "decorates",
+        "r": "かざります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ケーキを受け取ったとき、パティシエが家に着くまで冷やしておく方法を教えてくれました。": [
+      {
+        "t": "ケーキ",
+        "z": "蛋糕",
+        "j": "ケーキ",
+        "e": "cake",
+        "r": "ケーキ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "受け取った",
+        "z": "領取",
+        "j": "受け取った",
+        "e": "picked up",
+        "r": "うけとった"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "パティシエ",
+        "z": "甜點師",
+        "j": "パティシエ",
+        "e": "pastry chef",
+        "r": "パティシエ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "家",
+        "z": "家",
+        "j": "家",
+        "e": "home",
+        "r": "いえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "着く",
+        "z": "抵達",
+        "j": "着く",
+        "e": "get to",
+        "r": "つく"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "冷やしておく",
+        "z": "事先保持低溫",
+        "j": "冷やしておく",
+        "e": "keep cool",
+        "r": "ひやしておく"
+      },
+      {
+        "t": "方法",
+        "z": "方法",
+        "j": "方法",
+        "e": "way",
+        "r": "ほうほう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴了我",
+        "j": "教えてくれました",
+        "e": "told me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "バーテンダーがカウンターでカクテルを作っています。": [
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "カウンター",
+        "z": "吧檯",
+        "j": "カウンター",
+        "e": "bar",
+        "r": "カウンター"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "カクテル",
+        "z": "雞尾酒",
+        "j": "カクテル",
+        "e": "cocktail",
+        "r": "カクテル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作っています",
+        "z": "正在調製",
+        "j": "作っています",
+        "e": "is mixing",
+        "r": "つくっています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "車を運転して帰るので、バーテンダーにノンアルコールの飲み物を作ってもらいました。": [
+      {
+        "t": "車",
+        "z": "車",
+        "j": "車",
+        "e": "car",
+        "r": "くるま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "運転して帰る",
+        "z": "開車回家",
+        "j": "運転して帰る",
+        "e": "drive home",
+        "r": "うんてんしてかえる"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ノンアルコール",
+        "z": "無酒精",
+        "j": "ノンアルコール",
+        "e": "nonalcoholic",
+        "r": "ノンアルコール"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "飲み物",
+        "z": "飲料",
+        "j": "飲み物",
+        "e": "drink",
+        "r": "のみもの"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作ってもらいました",
+        "z": "請對方替我調製",
+        "j": "作ってもらいました",
+        "e": "had it made",
+        "r": "つくってもらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ホテルフロント係が部屋の鍵を渡してくれます。": [
+      {
+        "t": "ホテルフロント係",
+        "z": "飯店櫃台人員",
+        "j": "ホテルフロント係",
+        "e": "hotel receptionist",
+        "r": "ホテルフロントがかり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "鍵",
+        "z": "鑰匙",
+        "j": "鍵",
+        "e": "key",
+        "r": "かぎ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "渡してくれます",
+        "z": "交給我",
+        "j": "渡してくれます",
+        "e": "gives me",
+        "r": "わたしてくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "チェックイン前に着いたので、ホテルフロント係が客室に入れるまでスーツケースを預かってくれました。": [
+      {
+        "t": "チェックイン前",
+        "z": "入住時間前",
+        "j": "チェックイン前",
+        "e": "before check-in",
+        "r": "チェックインまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "着いた",
+        "z": "抵達了",
+        "j": "着いた",
+        "e": "arrived",
+        "r": "ついた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ホテルフロント係",
+        "z": "飯店櫃台人員",
+        "j": "ホテルフロント係",
+        "e": "hotel receptionist",
+        "r": "ホテルフロントがかり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "客室",
+        "z": "客房",
+        "j": "客室",
+        "e": "room",
+        "r": "きゃくしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れる",
+        "z": "可以進入",
+        "j": "入れる",
+        "e": "can enter",
+        "r": "はいれる"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "スーツケース",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase",
+        "r": "スーツケース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "預かってくれました",
+        "z": "替我保管了",
+        "j": "預かってくれました",
+        "e": "stored for me",
+        "r": "あずかってくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "コンシェルジュが私たちに周辺の地図を見せてくれます。": [
+      {
+        "t": "コンシェルジュ",
+        "z": "禮賓人員",
+        "j": "コンシェルジュ",
+        "e": "concierge",
+        "r": "コンシェルジュ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私たち",
+        "z": "我們",
+        "j": "私たち",
+        "e": "us",
+        "r": "わたしたち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "周辺",
+        "z": "周邊地區",
+        "j": "周辺",
+        "e": "area",
+        "r": "しゅうへん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "地図",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map",
+        "r": "ちず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せてくれます",
+        "z": "拿給我們看",
+        "j": "見せてくれます",
+        "e": "shows us",
+        "r": "みせてくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "行きたかった店が満席だったので、コンシェルジュが近くのイタリア料理店を予約してくれました。": [
+      {
+        "t": "行きたかった",
+        "z": "想去的",
+        "j": "行きたかった",
+        "e": "wanted to visit",
+        "r": "いきたかった"
+      },
+      {
+        "t": "店",
+        "z": "餐廳",
+        "j": "店",
+        "e": "restaurant",
+        "r": "みせ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "満席だった",
+        "z": "客滿了",
+        "j": "満席だった",
+        "e": "was full",
+        "r": "まんせきだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "コンシェルジュ",
+        "z": "禮賓人員",
+        "j": "コンシェルジュ",
+        "e": "concierge",
+        "r": "コンシェルジュ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "nearby",
+        "r": "ちかく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "イタリア料理店",
+        "z": "義大利餐廳",
+        "j": "イタリア料理店",
+        "e": "Italian restaurant",
+        "r": "イタリアりょうりてん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "予約してくれました",
+        "z": "替我們預訂了",
+        "j": "予約してくれました",
+        "e": "booked for us",
+        "r": "よやくしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ツアーガイドが小さな旗を掲げています。": [
+      {
+        "t": "ツアーガイド",
+        "z": "導遊",
+        "j": "ツアーガイド",
+        "e": "tour guide",
+        "r": "ツアーガイド"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "小さな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small",
+        "r": "ちいさな"
+      },
+      {
+        "t": "旗",
+        "z": "旗子",
+        "j": "旗",
+        "e": "flag",
+        "r": "はた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "掲げています",
+        "z": "正舉著",
+        "j": "掲げています",
+        "e": "is holding up",
+        "r": "かかげています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "一行が寺に着くと、ツアーガイドが写真を撮れる場所を教えてくれました。": [
+      {
+        "t": "一行",
+        "z": "團體",
+        "j": "一行",
+        "e": "group",
+        "r": "いっこう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "寺",
+        "z": "寺院",
+        "j": "寺",
+        "e": "temple",
+        "r": "てら"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "着く",
+        "z": "抵達",
+        "j": "着く",
+        "e": "reached",
+        "r": "つく"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "ツアーガイド",
+        "z": "導遊",
+        "j": "ツアーガイド",
+        "e": "tour guide",
+        "r": "ツアーガイド"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮れる",
+        "z": "可以拍攝",
+        "j": "撮れる",
+        "e": "can take",
+        "r": "とれる"
+      },
+      {
+        "t": "場所",
+        "z": "地點",
+        "j": "場所",
+        "e": "place",
+        "r": "ばしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴了我們",
+        "j": "教えてくれました",
+        "e": "showed us",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

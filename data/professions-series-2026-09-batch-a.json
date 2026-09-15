@@ -1,0 +1,1094 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "A",
+  "state": "candidate-data-reviewed",
+  "entries": [
+    {
+      "id": "convenience-store-clerk",
+      "word": "convenience store clerk",
+      "chinese": "便利商店店員",
+      "chineseDefinition": "在便利商店負責結帳、補貨、加熱餐點及協助顧客的門市工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈviːn.jəns ˌstɔːr ˈklɝːk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "便利商店店員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who serves customers, handles payments, and stocks goods in a convenience store.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コンビニ店員」とは、コンビニで接客や会計、品出しなどを行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The convenience store clerk heated my lunch.",
+          "ja": "コンビニ店員が私のお弁当を温めてくれました。",
+          "zh": "便利商店店員幫我加熱了午餐。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I forgot my umbrella, the convenience store clerk showed me where the plastic umbrellas were.",
+          "ja": "傘を忘れたとき、コンビニ店員がビニール傘の売り場を教えてくれました。",
+          "zh": "我忘了帶傘時，便利商店店員告訴我塑膠傘放在哪裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cashier",
+        "supermarket-clerk",
+        "sales-clerk"
+      ],
+      "ja": "コンビニ店員",
+      "jaReading": "コンビニてんいん",
+      "jaReadingSegments": [
+        {
+          "text": "コンビニ",
+          "ruby": null
+        },
+        {
+          "text": "店員",
+          "ruby": "てんいん"
+        }
+      ]
+    },
+    {
+      "id": "supermarket-clerk",
+      "word": "supermarket clerk",
+      "chinese": "超市店員",
+      "chineseDefinition": "在超市負責補貨、整理貨架、標價或協助顧客尋找商品的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsuː.pɚˌmɑːr.kɪt ˌklɝːk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "超市店員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who stocks shelves, arranges products, or helps customers in a supermarket.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「スーパー店員」とは、スーパーで品出しや売り場の整理、接客などを行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The supermarket clerk is stocking milk on the shelf.",
+          "ja": "スーパー店員が牛乳を棚に補充しています。",
+          "zh": "超市店員正在把牛奶補到貨架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the rice was sold out, a supermarket clerk checked the stockroom for me.",
+          "ja": "お米が売り切れていたので、スーパー店員が私のためにバックヤードの在庫を確認してくれました。",
+          "zh": "因為米賣完了，一位超市店員幫我到後場查庫存。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cashier",
+        "convenience-store-clerk",
+        "sales-clerk"
+      ],
+      "ja": "スーパー店員",
+      "jaReading": "スーパーてんいん",
+      "jaReadingSegments": [
+        {
+          "text": "スーパー",
+          "ruby": null
+        },
+        {
+          "text": "店員",
+          "ruby": "てんいん"
+        }
+      ]
+    },
+    {
+      "id": "sales-clerk",
+      "word": "sales clerk",
+      "chinese": "門市店員",
+      "chineseDefinition": "在零售門市介紹商品、協助顧客挑選並處理店內銷售工作的店員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈseɪlz ˌklɝːk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "門市店員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who helps customers choose and buy products in a retail store.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「販売員」とは、小売店で商品を案内し、客の買い物を手伝う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The sales clerk found my size.",
+          "ja": "販売員が私に合うサイズを見つけてくれました。",
+          "zh": "門市店員幫我找到了合適的尺寸。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After I tried on the jacket, the sales clerk brought me a different color.",
+          "ja": "ジャケットを試着したあと、販売員が別の色を持ってきてくれました。",
+          "zh": "我試穿那件外套後，門市店員拿了另一種顏色給我。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "department-store-clerk",
+        "cashier",
+        "customer"
+      ],
+      "ja": "販売員",
+      "jaReading": "はんばいいん",
+      "jaReadingSegments": [
+        {
+          "text": "販売員",
+          "ruby": "はんばいいん"
+        }
+      ]
+    },
+    {
+      "id": "department-store-clerk",
+      "word": "department store clerk",
+      "chinese": "百貨公司店員",
+      "chineseDefinition": "在百貨公司專櫃接待顧客、介紹商品並提供包裝等服務的店員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈpɑːrt.mənt ˌstɔːr ˈklɝːk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "百貨公司店員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who assists customers and sells or wraps goods at a department store counter.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「百貨店店員」とは、百貨店の売り場で接客し、商品の案内や包装などを行う人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The department store clerk wrapped the gift.",
+          "ja": "百貨店店員が贈り物を包んでくれました。",
+          "zh": "百貨公司店員幫我包好了禮物。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since it was a birthday present, the department store clerk tied a ribbon around the package.",
+          "ja": "誕生日の贈り物だったので、百貨店店員が包みにリボンをかけてくれました。",
+          "zh": "因為那是生日禮物，百貨公司店員在包裝上繫了緞帶。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sales-clerk",
+        "concierge",
+        "cashier"
+      ],
+      "ja": "百貨店店員",
+      "jaReading": "ひゃっかてんてんいん",
+      "jaReadingSegments": [
+        {
+          "text": "百貨店",
+          "ruby": "ひゃっかてん"
+        },
+        {
+          "text": "店員",
+          "ruby": "てんいん"
+        }
+      ]
+    },
+    {
+      "id": "bank-teller",
+      "word": "bank teller",
+      "chinese": "銀行櫃員",
+      "chineseDefinition": "在銀行櫃台為客戶辦理存款、提款及其他基本金融業務的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæŋk ˌtel.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "銀行櫃員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bank employee who helps customers make deposits, withdrawals, and other transactions at a counter.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「銀行窓口係」とは、銀行の窓口で預金や引き出しなどの手続きを受け付ける人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The bank teller helped me deposit cash.",
+          "ja": "銀行窓口係が現金の預け入れを手伝ってくれました。",
+          "zh": "銀行櫃員協助我存入現金。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I noticed an error on the form, the bank teller explained how to correct it.",
+          "ja": "書類の間違いに気づいたとき、銀行窓口係が直し方を説明してくれました。",
+          "zh": "我發現表格上有錯誤時，銀行櫃員向我說明了修改方法。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cashier",
+        "postal-clerk",
+        "receptionist"
+      ],
+      "ja": "銀行窓口係",
+      "jaReading": "ぎんこうまどぐちがかり",
+      "jaReadingSegments": [
+        {
+          "text": "銀行",
+          "ruby": "ぎんこう"
+        },
+        {
+          "text": "窓口",
+          "ruby": "まどぐち"
+        },
+        {
+          "text": "係",
+          "ruby": "がかり"
+        }
+      ]
+    },
+    {
+      "id": "postal-clerk",
+      "word": "postal clerk",
+      "chinese": "郵局櫃員",
+      "chineseDefinition": "在郵局櫃台受理郵件與包裹、販售郵票並說明寄送方式的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊ.stəl ˌklɝːk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "郵局櫃員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A post office employee who accepts mail and packages, sells stamps, and explains mailing services.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「郵便窓口係」とは、郵便局の窓口で郵便物や荷物を受け付け、切手などを販売する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The postal clerk weighed my package.",
+          "ja": "郵便窓口係が私の荷物を量りました。",
+          "zh": "郵局櫃員替我的包裹秤了重量。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I was sending a fragile item, the postal clerk recommended a sturdier box.",
+          "ja": "壊れやすい物を送るので、郵便窓口係がもっと丈夫な箱を勧めてくれました。",
+          "zh": "因為我要寄易碎物品，郵局櫃員建議我換一個更堅固的箱子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "mail-carrier",
+        "delivery-driver",
+        "bank-teller"
+      ],
+      "ja": "郵便窓口係",
+      "jaReading": "ゆうびんまどぐちがかり",
+      "jaReadingSegments": [
+        {
+          "text": "郵便",
+          "ruby": "ゆうびん"
+        },
+        {
+          "text": "窓口",
+          "ruby": "まどぐち"
+        },
+        {
+          "text": "係",
+          "ruby": "がかり"
+        }
+      ]
+    },
+    {
+      "id": "pharmacy-clerk",
+      "word": "pharmacy clerk",
+      "chinese": "藥妝店店員",
+      "chineseDefinition": "在藥局或藥妝店負責商品陳列、結帳與一般顧客服務，但不代替藥師提供用藥建議的零售店員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɑːr.mə.si ˌklɝːk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "藥妝店店員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A retail employee who stocks products and assists customers in a pharmacy or drugstore but does not replace the pharmacist.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ドラッグストア店員」とは、ドラッグストアで品出しや会計、一般的な接客を行う人で、薬剤師とは異なります。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pharmacy clerk showed me the sunscreen aisle.",
+          "ja": "ドラッグストア店員が日焼け止めの売り場を案内してくれました。",
+          "zh": "藥妝店店員帶我到防曬用品的貨架。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I wanted advice about cold medicine, the pharmacy clerk showed me the counter where I could speak to a pharmacist.",
+          "ja": "風邪薬について相談したかったので、ドラッグストア店員が薬剤師に相談できるカウンターを案内してくれました。",
+          "zh": "因為我想諮詢感冒藥，藥妝店店員帶我到可以詢問藥師的櫃台。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "pharmacist",
+        "sales-clerk",
+        "cashier"
+      ],
+      "ja": "ドラッグストア店員",
+      "jaReading": "ドラッグストアてんいん",
+      "jaReadingSegments": [
+        {
+          "text": "ドラッグストア",
+          "ruby": null
+        },
+        {
+          "text": "店員",
+          "ruby": "てんいん"
+        }
+      ]
+    },
+    {
+      "id": "florist",
+      "word": "florist",
+      "chinese": "花店店員",
+      "chineseDefinition": "在花店挑選與修剪花材、製作花束，並協助顧客選花的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈflɔːr.ɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "花店店員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who arranges and sells flowers and helps customers choose bouquets.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「花屋」とは、花を販売し、客の希望に合わせて花束などを作る職業です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I asked the florist to make a bouquet for my mother.",
+          "ja": "花屋さんに母への花束を作ってもらいました。",
+          "zh": "我請花店店員為母親做一束花。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The florist suggested seasonal flowers because I wanted the bouquet to last all week.",
+          "ja": "花束を一週間長持ちさせたかったので、花屋さんが旬の花を勧めてくれました。",
+          "zh": "因為我希望花束能保持新鮮一整週，花店店員建議我選當季的花。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "flower",
+        "bouquet",
+        "gardener"
+      ],
+      "ja": "花屋",
+      "jaReading": "はなや",
+      "jaReadingSegments": [
+        {
+          "text": "花",
+          "ruby": "はな"
+        },
+        {
+          "text": "屋",
+          "ruby": "や"
+        }
+      ]
+    },
+    {
+      "id": "butcher",
+      "word": "butcher",
+      "chinese": "肉店師傅",
+      "chineseDefinition": "在肉店切分、修整與包裝肉品，並依顧客需求提供合適部位的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbʊtʃ.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "肉店師傅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who cuts, prepares, and sells meat in a butcher shop or market.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「肉屋」とは、肉を切り分けて販売し、客の希望に合う部位を案内する職業です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The butcher cut the pork into thin slices for me.",
+          "ja": "肉屋さんが豚肉を薄切りにしてくれました。",
+          "zh": "肉店師傅幫我把豬肉切成薄片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I told the butcher I was making curry, he recommended a tender cut of beef.",
+          "ja": "カレーを作ると伝えると、肉屋さんが柔らかい牛肉の部位を勧めてくれました。",
+          "zh": "我告訴肉店師傅要做咖哩後，他推薦了一種較嫩的牛肉部位。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "meat",
+        "knife",
+        "supermarket-clerk"
+      ],
+      "ja": "肉屋",
+      "jaReading": "にくや",
+      "jaReadingSegments": [
+        {
+          "text": "肉",
+          "ruby": "にく"
+        },
+        {
+          "text": "屋",
+          "ruby": "や"
+        }
+      ]
+    },
+    {
+      "id": "fishmonger",
+      "word": "fishmonger",
+      "chinese": "魚販",
+      "chineseDefinition": "在魚店或市場處理、陳列與販售魚類及海鮮，並協助顧客挑選的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɪʃˌmɑːŋ.ɡɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "魚販",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who prepares and sells fish and seafood in a shop or market.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「魚屋」とは、魚介類を下処理して販売し、客の用途に合う魚を案内する職業です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The fishmonger cleaned the fish for dinner.",
+          "ja": "魚屋さんが夕食用の魚を下処理してくれました。",
+          "zh": "魚販幫我處理了晚餐要用的魚。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I wanted to grill fish tonight, the fishmonger chose the freshest mackerel for me.",
+          "ja": "今夜は魚を焼きたかったので、魚屋さんが一番新鮮なサバを選んでくれました。",
+          "zh": "因為我今晚想烤魚，魚販幫我挑了最新鮮的鯖魚。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "fish",
+        "seafood",
+        "market"
+      ],
+      "ja": "魚屋",
+      "jaReading": "さかなや",
+      "jaReadingSegments": [
+        {
+          "text": "魚",
+          "ruby": "さかな"
+        },
+        {
+          "text": "屋",
+          "ruby": "や"
+        }
+      ]
+    },
+    {
+      "id": "chef",
+      "word": "chef",
+      "chinese": "主廚",
+      "chineseDefinition": "在餐廳廚房規劃菜色、掌握烹調品質，並負責或帶領料理工作的專業廚師。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃef/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "主廚",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A professional cook who plans dishes and oversees food preparation in a restaurant kitchen.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「シェフ」とは、レストランで料理を作り、献立や厨房全体の調理を管理する専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The chef is preparing today's soup in the kitchen.",
+          "ja": "シェフは厨房で今日のスープを作っています。",
+          "zh": "主廚正在廚房準備今天的湯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before dinner service began, the chef checked each dish to make sure it was seasoned properly.",
+          "ja": "ディナー営業が始まる前に、シェフは味付けが適切かどうか一皿ずつ確認しました。",
+          "zh": "晚餐營業開始前，主廚逐一檢查每道菜，確認調味是否恰當。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "restaurant-cook",
+        "pastry-chef",
+        "restaurant-server"
+      ],
+      "ja": "シェフ",
+      "jaReading": "シェフ",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "restaurant-cook",
+      "word": "cook",
+      "chinese": "廚師",
+      "chineseDefinition": "在餐廳廚房依菜單與訂單準備食材、烹調餐點並維持出餐品質的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kʊk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "廚師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person whose job is to prepare and cook meals in a restaurant kitchen.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「調理師」とは、飲食店の厨房で食材を準備し、注文に合わせて料理を作る職業です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The cook is stir-frying vegetables for an order.",
+          "ja": "調理師は注文された野菜を炒めています。",
+          "zh": "廚師正在炒客人點的蔬菜。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the kitchen was busy, the cook prepared my allergy-friendly meal separately.",
+          "ja": "厨房は忙しかったものの、調理師はアレルギー対応の料理を別に作ってくれました。",
+          "zh": "雖然廚房很忙，廚師仍另外準備了避開我過敏原的餐點。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "chef",
+        "restaurant-server",
+        "kitchen"
+      ],
+      "ja": "調理師",
+      "jaReading": "ちょうりし",
+      "jaReadingSegments": [
+        {
+          "text": "調理師",
+          "ruby": "ちょうりし"
+        }
+      ]
+    },
+    {
+      "id": "restaurant-server",
+      "word": "restaurant server",
+      "chinese": "餐廳服務生",
+      "chineseDefinition": "在餐廳為顧客帶位、點餐、送餐，並處理用餐需求的外場工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈres.tə.rɑːnt ˌsɝː.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "餐廳服務生",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who takes orders, serves food, and helps customers in a restaurant dining area.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「飲食店ホールスタッフ」とは、客を席へ案内し、注文を受けて料理を運ぶ接客の仕事です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The restaurant server brought us water and menus.",
+          "ja": "ホールスタッフが水とメニューを持ってきてくれました。",
+          "zh": "餐廳服務生為我們送來水和菜單。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I mentioned my food allergy, the restaurant server checked the ingredients with the kitchen.",
+          "ja": "食物アレルギーがあると伝えると、ホールスタッフが厨房に食材について確認してくれました。",
+          "zh": "我提到食物過敏後，餐廳服務生向廚房確認了食材。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "chef",
+        "restaurant-cook",
+        "menu"
+      ],
+      "ja": "飲食店ホールスタッフ",
+      "jaReading": "いんしょくてんホールスタッフ",
+      "jaReadingSegments": [
+        {
+          "text": "飲食店",
+          "ruby": "いんしょくてん"
+        },
+        {
+          "text": "ホールスタッフ",
+          "ruby": null
+        }
+      ]
+    },
+    {
+      "id": "barista",
+      "word": "barista",
+      "chinese": "咖啡師",
+      "chineseDefinition": "在咖啡店沖煮義式咖啡等飲品、調整風味，並為顧客服務的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bəˈriː.stə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "咖啡師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who prepares and serves coffee drinks, especially espresso-based drinks, in a café.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「バリスタ」とは、カフェでエスプレッソなどのコーヒー飲料を作り、客に提供する職業です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barista made my latte with soy milk.",
+          "ja": "バリスタが豆乳でラテを作ってくれました。",
+          "zh": "咖啡師用豆漿為我做了拿鐵。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the café was crowded, the barista called my name when my drink was ready.",
+          "ja": "カフェが混んでいたので、ドリンクができるとバリスタが私の名前を呼びました。",
+          "zh": "因為咖啡店很擁擠，飲料做好後，咖啡師叫了我的名字。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "coffee",
+        "cafe",
+        "restaurant-server"
+      ],
+      "ja": "バリスタ",
+      "jaReading": "バリスタ",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "sushi-chef",
+      "word": "sushi chef",
+      "chinese": "壽司師傅",
+      "chineseDefinition": "專門準備醋飯、處理生鮮食材並製作握壽司、壽司卷等壽司料理的廚師。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsuː.ʃi ˌʃef/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "壽司師傅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A chef who prepares sushi, including seasoned rice, seafood, and other toppings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「寿司職人」とは、酢飯や魚介類などを扱い、握り寿司や巻き寿司を作る料理人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The sushi chef makes nigiri at the counter.",
+          "ja": "寿司職人がカウンターで握り寿司を作っています。",
+          "zh": "壽司師傅正在吧檯製作握壽司。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I asked the sushi chef to leave out wasabi because my child does not eat it.",
+          "ja": "子どもがわさびを食べないので、寿司職人にわさび抜きでお願いしました。",
+          "zh": "因為我的孩子不吃芥末，我請壽司師傅不要放芥末。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "chef",
+        "restaurant-cook",
+        "fishmonger"
+      ],
+      "ja": "寿司職人",
+      "jaReading": "すししょくにん",
+      "jaReadingSegments": [
+        {
+          "text": "寿司",
+          "ruby": "すし"
+        },
+        {
+          "text": "職人",
+          "ruby": "しょくにん"
+        }
+      ]
+    },
+    {
+      "id": "pastry-chef",
+      "word": "pastry chef",
+      "chinese": "甜點師",
+      "chineseDefinition": "專門製作蛋糕、塔、泡芙等西式糕點，並負責烘焙與裝飾的廚師。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpeɪ.stri ˌʃef/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "甜點師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A chef who specializes in making and decorating pastries, cakes, and other desserts.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「パティシエ」とは、ケーキや焼き菓子などの洋菓子を専門に作り、飾り付けも行う職人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pastry chef decorates a birthday cake.",
+          "ja": "パティシエが誕生日のケーキを飾ります。",
+          "zh": "甜點師正在裝飾生日蛋糕。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I picked up the cake, the pastry chef told me how to keep it cool until I got home.",
+          "ja": "ケーキを受け取ったとき、パティシエが家に着くまで冷やしておく方法を教えてくれました。",
+          "zh": "我取蛋糕時，甜點師告訴我在到家前如何讓蛋糕保持低溫。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "chef",
+        "baker",
+        "restaurant-cook"
+      ],
+      "ja": "パティシエ",
+      "jaReading": "パティシエ",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "bartender",
+      "word": "bartender",
+      "chinese": "調酒師",
+      "chineseDefinition": "在酒吧或餐廳吧檯調製與供應酒精或無酒精飲品，並接待客人的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑːrˌten.dɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "調酒師",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who prepares and serves alcoholic and nonalcoholic drinks at a bar.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「バーテンダー」とは、バーのカウンターでカクテルなどの飲み物を作り、客に提供する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The bartender mixes a cocktail at the bar.",
+          "ja": "バーテンダーがカウンターでカクテルを作っています。",
+          "zh": "調酒師正在吧檯調製雞尾酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I was driving home, I asked the bartender to make me a nonalcoholic drink.",
+          "ja": "車を運転して帰るので、バーテンダーにノンアルコールの飲み物を作ってもらいました。",
+          "zh": "因為我要開車回家，我請調酒師替我調一杯無酒精飲料。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "restaurant-server",
+        "barista",
+        "restaurant-cook"
+      ],
+      "ja": "バーテンダー",
+      "jaReading": "バーテンダー",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "hotel-receptionist",
+      "word": "hotel receptionist",
+      "chinese": "飯店櫃台人員",
+      "chineseDefinition": "在飯店櫃台辦理入住與退房、提供房卡，並回答住客問題的接待人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/hoʊˈtel rɪˈsep.ʃən.ɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飯店櫃台人員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hotel employee who checks guests in and out, provides room keys, and answers questions at the front desk.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ホテルフロント係」とは、ホテルの受付で宿泊客のチェックインやチェックアウトを行い、案内をする従業員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The hotel receptionist gives me a room key.",
+          "ja": "ホテルフロント係が部屋の鍵を渡してくれます。",
+          "zh": "飯店櫃台人員把房間鑰匙交給我。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I arrived before check-in, the hotel receptionist stored my suitcase until I could enter my room.",
+          "ja": "チェックイン前に着いたので、ホテルフロント係が客室に入れるまでスーツケースを預かってくれました。",
+          "zh": "因為我在入住時間前抵達，飯店櫃台人員替我保管行李箱，直到我能進房為止。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "concierge",
+        "hotel-housekeeper",
+        "bellhop"
+      ],
+      "ja": "ホテルフロント係",
+      "jaReading": "ホテルフロントがかり",
+      "jaReadingSegments": [
+        {
+          "text": "ホテルフロント",
+          "ruby": null
+        },
+        {
+          "text": "係",
+          "ruby": "がかり"
+        }
+      ]
+    },
+    {
+      "id": "concierge",
+      "word": "concierge",
+      "chinese": "禮賓人員",
+      "chineseDefinition": "在飯店為住客提供餐廳預約、交通、觀光資訊及其他個別協助的服務人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌkɑːn.siˈerʒ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "禮賓人員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hotel employee who helps guests with reservations, transportation, local information, and other requests.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コンシェルジュ」とは、ホテルで宿泊客の予約や移動、観光などの相談に応じるサービス担当者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The concierge shows us a map of the area.",
+          "ja": "コンシェルジュが私たちに周辺の地図を見せてくれます。",
+          "zh": "禮賓人員拿附近的地圖給我們看。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the restaurant we wanted was full, the concierge booked a nearby Italian restaurant for us.",
+          "ja": "行きたかった店が満席だったので、コンシェルジュが近くのイタリア料理店を予約してくれました。",
+          "zh": "因為我們想去的餐廳客滿了，禮賓人員替我們預訂了附近的義大利餐廳。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hotel-receptionist",
+        "tour-guide",
+        "restaurant-server"
+      ],
+      "ja": "コンシェルジュ",
+      "jaReading": "コンシェルジュ",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "tour-guide",
+      "word": "tour guide",
+      "chinese": "導遊",
+      "chineseDefinition": "帶領旅客參觀景點、安排移動，並解說當地文化、歷史與注意事項的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʊr ˌɡaɪd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "導遊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who leads visitors around a place and explains its sights, history, or culture.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ツアーガイド」とは、旅行者を観光地へ案内し、その場所の歴史や文化などを説明する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The tour guide holds up a small flag.",
+          "ja": "ツアーガイドが小さな旗を掲げています。",
+          "zh": "導遊舉著一面小旗子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the group reached the temple, the tour guide explained where we could take photos.",
+          "ja": "一行が寺に着くと、ツアーガイドが写真を撮れる場所を教えてくれました。",
+          "zh": "團體抵達寺院後，導遊說明了哪些地方可以拍照。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "museum-guide",
+        "concierge",
+        "travel-agent"
+      ],
+      "ja": "ツアーガイド",
+      "jaReading": "ツアーガイド",
+      "jaReadingSegments": null
+    }
+  ]
+}

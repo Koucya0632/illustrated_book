@@ -1,0 +1,4568 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "C",
+  "en": {
+    "The train driver stopped the train at the platform.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "train driver",
+        "z": "電車駕駛",
+        "j": "電車運転士",
+        "e": "train driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stopped",
+        "z": "停靠了",
+        "j": "停めた",
+        "e": "stopped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "train",
+        "z": "電車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "platform",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because heavy rain made it hard to see, the train driver slowed down before the next station.": [
+      {
+        "t": "Because "
+      },
+      {
+        "t": "heavy rain",
+        "z": "大雨",
+        "j": "大雨",
+        "e": "heavy rain"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "made",
+        "z": "使得",
+        "j": "〜という状態にした",
+        "e": "made"
+      },
+      {
+        "t": " it hard to "
+      },
+      {
+        "t": "see",
+        "z": "看清",
+        "j": "見る",
+        "e": "see"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "train driver",
+        "z": "電車駕駛",
+        "j": "電車運転士",
+        "e": "train driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowed down",
+        "z": "減速了",
+        "j": "減速した",
+        "e": "slowed down"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "next station",
+        "z": "下一站",
+        "j": "次の駅",
+        "e": "next station"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The train conductor announced the next station.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "train conductor",
+        "z": "列車長",
+        "j": "車掌",
+        "e": "train conductor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "announced",
+        "z": "廣播了",
+        "j": "アナウンスした",
+        "e": "announced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "next station",
+        "z": "下一站",
+        "j": "次の駅",
+        "e": "next station"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After confirming that the doors were closed, the train conductor gave the departure signal.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "confirming",
+        "z": "確認",
+        "j": "確認した",
+        "e": "confirming"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "doors",
+        "z": "車門",
+        "j": "ドア",
+        "e": "doors"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "closed",
+        "z": "已關閉",
+        "j": "閉まっていた",
+        "e": "closed"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "train conductor",
+        "z": "列車長",
+        "j": "車掌",
+        "e": "train conductor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gave",
+        "z": "發出了",
+        "j": "送った",
+        "e": "gave"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "departure signal",
+        "z": "發車信號",
+        "j": "発車の合図",
+        "e": "departure signal"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The station attendant showed me the correct platform.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "station attendant",
+        "z": "車站站務員",
+        "j": "駅員",
+        "e": "station attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed me",
+        "z": "告訴我",
+        "j": "教えてくれた",
+        "e": "showed me"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "correct",
+        "z": "正確的",
+        "j": "正しい",
+        "e": "correct"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "platform",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When my ticket would not pass through the gate, the station attendant checked it and let me through.": [
+      {
+        "t": "When my "
+      },
+      {
+        "t": "ticket",
+        "z": "車票",
+        "j": "切符",
+        "e": "ticket"
+      },
+      {
+        "t": " would not "
+      },
+      {
+        "t": "pass through",
+        "z": "通過",
+        "j": "通る",
+        "e": "pass through"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "gate",
+        "z": "閘門",
+        "j": "自動改札機",
+        "e": "gate"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "station attendant",
+        "z": "車站站務員",
+        "j": "駅員",
+        "e": "station attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " it and "
+      },
+      {
+        "t": "let me through",
+        "z": "讓我通行",
+        "j": "通してくれた",
+        "e": "let me through"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bus driver lowered the ramp for a passenger.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bus driver",
+        "z": "公車司機",
+        "j": "バス運転手",
+        "e": "bus driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lowered",
+        "z": "放下了",
+        "j": "下ろした",
+        "e": "lowered"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ramp",
+        "z": "斜坡板",
+        "j": "スロープ",
+        "e": "ramp"
+      },
+      {
+        "t": " for a "
+      },
+      {
+        "t": "passenger",
+        "z": "乘客",
+        "j": "乗客",
+        "e": "passenger"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the main road was closed, the bus driver explained the detour before leaving the stop.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "main road",
+        "z": "主要道路",
+        "j": "大通り",
+        "e": "main road"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "closed",
+        "z": "封閉",
+        "j": "通行止め",
+        "e": "closed"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "bus driver",
+        "z": "公車司機",
+        "j": "バス運転手",
+        "e": "bus driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "說明了",
+        "j": "案内した",
+        "e": "explained"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "detour",
+        "z": "繞道路線",
+        "j": "迂回路",
+        "e": "detour"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "leaving",
+        "z": "駛離",
+        "j": "出る",
+        "e": "leaving"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "stop",
+        "z": "公車站",
+        "j": "停留所",
+        "e": "stop"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The taxi driver loaded my suitcase into the trunk.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "taxi driver",
+        "z": "計程車司機",
+        "j": "タクシー運転手",
+        "e": "taxi driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "loaded",
+        "z": "放入",
+        "j": "積んだ",
+        "e": "loaded"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "suitcase",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "trunk",
+        "z": "後車廂",
+        "j": "トランク",
+        "e": "trunk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I showed the hotel address, the taxi driver suggested a route that avoided the traffic jam.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "showed",
+        "z": "出示了",
+        "j": "見せた",
+        "e": "showed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hotel address",
+        "z": "飯店地址",
+        "j": "ホテルの住所",
+        "e": "hotel address"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "taxi driver",
+        "z": "計程車司機",
+        "j": "タクシー運転手",
+        "e": "taxi driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "suggested",
+        "z": "建議了",
+        "j": "提案した",
+        "e": "suggested"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "route",
+        "z": "路線",
+        "j": "道",
+        "e": "route"
+      },
+      {
+        "t": " that "
+      },
+      {
+        "t": "avoided",
+        "z": "避開",
+        "j": "避ける",
+        "e": "avoided"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "traffic jam",
+        "z": "塞車",
+        "j": "渋滞",
+        "e": "traffic jam"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The truck driver secured the cargo before leaving.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "truck driver",
+        "z": "卡車司機",
+        "j": "トラック運転手",
+        "e": "truck driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "secured",
+        "z": "固定好",
+        "j": "固定した",
+        "e": "secured"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cargo",
+        "z": "貨物",
+        "j": "荷物",
+        "e": "cargo"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "leaving",
+        "z": "出發",
+        "j": "出発",
+        "e": "leaving"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the loading dock was crowded, the truck driver waited until another vehicle moved.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "loading dock",
+        "z": "卸貨區",
+        "j": "荷降ろし場",
+        "e": "loading dock"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠",
+        "j": "混んでいた",
+        "e": "crowded"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "truck driver",
+        "z": "卡車司機",
+        "j": "トラック運転手",
+        "e": "truck driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "waited",
+        "z": "等待",
+        "j": "待った",
+        "e": "waited"
+      },
+      {
+        "t": " until another "
+      },
+      {
+        "t": "vehicle",
+        "z": "車輛",
+        "j": "車",
+        "e": "vehicle"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "moved",
+        "z": "移開",
+        "j": "移動した",
+        "e": "moved"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The delivery driver handed me the package.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "delivery driver",
+        "z": "宅配司機",
+        "j": "宅配ドライバー",
+        "e": "delivery driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "handed",
+        "z": "交給",
+        "j": "渡した",
+        "e": "handed"
+      },
+      {
+        "t": " me the "
+      },
+      {
+        "t": "package",
+        "z": "包裹",
+        "j": "荷物",
+        "e": "package"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because no one was home, the delivery driver left a redelivery notice in the mailbox.": [
+      {
+        "t": "Because "
+      },
+      {
+        "t": "no one",
+        "z": "沒有人",
+        "j": "誰もいない",
+        "e": "no one"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "home",
+        "z": "在家",
+        "j": "家にいる",
+        "e": "home"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "delivery driver",
+        "z": "宅配司機",
+        "j": "宅配ドライバー",
+        "e": "delivery driver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "left",
+        "z": "留下了",
+        "j": "入れた",
+        "e": "left"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "redelivery notice",
+        "z": "再次配送通知單",
+        "j": "不在票",
+        "e": "redelivery notice"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "mailbox",
+        "z": "信箱",
+        "j": "郵便受け",
+        "e": "mailbox"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The mail carrier put my package in the parcel locker.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "mail carrier",
+        "z": "郵差",
+        "j": "郵便配達員",
+        "e": "mail carrier"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "放進",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "package",
+        "z": "包裹",
+        "j": "荷物",
+        "e": "package"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "parcel locker",
+        "z": "宅配箱",
+        "j": "宅配ボックス",
+        "e": "parcel locker"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When nobody answered the door, the mail carrier left a delivery notice in the mailbox.": [
+      {
+        "t": "When nobody "
+      },
+      {
+        "t": "answered the door",
+        "z": "應門",
+        "j": "玄関に出ませんでした",
+        "e": "answered the door"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "mail carrier",
+        "z": "郵差",
+        "j": "郵便配達員",
+        "e": "mail carrier"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "left",
+        "z": "留下",
+        "j": "入れました",
+        "e": "left"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "delivery notice",
+        "z": "不在通知單",
+        "j": "不在票",
+        "e": "delivery notice"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "mailbox",
+        "z": "信箱",
+        "j": "郵便受け",
+        "e": "mailbox"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pilot checked the cockpit instruments before takeoff.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pilot",
+        "z": "飛行員",
+        "j": "パイロット",
+        "e": "pilot"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cockpit instruments",
+        "z": "駕駛艙儀表",
+        "j": "操縦席の計器",
+        "e": "cockpit instruments"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "takeoff",
+        "z": "起飛",
+        "j": "離陸",
+        "e": "takeoff"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the weather had changed, the pilot announced a delay and explained the reason.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "weather",
+        "z": "天氣",
+        "j": "天候",
+        "e": "weather"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "changed",
+        "z": "發生變化",
+        "j": "変わりました",
+        "e": "changed"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "pilot",
+        "z": "飛行員",
+        "j": "パイロット",
+        "e": "pilot"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "announced",
+        "z": "宣布",
+        "j": "知らせました",
+        "e": "announced"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "delay",
+        "z": "班機延誤",
+        "j": "遅延",
+        "e": "delay"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "explained",
+        "z": "說明",
+        "j": "説明しました",
+        "e": "explained"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "reason",
+        "z": "原因",
+        "j": "理由",
+        "e": "reason"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The flight attendant showed me where to store my bag.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "flight attendant",
+        "z": "空服員",
+        "j": "客室乗務員",
+        "e": "flight attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed me",
+        "z": "告訴我",
+        "j": "教えてくれました",
+        "e": "showed me"
+      },
+      {
+        "t": " where to "
+      },
+      {
+        "t": "store",
+        "z": "收放",
+        "j": "収納する",
+        "e": "store"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "bag",
+        "z": "手提行李",
+        "j": "手荷物",
+        "e": "bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the child said she was cold, the flight attendant brought her a blanket.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "child",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "said",
+        "z": "說",
+        "j": "言いました",
+        "e": "said"
+      },
+      {
+        "t": " she was "
+      },
+      {
+        "t": "cold",
+        "z": "覺得冷",
+        "j": "寒い",
+        "e": "cold"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "flight attendant",
+        "z": "空服員",
+        "j": "客室乗務員",
+        "e": "flight attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "brought",
+        "z": "拿來",
+        "j": "持ってきました",
+        "e": "brought"
+      },
+      {
+        "t": " her a "
+      },
+      {
+        "t": "blanket",
+        "z": "毯子",
+        "j": "毛布",
+        "e": "blanket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The police officer showed us the way to the station.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "police officer",
+        "z": "警察",
+        "j": "警察官",
+        "e": "police officer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed us",
+        "z": "告訴我們",
+        "j": "教えてくれました",
+        "e": "showed us"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "way",
+        "z": "路",
+        "j": "道",
+        "e": "way"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "station",
+        "z": "車站",
+        "j": "駅",
+        "e": "station"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I reported my lost wallet, the police officer asked where I had last seen it.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "reported",
+        "z": "報失",
+        "j": "届け出ました",
+        "e": "reported"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "lost wallet",
+        "z": "遺失的錢包",
+        "j": "財布の紛失",
+        "e": "lost wallet"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "police officer",
+        "z": "警察",
+        "j": "警察官",
+        "e": "police officer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "asked",
+        "z": "詢問",
+        "j": "尋ねました",
+        "e": "asked"
+      },
+      {
+        "t": " where I had "
+      },
+      {
+        "t": "last seen",
+        "z": "最後看見",
+        "j": "最後に見ました",
+        "e": "last seen"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "The firefighter showed the children the fire engine.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "firefighter",
+        "z": "消防員",
+        "j": "消防士",
+        "e": "firefighter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "帶領參觀",
+        "j": "見せました",
+        "e": "showed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "fire engine",
+        "z": "消防車",
+        "j": "消防車",
+        "e": "fire engine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the alarm stopped, the firefighters checked the building before anyone went back inside.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "alarm",
+        "z": "警報",
+        "j": "警報",
+        "e": "alarm"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stopped",
+        "z": "停止",
+        "j": "止まりました",
+        "e": "stopped"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "firefighters",
+        "z": "消防員",
+        "j": "消防士たち",
+        "e": "firefighters"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "building",
+        "z": "建築物",
+        "j": "建物",
+        "e": "building"
+      },
+      {
+        "t": " before anyone "
+      },
+      {
+        "t": "went back inside",
+        "z": "回到裡面",
+        "j": "中へ戻りました",
+        "e": "went back inside"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The security guard checked my visitor pass at the entrance.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "security guard",
+        "z": "保全人員",
+        "j": "警備員",
+        "e": "security guard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "visitor pass",
+        "z": "訪客證",
+        "j": "入館証",
+        "e": "visitor pass"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After finding an unlocked door, the security guard reported it to the building manager.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "finding",
+        "z": "發現",
+        "j": "見つけました",
+        "e": "finding"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "unlocked door",
+        "z": "未上鎖的門",
+        "j": "鍵の掛かっていない扉",
+        "e": "unlocked door"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "security guard",
+        "z": "保全人員",
+        "j": "警備員",
+        "e": "security guard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reported",
+        "z": "回報",
+        "j": "報告しました",
+        "e": "reported"
+      },
+      {
+        "t": " it to the "
+      },
+      {
+        "t": "building manager",
+        "z": "大樓管理人員",
+        "j": "建物の管理者",
+        "e": "building manager"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The traffic guard guided our car around the roadwork.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "traffic guard",
+        "z": "交通引導員",
+        "j": "交通誘導員",
+        "e": "traffic guard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "guided",
+        "z": "引導",
+        "j": "誘導しました",
+        "e": "guided"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "car",
+        "z": "車",
+        "j": "車",
+        "e": "car"
+      },
+      {
+        "t": " around the "
+      },
+      {
+        "t": "roadwork",
+        "z": "施工區",
+        "j": "工事現場",
+        "e": "roadwork"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because visibility was poor in the rain, the traffic guard used a lighted baton to signal drivers to slow down.": [
+      {
+        "t": "Because "
+      },
+      {
+        "t": "visibility",
+        "z": "視線",
+        "j": "見通し",
+        "e": "visibility"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "poor",
+        "z": "不佳",
+        "j": "悪い",
+        "e": "poor"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "rain",
+        "z": "雨中",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "traffic guard",
+        "z": "交通引導員",
+        "j": "交通誘導員",
+        "e": "traffic guard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用",
+        "j": "使いました",
+        "e": "used"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "lighted baton",
+        "z": "發光指揮棒",
+        "j": "誘導灯",
+        "e": "lighted baton"
+      },
+      {
+        "t": " to signal drivers to "
+      },
+      {
+        "t": "slow down",
+        "z": "減速",
+        "j": "減速する",
+        "e": "slow down"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The crossing guard helps the children cross the road safely.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "crossing guard",
+        "z": "導護員",
+        "j": "学童擁護員",
+        "e": "crossing guard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "helps",
+        "z": "協助",
+        "j": "誘導します",
+        "e": "helps"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cross",
+        "z": "穿越",
+        "j": "渡る",
+        "e": "cross"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "road",
+        "z": "道路",
+        "j": "道路",
+        "e": "road"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "safely",
+        "z": "安全地",
+        "j": "安全に",
+        "e": "safely"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because a car was turning into the street, the crossing guard checked the road and stopped the children.": [
+      {
+        "t": "Because a "
+      },
+      {
+        "t": "car",
+        "z": "車子",
+        "j": "車",
+        "e": "car"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "turning into",
+        "z": "正轉進",
+        "j": "曲がってきた",
+        "e": "turning into"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "street",
+        "z": "道路",
+        "j": "道路",
+        "e": "street"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "crossing guard",
+        "z": "導護員",
+        "j": "学童擁護員",
+        "e": "crossing guard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "確認",
+        "j": "確認して",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "road",
+        "z": "路況",
+        "j": "道路",
+        "e": "road"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "stopped",
+        "z": "攔下",
+        "j": "止めました",
+        "e": "stopped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The lifeguard watches the swimmers from the poolside.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "lifeguard",
+        "z": "救生員",
+        "j": "ライフガード",
+        "e": "lifeguard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "watches",
+        "z": "留意",
+        "j": "見守ります",
+        "e": "watches"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "swimmers",
+        "z": "游泳者",
+        "j": "泳いでいる人たち",
+        "e": "swimmers"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "poolside",
+        "z": "池畔",
+        "j": "プールサイド",
+        "e": "poolside"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When a child looked tired in the deep end, the lifeguard used a rescue tube to help the child reach the side.": [
+      {
+        "t": "When a "
+      },
+      {
+        "t": "child",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "looked tired",
+        "z": "看起來很疲累",
+        "j": "疲れているようだった",
+        "e": "looked tired"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "deep end",
+        "z": "深水區",
+        "j": "深い所",
+        "e": "deep end"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "lifeguard",
+        "z": "救生員",
+        "j": "ライフガード",
+        "e": "lifeguard"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用",
+        "j": "使って",
+        "e": "used"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "rescue tube",
+        "z": "救生浮標",
+        "j": "レスキューチューブ",
+        "e": "rescue tube"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "help",
+        "z": "協助",
+        "j": "誘導しました",
+        "e": "help"
+      },
+      {
+        "t": " the child "
+      },
+      {
+        "t": "reach the side",
+        "z": "回到池邊",
+        "j": "プールの縁まで行く",
+        "e": "reach the side"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The coast guard officer checks a boat's safety equipment at the harbor.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "coast guard officer",
+        "z": "海上保安官",
+        "j": "海上保安官",
+        "e": "coast guard officer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checks",
+        "z": "檢查",
+        "j": "点検します",
+        "e": "checks"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "boat's",
+        "z": "船隻的",
+        "j": "船の",
+        "e": "boat's"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "safety equipment",
+        "z": "安全設備",
+        "j": "安全装備",
+        "e": "safety equipment"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "harbor",
+        "z": "港口",
+        "j": "港",
+        "e": "harbor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After a fishing boat sent a distress call, the coast guard officer began a search with the patrol vessel.": [
+      {
+        "t": "After a "
+      },
+      {
+        "t": "fishing boat",
+        "z": "漁船",
+        "j": "漁船",
+        "e": "fishing boat"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sent",
+        "z": "發出",
+        "j": "発しました",
+        "e": "sent"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "distress call",
+        "z": "求救訊號",
+        "j": "救難信号",
+        "e": "distress call"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "coast guard officer",
+        "z": "海上保安官",
+        "j": "海上保安官",
+        "e": "coast guard officer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "began",
+        "z": "開始",
+        "j": "始めました",
+        "e": "began"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "search",
+        "z": "搜索",
+        "j": "捜索",
+        "e": "search"
+      },
+      {
+        "t": " with the "
+      },
+      {
+        "t": "patrol vessel",
+        "z": "巡邏船",
+        "j": "巡視船",
+        "e": "patrol vessel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The customs officer checks my suitcase at the airport.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "customs officer",
+        "z": "海關人員",
+        "j": "税関職員",
+        "e": "customs officer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checks",
+        "z": "檢查",
+        "j": "検査します",
+        "e": "checks"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "suitcase",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "airport",
+        "z": "機場",
+        "j": "空港",
+        "e": "airport"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I was carrying food bought abroad, the customs officer asked me to show the food package at the inspection counter.": [
+      {
+        "t": "Because I was "
+      },
+      {
+        "t": "carrying",
+        "z": "攜帶",
+        "j": "持っていた",
+        "e": "carrying"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "food",
+        "z": "食品",
+        "j": "食品",
+        "e": "food"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bought abroad",
+        "z": "在國外買的",
+        "j": "海外で買った",
+        "e": "bought abroad"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "customs officer",
+        "z": "海關人員",
+        "j": "税関職員",
+        "e": "customs officer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "asked",
+        "z": "要求",
+        "j": "求めました",
+        "e": "asked"
+      },
+      {
+        "t": " me to "
+      },
+      {
+        "t": "show",
+        "z": "出示",
+        "j": "見せる",
+        "e": "show"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "food package",
+        "z": "食品包裝",
+        "j": "食品の包装",
+        "e": "food package"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "inspection counter",
+        "z": "檢查櫃台",
+        "j": "検査カウンター",
+        "e": "inspection counter"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The parking attendant shows me an empty space.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "parking attendant",
+        "z": "停車場管理員",
+        "j": "駐車場係員",
+        "e": "parking attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "指引",
+        "j": "案内してくれます",
+        "e": "shows"
+      },
+      {
+        "t": " me an "
+      },
+      {
+        "t": "empty space",
+        "z": "空車位",
+        "j": "空いている駐車スペース",
+        "e": "empty space"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the entrance was crowded, the parking attendant guided each car to a different level.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠",
+        "j": "混雑していた",
+        "e": "crowded"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "parking attendant",
+        "z": "停車場管理員",
+        "j": "駐車場係員",
+        "e": "parking attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "guided",
+        "z": "引導",
+        "j": "案内しました",
+        "e": "guided"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "each car",
+        "z": "每輛車",
+        "j": "それぞれの車",
+        "e": "each car"
+      },
+      {
+        "t": " to a "
+      },
+      {
+        "t": "different level",
+        "z": "不同樓層",
+        "j": "別の階",
+        "e": "different level"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The rescue worker secures a rope beside the stretcher.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "rescue worker",
+        "z": "救難人員",
+        "j": "救助隊員",
+        "e": "rescue worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "secures",
+        "z": "固定",
+        "j": "固定します",
+        "e": "secures"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "rope",
+        "z": "繩索",
+        "j": "ロープ",
+        "e": "rope"
+      },
+      {
+        "t": " beside the "
+      },
+      {
+        "t": "stretcher",
+        "z": "擔架",
+        "j": "担架",
+        "e": "stretcher"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After a hiker fell and could not move, the rescue worker prepared a stretcher and ropes to carry the person down safely.": [
+      {
+        "t": "After a "
+      },
+      {
+        "t": "hiker",
+        "z": "登山客",
+        "j": "登山者",
+        "e": "hiker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fell",
+        "z": "摔倒",
+        "j": "転倒して",
+        "e": "fell"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "could not move",
+        "z": "無法移動",
+        "j": "動けなかった",
+        "e": "could not move"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "rescue worker",
+        "z": "救難人員",
+        "j": "救助隊員",
+        "e": "rescue worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "prepared",
+        "z": "準備了",
+        "j": "準備しました",
+        "e": "prepared"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "stretcher",
+        "z": "擔架",
+        "j": "担架",
+        "e": "stretcher"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "ropes",
+        "z": "繩索",
+        "j": "ロープ",
+        "e": "ropes"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "carry the person down",
+        "z": "將人運送下山",
+        "j": "搬送する",
+        "e": "carry the person down"
+      },
+      {
+        "t": " safely."
+      }
+    ]
+  },
+  "ja": {
+    "電車運転士がホームに電車を停めました。": [
+      {
+        "t": "電車運転士",
+        "z": "電車駕駛",
+        "j": "電車運転士",
+        "e": "train driver",
+        "r": "でんしゃうんてんし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ホーム",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform",
+        "r": "ホーム"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "電車",
+        "z": "電車",
+        "j": "電車",
+        "e": "train",
+        "r": "でんしゃ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "停めました",
+        "z": "停靠了",
+        "j": "停めた",
+        "e": "stopped",
+        "r": "とめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大雨で視界が悪かったため、電車運転士は次の駅の手前で減速しました。": [
+      {
+        "t": "大雨",
+        "z": "大雨",
+        "j": "大雨",
+        "e": "heavy rain",
+        "r": "おおあめ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "視界",
+        "z": "能見度",
+        "j": "視界",
+        "e": "visibility",
+        "r": "しかい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "悪かった",
+        "z": "很差",
+        "j": "悪かった",
+        "e": "was poor",
+        "r": "わるかった"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "電車運転士",
+        "z": "電車駕駛",
+        "j": "電車運転士",
+        "e": "train driver",
+        "r": "でんしゃうんてんし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "次",
+        "z": "下一個",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "手前",
+        "z": "抵達下一站之前",
+        "j": "手前",
+        "e": "before",
+        "r": "てまえ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "減速しました",
+        "z": "減速了",
+        "j": "減速した",
+        "e": "slowed down",
+        "r": "げんそくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "車掌が次の駅をアナウンスしました。": [
+      {
+        "t": "車掌",
+        "z": "列車長",
+        "j": "車掌",
+        "e": "train conductor",
+        "r": "しゃしょう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "次",
+        "z": "下一個",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "アナウンスしました",
+        "z": "廣播了",
+        "j": "アナウンスした",
+        "e": "announced",
+        "r": "アナウンスしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドアが閉まったことを確認したあと、車掌は発車の合図を送りました。": [
+      {
+        "t": "ドア",
+        "z": "車門",
+        "j": "ドア",
+        "e": "doors",
+        "r": "ドア"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "閉まった",
+        "z": "已關閉",
+        "j": "閉まった",
+        "e": "were closed",
+        "r": "しまった"
+      },
+      {
+        "t": "ことを"
+      },
+      {
+        "t": "確認した",
+        "z": "確認",
+        "j": "確認した",
+        "e": "confirmed",
+        "r": "かくにんした"
+      },
+      {
+        "t": "あと",
+        "z": "之後",
+        "j": "あと",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "車掌",
+        "z": "列車長",
+        "j": "車掌",
+        "e": "train conductor",
+        "r": "しゃしょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "発車",
+        "z": "發車",
+        "j": "発車",
+        "e": "departure",
+        "r": "はっしゃ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "合図",
+        "z": "信號",
+        "j": "合図",
+        "e": "signal",
+        "r": "あいず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "送りました",
+        "z": "發出了",
+        "j": "送った",
+        "e": "gave",
+        "r": "おくりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "駅員が正しいホームを教えてくれました。": [
+      {
+        "t": "駅員",
+        "z": "車站站務員",
+        "j": "駅員",
+        "e": "station attendant",
+        "r": "えきいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "正しい",
+        "z": "正確的",
+        "j": "正しい",
+        "e": "correct",
+        "r": "ただしい"
+      },
+      {
+        "t": "ホーム",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform",
+        "r": "ホーム"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴了我",
+        "j": "教えてくれた",
+        "e": "showed me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "切符を自動改札機に通せなかったとき、駅員が切符を確認して通してくれました。": [
+      {
+        "t": "切符",
+        "z": "車票",
+        "j": "切符",
+        "e": "ticket",
+        "r": "きっぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "自動改札機",
+        "z": "自動驗票閘門",
+        "j": "自動改札機",
+        "e": "automatic ticket gate",
+        "r": "じどうかいさつき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "通せなかった",
+        "z": "無法通過",
+        "j": "通せなかった",
+        "e": "would not pass through",
+        "r": "とおせなかった"
+      },
+      {
+        "t": "とき",
+        "z": "當時",
+        "j": "とき",
+        "e": "when",
+        "r": "とき"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "駅員",
+        "z": "車站站務員",
+        "j": "駅員",
+        "e": "station attendant",
+        "r": "えきいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "切符",
+        "z": "車票",
+        "j": "切符",
+        "e": "it",
+        "r": "きっぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "z": "檢查後",
+        "j": "確認して",
+        "e": "checked",
+        "r": "かくにんして"
+      },
+      {
+        "t": "通してくれました",
+        "z": "讓我通行",
+        "j": "通してくれた",
+        "e": "let me through",
+        "r": "とおしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "バス運転手が乗客のためにスロープを下ろしました。": [
+      {
+        "t": "バス運転手",
+        "z": "公車司機",
+        "j": "バス運転手",
+        "e": "bus driver",
+        "r": "バスうんてんしゅ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乗客",
+        "z": "乘客",
+        "j": "乗客",
+        "e": "passenger",
+        "r": "じょうきゃく"
+      },
+      {
+        "t": "のために"
+      },
+      {
+        "t": "スロープ",
+        "z": "斜坡板",
+        "j": "スロープ",
+        "e": "ramp",
+        "r": "スロープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "下ろしました",
+        "z": "放下了",
+        "j": "下ろした",
+        "e": "lowered",
+        "r": "おろしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大通りが通行止めだったので、バス運転手は停留所を出る前に迂回路を案内しました。": [
+      {
+        "t": "大通り",
+        "z": "主要道路",
+        "j": "大通り",
+        "e": "main road",
+        "r": "おおどおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "通行止めだった",
+        "z": "封閉了",
+        "j": "通行止めだった",
+        "e": "was closed",
+        "r": "つうこうどめだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "バス運転手",
+        "z": "公車司機",
+        "j": "バス運転手",
+        "e": "bus driver",
+        "r": "バスうんてんしゅ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "停留所",
+        "z": "站牌",
+        "j": "停留所",
+        "e": "stop",
+        "r": "ていりゅうじょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "駛離",
+        "j": "出る",
+        "e": "leaving",
+        "r": "でる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "迂回路",
+        "z": "繞道路線",
+        "j": "迂回路",
+        "e": "detour",
+        "r": "うかいろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "案内しました",
+        "z": "說明了",
+        "j": "案内した",
+        "e": "explained",
+        "r": "あんないしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "タクシー運転手が私のスーツケースをトランクに積んでくれました。": [
+      {
+        "t": "タクシー運転手",
+        "z": "計程車司機",
+        "j": "タクシー運転手",
+        "e": "taxi driver",
+        "r": "タクシーうんてんしゅ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "スーツケース",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase",
+        "r": "スーツケース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "トランク",
+        "z": "後車廂",
+        "j": "トランク",
+        "e": "trunk",
+        "r": "トランク"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "積んでくれました",
+        "z": "幫忙放入",
+        "j": "積んでくれた",
+        "e": "loaded for me",
+        "r": "つんでくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ホテルの住所を見せると、タクシー運転手は渋滞を避ける道を提案しました。": [
+      {
+        "t": "ホテル",
+        "z": "飯店",
+        "j": "ホテル",
+        "e": "hotel",
+        "r": "ホテル"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "住所",
+        "z": "地址",
+        "j": "住所",
+        "e": "address",
+        "r": "じゅうしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せる",
+        "z": "出示",
+        "j": "見せる",
+        "e": "showed",
+        "r": "みせる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "タクシー運転手",
+        "z": "計程車司機",
+        "j": "タクシー運転手",
+        "e": "taxi driver",
+        "r": "タクシーうんてんしゅ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "渋滞",
+        "z": "塞車",
+        "j": "渋滞",
+        "e": "traffic jam",
+        "r": "じゅうたい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "避ける",
+        "z": "避開",
+        "j": "避ける",
+        "e": "avoided",
+        "r": "さける"
+      },
+      {
+        "t": "道",
+        "z": "路線",
+        "j": "道",
+        "e": "route",
+        "r": "みち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "提案しました",
+        "z": "建議了",
+        "j": "提案した",
+        "e": "suggested",
+        "r": "ていあんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "トラック運転手が出発前に荷物を固定しました。": [
+      {
+        "t": "トラック運転手",
+        "z": "卡車司機",
+        "j": "トラック運転手",
+        "e": "truck driver",
+        "r": "トラックうんてんしゅ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "出発",
+        "z": "出發",
+        "j": "出発",
+        "e": "leaving",
+        "r": "しゅっぱつ"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "荷物",
+        "z": "貨物",
+        "j": "荷物",
+        "e": "cargo",
+        "r": "にもつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "固定しました",
+        "z": "固定好",
+        "j": "固定した",
+        "e": "secured",
+        "r": "こていしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "荷降ろし場が混んでいたので、トラック運転手は別の車が移動するまで待ちました。": [
+      {
+        "t": "荷降ろし場",
+        "z": "卸貨區",
+        "j": "荷降ろし場",
+        "e": "loading dock",
+        "r": "におろしば"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "很擁擠",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "トラック運転手",
+        "z": "卡車司機",
+        "j": "トラック運転手",
+        "e": "truck driver",
+        "r": "トラックうんてんしゅ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "別",
+        "z": "另一輛",
+        "j": "別",
+        "e": "another",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "車",
+        "z": "車輛",
+        "j": "車",
+        "e": "vehicle",
+        "r": "くるま"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "移動する",
+        "z": "移開",
+        "j": "移動する",
+        "e": "moved",
+        "r": "いどうする"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "待ちました",
+        "z": "等待了",
+        "j": "待った",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "宅配ドライバーが私に荷物を渡しました。": [
+      {
+        "t": "宅配ドライバー",
+        "z": "宅配司機",
+        "j": "宅配ドライバー",
+        "e": "delivery driver",
+        "r": "たくはいドライバー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "me",
+        "r": "わたし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "荷物",
+        "z": "包裹",
+        "j": "荷物",
+        "e": "package",
+        "r": "にもつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "渡しました",
+        "z": "交給了",
+        "j": "渡した",
+        "e": "handed",
+        "r": "わたしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "留守だったので、宅配ドライバーは郵便受けに不在票を入れました。": [
+      {
+        "t": "留守だった",
+        "z": "家裡沒有人",
+        "j": "留守だった",
+        "e": "no one was home",
+        "r": "るすだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "宅配ドライバー",
+        "z": "宅配司機",
+        "j": "宅配ドライバー",
+        "e": "delivery driver",
+        "r": "たくはいドライバー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "郵便受け",
+        "z": "信箱",
+        "j": "郵便受け",
+        "e": "mailbox",
+        "r": "ゆうびんうけ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "不在票",
+        "z": "不在通知單",
+        "j": "不在票",
+        "e": "redelivery notice",
+        "r": "ふざいひょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れました",
+        "z": "放入了",
+        "j": "入れた",
+        "e": "left",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "郵便配達員が私の荷物を宅配ボックスに入れました。": [
+      {
+        "t": "郵便配達員",
+        "z": "郵差",
+        "j": "郵便配達員",
+        "e": "mail carrier",
+        "r": "ゆうびんはいたついん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "荷物",
+        "z": "包裹",
+        "j": "荷物",
+        "e": "package",
+        "r": "にもつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "宅配ボックス",
+        "z": "宅配箱",
+        "j": "宅配ボックス",
+        "e": "parcel locker",
+        "r": "たくはいボックス"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "放進了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "誰も玄関に出なかったので、郵便配達員は郵便受けに不在票を入れました。": [
+      {
+        "t": "誰も",
+        "z": "沒有人",
+        "j": "誰も",
+        "e": "nobody",
+        "r": "だれも"
+      },
+      {
+        "t": "玄関",
+        "z": "家門口",
+        "j": "玄関",
+        "e": "the door",
+        "r": "げんかん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "出なかった",
+        "z": "沒有應門",
+        "j": "出なかった",
+        "e": "did not answer the door",
+        "r": "でなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "郵便配達員",
+        "z": "郵差",
+        "j": "郵便配達員",
+        "e": "mail carrier",
+        "r": "ゆうびんはいたついん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "郵便受け",
+        "z": "信箱",
+        "j": "郵便受け",
+        "e": "mailbox",
+        "r": "ゆうびんうけ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "不在票",
+        "z": "不在通知單",
+        "j": "不在票",
+        "e": "delivery notice",
+        "r": "ふざいひょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れました",
+        "z": "放進",
+        "j": "入れました",
+        "e": "left",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パイロットは離陸前に操縦席の計器を確認しました。": [
+      {
+        "t": "パイロット",
+        "z": "飛行員",
+        "j": "パイロット",
+        "e": "pilot",
+        "r": "パイロット"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "離陸前",
+        "z": "起飛前",
+        "j": "離陸前",
+        "e": "before takeoff",
+        "r": "りりくまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "操縦席",
+        "z": "駕駛艙",
+        "j": "操縦席",
+        "e": "cockpit",
+        "r": "そうじゅうせき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "計器",
+        "z": "儀表",
+        "j": "計器",
+        "e": "instruments",
+        "r": "けいき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "檢查了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "天候が変わったため、パイロットは遅延を知らせ、その理由を説明しました。": [
+      {
+        "t": "天候",
+        "z": "天氣",
+        "j": "天候",
+        "e": "weather",
+        "r": "てんこう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "変わった",
+        "z": "發生變化",
+        "j": "変わった",
+        "e": "changed",
+        "r": "かわった"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "パイロット",
+        "z": "飛行員",
+        "j": "パイロット",
+        "e": "pilot",
+        "r": "パイロット"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "遅延",
+        "z": "班機延誤",
+        "j": "遅延",
+        "e": "delay",
+        "r": "ちえん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "知らせ",
+        "z": "宣布",
+        "j": "知らせ",
+        "e": "announced",
+        "r": "しらせ"
+      },
+      {
+        "t": "、その"
+      },
+      {
+        "t": "理由",
+        "z": "原因",
+        "j": "理由",
+        "e": "reason",
+        "r": "りゆう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明しました",
+        "z": "說明",
+        "j": "説明しました",
+        "e": "explained",
+        "r": "せつめいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "客室乗務員が手荷物の収納場所を教えてくれました。": [
+      {
+        "t": "客室乗務員",
+        "z": "空服員",
+        "j": "客室乗務員",
+        "e": "flight attendant",
+        "r": "きゃくしつじょうむいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "手荷物",
+        "z": "手提行李",
+        "j": "手荷物",
+        "e": "bag",
+        "r": "てにもつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "収納場所",
+        "z": "收放位置",
+        "j": "収納場所",
+        "e": "where to store",
+        "r": "しゅうのうばしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴了我",
+        "j": "教えてくれました",
+        "e": "showed me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子どもが寒いと言うと、客室乗務員は毛布を持ってきてくれました。": [
+      {
+        "t": "子ども",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child",
+        "r": "こども"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "寒い",
+        "z": "覺得冷",
+        "j": "寒い",
+        "e": "cold",
+        "r": "さむい"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "言う",
+        "z": "說",
+        "j": "言う",
+        "e": "said",
+        "r": "いう"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "客室乗務員",
+        "z": "空服員",
+        "j": "客室乗務員",
+        "e": "flight attendant",
+        "r": "きゃくしつじょうむいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "毛布",
+        "z": "毯子",
+        "j": "毛布",
+        "e": "blanket",
+        "r": "もうふ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてくれました",
+        "z": "拿來給她",
+        "j": "持ってきてくれました",
+        "e": "brought her",
+        "r": "もってきてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "警察官が私たちに駅までの道を教えてくれました。": [
+      {
+        "t": "警察官",
+        "z": "警察",
+        "j": "警察官",
+        "e": "police officer",
+        "r": "けいさつかん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私たち",
+        "z": "我們",
+        "j": "私たち",
+        "e": "us",
+        "r": "わたしたち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "までの"
+      },
+      {
+        "t": "道",
+        "z": "路",
+        "j": "道",
+        "e": "way",
+        "r": "みち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴我們",
+        "j": "教えてくれました",
+        "e": "showed us",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "財布の紛失を届け出ると、警察官は最後に見た場所を尋ねました。": [
+      {
+        "t": "財布",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet",
+        "r": "さいふ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "紛失",
+        "z": "遺失",
+        "j": "紛失",
+        "e": "loss",
+        "r": "ふんしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "届け出る",
+        "z": "報失",
+        "j": "届け出る",
+        "e": "reported",
+        "r": "とどけでる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "警察官",
+        "z": "警察",
+        "j": "警察官",
+        "e": "police officer",
+        "r": "けいさつかん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "最後",
+        "z": "最後",
+        "j": "最後",
+        "e": "last",
+        "r": "さいご"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "見た",
+        "z": "看見",
+        "j": "見た",
+        "e": "seen",
+        "r": "みた"
+      },
+      {
+        "t": "場所",
+        "z": "地點",
+        "j": "場所",
+        "e": "where",
+        "r": "ばしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "尋ねました",
+        "z": "詢問",
+        "j": "尋ねました",
+        "e": "asked",
+        "r": "たずねました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "消防士が子どもたちに消防車を見せました。": [
+      {
+        "t": "消防士",
+        "z": "消防員",
+        "j": "消防士",
+        "e": "firefighter",
+        "r": "しょうぼうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "消防車",
+        "z": "消防車",
+        "j": "消防車",
+        "e": "fire engine",
+        "r": "しょうぼうしゃ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せました",
+        "z": "帶領參觀",
+        "j": "見せました",
+        "e": "showed",
+        "r": "みせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "警報が止まった後、消防士たちは再入場の前に建物内を確認しました。": [
+      {
+        "t": "警報",
+        "z": "警報",
+        "j": "警報",
+        "e": "alarm",
+        "r": "けいほう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "止まった",
+        "z": "停止了",
+        "j": "止まった",
+        "e": "stopped",
+        "r": "とまった"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "消防士たち",
+        "z": "消防員",
+        "j": "消防士たち",
+        "e": "firefighters",
+        "r": "しょうぼうしたち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "再入場",
+        "z": "重新進入",
+        "j": "再入場",
+        "e": "going back inside",
+        "r": "さいにゅうじょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "建物内",
+        "z": "建築物內",
+        "j": "建物内",
+        "e": "inside the building",
+        "r": "たてものない"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "檢查",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "警備員が入口で私の入館証を確認しました。": [
+      {
+        "t": "警備員",
+        "z": "保全人員",
+        "j": "警備員",
+        "e": "security guard",
+        "r": "けいびいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "入口",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance",
+        "r": "いりぐち"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "入館証",
+        "z": "訪客證",
+        "j": "入館証",
+        "e": "visitor pass",
+        "r": "にゅうかんしょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "檢查",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "無施錠の扉を見つけた後、警備員は管理者に報告しました。": [
+      {
+        "t": "無施錠",
+        "z": "未上鎖",
+        "j": "無施錠",
+        "e": "unlocked",
+        "r": "むせじょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "扉",
+        "z": "門",
+        "j": "扉",
+        "e": "door",
+        "r": "とびら"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見つけた",
+        "z": "發現",
+        "j": "見つけた",
+        "e": "found",
+        "r": "みつけた"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "警備員",
+        "z": "保全人員",
+        "j": "警備員",
+        "e": "security guard",
+        "r": "けいびいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "管理者",
+        "z": "管理人員",
+        "j": "管理者",
+        "e": "manager",
+        "r": "かんりしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "報告しました",
+        "z": "回報",
+        "j": "報告しました",
+        "e": "reported",
+        "r": "ほうこくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "交通誘導員が工事現場を避ける道へ私たちの車を誘導しました。": [
+      {
+        "t": "交通誘導員",
+        "z": "交通引導員",
+        "j": "交通誘導員",
+        "e": "traffic guard",
+        "r": "こうつうゆうどういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "工事現場",
+        "z": "施工區",
+        "j": "工事現場",
+        "e": "roadwork",
+        "r": "こうじげんば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "避ける",
+        "z": "繞過",
+        "j": "避ける",
+        "e": "around",
+        "r": "さける"
+      },
+      {
+        "t": "道",
+        "z": "道路",
+        "j": "道",
+        "e": "route",
+        "r": "みち"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "私たち",
+        "z": "我們",
+        "j": "私たち",
+        "e": "our",
+        "r": "わたしたち"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "車",
+        "z": "車",
+        "j": "車",
+        "e": "car",
+        "r": "くるま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "誘導しました",
+        "z": "引導",
+        "j": "誘導しました",
+        "e": "guided",
+        "r": "ゆうどうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨で見通しが悪かったため、交通誘導員は誘導灯で運転手に減速を合図しました。": [
+      {
+        "t": "雨",
+        "z": "雨天",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "見通し",
+        "z": "視線",
+        "j": "見通し",
+        "e": "visibility",
+        "r": "みとおし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "悪かった",
+        "z": "不佳",
+        "j": "悪かった",
+        "e": "was poor",
+        "r": "わるかった"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "交通誘導員",
+        "z": "交通引導員",
+        "j": "交通誘導員",
+        "e": "traffic guard",
+        "r": "こうつうゆうどういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "誘導灯",
+        "z": "發光指揮棒",
+        "j": "誘導灯",
+        "e": "lighted baton",
+        "r": "ゆうどうとう"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "運転手",
+        "z": "駕駛",
+        "j": "運転手",
+        "e": "drivers",
+        "r": "うんてんしゅ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "減速",
+        "z": "減速",
+        "j": "減速",
+        "e": "slow down",
+        "r": "げんそく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "合図しました",
+        "z": "示意",
+        "j": "合図しました",
+        "e": "signaled",
+        "r": "あいずしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "学童擁護員が子どもたちを安全に道路の反対側へ誘導します。": [
+      {
+        "t": "学童擁護員",
+        "z": "導護員",
+        "j": "学童擁護員",
+        "e": "crossing guard",
+        "r": "がくどうようごいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "安全",
+        "z": "安全",
+        "j": "安全",
+        "e": "safely",
+        "r": "あんぜん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "道路",
+        "z": "道路",
+        "j": "道路",
+        "e": "road",
+        "r": "どうろ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "反対側",
+        "z": "另一側",
+        "j": "反対側",
+        "e": "other side",
+        "r": "はんたいがわ"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "誘導します",
+        "z": "引導",
+        "j": "誘導します",
+        "e": "guides",
+        "r": "ゆうどうします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "車が曲がってきたので、学童擁護員は道路の安全を確認して子どもたちを止めました。": [
+      {
+        "t": "車",
+        "z": "車子",
+        "j": "車",
+        "e": "car",
+        "r": "くるま"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "曲がってきた",
+        "z": "轉了進來",
+        "j": "曲がってきた",
+        "e": "was turning in",
+        "r": "まがってきた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "学童擁護員",
+        "z": "導護員",
+        "j": "学童擁護員",
+        "e": "crossing guard",
+        "r": "がくどうようごいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "道路",
+        "z": "道路",
+        "j": "道路",
+        "e": "road",
+        "r": "どうろ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "安全",
+        "z": "安全狀況",
+        "j": "安全",
+        "e": "safety",
+        "r": "あんぜん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "z": "確認後",
+        "j": "確認して",
+        "e": "checked",
+        "r": "かくにんして"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "止めました",
+        "z": "攔下了",
+        "j": "止めました",
+        "e": "stopped",
+        "r": "とめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ライフガードがプールサイドから泳いでいる人たちを見守ります。": [
+      {
+        "t": "ライフガード",
+        "z": "救生員",
+        "j": "ライフガード",
+        "e": "lifeguard",
+        "r": "ライフガード"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "プールサイド",
+        "z": "池畔",
+        "j": "プールサイド",
+        "e": "poolside",
+        "r": "プールサイド"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "泳いでいる",
+        "z": "正在游泳",
+        "j": "泳いでいる",
+        "e": "swimming",
+        "r": "およいでいる"
+      },
+      {
+        "t": "人たち",
+        "z": "人們",
+        "j": "人たち",
+        "e": "people",
+        "r": "ひとたち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見守ります",
+        "z": "留意安全",
+        "j": "見守ります",
+        "e": "watches",
+        "r": "みまもります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子どもが深い所で疲れているようだったので、ライフガードがレスキューチューブを使ってプールの縁まで誘導しました。": [
+      {
+        "t": "子ども",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child",
+        "r": "こども"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "深い",
+        "z": "深的",
+        "j": "深い",
+        "e": "deep",
+        "r": "ふかい"
+      },
+      {
+        "t": "所",
+        "z": "區域",
+        "j": "所",
+        "e": "end",
+        "r": "ところ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "疲れている",
+        "z": "感到疲累",
+        "j": "疲れている",
+        "e": "looked tired",
+        "r": "つかれている"
+      },
+      {
+        "t": "ようだったので、"
+      },
+      {
+        "t": "ライフガード",
+        "z": "救生員",
+        "j": "ライフガード",
+        "e": "lifeguard",
+        "r": "ライフガード"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "レスキューチューブ",
+        "z": "救生浮標",
+        "j": "レスキューチューブ",
+        "e": "rescue tube",
+        "r": "レスキューチューブ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "z": "使用",
+        "j": "使って",
+        "e": "used",
+        "r": "つかって"
+      },
+      {
+        "t": "プールの縁まで"
+      },
+      {
+        "t": "誘導しました",
+        "z": "協助移動",
+        "j": "誘導しました",
+        "e": "helped reach the side",
+        "r": "ゆうどうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "海上保安官が港で船の安全装備を点検します。": [
+      {
+        "t": "海上保安官",
+        "z": "海上保安官",
+        "j": "海上保安官",
+        "e": "coast guard officer",
+        "r": "かいじょうほあんかん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "港",
+        "z": "港口",
+        "j": "港",
+        "e": "harbor",
+        "r": "みなと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "船",
+        "z": "船隻",
+        "j": "船",
+        "e": "boat",
+        "r": "ふね"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "安全装備",
+        "z": "安全設備",
+        "j": "安全装備",
+        "e": "safety equipment",
+        "r": "あんぜんそうび"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "点検します",
+        "z": "檢查",
+        "j": "点検します",
+        "e": "checks",
+        "r": "てんけんします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "漁船が救難信号を発したため、海上保安官が巡視船で捜索を始めました。": [
+      {
+        "t": "漁船",
+        "z": "漁船",
+        "j": "漁船",
+        "e": "fishing boat",
+        "r": "ぎょせん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "救難信号",
+        "z": "求救訊號",
+        "j": "救難信号",
+        "e": "distress call",
+        "r": "きゅうなんしんごう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "発した",
+        "z": "發出",
+        "j": "発した",
+        "e": "sent",
+        "r": "はっした"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "海上保安官",
+        "z": "海上保安官",
+        "j": "海上保安官",
+        "e": "coast guard officer",
+        "r": "かいじょうほあんかん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "巡視船",
+        "z": "巡邏船",
+        "j": "巡視船",
+        "e": "patrol vessel",
+        "r": "じゅんしせん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "捜索",
+        "z": "搜索",
+        "j": "捜索",
+        "e": "search",
+        "r": "そうさく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "始めました",
+        "z": "開始了",
+        "j": "始めました",
+        "e": "began",
+        "r": "はじめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "税関職員が空港で私のスーツケースを検査します。": [
+      {
+        "t": "税関職員",
+        "z": "海關人員",
+        "j": "税関職員",
+        "e": "customs officer",
+        "r": "ぜいかんしょくいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空港",
+        "z": "機場",
+        "j": "空港",
+        "e": "airport",
+        "r": "くうこう"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "スーツケース",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase",
+        "r": "スーツケース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "検査します",
+        "z": "檢查",
+        "j": "検査します",
+        "e": "checks",
+        "r": "けんさします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "海外で買った食品を持っていたので、税関職員が検査カウンターで食品の包装を見せるよう求めました。": [
+      {
+        "t": "海外で"
+      },
+      {
+        "t": "買った",
+        "z": "購買的",
+        "j": "買った",
+        "e": "bought",
+        "r": "かった"
+      },
+      {
+        "t": "食品",
+        "z": "食品",
+        "j": "食品",
+        "e": "food",
+        "r": "しょくひん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持っていた",
+        "z": "攜帶著",
+        "j": "持っていた",
+        "e": "was carrying",
+        "r": "もっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "税関職員",
+        "z": "海關人員",
+        "j": "税関職員",
+        "e": "customs officer",
+        "r": "ぜいかんしょくいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "検査カウンター",
+        "z": "檢查櫃台",
+        "j": "検査カウンター",
+        "e": "inspection counter",
+        "r": "けんさカウンター"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "食品の包装",
+        "z": "食品包裝",
+        "j": "食品の包装",
+        "e": "food package",
+        "r": "しょくひんのほうそう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せる",
+        "z": "出示",
+        "j": "見せる",
+        "e": "show",
+        "r": "みせる"
+      },
+      {
+        "t": "よう"
+      },
+      {
+        "t": "求めました",
+        "z": "要求了",
+        "j": "求めました",
+        "e": "asked",
+        "r": "もとめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "駐車場係員が空いている駐車スペースを案内してくれます。": [
+      {
+        "t": "駐車場係員",
+        "z": "停車場管理員",
+        "j": "駐車場係員",
+        "e": "parking attendant",
+        "r": "ちゅうしゃじょうかかりいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空いている",
+        "z": "空著的",
+        "j": "空いている",
+        "e": "empty",
+        "r": "あいている"
+      },
+      {
+        "t": "駐車スペース",
+        "z": "車位",
+        "j": "駐車スペース",
+        "e": "parking space",
+        "r": "ちゅうしゃスペース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "案内してくれます",
+        "z": "指引我",
+        "j": "案内してくれます",
+        "e": "shows me",
+        "r": "あんないしてくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "入口が混雑していたので、駐車場係員がそれぞれの車を別の階へ案内しました。": [
+      {
+        "t": "入口",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance",
+        "r": "いりぐち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混雑していた",
+        "z": "很擁擠",
+        "j": "混雑していた",
+        "e": "was crowded",
+        "r": "こんざつしていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "駐車場係員",
+        "z": "停車場管理員",
+        "j": "駐車場係員",
+        "e": "parking attendant",
+        "r": "ちゅうしゃじょうかかりいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "それぞれ",
+        "z": "各自",
+        "j": "それぞれ",
+        "e": "each",
+        "r": "それぞれ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "車",
+        "z": "車輛",
+        "j": "車",
+        "e": "car",
+        "r": "くるま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "別",
+        "z": "不同的",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "階",
+        "z": "樓層",
+        "j": "階",
+        "e": "level",
+        "r": "かい"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "案内しました",
+        "z": "引導了",
+        "j": "案内しました",
+        "e": "guided",
+        "r": "あんないしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "救助隊員が担架のそばでロープを固定します。": [
+      {
+        "t": "救助隊員",
+        "z": "救難人員",
+        "j": "救助隊員",
+        "e": "rescue worker",
+        "r": "きゅうじょたいいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "担架",
+        "z": "擔架",
+        "j": "担架",
+        "e": "stretcher",
+        "r": "たんか"
+      },
+      {
+        "t": "のそばで"
+      },
+      {
+        "t": "ロープ",
+        "z": "繩索",
+        "j": "ロープ",
+        "e": "rope",
+        "r": "ロープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "固定します",
+        "z": "固定",
+        "j": "固定します",
+        "e": "secures",
+        "r": "こていします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "登山者が転倒して動けなかったため、救助隊員が登山者を麓まで安全に搬送するための担架とロープを準備しました。": [
+      {
+        "t": "登山者",
+        "z": "登山客",
+        "j": "登山者",
+        "e": "hiker",
+        "r": "とざんしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "転倒して",
+        "z": "摔倒",
+        "j": "転倒して",
+        "e": "fell",
+        "r": "てんとうして"
+      },
+      {
+        "t": "動けなかった",
+        "z": "無法移動",
+        "j": "動けなかった",
+        "e": "could not move",
+        "r": "うごけなかった"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "救助隊員",
+        "z": "救難人員",
+        "j": "救助隊員",
+        "e": "rescue worker",
+        "r": "きゅうじょたいいん"
+      },
+      {
+        "t": "が登山者を"
+      },
+      {
+        "t": "麓まで安全に搬送する",
+        "z": "安全運送下山",
+        "j": "麓まで安全に搬送する",
+        "e": "carry the person down safely",
+        "r": "ふもとまであんぜんにはんそうする"
+      },
+      {
+        "t": "ための"
+      },
+      {
+        "t": "担架",
+        "z": "擔架",
+        "j": "担架",
+        "e": "stretcher",
+        "r": "たんか"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "ロープ",
+        "z": "繩索",
+        "j": "ロープ",
+        "e": "ropes",
+        "r": "ロープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "準備しました",
+        "z": "準備了",
+        "j": "準備しました",
+        "e": "prepared",
+        "r": "じゅんびしました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

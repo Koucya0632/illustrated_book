@@ -261,6 +261,11 @@ const EXAMPLE_SPAN_OVERLAY_PATHS = [
   new URL("../data/example-spans-expansion-2026-09-batch-2.json", import.meta.url),
   new URL("../data/example-spans-expansion-2026-09-batch-3.json", import.meta.url),
   new URL("../data/example-spans-fruits-2026-09.json", import.meta.url),
+  new URL("../data/example-spans-professions-2026-09-batch-a.json", import.meta.url),
+  new URL("../data/example-spans-professions-2026-09-batch-b.json", import.meta.url),
+  new URL("../data/example-spans-professions-2026-09-batch-c.json", import.meta.url),
+  new URL("../data/example-spans-professions-2026-09-batch-d.json", import.meta.url),
+  new URL("../data/example-spans-professions-2026-09-batch-e.json", import.meta.url),
 ];
 
 function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {

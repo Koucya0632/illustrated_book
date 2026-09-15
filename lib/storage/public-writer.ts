@@ -37,6 +37,8 @@ export interface PutPublicObjectOptions {
   /** Seconds, matching the Supabase Storage API's own units. */
   cacheControl?: string;
   upsert?: boolean;
+  /** Refuse rather than overwrite if the key already exists. */
+  requireAbsent?: boolean;
 }
 
 export type WriteBackend = "supabase" | "r2";
@@ -158,9 +160,15 @@ export async function putPublicObject(
           Body: body,
           ContentType: options.contentType,
           CacheControl: `public, max-age=${cacheControl}, immutable`,
+          IfNoneMatch: options.requireAbsent ? "*" : undefined,
         }),
       );
     } else {
+      if (options.requireAbsent) {
+        throw new Error(
+          "R2 REST transport cannot provide an atomic create-only upload; configure the S3 transport",
+        );
+      }
       await restPutObject(transport.config, key, body, {
         contentType: options.contentType,
         cacheControl: `public, max-age=${cacheControl}, immutable`,
@@ -171,7 +179,7 @@ export async function putPublicObject(
     const { error } = await supabase.storage.from(bucket).upload(path, body, {
       contentType: options.contentType,
       cacheControl,
-      upsert: options.upsert ?? false,
+      upsert: options.requireAbsent ? false : (options.upsert ?? false),
     });
     if (error) throw new Error(error.message);
   }

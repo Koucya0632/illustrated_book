@@ -1,0 +1,1110 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "C",
+  "state": "candidate-data-reviewed",
+  "entries": [
+    {
+      "id": "train-driver",
+      "word": "train driver",
+      "chinese": "電車駕駛",
+      "chineseDefinition": "負責駕駛電車、遵守號誌與時刻，並安全停靠各站的鐵路從業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtreɪn ˌdraɪ.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電車駕駛",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A railway worker who operates a train, follows signals, and stops safely at stations.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「電車運転士」とは、電車を運転し、信号や時刻を守って安全に駅へ停車させる鉄道員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The train driver stopped the train at the platform.",
+          "ja": "電車運転士がホームに電車を停めました。",
+          "zh": "電車駕駛把電車停靠在月台旁。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because heavy rain made it hard to see, the train driver slowed down before the next station.",
+          "ja": "大雨で視界が悪かったため、電車運転士は次の駅の手前で減速しました。",
+          "zh": "因為大雨使視線不佳，電車駕駛在下一站前減速了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "train-conductor",
+        "station-attendant",
+        "bus-driver"
+      ],
+      "ja": "電車運転士",
+      "jaReading": "でんしゃうんてんし",
+      "jaReadingSegments": [
+        {
+          "text": "電車",
+          "ruby": "でんしゃ"
+        },
+        {
+          "text": "運転士",
+          "ruby": "うんてんし"
+        }
+      ]
+    },
+    {
+      "id": "train-conductor",
+      "word": "train conductor",
+      "chinese": "列車長",
+      "chineseDefinition": "在列車上負責確認車門與月台安全、廣播站名、協助乘客並發出發車信號的鐵路從業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtreɪn kənˌdʌk.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "列車長",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A railway worker who makes onboard announcements, assists passengers, checks doors, and gives departure signals without driving the train.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「車掌」とは、列車内の案内や乗客対応、ドアの安全確認、発車合図などを担当する鉄道員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The train conductor announced the next station.",
+          "ja": "車掌が次の駅をアナウンスしました。",
+          "zh": "列車長廣播了下一站。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After confirming that the doors were closed, the train conductor gave the departure signal.",
+          "ja": "ドアが閉まったことを確認したあと、車掌は発車の合図を送りました。",
+          "zh": "確認車門已關閉後，列車長發出了發車信號。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "train-driver",
+        "station-attendant",
+        "bus-driver"
+      ],
+      "ja": "車掌",
+      "jaReading": "しゃしょう",
+      "jaReadingSegments": [
+        {
+          "text": "車掌",
+          "ruby": "しゃしょう"
+        }
+      ]
+    },
+    {
+      "id": "station-attendant",
+      "word": "station attendant",
+      "chinese": "車站站務員",
+      "chineseDefinition": "在車站售票或驗票、管理閘門與月台，並為旅客提供轉乘及乘車資訊的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsteɪ.ʃən əˌten.dənt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "車站站務員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A railway employee who works at a station, helping passengers with tickets, gates, platforms, and travel information.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「駅員」とは、駅で切符や改札の業務、ホームの安全確認、乗客への案内などを担当する鉄道員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The station attendant showed me the correct platform.",
+          "ja": "駅員が正しいホームを教えてくれました。",
+          "zh": "車站站務員告訴我正確的月台。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When my ticket would not pass through the gate, the station attendant checked it and let me through.",
+          "ja": "切符を自動改札機に通せなかったとき、駅員が切符を確認して通してくれました。",
+          "zh": "我無法讓車票通過自動驗票閘門時，站務員檢查車票後讓我通行。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "train-driver",
+        "train-conductor",
+        "bus-driver"
+      ],
+      "ja": "駅員",
+      "jaReading": "えきいん",
+      "jaReadingSegments": [
+        {
+          "text": "駅員",
+          "ruby": "えきいん"
+        }
+      ]
+    },
+    {
+      "id": "bus-driver",
+      "word": "bus driver",
+      "chinese": "公車司機",
+      "chineseDefinition": "依固定路線與站點駕駛公車，安全載運乘客並提供必要乘車協助的駕駛人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbʌs ˌdraɪ.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "公車司機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A driver who operates a bus along a route, stops for passengers, and transports them safely.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「バス運転手」とは、決められた路線を走り、停留所で乗客を乗せて安全に運ぶ運転者です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The bus driver lowered the ramp for a passenger.",
+          "ja": "バス運転手が乗客のためにスロープを下ろしました。",
+          "zh": "公車司機為一名乘客放下了斜坡板。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the main road was closed, the bus driver explained the detour before leaving the stop.",
+          "ja": "大通りが通行止めだったので、バス運転手は停留所を出る前に迂回路を案内しました。",
+          "zh": "因為主要道路封閉，公車司機在駛離公車站前說明了繞道路線。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "train-driver",
+        "taxi-driver",
+        "delivery-driver"
+      ],
+      "ja": "バス運転手",
+      "jaReading": "バスうんてんしゅ",
+      "jaReadingSegments": [
+        {
+          "text": "バス",
+          "ruby": null
+        },
+        {
+          "text": "運転手",
+          "ruby": "うんてんしゅ"
+        }
+      ]
+    },
+    {
+      "id": "taxi-driver",
+      "word": "taxi driver",
+      "chinese": "計程車司機",
+      "chineseDefinition": "依乘客指定的目的地駕駛計程車，選擇路線並安全載送乘客的駕駛人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtæk.si ˌdraɪ.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "計程車司機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A driver who transports passengers by taxi to destinations they request.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「タクシー運転手」とは、乗客が指定した目的地までタクシーを運転して安全に送り届ける人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The taxi driver loaded my suitcase into the trunk.",
+          "ja": "タクシー運転手が私のスーツケースをトランクに積んでくれました。",
+          "zh": "計程車司機幫我把行李箱放進後車廂。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I showed the hotel address, the taxi driver suggested a route that avoided the traffic jam.",
+          "ja": "ホテルの住所を見せると、タクシー運転手は渋滞を避ける道を提案しました。",
+          "zh": "我出示飯店地址後，計程車司機建議了一條避開塞車的路線。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "bus-driver",
+        "delivery-driver",
+        "tour-guide"
+      ],
+      "ja": "タクシー運転手",
+      "jaReading": "タクシーうんてんしゅ",
+      "jaReadingSegments": [
+        {
+          "text": "タクシー",
+          "ruby": null
+        },
+        {
+          "text": "運転手",
+          "ruby": "うんてんしゅ"
+        }
+      ]
+    },
+    {
+      "id": "truck-driver",
+      "word": "truck driver",
+      "chinese": "卡車司機",
+      "chineseDefinition": "駕駛卡車在倉庫、商店或工地之間運送大量貨物，並確認貨物固定與交接的駕駛人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtrʌk ˌdraɪ.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "卡車司機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A driver who transports large loads of goods by truck between warehouses, businesses, or work sites.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「トラック運転手」とは、トラックを運転し、倉庫や店舗、工事現場などへ多くの荷物を運ぶ人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The truck driver secured the cargo before leaving.",
+          "ja": "トラック運転手が出発前に荷物を固定しました。",
+          "zh": "卡車司機在出發前固定好貨物。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the loading dock was crowded, the truck driver waited until another vehicle moved.",
+          "ja": "荷降ろし場が混んでいたので、トラック運転手は別の車が移動するまで待ちました。",
+          "zh": "因為卸貨區很擁擠，卡車司機等到另一輛車移開。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "delivery-driver",
+        "bus-driver",
+        "taxi-driver"
+      ],
+      "ja": "トラック運転手",
+      "jaReading": "トラックうんてんしゅ",
+      "jaReadingSegments": [
+        {
+          "text": "トラック",
+          "ruby": null
+        },
+        {
+          "text": "運転手",
+          "ruby": "うんてんしゅ"
+        }
+      ]
+    },
+    {
+      "id": "delivery-driver",
+      "word": "delivery driver",
+      "chinese": "宅配司機",
+      "chineseDefinition": "駕駛配送車把包裹送到住家或商家，負責逐件交付與留下再配送通知的工作人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈlɪv.ɚ.i ˌdraɪ.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "宅配司機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A driver who delivers individual packages to homes or businesses on a local route.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「宅配ドライバー」とは、配送車で地域を回り、住宅や会社へ荷物を一件ずつ届ける人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The delivery driver handed me the package.",
+          "ja": "宅配ドライバーが私に荷物を渡しました。",
+          "zh": "宅配司機把包裹交給了我。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because no one was home, the delivery driver left a redelivery notice in the mailbox.",
+          "ja": "留守だったので、宅配ドライバーは郵便受けに不在票を入れました。",
+          "zh": "因為家裡沒有人，宅配司機在信箱裡留下了再次配送通知單。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "truck-driver",
+        "postal-clerk",
+        "convenience-store-clerk"
+      ],
+      "ja": "宅配ドライバー",
+      "jaReading": "たくはいドライバー",
+      "jaReadingSegments": [
+        {
+          "text": "宅配",
+          "ruby": "たくはい"
+        },
+        {
+          "text": "ドライバー",
+          "ruby": null
+        }
+      ]
+    },
+    {
+      "id": "mail-carrier",
+      "word": "mail carrier",
+      "chinese": "郵差",
+      "chineseDefinition": "依照投遞路線把信件、包裹與通知送到住家或公司地址的郵務人員；不同於在郵局櫃台受理業務的郵局櫃員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmeɪl ˌker.i.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "郵差",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A postal worker who delivers letters, packages, and notices to homes and businesses along a route.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「郵便配達員」とは、決められた経路を回り、家庭や会社へ手紙、荷物、通知などを届ける郵便の職員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The mail carrier put my package in the parcel locker.",
+          "ja": "郵便配達員が私の荷物を宅配ボックスに入れました。",
+          "zh": "郵差把我的包裹放進宅配箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When nobody answered the door, the mail carrier left a delivery notice in the mailbox.",
+          "ja": "誰も玄関に出なかったので、郵便配達員は郵便受けに不在票を入れました。",
+          "zh": "沒有人應門，郵差便把不在通知單放進信箱。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "postal-clerk",
+        "delivery-driver",
+        "truck-driver"
+      ],
+      "ja": "郵便配達員",
+      "jaReading": "ゆうびんはいたついん",
+      "jaReadingSegments": [
+        {
+          "text": "郵便",
+          "ruby": "ゆうびん"
+        },
+        {
+          "text": "配達員",
+          "ruby": "はいたついん"
+        }
+      ]
+    },
+    {
+      "id": "pilot",
+      "word": "pilot",
+      "chinese": "飛行員",
+      "chineseDefinition": "在駕駛艙操作飛機、依飛航程序執行起飛與降落，並與航管及機組協調飛行安全的專業人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpaɪ.lət/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飛行員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A trained professional who flies an aircraft and works with the crew and air traffic control to operate it safely.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「パイロット」とは、航空機を操縦し、管制官や乗務員と連携して安全な飛行を行う専門職です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pilot checked the cockpit instruments before takeoff.",
+          "ja": "パイロットは離陸前に操縦席の計器を確認しました。",
+          "zh": "飛行員在起飛前檢查了駕駛艙儀表。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the weather had changed, the pilot announced a delay and explained the reason.",
+          "ja": "天候が変わったため、パイロットは遅延を知らせ、その理由を説明しました。",
+          "zh": "由於天氣變化，飛行員宣布班機延誤並說明原因。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "flight-attendant",
+        "train-driver",
+        "coast-guard-officer"
+      ],
+      "ja": "パイロット",
+      "jaReading": "パイロット",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "flight-attendant",
+      "word": "flight attendant",
+      "chinese": "空服員",
+      "chineseDefinition": "在客機上執行安全示範、確認客艙狀況，並協助乘客處理座位、行李與機上需求的客艙組員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈflaɪt əˌten.dənt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "空服員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cabin crew member who looks after passenger safety and assists travelers during a flight.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「客室乗務員」とは、機内で乗客の安全を確認し、安全案内や手荷物、座席などの対応を行う乗務員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The flight attendant showed me where to store my bag.",
+          "ja": "客室乗務員が手荷物の収納場所を教えてくれました。",
+          "zh": "空服員告訴我該把手提行李放在哪裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the child said she was cold, the flight attendant brought her a blanket.",
+          "ja": "子どもが寒いと言うと、客室乗務員は毛布を持ってきてくれました。",
+          "zh": "孩子說她覺得冷後，空服員拿了一條毯子給她。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "pilot",
+        "hotel-receptionist",
+        "tour-guide"
+      ],
+      "ja": "客室乗務員",
+      "jaReading": "きゃくしつじょうむいん",
+      "jaReadingSegments": [
+        {
+          "text": "客室",
+          "ruby": "きゃくしつ"
+        },
+        {
+          "text": "乗務員",
+          "ruby": "じょうむいん"
+        }
+      ]
+    },
+    {
+      "id": "police-officer",
+      "word": "police officer",
+      "chinese": "警察",
+      "chineseDefinition": "依法維護公共安全與秩序、受理報案、調查案件並執行警察職權的公務人員；不同於民間保全人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/pəˈliːs ˌɑː.fɪ.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "警察",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A public officer with legal authority to protect public safety, enforce laws, receive reports, and investigate incidents.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「警察官」とは、法律に基づいて公共の安全と秩序を守り、届け出の受理や事件・事故への対応を行う公務員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The police officer showed us the way to the station.",
+          "ja": "警察官が私たちに駅までの道を教えてくれました。",
+          "zh": "警察告訴我們前往車站的路。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I reported my lost wallet, the police officer asked where I had last seen it.",
+          "ja": "財布の紛失を届け出ると、警察官は最後に見た場所を尋ねました。",
+          "zh": "我報失錢包時，警察詢問我最後在哪裡看見它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "security-guard",
+        "traffic-guard",
+        "firefighter"
+      ],
+      "ja": "警察官",
+      "jaReading": "けいさつかん",
+      "jaReadingSegments": [
+        {
+          "text": "警察官",
+          "ruby": "けいさつかん"
+        }
+      ]
+    },
+    {
+      "id": "firefighter",
+      "word": "firefighter",
+      "chinese": "消防員",
+      "chineseDefinition": "接受消防訓練，負責滅火、救援、災害現場安全處置及防火宣導的公共安全人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfaɪrˌfaɪ.t̬ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "消防員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A trained emergency worker who fights fires, rescues people, and helps keep people safe at disaster scenes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「消防士」とは、火災の消火や人命救助、災害現場での安全確保、防火活動などを行う消防職員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The firefighter showed the children the fire engine.",
+          "ja": "消防士が子どもたちに消防車を見せました。",
+          "zh": "消防員帶孩子們參觀消防車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the alarm stopped, the firefighters checked the building before anyone went back inside.",
+          "ja": "警報が止まった後、消防士たちは再入場の前に建物内を確認しました。",
+          "zh": "警報停止後，消防員先檢查建築物，才讓大家回到裡面。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "police-officer",
+        "paramedic",
+        "rescue-worker"
+      ],
+      "ja": "消防士",
+      "jaReading": "しょうぼうし",
+      "jaReadingSegments": [
+        {
+          "text": "消防士",
+          "ruby": "しょうぼうし"
+        }
+      ]
+    },
+    {
+      "id": "security-guard",
+      "word": "security guard",
+      "chinese": "保全人員",
+      "chineseDefinition": "受僱在大樓、商場或活動場所巡邏、管制出入並回報安全異常的民間工作人員，不具有一般警察的執法權。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/sɪˈkjʊr.ə.t̬i ˌɡɑːrd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "保全人員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A private worker who watches a building or event, controls access, patrols the area, and reports safety problems.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「警備員」とは、建物や会場で出入りの確認や巡回を行い、安全上の問題を報告する民間の職員です。警察官とは異なります。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The security guard checked my visitor pass at the entrance.",
+          "ja": "警備員が入口で私の入館証を確認しました。",
+          "zh": "保全人員在入口檢查了我的訪客證。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finding an unlocked door, the security guard reported it to the building manager.",
+          "ja": "無施錠の扉を見つけた後、警備員は管理者に報告しました。",
+          "zh": "保全人員發現一扇未上鎖的門後，向大樓管理人員回報。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "police-officer",
+        "traffic-guard",
+        "parking-attendant"
+      ],
+      "ja": "警備員",
+      "jaReading": "けいびいん",
+      "jaReadingSegments": [
+        {
+          "text": "警備員",
+          "ruby": "けいびいん"
+        }
+      ]
+    },
+    {
+      "id": "traffic-guard",
+      "word": "traffic guard",
+      "chinese": "交通引導員",
+      "chineseDefinition": "在道路施工、停車場出入口或活動周邊使用指揮棒與手勢，引導車輛和行人安全通行的現場工作人員；不負責警察執法。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtræf.ɪk ˌɡɑːrd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "交通引導員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A worker who uses signs and hand signals to guide vehicles and pedestrians safely around roadworks or busy entrances.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「交通誘導員」とは、道路工事や駐車場の出入口などで、合図を使って車両や歩行者を安全に誘導する警備の仕事です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The traffic guard guided our car around the roadwork.",
+          "ja": "交通誘導員が工事現場を避ける道へ私たちの車を誘導しました。",
+          "zh": "交通引導員引導我們的車繞過施工區。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because visibility was poor in the rain, the traffic guard used a lighted baton to signal drivers to slow down.",
+          "ja": "雨で見通しが悪かったため、交通誘導員は誘導灯で運転手に減速を合図しました。",
+          "zh": "因為下雨時視線不佳，交通引導員用發光指揮棒示意駕駛減速。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "security-guard",
+        "crossing-guard",
+        "parking-attendant"
+      ],
+      "ja": "交通誘導員",
+      "jaReading": "こうつうゆうどういん",
+      "jaReadingSegments": [
+        {
+          "text": "交通",
+          "ruby": "こうつう"
+        },
+        {
+          "text": "誘導員",
+          "ruby": "ゆうどういん"
+        }
+      ]
+    },
+    {
+      "id": "crossing-guard",
+      "word": "crossing guard",
+      "chinese": "導護員",
+      "chineseDefinition": "在上下學時段守在通學道路或行人穿越道旁，協助學童安全過馬路的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkrɑː.sɪŋ ˌɡɑːrd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "導護員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who helps children and other pedestrians cross roads safely, especially near a school.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「学童擁護員」とは、登下校の時間に通学路や横断歩道に立ち、子どもが安全に道路を渡れるよう見守る人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The crossing guard helps the children cross the road safely.",
+          "ja": "学童擁護員が子どもたちを安全に道路の反対側へ誘導します。",
+          "zh": "導護員協助孩子們安全過馬路。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because a car was turning into the street, the crossing guard checked the road and stopped the children.",
+          "ja": "車が曲がってきたので、学童擁護員は道路の安全を確認して子どもたちを止めました。",
+          "zh": "因為有車子正轉進這條路，導護員確認路況後攔下了孩子們。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "traffic-guard",
+        "parking-attendant",
+        "police-officer"
+      ],
+      "ja": "学童擁護員",
+      "jaReading": "がくどうようごいん",
+      "jaReadingSegments": [
+        {
+          "text": "学童",
+          "ruby": "がくどう"
+        },
+        {
+          "text": "擁護員",
+          "ruby": "ようごいん"
+        }
+      ]
+    },
+    {
+      "id": "lifeguard",
+      "word": "lifeguard",
+      "chinese": "救生員",
+      "chineseDefinition": "在游泳池或海灘監看游泳者、提醒水域安全，並在有人溺水或遇險時立即救援的人。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlaɪfˌɡɑːrd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "救生員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who watches swimmers at a pool or beach and rescues anyone in danger in the water.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ライフガード」とは、プールや海水浴場で利用者を見守り、水中で危険な状態になった人を救助する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The lifeguard watches the swimmers from the poolside.",
+          "ja": "ライフガードがプールサイドから泳いでいる人たちを見守ります。",
+          "zh": "救生員從池畔留意游泳者的狀況。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When a child looked tired in the deep end, the lifeguard used a rescue tube to help the child reach the side.",
+          "ja": "子どもが深い所で疲れているようだったので、ライフガードがレスキューチューブを使ってプールの縁まで誘導しました。",
+          "zh": "一名孩子在深水區看起來很疲累時，救生員使用救生浮標協助孩子回到池邊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "swimming-instructor",
+        "rescue-worker",
+        "coast-guard-officer"
+      ],
+      "ja": "ライフガード",
+      "jaReading": "ライフガード",
+      "jaReadingSegments": null
+    },
+    {
+      "id": "coast-guard-officer",
+      "word": "coast guard officer",
+      "chinese": "海上保安官",
+      "chineseDefinition": "在海域執行船舶安全檢查、海難搜救、海上治安與法律任務的政府執法人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkoʊst ˌɡɑːrd ˌɑː.fɪ.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "海上保安官",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A government officer who protects coastal waters, enforces maritime law, checks vessel safety, and assists with rescues at sea.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「海上保安官」とは、海の安全と治安を守り、船舶の安全確認、海上犯罪の取り締まり、海難救助などを行う職員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The coast guard officer checks a boat's safety equipment at the harbor.",
+          "ja": "海上保安官が港で船の安全装備を点検します。",
+          "zh": "海上保安官在港口檢查船隻的安全設備。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After a fishing boat sent a distress call, the coast guard officer began a search with the patrol vessel.",
+          "ja": "漁船が救難信号を発したため、海上保安官が巡視船で捜索を始めました。",
+          "zh": "一艘漁船發出求救訊號後，海上保安官搭乘巡視船展開搜索。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "rescue-worker",
+        "lifeguard",
+        "police-officer"
+      ],
+      "ja": "海上保安官",
+      "jaReading": "かいじょうほあんかん",
+      "jaReadingSegments": [
+        {
+          "text": "海上",
+          "ruby": "かいじょう"
+        },
+        {
+          "text": "保安官",
+          "ruby": "ほあんかん"
+        }
+      ]
+    },
+    {
+      "id": "customs-officer",
+      "word": "customs officer",
+      "chinese": "海關人員",
+      "chineseDefinition": "在機場、港口或邊境檢查旅客行李與進出口物品，並確認申報及海關規定是否受到遵守的人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkʌs.təmz ˌɑː.fɪ.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "海關人員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An officer who checks travelers, luggage, and imported or exported goods to enforce customs rules.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「税関職員」とは、空港や港などで旅客の手荷物や輸出入品を検査し、申告と税関の規則を確認する職員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The customs officer checks my suitcase at the airport.",
+          "ja": "税関職員が空港で私のスーツケースを検査します。",
+          "zh": "海關人員在機場檢查我的行李箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I was carrying food bought abroad, the customs officer asked me to show the food package at the inspection counter.",
+          "ja": "海外で買った食品を持っていたので、税関職員が検査カウンターで食品の包装を見せるよう求めました。",
+          "zh": "因為我攜帶在國外買的食品，海關人員要求我在檢查櫃台出示食品包裝。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "security-guard",
+        "police-officer",
+        "flight-attendant"
+      ],
+      "ja": "税関職員",
+      "jaReading": "ぜいかんしょくいん",
+      "jaReadingSegments": [
+        {
+          "text": "税関",
+          "ruby": "ぜいかん"
+        },
+        {
+          "text": "職員",
+          "ruby": "しょくいん"
+        }
+      ]
+    },
+    {
+      "id": "parking-attendant",
+      "word": "parking attendant",
+      "chinese": "停車場管理員",
+      "chineseDefinition": "在停車場管理出入口與車位，引導車輛停放，並協助使用者處理停車相關問題的人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɑːr.kɪŋ əˌten.dənt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "停車場管理員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A person who manages a parking area, guides vehicles to spaces, and helps drivers with parking-related questions.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「駐車場係員」とは、駐車場の出入りや空き状況を管理し、車を駐車スペースへ案内する人です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The parking attendant shows me an empty space.",
+          "ja": "駐車場係員が空いている駐車スペースを案内してくれます。",
+          "zh": "停車場管理員指引我前往一個空車位。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the entrance was crowded, the parking attendant guided each car to a different level.",
+          "ja": "入口が混雑していたので、駐車場係員がそれぞれの車を別の階へ案内しました。",
+          "zh": "由於入口很擁擠，停車場管理員將每輛車引導到不同樓層。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "traffic-guard",
+        "crossing-guard",
+        "security-guard"
+      ],
+      "ja": "駐車場係員",
+      "jaReading": "ちゅうしゃじょうかかりいん",
+      "jaReadingSegments": [
+        {
+          "text": "駐車場",
+          "ruby": "ちゅうしゃじょう"
+        },
+        {
+          "text": "係員",
+          "ruby": "かかりいん"
+        }
+      ]
+    },
+    {
+      "id": "rescue-worker",
+      "word": "rescue worker",
+      "chinese": "救難人員",
+      "chineseDefinition": "在山區、事故現場或災害區使用繩索、擔架等專業裝備，搜尋並救出受困者的人員。",
+      "category": "professions",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈres.kjuː ˌwɝː.kɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "救難人員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A trained worker who uses specialized equipment to find and rescue people trapped or injured at accidents or disaster sites.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「救助隊員」とは、事故や災害の現場でロープや担架などの専門装備を使い、取り残された人を救出する隊員です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The rescue worker secures a rope beside the stretcher.",
+          "ja": "救助隊員が担架のそばでロープを固定します。",
+          "zh": "救難人員在擔架旁固定繩索。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After a hiker fell and could not move, the rescue worker prepared a stretcher and ropes to carry the person down safely.",
+          "ja": "登山者が転倒して動けなかったため、救助隊員が登山者を麓まで安全に搬送するための担架とロープを準備しました。",
+          "zh": "一名登山客摔倒而無法移動後，救難人員準備了擔架與繩索，以便將他安全運送下山。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "firefighter",
+        "coast-guard-officer",
+        "paramedic"
+      ],
+      "ja": "救助隊員",
+      "jaReading": "きゅうじょたいいん",
+      "jaReadingSegments": [
+        {
+          "text": "救助",
+          "ruby": "きゅうじょ"
+        },
+        {
+          "text": "隊員",
+          "ruby": "たいいん"
+        }
+      ]
+    }
+  ]
+}

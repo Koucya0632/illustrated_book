@@ -173,6 +173,16 @@ export const categories: Category[] = [
       "https://img.nexflow.team/word-images/category-fruits-fruits-20260911-c743cc88063d.webp",
   },
   {
+    id: "professions",
+    name: "Professions",
+    nameZh: "職業",
+    emoji: "🧑‍💼",
+    description: "認識日常生活中的各種職業",
+    descriptionEn: "People and jobs in everyday life",
+    color: "from-blue-100 to-amber-100",
+    imageUrl: "",
+  },
+  {
     id: "zodiac",
     name: "Zodiac",
     nameZh: "星座",
@@ -184,6 +194,13 @@ export const categories: Category[] = [
       "https://img.nexflow.team/word-images/category-zodiac.webp",
   },
 ];
+
+// This list is used only when the database is unavailable. A fallback cannot
+// establish that a guarded one-time series has completed publication, so keep
+// its category hidden along with its guarded words.
+export const publicFallbackCategories: Category[] = categories.filter(
+  (category) => category.id !== "professions",
+);
 
 export const getCategory = (id: string): Category | undefined =>
   categories.find((c) => c.id === id);

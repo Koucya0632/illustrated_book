@@ -1,0 +1,4384 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "B",
+  "en": {
+    "The doctor examined my sore throat.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "doctor",
+        "z": "醫師",
+        "j": "医師",
+        "e": "doctor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "examined",
+        "z": "檢查了",
+        "j": "診てくれました",
+        "e": "examined"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my "
+      },
+      {
+        "t": "sore",
+        "z": "疼痛的",
+        "j": "痛み",
+        "e": "sore"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "throat",
+        "z": "喉嚨",
+        "j": "喉",
+        "e": "throat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because my fever had lasted for three days, the doctor ordered a blood test.": [
+      {
+        "t": "Because my "
+      },
+      {
+        "t": "fever",
+        "z": "發燒",
+        "j": "熱",
+        "e": "fever"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "lasted",
+        "z": "持續了",
+        "j": "続いていた",
+        "e": "lasted"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "three days",
+        "z": "三天",
+        "j": "三日間",
+        "e": "three days"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "doctor",
+        "z": "醫師",
+        "j": "医師",
+        "e": "doctor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ordered",
+        "z": "安排了",
+        "j": "指示した",
+        "e": "ordered"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "blood test",
+        "z": "血液檢查",
+        "j": "血液検査",
+        "e": "blood test"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The nurse changed the bandage on my arm.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "nurse",
+        "z": "護理師",
+        "j": "看護師",
+        "e": "nurse"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "changed",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "changed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bandage",
+        "z": "繃帶",
+        "j": "包帯",
+        "e": "bandage"
+      },
+      {
+        "t": " on "
+      },
+      {
+        "t": "my "
+      },
+      {
+        "t": "arm",
+        "z": "手臂",
+        "j": "腕",
+        "e": "arm"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before I left the hospital, the nurse showed me how to use the crutches safely.": [
+      {
+        "t": "Before I "
+      },
+      {
+        "t": "left",
+        "z": "離開了",
+        "j": "退院する",
+        "e": "left"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hospital",
+        "z": "醫院",
+        "j": "病院",
+        "e": "hospital"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "nurse",
+        "z": "護理師",
+        "j": "看護師",
+        "e": "nurse"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed me",
+        "z": "教我",
+        "j": "教えてくれた",
+        "e": "showed me"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "crutches",
+        "z": "拐杖",
+        "j": "松葉杖",
+        "e": "crutches"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "safely",
+        "z": "安全地",
+        "j": "安全に",
+        "e": "safely"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The dentist examined my aching tooth.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "dentist",
+        "z": "牙醫師",
+        "j": "歯科医師",
+        "e": "dentist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "examined",
+        "z": "檢查了",
+        "j": "診察した",
+        "e": "examined"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my "
+      },
+      {
+        "t": "aching",
+        "z": "疼痛的",
+        "j": "痛む",
+        "e": "aching"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tooth",
+        "z": "牙齒",
+        "j": "歯",
+        "e": "tooth"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After finding a small cavity, the dentist showed me its location on the X-ray.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "finding",
+        "z": "發現",
+        "j": "見つけた",
+        "e": "finding"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "small cavity",
+        "z": "小蛀牙",
+        "j": "小さな虫歯",
+        "e": "small cavity"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "dentist",
+        "z": "牙醫師",
+        "j": "歯科医師",
+        "e": "dentist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed me",
+        "z": "指給我看",
+        "j": "見せてくれた",
+        "e": "showed me"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "location",
+        "z": "位置",
+        "j": "場所",
+        "e": "location"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "X-ray",
+        "z": "X光片",
+        "j": "レントゲン写真",
+        "e": "X-ray"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The dental hygienist cleaned my teeth.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "dental hygienist",
+        "z": "牙科衛生師",
+        "j": "歯科衛生士",
+        "e": "dental hygienist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cleaned",
+        "z": "清潔了",
+        "j": "クリーニングした",
+        "e": "cleaned"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my teeth",
+        "z": "我的牙齒",
+        "j": "私の歯",
+        "e": "my teeth"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "While cleaning my teeth, the dental hygienist showed me how to hold the toothbrush.": [
+      {
+        "t": "While "
+      },
+      {
+        "t": "cleaning",
+        "z": "清潔",
+        "j": "クリーニングする",
+        "e": "cleaning"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "teeth",
+        "z": "牙齒",
+        "j": "歯",
+        "e": "teeth"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "dental hygienist",
+        "z": "牙科衛生師",
+        "j": "歯科衛生士",
+        "e": "dental hygienist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed me",
+        "z": "示範給我看",
+        "j": "見せてくれた",
+        "e": "showed me"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "hold",
+        "z": "握住",
+        "j": "持つ",
+        "e": "hold"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "toothbrush",
+        "z": "牙刷",
+        "j": "歯ブラシ",
+        "e": "toothbrush"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pharmacist explained how to take my medicine.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pharmacist",
+        "z": "藥師",
+        "j": "薬剤師",
+        "e": "pharmacist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "說明了",
+        "j": "説明した",
+        "e": "explained"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "take",
+        "z": "服用",
+        "j": "飲む",
+        "e": "take"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "medicine",
+        "z": "藥",
+        "j": "薬",
+        "e": "medicine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I picked up my prescription, the pharmacist checked whether I had any questions about the medicine.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "picked up",
+        "z": "領取",
+        "j": "受け取った",
+        "e": "picked up"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "prescription",
+        "z": "處方藥",
+        "j": "処方薬",
+        "e": "prescription"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "pharmacist",
+        "z": "藥師",
+        "j": "薬剤師",
+        "e": "pharmacist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " whether I had any "
+      },
+      {
+        "t": "questions",
+        "z": "疑問",
+        "j": "質問",
+        "e": "questions"
+      },
+      {
+        "t": " about the "
+      },
+      {
+        "t": "medicine",
+        "z": "藥品",
+        "j": "薬",
+        "e": "medicine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The veterinarian examined my cat's paw.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "veterinarian",
+        "z": "獸醫師",
+        "j": "獣医師",
+        "e": "veterinarian"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "examined",
+        "z": "檢查了",
+        "j": "診察した",
+        "e": "examined"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "my cat's paw",
+        "z": "我家貓的腳掌",
+        "j": "私の猫の足",
+        "e": "my cat's paw"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because my dog had stopped eating, the veterinarian ran several tests at the animal clinic.": [
+      {
+        "t": "Because my "
+      },
+      {
+        "t": "dog",
+        "z": "狗",
+        "j": "犬",
+        "e": "dog"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "stopped eating",
+        "z": "不再吃東西",
+        "j": "餌を食べなくなった",
+        "e": "stopped eating"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "veterinarian",
+        "z": "獸醫師",
+        "j": "獣医師",
+        "e": "veterinarian"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ran several tests",
+        "z": "做了幾項檢查",
+        "j": "いくつか検査をした",
+        "e": "ran several tests"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "animal clinic",
+        "z": "動物醫院",
+        "j": "動物病院",
+        "e": "animal clinic"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The paramedic put an oxygen mask on the patient.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "paramedic",
+        "z": "救護技術員",
+        "j": "救急救命士",
+        "e": "paramedic"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "戴上",
+        "j": "付けた",
+        "e": "put"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "oxygen mask",
+        "z": "氧氣面罩",
+        "j": "酸素マスク",
+        "e": "oxygen mask"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "patient",
+        "z": "病患",
+        "j": "患者",
+        "e": "patient"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "While the ambulance was heading to the hospital, the paramedic kept monitoring the patient's breathing.": [
+      {
+        "t": "While the "
+      },
+      {
+        "t": "ambulance",
+        "z": "救護車",
+        "j": "救急車",
+        "e": "ambulance"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "heading",
+        "z": "前往",
+        "j": "向かっていた",
+        "e": "heading"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "hospital",
+        "z": "醫院",
+        "j": "病院",
+        "e": "hospital"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "paramedic",
+        "z": "救護技術員",
+        "j": "救急救命士",
+        "e": "paramedic"
+      },
+      {
+        "t": " kept "
+      },
+      {
+        "t": "monitoring",
+        "z": "持續監測",
+        "j": "確認し続けた",
+        "e": "monitoring"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "patient's",
+        "z": "病患的",
+        "j": "患者の",
+        "e": "patient's"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "breathing",
+        "z": "呼吸",
+        "j": "呼吸",
+        "e": "breathing"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The physical therapist showed me how to use the exercise band.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "physical therapist",
+        "z": "物理治療師",
+        "j": "理学療法士",
+        "e": "physical therapist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed me",
+        "z": "教我",
+        "j": "教えてくれました",
+        "e": "showed me"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "exercise band",
+        "z": "運動彈力帶",
+        "j": "運動用のバンド",
+        "e": "exercise band"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After checking how I walked, the physical therapist adjusted the height of my cane.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "checking",
+        "z": "查看",
+        "j": "確認した",
+        "e": "checking"
+      },
+      {
+        "t": " how I "
+      },
+      {
+        "t": "walked",
+        "z": "走路",
+        "j": "歩いた",
+        "e": "walked"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "physical therapist",
+        "z": "物理治療師",
+        "j": "理学療法士",
+        "e": "physical therapist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整しました",
+        "e": "adjusted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "height",
+        "z": "高度",
+        "j": "高さ",
+        "e": "height"
+      },
+      {
+        "t": " of my "
+      },
+      {
+        "t": "cane",
+        "z": "手杖",
+        "j": "つえ",
+        "e": "cane"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The caregiver helped my grandfather into his wheelchair.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "caregiver",
+        "z": "照護員",
+        "j": "介護職員",
+        "e": "caregiver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "helped",
+        "z": "協助",
+        "j": "手伝いました",
+        "e": "helped"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "grandfather",
+        "z": "祖父",
+        "j": "祖父",
+        "e": "grandfather"
+      },
+      {
+        "t": " into his "
+      },
+      {
+        "t": "wheelchair",
+        "z": "輪椅",
+        "j": "車いす",
+        "e": "wheelchair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When my grandmother felt tired, the caregiver moved lunch to a table near her room.": [
+      {
+        "t": "When my "
+      },
+      {
+        "t": "grandmother",
+        "z": "祖母",
+        "j": "祖母",
+        "e": "grandmother"
+      },
+      {
+        "t": " felt "
+      },
+      {
+        "t": "tired",
+        "z": "疲累",
+        "j": "疲れていた",
+        "e": "tired"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "caregiver",
+        "z": "照護員",
+        "j": "介護職員",
+        "e": "caregiver"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "moved",
+        "z": "移到",
+        "j": "運びました",
+        "e": "moved"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lunch",
+        "z": "午餐",
+        "j": "昼食",
+        "e": "lunch"
+      },
+      {
+        "t": " to a "
+      },
+      {
+        "t": "table",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table"
+      },
+      {
+        "t": " near her "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The midwife showed us how to hold the baby.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "midwife",
+        "z": "助產師",
+        "j": "助産師",
+        "e": "midwife"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed us",
+        "z": "教我們",
+        "j": "教えてくれました",
+        "e": "showed us"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "hold",
+        "z": "抱",
+        "j": "抱く",
+        "e": "hold"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "baby",
+        "z": "寶寶",
+        "j": "赤ちゃん",
+        "e": "baby"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before we left the hospital, the midwife explained where to call if we had questions.": [
+      {
+        "t": "Before we "
+      },
+      {
+        "t": "left",
+        "z": "離開",
+        "j": "退院しました",
+        "e": "left"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hospital",
+        "z": "醫院",
+        "j": "病院",
+        "e": "hospital"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "midwife",
+        "z": "助產師",
+        "j": "助産師",
+        "e": "midwife"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "說明了",
+        "j": "説明しました",
+        "e": "explained"
+      },
+      {
+        "t": " where to "
+      },
+      {
+        "t": "call",
+        "z": "打電話",
+        "j": "連絡する",
+        "e": "call"
+      },
+      {
+        "t": " if we had "
+      },
+      {
+        "t": "questions",
+        "z": "問題",
+        "j": "質問",
+        "e": "questions"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Our teacher wrote the homework on the board.": [
+      {
+        "t": "Our "
+      },
+      {
+        "t": "teacher",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wrote",
+        "z": "寫了",
+        "j": "書きました",
+        "e": "wrote"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "homework",
+        "z": "作業",
+        "j": "宿題",
+        "e": "homework"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "board",
+        "z": "黑板",
+        "j": "黒板",
+        "e": "board"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because several students found the chapter difficult, the teacher reviewed it with another example.": [
+      {
+        "t": "Because several "
+      },
+      {
+        "t": "students",
+        "z": "學生",
+        "j": "生徒",
+        "e": "students"
+      },
+      {
+        "t": " found the "
+      },
+      {
+        "t": "chapter",
+        "z": "章節",
+        "j": "章",
+        "e": "chapter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "difficult",
+        "z": "困難",
+        "j": "難しい",
+        "e": "difficult"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "teacher",
+        "z": "老師",
+        "j": "教師",
+        "e": "teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reviewed",
+        "z": "複習了",
+        "j": "復習しました",
+        "e": "reviewed"
+      },
+      {
+        "t": " it with another "
+      },
+      {
+        "t": "example",
+        "z": "例子",
+        "j": "例",
+        "e": "example"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The nursery teacher read a picture book to the children.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "nursery teacher",
+        "z": "保育員",
+        "j": "保育士",
+        "e": "nursery teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "read",
+        "z": "讀了",
+        "j": "読みました",
+        "e": "read"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "picture book",
+        "z": "圖畫書",
+        "j": "絵本",
+        "e": "picture book"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When my son began to cry at drop-off, the nursery teacher welcomed him with his favorite toy.": [
+      {
+        "t": "When my "
+      },
+      {
+        "t": "son",
+        "z": "兒子",
+        "j": "息子",
+        "e": "son"
+      },
+      {
+        "t": " began to "
+      },
+      {
+        "t": "cry",
+        "z": "哭",
+        "j": "泣く",
+        "e": "cry"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "drop-off",
+        "z": "送到托兒所時",
+        "j": "登園時",
+        "e": "drop-off"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "nursery teacher",
+        "z": "保育員",
+        "j": "保育士",
+        "e": "nursery teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "welcomed",
+        "z": "迎接",
+        "j": "迎えました",
+        "e": "welcomed"
+      },
+      {
+        "t": " him with his "
+      },
+      {
+        "t": "favorite toy",
+        "z": "最喜歡的玩具",
+        "j": "お気に入りのおもちゃ",
+        "e": "favorite toy"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The kindergarten teacher taught the children a new song.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "kindergarten teacher",
+        "z": "幼兒園老師",
+        "j": "幼稚園の先生",
+        "e": "kindergarten teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "taught",
+        "z": "教了",
+        "j": "教えました",
+        "e": "taught"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": " a new "
+      },
+      {
+        "t": "song",
+        "z": "歌曲",
+        "j": "歌",
+        "e": "song"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "For the class exhibition, the kindergarten teacher helped the children plan how to display their drawings.": [
+      {
+        "t": "For the "
+      },
+      {
+        "t": "class exhibition",
+        "z": "班級作品展",
+        "j": "クラスの作品展",
+        "e": "class exhibition"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "kindergarten teacher",
+        "z": "幼兒園老師",
+        "j": "幼稚園教諭",
+        "e": "kindergarten teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "helped",
+        "z": "協助",
+        "j": "一緒に考えました",
+        "e": "helped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "plan",
+        "z": "規劃",
+        "j": "考える",
+        "e": "plan"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "display",
+        "z": "展示",
+        "j": "飾る",
+        "e": "display"
+      },
+      {
+        "t": " their "
+      },
+      {
+        "t": "drawings",
+        "z": "畫作",
+        "j": "絵",
+        "e": "drawings"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The school nurse put a bandage on my knee.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "school nurse",
+        "z": "校護",
+        "j": "養護教諭",
+        "e": "school nurse"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "put",
+        "z": "貼上",
+        "j": "貼りました",
+        "e": "put"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bandage",
+        "z": "OK繃",
+        "j": "ばんそうこう",
+        "e": "bandage"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "knee",
+        "z": "膝蓋",
+        "j": "ひざ",
+        "e": "knee"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I felt unwell during class, the school nurse let me rest in the health room and contacted my family.": [
+      {
+        "t": "When I felt "
+      },
+      {
+        "t": "unwell",
+        "z": "不舒服",
+        "j": "気分が悪い",
+        "e": "unwell"
+      },
+      {
+        "t": " during "
+      },
+      {
+        "t": "class",
+        "z": "上課",
+        "j": "授業",
+        "e": "class"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "school nurse",
+        "z": "校護",
+        "j": "養護教諭",
+        "e": "school nurse"
+      },
+      {
+        "t": " let me "
+      },
+      {
+        "t": "rest",
+        "z": "休息",
+        "j": "休ませました",
+        "e": "rest"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "health room",
+        "z": "保健室",
+        "j": "保健室",
+        "e": "health room"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "contacted",
+        "z": "聯絡了",
+        "j": "連絡しました",
+        "e": "contacted"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "family",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The librarian helps me find a book.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "librarian",
+        "z": "圖書館員",
+        "j": "図書館司書",
+        "e": "librarian"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "helps",
+        "z": "幫助",
+        "j": "手伝ってくれます",
+        "e": "helps"
+      },
+      {
+        "t": " me "
+      },
+      {
+        "t": "find",
+        "z": "尋找",
+        "j": "探す",
+        "e": "find"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "book",
+        "z": "書",
+        "j": "本",
+        "e": "book"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked the librarian whether I could return the books at another branch.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "asked",
+        "z": "詢問",
+        "j": "聞きました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "librarian",
+        "z": "圖書館員",
+        "j": "図書館司書",
+        "e": "librarian"
+      },
+      {
+        "t": " whether I could "
+      },
+      {
+        "t": "return",
+        "z": "歸還",
+        "j": "返す",
+        "e": "return"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "books",
+        "z": "書籍",
+        "j": "本",
+        "e": "books"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "another branch",
+        "z": "另一間分館",
+        "j": "別の分館",
+        "e": "another branch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cram school teacher explains the math problem.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cram school teacher",
+        "z": "補習班老師",
+        "j": "塾講師",
+        "e": "cram school teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explains",
+        "z": "講解",
+        "j": "説明します",
+        "e": "explains"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "math problem",
+        "z": "數學題",
+        "j": "数学の問題",
+        "e": "math problem"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I did not understand the homework, the cram school teacher showed me another way to solve it.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "did not understand",
+        "z": "不懂",
+        "j": "分からなかった",
+        "e": "did not understand"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "homework",
+        "z": "作業",
+        "j": "宿題",
+        "e": "homework"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "cram school teacher",
+        "z": "補習班老師",
+        "j": "塾講師",
+        "e": "cram school teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "教了",
+        "j": "教えてくれました",
+        "e": "showed"
+      },
+      {
+        "t": " me "
+      },
+      {
+        "t": "another way",
+        "z": "另一種方法",
+        "j": "別の解き方",
+        "e": "another way"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "solve",
+        "z": "解答",
+        "j": "解く",
+        "e": "solve"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "The sports coach shows the team a new drill.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "sports coach",
+        "z": "運動教練",
+        "j": "スポーツコーチ",
+        "e": "sports coach"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "向……示範",
+        "j": "教えます",
+        "e": "shows"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "team",
+        "z": "隊員",
+        "j": "チーム",
+        "e": "team"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "new drill",
+        "z": "一項新的訓練動作",
+        "j": "新しい練習",
+        "e": "new drill"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because our next game is important, the sports coach reviewed our defensive positions after practice.": [
+      {
+        "t": "Because our "
+      },
+      {
+        "t": "next game",
+        "z": "下一場比賽",
+        "j": "次の試合",
+        "e": "next game"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "important",
+        "z": "重要",
+        "j": "大切",
+        "e": "important"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "sports coach",
+        "z": "運動教練",
+        "j": "スポーツコーチ",
+        "e": "sports coach"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reviewed",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "reviewed"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "defensive positions",
+        "z": "防守站位",
+        "j": "守備の位置",
+        "e": "defensive positions"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "after practice",
+        "z": "練習後",
+        "j": "練習後",
+        "e": "after practice"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The driving instructor shows me how to park.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "driving instructor",
+        "z": "駕駛教練",
+        "j": "自動車教習指導員",
+        "e": "driving instructor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "教導",
+        "j": "教えてくれます",
+        "e": "shows"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "me",
+        "z": "我",
+        "j": "私",
+        "e": "me"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "park",
+        "z": "停車",
+        "j": "駐車する",
+        "e": "park"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before we entered a busy road, the driving instructor reminded me to check the mirrors and blind spot.": [
+      {
+        "t": "Before we "
+      },
+      {
+        "t": "entered",
+        "z": "駛入",
+        "j": "入る",
+        "e": "entered"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "busy road",
+        "z": "車流量大的道路",
+        "j": "交通量の多い道路",
+        "e": "busy road"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "driving instructor",
+        "z": "駕駛教練",
+        "j": "自動車教習指導員",
+        "e": "driving instructor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reminded",
+        "z": "提醒",
+        "j": "声をかけてくれました",
+        "e": "reminded"
+      },
+      {
+        "t": " me to "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mirrors",
+        "z": "後視鏡",
+        "j": "ミラー",
+        "e": "mirrors"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "blind spot",
+        "z": "死角",
+        "j": "死角",
+        "e": "blind spot"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The swimming instructor shows the children how to kick.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "swimming instructor",
+        "z": "游泳教練",
+        "j": "水泳指導員",
+        "e": "swimming instructor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shows",
+        "z": "示範",
+        "j": "見せます",
+        "e": "shows"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": " how to "
+      },
+      {
+        "t": "kick",
+        "z": "踢水",
+        "j": "バタ足をする",
+        "e": "kick"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since my daughter was afraid of deep water, the swimming instructor let her practice near the wall.": [
+      {
+        "t": "Since my "
+      },
+      {
+        "t": "daughter",
+        "z": "女兒",
+        "j": "娘",
+        "e": "daughter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "was afraid",
+        "z": "害怕",
+        "j": "怖がっていた",
+        "e": "was afraid"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "deep water",
+        "z": "深水區",
+        "j": "深い場所",
+        "e": "deep water"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "swimming instructor",
+        "z": "游泳教練",
+        "j": "水泳指導員",
+        "e": "swimming instructor"
+      },
+      {
+        "t": " let her "
+      },
+      {
+        "t": "practice",
+        "z": "練習",
+        "j": "練習する",
+        "e": "practice"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "near the wall",
+        "z": "池壁附近",
+        "j": "壁の近く",
+        "e": "near the wall"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The museum guide tells us about an old vase.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "museum guide",
+        "z": "博物館導覽員",
+        "j": "博物館ガイド",
+        "e": "museum guide"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tells us",
+        "z": "向我們介紹",
+        "j": "説明します",
+        "e": "tells us"
+      },
+      {
+        "t": " about "
+      },
+      {
+        "t": "an old vase",
+        "z": "一個老花瓶",
+        "j": "古い花瓶",
+        "e": "an old vase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The museum guide explained why visitors could not use flash near the paintings.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "museum guide",
+        "z": "博物館導覽員",
+        "j": "博物館ガイド",
+        "e": "museum guide"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "explained",
+        "z": "解釋了",
+        "j": "説明してくれました",
+        "e": "explained"
+      },
+      {
+        "t": " why "
+      },
+      {
+        "t": "visitors",
+        "z": "參觀者",
+        "j": "来館者",
+        "e": "visitors"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "could not use",
+        "z": "不能使用",
+        "j": "使えない",
+        "e": "could not use"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "flash",
+        "z": "閃光燈",
+        "j": "フラッシュ",
+        "e": "flash"
+      },
+      {
+        "t": " near the "
+      },
+      {
+        "t": "paintings",
+        "z": "畫作",
+        "j": "絵",
+        "e": "paintings"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "医師が喉の痛みを診てくれました。": [
+      {
+        "t": "医師",
+        "z": "醫師",
+        "j": "医師",
+        "e": "doctor",
+        "r": "いし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "喉",
+        "z": "喉嚨",
+        "j": "喉",
+        "e": "throat",
+        "r": "のど"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "痛み",
+        "z": "疼痛",
+        "j": "痛み",
+        "e": "soreness",
+        "r": "いたみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "診てくれました",
+        "z": "幫我看診了",
+        "j": "診てくれました",
+        "e": "examined",
+        "r": "みてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "熱が三日間続いていたので、医師は血液検査を指示しました。": [
+      {
+        "t": "熱",
+        "z": "發燒",
+        "j": "熱",
+        "e": "fever",
+        "r": "ねつ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "三日間",
+        "z": "三天",
+        "j": "三日間",
+        "e": "for three days",
+        "r": "みっかかん"
+      },
+      {
+        "t": "続いていた",
+        "z": "持續著",
+        "j": "続いていた",
+        "e": "had lasted",
+        "r": "つづいていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "医師",
+        "z": "醫師",
+        "j": "医師",
+        "e": "doctor",
+        "r": "いし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "血液検査",
+        "z": "血液檢查",
+        "j": "血液検査",
+        "e": "blood test",
+        "r": "けつえきけんさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "指示しました",
+        "z": "安排了",
+        "j": "指示した",
+        "e": "ordered",
+        "r": "しじしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "看護師が私の腕の包帯を交換しました。": [
+      {
+        "t": "看護師",
+        "z": "護理師",
+        "j": "看護師",
+        "e": "nurse",
+        "r": "かんごし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "腕",
+        "z": "手臂",
+        "j": "腕",
+        "e": "arm",
+        "r": "うで"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "包帯",
+        "z": "繃帶",
+        "j": "包帯",
+        "e": "bandage",
+        "r": "ほうたい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換しました",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "changed",
+        "r": "こうかんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "退院する前に、看護師が松葉杖の安全な使い方を教えてくれました。": [
+      {
+        "t": "退院する",
+        "z": "出院",
+        "j": "退院する",
+        "e": "leave the hospital",
+        "r": "たいいんする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "看護師",
+        "z": "護理師",
+        "j": "看護師",
+        "e": "nurse",
+        "r": "かんごし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "松葉杖",
+        "z": "拐杖",
+        "j": "松葉杖",
+        "e": "crutches",
+        "r": "まつばづえ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "安全な",
+        "z": "安全的",
+        "j": "安全な",
+        "e": "safe",
+        "r": "あんぜんな"
+      },
+      {
+        "t": "使い方",
+        "z": "使用方法",
+        "j": "使い方",
+        "e": "how to use",
+        "r": "つかいかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "教了我",
+        "j": "教えてくれた",
+        "e": "showed me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "歯科医師が痛む歯を診察しました。": [
+      {
+        "t": "歯科医師",
+        "z": "牙醫師",
+        "j": "歯科医師",
+        "e": "dentist",
+        "r": "しかいし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "痛む",
+        "z": "疼痛的",
+        "j": "痛む",
+        "e": "aching",
+        "r": "いたむ"
+      },
+      {
+        "t": "歯",
+        "z": "牙齒",
+        "j": "歯",
+        "e": "tooth",
+        "r": "は"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "診察しました",
+        "z": "檢查了",
+        "j": "診察した",
+        "e": "examined",
+        "r": "しんさつしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "小さな虫歯が見つかったあと、歯科医師はレントゲン写真でその場所を見せてくれました。": [
+      {
+        "t": "小さな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small",
+        "r": "ちいさな"
+      },
+      {
+        "t": "虫歯",
+        "z": "蛀牙",
+        "j": "虫歯",
+        "e": "cavity",
+        "r": "むしば"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つかった",
+        "z": "被發現",
+        "j": "見つかった",
+        "e": "was found",
+        "r": "みつかった"
+      },
+      {
+        "t": "あと、"
+      },
+      {
+        "t": "歯科医師",
+        "z": "牙醫師",
+        "j": "歯科医師",
+        "e": "dentist",
+        "r": "しかいし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "レントゲン写真",
+        "z": "X光片",
+        "j": "レントゲン写真",
+        "e": "X-ray",
+        "r": "レントゲンしゃしん"
+      },
+      {
+        "t": "でその"
+      },
+      {
+        "t": "場所",
+        "z": "位置",
+        "j": "場所",
+        "e": "location",
+        "r": "ばしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せてくれました",
+        "z": "指給我看了",
+        "j": "見せてくれた",
+        "e": "showed me",
+        "r": "みせてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "歯科衛生士が私の歯をクリーニングしました。": [
+      {
+        "t": "歯科衛生士",
+        "z": "牙科衛生師",
+        "j": "歯科衛生士",
+        "e": "dental hygienist",
+        "r": "しかえいせいし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "歯",
+        "z": "牙齒",
+        "j": "歯",
+        "e": "teeth",
+        "r": "は"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "クリーニングしました",
+        "z": "潔牙了",
+        "j": "クリーニングした",
+        "e": "cleaned",
+        "r": "クリーニングしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "歯をクリーニングしながら、歯科衛生士が歯ブラシの持ち方を見せてくれました。": [
+      {
+        "t": "歯",
+        "z": "牙齒",
+        "j": "歯",
+        "e": "teeth",
+        "r": "は"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "クリーニングしながら",
+        "z": "潔牙時",
+        "j": "クリーニングしながら",
+        "e": "while cleaning",
+        "r": "クリーニングしながら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "歯科衛生士",
+        "z": "牙科衛生師",
+        "j": "歯科衛生士",
+        "e": "dental hygienist",
+        "r": "しかえいせいし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "歯ブラシ",
+        "z": "牙刷",
+        "j": "歯ブラシ",
+        "e": "toothbrush",
+        "r": "はブラシ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "持ち方",
+        "z": "握法",
+        "j": "持ち方",
+        "e": "how to hold",
+        "r": "もちかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せてくれました",
+        "z": "示範給我看",
+        "j": "見せてくれた",
+        "e": "showed me",
+        "r": "みせてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "薬剤師が薬の飲み方を説明してくれました。": [
+      {
+        "t": "薬剤師",
+        "z": "藥師",
+        "j": "薬剤師",
+        "e": "pharmacist",
+        "r": "やくざいし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "薬",
+        "z": "藥",
+        "j": "薬",
+        "e": "medicine",
+        "r": "くすり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "飲み方",
+        "z": "服用方式",
+        "j": "飲み方",
+        "e": "how to take",
+        "r": "のみかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明してくれました",
+        "z": "向我說明了",
+        "j": "説明してくれた",
+        "e": "explained to me",
+        "r": "せつめいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "処方薬を受け取るとき、薬剤師は薬について質問があるか確認しました。": [
+      {
+        "t": "処方薬",
+        "z": "處方藥",
+        "j": "処方薬",
+        "e": "prescription medicine",
+        "r": "しょほうやく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "受け取る",
+        "z": "領取",
+        "j": "受け取る",
+        "e": "pick up",
+        "r": "うけとる"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "薬剤師",
+        "z": "藥師",
+        "j": "薬剤師",
+        "e": "pharmacist",
+        "r": "やくざいし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "薬",
+        "z": "藥品",
+        "j": "薬",
+        "e": "medicine",
+        "r": "くすり"
+      },
+      {
+        "t": "について"
+      },
+      {
+        "t": "質問",
+        "z": "疑問",
+        "j": "質問",
+        "e": "questions",
+        "r": "しつもん"
+      },
+      {
+        "t": "があるか"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "獣医師が私の猫の足を診察しました。": [
+      {
+        "t": "獣医師",
+        "z": "獸醫師",
+        "j": "獣医師",
+        "e": "veterinarian",
+        "r": "じゅういし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "猫",
+        "z": "貓",
+        "j": "猫",
+        "e": "cat",
+        "r": "ねこ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "足",
+        "z": "腳掌",
+        "j": "足",
+        "e": "paw",
+        "r": "あし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "診察しました",
+        "z": "檢查了",
+        "j": "診察した",
+        "e": "examined",
+        "r": "しんさつしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "犬が餌を食べなくなったので、獣医師は動物病院でいくつか検査をしました。": [
+      {
+        "t": "犬",
+        "z": "狗",
+        "j": "犬",
+        "e": "dog",
+        "r": "いぬ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "餌",
+        "z": "飼料",
+        "j": "餌",
+        "e": "food",
+        "r": "えさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べなくなった",
+        "z": "不再吃了",
+        "j": "食べなくなった",
+        "e": "stopped eating",
+        "r": "たべなくなった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "獣医師",
+        "z": "獸醫師",
+        "j": "獣医師",
+        "e": "veterinarian",
+        "r": "じゅういし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "動物病院",
+        "z": "動物醫院",
+        "j": "動物病院",
+        "e": "animal clinic",
+        "r": "どうぶつびょういん"
+      },
+      {
+        "t": "でいくつか"
+      },
+      {
+        "t": "検査",
+        "z": "檢查",
+        "j": "検査",
+        "e": "tests",
+        "r": "けんさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "しました",
+        "z": "做了",
+        "j": "した",
+        "e": "ran",
+        "r": "しました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "救急救命士が患者に酸素マスクを付けました。": [
+      {
+        "t": "救急救命士",
+        "z": "救護技術員",
+        "j": "救急救命士",
+        "e": "paramedic",
+        "r": "きゅうきゅうきゅうめいし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "患者",
+        "z": "病患",
+        "j": "患者",
+        "e": "patient",
+        "r": "かんじゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "酸素マスク",
+        "z": "氧氣面罩",
+        "j": "酸素マスク",
+        "e": "oxygen mask",
+        "r": "さんそマスク"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "付けました",
+        "z": "戴上了",
+        "j": "付けた",
+        "e": "put on",
+        "r": "つけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "救急車が病院へ向かう間、救急救命士は患者の呼吸を確認し続けました。": [
+      {
+        "t": "救急車",
+        "z": "救護車",
+        "j": "救急車",
+        "e": "ambulance",
+        "r": "きゅうきゅうしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "病院",
+        "z": "醫院",
+        "j": "病院",
+        "e": "hospital",
+        "r": "びょういん"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "向かう",
+        "z": "前往",
+        "j": "向かう",
+        "e": "head to",
+        "r": "むかう"
+      },
+      {
+        "t": "間",
+        "z": "途中",
+        "j": "間",
+        "e": "while",
+        "r": "あいだ"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "救急救命士",
+        "z": "救護技術員",
+        "j": "救急救命士",
+        "e": "paramedic",
+        "r": "きゅうきゅうきゅうめいし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "患者",
+        "z": "病患",
+        "j": "患者",
+        "e": "patient",
+        "r": "かんじゃ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "呼吸",
+        "z": "呼吸",
+        "j": "呼吸",
+        "e": "breathing",
+        "r": "こきゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認し続けました",
+        "z": "持續監測",
+        "j": "確認し続けた",
+        "e": "kept monitoring",
+        "r": "かくにんしつづけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理学療法士が運動用のバンドの使い方を教えてくれました。": [
+      {
+        "t": "理学療法士",
+        "z": "物理治療師",
+        "j": "理学療法士",
+        "e": "physical therapist",
+        "r": "りがくりょうほうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "運動用",
+        "z": "運動用的",
+        "j": "運動用",
+        "e": "for exercise",
+        "r": "うんどうよう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "バンド",
+        "z": "彈力帶",
+        "j": "バンド",
+        "e": "band",
+        "r": "バンド"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "使い方",
+        "z": "使用方法",
+        "j": "使い方",
+        "e": "how to use",
+        "r": "つかいかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "教了我",
+        "j": "教えてくれました",
+        "e": "showed me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "歩き方を確認した後、理学療法士が私のつえの高さを調整してくれました。": [
+      {
+        "t": "歩き方",
+        "z": "走路方式",
+        "j": "歩き方",
+        "e": "the way of walking",
+        "r": "あるきかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認した",
+        "z": "查看過",
+        "j": "確認した",
+        "e": "checked",
+        "r": "かくにんした"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "理学療法士",
+        "z": "物理治療師",
+        "j": "理学療法士",
+        "e": "physical therapist",
+        "r": "りがくりょうほうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "つえ",
+        "z": "手杖",
+        "j": "つえ",
+        "e": "cane",
+        "r": "つえ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "高さ",
+        "z": "高度",
+        "j": "高さ",
+        "e": "height",
+        "r": "たかさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整してくれました",
+        "z": "幫忙調整",
+        "j": "調整してくれました",
+        "e": "adjusted",
+        "r": "ちょうせいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "介護職員は祖父が車いすに乗るのを手伝ってくれました。": [
+      {
+        "t": "介護職員",
+        "z": "照護員",
+        "j": "介護職員",
+        "e": "caregiver",
+        "r": "かいごしょくいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "祖父",
+        "z": "祖父",
+        "j": "祖父",
+        "e": "grandfather",
+        "r": "そふ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "車いす",
+        "z": "輪椅",
+        "j": "車いす",
+        "e": "wheelchair",
+        "r": "くるまいす"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "乗る",
+        "z": "乘坐",
+        "j": "乗る",
+        "e": "get into",
+        "r": "のる"
+      },
+      {
+        "t": "のを"
+      },
+      {
+        "t": "手伝ってくれました",
+        "z": "幫忙了",
+        "j": "手伝ってくれました",
+        "e": "helped",
+        "r": "てつだってくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "祖母が疲れていたので、介護職員は昼食を部屋の近くのテーブルに運んでくれました。": [
+      {
+        "t": "祖母",
+        "z": "祖母",
+        "j": "祖母",
+        "e": "grandmother",
+        "r": "そぼ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "疲れていた",
+        "z": "覺得疲累",
+        "j": "疲れていた",
+        "e": "felt tired",
+        "r": "つかれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "介護職員",
+        "z": "照護員",
+        "j": "介護職員",
+        "e": "caregiver",
+        "r": "かいごしょくいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "昼食",
+        "z": "午餐",
+        "j": "昼食",
+        "e": "lunch",
+        "r": "ちゅうしょく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "near",
+        "r": "ちかく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "テーブル",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table",
+        "r": "テーブル"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "運んでくれました",
+        "z": "幫忙搬過去",
+        "j": "運んでくれました",
+        "e": "moved",
+        "r": "はこんでくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "助産師が赤ちゃんの抱き方を教えてくれました。": [
+      {
+        "t": "助産師",
+        "z": "助產師",
+        "j": "助産師",
+        "e": "midwife",
+        "r": "じょさんし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "赤ちゃん",
+        "z": "寶寶",
+        "j": "赤ちゃん",
+        "e": "baby",
+        "r": "あかちゃん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "抱き方",
+        "z": "抱法",
+        "j": "抱き方",
+        "e": "how to hold",
+        "r": "だきかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "教了我們",
+        "j": "教えてくれました",
+        "e": "showed us",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "退院する前に、助産師は質問があるときの連絡先を説明してくれました。": [
+      {
+        "t": "退院する",
+        "z": "離開醫院",
+        "j": "退院する",
+        "e": "leave the hospital",
+        "r": "たいいんする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "助産師",
+        "z": "助產師",
+        "j": "助産師",
+        "e": "midwife",
+        "r": "じょさんし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "質問",
+        "z": "問題",
+        "j": "質問",
+        "e": "questions",
+        "r": "しつもん"
+      },
+      {
+        "t": "があるときの"
+      },
+      {
+        "t": "連絡先",
+        "z": "聯絡方式",
+        "j": "連絡先",
+        "e": "contact information",
+        "r": "れんらくさき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明してくれました",
+        "z": "向我們說明",
+        "j": "説明してくれました",
+        "e": "explained",
+        "r": "せつめいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "先生が黒板に宿題を書きました。": [
+      {
+        "t": "先生",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher",
+        "r": "せんせい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "黒板",
+        "z": "黑板",
+        "j": "黒板",
+        "e": "board",
+        "r": "こくばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "宿題",
+        "z": "作業",
+        "j": "宿題",
+        "e": "homework",
+        "r": "しゅくだい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書きました",
+        "z": "寫了",
+        "j": "書きました",
+        "e": "wrote",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "何人かの生徒がその章を難しいと感じたので、教師は別の例を使って一緒に復習しました。": [
+      {
+        "t": "何人か",
+        "z": "幾位",
+        "j": "何人か",
+        "e": "several",
+        "r": "なんにんか"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "生徒",
+        "z": "學生",
+        "j": "生徒",
+        "e": "students",
+        "r": "せいと"
+      },
+      {
+        "t": "がその"
+      },
+      {
+        "t": "章",
+        "z": "章節",
+        "j": "章",
+        "e": "chapter",
+        "r": "しょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "難しいと感じた",
+        "z": "覺得很難",
+        "j": "難しいと感じた",
+        "e": "found difficult",
+        "r": "むずかしいとかんじた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "教師",
+        "z": "老師",
+        "j": "教師",
+        "e": "teacher",
+        "r": "きょうし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "別の例",
+        "z": "另一個例子",
+        "j": "別の例",
+        "e": "another example",
+        "r": "べつのれい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "z": "使用",
+        "j": "使って",
+        "e": "using",
+        "r": "つかって"
+      },
+      {
+        "t": "一緒に復習しました",
+        "z": "帶大家一起複習",
+        "j": "一緒に復習しました",
+        "e": "reviewed together",
+        "r": "いっしょにふくしゅうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "保育士が子どもたちに絵本を読みました。": [
+      {
+        "t": "保育士",
+        "z": "保育員",
+        "j": "保育士",
+        "e": "nursery teacher",
+        "r": "ほいくし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "絵本",
+        "z": "圖畫書",
+        "j": "絵本",
+        "e": "picture book",
+        "r": "えほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "読みました",
+        "z": "讀了",
+        "j": "読みました",
+        "e": "read",
+        "r": "よみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "登園時に息子が泣き始めると、保育士はお気に入りのおもちゃで迎えてくれました。": [
+      {
+        "t": "登園時",
+        "z": "送到托兒所時",
+        "j": "登園時",
+        "e": "at drop-off",
+        "r": "とうえんじ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "息子",
+        "z": "兒子",
+        "j": "息子",
+        "e": "son",
+        "r": "むすこ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "泣き始める",
+        "z": "開始哭",
+        "j": "泣き始める",
+        "e": "began to cry",
+        "r": "なきはじめる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "保育士",
+        "z": "保育員",
+        "j": "保育士",
+        "e": "nursery teacher",
+        "r": "ほいくし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "お気に入り",
+        "z": "最喜歡的",
+        "j": "お気に入り",
+        "e": "favorite",
+        "r": "おきにいり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "おもちゃ",
+        "z": "玩具",
+        "j": "おもちゃ",
+        "e": "toy",
+        "r": "おもちゃ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "迎えてくれました",
+        "z": "迎接了他",
+        "j": "迎えてくれました",
+        "e": "welcomed him",
+        "r": "むかえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "幼稚園の先生が子どもたちに新しい歌を教えました。": [
+      {
+        "t": "幼稚園",
+        "z": "幼兒園",
+        "j": "幼稚園",
+        "e": "kindergarten",
+        "r": "ようちえん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "先生",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher",
+        "r": "せんせい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "新しい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new",
+        "r": "あたらしい"
+      },
+      {
+        "t": "歌",
+        "z": "歌曲",
+        "j": "歌",
+        "e": "song",
+        "r": "うた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えました",
+        "z": "教了",
+        "j": "教えました",
+        "e": "taught",
+        "r": "おしえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "クラスの作品展に向けて、幼稚園教諭は子どもたちと絵の飾り方を考えました。": [
+      {
+        "t": "クラス",
+        "z": "班級",
+        "j": "クラス",
+        "e": "class",
+        "r": "クラス"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "作品展",
+        "z": "作品展",
+        "j": "作品展",
+        "e": "exhibition",
+        "r": "さくひんてん"
+      },
+      {
+        "t": "に向けて",
+        "z": "為了",
+        "j": "に向けて",
+        "e": "in preparation for",
+        "r": "にむけて"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "幼稚園教諭",
+        "z": "幼兒園老師",
+        "j": "幼稚園教諭",
+        "e": "kindergarten teacher",
+        "r": "ようちえんきょうゆ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "絵",
+        "z": "畫作",
+        "j": "絵",
+        "e": "drawings",
+        "r": "え"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "飾り方",
+        "z": "展示方式",
+        "j": "飾り方",
+        "e": "how to display",
+        "r": "かざりかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "考えました",
+        "z": "一起規劃",
+        "j": "考えました",
+        "e": "planned",
+        "r": "かんがえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "養護教諭が私のひざにばんそうこうを貼ってくれました。": [
+      {
+        "t": "養護教諭",
+        "z": "校護",
+        "j": "養護教諭",
+        "e": "school nurse",
+        "r": "ようごきょうゆ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ひざ",
+        "z": "膝蓋",
+        "j": "ひざ",
+        "e": "knee",
+        "r": "ひざ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ばんそうこう",
+        "z": "OK繃",
+        "j": "ばんそうこう",
+        "e": "bandage",
+        "r": "ばんそうこう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貼ってくれました",
+        "z": "幫忙貼上",
+        "j": "貼ってくれました",
+        "e": "put on",
+        "r": "はってくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "授業中に気分が悪くなったとき、養護教諭は私を保健室で休ませ、家族に連絡してくれました。": [
+      {
+        "t": "授業中",
+        "z": "上課時",
+        "j": "授業中",
+        "e": "during class",
+        "r": "じゅぎょうちゅう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "気分が悪くなった",
+        "z": "覺得不舒服",
+        "j": "気分が悪くなった",
+        "e": "felt unwell",
+        "r": "きぶんがわるくなった"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "養護教諭",
+        "z": "校護",
+        "j": "養護教諭",
+        "e": "school nurse",
+        "r": "ようごきょうゆ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "me",
+        "r": "わたし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "保健室",
+        "z": "保健室",
+        "j": "保健室",
+        "e": "health room",
+        "r": "ほけんしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "休ませ",
+        "z": "讓我休息",
+        "j": "休ませ",
+        "e": "let me rest",
+        "r": "やすませ"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "家族",
+        "z": "家人",
+        "j": "家族",
+        "e": "family",
+        "r": "かぞく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "連絡してくれました",
+        "z": "幫忙聯絡",
+        "j": "連絡してくれました",
+        "e": "contacted",
+        "r": "れんらくしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "図書館司書が本を探すのを手伝ってくれます。": [
+      {
+        "t": "図書館司書",
+        "z": "圖書館員",
+        "j": "図書館司書",
+        "e": "librarian",
+        "r": "としょかんししょ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "本",
+        "z": "書",
+        "j": "本",
+        "e": "book",
+        "r": "ほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "探す",
+        "z": "尋找",
+        "j": "探す",
+        "e": "find",
+        "r": "さがす"
+      },
+      {
+        "t": "のを"
+      },
+      {
+        "t": "手伝ってくれます",
+        "z": "幫助我",
+        "j": "手伝ってくれます",
+        "e": "helps me",
+        "r": "てつだってくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "別の分館でも本を返せるか、図書館司書に聞きました。": [
+      {
+        "t": "別",
+        "z": "另一個",
+        "j": "別",
+        "e": "another",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "分館",
+        "z": "分館",
+        "j": "分館",
+        "e": "branch",
+        "r": "ぶんかん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "も"
+      },
+      {
+        "t": "本",
+        "z": "書",
+        "j": "本",
+        "e": "books",
+        "r": "ほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "返せる",
+        "z": "可以歸還",
+        "j": "返せる",
+        "e": "can return",
+        "r": "かえせる"
+      },
+      {
+        "t": "か、"
+      },
+      {
+        "t": "図書館司書",
+        "z": "圖書館員",
+        "j": "図書館司書",
+        "e": "librarian",
+        "r": "としょかんししょ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "聞きました",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "塾講師が数学の問題を説明します。": [
+      {
+        "t": "塾講師",
+        "z": "補習班老師",
+        "j": "塾講師",
+        "e": "cram school teacher",
+        "r": "じゅくこうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "数学",
+        "z": "數學",
+        "j": "数学",
+        "e": "math",
+        "r": "すうがく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "問題",
+        "z": "題目",
+        "j": "問題",
+        "e": "problem",
+        "r": "もんだい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明します",
+        "z": "講解",
+        "j": "説明します",
+        "e": "explains",
+        "r": "せつめいします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "宿題が分からなかったとき、塾講師が別の解き方を教えてくれました。": [
+      {
+        "t": "宿題",
+        "z": "作業",
+        "j": "宿題",
+        "e": "homework",
+        "r": "しゅくだい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "分からなかった",
+        "z": "不懂",
+        "j": "分からなかった",
+        "e": "did not understand",
+        "r": "わからなかった"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "塾講師",
+        "z": "補習班老師",
+        "j": "塾講師",
+        "e": "cram school teacher",
+        "r": "じゅくこうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "別",
+        "z": "另一種",
+        "j": "別",
+        "e": "another",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "解き方",
+        "z": "解法",
+        "j": "解き方",
+        "e": "way to solve",
+        "r": "ときかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "教了我",
+        "j": "教えてくれました",
+        "e": "showed me",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スポーツコーチがチームに新しい練習を教えます。": [
+      {
+        "t": "スポーツコーチ",
+        "z": "運動教練",
+        "j": "スポーツコーチ",
+        "e": "sports coach",
+        "r": "スポーツコーチ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "チーム",
+        "z": "隊員",
+        "j": "チーム",
+        "e": "team",
+        "r": "チーム"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "新しい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new",
+        "r": "あたらしい"
+      },
+      {
+        "t": "練習",
+        "z": "訓練動作",
+        "j": "練習",
+        "e": "drill",
+        "r": "れんしゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えます",
+        "z": "示範",
+        "j": "教えます",
+        "e": "shows",
+        "r": "おしえます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "次の試合が大切なので、スポーツコーチが練習後に守備の位置を確認しました。": [
+      {
+        "t": "次",
+        "z": "下一個",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "試合",
+        "z": "比賽",
+        "j": "試合",
+        "e": "game",
+        "r": "しあい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "大切",
+        "z": "重要",
+        "j": "大切",
+        "e": "important",
+        "r": "たいせつ"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "スポーツコーチ",
+        "z": "運動教練",
+        "j": "スポーツコーチ",
+        "e": "sports coach",
+        "r": "スポーツコーチ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "練習後",
+        "z": "練習後",
+        "j": "練習後",
+        "e": "after practice",
+        "r": "れんしゅうご"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "守備",
+        "z": "防守",
+        "j": "守備",
+        "e": "defensive",
+        "r": "しゅび"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "位置",
+        "z": "位置",
+        "j": "位置",
+        "e": "positions",
+        "r": "いち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "reviewed",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自動車教習指導員が駐車の仕方を教えてくれます。": [
+      {
+        "t": "自動車教習指導員",
+        "z": "駕駛教練",
+        "j": "自動車教習指導員",
+        "e": "driving instructor",
+        "r": "じどうしゃきょうしゅうしどういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "駐車",
+        "z": "停車",
+        "j": "駐車",
+        "e": "parking",
+        "r": "ちゅうしゃ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "仕方",
+        "z": "方法",
+        "j": "仕方",
+        "e": "how to",
+        "r": "しかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれます",
+        "z": "教我",
+        "j": "教えてくれます",
+        "e": "shows me",
+        "r": "おしえてくれます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "交通量の多い道路に入る前に、自動車教習指導員がミラーと死角を確認するよう声をかけてくれました。": [
+      {
+        "t": "交通量",
+        "z": "車流量",
+        "j": "交通量",
+        "e": "traffic",
+        "r": "こうつうりょう"
+      },
+      {
+        "t": "の多い"
+      },
+      {
+        "t": "道路",
+        "z": "道路",
+        "j": "道路",
+        "e": "road",
+        "r": "どうろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入る",
+        "z": "駛入",
+        "j": "入る",
+        "e": "enter",
+        "r": "はいる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "自動車教習指導員",
+        "z": "駕駛教練",
+        "j": "自動車教習指導員",
+        "e": "driving instructor",
+        "r": "じどうしゃきょうしゅうしどういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ミラー",
+        "z": "後視鏡",
+        "j": "ミラー",
+        "e": "mirrors",
+        "r": "ミラー"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "死角",
+        "z": "死角",
+        "j": "死角",
+        "e": "blind spot",
+        "r": "しかく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認する",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check",
+        "r": "かくにんする"
+      },
+      {
+        "t": "よう"
+      },
+      {
+        "t": "声をかけてくれました",
+        "z": "提醒了我",
+        "j": "声をかけてくれました",
+        "e": "reminded me",
+        "r": "こえをかけてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水泳指導員が子どもたちにバタ足のやり方を見せます。": [
+      {
+        "t": "水泳指導員",
+        "z": "游泳教練",
+        "j": "水泳指導員",
+        "e": "swimming instructor",
+        "r": "すいえいしどういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "バタ足",
+        "z": "踢水",
+        "j": "バタ足",
+        "e": "kicking",
+        "r": "バタあし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "やり方",
+        "z": "方法",
+        "j": "やり方",
+        "e": "how to",
+        "r": "やりかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せます",
+        "z": "示範",
+        "j": "見せます",
+        "e": "shows",
+        "r": "みせます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "娘が深い場所を怖がっていたので、水泳指導員が壁の近くで練習させてくれました。": [
+      {
+        "t": "娘",
+        "z": "女兒",
+        "j": "娘",
+        "e": "daughter",
+        "r": "むすめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "深い",
+        "z": "深的",
+        "j": "深い",
+        "e": "deep",
+        "r": "ふかい"
+      },
+      {
+        "t": "場所",
+        "z": "區域",
+        "j": "場所",
+        "e": "water",
+        "r": "ばしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "怖がっていた",
+        "z": "感到害怕",
+        "j": "怖がっていた",
+        "e": "was afraid",
+        "r": "こわがっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "水泳指導員",
+        "z": "游泳教練",
+        "j": "水泳指導員",
+        "e": "swimming instructor",
+        "r": "すいえいしどういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "壁",
+        "z": "池壁",
+        "j": "壁",
+        "e": "wall",
+        "r": "かべ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "near",
+        "r": "ちかく"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "練習させてくれました",
+        "z": "讓她練習",
+        "j": "練習させてくれました",
+        "e": "let her practice",
+        "r": "れんしゅうさせてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "博物館ガイドが古い花瓶について説明します。": [
+      {
+        "t": "博物館ガイド",
+        "z": "博物館導覽員",
+        "j": "博物館ガイド",
+        "e": "museum guide",
+        "r": "はくぶつかんガイド"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "古い花瓶",
+        "z": "老花瓶",
+        "j": "古い花瓶",
+        "e": "old vase",
+        "r": "ふるいかびん"
+      },
+      {
+        "t": "について"
+      },
+      {
+        "t": "説明します",
+        "z": "向我們介紹",
+        "j": "説明します",
+        "e": "tells us about",
+        "r": "せつめいします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "博物館ガイドが絵の近くでフラッシュを使えない理由を説明してくれました。": [
+      {
+        "t": "博物館ガイド",
+        "z": "博物館導覽員",
+        "j": "博物館ガイド",
+        "e": "museum guide",
+        "r": "はくぶつかんガイド"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "絵",
+        "z": "畫作",
+        "j": "絵",
+        "e": "paintings",
+        "r": "え"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "near",
+        "r": "ちかく"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "フラッシュ",
+        "z": "閃光燈",
+        "j": "フラッシュ",
+        "e": "flash",
+        "r": "フラッシュ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使えない",
+        "z": "不能使用",
+        "j": "使えない",
+        "e": "could not use",
+        "r": "つかえない"
+      },
+      {
+        "t": "理由",
+        "z": "原因",
+        "j": "理由",
+        "e": "reason",
+        "r": "りゆう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明してくれました",
+        "z": "解釋了",
+        "j": "説明してくれました",
+        "e": "explained",
+        "r": "せつめいしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

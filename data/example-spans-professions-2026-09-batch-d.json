@@ -1,0 +1,4689 @@
+{
+  "schemaVersion": 1,
+  "series": "professions",
+  "batch": "D",
+  "en": {
+    "The construction worker carries materials at the building site.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "construction worker",
+        "z": "建築工人",
+        "j": "建設作業員",
+        "e": "construction worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "carries",
+        "z": "搬運",
+        "j": "運びます",
+        "e": "carries"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "materials",
+        "z": "材料",
+        "j": "資材",
+        "e": "materials"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "building site",
+        "z": "工地",
+        "j": "工事現場",
+        "e": "building site"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before the concrete truck arrived, the construction worker checked that no one was in the work area.": [
+      {
+        "t": "Before the "
+      },
+      {
+        "t": "concrete truck",
+        "z": "混凝土車",
+        "j": "生コン車",
+        "e": "concrete truck"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "抵達",
+        "j": "到着する",
+        "e": "arrived"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "construction worker",
+        "z": "建築工人",
+        "j": "建設作業員",
+        "e": "construction worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "確認",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " that "
+      },
+      {
+        "t": "no one",
+        "z": "沒有人",
+        "j": "人がいない",
+        "e": "no one"
+      },
+      {
+        "t": " was in the "
+      },
+      {
+        "t": "work area",
+        "z": "作業區",
+        "j": "作業場所",
+        "e": "work area"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The carpenter measures a wooden board with a tape measure.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "carpenter",
+        "z": "木工",
+        "j": "大工",
+        "e": "carpenter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "measures",
+        "z": "測量",
+        "j": "測ります",
+        "e": "measures"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "wooden board",
+        "z": "木板",
+        "j": "木の板",
+        "e": "wooden board"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "tape measure",
+        "z": "捲尺",
+        "j": "巻尺",
+        "e": "tape measure"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the door frame was uneven, the carpenter trimmed the wood until it fit properly.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "door frame",
+        "z": "門框",
+        "j": "ドア枠",
+        "e": "door frame"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "uneven",
+        "z": "不平整",
+        "j": "ゆがんでいた",
+        "e": "uneven"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "carpenter",
+        "z": "木工",
+        "j": "大工",
+        "e": "carpenter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "trimmed",
+        "z": "削整",
+        "j": "削って",
+        "e": "trimmed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wood",
+        "z": "木料",
+        "j": "木材",
+        "e": "wood"
+      },
+      {
+        "t": " until it "
+      },
+      {
+        "t": "fit properly",
+        "z": "妥善嵌合",
+        "j": "ぴったり収まる",
+        "e": "fit properly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The electrician checks the breaker panel with a tester.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "electrician",
+        "z": "電工",
+        "j": "電気工事士",
+        "e": "electrician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checks",
+        "z": "檢查",
+        "j": "点検します",
+        "e": "checks"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "breaker panel",
+        "z": "配電盤",
+        "j": "分電盤",
+        "e": "breaker panel"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "tester",
+        "z": "測試器",
+        "j": "テスター",
+        "e": "tester"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After turning off the power, the electrician replaced the damaged outlet and tested the circuit.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "turning off",
+        "z": "關閉",
+        "j": "切った",
+        "e": "turning off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "power",
+        "z": "電源",
+        "j": "電源",
+        "e": "power"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "electrician",
+        "z": "電工",
+        "j": "電気工事士",
+        "e": "electrician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replaced",
+        "z": "更換了",
+        "j": "交換して",
+        "e": "replaced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "damaged outlet",
+        "z": "損壞的插座",
+        "j": "壊れたコンセント",
+        "e": "damaged outlet"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "tested",
+        "z": "測試了",
+        "j": "確認しました",
+        "e": "tested"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "circuit",
+        "z": "電路",
+        "j": "回路",
+        "e": "circuit"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The plumber repairs the drainpipe under the sink.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "plumber",
+        "z": "水管工",
+        "j": "配管工",
+        "e": "plumber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "repairs",
+        "z": "修理",
+        "j": "修理します",
+        "e": "repairs"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "drainpipe",
+        "z": "排水管",
+        "j": "排水管",
+        "e": "drainpipe"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "sink",
+        "z": "流理臺",
+        "j": "流し台",
+        "e": "sink"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because water was leaking, the plumber shut off the main valve before replacing the damaged pipe.": [
+      {
+        "t": "Because "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "leaking",
+        "z": "正在漏出",
+        "j": "漏れていた",
+        "e": "leaking"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "plumber",
+        "z": "水管工",
+        "j": "配管工",
+        "e": "plumber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shut off",
+        "z": "關閉了",
+        "j": "閉めました",
+        "e": "shut off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "main valve",
+        "z": "總閥",
+        "j": "元栓",
+        "e": "main valve"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "replacing",
+        "z": "更換",
+        "j": "交換する",
+        "e": "replacing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "damaged pipe",
+        "z": "損壞的管線",
+        "j": "傷んだ管",
+        "e": "damaged pipe"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The painter applies white paint to the wall with a roller.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "painter",
+        "z": "油漆工",
+        "j": "塗装工",
+        "e": "painter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "applies",
+        "z": "塗上",
+        "j": "塗ります",
+        "e": "applies"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "white paint",
+        "z": "白色油漆",
+        "j": "白い塗料",
+        "e": "white paint"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "wall",
+        "z": "牆面",
+        "j": "壁",
+        "e": "wall"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "roller",
+        "z": "滾筒",
+        "j": "ローラー",
+        "e": "roller"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the furniture was still in the room, the painter covered the floor and shelves before starting.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "furniture",
+        "z": "家具",
+        "j": "家具",
+        "e": "furniture"
+      },
+      {
+        "t": " was still in the "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "painter",
+        "z": "油漆工",
+        "j": "塗装工",
+        "e": "painter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "covered",
+        "z": "遮蓋保護",
+        "j": "養生しました",
+        "e": "covered"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "floor",
+        "z": "地板",
+        "j": "床",
+        "e": "floor"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "shelves",
+        "z": "層架",
+        "j": "棚",
+        "e": "shelves"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "starting",
+        "z": "開工",
+        "j": "作業前",
+        "e": "starting"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The plasterer smooths the wall with a trowel.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "plasterer",
+        "z": "泥作師傅",
+        "j": "左官",
+        "e": "plasterer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "smooths",
+        "z": "抹平",
+        "j": "平らにします",
+        "e": "smooths"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wall",
+        "z": "牆面",
+        "j": "壁の表面",
+        "e": "wall"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "trowel",
+        "z": "抹刀",
+        "j": "こて",
+        "e": "trowel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the base coat had dried, the plasterer applied another layer of plaster to make the wall even.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "base coat",
+        "z": "底層",
+        "j": "下塗り",
+        "e": "base coat"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "dried",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "dried"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "plasterer",
+        "z": "泥作師傅",
+        "j": "左官",
+        "e": "plasterer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "applied",
+        "z": "塗上",
+        "j": "塗りました",
+        "e": "applied"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "another layer",
+        "z": "另一層",
+        "j": "もう一層",
+        "e": "another layer"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "plaster",
+        "z": "灰泥",
+        "j": "しっくい",
+        "e": "plaster"
+      },
+      {
+        "t": " to make the "
+      },
+      {
+        "t": "wall",
+        "z": "牆面",
+        "j": "壁",
+        "e": "wall"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "even",
+        "z": "平整",
+        "j": "平ら",
+        "e": "even"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The roofer replaces a broken roof tile.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "roofer",
+        "z": "屋頂工",
+        "j": "屋根職人",
+        "e": "roofer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replaces",
+        "z": "更換",
+        "j": "交換します",
+        "e": "replaces"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "broken roof tile",
+        "z": "破裂的屋瓦",
+        "j": "割れた屋根瓦",
+        "e": "broken roof tile"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before climbing onto the roof, the roofer attached the safety harness and checked the anchor point.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "climbing",
+        "z": "爬上",
+        "j": "上がる",
+        "e": "climbing"
+      },
+      {
+        "t": " onto the "
+      },
+      {
+        "t": "roof",
+        "z": "屋頂",
+        "j": "屋根",
+        "e": "roof"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "roofer",
+        "z": "屋頂工",
+        "j": "屋根職人",
+        "e": "roofer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "attached",
+        "z": "穿戴好",
+        "j": "装着して",
+        "e": "attached"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "safety harness",
+        "z": "安全吊帶",
+        "j": "安全帯",
+        "e": "safety harness"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "checked",
+        "z": "檢查了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "anchor point",
+        "z": "固定點",
+        "j": "固定箇所",
+        "e": "anchor point"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The welder puts on a protective mask before starting work.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "welder",
+        "z": "焊接工",
+        "j": "溶接工",
+        "e": "welder"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "puts on",
+        "z": "戴上",
+        "j": "着けます",
+        "e": "puts on"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "protective mask",
+        "z": "防護面罩",
+        "j": "防護面",
+        "e": "protective mask"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "starting work",
+        "z": "開始工作",
+        "j": "作業を始める",
+        "e": "starting work"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After checking that the area was safe, the welder repaired the damaged metal railing.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "checking",
+        "z": "確認",
+        "j": "確認して",
+        "e": "checking"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "area",
+        "z": "周圍環境",
+        "j": "周囲",
+        "e": "area"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "safe",
+        "z": "安全",
+        "j": "安全",
+        "e": "safe"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "welder",
+        "z": "焊接工",
+        "j": "溶接工",
+        "e": "welder"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "repaired",
+        "z": "修好了",
+        "j": "修理しました",
+        "e": "repaired"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "damaged",
+        "z": "損壞的",
+        "j": "壊れた",
+        "e": "damaged"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "metal railing",
+        "z": "金屬欄杆",
+        "j": "金属製の手すり",
+        "e": "metal railing"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The crane operator lifts a steel beam at the construction site.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "crane operator",
+        "z": "起重機操作員",
+        "j": "クレーン運転士",
+        "e": "crane operator"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lifts",
+        "z": "吊起",
+        "j": "つり上げます",
+        "e": "lifts"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "steel beam",
+        "z": "鋼樑",
+        "j": "鉄骨",
+        "e": "steel beam"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "construction site",
+        "z": "工地",
+        "j": "工事現場",
+        "e": "construction site"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the ground worker gave the signal, the crane operator slowly moved the load to the designated area.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "ground worker",
+        "z": "地面作業員",
+        "j": "地上の作業員",
+        "e": "ground worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gave",
+        "z": "發出",
+        "j": "出す",
+        "e": "gave"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "signal",
+        "z": "信號",
+        "j": "合図",
+        "e": "signal"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "crane operator",
+        "z": "起重機操作員",
+        "j": "クレーン運転士",
+        "e": "crane operator"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "緩慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "moved",
+        "z": "移動",
+        "j": "移動させました",
+        "e": "moved"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "load",
+        "z": "吊掛物",
+        "j": "吊り荷",
+        "e": "load"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "designated area",
+        "z": "指定區域",
+        "j": "指定場所",
+        "e": "designated area"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The surveyor sets up a tripod beside the road.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "surveyor",
+        "z": "測量員",
+        "j": "測量士",
+        "e": "surveyor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sets up",
+        "z": "架設",
+        "j": "設置します",
+        "e": "sets up"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "tripod",
+        "z": "三腳架",
+        "j": "三脚",
+        "e": "tripod"
+      },
+      {
+        "t": " beside the "
+      },
+      {
+        "t": "road",
+        "z": "道路",
+        "j": "道路",
+        "e": "road"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before construction began, the surveyor recorded the boundary and checked each measurement twice.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "construction",
+        "z": "施工",
+        "j": "工事",
+        "e": "construction"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "began",
+        "z": "開始",
+        "j": "始まる",
+        "e": "began"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "surveyor",
+        "z": "測量員",
+        "j": "測量士",
+        "e": "surveyor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "recorded",
+        "z": "記錄",
+        "j": "記録しました",
+        "e": "recorded"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "boundary",
+        "z": "邊界",
+        "j": "境界",
+        "e": "boundary"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "checked",
+        "z": "複核",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " each "
+      },
+      {
+        "t": "measurement",
+        "z": "測量值",
+        "j": "測定値",
+        "e": "measurement"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "twice",
+        "z": "兩次",
+        "j": "二度",
+        "e": "twice"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The building cleaner mops the lobby before the office opens.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "building cleaner",
+        "z": "大樓清潔員",
+        "j": "ビル清掃員",
+        "e": "building cleaner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "mops",
+        "z": "拖洗",
+        "j": "モップで拭きます",
+        "e": "mops"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lobby",
+        "z": "大廳",
+        "j": "ロビー",
+        "e": "lobby"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "office",
+        "z": "辦公大樓",
+        "j": "オフィス",
+        "e": "office"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "opens",
+        "z": "開放",
+        "j": "始業する",
+        "e": "opens"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After noticing a spill near the elevator, the building cleaner placed a warning sign and cleaned the floor.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "noticing",
+        "z": "發現",
+        "j": "見つけ",
+        "e": "noticing"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "spill",
+        "z": "灑出的液體",
+        "j": "こぼれた液体",
+        "e": "spill"
+      },
+      {
+        "t": " near the "
+      },
+      {
+        "t": "elevator",
+        "z": "電梯",
+        "j": "エレベーター",
+        "e": "elevator"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "building cleaner",
+        "z": "大樓清潔員",
+        "j": "ビル清掃員",
+        "e": "building cleaner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "placed",
+        "z": "放置",
+        "j": "置きました",
+        "e": "placed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "warning sign",
+        "z": "警示牌",
+        "j": "注意看板",
+        "e": "warning sign"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "cleaned",
+        "z": "清理",
+        "j": "清掃しました",
+        "e": "cleaned"
+      },
+      {
+        "t": " the floor."
+      }
+    ],
+    "The street cleaner sweeps leaves from the sidewalk.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "street cleaner",
+        "z": "道路清潔員",
+        "j": "道路清掃員",
+        "e": "street cleaner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sweeps",
+        "z": "清掃",
+        "j": "掃きます",
+        "e": "sweeps"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "leaves",
+        "z": "落葉",
+        "j": "落ち葉",
+        "e": "leaves"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "sidewalk",
+        "z": "人行道",
+        "j": "歩道",
+        "e": "sidewalk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the festival ended, the street cleaners collected litter before the morning traffic became heavy.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "festival",
+        "z": "祭典",
+        "j": "祭り",
+        "e": "festival"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ended",
+        "z": "結束",
+        "j": "終わりました",
+        "e": "ended"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "street cleaners",
+        "z": "道路清潔員",
+        "j": "道路清掃員たち",
+        "e": "street cleaners"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "collected",
+        "z": "收集",
+        "j": "集めました",
+        "e": "collected"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "litter",
+        "z": "散落的垃圾",
+        "j": "散乱ごみ",
+        "e": "litter"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "morning traffic",
+        "z": "早晨車流",
+        "j": "朝の交通量",
+        "e": "morning traffic"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "became heavy",
+        "z": "變多",
+        "j": "増える",
+        "e": "became heavy"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The garbage collector loads the bags into the garbage truck.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "garbage collector",
+        "z": "垃圾清運員",
+        "j": "ごみ収集作業員",
+        "e": "garbage collector"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "loads",
+        "z": "裝上",
+        "j": "積み込みます",
+        "e": "loads"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bags",
+        "z": "垃圾袋",
+        "j": "ごみ袋",
+        "e": "bags"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "garbage truck",
+        "z": "垃圾車",
+        "j": "収集車",
+        "e": "garbage truck"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the street was narrow, the garbage collectors carried the garbage bags to the truck parked at the corner.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "street",
+        "z": "道路",
+        "j": "道",
+        "e": "street"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "narrow",
+        "z": "狹窄",
+        "j": "道幅が狭い",
+        "e": "narrow"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "garbage collectors",
+        "z": "垃圾清運員",
+        "j": "ごみ収集作業員たち",
+        "e": "garbage collectors"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "carried",
+        "z": "搬運",
+        "j": "運びました",
+        "e": "carried"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "garbage bags",
+        "z": "垃圾袋",
+        "j": "ごみ袋",
+        "e": "garbage bags"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "truck",
+        "z": "垃圾車",
+        "j": "収集車",
+        "e": "truck"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "parked",
+        "z": "停放的",
+        "j": "止めた",
+        "e": "parked"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "corner",
+        "z": "轉角",
+        "j": "角",
+        "e": "corner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The window cleaner wipes the shop window with a squeegee.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "window cleaner",
+        "z": "玻璃清潔員",
+        "j": "窓清掃員",
+        "e": "window cleaner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wipes",
+        "z": "擦拭",
+        "j": "拭きます",
+        "e": "wipes"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shop window",
+        "z": "商店櫥窗",
+        "j": "店の窓",
+        "e": "shop window"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "squeegee",
+        "z": "刮水器",
+        "j": "スクイージー",
+        "e": "squeegee"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before cleaning the upper-floor windows, the window cleaner checked the harness and secured the rope.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "cleaning",
+        "z": "清潔",
+        "j": "清掃する",
+        "e": "cleaning"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "upper-floor windows",
+        "z": "高樓層窗戶",
+        "j": "上階の窓",
+        "e": "upper-floor windows"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "window cleaner",
+        "z": "玻璃清潔員",
+        "j": "窓清掃員",
+        "e": "window cleaner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查",
+        "j": "点検しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "harness",
+        "z": "安全吊帶",
+        "j": "安全帯",
+        "e": "harness"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "secured",
+        "z": "固定",
+        "j": "固定しました",
+        "e": "secured"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "rope",
+        "z": "繩索",
+        "j": "ロープ",
+        "e": "rope"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The hotel housekeeper replaced the towels in my room.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hotel housekeeper",
+        "z": "飯店房務員",
+        "j": "客室清掃員",
+        "e": "hotel housekeeper"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replaced",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "replaced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "towels",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towels"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the guests checked out, the hotel housekeeper made the bed and restocked the toiletries.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "guests",
+        "z": "房客",
+        "j": "客",
+        "e": "guests"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked out",
+        "z": "退房",
+        "j": "チェックアウトした",
+        "e": "checked out"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "hotel housekeeper",
+        "z": "飯店房務員",
+        "j": "客室清掃員",
+        "e": "hotel housekeeper"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "made the bed",
+        "z": "整理床鋪",
+        "j": "ベッドを整えた",
+        "e": "made the bed"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "restocked",
+        "z": "補齊",
+        "j": "補充した",
+        "e": "restocked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "toiletries",
+        "z": "盥洗用品",
+        "j": "アメニティー",
+        "e": "toiletries"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The gardener trimmed the hedge by the gate.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "gardener",
+        "z": "園丁",
+        "j": "庭師",
+        "e": "gardener"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "trimmed",
+        "z": "修剪了",
+        "j": "刈り込んだ",
+        "e": "trimmed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hedge",
+        "z": "樹籬",
+        "j": "生け垣",
+        "e": "hedge"
+      },
+      {
+        "t": " by the "
+      },
+      {
+        "t": "gate",
+        "z": "大門",
+        "j": "門",
+        "e": "gate"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because several branches blocked the path, the gardener cut them back before the park opened.": [
+      {
+        "t": "Because several "
+      },
+      {
+        "t": "branches",
+        "z": "樹枝",
+        "j": "枝",
+        "e": "branches"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "blocked",
+        "z": "擋住",
+        "j": "ふさいでいた",
+        "e": "blocked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "path",
+        "z": "步道",
+        "j": "通路",
+        "e": "path"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "gardener",
+        "z": "園丁",
+        "j": "庭師",
+        "e": "gardener"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cut them back",
+        "z": "將它們剪短",
+        "j": "枝を切り戻した",
+        "e": "cut them back"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "park",
+        "z": "公園",
+        "j": "公園",
+        "e": "park"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "opened",
+        "z": "開放",
+        "j": "開園した",
+        "e": "opened"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The auto mechanic checked the brakes on my car.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "auto mechanic",
+        "z": "汽車修理技師",
+        "j": "自動車整備士",
+        "e": "auto mechanic"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "檢查了",
+        "j": "点検した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "brakes",
+        "z": "煞車",
+        "j": "ブレーキ",
+        "e": "brakes"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "car",
+        "z": "車子",
+        "j": "車",
+        "e": "car"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After hearing a strange noise, the auto mechanic lifted the car to inspect the underside.": [
+      {
+        "t": "After hearing a "
+      },
+      {
+        "t": "strange noise",
+        "z": "異音",
+        "j": "異音",
+        "e": "strange noise"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "auto mechanic",
+        "z": "汽車修理技師",
+        "j": "自動車整備士",
+        "e": "auto mechanic"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lifted",
+        "z": "抬升了",
+        "j": "持ち上げた",
+        "e": "lifted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "car",
+        "z": "車輛",
+        "j": "車",
+        "e": "car"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "inspect",
+        "z": "檢查",
+        "j": "点検する",
+        "e": "inspect"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "underside",
+        "z": "底盤",
+        "j": "下回り",
+        "e": "underside"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bicycle mechanic fixed my flat tire.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bicycle mechanic",
+        "z": "自行車修理師",
+        "j": "自転車整備士",
+        "e": "bicycle mechanic"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fixed",
+        "z": "修好了",
+        "j": "直した",
+        "e": "fixed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "flat tire",
+        "z": "漏氣的輪胎",
+        "j": "パンクしたタイヤ",
+        "e": "flat tire"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the chain kept slipping off, the bicycle mechanic adjusted the derailleur and tested the gears.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "chain",
+        "z": "鏈條",
+        "j": "チェーン",
+        "e": "chain"
+      },
+      {
+        "t": " kept "
+      },
+      {
+        "t": "slipping off",
+        "z": "一再脫落",
+        "j": "何度も外れた",
+        "e": "slipping off"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "bicycle mechanic",
+        "z": "自行車修理師",
+        "j": "自転車整備士",
+        "e": "bicycle mechanic"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "derailleur",
+        "z": "變速器",
+        "j": "変速機",
+        "e": "derailleur"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "tested",
+        "z": "測試",
+        "j": "試した",
+        "e": "tested"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "gears",
+        "z": "檔位",
+        "j": "ギア",
+        "e": "gears"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The appliance repair technician replaced the washing machine hose.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "appliance repair technician",
+        "z": "家電維修技師",
+        "j": "家電修理技術者",
+        "e": "appliance repair technician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replaced",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "replaced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "washing machine hose",
+        "z": "洗衣機水管",
+        "j": "洗濯機のホース",
+        "e": "washing machine hose"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After finding that the filter was blocked, the appliance repair technician cleaned it and ran the air conditioner again.": [
+      {
+        "t": "After finding that the "
+      },
+      {
+        "t": "filter",
+        "z": "濾網",
+        "j": "フィルター",
+        "e": "filter"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "blocked",
+        "z": "堵塞",
+        "j": "詰まっている",
+        "e": "blocked"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "appliance repair technician",
+        "z": "家電維修技師",
+        "j": "家電修理技術者",
+        "e": "appliance repair technician"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cleaned",
+        "z": "清潔了",
+        "j": "掃除した",
+        "e": "cleaned"
+      },
+      {
+        "t": " it and "
+      },
+      {
+        "t": "ran",
+        "z": "啟動",
+        "j": "作動させました",
+        "e": "ran"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "air conditioner",
+        "z": "冷氣",
+        "j": "エアコン",
+        "e": "air conditioner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "again",
+        "z": "再次",
+        "j": "もう一度",
+        "e": "again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pest control worker placed pest traps under the kitchen sink.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pest control worker",
+        "z": "害蟲防治人員",
+        "j": "害虫駆除作業員",
+        "e": "pest control worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "placed",
+        "z": "放置了",
+        "j": "置いた",
+        "e": "placed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pest traps",
+        "z": "捕蟲器",
+        "j": "害虫用のわな",
+        "e": "pest traps"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "kitchen sink",
+        "z": "廚房水槽",
+        "j": "台所の流し台",
+        "e": "kitchen sink"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After finding a gap near the pipe, the pest control worker sealed it to keep insects out.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "finding",
+        "z": "發現",
+        "j": "見つけた",
+        "e": "finding"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "gap",
+        "z": "縫隙",
+        "j": "隙間",
+        "e": "gap"
+      },
+      {
+        "t": " near the "
+      },
+      {
+        "t": "pipe",
+        "z": "管線",
+        "j": "配管",
+        "e": "pipe"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "pest control worker",
+        "z": "害蟲防治人員",
+        "j": "害虫駆除作業員",
+        "e": "pest control worker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sealed",
+        "z": "封住",
+        "j": "塞いだ",
+        "e": "sealed"
+      },
+      {
+        "t": " it to keep "
+      },
+      {
+        "t": "insects",
+        "z": "昆蟲",
+        "j": "虫",
+        "e": "insects"
+      },
+      {
+        "t": " out."
+      }
+    ]
+  },
+  "ja": {
+    "建設作業員が工事現場で資材を運びます。": [
+      {
+        "t": "建設作業員",
+        "z": "建築工人",
+        "j": "建設作業員",
+        "e": "construction worker",
+        "r": "けんせつさぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "工事現場",
+        "z": "工地",
+        "j": "工事現場",
+        "e": "building site",
+        "r": "こうじげんば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "資材",
+        "z": "材料",
+        "j": "資材",
+        "e": "materials",
+        "r": "しざい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "運びます",
+        "z": "搬運",
+        "j": "運びます",
+        "e": "carries",
+        "r": "はこびます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "生コン車が到着する前に、建設作業員は作業場所に人がいないことを確認しました。": [
+      {
+        "t": "生コン車",
+        "z": "混凝土車",
+        "j": "生コン車",
+        "e": "concrete truck",
+        "r": "なまコンしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "到着する",
+        "z": "抵達",
+        "j": "到着する",
+        "e": "arrived",
+        "r": "とうちゃくする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "建設作業員",
+        "z": "建築工人",
+        "j": "建設作業員",
+        "e": "construction worker",
+        "r": "けんせつさぎょういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "作業場所",
+        "z": "作業區",
+        "j": "作業場所",
+        "e": "work area",
+        "r": "さぎょうばしょ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "anyone",
+        "r": "ひと"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "いない",
+        "z": "沒有人",
+        "j": "いない",
+        "e": "no one was there",
+        "r": "いない"
+      },
+      {
+        "t": "ことを"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大工が巻尺で木の板を測ります。": [
+      {
+        "t": "大工",
+        "z": "木工",
+        "j": "大工",
+        "e": "carpenter",
+        "r": "だいく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "巻尺",
+        "z": "捲尺",
+        "j": "巻尺",
+        "e": "tape measure",
+        "r": "まきじゃく"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "木",
+        "z": "木製的",
+        "j": "木",
+        "e": "wooden",
+        "r": "き"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "板",
+        "z": "木板",
+        "j": "板",
+        "e": "board",
+        "r": "いた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "測ります",
+        "z": "測量",
+        "j": "測ります",
+        "e": "measures",
+        "r": "はかります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドア枠がゆがんでいたので、大工が木材を削ってぴったり収まるように調整しました。": [
+      {
+        "t": "ドア枠",
+        "z": "門框",
+        "j": "ドア枠",
+        "e": "door frame",
+        "r": "ドアわく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ゆがんでいた",
+        "z": "不平整",
+        "j": "ゆがんでいた",
+        "e": "was uneven",
+        "r": "ゆがんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "大工",
+        "z": "木工",
+        "j": "大工",
+        "e": "carpenter",
+        "r": "だいく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "木材",
+        "z": "木料",
+        "j": "木材",
+        "e": "wood",
+        "r": "もくざい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "削って",
+        "z": "削整",
+        "j": "削って",
+        "e": "trimmed",
+        "r": "けずって"
+      },
+      {
+        "t": "ぴったり",
+        "z": "恰好",
+        "j": "ぴったり",
+        "e": "properly",
+        "r": "ぴったり"
+      },
+      {
+        "t": "収まる",
+        "z": "嵌合",
+        "j": "収まる",
+        "e": "fit",
+        "r": "おさまる"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "調整しました",
+        "z": "調整了",
+        "j": "調整しました",
+        "e": "adjusted",
+        "r": "ちょうせいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "電気工事士がテスターで分電盤を点検します。": [
+      {
+        "t": "電気工事士",
+        "z": "電工",
+        "j": "電気工事士",
+        "e": "electrician",
+        "r": "でんきこうじし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "テスター",
+        "z": "測試器",
+        "j": "テスター",
+        "e": "tester",
+        "r": "テスター"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "分電盤",
+        "z": "配電盤",
+        "j": "分電盤",
+        "e": "breaker panel",
+        "r": "ぶんでんばん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "点検します",
+        "z": "檢查",
+        "j": "点検します",
+        "e": "checks",
+        "r": "てんけんします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "電源を切ったあと、電気工事士が壊れたコンセントを交換して回路を確認しました。": [
+      {
+        "t": "電源",
+        "z": "電源",
+        "j": "電源",
+        "e": "power",
+        "r": "でんげん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切ったあと",
+        "z": "關閉後",
+        "j": "切ったあと",
+        "e": "after turning off",
+        "r": "きったあと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "電気工事士",
+        "z": "電工",
+        "j": "電気工事士",
+        "e": "electrician",
+        "r": "でんきこうじし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "壊れた",
+        "z": "損壞的",
+        "j": "壊れた",
+        "e": "damaged",
+        "r": "こわれた"
+      },
+      {
+        "t": "コンセント",
+        "z": "插座",
+        "j": "コンセント",
+        "e": "outlet",
+        "r": "コンセント"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換して",
+        "z": "更換",
+        "j": "交換して",
+        "e": "replaced",
+        "r": "こうかんして"
+      },
+      {
+        "t": "回路",
+        "z": "電路",
+        "j": "回路",
+        "e": "circuit",
+        "r": "かいろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "測試了",
+        "j": "確認しました",
+        "e": "tested",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "配管工が流し台の下の排水管を修理します。": [
+      {
+        "t": "配管工",
+        "z": "水管工",
+        "j": "配管工",
+        "e": "plumber",
+        "r": "はいかんこう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "流し台",
+        "z": "流理臺",
+        "j": "流し台",
+        "e": "sink",
+        "r": "ながしだい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下方",
+        "j": "下",
+        "e": "under",
+        "r": "した"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "排水管",
+        "z": "排水管",
+        "j": "排水管",
+        "e": "drainpipe",
+        "r": "はいすいかん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "修理します",
+        "z": "修理",
+        "j": "修理します",
+        "e": "repairs",
+        "r": "しゅうりします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水漏れしていたので、配管工は傷んだ管を交換する前に元栓を閉めました。": [
+      {
+        "t": "水漏れしていた",
+        "z": "正在漏水",
+        "j": "水漏れしていた",
+        "e": "water was leaking",
+        "r": "みずもれしていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "配管工",
+        "z": "水管工",
+        "j": "配管工",
+        "e": "plumber",
+        "r": "はいかんこう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "傷んだ",
+        "z": "損壞的",
+        "j": "傷んだ",
+        "e": "damaged",
+        "r": "いたんだ"
+      },
+      {
+        "t": "管",
+        "z": "管線",
+        "j": "管",
+        "e": "pipe",
+        "r": "かん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換する",
+        "z": "更換",
+        "j": "交換する",
+        "e": "replacing",
+        "r": "こうかんする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "元栓",
+        "z": "總閥",
+        "j": "元栓",
+        "e": "main valve",
+        "r": "もとせん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "閉めました",
+        "z": "關閉了",
+        "j": "閉めました",
+        "e": "shut off",
+        "r": "しめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "塗装工がローラーで壁に白い塗料を塗ります。": [
+      {
+        "t": "塗装工",
+        "z": "油漆工",
+        "j": "塗装工",
+        "e": "painter",
+        "r": "とそうこう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ローラー",
+        "z": "滾筒",
+        "j": "ローラー",
+        "e": "roller",
+        "r": "ローラー"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "壁",
+        "z": "牆面",
+        "j": "壁",
+        "e": "wall",
+        "r": "かべ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "白い",
+        "z": "白色的",
+        "j": "白い",
+        "e": "white",
+        "r": "しろい"
+      },
+      {
+        "t": "塗料",
+        "z": "油漆",
+        "j": "塗料",
+        "e": "paint",
+        "r": "とりょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗ります",
+        "z": "塗上",
+        "j": "塗ります",
+        "e": "applies",
+        "r": "ぬります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家具がまだ部屋にあったので、塗装工は作業前に床と棚を養生しました。": [
+      {
+        "t": "家具",
+        "z": "家具",
+        "j": "家具",
+        "e": "furniture",
+        "r": "かぐ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ部屋にあった",
+        "z": "仍在房間裡",
+        "j": "まだ部屋にあった",
+        "e": "was still in the room",
+        "r": "まだへやにあった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "塗装工",
+        "z": "油漆工",
+        "j": "塗装工",
+        "e": "painter",
+        "r": "とそうこう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "作業前",
+        "z": "開工前",
+        "j": "作業前",
+        "e": "before starting",
+        "r": "さぎょうまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "床",
+        "z": "地板",
+        "j": "床",
+        "e": "floor",
+        "r": "ゆか"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "棚",
+        "z": "層架",
+        "j": "棚",
+        "e": "shelves",
+        "r": "たな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "養生しました",
+        "z": "遮蓋保護了",
+        "j": "養生しました",
+        "e": "covered",
+        "r": "ようじょうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "左官がこてで壁の表面を平らにします。": [
+      {
+        "t": "左官",
+        "z": "泥作師傅",
+        "j": "左官",
+        "e": "plasterer",
+        "r": "さかん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "こて",
+        "z": "抹刀",
+        "j": "こて",
+        "e": "trowel",
+        "r": "こて"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "壁",
+        "z": "牆面",
+        "j": "壁",
+        "e": "wall",
+        "r": "かべ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "表面",
+        "z": "表面",
+        "j": "表面",
+        "e": "surface",
+        "r": "ひょうめん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "平らにします",
+        "z": "抹平",
+        "j": "平らにします",
+        "e": "smooths",
+        "r": "たいらにします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "下塗りが乾いたので、左官が壁を平らにするためにしっくいをもう一層塗りました。": [
+      {
+        "t": "下塗り",
+        "z": "底層",
+        "j": "下塗り",
+        "e": "base coat",
+        "r": "したぬり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乾いた",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "had dried",
+        "r": "かわいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "左官",
+        "z": "泥作師傅",
+        "j": "左官",
+        "e": "plasterer",
+        "r": "さかん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "壁",
+        "z": "牆面",
+        "j": "壁",
+        "e": "wall",
+        "r": "かべ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "平らにする",
+        "z": "使其平整",
+        "j": "平らにする",
+        "e": "make even",
+        "r": "たいらにする"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "しっくい",
+        "z": "灰泥",
+        "j": "しっくい",
+        "e": "plaster",
+        "r": "しっくい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もう一層",
+        "z": "另一層",
+        "j": "もう一層",
+        "e": "another layer",
+        "r": "もういっそう"
+      },
+      {
+        "t": "塗りました",
+        "z": "塗上了",
+        "j": "塗りました",
+        "e": "applied",
+        "r": "ぬりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "屋根職人が割れた屋根瓦を交換します。": [
+      {
+        "t": "屋根職人",
+        "z": "屋頂工",
+        "j": "屋根職人",
+        "e": "roofer",
+        "r": "やねしょくにん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "割れた",
+        "z": "破裂的",
+        "j": "割れた",
+        "e": "broken",
+        "r": "われた"
+      },
+      {
+        "t": "屋根瓦",
+        "z": "屋瓦",
+        "j": "屋根瓦",
+        "e": "roof tile",
+        "r": "やねがわら"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換します",
+        "z": "更換",
+        "j": "交換します",
+        "e": "replaces",
+        "r": "こうかんします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "屋根に上がる前に、屋根職人は安全帯を装着して固定箇所を確認しました。": [
+      {
+        "t": "屋根",
+        "z": "屋頂",
+        "j": "屋根",
+        "e": "roof",
+        "r": "やね"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "上がる",
+        "z": "爬上",
+        "j": "上がる",
+        "e": "climbing",
+        "r": "あがる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "屋根職人",
+        "z": "屋頂工",
+        "j": "屋根職人",
+        "e": "roofer",
+        "r": "やねしょくにん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "安全帯",
+        "z": "安全吊帶",
+        "j": "安全帯",
+        "e": "safety harness",
+        "r": "あんぜんたい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "装着して",
+        "z": "穿戴好",
+        "j": "装着して",
+        "e": "attached",
+        "r": "そうちゃくして"
+      },
+      {
+        "t": "固定箇所",
+        "z": "固定點",
+        "j": "固定箇所",
+        "e": "anchor point",
+        "r": "こていかしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "檢查了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "溶接工は作業を始める前に防護面を着けます。": [
+      {
+        "t": "溶接工",
+        "z": "焊接工",
+        "j": "溶接工",
+        "e": "welder",
+        "r": "ようせつこう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "作業",
+        "z": "工作",
+        "j": "作業",
+        "e": "work",
+        "r": "さぎょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "始める",
+        "z": "開始",
+        "j": "始める",
+        "e": "start",
+        "r": "はじめる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "防護面",
+        "z": "防護面罩",
+        "j": "防護面",
+        "e": "protective mask",
+        "r": "ぼうごめん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着けます",
+        "z": "戴上",
+        "j": "着けます",
+        "e": "puts on",
+        "r": "つけます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "周囲の安全を確認してから、溶接工は壊れた金属製の手すりを修理しました。": [
+      {
+        "t": "周囲",
+        "z": "周圍環境",
+        "j": "周囲",
+        "e": "area",
+        "r": "しゅうい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "安全",
+        "z": "安全",
+        "j": "安全",
+        "e": "safety",
+        "r": "あんぜん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "z": "確認後",
+        "j": "確認して",
+        "e": "after checking",
+        "r": "かくにんして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "溶接工",
+        "z": "焊接工",
+        "j": "溶接工",
+        "e": "welder",
+        "r": "ようせつこう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "壊れた",
+        "z": "損壞的",
+        "j": "壊れた",
+        "e": "damaged",
+        "r": "こわれた"
+      },
+      {
+        "t": "金属製",
+        "z": "金屬製的",
+        "j": "金属製",
+        "e": "metal",
+        "r": "きんぞくせい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "手すり",
+        "z": "欄杆",
+        "j": "手すり",
+        "e": "railing",
+        "r": "てすり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "修理しました",
+        "z": "修好了",
+        "j": "修理しました",
+        "e": "repaired",
+        "r": "しゅうりしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "クレーン運転士が工事現場で鉄骨をつり上げます。": [
+      {
+        "t": "クレーン運転士",
+        "z": "起重機操作員",
+        "j": "クレーン運転士",
+        "e": "crane operator",
+        "r": "クレーンうんてんし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "工事現場",
+        "z": "工地",
+        "j": "工事現場",
+        "e": "construction site",
+        "r": "こうじげんば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "鉄骨",
+        "z": "鋼樑",
+        "j": "鉄骨",
+        "e": "steel beam",
+        "r": "てっこつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つり上げます",
+        "z": "吊起",
+        "j": "つり上げます",
+        "e": "lifts",
+        "r": "つりあげます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "地上の作業員が合図を出すと、クレーン運転士は吊り荷を指定場所へゆっくり移動させました。": [
+      {
+        "t": "地上の"
+      },
+      {
+        "t": "作業員",
+        "z": "作業員",
+        "j": "作業員",
+        "e": "worker",
+        "r": "さぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "合図",
+        "z": "信號",
+        "j": "合図",
+        "e": "signal",
+        "r": "あいず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出す",
+        "z": "發出",
+        "j": "出す",
+        "e": "gave",
+        "r": "だす"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "クレーン運転士",
+        "z": "起重機操作員",
+        "j": "クレーン運転士",
+        "e": "crane operator",
+        "r": "クレーンうんてんし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "吊り荷",
+        "z": "吊掛物",
+        "j": "吊り荷",
+        "e": "load",
+        "r": "つりに"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "指定場所",
+        "z": "指定區域",
+        "j": "指定場所",
+        "e": "designated area",
+        "r": "していばしょ"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "緩慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "移動させました",
+        "z": "移動了",
+        "j": "移動させました",
+        "e": "moved",
+        "r": "いどうさせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "測量士が道路脇に三脚を設置します。": [
+      {
+        "t": "測量士",
+        "z": "測量員",
+        "j": "測量士",
+        "e": "surveyor",
+        "r": "そくりょうし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "道路脇",
+        "z": "道路旁",
+        "j": "道路脇",
+        "e": "beside the road",
+        "r": "どうろわき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "三脚",
+        "z": "三腳架",
+        "j": "三脚",
+        "e": "tripod",
+        "r": "さんきゃく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "設置します",
+        "z": "架設",
+        "j": "設置します",
+        "e": "sets up",
+        "r": "せっちします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "工事が始まる前に、測量士は境界を記録し、それぞれの測定値を二度確認しました。": [
+      {
+        "t": "工事",
+        "z": "施工",
+        "j": "工事",
+        "e": "construction",
+        "r": "こうじ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "始まる",
+        "z": "開始",
+        "j": "始まる",
+        "e": "began",
+        "r": "はじまる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "測量士",
+        "z": "測量員",
+        "j": "測量士",
+        "e": "surveyor",
+        "r": "そくりょうし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "境界",
+        "z": "邊界",
+        "j": "境界",
+        "e": "boundary",
+        "r": "きょうかい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "記録し",
+        "z": "記錄",
+        "j": "記録し",
+        "e": "recorded",
+        "r": "きろくし"
+      },
+      {
+        "t": "、それぞれの"
+      },
+      {
+        "t": "測定値",
+        "z": "測量值",
+        "j": "測定値",
+        "e": "measurement",
+        "r": "そくていち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "二度",
+        "z": "兩次",
+        "j": "二度",
+        "e": "twice",
+        "r": "にど"
+      },
+      {
+        "t": "確認しました",
+        "z": "複核了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ビル清掃員がオフィスの始業前にロビーをモップで拭きます。": [
+      {
+        "t": "ビル清掃員",
+        "z": "大樓清潔員",
+        "j": "ビル清掃員",
+        "e": "building cleaner",
+        "r": "ビルせいそういん"
+      },
+      {
+        "t": "がオフィスの"
+      },
+      {
+        "t": "始業前",
+        "z": "開始上班前",
+        "j": "始業前",
+        "e": "before opening",
+        "r": "しぎょうまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ロビー",
+        "z": "大廳",
+        "j": "ロビー",
+        "e": "lobby",
+        "r": "ロビー"
+      },
+      {
+        "t": "をモップで"
+      },
+      {
+        "t": "拭きます",
+        "z": "拖洗",
+        "j": "拭きます",
+        "e": "mops",
+        "r": "ふきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "エレベーターの近くで液体がこぼれているのを見つけ、ビル清掃員は注意看板を置いて床を清掃しました。": [
+      {
+        "t": "エレベーター",
+        "z": "電梯",
+        "j": "エレベーター",
+        "e": "elevator",
+        "r": "エレベーター"
+      },
+      {
+        "t": "の近くで"
+      },
+      {
+        "t": "液体",
+        "z": "液體",
+        "j": "液体",
+        "e": "spill",
+        "r": "えきたい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "こぼれている",
+        "z": "灑出",
+        "j": "こぼれている",
+        "e": "spilled",
+        "r": "こぼれている"
+      },
+      {
+        "t": "のを"
+      },
+      {
+        "t": "見つけ",
+        "z": "發現",
+        "j": "見つけ",
+        "e": "noticing",
+        "r": "みつけ"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "ビル清掃員",
+        "z": "大樓清潔員",
+        "j": "ビル清掃員",
+        "e": "building cleaner",
+        "r": "ビルせいそういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "注意看板",
+        "z": "警示牌",
+        "j": "注意看板",
+        "e": "warning sign",
+        "r": "ちゅういかんばん"
+      },
+      {
+        "t": "を置いて"
+      },
+      {
+        "t": "床",
+        "z": "地板",
+        "j": "床",
+        "e": "floor",
+        "r": "ゆか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "清掃しました",
+        "z": "清理",
+        "j": "清掃しました",
+        "e": "cleaned",
+        "r": "せいそうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "道路清掃員が歩道の落ち葉を掃きます。": [
+      {
+        "t": "道路清掃員",
+        "z": "道路清潔員",
+        "j": "道路清掃員",
+        "e": "street cleaner",
+        "r": "どうろせいそういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "歩道",
+        "z": "人行道",
+        "j": "歩道",
+        "e": "sidewalk",
+        "r": "ほどう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "落ち葉",
+        "z": "落葉",
+        "j": "落ち葉",
+        "e": "leaves",
+        "r": "おちば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "掃きます",
+        "z": "清掃",
+        "j": "掃きます",
+        "e": "sweeps",
+        "r": "はきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "祭りが終わった後、道路清掃員たちは朝の交通量が増える前に散乱ごみを集めました。": [
+      {
+        "t": "祭り",
+        "z": "祭典",
+        "j": "祭り",
+        "e": "festival",
+        "r": "まつり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "終わった",
+        "z": "結束",
+        "j": "終わった",
+        "e": "ended",
+        "r": "おわった"
+      },
+      {
+        "t": "後、"
+      },
+      {
+        "t": "道路清掃員たち",
+        "z": "道路清潔員",
+        "j": "道路清掃員たち",
+        "e": "street cleaners",
+        "r": "どうろせいそういんたち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "朝",
+        "z": "早晨",
+        "j": "朝",
+        "e": "morning",
+        "r": "あさ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "交通量",
+        "z": "車流",
+        "j": "交通量",
+        "e": "traffic",
+        "r": "こうつうりょう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "増える",
+        "z": "變多",
+        "j": "増える",
+        "e": "became heavy",
+        "r": "ふえる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "散乱ごみ",
+        "z": "散落的垃圾",
+        "j": "散乱ごみ",
+        "e": "litter",
+        "r": "さんらんごみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "集めました",
+        "z": "收集",
+        "j": "集めました",
+        "e": "collected",
+        "r": "あつめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ごみ収集作業員がごみ袋を収集車に積み込みます。": [
+      {
+        "t": "ごみ収集作業員",
+        "z": "垃圾清運員",
+        "j": "ごみ収集作業員",
+        "e": "garbage collector",
+        "r": "ごみしゅうしゅうさぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ごみ袋",
+        "z": "垃圾袋",
+        "j": "ごみ袋",
+        "e": "bags",
+        "r": "ごみぶくろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "収集車",
+        "z": "垃圾車",
+        "j": "収集車",
+        "e": "garbage truck",
+        "r": "しゅうしゅうしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "積み込みます",
+        "z": "裝上",
+        "j": "積み込みます",
+        "e": "loads",
+        "r": "つみこみます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "道幅が狭かったため、ごみ収集作業員たちはごみ袋を角に止めた収集車まで運びました。": [
+      {
+        "t": "道幅",
+        "z": "道路寬度",
+        "j": "道幅",
+        "e": "street width",
+        "r": "みちはば"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "狭かった",
+        "z": "狹窄",
+        "j": "狭かった",
+        "e": "was narrow",
+        "r": "せまかった"
+      },
+      {
+        "t": "ため、"
+      },
+      {
+        "t": "ごみ収集作業員たち",
+        "z": "垃圾清運員",
+        "j": "ごみ収集作業員たち",
+        "e": "garbage collectors",
+        "r": "ごみしゅうしゅうさぎょういんたち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ごみ袋",
+        "z": "垃圾袋",
+        "j": "ごみ袋",
+        "e": "garbage bags",
+        "r": "ごみぶくろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "角",
+        "z": "轉角",
+        "j": "角",
+        "e": "corner",
+        "r": "かど"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "止めた",
+        "z": "停放的",
+        "j": "止めた",
+        "e": "parked",
+        "r": "とめた"
+      },
+      {
+        "t": "収集車",
+        "z": "垃圾車",
+        "j": "収集車",
+        "e": "truck",
+        "r": "しゅうしゅうしゃ"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "運びました",
+        "z": "搬運",
+        "j": "運びました",
+        "e": "carried",
+        "r": "はこびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "窓清掃員がスクイージーで店の窓を拭きます。": [
+      {
+        "t": "窓清掃員",
+        "z": "玻璃清潔員",
+        "j": "窓清掃員",
+        "e": "window cleaner",
+        "r": "まどせいそういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "スクイージー",
+        "z": "刮水器",
+        "j": "スクイージー",
+        "e": "squeegee",
+        "r": "スクイージー"
+      },
+      {
+        "t": "で店の"
+      },
+      {
+        "t": "窓",
+        "z": "櫥窗",
+        "j": "窓",
+        "e": "shop window",
+        "r": "まど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "拭きます",
+        "z": "擦拭",
+        "j": "拭きます",
+        "e": "wipes",
+        "r": "ふきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "上階の窓を清掃する前に、窓清掃員は安全帯を点検してロープを固定しました。": [
+      {
+        "t": "上階",
+        "z": "高樓層",
+        "j": "上階",
+        "e": "upper floor",
+        "r": "じょうかい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "窓",
+        "z": "窗戶",
+        "j": "窓",
+        "e": "windows",
+        "r": "まど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "清掃する",
+        "z": "清潔",
+        "j": "清掃する",
+        "e": "cleaning",
+        "r": "せいそうする"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "窓清掃員",
+        "z": "玻璃清潔員",
+        "j": "窓清掃員",
+        "e": "window cleaner",
+        "r": "まどせいそういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "安全帯",
+        "z": "安全吊帶",
+        "j": "安全帯",
+        "e": "harness",
+        "r": "あんぜんたい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "点検して",
+        "z": "檢查",
+        "j": "点検して",
+        "e": "checked",
+        "r": "てんけんして"
+      },
+      {
+        "t": "ロープ",
+        "z": "繩索",
+        "j": "ロープ",
+        "e": "rope",
+        "r": "ロープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "固定しました",
+        "z": "固定",
+        "j": "固定しました",
+        "e": "secured",
+        "r": "こていしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "客室清掃員が私の部屋のタオルを交換しました。": [
+      {
+        "t": "客室清掃員",
+        "z": "飯店房務員",
+        "j": "客室清掃員",
+        "e": "hotel housekeeper",
+        "r": "きゃくしつせいそういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "タオル",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towels",
+        "r": "タオル"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換しました",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "replaced",
+        "r": "こうかんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "客がチェックアウトしたあと、客室清掃員はベッドを整え、アメニティーを補充しました。": [
+      {
+        "t": "客",
+        "z": "房客",
+        "j": "客",
+        "e": "guests",
+        "r": "きゃく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "チェックアウトした",
+        "z": "退房了",
+        "j": "チェックアウトした",
+        "e": "checked out",
+        "r": "チェックアウトした"
+      },
+      {
+        "t": "あと",
+        "z": "之後",
+        "j": "あと",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "客室清掃員",
+        "z": "飯店房務員",
+        "j": "客室清掃員",
+        "e": "hotel housekeeper",
+        "r": "きゃくしつせいそういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ベッド",
+        "z": "床鋪",
+        "j": "ベッド",
+        "e": "bed",
+        "r": "ベッド"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "整え",
+        "z": "整理",
+        "j": "整え",
+        "e": "made",
+        "r": "ととのえ"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "アメニティー",
+        "z": "盥洗用品",
+        "j": "アメニティー",
+        "e": "toiletries",
+        "r": "アメニティー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "補充しました",
+        "z": "補齊了",
+        "j": "補充した",
+        "e": "restocked",
+        "r": "ほじゅうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "庭師が門のそばの生け垣を刈り込みました。": [
+      {
+        "t": "庭師",
+        "z": "園丁",
+        "j": "庭師",
+        "e": "gardener",
+        "r": "にわし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "門",
+        "z": "大門",
+        "j": "門",
+        "e": "gate",
+        "r": "もん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "そば",
+        "z": "旁邊",
+        "j": "そば",
+        "e": "by",
+        "r": "そば"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "生け垣",
+        "z": "樹籬",
+        "j": "生け垣",
+        "e": "hedge",
+        "r": "いけがき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "刈り込みました",
+        "z": "修剪了",
+        "j": "刈り込んだ",
+        "e": "trimmed",
+        "r": "かりこみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "数本の枝が通路をふさいでいたので、庭師は開園前に枝を切り戻しました。": [
+      {
+        "t": "数本",
+        "z": "幾根",
+        "j": "数本",
+        "e": "several",
+        "r": "すうほん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "枝",
+        "z": "樹枝",
+        "j": "枝",
+        "e": "branches",
+        "r": "えだ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "通路",
+        "z": "步道",
+        "j": "通路",
+        "e": "path",
+        "r": "つうろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ふさいでいた",
+        "z": "擋住了",
+        "j": "ふさいでいた",
+        "e": "blocked",
+        "r": "ふさいでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "庭師",
+        "z": "園丁",
+        "j": "庭師",
+        "e": "gardener",
+        "r": "にわし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "開園前",
+        "z": "公園開放前",
+        "j": "開園前",
+        "e": "before the park opened",
+        "r": "かいえんまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "枝",
+        "z": "樹枝",
+        "j": "枝",
+        "e": "them",
+        "r": "えだ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切り戻しました",
+        "z": "剪短了",
+        "j": "切り戻した",
+        "e": "cut back",
+        "r": "きりもどしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自動車整備士が私の車のブレーキを点検しました。": [
+      {
+        "t": "自動車整備士",
+        "z": "汽車修理技師",
+        "j": "自動車整備士",
+        "e": "auto mechanic",
+        "r": "じどうしゃせいびし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "車",
+        "z": "車子",
+        "j": "車",
+        "e": "car",
+        "r": "くるま"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ブレーキ",
+        "z": "煞車",
+        "j": "ブレーキ",
+        "e": "brakes",
+        "r": "ブレーキ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "点検しました",
+        "z": "檢查了",
+        "j": "点検した",
+        "e": "checked",
+        "r": "てんけんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "異音を聞いたあと、自動車整備士は車を持ち上げて下回りを点検しました。": [
+      {
+        "t": "異音",
+        "z": "異音",
+        "j": "異音",
+        "e": "strange noise",
+        "r": "いおん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "聞いた",
+        "z": "聽到",
+        "j": "聞いた",
+        "e": "hearing",
+        "r": "きいた"
+      },
+      {
+        "t": "あと",
+        "z": "之後",
+        "j": "あと",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "自動車整備士",
+        "z": "汽車修理技師",
+        "j": "自動車整備士",
+        "e": "auto mechanic",
+        "r": "じどうしゃせいびし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "車",
+        "z": "車輛",
+        "j": "車",
+        "e": "car",
+        "r": "くるま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ち上げて",
+        "z": "抬升",
+        "j": "持ち上げて",
+        "e": "lifted",
+        "r": "もちあげて"
+      },
+      {
+        "t": "下回り",
+        "z": "底盤",
+        "j": "下回り",
+        "e": "underside",
+        "r": "したまわり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "点検しました",
+        "z": "檢查",
+        "j": "点検した",
+        "e": "inspected",
+        "r": "てんけんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自転車整備士が私のパンクしたタイヤを直しました。": [
+      {
+        "t": "自転車整備士",
+        "z": "自行車修理師",
+        "j": "自転車整備士",
+        "e": "bicycle mechanic",
+        "r": "じてんしゃせいびし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我的",
+        "j": "私",
+        "e": "my",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "パンクした",
+        "z": "漏氣的",
+        "j": "パンクした",
+        "e": "flat",
+        "r": "パンクした"
+      },
+      {
+        "t": "タイヤ",
+        "z": "輪胎",
+        "j": "タイヤ",
+        "e": "tire",
+        "r": "タイヤ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "直しました",
+        "z": "修好了",
+        "j": "直した",
+        "e": "fixed",
+        "r": "なおしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "チェーンが何度も外れたので、自転車整備士は変速機を調整し、変速を確認しました。": [
+      {
+        "t": "チェーン",
+        "z": "鏈條",
+        "j": "チェーン",
+        "e": "chain",
+        "r": "チェーン"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "何度も",
+        "z": "一再",
+        "j": "何度も",
+        "e": "kept",
+        "r": "なんども"
+      },
+      {
+        "t": "外れた",
+        "z": "脫落",
+        "j": "外れた",
+        "e": "slipping off",
+        "r": "はずれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "自転車整備士",
+        "z": "自行車修理師",
+        "j": "自転車整備士",
+        "e": "bicycle mechanic",
+        "r": "じてんしゃせいびし"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "変速機",
+        "z": "變速器",
+        "j": "変速機",
+        "e": "derailleur",
+        "r": "へんそくき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整し",
+        "z": "調整了",
+        "j": "調整し",
+        "e": "adjusted",
+        "r": "ちょうせいし"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "変速",
+        "z": "檔位",
+        "j": "変速",
+        "e": "gears",
+        "r": "へんそく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "測試",
+        "j": "確認した",
+        "e": "tested",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家電修理技術者が洗濯機のホースを交換しました。": [
+      {
+        "t": "家電修理技術者",
+        "z": "家電維修技師",
+        "j": "家電修理技術者",
+        "e": "appliance repair technician",
+        "r": "かでんしゅうりぎじゅつしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "洗濯機",
+        "z": "洗衣機",
+        "j": "洗濯機",
+        "e": "washing machine",
+        "r": "せんたくき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ホース",
+        "z": "水管",
+        "j": "ホース",
+        "e": "hose",
+        "r": "ホース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換しました",
+        "z": "更換了",
+        "j": "交換した",
+        "e": "replaced",
+        "r": "こうかんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "フィルターが詰まっていると分かったので、家電修理技術者は掃除してエアコンをもう一度作動させました。": [
+      {
+        "t": "フィルター",
+        "z": "濾網",
+        "j": "フィルター",
+        "e": "filter",
+        "r": "フィルター"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "詰まっていると分かった",
+        "z": "發現堵塞",
+        "j": "詰まっていると分かった",
+        "e": "found blocked",
+        "r": "つまっているとわかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "家電修理技術者",
+        "z": "家電維修技師",
+        "j": "家電修理技術者",
+        "e": "appliance repair technician",
+        "r": "かでんしゅうりぎじゅつしゃ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "掃除して",
+        "z": "清潔了",
+        "j": "掃除して",
+        "e": "cleaned",
+        "r": "そうじして"
+      },
+      {
+        "t": "エアコン",
+        "z": "冷氣",
+        "j": "エアコン",
+        "e": "air conditioner",
+        "r": "エアコン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もう一度",
+        "z": "再次",
+        "j": "もう一度",
+        "e": "again",
+        "r": "もういちど"
+      },
+      {
+        "t": "作動させました",
+        "z": "啟動",
+        "j": "作動させました",
+        "e": "ran",
+        "r": "さどうさせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "害虫駆除作業員が台所の流し台の下に害虫用のわなを置きました。": [
+      {
+        "t": "害虫駆除作業員",
+        "z": "害蟲防治人員",
+        "j": "害虫駆除作業員",
+        "e": "pest control worker",
+        "r": "がいちゅうくじょさぎょういん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "台所",
+        "z": "廚房",
+        "j": "台所",
+        "e": "kitchen",
+        "r": "だいどころ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "流し台",
+        "z": "水槽",
+        "j": "流し台",
+        "e": "sink",
+        "r": "ながしだい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下方",
+        "j": "下",
+        "e": "under",
+        "r": "した"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "害虫用",
+        "z": "捕蟲用",
+        "j": "害虫用",
+        "e": "for pests",
+        "r": "がいちゅうよう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "わな",
+        "z": "捕蟲器",
+        "j": "わな",
+        "e": "traps",
+        "r": "わな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置きました",
+        "z": "放置了",
+        "j": "置いた",
+        "e": "placed",
+        "r": "おきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "配管の近くに隙間を見つけたあと、害虫駆除作業員は虫が入らないように塞ぎました。": [
+      {
+        "t": "配管",
+        "z": "管線",
+        "j": "配管",
+        "e": "pipe",
+        "r": "はいかん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "near",
+        "r": "ちかく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "隙間",
+        "z": "縫隙",
+        "j": "隙間",
+        "e": "gap",
+        "r": "すきま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見つけたあと",
+        "z": "發現後",
+        "j": "見つけたあと",
+        "e": "after finding",
+        "r": "みつけたあと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "害虫駆除作業員",
+        "z": "害蟲防治人員",
+        "j": "害虫駆除作業員",
+        "e": "pest control worker",
+        "r": "がいちゅうくじょさぎょういん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "虫",
+        "z": "昆蟲",
+        "j": "虫",
+        "e": "insects",
+        "r": "むし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "入らないように",
+        "z": "避免進入",
+        "j": "入らないように",
+        "e": "to keep out",
+        "r": "はいらないように"
+      },
+      {
+        "t": "塞ぎました",
+        "z": "封住了",
+        "j": "塞いだ",
+        "e": "sealed",
+        "r": "ふさぎました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

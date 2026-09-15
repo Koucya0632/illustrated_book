@@ -4,7 +4,7 @@
 
 import "server-only";
 import type { Category } from "@/types";
-import { categories as staticCategories } from "./categories";
+import { publicFallbackCategories as staticCategories } from "./categories";
 import { localizeCategory, type CategoryTranslation } from "./word-localize";
 import type { UiLang } from "./settings";
 import { getSql } from "./db";

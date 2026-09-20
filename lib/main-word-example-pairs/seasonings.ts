@@ -5,6 +5,12 @@ import type {
 
 export const SEASONINGS_SIMPLE_OVERRIDES: MainWordSimpleExampleOverride[] = [
   {
+    id: "sake",
+    en: "We drank chilled sake with dinner.",
+    ja: "夕食に冷たい日本酒を飲みました。",
+    zh: "我們晚餐時喝了冰涼的清酒。",
+  },
+  {
     id: "cumin",
     en: "Cumin adds a warm, earthy flavor.",
     ja: "クミンは温かみのある土っぽい風味を加えます。",
@@ -90,7 +96,7 @@ export const SEASONINGS_COMPLEX_EXAMPLES: MainWordComplexExample[] = [
   { id: "apple-cider-vinegar", en: "Because apple cider vinegar is sharp, I mix it with olive oil before dressing the salad.", ja: "リンゴ酢は酸味が強いので、サラダにかける前にオリーブオイルと混ぜます。", zh: "蘋果醋酸味強，所以淋沙拉前我會先和橄欖油混合。" },
   { id: "mirin", en: "After adding mirin to the sauce, simmer it briefly so the alcohol cooks off.", ja: "たれにみりんを加えたら、アルコールを飛ばすために少し煮ます。", zh: "味醂加進醬汁後稍微煮一下，讓酒精揮發。" },
   { id: "rice-wine", en: "When making three cup chicken, let the Taiwanese rice wine reduce before turning off the heat.", ja: "三杯鶏を作るときは、火を止める前に台湾米酒の水分を飛ばします。", zh: "做三杯雞時，關火前要讓米酒收乾。" },
-  { id: "sake", en: "Because sake helps reduce the fishy smell, I pour it over the fish before simmering.", ja: "魚の臭みを抑えるために、煮る前に日本酒をかけます。", zh: "清酒能減少魚腥味，所以我燉魚前先淋上。" },
+  { id: "sake", en: "When I asked for a sake that goes well with sashimi, the server recommended a dry local sake.", ja: "刺身に合う日本酒を尋ねたら、店員が辛口の地酒を勧めてくれました。", zh: "我詢問適合搭配生魚片的清酒時，店員推薦了一款辛口地酒。" },
   { id: "vegetable-oil", en: "If the vegetable oil is hot enough, the food will absorb less of it while frying.", ja: "植物油が十分に熱くなっていれば、揚げ物が油を吸いすぎません。", zh: "植物油溫度夠高時，油炸食物就不會吸入太多油。" },
   { id: "chili-oil", en: "Since the chili oil is very hot, I add a few drops and taste the sauce first.", ja: "ラー油はとても辛いので、数滴入れてからたれを味見します。", zh: "辣椒油很辣，所以我先滴幾滴並試味道。" },
   { id: "yellow-mustard", en: "Because yellow mustard is mild, the children add it to their hot dogs themselves.", ja: "イエローマスタードは辛さが弱いので、子どもたちが自分でホットドッグにかけます。", zh: "黃芥末味道溫和，所以孩子自己加在熱狗上。" },

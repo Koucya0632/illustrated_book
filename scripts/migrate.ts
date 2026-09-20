@@ -13,12 +13,20 @@ import { runAtlasTextModeration } from "../lib/atlas/moderation";
 import { applyMainWordCorrections } from "../lib/main-word-corrections";
 import { applyMainWordMerges } from "../lib/main-word-merges";
 import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
+import { MAIN_WORD_ALCOHOLIC_DRINKS_IDS } from "../lib/main-word-alcoholic-drinks-2026-09";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 
-const GUARDED_PUBLISH_WORD_IDS = new Set<string>(MAIN_WORD_PROFESSIONS_IDS);
+const GUARDED_PUBLISH_SERIES = [
+  { category: "professions", ids: MAIN_WORD_PROFESSIONS_IDS },
+  { category: "alcoholic-drinks", ids: MAIN_WORD_ALCOHOLIC_DRINKS_IDS },
+] as const;
+const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
+  GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),
+);
 const isGuardedPublishWord = (word: { id: string; category: string }) =>
-  GUARDED_PUBLISH_WORD_IDS.has(word.id) || word.category === "professions";
+  GUARDED_PUBLISH_WORD_IDS.has(word.id) ||
+  GUARDED_PUBLISH_SERIES.some(({ category }) => category === word.category);
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -1927,24 +1935,37 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
 // that isn't in the table yet (the words_category_fk would reject it).
 //
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function seedCategoriesIntoDb(sql: any) {
-  const guardedPublishedRows = await sql<{ id: string }[]>`
-    SELECT id FROM words
-    WHERE id = ANY(${MAIN_WORD_PROFESSIONS_IDS})
-      AND category = 'professions'
+async function readGuardedSeriesPublicationState(
+  sql: any,
+): Promise<Map<string, boolean>> {
+  const guardedPublishedRows = await sql<{ id: string; category: string }[]>`
+    SELECT id, category FROM words
+    WHERE id = ANY(${Array.from(GUARDED_PUBLISH_WORD_IDS)})
       AND status = 'published'
       AND deleted_at IS NULL
   `;
-  const guardedPublishedIds = new Set(
-    guardedPublishedRows.map(({ id }: { id: string }) => id),
+  const guardedPublishedKeys = new Set(
+    guardedPublishedRows.map(
+      ({ id, category }: { id: string; category: string }) =>
+        `${category}:${id}`,
+    ),
   );
-  const guardedCategoryIsPublished =
-    MAIN_WORD_PROFESSIONS_IDS.every((id) => guardedPublishedIds.has(id));
+  return new Map(
+    GUARDED_PUBLISH_SERIES.map(({ category, ids }) => [
+      category,
+      ids.every((id) => guardedPublishedKeys.has(`${category}:${id}`)),
+    ]),
+  );
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function seedCategoriesIntoDb(sql: any) {
+  const guardedPublicationState = await readGuardedSeriesPublicationState(sql);
   for (const c of seedCategories) {
-    // The professions category and its 100 words are released together by the
-    // guarded publisher. A routine deploy must not expose the empty category
-    // or become an alternate path around that publisher.
-    if (c.id === "professions" && !guardedCategoryIsPublished) continue;
+    // A guarded category and all its planned words are released together by a
+    // dedicated publisher. Routine deploys must not expose an empty or partial
+    // category, or become an alternate path around that publisher.
+    if (guardedPublicationState.get(c.id) === false) continue;
     await sql`
       INSERT INTO categories
         (id, name, name_zh, emoji, description, description_en, color, image_url, sort_order)
@@ -1992,8 +2013,12 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
   `;
   await sql`
     INSERT INTO category_translations (category_id, language, name)
-    SELECT 'professions', 'ja', '職業'
-    WHERE EXISTS (SELECT 1 FROM categories WHERE id = 'professions')
+    SELECT v.id, 'ja', v.name
+      FROM (VALUES
+        ('professions', '職業'),
+        ('alcoholic-drinks', '酒類')
+      ) AS v(id, name)
+     WHERE EXISTS (SELECT 1 FROM categories WHERE id = v.id)
     ON CONFLICT (category_id, language) DO NOTHING
   `;
 
@@ -2016,6 +2041,7 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
         ('seasonings',     '料理をおいしくする名脇役'),
         ('fruits',         '日常の定番と四季の旬を楽しむ果物'),
         ('professions',    '日常生活を支えるさまざまな仕事'),
+        ('alcoholic-drinks', '日本酒から世界各地の身近なお酒まで'),
         ('zodiac',         '十二星座と英語の名前')
       ) AS v(id, description)
       JOIN categories c ON c.id = v.id
@@ -2552,8 +2578,8 @@ async function generateCards(sql: any) {
   let inserted = 0;
   let skipped = 0;
   for (const w of seedWords) {
-    // Never create cards for absent/draft words. In particular, the guarded
-    // professions publisher owns both cards and the draft-to-published flip.
+    // Never create cards for absent/draft words. Dedicated guarded publishers
+    // own both card creation and each series' draft-to-published flip.
     if (!publishedIds.has(w.id)) continue;
     for (const c of cardsForWord(w)) {
       const r = await sql`
@@ -2747,13 +2773,13 @@ async function main() {
     );
     if (guardedMissing.length > 0) {
       console.log(
-        `[migrate] deferring ${guardedMissing.length} guarded profession word(s) to professions:publish.`,
+        `[migrate] deferring ${guardedMissing.length} guarded series word(s) to its dedicated publisher.`,
       );
     }
     if (missing.length === 0) {
       console.log(
         guardedMissing.length > 0
-          ? "[migrate] all routine seed words present; guarded professions remain deferred."
+          ? "[migrate] all routine seed words present; guarded series remain deferred."
           : `[migrate] all ${seedWords.length} seed words present — nothing to seed.`,
       );
     } else {
@@ -2786,6 +2812,11 @@ async function main() {
       SELECT id FROM words WHERE status = 'published' AND deleted_at IS NULL
     `;
     const publishedWordIds = new Set(publishedWordRows.map(({ id }) => id));
+    const guardedPublicationState = await readGuardedSeriesPublicationState(sql);
+    for (const { category, ids } of GUARDED_PUBLISH_SERIES) {
+      if (guardedPublicationState.get(category)) continue;
+      for (const id of ids) publishedWordIds.delete(id);
+    }
     const correctedWords = await applyMainWordCorrections(sql, publishedWordIds);
     console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
     const pairedExamples = await applyMainWordExamplePairs(

@@ -53,9 +53,13 @@ test("the professions publisher is a read-only dry run unless all write gates ar
 });
 
 test("public fallbacks cannot expose the guarded series before database publication", () => {
-  assert.match(wordsSource, /export const publicFallbackWords:[\s\S]*word\.category !== "professions"/);
+  assert.match(
+    wordsSource,
+    /export const publicFallbackWords:[\s\S]*!\["professions", "alcoholic-drinks"\]\.includes\(word\.category\)/,
+  );
   assert.match(publicData, /import \{ publicFallbackWords as staticWords \} from "\.\/words"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "professions"/);
+  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "alcoholic-drinks"/);
   assert.match(
     categoriesDb,
     /import \{ publicFallbackCategories as staticCategories \} from "\.\/categories"/,
@@ -141,9 +145,10 @@ test("interrupted applies reuse one journal and rollback remains retryable", () 
 
 test("routine deploys defer the guarded series and touch only published catalogue rows", () => {
   assert.match(migration, /GUARDED_PUBLISH_WORD_IDS\.has\(word\.id\)/);
-  assert.match(migration, /word\.category === "professions"/);
-  assert.match(migration, /MAIN_WORD_PROFESSIONS_IDS\.every/);
-  assert.match(migration, /deferring \$\{guardedMissing\.length\} guarded profession word/);
+  assert.match(migration, /GUARDED_PUBLISH_SERIES\.some/);
+  assert.match(migration, /ids\.every\(\(id\) => guardedPublishedKeys\.has/);
+  assert.match(migration, /deferring \$\{guardedMissing\.length\} guarded series word/);
+  assert.match(migration, /publishedWordIds\.delete\(id\)/);
   assert.match(migration, /if \(!publishedIds\.has\(w\.id\)\) continue/);
   assert.match(migration, /SELECT id FROM words WHERE status = 'published' AND deleted_at IS NULL/);
   assert.match(migration, /applyMainWordExamplePairs\([\s\S]*publishedWordIds/);

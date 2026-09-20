@@ -1,4 +1,5 @@
 import type postgres from "postgres";
+import { MAIN_WORD_ALCOHOLIC_DRINKS_CORRECTIONS } from "./main-word-alcoholic-drinks-2026-09";
 import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_CORRECTIONS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS } from "./main-word-expansion-2026-09-batch-3";
@@ -99,6 +100,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS,
   ...MAIN_WORD_FRUITS_CORRECTIONS,
   ...MAIN_WORD_PROFESSIONS_CORRECTIONS,
+  ...MAIN_WORD_ALCOHOLIC_DRINKS_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",
@@ -2061,14 +2063,18 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   {
     id: "sake",
     examples: [
-      dailySeasoningExample(
-        "sake",
-        "清酒",
-        "日本酒",
-        "Add sake when simmering the fish.",
-        "煮魚時加入清酒。",
-        "魚を煮るときに日本酒を加えます。",
-      ),
+      {
+        sortOrder: 0,
+        oldEn: "Add some sake to the dish.",
+        previousEn: "Add sake when simmering the fish.",
+        en: "We drank chilled sake with dinner.",
+        oldZh: "在這道菜裡加一些清酒。",
+        previousZh: "煮魚時加入清酒。",
+        zh: "我們晚餐時喝了冰涼的清酒。",
+        oldJa: "この料理に日本酒を少し加えます。",
+        previousJa: "魚を煮るときに日本酒を加えます。",
+        ja: "夕食に冷たい日本酒を飲みました。",
+      },
     ],
   },
   {

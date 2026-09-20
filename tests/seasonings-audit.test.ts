@@ -109,8 +109,8 @@ test("seasonings readings and contextual glosses match the reviewed cards", () =
     }
   }
   assert.equal(
-    tap("ja", pair("sake").examples[1].ja, "臭み").r,
-    "くさみ",
+    tap("ja", pair("sake").examples[1].ja, "辛口").r,
+    "からくち",
   );
 
   assert.equal(tap("ja", pair("bay-leaf").examples[1].ja, "枚数").e, "number of leaves");

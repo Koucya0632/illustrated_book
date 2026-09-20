@@ -235,6 +235,6 @@ test("the professions category and deploy migration are wired before catalogue c
   assert.ok(categoryTranslationsAt < wordsAt);
   assert.ok(wordsAt < correctionsAt);
   assert.ok(correctionsAt < examplesAt);
-  assert.match(migration, /SELECT 'professions',\s*'ja',\s*'職業'/);
+  assert.match(migration, /\('professions', '職業'\)/);
   assert.match(migration, /\('professions',\s*'日常生活を支えるさまざまな仕事'\)/);
 });

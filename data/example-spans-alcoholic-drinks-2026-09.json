@@ -1,0 +1,8256 @@
+{
+  "en": {
+    "I ordered a beer with dinner.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ordered",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "b": "order",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "beer",
+        "z": "啤酒",
+        "j": "ビール",
+        "e": "beer",
+        "b": "beer",
+        "p": "noun"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "b": "dinner",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the restaurant had several local beers, I asked which one went best with grilled chicken.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "restaurant",
+        "z": "餐廳",
+        "j": "店",
+        "e": "restaurant",
+        "b": "restaurant",
+        "p": "noun"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "several local beers",
+        "z": "幾種當地啤酒",
+        "j": "地元のビールが数種類",
+        "e": "several local beers",
+        "b": "several local beers",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "asked",
+        "z": "問了",
+        "j": "尋ねました",
+        "e": "asked",
+        "b": "ask",
+        "p": "verb"
+      },
+      {
+        "t": " which one "
+      },
+      {
+        "t": "went best with grilled chicken",
+        "z": "最適合烤雞",
+        "j": "グリルチキンに一番合う",
+        "e": "went best with grilled chicken",
+        "b": "go best with grilled chicken",
+        "p": "expression"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Two draft beers, please.": [
+      {
+        "t": "Two",
+        "z": "兩杯",
+        "j": "二杯",
+        "e": "Two",
+        "b": "two",
+        "p": "numeral"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "draft beers",
+        "z": "生啤酒",
+        "j": "生ビール",
+        "e": "draft beers",
+        "b": "draft beer",
+        "p": "noun"
+      },
+      {
+        "t": ", please."
+      }
+    ],
+    "The server replaced my draft beer because the glass had been filled mostly with foam.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "server",
+        "z": "服務生",
+        "j": "店員",
+        "e": "server",
+        "b": "server",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replaced",
+        "z": "更換",
+        "j": "入れ直した",
+        "e": "replaced",
+        "b": "replace",
+        "p": "verb"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "draft beer",
+        "z": "生啤酒",
+        "j": "生ビール",
+        "e": "draft beer",
+        "b": "draft beer",
+        "p": "noun"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "glass",
+        "z": "玻璃杯",
+        "j": "グラス",
+        "e": "glass",
+        "b": "glass",
+        "p": "noun"
+      },
+      {
+        "t": " had been "
+      },
+      {
+        "t": "filled",
+        "z": "裝滿",
+        "j": "入れた",
+        "e": "filled",
+        "b": "fill",
+        "p": "verb"
+      },
+      {
+        "t": " mostly with "
+      },
+      {
+        "t": "foam",
+        "z": "泡沫",
+        "j": "泡",
+        "e": "foam",
+        "b": "foam",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This lager tastes light and crisp.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "lager",
+        "z": "拉格啤酒",
+        "j": "ラガービール",
+        "e": "lager",
+        "b": "lager",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tastes",
+        "z": "嘗起來",
+        "j": "味がする",
+        "e": "tastes",
+        "b": "taste",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "light",
+        "z": "清淡",
+        "j": "軽い",
+        "e": "light",
+        "b": "light",
+        "p": "adjective"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "crisp",
+        "z": "爽口",
+        "j": "すっきりした",
+        "e": "crisp",
+        "b": "crisp",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I chilled the lager before the barbecue because everyone preferred it very cold.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "chilled",
+        "z": "冰鎮",
+        "j": "冷やした",
+        "e": "chilled",
+        "b": "chill",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lager",
+        "z": "拉格啤酒",
+        "j": "ラガービール",
+        "e": "lager",
+        "b": "lager",
+        "p": "noun"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "barbecue",
+        "z": "烤肉",
+        "j": "バーベキュー",
+        "e": "barbecue",
+        "b": "barbecue",
+        "p": "noun"
+      },
+      {
+        "t": " because "
+      },
+      {
+        "t": "everyone",
+        "z": "每個人",
+        "j": "みんな",
+        "e": "everyone",
+        "b": "everyone",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "preferred",
+        "z": "喜歡",
+        "j": "好んだ",
+        "e": "preferred",
+        "b": "prefer",
+        "p": "verb"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "very cold",
+        "z": "非常冰冷",
+        "j": "よく冷えた",
+        "e": "very cold",
+        "b": "よく冷える",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She chose a fruity ale.": [
+      {
+        "t": "She",
+        "z": "她",
+        "j": "彼女",
+        "e": "She",
+        "b": "she",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chose",
+        "z": "選擇了",
+        "j": "選びました",
+        "e": "chose",
+        "b": "choose",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "fruity",
+        "z": "果香的",
+        "j": "果実の香りがする",
+        "e": "fruity",
+        "b": "fruity",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ale",
+        "z": "愛爾啤酒",
+        "j": "エール",
+        "e": "ale",
+        "b": "ale",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Although the ale looked dark, its citrus aroma made it easier to drink than I expected.": [
+      {
+        "t": "Although the "
+      },
+      {
+        "t": "ale",
+        "z": "愛爾啤酒",
+        "j": "エール",
+        "e": "ale",
+        "b": "ale",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "looked",
+        "z": "看起來",
+        "j": "見えた",
+        "e": "looked",
+        "b": "look",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dark",
+        "z": "深色的",
+        "j": "濃い",
+        "e": "dark",
+        "b": "dark",
+        "p": "adjective"
+      },
+      {
+        "t": ", its "
+      },
+      {
+        "t": "citrus aroma",
+        "z": "柑橘香氣",
+        "j": "かんきつ系の香り",
+        "e": "citrus aroma",
+        "b": "citrus aroma",
+        "p": "phrase"
+      },
+      {
+        "t": " made it "
+      },
+      {
+        "t": "easier to drink",
+        "z": "更容易喝",
+        "j": "飲みやすかった",
+        "e": "easier to drink",
+        "b": "飲みやすい",
+        "p": "phrase"
+      },
+      {
+        "t": " than I expected."
+      }
+    ],
+    "The stout has a roasted aroma.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "stout",
+        "z": "司陶特黑啤酒",
+        "j": "スタウト",
+        "e": "stout",
+        "b": "stout",
+        "p": "noun"
+      },
+      {
+        "t": " has a "
+      },
+      {
+        "t": "roasted aroma",
+        "z": "烘烤香氣",
+        "j": "香ばしい香り",
+        "e": "roasted aroma",
+        "b": "roasted aroma",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the stout was rich and slightly bitter, I drank it slowly with chocolate cake.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "stout",
+        "z": "司陶特黑啤酒",
+        "j": "スタウト",
+        "e": "stout",
+        "b": "stout",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "rich",
+        "z": "濃郁的",
+        "j": "濃厚な",
+        "e": "rich",
+        "b": "rich",
+        "p": "adjective"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "slightly bitter",
+        "z": "稍微苦的",
+        "j": "少し苦い",
+        "e": "slightly bitter",
+        "b": "slightly bitter",
+        "p": "phrase"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "drank",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "b": "drink",
+        "p": "verb"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "b": "slowly",
+        "p": "adverb"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "chocolate cake",
+        "z": "巧克力蛋糕",
+        "j": "チョコレートケーキ",
+        "e": "chocolate cake",
+        "b": "chocolate cake",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "He poured red wine into two glasses.": [
+      {
+        "t": "He "
+      },
+      {
+        "t": "poured",
+        "z": "倒入",
+        "j": "注ぎました",
+        "e": "poured",
+        "b": "pour",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "red wine",
+        "z": "紅葡萄酒",
+        "j": "赤ワイン",
+        "e": "red wine",
+        "b": "red wine",
+        "p": "noun"
+      },
+      {
+        "t": " into "
+      },
+      {
+        "t": "two glasses",
+        "z": "兩個杯子",
+        "j": "二つのグラス",
+        "e": "two glasses",
+        "b": "glass",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After opening the red wine, we let it breathe while the roast finished cooking.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "opening",
+        "z": "打開",
+        "j": "開けること",
+        "e": "opening",
+        "b": "open",
+        "p": "noun"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "red wine",
+        "z": "紅葡萄酒",
+        "j": "赤ワイン",
+        "e": "red wine",
+        "b": "red wine",
+        "p": "noun"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "let it breathe",
+        "z": "讓酒醒酒",
+        "j": "ワインを空気に触れさせました",
+        "e": "let the wine breathe",
+        "b": "let it breathe",
+        "p": "phrase"
+      },
+      {
+        "t": " while the "
+      },
+      {
+        "t": "roast",
+        "z": "烤肉",
+        "j": "ロースト料理",
+        "e": "roast",
+        "b": "roast",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "finished cooking",
+        "z": "完成烹調",
+        "j": "仕上がる",
+        "e": "finished cooking",
+        "b": "仕上がる",
+        "p": "verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please chill the white wine.": [
+      {
+        "t": "Please chill",
+        "z": "請冰鎮",
+        "j": "冷やしてください",
+        "e": "Please chill",
+        "b": "chill",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "white wine",
+        "z": "白葡萄酒",
+        "j": "白ワイン",
+        "e": "white wine",
+        "b": "white wine",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the white wine was dry and refreshing, it matched the grilled fish well.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "white wine",
+        "z": "白葡萄酒",
+        "j": "白ワイン",
+        "e": "white wine",
+        "b": "white wine",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "dry",
+        "z": "乾爽的",
+        "j": "辛口の",
+        "e": "dry",
+        "b": "dry",
+        "p": "adjective"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "refreshing",
+        "z": "清爽的",
+        "j": "すっきりしていた",
+        "e": "refreshing",
+        "b": "refreshing",
+        "p": "adjective"
+      },
+      {
+        "t": ", it "
+      },
+      {
+        "t": "matched",
+        "z": "搭配",
+        "j": "合いました",
+        "e": "matched",
+        "b": "match",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "grilled fish",
+        "z": "烤魚",
+        "j": "焼き魚",
+        "e": "grilled fish",
+        "b": "grilled fish",
+        "p": "noun"
+      },
+      {
+        "t": " well."
+      }
+    ],
+    "We shared a bottle of rosé wine.": [
+      {
+        "t": "We",
+        "z": "我們",
+        "j": "私たち",
+        "e": "We",
+        "b": "we",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shared",
+        "z": "分享了",
+        "j": "分けて",
+        "e": "shared",
+        "b": "share",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bottle",
+        "z": "瓶子",
+        "j": "一本",
+        "e": "bottle",
+        "b": "bottle",
+        "p": "noun"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "rosé wine",
+        "z": "粉紅葡萄酒",
+        "j": "ロゼワイン",
+        "e": "rosé wine",
+        "b": "rosé wine",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I picked the dry rosé wine because it would suit both the salad and the grilled chicken.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "picked",
+        "z": "選擇了",
+        "j": "選びました",
+        "e": "picked",
+        "b": "pick",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "dry rosé wine",
+        "z": "乾型粉紅葡萄酒",
+        "j": "辛口のロゼワイン",
+        "e": "dry rosé wine",
+        "b": "dry rosé wine",
+        "p": "noun"
+      },
+      {
+        "t": " because it would "
+      },
+      {
+        "t": "suit",
+        "z": "適合",
+        "j": "合いそうだった",
+        "e": "would suit",
+        "b": "suit",
+        "p": "verb"
+      },
+      {
+        "t": " both the "
+      },
+      {
+        "t": "salad",
+        "z": "沙拉",
+        "j": "サラダ",
+        "e": "salad",
+        "b": "salad",
+        "p": "noun"
+      },
+      {
+        "t": " and the "
+      },
+      {
+        "t": "grilled chicken",
+        "z": "烤雞肉",
+        "j": "グリルチキン",
+        "e": "grilled chicken",
+        "b": "grilled chicken",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The sparkling wine filled the glass with bubbles.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "sparkling wine",
+        "z": "氣泡葡萄酒",
+        "j": "スパークリングワイン",
+        "e": "sparkling wine",
+        "b": "sparkling wine",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "filled",
+        "z": "充滿",
+        "j": "広がりました",
+        "e": "filled",
+        "b": "fill",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "glass",
+        "z": "玻璃杯",
+        "j": "グラス",
+        "e": "glass",
+        "b": "glass",
+        "p": "noun"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "bubbles",
+        "z": "氣泡",
+        "j": "泡",
+        "e": "bubbles",
+        "b": "bubble",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before opening the sparkling wine, I chilled it well and pointed the cork away from everyone.": [
+      {
+        "t": "Before opening",
+        "z": "打開之前",
+        "j": "開ける前に",
+        "e": "Before opening",
+        "b": "open",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sparkling wine",
+        "z": "氣泡葡萄酒",
+        "j": "スパークリングワイン",
+        "e": "sparkling wine",
+        "b": "sparkling wine",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "chilled",
+        "z": "冷藏了",
+        "j": "冷やし",
+        "e": "chilled",
+        "b": "chill",
+        "p": "verb"
+      },
+      {
+        "t": " it well and "
+      },
+      {
+        "t": "pointed",
+        "z": "指向",
+        "j": "向けました",
+        "e": "pointed",
+        "b": "point",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cork",
+        "z": "軟木塞",
+        "j": "コルク",
+        "e": "cork",
+        "b": "cork",
+        "p": "noun"
+      },
+      {
+        "t": " away from everyone."
+      }
+    ],
+    "They opened champagne for the anniversary.": [
+      {
+        "t": "They",
+        "z": "他們",
+        "j": "彼ら",
+        "e": "They",
+        "b": "they",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "opened",
+        "z": "打開了",
+        "j": "開けました",
+        "e": "opened",
+        "b": "open",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "champagne",
+        "z": "香檳",
+        "j": "シャンパン",
+        "e": "champagne",
+        "b": "champagne",
+        "p": "noun"
+      },
+      {
+        "t": " for the "
+      },
+      {
+        "t": "anniversary",
+        "z": "週年紀念",
+        "j": "記念日",
+        "e": "anniversary",
+        "b": "anniversary",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the champagne arrived, we waited until everyone had a glass before making a toast.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "champagne",
+        "z": "香檳",
+        "j": "シャンパン",
+        "e": "champagne",
+        "b": "champagne",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "到了",
+        "j": "届く",
+        "e": "arrived",
+        "b": "arrive",
+        "p": "verb"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "waited",
+        "z": "等待了",
+        "j": "待ちました",
+        "e": "waited",
+        "b": "wait",
+        "p": "verb"
+      },
+      {
+        "t": " until "
+      },
+      {
+        "t": "everyone",
+        "z": "每個人",
+        "j": "全員",
+        "e": "everyone",
+        "b": "everyone",
+        "p": "pronoun"
+      },
+      {
+        "t": " had a "
+      },
+      {
+        "t": "glass",
+        "z": "杯子",
+        "j": "グラス",
+        "e": "glass",
+        "b": "glass",
+        "p": "noun"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "making a toast",
+        "z": "乾杯",
+        "j": "乾杯しました",
+        "e": "making a toast",
+        "b": "make a toast",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We drank chilled sake with dinner.": [
+      {
+        "t": "We",
+        "z": "我們",
+        "j": "私たち",
+        "e": "We",
+        "b": "we",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "drank",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "b": "drink",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chilled sake",
+        "z": "冰鎮清酒",
+        "j": "冷たい日本酒",
+        "e": "chilled sake",
+        "b": "chilled sake",
+        "p": "noun"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "b": "dinner",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "He drinks shochu on the rocks.": [
+      {
+        "t": "He",
+        "z": "他",
+        "j": "彼",
+        "e": "He",
+        "b": "he",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "drinks",
+        "z": "喝",
+        "j": "飲みます",
+        "e": "drinks",
+        "b": "drink",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shochu",
+        "z": "燒酎",
+        "j": "焼酎",
+        "e": "shochu",
+        "b": "shochu",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "on the rocks",
+        "z": "加冰純飲",
+        "j": "ロックで",
+        "e": "on the rocks",
+        "b": "on the rocks",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the barley shochu had a mild aroma, I mixed it with cold water instead of juice.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "barley shochu",
+        "z": "麥燒酎",
+        "j": "麦焼酎",
+        "e": "barley shochu",
+        "b": "barley shochu",
+        "p": "noun"
+      },
+      {
+        "t": " had a "
+      },
+      {
+        "t": "mild aroma",
+        "z": "香氣溫和",
+        "j": "香りが穏やか",
+        "e": "mild aroma",
+        "b": "mild aroma",
+        "p": "phrase"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "mixed",
+        "z": "混合了",
+        "j": "混ぜました",
+        "e": "mixed",
+        "b": "mix",
+        "p": "verb"
+      },
+      {
+        "t": " it with "
+      },
+      {
+        "t": "cold water",
+        "z": "冷水",
+        "j": "冷たい水",
+        "e": "cold water",
+        "b": "cold water",
+        "p": "noun"
+      },
+      {
+        "t": " instead of "
+      },
+      {
+        "t": "juice",
+        "z": "果汁",
+        "j": "ジュース",
+        "e": "juice",
+        "b": "juice",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I tried awamori in Okinawa.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tried",
+        "z": "嘗試",
+        "j": "試しました",
+        "e": "tried",
+        "b": "try",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "awamori",
+        "z": "泡盛",
+        "j": "泡盛",
+        "e": "awamori",
+        "b": "awamori",
+        "p": "noun"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "Okinawa",
+        "z": "沖繩",
+        "j": "沖縄",
+        "e": "Okinawa",
+        "b": "Okinawa",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the awamori was stronger than I expected, I added water and enjoyed it slowly with dinner.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "awamori",
+        "z": "泡盛",
+        "j": "泡盛",
+        "e": "awamori",
+        "b": "awamori",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "stronger",
+        "z": "較強",
+        "j": "強かった",
+        "e": "stronger",
+        "b": "strong",
+        "p": "adjective"
+      },
+      {
+        "t": " than I "
+      },
+      {
+        "t": "expected",
+        "z": "預期",
+        "j": "思った",
+        "e": "expected",
+        "b": "expect",
+        "p": "verb"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "added",
+        "z": "加了",
+        "j": "加えて",
+        "e": "added",
+        "b": "add",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "b": "water",
+        "p": "noun"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "enjoyed",
+        "z": "享受",
+        "j": "味わいました",
+        "e": "enjoyed",
+        "b": "enjoy",
+        "p": "verb"
+      },
+      {
+        "t": " it slowly with "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "b": "dinner",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She ordered plum wine with soda.": [
+      {
+        "t": "She",
+        "z": "她",
+        "j": "彼女",
+        "e": "She",
+        "b": "she",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ordered",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "b": "order",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "plum wine",
+        "z": "梅酒",
+        "j": "梅酒",
+        "e": "plum wine",
+        "b": "plum wine",
+        "p": "noun"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "soda",
+        "z": "蘇打水",
+        "j": "ソーダ",
+        "e": "soda",
+        "b": "soda",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The homemade plum wine was quite sweet, so we served it over plenty of ice.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "homemade",
+        "z": "自製",
+        "j": "自家製",
+        "e": "homemade",
+        "b": "homemade",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "plum wine",
+        "z": "梅酒",
+        "j": "梅酒",
+        "e": "plum wine",
+        "b": "plum wine",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "quite",
+        "z": "相當",
+        "j": "かなり",
+        "e": "quite",
+        "b": "quite",
+        "p": "adverb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sweet",
+        "z": "甜",
+        "j": "甘かった",
+        "e": "sweet",
+        "b": "sweet",
+        "p": "adjective"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "served",
+        "z": "端上",
+        "j": "出しました",
+        "e": "served",
+        "b": "serve",
+        "p": "verb"
+      },
+      {
+        "t": " it over "
+      },
+      {
+        "t": "plenty",
+        "z": "大量",
+        "j": "たっぷり",
+        "e": "plenty",
+        "b": "plenty",
+        "p": "adverb"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "ice",
+        "z": "冰塊",
+        "j": "氷",
+        "e": "ice",
+        "b": "ice",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We poured makgeolli into small bowls.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "poured",
+        "z": "倒入",
+        "j": "注ぎました",
+        "e": "poured",
+        "b": "pour",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "makgeolli",
+        "z": "馬格利酒",
+        "j": "マッコリ",
+        "e": "makgeolli",
+        "b": "makgeolli",
+        "p": "noun"
+      },
+      {
+        "t": " into "
+      },
+      {
+        "t": "small bowls",
+        "z": "小碗",
+        "j": "小さな器",
+        "e": "small bowls",
+        "b": "small bowl",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I gently mixed the makgeolli before serving because the rice sediment had settled at the bottom.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "gently mixed",
+        "z": "輕輕攪拌",
+        "j": "ゆっくり混ぜました",
+        "e": "gently mixed",
+        "b": "mix",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "makgeolli",
+        "z": "馬格利酒",
+        "j": "マッコリ",
+        "e": "makgeolli",
+        "b": "makgeolli",
+        "p": "noun"
+      },
+      {
+        "t": " before serving because the "
+      },
+      {
+        "t": "rice sediment",
+        "z": "米沉澱物",
+        "j": "米の沈殿",
+        "e": "rice sediment",
+        "b": "rice sediment",
+        "p": "noun"
+      },
+      {
+        "t": " had settled at the "
+      },
+      {
+        "t": "bottom",
+        "z": "底部",
+        "j": "底",
+        "e": "bottom",
+        "b": "bottom",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "He added one ice cube to the whiskey.": [
+      {
+        "t": "He "
+      },
+      {
+        "t": "added",
+        "z": "加入",
+        "j": "入れました",
+        "e": "added",
+        "b": "add",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "one ice cube",
+        "z": "一塊冰塊",
+        "j": "氷を一つ",
+        "e": "one ice cube",
+        "b": "ice cube",
+        "p": "noun"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "whiskey",
+        "z": "威士忌",
+        "j": "ウイスキー",
+        "e": "whiskey",
+        "b": "whiskey",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before buying the whiskey as a gift, I asked whether the smoky flavor would be too strong.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "buying",
+        "z": "購買",
+        "j": "買う",
+        "e": "buying",
+        "b": "buy",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "whiskey",
+        "z": "威士忌",
+        "j": "ウイスキー",
+        "e": "whiskey",
+        "b": "whiskey",
+        "p": "noun"
+      },
+      {
+        "t": " as a "
+      },
+      {
+        "t": "gift",
+        "z": "禮物",
+        "j": "贈り物",
+        "e": "gift",
+        "b": "gift",
+        "p": "noun"
+      },
+      {
+        "t": ", I asked whether the "
+      },
+      {
+        "t": "smoky flavor",
+        "z": "煙燻味",
+        "j": "スモーキーな香り",
+        "e": "smoky flavor",
+        "b": "smoky flavor",
+        "p": "noun"
+      },
+      {
+        "t": " would be "
+      },
+      {
+        "t": "too strong",
+        "z": "太強烈",
+        "j": "強すぎない",
+        "e": "too strong",
+        "b": "strong",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bourbon has a sweet vanilla aroma.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bourbon",
+        "z": "波本威士忌",
+        "j": "バーボン",
+        "e": "bourbon",
+        "b": "bourbon",
+        "p": "noun"
+      },
+      {
+        "t": " has a "
+      },
+      {
+        "t": "sweet",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet",
+        "b": "sweet",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "vanilla",
+        "z": "香草",
+        "j": "バニラ",
+        "e": "vanilla",
+        "b": "vanilla",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "aroma",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "aroma",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Although I usually drink bourbon neat, I added a little water to notice its aroma more clearly.": [
+      {
+        "t": "Although I "
+      },
+      {
+        "t": "usually"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "drink",
+        "z": "喝",
+        "j": "飲む",
+        "e": "drink",
+        "b": "drink",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bourbon",
+        "z": "波本威士忌",
+        "j": "バーボン",
+        "e": "bourbon",
+        "b": "bourbon",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "neat",
+        "z": "純飲",
+        "j": "ストレートで",
+        "e": "neat",
+        "b": "neat",
+        "p": "adverb"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "added",
+        "z": "加了",
+        "j": "加えました",
+        "e": "added",
+        "b": "add",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "little water",
+        "z": "少量水",
+        "j": "少し水",
+        "e": "little water",
+        "b": "little water",
+        "p": "phrase"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "notice",
+        "z": "感受",
+        "j": "感じる",
+        "e": "notice",
+        "b": "notice",
+        "p": "verb"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "aroma",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "aroma",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "more clearly",
+        "z": "更清楚地",
+        "j": "感じやすく",
+        "e": "more clearly",
+        "b": "more clearly",
+        "p": "adverb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She warmed the brandy glass in her hands.": [
+      {
+        "t": "She "
+      },
+      {
+        "t": "warmed",
+        "z": "溫著",
+        "j": "温めました",
+        "e": "warmed",
+        "b": "warm",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "brandy glass",
+        "z": "白蘭地杯",
+        "j": "ブランデーグラス",
+        "e": "brandy glass",
+        "b": "brandy glass",
+        "p": "noun"
+      },
+      {
+        "t": " in her "
+      },
+      {
+        "t": "hands",
+        "z": "手",
+        "j": "手",
+        "e": "hands",
+        "b": "hand",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the brandy had a rich fruit aroma, we served small glasses after dessert.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "brandy",
+        "z": "白蘭地",
+        "j": "ブランデー",
+        "e": "brandy",
+        "b": "brandy",
+        "p": "noun"
+      },
+      {
+        "t": " had a "
+      },
+      {
+        "t": "rich fruit aroma",
+        "z": "濃郁果香",
+        "j": "果実の香りが豊か",
+        "e": "rich fruit aroma",
+        "b": "rich fruit aroma",
+        "p": "phrase"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "served",
+        "z": "供應",
+        "j": "出しました",
+        "e": "served",
+        "b": "serve",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "small glasses",
+        "z": "小杯",
+        "j": "少量ずつ",
+        "e": "small glasses",
+        "b": "small glass",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "after dessert",
+        "z": "甜點後",
+        "j": "デザートのあと",
+        "e": "after dessert",
+        "b": "after dessert",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This gin smells like juniper.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "gin",
+        "z": "琴酒",
+        "j": "ジン",
+        "e": "gin",
+        "b": "gin",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "smells",
+        "z": "聞起來",
+        "j": "においます",
+        "e": "smells",
+        "b": "smell",
+        "p": "verb"
+      },
+      {
+        "t": " like "
+      },
+      {
+        "t": "juniper",
+        "z": "杜松子",
+        "j": "ジュニパー",
+        "e": "juniper",
+        "b": "juniper",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bartender used a citrus-forward gin so the cocktail would taste fresh rather than heavy.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "bartender",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使いました",
+        "e": "used",
+        "b": "use",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "citrus-forward",
+        "z": "柑橘香明顯的",
+        "j": "かんきつの香りが強い",
+        "e": "citrus-forward",
+        "b": "citrus-forward",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gin",
+        "z": "琴酒",
+        "j": "ジン",
+        "e": "gin",
+        "b": "gin",
+        "p": "noun"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "cocktail",
+        "z": "雞尾酒",
+        "j": "カクテル",
+        "e": "cocktail",
+        "b": "cocktail",
+        "p": "noun"
+      },
+      {
+        "t": " would "
+      },
+      {
+        "t": "taste fresh",
+        "z": "嘗起來清新",
+        "j": "さわやかにしあがる",
+        "e": "taste fresh",
+        "b": "taste fresh",
+        "p": "phrase"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rather than heavy",
+        "z": "而非濃重",
+        "j": "おもいあじにならず",
+        "e": "rather than heavy",
+        "b": "rather than heavy",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The recipe uses a small amount of vodka.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "recipe",
+        "z": "食譜",
+        "j": "レシピ",
+        "e": "recipe",
+        "b": "recipe",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "uses",
+        "z": "使用",
+        "j": "使います",
+        "e": "uses",
+        "b": "use",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "small amount",
+        "z": "少量",
+        "j": "少量",
+        "e": "small amount",
+        "b": "small amount",
+        "p": "phrase"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "vodka",
+        "z": "伏特加",
+        "j": "ウォッカ",
+        "e": "vodka",
+        "b": "vodka",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because vodka has a neutral flavor, the bartender paired it with fresh grapefruit juice.": [
+      {
+        "t": "Because "
+      },
+      {
+        "t": "vodka",
+        "z": "伏特加",
+        "j": "ウォッカ",
+        "e": "vodka",
+        "b": "vodka",
+        "p": "noun"
+      },
+      {
+        "t": " has a "
+      },
+      {
+        "t": "neutral flavor",
+        "z": "中性的風味",
+        "j": "癖の少ない味",
+        "e": "neutral flavor",
+        "b": "neutral flavor",
+        "p": "phrase"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "bartender",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "paired",
+        "z": "搭配",
+        "j": "あわせました",
+        "e": "paired",
+        "b": "pair",
+        "p": "verb"
+      },
+      {
+        "t": " it with "
+      },
+      {
+        "t": "fresh grapefruit juice",
+        "z": "新鮮葡萄柚汁",
+        "j": "なまのグレープフルーツかじゅう",
+        "e": "fresh grapefruit juice",
+        "b": "fresh grapefruit juice",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Dark rum gives the drink a caramel aroma.": [
+      {
+        "t": "Dark rum",
+        "z": "深色蘭姆酒",
+        "j": "ダークラム",
+        "e": "Dark rum",
+        "b": "dark rum",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gives",
+        "z": "使飲料帶有",
+        "j": "加えます",
+        "e": "gives",
+        "b": "give",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "drink",
+        "z": "飲料",
+        "j": "飲み物",
+        "e": "drink",
+        "b": "drink",
+        "p": "noun"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "caramel aroma",
+        "z": "焦糖香氣",
+        "j": "カラメルの香り",
+        "e": "caramel aroma",
+        "b": "caramel aroma",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I used white rum in the mojito because dark rum would change its light, fresh taste.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使いました",
+        "e": "used",
+        "b": "use",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "white rum",
+        "z": "白蘭姆酒",
+        "j": "ホワイトラム",
+        "e": "white rum",
+        "b": "white rum",
+        "p": "noun"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "mojito",
+        "z": "莫希托",
+        "j": "モヒート",
+        "e": "mojito",
+        "b": "mojito",
+        "p": "noun"
+      },
+      {
+        "t": " because "
+      },
+      {
+        "t": "dark rum",
+        "z": "深色蘭姆酒",
+        "j": "ダークラム",
+        "e": "dark rum",
+        "b": "dark rum",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "would change",
+        "z": "會改變",
+        "j": "変えるでしょう",
+        "e": "would change",
+        "b": "change",
+        "p": "verb"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "light",
+        "z": "清爽的",
+        "j": "さっぱりした",
+        "e": "light",
+        "b": "light",
+        "p": "adjective"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "fresh taste",
+        "z": "新鮮的味道",
+        "j": "フレッシュな味",
+        "e": "fresh taste",
+        "b": "fresh taste",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bartender measured the tequila carefully.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "bartender",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "measured",
+        "z": "量了",
+        "j": "量りました",
+        "e": "measured",
+        "b": "measure",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "tequila",
+        "z": "龍舌蘭酒",
+        "j": "テキーラ",
+        "e": "tequila",
+        "b": "tequila",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "carefully",
+        "z": "小心地",
+        "j": "丁寧に",
+        "e": "carefully",
+        "b": "carefully",
+        "p": "adverb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Instead of drinking the tequila quickly, we sipped it slowly and noticed the roasted agave flavor.": [
+      {
+        "t": "Instead of "
+      },
+      {
+        "t": "drinking",
+        "z": "喝",
+        "j": "飲むこと",
+        "e": "drinking",
+        "b": "drink",
+        "p": "noun"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "tequila",
+        "z": "龍舌蘭酒",
+        "j": "テキーラ",
+        "e": "tequila",
+        "b": "tequila",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "quickly",
+        "z": "快速地",
+        "j": "一気に",
+        "e": "quickly",
+        "b": "quickly",
+        "p": "adverb"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "sipped",
+        "z": "啜飲",
+        "j": "味わって",
+        "e": "sipped",
+        "b": "sip",
+        "p": "verb"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "b": "slowly",
+        "p": "adverb"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "noticed",
+        "z": "注意到",
+        "j": "感じました",
+        "e": "noticed",
+        "b": "notice",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "roasted agave flavor",
+        "z": "烤龍舌蘭風味",
+        "j": "焼いたアガベの風味",
+        "e": "roasted agave flavor",
+        "b": "roasted agave flavor",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This orange liqueur smells sweet.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "orange",
+        "z": "橙味的",
+        "j": "オレンジ風味の",
+        "e": "orange-flavored",
+        "b": "orange",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "liqueur",
+        "z": "利口酒",
+        "j": "リキュール",
+        "e": "liqueur",
+        "b": "liqueur",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "smells",
+        "z": "聞起來",
+        "j": "においがする",
+        "e": "smells",
+        "b": "smell",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sweet",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet",
+        "b": "sweet",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The recipe needs only a spoonful of liqueur, so I measured it instead of pouring freely.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "recipe",
+        "z": "食譜",
+        "j": "レシピ",
+        "e": "recipe",
+        "b": "recipe",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "needs",
+        "z": "需要",
+        "j": "必要とする",
+        "e": "needs",
+        "b": "need",
+        "p": "verb"
+      },
+      {
+        "t": " only a "
+      },
+      {
+        "t": "spoonful",
+        "z": "一匙",
+        "j": "一さじ",
+        "e": "a spoonful",
+        "b": "spoonful",
+        "p": "noun"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "liqueur",
+        "z": "利口酒",
+        "j": "リキュール",
+        "e": "liqueur",
+        "b": "liqueur",
+        "p": "noun"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "measured",
+        "z": "量了",
+        "j": "量った",
+        "e": "measured",
+        "b": "measure",
+        "p": "verb"
+      },
+      {
+        "t": " it instead of "
+      },
+      {
+        "t": "pouring freely",
+        "z": "直接倒入",
+        "j": "目分量で注ぐ",
+        "e": "pouring by eye",
+        "b": "pour freely",
+        "p": "phrasal verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I ordered a highball with lemon.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "ordered",
+        "z": "點了",
+        "j": "注文した",
+        "e": "ordered",
+        "b": "order",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "highball",
+        "z": "威士忌蘇打",
+        "j": "ハイボール",
+        "e": "highball",
+        "b": "highball",
+        "p": "noun"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "lemon",
+        "z": "檸檬",
+        "j": "レモン",
+        "e": "lemon",
+        "b": "lemon",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "To keep the highball fizzy, she poured the soda gently and stirred it only once.": [
+      {
+        "t": "To "
+      },
+      {
+        "t": "keep",
+        "z": "保持",
+        "j": "保つ",
+        "e": "keep",
+        "b": "keep",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "highball",
+        "z": "威士忌蘇打",
+        "j": "ハイボール",
+        "e": "highball",
+        "b": "highball",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fizzy",
+        "z": "有氣泡",
+        "j": "炭酸がある",
+        "e": "fizzy",
+        "b": "fizzy",
+        "p": "adjective"
+      },
+      {
+        "t": ", she "
+      },
+      {
+        "t": "poured",
+        "z": "倒了",
+        "j": "注いだ",
+        "e": "poured",
+        "b": "pour",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "soda",
+        "z": "蘇打水",
+        "j": "ソーダ",
+        "e": "soda",
+        "b": "soda",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gently",
+        "z": "輕輕地",
+        "j": "静かに",
+        "e": "gently",
+        "b": "gently",
+        "p": "adverb"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "stirred",
+        "z": "攪拌了",
+        "j": "混ぜた",
+        "e": "stirred",
+        "b": "stir",
+        "p": "verb"
+      },
+      {
+        "t": " it only "
+      },
+      {
+        "t": "once",
+        "z": "一次",
+        "j": "一度だけ",
+        "e": "only once",
+        "b": "once",
+        "p": "adverb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The lemon sour is cold and tart.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "lemon sour",
+        "z": "檸檬沙瓦",
+        "j": "レモン味の酒",
+        "e": "lemon-flavored alcoholic drink",
+        "b": "lemon sour",
+        "p": "noun"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "cold",
+        "z": "冰冷",
+        "j": "冷たい",
+        "e": "cold",
+        "b": "cold",
+        "p": "adjective"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "tart",
+        "z": "酸爽",
+        "j": "酸味がある",
+        "e": "tart",
+        "b": "tart",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the lemon sour was stronger than it tasted, I drank water between sips.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "lemon sour",
+        "z": "檸檬沙瓦",
+        "j": "レモン味の酒",
+        "e": "lemon sour",
+        "b": "lemon sour",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "stronger",
+        "z": "酒精濃度更高",
+        "j": "度数が高い",
+        "e": "stronger",
+        "b": "strong",
+        "p": "adjective"
+      },
+      {
+        "t": " than it "
+      },
+      {
+        "t": "tasted",
+        "z": "嘗起來",
+        "j": "味がする",
+        "e": "tasted",
+        "b": "taste",
+        "p": "verb"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "drank",
+        "z": "喝",
+        "j": "飲んだ",
+        "e": "drank",
+        "b": "drink",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "b": "water",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "between sips",
+        "z": "喝酒的間隔",
+        "j": "合間に",
+        "e": "between sips",
+        "b": "between sips",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought a grapefruit chuhai at the store.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買った",
+        "e": "bought",
+        "b": "buy",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "grapefruit chuhai",
+        "z": "葡萄柚燒酎調酒",
+        "j": "グレープフルーツ味のチューハイ",
+        "e": "grapefruit chuhai",
+        "b": "grapefruit chuhai",
+        "p": "noun"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "store",
+        "z": "商店",
+        "j": "店",
+        "e": "store",
+        "b": "store",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before choosing the canned chuhai, I checked the alcohol percentage because the flavors looked similar.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "choosing",
+        "z": "選擇",
+        "j": "選ぶ",
+        "e": "choosing",
+        "b": "choose",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "canned chuhai",
+        "z": "罐裝燒酎調酒",
+        "j": "缶チューハイ",
+        "e": "canned chuhai",
+        "b": "canned chuhai",
+        "p": "noun"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked",
+        "b": "check",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "alcohol percentage",
+        "z": "酒精度數",
+        "j": "アルコール度数",
+        "e": "alcohol percentage",
+        "b": "alcohol percentage",
+        "p": "noun"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "flavors",
+        "z": "味道",
+        "j": "味",
+        "e": "flavors",
+        "b": "flavor",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "looked similar",
+        "z": "看起來相似",
+        "j": "似て見えた",
+        "e": "looked similar",
+        "b": "look similar",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My gin and tonic came with lime.": [
+      {
+        "t": "My",
+        "z": "我的",
+        "j": "私の",
+        "e": "My",
+        "b": "my",
+        "p": "determiner"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gin and tonic",
+        "z": "琴通寧",
+        "j": "ジントニック",
+        "e": "gin and tonic",
+        "b": "gin and tonic",
+        "p": "noun"
+      },
+      {
+        "t": " came with "
+      },
+      {
+        "t": "lime",
+        "z": "萊姆",
+        "j": "ライム",
+        "e": "lime",
+        "b": "lime",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked for less tonic water because I wanted the herbal aroma of the gin to remain noticeable.": [
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "asked for",
+        "z": "請店員少加",
+        "j": "少なめに頼みました",
+        "e": "asked for",
+        "b": "ask",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "less tonic water",
+        "z": "較少的通寧水",
+        "j": "トニックウォーターを少なめに",
+        "e": "less tonic water",
+        "b": "tonic water",
+        "p": "noun"
+      },
+      {
+        "t": " because I wanted the "
+      },
+      {
+        "t": "herbal aroma",
+        "z": "草本香氣",
+        "j": "植物らしい香り",
+        "e": "herbal aroma",
+        "b": "aroma",
+        "p": "noun"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "gin",
+        "z": "琴酒",
+        "j": "ジン",
+        "e": "gin",
+        "b": "gin",
+        "p": "noun"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "remain noticeable",
+        "z": "依然明顯",
+        "j": "感じられるように",
+        "e": "remain noticeable",
+        "b": "remain",
+        "p": "verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Fresh mint floats in the mojito.": [
+      {
+        "t": "Fresh mint",
+        "z": "新鮮薄荷",
+        "j": "生のミント",
+        "e": "fresh mint",
+        "b": "mint",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "floats",
+        "z": "漂浮",
+        "j": "浮いています",
+        "e": "floats",
+        "b": "float",
+        "p": "verb"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "mojito",
+        "z": "莫希托",
+        "j": "モヒート",
+        "e": "mojito",
+        "b": "モヒート",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The bartender pressed the mint gently so the mojito would smell fresh without becoming bitter.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "bartender",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pressed",
+        "z": "輕壓",
+        "j": "押しました",
+        "e": "pressed",
+        "b": "press",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mint",
+        "z": "薄荷",
+        "j": "ミント",
+        "e": "mint",
+        "b": "mint",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gently",
+        "z": "輕輕地",
+        "j": "優しく",
+        "e": "gently",
+        "b": "gentle",
+        "p": "adverb"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "mojito",
+        "z": "莫希托",
+        "j": "モヒート",
+        "e": "mojito",
+        "b": "モヒート",
+        "p": "noun"
+      },
+      {
+        "t": " would "
+      },
+      {
+        "t": "smell fresh",
+        "z": "聞起來清新",
+        "j": "爽やかに香る",
+        "e": "smell fresh",
+        "b": "香る",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "without becoming bitter",
+        "z": "不苦",
+        "j": "苦くならず",
+        "e": "without becoming bitter",
+        "b": "苦くなる",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The martini arrived with an olive.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "martini",
+        "z": "馬丁尼酒",
+        "j": "マティーニ",
+        "e": "martini",
+        "b": "martini",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "送來",
+        "j": "届きました",
+        "e": "arrived",
+        "b": "arrive",
+        "p": "verb"
+      },
+      {
+        "t": " with an "
+      },
+      {
+        "t": "olive",
+        "z": "橄欖",
+        "j": "オリーブ",
+        "e": "olive",
+        "b": "olive",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I ordered the martini dry, the bartender used less vermouth and stirred it until well chilled.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "ordered",
+        "z": "點了",
+        "j": "頼みました",
+        "e": "ordered",
+        "b": "order",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "martini",
+        "z": "馬丁尼",
+        "j": "マティーニ",
+        "e": "martini",
+        "b": "martini",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dry",
+        "z": "乾型",
+        "j": "ドライで",
+        "e": "dry",
+        "b": "dry",
+        "p": "adjective"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "bartender",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "bartender",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used less vermouth",
+        "z": "用較少的苦艾酒",
+        "j": "ベルモットを少なめにし",
+        "e": "used less vermouth",
+        "b": "use less vermouth",
+        "p": "phrase"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "stirred",
+        "z": "攪拌",
+        "j": "ステアしました",
+        "e": "stirred",
+        "b": "stir",
+        "p": "verb"
+      },
+      {
+        "t": " it until "
+      },
+      {
+        "t": "well chilled",
+        "z": "充分冰涼",
+        "j": "よく冷えるまで",
+        "e": "well chilled",
+        "b": "well chilled",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Salt covered the rim of the margarita glass.": [
+      {
+        "t": "Salt",
+        "z": "鹽",
+        "j": "塩",
+        "e": "salt",
+        "b": "salt",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "covered",
+        "z": "覆蓋",
+        "j": "付いていました",
+        "e": "covered",
+        "b": "cover",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "rim",
+        "z": "杯緣",
+        "j": "縁",
+        "e": "rim",
+        "b": "rim",
+        "p": "noun"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "margarita glass",
+        "z": "瑪格麗特酒杯",
+        "j": "マルガリータのグラス",
+        "e": "margarita glass",
+        "b": "margarita glass",
+        "p": "phrase"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She requested the margarita without salt because she wanted the lime flavor to stand out.": [
+      {
+        "t": "She "
+      },
+      {
+        "t": "requested",
+        "z": "點了",
+        "j": "頼みました",
+        "e": "requested",
+        "b": "request",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "margarita without salt",
+        "z": "無鹽瑪格麗塔",
+        "j": "塩なしのマルガリータ",
+        "e": "margarita without salt",
+        "b": "margarita without salt",
+        "p": "phrase"
+      },
+      {
+        "t": " because she "
+      },
+      {
+        "t": "wanted",
+        "z": "想要",
+        "j": "したかった",
+        "e": "wanted",
+        "b": "want",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lime flavor",
+        "z": "萊姆風味",
+        "j": "ライムの風味",
+        "e": "lime flavor",
+        "b": "lime flavor",
+        "p": "phrase"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "stand out",
+        "z": "更突出",
+        "j": "際立つ",
+        "e": "stand out",
+        "b": "stand out",
+        "p": "phrasal verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Orange slices floated in the sangria.": [
+      {
+        "t": "Orange slices",
+        "z": "橘子片",
+        "j": "オレンジの輪切り",
+        "e": "Orange slices",
+        "b": "orange slice",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "floated",
+        "z": "漂浮",
+        "j": "浮いていました",
+        "e": "floated",
+        "b": "float",
+        "p": "verb"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "sangria",
+        "z": "桑格利亞",
+        "j": "サングリア",
+        "e": "sangria",
+        "b": "sangria",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We prepared the sangria early so the fruit could flavor the wine before the guests arrived.": [
+      {
+        "t": "We",
+        "z": "我們",
+        "j": "私たち",
+        "e": "We",
+        "b": "we",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "prepared",
+        "z": "準備了",
+        "j": "作りました",
+        "e": "prepared",
+        "b": "prepare",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sangria",
+        "z": "桑格利亞",
+        "j": "サングリア",
+        "e": "sangria",
+        "b": "sangria",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "早早地",
+        "j": "早めに",
+        "e": "early",
+        "b": "early",
+        "p": "adverb"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "fruit",
+        "z": "水果",
+        "j": "果物",
+        "e": "fruit",
+        "b": "fruit",
+        "p": "noun"
+      },
+      {
+        "t": " could "
+      },
+      {
+        "t": "flavor",
+        "z": "使葡萄酒帶有風味",
+        "j": "風味を移す",
+        "e": "flavor",
+        "b": "flavor",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wine",
+        "z": "葡萄酒",
+        "j": "ワイン",
+        "e": "wine",
+        "b": "wine",
+        "p": "noun"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "guests arrived",
+        "z": "客人抵達",
+        "j": "客が来る",
+        "e": "guests arrived",
+        "b": "guest arrive",
+        "p": "expression"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The piña colada tastes like coconut and pineapple.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "piña colada",
+        "z": "鳳梨可樂達",
+        "j": "ピニャコラーダ",
+        "e": "piña colada",
+        "b": "piña colada",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tastes like",
+        "z": "嘗起來像",
+        "j": "味がします",
+        "e": "tastes like",
+        "b": "taste like",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "coconut",
+        "z": "椰子",
+        "j": "ココナッツ",
+        "e": "coconut",
+        "b": "coconut",
+        "p": "noun"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "pineapple",
+        "z": "鳳梨",
+        "j": "パイナップル",
+        "e": "pineapple",
+        "b": "pineapple",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the frozen piña colada was very thick, the server brought a wide straw.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "frozen piña colada",
+        "z": "冰沙鳳梨可樂達",
+        "j": "フローズンのピニャコラーダ",
+        "e": "frozen piña colada",
+        "b": "frozen piña colada",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "very thick",
+        "z": "非常濃稠",
+        "j": "とても濃かった",
+        "e": "very thick",
+        "b": "very thick",
+        "p": "adjective"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "server",
+        "z": "服務生",
+        "j": "店員",
+        "e": "server",
+        "b": "server",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "brought",
+        "z": "帶來",
+        "j": "持ってきました",
+        "e": "brought",
+        "b": "bring",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "wide straw",
+        "z": "粗吸管",
+        "j": "太いストロー",
+        "e": "wide straw",
+        "b": "wide straw",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cider tastes dry and fruity.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cider",
+        "z": "蘋果酒",
+        "j": "リンゴから作った酒",
+        "e": "cider",
+        "b": "cider",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tastes",
+        "z": "嘗起來",
+        "j": "味がする",
+        "e": "tastes",
+        "b": "taste",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dry",
+        "z": "乾爽的",
+        "j": "辛口の",
+        "e": "dry",
+        "b": "dry",
+        "p": "adjective"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "fruity",
+        "z": "果香的",
+        "j": "果物のような香りのある",
+        "e": "fruity",
+        "b": "fruity",
+        "p": "adjective"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the cider was sparkling, I opened the bottle slowly over the sink.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "cider",
+        "z": "蘋果酒",
+        "j": "リンゴから作った酒",
+        "e": "cider",
+        "b": "cider",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "was sparkling",
+        "z": "有氣泡的",
+        "j": "泡がある状態だった",
+        "e": "was sparkling",
+        "b": "sparkle",
+        "p": "adjective"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "opened",
+        "z": "打開了",
+        "j": "開けた",
+        "e": "opened",
+        "b": "open",
+        "p": "verb"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bottle",
+        "z": "瓶子",
+        "j": "液体を入れる容器",
+        "e": "bottle",
+        "b": "bottle",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくりと",
+        "e": "slowly",
+        "b": "slowly",
+        "p": "adverb"
+      },
+      {
+        "t": " over the "
+      },
+      {
+        "t": "sink",
+        "z": "水槽",
+        "j": "流し台",
+        "e": "sink",
+        "b": "sink",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The mead has a gentle honey aroma.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "mead",
+        "z": "蜂蜜酒",
+        "j": "蜂蜜から作った酒",
+        "e": "mead",
+        "b": "mead",
+        "p": "noun"
+      },
+      {
+        "t": " has a "
+      },
+      {
+        "t": "gentle",
+        "z": "溫和的",
+        "j": "やさしい",
+        "e": "gentle",
+        "b": "gentle",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "honey",
+        "z": "蜂蜜",
+        "j": "ミツバチの作る甘い液体",
+        "e": "honey",
+        "b": "honey",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "aroma",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "aroma",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Although the mead smelled sweet, its finish was dry enough to pair with cheese.": [
+      {
+        "t": "Although the "
+      },
+      {
+        "t": "mead",
+        "z": "蜂蜜酒",
+        "j": "蜂蜜から作った酒",
+        "e": "mead",
+        "b": "mead",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "smelled",
+        "z": "聞起來",
+        "j": "においがした",
+        "e": "smelled",
+        "b": "smell",
+        "p": "verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sweet",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet",
+        "b": "sweet",
+        "p": "adjective"
+      },
+      {
+        "t": ", its "
+      },
+      {
+        "t": "finish",
+        "z": "後味",
+        "j": "飲み終わった後の味",
+        "e": "finish",
+        "b": "finish",
+        "p": "noun"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "dry",
+        "z": "乾爽",
+        "j": "辛口",
+        "e": "dry",
+        "b": "dry",
+        "p": "adjective"
+      },
+      {
+        "t": " enough to "
+      },
+      {
+        "t": "pair with",
+        "z": "搭配",
+        "j": "一緒に合う",
+        "e": "pair with",
+        "b": "pair",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cheese",
+        "z": "起司",
+        "j": "乳製品の一種",
+        "e": "cheese",
+        "b": "cheese",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I asked for a sake that goes well with sashimi, the server recommended a dry local sake.": [
+      {
+        "t": "When "
+      },
+      {
+        "t": "I",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "I",
+        "p": "pronoun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "asked for",
+        "z": "詢問",
+        "j": "尋ねた",
+        "e": "asked for",
+        "b": "ask for",
+        "p": "phrasal verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "sake",
+        "z": "清酒",
+        "j": "日本酒",
+        "e": "sake",
+        "b": "sake",
+        "p": "noun"
+      },
+      {
+        "t": " that "
+      },
+      {
+        "t": "goes well with sashimi",
+        "z": "適合搭配生魚片",
+        "j": "刺身によく合う",
+        "e": "goes well with sashimi",
+        "b": "go well with sashimi",
+        "p": "expression"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "server",
+        "z": "店員",
+        "j": "店員",
+        "e": "server",
+        "b": "server",
+        "p": "noun"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "recommended",
+        "z": "推薦了",
+        "j": "勧めてくれました",
+        "e": "recommended",
+        "b": "recommend",
+        "p": "verb"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "dry",
+        "z": "辛口",
+        "j": "辛口",
+        "e": "dry",
+        "b": "dry",
+        "p": "adjective"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "local sake",
+        "z": "地酒",
+        "j": "地酒",
+        "e": "local sake",
+        "b": "local sake",
+        "p": "noun"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "夕食と一緒にビールを注文しました。": [
+      {
+        "t": "夕食",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "b": "ゆうしょく",
+        "p": "noun",
+        "r": "ゆうしょく"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "with",
+        "b": "いっしょに",
+        "p": "adverb",
+        "r": "いっしょに"
+      },
+      {
+        "t": "ビール",
+        "z": "啤酒",
+        "j": "ビール",
+        "e": "beer",
+        "b": "ビール",
+        "p": "noun",
+        "r": "ビール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注文しました",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "b": "ちゅうもんする",
+        "p": "verb",
+        "r": "ちゅうもんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "その店には地元のビールが数種類あったので、グリルチキンに一番合うものを尋ねました。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "店",
+        "z": "店",
+        "j": "店",
+        "e": "restaurant",
+        "b": "みせ",
+        "p": "noun",
+        "r": "みせ"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "地元",
+        "z": "當地",
+        "j": "地元",
+        "e": "local",
+        "b": "じもと",
+        "p": "noun",
+        "r": "じもと"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ビール",
+        "z": "啤酒",
+        "j": "ビール",
+        "e": "beer",
+        "b": "ビール",
+        "p": "noun",
+        "r": "ビール"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "数種類",
+        "z": "幾種",
+        "j": "数種類",
+        "e": "several",
+        "b": "すうしゅるい",
+        "p": "numeral",
+        "r": "すうしゅるい"
+      },
+      {
+        "t": "あったので、"
+      },
+      {
+        "t": "グリルチキン",
+        "z": "烤雞",
+        "j": "グリルチキン",
+        "e": "grilled chicken",
+        "b": "グリルチキン",
+        "p": "noun",
+        "r": "グリルチキン"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "一番合う",
+        "z": "最適合",
+        "j": "一番合う",
+        "e": "goes best with",
+        "b": "いちばんあう",
+        "p": "verb",
+        "r": "いちばんあう"
+      },
+      {
+        "t": "ものを"
+      },
+      {
+        "t": "尋ねました",
+        "z": "問了",
+        "j": "尋ねました",
+        "e": "asked",
+        "b": "たずねる",
+        "p": "verb",
+        "r": "たずねました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "生ビールを二つお願いします。": [
+      {
+        "t": "生ビール",
+        "z": "生啤酒",
+        "j": "生ビール",
+        "e": "draft beer",
+        "b": "生ビール",
+        "p": "noun",
+        "r": "なまビール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "二つ",
+        "z": "兩個",
+        "j": "ふたつ",
+        "e": "two",
+        "b": "二つ",
+        "p": "numeral",
+        "r": "ふたつ"
+      },
+      {
+        "t": "お願いします",
+        "z": "請",
+        "j": "お願いします",
+        "e": "please",
+        "b": "お願いします",
+        "p": "expression",
+        "r": "おねがいします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "グラスのほとんどが泡だったので、店員が生ビールを入れ直してくれました。": [
+      {
+        "t": "グラス",
+        "z": "玻璃杯",
+        "j": "グラス",
+        "e": "glass",
+        "b": "グラス",
+        "p": "noun",
+        "r": "グラス"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ほとんど",
+        "z": "大部分",
+        "j": "ほとんど",
+        "e": "mostly",
+        "b": "ほとんど",
+        "p": "adverb",
+        "r": "ほとんど"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "泡",
+        "z": "泡沫",
+        "j": "泡",
+        "e": "foam",
+        "b": "泡",
+        "p": "noun",
+        "r": "あわ"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "server",
+        "b": "店員",
+        "p": "noun",
+        "r": "てんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "生ビール",
+        "z": "生啤酒",
+        "j": "生ビール",
+        "e": "draft beer",
+        "b": "生ビール",
+        "p": "noun",
+        "r": "なまビール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れ直してくれました",
+        "z": "重新倒了",
+        "j": "入れ直してくれました",
+        "e": "replaced for me",
+        "b": "入れ直す",
+        "p": "verb",
+        "r": "いれなおしてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このラガービールは軽くてすっきりした味です。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "ラガービール",
+        "z": "拉格啤酒",
+        "j": "ラガービール",
+        "e": "lager",
+        "b": "ラガービール",
+        "p": "noun",
+        "r": "ラガービール"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "軽くて",
+        "z": "輕盈且",
+        "j": "軽くて",
+        "e": "light and",
+        "b": "軽い",
+        "p": "adjective",
+        "r": "かるくて"
+      },
+      {
+        "t": "すっきりした",
+        "z": "爽口的",
+        "j": "すっきりした",
+        "e": "crisp",
+        "b": "すっきりする",
+        "p": "adjective",
+        "r": "すっきりした"
+      },
+      {
+        "t": "味",
+        "z": "味道",
+        "j": "味",
+        "e": "taste",
+        "b": "味",
+        "p": "noun",
+        "r": "あじ"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "みんながよく冷えたものを好むので、バーベキューの前にラガービールを冷やしておきました。": [
+      {
+        "t": "みんな",
+        "z": "大家",
+        "j": "みんな",
+        "e": "everyone",
+        "b": "みんな",
+        "p": "pronoun",
+        "r": "みんな"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "よく冷えた",
+        "z": "很冷的",
+        "j": "よく冷えた",
+        "e": "very cold",
+        "b": "よく冷える",
+        "p": "adjective",
+        "r": "よくひえた"
+      },
+      {
+        "t": "ものを好むので、"
+      },
+      {
+        "t": "バーベキュー",
+        "z": "烤肉",
+        "j": "バーベキュー",
+        "e": "barbecue",
+        "b": "バーベキュー",
+        "p": "noun",
+        "r": "バーベキュー"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "b": "前",
+        "p": "adverb",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ラガービール",
+        "z": "拉格啤酒",
+        "j": "ラガービール",
+        "e": "lager",
+        "b": "ラガービール",
+        "p": "noun",
+        "r": "ラガービール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "冷やしておきました",
+        "z": "事先冰鎮了",
+        "j": "冷やしておきました",
+        "e": "chilled in advance",
+        "b": "冷やしておく",
+        "p": "verb",
+        "r": "ひやしておきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼女は果実の香りがするエールを選びました。": [
+      {
+        "t": "彼女",
+        "z": "她",
+        "j": "彼女",
+        "e": "She",
+        "b": "彼女",
+        "p": "pronoun",
+        "r": "かのじょ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "果実",
+        "z": "果實",
+        "j": "果実",
+        "e": "fruit",
+        "b": "果実",
+        "p": "noun",
+        "r": "かじつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "がする"
+      },
+      {
+        "t": "エール",
+        "z": "愛爾啤酒",
+        "j": "エール",
+        "e": "ale",
+        "b": "エール",
+        "p": "noun",
+        "r": "エール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選擇了",
+        "j": "選びました",
+        "e": "chose",
+        "b": "選ぶ",
+        "p": "verb",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "そのエールは色が濃かったものの、かんきつ系の香りがあり、思ったより飲みやすかったです。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "エール",
+        "z": "愛爾啤酒",
+        "j": "エール",
+        "e": "ale",
+        "b": "エール",
+        "p": "noun",
+        "r": "エール"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "色",
+        "z": "顏色",
+        "j": "色",
+        "e": "color",
+        "b": "色",
+        "p": "noun",
+        "r": "いろ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "濃かった",
+        "z": "濃的",
+        "j": "濃かった",
+        "e": "was dark",
+        "b": "濃い",
+        "p": "adjective",
+        "r": "こかった"
+      },
+      {
+        "t": "ものの、"
+      },
+      {
+        "t": "かんきつ系",
+        "z": "柑橘類",
+        "j": "かんきつ系",
+        "e": "citrus",
+        "b": "かんきつけい",
+        "p": "noun",
+        "r": "かんきつけい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "があり、思ったより"
+      },
+      {
+        "t": "飲みやすかった",
+        "z": "容易喝的",
+        "j": "飲みやすかった",
+        "e": "was easy to drink",
+        "b": "飲みやすい",
+        "p": "adjective",
+        "r": "のみやすかった"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "このスタウトには香ばしい香りがあります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "スタウト",
+        "z": "司陶特黑啤酒",
+        "j": "スタウト",
+        "e": "stout",
+        "b": "スタウト",
+        "p": "noun",
+        "r": "スタウト"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "香ばしい",
+        "z": "香烤的",
+        "j": "香ばしい",
+        "e": "roasted",
+        "b": "香ばしい",
+        "p": "adjective",
+        "r": "こうばしい"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "があります。"
+      }
+    ],
+    "そのスタウトは濃厚で少し苦かったので、チョコレートケーキと一緒にゆっくり飲みました。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "スタウト",
+        "z": "司陶特黑啤酒",
+        "j": "スタウト",
+        "e": "stout",
+        "b": "スタウト",
+        "p": "noun",
+        "r": "スタウト"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "濃厚",
+        "z": "濃郁",
+        "j": "濃厚",
+        "e": "rich",
+        "b": "濃厚",
+        "p": "adjective",
+        "r": "のうこう"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "少し",
+        "z": "稍微",
+        "j": "少し",
+        "e": "slightly",
+        "b": "少し",
+        "p": "adverb",
+        "r": "すこし"
+      },
+      {
+        "t": "苦かった",
+        "z": "苦的",
+        "j": "苦かった",
+        "e": "was bitter",
+        "b": "苦い",
+        "p": "adjective",
+        "r": "にがかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "チョコレートケーキ",
+        "z": "巧克力蛋糕",
+        "j": "チョコレートケーキ",
+        "e": "chocolate cake",
+        "b": "チョコレートケーキ",
+        "p": "noun",
+        "r": "チョコレートケーキ"
+      },
+      {
+        "t": "と一緒に"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "b": "ゆっくり",
+        "p": "adverb",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "飲みました",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "b": "飲む",
+        "p": "verb",
+        "r": "のみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼は赤ワインを二つのグラスに注ぎました。": [
+      {
+        "t": "彼",
+        "z": "他",
+        "j": "彼",
+        "e": "he",
+        "b": "彼",
+        "p": "pronoun",
+        "r": "かれ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "赤ワイン",
+        "z": "紅葡萄酒",
+        "j": "赤ワイン",
+        "e": "red wine",
+        "b": "赤ワイン",
+        "p": "noun",
+        "r": "あかワイン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "二つ",
+        "z": "兩個",
+        "j": "二つ",
+        "e": "two",
+        "b": "二つ",
+        "p": "numeral",
+        "r": "ふたつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "グラス",
+        "z": "杯子",
+        "j": "グラス",
+        "e": "glass",
+        "b": "グラス",
+        "p": "noun",
+        "r": "グラス"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "注ぎました",
+        "z": "倒入了",
+        "j": "注ぎました",
+        "e": "poured",
+        "b": "注ぐ",
+        "p": "verb",
+        "r": "つぎました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "赤ワインを開けたあと、ロースト料理が仕上がるまで空気に触れさせました。": [
+      {
+        "t": "赤ワイン",
+        "z": "紅葡萄酒",
+        "j": "赤ワイン",
+        "e": "red wine",
+        "b": "赤ワイン",
+        "p": "noun",
+        "r": "あかワイン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けた",
+        "z": "打開了",
+        "j": "開けた",
+        "e": "opened",
+        "b": "開ける",
+        "p": "verb",
+        "r": "あけた"
+      },
+      {
+        "t": "あと、"
+      },
+      {
+        "t": "ロースト料理",
+        "z": "烤肉料理",
+        "j": "ロースト料理",
+        "e": "roast",
+        "b": "ロースト料理",
+        "p": "noun",
+        "r": "ローストりょうり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "仕上がる",
+        "z": "完成",
+        "j": "仕上がる",
+        "e": "finish",
+        "b": "仕上がる",
+        "p": "verb",
+        "r": "しあがる"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "空気",
+        "z": "空氣",
+        "j": "空気",
+        "e": "air",
+        "b": "空気",
+        "p": "noun",
+        "r": "くうき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "触れさせました",
+        "z": "讓酒醒酒",
+        "j": "空気に触れさせました",
+        "e": "let the wine breathe",
+        "b": "触れさせる",
+        "p": "verb",
+        "r": "ふれさせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "白ワインを冷やしてください。": [
+      {
+        "t": "白ワイン",
+        "z": "白葡萄酒",
+        "j": "白ワイン",
+        "e": "white wine",
+        "b": "白ワイン",
+        "p": "noun",
+        "r": "しろワイン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "冷やしてください",
+        "z": "請冷藏",
+        "j": "冷やしてください",
+        "e": "Please chill",
+        "b": "冷やす",
+        "p": "verb",
+        "r": "ひやしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "その白ワインは辛口ですっきりしていたので、焼き魚によく合いました。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "白ワイン",
+        "z": "白葡萄酒",
+        "j": "白ワイン",
+        "e": "white wine",
+        "b": "白ワイン",
+        "p": "noun",
+        "r": "しろワイン"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "辛口",
+        "z": "乾爽",
+        "j": "辛口",
+        "e": "dry",
+        "b": "辛口",
+        "p": "adjective",
+        "r": "からくち"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "すっきりしていた",
+        "z": "清爽的",
+        "j": "すっきりしていた",
+        "e": "was refreshing",
+        "b": "すっきりする",
+        "p": "adjective",
+        "r": "すっきりしていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "焼き魚",
+        "z": "烤魚",
+        "j": "焼き魚",
+        "e": "grilled fish",
+        "b": "焼き魚",
+        "p": "noun",
+        "r": "やきざかな"
+      },
+      {
+        "t": "によく"
+      },
+      {
+        "t": "合いました",
+        "z": "搭配了",
+        "j": "合いました",
+        "e": "matched",
+        "b": "合う",
+        "p": "verb",
+        "r": "あいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "私たちはロゼワインを一本分けて飲みました。": [
+      {
+        "t": "私たち",
+        "z": "我們",
+        "j": "私たち",
+        "e": "We",
+        "b": "私たち",
+        "p": "pronoun",
+        "r": "わたしたち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ロゼワイン",
+        "z": "粉紅葡萄酒",
+        "j": "ロゼワイン",
+        "e": "rosé wine",
+        "b": "ロゼワイン",
+        "p": "noun",
+        "r": "ロゼワイン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一本",
+        "z": "一瓶",
+        "j": "一本",
+        "e": "a bottle",
+        "b": "一本",
+        "p": "numeral",
+        "r": "いっぽん"
+      },
+      {
+        "t": "分けて",
+        "z": "分享",
+        "j": "分けて",
+        "e": "shared",
+        "b": "分ける",
+        "p": "verb",
+        "r": "わけて"
+      },
+      {
+        "t": "飲みました",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "b": "飲みます",
+        "p": "verb",
+        "r": "のみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "サラダにもグリルチキンにも合いそうだったので、辛口のロゼワインを選びました。": [
+      {
+        "t": "サラダ",
+        "z": "沙拉",
+        "j": "サラダ",
+        "e": "salad",
+        "b": "サラダ",
+        "p": "noun",
+        "r": "サラダ"
+      },
+      {
+        "t": "にも"
+      },
+      {
+        "t": "グリルチキン",
+        "z": "烤雞肉",
+        "j": "グリルチキン",
+        "e": "grilled chicken",
+        "b": "グリルチキン",
+        "p": "noun",
+        "r": "グリルチキン"
+      },
+      {
+        "t": "にも"
+      },
+      {
+        "t": "合いそうだった",
+        "z": "看起來適合",
+        "j": "合いそうだった",
+        "e": "would suit",
+        "b": "合う",
+        "p": "verb",
+        "r": "あいそうだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "辛口",
+        "z": "辛口",
+        "j": "辛口",
+        "e": "dry",
+        "b": "辛口",
+        "p": "adjective",
+        "r": "からくち"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ロゼワイン",
+        "z": "粉紅葡萄酒",
+        "j": "ロゼワイン",
+        "e": "rosé wine",
+        "b": "ロゼワイン",
+        "p": "noun",
+        "r": "ロゼワイン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選擇了",
+        "j": "選びました",
+        "e": "picked",
+        "b": "選ぶ",
+        "p": "verb",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スパークリングワインの泡がグラスいっぱいに広がりました。": [
+      {
+        "t": "スパークリングワイン",
+        "z": "氣泡葡萄酒",
+        "j": "スパークリングワイン",
+        "e": "sparkling wine",
+        "b": "スパークリングワイン",
+        "p": "noun",
+        "r": "スパークリングワイン"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "泡",
+        "z": "氣泡",
+        "j": "泡",
+        "e": "bubbles",
+        "b": "泡",
+        "p": "noun",
+        "r": "あわ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "グラス",
+        "z": "玻璃杯",
+        "j": "グラス",
+        "e": "glass",
+        "b": "グラス",
+        "p": "noun",
+        "r": "グラス"
+      },
+      {
+        "t": "いっぱい",
+        "z": "滿滿",
+        "j": "いっぱい",
+        "e": "filled",
+        "b": "いっぱい",
+        "p": "adjective",
+        "r": "いっぱい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "広がりました",
+        "z": "擴散了",
+        "j": "広がりました",
+        "e": "spread",
+        "b": "広がる",
+        "p": "verb",
+        "r": "ひろがりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スパークリングワインを開ける前に十分冷やし、コルクを人のいない方向へ向けました。": [
+      {
+        "t": "スパークリングワイン",
+        "z": "氣泡葡萄酒",
+        "j": "スパークリングワイン",
+        "e": "sparkling wine",
+        "b": "スパークリングワイン",
+        "p": "noun",
+        "r": "スパークリングワイン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開ける",
+        "z": "打開",
+        "j": "開ける",
+        "e": "open",
+        "b": "開ける",
+        "p": "verb",
+        "r": "あける"
+      },
+      {
+        "t": "前に",
+        "z": "之前",
+        "j": "前に",
+        "e": "before",
+        "b": "前",
+        "p": "adverb",
+        "r": "まえに"
+      },
+      {
+        "t": "十分",
+        "z": "充分",
+        "j": "十分",
+        "e": "well",
+        "b": "十分",
+        "p": "adverb",
+        "r": "じゅうぶん"
+      },
+      {
+        "t": "冷やし",
+        "z": "冷藏",
+        "j": "冷やし",
+        "e": "chilled",
+        "b": "冷やす",
+        "p": "verb",
+        "r": "ひやし"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "コルク",
+        "z": "軟木塞",
+        "j": "コルク",
+        "e": "cork",
+        "b": "コルク",
+        "p": "noun",
+        "r": "コルク"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "people",
+        "b": "人",
+        "p": "noun",
+        "r": "ひと"
+      },
+      {
+        "t": "のいない方向へ"
+      },
+      {
+        "t": "向けました",
+        "z": "指向",
+        "j": "向けました",
+        "e": "pointed",
+        "b": "向ける",
+        "p": "verb",
+        "r": "むけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "記念日にシャンパンを開けました。": [
+      {
+        "t": "記念日",
+        "z": "週年紀念",
+        "j": "記念日",
+        "e": "anniversary",
+        "b": "記念日",
+        "p": "noun",
+        "r": "きねんび"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "シャンパン",
+        "z": "香檳",
+        "j": "シャンパン",
+        "e": "champagne",
+        "b": "シャンパン",
+        "p": "noun",
+        "r": "シャンパン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けました",
+        "z": "打開了",
+        "j": "開けました",
+        "e": "opened",
+        "b": "開ける",
+        "p": "verb",
+        "r": "あけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シャンパンが届くと、全員にグラスが行き渡ってから乾杯しました。": [
+      {
+        "t": "シャンパン",
+        "z": "香檳",
+        "j": "シャンパン",
+        "e": "champagne",
+        "b": "シャンパン",
+        "p": "noun",
+        "r": "シャンパン"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "届く",
+        "z": "到達",
+        "j": "届く",
+        "e": "arrive",
+        "b": "届く",
+        "p": "verb",
+        "r": "とどく"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "全員",
+        "z": "全體人員",
+        "j": "全員",
+        "e": "everyone",
+        "b": "全員",
+        "p": "pronoun",
+        "r": "ぜんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "グラス",
+        "z": "玻璃杯",
+        "j": "グラス",
+        "e": "glass",
+        "b": "グラス",
+        "p": "noun",
+        "r": "グラス"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "行き渡って",
+        "z": "每個人都有",
+        "j": "全員に届いて",
+        "e": "reached everyone",
+        "b": "行き渡る",
+        "p": "verb",
+        "r": "いきわたって"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "乾杯しました",
+        "z": "乾杯了",
+        "j": "乾杯しました",
+        "e": "made a toast",
+        "b": "乾杯する",
+        "p": "verb",
+        "r": "かんぱいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "夕食に冷たい日本酒を飲みました。": [
+      {
+        "t": "夕食",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "b": "ゆうしょく",
+        "p": "noun",
+        "r": "ゆうしょく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "冷たい",
+        "z": "冰冷的",
+        "j": "冷たい",
+        "e": "chilled",
+        "b": "つめたい",
+        "p": "adjective",
+        "r": "つめたい"
+      },
+      {
+        "t": "日本酒",
+        "z": "日本酒",
+        "j": "日本酒",
+        "e": "sake",
+        "b": "にほんしゅ",
+        "p": "noun",
+        "r": "にほんしゅ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "飲みました",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "b": "のむ",
+        "p": "verb",
+        "r": "のみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "刺身に合う日本酒を尋ねたら、店員が辛口の地酒を勧めてくれました。": [
+      {
+        "t": "刺身",
+        "z": "生魚片",
+        "j": "刺身",
+        "e": "sashimi",
+        "b": "さしみ",
+        "p": "noun",
+        "r": "さしみ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "合う",
+        "z": "適合",
+        "j": "合う",
+        "e": "goes well with",
+        "b": "あう",
+        "p": "verb",
+        "r": "あう"
+      },
+      {
+        "t": "日本酒",
+        "z": "日本酒",
+        "j": "日本酒",
+        "e": "sake",
+        "b": "にほんしゅ",
+        "p": "noun",
+        "r": "にほんしゅ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "尋ねたら",
+        "z": "詢問了",
+        "j": "尋ねたら",
+        "e": "asked for",
+        "b": "たずねる",
+        "p": "verb",
+        "r": "たずねたら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "server",
+        "b": "てんいん",
+        "p": "noun",
+        "r": "てんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "辛口",
+        "z": "辛口",
+        "j": "辛口",
+        "e": "dry",
+        "b": "からくち",
+        "p": "adjective",
+        "r": "からくち"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "地酒",
+        "z": "當地酒",
+        "j": "地酒",
+        "e": "local sake",
+        "b": "じざけ",
+        "p": "noun",
+        "r": "じざけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれました",
+        "z": "推薦了",
+        "j": "勧めてくれました",
+        "e": "recommended",
+        "b": "すすめる",
+        "p": "verb",
+        "r": "すすめてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼は焼酎をロックで飲みます。": [
+      {
+        "t": "彼",
+        "z": "他",
+        "j": "彼",
+        "e": "He",
+        "b": "彼",
+        "p": "pronoun",
+        "r": "かれ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "焼酎",
+        "z": "燒酎",
+        "j": "焼酎",
+        "e": "shochu",
+        "b": "焼酎",
+        "p": "noun",
+        "r": "しょうちゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ロックで",
+        "z": "加冰純飲",
+        "j": "ロックで",
+        "e": "on the rocks",
+        "b": "ロックで",
+        "p": "phrase",
+        "r": "ロックで"
+      },
+      {
+        "t": "飲みます",
+        "z": "喝",
+        "j": "飲みます",
+        "e": "drinks",
+        "b": "飲む",
+        "p": "verb",
+        "r": "のみます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "麦焼酎は香りが穏やかだったので、ジュースではなく水割りにしました。": [
+      {
+        "t": "麦焼酎",
+        "z": "麥燒酎",
+        "j": "麦焼酎",
+        "e": "barley shochu",
+        "b": "麦焼酎",
+        "p": "noun",
+        "r": "むぎしょうちゅう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "穏やかだった",
+        "z": "溫和的",
+        "j": "穏やかだった",
+        "e": "was mild",
+        "b": "穏やかだ",
+        "p": "adjective",
+        "r": "おだやかだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ジュース",
+        "z": "果汁",
+        "j": "ジュース",
+        "e": "juice",
+        "b": "ジュース",
+        "p": "noun",
+        "r": "ジュース"
+      },
+      {
+        "t": "ではなく"
+      },
+      {
+        "t": "水割り",
+        "z": "加水飲用",
+        "j": "水割り",
+        "e": "mixed with water",
+        "b": "水割り",
+        "p": "noun",
+        "r": "みずわり"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "しました",
+        "z": "做了",
+        "j": "しました",
+        "e": "did",
+        "b": "する",
+        "p": "verb",
+        "r": "しました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "沖縄で泡盛を飲んでみました。": [
+      {
+        "t": "沖縄",
+        "z": "沖繩",
+        "j": "沖縄",
+        "e": "Okinawa",
+        "b": "沖縄",
+        "p": "noun",
+        "r": "おきなわ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "泡盛",
+        "z": "泡盛",
+        "j": "泡盛",
+        "e": "awamori",
+        "b": "泡盛",
+        "p": "noun",
+        "r": "あわもり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "飲んでみました",
+        "z": "嘗試喝",
+        "j": "飲んでみました",
+        "e": "tried drinking",
+        "b": "飲む",
+        "p": "verb",
+        "r": "のんでみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "泡盛は思ったより度数が高かったので、水を加えて夕食と一緒にゆっくり味わいました。": [
+      {
+        "t": "泡盛",
+        "z": "泡盛",
+        "j": "泡盛",
+        "e": "awamori",
+        "b": "泡盛",
+        "p": "noun",
+        "r": "あわもり"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "思ったより",
+        "z": "比想像中",
+        "j": "思ったより",
+        "e": "than expected",
+        "b": "思う",
+        "p": "expression",
+        "r": "おもったより"
+      },
+      {
+        "t": "度数",
+        "z": "酒精濃度",
+        "j": "度数",
+        "e": "alcohol content",
+        "b": "度数",
+        "p": "noun",
+        "r": "どすう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "高かった",
+        "z": "高",
+        "j": "高かった",
+        "e": "was high",
+        "b": "高い",
+        "p": "adjective",
+        "r": "たかかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "b": "水",
+        "p": "noun",
+        "r": "みず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "加えて",
+        "z": "加",
+        "j": "加えて",
+        "e": "added",
+        "b": "加える",
+        "p": "verb",
+        "r": "くわえて"
+      },
+      {
+        "t": "夕食",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "b": "夕食",
+        "p": "noun",
+        "r": "ゆうしょく"
+      },
+      {
+        "t": "と一緒にゆっくり"
+      },
+      {
+        "t": "味わいました",
+        "z": "品嚐",
+        "j": "味わいました",
+        "e": "enjoyed",
+        "b": "味わう",
+        "p": "verb",
+        "r": "あじわいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼女は梅酒のソーダ割りを注文しました。": [
+      {
+        "t": "彼女",
+        "z": "她",
+        "j": "彼女",
+        "e": "She",
+        "b": "彼女",
+        "p": "pronoun",
+        "r": "かのじょ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "梅酒",
+        "z": "梅酒",
+        "j": "梅酒",
+        "e": "plum wine",
+        "b": "梅酒",
+        "p": "noun",
+        "r": "うめしゅ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ソーダ割り",
+        "z": "蘇打水調和",
+        "j": "ソーダ割り",
+        "e": "soda mix",
+        "b": "ソーダ割り",
+        "p": "noun",
+        "r": "ソーダわり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注文しました",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "b": "注文する",
+        "p": "verb",
+        "r": "ちゅうもんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自家製の梅酒はかなり甘かったので、たっぷりの氷を入れて出しました。": [
+      {
+        "t": "自家製",
+        "z": "自製",
+        "j": "自家製",
+        "e": "homemade",
+        "b": "自家製",
+        "p": "adjective",
+        "r": "じかせい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "梅酒",
+        "z": "梅酒",
+        "j": "梅酒",
+        "e": "plum wine",
+        "b": "梅酒",
+        "p": "noun",
+        "r": "うめしゅ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "かなり",
+        "z": "相當",
+        "j": "かなり",
+        "e": "quite",
+        "b": "かなり",
+        "p": "adverb",
+        "r": "かなり"
+      },
+      {
+        "t": "甘かった",
+        "z": "甜",
+        "j": "甘かった",
+        "e": "was sweet",
+        "b": "甘い",
+        "p": "adjective",
+        "r": "あまかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "たっぷり",
+        "z": "大量",
+        "j": "たっぷり",
+        "e": "plenty",
+        "b": "たっぷり",
+        "p": "adverb",
+        "r": "たっぷり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "氷",
+        "z": "冰塊",
+        "j": "氷",
+        "e": "ice",
+        "b": "氷",
+        "p": "noun",
+        "r": "こおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れて",
+        "z": "放入",
+        "j": "入れて",
+        "e": "put in",
+        "b": "入れる",
+        "p": "verb",
+        "r": "いれて"
+      },
+      {
+        "t": "出しました",
+        "z": "端上",
+        "j": "出しました",
+        "e": "served",
+        "b": "出す",
+        "p": "verb",
+        "r": "だしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "マッコリを小さな器に注ぎました。": [
+      {
+        "t": "マッコリ",
+        "z": "馬格利酒",
+        "j": "マッコリ",
+        "e": "makgeolli",
+        "b": "マッコリ",
+        "p": "noun",
+        "r": "マッコリ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "小さな器",
+        "z": "小碗",
+        "j": "小さな器",
+        "e": "small bowls",
+        "b": "小さな器",
+        "p": "noun",
+        "r": "ちいさなうつわ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "注ぎました",
+        "z": "倒入了",
+        "j": "注ぎました",
+        "e": "poured",
+        "b": "注ぐ",
+        "p": "verb",
+        "r": "つぎました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "米の沈殿が底にたまっていたので、出す前にマッコリをゆっくり混ぜました。": [
+      {
+        "t": "米の沈殿",
+        "z": "米沉澱物",
+        "j": "米の沈殿",
+        "e": "rice sediment",
+        "b": "米の沈殿",
+        "p": "noun",
+        "r": "こめのちんでん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "底",
+        "z": "底部",
+        "j": "底",
+        "e": "bottom",
+        "b": "底",
+        "p": "noun",
+        "r": "そこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "たまっていた",
+        "z": "積聚著",
+        "j": "たまっていた",
+        "e": "had settled",
+        "b": "たまる",
+        "p": "verb",
+        "r": "たまっていた"
+      },
+      {
+        "t": "ので、出す前に"
+      },
+      {
+        "t": "マッコリ",
+        "z": "馬格利酒",
+        "j": "マッコリ",
+        "e": "makgeolli",
+        "b": "マッコリ",
+        "p": "noun",
+        "r": "マッコリ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ゆっくり混ぜました",
+        "z": "慢慢攪拌了",
+        "j": "ゆっくり混ぜました",
+        "e": "gently mixed",
+        "b": "混ぜる",
+        "p": "verb",
+        "r": "ゆっくりまぜました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼はウイスキーに氷を一つ入れました。": [
+      {
+        "t": "彼",
+        "z": "他",
+        "j": "彼",
+        "e": "he",
+        "b": "彼",
+        "p": "pronoun",
+        "r": "かれ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ウイスキー",
+        "z": "威士忌",
+        "j": "ウイスキー",
+        "e": "whiskey",
+        "b": "ウイスキー",
+        "p": "noun",
+        "r": "ウイスキー"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "氷",
+        "z": "冰塊",
+        "j": "氷",
+        "e": "ice",
+        "b": "こおり",
+        "p": "noun",
+        "r": "こおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一つ",
+        "z": "一顆",
+        "j": "一つ",
+        "e": "one",
+        "b": "ひとつ",
+        "p": "numeral",
+        "r": "ひとつ"
+      },
+      {
+        "t": "入れました",
+        "z": "放入了",
+        "j": "入れました",
+        "e": "added",
+        "b": "入れる",
+        "p": "verb",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "贈り物にウイスキーを買う前に、スモーキーな香りが強すぎないか尋ねました。": [
+      {
+        "t": "贈り物",
+        "z": "禮物",
+        "j": "贈り物",
+        "e": "gift",
+        "b": "贈り物",
+        "p": "noun",
+        "r": "おくりもの"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ウイスキー",
+        "z": "威士忌",
+        "j": "ウイスキー",
+        "e": "whiskey",
+        "b": "ウイスキー",
+        "p": "noun",
+        "r": "ウイスキー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買う前に",
+        "z": "買之前",
+        "j": "買う前に",
+        "e": "before buying",
+        "b": "買う",
+        "p": "verb",
+        "r": "かうまえに"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "スモーキーな香り",
+        "z": "煙燻味",
+        "j": "スモーキーな香り",
+        "e": "smoky flavor",
+        "b": "スモーキーな香り",
+        "p": "noun",
+        "r": "スモーキーなかおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "強すぎないか",
+        "z": "不會太強",
+        "j": "強すぎないか",
+        "e": "too strong",
+        "b": "強い",
+        "p": "adjective",
+        "r": "つよすぎないか"
+      },
+      {
+        "t": "尋ねました",
+        "z": "詢問了",
+        "j": "尋ねました",
+        "e": "asked",
+        "b": "尋ねる",
+        "p": "verb",
+        "r": "たずねました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このバーボンには甘いバニラの香りがあります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "バーボン",
+        "z": "波本威士忌",
+        "j": "バーボン",
+        "e": "bourbon",
+        "b": "バーボン",
+        "p": "noun",
+        "r": "バーボン"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "甘い",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet",
+        "b": "甘い",
+        "p": "adjective",
+        "r": "あまい"
+      },
+      {
+        "t": "バニラ",
+        "z": "香草",
+        "j": "バニラ",
+        "e": "vanilla",
+        "b": "バニラ",
+        "p": "noun",
+        "r": "バニラ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "があります。"
+      }
+    ],
+    "普段はバーボンをストレートで飲みますが、香りを感じやすくするために少し水を加えました。": [
+      {
+        "t": "普段",
+        "z": "通常",
+        "j": "普段",
+        "e": "usually",
+        "b": "普段",
+        "p": "adverb",
+        "r": "ふだん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "バーボン",
+        "z": "波本威士忌",
+        "j": "バーボン",
+        "e": "bourbon",
+        "b": "バーボン",
+        "p": "noun",
+        "r": "バーボン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ストレート",
+        "z": "純飲",
+        "j": "ストレート",
+        "e": "neat",
+        "b": "ストレート",
+        "p": "adjective",
+        "r": "ストレート"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "飲みます",
+        "z": "喝",
+        "j": "飲みます",
+        "e": "drink",
+        "b": "飲む",
+        "p": "verb",
+        "r": "のみます"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "感じやすくする",
+        "z": "更容易感受",
+        "j": "感じやすくする",
+        "e": "make easier to notice",
+        "b": "感じやすくする",
+        "p": "verb",
+        "r": "かんじやすくする"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "少し",
+        "z": "少量",
+        "j": "少し",
+        "e": "a little",
+        "b": "少し",
+        "p": "adverb",
+        "r": "すこし"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "b": "水",
+        "p": "noun",
+        "r": "みず"
+      },
+      {
+        "t": "を加えました。"
+      }
+    ],
+    "彼女は手でブランデーグラスを温めました。": [
+      {
+        "t": "彼女",
+        "z": "她",
+        "j": "彼女",
+        "e": "she",
+        "b": "彼女",
+        "p": "pronoun",
+        "r": "かのじょ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "手",
+        "z": "手",
+        "j": "手",
+        "e": "hand",
+        "b": "手",
+        "p": "noun",
+        "r": "て"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ブランデーグラス",
+        "z": "白蘭地杯",
+        "j": "ブランデーグラス",
+        "e": "brandy glass",
+        "b": "ブランデーグラス",
+        "p": "noun",
+        "r": "ブランデーグラス"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "温めました",
+        "z": "溫著",
+        "j": "温めました",
+        "e": "warmed",
+        "b": "温める",
+        "p": "verb",
+        "r": "あたためました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "そのブランデーは果実の香りが豊かだったので、デザートのあとに少量ずつ出しました。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "ブランデー",
+        "z": "白蘭地",
+        "j": "ブランデー",
+        "e": "brandy",
+        "b": "ブランデー",
+        "p": "noun",
+        "r": "ブランデー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "果実",
+        "z": "果實",
+        "j": "果実",
+        "e": "fruit",
+        "b": "果実",
+        "p": "noun",
+        "r": "かじつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "豊かだった",
+        "z": "豐富的",
+        "j": "豊かだった",
+        "e": "was rich",
+        "b": "豊かだ",
+        "p": "adjective",
+        "r": "ゆたかだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "デザート",
+        "z": "甜點",
+        "j": "デザート",
+        "e": "dessert",
+        "b": "デザート",
+        "p": "noun",
+        "r": "デザート"
+      },
+      {
+        "t": "のあとに"
+      },
+      {
+        "t": "少量ずつ",
+        "z": "少量地",
+        "j": "少量ずつ",
+        "e": "in small amounts",
+        "b": "少量ずつ",
+        "p": "adverb",
+        "r": "しょうりょうずつ"
+      },
+      {
+        "t": "出しました",
+        "z": "端出",
+        "j": "出しました",
+        "e": "served",
+        "b": "出す",
+        "p": "verb",
+        "r": "だしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このジンはジュニパーの香りがします。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "ジン",
+        "z": "琴酒",
+        "j": "ジン",
+        "e": "gin",
+        "b": "ジン",
+        "p": "noun",
+        "r": "ジン"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ジュニパー",
+        "z": "杜松",
+        "j": "ジュニパー",
+        "e": "juniper",
+        "b": "ジュニパー",
+        "p": "noun",
+        "r": "ジュニパー"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "かおり",
+        "e": "smell",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "します",
+        "z": "有",
+        "j": "あります",
+        "e": "has",
+        "b": "する",
+        "p": "verb",
+        "r": "します"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "重い味にならず爽やかに仕上がるよう、バーテンダーはかんきつの香りが強いジンを使いました。": [
+      {
+        "t": "重い味",
+        "z": "濃重口味",
+        "j": "濃くて重い味わい",
+        "e": "heavy taste",
+        "b": "重い味",
+        "p": "noun",
+        "r": "おもいあじ"
+      },
+      {
+        "t": "にならず"
+      },
+      {
+        "t": "爽やかに",
+        "z": "清爽地",
+        "j": "さっぱりとした感じで",
+        "e": "refreshingly",
+        "b": "爽やか",
+        "p": "adverb",
+        "r": "さわやかに"
+      },
+      {
+        "t": "仕上がる",
+        "z": "完成",
+        "j": "完成する",
+        "e": "to finish",
+        "b": "仕上がる",
+        "p": "verb",
+        "r": "しあがる"
+      },
+      {
+        "t": "よう、"
+      },
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "お酒を作る人",
+        "e": "bartender",
+        "b": "バーテンダー",
+        "p": "noun",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "かんきつ",
+        "z": "柑橘",
+        "j": "柑橘類の果物",
+        "e": "citrus",
+        "b": "かんきつ",
+        "p": "noun",
+        "r": "かんきつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香味",
+        "j": "におい",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "強い",
+        "z": "強烈的",
+        "j": "はっきりしている",
+        "e": "strong",
+        "b": "強い",
+        "p": "adjective",
+        "r": "つよい"
+      },
+      {
+        "t": "ジン",
+        "z": "琴酒",
+        "j": "ジンというお酒",
+        "e": "gin",
+        "b": "ジン",
+        "p": "noun",
+        "r": "ジン"
+      },
+      {
+        "t": "を使いました。"
+      }
+    ],
+    "そのレシピではウォッカを少量使います。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "レシピ",
+        "z": "食譜",
+        "j": "レシピ",
+        "e": "recipe",
+        "b": "レシピ",
+        "p": "noun",
+        "r": "レシピ"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "ウォッカ",
+        "z": "伏特加",
+        "j": "ウォッカ",
+        "e": "vodka",
+        "b": "ウォッカ",
+        "p": "noun",
+        "r": "ウォッカ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "少量",
+        "z": "少量",
+        "j": "しょうりょう",
+        "e": "small amount",
+        "b": "少量",
+        "p": "noun",
+        "r": "しょうりょう"
+      },
+      {
+        "t": "使います",
+        "z": "使用",
+        "j": "つかいます",
+        "e": "use",
+        "b": "使う",
+        "p": "verb",
+        "r": "つかいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ウォッカは味が穏やかなので、バーテンダーは生のグレープフルーツ果汁と合わせました。": [
+      {
+        "t": "ウォッカ",
+        "z": "伏特加",
+        "j": "ウォッカ",
+        "e": "vodka",
+        "b": "ウォッカ",
+        "p": "noun",
+        "r": "ウォッカ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "味",
+        "z": "味道",
+        "j": "あじ",
+        "e": "flavor",
+        "b": "味",
+        "p": "noun",
+        "r": "あじ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "穏やか",
+        "z": "溫和",
+        "j": "おだやか",
+        "e": "neutral",
+        "b": "穏やか",
+        "p": "adjective",
+        "r": "おだやか"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "バーテンダー",
+        "p": "noun",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "生",
+        "z": "新鮮",
+        "j": "なま",
+        "e": "fresh",
+        "b": "生",
+        "p": "adjective",
+        "r": "なま"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "グレープフルーツ果汁",
+        "z": "葡萄柚汁",
+        "j": "グレープフルーツかじゅう",
+        "e": "grapefruit juice",
+        "b": "グレープフルーツ果汁",
+        "p": "noun",
+        "r": "グレープフルーツかじゅう"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "合わせました",
+        "z": "搭配了",
+        "j": "あわせました",
+        "e": "paired",
+        "b": "合わせる",
+        "p": "verb",
+        "r": "あわせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ダークラムが飲み物にカラメルの香りを加えます。": [
+      {
+        "t": "ダークラム",
+        "z": "深色蘭姆酒",
+        "j": "ダークラム",
+        "e": "Dark rum",
+        "b": "ダークラム",
+        "p": "noun",
+        "r": "ダークラム"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "飲み物",
+        "z": "飲料",
+        "j": "飲み物",
+        "e": "drink",
+        "b": "飲み物",
+        "p": "noun",
+        "r": "のみもの"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "カラメル",
+        "z": "焦糖",
+        "j": "カラメル",
+        "e": "caramel",
+        "b": "カラメル",
+        "p": "noun",
+        "r": "カラメル"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "加えます",
+        "z": "添加",
+        "j": "加えます",
+        "e": "adds",
+        "b": "加える",
+        "p": "verb",
+        "r": "くわえます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ダークラムでは軽く爽やかな味が変わるので、モヒートにはホワイトラムを使いました。": [
+      {
+        "t": "ダークラム",
+        "z": "深色蘭姆酒",
+        "j": "ダークラム",
+        "e": "dark rum",
+        "b": "ダークラム",
+        "p": "noun",
+        "r": "ダークラム"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "軽く爽やかな味",
+        "z": "輕爽口味",
+        "j": "軽く爽やかな味",
+        "e": "light fresh taste",
+        "b": "軽く爽やかな味",
+        "p": "phrase",
+        "r": "かるくさわやかなあじ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "変わる",
+        "z": "改變",
+        "j": "変わる",
+        "e": "change",
+        "b": "変わる",
+        "p": "verb",
+        "r": "かわる"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "モヒート",
+        "z": "莫希托",
+        "j": "モヒート",
+        "e": "mojito",
+        "b": "モヒート",
+        "p": "noun",
+        "r": "モヒート"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "ホワイトラム",
+        "z": "白蘭姆酒",
+        "j": "ホワイトラム",
+        "e": "white rum",
+        "b": "ホワイトラム",
+        "p": "noun",
+        "r": "ホワイトラム"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使いました",
+        "z": "使用了",
+        "j": "使いました",
+        "e": "used",
+        "b": "使う",
+        "p": "verb",
+        "r": "つかいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "バーテンダーはテキーラを丁寧に量りました。": [
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "バーテンダー",
+        "p": "noun",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "テキーラ",
+        "z": "龍舌蘭酒",
+        "j": "テキーラ",
+        "e": "tequila",
+        "b": "テキーラ",
+        "p": "noun",
+        "r": "テキーラ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "丁寧に",
+        "z": "小心地",
+        "j": "丁寧に",
+        "e": "carefully",
+        "b": "丁寧に",
+        "p": "adverb",
+        "r": "ていねいに"
+      },
+      {
+        "t": "量りました",
+        "z": "量了",
+        "j": "量りました",
+        "e": "measured",
+        "b": "量る",
+        "p": "verb",
+        "r": "はかりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "テキーラを一気に飲まず、ゆっくり味わって焼いたアガベの風味を感じました。": [
+      {
+        "t": "テキーラ",
+        "z": "龍舌蘭酒",
+        "j": "テキーラ",
+        "e": "tequila",
+        "b": "テキーラ",
+        "p": "noun",
+        "r": "テキーラ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一気に",
+        "z": "快速地",
+        "j": "一気に",
+        "e": "quickly",
+        "b": "一気に",
+        "p": "adverb",
+        "r": "いっきに"
+      },
+      {
+        "t": "飲まず",
+        "z": "不喝",
+        "j": "飲まず",
+        "e": "not drinking",
+        "b": "飲む",
+        "p": "verb",
+        "r": "のまず"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "b": "ゆっくり",
+        "p": "adverb",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "味わって",
+        "z": "品味",
+        "j": "味わって",
+        "e": "sipped",
+        "b": "味わう",
+        "p": "verb",
+        "r": "あじわって"
+      },
+      {
+        "t": "焼いた",
+        "z": "烤過的",
+        "j": "焼いた",
+        "e": "roasted",
+        "b": "焼く",
+        "p": "adjective",
+        "r": "やいた"
+      },
+      {
+        "t": "アガベ",
+        "z": "龍舌蘭",
+        "j": "アガベ",
+        "e": "agave",
+        "b": "アガベ",
+        "p": "noun",
+        "r": "アガベ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "風味",
+        "z": "風味",
+        "j": "風味",
+        "e": "flavor",
+        "b": "風味",
+        "p": "noun",
+        "r": "ふうみ"
+      },
+      {
+        "t": "を感じました。"
+      }
+    ],
+    "このオレンジリキュールは甘い香りがします。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "オレンジリキュール",
+        "z": "橙味利口酒",
+        "j": "オレンジのリキュール",
+        "e": "orange liqueur",
+        "b": "オレンジリキュール",
+        "p": "noun",
+        "r": "オレンジリキュール"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "甘い",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet",
+        "b": "甘い",
+        "p": "adjective",
+        "r": "あまい"
+      },
+      {
+        "t": "香り",
+        "z": "香味",
+        "j": "におい",
+        "e": "smell",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "します",
+        "z": "有",
+        "j": "あります",
+        "e": "has",
+        "b": "する",
+        "p": "verb",
+        "r": "します"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "レシピにはリキュールを一さじしか使わないので、直接注がず量りました。": [
+      {
+        "t": "レシピ",
+        "z": "食譜",
+        "j": "レシピ",
+        "e": "recipe",
+        "b": "レシピ",
+        "p": "noun",
+        "r": "レシピ"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "リキュール",
+        "z": "利口酒",
+        "j": "リキュール",
+        "e": "liqueur",
+        "b": "リキュール",
+        "p": "noun",
+        "r": "リキュール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一さじ",
+        "z": "一匙",
+        "j": "一さじ",
+        "e": "a spoonful",
+        "b": "一さじ",
+        "p": "numeral",
+        "r": "ひとさじ"
+      },
+      {
+        "t": "しか"
+      },
+      {
+        "t": "使わない",
+        "z": "不使用",
+        "j": "使わない",
+        "e": "do not use",
+        "b": "使う",
+        "p": "verb",
+        "r": "つかわない"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "直接",
+        "z": "直接",
+        "j": "直接に",
+        "e": "directly",
+        "b": "直接",
+        "p": "adverb",
+        "r": "ちょくせつ"
+      },
+      {
+        "t": "注がず",
+        "z": "不倒",
+        "j": "注がないで",
+        "e": "without pouring",
+        "b": "注ぐ",
+        "p": "verb",
+        "r": "そそがず"
+      },
+      {
+        "t": "量りました",
+        "z": "量了",
+        "j": "量りました",
+        "e": "measured",
+        "b": "量る",
+        "p": "verb",
+        "r": "はかりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "レモン入りのハイボールを注文しました。": [
+      {
+        "t": "レモン入り",
+        "z": "含檸檬",
+        "j": "レモンが入っている",
+        "e": "with lemon",
+        "b": "レモン入り",
+        "p": "phrase",
+        "r": "レモンいり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ハイボール",
+        "z": "威士忌蘇打",
+        "j": "ハイボール",
+        "e": "highball",
+        "b": "ハイボール",
+        "p": "noun",
+        "r": "ハイボール"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注文しました",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "b": "注文する",
+        "p": "verb",
+        "r": "ちゅうもんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ハイボールの炭酸を保つために、彼女はソーダを静かに注ぎ、一度だけ混ぜました。": [
+      {
+        "t": "ハイボールの"
+      },
+      {
+        "t": "炭酸",
+        "z": "碳酸",
+        "j": "炭酸",
+        "e": "carbonation",
+        "b": "炭酸",
+        "p": "noun",
+        "r": "たんさん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "保つ",
+        "z": "保持",
+        "j": "保つ",
+        "e": "keep",
+        "b": "保つ",
+        "p": "verb",
+        "r": "たもつ"
+      },
+      {
+        "t": "ために、彼女は"
+      },
+      {
+        "t": "ソーダ",
+        "z": "蘇打水",
+        "j": "ソーダ",
+        "e": "soda",
+        "b": "ソーダ",
+        "p": "noun",
+        "r": "ソーダ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "静かに",
+        "z": "輕輕地",
+        "j": "静かに",
+        "e": "gently",
+        "b": "静かに",
+        "p": "adverb",
+        "r": "しずかに"
+      },
+      {
+        "t": "注ぎ",
+        "z": "倒",
+        "j": "注ぐ",
+        "e": "pour",
+        "b": "注ぐ",
+        "p": "verb",
+        "r": "そそぎ"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "一度だけ",
+        "z": "一次",
+        "j": "一度だけ",
+        "e": "only once",
+        "b": "一度だけ",
+        "p": "adverb",
+        "r": "いちどだけ"
+      },
+      {
+        "t": "混ぜました",
+        "z": "攪拌了",
+        "j": "混ぜました",
+        "e": "stirred",
+        "b": "混ぜる",
+        "p": "verb",
+        "r": "まぜました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このレモンサワーは冷たくて酸味があります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "レモンサワー",
+        "z": "檸檬沙瓦",
+        "j": "レモン味の酒",
+        "e": "lemon sour",
+        "b": "レモンサワー",
+        "p": "noun",
+        "r": "レモンサワー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "冷たくて",
+        "z": "冰冷且",
+        "j": "冷たくて",
+        "e": "cold and",
+        "b": "冷たい",
+        "p": "adjective",
+        "r": "つめたくて"
+      },
+      {
+        "t": "酸味",
+        "z": "酸味",
+        "j": "酸っぱい味",
+        "e": "tartness",
+        "b": "酸味",
+        "p": "noun",
+        "r": "さんみ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "z": "有",
+        "j": "あります",
+        "e": "there is",
+        "b": "ある",
+        "p": "verb",
+        "r": "あります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "レモンサワーは味より度数が高かったので、合間に水を飲みました。": [
+      {
+        "t": "レモンサワー",
+        "z": "檸檬沙瓦",
+        "j": "レモン味の酒",
+        "e": "lemon sour",
+        "b": "レモンサワー",
+        "p": "noun",
+        "r": "レモンサワー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "味より",
+        "z": "比味道",
+        "j": "味より",
+        "e": "than taste",
+        "b": "味より",
+        "p": "phrase",
+        "r": "あじより"
+      },
+      {
+        "t": "度数",
+        "z": "度數",
+        "j": "アルコールの割合",
+        "e": "alcohol percentage",
+        "b": "度数",
+        "p": "noun",
+        "r": "どすう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "高かった",
+        "z": "高的",
+        "j": "高かった",
+        "e": "was high",
+        "b": "高い",
+        "p": "adjective",
+        "r": "たかかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "合間に",
+        "z": "間隔中",
+        "j": "合間に",
+        "e": "between",
+        "b": "合間に",
+        "p": "adverb",
+        "r": "あいまに"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "b": "水",
+        "p": "noun",
+        "r": "みず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "飲みました",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "b": "飲む",
+        "p": "verb",
+        "r": "のみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "店でグレープフルーツ味のチューハイを買いました。": [
+      {
+        "t": "店",
+        "z": "商店",
+        "j": "店",
+        "e": "store",
+        "b": "店",
+        "p": "noun",
+        "r": "みせ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "グレープフルーツ味",
+        "z": "葡萄柚味",
+        "j": "グレープフルーツ味",
+        "e": "grapefruit flavor",
+        "b": "グレープフルーツ味",
+        "p": "noun",
+        "r": "グレープフルーツあじ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "チューハイ",
+        "z": "燒酎調酒",
+        "j": "チューハイ",
+        "e": "chuhai",
+        "b": "チューハイ",
+        "p": "noun",
+        "r": "チューハイ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "b": "買う",
+        "p": "verb",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "缶チューハイは味が似て見えたので、選ぶ前にアルコール度数を確認しました。": [
+      {
+        "t": "缶チューハイ",
+        "z": "罐裝燒酎調酒",
+        "j": "缶チューハイ",
+        "e": "canned chuhai",
+        "b": "缶チューハイ",
+        "p": "noun",
+        "r": "かんチューハイ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "味",
+        "z": "味道",
+        "j": "味",
+        "e": "taste",
+        "b": "味",
+        "p": "noun",
+        "r": "あじ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "似て見えた",
+        "z": "看起來相似",
+        "j": "似て見えた",
+        "e": "looked similar",
+        "b": "似る",
+        "p": "phrase",
+        "r": "にてみえた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "選ぶ前に",
+        "z": "選擇之前",
+        "j": "選ぶ前に",
+        "e": "before choosing",
+        "b": "選ぶ前に",
+        "p": "phrase",
+        "r": "えらぶまえに"
+      },
+      {
+        "t": "アルコール度数",
+        "z": "酒精度數",
+        "j": "アルコール度数",
+        "e": "alcohol percentage",
+        "b": "アルコール度数",
+        "p": "noun",
+        "r": "アルコールどすう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "b": "確認する",
+        "p": "verb",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "私のジントニックにはライムが添えてありました。": [
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "b": "私",
+        "p": "pronoun",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ジントニック",
+        "z": "琴通寧",
+        "j": "ジントニック",
+        "e": "gin and tonic",
+        "b": "ジントニック",
+        "p": "noun",
+        "r": "ジントニック"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "ライム",
+        "z": "萊姆",
+        "j": "ライム",
+        "e": "lime",
+        "b": "ライム",
+        "p": "noun",
+        "r": "ライム"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "添えてありました",
+        "z": "附上了",
+        "j": "添えてありました",
+        "e": "came with",
+        "b": "添える",
+        "p": "verb",
+        "r": "そえてありました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ジンの植物らしい香りを感じたかったので、トニックウォーターを少なめに頼みました。": [
+      {
+        "t": "ジン",
+        "z": "琴酒",
+        "j": "ジン",
+        "e": "gin",
+        "b": "ジン",
+        "p": "noun",
+        "r": "ジン"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "植物らしい",
+        "z": "像植物的",
+        "j": "植物のような特徴のある",
+        "e": "botanical",
+        "b": "植物らしい",
+        "p": "adjective",
+        "r": "しょくぶつらしい"
+      },
+      {
+        "t": "香り",
+        "z": "香味",
+        "j": "におい",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "感じたかった",
+        "z": "想感覺",
+        "j": "感じたいと思った",
+        "e": "wanted to feel",
+        "b": "感じる",
+        "p": "verb",
+        "r": "かんじたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "トニックウォーター",
+        "z": "通寧水",
+        "j": "トニックウォーター",
+        "e": "tonic water",
+        "b": "トニックウォーター",
+        "p": "noun",
+        "r": "トニックウォーター"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "少なめに",
+        "z": "少量地",
+        "j": "少なめの量で",
+        "e": "a little less",
+        "b": "少なめ",
+        "p": "adverb",
+        "r": "すくなめに"
+      },
+      {
+        "t": "頼みました",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "b": "頼む",
+        "p": "verb",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "モヒートに生のミントが浮いています。": [
+      {
+        "t": "モヒート",
+        "z": "莫希托",
+        "j": "モヒート",
+        "e": "mojito",
+        "b": "モヒート",
+        "p": "noun",
+        "r": "モヒート"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "生のミント",
+        "z": "新鮮薄荷",
+        "j": "生のミント",
+        "e": "fresh mint",
+        "b": "ミント",
+        "p": "noun",
+        "r": "なまのミント"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "浮いています",
+        "z": "漂浮著",
+        "j": "浮いています",
+        "e": "floats",
+        "b": "浮く",
+        "p": "verb",
+        "r": "ういています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "苦くならず爽やかに香るよう、バーテンダーはモヒートのミントを優しく押しました。": [
+      {
+        "t": "苦くならず",
+        "z": "不苦",
+        "j": "苦くならず",
+        "e": "without becoming bitter",
+        "b": "苦くなる",
+        "p": "phrase",
+        "r": "にがくならず"
+      },
+      {
+        "t": "爽やかに香るよう",
+        "z": "清新地香氣",
+        "j": "爽やかに香るよう",
+        "e": "to smell fresh",
+        "b": "香る",
+        "p": "phrase",
+        "r": "さわやかにかおるよう"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "バーテンダー",
+        "p": "noun",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "モヒート",
+        "z": "莫希托",
+        "j": "モヒート",
+        "e": "mojito",
+        "b": "モヒート",
+        "p": "noun",
+        "r": "モヒート"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ミント",
+        "z": "薄荷",
+        "j": "ミント",
+        "e": "mint",
+        "b": "ミント",
+        "p": "noun",
+        "r": "ミント"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "優しく押しました",
+        "z": "輕輕地按壓了",
+        "j": "優しく押しました",
+        "e": "pressed gently",
+        "b": "押す",
+        "p": "verb",
+        "r": "やさしくおしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "マティーニにはオリーブが添えてありました。": [
+      {
+        "t": "マティーニ",
+        "z": "馬丁尼酒",
+        "j": "カクテルの一種",
+        "e": "martini",
+        "b": "マティーニ",
+        "p": "noun",
+        "r": "マティーニ"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "オリーブ",
+        "z": "橄欖",
+        "j": "カクテルに添える果実",
+        "e": "olive",
+        "b": "オリーブ",
+        "p": "noun",
+        "r": "オリーブ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "添えてありました",
+        "z": "附加著",
+        "j": "そえてありました",
+        "e": "was garnished with",
+        "b": "添える",
+        "p": "verb",
+        "r": "そえてありました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドライのマティーニを頼むと、バーテンダーはベルモットを少なめにし、よく冷えるまでステアしました。": [
+      {
+        "t": "ドライのマティーニ",
+        "z": "乾馬丁尼酒",
+        "j": "ドライのマティーニ",
+        "e": "martini dry",
+        "b": "ドライのマティーニ",
+        "p": "phrase",
+        "r": "ドライのマティーニ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "頼むと",
+        "z": "點了",
+        "j": "頼むと",
+        "e": "ordered",
+        "b": "頼む",
+        "p": "verb",
+        "r": "たのむと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "バーテンダー",
+        "z": "調酒師",
+        "j": "バーテンダー",
+        "e": "bartender",
+        "b": "バーテンダー",
+        "p": "noun",
+        "r": "バーテンダー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ベルモット",
+        "z": "苦艾酒",
+        "j": "ベルモット",
+        "e": "vermouth",
+        "b": "ベルモット",
+        "p": "noun",
+        "r": "ベルモット"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "少なめにし",
+        "z": "用較少",
+        "j": "少なめにし",
+        "e": "used less",
+        "b": "少なめにする",
+        "p": "verb",
+        "r": "すくなめにし"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "よく冷えるまで",
+        "z": "直到充分冰涼",
+        "j": "よく冷えるまで",
+        "e": "until well chilled",
+        "b": "よく冷えるまで",
+        "p": "phrase",
+        "r": "よくひえるまで"
+      },
+      {
+        "t": "ステアしました",
+        "z": "攪拌了",
+        "j": "ステアしました",
+        "e": "stirred",
+        "b": "ステアする",
+        "p": "verb",
+        "r": "ステアしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "マルガリータのグラスの縁に塩が付いていました。": [
+      {
+        "t": "マルガリータ",
+        "z": "瑪格麗特",
+        "j": "マルガリータ",
+        "e": "margarita",
+        "b": "マルガリータ",
+        "p": "noun",
+        "r": "マルガリータ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "グラス",
+        "z": "酒杯",
+        "j": "グラス",
+        "e": "glass",
+        "b": "グラス",
+        "p": "noun",
+        "r": "グラス"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "縁",
+        "z": "杯緣",
+        "j": "縁",
+        "e": "rim",
+        "b": "縁",
+        "p": "noun",
+        "r": "ふち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "塩",
+        "z": "鹽",
+        "j": "塩",
+        "e": "salt",
+        "b": "塩",
+        "p": "noun",
+        "r": "しお"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "付いていました",
+        "z": "附著了",
+        "j": "付いていました",
+        "e": "covered",
+        "b": "付く",
+        "p": "verb",
+        "r": "ついていました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ライムの風味を際立たせたかったので、彼女は塩なしのマルガリータを頼みました。": [
+      {
+        "t": "ライム",
+        "z": "萊姆",
+        "j": "ライム",
+        "e": "lime",
+        "b": "ライム",
+        "p": "noun",
+        "r": "ライム"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "風味",
+        "z": "風味",
+        "j": "風味",
+        "e": "flavor",
+        "b": "風味",
+        "p": "noun",
+        "r": "ふうみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "際立たせたかった",
+        "z": "想讓風味更突出",
+        "j": "際立たせたかった",
+        "e": "wanted to emphasize",
+        "b": "際立たせる",
+        "p": "verb",
+        "r": "きわだたせたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "彼女",
+        "z": "她",
+        "j": "彼女",
+        "e": "she",
+        "b": "彼女",
+        "p": "pronoun",
+        "r": "かのじょ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "塩なしのマルガリータ",
+        "z": "無鹽瑪格麗塔",
+        "j": "塩なしのマルガリータ",
+        "e": "margarita without salt",
+        "b": "塩なしのマルガリータ",
+        "p": "phrase",
+        "r": "しおなしのマルガリータ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "頼みました",
+        "z": "點了",
+        "j": "頼みました",
+        "e": "requested",
+        "b": "頼む",
+        "p": "verb",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "サングリアにオレンジの輪切りが浮いていました。": [
+      {
+        "t": "サングリア",
+        "z": "桑格利亞酒",
+        "j": "サングリア",
+        "e": "sangria",
+        "b": "サングリア",
+        "p": "noun",
+        "r": "サングリア"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "オレンジの輪切り",
+        "z": "橘子片",
+        "j": "オレンジの輪切り",
+        "e": "orange slices",
+        "b": "オレンジの輪切り",
+        "p": "noun",
+        "r": "オレンジのわぎり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "浮いていました",
+        "z": "漂浮著",
+        "j": "浮いていました",
+        "e": "floated",
+        "b": "浮く",
+        "p": "verb",
+        "r": "ういていました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "客が来る前に果物の風味がワインへ移るよう、早めにサングリアを作りました。": [
+      {
+        "t": "客",
+        "z": "客人",
+        "j": "客",
+        "e": "guests",
+        "b": "客",
+        "p": "noun",
+        "r": "きゃく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "来る前に",
+        "z": "來之前",
+        "j": "来る前に",
+        "e": "before they arrived",
+        "b": "来る前に",
+        "p": "phrase",
+        "r": "くるまえに"
+      },
+      {
+        "t": "果物",
+        "z": "水果",
+        "j": "果物",
+        "e": "fruit",
+        "b": "果物",
+        "p": "noun",
+        "r": "くだもの"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "風味",
+        "z": "風味",
+        "j": "風味",
+        "e": "flavor",
+        "b": "風味",
+        "p": "noun",
+        "r": "ふうみ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ワイン",
+        "z": "葡萄酒",
+        "j": "ワイン",
+        "e": "wine",
+        "b": "ワイン",
+        "p": "noun",
+        "r": "ワイン"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "移るよう",
+        "z": "轉移",
+        "j": "移るよう",
+        "e": "to transfer",
+        "b": "移る",
+        "p": "verb",
+        "r": "うつるよう"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "早めに",
+        "z": "早早地",
+        "j": "早めに",
+        "e": "early",
+        "b": "早めに",
+        "p": "adverb",
+        "r": "はやめに"
+      },
+      {
+        "t": "サングリアを"
+      },
+      {
+        "t": "作りました",
+        "z": "做了",
+        "j": "作りました",
+        "e": "prepared",
+        "b": "作る",
+        "p": "verb",
+        "r": "つくりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ピニャコラーダはココナッツとパイナップルの味がします。": [
+      {
+        "t": "ピニャコラーダ",
+        "z": "鳳梨可樂達",
+        "j": "ピニャコラーダ",
+        "e": "piña colada",
+        "b": "ピニャコラーダ",
+        "p": "noun",
+        "r": "ピニャコラーダ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ココナッツ",
+        "z": "椰子",
+        "j": "ココナッツ",
+        "e": "coconut",
+        "b": "ココナッツ",
+        "p": "noun",
+        "r": "ココナッツ"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "パイナップル",
+        "z": "鳳梨",
+        "j": "パイナップル",
+        "e": "pineapple",
+        "b": "パイナップル",
+        "p": "noun",
+        "r": "パイナップル"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "味がします",
+        "z": "有味道",
+        "j": "味がします",
+        "e": "tastes like",
+        "b": "味がする",
+        "p": "verb",
+        "r": "あじがします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "フローズンのピニャコラーダはとても濃かったので、店員が太いストローを持ってきました。": [
+      {
+        "t": "フローズンのピニャコラーダ",
+        "z": "冰沙鳳梨可樂達",
+        "j": "フローズンのピニャコラーダ",
+        "e": "frozen piña colada",
+        "b": "フローズンのピニャコラーダ",
+        "p": "noun",
+        "r": "フローズンのピニャコラーダ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "とても濃かった",
+        "z": "非常濃稠だった",
+        "j": "とても濃かった",
+        "e": "was very thick",
+        "b": "濃い",
+        "p": "adjective",
+        "r": "とてもこかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "server",
+        "b": "店員",
+        "p": "noun",
+        "r": "てんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "太いストロー",
+        "z": "粗吸管",
+        "j": "太いストロー",
+        "e": "wide straw",
+        "b": "太いストロー",
+        "p": "noun",
+        "r": "ふといストロー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきました",
+        "z": "帶來了",
+        "j": "持ってきました",
+        "e": "brought",
+        "b": "持ってくる",
+        "p": "verb",
+        "r": "もってきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このシードルは辛口で果実の風味があります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "シードル",
+        "z": "蘋果酒",
+        "j": "リンゴから作った酒",
+        "e": "cider",
+        "b": "シードル",
+        "p": "noun",
+        "r": "シードル"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "辛口",
+        "z": "辛口的",
+        "j": "味が辛いこと",
+        "e": "dry",
+        "b": "辛口",
+        "p": "adjective",
+        "r": "からくち"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "果実",
+        "z": "果實",
+        "j": "果物",
+        "e": "fruit",
+        "b": "果実",
+        "p": "noun",
+        "r": "かじつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "風味",
+        "z": "風味",
+        "j": "味や香りの特徴",
+        "e": "flavor",
+        "b": "風味",
+        "p": "noun",
+        "r": "ふうみ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "z": "有",
+        "j": "存在する",
+        "e": "has",
+        "b": "ある",
+        "p": "verb",
+        "r": "あります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "そのシードルは発泡性だったので、流し台の上で瓶をゆっくり開けました。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "シードル",
+        "z": "蘋果酒",
+        "j": "リンゴから作った酒",
+        "e": "cider",
+        "b": "シードル",
+        "p": "noun",
+        "r": "シードル"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "発泡性",
+        "z": "有氣泡的",
+        "j": "泡がある性質",
+        "e": "sparkling",
+        "b": "発泡性",
+        "p": "adjective",
+        "r": "はっぽうせい"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "流し台",
+        "z": "水槽",
+        "j": "台所の洗い場",
+        "e": "sink",
+        "b": "流し台",
+        "p": "noun",
+        "r": "ながしだい"
+      },
+      {
+        "t": "の上で"
+      },
+      {
+        "t": "瓶",
+        "z": "瓶子",
+        "j": "液体を入れる容器",
+        "e": "bottle",
+        "b": "瓶",
+        "p": "noun",
+        "r": "びん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "急がずに",
+        "e": "slowly",
+        "b": "ゆっくり",
+        "p": "adverb",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "開けました",
+        "z": "打開了",
+        "j": "開けた",
+        "e": "opened",
+        "b": "開ける",
+        "p": "verb",
+        "r": "あけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このミードには穏やかな蜂蜜の香りがあります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "ミード",
+        "z": "蜂蜜酒",
+        "j": "蜂蜜から作った酒",
+        "e": "mead",
+        "b": "ミード",
+        "p": "noun",
+        "r": "ミード"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "穏やかな",
+        "z": "溫和的",
+        "j": "やさしい",
+        "e": "gentle",
+        "b": "穏やか",
+        "p": "adjective",
+        "r": "おだやかな"
+      },
+      {
+        "t": "蜂蜜",
+        "z": "蜂蜜",
+        "j": "ミツバチの作る甘い液体",
+        "e": "honey",
+        "b": "蜂蜜",
+        "p": "noun",
+        "r": "はちみつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "におい",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "z": "有",
+        "j": "存在する",
+        "e": "has",
+        "b": "ある",
+        "p": "verb",
+        "r": "あります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "そのミードは甘い香りがしましたが、後味はチーズに合うほど辛口でした。": [
+      {
+        "t": "その"
+      },
+      {
+        "t": "ミード",
+        "z": "蜂蜜酒",
+        "j": "蜂蜜から作った酒",
+        "e": "mead",
+        "b": "ミード",
+        "p": "noun",
+        "r": "ミード"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "甘い",
+        "z": "甜的",
+        "j": "甘みのある",
+        "e": "sweet",
+        "b": "甘い",
+        "p": "adjective",
+        "r": "あまい"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "におい",
+        "e": "aroma",
+        "b": "香り",
+        "p": "noun",
+        "r": "かおり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "しました",
+        "z": "有",
+        "j": "あった",
+        "e": "had",
+        "b": "する",
+        "p": "verb",
+        "r": "しました"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "後味",
+        "z": "後味",
+        "j": "飲み終わった後の味",
+        "e": "finish",
+        "b": "後味",
+        "p": "noun",
+        "r": "あとあじ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "チーズ",
+        "z": "起司",
+        "j": "乳製品の一種",
+        "e": "cheese",
+        "b": "チーズ",
+        "p": "noun",
+        "r": "チーズ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "合う",
+        "z": "合適",
+        "j": "ぴったりする",
+        "e": "pair with",
+        "b": "合う",
+        "p": "verb",
+        "r": "あう"
+      },
+      {
+        "t": "ほど"
+      },
+      {
+        "t": "辛口",
+        "z": "乾爽",
+        "j": "辛口",
+        "e": "dry",
+        "b": "辛口",
+        "p": "adjective",
+        "r": "からくち"
+      },
+      {
+        "t": "でした。"
+      }
+    ]
+  }
+}

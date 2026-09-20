@@ -1,0 +1,850 @@
+{
+  "schemaVersion": 1,
+  "series": "alcoholic-drinks",
+  "batch": "B",
+  "state": "candidate-content-reviewed",
+  "entries": [
+    {
+      "id": "brandy",
+      "word": "brandy",
+      "chinese": "白蘭地",
+      "chineseDefinition": "以葡萄酒或其他發酵果汁蒸餾製成，通常經木桶熟成的烈酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbræn.di/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "白蘭地",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A spirit distilled from wine or other fermented fruit juice and often aged in wood.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ブランデー」とは、ワインなどの発酵した果汁を蒸留し、木樽で熟成させることが多い酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She warmed the brandy glass in her hands.",
+          "ja": "彼女は手でブランデーグラスを温めました。",
+          "zh": "她用雙手溫著白蘭地杯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the brandy had a rich fruit aroma, we served small glasses after dessert.",
+          "ja": "そのブランデーは果実の香りが豊かだったので、デザートのあとに少量ずつ出しました。",
+          "zh": "因為那款白蘭地果香濃郁，我們在甜點後各倒了一小杯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "whiskey",
+        "rum",
+        "liqueur"
+      ],
+      "ja": "ブランデー",
+      "jaReading": "ブランデー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/brandy-ai-6e59cfd30fff.webp"
+    },
+    {
+      "id": "gin",
+      "word": "gin",
+      "chinese": "琴酒",
+      "chineseDefinition": "以杜松子為主要香味來源的透明蒸餾酒，常用來調製雞尾酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dʒɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "琴酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A clear distilled spirit flavored mainly with juniper berries and other botanicals.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ジン」とは、ジュニパーベリーを中心に植物の香りを付けた透明な蒸留酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This gin smells like juniper.",
+          "ja": "このジンはジュニパーの香りがします。",
+          "zh": "這款琴酒聞起來有杜松子的香氣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The bartender used a citrus-forward gin so the cocktail would taste fresh rather than heavy.",
+          "ja": "重い味にならず爽やかに仕上がるよう、バーテンダーはかんきつの香りが強いジンを使いました。",
+          "zh": "為了讓調酒清新而不厚重，調酒師使用了柑橘香明顯的琴酒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "gin-and-tonic",
+        "martini",
+        "vodka"
+      ],
+      "ja": "ジン",
+      "jaReading": "ジン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/gin-ai-07011b0f1a23.webp"
+    },
+    {
+      "id": "vodka",
+      "word": "vodka",
+      "chinese": "伏特加",
+      "chineseDefinition": "通常以穀物或馬鈴薯發酵液蒸餾製成、味道相對中性的透明烈酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈvɑːd.kə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "伏特加",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A clear, usually neutral-tasting spirit commonly distilled from grain or potatoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ウォッカ」とは、主に穀物やじゃがいもから造る、透明で味や香りが比較的穏やかな蒸留酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The recipe uses a small amount of vodka.",
+          "ja": "そのレシピではウォッカを少量使います。",
+          "zh": "這份配方會用少量伏特加。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because vodka has a neutral flavor, the bartender paired it with fresh grapefruit juice.",
+          "ja": "ウォッカは味が穏やかなので、バーテンダーは生のグレープフルーツ果汁と合わせました。",
+          "zh": "因為伏特加味道中性，調酒師用新鮮葡萄柚汁來搭配。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "gin",
+        "tequila",
+        "martini"
+      ],
+      "ja": "ウォッカ",
+      "jaReading": "ウォッカ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/vodka-ai-08bb1d1b8879.webp"
+    },
+    {
+      "id": "rum",
+      "word": "rum",
+      "chinese": "蘭姆酒",
+      "chineseDefinition": "以甘蔗汁或糖蜜發酵後蒸餾製成的烈酒，可為透明、金色或深色。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/rʌm/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蘭姆酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A spirit distilled from fermented sugarcane juice or molasses.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ラム酒」とは、サトウキビの搾り汁や糖蜜を発酵・蒸留して造る酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Dark rum gives the drink a caramel aroma.",
+          "ja": "ダークラムが飲み物にカラメルの香りを加えます。",
+          "zh": "深色蘭姆酒讓飲料帶有焦糖香。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I used white rum in the mojito because dark rum would change its light, fresh taste.",
+          "ja": "ダークラムでは軽く爽やかな味が変わるので、モヒートにはホワイトラムを使いました。",
+          "zh": "深色蘭姆酒會改變清爽風味，所以我在莫希托裡用了白蘭姆酒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "mojito",
+        "pina-colada",
+        "brandy"
+      ],
+      "ja": "ラム酒",
+      "jaReading": "ラムしゅ",
+      "jaReadingSegments": [
+        {
+          "text": "ラム",
+          "ruby": null
+        },
+        {
+          "text": "酒",
+          "ruby": "しゅ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/rum-ai-d71a157f7311.webp"
+    },
+    {
+      "id": "tequila",
+      "word": "tequila",
+      "chinese": "龍舌蘭酒",
+      "chineseDefinition": "以藍色龍舌蘭為主要原料、在墨西哥指定地區生產的蒸餾酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/təˈkiː.lə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "龍舌蘭酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Mexican spirit made mainly from blue agave in designated regions.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「テキーラ」とは、指定地域で主にブルーアガベから造られるメキシコの蒸留酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The bartender measured the tequila carefully.",
+          "ja": "バーテンダーはテキーラを丁寧に量りました。",
+          "zh": "調酒師仔細量了龍舌蘭酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Instead of drinking the tequila quickly, we sipped it slowly and noticed the roasted agave flavor.",
+          "ja": "テキーラを一気に飲まず、ゆっくり味わって焼いたアガベの風味を感じました。",
+          "zh": "我們沒有一口喝掉龍舌蘭酒，而是慢慢啜飲，感受烤龍舌蘭的風味。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "margarita",
+        "vodka",
+        "rum"
+      ],
+      "ja": "テキーラ",
+      "jaReading": "テキーラ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/tequila-ai-287cbf96c4a6.webp"
+    },
+    {
+      "id": "liqueur",
+      "word": "liqueur",
+      "chinese": "利口酒",
+      "chineseDefinition": "以烈酒為基底，加入水果、香草、香料或糖調味的甜味酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/lɪˈkɝː/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "利口酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sweet alcoholic drink flavored with fruit, herbs, spices, nuts, or other ingredients.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「リキュール」とは、蒸留酒などをベースに果物、香草、香辛料、糖などで風味を付けた甘い酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This orange liqueur smells sweet.",
+          "ja": "このオレンジリキュールは甘い香りがします。",
+          "zh": "這款橙味利口酒聞起來很甜。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The recipe needs only a spoonful of liqueur, so I measured it instead of pouring freely.",
+          "ja": "レシピにはリキュールを一さじしか使わないので、直接注がず量りました。",
+          "zh": "配方只需要一匙利口酒，所以我先量好，沒有直接倒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "plum-wine",
+        "brandy",
+        "margarita"
+      ],
+      "ja": "リキュール",
+      "jaReading": "リキュール",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/liqueur-ai-baad1c738c61.webp"
+    },
+    {
+      "id": "highball",
+      "word": "highball",
+      "chinese": "威士忌蘇打",
+      "chineseDefinition": "將威士忌與大量冰塊和蘇打水混合而成的清爽長飲，在日本居酒屋十分常見。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhaɪ.bɔːl/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "威士忌蘇打",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tall mixed drink of whiskey and soda water served over ice.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ハイボール」とは、氷を入れたグラスでウイスキーを炭酸水で割る、爽やかな飲み物です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I ordered a highball with lemon.",
+          "ja": "レモン入りのハイボールを注文しました。",
+          "zh": "我點了一杯加檸檬的威士忌蘇打。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To keep the highball fizzy, she poured the soda gently and stirred it only once.",
+          "ja": "ハイボールの炭酸を保つために、彼女はソーダを静かに注ぎ、一度だけ混ぜました。",
+          "zh": "為了保留威士忌蘇打的氣泡，她輕輕倒入蘇打水，只攪了一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "whiskey",
+        "chuhai",
+        "lemon-sour"
+      ],
+      "ja": "ハイボール",
+      "jaReading": "ハイボール",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/highball-ai-c4a5ae485409.webp"
+    },
+    {
+      "id": "lemon-sour",
+      "word": "lemon sour",
+      "chinese": "檸檬沙瓦",
+      "chineseDefinition": "以燒酎或其他基酒、蘇打水和檸檬調製的日本常見氣泡酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlem.ən ˌsaʊr/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "檸檬沙瓦",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese fizzy alcoholic drink made with a spirit, soda water, and lemon.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「レモンサワー」とは、焼酎などの酒を炭酸水とレモンで割る、日本で一般的な飲み物です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The lemon sour is cold and tart.",
+          "ja": "このレモンサワーは冷たくて酸味があります。",
+          "zh": "這杯檸檬沙瓦冰涼又酸爽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the lemon sour was stronger than it tasted, I drank water between sips.",
+          "ja": "レモンサワーは味より度数が高かったので、合間に水を飲みました。",
+          "zh": "因為檸檬沙瓦的酒精濃度比喝起來更高，我喝幾口就配一些水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "chuhai",
+        "highball",
+        "gin-and-tonic"
+      ],
+      "ja": "レモンサワー",
+      "jaReading": "レモンサワー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/lemon-sour-ai-c7edbcbab3ff.webp"
+    },
+    {
+      "id": "chuhai",
+      "word": "chuhai",
+      "chinese": "燒酎調酒",
+      "chineseDefinition": "將燒酎等基酒與蘇打水及水果風味混合的日本常見調酒，也常以罐裝販售。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃuː.haɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "燒酎調酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese mixed drink, short for shochu highball, often flavored with fruit and sold in cans.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「チューハイ」とは、焼酎などを炭酸水で割り、果物などの風味を付ける日本の飲み物です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a grapefruit chuhai at the store.",
+          "ja": "店でグレープフルーツ味のチューハイを買いました。",
+          "zh": "我在店裡買了一罐葡萄柚燒酎調酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before choosing the canned chuhai, I checked the alcohol percentage because the flavors looked similar.",
+          "ja": "缶チューハイは味が似て見えたので、選ぶ前にアルコール度数を確認しました。",
+          "zh": "罐裝燒酎調酒的口味看起來很像，所以我挑選前先確認酒精濃度。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "shochu",
+        "lemon-sour",
+        "highball"
+      ],
+      "ja": "チューハイ",
+      "jaReading": "チューハイ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/chuhai-ai-56b7cd4c763f.webp"
+    },
+    {
+      "id": "gin-and-tonic",
+      "word": "gin and tonic",
+      "chinese": "琴通寧",
+      "chineseDefinition": "將琴酒與通寧水加冰混合，常以萊姆或檸檬裝飾的長飲調酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌdʒɪn ən ˈtɑː.nɪk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "琴通寧",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A mixed drink of gin and tonic water served over ice, often with citrus.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ジントニック」とは、氷を入れたグラスでジンとトニックウォーターを合わせるカクテルです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My gin and tonic came with lime.",
+          "ja": "私のジントニックにはライムが添えてありました。",
+          "zh": "我的琴通寧附了一片萊姆。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I asked for less tonic water because I wanted the herbal aroma of the gin to remain noticeable.",
+          "ja": "ジンの植物らしい香りを感じたかったので、トニックウォーターを少なめに頼みました。",
+          "zh": "因為我想保留琴酒的草本香氣，所以請店員少加一點通寧水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "gin",
+        "highball",
+        "lemon-sour"
+      ],
+      "ja": "ジントニック",
+      "jaReading": "ジントニック",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/gin-and-tonic-ai-f8cae1a78bd7.webp"
+    },
+    {
+      "id": "mojito",
+      "word": "mojito",
+      "chinese": "莫希托",
+      "chineseDefinition": "以白蘭姆酒、萊姆、薄荷、糖和蘇打水調製的清爽雞尾酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/moʊˈhiː.toʊ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "莫希托",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cocktail made with white rum, lime, mint, sugar, and soda water.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「モヒート」とは、ホワイトラム、ライム、ミント、砂糖、炭酸水で作るカクテルです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Fresh mint floats in the mojito.",
+          "ja": "モヒートに生のミントが浮いています。",
+          "zh": "莫希托裡漂著新鮮薄荷。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The bartender pressed the mint gently so the mojito would smell fresh without becoming bitter.",
+          "ja": "苦くならず爽やかに香るよう、バーテンダーはモヒートのミントを優しく押しました。",
+          "zh": "為了讓莫希托清香又不苦，調酒師輕輕壓了薄荷。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "rum",
+        "pina-colada",
+        "margarita"
+      ],
+      "ja": "モヒート",
+      "jaReading": "モヒート",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/mojito-ai-f4d6894fe2d0.webp"
+    },
+    {
+      "id": "martini",
+      "word": "martini",
+      "chinese": "馬丁尼",
+      "chineseDefinition": "通常以琴酒和乾苦艾酒攪拌或搖盪後濾入雞尾酒杯的經典調酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/mɑːrˈtiː.ni/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "馬丁尼",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A classic cocktail usually made with gin and dry vermouth and served without ice in the glass.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「マティーニ」とは、主にジンとドライベルモットを合わせ、氷を入れずにグラスへ注ぐ定番のカクテルです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The martini arrived with an olive.",
+          "ja": "マティーニにはオリーブが添えてありました。",
+          "zh": "馬丁尼送來時附了一顆橄欖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I ordered the martini dry, the bartender used less vermouth and stirred it until well chilled.",
+          "ja": "ドライのマティーニを頼むと、バーテンダーはベルモットを少なめにし、よく冷えるまでステアしました。",
+          "zh": "我點乾馬丁尼時，調酒師少放了苦艾酒，並攪拌到充分冰涼。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "gin",
+        "gin-and-tonic",
+        "liqueur"
+      ],
+      "ja": "マティーニ",
+      "jaReading": "マティーニ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/martini-ai-c24bad8bdae7.webp"
+    },
+    {
+      "id": "margarita",
+      "word": "margarita",
+      "chinese": "瑪格麗特",
+      "chineseDefinition": "以龍舌蘭酒、橙味利口酒和萊姆汁調製，杯緣常沾鹽的雞尾酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌmɑːr.ɡəˈriː.t̬ə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "瑪格麗特",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cocktail of tequila, orange liqueur, and lime juice, often served with salt on the rim.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「マルガリータ」とは、テキーラ、オレンジリキュール、ライム果汁を使い、グラスの縁に塩を付けることが多いカクテルです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Salt covered the rim of the margarita glass.",
+          "ja": "マルガリータのグラスの縁に塩が付いていました。",
+          "zh": "瑪格麗特酒杯的杯緣沾著鹽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "She requested the margarita without salt because she wanted the lime flavor to stand out.",
+          "ja": "ライムの風味を際立たせたかったので、彼女は塩なしのマルガリータを頼みました。",
+          "zh": "她想讓萊姆風味更突出，所以點了杯緣不沾鹽的瑪格麗特。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "tequila",
+        "mojito",
+        "pina-colada"
+      ],
+      "ja": "マルガリータ",
+      "jaReading": "マルガリータ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/margarita-ai-424cdb7dd557.webp"
+    },
+    {
+      "id": "sangria",
+      "word": "sangria",
+      "chinese": "桑格利亞",
+      "chineseDefinition": "以葡萄酒加入切片水果，有時再加果汁、甜味料或烈酒調製的水果酒飲。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/sænˈɡriː.ə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "桑格利亞",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A wine-based drink mixed with pieces of fruit and sometimes juice, sweetener, or spirits.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「サングリア」とは、ワインに切った果物を加え、果汁や甘味料などで風味を付ける飲み物です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Orange slices floated in the sangria.",
+          "ja": "サングリアにオレンジの輪切りが浮いていました。",
+          "zh": "桑格利亞裡漂著柳橙片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We prepared the sangria early so the fruit could flavor the wine before the guests arrived.",
+          "ja": "客が来る前に果物の風味がワインへ移るよう、早めにサングリアを作りました。",
+          "zh": "我們提早做好桑格利亞，讓客人抵達前水果風味能融入葡萄酒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "red-wine",
+        "rose-wine",
+        "sparkling-wine"
+      ],
+      "ja": "サングリア",
+      "jaReading": "サングリア",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sangria-ai-87c58f76691e.webp"
+    },
+    {
+      "id": "pina-colada",
+      "word": "piña colada",
+      "chinese": "鳳梨可樂達",
+      "chineseDefinition": "以蘭姆酒、椰奶或椰子奶油和鳳梨汁調製的熱帶風味雞尾酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌpiː.njə kəˈlɑː.də/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鳳梨可樂達",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tropical cocktail made with rum, coconut cream or milk, and pineapple juice.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ピニャコラーダ」とは、ラム、ココナッツクリームやミルク、パイナップルジュースで作る南国風のカクテルです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The piña colada tastes like coconut and pineapple.",
+          "ja": "ピニャコラーダはココナッツとパイナップルの味がします。",
+          "zh": "鳳梨可樂達喝起來有椰子和鳳梨的味道。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the frozen piña colada was very thick, the server brought a wide straw.",
+          "ja": "フローズンのピニャコラーダはとても濃かったので、店員が太いストローを持ってきました。",
+          "zh": "因為冰沙鳳梨可樂達很濃稠，店員拿來了一根粗吸管。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "rum",
+        "mojito",
+        "margarita"
+      ],
+      "ja": "ピニャコラーダ",
+      "jaReading": "ピニャコラーダ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/pina-colada-ai-9ad256143380.webp"
+    },
+    {
+      "id": "cider",
+      "word": "cider",
+      "chinese": "蘋果酒",
+      "chineseDefinition": "以蘋果汁發酵釀成的酒精飲料，常帶有氣泡；此處不是無酒精汽水。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsaɪ.dɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蘋果酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An alcoholic drink made by fermenting apple juice, often with bubbles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「シードル」とは、りんご果汁を発酵させて造る酒で、発泡性のものも多くあります。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The cider tastes dry and fruity.",
+          "ja": "このシードルは辛口で果実の風味があります。",
+          "zh": "這款蘋果酒乾爽又有果香。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the cider was sparkling, I opened the bottle slowly over the sink.",
+          "ja": "そのシードルは発泡性だったので、流し台の上で瓶をゆっくり開けました。",
+          "zh": "因為蘋果酒有氣泡，我在水槽上方慢慢打開瓶子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "plum-wine",
+        "sparkling-wine",
+        "mead"
+      ],
+      "ja": "シードル",
+      "jaReading": "シードル",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/cider-ai-403d5df7669b.webp"
+    },
+    {
+      "id": "mead",
+      "word": "mead",
+      "chinese": "蜂蜜酒",
+      "chineseDefinition": "以蜂蜜加水發酵製成的酒，可呈靜態或氣泡型，甜度各異。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/miːd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蜂蜜酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An alcoholic drink made by fermenting honey with water, sometimes with fruit or spices.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ミード」とは、蜂蜜を水で薄めて発酵させ、果物や香辛料を加えることもある酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The mead has a gentle honey aroma.",
+          "ja": "このミードには穏やかな蜂蜜の香りがあります。",
+          "zh": "這款蜂蜜酒有柔和的蜂蜜香。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the mead smelled sweet, its finish was dry enough to pair with cheese.",
+          "ja": "そのミードは甘い香りがしましたが、後味はチーズに合うほど辛口でした。",
+          "zh": "雖然蜂蜜酒聞起來很甜，但收尾夠乾，能搭配起司。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cider",
+        "plum-wine",
+        "white-wine"
+      ],
+      "ja": "ミード",
+      "jaReading": "ミード",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/mead-ai-6eede667de7b.webp"
+    }
+  ]
+}

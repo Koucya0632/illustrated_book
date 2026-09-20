@@ -1,0 +1,896 @@
+{
+  "schemaVersion": 1,
+  "series": "alcoholic-drinks",
+  "batch": "A",
+  "state": "candidate-content-reviewed",
+  "entries": [
+    {
+      "id": "beer",
+      "word": "beer",
+      "chinese": "啤酒",
+      "chineseDefinition": "以麥芽、啤酒花、水和酵母釀成，通常帶有氣泡與苦味的酒精飲料。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bɪr/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "啤酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An alcoholic drink brewed mainly from malted grain, hops, water, and yeast.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ビール」とは、主に麦芽、ホップ、水、酵母から造る、炭酸と苦みのある酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I ordered a beer with dinner.",
+          "ja": "夕食と一緒にビールを注文しました。",
+          "zh": "我晚餐時點了一杯啤酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the restaurant had several local beers, I asked which one went best with grilled chicken.",
+          "ja": "その店には地元のビールが数種類あったので、グリルチキンに一番合うものを尋ねました。",
+          "zh": "因為餐廳有好幾款當地啤酒，我詢問哪一款最適合搭配烤雞。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "draft-beer",
+        "lager",
+        "ale"
+      ],
+      "ja": "ビール",
+      "jaReading": "ビール",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/beer-ai-d70ef62a46c1.webp"
+    },
+    {
+      "id": "draft-beer",
+      "word": "draft beer",
+      "chinese": "生啤酒",
+      "chineseDefinition": "從啤酒桶經啤酒機現場倒出的啤酒，而不是裝在瓶或罐中的啤酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdræft ˌbɪr/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "生啤酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Beer served from a keg or cask through a tap rather than from a bottle or can.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「生ビール」とは、瓶や缶ではなく、樽からサーバーで注いで提供するビールです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Two draft beers, please.",
+          "ja": "生ビールを二つお願いします。",
+          "zh": "請給我兩杯生啤酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The server replaced my draft beer because the glass had been filled mostly with foam.",
+          "ja": "グラスのほとんどが泡だったので、店員が生ビールを入れ直してくれました。",
+          "zh": "因為杯子裡幾乎都是泡沫，店員重新倒了一杯生啤酒給我。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beer",
+        "lager",
+        "stout"
+      ],
+      "ja": "生ビール",
+      "jaReading": "なまビール",
+      "jaReadingSegments": [
+        {
+          "text": "生",
+          "ruby": "なま"
+        },
+        {
+          "text": "ビール",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/draft-beer-ai-8ee99b8143de.webp"
+    },
+    {
+      "id": "lager",
+      "word": "lager",
+      "chinese": "拉格啤酒",
+      "chineseDefinition": "以低溫發酵並熟成的啤酒，常呈清澈金黃色，口感乾淨爽口。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɑː.ɡɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "拉格啤酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A beer fermented and matured at low temperatures, often with a clean, crisp taste.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ラガービール」とは、低温で発酵・熟成させる、すっきりした味わいのビールです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This lager tastes light and crisp.",
+          "ja": "このラガービールは軽くてすっきりした味です。",
+          "zh": "這款拉格啤酒喝起來清爽俐落。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I chilled the lager before the barbecue because everyone preferred it very cold.",
+          "ja": "みんながよく冷えたものを好むので、バーベキューの前にラガービールを冷やしておきました。",
+          "zh": "大家都喜歡喝很冰的拉格啤酒，所以烤肉前我先把它冰好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beer",
+        "ale",
+        "stout"
+      ],
+      "ja": "ラガービール",
+      "jaReading": "ラガービール",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/lager-ai-bb9f238e59d0.webp"
+    },
+    {
+      "id": "ale",
+      "word": "ale",
+      "chinese": "愛爾啤酒",
+      "chineseDefinition": "以較高溫發酵的啤酒，通常帶有較明顯的果香或麥芽風味。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/eɪl/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "愛爾啤酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A beer fermented at warmer temperatures, often with fruity or rich malt flavors.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「エール」とは、比較的高い温度で発酵させ、果実のような香りや麦芽の風味が出やすいビールです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She chose a fruity ale.",
+          "ja": "彼女は果実の香りがするエールを選びました。",
+          "zh": "她選了一款帶果香的愛爾啤酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the ale looked dark, its citrus aroma made it easier to drink than I expected.",
+          "ja": "そのエールは色が濃かったものの、かんきつ系の香りがあり、思ったより飲みやすかったです。",
+          "zh": "雖然那款愛爾啤酒顏色很深，但柑橘香讓它比我想像中更容易入口。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beer",
+        "lager",
+        "stout"
+      ],
+      "ja": "エール",
+      "jaReading": "エール",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/ale-ai-f85527e2994f.webp"
+    },
+    {
+      "id": "stout",
+      "word": "stout",
+      "chinese": "司陶特黑啤酒",
+      "chineseDefinition": "使用深色烘焙麥芽釀成的深色啤酒，常帶有咖啡、可可或焦香。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/staʊt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "司陶特黑啤酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A very dark beer made with roasted malt, often with coffee or cocoa-like flavors.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「スタウト」とは、焙煎した麦芽を使い、コーヒーやカカオのような風味を持つことが多い黒いビールです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The stout has a roasted aroma.",
+          "ja": "このスタウトには香ばしい香りがあります。",
+          "zh": "這款司陶特黑啤酒有烘焙香。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the stout was rich and slightly bitter, I drank it slowly with chocolate cake.",
+          "ja": "そのスタウトは濃厚で少し苦かったので、チョコレートケーキと一緒にゆっくり飲みました。",
+          "zh": "這款司陶特濃郁又微苦，所以我搭配巧克力蛋糕慢慢喝。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beer",
+        "ale",
+        "draft-beer"
+      ],
+      "ja": "スタウト",
+      "jaReading": "スタウト",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/stout-ai-783c661e8c1f.webp"
+    },
+    {
+      "id": "red-wine",
+      "word": "red wine",
+      "chinese": "紅葡萄酒",
+      "chineseDefinition": "連同深色葡萄皮一起發酵而呈紅色至紫紅色的葡萄酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌred ˈwaɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "紅葡萄酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Wine made by fermenting dark grapes with their skins, giving it a red color.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「赤ワイン」とは、黒ぶどうを皮ごと発酵させて赤い色を出すワインです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He poured red wine into two glasses.",
+          "ja": "彼は赤ワインを二つのグラスに注ぎました。",
+          "zh": "他把紅酒倒進兩個杯子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After opening the red wine, we let it breathe while the roast finished cooking.",
+          "ja": "赤ワインを開けたあと、ロースト料理が仕上がるまで空気に触れさせました。",
+          "zh": "開好紅酒後，我們讓它醒酒，等待烤肉料理完成。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "white-wine",
+        "rose-wine",
+        "sparkling-wine"
+      ],
+      "ja": "赤ワイン",
+      "jaReading": "あかワイン",
+      "jaReadingSegments": [
+        {
+          "text": "赤",
+          "ruby": "あか"
+        },
+        {
+          "text": "ワイン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/red-wine-ai-76e5ef9889e5.webp"
+    },
+    {
+      "id": "white-wine",
+      "word": "white wine",
+      "chinese": "白葡萄酒",
+      "chineseDefinition": "多由去皮或淺色葡萄釀成，色澤從淡黃到金黃的葡萄酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌwaɪt ˈwaɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "白葡萄酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pale or golden wine usually fermented without dark grape skins.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「白ワイン」とは、主にぶどうの皮を取り除いて発酵させる、淡い黄色から金色のワインです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please chill the white wine.",
+          "ja": "白ワインを冷やしてください。",
+          "zh": "請把白葡萄酒冰一下。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the white wine was dry and refreshing, it matched the grilled fish well.",
+          "ja": "その白ワインは辛口ですっきりしていたので、焼き魚によく合いました。",
+          "zh": "這款白葡萄酒乾爽清新，所以很適合搭配烤魚。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "red-wine",
+        "rose-wine",
+        "sparkling-wine"
+      ],
+      "ja": "白ワイン",
+      "jaReading": "しろワイン",
+      "jaReadingSegments": [
+        {
+          "text": "白",
+          "ruby": "しろ"
+        },
+        {
+          "text": "ワイン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/white-wine-ai-a2d8a293ab12.webp"
+    },
+    {
+      "id": "rose-wine",
+      "word": "rosé wine",
+      "chinese": "粉紅葡萄酒",
+      "chineseDefinition": "葡萄皮與果汁短時間接觸而呈粉紅色的葡萄酒，風格可從乾型到甜型。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/roʊˈzeɪ ˌwaɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "粉紅葡萄酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pink wine made by allowing dark grape skins to touch the juice for a short time.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ロゼワイン」とは、黒ぶどうの皮を果汁に短時間触れさせて淡い桃色に仕上げるワインです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We shared a bottle of rosé wine.",
+          "ja": "私たちはロゼワインを一本分けて飲みました。",
+          "zh": "我們一起分喝了一瓶粉紅葡萄酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I picked the dry rosé wine because it would suit both the salad and the grilled chicken.",
+          "ja": "サラダにもグリルチキンにも合いそうだったので、辛口のロゼワインを選びました。",
+          "zh": "因為乾型粉紅葡萄酒看起來能同時搭配沙拉和烤雞，我就選了它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "red-wine",
+        "white-wine",
+        "sparkling-wine"
+      ],
+      "ja": "ロゼワイン",
+      "jaReading": "ロゼワイン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/rose-wine-ai-bb2db04a90bc.webp"
+    },
+    {
+      "id": "sparkling-wine",
+      "word": "sparkling wine",
+      "chinese": "氣泡葡萄酒",
+      "chineseDefinition": "含有二氧化碳氣泡、開瓶後會冒泡的葡萄酒總稱。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌspɑːr.klɪŋ ˈwaɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "氣泡葡萄酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Wine that contains carbon dioxide bubbles and fizzes when opened.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「スパークリングワイン」とは、炭酸ガスを含み、開栓すると泡が立つワインの総称です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The sparkling wine filled the glass with bubbles.",
+          "ja": "スパークリングワインの泡がグラスいっぱいに広がりました。",
+          "zh": "氣泡葡萄酒的氣泡充滿了酒杯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before opening the sparkling wine, I chilled it well and pointed the cork away from everyone.",
+          "ja": "スパークリングワインを開ける前に十分冷やし、コルクを人のいない方向へ向けました。",
+          "zh": "打開氣泡葡萄酒前，我先充分冰鎮，並把軟木塞朝向沒人的方向。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "champagne",
+        "white-wine",
+        "rose-wine"
+      ],
+      "ja": "スパークリングワイン",
+      "jaReading": "スパークリングワイン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sparkling-wine-ai-ae7138ba573c.webp"
+    },
+    {
+      "id": "champagne",
+      "word": "champagne",
+      "chinese": "香檳",
+      "chineseDefinition": "依規範在法國香檳區生產的氣泡葡萄酒，常在慶祝場合飲用。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃæmˈpeɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "香檳",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Sparkling wine produced under the rules of the Champagne region of France.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「シャンパン」とは、フランスのシャンパーニュ地方の規定に従って造られる発泡性ワインです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "They opened champagne for the anniversary.",
+          "ja": "記念日にシャンパンを開けました。",
+          "zh": "他們為了週年紀念開了香檳。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the champagne arrived, we waited until everyone had a glass before making a toast.",
+          "ja": "シャンパンが届くと、全員にグラスが行き渡ってから乾杯しました。",
+          "zh": "香檳送來後，我們等每個人都有杯子才一起乾杯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sparkling-wine",
+        "white-wine",
+        "rose-wine"
+      ],
+      "ja": "シャンパン",
+      "jaReading": "シャンパン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/champagne-ai-eceba1af94fe.webp"
+    },
+    {
+      "id": "sake",
+      "word": "sake",
+      "chinese": "清酒",
+      "chineseDefinition": "以米、米麴和水發酵釀成的日本酒，可冷飲、常溫飲用或加熱飲用。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɑː.keɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "清酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese alcoholic drink brewed from rice, rice koji, and water.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「日本酒」とは、米、米こうじ、水を発酵させて造る日本の酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We drank chilled sake with dinner.",
+          "ja": "夕食に冷たい日本酒を飲みました。",
+          "zh": "我們晚餐時喝了冰涼的清酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I asked for a sake that goes well with sashimi, the server recommended a dry local sake.",
+          "ja": "刺身に合う日本酒を尋ねたら、店員が辛口の地酒を勧めてくれました。",
+          "zh": "我詢問適合搭配生魚片的清酒時，店員推薦了一款辛口地酒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "shochu",
+        "awamori",
+        "plum-wine"
+      ],
+      "ja": "日本酒",
+      "jaReading": "にほんしゅ",
+      "jaReadingSegments": [
+        {
+          "text": "日本",
+          "ruby": "にほん"
+        },
+        {
+          "text": "酒",
+          "ruby": "しゅ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/sake.webp"
+    },
+    {
+      "id": "shochu",
+      "word": "shochu",
+      "chinese": "燒酎",
+      "chineseDefinition": "以地瓜、麥、米等原料發酵後蒸餾而成的日本烈酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃoʊ.tʃuː/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "燒酎",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese distilled spirit commonly made from sweet potatoes, barley, rice, or other ingredients.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「焼酎」とは、芋、麦、米などを発酵させてから蒸留して造る日本の酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He drinks shochu on the rocks.",
+          "ja": "彼は焼酎をロックで飲みます。",
+          "zh": "他喝加冰塊的燒酎。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the barley shochu had a mild aroma, I mixed it with cold water instead of juice.",
+          "ja": "麦焼酎は香りが穏やかだったので、ジュースではなく水割りにしました。",
+          "zh": "因為麥燒酎香氣溫和，我加冷水喝，而不是混果汁。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sake",
+        "awamori",
+        "chuhai"
+      ],
+      "ja": "焼酎",
+      "jaReading": "しょうちゅう",
+      "jaReadingSegments": [
+        {
+          "text": "焼酎",
+          "ruby": "しょうちゅう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/shochu-ai-f353029bd717.webp"
+    },
+    {
+      "id": "awamori",
+      "word": "awamori",
+      "chinese": "泡盛",
+      "chineseDefinition": "以米和黑麴釀造後單式蒸餾而成、源自沖繩的傳統烈酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌɑː.wɑːˈmɔːr.i/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "泡盛",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A traditional Okinawan distilled spirit made from rice and black koji mold.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「泡盛」とは、米と黒こうじを使って造る沖縄の伝統的な蒸留酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I tried awamori in Okinawa.",
+          "ja": "沖縄で泡盛を飲んでみました。",
+          "zh": "我在沖繩試喝了泡盛。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the awamori was stronger than I expected, I added water and enjoyed it slowly with dinner.",
+          "ja": "泡盛は思ったより度数が高かったので、水を加えて夕食と一緒にゆっくり味わいました。",
+          "zh": "因為泡盛比我預期的烈，我加了水，配著晚餐慢慢品嘗。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "shochu",
+        "sake",
+        "whiskey"
+      ],
+      "ja": "泡盛",
+      "jaReading": "あわもり",
+      "jaReadingSegments": [
+        {
+          "text": "泡盛",
+          "ruby": "あわもり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/awamori-ai-386718382252.webp"
+    },
+    {
+      "id": "plum-wine",
+      "word": "plum wine",
+      "chinese": "梅酒",
+      "chineseDefinition": "把梅子浸泡在酒和糖中製成的甜味果實酒，常加冰或蘇打水飲用。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplʌm ˌwaɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "梅酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sweet alcoholic drink made by steeping plums in alcohol with sugar.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「梅酒」とは、梅の実を酒と砂糖に漬けて造る甘い果実酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She ordered plum wine with soda.",
+          "ja": "彼女は梅酒のソーダ割りを注文しました。",
+          "zh": "她點了梅酒蘇打。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The homemade plum wine was quite sweet, so we served it over plenty of ice.",
+          "ja": "自家製の梅酒はかなり甘かったので、たっぷりの氷を入れて出しました。",
+          "zh": "自製梅酒相當甜，所以我們加了很多冰塊再端上桌。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sake",
+        "liqueur",
+        "cider"
+      ],
+      "ja": "梅酒",
+      "jaReading": "うめしゅ",
+      "jaReadingSegments": [
+        {
+          "text": "梅",
+          "ruby": "うめ"
+        },
+        {
+          "text": "酒",
+          "ruby": "しゅ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/plum-wine-ai-229d3081774b.webp"
+    },
+    {
+      "id": "makgeolli",
+      "word": "makgeolli",
+      "chinese": "馬格利酒",
+      "chineseDefinition": "以米發酵製成、外觀乳白且帶有細微氣泡的韓國傳統酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌmɑːkˈɡʌl.i/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "馬格利酒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cloudy Korean alcoholic drink made by fermenting rice, with a mild sweet-tart taste.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「マッコリ」とは、米を発酵させて造る、白く濁った甘酸っぱい韓国の酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We poured makgeolli into small bowls.",
+          "ja": "マッコリを小さな器に注ぎました。",
+          "zh": "我們把馬格利酒倒進小碗裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I gently mixed the makgeolli before serving because the rice sediment had settled at the bottom.",
+          "ja": "米の沈殿が底にたまっていたので、出す前にマッコリをゆっくり混ぜました。",
+          "zh": "因為米的沉澱物積在底部，我上桌前輕輕混合了馬格利酒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sake",
+        "beer",
+        "plum-wine"
+      ],
+      "ja": "マッコリ",
+      "jaReading": "マッコリ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/makgeolli-ai-1e7261561fb8.webp"
+    },
+    {
+      "id": "whiskey",
+      "word": "whiskey",
+      "chinese": "威士忌",
+      "chineseDefinition": "以穀物發酵液蒸餾並通常在木桶中熟成的琥珀色烈酒。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwɪs.ki/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "威士忌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A distilled spirit made from fermented grain and usually aged in wooden barrels.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ウイスキー」とは、穀物を発酵・蒸留し、一般に木樽で熟成させる蒸留酒です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He added one ice cube to the whiskey.",
+          "ja": "彼はウイスキーに氷を一つ入れました。",
+          "zh": "他在威士忌裡放了一顆冰塊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before buying the whiskey as a gift, I asked whether the smoky flavor would be too strong.",
+          "ja": "贈り物にウイスキーを買う前に、スモーキーな香りが強すぎないか尋ねました。",
+          "zh": "買威士忌當禮物前，我詢問煙燻風味會不會太重。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "bourbon",
+        "highball",
+        "brandy"
+      ],
+      "ja": "ウイスキー",
+      "jaReading": "ウイスキー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/whiskey-ai-8583e0679651.webp"
+    },
+    {
+      "id": "bourbon",
+      "word": "bourbon",
+      "chinese": "波本威士忌",
+      "chineseDefinition": "在美國生產、以玉米占主要比例的穀物配方釀製並在新燒焦橡木桶中熟成的威士忌。",
+      "category": "alcoholic-drinks",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɝː.bən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "波本威士忌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An American whiskey made mainly from corn and aged in new charred oak containers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「バーボン」とは、主にトウモロコシを使い、新しい焦がしオーク樽で熟成させるアメリカのウイスキーです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The bourbon has a sweet vanilla aroma.",
+          "ja": "このバーボンには甘いバニラの香りがあります。",
+          "zh": "這款波本威士忌有甜甜的香草氣味。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although I usually drink bourbon neat, I added a little water to notice its aroma more clearly.",
+          "ja": "普段はバーボンをストレートで飲みますが、香りを感じやすくするために少し水を加えました。",
+          "zh": "雖然我通常純飲波本，但為了更清楚感受香氣，我加了一點水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "whiskey",
+        "highball",
+        "brandy"
+      ],
+      "ja": "バーボン",
+      "jaReading": "バーボン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/bourbon-ai-ca0a35dd56dd.webp"
+    }
+  ]
+}

@@ -1,10 +1,16 @@
 // Add a member to a collection. The DB guard (addAtlasCollectionItem) enforces
-// that the collection is the caller's and the public item is the caller's own
-// approved item in the collection's target language.
+// that the collection is the caller's and that it can actually take this item:
+// the owner's own confirmed item in the collection's language, and — once the
+// collection is live or in review — one that is already public.
+//
+// A refusal carries its reason (lib/atlas/collection-membership.ts), because
+// 「已公開的合集不能加入未公開的項目」 is a rule the author can follow and
+// 「cannot add item」 is not.
 
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { addAtlasCollectionItem } from "@/lib/atlas-db";
+import { messageForRefusal } from "@/lib/atlas/collection-membership";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -35,13 +41,24 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
         : "";
   if (invalidId(sourceItemId)) return NextResponse.json({ error: "invalid item" }, { status: 400 });
 
-  const added = await addAtlasCollectionItem({
+  const outcome = await addAtlasCollectionItem({
     collectionId: params.id,
     ownerUserId: userId,
     sourceItemId,
   });
-  // Not added means the guard rejected it (not owner / not confirmed / wrong
-  // language) or it was already a member. Either way there's nothing to change.
-  if (!added) return NextResponse.json({ error: "cannot add item" }, { status: 409 });
-  return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "private, no-store" } });
+  if (outcome.added) {
+    return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "private, no-store" } });
+  }
+  // Someone else's collection, or none — never a conflict.
+  if (outcome.reason === "no_collection") {
+    return NextResponse.json({ error: "not found" }, { status: 404 });
+  }
+  // A refusal with a name. `error` is the machine-readable reason a client maps
+  // to its own localized copy; `message` is the zh-Hant fallback for anything
+  // that doesn't know this one. 「cannot add item」 — the string that used to be
+  // here — reached the reader as 「伺服器出了點問題（409）」.
+  return NextResponse.json(
+    { error: outcome.reason, message: messageForRefusal(outcome.reason) },
+    { status: 409, headers: { "Cache-Control": "private, no-store" } },
+  );
 }

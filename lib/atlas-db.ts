@@ -28,6 +28,11 @@ import type {
 } from "./atlas/types";
 import type { AtlasRecognitionResult } from "./atlas/vision-provider";
 import { nextBackfillAttempt } from "./atlas/enrich-policy";
+import {
+  ATLAS_COLLECTION_OPEN_STATUSES,
+  refusalForAdd,
+  type AtlasCollectionAddRefusal,
+} from "./atlas/collection-membership";
 
 function requireSql() {
   const sql = getSql();
@@ -2793,11 +2798,26 @@ export async function deleteAtlasCollection(id: string, ownerUserId: string): Pr
 }
 
 /** Guarded insert of the owner's confirmed source item in the collection language. */
+export type AtlasCollectionAddOutcome =
+  | { added: true }
+  | { added: false; reason: AtlasCollectionAddRefusal | "no_collection" };
+
+/**
+ * Adds one member, or says why it would not.
+ *
+ * The INSERT is the guard: it matches only an item the collection can actually
+ * take (owner's own, same language, confirmed, not rejected — and, for a
+ * collection that is live or in review, one that is already public). Matching
+ * nothing used to be the whole answer, which left the route with `false` and
+ * the reader with 「伺服器出了點問題（409）」 about a rule they could have
+ * followed. So a miss is now classified by one follow-up read; see
+ * lib/atlas/collection-membership.ts for the rule and the copy.
+ */
 export async function addAtlasCollectionItem(input: {
   collectionId: string;
   ownerUserId: string;
   sourceItemId: string;
-}): Promise<boolean> {
+}): Promise<AtlasCollectionAddOutcome> {
   const sql = requireSql();
   const rows = await sql<{ collection_id: string }[]>`
     INSERT INTO atlas_collection_items (collection_id, source_item_id, public_item_id, position)
@@ -2825,11 +2845,70 @@ export async function addAtlasCollectionItem(input: {
     WHERE c.id = ${input.collectionId}::uuid
       AND c.owner_user_id = ${input.ownerUserId}::uuid
       AND c.review_status <> 'takedown'
-      AND (pi.id IS NOT NULL OR c.review_status IN ('draft', 'rejected', 'withdrawn'))
+      AND (pi.id IS NOT NULL
+           OR c.review_status = ANY(${[...ATLAS_COLLECTION_OPEN_STATUSES]}::text[]))
     ON CONFLICT (collection_id, source_item_id) DO NOTHING
     RETURNING collection_id
   `;
-  return rows.length > 0;
+  if (rows.length > 0) return { added: true };
+  return { added: false, reason: await classifyAtlasCollectionAddMiss(input) };
+}
+
+/**
+ * Why the INSERT above matched nothing. Deliberately a second read rather than
+ * a rewrite of the insert: the guard stays one statement (no window between
+ * checking and inserting), and this runs only on the path that already failed.
+ */
+async function classifyAtlasCollectionAddMiss(input: {
+  collectionId: string;
+  ownerUserId: string;
+  sourceItemId: string;
+}): Promise<AtlasCollectionAddRefusal | "no_collection"> {
+  const sql = requireSql();
+  const [row] = await sql<
+    {
+      review_status: string;
+      is_member: boolean;
+      item_is_public: boolean;
+      item_is_addable: boolean;
+    }[]
+  >`
+    WITH target AS (
+      SELECT COALESCE(
+        (SELECT source_item_id FROM atlas_public_items WHERE id = ${input.sourceItemId}::uuid),
+        ${input.sourceItemId}::uuid
+      ) AS item_id
+    )
+    SELECT c.review_status,
+           EXISTS (SELECT 1 FROM atlas_collection_items ci
+                    WHERE ci.collection_id = c.id
+                      AND ci.source_item_id = t.item_id) AS is_member,
+           EXISTS (SELECT 1 FROM atlas_public_items pi
+                    WHERE pi.source_item_id = t.item_id
+                      AND pi.review_status = 'approved') AS item_is_public,
+           EXISTS (SELECT 1 FROM user_atlas_items i
+                     JOIN user_atlas_images img
+                       ON img.id = i.image_id AND img.user_id = i.user_id
+                    WHERE i.id = t.item_id
+                      AND i.user_id = c.owner_user_id
+                      AND i.target_language = c.target_language
+                      AND i.deleted_at IS NULL
+                      AND img.deleted_at IS NULL
+                      AND img.status IN ('confirmed', 'cards_ready')
+                      AND i.review_status NOT IN ('rejected', 'takedown')) AS item_is_addable
+    FROM atlas_collections c, target t
+    WHERE c.id = ${input.collectionId}::uuid
+      AND c.owner_user_id = ${input.ownerUserId}::uuid
+  `;
+  // No row means the collection isn't this caller's (or isn't there at all).
+  // That is a 404, not a conflict — the old code answered 409 for it.
+  if (!row) return "no_collection";
+  return refusalForAdd({
+    collectionReviewStatus: row.review_status,
+    isMember: row.is_member,
+    itemIsPublic: row.item_is_public,
+    itemIsAddable: row.item_is_addable,
+  });
 }
 
 export async function removeAtlasCollectionItem(input: {

@@ -29,7 +29,7 @@ import type {
 import type { AtlasRecognitionResult } from "./atlas/vision-provider";
 import { nextBackfillAttempt } from "./atlas/enrich-policy";
 import {
-  ATLAS_COLLECTION_OPEN_STATUSES,
+  memberNeedsOwnReview,
   refusalForAdd,
   type AtlasCollectionAddRefusal,
 } from "./atlas/collection-membership";
@@ -1575,7 +1575,20 @@ export async function approveAtlasPublicItem(input: {
         updated_at = now()
     WHERE id = ${item.id}::uuid
   `;
-  return rows[0] ?? null;
+  // A member that was waiting for this row joins its collections now. Without
+  // this, an item added to a live 合集 and approved on its own would stay
+  // invisible there forever: the public read inner-joins `public_item_id`, and
+  // only the collection-wide publish used to fill it in.
+  const publicRow = rows[0];
+  if (publicRow) {
+    await sql`
+      UPDATE atlas_collection_items
+      SET public_item_id = ${publicRow.id}::uuid
+      WHERE source_item_id = ${item.id}::uuid
+        AND public_item_id IS NULL
+    `;
+  }
+  return publicRow ?? null;
 }
 
 /**
@@ -2710,8 +2723,12 @@ const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
   pr.username                   AS author_username,
   pr.nickname                   AS author_nickname,
   pr.avatar                     AS author_avatar,
+  -- Approved members only, like the list below it: a member still inside the
+  -- item gate is invisible here, and a card reading 「內容 5」 over four tiles
+  -- is a count that lies.
   (SELECT count(*)::int FROM atlas_collection_items ci
-    WHERE ci.collection_id = c.id) AS item_count,
+    WHERE ci.collection_id = c.id
+      AND ci.public_item_id IS NOT NULL) AS item_count,
   (SELECT count(*)::int FROM atlas_collection_saves cs
     WHERE cs.collection_id = c.id) AS save_count,
   COALESCE(
@@ -2799,19 +2816,32 @@ export async function deleteAtlasCollection(id: string, ownerUserId: string): Pr
 
 /** Guarded insert of the owner's confirmed source item in the collection language. */
 export type AtlasCollectionAddOutcome =
-  | { added: true }
+  | {
+      added: true;
+      /**
+       * The member has to cross the item gate on its own, because the
+       * collection is live (or already inside the gate) and cannot carry it.
+       * The caller submits it; until it passes, the member is in the collection
+       * but invisible to everyone else.
+       */
+      needsOwnReview: boolean;
+    }
   | { added: false; reason: AtlasCollectionAddRefusal | "no_collection" };
 
 /**
  * Adds one member, or says why it would not.
  *
  * The INSERT is the guard: it matches only an item the collection can actually
- * take (owner's own, same language, confirmed, not rejected — and, for a
- * collection that is live or in review, one that is already public). Matching
- * nothing used to be the whole answer, which left the route with `false` and
- * the reader with 「伺服器出了點問題（409）」 about a rule they could have
- * followed. So a miss is now classified by one follow-up read; see
- * lib/atlas/collection-membership.ts for the rule and the copy.
+ * take — the owner's own, same language, confirmed, not rejected or taken down.
+ * It deliberately does **not** ask whether the item is public yet: a member
+ * that isn't joins as a pending one (`public_item_id` stays NULL, which every
+ * public read already treats as invisible) and is sent through the item gate by
+ * the caller. Requiring 取消公開 first was the old answer, and it took the whole
+ * collection off 物見 to add one photo.
+ *
+ * Matching nothing used to be the whole answer, which left the route with
+ * `false` and the reader with 「伺服器出了點問題（409）」. A miss is now
+ * classified by one follow-up read; see lib/atlas/collection-membership.ts.
  */
 export async function addAtlasCollectionItem(input: {
   collectionId: string;
@@ -2819,39 +2849,53 @@ export async function addAtlasCollectionItem(input: {
   sourceItemId: string;
 }): Promise<AtlasCollectionAddOutcome> {
   const sql = requireSql();
-  const rows = await sql<{ collection_id: string }[]>`
-    INSERT INTO atlas_collection_items (collection_id, source_item_id, public_item_id, position)
-    SELECT c.id, i.id, pi.id,
-           COALESCE((SELECT max(position) + 1 FROM atlas_collection_items
-                     WHERE collection_id = c.id), 0)
-    FROM atlas_collections c
-    JOIN user_atlas_items i
-      ON i.id = COALESCE(
-           (SELECT source_item_id FROM atlas_public_items WHERE id = ${input.sourceItemId}::uuid),
-           ${input.sourceItemId}::uuid
-         )
-     AND i.user_id = c.owner_user_id
-     AND i.target_language = c.target_language
-     AND i.deleted_at IS NULL
-     AND i.review_status NOT IN ('rejected', 'takedown')
-    JOIN user_atlas_images img
-      ON img.id = i.image_id
-     AND img.user_id = i.user_id
-     AND img.deleted_at IS NULL
-     AND img.status IN ('confirmed', 'cards_ready')
-    LEFT JOIN atlas_public_items pi
-      ON pi.source_item_id = i.id
-     AND pi.review_status = 'approved'
-    WHERE c.id = ${input.collectionId}::uuid
-      AND c.owner_user_id = ${input.ownerUserId}::uuid
-      AND c.review_status <> 'takedown'
-      AND (pi.id IS NOT NULL
-           OR c.review_status = ANY(${[...ATLAS_COLLECTION_OPEN_STATUSES]}::text[]))
-    ON CONFLICT (collection_id, source_item_id) DO NOTHING
-    RETURNING collection_id
+  // One statement, so nothing can change between the guard and the write. The
+  // outer SELECT reads back what the caller has to decide next — whether this
+  // member arrived already public, and whether the collection can still carry
+  // it through review.
+  const rows = await sql<{ public_item_id: string | null; review_status: string }[]>`
+    WITH inserted AS (
+      INSERT INTO atlas_collection_items (collection_id, source_item_id, public_item_id, position)
+      SELECT c.id, i.id, pi.id,
+             COALESCE((SELECT max(position) + 1 FROM atlas_collection_items
+                       WHERE collection_id = c.id), 0)
+      FROM atlas_collections c
+      JOIN user_atlas_items i
+        ON i.id = COALESCE(
+             (SELECT source_item_id FROM atlas_public_items WHERE id = ${input.sourceItemId}::uuid),
+             ${input.sourceItemId}::uuid
+           )
+       AND i.user_id = c.owner_user_id
+       AND i.target_language = c.target_language
+       AND i.deleted_at IS NULL
+       AND i.review_status NOT IN ('rejected', 'takedown')
+      JOIN user_atlas_images img
+        ON img.id = i.image_id
+       AND img.user_id = i.user_id
+       AND img.deleted_at IS NULL
+       AND img.status IN ('confirmed', 'cards_ready')
+      LEFT JOIN atlas_public_items pi
+        ON pi.source_item_id = i.id
+       AND pi.review_status = 'approved'
+      WHERE c.id = ${input.collectionId}::uuid
+        AND c.owner_user_id = ${input.ownerUserId}::uuid
+        AND c.review_status <> 'takedown'
+      ON CONFLICT (collection_id, source_item_id) DO NOTHING
+      RETURNING collection_id, public_item_id
+    )
+    SELECT inserted.public_item_id, c.review_status
+    FROM inserted
+    JOIN atlas_collections c ON c.id = inserted.collection_id
   `;
-  if (rows.length > 0) return { added: true };
-  return { added: false, reason: await classifyAtlasCollectionAddMiss(input) };
+  const inserted = rows[0];
+  if (!inserted) {
+    return { added: false, reason: await classifyAtlasCollectionAddMiss(input) };
+  }
+  return {
+    added: true,
+    needsOwnReview:
+      inserted.public_item_id === null && memberNeedsOwnReview(inserted.review_status),
+  };
 }
 
 /**
@@ -2865,27 +2909,16 @@ async function classifyAtlasCollectionAddMiss(input: {
   sourceItemId: string;
 }): Promise<AtlasCollectionAddRefusal | "no_collection"> {
   const sql = requireSql();
-  const [row] = await sql<
-    {
-      review_status: string;
-      is_member: boolean;
-      item_is_public: boolean;
-      item_is_addable: boolean;
-    }[]
-  >`
+  const [row] = await sql<{ is_member: boolean; item_is_addable: boolean }[]>`
     WITH target AS (
       SELECT COALESCE(
         (SELECT source_item_id FROM atlas_public_items WHERE id = ${input.sourceItemId}::uuid),
         ${input.sourceItemId}::uuid
       ) AS item_id
     )
-    SELECT c.review_status,
-           EXISTS (SELECT 1 FROM atlas_collection_items ci
+    SELECT EXISTS (SELECT 1 FROM atlas_collection_items ci
                     WHERE ci.collection_id = c.id
                       AND ci.source_item_id = t.item_id) AS is_member,
-           EXISTS (SELECT 1 FROM atlas_public_items pi
-                    WHERE pi.source_item_id = t.item_id
-                      AND pi.review_status = 'approved') AS item_is_public,
            EXISTS (SELECT 1 FROM user_atlas_items i
                      JOIN user_atlas_images img
                        ON img.id = i.image_id AND img.user_id = i.user_id
@@ -2903,12 +2936,7 @@ async function classifyAtlasCollectionAddMiss(input: {
   // No row means the collection isn't this caller's (or isn't there at all).
   // That is a 404, not a conflict — the old code answered 409 for it.
   if (!row) return "no_collection";
-  return refusalForAdd({
-    collectionReviewStatus: row.review_status,
-    isMember: row.is_member,
-    itemIsPublic: row.item_is_public,
-    itemIsAddable: row.item_is_addable,
-  });
+  return refusalForAdd({ isMember: row.is_member, itemIsAddable: row.item_is_addable });
 }
 
 export async function removeAtlasCollectionItem(input: {

@@ -1,16 +1,22 @@
 // Add a member to a collection. The DB guard (addAtlasCollectionItem) enforces
 // that the collection is the caller's and that it can actually take this item:
-// the owner's own confirmed item in the collection's language, and — once the
-// collection is live or in review — one that is already public.
+// the owner's own confirmed item in the collection's language.
 //
-// A refusal carries its reason (lib/atlas/collection-membership.ts), because
-// 「已公開的合集不能加入未公開的項目」 is a rule the author can follow and
-// 「cannot add item」 is not.
+// A member that isn't public yet joins either way. Which review path it takes
+// depends on where the collection is (lib/atlas/collection-membership.ts):
+// an unpublished collection carries it at publish time, a live one cannot — so
+// this route sends it through the item gate right here. Until it passes, the
+// member is in the collection and invisible to everyone else, which is what the
+// public read already does with a NULL `public_item_id`.
+//
+// The alternative, and what this replaces: 取消公開 the whole 合集 to add one
+// photo, then publish again and hope the text gate still clears.
 
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
-import { addAtlasCollectionItem } from "@/lib/atlas-db";
+import { addAtlasCollectionItem, isAtlasAuthorBlocked, submitAtlasItemForReview } from "@/lib/atlas-db";
 import { messageForRefusal } from "@/lib/atlas/collection-membership";
+import { processAtlasSubmission } from "@/lib/atlas/submit-pipeline";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -47,7 +53,13 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
     sourceItemId,
   });
   if (outcome.added) {
-    return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "private, no-store" } });
+    const moderation = outcome.needsOwnReview
+      ? await submitNewMemberForReview(userId, sourceItemId)
+      : null;
+    return NextResponse.json(
+      { ok: true, moderation },
+      { headers: { "Cache-Control": "private, no-store" } },
+    );
   }
   // Someone else's collection, or none — never a conflict.
   if (outcome.reason === "no_collection") {
@@ -61,4 +73,30 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
     { error: outcome.reason, message: messageForRefusal(outcome.reason) },
     { status: 409, headers: { "Cache-Control": "private, no-store" } },
   );
+}
+
+/**
+ * Sends a member that joined a live collection through the item gate. Clean
+ * photos publish immediately and appear in the collection at once; risky ones
+ * wait for a human and stay invisible there until they clear.
+ *
+ * Never throws: the member is already in the collection, and a failure here
+ * leaves it exactly where an unreviewed member belongs — out of sight. The
+ * author can retry by removing and re-adding it.
+ */
+async function submitNewMemberForReview(
+  userId: string,
+  sourceItemId: string,
+): Promise<{ reviewStatus: string; published: boolean } | null> {
+  try {
+    // Publishing is a privilege this account may have lost. The item stays a
+    // member; it simply never becomes visible.
+    if (await isAtlasAuthorBlocked(userId)) return null;
+    const item = await submitAtlasItemForReview(userId, sourceItemId);
+    if (!item) return null;
+    const outcome = await processAtlasSubmission(item);
+    return { reviewStatus: outcome.reviewStatus, published: outcome.published };
+  } catch {
+    return null;
+  }
 }

@@ -5263,44 +5263,6 @@
     "t": "."
    }
   ],
-  "I'll buy some water at the convenience store.": [
-   {
-    "t": "I'll "
-   },
-   {
-    "t": "buy",
-    "z": "買",
-    "j": "購入する",
-    "e": "buy",
-    "b": "buy",
-    "p": "verb"
-   },
-   {
-    "t": " some "
-   },
-   {
-    "t": "water",
-    "z": "水",
-    "j": "飲料の水",
-    "e": "water",
-    "b": "water",
-    "p": "noun"
-   },
-   {
-    "t": " at the "
-   },
-   {
-    "t": "convenience store",
-    "z": "便利商店",
-    "j": "24時間営業の小売店",
-    "e": "convenience store",
-    "b": "convenience store",
-    "p": "noun"
-   },
-   {
-    "t": "."
-   }
-  ],
   "Add cooking wine to remove the smell.": [
    {
     "t": "Add",
@@ -78282,55 +78244,6 @@
     "t": " below."
    }
   ],
-  "Since the station cafe was closed, I bought breakfast at the convenience store.": [
-   {
-    "t": "Since the "
-   },
-   {
-    "t": "station cafe",
-    "z": "車站咖啡館",
-    "j": "駅の喫茶店",
-    "e": "station cafe",
-    "b": "station cafe",
-    "p": "noun"
-   },
-   {
-    "t": " was "
-   },
-   {
-    "t": "closed",
-    "z": "關閉",
-    "j": "営業をやめる",
-    "e": "closed",
-    "b": "close",
-    "p": "adjective"
-   },
-   {
-    "t": ", I bought "
-   },
-   {
-    "t": "breakfast",
-    "z": "早餐",
-    "j": "朝食",
-    "e": "breakfast",
-    "b": "breakfast",
-    "p": "noun"
-   },
-   {
-    "t": " at the "
-   },
-   {
-    "t": "convenience store",
-    "z": "便利商店",
-    "j": "24時間営業の小売店",
-    "e": "convenience store",
-    "b": "convenience store",
-    "p": "noun"
-   },
-   {
-    "t": "."
-   }
-  ],
   "Because the restaurant is popular on weekends, book a table before you go.": [
    {
     "t": "Because the "
@@ -101451,44 +101364,6 @@
     "b": "気をつける",
     "p": "verb",
     "r": "きをつけてください"
-   },
-   {
-    "t": "。"
-   }
-  ],
-  "コンビニで水を買ってきます。": [
-   {
-    "t": "コンビニ",
-    "z": "便利商店",
-    "j": "ちいさいコンビニエンスストア",
-    "e": "convenience store",
-    "b": "コンビニ",
-    "p": "noun",
-    "r": "コンビニ"
-   },
-   {
-    "t": "で"
-   },
-   {
-    "t": "水",
-    "z": "水",
-    "j": "飲み物の水",
-    "e": "water",
-    "b": "水",
-    "p": "noun",
-    "r": "みず"
-   },
-   {
-    "t": "を"
-   },
-   {
-    "t": "買ってきます",
-    "z": "買了回來",
-    "j": "買ってそのまま持ってくる",
-    "e": "buy",
-    "b": "買う",
-    "p": "verb",
-    "r": "かってきます"
    },
    {
     "t": "。"
@@ -186930,80 +186805,6 @@
     "b": "移る",
     "p": "verb",
     "r": "うつってください"
-   },
-   {
-    "t": "。"
-   }
-  ],
-  "駅のカフェが閉まっていたので、コンビニで朝ご飯を買いました。": [
-   {
-    "t": "駅",
-    "z": "車站",
-    "j": "列車の発着する場所",
-    "e": "station",
-    "b": "駅",
-    "p": "noun",
-    "r": "えき"
-   },
-   {
-    "t": "の"
-   },
-   {
-    "t": "カフェ",
-    "z": "咖啡館",
-    "j": "コーヒーを飲む店",
-    "e": "cafe",
-    "b": "カフェ",
-    "p": "noun",
-    "r": "カフェ"
-   },
-   {
-    "t": "が"
-   },
-   {
-    "t": "閉まっていた",
-    "z": "曾關閉",
-    "j": "閉まった状態だった",
-    "e": "was closed",
-    "b": "閉まる",
-    "p": "verb",
-    "r": "しまっていた"
-   },
-   {
-    "t": "ので、"
-   },
-   {
-    "t": "コンビニ",
-    "z": "便利商店",
-    "j": "ちいさいコンビニエンスストア",
-    "e": "convenience store",
-    "b": "コンビニ",
-    "p": "noun",
-    "r": "コンビニ"
-   },
-   {
-    "t": "で"
-   },
-   {
-    "t": "朝ご飯",
-    "z": "早餐",
-    "j": "朝食の食べ物",
-    "e": "breakfast",
-    "b": "朝ご飯",
-    "p": "noun",
-    "r": "あさごはん"
-   },
-   {
-    "t": "を"
-   },
-   {
-    "t": "買いました",
-    "z": "買了",
-    "j": "購入した",
-    "e": "bought",
-    "b": "買う",
-    "p": "verb",
-    "r": "かいました"
    },
    {
     "t": "。"

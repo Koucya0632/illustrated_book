@@ -14,12 +14,14 @@ import { applyMainWordCorrections } from "../lib/main-word-corrections";
 import { applyMainWordMerges } from "../lib/main-word-merges";
 import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
 import { MAIN_WORD_ALCOHOLIC_DRINKS_IDS } from "../lib/main-word-alcoholic-drinks-2026-09";
+import { MAIN_WORD_CONVENIENCE_STORE_IDS } from "../lib/main-word-convenience-store-2026-09";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 
 const GUARDED_PUBLISH_SERIES = [
   { category: "professions", ids: MAIN_WORD_PROFESSIONS_IDS },
   { category: "alcoholic-drinks", ids: MAIN_WORD_ALCOHOLIC_DRINKS_IDS },
+  { category: "convenience-store", ids: MAIN_WORD_CONVENIENCE_STORE_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),
@@ -2016,7 +2018,8 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
     SELECT v.id, 'ja', v.name
       FROM (VALUES
         ('professions', '職業'),
-        ('alcoholic-drinks', '酒類')
+        ('alcoholic-drinks', '酒類'),
+        ('convenience-store', 'コンビニ')
       ) AS v(id, name)
      WHERE EXISTS (SELECT 1 FROM categories WHERE id = v.id)
     ON CONFLICT (category_id, language) DO NOTHING
@@ -2042,6 +2045,7 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
         ('fruits',         '日常の定番と四季の旬を楽しむ果物'),
         ('professions',    '日常生活を支えるさまざまな仕事'),
         ('alcoholic-drinks', '日本酒から世界各地の身近なお酒まで'),
+        ('convenience-store', '日本のコンビニで見かける設備・サービス・商品'),
         ('zodiac',         '十二星座と英語の名前')
       ) AS v(id, description)
       JOIN categories c ON c.id = v.id

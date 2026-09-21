@@ -36,11 +36,21 @@
     "review:alcoholic-drinks:images:postrelease": "node scripts/build-alcoholic-drinks-postrelease-visual-review.mjs",
     "alcoholic-drinks:prepare-publish": "tsx --env-file=.env.local scripts/prepare-alcoholic-drinks-publish-plan.ts",
     "alcoholic-drinks:publish": "tsx --env-file=.env.local scripts/publish-alcoholic-drinks-series.ts",
+    "convenience-store:prepare-publish": "tsx --env-file=.env.local scripts/prepare-convenience-store-publish-plan.ts",
+    "convenience-store:publish": "tsx --env-file=.env.local scripts/publish-convenience-store-series.ts",
     "professions:prepare-publish": "tsx --env-file=.env.local scripts/prepare-professions-publish-plan.ts",
     "professions:publish": "tsx --env-file=.env.local scripts/publish-professions-series.ts",
     "examples:spans": "tsx --env-file=.env.local scripts/generate-example-spans.ts",
     "fix:seasonings-example-spans": "tsx scripts/correct-seasonings-example-spans.ts",
-    "verify:atlas": "node scripts/verify-atlas-privacy.mjs"
+    "verify:atlas": "node scripts/verify-atlas-privacy.mjs",
+    "validate:convenience-store": "node scripts/validate-convenience-store-candidate-data.mjs",
+    "images:prepare:convenience-store": "node scripts/prepare-convenience-store-images.mjs",
+    "review:convenience-store:images": "node scripts/build-convenience-store-visual-review.mjs",
+    "review:convenience-store:spans": "tsx scripts/build-convenience-store-span-overlay.ts",
+    "review:convenience-store": "node scripts/build-convenience-store-semantic-review.mjs",
+    "audio:plan:convenience-store": "node scripts/plan-convenience-store-audio.mjs",
+    "audio:generate:convenience-store:local": "node --env-file=.env.local scripts/generate-convenience-store-candidate-audio.mjs",
+    "audio:verify:convenience-store": "node scripts/verify-convenience-store-audio.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

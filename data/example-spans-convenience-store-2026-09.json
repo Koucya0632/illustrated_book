@@ -1,0 +1,7533 @@
+{
+ "en": {
+  "I'll buy some water at the convenience store.": [
+   {
+    "t": "I'll "
+   },
+   {
+    "t": "buy",
+    "z": "買",
+    "j": "購入する",
+    "e": "buy",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " some "
+   },
+   {
+    "t": "water",
+    "z": "水",
+    "j": "飲料の水",
+    "e": "water",
+    "b": "water",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "convenience store",
+    "z": "便利商店",
+    "j": "24時間営業の小売店",
+    "e": "convenience store",
+    "b": "convenience store",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the station cafe was closed, I bought breakfast at the convenience store.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "station cafe",
+    "z": "車站咖啡館",
+    "j": "駅の喫茶店",
+    "e": "station cafe",
+    "b": "station cafe",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "closed",
+    "z": "關閉",
+    "j": "営業をやめる",
+    "e": "closed",
+    "b": "close",
+    "p": "adjective"
+   },
+   {
+    "t": ", I bought "
+   },
+   {
+    "t": "breakfast",
+    "z": "早餐",
+    "j": "朝食",
+    "e": "breakfast",
+    "b": "breakfast",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "convenience store",
+    "z": "便利商店",
+    "j": "24時間営業の小売店",
+    "e": "convenience store",
+    "b": "convenience store",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I saw the convenience store sign from the road.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "saw",
+    "z": "看見",
+    "j": "見ました",
+    "e": "saw",
+    "b": "see",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "convenience store sign",
+    "z": "便利商店招牌",
+    "j": "コンビニの看板",
+    "e": "convenience store sign",
+    "b": "convenience store sign",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "road",
+    "z": "道路",
+    "j": "道路",
+    "e": "road",
+    "b": "road",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the convenience store sign was lit, we found the entrance easily in the dark.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "convenience store sign",
+    "z": "便利商店招牌",
+    "j": "コンビニの看板",
+    "e": "convenience store sign",
+    "b": "convenience store sign",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was lit",
+    "z": "亮著",
+    "j": "光っていた",
+    "e": "was lit",
+    "b": "light",
+    "p": "verb"
+   },
+   {
+    "t": ", we "
+   },
+   {
+    "t": "found",
+    "z": "找到",
+    "j": "見つけられました",
+    "e": "found",
+    "b": "find",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "entrance",
+    "z": "入口",
+    "j": "入口",
+    "e": "entrance",
+    "b": "entrance",
+    "p": "noun"
+   },
+   {
+    "t": " easily in the "
+   },
+   {
+    "t": "dark",
+    "z": "黑暗",
+    "j": "暗く",
+    "e": "dark",
+    "b": "dark",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The fried chicken is in the hot food display case.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "fried chicken",
+    "z": "炸雞",
+    "j": "フライドチキン",
+    "e": "fried chicken",
+    "b": "fried chicken",
+    "p": "noun"
+   },
+   {
+    "t": " is in the "
+   },
+   {
+    "t": "hot food display case",
+    "z": "熱食展示櫃",
+    "j": "ホットフードディスプレイケース",
+    "e": "hot food display case",
+    "b": "hot food display case",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When I reached the counter, I chose a croquette from the hot food display case.": [
+   {
+    "t": "When I "
+   },
+   {
+    "t": "reached",
+    "z": "到達",
+    "j": "到着しました",
+    "e": "reached",
+    "b": "reach",
+    "p": "verb"
+   },
+   {
+    "t": " the counter, I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "croquette",
+    "z": "可樂餅",
+    "j": "揚げたコロッケ",
+    "e": "croquette",
+    "b": "croquette",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "hot food display case",
+    "z": "熱食展示櫃",
+    "j": "温かい料理を入れるケース",
+    "e": "hot food display case",
+    "b": "hot food display case",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The steamed bun warmer is beside the register.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "steamed bun warmer",
+    "z": "蒸包加熱器",
+    "j": "中華まんを温める機械",
+    "e": "steamed bun warmer",
+    "b": "steamed bun warmer",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "beside",
+    "z": "旁邊",
+    "j": "隣にある",
+    "e": "beside",
+    "b": "beside",
+    "p": "preposition"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "register",
+    "z": "收銀台",
+    "j": "会計をする場所",
+    "e": "register",
+    "b": "register",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since it was cold outside, I bought a pork bun from the steamed bun warmer.": [
+   {
+    "t": "Since it was "
+   },
+   {
+    "t": "cold",
+    "z": "寒冷",
+    "j": "寒い",
+    "e": "cold",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": " outside, I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "pork bun",
+    "z": "豬肉包",
+    "j": "肉まん",
+    "e": "pork bun",
+    "b": "pork bun",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "steamed bun warmer",
+    "z": "蒸包機",
+    "j": "中華まんスチーマー",
+    "e": "steamed bun warmer",
+    "b": "steamed bun warmer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Daikon is simmering in the oden warmer.": [
+   {
+    "t": "Daikon",
+    "z": "白蘿蔔",
+    "j": "大根",
+    "e": "Daikon",
+    "b": "Daikon",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "simmering",
+    "z": "燉煮中",
+    "j": "煮えています",
+    "e": "simmering",
+    "b": "煮える",
+    "p": "verb"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "oden warmer",
+    "z": "關東煮保溫器",
+    "j": "おでんウォーマー",
+    "e": "oden warmer",
+    "b": "oden warmer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After looking inside the oden warmer, I asked the clerk for an egg and konjac.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "looking inside",
+    "z": "看裡面",
+    "j": "中を見て",
+    "e": "looking inside",
+    "b": "look inside",
+    "p": "phrase"
+   },
+   {
+    "t": " the oden warmer, I "
+   },
+   {
+    "t": "asked",
+    "z": "問了",
+    "j": "頼みました",
+    "e": "asked",
+    "b": "ask",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "clerk",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "clerk",
+    "p": "noun"
+   },
+   {
+    "t": " for an "
+   },
+   {
+    "t": "egg",
+    "z": "蛋",
+    "j": "卵",
+    "e": "egg",
+    "b": "egg",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "konjac",
+    "z": "蒟蒻",
+    "j": "こんにゃく",
+    "e": "konjac",
+    "b": "konjac",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I took a warm tea from the beverage warmer.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "took",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "warm tea",
+    "z": "溫熱茶",
+    "j": "温かいお茶",
+    "e": "warm tea",
+    "b": "warm tea",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "beverage warmer",
+    "z": "飲料保溫器",
+    "j": "飲料を温める機械",
+    "e": "beverage warmer",
+    "b": "beverage warmer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my hands were cold, I chose a hot canned coffee from the beverage warmer.": [
+   {
+    "t": "Because my "
+   },
+   {
+    "t": "hands",
+    "z": "手",
+    "j": "手",
+    "e": "hands",
+    "b": "hand",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "were cold",
+    "z": "冷了",
+    "j": "冷えていた",
+    "e": "were cold",
+    "b": "be cold",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "hot canned coffee",
+    "z": "熱罐裝咖啡",
+    "j": "温かい缶コーヒー",
+    "e": "hot canned coffee",
+    "b": "hot canned coffee",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "beverage warmer",
+    "z": "飲料保溫器",
+    "j": "飲料を温める機械",
+    "e": "beverage warmer",
+    "b": "beverage warmer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I placed the cup in the convenience store coffee machine.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "placed",
+    "z": "放置",
+    "j": "置きました",
+    "e": "placed",
+    "b": "place",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "cup",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "cup",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "convenience store coffee machine",
+    "z": "便利商店咖啡機",
+    "j": "コンビニコーヒーマシン",
+    "e": "convenience store coffee machine",
+    "b": "convenience store coffee machine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After paying for the cup, I selected iced coffee on the convenience store coffee machine.": [
+   {
+    "t": "After paying",
+    "z": "付錢之後",
+    "j": "会計を済ませてから",
+    "e": "After paying",
+    "b": "pay",
+    "p": "verb"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "cup",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "cup",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "selected",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "selected",
+    "b": "select",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "iced coffee",
+    "z": "冰咖啡",
+    "j": "アイスコーヒー",
+    "e": "iced coffee",
+    "b": "iced coffee",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "convenience store coffee machine",
+    "z": "便利商店咖啡機",
+    "j": "コンビニコーヒーマシン",
+    "e": "convenience store coffee machine",
+    "b": "convenience store coffee machine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The small cups are in the coffee cup dispenser.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "small cups",
+    "z": "小杯子",
+    "j": "小さいカップ",
+    "e": "small cups",
+    "b": "small cup",
+    "p": "noun"
+   },
+   {
+    "t": " are in the "
+   },
+   {
+    "t": "coffee cup dispenser",
+    "z": "咖啡杯分配器",
+    "j": "コーヒーカップディスペンサー",
+    "e": "coffee cup dispenser",
+    "b": "coffee cup dispenser",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the coffee cup dispenser was empty, I asked the clerk for a medium cup.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "coffee cup dispenser",
+    "z": "咖啡杯分配器",
+    "j": "コーヒーカップディスペンサー",
+    "e": "coffee cup dispenser",
+    "b": "coffee cup dispenser",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was empty",
+    "z": "空了",
+    "j": "空だった",
+    "e": "was empty",
+    "b": "be empty",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "asked",
+    "z": "問",
+    "j": "頼みました",
+    "e": "asked",
+    "b": "ask",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "clerk",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "clerk",
+    "p": "noun"
+   },
+   {
+    "t": " for a "
+   },
+   {
+    "t": "medium cup",
+    "z": "中杯",
+    "j": "Mサイズのカップ",
+    "e": "medium cup",
+    "b": "medium cup",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought an ice cup for iced coffee.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "ice cup",
+    "z": "冰杯",
+    "j": "氷入りカップ",
+    "e": "ice cup",
+    "b": "ice cup",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "iced coffee",
+    "z": "冰咖啡",
+    "j": "アイスコーヒー用",
+    "e": "iced coffee",
+    "b": "iced coffee",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After removing the lid from the ice cup, I placed it under the coffee machine.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "removing",
+    "z": "取下",
+    "j": "外して",
+    "e": "removing",
+    "b": "remove",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "lid",
+    "z": "蓋子",
+    "j": "ふた",
+    "e": "lid",
+    "b": "lid",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "ice cup",
+    "z": "冰杯",
+    "j": "氷入りカップ",
+    "e": "ice cup",
+    "b": "ice cup",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "placed",
+    "z": "放置",
+    "j": "置きました",
+    "e": "placed",
+    "b": "place",
+    "p": "verb"
+   },
+   {
+    "t": " it under the "
+   },
+   {
+    "t": "coffee machine",
+    "z": "咖啡機",
+    "j": "コーヒーマシン",
+    "e": "coffee machine",
+    "b": "coffee machine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I heated my lunch at the microwave station.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "heated",
+    "z": "加熱",
+    "j": "温めました",
+    "e": "heated",
+    "b": "heat",
+    "p": "verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "lunch",
+    "z": "午餐",
+    "j": "昼ご飯",
+    "e": "lunch",
+    "b": "lunch",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "microwave station",
+    "z": "微波爐區",
+    "j": "電子レンジコーナー",
+    "e": "microwave station",
+    "b": "microwave station",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because one oven was in use, I waited beside the microwave station for a minute.": [
+   {
+    "t": "Because one "
+   },
+   {
+    "t": "oven",
+    "z": "微波爐",
+    "j": "電子レンジ",
+    "e": "microwave oven",
+    "b": "oven",
+    "p": "noun"
+   },
+   {
+    "t": " was in "
+   },
+   {
+    "t": "use",
+    "z": "使用",
+    "j": "使っている",
+    "e": "in use",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "waited",
+    "z": "等待",
+    "j": "待ちました",
+    "e": "waited",
+    "b": "wait",
+    "p": "verb"
+   },
+   {
+    "t": " beside the "
+   },
+   {
+    "t": "microwave station",
+    "z": "微波爐區",
+    "j": "電子レンジコーナー",
+    "e": "microwave station",
+    "b": "microwave station",
+    "p": "noun"
+   },
+   {
+    "t": " for a "
+   },
+   {
+    "t": "minute",
+    "z": "分鐘",
+    "j": "分",
+    "e": "minute",
+    "b": "minute",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I filled the cup with water from the hot water dispenser.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "filled",
+    "z": "裝滿",
+    "j": "満たした",
+    "e": "filled",
+    "b": "fill",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "cup",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "cup",
+    "p": "noun"
+   },
+   {
+    "t": " with "
+   },
+   {
+    "t": "water",
+    "z": "水",
+    "j": "水",
+    "e": "water",
+    "b": "water",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "hot water dispenser",
+    "z": "熱水供應器",
+    "j": "給湯器",
+    "e": "hot water dispenser",
+    "b": "hot water dispenser",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before using the hot water dispenser, I opened the lid of the cup noodles halfway.": [
+   {
+    "t": "Before",
+    "z": "之前",
+    "j": "前に",
+    "e": "before",
+    "b": "before",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "using",
+    "z": "使用",
+    "j": "使うこと",
+    "e": "using",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "hot water dispenser",
+    "z": "熱水供應器",
+    "j": "給湯器",
+    "e": "hot water dispenser",
+    "b": "hot water dispenser",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "opened",
+    "z": "打開了",
+    "j": "開けた",
+    "e": "opened",
+    "b": "open",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "lid",
+    "z": "蓋子",
+    "j": "ふた",
+    "e": "lid",
+    "b": "lid",
+    "p": "noun"
+   },
+   {
+    "t": " of the "
+   },
+   {
+    "t": "cup noodles",
+    "z": "杯麵",
+    "j": "カップ麺",
+    "e": "cup noodles",
+    "b": "cup noodles",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "halfway",
+    "z": "一半",
+    "j": "半分まで",
+    "e": "halfway",
+    "b": "halfway",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "We ate lunch in the eat-in area.": [
+   {
+    "t": "We",
+    "z": "我們",
+    "j": "私たち",
+    "e": "We",
+    "b": "we",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "ate lunch",
+    "z": "吃午餐",
+    "j": "昼ご飯を食べました",
+    "e": "ate lunch",
+    "b": "eat lunch",
+    "p": "verb"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "eat-in area",
+    "z": "內用區",
+    "j": "イートインスペース",
+    "e": "eat-in area",
+    "b": "eat-in area",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since it was raining, I drank my coffee in the eat-in area before leaving.": [
+   {
+    "t": "Since it was "
+   },
+   {
+    "t": "raining",
+    "z": "下雨",
+    "j": "雨が降っている",
+    "e": "raining",
+    "b": "rain",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "drank",
+    "z": "喝了",
+    "j": "飲みました",
+    "e": "drank",
+    "b": "drink",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my coffee",
+    "z": "我的咖啡",
+    "j": "私のコーヒー",
+    "e": "my coffee",
+    "b": "coffee",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "eat-in area",
+    "z": "內用區",
+    "j": "イートインスペース",
+    "e": "eat-in area",
+    "b": "eat-in area",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before leaving",
+    "z": "離開之前",
+    "j": "出発する前に",
+    "e": "before leaving",
+    "b": "leave",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I withdrew cash from the convenience store ATM.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "withdrew",
+    "z": "提取",
+    "j": "引き出した",
+    "e": "withdrew",
+    "b": "withdraw",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cash",
+    "z": "現金",
+    "j": "現金",
+    "e": "cash",
+    "b": "cash",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "convenience store ATM",
+    "z": "便利商店提款機",
+    "j": "コンビニのATM",
+    "e": "convenience store ATM",
+    "b": "convenience store ATM",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the bank was closed, I used the convenience store ATM to deposit money.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "bank",
+    "z": "銀行",
+    "j": "銀行",
+    "e": "bank",
+    "b": "bank",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "closed",
+    "z": "關閉",
+    "j": "閉まっている",
+    "e": "closed",
+    "b": "close",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "used",
+    "z": "使用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "convenience store ATM",
+    "z": "便利商店自動提款機",
+    "j": "コンビニのATM",
+    "e": "convenience store ATM",
+    "b": "convenience store ATM",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "deposit money",
+    "z": "存錢",
+    "j": "お金を預け入れました",
+    "e": "deposit money",
+    "b": "deposit money",
+    "p": "phrasal verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I printed a document with the multifunction copier.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "printed",
+    "z": "列印了",
+    "j": "印刷しました",
+    "e": "printed",
+    "b": "print",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "document",
+    "z": "文件",
+    "j": "書類",
+    "e": "document",
+    "b": "document",
+    "p": "noun"
+   },
+   {
+    "t": " with the "
+   },
+   {
+    "t": "multifunction copier",
+    "z": "多功能影印機",
+    "j": "マルチコピー機",
+    "e": "multifunction copier",
+    "b": "multifunction copier",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my printer was broken, I saved the file to a USB drive and used the multifunction copier.": [
+   {
+    "t": "Because my "
+   },
+   {
+    "t": "printer",
+    "z": "印表機",
+    "j": "プリンター",
+    "e": "printer",
+    "b": "printer",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "broken",
+    "z": "壞掉",
+    "j": "壊れていた",
+    "e": "broken",
+    "b": "break",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "saved",
+    "z": "儲存",
+    "j": "保存して",
+    "e": "saved",
+    "b": "save",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "file",
+    "z": "檔案",
+    "j": "ファイル",
+    "e": "file",
+    "b": "file",
+    "p": "noun"
+   },
+   {
+    "t": " to a "
+   },
+   {
+    "t": "USB drive",
+    "z": "USB隨身碟",
+    "j": "USBメモリ",
+    "e": "USB drive",
+    "b": "USB drive",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "used",
+    "z": "使用",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "multifunction copier",
+    "z": "多功能影印機",
+    "j": "マルチコピー機",
+    "e": "multifunction copier",
+    "b": "multifunction copier",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I reserved a ticket at the multimedia kiosk.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "reserved",
+    "z": "預約",
+    "j": "予約しました",
+    "e": "reserved",
+    "b": "reserve",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "ticket",
+    "z": "票",
+    "j": "チケット",
+    "e": "ticket",
+    "b": "ticket",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "multimedia kiosk",
+    "z": "多媒體終端機",
+    "j": "マルチメディア端末",
+    "e": "multimedia kiosk",
+    "b": "multimedia kiosk",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After entering the reservation number at the multimedia kiosk, I took the printed slip to the register.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "entering",
+    "z": "輸入",
+    "j": "入力して",
+    "e": "entering",
+    "b": "enter",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "reservation number",
+    "z": "預約號碼",
+    "j": "予約番号",
+    "e": "reservation number",
+    "b": "reservation number",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "multimedia kiosk",
+    "z": "多媒體終端機",
+    "j": "マルチメディア端末",
+    "e": "multimedia kiosk",
+    "b": "multimedia kiosk",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "took",
+    "z": "拿取",
+    "j": "持って行きました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "printed slip",
+    "z": "列印單據",
+    "j": "印刷した伝票",
+    "e": "printed slip",
+    "b": "printed slip",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "register",
+    "z": "收銀台",
+    "j": "レジ",
+    "e": "register",
+    "b": "register",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I took the box to the parcel counter.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "took",
+    "z": "拿了",
+    "j": "持って行きました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "box",
+    "z": "箱子",
+    "j": "箱",
+    "e": "box",
+    "b": "box",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "parcel counter",
+    "z": "包裹櫃台",
+    "j": "宅配便受付",
+    "e": "parcel counter",
+    "b": "parcel counter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before going to the parcel counter, I wrote the address on the shipping label.": [
+   {
+    "t": "Before",
+    "z": "之前",
+    "j": "前に",
+    "e": "before",
+    "b": "before",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "going to",
+    "z": "去",
+    "j": "行くこと",
+    "e": "going to",
+    "b": "go to",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "parcel counter",
+    "z": "包裹櫃台",
+    "j": "宅配便受付",
+    "e": "parcel counter",
+    "b": "parcel counter",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "wrote",
+    "z": "寫了",
+    "j": "書きました",
+    "e": "wrote",
+    "b": "write",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "address",
+    "z": "地址",
+    "j": "住所",
+    "e": "address",
+    "b": "address",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "shipping label",
+    "z": "運送標籤",
+    "j": "送り状",
+    "e": "shipping label",
+    "b": "送り状",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I gave the payment slip to the clerk.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "gave",
+    "z": "給了",
+    "j": "渡した",
+    "e": "gave",
+    "b": "give",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "payment slip",
+    "z": "繳費單",
+    "j": "払込票",
+    "e": "payment slip",
+    "b": "payment slip",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "clerk",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "clerk",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the payment slip was due today, I paid it at the convenience store on my way home.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "payment slip",
+    "z": "繳費單",
+    "j": "払込票",
+    "e": "payment slip",
+    "b": "payment slip",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "due today",
+    "z": "今天到期",
+    "j": "今日だった",
+    "e": "due today",
+    "b": "due today",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "paid",
+    "z": "支付了",
+    "j": "支払いました",
+    "e": "paid",
+    "b": "pay",
+    "p": "verb"
+   },
+   {
+    "t": " it at the "
+   },
+   {
+    "t": "convenience store",
+    "z": "便利商店",
+    "j": "コンビニ",
+    "e": "convenience store",
+    "b": "convenience store",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "on my way home",
+    "z": "回家的路上",
+    "j": "帰りに",
+    "e": "on my way home",
+    "b": "on my way home",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The prepaid card rack is near the register.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "prepaid card rack",
+    "z": "預付卡架",
+    "j": "プリペイドカードラック",
+    "e": "prepaid card rack",
+    "b": "prepaid card rack",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "near",
+    "z": "在附近",
+    "j": "近くに",
+    "e": "near",
+    "b": "near",
+    "p": "preposition"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "register",
+    "z": "收銀台",
+    "j": "レジ",
+    "e": "register",
+    "b": "register",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After choosing a card from the prepaid card rack, I asked the clerk to activate it for the gift amount.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "choosing",
+    "z": "選好",
+    "j": "選び",
+    "e": "choosing",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "card",
+    "z": "卡片",
+    "j": "カード",
+    "e": "card",
+    "b": "card",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "prepaid card rack",
+    "z": "預付卡架",
+    "j": "POSAカード売り場",
+    "e": "prepaid card rack",
+    "b": "prepaid card rack",
+    "p": "noun"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "asked",
+    "z": "請",
+    "j": "頼みました",
+    "e": "asked",
+    "b": "ask",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "clerk",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "clerk",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "activate",
+    "z": "啟用",
+    "j": "有効にする",
+    "e": "activate",
+    "b": "activate",
+    "p": "verb"
+   },
+   {
+    "t": " it for the "
+   },
+   {
+    "t": "gift amount",
+    "z": "贈送金額",
+    "j": "贈る金額",
+    "e": "gift amount",
+    "b": "gift amount",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The tobacco display is behind the counter.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "tobacco display",
+    "z": "菸品陳列架",
+    "j": "たばこ什器",
+    "e": "tobacco display",
+    "b": "tobacco display",
+    "p": "noun"
+   },
+   {
+    "t": " is behind the "
+   },
+   {
+    "t": "counter",
+    "z": "櫃台",
+    "j": "レジ",
+    "e": "counter",
+    "b": "counter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The clerk checked the number on the tobacco display before taking the requested pack.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "clerk",
+    "z": "店員",
+    "j": "店で働く人",
+    "e": "clerk",
+    "b": "clerk",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確かめた",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "number",
+    "z": "號碼",
+    "j": "番号",
+    "e": "number",
+    "b": "number",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "tobacco display",
+    "z": "菸草展示架",
+    "j": "たばこを並べた什器",
+    "e": "tobacco display",
+    "b": "tobacco display",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "taking",
+    "z": "拿取",
+    "j": "取ること",
+    "e": "taking",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "requested pack",
+    "z": "要求的包裝",
+    "j": "頼まれた箱",
+    "e": "requested pack",
+    "b": "requested pack",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "A travel magazine is on the magazine rack.": [
+   {
+    "t": "A "
+   },
+   {
+    "t": "travel magazine",
+    "z": "旅遊雜誌",
+    "j": "旅行雑誌",
+    "e": "travel magazine",
+    "b": "travel magazine",
+    "p": "noun"
+   },
+   {
+    "t": " is on the "
+   },
+   {
+    "t": "magazine rack",
+    "z": "雜誌架",
+    "j": "雑誌ラック",
+    "e": "magazine rack",
+    "b": "magazine rack",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "While waiting for my friend, I checked the new titles on the magazine rack.": [
+   {
+    "t": "While "
+   },
+   {
+    "t": "waiting",
+    "z": "等待",
+    "j": "待つこと",
+    "e": "waiting",
+    "b": "wait",
+    "p": "verb"
+   },
+   {
+    "t": " for my "
+   },
+   {
+    "t": "friend",
+    "z": "朋友",
+    "j": "友達",
+    "e": "friend",
+    "b": "friend",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確かめた",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "new titles",
+    "z": "新書名",
+    "j": "新しいタイトル",
+    "e": "new titles",
+    "b": "new titles",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "magazine rack",
+    "z": "雜誌架",
+    "j": "雑誌ラック",
+    "e": "magazine rack",
+    "b": "magazine rack",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I picked up a newspaper from the newspaper rack.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "picked up",
+    "z": "拿起",
+    "j": "拾い上げた",
+    "e": "picked up",
+    "b": "pick up",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "newspaper",
+    "z": "報紙",
+    "j": "新聞",
+    "e": "newspaper",
+    "b": "newspaper",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "newspaper rack",
+    "z": "報紙架",
+    "j": "新聞ラック",
+    "e": "newspaper rack",
+    "b": "newspaper rack",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the morning edition was sold out, its section of the newspaper rack was empty.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "morning edition",
+    "z": "晨報",
+    "j": "朝刊",
+    "e": "morning edition",
+    "b": "morning edition",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "sold out",
+    "z": "賣完了",
+    "j": "売り切れた",
+    "e": "sold out",
+    "b": "sell out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": ", its "
+   },
+   {
+    "t": "section",
+    "z": "區域",
+    "j": "区画",
+    "e": "section",
+    "b": "section",
+    "p": "noun"
+   },
+   {
+    "t": " of the "
+   },
+   {
+    "t": "newspaper rack",
+    "z": "報紙架",
+    "j": "新聞ラック",
+    "e": "newspaper rack",
+    "b": "newspaper rack",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "empty",
+    "z": "空的",
+    "j": "空でした",
+    "e": "was empty",
+    "b": "空く",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I put my wet umbrella in the umbrella stand.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "put",
+    "z": "放入",
+    "j": "入れました",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "wet",
+    "z": "濕的",
+    "j": "ぬれた",
+    "e": "wet",
+    "b": "wet",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "umbrella",
+    "z": "傘",
+    "j": "傘",
+    "e": "umbrella",
+    "b": "umbrella",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "umbrella stand",
+    "z": "傘架",
+    "j": "傘立て",
+    "e": "umbrella stand",
+    "b": "umbrella stand",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before leaving the store, I checked the umbrella stand and took the blue umbrella I had brought.": [
+   {
+    "t": "Before leaving",
+    "z": "離開之前",
+    "j": "出る前に",
+    "e": "Before leaving",
+    "b": "leave",
+    "p": "phrase"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "store",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "store",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認",
+    "j": "確認し",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "umbrella stand",
+    "z": "傘架",
+    "j": "傘立て",
+    "e": "umbrella stand",
+    "b": "umbrella stand",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "took",
+    "z": "拿走",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "blue umbrella",
+    "z": "藍色傘",
+    "j": "青い傘",
+    "e": "blue umbrella",
+    "b": "blue umbrella",
+    "p": "noun"
+   },
+   {
+    "t": " I had "
+   },
+   {
+    "t": "brought",
+    "z": "帶來",
+    "j": "持ってきた",
+    "e": "brought",
+    "b": "bring",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I put the empty bottle in the sorting bin.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "put",
+    "z": "放入",
+    "j": "入れました",
+    "e": "put",
+    "b": "put",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "empty bottle",
+    "z": "空瓶",
+    "j": "空のボトル",
+    "e": "empty bottle",
+    "b": "empty bottle",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "sorting bin",
+    "z": "分類箱",
+    "j": "分別箱",
+    "e": "sorting bin",
+    "b": "sorting bin",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After finishing my drink, I checked the labels on the sorting bin before throwing the cup away.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "finishing",
+    "z": "喝完",
+    "j": "飲み終えて",
+    "e": "finishing",
+    "b": "finish",
+    "p": "verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "drink",
+    "z": "飲料",
+    "j": "飲み物",
+    "e": "drink",
+    "b": "drink",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認",
+    "j": "確認し",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "labels",
+    "z": "分類標示",
+    "j": "分別表示",
+    "e": "labels",
+    "b": "label",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "sorting bin",
+    "z": "分類垃圾桶",
+    "j": "分別ゴミ箱",
+    "e": "sorting bin",
+    "b": "sorting bin",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "throwing",
+    "z": "丟棄",
+    "j": "捨てる",
+    "e": "throwing",
+    "b": "throw",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "cup",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "cup",
+    "p": "noun"
+   },
+   {
+    "t": " away."
+   }
+  ],
+  "I chose a salmon rice ball from the rice ball shelf.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "salmon",
+    "z": "鮭魚",
+    "j": "鮭",
+    "e": "salmon",
+    "b": "salmon",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "rice ball",
+    "z": "飯糰",
+    "j": "おにぎり",
+    "e": "rice ball",
+    "b": "rice ball",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "rice ball shelf",
+    "z": "飯糰架",
+    "j": "おにぎり棚",
+    "e": "rice ball shelf",
+    "b": "rice ball shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the tuna rice balls were gone, I looked along the rice ball shelf for another filling.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "tuna rice balls",
+    "z": "鮪魚飯糰",
+    "j": "ツナ入りのおにぎり",
+    "e": "tuna rice balls",
+    "b": "tuna rice ball",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "were gone",
+    "z": "賣完了",
+    "j": "売り切れていた",
+    "e": "were gone",
+    "b": "be gone",
+    "p": "verb"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked along",
+    "z": "沿著找",
+    "j": "探した",
+    "e": "looked along",
+    "b": "look along",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "rice ball shelf",
+    "z": "飯糰架",
+    "j": "おにぎり棚",
+    "e": "rice ball shelf",
+    "b": "rice ball shelf",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "another filling",
+    "z": "另一種餡料",
+    "j": "別の具",
+    "e": "another filling",
+    "b": "another filling",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The curry bento is on the bento shelf.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "curry bento",
+    "z": "咖哩便當",
+    "j": "カレー弁当",
+    "e": "curry bento",
+    "b": "curry bento",
+    "p": "noun"
+   },
+   {
+    "t": " is on the "
+   },
+   {
+    "t": "bento shelf",
+    "z": "便當架",
+    "j": "弁当棚",
+    "e": "bento shelf",
+    "b": "bento shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After comparing two meals on the bento shelf, I picked the one with grilled fish.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "comparing",
+    "z": "比較",
+    "j": "比べて",
+    "e": "comparing",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "two meals",
+    "z": "兩份餐點",
+    "j": "二つの食事",
+    "e": "two meals",
+    "b": "two meal",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "bento shelf",
+    "z": "便當架",
+    "j": "弁当棚",
+    "e": "bento shelf",
+    "b": "bento shelf",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "picked",
+    "z": "挑選了",
+    "j": "選んだ",
+    "e": "picked",
+    "b": "pick",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "one with grilled fish",
+    "z": "有烤魚的那個",
+    "j": "焼き魚のあるもの",
+    "e": "one with grilled fish",
+    "b": "one with grilled fish",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I found an egg sandwich on the sandwich shelf.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "found",
+    "z": "找到",
+    "j": "見つけた",
+    "e": "found",
+    "b": "find",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "egg sandwich",
+    "z": "蛋三明治",
+    "j": "卵の入ったサンドイッチ",
+    "e": "egg sandwich",
+    "b": "egg sandwich",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "sandwich shelf",
+    "z": "三明治架",
+    "j": "サンドイッチを置く棚",
+    "e": "sandwich shelf",
+    "b": "sandwich shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because I wanted a light breakfast, I checked the sandwich shelf instead of the bento section.": [
+   {
+    "t": "Because I "
+   },
+   {
+    "t": "wanted",
+    "z": "想要",
+    "j": "欲しかった",
+    "e": "wanted",
+    "b": "want",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "light breakfast",
+    "z": "清淡早餐",
+    "j": "軽い朝食",
+    "e": "light breakfast",
+    "b": "light breakfast",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "查看了",
+    "j": "調べた",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "sandwich shelf",
+    "z": "三明治架",
+    "j": "サンドイッチを置く棚",
+    "e": "sandwich shelf",
+    "b": "sandwich shelf",
+    "p": "noun"
+   },
+   {
+    "t": " instead of the "
+   },
+   {
+    "t": "bento section",
+    "z": "便當區",
+    "j": "弁当売り場",
+    "e": "bento section",
+    "b": "bento section",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The curry noodles are on the cup noodle shelf.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "curry noodles",
+    "z": "咖哩麵",
+    "j": "カレー味の麺",
+    "e": "curry noodles",
+    "b": "curry noodles",
+    "p": "noun"
+   },
+   {
+    "t": " are on the "
+   },
+   {
+    "t": "cup noodle shelf",
+    "z": "杯麵架",
+    "j": "カップ麺棚",
+    "e": "cup noodle shelf",
+    "b": "cup noodle shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After choosing noodles from the cup noodle shelf, I used the hot water dispenser near the counter.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "choosing noodles",
+    "z": "選好麵",
+    "j": "麺を選んで",
+    "e": "choosing noodles",
+    "b": "choose noodles",
+    "p": "phrase"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "cup noodle shelf",
+    "z": "杯麵架",
+    "j": "カップ麺棚",
+    "e": "cup noodle shelf",
+    "b": "cup noodle shelf",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "used",
+    "z": "使用",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "hot water dispenser",
+    "z": "熱水機",
+    "j": "給湯器",
+    "e": "hot water dispenser",
+    "b": "hot water dispenser",
+    "p": "noun"
+   },
+   {
+    "t": " near the "
+   },
+   {
+    "t": "counter",
+    "z": "櫃檯",
+    "j": "レジ",
+    "e": "counter",
+    "b": "counter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The yogurt is in the chilled food case.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "yogurt",
+    "z": "優格",
+    "j": "ヨーグルト",
+    "e": "yogurt",
+    "b": "yogurt",
+    "p": "noun"
+   },
+   {
+    "t": " is in the "
+   },
+   {
+    "t": "chilled food case",
+    "z": "冷藏食品櫃",
+    "j": "冷蔵食品ケース",
+    "e": "chilled food case",
+    "b": "chilled food case",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I returned the dessert to the chilled food case after noticing that its use-by date was today.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "returned",
+    "z": "放回",
+    "j": "戻しました",
+    "e": "returned",
+    "b": "return",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "dessert",
+    "z": "甜點",
+    "j": "デザート",
+    "e": "dessert",
+    "b": "dessert",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "chilled food case",
+    "z": "冷藏食品櫃",
+    "j": "チルドケース",
+    "e": "chilled food case",
+    "b": "chilled food case",
+    "p": "noun"
+   },
+   {
+    "t": " after "
+   },
+   {
+    "t": "noticing",
+    "z": "注意到",
+    "j": "気づき",
+    "e": "noticing",
+    "b": "notice",
+    "p": "verb"
+   },
+   {
+    "t": " that its "
+   },
+   {
+    "t": "use-by date",
+    "z": "食用期限",
+    "j": "消費期限",
+    "e": "use-by date",
+    "b": "use-by date",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "today",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I took a popsicle from the ice cream freezer.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "took",
+    "z": "拿",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "popsicle",
+    "z": "冰棒",
+    "j": "アイスキャンディー",
+    "e": "popsicle",
+    "b": "popsicle",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "ice cream freezer",
+    "z": "冰淇淋冷凍櫃",
+    "j": "アイスケース",
+    "e": "ice cream freezer",
+    "b": "ice cream freezer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When I opened the ice cream freezer, I found the flavor that had been sold out last week.": [
+   {
+    "t": "When "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "opened",
+    "z": "打開",
+    "j": "開ける",
+    "e": "open",
+    "b": "open",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "ice cream freezer",
+    "z": "冰淇淋冷凍櫃",
+    "j": "アイスクリームの冷凍庫",
+    "e": "ice cream freezer",
+    "b": "ice cream freezer",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "found",
+    "z": "找到",
+    "j": "見つける",
+    "e": "find",
+    "b": "find",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "flavor",
+    "z": "口味",
+    "j": "味",
+    "e": "flavor",
+    "b": "flavor",
+    "p": "noun"
+   },
+   {
+    "t": " that had been "
+   },
+   {
+    "t": "sold out",
+    "z": "賣完",
+    "j": "売り切れる",
+    "e": "sell out",
+    "b": "sell out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "last week",
+    "z": "上週",
+    "j": "先週",
+    "e": "last week",
+    "b": "last week",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I took cold water from the drink refrigerator.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "took",
+    "z": "拿取",
+    "j": "取る",
+    "e": "take",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cold water",
+    "z": "冷水",
+    "j": "冷たい水",
+    "e": "cold water",
+    "b": "cold water",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "drink refrigerator",
+    "z": "飲料冰箱",
+    "j": "飲料ケース",
+    "e": "drink refrigerator",
+    "b": "drink refrigerator",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the front bottle was not cold yet, I chose one from the back of the drink refrigerator.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "front bottle",
+    "z": "前面的瓶子",
+    "j": "前のボトル",
+    "e": "front bottle",
+    "b": "front bottle",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "not cold yet",
+    "z": "還沒冷",
+    "j": "まだ冷たくない",
+    "e": "not cold yet",
+    "b": "not cold yet",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選んだ",
+    "e": "choose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " one from the "
+   },
+   {
+    "t": "back",
+    "z": "後面",
+    "j": "後ろ",
+    "e": "back",
+    "b": "back",
+    "p": "noun"
+   },
+   {
+    "t": " of the "
+   },
+   {
+    "t": "drink refrigerator",
+    "z": "飲料冰箱",
+    "j": "飲料ケース",
+    "e": "drink refrigerator",
+    "b": "drink refrigerator",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I took one packet from the wet towel dispenser.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "took",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "one packet",
+    "z": "一包",
+    "j": "一つのパック",
+    "e": "one packet",
+    "b": "one packet",
+    "p": "phrase"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "wet towel dispenser",
+    "z": "濕毛巾分配器",
+    "j": "おしぼりディスペンサー",
+    "e": "wet towel dispenser",
+    "b": "wet towel dispenser",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After buying fried chicken, I picked up a wet towel from the dispenser before leaving.": [
+   {
+    "t": "After buying",
+    "z": "買了之後",
+    "j": "買った後",
+    "e": "After buying",
+    "b": "buy",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "fried chicken",
+    "z": "炸雞",
+    "j": "フライドチキン",
+    "e": "fried chicken",
+    "b": "fried chicken",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "picked up",
+    "z": "拿起",
+    "j": "取りました",
+    "e": "picked up",
+    "b": "pick up",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "wet towel",
+    "z": "濕毛巾",
+    "j": "おしぼり",
+    "e": "wet towel",
+    "b": "wet towel",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "dispenser",
+    "z": "分配器",
+    "j": "ディスペンサー",
+    "e": "dispenser",
+    "b": "dispenser",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before leaving",
+    "z": "離開之前",
+    "j": "出る前に",
+    "e": "before leaving",
+    "b": "leave",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I took chopsticks from the disposable chopsticks dispenser.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "took",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "chopsticks",
+    "z": "筷子",
+    "j": "箸",
+    "e": "chopsticks",
+    "b": "chopstick",
+    "p": "noun"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "disposable chopsticks dispenser",
+    "z": "一次性筷子分配器",
+    "j": "割り箸ディスペンサー",
+    "e": "disposable chopsticks dispenser",
+    "b": "disposable chopsticks dispenser",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my bento included noodles, I took a pair from the disposable chopsticks dispenser.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "my bento",
+    "z": "我的便當",
+    "j": "私の弁当",
+    "e": "my bento",
+    "b": "bento",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "included",
+    "z": "包含了",
+    "j": "入っていた",
+    "e": "included",
+    "b": "include",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "noodles",
+    "z": "麵條",
+    "j": "麺",
+    "e": "noodles",
+    "b": "noodle",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "took",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a pair",
+    "z": "一雙",
+    "j": "一膳",
+    "e": "a pair",
+    "b": "pair",
+    "p": "numeral"
+   },
+   {
+    "t": " from the "
+   },
+   {
+    "t": "disposable chopsticks dispenser",
+    "z": "一次性筷子分配器",
+    "j": "割り箸ディスペンサー",
+    "e": "disposable chopsticks dispenser",
+    "b": "disposable chopsticks dispenser",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The spoons are in the plastic cutlery dispenser.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "spoons",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoons",
+    "b": "spoon",
+    "p": "noun"
+   },
+   {
+    "t": " are in the "
+   },
+   {
+    "t": "plastic cutlery dispenser",
+    "z": "塑膠餐具分配器",
+    "j": "プラスチックカトラリーディスペンサー",
+    "e": "plastic cutlery dispenser",
+    "b": "plastic cutlery dispenser",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After buying soup, I checked the plastic cutlery dispenser and took a wrapped spoon.": [
+   {
+    "t": "After buying soup",
+    "z": "買完湯之後",
+    "j": "スープを買った後",
+    "e": "After buying soup",
+    "b": "buy soup",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認",
+    "j": "確認して",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "plastic cutlery dispenser",
+    "z": "塑膠餐具分配器",
+    "j": "カトラリーディスペンサー",
+    "e": "plastic cutlery dispenser",
+    "b": "plastic cutlery dispenser",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "took",
+    "z": "拿取",
+    "j": "取りました",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "wrapped spoon",
+    "z": "包裝湯匙",
+    "j": "包装されたスプーン",
+    "e": "wrapped spoon",
+    "b": "wrapped spoon",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The clerk scanned my drink at the cash register.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "clerk",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "clerk",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "scanned",
+    "z": "掃描",
+    "j": "読み取りました",
+    "e": "scanned",
+    "b": "scan",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my drink",
+    "z": "我的飲料",
+    "j": "飲み物",
+    "e": "my drink",
+    "b": "drink",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "cash register",
+    "z": "收銀機",
+    "j": "レジ",
+    "e": "cash register",
+    "b": "cash register",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the cash register showed the total, I tapped my transit card on the payment terminal.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "cash register",
+    "z": "收銀機",
+    "j": "レジスター",
+    "e": "cash register",
+    "b": "cash register",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "showed",
+    "z": "顯示",
+    "j": "表示した",
+    "e": "showed",
+    "b": "show",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "total",
+    "z": "總額",
+    "j": "合計",
+    "e": "total",
+    "b": "total",
+    "p": "noun"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "tapped",
+    "z": "輕觸",
+    "j": "タッチした",
+    "e": "tapped",
+    "b": "tap",
+    "p": "verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "transit card",
+    "z": "交通卡",
+    "j": "交通系ICカード",
+    "e": "transit card",
+    "b": "transit card",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "payment terminal",
+    "z": "付款終端機",
+    "j": "決済端末",
+    "e": "payment terminal",
+    "b": "payment terminal",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ]
+ },
+ "ja": {
+  "コンビニで水を買ってきます。": [
+   {
+    "t": "コンビニ",
+    "z": "便利商店",
+    "j": "ちいさいコンビニエンスストア",
+    "e": "convenience store",
+    "b": "コンビニ",
+    "p": "noun",
+    "r": "コンビニ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "水",
+    "z": "水",
+    "j": "飲み物の水",
+    "e": "water",
+    "b": "水",
+    "p": "noun",
+    "r": "みず"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買ってきます",
+    "z": "買了回來",
+    "j": "買ってそのまま持ってくる",
+    "e": "buy",
+    "b": "買う",
+    "p": "verb",
+    "r": "かってきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "駅のカフェが閉まっていたので、コンビニで朝ご飯を買いました。": [
+   {
+    "t": "駅",
+    "z": "車站",
+    "j": "列車の発着する場所",
+    "e": "station",
+    "b": "駅",
+    "p": "noun",
+    "r": "えき"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "カフェ",
+    "z": "咖啡館",
+    "j": "コーヒーを飲む店",
+    "e": "cafe",
+    "b": "カフェ",
+    "p": "noun",
+    "r": "カフェ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "閉まっていた",
+    "z": "曾關閉",
+    "j": "閉まった状態だった",
+    "e": "was closed",
+    "b": "閉まる",
+    "p": "verb",
+    "r": "しまっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "コンビニ",
+    "z": "便利商店",
+    "j": "ちいさいコンビニエンスストア",
+    "e": "convenience store",
+    "b": "コンビニ",
+    "p": "noun",
+    "r": "コンビニ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "朝ご飯",
+    "z": "早餐",
+    "j": "朝食の食べ物",
+    "e": "breakfast",
+    "b": "朝ご飯",
+    "p": "noun",
+    "r": "あさごはん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "購入した",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "道路からコンビニの看板が見えました。": [
+   {
+    "t": "道路",
+    "z": "道路",
+    "j": "道路",
+    "e": "road",
+    "b": "道路",
+    "p": "noun",
+    "r": "どうろ"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "コンビニ",
+    "z": "便利商店",
+    "j": "コンビニ",
+    "e": "convenience store",
+    "b": "コンビニ",
+    "p": "noun",
+    "r": "コンビニ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "看板",
+    "z": "招牌",
+    "j": "看板",
+    "e": "sign",
+    "b": "看板",
+    "p": "noun",
+    "r": "かんばん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "見えました",
+    "z": "看見了",
+    "j": "見えました",
+    "e": "saw",
+    "b": "見える",
+    "p": "verb",
+    "r": "みえました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コンビニの看板が光っていたので、暗くても入口をすぐに見つけられました。": [
+   {
+    "t": "コンビニ",
+    "z": "便利商店",
+    "j": "コンビニ",
+    "e": "convenience store",
+    "b": "コンビニ",
+    "p": "noun",
+    "r": "コンビニ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "看板",
+    "z": "招牌",
+    "j": "看板",
+    "e": "sign",
+    "b": "看板",
+    "p": "noun",
+    "r": "かんばん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "光っていた",
+    "z": "亮著",
+    "j": "光っていた",
+    "e": "was lit",
+    "b": "光る",
+    "p": "verb",
+    "r": "ひかっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "暗く",
+    "z": "黑暗",
+    "j": "暗く",
+    "e": "dark",
+    "b": "暗い",
+    "p": "adjective",
+    "r": "くらく"
+   },
+   {
+    "t": "ても"
+   },
+   {
+    "t": "入口",
+    "z": "入口",
+    "j": "入口",
+    "e": "entrance",
+    "b": "入口",
+    "p": "noun",
+    "r": "いりぐち"
+   },
+   {
+    "t": "をすぐに"
+   },
+   {
+    "t": "見つけられました",
+    "z": "找到",
+    "j": "見つけられました",
+    "e": "found",
+    "b": "見つける",
+    "p": "verb",
+    "r": "みつけられました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "フライドチキンはホットフードショーケースにあります。": [
+   {
+    "t": "フライドチキン",
+    "z": "炸雞",
+    "j": "揚げた鶏肉",
+    "e": "fried chicken",
+    "b": "フライドチキン",
+    "p": "noun",
+    "r": "フライドチキン"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ホットフードショーケース",
+    "z": "熱食展示櫃",
+    "j": "温かい料理を入れるケース",
+    "e": "hot food display case",
+    "b": "ホットフードショーケース",
+    "p": "noun",
+    "r": "ホットフードショーケース"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "レジに着いたとき、ホットフードショーケースからコロッケを一つ選びました。": [
+   {
+    "t": "レジ",
+    "z": "收銀台",
+    "j": "会計をする場所",
+    "e": "register",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "着いた",
+    "z": "到達",
+    "j": "到着しました",
+    "e": "reached",
+    "b": "着く",
+    "p": "verb",
+    "r": "ついた"
+   },
+   {
+    "t": "とき、"
+   },
+   {
+    "t": "ホットフードショーケース",
+    "z": "熱食展示櫃",
+    "j": "温かい料理を入れるケース",
+    "e": "hot food display case",
+    "b": "ホットフードショーケース",
+    "p": "noun",
+    "r": "ホットフードショーケース"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "コロッケ",
+    "z": "可樂餅",
+    "j": "揚げたコロッケ",
+    "e": "croquette",
+    "b": "コロッケ",
+    "p": "noun",
+    "r": "コロッケ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一つ",
+    "z": "一個",
+    "j": "ひとつの数量",
+    "e": "one",
+    "b": "一つ",
+    "p": "numeral",
+    "r": "ひとつ"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "中華まんスチーマーはレジの横にあります。": [
+   {
+    "t": "中華まんスチーマー",
+    "z": "中華包子蒸籠",
+    "j": "中華まんを温める機械",
+    "e": "steamed bun warmer",
+    "b": "中華まんスチーマー",
+    "p": "noun",
+    "r": "ちゅうかまんスチーマー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "レジ",
+    "z": "收銀台",
+    "j": "会計をする場所",
+    "e": "register",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "横",
+    "z": "旁邊",
+    "j": "隣の位置",
+    "e": "beside",
+    "b": "横",
+    "p": "noun",
+    "r": "よこ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "外が寒かったので、中華まんスチーマーの肉まんを一つ買いました。": [
+   {
+    "t": "外",
+    "z": "外面",
+    "j": "外",
+    "e": "outside",
+    "b": "外",
+    "p": "noun",
+    "r": "そと"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "寒かった",
+    "z": "寒冷了",
+    "j": "寒かった",
+    "e": "was cold",
+    "b": "寒い",
+    "p": "adjective",
+    "r": "さむかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "中華まんスチーマー",
+    "z": "中華包子蒸籠",
+    "j": "中華まんスチーマー",
+    "e": "steamed bun warmer",
+    "b": "中華まんスチーマー",
+    "p": "noun",
+    "r": "ちゅうかまんスチーマー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "肉まん",
+    "z": "肉包",
+    "j": "肉まん",
+    "e": "pork bun",
+    "b": "肉まん",
+    "p": "noun",
+    "r": "にくまん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一つ",
+    "z": "一個",
+    "j": "一つ",
+    "e": "one",
+    "b": "一つ",
+    "p": "numeral",
+    "r": "ひとつ"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "おでんウォーマーで大根が煮えています。": [
+   {
+    "t": "おでんウォーマー",
+    "z": "關東煮保溫器",
+    "j": "おでんウォーマー",
+    "e": "oden warmer",
+    "b": "おでんウォーマー",
+    "p": "noun",
+    "r": "おでんウォーマー"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "大根",
+    "z": "白蘿蔔",
+    "j": "大根",
+    "e": "Daikon",
+    "b": "大根",
+    "p": "noun",
+    "r": "だいこん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "煮えています",
+    "z": "煮熟了",
+    "j": "煮えています",
+    "e": "is simmering",
+    "b": "煮える",
+    "p": "verb",
+    "r": "にえています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "おでんウォーマーの中を見てから、店員に卵とこんにゃくを頼みました。": [
+   {
+    "t": "おでんウォーマー",
+    "z": "關東煮保溫器",
+    "j": "おでんを温める機械",
+    "e": "oden warmer",
+    "b": "おでんウォーマー",
+    "p": "noun",
+    "r": "おでんうぉーまー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "中",
+    "z": "裡面",
+    "j": "なか",
+    "e": "inside",
+    "b": "中",
+    "p": "noun",
+    "r": "なか"
+   },
+   {
+    "t": "を見てから、"
+   },
+   {
+    "t": "店員",
+    "z": "店員",
+    "j": "店で働く人",
+    "e": "clerk",
+    "b": "店員",
+    "p": "noun",
+    "r": "てんいん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "卵",
+    "z": "蛋",
+    "j": "たまご",
+    "e": "egg",
+    "b": "卵",
+    "p": "noun",
+    "r": "たまご"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "こんにゃく",
+    "z": "蒟蒻",
+    "j": "こんにゃく",
+    "e": "konnyaku",
+    "b": "こんにゃく",
+    "p": "noun",
+    "r": "こんにゃく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "頼みました",
+    "z": "點了",
+    "j": "注文しました",
+    "e": "ordered",
+    "b": "頼む",
+    "p": "verb",
+    "r": "たのみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "飲料ウォーマーから温かいお茶を取りました。": [
+   {
+    "t": "飲料ウォーマー",
+    "z": "飲料保溫器",
+    "j": "飲料を温める機械",
+    "e": "beverage warmer",
+    "b": "飲料ウォーマー",
+    "p": "noun",
+    "r": "いんりょううぉーまー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "温かい",
+    "z": "溫熱的",
+    "j": "暖かい",
+    "e": "warm",
+    "b": "温かい",
+    "p": "adjective",
+    "r": "あたたかい"
+   },
+   {
+    "t": "お茶",
+    "z": "茶",
+    "j": "おちゃ",
+    "e": "tea",
+    "b": "お茶",
+    "p": "noun",
+    "r": "おちゃ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "手が冷えていたので、飲料ウォーマーから温かい缶コーヒーを選びました。": [
+   {
+    "t": "手",
+    "z": "手",
+    "j": "て",
+    "e": "hands",
+    "b": "手",
+    "p": "noun",
+    "r": "て"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "冷えていた",
+    "z": "冷了",
+    "j": "冷えていた",
+    "e": "were cold",
+    "b": "冷える",
+    "p": "verb",
+    "r": "ひえていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "飲料ウォーマー",
+    "z": "飲料保溫器",
+    "j": "飲料を温める機械",
+    "e": "beverage warmer",
+    "b": "飲料ウォーマー",
+    "p": "noun",
+    "r": "いんりょううぉーまー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "温かい",
+    "z": "溫熱的",
+    "j": "暖かい",
+    "e": "hot",
+    "b": "温かい",
+    "p": "adjective",
+    "r": "あたたかい"
+   },
+   {
+    "t": "缶コーヒー",
+    "z": "罐裝咖啡",
+    "j": "缶入りのコーヒー",
+    "e": "canned coffee",
+    "b": "缶コーヒー",
+    "p": "noun",
+    "r": "かんこーひー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コンビニコーヒーマシンにカップを置きました。": [
+   {
+    "t": "コンビニコーヒーマシン",
+    "z": "便利商店咖啡機",
+    "j": "コンビニコーヒーマシン",
+    "e": "convenience store coffee machine",
+    "b": "コンビニコーヒーマシン",
+    "p": "noun",
+    "r": "コンビニコーヒーマシン"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "カップ",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "カップ",
+    "p": "noun",
+    "r": "カップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "置きました",
+    "z": "放置了",
+    "j": "置きました",
+    "e": "placed",
+    "b": "置く",
+    "p": "verb",
+    "r": "おきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "カップの会計を済ませてから、コンビニコーヒーマシンでアイスコーヒーを選びました。": [
+   {
+    "t": "カップ",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "カップ",
+    "p": "noun",
+    "r": "カップ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "会計",
+    "z": "結帳",
+    "j": "会計",
+    "e": "paying",
+    "b": "会計",
+    "p": "noun",
+    "r": "かいけい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "済ませてから",
+    "z": "完成後",
+    "j": "済ませてから",
+    "e": "After paying",
+    "b": "済ませる",
+    "p": "verb",
+    "r": "すませてから"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "コンビニコーヒーマシン",
+    "z": "便利商店咖啡機",
+    "j": "コンビニコーヒーマシン",
+    "e": "convenience store coffee machine",
+    "b": "コンビニコーヒーマシン",
+    "p": "noun",
+    "r": "コンビニコーヒーマシン"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "アイスコーヒー",
+    "z": "冰咖啡",
+    "j": "アイスコーヒー",
+    "e": "iced coffee",
+    "b": "アイスコーヒー",
+    "p": "noun",
+    "r": "アイスコーヒー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "selected",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "小さいカップはコーヒーカップディスペンサーにあります。": [
+   {
+    "t": "小さいカップ",
+    "z": "小杯子",
+    "j": "小さいカップ",
+    "e": "small cup",
+    "b": "小さいカップ",
+    "p": "noun",
+    "r": "ちいさいカップ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "コーヒーカップディスペンサー",
+    "z": "咖啡杯分配器",
+    "j": "コーヒーカップディスペンサー",
+    "e": "coffee cup dispenser",
+    "b": "コーヒーカップディスペンサー",
+    "p": "noun",
+    "r": "コーヒーカップディスペンサー"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コーヒーカップディスペンサーが空だったので、店員にMサイズのカップを頼みました。": [
+   {
+    "t": "コーヒーカップディスペンサー",
+    "z": "咖啡杯分配器",
+    "j": "コーヒーカップディスペンサー",
+    "e": "coffee cup dispenser",
+    "b": "コーヒーカップディスペンサー",
+    "p": "noun",
+    "r": "コーヒーカップディスペンサー"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "空だった",
+    "z": "空了",
+    "j": "空だった",
+    "e": "was empty",
+    "b": "空だ",
+    "p": "phrase",
+    "r": "からだった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "店員",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "店員",
+    "p": "noun",
+    "r": "てんいん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "Mサイズのカップ",
+    "z": "M尺寸杯子",
+    "j": "Mサイズのカップ",
+    "e": "medium cup",
+    "b": "Mサイズのカップ",
+    "p": "noun",
+    "r": "エムサイズのカップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "頼みました",
+    "z": "請求了",
+    "j": "頼みました",
+    "e": "asked",
+    "b": "頼む",
+    "p": "verb",
+    "r": "たのみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "アイスコーヒー用の氷入りカップを買いました。": [
+   {
+    "t": "アイスコーヒー用",
+    "z": "冰咖啡用",
+    "j": "アイスコーヒー用",
+    "e": "for iced coffee",
+    "b": "アイスコーヒー用",
+    "p": "phrase",
+    "r": "アイスコーヒーよう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "氷入りカップ",
+    "z": "冰杯",
+    "j": "氷入りカップ",
+    "e": "ice cup",
+    "b": "氷入りカップ",
+    "p": "noun",
+    "r": "こおりいりカップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "氷入りカップのふたを外してから、コーヒーマシンの下に置きました。": [
+   {
+    "t": "氷入りカップ",
+    "z": "冰杯",
+    "j": "氷入りカップ",
+    "e": "ice cup",
+    "b": "氷入りカップ",
+    "p": "noun",
+    "r": "こおりいりカップ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ふた",
+    "z": "蓋子",
+    "j": "ふた",
+    "e": "lid",
+    "b": "ふた",
+    "p": "noun",
+    "r": "ふた"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "外して",
+    "z": "取下",
+    "j": "取り除いて",
+    "e": "removing",
+    "b": "外す",
+    "p": "verb",
+    "r": "はずして"
+   },
+   {
+    "t": "から、"
+   },
+   {
+    "t": "コーヒーマシン",
+    "z": "咖啡機",
+    "j": "コーヒーマシン",
+    "e": "coffee machine",
+    "b": "コーヒーマシン",
+    "p": "noun",
+    "r": "コーヒーマシン"
+   },
+   {
+    "t": "の下に"
+   },
+   {
+    "t": "置きました",
+    "z": "放置了",
+    "j": "置きました",
+    "e": "placed",
+    "b": "置く",
+    "p": "verb",
+    "r": "おきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "電子レンジコーナーで昼ご飯を温めました。": [
+   {
+    "t": "電子レンジコーナー",
+    "z": "微波爐區",
+    "j": "電子レンジコーナー",
+    "e": "microwave station",
+    "b": "電子レンジコーナー",
+    "p": "noun",
+    "r": "でんしレンジコーナー"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "昼ご飯",
+    "z": "午餐",
+    "j": "昼ご飯",
+    "e": "lunch",
+    "b": "昼ご飯",
+    "p": "noun",
+    "r": "ひるごはん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "温めました",
+    "z": "加熱了",
+    "j": "温めました",
+    "e": "heated",
+    "b": "温める",
+    "p": "verb",
+    "r": "あたためました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "一台が使用中だったので、電子レンジコーナーの横で少し待ちました。": [
+   {
+    "t": "一台",
+    "z": "一台",
+    "j": "一台",
+    "e": "one unit",
+    "b": "一台",
+    "p": "numeral",
+    "r": "いちだい"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "使用中",
+    "z": "使用中",
+    "j": "使っている状態",
+    "e": "in use",
+    "b": "使用中",
+    "p": "phrase",
+    "r": "しようちゅう"
+   },
+   {
+    "t": "だったので、"
+   },
+   {
+    "t": "電子レンジ",
+    "z": "微波爐",
+    "j": "電子レンジ",
+    "e": "microwave oven",
+    "b": "電子レンジ",
+    "p": "noun",
+    "r": "でんしレンジ"
+   },
+   {
+    "t": "コーナー",
+    "z": "區域",
+    "j": "コーナー",
+    "e": "corner",
+    "b": "コーナー",
+    "p": "noun",
+    "r": "コーナー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "横",
+    "z": "旁邊",
+    "j": "横",
+    "e": "side",
+    "b": "横",
+    "p": "noun",
+    "r": "よこ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "少し",
+    "z": "一點",
+    "j": "少し",
+    "e": "a little",
+    "b": "少し",
+    "p": "adverb",
+    "r": "すこし"
+   },
+   {
+    "t": "待ちました",
+    "z": "等待了",
+    "j": "待ちました",
+    "e": "waited",
+    "b": "待つ",
+    "p": "verb",
+    "r": "まちました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "給湯器からカップにお湯を入れました。": [
+   {
+    "t": "給湯器",
+    "z": "熱水器",
+    "j": "お湯を出す機械",
+    "e": "hot-water dispenser",
+    "b": "給湯器",
+    "p": "noun",
+    "r": "きゅうとうき"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "カップ",
+    "z": "杯子",
+    "j": "飲み物を入れる容器",
+    "e": "cup",
+    "b": "カップ",
+    "p": "noun",
+    "r": "カップ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "お湯",
+    "z": "熱水",
+    "j": "熱い水",
+    "e": "hot water",
+    "b": "お湯",
+    "p": "noun",
+    "r": "おゆ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入れました",
+    "z": "放入了",
+    "j": "中に入れました",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "給湯器を使う前に、カップ麺のふたを半分まで開けました。": [
+   {
+    "t": "給湯器",
+    "z": "熱水器",
+    "j": "お湯を出す機械",
+    "e": "hot-water dispenser",
+    "b": "給湯器",
+    "p": "noun",
+    "r": "きゅうとうき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使う",
+    "z": "使用",
+    "j": "使います",
+    "e": "use",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかう"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "その前の時間",
+    "e": "before",
+    "b": "前",
+    "p": "noun",
+    "r": "まえ"
+   },
+   {
+    "t": "に、"
+   },
+   {
+    "t": "カップ麺",
+    "z": "杯麵",
+    "j": "カップに入った即席めん",
+    "e": "cup noodles",
+    "b": "カップ麺",
+    "p": "noun",
+    "r": "カップめん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ふた",
+    "z": "蓋子",
+    "j": "容器の蓋",
+    "e": "lid",
+    "b": "ふた",
+    "p": "noun",
+    "r": "ふた"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "半分",
+    "z": "一半",
+    "j": "全体の半分の量",
+    "e": "half",
+    "b": "半分",
+    "p": "numeral",
+    "r": "はんぶん"
+   },
+   {
+    "t": "まで"
+   },
+   {
+    "t": "開けました",
+    "z": "打開了",
+    "j": "蓋を開けました",
+    "e": "opened",
+    "b": "開ける",
+    "p": "verb",
+    "r": "あけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "イートインスペースで昼ご飯を食べました。": [
+   {
+    "t": "イートインスペース",
+    "z": "內用區",
+    "j": "イートインスペース",
+    "e": "eat-in area",
+    "b": "イートインスペース",
+    "p": "noun",
+    "r": "イートインスペース"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "昼ご飯",
+    "z": "午餐",
+    "j": "昼ご飯",
+    "e": "lunch",
+    "b": "昼ご飯",
+    "p": "noun",
+    "r": "ひるごはん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "食べました",
+    "z": "吃了",
+    "j": "食べました",
+    "e": "ate",
+    "b": "食べる",
+    "p": "verb",
+    "r": "たべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "雨が降っていたので、出発する前にイートインスペースでコーヒーを飲みました。": [
+   {
+    "t": "雨",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "雨",
+    "p": "noun",
+    "r": "あめ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "降っていた",
+    "z": "正在下",
+    "j": "降っていた",
+    "e": "was raining",
+    "b": "降る",
+    "p": "verb",
+    "r": "ふっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "出発する前",
+    "z": "出發前",
+    "j": "出発する前",
+    "e": "before leaving",
+    "b": "出発する前",
+    "p": "phrase",
+    "r": "しゅっぱつするまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "イートインスペース",
+    "z": "內用區",
+    "j": "イートインスペース",
+    "e": "eat-in area",
+    "b": "イートインスペース",
+    "p": "noun",
+    "r": "イートインスペース"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "コーヒー",
+    "z": "咖啡",
+    "j": "コーヒー",
+    "e": "coffee",
+    "b": "コーヒー",
+    "p": "noun",
+    "r": "コーヒー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "飲みました",
+    "z": "喝了",
+    "j": "飲みました",
+    "e": "drank",
+    "b": "飲む",
+    "p": "verb",
+    "r": "のみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コンビニATMで現金を引き出しました。": [
+   {
+    "t": "コンビニATM",
+    "z": "便利商店自動提款機",
+    "j": "コンビニのATM",
+    "e": "convenience store ATM",
+    "b": "コンビニATM",
+    "p": "noun",
+    "r": "コンビニエンスストアエーティーエム"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "現金",
+    "z": "現金",
+    "j": "現金",
+    "e": "cash",
+    "b": "現金",
+    "p": "noun",
+    "r": "げんきん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "引き出しました",
+    "z": "提領了",
+    "j": "引き出しました",
+    "e": "withdrew",
+    "b": "引き出す",
+    "p": "verb",
+    "r": "ひきだしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "銀行が閉まっていたので、コンビニATMでお金を預け入れました。": [
+   {
+    "t": "銀行",
+    "z": "銀行",
+    "j": "銀行",
+    "e": "bank",
+    "b": "銀行",
+    "p": "noun",
+    "r": "ぎんこう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "閉まっていた",
+    "z": "關閉著",
+    "j": "閉まっていた",
+    "e": "was closed",
+    "b": "閉まる",
+    "p": "adjective",
+    "r": "しまっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "コンビニATM",
+    "z": "便利商店自動提款機",
+    "j": "コンビニのATM",
+    "e": "convenience store ATM",
+    "b": "コンビニATM",
+    "p": "noun",
+    "r": "コンビニエーティーエム"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "お金",
+    "z": "錢",
+    "j": "お金",
+    "e": "money",
+    "b": "お金",
+    "p": "noun",
+    "r": "おかね"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "預け入れました",
+    "z": "存入了",
+    "j": "預け入れました",
+    "e": "deposited",
+    "b": "預け入れる",
+    "p": "verb",
+    "r": "あずけいれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "マルチコピー機で書類を印刷しました。": [
+   {
+    "t": "マルチコピー機",
+    "z": "多功能影印機",
+    "j": "マルチコピー機",
+    "e": "multifunction copier",
+    "b": "マルチコピー機",
+    "p": "noun",
+    "r": "マルチコピーき"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "書類",
+    "z": "文件",
+    "j": "書類",
+    "e": "document",
+    "b": "書類",
+    "p": "noun",
+    "r": "しょるい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "印刷しました",
+    "z": "印刷了",
+    "j": "印刷しました",
+    "e": "printed",
+    "b": "印刷する",
+    "p": "verb",
+    "r": "いんさつしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "家のプリンターが壊れていたので、USBメモリにファイルを保存してマルチコピー機を使いました。": [
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家庭",
+    "e": "home",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "プリンター",
+    "z": "印表機",
+    "j": "印刷機械",
+    "e": "printer",
+    "b": "プリンター",
+    "p": "noun",
+    "r": "プリンター"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "壊れていた",
+    "z": "壞了",
+    "j": "壊れていました",
+    "e": "was broken",
+    "b": "壊れる",
+    "p": "verb",
+    "r": "こわれていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "USBメモリ",
+    "z": "USB記憶體",
+    "j": "USBメモリ",
+    "e": "USB memory",
+    "b": "USBメモリ",
+    "p": "noun",
+    "r": "ユーエスビーメモリ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ファイル",
+    "z": "檔案",
+    "j": "ファイル",
+    "e": "file",
+    "b": "ファイル",
+    "p": "noun",
+    "r": "ファイル"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "保存して",
+    "z": "保存",
+    "j": "保存して",
+    "e": "save and",
+    "b": "保存する",
+    "p": "verb",
+    "r": "ほぞんして"
+   },
+   {
+    "t": "マルチコピー機",
+    "z": "多功能影印機",
+    "j": "マルチコピー機",
+    "e": "multifunction copier",
+    "b": "マルチコピー機",
+    "p": "noun",
+    "r": "マルチコピーき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使いました",
+    "z": "使用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "マルチメディア端末でチケットを予約しました。": [
+   {
+    "t": "マルチメディア端末",
+    "z": "多媒體終端",
+    "j": "マルチメディア端末",
+    "e": "multimedia terminal",
+    "b": "マルチメディア端末",
+    "p": "noun",
+    "r": "マルチメディアたんまつ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "チケット",
+    "z": "票",
+    "j": "チケット",
+    "e": "ticket",
+    "b": "チケット",
+    "p": "noun",
+    "r": "チケット"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "予約しました",
+    "z": "預約了",
+    "j": "予約しました",
+    "e": "reserved",
+    "b": "予約する",
+    "p": "verb",
+    "r": "よやくしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "マルチメディア端末に予約番号を入力した後、印刷された申込券をレジに持っていきました。": [
+   {
+    "t": "マルチメディア端末",
+    "z": "多媒體終端機",
+    "j": "多機能端末",
+    "e": "multimedia terminal",
+    "b": "マルチメディア端末",
+    "p": "noun",
+    "r": "マルチメディアたんまつ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "予約番号",
+    "z": "預約號碼",
+    "j": "予約の番号",
+    "e": "reservation number",
+    "b": "予約番号",
+    "p": "noun",
+    "r": "よやくばんごう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入力した",
+    "z": "輸入了",
+    "j": "入力しました",
+    "e": "entered",
+    "b": "入力する",
+    "p": "verb",
+    "r": "にゅうりょくした"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "印刷された",
+    "z": "被印刷的",
+    "j": "印刷されました",
+    "e": "printed",
+    "b": "印刷される",
+    "p": "verb",
+    "r": "いんさつされた"
+   },
+   {
+    "t": "申込券",
+    "z": "申請券",
+    "j": "申し込みの券",
+    "e": "application ticket",
+    "b": "申込券",
+    "p": "noun",
+    "r": "もうしこみけん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "レジ",
+    "z": "收銀台",
+    "j": "レジスター",
+    "e": "cash register",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "持っていきました",
+    "z": "帶去了",
+    "j": "持って行きました",
+    "e": "took",
+    "b": "持っていく",
+    "p": "phrasal verb",
+    "r": "もっていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "箱を宅配便受付に持っていきました。": [
+   {
+    "t": "箱",
+    "z": "箱子",
+    "j": "箱",
+    "e": "box",
+    "b": "箱",
+    "p": "noun",
+    "r": "はこ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "宅配便受付",
+    "z": "宅配便受理處",
+    "j": "宅配便の受付",
+    "e": "parcel counter",
+    "b": "宅配便受付",
+    "p": "noun",
+    "r": "たくはいびんうけつけ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "持っていきました",
+    "z": "帶去了",
+    "j": "持って行きました",
+    "e": "took",
+    "b": "持っていく",
+    "p": "phrasal verb",
+    "r": "もっていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "宅配便受付へ行く前に、送り状に住所を書きました。": [
+   {
+    "t": "宅配便受付",
+    "z": "宅配便受理處",
+    "j": "宅配便の受付",
+    "e": "parcel counter",
+    "b": "宅配便受付",
+    "p": "noun",
+    "r": "たくはいびんうけつけ"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "行く",
+    "z": "去",
+    "j": "行きます",
+    "e": "go",
+    "b": "行く",
+    "p": "verb",
+    "r": "いく"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "noun",
+    "r": "まえ"
+   },
+   {
+    "t": "に、"
+   },
+   {
+    "t": "送り状",
+    "z": "運送標籤",
+    "j": "送り状",
+    "e": "shipping label",
+    "b": "送り状",
+    "p": "noun",
+    "r": "おくりじょう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "住所",
+    "z": "地址",
+    "j": "住所",
+    "e": "address",
+    "b": "住所",
+    "p": "noun",
+    "r": "じゅうしょ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "書きました",
+    "z": "寫了",
+    "j": "書きました",
+    "e": "wrote",
+    "b": "書く",
+    "p": "verb",
+    "r": "かきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "店員に払込票を渡しました。": [
+   {
+    "t": "店員",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "店員",
+    "p": "noun",
+    "r": "てんいん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "払込票",
+    "z": "繳費單",
+    "j": "払込票",
+    "e": "payment slip",
+    "b": "払込票",
+    "p": "noun",
+    "r": "はらいこみひょう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "渡しました",
+    "z": "交給了",
+    "j": "渡しました",
+    "e": "gave",
+    "b": "渡す",
+    "p": "verb",
+    "r": "わたしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "払込票の期限が今日だったので、帰りにコンビニで支払いました。": [
+   {
+    "t": "払込票",
+    "z": "繳費單",
+    "j": "払込票",
+    "e": "payment slip",
+    "b": "払込票",
+    "p": "noun",
+    "r": "はらいこみひょう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "期限",
+    "z": "期限",
+    "j": "期限",
+    "e": "due date",
+    "b": "期限",
+    "p": "noun",
+    "r": "きげん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "今日",
+    "p": "noun",
+    "r": "きょう"
+   },
+   {
+    "t": "だったので、帰りに"
+   },
+   {
+    "t": "コンビニ",
+    "z": "便利商店",
+    "j": "コンビニ",
+    "e": "convenience store",
+    "b": "コンビニ",
+    "p": "noun",
+    "r": "コンビニ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "支払いました",
+    "z": "支付了",
+    "j": "支払いました",
+    "e": "paid",
+    "b": "支払う",
+    "p": "verb",
+    "r": "しはらいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "POSAカード売り場はレジの近くにあります。": [
+   {
+    "t": "POSAカード売り場",
+    "z": "預付卡專區",
+    "j": "プリペイドカード売り場",
+    "e": "prepaid card rack",
+    "b": "POSAカード売り場",
+    "p": "noun",
+    "r": "ポサカードうりば"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "レジ",
+    "z": "收銀台",
+    "j": "会計カウンター",
+    "e": "checkout",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "近く",
+    "z": "附近",
+    "j": "そば",
+    "e": "nearby",
+    "b": "近く",
+    "p": "noun",
+    "r": "ちかく"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "位於",
+    "j": "ございます",
+    "e": "is located",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "POSAカード売り場でカードを選び、贈りたい金額で使えるよう店員に頼みました。": [
+   {
+    "t": "POSAカード売り場",
+    "z": "預付卡專區",
+    "j": "プリペイドカード売り場",
+    "e": "prepaid card rack",
+    "b": "POSAカード売り場",
+    "p": "noun",
+    "r": "ポサカードうりば"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "カード",
+    "z": "卡片",
+    "j": "カード",
+    "e": "card",
+    "b": "カード",
+    "p": "noun",
+    "r": "カード"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選び",
+    "z": "選好",
+    "j": "選択し",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらび"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "贈りたい",
+    "z": "想贈送的",
+    "j": "プレゼントしたい",
+    "e": "want to give",
+    "b": "贈る",
+    "p": "verb",
+    "r": "おくりたい"
+   },
+   {
+    "t": "金額",
+    "z": "金額",
+    "j": "値段",
+    "e": "amount",
+    "b": "金額",
+    "p": "noun",
+    "r": "きんがく"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "使えるよう",
+    "z": "能夠使用",
+    "j": "利用できるよう",
+    "e": "so it can be used",
+    "b": "使える",
+    "p": "verb",
+    "r": "つかえるよう"
+   },
+   {
+    "t": "店員",
+    "z": "店員",
+    "j": "スタッフ",
+    "e": "clerk",
+    "b": "店員",
+    "p": "noun",
+    "r": "てんいん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "頼みました",
+    "z": "請託了",
+    "j": "お願いしました",
+    "e": "asked",
+    "b": "頼む",
+    "p": "verb",
+    "r": "たのみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "たばこ什器はレジの後ろにあります。": [
+   {
+    "t": "たばこ什器",
+    "z": "菸品陳列架",
+    "j": "たばこ陳列棚",
+    "e": "tobacco display",
+    "b": "たばこ什器",
+    "p": "noun",
+    "r": "たばこじゅうき"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "レジ",
+    "z": "收銀台",
+    "j": "会計カウンター",
+    "e": "checkout",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "後ろ",
+    "z": "後方",
+    "j": "背後",
+    "e": "behind",
+    "b": "後ろ",
+    "p": "noun",
+    "r": "うしろ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "位於",
+    "j": "ございます",
+    "e": "is located",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "店員はたばこ什器の番号を確認してから、頼まれた箱を取りました。": [
+   {
+    "t": "店員",
+    "z": "店員",
+    "j": "店で働く人",
+    "e": "clerk",
+    "b": "店員",
+    "p": "noun",
+    "r": "てんいん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "たばこ什器",
+    "z": "菸草展示架",
+    "j": "たばこを並べた什器",
+    "e": "tobacco display",
+    "b": "たばこ什器",
+    "p": "noun",
+    "r": "たばこじゅうき"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "番号",
+    "z": "號碼",
+    "j": "番号",
+    "e": "number",
+    "b": "番号",
+    "p": "noun",
+    "r": "ばんごう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認して",
+    "z": "確認了",
+    "j": "確かめて",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんして"
+   },
+   {
+    "t": "から、"
+   },
+   {
+    "t": "頼まれた",
+    "z": "被要求的",
+    "j": "頼まれた",
+    "e": "requested",
+    "b": "頼む",
+    "p": "adjective",
+    "r": "たのまれた"
+   },
+   {
+    "t": "箱",
+    "z": "箱子",
+    "j": "箱",
+    "e": "pack",
+    "b": "箱",
+    "p": "noun",
+    "r": "はこ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "旅行雑誌が雑誌ラックにあります。": [
+   {
+    "t": "旅行雑誌",
+    "z": "旅遊雜誌",
+    "j": "旅行雑誌",
+    "e": "travel magazine",
+    "b": "旅行雑誌",
+    "p": "noun",
+    "r": "りょこうざっし"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "雑誌ラック",
+    "z": "雜誌架",
+    "j": "雑誌ラック",
+    "e": "magazine rack",
+    "b": "雑誌ラック",
+    "p": "noun",
+    "r": "ざっしラック"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "友達を待っている間、雑誌ラックの新刊を確認しました。": [
+   {
+    "t": "友達",
+    "z": "朋友",
+    "j": "友達",
+    "e": "friend",
+    "b": "友達",
+    "p": "noun",
+    "r": "ともだち"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "待っている間",
+    "z": "等待期間",
+    "j": "待っている間",
+    "e": "while waiting",
+    "b": "待つ",
+    "p": "phrase",
+    "r": "まっているあいだ"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "雑誌ラック",
+    "z": "雜誌架",
+    "j": "雑誌ラック",
+    "e": "magazine rack",
+    "b": "雑誌ラック",
+    "p": "noun",
+    "r": "ざっしラック"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "新刊",
+    "z": "新刊",
+    "j": "新しい本",
+    "e": "new publication",
+    "b": "新刊",
+    "p": "noun",
+    "r": "しんかん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確かめました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "新聞ラックから新聞を一部取りました。": [
+   {
+    "t": "新聞ラック",
+    "z": "報紙架",
+    "j": "新聞ラック",
+    "e": "newspaper rack",
+    "b": "新聞ラック",
+    "p": "noun",
+    "r": "しんぶんラック"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "新聞",
+    "z": "報紙",
+    "j": "新聞",
+    "e": "newspaper",
+    "b": "新聞",
+    "p": "noun",
+    "r": "しんぶん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一部",
+    "z": "一份",
+    "j": "一部",
+    "e": "a copy",
+    "b": "一部",
+    "p": "numeral",
+    "r": "いちぶ"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "朝刊が売り切れていたので、新聞ラックのその区画は空でした。": [
+   {
+    "t": "朝刊",
+    "z": "晨報",
+    "j": "朝刊",
+    "e": "morning edition",
+    "b": "朝刊",
+    "p": "noun",
+    "r": "ちょうかん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "売り切れていた",
+    "z": "賣完了",
+    "j": "売り切れていた",
+    "e": "was sold out",
+    "b": "売り切れる",
+    "p": "verb",
+    "r": "うりきれていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "新聞ラック",
+    "z": "報紙架",
+    "j": "新聞ラック",
+    "e": "newspaper rack",
+    "b": "新聞ラック",
+    "p": "noun",
+    "r": "しんぶんラック"
+   },
+   {
+    "t": "のその"
+   },
+   {
+    "t": "区画",
+    "z": "區域",
+    "j": "区画",
+    "e": "section",
+    "b": "区画",
+    "p": "noun",
+    "r": "くかく"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "空でした",
+    "z": "空的",
+    "j": "空でした",
+    "e": "was empty",
+    "b": "空く",
+    "p": "adjective",
+    "r": "からでした"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ぬれた傘を傘立てに入れました。": [
+   {
+    "t": "ぬれた",
+    "z": "濕的",
+    "j": "ぬれた",
+    "e": "wet",
+    "b": "ぬれる",
+    "p": "adjective",
+    "r": "ぬれた"
+   },
+   {
+    "t": "傘",
+    "z": "傘",
+    "j": "傘",
+    "e": "umbrella",
+    "b": "傘",
+    "p": "noun",
+    "r": "かさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "傘立て",
+    "z": "傘架",
+    "j": "傘立て",
+    "e": "umbrella stand",
+    "b": "傘立て",
+    "p": "noun",
+    "r": "かさたて"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れました",
+    "z": "放入",
+    "j": "入れました",
+    "e": "put",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "店を出る前に傘立てを確認し、持ってきた青い傘を取りました。": [
+   {
+    "t": "店",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "店",
+    "p": "noun",
+    "r": "みせ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "出る前に",
+    "z": "離開之前",
+    "j": "出る前に",
+    "e": "Before leaving",
+    "b": "出る",
+    "p": "phrase",
+    "r": "でるまえに"
+   },
+   {
+    "t": "傘立て",
+    "z": "傘架",
+    "j": "傘立て",
+    "e": "umbrella stand",
+    "b": "傘立て",
+    "p": "noun",
+    "r": "かさたて"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認し",
+    "z": "確認",
+    "j": "確認し",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんし"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "持ってきた",
+    "z": "帶來",
+    "j": "持ってきた",
+    "e": "brought",
+    "b": "持ってくる",
+    "p": "verb",
+    "r": "もってきた"
+   },
+   {
+    "t": "青い傘",
+    "z": "藍色傘",
+    "j": "青い傘",
+    "e": "blue umbrella",
+    "b": "青い傘",
+    "p": "noun",
+    "r": "あおいかさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿走",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "空のボトルを分別ゴミ箱に入れました。": [
+   {
+    "t": "空",
+    "z": "空的",
+    "j": "空の状態",
+    "e": "empty",
+    "b": "空",
+    "p": "adjective",
+    "r": "から"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ボトル",
+    "z": "瓶子",
+    "j": "瓶",
+    "e": "bottle",
+    "b": "ボトル",
+    "p": "noun",
+    "r": "ボトル"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "分別ゴミ箱",
+    "z": "分類垃圾桶",
+    "j": "分別するゴミ箱",
+    "e": "sorting bin",
+    "b": "分別ゴミ箱",
+    "p": "noun",
+    "r": "ぶんべつゴミばこ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れました",
+    "z": "放入了",
+    "j": "入れました",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "飲み終わった後、カップを捨てる前に分別ゴミ箱の表示を確認しました。": [
+   {
+    "t": "飲み終わった",
+    "z": "喝完了",
+    "j": "飲み終わった",
+    "e": "finished drinking",
+    "b": "飲み終わる",
+    "p": "verb",
+    "r": "のみおわった"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "カップ",
+    "z": "杯子",
+    "j": "カップ",
+    "e": "cup",
+    "b": "カップ",
+    "p": "noun",
+    "r": "カップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "捨てる",
+    "z": "丟棄",
+    "j": "捨てる",
+    "e": "throw away",
+    "b": "捨てる",
+    "p": "verb",
+    "r": "すてる"
+   },
+   {
+    "t": "前に"
+   },
+   {
+    "t": "分別ゴミ箱",
+    "z": "分類垃圾桶",
+    "j": "分別ゴミ箱",
+    "e": "sorting bin",
+    "b": "分別ゴミ箱",
+    "p": "noun",
+    "r": "ぶんべつゴミばこ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "表示",
+    "z": "標示",
+    "j": "表示",
+    "e": "label",
+    "b": "表示",
+    "p": "noun",
+    "r": "ひょうじ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "おにぎり棚から鮭のおにぎりを選びました。": [
+   {
+    "t": "おにぎり棚",
+    "z": "飯糰架",
+    "j": "おにぎり棚",
+    "e": "rice ball shelf",
+    "b": "おにぎり棚",
+    "p": "noun",
+    "r": "おにぎりだな"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "鮭",
+    "z": "鮭魚",
+    "j": "鮭",
+    "e": "salmon",
+    "b": "鮭",
+    "p": "noun",
+    "r": "さけ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "おにぎり",
+    "z": "飯糰",
+    "j": "おにぎり",
+    "e": "rice ball",
+    "b": "おにぎり",
+    "p": "noun",
+    "r": "おにぎり"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ツナのおにぎりが売り切れていたので、おにぎり棚で別の具を探しました。": [
+   {
+    "t": "ツナ",
+    "z": "鮪魚",
+    "j": "ツナ",
+    "e": "tuna",
+    "b": "ツナ",
+    "p": "noun",
+    "r": "つな"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "おにぎり",
+    "z": "飯糰",
+    "j": "おにぎり",
+    "e": "rice ball",
+    "b": "おにぎり",
+    "p": "noun",
+    "r": "おにぎり"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "売り切れていた",
+    "z": "賣完了",
+    "j": "売り切れていた",
+    "e": "were gone",
+    "b": "売り切れる",
+    "p": "verb",
+    "r": "うりきれていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "おにぎり棚",
+    "z": "飯糰架",
+    "j": "おにぎり棚",
+    "e": "rice ball shelf",
+    "b": "おにぎり棚",
+    "p": "noun",
+    "r": "おにぎりだな"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "別の具",
+    "z": "另一種餡料",
+    "j": "別の具",
+    "e": "another filling",
+    "b": "別の具",
+    "p": "noun",
+    "r": "べつのぐ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "探しました",
+    "z": "找了",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "カレー弁当は弁当棚にあります。": [
+   {
+    "t": "カレー弁当",
+    "z": "咖哩便當",
+    "j": "カレー弁当",
+    "e": "curry bento",
+    "b": "カレー弁当",
+    "p": "noun",
+    "r": "カレーべんとう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "弁当棚",
+    "z": "便當架",
+    "j": "弁当棚",
+    "e": "bento shelf",
+    "b": "弁当棚",
+    "p": "noun",
+    "r": "べんとうだな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "弁当棚の二つの商品を比べてから、焼き魚が入った方を選びました。": [
+   {
+    "t": "弁当棚",
+    "z": "便當架",
+    "j": "弁当を置く棚",
+    "e": "bento shelf",
+    "b": "弁当棚",
+    "p": "noun",
+    "r": "べんとうだな"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "二つ",
+    "z": "兩個",
+    "j": "ふたつのもの",
+    "e": "two",
+    "b": "二つ",
+    "p": "numeral",
+    "r": "ふたつ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "商品",
+    "z": "商品",
+    "j": "売るもの",
+    "e": "products",
+    "b": "商品",
+    "p": "noun",
+    "r": "しょうひん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べて",
+    "z": "比較",
+    "j": "くらべている",
+    "e": "compare",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべて"
+   },
+   {
+    "t": "から、"
+   },
+   {
+    "t": "焼き魚",
+    "z": "烤魚",
+    "j": "焼いた魚",
+    "e": "grilled fish",
+    "b": "焼き魚",
+    "p": "noun",
+    "r": "やきざかな"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "入った",
+    "z": "裝入",
+    "j": "入っている",
+    "e": "contained",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいった"
+   },
+   {
+    "t": "方を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "えらびました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "サンドイッチ棚で卵サンドを見つけました。": [
+   {
+    "t": "サンドイッチ棚",
+    "z": "三明治架",
+    "j": "サンドイッチを置く棚",
+    "e": "sandwich shelf",
+    "b": "サンドイッチ棚",
+    "p": "noun",
+    "r": "サンドイッチだな"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "卵サンド",
+    "z": "蛋三明治",
+    "j": "卵のサンドイッチ",
+    "e": "egg sandwich",
+    "b": "卵サンド",
+    "p": "noun",
+    "r": "たまごサンド"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "見つけました",
+    "z": "找到",
+    "j": "みつけました",
+    "e": "found",
+    "b": "見つける",
+    "p": "verb",
+    "r": "みつけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "軽い朝食にしたかったので、弁当売り場ではなくサンドイッチ棚を見ました。": [
+   {
+    "t": "軽い朝食",
+    "z": "輕便早餐",
+    "j": "あっさりした朝ごはん",
+    "e": "light breakfast",
+    "b": "軽い朝食",
+    "p": "noun",
+    "r": "かるいちょうしょく"
+   },
+   {
+    "t": "にしたかったので、"
+   },
+   {
+    "t": "弁当売り場",
+    "z": "便當販賣處",
+    "j": "弁当を売る場所",
+    "e": "bento section",
+    "b": "弁当売り場",
+    "p": "noun",
+    "r": "べんとううりば"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "サンドイッチ棚",
+    "z": "三明治架",
+    "j": "サンドイッチを置く棚",
+    "e": "sandwich shelf",
+    "b": "サンドイッチ棚",
+    "p": "noun",
+    "r": "サンドイッチだな"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "見ました",
+    "z": "看了",
+    "j": "みました",
+    "e": "looked at",
+    "b": "見る",
+    "p": "verb",
+    "r": "みました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "カレー味の麺はカップ麺棚にあります。": [
+   {
+    "t": "カレー味",
+    "z": "咖哩味",
+    "j": "カレー味",
+    "e": "curry flavor",
+    "b": "カレー味",
+    "p": "adjective",
+    "r": "カレーあじ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "麺",
+    "z": "麵",
+    "j": "麺",
+    "e": "noodles",
+    "b": "麺",
+    "p": "noun",
+    "r": "めん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "カップ麺棚",
+    "z": "杯麵架",
+    "j": "カップ麺棚",
+    "e": "cup noodle shelf",
+    "b": "カップ麺棚",
+    "p": "noun",
+    "r": "カップめんだな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "are",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "カップ麺棚で麺を選んだ後、レジ近くの給湯器を使いました。": [
+   {
+    "t": "カップ麺棚",
+    "z": "杯麵架",
+    "j": "カップ麺棚",
+    "e": "cup noodle shelf",
+    "b": "カップ麺棚",
+    "p": "noun",
+    "r": "カップめんだな"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "麺",
+    "z": "麵",
+    "j": "麺",
+    "e": "noodles",
+    "b": "麺",
+    "p": "noun",
+    "r": "めん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選んだ",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらんだ"
+   },
+   {
+    "t": "後",
+    "z": "之後",
+    "j": "後",
+    "e": "after",
+    "b": "後",
+    "p": "noun",
+    "r": "あと"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "レジ",
+    "z": "收銀台",
+    "j": "レジ",
+    "e": "counter",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "近くの"
+   },
+   {
+    "t": "給湯器",
+    "z": "熱水器",
+    "j": "給湯器",
+    "e": "hot water dispenser",
+    "b": "給湯器",
+    "p": "noun",
+    "r": "きゅうとうき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使いました",
+    "z": "使用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ヨーグルトはチルドケースにあります。": [
+   {
+    "t": "ヨーグルト",
+    "z": "優格",
+    "j": "ヨーグルト",
+    "e": "yogurt",
+    "b": "ヨーグルト",
+    "p": "noun",
+    "r": "ヨーグルト"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "チルドケース",
+    "z": "冷藏櫃",
+    "j": "冷蔵ケース",
+    "e": "chilled case",
+    "b": "チルドケース",
+    "p": "noun",
+    "r": "チルドケース"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "消費期限が今日だと気づき、デザートをチルドケースに戻しました。": [
+   {
+    "t": "消費期限",
+    "z": "食用期限",
+    "j": "食べられる期限",
+    "e": "use-by date",
+    "b": "消費期限",
+    "p": "noun",
+    "r": "しょうひきげん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "本日",
+    "e": "today",
+    "b": "今日",
+    "p": "noun",
+    "r": "きょう"
+   },
+   {
+    "t": "だと"
+   },
+   {
+    "t": "気づき",
+    "z": "注意到",
+    "j": "分かり",
+    "e": "noticed",
+    "b": "気づく",
+    "p": "verb",
+    "r": "きづき"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "デザート",
+    "z": "甜點",
+    "j": "甘い食べ物",
+    "e": "dessert",
+    "b": "デザート",
+    "p": "noun",
+    "r": "デザート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "チルドケース",
+    "z": "冷藏食品櫃",
+    "j": "冷蔵食品ケース",
+    "e": "chilled food case",
+    "b": "チルドケース",
+    "p": "noun",
+    "r": "チルドケース"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "戻しました",
+    "z": "放回",
+    "j": "返しました",
+    "e": "returned",
+    "b": "戻す",
+    "p": "verb",
+    "r": "もどしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "アイスケースからアイスキャンディーを取りました。": [
+   {
+    "t": "アイスケース",
+    "z": "冰淇淋冷凍櫃",
+    "j": "アイスケース",
+    "e": "ice cream freezer",
+    "b": "アイスケース",
+    "p": "noun",
+    "r": "あいすけーす"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "アイスキャンディー",
+    "z": "冰棒",
+    "j": "アイスキャンディー",
+    "e": "popsicle",
+    "b": "アイスキャンディー",
+    "p": "noun",
+    "r": "あいすきゃんでぃー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "アイスケースを開けると、先週売り切れていた味が見つかりました。": [
+   {
+    "t": "アイスケース",
+    "z": "冰淇淋櫃",
+    "j": "アイスケース",
+    "e": "ice case",
+    "b": "アイスケース",
+    "p": "noun",
+    "r": "アイスケース"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "開ける",
+    "z": "打開",
+    "j": "開ける",
+    "e": "open",
+    "b": "開ける",
+    "p": "verb",
+    "r": "あける"
+   },
+   {
+    "t": "と、"
+   },
+   {
+    "t": "先週",
+    "z": "上週",
+    "j": "先週",
+    "e": "last week",
+    "b": "先週",
+    "p": "numeral",
+    "r": "せんしゅう"
+   },
+   {
+    "t": "売り切れていた",
+    "z": "已賣完",
+    "j": "売り切れていた",
+    "e": "had been sold out",
+    "b": "売り切れる",
+    "p": "verb",
+    "r": "うりきれていた"
+   },
+   {
+    "t": "味",
+    "z": "口味",
+    "j": "味",
+    "e": "flavor",
+    "b": "味",
+    "p": "noun",
+    "r": "あじ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "見つかりました",
+    "z": "找到了",
+    "j": "見つかりました",
+    "e": "found",
+    "b": "見つかる",
+    "p": "verb",
+    "r": "みつかりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "飲料ケースから冷たい水を取りました。": [
+   {
+    "t": "飲料ケース",
+    "z": "飲料櫃",
+    "j": "飲料ケース",
+    "e": "drink case",
+    "b": "飲料ケース",
+    "p": "noun",
+    "r": "いんりょうケース"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "冷たい",
+    "z": "冷的",
+    "j": "冷たい",
+    "e": "cold",
+    "b": "冷たい",
+    "p": "adjective",
+    "r": "つめたい"
+   },
+   {
+    "t": "水",
+    "z": "水",
+    "j": "水",
+    "e": "water",
+    "b": "水",
+    "p": "noun",
+    "r": "みず"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "手前のボトルがまだ冷えていなかったので、飲料ケースの奥から一本選びました。": [
+   {
+    "t": "手前",
+    "z": "前面",
+    "j": "目の前",
+    "e": "front",
+    "b": "手前",
+    "p": "noun",
+    "r": "てまえ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ボトル",
+    "z": "瓶子",
+    "j": "瓶",
+    "e": "bottle",
+    "b": "ボトル",
+    "p": "noun",
+    "r": "ボトル"
+   },
+   {
+    "t": "がまだ"
+   },
+   {
+    "t": "冷えていなかった",
+    "z": "沒有冷卻",
+    "j": "冷たくなっていなかった",
+    "e": "was not cold",
+    "b": "冷える",
+    "p": "verb",
+    "r": "ひえていなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "飲料ケース",
+    "z": "飲料冷藏櫃",
+    "j": "飲料を冷やすケース",
+    "e": "drink refrigerator",
+    "b": "飲料ケース",
+    "p": "noun",
+    "r": "いんりょうケース"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "奥",
+    "z": "裡面",
+    "j": "奥の方",
+    "e": "back",
+    "b": "奥",
+    "p": "noun",
+    "r": "おく"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "一本",
+    "z": "一瓶",
+    "j": "一本の飲み物",
+    "e": "one bottle",
+    "b": "一本",
+    "p": "numeral",
+    "r": "いっぽん"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "おしぼりディスペンサーから一つ取りました。": [
+   {
+    "t": "おしぼりディスペンサー",
+    "z": "濕毛巾分配器",
+    "j": "おしぼりを出す機械",
+    "e": "wet towel dispenser",
+    "b": "おしぼりディスペンサー",
+    "p": "noun",
+    "r": "おしぼりディスペンサー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "一つ",
+    "z": "一個",
+    "j": "一つのもの",
+    "e": "one",
+    "b": "一つ",
+    "p": "numeral",
+    "r": "ひとつ"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "フライドチキンを買った後、店を出る前におしぼりディスペンサーから一つ取りました。": [
+   {
+    "t": "フライドチキン",
+    "z": "炸雞",
+    "j": "揚げた鶏肉",
+    "e": "fried chicken",
+    "b": "フライドチキン",
+    "p": "noun",
+    "r": "フライドチキン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買った後",
+    "z": "買了之後",
+    "j": "買った後",
+    "e": "after buying",
+    "b": "買う",
+    "p": "phrase",
+    "r": "かったあと"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "店",
+    "z": "店",
+    "j": "店",
+    "e": "store",
+    "b": "店",
+    "p": "noun",
+    "r": "みせ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "出る前",
+    "z": "離開之前",
+    "j": "出る前",
+    "e": "before leaving",
+    "b": "出る",
+    "p": "phrase",
+    "r": "でるまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "おしぼりディスペンサー",
+    "z": "濕毛巾分配器",
+    "j": "おしぼりを出す機械",
+    "e": "wet towel dispenser",
+    "b": "おしぼりディスペンサー",
+    "p": "noun",
+    "r": "おしぼりディスペンサー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "一つ",
+    "z": "一個",
+    "j": "一つのもの",
+    "e": "one",
+    "b": "一つ",
+    "p": "numeral",
+    "r": "ひとつ"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "割り箸ディスペンサーから箸を取りました。": [
+   {
+    "t": "割り箸ディスペンサー",
+    "z": "一次性筷子分配器",
+    "j": "割り箸ディスペンサー",
+    "e": "disposable chopsticks dispenser",
+    "b": "割り箸ディスペンサー",
+    "p": "noun",
+    "r": "わりばしディスペンサー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "箸",
+    "z": "筷子",
+    "j": "箸",
+    "e": "chopsticks",
+    "b": "箸",
+    "p": "noun",
+    "r": "はし"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "弁当に麺が入っていたので、割り箸ディスペンサーから一膳取りました。": [
+   {
+    "t": "弁当",
+    "z": "便當",
+    "j": "弁当",
+    "e": "bento",
+    "b": "弁当",
+    "p": "noun",
+    "r": "べんとう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "麺",
+    "z": "麵條",
+    "j": "麺",
+    "e": "noodles",
+    "b": "麺",
+    "p": "noun",
+    "r": "めん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "入っていた",
+    "z": "包含了",
+    "j": "入っていた",
+    "e": "included",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "割り箸ディスペンサー",
+    "z": "一次性筷子分配器",
+    "j": "割り箸ディスペンサー",
+    "e": "disposable chopsticks dispenser",
+    "b": "割り箸ディスペンサー",
+    "p": "noun",
+    "r": "わりばしディスペンサー"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "一膳",
+    "z": "一雙",
+    "j": "一膳",
+    "e": "a pair",
+    "b": "一膳",
+    "p": "numeral",
+    "r": "いちぜん"
+   },
+   {
+    "t": "取りました",
+    "z": "拿了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "スプーンはカトラリーディスペンサーにあります。": [
+   {
+    "t": "スプーン",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "スプーン",
+    "p": "noun",
+    "r": "スプーン"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "カトラリーディスペンサー",
+    "z": "餐具分配器",
+    "j": "カトラリーディスペンサー",
+    "e": "cutlery dispenser",
+    "b": "カトラリーディスペンサー",
+    "p": "noun",
+    "r": "カトラリーディスペンサー"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "スープを買った後、カトラリーディスペンサーを確認して、包装されたスプーンを取りました。": [
+   {
+    "t": "スープ",
+    "z": "湯",
+    "j": "スープ",
+    "e": "soup",
+    "b": "スープ",
+    "p": "noun",
+    "r": "スープ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買った後",
+    "z": "買完之後",
+    "j": "買った後",
+    "e": "After buying",
+    "b": "買う",
+    "p": "phrase",
+    "r": "かったあと"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "カトラリーディスペンサー",
+    "z": "餐具分配器",
+    "j": "カトラリーディスペンサー",
+    "e": "cutlery dispenser",
+    "b": "カトラリーディスペンサー",
+    "p": "noun",
+    "r": "カトラリーディスペンサー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認して",
+    "z": "確認",
+    "j": "確認して",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんして"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "包装された",
+    "z": "包裝的",
+    "j": "包装された",
+    "e": "wrapped",
+    "b": "包装する",
+    "p": "adjective",
+    "r": "ほうそうされた"
+   },
+   {
+    "t": "スプーン",
+    "z": "湯匙",
+    "j": "スプーン",
+    "e": "spoon",
+    "b": "スプーン",
+    "p": "noun",
+    "r": "スプーン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "取りました",
+    "z": "拿取了",
+    "j": "取りました",
+    "e": "took",
+    "b": "取る",
+    "p": "verb",
+    "r": "とりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "店員がレジで飲み物を読み取りました。": [
+   {
+    "t": "店員",
+    "z": "店員",
+    "j": "店員",
+    "e": "clerk",
+    "b": "店員",
+    "p": "noun",
+    "r": "てんいん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "レジ",
+    "z": "收銀機",
+    "j": "レジ",
+    "e": "cash register",
+    "b": "レジ",
+    "p": "noun",
+    "r": "レジ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "飲み物",
+    "z": "飲料",
+    "j": "飲み物",
+    "e": "drink",
+    "b": "飲み物",
+    "p": "noun",
+    "r": "のみもの"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "読み取りました",
+    "z": "掃描了",
+    "j": "読み取りました",
+    "e": "scanned",
+    "b": "読み取る",
+    "p": "verb",
+    "r": "よみとりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "レジに合計金額が表示されたら、決済端末に交通系ICカードをタッチしました。": [
+   {
+    "t": "レジ",
+    "z": "收銀機",
+    "j": "レジスター",
+    "e": "cash register",
+    "b": "レジ",
+    "p": "noun",
+    "r": "れじ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "合計金額",
+    "z": "總額",
+    "j": "合計",
+    "e": "total",
+    "b": "合計金額",
+    "p": "noun",
+    "r": "ごうけいきんがく"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "表示されたら",
+    "z": "顯示了",
+    "j": "表示したら",
+    "e": "showed",
+    "b": "表示する",
+    "p": "verb",
+    "r": "ひょうじされたら"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "決済端末",
+    "z": "付款終端機",
+    "j": "決済端末",
+    "e": "payment terminal",
+    "b": "決済端末",
+    "p": "noun",
+    "r": "けっさいたんまつ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "交通系ICカード",
+    "z": "交通卡",
+    "j": "交通系ICカード",
+    "e": "transit card",
+    "b": "交通系ICカード",
+    "p": "noun",
+    "r": "こうつうけいアイシーカード"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "タッチしました",
+    "z": "輕觸了",
+    "j": "タッチした",
+    "e": "tapped",
+    "b": "タッチする",
+    "p": "verb",
+    "r": "たっちしました"
+   },
+   {
+    "t": "。"
+   }
+  ]
+ }
+}

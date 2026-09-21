@@ -1,0 +1,953 @@
+{
+  "schemaVersion": 1,
+  "series": "convenience-store",
+  "state": "candidate-content-reviewed-media-pending",
+  "batch": "B",
+  "entries": [
+    {
+      "id": "prepaid-card-rack",
+      "word": "prepaid card rack",
+      "chinese": "預付卡陳列架",
+      "chineseDefinition": "在收銀區附近展示各種儲值卡與禮物卡紙卡的掛架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌpriː.peɪd ˈkɑːrd ræk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "預付卡陳列架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A rack displaying prepaid and gift cards that customers activate when paying at the register.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「POSAカード売り場」とは、レジで支払うと使えるようになるプリペイドカードなどを並べた売り場です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The prepaid card rack is near the register.",
+          "ja": "POSAカード売り場はレジの近くにあります。",
+          "zh": "預付卡陳列架在收銀台附近。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After choosing a card from the prepaid card rack, I asked the clerk to activate it for the gift amount.",
+          "ja": "POSAカード売り場でカードを選び、贈りたい金額で使えるよう店員に頼みました。",
+          "zh": "從預付卡陳列架選好卡片後，我請店員按禮物金額啟用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cash-register",
+        "multimedia-kiosk",
+        "payment-slip"
+      ],
+      "ja": "POSAカード売り場",
+      "jaReading": "ポサカードうりば",
+      "jaReadingSegments": [
+        {
+          "text": "POSA",
+          "ruby": "ポサ"
+        },
+        {
+          "text": "カード",
+          "ruby": null
+        },
+        {
+          "text": "売り場",
+          "ruby": "うりば"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/prepaid-card-rack-ai-dd1760473b60.webp"
+    },
+    {
+      "id": "tobacco-display",
+      "word": "tobacco display",
+      "chinese": "菸品展示櫃",
+      "chineseDefinition": "設在收銀台後方，以編號分格陳列香菸等菸品的專用櫃架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/təˈbæk.oʊ dɪˌspleɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "菸品展示櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A numbered fixture behind the counter where tobacco products are displayed for staff-assisted sale.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「たばこ什器」とは、レジの後ろでたばこを番号ごとに分けて陳列する専用の棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The tobacco display is behind the counter.",
+          "ja": "たばこ什器はレジの後ろにあります。",
+          "zh": "菸品展示櫃在櫃台後方。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The clerk checked the number on the tobacco display before taking the requested pack.",
+          "ja": "店員はたばこ什器の番号を確認してから、頼まれた箱を取りました。",
+          "zh": "店員先確認菸品展示櫃上的編號，再拿出顧客指定的那包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cash-register",
+        "prepaid-card-rack",
+        "hot-food-display-case"
+      ],
+      "ja": "たばこ什器",
+      "jaReading": "たばこじゅうき",
+      "jaReadingSegments": [
+        {
+          "text": "たばこ",
+          "ruby": null
+        },
+        {
+          "text": "什器",
+          "ruby": "じゅうき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/tobacco-display-ai-57a5a5b68be6.webp"
+    },
+    {
+      "id": "magazine-rack",
+      "word": "magazine rack",
+      "chinese": "雜誌架",
+      "chineseDefinition": "以封面朝外或分層方式陳列雜誌，方便顧客瀏覽選購的架子。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmæɡ.ə.ziːn ræk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "雜誌架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tiered rack that displays magazines so their covers can be seen.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「雑誌ラック」とは、雑誌の表紙が見えるように段を付けて並べる棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "A travel magazine is on the magazine rack.",
+          "ja": "旅行雑誌が雑誌ラックにあります。",
+          "zh": "雜誌架上有一本旅遊雜誌。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "While waiting for my friend, I checked the new titles on the magazine rack.",
+          "ja": "友達を待っている間、雑誌ラックの新刊を確認しました。",
+          "zh": "等朋友時，我看了看雜誌架上的新刊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "newspaper-rack",
+        "convenience-store-sign",
+        "umbrella-stand"
+      ],
+      "ja": "雑誌ラック",
+      "jaReading": "ざっしラック",
+      "jaReadingSegments": [
+        {
+          "text": "雑誌",
+          "ruby": "ざっし"
+        },
+        {
+          "text": "ラック",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/magazine-rack-ai-017c3513a94a.webp"
+    },
+    {
+      "id": "newspaper-rack",
+      "word": "newspaper rack",
+      "chinese": "報紙架",
+      "chineseDefinition": "把當日報紙依報社或種類分格整齊陳列的低矮架子。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈnuːzˌpeɪ.pɚ ræk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "報紙架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A divided rack that displays the day's newspapers by title or type.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「新聞ラック」とは、その日の新聞を種類ごとに分けて並べる棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I picked up a newspaper from the newspaper rack.",
+          "ja": "新聞ラックから新聞を一部取りました。",
+          "zh": "我從報紙架拿了一份報紙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the morning edition was sold out, its section of the newspaper rack was empty.",
+          "ja": "朝刊が売り切れていたので、新聞ラックのその区画は空でした。",
+          "zh": "因為早報賣完了，報紙架上那一格空著。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "magazine-rack",
+        "convenience-store-sign",
+        "cash-register"
+      ],
+      "ja": "新聞ラック",
+      "jaReading": "しんぶんラック",
+      "jaReadingSegments": [
+        {
+          "text": "新聞",
+          "ruby": "しんぶん"
+        },
+        {
+          "text": "ラック",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/newspaper-rack-ai-587d5622cfff.webp"
+    },
+    {
+      "id": "umbrella-stand",
+      "word": "umbrella stand",
+      "chinese": "傘架",
+      "chineseDefinition": "放在入口附近，讓顧客暫時直立放置濕雨傘的容器或架子。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʌmˈbrel.ə stænd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "傘架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A holder near an entrance where customers leave wet umbrellas upright.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「傘立て」とは、入口の近くでぬれた傘を立てて置くための容器や台です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put my wet umbrella in the umbrella stand.",
+          "ja": "ぬれた傘を傘立てに入れました。",
+          "zh": "我把濕雨傘放進傘架。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before leaving the store, I checked the umbrella stand and took the blue umbrella I had brought.",
+          "ja": "店を出る前に傘立てを確認し、持ってきた青い傘を取りました。",
+          "zh": "離開商店前，我查看傘架並拿走自己帶來的藍傘。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "convenience-store-sign",
+        "magazine-rack",
+        "sorting-bin"
+      ],
+      "ja": "傘立て",
+      "jaReading": "かさたて",
+      "jaReadingSegments": [
+        {
+          "text": "傘立",
+          "ruby": "かさた"
+        },
+        {
+          "text": "て",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/umbrella-stand-ai-354c55a103d0.webp"
+    },
+    {
+      "id": "sorting-bin",
+      "word": "sorting bin",
+      "chinese": "分類垃圾桶",
+      "chineseDefinition": "用不同投入口分開收集可燃垃圾、瓶罐或寶特瓶等廢棄物的垃圾桶。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɔːr.tɪŋ bɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "分類垃圾桶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A waste bin with separate openings for different types of rubbish and recyclables.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「分別ゴミ箱」とは、燃えるゴミや缶、ペットボトルなどを別々の投入口に入れるゴミ箱です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put the empty bottle in the sorting bin.",
+          "ja": "空のボトルを分別ゴミ箱に入れました。",
+          "zh": "我把空瓶放進分類垃圾桶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finishing my drink, I checked the labels on the sorting bin before throwing the cup away.",
+          "ja": "飲み終わった後、カップを捨てる前に分別ゴミ箱の表示を確認しました。",
+          "zh": "喝完飲料後，我先確認分類垃圾桶的標示才丟掉杯子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "eat-in-area",
+        "umbrella-stand",
+        "ice-cup"
+      ],
+      "ja": "分別ゴミ箱",
+      "jaReading": "ぶんべつゴミばこ",
+      "jaReadingSegments": [
+        {
+          "text": "分別",
+          "ruby": "ぶんべつ"
+        },
+        {
+          "text": "ゴミ",
+          "ruby": null
+        },
+        {
+          "text": "箱",
+          "ruby": "ばこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/sorting-bin-ai-0700bf122668.webp"
+    },
+    {
+      "id": "rice-ball-shelf",
+      "word": "rice ball shelf",
+      "chinese": "飯糰陳列架",
+      "chineseDefinition": "依口味整齊排列三角飯糰、手卷飯糰等商品的低溫陳列層架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈraɪs bɔːl ʃelf/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飯糰陳列架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A refrigerated shelf where packaged rice balls are arranged by filling or type.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「おにぎり棚」とは、具や種類ごとに包装されたおにぎりを並べる冷蔵の棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I chose a salmon rice ball from the rice ball shelf.",
+          "ja": "おにぎり棚から鮭のおにぎりを選びました。",
+          "zh": "我從飯糰陳列架選了一個鮭魚飯糰。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the tuna rice balls were gone, I looked along the rice ball shelf for another filling.",
+          "ja": "ツナのおにぎりが売り切れていたので、おにぎり棚で別の具を探しました。",
+          "zh": "因為鮪魚飯糰賣完了，我沿著飯糰陳列架找其他口味。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "bento-shelf",
+        "sandwich-shelf",
+        "chilled-food-case"
+      ],
+      "ja": "おにぎり棚",
+      "jaReading": "おにぎりだな",
+      "jaReadingSegments": [
+        {
+          "text": "おにぎり",
+          "ruby": null
+        },
+        {
+          "text": "棚",
+          "ruby": "だな"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/rice-ball-shelf-ai-aa28b6529d38.webp"
+    },
+    {
+      "id": "bento-shelf",
+      "word": "bento shelf",
+      "chinese": "便當陳列架",
+      "chineseDefinition": "在便利商店中陳列包裝便當，並依種類與價格排列的層架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈben.toʊ ʃelf/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "便當陳列架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shelf where packaged bento meals are displayed by type and price.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「弁当棚」とは、包装された弁当を種類や価格ごとに並べる売り場の棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The curry bento is on the bento shelf.",
+          "ja": "カレー弁当は弁当棚にあります。",
+          "zh": "咖哩便當在便當陳列架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After comparing two meals on the bento shelf, I picked the one with grilled fish.",
+          "ja": "弁当棚の二つの商品を比べてから、焼き魚が入った方を選びました。",
+          "zh": "比較便當陳列架上的兩份餐點後，我選了有烤魚的那份。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "rice-ball-shelf",
+        "sandwich-shelf",
+        "microwave-station"
+      ],
+      "ja": "弁当棚",
+      "jaReading": "べんとうだな",
+      "jaReadingSegments": [
+        {
+          "text": "弁当棚",
+          "ruby": "べんとうだな"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bento-shelf-ai-cd5cc00cac24.webp"
+    },
+    {
+      "id": "sandwich-shelf",
+      "word": "sandwich shelf",
+      "chinese": "三明治陳列架",
+      "chineseDefinition": "以低溫保存並排列包裝三明治、漢堡與麵包捲的冷藏層架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsænd.wɪtʃ ʃelf/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "三明治陳列架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A refrigerated shelf where packaged sandwiches and similar foods are displayed.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「サンドイッチ棚」とは、包装されたサンドイッチなどを冷やしながら並べる棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I found an egg sandwich on the sandwich shelf.",
+          "ja": "サンドイッチ棚で卵サンドを見つけました。",
+          "zh": "我在三明治陳列架找到一份蛋三明治。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I wanted a light breakfast, I checked the sandwich shelf instead of the bento section.",
+          "ja": "軽い朝食にしたかったので、弁当売り場ではなくサンドイッチ棚を見ました。",
+          "zh": "因為想吃清淡一點的早餐，我沒看便當區而是查看三明治陳列架。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "rice-ball-shelf",
+        "bento-shelf",
+        "chilled-food-case"
+      ],
+      "ja": "サンドイッチ棚",
+      "jaReading": "サンドイッチだな",
+      "jaReadingSegments": [
+        {
+          "text": "サンドイッチ",
+          "ruby": null
+        },
+        {
+          "text": "棚",
+          "ruby": "だな"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/sandwich-shelf-ai-0e5df9089ddd.webp"
+    },
+    {
+      "id": "cup-noodle-shelf",
+      "word": "cup noodle shelf",
+      "chinese": "杯麵陳列架",
+      "chineseDefinition": "把不同口味與尺寸的杯麵整齊排列，方便顧客選購的商品層架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkʌp nuː.dəl ʃelf/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "杯麵陳列架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shelf displaying cup noodles in different flavors and sizes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「カップ麺棚」とは、さまざまな味や大きさのカップ麺を並べる商品棚です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The curry noodles are on the cup noodle shelf.",
+          "ja": "カレー味の麺はカップ麺棚にあります。",
+          "zh": "咖哩口味的麵在杯麵陳列架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After choosing noodles from the cup noodle shelf, I used the hot water dispenser near the counter.",
+          "ja": "カップ麺棚で麺を選んだ後、レジ近くの給湯器を使いました。",
+          "zh": "從杯麵陳列架選好麵後，我用了收銀台附近的熱水供應機。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hot-water-dispenser",
+        "eat-in-area",
+        "sorting-bin"
+      ],
+      "ja": "カップ麺棚",
+      "jaReading": "カップめんだな",
+      "jaReadingSegments": [
+        {
+          "text": "カップ",
+          "ruby": null
+        },
+        {
+          "text": "麺棚",
+          "ruby": "めんだな"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/cup-noodle-shelf-ai-fc3d938e3954.webp"
+    },
+    {
+      "id": "chilled-food-case",
+      "word": "chilled food case",
+      "chinese": "冷藏食品櫃",
+      "chineseDefinition": "以低溫保存沙拉、甜點、乳製品與即食配菜等商品的開放式或有門冷藏櫃。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌtʃɪld ˈfuːd keɪs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "冷藏食品櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A refrigerated case for salads, desserts, dairy products, and other chilled foods.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「チルドケース」とは、サラダやデザート、乳製品などを低温で陳列する冷蔵設備です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The yogurt is in the chilled food case.",
+          "ja": "ヨーグルトはチルドケースにあります。",
+          "zh": "優格在冷藏食品櫃裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I returned the dessert to the chilled food case after noticing that its use-by date was today.",
+          "ja": "消費期限が今日だと気づき、デザートをチルドケースに戻しました。",
+          "zh": "發現甜點的食用期限是今天後，我把它放回冷藏食品櫃。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "drink-refrigerator",
+        "ice-cream-freezer",
+        "sandwich-shelf"
+      ],
+      "ja": "チルドケース",
+      "jaReading": "チルドケース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/chilled-food-case-ai-03c93b02af1e.webp"
+    },
+    {
+      "id": "ice-cream-freezer",
+      "word": "ice cream freezer",
+      "chinese": "冰淇淋冷凍櫃",
+      "chineseDefinition": "以低溫保存冰棒與杯裝冰淇淋，通常有滑動玻璃蓋的臥式冷凍櫃。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪs kriːm ˌfriː.zɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "冰淇淋冷凍櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A freezer, often with sliding glass lids, that displays ice cream and frozen treats.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「アイスケース」とは、アイスクリームや氷菓を冷凍して並べる、ガラスぶた付きなどの冷凍設備です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took a popsicle from the ice cream freezer.",
+          "ja": "アイスケースからアイスキャンディーを取りました。",
+          "zh": "我從冰淇淋冷凍櫃拿了一支冰棒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I opened the ice cream freezer, I found the flavor that had been sold out last week.",
+          "ja": "アイスケースを開けると、先週売り切れていた味が見つかりました。",
+          "zh": "打開冰淇淋冷凍櫃時，我找到了上週賣完的口味。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "chilled-food-case",
+        "drink-refrigerator",
+        "ice-cup"
+      ],
+      "ja": "アイスケース",
+      "jaReading": "アイスケース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/ice-cream-freezer-ai-db95be554c01.webp"
+    },
+    {
+      "id": "drink-refrigerator",
+      "word": "drink refrigerator",
+      "chinese": "飲料冷藏櫃",
+      "chineseDefinition": "以透明門或開放層架冷藏並展示瓶裝、罐裝飲料的大型櫃體。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdrɪŋk rɪˌfrɪdʒ.ə.reɪ.t̬ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飲料冷藏櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A large refrigerated display for bottled and canned drinks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「飲料ケース」とは、ペットボトルや缶の飲み物を冷やしながら陳列する大型の冷蔵設備です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took cold water from the drink refrigerator.",
+          "ja": "飲料ケースから冷たい水を取りました。",
+          "zh": "我從飲料冷藏櫃拿了一瓶冰水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the front bottle was not cold yet, I chose one from the back of the drink refrigerator.",
+          "ja": "手前のボトルがまだ冷えていなかったので、飲料ケースの奥から一本選びました。",
+          "zh": "因為前面的瓶子還不冰，我從飲料冷藏櫃後方選了一瓶。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "beverage-warmer",
+        "chilled-food-case",
+        "ice-cream-freezer"
+      ],
+      "ja": "飲料ケース",
+      "jaReading": "いんりょうケース",
+      "jaReadingSegments": [
+        {
+          "text": "飲料",
+          "ruby": "いんりょう"
+        },
+        {
+          "text": "ケース",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/drink-refrigerator-ai-6f7c060e63f2.webp"
+    },
+    {
+      "id": "wet-towel-dispenser",
+      "word": "wet towel dispenser",
+      "chinese": "濕紙巾分配盒",
+      "chineseDefinition": "在餐具區收納並讓顧客逐包取用一次性濕紙巾的盒架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌwet ˈtaʊ.əl dɪˌspen.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "濕紙巾分配盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A holder that stores individually wrapped wet towels for customers to take.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「おしぼりディスペンサー」とは、個包装のおしぼりを入れ、一つずつ取れるようにした容器です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took one packet from the wet towel dispenser.",
+          "ja": "おしぼりディスペンサーから一つ取りました。",
+          "zh": "我從濕紙巾分配盒拿了一包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After buying fried chicken, I picked up a wet towel from the dispenser before leaving.",
+          "ja": "フライドチキンを買った後、店を出る前におしぼりディスペンサーから一つ取りました。",
+          "zh": "買完炸雞後，我離開前從濕紙巾分配盒拿了一包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "disposable-chopsticks-dispenser",
+        "plastic-cutlery-dispenser",
+        "eat-in-area"
+      ],
+      "ja": "おしぼりディスペンサー",
+      "jaReading": "おしぼりディスペンサー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/wet-towel-dispenser-ai-b9253f7aa125.webp"
+    },
+    {
+      "id": "disposable-chopsticks-dispenser",
+      "word": "disposable chopsticks dispenser",
+      "chinese": "免洗筷分配盒",
+      "chineseDefinition": "在餐具區整齊收納包裝免洗筷，讓顧客逐雙取用的盒架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˌspoʊ.zə.bəl ˈtʃɑːp.stɪks dɪˌspen.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "免洗筷分配盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A holder that stores wrapped disposable chopsticks for customers to take one pair at a time.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「割り箸ディスペンサー」とは、包装された割り箸を入れ、一膳ずつ取れるようにした容器です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took chopsticks from the disposable chopsticks dispenser.",
+          "ja": "割り箸ディスペンサーから箸を取りました。",
+          "zh": "我從免洗筷分配盒拿了一雙筷子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my bento included noodles, I took a pair from the disposable chopsticks dispenser.",
+          "ja": "弁当に麺が入っていたので、割り箸ディスペンサーから一膳取りました。",
+          "zh": "因為便當裡有麵，我從免洗筷分配盒拿了一雙。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "plastic-cutlery-dispenser",
+        "wet-towel-dispenser",
+        "bento-shelf"
+      ],
+      "ja": "割り箸ディスペンサー",
+      "jaReading": "わりばしディスペンサー",
+      "jaReadingSegments": [
+        {
+          "text": "割り箸",
+          "ruby": "わりばし"
+        },
+        {
+          "text": "ディスペンサー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/disposable-chopsticks-dispenser-ai-d9d625a9abf2.webp"
+    },
+    {
+      "id": "plastic-cutlery-dispenser",
+      "word": "plastic cutlery dispenser",
+      "chinese": "塑膠餐具分配盒",
+      "chineseDefinition": "分類收納包裝湯匙、叉子等一次性餐具，讓顧客自行取用的盒架。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌplæs.tɪk ˈkʌt.lɚ.i dɪˌspen.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "塑膠餐具分配盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A divided holder for individually wrapped disposable spoons, forks, and other cutlery.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「カトラリーディスペンサー」とは、個包装のスプーンやフォークなどを種類別に入れる容器です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The spoons are in the plastic cutlery dispenser.",
+          "ja": "スプーンはカトラリーディスペンサーにあります。",
+          "zh": "湯匙在塑膠餐具分配盒裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After buying soup, I checked the plastic cutlery dispenser and took a wrapped spoon.",
+          "ja": "スープを買った後、カトラリーディスペンサーを確認して、包装されたスプーンを取りました。",
+          "zh": "買完湯後，我查看塑膠餐具分配盒並拿了一支包裝湯匙。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "disposable-chopsticks-dispenser",
+        "wet-towel-dispenser",
+        "coffee-cup-dispenser"
+      ],
+      "ja": "カトラリーディスペンサー",
+      "jaReading": "カトラリーディスペンサー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/plastic-cutlery-dispenser-ai-c6cad2c55d5a.webp"
+    },
+    {
+      "id": "cash-register",
+      "word": "cash register",
+      "chinese": "收銀機",
+      "chineseDefinition": "由店員掃描商品、計算金額並處理現金或無現金付款的收銀設備。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæʃ ˌredʒ.ɪ.stɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "收銀機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A checkout machine used to scan purchases, total prices, and process payments.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「レジ」とは、商品を読み取り、合計金額を計算して支払いを処理する会計機器です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The clerk scanned my drink at the cash register.",
+          "ja": "店員がレジで飲み物を読み取りました。",
+          "zh": "店員在收銀機掃描了我的飲料。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the cash register showed the total, I tapped my transit card on the payment terminal.",
+          "ja": "レジに合計金額が表示されたら、決済端末に交通系ICカードをタッチしました。",
+          "zh": "收銀機顯示總金額後，我把交通卡感應到付款終端機上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hot-food-display-case",
+        "prepaid-card-rack",
+        "payment-slip"
+      ],
+      "ja": "レジ",
+      "jaReading": "レジ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/cash-register-ai-4a9464246913.webp"
+    }
+  ]
+}

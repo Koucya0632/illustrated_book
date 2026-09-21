@@ -67,7 +67,18 @@ export function auditMainWordRows(rows: readonly MainWordAuditRow[]): MainWordAu
 
     if (!row.jaTerm) continue;
 
-    if (isKanaOnly(row.jaTerm) && row.jaReading && row.jaReading !== row.jaTerm) {
+    const readingSegments = Array.isArray(row.readingSegments) ? row.readingSegments : null;
+    const hasCompleteSegmentedReading = Boolean(
+      readingSegments?.length &&
+      readingSegments.map((segment) => segment.text).join("") === row.jaTerm &&
+      readingSegments.map((segment) => segment.ruby ?? segment.text).join("") === row.jaReading,
+    );
+    if (
+      isKanaOnly(row.jaTerm) &&
+      row.jaReading &&
+      row.jaReading !== row.jaTerm &&
+      !hasCompleteSegmentedReading
+    ) {
       issues.push(
         issue(
           row.id,
@@ -77,7 +88,6 @@ export function auditMainWordRows(rows: readonly MainWordAuditRow[]): MainWordAu
       );
     }
 
-    const readingSegments = Array.isArray(row.readingSegments) ? row.readingSegments : null;
     if (typeof row.readingSegments === "string") {
       issues.push(
         issue(row.id, "readingSegments", "reading segments must be a JSON array, not a string"),

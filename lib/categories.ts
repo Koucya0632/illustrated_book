@@ -194,6 +194,17 @@ export const categories: Category[] = [
       "https://img.nexflow.team/word-images/category-alcoholic-drinks-ai-ecc2d0e86cb7.webp",
   },
   {
+    id: "convenience-store",
+    name: "Convenience Store",
+    nameZh: "便利商店",
+    emoji: "🏪",
+    description: "認識日本便利商店裡常見的設備、服務與商品",
+    descriptionEn: "Everyday equipment, services, and food found in Japanese convenience stores",
+    color: "from-sky-100 to-orange-100",
+    imageUrl:
+      "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp",
+  },
+  {
     id: "zodiac",
     name: "Zodiac",
     nameZh: "星座",
@@ -211,7 +222,9 @@ export const categories: Category[] = [
 // its category hidden along with its guarded words.
 export const publicFallbackCategories: Category[] = categories.filter(
   (category) =>
-    category.id !== "professions" && category.id !== "alcoholic-drinks",
+    category.id !== "professions" &&
+    category.id !== "alcoholic-drinks" &&
+    category.id !== "convenience-store",
 );
 
 export const getCategory = (id: string): Category | undefined =>

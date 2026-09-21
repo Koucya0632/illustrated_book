@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "series": "convenience-store",
+  "state": "candidate-content-reviewed-media-pending",
+  "batch": "A",
+  "entries": [
+    {
+      "id": "convenience-store",
+      "word": "convenience store",
+      "chinese": "便利商店",
+      "chineseDefinition": "販售日常用品、營業時間較長的小型商店。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈviː.ni.əns stɔːr/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "便利商店",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small store that sells everyday items and is open long hours.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コンビニ」は、日用品を販売する営業時間の長い小型店舗です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I'll buy some water at the convenience store.",
+          "ja": "コンビニで水を買ってきます。",
+          "zh": "我去便利商店買水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the station cafe was closed, I bought breakfast at the convenience store.",
+          "ja": "駅のカフェが閉まっていたので、コンビニで朝ご飯を買いました。",
+          "zh": "車站咖啡店沒開，所以我在便利商店買早餐。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "convenience-store-sign",
+        "hot-food-display-case",
+        "convenience-store-atm"
+      ],
+      "ja": "コンビニ",
+      "jaReading": "コンビニ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/convenience-store.webp"
+    },
+    {
+      "id": "convenience-store-sign",
+      "word": "convenience store sign",
+      "chinese": "便利商店招牌",
+      "chineseDefinition": "設在便利商店外牆或路旁，用來讓顧客從遠處辨認店面的發光招牌。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈviː.ni.əns stɔːr saɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "便利商店招牌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An illuminated sign outside a convenience store that helps customers identify it from a distance.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コンビニの看板」とは、遠くから店を見つけやすくするために、外壁や道路沿いに設置する明るい表示です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I saw the convenience store sign from the road.",
+          "ja": "道路からコンビニの看板が見えました。",
+          "zh": "我從路上看到了便利商店招牌。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the convenience store sign was lit, we found the entrance easily in the dark.",
+          "ja": "コンビニの看板が光っていたので、暗くても入口をすぐに見つけられました。",
+          "zh": "因為便利商店招牌亮著，我們在黑暗中也很快找到入口。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "convenience-store",
+        "magazine-rack",
+        "umbrella-stand"
+      ],
+      "ja": "コンビニの看板",
+      "jaReading": "コンビニのかんばん",
+      "jaReadingSegments": [
+        {
+          "text": "コンビニの",
+          "ruby": null
+        },
+        {
+          "text": "看板",
+          "ruby": "かんばん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/convenience-store-sign-ai-17a20779f869.webp"
+    },
+    {
+      "id": "hot-food-display-case",
+      "word": "hot food display case",
+      "chinese": "熱食保溫展示櫃",
+      "chineseDefinition": "放在收銀台附近，以透明櫃體保溫並展示炸雞、可樂餅等熱食的設備。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhɑːt fuːd dɪˈspleɪ keɪs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "熱食保溫展示櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A heated glass-fronted case that keeps fried chicken and other prepared snacks warm and visible.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「ホットフードショーケース」とは、揚げ物などを温かいまま見やすく並べる、ガラス面のある保温設備です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The fried chicken is in the hot food display case.",
+          "ja": "フライドチキンはホットフードショーケースにあります。",
+          "zh": "炸雞放在熱食保溫展示櫃裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I reached the counter, I chose a croquette from the hot food display case.",
+          "ja": "レジに着いたとき、ホットフードショーケースからコロッケを一つ選びました。",
+          "zh": "走到櫃台時，我從熱食保溫展示櫃選了一個可樂餅。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "steamed-bun-warmer",
+        "oden-warmer",
+        "cash-register"
+      ],
+      "ja": "ホットフードショーケース",
+      "jaReading": "ホットフードショーケース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/hot-food-display-case-ai-af4c741b9799.webp"
+    },
+    {
+      "id": "steamed-bun-warmer",
+      "word": "steamed bun warmer",
+      "chinese": "包子保溫蒸櫃",
+      "chineseDefinition": "以蒸氣加熱並保溫肉包、紅豆包等中華包子的透明展示設備。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌstiːmd bʌn ˈwɔːr.mɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "包子保溫蒸櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A glass-fronted steamer that heats and holds filled buns for sale.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「中華まんスチーマー」とは、肉まんやあんまんを蒸気で温め、保温しながら販売するための設備です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The steamed bun warmer is beside the register.",
+          "ja": "中華まんスチーマーはレジの横にあります。",
+          "zh": "包子保溫蒸櫃在收銀台旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since it was cold outside, I bought a pork bun from the steamed bun warmer.",
+          "ja": "外が寒かったので、中華まんスチーマーの肉まんを一つ買いました。",
+          "zh": "因為外面很冷，我從包子保溫蒸櫃買了一個肉包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hot-food-display-case",
+        "oden-warmer",
+        "beverage-warmer"
+      ],
+      "ja": "中華まんスチーマー",
+      "jaReading": "ちゅうかまんスチーマー",
+      "jaReadingSegments": [
+        {
+          "text": "中華",
+          "ruby": "ちゅうか"
+        },
+        {
+          "text": "まんスチーマー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/steamed-bun-warmer-ai-b70e0319fd87.webp"
+    },
+    {
+      "id": "oden-warmer",
+      "word": "oden warmer",
+      "chinese": "關東煮保溫鍋",
+      "chineseDefinition": "以分隔槽盛裝高湯與各種關東煮食材，持續加熱保溫的櫃台設備。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈoʊ.den ˈwɔːr.mɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "關東煮保溫鍋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A divided heated pot that keeps oden ingredients simmering in broth at a store counter.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「おでんウォーマー」とは、仕切りのある鍋で具材をだしに入れ、温かく保つための売り場設備です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Daikon is simmering in the oden warmer.",
+          "ja": "おでんウォーマーで大根が煮えています。",
+          "zh": "白蘿蔔正在關東煮保溫鍋裡燉煮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After looking inside the oden warmer, I asked the clerk for an egg and konjac.",
+          "ja": "おでんウォーマーの中を見てから、店員に卵とこんにゃくを頼みました。",
+          "zh": "看過關東煮保溫鍋後，我向店員點了雞蛋和蒟蒻。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "steamed-bun-warmer",
+        "hot-food-display-case",
+        "cash-register"
+      ],
+      "ja": "おでんウォーマー",
+      "jaReading": "おでんウォーマー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/oden-warmer-ai-6a955f982b80.webp"
+    },
+    {
+      "id": "beverage-warmer",
+      "word": "beverage warmer",
+      "chinese": "飲料保溫櫃",
+      "chineseDefinition": "把罐裝或寶特瓶飲料保持溫熱，並在店內陳列販售的小型加熱櫃。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbev.ɚ.ɪdʒ ˈwɔːr.mɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飲料保溫櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A heated display that keeps canned or bottled drinks warm for sale.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「飲料ウォーマー」とは、缶やペットボトルの飲み物を温かく保ちながら陳列する機器です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took a warm tea from the beverage warmer.",
+          "ja": "飲料ウォーマーから温かいお茶を取りました。",
+          "zh": "我從飲料保溫櫃拿了一瓶熱茶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my hands were cold, I chose a hot canned coffee from the beverage warmer.",
+          "ja": "手が冷えていたので、飲料ウォーマーから温かい缶コーヒーを選びました。",
+          "zh": "因為手很冷，我從飲料保溫櫃選了一罐熱咖啡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "drink-refrigerator",
+        "steamed-bun-warmer",
+        "convenience-store-coffee-machine"
+      ],
+      "ja": "飲料ウォーマー",
+      "jaReading": "いんりょうウォーマー",
+      "jaReadingSegments": [
+        {
+          "text": "飲料",
+          "ruby": "いんりょう"
+        },
+        {
+          "text": "ウォーマー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/beverage-warmer-ai-d66ae8bc5fb3.webp"
+    },
+    {
+      "id": "convenience-store-coffee-machine",
+      "word": "convenience store coffee machine",
+      "chinese": "便利商店咖啡機",
+      "chineseDefinition": "讓顧客放入專用杯並按鍵，現場沖煮咖啡的自助式機器。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈviː.ni.əns stɔːr ˈkɑː.fi məˌʃiːn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "便利商店咖啡機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A self-service machine that brews coffee into a cup purchased at a convenience store.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コンビニコーヒーマシン」とは、購入した専用カップを置き、ボタンを押してコーヒーを入れるセルフ式の機械です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I placed the cup in the convenience store coffee machine.",
+          "ja": "コンビニコーヒーマシンにカップを置きました。",
+          "zh": "我把杯子放進便利商店咖啡機。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After paying for the cup, I selected iced coffee on the convenience store coffee machine.",
+          "ja": "カップの会計を済ませてから、コンビニコーヒーマシンでアイスコーヒーを選びました。",
+          "zh": "付完杯子的錢後，我在便利商店咖啡機上選了冰咖啡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "coffee-cup-dispenser",
+        "ice-cup",
+        "cash-register"
+      ],
+      "ja": "コンビニコーヒーマシン",
+      "jaReading": "コンビニコーヒーマシン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/convenience-store-coffee-machine-ai-eaac7aff8650.webp"
+    },
+    {
+      "id": "coffee-cup-dispenser",
+      "word": "coffee cup dispenser",
+      "chinese": "咖啡杯分配架",
+      "chineseDefinition": "整齊收納並逐個取用外帶咖啡紙杯的直立式架子。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑː.fi kʌp dɪˈspen.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "咖啡杯分配架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A holder that stores takeaway coffee cups and releases them one at a time.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コーヒーカップディスペンサー」とは、持ち帰り用の紙カップを重ねて収納し、一つずつ取り出せる器具です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The small cups are in the coffee cup dispenser.",
+          "ja": "小さいカップはコーヒーカップディスペンサーにあります。",
+          "zh": "小杯子放在咖啡杯分配架裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the coffee cup dispenser was empty, I asked the clerk for a medium cup.",
+          "ja": "コーヒーカップディスペンサーが空だったので、店員にMサイズのカップを頼みました。",
+          "zh": "咖啡杯分配架空了，所以我向店員要了一個中杯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "convenience-store-coffee-machine",
+        "ice-cup",
+        "plastic-cutlery-dispenser"
+      ],
+      "ja": "コーヒーカップディスペンサー",
+      "jaReading": "コーヒーカップディスペンサー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/coffee-cup-dispenser-ai-d51806e65bfa.webp"
+    },
+    {
+      "id": "ice-cup",
+      "word": "ice cup",
+      "chinese": "冰塊杯",
+      "chineseDefinition": "預先裝有冰塊並密封販售，可用來製作便利商店冰咖啡或其他冷飲的透明杯。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪs kʌp/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "冰塊杯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sealed cup filled with ice and sold for making iced coffee or another cold drink in a convenience store.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「氷入りカップ」とは、コンビニでアイスコーヒーなどを作るために、氷を入れて密封した状態で販売するカップです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought an ice cup for iced coffee.",
+          "ja": "アイスコーヒー用の氷入りカップを買いました。",
+          "zh": "我買了一杯做冰咖啡用的冰塊杯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After removing the lid from the ice cup, I placed it under the coffee machine.",
+          "ja": "氷入りカップのふたを外してから、コーヒーマシンの下に置きました。",
+          "zh": "打開冰塊杯的蓋子後，我把它放到咖啡機下方。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "convenience-store-coffee-machine",
+        "coffee-cup-dispenser",
+        "drink-refrigerator"
+      ],
+      "ja": "氷入りカップ",
+      "jaReading": "こおりいりカップ",
+      "jaReadingSegments": [
+        {
+          "text": "氷入",
+          "ruby": "こおりい"
+        },
+        {
+          "text": "りカップ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/ice-cup-ai-357f831f4237.webp"
+    },
+    {
+      "id": "microwave-station",
+      "word": "microwave station",
+      "chinese": "微波加熱區",
+      "chineseDefinition": "便利商店內集中放置微波爐，供店員或顧客加熱便當與熟食的區域。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmaɪ.kroʊ.weɪv ˌsteɪ.ʃən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "微波加熱區",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An area in a convenience store where microwave ovens are provided for heating prepared food.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「電子レンジコーナー」とは、弁当や総菜を温めるための電子レンジをまとめて置いた店内の場所です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I heated my lunch at the microwave station.",
+          "ja": "電子レンジコーナーで昼ご飯を温めました。",
+          "zh": "我在微波加熱區加熱午餐。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because one oven was in use, I waited beside the microwave station for a minute.",
+          "ja": "一台が使用中だったので、電子レンジコーナーの横で少し待ちました。",
+          "zh": "因為其中一台正在使用，我在微波加熱區旁等了一會兒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "bento-shelf",
+        "eat-in-area",
+        "hot-water-dispenser"
+      ],
+      "ja": "電子レンジコーナー",
+      "jaReading": "でんしレンジコーナー",
+      "jaReadingSegments": [
+        {
+          "text": "電子",
+          "ruby": "でんし"
+        },
+        {
+          "text": "レンジコーナー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/microwave-station-ai-00a99d34145d.webp"
+    },
+    {
+      "id": "hot-water-dispenser",
+      "word": "hot water dispenser",
+      "chinese": "熱水供應機",
+      "chineseDefinition": "按下按鈕或壓桿便會流出熱水，常用來沖泡杯麵的店內設備。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhɑːt ˈwɔː.t̬ɚ dɪˌspen.sɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "熱水供應機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A machine that dispenses hot water, commonly used to prepare cup noodles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「給湯器」とは、ボタンなどを押すとお湯が出て、カップ麺などを作れる店内の機器です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I filled the cup with water from the hot water dispenser.",
+          "ja": "給湯器からカップにお湯を入れました。",
+          "zh": "我用熱水供應機把熱水裝進杯子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before using the hot water dispenser, I opened the lid of the cup noodles halfway.",
+          "ja": "給湯器を使う前に、カップ麺のふたを半分まで開けました。",
+          "zh": "使用熱水供應機前，我先把杯麵的蓋子打開一半。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cup-noodle-shelf",
+        "microwave-station",
+        "eat-in-area"
+      ],
+      "ja": "給湯器",
+      "jaReading": "きゅうとうき",
+      "jaReadingSegments": [
+        {
+          "text": "給湯器",
+          "ruby": "きゅうとうき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hot-water-dispenser-ai-bd9bb5a427c3.webp"
+    },
+    {
+      "id": "eat-in-area",
+      "word": "eat-in area",
+      "chinese": "店內用餐區",
+      "chineseDefinition": "設在便利商店內，讓顧客坐下食用所購餐點的小型座位區。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈiːt ɪn ˌer.i.ə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "店內用餐區",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small seating space inside a convenience store where customers may eat purchased food.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「イートインスペース」とは、店で買った食べ物を店内で座って食べられる小さな客席です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We ate lunch in the eat-in area.",
+          "ja": "イートインスペースで昼ご飯を食べました。",
+          "zh": "我們在店內用餐區吃午餐。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since it was raining, I drank my coffee in the eat-in area before leaving.",
+          "ja": "雨が降っていたので、出発する前にイートインスペースでコーヒーを飲みました。",
+          "zh": "因為下雨，我離開前先在店內用餐區喝了咖啡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "microwave-station",
+        "hot-water-dispenser",
+        "sorting-bin"
+      ],
+      "ja": "イートインスペース",
+      "jaReading": "イートインスペース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/eat-in-area-ai-66eb0c00e811.webp"
+    },
+    {
+      "id": "convenience-store-atm",
+      "word": "convenience store ATM",
+      "chinese": "便利商店提款機",
+      "chineseDefinition": "設在便利商店內，可辦理提款、存款或現金儲值等服務的自動櫃員機。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈviː.ni.əns stɔːr ˌeɪ.tiːˈem/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "便利商店提款機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An automated teller machine inside a convenience store for withdrawing, depositing, or charging cash.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「コンビニATM」とは、コンビニの店内で現金の引き出しや預け入れなどができる自動機です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I withdrew cash from the convenience store ATM.",
+          "ja": "コンビニATMで現金を引き出しました。",
+          "zh": "我在便利商店提款機領了現金。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the bank was closed, I used the convenience store ATM to deposit money.",
+          "ja": "銀行が閉まっていたので、コンビニATMでお金を預け入れました。",
+          "zh": "銀行關門後，我用便利商店提款機存了錢。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "multifunction-copier",
+        "multimedia-kiosk",
+        "cash-register"
+      ],
+      "ja": "コンビニATM",
+      "jaReading": "コンビニエーティーエム",
+      "jaReadingSegments": [
+        {
+          "text": "コンビニ",
+          "ruby": null
+        },
+        {
+          "text": "ATM",
+          "ruby": "エーティーエム"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/convenience-store-atm-ai-d99f75deecc1.webp"
+    },
+    {
+      "id": "multifunction-copier",
+      "word": "multifunction copier",
+      "chinese": "多功能事務機",
+      "chineseDefinition": "可在便利商店自助影印、列印、掃描、傳真或申請部分證明文件的大型機器。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌmʌl.tiˈfʌŋk.ʃən ˈkɑː.pi.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "多功能事務機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A self-service machine in a convenience store that copies, prints, scans, and may provide document services.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「マルチコピー機」とは、コンビニでコピー、印刷、スキャンなどを自分で行える多機能な機械です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I printed a document with the multifunction copier.",
+          "ja": "マルチコピー機で書類を印刷しました。",
+          "zh": "我用多功能事務機印了一份文件。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my printer was broken, I saved the file to a USB drive and used the multifunction copier.",
+          "ja": "家のプリンターが壊れていたので、USBメモリにファイルを保存してマルチコピー機を使いました。",
+          "zh": "因為家裡的印表機壞了，我把檔案存進隨身碟後使用多功能事務機。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "multimedia-kiosk",
+        "convenience-store-atm",
+        "payment-slip"
+      ],
+      "ja": "マルチコピー機",
+      "jaReading": "マルチコピーき",
+      "jaReadingSegments": [
+        {
+          "text": "マルチコピー",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/multifunction-copier-ai-3d6f56af2aa0.webp"
+    },
+    {
+      "id": "multimedia-kiosk",
+      "word": "multimedia kiosk",
+      "chinese": "多媒體服務機",
+      "chineseDefinition": "設在便利商店內，以觸控螢幕辦理購票、付款申請或各種服務的自助終端機。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌmʌl.tiˈmiː.di.ə ˈkiː.ɑːsk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "多媒體服務機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A touchscreen terminal in a convenience store used for tickets, payment applications, and other services.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「マルチメディア端末」とは、コンビニでチケット予約や各種申込みなどを行うタッチパネル式の機械です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I reserved a ticket at the multimedia kiosk.",
+          "ja": "マルチメディア端末でチケットを予約しました。",
+          "zh": "我在多媒體服務機預訂了票券。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After entering the reservation number at the multimedia kiosk, I took the printed slip to the register.",
+          "ja": "マルチメディア端末に予約番号を入力した後、印刷された申込券をレジに持っていきました。",
+          "zh": "在多媒體服務機輸入預約號碼後，我把印出的申請券拿到收銀台。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "multifunction-copier",
+        "payment-slip",
+        "cash-register"
+      ],
+      "ja": "マルチメディア端末",
+      "jaReading": "マルチメディアたんまつ",
+      "jaReadingSegments": [
+        {
+          "text": "マルチメディア",
+          "ruby": null
+        },
+        {
+          "text": "端末",
+          "ruby": "たんまつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/multimedia-kiosk-ai-bfc746b50503.webp"
+    },
+    {
+      "id": "parcel-counter",
+      "word": "parcel counter",
+      "chinese": "包裹寄送櫃台",
+      "chineseDefinition": "便利商店內受理宅配包裹寄件與取件手續的收銀櫃台區域。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɑːr.səl ˌkaʊn.t̬ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "包裹寄送櫃台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A convenience-store counter where customers send or collect delivery parcels.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「宅配便受付」とは、コンビニのレジで荷物の発送や受け取りの手続きをする窓口です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took the box to the parcel counter.",
+          "ja": "箱を宅配便受付に持っていきました。",
+          "zh": "我把箱子拿到包裹寄送櫃台。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before going to the parcel counter, I wrote the address on the shipping label.",
+          "ja": "宅配便受付へ行く前に、送り状に住所を書きました。",
+          "zh": "前往包裹寄送櫃台前，我先在託運單上寫好地址。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "payment-slip",
+        "multimedia-kiosk",
+        "cash-register"
+      ],
+      "ja": "宅配便受付",
+      "jaReading": "たくはいびんうけつけ",
+      "jaReadingSegments": [
+        {
+          "text": "宅配便受付",
+          "ruby": "たくはいびんうけつけ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/parcel-counter-ai-e86a886b8568.webp"
+    },
+    {
+      "id": "payment-slip",
+      "word": "payment slip",
+      "chinese": "繳費單",
+      "chineseDefinition": "印有條碼或付款資訊，可在便利商店櫃台繳納公共費用或網購款項的紙本單據。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpeɪ.mənt slɪp/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "繳費單",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A printed form with payment information or a barcode that can be paid at a convenience-store counter.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "「払込票」とは、公共料金や通販代金などをコンビニのレジで支払うための、バーコードなどが付いた用紙です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I gave the payment slip to the clerk.",
+          "ja": "店員に払込票を渡しました。",
+          "zh": "我把繳費單交給店員。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the payment slip was due today, I paid it at the convenience store on my way home.",
+          "ja": "払込票の期限が今日だったので、帰りにコンビニで支払いました。",
+          "zh": "因為繳費單今天到期，我回家途中在便利商店繳了費。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "parcel-counter",
+        "multimedia-kiosk",
+        "cash-register"
+      ],
+      "ja": "払込票",
+      "jaReading": "はらいこみひょう",
+      "jaReadingSegments": [
+        {
+          "text": "払込票",
+          "ruby": "はらいこみひょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/payment-slip-ai-7a5fd2319888.webp"
+    }
+  ]
+}

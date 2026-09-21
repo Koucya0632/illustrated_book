@@ -61,6 +61,25 @@ test("a fully synchronized slow-cooker payload passes", () => {
   );
 });
 
+test("a Latin acronym may carry a segmented Japanese reading", () => {
+  assert.deepEqual(
+    auditMainWordRows([
+      {
+        ...validRow("convenience-store-atm"),
+        jaTerm: "コンビニATM",
+        jaReading: "コンビニエーティーエム",
+        readingSegments: [
+          { text: "コンビニ", ruby: null },
+          { text: "ATM", ruby: "エーティーエム" },
+        ],
+        jaDefinition: "「コンビニATM」とは、コンビニの店内にある自動機です。",
+        jaExample: "コンビニATMで現金を引き出しました。",
+      },
+    ]),
+    [],
+  );
+});
+
 test("the retired frying-pan row cannot be published beside canonical pan", () => {
   const merge = MAIN_WORD_MERGES.find(({ sourceId }) => sourceId === "frying-pan");
   assert.deepEqual(merge, {

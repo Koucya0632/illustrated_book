@@ -12,9 +12,9 @@ import type { Category } from "@/types";
 // It used to not even be enough then: the upsert ignored every display field.
 //
 // ---- Cover images ----
-// Every `imageUrl` here is self-hosted in the `word-images` bucket as
-// `category-<id>.webp`. They used to hotlink `images.unsplash.com`, which meant
-// a shipped iOS app's category heroes depended on a photo a stranger could
+// Every non-empty `imageUrl` here is self-hosted in the `word-images` bucket
+// under a `category-<id>` WebP name. They used to hotlink `images.unsplash.com`,
+// so a shipped iOS app's category heroes depended on a photo a stranger could
 // delete at any time. Rehosted 2026-08-24; the originals were:
 //
 //   kitchen        photo-1556909114-f6e7ad7d3136
@@ -180,7 +180,8 @@ export const categories: Category[] = [
     description: "認識日常生活中的各種職業",
     descriptionEn: "People and jobs in everyday life",
     color: "from-blue-100 to-amber-100",
-    imageUrl: "",
+    imageUrl:
+      "https://img.nexflow.team/word-images/category-professions-ai-053af0e16e663a26.webp",
   },
   {
     id: "alcoholic-drinks",

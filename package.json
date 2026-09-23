@@ -50,7 +50,14 @@
     "review:convenience-store": "node scripts/build-convenience-store-semantic-review.mjs",
     "audio:plan:convenience-store": "node scripts/plan-convenience-store-audio.mjs",
     "audio:generate:convenience-store:local": "node --env-file=.env.local scripts/generate-convenience-store-candidate-audio.mjs",
-    "audio:verify:convenience-store": "node scripts/verify-convenience-store-audio.mjs"
+    "audio:verify:convenience-store": "node scripts/verify-convenience-store-audio.mjs",
+    "images:prepare:drugstore": "node scripts/prepare-drugstore-images.mjs",
+    "review:drugstore": "node scripts/build-drugstore-semantic-review.mjs",
+    "audio:plan:drugstore": "node scripts/plan-drugstore-audio.mjs",
+    "audio:generate:drugstore:local": "node --env-file=.env.local scripts/generate-drugstore-candidate-audio.mjs",
+    "audio:verify:drugstore": "node scripts/verify-drugstore-audio.mjs",
+    "drugstore:prepare-publish": "node --env-file=.env.local scripts/prepare-drugstore-publish-plan.mjs",
+    "drugstore:publish": "tsx --env-file=.env.local scripts/publish-drugstore-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

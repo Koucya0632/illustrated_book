@@ -205,6 +205,17 @@ export const categories: Category[] = [
       "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp",
   },
   {
+    id: "drugstore",
+    name: "Drugstore",
+    nameZh: "藥妝店",
+    emoji: "🧴",
+    description: "日本藥妝店裡常見的藥品、衛生用品與美妝產品",
+    descriptionEn: "Medicines, health essentials, and beauty products in Japanese drugstores",
+    color: "from-pink-100 to-sky-100",
+    imageUrl:
+      "https://img.nexflow.team/word-images/category-drugstore-ai-ce824db7d9b8.webp",
+  },
+  {
     id: "zodiac",
     name: "Zodiac",
     nameZh: "星座",
@@ -224,8 +235,9 @@ export const publicFallbackCategories: Category[] = categories.filter(
   (category) =>
     category.id !== "professions" &&
     category.id !== "alcoholic-drinks" &&
-    category.id !== "convenience-store",
+    category.id !== "convenience-store" &&
+    category.id !== "drugstore",
 );
 
 export const getCategory = (id: string): Category | undefined =>
-  categories.find((c) => c.id === id);
+  publicFallbackCategories.find((c) => c.id === id);

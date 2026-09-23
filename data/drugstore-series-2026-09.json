@@ -1,0 +1,2625 @@
+{
+  "schemaVersion": 1,
+  "series": "drugstore",
+  "state": "candidate-local-review-complete",
+  "scopeNote": "50 new main-catalog concepts, including 20 additional beauty and care products; production publication and media remain pending.",
+  "entries": [
+    {
+      "id": "drugstore",
+      "word": "drugstore",
+      "chinese": "藥妝店",
+      "chineseDefinition": "販售非處方藥、保健用品、化妝品與日用品的零售店。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdrʌɡ.stɔːr/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "藥妝店",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A retail store selling nonprescription medicines, cosmetics, and daily necessities.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "医薬品や化粧品、日用品などを販売する店です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I stopped at the drugstore after work.",
+          "ja": "仕事帰りにドラッグストアに寄りました。",
+          "zh": "我下班後去了藥妝店。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since we needed sunscreen for the trip, we visited the drugstore before it closed.",
+          "ja": "旅行用の日焼け止めが必要だったので、閉店前にドラッグストアへ行きました。",
+          "zh": "因為旅行需要防曬乳，我們趕在藥妝店打烊前去了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "over-the-counter-medicine",
+        "sunscreen",
+        "foundation-makeup"
+      ],
+      "ja": "ドラッグストア",
+      "jaReading": "ドラッグストア",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/drugstore-ai-26cbf2f48292.webp"
+    },
+    {
+      "id": "over-the-counter-medicine",
+      "word": "over-the-counter medicine",
+      "chinese": "非處方藥",
+      "chineseDefinition": "不需醫師處方即可購買的藥品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌoʊ.vɚ.ðəˈkaʊn.tɚ ˈmed.ə.sɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "非處方藥",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Medicine that can be bought without a doctor’s prescription.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "医師の処方箋なしで購入できる薬です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This shelf has over-the-counter medicine.",
+          "ja": "この棚には市販薬があります。",
+          "zh": "這個架上有非處方藥。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before choosing an over-the-counter medicine, I asked the pharmacist which package to look at.",
+          "ja": "市販薬を選ぶ前に、どの商品を見ればよいか薬剤師に聞きました。",
+          "zh": "挑選非處方藥前，我問藥師該看哪一款。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cold-medicine",
+        "pain-reliever",
+        "allergy-medicine"
+      ],
+      "ja": "市販薬",
+      "jaReading": "しはんやく",
+      "jaReadingSegments": [
+        {
+          "text": "市販薬",
+          "ruby": "しはんやく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/over-the-counter-medicine-ai-12705dfa7807.webp"
+    },
+    {
+      "id": "prescription-counter",
+      "word": "prescription counter",
+      "chinese": "處方箋服務櫃台",
+      "chineseDefinition": "藥局或附設調劑服務的店內，受理處方箋的櫃台。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/prɪˈskrɪp.ʃən ˈkaʊn.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "處方箋服務櫃台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The counter where customers submit prescriptions for dispensing.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "処方箋を受け付け、調剤を案内する窓口です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please take your prescription to the prescription counter.",
+          "ja": "処方箋を調剤受付に出してください。",
+          "zh": "請把處方箋拿到調劑服務櫃台。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the prescription counter was already closed, I checked its hours before returning the next day.",
+          "ja": "調剤受付がすでに閉まっていたので、翌日来る前に受付時間を確認しました。",
+          "zh": "因為處方箋服務櫃台已關閉，我先確認營業時間才隔天再來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "drugstore",
+        "over-the-counter-medicine",
+        "cold-medicine"
+      ],
+      "ja": "調剤受付",
+      "jaReading": "ちょうざいうけつけ",
+      "jaReadingSegments": [
+        {
+          "text": "調剤",
+          "ruby": "ちょうざい"
+        },
+        {
+          "text": "受付",
+          "ruby": "うけつけ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/prescription-counter-ai-8f0a1640653e.webp"
+    },
+    {
+      "id": "cold-medicine",
+      "word": "cold medicine",
+      "chinese": "感冒藥",
+      "chineseDefinition": "用於緩解一般感冒症狀的藥品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkoʊld ˌmed.ə.sɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "感冒藥",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Medicine sold to relieve symptoms of a common cold.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "風邪の症状を和らげるための薬です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I found cold medicine on the second shelf.",
+          "ja": "二段目の棚に風邪薬がありました。",
+          "zh": "我在第二層架上找到了感冒藥。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I could not read the directions on the cold medicine, I asked the pharmacist for help.",
+          "ja": "風邪薬の説明が読めなかったので、薬剤師に確認しました。",
+          "zh": "我看不懂感冒藥的說明，便請藥師幫忙確認。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "over-the-counter-medicine",
+        "cough-drops",
+        "pain-reliever"
+      ],
+      "ja": "風邪薬",
+      "jaReading": "かぜぐすり",
+      "jaReadingSegments": [
+        {
+          "text": "風邪",
+          "ruby": "かぜ"
+        },
+        {
+          "text": "薬",
+          "ruby": "ぐすり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/cold-medicine-ai-cb2a44edd91d.webp"
+    },
+    {
+      "id": "pain-reliever",
+      "word": "pain reliever",
+      "chinese": "止痛藥",
+      "chineseDefinition": "用來緩解疼痛的藥品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpeɪn rɪˌliː.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "止痛藥",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Medicine used to relieve pain.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "痛みを和らげるための薬です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pain relievers are beside the cold medicine.",
+          "ja": "鎮痛薬は風邪薬の隣にあります。",
+          "zh": "止痛藥在感冒藥旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since there were several kinds of pain reliever, I compared the labels before buying one.",
+          "ja": "鎮痛薬が何種類かあったので、買う前に表示を比べました。",
+          "zh": "因為止痛藥有好幾種，我購買前先比較了標示。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "over-the-counter-medicine",
+        "cold-medicine",
+        "stomach-medicine"
+      ],
+      "ja": "鎮痛薬",
+      "jaReading": "ちんつうやく",
+      "jaReadingSegments": [
+        {
+          "text": "鎮痛薬",
+          "ruby": "ちんつうやく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/pain-reliever-ai-7dfd87496433.webp"
+    },
+    {
+      "id": "stomach-medicine",
+      "word": "stomach medicine",
+      "chinese": "腸胃藥",
+      "chineseDefinition": "用於緩解胃部或消化不適的藥品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈstʌm.ək ˌmed.ə.sɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "腸胃藥",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Medicine sold for stomach or digestive discomfort.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "胃や腸の不調を和らげるための薬です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I am looking for the stomach medicine shelf.",
+          "ja": "胃腸薬の棚を探しています。",
+          "zh": "我在找腸胃藥的架子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The packages looked similar, so I checked the description of each stomach medicine.",
+          "ja": "箱が似ていたので、それぞれの胃腸薬の説明を確認しました。",
+          "zh": "包裝看起來很相似，所以我確認了每款腸胃藥的說明。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "over-the-counter-medicine",
+        "pain-reliever",
+        "allergy-medicine"
+      ],
+      "ja": "胃腸薬",
+      "jaReading": "いちょうやく",
+      "jaReadingSegments": [
+        {
+          "text": "胃腸薬",
+          "ruby": "いちょうやく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/stomach-medicine-ai-d0b8b2cb31f8.webp"
+    },
+    {
+      "id": "allergy-medicine",
+      "word": "allergy medicine",
+      "chinese": "過敏藥",
+      "chineseDefinition": "用於緩解花粉症等過敏症狀的藥品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈæl.ɚ.dʒi ˌmed.ə.sɪn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "過敏藥",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Medicine sold to relieve allergy symptoms, such as hay fever.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "花粉症などのアレルギー症状を和らげるための薬です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Is the allergy medicine in this aisle?",
+          "ja": "アレルギー薬はこの通路にありますか。",
+          "zh": "過敏藥在這條走道嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because pollen season had started, the store had moved the allergy medicine near the entrance.",
+          "ja": "花粉の季節が始まったので、店はアレルギー薬を入口近くに移していました。",
+          "zh": "因為花粉季開始了，店家把過敏藥移到入口附近。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "over-the-counter-medicine",
+        "eye-drops",
+        "cold-medicine"
+      ],
+      "ja": "アレルギー薬",
+      "jaReading": "アレルギーやく",
+      "jaReadingSegments": [
+        {
+          "text": "アレルギー",
+          "ruby": null
+        },
+        {
+          "text": "薬",
+          "ruby": "やく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/allergy-medicine-ai-2f073871f0ad.webp"
+    },
+    {
+      "id": "eye-drops",
+      "word": "eye drops",
+      "chinese": "眼藥水",
+      "chineseDefinition": "滴入眼睛使用的液體藥品或護眼產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪ drɑːps/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "眼藥水",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Liquid medicine or care product applied as drops to the eyes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "目に滴下して使う薬やケア用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought eye drops at the drugstore.",
+          "ja": "ドラッグストアで目薬を買いました。",
+          "zh": "我在藥妝店買了眼藥水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the eye drops came in several types, I read the package carefully before choosing one.",
+          "ja": "目薬にはいくつか種類があったので、選ぶ前に箱をよく読みました。",
+          "zh": "因為眼藥水有好幾種，我挑選前仔細閱讀了包裝。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "allergy-medicine",
+        "contact-lens-solution",
+        "drugstore"
+      ],
+      "ja": "目薬",
+      "jaReading": "めぐすり",
+      "jaReadingSegments": [
+        {
+          "text": "目薬",
+          "ruby": "めぐすり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/eye-drops-ai-f6a8d0aece9c.webp"
+    },
+    {
+      "id": "cough-drops",
+      "word": "cough drops",
+      "chinese": "喉糖",
+      "chineseDefinition": "含在口中舒緩喉嚨不適的錠狀產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɔːf drɑːps/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "喉糖",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Small lozenges sucked to soothe an irritated throat.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "のどの不快感を和らげるために口の中でなめる飴です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I keep cough drops in my bag.",
+          "ja": "かばんにのど飴を入れています。",
+          "zh": "我包包裡放著喉糖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my throat felt dry on the train, I bought a pack of cough drops at the station drugstore.",
+          "ja": "電車でのどが乾いたので、駅のドラッグストアでのど飴を一袋買いました。",
+          "zh": "因為搭車時喉嚨覺得乾，我在車站的藥妝店買了一包喉糖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cold-medicine",
+        "over-the-counter-medicine",
+        "drugstore"
+      ],
+      "ja": "のど飴",
+      "jaReading": "のどあめ",
+      "jaReadingSegments": [
+        {
+          "text": "のど",
+          "ruby": null
+        },
+        {
+          "text": "飴",
+          "ruby": "あめ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/cough-drops-ai-a799df4cbec0.webp"
+    },
+    {
+      "id": "adhesive-bandage",
+      "word": "adhesive bandage",
+      "chinese": "OK 繃",
+      "chineseDefinition": "帶有黏貼邊緣、用來覆蓋小傷口的敷貼。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ədˈhiː.sɪv ˈbæn.dɪdʒ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "OK 繃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small sticky dressing used to cover a minor cut.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小さな傷を覆う、粘着部分のある保護材です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I need an adhesive bandage for my finger.",
+          "ja": "指に貼る絆創膏が必要です。",
+          "zh": "我的手指需要一片 OK 繃。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the usual adhesive bandage came off in the rain, I looked for a waterproof one.",
+          "ja": "雨でいつもの絆創膏がはがれたので、防水タイプを探しました。",
+          "zh": "因為平常用的 OK 繃在雨中脫落了，我找了防水款。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "gauze-pad",
+        "thermometer",
+        "surgical-mask"
+      ],
+      "ja": "絆創膏",
+      "jaReading": "ばんそうこう",
+      "jaReadingSegments": [
+        {
+          "text": "絆創膏",
+          "ruby": "ばんそうこう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/adhesive-bandage-ai-2ac53f5e6d42.webp"
+    },
+    {
+      "id": "gauze-pad",
+      "word": "gauze pad",
+      "chinese": "紗布墊",
+      "chineseDefinition": "覆蓋傷口或吸收液體的柔軟紗布片。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɡɔːz pæd/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "紗布墊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soft piece of gauze used to cover a wound or absorb fluid.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "傷口を覆ったり水分を吸収したりする柔らかいガーゼです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The gauze pads are next to the bandages.",
+          "ja": "ガーゼパッドは絆創膏の隣にあります。",
+          "zh": "紗布墊在 OK 繃旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I bought a larger gauze pad because the small one would not cover the whole scrape.",
+          "ja": "小さいものでは擦り傷全体を覆えないので、大きめのガーゼパッドを買いました。",
+          "zh": "因為小片的蓋不住整個擦傷，我買了較大的紗布墊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "adhesive-bandage",
+        "thermometer",
+        "surgical-mask"
+      ],
+      "ja": "ガーゼパッド",
+      "jaReading": "ガーゼパッド",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/gauze-pad-ai-db17d1852e6b.webp"
+    },
+    {
+      "id": "thermometer",
+      "word": "thermometer",
+      "chinese": "體溫計",
+      "chineseDefinition": "測量人體體溫的儀器。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/θɚˈmɑː.mə.tɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "體溫計",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A device used to measure body temperature.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "体の温度を測る器具です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The thermometer is in the health section.",
+          "ja": "体温計は健康用品の売り場にあります。",
+          "zh": "體溫計在健康用品區。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After our thermometer stopped working, we compared two models at the drugstore.",
+          "ja": "家の体温計が動かなくなったので、ドラッグストアで二つの機種を比べました。",
+          "zh": "家裡的體溫計故障後，我們在藥妝店比較了兩款。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "cooling-gel-sheet",
+        "adhesive-bandage",
+        "surgical-mask"
+      ],
+      "ja": "体温計",
+      "jaReading": "たいおんけい",
+      "jaReadingSegments": [
+        {
+          "text": "体温計",
+          "ruby": "たいおんけい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/thermometer-ai-380bda64812d.webp"
+    },
+    {
+      "id": "surgical-mask",
+      "word": "surgical mask",
+      "chinese": "醫用口罩",
+      "chineseDefinition": "覆蓋口鼻的一次性防護口罩。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɝː.dʒɪ.kəl mæsk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "醫用口罩",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A disposable protective mask worn over the nose and mouth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "口と鼻を覆う使い捨ての不織布製マスクです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a box of surgical masks.",
+          "ja": "不織布マスクを一箱買いました。",
+          "zh": "我買了一盒醫用口罩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the small masks did not fit well, I checked the size chart before buying another box.",
+          "ja": "小さめのマスクが合わなかったので、次の箱を買う前にサイズ表を確認しました。",
+          "zh": "因為小尺寸口罩不合適，我買下一盒前先看了尺寸表。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "thermometer",
+        "adhesive-bandage",
+        "drugstore"
+      ],
+      "ja": "不織布マスク",
+      "jaReading": "ふしょくふマスク",
+      "jaReadingSegments": [
+        {
+          "text": "不織布",
+          "ruby": "ふしょくふ"
+        },
+        {
+          "text": "マスク",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/surgical-mask-ai-7bea156f9f29.webp"
+    },
+    {
+      "id": "sunscreen",
+      "word": "sunscreen",
+      "chinese": "防曬乳",
+      "chineseDefinition": "塗在皮膚上以減少紫外線曝曬的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsʌn.skriːn/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "防曬乳",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A product applied to the skin to reduce exposure to ultraviolet rays.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紫外線から肌を守るために塗る製品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I need sunscreen for the beach.",
+          "ja": "海に行くので日焼け止めが必要です。",
+          "zh": "我要去海邊，需要防曬乳。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The forecast said it would be sunny, so I bought sunscreen before our outdoor trip.",
+          "ja": "晴れる予報だったので、屋外へ出かける前に日焼け止めを買いました。",
+          "zh": "天氣預報說會出太陽，所以戶外出遊前我買了防曬乳。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "lip-balm",
+        "facial-toner",
+        "insect-repellent"
+      ],
+      "ja": "日焼け止め",
+      "jaReading": "ひやけどめ",
+      "jaReadingSegments": [
+        {
+          "text": "日焼け",
+          "ruby": "ひやけ"
+        },
+        {
+          "text": "止め",
+          "ruby": "どめ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/sunscreen-ai-f0a87098b2dc.webp"
+    },
+    {
+      "id": "lip-balm",
+      "word": "lip balm",
+      "chinese": "護唇膏",
+      "chineseDefinition": "塗在嘴唇上以減少乾燥的護理產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɪp bɑːm/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "護唇膏",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A balm applied to the lips to help prevent dryness.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "唇の乾燥を防ぐために塗るケア用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I left my lip balm at home.",
+          "ja": "リップクリームを家に忘れました。",
+          "zh": "我把護唇膏忘在家裡了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the air was dry, I picked up a new lip balm while buying shampoo.",
+          "ja": "空気が乾燥していたので、シャンプーを買うついでに新しいリップクリームも買いました。",
+          "zh": "因為空氣乾燥，我買洗髮精時順便買了新的護唇膏。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sunscreen",
+        "lipstick",
+        "facial-serum"
+      ],
+      "ja": "リップクリーム",
+      "jaReading": "リップクリーム",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/lip-balm-ai-3e0364261c36.webp"
+    },
+    {
+      "id": "sheet-mask",
+      "word": "sheet mask",
+      "chinese": "片狀面膜",
+      "chineseDefinition": "浸有保養液、敷在臉上的片狀護膚品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃiːt mæsk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "片狀面膜",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A face-shaped sheet soaked in skin-care liquid.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "美容液を含ませて顔に貼るシート状のスキンケア用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "These sheet masks come in a small pack.",
+          "ja": "このシートマスクは少量パックで売っています。",
+          "zh": "這款片狀面膜有小包裝。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since I wanted to try it first, I bought a single sheet mask instead of a large box.",
+          "ja": "まず試してみたかったので、大箱ではなく一枚入りのシートマスクを買いました。",
+          "zh": "因為我想先試用，所以買了單片面膜而不是一大盒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "facial-toner",
+        "facial-serum",
+        "makeup-sponge"
+      ],
+      "ja": "シートマスク",
+      "jaReading": "シートマスク",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sheet-mask-ai-650c60fbdfc4.webp"
+    },
+    {
+      "id": "facial-toner",
+      "word": "facial toner",
+      "chinese": "化妝水",
+      "chineseDefinition": "洗臉後使用、以液體形式補充肌膚水分的保養品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfeɪ.ʃəl ˈtoʊ.nɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "化妝水",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A liquid skin-care product applied after cleansing the face.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "洗顔後に肌へつける液状のスキンケア用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The facial toner is beside the face wash.",
+          "ja": "化粧水は洗顔料の隣にあります。",
+          "zh": "化妝水在洗面乳旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I compared the bottle sizes because I wanted a facial toner that would fit in my travel bag.",
+          "ja": "旅行かばんに入る化粧水が欲しかったので、ボトルの大きさを比べました。",
+          "zh": "因為我想要能放進旅行包的化妝水，所以比較了瓶身大小。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "facial-serum",
+        "sheet-mask",
+        "sunscreen"
+      ],
+      "ja": "化粧水",
+      "jaReading": "けしょうすい",
+      "jaReadingSegments": [
+        {
+          "text": "化粧水",
+          "ruby": "けしょうすい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/facial-toner-ai-06bc11b8ba58.webp"
+    },
+    {
+      "id": "facial-serum",
+      "word": "facial serum",
+      "chinese": "臉部精華液",
+      "chineseDefinition": "塗在臉部、通常作為保養步驟之一的濃縮液狀產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfeɪ.ʃəl ˈsɪr.əm/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "臉部精華液",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A concentrated liquid skin-care product applied to the face.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "顔に使う、成分を濃縮した液状のスキンケア用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This facial serum comes in a small bottle.",
+          "ja": "この美容液は小さな瓶に入っています。",
+          "zh": "這款臉部精華液裝在小瓶子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The shelf had many facial serums, so I read the ingredient lists before choosing one.",
+          "ja": "棚に美容液がたくさんあったので、選ぶ前に成分表示を読みました。",
+          "zh": "架上有許多臉部精華液，因此我挑選前閱讀了成分表。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "facial-toner",
+        "sheet-mask",
+        "lip-balm"
+      ],
+      "ja": "美容液",
+      "jaReading": "びようえき",
+      "jaReadingSegments": [
+        {
+          "text": "美容液",
+          "ruby": "びようえき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/facial-serum-ai-dd93885c493f.webp"
+    },
+    {
+      "id": "foundation-makeup",
+      "word": "foundation",
+      "chinese": "粉底",
+      "chineseDefinition": "塗在臉部、使膚色看起來較均勻的底妝產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/faʊnˈdeɪ.ʃən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "粉底",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Base makeup applied to the face to create a more even-looking skin tone.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "顔の色むらを整えるために使うベースメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I am looking for liquid foundation.",
+          "ja": "リキッドファンデーションを探しています。",
+          "zh": "我在找粉底液。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the first shade looked too dark, I compared the foundation samples under the store light.",
+          "ja": "最初の色が濃く見えたので、店の照明の下でファンデーションの見本を比べました。",
+          "zh": "因為第一個色號看起來太深，我在店內燈光下比較粉底試用品。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "concealer",
+        "makeup-sponge",
+        "facial-toner"
+      ],
+      "ja": "ファンデーション",
+      "jaReading": "ファンデーション",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/foundation-makeup-ai-2e9a4d5d3b70.webp"
+    },
+    {
+      "id": "concealer",
+      "word": "concealer",
+      "chinese": "遮瑕膏",
+      "chineseDefinition": "局部遮蓋臉部色差或瑕疵的彩妝產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈsiː.lɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "遮瑕膏",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Makeup applied to small areas to cover uneven color or blemishes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "肌の色むらや気になる部分を局所的にカバーするメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The concealer is in the makeup aisle.",
+          "ja": "コンシーラーはメイク用品の通路にあります。",
+          "zh": "遮瑕膏在彩妝用品走道。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I tested the concealer on my hand because the color on the package was hard to judge.",
+          "ja": "箱の色だけでは分かりにくかったので、手の甲でコンシーラーの色を試しました。",
+          "zh": "因為光看包裝難以判斷顏色，我在手背上試了遮瑕膏。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "foundation-makeup",
+        "makeup-sponge",
+        "mascara"
+      ],
+      "ja": "コンシーラー",
+      "jaReading": "コンシーラー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concealer-ai-4adeba1bd0bd.webp"
+    },
+    {
+      "id": "mascara",
+      "word": "mascara",
+      "chinese": "睫毛膏",
+      "chineseDefinition": "刷在睫毛上，使睫毛顯得更明顯的彩妝產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/mæˈskær.ə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "睫毛膏",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Makeup brushed onto eyelashes to make them more noticeable.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "まつ毛に塗って印象をはっきりさせるメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a brown mascara.",
+          "ja": "茶色のマスカラを買いました。",
+          "zh": "我買了一支棕色睫毛膏。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since my old mascara had dried out, I checked the brush shape before buying a replacement.",
+          "ja": "古いマスカラが乾いてしまったので、買い替える前にブラシの形を確認しました。",
+          "zh": "因為舊睫毛膏乾掉了，我買新的之前先看刷頭形狀。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "eyeliner",
+        "concealer",
+        "lipstick"
+      ],
+      "ja": "マスカラ",
+      "jaReading": "マスカラ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/mascara-ai-5a308fd6b935.webp"
+    },
+    {
+      "id": "eyeliner",
+      "word": "eyeliner",
+      "chinese": "眼線筆",
+      "chineseDefinition": "沿著眼周畫線、強調眼睛輪廓的彩妝用品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪˌlaɪ.nɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "眼線筆",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Makeup used to draw a line around the eyes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "目の輪郭に線を引くためのメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This eyeliner has a thin tip.",
+          "ja": "このアイライナーは先が細いです。",
+          "zh": "這支眼線筆的筆尖很細。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I wanted a softer look, I chose a brown eyeliner instead of a black one.",
+          "ja": "やわらかい印象にしたかったので、黒ではなく茶色のアイライナーを選びました。",
+          "zh": "因為我想要柔和一點的妝感，所以選棕色眼線筆而非黑色。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "mascara",
+        "concealer",
+        "foundation-makeup"
+      ],
+      "ja": "アイライナー",
+      "jaReading": "アイライナー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/eyeliner-ai-517f90cc84db.webp"
+    },
+    {
+      "id": "lipstick",
+      "word": "lipstick",
+      "chinese": "口紅",
+      "chineseDefinition": "為嘴唇增添顏色的彩妝產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɪp.stɪk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "口紅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Colored makeup applied to the lips.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "唇に色をつけるメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The lipstick is on sale today.",
+          "ja": "今日は口紅がセールになっています。",
+          "zh": "口紅今天特價。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked the lipstick color by the window because it looked different under the shelf lights.",
+          "ja": "棚の照明では色が違って見えたので、窓際で口紅の色を確認しました。",
+          "zh": "因為在架上燈光下顏色看起來不同，我到窗邊確認口紅色澤。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "lip-balm",
+        "eyeliner",
+        "nail-polish"
+      ],
+      "ja": "口紅",
+      "jaReading": "くちべに",
+      "jaReadingSegments": [
+        {
+          "text": "口紅",
+          "ruby": "くちべに"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/lipstick-ai-621d7955f833.webp"
+    },
+    {
+      "id": "nail-polish",
+      "word": "nail polish",
+      "chinese": "指甲油",
+      "chineseDefinition": "塗在指甲上增添顏色或光澤的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈneɪl ˌpɑː.lɪʃ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "指甲油",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Colored or clear coating applied to fingernails.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "爪に色やつやをつけるために塗る製品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She chose a pale pink nail polish.",
+          "ja": "彼女は薄いピンクのマニキュアを選びました。",
+          "zh": "她選了淡粉色指甲油。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the nail polish looked bright in the bottle, it appeared softer on the sample card.",
+          "ja": "瓶の中では鮮やかに見えましたが、見本ではそのマニキュアは落ち着いた色でした。",
+          "zh": "雖然指甲油在瓶中看起來很亮，試色卡上卻比較柔和。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "lipstick",
+        "makeup-sponge",
+        "hair-dye"
+      ],
+      "ja": "マニキュア",
+      "jaReading": "マニキュア",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/nail-polish-ai-e79902942d5a.webp"
+    },
+    {
+      "id": "makeup-sponge",
+      "word": "makeup sponge",
+      "chinese": "化妝海綿",
+      "chineseDefinition": "用來推勻粉底等底妝產品的小海綿。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmeɪ.kʌp spʌndʒ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "化妝海綿",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small sponge used to blend base makeup on the skin.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ファンデーションなどを肌にむらなく広げるためのスポンジです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I need a new makeup sponge.",
+          "ja": "新しいメイクスポンジが必要です。",
+          "zh": "我需要一個新的化妝海綿。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the pack contained several makeup sponges, I bought it to replace the one I had been using.",
+          "ja": "一袋にメイクスポンジが何個か入っていたので、使っていたものの買い替えに購入しました。",
+          "zh": "因為一包有好幾個化妝海綿，我買來替換正在用的那個。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "foundation-makeup",
+        "concealer",
+        "sheet-mask"
+      ],
+      "ja": "メイクスポンジ",
+      "jaReading": "メイクスポンジ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/makeup-sponge-ai-e791ca8ee1bd.webp"
+    },
+    {
+      "id": "hair-dye",
+      "word": "hair dye",
+      "chinese": "染髮劑",
+      "chineseDefinition": "用來改變頭髮顏色的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher daɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "染髮劑",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A product used to change the color of hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪の色を変えるために使う製品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The hair dye is on the bottom shelf.",
+          "ja": "ヘアカラー剤は一番下の棚にあります。",
+          "zh": "染髮劑在最下面的架子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I compared two shades of hair dye because the photos on the boxes looked almost the same.",
+          "ja": "箱の写真がほとんど同じに見えたので、二色のヘアカラー剤を比べました。",
+          "zh": "因為盒上的照片看起來幾乎一樣，我比較了兩款染髮劑色號。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "nail-polish",
+        "drugstore",
+        "makeup-sponge"
+      ],
+      "ja": "ヘアカラー剤",
+      "jaReading": "ヘアカラーざい",
+      "jaReadingSegments": [
+        {
+          "text": "ヘアカラー",
+          "ruby": null
+        },
+        {
+          "text": "剤",
+          "ruby": "ざい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-dye-ai-8b89e2840bd3.webp"
+    },
+    {
+      "id": "contact-lens-solution",
+      "word": "contact lens solution",
+      "chinese": "隱形眼鏡保養液",
+      "chineseDefinition": "用來清潔或保存隱形眼鏡的液體產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːn.tækt lenz səˈluː.ʃən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "隱形眼鏡保養液",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Liquid used to clean or store contact lenses.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンタクトレンズを洗ったり保存したりするための液体です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The contact lens solution is near the eye drops.",
+          "ja": "コンタクトレンズの洗浄液は目薬の近くにあります。",
+          "zh": "隱形眼鏡保養液在眼藥水附近。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I was traveling with only a small bag, I looked for a travel-size bottle of contact lens solution.",
+          "ja": "小さなかばんだけで旅行するので、携帯用のコンタクトレンズの洗浄液を探しました。",
+          "zh": "因為旅行只帶小包，我找了旅行裝隱形眼鏡保養液。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "eye-drops",
+        "drugstore",
+        "surgical-mask"
+      ],
+      "ja": "コンタクトレンズの洗浄液",
+      "jaReading": "コンタクトレンズのせんじょうえき",
+      "jaReadingSegments": [
+        {
+          "text": "コンタクトレンズの",
+          "ruby": null
+        },
+        {
+          "text": "洗浄液",
+          "ruby": "せんじょうえき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/contact-lens-solution-ai-90b82627f41f.webp"
+    },
+    {
+      "id": "insect-repellent",
+      "word": "insect repellent",
+      "chinese": "防蚊液",
+      "chineseDefinition": "塗抹或噴灑以驅避蚊蟲的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɪn.sekt rɪˌpel.ənt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "防蚊液",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A product applied to discourage insects from approaching.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "蚊などの虫を寄せつけにくくするために使うスプレーです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought insect repellent for the hike.",
+          "ja": "ハイキング用に虫よけスプレーを買いました。",
+          "zh": "我為健行買了防蚊液。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since we planned to walk near the river at dusk, I added insect repellent to the shopping list.",
+          "ja": "夕方に川の近くを歩く予定だったので、買い物リストに虫よけスプレーを加えました。",
+          "zh": "因為我們打算傍晚在河邊散步，我把防蚊液加進購物清單。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "sunscreen",
+        "drugstore",
+        "lip-balm"
+      ],
+      "ja": "虫よけスプレー",
+      "jaReading": "むしよけスプレー",
+      "jaReadingSegments": [
+        {
+          "text": "虫",
+          "ruby": "むし"
+        },
+        {
+          "text": "よけスプレー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/insect-repellent-ai-6a87003ee464.webp"
+    },
+    {
+      "id": "vitamin-supplement",
+      "word": "vitamin supplement",
+      "chinese": "維他命補充品",
+      "chineseDefinition": "以錠劑或膠囊等形式販售的維生素補充品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈvaɪ.tə.mɪn ˈsʌp.lə.mənt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "維他命補充品",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A product containing vitamins, often sold as tablets or capsules.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ビタミンを補うために錠剤などの形で売られる食品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Vitamin supplements are on the top shelf.",
+          "ja": "ビタミンサプリは一番上の棚にあります。",
+          "zh": "維他命補充品在最上層架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the bottles looked similar, I checked the labels before choosing a vitamin supplement.",
+          "ja": "ボトルが似ていたので、ビタミンサプリを選ぶ前に表示を確認しました。",
+          "zh": "因為瓶子看起來很相似，我挑選維他命補充品前看了標示。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "over-the-counter-medicine",
+        "drugstore",
+        "stomach-medicine"
+      ],
+      "ja": "ビタミンサプリ",
+      "jaReading": "ビタミンサプリ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/vitamin-supplement-ai-5c14b3facf49.webp"
+    },
+    {
+      "id": "cooling-gel-sheet",
+      "word": "cooling gel sheet",
+      "chinese": "退熱貼",
+      "chineseDefinition": "可貼在額頭等部位、帶來清涼感的凝膠貼片。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkuː.lɪŋ dʒel ʃiːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "退熱貼",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A gel sheet placed on the skin to give a cooling sensation.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "額などに貼って冷たさを感じられるジェル状のシートです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The cooling gel sheets are by the thermometers.",
+          "ja": "冷却シートは体温計のそばにあります。",
+          "zh": "退熱貼在體溫計旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The package had several cooling gel sheets, so I put one pack in our travel bag.",
+          "ja": "袋に冷却シートが何枚も入っていたので、旅行かばんに一袋入れました。",
+          "zh": "包裝裡有好幾片退熱貼，所以我放了一包進旅行袋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "thermometer",
+        "cold-medicine",
+        "adhesive-bandage"
+      ],
+      "ja": "冷却シート",
+      "jaReading": "れいきゃくシート",
+      "jaReadingSegments": [
+        {
+          "text": "冷却",
+          "ruby": "れいきゃく"
+        },
+        {
+          "text": "シート",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/cooling-gel-sheet-ai-ef77e9cc4e6d.webp"
+    },
+    {
+      "id": "makeup-remover-wipes",
+      "word": "makeup remover wipes",
+      "chinese": "卸妝濕巾",
+      "chineseDefinition": "用來擦除臉部彩妝的一次性濕巾。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmeɪ.kʌp rɪˈmuː.vɚ waɪps/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "卸妝濕巾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Disposable moist wipes used to remove makeup from the face.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "顔のメイクを拭き取るための使い捨てシートです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought makeup remover wipes for my trip.",
+          "ja": "旅行用にクレンジングシートを買いました。",
+          "zh": "我為旅行買了卸妝濕巾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I forgot my cleanser, I used makeup remover wipes before bed.",
+          "ja": "洗顔料を忘れたので、寝る前にクレンジングシートを使いました。",
+          "zh": "因為忘了帶洗面乳，我睡前用了卸妝濕巾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "facial-toner",
+        "sheet-mask",
+        "makeup-sponge"
+      ],
+      "ja": "クレンジングシート",
+      "jaReading": "クレンジングシート",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/makeup-remover-wipes-ai-834c01d85acb.webp"
+    },
+    {
+      "id": "hand-cream",
+      "word": "hand cream",
+      "chinese": "護手霜",
+      "chineseDefinition": "塗在手部幫助減少乾燥的乳霜。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhænd kriːm/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "護手霜",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Cream applied to the hands to help prevent dryness.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "手の乾燥を防ぐために塗るクリームです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My hand cream is in my bag.",
+          "ja": "ハンドクリームはかばんの中にあります。",
+          "zh": "我的護手霜在包包裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After washing my hands several times, I bought a small hand cream for work.",
+          "ja": "何度も手を洗ったので、仕事用に小さなハンドクリームを買いました。",
+          "zh": "洗了好幾次手後，我買了一條小條的護手霜，工作時用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "lip-balm",
+        "facial-serum",
+        "sunscreen"
+      ],
+      "ja": "ハンドクリーム",
+      "jaReading": "ハンドクリーム",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/hand-cream-ai-434a89130d01.webp"
+    },
+    {
+      "id": "face-powder",
+      "word": "face powder",
+      "chinese": "蜜粉",
+      "chineseDefinition": "用於臉部定妝或減少油光的粉狀彩妝品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfeɪs ˌpaʊ.dɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蜜粉",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Powder applied to the face to set makeup or reduce shine.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "メイクを仕上げたり、肌のテカリを抑えたりする粉です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This face powder comes with a soft puff.",
+          "ja": "このフェイスパウダーには柔らかいパフが付いています。",
+          "zh": "這款蜜粉附有柔軟的粉撲。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since my makeup looked shiny under the store lights, I tried a little face powder.",
+          "ja": "店の照明の下でメイクがテカって見えたので、フェイスパウダーを少し試しました。",
+          "zh": "因為妝容在店內燈光下看起來泛油光，我試了一點蜜粉。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "foundation-makeup",
+        "blush",
+        "makeup-brush"
+      ],
+      "ja": "フェイスパウダー",
+      "jaReading": "フェイスパウダー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/face-powder-ai-6a57da8b0dbe.webp"
+    },
+    {
+      "id": "blush",
+      "word": "blush",
+      "chinese": "腮紅",
+      "chineseDefinition": "塗在臉頰增加氣色的彩妝品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/blʌʃ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "腮紅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Makeup applied to the cheeks to add color.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "頬に色を加えるためのメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She chose a peach blush.",
+          "ja": "彼女は桃色のチークを選びました。",
+          "zh": "她選了蜜桃色腮紅。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I compared two blush shades because one looked too bright on my skin.",
+          "ja": "肌にのせると片方が明るすぎたので、二色のチークを比べました。",
+          "zh": "因為其中一款擦在皮膚上太亮，我比較了兩種腮紅色號。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "face-powder",
+        "makeup-brush",
+        "eyeshadow"
+      ],
+      "ja": "チーク",
+      "jaReading": "チーク",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/blush-ai-ae070bd08e03.webp"
+    },
+    {
+      "id": "eyeshadow",
+      "word": "eyeshadow",
+      "chinese": "眼影",
+      "chineseDefinition": "塗在眼皮上增加色彩的彩妝品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪˌʃæd.oʊ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "眼影",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Colored makeup applied to the eyelids.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "まぶたに色をつけるためのメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This eyeshadow comes in four colors.",
+          "ja": "このアイシャドウは四色入りです。",
+          "zh": "這款眼影有四色。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the eyeshadow looked dark in the case, it appeared lighter on my hand.",
+          "ja": "ケースの中では濃く見えましたが、手に塗るとアイシャドウはもっと薄く見えました。",
+          "zh": "雖然眼影在盒裡看起來很深，擦在手上卻顯得比較淡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "eyeliner",
+        "mascara",
+        "makeup-brush"
+      ],
+      "ja": "アイシャドウ",
+      "jaReading": "アイシャドウ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/eyeshadow-ai-43687801ac8d.webp"
+    },
+    {
+      "id": "eyebrow-pencil",
+      "word": "eyebrow pencil",
+      "chinese": "眉筆",
+      "chineseDefinition": "用來描繪或填補眉毛的筆狀彩妝品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪ.braʊ ˈpen.səl/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "眉筆",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pencil-shaped makeup product used to define or fill in eyebrows.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "眉の形を描いたり、すき間を埋めたりするペンシル状のメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I need a brown eyebrow pencil.",
+          "ja": "茶色のアイブロウペンシルが必要です。",
+          "zh": "我需要一支棕色眉筆。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the tip of my old eyebrow pencil broke, I looked for one with a refill.",
+          "ja": "使っていたアイブロウペンシルの芯が折れたので、替え芯のあるものを探しました。",
+          "zh": "因為舊眉筆的筆芯斷了，我找了一支可替換筆芯的眉筆。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "eyeliner",
+        "eyeshadow",
+        "compact-mirror"
+      ],
+      "ja": "アイブロウペンシル",
+      "jaReading": "アイブロウペンシル",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/eyebrow-pencil-ai-9eec8d42545b.webp"
+    },
+    {
+      "id": "lip-gloss",
+      "word": "lip gloss",
+      "chinese": "唇蜜",
+      "chineseDefinition": "讓嘴唇看起來有光澤的彩妝品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɪp ɡlɑːs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "唇蜜",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A lip product that adds shine, sometimes with color.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "唇につやを出すためのメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This lip gloss is clear.",
+          "ja": "このリップグロスは透明です。",
+          "zh": "這款唇蜜是透明的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked the lip gloss tester because the color in the tube was hard to judge.",
+          "ja": "容器の中の色だけでは分かりにくかったので、リップグロスのテスターを確認しました。",
+          "zh": "因為光看管內顏色難以判斷，我查看了唇蜜的試用品。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "lipstick",
+        "lip-balm",
+        "compact-mirror"
+      ],
+      "ja": "リップグロス",
+      "jaReading": "リップグロス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/lip-gloss-ai-166f3b2a6a82.webp"
+    },
+    {
+      "id": "makeup-brush",
+      "word": "makeup brush",
+      "chinese": "化妝刷",
+      "chineseDefinition": "用於沾取或暈開彩妝品的刷子。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmeɪ.kʌp brʌʃ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "化妝刷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A brush used to apply or blend makeup.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "メイク用品を塗ったり、ぼかしたりするためのブラシです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The makeup brushes are beside the sponges.",
+          "ja": "メイクブラシはスポンジの隣にあります。",
+          "zh": "化妝刷在海綿旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since I wanted to spread the powder evenly, I chose a soft makeup brush.",
+          "ja": "パウダーをむらなく広げたかったので、柔らかいメイクブラシを選びました。",
+          "zh": "因為我想把粉均勻刷開，所以選了一支柔軟的化妝刷。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "blush",
+        "face-powder",
+        "eyeshadow"
+      ],
+      "ja": "メイクブラシ",
+      "jaReading": "メイクブラシ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/makeup-brush-ai-a47a1c992003.webp"
+    },
+    {
+      "id": "eyelash-curler",
+      "word": "eyelash curler",
+      "chinese": "睫毛夾",
+      "chineseDefinition": "用來夾翹睫毛的手持工具。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈaɪ.læʃ ˈkɝː.lɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "睫毛夾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A handheld tool used to curl eyelashes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "まつ毛を上向きにカールさせるための道具です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a new eyelash curler.",
+          "ja": "新しいビューラーを買いました。",
+          "zh": "我買了一支新的睫毛夾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the rubber pad wore out, I checked whether the eyelash curler came with replacements.",
+          "ja": "ゴムがすり減ったので、そのビューラーに替えゴムが付いているか確認しました。",
+          "zh": "橡膠墊磨損後，我確認這支睫毛夾是否附有替換墊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "mascara",
+        "false-eyelashes",
+        "eyeliner"
+      ],
+      "ja": "ビューラー",
+      "jaReading": "ビューラー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/eyelash-curler-ai-cfae1e618e68.webp"
+    },
+    {
+      "id": "nail-polish-remover",
+      "word": "nail polish remover",
+      "chinese": "去光水",
+      "chineseDefinition": "用來卸除指甲油的液體。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈneɪl ˌpɑː.lɪʃ rɪˈmuː.vɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "去光水",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A liquid used to remove nail polish.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "マニキュアを落とすための液体です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The nail polish remover is near the nail polish.",
+          "ja": "除光液はマニキュアの近くにあります。",
+          "zh": "去光水在指甲油附近。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the first bottle was too large for my bag, I bought a travel-size nail polish remover.",
+          "ja": "最初のボトルはかばんに入れるには大きすぎたので、携帯用の除光液を買いました。",
+          "zh": "因為第一瓶太大、放不進包包，我買了旅行裝去光水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "nail-polish",
+        "nail-file",
+        "hand-cream"
+      ],
+      "ja": "除光液",
+      "jaReading": "じょこうえき",
+      "jaReadingSegments": [
+        {
+          "text": "除光液",
+          "ruby": "じょこうえき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/nail-polish-remover-ai-b536418d1b06.webp"
+    },
+    {
+      "id": "hair-oil",
+      "word": "hair oil",
+      "chinese": "護髮油",
+      "chineseDefinition": "塗在頭髮上增加光澤或減少乾燥的油狀用品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher ɔɪl/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "護髮油",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An oil applied to hair to add shine or reduce dryness.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪につやを出したり、乾燥を抑えたりするためのオイルです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This hair oil comes in a small bottle.",
+          "ja": "このヘアオイルは小さなボトルに入っています。",
+          "zh": "這款護髮油裝在小瓶子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since my hair felt dry after swimming, I looked for a lightweight hair oil.",
+          "ja": "泳いだ後に髪が乾燥したので、軽い使い心地のヘアオイルを探しました。",
+          "zh": "因為游泳後頭髮變得乾燥，我找了一款質地輕盈的護髮油。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hair-mask",
+        "hair-spray",
+        "hair-dye"
+      ],
+      "ja": "ヘアオイル",
+      "jaReading": "ヘアオイル",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/hair-oil-ai-5d019cf4d76f.webp"
+    },
+    {
+      "id": "hair-mask",
+      "word": "hair mask",
+      "chinese": "髮膜",
+      "chineseDefinition": "停留在頭髮上以加強護理的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher mæsk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "髮膜",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hair-care treatment left on the hair for extra conditioning.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪になじませてしばらく置く、集中ケア用の製品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The hair mask is next to the conditioner.",
+          "ja": "ヘアマスクはコンディショナーの隣にあります。",
+          "zh": "髮膜在潤髮乳旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To try it before buying a large tub, I chose a single-use hair mask.",
+          "ja": "大きな容器を買う前に試したかったので、使い切りのヘアマスクを選びました。",
+          "zh": "為了在買大罐裝前先試用，我選了單次使用的髮膜。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hair-oil",
+        "hair-dye",
+        "hair-spray"
+      ],
+      "ja": "ヘアマスク",
+      "jaReading": "ヘアマスク",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/hair-mask-ai-e1dcba128342.webp"
+    },
+    {
+      "id": "facial-mist",
+      "word": "facial mist",
+      "chinese": "保濕噴霧",
+      "chineseDefinition": "以細霧噴在臉上的保養液。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfeɪ.ʃəl mɪst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "保濕噴霧",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A fine spray of liquid skin care applied to the face.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "顔に細かい霧状で吹きかける化粧水です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The facial mist fits in my bag.",
+          "ja": "ミスト化粧水はかばんに入ります。",
+          "zh": "這瓶保濕噴霧放得進我的包包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "As the air in the office felt dry, I bought a travel-size facial mist.",
+          "ja": "オフィスの空気が乾燥していたので、携帯用のミスト化粧水を買いました。",
+          "zh": "因為辦公室空氣很乾燥，我買了一瓶旅行裝保濕噴霧。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "facial-toner",
+        "sheet-mask",
+        "sunscreen"
+      ],
+      "ja": "ミスト化粧水",
+      "jaReading": "ミストけしょうすい",
+      "jaReadingSegments": [
+        {
+          "text": "ミスト",
+          "ruby": null
+        },
+        {
+          "text": "化粧水",
+          "ruby": "けしょうすい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/facial-mist-ai-30a19a7aa8f2.webp"
+    },
+    {
+      "id": "body-scrub",
+      "word": "body scrub",
+      "chinese": "身體磨砂膏",
+      "chineseDefinition": "含有細小顆粒、用於清潔身體肌膚的用品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑː.di skrʌb/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "身體磨砂膏",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A body-care product with small grains used while washing the skin.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "細かい粒を含み、体を洗うときに使うケア用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The body scrub is on the bath-care shelf.",
+          "ja": "ボディスクラブはバス用品の棚にあります。",
+          "zh": "身體磨砂膏在沐浴用品架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I read the body scrub labels because I wanted one with fine grains.",
+          "ja": "粒の細かいものが欲しかったので、ボディスクラブの表示を読みました。",
+          "zh": "因為我想找顆粒細的款式，所以閱讀了身體磨砂膏的標示。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hand-cream",
+        "facial-mist",
+        "sunscreen"
+      ],
+      "ja": "ボディスクラブ",
+      "jaReading": "ボディスクラブ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/body-scrub-ai-4c7bd613bb74.webp"
+    },
+    {
+      "id": "makeup-primer",
+      "word": "makeup primer",
+      "chinese": "妝前乳",
+      "chineseDefinition": "上粉底前塗抹、幫助底妝服貼的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmeɪ.kʌp ˈpraɪ.mɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "妝前乳",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A base product applied before foundation to prepare the skin for makeup.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ファンデーションの前に塗るベースメイク用品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This makeup primer comes in a tube.",
+          "ja": "この化粧下地はチューブ入りです。",
+          "zh": "這款妝前乳是軟管包裝。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before choosing a makeup primer, I checked whether it worked with my foundation.",
+          "ja": "化粧下地を選ぶ前に、使っているファンデーションと合わせやすいか確認しました。",
+          "zh": "挑選妝前乳前，我確認它是否適合搭配我在用的粉底。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "foundation-makeup",
+        "face-powder",
+        "setting-spray"
+      ],
+      "ja": "化粧下地",
+      "jaReading": "けしょうしたじ",
+      "jaReadingSegments": [
+        {
+          "text": "化粧",
+          "ruby": "けしょう"
+        },
+        {
+          "text": "下地",
+          "ruby": "したじ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/makeup-primer-ai-4bb244b36896.webp"
+    },
+    {
+      "id": "setting-spray",
+      "word": "setting spray",
+      "chinese": "定妝噴霧",
+      "chineseDefinition": "完妝後噴在臉上、幫助妝容維持的噴霧。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈset.ɪŋ spreɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "定妝噴霧",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A spray applied after makeup to help it last longer.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "メイクの仕上げに吹きかけ、化粧もちをよくするためのミストです。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The setting spray is beside the face powder.",
+          "ja": "メイクキープミストはフェイスパウダーの隣にあります。",
+          "zh": "定妝噴霧在蜜粉旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my makeup wore off quickly in the heat, I bought a small setting spray.",
+          "ja": "暑さでメイクがすぐ崩れたので、小さなメイクキープミストを買いました。",
+          "zh": "因為天熱時妝很快就掉了，我買了一瓶小瓶裝定妝噴霧。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "face-powder",
+        "makeup-primer",
+        "foundation-makeup"
+      ],
+      "ja": "メイクキープミスト",
+      "jaReading": "メイクキープミスト",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/setting-spray-ai-8ba43cc2fcb2.webp"
+    },
+    {
+      "id": "compact-mirror",
+      "word": "compact mirror",
+      "chinese": "化妝鏡",
+      "chineseDefinition": "可折疊、方便隨身攜帶的小鏡子。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːm.pækt ˈmɪr.ɚ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "化妝鏡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small folding mirror carried for checking makeup.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "持ち歩いてメイクを確認できる折りたたみ式の小さな鏡です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I keep a compact mirror in my bag.",
+          "ja": "かばんにコンパクトミラーを入れています。",
+          "zh": "我包包裡放著一面化妝鏡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I could not see the shade clearly, I used a compact mirror near the window.",
+          "ja": "色味がよく見えなかったので、窓際でコンパクトミラーを使いました。",
+          "zh": "因為看不清楚色號，我到窗邊用化妝鏡查看。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "lipstick",
+        "blush",
+        "eyelash-curler"
+      ],
+      "ja": "コンパクトミラー",
+      "jaReading": "コンパクトミラー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/compact-mirror-ai-45bdd307ca5d.webp"
+    },
+    {
+      "id": "nail-file",
+      "word": "nail file",
+      "chinese": "指甲銼刀",
+      "chineseDefinition": "用來磨平指甲邊緣的工具。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈneɪl faɪl/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "指甲銼刀",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tool used to smooth or shape the edges of fingernails.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "爪の先を整えたり、なめらかにしたりする道具です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The nail files are beside the clippers.",
+          "ja": "爪やすりは爪切りの隣にあります。",
+          "zh": "指甲銼刀在指甲剪旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After trimming my nails, I bought a fine nail file to smooth the edges.",
+          "ja": "爪を切った後、先端をなめらかにするために目の細かい爪やすりを買いました。",
+          "zh": "剪完指甲後，我買了一支細目指甲銼刀來磨平邊緣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "nail-polish",
+        "nail-polish-remover",
+        "hand-cream"
+      ],
+      "ja": "爪やすり",
+      "jaReading": "つめやすり",
+      "jaReadingSegments": [
+        {
+          "text": "爪",
+          "ruby": "つめ"
+        },
+        {
+          "text": "やすり",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/nail-file-ai-f919eacfe323.webp"
+    },
+    {
+      "id": "false-eyelashes",
+      "word": "false eyelashes",
+      "chinese": "假睫毛",
+      "chineseDefinition": "暫時貼在眼皮邊緣、讓睫毛看起來更明顯的用品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɔːls ˈaɪ.læʃ.ɪz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "假睫毛",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Artificial lashes attached temporarily to make eyelashes look fuller.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "まつ毛を濃く見せるために一時的につける人工のまつ毛です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "These false eyelashes come in pairs.",
+          "ja": "このつけまつげは左右一組で売っています。",
+          "zh": "這款假睫毛成對販售。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the first pair looked too long, I chose shorter false eyelashes for the party.",
+          "ja": "最初の一組は長すぎるように見えたので、パーティー用に短めのつけまつげを選びました。",
+          "zh": "因為第一副看起來太長，我為派對選了比較短的假睫毛。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "mascara",
+        "eyeliner",
+        "eyelash-curler"
+      ],
+      "ja": "つけまつげ",
+      "jaReading": "つけまつげ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/false-eyelashes-ai-4d58687c885d.webp"
+    },
+    {
+      "id": "hair-spray",
+      "word": "hair spray",
+      "chinese": "定型噴霧",
+      "chineseDefinition": "噴在頭髮上幫助固定髮型的產品。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher spreɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "定型噴霧",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A spray used to help hold a hairstyle in place.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪型を保つために髪に吹きかける製品です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The hair spray is on the top shelf.",
+          "ja": "ヘアスプレーは一番上の棚にあります。",
+          "zh": "定型噴霧在最上層架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I wanted my hairstyle to last through the evening, I picked a small hair spray.",
+          "ja": "夜まで髪型を保ちたかったので、小さなヘアスプレーを選びました。",
+          "zh": "因為我想讓髮型維持到晚上，所以選了一瓶小瓶裝定型噴霧。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "hair-oil",
+        "hair-mask",
+        "hair-dye"
+      ],
+      "ja": "ヘアスプレー",
+      "jaReading": "ヘアスプレー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/hair-spray-ai-40642d6d0c94.webp"
+    }
+  ]
+}

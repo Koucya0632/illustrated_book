@@ -1,0 +1,11177 @@
+{
+ "en": {
+  "I stopped at the drugstore after work.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "stopped at",
+    "z": "停留在",
+    "j": "立ち寄りました",
+    "e": "stopped at",
+    "b": "stop at",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "drugstore",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "drugstore",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "after work",
+    "z": "下班後",
+    "j": "仕事帰り",
+    "e": "after work",
+    "b": "after work",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since we needed sunscreen for the trip, we visited the drugstore before it closed.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "we",
+    "z": "我們",
+    "j": "私たち",
+    "e": "we",
+    "b": "we",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "needed",
+    "z": "需要",
+    "j": "必要だった",
+    "e": "needed",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sunscreen",
+    "z": "防曬乳",
+    "j": "日焼け止め",
+    "e": "sunscreen",
+    "b": "sunscreen",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "trip",
+    "z": "旅行",
+    "j": "旅行",
+    "e": "trip",
+    "b": "trip",
+    "p": "noun"
+   },
+   {
+    "t": ", we "
+   },
+   {
+    "t": "visited",
+    "z": "去了",
+    "j": "行きました",
+    "e": "visited",
+    "b": "visit",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "drugstore",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "drugstore",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before it closed",
+    "z": "關門前",
+    "j": "閉店前",
+    "e": "before it closed",
+    "b": "before it closed",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This shelf has over-the-counter medicine.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "shelf",
+    "z": "架子",
+    "j": "棚",
+    "e": "shelf",
+    "b": "shelf",
+    "p": "noun"
+   },
+   {
+    "t": " has "
+   },
+   {
+    "t": "over-the-counter medicine",
+    "z": "非處方藥",
+    "j": "市販薬",
+    "e": "over-the-counter medicine",
+    "b": "over-the-counter medicine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before choosing an over-the-counter medicine, I asked the pharmacist which package to look at.": [
+   {
+    "t": "Before"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "choosing",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choosing",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "over-the-counter medicine",
+    "z": "非處方藥",
+    "j": "市販薬",
+    "e": "over-the-counter medicine",
+    "b": "over-the-counter medicine",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "asked",
+    "z": "問",
+    "j": "聞きました",
+    "e": "asked",
+    "b": "ask",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "pharmacist",
+    "z": "藥劑師",
+    "j": "薬剤師",
+    "e": "pharmacist",
+    "b": "pharmacist",
+    "p": "noun"
+   },
+   {
+    "t": " which "
+   },
+   {
+    "t": "package",
+    "z": "包裝",
+    "j": "商品",
+    "e": "package",
+    "b": "package",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "look at",
+    "z": "看",
+    "j": "見れば",
+    "e": "look at",
+    "b": "look at",
+    "p": "phrasal verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Please take your prescription to the prescription counter.": [
+   {
+    "t": "Please"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "take",
+    "z": "拿",
+    "j": "持っていく",
+    "e": "take",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "your"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "prescription",
+    "z": "處方箋",
+    "j": "処方箋",
+    "e": "prescription",
+    "b": "prescription",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "prescription counter",
+    "z": "處方箋服務櫃台",
+    "j": "調剤受付",
+    "e": "prescription counter",
+    "b": "prescription counter",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the prescription counter was already closed, I checked its hours before returning the next day.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "prescription counter",
+    "z": "處方箋服務櫃台",
+    "j": "調剤受付",
+    "e": "prescription counter",
+    "b": "prescription counter",
+    "p": "phrase"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "already",
+    "z": "已經",
+    "j": "すでに",
+    "e": "already",
+    "b": "already",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "closed",
+    "z": "關閉",
+    "j": "閉まっていた",
+    "e": "closed",
+    "b": "close",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " its "
+   },
+   {
+    "t": "hours",
+    "z": "營業時間",
+    "j": "受付時間",
+    "e": "hours",
+    "b": "hour",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "returning",
+    "z": "回來",
+    "j": "来る",
+    "e": "returning",
+    "b": "return",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "next day",
+    "z": "隔天",
+    "j": "翌日",
+    "e": "next day",
+    "b": "next day",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I found cold medicine on the second shelf.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "found",
+    "z": "找到",
+    "j": "見つけました",
+    "e": "found",
+    "b": "find",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cold medicine",
+    "z": "感冒藥",
+    "j": "風邪薬",
+    "e": "cold medicine",
+    "b": "cold medicine",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "second shelf",
+    "z": "第二層架子",
+    "j": "二段目の棚",
+    "e": "second shelf",
+    "b": "second shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When I could not read the directions on the cold medicine, I asked the pharmacist for help.": [
+   {
+    "t": "When "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "could not read",
+    "z": "無法閱讀",
+    "j": "読めなかった",
+    "e": "could not read",
+    "b": "read",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "directions",
+    "z": "說明",
+    "j": "説明",
+    "e": "directions",
+    "b": "direction",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "cold medicine",
+    "z": "感冒藥",
+    "j": "風邪薬",
+    "e": "cold medicine",
+    "b": "cold medicine",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "asked",
+    "z": "請教",
+    "j": "確認しました",
+    "e": "asked",
+    "b": "ask",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "pharmacist",
+    "z": "藥劑師",
+    "j": "薬剤師",
+    "e": "pharmacist",
+    "b": "pharmacist",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "help",
+    "z": "幫助",
+    "j": "助け",
+    "e": "help",
+    "b": "help",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The pain relievers are beside the cold medicine.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "pain relievers",
+    "z": "止痛藥",
+    "j": "痛みを和らげる薬",
+    "e": "pain relievers",
+    "b": "pain reliever",
+    "p": "noun"
+   },
+   {
+    "t": " are beside the "
+   },
+   {
+    "t": "cold medicine",
+    "z": "感冒藥",
+    "j": "風邪の薬",
+    "e": "cold medicine",
+    "b": "cold medicine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since there were several kinds of pain reliever, I compared the labels before buying one.": [
+   {
+    "t": "Since there were "
+   },
+   {
+    "t": "several kinds",
+    "z": "幾種",
+    "j": "いくつかの種類",
+    "e": "several kinds",
+    "b": "kind",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "pain reliever",
+    "z": "止痛藥",
+    "j": "痛みを和らげる薬",
+    "e": "pain reliever",
+    "b": "pain reliever",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "compared",
+    "z": "比較",
+    "j": "比べました",
+    "e": "compared",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "labels",
+    "z": "標籤",
+    "j": "ラベル",
+    "e": "labels",
+    "b": "label",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "buying",
+    "z": "購買",
+    "j": "買うこと",
+    "e": "buying",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " one."
+   }
+  ],
+  "I am looking for the stomach medicine shelf.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "am looking for",
+    "z": "正在尋找",
+    "j": "探しています",
+    "e": "am looking for",
+    "b": "look for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "stomach medicine",
+    "z": "腸胃藥",
+    "j": "胃腸薬",
+    "e": "stomach medicine",
+    "b": "stomach medicine",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "shelf",
+    "z": "架子",
+    "j": "棚",
+    "e": "shelf",
+    "b": "shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The packages looked similar, so I checked the description of each stomach medicine.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "packages",
+    "z": "包裝",
+    "j": "箱",
+    "e": "packages",
+    "b": "package",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked similar",
+    "z": "看起來相似",
+    "j": "似ていた",
+    "e": "looked similar",
+    "b": "look similar",
+    "p": "phrase"
+   },
+   {
+    "t": ", so I "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "description",
+    "z": "說明",
+    "j": "説明",
+    "e": "description",
+    "b": "description",
+    "p": "noun"
+   },
+   {
+    "t": " of each "
+   },
+   {
+    "t": "stomach medicine",
+    "z": "腸胃藥",
+    "j": "胃腸薬",
+    "e": "stomach medicine",
+    "b": "stomach medicine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Is the allergy medicine in this aisle?": [
+   {
+    "t": "Is the "
+   },
+   {
+    "t": "allergy medicine",
+    "z": "過敏藥",
+    "j": "アレルギーの薬",
+    "e": "allergy medicine",
+    "b": "allergy medicine",
+    "p": "noun"
+   },
+   {
+    "t": " in this "
+   },
+   {
+    "t": "aisle",
+    "z": "走道",
+    "j": "通路",
+    "e": "aisle",
+    "b": "aisle",
+    "p": "noun"
+   },
+   {
+    "t": "?"
+   }
+  ],
+  "Because pollen season had started, the store had moved the allergy medicine near the entrance.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "pollen season",
+    "z": "花粉季節",
+    "j": "花粉の季節",
+    "e": "pollen season",
+    "b": "pollen season",
+    "p": "noun"
+   },
+   {
+    "t": " had started, the "
+   },
+   {
+    "t": "store",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "store",
+    "p": "noun"
+   },
+   {
+    "t": " had "
+   },
+   {
+    "t": "moved",
+    "z": "移動了",
+    "j": "移しました",
+    "e": "moved",
+    "b": "move",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "allergy medicine",
+    "z": "過敏藥",
+    "j": "アレルギーの薬",
+    "e": "allergy medicine",
+    "b": "allergy medicine",
+    "p": "noun"
+   },
+   {
+    "t": " near the "
+   },
+   {
+    "t": "entrance",
+    "z": "入口",
+    "j": "入口",
+    "e": "entrance",
+    "b": "entrance",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought eye drops at the drugstore.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "eye drops",
+    "z": "眼藥水",
+    "j": "目薬",
+    "e": "eye drops",
+    "b": "eye drop",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "drugstore",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "drugstore",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the eye drops came in several types, I read the package carefully before choosing one.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "eye drops",
+    "z": "眼藥水",
+    "j": "目薬",
+    "e": "eye drops",
+    "b": "eye drop",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "came in",
+    "z": "有",
+    "j": "ありました",
+    "e": "came in",
+    "b": "come in",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "several",
+    "z": "幾個",
+    "j": "いくつか",
+    "e": "several",
+    "b": "several",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "types",
+    "z": "種類",
+    "j": "種類",
+    "e": "types",
+    "b": "type",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "read",
+    "z": "讀",
+    "j": "読みました",
+    "e": "read",
+    "b": "read",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "package",
+    "z": "包裝",
+    "j": "箱",
+    "e": "package",
+    "b": "package",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "carefully",
+    "z": "仔細地",
+    "j": "よく",
+    "e": "carefully",
+    "b": "carefully",
+    "p": "adverb"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "choosing",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choosing",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " one."
+   }
+  ],
+  "I keep cough drops in my bag.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "keep",
+    "z": "放置",
+    "j": "入れておく",
+    "e": "keep",
+    "b": "keep",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cough drops",
+    "z": "喉糖",
+    "j": "のど飴",
+    "e": "cough drops",
+    "b": "cough drop",
+    "p": "noun"
+   },
+   {
+    "t": " in my "
+   },
+   {
+    "t": "bag",
+    "z": "包包",
+    "j": "かばん",
+    "e": "bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my throat felt dry on the train, I bought a pack of cough drops at the station drugstore.": [
+   {
+    "t": "Because my "
+   },
+   {
+    "t": "throat",
+    "z": "喉嚨",
+    "j": "のど",
+    "e": "throat",
+    "b": "throat",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "felt dry",
+    "z": "感覺乾燥",
+    "j": "乾いた",
+    "e": "felt dry",
+    "b": "feel dry",
+    "p": "verb"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "train",
+    "z": "電車",
+    "j": "電車",
+    "e": "train",
+    "b": "train",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "pack",
+    "z": "一包",
+    "j": "一袋",
+    "e": "a pack",
+    "b": "pack",
+    "p": "numeral"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "cough drops",
+    "z": "喉糖",
+    "j": "のど飴",
+    "e": "cough drops",
+    "b": "cough drop",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "station drugstore",
+    "z": "車站藥妝店",
+    "j": "駅のドラッグストア",
+    "e": "station drugstore",
+    "b": "station drugstore",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I need an adhesive bandage for my finger.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "need",
+    "z": "需要",
+    "j": "必要とする",
+    "e": "need",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "adhesive bandage",
+    "z": "OK 繃",
+    "j": "絆創膏",
+    "e": "adhesive bandage",
+    "b": "adhesive bandage",
+    "p": "noun"
+   },
+   {
+    "t": " for my "
+   },
+   {
+    "t": "finger",
+    "z": "手指",
+    "j": "指",
+    "e": "finger",
+    "b": "finger",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the usual adhesive bandage came off in the rain, I looked for a waterproof one.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "usual adhesive bandage",
+    "z": "平常用的 OK 繃",
+    "j": "いつもの絆創膏",
+    "e": "usual adhesive bandage",
+    "b": "usual adhesive bandage",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "came off",
+    "z": "脫落",
+    "j": "はがれた",
+    "e": "came off",
+    "b": "come off",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "rain",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "rain",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "looked for",
+    "z": "尋找",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "look for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "waterproof",
+    "z": "防水",
+    "j": "防水",
+    "e": "waterproof",
+    "b": "waterproof",
+    "p": "adjective"
+   },
+   {
+    "t": " one."
+   }
+  ],
+  "The gauze pads are next to the bandages.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "gauze pads",
+    "z": "紗布墊",
+    "j": "ガーゼのパッド",
+    "e": "gauze pads",
+    "b": "gauze pad",
+    "p": "noun"
+   },
+   {
+    "t": " are next to the "
+   },
+   {
+    "t": "bandages",
+    "z": "OK 繃",
+    "j": "絆創膏",
+    "e": "adhesive bandages",
+    "b": "bandage",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought a larger gauze pad because the small one would not cover the whole scrape.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "larger",
+    "z": "較大的",
+    "j": "大きめの",
+    "e": "larger",
+    "b": "large",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "gauze pad",
+    "z": "紗布墊",
+    "j": "ガーゼパッド",
+    "e": "gauze pad",
+    "b": "gauze pad",
+    "p": "noun"
+   },
+   {
+    "t": " because the "
+   },
+   {
+    "t": "small one",
+    "z": "小的那個",
+    "j": "小さいもの",
+    "e": "small one",
+    "b": "small one",
+    "p": "noun"
+   },
+   {
+    "t": " would not "
+   },
+   {
+    "t": "cover",
+    "z": "覆蓋",
+    "j": "覆う",
+    "e": "cover",
+    "b": "cover",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "whole scrape",
+    "z": "整個擦傷",
+    "j": "擦り傷全体",
+    "e": "whole scrape",
+    "b": "scrape",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The thermometer is in the health section.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "thermometer",
+    "z": "體溫計",
+    "j": "体温を測る器具",
+    "e": "thermometer",
+    "b": "thermometer",
+    "p": "noun"
+   },
+   {
+    "t": " is in the "
+   },
+   {
+    "t": "health section",
+    "z": "健康區",
+    "j": "健康用品の売り場",
+    "e": "health section",
+    "b": "health section",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After our thermometer stopped working, we compared two models at the drugstore.": [
+   {
+    "t": "After our "
+   },
+   {
+    "t": "thermometer",
+    "z": "體溫計",
+    "j": "体温を測る器具",
+    "e": "thermometer",
+    "b": "thermometer",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "stopped working",
+    "z": "停止運作",
+    "j": "動かなくなった",
+    "e": "stopped working",
+    "b": "stop working",
+    "p": "phrasal verb"
+   },
+   {
+    "t": ", we "
+   },
+   {
+    "t": "compared",
+    "z": "比較",
+    "j": "比べました",
+    "e": "compared",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "two models",
+    "z": "兩種型號",
+    "j": "二つの機種",
+    "e": "two models",
+    "b": "model",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "drugstore",
+    "z": "藥妝店",
+    "j": "薬や日用品を売る店",
+    "e": "drugstore",
+    "b": "drugstore",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought a box of surgical masks.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "box",
+    "z": "盒子",
+    "j": "箱",
+    "e": "box",
+    "b": "box",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "surgical masks",
+    "z": "醫用口罩",
+    "j": "不織布マスク",
+    "e": "surgical masks",
+    "b": "surgical mask",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the small masks did not fit well, I checked the size chart before buying another box.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "small masks",
+    "z": "小口罩",
+    "j": "小さめのマスク",
+    "e": "small masks",
+    "b": "small mask",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "did not fit well",
+    "z": "不合適",
+    "j": "合わなかった",
+    "e": "did not fit well",
+    "b": "fit well",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "size chart",
+    "z": "尺寸表",
+    "j": "サイズ表",
+    "e": "size chart",
+    "b": "size chart",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "buying",
+    "z": "買",
+    "j": "買う",
+    "e": "buying",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "another box",
+    "z": "另一盒",
+    "j": "次の箱",
+    "e": "another box",
+    "b": "another box",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I need sunscreen for the beach.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "need",
+    "z": "需要",
+    "j": "必要とします",
+    "e": "need",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sunscreen",
+    "z": "防曬乳",
+    "j": "日焼け止め",
+    "e": "sunscreen",
+    "b": "sunscreen",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "beach",
+    "z": "海灘",
+    "j": "海",
+    "e": "beach",
+    "b": "beach",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The forecast said it would be sunny, so I bought sunscreen before our outdoor trip.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "forecast",
+    "z": "天氣預報",
+    "j": "予報",
+    "e": "forecast",
+    "b": "forecast",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "said",
+    "z": "說",
+    "j": "言いました",
+    "e": "said",
+    "b": "say",
+    "p": "verb"
+   },
+   {
+    "t": " it would be "
+   },
+   {
+    "t": "sunny",
+    "z": "晴朗",
+    "j": "晴れ",
+    "e": "sunny",
+    "b": "sunny",
+    "p": "adjective"
+   },
+   {
+    "t": ", so I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sunscreen",
+    "z": "防曬乳",
+    "j": "日焼け止め",
+    "e": "sunscreen",
+    "b": "sunscreen",
+    "p": "noun"
+   },
+   {
+    "t": " before our "
+   },
+   {
+    "t": "outdoor trip",
+    "z": "戶外旅行",
+    "j": "屋外の旅行",
+    "e": "outdoor trip",
+    "b": "outdoor trip",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I left my lip balm at home.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "left",
+    "z": "忘在",
+    "j": "忘れました",
+    "e": "left",
+    "b": "leave",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "lip balm",
+    "z": "護唇膏",
+    "j": "リップクリーム",
+    "e": "lip balm",
+    "b": "lip balm",
+    "p": "noun"
+   },
+   {
+    "t": " at "
+   },
+   {
+    "t": "home",
+    "z": "家",
+    "j": "家",
+    "e": "home",
+    "b": "home",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the air was dry, I picked up a new lip balm while buying shampoo.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "air",
+    "z": "空氣",
+    "j": "空気",
+    "e": "air",
+    "b": "air",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "dry",
+    "z": "乾燥",
+    "j": "乾燥していた",
+    "e": "dry",
+    "b": "dry",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "picked up",
+    "z": "買了",
+    "j": "買いました",
+    "e": "picked up",
+    "b": "pick up",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "new",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "new",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "lip balm",
+    "z": "護唇膏",
+    "j": "リップクリーム",
+    "e": "lip balm",
+    "b": "lip balm",
+    "p": "noun"
+   },
+   {
+    "t": " while "
+   },
+   {
+    "t": "buying shampoo",
+    "z": "買洗髮精",
+    "j": "シャンプーを買う",
+    "e": "buying shampoo",
+    "b": "buy shampoo",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "These sheet masks come in a small pack.": [
+   {
+    "t": "These "
+   },
+   {
+    "t": "sheet masks",
+    "z": "面膜",
+    "j": "シートマスク",
+    "e": "sheet masks",
+    "b": "sheet mask",
+    "p": "noun"
+   },
+   {
+    "t": " come in a "
+   },
+   {
+    "t": "small pack",
+    "z": "小包裝",
+    "j": "少量パック",
+    "e": "small pack",
+    "b": "small pack",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since I wanted to try it first, I bought a single sheet mask instead of a large box.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wanted to try",
+    "z": "想試用",
+    "j": "試してみたかった",
+    "e": "wanted to try",
+    "b": "want to try",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "first",
+    "z": "先",
+    "j": "最初に",
+    "e": "first",
+    "b": "first",
+    "p": "adverb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "single sheet mask",
+    "z": "單片面膜",
+    "j": "シートマスク一枚",
+    "e": "single sheet mask",
+    "b": "sheet mask",
+    "p": "noun"
+   },
+   {
+    "t": " instead of a "
+   },
+   {
+    "t": "large box",
+    "z": "大盒子",
+    "j": "大きな箱",
+    "e": "large box",
+    "b": "box",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The facial toner is beside the face wash.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "facial toner",
+    "z": "化妝水",
+    "j": "顔の手入れに使う水",
+    "e": "facial toner",
+    "b": "facial toner",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "beside"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "face wash",
+    "z": "洗面乳",
+    "j": "洗顔料",
+    "e": "face wash",
+    "b": "face wash",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I compared the bottle sizes because I wanted a facial toner that would fit in my travel bag.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "compared",
+    "z": "比較",
+    "j": "比べました",
+    "e": "compared",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "bottle sizes",
+    "z": "瓶子大小",
+    "j": "ボトルの大きさ",
+    "e": "bottle sizes",
+    "b": "bottle size",
+    "p": "noun"
+   },
+   {
+    "t": " because I "
+   },
+   {
+    "t": "wanted",
+    "z": "想要",
+    "j": "欲しかった",
+    "e": "wanted",
+    "b": "want",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "facial toner",
+    "z": "化妝水",
+    "j": "顔の手入れに使う水",
+    "e": "facial toner",
+    "b": "facial toner",
+    "p": "noun"
+   },
+   {
+    "t": " that would "
+   },
+   {
+    "t": "fit in",
+    "z": "放入",
+    "j": "入る",
+    "e": "fit in",
+    "b": "fit in",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "travel bag",
+    "z": "旅行包",
+    "j": "旅行かばん",
+    "e": "travel bag",
+    "b": "travel bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This facial serum comes in a small bottle.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "facial serum",
+    "z": "臉部精華液",
+    "j": "顔の美容液",
+    "e": "facial serum",
+    "b": "facial serum",
+    "p": "noun"
+   },
+   {
+    "t": " comes in a "
+   },
+   {
+    "t": "small bottle",
+    "z": "小瓶子",
+    "j": "小さな瓶",
+    "e": "small bottle",
+    "b": "small bottle",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The shelf had many facial serums, so I read the ingredient lists before choosing one.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "shelf",
+    "z": "架子",
+    "j": "棚",
+    "e": "shelf",
+    "b": "shelf",
+    "p": "noun"
+   },
+   {
+    "t": " had many "
+   },
+   {
+    "t": "facial serums",
+    "z": "臉部精華液",
+    "j": "美容液",
+    "e": "facial serums",
+    "b": "facial serum",
+    "p": "noun"
+   },
+   {
+    "t": ", so I "
+   },
+   {
+    "t": "read",
+    "z": "閱讀",
+    "j": "読む",
+    "e": "read",
+    "b": "read",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "ingredient lists",
+    "z": "成分列表",
+    "j": "成分表示",
+    "e": "ingredient lists",
+    "b": "ingredient list",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "choosing",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choosing",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " one."
+   }
+  ],
+  "I am looking for liquid foundation.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " am "
+   },
+   {
+    "t": "looking for",
+    "z": "尋找",
+    "j": "探しています",
+    "e": "looking for",
+    "b": "look for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "liquid foundation",
+    "z": "液態粉底",
+    "j": "リキッドファンデーション",
+    "e": "liquid foundation",
+    "b": "liquid foundation",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the first shade looked too dark, I compared the foundation samples under the store light.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "first shade",
+    "z": "第一色號",
+    "j": "最初の色",
+    "e": "first shade",
+    "b": "first shade",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked",
+    "z": "看起來",
+    "j": "見えた",
+    "e": "looked",
+    "b": "look",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "too dark",
+    "z": "太暗",
+    "j": "濃く",
+    "e": "too dark",
+    "b": "dark",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "compared",
+    "z": "比較",
+    "j": "比べました",
+    "e": "compared",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "foundation samples",
+    "z": "粉底樣品",
+    "j": "ファンデーションの見本",
+    "e": "foundation samples",
+    "b": "foundation sample",
+    "p": "noun"
+   },
+   {
+    "t": " under the "
+   },
+   {
+    "t": "store light",
+    "z": "店內燈光",
+    "j": "店の照明",
+    "e": "store light",
+    "b": "store light",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The concealer is in the makeup aisle.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "concealer",
+    "z": "遮瑕膏",
+    "j": "色むらを隠す化粧品",
+    "e": "concealer",
+    "b": "concealer",
+    "p": "noun"
+   },
+   {
+    "t": " is in the "
+   },
+   {
+    "t": "makeup aisle",
+    "z": "化妝品走道",
+    "j": "化粧品売り場の通路",
+    "e": "makeup aisle",
+    "b": "makeup aisle",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I tested the concealer on my hand because the color on the package was hard to judge.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "tested",
+    "z": "測試",
+    "j": "試しました",
+    "e": "tested",
+    "b": "test",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "concealer",
+    "z": "遮瑕膏",
+    "j": "色むらを隠す化粧品",
+    "e": "concealer",
+    "b": "concealer",
+    "p": "noun"
+   },
+   {
+    "t": " on "
+   },
+   {
+    "t": "my hand",
+    "z": "我的手",
+    "j": "自分の手",
+    "e": "my hand",
+    "b": "my hand",
+    "p": "phrase"
+   },
+   {
+    "t": " because the "
+   },
+   {
+    "t": "color",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "color",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "package",
+    "z": "包裝",
+    "j": "包装",
+    "e": "package",
+    "b": "package",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "hard to judge",
+    "z": "難以判斷",
+    "j": "判断しにくい",
+    "e": "hard to judge",
+    "b": "hard to judge",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought a brown mascara.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "brown",
+    "z": "棕色的",
+    "j": "茶色の",
+    "e": "brown",
+    "b": "brown",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "mascara",
+    "z": "睫毛膏",
+    "j": "マスカラ",
+    "e": "mascara",
+    "b": "mascara",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since my old mascara had dried out, I checked the brush shape before buying a replacement.": [
+   {
+    "t": "Since my "
+   },
+   {
+    "t": "old",
+    "z": "舊的",
+    "j": "古い",
+    "e": "old",
+    "b": "old",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "mascara",
+    "z": "睫毛膏",
+    "j": "マスカラ",
+    "e": "mascara",
+    "b": "mascara",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "had dried out",
+    "z": "乾了",
+    "j": "乾いてしまった",
+    "e": "had dried out",
+    "b": "dry out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "brush shape",
+    "z": "刷子形狀",
+    "j": "ブラシの形",
+    "e": "brush shape",
+    "b": "brush shape",
+    "p": "phrase"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "buying",
+    "z": "買",
+    "j": "買い替える",
+    "e": "buying",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "replacement",
+    "z": "替換品",
+    "j": "買い替える",
+    "e": "replacement",
+    "b": "replacement",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This eyeliner has a thin tip.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "eyeliner",
+    "z": "眼線筆",
+    "j": "アイライナー",
+    "e": "eyeliner",
+    "b": "eyeliner",
+    "p": "noun"
+   },
+   {
+    "t": " has a "
+   },
+   {
+    "t": "thin tip",
+    "z": "細尖端",
+    "j": "細い先端",
+    "e": "thin tip",
+    "b": "thin tip",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because I wanted a softer look, I chose a brown eyeliner instead of a black one.": [
+   {
+    "t": "Because I wanted a "
+   },
+   {
+    "t": "softer look",
+    "z": "較柔和的外觀",
+    "j": "やわらかい印象",
+    "e": "softer look",
+    "b": "softer look",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "brown eyeliner",
+    "z": "棕色眼線筆",
+    "j": "茶色のアイライナー",
+    "e": "brown eyeliner",
+    "b": "brown eyeliner",
+    "p": "phrase"
+   },
+   {
+    "t": " instead of a "
+   },
+   {
+    "t": "black one",
+    "z": "黑色的那一支",
+    "j": "黒のアイライナー",
+    "e": "black one",
+    "b": "black one",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The lipstick is on sale today.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "lipstick",
+    "z": "口紅",
+    "j": "口紅",
+    "e": "lipstick",
+    "b": "lipstick",
+    "p": "noun"
+   },
+   {
+    "t": " is on "
+   },
+   {
+    "t": "sale",
+    "z": "特價",
+    "j": "特売",
+    "e": "sale",
+    "b": "sale",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "today",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I checked the lipstick color by the window because it looked different under the shelf lights.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "checked",
+    "z": "檢查了",
+    "j": "確認した",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "lipstick",
+    "z": "口紅",
+    "j": "口紅",
+    "e": "lipstick",
+    "b": "lipstick",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "color",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "color",
+    "p": "noun"
+   },
+   {
+    "t": " by the "
+   },
+   {
+    "t": "window",
+    "z": "窗戶",
+    "j": "窓",
+    "e": "window",
+    "b": "window",
+    "p": "noun"
+   },
+   {
+    "t": " because it "
+   },
+   {
+    "t": "looked different",
+    "z": "看起來不同",
+    "j": "違って見えた",
+    "e": "looked different",
+    "b": "look different",
+    "p": "phrase"
+   },
+   {
+    "t": " under the "
+   },
+   {
+    "t": "shelf lights",
+    "z": "架子燈",
+    "j": "棚の照明",
+    "e": "shelf lights",
+    "b": "shelf light",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She chose a pale pink nail polish.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "She",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "pale pink",
+    "z": "淡粉紅色",
+    "j": "薄いピンク",
+    "e": "pale pink",
+    "b": "pale pink",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "nail polish",
+    "z": "指甲油",
+    "j": "マニキュア",
+    "e": "nail polish",
+    "b": "nail polish",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the nail polish looked bright in the bottle, it appeared softer on the sample card.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "nail polish",
+    "z": "指甲油",
+    "j": "マニキュア",
+    "e": "nail polish",
+    "b": "nail polish",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked bright",
+    "z": "看起來鮮豔",
+    "j": "鮮やかに見えました",
+    "e": "looked bright",
+    "b": "look bright",
+    "p": "phrase"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "bottle",
+    "z": "瓶子",
+    "j": "瓶",
+    "e": "bottle",
+    "b": "bottle",
+    "p": "noun"
+   },
+   {
+    "t": ", it "
+   },
+   {
+    "t": "appeared softer",
+    "z": "看起來較柔和",
+    "j": "落ち着いた色でした",
+    "e": "appeared softer",
+    "b": "appear soft",
+    "p": "phrase"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "sample card",
+    "z": "樣本卡",
+    "j": "見本",
+    "e": "sample card",
+    "b": "sample card",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I need a new makeup sponge.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "need",
+    "z": "需要",
+    "j": "必要とする",
+    "e": "need",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "new",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "new",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "makeup sponge",
+    "z": "化妝海綿",
+    "j": "メイク用スポンジ",
+    "e": "makeup sponge",
+    "b": "makeup sponge",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the pack contained several makeup sponges, I bought it to replace the one I had been using.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "pack",
+    "z": "包裝",
+    "j": "パック",
+    "e": "pack",
+    "b": "pack",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "contained",
+    "z": "包含",
+    "j": "含んでいた",
+    "e": "contained",
+    "b": "contain",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "several",
+    "z": "幾個",
+    "j": "何個か",
+    "e": "several",
+    "b": "several",
+    "p": "numeral"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "makeup sponges",
+    "z": "化妝海綿",
+    "j": "メイクスポンジ",
+    "e": "makeup sponges",
+    "b": "makeup sponge",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "購入した",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " it to "
+   },
+   {
+    "t": "replace",
+    "z": "替換",
+    "j": "買い替え",
+    "e": "replace",
+    "b": "replace",
+    "p": "noun"
+   },
+   {
+    "t": " the one I had been "
+   },
+   {
+    "t": "using",
+    "z": "使用",
+    "j": "使っていた",
+    "e": "using",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The hair dye is on the bottom shelf.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "hair dye",
+    "z": "染髮劑",
+    "j": "髪を染める薬剤",
+    "e": "hair dye",
+    "b": "hair dye",
+    "p": "noun"
+   },
+   {
+    "t": " is on the "
+   },
+   {
+    "t": "bottom shelf",
+    "z": "最底層的架子",
+    "j": "一番下の棚",
+    "e": "bottom shelf",
+    "b": "bottom shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I compared two shades of hair dye because the photos on the boxes looked almost the same.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "compared",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "two shades",
+    "z": "兩種色調",
+    "j": "二色の色合い",
+    "e": "two shades",
+    "b": "shade",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "hair dye",
+    "z": "染髮劑",
+    "j": "髪を染める薬剤",
+    "e": "hair dye",
+    "b": "hair dye",
+    "p": "noun"
+   },
+   {
+    "t": " because the "
+   },
+   {
+    "t": "photos",
+    "z": "照片",
+    "j": "写真",
+    "e": "photos",
+    "b": "photo",
+    "p": "noun"
+   },
+   {
+    "t": " on the "
+   },
+   {
+    "t": "boxes",
+    "z": "盒子",
+    "j": "箱",
+    "e": "boxes",
+    "b": "box",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked almost the same",
+    "z": "看起來幾乎一樣",
+    "j": "ほとんど同じに見えた",
+    "e": "looked almost the same",
+    "b": "look almost the same",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The contact lens solution is near the eye drops.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "contact lens solution",
+    "z": "隱形眼鏡保養液",
+    "j": "コンタクトレンズの洗浄液",
+    "e": "contact lens solution",
+    "b": "contact lens solution",
+    "p": "noun"
+   },
+   {
+    "t": " is near the "
+   },
+   {
+    "t": "eye drops",
+    "z": "眼藥水",
+    "j": "目にさす薬液",
+    "e": "eye drops",
+    "b": "eye drop",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because I was traveling with only a small bag, I looked for a travel-size bottle of contact lens solution.": [
+   {
+    "t": "Because I was "
+   },
+   {
+    "t": "traveling",
+    "z": "旅行",
+    "j": "旅行すること",
+    "e": "traveling",
+    "b": "travel",
+    "p": "verb"
+   },
+   {
+    "t": " with only a "
+   },
+   {
+    "t": "small bag",
+    "z": "小包包",
+    "j": "小さいかばん",
+    "e": "small bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": ", I looked for a "
+   },
+   {
+    "t": "travel-size bottle",
+    "z": "旅行用小瓶",
+    "j": "旅行に適した小さいボトル",
+    "e": "travel-size bottle",
+    "b": "bottle",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "contact lens solution",
+    "z": "隱形眼鏡保養液",
+    "j": "コンタクトレンズの洗浄液",
+    "e": "contact lens solution",
+    "b": "contact lens solution",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought insect repellent for the hike.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "insect repellent",
+    "z": "防蚊液",
+    "j": "虫よけスプレー",
+    "e": "insect repellent",
+    "b": "insect repellent",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "hike",
+    "z": "健行",
+    "j": "ハイキング",
+    "e": "hike",
+    "b": "hike",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since we planned to walk near the river at dusk, I added insect repellent to the shopping list.": [
+   {
+    "t": "Since we "
+   },
+   {
+    "t": "planned",
+    "z": "計劃了",
+    "j": "予定した",
+    "e": "planned",
+    "b": "plan",
+    "p": "verb"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "walk near",
+    "z": "在附近走",
+    "j": "近くを歩く",
+    "e": "walk near",
+    "b": "walk near",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "river",
+    "z": "河",
+    "j": "川",
+    "e": "river",
+    "b": "river",
+    "p": "noun"
+   },
+   {
+    "t": " at "
+   },
+   {
+    "t": "dusk",
+    "z": "黃昏",
+    "j": "夕方",
+    "e": "dusk",
+    "b": "dusk",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "added",
+    "z": "加了",
+    "j": "加えました",
+    "e": "added",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "insect repellent",
+    "z": "防蚊液",
+    "j": "虫よけスプレー",
+    "e": "insect repellent",
+    "b": "insect repellent",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "shopping list",
+    "z": "購物清單",
+    "j": "買い物リスト",
+    "e": "shopping list",
+    "b": "shopping list",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Vitamin supplements are on the top shelf.": [
+   {
+    "t": "Vitamin supplements",
+    "z": "維他命補充品",
+    "j": "ビタミンサプリメント",
+    "e": "Vitamin supplements",
+    "b": "vitamin supplement",
+    "p": "noun"
+   },
+   {
+    "t": " are on the "
+   },
+   {
+    "t": "top shelf",
+    "z": "最上層架子",
+    "j": "一番上の棚",
+    "e": "top shelf",
+    "b": "top shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the bottles looked similar, I checked the labels before choosing a vitamin supplement.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "bottles",
+    "z": "瓶子",
+    "j": "ボトル",
+    "e": "bottles",
+    "b": "bottle",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked similar",
+    "z": "看起來相似",
+    "j": "似ていた",
+    "e": "looked similar",
+    "b": "look similar",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "labels",
+    "z": "標籤",
+    "j": "表示",
+    "e": "labels",
+    "b": "label",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "choosing",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choosing",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "vitamin supplement",
+    "z": "維他命補充品",
+    "j": "ビタミンサプリ",
+    "e": "vitamin supplement",
+    "b": "vitamin supplement",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The cooling gel sheets are by the thermometers.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "cooling gel sheets",
+    "z": "退熱貼",
+    "j": "冷却シート",
+    "e": "cooling gel sheets",
+    "b": "cooling gel sheet",
+    "p": "noun"
+   },
+   {
+    "t": " are by the "
+   },
+   {
+    "t": "thermometers",
+    "z": "體溫計",
+    "j": "体温計",
+    "e": "thermometers",
+    "b": "thermometer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The package had several cooling gel sheets, so I put one pack in our travel bag.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "package",
+    "z": "包裝",
+    "j": "袋",
+    "e": "package",
+    "b": "package",
+    "p": "noun"
+   },
+   {
+    "t": " had several "
+   },
+   {
+    "t": "cooling gel sheets",
+    "z": "退熱貼",
+    "j": "冷却シート",
+    "e": "cooling gel sheets",
+    "b": "cooling gel sheet",
+    "p": "noun"
+   },
+   {
+    "t": ", so I put "
+   },
+   {
+    "t": "one pack",
+    "z": "一包",
+    "j": "一袋",
+    "e": "one pack",
+    "b": "one pack",
+    "p": "phrase"
+   },
+   {
+    "t": " in our "
+   },
+   {
+    "t": "travel bag",
+    "z": "旅行包",
+    "j": "旅行かばん",
+    "e": "travel bag",
+    "b": "travel bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought makeup remover wipes for my trip.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "makeup remover wipes",
+    "z": "卸妝濕巾",
+    "j": "クレンジングシート",
+    "e": "makeup remover wipes",
+    "b": "makeup remover wipe",
+    "p": "noun"
+   },
+   {
+    "t": " for my "
+   },
+   {
+    "t": "trip",
+    "z": "旅行",
+    "j": "旅行",
+    "e": "trip",
+    "b": "trip",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because I forgot my cleanser, I used makeup remover wipes before bed.": [
+   {
+    "t": "Because I "
+   },
+   {
+    "t": "forgot",
+    "z": "忘記了",
+    "j": "忘れた",
+    "e": "forgot",
+    "b": "forget",
+    "p": "verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "cleanser",
+    "z": "洗面乳",
+    "j": "洗顔料",
+    "e": "cleanser",
+    "b": "cleanser",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "used",
+    "z": "用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "makeup remover wipes",
+    "z": "卸妝濕巾",
+    "j": "クレンジングシート",
+    "e": "makeup remover wipes",
+    "b": "makeup remover wipe",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "bed",
+    "z": "床",
+    "j": "寝る前",
+    "e": "bed",
+    "b": "bed",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "My hand cream is in my bag.": [
+   {
+    "t": "My "
+   },
+   {
+    "t": "hand cream",
+    "z": "護手霜",
+    "j": "ハンドクリーム",
+    "e": "hand cream",
+    "b": "hand cream",
+    "p": "noun"
+   },
+   {
+    "t": " is in my "
+   },
+   {
+    "t": "bag",
+    "z": "包包",
+    "j": "バッグ",
+    "e": "bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After washing my hands several times, I bought a small hand cream for work.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "washing",
+    "z": "洗手",
+    "j": "手をきれいにすること",
+    "e": "washing",
+    "b": "wash",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my hands",
+    "z": "我的手",
+    "j": "自分の手",
+    "e": "my hands",
+    "b": "hand",
+    "p": "noun"
+   },
+   {
+    "t": " several times, I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "購入した",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "small hand cream",
+    "z": "小護手霜",
+    "j": "小さいサイズの手を保護するクリーム",
+    "e": "small hand cream",
+    "b": "hand cream",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "for work",
+    "z": "為工作",
+    "j": "仕事のために",
+    "e": "for work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This face powder comes with a soft puff.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "face powder",
+    "z": "蜜粉",
+    "j": "フェイスパウダー",
+    "e": "face powder",
+    "b": "face powder",
+    "p": "noun"
+   },
+   {
+    "t": " comes with a "
+   },
+   {
+    "t": "soft puff",
+    "z": "柔軟的粉撲",
+    "j": "柔らかい化粧用スポンジ",
+    "e": "soft puff",
+    "b": "puff",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since my makeup looked shiny under the store lights, I tried a little face powder.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "my makeup",
+    "z": "我的妝容",
+    "j": "私の化粧",
+    "e": "my makeup",
+    "b": "makeup",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked shiny",
+    "z": "看起來泛油光",
+    "j": "テカって見えた",
+    "e": "looked shiny",
+    "b": "look shiny",
+    "p": "verb"
+   },
+   {
+    "t": " under the "
+   },
+   {
+    "t": "store lights",
+    "z": "商店燈光",
+    "j": "店の照明",
+    "e": "store lights",
+    "b": "store light",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "tried",
+    "z": "嘗試了",
+    "j": "試しました",
+    "e": "tried",
+    "b": "try",
+    "p": "verb"
+   },
+   {
+    "t": " a little "
+   },
+   {
+    "t": "face powder",
+    "z": "蜜粉",
+    "j": "フェイスパウダー",
+    "e": "face powder",
+    "b": "face powder",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She chose a peach blush.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "peach blush",
+    "z": "桃色腮紅",
+    "j": "桃色のチーク",
+    "e": "peach blush",
+    "b": "peach blush",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I compared two blush shades because one looked too bright on my skin.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "compared",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "compare",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "two blush shades",
+    "z": "兩種腮紅色調",
+    "j": "二つのチークの色",
+    "e": "two blush shades",
+    "b": "blush shade",
+    "p": "noun"
+   },
+   {
+    "t": " because "
+   },
+   {
+    "t": "one",
+    "z": "一個",
+    "j": "一つ",
+    "e": "one",
+    "b": "one",
+    "p": "numeral"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked too bright",
+    "z": "看起來太亮",
+    "j": "明るすぎて見えた",
+    "e": "looked too bright",
+    "b": "look too bright",
+    "p": "verb"
+   },
+   {
+    "t": " on "
+   },
+   {
+    "t": "my skin",
+    "z": "我的皮膚",
+    "j": "私の肌",
+    "e": "my skin",
+    "b": "skin",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This eyeshadow comes in four colors.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "eyeshadow",
+    "z": "眼影",
+    "j": "アイシャドウ",
+    "e": "eyeshadow",
+    "b": "eyeshadow",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "comes in",
+    "z": "有",
+    "j": "入っています",
+    "e": "comes in",
+    "b": "come in",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "four colors",
+    "z": "四色",
+    "j": "四色",
+    "e": "four colors",
+    "b": "four colors",
+    "p": "numeral"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the eyeshadow looked dark in the case, it appeared lighter on my hand.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "eyeshadow",
+    "z": "眼影",
+    "j": "アイシャドウ",
+    "e": "eyeshadow",
+    "b": "eyeshadow",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked dark",
+    "z": "看起來很深",
+    "j": "濃く見えました",
+    "e": "looked dark",
+    "b": "look dark",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "in the case",
+    "z": "在盒子裡",
+    "j": "ケースの中",
+    "e": "in the case",
+    "b": "in the case",
+    "p": "phrase"
+   },
+   {
+    "t": ", it "
+   },
+   {
+    "t": "appeared lighter",
+    "z": "看起來比較淺",
+    "j": "薄く見えました",
+    "e": "appeared lighter",
+    "b": "appear light",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "on my hand",
+    "z": "在我的手上",
+    "j": "手に",
+    "e": "on my hand",
+    "b": "on my hand",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I need a brown eyebrow pencil.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "need",
+    "z": "需要",
+    "j": "必要とする",
+    "e": "need",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "brown",
+    "z": "棕色的",
+    "j": "茶色の",
+    "e": "brown",
+    "b": "brown",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "eyebrow pencil",
+    "z": "眉筆",
+    "j": "アイブロウペンシル",
+    "e": "eyebrow pencil",
+    "b": "eyebrow pencil",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the tip of my old eyebrow pencil broke, I looked for one with a refill.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "tip",
+    "z": "尖端",
+    "j": "先端",
+    "e": "tip",
+    "b": "tip",
+    "p": "noun"
+   },
+   {
+    "t": " of my "
+   },
+   {
+    "t": "old",
+    "z": "舊的",
+    "j": "古い",
+    "e": "old",
+    "b": "old",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "eyebrow pencil",
+    "z": "眉筆",
+    "j": "アイブロウペンシル",
+    "e": "eyebrow pencil",
+    "b": "eyebrow pencil",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "broke",
+    "z": "斷了",
+    "j": "折れた",
+    "e": "broke",
+    "b": "break",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "looked for",
+    "z": "尋找",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "look for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " one with a "
+   },
+   {
+    "t": "refill",
+    "z": "替芯",
+    "j": "替え芯",
+    "e": "refill",
+    "b": "refill",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This lip gloss is clear.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "lip gloss",
+    "z": "唇蜜",
+    "j": "リップグロス",
+    "e": "lip gloss",
+    "b": "lip gloss",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "clear",
+    "z": "透明的",
+    "j": "透明な",
+    "e": "clear",
+    "b": "clear",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I checked the lip gloss tester because the color in the tube was hard to judge.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "checked",
+    "z": "檢查",
+    "j": "確認した",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "lip gloss",
+    "z": "唇蜜",
+    "j": "リップグロス",
+    "e": "lip gloss",
+    "b": "lip gloss",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "tester",
+    "z": "試用品",
+    "j": "試すためのもの",
+    "e": "tester",
+    "b": "tester",
+    "p": "noun"
+   },
+   {
+    "t": " because the "
+   },
+   {
+    "t": "color",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "color",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "tube",
+    "z": "管子",
+    "j": "容器の一種",
+    "e": "tube",
+    "b": "tube",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "hard to judge",
+    "z": "難以判斷",
+    "j": "判断しにくい",
+    "e": "hard to judge",
+    "b": "hard to judge",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The makeup brushes are beside the sponges.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "makeup brushes",
+    "z": "化妝刷",
+    "j": "化粧に使うブラシ",
+    "e": "makeup brushes",
+    "b": "makeup brush",
+    "p": "noun"
+   },
+   {
+    "t": " are beside the "
+   },
+   {
+    "t": "sponges",
+    "z": "海綿",
+    "j": "スポンジ",
+    "e": "sponges",
+    "b": "sponge",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since I wanted to spread the powder evenly, I chose a soft makeup brush.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wanted to spread",
+    "z": "想要塗抹",
+    "j": "広げたかった",
+    "e": "wanted to spread",
+    "b": "want to spread",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "powder",
+    "z": "粉末",
+    "j": "パウダー",
+    "e": "powder",
+    "b": "powder",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "evenly",
+    "z": "均勻地",
+    "j": "むらなく",
+    "e": "evenly",
+    "b": "evenly",
+    "p": "adverb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "soft",
+    "z": "柔軟的",
+    "j": "柔らかい",
+    "e": "soft",
+    "b": "soft",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "makeup brush",
+    "z": "化妝刷",
+    "j": "メイクブラシ",
+    "e": "makeup brush",
+    "b": "makeup brush",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I bought a new eyelash curler.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "new",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "new",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "eyelash curler",
+    "z": "睫毛夾",
+    "j": "ビューラー",
+    "e": "eyelash curler",
+    "b": "eyelash curler",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After the rubber pad wore out, I checked whether the eyelash curler came with replacements.": [
+   {
+    "t": "After the "
+   },
+   {
+    "t": "rubber pad",
+    "z": "橡膠墊",
+    "j": "ゴムパッド",
+    "e": "rubber pad",
+    "b": "rubber pad",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore out",
+    "z": "磨損了",
+    "j": "すり減った",
+    "e": "wore out",
+    "b": "wear out",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " whether the "
+   },
+   {
+    "t": "eyelash curler",
+    "z": "睫毛夾",
+    "j": "ビューラー",
+    "e": "eyelash curler",
+    "b": "eyelash curler",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "came with replacements",
+    "z": "附有替換品",
+    "j": "替えがついている",
+    "e": "came with replacements",
+    "b": "come with replacements",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The nail polish remover is near the nail polish.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "nail polish remover",
+    "z": "去光水",
+    "j": "マニキュア落とし",
+    "e": "nail polish remover",
+    "b": "nail polish remover",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "near",
+    "z": "在附近",
+    "j": "近くにある",
+    "e": "near",
+    "b": "near",
+    "p": "preposition"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "nail polish",
+    "z": "指甲油",
+    "j": "マニキュア",
+    "e": "nail polish",
+    "b": "nail polish",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the first bottle was too large for my bag, I bought a travel-size nail polish remover.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "first bottle",
+    "z": "第一瓶",
+    "j": "最初のボトル",
+    "e": "first bottle",
+    "b": "first bottle",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "too large",
+    "z": "太大",
+    "j": "大きすぎる",
+    "e": "too large",
+    "b": "too large",
+    "p": "adjective"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "my bag",
+    "z": "我的包包",
+    "j": "私のかばん",
+    "e": "my bag",
+    "b": "my bag",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "travel-size",
+    "z": "旅行尺寸",
+    "j": "携帯用の小さいサイズ",
+    "e": "travel-size",
+    "b": "travel-size",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "nail polish remover",
+    "z": "去光水",
+    "j": "マニキュア落とし",
+    "e": "nail polish remover",
+    "b": "nail polish remover",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This hair oil comes in a small bottle.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "hair oil",
+    "z": "護髮油",
+    "j": "ヘアオイル",
+    "e": "hair oil",
+    "b": "hair oil",
+    "p": "noun"
+   },
+   {
+    "t": " comes in a "
+   },
+   {
+    "t": "small bottle",
+    "z": "小瓶",
+    "j": "小さい容器",
+    "e": "small bottle",
+    "b": "small bottle",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since my hair felt dry after swimming, I looked for a lightweight hair oil.": [
+   {
+    "t": "Since my "
+   },
+   {
+    "t": "hair",
+    "z": "頭髮",
+    "j": "髪の毛",
+    "e": "hair",
+    "b": "hair",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "felt dry",
+    "z": "感覺乾燥",
+    "j": "乾燥していると感じた",
+    "e": "felt dry",
+    "b": "feel dry",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "after swimming",
+    "z": "游泳後",
+    "j": "泳いだ後",
+    "e": "after swimming",
+    "b": "after swimming",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "looked for",
+    "z": "尋找",
+    "j": "探した",
+    "e": "looked for",
+    "b": "look for",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "lightweight",
+    "z": "輕量的",
+    "j": "軽い",
+    "e": "lightweight",
+    "b": "lightweight",
+    "p": "adjective"
+   },
+   {
+    "t": " hair oil."
+   }
+  ],
+  "The hair mask is next to the conditioner.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "hair mask",
+    "z": "髮膜",
+    "j": "ヘアマスク",
+    "e": "hair mask",
+    "b": "hair mask",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "next to",
+    "z": "在旁邊",
+    "j": "隣にある",
+    "e": "next to",
+    "b": "next to",
+    "p": "phrase"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "conditioner",
+    "z": "潤髮乳",
+    "j": "髪を柔らかくする液体",
+    "e": "conditioner",
+    "b": "conditioner",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "To try it before buying a large tub, I chose a single-use hair mask.": [
+   {
+    "t": "To "
+   },
+   {
+    "t": "try",
+    "z": "嘗試",
+    "j": "試すこと",
+    "e": "try",
+    "b": "try",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "before buying",
+    "z": "購買之前",
+    "j": "買う前の時間",
+    "e": "before buying",
+    "b": "buy",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "large tub",
+    "z": "大罐裝",
+    "j": "大きな容器",
+    "e": "large tub",
+    "b": "tub",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "single-use",
+    "z": "單次使用的",
+    "j": "一回だけ使う",
+    "e": "single-use",
+    "b": "single-use",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "hair mask",
+    "z": "髮膜",
+    "j": "ヘアマスク",
+    "e": "hair mask",
+    "b": "hair mask",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The facial mist fits in my bag.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "facial mist",
+    "z": "保濕噴霧",
+    "j": "顔に使うミスト",
+    "e": "facial mist",
+    "b": "facial mist",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "fits",
+    "z": "放得進",
+    "j": "入る",
+    "e": "fits",
+    "b": "fit",
+    "p": "verb"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "my bag",
+    "z": "我的包包",
+    "j": "私のかばん",
+    "e": "my bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "As the air in the office felt dry, I bought a travel-size facial mist.": [
+   {
+    "t": "As the "
+   },
+   {
+    "t": "air",
+    "z": "空氣",
+    "j": "空気",
+    "e": "air",
+    "b": "air",
+    "p": "noun"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "office",
+    "z": "辦公室",
+    "j": "オフィス",
+    "e": "office",
+    "b": "office",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "felt dry",
+    "z": "感覺乾燥",
+    "j": "乾燥していた",
+    "e": "felt dry",
+    "b": "feel dry",
+    "p": "verb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "travel-size",
+    "z": "旅行裝",
+    "j": "携帯用の",
+    "e": "travel-size",
+    "b": "travel-size",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "facial mist",
+    "z": "保濕噴霧",
+    "j": "ミスト化粧水",
+    "e": "facial mist",
+    "b": "facial mist",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The body scrub is on the bath-care shelf.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "body scrub",
+    "z": "身體磨砂膏",
+    "j": "ボディスクラブ",
+    "e": "body scrub",
+    "b": "body scrub",
+    "p": "noun"
+   },
+   {
+    "t": " is on the "
+   },
+   {
+    "t": "bath-care shelf",
+    "z": "浴室用品架",
+    "j": "バス用品の棚",
+    "e": "bath-care shelf",
+    "b": "bath-care shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I read the body scrub labels because I wanted one with fine grains.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "read",
+    "z": "閱讀",
+    "j": "読みました",
+    "e": "read",
+    "b": "read",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "body scrub labels",
+    "z": "身體磨砂膏標籤",
+    "j": "ボディスクラブのラベル",
+    "e": "body scrub labels",
+    "b": "body scrub label",
+    "p": "noun"
+   },
+   {
+    "t": " because I "
+   },
+   {
+    "t": "wanted",
+    "z": "想要",
+    "j": "欲しかった",
+    "e": "wanted",
+    "b": "want",
+    "p": "verb"
+   },
+   {
+    "t": " one with "
+   },
+   {
+    "t": "fine grains",
+    "z": "細顆粒",
+    "j": "細かい粒",
+    "e": "fine grains",
+    "b": "fine grain",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "This makeup primer comes in a tube.": [
+   {
+    "t": "This "
+   },
+   {
+    "t": "makeup primer",
+    "z": "妝前乳",
+    "j": "化粧の下地",
+    "e": "makeup primer",
+    "b": "makeup primer",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "comes",
+    "z": "裝在",
+    "j": "入っている",
+    "e": "is packaged",
+    "b": "come",
+    "p": "verb"
+   },
+   {
+    "t": " in a "
+   },
+   {
+    "t": "tube",
+    "z": "軟管",
+    "j": "チューブ",
+    "e": "tube",
+    "b": "tube",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Before choosing a makeup primer, I checked whether it worked with my foundation.": [
+   {
+    "t": "Before choosing",
+    "z": "在選擇之前",
+    "j": "選ぶ前に",
+    "e": "Before choosing",
+    "b": "choose",
+    "p": "phrase"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "makeup primer",
+    "z": "妝前乳",
+    "j": "化粧の下地",
+    "e": "makeup primer",
+    "b": "makeup primer",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "checked",
+    "z": "確認了",
+    "j": "確認した",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " whether it "
+   },
+   {
+    "t": "worked with",
+    "z": "搭配",
+    "j": "一緒に使える",
+    "e": "worked with",
+    "b": "work with",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " my "
+   },
+   {
+    "t": "foundation",
+    "z": "粉底",
+    "j": "顔に塗る化粧品",
+    "e": "foundation",
+    "b": "foundation",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The setting spray is beside the face powder.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "setting spray",
+    "z": "定妝噴霧",
+    "j": "メイクを固定するスプレー",
+    "e": "setting spray",
+    "b": "setting spray",
+    "p": "noun"
+   },
+   {
+    "t": " is beside the "
+   },
+   {
+    "t": "face powder",
+    "z": "蜜粉",
+    "j": "顔に使う粉",
+    "e": "face powder",
+    "b": "face powder",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my makeup wore off quickly in the heat, I bought a small setting spray.": [
+   {
+    "t": "Because my "
+   },
+   {
+    "t": "makeup",
+    "z": "化妝",
+    "j": "顔に塗る化粧品",
+    "e": "makeup",
+    "b": "makeup",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore off",
+    "z": "脫妝",
+    "j": "化粧が落ちる",
+    "e": "wore off",
+    "b": "wear off",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " quickly in the "
+   },
+   {
+    "t": "heat",
+    "z": "炎熱",
+    "j": "暑い気温",
+    "e": "heat",
+    "b": "heat",
+    "p": "noun"
+   },
+   {
+    "t": ", I bought a "
+   },
+   {
+    "t": "small",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "small",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "setting spray",
+    "z": "定妝噴霧",
+    "j": "メイクを固定するスプレー",
+    "e": "setting spray",
+    "b": "setting spray",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I keep a compact mirror in my bag.": [
+   {
+    "t": "I keep a "
+   },
+   {
+    "t": "compact mirror",
+    "z": "隨身鏡",
+    "j": "持ち運びできる鏡",
+    "e": "compact mirror",
+    "b": "compact mirror",
+    "p": "noun"
+   },
+   {
+    "t": " in my "
+   },
+   {
+    "t": "bag",
+    "z": "包包",
+    "j": "持ち物を入れる袋",
+    "e": "bag",
+    "b": "bag",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When I could not see the shade clearly, I used a compact mirror near the window.": [
+   {
+    "t": "When I "
+   },
+   {
+    "t": "could not see",
+    "z": "看不到",
+    "j": "見えなかった",
+    "e": "could not see",
+    "b": "see",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "shade",
+    "z": "色號",
+    "j": "色味",
+    "e": "shade",
+    "b": "shade",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "clearly",
+    "z": "清楚地",
+    "j": "よく",
+    "e": "clearly",
+    "b": "clearly",
+    "p": "adverb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "used",
+    "z": "使用",
+    "j": "使いました",
+    "e": "used",
+    "b": "use",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "compact mirror",
+    "z": "隨身鏡",
+    "j": "コンパクトミラー",
+    "e": "compact mirror",
+    "b": "compact mirror",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "near the window",
+    "z": "窗邊",
+    "j": "窓際",
+    "e": "near the window",
+    "b": "window side",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The nail files are beside the clippers.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "nail files",
+    "z": "指甲銼",
+    "j": "爪やすり",
+    "e": "nail files",
+    "b": "nail file",
+    "p": "noun"
+   },
+   {
+    "t": " are "
+   },
+   {
+    "t": "beside",
+    "z": "在旁邊",
+    "j": "隣に",
+    "e": "beside",
+    "b": "beside",
+    "p": "preposition"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "clippers",
+    "z": "指甲剪",
+    "j": "爪切り",
+    "e": "clippers",
+    "b": "clipper",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After trimming my nails, I bought a fine nail file to smooth the edges.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "trimming",
+    "z": "修剪",
+    "j": "爪を切ること",
+    "e": "trimming",
+    "b": "trim",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my nails",
+    "z": "我的指甲",
+    "j": "私の爪",
+    "e": "my nails",
+    "b": "nail",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "fine",
+    "z": "細緻的",
+    "j": "細かい",
+    "e": "fine",
+    "b": "fine",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "nail file",
+    "z": "指甲銼刀",
+    "j": "爪やすり",
+    "e": "nail file",
+    "b": "nail file",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "smooth",
+    "z": "使平滑",
+    "j": "なめらかにする",
+    "e": "smooth",
+    "b": "smooth",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "edges",
+    "z": "邊緣",
+    "j": "先端",
+    "e": "edges",
+    "b": "edge",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "These false eyelashes come in pairs.": [
+   {
+    "t": "These "
+   },
+   {
+    "t": "false eyelashes",
+    "z": "假睫毛",
+    "j": "つけまつげ",
+    "e": "false eyelashes",
+    "b": "false eyelash",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "come in pairs",
+    "z": "成對出售",
+    "j": "一組で売っている",
+    "e": "come in pairs",
+    "b": "come in pairs",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the first pair looked too long, I chose shorter false eyelashes for the party.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "first pair",
+    "z": "第一對",
+    "j": "最初の一組",
+    "e": "first pair",
+    "b": "pair",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "looked",
+    "z": "看起來",
+    "j": "見えた",
+    "e": "looked",
+    "b": "look",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "too long",
+    "z": "太長",
+    "j": "長すぎる",
+    "e": "too long",
+    "b": "long",
+    "p": "adjective"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "shorter false eyelashes",
+    "z": "較短的假睫毛",
+    "j": "短いつけまつげ",
+    "e": "shorter false eyelashes",
+    "b": "false eyelashes",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "party",
+    "z": "派對",
+    "j": "パーティー",
+    "e": "party",
+    "b": "party",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "The hair spray is on the top shelf.": [
+   {
+    "t": "The "
+   },
+   {
+    "t": "hair spray",
+    "z": "定型噴霧",
+    "j": "ヘアスプレー",
+    "e": "hair spray",
+    "b": "hair spray",
+    "p": "noun"
+   },
+   {
+    "t": " is on the "
+   },
+   {
+    "t": "top shelf",
+    "z": "最上層架子",
+    "j": "一番上の棚",
+    "e": "top shelf",
+    "b": "top shelf",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because I wanted my hairstyle to last through the evening, I picked a small hair spray.": [
+   {
+    "t": "Because I wanted my "
+   },
+   {
+    "t": "hairstyle",
+    "z": "髮型",
+    "j": "髪の形",
+    "e": "hairstyle",
+    "b": "hairstyle",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "last",
+    "z": "持久",
+    "j": "続く",
+    "e": "last",
+    "b": "last",
+    "p": "verb"
+   },
+   {
+    "t": " through the "
+   },
+   {
+    "t": "evening",
+    "z": "晚上",
+    "j": "夜の時間",
+    "e": "evening",
+    "b": "evening",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "picked",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "picked",
+    "b": "pick",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "small",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "small",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "hair spray",
+    "z": "定型噴霧",
+    "j": "ヘアスプレー",
+    "e": "hair spray",
+    "b": "hair spray",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ]
+ },
+ "ja": {
+  "仕事帰りにドラッグストアに寄りました。": [
+   {
+    "t": "仕事帰り",
+    "z": "下班後",
+    "j": "仕事帰り",
+    "e": "after work",
+    "b": "仕事帰り",
+    "p": "phrase",
+    "r": "しごとがえり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ドラッグストア",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "ドラッグストア",
+    "p": "noun",
+    "r": "ドラッグストア"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "寄りました",
+    "z": "順路停留",
+    "j": "立ち寄りました",
+    "e": "stopped at",
+    "b": "寄る",
+    "p": "verb",
+    "r": "よりました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "旅行用の日焼け止めが必要だったので、閉店前にドラッグストアへ行きました。": [
+   {
+    "t": "旅行用",
+    "z": "旅行用",
+    "j": "旅行用",
+    "e": "for the trip",
+    "b": "旅行用",
+    "p": "phrase",
+    "r": "りょこうよう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "日焼け止め",
+    "z": "防曬乳",
+    "j": "日焼け止め",
+    "e": "sunscreen",
+    "b": "日焼け止め",
+    "p": "noun",
+    "r": "ひやけどめ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "必要だった",
+    "z": "需要",
+    "j": "必要だった",
+    "e": "was needed",
+    "b": "必要だ",
+    "p": "adjective",
+    "r": "ひつようだった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "閉店前",
+    "z": "關門前",
+    "j": "閉店前",
+    "e": "before closing",
+    "b": "閉店前",
+    "p": "phrase",
+    "r": "へいてんまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ドラッグストア",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "ドラッグストア",
+    "p": "noun",
+    "r": "ドラッグストア"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "行きました",
+    "z": "去了",
+    "j": "行きました",
+    "e": "went",
+    "b": "行く",
+    "p": "verb",
+    "r": "いきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "この棚には市販薬があります。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "市販薬",
+    "z": "非處方藥",
+    "j": "市販薬",
+    "e": "over-the-counter medicine",
+    "b": "市販薬",
+    "p": "noun",
+    "r": "しはんやく"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "there is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "市販薬を選ぶ前に、どの商品を見ればよいか薬剤師に聞きました。": [
+   {
+    "t": "市販薬",
+    "z": "非處方藥",
+    "j": "市販薬",
+    "e": "over-the-counter medicine",
+    "b": "市販薬",
+    "p": "noun",
+    "r": "しはんやく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選ぶ",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらぶ"
+   },
+   {
+    "t": "前に",
+    "z": "之前",
+    "j": "前に",
+    "e": "before",
+    "b": "前に",
+    "p": "adverb",
+    "r": "まえに"
+   },
+   {
+    "t": "、どの"
+   },
+   {
+    "t": "商品",
+    "z": "商品",
+    "j": "商品",
+    "e": "package",
+    "b": "商品",
+    "p": "noun",
+    "r": "しょうひん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "見れば",
+    "z": "看",
+    "j": "見れば",
+    "e": "look at",
+    "b": "見る",
+    "p": "verb",
+    "r": "みれば"
+   },
+   {
+    "t": "よいか"
+   },
+   {
+    "t": "薬剤師",
+    "z": "藥劑師",
+    "j": "薬剤師",
+    "e": "pharmacist",
+    "b": "薬剤師",
+    "p": "noun",
+    "r": "やくざいし"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "聞きました",
+    "z": "問",
+    "j": "聞きました",
+    "e": "asked",
+    "b": "聞く",
+    "p": "verb",
+    "r": "ききました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "処方箋を調剤受付に出してください。": [
+   {
+    "t": "処方箋",
+    "z": "處方箋",
+    "j": "処方箋",
+    "e": "prescription",
+    "b": "処方箋",
+    "p": "noun",
+    "r": "しょほうせん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "調剤受付",
+    "z": "處方箋服務櫃台",
+    "j": "調剤受付",
+    "e": "prescription counter",
+    "b": "調剤受付",
+    "p": "noun",
+    "r": "ちょうざいうけつけ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "出してください",
+    "z": "請交出",
+    "j": "出してください",
+    "e": "please submit",
+    "b": "出す",
+    "p": "verb",
+    "r": "だしてください"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "調剤受付がすでに閉まっていたので、翌日来る前に受付時間を確認しました。": [
+   {
+    "t": "調剤受付",
+    "z": "處方箋服務櫃台",
+    "j": "調剤受付",
+    "e": "prescription counter",
+    "b": "調剤受付",
+    "p": "noun",
+    "r": "ちょうざいうけつけ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "すでに",
+    "z": "已經",
+    "j": "すでに",
+    "e": "already",
+    "b": "すでに",
+    "p": "adverb",
+    "r": "すでに"
+   },
+   {
+    "t": "閉まっていた",
+    "z": "關閉了",
+    "j": "閉まっていた",
+    "e": "was closed",
+    "b": "閉まる",
+    "p": "verb",
+    "r": "しまっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "翌日",
+    "z": "隔天",
+    "j": "翌日",
+    "e": "next day",
+    "b": "翌日",
+    "p": "noun",
+    "r": "よくじつ"
+   },
+   {
+    "t": "来る",
+    "z": "來",
+    "j": "来る",
+    "e": "come",
+    "b": "来る",
+    "p": "verb",
+    "r": "くる"
+   },
+   {
+    "t": "前に"
+   },
+   {
+    "t": "受付時間",
+    "z": "營業時間",
+    "j": "受付時間",
+    "e": "reception hours",
+    "b": "受付時間",
+    "p": "noun",
+    "r": "うけつけじかん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "二段目の棚に風邪薬がありました。": [
+   {
+    "t": "二段目",
+    "z": "第二層",
+    "j": "二段目",
+    "e": "second shelf",
+    "b": "二段目",
+    "p": "numeral",
+    "r": "にだんめ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "風邪薬",
+    "z": "感冒藥",
+    "j": "風邪薬",
+    "e": "cold medicine",
+    "b": "風邪薬",
+    "p": "noun",
+    "r": "かぜぐすり"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ありました",
+    "z": "有",
+    "j": "ありました",
+    "e": "was",
+    "b": "ある",
+    "p": "verb",
+    "r": "ありました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "風邪薬の説明が読めなかったので、薬剤師に確認しました。": [
+   {
+    "t": "風邪薬",
+    "z": "感冒藥",
+    "j": "風邪薬",
+    "e": "cold medicine",
+    "b": "風邪薬",
+    "p": "noun",
+    "r": "かぜぐすり"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "説明",
+    "z": "說明",
+    "j": "説明",
+    "e": "directions",
+    "b": "説明",
+    "p": "noun",
+    "r": "せつめい"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "読めなかった",
+    "z": "無法閱讀",
+    "j": "読めなかった",
+    "e": "could not read",
+    "b": "読む",
+    "p": "verb",
+    "r": "よめなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "薬剤師",
+    "z": "藥劑師",
+    "j": "薬剤師",
+    "e": "pharmacist",
+    "b": "薬剤師",
+    "p": "noun",
+    "r": "やくざいし"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "asked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "鎮痛薬は風邪薬の隣にあります。": [
+   {
+    "t": "鎮痛薬",
+    "z": "止痛藥",
+    "j": "痛みを和らげる薬",
+    "e": "pain reliever",
+    "b": "鎮痛薬",
+    "p": "noun",
+    "r": "ちんつうやく"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "風邪薬",
+    "z": "感冒藥",
+    "j": "風邪の薬",
+    "e": "cold medicine",
+    "b": "風邪薬",
+    "p": "noun",
+    "r": "かぜぐすり"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣",
+    "z": "旁邊",
+    "j": "隣り合う場所",
+    "e": "beside",
+    "b": "隣",
+    "p": "preposition",
+    "r": "となり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "are",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "鎮痛薬が何種類かあったので、買う前に表示を比べました。": [
+   {
+    "t": "鎮痛薬",
+    "z": "止痛藥",
+    "j": "痛みを和らげる薬",
+    "e": "pain reliever",
+    "b": "鎮痛薬",
+    "p": "noun",
+    "r": "ちんつうやく"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "何種類",
+    "z": "幾種",
+    "j": "いくつかの種類",
+    "e": "several kinds",
+    "b": "種類",
+    "p": "numeral",
+    "r": "なんしゅるい"
+   },
+   {
+    "t": "かあったので、"
+   },
+   {
+    "t": "買う前",
+    "z": "購買之前",
+    "j": "買う前",
+    "e": "before buying",
+    "b": "買う前",
+    "p": "phrase",
+    "r": "かうまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "表示",
+    "z": "標示",
+    "j": "ラベル",
+    "e": "labels",
+    "b": "表示",
+    "p": "noun",
+    "r": "ひょうじ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べました",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "胃腸薬の棚を探しています。": [
+   {
+    "t": "胃腸薬",
+    "z": "腸胃藥",
+    "j": "胃腸薬",
+    "e": "stomach medicine",
+    "b": "胃腸薬",
+    "p": "noun",
+    "r": "いちょうやく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "探しています",
+    "z": "正在找",
+    "j": "探しています",
+    "e": "am looking for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "箱が似ていたので、それぞれの胃腸薬の説明を確認しました。": [
+   {
+    "t": "箱",
+    "z": "箱子",
+    "j": "箱",
+    "e": "packages",
+    "b": "箱",
+    "p": "noun",
+    "r": "はこ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "似ていた",
+    "z": "相似",
+    "j": "似ていた",
+    "e": "looked similar",
+    "b": "似る",
+    "p": "adjective",
+    "r": "にていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "それぞれ",
+    "z": "各自",
+    "j": "それぞれ",
+    "e": "each",
+    "b": "それぞれ",
+    "p": "adverb",
+    "r": "それぞれ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "胃腸薬",
+    "z": "腸胃藥",
+    "j": "胃腸薬",
+    "e": "stomach medicine",
+    "b": "胃腸薬",
+    "p": "noun",
+    "r": "いちょうやく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "説明",
+    "z": "說明",
+    "j": "説明",
+    "e": "description",
+    "b": "説明",
+    "p": "noun",
+    "r": "せつめい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "アレルギー薬はこの通路にありますか。": [
+   {
+    "t": "アレルギー薬",
+    "z": "過敏藥",
+    "j": "アレルギーの薬",
+    "e": "allergy medicine",
+    "b": "アレルギー薬",
+    "p": "noun",
+    "r": "あれるぎーやく"
+   },
+   {
+    "t": "はこの"
+   },
+   {
+    "t": "通路",
+    "z": "走道",
+    "j": "通路",
+    "e": "aisle",
+    "b": "通路",
+    "p": "noun",
+    "r": "つうろ"
+   },
+   {
+    "t": "にありますか。"
+   }
+  ],
+  "花粉の季節が始まったので、店はアレルギー薬を入口近くに移していました。": [
+   {
+    "t": "花粉",
+    "z": "花粉",
+    "j": "花粉",
+    "e": "pollen",
+    "b": "花粉",
+    "p": "noun",
+    "r": "かふん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "季節",
+    "z": "季節",
+    "j": "季節",
+    "e": "season",
+    "b": "季節",
+    "p": "noun",
+    "r": "きせつ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "始まった",
+    "z": "開始了",
+    "j": "始まりました",
+    "e": "had started",
+    "b": "始まる",
+    "p": "verb",
+    "r": "はじまった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "店",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "店",
+    "p": "noun",
+    "r": "みせ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "アレルギー薬",
+    "z": "過敏藥",
+    "j": "アレルギーの薬",
+    "e": "allergy medicine",
+    "b": "アレルギー薬",
+    "p": "noun",
+    "r": "あれるぎーやく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入口",
+    "z": "入口",
+    "j": "入口",
+    "e": "entrance",
+    "b": "入口",
+    "p": "noun",
+    "r": "いりぐち"
+   },
+   {
+    "t": "近くに"
+   },
+   {
+    "t": "移していました",
+    "z": "移動了",
+    "j": "移していました",
+    "e": "had moved",
+    "b": "移す",
+    "p": "verb",
+    "r": "うつしていました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ドラッグストアで目薬を買いました。": [
+   {
+    "t": "ドラッグストア",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "ドラッグストア",
+    "p": "noun",
+    "r": "ドラッグストア"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "目薬",
+    "z": "眼藥水",
+    "j": "目薬",
+    "e": "eye drops",
+    "b": "目薬",
+    "p": "noun",
+    "r": "めぐすり"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "目薬にはいくつか種類があったので、選ぶ前に箱をよく読みました。": [
+   {
+    "t": "目薬",
+    "z": "眼藥水",
+    "j": "目薬",
+    "e": "eye drops",
+    "b": "目薬",
+    "p": "noun",
+    "r": "めぐすり"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "いくつか",
+    "z": "幾個",
+    "j": "いくつか",
+    "e": "several",
+    "b": "いくつか",
+    "p": "adjective",
+    "r": "いくつか"
+   },
+   {
+    "t": "種類",
+    "z": "種類",
+    "j": "種類",
+    "e": "types",
+    "b": "種類",
+    "p": "noun",
+    "r": "しゅるい"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "あった",
+    "z": "有",
+    "j": "ありました",
+    "e": "came in",
+    "b": "ある",
+    "p": "verb",
+    "r": "あった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "選ぶ",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choosing",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらぶ"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "adverb",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "箱",
+    "z": "包裝",
+    "j": "箱",
+    "e": "package",
+    "b": "箱",
+    "p": "noun",
+    "r": "はこ"
+   },
+   {
+    "t": "をよく"
+   },
+   {
+    "t": "読みました",
+    "z": "讀",
+    "j": "読みました",
+    "e": "read",
+    "b": "読む",
+    "p": "verb",
+    "r": "よみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "かばんにのど飴を入れています。": [
+   {
+    "t": "かばん",
+    "z": "包包",
+    "j": "かばん",
+    "e": "bag",
+    "b": "かばん",
+    "p": "noun",
+    "r": "カバン"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "のど飴",
+    "z": "喉糖",
+    "j": "のど飴",
+    "e": "cough drops",
+    "b": "のど飴",
+    "p": "noun",
+    "r": "ノドアメ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入れています",
+    "z": "放入",
+    "j": "入れています",
+    "e": "keep",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "電車でのどが乾いたので、駅のドラッグストアでのど飴を一袋買いました。": [
+   {
+    "t": "電車",
+    "z": "電車",
+    "j": "電車",
+    "e": "train",
+    "b": "電車",
+    "p": "noun",
+    "r": "でんしゃ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "のど",
+    "z": "喉嚨",
+    "j": "のど",
+    "e": "throat",
+    "b": "のど",
+    "p": "noun",
+    "r": "のど"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "乾いた",
+    "z": "乾燥",
+    "j": "乾いた",
+    "e": "felt dry",
+    "b": "乾く",
+    "p": "adjective",
+    "r": "かわいた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "駅",
+    "z": "車站",
+    "j": "駅",
+    "e": "station",
+    "b": "駅",
+    "p": "noun",
+    "r": "えき"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ドラッグストア",
+    "z": "藥妝店",
+    "j": "ドラッグストア",
+    "e": "drugstore",
+    "b": "ドラッグストア",
+    "p": "noun",
+    "r": "ドラッグストア"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "のど飴",
+    "z": "喉糖",
+    "j": "のど飴",
+    "e": "cough drops",
+    "b": "のど飴",
+    "p": "noun",
+    "r": "ノドアメ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一袋",
+    "z": "一包",
+    "j": "一袋",
+    "e": "a pack",
+    "b": "一袋",
+    "p": "numeral",
+    "r": "ひとふくろ"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "指に貼る絆創膏が必要です。": [
+   {
+    "t": "指",
+    "z": "手指",
+    "j": "指",
+    "e": "finger",
+    "b": "指",
+    "p": "noun",
+    "r": "ゆび"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "貼る",
+    "z": "貼上",
+    "j": "貼り付ける",
+    "e": "stick",
+    "b": "貼る",
+    "p": "verb",
+    "r": "はる"
+   },
+   {
+    "t": "絆創膏",
+    "z": "OK 繃",
+    "j": "絆創膏",
+    "e": "adhesive bandage",
+    "b": "絆創膏",
+    "p": "noun",
+    "r": "ばんそうこう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "必要",
+    "z": "必要",
+    "j": "必要",
+    "e": "need",
+    "b": "必要",
+    "p": "adjective",
+    "r": "ひつよう"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "雨でいつもの絆創膏がはがれたので、防水タイプを探しました。": [
+   {
+    "t": "雨",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "雨",
+    "p": "noun",
+    "r": "あめ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "いつも",
+    "z": "平常",
+    "j": "いつも",
+    "e": "usual",
+    "b": "いつも",
+    "p": "adverb",
+    "r": "いつも"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "絆創膏",
+    "z": "OK 繃",
+    "j": "絆創膏",
+    "e": "adhesive bandage",
+    "b": "絆創膏",
+    "p": "noun",
+    "r": "ばんそうこう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "はがれた",
+    "z": "脫落",
+    "j": "はがれた",
+    "e": "came off",
+    "b": "はがれる",
+    "p": "verb",
+    "r": "はがれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "防水タイプ",
+    "z": "防水型",
+    "j": "防水タイプ",
+    "e": "waterproof type",
+    "b": "防水タイプ",
+    "p": "noun",
+    "r": "ぼうすいタイプ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "探しました",
+    "z": "尋找了",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ガーゼパッドは絆創膏の隣にあります。": [
+   {
+    "t": "ガーゼパッド",
+    "z": "紗布墊",
+    "j": "ガーゼのパッド",
+    "e": "gauze pad",
+    "b": "ガーゼパッド",
+    "p": "noun",
+    "r": "ガーゼパッド"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "絆創膏",
+    "z": "OK 繃",
+    "j": "絆創膏",
+    "e": "adhesive bandage",
+    "b": "絆創膏",
+    "p": "noun",
+    "r": "ばんそうこう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣",
+    "z": "旁邊",
+    "j": "隣り",
+    "e": "next to",
+    "b": "隣",
+    "p": "preposition",
+    "r": "となり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "are",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "小さいものでは擦り傷全体を覆えないので、大きめのガーゼパッドを買いました。": [
+   {
+    "t": "小さいもの",
+    "z": "小的東西",
+    "j": "小さいもの",
+    "e": "small one",
+    "b": "小さいもの",
+    "p": "noun",
+    "r": "ちいさいもの"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "擦り傷",
+    "z": "擦傷",
+    "j": "擦り傷",
+    "e": "scrape",
+    "b": "擦り傷",
+    "p": "noun",
+    "r": "すりきず"
+   },
+   {
+    "t": "全体",
+    "z": "全部",
+    "j": "全体",
+    "e": "whole",
+    "b": "全体",
+    "p": "adjective",
+    "r": "ぜんたい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "覆えない",
+    "z": "不能覆蓋",
+    "j": "覆えない",
+    "e": "would not cover",
+    "b": "覆う",
+    "p": "verb",
+    "r": "おおえない"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "大きめの",
+    "z": "較大的",
+    "j": "大きめの",
+    "e": "larger",
+    "b": "大きめ",
+    "p": "adjective",
+    "r": "おおきめの"
+   },
+   {
+    "t": "ガーゼパッド",
+    "z": "紗布墊",
+    "j": "ガーゼパッド",
+    "e": "gauze pad",
+    "b": "ガーゼパッド",
+    "p": "noun",
+    "r": "ガーゼパッド"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "体温計は健康用品の売り場にあります。": [
+   {
+    "t": "体温計",
+    "z": "體溫計",
+    "j": "体温を測る器具",
+    "e": "thermometer",
+    "b": "体温計",
+    "p": "noun",
+    "r": "たいおんけい"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "健康用品",
+    "z": "健康用品",
+    "j": "健康のための道具",
+    "e": "health products",
+    "b": "健康用品",
+    "p": "noun",
+    "r": "けんこうようひん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "売り場",
+    "z": "賣場",
+    "j": "商品を売る場所",
+    "e": "section",
+    "b": "売り場",
+    "p": "noun",
+    "r": "うりば"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "家の体温計が動かなくなったので、ドラッグストアで二つの機種を比べました。": [
+   {
+    "t": "家の"
+   },
+   {
+    "t": "体温計",
+    "z": "體溫計",
+    "j": "体温を測る器具",
+    "e": "thermometer",
+    "b": "体温計",
+    "p": "noun",
+    "r": "たいおんけい"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "動かなくなった",
+    "z": "停止運作",
+    "j": "動かなくなった",
+    "e": "stopped working",
+    "b": "動かなくなる",
+    "p": "verb",
+    "r": "うごかなくなった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "ドラッグストア",
+    "z": "藥妝店",
+    "j": "薬や日用品を売る店",
+    "e": "drugstore",
+    "b": "ドラッグストア",
+    "p": "noun",
+    "r": "ドラッグストア"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "二つ",
+    "z": "兩個",
+    "j": "二つ",
+    "e": "two",
+    "b": "二つ",
+    "p": "numeral",
+    "r": "ふたつ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "機種",
+    "z": "機種",
+    "j": "機械の種類",
+    "e": "model",
+    "b": "機種",
+    "p": "noun",
+    "r": "きしゅ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べました",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "不織布マスクを一箱買いました。": [
+   {
+    "t": "不織布マスク",
+    "z": "醫用口罩",
+    "j": "不織布マスク",
+    "e": "surgical mask",
+    "b": "不織布マスク",
+    "p": "noun",
+    "r": "ふしょくふマスク"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "一箱",
+    "z": "一盒",
+    "j": "一箱",
+    "e": "a box",
+    "b": "一箱",
+    "p": "numeral",
+    "r": "いちはこ"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "小さめのマスクが合わなかったので、次の箱を買う前にサイズ表を確認しました。": [
+   {
+    "t": "小さめのマスク",
+    "z": "小口罩",
+    "j": "小さめのマスク",
+    "e": "small masks",
+    "b": "小さめのマスク",
+    "p": "noun",
+    "r": "ちいさめのマスク"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "合わなかった",
+    "z": "不合適",
+    "j": "合わなかった",
+    "e": "did not fit well",
+    "b": "合う",
+    "p": "verb",
+    "r": "あわなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "次の箱",
+    "z": "下一盒",
+    "j": "次の箱",
+    "e": "next box",
+    "b": "次の箱",
+    "p": "noun",
+    "r": "つぎのはこ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買う前に",
+    "z": "買之前",
+    "j": "買う前に",
+    "e": "before buying",
+    "b": "買う前に",
+    "p": "phrase",
+    "r": "かうまえに"
+   },
+   {
+    "t": "サイズ表",
+    "z": "尺寸表",
+    "j": "サイズ表",
+    "e": "size chart",
+    "b": "サイズ表",
+    "p": "noun",
+    "r": "サイズひょう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "海に行くので日焼け止めが必要です。": [
+   {
+    "t": "海",
+    "z": "海",
+    "j": "海",
+    "e": "sea",
+    "b": "海",
+    "p": "noun",
+    "r": "うみ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "行く",
+    "z": "去",
+    "j": "行きます",
+    "e": "go",
+    "b": "行く",
+    "p": "verb",
+    "r": "いく"
+   },
+   {
+    "t": "ので"
+   },
+   {
+    "t": "日焼け止め",
+    "z": "防曬乳",
+    "j": "日焼け止め",
+    "e": "sunscreen",
+    "b": "日焼け止め",
+    "p": "noun",
+    "r": "ひやけどめ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "必要です",
+    "z": "需要",
+    "j": "必要です",
+    "e": "need",
+    "b": "必要だ",
+    "p": "adjective",
+    "r": "ひつようです"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "晴れる予報だったので、屋外へ出かける前に日焼け止めを買いました。": [
+   {
+    "t": "晴れる",
+    "z": "晴朗",
+    "j": "晴れます",
+    "e": "be sunny",
+    "b": "晴れる",
+    "p": "verb",
+    "r": "はれる"
+   },
+   {
+    "t": "予報",
+    "z": "預報",
+    "j": "予報",
+    "e": "forecast",
+    "b": "予報",
+    "p": "noun",
+    "r": "よほう"
+   },
+   {
+    "t": "だったので、"
+   },
+   {
+    "t": "屋外",
+    "z": "戶外",
+    "j": "屋外",
+    "e": "outdoor",
+    "b": "屋外",
+    "p": "noun",
+    "r": "おくがい"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "出かける",
+    "z": "出門",
+    "j": "出かけます",
+    "e": "go out",
+    "b": "出かける",
+    "p": "verb",
+    "r": "でかける"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "noun",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "日焼け止め",
+    "z": "防曬乳",
+    "j": "日焼け止め",
+    "e": "sunscreen",
+    "b": "日焼け止め",
+    "p": "noun",
+    "r": "ひやけどめ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "リップクリームを家に忘れました。": [
+   {
+    "t": "リップクリーム",
+    "z": "護唇膏",
+    "j": "リップクリーム",
+    "e": "lip balm",
+    "b": "リップクリーム",
+    "p": "noun",
+    "r": "リップクリーム"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家",
+    "e": "home",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "忘れました",
+    "z": "忘記了",
+    "j": "忘れました",
+    "e": "forgot",
+    "b": "忘れる",
+    "p": "verb",
+    "r": "わすれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "空気が乾燥していたので、シャンプーを買うついでに新しいリップクリームも買いました。": [
+   {
+    "t": "空気",
+    "z": "空氣",
+    "j": "空気",
+    "e": "air",
+    "b": "空気",
+    "p": "noun",
+    "r": "くうき"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "乾燥していた",
+    "z": "乾燥了",
+    "j": "乾燥していた",
+    "e": "was dry",
+    "b": "乾燥する",
+    "p": "verb",
+    "r": "かんそうしていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "シャンプー",
+    "z": "洗髮精",
+    "j": "シャンプー",
+    "e": "shampoo",
+    "b": "シャンプー",
+    "p": "noun",
+    "r": "シャンプー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買うついでに",
+    "z": "順便買",
+    "j": "買うついでに",
+    "e": "while buying",
+    "b": "買うついでに",
+    "p": "expression",
+    "r": "かうついでに"
+   },
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "リップクリーム",
+    "z": "護唇膏",
+    "j": "リップクリーム",
+    "e": "lip balm",
+    "b": "リップクリーム",
+    "p": "noun",
+    "r": "リップクリーム"
+   },
+   {
+    "t": "も"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このシートマスクは少量パックで売っています。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "シートマスク",
+    "z": "面膜",
+    "j": "シートマスク",
+    "e": "sheet mask",
+    "b": "シートマスク",
+    "p": "noun",
+    "r": "シートマスク"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "少量パック",
+    "z": "小包裝",
+    "j": "少量パック",
+    "e": "small pack",
+    "b": "少量パック",
+    "p": "noun",
+    "r": "しょうりょうパック"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "売っています",
+    "z": "賣",
+    "j": "売っています",
+    "e": "sell",
+    "b": "売る",
+    "p": "verb",
+    "r": "うっています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "まず試してみたかったので、大箱ではなく一枚入りのシートマスクを買いました。": [
+   {
+    "t": "まず"
+   },
+   {
+    "t": "試してみたかった",
+    "z": "想試用",
+    "j": "試してみたかった",
+    "e": "wanted to try",
+    "b": "試す",
+    "p": "verb",
+    "r": "ためしてみたかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "大箱",
+    "z": "大盒子",
+    "j": "大箱",
+    "e": "large box",
+    "b": "大箱",
+    "p": "noun",
+    "r": "おおばこ"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "一枚入り",
+    "z": "一片裝",
+    "j": "一枚入り",
+    "e": "single sheet",
+    "b": "一枚入り",
+    "p": "noun",
+    "r": "いちまいいり"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "シートマスク",
+    "z": "面膜",
+    "j": "シートマスク",
+    "e": "sheet mask",
+    "b": "シートマスク",
+    "p": "noun",
+    "r": "シートマスク"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "化粧水は洗顔料の隣にあります。": [
+   {
+    "t": "化粧水",
+    "z": "化妝水",
+    "j": "顔の手入れに使う水",
+    "e": "facial toner",
+    "b": "化粧水",
+    "p": "noun",
+    "r": "けしょうすい"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "洗顔料",
+    "z": "洗面乳",
+    "j": "顔を洗うための洗剤",
+    "e": "face wash",
+    "b": "洗顔料",
+    "p": "noun",
+    "r": "せんがんりょう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣",
+    "z": "旁邊",
+    "j": "隣の場所",
+    "e": "beside",
+    "b": "隣",
+    "p": "noun",
+    "r": "となり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "旅行かばんに入る化粧水が欲しかったので、ボトルの大きさを比べました。": [
+   {
+    "t": "旅行かばん",
+    "z": "旅行包",
+    "j": "旅行に使うかばん",
+    "e": "travel bag",
+    "b": "旅行かばん",
+    "p": "noun",
+    "r": "りょこうかばん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入る",
+    "z": "進入",
+    "j": "中に入ります",
+    "e": "fit in",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいる"
+   },
+   {
+    "t": "化粧水",
+    "z": "化妝水",
+    "j": "顔の手入れに使う水",
+    "e": "facial toner",
+    "b": "化粧水",
+    "p": "noun",
+    "r": "けしょうすい"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "欲しかった",
+    "z": "想要",
+    "j": "欲しかった",
+    "e": "wanted",
+    "b": "欲しい",
+    "p": "adjective",
+    "r": "ほしかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "ボトル",
+    "z": "瓶子",
+    "j": "液体を入れる容器",
+    "e": "bottle",
+    "b": "ボトル",
+    "p": "noun",
+    "r": "ボトル"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "大きさ",
+    "z": "大小",
+    "j": "大きさ",
+    "e": "size",
+    "b": "大きさ",
+    "p": "noun",
+    "r": "おおきさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べました",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "この美容液は小さな瓶に入っています。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "美容液",
+    "z": "美容液",
+    "j": "顔の美容液",
+    "e": "facial serum",
+    "b": "美容液",
+    "p": "noun",
+    "r": "びようえき"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "小さな",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさな"
+   },
+   {
+    "t": "瓶",
+    "z": "瓶子",
+    "j": "瓶",
+    "e": "bottle",
+    "b": "瓶",
+    "p": "noun",
+    "r": "びん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入っています",
+    "z": "裝入",
+    "j": "入っている",
+    "e": "comes in",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいっています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "棚に美容液がたくさんあったので、選ぶ前に成分表示を読みました。": [
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "美容液",
+    "z": "美容液",
+    "j": "美容液",
+    "e": "facial serums",
+    "b": "美容液",
+    "p": "noun",
+    "r": "びようえき"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "たくさん",
+    "z": "很多",
+    "j": "たくさん",
+    "e": "many",
+    "b": "たくさん",
+    "p": "adverb",
+    "r": "たくさん"
+   },
+   {
+    "t": "あったので、"
+   },
+   {
+    "t": "選ぶ",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらぶ"
+   },
+   {
+    "t": "前に"
+   },
+   {
+    "t": "成分表示",
+    "z": "成分標示",
+    "j": "成分表示",
+    "e": "ingredient lists",
+    "b": "成分表示",
+    "p": "noun",
+    "r": "せいぶんひょうじ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "読みました",
+    "z": "閱讀了",
+    "j": "読む",
+    "e": "read",
+    "b": "読む",
+    "p": "verb",
+    "r": "よみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "リキッドファンデーションを探しています。": [
+   {
+    "t": "リキッドファンデーション",
+    "z": "液態粉底",
+    "j": "リキッドファンデーション",
+    "e": "liquid foundation",
+    "b": "リキッドファンデーション",
+    "p": "noun",
+    "r": "リキッドファンデーション"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "探しています",
+    "z": "正在尋找",
+    "j": "探しています",
+    "e": "looking for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "最初の色が濃く見えたので、店の照明の下でファンデーションの見本を比べました。": [
+   {
+    "t": "最初の色",
+    "z": "第一色號",
+    "j": "最初の色",
+    "e": "first shade",
+    "b": "最初の色",
+    "p": "noun",
+    "r": "さいしょのいろ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "濃く",
+    "z": "濃的",
+    "j": "濃く",
+    "e": "dark",
+    "b": "濃い",
+    "p": "adjective",
+    "r": "こく"
+   },
+   {
+    "t": "見えた",
+    "z": "看起來",
+    "j": "見えた",
+    "e": "looked",
+    "b": "見る",
+    "p": "verb",
+    "r": "みえた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "店の照明",
+    "z": "店內燈光",
+    "j": "店の照明",
+    "e": "store light",
+    "b": "店の照明",
+    "p": "noun",
+    "r": "みせのしょうめい"
+   },
+   {
+    "t": "の下で"
+   },
+   {
+    "t": "ファンデーションの見本",
+    "z": "粉底樣品",
+    "j": "ファンデーションの見本",
+    "e": "foundation samples",
+    "b": "ファンデーションの見本",
+    "p": "noun",
+    "r": "ファンデーションのみほん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べました",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コンシーラーはメイク用品の通路にあります。": [
+   {
+    "t": "コンシーラー",
+    "z": "遮瑕膏",
+    "j": "色むらを隠す化粧品",
+    "e": "concealer",
+    "b": "コンシーラー",
+    "p": "noun",
+    "r": "コンシーラー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "メイク用品",
+    "z": "化妝品",
+    "j": "化粧品の品物",
+    "e": "makeup",
+    "b": "メイク用品",
+    "p": "noun",
+    "r": "メイクようひん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "通路",
+    "z": "通道",
+    "j": "通る道",
+    "e": "aisle",
+    "b": "通路",
+    "p": "noun",
+    "r": "つうろ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "箱の色だけでは分かりにくかったので、手の甲でコンシーラーの色を試しました。": [
+   {
+    "t": "箱",
+    "z": "盒子",
+    "j": "箱",
+    "e": "box",
+    "b": "箱",
+    "p": "noun",
+    "r": "はこ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "色",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "色",
+    "p": "noun",
+    "r": "いろ"
+   },
+   {
+    "t": "だけでは"
+   },
+   {
+    "t": "分かりにくかった",
+    "z": "難以理解",
+    "j": "理解しにくかった",
+    "e": "was hard to judge",
+    "b": "分かりにくい",
+    "p": "adjective",
+    "r": "わかりにくかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "手の甲",
+    "z": "手背",
+    "j": "手の甲",
+    "e": "back of the hand",
+    "b": "手の甲",
+    "p": "phrase",
+    "r": "てのこう"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "コンシーラー",
+    "z": "遮瑕膏",
+    "j": "色むらを隠す化粧品",
+    "e": "concealer",
+    "b": "コンシーラー",
+    "p": "noun",
+    "r": "コンシーラー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "色",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "色",
+    "p": "noun",
+    "r": "いろ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "試しました",
+    "z": "試しました",
+    "j": "試しました",
+    "e": "tested",
+    "b": "試す",
+    "p": "verb",
+    "r": "ためしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "茶色のマスカラを買いました。": [
+   {
+    "t": "茶色",
+    "z": "棕色",
+    "j": "茶色",
+    "e": "brown",
+    "b": "茶色",
+    "p": "adjective",
+    "r": "ちゃいろ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "マスカラ",
+    "z": "睫毛膏",
+    "j": "マスカラ",
+    "e": "mascara",
+    "b": "マスカラ",
+    "p": "noun",
+    "r": "マスカラ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "古いマスカラが乾いてしまったので、買い替える前にブラシの形を確認しました。": [
+   {
+    "t": "古い",
+    "z": "舊的",
+    "j": "古い",
+    "e": "old",
+    "b": "古い",
+    "p": "adjective",
+    "r": "ふるい"
+   },
+   {
+    "t": "マスカラ",
+    "z": "睫毛膏",
+    "j": "マスカラ",
+    "e": "mascara",
+    "b": "マスカラ",
+    "p": "noun",
+    "r": "マスカラ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "乾いてしまった",
+    "z": "乾了",
+    "j": "乾いてしまった",
+    "e": "had dried out",
+    "b": "乾く",
+    "p": "verb",
+    "r": "かわいてしまった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "買い替える",
+    "z": "換新",
+    "j": "買い替える",
+    "e": "buying replacement",
+    "b": "買い替える",
+    "p": "verb",
+    "r": "かいかえる"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "adverb",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ブラシ",
+    "z": "刷子",
+    "j": "ブラシ",
+    "e": "brush",
+    "b": "ブラシ",
+    "p": "noun",
+    "r": "ブラシ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "形",
+    "z": "形狀",
+    "j": "形",
+    "e": "shape",
+    "b": "形",
+    "p": "noun",
+    "r": "かたち"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このアイライナーは先が細いです。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "アイライナー",
+    "z": "眼線筆",
+    "j": "アイライナー",
+    "e": "eyeliner",
+    "b": "アイライナー",
+    "p": "noun",
+    "r": "あいらいなー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "先",
+    "z": "尖端",
+    "j": "先端",
+    "e": "tip",
+    "b": "先",
+    "p": "noun",
+    "r": "さき"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "細い",
+    "z": "細的",
+    "j": "細い",
+    "e": "thin",
+    "b": "細い",
+    "p": "adjective",
+    "r": "ほそい"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "やわらかい印象にしたかったので、黒ではなく茶色のアイライナーを選びました。": [
+   {
+    "t": "やわらかい",
+    "z": "柔和的",
+    "j": "やわらかい",
+    "e": "softer",
+    "b": "やわらかい",
+    "p": "adjective",
+    "r": "やわらかい"
+   },
+   {
+    "t": "印象",
+    "z": "印象",
+    "j": "印象",
+    "e": "look",
+    "b": "印象",
+    "p": "noun",
+    "r": "いんしょう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "したかった",
+    "z": "想呈現",
+    "j": "したかった",
+    "e": "wanted",
+    "b": "する",
+    "p": "verb",
+    "r": "したかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "黒",
+    "z": "黑色",
+    "j": "黒",
+    "e": "black",
+    "b": "黒",
+    "p": "noun",
+    "r": "くろ"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "茶色",
+    "z": "棕色",
+    "j": "茶色",
+    "e": "brown",
+    "b": "茶色",
+    "p": "noun",
+    "r": "ちゃいろ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "アイライナー",
+    "z": "眼線筆",
+    "j": "アイライナー",
+    "e": "eyeliner",
+    "b": "アイライナー",
+    "p": "noun",
+    "r": "あいらいなー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "今日は口紅がセールになっています。": [
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "今日",
+    "p": "adverb",
+    "r": "きょう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "口紅",
+    "z": "口紅",
+    "j": "口紅",
+    "e": "lipstick",
+    "b": "口紅",
+    "p": "noun",
+    "r": "くちべに"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "セール",
+    "z": "特賣",
+    "j": "特売",
+    "e": "sale",
+    "b": "セール",
+    "p": "noun",
+    "r": "セール"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "なっています",
+    "z": "正在進行",
+    "j": "なっています",
+    "e": "is on",
+    "b": "なる",
+    "p": "verb",
+    "r": "なっています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "棚の照明では色が違って見えたので、窓際で口紅の色を確認しました。": [
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "照明",
+    "z": "照明",
+    "j": "照明",
+    "e": "lighting",
+    "b": "照明",
+    "p": "noun",
+    "r": "しょうめい"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "色",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "色",
+    "p": "noun",
+    "r": "いろ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "違って見えた",
+    "z": "看起來不同",
+    "j": "違って見えた",
+    "e": "looked different",
+    "b": "違って見える",
+    "p": "phrase",
+    "r": "ちがってみえた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "窓際",
+    "z": "窗邊",
+    "j": "窓際",
+    "e": "by the window",
+    "b": "窓際",
+    "p": "noun",
+    "r": "まどぎわ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "口紅",
+    "z": "口紅",
+    "j": "口紅",
+    "e": "lipstick",
+    "b": "口紅",
+    "p": "noun",
+    "r": "くちべに"
+   },
+   {
+    "t": "の色を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は薄いピンクのマニキュアを選びました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "She",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "薄いピンク",
+    "z": "淡粉紅色",
+    "j": "薄いピンク",
+    "e": "pale pink",
+    "b": "薄いピンク",
+    "p": "adjective",
+    "r": "うすいぴんく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "マニキュア",
+    "z": "指甲油",
+    "j": "マニキュア",
+    "e": "nail polish",
+    "b": "マニキュア",
+    "p": "noun",
+    "r": "マニキュア"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "瓶の中では鮮やかに見えましたが、見本ではそのマニキュアは落ち着いた色でした。": [
+   {
+    "t": "瓶",
+    "z": "瓶子",
+    "j": "瓶",
+    "e": "bottle",
+    "b": "瓶",
+    "p": "noun",
+    "r": "びん"
+   },
+   {
+    "t": "の中では"
+   },
+   {
+    "t": "鮮やかに見えました",
+    "z": "看起來鮮豔",
+    "j": "鮮やかに見えました",
+    "e": "looked bright",
+    "b": "鮮やかに見える",
+    "p": "phrase",
+    "r": "あざやかにみえました"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "見本",
+    "z": "樣本",
+    "j": "見本",
+    "e": "sample card",
+    "b": "見本",
+    "p": "noun",
+    "r": "みほん"
+   },
+   {
+    "t": "ではその"
+   },
+   {
+    "t": "マニキュア",
+    "z": "指甲油",
+    "j": "マニキュア",
+    "e": "nail polish",
+    "b": "マニキュア",
+    "p": "noun",
+    "r": "マニキュア"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "落ち着いた色でした",
+    "z": "是柔和的顏色",
+    "j": "落ち着いた色でした",
+    "e": "appeared softer",
+    "b": "落ち着く色だ",
+    "p": "phrase",
+    "r": "おちついたいろでした"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "新しいメイクスポンジが必要です。": [
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "メイクスポンジ",
+    "z": "化妝海綿",
+    "j": "メイク用スポンジ",
+    "e": "makeup sponge",
+    "b": "メイクスポンジ",
+    "p": "noun",
+    "r": "メイクスポンジ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "必要です",
+    "z": "需要",
+    "j": "必要です",
+    "e": "need",
+    "b": "必要",
+    "p": "adjective",
+    "r": "ひつようです"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "一袋にメイクスポンジが何個か入っていたので、使っていたものの買い替えに購入しました。": [
+   {
+    "t": "一袋",
+    "z": "一袋",
+    "j": "一袋",
+    "e": "one pack",
+    "b": "一袋",
+    "p": "numeral",
+    "r": "ひとふくろ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "メイクスポンジ",
+    "z": "化妝海綿",
+    "j": "メイク用スポンジ",
+    "e": "makeup sponge",
+    "b": "メイクスポンジ",
+    "p": "noun",
+    "r": "メイクスポンジ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "何個か",
+    "z": "幾個",
+    "j": "何個か",
+    "e": "several",
+    "b": "何個か",
+    "p": "numeral",
+    "r": "なんこか"
+   },
+   {
+    "t": "入っていたので、"
+   },
+   {
+    "t": "使っていた",
+    "z": "使用了",
+    "j": "使っていた",
+    "e": "had been using",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかっていた"
+   },
+   {
+    "t": "ものの"
+   },
+   {
+    "t": "買い替え",
+    "z": "換新",
+    "j": "買い替え",
+    "e": "replace",
+    "b": "買い替え",
+    "p": "noun",
+    "r": "かいかえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "購入しました",
+    "z": "購買了",
+    "j": "購入しました",
+    "e": "bought",
+    "b": "購入する",
+    "p": "verb",
+    "r": "こうにゅうしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ヘアカラー剤は一番下の棚にあります。": [
+   {
+    "t": "ヘアカラー剤",
+    "z": "染髮劑",
+    "j": "髪を染める薬剤",
+    "e": "hair dye",
+    "b": "ヘアカラー剤",
+    "p": "noun",
+    "r": "ヘアカラーザイ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "一番下",
+    "z": "最底層",
+    "j": "一番下の位置",
+    "e": "bottom",
+    "b": "一番下",
+    "p": "adjective",
+    "r": "イチバンシタ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "タナ"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "箱の写真がほとんど同じに見えたので、二色のヘアカラー剤を比べました。": [
+   {
+    "t": "箱",
+    "z": "盒子",
+    "j": "物を入れる箱",
+    "e": "box",
+    "b": "箱",
+    "p": "noun",
+    "r": "ハコ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "写真",
+    "z": "照片",
+    "j": "撮った画像",
+    "e": "photo",
+    "b": "写真",
+    "p": "noun",
+    "r": "シャシン"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ほとんど同じに見えた",
+    "z": "看起來幾乎一樣",
+    "j": "ほとんど同じに見えた",
+    "e": "looked almost the same",
+    "b": "ほとんど同じに見える",
+    "p": "phrase",
+    "r": "ホトンドオナジニミエタ"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "二色",
+    "z": "兩色",
+    "j": "二つの色",
+    "e": "two shades",
+    "b": "二色",
+    "p": "numeral",
+    "r": "にしょく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ヘアカラー剤",
+    "z": "染髮劑",
+    "j": "髪を染める薬剤",
+    "e": "hair dye",
+    "b": "ヘアカラー剤",
+    "p": "noun",
+    "r": "ヘアカラーザイ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べました",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コンタクトレンズの洗浄液は目薬の近くにあります。": [
+   {
+    "t": "コンタクトレンズ",
+    "z": "隱形眼鏡",
+    "j": "目に入れるレンズ",
+    "e": "contact lens",
+    "b": "コンタクトレンズ",
+    "p": "noun",
+    "r": "コンタクトレンズ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "洗浄液",
+    "z": "保養液",
+    "j": "汚れを取る液体",
+    "e": "cleaning solution",
+    "b": "洗浄液",
+    "p": "noun",
+    "r": "センジョウエキ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "目薬",
+    "z": "眼藥水",
+    "j": "目に使う薬",
+    "e": "eye drops",
+    "b": "目薬",
+    "p": "noun",
+    "r": "めぐすり"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "近く",
+    "z": "附近",
+    "j": "近い場所",
+    "e": "nearby",
+    "b": "近い",
+    "p": "adverb",
+    "r": "ちかく"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "小さなかばんだけで旅行するので、携帯用のコンタクトレンズの洗浄液を探しました。": [
+   {
+    "t": "小さな",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさな"
+   },
+   {
+    "t": "かばん",
+    "z": "包包",
+    "j": "物を入れる袋",
+    "e": "bag",
+    "b": "かばん",
+    "p": "noun",
+    "r": "かばん"
+   },
+   {
+    "t": "だけで"
+   },
+   {
+    "t": "旅行",
+    "z": "旅行",
+    "j": "遠くへ行くこと",
+    "e": "travel",
+    "b": "旅行",
+    "p": "noun",
+    "r": "りょこう"
+   },
+   {
+    "t": "するので、"
+   },
+   {
+    "t": "携帯用",
+    "z": "攜帶用",
+    "j": "持ち運びに適した",
+    "e": "portable",
+    "b": "携帯用",
+    "p": "adjective",
+    "r": "けいたいよう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "コンタクトレンズ",
+    "z": "隱形眼鏡",
+    "j": "目に入れるレンズ",
+    "e": "contact lens",
+    "b": "コンタクトレンズ",
+    "p": "noun",
+    "r": "コンタクトレンズ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "洗浄液",
+    "z": "保養液",
+    "j": "汚れを落とす液体",
+    "e": "cleaning solution",
+    "b": "洗浄液",
+    "p": "noun",
+    "r": "せんじょうえき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "探しました",
+    "z": "找了",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ハイキング用に虫よけスプレーを買いました。": [
+   {
+    "t": "ハイキング用",
+    "z": "健行用",
+    "j": "ハイキングのための",
+    "e": "for the hike",
+    "b": "ハイキング用",
+    "p": "phrase",
+    "r": "ハイキングよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "虫よけスプレー",
+    "z": "防蚊噴霧劑",
+    "j": "虫をよけるスプレー",
+    "e": "insect repellent",
+    "b": "虫よけスプレー",
+    "p": "noun",
+    "r": "むしよけスプレー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "夕方に川の近くを歩く予定だったので、買い物リストに虫よけスプレーを加えました。": [
+   {
+    "t": "夕方",
+    "z": "黃昏",
+    "j": "夕方",
+    "e": "dusk",
+    "b": "夕方",
+    "p": "noun",
+    "r": "ゆうがた"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "川の近く",
+    "z": "河邊附近",
+    "j": "川の近く",
+    "e": "near the river",
+    "b": "川の近く",
+    "p": "phrase",
+    "r": "かわのちかく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "歩く",
+    "z": "走路",
+    "j": "歩く",
+    "e": "walk",
+    "b": "歩く",
+    "p": "verb",
+    "r": "あるく"
+   },
+   {
+    "t": "予定だった",
+    "z": "預定了",
+    "j": "予定だった",
+    "e": "planned",
+    "b": "予定だ",
+    "p": "phrase",
+    "r": "よていだった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "買い物リスト",
+    "z": "購物清單",
+    "j": "買い物リスト",
+    "e": "shopping list",
+    "b": "買い物リスト",
+    "p": "noun",
+    "r": "かいものリスト"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "虫よけスプレー",
+    "z": "防蚊噴霧劑",
+    "j": "虫よけスプレー",
+    "e": "insect repellent",
+    "b": "虫よけスプレー",
+    "p": "noun",
+    "r": "むしよけスプレー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "加えました",
+    "z": "加了",
+    "j": "加えました",
+    "e": "added",
+    "b": "加える",
+    "p": "verb",
+    "r": "くわえました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ビタミンサプリは一番上の棚にあります。": [
+   {
+    "t": "ビタミンサプリ",
+    "z": "維他命補充品",
+    "j": "ビタミンサプリメント",
+    "e": "Vitamin supplements",
+    "b": "ビタミンサプリ",
+    "p": "noun",
+    "r": "びたみんさぷり"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "一番上",
+    "z": "最上層",
+    "j": "最上段",
+    "e": "top",
+    "b": "一番上",
+    "p": "adjective",
+    "r": "いちばんうえ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "商品を置く棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "are",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ボトルが似ていたので、ビタミンサプリを選ぶ前に表示を確認しました。": [
+   {
+    "t": "ボトル",
+    "z": "瓶子",
+    "j": "ボトル",
+    "e": "bottle",
+    "b": "ボトル",
+    "p": "noun",
+    "r": "ぼとる"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "似ていた",
+    "z": "看起來相似",
+    "j": "似ていた",
+    "e": "looked similar",
+    "b": "似る",
+    "p": "adjective",
+    "r": "にていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "ビタミンサプリ",
+    "z": "維他命補充品",
+    "j": "ビタミンサプリメント",
+    "e": "vitamin supplement",
+    "b": "ビタミンサプリ",
+    "p": "noun",
+    "r": "びたみんさぷり"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選ぶ",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらぶ"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "adverb",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "表示",
+    "z": "標示",
+    "j": "表示",
+    "e": "label",
+    "b": "表示",
+    "p": "noun",
+    "r": "ひょうじ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冷却シートは体温計のそばにあります。": [
+   {
+    "t": "冷却シート",
+    "z": "退熱貼",
+    "j": "冷却シート",
+    "e": "cooling gel sheets",
+    "b": "冷却シート",
+    "p": "noun",
+    "r": "れいきゃくシート"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "体温計",
+    "z": "體溫計",
+    "j": "体温を測る器具",
+    "e": "thermometers",
+    "b": "体温計",
+    "p": "noun",
+    "r": "たいおんけい"
+   },
+   {
+    "t": "のそばに"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "are",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "袋に冷却シートが何枚も入っていたので、旅行かばんに一袋入れました。": [
+   {
+    "t": "袋",
+    "z": "袋子",
+    "j": "袋",
+    "e": "package",
+    "b": "袋",
+    "p": "noun",
+    "r": "ふくろ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "冷却シート",
+    "z": "退熱貼",
+    "j": "冷却シート",
+    "e": "cooling gel sheets",
+    "b": "冷却シート",
+    "p": "noun",
+    "r": "れいきゃくシート"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "何枚も",
+    "z": "好幾張",
+    "j": "何枚も",
+    "e": "several",
+    "b": "何枚も",
+    "p": "adverb",
+    "r": "なんまいも"
+   },
+   {
+    "t": "入っていた",
+    "z": "裡面裝有",
+    "j": "入っていた",
+    "e": "had",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "旅行かばん",
+    "z": "旅行包",
+    "j": "旅行かばん",
+    "e": "travel bag",
+    "b": "旅行かばん",
+    "p": "noun",
+    "r": "りょこうかばん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "一袋",
+    "z": "一包",
+    "j": "一袋",
+    "e": "one pack",
+    "b": "一袋",
+    "p": "numeral",
+    "r": "ひとふくろ"
+   },
+   {
+    "t": "入れました",
+    "z": "放入了",
+    "j": "入れました",
+    "e": "put",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "旅行用にクレンジングシートを買いました。": [
+   {
+    "t": "旅行用",
+    "z": "旅行用",
+    "j": "旅行のための",
+    "e": "for travel",
+    "b": "旅行用",
+    "p": "phrase",
+    "r": "りょこうよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "クレンジングシート",
+    "z": "卸妝濕巾",
+    "j": "クレンジングシート",
+    "e": "makeup remover wipes",
+    "b": "クレンジングシート",
+    "p": "noun",
+    "r": "クレンジングシート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "洗顔料を忘れたので、寝る前にクレンジングシートを使いました。": [
+   {
+    "t": "洗顔料",
+    "z": "洗面乳",
+    "j": "洗顔料",
+    "e": "cleanser",
+    "b": "洗顔料",
+    "p": "noun",
+    "r": "せんがんりょう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "忘れた",
+    "z": "忘記了",
+    "j": "忘れた",
+    "e": "forgot",
+    "b": "忘れる",
+    "p": "verb",
+    "r": "わすれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "寝る前",
+    "z": "睡覺前",
+    "j": "寝る前",
+    "e": "before bed",
+    "b": "寝る前",
+    "p": "phrase",
+    "r": "ねるまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "クレンジングシート",
+    "z": "卸妝濕巾",
+    "j": "クレンジングシート",
+    "e": "makeup remover wipes",
+    "b": "クレンジングシート",
+    "p": "noun",
+    "r": "クレンジングシート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使いました",
+    "z": "用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ハンドクリームはかばんの中にあります。": [
+   {
+    "t": "ハンドクリーム",
+    "z": "護手霜",
+    "j": "手を保護するクリーム",
+    "e": "hand cream",
+    "b": "ハンドクリーム",
+    "p": "noun",
+    "r": "ハンドクリーム"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "かばん",
+    "z": "包包",
+    "j": "物を入れる袋",
+    "e": "bag",
+    "b": "かばん",
+    "p": "noun",
+    "r": "かばん"
+   },
+   {
+    "t": "の中にあります。"
+   }
+  ],
+  "何度も手を洗ったので、仕事用に小さなハンドクリームを買いました。": [
+   {
+    "t": "何度も",
+    "z": "多次",
+    "j": "何回も繰り返して",
+    "e": "several times",
+    "b": "何度も",
+    "p": "adverb",
+    "r": "なんども"
+   },
+   {
+    "t": "手",
+    "z": "手",
+    "j": "腕の先端の部分",
+    "e": "hand",
+    "b": "手",
+    "p": "noun",
+    "r": "て"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "洗った",
+    "z": "洗了",
+    "j": "きれいにした",
+    "e": "washed",
+    "b": "洗う",
+    "p": "verb",
+    "r": "あらった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "仕事用",
+    "z": "工作用",
+    "j": "仕事のためのもの",
+    "e": "for work",
+    "b": "仕事用",
+    "p": "noun",
+    "r": "しごとよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "小さな",
+    "z": "小的",
+    "j": "サイズが小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさな"
+   },
+   {
+    "t": "ハンドクリーム",
+    "z": "護手霜",
+    "j": "手を保護するクリーム",
+    "e": "hand cream",
+    "b": "ハンドクリーム",
+    "p": "noun",
+    "r": "ハンドクリーム"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "購入しました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このフェイスパウダーには柔らかいパフが付いています。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "フェイスパウダー",
+    "z": "蜜粉",
+    "j": "フェイスパウダー",
+    "e": "face powder",
+    "b": "フェイスパウダー",
+    "p": "noun",
+    "r": "フェイスパウダー"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "柔らかい",
+    "z": "柔軟的",
+    "j": "やわらかい",
+    "e": "soft",
+    "b": "柔らかい",
+    "p": "adjective",
+    "r": "やわらかい"
+   },
+   {
+    "t": "パフ",
+    "z": "粉撲",
+    "j": "化粧用のスポンジ",
+    "e": "puff",
+    "b": "パフ",
+    "p": "noun",
+    "r": "パフ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "付いています",
+    "z": "附有",
+    "j": "ついている状態です",
+    "e": "comes with",
+    "b": "付く",
+    "p": "verb",
+    "r": "ついています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "店の照明の下でメイクがテカって見えたので、フェイスパウダーを少し試しました。": [
+   {
+    "t": "店",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "店",
+    "p": "noun",
+    "r": "みせ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "照明",
+    "z": "照明",
+    "j": "照明",
+    "e": "lighting",
+    "b": "照明",
+    "p": "noun",
+    "r": "しょうめい"
+   },
+   {
+    "t": "の下で"
+   },
+   {
+    "t": "メイク",
+    "z": "化妝",
+    "j": "化粧",
+    "e": "makeup",
+    "b": "メイク",
+    "p": "noun",
+    "r": "メイク"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "テカって見えた",
+    "z": "看起來泛油光",
+    "j": "テカって見えた",
+    "e": "looked shiny",
+    "b": "テカる",
+    "p": "verb",
+    "r": "てかってみえた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "フェイスパウダー",
+    "z": "蜜粉",
+    "j": "フェイスパウダー",
+    "e": "face powder",
+    "b": "フェイスパウダー",
+    "p": "noun",
+    "r": "フェイスパウダー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "少し",
+    "z": "一點點",
+    "j": "少し",
+    "e": "a little",
+    "b": "少し",
+    "p": "adverb",
+    "r": "すこし"
+   },
+   {
+    "t": "試しました",
+    "z": "嘗試了",
+    "j": "試しました",
+    "e": "tried",
+    "b": "試す",
+    "p": "verb",
+    "r": "ためしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は桃色のチークを選びました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "桃色",
+    "z": "桃色",
+    "j": "桃色",
+    "e": "peach color",
+    "b": "桃色",
+    "p": "adjective",
+    "r": "ももいろ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "チーク",
+    "z": "腮紅",
+    "j": "チーク",
+    "e": "blush",
+    "b": "チーク",
+    "p": "noun",
+    "r": "チーク"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "肌にのせると片方が明るすぎたので、二色のチークを比べました。": [
+   {
+    "t": "肌",
+    "z": "皮膚",
+    "j": "皮膚",
+    "e": "skin",
+    "b": "肌",
+    "p": "noun",
+    "r": "はだ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "のせる",
+    "z": "塗在肌膚上",
+    "j": "のせます",
+    "e": "apply to skin",
+    "b": "のせる",
+    "p": "verb",
+    "r": "のせる"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "片方",
+    "z": "其中一款",
+    "j": "二つのうち一方",
+    "e": "one of them",
+    "b": "片方",
+    "p": "noun",
+    "r": "かたほう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "明るすぎた",
+    "z": "太亮了",
+    "j": "明るすぎました",
+    "e": "was too bright",
+    "b": "明るすぎる",
+    "p": "adjective",
+    "r": "あかるすぎた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "二色",
+    "z": "兩色",
+    "j": "にしょく",
+    "e": "two colors",
+    "b": "二色",
+    "p": "numeral",
+    "r": "にしょく"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "チーク",
+    "z": "腮紅",
+    "j": "チーク",
+    "e": "blush",
+    "b": "チーク",
+    "p": "noun",
+    "r": "チーク"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "比べました",
+    "z": "比較了",
+    "j": "比べました",
+    "e": "compared",
+    "b": "比べる",
+    "p": "verb",
+    "r": "くらべました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このアイシャドウは四色入りです。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "アイシャドウ",
+    "z": "眼影",
+    "j": "アイシャドウ",
+    "e": "eyeshadow",
+    "b": "アイシャドウ",
+    "p": "noun",
+    "r": "アイシャドウ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "四色",
+    "z": "四色",
+    "j": "四色",
+    "e": "four colors",
+    "b": "四色",
+    "p": "numeral",
+    "r": "よんしょく"
+   },
+   {
+    "t": "入り",
+    "z": "有",
+    "j": "入っています",
+    "e": "contains",
+    "b": "入る",
+    "p": "verb",
+    "r": "いり"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "ケースの中では濃く見えましたが、手に塗るとアイシャドウはもっと薄く見えました。": [
+   {
+    "t": "ケース",
+    "z": "盒子",
+    "j": "ケース",
+    "e": "case",
+    "b": "ケース",
+    "p": "noun",
+    "r": "ケース"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "中",
+    "z": "裡面",
+    "j": "中",
+    "e": "inside",
+    "b": "中",
+    "p": "noun",
+    "r": "なか"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "濃く",
+    "z": "濃的",
+    "j": "濃く",
+    "e": "dark",
+    "b": "濃い",
+    "p": "adjective",
+    "r": "こく"
+   },
+   {
+    "t": "見えました",
+    "z": "看起來",
+    "j": "見えました",
+    "e": "looked",
+    "b": "見える",
+    "p": "verb",
+    "r": "みえました"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "手",
+    "z": "手",
+    "j": "手",
+    "e": "hand",
+    "b": "手",
+    "p": "noun",
+    "r": "て"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "塗る",
+    "z": "塗抹",
+    "j": "塗ります",
+    "e": "apply",
+    "b": "塗る",
+    "p": "verb",
+    "r": "ぬる"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "アイシャドウ",
+    "z": "眼影",
+    "j": "アイシャドウ",
+    "e": "eyeshadow",
+    "b": "アイシャドウ",
+    "p": "noun",
+    "r": "アイシャドウ"
+   },
+   {
+    "t": "はもっと"
+   },
+   {
+    "t": "薄く",
+    "z": "淺的",
+    "j": "薄く",
+    "e": "light",
+    "b": "薄い",
+    "p": "adjective",
+    "r": "うすく"
+   },
+   {
+    "t": "見えました。"
+   }
+  ],
+  "茶色のアイブロウペンシルが必要です。": [
+   {
+    "t": "茶色",
+    "z": "茶色",
+    "j": "茶色",
+    "e": "brown",
+    "b": "茶色",
+    "p": "adjective",
+    "r": "ちゃいろ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "アイブロウペンシル",
+    "z": "眉筆",
+    "j": "アイブロウペンシル",
+    "e": "eyebrow pencil",
+    "b": "アイブロウペンシル",
+    "p": "noun",
+    "r": "アイブロウペンシル"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "必要です",
+    "z": "需要",
+    "j": "必要です",
+    "e": "need",
+    "b": "必要だ",
+    "p": "verb",
+    "r": "ひつようです"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "使っていたアイブロウペンシルの芯が折れたので、替え芯のあるものを探しました。": [
+   {
+    "t": "使っていた",
+    "z": "使用過的",
+    "j": "使っていた",
+    "e": "was using",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかっていた"
+   },
+   {
+    "t": "アイブロウペンシル",
+    "z": "眉筆",
+    "j": "アイブロウペンシル",
+    "e": "eyebrow pencil",
+    "b": "アイブロウペンシル",
+    "p": "noun",
+    "r": "アイブロウペンシル"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "芯",
+    "z": "筆芯",
+    "j": "芯",
+    "e": "tip",
+    "b": "芯",
+    "p": "noun",
+    "r": "しん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "折れた",
+    "z": "折斷了",
+    "j": "折れた",
+    "e": "broke",
+    "b": "折れる",
+    "p": "verb",
+    "r": "おれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "替え芯",
+    "z": "替換筆芯",
+    "j": "替え芯",
+    "e": "refill",
+    "b": "替え芯",
+    "p": "noun",
+    "r": "かえしん"
+   },
+   {
+    "t": "のあるものを"
+   },
+   {
+    "t": "探しました",
+    "z": "找了",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このリップグロスは透明です。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "リップグロス",
+    "z": "唇蜜",
+    "j": "リップグロス",
+    "e": "lip gloss",
+    "b": "リップグロス",
+    "p": "noun",
+    "r": "リップグロス"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "透明",
+    "z": "透明",
+    "j": "色がなく透き通っている",
+    "e": "transparent",
+    "b": "透明",
+    "p": "adjective",
+    "r": "とうめい"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "容器の中の色だけでは分かりにくかったので、リップグロスのテスターを確認しました。": [
+   {
+    "t": "容器",
+    "z": "容器",
+    "j": "物を入れるもの",
+    "e": "container",
+    "b": "容器",
+    "p": "noun",
+    "r": "ようき"
+   },
+   {
+    "t": "の中の"
+   },
+   {
+    "t": "色",
+    "z": "顏色",
+    "j": "色",
+    "e": "color",
+    "b": "色",
+    "p": "noun",
+    "r": "いろ"
+   },
+   {
+    "t": "だけでは"
+   },
+   {
+    "t": "分かりにくかった",
+    "z": "難以判斷",
+    "j": "判断しにくかった",
+    "e": "was hard to judge",
+    "b": "分かりにくい",
+    "p": "adjective",
+    "r": "わかりにくかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "リップグロス",
+    "z": "唇蜜",
+    "j": "リップグロス",
+    "e": "lip gloss",
+    "b": "リップグロス",
+    "p": "noun",
+    "r": "リップグロス"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "テスター",
+    "z": "試用品",
+    "j": "試すためのもの",
+    "e": "tester",
+    "b": "テスター",
+    "p": "noun",
+    "r": "テスター"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確かめました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "メイクブラシはスポンジの隣にあります。": [
+   {
+    "t": "メイクブラシ",
+    "z": "化妝刷",
+    "j": "化粧に使うブラシ",
+    "e": "makeup brush",
+    "b": "メイクブラシ",
+    "p": "noun",
+    "r": "メイクブラシ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "スポンジ",
+    "z": "海綿",
+    "j": "スポンジ",
+    "e": "sponge",
+    "b": "スポンジ",
+    "p": "noun",
+    "r": "スポンジ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣",
+    "z": "旁邊",
+    "j": "隣接している場所",
+    "e": "beside",
+    "b": "隣",
+    "p": "noun",
+    "r": "となり"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "パウダーをむらなく広げたかったので、柔らかいメイクブラシを選びました。": [
+   {
+    "t": "パウダー",
+    "z": "粉末",
+    "j": "パウダー",
+    "e": "powder",
+    "b": "パウダー",
+    "p": "noun",
+    "r": "パウダー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "むらなく",
+    "z": "均勻地",
+    "j": "むらなく",
+    "e": "evenly",
+    "b": "むらなく",
+    "p": "adverb",
+    "r": "むらなく"
+   },
+   {
+    "t": "広げたかった",
+    "z": "想要塗抹",
+    "j": "広げたかった",
+    "e": "wanted to spread",
+    "b": "広げる",
+    "p": "verb",
+    "r": "ひろげたかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "柔らかい",
+    "z": "柔軟的",
+    "j": "柔らかい",
+    "e": "soft",
+    "b": "柔らかい",
+    "p": "adjective",
+    "r": "やわらかい"
+   },
+   {
+    "t": "メイクブラシ",
+    "z": "化妝刷",
+    "j": "メイクブラシ",
+    "e": "makeup brush",
+    "b": "メイクブラシ",
+    "p": "noun",
+    "r": "メイクブラシ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "新しいビューラーを買いました。": [
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "ビューラー",
+    "z": "睫毛夾",
+    "j": "ビューラー",
+    "e": "eyelash curler",
+    "b": "ビューラー",
+    "p": "noun",
+    "r": "ビューラー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ゴムがすり減ったので、そのビューラーに替えゴムが付いているか確認しました。": [
+   {
+    "t": "ゴム",
+    "z": "橡膠墊",
+    "j": "ビューラーのゴムパッド",
+    "e": "rubber pad",
+    "b": "ゴム",
+    "p": "noun",
+    "r": "ゴム"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "すり減った",
+    "z": "磨損",
+    "j": "すり減ってなくなった",
+    "e": "worn out",
+    "b": "すり減る",
+    "p": "verb",
+    "r": "すりへった"
+   },
+   {
+    "t": "ので、その"
+   },
+   {
+    "t": "ビューラー",
+    "z": "睫毛夾",
+    "j": "まつげカーラー",
+    "e": "eyelash curler",
+    "b": "ビューラー",
+    "p": "noun",
+    "r": "ビューラー"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "替えゴム",
+    "z": "替換橡膠墊",
+    "j": "交換用のゴムパッド",
+    "e": "replacement rubber pad",
+    "b": "替えゴム",
+    "p": "noun",
+    "r": "かえゴム"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "付いている",
+    "z": "附著",
+    "j": "ついている状態",
+    "e": "attached",
+    "b": "付く",
+    "p": "verb",
+    "r": "ついている"
+   },
+   {
+    "t": "か"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認",
+    "j": "確かめました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "除光液はマニキュアの近くにあります。": [
+   {
+    "t": "除光液",
+    "z": "去光水",
+    "j": "マニキュア落とし",
+    "e": "nail polish remover",
+    "b": "除光液",
+    "p": "noun",
+    "r": "じょこうえき"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "マニキュア",
+    "z": "指甲油",
+    "j": "ネイルカラー",
+    "e": "nail polish",
+    "b": "マニキュア",
+    "p": "noun",
+    "r": "マニキュア"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "近く",
+    "z": "附近",
+    "j": "近い場所",
+    "e": "near",
+    "b": "近く",
+    "p": "adverb",
+    "r": "ちかく"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "最初のボトルはかばんに入れるには大きすぎたので、携帯用の除光液を買いました。": [
+   {
+    "t": "最初",
+    "z": "最初",
+    "j": "はじめ",
+    "e": "first",
+    "b": "最初",
+    "p": "adjective",
+    "r": "さいしょ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ボトル",
+    "z": "瓶子",
+    "j": "容器",
+    "e": "bottle",
+    "b": "ボトル",
+    "p": "noun",
+    "r": "ボトル"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "かばん",
+    "z": "包包",
+    "j": "バッグ",
+    "e": "bag",
+    "b": "かばん",
+    "p": "noun",
+    "r": "かばん"
+   },
+   {
+    "t": "に入れるには"
+   },
+   {
+    "t": "大きすぎた",
+    "z": "太大了",
+    "j": "大きすぎました",
+    "e": "was too large",
+    "b": "大きすぎる",
+    "p": "adjective",
+    "r": "おおきすぎた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "携帯用",
+    "z": "攜帶用",
+    "j": "持ち運び用",
+    "e": "travel-size",
+    "b": "携帯用",
+    "p": "adjective",
+    "r": "けいたいよう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "除光液",
+    "z": "去光水",
+    "j": "マニキュア落とし",
+    "e": "nail polish remover",
+    "b": "除光液",
+    "p": "noun",
+    "r": "じょこうえき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このヘアオイルは小さなボトルに入っています。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "ヘアオイル",
+    "z": "護髮油",
+    "j": "ヘアオイル",
+    "e": "hair oil",
+    "b": "ヘアオイル",
+    "p": "noun",
+    "r": "ヘアオイル"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "小さな",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさな"
+   },
+   {
+    "t": "ボトル",
+    "z": "瓶子",
+    "j": "容器",
+    "e": "bottle",
+    "b": "ボトル",
+    "p": "noun",
+    "r": "ボトル"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入っています",
+    "z": "裝入",
+    "j": "中に入っています",
+    "e": "comes in",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいっています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "泳いだ後に髪が乾燥したので、軽い使い心地のヘアオイルを探しました。": [
+   {
+    "t": "泳いだ後",
+    "z": "游泳後",
+    "j": "泳いだ後",
+    "e": "after swimming",
+    "b": "泳ぐ",
+    "p": "phrase",
+    "r": "およいだあと"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "髪",
+    "z": "頭髮",
+    "j": "髪の毛",
+    "e": "hair",
+    "b": "髪",
+    "p": "noun",
+    "r": "かみ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "乾燥した",
+    "z": "乾燥了",
+    "j": "乾燥した",
+    "e": "felt dry",
+    "b": "乾燥する",
+    "p": "verb",
+    "r": "かんそうした"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "軽い",
+    "z": "輕的",
+    "j": "軽い",
+    "e": "lightweight",
+    "b": "軽い",
+    "p": "adjective",
+    "r": "かるい"
+   },
+   {
+    "t": "使い心地",
+    "z": "使用感",
+    "j": "使った感じ",
+    "e": "feel",
+    "b": "使い心地",
+    "p": "noun",
+    "r": "つかいごこち"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ヘアオイル",
+    "z": "護髮油",
+    "j": "髪の毛を保護する油",
+    "e": "hair oil",
+    "b": "ヘアオイル",
+    "p": "noun",
+    "r": "ヘアオイル"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "探しました",
+    "z": "尋找了",
+    "j": "探しました",
+    "e": "looked for",
+    "b": "探す",
+    "p": "verb",
+    "r": "さがしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ヘアマスクはコンディショナーの隣にあります。": [
+   {
+    "t": "ヘアマスク",
+    "z": "髮膜",
+    "j": "ヘアマスク",
+    "e": "hair mask",
+    "b": "ヘアマスク",
+    "p": "noun",
+    "r": "ヘアマスク"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "コンディショナー",
+    "z": "潤髮乳",
+    "j": "髪を柔らかくする液体",
+    "e": "conditioner",
+    "b": "コンディショナー",
+    "p": "noun",
+    "r": "コンディショナー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣",
+    "z": "旁邊",
+    "j": "隣の場所",
+    "e": "next to",
+    "b": "隣",
+    "p": "noun",
+    "r": "となり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "存在します",
+    "e": "is",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "大きな容器を買う前に試したかったので、使い切りのヘアマスクを選びました。": [
+   {
+    "t": "大きな容器",
+    "z": "大容器",
+    "j": "大きい入れ物",
+    "e": "large container",
+    "b": "容器",
+    "p": "noun",
+    "r": "おおきなようき"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買う前に",
+    "z": "買之前",
+    "j": "買う前の時間",
+    "e": "before buying",
+    "b": "買う",
+    "p": "phrase",
+    "r": "かうまえに"
+   },
+   {
+    "t": "試したかった",
+    "z": "想嘗試",
+    "j": "試してみたいと思いました",
+    "e": "wanted to try",
+    "b": "試す",
+    "p": "verb",
+    "r": "ためしたかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "使い切り",
+    "z": "單次使用的",
+    "j": "一回で使い切る",
+    "e": "single-use",
+    "b": "使い切る",
+    "p": "adjective",
+    "r": "つかいきり"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ヘアマスク",
+    "z": "髮膜",
+    "j": "ヘアマスク",
+    "e": "hair mask",
+    "b": "ヘアマスク",
+    "p": "noun",
+    "r": "ヘアマスク"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ミスト化粧水はかばんに入ります。": [
+   {
+    "t": "ミスト化粧水",
+    "z": "保濕噴霧",
+    "j": "顔に使う化粧水のミスト",
+    "e": "facial mist",
+    "b": "化粧水",
+    "p": "noun",
+    "r": "ミストけしょうすい"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "かばん",
+    "z": "包包",
+    "j": "持ち歩く袋",
+    "e": "bag",
+    "b": "かばん",
+    "p": "noun",
+    "r": "かばん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入ります",
+    "z": "放入",
+    "j": "中に入る",
+    "e": "fits in",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "オフィスの空気が乾燥していたので、携帯用のミスト化粧水を買いました。": [
+   {
+    "t": "オフィス",
+    "z": "辦公室",
+    "j": "オフィス",
+    "e": "office",
+    "b": "オフィス",
+    "p": "noun",
+    "r": "オフィス"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "空気",
+    "z": "空氣",
+    "j": "空気",
+    "e": "air",
+    "b": "空気",
+    "p": "noun",
+    "r": "くうき"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "乾燥していた",
+    "z": "乾燥了",
+    "j": "乾燥していた",
+    "e": "felt dry",
+    "b": "乾燥する",
+    "p": "verb",
+    "r": "かんそうしていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "携帯用",
+    "z": "攜帶用",
+    "j": "携帯用の",
+    "e": "travel-size",
+    "b": "携帯用",
+    "p": "adjective",
+    "r": "けいたいよう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ミスト化粧水",
+    "z": "保濕噴霧",
+    "j": "ミスト化粧水",
+    "e": "facial mist",
+    "b": "ミスト化粧水",
+    "p": "noun",
+    "r": "ミストけしょうすい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ボディスクラブはバス用品の棚にあります。": [
+   {
+    "t": "ボディスクラブ",
+    "z": "身體磨砂膏",
+    "j": "ボディスクラブ",
+    "e": "body scrub",
+    "b": "ボディスクラブ",
+    "p": "noun",
+    "r": "ボディスクラブ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "バス用品",
+    "z": "浴室用品",
+    "j": "バス用品",
+    "e": "bath-care",
+    "b": "バス用品",
+    "p": "noun",
+    "r": "バスようひん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "棚",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "あります",
+    "z": "有",
+    "j": "あります",
+    "e": "is on",
+    "b": "ある",
+    "p": "verb",
+    "r": "あります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "粒の細かいものが欲しかったので、ボディスクラブの表示を読みました。": [
+   {
+    "t": "粒",
+    "z": "顆粒",
+    "j": "小さな固まり",
+    "e": "grain",
+    "b": "粒",
+    "p": "noun",
+    "r": "つぶ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "細かい",
+    "z": "細小的",
+    "j": "小さくて細い",
+    "e": "fine",
+    "b": "細かい",
+    "p": "adjective",
+    "r": "こまかい"
+   },
+   {
+    "t": "ものが"
+   },
+   {
+    "t": "欲しかった",
+    "z": "想要",
+    "j": "ほしかった",
+    "e": "wanted",
+    "b": "欲しい",
+    "p": "adjective",
+    "r": "ほしかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "ボディスクラブ",
+    "z": "身體去角質霜",
+    "j": "体をこする化粧品",
+    "e": "body scrub",
+    "b": "ボディスクラブ",
+    "p": "noun",
+    "r": "ボディスクラブ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "表示",
+    "z": "標示",
+    "j": "商品の説明や名前",
+    "e": "label",
+    "b": "表示",
+    "p": "noun",
+    "r": "ひょうじ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "読みました",
+    "z": "讀了",
+    "j": "読んだ",
+    "e": "read",
+    "b": "読む",
+    "p": "verb",
+    "r": "よみました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "この化粧下地はチューブ入りです。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "化粧下地",
+    "z": "妝前乳",
+    "j": "化粧の下に塗るもの",
+    "e": "makeup primer",
+    "b": "化粧下地",
+    "p": "noun",
+    "r": "けしょうしたじ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "チューブ入り",
+    "z": "管裝的",
+    "j": "チューブに入っている",
+    "e": "in a tube",
+    "b": "チューブ入り",
+    "p": "phrase",
+    "r": "チューブいり"
+   },
+   {
+    "t": "です。"
+   }
+  ],
+  "化粧下地を選ぶ前に、使っているファンデーションと合わせやすいか確認しました。": [
+   {
+    "t": "化粧下地",
+    "z": "妝前乳",
+    "j": "化粧の下に塗るもの",
+    "e": "makeup primer",
+    "b": "化粧下地",
+    "p": "noun",
+    "r": "けしょうしたじ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選ぶ",
+    "z": "選擇",
+    "j": "選択する",
+    "e": "choose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらぶ"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前の時点",
+    "e": "before",
+    "b": "前",
+    "p": "adverb",
+    "r": "まえ"
+   },
+   {
+    "t": "に、"
+   },
+   {
+    "t": "使っている",
+    "z": "正在使用",
+    "j": "使っている状態",
+    "e": "using",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかっている"
+   },
+   {
+    "t": "ファンデーション",
+    "z": "粉底",
+    "j": "顔に塗る化粧品",
+    "e": "foundation",
+    "b": "ファンデーション",
+    "p": "noun",
+    "r": "ファンデーション"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "合わせやすい",
+    "z": "容易搭配",
+    "j": "一緒に使いやすい",
+    "e": "easy to match",
+    "b": "合わせやすい",
+    "p": "adjective",
+    "r": "あわせやすい"
+   },
+   {
+    "t": "か"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確かめた",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "メイクキープミストはフェイスパウダーの隣にあります。": [
+   {
+    "t": "メイクキープミスト",
+    "z": "定妝噴霧",
+    "j": "メイクを固定するスプレー",
+    "e": "setting spray",
+    "b": "メイクキープミスト",
+    "p": "noun",
+    "r": "メイクキープミスト"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "フェイスパウダー",
+    "z": "蜜粉",
+    "j": "顔に使う粉",
+    "e": "face powder",
+    "b": "フェイスパウダー",
+    "p": "noun",
+    "r": "フェイスパウダー"
+   },
+   {
+    "t": "の隣にあります。"
+   }
+  ],
+  "暑さでメイクがすぐ崩れたので、小さなメイクキープミストを買いました。": [
+   {
+    "t": "暑さ",
+    "z": "炎熱",
+    "j": "暑い状態",
+    "e": "heat",
+    "b": "暑さ",
+    "p": "noun",
+    "r": "あつさ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "メイク",
+    "z": "化妝",
+    "j": "化粧",
+    "e": "makeup",
+    "b": "メイク",
+    "p": "noun",
+    "r": "メイク"
+   },
+   {
+    "t": "がすぐ"
+   },
+   {
+    "t": "崩れた",
+    "z": "脫妝",
+    "j": "メイクが落ちた",
+    "e": "wore off",
+    "b": "崩れる",
+    "p": "verb",
+    "r": "くずれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "小さな",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさな"
+   },
+   {
+    "t": "メイクキープミスト",
+    "z": "定妝噴霧",
+    "j": "メイクを保つミスト",
+    "e": "makeup setting mist",
+    "b": "メイクキープミスト",
+    "p": "noun",
+    "r": "メイクキープミスト"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "かばんにコンパクトミラーを入れています。": [
+   {
+    "t": "かばん",
+    "z": "包包",
+    "j": "かばん",
+    "e": "bag",
+    "b": "かばん",
+    "p": "noun",
+    "r": "かばん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "コンパクトミラー",
+    "z": "隨身鏡",
+    "j": "コンパクトミラー",
+    "e": "compact mirror",
+    "b": "コンパクトミラー",
+    "p": "noun",
+    "r": "コンパクトミラー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "入れています",
+    "z": "放入",
+    "j": "入れています",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "色味がよく見えなかったので、窓際でコンパクトミラーを使いました。": [
+   {
+    "t": "色味",
+    "z": "色調",
+    "j": "色味",
+    "e": "shade",
+    "b": "色味",
+    "p": "noun",
+    "r": "いろみ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "よく",
+    "z": "好好地",
+    "j": "よく",
+    "e": "well",
+    "b": "よく",
+    "p": "adverb",
+    "r": "よく"
+   },
+   {
+    "t": "見えなかった",
+    "z": "看不到",
+    "j": "見えなかった",
+    "e": "could not see",
+    "b": "見える",
+    "p": "verb",
+    "r": "みえなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "窓際",
+    "z": "窗邊",
+    "j": "窓際",
+    "e": "near the window",
+    "b": "窓際",
+    "p": "noun",
+    "r": "まどぎわ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "コンパクトミラー",
+    "z": "隨身鏡",
+    "j": "コンパクトミラー",
+    "e": "compact mirror",
+    "b": "コンパクトミラー",
+    "p": "noun",
+    "r": "コンパクトミラー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "使いました",
+    "z": "使用了",
+    "j": "使いました",
+    "e": "used",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "爪やすりは爪切りの隣にあります。": [
+   {
+    "t": "爪やすり",
+    "z": "指甲銼",
+    "j": "爪やすり",
+    "e": "nail file",
+    "b": "爪やすり",
+    "p": "noun",
+    "r": "つめやすり"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "爪切り",
+    "z": "指甲剪",
+    "j": "爪切り",
+    "e": "clippers",
+    "b": "爪切り",
+    "p": "noun",
+    "r": "つめきり"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "隣に",
+    "z": "旁邊",
+    "j": "隣に",
+    "e": "beside",
+    "b": "隣に",
+    "p": "preposition",
+    "r": "となりに"
+   },
+   {
+    "t": "あります。"
+   }
+  ],
+  "爪を切った後、先端をなめらかにするために目の細かい爪やすりを買いました。": [
+   {
+    "t": "爪",
+    "z": "指甲",
+    "j": "指の先の硬い部分",
+    "e": "nail",
+    "b": "爪",
+    "p": "noun",
+    "r": "つめ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "切った",
+    "z": "剪了",
+    "j": "切りました",
+    "e": "cut",
+    "b": "切る",
+    "p": "verb",
+    "r": "きった"
+   },
+   {
+    "t": "後",
+    "z": "之後",
+    "j": "あと",
+    "e": "after",
+    "b": "後",
+    "p": "noun",
+    "r": "あと"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "先端",
+    "z": "尖端",
+    "j": "物のはし",
+    "e": "tip",
+    "b": "先端",
+    "p": "noun",
+    "r": "せんたん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "なめらかにする",
+    "z": "使平滑",
+    "j": "滑らかにする",
+    "e": "smooth",
+    "b": "なめらかにする",
+    "p": "verb",
+    "r": "なめらかにする"
+   },
+   {
+    "t": "ために"
+   },
+   {
+    "t": "目の細かい",
+    "z": "細目的",
+    "j": "研磨面が細かい",
+    "e": "fine-grit",
+    "b": "細かい",
+    "p": "adjective",
+    "r": "めのこまかい"
+   },
+   {
+    "t": "爪やすり",
+    "z": "指甲銼刀",
+    "j": "爪を磨く道具",
+    "e": "nail file",
+    "b": "爪やすり",
+    "p": "noun",
+    "r": "つめやすり"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買いました",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このつけまつげは左右一組で売っています。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "つけまつげ",
+    "z": "假睫毛",
+    "j": "まつげのつけ毛",
+    "e": "false eyelashes",
+    "b": "つけまつげ",
+    "p": "noun",
+    "r": "つけまつげ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "左右一組",
+    "z": "左右一組",
+    "j": "左右の一組",
+    "e": "pairs",
+    "b": "一組",
+    "p": "noun",
+    "r": "さゆういちくみ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "売っています",
+    "z": "販售",
+    "j": "売られています",
+    "e": "are sold",
+    "b": "売る",
+    "p": "verb",
+    "r": "うっています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "最初の一組は長すぎるように見えたので、パーティー用に短めのつけまつげを選びました。": [
+   {
+    "t": "最初",
+    "z": "最初",
+    "j": "はじめ",
+    "e": "first",
+    "b": "最初",
+    "p": "adjective",
+    "r": "さいしょ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "一組",
+    "z": "一組",
+    "j": "ひとくみ",
+    "e": "one pair",
+    "b": "一組",
+    "p": "noun",
+    "r": "ひとくみ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "長すぎる",
+    "z": "太長",
+    "j": "長すぎる",
+    "e": "too long",
+    "b": "長すぎる",
+    "p": "adjective",
+    "r": "ながすぎる"
+   },
+   {
+    "t": "ように見えたので、"
+   },
+   {
+    "t": "パーティー用",
+    "z": "派對用",
+    "j": "パーティーよう",
+    "e": "for party use",
+    "b": "パーティー用",
+    "p": "phrase",
+    "r": "パーティーよう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "短め",
+    "z": "較短",
+    "j": "みじかめ",
+    "e": "somewhat short",
+    "b": "短め",
+    "p": "adjective",
+    "r": "みじかめ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "つけまつげ",
+    "z": "假睫毛",
+    "j": "つけまつげ",
+    "e": "false eyelashes",
+    "b": "つけまつげ",
+    "p": "noun",
+    "r": "つけまつげ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "えらびました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ヘアスプレーは一番上の棚にあります。": [
+   {
+    "t": "ヘアスプレー",
+    "z": "定型噴霧",
+    "j": "ヘアスプレー",
+    "e": "hair spray",
+    "b": "ヘアスプレー",
+    "p": "noun",
+    "r": "ヘアスプレー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "一番上",
+    "z": "最上層",
+    "j": "いちばん上の部分",
+    "e": "top",
+    "b": "一番上",
+    "p": "adjective",
+    "r": "いちばんうえ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "棚",
+    "z": "架子",
+    "j": "物を置く家具",
+    "e": "shelf",
+    "b": "棚",
+    "p": "noun",
+    "r": "たな"
+   },
+   {
+    "t": "にあります。"
+   }
+  ],
+  "夜まで髪型を保ちたかったので、小さなヘアスプレーを選びました。": [
+   {
+    "t": "夜まで",
+    "z": "直到晚上",
+    "j": "夜の時間まで",
+    "e": "until evening",
+    "b": "夜まで",
+    "p": "adverb",
+    "r": "よるまで"
+   },
+   {
+    "t": "髪型",
+    "z": "髮型",
+    "j": "髪の形",
+    "e": "hairstyle",
+    "b": "髪型",
+    "p": "noun",
+    "r": "かみがた"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "保ちたかった",
+    "z": "想保持",
+    "j": "続けたかった",
+    "e": "wanted to last",
+    "b": "保つ",
+    "p": "verb",
+    "r": "たもちたかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "小さな",
+    "z": "小的",
+    "j": "小さい",
+    "e": "small",
+    "b": "小さい",
+    "p": "adjective",
+    "r": "ちいさな"
+   },
+   {
+    "t": "ヘアスプレー",
+    "z": "定型噴霧",
+    "j": "ヘアスプレー",
+    "e": "hair spray",
+    "b": "ヘアスプレー",
+    "p": "noun",
+    "r": "ヘアスプレー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "picked",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ]
+ }
+}

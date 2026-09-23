@@ -389,7 +389,8 @@ async function main() {
       descriptionEn: "People and jobs in everyday life",
       descriptionJa: "日常生活を支えるさまざまな仕事",
       color: "from-blue-100 to-amber-100",
-      imageUrl: "",
+      imageUrl:
+        "https://img.nexflow.team/word-images/category-professions-ai-053af0e16e663a26.webp",
       reviewRequired: false,
     },
     sourceFiles: [

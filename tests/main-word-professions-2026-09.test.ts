@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { categories, publicFallbackCategories } from "../lib/categories";
@@ -205,6 +206,19 @@ test("the professions category and deploy migration are wired before catalogue c
   assert.equal(professionCategories[0].nameZh, "職業");
   assert.ok(professionCategories[0].description.trim());
   assert.ok(professionCategories[0].descriptionEn?.trim());
+  const coverUrl = professionCategories[0].imageUrl;
+  assert.match(
+    coverUrl,
+    /^https:\/\/img\.nexflow\.team\/word-images\/category-professions-ai-([0-9a-f]{16})\.webp$/,
+    "the professions theme needs a public cover URL",
+  );
+  const coverName = new URL(coverUrl).pathname.split("/").at(-1)!;
+  const coverBytes = readFileSync(new URL(`../data/category-covers/${coverName}`, import.meta.url));
+  assert.equal(
+    createHash("sha256").update(coverBytes).digest("hex").slice(0, 16),
+    coverName.match(/-([0-9a-f]{16})\.webp$/)![1],
+    "the checked-in cover must match its immutable public URL",
+  );
   assert.equal(
     publicFallbackCategories.some(({ id }) => id === "professions"),
     false,

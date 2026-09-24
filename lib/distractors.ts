@@ -1,28 +1,9 @@
-// Distractor selection for MCQ cards. Replaces the old "ORDER BY random()"
-// pool with a metadata-aware scorer so wrong answers feel plausible instead
-// of obviously wrong:
-//
-//   - Curated relations (`confusing` > `synonym` > `see-also`) are the
-//     strongest signal — those edges literally say "people mix these up".
-//   - Same category (e.g. 廚房 with 廚房) matters next: the user is in a
-//     thematic study session, so cross-theme distractors stick out.
-//   - Same part-of-speech and same CEFR level are small structural boosts.
-//     (Today most of the corpus is nouns with null cefr, so these are
-//     near-no-ops — present for forward compatibility as verbs/adjectives
-//     and CEFR labelling fill in.)
-//   - Spelling similarity (Levenshtein on the lemma) catches near-misses
-//     like soap/soup, fridge/freezer, deodorant/disinfectant.
-//   - Pronunciation similarity (Levenshtein on the IPA, stress stripped)
-//     catches homophones / near-homophones that spelling misses.
-//
-// Each candidate gets a numeric score; ties are broken with a small random
-// epsilon so the same study session doesn't show identical distractors on
-// every visit.
-
-import "server-only";
+// Rank plausible distractors, then sample from bounded pools. Synonyms are
+// exclusions, never a difficulty bonus. Pure: also used by the release audit.
+import { assembleStudyChoices, choicesConflict, prepareChoiceCandidates, type ChoiceWord, type StudyChoiceCandidate } from "./study-choices";
 
 export interface CandidateMeta {
-  cardId: number;
+  cardId: number | string;
   back: string;        // the distractor text to show
   wordId: string;
   word: string;        // English lemma (for spelling similarity)
@@ -30,6 +11,9 @@ export interface CandidateMeta {
   category: string;
   cefr: string | null;
   pronunciation: string;
+  language?: "en" | "ja";
+  gloss?: string;
+  exclusions?: string[];
 }
 
 export interface TargetMeta extends CandidateMeta {
@@ -44,14 +28,12 @@ export interface RelationEdge {
 
 const W = {
   confusing: 12,
-  synonym: 6,
   seeAlso: 3,
   sameCategory: 5,
   samePos: 4,
   sameCefr: 2,
   spelling: 6,    // max contribution
   pronunciation: 4,
-  tieBreakEps: 1.0,
 } as const;
 
 // IPA glyphs that don't carry phonemic identity for our similarity check.
@@ -106,7 +88,7 @@ function scoreCandidate(
       (r.target === target.wordId && r.source === cand.wordId);
     if (!linked) continue;
     if (r.type === "confusing") score += W.confusing;
-    else if (r.type === "synonym") score += W.synonym;
+    else if (r.type === "synonym") return -Infinity;
     else if (r.type === "see-also") score += W.seeAlso;
   }
 
@@ -126,34 +108,49 @@ function scoreCandidate(
   return score;
 }
 
-export function selectDistractors(
-  target: TargetMeta,
-  pool: CandidateMeta[],
-  relations: RelationEdge[],
-  n = 3,
-): string[] {
-  if (pool.length === 0) return [];
-  const scored = pool
-    .map((c) => {
-      const base = scoreCandidate(target, c, relations);
-      // Tie-breaker epsilon keeps equally-good candidates rotating across
-      // sessions instead of always picking the same one alphabetically.
-      const jitter = Math.random() * W.tieBreakEps;
-      return { c, total: base + jitter, base };
-    })
-    .filter((x) => Number.isFinite(x.base));
+export function candidateWord(c: CandidateMeta): ChoiceWord {
+  return { wordId: c.wordId, label: c.back, language: c.language ?? "en", gloss: c.gloss ?? "", category: c.category, pos: c.pos, exclusions: c.exclusions ?? [] };
+}
 
-  scored.sort((a, b) => b.total - a.total);
-
-  const out: string[] = [];
-  const seen = new Set<string>([target.back]);
-  for (const { c } of scored) {
-    if (out.length >= n) break;
-    if (seen.has(c.back)) continue;
-    seen.add(c.back);
-    out.push(c.back);
+/** Include both directions and distractor-to-distractor edges. */
+export function attachChoiceExclusions(pool: CandidateMeta[], relations: RelationEdge[]): CandidateMeta[] {
+  const byId = new Map(pool.map(c => [c.wordId, c]));
+  const blocked = new Map<string, Set<string>>();
+  for (const r of relations) {
+    if (r.type !== "synonym") continue;
+    const a = byId.get(r.source), b = byId.get(r.target);
+    if (!a || !b) continue;
+    for (const [source, label] of [[a.wordId, b.back], [b.wordId, a.back]]) {
+      const set = blocked.get(source) ?? new Set<string>();
+      set.add(label); blocked.set(source, set);
+    }
   }
-  return out;
+  return pool.map(c => ({ ...c, exclusions: [...(c.exclusions ?? []), ...(blocked.get(c.wordId) ?? [])] }));
+}
+
+export function buildChoiceCandidates(target: TargetMeta, pool: CandidateMeta[], relations: RelationEdge[]): StudyChoiceCandidate[] {
+  const answer = candidateWord(target);
+  const candidates = pool.flatMap(c => {
+    const word = candidateWord(c);
+    if (word.language !== answer.language || choicesConflict(answer, word)) return [];
+    const score = scoreCandidate(target, c, relations);
+    if (!Number.isFinite(score)) return [];
+    const sameCategory = !!target.category && target.category === c.category;
+    const close = normalizedSimilarity(target.back.toLowerCase(), c.back.toLowerCase()) >= 0.45 ||
+      (!!target.pronunciation && !!c.pronunciation && normalizedSimilarity(stripIPA(target.pronunciation), stripIPA(c.pronunciation)) >= 0.55) ||
+      relations.some(r => r.type === "confusing" && ((r.source === target.wordId && r.target === c.wordId) || (r.target === target.wordId && r.source === c.wordId)));
+    return [{ ...word, tier: sameCategory ? (close ? 1 : 2) : 3,
+      weight: 1 + score + (!sameCategory && !!target.pos && target.pos === c.pos ? 32 : 0) }];
+  });
+  return prepareChoiceCandidates(answer, candidates);
+}
+
+export function selectDistractors(target: TargetMeta, pool: CandidateMeta[], relations: RelationEdge[], n = 3): string[] {
+  const enriched = attachChoiceExclusions(pool, relations);
+  const self = enriched.find(c => c.wordId === target.wordId);
+  const effective = { ...target, exclusions: self?.exclusions ?? target.exclusions };
+  return assembleStudyChoices(candidateWord(effective), buildChoiceCandidates(effective, enriched, relations), Math.floor(Math.random() * 4294967296))
+    .filter(label => label !== target.back).slice(0, n);
 }
 
 // Exported for tests / debugging — surfaces what each candidate scored on
@@ -170,7 +167,7 @@ export function explainScore(
       (r.target === target.wordId && r.source === cand.wordId);
     if (!linked) continue;
     if (r.type === "confusing") parts.confusing = (parts.confusing ?? 0) + W.confusing;
-    else if (r.type === "synonym") parts.synonym = (parts.synonym ?? 0) + W.synonym;
+    else if (r.type === "synonym") return { total: -Infinity, parts: { synonymExcluded: 1 } };
     else if (r.type === "see-also") parts.seeAlso = (parts.seeAlso ?? 0) + W.seeAlso;
   }
   if (cand.category && cand.category === target.category) parts.sameCategory = W.sameCategory;

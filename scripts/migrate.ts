@@ -7,6 +7,7 @@
 // Skips gracefully if DATABASE_URL is not set (e.g. local dev without DB).
 
 import postgres from "postgres";
+import { assertPublishedChoiceCoverage } from "../lib/study-choice-catalog";
 import { categories as seedCategories } from "../lib/categories";
 import { words as seedWords } from "../lib/words";
 import { runAtlasTextModeration } from "../lib/atlas/moderation";
@@ -2851,6 +2852,8 @@ async function main() {
     }
     console.log(`[migrate] legacy columns ensured dropped.`);
 
+    const choiceCount = await assertPublishedChoiceCoverage(sql);
+    console.log(`[migrate] four-choice fallback checked for ${choiceCount} published terms.`);
     await syncStorageBucketRules(sql);
   } finally {
     await sql.end();

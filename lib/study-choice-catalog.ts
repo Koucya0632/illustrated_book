@@ -1,9 +1,9 @@
-import type { Sql } from "postgres";
+import type { Sql, TransactionSql } from "postgres";
 import { attachChoiceExclusions, candidateWord, type CandidateMeta, type RelationEdge } from "./distractors";
 import { assembleStudyChoices, choiceReserve, choicesConflict, type ChoiceLanguage } from "./study-choices";
 
 /** Full published vocabulary, independent of a user's cards and selected themes. */
-export async function readChoiceCatalog(sql: Sql, languages: ChoiceLanguage[]) {
+export async function readChoiceCatalog(sql: Sql | TransactionSql, languages: ChoiceLanguage[]) {
   const [rows, relations] = await Promise.all([
     sql`SELECT w.id AS word_id, COALESCE(wt.term, w.word) AS label, lang.language,
           w.category, w.part_of_speech AS pos, w.cefr_level AS cefr,
@@ -34,7 +34,7 @@ export async function readChoiceCatalog(sql: Sql, languages: ChoiceLanguage[]) {
 }
 
 /** Read-only deployment gate: exercise the actual fallback for every published term. */
-export async function assertPublishedChoiceCoverage(sql: Sql): Promise<number> {
+export async function assertPublishedChoiceCoverage(sql: Sql | TransactionSql): Promise<number> {
   const { pools } = await readChoiceCatalog(sql, ["en", "ja"]);
   const failures: string[] = [];
   let count = 0;
@@ -58,4 +58,9 @@ export async function assertPublishedChoiceCoverage(sql: Sql): Promise<number> {
   }
   if (!count || failures.length) throw new Error(`Study choice coverage failed (${failures.length}/${count}): ${failures.join(", ")}`);
   return count;
+}
+
+/** Keep read-only mode inside a transaction; pooled sessions must remain writable. */
+export async function auditPublishedChoiceCoverage(sql: Sql): Promise<number> {
+  return sql.begin("read only", tx => assertPublishedChoiceCoverage(tx));
 }

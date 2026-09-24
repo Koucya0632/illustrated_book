@@ -57,7 +57,9 @@
     "audio:generate:drugstore:local": "node --env-file=.env.local scripts/generate-drugstore-candidate-audio.mjs",
     "audio:verify:drugstore": "node scripts/verify-drugstore-audio.mjs",
     "drugstore:prepare-publish": "node --env-file=.env.local scripts/prepare-drugstore-publish-plan.mjs",
-    "drugstore:publish": "tsx --env-file=.env.local scripts/publish-drugstore-series.ts"
+    "drugstore:publish": "tsx --env-file=.env.local scripts/publish-drugstore-series.ts",
+    "audit:study-choices": "tsx --env-file=.env.local scripts/audit-study-choices.ts",
+    "sync:study-choices": "node scripts/sync-study-choice-data.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

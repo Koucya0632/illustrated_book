@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { StudyChoiceSession, prepareChoiceCandidates, localChoiceCandidate, choiceReserve, choiceKey, type ChoiceWord, type StudyChoiceCandidate } from "@/lib/study-choices";
 import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
 import Mascot from "@/components/tuji/Mascot";
@@ -39,12 +40,15 @@ interface ApiWord {
   image_url: string;
   pronunciation: string;
   category: string;
+  target_language?: "en" | "ja";
 }
 interface DueCard {
   card: ApiCard;
   state: ApiState | null;
   word: ApiWord;
   choices?: string[];
+  choiceCandidates?: StudyChoiceCandidate[];
+  choiceExclusions?: string[];
   // Step 3 (拼字) options: correct word + 3 algorithmic misspellings,
   // shuffled. Attached server-side by lib/misspellings + attachChoices.
   spellingChoices?: string[];
@@ -194,6 +198,8 @@ export default function StudyClient() {
   const [reportMenuOpen, setReportMenuOpen] = useState(false);
   const [reportContext, setReportContext] = useState<StudyReportContext | null>(null);
   const startedAtRef = useRef<number>(0);
+  const choiceSessionRef = useRef(new StudyChoiceSession());
+  const choiceVariantsRef = useRef<Record<string, number>>({});
   // Synchronous lock so a rapid double-click within the auto-advance window is
   // blocked before React re-renders (state alone has a stale-closure race).
   const answeringRef = useRef(false);
@@ -336,6 +342,8 @@ export default function StudyClient() {
         }
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+        choiceSessionRef.current = new StudyChoiceSession();
+        choiceVariantsRef.current = {};
         setQueue(data.queue);
         setStats(data.stats);
         setMode(m);
@@ -953,7 +961,21 @@ export default function StudyClient() {
   const inMcqView = mode === "new" ? newStep !== 1 : phase === "answer";
   // Right-column 4-MCQ choices for Step 2 + review. Step 3 has its own
   // judgment UI driven by `displayedSpelling`, so it doesn't read this.
-  const mcqChoices = current.choices ?? [];
+  const choiceLanguage = current.word.target_language ?? (learningDirection === "zh-ja" ? "ja" : "en");
+  const choiceTarget: ChoiceWord = { wordId: current.word.id, label: current.card.back, language: choiceLanguage,
+    gloss: current.word.chinese, category: current.word.category, exclusions: current.choiceExclusions };
+  const localCandidates = allWords.filter(w => (w.targetLanguage ?? choiceLanguage) === choiceLanguage).map(w =>
+    localChoiceCandidate(choiceTarget, { wordId: w.id, label: w.word, language: choiceLanguage,
+      gloss: w.chinese, category: w.category }));
+  const knownChoices = [...localCandidates, ...choiceReserve.map(w => ({ ...w, tier: 4, weight: 1 }))];
+  const legacyChoices = (current.choices ?? []).flatMap(label => {
+    const known = knownChoices.find(c => c.language === choiceLanguage && choiceKey(c.label) === choiceKey(label));
+    return known ? [known] : [];
+  });
+  const serverCandidates = current.choiceCandidates ?? [];
+  const choiceCandidates = prepareChoiceCandidates(choiceTarget, serverCandidates).length >= 3
+    ? serverCandidates : [...serverCandidates, ...localCandidates, ...legacyChoices];
+  const mcqChoices = choiceSessionRef.current.choices(choiceTarget, choiceCandidates, choiceVariantsRef.current[current.word.id] ?? 0);
 
   function openReport() {
     if (!mode || !current) return;
@@ -985,7 +1007,7 @@ export default function StudyClient() {
         front: current.card.front,
         back: current.card.back,
         explanation: current.card.explanation,
-        choices: current.choices ?? [],
+        choices: mcqChoices,
         spellingChoices: current.spellingChoices ?? [],
         displayedSpelling: newStep === 3 ? displayedSpelling : null,
       },
@@ -1389,6 +1411,7 @@ export default function StudyClient() {
             // performs the deferred requeue + reseed + advance.
             if (!peekAdvanceOnClose) return;
             setPeekAdvanceOnClose(false);
+            if (newStep === 2) choiceVariantsRef.current[current.word.id] = (choiceVariantsRef.current[current.word.id] ?? 0) + 1;
             setPicked(null);
             const [head, ...rest] = stepQueue;
             const next = [...rest, head];

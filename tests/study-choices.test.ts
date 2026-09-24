@@ -92,3 +92,21 @@ test('published-catalog release gate rejects empty data and uncovered words', as
   const blocked = choiceReserve.filter(w => w.language === 'en').map(w => w.label);
   await assert.rejects(assertPublishedChoiceCoverage(fakeSql([{word_id: 'custom', label: 'my object', language: 'en', gloss: '', aliases: blocked}])), /1\/1/);
 });
+
+
+test('read-only audit is transaction-scoped and cannot alter pooled session defaults', async () => {
+  const { auditPublishedChoiceCoverage } = await import('../lib/study-choice-catalog');
+  let mode = '';
+  const queries: string[] = [];
+  const tx = (strings: TemplateStringsArray) => {
+    const query = strings.join(''); queries.push(query);
+    return Promise.resolve(query.includes('FROM words w')
+      ? [{word_id: 'apple', label: 'apple', language: 'en', gloss: '蘋果', aliases: []}] : []);
+  };
+  const sql = { begin: async (options: string, run: (tx: unknown) => Promise<number>) => {
+    mode = options; return run(tx);
+  } } as unknown as import('postgres').Sql;
+  assert.equal(await auditPublishedChoiceCoverage(sql), 1);
+  assert.equal(mode, 'read only');
+  assert.ok(queries.length > 0 && queries.every(q => q.trimStart().startsWith('SELECT')));
+});

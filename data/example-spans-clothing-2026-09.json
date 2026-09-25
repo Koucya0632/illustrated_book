@@ -1,0 +1,13425 @@
+{
+ "en": {
+  "He is wearing a white T-shirt today.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "wearing",
+    "z": "穿著",
+    "j": "着ています",
+    "e": "wearing",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "white",
+    "z": "白色的",
+    "j": "白い",
+    "e": "white",
+    "b": "white",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "T-shirt",
+    "z": "T恤",
+    "j": "Tシャツ",
+    "e": "T-shirt",
+    "b": "T-shirt",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "today",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because my T-shirt was still in the wash, I wore a clean shirt to the store.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "my",
+    "z": "我的",
+    "j": "私の",
+    "e": "my",
+    "b": "my",
+    "p": "determiner"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "T-shirt",
+    "z": "T恤",
+    "j": "Tシャツ",
+    "e": "T-shirt",
+    "b": "T-shirt",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "still",
+    "z": "仍然",
+    "j": "まだ",
+    "e": "still",
+    "b": "still",
+    "p": "adverb"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "wash",
+    "z": "洗衣",
+    "j": "洗濯",
+    "e": "wash",
+    "b": "wash",
+    "p": "noun"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "wore",
+    "z": "穿了",
+    "j": "着ました",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "clean",
+    "z": "乾淨的",
+    "j": "きれいな",
+    "e": "clean",
+    "b": "clean",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "shirt",
+    "z": "襯衫",
+    "j": "シャツ",
+    "e": "shirt",
+    "b": "shirt",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "store",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "store",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I ironed my shirt this morning.": [
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "ironed",
+    "z": "燙平了",
+    "j": "アイロンをかけました",
+    "e": "ironed",
+    "b": "iron",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "my",
+    "z": "我的",
+    "j": "私の",
+    "e": "my",
+    "b": "my",
+    "p": "determiner"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "shirt",
+    "z": "襯衫",
+    "j": "シャツ",
+    "e": "shirt",
+    "b": "shirt",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "this morning",
+    "z": "今天早上",
+    "j": "今朝",
+    "e": "this morning",
+    "b": "this morning",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even though it was hot, he wore a long-sleeved shirt to the meeting to look professional.": [
+   {
+    "t": "Even though it was "
+   },
+   {
+    "t": "hot",
+    "z": "熱的",
+    "j": "暑い",
+    "e": "hot",
+    "b": "hot",
+    "p": "adjective"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "着ていた",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "long-sleeved shirt",
+    "z": "長袖襯衫",
+    "j": "長袖のシャツ",
+    "e": "long-sleeved shirt",
+    "b": "long-sleeved shirt",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "meeting",
+    "z": "會議",
+    "j": "会議",
+    "e": "meeting",
+    "b": "meeting",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "look professional",
+    "z": "看起來專業",
+    "j": "きちんと見せたい",
+    "e": "look professional",
+    "b": "look professional",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She is wearing a blue blouse today.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "wearing",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "wearing",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "blue blouse",
+    "z": "藍色襯衫",
+    "j": "青いブラウス",
+    "e": "blue blouse",
+    "b": "blue blouse",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "today",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although she usually wears T-shirts, she chose a blouse for the job interview.": [
+   {
+    "t": "Although she "
+   },
+   {
+    "t": "usually",
+    "z": "通常",
+    "j": "ふだん",
+    "e": "usually",
+    "b": "usually",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "着ています",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "T-shirts",
+    "z": "T恤",
+    "j": "Tシャツ",
+    "e": "T-shirts",
+    "b": "T-shirt",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "blouse",
+    "z": "女用襯衫",
+    "j": "ブラウス",
+    "e": "blouse",
+    "b": "blouse",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "job interview",
+    "z": "工作面試",
+    "j": "面接",
+    "e": "job interview",
+    "b": "job interview",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I often wear a sweater to stay warm in winter.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "often",
+    "z": "經常",
+    "j": "よく",
+    "e": "often",
+    "b": "often",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wear",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "sweater",
+    "z": "毛衣",
+    "j": "セーター",
+    "e": "sweater",
+    "b": "sweater",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "stay warm",
+    "z": "保持溫暖",
+    "j": "暖かくする",
+    "e": "stay warm",
+    "b": "stay warm",
+    "p": "phrase"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "winter",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "winter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because it was colder outside than in the classroom, he kept his sweater on after the lesson.": [
+   {
+    "t": "Because it was "
+   },
+   {
+    "t": "colder",
+    "z": "較冷的",
+    "j": "より寒かった",
+    "e": "colder",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "outside",
+    "z": "外面",
+    "j": "外",
+    "e": "outside",
+    "b": "outside",
+    "p": "adverb"
+   },
+   {
+    "t": " than in the "
+   },
+   {
+    "t": "classroom",
+    "z": "教室",
+    "j": "教室",
+    "e": "classroom",
+    "b": "classroom",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "kept",
+    "z": "繼續穿著",
+    "j": "脱ぎませんでした",
+    "e": "kept on",
+    "b": "keep",
+    "p": "verb"
+   },
+   {
+    "t": " his "
+   },
+   {
+    "t": "sweater",
+    "z": "毛衣",
+    "j": "セーター",
+    "e": "sweater",
+    "b": "sweater",
+    "p": "noun"
+   },
+   {
+    "t": " on "
+   },
+   {
+    "t": "after the lesson",
+    "z": "課後",
+    "j": "授業の後",
+    "e": "after the lesson",
+    "b": "lesson",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "My mother knitted me a new cardigan.": [
+   {
+    "t": "My",
+    "z": "我的",
+    "j": "私の",
+    "e": "my",
+    "b": "my",
+    "p": "determiner"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "mother",
+    "z": "母親",
+    "j": "母",
+    "e": "mother",
+    "b": "mother",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "knitted",
+    "z": "編織了",
+    "j": "編んだ",
+    "e": "knitted",
+    "b": "knit",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "me",
+    "z": "我",
+    "j": "私に",
+    "e": "me",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "new",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "new",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "cardigan",
+    "z": "開襟羊毛衫",
+    "j": "カーディガン",
+    "e": "cardigan",
+    "b": "cardigan",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even in summer, the library is cold, so she always brings a cardigan.": [
+   {
+    "t": "Even",
+    "z": "即使",
+    "j": "〜でも",
+    "e": "even",
+    "b": "even",
+    "p": "adverb"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "summer",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "summer",
+    "p": "noun"
+   },
+   {
+    "t": ", the "
+   },
+   {
+    "t": "library",
+    "z": "圖書館",
+    "j": "図書館",
+    "e": "library",
+    "b": "library",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "cold",
+    "z": "冷的",
+    "j": "寒い",
+    "e": "cold",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": ", so she "
+   },
+   {
+    "t": "always",
+    "z": "總是",
+    "j": "いつも",
+    "e": "always",
+    "b": "always",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "brings",
+    "z": "帶來",
+    "j": "持って行きます",
+    "e": "brings",
+    "b": "bring",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "cardigan",
+    "z": "開襟毛衣",
+    "j": "カーディガン",
+    "e": "cardigan",
+    "b": "cardigan",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After class, he changed into his hoodie and went to the park.": [
+   {
+    "t": "After class",
+    "z": "下課後",
+    "j": "授業のあと",
+    "e": "After class",
+    "b": "After class",
+    "p": "phrase"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "he",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "changed into",
+    "z": "換上",
+    "j": "着替えた",
+    "e": "changed into",
+    "b": "change into",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "his hoodie",
+    "z": "他的連帽衫",
+    "j": "彼のパーカー",
+    "e": "his hoodie",
+    "b": "hoodie",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "went to",
+    "z": "去了",
+    "j": "行った",
+    "e": "went to",
+    "b": "go to",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "the park",
+    "z": "公園",
+    "j": "公園",
+    "e": "the park",
+    "b": "park",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because this hoodie is thick, I didn't feel cold even when the weather turned chilly.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "this hoodie",
+    "z": "這件連帽衫",
+    "j": "このパーカー",
+    "e": "this hoodie",
+    "b": "hoodie",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "is thick",
+    "z": "很厚",
+    "j": "厚手だ",
+    "e": "is thick",
+    "b": "be thick",
+    "p": "phrase"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "didn't feel cold",
+    "z": "不覺得冷",
+    "j": "寒さを感じなかった",
+    "e": "didn't feel cold",
+    "b": "feel cold",
+    "p": "phrase"
+   },
+   {
+    "t": " even when the "
+   },
+   {
+    "t": "weather turned chilly",
+    "z": "天氣變冷",
+    "j": "寒くなった",
+    "e": "weather turned chilly",
+    "b": "turn chilly",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He hung his jacket at the entrance of the classroom.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "He",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "hung",
+    "z": "掛了",
+    "j": "掛けた",
+    "e": "hung",
+    "b": "hang",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "his jacket",
+    "z": "他的夾克",
+    "j": "彼のジャケット",
+    "e": "his jacket",
+    "b": "jacket",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "entrance",
+    "z": "入口",
+    "j": "入口",
+    "e": "entrance",
+    "b": "entrance",
+    "p": "noun"
+   },
+   {
+    "t": " of the "
+   },
+   {
+    "t": "classroom",
+    "z": "教室",
+    "j": "教室",
+    "e": "classroom",
+    "b": "classroom",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the afternoon was warm, she brought a jacket in case the evening turned chilly.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "afternoon",
+    "z": "下午",
+    "j": "午後",
+    "e": "afternoon",
+    "b": "afternoon",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "warm",
+    "z": "溫暖",
+    "j": "暖かい",
+    "e": "warm",
+    "b": "warm",
+    "p": "adjective"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "brought",
+    "z": "帶來",
+    "j": "持って行きました",
+    "e": "brought",
+    "b": "bring",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "jacket",
+    "z": "夾克",
+    "j": "ジャケット",
+    "e": "jacket",
+    "b": "jacket",
+    "p": "noun"
+   },
+   {
+    "t": " in case the "
+   },
+   {
+    "t": "evening",
+    "z": "傍晚",
+    "j": "夕方",
+    "e": "evening",
+    "b": "evening",
+    "p": "noun"
+   },
+   {
+    "t": " turned "
+   },
+   {
+    "t": "chilly",
+    "z": "寒冷",
+    "j": "冷える",
+    "e": "chilly",
+    "b": "chilly",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "I wear a coat when I go out in winter.": [
+   {
+    "t": "I "
+   },
+   {
+    "t": "wear",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "coat",
+    "z": "大衣",
+    "j": "コート",
+    "e": "coat",
+    "b": "coat",
+    "p": "noun"
+   },
+   {
+    "t": " when I "
+   },
+   {
+    "t": "go out",
+    "z": "外出",
+    "j": "外出する",
+    "e": "go out",
+    "b": "go out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "winter",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "winter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the train got warm, he took off his coat and held it over his arm.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "train",
+    "z": "火車",
+    "j": "電車",
+    "e": "train",
+    "b": "train",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "got warm",
+    "z": "變暖",
+    "j": "暖かくなった",
+    "e": "got warm",
+    "b": "get warm",
+    "p": "verb"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "took off",
+    "z": "脫掉",
+    "j": "脱いで",
+    "e": "took off",
+    "b": "take off",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " his "
+   },
+   {
+    "t": "coat",
+    "z": "外套",
+    "j": "コート",
+    "e": "coat",
+    "b": "coat",
+    "p": "noun"
+   },
+   {
+    "t": " and "
+   },
+   {
+    "t": "held",
+    "z": "拿著",
+    "j": "かけました",
+    "e": "held",
+    "b": "hold",
+    "p": "verb"
+   },
+   {
+    "t": " it over his "
+   },
+   {
+    "t": "arm",
+    "z": "手臂",
+    "j": "腕",
+    "e": "arm",
+    "b": "arm",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She likes to wear dresses in summer.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "likes",
+    "z": "喜歡",
+    "j": "好きだ",
+    "e": "likes",
+    "b": "like",
+    "p": "verb"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "wear",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dresses",
+    "z": "洋裝",
+    "j": "ワンピース",
+    "e": "dresses",
+    "b": "dress",
+    "p": "noun"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "summer",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "summer",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because a dress doesn't require a separate top, she can save a lot of time getting dressed in the morning.": [
+   {
+    "t": "Because a "
+   },
+   {
+    "t": "dress",
+    "z": "洋裝",
+    "j": "ワンピース",
+    "e": "dress",
+    "b": "dress",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "doesn't require",
+    "z": "不需要",
+    "j": "必要ない",
+    "e": "doesn't require",
+    "b": "require",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "separate top",
+    "z": "分開的上衣",
+    "j": "別のトップ",
+    "e": "separate top",
+    "b": "separate top",
+    "p": "noun"
+   },
+   {
+    "t": ", she can "
+   },
+   {
+    "t": "save",
+    "z": "節省",
+    "j": "節約できる",
+    "e": "save",
+    "b": "save",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "lot of time",
+    "z": "很多時間",
+    "j": "たくさんの時間",
+    "e": "lot of time",
+    "b": "lot of time",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "getting dressed",
+    "z": "穿衣服",
+    "j": "着替える",
+    "e": "getting dressed",
+    "b": "get dressed",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "morning",
+    "z": "早上",
+    "j": "朝",
+    "e": "morning",
+    "b": "morning",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She is wearing a red skirt today.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "かのじょ",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "is wearing",
+    "z": "穿著",
+    "j": "きています",
+    "e": "is wearing",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "red",
+    "z": "紅色的",
+    "j": "あかい",
+    "e": "red",
+    "b": "red",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "skirt",
+    "z": "裙子",
+    "j": "スカート",
+    "e": "skirt",
+    "b": "skirt",
+    "p": "noun"
+   },
+   {
+    "t": " today."
+   }
+  ],
+  "Although a skirt is cooler, she chose pants today because she expected to walk a lot.": [
+   {
+    "t": "Although a "
+   },
+   {
+    "t": "skirt",
+    "z": "裙子",
+    "j": "スカート",
+    "e": "skirt",
+    "b": "skirt",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "is cooler",
+    "z": "比較涼快",
+    "j": "の方が涼しい",
+    "e": "is cooler",
+    "b": "cool",
+    "p": "adjective"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "she chose",
+    "z": "她選擇了",
+    "j": "えらんだ",
+    "e": "she chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "pants",
+    "z": "褲子",
+    "j": "ズボン",
+    "e": "pants",
+    "b": "pants",
+    "p": "noun"
+   },
+   {
+    "t": " today because she "
+   },
+   {
+    "t": "expected to walk a lot",
+    "z": "預計會走很多路",
+    "j": "たくさん歩く予定",
+    "e": "expected to walk a lot",
+    "b": "expect to walk a lot",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He likes to wear jeans every day.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "likes",
+    "z": "喜歡",
+    "j": "好きです",
+    "e": "likes",
+    "b": "like",
+    "p": "verb"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "wear",
+    "z": "穿著",
+    "j": "履く",
+    "e": "wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "jeans",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "jeans",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every day",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "every day",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because I planned to walk around town all afternoon, I chose comfortable jeans instead of formal trousers.": [
+   {
+    "t": "Because "
+   },
+   {
+    "t": "I",
+    "z": "我",
+    "j": "私",
+    "e": "I",
+    "b": "I",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "planned",
+    "z": "計劃",
+    "j": "予定した",
+    "e": "planned",
+    "b": "plan",
+    "p": "verb"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "walk around",
+    "z": "四處走動",
+    "j": "歩き回る",
+    "e": "walk around",
+    "b": "walk around",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "town",
+    "z": "城鎮",
+    "j": "街",
+    "e": "town",
+    "b": "town",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "all afternoon",
+    "z": "整個下午",
+    "j": "午後ずっと",
+    "e": "all afternoon",
+    "b": "all afternoon",
+    "p": "adverb"
+   },
+   {
+    "t": ", I "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "comfortable",
+    "z": "舒適的",
+    "j": "履き慣れた",
+    "e": "comfortable",
+    "b": "comfortable",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "jeans",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "jeans",
+    "p": "noun"
+   },
+   {
+    "t": " instead of formal trousers."
+   }
+  ],
+  "He wore gray trousers to work today.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "着た",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "gray",
+    "z": "灰色的",
+    "j": "灰色の",
+    "e": "gray",
+    "b": "gray",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "trousers",
+    "z": "褲子",
+    "j": "ズボン",
+    "e": "trousers",
+    "b": "trousers",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "work",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "today",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even though the event allowed jeans, he chose formal trousers because he wanted to make a good impression.": [
+   {
+    "t": "Even though the "
+   },
+   {
+    "t": "event",
+    "z": "活動",
+    "j": "イベント",
+    "e": "event",
+    "b": "event",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "allowed",
+    "z": "允許",
+    "j": "許可した",
+    "e": "allowed",
+    "b": "allow",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "jeans",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "jeans",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "formal trousers",
+    "z": "正式褲子",
+    "j": "きちんとしたズボン",
+    "e": "formal trousers",
+    "b": "formal trousers",
+    "p": "noun"
+   },
+   {
+    "t": " because he "
+   },
+   {
+    "t": "wanted",
+    "z": "想要",
+    "j": "望んだ",
+    "e": "wanted",
+    "b": "want",
+    "p": "verb"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "make a good impression",
+    "z": "留下好印象",
+    "j": "良い印象を与える",
+    "e": "make a good impression",
+    "b": "make a good impression",
+    "p": "expression"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "In summer, he usually goes out wearing shorts.": [
+   {
+    "t": "In "
+   },
+   {
+    "t": "summer",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "summer",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "usually",
+    "z": "通常",
+    "j": "たいてい",
+    "e": "usually",
+    "b": "usually",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "goes out",
+    "z": "外出",
+    "j": "出かける",
+    "e": "goes out",
+    "b": "go out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wearing shorts",
+    "z": "穿短褲",
+    "j": "ショートパンツを履く",
+    "e": "wearing shorts",
+    "b": "wear shorts",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the morning was cool, she chose shorts because the afternoon was expected to be hot.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "morning",
+    "z": "早晨",
+    "j": "朝の時間",
+    "e": "morning",
+    "b": "morning",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "cool",
+    "z": "涼爽",
+    "j": "涼しい",
+    "e": "cool",
+    "b": "cool",
+    "p": "adjective"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "shorts",
+    "z": "短褲",
+    "j": "ショートパンツ",
+    "e": "shorts",
+    "b": "shorts",
+    "p": "noun"
+   },
+   {
+    "t": " because the "
+   },
+   {
+    "t": "afternoon",
+    "z": "下午",
+    "j": "午後",
+    "e": "afternoon",
+    "b": "afternoon",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "expected",
+    "z": "預計",
+    "j": "予報だった",
+    "e": "expected",
+    "b": "expect",
+    "p": "adjective"
+   },
+   {
+    "t": " to be "
+   },
+   {
+    "t": "hot",
+    "z": "炎熱",
+    "j": "暑い",
+    "e": "hot",
+    "b": "hot",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She puts on a clean pair of socks every day.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "puts on",
+    "z": "穿上",
+    "j": "履き替える",
+    "e": "puts on",
+    "b": "put on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "clean",
+    "z": "乾淨的",
+    "j": "清潔な",
+    "e": "clean",
+    "b": "clean",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "pair",
+    "z": "一雙",
+    "j": "一組",
+    "e": "pair",
+    "b": "pair",
+    "p": "numeral"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "socks",
+    "z": "襪子",
+    "j": "靴下",
+    "e": "socks",
+    "b": "sock",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every day",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "every day",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although his shoes look clean, his feet sweat easily if he doesn’t wear socks.": [
+   {
+    "t": "Although his "
+   },
+   {
+    "t": "shoes",
+    "z": "鞋子",
+    "j": "靴",
+    "e": "shoes",
+    "b": "shoe",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "look",
+    "z": "看起來",
+    "j": "見える",
+    "e": "look",
+    "b": "look",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "clean",
+    "z": "乾淨的",
+    "j": "清潔な",
+    "e": "clean",
+    "b": "clean",
+    "p": "adjective"
+   },
+   {
+    "t": ", his "
+   },
+   {
+    "t": "feet",
+    "z": "腳",
+    "j": "足",
+    "e": "feet",
+    "b": "foot",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sweat",
+    "z": "流汗",
+    "j": "汗をかく",
+    "e": "sweat",
+    "b": "sweat",
+    "p": "verb"
+   },
+   {
+    "t": " easily if he doesn’t "
+   },
+   {
+    "t": "wear",
+    "z": "穿著",
+    "j": "履く",
+    "e": "wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "socks",
+    "z": "襪子",
+    "j": "靴下",
+    "e": "socks",
+    "b": "sock",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears sneakers for jogging.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "履く",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sneakers",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "sneaker",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "jogging",
+    "z": "慢跑",
+    "j": "ジョギング",
+    "e": "jogging",
+    "b": "jog",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the office requires dress shoes, she brings sneakers in her bag because she plans to exercise after work.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "office",
+    "z": "辦公室",
+    "j": "オフィス",
+    "e": "office",
+    "b": "office",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "requires",
+    "z": "需要",
+    "j": "必要とする",
+    "e": "requires",
+    "b": "require",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dress shoes",
+    "z": "正式皮鞋",
+    "j": "革靴",
+    "e": "dress shoes",
+    "b": "dress shoe",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "brings",
+    "z": "帶來",
+    "j": "持ってくる",
+    "e": "brings",
+    "b": "bring",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sneakers",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "sneaker",
+    "p": "noun"
+   },
+   {
+    "t": " in her bag because she "
+   },
+   {
+    "t": "plans to exercise",
+    "z": "計劃運動",
+    "j": "運動するつもり",
+    "e": "plans to exercise",
+    "b": "plan to exercise",
+    "p": "phrase"
+   },
+   {
+    "t": " after work."
+   }
+  ],
+  "She wore black boots to work.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "履いた",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "black",
+    "z": "黑色的",
+    "j": "黒い",
+    "e": "black",
+    "b": "black",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "boots",
+    "z": "靴子",
+    "j": "ブーツ",
+    "e": "boots",
+    "b": "boots",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "work",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the path was muddy, he chose waterproof boots instead of sneakers.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "path",
+    "z": "小徑",
+    "j": "道",
+    "e": "path",
+    "b": "path",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "muddy",
+    "z": "泥濘",
+    "j": "ぬかるんでいる",
+    "e": "muddy",
+    "b": "muddy",
+    "p": "adjective"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "waterproof boots",
+    "z": "防水靴",
+    "j": "防水のブーツ",
+    "e": "waterproof boots",
+    "b": "waterproof boots",
+    "p": "noun"
+   },
+   {
+    "t": " instead of "
+   },
+   {
+    "t": "sneakers",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "sneakers",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He often wears sandals in summer.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "He",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "often",
+    "z": "經常",
+    "j": "よく",
+    "e": "often",
+    "b": "often",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "履いている",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sandals",
+    "z": "涼鞋",
+    "j": "サンダル",
+    "e": "sandals",
+    "b": "sandal",
+    "p": "noun"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "summer",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "夏",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After his sneakers got wet at the beach, he changed into sandals for the walk home.": [
+   {
+    "t": "After his "
+   },
+   {
+    "t": "sneakers",
+    "z": "運動鞋",
+    "j": "運動用の靴",
+    "e": "sneakers",
+    "b": "sneaker",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "got wet",
+    "z": "弄濕了",
+    "j": "濡れてしまった",
+    "e": "got wet",
+    "b": "get wet",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "beach",
+    "z": "海灘",
+    "j": "海の砂浜",
+    "e": "beach",
+    "b": "beach",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "changed into",
+    "z": "換上",
+    "j": "着替えました",
+    "e": "changed into",
+    "b": "change into",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sandals",
+    "z": "涼鞋",
+    "j": "足に履く軽い履物",
+    "e": "sandals",
+    "b": "sandal",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "walk home",
+    "z": "走回家",
+    "j": "家まで歩くこと",
+    "e": "walk home",
+    "b": "walk home",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She wears a hat to shield herself from the sun when going out.": [
+   {
+    "t": "She "
+   },
+   {
+    "t": "wears",
+    "z": "戴著",
+    "j": "身につけています",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "hat",
+    "z": "帽子",
+    "j": "頭にかぶるもの",
+    "e": "hat",
+    "b": "hat",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "shield",
+    "z": "遮蔽",
+    "j": "守るために覆う",
+    "e": "shield",
+    "b": "shield",
+    "p": "verb"
+   },
+   {
+    "t": " herself from the "
+   },
+   {
+    "t": "sun",
+    "z": "太陽",
+    "j": "空にある星",
+    "e": "sun",
+    "b": "sun",
+    "p": "noun"
+   },
+   {
+    "t": " when "
+   },
+   {
+    "t": "going out",
+    "z": "外出",
+    "j": "外に出かけること",
+    "e": "going out",
+    "b": "go out",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although this hat is stylish, he didn’t wear it in the rain because it’s not waterproof.": [
+   {
+    "t": "Although this "
+   },
+   {
+    "t": "hat",
+    "z": "帽子",
+    "j": "帽子",
+    "e": "hat",
+    "b": "hat",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "stylish",
+    "z": "時髦的",
+    "j": "おしゃれな",
+    "e": "stylish",
+    "b": "stylish",
+    "p": "adjective"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "didn’t wear",
+    "z": "沒有戴",
+    "j": "かぶらなかった",
+    "e": "did not wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " it in the "
+   },
+   {
+    "t": "rain",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "rain",
+    "p": "noun"
+   },
+   {
+    "t": " because it’s "
+   },
+   {
+    "t": "not waterproof",
+    "z": "不防水",
+    "j": "防水じゃない",
+    "e": "not waterproof",
+    "b": "waterproof",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He often wears a scarf in winter to stay warm.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "often",
+    "z": "經常",
+    "j": "よく",
+    "e": "often",
+    "b": "often",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿戴",
+    "j": "巻いて",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "scarf",
+    "z": "圍巾",
+    "j": "マフラー",
+    "e": "scarf",
+    "b": "scarf",
+    "p": "noun"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "winter",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "winter",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "stay warm",
+    "z": "保暖",
+    "j": "暖まります",
+    "e": "stay warm",
+    "b": "stay warm",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even though her coat was thick enough, she still brought a scarf in case the temperature suddenly dropped.": [
+   {
+    "t": "Even though her "
+   },
+   {
+    "t": "coat",
+    "z": "外套",
+    "j": "コート",
+    "e": "coat",
+    "b": "coat",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "thick enough",
+    "z": "夠厚",
+    "j": "厚い",
+    "e": "thick enough",
+    "b": "thick",
+    "p": "adjective"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "still brought",
+    "z": "仍然帶了",
+    "j": "持ってきた",
+    "e": "still brought",
+    "b": "bring",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "scarf",
+    "z": "圍巾",
+    "j": "マフラー",
+    "e": "scarf",
+    "b": "scarf",
+    "p": "noun"
+   },
+   {
+    "t": " in case the "
+   },
+   {
+    "t": "temperature",
+    "z": "溫度",
+    "j": "気温",
+    "e": "temperature",
+    "b": "temperature",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "suddenly dropped",
+    "z": "突然下降",
+    "j": "下がった",
+    "e": "suddenly dropped",
+    "b": "drop",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "His trousers were too loose, so he wore a belt.": [
+   {
+    "t": "His",
+    "z": "他的",
+    "j": "彼の所有を示す",
+    "e": "his",
+    "b": "his",
+    "p": "determiner"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "trousers",
+    "z": "褲子",
+    "j": "足を覆う衣服",
+    "e": "trousers",
+    "b": "trousers",
+    "p": "noun"
+   },
+   {
+    "t": " were "
+   },
+   {
+    "t": "too",
+    "z": "太",
+    "j": "程度が過ぎるさま",
+    "e": "too",
+    "b": "too",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "loose",
+    "z": "寬鬆",
+    "j": "ゆるい状態",
+    "e": "loose",
+    "b": "loose",
+    "p": "adjective"
+   },
+   {
+    "t": ", so he "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "身に着けた",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "belt",
+    "z": "皮帶",
+    "j": "ズボンを締める帯",
+    "e": "belt",
+    "b": "belt",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although she was wearing a dress today, she added a belt because she wanted her waistline to stand out.": [
+   {
+    "t": "Although "
+   },
+   {
+    "t": "she",
+    "z": "她",
+    "j": "女性の三人称",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was wearing",
+    "z": "穿著",
+    "j": "身に着けていた",
+    "e": "was wearing",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "dress",
+    "z": "洋裝",
+    "j": "女性用の服",
+    "e": "dress",
+    "b": "dress",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "現在の日",
+    "e": "today",
+    "b": "today",
+    "p": "adverb"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "added",
+    "z": "加上了",
+    "j": "付け加えた",
+    "e": "added",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "belt",
+    "z": "皮帶",
+    "j": "ウエストに巻く帯",
+    "e": "belt",
+    "b": "belt",
+    "p": "noun"
+   },
+   {
+    "t": " because she wanted her waistline to stand out."
+   }
+  ],
+  "He wears a navy polo shirt to work.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "着ます",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "navy",
+    "z": "海軍藍色",
+    "j": "ネイビー",
+    "e": "navy",
+    "b": "navy",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "polo shirt",
+    "z": "polo衫",
+    "j": "ポロシャツ",
+    "e": "polo shirt",
+    "b": "polo shirt",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "work",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because it’s hot outside, she chooses a polo shirt instead of a regular shirt.": [
+   {
+    "t": "Because it’s "
+   },
+   {
+    "t": "hot",
+    "z": "熱的",
+    "j": "暑い",
+    "e": "hot",
+    "b": "hot",
+    "p": "adjective"
+   },
+   {
+    "t": " outside, she "
+   },
+   {
+    "t": "chooses",
+    "z": "選擇",
+    "j": "選びます",
+    "e": "chooses",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "polo shirt",
+    "z": "polo衫",
+    "j": "ポロシャツ",
+    "e": "polo shirt",
+    "b": "polo shirt",
+    "p": "noun"
+   },
+   {
+    "t": " instead of a "
+   },
+   {
+    "t": "regular shirt",
+    "z": "普通襯衫",
+    "j": "普通のシャツ",
+    "e": "regular shirt",
+    "b": "regular shirt",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She goes jogging in a white tank top.": [
+   {
+    "t": "She "
+   },
+   {
+    "t": "goes jogging",
+    "z": "去慢跑",
+    "j": "ジョギングします",
+    "e": "goes jogging",
+    "b": "go jogging",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " in a "
+   },
+   {
+    "t": "white",
+    "z": "白色的",
+    "j": "白い",
+    "e": "white",
+    "b": "white",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "tank top",
+    "z": "背心",
+    "j": "タンクトップ",
+    "e": "tank top",
+    "b": "tank top",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After changing into a tank top, he felt cooler during the summer afternoon.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "changing into",
+    "z": "換上",
+    "j": "着替える",
+    "e": "changing into",
+    "b": "change into",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "tank top",
+    "z": "背心",
+    "j": "タンクトップ",
+    "e": "tank top",
+    "b": "tank top",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "felt cooler",
+    "z": "感覺涼爽",
+    "j": "涼しく感じた",
+    "e": "felt cooler",
+    "b": "feel cooler",
+    "p": "verb"
+   },
+   {
+    "t": " during the "
+   },
+   {
+    "t": "summer afternoon",
+    "z": "夏天的下午",
+    "j": "夏の午後",
+    "e": "summer afternoon",
+    "b": "summer afternoon",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears a yellow sweatshirt at home.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "yellow sweatshirt",
+    "z": "黃色的運動衫",
+    "j": "黄色いスウェット",
+    "e": "yellow sweatshirt",
+    "b": "yellow sweatshirt",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "at home",
+    "z": "在家",
+    "j": "家で",
+    "e": "at home",
+    "b": "at home",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since her sweatshirt was wet from the rain, she changed as soon as she got inside.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "her sweatshirt",
+    "z": "她的運動衫",
+    "j": "彼女のスウェット",
+    "e": "her sweatshirt",
+    "b": "sweatshirt",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was wet",
+    "z": "濕了",
+    "j": "濡れていた",
+    "e": "was wet",
+    "b": "wet",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "from the rain",
+    "z": "因為雨",
+    "j": "雨のせいで",
+    "e": "from the rain",
+    "b": "rain",
+    "p": "noun"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "she changed",
+    "z": "她換了衣服",
+    "j": "彼女は着替えた",
+    "e": "she changed",
+    "b": "change",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "as soon as",
+    "z": "一...就...",
+    "j": "すぐに",
+    "e": "as soon as",
+    "b": "as soon as",
+    "p": "expression"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "she got inside",
+    "z": "她進去",
+    "j": "彼女は中に入った",
+    "e": "she got inside",
+    "b": "get inside",
+    "p": "phrasal verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears a black turtleneck in winter.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "He",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "black",
+    "z": "黑色的",
+    "j": "黒い",
+    "e": "black",
+    "b": "black",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "turtleneck",
+    "z": "高領毛衣",
+    "j": "タートルネック",
+    "e": "turtleneck",
+    "b": "turtleneck",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "in winter",
+    "z": "在冬天",
+    "j": "冬に",
+    "e": "in winter",
+    "b": "winter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When the temperature dropped suddenly, she put on a turtleneck to keep warm.": [
+   {
+    "t": "When the "
+   },
+   {
+    "t": "temperature",
+    "z": "溫度",
+    "j": "気温",
+    "e": "temperature",
+    "b": "temperature",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dropped suddenly",
+    "z": "突然下降",
+    "j": "急に下がった",
+    "e": "dropped suddenly",
+    "b": "drop",
+    "p": "verb"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "she put on",
+    "z": "她穿上",
+    "j": "彼女は着た",
+    "e": "she put on",
+    "b": "put on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "turtleneck",
+    "z": "高領毛衣",
+    "j": "タートルネック",
+    "e": "turtleneck",
+    "b": "turtleneck",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "keep warm",
+    "z": "保暖",
+    "j": "暖かくする",
+    "e": "keep warm",
+    "b": "keep warm",
+    "p": "expression"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She adds a vest over her shirt for style.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "adds",
+    "z": "加上",
+    "j": "加える",
+    "e": "adds",
+    "b": "add",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a vest",
+    "z": "背心",
+    "j": "ベスト",
+    "e": "a vest",
+    "b": "vest",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "over",
+    "z": "在…上面",
+    "j": "上に",
+    "e": "over",
+    "b": "over",
+    "p": "preposition"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "her shirt",
+    "z": "她的襯衫",
+    "j": "彼女のシャツ",
+    "e": "her shirt",
+    "b": "shirt",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "for style",
+    "z": "為了風格",
+    "j": "おしゃれのために",
+    "e": "for style",
+    "b": "style",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After buying a thick vest, he no longer feels cold walking to work in the morning.": [
+   {
+    "t": "After buying",
+    "z": "買了之後",
+    "j": "買ってから",
+    "e": "after buying",
+    "b": "buy",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a thick vest",
+    "z": "厚背心",
+    "j": "厚手のベスト",
+    "e": "a thick vest",
+    "b": "vest",
+    "p": "noun"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "he",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "no longer feels cold",
+    "z": "不再覺得冷",
+    "j": "寒さを感じなくなった",
+    "e": "no longer feels cold",
+    "b": "感じる",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "walking to work",
+    "z": "走路去上班",
+    "j": "通勤中",
+    "e": "walking to work",
+    "b": "walk",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "in the morning",
+    "z": "早上",
+    "j": "朝",
+    "e": "in the morning",
+    "b": "morning",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He puts on his raincoat before leaving in the rain.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "puts on",
+    "z": "穿上",
+    "j": "着る",
+    "e": "puts on",
+    "b": "put on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " his "
+   },
+   {
+    "t": "raincoat",
+    "z": "雨衣",
+    "j": "レインコート",
+    "e": "raincoat",
+    "b": "raincoat",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before leaving",
+    "z": "在離開之前",
+    "j": "出かける前",
+    "e": "before leaving",
+    "b": "leave",
+    "p": "phrase"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "rain",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "rain",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although she forgot her umbrella, her raincoat kept her dry on the way home.": [
+   {
+    "t": "Although she "
+   },
+   {
+    "t": "forgot",
+    "z": "忘記",
+    "j": "忘れた",
+    "e": "forgot",
+    "b": "forget",
+    "p": "verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "umbrella",
+    "z": "傘",
+    "j": "傘",
+    "e": "umbrella",
+    "b": "umbrella",
+    "p": "noun"
+   },
+   {
+    "t": ", her "
+   },
+   {
+    "t": "raincoat",
+    "z": "雨衣",
+    "j": "レインコート",
+    "e": "raincoat",
+    "b": "raincoat",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "kept",
+    "z": "保持",
+    "j": "保った",
+    "e": "kept",
+    "b": "keep",
+    "p": "verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "dry",
+    "z": "沒淋濕",
+    "j": "濡れなかった",
+    "e": "dry",
+    "b": "dry",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "on the way home",
+    "z": "回家的路上",
+    "j": "帰り道",
+    "e": "on the way home",
+    "b": "on the way home",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears a down jacket when it’s cold outside.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "down jacket",
+    "z": "羽絨外套",
+    "j": "ダウンジャケット",
+    "e": "down jacket",
+    "b": "down jacket",
+    "p": "noun"
+   },
+   {
+    "t": " when it’s "
+   },
+   {
+    "t": "cold",
+    "z": "冷的",
+    "j": "寒い",
+    "e": "cold",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "outside",
+    "z": "外面",
+    "j": "外",
+    "e": "outside",
+    "b": "outside",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because her down jacket is lightweight but warm, she always packs it for winter trips.": [
+   {
+    "t": "Because her "
+   },
+   {
+    "t": "down jacket",
+    "z": "羽絨外套",
+    "j": "ダウンジャケット",
+    "e": "down jacket",
+    "b": "down jacket",
+    "p": "noun"
+   },
+   {
+    "t": " is "
+   },
+   {
+    "t": "lightweight",
+    "z": "輕量的",
+    "j": "軽い",
+    "e": "lightweight",
+    "b": "lightweight",
+    "p": "adjective"
+   },
+   {
+    "t": " but "
+   },
+   {
+    "t": "warm",
+    "z": "溫暖的",
+    "j": "暖かい",
+    "e": "warm",
+    "b": "warm",
+    "p": "adjective"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "always",
+    "z": "總是",
+    "j": "いつも",
+    "e": "always",
+    "b": "always",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "packs",
+    "z": "打包",
+    "j": "詰める",
+    "e": "pack",
+    "b": "pack",
+    "p": "verb"
+   },
+   {
+    "t": " it for "
+   },
+   {
+    "t": "winter trips",
+    "z": "冬季旅行",
+    "j": "冬の旅行",
+    "e": "winter trips",
+    "b": "winter trip",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She buys a new suit for her job interview.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "buys",
+    "z": "買",
+    "j": "買う",
+    "e": "buy",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "new",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "new",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "suit",
+    "z": "西裝",
+    "j": "スーツ",
+    "e": "suit",
+    "b": "suit",
+    "p": "noun"
+   },
+   {
+    "t": " for her "
+   },
+   {
+    "t": "job interview",
+    "z": "工作面試",
+    "j": "面接",
+    "e": "job interview",
+    "b": "job interview",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because his interview was at a bank, he checked that his suit was clean the night before.": [
+   {
+    "t": "Because his "
+   },
+   {
+    "t": "interview",
+    "z": "面試",
+    "j": "面接",
+    "e": "interview",
+    "b": "interview",
+    "p": "noun"
+   },
+   {
+    "t": " was at a "
+   },
+   {
+    "t": "bank",
+    "z": "銀行",
+    "j": "銀行",
+    "e": "bank",
+    "b": "bank",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "checked",
+    "z": "檢查",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "check",
+    "p": "verb"
+   },
+   {
+    "t": " that his "
+   },
+   {
+    "t": "suit",
+    "z": "西裝",
+    "j": "スーツ",
+    "e": "suit",
+    "b": "suit",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "clean",
+    "z": "乾淨",
+    "j": "汚れていない",
+    "e": "clean",
+    "b": "clean",
+    "p": "adjective"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "night before",
+    "z": "前一晚",
+    "j": "前の晩",
+    "e": "night before",
+    "b": "night before",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears a green necktie to the meeting.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "戴著",
+    "j": "締める",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "green necktie",
+    "z": "綠色領帶",
+    "j": "緑のネクタイ",
+    "e": "green necktie",
+    "b": "necktie",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "meeting",
+    "z": "會議",
+    "j": "会議",
+    "e": "meeting",
+    "b": "meeting",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since her necktie was wrinkled, she had to iron it before leaving the house.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "her necktie",
+    "z": "她的領帶",
+    "j": "彼女のネクタイ",
+    "e": "her necktie",
+    "b": "necktie",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was wrinkled",
+    "z": "皺了",
+    "j": "しわがあった",
+    "e": "was wrinkled",
+    "b": "wrinkle",
+    "p": "adjective"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "had to iron",
+    "z": "必須燙",
+    "j": "アイロンをかけなければならなかった",
+    "e": "had to iron",
+    "b": "iron",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "before leaving the house",
+    "z": "離家之前",
+    "j": "家を出る前に",
+    "e": "before leaving the house",
+    "b": "leave the house",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears a black bow tie to a formal event.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "佩戴",
+    "j": "身につけている",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "black",
+    "z": "黑色",
+    "j": "黒い",
+    "e": "black",
+    "b": "black",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bow tie",
+    "z": "領結",
+    "j": "蝶ネクタイ",
+    "e": "bow tie",
+    "b": "bow tie",
+    "p": "noun"
+   },
+   {
+    "t": " to a "
+   },
+   {
+    "t": "formal event",
+    "z": "正式場合",
+    "j": "フォーマルな場",
+    "e": "formal event",
+    "b": "formal event",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since the invitation requested bow ties, he borrowed one from his friend.": [
+   {
+    "t": "Since the "
+   },
+   {
+    "t": "invitation",
+    "z": "邀請函",
+    "j": "招待状",
+    "e": "invitation",
+    "b": "invitation",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "requested",
+    "z": "要求",
+    "j": "書いてあった",
+    "e": "requested",
+    "b": "request",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "bow ties",
+    "z": "蝴蝶結領帶",
+    "j": "蝶ネクタイ",
+    "e": "bow ties",
+    "b": "bow tie",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "borrowed",
+    "z": "借用",
+    "j": "借りた",
+    "e": "borrowed",
+    "b": "borrow",
+    "p": "verb"
+   },
+   {
+    "t": " one from his "
+   },
+   {
+    "t": "friend",
+    "z": "朋友",
+    "j": "友人",
+    "e": "friend",
+    "b": "friend",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She puts on her school uniform every morning before breakfast.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "She",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "puts on",
+    "z": "穿上",
+    "j": "着ます",
+    "e": "puts on",
+    "b": "put on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "school uniform",
+    "z": "校服",
+    "j": "制服",
+    "e": "school uniform",
+    "b": "school uniform",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every morning",
+    "z": "每天早上",
+    "j": "毎朝",
+    "e": "every morning",
+    "b": "every morning",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "before breakfast",
+    "z": "早餐前",
+    "j": "朝食前",
+    "e": "before breakfast",
+    "b": "before breakfast",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because her school uniform got dirty in art class, she washed it as soon as she got home.": [
+   {
+    "t": "Because her "
+   },
+   {
+    "t": "school uniform",
+    "z": "校服",
+    "j": "制服",
+    "e": "school uniform",
+    "b": "school uniform",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "got dirty",
+    "z": "弄髒",
+    "j": "汚れた",
+    "e": "got dirty",
+    "b": "get dirty",
+    "p": "verb"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "art class",
+    "z": "美術課",
+    "j": "美術の授業",
+    "e": "art class",
+    "b": "art class",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "washed",
+    "z": "洗了",
+    "j": "洗いました",
+    "e": "washed",
+    "b": "wash",
+    "p": "verb"
+   },
+   {
+    "t": " it "
+   },
+   {
+    "t": "as soon as",
+    "z": "一...就...",
+    "j": "すぐに",
+    "e": "as soon as",
+    "b": "as soon as",
+    "p": "adverb"
+   },
+   {
+    "t": " she "
+   },
+   {
+    "t": "got home",
+    "z": "回家",
+    "j": "帰宅して",
+    "e": "got home",
+    "b": "get home",
+    "p": "verb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She wore a kimono to the graduation ceremony.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "She",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore",
+    "z": "穿了",
+    "j": "着ました",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "kimono",
+    "z": "和服",
+    "j": "着物",
+    "e": "kimono",
+    "b": "kimono",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "graduation ceremony",
+    "z": "畢業典禮",
+    "j": "卒業式",
+    "e": "graduation ceremony",
+    "b": "graduation ceremony",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although he usually wears casual clothes at home, he chose a kimono for the New Year’s visit to the shrine.": [
+   {
+    "t": "Although he "
+   },
+   {
+    "t": "usually",
+    "z": "通常",
+    "j": "普段",
+    "e": "usually",
+    "b": "usually",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "casual clothes",
+    "z": "便服",
+    "j": "カジュアルな服",
+    "e": "casual clothes",
+    "b": "casual clothes",
+    "p": "noun"
+   },
+   {
+    "t": " at home, he "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "kimono",
+    "z": "和服",
+    "j": "着物",
+    "e": "kimono",
+    "b": "kimono",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "New Year’s visit",
+    "z": "新年參拜",
+    "j": "初詣",
+    "e": "New Year’s visit to shrine",
+    "b": "初詣",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "shrine",
+    "z": "神社",
+    "j": "神社",
+    "e": "shrine",
+    "b": "shrine",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She wore a yukata to the summer festival.": [
+   {
+    "t": "She "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "着た",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "yukata",
+    "z": "浴衣",
+    "j": "浴衣",
+    "e": "yukata",
+    "b": "yukata",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "summer festival",
+    "z": "夏季祭典",
+    "j": "夏祭り",
+    "e": "summer festival",
+    "b": "summer festival",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because it was the night of the summer festival, many people in the town wore yukata instead of regular clothes.": [
+   {
+    "t": "Because it was the "
+   },
+   {
+    "t": "night",
+    "z": "夜晚",
+    "j": "夜",
+    "e": "night",
+    "b": "night",
+    "p": "noun"
+   },
+   {
+    "t": " of the "
+   },
+   {
+    "t": "summer festival",
+    "z": "夏季祭典",
+    "j": "夏祭り",
+    "e": "summer festival",
+    "b": "summer festival",
+    "p": "noun"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "many people",
+    "z": "許多人",
+    "j": "多くの人",
+    "e": "many people",
+    "b": "many people",
+    "p": "phrase"
+   },
+   {
+    "t": " in the "
+   },
+   {
+    "t": "town",
+    "z": "城鎮",
+    "j": "町",
+    "e": "town",
+    "b": "town",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "着ていた",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "yukata",
+    "z": "浴衣",
+    "j": "浴衣",
+    "e": "yukata",
+    "b": "yukata",
+    "p": "noun"
+   },
+   {
+    "t": " instead of "
+   },
+   {
+    "t": "regular clothes",
+    "z": "一般衣服",
+    "j": "普通の服",
+    "e": "regular clothes",
+    "b": "regular clothes",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She wore black leggings to the park.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "はいて",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "black leggings",
+    "z": "黑色緊身褲",
+    "j": "黒いレギンス",
+    "e": "black leggings",
+    "b": "black leggings",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "park",
+    "z": "公園",
+    "j": "公園",
+    "e": "park",
+    "b": "park",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "When it got colder in autumn, he started wearing leggings under his jeans to stay warm.": [
+   {
+    "t": "When it got "
+   },
+   {
+    "t": "colder",
+    "z": "更冷",
+    "j": "寒くなった",
+    "e": "colder",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "autumn",
+    "z": "秋天",
+    "j": "秋",
+    "e": "autumn",
+    "b": "autumn",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "started wearing",
+    "z": "開始穿著",
+    "j": "はき始めた",
+    "e": "started wearing",
+    "b": "start wearing",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "leggings",
+    "z": "緊身褲",
+    "j": "レギンス",
+    "e": "leggings",
+    "b": "leggings",
+    "p": "noun"
+   },
+   {
+    "t": " under his "
+   },
+   {
+    "t": "jeans",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "jeans",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "stay warm",
+    "z": "保持溫暖",
+    "j": "暖かくする",
+    "e": "stay warm",
+    "b": "stay warm",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "In winter, she wears tights under her skirt to keep warm.": [
+   {
+    "t": "In "
+   },
+   {
+    "t": "winter",
+    "z": "冬天",
+    "j": "冬の季節",
+    "e": "winter",
+    "b": "winter",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "身に着ける",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "tights",
+    "z": "褲襪",
+    "j": "タイツ",
+    "e": "tights",
+    "b": "tights",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "under",
+    "z": "在…下面",
+    "j": "下にあること",
+    "e": "under",
+    "b": "under",
+    "p": "preposition"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "skirt",
+    "z": "裙子",
+    "j": "スカート",
+    "e": "skirt",
+    "b": "skirt",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "keep warm",
+    "z": "保持溫暖",
+    "j": "暖かくすること",
+    "e": "keep warm",
+    "b": "keep warm",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because the morning commute was colder than she expected, she chose thick tights instead of thin stockings.": [
+   {
+    "t": "Because the "
+   },
+   {
+    "t": "morning commute",
+    "z": "早晨通勤",
+    "j": "朝の通勤",
+    "e": "morning commute",
+    "b": "morning commute",
+    "p": "phrase"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "colder",
+    "z": "更冷",
+    "j": "寒かった",
+    "e": "colder",
+    "b": "cold",
+    "p": "adjective"
+   },
+   {
+    "t": " than she "
+   },
+   {
+    "t": "expected",
+    "z": "預期",
+    "j": "思った",
+    "e": "expected",
+    "b": "expect",
+    "p": "verb"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選びました",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "thick tights",
+    "z": "厚褲襪",
+    "j": "厚手のタイツ",
+    "e": "thick tights",
+    "b": "thick tights",
+    "p": "noun"
+   },
+   {
+    "t": " instead of "
+   },
+   {
+    "t": "thin stockings",
+    "z": "薄絲襪",
+    "j": "薄いストッキング",
+    "e": "thin stockings",
+    "b": "thin stockings",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He bought new underwear at the department store.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "bought",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "buy",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "new underwear",
+    "z": "新的內衣",
+    "j": "新しい下着",
+    "e": "new underwear",
+    "b": "underwear",
+    "p": "noun"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "department store",
+    "z": "百貨公司",
+    "j": "デパート",
+    "e": "department store",
+    "b": "department store",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because her underwear was still drying after laundry, she had to wait before getting dressed.": [
+   {
+    "t": "Because her "
+   },
+   {
+    "t": "underwear",
+    "z": "內衣",
+    "j": "下着",
+    "e": "underwear",
+    "b": "underwear",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "still drying",
+    "z": "還在晾乾",
+    "j": "まだ乾いていなかった",
+    "e": "still drying",
+    "b": "dry",
+    "p": "phrase"
+   },
+   {
+    "t": " after "
+   },
+   {
+    "t": "laundry",
+    "z": "洗衣",
+    "j": "洗濯",
+    "e": "laundry",
+    "b": "laundry",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "had to wait",
+    "z": "必須等待",
+    "j": "待たなければならなかった",
+    "e": "had to wait",
+    "b": "wait",
+    "p": "verb"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "getting dressed",
+    "z": "穿衣服",
+    "j": "服を着る",
+    "e": "getting dressed",
+    "b": "get dressed",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She packed her swimsuit before going to the pool.": [
+   {
+    "t": "She "
+   },
+   {
+    "t": "packed",
+    "z": "打包",
+    "j": "バッグに入れました",
+    "e": "packed",
+    "b": "pack",
+    "p": "verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "swimsuit",
+    "z": "泳衣",
+    "j": "水着",
+    "e": "swimsuit",
+    "b": "swimsuit",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "going to the pool",
+    "z": "去游泳池",
+    "j": "プールへ行く",
+    "e": "going to the pool",
+    "b": "go to the pool",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Because her swimsuit had not dried after yesterday's lesson, she took a spare one to the pool.": [
+   {
+    "t": "Because her "
+   },
+   {
+    "t": "swimsuit",
+    "z": "泳衣",
+    "j": "水着",
+    "e": "swimsuit",
+    "b": "swimsuit",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "had not dried",
+    "z": "還沒乾",
+    "j": "乾いていなかった",
+    "e": "had not dried",
+    "b": "dry",
+    "p": "verb"
+   },
+   {
+    "t": " after "
+   },
+   {
+    "t": "yesterday's lesson",
+    "z": "昨天的課程",
+    "j": "昨日のレッスン",
+    "e": "yesterday's lesson",
+    "b": "lesson",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "took",
+    "z": "拿了",
+    "j": "持っていった",
+    "e": "took",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "spare one",
+    "z": "備用的",
+    "j": "予備のもの",
+    "e": "spare one",
+    "b": "spare one",
+    "p": "phrase"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "pool",
+    "z": "游泳池",
+    "j": "プール",
+    "e": "pool",
+    "b": "pool",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears loafers to school every day.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "wears",
+    "z": "穿著",
+    "j": "履く",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "loafers",
+    "z": "樂福鞋",
+    "j": "ローファー",
+    "e": "loafers",
+    "b": "loafers",
+    "p": "noun"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "school",
+    "z": "學校",
+    "j": "学校",
+    "e": "school",
+    "b": "school",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every day",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "every day",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Since loafers are easy to put on, she chooses them when she’s in a hurry to leave the house.": [
+   {
+    "t": "Since "
+   },
+   {
+    "t": "loafers",
+    "z": "樂福鞋",
+    "j": "ローファー",
+    "e": "loafers",
+    "b": "loafers",
+    "p": "noun"
+   },
+   {
+    "t": " are easy to "
+   },
+   {
+    "t": "put on",
+    "z": "穿上",
+    "j": "履く",
+    "e": "put on",
+    "b": "put on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "choose",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "choose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": "s them when she’s in a "
+   },
+   {
+    "t": "hurry",
+    "z": "匆忙",
+    "j": "急ぐ",
+    "e": "hurry",
+    "b": "hurry",
+    "p": "verb"
+   },
+   {
+    "t": " to "
+   },
+   {
+    "t": "leave the house",
+    "z": "離開家",
+    "j": "家を出る",
+    "e": "leave the house",
+    "b": "leave the house",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He put on dress shoes for the wedding.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "put on",
+    "z": "穿上",
+    "j": "履く",
+    "e": "put on",
+    "b": "put on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dress shoes",
+    "z": "皮鞋",
+    "j": "革靴",
+    "e": "dress shoes",
+    "b": "dress shoes",
+    "p": "noun"
+   },
+   {
+    "t": " for the "
+   },
+   {
+    "t": "wedding",
+    "z": "婚禮",
+    "j": "結婚式",
+    "e": "wedding",
+    "b": "wedding",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although he prefers sneakers for daily activities, he wore dress shoes to his friend's formal party.": [
+   {
+    "t": "Although "
+   },
+   {
+    "t": "he",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "prefers",
+    "z": "偏好",
+    "j": "好みます",
+    "e": "prefers",
+    "b": "prefer",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sneakers",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "sneaker",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "daily activities",
+    "z": "日常活動",
+    "j": "日常の活動",
+    "e": "daily activities",
+    "b": "daily activity",
+    "p": "phrase"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "履きました",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dress shoes",
+    "z": "正式皮鞋",
+    "j": "革靴",
+    "e": "dress shoes",
+    "b": "dress shoe",
+    "p": "noun"
+   },
+   {
+    "t": " to his "
+   },
+   {
+    "t": "friend's",
+    "z": "朋友的",
+    "j": "友人の",
+    "e": "friend's",
+    "b": "friend",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "formal party",
+    "z": "正式派對",
+    "j": "フォーマルなパーティー",
+    "e": "formal party",
+    "b": "formal party",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She wore high heels to the dinner party.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "She",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wore",
+    "z": "穿著",
+    "j": "着ました",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "high heels",
+    "z": "高跟鞋",
+    "j": "ハイヒール",
+    "e": "high heels",
+    "b": "high heel",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "dinner party",
+    "z": "晚宴",
+    "j": "ディナーパーティー",
+    "e": "dinner party",
+    "b": "dinner party",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although high heels look stylish, she chooses flats for work because they are more comfortable during long hours of standing.": [
+   {
+    "t": "Although "
+   },
+   {
+    "t": "high heels",
+    "z": "高跟鞋",
+    "j": "かかとの高い靴",
+    "e": "high heels",
+    "b": "high heel",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "look stylish",
+    "z": "看起來時髦",
+    "j": "おしゃれに見える",
+    "e": "look stylish",
+    "b": "look stylish",
+    "p": "phrase"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "she",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "chooses",
+    "z": "選擇",
+    "j": "選ぶ",
+    "e": "chooses",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "flats",
+    "z": "平底鞋",
+    "j": "フラットシューズ",
+    "e": "flats",
+    "b": "flat",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "work",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": " because they are "
+   },
+   {
+    "t": "more comfortable",
+    "z": "更舒適",
+    "j": "より快適な",
+    "e": "more comfortable",
+    "b": "comfortable",
+    "p": "adjective"
+   },
+   {
+    "t": " during "
+   },
+   {
+    "t": "long hours",
+    "z": "長時間",
+    "j": "長い時間",
+    "e": "long hours",
+    "b": "long hour",
+    "p": "phrase"
+   },
+   {
+    "t": " of standing."
+   }
+  ],
+  "It's hot today, so I wore flip-flops to the supermarket.": [
+   {
+    "t": "It's "
+   },
+   {
+    "t": "hot",
+    "z": "熱的",
+    "j": "暑い",
+    "e": "hot",
+    "b": "hot",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "today",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "today",
+    "p": "adverb"
+   },
+   {
+    "t": ", so I "
+   },
+   {
+    "t": "wore",
+    "z": "穿了",
+    "j": "履いた",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "flip-flops",
+    "z": "人字拖鞋",
+    "j": "ビーチサンダル",
+    "e": "flip-flops",
+    "b": "flip-flop",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "supermarket",
+    "z": "超市",
+    "j": "スーパー",
+    "e": "supermarket",
+    "b": "supermarket",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "After leaving the beach, he rinsed the sand off his flip-flops before getting into the car.": [
+   {
+    "t": "After "
+   },
+   {
+    "t": "leaving",
+    "z": "離開",
+    "j": "出る",
+    "e": "leaving",
+    "b": "leave",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "beach",
+    "z": "海灘",
+    "j": "ビーチ",
+    "e": "beach",
+    "b": "beach",
+    "p": "noun"
+   },
+   {
+    "t": ", he "
+   },
+   {
+    "t": "rinsed",
+    "z": "沖洗",
+    "j": "洗い流した",
+    "e": "rinsed",
+    "b": "rinse",
+    "p": "verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "sand",
+    "z": "沙子",
+    "j": "砂",
+    "e": "sand",
+    "b": "sand",
+    "p": "noun"
+   },
+   {
+    "t": " off his "
+   },
+   {
+    "t": "flip-flops",
+    "z": "人字拖",
+    "j": "ビーチサンダル",
+    "e": "flip-flops",
+    "b": "flip-flops",
+    "p": "noun"
+   },
+   {
+    "t": " before "
+   },
+   {
+    "t": "getting into",
+    "z": "進入",
+    "j": "乗り込む",
+    "e": "getting into",
+    "b": "get into",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " the "
+   },
+   {
+    "t": "car",
+    "z": "車",
+    "j": "車",
+    "e": "car",
+    "b": "car",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wore a baseball cap to the park.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "wore",
+    "z": "戴了",
+    "j": "かぶった",
+    "e": "wore",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "baseball cap",
+    "z": "棒球帽",
+    "j": "野球帽",
+    "e": "baseball cap",
+    "b": "baseball cap",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "park",
+    "z": "公園",
+    "j": "公園",
+    "e": "park",
+    "b": "park",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even though the sun was strong at the outdoor event, she chose a baseball cap instead of a hat with a wider brim.": [
+   {
+    "t": "Even though the "
+   },
+   {
+    "t": "sun",
+    "z": "太陽",
+    "j": "太陽",
+    "e": "sun",
+    "b": "sun",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "strong",
+    "z": "強烈",
+    "j": "強い",
+    "e": "strong",
+    "b": "strong",
+    "p": "adjective"
+   },
+   {
+    "t": " at the "
+   },
+   {
+    "t": "outdoor event",
+    "z": "戶外活動",
+    "j": "屋外イベント",
+    "e": "outdoor event",
+    "b": "outdoor event",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "chose",
+    "z": "選擇",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "baseball cap",
+    "z": "棒球帽",
+    "j": "キャップ",
+    "e": "baseball cap",
+    "b": "baseball cap",
+    "p": "noun"
+   },
+   {
+    "t": " instead of a "
+   },
+   {
+    "t": "hat",
+    "z": "帽子",
+    "j": "帽子",
+    "e": "hat",
+    "b": "hat",
+    "p": "noun"
+   },
+   {
+    "t": " with a "
+   },
+   {
+    "t": "wider brim",
+    "z": "較寬的帽沿",
+    "j": "つばの広い",
+    "e": "wider brim",
+    "b": "wide brim",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He always wears a beanie when he goes out in winter.": [
+   {
+    "t": "He "
+   },
+   {
+    "t": "always",
+    "z": "總是",
+    "j": "いつも",
+    "e": "always",
+    "b": "always",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "穿戴",
+    "j": "着る",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "beanie",
+    "z": "毛線帽",
+    "j": "ニット帽",
+    "e": "beanie",
+    "b": "beanie",
+    "p": "noun"
+   },
+   {
+    "t": " when he "
+   },
+   {
+    "t": "goes out",
+    "z": "外出",
+    "j": "外出する",
+    "e": "goes out",
+    "b": "go out",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "winter",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "winter",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even when the weather warms up in spring, she keeps wearing her beanie because she thinks it’s stylish.": [
+   {
+    "t": "Even when the "
+   },
+   {
+    "t": "weather",
+    "z": "天氣",
+    "j": "天気",
+    "e": "weather",
+    "b": "weather",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "warms up",
+    "z": "變暖",
+    "j": "暖かくなる",
+    "e": "warms up",
+    "b": "warm up",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " in "
+   },
+   {
+    "t": "spring",
+    "z": "春天",
+    "j": "春",
+    "e": "spring",
+    "b": "spring",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "keeps wearing",
+    "z": "持續穿戴",
+    "j": "かぶり続けている",
+    "e": "keeps wearing",
+    "b": "keep wearing",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "beanie",
+    "z": "毛線帽",
+    "j": "ニット帽",
+    "e": "beanie",
+    "b": "beanie",
+    "p": "noun"
+   },
+   {
+    "t": " because she "
+   },
+   {
+    "t": "thinks",
+    "z": "認為",
+    "j": "思っている",
+    "e": "thinks",
+    "b": "think",
+    "p": "verb"
+   },
+   {
+    "t": " it’s "
+   },
+   {
+    "t": "stylish",
+    "z": "時髦的",
+    "j": "おしゃれな",
+    "e": "stylish",
+    "b": "stylish",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She takes a tote bag to the supermarket.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "takes",
+    "z": "拿",
+    "j": "持ちます",
+    "e": "takes",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a tote bag",
+    "z": "托特包",
+    "j": "トートバッグ",
+    "e": "a tote bag",
+    "b": "tote bag",
+    "p": "noun"
+   },
+   {
+    "t": " to the "
+   },
+   {
+    "t": "supermarket",
+    "z": "超市",
+    "j": "食料品店",
+    "e": "supermarket",
+    "b": "supermarket",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even though she owns a handbag, she chose a tote bag because she needed space for textbooks and a water bottle.": [
+   {
+    "t": "Even though she "
+   },
+   {
+    "t": "owns",
+    "z": "擁有",
+    "j": "持っている",
+    "e": "owns",
+    "b": "own",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "handbag",
+    "z": "手提包",
+    "j": "ハンドバッグ",
+    "e": "handbag",
+    "b": "handbag",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "tote bag",
+    "z": "手提袋",
+    "j": "トートバッグ",
+    "e": "tote bag",
+    "b": "tote bag",
+    "p": "noun"
+   },
+   {
+    "t": " because she "
+   },
+   {
+    "t": "needed",
+    "z": "需要",
+    "j": "必要だった",
+    "e": "needed",
+    "b": "need",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "space",
+    "z": "空間",
+    "j": "スペース",
+    "e": "space",
+    "b": "space",
+    "p": "noun"
+   },
+   {
+    "t": " for "
+   },
+   {
+    "t": "textbooks",
+    "z": "教科書",
+    "j": "教科書",
+    "e": "textbooks",
+    "b": "textbook",
+    "p": "noun"
+   },
+   {
+    "t": " and a "
+   },
+   {
+    "t": "water bottle",
+    "z": "水瓶",
+    "j": "水筒",
+    "e": "water bottle",
+    "b": "water bottle",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Mom picked an elegant handbag to go with her new dress.": [
+   {
+    "t": "Mom",
+    "z": "媽媽",
+    "j": "母親",
+    "e": "Mom",
+    "b": "mom",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "picked",
+    "z": "挑選了",
+    "j": "選びました",
+    "e": "picked",
+    "b": "pick",
+    "p": "verb"
+   },
+   {
+    "t": " an "
+   },
+   {
+    "t": "elegant",
+    "z": "優雅的",
+    "j": "上品な",
+    "e": "elegant",
+    "b": "elegant",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "handbag",
+    "z": "手提包",
+    "j": "手で持つ小さなかばん",
+    "e": "handbag",
+    "b": "handbag",
+    "p": "noun"
+   },
+   {
+    "t": " to go with her "
+   },
+   {
+    "t": "new",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "new",
+    "p": "adjective"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "dress",
+    "z": "洋裝",
+    "j": "ワンピース",
+    "e": "dress",
+    "b": "dress",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even though a tote bag can carry more things, she prefers a structured handbag because it looks more formal.": [
+   {
+    "t": "Even though a "
+   },
+   {
+    "t": "tote bag",
+    "z": "托特包",
+    "j": "大きな手提げかばん",
+    "e": "tote bag",
+    "b": "tote bag",
+    "p": "noun"
+   },
+   {
+    "t": " can "
+   },
+   {
+    "t": "carry",
+    "z": "攜帶",
+    "j": "持ち運ぶ",
+    "e": "carry",
+    "b": "carry",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "more things",
+    "z": "更多東西",
+    "j": "より多くの物",
+    "e": "more things",
+    "b": "thing",
+    "p": "phrase"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "prefers",
+    "z": "偏好",
+    "j": "好みます",
+    "e": "prefers",
+    "b": "prefer",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "structured handbag",
+    "z": "有型的手提包",
+    "j": "形がしっかりしたハンドバッグ",
+    "e": "structured handbag",
+    "b": "handbag",
+    "p": "phrase"
+   },
+   {
+    "t": " because it "
+   },
+   {
+    "t": "looks",
+    "z": "看起來",
+    "j": "見えます",
+    "e": "looks",
+    "b": "look",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "more formal",
+    "z": "更正式",
+    "j": "よりフォーマル",
+    "e": "more formal",
+    "b": "formal",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He takes a backpack to school every day.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "He",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "takes",
+    "z": "帶",
+    "j": "持っていきます",
+    "e": "takes",
+    "b": "take",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a backpack",
+    "z": "後背包",
+    "j": "リュック",
+    "e": "a backpack",
+    "b": "backpack",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "to school",
+    "z": "去學校",
+    "j": "学校へ",
+    "e": "to school",
+    "b": "school",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every day",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "every day",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Even when she has to walk a long time while shopping, she chooses a backpack because it distributes the weight evenly.": [
+   {
+    "t": "Even when",
+    "z": "即使",
+    "j": "〜するときでも",
+    "e": "Even when",
+    "b": "even when",
+    "p": "expression"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "she",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "has to walk",
+    "z": "必須走路",
+    "j": "歩かなければなりません",
+    "e": "has to walk",
+    "b": "have to walk",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a long time",
+    "z": "很長時間",
+    "j": "長時間",
+    "e": "a long time",
+    "b": "long time",
+    "p": "phrase"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "while shopping",
+    "z": "購物時",
+    "j": "買い物するとき",
+    "e": "while shopping",
+    "b": "shop",
+    "p": "phrase"
+   },
+   {
+    "t": ", "
+   },
+   {
+    "t": "she chooses",
+    "z": "她選擇",
+    "j": "選びます",
+    "e": "she chooses",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "a backpack",
+    "z": "後背包",
+    "j": "リュック",
+    "e": "a backpack",
+    "b": "backpack",
+    "p": "noun"
+   },
+   {
+    "t": " because it "
+   },
+   {
+    "t": "distributes the weight evenly",
+    "z": "均勻分配重量",
+    "j": "重さを均等に分散します",
+    "e": "distributes the weight evenly",
+    "b": "distribute weight evenly",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He always wears sunglasses when it’s sunny.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "He",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "always",
+    "z": "總是",
+    "j": "いつも",
+    "e": "always",
+    "b": "always",
+    "p": "adverb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "戴",
+    "j": "かけます",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "sunglasses",
+    "z": "太陽眼鏡",
+    "j": "サングラス",
+    "e": "sunglasses",
+    "b": "sunglasses",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "when it’s sunny",
+    "z": "晴天時",
+    "j": "晴れているとき",
+    "e": "when it’s sunny",
+    "b": "when sunny",
+    "p": "phrase"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She brought her sunglasses even though she was just taking the subway, because the sunlight outside was very strong.": [
+   {
+    "t": "She",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "she",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "brought",
+    "z": "帶來",
+    "j": "持ってきた",
+    "e": "brought",
+    "b": "bring",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "her sunglasses",
+    "z": "她的太陽眼鏡",
+    "j": "彼女のサングラス",
+    "e": "her sunglasses",
+    "b": "sunglasses",
+    "p": "noun"
+   },
+   {
+    "t": " even though she was "
+   },
+   {
+    "t": "just taking the subway",
+    "z": "只是搭地鐵",
+    "j": "地下鉄に乗るだけ",
+    "e": "just taking the subway",
+    "b": "take the subway",
+    "p": "phrase"
+   },
+   {
+    "t": ", because the "
+   },
+   {
+    "t": "sunlight outside",
+    "z": "外面的陽光",
+    "j": "外の日差し",
+    "e": "sunlight outside",
+    "b": "sunlight",
+    "p": "noun"
+   },
+   {
+    "t": " was "
+   },
+   {
+    "t": "very strong",
+    "z": "非常強烈",
+    "j": "とても強い",
+    "e": "very strong",
+    "b": "strong",
+    "p": "adjective"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He gave his girlfriend a delicate necklace as a birthday present.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "gave",
+    "z": "給了",
+    "j": "贈った",
+    "e": "gave",
+    "b": "give",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "his girlfriend",
+    "z": "他的女朋友",
+    "j": "彼の彼女",
+    "e": "his girlfriend",
+    "b": "girlfriend",
+    "p": "noun"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "delicate necklace",
+    "z": "精緻的項鍊",
+    "j": "繊細なネックレス",
+    "e": "delicate necklace",
+    "b": "necklace",
+    "p": "noun"
+   },
+   {
+    "t": " as a "
+   },
+   {
+    "t": "birthday present",
+    "z": "生日禮物",
+    "j": "誕生日プレゼント",
+    "e": "birthday present",
+    "b": "present",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although the necklace was beautiful, she didn’t wear it because she was afraid it would catch on her clothes at work.": [
+   {
+    "t": "Although the "
+   },
+   {
+    "t": "necklace",
+    "z": "項鍊",
+    "j": "ネックレス",
+    "e": "necklace",
+    "b": "necklace",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "was beautiful",
+    "z": "很漂亮",
+    "j": "きれいだった",
+    "e": "was beautiful",
+    "b": "be beautiful",
+    "p": "phrase"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "didn’t wear",
+    "z": "沒有戴",
+    "j": "つけなかった",
+    "e": "didn’t wear",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " it because she was "
+   },
+   {
+    "t": "afraid",
+    "z": "害怕",
+    "j": "こわがっていた",
+    "e": "afraid",
+    "b": "afraid",
+    "p": "adjective"
+   },
+   {
+    "t": " it would "
+   },
+   {
+    "t": "catch on",
+    "z": "勾住",
+    "j": "ひっかかる",
+    "e": "catch on",
+    "b": "catch on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "clothes",
+    "z": "衣服",
+    "j": "ふく",
+    "e": "clothes",
+    "b": "clothes",
+    "p": "noun"
+   },
+   {
+    "t": " at "
+   },
+   {
+    "t": "work",
+    "z": "工作",
+    "j": "しごと",
+    "e": "work",
+    "b": "work",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "She tried on a pair of clip-on earrings.": [
+   {
+    "t": "She "
+   },
+   {
+    "t": "tried on",
+    "z": "試戴",
+    "j": "試しにつけました",
+    "e": "tried on",
+    "b": "try on",
+    "p": "phrasal verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "pair",
+    "z": "一對",
+    "j": "一対",
+    "e": "pair",
+    "b": "pair",
+    "p": "noun"
+   },
+   {
+    "t": " of "
+   },
+   {
+    "t": "clip-on earrings",
+    "z": "夾式耳環",
+    "j": "イヤリング",
+    "e": "clip-on earrings",
+    "b": "clip-on earring",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although she has pierced ears, she chose clip-on earrings because they matched her dress.": [
+   {
+    "t": "Although she has "
+   },
+   {
+    "t": "pierced ears",
+    "z": "穿洞耳朵",
+    "j": "ピアスのあいたみみ",
+    "e": "pierced ears",
+    "b": "pierced ear",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "chose",
+    "z": "選擇了",
+    "j": "えらんだ",
+    "e": "chose",
+    "b": "choose",
+    "p": "verb"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "clip-on earrings",
+    "z": "夾式耳環",
+    "j": "イヤリング",
+    "e": "clip-on earrings",
+    "b": "clip-on earring",
+    "p": "noun"
+   },
+   {
+    "t": " because they "
+   },
+   {
+    "t": "matched",
+    "z": "配合",
+    "j": "あっていた",
+    "e": "matched",
+    "b": "match",
+    "p": "verb"
+   },
+   {
+    "t": " her "
+   },
+   {
+    "t": "dress",
+    "z": "洋裝",
+    "j": "ワンピース",
+    "e": "dress",
+    "b": "dress",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "He wears a wristwatch every day.": [
+   {
+    "t": "He",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "he",
+    "p": "pronoun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "wears",
+    "z": "戴著",
+    "j": "身につける",
+    "e": "wears",
+    "b": "wear",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "wristwatch",
+    "z": "手錶",
+    "j": "腕時計",
+    "e": "wristwatch",
+    "b": "wristwatch",
+    "p": "noun"
+   },
+   {
+    "t": " "
+   },
+   {
+    "t": "every day",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "every day",
+    "p": "adverb"
+   },
+   {
+    "t": "."
+   }
+  ],
+  "Although she can check the time on her phone, she prefers a wristwatch because it’s more convenient during meetings.": [
+   {
+    "t": "Although she can "
+   },
+   {
+    "t": "check the time",
+    "z": "查看時間",
+    "j": "時間を確認する",
+    "e": "check the time",
+    "b": "check the time",
+    "p": "phrase"
+   },
+   {
+    "t": " on her "
+   },
+   {
+    "t": "phone",
+    "z": "手機",
+    "j": "携帯電話",
+    "e": "phone",
+    "b": "phone",
+    "p": "noun"
+   },
+   {
+    "t": ", she "
+   },
+   {
+    "t": "prefers",
+    "z": "偏好",
+    "j": "好む",
+    "e": "prefers",
+    "b": "prefer",
+    "p": "verb"
+   },
+   {
+    "t": " a "
+   },
+   {
+    "t": "wristwatch",
+    "z": "手錶",
+    "j": "腕時計",
+    "e": "wristwatch",
+    "b": "wristwatch",
+    "p": "noun"
+   },
+   {
+    "t": " because it’s "
+   },
+   {
+    "t": "more convenient",
+    "z": "更方便",
+    "j": "より便利",
+    "e": "more convenient",
+    "b": "convenient",
+    "p": "adjective"
+   },
+   {
+    "t": " during "
+   },
+   {
+    "t": "meetings",
+    "z": "會議",
+    "j": "会議",
+    "e": "meetings",
+    "b": "meeting",
+    "p": "noun"
+   },
+   {
+    "t": "."
+   }
+  ]
+ },
+ "ja": {
+  "彼は今日、白いTシャツを着ている。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "今日",
+    "p": "adverb",
+    "r": "きょう"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "白い",
+    "z": "白色的",
+    "j": "白い",
+    "e": "white",
+    "b": "白い",
+    "p": "adjective",
+    "r": "しろい"
+   },
+   {
+    "t": "Tシャツ",
+    "z": "T恤",
+    "j": "Tシャツ",
+    "e": "T-shirt",
+    "b": "Tシャツ",
+    "p": "noun",
+    "r": "ティーシャツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ている",
+    "z": "穿著",
+    "j": "着ています",
+    "e": "wearing",
+    "b": "着る",
+    "p": "verb",
+    "r": "きている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "Tシャツがまだ洗濯中だったので、きれいなシャツを着て店に行きました。": [
+   {
+    "t": "Tシャツ",
+    "z": "T恤",
+    "j": "Tシャツ",
+    "e": "T-shirt",
+    "b": "Tシャツ",
+    "p": "noun",
+    "r": "ティーシャツ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "まだ",
+    "z": "仍然",
+    "j": "まだ",
+    "e": "still",
+    "b": "まだ",
+    "p": "adverb",
+    "r": "まだ"
+   },
+   {
+    "t": "洗濯中",
+    "z": "洗衣中",
+    "j": "洗濯中",
+    "e": "washing",
+    "b": "洗濯中",
+    "p": "noun",
+    "r": "せんたくちゅう"
+   },
+   {
+    "t": "だったので、"
+   },
+   {
+    "t": "きれいな",
+    "z": "乾淨的",
+    "j": "きれいな",
+    "e": "clean",
+    "b": "きれい",
+    "p": "adjective",
+    "r": "きれいな"
+   },
+   {
+    "t": "シャツ",
+    "z": "襯衫",
+    "j": "シャツ",
+    "e": "shirt",
+    "b": "シャツ",
+    "p": "noun",
+    "r": "シャツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着て",
+    "z": "穿著",
+    "j": "着て",
+    "e": "wearing",
+    "b": "着る",
+    "p": "verb",
+    "r": "きて"
+   },
+   {
+    "t": "店",
+    "z": "商店",
+    "j": "店",
+    "e": "store",
+    "b": "店",
+    "p": "noun",
+    "r": "みせ"
+   },
+   {
+    "t": "に行きました。"
+   }
+  ],
+  "今朝、シャツにアイロンをかけました。": [
+   {
+    "t": "今朝",
+    "z": "今天早上",
+    "j": "今朝",
+    "e": "this morning",
+    "b": "今朝",
+    "p": "adverb",
+    "r": "けさ"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "シャツ",
+    "z": "襯衫",
+    "j": "シャツ",
+    "e": "shirt",
+    "b": "シャツ",
+    "p": "noun",
+    "r": "シャツ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "アイロン",
+    "z": "熨斗",
+    "j": "アイロン",
+    "e": "iron",
+    "b": "アイロン",
+    "p": "noun",
+    "r": "アイロン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かけました",
+    "z": "熨燙了",
+    "j": "アイロンをかけました",
+    "e": "ironed",
+    "b": "かける",
+    "p": "verb",
+    "r": "かけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "暑かったが、会議ではきちんと見せたいので彼は長袖のシャツを着ていた。": [
+   {
+    "t": "暑かった",
+    "z": "很熱",
+    "j": "暑かった",
+    "e": "was hot",
+    "b": "暑い",
+    "p": "adjective",
+    "r": "あつかった"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "会議",
+    "z": "會議",
+    "j": "会議",
+    "e": "meeting",
+    "b": "会議",
+    "p": "noun",
+    "r": "かいぎ"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "きちんと見せたい",
+    "z": "想要看起來整齊",
+    "j": "きちんと見せたい",
+    "e": "want to look neat",
+    "b": "見せる",
+    "p": "phrase",
+    "r": "きちんとみせたい"
+   },
+   {
+    "t": "ので"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "長袖",
+    "z": "長袖",
+    "j": "長袖",
+    "e": "long-sleeved",
+    "b": "長袖",
+    "p": "adjective",
+    "r": "ながそで"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "シャツ",
+    "z": "襯衫",
+    "j": "シャツ",
+    "e": "shirt",
+    "b": "シャツ",
+    "p": "noun",
+    "r": "シャツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ていた",
+    "z": "穿著",
+    "j": "着ていた",
+    "e": "was wearing",
+    "b": "着る",
+    "p": "verb",
+    "r": "きていた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は今日、青いブラウスを着ている。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "今日",
+    "p": "adverb",
+    "r": "きょう"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "青い",
+    "z": "藍色的",
+    "j": "青い",
+    "e": "blue",
+    "b": "青い",
+    "p": "adjective",
+    "r": "あおい"
+   },
+   {
+    "t": "ブラウス",
+    "z": "襯衫",
+    "j": "ブラウス",
+    "e": "blouse",
+    "b": "ブラウス",
+    "p": "noun",
+    "r": "ブラウス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ている",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "is wearing",
+    "b": "着る",
+    "p": "verb",
+    "r": "きている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "普段はTシャツを着ていますが、面接にはブラウスを選びました。": [
+   {
+    "t": "普段",
+    "z": "通常",
+    "j": "ふだん",
+    "e": "usually",
+    "b": "普段",
+    "p": "adverb",
+    "r": "ふだん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "Tシャツ",
+    "z": "T恤",
+    "j": "Tシャツ",
+    "e": "T-shirts",
+    "b": "Tシャツ",
+    "p": "noun",
+    "r": "ティーシャツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ています",
+    "z": "穿著",
+    "j": "着ています",
+    "e": "wears",
+    "b": "着る",
+    "p": "verb",
+    "r": "きています"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "面接",
+    "z": "面試",
+    "j": "面接",
+    "e": "job interview",
+    "b": "面接",
+    "p": "noun",
+    "r": "めんせつ"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "ブラウス",
+    "z": "女用襯衫",
+    "j": "ブラウス",
+    "e": "blouse",
+    "b": "ブラウス",
+    "p": "noun",
+    "r": "ブラウス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冬には暖かくするためにセーターをよく着る。": [
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "暖かくするために",
+    "z": "為了保持溫暖",
+    "j": "暖かくするために",
+    "e": "to stay warm",
+    "b": "暖かくするために",
+    "p": "phrase",
+    "r": "あたたかくするために"
+   },
+   {
+    "t": "セーター",
+    "z": "毛衣",
+    "j": "セーター",
+    "e": "sweater",
+    "b": "セーター",
+    "p": "noun",
+    "r": "セーター"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "よく",
+    "z": "經常",
+    "j": "よく",
+    "e": "often",
+    "b": "よく",
+    "p": "adverb",
+    "r": "よく"
+   },
+   {
+    "t": "着る",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wear",
+    "b": "着る",
+    "p": "verb",
+    "r": "きる"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "教室より外の方が寒かったので、授業が終わってもセーターを脱ぎませんでした。": [
+   {
+    "t": "教室",
+    "z": "教室",
+    "j": "教室",
+    "e": "classroom",
+    "b": "教室",
+    "p": "noun",
+    "r": "きょうしつ"
+   },
+   {
+    "t": "より"
+   },
+   {
+    "t": "外",
+    "z": "外面",
+    "j": "外側",
+    "e": "outside",
+    "b": "外",
+    "p": "noun",
+    "r": "そと"
+   },
+   {
+    "t": "の方が"
+   },
+   {
+    "t": "寒かった",
+    "z": "很冷",
+    "j": "寒かった",
+    "e": "was cold",
+    "b": "寒い",
+    "p": "adjective",
+    "r": "さむかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "授業",
+    "z": "課程",
+    "j": "授業",
+    "e": "class",
+    "b": "授業",
+    "p": "noun",
+    "r": "じゅぎょう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "終わって",
+    "z": "結束",
+    "j": "終わって",
+    "e": "finished",
+    "b": "終わる",
+    "p": "verb",
+    "r": "おわって"
+   },
+   {
+    "t": "も"
+   },
+   {
+    "t": "セーター",
+    "z": "毛衣",
+    "j": "セーター",
+    "e": "sweater",
+    "b": "セーター",
+    "p": "noun",
+    "r": "セーター"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "脱ぎませんでした",
+    "z": "沒有脫",
+    "j": "脱ぎませんでした",
+    "e": "did not take off",
+    "b": "脱ぐ",
+    "p": "verb",
+    "r": "ぬぎませんでした"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "母が私のために新しいカーディガンを編んでくれた。": [
+   {
+    "t": "母",
+    "z": "母親",
+    "j": "母",
+    "e": "mother",
+    "b": "母",
+    "p": "noun",
+    "r": "はは"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "私",
+    "z": "我",
+    "j": "私",
+    "e": "me",
+    "b": "私",
+    "p": "pronoun",
+    "r": "わたし"
+   },
+   {
+    "t": "のために"
+   },
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "カーディガン",
+    "z": "開襟羊毛衫",
+    "j": "カーディガン",
+    "e": "cardigan",
+    "b": "カーディガン",
+    "p": "noun",
+    "r": "カーディガン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "編んでくれた",
+    "z": "幫我編織了",
+    "j": "編んでくれた",
+    "e": "knitted for me",
+    "b": "編む",
+    "p": "verb",
+    "r": "あんでくれた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "夏でも図書館は寒いので、彼女はいつもカーディガンを持って行きます。": [
+   {
+    "t": "夏",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "夏",
+    "p": "noun",
+    "r": "なつ"
+   },
+   {
+    "t": "でも"
+   },
+   {
+    "t": "図書館",
+    "z": "圖書館",
+    "j": "図書館",
+    "e": "library",
+    "b": "図書館",
+    "p": "noun",
+    "r": "としょかん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "寒い",
+    "z": "寒冷",
+    "j": "寒い",
+    "e": "cold",
+    "b": "寒い",
+    "p": "adjective",
+    "r": "さむい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "はいつも"
+   },
+   {
+    "t": "カーディガン",
+    "z": "開襟毛衣",
+    "j": "カーディガン",
+    "e": "cardigan",
+    "b": "カーディガン",
+    "p": "noun",
+    "r": "カーディガン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "持って行きます",
+    "z": "帶去",
+    "j": "持って行きます",
+    "e": "take",
+    "b": "持って行く",
+    "p": "verb",
+    "r": "もっていきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "授業の後、彼はパーカーに着替えて公園へ行った。": [
+   {
+    "t": "授業",
+    "z": "課程",
+    "j": "授業",
+    "e": "class",
+    "b": "授業",
+    "p": "noun",
+    "r": "じゅぎょう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "後",
+    "z": "之後",
+    "j": "あと",
+    "e": "after",
+    "b": "後",
+    "p": "adverb",
+    "r": "あと"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "パーカー",
+    "z": "連帽衫",
+    "j": "パーカー",
+    "e": "hoodie",
+    "b": "パーカー",
+    "p": "noun",
+    "r": "パーカー"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "着替えて",
+    "z": "換衣服",
+    "j": "着替えて",
+    "e": "changed clothes",
+    "b": "着替える",
+    "p": "verb",
+    "r": "きがえて"
+   },
+   {
+    "t": "公園",
+    "z": "公園",
+    "j": "公園",
+    "e": "park",
+    "b": "公園",
+    "p": "noun",
+    "r": "こうえん"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "行った",
+    "z": "去了",
+    "j": "行った",
+    "e": "went",
+    "b": "行く",
+    "p": "verb",
+    "r": "いった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "このパーカーは厚手なので、寒くなっても寒さを感じなかった。": [
+   {
+    "t": "この",
+    "z": "這個",
+    "j": "この",
+    "e": "this",
+    "b": "この",
+    "p": "determiner",
+    "r": "この"
+   },
+   {
+    "t": "パーカー",
+    "z": "連帽衫",
+    "j": "パーカー",
+    "e": "hoodie",
+    "b": "パーカー",
+    "p": "noun",
+    "r": "パーカー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "厚手",
+    "z": "厚的",
+    "j": "厚手",
+    "e": "thick",
+    "b": "厚手",
+    "p": "adjective",
+    "r": "あつで"
+   },
+   {
+    "t": "なので、"
+   },
+   {
+    "t": "寒くなっても",
+    "z": "即使變冷",
+    "j": "寒くなっても",
+    "e": "even when it turned cold",
+    "b": "寒くなる",
+    "p": "phrase",
+    "r": "さむくなっても"
+   },
+   {
+    "t": "寒さ",
+    "z": "寒冷",
+    "j": "寒さ",
+    "e": "cold",
+    "b": "寒さ",
+    "p": "noun",
+    "r": "さむさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "感じなかった",
+    "z": "沒有感覺",
+    "j": "感じなかった",
+    "e": "didn't feel",
+    "b": "感じる",
+    "p": "verb",
+    "r": "かんじなかった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は教室の入り口にジャケットを掛けた。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "教室",
+    "z": "教室",
+    "j": "教室",
+    "e": "classroom",
+    "b": "教室",
+    "p": "noun",
+    "r": "きょうしつ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "入り口",
+    "z": "入口",
+    "j": "入り口",
+    "e": "entrance",
+    "b": "入り口",
+    "p": "noun",
+    "r": "いりぐち"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ジャケット",
+    "z": "夾克",
+    "j": "ジャケット",
+    "e": "jacket",
+    "b": "ジャケット",
+    "p": "noun",
+    "r": "ジャケット"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "掛けた",
+    "z": "掛上",
+    "j": "掛けた",
+    "e": "hung",
+    "b": "掛ける",
+    "p": "verb",
+    "r": "かけた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "午後は暖かかったけれど、夕方冷えるかもしれないのでジャケットを持って行きました。": [
+   {
+    "t": "午後",
+    "z": "下午",
+    "j": "午後",
+    "e": "afternoon",
+    "b": "午後",
+    "p": "noun",
+    "r": "ごご"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "暖かかった",
+    "z": "溫暖",
+    "j": "暖かかった",
+    "e": "was warm",
+    "b": "暖かい",
+    "p": "adjective",
+    "r": "あたたかかった"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "夕方",
+    "z": "傍晚",
+    "j": "夕方",
+    "e": "evening",
+    "b": "夕方",
+    "p": "noun",
+    "r": "ゆうがた"
+   },
+   {
+    "t": "冷える",
+    "z": "變冷",
+    "j": "冷える",
+    "e": "turn chilly",
+    "b": "冷える",
+    "p": "verb",
+    "r": "ひえる"
+   },
+   {
+    "t": "かもしれないので"
+   },
+   {
+    "t": "ジャケット",
+    "z": "夾克",
+    "j": "ジャケット",
+    "e": "jacket",
+    "b": "ジャケット",
+    "p": "noun",
+    "r": "ジャケット"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "持って行きました",
+    "z": "帶去",
+    "j": "持って行きました",
+    "e": "brought",
+    "b": "持って行く",
+    "p": "verb",
+    "r": "もっていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冬は外出時にコートを着る。": [
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "外出時",
+    "z": "外出時",
+    "j": "外出時",
+    "e": "when going out",
+    "b": "外出時",
+    "p": "noun",
+    "r": "がいしゅつじ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "コート",
+    "z": "大衣",
+    "j": "コート",
+    "e": "coat",
+    "b": "コート",
+    "p": "noun",
+    "r": "コート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着る",
+    "z": "穿",
+    "j": "着る",
+    "e": "wear",
+    "b": "着る",
+    "p": "verb",
+    "r": "きる"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "電車の中が暖かくなったので、コートを脱いで腕にかけました。": [
+   {
+    "t": "電車",
+    "z": "電車",
+    "j": "電車",
+    "e": "train",
+    "b": "電車",
+    "p": "noun",
+    "r": "でんしゃ"
+   },
+   {
+    "t": "の中が"
+   },
+   {
+    "t": "暖かくなった",
+    "z": "變暖",
+    "j": "暖かくなった",
+    "e": "got warm",
+    "b": "暖かくなる",
+    "p": "verb",
+    "r": "あたたかくなった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "コート",
+    "z": "外套",
+    "j": "コート",
+    "e": "coat",
+    "b": "コート",
+    "p": "noun",
+    "r": "コート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "脱いで",
+    "z": "脫掉",
+    "j": "脱いで",
+    "e": "took off",
+    "b": "脱ぐ",
+    "p": "verb",
+    "r": "ぬいで"
+   },
+   {
+    "t": "腕",
+    "z": "手臂",
+    "j": "腕",
+    "e": "arm",
+    "b": "腕",
+    "p": "noun",
+    "r": "うで"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "かけました",
+    "z": "掛著",
+    "j": "かけました",
+    "e": "held",
+    "b": "かける",
+    "p": "verb",
+    "r": "かけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は夏になるとワンピースを着るのが好きだ。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "夏",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "夏",
+    "p": "noun",
+    "r": "なつ"
+   },
+   {
+    "t": "になると"
+   },
+   {
+    "t": "ワンピース",
+    "z": "洋裝",
+    "j": "ワンピース",
+    "e": "dress",
+    "b": "ワンピース",
+    "p": "noun",
+    "r": "ワンピース"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着る",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wear",
+    "b": "着る",
+    "p": "verb",
+    "r": "きる"
+   },
+   {
+    "t": "のが"
+   },
+   {
+    "t": "好きだ",
+    "z": "喜歡",
+    "j": "好きだ",
+    "e": "likes",
+    "b": "好きだ",
+    "p": "adjective",
+    "r": "すきだ"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ワンピースはトップスを選ぶ必要がないので、朝の着替え時間を大幅に短縮できる。": [
+   {
+    "t": "ワンピース",
+    "z": "連身裙",
+    "j": "一体型の服",
+    "e": "one-piece dress",
+    "b": "ワンピース",
+    "p": "noun",
+    "r": "ワンピース"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "トップス",
+    "z": "上衣",
+    "j": "上半身に着る服",
+    "e": "top",
+    "b": "トップス",
+    "p": "noun",
+    "r": "トップス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選ぶ",
+    "z": "選擇",
+    "j": "選択する",
+    "e": "choose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらぶ"
+   },
+   {
+    "t": "必要",
+    "z": "必要",
+    "j": "必要なこと",
+    "e": "need",
+    "b": "必要",
+    "p": "noun",
+    "r": "ひつよう"
+   },
+   {
+    "t": "がないので、"
+   },
+   {
+    "t": "朝",
+    "z": "早晨",
+    "j": "朝の時間",
+    "e": "morning",
+    "b": "朝",
+    "p": "noun",
+    "r": "あさ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "着替え",
+    "z": "換衣服",
+    "j": "服を着替えること",
+    "e": "changing clothes",
+    "b": "着替え",
+    "p": "noun",
+    "r": "きがえ"
+   },
+   {
+    "t": "時間",
+    "z": "時間",
+    "j": "時間の長さ",
+    "e": "time",
+    "b": "時間",
+    "p": "noun",
+    "r": "じかん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "大幅に",
+    "z": "大幅度地",
+    "j": "大きく変わるさま",
+    "e": "greatly",
+    "b": "大幅に",
+    "p": "adverb",
+    "r": "おおはばに"
+   },
+   {
+    "t": "短縮できる。"
+   }
+  ],
+  "彼女は今日、赤いスカートを履いている。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "かのじょ",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "きょう",
+    "e": "today",
+    "b": "今日",
+    "p": "noun",
+    "r": "きょう"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "赤い",
+    "z": "紅色的",
+    "j": "あかい",
+    "e": "red",
+    "b": "赤い",
+    "p": "adjective",
+    "r": "あかい"
+   },
+   {
+    "t": "スカート",
+    "z": "裙子",
+    "j": "スカート",
+    "e": "skirt",
+    "b": "スカート",
+    "p": "noun",
+    "r": "スカート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いている",
+    "z": "穿著",
+    "j": "はいている",
+    "e": "is wearing",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "スカートの方が涼しいけれど、今日はたくさん歩く予定なので彼女はズボンを選んだ。": [
+   {
+    "t": "スカート",
+    "z": "裙子",
+    "j": "腰から下に着る服",
+    "e": "skirt",
+    "b": "スカート",
+    "p": "noun",
+    "r": "スカート"
+   },
+   {
+    "t": "の方が"
+   },
+   {
+    "t": "涼しい",
+    "z": "涼快",
+    "j": "温度が低く感じる",
+    "e": "cool",
+    "b": "涼しい",
+    "p": "adjective",
+    "r": "すずしい"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日の日",
+    "e": "today",
+    "b": "今日",
+    "p": "noun",
+    "r": "きょう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "たくさん",
+    "z": "很多",
+    "j": "多い量",
+    "e": "a lot",
+    "b": "たくさん",
+    "p": "adverb",
+    "r": "たくさん"
+   },
+   {
+    "t": "歩く",
+    "z": "走路",
+    "j": "足で移動する",
+    "e": "walk",
+    "b": "歩く",
+    "p": "verb",
+    "r": "あるく"
+   },
+   {
+    "t": "予定",
+    "z": "計劃",
+    "j": "計画されたこと",
+    "e": "plan",
+    "b": "予定",
+    "p": "noun",
+    "r": "よてい"
+   },
+   {
+    "t": "なので"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の人",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ズボン",
+    "z": "褲子",
+    "j": "下半身に着る服",
+    "e": "pants",
+    "b": "ズボン",
+    "p": "noun",
+    "r": "ズボン"
+   },
+   {
+    "t": "を選んだ。"
+   }
+  ],
+  "彼は毎日ジーンズを履くのが好きです。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "毎日",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "毎日",
+    "p": "adverb",
+    "r": "まいにち"
+   },
+   {
+    "t": "ジーンズ",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "ジーンズ",
+    "p": "noun",
+    "r": "ジーンズ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履く",
+    "z": "穿",
+    "j": "履く",
+    "e": "wear",
+    "b": "履く",
+    "p": "verb",
+    "r": "はく"
+   },
+   {
+    "t": "のが"
+   },
+   {
+    "t": "好きです",
+    "z": "喜歡",
+    "j": "好きです",
+    "e": "like",
+    "b": "好き",
+    "p": "adjective",
+    "r": "すきです"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "午後は街を歩き回る予定だったので、きちんとしたズボンより履き慣れたジーンズを選びました。": [
+   {
+    "t": "午後",
+    "z": "下午",
+    "j": "午後",
+    "e": "afternoon",
+    "b": "午後",
+    "p": "noun",
+    "r": "ごご"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "街",
+    "z": "街道",
+    "j": "街",
+    "e": "town",
+    "b": "街",
+    "p": "noun",
+    "r": "まち"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "歩き回る",
+    "z": "四處走動",
+    "j": "歩き回る",
+    "e": "walk around",
+    "b": "歩き回る",
+    "p": "phrasal verb",
+    "r": "あるきまわる"
+   },
+   {
+    "t": "予定だった",
+    "z": "預定",
+    "j": "予定だった",
+    "e": "planned",
+    "b": "予定だ",
+    "p": "expression",
+    "r": "よていだった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "きちんとした",
+    "z": "正式的",
+    "j": "きちんとした",
+    "e": "formal",
+    "b": "きちんとする",
+    "p": "adjective",
+    "r": "きちんとした"
+   },
+   {
+    "t": "ズボン",
+    "z": "褲子",
+    "j": "ズボン",
+    "e": "trousers",
+    "b": "ズボン",
+    "p": "noun",
+    "r": "ズボン"
+   },
+   {
+    "t": "より"
+   },
+   {
+    "t": "履き慣れた",
+    "z": "穿慣的",
+    "j": "履き慣れた",
+    "e": "comfortable",
+    "b": "履き慣れる",
+    "p": "adjective",
+    "r": "はきなれた"
+   },
+   {
+    "t": "ジーンズ",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "ジーンズ",
+    "p": "noun",
+    "r": "ジーンズ"
+   },
+   {
+    "t": "を選びました。"
+   }
+  ],
+  "彼は今日、仕事にグレーのズボンを履いて行きました。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "今日",
+    "p": "adverb",
+    "r": "きょう"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "仕事",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "仕事",
+    "p": "noun",
+    "r": "しごと"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "グレー",
+    "z": "灰色",
+    "j": "灰色の",
+    "e": "gray",
+    "b": "グレー",
+    "p": "adjective",
+    "r": "グレー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ズボン",
+    "z": "褲子",
+    "j": "ズボン",
+    "e": "trousers",
+    "b": "ズボン",
+    "p": "noun",
+    "r": "ズボン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いて行きました",
+    "z": "穿著去",
+    "j": "履いて行きました",
+    "e": "wore and went",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "その催しではジーンズでもよかったのですが、良い印象を与えたくて、彼はきちんとしたズボンを選びました。": [
+   {
+    "t": "その"
+   },
+   {
+    "t": "催し",
+    "z": "活動",
+    "j": "催し",
+    "e": "event",
+    "b": "催し",
+    "p": "noun",
+    "r": "もよおし"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "ジーンズ",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "ジーンズ",
+    "p": "noun",
+    "r": "ジーンズ"
+   },
+   {
+    "t": "でもよかったのですが、"
+   },
+   {
+    "t": "良い印象",
+    "z": "好印象",
+    "j": "良い印象",
+    "e": "good impression",
+    "b": "良い印象",
+    "p": "phrase",
+    "r": "よいいんしょう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "与えたくて",
+    "z": "想給予",
+    "j": "与えたくて",
+    "e": "wanted to give",
+    "b": "与える",
+    "p": "verb",
+    "r": "あたえたくて"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "きちんとした",
+    "z": "整齊的",
+    "j": "きちんとした",
+    "e": "formal",
+    "b": "きちんとする",
+    "p": "adjective",
+    "r": "きちんとした"
+   },
+   {
+    "t": "ズボン",
+    "z": "褲子",
+    "j": "ズボン",
+    "e": "trousers",
+    "b": "ズボン",
+    "p": "noun",
+    "r": "ズボン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "夏は、彼はたいていショートパンツを履いて出かけます。": [
+   {
+    "t": "夏",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "夏",
+    "p": "noun",
+    "r": "なつ"
+   },
+   {
+    "t": "は、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "たいてい",
+    "z": "通常",
+    "j": "たいてい",
+    "e": "usually",
+    "b": "たいてい",
+    "p": "adverb",
+    "r": "たいてい"
+   },
+   {
+    "t": "ショートパンツ",
+    "z": "短褲",
+    "j": "ショートパンツ",
+    "e": "shorts",
+    "b": "ショートパンツ",
+    "p": "noun",
+    "r": "ショートパンツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いて出かけます",
+    "z": "穿著出門",
+    "j": "履いて出かけます",
+    "e": "wears and goes out",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいてでかけます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "朝は涼しかったけれど、午後は暑くなる予報だったのでショートパンツを選びました。": [
+   {
+    "t": "朝",
+    "z": "早晨",
+    "j": "朝の時間",
+    "e": "morning",
+    "b": "朝",
+    "p": "noun",
+    "r": "あさ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "涼しかった",
+    "z": "涼爽",
+    "j": "涼しかった",
+    "e": "was cool",
+    "b": "涼しい",
+    "p": "adjective",
+    "r": "すずしかった"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "午後",
+    "z": "下午",
+    "j": "午後",
+    "e": "afternoon",
+    "b": "午後",
+    "p": "noun",
+    "r": "ごご"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "暑くなる",
+    "z": "變熱",
+    "j": "暑くなる",
+    "e": "become hot",
+    "b": "暑くなる",
+    "p": "verb",
+    "r": "あつくなる"
+   },
+   {
+    "t": "予報",
+    "z": "預報",
+    "j": "予報",
+    "e": "forecast",
+    "b": "予報",
+    "p": "noun",
+    "r": "よほう"
+   },
+   {
+    "t": "だったので"
+   },
+   {
+    "t": "ショートパンツ",
+    "z": "短褲",
+    "j": "ショートパンツ",
+    "e": "shorts",
+    "b": "ショートパンツ",
+    "p": "noun",
+    "r": "ショートパンツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は毎日、清潔な靴下を履き替えます。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "毎日",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "毎日",
+    "p": "adverb",
+    "r": "まいにち"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "清潔な靴下",
+    "z": "乾淨的襪子",
+    "j": "清潔な靴下",
+    "e": "clean socks",
+    "b": "清潔な靴下",
+    "p": "noun",
+    "r": "せいけつなくつした"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履き替えます",
+    "z": "穿換",
+    "j": "履き替えます",
+    "e": "put on a different pair",
+    "b": "履き替える",
+    "p": "verb",
+    "r": "はきかえます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "靴はきれいに見えても、靴下を履かないと彼の足はすぐに汗をかいてしまう。": [
+   {
+    "t": "靴",
+    "z": "鞋子",
+    "j": "靴",
+    "e": "shoes",
+    "b": "靴",
+    "p": "noun",
+    "r": "くつ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "きれいに",
+    "z": "乾淨地",
+    "j": "きれいなようすで",
+    "e": "cleanly",
+    "b": "きれい",
+    "p": "adverb",
+    "r": "きれいに"
+   },
+   {
+    "t": "見えても、"
+   },
+   {
+    "t": "靴下",
+    "z": "襪子",
+    "j": "くつした",
+    "e": "socks",
+    "b": "靴下",
+    "p": "noun",
+    "r": "くつした"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履かないと",
+    "z": "不穿的話",
+    "j": "はかないと",
+    "e": "if not wear",
+    "b": "履く",
+    "p": "verb",
+    "r": "はかないと"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "かれ",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "足",
+    "z": "腳",
+    "j": "あし",
+    "e": "feet",
+    "b": "足",
+    "p": "noun",
+    "r": "あし"
+   },
+   {
+    "t": "はすぐに"
+   },
+   {
+    "t": "汗をかいてしまう",
+    "z": "出汗了",
+    "j": "あせをかいてしまう",
+    "e": "sweat",
+    "b": "汗をかく",
+    "p": "phrase",
+    "r": "あせをかいてしまう"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼はジョギングの時にスニーカーを履きます。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ジョギング",
+    "z": "慢跑",
+    "j": "ジョギング",
+    "e": "jogging",
+    "b": "ジョギング",
+    "p": "noun",
+    "r": "ジョギング"
+   },
+   {
+    "t": "の時に"
+   },
+   {
+    "t": "スニーカー",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "スニーカー",
+    "p": "noun",
+    "r": "スニーカー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履きます",
+    "z": "穿著",
+    "j": "履きます",
+    "e": "wears",
+    "b": "履く",
+    "p": "verb",
+    "r": "はきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "オフィスでは革靴が必要だが、退社後に運動するため、彼女はスニーカーをバッグに入れている。": [
+   {
+    "t": "オフィス",
+    "z": "辦公室",
+    "j": "オフィス",
+    "e": "office",
+    "b": "オフィス",
+    "p": "noun",
+    "r": "オフィス"
+   },
+   {
+    "t": "では"
+   },
+   {
+    "t": "革靴",
+    "z": "皮鞋",
+    "j": "革靴",
+    "e": "dress shoes",
+    "b": "革靴",
+    "p": "noun",
+    "r": "かわぐつ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "必要",
+    "z": "必要",
+    "j": "必要",
+    "e": "necessary",
+    "b": "必要",
+    "p": "adjective",
+    "r": "ひつよう"
+   },
+   {
+    "t": "だが、"
+   },
+   {
+    "t": "退社後",
+    "z": "下班後",
+    "j": "退社後",
+    "e": "after work",
+    "b": "退社後",
+    "p": "noun",
+    "r": "たいしゃご"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "運動する",
+    "z": "運動",
+    "j": "運動する",
+    "e": "exercise",
+    "b": "運動する",
+    "p": "verb",
+    "r": "うんどうする"
+   },
+   {
+    "t": "ため、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "スニーカー",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "スニーカー",
+    "p": "noun",
+    "r": "スニーカー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "バッグ",
+    "z": "包包",
+    "j": "バッグ",
+    "e": "bag",
+    "b": "バッグ",
+    "p": "noun",
+    "r": "バッグ"
+   },
+   {
+    "t": "に入れている。"
+   }
+  ],
+  "彼女は黒いブーツを履いて仕事に行きました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "黒い",
+    "z": "黑色的",
+    "j": "黒い",
+    "e": "black",
+    "b": "黒い",
+    "p": "adjective",
+    "r": "くろい"
+   },
+   {
+    "t": "ブーツ",
+    "z": "靴子",
+    "j": "ブーツ",
+    "e": "boots",
+    "b": "ブーツ",
+    "p": "noun",
+    "r": "ブーツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いて",
+    "z": "穿著",
+    "j": "履く",
+    "e": "wore",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいて"
+   },
+   {
+    "t": "仕事",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "仕事",
+    "p": "noun",
+    "r": "しごと"
+   },
+   {
+    "t": "に行きました。"
+   }
+  ],
+  "道がぬかるんでいたので、スニーカーではなく防水のブーツを選びました。": [
+   {
+    "t": "道",
+    "z": "道路",
+    "j": "道",
+    "e": "path",
+    "b": "道",
+    "p": "noun",
+    "r": "みち"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ぬかるんでいた",
+    "z": "泥濘",
+    "j": "ぬかるんでいた",
+    "e": "was muddy",
+    "b": "ぬかるむ",
+    "p": "verb",
+    "r": "ぬかるんでいた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "スニーカー",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "スニーカー",
+    "p": "noun",
+    "r": "スニーカー"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "防水",
+    "z": "防水",
+    "j": "防水の",
+    "e": "waterproof",
+    "b": "防水",
+    "p": "adjective",
+    "r": "ぼうすい"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ブーツ",
+    "z": "靴",
+    "j": "ブーツ",
+    "e": "boots",
+    "b": "ブーツ",
+    "p": "noun",
+    "r": "ブーツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "夏になると、彼はよくサンダルを履きます。": [
+   {
+    "t": "夏",
+    "z": "夏天",
+    "j": "夏の季節",
+    "e": "summer",
+    "b": "夏",
+    "p": "noun",
+    "r": "なつ"
+   },
+   {
+    "t": "になると、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "男性の人",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "よく",
+    "z": "經常",
+    "j": "頻繁に",
+    "e": "often",
+    "b": "よく",
+    "p": "adverb",
+    "r": "よく"
+   },
+   {
+    "t": "サンダル",
+    "z": "涼鞋",
+    "j": "足に履く軽い靴",
+    "e": "sandals",
+    "b": "サンダル",
+    "p": "noun",
+    "r": "サンダル"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履きます",
+    "z": "穿著",
+    "j": "足に着けます",
+    "e": "wear",
+    "b": "履く",
+    "p": "verb",
+    "r": "はきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "海辺でスニーカーが濡れたので、帰り道はサンダルに履き替えました。": [
+   {
+    "t": "海辺",
+    "z": "海邊",
+    "j": "海のそばの場所",
+    "e": "beach",
+    "b": "海辺",
+    "p": "noun",
+    "r": "うみべ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "スニーカー",
+    "z": "運動鞋",
+    "j": "運動用の靴",
+    "e": "sneakers",
+    "b": "スニーカー",
+    "p": "noun",
+    "r": "スニーカー"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "濡れた",
+    "z": "濕了",
+    "j": "水にぬれました",
+    "e": "got wet",
+    "b": "濡れる",
+    "p": "verb",
+    "r": "ぬれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "帰り道",
+    "z": "回家的路",
+    "j": "家に帰る途中の道",
+    "e": "walk home",
+    "b": "帰り道",
+    "p": "noun",
+    "r": "かえりみち"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "サンダル",
+    "z": "涼鞋",
+    "j": "足に履く軽い履物",
+    "e": "sandals",
+    "b": "サンダル",
+    "p": "noun",
+    "r": "サンダル"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "履き替えました",
+    "z": "換穿了",
+    "j": "別の靴に履き替えました",
+    "e": "changed into",
+    "b": "履き替える",
+    "p": "verb",
+    "r": "はきかえました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は出かけるとき、日差しを避けるために帽子をかぶります。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の人",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "出かける",
+    "z": "出門",
+    "j": "外に行きます",
+    "e": "going out",
+    "b": "出かける",
+    "p": "verb",
+    "r": "でかける"
+   },
+   {
+    "t": "とき、"
+   },
+   {
+    "t": "日差し",
+    "z": "陽光",
+    "j": "太陽の光",
+    "e": "sun",
+    "b": "日差し",
+    "p": "noun",
+    "r": "ひざし"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "避ける",
+    "z": "避開",
+    "j": "よけます",
+    "e": "shield",
+    "b": "避ける",
+    "p": "verb",
+    "r": "さける"
+   },
+   {
+    "t": "ために"
+   },
+   {
+    "t": "帽子",
+    "z": "帽子",
+    "j": "頭にかぶるもの",
+    "e": "hat",
+    "b": "帽子",
+    "p": "noun",
+    "r": "ぼうし"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かぶります",
+    "z": "戴著",
+    "j": "頭にかぶります",
+    "e": "wear",
+    "b": "かぶる",
+    "p": "verb",
+    "r": "かぶります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "この帽子はおしゃれだけれど、雨の日は防水じゃないので彼はかぶらなかった。": [
+   {
+    "t": "この"
+   },
+   {
+    "t": "帽子",
+    "z": "帽子",
+    "j": "帽子",
+    "e": "hat",
+    "b": "帽子",
+    "p": "noun",
+    "r": "ぼうし"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "おしゃれ",
+    "z": "時髦",
+    "j": "おしゃれ",
+    "e": "stylish",
+    "b": "おしゃれ",
+    "p": "adjective",
+    "r": "おしゃれ"
+   },
+   {
+    "t": "だけれど、"
+   },
+   {
+    "t": "雨",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "雨",
+    "p": "noun",
+    "r": "あめ"
+   },
+   {
+    "t": "の日は"
+   },
+   {
+    "t": "防水じゃない",
+    "z": "不防水",
+    "j": "防水じゃない",
+    "e": "not waterproof",
+    "b": "防水",
+    "p": "adjective",
+    "r": "ぼうすいじゃない"
+   },
+   {
+    "t": "ので彼は"
+   },
+   {
+    "t": "かぶらなかった",
+    "z": "沒有戴",
+    "j": "かぶらなかった",
+    "e": "did not wear",
+    "b": "かぶる",
+    "p": "verb",
+    "r": "かぶらなかった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冬になると、彼はよくマフラーを巻いて暖まります。": [
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "になると、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "よく",
+    "z": "經常",
+    "j": "よく",
+    "e": "often",
+    "b": "よく",
+    "p": "adverb",
+    "r": "よく"
+   },
+   {
+    "t": "マフラー",
+    "z": "圍巾",
+    "j": "マフラー",
+    "e": "scarf",
+    "b": "マフラー",
+    "p": "noun",
+    "r": "マフラー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "巻いて",
+    "z": "圍著",
+    "j": "巻いて",
+    "e": "wears",
+    "b": "巻く",
+    "p": "verb",
+    "r": "まいて"
+   },
+   {
+    "t": "暖まります",
+    "z": "保暖",
+    "j": "暖まります",
+    "e": "stay warm",
+    "b": "暖まる",
+    "p": "verb",
+    "r": "あたたまります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "コートだけでも十分暖かいけれど、気温が急に下がるかもしれないので彼女はマフラーも持って行った。": [
+   {
+    "t": "コート",
+    "z": "大衣",
+    "j": "厚手の上着",
+    "e": "coat",
+    "b": "コート",
+    "p": "noun",
+    "r": "コート"
+   },
+   {
+    "t": "だけでも"
+   },
+   {
+    "t": "十分",
+    "z": "足夠",
+    "j": "十分な量や程度",
+    "e": "enough",
+    "b": "十分",
+    "p": "adverb",
+    "r": "じゅうぶん"
+   },
+   {
+    "t": "暖かい",
+    "z": "溫暖",
+    "j": "温度が高くて心地よい",
+    "e": "warm",
+    "b": "暖かい",
+    "p": "adjective",
+    "r": "あたたかい"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "気温",
+    "z": "氣溫",
+    "j": "空気の温度",
+    "e": "temperature",
+    "b": "気温",
+    "p": "noun",
+    "r": "きおん"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "急に",
+    "z": "突然",
+    "j": "急な変化があるさま",
+    "e": "suddenly",
+    "b": "急に",
+    "p": "adverb",
+    "r": "きゅうに"
+   },
+   {
+    "t": "下がる",
+    "z": "下降",
+    "j": "位置や程度が低くなる",
+    "e": "drop",
+    "b": "下がる",
+    "p": "verb",
+    "r": "さがる"
+   },
+   {
+    "t": "かもしれないので"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の三人称",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "マフラー",
+    "z": "圍巾",
+    "j": "首に巻く布",
+    "e": "scarf",
+    "b": "マフラー",
+    "p": "noun",
+    "r": "マフラー"
+   },
+   {
+    "t": "も持って行った。"
+   }
+  ],
+  "ズボンがゆるかったので、彼はベルトを締めました。": [
+   {
+    "t": "ズボン",
+    "z": "褲子",
+    "j": "足を覆う衣服",
+    "e": "trousers",
+    "b": "ズボン",
+    "p": "noun",
+    "r": "ズボン"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "ゆるかった",
+    "z": "寬鬆的",
+    "j": "きつくない状態だった",
+    "e": "were loose",
+    "b": "ゆるい",
+    "p": "adjective",
+    "r": "ゆるかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "男性の三人称",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ベルト",
+    "z": "皮帶",
+    "j": "ズボンを締める帯",
+    "e": "belt",
+    "b": "ベルト",
+    "p": "noun",
+    "r": "ベルト"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "締めました",
+    "z": "繫上了",
+    "j": "きつく巻いた",
+    "e": "wore",
+    "b": "締める",
+    "p": "verb",
+    "r": "しめました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "今日はワンピースを着ていたけれど、ウエストラインを強調したくて彼女はベルトをプラスした。": [
+   {
+    "t": "今日は"
+   },
+   {
+    "t": "ワンピース",
+    "z": "洋裝",
+    "j": "女性用の一体型服",
+    "e": "dress",
+    "b": "ワンピース",
+    "p": "noun",
+    "r": "ワンピース"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ていた",
+    "z": "穿著了",
+    "j": "身に着けていた",
+    "e": "was wearing",
+    "b": "着る",
+    "p": "verb",
+    "r": "きていた"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "ウエストライン",
+    "z": "腰線",
+    "j": "腰の形の線",
+    "e": "waistline",
+    "b": "ウエストライン",
+    "p": "noun",
+    "r": "ウエストライン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "強調したくて",
+    "z": "想強調",
+    "j": "目立たせたいと思って",
+    "e": "wanted to emphasize",
+    "b": "強調する",
+    "p": "verb",
+    "r": "きょうちょうしたくて"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の三人称",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ベルト",
+    "z": "皮帶",
+    "j": "ウエストに巻く帯",
+    "e": "belt",
+    "b": "ベルト",
+    "p": "noun",
+    "r": "ベルト"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "プラスした",
+    "z": "加上了",
+    "j": "付け加えた",
+    "e": "added",
+    "b": "プラスする",
+    "p": "verb",
+    "r": "プラスした"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は仕事にネイビーのポロシャツを着ていく。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "かれ",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "仕事",
+    "z": "工作",
+    "j": "しごと",
+    "e": "work",
+    "b": "仕事",
+    "p": "noun",
+    "r": "しごと"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ネイビー",
+    "z": "海軍藍色",
+    "j": "ネイビー",
+    "e": "navy",
+    "b": "ネイビー",
+    "p": "adjective",
+    "r": "ネイビー"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ポロシャツ",
+    "z": "polo衫",
+    "j": "ポロシャツ",
+    "e": "polo shirt",
+    "b": "ポロシャツ",
+    "p": "noun",
+    "r": "ポロシャツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ていく",
+    "z": "穿去",
+    "j": "着ていきます",
+    "e": "wears and goes",
+    "b": "着ていく",
+    "p": "verb",
+    "r": "きていく"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "外が暑いので、彼女は普通のシャツではなくポロシャツを選んだ。": [
+   {
+    "t": "外が"
+   },
+   {
+    "t": "暑い",
+    "z": "熱的",
+    "j": "暑い",
+    "e": "hot",
+    "b": "暑い",
+    "p": "adjective",
+    "r": "あつい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "かのじょ",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "普通のシャツ",
+    "z": "普通襯衫",
+    "j": "普通のシャツ",
+    "e": "regular shirt",
+    "b": "普通のシャツ",
+    "p": "noun",
+    "r": "ふつうのシャツ"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "ポロシャツ",
+    "z": "polo衫",
+    "j": "ポロシャツ",
+    "e": "polo shirt",
+    "b": "ポロシャツ",
+    "p": "noun",
+    "r": "ポロシャツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選んだ",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらんだ"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は白いタンクトップでジョギングに行く。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "白い",
+    "z": "白色的",
+    "j": "白い",
+    "e": "white",
+    "b": "白い",
+    "p": "adjective",
+    "r": "しろい"
+   },
+   {
+    "t": "タンクトップ",
+    "z": "背心",
+    "j": "タンクトップ",
+    "e": "tank top",
+    "b": "タンクトップ",
+    "p": "noun",
+    "r": "タンクトップ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "ジョギング",
+    "z": "慢跑",
+    "j": "ジョギング",
+    "e": "jogging",
+    "b": "ジョギング",
+    "p": "noun",
+    "r": "ジョギング"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "行く",
+    "z": "去",
+    "j": "行きます",
+    "e": "go",
+    "b": "行く",
+    "p": "verb",
+    "r": "いく"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "タンクトップに着替えたら、夏の午後でも涼しく感じた。": [
+   {
+    "t": "タンクトップ",
+    "z": "背心",
+    "j": "タンクトップ",
+    "e": "tank top",
+    "b": "タンクトップ",
+    "p": "noun",
+    "r": "タンクトップ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "着替えたら",
+    "z": "換衣服後",
+    "j": "着替えたら",
+    "e": "after changing",
+    "b": "着替える",
+    "p": "verb",
+    "r": "きがえたら"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "夏",
+    "z": "夏天",
+    "j": "夏",
+    "e": "summer",
+    "b": "夏",
+    "p": "noun",
+    "r": "なつ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "午後",
+    "z": "下午",
+    "j": "午後",
+    "e": "afternoon",
+    "b": "午後",
+    "p": "noun",
+    "r": "ごご"
+   },
+   {
+    "t": "でも"
+   },
+   {
+    "t": "涼しく感じた",
+    "z": "感覺涼爽",
+    "j": "涼しく感じた",
+    "e": "felt cooler",
+    "b": "涼しく感じる",
+    "p": "verb",
+    "r": "すずしくかんじた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は家で黄色いスウェットを着ている。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家",
+    "e": "home",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "黄色い",
+    "z": "黃色的",
+    "j": "黄色い",
+    "e": "yellow",
+    "b": "黄色い",
+    "p": "adjective",
+    "r": "きいろい"
+   },
+   {
+    "t": "スウェット",
+    "z": "運動衫",
+    "j": "スウェット",
+    "e": "sweatshirt",
+    "b": "スウェット",
+    "p": "noun",
+    "r": "スウェット"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ている",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "wears",
+    "b": "着る",
+    "p": "verb",
+    "r": "きている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "雨でスウェットが濡れたので、家に入ってすぐ着替えた。": [
+   {
+    "t": "雨",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "雨",
+    "p": "noun",
+    "r": "あめ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "スウェット",
+    "z": "運動衫",
+    "j": "スウェット",
+    "e": "sweatshirt",
+    "b": "スウェット",
+    "p": "noun",
+    "r": "スウェット"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "濡れた",
+    "z": "濕了",
+    "j": "濡れた",
+    "e": "was wet",
+    "b": "濡れる",
+    "p": "adjective",
+    "r": "ぬれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家",
+    "e": "house",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入って",
+    "z": "進入",
+    "j": "入って",
+    "e": "entered",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいって"
+   },
+   {
+    "t": "すぐ",
+    "z": "馬上",
+    "j": "すぐ",
+    "e": "immediately",
+    "b": "すぐ",
+    "p": "adverb",
+    "r": "すぐ"
+   },
+   {
+    "t": "着替えた",
+    "z": "換衣服了",
+    "j": "着替えた",
+    "e": "changed clothes",
+    "b": "着替える",
+    "p": "verb",
+    "r": "きがえた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は冬に黒いタートルネックを着ている。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "黒い",
+    "z": "黑色的",
+    "j": "黒い",
+    "e": "black",
+    "b": "黒い",
+    "p": "adjective",
+    "r": "くろい"
+   },
+   {
+    "t": "タートルネック",
+    "z": "高領毛衣",
+    "j": "タートルネック",
+    "e": "turtleneck",
+    "b": "タートルネック",
+    "p": "noun",
+    "r": "タートルネック"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ている",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "wears",
+    "b": "着る",
+    "p": "verb",
+    "r": "きている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "急に寒くなったので、彼女は防寒のためにタートルネックを着た。": [
+   {
+    "t": "急に",
+    "z": "突然",
+    "j": "急に",
+    "e": "suddenly",
+    "b": "急に",
+    "p": "adverb",
+    "r": "きゅうに"
+   },
+   {
+    "t": "寒くなった",
+    "z": "變冷了",
+    "j": "寒くなった",
+    "e": "became cold",
+    "b": "寒くなる",
+    "p": "verb",
+    "r": "さむくなった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "防寒",
+    "z": "防寒",
+    "j": "寒さを防ぐこと",
+    "e": "cold protection",
+    "b": "防寒",
+    "p": "noun",
+    "r": "ぼうかん"
+   },
+   {
+    "t": "のために"
+   },
+   {
+    "t": "タートルネック",
+    "z": "高領毛衣",
+    "j": "タートルネック",
+    "e": "turtleneck",
+    "b": "タートルネック",
+    "p": "noun",
+    "r": "タートルネック"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着た",
+    "z": "穿了",
+    "j": "着た",
+    "e": "wore",
+    "b": "着る",
+    "p": "verb",
+    "r": "きた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女はおしゃれのためにシャツの上にベストを重ねました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "おしゃれ",
+    "z": "時尚",
+    "j": "おしゃれ",
+    "e": "fashionable",
+    "b": "おしゃれ",
+    "p": "adjective",
+    "r": "おしゃれ"
+   },
+   {
+    "t": "のために"
+   },
+   {
+    "t": "シャツ",
+    "z": "襯衫",
+    "j": "シャツ",
+    "e": "shirt",
+    "b": "シャツ",
+    "p": "noun",
+    "r": "シャツ"
+   },
+   {
+    "t": "の上に"
+   },
+   {
+    "t": "ベスト",
+    "z": "背心",
+    "j": "ベスト",
+    "e": "vest",
+    "b": "ベスト",
+    "p": "noun",
+    "r": "ベスト"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "重ねました",
+    "z": "重疊穿著",
+    "j": "重ねました",
+    "e": "layered",
+    "b": "重ねる",
+    "p": "verb",
+    "r": "かさねました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "厚手のベストを購入してから、朝の通勤中も寒さを感じなくなった。": [
+   {
+    "t": "厚手",
+    "z": "厚的",
+    "j": "厚手",
+    "e": "thick",
+    "b": "厚手",
+    "p": "adjective",
+    "r": "あつで"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "ベスト",
+    "z": "背心",
+    "j": "ベスト",
+    "e": "vest",
+    "b": "ベスト",
+    "p": "noun",
+    "r": "ベスト"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "購入してから",
+    "z": "買了之後",
+    "j": "購入してから",
+    "e": "after buying",
+    "b": "購入する",
+    "p": "phrase",
+    "r": "こうにゅうしてから"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "朝",
+    "z": "早上",
+    "j": "朝",
+    "e": "morning",
+    "b": "朝",
+    "p": "noun",
+    "r": "あさ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "通勤中",
+    "z": "通勤途中",
+    "j": "通勤中",
+    "e": "commuting",
+    "b": "通勤中",
+    "p": "noun",
+    "r": "つうきんちゅう"
+   },
+   {
+    "t": "も"
+   },
+   {
+    "t": "寒さ",
+    "z": "寒冷",
+    "j": "寒さ",
+    "e": "cold",
+    "b": "寒さ",
+    "p": "noun",
+    "r": "さむさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "感じなくなった",
+    "z": "不再感覺",
+    "j": "感じなくなった",
+    "e": "no longer feels",
+    "b": "感じる",
+    "p": "verb",
+    "r": "かんじなくなった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は雨の中出かける前にレインコートを着た。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "雨",
+    "z": "雨",
+    "j": "雨",
+    "e": "rain",
+    "b": "雨",
+    "p": "noun",
+    "r": "あめ"
+   },
+   {
+    "t": "の中"
+   },
+   {
+    "t": "出かける前に",
+    "z": "出門之前",
+    "j": "出かける前",
+    "e": "before leaving",
+    "b": "出かける",
+    "p": "phrase",
+    "r": "でかけるまえに"
+   },
+   {
+    "t": "レインコート",
+    "z": "雨衣",
+    "j": "レインコート",
+    "e": "raincoat",
+    "b": "レインコート",
+    "p": "noun",
+    "r": "レインコート"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着た",
+    "z": "穿了",
+    "j": "着た",
+    "e": "put on",
+    "b": "着る",
+    "p": "verb",
+    "r": "きた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "傘を忘れたが、レインコートのおかげで帰り道も濡れなかった。": [
+   {
+    "t": "傘",
+    "z": "傘",
+    "j": "傘",
+    "e": "umbrella",
+    "b": "傘",
+    "p": "noun",
+    "r": "かさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "忘れた",
+    "z": "忘記了",
+    "j": "忘れた",
+    "e": "forgot",
+    "b": "忘れる",
+    "p": "verb",
+    "r": "わすれた"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "レインコート",
+    "z": "雨衣",
+    "j": "レインコート",
+    "e": "raincoat",
+    "b": "レインコート",
+    "p": "noun",
+    "r": "レインコート"
+   },
+   {
+    "t": "のおかげで"
+   },
+   {
+    "t": "帰り道",
+    "z": "回家的路上",
+    "j": "帰り道",
+    "e": "on the way home",
+    "b": "帰り道",
+    "p": "noun",
+    "r": "かえりみち"
+   },
+   {
+    "t": "も"
+   },
+   {
+    "t": "濡れなかった",
+    "z": "沒有濕",
+    "j": "濡れなかった",
+    "e": "did not get wet",
+    "b": "濡れる",
+    "p": "verb",
+    "r": "ぬれなかった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "外が寒いとき、彼はダウンジャケットを着る。": [
+   {
+    "t": "外",
+    "z": "外面",
+    "j": "外側",
+    "e": "outside",
+    "b": "外",
+    "p": "noun",
+    "r": "そと"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "寒い",
+    "z": "寒冷",
+    "j": "寒い",
+    "e": "cold",
+    "b": "寒い",
+    "p": "adjective",
+    "r": "さむい"
+   },
+   {
+    "t": "とき、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ダウンジャケット",
+    "z": "羽絨外套",
+    "j": "ダウンジャケット",
+    "e": "down jacket",
+    "b": "ダウンジャケット",
+    "p": "noun",
+    "r": "ダウンジャケット"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着る",
+    "z": "穿著",
+    "j": "着る",
+    "e": "wear",
+    "b": "着る",
+    "p": "verb",
+    "r": "きる"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ダウンジャケットは軽くて暖かいので、彼女は冬の旅行に必ず持っていく。": [
+   {
+    "t": "ダウンジャケット",
+    "z": "羽絨外套",
+    "j": "ダウンジャケット",
+    "e": "down jacket",
+    "b": "ダウンジャケット",
+    "p": "noun",
+    "r": "ダウンジャケット"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "軽くて",
+    "z": "輕且",
+    "j": "軽くて",
+    "e": "light and",
+    "b": "軽い",
+    "p": "adjective",
+    "r": "かるくて"
+   },
+   {
+    "t": "暖かい",
+    "z": "溫暖的",
+    "j": "暖かい",
+    "e": "warm",
+    "b": "暖かい",
+    "p": "adjective",
+    "r": "あたたかい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "旅行",
+    "z": "旅行",
+    "j": "旅行",
+    "e": "trip",
+    "b": "旅行",
+    "p": "noun",
+    "r": "りょこう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "必ず",
+    "z": "一定",
+    "j": "必ず",
+    "e": "always",
+    "b": "必ず",
+    "p": "adverb",
+    "r": "かならず"
+   },
+   {
+    "t": "持っていく",
+    "z": "帶去",
+    "j": "持っていく",
+    "e": "take along",
+    "b": "持っていく",
+    "p": "phrasal verb",
+    "r": "もっていく"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は面接のために新しいスーツを買った。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "面接",
+    "z": "面試",
+    "j": "面接",
+    "e": "interview",
+    "b": "面接",
+    "p": "noun",
+    "r": "めんせつ"
+   },
+   {
+    "t": "のために"
+   },
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "スーツ",
+    "z": "西裝",
+    "j": "スーツ",
+    "e": "suit",
+    "b": "スーツ",
+    "p": "noun",
+    "r": "スーツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買った",
+    "z": "買了",
+    "j": "買った",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "銀行での面接だったので、前の晩にスーツが汚れていないか確認しました。": [
+   {
+    "t": "銀行",
+    "z": "銀行",
+    "j": "銀行",
+    "e": "bank",
+    "b": "銀行",
+    "p": "noun",
+    "r": "ぎんこう"
+   },
+   {
+    "t": "での"
+   },
+   {
+    "t": "面接",
+    "z": "面試",
+    "j": "面接",
+    "e": "interview",
+    "b": "面接",
+    "p": "noun",
+    "r": "めんせつ"
+   },
+   {
+    "t": "だったので、"
+   },
+   {
+    "t": "前の晩",
+    "z": "前一晚",
+    "j": "前の晩",
+    "e": "night before",
+    "b": "前の晩",
+    "p": "phrase",
+    "r": "まえのばん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "スーツ",
+    "z": "西裝",
+    "j": "スーツ",
+    "e": "suit",
+    "b": "スーツ",
+    "p": "noun",
+    "r": "スーツ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "汚れていないか",
+    "z": "是否髒了",
+    "j": "汚れていないか",
+    "e": "clean or not",
+    "b": "汚れる",
+    "p": "adjective",
+    "r": "よごれていないか"
+   },
+   {
+    "t": "確認しました",
+    "z": "確認了",
+    "j": "確認しました",
+    "e": "checked",
+    "b": "確認する",
+    "p": "verb",
+    "r": "かくにんしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は会議の時に緑のネクタイを締める。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "会議",
+    "z": "會議",
+    "j": "会議",
+    "e": "meeting",
+    "b": "会議",
+    "p": "noun",
+    "r": "かいぎ"
+   },
+   {
+    "t": "の時に"
+   },
+   {
+    "t": "緑のネクタイ",
+    "z": "綠色領帶",
+    "j": "緑のネクタイ",
+    "e": "green necktie",
+    "b": "ネクタイ",
+    "p": "noun",
+    "r": "みどりのネクタイ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "締める",
+    "z": "繫上",
+    "j": "締める",
+    "e": "wears",
+    "b": "締める",
+    "p": "verb",
+    "r": "しめる"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ネクタイにしわが寄っていたので、家を出る前にアイロンをかけた。": [
+   {
+    "t": "ネクタイ",
+    "z": "領帶",
+    "j": "ネクタイ",
+    "e": "necktie",
+    "b": "ネクタイ",
+    "p": "noun",
+    "r": "ネクタイ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "しわ",
+    "z": "皺紋",
+    "j": "しわ",
+    "e": "wrinkle",
+    "b": "しわ",
+    "p": "noun",
+    "r": "しわ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "寄っていた",
+    "z": "起了皺",
+    "j": "しわができていた",
+    "e": "was wrinkled",
+    "b": "寄る",
+    "p": "verb",
+    "r": "よっていた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家",
+    "e": "house",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "出る",
+    "z": "離開",
+    "j": "出る",
+    "e": "leave",
+    "b": "出る",
+    "p": "verb",
+    "r": "でる"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "noun",
+    "r": "まえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "アイロン",
+    "z": "熨斗",
+    "j": "アイロン",
+    "e": "iron",
+    "b": "アイロン",
+    "p": "noun",
+    "r": "アイロン"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かけた",
+    "z": "燙了",
+    "j": "アイロンをかけた",
+    "e": "ironed",
+    "b": "かける",
+    "p": "verb",
+    "r": "かけた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼はフォーマルな場で黒い蝶ネクタイを身につけている。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "フォーマルな場",
+    "z": "正式場合",
+    "j": "フォーマルな場",
+    "e": "formal event",
+    "b": "フォーマルな場",
+    "p": "noun",
+    "r": "フォーマルなば"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "黒い",
+    "z": "黑色",
+    "j": "黒い",
+    "e": "black",
+    "b": "黒い",
+    "p": "adjective",
+    "r": "くろい"
+   },
+   {
+    "t": "蝶ネクタイ",
+    "z": "領結",
+    "j": "蝶ネクタイ",
+    "e": "bow tie",
+    "b": "蝶ネクタイ",
+    "p": "noun",
+    "r": "ちょうネクタイ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "身につけている",
+    "z": "穿戴著",
+    "j": "身につけている",
+    "e": "wearing",
+    "b": "身につける",
+    "p": "verb",
+    "r": "みにつけている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "招待状に蝶ネクタイ着用と書いてあったので、友人から借りた。": [
+   {
+    "t": "招待状",
+    "z": "邀請函",
+    "j": "招待状",
+    "e": "invitation",
+    "b": "招待状",
+    "p": "noun",
+    "r": "しょうたいじょう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "蝶ネクタイ",
+    "z": "蝴蝶結領帶",
+    "j": "蝶ネクタイ",
+    "e": "bow tie",
+    "b": "蝶ネクタイ",
+    "p": "noun",
+    "r": "ちょうネクタイ"
+   },
+   {
+    "t": "着用",
+    "z": "穿戴",
+    "j": "着用",
+    "e": "wearing",
+    "b": "着用",
+    "p": "noun",
+    "r": "ちゃくよう"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "書いてあった",
+    "z": "寫著",
+    "j": "書いてあった",
+    "e": "was written",
+    "b": "書く",
+    "p": "verb",
+    "r": "かいてあった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "友人",
+    "z": "朋友",
+    "j": "友人",
+    "e": "friend",
+    "b": "友人",
+    "p": "noun",
+    "r": "ゆうじん"
+   },
+   {
+    "t": "から"
+   },
+   {
+    "t": "借りた",
+    "z": "借了",
+    "j": "借りた",
+    "e": "borrowed",
+    "b": "借りる",
+    "p": "verb",
+    "r": "かりた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は毎朝、朝食前に学校の制服を着ます。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "She",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "毎朝",
+    "z": "每天早上",
+    "j": "毎朝",
+    "e": "every morning",
+    "b": "毎朝",
+    "p": "adverb",
+    "r": "まいあさ"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "朝食前",
+    "z": "早餐前",
+    "j": "朝食前",
+    "e": "before breakfast",
+    "b": "朝食前",
+    "p": "phrase",
+    "r": "ちょうしょくまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "学校",
+    "z": "學校",
+    "j": "学校",
+    "e": "school",
+    "b": "学校",
+    "p": "noun",
+    "r": "がっこう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "制服",
+    "z": "制服",
+    "j": "制服",
+    "e": "uniform",
+    "b": "制服",
+    "p": "noun",
+    "r": "せいふく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ます",
+    "z": "穿",
+    "j": "着ます",
+    "e": "wears",
+    "b": "着る",
+    "p": "verb",
+    "r": "きます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "美術の授業で学校の制服が汚れたので、帰宅してすぐに洗いました。": [
+   {
+    "t": "美術",
+    "z": "美術",
+    "j": "美術",
+    "e": "art",
+    "b": "美術",
+    "p": "noun",
+    "r": "びじゅつ"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "授業",
+    "z": "課程",
+    "j": "授業",
+    "e": "class",
+    "b": "授業",
+    "p": "noun",
+    "r": "じゅぎょう"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "学校",
+    "z": "學校",
+    "j": "学校",
+    "e": "school",
+    "b": "学校",
+    "p": "noun",
+    "r": "がっこう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "制服",
+    "z": "制服",
+    "j": "制服",
+    "e": "uniform",
+    "b": "制服",
+    "p": "noun",
+    "r": "せいふく"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "汚れた",
+    "z": "弄髒了",
+    "j": "汚れた",
+    "e": "got dirty",
+    "b": "汚れる",
+    "p": "verb",
+    "r": "よごれた"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "帰宅して",
+    "z": "回家",
+    "j": "帰宅して",
+    "e": "got home",
+    "b": "帰宅する",
+    "p": "verb",
+    "r": "きたくして"
+   },
+   {
+    "t": "すぐに",
+    "z": "馬上",
+    "j": "すぐに",
+    "e": "immediately",
+    "b": "すぐに",
+    "p": "adverb",
+    "r": "すぐに"
+   },
+   {
+    "t": "洗いました",
+    "z": "洗了",
+    "j": "洗いました",
+    "e": "washed",
+    "b": "洗う",
+    "p": "verb",
+    "r": "あらいました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は卒業式に着物を着ていった。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "卒業式",
+    "z": "畢業典禮",
+    "j": "卒業式",
+    "e": "graduation ceremony",
+    "b": "卒業式",
+    "p": "noun",
+    "r": "そつぎょうしき"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "着物",
+    "z": "和服",
+    "j": "着物",
+    "e": "kimono",
+    "b": "着物",
+    "p": "noun",
+    "r": "きもの"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ていった",
+    "z": "穿去了",
+    "j": "着ていった",
+    "e": "wore and went",
+    "b": "着る",
+    "p": "verb",
+    "r": "きていった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "普段は家でカジュアルな服を着ているが、初詣には着物を選んだ。": [
+   {
+    "t": "普段",
+    "z": "平常",
+    "j": "普段",
+    "e": "usually",
+    "b": "普段",
+    "p": "adverb",
+    "r": "ふだん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家",
+    "e": "home",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "カジュアルな服",
+    "z": "便服",
+    "j": "カジュアルな服",
+    "e": "casual clothes",
+    "b": "カジュアルな服",
+    "p": "noun",
+    "r": "カジュアルなふく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ている",
+    "z": "穿著",
+    "j": "着ている",
+    "e": "wears",
+    "b": "着る",
+    "p": "verb",
+    "r": "きている"
+   },
+   {
+    "t": "が、"
+   },
+   {
+    "t": "初詣",
+    "z": "新年參拜",
+    "j": "初詣",
+    "e": "New Year’s visit to shrine",
+    "b": "初詣",
+    "p": "noun",
+    "r": "はつもうで"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "着物",
+    "z": "和服",
+    "j": "着物",
+    "e": "kimono",
+    "b": "着物",
+    "p": "noun",
+    "r": "きもの"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選んだ",
+    "z": "選擇了",
+    "j": "選んだ",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらんだ"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は夏祭りに浴衣を着て行きました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "夏祭り",
+    "z": "夏季祭典",
+    "j": "夏祭り",
+    "e": "summer festival",
+    "b": "夏祭り",
+    "p": "noun",
+    "r": "なつまつり"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "浴衣",
+    "z": "浴衣",
+    "j": "浴衣",
+    "e": "yukata",
+    "b": "浴衣",
+    "p": "noun",
+    "r": "ゆかた"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着て行きました",
+    "z": "穿著去了",
+    "j": "着て行きました",
+    "e": "wore and went",
+    "b": "着る",
+    "p": "verb",
+    "r": "きていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "その夜は夏祭りだったので、町の多くの人が普通の服ではなく浴衣を着ていた。": [
+   {
+    "t": "その夜",
+    "z": "那晚",
+    "j": "その夜",
+    "e": "that night",
+    "b": "その夜",
+    "p": "phrase",
+    "r": "そのよる"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "夏祭り",
+    "z": "夏季祭典",
+    "j": "夏祭り",
+    "e": "summer festival",
+    "b": "夏祭り",
+    "p": "noun",
+    "r": "なつまつり"
+   },
+   {
+    "t": "だったので、"
+   },
+   {
+    "t": "町",
+    "z": "城鎮",
+    "j": "町",
+    "e": "town",
+    "b": "町",
+    "p": "noun",
+    "r": "まち"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "多くの人",
+    "z": "許多人",
+    "j": "多くの人",
+    "e": "many people",
+    "b": "多くの人",
+    "p": "phrase",
+    "r": "おおくのひと"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "普通の服",
+    "z": "一般衣服",
+    "j": "普通の服",
+    "e": "regular clothes",
+    "b": "普通の服",
+    "p": "noun",
+    "r": "ふつうのふく"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "浴衣",
+    "z": "浴衣",
+    "j": "浴衣",
+    "e": "yukata",
+    "b": "浴衣",
+    "p": "noun",
+    "r": "ゆかた"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着ていた",
+    "z": "穿著",
+    "j": "着ていた",
+    "e": "wore",
+    "b": "着る",
+    "p": "verb",
+    "r": "きていた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は黒いレギンスをはいて公園に出かけた。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "黒いレギンス",
+    "z": "黑色緊身褲",
+    "j": "黒いレギンス",
+    "e": "black leggings",
+    "b": "黒いレギンス",
+    "p": "noun",
+    "r": "くろいレギンス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "はいて",
+    "z": "穿著",
+    "j": "はいて",
+    "e": "wore",
+    "b": "はく",
+    "p": "verb",
+    "r": "はいて"
+   },
+   {
+    "t": "公園",
+    "z": "公園",
+    "j": "公園",
+    "e": "park",
+    "b": "公園",
+    "p": "noun",
+    "r": "こうえん"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "出かけた",
+    "z": "出門了",
+    "j": "出かけた",
+    "e": "went out",
+    "b": "出かける",
+    "p": "verb",
+    "r": "でかけた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "秋になって寒くなると、彼は暖かく過ごすためにジーンズの下にレギンスをはき始めた。": [
+   {
+    "t": "秋",
+    "z": "秋天",
+    "j": "秋",
+    "e": "autumn",
+    "b": "秋",
+    "p": "noun",
+    "r": "あき"
+   },
+   {
+    "t": "になって"
+   },
+   {
+    "t": "寒くなる",
+    "z": "變冷",
+    "j": "寒くなること",
+    "e": "get cold",
+    "b": "寒くなる",
+    "p": "verb",
+    "r": "さむくなる"
+   },
+   {
+    "t": "と、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "男性の人",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "暖かく過ごす",
+    "z": "保持溫暖",
+    "j": "暖かい状態で過ごす",
+    "e": "stay warm",
+    "b": "暖かく過ごす",
+    "p": "phrase",
+    "r": "あたたかくすごす"
+   },
+   {
+    "t": "ために"
+   },
+   {
+    "t": "ジーンズ",
+    "z": "牛仔褲",
+    "j": "ジーンズ",
+    "e": "jeans",
+    "b": "ジーンズ",
+    "p": "noun",
+    "r": "ジーンズ"
+   },
+   {
+    "t": "の下に"
+   },
+   {
+    "t": "レギンス",
+    "z": "緊身褲",
+    "j": "レギンス",
+    "e": "leggings",
+    "b": "レギンス",
+    "p": "noun",
+    "r": "レギンス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "はき始めた",
+    "z": "開始穿",
+    "j": "はき始めること",
+    "e": "started wearing",
+    "b": "はき始める",
+    "p": "verb",
+    "r": "はきはじめた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冬には、スカートの下にタイツをはいて暖かくしている。": [
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬の季節",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "には、"
+   },
+   {
+    "t": "スカート",
+    "z": "裙子",
+    "j": "スカート",
+    "e": "skirt",
+    "b": "スカート",
+    "p": "noun",
+    "r": "スカート"
+   },
+   {
+    "t": "の下に"
+   },
+   {
+    "t": "タイツ",
+    "z": "褲襪",
+    "j": "タイツ",
+    "e": "tights",
+    "b": "タイツ",
+    "p": "noun",
+    "r": "タイツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "はいて",
+    "z": "穿著",
+    "j": "はくこと",
+    "e": "wearing",
+    "b": "はく",
+    "p": "verb",
+    "r": "はいて"
+   },
+   {
+    "t": "暖かくしている",
+    "z": "保持溫暖",
+    "j": "暖かくしていること",
+    "e": "keeping warm",
+    "b": "暖かくする",
+    "p": "phrase",
+    "r": "あたたかくしている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "朝の通勤は思ったより寒かったので、薄いストッキングではなく厚手のタイツを選びました。": [
+   {
+    "t": "朝の通勤",
+    "z": "早晨通勤",
+    "j": "朝の通勤",
+    "e": "morning commute",
+    "b": "朝の通勤",
+    "p": "phrase",
+    "r": "あさのつうきん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "思ったより",
+    "z": "比預期",
+    "j": "思ったより",
+    "e": "than expected",
+    "b": "思うより",
+    "p": "phrase",
+    "r": "おもったより"
+   },
+   {
+    "t": "寒かった",
+    "z": "冷了",
+    "j": "寒かった",
+    "e": "was cold",
+    "b": "寒い",
+    "p": "adjective",
+    "r": "さむかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "薄いストッキング",
+    "z": "薄絲襪",
+    "j": "薄いストッキング",
+    "e": "thin stockings",
+    "b": "薄いストッキング",
+    "p": "noun",
+    "r": "うすいストッキング"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "厚手のタイツ",
+    "z": "厚褲襪",
+    "j": "厚手のタイツ",
+    "e": "thick tights",
+    "b": "厚手のタイツ",
+    "p": "noun",
+    "r": "あつでのタイツ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼はデパートで新しい下着を買った。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "デパート",
+    "z": "百貨公司",
+    "j": "デパート",
+    "e": "department store",
+    "b": "デパート",
+    "p": "noun",
+    "r": "デパート"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "下着",
+    "z": "內衣",
+    "j": "下着",
+    "e": "underwear",
+    "b": "下着",
+    "p": "noun",
+    "r": "したぎ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "買った",
+    "z": "買了",
+    "j": "買いました",
+    "e": "bought",
+    "b": "買う",
+    "p": "verb",
+    "r": "かった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "洗濯した下着がまだ乾いていなかったので、彼女は服を着る前に少し待たなければならなかった。": [
+   {
+    "t": "洗濯",
+    "z": "洗衣",
+    "j": "洗濯",
+    "e": "laundry",
+    "b": "洗濯",
+    "p": "noun",
+    "r": "せんたく"
+   },
+   {
+    "t": "した"
+   },
+   {
+    "t": "下着",
+    "z": "內衣",
+    "j": "下着",
+    "e": "underwear",
+    "b": "下着",
+    "p": "noun",
+    "r": "したぎ"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "まだ",
+    "z": "還",
+    "j": "まだ",
+    "e": "still",
+    "b": "まだ",
+    "p": "adverb",
+    "r": "まだ"
+   },
+   {
+    "t": "乾いていなかった",
+    "z": "沒有乾",
+    "j": "乾いていなかった",
+    "e": "was not dry",
+    "b": "乾く",
+    "p": "verb",
+    "r": "かわいていなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "服",
+    "z": "衣服",
+    "j": "服",
+    "e": "clothes",
+    "b": "服",
+    "p": "noun",
+    "r": "ふく"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "着る",
+    "z": "穿",
+    "j": "着る",
+    "e": "put on",
+    "b": "着る",
+    "p": "verb",
+    "r": "きる"
+   },
+   {
+    "t": "前",
+    "z": "之前",
+    "j": "前",
+    "e": "before",
+    "b": "前",
+    "p": "noun",
+    "r": "まえ"
+   },
+   {
+    "t": "に少し待たなければならなかった。"
+   }
+  ],
+  "彼女はプールに行く前に水着をバッグに入れました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "プール",
+    "z": "游泳池",
+    "j": "プール",
+    "e": "pool",
+    "b": "プール",
+    "p": "noun",
+    "r": "プール"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "行く前",
+    "z": "去之前",
+    "j": "行く前",
+    "e": "before going",
+    "b": "行く前",
+    "p": "phrase",
+    "r": "いくまえ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "水着",
+    "z": "泳衣",
+    "j": "水着",
+    "e": "swimsuit",
+    "b": "水着",
+    "p": "noun",
+    "r": "みずぎ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "バッグ",
+    "z": "包包",
+    "j": "バッグ",
+    "e": "bag",
+    "b": "バッグ",
+    "p": "noun",
+    "r": "バッグ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "入れました",
+    "z": "放入了",
+    "j": "入れました",
+    "e": "put in",
+    "b": "入れる",
+    "p": "verb",
+    "r": "いれました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "昨日のレッスンで使った水着がまだ乾いていなかったので、予備の水着をプールに持って行きました。": [
+   {
+    "t": "昨日",
+    "z": "昨天",
+    "j": "昨日",
+    "e": "yesterday",
+    "b": "昨日",
+    "p": "adverb",
+    "r": "きのう"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "レッスン",
+    "z": "課程",
+    "j": "レッスン",
+    "e": "lesson",
+    "b": "レッスン",
+    "p": "noun",
+    "r": "レッスン"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "使った",
+    "z": "用了",
+    "j": "使った",
+    "e": "used",
+    "b": "使う",
+    "p": "verb",
+    "r": "つかった"
+   },
+   {
+    "t": "水着",
+    "z": "泳衣",
+    "j": "水着",
+    "e": "swimsuit",
+    "b": "水着",
+    "p": "noun",
+    "r": "みずぎ"
+   },
+   {
+    "t": "がまだ"
+   },
+   {
+    "t": "乾いていなかった",
+    "z": "還沒乾",
+    "j": "乾いていなかった",
+    "e": "had not dried",
+    "b": "乾く",
+    "p": "verb",
+    "r": "かわいていなかった"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "予備",
+    "z": "備用",
+    "j": "予備",
+    "e": "spare",
+    "b": "予備",
+    "p": "noun",
+    "r": "よび"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "水着",
+    "z": "泳衣",
+    "j": "水着",
+    "e": "swimsuit",
+    "b": "水着",
+    "p": "noun",
+    "r": "みずぎ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "プール",
+    "z": "游泳池",
+    "j": "プール",
+    "e": "pool",
+    "b": "プール",
+    "p": "noun",
+    "r": "プール"
+   },
+   {
+    "t": "に持って行きました。"
+   }
+  ],
+  "彼は毎日学校にローファーを履いていく。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "毎日",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "毎日",
+    "p": "adverb",
+    "r": "まいにち"
+   },
+   {
+    "t": "学校",
+    "z": "學校",
+    "j": "学校",
+    "e": "school",
+    "b": "学校",
+    "p": "noun",
+    "r": "がっこう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ローファー",
+    "z": "樂福鞋",
+    "j": "ローファー",
+    "e": "loafers",
+    "b": "ローファー",
+    "p": "noun",
+    "r": "ローファー"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いていく",
+    "z": "穿去",
+    "j": "履いていく",
+    "e": "wear to go",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいていく"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ローファーはすぐに履けるので、急いで家を出るときに彼女はこれを選ぶことが多い。": [
+   {
+    "t": "ローファー",
+    "z": "樂福鞋",
+    "j": "ローファー",
+    "e": "loafers",
+    "b": "ローファー",
+    "p": "noun",
+    "r": "ろーふぁー"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "すぐに履ける",
+    "z": "很快穿上",
+    "j": "すぐに履ける",
+    "e": "easy to put on",
+    "b": "履ける",
+    "p": "verb",
+    "r": "すぐにはける"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "急いで",
+    "z": "匆忙地",
+    "j": "急いで",
+    "e": "in a hurry",
+    "b": "急ぐ",
+    "p": "adverb",
+    "r": "いそいで"
+   },
+   {
+    "t": "家",
+    "z": "家",
+    "j": "家",
+    "e": "house",
+    "b": "家",
+    "p": "noun",
+    "r": "いえ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "出る",
+    "z": "離開",
+    "j": "出る",
+    "e": "leave",
+    "b": "出る",
+    "p": "verb",
+    "r": "でる"
+   },
+   {
+    "t": "ときに"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "はこれを"
+   },
+   {
+    "t": "選ぶこと",
+    "z": "選擇的事",
+    "j": "選ぶこと",
+    "e": "choosing",
+    "b": "選ぶ",
+    "p": "noun",
+    "r": "えらぶこと"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "多い",
+    "z": "多",
+    "j": "多い",
+    "e": "often",
+    "b": "多い",
+    "p": "adjective",
+    "r": "おおい"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は結婚式のために革靴を履いた。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "結婚式",
+    "z": "婚禮",
+    "j": "結婚式",
+    "e": "wedding",
+    "b": "結婚式",
+    "p": "noun",
+    "r": "けっこんしき"
+   },
+   {
+    "t": "のために"
+   },
+   {
+    "t": "革靴",
+    "z": "皮鞋",
+    "j": "革靴",
+    "e": "dress shoes",
+    "b": "革靴",
+    "p": "noun",
+    "r": "かわぐつ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いた",
+    "z": "穿了",
+    "j": "履いた",
+    "e": "put on",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "普段はスニーカーの方が好きですが、友人のフォーマルなパーティーには革靴を履いて行きました。": [
+   {
+    "t": "普段",
+    "z": "平常",
+    "j": "いつも",
+    "e": "usually",
+    "b": "普段",
+    "p": "adverb",
+    "r": "ふだん"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "スニーカー",
+    "z": "運動鞋",
+    "j": "スニーカー",
+    "e": "sneakers",
+    "b": "スニーカー",
+    "p": "noun",
+    "r": "スニーカー"
+   },
+   {
+    "t": "の方が"
+   },
+   {
+    "t": "好き",
+    "z": "喜歡",
+    "j": "好み",
+    "e": "like",
+    "b": "好き",
+    "p": "adjective",
+    "r": "すき"
+   },
+   {
+    "t": "ですが、"
+   },
+   {
+    "t": "友人",
+    "z": "朋友",
+    "j": "友達",
+    "e": "friend",
+    "b": "友人",
+    "p": "noun",
+    "r": "ゆうじん"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "フォーマル",
+    "z": "正式的",
+    "j": "正式な",
+    "e": "formal",
+    "b": "フォーマル",
+    "p": "adjective",
+    "r": "フォーマル"
+   },
+   {
+    "t": "な"
+   },
+   {
+    "t": "パーティー",
+    "z": "派對",
+    "j": "パーティー",
+    "e": "party",
+    "b": "パーティー",
+    "p": "noun",
+    "r": "パーティー"
+   },
+   {
+    "t": "には"
+   },
+   {
+    "t": "革靴",
+    "z": "皮鞋",
+    "j": "革靴",
+    "e": "dress shoes",
+    "b": "革靴",
+    "p": "noun",
+    "r": "かわぐつ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いて行きました",
+    "z": "穿去",
+    "j": "履いて行きました",
+    "e": "wore and went",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女はディナーパーティーにハイヒールを履いて行った。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の人",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ディナーパーティー",
+    "z": "晚宴",
+    "j": "夕食の集まり",
+    "e": "dinner party",
+    "b": "ディナーパーティー",
+    "p": "noun",
+    "r": "ディナーパーティー"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ハイヒール",
+    "z": "高跟鞋",
+    "j": "かかとの高い靴",
+    "e": "high heels",
+    "b": "ハイヒール",
+    "p": "noun",
+    "r": "ハイヒール"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いて行った",
+    "z": "穿著去",
+    "j": "足に靴を着けて行った",
+    "e": "wore and went",
+    "b": "履いて行く",
+    "p": "verb",
+    "r": "はいていった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ハイヒールはおしゃれだが、仕事で長時間立つ必要があるため、彼女は快適なフラットシューズを選んでいる。": [
+   {
+    "t": "ハイヒール",
+    "z": "高跟鞋",
+    "j": "かかとの高い靴",
+    "e": "high heels",
+    "b": "ハイヒール",
+    "p": "noun",
+    "r": "ハイヒール"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "おしゃれ",
+    "z": "時髦",
+    "j": "おしゃれな",
+    "e": "stylish",
+    "b": "おしゃれ",
+    "p": "adjective",
+    "r": "おしゃれ"
+   },
+   {
+    "t": "だが、"
+   },
+   {
+    "t": "仕事",
+    "z": "工作",
+    "j": "仕事",
+    "e": "work",
+    "b": "仕事",
+    "p": "noun",
+    "r": "しごと"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "長時間",
+    "z": "長時間",
+    "j": "長い時間",
+    "e": "long hours",
+    "b": "長時間",
+    "p": "numeral",
+    "r": "ちょうじかん"
+   },
+   {
+    "t": "立つ",
+    "z": "站立",
+    "j": "立つ",
+    "e": "stand",
+    "b": "立つ",
+    "p": "verb",
+    "r": "たつ"
+   },
+   {
+    "t": "必要",
+    "z": "必要",
+    "j": "必要な",
+    "e": "necessary",
+    "b": "必要",
+    "p": "adjective",
+    "r": "ひつよう"
+   },
+   {
+    "t": "があるため、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "快適な",
+    "z": "舒適的",
+    "j": "快適な",
+    "e": "comfortable",
+    "b": "快適",
+    "p": "adjective",
+    "r": "かいてきな"
+   },
+   {
+    "t": "フラットシューズを選んでいる。"
+   }
+  ],
+  "今日は暑いので、スーパーに行くときにビーチサンダルを履いた。": [
+   {
+    "t": "今日",
+    "z": "今天",
+    "j": "今日",
+    "e": "today",
+    "b": "今日",
+    "p": "noun",
+    "r": "きょう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "暑い",
+    "z": "熱的",
+    "j": "暑い",
+    "e": "hot",
+    "b": "暑い",
+    "p": "adjective",
+    "r": "あつい"
+   },
+   {
+    "t": "ので、"
+   },
+   {
+    "t": "スーパー",
+    "z": "超市",
+    "j": "スーパー",
+    "e": "supermarket",
+    "b": "スーパー",
+    "p": "noun",
+    "r": "スーパー"
+   },
+   {
+    "t": "に行くときに"
+   },
+   {
+    "t": "ビーチサンダル",
+    "z": "人字拖鞋",
+    "j": "ビーチサンダル",
+    "e": "flip-flops",
+    "b": "ビーチサンダル",
+    "p": "noun",
+    "r": "ビーチサンダル"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "履いた",
+    "z": "穿了",
+    "j": "履いた",
+    "e": "wore",
+    "b": "履く",
+    "p": "verb",
+    "r": "はいた"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "海辺を出た後、車に乗る前にビーチサンダルの砂を洗い流しました。": [
+   {
+    "t": "海辺",
+    "z": "海邊",
+    "j": "海のそばの場所",
+    "e": "seaside",
+    "b": "海辺",
+    "p": "noun",
+    "r": "うみべ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "出た",
+    "z": "離開了",
+    "j": "そこから出ました",
+    "e": "left",
+    "b": "出る",
+    "p": "verb",
+    "r": "でた"
+   },
+   {
+    "t": "後、"
+   },
+   {
+    "t": "車",
+    "z": "汽車",
+    "j": "自動車",
+    "e": "car",
+    "b": "車",
+    "p": "noun",
+    "r": "くるま"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "乗る",
+    "z": "上車",
+    "j": "車に乗る",
+    "e": "get into the car",
+    "b": "乗る",
+    "p": "verb",
+    "r": "のる"
+   },
+   {
+    "t": "前に"
+   },
+   {
+    "t": "ビーチサンダル",
+    "z": "海灘拖鞋",
+    "j": "海辺で履くサンダル",
+    "e": "flip-flops",
+    "b": "ビーチサンダル",
+    "p": "noun",
+    "r": "ビーチサンダル"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "砂",
+    "z": "沙子",
+    "j": "細かい土の粒",
+    "e": "sand",
+    "b": "砂",
+    "p": "noun",
+    "r": "すな"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "洗い流しました",
+    "z": "洗掉了",
+    "j": "水で洗って流しました",
+    "e": "washed off",
+    "b": "洗い流す",
+    "p": "verb",
+    "r": "あらいながしました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は公園へキャップをかぶって行きました。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "公園",
+    "z": "公園",
+    "j": "公園",
+    "e": "park",
+    "b": "公園",
+    "p": "noun",
+    "r": "こうえん"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "キャップ",
+    "z": "棒球帽",
+    "j": "キャップ",
+    "e": "baseball cap",
+    "b": "キャップ",
+    "p": "noun",
+    "r": "キャップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かぶって行きました",
+    "z": "戴著去",
+    "j": "かぶって行きました",
+    "e": "wore and went",
+    "b": "かぶる",
+    "p": "verb",
+    "r": "かぶっていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "屋外イベントは日差しが強かったけれど、彼女はつばの広い帽子ではなくキャップを選びました。": [
+   {
+    "t": "屋外イベント",
+    "z": "戶外活動",
+    "j": "屋外のイベント",
+    "e": "outdoor event",
+    "b": "屋外イベント",
+    "p": "noun",
+    "r": "おくがいイベント"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "日差し",
+    "z": "陽光",
+    "j": "日差し",
+    "e": "sunlight",
+    "b": "日差し",
+    "p": "noun",
+    "r": "ひざし"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "強かった",
+    "z": "強烈",
+    "j": "強かった",
+    "e": "was strong",
+    "b": "強い",
+    "p": "adjective",
+    "r": "つよかった"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "つばの広い帽子",
+    "z": "寬帽簷的帽子",
+    "j": "つばの広い帽子",
+    "e": "wide-brimmed hat",
+    "b": "つばの広い帽子",
+    "p": "noun",
+    "r": "つばのひろいぼうし"
+   },
+   {
+    "t": "ではなく"
+   },
+   {
+    "t": "キャップ",
+    "z": "棒球帽",
+    "j": "キャップ",
+    "e": "cap",
+    "b": "キャップ",
+    "p": "noun",
+    "r": "キャップ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "冬になると、彼は外出するときいつもニット帽をかぶります。": [
+   {
+    "t": "冬",
+    "z": "冬天",
+    "j": "冬の季節",
+    "e": "winter",
+    "b": "冬",
+    "p": "noun",
+    "r": "ふゆ"
+   },
+   {
+    "t": "になると、"
+   },
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "その男性",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "外出する",
+    "z": "外出",
+    "j": "家を出ること",
+    "e": "go out",
+    "b": "外出する",
+    "p": "verb",
+    "r": "がいしゅつする"
+   },
+   {
+    "t": "とき"
+   },
+   {
+    "t": "いつも",
+    "z": "總是",
+    "j": "常にそうすること",
+    "e": "always",
+    "b": "いつも",
+    "p": "adverb",
+    "r": "いつも"
+   },
+   {
+    "t": "ニット帽",
+    "z": "毛線帽",
+    "j": "編んだ帽子",
+    "e": "knitted cap",
+    "b": "ニット帽",
+    "p": "noun",
+    "r": "ニットぼう"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かぶります",
+    "z": "戴",
+    "j": "頭にのせる",
+    "e": "wear",
+    "b": "かぶる",
+    "p": "verb",
+    "r": "かぶります"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "春になって暖かくなっても、彼女はニット帽がおしゃれだと思ってかぶり続けている。": [
+   {
+    "t": "春",
+    "z": "春天",
+    "j": "春",
+    "e": "spring",
+    "b": "春",
+    "p": "noun",
+    "r": "はる"
+   },
+   {
+    "t": "になって"
+   },
+   {
+    "t": "暖かくなっても",
+    "z": "即使變暖",
+    "j": "暖かくなっても",
+    "e": "even when it warms up",
+    "b": "暖かくなる",
+    "p": "verb",
+    "r": "あたたかくなっても"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "ニット帽",
+    "z": "毛線帽",
+    "j": "ニット帽",
+    "e": "beanie",
+    "b": "ニット帽",
+    "p": "noun",
+    "r": "ニットぼう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "おしゃれだ",
+    "z": "時髦",
+    "j": "おしゃれだ",
+    "e": "stylish",
+    "b": "おしゃれだ",
+    "p": "adjective",
+    "r": "おしゃれだ"
+   },
+   {
+    "t": "と"
+   },
+   {
+    "t": "思って",
+    "z": "認為",
+    "j": "思って",
+    "e": "thinking",
+    "b": "思う",
+    "p": "verb",
+    "r": "おもって"
+   },
+   {
+    "t": "かぶり続けている",
+    "z": "持續戴著",
+    "j": "帽子をかぶり続けている",
+    "e": "keeps wearing",
+    "b": "かぶり続ける",
+    "p": "verb",
+    "r": "かぶりつづけている"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女はトートバッグを持ってスーパーへ行きます。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の人",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "トートバッグ",
+    "z": "托特包",
+    "j": "トートバッグ",
+    "e": "tote bag",
+    "b": "トートバッグ",
+    "p": "noun",
+    "r": "トートバッグ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "持って",
+    "z": "拿著",
+    "j": "手に持っています",
+    "e": "holding",
+    "b": "持つ",
+    "p": "verb",
+    "r": "もって"
+   },
+   {
+    "t": "スーパー",
+    "z": "超市",
+    "j": "食料品店",
+    "e": "supermarket",
+    "b": "スーパー",
+    "p": "noun",
+    "r": "スーパー"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "行きます",
+    "z": "去",
+    "j": "行きます",
+    "e": "go",
+    "b": "行く",
+    "p": "verb",
+    "r": "いきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "ハンドバッグを持っているけれど、教科書や水筒を入れるために容量が大きいトートバッグを選んだ。": [
+   {
+    "t": "ハンドバッグ",
+    "z": "手提包",
+    "j": "手で持つ小さなかばん",
+    "e": "handbag",
+    "b": "ハンドバッグ",
+    "p": "noun",
+    "r": "ハンドバッグ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "持っている",
+    "z": "拿著",
+    "j": "持っています",
+    "e": "have",
+    "b": "持つ",
+    "p": "verb",
+    "r": "もっている"
+   },
+   {
+    "t": "けれど、"
+   },
+   {
+    "t": "教科書",
+    "z": "教科書",
+    "j": "学校で使う本",
+    "e": "textbook",
+    "b": "教科書",
+    "p": "noun",
+    "r": "きょうかしょ"
+   },
+   {
+    "t": "や"
+   },
+   {
+    "t": "水筒",
+    "z": "水壺",
+    "j": "飲み物を入れる容器",
+    "e": "water bottle",
+    "b": "水筒",
+    "p": "noun",
+    "r": "すいとう"
+   },
+   {
+    "t": "を入れるために"
+   },
+   {
+    "t": "容量",
+    "z": "容量",
+    "j": "入る量",
+    "e": "capacity",
+    "b": "容量",
+    "p": "noun",
+    "r": "ようりょう"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "大きい",
+    "z": "大",
+    "j": "サイズが大きい",
+    "e": "large",
+    "b": "大きい",
+    "p": "adjective",
+    "r": "おおきい"
+   },
+   {
+    "t": "トートバッグ",
+    "z": "托特包",
+    "j": "大きな手提げかばん",
+    "e": "tote bag",
+    "b": "トートバッグ",
+    "p": "noun",
+    "r": "トートバッグ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選んだ",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらんだ"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "母は新しいワンピースに合わせて、上品なハンドバッグを選んだ。": [
+   {
+    "t": "母",
+    "z": "母親",
+    "j": "自分の母親",
+    "e": "mother",
+    "b": "母",
+    "p": "noun",
+    "r": "はは"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "新しい",
+    "z": "新的",
+    "j": "新しい",
+    "e": "new",
+    "b": "新しい",
+    "p": "adjective",
+    "r": "あたらしい"
+   },
+   {
+    "t": "ワンピース",
+    "z": "洋裝",
+    "j": "一着のドレス",
+    "e": "dress",
+    "b": "ワンピース",
+    "p": "noun",
+    "r": "ワンピース"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "合わせて",
+    "z": "配合",
+    "j": "合わせました",
+    "e": "to go with",
+    "b": "合わせる",
+    "p": "verb",
+    "r": "あわせて"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "上品な",
+    "z": "上品的",
+    "j": "品が良い",
+    "e": "elegant",
+    "b": "上品な",
+    "p": "adjective",
+    "r": "じょうひんな"
+   },
+   {
+    "t": "ハンドバッグ",
+    "z": "手提包",
+    "j": "手で持つ小さなかばん",
+    "e": "handbag",
+    "b": "ハンドバッグ",
+    "p": "noun",
+    "r": "ハンドバッグ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選んだ",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらんだ"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "トートバッグはたくさん入るけど、形がしっかりしたハンドバッグの方がフォーマルに見えるので、彼女はそちらを好む。": [
+   {
+    "t": "トートバッグ",
+    "z": "托特包",
+    "j": "大きな手提げかばん",
+    "e": "tote bag",
+    "b": "トートバッグ",
+    "p": "noun",
+    "r": "トートバッグ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "たくさん",
+    "z": "很多",
+    "j": "多く",
+    "e": "a lot",
+    "b": "たくさん",
+    "p": "adverb",
+    "r": "たくさん"
+   },
+   {
+    "t": "入る",
+    "z": "裝入",
+    "j": "入ります",
+    "e": "can carry",
+    "b": "入る",
+    "p": "verb",
+    "r": "はいる"
+   },
+   {
+    "t": "けど、"
+   },
+   {
+    "t": "形",
+    "z": "形狀",
+    "j": "かたち",
+    "e": "shape",
+    "b": "形",
+    "p": "noun",
+    "r": "かたち"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "しっかりした",
+    "z": "堅固的",
+    "j": "丈夫な",
+    "e": "firm",
+    "b": "しっかりする",
+    "p": "adjective",
+    "r": "しっかりした"
+   },
+   {
+    "t": "ハンドバッグ",
+    "z": "手提包",
+    "j": "手で持つ小さなかばん",
+    "e": "handbag",
+    "b": "ハンドバッグ",
+    "p": "noun",
+    "r": "ハンドバッグ"
+   },
+   {
+    "t": "の方が"
+   },
+   {
+    "t": "フォーマル",
+    "z": "正式的",
+    "j": "正式な",
+    "e": "formal",
+    "b": "フォーマル",
+    "p": "adjective",
+    "r": "フォーマル"
+   },
+   {
+    "t": "に見えるので、彼女はそちらを"
+   },
+   {
+    "t": "好む",
+    "z": "喜歡",
+    "j": "好みます",
+    "e": "prefer",
+    "b": "好む",
+    "p": "verb",
+    "r": "このむ"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は毎日リュックを背負って学校へ行きます。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "He",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "毎日",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "毎日",
+    "p": "adverb",
+    "r": "まいにち"
+   },
+   {
+    "t": "リュック",
+    "z": "後背包",
+    "j": "リュック",
+    "e": "backpack",
+    "b": "リュック",
+    "p": "noun",
+    "r": "リュック"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "背負って",
+    "z": "背負",
+    "j": "背負います",
+    "e": "carries on back",
+    "b": "背負う",
+    "p": "verb",
+    "r": "せおって"
+   },
+   {
+    "t": "学校",
+    "z": "學校",
+    "j": "学校",
+    "e": "school",
+    "b": "学校",
+    "p": "noun",
+    "r": "がっこう"
+   },
+   {
+    "t": "へ"
+   },
+   {
+    "t": "行きます",
+    "z": "去",
+    "j": "行きます",
+    "e": "goes",
+    "b": "行く",
+    "p": "verb",
+    "r": "いきます"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "長時間歩いて買い物するときでも、重さを均等に分散できるので彼女はリュックを選ぶ。": [
+   {
+    "t": "長時間",
+    "z": "長時間",
+    "j": "長時間",
+    "e": "a long time",
+    "b": "長時間",
+    "p": "adverb",
+    "r": "ちょうじかん"
+   },
+   {
+    "t": "歩いて",
+    "z": "走路",
+    "j": "歩きます",
+    "e": "walks",
+    "b": "歩く",
+    "p": "verb",
+    "r": "あるいて"
+   },
+   {
+    "t": "買い物",
+    "z": "購物",
+    "j": "買い物",
+    "e": "shopping",
+    "b": "買い物",
+    "p": "noun",
+    "r": "かいもの"
+   },
+   {
+    "t": "するときでも",
+    "z": "即使",
+    "j": "〜するときでも",
+    "e": "even when",
+    "b": "する",
+    "p": "expression",
+    "r": "するときでも"
+   },
+   {
+    "t": "、"
+   },
+   {
+    "t": "重さ",
+    "z": "重量",
+    "j": "重さ",
+    "e": "weight",
+    "b": "重さ",
+    "p": "noun",
+    "r": "おもさ"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "均等に",
+    "z": "均勻地",
+    "j": "均等に",
+    "e": "evenly",
+    "b": "均等に",
+    "p": "adverb",
+    "r": "きんとうに"
+   },
+   {
+    "t": "分散できる",
+    "z": "能分散",
+    "j": "分散できます",
+    "e": "can distribute",
+    "b": "分散できる",
+    "p": "verb",
+    "r": "ぶんさんできる"
+   },
+   {
+    "t": "ので"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "はリュックを選ぶ。"
+   }
+  ],
+  "晴れた日はいつもサングラスをかけて出かける。": [
+   {
+    "t": "晴れた日",
+    "z": "晴朗的日子",
+    "j": "晴れている日",
+    "e": "sunny day",
+    "b": "晴れる",
+    "p": "phrase",
+    "r": "はれたひ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "いつも",
+    "z": "總是",
+    "j": "常に",
+    "e": "always",
+    "b": "いつも",
+    "p": "adverb",
+    "r": "いつも"
+   },
+   {
+    "t": "サングラス",
+    "z": "太陽眼鏡",
+    "j": "日差しを防ぐ眼鏡",
+    "e": "sunglasses",
+    "b": "サングラス",
+    "p": "noun",
+    "r": "サングラス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "かけて",
+    "z": "戴著",
+    "j": "サングラスをかけて",
+    "e": "wearing",
+    "b": "かける",
+    "p": "verb",
+    "r": "かけて"
+   },
+   {
+    "t": "出かける",
+    "z": "出門",
+    "j": "外出する",
+    "e": "go out",
+    "b": "出かける",
+    "p": "verb",
+    "r": "でかける"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "地下鉄に乗るだけでしたが、外の日差しが強かったのでサングラスを持って行きました。": [
+   {
+    "t": "地下鉄",
+    "z": "地鐵",
+    "j": "地下を走る鉄道",
+    "e": "subway",
+    "b": "地下鉄",
+    "p": "noun",
+    "r": "ちかてつ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "乗る",
+    "z": "搭乘",
+    "j": "乗り物に乗ります",
+    "e": "ride",
+    "b": "乗る",
+    "p": "verb",
+    "r": "のる"
+   },
+   {
+    "t": "だけでしたが、"
+   },
+   {
+    "t": "外",
+    "z": "外面",
+    "j": "建物の外側",
+    "e": "outside",
+    "b": "外",
+    "p": "noun",
+    "r": "そと"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "日差し",
+    "z": "陽光",
+    "j": "太陽の光",
+    "e": "sunlight",
+    "b": "日差し",
+    "p": "noun",
+    "r": "ひざし"
+   },
+   {
+    "t": "が"
+   },
+   {
+    "t": "強かった",
+    "z": "強烈的",
+    "j": "力が強かった",
+    "e": "was strong",
+    "b": "強い",
+    "p": "adjective",
+    "r": "つよかった"
+   },
+   {
+    "t": "ので"
+   },
+   {
+    "t": "サングラス",
+    "z": "太陽眼鏡",
+    "j": "日差しを防ぐ眼鏡",
+    "e": "sunglasses",
+    "b": "サングラス",
+    "p": "noun",
+    "r": "サングラス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "持って行きました",
+    "z": "帶去了",
+    "j": "持って行きました",
+    "e": "brought",
+    "b": "持って行く",
+    "p": "verb",
+    "r": "もっていきました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は彼女に誕生日プレゼントとして繊細なネックレスを贈った。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "男性の人",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "女性の人",
+    "e": "her",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "誕生日プレゼント",
+    "z": "生日禮物",
+    "j": "誕生日の贈り物",
+    "e": "birthday present",
+    "b": "誕生日プレゼント",
+    "p": "noun",
+    "r": "たんじょうびプレゼント"
+   },
+   {
+    "t": "として"
+   },
+   {
+    "t": "繊細な",
+    "z": "精緻的",
+    "j": "細かくて美しい",
+    "e": "delicate",
+    "b": "繊細",
+    "p": "adjective",
+    "r": "せんさいな"
+   },
+   {
+    "t": "ネックレス",
+    "z": "項鍊",
+    "j": "首にかける飾り",
+    "e": "necklace",
+    "b": "ネックレス",
+    "p": "noun",
+    "r": "ネックレス"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "贈った",
+    "z": "送了",
+    "j": "プレゼントした",
+    "e": "gave",
+    "b": "贈る",
+    "p": "verb",
+    "r": "おくった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "そのネックレスは素敵だったけど、仕事中に服に引っかかるのが心配で彼女はつけなかった。": [
+   {
+    "t": "その"
+   },
+   {
+    "t": "ネックレス",
+    "z": "項鍊",
+    "j": "ネックレス",
+    "e": "necklace",
+    "b": "ネックレス",
+    "p": "noun",
+    "r": "ネックレス"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "素敵だった",
+    "z": "很漂亮",
+    "j": "すてきだった",
+    "e": "was beautiful",
+    "b": "素敵だ",
+    "p": "adjective",
+    "r": "すてきだった"
+   },
+   {
+    "t": "けど、"
+   },
+   {
+    "t": "仕事中",
+    "z": "工作中",
+    "j": "しごとちゅう",
+    "e": "at work",
+    "b": "仕事中",
+    "p": "phrase",
+    "r": "しごとちゅう"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "服",
+    "z": "衣服",
+    "j": "ふく",
+    "e": "clothes",
+    "b": "服",
+    "p": "noun",
+    "r": "ふく"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "引っかかる",
+    "z": "勾住",
+    "j": "ひっかかる",
+    "e": "catch on",
+    "b": "引っかかる",
+    "p": "verb",
+    "r": "ひっかかる"
+   },
+   {
+    "t": "のが"
+   },
+   {
+    "t": "心配",
+    "z": "擔心",
+    "j": "しんぱい",
+    "e": "afraid",
+    "b": "心配",
+    "p": "noun",
+    "r": "しんぱい"
+   },
+   {
+    "t": "で彼女は"
+   },
+   {
+    "t": "つけなかった",
+    "z": "沒有戴",
+    "j": "つけなかった",
+    "e": "didn’t wear",
+    "b": "つける",
+    "p": "verb",
+    "r": "つけなかった"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼女は一対のイヤリングを試しにつけました。": [
+   {
+    "t": "彼女",
+    "z": "她",
+    "j": "彼女",
+    "e": "she",
+    "b": "彼女",
+    "p": "pronoun",
+    "r": "かのじょ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "一対",
+    "z": "一對",
+    "j": "一対",
+    "e": "a pair",
+    "b": "一対",
+    "p": "noun",
+    "r": "いっつい"
+   },
+   {
+    "t": "の"
+   },
+   {
+    "t": "イヤリング",
+    "z": "夾式耳環",
+    "j": "イヤリング",
+    "e": "earrings",
+    "b": "イヤリング",
+    "p": "noun",
+    "r": "イヤリング"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "試しに",
+    "z": "試著",
+    "j": "試しに",
+    "e": "to try",
+    "b": "試しに",
+    "p": "adverb",
+    "r": "ためしに"
+   },
+   {
+    "t": "つけました",
+    "z": "戴上了",
+    "j": "耳につけました",
+    "e": "put on",
+    "b": "つける",
+    "p": "verb",
+    "r": "つけました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "耳にピアスの穴はありますが、ワンピースに合うのでイヤリングを選びました。": [
+   {
+    "t": "耳",
+    "z": "耳朵",
+    "j": "耳",
+    "e": "ear",
+    "b": "耳",
+    "p": "noun",
+    "r": "みみ"
+   },
+   {
+    "t": "に"
+   },
+   {
+    "t": "ピアスの穴",
+    "z": "穿洞",
+    "j": "ピアスの穴",
+    "e": "piercing hole",
+    "b": "ピアスの穴",
+    "p": "noun",
+    "r": "ピアスのあな"
+   },
+   {
+    "t": "はありますが、"
+   },
+   {
+    "t": "ワンピース",
+    "z": "連身裙",
+    "j": "ワンピース",
+    "e": "one-piece dress",
+    "b": "ワンピース",
+    "p": "noun",
+    "r": "ワンピース"
+   },
+   {
+    "t": "に合うので"
+   },
+   {
+    "t": "イヤリング",
+    "z": "夾式耳環",
+    "j": "イヤリング",
+    "e": "clip-on earrings",
+    "b": "イヤリング",
+    "p": "noun",
+    "r": "イヤリング"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "選びました",
+    "z": "選擇了",
+    "j": "選びました",
+    "e": "chose",
+    "b": "選ぶ",
+    "p": "verb",
+    "r": "えらびました"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "彼は毎日腕時計をつけています。": [
+   {
+    "t": "彼",
+    "z": "他",
+    "j": "彼",
+    "e": "he",
+    "b": "彼",
+    "p": "pronoun",
+    "r": "かれ"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "毎日",
+    "z": "每天",
+    "j": "毎日",
+    "e": "every day",
+    "b": "毎日",
+    "p": "adverb",
+    "r": "まいにち"
+   },
+   {
+    "t": "腕時計",
+    "z": "手錶",
+    "j": "腕時計",
+    "e": "wristwatch",
+    "b": "腕時計",
+    "p": "noun",
+    "r": "うでどけい"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "つけています",
+    "z": "戴著",
+    "j": "つけています",
+    "e": "is wearing",
+    "b": "つける",
+    "p": "verb",
+    "r": "つけています"
+   },
+   {
+    "t": "。"
+   }
+  ],
+  "携帯電話で時間を見られるけど、会議中は腕時計の方が便利なので彼女はそれが好きだ。": [
+   {
+    "t": "携帯電話",
+    "z": "手機",
+    "j": "携帯電話",
+    "e": "phone",
+    "b": "携帯電話",
+    "p": "noun",
+    "r": "けいたいでんわ"
+   },
+   {
+    "t": "で"
+   },
+   {
+    "t": "時間",
+    "z": "時間",
+    "j": "時間",
+    "e": "time",
+    "b": "時間",
+    "p": "noun",
+    "r": "じかん"
+   },
+   {
+    "t": "を"
+   },
+   {
+    "t": "見られる",
+    "z": "能看",
+    "j": "見られる",
+    "e": "can see",
+    "b": "見る",
+    "p": "verb",
+    "r": "みられる"
+   },
+   {
+    "t": "けど、"
+   },
+   {
+    "t": "会議中",
+    "z": "會議中",
+    "j": "会議中",
+    "e": "during meetings",
+    "b": "会議中",
+    "p": "noun",
+    "r": "かいぎちゅう"
+   },
+   {
+    "t": "は"
+   },
+   {
+    "t": "腕時計",
+    "z": "手錶",
+    "j": "腕時計",
+    "e": "wristwatch",
+    "b": "腕時計",
+    "p": "noun",
+    "r": "うでどけい"
+   },
+   {
+    "t": "の方が"
+   },
+   {
+    "t": "便利",
+    "z": "方便",
+    "j": "便利",
+    "e": "convenient",
+    "b": "便利",
+    "p": "adjective",
+    "r": "べんり"
+   },
+   {
+    "t": "なので彼女はそれが"
+   },
+   {
+    "t": "好き",
+    "z": "喜歡",
+    "j": "好き",
+    "e": "like",
+    "b": "好き",
+    "p": "adjective",
+    "r": "すき"
+   },
+   {
+    "t": "だ。"
+   }
+  ]
+ }
+}

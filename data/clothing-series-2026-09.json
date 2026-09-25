@@ -1,0 +1,2338 @@
+{
+  "schemaVersion": 1,
+  "series": "clothing",
+  "state": "candidate-pending-full-review",
+  "scopeNote": "Local candidates only. No production writes or uploads have occurred.",
+  "entries": [
+    {
+      "id": "t-shirt",
+      "word": "T-shirt",
+      "chinese": "T 恤",
+      "chineseDefinition": "短袖針織上衣，沒有領子，與有領襯衫區分開來。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtiː.ʃɝːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "T 恤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short-sleeved, collarless knit top, usually pulled on over the head; different from a collared shirt.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "半袖で襟がなく、被って着るカジュアルなニット生地のトップス。シャツとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He is wearing a white T-shirt today.",
+          "ja": "彼は今日、白いTシャツを着ている。",
+          "zh": "他今天穿了一件白色T恤。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my T-shirt was still in the wash, I wore a clean shirt to the store.",
+          "ja": "Tシャツがまだ洗濯中だったので、きれいなシャツを着て店に行きました。",
+          "zh": "因為 T 恤還在洗，我穿了乾淨的襯衫去商店。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "Tシャツ",
+      "jaReading": "ティーシャツ",
+      "jaReadingSegments": [
+        {
+          "text": "T",
+          "ruby": "ティー"
+        },
+        {
+          "text": "シャツ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/t-shirt-ai-310db9f344cc.webp"
+    },
+    {
+      "id": "shirt",
+      "word": "shirt",
+      "chinese": "襯衫",
+      "chineseDefinition": "帶有領子和前開扣的織布襯衫，與T恤及女式襯衫區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃɝːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "襯衫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A collared woven shirt that opens at the front, usually with buttons; different from a T-shirt or blouse.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "襟が付いていて前開きのボタンがある織布のシャツ。Tシャツやブラウスとは区別される。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I ironed my shirt this morning.",
+          "ja": "今朝、シャツにアイロンをかけました。",
+          "zh": "我今天早上燙了襯衫。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even though it was hot, he wore a long-sleeved shirt to the meeting to look professional.",
+          "ja": "暑かったが、会議ではきちんと見せたいので彼は長袖のシャツを着ていた。",
+          "zh": "儘管天氣很熱，他還是穿著長袖襯衫參加會議，以顯示專業。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "シャツ",
+      "jaReading": "シャツ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/shirt-ai-0fc468a43e75.webp"
+    },
+    {
+      "id": "blouse",
+      "word": "blouse",
+      "chinese": "女式襯衫",
+      "chineseDefinition": "為女性設計的輕薄、有造型變化的上衣，通常被稱為女式襯衫，與一般襯衫區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/blaʊs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "女式襯衫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A light, shaped top commonly worn by women and sold as a blouse; distinct from a generic collared shirt.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "主に女性が着る、デザインや生地が軽やかなブラウス。普通のシャツとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She is wearing a blue blouse today.",
+          "ja": "彼女は今日、青いブラウスを着ている。",
+          "zh": "她今天穿了藍色的女式襯衫。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although she usually wears T-shirts, she chose a blouse for the job interview.",
+          "ja": "普段はTシャツを着ていますが、面接にはブラウスを選びました。",
+          "zh": "雖然她平常穿 T 恤，面試時還是選了女式襯衫。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ブラウス",
+      "jaReading": "ブラウス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/blouse-ai-6646597f24bb.webp"
+    },
+    {
+      "id": "sweater",
+      "word": "sweater",
+      "chinese": "毛衣",
+      "chineseDefinition": "套頭式針織毛衣，與前開式開襟毛衣有別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈswetər/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "毛衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pullover knitted top worn for warmth, distinguished from a cardigan which opens at the front.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "前が開かない、かぶって着るタイプのニット製セーター。カーディガンとは違う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I often wear a sweater to stay warm in winter.",
+          "ja": "冬には暖かくするためにセーターをよく着る。",
+          "zh": "冬天時我常常穿毛衣取暖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because it was colder outside than in the classroom, he kept his sweater on after the lesson.",
+          "ja": "教室より外の方が寒かったので、授業が終わってもセーターを脱ぎませんでした。",
+          "zh": "因為外面比教室冷，下課後他仍穿著毛衣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "セーター",
+      "jaReading": "セーター",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sweater-ai-2c3f05f58142.webp"
+    },
+    {
+      "id": "cardigan",
+      "word": "cardigan",
+      "chinese": "開襟毛衣",
+      "chineseDefinition": "前開且有明顯釦子或開口設計的針織外套，與套頭毛衣區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːrdɪɡən/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "開襟毛衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A knitted outer layer that opens at the front, often with buttons, distinct from a pullover sweater.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "前にボタンや開きがあり、羽織って着るタイプのニット製カーディガン。セーターとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My mother knitted me a new cardigan.",
+          "ja": "母が私のために新しいカーディガンを編んでくれた。",
+          "zh": "媽媽給我織了一件新的開襟毛衣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even in summer, the library is cold, so she always brings a cardigan.",
+          "ja": "夏でも図書館は寒いので、彼女はいつもカーディガンを持って行きます。",
+          "zh": "即使在夏天，圖書館裡也很冷，所以她總是帶著開襟毛衣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カーディガン",
+      "jaReading": "カーディガン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/cardigan-ai-7cb54a46d009.webp"
+    },
+    {
+      "id": "hoodie",
+      "word": "hoodie",
+      "chinese": "連帽上衣",
+      "chineseDefinition": "帶有帽子、休閒風格的長袖上衣，屬於連帽運動衫，與雨衣區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhʊdi/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "連帽上衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A casual sweatshirt with a hood, worn for comfort; distinct from a rain jacket with a hood.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "フードが付いたカジュアルなスウェット生地のパーカー。レインコートとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "After class, he changed into his hoodie and went to the park.",
+          "ja": "授業の後、彼はパーカーに着替えて公園へ行った。",
+          "zh": "下課後，他換上了連帽上衣去公園。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because this hoodie is thick, I didn't feel cold even when the weather turned chilly.",
+          "ja": "このパーカーは厚手なので、寒くなっても寒さを感じなかった。",
+          "zh": "因為這件連帽上衣很厚重，所以即使天氣變冷，我也沒有感到寒冷。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "パーカー",
+      "jaReading": "パーカー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/hoodie-ai-2c52329aa56b.webp"
+    },
+    {
+      "id": "jacket",
+      "word": "jacket",
+      "chinese": "夾克外套",
+      "chineseDefinition": "短款外套，通常及臀部，不同於較長的大衣。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdʒækɪt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "夾克外套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short outer layer, usually ending at the hips; distinct from a longer coat.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "腰のあたりまでの短い丈のアウター。ロングコートとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He hung his jacket at the entrance of the classroom.",
+          "ja": "彼は教室の入り口にジャケットを掛けた。",
+          "zh": "他把夾克外套掛在教室門口。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the afternoon was warm, she brought a jacket in case the evening turned chilly.",
+          "ja": "午後は暖かかったけれど、夕方冷えるかもしれないのでジャケットを持って行きました。",
+          "zh": "雖然下午很暖，她還是帶了件外套，以防傍晚轉涼。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ジャケット",
+      "jaReading": "ジャケット",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/jacket-ai-3704e3763f9c.webp"
+    },
+    {
+      "id": "coat",
+      "word": "coat",
+      "chinese": "大衣",
+      "chineseDefinition": "長款外衣，用於冷天防寒，與短版外套區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/koʊt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "大衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long outer garment for cool weather, covering more of the body than a jacket.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "寒い時期に着る長めのアウターで、ジャケットよりも丈が長い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I wear a coat when I go out in winter.",
+          "ja": "冬は外出時にコートを着る。",
+          "zh": "冬天，我會穿大衣出門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the train got warm, he took off his coat and held it over his arm.",
+          "ja": "電車の中が暖かくなったので、コートを脱いで腕にかけました。",
+          "zh": "電車裡變暖後，他脫下大衣搭在手臂上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コート",
+      "jaReading": "コート",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/coat-ai-874e53727666.webp"
+    },
+    {
+      "id": "dress",
+      "word": "dress",
+      "chinese": "洋裝",
+      "chineseDefinition": "連身服裝，上半身與裙子連成一體，區別於分開的裙子。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/drɛs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "洋裝",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A one-piece garment with an attached skirt, worn usually by women; different from a separate skirt.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "上半身とスカートが一体化したワンピース型の服。スカート単体とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She likes to wear dresses in summer.",
+          "ja": "彼女は夏になるとワンピースを着るのが好きだ。",
+          "zh": "她喜歡夏天穿洋裝。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because a dress doesn't require a separate top, she can save a lot of time getting dressed in the morning.",
+          "ja": "ワンピースはトップスを選ぶ必要がないので、朝の着替え時間を大幅に短縮できる。",
+          "zh": "因為洋裝不需要搭配上衣，早上她可以節省很多穿衣時間。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ワンピース",
+      "jaReading": "ワンピース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/dress-ai-3a8d312989df.webp"
+    },
+    {
+      "id": "skirt",
+      "word": "skirt",
+      "chinese": "裙子",
+      "chineseDefinition": "裙子，為獨立的下半身服裝，沒有上衣相連。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skɜːrt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "裙子",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A separate lower garment, typically extending from the waist and without an attached bodice.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "上半身と繋がっていない、腰から下の部分だけのスカート。一体型ドレスとは区別される。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She is wearing a red skirt today.",
+          "ja": "彼女は今日、赤いスカートを履いている。",
+          "zh": "她今天穿了一條紅色的裙子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although a skirt is cooler, she chose pants today because she expected to walk a lot.",
+          "ja": "スカートの方が涼しいけれど、今日はたくさん歩く予定なので彼女はズボンを選んだ。",
+          "zh": "雖然裙子比較涼快，但她還是選了褲子，因為今天預計要走很多路。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スカート",
+      "jaReading": "スカート",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/skirt-ai-d5bba326f5fb.webp"
+    },
+    {
+      "id": "jeans",
+      "word": "jeans",
+      "chinese": "牛仔褲",
+      "chineseDefinition": "用牛仔布製成、有特徵性縫線和口袋的休閒褲，通常耐磨，與一般長褲區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dʒiːnz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牛仔褲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Trousers made from denim fabric, featuring characteristic seams and pockets; typically worn as casual wear and distinct from generic trousers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "デニム生地で作られ、特徴的な縫い目とポケットが付いたカジュアルなズボン。一般的なズボンと区別される。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He likes to wear jeans every day.",
+          "ja": "彼は毎日ジーンズを履くのが好きです。",
+          "zh": "他每天都喜歡穿牛仔褲。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I planned to walk around town all afternoon, I chose comfortable jeans instead of formal trousers.",
+          "ja": "午後は街を歩き回る予定だったので、きちんとしたズボンより履き慣れたジーンズを選びました。",
+          "zh": "因為下午要在街上走來走去，我選了舒適的牛仔褲，而不是正式長褲。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ジーンズ",
+      "jaReading": "ジーンズ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/jeans-ai-33c0d9a33577.webp"
+    },
+    {
+      "id": "trousers",
+      "word": "trousers",
+      "chinese": "長褲",
+      "chineseDefinition": "覆蓋雙腿、長及腳踝的褲子，不特指牛仔褲、運動褲等，屬較正式的下身服飾。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtraʊ.zəz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "長褲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A piece of clothing that covers both legs separately and extends to the ankles; a general term for full-length pants, distinct from specific types like jeans.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "両足を覆い、足首まで届く一般的な長ズボン。ジーンズなど特定の種類とは区別される。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wore gray trousers to work today.",
+          "ja": "彼は今日、仕事にグレーのズボンを履いて行きました。",
+          "zh": "他今天穿了灰色長褲去上班。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even though the event allowed jeans, he chose formal trousers because he wanted to make a good impression.",
+          "ja": "その催しではジーンズでもよかったのですが、良い印象を与えたくて、彼はきちんとしたズボンを選びました。",
+          "zh": "雖然活動允許穿牛仔褲，他還是選了正式長褲，希望留下好印象。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ズボン",
+      "jaReading": "ズボン",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/trousers-ai-c774d8f6af2a.webp"
+    },
+    {
+      "id": "shorts",
+      "word": "shorts",
+      "chinese": "短褲",
+      "chineseDefinition": "長度及膝蓋以上的兩腳短褲，適合炎熱天氣穿著。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃɔːrts/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "短褲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A two-legged garment for the lower body, ending above the knees; typically worn in hot weather.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "両足分に分かれ、膝上までの長さのズボン。暑い季節によく履かれる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "In summer, he usually goes out wearing shorts.",
+          "ja": "夏は、彼はたいていショートパンツを履いて出かけます。",
+          "zh": "夏天時，他最常穿短褲出門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the morning was cool, she chose shorts because the afternoon was expected to be hot.",
+          "ja": "朝は涼しかったけれど、午後は暑くなる予報だったのでショートパンツを選びました。",
+          "zh": "雖然早上有點涼，她還是選了短褲，因為預報說下午會很熱。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ショートパンツ",
+      "jaReading": "ショートパンツ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/shorts-ai-6292597844c9.webp"
+    },
+    {
+      "id": "socks",
+      "word": "socks",
+      "chinese": "襪子",
+      "chineseDefinition": "覆蓋雙腳、遮住腳踝或稍高的布質襪子，與褲襪或絲襪不同，通常成雙穿著。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/sɒks/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "襪子",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pair of knitted or woven coverings for the feet and ankles, distinct from tights or stockings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "足首まで覆う布製の靴下で、タイツやストッキングとは区別される。通常は二枚一組で履く。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She puts on a clean pair of socks every day.",
+          "ja": "彼女は毎日、清潔な靴下を履き替えます。",
+          "zh": "她每天換上一雙乾淨的襪子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although his shoes look clean, his feet sweat easily if he doesn’t wear socks.",
+          "ja": "靴はきれいに見えても、靴下を履かないと彼の足はすぐに汗をかいてしまう。",
+          "zh": "雖然鞋看起來很乾淨，但如果不穿襪子，他的腳就容易流汗。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "靴下",
+      "jaReading": "くつした",
+      "jaReadingSegments": [
+        {
+          "text": "靴下",
+          "ruby": "くつした"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/socks-ai-c89a2f88bf00.webp"
+    },
+    {
+      "id": "sneakers",
+      "word": "sneakers",
+      "chinese": "運動休閒鞋",
+      "chineseDefinition": "適合日常步行與輕度運動的休閒鞋，通常有柔軟鞋底；與正式皮鞋有別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsniː.kərz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "運動休閒鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Casual shoes with comfortable soles, often designed for walking or sports; different from formal dress shoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歩きやすい靴底のカジュアルな靴。スポーツや普段使いに履き、フォーマルな革靴とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears sneakers for jogging.",
+          "ja": "彼はジョギングの時にスニーカーを履きます。",
+          "zh": "他穿著運動休閒鞋去慢跑。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the office requires dress shoes, she brings sneakers in her bag because she plans to exercise after work.",
+          "ja": "オフィスでは革靴が必要だが、退社後に運動するため、彼女はスニーカーをバッグに入れている。",
+          "zh": "雖然辦公室要求穿皮鞋，但她還是把運動休閒鞋帶在包包裡，因為下班後要運動。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スニーカー",
+      "jaReading": "スニーカー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sneakers-ai-afbe1eaa7bd6.webp"
+    },
+    {
+      "id": "boots",
+      "word": "boots",
+      "chinese": "靴子",
+      "chineseDefinition": "覆蓋腳踝甚至更高的鞋子，如雨靴或長靴，不同於只包覆腳部的低筒鞋。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/buːts/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "靴子",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Footwear that covers the ankle or rises higher, such as rain boots or long boots; distinct from low-cut shoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "足首以上まで覆う丈のある靴。スニーカーなどの浅い靴と区別される。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She wore black boots to work.",
+          "ja": "彼女は黒いブーツを履いて仕事に行きました。",
+          "zh": "她穿著黑色靴子去上班。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the path was muddy, he chose waterproof boots instead of sneakers.",
+          "ja": "道がぬかるんでいたので、スニーカーではなく防水のブーツを選びました。",
+          "zh": "因為路上滿是泥濘，他選了防水靴子而不是運動鞋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ブーツ",
+      "jaReading": "ブーツ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/boots-ai-7c4319a2cc22.webp"
+    },
+    {
+      "id": "sandals",
+      "word": "sandals",
+      "chinese": "涼鞋",
+      "chineseDefinition": "開放式、以帶狀或繩狀固定、腳趾外露的鞋子，與拖鞋不同。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsæn.dlz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "涼鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Open footwear with straps, leaving the toes visible; different from slippers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ストラップなどで固定し、つま先が見えるオープンタイプの履物。スリッパとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He often wears sandals in summer.",
+          "ja": "夏になると、彼はよくサンダルを履きます。",
+          "zh": "夏天的時候，他常穿涼鞋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After his sneakers got wet at the beach, he changed into sandals for the walk home.",
+          "ja": "海辺でスニーカーが濡れたので、帰り道はサンダルに履き替えました。",
+          "zh": "在海邊把運動鞋弄濕後，他換上涼鞋走回家。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "サンダル",
+      "jaReading": "サンダル",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sandals-ai-e1d2220921cd.webp"
+    },
+    {
+      "id": "hat",
+      "word": "hat",
+      "chinese": "帽子",
+      "chineseDefinition": "戴在頭上的帽子；圖中為有寬帽簷的款式，可與棒球帽、針織帽區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/hæt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "帽子",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A covering worn on the head. This picture shows a brimmed hat, distinct in shape from a baseball cap or beanie.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "頭にかぶる帽子。この絵はつばのある形で、キャップやニット帽とは形が異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She wears a hat to shield herself from the sun when going out.",
+          "ja": "彼女は出かけるとき、日差しを避けるために帽子をかぶります。",
+          "zh": "她出門時會戴帽子遮太陽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although this hat is stylish, he didn’t wear it in the rain because it’s not waterproof.",
+          "ja": "この帽子はおしゃれだけれど、雨の日は防水じゃないので彼はかぶらなかった。",
+          "zh": "雖然這頂帽子很時髦，但下雨時他還是沒戴，因為覺得不防水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "帽子",
+      "jaReading": "ぼうし",
+      "jaReadingSegments": [
+        {
+          "text": "帽子",
+          "ruby": "ぼうし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hat-ai-4e218513b5f7.webp"
+    },
+    {
+      "id": "scarf",
+      "word": "scarf",
+      "chinese": "圍巾",
+      "chineseDefinition": "用來保暖的圍巾，通常較厚，與絲巾等裝飾用圍巾區別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skɑːrf/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "圍巾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A warm, thick wrap worn around the neck in cold weather, distinct from thin decorative scarves.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "寒い時期に首に巻く、保温性のある厚手のマフラー。薄手で装飾用のスカーフとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He often wears a scarf in winter to stay warm.",
+          "ja": "冬になると、彼はよくマフラーを巻いて暖まります。",
+          "zh": "冬天時，他常圍圍巾保暖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even though her coat was thick enough, she still brought a scarf in case the temperature suddenly dropped.",
+          "ja": "コートだけでも十分暖かいけれど、気温が急に下がるかもしれないので彼女はマフラーも持って行った。",
+          "zh": "雖然外套已經夠厚了，但她還是帶了圍巾，以防溫度突然下降。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "マフラー",
+      "jaReading": "マフラー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/scarf-ai-1c6544ed434c.webp"
+    },
+    {
+      "id": "belt",
+      "word": "belt",
+      "chinese": "皮帶",
+      "chineseDefinition": "有扣環的皮帶或織帶，繫在腰間，用於固定褲子或裝飾，與包包背帶區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/belt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "皮帶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A waist strap with a buckle, made of leather or fabric, used to hold up trousers or as decoration; distinct from a bag strap.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "バックル付きで腰に巻くベルト。ズボンを固定したり装飾として使われる。バッグのストラップとは違う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "His trousers were too loose, so he wore a belt.",
+          "ja": "ズボンがゆるかったので、彼はベルトを締めました。",
+          "zh": "他的褲子太鬆，所以戴了皮帶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although she was wearing a dress today, she added a belt because she wanted her waistline to stand out.",
+          "ja": "今日はワンピースを着ていたけれど、ウエストラインを強調したくて彼女はベルトをプラスした。",
+          "zh": "雖然今天穿的是連衣裙，但她還是加了一條皮帶，因為想讓腰線看起來更明顯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ベルト",
+      "jaReading": "ベルト",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/belt-ai-d3c2efd583f0.webp"
+    },
+    {
+      "id": "polo-shirt",
+      "word": "polo shirt",
+      "chinese": "Polo 衫",
+      "chineseDefinition": "有領子、短排釦，常用針織布料的休閒上衣，與一般襯衫（平織布料）區別開來。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊ.loʊ ˌʃɝːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "Polo 衫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A casual knit top with a collar and a short button placket, typically made from a softer fabric than a woven shirt.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "襟付きで短いボタンの前立てがあり、主にニット素材で作られるカジュアルなトップス。一般的な織物のシャツとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a navy polo shirt to work.",
+          "ja": "彼は仕事にネイビーのポロシャツを着ていく。",
+          "zh": "他上班時穿深藍色的 Polo 衫。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because it’s hot outside, she chooses a polo shirt instead of a regular shirt.",
+          "ja": "外が暑いので、彼女は普通のシャツではなくポロシャツを選んだ。",
+          "zh": "因為外面很熱，她選擇穿 Polo 衫而不是一般襯衫。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ポロシャツ",
+      "jaReading": "ポロシャツ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/polo-shirt-ai-a43a43e66f5f.webp"
+    },
+    {
+      "id": "tank-top",
+      "word": "tank top",
+      "chinese": "背心上衣",
+      "chineseDefinition": "無袖、平口、貼身的休閒上衣，注意與西式馬甲區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtæŋk ˌtɑːp/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "背心上衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A casual, sleeveless top with a scoop or square neckline, not to be confused with a tailored vest.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "袖がなく、首元が開いたカジュアルなトップス。テーラードベストとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She goes jogging in a white tank top.",
+          "ja": "彼女は白いタンクトップでジョギングに行く。",
+          "zh": "她穿著白色背心上衣去慢跑。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After changing into a tank top, he felt cooler during the summer afternoon.",
+          "ja": "タンクトップに着替えたら、夏の午後でも涼しく感じた。",
+          "zh": "換上背心上衣後，他在夏日午後感覺更涼快了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "タンクトップ",
+      "jaReading": "タンクトップ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/tank-top-ai-2a5593919f55.webp"
+    },
+    {
+      "id": "sweatshirt",
+      "word": "sweatshirt",
+      "chinese": "無帽運動衫",
+      "chineseDefinition": "沒有帽子的套頭長袖運動上衣，常以刷毛或棉質針織布製成；與連帽上衣有別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈswɛt.ʃɝːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "無帽運動衫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pullover top made of fleece or cotton jersey, typically long-sleeved and without a hood, distinguished from a hoodie.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "フードのない、長袖で被るタイプのスウェットシャツ。主にフリースや綿素材でできている。パーカーとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a yellow sweatshirt at home.",
+          "ja": "彼は家で黄色いスウェットを着ている。",
+          "zh": "他在家穿著黃色的無帽運動衫。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since her sweatshirt was wet from the rain, she changed as soon as she got inside.",
+          "ja": "雨でスウェットが濡れたので、家に入ってすぐ着替えた。",
+          "zh": "因為她的無帽運動衫被雨淋濕了，一進屋就馬上換衣服。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スウェット",
+      "jaReading": "スウェット",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sweatshirt-ai-04a830f542ef.webp"
+    },
+    {
+      "id": "turtleneck",
+      "word": "turtleneck",
+      "chinese": "高領上衣",
+      "chineseDefinition": "高領，領子貼合脖子的長或短袖上衣，領口部分明顯可見。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtɝː.təlˌnɛk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "高領上衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A top with a high, close-fitting neck that covers most of the neck, with the neckline visibly raised.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "首にぴったりと沿って高く立ち上がる襟のあるトップス。ネック部分がはっきり見える。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a black turtleneck in winter.",
+          "ja": "彼は冬に黒いタートルネックを着ている。",
+          "zh": "他冬天穿黑色高領上衣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the temperature dropped suddenly, she put on a turtleneck to keep warm.",
+          "ja": "急に寒くなったので、彼女は防寒のためにタートルネックを着た。",
+          "zh": "當氣溫驟降時，她穿上高領上衣保暖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "タートルネック",
+      "jaReading": "タートルネック",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/turtleneck-ai-d6e0725e0dc5.webp"
+    },
+    {
+      "id": "vest",
+      "word": "vest",
+      "chinese": "外搭背心",
+      "chineseDefinition": "無袖、用於外搭的上衣，需穿在其他上衣外，與無袖背心上衣（tank top）區別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/vɛst/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "外搭背心",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sleeveless outer garment worn over another top, not to be confused with a tank top.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "他のトップスの上に重ねて着る、袖なしのアウターベスト。タンクトップとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She adds a vest over her shirt for style.",
+          "ja": "彼女はおしゃれのためにシャツの上にベストを重ねました。",
+          "zh": "她為了搭配造型，在襯衫外加穿一件背心。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After buying a thick vest, he no longer feels cold walking to work in the morning.",
+          "ja": "厚手のベストを購入してから、朝の通勤中も寒さを感じなくなった。",
+          "zh": "買了厚外搭背心後，他早上走路上班就不再覺得冷了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ベスト",
+      "jaReading": "ベスト",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/vest-ai-9c87f825d291.webp"
+    },
+    {
+      "id": "raincoat",
+      "word": "raincoat",
+      "chinese": "雨衣",
+      "chineseDefinition": "長版防水材質的雨天外套，用於下雨天，與一般防風或大衣區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈreɪnˌkoʊt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "雨衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long outer garment made from waterproof material, worn to protect against rain, different from a regular coat.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "雨の日に着用する、防水素材でできた長めのレインコート。普通のコートとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He puts on his raincoat before leaving in the rain.",
+          "ja": "彼は雨の中出かける前にレインコートを着た。",
+          "zh": "他在雨中出門前穿上了雨衣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although she forgot her umbrella, her raincoat kept her dry on the way home.",
+          "ja": "傘を忘れたが、レインコートのおかげで帰り道も濡れなかった。",
+          "zh": "雖然忘了帶傘，但她靠雨衣回家沒被淋濕。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "レインコート",
+      "jaReading": "レインコート",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/raincoat-ai-17262d85d07d.webp"
+    },
+    {
+      "id": "down-jacket",
+      "word": "down jacket",
+      "chinese": "羽絨外套",
+      "chineseDefinition": "有明顯壓線分格、內含羽絨的禦寒短外套，與一般無絮外套區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdaʊn ˌdʒæk.ɪt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "羽絨外套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short, puffy jacket insulated with down and visible stitched sections (baffles), different from an uninsulated jacket.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "中にダウンが詰まっており、ステッチで分かれた膨らみが目立つ防寒用の短いジャケット。普通のジャケットとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a down jacket when it’s cold outside.",
+          "ja": "外が寒いとき、彼はダウンジャケットを着る。",
+          "zh": "外面冷時他會穿羽絨外套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because her down jacket is lightweight but warm, she always packs it for winter trips.",
+          "ja": "ダウンジャケットは軽くて暖かいので、彼女は冬の旅行に必ず持っていく。",
+          "zh": "由於羽絨外套輕便又保暖，她冬天旅行時總會帶著。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ダウンジャケット",
+      "jaReading": "ダウンジャケット",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/down-jacket-ai-834e834cb2ab.webp"
+    },
+    {
+      "id": "suit",
+      "word": "suit",
+      "chinese": "西裝套裝",
+      "chineseDefinition": "同布料、同風格的西裝外套與褲子或裙子，通常成套搭配。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/suːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "西裝套裝",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A matching tailored jacket and trousers or skirt, usually worn together as an outfit.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "同じ生地で作られたジャケットとパンツ、またはスカートの組み合わせ。ふつうは上下をそろえて着る。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She buys a new suit for her job interview.",
+          "ja": "彼女は面接のために新しいスーツを買った。",
+          "zh": "她為了面試買了一套新西裝套裝。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because his interview was at a bank, he checked that his suit was clean the night before.",
+          "ja": "銀行での面接だったので、前の晩にスーツが汚れていないか確認しました。",
+          "zh": "因為面試地點是銀行，他前一晚先確認西裝是否乾淨。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スーツ",
+      "jaReading": "スーツ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/suit-ai-97a8604311a0.webp"
+    },
+    {
+      "id": "necktie",
+      "word": "necktie",
+      "chinese": "領帶",
+      "chineseDefinition": "長條形，綁在襯衫領口下的領帶，請與領結區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈnɛk.taɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "領帶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long, narrow piece of fabric tied under a shirt collar, different from a bow tie.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "シャツの襟元で結び、前に細長く垂らす布製のネクタイ。蝶ネクタイとは形が異なります。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a green necktie to the meeting.",
+          "ja": "彼は会議の時に緑のネクタイを締める。",
+          "zh": "他參加會議時系綠色領帶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since her necktie was wrinkled, she had to iron it before leaving the house.",
+          "ja": "ネクタイにしわが寄っていたので、家を出る前にアイロンをかけた。",
+          "zh": "由於她的領帶有皺，她出門前必須燙平。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ネクタイ",
+      "jaReading": "ネクタイ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/necktie-ai-16aa3c8b5ac0.webp"
+    },
+    {
+      "id": "bow-tie",
+      "word": "bow tie",
+      "chinese": "領結",
+      "chineseDefinition": "在領口打成蝴蝶結形狀的領結，與一般領帶區隔。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈboʊ ˌtaɪ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "領結",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A piece of neckwear tied in a bow shape and worn at the collar, distinct from a long necktie.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "襟元で蝶結びにして結ぶ蝶ネクタイ。一般的な長いネクタイとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a black bow tie to a formal event.",
+          "ja": "彼はフォーマルな場で黒い蝶ネクタイを身につけている。",
+          "zh": "他在正式場合佩戴黑色領結。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the invitation requested bow ties, he borrowed one from his friend.",
+          "ja": "招待状に蝶ネクタイ着用と書いてあったので、友人から借りた。",
+          "zh": "由於邀請函要求配戴領結，他向朋友借了一條。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "蝶ネクタイ",
+      "jaReading": "ちょうネクタイ",
+      "jaReadingSegments": [
+        {
+          "text": "蝶",
+          "ruby": "ちょう"
+        },
+        {
+          "text": "ネクタイ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bow-tie-ai-f9b9da2d1130.webp"
+    },
+    {
+      "id": "school-uniform",
+      "word": "school uniform",
+      "chinese": "學生制服",
+      "chineseDefinition": "供學生於校內穿著的制服，通常有特定樣式和顏色，以識別學校身分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈskuːl ˌjuː.nɪ.fɔːrm/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學生制服",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A standardized set of clothes worn by students at school to indicate membership of a particular school, usually consisting of matching tops and bottoms.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学生が学校で着用する、学校ごとに決まったデザインや色の制服。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She puts on her school uniform every morning before breakfast.",
+          "ja": "彼女は毎朝、朝食前に学校の制服を着ます。",
+          "zh": "她每天早上吃早餐前都會穿上學校制服。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because her school uniform got dirty in art class, she washed it as soon as she got home.",
+          "ja": "美術の授業で学校の制服が汚れたので、帰宅してすぐに洗いました。",
+          "zh": "因為學校制服在美術課弄髒了，她一回家就拿去洗。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "学校の制服",
+      "jaReading": "がっこうのせいふく",
+      "jaReadingSegments": [
+        {
+          "text": "学校",
+          "ruby": "がっこう"
+        },
+        {
+          "text": "の",
+          "ruby": null
+        },
+        {
+          "text": "制服",
+          "ruby": "せいふく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/school-uniform-ai-67c7ad5bb1e5.webp"
+    },
+    {
+      "id": "kimono",
+      "word": "kimono",
+      "chinese": "和服",
+      "chineseDefinition": "以寬腰帶固定的日本傳統服裝；圖中為較正式的和服，與輕便的夏季浴衣有別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kɪˈmoʊ.noʊ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "和服",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A traditional Japanese garment featuring wide sleeves and a broad sash (obi), generally worn for formal occasions. It should be distinguished from the lighter yukata.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "幅の広い帯で着付ける日本の伝統的な衣服です。浴衣よりも改まった場で着るものもあります。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She wore a kimono to the graduation ceremony.",
+          "ja": "彼女は卒業式に着物を着ていった。",
+          "zh": "她穿著和服參加畢業典禮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although he usually wears casual clothes at home, he chose a kimono for the New Year’s visit to the shrine.",
+          "ja": "普段は家でカジュアルな服を着ているが、初詣には着物を選んだ。",
+          "zh": "雖然他在家裡通常穿便服，但新年參拜神社時選擇穿和服。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "着物",
+      "jaReading": "きもの",
+      "jaReadingSegments": [
+        {
+          "text": "着物",
+          "ruby": "きもの"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/kimono-ai-10d67f1645d8.webp"
+    },
+    {
+      "id": "yukata",
+      "word": "yukata",
+      "chinese": "浴衣",
+      "chineseDefinition": "輕便的日本夏季棉質浴衣，配有簡易腰帶（帶），常作為休閒或夏日祭典穿著，需與正式和服區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/juːˈkɑːtə/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "浴衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A lightweight cotton summer robe from Japan, secured with a simple sash (obi), typically worn casually or at summer festivals, and distinct from the formal kimono.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "夏祭りや温泉旅館などで着る、薄手の布で作られた和装です。着物より軽い着心地です。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She wore a yukata to the summer festival.",
+          "ja": "彼女は夏祭りに浴衣を着て行きました。",
+          "zh": "她穿著浴衣去參加夏日祭典。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because it was the night of the summer festival, many people in the town wore yukata instead of regular clothes.",
+          "ja": "その夜は夏祭りだったので、町の多くの人が普通の服ではなく浴衣を着ていた。",
+          "zh": "因為那天晚上有夏祭，鎮上的許多人都穿著浴衣而不是一般衣服。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "浴衣",
+      "jaReading": "ゆかた",
+      "jaReadingSegments": [
+        {
+          "text": "浴衣",
+          "ruby": "ゆかた"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/yukata-ai-f99a4c028e2d.webp"
+    },
+    {
+      "id": "leggings",
+      "word": "leggings",
+      "chinese": "內搭褲",
+      "chineseDefinition": "貼身的褲型服飾，通常作為休閒穿著單穿或搭配其他服裝，與包襪褲襪不同。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɛɡ.ɪŋz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "內搭褲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Close-fitting stretchy trousers that cover the legs, worn as casual wear or under other garments; different from footed tights.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "足にぴったりとフィットするカジュアル用のレギンス。単独や重ね着で使い、タイツとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She wore black leggings to the park.",
+          "ja": "彼女は黒いレギンスをはいて公園に出かけた。",
+          "zh": "她穿著黑色內搭褲去公園。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When it got colder in autumn, he started wearing leggings under his jeans to stay warm.",
+          "ja": "秋になって寒くなると、彼は暖かく過ごすためにジーンズの下にレギンスをはき始めた。",
+          "zh": "到了秋天天氣變冷時，他開始在牛仔褲裡穿內搭褲保暖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "レギンス",
+      "jaReading": "レギンス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/leggings-ai-b3b9fbd58e06.webp"
+    },
+    {
+      "id": "tights",
+      "word": "tights",
+      "chinese": "褲襪",
+      "chineseDefinition": "從腰間一直包覆到腳趾的貼身連褲襪，與無腳設計的內搭褲有區別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/taɪts/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "褲襪",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Close-fitting, footed hosiery that covers from the waist down to the toes; different from footless leggings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ウエストからつま先まで覆う足付きのタイツ。レギンス（足なし）とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "In winter, she wears tights under her skirt to keep warm.",
+          "ja": "冬には、スカートの下にタイツをはいて暖かくしている。",
+          "zh": "冬天她在裙子裡穿褲襪以保暖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the morning commute was colder than she expected, she chose thick tights instead of thin stockings.",
+          "ja": "朝の通勤は思ったより寒かったので、薄いストッキングではなく厚手のタイツを選びました。",
+          "zh": "因為早上的通勤比預想中冷，她選了厚褲襪，而不是薄絲襪。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "タイツ",
+      "jaReading": "タイツ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/tights-ai-705ae2e0f903.webp"
+    },
+    {
+      "id": "underwear",
+      "word": "underwear",
+      "chinese": "內衣褲",
+      "chineseDefinition": "日常穿著於外衣內的貼身衣物，包括內衣與內褲。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʌn.dɚˌwɛr/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "內衣褲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Everyday garments worn next to the skin, under outer clothes; typically refers to underpants and undershirts.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "外の服の下に直接身につける衣類。肌着やパンツなどを含む。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He bought new underwear at the department store.",
+          "ja": "彼はデパートで新しい下着を買った。",
+          "zh": "他在百貨公司買了新的內衣褲。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because her underwear was still drying after laundry, she had to wait before getting dressed.",
+          "ja": "洗濯した下着がまだ乾いていなかったので、彼女は服を着る前に少し待たなければならなかった。",
+          "zh": "由於洗完後內衣褲還沒乾，她必須等一會才能穿衣服。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "下着",
+      "jaReading": "したぎ",
+      "jaReadingSegments": [
+        {
+          "text": "下着",
+          "ruby": "したぎ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/underwear-ai-918d027e3413.webp"
+    },
+    {
+      "id": "swimsuit",
+      "word": "swimsuit",
+      "chinese": "泳衣",
+      "chineseDefinition": "專為游泳設計的服裝，有別於內衣褲，常見於泳池或海灘。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈswɪmˌsuːt/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "泳衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A garment designed specifically for swimming, distinct from underwear, and typically worn at pools or beaches.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "水泳用に作られた衣服で、下着とは異なり、プールや海で着用される。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She packed her swimsuit before going to the pool.",
+          "ja": "彼女はプールに行く前に水着をバッグに入れました。",
+          "zh": "她去游泳池前把泳衣放進包包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because her swimsuit had not dried after yesterday's lesson, she took a spare one to the pool.",
+          "ja": "昨日のレッスンで使った水着がまだ乾いていなかったので、予備の水着をプールに持って行きました。",
+          "zh": "因為昨天上課穿的泳衣還沒乾，她帶了一件備用泳衣去游泳池。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "水着",
+      "jaReading": "みずぎ",
+      "jaReadingSegments": [
+        {
+          "text": "水着",
+          "ruby": "みずぎ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/swimsuit-ai-add847230a89.webp"
+    },
+    {
+      "id": "loafers",
+      "word": "loafers",
+      "chinese": "樂福鞋",
+      "chineseDefinition": "一種無鞋帶、方便套穿的低筒皮鞋，鞋面有裝飾帶或縫線。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈloʊ.fərz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "樂福鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Slip-on low-cut leather shoes, often with a decorative strap or stitching on the vamp, and without laces.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ひもなしで簡単に履ける、甲にストラップや縫い目があるローファー型の革靴。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears loafers to school every day.",
+          "ja": "彼は毎日学校にローファーを履いていく。",
+          "zh": "他每天穿著樂福鞋上學。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since loafers are easy to put on, she chooses them when she’s in a hurry to leave the house.",
+          "ja": "ローファーはすぐに履けるので、急いで家を出るときに彼女はこれを選ぶことが多い。",
+          "zh": "因為樂福鞋穿脫方便，她急著出門時都會選這種鞋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ローファー",
+      "jaReading": "ローファー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/loafers-ai-dda4bfc39cd2.webp"
+    },
+    {
+      "id": "dress-shoes",
+      "word": "dress shoes",
+      "chinese": "皮鞋",
+      "chineseDefinition": "正式場合常穿的全包覆式皮鞋，與樂福鞋及運動鞋有區別。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdrɛs ʃuːz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "皮鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Formal closed leather shoes, commonly worn for business or special occasions; distinct from loafers or sneakers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ビジネスや特別な場で履く、かかとまで覆われたフォーマルな革靴。ローファーやスニーカーとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He put on dress shoes for the wedding.",
+          "ja": "彼は結婚式のために革靴を履いた。",
+          "zh": "他為了婚禮穿上皮鞋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although he prefers sneakers for daily activities, he wore dress shoes to his friend's formal party.",
+          "ja": "普段はスニーカーの方が好きですが、友人のフォーマルなパーティーには革靴を履いて行きました。",
+          "zh": "雖然他平常比較喜歡運動鞋，參加朋友的正式派對時還是穿了皮鞋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "革靴",
+      "jaReading": "かわぐつ",
+      "jaReadingSegments": [
+        {
+          "text": "革靴",
+          "ruby": "かわぐつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dress-shoes-ai-6508b740f507.webp"
+    },
+    {
+      "id": "high-heels",
+      "word": "high heels",
+      "chinese": "高跟鞋",
+      "chineseDefinition": "帶有細長高跟的正式女鞋，外型優雅且明顯高於一般鞋跟。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhaɪˈhiːlz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "高跟鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Dress shoes for women with noticeably raised and narrow heels, giving an elegant appearance.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "かかとが高く細いデザインの女性用フォーマルシューズで、エレガントな印象を与える。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She wore high heels to the dinner party.",
+          "ja": "彼女はディナーパーティーにハイヒールを履いて行った。",
+          "zh": "她穿著高跟鞋參加晚宴。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although high heels look stylish, she chooses flats for work because they are more comfortable during long hours of standing.",
+          "ja": "ハイヒールはおしゃれだが、仕事で長時間立つ必要があるため、彼女は快適なフラットシューズを選んでいる。",
+          "zh": "雖然高跟鞋看起來時尚，但她因為上班需要長時間站立而選擇平底鞋以求舒適。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ハイヒール",
+      "jaReading": "ハイヒール",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/high-heels-ai-7e07a161dfca.webp"
+    },
+    {
+      "id": "flip-flops",
+      "word": "flip-flops",
+      "chinese": "夾腳拖鞋",
+      "chineseDefinition": "平底、前端有Y字型夾腳帶的拖鞋，通常用於海灘或休閒，與寬帶涼鞋區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈflɪp.flɒps/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "夾腳拖鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Flat, open footwear with a Y-shaped thong that goes between the toes, mainly worn casually or at the beach. Not the same as a broad-strap sandal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "足の指の間にY字型のストラップがある平らなサンダルで、主にビーチやカジュアルな場で履く。幅広ストラップのサンダルとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "It's hot today, so I wore flip-flops to the supermarket.",
+          "ja": "今日は暑いので、スーパーに行くときにビーチサンダルを履いた。",
+          "zh": "今天天氣熱，我穿著夾腳拖鞋去超市。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After leaving the beach, he rinsed the sand off his flip-flops before getting into the car.",
+          "ja": "海辺を出た後、車に乗る前にビーチサンダルの砂を洗い流しました。",
+          "zh": "離開海邊後，他上車前沖掉了夾腳拖鞋上的沙子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ビーチサンダル",
+      "jaReading": "ビーチサンダル",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/flip-flops-ai-f8f618101048.webp"
+    },
+    {
+      "id": "baseball-cap",
+      "word": "baseball cap",
+      "chinese": "棒球帽",
+      "chineseDefinition": "有軟帽頂和前方突出的帽簷的帽子，多用於遮陽或搭配休閒穿著，與寬帽檐帽區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbeɪs.bɔːl ˌkæp/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "棒球帽",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soft cap with a rounded crown and a stiff, projecting visor at the front, commonly used for sun protection or casual wear. Not the same as a broad-brim hat.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "柔らかいクラウンと前に突き出たバイザーのある帽子。主に日除けやカジュアルなファッションに使われる。つばの広い帽子とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wore a baseball cap to the park.",
+          "ja": "彼は公園へキャップをかぶって行きました。",
+          "zh": "他戴著棒球帽去公園。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even though the sun was strong at the outdoor event, she chose a baseball cap instead of a hat with a wider brim.",
+          "ja": "屋外イベントは日差しが強かったけれど、彼女はつばの広い帽子ではなくキャップを選びました。",
+          "zh": "雖然戶外活動的陽光很強，她還是選了棒球帽，而不是帽檐更寬的帽子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "キャップ",
+      "jaReading": "キャップ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/baseball-cap-ai-0c347ecbda4b.webp"
+    },
+    {
+      "id": "beanie",
+      "word": "beanie",
+      "chinese": "針織帽",
+      "chineseDefinition": "貼合頭部、沒有帽簷的針織帽，用於保暖。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbiːni/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "針織帽",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A close-fitting knitted hat without a visor or brim, mainly worn for warmth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "頭にぴったりとした、つばがないニット製の帽子。防寒のためによく使われる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He always wears a beanie when he goes out in winter.",
+          "ja": "冬になると、彼は外出するときいつもニット帽をかぶります。",
+          "zh": "冬天，他出門時總是戴著針織帽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even when the weather warms up in spring, she keeps wearing her beanie because she thinks it’s stylish.",
+          "ja": "春になって暖かくなっても、彼女はニット帽がおしゃれだと思ってかぶり続けている。",
+          "zh": "她即使在春天氣溫升高時，也因為覺得針織帽很時髦而繼續戴著它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ニット帽",
+      "jaReading": "ニットぼう",
+      "jaReadingSegments": [
+        {
+          "text": "ニット",
+          "ruby": null
+        },
+        {
+          "text": "帽",
+          "ruby": "ぼう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/beanie-ai-63f666c9f925.webp"
+    },
+    {
+      "id": "tote-bag",
+      "word": "tote bag",
+      "chinese": "托特包",
+      "chineseDefinition": "有兩條平行提把、開口無蓋的手提袋，常用於購物或攜帶日用品，與結構明顯的手提包不同。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtoʊt ˌbæɡ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "托特包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An open-top carry bag with two parallel handles, typically used for shopping or carrying daily items; different from a structured handbag.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "上部が開いていて、平行の持ち手が二本ついたバッグ。買い物や普段使いによく使われる。形がしっかりしたハンドバッグとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She takes a tote bag to the supermarket.",
+          "ja": "彼女はトートバッグを持ってスーパーへ行きます。",
+          "zh": "她帶著托特包去超市。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even though she owns a handbag, she chose a tote bag because she needed space for textbooks and a water bottle.",
+          "ja": "ハンドバッグを持っているけれど、教科書や水筒を入れるために容量が大きいトートバッグを選んだ。",
+          "zh": "雖然她有手提包，但因為要裝進課本和水壺，所以還是選了容量大的托特包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "トートバッグ",
+      "jaReading": "トートバッグ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/tote-bag-ai-aa13effece71.webp"
+    },
+    {
+      "id": "handbag",
+      "word": "handbag",
+      "chinese": "手提包",
+      "chineseDefinition": "結構較挺、適合手持的小或中型包包，用於裝個人物品，與托特包區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhænd.bæɡ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手提包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A structured small-to-medium size bag carried by hand, used for carrying personal items; distinct from a tote bag.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "形がしっかりした、小型から中型の手で持つバッグ。貴重品などを入れるのに使われる。トートバッグとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Mom picked an elegant handbag to go with her new dress.",
+          "ja": "母は新しいワンピースに合わせて、上品なハンドバッグを選んだ。",
+          "zh": "媽媽挑了一個優雅的手提包搭配她的新洋裝。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even though a tote bag can carry more things, she prefers a structured handbag because it looks more formal.",
+          "ja": "トートバッグはたくさん入るけど、形がしっかりしたハンドバッグの方がフォーマルに見えるので、彼女はそちらを好む。",
+          "zh": "雖然托特包能裝更多東西，她還是更喜歡結構硬挺的手提包，因為看起來更正式。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ハンドバッグ",
+      "jaReading": "ハンドバッグ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/handbag-ai-5705d62075ad.webp"
+    },
+    {
+      "id": "backpack",
+      "word": "backpack",
+      "chinese": "後背包",
+      "chineseDefinition": "有兩條背帶，背在背上的包包，適合裝較重或較多物品。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæk.pæk/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "後背包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bag with two shoulder straps, worn on the back for carrying heavier or bulkier items.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ふたつの肩ひもがついていて、背中に背負うタイプのバッグ。重いものやたくさんの荷物を運ぶのに便利。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He takes a backpack to school every day.",
+          "ja": "彼は毎日リュックを背負って学校へ行きます。",
+          "zh": "他每天背著後背包上學。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Even when she has to walk a long time while shopping, she chooses a backpack because it distributes the weight evenly.",
+          "ja": "長時間歩いて買い物するときでも、重さを均等に分散できるので彼女はリュックを選ぶ。",
+          "zh": "即使逛街要走很久，她還是選擇後背包，因為能平均分擔重量。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "リュック",
+      "jaReading": "リュック",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/backpack-ai-4183aeb0ad4f.webp"
+    },
+    {
+      "id": "sunglasses",
+      "word": "sunglasses",
+      "chinese": "太陽眼鏡",
+      "chineseDefinition": "有深色鏡片，主要用於遮擋陽光的眼鏡，與普通近視眼鏡不同。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsʌnˌɡlæs.ɪz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "太陽眼鏡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Eyewear with dark-tinted lenses, mainly for protecting the eyes from sunlight; not to be confused with prescription glasses.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "レンズが濃い色のサングラスで、主に日差しを防ぐために使う。普通のメガネとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He always wears sunglasses when it’s sunny.",
+          "ja": "晴れた日はいつもサングラスをかけて出かける。",
+          "zh": "天氣晴朗時他總是戴著太陽眼鏡出門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "She brought her sunglasses even though she was just taking the subway, because the sunlight outside was very strong.",
+          "ja": "地下鉄に乗るだけでしたが、外の日差しが強かったのでサングラスを持って行きました。",
+          "zh": "雖然只是搭地鐵，她還是帶了太陽眼鏡，因為外面的陽光很強。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "サングラス",
+      "jaReading": "サングラス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/sunglasses-ai-818559246efa.webp"
+    },
+    {
+      "id": "necklace",
+      "word": "necklace",
+      "chinese": "項鍊",
+      "chineseDefinition": "戴在脖子上的首飾，通常為鏈狀或帶狀，與圍巾區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈnɛk.lɪs/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "項鍊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Jewelry worn around the neck, usually chain or string-based, different from a scarf.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "首にかけるアクセサリー。チェーンや紐で作られることが多く、マフラーとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He gave his girlfriend a delicate necklace as a birthday present.",
+          "ja": "彼は彼女に誕生日プレゼントとして繊細なネックレスを贈った。",
+          "zh": "他送給女友一條精緻的項鍊作為生日禮物。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although the necklace was beautiful, she didn’t wear it because she was afraid it would catch on her clothes at work.",
+          "ja": "そのネックレスは素敵だったけど、仕事中に服に引っかかるのが心配で彼女はつけなかった。",
+          "zh": "雖然那條項鍊很漂亮，她沒有戴，因為怕上班時勾到衣服。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ネックレス",
+      "jaReading": "ネックレス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/necklace-ai-850a769f0238.webp"
+    },
+    {
+      "id": "clip-on-earrings",
+      "word": "clip-on earrings",
+      "chinese": "夾式耳環",
+      "chineseDefinition": "一對成套、可夾在耳垂上的夾式耳環，若明顯可見扣具，則區分於穿洞式耳環。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɪəˌrɪŋz/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "夾式耳環",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pair of clip-on earrings that attach to the earlobe without piercing, easily distinguished from pierced earrings if the clasp is visible.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "耳たぶを挟むタイプのペアのイヤリング。付け具が見える場合はピアスと区別できる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She tried on a pair of clip-on earrings.",
+          "ja": "彼女は一対のイヤリングを試しにつけました。",
+          "zh": "她試戴了一對夾式耳環。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although she has pierced ears, she chose clip-on earrings because they matched her dress.",
+          "ja": "耳にピアスの穴はありますが、ワンピースに合うのでイヤリングを選びました。",
+          "zh": "雖然她有耳洞，還是因為這對夾式耳環和洋裝相配而選了它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "イヤリング",
+      "jaReading": "イヤリング",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/clip-on-earrings-ai-9aa9fd8f4024.webp"
+    },
+    {
+      "id": "wristwatch",
+      "word": "wristwatch",
+      "chinese": "手錶",
+      "chineseDefinition": "帶有錶帶、戴在手腕上的計時器，用於查看時間，與手鍊區分。",
+      "category": "clothing",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrɪst.wɒtʃ/",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手錶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A timepiece with a strap worn on the wrist, used for telling time; not the same as a bracelet.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "腕に巻くためのバンドが付いた時計。時間を確認するために使う。ブレスレットとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He wears a wristwatch every day.",
+          "ja": "彼は毎日腕時計をつけています。",
+          "zh": "他每天都戴著手錶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although she can check the time on her phone, she prefers a wristwatch because it’s more convenient during meetings.",
+          "ja": "携帯電話で時間を見られるけど、会議中は腕時計の方が便利なので彼女はそれが好きだ。",
+          "zh": "雖然手機上能看時間，她還是喜歡手錶，因為開會時這樣更方便。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "腕時計",
+      "jaReading": "うでどけい",
+      "jaReadingSegments": [
+        {
+          "text": "腕時計",
+          "ruby": "うでどけい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/wristwatch-ai-3c3f9e45cb99.webp"
+    }
+  ]
+}

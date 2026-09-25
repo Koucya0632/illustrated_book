@@ -269,6 +269,7 @@ const EXAMPLE_SPAN_OVERLAY_PATHS = [
   new URL("../data/example-spans-alcoholic-drinks-2026-09.json", import.meta.url),
   new URL("../data/example-spans-convenience-store-2026-09.json", import.meta.url),
   new URL("../data/example-spans-drugstore-2026-09.json", import.meta.url),
+  new URL("../data/example-spans-clothing-2026-09.json", import.meta.url),
 ];
 
 function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {

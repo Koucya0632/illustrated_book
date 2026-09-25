@@ -14,6 +14,8 @@ export interface AudioGenerationOptions {
   limit: number | null;
   wordId: string | null;
   locale: AudioLocale | null;
+  speechText: string | null;
+  headwordOnly: boolean;
 }
 
 export interface AudioArtifact {
@@ -23,8 +25,8 @@ export interface AudioArtifact {
 
 export const AUDIO_LOCALES = ["en-US", "en-GB", "ja-JP"] as const;
 const AUDIO_LOCALE_SET = new Set<string>(AUDIO_LOCALES);
-const VALUE_OPTIONS = new Set(["--limit", "--word-id", "--locale"]);
-const FLAG_OPTIONS = new Set(["--refresh", "--dry-run"]);
+const VALUE_OPTIONS = new Set(["--limit", "--word-id", "--locale", "--speech-text"]);
+const FLAG_OPTIONS = new Set(["--refresh", "--dry-run", "--headword-only"]);
 
 function valueFor(argv: string[], name: string): string | null {
   const arg = argv.find((value) => value.startsWith(`${name}=`));
@@ -63,6 +65,10 @@ export function parseAudioGenerationOptions(argv: string[]): AudioGenerationOpti
   if (argv.some((arg) => arg.startsWith("--word-id=")) && !wordId) {
     throw new Error("--word-id requires a value");
   }
+  const speechText = valueFor(argv, "--speech-text");
+  if (argv.some((arg) => arg.startsWith("--speech-text=")) && !speechText) {
+    throw new Error("--speech-text requires a value");
+  }
 
   return {
     refresh: argv.includes("--refresh"),
@@ -70,6 +76,8 @@ export function parseAudioGenerationOptions(argv: string[]): AudioGenerationOpti
     limit: parsedLimit,
     wordId,
     locale: (rawLocale as AudioLocale | null) ?? null,
+    speechText,
+    headwordOnly: argv.includes("--headword-only"),
   };
 }
 
@@ -124,6 +132,17 @@ export function assertAudioSelection(
   selectedJobs: AudioJob[],
   options: AudioGenerationOptions,
 ): void {
+  if (
+    options.speechText &&
+    (!options.wordId || options.locale !== "ja-JP" || !options.headwordOnly || !options.refresh)
+  ) {
+    throw new Error(
+      "--speech-text requires --refresh, --word-id, --locale=ja-JP, and --headword-only",
+    );
+  }
+  if (options.headwordOnly && (!options.wordId || options.locale !== "ja-JP" || options.limit !== null)) {
+    throw new Error("--headword-only requires --word-id, --locale=ja-JP, and no --limit");
+  }
   if (!options.wordId) return;
 
   const wordJobs = allJobs.filter((job) => job.wordId === options.wordId);

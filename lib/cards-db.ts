@@ -1,12 +1,9 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
 import { getSql } from "./db";
-import {
-  selectDistractors,
-  type CandidateMeta,
-  type RelationEdge,
-  type TargetMeta,
-} from "./distractors";
+import { buildChoiceCandidates, candidateWord, type TargetMeta } from "./distractors";
+import { readChoiceCatalog } from "./study-choice-catalog";
+import { assembleStudyChoices, choicesConflict, choiceReserve, freshChoiceSeed, prepareChoiceCandidates, type ChoiceLanguage, type StudyChoiceCandidate } from "./study-choices";
 import type { Rating, Status } from "./srs";
 import type { FuriganaSegment } from "./kana";
 import { hintDefinition } from "./study-hint";
@@ -55,15 +52,15 @@ export interface DueCard {
     /// rule rather than two.
     definition?: string;
   };
-  choices?: string[]; // multiple-choice options (shuffled, includes correct back)
+  choices?: string[]; // Four options, including the answer; legacy clients keep using this.
+  choiceCandidates?: StudyChoiceCandidate[];
+  choiceExclusions?: string[];
   // Spelling MCQ options for the new-learn Step 3 ("pick the correct
   // spelling"). Shuffled, contains the correct back plus 3 algorithmic
   // misspellings from lib/misspellings. Same attach trigger as `choices`.
   spellingChoices?: string[];
   mastery?: number;  // current (decayed) mastery for this word, 0-100
 }
-
-const MCQ_TYPES = new Set(["回想卡", "填空卡"]);
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -115,127 +112,46 @@ export async function attachMasteryAndSort(
   return due;
 }
 
-// Candidate pool for a deck-set: every published card in those decks, joined
-// with its word. Identical for every user/request that studies the same
-// deck(s) — only admin word/card edits change it — so it's cached instead of
-// re-queried on every /api/study/queue hit. `["words"]` is the same
-// invalidation tag words-db.ts busts on every write (see `bustCaches`), and
-// `revalidate` is a belt-and-suspenders fallback for any write path that
-// forgets to bust it.
-const getCandidatePool = unstable_cache(
-  async (decks: string[]) => {
-    const sql = requireSql();
-    return (await sql`
-      SELECT c.id AS card_id, c.back, c.deck_key, c.word_id,
-             w.word AS w_word, w.part_of_speech AS pos, w.category AS cat,
-             w.cefr_level AS cefr, w.pronunciation AS pron
-      FROM cards c
-      JOIN words w ON w.id = c.word_id
-      WHERE c.deck_key = ANY(${decks}::text[])
-        AND w.deleted_at IS NULL
-        AND w.status = 'published'
-    `) as unknown as Array<{
-      card_id: number;
-      back: string;
-      deck_key: string;
-      word_id: string;
-      w_word: string;
-      pos: string | null;
-      cat: string | null;
-      cefr: string | null;
-      pron: string | null;
-    }>;
-  },
-  ["choices-candidate-pool"],
-  { tags: ["words"], revalidate: 300 },
-);
+// Published vocabulary, shared across users. Cache JSON rather than Map so
+// Next's persistent cache retains the complete multilingual pool.
+const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[]) => {
+  const catalog = await readChoiceCatalog(requireSql(), languages);
+  return { pools: Object.fromEntries(catalog.pools), relations: catalog.relations };
+}, ["study-choice-catalog-v2"], { tags: ["words"], revalidate: 300 });
 
-// All confusing/synonym/see-also edges — a small, curated, admin-authored
-// table. Cached wholesale (same "words" tag) and filtered to the current
-// queue's target words in memory, instead of re-querying per request.
-const getAllChoiceRelations = unstable_cache(
-  async (): Promise<RelationEdge[]> => {
-    const sql = requireSql();
-    const rows = (await sql`
-      SELECT source_word_id AS source, target_word_id AS target, relation_type AS type
-      FROM word_relations
-      WHERE relation_type IN ('confusing','synonym','see-also')
-    `) as unknown as Array<{ source: string; target: string; type: string }>;
-    return rows.map((r) => ({
-      source: String(r.source),
-      target: String(r.target),
-      type: String(r.type),
-    }));
-  },
-  ["choices-relations"],
-  { tags: ["words"], revalidate: 300 },
-);
-
-// Attach 3 distractors + the correct back to every MCQ card in the queue.
-// Distractors are picked by the metadata-aware scorer in lib/distractors —
-// curated relations + same category > same POS + spelling/pronunciation
-// similarity. Pool + relations are cached (see above), so this is normally
-// zero DB round-trips; the per-card scoring is O(queueSize × poolSize) in
-// memory and trivially fast at our scale (~20 × ~470).
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
-  const mcq = due.filter((d) => MCQ_TYPES.has(d.card.card_type));
-  if (mcq.length === 0) return due;
-
-  // Sorted so "image-en, image-ja" and "image-ja, image-en" hit the same
-  // cache entry regardless of the queue's card order.
-  const decks = Array.from(new Set(mcq.map((d) => d.card.deck_key))).sort();
-  const targetWordIds = Array.from(new Set(mcq.map((d) => d.word.id)));
-
-  // 1. Candidate pool: every card in the relevant decks, joined with its
-  //    word so each candidate knows its POS / category / CEFR / IPA / lemma.
-  const poolRows = await getCandidatePool(decks);
-
-  const poolsByDeck = new Map<string, CandidateMeta[]>();
-  for (const r of poolRows) {
-    const meta: CandidateMeta = {
-      cardId: Number(r.card_id),
-      back: String(r.back),
-      wordId: String(r.word_id),
-      word: String(r.w_word ?? ""),
-      pos: r.pos ?? "",
-      category: r.cat ?? "",
-      cefr: r.cefr ?? null,
-      pronunciation: r.pron ?? "",
-    };
-    const deck = String(r.deck_key);
-    const arr = poolsByDeck.get(deck) ?? [];
-    arr.push(meta);
-    poolsByDeck.set(deck, arr);
-  }
-
-  // 2. Relations: confusing / synonym / see-also edges touching any of the
-  //    queue's target words, in either direction. Filtered in memory from
-  //    the cached full set instead of a per-request WHERE ANY(...) query.
-  const targetWordIdSet = new Set(targetWordIds);
-  const relations: RelationEdge[] =
-    targetWordIds.length === 0
-      ? []
-      : (await getAllChoiceRelations()).filter(
-          (r) => targetWordIdSet.has(r.source) || targetWordIdSet.has(r.target),
-        );
-
-  // 3. Score + pick per card. Spelling distractors come from a separate
-  //    algorithmic generator (lib/misspellings) — no DB hit, so we slot
-  //    them in beside `choices` without changing the query shape.
+  if (!due.length) return due;
+  const languages = [...new Set(due.map(d => d.word.target_language))].sort();
+  const { pools, relations } = await getChoiceCatalog(languages);
   const { generateMisspellings } = await import("./misspellings");
-  for (const d of mcq) {
-    const pool = poolsByDeck.get(d.card.deck_key) ?? [];
-    const self = pool.find((c) => c.cardId === d.card.id);
-    if (!self) continue;
-    const target: TargetMeta = { ...self, deckKey: d.card.deck_key };
-    const distractors = selectDistractors(target, pool, relations, 3);
-    if (distractors.length > 0) {
-      d.choices = shuffle([d.card.back, ...distractors]);
-    }
+  for (const d of due) {
+    const language = d.word.target_language;
+    const pool = pools[language] ?? [];
+    const self = pool.find(c => c.wordId === d.word.id);
+    const target: TargetMeta = {
+      cardId: d.word.id, wordId: d.word.id, word: d.word.word, back: d.word.word,
+      category: d.word.category, pos: self?.pos ?? "", cefr: self?.cefr ?? null,
+      pronunciation: d.word.pronunciation, language, gloss: self?.gloss ?? d.word.chinese,
+      exclusions: self?.exclusions ?? [], deckKey: d.card.deck_key,
+    };
+    const answer = candidateWord(target);
+    // Preserve the same exclusion boundary when a client tops up an old cache.
+    d.choiceExclusions = [...new Set([
+      ...(target.exclusions ?? []),
+      ...pool.filter(c => choicesConflict(answer, candidateWord(c))).map(c => c.back),
+    ])];
+    answer.exclusions = d.choiceExclusions;
+    const reserve = choiceReserve.map(w => {
+      const live = pool.find(c => c.wordId === w.wordId && c.language === w.language);
+      return { ...w, gloss: [w.gloss, live?.gloss].filter(Boolean).join(" / "), exclusions: [...(w.exclusions ?? []), ...(live?.exclusions ?? [])], tier: 4, weight: 1 };
+    });
+    d.choiceCandidates = prepareChoiceCandidates(answer, [...buildChoiceCandidates(target, pool, relations), ...reserve]);
+    d.choices = assembleStudyChoices(answer, d.choiceCandidates, freshChoiceSeed());
+    // The headword is what native clients grade; stale card backs must not
+    // introduce a second spelling as an apparent wrong answer on the browser.
+    d.card = { ...d.card, back: d.word.word };
     const misspells = generateMisspellings(d.card.back, 3);
-    if (misspells.length > 0) {
-      d.spellingChoices = shuffle([d.card.back, ...misspells]);
-    }
+    if (misspells.length) d.spellingChoices = shuffle([d.card.back, ...misspells]);
   }
   return due;
 }

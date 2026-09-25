@@ -58,6 +58,8 @@ test("generation options default to an idempotent live run", () => {
     limit: null,
     wordId: null,
     locale: null,
+    speechText: null,
+    headwordOnly: false,
   });
 });
 
@@ -76,8 +78,28 @@ test("generation options parse a safe targeted dry run", () => {
       limit: 1,
       wordId: "access-card",
       locale: "ja-JP",
+      speechText: null,
+      headwordOnly: false,
     },
   );
+});
+
+test("a Japanese pronunciation override stays scoped to one refreshed headword clip", () => {
+  const options = parseAudioGenerationOptions([
+    "--refresh",
+    "--word-id=bathroom-cabinet",
+    "--locale=ja-JP",
+    "--headword-only",
+    "--speech-text=せんめんじょのしゅうのうだな",
+  ]);
+  const jobs = buildAudioJobs([], [
+    { word_id: "bathroom-cabinet", term: "洗面所の収納棚" },
+  ]);
+
+  assert.deepEqual(selectAudioJobs(jobs, new Set(), options), [
+    { wordId: "bathroom-cabinet", locale: "ja-JP", text: "洗面所の収納棚" },
+  ]);
+  assert.doesNotThrow(() => assertAudioSelection(jobs, selectAudioJobs(jobs, new Set(), options), options));
 });
 
 test("generation options reject invalid or misspelled arguments", () => {
@@ -86,7 +108,22 @@ test("generation options reject invalid or misspelled arguments", () => {
   assert.throws(() => parseAudioGenerationOptions(["--limit"]), /requires a value/);
   assert.throws(() => parseAudioGenerationOptions(["--locale=fr-FR"]), /unsupported locale/);
   assert.throws(() => parseAudioGenerationOptions(["--word-id="]), /requires a value/);
+  assert.throws(() => parseAudioGenerationOptions(["--speech-text="]), /requires a value/);
   assert.throws(() => parseAudioGenerationOptions(["--refesh"]), /unsupported option/);
+});
+
+test("a pronunciation override cannot broaden its target or touch example clips", () => {
+  const jobs = buildAudioJobs([], [
+    { word_id: "bathroom-cabinet", term: "洗面所の収納棚" },
+  ]);
+  const wrongScope = parseAudioGenerationOptions([
+    "--refresh",
+    "--word-id=bathroom-cabinet",
+    "--locale=ja-JP",
+    "--speech-text=せんめんじょのしゅうのうだな",
+  ]);
+
+  assert.throws(() => assertAudioSelection(jobs, selectAudioJobs(jobs, new Set(), wrongScope), wrongScope), /headword-only/);
 });
 
 test("buildAudioJobs trims values, omits blanks, and de-duplicates identical jobs", () => {

@@ -260,13 +260,6 @@ export async function GET(req: Request) {
     await attachMasteryAndSort(userId, queue, masteryRows);
     const masteryMs = Math.round(performance.now() - tMastery);
 
-    // New-learn now uses 4-choice MCQs in Step 2 (英文辨認) and Step 3
-    // (拼字), so it needs `choices` and `spellingChoices` attached too.
-    // The +1 query for the distractor pool is paid every queue load.
-    const tChoices = performance.now();
-    await attachChoices(queue);
-    const choicesMs = Math.round(performance.now() - tChoices);
-
     // A custom item can carry more than one card (image_recall + flashcard),
     // but the unified study flow reviews a word once and the queue is keyed by
     // word_id client-side. Collapse to one card per item — keep the first,
@@ -305,6 +298,10 @@ export async function GET(req: Request) {
       : localizedPublic.concat(localizedAtlas, localizedSaved)
     ).slice(0, limit);
     const localizeMs = Math.round(performance.now() - tLocalize);
+    // Attach to the final queue, including custom and saved community words.
+    const tChoices = performance.now();
+    await attachChoices(localized);
+    const choicesMs = Math.round(performance.now() - tChoices);
 
     // 聽句's payload. Only the public catalogue carries authored examples —
     // 自製圖鑑 and 物見 cards have none, which is why the listening question

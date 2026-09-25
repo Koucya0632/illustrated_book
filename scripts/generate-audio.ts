@@ -17,6 +17,9 @@
 //     --refresh --word-id=access-card --locale=ja-JP
 //   node --env-file=.env.local --import tsx scripts/generate-audio.ts \
 //     --dry-run --refresh --word-id=access-card --locale=ja-JP
+//   node --env-file=.env.local --import tsx scripts/generate-audio.ts \
+//     --refresh --word-id=bathroom-cabinet --locale=ja-JP --headword-only \
+//     --speech-text=せんめんじょのしゅうのうだな
 //
 // Requires: DATABASE_URL, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
 // GOOGLE_TTS_API_KEY (a Google Cloud API key with the Text-to-Speech API
@@ -212,6 +215,9 @@ async function main() {
     if (options.dryRun) {
       for (const job of jobs) {
         console.log(`  • ${job.wordId} ${job.locale}: ${job.text}`);
+        if (options.speechText) {
+          console.log(`    spoken as: ${options.speechText}`);
+        }
       }
     }
 
@@ -248,7 +254,7 @@ async function main() {
       const { supabase, apiKey } = await ensureClients();
       const key = `${job.wordId} ${job.locale}`;
       try {
-        const mp3 = await synthesize(apiKey, job.locale, job.text);
+        const mp3 = await synthesize(apiKey, job.locale, options.speechText ?? job.text);
         const artifact = buildAudioArtifact(job, mp3);
         const path = artifact.storagePath;
         try {
@@ -263,6 +269,7 @@ async function main() {
         const generatedAt = new Date().toISOString();
         const metadata = {
           sourceText: job.text,
+          ...(options.speechText ? { speechText: options.speechText } : {}),
           voice: voiceFor(job.locale).name,
           sha256: artifact.sha256,
           generatedAt,
@@ -300,6 +307,18 @@ async function main() {
     }
 
     console.log(`[generate-audio] done: ${ok} generated, ${failures.length} failed`);
+
+    if (options.headwordOnly) {
+      console.log("[generate-audio] headword-only run: example clips were not changed");
+      if (failures.length) {
+        for (const f of failures) console.log(`  - ${f.key}: ${f.reason}`);
+        throw new Error(`${failures.length} audio clip${failures.length === 1 ? "" : "s"} failed`);
+      }
+      if (options.dryRun) {
+        console.log("[generate-audio] dry run: no audio, storage, or database changes were made");
+      }
+      return;
+    }
 
     // ---- Pass 2: example-sentence clips (聽句) -------------------------
     //

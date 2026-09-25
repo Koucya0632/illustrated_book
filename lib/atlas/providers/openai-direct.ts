@@ -6,6 +6,7 @@ import {
 } from "../vision-provider";
 import { ATLAS_MODEL_OUTPUT_JSON_SCHEMA, AtlasModelOutputSchema } from "../schema";
 import { normalizeAtlasLabel } from "../normalize";
+import { estimateOpenAiCostUsd } from "../ai-usage";
 
 interface OpenAIResponse {
   output_text?: string;
@@ -54,31 +55,6 @@ function extractRefusal(raw: OpenAIResponse): string {
 function modelFor(stage: "primary" | "fine" | "escalated"): string | null {
   if (stage === "escalated") return process.env.ATLAS_OPENAI_ESCALATE_MODEL || null;
   return process.env.ATLAS_OPENAI_FINE_MODEL || null;
-}
-
-// USD per 1M tokens (input, output), for the estimated-cost column in the
-// admin funnel. Longest-prefix entries ("-mini" / "-nano") must come before
-// their base model. Unknown models just skip the estimate.
-const MODEL_PRICES_PER_MTOK: Array<[prefix: string, input: number, output: number]> = [
-  ["gpt-4o-mini", 0.15, 0.6],
-  ["gpt-4o", 2.5, 10],
-  ["gpt-4.1-mini", 0.4, 1.6],
-  ["gpt-4.1-nano", 0.1, 0.4],
-  ["gpt-4.1", 2, 8],
-  ["gpt-5-mini", 0.25, 2],
-  ["gpt-5-nano", 0.05, 0.4],
-  ["gpt-5", 1.25, 10],
-];
-
-function estimateCostUsd(
-  model: string,
-  inputTokens: number | undefined,
-  outputTokens: number | undefined,
-): number | undefined {
-  const price = MODEL_PRICES_PER_MTOK.find(([prefix]) => model.startsWith(prefix));
-  if (!price || (inputTokens == null && outputTokens == null)) return undefined;
-  const usd = ((inputTokens ?? 0) * price[1] + (outputTokens ?? 0) * price[2]) / 1_000_000;
-  return Math.round(usd * 1e6) / 1e6;
 }
 
 function detailFor(stage: "primary" | "fine" | "escalated"): "low" | "high" | "auto" {
@@ -221,7 +197,7 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
         inputTokens: raw.usage?.input_tokens,
         outputTokens: raw.usage?.output_tokens,
         imageCount: 1,
-        estimatedCostUsd: estimateCostUsd(model, raw.usage?.input_tokens, raw.usage?.output_tokens),
+        estimatedCostUsd: estimateOpenAiCostUsd(model, raw.usage?.input_tokens, raw.usage?.output_tokens),
         latencyMs: Math.round(performance.now() - t0),
       },
       raw,

@@ -1,6 +1,7 @@
 import "server-only";
 import { generateObject, type LanguageModel } from "ai";
 import { z } from "zod";
+import type { AiUsageTally } from "@/lib/atlas/ai-usage";
 
 // AI-generated enrichment for a single word. Runs through the Vercel AI Gateway
 // (a plain "creator/model" string routes via the gateway using AI_GATEWAY_API_KEY
@@ -68,13 +69,18 @@ const SYSTEM =
 
 export async function enrichWord(
   input: EnrichInput,
-  opts: { model?: LanguageModel } = {},
+  opts: { model?: LanguageModel; tally?: AiUsageTally } = {},
 ): Promise<EnrichResult> {
-  const { object } = await generateObject({
+  const { object, usage, response } = await generateObject({
     model: opts.model || MODEL,
     schema: EnrichSchema,
     system: SYSTEM,
     prompt: `Word: ${input.word}\nPart of speech: ${input.partOfSpeech}\nMeaning (zh): ${input.chinese}`,
+  });
+  opts.tally?.add({
+    modelId: response.modelId,
+    inputTokens: usage.inputTokens,
+    outputTokens: usage.outputTokens,
   });
   return object;
 }

@@ -5,6 +5,10 @@ export const dynamic = "force-dynamic";
 
 const WINDOWS = [7, 30, 90];
 
+function tokens(n: number): string {
+  return Math.round(n).toLocaleString("en-US");
+}
+
 function pct(part: number, whole: number): string {
   if (whole <= 0) return "—";
   return `${((part / whole) * 100).toFixed(1)}%`;
@@ -57,6 +61,8 @@ export default async function AdminAtlasFunnelPage(
           label="平均延遲"
           value={ai.avgLatencyMs == null ? "—" : `${Math.round(ai.avgLatencyMs)} ms`}
         />
+        <Stat label="輸入 token" value={tokens(ai.inputTokens)} />
+        <Stat label="輸出 token" value={tokens(ai.outputTokens)} />
       </section>
 
       <section className="rounded-xl2 bg-white p-5 shadow-card">
@@ -67,13 +73,15 @@ export default async function AdminAtlasFunnelPage(
               <th className="py-1">operation</th>
               <th className="py-1">呼叫</th>
               <th className="py-1">成功率</th>
+              <th className="py-1">輸入 token</th>
+              <th className="py-1">輸出 token</th>
               <th className="py-1">成本</th>
             </tr>
           </thead>
           <tbody>
             {ai.byOperation.length === 0 && (
               <tr>
-                <td colSpan={4} className="py-3 text-muted">
+                <td colSpan={6} className="py-3 text-muted">
                   這段期間沒有 AI 呼叫。
                 </td>
               </tr>
@@ -83,11 +91,57 @@ export default async function AdminAtlasFunnelPage(
                 <td className="py-1.5 font-medium text-ink">{op.operation}</td>
                 <td className="py-1.5">{op.calls}</td>
                 <td className="py-1.5">{(op.successRate * 100).toFixed(1)}%</td>
+                <td className="py-1.5">{tokens(op.inputTokens)}</td>
+                <td className="py-1.5">{tokens(op.outputTokens)}</td>
                 <td className="py-1.5">${op.costUsd.toFixed(4)}</td>
               </tr>
             ))}
           </tbody>
         </table>
+      </section>
+
+      <section className="rounded-xl2 bg-white p-5 shadow-card">
+        <h2 className="text-lg font-bold text-ink">依模型</h2>
+        <p className="mt-1 text-xs text-muted">
+          「未計價」是成功但沒有成本估算的呼叫；不為 0 時，總成本會低估實際花費。
+        </p>
+        <div className="overflow-x-auto">
+          <table className="mt-3 w-full text-sm">
+            <thead>
+              <tr className="text-left text-muted">
+                <th className="py-1">provider</th>
+                <th className="py-1">model</th>
+                <th className="py-1">呼叫</th>
+                <th className="py-1">輸入 token</th>
+                <th className="py-1">輸出 token</th>
+                <th className="py-1">成本</th>
+                <th className="py-1">未計價</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ai.byModel.length === 0 && (
+                <tr>
+                  <td colSpan={7} className="py-3 text-muted">
+                    這段期間沒有 AI 呼叫。
+                  </td>
+                </tr>
+              )}
+              {ai.byModel.map((m) => (
+                <tr key={`${m.provider}/${m.model ?? ""}`} className="border-t border-black/5">
+                  <td className="py-1.5 font-medium text-ink">{m.provider}</td>
+                  <td className="break-all py-1.5 font-mono text-xs">{m.model ?? "—"}</td>
+                  <td className="py-1.5">{m.calls}</td>
+                  <td className="py-1.5">{tokens(m.inputTokens)}</td>
+                  <td className="py-1.5">{tokens(m.outputTokens)}</td>
+                  <td className="py-1.5">${m.costUsd.toFixed(4)}</td>
+                  <td className={`py-1.5 ${m.unpricedCalls > 0 ? "font-semibold text-rose-600" : ""}`}>
+                    {m.unpricedCalls}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section className="rounded-xl2 bg-white p-5 shadow-card">
@@ -97,13 +151,15 @@ export default async function AdminAtlasFunnelPage(
             <tr className="text-left text-muted">
               <th className="py-1">user_id</th>
               <th className="py-1">呼叫</th>
+              <th className="py-1">輸入 token</th>
+              <th className="py-1">輸出 token</th>
               <th className="py-1">成本</th>
             </tr>
           </thead>
           <tbody>
             {report.topUsersByCost.length === 0 && (
               <tr>
-                <td colSpan={3} className="py-3 text-muted">
+                <td colSpan={5} className="py-3 text-muted">
                   沒有資料。
                 </td>
               </tr>
@@ -112,6 +168,8 @@ export default async function AdminAtlasFunnelPage(
               <tr key={u.userId} className="border-t border-black/5">
                 <td className="break-all py-1.5 font-mono text-xs text-ink">{u.userId}</td>
                 <td className="py-1.5">{u.calls}</td>
+                <td className="py-1.5">{tokens(u.inputTokens)}</td>
+                <td className="py-1.5">{tokens(u.outputTokens)}</td>
                 <td className="py-1.5">${u.costUsd.toFixed(4)}</td>
               </tr>
             ))}

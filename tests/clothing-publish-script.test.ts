@@ -4,6 +4,14 @@ import test from "node:test";
 
 const publisher = readFileSync(new URL("../scripts/publish-clothing-series.ts", import.meta.url), "utf8");
 const preparer = readFileSync(new URL("../scripts/prepare-clothing-publish-plan.mjs", import.meta.url), "utf8");
+const categories = readFileSync(new URL("../lib/categories.ts", import.meta.url), "utf8");
+
+test("clothing category description matches the public category source", () => {
+  const description = "Everyday clothes, shoes, and accessories";
+  assert.ok(preparer.includes(description));
+  assert.ok(categories.includes(description));
+  assert.doesNotMatch(preparer, /Japanese clothings|Medicines, health essentials/);
+});
 
 test("clothing publisher defaults to a SELECT-only preflight and requires both target confirmations", () => {
   assert.match(publisher, /const APPLY = process\.argv\.includes\("--apply"\)/);

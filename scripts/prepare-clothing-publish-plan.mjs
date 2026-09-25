@@ -219,7 +219,7 @@ async function main() {
     category: {
       id: "clothing", name: "Clothing & Style", nameZh: "服飾穿搭", nameJa: "服とファッション", emoji: "👕",
       description: "從日常服裝到鞋履配件的實用單品",
-      descriptionEn: "Medicines, health essentials, and beauty products in Japanese clothings",
+      descriptionEn: "Everyday clothes, shoes, and accessories",
       descriptionJa: "普段着から靴・小物まで、毎日の装いに役立つアイテム",
       color: "from-sky-100 to-amber-100", imageUrl: categoryImage.url,
       image: { ...categoryImage, uploadRequired: true },

@@ -58,6 +58,20 @@ async function translateLabels(
   return out;
 }
 
+// List prices (USD), for the estimated-cost column in the admin funnel. The
+// monthly free tiers (1,000 images per feature, 500k translated characters) are
+// deliberately ignored: they are a project-wide allowance, not per-user.
+// https://cloud.google.com/vision/pricing · https://cloud.google.com/translate/pricing
+const VISION_USD_PER_IMAGE = (1.5 + 2.25) / 1000; // LABEL_DETECTION + OBJECT_LOCALIZATION
+const TRANSLATE_USD_PER_CHAR = 20 / 1_000_000; // NMT, billed on input characters per target
+
+/// Estimated cost of one recognizePrimary call. `translatedChars` is the input
+/// characters sent to Translate, summed over every target language requested.
+export function estimateGoogleVisionCostUsd({ translatedChars }: { translatedChars: number }): number {
+  const usd = VISION_USD_PER_IMAGE + translatedChars * TRANSLATE_USD_PER_CHAR;
+  return Math.round(usd * 1e6) / 1e6;
+}
+
 export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
   name = "google-vision";
 
@@ -114,12 +128,15 @@ export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
     // is needed either as the atlas label or as the interface-language gloss.
     // The zh-TW gloss rides along either way.
     const names = ranked.map(([, value]) => value.label);
+    const needsJa = input.targetLanguage === "ja" || input.glossLanguage === "ja";
     const [zhMap, jaMap] = await Promise.all([
       translateLabels(names, apiKey, "zh-TW"),
-      input.targetLanguage === "ja" || input.glossLanguage === "ja"
-        ? translateLabels(names, apiKey, "ja")
-        : Promise.resolve(new Map<string, string>()),
+      needsJa ? translateLabels(names, apiKey, "ja") : Promise.resolve(new Map<string, string>()),
     ]);
+    // Same de-dup translateLabels applies; a failed call is still counted, since
+    // Google may have billed it before erroring.
+    const charsPerTarget = Array.from(new Set(names.filter(Boolean))).join("").length;
+    const translatedChars = charsPerTarget * (needsJa ? 2 : 1);
     const primary = ranked.map(([, value]) => {
       const label =
         input.targetLanguage === "ja"
@@ -156,6 +173,7 @@ export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
       usage: {
         imageCount: 1,
         latencyMs: Math.round(performance.now() - t0),
+        estimatedCostUsd: estimateGoogleVisionCostUsd({ translatedChars }),
       },
       raw,
     };

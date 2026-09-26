@@ -14,14 +14,26 @@ import {
 } from "@/lib/ja-reading";
 import { segmentFurigana } from "@/lib/kana";
 import { loadFuriganaDict } from "@/lib/furigana-dict";
-import type { AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 import { ATLAS_ENRICH_VERSION } from "@/lib/atlas/enrich-policy";
+import { insertAtlasAiUsage, type AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
+import { createAiUsageTally, type AiUsageTally } from "@/lib/atlas/ai-usage";
 
 // Cost-effective model for custom-card enrichment: OpenAI gpt-4o-mini called
 // directly (reuses the existing OPENAI_API_KEY — no Vercel AI Gateway billing).
 // ~$0.15/$0.60 per MTok, supports structured outputs + Traditional Chinese.
 const ATLAS_ENRICH_MODEL = openai(process.env.ATLAS_ENRICH_MODEL || "gpt-4o-mini");
+
+function addUsage(
+  tally: AiUsageTally,
+  result: { usage: { inputTokens: number | undefined; outputTokens: number | undefined }; response: { modelId: string } },
+) {
+  tally.add({
+    modelId: result.response.modelId,
+    inputTokens: result.usage.inputTokens,
+    outputTokens: result.usage.outputTokens,
+  });
+}
 
 
 const JapaneseDefinitionSchema = z.object({
@@ -51,9 +63,9 @@ async function generateJapaneseAtlasDefinition(input: {
   lemmaLanguage: "en" | "ja";
   partOfSpeech: string;
   chinese: string;
-}): Promise<string | null> {
+}, tally: AiUsageTally): Promise<string | null> {
   try {
-    const { object } = await generateObject({
+    const result = await generateObject({
       model: ATLAS_ENRICH_MODEL,
       schema: JapaneseDefinitionSchema,
       system: JA_DEFINITION_SYSTEM,
@@ -62,7 +74,8 @@ async function generateJapaneseAtlasDefinition(input: {
         `Part of speech: ${input.partOfSpeech}\n` +
         `Meaning (zh-Hant): ${input.chinese}`,
     });
-    const definition = object.definition.trim();
+    addUsage(tally, result);
+    const definition = result.object.definition.trim();
     return definition && definition !== input.lemma.trim() ? definition : null;
   } catch {
     return null;
@@ -122,9 +135,9 @@ async function generateAtlasGlossPack(input: {
   displayZhHant: string;
   mnemonicZh: string | null;
   etymologyZh: string | null;
-}): Promise<GlossPack | null> {
+}, tally: AiUsageTally): Promise<GlossPack | null> {
   try {
-    const { object } = await generateObject({
+    const result = await generateObject({
       model: ATLAS_ENRICH_MODEL,
       schema: GlossPackSchema,
       system:
@@ -138,7 +151,8 @@ async function generateAtlasGlossPack(input: {
         `Memory tip (zh-Hant): ${input.mnemonicZh ?? ""}\n` +
         `Origin note (zh-Hant): ${input.etymologyZh ?? ""}`,
     });
-    return object;
+    addUsage(tally, result);
+    return result.object;
   } catch {
     return null;
   }
@@ -151,21 +165,22 @@ async function generateAtlasGlossPack(input: {
 /// exact instruction that flattened 284 katakana headwords in the catalogue.
 ///
 /// Returns null on failure so the card still gets made, just without kana.
-async function generateJapaneseAtlasReading(lemma: string): Promise<string | null> {
+async function generateJapaneseAtlasReading(lemma: string, tally: AiUsageTally): Promise<string | null> {
   const decided = readingWithoutAsking(lemma);
   if (decided) return decided; // hand-corrected, or already its own reading
 
   try {
-    const { object } = await generateObject({
+    const result = await generateObject({
       model: ATLAS_ENRICH_MODEL,
       schema: JapaneseReadingSchema,
       system: JA_READING_SYSTEM,
       prompt: `Japanese headword: ${lemma}`,
     });
+    addUsage(tally, result);
     // An unrepairable answer is discarded rather than stored: a reading that
     // does not keep the headword's own kana cannot be aligned to it, and the
     // 拼字 stage would drill a spelling that does not exist.
-    return settleJapaneseReading(lemma, object.reading);
+    return settleJapaneseReading(lemma, result.object.reading);
   } catch {
     return null;
   }
@@ -173,7 +188,46 @@ async function generateJapaneseAtlasReading(lemma: string): Promise<string | nul
 
 /// Run the existing dictionary enrichment on a custom atlas item (reusing
 /// enrichWord verbatim — no examples) and map it to the storage shape.
+///
+/// The whole 補充 pass (3-4 model calls) is logged as ONE user_atlas_ai_usage
+/// row, operation 'enrich', so its tokens and cost show on the admin 圖鑑數據
+/// page. Logged here rather than at the call sites so no caller can skip it.
+/// 'enrich' is not counted by getAtlasUsage, so it never eats recognition quota.
 export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnrichmentUpdate> {
+  const tally = createAiUsageTally();
+  const t0 = performance.now();
+  let ok = false;
+  try {
+    const fields = await buildAtlasEnrichment(item, tally);
+    ok = true;
+    return fields;
+  } finally {
+    const summary = tally.summary();
+    // A failed pass is still logged (without tokens): the call may have billed.
+    if (summary || !ok) {
+      await insertAtlasAiUsage({
+        userId: item.user_id,
+        jobId: null,
+        imageId: item.image_id,
+        provider: "openai-direct",
+        model: summary?.model ?? null,
+        operation: "enrich",
+        detailLevel: null,
+        inputTokens: summary?.inputTokens,
+        outputTokens: summary?.outputTokens,
+        imageCount: 0,
+        estimatedCostUsd: summary?.estimatedCostUsd,
+        latencyMs: Math.round(performance.now() - t0),
+        success: ok,
+      }).catch((err) => console.warn("[atlas-enrich] usage log failed", err));
+    }
+  }
+}
+
+async function buildAtlasEnrichment(
+  item: AtlasItemRow,
+  tally: AiUsageTally,
+): Promise<AtlasItemEnrichmentUpdate> {
   const isJa = item.target_language === "ja";
   const lemmaLanguage = item.target_language;
   const result = await enrichWord(
@@ -182,7 +236,7 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
       partOfSpeech: item.part_of_speech || "noun",
       chinese: item.display_zh_hant,
     },
-    { model: ATLAS_ENRICH_MODEL },
+    { model: ATLAS_ENRICH_MODEL, tally },
   );
 
   // For EN the target-language definition is enrichWord's English one. For JA
@@ -190,7 +244,7 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
   let definitionTarget = isJa ? null : result.englishDefinition || null;
   let reading = item.reading;
   if (isJa && !reading) {
-    reading = await generateJapaneseAtlasReading(item.lemma);
+    reading = await generateJapaneseAtlasReading(item.lemma, tally);
   }
   // Which kana sit over which characters. Only meaningful for JA, and only
   // when a reading survived — a null here is a display fallback, not a failure,
@@ -206,7 +260,7 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
     lemmaLanguage,
     partOfSpeech: item.part_of_speech || "noun",
     chinese: item.display_zh_hant,
-  });
+  }, tally);
   if (isJa) definitionTarget = definitionJa;
   const definitionEn = result.englishDefinition || null;
 
@@ -216,7 +270,7 @@ export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnri
     displayZhHant: item.display_zh_hant,
     mnemonicZh: result.mnemonic || null,
     etymologyZh: result.etymology || null,
-  });
+  }, tally);
 
   return {
     pronunciation: item.pronunciation ?? null,

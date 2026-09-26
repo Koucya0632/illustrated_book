@@ -1163,8 +1163,9 @@ export async function insertAtlasStudyLog(input: {
 
 export async function insertAtlasAiUsage(input: {
   userId: string;
-  jobId: string;
-  imageId: string;
+  /** Null for passes that aren't tied to a recognition job (補充 / enrich). */
+  jobId: string | null;
+  imageId: string | null;
   provider: string;
   model: string | null;
   operation: string;
@@ -2592,10 +2593,35 @@ export interface AtlasFunnelReport {
     calls: number;
     successRate: number; // 0..1
     totalCostUsd: number;
+    inputTokens: number;
+    outputTokens: number;
     avgLatencyMs: number | null;
-    byOperation: { operation: string; calls: number; costUsd: number; successRate: number }[];
+    byOperation: {
+      operation: string;
+      calls: number;
+      costUsd: number;
+      successRate: number;
+      inputTokens: number;
+      outputTokens: number;
+    }[];
+    byModel: {
+      provider: string;
+      model: string | null;
+      calls: number;
+      costUsd: number;
+      inputTokens: number;
+      outputTokens: number;
+      /** Calls with no cost estimate — a non-zero value means the cost column understates spend. */
+      unpricedCalls: number;
+    }[];
   };
-  topUsersByCost: { userId: string; costUsd: number; calls: number }[];
+  topUsersByCost: {
+    userId: string;
+    costUsd: number;
+    calls: number;
+    inputTokens: number;
+    outputTokens: number;
+  }[];
 }
 
 /**
@@ -2608,7 +2634,7 @@ export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
   const d = Math.min(365, Math.max(1, Math.floor(days)));
   const since = sql`now() - make_interval(days => ${d})`;
 
-  const [uploads, recognized, confirmed, carded, totals, byOp, topUsers] =
+  const [uploads, recognized, confirmed, carded, totals, byOp, byModel, topUsers] =
     await Promise.all([
       sql<{ c: number }[]>`
         SELECT count(*)::int AS c FROM user_atlas_images WHERE created_at >= ${since}
@@ -2625,25 +2651,68 @@ export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
         SELECT count(DISTINCT item_id)::int AS c FROM user_atlas_cards
         WHERE deleted_at IS NULL AND created_at >= ${since}
       `,
-      sql<{ calls: number; success_rate: number; total_cost: number; avg_latency: number | null }[]>`
+      sql<{
+        calls: number;
+        success_rate: number;
+        total_cost: number;
+        input_tokens: number;
+        output_tokens: number;
+        avg_latency: number | null;
+      }[]>`
         SELECT
           count(*)::int AS calls,
           coalesce(avg(success::int), 0)::float8 AS success_rate,
           coalesce(sum(estimated_cost_usd), 0)::float8 AS total_cost,
+          coalesce(sum(input_tokens), 0)::float8 AS input_tokens,
+          coalesce(sum(output_tokens), 0)::float8 AS output_tokens,
           avg(latency_ms)::float8 AS avg_latency
         FROM user_atlas_ai_usage WHERE created_at >= ${since}
       `,
-      sql<{ operation: string; calls: number; cost: number; success_rate: number }[]>`
+      sql<{
+        operation: string;
+        calls: number;
+        cost: number;
+        success_rate: number;
+        input_tokens: number;
+        output_tokens: number;
+      }[]>`
         SELECT
           operation,
           count(*)::int AS calls,
           coalesce(sum(estimated_cost_usd), 0)::float8 AS cost,
-          coalesce(avg(success::int), 0)::float8 AS success_rate
+          coalesce(avg(success::int), 0)::float8 AS success_rate,
+          coalesce(sum(input_tokens), 0)::float8 AS input_tokens,
+          coalesce(sum(output_tokens), 0)::float8 AS output_tokens
         FROM user_atlas_ai_usage WHERE created_at >= ${since}
         GROUP BY operation ORDER BY calls DESC
       `,
-      sql<{ user_id: string; cost: number; calls: number }[]>`
-        SELECT user_id, coalesce(sum(estimated_cost_usd), 0)::float8 AS cost, count(*)::int AS calls
+      sql<{
+        provider: string;
+        model: string | null;
+        calls: number;
+        cost: number;
+        input_tokens: number;
+        output_tokens: number;
+        unpriced: number;
+      }[]>`
+        SELECT
+          provider,
+          model,
+          count(*)::int AS calls,
+          coalesce(sum(estimated_cost_usd), 0)::float8 AS cost,
+          coalesce(sum(input_tokens), 0)::float8 AS input_tokens,
+          coalesce(sum(output_tokens), 0)::float8 AS output_tokens,
+          count(*) FILTER (WHERE estimated_cost_usd IS NULL AND success)::int AS unpriced
+        FROM user_atlas_ai_usage WHERE created_at >= ${since}
+        GROUP BY provider, model ORDER BY cost DESC, calls DESC
+      `,
+      sql<{ user_id: string; cost: number; calls: number; input_tokens: number; output_tokens: number }[]>`
+        SELECT
+          user_id,
+          coalesce(sum(estimated_cost_usd), 0)::float8 AS cost,
+          count(*)::int AS calls,
+          coalesce(sum(input_tokens), 0)::float8 AS input_tokens,
+          coalesce(sum(output_tokens), 0)::float8 AS output_tokens
         FROM user_atlas_ai_usage WHERE created_at >= ${since}
         GROUP BY user_id ORDER BY cost DESC LIMIT 10
       `,
@@ -2662,18 +2731,33 @@ export async function getAtlasFunnel(days: number): Promise<AtlasFunnelReport> {
       calls: t?.calls ?? 0,
       successRate: t?.success_rate ?? 0,
       totalCostUsd: t?.total_cost ?? 0,
+      inputTokens: t?.input_tokens ?? 0,
+      outputTokens: t?.output_tokens ?? 0,
       avgLatencyMs: t?.avg_latency ?? null,
       byOperation: byOp.map((r) => ({
         operation: r.operation,
         calls: r.calls,
         costUsd: r.cost,
         successRate: r.success_rate,
+        inputTokens: r.input_tokens,
+        outputTokens: r.output_tokens,
+      })),
+      byModel: byModel.map((r) => ({
+        provider: r.provider,
+        model: r.model,
+        calls: r.calls,
+        costUsd: r.cost,
+        inputTokens: r.input_tokens,
+        outputTokens: r.output_tokens,
+        unpricedCalls: r.unpriced,
       })),
     },
     topUsersByCost: topUsers.map((r) => ({
       userId: r.user_id,
       costUsd: r.cost,
       calls: r.calls,
+      inputTokens: r.input_tokens,
+      outputTokens: r.output_tokens,
     })),
   };
 }

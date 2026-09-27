@@ -552,8 +552,15 @@ export async function fetchAtlasDue(
   // and the queue disagrees with atlasStudyStats / atlasCategoryProgress,
   // which both filter. null = all languages (the dedicated atlas page).
   targetLanguage: AtlasTargetLanguage | null,
+  // Required (no default) for the same reason: items locked for being over the
+  // slot cap (getLockedAtlasItemIds) must never reach a study queue, and a new
+  // caller has to say so. Pass [] only where no lock can apply.
+  excludeItemIds: readonly string[],
 ): Promise<AtlasDueCard[]> {
   const sql = requireSql();
+  const excluded = excludeItemIds.length
+    ? sql`AND NOT (i.id = ANY(${[...excludeItemIds]}::uuid[]))`
+    : sql``;
   const includeNew = mode === "new" || mode === "both";
   const includeReview = mode === "review" || mode === "both";
   const rows = await sql<Record<string, unknown>[]>`
@@ -638,6 +645,7 @@ export async function fetchAtlasDue(
       AND i.deleted_at IS NULL
       AND img.deleted_at IS NULL
       ${targetLanguage ? sql`AND i.target_language = ${targetLanguage}` : sql``}
+      ${excluded}
       AND (
         -- New: a 新卡 card whose ITEM has no studied card yet. An item makes two
         -- cards (image_recall + flashcard) but the study flow dedupes to one per
@@ -708,6 +716,8 @@ export async function listAtlasCustomWords(
 export async function atlasStudyStats(
   userId: string,
   targetLanguage: AtlasTargetLanguage,
+  /** Items locked for being over the slot cap; required, see fetchAtlasDue. */
+  excludeItemIds: readonly string[],
 ): Promise<{
   total: number;
   seen: number;
@@ -717,6 +727,9 @@ export async function atlasStudyStats(
   byStatus: Array<{ status: Status; c: number }>;
 }> {
   const sql = requireSql();
+  const excluded = excludeItemIds.length
+    ? sql`AND NOT (i.id = ANY(${[...excludeItemIds]}::uuid[]))`
+    : sql``;
   // Counts are per ITEM, not per card. An item makes two cards (image_recall +
   // flashcard) but the study flow dedupes to one card per item, so card-level
   // counts double the numbers the queue actually serves. `seen`/studied keys off
@@ -732,6 +745,7 @@ export async function atlasStudyStats(
       WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
+        ${excluded}
     `,
     sql<{ seen: number }[]>`
       SELECT count(DISTINCT i.id)::int AS seen
@@ -743,6 +757,7 @@ export async function atlasStudyStats(
       WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
+        ${excluded}
         AND s.last_reviewed_at IS NOT NULL
     `,
     sql<{ due: number }[]>`
@@ -755,6 +770,7 @@ export async function atlasStudyStats(
       WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
+        ${excluded}
         AND s.status <> '新卡'
         AND s.next_review_at <= now()
     `,
@@ -768,6 +784,7 @@ export async function atlasStudyStats(
       WHERE i.user_id = ${userId}::uuid
         AND i.deleted_at IS NULL
         AND i.target_language = ${targetLanguage}
+        ${excluded}
         AND s.last_reviewed_at IS NOT NULL
         AND (s.last_reviewed_at AT TIME ZONE 'Asia/Taipei')::date
           = (now() AT TIME ZONE 'Asia/Taipei')::date
@@ -786,6 +803,7 @@ export async function atlasStudyStats(
         WHERE i.user_id = ${userId}::uuid
           AND i.deleted_at IS NULL
           AND i.target_language = ${targetLanguage}
+          ${excluded}
         ORDER BY i.id,
           CASE WHEN s.status IS NULL OR s.status = '新卡' THEN 1 ELSE 0 END,
           s.next_review_at ASC NULLS LAST
@@ -808,8 +826,9 @@ export async function atlasStudyStats(
 export async function atlasCategoryProgress(
   userId: string,
   targetLanguage: AtlasTargetLanguage,
+  excludeItemIds: readonly string[],
 ): Promise<{ category: "custom"; total: number; seen: number } | null> {
-  const stats = await atlasStudyStats(userId, targetLanguage);
+  const stats = await atlasStudyStats(userId, targetLanguage, excludeItemIds);
   if (stats.total === 0) return null;
   return { category: "custom", total: stats.total, seen: stats.seen };
 }

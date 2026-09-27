@@ -36,6 +36,7 @@ import {
 } from "@/lib/billing/storekit-state";
 import { limitsFor, upgradeTarget, type AtlasLimits } from "@/lib/atlas/membership-limits";
 import { studyableCategories } from "@/lib/study-membership";
+import { atlasItemsToLock } from "@/lib/atlas/item-lock";
 import {
   membershipPolicy,
   membershipSourcesFromRow,
@@ -256,6 +257,43 @@ export async function getMembershipAccess(
   const policy = membershipPolicy();
   if (policy === "v1") return { tier: "free", policy };
   return { tier: (await getAtlasGateContext(userId)).tier, policy };
+}
+
+/**
+ * 自製圖鑑 items locked for being over the slot cap (lib/atlas/item-lock.ts).
+ * Under v1 there is no lock and no query. Fails open (nothing locked) on error,
+ * like the rest of this module — a lookup outage must not hide someone's cards.
+ */
+export async function getLockedAtlasItemIds(userId: string): Promise<string[]> {
+  const policy = membershipPolicy();
+  if (policy === "v1") return [];
+  const sql = getSql();
+  if (!sql) return [];
+  try {
+    const row = await getEntitlementRow(userId);
+    const tier = membershipTierOf(row);
+    if (tier === "pro") return [];
+    const graceActive =
+      tier === "lifetime" && (await readMembership(userId, row)).graceEndsAt !== null;
+    const keep = limitsFor(tier, policy).atlasSlotsLimit;
+    if (graceActive) return [];
+    const rows = (await sql`
+      SELECT id FROM user_atlas_items
+       WHERE user_id = ${userId}::uuid AND deleted_at IS NULL
+       ORDER BY created_at DESC, id DESC
+    `) as { id: string }[];
+    return atlasItemsToLock(
+      { policy, tier, graceActive, keep },
+      rows.map((r) => String(r.id)),
+    );
+  } catch (err) {
+    console.warn("[entitlement] item lock lookup failed, locking nothing", err);
+    return [];
+  }
+}
+
+export async function isAtlasItemLocked(userId: string, itemId: string): Promise<boolean> {
+  return (await getLockedAtlasItemIds(userId)).includes(itemId);
 }
 
 export async function getAtlasTier(userId: string): Promise<AtlasTier> {

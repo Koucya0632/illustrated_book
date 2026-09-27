@@ -6,6 +6,7 @@
 // { total, seen, due, new, byStatus } — so the client can compute
 // `computeNewLimit(base, stats.due)` and decide which buttons to enable.
 import { NextResponse } from "next/server";
+import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { studyStats } from "@/lib/cards-db";
 import { atlasStudyStats } from "@/lib/atlas-db";
@@ -42,7 +43,7 @@ export async function GET(req: Request) {
         ? studyStats(userId, publicCategories, studyDeckFor(direction))
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       wantsCustom
-        ? atlasStudyStats(userId, targetLanguageFor(direction))
+        ? atlasStudyStats(userId, targetLanguageFor(direction), await getLockedAtlasItemIds(userId))
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
     ]);
     const byStatus = new Map<string, number>();

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isAtlasItemLocked } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { createAtlasCardsForItem, getAtlasItem } from "@/lib/atlas-db";
 import type { AtlasCardType } from "@/lib/atlas/types";
@@ -25,6 +26,16 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
 
   const item = await getAtlasItem(userId, params.id);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
+  // Over the slot cap after Pro ended (checklist §4; v2 only).
+  if (await isAtlasItemLocked(userId, item.id)) {
+    return NextResponse.json(
+      {
+        error: "item_locked",
+        message: "這張卡片超過目前方案的格數，已鎖定。升級後即可繼續使用，也可以刪除其他卡片騰出空間。",
+      },
+      { status: 402, headers: { "Cache-Control": "private, no-store" } },
+    );
+  }
 
   let body: { cardTypes?: unknown } = {};
   try {

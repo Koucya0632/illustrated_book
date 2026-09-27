@@ -21,7 +21,7 @@ import { localizeStudyQueue } from "@/lib/study-localize";
 import { fetchStudyExamples } from "@/lib/study-examples";
 import { resolveQueueThemeScope } from "@/lib/study-sources";
 import { applyMembershipStudyScope } from "@/lib/study-membership";
-import { getMembershipAccess } from "@/lib/atlas/entitlement";
+import { getLockedAtlasItemIds, getMembershipAccess } from "@/lib/atlas/entitlement";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 import { hintDefinition } from "@/lib/study-hint";
@@ -226,6 +226,8 @@ export async function GET(req: Request) {
     // Learning direction is authoritative. Legacy client deck filters must
     // never widen a Japanese queue back to all decks when they disagree.
     const effectiveDecks = [directionDeck];
+    // Items over the slot cap after Pro ended (v2); [] and no query under v1.
+    const lockedItemIds = wantsCustom ? await getLockedAtlasItemIds(userId) : [];
     const [
       queue,
       stats,
@@ -248,9 +250,11 @@ export async function GET(req: Request) {
         ? studyStats(userId, publicCategories, directionDeck)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       getAllMastery(userId, targetLanguage),
-      wantsCustom ? fetchAtlasDue(userId, limit, mode, targetLanguage) : Promise.resolve([]),
       wantsCustom
-        ? atlasStudyStats(userId, targetLanguage)
+        ? fetchAtlasDue(userId, limit, mode, targetLanguage, lockedItemIds)
+        : Promise.resolve([]),
+      wantsCustom
+        ? atlasStudyStats(userId, targetLanguage, lockedItemIds)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       wantsCommunity
         ? fetchSavedCommunityDue(userId, limit, mode, targetLanguage)

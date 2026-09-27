@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isAtlasItemLocked } from "@/lib/atlas/entitlement";
 import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { isAtlasAuthorBlocked, submitAtlasItemForReview } from "@/lib/atlas-db";
@@ -25,6 +26,17 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
     return NextResponse.json(
       { error: "publishing_restricted", message: "你的帳號目前無法公開內容。" },
       { status: 403, headers: { "Cache-Control": "private, no-store" } },
+    );
+  }
+
+  // Before submitAtlasItemForReview, which already flips the item to pending.
+  if (await isAtlasItemLocked(userId, params.id)) {
+    return NextResponse.json(
+      {
+        error: "item_locked",
+        message: "這張卡片超過目前方案的格數，已鎖定。升級後即可繼續使用，也可以刪除其他卡片騰出空間。",
+      },
+      { status: 402, headers: { "Cache-Control": "private, no-store" } },
     );
   }
 

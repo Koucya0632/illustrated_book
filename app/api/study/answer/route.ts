@@ -3,7 +3,7 @@ import { studyAnswerOwnerMatches } from "@/lib/study-answer-owner";
 import { revalidateTag } from "next/cache";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { canStudyCard } from "@/lib/study-membership";
-import { getMembershipAccess } from "@/lib/atlas/entitlement";
+import { getLockedAtlasItemIds, getMembershipAccess } from "@/lib/atlas/entitlement";
 import { getCardById, upsertReview } from "@/lib/cards-db";
 import {
   getAtlasDueCardById,
@@ -238,6 +238,11 @@ async function answerAtlasCard(
 
   const due = await getAtlasDueCardById(userId, cardId);
   if (!due) return NextResponse.json({ error: "card not found" }, { status: 404 });
+  // Over the slot cap after Pro ended (v2): the item is kept but not studied.
+  // 200 + ok:false, never a 4xx — same reason as the study gate in POST.
+  if ((await getLockedAtlasItemIds(userId)).includes(due.item.id)) {
+    return NextResponse.json({ ok: false, gated: "item_locked" }, { status: 200 });
+  }
 
   const prevState: CardState = due.state
     ? { status: due.state.status, intervalDays: Number(due.state.interval_days) || 0 }

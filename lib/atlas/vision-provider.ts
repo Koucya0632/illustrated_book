@@ -68,3 +68,11 @@ export function emptyRecognitionResult(
     uncertainty: { reason, needsEscalation: false },
   };
 }
+
+/// Whether a recognition gave the user anything to pick. Written as the
+/// `success` flag of its user_atlas_ai_usage row, and getAtlasUsage counts only
+/// successful rows — so an empty result (no labels, manual-only provider) does
+/// not use up the monthly quota (membership rule, decided 2026-09-27).
+export function recognitionFoundSomething(result: AtlasRecognitionResult): boolean {
+  return result.primary.length > 0 || result.fine.length > 0;
+}

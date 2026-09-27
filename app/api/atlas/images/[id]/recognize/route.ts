@@ -18,6 +18,7 @@ import {
   createPrimaryAtlasProvider,
 } from "@/lib/atlas/recognition";
 import { downloadAtlasObject } from "@/lib/atlas/storage";
+import { recognitionFoundSomething } from "@/lib/atlas/vision-provider";
 import type { AtlasRecognitionStage } from "@/lib/atlas/types";
 import { enforceAtlasAiLimits } from "@/lib/atlas/entitlement";
 import { clientIpHash } from "@/lib/ratelimit";
@@ -144,7 +145,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
       imageCount: result.usage?.imageCount,
       estimatedCostUsd: result.usage?.estimatedCostUsd,
       latencyMs: result.usage?.latencyMs,
-      success: true,
+      success: recognitionFoundSomething(result),
     });
     const updatedJob = await completeAtlasRecognitionJob(userId, job.id, result);
     const candidates = await replaceAtlasCandidates(

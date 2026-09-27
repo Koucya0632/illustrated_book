@@ -235,11 +235,16 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
         FROM user_atlas_items
         WHERE user_id = ${userId}::uuid AND deleted_at IS NULL
       `,
+      // AI quota counts only successful rows: an errored or empty recognition
+      // is free (see recognitionFoundSomething). Such calls are bounded only by
+      // the ratelimit backstops (per-IP per-minute + global daily) — there is no
+      // per-user daily cap on them.
       sql<{ count: number }[]>`
         SELECT count(*)::int AS count
         FROM user_atlas_ai_usage
         WHERE user_id = ${userId}::uuid
           AND operation = 'primary'
+          AND success
           AND created_at >= date_trunc('month', now())
       `,
       sql<{ count: number }[]>`
@@ -247,6 +252,7 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
         FROM user_atlas_ai_usage
         WHERE user_id = ${userId}::uuid
           AND operation = 'escalated'
+          AND success
           AND created_at >= date_trunc('month', now())
       `,
       // CONSUMPTION count — separate table, separate limit.

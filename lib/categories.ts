@@ -217,6 +217,16 @@ export const categories: Category[] = [
       "https://img.nexflow.team/word-images/category-drugstore-ai-ce824db7d9b8.webp",
   },
   {
+    id: "clothing",
+    name: "Clothing & Style",
+    nameZh: "服飾穿搭",
+    emoji: "👕",
+    description: "從日常服裝到鞋履配件的實用單品",
+    descriptionEn: "Everyday clothes, shoes, and accessories",
+    color: "from-sky-100 to-amber-100",
+    imageUrl: "https://img.nexflow.team/word-images/category-clothing-ai-d9a6fcea491b.webp",
+  },
+  {
     id: "zodiac",
     name: "Zodiac",
     nameZh: "星座",
@@ -237,7 +247,8 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "professions" &&
     category.id !== "alcoholic-drinks" &&
     category.id !== "convenience-store" &&
-    category.id !== "drugstore",
+    category.id !== "drugstore" &&
+    category.id !== "clothing",
 );
 
 export const getCategory = (id: string): Category | undefined =>

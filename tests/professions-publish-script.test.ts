@@ -55,13 +55,14 @@ test("the professions publisher is a read-only dry run unless all write gates ar
 test("public fallbacks cannot expose the guarded series before database publication", () => {
   assert.match(
     wordsSource,
-    /export const publicFallbackWords:[\s\S]*!\["professions", "alcoholic-drinks", "convenience-store", "drugstore"\]\.includes\(word\.category\)/,
+    /export const publicFallbackWords:[\s\S]*!\["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing"\]\.includes\(word\.category\)/,
   );
   assert.match(publicData, /import \{ publicFallbackWords as staticWords \} from "\.\/words"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "professions"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "alcoholic-drinks"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "convenience-store"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "drugstore"/);
+  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "clothing"/);
   assert.match(
     categoriesDb,
     /import \{ publicFallbackCategories as staticCategories \} from "\.\/categories"/,

@@ -2,6 +2,7 @@ import type { CEFRLevel } from "@/types";
 import { MAIN_WORD_ALCOHOLIC_DRINKS_EXAMPLE_PAIRS } from "./main-word-alcoholic-drinks-2026-09";
 import { MAIN_WORD_CONVENIENCE_STORE_EXAMPLE_PAIRS } from "./main-word-convenience-store-2026-09";
 import { MAIN_WORD_DRUGSTORE_EXAMPLE_PAIRS } from "./main-word-drugstore-2026-09";
+import { MAIN_WORD_CLOTHING_EXAMPLE_PAIRS } from "./main-word-clothing-2026-09";
 import { MAIN_WORD_FRUITS_EXAMPLE_PAIRS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-3";
@@ -165,6 +166,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_ALCOHOLIC_DRINKS_EXAMPLE_PAIRS,
     MAIN_WORD_CONVENIENCE_STORE_EXAMPLE_PAIRS,
     MAIN_WORD_DRUGSTORE_EXAMPLE_PAIRS,
+    MAIN_WORD_CLOTHING_EXAMPLE_PAIRS,
   );
 
 export function selectMainWordExamplePairs(

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getMemberDetail } from "@/lib/admin/members";
-import { atlasLimitsForTier } from "@/lib/atlas/entitlement";
+import { membershipTierOf } from "@/lib/atlas/entitlement";
+import { membershipPolicy } from "@/lib/atlas/membership";
+import { limitsFor } from "@/lib/atlas/membership-limits";
 import MemberEntitlementActions from "./MemberEntitlementActions";
 
 export const dynamic = "force-dynamic";
@@ -23,7 +25,8 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
   if (!detail) notFound();
 
   const { summary, effective, subscription, grants, ledger, usage } = detail;
-  const limits = atlasLimitsForTier(effective.tier);
+  const tier = membershipTierOf(effective);
+  const limits = limitsFor(tier, membershipPolicy());
   const liveGrants = grants.filter(
     (g) => !g.revokedAt && new Date(g.expiresAt).getTime() > Date.now(),
   );
@@ -39,12 +42,12 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
           <h1 className="font-mono text-2xl font-bold text-ink">{summary.username}</h1>
           <span
             className={
-              effective.tier === "pro"
-                ? "rounded-full bg-sky-soft px-2.5 py-1 text-xs font-bold text-sky-accent"
-                : "rounded-full bg-cream px-2.5 py-1 text-xs font-bold text-muted"
+              tier === "free"
+                ? "rounded-full bg-cream px-2.5 py-1 text-xs font-bold text-muted"
+                : "rounded-full bg-sky-soft px-2.5 py-1 text-xs font-bold text-sky-accent"
             }
           >
-            {effective.tier === "pro" ? "Pro" : "免費"}
+            {tier === "pro" ? "Pro" : tier === "lifetime" ? "永久會員" : "免費"}
           </span>
         </div>
         <dl className="mt-4 grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2">

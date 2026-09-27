@@ -8,7 +8,7 @@
 //                                  dropped; released clients decode this as a
 //                                  required field, so it stays in the payload
 // AI usage is counted per calendar month from user_atlas_ai_usage (operation
-// 'primary' vs 'escalated'). Limits are env-tunable; see atlasLimitsForTier.
+// 'primary' vs 'escalated'). Limits: lib/atlas/membership-limits.ts (limitsFor).
 //
 // TWO SOURCES, ONE TIER. Pro can come from either of two independent places
 // and the effective tier is their UNION (later expiry wins):
@@ -34,6 +34,7 @@ import {
   decideStoreKitBinding,
   decideStoreKitState,
 } from "@/lib/billing/storekit-state";
+import { limitsFor, upgradeTarget, type AtlasLimits } from "@/lib/atlas/membership-limits";
 import {
   membershipPolicy,
   membershipSourcesFromRow,
@@ -41,7 +42,10 @@ import {
   type Membership,
   type MembershipPolicy,
   type MembershipSourceRow,
+  type MembershipTier,
 } from "@/lib/atlas/membership";
+
+export type { AtlasLimits };
 
 // postgres-js types the pool handle (Sql) and a transaction handle
 // (TransactionSql) as mutually unassignable, so helpers that must run in both
@@ -49,22 +53,6 @@ import {
 type SqlExecutor = any;
 
 export type AtlasTier = "free" | "pro";
-
-export interface AtlasLimits {
-  atlasSlotsLimit: number;
-  primaryAiSoftLimitMonthly: number;
-  precisionAiLimitMonthly: number;
-  /**
-   * CONSUMPTION quota: how many community items the user may save into their
-   * own review queue (docs/COMMUNITY_ATLAS_PLAN.md §4.1). Deliberately generous
-   * on Free and tracked separately from atlasSlotsLimit — saving other people's
-   * photos must never eat the free tier's creation budget, or the free plan
-   * loses the very thing that makes the community worth joining.
-   */
-  savedItemsLimit: number;
-  /** Always false — ads were dropped; kept only so released clients still decode. */
-  adsRequiredForCardGeneration: boolean;
-}
 
 export interface AtlasUsage {
   /** CREATION usage: the user's own captured items. Drives the paywall. */
@@ -96,33 +84,13 @@ export interface AtlasEntitlementSnapshot {
   membership: Membership & { policy: MembershipPolicy };
 }
 
-function intEnv(name: string, fallback: number): number {
-  const raw = process.env[name];
-  const n = raw === undefined || raw === "" ? fallback : Number(raw);
-  return Number.isFinite(n) && n >= 0 ? n : fallback;
-}
-
+/**
+ * Limits for a Pro-or-not tier under the policy in force. Kept for callers that
+ * only know Free/Pro; a lifetime holder must go through limitsFor with their
+ * MembershipTier (see membershipTierOf) or they would be treated as Free.
+ */
 export function atlasLimitsForTier(tier: AtlasTier): AtlasLimits {
-  // Pro sells capacity, more ordinary AI (500 vs 30) and precision recognitions.
-  if (tier === "pro") {
-    return {
-      atlasSlotsLimit: intEnv("ATLAS_PRO_SLOTS", 300),
-      primaryAiSoftLimitMonthly: intEnv("ATLAS_PRO_PRIMARY_AI_MONTHLY", 500),
-      precisionAiLimitMonthly: intEnv("ATLAS_PRO_PRECISION_MONTHLY", 30),
-      savedItemsLimit: intEnv("ATLAS_PRO_SAVED_ITEMS", 5000),
-      adsRequiredForCardGeneration: false,
-    };
-  }
-  return {
-    atlasSlotsLimit: intEnv("ATLAS_FREE_SLOTS", 3),
-    primaryAiSoftLimitMonthly: intEnv("ATLAS_FREE_PRIMARY_AI_MONTHLY", 30),
-    precisionAiLimitMonthly: intEnv("ATLAS_FREE_PRECISION_MONTHLY", 0),
-    // Generous on purpose (see savedItemsLimit doc): the free tier's appeal is
-    // a growing library of other people's photos, so this is effectively a
-    // safety rail against abuse, not a monetisation lever.
-    savedItemsLimit: intEnv("ATLAS_FREE_SAVED_ITEMS", 1000),
-    adsRequiredForCardGeneration: false,
-  };
+  return limitsFor(tier, membershipPolicy());
 }
 
 export interface EffectiveEntitlement {
@@ -136,6 +104,8 @@ export interface EffectiveEntitlement {
   subscriptionExpiresAt: string | null;
   /** The latest live grant's expiry, whether or not it is the winning source. */
   grantExpiresAt: string | null;
+  /** A live 永久權益 row exists. Independent of Pro; see membershipTierOf. */
+  hasLifetime: boolean;
 }
 
 /** Shape returned by the union query; also the input to the pure resolver. */
@@ -143,6 +113,7 @@ interface EntitlementSourceRow {
   sub_tier: string | null;
   sub_expires_at: string | null;
   grant_expires_at: string | null;
+  has_lifetime?: boolean | null;
 }
 
 const FREE_ENTITLEMENT: EffectiveEntitlement = {
@@ -150,7 +121,13 @@ const FREE_ENTITLEMENT: EffectiveEntitlement = {
   expiresAt: null,
   subscriptionExpiresAt: null,
   grantExpiresAt: null,
+  hasLifetime: false,
 };
+
+/** The three-tier tier the gates enforce: Pro while live, else lifetime, else free. */
+export function membershipTierOf(e: EffectiveEntitlement): MembershipTier {
+  return e.tier === "pro" ? "pro" : e.hasLifetime ? "lifetime" : "free";
+}
 
 function laterOf(a: string | null, b: string | null): string | null {
   if (!a) return b;
@@ -175,16 +152,17 @@ export function resolveEntitlement(row: EntitlementSourceRow | null): EffectiveE
     (subscriptionExpiresAt === null ||
       new Date(subscriptionExpiresAt).getTime() > Date.now());
   const grantLive = grantExpiresAt !== null;
+  const hasLifetime = row?.has_lifetime === true;
 
   if (!subscriptionLive && !grantLive) {
-    return { tier: "free", expiresAt: null, subscriptionExpiresAt, grantExpiresAt };
+    return { tier: "free", expiresAt: null, subscriptionExpiresAt, grantExpiresAt, hasLifetime };
   }
   // An unbounded subscription outlasts any dated grant.
   const expiresAt =
     subscriptionLive && subscriptionExpiresAt === null
       ? null
       : laterOf(subscriptionLive ? subscriptionExpiresAt : null, grantExpiresAt);
-  return { tier: "pro", expiresAt, subscriptionExpiresAt, grantExpiresAt };
+  return { tier: "pro", expiresAt, subscriptionExpiresAt, grantExpiresAt, hasLifetime };
 }
 
 /**
@@ -200,7 +178,11 @@ async function readEntitlementSources(
   const rows = (await exec`
     SELECT e.tier       AS sub_tier,
            e.expires_at AS sub_expires_at,
-           g.expires_at AS grant_expires_at
+           g.expires_at AS grant_expires_at,
+           EXISTS (
+             SELECT 1 FROM user_lifetime_entitlements l
+              WHERE l.user_id = u.uid AND l.revoked_at IS NULL
+           ) AS has_lifetime
       FROM (SELECT ${userId}::uuid AS uid) u
       LEFT JOIN user_entitlements e ON e.user_id = u.uid
       LEFT JOIN LATERAL (
@@ -219,15 +201,8 @@ async function readEntitlementSources(
 export async function readEffectiveMembershipTier(
   exec: SqlExecutor,
   userId: string,
-): Promise<"free" | "lifetime" | "pro"> {
-  const pro = await readEntitlementSources(exec, userId);
-  if (pro.tier === "pro") return "pro";
-  const rows = (await exec`
-    SELECT 1 FROM user_lifetime_entitlements
-     WHERE user_id = ${userId}::uuid AND revoked_at IS NULL
-     LIMIT 1
-  `) as unknown[];
-  return rows.length > 0 ? "lifetime" : "free";
+): Promise<MembershipTier> {
+  return membershipTierOf(await readEntitlementSources(exec, userId));
 }
 
 async function getEntitlementRow(userId: string): Promise<EffectiveEntitlement> {
@@ -246,6 +221,23 @@ export async function getEffectiveEntitlement(userId: string): Promise<Effective
   const sql = getSql();
   if (!sql) throw new Error("database unavailable");
   return readEntitlementSources(sql, userId);
+}
+
+/**
+ * What every gate needs, in the one hot-path query: the tier to enforce, its
+ * limits under the policy in force, and plain Pro-ness (routes still pick a
+ * vision provider by it).
+ */
+export async function getAtlasGateContext(userId: string): Promise<{
+  tier: MembershipTier;
+  pro: AtlasTier;
+  policy: ReturnType<typeof membershipPolicy>;
+  limits: AtlasLimits;
+}> {
+  const row = await getEntitlementRow(userId);
+  const tier = membershipTierOf(row);
+  const policy = membershipPolicy();
+  return { tier, pro: row.tier, policy, limits: limitsFor(tier, policy) };
 }
 
 export async function getAtlasTier(userId: string): Promise<AtlasTier> {
@@ -362,7 +354,7 @@ async function readMembership(userId: string, pro: EffectiveEntitlement): Promis
 export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlementSnapshot> {
   const [row, usage] = await Promise.all([getEntitlementRow(userId), getAtlasUsage(userId)]);
   const membership = await readMembership(userId, row);
-  const limits = atlasLimitsForTier(row.tier);
+  const limits = limitsFor(membershipTierOf(row), membershipPolicy());
   return {
     plan: row.tier,
     atlasSlotsLimit: limits.atlasSlotsLimit,
@@ -698,10 +690,20 @@ export async function checkAtlasSaveCapacity(
   userId: string,
   additionalItems = 1,
 ): Promise<AtlasCapacityGate> {
-  const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
-  const limits = atlasLimitsForTier(tier);
+  const [ctx, usage] = await Promise.all([getAtlasGateContext(userId), getAtlasUsage(userId)]);
+  const { limits } = ctx;
   const requested = Math.max(0, Math.floor(additionalItems));
   if (usage.savedItems + requested <= limits.savedItemsLimit) return { ok: true };
+  // v2 non-members have 0: 物見 is read-only for them, and that IS upgradeable.
+  if (ctx.policy === "v2" && ctx.tier === "free") {
+    return {
+      ok: false,
+      upgradeable: true,
+      message: "收藏物見內容是會員功能，成為永久會員即可收藏與加入學習。",
+      limit: limits.savedItemsLimit,
+      usage: usage.savedItems,
+    };
+  }
   return {
     ok: false,
     upgradeable: false,
@@ -712,16 +714,22 @@ export async function checkAtlasSaveCapacity(
 }
 
 export async function checkAtlasCapacity(userId: string): Promise<AtlasCapacityGate> {
-  const [tier, usage] = await Promise.all([getAtlasTier(userId), getAtlasUsage(userId)]);
-  const limits = atlasLimitsForTier(tier);
+  const [ctx, usage] = await Promise.all([getAtlasGateContext(userId), getAtlasUsage(userId)]);
+  const { limits, tier, policy } = ctx;
   if (usage.atlasSlots < limits.atlasSlotsLimit) return { ok: true };
-  const upgradeable = tier === "free"; // Pro slots (300) > Free (30)
+  const target = upgradeTarget(tier, policy);
+  const targetSlots = target ? limitsFor(target, policy).atlasSlotsLimit : 0;
   return {
     ok: false,
-    upgradeable,
-    message: upgradeable
-      ? `自製圖鑑已達免費上限（${limits.atlasSlotsLimit}），升級 Pro 可擴充到 ${atlasLimitsForTier("pro").atlasSlotsLimit} 格。`
-      : `自製圖鑑已達上限（${limits.atlasSlotsLimit}），刪除一些後再新增。`,
+    upgradeable: target !== null,
+    message:
+      target === null
+        ? `自製圖鑑已達上限（${limits.atlasSlotsLimit}），刪除一些後再新增。`
+        : policy === "v1"
+          ? `自製圖鑑已達免費上限（${limits.atlasSlotsLimit}），升級 Pro 可擴充到 ${targetSlots} 格。`
+          : target === "lifetime"
+            ? `自製圖鑑是會員功能，成為永久會員可建立 ${targetSlots} 格。`
+            : `自製圖鑑已達上限（${limits.atlasSlotsLimit}），升級 Pro 可擴充到 ${targetSlots} 格。`,
     limit: limits.atlasSlotsLimit,
     usage: usage.atlasSlots,
   };
@@ -751,12 +759,14 @@ export async function enforceAtlasAiLimits(ctx: {
   ipHash: string;
   operation: AtlasAiOperation;
 }): Promise<AtlasAiGate> {
-  const [tier, usage] = await Promise.all([getAtlasTier(ctx.userId), getAtlasUsage(ctx.userId)]);
-  const limits = atlasLimitsForTier(tier);
+  const [gate, usage] = await Promise.all([getAtlasGateContext(ctx.userId), getAtlasUsage(ctx.userId)]);
+  const { limits, policy } = gate;
+  const tier = gate.pro;
 
   if (ctx.operation === "precision") {
     if (usage.precisionAiThisMonth >= limits.precisionAiLimitMonthly) {
-      const upgradeable = tier === "free"; // Pro precision (30) > Free (0)
+      // Only Pro has precision in either policy.
+      const upgradeable = gate.tier !== "pro";
       return {
         ok: false,
         tier,
@@ -768,15 +778,21 @@ export async function enforceAtlasAiLimits(ctx: {
       };
     }
   } else if (usage.primaryAiThisMonth >= limits.primaryAiSoftLimitMonthly) {
-    const upgradeable = tier === "free"; // Pro primary (500) > Free (30)
+    const target = upgradeTarget(gate.tier, policy);
+    const targetMonthly = target ? limitsFor(target, policy).primaryAiSoftLimitMonthly : 0;
     return {
       ok: false,
       tier,
-      upgradeable,
+      upgradeable: target !== null,
       scope: "primary_ai",
-      message: upgradeable
-        ? `本月 AI 辨識已達免費上限（${limits.primaryAiSoftLimitMonthly}），升級 Pro 提升至每月 ${atlasLimitsForTier("pro").primaryAiSoftLimitMonthly} 次。`
-        : `本月 AI 辨識已達上限（${limits.primaryAiSoftLimitMonthly}），下月再試。`,
+      message:
+        target === null
+          ? `本月 AI 辨識已達上限（${limits.primaryAiSoftLimitMonthly}），下月再試。`
+          : policy === "v1"
+            ? `本月 AI 辨識已達免費上限（${limits.primaryAiSoftLimitMonthly}），升級 Pro 提升至每月 ${targetMonthly} 次。`
+            : target === "lifetime"
+              ? `AI 辨識是會員功能，成為永久會員每月可用 ${targetMonthly} 次。`
+              : `本月 AI 辨識已達上限（${limits.primaryAiSoftLimitMonthly}），升級 Pro 提升至每月 ${targetMonthly} 次。`,
     };
   }
 

@@ -8,7 +8,7 @@ import {
   saveAtlasPublicCollection,
   unsaveAtlasPublicCollection,
 } from "../atlas-db";
-import { atlasLimitsForTier, getAtlasTier } from "./entitlement";
+import { getAtlasGateContext } from "./entitlement";
 import { hitRateLimit } from "../ratelimit";
 import { createPublicCollectionModule } from "./public-collection";
 
@@ -27,7 +27,7 @@ export const livePublicCollectionModule = createPublicCollectionModule({
   },
   capacity: {
     async savedItemsLimit(userId) {
-      return atlasLimitsForTier(await getAtlasTier(userId)).savedItemsLimit;
+      return (await getAtlasGateContext(userId)).limits.savedItemsLimit;
     },
   },
 });

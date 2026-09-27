@@ -16,6 +16,9 @@ const PRO_PRODUCT_IDS = new Set([
   "app.tuji.pro.yearly",
 ]);
 
+/** 永久會員 — non-consumable (docs/MEMBERSHIP_SERVER_DESIGN.md §5). */
+export const LIFETIME_PRODUCT_ID = "app.tuji.lifetime";
+
 /** JWSTransactionDecodedPayload subset we rely on. */
 export interface AppleTransaction {
   productId?: string;
@@ -70,6 +73,8 @@ export interface EntitlementFromTransaction {
   transactionId: string;
   signedAt: Date;
   appAccountToken: string | null;
+  /** When Apple refunded / revoked it; null otherwise. Tells a refund apart from natural expiry. */
+  revokedAt: Date | null;
 }
 
 /**
@@ -104,5 +109,48 @@ export function entitlementFromTransaction(t: AppleTransaction): EntitlementFrom
     transactionId: t.transactionId,
     signedAt: new Date(t.signedDate),
     appAccountToken,
+    revokedAt: revoked ? new Date(t.revocationDate!) : null,
   };
+}
+
+export interface LifetimeFromTransaction {
+  productId: string;
+  originalTransactionId: string;
+  transactionId: string;
+  signedAt: Date;
+  appAccountToken: string | null;
+  revoked: boolean;
+}
+
+export type ClassifiedTransaction =
+  | { kind: "subscription"; entitlement: EntitlementFromTransaction }
+  | { kind: "lifetime"; holding: LifetimeFromTransaction }
+  | { kind: "unknown"; productId: string | null };
+
+/**
+ * Route a transaction by product BEFORE anything is written. The subscription
+ * mapper alone turns every non-Pro product into tier 'free' on the
+ * subscription row — so a lifetime purchase sent there would downgrade a
+ * paying Pro subscriber. Unknown products are written nowhere.
+ */
+export function classifyTransaction(t: AppleTransaction): ClassifiedTransaction {
+  if (t.productId && PRO_PRODUCT_IDS.has(t.productId)) {
+    return { kind: "subscription", entitlement: entitlementFromTransaction(t) };
+  }
+  if (t.productId === LIFETIME_PRODUCT_ID) {
+    // Same identity/order/token validation as the subscription path.
+    const e = entitlementFromTransaction(t);
+    return {
+      kind: "lifetime",
+      holding: {
+        productId: LIFETIME_PRODUCT_ID,
+        originalTransactionId: e.originalTransactionId,
+        transactionId: e.transactionId,
+        signedAt: e.signedAt,
+        appAccountToken: e.appAccountToken,
+        revoked: typeof t.revocationDate === "number" && t.revocationDate <= Date.now(),
+      },
+    };
+  }
+  return { kind: "unknown", productId: t.productId ?? null };
 }

@@ -212,6 +212,24 @@ async function readEntitlementSources(
   return resolveEntitlement(rows[0] ?? null);
 }
 
+/**
+ * Effective three-tier tier inside a transaction, for ledger rows. Pro comes
+ * from the same union query as every gate; lifetime is just "a live row".
+ */
+export async function readEffectiveMembershipTier(
+  exec: SqlExecutor,
+  userId: string,
+): Promise<"free" | "lifetime" | "pro"> {
+  const pro = await readEntitlementSources(exec, userId);
+  if (pro.tier === "pro") return "pro";
+  const rows = (await exec`
+    SELECT 1 FROM user_lifetime_entitlements
+     WHERE user_id = ${userId}::uuid AND revoked_at IS NULL
+     LIMIT 1
+  `) as unknown[];
+  return rows.length > 0 ? "lifetime" : "free";
+}
+
 async function getEntitlementRow(userId: string): Promise<EffectiveEntitlement> {
   const sql = getSql();
   if (!sql) return FREE_ENTITLEMENT;
@@ -395,6 +413,8 @@ export async function upsertAtlasEntitlement(input: {
   transactionId: string;
   signedAt: Date;
   appAccountToken: string | null;
+  /** Refund / revocation time from Apple; null for anything else. */
+  revokedAt?: Date | null;
 }): Promise<StoreKitEntitlementWriteResult> {
   const sql = getSql();
   if (!sql) throw new Error("database unavailable");
@@ -487,12 +507,13 @@ export async function upsertAtlasEntitlement(input: {
     await tx`
       INSERT INTO user_entitlements (
         user_id, tier, source, expires_at, original_transaction_id,
-        storekit_transaction_id, storekit_signed_at, storekit_app_account_token, updated_at
+        storekit_transaction_id, storekit_signed_at, storekit_app_account_token,
+        storekit_revoked_at, updated_at
       )
       VALUES (
         ${input.userId}::uuid, ${input.tier}, ${input.source}, ${input.expiresAt},
         ${txnId}, ${input.transactionId}, ${input.signedAt},
-        ${input.appAccountToken}::uuid, now()
+        ${input.appAccountToken}::uuid, ${input.revokedAt ?? null}, now()
       )
       ON CONFLICT (user_id) DO UPDATE SET
         tier = EXCLUDED.tier,
@@ -502,6 +523,9 @@ export async function upsertAtlasEntitlement(input: {
           COALESCE(EXCLUDED.original_transaction_id, user_entitlements.original_transaction_id),
         storekit_transaction_id = EXCLUDED.storekit_transaction_id,
         storekit_signed_at = EXCLUDED.storekit_signed_at,
+        -- Follows the latest signed payload: set by a refund, cleared if a
+        -- later payload shows the subscription live again.
+        storekit_revoked_at = EXCLUDED.storekit_revoked_at,
         storekit_app_account_token = COALESCE(
           EXCLUDED.storekit_app_account_token,
           user_entitlements.storekit_app_account_token

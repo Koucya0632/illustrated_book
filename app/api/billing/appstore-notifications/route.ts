@@ -3,7 +3,8 @@ import {
   getUserIdByOriginalTransaction,
   upsertAtlasEntitlement,
 } from "@/lib/atlas/entitlement";
-import { entitlementFromTransaction } from "@/lib/billing/appstore";
+import { classifyTransaction } from "@/lib/billing/appstore";
+import { applyLifetimeTransaction, getUserIdByLifetimeTransaction } from "@/lib/atlas/lifetime";
 import { verifyNotification, verifyTransaction } from "@/lib/billing/verifier";
 
 export const runtime = "nodejs";
@@ -39,7 +40,31 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true, handled: false });
     }
 
-    const entitlement = entitlementFromTransaction(await verifyTransaction(signedTx));
+    const classified = classifyTransaction(await verifyTransaction(signedTx));
+    if (classified.kind === "unknown") {
+      console.warn("[appstore-notifications] unsupported product", classified.productId);
+      return NextResponse.json({ ok: true, handled: false });
+    }
+    if (classified.kind === "lifetime") {
+      const holding = classified.holding;
+      // Same routing as subscriptions: the signed token first, else the
+      // account the purchase was first bound to.
+      const lifetimeUserId =
+        holding.appAccountToken ?? (await getUserIdByLifetimeTransaction(holding.originalTransactionId));
+      if (!lifetimeUserId) {
+        console.warn("[appstore-notifications] unmapped lifetime", holding.originalTransactionId);
+        return NextResponse.json({ ok: true, handled: false });
+      }
+      const { status } = await applyLifetimeTransaction(lifetimeUserId, holding);
+      return NextResponse.json({
+        ok: true,
+        handled: true,
+        state: status,
+        notificationType: notification.notificationType ?? null,
+      });
+    }
+
+    const entitlement = classified.entitlement;
     if (!entitlement.originalTransactionId) {
       return NextResponse.json({ ok: true, handled: false });
     }
@@ -68,6 +93,7 @@ export async function POST(req: Request) {
       transactionId: entitlement.transactionId,
       signedAt: entitlement.signedAt,
       appAccountToken: entitlement.appAccountToken,
+      revokedAt: entitlement.revokedAt,
     });
 
     return NextResponse.json({

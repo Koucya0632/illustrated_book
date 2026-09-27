@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { upsertAtlasEntitlement } from "@/lib/atlas/entitlement";
-import { entitlementFromTransaction } from "@/lib/billing/appstore";
+import { classifyTransaction } from "@/lib/billing/appstore";
+import { applyLifetimeTransaction } from "@/lib/atlas/lifetime";
 import { BillingVerificationError, verifyTransaction } from "@/lib/billing/verifier";
 
 export const runtime = "nodejs";
@@ -28,9 +29,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "signedTransaction required" }, { status: 400 });
   }
 
-  let entitlement;
+  let classified;
   try {
-    entitlement = entitlementFromTransaction(await verifyTransaction(signed));
+    classified = classifyTransaction(await verifyTransaction(signed));
   } catch (err) {
     if (err instanceof BillingVerificationError) {
       // Verifier not configured (missing root certs / bundleId) — a server
@@ -42,6 +43,33 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid transaction" }, { status: 400 });
   }
 
+  // Route by product before writing anything: an unrecognised product must not
+  // reach the subscription row (the old mapper downgraded it to 'free').
+  if (classified.kind === "unknown") {
+    console.warn("[billing/verify] unsupported product", classified.productId);
+    return NextResponse.json({ error: "unsupported product" }, { status: 400 });
+  }
+  if (classified.kind === "lifetime") {
+    const { status } = await applyLifetimeTransaction(userId, classified.holding);
+    if (status === "account_mismatch") {
+      return NextResponse.json({ error: "purchase belongs to another account" }, { status: 403 });
+    }
+    if (status === "already_bound" || status === "unbound_legacy") {
+      return NextResponse.json({ error: "purchase already linked" }, { status: 409 });
+    }
+    if (status === "already_owned") {
+      // Apple charged, but this account already holds a paid lifetime. The
+      // client should have blocked the purchase; support refunds it.
+      console.warn("[billing/verify] duplicate lifetime purchase", userId, classified.holding.originalTransactionId);
+      return NextResponse.json({ error: "lifetime already owned" }, { status: 409 });
+    }
+    return NextResponse.json(
+      { lifetime: status === "revoke" || status === "ignore" ? "revoked" : "active", state: status },
+      { headers: { "Cache-Control": "private, no-store" } },
+    );
+  }
+
+  const entitlement = classified.entitlement;
   const result = await upsertAtlasEntitlement({
     userId,
     tier: entitlement.tier,
@@ -51,6 +79,7 @@ export async function POST(req: Request) {
     transactionId: entitlement.transactionId,
     signedAt: entitlement.signedAt,
     appAccountToken: entitlement.appAccountToken,
+    revokedAt: entitlement.revokedAt,
   });
 
   if (result.status === "account_mismatch") {

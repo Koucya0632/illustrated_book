@@ -7,7 +7,7 @@ import {
 } from "@/lib/atlas-db";
 import { enrichAtlasItem } from "@/lib/atlas/enrich";
 import { shouldEnrichForAccount } from "@/lib/atlas/enrich-policy";
-import { getMembershipAccess } from "@/lib/atlas/entitlement";
+import { getMembershipAccess, isAtlasItemLocked } from "@/lib/atlas/entitlement";
 import { checkAtlasAiBackstops, clientIpHash } from "@/lib/ratelimit";
 
 export const runtime = "nodejs";
@@ -36,6 +36,15 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
 
   const item = await getAtlasItem(userId, params.id);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
+
+  // A locked item (over the cap after Pro ended) is in its final state for
+  // this plan: success, no paid pass — the client's capture tail won't retry.
+  if (await isAtlasItemLocked(userId, item.id)) {
+    return NextResponse.json(
+      { ok: true, enriched: false },
+      { headers: { "Cache-Control": "private, no-store" } },
+    );
+  }
 
   // Already enriched (or out of budget) — the work is done or will not be done.
   // Either way the caller's item is in its final state, so this is a success.

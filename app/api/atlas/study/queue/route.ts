@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { fetchAtlasDue } from "@/lib/atlas-db";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
@@ -17,7 +18,7 @@ export async function GET(req: Request) {
 
   // null: the dedicated atlas study page reviews every capture regardless of
   // the current learning direction — each row carries its own target_language.
-  const due = await fetchAtlasDue(userId, limit, mode, null);
+  const due = await fetchAtlasDue(userId, limit, mode, null, await getLockedAtlasItemIds(userId));
   const queue = await Promise.all(
     due.map(async (row) => {
       const urls = await createAtlasImageSignedUrls({

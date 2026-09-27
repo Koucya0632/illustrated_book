@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { getCurrentUserId } from "@/lib/current-user";
 import {
   clearLearningProgress,
@@ -32,7 +33,7 @@ export async function GET(req: Request) {
     getStudyStreak(userId, "Asia/Taipei", targetLanguage),
     getActivityHeatmap(userId, "Asia/Taipei", targetLanguage),
     categoryProgress(userId, deckKey),
-    atlasCategoryProgress(userId, targetLanguage),
+    getLockedAtlasItemIds(userId).then((locked) => atlasCategoryProgress(userId, targetLanguage, locked)),
     savedCommunityCategoryProgress(userId, targetLanguage),
   ]);
   // 社群圖鑑 counts like 自製圖鑑: its own {total, seen} row, appended. Saving

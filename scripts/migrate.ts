@@ -1296,7 +1296,7 @@ const DDL = [
 
   // ---- Three-tier membership (docs/MEMBERSHIP_SERVER_DESIGN.md) ----
   // Refunds must be told apart from natural expiry: both leave the
-  // subscription row at tier 'free', but only natural expiry earns the 30-day
+  // subscription row at tier 'free', but only natural expiry earns the
   // grace. Written by the purchase path; null on every row until then.
   `ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_revoked_at TIMESTAMPTZ`,
   // 永久權益. A SEPARATE source from both the subscription and Pro grants,

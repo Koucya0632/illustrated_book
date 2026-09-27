@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAtlasSyncBundle } from "@/lib/atlas-db";
+import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 
 export const runtime = "nodejs";
@@ -24,7 +25,13 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const since = parseSince(searchParams.get("since"));
   const limit = cleanLimit(searchParams.get("limit"));
-  const bundle = await getAtlasSyncBundle(userId, since, limit);
+  const [bundle, lockedItemIds] = await Promise.all([
+    getAtlasSyncBundle(userId, since, limit),
+    // The FULL current set, not a delta: an item can become locked (the Pro
+    // grace ends) without the item itself changing, so `since` cannot carry it.
+    // [] and no query under policy v1.
+    getLockedAtlasItemIds(userId),
+  ]);
 
   const imageUrls = new Map<string, { imageUrl: string; thumbUrl: string }>();
   await Promise.all(
@@ -48,6 +55,7 @@ export async function GET(req: Request) {
   return NextResponse.json(
     {
       serverTime: bundle.serverTime,
+      lockedItemIds,
       images: bundle.images.map((image) => {
         const urls = imageUrls.get(image.id);
         return {

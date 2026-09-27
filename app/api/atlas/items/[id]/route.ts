@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isAtlasItemLocked } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { deleteAtlasItemCascade, getAtlasItem } from "@/lib/atlas-db";
 import {
@@ -21,7 +22,8 @@ export async function GET(_req: Request, props: { params: Promise<{ id: string }
 
   const item = await getAtlasItem(userId, params.id);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
-  return NextResponse.json({ item }, { headers: { "Cache-Control": "private, no-store" } });
+  const locked = await isAtlasItemLocked(userId, item.id);
+  return NextResponse.json({ item, locked }, { headers: { "Cache-Control": "private, no-store" } });
 }
 
 export async function DELETE(_req: Request, props: { params: Promise<{ id: string }> }) {

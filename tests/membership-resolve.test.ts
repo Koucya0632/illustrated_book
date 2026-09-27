@@ -2,13 +2,13 @@
 //
 // Pro and lifetime are independent sources that are never merged: Pro wins
 // while live, lifetime is what's left when Pro ends, and nothing needs to be
-// written for that fallback to happen. The 30-day grace is DERIVED from when
+// written for that fallback to happen. The 7-day grace is DERIVED from when
 // Pro naturally ended, so repeated expiry notifications can't reset it — and a
 // refunded subscription or revoked grant never earns one.
 
 import assert from "node:assert/strict";
 import test from "node:test";
-import { resolveMembership, type MembershipSources } from "../lib/atlas/membership";
+import { PRO_GRACE_DAYS, resolveMembership, type MembershipSources } from "../lib/atlas/membership";
 
 const NOW = new Date("2026-10-15T00:00:00Z");
 const days = (n: number) => new Date(NOW.getTime() + n * 86_400_000).toISOString();
@@ -46,15 +46,16 @@ test("live Pro wins over lifetime and reports its expiry", () => {
   assert.equal(m.graceEndsAt, null, "no grace while Pro is live");
 });
 
-test("Pro that ended naturally 10 days ago leaves lifetime with 20 days of grace", () => {
-  const m = resolveMembership({ ...none, lastNaturalProEndAt: days(-10), lifetime }, NOW);
+test("Pro that ended naturally 3 days ago leaves lifetime with 4 days of grace", () => {
+  const m = resolveMembership({ ...none, lastNaturalProEndAt: days(-3), lifetime }, NOW);
   assert.equal(m.tier, "lifetime");
-  assert.equal(m.graceEndsAt, days(20));
+  assert.equal(m.graceEndsAt, days(4));
   assert.equal(m.proExpiresAt, null);
 });
 
-test("grace is gone once 30 days have passed", () => {
-  const m = resolveMembership({ ...none, lastNaturalProEndAt: days(-31), lifetime }, NOW);
+test("the grace is 7 days, and gone once they have passed", () => {
+  assert.equal(PRO_GRACE_DAYS, 7);
+  const m = resolveMembership({ ...none, lastNaturalProEndAt: days(-8), lifetime }, NOW);
   assert.equal(m.graceEndsAt, null);
 });
 

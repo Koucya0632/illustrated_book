@@ -191,5 +191,9 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
       updateAtlasImageStatus(userId, image.id, "failed", message),
     ]);
     return NextResponse.json({ error: message }, { status: 500 });
+  } finally {
+    // The usage row (if any) is written above; the in-flight reservation must
+    // go either way, or it keeps eating quota until it expires.
+    await aiLimit.release?.();
   }
 }

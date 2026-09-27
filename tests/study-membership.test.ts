@@ -85,3 +85,17 @@ test("the answer route checks every source, and refuses with 200 — never a 4xx
   assert.ok(src.includes('canStudyCard(access, { source: "public"'));
   assert.match(src, /gated: "membership_required" \}, \{ status: 200 \}/);
 });
+
+// ---- What the client is told it may study (so locked themes show a lock) ----
+import { studyableCategories } from "../lib/study-membership";
+
+test("clients are told the whitelist only when the gate applies; null means everything", () => {
+  assert.deepEqual([...(studyableCategories(free2) ?? [])].sort(), ["bedroom", "fruits"]);
+  assert.equal(studyableCategories(free1), null);
+  assert.equal(studyableCategories(life2), null);
+});
+
+test("the entitlement snapshot carries it, from the same rule as the gate", () => {
+  const src = readFileSync(new URL("../lib/atlas/entitlement.ts", import.meta.url), "utf8");
+  assert.match(src, /studyableCategories: studyableCategories\(/);
+});

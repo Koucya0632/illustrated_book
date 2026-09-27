@@ -42,6 +42,15 @@ export function applyMembershipStudyScope(scope: QueueThemeScope, access: StudyA
   };
 }
 
+/**
+ * What a client should present as studyable, so locked themes can show a lock
+ * instead of an empty queue. The same whitelist the gate enforces; null means
+ * "every category" (members, and everyone under v1).
+ */
+export function studyableCategories(access: StudyAccess): readonly string[] | null {
+  return gated(access) ? FREE_STUDY_CATEGORIES : null;
+}
+
 export function canStudyCard(
   access: StudyAccess,
   card: { source: "public"; category: string | null } | { source: "custom" | "community" },

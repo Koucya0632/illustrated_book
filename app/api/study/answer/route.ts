@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { studyAnswerOwnerMatches } from "@/lib/study-answer-owner";
 import { revalidateTag } from "next/cache";
 import { getCurrentUserIdFast } from "@/lib/current-user";
+import { canStudyCard } from "@/lib/study-membership";
+import { getStudyAccess } from "@/lib/atlas/entitlement";
 import { getCardById, upsertReview } from "@/lib/cards-db";
 import {
   getAtlasDueCardById,
@@ -357,13 +359,23 @@ export async function POST(req: Request) {
 
   const rawCardId = body.cardId;
   const rating = body.rating as Rating;
+  // Study gate (checklist §3), re-checked here so a stale queue can't write
+  // what the queue would no longer serve. A refusal is HTTP 200 + ok:false and
+  // writes nothing — NOT a 4xx: released iOS builds replay parked answers and
+  // stop at the first failure, so a permanent 4xx would wedge every answer
+  // queued behind it. (No-op under policy v1: getStudyAccess skips the lookup.)
+  const access = await getStudyAccess(userId);
+  const gatedReply = () =>
+    NextResponse.json({ ok: false, gated: "membership_required" }, { status: 200 });
   if (typeof rawCardId === "string" && rawCardId.startsWith("atlas:")) {
+    if (!canStudyCard(access, { source: "custom" })) return gatedReply();
     if (!VALID_RATINGS.includes(rating)) {
       return NextResponse.json({ error: "missing/invalid cardId or rating" }, { status: 400 });
     }
     return answerAtlasCard(userId, rawCardId.slice("atlas:".length), rating, body);
   }
   if (typeof rawCardId === "string" && rawCardId.startsWith("saved:")) {
+    if (!canStudyCard(access, { source: "community" })) return gatedReply();
     if (!VALID_RATINGS.includes(rating)) {
       return NextResponse.json({ error: "missing/invalid cardId or rating" }, { status: 400 });
     }
@@ -377,6 +389,9 @@ export async function POST(req: Request) {
 
   const card = await getCardById(cardId, userId);
   if (!card) return NextResponse.json({ error: "card not found" }, { status: 404 });
+  if (!canStudyCard(access, { source: "public", category: card.word.category ?? null })) {
+    return gatedReply();
+  }
   const targetLanguage = card.word.target_language;
 
   // Card-level SRS reschedule + word-level mastery (decay + EMA). The previous

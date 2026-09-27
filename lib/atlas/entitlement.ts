@@ -240,6 +240,19 @@ export async function getAtlasGateContext(userId: string): Promise<{
   return { tier, pro: row.tier, policy, limits: limitsFor(tier, policy) };
 }
 
+/**
+ * Tier + policy for the study gate (lib/study-membership.ts). Under v1 the gate
+ * is a no-op, so the lookup is skipped entirely — the study queue's hot path
+ * pays nothing until the cutover.
+ */
+export async function getStudyAccess(
+  userId: string,
+): Promise<{ tier: MembershipTier; policy: ReturnType<typeof membershipPolicy> }> {
+  const policy = membershipPolicy();
+  if (policy === "v1") return { tier: "free", policy };
+  return { tier: (await getAtlasGateContext(userId)).tier, policy };
+}
+
 export async function getAtlasTier(userId: string): Promise<AtlasTier> {
   return (await getEntitlementRow(userId)).tier;
 }

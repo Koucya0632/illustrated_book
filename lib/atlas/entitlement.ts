@@ -34,6 +34,14 @@ import {
   decideStoreKitBinding,
   decideStoreKitState,
 } from "@/lib/billing/storekit-state";
+import {
+  membershipPolicy,
+  membershipSourcesFromRow,
+  resolveMembership,
+  type Membership,
+  type MembershipPolicy,
+  type MembershipSourceRow,
+} from "@/lib/atlas/membership";
 
 // postgres-js types the pool handle (Sql) and a transaction handle
 // (TransactionSql) as mutually unassignable, so helpers that must run in both
@@ -80,6 +88,12 @@ export interface AtlasEntitlementSnapshot {
   adsRequiredForCardGeneration: boolean;
   subscriptionExpiresAt: string | null;
   usage: AtlasUsage;
+  /**
+   * Three-tier view (docs/MEMBERSHIP_SERVER_DESIGN.md §6). `plan` above keeps
+   * its old meaning — "pro" only while Pro is live — so released clients see
+   * exactly what they saw before.
+   */
+  membership: Membership & { policy: MembershipPolicy };
 }
 
 function intEnv(name: string, fallback: number): number {
@@ -274,8 +288,62 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
   }
 }
 
+/**
+ * Sources for the three-tier view, in one round trip. Separate from
+ * readEntitlementSources on purpose: that one sits on every gate's hot path and
+ * answers only "is Pro live"; this one is read by the entitlement endpoint.
+ */
+async function readMembership(userId: string, pro: EffectiveEntitlement): Promise<Membership> {
+  const sql = getSql();
+  const fallback = () =>
+    resolveMembership(
+      membershipSourcesFromRow(
+        {
+          sub_tier: null,
+          sub_expires_at: null,
+          sub_revoked_at: null,
+          grant_ended_at: null,
+          lifetime_source: null,
+          lifetime_acquired_at: null,
+        },
+        pro,
+      ),
+    );
+  if (!sql) return fallback();
+  try {
+    const rows = (await sql`
+      SELECT e.tier                AS sub_tier,
+             e.expires_at          AS sub_expires_at,
+             e.storekit_revoked_at AS sub_revoked_at,
+             g.ended_at            AS grant_ended_at,
+             l.source              AS lifetime_source,
+             l.acquired_at         AS lifetime_acquired_at
+        FROM (SELECT ${userId}::uuid AS uid) u
+        LEFT JOIN user_entitlements e ON e.user_id = u.uid
+        LEFT JOIN LATERAL (
+          SELECT max(expires_at) AS ended_at
+            FROM user_entitlement_grants
+           WHERE user_id = u.uid AND revoked_at IS NULL AND expires_at <= now()
+        ) g ON TRUE
+        LEFT JOIN LATERAL (
+          SELECT source, acquired_at
+            FROM user_lifetime_entitlements
+           WHERE user_id = u.uid AND revoked_at IS NULL
+           LIMIT 1
+        ) l ON TRUE
+    `) as MembershipSourceRow[];
+    return resolveMembership(membershipSourcesFromRow(rows[0], pro));
+  } catch (err) {
+    // Fail open like the rest of this module: fall back to what the Pro union
+    // alone says, so the endpoint still answers.
+    console.warn("[entitlement] membership lookup failed", err);
+    return fallback();
+  }
+}
+
 export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlementSnapshot> {
   const [row, usage] = await Promise.all([getEntitlementRow(userId), getAtlasUsage(userId)]);
+  const membership = await readMembership(userId, row);
   const limits = atlasLimitsForTier(row.tier);
   return {
     plan: row.tier,
@@ -290,6 +358,7 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
     // their Pro actually ends and therefore the only honest answer.
     subscriptionExpiresAt: row.expiresAt,
     usage,
+    membership: { ...membership, policy: membershipPolicy() },
   };
 }
 

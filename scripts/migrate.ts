@@ -1294,6 +1294,53 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS user_entitlement_events_created_idx
      ON user_entitlement_events(created_at DESC)`,
 
+  // ---- Three-tier membership (docs/MEMBERSHIP_SERVER_DESIGN.md) ----
+  // Refunds must be told apart from natural expiry: both leave the
+  // subscription row at tier 'free', but only natural expiry earns the 30-day
+  // grace. Written by the purchase path; null on every row until then.
+  `ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_revoked_at TIMESTAMPTZ`,
+  // 永久權益. A SEPARATE source from both the subscription and Pro grants,
+  // never merged with them (same reason as ADR-0004). Several rows per user
+  // over time; at most one live (revoked_at IS NULL). Revoking keeps the row.
+  `CREATE TABLE IF NOT EXISTS user_lifetime_entitlements (
+     id                         BIGSERIAL PRIMARY KEY,
+     user_id                    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     source                     TEXT NOT NULL CHECK (source IN ('appstore','legacy_pro','grant')),
+     product_id                 TEXT,
+     original_transaction_id    TEXT UNIQUE,
+     storekit_transaction_id    TEXT,
+     storekit_signed_at         TIMESTAMPTZ,
+     storekit_app_account_token UUID,
+     reason                     TEXT,
+     granted_by                 TEXT,
+     acquired_at                TIMESTAMPTZ NOT NULL DEFAULT now(),
+     revoked_at                 TIMESTAMPTZ,
+     revoke_reason              TEXT,
+     created_at                 TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at                 TIMESTAMPTZ NOT NULL DEFAULT now(),
+     -- An App Store holding is explained by its transaction; anything else
+     -- needs a human-readable reason, a year from now it is the only record.
+     CHECK (source = 'appstore' OR char_length(btrim(coalesce(reason, ''))) BETWEEN 1 AND 500)
+   )`,
+  `CREATE UNIQUE INDEX IF NOT EXISTS user_lifetime_live_idx
+     ON user_lifetime_entitlements(user_id) WHERE revoked_at IS NULL`,
+  // The ledger records effective-tier transitions, which now include
+  // 'lifetime'. Guarded on the definition, not the name: the name already
+  // exists with the old two-value list.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'user_entitlement_events_to_tier_check'
+         AND pg_get_constraintdef(oid) LIKE '%lifetime%'
+     ) THEN
+       ALTER TABLE user_entitlement_events
+         DROP CONSTRAINT IF EXISTS user_entitlement_events_to_tier_check;
+       ALTER TABLE user_entitlement_events
+         ADD CONSTRAINT user_entitlement_events_to_tier_check
+         CHECK (to_tier IN ('free','lifetime','pro'));
+     END IF;
+   END $$`,
+
   // 好友可見從未上線，這兩張表沒有任何寫入端，讀路徑已於 2026-08 移除。
   // 分享是二值的：私有，或通過審核閘門對所有人公開（tuji-ios docs/adr/0012）。
   // 表留著是因為 migration 是 append-only，刪掉換不到任何東西。

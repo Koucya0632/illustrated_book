@@ -35,6 +35,7 @@ import {
   decideStoreKitState,
 } from "@/lib/billing/storekit-state";
 import { limitsFor, upgradeTarget, type AtlasLimits } from "@/lib/atlas/membership-limits";
+import { studyableCategories } from "@/lib/study-membership";
 import {
   membershipPolicy,
   membershipSourcesFromRow,
@@ -81,7 +82,11 @@ export interface AtlasEntitlementSnapshot {
    * its old meaning — "pro" only while Pro is live — so released clients see
    * exactly what they saw before.
    */
-  membership: Membership & { policy: MembershipPolicy };
+  membership: Membership & {
+    policy: MembershipPolicy;
+    /** Official categories this account may study; null = all (study gate, checklist §3). */
+    studyableCategories: readonly string[] | null;
+  };
 }
 
 /**
@@ -381,7 +386,11 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
     // their Pro actually ends and therefore the only honest answer.
     subscriptionExpiresAt: row.expiresAt,
     usage,
-    membership: { ...membership, policy: membershipPolicy() },
+    membership: {
+      ...membership,
+      policy: membershipPolicy(),
+      studyableCategories: studyableCategories({ tier: membership.tier, policy: membershipPolicy() }),
+    },
   };
 }
 

@@ -79,3 +79,9 @@ test("deleting a locked item stays open", () => {
   const del = src.slice(src.indexOf("export async function DELETE"));
   assert.ok(!del.includes("isAtlasItemLocked("));
 });
+
+test("sync sends the full locked set every time, not as a per-item delta", () => {
+  const src = read("app/api/atlas/sync/route.ts");
+  assert.ok(src.includes("getLockedAtlasItemIds(userId)"));
+  assert.match(src, /lockedItemIds,/);
+});

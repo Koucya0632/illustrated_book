@@ -19,7 +19,7 @@ import {
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import { createPrimaryAtlasProvider } from "@/lib/atlas/recognition";
 import { recognitionFoundSomething } from "@/lib/atlas/vision-provider";
-import { enforceAtlasAiLimits, type AtlasTier } from "@/lib/atlas/entitlement";
+import { checkAtlasUploadAllowed, enforceAtlasAiLimits, type AtlasTier } from "@/lib/atlas/entitlement";
 import { clientIpHash } from "@/lib/ratelimit";
 import {
   ATLAS_PRIVATE_BUCKET,
@@ -194,6 +194,20 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  // Before the body is read or anything is stored (checklist §4; v2 only).
+  // Same response shape as the confirm route's capacity refusal.
+  const allowed = await checkAtlasUploadAllowed(userId);
+  if (!allowed.ok) {
+    return NextResponse.json(
+      {
+        error: allowed.upgradeable ? "quota_exceeded" : "capacity_full",
+        scope: "capacity",
+        message: allowed.message,
+      },
+      { status: allowed.upgradeable ? 402 : 429 },
+    );
+  }
 
   let form: FormData;
   try {

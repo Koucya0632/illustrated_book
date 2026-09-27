@@ -21,7 +21,7 @@ import { localizeStudyQueue } from "@/lib/study-localize";
 import { fetchStudyExamples } from "@/lib/study-examples";
 import { resolveQueueThemeScope } from "@/lib/study-sources";
 import { applyMembershipStudyScope } from "@/lib/study-membership";
-import { getStudyAccess } from "@/lib/atlas/entitlement";
+import { getMembershipAccess } from "@/lib/atlas/entitlement";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 import { hintDefinition } from "@/lib/study-hint";
@@ -206,7 +206,7 @@ export async function GET(req: Request) {
   const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic } =
     applyMembershipStudyScope(
       resolveQueueThemeScope(categories, reviewOnly),
-      await getStudyAccess(userId),
+      await getMembershipAccess(userId),
     );
 
   try {

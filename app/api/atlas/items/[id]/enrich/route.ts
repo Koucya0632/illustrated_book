@@ -6,7 +6,8 @@ import {
   updateAtlasItemEnrichment,
 } from "@/lib/atlas-db";
 import { enrichAtlasItem } from "@/lib/atlas/enrich";
-import { shouldEnrichAtlasItem } from "@/lib/atlas/enrich-policy";
+import { shouldEnrichForAccount } from "@/lib/atlas/enrich-policy";
+import { getMembershipAccess } from "@/lib/atlas/entitlement";
 import { checkAtlasAiBackstops, clientIpHash } from "@/lib/ratelimit";
 
 export const runtime = "nodejs";
@@ -21,7 +22,7 @@ function invalidId(id: string): boolean {
 //
 // Idempotent for real, which it previously only claimed to be: it re-ran the
 // whole paid pass (3-4 model calls) on every POST, with no quota, no burst
-// limit and no daily cap. shouldEnrichAtlasItem is the one place that decides
+// limit and no daily cap. shouldEnrichForAccount is the one place that decides
 // whether an item may still cost money; a repeat POST for an item that is
 // already filled now returns 200 without touching a model. See docs/adr/0011.
 //
@@ -38,7 +39,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
 
   // Already enriched (or out of budget) — the work is done or will not be done.
   // Either way the caller's item is in its final state, so this is a success.
-  if (!shouldEnrichAtlasItem(item)) {
+  if (!shouldEnrichForAccount(item, await getMembershipAccess(userId))) {
     return NextResponse.json(
       { ok: true, enriched: false },
       { headers: { "Cache-Control": "private, no-store" } },

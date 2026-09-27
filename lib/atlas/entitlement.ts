@@ -262,6 +262,86 @@ export async function getAtlasTier(userId: string): Promise<AtlasTier> {
   return (await getEntitlementRow(userId)).tier;
 }
 
+/**
+ * Successful recognitions of one kind this calendar month — THE quota count.
+ * Shared by the usage readout and the reservation check so the two can never
+ * count differently. Failed / empty recognitions are free (success = false).
+ */
+async function monthlyAiUseCount(
+  exec: SqlExecutor,
+  userId: string,
+  operation: "primary" | "escalated",
+): Promise<number> {
+  const rows = (await exec`
+    SELECT count(*)::int AS count
+      FROM user_atlas_ai_usage
+     WHERE user_id = ${userId}::uuid
+       AND operation = ${operation}
+       AND success
+       AND created_at >= date_trunc('month', now())
+  `) as { count: number }[];
+  return rows[0]?.count ?? 0;
+}
+
+/** How long an unreleased reservation keeps counting (a crash mid-call). */
+const AI_RESERVATION_TTL_MINUTES = 5;
+
+/**
+ * Take one unit of monthly quota before the model call, atomically per user:
+ * the count and the insert run under a per-user advisory lock, so concurrent
+ * requests from several devices are serialised and cannot all pass. The lock
+ * is released at commit — it is never held across the model call.
+ *
+ * Fails open like the rest of this module: a DB error allows the call without
+ * a reservation (the ratelimit backstops still cap volume).
+ */
+async function reserveAtlasAiQuota(
+  userId: string,
+  operation: "primary" | "escalated",
+  limit: number,
+): Promise<{ ok: true; reservationId: string | null } | { ok: false }> {
+  const sql = getSql();
+  if (!sql) return { ok: true, reservationId: null };
+  try {
+    return await sql.begin(async (tx: SqlExecutor) => {
+      await tx`SELECT pg_advisory_xact_lock(hashtextextended(${"atlas-ai:" + userId + ":" + operation}, 0))`;
+      // Tidy this user's expired leftovers (a crash mid-call) while locked.
+      await tx`
+        DELETE FROM atlas_ai_reservations
+         WHERE user_id = ${userId}::uuid
+           AND created_at <= now() - make_interval(mins => ${AI_RESERVATION_TTL_MINUTES})
+      `;
+      const used = await monthlyAiUseCount(tx, userId, operation);
+      const pending = (await tx`
+        SELECT count(*)::int AS count
+          FROM atlas_ai_reservations
+         WHERE user_id = ${userId}::uuid
+           AND operation = ${operation}
+           AND created_at > now() - make_interval(mins => ${AI_RESERVATION_TTL_MINUTES})
+      `) as { count: number }[];
+      if (used + (pending[0]?.count ?? 0) >= limit) return { ok: false as const };
+      const inserted = (await tx`
+        INSERT INTO atlas_ai_reservations (user_id, operation)
+        VALUES (${userId}::uuid, ${operation})
+        RETURNING id
+      `) as { id: string }[];
+      return { ok: true as const, reservationId: String(inserted[0].id) };
+    });
+  } catch (err) {
+    console.warn("[entitlement] quota reservation failed, allowing", err);
+    return { ok: true, reservationId: null };
+  }
+}
+
+async function releaseAtlasAiReservation(reservationId: string | null): Promise<void> {
+  if (!reservationId) return;
+  const sql = getSql();
+  if (!sql) return;
+  await sql`DELETE FROM atlas_ai_reservations WHERE id = ${reservationId}`.catch((err: unknown) =>
+    console.warn("[entitlement] quota reservation release failed", err),
+  );
+}
+
 export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
   const sql = getSql();
   if (!sql) {
@@ -281,22 +361,8 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
       // is free (see recognitionFoundSomething). Such calls are bounded only by
       // the ratelimit backstops (per-IP per-minute + global daily) — there is no
       // per-user daily cap on them.
-      sql<{ count: number }[]>`
-        SELECT count(*)::int AS count
-        FROM user_atlas_ai_usage
-        WHERE user_id = ${userId}::uuid
-          AND operation = 'primary'
-          AND success
-          AND created_at >= date_trunc('month', now())
-      `,
-      sql<{ count: number }[]>`
-        SELECT count(*)::int AS count
-        FROM user_atlas_ai_usage
-        WHERE user_id = ${userId}::uuid
-          AND operation = 'escalated'
-          AND success
-          AND created_at >= date_trunc('month', now())
-      `,
+      monthlyAiUseCount(sql, userId, "primary"),
+      monthlyAiUseCount(sql, userId, "escalated"),
       // CONSUMPTION count — separate table, separate limit.
       sql<{ count: number }[]>`
         SELECT count(*)::int AS count
@@ -306,8 +372,8 @@ export async function getAtlasUsage(userId: string): Promise<AtlasUsage> {
     ]);
     return {
       atlasSlots: slots[0]?.count ?? 0,
-      primaryAiThisMonth: primary[0]?.count ?? 0,
-      precisionAiThisMonth: precision[0]?.count ?? 0,
+      primaryAiThisMonth: primary,
+      precisionAiThisMonth: precision,
       savedItems: saved[0]?.count ?? 0,
     };
   } catch (err) {
@@ -778,6 +844,11 @@ export interface AtlasAiGate {
   scope?: "primary_ai" | "precision_ai" | "ip_burst" | "global";
   message?: string;
   retryAfterSeconds?: number;
+  /**
+   * Present when ok: frees the quota reservation taken for this call. Callers
+   * MUST await it once the call is over (success or failure) — in a finally.
+   */
+  release?: () => Promise<void>;
 }
 
 /**
@@ -791,12 +862,18 @@ export async function enforceAtlasAiLimits(ctx: {
   ipHash: string;
   operation: AtlasAiOperation;
 }): Promise<AtlasAiGate> {
-  const [gate, usage] = await Promise.all([getAtlasGateContext(ctx.userId), getAtlasUsage(ctx.userId)]);
+  const gate = await getAtlasGateContext(ctx.userId);
   const { limits, policy } = gate;
   const tier = gate.pro;
+  const usageOperation = ctx.operation === "precision" ? "escalated" : "primary";
+  const reserved = await reserveAtlasAiQuota(
+    ctx.userId,
+    usageOperation,
+    ctx.operation === "precision" ? limits.precisionAiLimitMonthly : limits.primaryAiSoftLimitMonthly,
+  );
 
   if (ctx.operation === "precision") {
-    if (usage.precisionAiThisMonth >= limits.precisionAiLimitMonthly) {
+    if (!reserved.ok) {
       // Only Pro has precision in either policy.
       const upgradeable = gate.tier !== "pro";
       return {
@@ -809,7 +886,7 @@ export async function enforceAtlasAiLimits(ctx: {
           : `本月高精度辨識已達上限（${limits.precisionAiLimitMonthly}），下月再試。`,
       };
     }
-  } else if (usage.primaryAiThisMonth >= limits.primaryAiSoftLimitMonthly) {
+  } else if (!reserved.ok) {
     const target = upgradeTarget(gate.tier, policy);
     const targetMonthly = target ? limitsFor(target, policy).primaryAiSoftLimitMonthly : 0;
     return {
@@ -828,8 +905,10 @@ export async function enforceAtlasAiLimits(ctx: {
     };
   }
 
+  const reservationId = reserved.ok ? reserved.reservationId : null;
   const backstop = await checkAtlasAiBackstops({ ipHash: ctx.ipHash });
   if (!backstop.ok) {
+    await releaseAtlasAiReservation(reservationId);
     return {
       ok: false,
       tier,
@@ -839,5 +918,5 @@ export async function enforceAtlasAiLimits(ctx: {
       retryAfterSeconds: backstop.retryAfterSeconds,
     };
   }
-  return { ok: true, tier };
+  return { ok: true, tier, release: () => releaseAtlasAiReservation(reservationId) };
 }

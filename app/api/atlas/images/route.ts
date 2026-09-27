@@ -336,14 +336,18 @@ export async function POST(req: Request) {
     candidates: ReturnType<typeof serializeCandidate>[];
   };
   if (aiLimit.ok) {
-    recognized = await runPrimaryRecognition(
-      userId,
-      image,
-      processed.recognitionBytes,
-      targetLanguage,
-      glossLanguage,
-      aiLimit.tier,
-    );
+    try {
+      recognized = await runPrimaryRecognition(
+        userId,
+        image,
+        processed.recognitionBytes,
+        targetLanguage,
+        glossLanguage,
+        aiLimit.tier,
+      );
+    } finally {
+      await aiLimit.release?.();
+    }
   } else {
     await updateAtlasImageStatus(userId, image.id, "needs_review").catch(() => {});
     recognized = { job: null, candidates: [] };

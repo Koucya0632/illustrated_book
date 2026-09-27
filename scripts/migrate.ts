@@ -1324,6 +1324,19 @@ const DDL = [
    )`,
   `CREATE UNIQUE INDEX IF NOT EXISTS user_lifetime_live_idx
      ON user_lifetime_entitlements(user_id) WHERE revoked_at IS NULL`,
+  // In-flight AI recognitions. The monthly quota counts finished successes in
+  // user_atlas_ai_usage, which is written only AFTER the model call — so two
+  // devices starting at once could both pass the check. A reservation is taken
+  // under a per-user lock before the call and deleted after; one left behind
+  // by a crash stops counting after 5 minutes (see enforceAtlasAiLimits).
+  `CREATE TABLE IF NOT EXISTS atlas_ai_reservations (
+     id         BIGSERIAL PRIMARY KEY,
+     user_id    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     operation  TEXT NOT NULL CHECK (operation IN ('primary','escalated')),
+     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS atlas_ai_reservations_user_idx
+     ON atlas_ai_reservations(user_id, operation, created_at DESC)`,
   // The ledger records effective-tier transitions, which now include
   // 'lifetime'. Guarded on the definition, not the name: the name already
   // exists with the old two-value list.

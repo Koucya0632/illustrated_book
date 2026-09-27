@@ -98,7 +98,7 @@ export default async function MembersPage(
                   <td className="break-all px-4 py-3 text-muted">{m.email || "—"}</td>
                   <td className="px-4 py-3">
                     <TierBadge
-                      tier={m.tier}
+                      tier={m.membershipTier}
                       hasGrant={m.hasGrant}
                       hasSubscription={m.hasSubscription}
                     />
@@ -128,6 +128,9 @@ function TierBadge({
   hasGrant: boolean;
   hasSubscription: boolean;
 }) {
+  if (tier === "lifetime") {
+    return <span className="rounded-full bg-sky-soft px-2.5 py-1 text-xs font-bold text-sky-accent">永久會員</span>;
+  }
   if (tier !== "pro") {
     return <span className="rounded-full bg-cream px-2.5 py-1 text-xs font-bold text-muted">免費</span>;
   }

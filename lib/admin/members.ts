@@ -14,11 +14,13 @@ import "server-only";
 import { getSql } from "@/lib/db";
 import {
   getAtlasUsage,
+  membershipTierOf,
   resolveEntitlement,
   type AtlasTier,
   type AtlasUsage,
   type EffectiveEntitlement,
 } from "@/lib/atlas/entitlement";
+import type { MembershipTier } from "@/lib/atlas/membership";
 
 export interface MemberSummary {
   userId: string;
@@ -27,6 +29,8 @@ export interface MemberSummary {
   email: string;
   createdAt: string;
   tier: AtlasTier;
+  /** free / lifetime / pro — what the gates enforce. */
+  membershipTier: MembershipTier;
   expiresAt: string | null;
   /** True when Pro comes (at least partly) from a manual grant. */
   hasGrant: boolean;
@@ -64,11 +68,24 @@ export interface MemberSubscription {
   updatedAt: string;
 }
 
+/** A 永久權益 row, live or revoked — history is the point. */
+export interface MemberLifetimeHolding {
+  id: string;
+  source: string;
+  productId: string | null;
+  reason: string | null;
+  grantedBy: string | null;
+  acquiredAt: string;
+  revokedAt: string | null;
+  revokeReason: string | null;
+}
+
 export interface MemberDetail {
   summary: MemberSummary;
   effective: EffectiveEntitlement;
   subscription: MemberSubscription | null;
   grants: MemberGrant[];
+  lifetime: MemberLifetimeHolding[];
   ledger: MemberLedgerEntry[];
   usage: AtlasUsage;
 }
@@ -82,6 +99,7 @@ interface MemberRow {
   sub_tier: string | null;
   sub_expires_at: string | null;
   grant_expires_at: string | null;
+  has_lifetime: boolean | null;
 }
 
 function toSummary(row: MemberRow): MemberSummary {
@@ -93,6 +111,7 @@ function toSummary(row: MemberRow): MemberSummary {
     email: row.email ?? "",
     createdAt: row.created_at,
     tier: effective.tier,
+    membershipTier: membershipTierOf(effective),
     expiresAt: effective.expiresAt,
     hasGrant: effective.grantExpiresAt !== null,
     hasSubscription:
@@ -123,7 +142,9 @@ export async function searchMembers(
     SELECT p.id, p.username, p.nickname, u.email, p.created_at,
            e.tier       AS sub_tier,
            e.expires_at AS sub_expires_at,
-           g.expires_at AS grant_expires_at
+           g.expires_at AS grant_expires_at,
+           EXISTS (SELECT 1 FROM user_lifetime_entitlements l
+                    WHERE l.user_id = p.id AND l.revoked_at IS NULL) AS has_lifetime
       FROM profiles p
       JOIN auth.users u ON u.id = p.id
       LEFT JOIN user_entitlements e ON e.user_id = p.id
@@ -173,12 +194,14 @@ export async function getMemberDetail(userId: string): Promise<MemberDetail | nu
   const sql = getSql();
   if (!sql) throw new Error("database unavailable");
 
-  const [rows, subs, grants, ledger, usage] = await Promise.all([
+  const [rows, subs, grants, lifetime, ledger, usage] = await Promise.all([
     sql`
       SELECT p.id, p.username, p.nickname, u.email, p.created_at,
              e.tier       AS sub_tier,
              e.expires_at AS sub_expires_at,
-             g.expires_at AS grant_expires_at
+             g.expires_at AS grant_expires_at,
+             EXISTS (SELECT 1 FROM user_lifetime_entitlements l
+                      WHERE l.user_id = p.id AND l.revoked_at IS NULL) AS has_lifetime
         FROM profiles p
         JOIN auth.users u ON u.id = p.id
         LEFT JOIN user_entitlements e ON e.user_id = p.id
@@ -216,6 +239,24 @@ export async function getMemberDetail(userId: string): Promise<MemberDetail | nu
         reason: string;
         granted_by: string;
         granted_at: string;
+        revoked_at: string | null;
+        revoke_reason: string | null;
+      }[]
+    >,
+    sql`
+      SELECT id, source, product_id, reason, granted_by, acquired_at, revoked_at, revoke_reason
+        FROM user_lifetime_entitlements
+       WHERE user_id = ${userId}::uuid
+       ORDER BY acquired_at DESC
+       LIMIT 20
+    ` as unknown as Promise<
+      {
+        id: string;
+        source: string;
+        product_id: string | null;
+        reason: string | null;
+        granted_by: string | null;
+        acquired_at: string;
         revoked_at: string | null;
         revoke_reason: string | null;
       }[]
@@ -267,6 +308,16 @@ export async function getMemberDetail(userId: string): Promise<MemberDetail | nu
       grantedAt: g.granted_at,
       revokedAt: g.revoked_at,
       revokeReason: g.revoke_reason,
+    })),
+    lifetime: lifetime.map((l) => ({
+      id: String(l.id),
+      source: l.source,
+      productId: l.product_id,
+      reason: l.reason,
+      grantedBy: l.granted_by,
+      acquiredAt: l.acquired_at,
+      revokedAt: l.revoked_at,
+      revokeReason: l.revoke_reason,
     })),
     ledger: ledger.map((e) => ({
       id: String(e.id),

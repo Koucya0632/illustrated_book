@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getSql } from "@/lib/db";
 import { grantProAccess, revokeProGrants, MAX_GRANT_DAYS } from "@/lib/atlas/entitlement";
+import { grantLifetimeHolding, revokeLifetimeGrant } from "@/lib/atlas/lifetime";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -56,6 +57,23 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
       const result = await revokeProGrants({ userId, reason, revokedBy: ACTOR });
       if (result.revoked === 0) {
         return NextResponse.json({ error: "這個帳號沒有生效中的贈與" }, { status: 409 });
+      }
+      return NextResponse.json({ ok: true, revoked: result.revoked });
+    }
+
+    if (body.action === "grant_lifetime") {
+      const result = await grantLifetimeHolding({ userId, source: "grant", reason, grantedBy: ACTOR });
+      if (result.status === "already_held") {
+        return NextResponse.json({ error: "這個帳號已經有永久權益" }, { status: 409 });
+      }
+      return NextResponse.json({ ok: true });
+    }
+
+    if (body.action === "revoke_lifetime") {
+      // Only operator-given holdings; an App Store purchase ends via Apple's refund.
+      const result = await revokeLifetimeGrant({ userId, reason, revokedBy: ACTOR });
+      if (result.revoked === 0) {
+        return NextResponse.json({ error: "沒有可收回的永久權益（App Store 購買只能經 Apple 退款）" }, { status: 409 });
       }
       return NextResponse.json({ ok: true, revoked: result.revoked });
     }

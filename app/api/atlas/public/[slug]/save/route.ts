@@ -6,6 +6,7 @@
 // atlasSlotsLimit — a Free user at their creation limit can still save.
 
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import {
@@ -53,6 +54,8 @@ export async function POST(_req: Request, props: { params: Promise<{ slug: strin
   const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const membershipRefusal = await communityWriteRefusal(userId);
+  if (membershipRefusal) return membershipRefusal;
   if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
 
   const slug = normalizeSlug(params.slug);

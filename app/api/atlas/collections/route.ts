@@ -3,6 +3,7 @@
 // atlas_collections is the backstop.
 
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import { createAtlasCollection, listMyAtlasCollections, type AtlasMyCollectionRow } from "@/lib/atlas-db";
@@ -48,6 +49,8 @@ export async function GET() {
 export async function POST(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const membershipRefusal = await communityWriteRefusal(userId);
+  if (membershipRefusal) return membershipRefusal;
   if (!getSql()) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
 
   let body: { title?: unknown; description?: unknown; targetLanguage?: unknown };

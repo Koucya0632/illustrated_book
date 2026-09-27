@@ -3,6 +3,7 @@
 // it to the human queue. A collection must have at least one member first.
 
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
 import {
   getOwnedAtlasCollection,
@@ -25,6 +26,8 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
   const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const membershipRefusal = await communityWriteRefusal(userId);
+  if (membershipRefusal) return membershipRefusal;
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   // Repeat offenders lose publishing (docs/COMMUNITY_ATLAS_PLAN.md §5.5).

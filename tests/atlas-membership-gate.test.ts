@@ -42,3 +42,46 @@ test("the upload checks the account before it stores anything", () => {
   assert.ok(gate < post.indexOf("req.formData()"), "gate before reading the body");
   assert.ok(gate < post.indexOf("uploadAtlasImageBuffers("), "gate before storage");
 });
+
+// ---- 物見 (checklist §5): writes need membership, housekeeping never does ----
+
+const handler = (src: string, method: string) => {
+  const start = src.indexOf(`export async function ${method}(`);
+  if (start < 0) return "";
+  const next = src.indexOf("export async function", start + 10);
+  return src.slice(start, next < 0 ? undefined : next);
+};
+
+const gated: [string, string][] = [
+  ["app/api/atlas/collections/route.ts", "POST"],
+  ["app/api/atlas/collections/[id]/route.ts", "PATCH"],
+  ["app/api/atlas/collections/[id]/items/route.ts", "POST"],
+  ["app/api/atlas/collections/[id]/avatar/route.ts", "POST"],
+  ["app/api/atlas/collections/[id]/publish/route.ts", "POST"],
+  ["app/api/atlas/items/[id]/publish/route.ts", "POST"],
+  ["app/api/atlas/public/[slug]/save/route.ts", "POST"],
+  ["app/api/atlas/public/collections/[slug]/save/route.ts", "POST"],
+  ["app/api/atlas/public/collections/[slug]/learn/route.ts", "POST"],
+];
+for (const [file, method] of gated) {
+  test(`${method} ${file} requires membership under v2`, () => {
+    assert.ok(handler(read(file), method).includes("communityWriteRefusal("));
+  });
+}
+
+const open: [string, string][] = [
+  ["app/api/atlas/collections/[id]/route.ts", "DELETE"],
+  ["app/api/atlas/collections/[id]/items/[publicItemId]/route.ts", "DELETE"],
+  ["app/api/atlas/collections/[id]/withdraw/route.ts", "POST"],
+  ["app/api/atlas/public/[slug]/save/route.ts", "DELETE"],
+  ["app/api/atlas/public/collections/[slug]/save/route.ts", "DELETE"],
+  ["app/api/atlas/public/[slug]/report/route.ts", "POST"],
+  ["app/api/atlas/public/collections/[slug]/report/route.ts", "POST"],
+];
+for (const [file, method] of open) {
+  test(`${method} ${file} stays open — deleting, withdrawing and reporting never need membership`, () => {
+    const src = handler(read(file), method);
+    assert.ok(src.length > 0, "handler exists");
+    assert.ok(!src.includes("communityWriteRefusal("));
+  });
+}

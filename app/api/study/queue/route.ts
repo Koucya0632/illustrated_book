@@ -20,6 +20,8 @@ import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { fetchStudyExamples } from "@/lib/study-examples";
 import { resolveQueueThemeScope } from "@/lib/study-sources";
+import { applyMembershipStudyScope } from "@/lib/study-membership";
+import { getStudyAccess } from "@/lib/atlas/entitlement";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 import { hintDefinition } from "@/lib/study-hint";
@@ -199,8 +201,13 @@ export async function GET(req: Request) {
   // Which sources the selection admits — see `lib/study-sources.ts`, which owns
   // the rules and is tested by calling them.
   const reviewOnly = mode === "review";
+  // What the user picked, then what this account may study
+  // (docs/MEMBERSHIP_ENGINEERING_CHECKLIST.md §3; no-op under policy v1).
   const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic } =
-    resolveQueueThemeScope(categories, reviewOnly);
+    applyMembershipStudyScope(
+      resolveQueueThemeScope(categories, reviewOnly),
+      await getStudyAccess(userId),
+    );
 
   try {
     // The selected learning direction determines both the card deck and the

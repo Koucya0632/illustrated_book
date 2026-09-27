@@ -24,7 +24,8 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
   const detail = await getMemberDetail(params.id).catch(() => null);
   if (!detail) notFound();
 
-  const { summary, effective, subscription, grants, ledger, usage } = detail;
+  const { summary, effective, subscription, grants, lifetime, ledger, usage } = detail;
+  const liveLifetime = lifetime.find((l) => !l.revokedAt) ?? null;
   const tier = membershipTierOf(effective);
   const limits = limitsFor(tier, membershipPolicy());
   const liveGrants = grants.filter(
@@ -113,7 +114,34 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
             })}
           </ul>
         )}
-        <MemberEntitlementActions userId={summary.userId} hasLiveGrant={liveGrants.length > 0} />
+        {lifetime.length > 0 && (
+          <>
+            <h3 className="mt-5 text-sm font-bold text-ink">永久權益紀錄</h3>
+            <ul className="mt-2 space-y-2">
+              {lifetime.map((l) => (
+                <li
+                  key={l.id}
+                  className={`rounded-lg border border-black/5 p-3 text-sm ${l.revokedAt ? "opacity-60" : "bg-cream/40"}`}
+                >
+                  <span className="font-semibold text-ink">{l.revokedAt ? "已收回" : "生效中"}</span>
+                  <span className="ml-2 text-muted">
+                    {l.source === "appstore" ? "App Store 購買" : l.source === "legacy_pro" ? "舊 Pro 轉移" : "贈與"}
+                  </span>
+                  {l.reason && <p className="mt-1 text-ink">{l.reason}</p>}
+                  <p className="mt-1 text-xs text-muted">
+                    {l.grantedBy ?? "—"} · {fmt(l.acquiredAt)}
+                    {l.revokedAt ? ` · 收回於 ${fmt(l.revokedAt)}：${l.revokeReason ?? ""}` : ""}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+        <MemberEntitlementActions
+          userId={summary.userId}
+          hasLiveGrant={liveGrants.length > 0}
+          lifetime={liveLifetime?.source ?? null}
+        />
       </section>
 
       <section className="rounded-xl2 bg-white p-6 shadow-card">

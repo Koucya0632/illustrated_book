@@ -172,3 +172,85 @@ export async function getUserIdByLifetimeTransaction(originalTransactionId: stri
     return null;
   }
 }
+
+/**
+ * Give an account a 永久權益 without a purchase: an operator comp ('grant') or
+ * the cutover migration for Pro accounts live on the switch day ('legacy_pro').
+ * A no-op when the account already holds one from any source — never a second
+ * live row, and never touching an App Store holding. `reason` is mandatory for
+ * the same reason as Pro grants: it is the only record of why.
+ */
+export async function grantLifetimeHolding(input: {
+  userId: string;
+  source: "grant" | "legacy_pro";
+  reason: string;
+  grantedBy: string;
+}): Promise<{ status: "granted" | "already_held" }> {
+  const sql = getSql();
+  if (!sql) throw new Error("database unavailable");
+  const reason = input.reason.trim().slice(0, 500);
+  if (!reason) throw new Error("reason required");
+
+  return sql.begin(async (tx: SqlExecutor) => {
+    // Serialise per account so a double-click (or a re-run of the migration
+    // racing an operator) can't hit the one-live-row index.
+    await tx`SELECT pg_advisory_xact_lock(hashtextextended(${"lifetime:" + input.userId}, 0))`;
+    const live = (await tx`
+      SELECT 1 FROM user_lifetime_entitlements
+       WHERE user_id = ${input.userId}::uuid AND revoked_at IS NULL
+       LIMIT 1
+    `) as unknown[];
+    if (live.length > 0) return { status: "already_held" as const };
+
+    const before = await readEffectiveMembershipTier(tx, input.userId);
+    await tx`
+      INSERT INTO user_lifetime_entitlements (user_id, source, reason, granted_by)
+      VALUES (${input.userId}::uuid, ${input.source}, ${reason}, ${input.grantedBy})
+    `;
+    const after = await readEffectiveMembershipTier(tx, input.userId);
+    // Recorded even when the tier does not move (a Pro account getting its
+    // lifetime ahead of expiry) — that is exactly the history the ledger keeps.
+    await tx`
+      INSERT INTO user_entitlement_events (user_id, from_tier, to_tier, channel, reason, actor)
+      VALUES (${input.userId}::uuid, ${before}, ${after},
+              ${input.source === "legacy_pro" ? "legacy_pro_migration" : "lifetime_grant"},
+              ${reason}, ${input.grantedBy})
+    `;
+    return { status: "granted" as const };
+  });
+}
+
+/**
+ * Revoke an operator-given 永久權益 (grant / legacy_pro). Never an App Store
+ * purchase: those end only through Apple's refund, exactly as revoking a Pro
+ * grant never cancels a subscription.
+ */
+export async function revokeLifetimeGrant(input: {
+  userId: string;
+  reason: string;
+  revokedBy: string;
+}): Promise<{ revoked: number }> {
+  const sql = getSql();
+  if (!sql) throw new Error("database unavailable");
+  const reason = input.reason.trim().slice(0, 500);
+  if (!reason) throw new Error("reason required");
+
+  return sql.begin(async (tx: SqlExecutor) => {
+    const before = await readEffectiveMembershipTier(tx, input.userId);
+    const revoked = (await tx`
+      UPDATE user_lifetime_entitlements
+         SET revoked_at = now(), revoke_reason = ${reason}, updated_at = now()
+       WHERE user_id = ${input.userId}::uuid
+         AND revoked_at IS NULL
+         AND source <> 'appstore'
+      RETURNING id
+    `) as unknown[];
+    if (revoked.length === 0) return { revoked: 0 };
+    const after = await readEffectiveMembershipTier(tx, input.userId);
+    await tx`
+      INSERT INTO user_entitlement_events (user_id, from_tier, to_tier, channel, reason, actor)
+      VALUES (${input.userId}::uuid, ${before}, ${after}, 'lifetime_revoke', ${reason}, ${input.revokedBy})
+    `;
+    return { revoked: revoked.length };
+  });
+}

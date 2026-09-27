@@ -18,6 +18,7 @@ import {
 } from "@/lib/atlas-db";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import { createPrimaryAtlasProvider } from "@/lib/atlas/recognition";
+import { recognitionFoundSomething } from "@/lib/atlas/vision-provider";
 import { enforceAtlasAiLimits, type AtlasTier } from "@/lib/atlas/entitlement";
 import { clientIpHash } from "@/lib/ratelimit";
 import {
@@ -152,7 +153,7 @@ async function runPrimaryRecognition(
       imageCount: result.usage?.imageCount,
       estimatedCostUsd: result.usage?.estimatedCostUsd,
       latencyMs: result.usage?.latencyMs,
-      success: true,
+      success: recognitionFoundSomething(result),
     });
     const updatedJob = await completeAtlasRecognitionJob(userId, job.id, result);
     const rows = await replaceAtlasCandidates(userId, image.id, job.id, targetLanguage, result);

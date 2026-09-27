@@ -3,7 +3,7 @@
 // delete nothing). v2 only.
 //
 // THE RED LINES:
-//   - During the 30-day grace nothing is locked (only adding is capped).
+//   - During the grace (PRO_GRACE_DAYS) nothing is locked (only adding is capped).
 //   - The kept set is by creation time, newest first — never by recent use,
 //     which would make locked items rotate as the user studies.
 //   - Every study read is forced to decide: fetchAtlasDue / atlasStudyStats /

@@ -3,7 +3,7 @@
 //
 // Decided 2026-09-27: keep the most recent N automatically, lock the rest,
 // delete nothing; a picker for "which N" waits until someone actually exceeds
-// the cap. v2 only. A lifetime member inside the 30 days after Pro ended keeps
+// the cap. v2 only. A lifetime member inside the grace (PRO_GRACE_DAYS) after Pro ended keeps
 // everything usable (only adding is capped, by the capacity gate).
 //
 // Locked means: out of the study queue and stats, refused on answer / edit /

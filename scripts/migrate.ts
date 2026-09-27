@@ -20,6 +20,7 @@ import { MAIN_WORD_DRUGSTORE_IDS } from "../lib/main-word-drugstore-2026-09";
 import { MAIN_WORD_CLOTHING_IDS } from "../lib/main-word-clothing-2026-09";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
+import { lockDownPublicTables } from "../lib/rls-lockdown";
 
 const GUARDED_PUBLISH_SERIES = [
   { category: "professions", ids: MAIN_WORD_PROFESSIONS_IDS },
@@ -2768,6 +2769,9 @@ async function main() {
       await sql.unsafe(stmt);
     }
     console.log(`[migrate] DDL applied (${DDL.length} statements).`);
+    // Before any content guard can fail the deploy — see lib/rls-lockdown.ts.
+    const lockedEarly = await lockDownPublicTables(sql);
+    console.log(`[migrate] RLS lockdown: ${lockedEarly.length} table(s) fixed${lockedEarly.length ? ` (${lockedEarly.join(", ")})` : ""}.`);
 
     // Seed categories BEFORE words: words.category is FK-constrained to
     // categories.id, so any newly added category must exist first or word
@@ -2859,6 +2863,9 @@ async function main() {
     const choiceCount = await assertPublishedChoiceCoverage(sql);
     console.log(`[migrate] four-choice fallback checked for ${choiceCount} published terms.`);
     await syncStorageBucketRules(sql);
+    // Again, for anything created after the DDL (study_logs partitions).
+    const lockedLate = await lockDownPublicTables(sql);
+    if (lockedLate.length) console.log(`[migrate] RLS lockdown (late): ${lockedLate.join(", ")}.`);
   } finally {
     await sql.end();
   }

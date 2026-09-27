@@ -8,6 +8,7 @@
 
 import { NextResponse } from "next/server";
 import { getSql } from "@/lib/db";
+import { lockDownPublicTables } from "@/lib/rls-lockdown";
 
 export const runtime = "nodejs";
 // Disable response caching — this is a side-effecting cron, not a read.
@@ -40,6 +41,9 @@ export async function GET(req: Request) {
     // detaches/drops any partitions past the retention window, runs ANALYZE
     // on newly-created children.
     await sql`SELECT partman.run_maintenance()`;
+    // New partitions don't inherit study_logs' RLS when queried directly over
+    // the REST API — lock them down before anyone can reach them.
+    const locked = await lockDownPublicTables(sql);
 
     // Surface visibility: what child partitions of study_logs exist after
     // this run? Useful for the cron's success body and for spot-checks.
@@ -55,6 +59,7 @@ export async function GET(req: Request) {
     return NextResponse.json({
       ok: true,
       durationMs: Date.now() - startedAt,
+      rlsLockedDown: locked,
       partitions: rows.map((r) => r.partition),
     });
   } catch (err) {

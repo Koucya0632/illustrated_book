@@ -28,6 +28,16 @@ export interface PublicCollectionRateLimiter {
   hit(rule: PublicCollectionRateRule): Promise<PublicCollectionRateResult>;
 }
 
+/**
+ * Who may READ every item. Membership v2 (checklist §5) opens published
+ * collections to everyone; saving / learning is what membership buys, so
+ * `access.unlocked` keeps meaning "may learn". Omitted = the pre-membership
+ * three-item preview.
+ */
+export interface PublicCollectionReaders {
+  seeAllItems(): boolean;
+}
+
 export interface PublicCollectionCapacity {
   savedItemsLimit(userId: string): Promise<number>;
 }
@@ -157,8 +167,9 @@ export function createPublicCollectionModule(dependencies: {
   persistence: PublicCollectionPersistence;
   rateLimiter: PublicCollectionRateLimiter;
   capacity: PublicCollectionCapacity;
+  readers?: PublicCollectionReaders;
 }): PublicCollectionModule {
-  const { persistence, rateLimiter, capacity } = dependencies;
+  const { persistence, rateLimiter, capacity, readers } = dependencies;
 
   async function find(slug: string) {
     return persistence.findApprovedBySlug(slug);
@@ -182,7 +193,7 @@ export function createPublicCollectionModule(dependencies: {
         ok: true,
         value: {
           collection: detail.collection,
-          items: unlocked ? detail.items : detail.items.slice(0, 3),
+          items: unlocked || readers?.seeAllItems() ? detail.items : detail.items.slice(0, 3),
           access: {
             unlocked,
             isOwner,

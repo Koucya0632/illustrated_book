@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { collectionAvatar } from "@/lib/atlas/live-collection-avatar";
 import {
   CollectionAvatarError,
@@ -34,6 +35,8 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
   const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const membershipRefusal = await communityWriteRefusal(userId);
+  if (membershipRefusal) return membershipRefusal;
   if (!validId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   try {

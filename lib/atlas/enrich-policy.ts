@@ -8,6 +8,7 @@
 // See docs/adr/0011 in tuji-ios.
 
 import type { AtlasItemRow } from "@/lib/atlas/types";
+import type { MembershipPolicy, MembershipTier } from "@/lib/atlas/membership";
 
 // Bump when enrichAtlasItem's output changes in a way existing rows should
 // re-pick-up on next open. v2: JA reading is generated on ATLAS_ENRICH_MODEL
@@ -78,4 +79,21 @@ export function nextBackfillAttempt(item: AtlasItemRow): {
     version: ATLAS_ENRICH_VERSION,
     status: attempts >= atlasEnrichMaxAttempts() ? "skipped" : "failed",
   };
+}
+
+/// Whether this ACCOUNT may spend on 補充 at all (checklist §4): a v2
+/// non-member keeps whatever their legacy items already have, but triggers no
+/// new paid pass. Everyone may under v1.
+export function accountMayEnrich(access: { tier: MembershipTier; policy: MembershipPolicy }): boolean {
+  return !(access.policy === "v2" && access.tier === "free");
+}
+
+/// THE spend decision for a route: the item's own budget AND the account.
+/// Both callers of enrichAtlasItem (POST enrich, the detail GET's lazy enrich)
+/// ask this, so neither can be the one that forgot the account check.
+export function shouldEnrichForAccount(
+  item: AtlasItemRow,
+  access: { tier: MembershipTier; policy: MembershipPolicy },
+): boolean {
+  return accountMayEnrich(access) && shouldEnrichAtlasItem(item);
 }

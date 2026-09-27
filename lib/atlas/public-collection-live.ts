@@ -1,4 +1,5 @@
 import "server-only";
+import { membershipPolicy } from "./membership";
 import {
   countAtlasCollectionSaves,
   getAtlasCollectionLearningState,
@@ -24,6 +25,9 @@ export const livePublicCollectionModule = createPublicCollectionModule({
   },
   rateLimiter: {
     hit: hitRateLimit,
+  },
+  readers: {
+    seeAllItems: () => membershipPolicy() === "v2",
   },
   capacity: {
     async savedItemsLimit(userId) {

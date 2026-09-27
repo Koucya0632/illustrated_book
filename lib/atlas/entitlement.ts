@@ -241,11 +241,11 @@ export async function getAtlasGateContext(userId: string): Promise<{
 }
 
 /**
- * Tier + policy for the study gate (lib/study-membership.ts). Under v1 the gate
- * is a no-op, so the lookup is skipped entirely — the study queue's hot path
- * pays nothing until the cutover.
+ * Tier + policy for the membership gates that only exist under v2 (study,
+ * 補充, upload). Under v1 they are all no-ops, so the lookup is skipped
+ * entirely — hot paths pay nothing until the cutover.
  */
-export async function getStudyAccess(
+export async function getMembershipAccess(
   userId: string,
 ): Promise<{ tier: MembershipTier; policy: ReturnType<typeof membershipPolicy> }> {
   const policy = membershipPolicy();
@@ -724,6 +724,16 @@ export async function checkAtlasSaveCapacity(
     limit: limits.savedItemsLimit,
     usage: usage.savedItems,
   };
+}
+
+/**
+ * Gate the capture upload BEFORE the image is stored or any AI runs
+ * (checklist §4). v2 only — under v1 uploads are unchanged: the capacity check
+ * still happens at confirm, and an over-cap upload is simply kept for naming.
+ */
+export async function checkAtlasUploadAllowed(userId: string): Promise<AtlasCapacityGate> {
+  if (membershipPolicy() === "v1") return { ok: true };
+  return checkAtlasCapacity(userId);
 }
 
 export async function checkAtlasCapacity(userId: string): Promise<AtlasCapacityGate> {

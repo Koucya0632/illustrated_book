@@ -3,7 +3,7 @@ import { studyAnswerOwnerMatches } from "@/lib/study-answer-owner";
 import { revalidateTag } from "next/cache";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { canStudyCard } from "@/lib/study-membership";
-import { getStudyAccess } from "@/lib/atlas/entitlement";
+import { getMembershipAccess } from "@/lib/atlas/entitlement";
 import { getCardById, upsertReview } from "@/lib/cards-db";
 import {
   getAtlasDueCardById,
@@ -363,8 +363,8 @@ export async function POST(req: Request) {
   // what the queue would no longer serve. A refusal is HTTP 200 + ok:false and
   // writes nothing — NOT a 4xx: released iOS builds replay parked answers and
   // stop at the first failure, so a permanent 4xx would wedge every answer
-  // queued behind it. (No-op under policy v1: getStudyAccess skips the lookup.)
-  const access = await getStudyAccess(userId);
+  // queued behind it. (No-op under policy v1: getMembershipAccess skips the lookup.)
+  const access = await getMembershipAccess(userId);
   const gatedReply = () =>
     NextResponse.json({ ok: false, gated: "membership_required" }, { status: 200 });
   if (typeof rawCardId === "string" && rawCardId.startsWith("atlas:")) {

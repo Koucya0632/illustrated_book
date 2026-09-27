@@ -3,6 +3,7 @@
 // consumes no saved-item quota, and never writes atlas_saves.
 
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import { livePublicCollectionModule } from "@/lib/atlas/public-collection-live";
@@ -48,6 +49,8 @@ export async function POST(_req: Request, props: { params: Promise<{ slug: strin
   const params = await props.params;
   const result = await context(params.slug);
   if ("response" in result) return result.response;
+  const membershipRefusal = await communityWriteRefusal(result.userId);
+  if (membershipRefusal) return membershipRefusal;
   const outcome = await livePublicCollectionModule.bookmark(result);
   if (!outcome.ok) {
     if (outcome.error === "notFound") {

@@ -7,7 +7,8 @@ import {
   updateAtlasItemEnrichment,
 } from "@/lib/atlas-db";
 import { atlasItemToWord, enrichAtlasItem } from "@/lib/atlas/enrich";
-import { shouldEnrichAtlasItem } from "@/lib/atlas/enrich-policy";
+import { shouldEnrichForAccount } from "@/lib/atlas/enrich-policy";
+import { getMembershipAccess } from "@/lib/atlas/entitlement";
 import { checkAtlasAiBackstops, clientIpHash } from "@/lib/ratelimit";
 import { getSettings } from "@/lib/users-db";
 import { readLang } from "@/lib/cache-headers";
@@ -44,7 +45,7 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   // a finite budget, and the abuse backstop is consumed ONLY on the branch that
   // actually spends — charging it at the top of the route would throttle plain
   // browsing, which is legitimate and costs nothing. See docs/adr/0011.
-  if (shouldEnrichAtlasItem(item)) {
+  if (shouldEnrichForAccount(item, await getMembershipAccess(userId))) {
     // A denied backstop is not an error for a reader: skip the paid pass and
     // serve name + image, exactly as a failed one does.
     const backstop = await checkAtlasAiBackstops({ ipHash: clientIpHash(req) });

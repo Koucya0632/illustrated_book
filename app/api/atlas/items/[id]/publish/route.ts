@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { isAtlasAuthorBlocked, submitAtlasItemForReview } from "@/lib/atlas-db";
 import { processAtlasSubmission } from "@/lib/atlas/submit-pipeline";
@@ -14,6 +15,8 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
   const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const membershipRefusal = await communityWriteRefusal(userId);
+  if (membershipRefusal) return membershipRefusal;
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   // Repeat offenders lose the ability to publish (docs/COMMUNITY_ATLAS_PLAN.md

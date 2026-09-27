@@ -3,6 +3,7 @@
 // creation to keep the member-language invariant, so it is not editable here.
 
 import { NextResponse } from "next/server";
+import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import {
@@ -91,6 +92,8 @@ export async function PATCH(req: Request, props: { params: Promise<{ id: string 
   const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const membershipRefusal = await communityWriteRefusal(userId);
+  if (membershipRefusal) return membershipRefusal;
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   let body: { title?: unknown; description?: unknown; coverPublicItemId?: unknown };

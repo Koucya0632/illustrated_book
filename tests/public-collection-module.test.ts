@@ -111,11 +111,16 @@ class FixedCapacity implements PublicCollectionCapacity {
   }
 }
 
-function setup(limit = 1_000) {
+function setup(limit = 1_000, seeAllItems?: boolean) {
   const persistence = new MemoryPersistence();
   const rateLimiter = new RecordingRateLimiter();
   const capacity = new FixedCapacity(limit);
-  const module = createPublicCollectionModule({ persistence, rateLimiter, capacity });
+  const module = createPublicCollectionModule({
+    persistence,
+    rateLimiter,
+    capacity,
+    ...(seeAllItems === undefined ? {} : { readers: { seeAllItems: () => seeAllItems } }),
+  });
   return { module, persistence, rateLimiter, capacity };
 }
 
@@ -134,6 +139,18 @@ test("guest detail exposes only three approved previews", async () => {
     totalCount: 5,
     learningCount: 0,
   });
+});
+
+// Membership v2 (checklist §5): published collections are fully READABLE by
+// everyone; saving/learning is what membership buys. `unlocked` keeps meaning
+// "may learn", so it stays false for a guest who can now see every item.
+test("under v2 a guest reads every item, but is still not unlocked to learn", async () => {
+  const { module } = setup(1_000, true);
+  const result = await module.detail({ slug: "daily-life", userId: null });
+  assert.equal(result.ok, true);
+  if (!result.ok) return;
+  assert.equal(result.value.items.length, 5);
+  assert.equal(result.value.access.unlocked, false);
 });
 
 test("owner and bookmarked reader both unlock the complete collection", async () => {

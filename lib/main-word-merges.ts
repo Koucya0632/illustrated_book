@@ -206,6 +206,19 @@ export async function applyMainWordMerges(sql: Sql): Promise<number> {
       `;
       await tx`DELETE FROM user_word_list_items WHERE word_id = ${entry.sourceId}`;
 
+      // 個人筆記 follow the word. Both words noted: keep both, target first,
+      // clipped to the column's limit rather than dropping either silently.
+      await tx`
+        INSERT INTO user_word_notes (user_id, word_id, body, created_at, updated_at)
+        SELECT user_id, ${entry.targetId}, body, created_at, updated_at
+        FROM user_word_notes
+        WHERE word_id = ${entry.sourceId}
+        ON CONFLICT (user_id, word_id) DO UPDATE SET
+          body = left(user_word_notes.body || E'\n\n' || EXCLUDED.body, 500),
+          updated_at = GREATEST(user_word_notes.updated_at, EXCLUDED.updated_at)
+      `;
+      await tx`DELETE FROM user_word_notes WHERE word_id = ${entry.sourceId}`;
+
       await tx`
         INSERT INTO user_learned (user_id, word_id, learned_at, target_language)
         SELECT user_id, ${entry.targetId}, learned_at, target_language

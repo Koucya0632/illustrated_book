@@ -194,6 +194,18 @@ export async function applyMainWordMerges(sql: Sql): Promise<number> {
       `;
       await tx`DELETE FROM user_favorites WHERE word_id = ${entry.sourceId}`;
 
+      // 個人詞表 entries follow the word like 收藏 does; the FK would otherwise
+      // cascade them away when the source word is deleted.
+      await tx`
+        INSERT INTO user_word_list_items (list_id, word_id, added_at)
+        SELECT list_id, ${entry.targetId}, added_at
+        FROM user_word_list_items
+        WHERE word_id = ${entry.sourceId}
+        ON CONFLICT (list_id, word_id) DO UPDATE SET
+          added_at = LEAST(user_word_list_items.added_at, EXCLUDED.added_at)
+      `;
+      await tx`DELETE FROM user_word_list_items WHERE word_id = ${entry.sourceId}`;
+
       await tx`
         INSERT INTO user_learned (user_id, word_id, learned_at, target_language)
         SELECT user_id, ${entry.targetId}, learned_at, target_language

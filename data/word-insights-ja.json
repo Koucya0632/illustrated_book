@@ -1,0 +1,6022 @@
+[
+  {
+    "wordId": "ale",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "awamori",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bourbon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "brandy",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "champagne",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chuhai",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cider",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "draft-beer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gin-and-tonic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "highball",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lager",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lemon-sour",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "liqueur",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makgeolli",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "margarita",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "martini",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mead",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mojito",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pina-colada",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plum-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "red-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rose-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sake",
+    "confusables": [
+      {
+        "term": "焼酎",
+        "catalogId": "shochu",
+        "distinction": {
+          "zhHant": "日本酒是釀造酒；焼酎是蒸餾酒，製法與味道不同。",
+          "en": "日本酒 is brewed sake; 焼酎 is distilled liquor.",
+          "ja": "日本酒は醸造酒、焼酎は蒸留酒で、造り方が異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "「日本酒」特指日本的清酒；泛稱酒類可說「お酒」。",
+      "en": "日本酒 specifically means Japanese sake; お酒 can refer to alcoholic drinks generally.",
+      "ja": "「日本酒」は日本の清酒を指し、酒類全般には「お酒」を使えます。"
+    }
+  },
+  {
+    "wordId": "sangria",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shochu",
+    "confusables": [
+      {
+        "term": "日本酒",
+        "catalogId": "sake",
+        "distinction": {
+          "zhHant": "日本酒是釀造酒；焼酎是蒸餾酒，製法與味道不同。",
+          "en": "日本酒 is brewed sake; 焼酎 is distilled liquor.",
+          "ja": "日本酒は醸造酒、焼酎は蒸留酒で、造り方が異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sparkling-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stout",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tequila",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vodka",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whiskey",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-ladle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-mat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-salts",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-sponge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-stool",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-towel",
+    "confusables": [
+      {
+        "term": "ハンドタオル",
+        "catalogId": "hand-towel",
+        "distinction": {
+          "zhHant": "バスタオル通常用於擦乾全身；ハンドタオル較小，常用於擦手。",
+          "en": "A バスタオル dries the body; a ハンドタオル is smaller and commonly used for hands.",
+          "ja": "バスタオルは体を拭く大きなタオル、ハンドタオルは手などを拭く小さなタオルです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathrobe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathroom-cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathroom-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathroom-door",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathtub",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathtub-cover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "body-wash",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bucket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cleaning-brush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cleansing-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "comb",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "conditioner",
+    "confusables": [
+      {
+        "term": "シャンプー",
+        "catalogId": "shampoo",
+        "distinction": {
+          "zhHant": "シャンプー用來洗頭髮；コンディショナー用在洗後護髮。",
+          "en": "シャンプー cleans hair; コンディショナー conditions it after washing.",
+          "ja": "シャンプーは髪を洗うもの、コンディショナーは洗髪後に髪を整えるものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cosmetics",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cotton-ball",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cotton-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cotton-swab",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dental-floss",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "deodorant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "disinfectant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drain",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-cleanser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gloves",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-conditioner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-dryer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hairbrush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hamper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hand-soap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hand-towel",
+    "confusables": [
+      {
+        "term": "バスタオル",
+        "catalogId": "bath-towel",
+        "distinction": {
+          "zhHant": "バスタオル通常用於擦乾全身；ハンドタオル較小，常用於擦手。",
+          "en": "A バスタオル dries the body; a ハンドタオル is smaller and commonly used for hands.",
+          "ja": "バスタオルは体を拭く大きなタオル、ハンドタオルは手などを拭く小さなタオルです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hook",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "laundry-basket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "laundry-net",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lotion",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "micellar-water",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "moisturizer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mold-remover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mouthwash",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-clipper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "non-slip-mat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "perfume",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "razor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sanitary-bin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sanitary-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scale",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shampoo",
+    "confusables": [
+      {
+        "term": "コンディショナー",
+        "catalogId": "conditioner",
+        "distinction": {
+          "zhHant": "シャンプー用來洗頭髮；コンディショナー用在洗後護髮。",
+          "en": "シャンプー cleans hair; コンディショナー conditions it after washing.",
+          "ja": "シャンプーは髪を洗うもの、コンディショナーは洗髪後に髪を整えるものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shaving-cream",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-caddy",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-curtain",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-curtain-rod",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-head",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-hose",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-room",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "slippers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "soap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "soap-dish",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "squeegee",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tampon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tissue",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-brush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-paper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-seat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-tank",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toothbrush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toothbrush-holder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toothpaste",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "towel",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "towel-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ventilation-fan",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wash-basin",
+    "confusables": [
+      {
+        "term": "洗面台",
+        "catalogId": "washbasin",
+        "distinction": {
+          "zhHant": "洗面器是可拿起的盆；洗面台是固定的洗手檯。",
+          "en": "洗面器 is a movable basin; 洗面台 is a fixed washstand.",
+          "ja": "洗面器は持ち運べる容器、洗面台は据え付けの設備です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "washbasin",
+    "confusables": [
+      {
+        "term": "洗面器",
+        "catalogId": "wash-basin",
+        "distinction": {
+          "zhHant": "洗面器是可拿起的盆；洗面台是固定的洗手檯。",
+          "en": "洗面器 is a movable basin; 洗面台 is a fixed washstand.",
+          "ja": "洗面器は持ち運べる容器、洗面台は据え付けの設備です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "water-heater",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-conditioner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-purifier",
+    "confusables": [
+      {
+        "term": "加湿器",
+        "catalogId": "humidifier",
+        "distinction": {
+          "zhHant": "空気清浄機主要過濾空氣；加湿器主要增加濕度。",
+          "en": "空気清浄機 filters air; 加湿器 adds moisture.",
+          "ja": "空気清浄機は空気をきれいにし、加湿器は湿度を上げます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "alarm-clock",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bed",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bed-sheet",
+    "confusables": [
+      {
+        "term": "ボックスシーツ",
+        "catalogId": "fitted-sheet",
+        "distinction": {
+          "zhHant": "シーツ泛指床單；ボックスシーツ有鬆緊邊，可包住床墊。",
+          "en": "シーツ is a general sheet; ボックスシーツ has elastic edges that fit around a mattress.",
+          "ja": "シーツは一般的な敷き布、ボックスシーツはゴム入りでマットレスを包むタイプです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bedside-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bedspread",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blanket",
+    "confusables": [
+      {
+        "term": "掛け布団",
+        "catalogId": "quilt",
+        "distinction": {
+          "zhHant": "掛け布団是蓋在身上的被子；毛布是毯子，常作為另一層保暖。",
+          "en": "掛け布団 is a duvet or comforter; 毛布 is a blanket often used as another layer.",
+          "ja": "掛け布団は中綿入りの寝具、毛布は起毛した布の寝具です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blinds",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bookshelf",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "本棚で本を置きます。",
+        "right": "本棚に本を置きます。",
+        "why": {
+          "zhHant": "放置物品的目標位置用「に」。",
+          "en": "Use に for where you place something.",
+          "ja": "物を置く先には「に」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "chair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "closet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clothes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clothes-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curtain",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "desk-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "door",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drawer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "robe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "quilt",
+    "confusables": [
+      {
+        "term": "毛布",
+        "catalogId": "blanket",
+        "distinction": {
+          "zhHant": "掛け布団是蓋在身上的被子；毛布是毯子，常作為另一層保暖。",
+          "en": "掛け布団 is a duvet or comforter; 毛布 is a blanket often used as another layer.",
+          "ja": "掛け布団は中綿入りの寝具、毛布は起毛した布の寝具です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "duvet-cover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eye-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fan",
+    "confusables": [
+      {
+        "term": "サーキュレーター",
+        "catalogId": "air-circulator",
+        "distinction": {
+          "zhHant": "サーキュレーター主要讓室內空氣循環；扇風機主要對人送風。",
+          "en": "サーキュレーター circulates room air; 扇風機 primarily blows air toward people.",
+          "ja": "サーキュレーターは室内の空気を循環させ、扇風機は主に人へ風を送ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fitted-sheet",
+    "confusables": [
+      {
+        "term": "シーツ",
+        "catalogId": "bed-sheet",
+        "distinction": {
+          "zhHant": "シーツ泛指床單；ボックスシーツ有鬆緊邊，可包住床墊。",
+          "en": "シーツ is a general sheet; ボックスシーツ has elastic edges that fit around a mattress.",
+          "ja": "シーツは一般的な敷き布、ボックスシーツはゴム入りでマットレスを包むタイプです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "full-length-mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "futon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "「布団」可泛指日式寢具；要特別區分時，可說「敷き布団」或「掛け布団」。",
+      "en": "布団 can refer to Japanese bedding broadly; 敷き布団 and 掛け布団 specify the lower and upper bedding.",
+      "ja": "「布団」は寝具を広く指し、区別するときは「敷き布団」「掛け布団」と言います。"
+    }
+  },
+  {
+    "wordId": "futon-clip",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hanger",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "headboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "heater",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-water-bottle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "humidifier",
+    "confusables": [
+      {
+        "term": "除湿機",
+        "catalogId": "dehumidifier",
+        "distinction": {
+          "zhHant": "加湿器增加濕度；除湿機降低濕度。",
+          "en": "加湿器 adds moisture to the air; 除湿機 removes it.",
+          "ja": "加湿器は湿度を上げ、除湿機は湿度を下げます。"
+        }
+      },
+      {
+        "term": "空気清浄機",
+        "catalogId": "air-purifier",
+        "distinction": {
+          "zhHant": "空気清浄機主要過濾空氣；加湿器主要增加濕度。",
+          "en": "空気清浄機 filters air; 加湿器 adds moisture.",
+          "ja": "空気清浄機は空気をきれいにし、加湿器は湿度を上げます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mattress",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mattress-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nightstand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pajamas",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "photo-frame",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pillow",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pillowcase",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "storage-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vanity-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wardrobe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "window",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "backpack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baseball-cap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beanie",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "belt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blouse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "boots",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bow-tie",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cardigan",
+    "confusables": [
+      {
+        "term": "セーター",
+        "catalogId": "sweater",
+        "distinction": {
+          "zhHant": "カーディガン前面可打開；セーター通常從頭套穿。",
+          "en": "A カーディガン opens at the front; a セーター is usually pulled over the head.",
+          "ja": "カーディガンは前開き、セーターは通常かぶって着るニットです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clip-on-earrings",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "down-jacket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dress",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dress-shoes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flip-flops",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "handbag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hat",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "帽子を着ます。",
+        "right": "帽子をかぶります。",
+        "why": {
+          "zhHant": "帽子用「かぶる」，不用穿衣服的「着る」。",
+          "en": "Use かぶる for a hat, not 着る for clothing.",
+          "ja": "帽子には「かぶる」を使い、「着る」は使いません。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "high-heels",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hoodie",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "jacket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "jeans",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kimono",
+    "confusables": [
+      {
+        "term": "浴衣",
+        "catalogId": "yukata",
+        "distinction": {
+          "zhHant": "着物是較廣義的傳統和服；浴衣是較輕便的款式，常見於夏祭。",
+          "en": "着物 is the broader traditional garment; 浴衣 is a lighter form often worn at summer festivals.",
+          "ja": "着物は和服の広い呼び名で、浴衣は夏祭りなどで着る薄手の着物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "leggings",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "loafers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "necklace",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "necktie",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "polo-shirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "raincoat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sandals",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scarf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "school-uniform",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shorts",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "skirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sneakers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "socks",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "靴下を着ます。",
+        "right": "靴下をはきます。",
+        "why": {
+          "zhHant": "襪子用「はく」，不是「着る」。",
+          "en": "Use はく for socks, not 着る.",
+          "ja": "靴下には「はく」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "suit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sunglasses",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "サングラスを着ます。",
+        "right": "サングラスをかけます。",
+        "why": {
+          "zhHant": "眼鏡類用「かける」，不是「着る」。",
+          "en": "Use かける for glasses, not 着る.",
+          "ja": "眼鏡類には「かける」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "sweater",
+    "confusables": [
+      {
+        "term": "カーディガン",
+        "catalogId": "cardigan",
+        "distinction": {
+          "zhHant": "カーディガン前面可打開；セーター通常從頭套穿。",
+          "en": "A カーディガン opens at the front; a セーター is usually pulled over the head.",
+          "ja": "カーディガンは前開き、セーターは通常かぶって着るニットです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sweatshirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "swimsuit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "t-shirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tank-top",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tights",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tote-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trousers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "turtleneck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "underwear",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vest",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wristwatch",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yukata",
+    "confusables": [
+      {
+        "term": "着物",
+        "catalogId": "kimono",
+        "distinction": {
+          "zhHant": "着物是較廣義的傳統和服；浴衣是較輕便的款式，常見於夏祭。",
+          "en": "着物 is the broader traditional garment; 浴衣 is a lighter form often worn at summer festivals.",
+          "ja": "着物は和服の広い呼び名で、浴衣は夏祭りなどで着る薄手の着物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bento-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beverage-warmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cash-register",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "「レジ」可指收銀機，也常指結帳櫃檯；「レジで払う」是到收銀處付款。",
+      "en": "レジ can mean a cash register or the checkout counter; レジで払う means to pay at checkout.",
+      "ja": "「レジ」は機械だけでなく会計場所も指し、「レジで払う」と言います。"
+    }
+  },
+  {
+    "wordId": "chilled-food-case",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-cup-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "「コンビニ」是「コンビニエンスストア」的常用縮寫。",
+      "en": "コンビニ is the common shortening of コンビニエンスストア.",
+      "ja": "「コンビニ」は「コンビニエンスストア」の一般的な略語です。"
+    }
+  },
+  {
+    "wordId": "convenience-store-atm",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-coffee-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-sign",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cup-noodle-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "disposable-chopsticks-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drink-refrigerator",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eat-in-area",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-food-display-case",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-water-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ice-cream-freezer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ice-cup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "magazine-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "microwave-station",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "multifunction-copier",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "multimedia-kiosk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "newspaper-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oden-warmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parcel-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "payment-slip",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plastic-cutlery-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "prepaid-card-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-ball-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sandwich-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sorting-bin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "steamed-bun-warmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tobacco-display",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "umbrella-stand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wet-towel-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "adhesive-bandage",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "allergy-medicine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "body-scrub",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cold-medicine",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "風邪薬を食べます。",
+        "right": "風邪薬を飲みます。",
+        "why": {
+          "zhHant": "日文說服藥通常用「薬を飲む」，即使藥是錠劑。",
+          "en": "Japanese normally says 薬を飲む for taking medicine, including tablets.",
+          "ja": "錠剤でも、薬を服用するときは普通「薬を飲む」と言います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "compact-mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "concealer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "contact-lens-solution",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cooling-gel-sheet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cough-drops",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drugstore",
+    "confusables": [
+      {
+        "term": "薬局",
+        "catalogId": "pharmacy",
+        "distinction": {
+          "zhHant": "薬局主要處理藥品與處方調劑；ドラッグストア還販售日用品，並非每間都提供調劑。",
+          "en": "薬局 is a pharmacy; ドラッグストア also sells daily goods, and not every branch fills prescriptions.",
+          "ja": "薬局は医薬品や調剤を扱い、ドラッグストアは日用品も売ります。調剤しない店舗もあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eye-drops",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyebrow-pencil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyelash-curler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyeliner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyeshadow",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "face-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-mist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-serum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-toner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "false-eyelashes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "foundation-makeup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gauze-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-dye",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-spray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hand-cream",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "insect-repellent",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lip-balm",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lip-gloss",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lipstick",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-brush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-primer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-remover-wipes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-sponge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mascara",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-file",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-polish",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-polish-remover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "over-the-counter-medicine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pain-reliever",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "prescription-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "setting-spray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sheet-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stomach-medicine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sunscreen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "surgical-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "thermometer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vitamin-supplement",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "apple",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "apricot",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "avocado",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "banana",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blueberry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cherry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coconut",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dragon-fruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fig",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "grape",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "grapefruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "japanese-pear",
+    "confusables": [
+      {
+        "term": "洋梨",
+        "catalogId": "pear",
+        "distinction": {
+          "zhHant": "梨通常指日本梨，果肉脆；洋梨指西洋梨，熟後果肉較軟。",
+          "en": "梨 usually means a crisp Japanese pear; 洋梨 is a European pear that softens when ripe.",
+          "ja": "梨はシャリシャリした和梨、洋梨は熟すと柔らかくなる西洋梨です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "單說「梨」時，日文通常指日本梨；西洋梨會說「洋梨」。",
+      "en": "Unqualified 梨 usually means a Japanese pear; a European pear is 洋梨.",
+      "ja": "単に「梨」と言うと通常は和梨で、西洋梨は「洋梨」と言います。"
+    }
+  },
+  {
+    "wordId": "japanese-plum",
+    "confusables": [
+      {
+        "term": "すもも",
+        "catalogId": "plum",
+        "distinction": {
+          "zhHant": "梅多用於梅乾或梅酒；すもも是通常作為鮮果食用的李子。",
+          "en": "梅 is commonly preserved or used for plum wine; すもも is a plum eaten fresh.",
+          "ja": "梅は梅干しや梅酒に使う果実、すももは生で食べることの多い果実です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kiwi-fruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kumquat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lemon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "loquat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lychee",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mandarin-orange",
+    "confusables": [
+      {
+        "term": "オレンジ",
+        "catalogId": "orange",
+        "distinction": {
+          "zhHant": "みかん多指容易剝皮的小型柑橘；オレンジ通常指較大的甜橙。",
+          "en": "みかん usually means an easy-peel mandarin; オレンジ usually means a larger sweet orange.",
+          "ja": "みかんは手でむきやすい小型の柑橘、オレンジは一般により大きな甘い柑橘です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mango",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "melon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "orange",
+    "confusables": [
+      {
+        "term": "みかん",
+        "catalogId": "mandarin-orange",
+        "distinction": {
+          "zhHant": "みかん多指容易剝皮的小型柑橘；オレンジ通常指較大的甜橙。",
+          "en": "みかん usually means an easy-peel mandarin; オレンジ usually means a larger sweet orange.",
+          "ja": "みかんは手でむきやすい小型の柑橘、オレンジは一般により大きな甘い柑橘です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "papaya",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "passion-fruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "peach",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pear",
+    "confusables": [
+      {
+        "term": "梨",
+        "catalogId": "japanese-pear",
+        "distinction": {
+          "zhHant": "梨通常指日本梨，果肉脆；洋梨指西洋梨，熟後果肉較軟。",
+          "en": "梨 usually means a crisp Japanese pear; 洋梨 is a European pear that softens when ripe.",
+          "ja": "梨はシャリシャリした和梨、洋梨は熟すと柔らかくなる西洋梨です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "persimmon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pineapple",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plum",
+    "confusables": [
+      {
+        "term": "梅",
+        "catalogId": "japanese-plum",
+        "distinction": {
+          "zhHant": "梅多用於梅乾或梅酒；すもも是通常作為鮮果食用的李子。",
+          "en": "梅 is commonly preserved or used for plum wine; すもも is a plum eaten fresh.",
+          "ja": "梅は梅干しや梅酒に使う果実、すももは生で食べることの多い果実です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pomegranate",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "raspberry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "strawberry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "watermelon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yuzu",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-fryer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aluminum-foil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blender",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bowl",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "can-opener",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chopsticks",
+    "confusables": [
+      {
+        "term": "橋",
+        "catalogId": "bridge",
+        "distinction": {
+          "zhHant": "箸和橋都讀作「はし」；前者是筷子，後者是橋。",
+          "en": "箸 and 橋 are both read はし; the first means chopsticks, the second a bridge.",
+          "ja": "箸と橋はどちらも「はし」と読みますが、箸は食具、橋は川などを渡る構造物です。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "箸を食べます。",
+        "right": "箸で食べます。",
+        "why": {
+          "zhHant": "表示使用工具時，用助詞「で」。",
+          "en": "Use で to mark the tool used to eat.",
+          "ja": "食べる道具を示すときは「で」を使います。"
+        }
+      }
+    ],
+    "usage": {
+      "zhHant": "數筷子的一雙時，常用量詞「一膳（いちぜん）」。",
+      "en": "A pair of chopsticks can be counted as 一膳（いちぜん）.",
+      "ja": "箸一組は「一膳（いちぜん）」と数えます。"
+    }
+  },
+  {
+    "wordId": "cloth",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-maker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "colander",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cutting-board",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dish-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dish-soap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dishwasher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "faucet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-container",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-processor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fork",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "freezer",
+    "confusables": [
+      {
+        "term": "冷蔵庫",
+        "catalogId": "fridge",
+        "distinction": {
+          "zhHant": "冷蔵庫用於冷藏；冷凍庫用於冷凍。",
+          "en": "冷蔵庫 refrigerates; 冷凍庫 freezes.",
+          "ja": "冷蔵庫は冷やして保存し、冷凍庫は凍らせて保存します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fridge",
+    "confusables": [
+      {
+        "term": "冷凍庫",
+        "catalogId": "freezer",
+        "distinction": {
+          "zhHant": "冷蔵庫用於冷藏；冷凍庫用於冷凍。",
+          "en": "冷蔵庫 refrigerates; 冷凍庫 freezes.",
+          "ja": "冷蔵庫は冷やして保存し、冷凍庫は凍らせて保存します。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "牛乳を冷蔵庫で入れます。",
+        "right": "牛乳を冷蔵庫に入れます。",
+        "why": {
+          "zhHant": "「入れる」的放入目標用「に」，不是表示動作場所的「で」。",
+          "en": "Use に for the destination with 入れる, not で for the action location.",
+          "ja": "入れる先を示すときは「で」ではなく「に」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "glass",
+    "confusables": [
+      {
+        "term": "マグカップ",
+        "catalogId": "mug",
+        "distinction": {
+          "zhHant": "マグカップ通常有把手；コップ是更廣義的杯子，不一定有把手。",
+          "en": "A マグカップ usually has a handle; コップ is a broader word for a drinking cup.",
+          "ja": "マグカップには普通持ち手があり、コップは飲み物用の容器を広く指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "grater",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kettle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kitchen-knife",
+    "confusables": [
+      {
+        "term": "ナイフ",
+        "catalogId": "knife",
+        "distinction": {
+          "zhHant": "包丁是料理用刀；ナイフ範圍較廣，也可指餐刀等。",
+          "en": "包丁 is a kitchen knife; ナイフ is broader and can include a table knife.",
+          "ja": "包丁は調理用の刃物、ナイフは食卓用なども含む広い呼び名です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kitchen-scale",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kitchen-timer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "knife",
+    "confusables": [
+      {
+        "term": "包丁",
+        "catalogId": "kitchen-knife",
+        "distinction": {
+          "zhHant": "包丁是料理用刀；ナイフ範圍較廣，也可指餐刀等。",
+          "en": "包丁 is a kitchen knife; ナイフ is broader and can include a table knife.",
+          "ja": "包丁は調理用の刃物、ナイフは食卓用なども含む広い呼び名です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ladle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lid",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "measuring-cup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "measuring-spoon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "microwave",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "日常日文裡「レンジ」常是「電子レンジ」的簡稱。",
+      "en": "In everyday Japanese, レンジ often shortens 電子レンジ, a microwave oven.",
+      "ja": "日常会話では「電子レンジ」を「レンジ」と略すことがよくあります。"
+    }
+  },
+  {
+    "wordId": "mug",
+    "confusables": [
+      {
+        "term": "コップ",
+        "catalogId": "glass",
+        "distinction": {
+          "zhHant": "マグカップ通常有把手；コップ是更廣義的杯子，不一定有把手。",
+          "en": "A マグカップ usually has a handle; コップ is a broader word for a drinking cup.",
+          "ja": "マグカップには普通持ち手があり、コップは飲み物用の容器を広く指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oven",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oven-mitt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pan",
+    "confusables": [
+      {
+        "term": "鍋",
+        "catalogId": "pot",
+        "distinction": {
+          "zhHant": "フライパン主要用於煎炒；鍋通常較深，可用於煮食。",
+          "en": "フライパン is mainly for frying; 鍋 is usually deeper and used for boiling or simmering.",
+          "ja": "フライパンは主に焼く・炒める道具、鍋は深さがあり煮る料理にも使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper-towel",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "peeler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plastic-wrap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plate",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pot",
+    "confusables": [
+      {
+        "term": "フライパン",
+        "catalogId": "pan",
+        "distinction": {
+          "zhHant": "フライパン主要用於煎炒；鍋通常較深，可用於煮食。",
+          "en": "フライパン is mainly for frying; 鍋 is usually deeper and used for boiling or simmering.",
+          "ja": "フライパンは主に焼く・炒める道具、鍋は深さがあり煮る料理にも使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "range-hood",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-cooker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-paddle",
+    "confusables": [
+      {
+        "term": "フライ返し",
+        "catalogId": "spatula",
+        "distinction": {
+          "zhHant": "しゃもじ用於盛飯；フライ返し用於在鍋中翻動食物。",
+          "en": "しゃもじ serves rice; フライ返し flips food in a pan.",
+          "ja": "しゃもじはご飯をよそう道具、フライ返しは焼いている食べ物を返す道具です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scissors",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "seasoning-jar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sink",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "シンクに皿を洗います。",
+        "right": "シンクで皿を洗います。",
+        "why": {
+          "zhHant": "洗碗的動作地點用「で」。",
+          "en": "Use で for the place where an action takes place.",
+          "ja": "皿を洗う場所には「で」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "sink-strainer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "slotted-spoon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electric-cooker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "spatula",
+    "confusables": [
+      {
+        "term": "しゃもじ",
+        "catalogId": "rice-paddle",
+        "distinction": {
+          "zhHant": "しゃもじ用於盛飯；フライ返し用於在鍋中翻動食物。",
+          "en": "しゃもじ serves rice; フライ返し flips food in a pan.",
+          "ja": "しゃもじはご飯をよそう道具、フライ返しは焼いている食べ物を返す道具です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "splatter-screen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sponge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "spoon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "steamer-basket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stove",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "strainer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "table-knife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "teapot",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toaster",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tongs",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trash-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trivet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whisk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wok",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-circulator",
+    "confusables": [
+      {
+        "term": "扇風機",
+        "catalogId": "fan",
+        "distinction": {
+          "zhHant": "サーキュレーター主要讓室內空氣循環；扇風機主要對人送風。",
+          "en": "サーキュレーター circulates room air; 扇風機 primarily blows air toward people.",
+          "ja": "サーキュレーターは室内の空気を循環させ、扇風機は主に人へ風を送ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "armchair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "back-cushion",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cable-management-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "candle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ceiling-light",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "charger",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clock",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coaster",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curtain-tieback",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cushion",
+    "confusables": [
+      {
+        "term": "座布団",
+        "catalogId": "floor-cushion",
+        "distinction": {
+          "zhHant": "クッション泛指軟墊；座布団特指放在地上坐的墊子。",
+          "en": "クッション is a general cushion; 座布団 is a cushion for sitting on the floor.",
+          "ja": "クッションは柔らかい詰め物の総称、座布団は床に敷いて座るものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dehumidifier",
+    "confusables": [
+      {
+        "term": "加湿器",
+        "catalogId": "humidifier",
+        "distinction": {
+          "zhHant": "加湿器增加濕度；除湿機降低濕度。",
+          "en": "加湿器 adds moisture to the air; 除湿機 removes it.",
+          "ja": "加湿器は湿度を上げ、除湿機は湿度を下げます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "display-cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "doormat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "extension-cord",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "floor-chair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "floor-cushion",
+    "confusables": [
+      {
+        "term": "クッション",
+        "catalogId": "cushion",
+        "distinction": {
+          "zhHant": "クッション泛指軟墊；座布団特指放在地上坐的墊子。",
+          "en": "クッション is a general cushion; 座布団 is a cushion for sitting on the floor.",
+          "ja": "クッションは柔らかい詰め物の総称、座布団は床に敷いて座るものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "floor-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "footstool",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "game-console",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kotatsu",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lint-roller",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "magazine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "newspaper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "picture-frame",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "potted-plant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "power-outlet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "projector",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "projector-screen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "recliner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "diffuser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "remote",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "remote-control-holder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "robot-vacuum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "router",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rug",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "set-top-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "side-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "smoke-detector",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sofa",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "speaker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "table-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "telephone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tissue-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tv",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tv-stand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vase",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "doorbell",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wall-art",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "access-card",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ballpoint-pen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "binder-clip",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bookend",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "business-card",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "calculator",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "calendar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "folder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clipboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "computer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "conference-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "correction-tape",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "desk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "desk-organizer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "document",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "document-tray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "employee-id-card",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "envelope",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "file-folder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "filing-cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "glue",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "headphones",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "highlighter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hole-punch",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "invoice",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "keyboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "laptop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "meeting-room",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "microphone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "monitor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mouse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mouse-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "notebook",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "notepad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "office-chair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "office-supplies",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper-clip",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper-shredder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "marker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "photocopier",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "printer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "reception-desk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rubber-stamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ruler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scanner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mobile-phone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stamp-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stapler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "staples",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sticky-notes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tape",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "utility-knife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "water-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "webcam",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whiteboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eraser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whiteboard-marker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "appliance-repair-technician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "auto-mechanic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bank-teller",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barber",
+    "confusables": [
+      {
+        "term": "美容師",
+        "catalogId": "hairdresser",
+        "distinction": {
+          "zhHant": "理容師主要從事理髮等理容服務；美容師主要從事美髮等美容服務。",
+          "en": "理容師 is associated with barbering; 美容師 with hairdressing and styling.",
+          "ja": "理容師は理容サービス、美容師はヘアスタイリングなどの美容サービスを行います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barista",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bartender",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beautician",
+    "confusables": [
+      {
+        "term": "美容師",
+        "catalogId": "hairdresser",
+        "distinction": {
+          "zhHant": "美容師主要處理頭髮；エステティシャン主要提供肌膚、身體美容護理。",
+          "en": "美容師 works mainly with hair; エステティシャン provides skin and body beauty treatments.",
+          "ja": "美容師は主に髪を扱い、エステティシャンは肌や体の美容ケアを行います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle-mechanic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "building-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "butcher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "caregiver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "carpenter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chef",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coast-guard-officer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "concierge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "construction-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "restaurant-cook",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cram-school-teacher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "crane-operator",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "crossing-guard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "customs-officer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "delivery-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dental-hygienist",
+    "confusables": [
+      {
+        "term": "歯科医師",
+        "catalogId": "dentist",
+        "distinction": {
+          "zhHant": "歯科医師是牙醫；歯科衛生士是牙科衛生師，主要協助預防照護與口腔衛教。",
+          "en": "歯科医師 is a dentist; 歯科衛生士 is a dental hygienist focused on preventive care and guidance.",
+          "ja": "歯科医師は歯科の医師、歯科衛生士は予防ケアや口腔保健の指導を担う専門職です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dentist",
+    "confusables": [
+      {
+        "term": "歯科衛生士",
+        "catalogId": "dental-hygienist",
+        "distinction": {
+          "zhHant": "歯科医師是牙醫；歯科衛生士是牙科衛生師，主要協助預防照護與口腔衛教。",
+          "en": "歯科医師 is a dentist; 歯科衛生士 is a dental hygienist focused on preventive care and guidance.",
+          "ja": "歯科医師は歯科の医師、歯科衛生士は予防ケアや口腔保健の指導を担う専門職です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "department-store-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "doctor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "「医師」較正式；口語中也常說「お医者さん」。",
+      "en": "医師 is formal; お医者さん is common in conversation.",
+      "ja": "「医師」はやや改まった言い方で、会話では「お医者さん」もよく使います。"
+    }
+  },
+  {
+    "wordId": "driving-instructor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electrician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "factory-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "farmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "firefighter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fisherman",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fishmonger",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fitness-trainer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flight-attendant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "florist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-factory-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "forestry-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garbage-collector",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gardener",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hairdresser",
+    "confusables": [
+      {
+        "term": "理容師",
+        "catalogId": "barber",
+        "distinction": {
+          "zhHant": "理容師主要從事理髮等理容服務；美容師主要從事美髮等美容服務。",
+          "en": "理容師 is associated with barbering; 美容師 with hairdressing and styling.",
+          "ja": "理容師は理容サービス、美容師はヘアスタイリングなどの美容サービスを行います。"
+        }
+      },
+      {
+        "term": "エステティシャン",
+        "catalogId": "beautician",
+        "distinction": {
+          "zhHant": "美容師主要處理頭髮；エステティシャン主要提供肌膚、身體美容護理。",
+          "en": "美容師 works mainly with hair; エステティシャン provides skin and body beauty treatments.",
+          "ja": "美容師は主に髪を扱い、エステティシャンは肌や体の美容ケアを行います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hotel-housekeeper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hotel-receptionist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kindergarten-teacher",
+    "confusables": [
+      {
+        "term": "保育士",
+        "catalogId": "nursery-teacher",
+        "distinction": {
+          "zhHant": "幼稚園教諭在幼稚園任教；保育士主要在保育所等設施照顧兒童。",
+          "en": "幼稚園教諭 teaches in kindergarten; 保育士 cares for children at nursery facilities.",
+          "ja": "幼稚園教諭は幼稚園で教育し、保育士は保育所などで子どもの保育を担います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "librarian",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lifeguard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mail-carrier",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-artist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "manga-artist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "massage-therapist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "midwife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "museum-guide",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "musician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-technician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nurse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nursery-teacher",
+    "confusables": [
+      {
+        "term": "幼稚園教諭",
+        "catalogId": "kindergarten-teacher",
+        "distinction": {
+          "zhHant": "幼稚園教諭在幼稚園任教；保育士主要在保育所等設施照顧兒童。",
+          "en": "幼稚園教諭 teaches in kindergarten; 保育士 cares for children at nursery facilities.",
+          "ja": "幼稚園教諭は幼稚園で教育し、保育士は保育所などで子どもの保育を担います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "painter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paramedic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-attendant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pastry-chef",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pest-control-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pharmacist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pharmacy-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "photographer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "physical-therapist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pilot",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plasterer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plumber",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "police-officer",
+    "confusables": [
+      {
+        "term": "警備員",
+        "catalogId": "security-guard",
+        "distinction": {
+          "zhHant": "警察官是警察人員；警備員從事建築、活動等場所的保全工作。",
+          "en": "警察官 is a police officer; 警備員 is a guard working in places such as buildings and events.",
+          "ja": "警察官は警察の職員、警備員は建物や行事などの警備を行う人です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "postal-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "reporter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rescue-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "restaurant-server",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roofer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sales-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "school-nurse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "security-guard",
+    "confusables": [
+      {
+        "term": "警察官",
+        "catalogId": "police-officer",
+        "distinction": {
+          "zhHant": "警察官是警察人員；警備員從事建築、活動等場所的保全工作。",
+          "en": "警察官 is a police officer; 警備員 is a guard working in places such as buildings and events.",
+          "ja": "警察官は警察の職員、警備員は建物や行事などの警備を行う人です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shoe-repairer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sports-coach",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "station-attendant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "supermarket-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "surveyor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sushi-chef",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "swimming-instructor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tailor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "taxi-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "teacher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tour-guide",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-guard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train-conductor",
+    "confusables": [
+      {
+        "term": "電車運転士",
+        "catalogId": "train-driver",
+        "distinction": {
+          "zhHant": "電車運転士負責駕駛列車；車掌負責車內廣播、確認與乘客服務等。",
+          "en": "電車運転士 drives the train; 車掌 handles onboard announcements, checks, and passenger service.",
+          "ja": "電車運転士は運転を担当し、車掌は車内放送や安全確認、旅客対応などを担当します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train-driver",
+    "confusables": [
+      {
+        "term": "車掌",
+        "catalogId": "train-conductor",
+        "distinction": {
+          "zhHant": "電車運転士負責駕駛列車；車掌負責車內廣播、確認與乘客服務等。",
+          "en": "電車運転士 drives the train; 車掌 handles onboard announcements, checks, and passenger service.",
+          "ja": "電車運転士は運転を担当し、車掌は車内放送や安全確認、旅客対応などを担当します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "truck-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "veterinarian",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "welder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "window-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yoga-instructor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aonori",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "apple-cider-vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baking-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baking-soda",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "basil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bay-leaf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "black-pepper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "black-vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bonito-flakes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bonito-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bouillon-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "brown-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cardamom",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chicken-bouillon-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-bean-paste",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-flakes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cilantro",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cinnamon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cinnamon-bark",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cloves",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cooking-wine",
+    "confusables": [
+      {
+        "term": "みりん",
+        "catalogId": "mirin",
+        "distinction": {
+          "zhHant": "料理酒主要用於調味去腥；みりん含甜味，常用來增添甜味與光澤。",
+          "en": "料理酒 is cooking sake; みりん is sweet and adds sweetness and gloss to dishes.",
+          "ja": "料理酒は料理用の酒、みりんは甘みがあり料理に甘さや照りを加えます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coriander-seeds",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cornstarch",
+    "confusables": [
+      {
+        "term": "片栗粉",
+        "catalogId": "potato-starch",
+        "distinction": {
+          "zhHant": "片栗粉在日本通常是馬鈴薯澱粉；コーンスターチ是玉米澱粉。",
+          "en": "片栗粉 in Japan is usually potato starch; コーンスターチ is starch from corn.",
+          "ja": "片栗粉は現在通常じゃがいも由来、コーンスターチはとうもろこし由来です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cumin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cumin-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curry-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curry-roux",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dark-brown-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dark-soy-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dashi-stock",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fennel-seeds",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fish-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "five-spice-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flour",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "furikake",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garlic-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "honey",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ketchup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kombu-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "light-soy-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mayonnaise",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mirin",
+    "confusables": [
+      {
+        "term": "料理酒",
+        "catalogId": "cooking-wine",
+        "distinction": {
+          "zhHant": "料理酒主要用於調味去腥；みりん含甜味，常用來增添甜味與光澤。",
+          "en": "料理酒 is cooking sake; みりん is sweet and adds sweetness and gloss to dishes.",
+          "ja": "料理酒は料理用の酒、みりんは甘みがあり料理に甘さや照りを加えます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "miso",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "msg",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mustard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "noodle-soup-base",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "olive-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "onion-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oregano",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oyster-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parsley",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "peanut-butter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pepper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ponzu-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "potato-starch",
+    "confusables": [
+      {
+        "term": "コーンスターチ",
+        "catalogId": "cornstarch",
+        "distinction": {
+          "zhHant": "片栗粉在日本通常是馬鈴薯澱粉；コーンスターチ是玉米澱粉。",
+          "en": "片栗粉 in Japan is usually potato starch; コーンスターチ is starch from corn.",
+          "ja": "片栗粉は現在通常じゃがいも由来、コーンスターチはとうもろこし由来です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roasted-sesame-seeds",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rock-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rosemary",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "salt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sesame-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sesame-paste",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shacha-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shichimi",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sichuan-peppercorn",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "soy-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "star-anise",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sweet-chili-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "thick-soy-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "thyme",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tonkatsu-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "turmeric-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vanilla-extract",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vegetable-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wasabi",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-pepper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yellow-mustard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yuzu-kosho",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "alley",
+    "confusables": [
+      {
+        "term": "通り",
+        "catalogId": "street",
+        "distinction": {
+          "zhHant": "路地是小巷；通り是街道或道路，範圍較廣。",
+          "en": "路地 is a narrow alley; 通り is a street or road more broadly.",
+          "ja": "路地は狭い道、通りは街中の道を広く指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bank",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roadblock",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bench",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle-parking-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bike-lane",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "billboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bollard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bridge",
+    "confusables": [
+      {
+        "term": "箸",
+        "catalogId": "chopsticks",
+        "distinction": {
+          "zhHant": "箸和橋都讀作「はし」；前者是筷子，後者是橋。",
+          "en": "箸 and 橋 are both read はし; the first means chopsticks, the second a bridge.",
+          "ja": "箸と橋はどちらも「はし」と読みますが、箸は食具、橋は川などを渡る構造物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-stop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-stop-shelter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cafe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "construction-zone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convex-traffic-mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "corner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "crosswalk",
+    "confusables": [
+      {
+        "term": "歩道",
+        "catalogId": "sidewalk",
+        "distinction": {
+          "zhHant": "横断歩道是供行人穿越車道的斑馬線；歩道是沿路供行人行走的道路部分。",
+          "en": "横断歩道 crosses the road; 歩道 runs alongside it for pedestrians.",
+          "ja": "横断歩道は車道を渡る場所、歩道は道路に沿って歩行者が歩く場所です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curb",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fire-hydrant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flower-bed",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street-vendor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "guardrail",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "intersection",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lane",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mailbox",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "manhole-cover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vendor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "newsstand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "park",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-lot",
+    "confusables": [
+      {
+        "term": "駐車スペース",
+        "catalogId": "parking-space",
+        "distinction": {
+          "zhHant": "駐車場是整個停車場；駐車スペース是其中一個車位。",
+          "en": "駐車場 is the whole parking area; 駐車スペース is an individual parking space.",
+          "ja": "駐車場は駐車する場所全体、駐車スペースは個々の駐車枠です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-meter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-space",
+    "confusables": [
+      {
+        "term": "駐車場",
+        "catalogId": "parking-lot",
+        "distinction": {
+          "zhHant": "駐車場是整個停車場；駐車スペース是其中一個車位。",
+          "en": "駐車場 is the whole parking area; 駐車スペース is an individual parking space.",
+          "ja": "駐車場は駐車する場所全体、駐車スペースは個々の駐車枠です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pedestrian",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pedestrian-bridge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pedestrian-button",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pharmacy",
+    "confusables": [
+      {
+        "term": "ドラッグストア",
+        "catalogId": "drugstore",
+        "distinction": {
+          "zhHant": "薬局主要處理藥品與處方調劑；ドラッグストア還販售日用品，並非每間都提供調劑。",
+          "en": "薬局 is a pharmacy; ドラッグストア also sells daily goods, and not every branch fills prescriptions.",
+          "ja": "薬局は医薬品や調剤を扱い、ドラッグストアは日用品も売ります。調剤しない店舗もあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "在日本看到「調剤薬局」，通常表示可依處方箋調劑藥品。",
+      "en": "In Japan, 調剤薬局 usually indicates a pharmacy that fills prescriptions.",
+      "ja": "日本で「調剤薬局」とあれば、通常は処方箋による調剤を行う薬局です。"
+    }
+  },
+  {
+    "wordId": "post-office",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "power-lines",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "restaurant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "road",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roundabout",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "security-camera",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sidewalk",
+    "confusables": [
+      {
+        "term": "横断歩道",
+        "catalogId": "crosswalk",
+        "distinction": {
+          "zhHant": "横断歩道是供行人穿越車道的斑馬線；歩道是沿路供行人行走的道路部分。",
+          "en": "横断歩道 crosses the road; 歩道 runs alongside it for pedestrians.",
+          "ja": "横断歩道は車道を渡る場所、歩道は道路に沿って歩行者が歩く場所です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "signboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "station",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stop-sign",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "storm-drain-grate",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street",
+    "confusables": [
+      {
+        "term": "路地",
+        "catalogId": "alley",
+        "distinction": {
+          "zhHant": "路地是小巷；通り是街道或道路，範圍較廣。",
+          "en": "路地 is a narrow alley; 通り is a street or road more broadly.",
+          "ja": "路地は狭い道、通りは街中の道を広く指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street-sign",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "streetlight",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "subway-station",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "supermarket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tactile-paving",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "taxi-stand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-cone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-light",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-sign",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trash-can",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tree",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tunnel",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "underpass",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "utility-pole",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vending-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wheel-stop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aisle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bagging-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bakery-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barcode",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barcode-scanner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beverage-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "canned-food",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cashier",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "checkout-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coin-tray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coupon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "deli-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "discount",
+    "confusables": [
+      {
+        "term": "セール",
+        "catalogId": "sale",
+        "distinction": {
+          "zhHant": "割引指價格減少；セール指促銷活動，不是單一折扣額。",
+          "en": "割引 is a reduction in price; セール is a sales promotion or event.",
+          "ja": "割引は値引きそのもの、セールは販売促進の催しや期間を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "egg-carton",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-tray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "frozen-food",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "frozen-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garbage-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "household-goods-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "meat-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "membership-card",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plastic-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "price-tag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "produce-bag-roll",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "produce-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "receipt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "「レシート」是店家印出的購物明細；若需要正式收據，可另要求「領収書」。",
+      "en": "レシート is a printed sales slip; ask for a 領収書 when you need a formal receipt.",
+      "ja": "「レシート」は購入明細の紙で、正式な証明が必要なら「領収書」を頼むことがあります。"
+    }
+  },
+  {
+    "wordId": "recycling-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "refrigerated-display-case",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "refrigerated-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "reusable-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sale",
+    "confusables": [
+      {
+        "term": "割引",
+        "catalogId": "discount",
+        "distinction": {
+          "zhHant": "割引指價格減少；セール指促銷活動，不是單一折扣額。",
+          "en": "割引 is a reduction in price; セール is a sales promotion or event.",
+          "ja": "割引は値引きそのもの、セールは販売促進の催しや期間を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "seafood-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "self-checkout-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shopping-basket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shopping-cart",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shopping-cart-return",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "snack-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "airplane",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "airship",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ambulance",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle-helmet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "boat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-stop-button",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cable-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "camper-van",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "canoe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coach",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cruise-ship",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "delivery-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electric-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electric-scooter",
+    "confusables": [
+      {
+        "term": "キックボード",
+        "catalogId": "scooter",
+        "distinction": {
+          "zhHant": "キックボード靠腳踢地面前進；電動キックボード由馬達驅動。",
+          "en": "キックボード is propelled by kicking; 電動キックボード has an electric motor.",
+          "ja": "キックボードは足で地面を蹴って進み、電動キックボードはモーターで進みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ferry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fire-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garbage-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gondola-lift",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "helicopter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "high-speed-train",
+    "confusables": [
+      {
+        "term": "電車",
+        "catalogId": "train",
+        "distinction": {
+          "zhHant": "電車泛指電力列車；新幹線特指日本的高速鐵路。",
+          "en": "電車 is a general electric train; 新幹線 is Japan’s high-speed rail.",
+          "ja": "電車は電気で走る列車の一般的な呼び名、新幹線は日本の高速鉄道です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-air-balloon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kayak",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kei-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kei-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "light-rail",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "minibus",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "monorail",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "motorcycle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mrt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "platform-screen-door",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "police-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rickshaw",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rocket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roller-skates",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sailboat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "school-bus",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scooter",
+    "confusables": [
+      {
+        "term": "電動キックボード",
+        "catalogId": "electric-scooter",
+        "distinction": {
+          "zhHant": "キックボード靠腳踢地面前進；電動キックボード由馬達驅動。",
+          "en": "キックボード is propelled by kicking; 電動キックボード has an electric motor.",
+          "ja": "キックボードは足で地面を蹴って進み、電動キックボードはモーターで進みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "skateboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "speedboat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sports-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "submarine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "subway",
+    "confusables": [
+      {
+        "term": "路面電車",
+        "catalogId": "tram",
+        "distinction": {
+          "zhHant": "地下鉄是以地下路段為主的鐵路；路面電車主要行駛在道路上。",
+          "en": "地下鉄 is a subway; 路面電車 is a tram that runs mainly on streets.",
+          "ja": "地下鉄は地下区間を中心に走り、路面電車は主に道路上を走ります。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "地下鉄を乗ります。",
+        "right": "地下鉄に乗ります。",
+        "why": {
+          "zhHant": "表示搭乘交通工具時，「乗る」通常搭配助詞「に」。",
+          "en": "Use に with 乗る for the vehicle you board.",
+          "ja": "乗る対象の乗り物には通常「に」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "taxi",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ticket-gate",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ticket-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tow-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train",
+    "confusables": [
+      {
+        "term": "新幹線",
+        "catalogId": "high-speed-train",
+        "distinction": {
+          "zhHant": "電車泛指電力列車；新幹線特指日本的高速鐵路。",
+          "en": "電車 is a general electric train; 新幹線 is Japan’s high-speed rail.",
+          "ja": "電車は電気で走る列車の一般的な呼び名、新幹線は日本の高速鉄道です。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "電車に降ります。",
+        "right": "電車を降ります。",
+        "why": {
+          "zhHant": "表示下車時，「降りる」通常搭配助詞「を」。",
+          "en": "Use を with 降りる for the vehicle you get off.",
+          "ja": "降りる乗り物には通常「を」を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "train-strap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tram",
+    "confusables": [
+      {
+        "term": "地下鉄",
+        "catalogId": "subway",
+        "distinction": {
+          "zhHant": "地下鉄是以地下路段為主的鐵路；路面電車主要行駛在道路上。",
+          "en": "地下鉄 is a subway; 路面電車 is a tram that runs mainly on streets.",
+          "ja": "地下鉄は地下区間を中心に走り、路面電車は主に道路上を走ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tricycle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "van",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aquarius",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aries",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cancer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "capricorn",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gemini",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "leo",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "libra",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pisces",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sagittarius",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scorpio",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "taurus",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "virgo",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  }
+]

@@ -1,0 +1,7903 @@
+[
+  {
+    "wordId": "ale",
+    "confusables": [
+      {
+        "term": "lager",
+        "catalogId": "lager",
+        "distinction": {
+          "zhHant": "ale 通常以較溫暖的溫度發酵；lager 則低溫發酵與熟成。",
+          "en": "Ale is typically fermented warmer; lager is fermented and matured cold.",
+          "ja": "ale は通常より高温で発酵させ、lager は低温で発酵・熟成させます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "awamori",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beer",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "I want to drink a beers.",
+        "right": "I want to drink a beer.",
+        "why": {
+          "zhHant": "a 後面接單數可數名詞；這裡一杯啤酒要說 a beer。",
+          "en": "The singular article a takes beer, not the plural beers.",
+          "ja": "単数の冠詞 a の後は beer で、複数形の beers にはしません。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "bourbon",
+    "confusables": [
+      {
+        "term": "whiskey",
+        "catalogId": "whiskey",
+        "distinction": {
+          "zhHant": "bourbon 是符合特定美國製法規範的 whiskey；whiskey 不一定是 bourbon。",
+          "en": "Bourbon is whiskey made under specific US rules; whiskey is not necessarily bourbon.",
+          "ja": "bourbon は米国の規定に沿って造られる whiskey の一種で、whiskey すべてが bourbon ではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "brandy",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "champagne",
+    "confusables": [
+      {
+        "term": "sparkling wine",
+        "catalogId": "sparkling-wine",
+        "distinction": {
+          "zhHant": "champagne 是來自法國香檳產區且符合規範的 sparkling wine；其他氣泡酒不都能稱為 champagne。",
+          "en": "Champagne is sparkling wine from the Champagne region of France made under its rules; not every sparkling wine is Champagne.",
+          "ja": "champagne はフランスのシャンパーニュ地方で規定に従って造られた sparkling wine で、発泡性ワインすべてを指すわけではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chuhai",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cider",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "在英國 cider 通常是含酒精的蘋果酒；在美國，apple cider 也可能是不含酒精的蘋果飲料。",
+      "en": "In the UK, cider is usually alcoholic; in the US, apple cider can also be nonalcoholic.",
+      "ja": "英国の cider は通常アルコール飲料ですが、米国の apple cider はノンアルコールのリンゴ飲料を指すこともあります。"
+    }
+  },
+  {
+    "wordId": "draft-beer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "draft beer 是從酒桶經龍頭供應的啤酒；英式拼法是 draught beer。",
+      "en": "Draft beer is served from a keg through a tap; the British spelling is draught beer.",
+      "ja": "draft beer は樽からタップで注ぐビールで、英国式のつづりは draught beer です。"
+    }
+  },
+  {
+    "wordId": "gin",
+    "confusables": [
+      {
+        "term": "vodka",
+        "catalogId": "vodka",
+        "distinction": {
+          "zhHant": "gin 的風味核心是杜松子；vodka 通常以較中性的風味為特色。",
+          "en": "Gin is flavored chiefly with juniper; vodka is generally characterized by a more neutral flavor.",
+          "ja": "gin はジュニパーベリーの風味が中心で、vodka は一般により中性的な風味が特徴です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gin-and-tonic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "highball",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lager",
+    "confusables": [
+      {
+        "term": "ale",
+        "catalogId": "ale",
+        "distinction": {
+          "zhHant": "ale 通常以較溫暖的溫度發酵；lager 則低溫發酵與熟成。",
+          "en": "Ale is typically fermented warmer; lager is fermented and matured cold.",
+          "ja": "ale は通常より高温で発酵させ、lager は低温で発酵・熟成させます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lemon-sour",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "liqueur",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makgeolli",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "margarita",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "martini",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mead",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mojito",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pina-colada",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plum-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "red-wine",
+    "confusables": [
+      {
+        "term": "rosé wine",
+        "catalogId": "rose-wine",
+        "distinction": {
+          "zhHant": "red wine 通常長時間與深色葡萄皮接觸；rosé wine 的浸皮時間通常較短，因此顏色較淡。",
+          "en": "Red wine usually has more contact with dark grape skins; rosé wine usually has shorter skin contact and a lighter color.",
+          "ja": "red wine は黒ブドウの果皮と長く接触させることが多く、rosé wine はその時間が短く色も淡くなります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rose-wine",
+    "confusables": [
+      {
+        "term": "red wine",
+        "catalogId": "red-wine",
+        "distinction": {
+          "zhHant": "red wine 通常長時間與深色葡萄皮接觸；rosé wine 的浸皮時間通常較短，因此顏色較淡。",
+          "en": "Red wine usually has more contact with dark grape skins; rosé wine usually has shorter skin contact and a lighter color.",
+          "ja": "red wine は黒ブドウの果皮と長く接触させることが多く、rosé wine はその時間が短く色も淡くなります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sake",
+    "confusables": [
+      {
+        "term": "shochu",
+        "catalogId": "shochu",
+        "distinction": {
+          "zhHant": "sake 是釀造的米酒；shochu 是蒸餾酒，原料不限於米。",
+          "en": "Sake is brewed from rice; shochu is distilled and need not be made from rice.",
+          "ja": "sake は米を醸造した酒で、shochu は米以外も原料になる蒸留酒です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sangria",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shochu",
+    "confusables": [
+      {
+        "term": "sake",
+        "catalogId": "sake",
+        "distinction": {
+          "zhHant": "sake 是釀造的米酒；shochu 是蒸餾酒，原料不限於米。",
+          "en": "Sake is brewed from rice; shochu is distilled and need not be made from rice.",
+          "ja": "sake は米を醸造した酒で、shochu は米以外も原料になる蒸留酒です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sparkling-wine",
+    "confusables": [
+      {
+        "term": "champagne",
+        "catalogId": "champagne",
+        "distinction": {
+          "zhHant": "champagne 是來自法國香檳產區且符合規範的 sparkling wine；其他氣泡酒不都能稱為 champagne。",
+          "en": "Champagne is sparkling wine from the Champagne region of France made under its rules; not every sparkling wine is Champagne.",
+          "ja": "champagne はフランスのシャンパーニュ地方で規定に従って造られた sparkling wine で、発泡性ワインすべてを指すわけではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stout",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tequila",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vodka",
+    "confusables": [
+      {
+        "term": "gin",
+        "catalogId": "gin",
+        "distinction": {
+          "zhHant": "gin 的風味核心是杜松子；vodka 通常以較中性的風味為特色。",
+          "en": "Gin is flavored chiefly with juniper; vodka is generally characterized by a more neutral flavor.",
+          "ja": "gin はジュニパーベリーの風味が中心で、vodka は一般により中性的な風味が特徴です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whiskey",
+    "confusables": [
+      {
+        "term": "bourbon",
+        "catalogId": "bourbon",
+        "distinction": {
+          "zhHant": "bourbon 是符合特定美國製法規範的 whiskey；whiskey 不一定是 bourbon。",
+          "en": "Bourbon is whiskey made under specific US rules; whiskey is not necessarily bourbon.",
+          "ja": "bourbon は米国の規定に沿って造られる whiskey の一種で、whiskey すべてが bourbon ではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-wine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-ladle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-mat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-salts",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-sponge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-stool",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bath-towel",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathrobe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathroom-cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathroom-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathroom-door",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathtub",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bathtub-cover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "body-wash",
+    "confusables": [
+      {
+        "term": "soap",
+        "catalogId": "soap",
+        "distinction": {
+          "zhHant": "soap 可指塊狀或液態肥皂；body wash 特別指用於身體的液態清潔產品。",
+          "en": "Soap can be solid or liquid; body wash specifically refers to a liquid cleanser for the body.",
+          "ja": "soap は固形・液体の石けんを指し、body wash は体用の液体洗浄料を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bucket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cleaning-brush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cleansing-oil",
+    "confusables": [
+      {
+        "term": "facial cleanser",
+        "catalogId": "facial-cleanser",
+        "distinction": {
+          "zhHant": "cleansing oil 主要用油溶解彩妝和防曬；facial cleanser 泛指洗臉用清潔產品。",
+          "en": "Cleansing oil dissolves makeup and sunscreen with oil; facial cleanser is the broader term for a face-washing product.",
+          "ja": "cleansing oil は油でメイクや日焼け止めを落とし、facial cleanser は洗顔料全般を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "comb",
+    "confusables": [
+      {
+        "term": "hairbrush",
+        "catalogId": "hairbrush",
+        "distinction": {
+          "zhHant": "hairbrush 有刷毛；comb 有一排齒，兩者整理頭髮的方式不同。",
+          "en": "A hairbrush has bristles; a comb has a row of teeth.",
+          "ja": "hairbrush にはブラシの毛があり、comb には一列の歯があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "conditioner",
+    "confusables": [
+      {
+        "term": "shampoo",
+        "catalogId": "shampoo",
+        "distinction": {
+          "zhHant": "shampoo 用來洗淨頭髮；conditioner 通常洗髮後使用，幫助柔順頭髮。",
+          "en": "Shampoo cleans hair; conditioner is usually used afterward to soften it.",
+          "ja": "shampoo は髪を洗うもので、conditioner は通常その後に使い、髪をなめらかにします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cosmetics",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cotton-ball",
+    "confusables": [
+      {
+        "term": "cotton pad",
+        "catalogId": "cotton-pad",
+        "distinction": {
+          "zhHant": "cotton ball 是鬆軟的棉球；cotton pad 是扁平的棉片。",
+          "en": "A cotton ball is a fluffy ball of cotton; a cotton pad is flat.",
+          "ja": "cotton ball は丸くふわっとした綿で、cotton pad は平たい綿です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cotton-pad",
+    "confusables": [
+      {
+        "term": "cotton ball",
+        "catalogId": "cotton-ball",
+        "distinction": {
+          "zhHant": "cotton ball 是鬆軟的棉球；cotton pad 是扁平的棉片。",
+          "en": "A cotton ball is a fluffy ball of cotton; a cotton pad is flat.",
+          "ja": "cotton ball は丸くふわっとした綿で、cotton pad は平たい綿です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cotton-swab",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dental-floss",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "deodorant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "disinfectant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drain",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-cleanser",
+    "confusables": [
+      {
+        "term": "cleansing oil",
+        "catalogId": "cleansing-oil",
+        "distinction": {
+          "zhHant": "cleansing oil 主要用油溶解彩妝和防曬；facial cleanser 泛指洗臉用清潔產品。",
+          "en": "Cleansing oil dissolves makeup and sunscreen with oil; facial cleanser is the broader term for a face-washing product.",
+          "ja": "cleansing oil は油でメイクや日焼け止めを落とし、facial cleanser は洗顔料全般を指します。"
+        }
+      },
+      {
+        "term": "facial toner",
+        "catalogId": "facial-toner",
+        "distinction": {
+          "zhHant": "facial cleanser 用來洗掉臉上的髒污；facial toner 通常在清潔後塗抹，不是主要的洗臉產品。",
+          "en": "Facial cleanser washes dirt off the face; facial toner is usually applied after cleansing and is not the main washing product.",
+          "ja": "facial cleanser は顔の汚れを洗い落とし、facial toner は通常洗顔後に使い、主な洗浄剤ではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gloves",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-conditioner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-dryer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hairbrush",
+    "confusables": [
+      {
+        "term": "comb",
+        "catalogId": "comb",
+        "distinction": {
+          "zhHant": "hairbrush 有刷毛；comb 有一排齒，兩者整理頭髮的方式不同。",
+          "en": "A hairbrush has bristles; a comb has a row of teeth.",
+          "ja": "hairbrush にはブラシの毛があり、comb には一列の歯があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hamper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hand-soap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hand-towel",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hook",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "laundry-basket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "laundry-net",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lotion",
+    "confusables": [
+      {
+        "term": "moisturizer",
+        "catalogId": "moisturizer",
+        "distinction": {
+          "zhHant": "lotion 可指多種乳液或化妝水；moisturizer 特別強調為皮膚保濕。",
+          "en": "Lotion can name several liquid skin products; moisturizer specifically emphasizes hydrating the skin.",
+          "ja": "lotion はさまざまな液状のスキンケア製品を指し、moisturizer は肌の保湿を目的とします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "micellar-water",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "moisturizer",
+    "confusables": [
+      {
+        "term": "lotion",
+        "catalogId": "lotion",
+        "distinction": {
+          "zhHant": "lotion 可指多種乳液或化妝水；moisturizer 特別強調為皮膚保濕。",
+          "en": "Lotion can name several liquid skin products; moisturizer specifically emphasizes hydrating the skin.",
+          "ja": "lotion はさまざまな液状のスキンケア製品を指し、moisturizer は肌の保湿を目的とします。"
+        }
+      },
+      {
+        "term": "sunscreen",
+        "catalogId": "sunscreen",
+        "distinction": {
+          "zhHant": "sunscreen 用於防護紫外線；moisturizer 用於皮膚保濕，除非標有防曬係數，不能當成防曬品。",
+          "en": "Sunscreen protects against UV rays; moisturizer hydrates skin and is not a sunscreen unless it has stated sun protection.",
+          "ja": "sunscreen は紫外線を防ぎ、moisturizer は保湿をします。日焼け止め効果が明記されていなければ代用できません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mold-remover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mouthwash",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-clipper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "non-slip-mat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "perfume",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "razor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sanitary-bin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sanitary-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scale",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shampoo",
+    "confusables": [
+      {
+        "term": "conditioner",
+        "catalogId": "conditioner",
+        "distinction": {
+          "zhHant": "shampoo 用來洗淨頭髮；conditioner 通常洗髮後使用，幫助柔順頭髮。",
+          "en": "Shampoo cleans hair; conditioner is usually used afterward to soften it.",
+          "ja": "shampoo は髪を洗うもので、conditioner は通常その後に使い、髪をなめらかにします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shaving-cream",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower",
+    "confusables": [
+      {
+        "term": "bath",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "shower 是站著淋浴；bath 是泡澡，也可指浴缸。",
+          "en": "A shower is washing standing under running water; a bath is sitting in a tub of water, or the tub itself.",
+          "ja": "shower は立って浴びるシャワー、bath は湯船につかる入浴、または浴槽そのものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-caddy",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-curtain",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-curtain-rod",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-head",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-hose",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shower-room",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "slippers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "soap",
+    "confusables": [
+      {
+        "term": "body wash",
+        "catalogId": "body-wash",
+        "distinction": {
+          "zhHant": "soap 可指塊狀或液態肥皂；body wash 特別指用於身體的液態清潔產品。",
+          "en": "Soap can be solid or liquid; body wash specifically refers to a liquid cleanser for the body.",
+          "ja": "soap は固形・液体の石けんを指し、body wash は体用の液体洗浄料を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "soap-dish",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "squeegee",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tampon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tissue",
+    "confusables": [
+      {
+        "term": "toilet paper",
+        "catalogId": "toilet-paper",
+        "distinction": {
+          "zhHant": "toilet paper 設計用於如廁後使用並可沖入馬桶；tissue 是面紙，通常不應沖入馬桶。",
+          "en": "Toilet paper is designed for toilet use and flushing; tissues generally should not be flushed.",
+          "ja": "toilet paper はトイレ用で流せますが、tissue は鼻紙などで通常トイレに流しません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet",
+    "confusables": [
+      {
+        "term": "bathroom",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "toilet 指馬桶本身，英式英文也指廁所這個空間；美式英文比較常用 bathroom 或 restroom 稱呼廁所。",
+          "en": "Toilet means the fixture, and in British English also the room; American English more often calls the room the bathroom or restroom.",
+          "ja": "toilet は便器そのもので、イギリス英語ではトイレの部屋も指します。アメリカ英語では部屋を bathroom や restroom と言うことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-brush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-paper",
+    "confusables": [
+      {
+        "term": "tissue",
+        "catalogId": "tissue",
+        "distinction": {
+          "zhHant": "toilet paper 設計用於如廁後使用並可沖入馬桶；tissue 是面紙，通常不應沖入馬桶。",
+          "en": "Toilet paper is designed for toilet use and flushing; tissues generally should not be flushed.",
+          "ja": "toilet paper はトイレ用で流せますが、tissue は鼻紙などで通常トイレに流しません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-seat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toilet-tank",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toothbrush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toothbrush-holder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toothpaste",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "towel",
+    "confusables": [
+      {
+        "term": "paper towel",
+        "catalogId": "paper-towel",
+        "distinction": {
+          "zhHant": "paper towel 是用後即丟的紙巾；towel 通常是可清洗再用的布巾。",
+          "en": "A paper towel is disposable paper; a towel is usually washable fabric.",
+          "ja": "paper towel は使い捨ての紙で、towel は通常洗って繰り返し使う布です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "towel-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ventilation-fan",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wash-basin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "washbasin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "water-heater",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-conditioner",
+    "confusables": [
+      {
+        "term": "air purifier",
+        "catalogId": "air-purifier",
+        "distinction": {
+          "zhHant": "air purifier 主要過濾空氣中的污染物；air conditioner 主要調節室溫，有些機型也有濾淨功能。",
+          "en": "An air purifier mainly filters pollutants; an air conditioner mainly controls room temperature, though some also filter air.",
+          "ja": "air purifier は主に空気中の汚れを取り除き、air conditioner は主に室温を調整します。空気清浄機能付きの機種もあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-purifier",
+    "confusables": [
+      {
+        "term": "air conditioner",
+        "catalogId": "air-conditioner",
+        "distinction": {
+          "zhHant": "air purifier 主要過濾空氣中的污染物；air conditioner 主要調節室溫，有些機型也有濾淨功能。",
+          "en": "An air purifier mainly filters pollutants; an air conditioner mainly controls room temperature, though some also filter air.",
+          "ja": "air purifier は主に空気中の汚れを取り除き、air conditioner は主に室温を調整します。空気清浄機能付きの機種もあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "alarm-clock",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bed",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bed-sheet",
+    "confusables": [
+      {
+        "term": "fitted sheet",
+        "catalogId": "fitted-sheet",
+        "distinction": {
+          "zhHant": "bed sheet 是床單的泛稱；fitted sheet 四角有鬆緊帶，用來包住床墊。",
+          "en": "Bed sheet is the general term; a fitted sheet has elastic corners that grip the mattress.",
+          "ja": "bed sheet はシーツ全般で、fitted sheet はゴム付きの角でマットレスを包みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bedside-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bedspread",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blanket",
+    "confusables": [
+      {
+        "term": "duvet",
+        "catalogId": "quilt",
+        "distinction": {
+          "zhHant": "blanket 通常是一層保暖毯；quilt 是以縫線固定多層布料的被子。",
+          "en": "A blanket is usually a single warm covering; a quilt has layers of fabric stitched together.",
+          "ja": "blanket は通常一枚の毛布で、quilt は布を何層か重ねて縫い合わせた掛け物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blinds",
+    "confusables": [
+      {
+        "term": "curtain",
+        "catalogId": "curtain",
+        "distinction": {
+          "zhHant": "blinds 是可調角度的百葉窗簾；curtain 是懸掛的布簾。",
+          "en": "Blinds have adjustable slats; a curtain is hanging fabric.",
+          "ja": "blinds は角度を調整できる羽根のあるブラインドで、curtain は吊るす布のカーテンです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bookshelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "closet",
+    "confusables": [
+      {
+        "term": "wardrobe",
+        "catalogId": "wardrobe",
+        "distinction": {
+          "zhHant": "closet 通常是建築內的收納空間；wardrobe 可指獨立的衣櫃，英式英文也常指衣櫃空間。",
+          "en": "A closet is usually a built-in storage space; a wardrobe can be a freestanding cabinet and can also mean a clothes-storage space in British English.",
+          "ja": "closet は通常、建物に備え付けの収納で、wardrobe は独立した衣装だんすを指し、英国英語では収納空間も指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clothes",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "I bought a clothes yesterday.",
+        "right": "I bought some clothes yesterday.",
+        "why": {
+          "zhHant": "clothes 是複數形式，不能直接接 a。",
+          "en": "Clothes is plural, so it cannot directly follow a.",
+          "ja": "clothes は複数形なので、直接 a を付けられません。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "clothes-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curtain",
+    "confusables": [
+      {
+        "term": "blinds",
+        "catalogId": "blinds",
+        "distinction": {
+          "zhHant": "blinds 是可調角度的百葉窗簾；curtain 是懸掛的布簾。",
+          "en": "Blinds have adjustable slats; a curtain is hanging fabric.",
+          "ja": "blinds は角度を調整できる羽根のあるブラインドで、curtain は吊るす布のカーテンです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "desk-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "door",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drawer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "robe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "quilt",
+    "confusables": [
+      {
+        "term": "blanket",
+        "catalogId": "blanket",
+        "distinction": {
+          "zhHant": "blanket 通常是一層保暖毯；quilt 是以縫線固定多層布料的被子。",
+          "en": "A blanket is usually a single warm covering; a quilt has layers of fabric stitched together.",
+          "ja": "blanket は通常一枚の毛布で、quilt は布を何層か重ねて縫い合わせた掛け物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "duvet-cover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eye-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fan",
+    "confusables": [
+      {
+        "term": "air circulator",
+        "catalogId": "air-circulator",
+        "distinction": {
+          "zhHant": "fan 通常直接對人送風；air circulator 主要讓室內空氣循環，兩者功能可能重疊。",
+          "en": "A fan commonly blows air toward people; an air circulator is mainly designed to move air around a room, though uses overlap.",
+          "ja": "fan は人に風を当てることが多く、air circulator は主に部屋の空気を循環させますが、用途は重なることもあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fitted-sheet",
+    "confusables": [
+      {
+        "term": "bed sheet",
+        "catalogId": "bed-sheet",
+        "distinction": {
+          "zhHant": "bed sheet 是床單的泛稱；fitted sheet 四角有鬆緊帶，用來包住床墊。",
+          "en": "Bed sheet is the general term; a fitted sheet has elastic corners that grip the mattress.",
+          "ja": "bed sheet はシーツ全般で、fitted sheet はゴム付きの角でマットレスを包みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "full-length-mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "futon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "在英語中 futon 也常指可折成沙發的床墊或沙發床，未必是日本傳統鋪在地上的布團。",
+      "en": "In English, futon can also mean a mattress that folds into a sofa bed, not necessarily traditional Japanese floor bedding.",
+      "ja": "英語の futon はソファベッドに変形するマットレスも指し、日本の床に敷く布団だけとは限りません。"
+    }
+  },
+  {
+    "wordId": "futon-clip",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hanger",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "headboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "heater",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-water-bottle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "humidifier",
+    "confusables": [
+      {
+        "term": "dehumidifier",
+        "catalogId": "dehumidifier",
+        "distinction": {
+          "zhHant": "humidifier 增加空氣濕度；dehumidifier 降低空氣濕度。",
+          "en": "A humidifier adds moisture to the air; a dehumidifier removes it.",
+          "ja": "humidifier は空気中の湿度を上げ、dehumidifier は湿度を下げます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mattress",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mattress-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nightstand",
+    "confusables": [
+      {
+        "term": "side table",
+        "catalogId": "side-table",
+        "distinction": {
+          "zhHant": "nightstand 是床邊小桌；side table 可以放在客廳等其他地方。",
+          "en": "A nightstand is a small table beside a bed; a side table can be placed elsewhere, such as by a sofa.",
+          "ja": "nightstand はベッド脇の小さなテーブルで、side table はソファの横などにも置きます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pajamas",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "My pajamas is on the bed.",
+        "right": "My pajamas are on the bed.",
+        "why": {
+          "zhHant": "pajamas 通常用複數形式，要搭配 are。",
+          "en": "Pajamas normally takes a plural verb: are.",
+          "ja": "pajamas は通常複数扱いなので、動詞は are を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "photo-frame",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pillow",
+    "confusables": [
+      {
+        "term": "cushion",
+        "catalogId": "cushion",
+        "distinction": {
+          "zhHant": "pillow 通常用來睡覺時墊頭；cushion 通常用在椅子或沙發上。",
+          "en": "A pillow usually supports your head in bed; a cushion is usually used on a chair or sofa.",
+          "ja": "pillow は通常寝るときに頭を支え、cushion は椅子やソファで使うことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pillowcase",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "storage-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vanity-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wardrobe",
+    "confusables": [
+      {
+        "term": "closet",
+        "catalogId": "closet",
+        "distinction": {
+          "zhHant": "closet 通常是建築內的收納空間；wardrobe 可指獨立的衣櫃，英式英文也常指衣櫃空間。",
+          "en": "A closet is usually a built-in storage space; a wardrobe can be a freestanding cabinet and can also mean a clothes-storage space in British English.",
+          "ja": "closet は通常、建物に備え付けの収納で、wardrobe は独立した衣装だんすを指し、英国英語では収納空間も指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "window",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "backpack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baseball-cap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beanie",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "belt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blouse",
+    "confusables": [
+      {
+        "term": "shirt",
+        "catalogId": "shirt",
+        "distinction": {
+          "zhHant": "shirt 是襯衫或上衣的廣泛說法；blouse 通常指較輕柔、偏女裝款式的上衣。",
+          "en": "Shirt is a broad term for a top; blouse usually refers to a lighter, often women’s style of top.",
+          "ja": "shirt は上着を広く指し、blouse は通常、軽い素材の女性向けの上着を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "boots",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "I bought a boots.",
+        "right": "I bought a pair of boots.",
+        "why": {
+          "zhHant": "boots 是複數形式；一雙靴子可說 a pair of boots。",
+          "en": "Boots is plural; use a pair of boots for two matching boots.",
+          "ja": "boots は複数形なので、一足なら a pair of boots と言えます。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "bow-tie",
+    "confusables": [
+      {
+        "term": "necktie",
+        "catalogId": "necktie",
+        "distinction": {
+          "zhHant": "bow tie 在領口打成蝴蝶形；necktie 是垂在胸前的長條領帶。",
+          "en": "A bow tie forms a bow at the collar; a necktie hangs down the front of the shirt.",
+          "ja": "bow tie は襟元で蝶形に結び、necktie は胸元に垂らす細長いネクタイです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cardigan",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clip-on-earrings",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coat",
+    "confusables": [
+      {
+        "term": "jacket",
+        "catalogId": "jacket",
+        "distinction": {
+          "zhHant": "jacket 通常較短，衣長多在腰部或臀部附近；coat 通常較長，作為外層保暖衣物。",
+          "en": "A jacket is usually shorter, around the waist or hips; a coat is usually longer outerwear.",
+          "ja": "jacket は通常腰や腰回りまでの短めの上着で、coat は通常それより長い外着です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "down-jacket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dress",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dress-shoes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flip-flops",
+    "confusables": [
+      {
+        "term": "sandals",
+        "catalogId": "sandals",
+        "distinction": {
+          "zhHant": "flip-flops 通常由一條穿過腳趾間的帶子固定；sandals 是更廣泛的露趾鞋類。",
+          "en": "Flip-flops usually have a strap between the toes; sandals is a broader term for open footwear.",
+          "ja": "flip-flops は通常足指の間に鼻緒があり、sandals はより広い意味の開放的な履物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "handbag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "high-heels",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hoodie",
+    "confusables": [
+      {
+        "term": "sweatshirt",
+        "catalogId": "sweatshirt",
+        "distinction": {
+          "zhHant": "hoodie 有連身帽；sweatshirt 不一定有帽子。",
+          "en": "A hoodie has an attached hood; a sweatshirt does not necessarily have one.",
+          "ja": "hoodie にはフードが付いていますが、sweatshirt にフードがあるとは限りません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "jacket",
+    "confusables": [
+      {
+        "term": "coat",
+        "catalogId": "coat",
+        "distinction": {
+          "zhHant": "jacket 通常較短，衣長多在腰部或臀部附近；coat 通常較長，作為外層保暖衣物。",
+          "en": "A jacket is usually shorter, around the waist or hips; a coat is usually longer outerwear.",
+          "ja": "jacket は通常腰や腰回りまでの短めの上着で、coat は通常それより長い外着です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "jeans",
+    "confusables": [
+      {
+        "term": "trousers",
+        "catalogId": "trousers",
+        "distinction": {
+          "zhHant": "jeans 特別指丹寧布長褲；trousers 泛指長褲，在英式英文尤其常見。",
+          "en": "Jeans are denim pants; trousers is a general word for long pants, especially in British English.",
+          "ja": "jeans はデニムのズボンで、trousers は長ズボンの一般的な語で、特に英国英語でよく使います。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "I bought a jeans yesterday.",
+        "right": "I bought a pair of jeans yesterday.",
+        "why": {
+          "zhHant": "jeans 是複數形式；要說一條牛仔褲可用 a pair of jeans。",
+          "en": "Jeans is plural; use a pair of jeans for one garment.",
+          "ja": "jeans は複数形で、一着なら a pair of jeans と言えます。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "kimono",
+    "confusables": [
+      {
+        "term": "yukata",
+        "catalogId": "yukata",
+        "distinction": {
+          "zhHant": "yukata 通常是較輕薄、較休閒的夏季和服；kimono 是範圍更廣的和服名稱，也可包括較正式的款式。",
+          "en": "A yukata is usually a lighter, more casual summer garment; kimono is broader and can include more formal styles.",
+          "ja": "yukata は通常薄手で夏向けのカジュアルな和装で、kimono はより広く、格式の高いものも含みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "leggings",
+    "confusables": [
+      {
+        "term": "tights",
+        "catalogId": "tights",
+        "distinction": {
+          "zhHant": "leggings 通常不包住腳；tights 通常連腳一起包住。",
+          "en": "Leggings usually leave the feet uncovered; tights usually cover the feet too.",
+          "ja": "leggings は通常足先を覆わず、tights は通常足先まで覆います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "loafers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "necklace",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "necktie",
+    "confusables": [
+      {
+        "term": "bow tie",
+        "catalogId": "bow-tie",
+        "distinction": {
+          "zhHant": "bow tie 在領口打成蝴蝶形；necktie 是垂在胸前的長條領帶。",
+          "en": "A bow tie forms a bow at the collar; a necktie hangs down the front of the shirt.",
+          "ja": "bow tie は襟元で蝶形に結び、necktie は胸元に垂らす細長いネクタイです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "polo-shirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "raincoat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sandals",
+    "confusables": [
+      {
+        "term": "flip-flops",
+        "catalogId": "flip-flops",
+        "distinction": {
+          "zhHant": "flip-flops 通常由一條穿過腳趾間的帶子固定；sandals 是更廣泛的露趾鞋類。",
+          "en": "Flip-flops usually have a strap between the toes; sandals is a broader term for open footwear.",
+          "ja": "flip-flops は通常足指の間に鼻緒があり、sandals はより広い意味の開放的な履物です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scarf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "school-uniform",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shirt",
+    "confusables": [
+      {
+        "term": "blouse",
+        "catalogId": "blouse",
+        "distinction": {
+          "zhHant": "shirt 是襯衫或上衣的廣泛說法；blouse 通常指較輕柔、偏女裝款式的上衣。",
+          "en": "Shirt is a broad term for a top; blouse usually refers to a lighter, often women’s style of top.",
+          "ja": "shirt は上着を広く指し、blouse は通常、軽い素材の女性向けの上着を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shorts",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "These shorts is too small.",
+        "right": "These shorts are too small.",
+        "why": {
+          "zhHant": "shorts 作為一件短褲時也用複數形式，要搭配 are。",
+          "en": "Shorts takes a plural verb even for one garment.",
+          "ja": "shorts は一着でも複数扱いなので、動詞は are です。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "skirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sneakers",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "sneakers 在美式英文常見；英式英文通常說 trainers。",
+      "en": "Sneakers is common in American English; British English usually uses trainers.",
+      "ja": "sneakers は米国英語で一般的で、英国英語では通常 trainers と言います。"
+    }
+  },
+  {
+    "wordId": "socks",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "I need a socks.",
+        "right": "I need a pair of socks.",
+        "why": {
+          "zhHant": "socks 是複數形式；一雙襪子可說 a pair of socks。",
+          "en": "Socks is plural; use a pair of socks for one matching pair.",
+          "ja": "socks は複数形なので、一足なら a pair of socks と言えます。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "suit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sunglasses",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "My sunglasses is broken.",
+        "right": "My sunglasses are broken.",
+        "why": {
+          "zhHant": "sunglasses 作為一副太陽眼鏡時通常搭配複數動詞。",
+          "en": "Sunglasses normally takes a plural verb when referring to a pair.",
+          "ja": "sunglasses は一つのサングラスでも通常複数扱いで、動詞は are です。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "sweater",
+    "confusables": [
+      {
+        "term": "sweatshirt",
+        "catalogId": "sweatshirt",
+        "distinction": {
+          "zhHant": "sweater 是針織上衣；sweatshirt 通常是較厚的棉質運動休閒上衣。",
+          "en": "A sweater is knitted; a sweatshirt is usually a heavier cotton casual top.",
+          "ja": "sweater は編み物の上着で、sweatshirt は通常厚手の綿のカジュアルな上着です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sweatshirt",
+    "confusables": [
+      {
+        "term": "sweater",
+        "catalogId": "sweater",
+        "distinction": {
+          "zhHant": "sweater 是針織上衣；sweatshirt 通常是較厚的棉質運動休閒上衣。",
+          "en": "A sweater is knitted; a sweatshirt is usually a heavier cotton casual top.",
+          "ja": "sweater は編み物の上着で、sweatshirt は通常厚手の綿のカジュアルな上着です。"
+        }
+      },
+      {
+        "term": "hoodie",
+        "catalogId": "hoodie",
+        "distinction": {
+          "zhHant": "hoodie 有連身帽；sweatshirt 不一定有帽子。",
+          "en": "A hoodie has an attached hood; a sweatshirt does not necessarily have one.",
+          "ja": "hoodie にはフードが付いていますが、sweatshirt にフードがあるとは限りません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "swimsuit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "t-shirt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tank-top",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tights",
+    "confusables": [
+      {
+        "term": "leggings",
+        "catalogId": "leggings",
+        "distinction": {
+          "zhHant": "leggings 通常不包住腳；tights 通常連腳一起包住。",
+          "en": "Leggings usually leave the feet uncovered; tights usually cover the feet too.",
+          "ja": "leggings は通常足先を覆わず、tights は通常足先まで覆います。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "This tights is too small.",
+        "right": "These tights are too small.",
+        "why": {
+          "zhHant": "tights 通常用複數形式，要搭配 these 和 are。",
+          "en": "Tights is normally plural, so use these and are.",
+          "ja": "tights は通常複数扱いなので、these と are を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "tote-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trousers",
+    "confusables": [
+      {
+        "term": "jeans",
+        "catalogId": "jeans",
+        "distinction": {
+          "zhHant": "jeans 特別指丹寧布長褲；trousers 泛指長褲，在英式英文尤其常見。",
+          "en": "Jeans are denim pants; trousers is a general word for long pants, especially in British English.",
+          "ja": "jeans はデニムのズボンで、trousers は長ズボンの一般的な語で、特に英国英語でよく使います。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "These trousers is new.",
+        "right": "These trousers are new.",
+        "why": {
+          "zhHant": "trousers 在這裡是複數形式，要搭配 are。",
+          "en": "Trousers takes a plural verb here: are, not is.",
+          "ja": "trousers はここでは複数扱いなので、動詞は is ではなく are です。"
+        }
+      }
+    ],
+    "usage": {
+      "zhHant": "trousers 在英式英文是一般的「長褲」；美式英文通常說 pants，而英式 pants 也可能指內褲。",
+      "en": "Trousers is the usual British word for long pants; Americans usually say pants, which can mean underwear in British English.",
+      "ja": "trousers は英国英語で長ズボンを指し、米国英語では通常 pants と言います。ただし英国英語の pants は下着を指すこともあります。"
+    }
+  },
+  {
+    "wordId": "turtleneck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "underwear",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vest",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "vest 在美式英文通常指西裝背心；在英式英文也常指內衣背心。",
+      "en": "Vest usually means a waistcoat in American English; in British English it often means an undershirt.",
+      "ja": "vest は米国英語では通常スーツ用のベストで、英国英語では下着の肌着を指すこともよくあります。"
+    }
+  },
+  {
+    "wordId": "wristwatch",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yukata",
+    "confusables": [
+      {
+        "term": "kimono",
+        "catalogId": "kimono",
+        "distinction": {
+          "zhHant": "yukata 通常是較輕薄、較休閒的夏季和服；kimono 是範圍更廣的和服名稱，也可包括較正式的款式。",
+          "en": "A yukata is usually a lighter, more casual summer garment; kimono is broader and can include more formal styles.",
+          "ja": "yukata は通常薄手で夏向けのカジュアルな和装で、kimono はより広く、格式の高いものも含みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bento-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beverage-warmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cash-register",
+    "confusables": [
+      {
+        "term": "checkout counter",
+        "catalogId": "checkout-counter",
+        "distinction": {
+          "zhHant": "cash register 是計算並記錄交易的機器；checkout counter 是顧客結帳的櫃台區域。",
+          "en": "A cash register is the machine that records transactions; a checkout counter is the place where customers pay.",
+          "ja": "cash register は会計を記録する機械で、checkout counter は客が支払いをするカウンターです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chilled-food-case",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-cup-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-atm",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-coffee-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-sign",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cup-noodle-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "disposable-chopsticks-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drink-refrigerator",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eat-in-area",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-food-display-case",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-water-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ice-cream-freezer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ice-cup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "magazine-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "microwave-station",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "multifunction-copier",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "multimedia-kiosk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "newspaper-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oden-warmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parcel-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "payment-slip",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plastic-cutlery-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "prepaid-card-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-ball-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sandwich-shelf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sorting-bin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "steamed-bun-warmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tobacco-display",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "umbrella-stand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wet-towel-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "adhesive-bandage",
+    "confusables": [
+      {
+        "term": "gauze pad",
+        "catalogId": "gauze-pad",
+        "distinction": {
+          "zhHant": "adhesive bandage 自帶黏貼部分，可直接貼住小傷口；gauze pad 是吸收或覆蓋傷口的紗布片，通常需另行固定。",
+          "en": "An adhesive bandage sticks over a small wound by itself; a gauze pad usually needs separate fastening.",
+          "ja": "adhesive bandage は粘着部分があり小さな傷にそのまま貼れますが、gauze pad は通常別に固定する必要があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "allergy-medicine",
+    "confusables": [
+      {
+        "term": "cold medicine",
+        "catalogId": "cold-medicine",
+        "distinction": {
+          "zhHant": "allergy medicine 用於過敏症狀；cold medicine 用於感冒症狀，兩者成分可能部分重疊但用途不同。",
+          "en": "Allergy medicine treats allergy symptoms; cold medicine treats cold symptoms, though some ingredients may overlap.",
+          "ja": "allergy medicine はアレルギー症状に、cold medicine は風邪の症状に使い、成分が一部重なることもあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "body-scrub",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cold-medicine",
+    "confusables": [
+      {
+        "term": "allergy medicine",
+        "catalogId": "allergy-medicine",
+        "distinction": {
+          "zhHant": "allergy medicine 用於過敏症狀；cold medicine 用於感冒症狀，兩者成分可能部分重疊但用途不同。",
+          "en": "Allergy medicine treats allergy symptoms; cold medicine treats cold symptoms, though some ingredients may overlap.",
+          "ja": "allergy medicine はアレルギー症状に、cold medicine は風邪の症状に使い、成分が一部重なることもあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "compact-mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "concealer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "contact-lens-solution",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cooling-gel-sheet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cough-drops",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "drugstore",
+    "confusables": [
+      {
+        "term": "pharmacy",
+        "catalogId": "pharmacy",
+        "distinction": {
+          "zhHant": "pharmacy 重點是配藥與藥師服務；drugstore 尤其在美式英文中常指也賣日用品的藥妝店。",
+          "en": "A pharmacy emphasizes dispensing medicines; a drugstore, especially in American English, often sells other everyday goods too.",
+          "ja": "pharmacy は調剤や薬剤師のサービスが中心で、drugstore は特に米国英語で日用品も売る店を指すことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eye-drops",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyebrow-pencil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyelash-curler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyeliner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eyeshadow",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "face-powder",
+    "confusables": [
+      {
+        "term": "foundation",
+        "catalogId": "foundation-makeup",
+        "distinction": {
+          "zhHant": "foundation 用來均勻膚色，可為液體或粉狀；face powder 通常用來定妝或減少油光。",
+          "en": "Foundation evens skin tone and can be liquid or powder; face powder is usually used to set makeup or reduce shine.",
+          "ja": "foundation は肌色を整えるもので液体や粉があり、face powder は通常メイクを固定したりテカリを抑えたりします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-mist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-serum",
+    "confusables": [
+      {
+        "term": "facial toner",
+        "catalogId": "facial-toner",
+        "distinction": {
+          "zhHant": "facial toner 通常是質地較薄的化妝水；facial serum 通常含較集中、針對特定需求的成分。",
+          "en": "Facial toner is usually a lighter liquid; facial serum usually contains more concentrated ingredients for a specific concern.",
+          "ja": "facial toner は通常さらっとした化粧水で、facial serum は特定の悩みに向けた成分をより高濃度で含むことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "facial-toner",
+    "confusables": [
+      {
+        "term": "facial serum",
+        "catalogId": "facial-serum",
+        "distinction": {
+          "zhHant": "facial toner 通常是質地較薄的化妝水；facial serum 通常含較集中、針對特定需求的成分。",
+          "en": "Facial toner is usually a lighter liquid; facial serum usually contains more concentrated ingredients for a specific concern.",
+          "ja": "facial toner は通常さらっとした化粧水で、facial serum は特定の悩みに向けた成分をより高濃度で含むことが多いです。"
+        }
+      },
+      {
+        "term": "facial cleanser",
+        "catalogId": "facial-cleanser",
+        "distinction": {
+          "zhHant": "facial cleanser 用來洗掉臉上的髒污；facial toner 通常在清潔後塗抹，不是主要的洗臉產品。",
+          "en": "Facial cleanser washes dirt off the face; facial toner is usually applied after cleansing and is not the main washing product.",
+          "ja": "facial cleanser は顔の汚れを洗い落とし、facial toner は通常洗顔後に使い、主な洗浄剤ではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "false-eyelashes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "foundation-makeup",
+    "confusables": [
+      {
+        "term": "makeup primer",
+        "catalogId": "makeup-primer",
+        "distinction": {
+          "zhHant": "makeup primer 通常先上，用來讓底妝更服貼；foundation 是均勻膚色的底妝。",
+          "en": "Makeup primer usually goes on first to prepare the skin; foundation evens out skin tone.",
+          "ja": "makeup primer は通常先に塗って下地を整え、foundation は肌色を均一に見せるベースメイクです。"
+        }
+      },
+      {
+        "term": "face powder",
+        "catalogId": "face-powder",
+        "distinction": {
+          "zhHant": "foundation 用來均勻膚色，可為液體或粉狀；face powder 通常用來定妝或減少油光。",
+          "en": "Foundation evens skin tone and can be liquid or powder; face powder is usually used to set makeup or reduce shine.",
+          "ja": "foundation は肌色を整えるもので液体や粉があり、face powder は通常メイクを固定したりテカリを抑えたりします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gauze-pad",
+    "confusables": [
+      {
+        "term": "adhesive bandage",
+        "catalogId": "adhesive-bandage",
+        "distinction": {
+          "zhHant": "adhesive bandage 自帶黏貼部分，可直接貼住小傷口；gauze pad 是吸收或覆蓋傷口的紗布片，通常需另行固定。",
+          "en": "An adhesive bandage sticks over a small wound by itself; a gauze pad usually needs separate fastening.",
+          "ja": "adhesive bandage は粘着部分があり小さな傷にそのまま貼れますが、gauze pad は通常別に固定する必要があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-dye",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hair-spray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hand-cream",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "insect-repellent",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lip-balm",
+    "confusables": [
+      {
+        "term": "lip gloss",
+        "catalogId": "lip-gloss",
+        "distinction": {
+          "zhHant": "lip balm 主要用來滋潤與保護嘴唇；lip gloss 主要用來增加光澤。",
+          "en": "Lip balm mainly moisturizes and protects lips; lip gloss mainly adds shine.",
+          "ja": "lip balm は主に唇の保湿・保護に、lip gloss は主にツヤを出すために使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lip-gloss",
+    "confusables": [
+      {
+        "term": "lip balm",
+        "catalogId": "lip-balm",
+        "distinction": {
+          "zhHant": "lip balm 主要用來滋潤與保護嘴唇；lip gloss 主要用來增加光澤。",
+          "en": "Lip balm mainly moisturizes and protects lips; lip gloss mainly adds shine.",
+          "ja": "lip balm は主に唇の保湿・保護に、lip gloss は主にツヤを出すために使います。"
+        }
+      },
+      {
+        "term": "lipstick",
+        "catalogId": "lipstick",
+        "distinction": {
+          "zhHant": "lipstick 通常提供較明顯的唇色；lip gloss 主要增加光澤，可能只有少量顏色。",
+          "en": "Lipstick usually gives more visible color; lip gloss mainly adds shine and may add only a little color.",
+          "ja": "lipstick は通常はっきりした色を付け、lip gloss は主にツヤを出し、色は薄いこともあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lipstick",
+    "confusables": [
+      {
+        "term": "lip gloss",
+        "catalogId": "lip-gloss",
+        "distinction": {
+          "zhHant": "lipstick 通常提供較明顯的唇色；lip gloss 主要增加光澤，可能只有少量顏色。",
+          "en": "Lipstick usually gives more visible color; lip gloss mainly adds shine and may add only a little color.",
+          "ja": "lipstick は通常はっきりした色を付け、lip gloss は主にツヤを出し、色は薄いこともあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-brush",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-primer",
+    "confusables": [
+      {
+        "term": "foundation",
+        "catalogId": "foundation-makeup",
+        "distinction": {
+          "zhHant": "makeup primer 通常先上，用來讓底妝更服貼；foundation 是均勻膚色的底妝。",
+          "en": "Makeup primer usually goes on first to prepare the skin; foundation evens out skin tone.",
+          "ja": "makeup primer は通常先に塗って下地を整え、foundation は肌色を均一に見せるベースメイクです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-remover-wipes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-sponge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mascara",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-file",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-polish",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-polish-remover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "over-the-counter-medicine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pain-reliever",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "prescription-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "setting-spray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sheet-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stomach-medicine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sunscreen",
+    "confusables": [
+      {
+        "term": "moisturizer",
+        "catalogId": "moisturizer",
+        "distinction": {
+          "zhHant": "sunscreen 用於防護紫外線；moisturizer 用於皮膚保濕，除非標有防曬係數，不能當成防曬品。",
+          "en": "Sunscreen protects against UV rays; moisturizer hydrates skin and is not a sunscreen unless it has stated sun protection.",
+          "ja": "sunscreen は紫外線を防ぎ、moisturizer は保湿をします。日焼け止め効果が明記されていなければ代用できません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "surgical-mask",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "thermometer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vitamin-supplement",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "apple",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "apricot",
+    "confusables": [
+      {
+        "term": "peach",
+        "catalogId": "peach",
+        "distinction": {
+          "zhHant": "peach 通常較大、多汁且有明顯絨毛；apricot 通常較小，果肉較結實。",
+          "en": "A peach is usually larger, juicier, and fuzzy; an apricot is usually smaller and firmer.",
+          "ja": "peach は通常大きく果汁が多く表面に産毛があり、apricot は通常小さく果肉がしっかりしています。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "avocado",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "banana",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blueberry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cherry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coconut",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dragon-fruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fig",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "grape",
+    "confusables": [
+      {
+        "term": "grapefruit",
+        "catalogId": "grapefruit",
+        "distinction": {
+          "zhHant": "grape 是小顆、成串的葡萄；grapefruit 是大型柑橘類的葡萄柚。",
+          "en": "A grape is a small fruit that grows in bunches; a grapefruit is a large citrus fruit.",
+          "ja": "grape は房になる小さなブドウで、grapefruit は大きな柑橘類のグレープフルーツです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "grapefruit",
+    "confusables": [
+      {
+        "term": "grape",
+        "catalogId": "grape",
+        "distinction": {
+          "zhHant": "grape 是小顆、成串的葡萄；grapefruit 是大型柑橘類的葡萄柚。",
+          "en": "A grape is a small fruit that grows in bunches; a grapefruit is a large citrus fruit.",
+          "ja": "grape は房になる小さなブドウで、grapefruit は大きな柑橘類のグレープフルーツです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "japanese-pear",
+    "confusables": [
+      {
+        "term": "pear",
+        "catalogId": "pear",
+        "distinction": {
+          "zhHant": "pear 常指西洋梨，通常為上窄下寬；Japanese pear 通常較圓、口感較脆。",
+          "en": "Pear often refers to the European pear, usually narrow at the top; a Japanese pear is usually rounder and crisper.",
+          "ja": "pear は通常、上が細い西洋ナシを指し、Japanese pear は通常丸くて歯応えがあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "japanese-plum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kiwi-fruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kumquat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lemon",
+    "confusables": [
+      {
+        "term": "yuzu",
+        "catalogId": "yuzu",
+        "distinction": {
+          "zhHant": "yuzu 是香氣濃的東亞柑橘；lemon 是常見的黃色酸柑橘，兩者香味不相同。",
+          "en": "Yuzu is an aromatic East Asian citrus fruit; lemon is a common yellow sour citrus fruit with a different aroma.",
+          "ja": "yuzu は香りの強い東アジアの柑橘で、lemon は一般的な黄色い酸味のある柑橘で、香りが異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "loquat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lychee",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mandarin-orange",
+    "confusables": [
+      {
+        "term": "orange",
+        "catalogId": "orange",
+        "distinction": {
+          "zhHant": "mandarin orange 通常較小、較易剝皮；orange 是較廣泛的名稱，也常指一般甜橙。",
+          "en": "A mandarin orange is generally smaller and easier to peel; orange is broader and often means a sweet orange.",
+          "ja": "mandarin orange は一般に小さく皮をむきやすく、orange はより広い語で、一般的なスイートオレンジも指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mango",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "melon",
+    "confusables": [
+      {
+        "term": "watermelon",
+        "catalogId": "watermelon",
+        "distinction": {
+          "zhHant": "watermelon 有較厚的綠色外皮與多汁的紅色或黃色果肉；melon 在日常英文中通常指其他種類的甜瓜。",
+          "en": "A watermelon has a thick green rind and juicy red or yellow flesh; melon in everyday English usually means other kinds of melon.",
+          "ja": "watermelon は厚い緑の皮と赤または黄色の水分の多い果肉があり、日常英語の melon は通常それ以外のメロン類を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "orange",
+    "confusables": [
+      {
+        "term": "mandarin orange",
+        "catalogId": "mandarin-orange",
+        "distinction": {
+          "zhHant": "mandarin orange 通常較小、較易剝皮；orange 是較廣泛的名稱，也常指一般甜橙。",
+          "en": "A mandarin orange is generally smaller and easier to peel; orange is broader and often means a sweet orange.",
+          "ja": "mandarin orange は一般に小さく皮をむきやすく、orange はより広い語で、一般的なスイートオレンジも指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "papaya",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "passion-fruit",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "peach",
+    "confusables": [
+      {
+        "term": "apricot",
+        "catalogId": "apricot",
+        "distinction": {
+          "zhHant": "peach 通常較大、多汁且有明顯絨毛；apricot 通常較小，果肉較結實。",
+          "en": "A peach is usually larger, juicier, and fuzzy; an apricot is usually smaller and firmer.",
+          "ja": "peach は通常大きく果汁が多く表面に産毛があり、apricot は通常小さく果肉がしっかりしています。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pear",
+    "confusables": [
+      {
+        "term": "Japanese pear",
+        "catalogId": "japanese-pear",
+        "distinction": {
+          "zhHant": "pear 常指西洋梨，通常為上窄下寬；Japanese pear 通常較圓、口感較脆。",
+          "en": "Pear often refers to the European pear, usually narrow at the top; a Japanese pear is usually rounder and crisper.",
+          "ja": "pear は通常、上が細い西洋ナシを指し、Japanese pear は通常丸くて歯応えがあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "persimmon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pineapple",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pomegranate",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "raspberry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "strawberry",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "watermelon",
+    "confusables": [
+      {
+        "term": "melon",
+        "catalogId": "melon",
+        "distinction": {
+          "zhHant": "watermelon 有較厚的綠色外皮與多汁的紅色或黃色果肉；melon 在日常英文中通常指其他種類的甜瓜。",
+          "en": "A watermelon has a thick green rind and juicy red or yellow flesh; melon in everyday English usually means other kinds of melon.",
+          "ja": "watermelon は厚い緑の皮と赤または黄色の水分の多い果肉があり、日常英語の melon は通常それ以外のメロン類を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yuzu",
+    "confusables": [
+      {
+        "term": "lemon",
+        "catalogId": "lemon",
+        "distinction": {
+          "zhHant": "yuzu 是香氣濃的東亞柑橘；lemon 是常見的黃色酸柑橘，兩者香味不相同。",
+          "en": "Yuzu is an aromatic East Asian citrus fruit; lemon is a common yellow sour citrus fruit with a different aroma.",
+          "ja": "yuzu は香りの強い東アジアの柑橘で、lemon は一般的な黄色い酸味のある柑橘で、香りが異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-fryer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aluminum-foil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "blender",
+    "confusables": [
+      {
+        "term": "food processor",
+        "catalogId": "food-processor",
+        "distinction": {
+          "zhHant": "blender 通常用於攪打液體或做果昔；food processor 通常用於切碎、混合較稠的食材。",
+          "en": "A blender is usually for liquids and smoothies; a food processor is usually for chopping or mixing thicker foods.",
+          "ja": "blender は通常液体やスムージーに、food processor は刻んだり、より固い材料を混ぜたりするのに使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bowl",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "can-opener",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chopsticks",
+    "confusables": [
+      {
+        "term": "fork",
+        "catalogId": "fork",
+        "distinction": {
+          "zhHant": "chopsticks 是一雙夾取食物的筷子；fork 是有叉齒的單件餐具。",
+          "en": "Chopsticks are a pair of sticks used to pick up food; a fork is one utensil with prongs.",
+          "ja": "chopsticks は二本一組で食べ物をつまみ、fork は先に歯のある一本の食器です。"
+        }
+      }
+    ],
+    "mistakes": [
+      {
+        "wrong": "This chopsticks is clean.",
+        "right": "These chopsticks are clean.",
+        "why": {
+          "zhHant": "chopsticks 是複數形式；要搭配 these 和 are。",
+          "en": "Chopsticks is plural, so use these and are.",
+          "ja": "chopsticks は複数形なので、these と are を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "cloth",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-maker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "colander",
+    "confusables": [
+      {
+        "term": "strainer",
+        "catalogId": "strainer",
+        "distinction": {
+          "zhHant": "colander 通常是有孔的碗狀容器，用來瀝乾麵或蔬菜；strainer 泛指過濾用的網或器具。",
+          "en": "A colander is usually a perforated bowl for draining food; a strainer is a broader term for a filtering tool.",
+          "ja": "colander は通常、麺や野菜の水を切る穴あきの鉢で、strainer はこす道具全般を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cutting-board",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dish-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dish-soap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dishwasher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "faucet",
+    "confusables": [
+      {
+        "term": "tap",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "美式英文常說 faucet；英式英文常說 tap。",
+          "en": "American English usually says faucet; British English usually says tap.",
+          "ja": "アメリカ英語では faucet、イギリス英語では tap がよく使われます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-container",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-processor",
+    "confusables": [
+      {
+        "term": "blender",
+        "catalogId": "blender",
+        "distinction": {
+          "zhHant": "blender 通常用於攪打液體或做果昔；food processor 通常用於切碎、混合較稠的食材。",
+          "en": "A blender is usually for liquids and smoothies; a food processor is usually for chopping or mixing thicker foods.",
+          "ja": "blender は通常液体やスムージーに、food processor は刻んだり、より固い材料を混ぜたりするのに使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fork",
+    "confusables": [
+      {
+        "term": "chopsticks",
+        "catalogId": "chopsticks",
+        "distinction": {
+          "zhHant": "chopsticks 是一雙夾取食物的筷子；fork 是有叉齒的單件餐具。",
+          "en": "Chopsticks are a pair of sticks used to pick up food; a fork is one utensil with prongs.",
+          "ja": "chopsticks は二本一組で食べ物をつまみ、fork は先に歯のある一本の食器です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "freezer",
+    "confusables": [
+      {
+        "term": "fridge",
+        "catalogId": "fridge",
+        "distinction": {
+          "zhHant": "freezer 把食物冷凍；fridge 把食物冷藏但通常不使其結凍。",
+          "en": "A freezer keeps food frozen; a fridge keeps it cold but normally not frozen.",
+          "ja": "freezer は食品を凍らせ、fridge は通常凍らせずに冷やします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fridge",
+    "confusables": [
+      {
+        "term": "freezer",
+        "catalogId": "freezer",
+        "distinction": {
+          "zhHant": "freezer 把食物冷凍；fridge 把食物冷藏但通常不使其結凍。",
+          "en": "A freezer keeps food frozen; a fridge keeps it cold but normally not frozen.",
+          "ja": "freezer は食品を凍らせ、fridge は通常凍らせずに冷やします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "fridge 是 refrigerator 的日常口語縮寫；正式說明文字較常用 refrigerator。",
+      "en": "Fridge is the everyday short form of refrigerator; formal descriptions more often use refrigerator.",
+      "ja": "fridge は refrigerator の日常的な略語で、正式な説明では refrigerator がよく使われます。"
+    }
+  },
+  {
+    "wordId": "glass",
+    "confusables": [
+      {
+        "term": "mug",
+        "catalogId": "mug",
+        "distinction": {
+          "zhHant": "mug 通常是有把手的杯子，多用於熱飲；glass 是玻璃杯，通常沒有把手。",
+          "en": "A mug is usually a handled cup often used for hot drinks; a glass is a drinking vessel made of glass, usually without a handle.",
+          "ja": "mug は通常取っ手付きで温かい飲み物によく使い、glass は通常取っ手のないガラス製のコップです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "grater",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kettle",
+    "confusables": [
+      {
+        "term": "teapot",
+        "catalogId": "teapot",
+        "distinction": {
+          "zhHant": "kettle 用來把水煮沸；teapot 用來泡茶與倒茶，通常不是拿來直接煮水。",
+          "en": "A kettle boils water; a teapot brews and pours tea and is not usually used to boil water.",
+          "ja": "kettle は湯を沸かし、teapot はお茶をいれて注ぐもので、通常は直接湯を沸かしません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kitchen-knife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kitchen-scale",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kitchen-timer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "knife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ladle",
+    "confusables": [
+      {
+        "term": "slotted spoon",
+        "catalogId": "slotted-spoon",
+        "distinction": {
+          "zhHant": "ladle 是深匙，適合舀湯；slotted spoon 有孔，適合撈起食物並瀝掉液體。",
+          "en": "A ladle has a deep bowl for serving liquid; a slotted spoon has holes for lifting food while draining liquid.",
+          "ja": "ladle は汁物をすくう深いおたまで、slotted spoon は穴があり、液体を切りながら具材を取り出します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lid",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "measuring-cup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "measuring-spoon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "microwave",
+    "confusables": [
+      {
+        "term": "oven",
+        "catalogId": "oven",
+        "distinction": {
+          "zhHant": "microwave 用微波快速加熱食物；oven 以熱空氣烘烤，能讓食物表面上色。",
+          "en": "A microwave heats food quickly with microwaves; an oven bakes with hot air and can brown the surface.",
+          "ja": "microwave はマイクロ波で素早く加熱し、oven は熱風で焼き、表面に焼き色を付けられます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mug",
+    "confusables": [
+      {
+        "term": "glass",
+        "catalogId": "glass",
+        "distinction": {
+          "zhHant": "mug 通常是有把手的杯子，多用於熱飲；glass 是玻璃杯，通常沒有把手。",
+          "en": "A mug is usually a handled cup often used for hot drinks; a glass is a drinking vessel made of glass, usually without a handle.",
+          "ja": "mug は通常取っ手付きで温かい飲み物によく使い、glass は通常取っ手のないガラス製のコップです。"
+        }
+      },
+      {
+        "term": "cup",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "mug 是有把手的厚杯，多用來裝熱飲；cup 的範圍更廣，也常指配碟子的杯子。",
+          "en": "A mug is a thick cup with a handle, usually for hot drinks; cup is broader and often means one used with a saucer.",
+          "ja": "mug は取っ手のある厚手のカップで主に温かい飲み物用、cup はより広く、ソーサー付きのカップもよく指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oven",
+    "confusables": [
+      {
+        "term": "microwave",
+        "catalogId": "microwave",
+        "distinction": {
+          "zhHant": "microwave 用微波快速加熱食物；oven 以熱空氣烘烤，能讓食物表面上色。",
+          "en": "A microwave heats food quickly with microwaves; an oven bakes with hot air and can brown the surface.",
+          "ja": "microwave はマイクロ波で素早く加熱し、oven は熱風で焼き、表面に焼き色を付けられます。"
+        }
+      },
+      {
+        "term": "stove",
+        "catalogId": "stove",
+        "distinction": {
+          "zhHant": "stove 通常指爐台，用鍋具在上方加熱；oven 是把食物放在內部烘烤的箱體。",
+          "en": "A stove usually heats cookware on top; an oven encloses food for baking or roasting.",
+          "ja": "stove は通常上に鍋を置いて加熱するコンロで、oven は食品を中に入れて焼く装置です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oven-mitt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pan",
+    "confusables": [
+      {
+        "term": "pot",
+        "catalogId": "pot",
+        "distinction": {
+          "zhHant": "pot 通常較深，適合煮湯或燉煮；pan 通常較淺，適合煎炒。",
+          "en": "A pot is usually deeper for boiling or simmering; a pan is usually shallower for frying.",
+          "ja": "pot は通常深く煮物やスープに向き、pan は通常浅く炒め物に向きます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper-towel",
+    "confusables": [
+      {
+        "term": "towel",
+        "catalogId": "towel",
+        "distinction": {
+          "zhHant": "paper towel 是用後即丟的紙巾；towel 通常是可清洗再用的布巾。",
+          "en": "A paper towel is disposable paper; a towel is usually washable fabric.",
+          "ja": "paper towel は使い捨ての紙で、towel は通常洗って繰り返し使う布です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "peeler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plastic-wrap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plate",
+    "confusables": [
+      {
+        "term": "dish",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "plate 是個人用的平盤；dish 可指盛菜的盤子，也可指一道菜。",
+          "en": "A plate is the flat one you eat from; dish can mean a serving dish or a course of food.",
+          "ja": "plate は各自が食べる平皿、dish は料理を盛る皿のほか一品の料理も指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pot",
+    "confusables": [
+      {
+        "term": "pan",
+        "catalogId": "pan",
+        "distinction": {
+          "zhHant": "pot 通常較深，適合煮湯或燉煮；pan 通常較淺，適合煎炒。",
+          "en": "A pot is usually deeper for boiling or simmering; a pan is usually shallower for frying.",
+          "ja": "pot は通常深く煮物やスープに向き、pan は通常浅く炒め物に向きます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "range-hood",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-cooker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-paddle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scissors",
+    "confusables": [],
+    "mistakes": [
+      {
+        "wrong": "This scissors is sharp.",
+        "right": "These scissors are sharp.",
+        "why": {
+          "zhHant": "scissors 作為一把剪刀時也用複數形式；搭配 these 和 are。",
+          "en": "Scissors is plural even for one tool, so use these and are.",
+          "ja": "scissors は一本のはさみでも複数形なので、these と are を使います。"
+        }
+      }
+    ],
+    "usage": null
+  },
+  {
+    "wordId": "seasoning-jar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sink",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sink-strainer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "slotted-spoon",
+    "confusables": [
+      {
+        "term": "ladle",
+        "catalogId": "ladle",
+        "distinction": {
+          "zhHant": "ladle 是深匙，適合舀湯；slotted spoon 有孔，適合撈起食物並瀝掉液體。",
+          "en": "A ladle has a deep bowl for serving liquid; a slotted spoon has holes for lifting food while draining liquid.",
+          "ja": "ladle は汁物をすくう深いおたまで、slotted spoon は穴があり、液体を切りながら具材を取り出します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electric-cooker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "spatula",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "splatter-screen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sponge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "spoon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "steamer-basket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stove",
+    "confusables": [
+      {
+        "term": "oven",
+        "catalogId": "oven",
+        "distinction": {
+          "zhHant": "stove 通常指爐台，用鍋具在上方加熱；oven 是把食物放在內部烘烤的箱體。",
+          "en": "A stove usually heats cookware on top; an oven encloses food for baking or roasting.",
+          "ja": "stove は通常上に鍋を置いて加熱するコンロで、oven は食品を中に入れて焼く装置です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "strainer",
+    "confusables": [
+      {
+        "term": "colander",
+        "catalogId": "colander",
+        "distinction": {
+          "zhHant": "colander 通常是有孔的碗狀容器，用來瀝乾麵或蔬菜；strainer 泛指過濾用的網或器具。",
+          "en": "A colander is usually a perforated bowl for draining food; a strainer is a broader term for a filtering tool.",
+          "ja": "colander は通常、麺や野菜の水を切る穴あきの鉢で、strainer はこす道具全般を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "table-knife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "teapot",
+    "confusables": [
+      {
+        "term": "kettle",
+        "catalogId": "kettle",
+        "distinction": {
+          "zhHant": "kettle 用來把水煮沸；teapot 用來泡茶與倒茶，通常不是拿來直接煮水。",
+          "en": "A kettle boils water; a teapot brews and pours tea and is not usually used to boil water.",
+          "ja": "kettle は湯を沸かし、teapot はお茶をいれて注ぐもので、通常は直接湯を沸かしません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "toaster",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tongs",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trash-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trivet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whisk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wok",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "air-circulator",
+    "confusables": [
+      {
+        "term": "fan",
+        "catalogId": "fan",
+        "distinction": {
+          "zhHant": "fan 通常直接對人送風；air circulator 主要讓室內空氣循環，兩者功能可能重疊。",
+          "en": "A fan commonly blows air toward people; an air circulator is mainly designed to move air around a room, though uses overlap.",
+          "ja": "fan は人に風を当てることが多く、air circulator は主に部屋の空気を循環させますが、用途は重なることもあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "armchair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "back-cushion",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cable-management-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "candle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ceiling-light",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "charger",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clock",
+    "confusables": [
+      {
+        "term": "watch",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "clock 放在牆上或桌上；watch 是戴在手腕上的錶。",
+          "en": "A clock sits on a wall or desk; a watch is worn on the wrist.",
+          "ja": "clock は壁や机に置く時計、watch は手首につける時計です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coaster",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curtain-tieback",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cushion",
+    "confusables": [
+      {
+        "term": "pillow",
+        "catalogId": "pillow",
+        "distinction": {
+          "zhHant": "pillow 通常用來睡覺時墊頭；cushion 通常用在椅子或沙發上。",
+          "en": "A pillow usually supports your head in bed; a cushion is usually used on a chair or sofa.",
+          "ja": "pillow は通常寝るときに頭を支え、cushion は椅子やソファで使うことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dehumidifier",
+    "confusables": [
+      {
+        "term": "humidifier",
+        "catalogId": "humidifier",
+        "distinction": {
+          "zhHant": "humidifier 增加空氣濕度；dehumidifier 降低空氣濕度。",
+          "en": "A humidifier adds moisture to the air; a dehumidifier removes it.",
+          "ja": "humidifier は空気中の湿度を上げ、dehumidifier は湿度を下げます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "display-cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "doormat",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "extension-cord",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "floor-chair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "floor-cushion",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "floor-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "footstool",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "game-console",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kotatsu",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lint-roller",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "magazine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "newspaper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "picture-frame",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "potted-plant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "power-outlet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "projector",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "projector-screen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "recliner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "diffuser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "remote",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "remote-control-holder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "robot-vacuum",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "router",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rug",
+    "confusables": [
+      {
+        "term": "carpet",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "rug 較小、可以移動；carpet 通常鋪滿整個地板。",
+          "en": "A rug is smaller and can be moved; a carpet usually covers the whole floor.",
+          "ja": "rug は小さめで動かせる敷物、carpet は通常床全体に敷きます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "set-top-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "side-table",
+    "confusables": [
+      {
+        "term": "nightstand",
+        "catalogId": "nightstand",
+        "distinction": {
+          "zhHant": "nightstand 是床邊小桌；side table 可以放在客廳等其他地方。",
+          "en": "A nightstand is a small table beside a bed; a side table can be placed elsewhere, such as by a sofa.",
+          "ja": "nightstand はベッド脇の小さなテーブルで、side table はソファの横などにも置きます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "smoke-detector",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sofa",
+    "confusables": [
+      {
+        "term": "couch",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "sofa 和 couch 幾乎同義；couch 比較口語，美式英文較常用。",
+          "en": "Sofa and couch mean almost the same; couch is more casual and more common in American English.",
+          "ja": "sofa と couch はほぼ同じ意味で、couch はより口語的でアメリカ英語でよく使われます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "speaker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "table-lamp",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "telephone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tissue-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tv",
+    "confusables": [
+      {
+        "term": "monitor",
+        "catalogId": "monitor",
+        "distinction": {
+          "zhHant": "monitor 通常是供電腦使用的顯示器；TV 主要用於接收或播放電視影音，兩者功能可能重疊。",
+          "en": "A monitor is usually a computer display; a TV is mainly for watching television content, though their uses can overlap.",
+          "ja": "monitor は通常パソコン用の画面で、TV は主にテレビ番組などを見る機器ですが、用途は重なることもあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tv-stand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vase",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "doorbell",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wall-art",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "access-card",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ballpoint-pen",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "binder-clip",
+    "confusables": [
+      {
+        "term": "paper clip",
+        "catalogId": "paper-clip",
+        "distinction": {
+          "zhHant": "paper clip 是彎曲金屬線，夾少量紙張；binder clip 有可壓開的金屬夾口，能夾較厚的紙疊。",
+          "en": "A paper clip is bent wire for a few sheets; a binder clip has spring jaws for a thicker stack.",
+          "ja": "paper clip は曲げた針金で少量の紙を留め、binder clip はばね式の口で厚い紙束を挟みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bookend",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "business-card",
+    "confusables": [
+      {
+        "term": "employee ID card",
+        "catalogId": "employee-id-card",
+        "distinction": {
+          "zhHant": "business card 印有姓名與聯絡資訊，供對外交換；employee ID card 用於證明員工身分。",
+          "en": "A business card shares a person’s name and contact details; an employee ID card proves their identity at work.",
+          "ja": "business card は名前や連絡先を相手に渡すためのもので、employee ID card は職場で社員の身分を示します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "calculator",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "calendar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "folder",
+    "confusables": [
+      {
+        "term": "file folder",
+        "catalogId": "file-folder",
+        "distinction": {
+          "zhHant": "folder 可指紙本資料夾或電腦資料夾；file folder 特別指收納紙張的資料夾。",
+          "en": "Folder can mean a paper folder or a digital folder; file folder specifically refers to a folder for paper documents.",
+          "ja": "folder は紙のフォルダーにもパソコンのフォルダーにも使い、file folder は特に紙の書類を入れるものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "clipboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coffee-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "computer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "conference-table",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "correction-tape",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "desk",
+    "confusables": [
+      {
+        "term": "table",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "desk 是讀書或工作用的桌子；table 泛指各種桌子，例如餐桌。",
+          "en": "A desk is for studying or working; table is the general word, such as a dining table.",
+          "ja": "desk は勉強や仕事用の机で、table は食卓など机全般を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "desk-organizer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "document",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "document-tray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "employee-id-card",
+    "confusables": [
+      {
+        "term": "business card",
+        "catalogId": "business-card",
+        "distinction": {
+          "zhHant": "business card 印有姓名與聯絡資訊，供對外交換；employee ID card 用於證明員工身分。",
+          "en": "A business card shares a person’s name and contact details; an employee ID card proves their identity at work.",
+          "ja": "business card は名前や連絡先を相手に渡すためのもので、employee ID card は職場で社員の身分を示します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "envelope",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "file-folder",
+    "confusables": [
+      {
+        "term": "clear file folder",
+        "catalogId": "folder",
+        "distinction": {
+          "zhHant": "folder 可指紙本資料夾或電腦資料夾；file folder 特別指收納紙張的資料夾。",
+          "en": "Folder can mean a paper folder or a digital folder; file folder specifically refers to a folder for paper documents.",
+          "ja": "folder は紙のフォルダーにもパソコンのフォルダーにも使い、file folder は特に紙の書類を入れるものです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "filing-cabinet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "glue",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "headphones",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "highlighter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hole-punch",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "invoice",
+    "confusables": [
+      {
+        "term": "receipt",
+        "catalogId": "receipt",
+        "distinction": {
+          "zhHant": "receipt 證明款項已支付；invoice 是要求付款的帳單，通常在付款前開立。",
+          "en": "A receipt confirms payment; an invoice requests payment and is usually issued before it is paid.",
+          "ja": "receipt は支払い済みの証明で、invoice は支払いを請求する書類で、通常は支払い前に発行します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "keyboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "laptop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "meeting-room",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "microphone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "monitor",
+    "confusables": [
+      {
+        "term": "TV",
+        "catalogId": "tv",
+        "distinction": {
+          "zhHant": "monitor 通常是供電腦使用的顯示器；TV 主要用於接收或播放電視影音，兩者功能可能重疊。",
+          "en": "A monitor is usually a computer display; a TV is mainly for watching television content, though their uses can overlap.",
+          "ja": "monitor は通常パソコン用の画面で、TV は主にテレビ番組などを見る機器ですが、用途は重なることもあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mouse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "mouse 也指老鼠（複數 mice）；電腦滑鼠的複數通常也用 mice，偶爾說 mouses。",
+      "en": "Mouse also means the small animal (plural mice); for the computer device, mice is usual and mouses is occasionally heard.",
+      "ja": "mouse は動物のネズミも指し（複数形は mice）、パソコンのマウスの複数形も通常 mice で、まれに mouses とも言います。"
+    }
+  },
+  {
+    "wordId": "mouse-pad",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "notebook",
+    "confusables": [
+      {
+        "term": "notepad",
+        "catalogId": "notepad",
+        "distinction": {
+          "zhHant": "notebook 通常是裝訂成冊、可長期記錄的筆記本；notepad 通常是可撕頁的便條本。",
+          "en": "A notebook is usually bound for ongoing notes; a notepad usually has tear-off sheets.",
+          "ja": "notebook は通常綴じられて長く使うノートで、notepad は通常一枚ずつ切り離せるメモ帳です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "notepad",
+    "confusables": [
+      {
+        "term": "notebook",
+        "catalogId": "notebook",
+        "distinction": {
+          "zhHant": "notebook 通常是裝訂成冊、可長期記錄的筆記本；notepad 通常是可撕頁的便條本。",
+          "en": "A notebook is usually bound for ongoing notes; a notepad usually has tear-off sheets.",
+          "ja": "notebook は通常綴じられて長く使うノートで、notepad は通常一枚ずつ切り離せるメモ帳です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "office-chair",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "office-supplies",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper-clip",
+    "confusables": [
+      {
+        "term": "binder clip",
+        "catalogId": "binder-clip",
+        "distinction": {
+          "zhHant": "paper clip 是彎曲金屬線，夾少量紙張；binder clip 有可壓開的金屬夾口，能夾較厚的紙疊。",
+          "en": "A paper clip is bent wire for a few sheets; a binder clip has spring jaws for a thicker stack.",
+          "ja": "paper clip は曲げた針金で少量の紙を留め、binder clip はばね式の口で厚い紙束を挟みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "paper-shredder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pen",
+    "confusables": [
+      {
+        "term": "permanent marker",
+        "catalogId": "marker",
+        "distinction": {
+          "zhHant": "pen 通常筆尖較細，適合一般書寫；marker 筆尖通常較粗，適合標記或在特定表面書寫。",
+          "en": "A pen usually has a finer tip for ordinary writing; a marker has a broader tip for marking or writing on particular surfaces.",
+          "ja": "pen は通常細い先で一般的な筆記に使い、marker は太めの先で印を付けたり特定の面に書いたりします。"
+        }
+      },
+      {
+        "term": "pencil",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "pen 用墨水書寫；pencil 是鉛筆，寫的字可以擦掉。",
+          "en": "A pen writes in ink; a pencil writes in graphite that can be erased.",
+          "ja": "pen はインクで書き、pencil は消しゴムで消せる鉛筆です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "marker",
+    "confusables": [
+      {
+        "term": "pen",
+        "catalogId": "pen",
+        "distinction": {
+          "zhHant": "pen 通常筆尖較細，適合一般書寫；marker 筆尖通常較粗，適合標記或在特定表面書寫。",
+          "en": "A pen usually has a finer tip for ordinary writing; a marker has a broader tip for marking or writing on particular surfaces.",
+          "ja": "pen は通常細い先で一般的な筆記に使い、marker は太めの先で印を付けたり特定の面に書いたりします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "photocopier",
+    "confusables": [
+      {
+        "term": "printer",
+        "catalogId": "printer",
+        "distinction": {
+          "zhHant": "photocopier 複製現有紙本；printer 通常把電腦中的文件印到紙上，有些機器兼具兩種功能。",
+          "en": "A photocopier copies an existing paper document; a printer usually prints a digital file, though one machine may do both.",
+          "ja": "photocopier は紙の原稿を複写し、printer は通常デジタル文書を印刷します。一台で両方できる機種もあります。"
+        }
+      },
+      {
+        "term": "scanner",
+        "catalogId": "scanner",
+        "distinction": {
+          "zhHant": "scanner 把紙本轉成數位影像；photocopier 通常直接產生紙本副本。",
+          "en": "A scanner turns paper into a digital image; a photocopier usually makes a paper copy.",
+          "ja": "scanner は紙をデジタル画像にし、photocopier は通常紙のコピーを作ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "printer",
+    "confusables": [
+      {
+        "term": "photocopier",
+        "catalogId": "photocopier",
+        "distinction": {
+          "zhHant": "photocopier 複製現有紙本；printer 通常把電腦中的文件印到紙上，有些機器兼具兩種功能。",
+          "en": "A photocopier copies an existing paper document; a printer usually prints a digital file, though one machine may do both.",
+          "ja": "photocopier は紙の原稿を複写し、printer は通常デジタル文書を印刷します。一台で両方できる機種もあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "reception-desk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rubber-stamp",
+    "confusables": [
+      {
+        "term": "stamp pad",
+        "catalogId": "stamp-pad",
+        "distinction": {
+          "zhHant": "rubber stamp 是蓋出圖案或文字的印章；stamp pad 是提供印泥的墊子。",
+          "en": "A rubber stamp makes the mark; a stamp pad supplies the ink.",
+          "ja": "rubber stamp は印影を押すはんこで、stamp pad はインクを付ける台です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ruler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scanner",
+    "confusables": [
+      {
+        "term": "photocopier",
+        "catalogId": "photocopier",
+        "distinction": {
+          "zhHant": "scanner 把紙本轉成數位影像；photocopier 通常直接產生紙本副本。",
+          "en": "A scanner turns paper into a digital image; a photocopier usually makes a paper copy.",
+          "ja": "scanner は紙をデジタル画像にし、photocopier は通常紙のコピーを作ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mobile-phone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stamp-pad",
+    "confusables": [
+      {
+        "term": "rubber stamp",
+        "catalogId": "rubber-stamp",
+        "distinction": {
+          "zhHant": "rubber stamp 是蓋出圖案或文字的印章；stamp pad 是提供印泥的墊子。",
+          "en": "A rubber stamp makes the mark; a stamp pad supplies the ink.",
+          "ja": "rubber stamp は印影を押すはんこで、stamp pad はインクを付ける台です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stapler",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "staples",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sticky-notes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tape",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "utility-knife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "water-dispenser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "webcam",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whiteboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "eraser",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "whiteboard-marker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "appliance-repair-technician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "auto-mechanic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bank-teller",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barber",
+    "confusables": [
+      {
+        "term": "hairdresser",
+        "catalogId": "hairdresser",
+        "distinction": {
+          "zhHant": "barber 傳統上多剪男性短髮與修鬍鬚；hairdresser 提供更廣泛的剪髮與造型服務。",
+          "en": "A barber traditionally cuts short men’s hair and trims beards; a hairdresser offers a broader range of hair cutting and styling.",
+          "ja": "barber は伝統的に男性の短髪やひげを整え、hairdresser はより幅広いカットやスタイリングをします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barista",
+    "confusables": [
+      {
+        "term": "bartender",
+        "catalogId": "bartender",
+        "distinction": {
+          "zhHant": "barista 主要製作咖啡飲品；bartender 主要在酒吧調製或供應酒精飲品。",
+          "en": "A barista mainly prepares coffee drinks; a bartender mainly serves or mixes alcoholic drinks at a bar.",
+          "ja": "barista は主にコーヒー飲料を作り、bartender は主にバーで酒を作ったり提供したりします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bartender",
+    "confusables": [
+      {
+        "term": "barista",
+        "catalogId": "barista",
+        "distinction": {
+          "zhHant": "barista 主要製作咖啡飲品；bartender 主要在酒吧調製或供應酒精飲品。",
+          "en": "A barista mainly prepares coffee drinks; a bartender mainly serves or mixes alcoholic drinks at a bar.",
+          "ja": "barista は主にコーヒー飲料を作り、bartender は主にバーで酒を作ったり提供したりします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beautician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle-mechanic",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "building-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "butcher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "caregiver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "carpenter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chef",
+    "confusables": [
+      {
+        "term": "cook",
+        "catalogId": "restaurant-cook",
+        "distinction": {
+          "zhHant": "chef 通常有廚房管理或菜單規劃職責；restaurant cook 主要負責烹調餐點。",
+          "en": "A chef usually has responsibility for managing a kitchen or planning dishes; a restaurant cook mainly prepares food.",
+          "ja": "chef は通常、厨房の管理や料理の企画も担い、restaurant cook は主に調理を担当します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coast-guard-officer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "concierge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "construction-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convenience-store-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "restaurant-cook",
+    "confusables": [
+      {
+        "term": "chef",
+        "catalogId": "chef",
+        "distinction": {
+          "zhHant": "chef 通常有廚房管理或菜單規劃職責；restaurant cook 主要負責烹調餐點。",
+          "en": "A chef usually has responsibility for managing a kitchen or planning dishes; a restaurant cook mainly prepares food.",
+          "ja": "chef は通常、厨房の管理や料理の企画も担い、restaurant cook は主に調理を担当します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cram-school-teacher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "crane-operator",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "crossing-guard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "customs-officer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "delivery-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dental-hygienist",
+    "confusables": [
+      {
+        "term": "dentist",
+        "catalogId": "dentist",
+        "distinction": {
+          "zhHant": "dentist 診斷並治療牙齒問題；dental hygienist 主要做洗牙與預防性口腔護理。",
+          "en": "A dentist diagnoses and treats dental problems; a dental hygienist focuses on cleaning and preventive care.",
+          "ja": "dentist は歯の病気を診断・治療し、dental hygienist は主に歯のクリーニングや予防ケアをします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dentist",
+    "confusables": [
+      {
+        "term": "dental hygienist",
+        "catalogId": "dental-hygienist",
+        "distinction": {
+          "zhHant": "dentist 診斷並治療牙齒問題；dental hygienist 主要做洗牙與預防性口腔護理。",
+          "en": "A dentist diagnoses and treats dental problems; a dental hygienist focuses on cleaning and preventive care.",
+          "ja": "dentist は歯の病気を診断・治療し、dental hygienist は主に歯のクリーニングや予防ケアをします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "department-store-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "doctor",
+    "confusables": [
+      {
+        "term": "paramedic",
+        "catalogId": "paramedic",
+        "distinction": {
+          "zhHant": "paramedic 主要在到院前提供緊急醫療處置；doctor 是負責診斷與治療的醫師。",
+          "en": "A paramedic provides emergency medical care before hospital arrival; a doctor diagnoses and treats patients.",
+          "ja": "paramedic は主に病院に着く前の救急医療を行い、doctor は診断や治療を行う医師です。"
+        }
+      },
+      {
+        "term": "pharmacist",
+        "catalogId": "pharmacist",
+        "distinction": {
+          "zhHant": "doctor 診斷疾病並開立治療；pharmacist 專精藥物，核對處方並提供用藥指導。",
+          "en": "A doctor diagnoses conditions and prescribes treatment; a pharmacist specializes in medicines, checks prescriptions, and advises on their use.",
+          "ja": "doctor は病気を診断して治療を指示し、pharmacist は薬に専門性を持ち、処方を確認して服薬を指導します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "driving-instructor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electrician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "factory-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "farmer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "firefighter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fisherman",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fishmonger",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fitness-trainer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flight-attendant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "florist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-factory-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "forestry-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garbage-collector",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gardener",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hairdresser",
+    "confusables": [
+      {
+        "term": "barber",
+        "catalogId": "barber",
+        "distinction": {
+          "zhHant": "barber 傳統上多剪男性短髮與修鬍鬚；hairdresser 提供更廣泛的剪髮與造型服務。",
+          "en": "A barber traditionally cuts short men’s hair and trims beards; a hairdresser offers a broader range of hair cutting and styling.",
+          "ja": "barber は伝統的に男性の短髪やひげを整え、hairdresser はより幅広いカットやスタイリングをします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hotel-housekeeper",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hotel-receptionist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kindergarten-teacher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "librarian",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lifeguard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mail-carrier",
+    "confusables": [
+      {
+        "term": "postal clerk",
+        "catalogId": "postal-clerk",
+        "distinction": {
+          "zhHant": "mail carrier 外出投遞郵件；postal clerk 通常在郵局櫃台處理郵件與顧客服務。",
+          "en": "A mail carrier delivers mail along a route; a postal clerk usually serves customers and handles mail at a post office.",
+          "ja": "mail carrier は配達経路で郵便物を届け、postal clerk は通常郵便局の窓口で郵便物やお客さまの対応をします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "makeup-artist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "manga-artist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "massage-therapist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "midwife",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "museum-guide",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "musician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nail-technician",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nurse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "nursery-teacher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "painter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "painter 可指畫家，也可指油漆工；要看是在談藝術作品還是建築物的塗裝。",
+      "en": "Painter can mean an artist or someone who paints buildings; context tells you which.",
+      "ja": "painter は画家も塗装工も指し、芸術作品か建物の塗装かで意味が決まります。"
+    }
+  },
+  {
+    "wordId": "paramedic",
+    "confusables": [
+      {
+        "term": "doctor",
+        "catalogId": "doctor",
+        "distinction": {
+          "zhHant": "paramedic 主要在到院前提供緊急醫療處置；doctor 是負責診斷與治療的醫師。",
+          "en": "A paramedic provides emergency medical care before hospital arrival; a doctor diagnoses and treats patients.",
+          "ja": "paramedic は主に病院に着く前の救急医療を行い、doctor は診断や治療を行う医師です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-attendant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pastry-chef",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pest-control-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pharmacist",
+    "confusables": [
+      {
+        "term": "pharmacy clerk",
+        "catalogId": "pharmacy-clerk",
+        "distinction": {
+          "zhHant": "pharmacist 是具專業資格的藥師，負責藥物專業服務；pharmacy clerk 是藥局店員，不能代替藥師。",
+          "en": "A pharmacist is a licensed medicine professional; a pharmacy clerk is a retail worker who cannot replace a pharmacist.",
+          "ja": "pharmacist は資格を持つ薬剤師で、pharmacy clerk は薬局の店員であり、薬剤師の代わりにはなれません。"
+        }
+      },
+      {
+        "term": "doctor",
+        "catalogId": "doctor",
+        "distinction": {
+          "zhHant": "doctor 診斷疾病並開立治療；pharmacist 專精藥物，核對處方並提供用藥指導。",
+          "en": "A doctor diagnoses conditions and prescribes treatment; a pharmacist specializes in medicines, checks prescriptions, and advises on their use.",
+          "ja": "doctor は病気を診断して治療を指示し、pharmacist は薬に専門性を持ち、処方を確認して服薬を指導します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pharmacy-clerk",
+    "confusables": [
+      {
+        "term": "pharmacist",
+        "catalogId": "pharmacist",
+        "distinction": {
+          "zhHant": "pharmacist 是具專業資格的藥師，負責藥物專業服務；pharmacy clerk 是藥局店員，不能代替藥師。",
+          "en": "A pharmacist is a licensed medicine professional; a pharmacy clerk is a retail worker who cannot replace a pharmacist.",
+          "ja": "pharmacist は資格を持つ薬剤師で、pharmacy clerk は薬局の店員であり、薬剤師の代わりにはなれません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "photographer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "physical-therapist",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pilot",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plasterer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plumber",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "police-officer",
+    "confusables": [
+      {
+        "term": "security guard",
+        "catalogId": "security-guard",
+        "distinction": {
+          "zhHant": "police officer 是有執法權的警察；security guard 負責特定場所的保全，通常沒有同等執法權。",
+          "en": "A police officer has law-enforcement authority; a security guard protects a particular place and usually has different legal powers.",
+          "ja": "police officer は法執行権を持つ警察官で、security guard は特定の場所を警備し、通常同じ法的権限は持ちません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "postal-clerk",
+    "confusables": [
+      {
+        "term": "mail carrier",
+        "catalogId": "mail-carrier",
+        "distinction": {
+          "zhHant": "mail carrier 外出投遞郵件；postal clerk 通常在郵局櫃台處理郵件與顧客服務。",
+          "en": "A mail carrier delivers mail along a route; a postal clerk usually serves customers and handles mail at a post office.",
+          "ja": "mail carrier は配達経路で郵便物を届け、postal clerk は通常郵便局の窓口で郵便物やお客さまの対応をします。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "reporter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rescue-worker",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "restaurant-server",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roofer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sales-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "school-nurse",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "security-guard",
+    "confusables": [
+      {
+        "term": "police officer",
+        "catalogId": "police-officer",
+        "distinction": {
+          "zhHant": "police officer 是有執法權的警察；security guard 負責特定場所的保全，通常沒有同等執法權。",
+          "en": "A police officer has law-enforcement authority; a security guard protects a particular place and usually has different legal powers.",
+          "ja": "police officer は法執行権を持つ警察官で、security guard は特定の場所を警備し、通常同じ法的権限は持ちません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shoe-repairer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sports-coach",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "station-attendant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "supermarket-clerk",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "surveyor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sushi-chef",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "swimming-instructor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tailor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "taxi-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "teacher",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tour-guide",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-guard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train-conductor",
+    "confusables": [
+      {
+        "term": "train driver",
+        "catalogId": "train-driver",
+        "distinction": {
+          "zhHant": "train driver 負責駕駛列車；train conductor 負責車上乘客與營運工作，職責依鐵路而異。",
+          "en": "A train driver operates the train; a train conductor handles onboard passengers and operations, with duties varying by railway.",
+          "ja": "train driver は列車を運転し、train conductor は車内の乗客対応や運行業務を担います。職務は鉄道会社によって異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train-driver",
+    "confusables": [
+      {
+        "term": "train conductor",
+        "catalogId": "train-conductor",
+        "distinction": {
+          "zhHant": "train driver 負責駕駛列車；train conductor 負責車上乘客與營運工作，職責依鐵路而異。",
+          "en": "A train driver operates the train; a train conductor handles onboard passengers and operations, with duties varying by railway.",
+          "ja": "train driver は列車を運転し、train conductor は車内の乗客対応や運行業務を担います。職務は鉄道会社によって異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "truck-driver",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "veterinarian",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "welder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "window-cleaner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yoga-instructor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aonori",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "apple-cider-vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baking-powder",
+    "confusables": [
+      {
+        "term": "baking soda",
+        "catalogId": "baking-soda",
+        "distinction": {
+          "zhHant": "baking powder 含有能與碳酸氫鈉反應的酸性成分；baking soda 是碳酸氫鈉，通常需要配方中的酸性材料才能產生足夠氣體。",
+          "en": "Baking powder includes acid for leavening; baking soda is sodium bicarbonate and generally needs an acid in the recipe.",
+          "ja": "baking powder には膨らませるための酸性成分が含まれ、baking soda は重曹で、通常はレシピ中の酸性材料が必要です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "baking-soda",
+    "confusables": [
+      {
+        "term": "baking powder",
+        "catalogId": "baking-powder",
+        "distinction": {
+          "zhHant": "baking powder 含有能與碳酸氫鈉反應的酸性成分；baking soda 是碳酸氫鈉，通常需要配方中的酸性材料才能產生足夠氣體。",
+          "en": "Baking powder includes acid for leavening; baking soda is sodium bicarbonate and generally needs an acid in the recipe.",
+          "ja": "baking powder には膨らませるための酸性成分が含まれ、baking soda は重曹で、通常はレシピ中の酸性材料が必要です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "basil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bay-leaf",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "black-pepper",
+    "confusables": [
+      {
+        "term": "white pepper",
+        "catalogId": "white-pepper",
+        "distinction": {
+          "zhHant": "black pepper 保留較多胡椒外層，香氣較鮮明；white pepper 去除外層，風味通常較柔和、偏土味。",
+          "en": "Black pepper retains more of the outer layer and has a sharper aroma; white pepper has it removed and often tastes earthier.",
+          "ja": "black pepper は外皮が残り香りが強めで、white pepper は外皮を除き、土っぽい風味になることが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "black-vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bonito-flakes",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bonito-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bouillon-powder",
+    "confusables": [
+      {
+        "term": "dashi stock",
+        "catalogId": "dashi-stock",
+        "distinction": {
+          "zhHant": "dashi stock 通常是以昆布、柴魚等製成的日式高湯；bouillon powder 是可沖成高湯的粉末調味料，風味依產品而異。",
+          "en": "Dashi stock is a Japanese broth often made with kombu or bonito; bouillon powder is a dry seasoning for making stock, with flavor varying by product.",
+          "ja": "dashi stock は昆布やかつお節などから取る和風だしで、bouillon powder は湯に溶かして使う粉末調味料で、味は製品によって異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "brown-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cardamom",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chicken-bouillon-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-bean-paste",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-flakes",
+    "confusables": [
+      {
+        "term": "chili powder",
+        "catalogId": "chili-powder",
+        "distinction": {
+          "zhHant": "chili powder 是細粉，配方有時含其他香料；chili flakes 是較粗的乾辣椒碎片。",
+          "en": "Chili powder is fine and may include other spices; chili flakes are coarser pieces of dried chili.",
+          "ja": "chili powder は細かな粉で他の香辛料を含むこともあり、chili flakes は粗い乾燥唐辛子のかけらです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-powder",
+    "confusables": [
+      {
+        "term": "chili flakes",
+        "catalogId": "chili-flakes",
+        "distinction": {
+          "zhHant": "chili powder 是細粉，配方有時含其他香料；chili flakes 是較粗的乾辣椒碎片。",
+          "en": "Chili powder is fine and may include other spices; chili flakes are coarser pieces of dried chili.",
+          "ja": "chili powder は細かな粉で他の香辛料を含むこともあり、chili flakes は粗い乾燥唐辛子のかけらです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "chili-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cilantro",
+    "confusables": [
+      {
+        "term": "coriander seeds",
+        "catalogId": "coriander-seeds",
+        "distinction": {
+          "zhHant": "cilantro 在美式英文通常指香菜葉；coriander seeds 指同一植物的種子，風味與用途不同。",
+          "en": "In American English, cilantro usually means the leaves; coriander seeds are the seeds of the same plant and taste different.",
+          "ja": "米国英語の cilantro は通常パクチーの葉で、coriander seeds は同じ植物の種子で風味も用途も異なります。"
+        }
+      },
+      {
+        "term": "parsley",
+        "catalogId": "parsley",
+        "distinction": {
+          "zhHant": "cilantro 葉片常較圓、帶明顯香菜味；parsley 葉片與香氣不同，常作裝飾或調味。",
+          "en": "Cilantro has a distinctive coriander flavor; parsley has a different aroma and is often used as a garnish or seasoning.",
+          "ja": "cilantro には独特のパクチーの香りがあり、parsley は香りが異なり、飾りや調味によく使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "在英式英文，香菜葉通常稱 coriander；美式英文則常稱 cilantro。",
+      "en": "British English usually calls the leaves coriander; American English commonly calls them cilantro.",
+      "ja": "英国英語では葉を通常 coriander、米国英語では cilantro と呼びます。"
+    }
+  },
+  {
+    "wordId": "cinnamon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cinnamon-bark",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cloves",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cooking-wine",
+    "confusables": [
+      {
+        "term": "mirin",
+        "catalogId": "mirin",
+        "distinction": {
+          "zhHant": "cooking wine 是烹調用酒的廣泛說法；mirin 是帶甜味的日式料理酒。",
+          "en": "Cooking wine is a broad term for wine used in cooking; mirin is a sweet Japanese cooking wine.",
+          "ja": "cooking wine は料理に使う酒の広い呼び名で、mirin は甘い日本の調味酒です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coriander-seeds",
+    "confusables": [
+      {
+        "term": "cilantro",
+        "catalogId": "cilantro",
+        "distinction": {
+          "zhHant": "cilantro 在美式英文通常指香菜葉；coriander seeds 指同一植物的種子，風味與用途不同。",
+          "en": "In American English, cilantro usually means the leaves; coriander seeds are the seeds of the same plant and taste different.",
+          "ja": "米国英語の cilantro は通常パクチーの葉で、coriander seeds は同じ植物の種子で風味も用途も異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cornstarch",
+    "confusables": [
+      {
+        "term": "flour",
+        "catalogId": "flour",
+        "distinction": {
+          "zhHant": "flour 通常是磨碎的穀物粉，常用於麵團；cornstarch 是玉米澱粉，常用來勾芡。",
+          "en": "Flour is usually ground grain used in dough; cornstarch is purified corn starch often used to thicken sauces.",
+          "ja": "flour は通常穀物をひいた粉で生地に使い、cornstarch はトウモロコシのでんぷんで、とろみ付けによく使います。"
+        }
+      },
+      {
+        "term": "potato starch",
+        "catalogId": "potato-starch",
+        "distinction": {
+          "zhHant": "cornstarch 來自玉米；potato starch 來自馬鈴薯，兩者在加熱或冷卻後的質地可能不同。",
+          "en": "Cornstarch comes from corn; potato starch comes from potatoes, and they can give different textures after heating or cooling.",
+          "ja": "cornstarch はトウモロコシ由来、potato starch はジャガイモ由来で、加熱や冷却後の食感が異なることがあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cumin",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cumin-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curry-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curry-roux",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dark-brown-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dark-soy-sauce",
+    "confusables": [
+      {
+        "term": "light soy sauce",
+        "catalogId": "light-soy-sauce",
+        "distinction": {
+          "zhHant": "light soy sauce 通常較淡色、用來調味；dark soy sauce 顏色較深，常用來為料理上色，鹹度依產品而異。",
+          "en": "Light soy sauce is paler and often used for seasoning; dark soy sauce is darker and often adds color, while saltiness varies by brand.",
+          "ja": "light soy sauce は色が薄く味付けに使うことが多く、dark soy sauce は色が濃く料理に色を付けます。塩分は製品によって異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "dashi-stock",
+    "confusables": [
+      {
+        "term": "bouillon powder",
+        "catalogId": "bouillon-powder",
+        "distinction": {
+          "zhHant": "dashi stock 通常是以昆布、柴魚等製成的日式高湯；bouillon powder 是可沖成高湯的粉末調味料，風味依產品而異。",
+          "en": "Dashi stock is a Japanese broth often made with kombu or bonito; bouillon powder is a dry seasoning for making stock, with flavor varying by product.",
+          "ja": "dashi stock は昆布やかつお節などから取る和風だしで、bouillon powder は湯に溶かして使う粉末調味料で、味は製品によって異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fennel-seeds",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fish-sauce",
+    "confusables": [
+      {
+        "term": "oyster sauce",
+        "catalogId": "oyster-sauce",
+        "distinction": {
+          "zhHant": "oyster sauce 通常較稠、帶甜味與蠔味；fish sauce 通常較稀，味道鹹且有發酵魚香。",
+          "en": "Oyster sauce is usually thick and somewhat sweet; fish sauce is thinner, salty, and fermented-fish flavored.",
+          "ja": "oyster sauce は通常濃く少し甘みがあり、fish sauce はさらっとして塩気と発酵魚の風味があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "five-spice-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flour",
+    "confusables": [
+      {
+        "term": "cornstarch",
+        "catalogId": "cornstarch",
+        "distinction": {
+          "zhHant": "flour 通常是磨碎的穀物粉，常用於麵團；cornstarch 是玉米澱粉，常用來勾芡。",
+          "en": "Flour is usually ground grain used in dough; cornstarch is purified corn starch often used to thicken sauces.",
+          "ja": "flour は通常穀物をひいた粉で生地に使い、cornstarch はトウモロコシのでんぷんで、とろみ付けによく使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "furikake",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garlic-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "honey",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ketchup",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kombu-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "light-soy-sauce",
+    "confusables": [
+      {
+        "term": "dark soy sauce",
+        "catalogId": "dark-soy-sauce",
+        "distinction": {
+          "zhHant": "light soy sauce 通常較淡色、用來調味；dark soy sauce 顏色較深，常用來為料理上色，鹹度依產品而異。",
+          "en": "Light soy sauce is paler and often used for seasoning; dark soy sauce is darker and often adds color, while saltiness varies by brand.",
+          "ja": "light soy sauce は色が薄く味付けに使うことが多く、dark soy sauce は色が濃く料理に色を付けます。塩分は製品によって異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mayonnaise",
+    "confusables": [
+      {
+        "term": "mayo",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "mayo 是 mayonnaise 的口語縮寫，意思相同。",
+          "en": "Mayo is the casual short form of mayonnaise; they mean the same thing.",
+          "ja": "mayo は mayonnaise の口語的な略語で、意味は同じです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mirin",
+    "confusables": [
+      {
+        "term": "cooking wine",
+        "catalogId": "cooking-wine",
+        "distinction": {
+          "zhHant": "cooking wine 是烹調用酒的廣泛說法；mirin 是帶甜味的日式料理酒。",
+          "en": "Cooking wine is a broad term for wine used in cooking; mirin is a sweet Japanese cooking wine.",
+          "ja": "cooking wine は料理に使う酒の広い呼び名で、mirin は甘い日本の調味酒です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "miso",
+    "confusables": [
+      {
+        "term": "soy sauce",
+        "catalogId": "soy-sauce",
+        "distinction": {
+          "zhHant": "miso 是發酵豆醬，呈糊狀；soy sauce 是液體醬油。",
+          "en": "Miso is a fermented soybean paste; soy sauce is a liquid seasoning.",
+          "ja": "miso は発酵させた大豆のペーストで、soy sauce は液体のしょうゆです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "msg",
+    "confusables": [
+      {
+        "term": "salt",
+        "catalogId": "salt",
+        "distinction": {
+          "zhHant": "MSG 主要提供鮮味；salt 主要提供鹹味，不能把兩者當成完全相同的調味料。",
+          "en": "MSG mainly adds umami; salt mainly adds saltiness, so they are not interchangeable.",
+          "ja": "MSG は主にうま味を、salt は主に塩味を加えるため、同じ調味料ではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mustard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "noodle-soup-base",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "olive-oil",
+    "confusables": [
+      {
+        "term": "sesame oil",
+        "catalogId": "sesame-oil",
+        "distinction": {
+          "zhHant": "sesame oil 以芝麻製成，常有濃郁香氣；olive oil 以橄欖製成，風味與適用料理不同。",
+          "en": "Sesame oil comes from sesame seeds and is often strongly aromatic; olive oil comes from olives and has a different flavor.",
+          "ja": "sesame oil はゴマから作られ香りが強いことが多く、olive oil はオリーブから作られ風味が異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "onion-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oregano",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "oyster-sauce",
+    "confusables": [
+      {
+        "term": "fish sauce",
+        "catalogId": "fish-sauce",
+        "distinction": {
+          "zhHant": "oyster sauce 通常較稠、帶甜味與蠔味；fish sauce 通常較稀，味道鹹且有發酵魚香。",
+          "en": "Oyster sauce is usually thick and somewhat sweet; fish sauce is thinner, salty, and fermented-fish flavored.",
+          "ja": "oyster sauce は通常濃く少し甘みがあり、fish sauce はさらっとして塩気と発酵魚の風味があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parsley",
+    "confusables": [
+      {
+        "term": "cilantro",
+        "catalogId": "cilantro",
+        "distinction": {
+          "zhHant": "cilantro 葉片常較圓、帶明顯香菜味；parsley 葉片與香氣不同，常作裝飾或調味。",
+          "en": "Cilantro has a distinctive coriander flavor; parsley has a different aroma and is often used as a garnish or seasoning.",
+          "ja": "cilantro には独特のパクチーの香りがあり、parsley は香りが異なり、飾りや調味によく使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "peanut-butter",
+    "confusables": [
+      {
+        "term": "sesame paste",
+        "catalogId": "sesame-paste",
+        "distinction": {
+          "zhHant": "sesame paste 用芝麻製成；peanut butter 用花生製成，兩者的過敏原與風味不同。",
+          "en": "Sesame paste is made from sesame seeds; peanut butter is made from peanuts, so their allergens and flavors differ.",
+          "ja": "sesame paste はゴマ、peanut butter はピーナッツから作り、アレルゲンも風味も異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pepper",
+    "confusables": [
+      {
+        "term": "bell pepper",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "pepper 可以指胡椒粉，也可以指甜椒（bell pepper）或辣椒，要看上下文。",
+          "en": "Pepper can mean the ground spice, or a vegetable such as a bell pepper or chili; context decides.",
+          "ja": "pepper はこしょうのことも、bell pepper（ピーマン・パプリカ）や唐辛子のことも指し、文脈で判断します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ponzu-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "potato-starch",
+    "confusables": [
+      {
+        "term": "cornstarch",
+        "catalogId": "cornstarch",
+        "distinction": {
+          "zhHant": "cornstarch 來自玉米；potato starch 來自馬鈴薯，兩者在加熱或冷卻後的質地可能不同。",
+          "en": "Cornstarch comes from corn; potato starch comes from potatoes, and they can give different textures after heating or cooling.",
+          "ja": "cornstarch はトウモロコシ由来、potato starch はジャガイモ由来で、加熱や冷却後の食感が異なることがあります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-vinegar",
+    "confusables": [
+      {
+        "term": "white vinegar",
+        "catalogId": "white-vinegar",
+        "distinction": {
+          "zhHant": "rice vinegar 由米等穀物製成，風味通常較柔和；white vinegar 通常是味道較銳利的蒸餾醋。",
+          "en": "Rice vinegar is made from rice or other grains and is often milder; white vinegar is usually sharper distilled vinegar.",
+          "ja": "rice vinegar は米などの穀物から作られ通常まろやかで、white vinegar は通常より刺激の強い蒸留酢です。"
+        }
+      },
+      {
+        "term": "rice wine",
+        "catalogId": "rice-wine",
+        "distinction": {
+          "zhHant": "rice wine 是含酒精的米釀飲品；rice vinegar 是經醋化的酸味調味料。",
+          "en": "Rice wine is an alcoholic drink made from rice; rice vinegar is acidic vinegar used as a seasoning.",
+          "ja": "rice wine は米から作る酒で、rice vinegar は酸味のある調味酢です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rice-wine",
+    "confusables": [
+      {
+        "term": "rice vinegar",
+        "catalogId": "rice-vinegar",
+        "distinction": {
+          "zhHant": "rice wine 是含酒精的米釀飲品；rice vinegar 是經醋化的酸味調味料。",
+          "en": "Rice wine is an alcoholic drink made from rice; rice vinegar is acidic vinegar used as a seasoning.",
+          "ja": "rice wine は米から作る酒で、rice vinegar は酸味のある調味酢です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roasted-sesame-seeds",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rock-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rosemary",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "salt",
+    "confusables": [
+      {
+        "term": "MSG",
+        "catalogId": "msg",
+        "distinction": {
+          "zhHant": "MSG 主要提供鮮味；salt 主要提供鹹味，不能把兩者當成完全相同的調味料。",
+          "en": "MSG mainly adds umami; salt mainly adds saltiness, so they are not interchangeable.",
+          "ja": "MSG は主にうま味を、salt は主に塩味を加えるため、同じ調味料ではありません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sesame-oil",
+    "confusables": [
+      {
+        "term": "olive oil",
+        "catalogId": "olive-oil",
+        "distinction": {
+          "zhHant": "sesame oil 以芝麻製成，常有濃郁香氣；olive oil 以橄欖製成，風味與適用料理不同。",
+          "en": "Sesame oil comes from sesame seeds and is often strongly aromatic; olive oil comes from olives and has a different flavor.",
+          "ja": "sesame oil はゴマから作られ香りが強いことが多く、olive oil はオリーブから作られ風味が異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sesame-paste",
+    "confusables": [
+      {
+        "term": "peanut butter",
+        "catalogId": "peanut-butter",
+        "distinction": {
+          "zhHant": "sesame paste 用芝麻製成；peanut butter 用花生製成，兩者的過敏原與風味不同。",
+          "en": "Sesame paste is made from sesame seeds; peanut butter is made from peanuts, so their allergens and flavors differ.",
+          "ja": "sesame paste はゴマ、peanut butter はピーナッツから作り、アレルゲンも風味も異なります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shacha-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shichimi",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sichuan-peppercorn",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "soy-sauce",
+    "confusables": [
+      {
+        "term": "miso",
+        "catalogId": "miso",
+        "distinction": {
+          "zhHant": "miso 是發酵豆醬，呈糊狀；soy sauce 是液體醬油。",
+          "en": "Miso is a fermented soybean paste; soy sauce is a liquid seasoning.",
+          "ja": "miso は発酵させた大豆のペーストで、soy sauce は液体のしょうゆです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "star-anise",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sweet-chili-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "thick-soy-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "thyme",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tonkatsu-sauce",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "turmeric-powder",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vanilla-extract",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vegetable-oil",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vinegar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wasabi",
+    "confusables": [
+      {
+        "term": "yellow mustard",
+        "catalogId": "yellow-mustard",
+        "distinction": {
+          "zhHant": "wasabi 是日式山葵風味的辛味調味料；yellow mustard 是芥末籽製成的美式黃芥末，辛味來源不同。",
+          "en": "Wasabi is a Japanese pungent condiment associated with wasabi; yellow mustard is an American condiment made with mustard seed.",
+          "ja": "wasabi はワサビ由来の辛味のある日本の調味料で、yellow mustard はカラシの種で作る米国式の黄色い調味料です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-pepper",
+    "confusables": [
+      {
+        "term": "black pepper",
+        "catalogId": "black-pepper",
+        "distinction": {
+          "zhHant": "black pepper 保留較多胡椒外層，香氣較鮮明；white pepper 去除外層，風味通常較柔和、偏土味。",
+          "en": "Black pepper retains more of the outer layer and has a sharper aroma; white pepper has it removed and often tastes earthier.",
+          "ja": "black pepper は外皮が残り香りが強めで、white pepper は外皮を除き、土っぽい風味になることが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-sugar",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "white-vinegar",
+    "confusables": [
+      {
+        "term": "rice vinegar",
+        "catalogId": "rice-vinegar",
+        "distinction": {
+          "zhHant": "rice vinegar 由米等穀物製成，風味通常較柔和；white vinegar 通常是味道較銳利的蒸餾醋。",
+          "en": "Rice vinegar is made from rice or other grains and is often milder; white vinegar is usually sharper distilled vinegar.",
+          "ja": "rice vinegar は米などの穀物から作られ通常まろやかで、white vinegar は通常より刺激の強い蒸留酢です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yellow-mustard",
+    "confusables": [
+      {
+        "term": "wasabi",
+        "catalogId": "wasabi",
+        "distinction": {
+          "zhHant": "wasabi 是日式山葵風味的辛味調味料；yellow mustard 是芥末籽製成的美式黃芥末，辛味來源不同。",
+          "en": "Wasabi is a Japanese pungent condiment associated with wasabi; yellow mustard is an American condiment made with mustard seed.",
+          "ja": "wasabi はワサビ由来の辛味のある日本の調味料で、yellow mustard はカラシの種で作る米国式の黄色い調味料です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "yuzu-kosho",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "alley",
+    "confusables": [
+      {
+        "term": "lane",
+        "catalogId": "lane",
+        "distinction": {
+          "zhHant": "alley 通常是建築物之間的窄巷；lane 可以是狹窄道路，也可指道路上的一條車道。",
+          "en": "An alley is usually a narrow passage between buildings; lane can mean a narrow road or one marked part of a road.",
+          "ja": "alley は通常建物の間の狭い路地で、lane は狭い道や道路の一車線を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bank",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roadblock",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bench",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle-parking-rack",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bike-lane",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "billboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bollard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bridge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-stop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-stop-shelter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cafe",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "construction-zone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "convex-traffic-mirror",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "corner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "crosswalk",
+    "confusables": [
+      {
+        "term": "sidewalk",
+        "catalogId": "sidewalk",
+        "distinction": {
+          "zhHant": "sidewalk 是沿著道路供行人走的地方；crosswalk 是橫越車道的標示區域。",
+          "en": "A sidewalk runs beside a road for pedestrians; a crosswalk marks where they cross the road.",
+          "ja": "sidewalk は道路沿いの歩道で、crosswalk は車道を横断するための表示区域です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "curb",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fire-hydrant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "flower-bed",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street-vendor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "guardrail",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "intersection",
+    "confusables": [
+      {
+        "term": "roundabout",
+        "catalogId": "roundabout",
+        "distinction": {
+          "zhHant": "roundabout 是車輛繞著中央島單向行駛的環狀路口；intersection 泛指道路交會處。",
+          "en": "A roundabout directs traffic around a central island; an intersection is any place where roads meet.",
+          "ja": "roundabout は中央の島の周りを一方向に回る交差点で、intersection は道路が交わる場所全般です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "lane",
+    "confusables": [
+      {
+        "term": "alley",
+        "catalogId": "alley",
+        "distinction": {
+          "zhHant": "alley 通常是建築物之間的窄巷；lane 可以是狹窄道路，也可指道路上的一條車道。",
+          "en": "An alley is usually a narrow passage between buildings; lane can mean a narrow road or one marked part of a road.",
+          "ja": "alley は通常建物の間の狭い路地で、lane は狭い道や道路の一車線を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mailbox",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "manhole-cover",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vendor",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "newsstand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "park",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-lot",
+    "confusables": [
+      {
+        "term": "parking space",
+        "catalogId": "parking-space",
+        "distinction": {
+          "zhHant": "parking lot 是整個停車場；parking space 是其中的一個車位。",
+          "en": "A parking lot is the whole parking area; a parking space is one place for a vehicle within it.",
+          "ja": "parking lot は駐車場全体で、parking space はその中の一台分の区画です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-meter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "parking-space",
+    "confusables": [
+      {
+        "term": "parking lot",
+        "catalogId": "parking-lot",
+        "distinction": {
+          "zhHant": "parking lot 是整個停車場；parking space 是其中的一個車位。",
+          "en": "A parking lot is the whole parking area; a parking space is one place for a vehicle within it.",
+          "ja": "parking lot は駐車場全体で、parking space はその中の一台分の区画です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pedestrian",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pedestrian-bridge",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pedestrian-button",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pharmacy",
+    "confusables": [
+      {
+        "term": "drugstore",
+        "catalogId": "drugstore",
+        "distinction": {
+          "zhHant": "pharmacy 重點是配藥與藥師服務；drugstore 尤其在美式英文中常指也賣日用品的藥妝店。",
+          "en": "A pharmacy emphasizes dispensing medicines; a drugstore, especially in American English, often sells other everyday goods too.",
+          "ja": "pharmacy は調剤や薬剤師のサービスが中心で、drugstore は特に米国英語で日用品も売る店を指すことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "post-office",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "power-lines",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "restaurant",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "road",
+    "confusables": [
+      {
+        "term": "street",
+        "catalogId": "street",
+        "distinction": {
+          "zhHant": "street 通常指城鎮中兩旁有建築物的道路；road 可指各種道路，也包括城外道路。",
+          "en": "A street is usually a road in a town with buildings along it; road is broader and includes routes outside towns.",
+          "ja": "street は通常、建物が並ぶ町中の道で、road は町の外も含む道全般を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roundabout",
+    "confusables": [
+      {
+        "term": "intersection",
+        "catalogId": "intersection",
+        "distinction": {
+          "zhHant": "roundabout 是車輛繞著中央島單向行駛的環狀路口；intersection 泛指道路交會處。",
+          "en": "A roundabout directs traffic around a central island; an intersection is any place where roads meet.",
+          "ja": "roundabout は中央の島の周りを一方向に回る交差点で、intersection は道路が交わる場所全般です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "security-camera",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sidewalk",
+    "confusables": [
+      {
+        "term": "crosswalk",
+        "catalogId": "crosswalk",
+        "distinction": {
+          "zhHant": "sidewalk 是沿著道路供行人走的地方；crosswalk 是橫越車道的標示區域。",
+          "en": "A sidewalk runs beside a road for pedestrians; a crosswalk marks where they cross the road.",
+          "ja": "sidewalk は道路沿いの歩道で、crosswalk は車道を横断するための表示区域です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "sidewalk 是美式英文；英式英文通常說 pavement，但美式 pavement 可指鋪設的路面。",
+      "en": "Sidewalk is American English; British English usually says pavement, while American pavement can mean a paved road surface.",
+      "ja": "sidewalk は米国英語で、英国英語では通常 pavement と言います。米国英語の pavement は舗装路面を指すこともあります。"
+    }
+  },
+  {
+    "wordId": "signboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "station",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "stop-sign",
+    "confusables": [
+      {
+        "term": "traffic light",
+        "catalogId": "traffic-light",
+        "distinction": {
+          "zhHant": "stop sign 要求駕駛在標誌前停車；traffic light 以變換燈號控制通行。",
+          "en": "A stop sign requires drivers to stop; a traffic light controls movement with changing lights.",
+          "ja": "stop sign は一時停止を指示し、traffic light は変わる信号で通行を制御します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "storm-drain-grate",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street",
+    "confusables": [
+      {
+        "term": "road",
+        "catalogId": "road",
+        "distinction": {
+          "zhHant": "street 通常指城鎮中兩旁有建築物的道路；road 可指各種道路，也包括城外道路。",
+          "en": "A street is usually a road in a town with buildings along it; road is broader and includes routes outside towns.",
+          "ja": "street は通常、建物が並ぶ町中の道で、road は町の外も含む道全般を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "street-sign",
+    "confusables": [
+      {
+        "term": "traffic sign",
+        "catalogId": "traffic-sign",
+        "distinction": {
+          "zhHant": "street sign 通常顯示街道名稱；traffic sign 向道路使用者傳達交通規則或警告。",
+          "en": "A street sign usually names a street; a traffic sign gives road users a rule or warning.",
+          "ja": "street sign は通常通りの名前を示し、traffic sign は交通規則や注意を伝えます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "streetlight",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "subway-station",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "supermarket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tactile-paving",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "taxi-stand",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-cone",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-light",
+    "confusables": [
+      {
+        "term": "stop sign",
+        "catalogId": "stop-sign",
+        "distinction": {
+          "zhHant": "stop sign 要求駕駛在標誌前停車；traffic light 以變換燈號控制通行。",
+          "en": "A stop sign requires drivers to stop; a traffic light controls movement with changing lights.",
+          "ja": "stop sign は一時停止を指示し、traffic light は変わる信号で通行を制御します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "traffic-sign",
+    "confusables": [
+      {
+        "term": "street sign",
+        "catalogId": "street-sign",
+        "distinction": {
+          "zhHant": "street sign 通常顯示街道名稱；traffic sign 向道路使用者傳達交通規則或警告。",
+          "en": "A street sign usually names a street; a traffic sign gives road users a rule or warning.",
+          "ja": "street sign は通常通りの名前を示し、traffic sign は交通規則や注意を伝えます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "trash-can",
+    "confusables": [
+      {
+        "term": "bin",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "美式英文說 trash can；英式英文常說 bin 或 rubbish bin。",
+          "en": "American English says trash can; British English usually says bin or rubbish bin.",
+          "ja": "アメリカ英語では trash can、イギリス英語では bin や rubbish bin とよく言います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tree",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tunnel",
+    "confusables": [
+      {
+        "term": "underpass",
+        "catalogId": "underpass",
+        "distinction": {
+          "zhHant": "underpass 是從道路或鐵路下方通過的通道；tunnel 是穿過山體或地下的較廣泛說法。",
+          "en": "An underpass passes beneath a road or railway; tunnel is a broader term for a passage through ground or a mountain.",
+          "ja": "underpass は道路や鉄道の下を通る通路で、tunnel は地下や山を貫く通路を広く指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "underpass",
+    "confusables": [
+      {
+        "term": "tunnel",
+        "catalogId": "tunnel",
+        "distinction": {
+          "zhHant": "underpass 是從道路或鐵路下方通過的通道；tunnel 是穿過山體或地下的較廣泛說法。",
+          "en": "An underpass passes beneath a road or railway; tunnel is a broader term for a passage through ground or a mountain.",
+          "ja": "underpass は道路や鉄道の下を通る通路で、tunnel は地下や山を貫く通路を広く指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "utility-pole",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "vending-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "wheel-stop",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aisle",
+    "confusables": [
+      {
+        "term": "shelf",
+        "catalogId": "shelf",
+        "distinction": {
+          "zhHant": "aisle 是貨架之間供人走的通道；shelf 是擺放商品的層板。",
+          "en": "An aisle is a walkway between displays; a shelf is a horizontal surface holding goods.",
+          "ja": "aisle は棚の間を歩く通路で、shelf は商品を置く棚板です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bagging-counter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bakery-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barcode",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "barcode-scanner",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "beverage-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "canned-food",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cashier",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "checkout-counter",
+    "confusables": [
+      {
+        "term": "cash register",
+        "catalogId": "cash-register",
+        "distinction": {
+          "zhHant": "cash register 是計算並記錄交易的機器；checkout counter 是顧客結帳的櫃台區域。",
+          "en": "A cash register is the machine that records transactions; a checkout counter is the place where customers pay.",
+          "ja": "cash register は会計を記録する機械で、checkout counter は客が支払いをするカウンターです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coin-tray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coupon",
+    "confusables": [
+      {
+        "term": "discount",
+        "catalogId": "discount",
+        "distinction": {
+          "zhHant": "coupon 是取得優惠的憑證或代碼；discount 是實際減掉的價款或比例。",
+          "en": "A coupon is a voucher or code for an offer; a discount is the reduction in price itself.",
+          "ja": "coupon は割引を受けるための券やコードで、discount は実際に引かれる金額や割合です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "deli-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "discount",
+    "confusables": [
+      {
+        "term": "sale",
+        "catalogId": "sale",
+        "distinction": {
+          "zhHant": "sale 是促銷活動或特價銷售；discount 是相對原價減少的金額或比例。",
+          "en": "A sale is an event or offer with reduced prices; a discount is the amount or percentage taken off a price.",
+          "ja": "sale は値下げの販売やセールで、discount は元の価格から引かれる金額や割合です。"
+        }
+      },
+      {
+        "term": "coupon",
+        "catalogId": "coupon",
+        "distinction": {
+          "zhHant": "coupon 是取得優惠的憑證或代碼；discount 是實際減掉的價款或比例。",
+          "en": "A coupon is a voucher or code for an offer; a discount is the reduction in price itself.",
+          "ja": "coupon は割引を受けるための券やコードで、discount は実際に引かれる金額や割合です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "egg-carton",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "food-tray",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "frozen-food",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "frozen-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garbage-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "household-goods-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "meat-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "membership-card",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "plastic-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "price-tag",
+    "confusables": [
+      {
+        "term": "receipt",
+        "catalogId": "receipt",
+        "distinction": {
+          "zhHant": "price tag 在購買前標示商品價格；receipt 在付款後記錄交易。",
+          "en": "A price tag shows an item’s price before purchase; a receipt records the transaction after payment.",
+          "ja": "price tag は購入前に商品の価格を示し、receipt は支払い後の取引を記録します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "produce-bag-roll",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "produce-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "receipt",
+    "confusables": [
+      {
+        "term": "invoice",
+        "catalogId": "invoice",
+        "distinction": {
+          "zhHant": "receipt 證明款項已支付；invoice 是要求付款的帳單，通常在付款前開立。",
+          "en": "A receipt confirms payment; an invoice requests payment and is usually issued before it is paid.",
+          "ja": "receipt は支払い済みの証明で、invoice は支払いを請求する書類で、通常は支払い前に発行します。"
+        }
+      },
+      {
+        "term": "price tag",
+        "catalogId": "price-tag",
+        "distinction": {
+          "zhHant": "price tag 在購買前標示商品價格；receipt 在付款後記錄交易。",
+          "en": "A price tag shows an item’s price before purchase; a receipt records the transaction after payment.",
+          "ja": "price tag は購入前に商品の価格を示し、receipt は支払い後の取引を記録します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "recycling-box",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "refrigerated-display-case",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "refrigerated-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "reusable-bag",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sale",
+    "confusables": [
+      {
+        "term": "discount",
+        "catalogId": "discount",
+        "distinction": {
+          "zhHant": "sale 是促銷活動或特價銷售；discount 是相對原價減少的金額或比例。",
+          "en": "A sale is an event or offer with reduced prices; a discount is the amount or percentage taken off a price.",
+          "ja": "sale は値下げの販売やセールで、discount は元の価格から引かれる金額や割合です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "seafood-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "self-checkout-machine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shelf",
+    "confusables": [
+      {
+        "term": "aisle",
+        "catalogId": "aisle",
+        "distinction": {
+          "zhHant": "aisle 是貨架之間供人走的通道；shelf 是擺放商品的層板。",
+          "en": "An aisle is a walkway between displays; a shelf is a horizontal surface holding goods.",
+          "ja": "aisle は棚の間を歩く通路で、shelf は商品を置く棚板です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shopping-basket",
+    "confusables": [
+      {
+        "term": "shopping cart",
+        "catalogId": "shopping-cart",
+        "distinction": {
+          "zhHant": "shopping basket 通常手提；shopping cart 有輪子，適合較多商品。",
+          "en": "A shopping basket is usually carried by hand; a shopping cart has wheels for more items.",
+          "ja": "shopping basket は通常手で持ち、shopping cart は車輪があって品数が多いときに使います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shopping-cart",
+    "confusables": [
+      {
+        "term": "shopping basket",
+        "catalogId": "shopping-basket",
+        "distinction": {
+          "zhHant": "shopping basket 通常手提；shopping cart 有輪子，適合較多商品。",
+          "en": "A shopping basket is usually carried by hand; a shopping cart has wheels for more items.",
+          "ja": "shopping basket は通常手で持ち、shopping cart は車輪があって品数が多いときに使います。"
+        }
+      },
+      {
+        "term": "trolley",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "美式英文說 shopping cart；英式英文說 trolley。",
+          "en": "American English says shopping cart; British English says trolley.",
+          "ja": "アメリカ英語では shopping cart、イギリス英語では trolley と言います。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "shopping-cart-return",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "snack-section",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "airplane",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "airship",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ambulance",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle",
+    "confusables": [
+      {
+        "term": "bike",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "bicycle 較正式；bike 是日常口語的說法，意思相同。",
+          "en": "Bicycle is more formal; bike is the everyday word for the same thing.",
+          "ja": "bicycle はややかたい言い方で、bike は同じものを指す日常的な言い方です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bicycle-helmet",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "boat",
+    "confusables": [
+      {
+        "term": "ship",
+        "catalogId": null,
+        "distinction": {
+          "zhHant": "boat 通常指較小的船；ship 通常指在海上航行的大船。",
+          "en": "A boat is usually smaller; a ship is usually a large vessel that sails at sea.",
+          "ja": "boat は通常小さめの船、ship は通常海を航行する大きな船を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus",
+    "confusables": [
+      {
+        "term": "coach",
+        "catalogId": "coach",
+        "distinction": {
+          "zhHant": "bus 通常用於市區或短程路線；coach 通常是有行李空間、較舒適的長途巴士。",
+          "en": "A bus is often for local routes; a coach is usually a more comfortable long-distance bus with luggage space.",
+          "ja": "bus は市内や短距離の路線に多く、coach は通常荷物スペースのある長距離向けのバスです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "bus-stop-button",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cable-car",
+    "confusables": [
+      {
+        "term": "gondola lift",
+        "catalogId": "gondola-lift",
+        "distinction": {
+          "zhHant": "cable car 在不同地區可能指纜車或軌道車；gondola lift 特別指懸掛纜索上的封閉車廂。",
+          "en": "Cable car can mean different cable-operated vehicles by region; a gondola lift specifically has enclosed cabins hanging from a cable.",
+          "ja": "cable car は地域により異なる索道車両を指しますが、gondola lift はケーブルから吊られた密閉型のゴンドラを指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "camper-van",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "canoe",
+    "confusables": [
+      {
+        "term": "kayak",
+        "catalogId": "kayak",
+        "distinction": {
+          "zhHant": "canoe 通常用單葉槳，划船者常坐在較高的位置；kayak 通常用雙葉槳，坐姿較低。",
+          "en": "A canoe is typically paddled with a single-bladed paddle and a higher seat; a kayak typically uses a double-bladed paddle and a lower seat.",
+          "ja": "canoe は通常片側にブレードのあるパドルで、比較的高い位置に座り、kayak は通常両側にブレードのあるパドルで低く座ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "car",
+    "confusables": [
+      {
+        "term": "van",
+        "catalogId": "van",
+        "distinction": {
+          "zhHant": "car 主要設計來載乘客；van 通常車體較高、車內空間較大，可載較多乘客或貨物。",
+          "en": "A car is mainly for passengers; a van is usually taller and roomier for more people or cargo.",
+          "ja": "car は主に乗客を乗せ、van は通常背が高く室内が広く、人や荷物を多く運べます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "coach",
+    "confusables": [
+      {
+        "term": "bus",
+        "catalogId": "bus",
+        "distinction": {
+          "zhHant": "bus 通常用於市區或短程路線；coach 通常是有行李空間、較舒適的長途巴士。",
+          "en": "A bus is often for local routes; a coach is usually a more comfortable long-distance bus with luggage space.",
+          "ja": "bus は市内や短距離の路線に多く、coach は通常荷物スペースのある長距離向けのバスです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cruise-ship",
+    "confusables": [
+      {
+        "term": "ferry",
+        "catalogId": "ferry",
+        "distinction": {
+          "zhHant": "ferry 定期運送人或車輛往返兩地；cruise ship 的航程本身通常是觀光旅遊體驗。",
+          "en": "A ferry transports people or vehicles between places; a cruise ship is primarily for the travel experience itself.",
+          "ja": "ferry は人や車を二地点間で運び、cruise ship は航海そのものを楽しむ観光船です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "delivery-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electric-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "electric-scooter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ferry",
+    "confusables": [
+      {
+        "term": "cruise ship",
+        "catalogId": "cruise-ship",
+        "distinction": {
+          "zhHant": "ferry 定期運送人或車輛往返兩地；cruise ship 的航程本身通常是觀光旅遊體驗。",
+          "en": "A ferry transports people or vehicles between places; a cruise ship is primarily for the travel experience itself.",
+          "ja": "ferry は人や車を二地点間で運び、cruise ship は航海そのものを楽しむ観光船です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "fire-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "garbage-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gondola-lift",
+    "confusables": [
+      {
+        "term": "cable car",
+        "catalogId": "cable-car",
+        "distinction": {
+          "zhHant": "cable car 在不同地區可能指纜車或軌道車；gondola lift 特別指懸掛纜索上的封閉車廂。",
+          "en": "Cable car can mean different cable-operated vehicles by region; a gondola lift specifically has enclosed cabins hanging from a cable.",
+          "ja": "cable car は地域により異なる索道車両を指しますが、gondola lift はケーブルから吊られた密閉型のゴンドラを指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "helicopter",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "high-speed-train",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "hot-air-balloon",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kayak",
+    "confusables": [
+      {
+        "term": "canoe",
+        "catalogId": "canoe",
+        "distinction": {
+          "zhHant": "canoe 通常用單葉槳，划船者常坐在較高的位置；kayak 通常用雙葉槳，坐姿較低。",
+          "en": "A canoe is typically paddled with a single-bladed paddle and a higher seat; a kayak typically uses a double-bladed paddle and a lower seat.",
+          "ja": "canoe は通常片側にブレードのあるパドルで、比較的高い位置に座り、kayak は通常両側にブレードのあるパドルで低く座ります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kei-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "kei-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "light-rail",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "minibus",
+    "confusables": [
+      {
+        "term": "van",
+        "catalogId": "van",
+        "distinction": {
+          "zhHant": "minibus 是供乘客乘坐的小型巴士；van 可用來載人或載貨，不一定按巴士路線營運。",
+          "en": "A minibus is a small bus for passengers; a van can carry people or cargo and need not operate as a bus.",
+          "ja": "minibus は乗客用の小型バスで、van は人や荷物を運べますが、必ずしもバスとして運行しません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "monorail",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "motorcycle",
+    "confusables": [
+      {
+        "term": "scooter",
+        "catalogId": "scooter",
+        "distinction": {
+          "zhHant": "motorcycle 通常跨坐、換檔方式與車架形式較多；scooter 通常有腳踏板與較低的跨坐高度。",
+          "en": "A motorcycle has a straddled frame and varied transmissions; a motor scooter usually has a step-through frame and footboard.",
+          "ja": "motorcycle はまたがる車体で変速方式もさまざまですが、原動機付きの scooter は通常足を置く床とまたぎやすい車体があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "mrt",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "MRT 是部分城市使用的「大眾捷運系統」縮寫；在不熟悉該系統的英語地區，說 subway、metro 或 train 通常更清楚。",
+      "en": "MRT is an abbreviation used by some cities for mass rapid transit; subway, metro, or train may be clearer to readers unfamiliar with that system.",
+      "ja": "MRT は一部の都市で使う都市高速交通の略称で、知らない相手には subway、metro、train と言う方が伝わりやすい場合があります。"
+    }
+  },
+  {
+    "wordId": "platform-screen-door",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "police-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rickshaw",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "rocket",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "roller-skates",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sailboat",
+    "confusables": [
+      {
+        "term": "speedboat",
+        "catalogId": "speedboat",
+        "distinction": {
+          "zhHant": "sailboat 主要利用帆接風前進；speedboat 主要由引擎推進。",
+          "en": "A sailboat mainly uses wind in its sails; a speedboat is mainly engine-powered.",
+          "ja": "sailboat は主に帆で風を受けて進み、speedboat は主にエンジンで進みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "school-bus",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scooter",
+    "confusables": [
+      {
+        "term": "motorcycle",
+        "catalogId": "motorcycle",
+        "distinction": {
+          "zhHant": "motorcycle 通常跨坐、換檔方式與車架形式較多；scooter 通常有腳踏板與較低的跨坐高度。",
+          "en": "A motorcycle has a straddled frame and varied transmissions; a motor scooter usually has a step-through frame and footboard.",
+          "ja": "motorcycle はまたがる車体で変速方式もさまざまですが、原動機付きの scooter は通常足を置く床とまたぎやすい車体があります。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "scooter 可能指機車型踏板車，也可能指腳踩滑板車；說明是否有引擎可避免誤解。",
+      "en": "Scooter can mean a motor scooter or a kick scooter; specifying whether it has a motor avoids confusion.",
+      "ja": "scooter は原動機付きのスクーターもキックボードも指すため、モーターの有無を明示すると誤解を防げます。"
+    }
+  },
+  {
+    "wordId": "skateboard",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "speedboat",
+    "confusables": [
+      {
+        "term": "sailboat",
+        "catalogId": "sailboat",
+        "distinction": {
+          "zhHant": "sailboat 主要利用帆接風前進；speedboat 主要由引擎推進。",
+          "en": "A sailboat mainly uses wind in its sails; a speedboat is mainly engine-powered.",
+          "ja": "sailboat は主に帆で風を受けて進み、speedboat は主にエンジンで進みます。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sports-car",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "submarine",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "subway",
+    "confusables": [
+      {
+        "term": "train",
+        "catalogId": "train",
+        "distinction": {
+          "zhHant": "train 泛指軌道列車；subway 特別指城市快速運輸系統，在美式英文常指地鐵。",
+          "en": "Train is a general rail vehicle; subway refers to an urban rapid-transit system, especially an underground one in American English.",
+          "ja": "train は鉄道車両全般で、subway は都市の高速交通網を指し、米国英語では特に地下鉄を指します。"
+        }
+      },
+      {
+        "term": "tram",
+        "catalogId": "tram",
+        "distinction": {
+          "zhHant": "tram 通常在街道上的軌道行駛；subway 通常是與街道交通分離的都市鐵路系統。",
+          "en": "A tram usually runs on tracks in streets; a subway is usually separated from street traffic.",
+          "ja": "tram は通常道路上の線路を走り、subway は通常道路交通から分離された都市鉄道です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "美式英文 subway 通常指地鐵；英式英文較常說 underground 或 tube，subway 在英國也可指地下行人通道。",
+      "en": "In American English, subway usually means urban rail; British English more often uses underground or tube, and subway can also mean a pedestrian underpass.",
+      "ja": "米国英語の subway は通常地下鉄で、英国英語では underground や tube が一般的です。英国の subway は地下歩道も指します。"
+    }
+  },
+  {
+    "wordId": "taxi",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ticket-gate",
+    "confusables": [
+      {
+        "term": "ticket machine",
+        "catalogId": "ticket-machine",
+        "distinction": {
+          "zhHant": "ticket machine 用來買票或加值；ticket gate 用來驗票後通行。",
+          "en": "A ticket machine sells or loads tickets; a ticket gate checks them as you pass through.",
+          "ja": "ticket machine は切符の購入やチャージに使い、ticket gate は通るときに切符を確認します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "ticket-machine",
+    "confusables": [
+      {
+        "term": "ticket gate",
+        "catalogId": "ticket-gate",
+        "distinction": {
+          "zhHant": "ticket machine 用來買票或加值；ticket gate 用來驗票後通行。",
+          "en": "A ticket machine sells or loads tickets; a ticket gate checks them as you pass through.",
+          "ja": "ticket machine は切符の購入やチャージに使い、ticket gate は通るときに切符を確認します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tow-truck",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train",
+    "confusables": [
+      {
+        "term": "subway",
+        "catalogId": "subway",
+        "distinction": {
+          "zhHant": "train 泛指軌道列車；subway 特別指城市快速運輸系統，在美式英文常指地鐵。",
+          "en": "Train is a general rail vehicle; subway refers to an urban rapid-transit system, especially an underground one in American English.",
+          "ja": "train は鉄道車両全般で、subway は都市の高速交通網を指し、米国英語では特に地下鉄を指します。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "train-strap",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tram",
+    "confusables": [
+      {
+        "term": "subway",
+        "catalogId": "subway",
+        "distinction": {
+          "zhHant": "tram 通常在街道上的軌道行駛；subway 通常是與街道交通分離的都市鐵路系統。",
+          "en": "A tram usually runs on tracks in streets; a subway is usually separated from street traffic.",
+          "ja": "tram は通常道路上の線路を走り、subway は通常道路交通から分離された都市鉄道です。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "tricycle",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "truck",
+    "confusables": [
+      {
+        "term": "van",
+        "catalogId": "van",
+        "distinction": {
+          "zhHant": "van 通常是封閉式車身、貨物與車廂連在一起；truck 通常有較明顯的貨斗或大型載貨空間。",
+          "en": "A van usually has an enclosed cargo area integrated with the body; a truck usually has a distinct or larger cargo bed or compartment.",
+          "ja": "van は通常荷室が車体と一体の箱型で、truck は独立した荷台や大きな貨物スペースを持つことが多いです。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "van",
+    "confusables": [
+      {
+        "term": "car",
+        "catalogId": "car",
+        "distinction": {
+          "zhHant": "car 主要設計來載乘客；van 通常車體較高、車內空間較大，可載較多乘客或貨物。",
+          "en": "A car is mainly for passengers; a van is usually taller and roomier for more people or cargo.",
+          "ja": "car は主に乗客を乗せ、van は通常背が高く室内が広く、人や荷物を多く運べます。"
+        }
+      },
+      {
+        "term": "truck",
+        "catalogId": "truck",
+        "distinction": {
+          "zhHant": "van 通常是封閉式車身、貨物與車廂連在一起；truck 通常有較明顯的貨斗或大型載貨空間。",
+          "en": "A van usually has an enclosed cargo area integrated with the body; a truck usually has a distinct or larger cargo bed or compartment.",
+          "ja": "van は通常荷室が車体と一体の箱型で、truck は独立した荷台や大きな貨物スペースを持つことが多いです。"
+        }
+      },
+      {
+        "term": "minibus",
+        "catalogId": "minibus",
+        "distinction": {
+          "zhHant": "minibus 是供乘客乘坐的小型巴士；van 可用來載人或載貨，不一定按巴士路線營運。",
+          "en": "A minibus is a small bus for passengers; a van can carry people or cargo and need not operate as a bus.",
+          "ja": "minibus は乗客用の小型バスで、van は人や荷物を運べますが、必ずしもバスとして運行しません。"
+        }
+      }
+    ],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aquarius",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "aries",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "cancer",
+    "confusables": [],
+    "mistakes": [],
+    "usage": {
+      "zhHant": "Cancer 大寫時可指巨蟹座；cancer 小寫時通常指癌症，兩者意思不同。",
+      "en": "Capitalized Cancer can mean the zodiac sign; lowercase cancer usually means the disease.",
+      "ja": "大文字の Cancer は星座のかに座を指し、小文字の cancer は通常病気のがんを指します。"
+    }
+  },
+  {
+    "wordId": "capricorn",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "gemini",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "leo",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "libra",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "pisces",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "sagittarius",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "scorpio",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "taurus",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  },
+  {
+    "wordId": "virgo",
+    "confusables": [],
+    "mistakes": [],
+    "usage": null
+  }
+]

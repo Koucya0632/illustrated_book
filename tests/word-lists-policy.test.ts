@@ -124,7 +124,7 @@ test("removing a word is answered before any membership check", () => {
 test("reorder and delete only require the feature to exist", () => {
   for (const route of ["app/api/users/word-lists/order/route.ts", "app/api/users/word-lists/[id]/route.ts"]) {
     const src = read(route);
-    const handler = src.slice(src.indexOf(route.endsWith("order/route.ts") ? "export async function PUT" : "export async function DELETE"));
+    const handler = src.slice(src.indexOf(route.endsWith("order/route.ts") ? "export async function POST" : "export async function DELETE"));
     assert.ok(handler.includes("checkKeepList("));
     assert.ok(!handler.includes("checkEditList("));
   }

@@ -225,6 +225,15 @@ export interface Word {
   confusingWords?: ConfusingWord[];
 }
 
+/** 詞條延伸內容, served by /api/words/:id/insights (never part of the cached word detail). */
+export interface WordInsights {
+  confusables: { term: string; catalogId: string | null; distinction: string }[];
+  mistakes: { wrong: string; right: string; why: string }[];
+  usage: string | null;
+  lockedMistakesCount: number;
+  usageLocked: boolean;
+}
+
 /** Pick the primary Chinese definition from a list of multi-language defs. */
 export function primaryChinese(defs: Definition[]): string {
   const zh = defs

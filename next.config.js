@@ -71,6 +71,8 @@ const nextConfig = {
     return [
       publicEntry("/api/words"),
       publicEntry("/api/words/:id"),
+      // Membership-aware 詞條延伸內容: the only per-caller slice of a word.
+      privateEntry("/api/words/:id/insights"),
       publicEntry("/api/categories"),
       // /api/search is public or per-user depending on the request. With
       // `learning` the URL carries the whole identity — the same URL means the

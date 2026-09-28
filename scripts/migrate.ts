@@ -21,6 +21,7 @@ import { MAIN_WORD_CLOTHING_IDS } from "../lib/main-word-clothing-2026-09";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 import { lockDownPublicTables } from "../lib/rls-lockdown";
+import { WORD_INSIGHTS_DDL } from "../lib/word-insights-schema";
 
 const GUARDED_PUBLISH_SERIES = [
   { category: "professions", ids: MAIN_WORD_PROFESSIONS_IDS },
@@ -644,6 +645,12 @@ const DDL = [
    END $$`,
   `CREATE INDEX IF NOT EXISTS word_rel_src_idx ON word_relations(source_word_id)`,
   `CREATE INDEX IF NOT EXISTS word_rel_tgt_idx ON word_relations(target_word_id)`,
+
+  // English-learning extensions are loaded from reviewed static JSON by
+  // scripts/load-word-insights.ts. The app alone reads these tables: RLS has no
+  // client SELECT policy, so member-only explanations cannot be fetched via
+  // Supabase's public REST endpoint.
+  ...WORD_INSIGHTS_DDL,
 
   // ---- RLS on the new tables: public SELECT, writes via service role only ----
   `ALTER TABLE categories                ENABLE ROW LEVEL SECURITY`,

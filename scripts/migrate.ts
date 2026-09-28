@@ -1896,6 +1896,31 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS events_type_created_idx
      ON events(type, created_at DESC)`,
 
+  // ---- 個人詞表 (docs/MEMBERSHIP_TIER_STATUS.md §6 1.1) ----
+  // A member's named lists of official words, one learning language each. Only
+  // the public dictionary (the same FK as user_favorites): 自製 and 物見 cards
+  // live in other id namespaces and other tables. Position is the user's order,
+  // and also which lists stay editable after a downgrade (lib/word-lists/policy.ts).
+  `CREATE TABLE IF NOT EXISTS user_word_lists (
+     id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+     user_id         UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     target_language TEXT NOT NULL CHECK (target_language IN ('en','ja')),
+     name            TEXT NOT NULL CHECK (char_length(btrim(name)) BETWEEN 1 AND 40),
+     position        INT NOT NULL DEFAULT 0,
+     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_word_lists_user_idx
+     ON user_word_lists(user_id, target_language, position, created_at)`,
+  `CREATE TABLE IF NOT EXISTS user_word_list_items (
+     list_id  UUID NOT NULL REFERENCES user_word_lists(id) ON DELETE CASCADE,
+     word_id  TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     added_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (list_id, word_id)
+   )`,
+  `CREATE INDEX IF NOT EXISTS user_word_list_items_word_idx
+     ON user_word_list_items(word_id)`,
+
 ];
 
 // ---- Phase 3: drop legacy `words` columns ----

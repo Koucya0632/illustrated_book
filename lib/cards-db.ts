@@ -171,6 +171,11 @@ export interface QueueFilter {
   categories?: string[];
   /** Restrict to cards in any of these decks (cards.deck_key). Empty = no filter. */
   deckKeys?: string[];
+  /**
+   * Restrict to the words of one 個人詞表. The caller has already checked the
+   * list is the user's and may be studied (lib/word-lists/policy.ts).
+   */
+  wordListId?: string;
 }
 
 export type QueueMode = "new" | "review" | "both";
@@ -195,6 +200,11 @@ export async function fetchDue(
   const tags = (filter.tags ?? []).filter((t) => t.length > 0);
   const cats = (filter.categories ?? []).filter((c) => c.length > 0 && c !== "all");
   const decks = (filter.deckKeys ?? []).filter((d) => d.length > 0 && d !== "all");
+  const listFilter = filter.wordListId
+    ? sql`AND c.word_id IN (
+        SELECT word_id FROM user_word_list_items WHERE list_id = ${filter.wordListId}::uuid
+      )`
+    : sql``;
 
   // Review queue: ordered by due date asc. The chinese display label comes
   // from a LATERAL pick of the first zh definition (sort_order asc).
@@ -238,6 +248,7 @@ export async function fetchDue(
         : sql``}
       ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
+      ${listFilter}
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
   `) as unknown as Record<string, unknown>[]);
@@ -289,6 +300,7 @@ export async function fetchDue(
         : sql``}
       ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
+      ${listFilter}
     ORDER BY c.id ASC
     LIMIT ${newBudget}
   `) as unknown as Record<string, unknown>[]) : [];

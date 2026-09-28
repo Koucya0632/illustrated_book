@@ -23,6 +23,8 @@ import { resolveQueueThemeScope } from "@/lib/study-sources";
 import { applyMembershipStudyScope } from "@/lib/study-membership";
 import { getLockedAtlasItemIds, getMembershipAccess } from "@/lib/atlas/entitlement";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
+import { getWordList, wordListIndex } from "@/lib/word-lists/db";
+import { checkStudyList, wordListLimits } from "@/lib/word-lists/policy";
 import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 import { hintDefinition } from "@/lib/study-hint";
 import { readLang, readLearningDirection } from "@/lib/cache-headers";
@@ -203,11 +205,28 @@ export async function GET(req: Request) {
   const reviewOnly = mode === "review";
   // What the user picked, then what this account may study
   // (docs/MEMBERSHIP_ENGINEERING_CHECKLIST.md §3; no-op under policy v1).
-  const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic } =
-    applyMembershipStudyScope(
-      resolveQueueThemeScope(categories, reviewOnly),
-      await getMembershipAccess(userId),
-    );
+  const access = await getMembershipAccess(userId);
+  // `?list=<id>`: study one 個人詞表. It replaces the theme selection — a list
+  // is official words only, so 自製 and 物見 sources are off, and the words
+  // themselves are the filter (no category narrowing on top).
+  const listParam = (searchParams.get("list") ?? "").trim();
+  let wordListId: string | undefined;
+  if (listParam) {
+    const list = /^[0-9a-f-]{36}$/i.test(listParam) ? await getWordList(userId, listParam) : null;
+    if (!list) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    const locked = (await wordListIndex(userId, list)) >= wordListLimits(access).lists;
+    const refusal = checkStudyList(access, locked);
+    if (refusal) {
+      return NextResponse.json(
+        { error: refusal.error, upgradeTo: refusal.upgradeTo },
+        { status: refusal.status },
+      );
+    }
+    wordListId = list.id;
+  }
+  const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic } = wordListId
+    ? { publicCategories: [], wantsCustom: false, wantsCommunity: false, shouldFetchPublic: true }
+    : applyMembershipStudyScope(resolveQueueThemeScope(categories, reviewOnly), access);
 
   try {
     // The selected learning direction determines both the card deck and the
@@ -242,7 +261,7 @@ export async function GET(req: Request) {
             userId,
             limit,
             newLimit,
-            { cefr, tags, categories: publicCategories, deckKeys: effectiveDecks },
+            { cefr, tags, categories: publicCategories, deckKeys: effectiveDecks, wordListId },
             mode,
           )
         : Promise.resolve([]),

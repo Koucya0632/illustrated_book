@@ -1921,6 +1921,18 @@ const DDL = [
   `CREATE INDEX IF NOT EXISTS user_word_list_items_word_idx
      ON user_word_list_items(word_id)`,
 
+  // ---- 個人筆記 (docs/MEMBERSHIP_TIER_STATUS.md §6 1.2) ----
+  // One note per person per official word, shared by both learning languages
+  // (a word id is the same entry in either). Same FK as user_favorites.
+  `CREATE TABLE IF NOT EXISTS user_word_notes (
+     user_id    UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+     word_id    TEXT NOT NULL REFERENCES words(id) ON DELETE CASCADE,
+     body       TEXT NOT NULL CHECK (char_length(btrim(body)) BETWEEN 1 AND 500),
+     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+     PRIMARY KEY (user_id, word_id)
+   )`,
+
 ];
 
 // ---- Phase 3: drop legacy `words` columns ----

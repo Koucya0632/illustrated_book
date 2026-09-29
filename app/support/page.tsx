@@ -6,7 +6,7 @@ import Mascot from "@/components/tuji/Mascot";
 export const metadata: Metadata = {
   title: "Support · Tuji",
   description:
-    "Contact Tuji support, get help with a Tuji Pro subscription, and learn how to request account deletion.",
+    "Contact Tuji support, get help with Lifetime membership or a Tuji Pro subscription, and learn how to request account deletion.",
 };
 
 export default function SupportPage() {
@@ -107,6 +107,19 @@ export default function SupportPage() {
               </p>
               {/* Same reasoning as the UID note above: a payment receipt does not
                   identify the Tuji account that should have been unlocked. */}
+              <p>
+                <strong>Lifetime membership</strong> (永久會員) is a one-time App Store purchase,
+                not a subscription. It unlocks every official picture-dictionary series, 20
+                personal atlas cards, 10 AI recognitions a month, personal word lists and notes,
+                and saving, studying and publishing in 物見. Tuji Pro includes everything in
+                Lifetime membership, and when a Pro subscription ends you keep Lifetime
+                membership.
+              </p>
+              <p>
+                Restore it the same way as Pro: 設定 → Tuji Pro → 恢復購買. If Apple refunds a
+                Lifetime purchase, the membership is removed from your account; your study
+                progress, word lists, notes and cards are kept.
+              </p>
               <p>
                 Paid but still not unlocked? Send it from 我的 → 意見回饋 inside the app so your
                 account comes attached, or email us with your Tuji UID.

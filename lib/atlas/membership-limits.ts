@@ -2,14 +2,15 @@
 // limitsFor(tier, policy); nothing else states a number.
 //
 //              slots  ordinary/mo  precision/mo
-//   v1 free       3        30           0        ← pre-membership (current)
-//   v1 pro      300       500          30        ← pre-membership (current)
-//   v2 free       0         0           0
+//   v1 free       3        30           0        ← pre-membership (rollback only)
+//   v1 pro      300       500          30        ← pre-membership (rollback only)
+//   v2 free       0         0           0        ← production since 2026-09-29
 //   v2 lifetime  20        10           0
 //   v2 pro      300       200          30
 //
 // v1 has no lifetime tier: a holding is recorded and reported but limits stay
-// Free, so the purchase path can ship and be tested before the cutover.
+// Free. That let the purchase path ship and be tested before the cutover, and
+// it is what lifetime holders get if production is ever rolled back to v1.
 // The ATLAS_* env overrides apply to v1 only; v2 is the published promise.
 
 import type { MembershipPolicy, MembershipTier } from "@/lib/atlas/membership";

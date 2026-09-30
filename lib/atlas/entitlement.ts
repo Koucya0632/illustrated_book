@@ -1,9 +1,11 @@
-// Atlas Free/Pro entitlement + usage + enforcement. Server is the authority:
+// Atlas membership entitlement + usage + enforcement. Server is the authority:
 // the client mirrors this for UI but every write path re-checks here.
-// Model mirrors docs/ATLAS_PRICING_PLAN.md:
-//   - atlasSlotsLimit:            capacity (Free 3, Pro 300) — enforced at confirm
-//   - primaryAiSoftLimitMonthly:  ordinary AI / month (Free 30, Pro 500)
-//   - precisionAiLimitMonthly:    高精度 / month (Free 0, Pro 30) — user-triggered
+// Model mirrors docs/ATLAS_PRICING_PLAN.md. Production runs MEMBERSHIP_POLICY=v2
+// (three tiers: free / lifetime / pro) since 2026-09-29; v1 is the rollback.
+// Numbers live only in lib/atlas/membership-limits.ts:
+//   - atlasSlotsLimit:            capacity — enforced at confirm
+//   - primaryAiSoftLimitMonthly:  ordinary AI / month
+//   - precisionAiLimitMonthly:    高精度 / month — user-triggered, Pro only
 //   - adsRequiredForCardGeneration: always false — the rewarded-ad plan was
 //                                  dropped; released clients decode this as a
 //                                  required field, so it stays in the payload
@@ -249,7 +251,7 @@ export async function getAtlasGateContext(userId: string): Promise<{
 /**
  * Tier + policy for the membership gates that only exist under v2 (study,
  * 補充, upload). Under v1 they are all no-ops, so the lookup is skipped
- * entirely — hot paths pay nothing until the cutover.
+ * entirely — hot paths pay nothing while v1 is in force (i.e. after a rollback).
  */
 export async function getMembershipAccess(
   userId: string,

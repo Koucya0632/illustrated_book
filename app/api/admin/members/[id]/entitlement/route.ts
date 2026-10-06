@@ -27,6 +27,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
   let body: { action?: string; days?: unknown; reason?: unknown };
   try {
     body = await req.json();
+    if (!body || typeof body !== "object" || Array.isArray(body)) throw new Error("invalid body");
   } catch {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
@@ -46,7 +47,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
   try {
     if (body.action === "grant") {
       const days = Number(body.days);
-      if (!Number.isFinite(days) || days < 1 || days > MAX_GRANT_DAYS) {
+      if (!Number.isInteger(days) || days < 1 || days > MAX_GRANT_DAYS) {
         return NextResponse.json({ error: "天數不合法" }, { status: 400 });
       }
       const result = await grantProAccess({ userId, days, reason, grantedBy: ACTOR });
@@ -73,7 +74,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
       // Only operator-given holdings; an App Store purchase ends via Apple's refund.
       const result = await revokeLifetimeGrant({ userId, reason, revokedBy: ACTOR });
       if (result.revoked === 0) {
-        return NextResponse.json({ error: "沒有可收回的永久權益（App Store 購買只能經 Apple 退款）" }, { status: 409 });
+        return NextResponse.json({ error: "沒有可收回的永久會員贈與（商店購買請由原商店退款）" }, { status: 409 });
       }
       return NextResponse.json({ ok: true, revoked: result.revoked });
     }

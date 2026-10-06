@@ -5,11 +5,17 @@ import { membershipTierOf } from "@/lib/atlas/entitlement";
 import { membershipPolicy } from "@/lib/atlas/membership";
 import { limitsFor } from "@/lib/atlas/membership-limits";
 import MemberEntitlementActions from "./MemberEntitlementActions";
+import MemberCreditRefunds from "./MemberCreditRefunds";
 
 export const dynamic = "force-dynamic";
 
 const CHANNEL_LABELS: Record<string, string> = {
   appstore: "App Store",
+  play: "Google Play",
+  lifetime_grant: "贈與永久會員",
+  lifetime_revoke: "收回永久權益",
+  lifetime_purchase: "購買永久會員",
+  legacy_pro_migration: "舊 Pro 轉移",
   grant: "手動贈與",
   grant_revoke: "收回贈與",
   transfer: "訂閱轉移",
@@ -38,6 +44,7 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
         ← 會員列表
       </Link>
 
+      <MemberCreditRefunds userId={summary.userId} />
       <header className="rounded-xl2 bg-white p-6 shadow-card">
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="font-mono text-2xl font-bold text-ink">{summary.username}</h1>
@@ -55,21 +62,22 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
           <Field label="暱稱" value={summary.nickname ?? "—"} />
           <Field label="Email" value={summary.email || "—"} />
           <Field label="註冊時間" value={fmt(summary.createdAt)} />
-          <Field label="實際到期" value={effective.expiresAt ? fmt(effective.expiresAt) : "—"} />
+          <Field label="Pro 到期" value={effective.tier === "pro" ? effective.expiresAt ? fmt(effective.expiresAt) : "無到期日" : "—"} />
+          <Field label="永久會員" value={effective.hasLifetime ? "已持有（無到期日）" : "未持有"} />
         </dl>
         <p className="mt-4 rounded-lg bg-cream/60 p-3 text-xs leading-relaxed text-muted">
-          「實際到期」是訂閱與贈與取聯集後的結果（到期日晚的那個勝出）。下面兩塊分開列出來源——
-          決定怎麼回覆使用者的是「他的 Pro 從哪來」，不是「他是不是 Pro」。
+          Pro 到期取訂閱與贈與中較晚的日期。永久會員獨立保留，Pro 到期後會回到永久會員。
+          權益綁定 Tuji 帳號，Android 與 iOS 共用。
         </p>
       </header>
 
       <section className="rounded-xl2 bg-white p-6 shadow-card">
-        <h2 className="font-bold text-ink">App Store 訂閱</h2>
+        <h2 className="font-bold text-ink">商店訂閱</h2>
         {subscription ? (
           <dl className="mt-3 grid gap-x-6 gap-y-3 text-sm sm:grid-cols-2">
             <Field label="狀態" value={subscription.tier === "pro" ? "pro" : "free"} />
             <Field label="到期" value={fmt(subscription.expiresAt)} />
-            <Field label="來源" value={subscription.source ?? "—"} />
+            <Field label="來源" value={subscription.source === "appstore" ? "App Store" : subscription.source === "play" ? "Google Play" : subscription.source ?? "—"} />
             <Field label="最後更新" value={fmt(subscription.updatedAt)} />
             <Field
               label="Original transaction id"
@@ -80,7 +88,7 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
           <p className="mt-2 text-sm text-muted">沒有訂閱紀錄——這個帳號從未完成購買驗證。</p>
         )}
         <p className="mt-4 text-xs leading-relaxed text-muted">
-          退款與取消由 App Store 通知自動處理，不需要人工收回。後台沒有、也不該有「取消訂閱」的按鈕。
+          退款與取消由原購買商店處理；贈與與收回不會修改商店訂閱。
         </p>
       </section>
 

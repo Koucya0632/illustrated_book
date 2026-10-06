@@ -57,7 +57,7 @@ export async function uploadAtlasImageBuffers(
     { path: paths.thumbPath, body: buffers.thumb },
   ];
   // Parallel — the two uploads are independent.
-  await Promise.all(
+  const results = await Promise.allSettled(
     uploads.map(async (upload) => {
       const { error } = await supabase.storage
         .from(ATLAS_PRIVATE_BUCKET)
@@ -69,6 +69,9 @@ export async function uploadAtlasImageBuffers(
       if (error) throw new Error(error.message);
     }),
   );
+  // Wait for both writes before cleanup: a late thumbnail must not recreate an orphan.
+  const failed = results.find(result => result.status === "rejected");
+  if (failed?.status === "rejected") throw failed.reason;
 }
 
 async function removeStorageObjects(bucket: string, paths: string[]): Promise<void> {

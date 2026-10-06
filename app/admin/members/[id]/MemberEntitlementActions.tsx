@@ -16,6 +16,7 @@ export default function MemberEntitlementActions({
   lifetime: string | null;
 }) {
   const router = useRouter();
+  const [kind, setKind] = useState<"lifetime" | "pro">("lifetime");
   const [days, setDays] = useState<number>(30);
   const [reason, setReason] = useState("");
   const [busy, setBusy] = useState(false);
@@ -31,11 +32,11 @@ export default function MemberEntitlementActions({
       const res = await fetch(`/api/admin/members/${userId}/entitlement`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action, days, reason }),
+        body: JSON.stringify({ action, ...(action === "grant" ? { days } : {}), reason }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "操作失敗");
-      setDone(action === "grant" || action === "grant_lifetime" ? "已贈與" : "已收回");
+      setDone({ grant: "已贈與 Pro", revoke: "已收回 Pro 贈與", grant_lifetime: "已贈與永久會員，Android 與 iOS 共用", revoke_lifetime: "已收回永久會員贈與" }[action]);
       setReason("");
       router.refresh();
     } catch (e) {
@@ -47,7 +48,21 @@ export default function MemberEntitlementActions({
 
   return (
     <div className="mt-5 grid gap-3 border-t border-black/5 pt-5">
-      <div className="flex flex-wrap items-end gap-3">
+      <fieldset className="flex flex-wrap gap-4" disabled={busy}>
+        <legend className="mb-2 text-sm font-medium text-ink">贈與類型</legend>
+        <label className="flex items-center gap-2 text-sm">
+          <input type="radio" name="grant-kind" checked={kind === "lifetime"} onChange={() => setKind("lifetime")} />
+          永久會員
+        </label>
+        <label className="flex items-center gap-2 text-sm">
+          <input type="radio" name="grant-kind" checked={kind === "pro"} onChange={() => setKind("pro")} />
+          Pro（指定天數）
+        </label>
+      </fieldset>
+      <p className="text-xs leading-relaxed text-muted">
+        贈與綁定 Tuji 帳號，同一帳號在 Android 與 iOS 共用。永久會員沒有到期日；Pro 到期後仍保有永久會員。
+      </p>
+      {kind === "pro" && <div className="flex flex-wrap items-end gap-3">
         <label className="text-sm">
           <span className="mb-1 block font-medium text-ink">天數</span>
           <div className="flex gap-1">
@@ -75,7 +90,7 @@ export default function MemberEntitlementActions({
             />
           </div>
         </label>
-      </div>
+      </div>}
 
       <label className="text-sm">
         <span className="mb-1 block font-medium text-ink">理由（必填）</span>
@@ -87,77 +102,49 @@ export default function MemberEntitlementActions({
           className="w-full rounded-lg border border-black/10 px-3 py-2"
         />
         <span className="mt-1 block text-xs text-muted">
-          一年後唯一能回答「這個人為什麼是 Pro」的就是這行字。
+          請填寫贈與或收回的原因，會保存在權限異動紀錄。
         </span>
       </label>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="text-sm">
+        <span className="text-sm" role="status" aria-live="polite">
           {error && <span className="text-rose-600">{error}</span>}
           {done && <span className="text-sky-accent">{done}</span>}
         </span>
         <div className="flex gap-2">
-          {hasLiveGrant && (
+          {kind === "pro" && hasLiveGrant && (
             <button
               type="button"
               onClick={() => run("revoke")}
               disabled={busy || !reason.trim()}
               className="rounded-lg border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600 disabled:opacity-40"
             >
-              收回贈與
+              收回 Pro 贈與
             </button>
           )}
-          <button
-            type="button"
-            onClick={() => run("grant")}
-            disabled={busy || !reason.trim()}
-            className="rounded-lg bg-sky-accent px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
-          >
-            {busy ? "處理中…" : "贈與 Pro"}
-          </button>
-        </div>
-      </div>
-      <p className="text-xs leading-relaxed text-muted">
-        贈與不會動到 App Store 訂閱，收回也不會取消任何人的購買。補償付費用戶是安全的：
-        兩個來源取聯集，Apple 下次續訂不會蓋掉你送的天數。
-      </p>
-
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t border-black/5 pt-4">
-        <span className="text-sm text-ink">
-          永久權益：
-          {lifetime === null
-            ? "無"
-            : lifetime === "appstore"
-              ? "App Store 購買"
-              : lifetime === "legacy_pro"
-                ? "舊 Pro 轉移"
-                : "贈與"}
-        </span>
-        <div className="flex gap-2">
-          {(lifetime === "grant" || lifetime === "legacy_pro") && (
+          {kind === "lifetime" && (lifetime === "grant" || lifetime === "legacy_pro") && (
             <button
               type="button"
               onClick={() => run("revoke_lifetime")}
               disabled={busy || !reason.trim()}
               className="rounded-lg border border-rose-200 px-4 py-2 text-sm font-semibold text-rose-600 disabled:opacity-40"
             >
-              收回永久權益
+              收回永久會員贈與
             </button>
           )}
-          {lifetime === null && (
-            <button
-              type="button"
-              onClick={() => run("grant_lifetime")}
-              disabled={busy || !reason.trim()}
-              className="rounded-lg border border-sky-200 px-4 py-2 text-sm font-semibold text-sky-accent disabled:opacity-40"
-            >
-              贈與永久權益
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => run(kind === "lifetime" ? "grant_lifetime" : "grant")}
+            disabled={busy || !reason.trim() || (kind === "lifetime" && lifetime !== null) ||
+              (kind === "pro" && (!Number.isInteger(days) || days < 1 || days > 3650))}
+            className="rounded-lg bg-sky-accent px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
+          >
+            {busy ? "處理中…" : kind === "pro" ? "贈與 Pro" : lifetime !== null ? "已持有永久會員" : "贈與永久會員"}
+          </button>
         </div>
       </div>
       <p className="text-xs leading-relaxed text-muted">
-        永久權益和 Pro 是兩個來源：Pro 到期後會回到永久會員。App Store 買的永久權益只能經 Apple 退款收回。
+        贈與與訂閱分開保存，收回贈與不會取消購買。商店購買的永久會員由原商店退款處理。
       </p>
     </div>
   );

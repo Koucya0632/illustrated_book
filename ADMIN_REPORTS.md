@@ -1,6 +1,6 @@
 # Tuji Web Admin 與 Reports
 
-更新日期：2026-08-12
+更新日期：2026-10-01
 
 ## 1. Admin 的角色
 
@@ -26,12 +26,14 @@ Web admin 是內部工具，服務詞庫維護、UGC 審核、使用者問題排
 
 ## 3. 會員權限
 
-Pro 有兩個獨立來源：
+權益綁定 Tuji 帳號，同一帳號在 Android 與 iOS 共用。Pro 有兩個獨立來源：
 
 - App Store 訂閱：由 verify／notification 更新，取消、退款與續訂由 Apple 決定。
 - 手動贈與：管理員可指定天數贈與或收回，理由必填。
 
-後台顯示兩個來源與合併後的有效權限。收回贈與不會取消訂閱；後台也不提供「取消訂閱」。營收、續訂、退款與流失以 App Store Connect 為準。
+後台顯示訂閱、Pro 贈與與永久權益紀錄。手動贈與預設選擇永久會員；切換 Pro 才需填天數，兩種操作皆需填理由。永久會員無到期日，Pro 到期後仍保留；已持有永久權益不重複贈與，僅 grant／legacy_pro 可人工收回。商店購買由原商店退款處理，收回贈與不會取消訂閱。
+
+統計頁的 Pro／永久會員／免費人數互斥，三者合計為總註冊；「持有永久權益」另外包含仍在 Pro 的帳號。付費訂閱與贈與分開計算。匿名工作階段分開列出網站、iOS、Android；Android 每次 App 程序的首次前台開啟送出 app_open，畫面重建與背景工作不重複計數，舊版 App 的歷史事件無法回補。
 
 ## 4. Reports 與 moderation
 
@@ -58,7 +60,7 @@ iOS 的檢舉 UI 只有在伺服器成功接受後才顯示「已收到檢舉」
 | `/api/admin/atlas/collections/:id` | 合集審核 |
 | `/api/admin/atlas/reports/:id` | Atlas report 狀態處理 |
 | `/api/admin/atlas/funnel` | 漏斗與 AI 用量 |
-| `/api/admin/members/:id/entitlement` | 手動贈與／收回 Pro |
+| `/api/admin/members/:id/entitlement` | 手動贈與／收回 Pro 或永久會員 |
 
 ## 6. 安全與操作規則
 

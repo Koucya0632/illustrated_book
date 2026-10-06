@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
+import { guardLegacyAtlasWrite } from "@/lib/credits/legacy-server";
 import { getSettings } from "@/lib/users-db";
 import { confirmAtlasItem, getAtlasImage } from "@/lib/atlas-db";
 import { checkAtlasCapacity } from "@/lib/atlas/entitlement";
@@ -21,6 +22,8 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
   const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const creditGuard = await guardLegacyAtlasWrite(userId);
+  if (creditGuard) return creditGuard;
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   const image = await getAtlasImage(userId, params.id);

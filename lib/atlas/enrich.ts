@@ -193,6 +193,16 @@ async function generateJapaneseAtlasReading(lemma: string, tally: AiUsageTally):
 /// row, operation 'enrich', so its tokens and cost show on the admin 圖鑑數據
 /// page. Logged here rather than at the call sites so no caller can skip it.
 /// 'enrich' is not counted by getAtlasUsage, so it never eats recognition quota.
+/** The credit worker persists usage alongside fulfillment, never in a separate write. */
+export async function generateCreditEnrichment(item: AtlasItemRow) {
+  const tally = createAiUsageTally(), started = performance.now();
+  const fields = await buildAtlasEnrichment(item, tally);
+  const summary = tally.summary();
+  return { fields, provider: "openai-direct", model: summary?.model ?? null,
+    usage: { inputTokens: summary?.inputTokens, outputTokens: summary?.outputTokens,
+      estimatedCostUsd: summary?.estimatedCostUsd, latencyMs: Math.round(performance.now() - started) } };
+}
+
 export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnrichmentUpdate> {
   const tally = createAiUsageTally();
   const t0 = performance.now();

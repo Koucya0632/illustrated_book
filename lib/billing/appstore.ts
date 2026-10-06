@@ -35,10 +35,16 @@ export interface AppleTransaction {
   type?: string;
   bundleId?: string;
   environment?: string;
+  quantity?: number;
+  purchaseDate?: number;
+  revocationType?: string;
+  revocationPercentage?: number;
 }
 
 /** responseBodyV2DecodedPayload subset (App Store Server Notifications V2). */
 export interface AppleNotification {
+  notificationUUID?: string;
+  signedDate?: number;
   notificationType?: string;
   subtype?: string;
   data?: {

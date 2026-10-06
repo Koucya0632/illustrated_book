@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getSql } from "@/lib/db";
 import { listAll } from "@/lib/words-db";
+import { loadMembershipCounts } from "@/lib/admin/member-stats";
+import { PLATFORM_LABELS, isClientPlatform } from "@/lib/client-platforms";
 import CsvButton from "./CsvButton";
 
 export const dynamic = "force-dynamic";
@@ -77,8 +79,8 @@ async function loadStats(days: Days) {
       FROM events WHERE created_at > now() - make_interval(days => ${trendDays})
       GROUP BY d ORDER BY d ASC
     ` as unknown as Promise<DayRow[]>,
-    // web session ids persist per browser (≈ visitors); iOS mints one per
-    // app launch (= sessions) — surfaced as separate tiles, not summed.
+    // Web ids persist per browser (≈ visitors); mobile ids are per app launch.
+    // Keep each platform separate instead of summing different measures.
     sql`
       SELECT platform AS label, count(DISTINCT session_id)::int AS c
       FROM events WHERE created_at > now() - interval '7 days'
@@ -139,23 +141,7 @@ async function loadStats(days: Days) {
           WHERE created_at > now() - make_interval(days => ${days})
       ) t
     ` as unknown as Promise<{ c: number }[]>,
-    // Pro counts BOTH sources (subscription and live manual grant) and
-    // de-duplicates, matching resolveEntitlement — counting only
-    // user_entitlements would silently omit every comped account.
-    // `paid` is broken out because a comped user is not a customer.
-    sql`
-      WITH pro_users AS (
-        SELECT user_id, TRUE AS paid FROM user_entitlements
-         WHERE tier = 'pro' AND (expires_at IS NULL OR expires_at > now())
-        UNION
-        SELECT user_id, FALSE FROM user_entitlement_grants
-         WHERE revoked_at IS NULL AND expires_at > now()
-      )
-      SELECT
-        (SELECT count(*)::int FROM profiles) AS total,
-        (SELECT count(DISTINCT user_id)::int FROM pro_users) AS pro,
-        (SELECT count(DISTINCT user_id)::int FROM pro_users WHERE paid) AS paid
-    ` as unknown as Promise<{ total: number; pro: number; paid: number }[]>,
+    loadMembershipCounts(sql),
     sql`
       SELECT count(*)::int AS c FROM user_push_tokens
     ` as unknown as Promise<{ c: number }[]>,
@@ -173,9 +159,14 @@ async function loadStats(days: Days) {
     signupsPerDay,
     learnedPerDay,
     activeUsers: activeUsers[0]?.c ?? 0,
-    totalUsers: tiers[0]?.total ?? 0,
-    proUsers: tiers[0]?.pro ?? 0,
-    paidUsers: tiers[0]?.paid ?? 0,
+    totalUsers: tiers.total,
+    proUsers: tiers.pro,
+    paidUsers: tiers.paid,
+    freeUsers: tiers.free,
+    lifetimeUsers: tiers.lifetime,
+    lifetimeHoldings: tiers.lifetimeHoldings,
+    lifetimePurchased: tiers.lifetimePurchased,
+    lifetimeGranted: tiers.lifetimeGranted,
     pushDevices: pushDevices[0]?.c ?? 0,
     wordMap,
     trendDays,
@@ -216,6 +207,11 @@ export default async function StatsPage(
     totalUsers,
     proUsers,
     paidUsers,
+    freeUsers,
+    lifetimeUsers,
+    lifetimeHoldings,
+    lifetimePurchased,
+    lifetimeGranted,
     pushDevices,
     wordMap,
     trendDays,
@@ -226,6 +222,7 @@ export default async function StatsPage(
   const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
   const webSessions7d = sessionsByPlatform7d.find((r) => r.label === "web")?.c ?? 0;
   const iosSessions7d = sessionsByPlatform7d.find((r) => r.label === "ios")?.c ?? 0;
+  const androidSessions7d = sessionsByPlatform7d.find((r) => r.label === "android")?.c ?? 0;
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 space-y-10">
@@ -256,8 +253,8 @@ export default async function StatsPage(
         />
         <Stat label="總註冊" value={totalUsers.toLocaleString()} emoji="🐱" />
         <Stat
-          label="Pro / 免費"
-          value={`${proUsers.toLocaleString()} / ${(totalUsers - proUsers).toLocaleString()}`}
+          label="Pro"
+          value={proUsers.toLocaleString()}
           emoji="👑"
         />
         {/* Split out so a run of comped accounts never reads as revenue. */}
@@ -265,6 +262,13 @@ export default async function StatsPage(
           label="其中付費訂閱"
           value={`${paidUsers.toLocaleString()} / 贈與 ${(proUsers - paidUsers).toLocaleString()}`}
           emoji="🎟️"
+        />
+        <Stat label="永久會員" value={lifetimeUsers.toLocaleString()} emoji="♾️" />
+        <Stat label="免費" value={freeUsers.toLocaleString()} emoji="🌱" />
+        <Stat
+          label="持有永久權益（含 Pro）"
+          value={`${lifetimeHoldings.toLocaleString()} / 購買 ${lifetimePurchased.toLocaleString()} / 贈與與轉移 ${lifetimeGranted.toLocaleString()}`}
+          emoji="🎁"
         />
         <Stat label="推播裝置" value={pushDevices.toLocaleString()} emoji="🔔" />
       </section>
@@ -374,10 +378,11 @@ export default async function StatsPage(
           emoji="👥"
         />
         <Stat
-          label="App 工作階段 (7d)"
+          label="iOS 工作階段 (7d)"
           value={iosSessions7d.toLocaleString()}
           emoji="📱"
         />
+        <Stat label="Android 工作階段 (7d)" value={androidSessions7d.toLocaleString()} emoji="🤖" />
       </section>
 
       <section className="grid lg:grid-cols-2 gap-6">
@@ -396,7 +401,7 @@ export default async function StatsPage(
             {byPlatform.map((r) => (
               <Bar
                 key={r.label}
-                label={r.label}
+                label={isClientPlatform(r.label) ? PLATFORM_LABELS[r.label] : r.label}
                 value={r.c}
                 max={Math.max(1, ...byPlatform.map((x) => x.c))}
               />

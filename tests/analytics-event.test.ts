@@ -30,3 +30,11 @@ test("unknown event types and platforms are rejected", () => {
     error: "invalid platform",
   });
 });
+
+test("Android foreground launches retain their platform and session", () => {
+  const result = parseAnalyticsEvent({ type: "app_open", platform: "android", sessionId: "android-launch-1" });
+  assert.deepEqual(result, {
+    ok: true,
+    value: { type: "app_open", wordId: null, category: null, platform: "android", sessionId: "android-launch-1" },
+  });
+});

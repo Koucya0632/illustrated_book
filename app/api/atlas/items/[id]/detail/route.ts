@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
+import { usesCreditBilling } from "@/lib/credits/legacy-server";
 import {
   getAtlasImage,
   getAtlasItem,
@@ -48,7 +49,9 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   // Locked items (over the cap after Pro ended) are still readable — the user
   // must see what they have to decide what to delete — but spend nothing.
   const locked = await isAtlasItemLocked(userId, item.id);
-  if (!locked && shouldEnrichForAccount(item, await getMembershipAccess(userId))) {
+  // An unavailable policy lookup also skips AI; saved content stays readable.
+  const creditBilling = await usesCreditBilling(userId).catch(() => true);
+  if (!creditBilling && !locked && shouldEnrichForAccount(item, await getMembershipAccess(userId))) {
     // A denied backstop is not an error for a reader: skip the paid pass and
     // serve name + image, exactly as a failed one does.
     const backstop = await checkAtlasAiBackstops({ ipHash: clientIpHash(req) });

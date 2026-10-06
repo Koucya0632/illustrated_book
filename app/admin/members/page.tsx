@@ -25,8 +25,8 @@ export default async function MembersPage(
       <header>
         <h1 className="text-2xl font-bold text-ink sm:text-3xl">會員</h1>
         <p className="mt-1 text-sm text-muted">
-          查詢帳號的 Pro 狀態、手動贈與與收回。營收、續訂與流失數字請看 App Store Connect —
-          那裡才看得到退款與實收金額。
+          查詢帳號的永久會員與 Pro 狀態，贈與權益在 Android 與 iOS 共用。
+          營收、退款與實收金額請至原購買商店後台查詢。
         </p>
       </header>
 

@@ -74,6 +74,9 @@ export async function enrichWord(
   const { object, usage, response } = await generateObject({
     model: opts.model || MODEL,
     schema: EnrichSchema,
+    // The installed OpenAI adapter defaults to non-strict schemas. Require the
+    // supplied fields at the provider boundary before validating the result.
+    providerOptions: { openai: { strictJsonSchema: true } },
     system: SYSTEM,
     prompt: `Word: ${input.word}\nPart of speech: ${input.partOfSpeech}\nMeaning (zh): ${input.chinese}`,
   });

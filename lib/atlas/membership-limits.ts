@@ -13,7 +13,8 @@
 // it is what lifetime holders get if production is ever rolled back to v1.
 // The ATLAS_* env overrides apply to v1 only; v2 is the published promise.
 
-import type { MembershipPolicy, MembershipTier } from "@/lib/atlas/membership";
+import { membershipTierForBilling, type MembershipPolicy, type MembershipTier } from "@/lib/atlas/membership";
+import { CREDIT_POLICY } from "@/lib/credits/policy";
 
 export interface AtlasLimits {
   atlasSlotsLimit: number;
@@ -81,6 +82,15 @@ const V2: Record<MembershipTier, AtlasLimits> = {
 
 export function limitsFor(tier: MembershipTier, policy: MembershipPolicy): AtlasLimits {
   return policy === "v2" ? { ...V2[tier] } : v1(tier);
+}
+
+/** Credit enrollment uses the permanent plan, including former active Pro members. */
+export function limitsForBilling(tier: MembershipTier, policy: MembershipPolicy, billingMode: "legacy" | "credits"): AtlasLimits {
+  const effectiveTier = membershipTierForBilling(tier, billingMode);
+  const limits = limitsFor(effectiveTier, policy);
+  if (billingMode !== "credits" || effectiveTier !== "lifetime") return limits;
+  return { ...limits, atlasSlotsLimit: CREDIT_POLICY.lifetimeAtlasSlots,
+    primaryAiSoftLimitMonthly: 0, precisionAiLimitMonthly: 0 };
 }
 
 /** The tier whose purchase would raise this user's limits, or null at the top. */

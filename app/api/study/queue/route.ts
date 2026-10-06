@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { readTimezone } from "@/lib/timezone";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import {
   attachChoices,
@@ -266,14 +267,14 @@ export async function GET(req: Request) {
           )
         : Promise.resolve([]),
       shouldFetchPublic
-        ? studyStats(userId, publicCategories, directionDeck)
+        ? studyStats(userId, publicCategories, directionDeck, readTimezone(req))
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       getAllMastery(userId, targetLanguage),
       wantsCustom
         ? fetchAtlasDue(userId, limit, mode, targetLanguage, lockedItemIds)
         : Promise.resolve([]),
       wantsCustom
-        ? atlasStudyStats(userId, targetLanguage, lockedItemIds)
+        ? atlasStudyStats(userId, targetLanguage, lockedItemIds, readTimezone(req))
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       wantsCommunity
         ? fetchSavedCommunityDue(userId, limit, mode, targetLanguage)

@@ -1,4 +1,5 @@
 import { CreditError, type CreditConfig } from "./policy";
+import { readTimezone } from "../timezone";
 import type { createCreditWallet } from "./wallet";
 
 type Action = "wallet" | "ledger" | "monthly" | "check_in";
@@ -27,7 +28,7 @@ export function createCreditHandler(deps: Dependencies) {
       // Shadow mode is reserved for internal comparisons; it issues no user points.
       const isRead = action === "wallet" || action === "ledger";
       if (config.mode !== "live" && !(isRead && config.readEnabled)) throw new CreditError("credits_disabled");
-      const account = { userId, environment: config.environment };
+      const account = { userId, environment: config.environment, timezone: readTimezone(request) };
       const wallet = deps.wallet();
       const result = action === "wallet" ? await wallet.readWallet(account) :
         action === "ledger" ? await wallet.readLedger(account, new URL(request.url).searchParams.get("cursor") ?? undefined) :

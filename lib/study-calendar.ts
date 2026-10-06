@@ -1,13 +1,6 @@
 // Month window for /api/users/study-calendar. Pure so it is testable without
 // the server-only users-db module.
 
-/** Today's date (YYYY-MM-DD) in `tz`. */
-export function localDay(now: Date, tz: string): string {
-  // en-CA formats as YYYY-MM-DD.
-  return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" })
-    .format(now);
-}
-
 /**
  * The month to show: `?month=YYYY-MM`, or the current one when absent.
  * Returns null for a malformed or future month (no studying happens there).

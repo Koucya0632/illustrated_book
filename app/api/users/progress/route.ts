@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { readTimezone } from "@/lib/timezone";
 import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { getCurrentUserId } from "@/lib/current-user";
 import {
@@ -29,9 +30,10 @@ export async function GET(req: Request) {
   const direction = readLearningDirection(req, settings.learningDirection);
   const targetLanguage = targetLanguageFor(direction);
   const deckKey = studyDeckFor(direction);
+  const tz = readTimezone(req);
   const [streak, heatmap, categories, customCategory, savedCommunity] = await Promise.all([
-    getStudyStreak(userId, "Asia/Taipei", targetLanguage),
-    getActivityHeatmap(userId, "Asia/Taipei", targetLanguage),
+    getStudyStreak(userId, tz, targetLanguage),
+    getActivityHeatmap(userId, tz, targetLanguage),
     categoryProgress(userId, deckKey),
     getLockedAtlasItemIds(userId).then((locked) => atlasCategoryProgress(userId, targetLanguage, locked)),
     savedCommunityCategoryProgress(userId, targetLanguage),

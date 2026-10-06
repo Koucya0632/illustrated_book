@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { calendarMonth, localDay, monthRange } from "../lib/study-calendar";
+import { calendarMonth, monthRange } from "../lib/study-calendar";
+import { localDay } from "../lib/timezone";
 
 test("localDay buckets by the requested zone, not UTC", () => {
   assert.equal(localDay(new Date("2026-10-05T15:59:00Z"), "Asia/Taipei"), "2026-10-05");

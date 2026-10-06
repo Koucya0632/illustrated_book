@@ -494,13 +494,15 @@ export function studyStats(
   userId: string,
   categories: string[] = [],
   deckKey = "image-en",
+  /** Whose midnight `todayNew` rolls over at — lib/timezone.ts. */
+  tz = "Asia/Taipei",
 ) {
   const cats = (categories ?? [])
     .filter((c) => c.length > 0 && c !== "all")
     .sort();
   return unstable_cache(
-    () => studyStatsRaw(userId, cats, deckKey),
-    ["studyStats", userId, deckKey, cats.join(",")],
+    () => studyStatsRaw(userId, cats, deckKey, tz),
+    ["studyStats", userId, deckKey, cats.join(","), tz],
     { tags: [`stats:${userId}`], revalidate: 30 },
   )();
 }
@@ -509,12 +511,13 @@ async function studyStatsRaw(
   userId: string,
   categories: string[],
   deckKey: string,
+  tz: string,
 ) {
   const sql = requireSql();
   // Five COUNTs in parallel — postgres-js dispatches them on independent
   // connections so the wall time collapses from ~5 × round-trip to ~1 ×.
-  // "Today" in Asia/Taipei matches the date the home page renders, so the
-  // chip / cap rolls over at the user's expected midnight.
+  // "Today" is the request's zone (lib/timezone.ts), the same calendar the
+  // streak uses, so the chip / cap rolls over at the user's own midnight.
   //
   // We previously tried folding these into ONE query with FILTER aggregates
   // + a scalar subquery, but that shape blew up at runtime against the
@@ -564,8 +567,8 @@ async function studyStatsRaw(
       JOIN words w ON w.id = c.word_id
       WHERE uc.user_id = ${userId}::uuid
         AND c.deck_key = ${deckKey}
-        AND (uc.created_at AT TIME ZONE 'Asia/Taipei')::date
-          = (now() AT TIME ZONE 'Asia/Taipei')::date
+        AND (uc.created_at AT TIME ZONE ${tz})::date
+          = (now() AT TIME ZONE ${tz})::date
       ${ucCatFilter}
     ` as Promise<{ todayNew: number }[]>,
     sql`

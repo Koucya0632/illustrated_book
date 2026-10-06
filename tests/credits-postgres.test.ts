@@ -24,6 +24,8 @@ test("credit transactions against isolated PostgreSQL", { skip: !databaseUrl }, 
   try {
     await sql`CREATE SCHEMA IF NOT EXISTS auth`;
     await sql`CREATE TABLE IF NOT EXISTS auth.users (id UUID PRIMARY KEY)`;
+    // The columns check-in reads; production's table is in scripts/migrate.ts.
+    await sql`CREATE TABLE IF NOT EXISTS study_logs (user_id UUID NOT NULL, created_at TIMESTAMPTZ NOT NULL)`;
     await sql`CREATE TABLE IF NOT EXISTS user_lifetime_entitlements
       (id BIGSERIAL PRIMARY KEY, user_id UUID REFERENCES auth.users(id), revoked_at TIMESTAMPTZ)`;
     await sql`ALTER TABLE user_lifetime_entitlements ADD COLUMN IF NOT EXISTS source TEXT`;
@@ -36,10 +38,15 @@ test("credit transactions against isolated PostgreSQL", { skip: !databaseUrl }, 
     // The same migration must be safe to run a second time.
     await migrateCreditSchema(sql);
 
-    async function fixture(lifetime = true) {
+    /** Check-in requires a study log that Taipei day; most tests study daily through 2027. */
+    async function fixture(lifetime = true, { studied = true } = {}) {
       const userId = randomUUID();
       const account = { userId, environment: "sandbox" as const };
       await sql`INSERT INTO auth.users (id) VALUES (${userId})`;
+      if (studied) {
+        await sql`INSERT INTO study_logs (user_id, created_at) SELECT ${userId}, d
+          FROM generate_series('2026-09-01T04:00:00Z'::timestamptz, '2027-12-31T04:00:00Z', interval '1 day') d`;
+      }
       await sql`INSERT INTO credit_accounts (user_id, environment) VALUES (${userId}, 'sandbox')`;
       await sql`INSERT INTO credit_user_policies (user_id, environment, billing_mode) VALUES (${userId}, 'sandbox', 'credits')`;
       if (lifetime) await sql`INSERT INTO user_lifetime_entitlements (user_id, source, reason) VALUES (${userId}, 'grant', 'isolated test')`;
@@ -384,6 +391,45 @@ test("credit transactions against isolated PostgreSQL", { skip: !databaseUrl }, 
       await assert.rejects(wallet.claimBenefit(account, "check_in", config), isError("credits_not_enrolled"));
       const [lots] = await sql`SELECT count(*)::int AS total FROM credit_lots WHERE user_id = ${account.userId}`;
       assert.equal(lots.total, 0);
+    });
+
+    await t.test("check-in requires a word-card answer that Taipei day", async () => {
+      const { wallet, account, setTime } = await fixture(true, { studied: false });
+      setTime("2026-10-06T03:00:00Z"); // 11:00 Taipei
+      await assert.rejects(wallet.claimBenefit(account, "check_in", config), isError("check_in_requires_study"));
+      assert.equal((await wallet.readWallet(account)).benefits.studiedToday, false);
+      // Studied late on the previous Taipei day (Oct 5 23:30) — still not today.
+      await sql`INSERT INTO study_logs (user_id, created_at) VALUES (${account.userId}, '2026-10-05T15:30:00Z')`;
+      await assert.rejects(wallet.claimBenefit(account, "check_in", config), isError("check_in_requires_study"));
+      await sql`INSERT INTO study_logs (user_id, created_at) VALUES (${account.userId}, '2026-10-05T16:30:00Z')`;
+      assert.equal((await wallet.readWallet(account)).benefits.studiedToday, true);
+      assert.equal((await wallet.claimBenefit(account, "check_in", config)).amount, 10);
+      const [claims] = await sql`SELECT count(*)::int AS total FROM credit_benefit_claims WHERE user_id = ${account.userId} AND kind = 'check_in'`;
+      assert.equal(claims.total, 1);
+    });
+
+    await t.test("check-in days and months follow Taipei; the monthly allowance stays on UTC", async () => {
+      const { account } = await fixture();
+      let now = new Date("2026-10-05T15:59:00Z");
+      const wallet = createCreditWallet(sql, () => now, () => config);
+      const setTime = (value: string) => { now = new Date(value); };
+      // Same UTC day (Oct 5), two Taipei days (Oct 5 23:59, Oct 6 00:01).
+      assert.equal((await wallet.claimBenefit(account, "check_in", config)).period, "2026-10-05");
+      setTime("2026-10-05T16:01:00Z");
+      const next = await wallet.claimBenefit(account, "check_in", config);
+      assert.equal(next.claimed, true);
+      assert.equal(next.period, "2026-10-06");
+      assert.equal(next.wallet.nextDailyResetAt, "2026-10-06T16:00:00.000Z");
+      assert.equal(next.wallet.checkInTimezone, "Asia/Taipei");
+      // Oct 31 16:30 UTC is Nov 1 in Taipei: a new check-in month, still the UTC October allowance.
+      setTime("2026-10-31T16:30:00Z");
+      const november = await wallet.claimBenefit(account, "check_in", config);
+      assert.equal(november.period, "2026-11-01");
+      assert.equal(november.wallet.benefits.checkInGrantedThisMonth, 10);
+      assert.equal(november.wallet.benefits.monthlyClaimed, true);
+      const monthly = await sql`SELECT period FROM credit_benefit_claims WHERE user_id = ${account.userId} AND kind = 'monthly' ORDER BY period`;
+      assert.deepEqual(monthly.map(c => c.period), ["2026-10"]);
+      assert.deepEqual((await auditCredits(sql, "sandbox", account.userId)).mismatches, []);
     });
 
     await t.test("sandbox balances never leak to production or another user", async () => {

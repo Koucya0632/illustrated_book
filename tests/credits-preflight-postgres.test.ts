@@ -34,6 +34,8 @@ test("read-only cutover inventory against isolated PostgreSQL", { skip: !databas
     await db`CREATE SCHEMA auth`;
     await db`CREATE TABLE auth.users (id UUID PRIMARY KEY)`;
     await db`CREATE TABLE words (id TEXT PRIMARY KEY)`;
+    // The columns check-in reads; production's table is in scripts/migrate.ts.
+    await db`CREATE TABLE study_logs (user_id UUID NOT NULL, created_at TIMESTAMPTZ NOT NULL)`;
     const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
     for (const table of ["user_atlas_images", "user_atlas_recognition_jobs", "user_atlas_candidates", "user_atlas_items",
       "user_entitlements", "user_entitlement_grants", "user_lifetime_entitlements", "atlas_ai_reservations"]) {

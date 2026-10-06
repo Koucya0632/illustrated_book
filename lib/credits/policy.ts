@@ -17,7 +17,8 @@ export type CreditErrorCode =
   | "credits_disabled" | "credits_unavailable" | "credits_not_enrolled"
   | "benefit_disabled" | "benefit_ineligible" | "invalid_credit_configuration"
   | "invalid_credit_request" | "insufficient_credits" | "idempotency_conflict"
-  | "reservation_not_found" | "reservation_already_settled" | "credits_reconciliation_required";
+  | "reservation_not_found" | "reservation_already_settled" | "credits_reconciliation_required"
+  | "check_in_requires_study";
 
 export class CreditError extends Error {
   constructor(public readonly code: CreditErrorCode) { super(code); }
@@ -41,6 +42,21 @@ export function utcPeriod(now: Date): { day: string; month: string; nextMonth: D
     day, month: day.slice(0, 7),
     nextMonth: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)),
   };
+}
+
+/**
+ * Check-in days follow the study streak's calendar (Asia/Taipei, see
+ * getStudyStreak in lib/users-db.ts) so "studied today" and "checked in today"
+ * name the same day. Taipei has no DST: a fixed +08:00 offset is exact.
+ * The monthly allowance stays on UTC months (utcPeriod).
+ */
+export const CHECK_IN_TIMEZONE = "Asia/Taipei";
+const TAIPEI_OFFSET_MS = 8 * 3_600_000;
+
+export function taipeiPeriod(now: Date): { day: string; month: string; dayStart: Date; nextDay: Date } {
+  const day = new Date(now.getTime() + TAIPEI_OFFSET_MS).toISOString().slice(0, 10);
+  const dayStart = new Date(Date.parse(`${day}T00:00:00Z`) - TAIPEI_OFFSET_MS);
+  return { day, month: day.slice(0, 7), dayStart, nextDay: new Date(dayStart.getTime() + 86_400_000) };
 }
 
 export interface CreditConfig {

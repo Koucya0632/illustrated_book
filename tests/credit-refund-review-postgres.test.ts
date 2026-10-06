@@ -21,6 +21,8 @@ test("manual refund resolution against isolated PostgreSQL", { skip: !url }, asy
   try {
     await sql`CREATE SCHEMA IF NOT EXISTS auth`;
     await sql`CREATE TABLE IF NOT EXISTS auth.users (id UUID PRIMARY KEY)`;
+    // The columns check-in reads; production's table is in scripts/migrate.ts.
+    await sql`CREATE TABLE IF NOT EXISTS study_logs (user_id UUID NOT NULL, created_at TIMESTAMPTZ NOT NULL)`;
     await sql`CREATE TABLE IF NOT EXISTS user_lifetime_entitlements (id BIGSERIAL PRIMARY KEY, user_id UUID, source TEXT NOT NULL, reason TEXT, revoked_at TIMESTAMPTZ)`;
     await migrateCreditSchema(sql);
     async function fixture() {

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createCreditHandler } from "../lib/credits/http";
-import { creditConfig } from "../lib/credits/policy";
+import { creditConfig, CreditError } from "../lib/credits/policy";
 import type { createCreditWallet } from "../lib/credits/wallet";
 
 function setup(options: { user?: string | null; mode?: string; fail?: boolean; readEnabled?: boolean } = {}) {
@@ -73,4 +73,18 @@ test("database failures return unavailable and never expose database errors", as
   const response = await handler(new Request("https://tuji.test/api/credits/wallet"), "wallet");
   assert.equal(response.status, 503);
   assert.deepEqual(await response.json(), { error: "credits_unavailable" });
+});
+
+test("check-in before studying is a 409 the client can explain, not an outage", async () => {
+  const wallet = {
+    claimBenefit: async () => { throw new CreditError("check_in_requires_study"); },
+  } as unknown as ReturnType<typeof createCreditWallet>;
+  const handler = createCreditHandler({
+    currentUserId: async () => "server-user",
+    config: () => creditConfig({ AI_CREDITS_MODE: "live", AI_CREDITS_ENVIRONMENT: "sandbox" }),
+    wallet: () => wallet, reportError: () => assert.fail("not an unexpected error"),
+  });
+  const response = await handler(new Request("https://tuji.test/api/credits/check-in", { method: "POST" }), "check_in");
+  assert.equal(response.status, 409);
+  assert.deepEqual(await response.json(), { error: "check_in_requires_study" });
 });

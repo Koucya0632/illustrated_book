@@ -38,6 +38,8 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
   try {
     await sql`CREATE SCHEMA IF NOT EXISTS auth`;
     await sql`CREATE TABLE IF NOT EXISTS auth.users (id UUID PRIMARY KEY)`;
+    // The columns check-in reads; production's table is in scripts/migrate.ts.
+    await sql`CREATE TABLE IF NOT EXISTS study_logs (user_id UUID NOT NULL, created_at TIMESTAMPTZ NOT NULL)`;
     await sql`CREATE TABLE IF NOT EXISTS words (id TEXT PRIMARY KEY)`;
     // Use the actual additive atlas DDL, not a test copy with weaker constraints.
     const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");

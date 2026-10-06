@@ -2,7 +2,7 @@ import type postgres from "postgres";
 import { replaceLegacyInTransaction } from "./cutover";
 import { refundReviewCondition } from "./refund-review";
 import {
-  assertCreditKey, assertPoints, CREDIT_POLICY, CreditError, userCreditConfig, utcPeriod,
+  assertCreditKey, assertPoints, CHECK_IN_TIMEZONE, CREDIT_POLICY, CreditError, taipeiPeriod, userCreditConfig, utcPeriod,
   type CreditConfig, type CreditEnvironment, type CreditSource,
 } from "./policy";
 
@@ -32,10 +32,17 @@ export interface CreditBalance {
   walletVersion: string;
   environment: CreditEnvironment;
   serverNow: string;
+  /** The monthly allowance's calendar. */
   periodTimezone: "UTC";
+  /** The check-in calendar, shared with the study streak. */
+  checkInTimezone: typeof CHECK_IN_TIMEZONE;
   nextDailyResetAt: string;
   nextMonthlyResetAt: string;
-  benefits: { monthlyClaimed: boolean; checkedInToday: boolean; checkInGrantedThisMonth: number; hasLifetime: boolean };
+  benefits: {
+    monthlyClaimed: boolean; checkedInToday: boolean; checkInGrantedThisMonth: number; hasLifetime: boolean;
+    /** A word-card answer was logged today; check-in requires it. */
+    studiedToday: boolean;
+  };
   reconciliationRequired: boolean;
 }
 export interface Reservation {
@@ -90,6 +97,18 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
     }
   }
 
+  /**
+   * Word-card answers only (study_logs), matching what the streak counts —
+   * atlas answers are left out there too (see app/api/study/answer/route.ts).
+   * Any target language: the reward is per account, not per direction.
+   */
+  async function studiedOn(tx: Tx, userId: string, now: Date): Promise<boolean> {
+    const { dayStart, nextDay } = taipeiPeriod(now);
+    const [row] = await tx`SELECT EXISTS (SELECT 1 FROM study_logs WHERE user_id = ${userId}
+      AND created_at >= ${dayStart} AND created_at < ${nextDay}) AS studied`;
+    return row.studied === true;
+  }
+
   async function balance(tx: Tx, a: Account, now: Date): Promise<CreditBalance> {
     const [restriction] = await tx`SELECT EXISTS (SELECT 1 FROM credit_store_transactions t
       WHERE t.user_id = ${a.userId} AND t.environment = ${a.environment} AND ${refundReviewCondition(tx)}) AS needed`;
@@ -105,23 +124,26 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
       WHERE user_id = ${a.userId} AND environment = ${a.environment}`;
     const values = [totals.available, totals.reserved, totals.paid, totals.gift, totals.monthly, totals.check_in].map(Number);
     if (values.some(n => !Number.isSafeInteger(n) || n < 0)) throw new CreditError("credits_unavailable");
-    const { day, month, nextMonth } = utcPeriod(now);
+    const { month, nextMonth } = utcPeriod(now);
+    const checkIn = taipeiPeriod(now);
     const [claims] = await tx`SELECT
       COALESCE(bool_or(kind = 'monthly' AND period = ${month}), false) AS monthly,
-      COALESCE(bool_or(kind = 'check_in' AND period = ${day}), false) AS daily,
-      COALESCE(sum(amount) FILTER (WHERE kind = 'check_in'), 0) AS check_in_total
-      FROM credit_benefit_claims WHERE user_id = ${a.userId} AND environment = ${a.environment} AND month = ${month}`;
+      COALESCE(bool_or(kind = 'check_in' AND period = ${checkIn.day}), false) AS daily,
+      COALESCE(sum(amount) FILTER (WHERE kind = 'check_in' AND month = ${checkIn.month}), 0) AS check_in_total
+      FROM credit_benefit_claims WHERE user_id = ${a.userId} AND environment = ${a.environment}
+        AND ((kind = 'monthly' AND month = ${month}) OR (kind = 'check_in' AND month = ${checkIn.month}))`;
+    const studiedToday = await studiedOn(tx, a.userId, now);
     const [holding] = await tx`SELECT EXISTS (SELECT 1 FROM user_lifetime_entitlements
       WHERE user_id = ${a.userId} AND revoked_at IS NULL) AS held`;
     return {
       available: values[0], reserved: values[1], paidAvailable: values[2], giftAvailable: values[3],
       monthlyAvailable: values[4], checkInAvailable: values[5],
       walletVersion: String(account.wallet_version), environment: a.environment,
-      serverNow: now.toISOString(), periodTimezone: "UTC",
-      nextDailyResetAt: new Date(Date.parse(`${day}T00:00:00Z`) + 86_400_000).toISOString(),
+      serverNow: now.toISOString(), periodTimezone: "UTC", checkInTimezone: CHECK_IN_TIMEZONE,
+      nextDailyResetAt: checkIn.nextDay.toISOString(),
       nextMonthlyResetAt: nextMonth.toISOString(),
       benefits: { monthlyClaimed: claims.monthly, checkedInToday: claims.daily,
-        checkInGrantedThisMonth: Number(claims.check_in_total), hasLifetime: holding.held },
+        checkInGrantedThisMonth: Number(claims.check_in_total), hasLifetime: holding.held, studiedToday },
       reconciliationRequired: restriction.needed,
     };
   }
@@ -310,7 +332,7 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
           const result = await refreshMonthlyInTransaction(tx, a, now, true);
           return { ...result, wallet: await balance(tx, a, now) };
         }
-        const { day, month } = utcPeriod(now);
+        const { day, month } = taipeiPeriod(now);
         const period = day;
         const [existing] = await tx`SELECT amount FROM credit_benefit_claims
           WHERE user_id = ${a.userId} AND environment = ${a.environment}
@@ -320,6 +342,8 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
         const [holding] = await tx`SELECT id FROM user_lifetime_entitlements
           WHERE user_id = ${a.userId} AND revoked_at IS NULL LIMIT 1`;
         if (!holding) throw new CreditError("benefit_ineligible");
+        // Studying is the check-in; the claim only collects its points.
+        if (!await studiedOn(tx, a.userId, now)) throw new CreditError("check_in_requires_study");
         const [total] = await tx`SELECT COALESCE(sum(amount), 0) AS amount FROM credit_benefit_claims
           WHERE user_id = ${a.userId} AND environment = ${a.environment} AND kind = 'check_in' AND month = ${month}`;
         const amount = Math.max(0, Math.min(CREDIT_POLICY.checkInDaily, CREDIT_POLICY.checkInMonthlyCap - Number(total.amount)));

@@ -20,6 +20,7 @@ import { readLearningDirection } from "../lib/cache-headers";
 const ROUTES = [
   "app/api/users/mastery/route.ts",
   "app/api/users/progress/route.ts",
+  "app/api/users/study-calendar/route.ts",
   "app/api/study/stats/route.ts",
   "app/api/study/queue/route.ts",
 ] as const;

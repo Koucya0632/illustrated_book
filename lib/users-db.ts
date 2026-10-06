@@ -479,6 +479,50 @@ async function getActivityHeatmapRaw(
   }
 }
 
+// Distinct study days (YYYY-MM-DD in `tz`) inside one calendar month, for the
+// check-in calendar. Same source and direction filter as getStudyStreak so a
+// filled day and the streak never disagree. The range is turned into
+// timestamptz bounds first, so the (user_id, target_language, created_at)
+// index serves it instead of a scan of every log.
+// Cached like the heatmap: tag `progress:<uid>` is busted by study/answer.
+export function getStudyDaysInMonth(
+  userId: string,
+  tz: string,
+  targetLanguage: "en" | "ja",
+  range: { start: string; next: string },
+): Promise<string[]> {
+  return unstable_cache(
+    () => getStudyDaysInMonthRaw(userId, tz, targetLanguage, range),
+    ["study-days", userId, tz, targetLanguage, range.start],
+    { tags: [`progress:${userId}`], revalidate: 60 },
+  )();
+}
+
+async function getStudyDaysInMonthRaw(
+  userId: string,
+  tz: string,
+  targetLanguage: "en" | "ja",
+  range: { start: string; next: string },
+): Promise<string[]> {
+  const sql = getSql();
+  if (!sql) return [];
+  try {
+    const rows = await sql<{ d: string }[]>`
+      SELECT DISTINCT to_char((created_at AT TIME ZONE ${tz})::date, 'YYYY-MM-DD') AS d
+      FROM study_logs
+      WHERE user_id = ${userId}::uuid
+        AND target_language = ${targetLanguage}
+        AND created_at >= (${range.start}::timestamp AT TIME ZONE ${tz})
+        AND created_at <  (${range.next}::timestamp AT TIME ZONE ${tz})
+      ORDER BY 1
+    `;
+    return rows.map((r) => r.d);
+  } catch (err) {
+    console.warn("[users-db] getStudyDaysInMonth failed", err);
+    return [];
+  }
+}
+
 export interface StudyStreak {
   current: number; // consecutive days up to today (alive if last day is today or yesterday)
   longest: number; // best run ever

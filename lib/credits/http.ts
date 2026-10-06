@@ -39,7 +39,7 @@ export function createCreditHandler(deps: Dependencies) {
           error.code === "credits_not_enrolled" || error.code === "benefit_ineligible" ? 403 :
             error.code === "invalid_credit_request" ? 400 :
               error.code === "idempotency_conflict" || error.code === "insufficient_credits" ||
-              error.code === "reservation_already_settled" ? 409 : 503;
+              error.code === "reservation_already_settled" || error.code === "check_in_requires_study" ? 409 : 503;
         return Response.json({ error: error.code }, { status, headers });
       }
       deps.reportError(error);

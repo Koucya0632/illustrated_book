@@ -24,6 +24,7 @@ export const creditErrorMessage = (code: string) => ({
   operation_busy: "這張照片已有工作進行中，請先查看處理結果。",
   benefit_disabled: "這項贈點目前尚未開放。",
   benefit_ineligible: "這項功能需要有效永久會員。",
+  check_in_requires_study: "今天學習一題後就能領取打卡點數。",
   unauthorized: "請重新登入。",
   invalid_upload: "請選擇 8 MB 以內的有效圖片。",
 }[code] ?? "暫時無法完成，請重試同步。");

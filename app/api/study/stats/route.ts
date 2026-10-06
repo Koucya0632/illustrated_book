@@ -6,6 +6,7 @@
 // { total, seen, due, new, byStatus } — so the client can compute
 // `computeNewLimit(base, stats.due)` and decide which buttons to enable.
 import { NextResponse } from "next/server";
+import { readTimezone } from "@/lib/timezone";
 import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { studyStats } from "@/lib/cards-db";
@@ -38,12 +39,13 @@ export async function GET(req: Request) {
     const settings = await getSettings(userId);
     // `?learning=` wins over the stored setting — see /api/users/mastery.
     const direction = readLearningDirection(req, settings.learningDirection);
+    const tz = readTimezone(req);
     const [publicStats, customStats] = await Promise.all([
       categories.length === 0 || publicCategories.length > 0
-        ? studyStats(userId, publicCategories, studyDeckFor(direction))
+        ? studyStats(userId, publicCategories, studyDeckFor(direction), tz)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       wantsCustom
-        ? atlasStudyStats(userId, targetLanguageFor(direction), await getLockedAtlasItemIds(userId))
+        ? atlasStudyStats(userId, targetLanguageFor(direction), await getLockedAtlasItemIds(userId), tz)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
     ]);
     const byStatus = new Map<string, number>();

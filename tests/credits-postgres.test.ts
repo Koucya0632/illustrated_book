@@ -432,6 +432,23 @@ test("credit transactions against isolated PostgreSQL", { skip: !databaseUrl }, 
       assert.deepEqual((await auditCredits(sql, "sandbox", account.userId)).mismatches, []);
     });
 
+    await t.test("an account's zone decides its check-in day and which study log counts", async () => {
+      const { account, wallet, setTime } = await fixture(true, { studied: false });
+      const ny = { ...account, timezone: "America/New_York" };
+      // 2026-10-06 02:00Z is Oct 5 22:00 in New York and Oct 6 10:00 in Taipei.
+      setTime("2026-10-06T02:00:00Z");
+      await sql`INSERT INTO study_logs (user_id, created_at) VALUES (${account.userId}, '2026-10-05T23:00:00Z')`;
+      // New York studied on its Oct 5; Taipei's Oct 6 started at 16:00Z on the 5th — both count it.
+      const claim = await wallet.claimBenefit(ny, "check_in", config);
+      assert.equal(claim.period, "2026-10-05");
+      assert.equal(claim.wallet.checkInTimezone, "America/New_York");
+      assert.equal(claim.wallet.nextDailyResetAt, "2026-10-06T04:00:00.000Z");
+      // Same instant, Taipei calendar: a different day, so a separate claim.
+      assert.equal((await wallet.claimBenefit(account, "check_in", config)).period, "2026-10-06");
+      // Back in New York, Oct 5 is already claimed.
+      assert.equal((await wallet.claimBenefit(ny, "check_in", config)).claimed, false);
+    });
+
     await t.test("sandbox balances never leak to production or another user", async () => {
       const { wallet, account } = await fixture();
       const other = await fixture();

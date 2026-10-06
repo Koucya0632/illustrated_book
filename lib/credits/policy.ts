@@ -44,21 +44,6 @@ export function utcPeriod(now: Date): { day: string; month: string; nextMonth: D
   };
 }
 
-/**
- * Check-in days follow the study streak's calendar (Asia/Taipei, see
- * getStudyStreak in lib/users-db.ts) so "studied today" and "checked in today"
- * name the same day. Taipei has no DST: a fixed +08:00 offset is exact.
- * The monthly allowance stays on UTC months (utcPeriod).
- */
-export const CHECK_IN_TIMEZONE = "Asia/Taipei";
-const TAIPEI_OFFSET_MS = 8 * 3_600_000;
-
-export function taipeiPeriod(now: Date): { day: string; month: string; dayStart: Date; nextDay: Date } {
-  const day = new Date(now.getTime() + TAIPEI_OFFSET_MS).toISOString().slice(0, 10);
-  const dayStart = new Date(Date.parse(`${day}T00:00:00Z`) - TAIPEI_OFFSET_MS);
-  return { day, month: day.slice(0, 7), dayStart, nextDay: new Date(dayStart.getTime() + 86_400_000) };
-}
-
 export interface CreditConfig {
   mode: "off" | "shadow" | "live";
   readEnabled: boolean;

@@ -36,7 +36,7 @@ test("wallet account comes from authentication and server environment", async ()
   const { handler, calls } = setup();
   const response = await handler(new Request("https://tuji.test/api/credits/wallet?userId=attacker&environment=production"), "wallet");
   assert.equal(response.status, 200);
-  assert.deepEqual(calls[1], { userId: "server-user", environment: "sandbox" });
+  assert.deepEqual(calls[1], { userId: "server-user", environment: "sandbox", timezone: "Asia/Taipei" });
   assert.equal(response.headers.get("cache-control"), "private, no-store");
 });
 
@@ -87,4 +87,14 @@ test("check-in before studying is a 409 the client can explain, not an outage", 
   const response = await handler(new Request("https://tuji.test/api/credits/check-in", { method: "POST" }), "check_in");
   assert.equal(response.status, 409);
   assert.deepEqual(await response.json(), { error: "check_in_requires_study" });
+});
+
+test("the check-in calendar is the request's own zone, and a bogus one is Taipei", async () => {
+  const { handler, calls } = setup();
+  await handler(new Request("https://tuji.test/api/credits/check-in", {
+    method: "POST", headers: { "x-tuji-timezone": "America/New_York" },
+  }), "check_in");
+  assert.equal(((calls[1] as unknown[])[0] as { timezone: string }).timezone, "America/New_York");
+  await handler(new Request("https://tuji.test/api/credits/wallet", { headers: { "x-tuji-timezone": "Nowhere/Land" } }), "wallet");
+  assert.equal((calls.at(-1) as { timezone: string }).timezone, "Asia/Taipei");
 });

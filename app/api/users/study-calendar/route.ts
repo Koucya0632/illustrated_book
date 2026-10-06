@@ -3,31 +3,32 @@ import { getCurrentUserId } from "@/lib/current-user";
 import { getSettings, getStudyDaysInMonth, getStudyStreak } from "@/lib/users-db";
 import { targetLanguageFor } from "@/lib/settings";
 import { readLearningDirection } from "@/lib/cache-headers";
-import { calendarMonth, localDay, monthRange } from "@/lib/study-calendar";
+import { calendarMonth, monthRange } from "@/lib/study-calendar";
+import { localDay, readTimezone } from "@/lib/timezone";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // Check-in calendar: which days of one month had a word-card answer, plus the
-// streak for the hero. Same timezone and direction rules as /api/users/progress
-// (a filled day is exactly a day the streak counted), and the same zone the
-// check-in reward uses (lib/credits/policy.ts CHECK_IN_TIMEZONE).
-const TZ = "Asia/Taipei";
+// streak for the hero. Same zone and direction rules as /api/users/progress (a
+// filled day is exactly a day the streak counted), and the same zone the
+// check-in reward uses — all of them read it from the request (lib/timezone.ts).
 
 export async function GET(req: Request) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  const today = localDay(new Date(), TZ);
+  const tz = readTimezone(req);
+  const today = localDay(new Date(), tz);
   const month = calendarMonth(new URL(req.url).searchParams.get("month"), today);
   if (!month) return NextResponse.json({ error: "invalid_month" }, { status: 400 });
   const settings = await getSettings(userId);
   const targetLanguage = targetLanguageFor(readLearningDirection(req, settings.learningDirection));
   const [studiedDays, streak] = await Promise.all([
-    getStudyDaysInMonth(userId, TZ, targetLanguage, monthRange(month)),
-    getStudyStreak(userId, TZ, targetLanguage),
+    getStudyDaysInMonth(userId, tz, targetLanguage, monthRange(month)),
+    getStudyStreak(userId, tz, targetLanguage),
   ]);
   return NextResponse.json(
-    { month, timezone: TZ, today, studiedDays, streak },
+    { month, timezone: tz, today, studiedDays, streak },
     { headers: { "Cache-Control": "private, no-store" } },
   );
 }

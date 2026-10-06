@@ -4,7 +4,7 @@
 
 ## 已實作規則
 
-- 當月免費額度自動更新至 1,000 點，不累積，同月不補滿；每天簽到 10 點，每月最多 300 點；簽到日與月份依台北時間（與學習連勝同一個日曆），月贈仍依 UTC。簽到前當天（台北）須至少答過一題單字卡（study_logs），否則回 409 check_in_requires_study。2 月按實際天數領取。
+- 當月免費額度自動更新至 1,000 點，不累積，同月不補滿；每天簽到 10 點，每月最多 300 點；簽到日與月份依請求的時區（`X-Tuji-Timezone`，無效或沒帶時為 Asia/Taipei；與學習連勝同一個日曆，見 lib/timezone.ts），月贈仍依 UTC。簽到前當天（該時區）須至少答過一題單字卡（study_logs），否則回 409 check_in_requires_study。2 月按實際天數領取。
 - 有效永久可領福利；AI_CREDITS_REPLACE_LEGACY_ENABLED 開啟後所有有效永久帳號自動轉制，包含仍有效的 Pro，政策與首筆月贈同一交易；簽到及購買點永久有效。
 - 同一日期／月份只有一筆領取紀錄。消費、到期與改政策不會重置領取額度。
 - 贈點依最早到期順序使用，接著使用無效期贈點，最後使用購買點數。購買點數沒有到期日。
@@ -19,11 +19,11 @@
 
 | 路徑 | 用途 |
 | --- | --- |
-| `GET /api/credits/wallet` | 自動月贈更新；餘額、預留、月贈／簽到／購買點可用量、月贈 UTC／簽到台北（checkInTimezone）重置、本月紀錄與 benefits.studiedToday |
+| `GET /api/credits/wallet` | 自動月贈更新；餘額、預留、月贈／簽到／購買點可用量、月贈 UTC／簽到依請求時區（checkInTimezone）重置、本月紀錄與 benefits.studiedToday |
 | `GET /api/credits/ledger?cursor=…` | 每頁最多 50 筆與下一頁游標；附目前錢包 |
 | `POST /api/credits/benefits/monthly/claim` | 舊端相容；自動當月月贈防重複，三端已移除按鈕 |
 | `POST /api/credits/check-in` | 簽到；須當天已學習；月上限後仍記錄簽到，金額為 0 |
-| `GET /api/users/study-calendar?month=YYYY-MM` | 打卡日曆：當月有學習的日期（台北）＋連勝；未來月份 400 |
+| `GET /api/users/study-calendar?month=YYYY-MM` | 打卡日曆：當月有學習的日期（請求時區）＋連勝；未來月份 400 |
 
 POST 不採用客戶端傳入的金額、日期、帳號或環境。跨站瀏覽器 POST 會被拒絕；原生 App 可使用既有登入驗證。API 均不快取。
 

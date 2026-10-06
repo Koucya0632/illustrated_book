@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { readTimezone } from "@/lib/timezone";
 import { studyAnswerOwnerMatches } from "@/lib/study-answer-owner";
 import { revalidateTag } from "next/cache";
 import { getCurrentUserIdFast } from "@/lib/current-user";
@@ -429,7 +430,7 @@ export async function POST(req: Request) {
   // it is a real open question, but it changes every existing user's streak
   // number and belongs in its own change.)
   const milestone = crossedStreakMilestone(
-    await getStreakMilestoneFacts(userId, "Asia/Taipei", targetLanguage),
+    await getStreakMilestoneFacts(userId, readTimezone(req), targetLanguage),
   );
 
   // 3) Persist the three independent writes in parallel (one round trip instead

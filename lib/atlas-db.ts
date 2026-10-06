@@ -718,6 +718,8 @@ export async function atlasStudyStats(
   targetLanguage: AtlasTargetLanguage,
   /** Items locked for being over the slot cap; required, see fetchAtlasDue. */
   excludeItemIds: readonly string[],
+  /** Whose midnight `todayNew` rolls over at — lib/timezone.ts. */
+  tz = "Asia/Taipei",
 ): Promise<{
   total: number;
   seen: number;
@@ -786,8 +788,8 @@ export async function atlasStudyStats(
         AND i.target_language = ${targetLanguage}
         ${excluded}
         AND s.last_reviewed_at IS NOT NULL
-        AND (s.last_reviewed_at AT TIME ZONE 'Asia/Taipei')::date
-          = (now() AT TIME ZONE 'Asia/Taipei')::date
+        AND (s.last_reviewed_at AT TIME ZONE ${tz})::date
+          = (now() AT TIME ZONE ${tz})::date
     `,
     // One representative status per item — the card the queue would surface
     // (prefer an in-progress card over a leftover 新卡, then soonest due).

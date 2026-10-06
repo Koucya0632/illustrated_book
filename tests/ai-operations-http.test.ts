@@ -7,14 +7,15 @@ import type { AiOperations } from "../lib/ai-operations/service";
 import { creditConfig, CreditError } from "../lib/credits/policy";
 import { isCreditAccount } from "../lib/credits/legacy-guard";
 
-function setup(options: { mode?: string; user?: string | null; enabled?: boolean; read?: boolean; fail?: boolean } = {}) {
+function setup(options: { mode?: string; user?: string | null; enabled?: boolean; read?: boolean; fail?: boolean; acceptState?: string; fulfillmentState?: string } = {}) {
   const calls: unknown[] = [];
+  const dispatched: unknown[] = [];
   const operations = {
     quote: async (...args: unknown[]) => { calls.push(args); return { id: randomUUID(), points: 100 }; },
-    accept: async (...args: unknown[]) => { calls.push(args); if (args[3] === false) throw new CreditError("credits_disabled"); return { id: randomUUID(), state: "reserved" }; },
+    accept: async (...args: unknown[]) => { calls.push(args); if (args[3] === false) throw new CreditError("credits_disabled"); return { id: "op-1", state: options.acceptState ?? "reserved" }; },
     read: async (...args: unknown[]) => { calls.push(args); if (options.fail) throw new Error("private database details"); return { state: "committed" }; },
     cancel: async (...args: unknown[]) => { calls.push(args); return { state: "released" }; },
-    confirm: async (...args: unknown[]) => { calls.push(args); return { item: {} }; },
+    confirm: async (...args: unknown[]) => { calls.push(args); return { item: {}, operation: { fulfillmentState: options.fulfillmentState ?? "pending" } }; },
   } as unknown as AiOperations;
   const handler = createAiHandler({
     currentUserId: async () => options.user === undefined ? "server-user" : options.user,
@@ -22,8 +23,9 @@ function setup(options: { mode?: string; user?: string | null; enabled?: boolean
       AI_CREDITS_READ_ENABLED: String(options.read ?? false) }),
     enabled: () => options.enabled ?? true,
     operations: () => operations, reportError: () => {},
+    dispatch: (...args) => { dispatched.push(args); },
   });
-  return { handler, calls };
+  return { handler, calls, dispatched };
 }
 const post = (data: unknown, headers: Record<string, string> = {}) => new Request("https://tuji.test/api/ai/operations", {
   method: "POST", headers: { "content-type": "application/json", ...headers }, body: JSON.stringify(data),
@@ -98,4 +100,25 @@ test("legacy fallback requires missing schema and disabled features; database ou
   await assert.rejects(isCreditAccount(missing, "user", live));
   const unavailable = (async () => { throw { code: "08006" }; }) as unknown as postgres.Sql;
   await assert.rejects(isCreditAccount(unavailable, "user", off));
+});
+
+test("new work starts right after the response instead of waiting for the cron tick", async () => {
+  const account = { userId: "server-user", environment: "sandbox" };
+  const accepted = setup();
+  await accepted.handler(post({ quoteId: randomUUID() }, { "idempotency-key": "k" }), "accept");
+  assert.deepEqual(accepted.dispatched, [["operation", account, "op-1"]]);
+
+  // A replayed key returns work that is already running or done; nothing new to start.
+  const replay = setup({ acceptState: "committed" });
+  await replay.handler(post({ quoteId: randomUUID() }, { "idempotency-key": "k" }), "accept");
+  assert.deepEqual(replay.dispatched, []);
+
+  const id = randomUUID();
+  const confirmed = setup();
+  await confirmed.handler(post({ candidateId: randomUUID() }), "confirm", id);
+  assert.deepEqual(confirmed.dispatched, [["fulfillment", account, id]]);
+
+  const done = setup({ fulfillmentState: "completed" });
+  await done.handler(post({ candidateId: randomUUID() }), "confirm", id);
+  assert.deepEqual(done.dispatched, []);
 });

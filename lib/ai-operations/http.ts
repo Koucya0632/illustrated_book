@@ -2,6 +2,7 @@ import { z } from "zod";
 import { CreditError, type CreditConfig } from "../credits/policy";
 import { acceptQuoteInput, confirmCandidateInput, OperationError } from "./contracts";
 import type { AiOperations } from "./service";
+import type { CreditAccount } from "../credits/wallet";
 
 type Action = "quote" | "accept" | "read" | "list" | "cancel" | "confirm";
 interface Dependencies {
@@ -10,6 +11,8 @@ interface Dependencies {
   enabled: () => boolean;
   operations: () => AiOperations;
   reportError: () => void;
+  /** Starts persisted work after the response; the per-minute cron stays the recovery path. */
+  dispatch?: (kind: "operation" | "fulfillment", account: CreditAccount, id: string) => void;
 }
 const headers = { "Cache-Control": "private, no-store" };
 async function body(request: Request) {
@@ -65,7 +68,12 @@ export function createAiHandler(deps: Dependencies) {
                 const { candidateId, ...correction } = parse(confirmCandidateInput, await body(request));
                 return operations.confirm(account, id!, candidateId, correction);
               })();
-      return Response.json(result, { status: action === "accept" && "state" in result && result.state === "reserved" ? 202 : 200, headers });
+      const reserved = action === "accept" && "state" in result && result.state === "reserved";
+      if (reserved && "id" in result && typeof result.id === "string") deps.dispatch?.("operation", account, result.id);
+      if (action === "confirm" && "operation" in result && result.operation?.fulfillmentState === "pending") {
+        deps.dispatch?.("fulfillment", account, id!);
+      }
+      return Response.json(result, { status: reserved ? 202 : 200, headers });
     } catch (error) {
       if (error instanceof OperationError) {
         const status = ["quote_not_found", "operation_not_found", "image_not_found"].includes(error.code) ? 404 :

@@ -1,3 +1,4 @@
+import { after } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import { userCreditConfig, CreditError } from "../credits/policy";
@@ -24,6 +25,15 @@ export const handleAiRequest = createAiHandler({
     process.env.AI_CREDITS_WORKER_ENABLED === "true" && Boolean(process.env.CRON_SECRET),
   operations: serverAiOperations,
   reportError: () => console.error("[ai-operations] request failed"),
+  // Waiting for the per-minute pg_cron tick cost 20–57s per recognition; run it now instead.
+  dispatch: (kind, account, id) => after(async () => {
+    if (process.env.AI_CREDITS_WORKER_ENABLED !== "true") return;
+    try {
+      await (kind === "operation" ? serverAiRunner()(account, id) : serverFulfillmentRunner()(account, id));
+    } catch {
+      console.error(`[ai-operations] immediate ${kind} run failed; cron will recover`);
+    }
+  }),
 });
 
 export function serverFulfillments() {

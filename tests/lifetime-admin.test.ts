@@ -15,10 +15,10 @@ import test from "node:test";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 
-test("operator revoke skips App Store holdings", () => {
+test("operator revoke allows only operator holdings", () => {
   const src = read("lib/atlas/lifetime.ts");
   const fn = src.slice(src.indexOf("export async function revokeLifetimeGrant"));
-  assert.match(fn, /AND source <> 'appstore'/);
+  assert.match(fn, /AND source IN \('grant', 'legacy_pro'\)/);
 });
 
 test("operator grant never creates a second live holding", () => {

@@ -8,7 +8,9 @@
 
 import assert from "node:assert/strict";
 import test from "node:test";
-import { PRO_GRACE_DAYS, resolveMembership, type MembershipSources } from "../lib/atlas/membership";
+import { PRO_GRACE_DAYS, resolveMembership, membershipForBilling, membershipTierForBilling, type MembershipSources } from "../lib/atlas/membership";
+import { atlasItemsToLock } from "../lib/atlas/item-lock";
+import { limitsForBilling } from "../lib/atlas/membership-limits";
 
 const NOW = new Date("2026-10-15T00:00:00Z");
 const days = (n: number) => new Date(NOW.getTime() + n * 86_400_000).toISOString();
@@ -44,6 +46,32 @@ test("live Pro wins over lifetime and reports its expiry", () => {
   assert.equal(m.proExpiresAt, days(20));
   assert.equal(m.canPurchasePro, false);
   assert.equal(m.graceEndsAt, null, "no grace while Pro is live");
+});
+
+test("credits replace live Pro immediately and do not rewrite historical membership sources", () => {
+  const sources = { ...none, proLive: true, proExpiresAt: days(20), lifetime };
+  const legacy = resolveMembership(sources, NOW);
+  const credits = membershipForBilling(legacy, "credits");
+  assert.deepEqual(credits, { tier: "lifetime", lifetime, proExpiresAt: null, graceEndsAt: null,
+    canPurchaseLifetime: false, canPurchasePro: false });
+  assert.equal(legacy.tier, "pro");
+  assert.equal(legacy.proExpiresAt, days(20));
+  assert.deepEqual(resolveMembership(sources, NOW), legacy);
+  assert.deepEqual(membershipForBilling(legacy, "legacy"), legacy);
+  const tier = membershipTierForBilling(legacy.tier, "credits");
+  const keep = limitsForBilling(tier, "v2", "credits").atlasSlotsLimit;
+  const ids = Array.from({ length: 205 }, (_, i) => `item-${i}`);
+  assert.deepEqual(atlasItemsToLock({ policy: "v2", tier, graceActive: false, keep }, ids), ids.slice(200));
+});
+
+test("credit membership has no former Pro grace and never invents a missing lifetime holding", () => {
+  const legacy = resolveMembership({ ...none, lastNaturalProEndAt: days(-3), lifetime }, NOW);
+  assert.equal(membershipForBilling(legacy, "credits").graceEndsAt, null);
+  const free = resolveMembership(none, NOW);
+  assert.deepEqual(membershipForBilling(free, "credits"), { ...free, canPurchasePro: false });
+  const revoked = resolveMembership({ ...none, proLive: true, proExpiresAt: days(20) }, NOW);
+  assert.deepEqual(membershipForBilling(revoked, "credits"), { ...free, canPurchasePro: false });
+  assert.equal(membershipTierForBilling("free", "credits"), "free");
 });
 
 test("Pro that ended naturally 3 days ago leaves lifetime with 4 days of grace", () => {

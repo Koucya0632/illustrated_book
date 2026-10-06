@@ -4,6 +4,9 @@ import { upsertAtlasEntitlement } from "@/lib/atlas/entitlement";
 import { classifyTransaction } from "@/lib/billing/appstore";
 import { applyLifetimeTransaction } from "@/lib/atlas/lifetime";
 import { BillingVerificationError, verifyTransaction } from "@/lib/billing/verifier";
+import { isCreditProduct } from "@/lib/credits/store-contracts";
+import { deliverCreditPurchase } from "@/lib/credits/store-server";
+import { creditStoreError } from "@/lib/credits/store-http";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,6 +49,10 @@ export async function POST(req: Request) {
   // Route by product before writing anything: an unrecognised product must not
   // reach the subscription row (the old mapper downgraded it to 'free').
   if (classified.kind === "unknown") {
+    if (isCreditProduct(classified.productId ?? undefined)) {
+      try { return NextResponse.json(await deliverCreditPurchase(userId, signed), { headers: { "Cache-Control": "private, no-store" } }); }
+      catch (error) { return creditStoreError(error); }
+    }
     console.warn("[billing/verify] unsupported product", classified.productId);
     return NextResponse.json({ error: "unsupported product" }, { status: 400 });
   }

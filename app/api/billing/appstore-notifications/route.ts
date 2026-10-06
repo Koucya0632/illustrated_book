@@ -3,9 +3,12 @@ import {
   getUserIdByOriginalTransaction,
   upsertAtlasEntitlement,
 } from "@/lib/atlas/entitlement";
-import { classifyTransaction } from "@/lib/billing/appstore";
+import { classifyTransaction, decodeNotification, decodeTransaction } from "@/lib/billing/appstore";
 import { applyLifetimeTransaction, getUserIdByLifetimeTransaction } from "@/lib/atlas/lifetime";
 import { verifyNotification, verifyTransaction } from "@/lib/billing/verifier";
+import { isCreditProduct } from "@/lib/credits/store-contracts";
+import { receiveCreditNotification } from "@/lib/credits/store-server";
+import { creditStoreError } from "@/lib/credits/store-http";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -32,6 +35,18 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "signedPayload required" }, { status: 400 });
   }
 
+  // Unverified decoding selects the strict credit pipeline only; it grants no authority.
+  // This must precede the legacy catch so missing verifier/DB config returns 503.
+  try {
+    const tx = decodeNotification(signedPayload).data?.signedTransactionInfo;
+    if (tx && isCreditProduct(decodeTransaction(tx).productId)) {
+      try {
+        await receiveCreditNotification(signedPayload);
+        return NextResponse.json({ ok: true, persisted: true });
+      } catch (error) { return creditStoreError(error); }
+    }
+  } catch { /* Malformed selectors continue into the existing verification path. */ }
+
   try {
     const notification = await verifyNotification(signedPayload);
     const signedTx = notification.data?.signedTransactionInfo;
@@ -42,6 +57,12 @@ export async function POST(req: Request) {
 
     const classified = classifyTransaction(await verifyTransaction(signedTx));
     if (classified.kind === "unknown") {
+      if (isCreditProduct(classified.productId ?? undefined)) {
+        try {
+          await receiveCreditNotification(signedPayload);
+          return NextResponse.json({ ok: true, persisted: true });
+        } catch (error) { return creditStoreError(error); }
+      }
       console.warn("[appstore-notifications] unsupported product", classified.productId);
       return NextResponse.json({ ok: true, handled: false });
     }

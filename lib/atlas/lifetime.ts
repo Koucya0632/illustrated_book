@@ -242,7 +242,7 @@ export async function revokeLifetimeGrant(input: {
          SET revoked_at = now(), revoke_reason = ${reason}, updated_at = now()
        WHERE user_id = ${input.userId}::uuid
          AND revoked_at IS NULL
-         AND source <> 'appstore'
+         AND source IN ('grant', 'legacy_pro')
       RETURNING id
     `) as unknown[];
     if (revoked.length === 0) return { revoked: 0 };

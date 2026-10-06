@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from "crypto";
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
+import { guardLegacyAtlasWrite } from "@/lib/credits/legacy-server";
 import { getSettings } from "@/lib/users-db";
 import {
   completeAtlasRecognitionJob,
@@ -194,6 +195,8 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  const creditGuard = await guardLegacyAtlasWrite(userId);
+  if (creditGuard) return creditGuard;
 
   // Before the body is read or anything is stored (checklist §4; v2 only).
   // Same response shape as the confirm route's capacity refusal.

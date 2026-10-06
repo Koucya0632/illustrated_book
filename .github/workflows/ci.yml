@@ -45,6 +45,9 @@ jobs:
             exit 1
           fi
 
+      - name: Credit transactions (isolated PostgreSQL)
+        run: npm run test:credits:integration
+
       # `next build` is what actually exercises the framework: the 14 → 16 upgrade
       # shipped two deprecation warnings and a rewritten tsconfig.json past a green
       # CI, because typecheck and tests never build. It runs without secrets — every

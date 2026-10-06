@@ -31,16 +31,18 @@
 // in lib/ratelimit.ts remain the runaway-cost guard.
 
 import { getSql } from "@/lib/db";
+import { usesCreditBilling } from "@/lib/credits/legacy-server";
 import { checkAtlasAiBackstops } from "@/lib/ratelimit";
 import {
   decideStoreKitBinding,
   decideStoreKitState,
 } from "@/lib/billing/storekit-state";
-import { limitsFor, upgradeTarget, type AtlasLimits } from "@/lib/atlas/membership-limits";
+import { limitsFor, limitsForBilling, upgradeTarget, type AtlasLimits } from "@/lib/atlas/membership-limits";
 import { studyableCategories } from "@/lib/study-membership";
 import { atlasItemsToLock } from "@/lib/atlas/item-lock";
 import {
   membershipPolicy,
+  membershipForBilling,
   membershipSourcesFromRow,
   resolveMembership,
   type Membership,
@@ -73,6 +75,7 @@ export interface AtlasUsage {
 
 export interface AtlasEntitlementSnapshot {
   plan: AtlasTier;
+  billingMode?: "legacy" | "credits";
   atlasSlotsLimit: number;
   primaryAiSoftLimitMonthly: number;
   precisionAiLimitMonthly: number;
@@ -132,8 +135,9 @@ const FREE_ENTITLEMENT: EffectiveEntitlement = {
   hasLifetime: false,
 };
 
-/** The three-tier tier the gates enforce: Pro while live, else lifetime, else free. */
-export function membershipTierOf(e: EffectiveEntitlement): MembershipTier {
+/** Credits follow the lifetime holding; legacy still resolves the Pro source union. */
+export function membershipTierOf(e: EffectiveEntitlement, billingMode: "legacy" | "credits" = "legacy"): MembershipTier {
+  if (billingMode === "credits") return e.hasLifetime ? "lifetime" : "free";
   return e.tier === "pro" ? "pro" : e.hasLifetime ? "lifetime" : "free";
 }
 
@@ -240,12 +244,15 @@ export async function getAtlasGateContext(userId: string): Promise<{
   tier: MembershipTier;
   pro: AtlasTier;
   policy: ReturnType<typeof membershipPolicy>;
+  billingMode: "legacy" | "credits";
   limits: AtlasLimits;
 }> {
   const row = await getEntitlementRow(userId);
-  const tier = membershipTierOf(row);
   const policy = membershipPolicy();
-  return { tier, pro: row.tier, policy, limits: limitsFor(tier, policy) };
+  const billingMode = await usesCreditBilling(userId) ? "credits" : "legacy";
+  const tier = membershipTierOf(row, billingMode);
+  return { tier, pro: tier === "pro" ? "pro" : "free", policy, billingMode,
+    limits: limitsForBilling(tier, policy, billingMode) };
 }
 
 /**
@@ -273,11 +280,12 @@ export async function getLockedAtlasItemIds(userId: string): Promise<string[]> {
   if (!sql) return [];
   try {
     const row = await getEntitlementRow(userId);
-    const tier = membershipTierOf(row);
+    const billingMode = await usesCreditBilling(userId) ? "credits" : "legacy";
+    const tier = membershipTierOf(row, billingMode);
     if (tier === "pro") return [];
     const graceActive =
-      tier === "lifetime" && (await readMembership(userId, row)).graceEndsAt !== null;
-    const keep = limitsFor(tier, policy).atlasSlotsLimit;
+      billingMode === "legacy" && tier === "lifetime" && (await readMembership(userId, row)).graceEndsAt !== null;
+    const keep = limitsForBilling(tier, policy, billingMode).atlasSlotsLimit;
     if (graceActive) return [];
     const rows = (await sql`
       SELECT id FROM user_atlas_items
@@ -299,7 +307,7 @@ export async function isAtlasItemLocked(userId: string, itemId: string): Promise
 }
 
 export async function getAtlasTier(userId: string): Promise<AtlasTier> {
-  return (await getEntitlementRow(userId)).tier;
+  return (await getAtlasGateContext(userId)).pro;
 }
 
 /**
@@ -477,20 +485,19 @@ async function readMembership(userId: string, pro: EffectiveEntitlement): Promis
 
 export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlementSnapshot> {
   const [row, usage] = await Promise.all([getEntitlementRow(userId), getAtlasUsage(userId)]);
-  const membership = await readMembership(userId, row);
-  const limits = limitsFor(membershipTierOf(row), membershipPolicy());
+  const billingMode = await usesCreditBilling(userId) ? "credits" : "legacy";
+  const membership = membershipForBilling(await readMembership(userId, row), billingMode);
+  const limits = limitsForBilling(membershipTierOf(row, billingMode), membershipPolicy(), billingMode);
   return {
-    plan: row.tier,
+    plan: billingMode === "credits" ? "free" : row.tier,
+    billingMode,
     atlasSlotsLimit: limits.atlasSlotsLimit,
     primaryAiSoftLimitMonthly: limits.primaryAiSoftLimitMonthly,
     precisionAiLimitMonthly: limits.precisionAiLimitMonthly,
     savedItemsLimit: limits.savedItemsLimit,
     adsRequiredForCardGeneration: limits.adsRequiredForCardGeneration,
-    // Wire name kept for released clients, but the value is the EFFECTIVE
-    // expiry — the later of the subscription and any live grant. A comped user
-    // with no subscription gets their grant's date here, which is the date
-    // their Pro actually ends and therefore the only honest answer.
-    subscriptionExpiresAt: row.expiresAt,
+    // Legacy reports the effective Pro expiry; converted accounts have permanent membership.
+    subscriptionExpiresAt: billingMode === "credits" ? null : row.expiresAt,
     usage,
     membership: {
       ...membership,
@@ -855,7 +862,7 @@ export async function checkAtlasCapacity(userId: string): Promise<AtlasCapacityG
   const [ctx, usage] = await Promise.all([getAtlasGateContext(userId), getAtlasUsage(userId)]);
   const { limits, tier, policy } = ctx;
   if (usage.atlasSlots < limits.atlasSlotsLimit) return { ok: true };
-  const target = upgradeTarget(tier, policy);
+  const target = ctx.billingMode === "credits" && tier === "lifetime" ? null : upgradeTarget(tier, policy);
   const targetSlots = target ? limitsFor(target, policy).atlasSlotsLimit : 0;
   return {
     ok: false,

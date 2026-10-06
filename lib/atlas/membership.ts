@@ -70,6 +70,17 @@ export function resolveMembership(s: MembershipSources, now: Date = new Date()):
   };
 }
 
+/** Credit enrollment replaces active Pro without rewriting its historical sources. */
+export function membershipTierForBilling(tier: MembershipTier, billingMode: "legacy" | "credits"): MembershipTier {
+  return billingMode === "credits" && tier === "pro" ? "lifetime" : tier;
+}
+
+export function membershipForBilling(membership: Membership, billingMode: "legacy" | "credits"): Membership {
+  if (billingMode !== "credits") return membership;
+  return { ...membership, tier: membership.lifetime ? "lifetime" : "free", proExpiresAt: null, graceEndsAt: null,
+    canPurchaseLifetime: membership.lifetime === null, canPurchasePro: false };
+}
+
 /** One row of the membership query in lib/atlas/entitlement.ts. */
 export interface MembershipSourceRow {
   sub_tier: string | null;

@@ -92,28 +92,30 @@ function allowUnverified(): boolean {
   return process.env.APPSTORE_ALLOW_UNVERIFIED === "true";
 }
 
-export async function verifyTransaction(signed: string): Promise<AppleTransaction> {
+export async function verifyTransaction(signed: string, requireSignature = false): Promise<AppleTransaction> {
   // Decode (unverified) only to pick the matching environment; the verifier
   // below still checks the signature against Apple's root.
   const decoded = decodeTransaction(signed);
+  if (requireSignature && !["Production", "Sandbox"].includes(decoded.environment ?? "")) throw new Error("invalid environment");
   const verifier = getVerifier(environmentFor(decoded.environment));
   if (verifier) {
     return (await verifier.verifyAndDecodeTransaction(signed)) as unknown as AppleTransaction;
   }
-  if (allowUnverified()) {
+  if (!requireSignature && allowUnverified()) {
     console.warn("[billing] APPSTORE_ALLOW_UNVERIFIED: decoding transaction WITHOUT signature verification");
     return decoded;
   }
   throw new BillingVerificationError("App Store verification not configured");
 }
 
-export async function verifyNotification(signed: string): Promise<AppleNotification> {
+export async function verifyNotification(signed: string, requireSignature = false): Promise<AppleNotification> {
   const decoded = decodeNotification(signed);
+  if (requireSignature && !["Production", "Sandbox"].includes(decoded.data?.environment ?? "")) throw new Error("invalid environment");
   const verifier = getVerifier(environmentFor(decoded.data?.environment));
   if (verifier) {
     return (await verifier.verifyAndDecodeNotification(signed)) as unknown as AppleNotification;
   }
-  if (allowUnverified()) {
+  if (!requireSignature && allowUnverified()) {
     console.warn("[billing] APPSTORE_ALLOW_UNVERIFIED: decoding notification WITHOUT signature verification");
     return decoded;
   }

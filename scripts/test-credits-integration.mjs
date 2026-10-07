@@ -29,7 +29,7 @@ try {
   const result = spawnSync(process.execPath, ["node_modules/tsx/dist/cli.mjs", "--test", "--test-concurrency=1",
     "tests/credits-policy.test.ts", "tests/credits-http.test.ts", "tests/credits-postgres.test.ts",
     "tests/ai-operations-postgres.test.ts", "tests/ai-operations-http.test.ts", "tests/ai-upload-body.test.ts", "tests/credits-store-contracts.test.ts",
-    "tests/credits-preflight-postgres.test.ts", "tests/credit-refund-review-postgres.test.ts", "tests/credit-refund-review-http.test.ts"], {
+    "tests/credits-preflight-postgres.test.ts", "tests/credit-refund-review-postgres.test.ts", "tests/credit-refund-review-http.test.ts", "tests/credit-admin-grants-http.test.ts"], {
     stdio: "inherit",
     env: { ...process.env, CREDIT_TEST_DATABASE_URL: `postgres://postgres:${password}@127.0.0.1:${port}/tuji_credits_test` },
   });

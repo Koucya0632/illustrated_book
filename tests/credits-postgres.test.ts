@@ -5,6 +5,7 @@ import postgres from "postgres";
 import { migrateCreditSchema, CREDIT_TABLES } from "../lib/credits/schema";
 import { creditConfig, CreditError } from "../lib/credits/policy";
 import { createCreditWallet } from "../lib/credits/wallet";
+import { createAdminCreditGrants } from "../lib/credits/admin-grants";
 import { auditCredits } from "../lib/credits/audit";
 import { isCreditAccount } from "../lib/credits/legacy-guard";
 
@@ -54,6 +55,67 @@ test("credit transactions against isolated PostgreSQL", { skip: !databaseUrl }, 
       const wallet = createCreditWallet(sql, () => now);
       return { account, wallet, setTime: (value: string) => { now = new Date(value); } };
     }
+
+    await t.test("admin gifting is atomic, permanent, audited and idempotent across concurrent retries", async () => {
+      const f = await fixture();
+      let now = new Date("2026-10-03T12:00:00Z");
+      const gifts = createAdminCreditGrants(sql, () => now, () => config);
+      const input = { requestKey: randomUUID(), amount: 4000, reason: "辨識補償" };
+      const results = await Promise.all(Array.from({ length: 12 }, () => gifts.grant(f.account, input, "admin")));
+      assert.equal(results.filter(r => r.granted).length, 1);
+      const detail = await gifts.read(f.account);
+      assert.equal(detail.available, "5000");
+      assert.equal(detail.grants.length, 1);
+      assert.equal(detail.grants[0].reason, input.reason);
+      assert.equal(detail.grants[0].actor, "admin");
+      const [lot] = await sql`SELECT source, expires_at FROM credit_lots WHERE user_id = ${f.account.userId} AND source = 'adjustment'`;
+      assert.equal(lot.expires_at, null);
+      assert.equal(lot.source, "adjustment");
+      for (const override of [{ amount: 7000 }, { reason: "different" }]) {
+        await assert.rejects(gifts.grant(f.account, { ...input, ...override }, "admin"), isError("idempotency_conflict"));
+      }
+      const production = { ...f.account, environment: "production" as const };
+      assert.equal((await gifts.read(production)).grants.length, 0);
+      await assert.rejects(gifts.grant(production, input, "admin"), isError("invalid_credit_configuration"));
+      now = new Date("2026-11-03T12:00:00Z");
+      const current = await createCreditWallet(sql, () => now, () => config).readWallet(f.account);
+      assert.equal(current.available, 5000);
+      assert.equal(current.monthlyAvailable, 1000);
+      assert.equal(current.paidAvailable, 0);
+      assert.deepEqual((await auditCredits(sql, "sandbox", f.account.userId)).mismatches, []);
+    });
+
+    await t.test("admin inspection is read-only and gifting requires lifetime and live configuration", async () => {
+      const f = await fixture(false);
+      const gifts = createAdminCreditGrants(sql, () => new Date("2026-10-03T12:00:00Z"), () => config);
+      const input = { requestKey: randomUUID(), amount: 1000, reason: "isolated test" };
+      assert.equal((await gifts.read(f.account)).available, "0");
+      await assert.rejects(gifts.grant(f.account, input, "admin"), isError("benefit_ineligible"));
+      const [counts] = await sql`SELECT (SELECT count(*)::int FROM credit_lots WHERE user_id = ${f.account.userId}) AS lots,
+        (SELECT count(*)::int FROM credit_admin_grants WHERE user_id = ${f.account.userId}) AS gifts`;
+      assert.deepEqual(counts, { lots: 0, gifts: 0 });
+      await assert.rejects(createAdminCreditGrants(sql, () => new Date(), () => ({ ...config, mode: "off" }))
+        .grant(f.account, input, "admin"), isError("credits_disabled"));
+    });
+
+    await t.test("admin audit failure rolls back points, enrollment and monthly allowance together", async () => {
+      const f = await fixture();
+      await sql`DELETE FROM credit_user_policies WHERE user_id = ${f.account.userId}`;
+      const gifts = createAdminCreditGrants(sql, () => new Date("2026-10-03T12:00:00Z"), () => ({ ...config, replaceLegacyEnabled: true }));
+      await sql.unsafe(`CREATE OR REPLACE FUNCTION reject_admin_gift() RETURNS trigger LANGUAGE plpgsql AS $$
+        BEGIN RAISE EXCEPTION 'injected audit failure'; END $$`);
+      await sql.unsafe("CREATE TRIGGER reject_admin_gift BEFORE INSERT ON credit_admin_grants FOR EACH ROW EXECUTE FUNCTION reject_admin_gift()");
+      try {
+        await assert.rejects(gifts.grant(f.account, { requestKey: randomUUID(), amount: 1000, reason: "fault" }, "admin"));
+        const [counts] = await sql`SELECT (SELECT count(*)::int FROM credit_lots WHERE user_id = ${f.account.userId}) AS lots,
+          (SELECT count(*)::int FROM credit_user_policies WHERE user_id = ${f.account.userId}) AS policies,
+          (SELECT count(*)::int FROM credit_ledger WHERE user_id = ${f.account.userId}) AS ledger`;
+        assert.deepEqual(counts, { lots: 0, policies: 0, ledger: 0 });
+      } finally {
+        await sql.unsafe("DROP TRIGGER reject_admin_gift ON credit_admin_grants");
+        await sql.unsafe("DROP FUNCTION reject_admin_gift()");
+      }
+    });
 
     await t.test("automatic monthly refresh happens on read and competing devices issue only one allowance", async () => {
       const f = await fixture();

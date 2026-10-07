@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { ADMIN_COOKIE, verifyAdminToken } from "@/lib/auth";
 import { getSql } from "@/lib/db";
-import { grantProAccess, revokeProGrants, MAX_GRANT_DAYS } from "@/lib/atlas/entitlement";
+import { revokeProGrants } from "@/lib/atlas/entitlement";
 import { grantLifetimeHolding, revokeLifetimeGrant } from "@/lib/atlas/lifetime";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Manual Pro grants / revocations. Behind the /admin password gate (middleware).
+// Manual lifetime grants and legacy revocations. Behind the /admin password gate (middleware).
 //
 // The gate is a single shared password with no per-admin identity, so `actor`
 // records the CHANNEL ("admin"), not a person — the audit value lives in the
@@ -15,6 +17,13 @@ export const dynamic = "force-dynamic";
 const ACTOR = "admin";
 
 export async function POST(req: Request, props: { params: Promise<{ id: string }> }) {
+  if (!await verifyAdminToken((await cookies()).get(ADMIN_COOKIE)?.value)) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+  const origin = req.headers.get("origin");
+  if (req.headers.get("sec-fetch-site") === "cross-site" || (origin !== null && origin !== new URL(req.url).origin)) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
   const params = await props.params;
   const sql = getSql();
   if (!sql) return NextResponse.json({ error: "database unavailable" }, { status: 503 });
@@ -33,8 +42,8 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
   }
 
   const reason = typeof body.reason === "string" ? body.reason.trim() : "";
-  if (!reason) {
-    return NextResponse.json({ error: "請填寫理由" }, { status: 400 });
+  if (!reason || reason.length > 500) {
+    return NextResponse.json({ error: "請填寫理由（最多 500 字）" }, { status: 400 });
   }
 
   const exists = await sql`
@@ -46,12 +55,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
 
   try {
     if (body.action === "grant") {
-      const days = Number(body.days);
-      if (!Number.isInteger(days) || days < 1 || days > MAX_GRANT_DAYS) {
-        return NextResponse.json({ error: "天數不合法" }, { status: 400 });
-      }
-      const result = await grantProAccess({ userId, days, reason, grantedBy: ACTOR });
-      return NextResponse.json({ ok: true, expiresAt: result.expiresAt });
+      return NextResponse.json({ error: "Pro 已停止贈與，請改用永久會員或點數贈與" }, { status: 410 });
     }
 
     if (body.action === "revoke") {

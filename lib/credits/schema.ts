@@ -7,6 +7,7 @@ export const CREDIT_TABLES = [
   "credit_store_transactions", "credit_store_notifications",
   "credit_policy_events",
   "credit_refund_resolutions",
+  "credit_admin_grants",
 ] as const;
 
 /** Tables and RLS become visible in the same commit, including on fresh installs. */
@@ -153,6 +154,14 @@ export const CREDIT_DDL = [
     FOREIGN KEY (environment, transaction_id) REFERENCES credit_store_transactions ON DELETE CASCADE
   )`,
   `ALTER TABLE credit_store_notifications ADD COLUMN IF NOT EXISTS signed_payload TEXT`,
+  `CREATE TABLE IF NOT EXISTS credit_admin_grants (
+    user_id UUID NOT NULL, environment TEXT NOT NULL, request_key UUID NOT NULL,
+    lot_id BIGINT NOT NULL, amount INT NOT NULL CHECK (amount > 0),
+    reason TEXT NOT NULL CHECK (char_length(btrim(reason)) BETWEEN 1 AND 500),
+    actor TEXT NOT NULL, created_at TIMESTAMPTZ NOT NULL,
+    PRIMARY KEY (user_id, environment, request_key),
+    FOREIGN KEY (lot_id, user_id, environment) REFERENCES credit_lots(id, user_id, environment) ON DELETE CASCADE
+  )`,
   `CREATE INDEX IF NOT EXISTS credit_store_notifications_work_idx ON credit_store_notifications(next_attempt_at)
     WHERE state = 'pending'`,
   ...CREDIT_TABLES.map(table => `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`),

@@ -7,7 +7,8 @@ export default function MeClient() {
   const t = useT();
   async function logout() {
     const supabase = createClient();
-    await supabase.auth.signOut();
+    // "local": the default "global" also signs out the user's phones.
+    await supabase.auth.signOut({ scope: "local" });
     window.location.href = "/";
   }
   return (

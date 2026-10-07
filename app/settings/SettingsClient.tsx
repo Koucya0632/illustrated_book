@@ -113,9 +113,11 @@ export default function SettingsClient({
     window.location.reload();
   }
 
+  // "local": the default "global" revokes every session the account has,
+  // so signing out here also signed out the user's phones.
   async function logout() {
     const { createClient } = await import("@/lib/supabase/client");
-    await createClient().auth.signOut();
+    await createClient().auth.signOut({ scope: "local" });
     window.location.href = "/";
   }
 

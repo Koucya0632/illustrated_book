@@ -1,4 +1,7 @@
-// Writes App Store lifetime (永久會員) holdings. The decision of WHAT to do is
+// Writes store-bought lifetime (永久會員) holdings — App Store, and Google Play
+// through the same rules (lib/billing/play-purchase.ts maps a Play order into a
+// LifetimeFromTransaction; the storekit_* columns then hold Play's order id,
+// purchase time and obfuscated account id). The decision of WHAT to do is
 // lib/atlas/lifetime-decision.ts (pure, tested); this file only carries it out
 // inside one transaction and appends the ledger row.
 //
@@ -17,9 +20,13 @@ type SqlExecutor = any;
 
 export type LifetimeWriteStatus = LifetimeWriteDecision["action"];
 
+export type LifetimeStore = "appstore" | "play";
+const STORE_NAME: Record<LifetimeStore, string> = { appstore: "App Store", play: "Google Play" };
+
 export async function applyLifetimeTransaction(
   userId: string,
   holding: LifetimeFromTransaction,
+  store: LifetimeStore = "appstore",
 ): Promise<{ status: LifetimeWriteStatus }> {
   const sql = getSql();
   if (!sql) throw new Error("database unavailable");
@@ -80,7 +87,7 @@ export async function applyLifetimeTransaction(
     if (supersede) {
       await tx`
         UPDATE user_lifetime_entitlements
-           SET revoked_at = now(), revoke_reason = 'superseded by App Store purchase', updated_at = now()
+           SET revoked_at = now(), revoke_reason = ${`superseded by ${STORE_NAME[store]} purchase`}, updated_at = now()
          WHERE id = ${userLive.id}
       `;
     }
@@ -97,8 +104,8 @@ export async function applyLifetimeTransaction(
             user_id, source, product_id, original_transaction_id,
             storekit_transaction_id, storekit_signed_at, storekit_app_account_token, granted_by
           ) VALUES (
-            ${userId}::uuid, 'appstore', ${holding.productId}, ${txnId},
-            ${signed.tid}, ${signed.at}, ${signed.token}::uuid, 'appstore'
+            ${userId}::uuid, ${store}, ${holding.productId}, ${txnId},
+            ${signed.tid}, ${signed.at}, ${signed.token}::uuid, ${store}
           )
         `;
         break;
@@ -125,7 +132,7 @@ export async function applyLifetimeTransaction(
       case "revoke":
         await tx`
           UPDATE user_lifetime_entitlements
-             SET revoked_at = now(), revoke_reason = 'App Store refund / revocation',
+             SET revoked_at = now(), revoke_reason = ${`${STORE_NAME[store]} refund / revocation`},
                  storekit_transaction_id = ${signed.tid}, storekit_signed_at = ${signed.at},
                  updated_at = now()
            WHERE original_transaction_id = ${txnId}
@@ -149,7 +156,7 @@ export async function applyLifetimeTransaction(
           (user_id, from_tier, to_tier, channel, reason, actor, original_transaction_id)
         VALUES (${u}::uuid, ${before.get(u) ?? null}, ${after}, ${channel},
                 ${supersede ? "superseded a free lifetime holding" : holding.productId},
-                'appstore', ${txnId})
+                ${store}, ${txnId})
       `;
     }
     return { status: decision.action };

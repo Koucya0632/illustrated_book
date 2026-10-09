@@ -15,8 +15,13 @@ export class StoreCreditError extends Error {
   constructor(public readonly code: "invalid_credit_transaction" | "purchase_account_mismatch" | "purchase_identity_conflict") { super(code); }
 }
 const date = z.number().int().positive().max(8_640_000_000_000_000);
+/** Google order ids ("GPA.1234-5678-9012-34567"); Apple's are all digits, so the two never collide. */
+export const PLAY_ORDER_ID = /^GPA\.[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{5}$/;
+/** The ledger reference of a store purchase — `apple:` or `play:` by the id's own shape. */
+export const creditGrantKey = (transactionId: string) =>
+  PLAY_ORDER_ID.test(transactionId) ? `play:${transactionId}` : `apple:${transactionId}`;
 export const storeSnapshot = z.object({
-  transactionId: z.string().regex(/^[0-9]{1,64}$/), productId: z.enum(["app.tuji.credits.1000", "app.tuji.credits.4000", "app.tuji.credits.7000"]),
+  transactionId: z.string().refine(v => /^[0-9]{1,64}$/.test(v) || PLAY_ORDER_ID.test(v)), productId: z.enum(["app.tuji.credits.1000", "app.tuji.credits.4000", "app.tuji.credits.7000"]),
   userId: z.string().uuid().transform(v => v.toLowerCase()), environment: z.enum(["production", "sandbox"]),
   quantity: z.number().int().min(1).max(100), signedAt: date,
   kind: z.enum(["purchase", "refund", "reverse"]), refundFraction: z.number().int().min(0).max(100000),

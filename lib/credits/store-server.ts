@@ -3,7 +3,7 @@ import { verifyTransaction, verifyNotification } from "../billing/verifier";
 import type { AppleNotification, AppleTransaction } from "../billing/appstore";
 import { CreditError, userCreditConfig } from "./policy";
 import { createCreditWallet } from "./wallet";
-import { creditSnapshot } from "./store-contracts";
+import { creditSnapshot, type StoreSnapshot } from "./store-contracts";
 import { createCreditStore } from "./store";
 
 export function serverCreditStore() {
@@ -29,4 +29,12 @@ export async function receiveCreditNotification(signed: string): Promise<void> {
   const snapshot = creditSnapshot(tx, { type: n.notificationType, signedAt: n.signedDate });
   const { store } = serverCreditStore();
   await store.receive(snapshot.environment, n.notificationUUID, { snapshot, notificationType: n.notificationType }, signed);
+}
+/** A Google Play point pack, already verified with Google and mapped by lib/billing/play-purchase.ts. */
+export async function deliverPlayCreditPurchase(userId: string, snapshot: StoreSnapshot) {
+  const { sql, store } = serverCreditStore();
+  if (snapshot.environment !== userCreditConfig(userId).environment) throw new CreditError("invalid_credit_configuration");
+  const delivered = await store.apply(snapshot, userId);
+  const wallet = await createCreditWallet(sql).readWallet({ userId, environment: snapshot.environment });
+  return { ...delivered, wallet };
 }

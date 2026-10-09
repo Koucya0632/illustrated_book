@@ -10,7 +10,7 @@
 
 export type MembershipTier = "free" | "lifetime" | "pro";
 export type MembershipPolicy = "v1" | "v2";
-export type LifetimeSource = "appstore" | "legacy_pro" | "grant";
+export type LifetimeSource = "appstore" | "play" | "legacy_pro" | "grant";
 
 /** Grace after Pro ends naturally (was 30 days; shortened to 7 on 2026-09-27). */
 export const PRO_GRACE_DAYS = 7;
@@ -94,7 +94,7 @@ export interface MembershipSourceRow {
 }
 
 function isLifetimeSource(v: string | null): v is LifetimeSource {
-  return v === "appstore" || v === "legacy_pro" || v === "grant";
+  return v === "appstore" || v === "play" || v === "legacy_pro" || v === "grant";
 }
 
 function iso(v: string | Date | null): string | null {

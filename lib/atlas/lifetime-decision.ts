@@ -70,11 +70,11 @@ export function decideLifetimeWrite(input: {
     return txnRow.revoked ? { action: "refresh" } : { action: "revoke" };
   }
 
-  // A paid App Store holding replaces a free one (legacy_pro / grant), so the
+  // A paid store holding (App Store or Play) replaces a free one (legacy_pro / grant), so the
   // purchase is recorded and a later refund has a row to revoke. Two paid
   // holdings for one account cannot both be live.
   const liveElsewhere = userLive !== null && !(txnRow && txnRow.userId === userId && !txnRow.revoked);
-  if (liveElsewhere && userLive!.source === "appstore") return { action: "already_owned" };
+  if (liveElsewhere && (userLive!.source === "appstore" || userLive!.source === "play")) return { action: "already_owned" };
   const supersede = liveElsewhere;
 
   if (!txnRow) return { action: "insert", supersede };

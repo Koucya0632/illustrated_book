@@ -139,7 +139,7 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
                 >
                   <span className="font-semibold text-ink">{l.revokedAt ? "已收回" : "生效中"}</span>
                   <span className="ml-2 text-muted">
-                    {l.source === "appstore" ? "App Store 購買" : l.source === "legacy_pro" ? "舊 Pro 轉移" : "贈與"}
+                    {l.source === "appstore" ? "App Store 購買" : l.source === "play" ? "Google Play 購買" : l.source === "legacy_pro" ? "舊 Pro 轉移" : "贈與"}
                   </span>
                   {l.reason && <p className="mt-1 text-ink">{l.reason}</p>}
                   <p className="mt-1 text-xs text-muted">

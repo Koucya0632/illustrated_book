@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { z } from "zod";
 import type postgres from "postgres";
 import { createCreditWallet } from "./wallet";
-import { CREDIT_PACKS, CREDIT_CATALOG_VERSION, StoreCreditError, storeSnapshot, type StoreSnapshot } from "./store-contracts";
+import { CREDIT_PACKS, CREDIT_CATALOG_VERSION, StoreCreditError, creditGrantKey, storeSnapshot, type StoreSnapshot } from "./store-contracts";
 import type { CreditEnvironment } from "./policy";
 
 const inboxPayload = z.object({ snapshot: storeSnapshot, notificationType: z.string().min(1).max(100) }).strict();
@@ -16,7 +16,8 @@ export function createCreditStore(sql: postgres.Sql, clock = () => new Date()) {
     const a = { userId: s.userId, environment: s.environment };
     return wallet.transact(a, async scope => {
       const tx = scope.sql;
-      // Apple transaction IDs are globally bound within their signed environment.
+      // Store transaction IDs are globally bound within their signed environment.
+      const grantKey = creditGrantKey(s.transactionId);
       await tx`SELECT pg_advisory_xact_lock(hashtextextended(${`credit-store:${s.environment}:${s.transactionId}`}, 0))`;
       const [previous] = await tx`SELECT * FROM credit_store_transactions
         WHERE environment = ${s.environment} AND transaction_id = ${s.transactionId}`;
@@ -34,9 +35,9 @@ export function createCreditStore(sql: postgres.Sql, clock = () => new Date()) {
       let granted = false;
       // A refund-before-verify is a durable tombstone. A later old purchase cannot resurrect it.
       if (!record.lot_id) {
-        granted = await scope.grant({ key: `apple:${s.transactionId}`, source: "purchase", amount: points, expiresAt: null });
+        granted = await scope.grant({ key: grantKey, source: "purchase", amount: points, expiresAt: null });
         const [lot] = await tx`SELECT id FROM credit_lots WHERE user_id = ${s.userId} AND environment = ${s.environment}
-          AND grant_key = ${`apple:${s.transactionId}`}`;
+          AND grant_key = ${grantKey}`;
         await tx`UPDATE credit_store_transactions SET lot_id = ${lot.id} WHERE environment = ${s.environment} AND transaction_id = ${s.transactionId}`;
         record = { ...record, lot_id: lot.id };
       }
@@ -49,7 +50,7 @@ export function createCreditStore(sql: postgres.Sql, clock = () => new Date()) {
         if (target < record.withdrawn_points) {
           const restored = record.withdrawn_points - target;
           await tx`UPDATE credit_lots SET remaining = remaining + ${restored} WHERE id = ${record.lot_id}`;
-          await scope.record("refund_reverse", restored, `apple:${s.transactionId}`);
+          await scope.record("refund_reverse", restored, grantKey);
           record = { ...record, withdrawn_points: target };
         }
         await tx`UPDATE credit_store_transactions SET refund_points = ${target},
@@ -67,7 +68,7 @@ export function createCreditStore(sql: postgres.Sql, clock = () => new Date()) {
     });
   }
   return {
-    /** Call only with a strictly verified, server-mapped Apple payload. */
+    /** Call only with a strictly verified, server-mapped Apple or Google payload. */
     apply,
     async receive(environment: CreditEnvironment, id: string, raw: z.infer<typeof inboxPayload>, signedPayload?: string) {
       if (signedPayload !== undefined && (!signedPayload || signedPayload.length > 262144)) {

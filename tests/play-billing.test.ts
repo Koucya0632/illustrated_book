@@ -149,3 +149,22 @@ test("the API client signs a service-account JWT once and reuses the token", asy
   assert.equal(calls.filter(u => u.includes("oauth2")).length, 1);
   assert.match(calls[1], /applications\/app\.tuji\.android\/purchases\/products\/app\.tuji\.lifetime\/tokens\/t1$/);
 });
+
+test("voided purchases parse Google's real shape, where kind is the resource name", async () => {
+  const { privateKey } = generateKeyPairSync("rsa", { modulusLength: 2048 });
+  const api = createPlayApi({
+    credentials: JSON.stringify({ client_email: "play@tuji.iam.gserviceaccount.com", private_key: privateKey.export({ type: "pkcs8", format: "pem" }) }),
+    fetchImpl: (async (url: string) => {
+      if (String(url).startsWith("https://oauth2.googleapis.com/token")) return Response.json({ access_token: "at", expires_in: 3600 });
+      assert.match(String(url), /voidedpurchases\?startTime=\d+&type=0/);
+      return Response.json({
+        voidedPurchases: [{
+          kind: "androidpublisher#voidedPurchase", purchaseToken: "tok", purchaseTimeMillis: "1791025200000",
+          voidedTimeMillis: "1791025500000", orderId: "GPA.3301-2345-6789-01234", voidedSource: 2, voidedReason: 0,
+        }],
+      });
+    }) as typeof fetch,
+  });
+  const voided = await api.listVoidedPurchases(new Date(0));
+  assert.deepEqual(voided, [{ purchaseToken: "tok", orderId: "GPA.3301-2345-6789-01234", voidedAt: new Date(1791025500000) }]);
+});

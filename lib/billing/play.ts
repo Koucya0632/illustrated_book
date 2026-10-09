@@ -54,8 +54,8 @@ const voidedPage = z.object({
     purchaseToken: z.string(),
     orderId: z.string().optional(),
     voidedTimeMillis: z.string().regex(/^[0-9]{1,16}$/),
-    /** 0 = one-time product, 1 = subscription. */
-    kind: z.number().int().optional(),
+    // `kind` is the resource name ("androidpublisher#voidedPurchase"), not the
+    // product type: one-time products only is what `type=0` in the query asks.
   }).passthrough()).optional(),
   tokenPagination: z.object({ nextPageToken: z.string().optional() }).optional(),
 });
@@ -159,7 +159,6 @@ export function createPlayApi(input: {
         if (!res.ok) throw new Error(`Play API voidedpurchases.list failed: ${res.status}`);
         const parsed = voidedPage.parse(await res.json());
         for (const v of parsed.voidedPurchases ?? []) {
-          if (v.kind !== undefined && v.kind !== 0) continue;
           out.push({ purchaseToken: v.purchaseToken, orderId: v.orderId ?? null, voidedAt: new Date(Number(v.voidedTimeMillis)) });
         }
         pageToken = parsed.tokenPagination?.nextPageToken;

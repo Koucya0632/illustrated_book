@@ -1333,6 +1333,25 @@ const DDL = [
    )`,
   `CREATE UNIQUE INDEX IF NOT EXISTS user_lifetime_live_idx
      ON user_lifetime_entitlements(user_id) WHERE revoked_at IS NULL`,
+  // Google Play sells 永久會員 too. Its holding is explained by its order the
+  // same way an App Store one is by its transaction, so neither needs a reason.
+  `DO $$ BEGIN
+     IF NOT EXISTS (
+       SELECT 1 FROM pg_constraint
+       WHERE conname = 'user_lifetime_entitlements_source_chk'
+     ) THEN
+       ALTER TABLE user_lifetime_entitlements
+         DROP CONSTRAINT IF EXISTS user_lifetime_entitlements_source_check;
+       ALTER TABLE user_lifetime_entitlements
+         DROP CONSTRAINT IF EXISTS user_lifetime_entitlements_check;
+       ALTER TABLE user_lifetime_entitlements
+         ADD CONSTRAINT user_lifetime_entitlements_source_chk
+         CHECK (source IN ('appstore','play','legacy_pro','grant'));
+       ALTER TABLE user_lifetime_entitlements
+         ADD CONSTRAINT user_lifetime_entitlements_reason_chk
+         CHECK (source IN ('appstore','play') OR char_length(btrim(coalesce(reason, ''))) BETWEEN 1 AND 500);
+     END IF;
+   END $$`,
   // In-flight AI recognitions. The monthly quota counts finished successes in
   // user_atlas_ai_usage, which is written only AFTER the model call — so two
   // devices starting at once could both pass the check. A reservation is taken

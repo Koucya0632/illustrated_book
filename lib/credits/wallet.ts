@@ -2,6 +2,7 @@ import type postgres from "postgres";
 import { replaceLegacyInTransaction } from "./cutover";
 import { refundReviewCondition } from "./refund-review";
 import { DEFAULT_TIMEZONE, zonedPeriod } from "../timezone";
+import { creditGrantKey } from "./store-contracts";
 import {
   assertCreditKey, assertPoints, CREDIT_POLICY, CreditError, userCreditConfig, utcPeriod,
   type CreditConfig, type CreditEnvironment, type CreditSource,
@@ -284,7 +285,7 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
       const total = row.withdrawn_points + withdrawn;
       if (withdrawn) {
         await tx`UPDATE credit_lots SET remaining = remaining - ${withdrawn} WHERE id = ${row.lot_id}`;
-        await record(tx, a, now, "refund", -withdrawn, 0, `apple:${row.transaction_id}`);
+        await record(tx, a, now, "refund", -withdrawn, 0, creditGrantKey(row.transaction_id));
       }
       await tx`UPDATE credit_store_transactions SET withdrawn_points = ${total},
         consumed_points = ${Math.max(0, row.refund_points - total - row.reserved)}

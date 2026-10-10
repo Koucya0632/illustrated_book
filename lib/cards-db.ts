@@ -1,6 +1,7 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
 import { getSql } from "./db";
+import { CATALOGUE_REVALIDATE_SECONDS } from "./catalogue-cache";
 import { buildChoiceCandidates, candidateWord, type TargetMeta } from "./distractors";
 import { readChoiceCatalog } from "./study-choice-catalog";
 import { assembleStudyChoices, choicesConflict, choiceReserve, freshChoiceSeed, prepareChoiceCandidates, type ChoiceLanguage, type StudyChoiceCandidate } from "./study-choices";
@@ -117,7 +118,7 @@ export async function attachMasteryAndSort(
 const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[]) => {
   const catalog = await readChoiceCatalog(requireSql(), languages);
   return { pools: Object.fromEntries(catalog.pools), relations: catalog.relations };
-}, ["study-choice-catalog-v2"], { tags: ["words"], revalidate: 300 });
+}, ["study-choice-catalog-v2"], { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS });
 
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
   if (!due.length) return due;

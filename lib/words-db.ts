@@ -53,7 +53,8 @@ function requireSql(): Sql {
 
 function bustCaches() {
   // No-op outside a Next request context (e.g. the enrich CLI script), where
-  // revalidateTag throws. Deployed reads still refresh via the 60s revalidate.
+  // revalidateTag throws. Deployed reads still refresh, but only once the
+  // CATALOGUE_REVALIDATE_SECONDS window (catalogue-cache.ts) runs out.
   try {
     revalidateTag("words", "max");
   } catch {

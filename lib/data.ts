@@ -4,6 +4,7 @@
 
 import { unstable_cache } from "next/cache";
 import { dbEnabled, getSql } from "./db";
+import { CATALOGUE_REVALIDATE_SECONDS } from "./catalogue-cache";
 import { publicFallbackWords as staticWords } from "./words";
 import { MIN_SPANS_VERSION, spansCoverSentence, unlinkSelfReference } from "./example-spans";
 import { localizeSpans, localizeWord, type LocalizedTextMap } from "./word-localize";
@@ -211,7 +212,7 @@ const fetchAllFromDb = unstable_cache(
   // production deploy cannot retain the pre-backfill rows.
   // v8: added per-locale pronunciation audio (audio_by_locale).
   ["all-words-v8"],
-  { tags: ["words"], revalidate: 60 },
+  { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS },
 );
 
 async function getAllRawEntries(): Promise<RawEntry[]> {
@@ -280,7 +281,7 @@ const getTermRowsCached = unstable_cache(
     `;
   },
   ["word-terms"],
-  { tags: ["words"], revalidate: 300 },
+  { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS },
 );
 
 async function targetTermMap(
@@ -353,7 +354,7 @@ const getSpanRowsCached = unstable_cache(
   // v2: the cached blob gained `pronunciation`. Reusing v1 would serve rows
   // without the column until the tag happened to be revalidated.
   ["sentence-spans-v2"],
-  { tags: ["words"], revalidate: 300 },
+  { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS },
 );
 
 async function spansForSentences(

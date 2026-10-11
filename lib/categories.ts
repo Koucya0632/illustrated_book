@@ -34,7 +34,7 @@ export const categories: Category[] = [
   {
     id: "custom",
     name: "Custom",
-    nameZh: "自定義",
+    nameZh: "自製圖鑑",
     emoji: "🧩",
     description: "用自己的照片建立的學習卡片",
     descriptionEn: "Cards you built from your own photos",

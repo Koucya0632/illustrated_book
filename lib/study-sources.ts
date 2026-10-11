@@ -1,7 +1,7 @@
 // Which sources a study queue draws from, given the user's theme selection.
 //
 // The theme picker mixes two kinds of thing in one list. Most entries are real
-// `words.category` ids (kitchen, bathroom…), but 自定義 and 物見 are *synthetic*:
+// `words.category` ids (kitchen, bathroom…), but 自製圖鑑 and 物見 are *synthetic*:
 // they name a source, not a category, and no dictionary row carries them. That
 // mix is what this module exists to resolve, and getting it wrong is not
 // theoretical — picking 物見 alone used to hand the learner their own 自製圖鑑

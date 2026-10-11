@@ -425,6 +425,8 @@ export interface AtlasItemEnrichmentUpdate {
   definitionZh: string | null;
   definitionJa: string | null;
   definitionEn: string | null;
+  /// Set only when the item had no Chinese name of its own (needsChineseName).
+  displayZhHant: string | null;
   displayJa: string | null;
   displayEn: string | null;
   enrichment: AtlasEnrichment;
@@ -448,6 +450,7 @@ export async function updateAtlasItemEnrichment(
       definition_zh_hant = ${fields.definitionZh},
       definition_ja      = ${fields.definitionJa},
       definition_en      = ${fields.definitionEn},
+      display_zh_hant    = COALESCE(${fields.displayZhHant}, display_zh_hant),
       display_ja         = COALESCE(display_ja, ${fields.displayJa}),
       display_en         = COALESCE(display_en, ${fields.displayEn}),
       enrichment         = ${sql.json(fields.enrichment as never)},

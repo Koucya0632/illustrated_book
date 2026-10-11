@@ -24,6 +24,39 @@ type GlossFields = Pick<
   | "target_language"
 >;
 
+/** The Chinese name a confirm should store.
+ *
+ *  A ja/en interface never shows the Chinese-name field, so when its user
+ *  renames the card the candidate's Chinese name rides through describing the
+ *  object they just corrected away from. Storing it would publish a wrong name
+ *  to every Chinese reader and feed the enrich prompts a contradiction.
+ *
+ *  `submitted` is undefined when the client did not send one. The lemma is the
+ *  stand-in ("no Chinese name yet"): display_zh_hant is NOT NULL, and
+ *  `needsChineseName` is how the enrich pass knows to write the real one. */
+export function confirmedChineseName(input: {
+  lemma: string;
+  submitted: string | undefined;
+  candidate: { label: string; zh_hant: string | null } | null;
+  /** True when the capturing interface is known not to be Chinese. */
+  chineseFieldHidden: boolean;
+}): string {
+  const { lemma, submitted, candidate } = input;
+  if (!candidate) return submitted ?? lemma;
+  // Clients prefill the label when the model gave no Chinese name.
+  const suggested = candidate.zh_hant ?? candidate.label;
+  const renamed = lemma !== candidate.label;
+  if (submitted === undefined) return renamed ? lemma : suggested;
+  if (renamed && input.chineseFieldHidden && submitted === suggested) return lemma;
+  return submitted;
+}
+
+/** Whether display_zh_hant is still the lemma stand-in. A Japanese headword
+ *  that really is its own Chinese name (山) is regenerated to the same thing. */
+export function needsChineseName(item: Pick<AtlasItemRow, "lemma" | "display_zh_hant">): boolean {
+  return item.display_zh_hant.trim() === item.lemma.trim();
+}
+
 /** Headline gloss of the lemma (word.chinese / list `chinese` slots).
  *  When the UI language equals the item's target language the short display
  *  would just repeat the lemma, so monolingual mode uses the explanatory

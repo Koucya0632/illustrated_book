@@ -409,6 +409,19 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "completed");
       assert.equal(await run(f.account, op.id), "idle");
     });
+    await t.test("a rename with no Chinese name stores the lemma stand-in and the supplement writes the real one", async () => {
+      const f = await fixture();
+      const op = await f.accept(), delivered = await f.finish(op.id);
+      const confirmed = await f.operations.confirm(f.account, op.id, delivered.result.candidates[0].id, { lemma: "kitten" });
+      assert.equal(confirmed.item.display_zh_hant, "kitten");
+      const run = createFulfillmentRunner(f.fulfillments, async () => {
+        const result = enriched();
+        return { ...result, fields: { ...result.fields, displayZhHant: "小貓" } };
+      });
+      assert.equal(await run(f.account, op.id), "completed");
+      const [item] = await sql`SELECT display_zh_hant FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
+      assert.equal(item.display_zh_hant, "小貓");
+    });
     await t.test("a manually corrected name keeps the included supplement; a later rename still withdraws it", async () => {
       const f = await fixture();
       const op = await f.accept(), delivered = await f.finish(op.id);

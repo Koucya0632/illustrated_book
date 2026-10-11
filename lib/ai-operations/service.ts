@@ -2,6 +2,7 @@ import { createHash, randomUUID } from "node:crypto";
 import { isDeepStrictEqual } from "node:util";
 import type postgres from "postgres";
 import { assertCreditKey, CREDIT_POLICY, CreditError } from "../credits/policy";
+import { confirmedChineseName } from "../atlas/gloss";
 import { createCreditWallet, type CreditAccount, type CreditTransaction } from "../credits/wallet";
 import {
   OPERATION_TIMING, OperationError, recognitionDelivery, recognitionQuoteInput, recognitionUsage,
@@ -331,7 +332,9 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
         const itemId = existing?.id ?? randomUUID();
         const glossLanguage = op.input.glossLanguage as "en" | "ja" | null;
         const lemma = correction.lemma ?? candidate.label;
-        const zhHant = correction.displayZhHant ?? candidate.zh_hant;
+        // A cross-language run is known to be a ja/en interface, where the Chinese name is never on screen.
+        const zhHant = confirmedChineseName({ lemma, submitted: correction.displayZhHant,
+          candidate: { label: candidate.label, zh_hant: candidate.zh_hant }, chineseFieldHidden: glossLanguage !== null });
         // A gloss only exists for a cross-language capture; never store one the run did not ask for.
         const gloss = glossLanguage ? (correction.displayGloss === undefined ? candidate.gloss : correction.displayGloss) : null;
         const source = lemma === candidate.label && zhHant === candidate.zh_hant && gloss === (glossLanguage ? candidate.gloss : null)

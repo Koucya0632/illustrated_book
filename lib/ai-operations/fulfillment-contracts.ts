@@ -10,7 +10,7 @@ export const enrichmentDelivery = z.object({
     pronunciation: optionalText, reading: optionalText,
     readingSegments: z.array(z.object({ text: z.string().max(200), ruby: optionalText })).max(200).nullable(),
     definitionTarget: text, definitionZh: text, definitionJa: text, definitionEn: text,
-    displayJa: text, displayEn: text,
+    displayZhHant: optionalText.optional(), displayJa: text, displayEn: text,
     enrichment: z.object({
       synonyms: words, antonyms: words, related: words,
       forms: z.array(z.object({ label: z.string().max(200), value: z.string().max(200) })).max(50).optional(),

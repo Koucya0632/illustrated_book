@@ -103,6 +103,7 @@ export function createFulfillments(sql: postgres.Sql, clock = () => new Date()) 
           reading_segments = ${v.readingSegments ? s.sql.json(v.readingSegments) : null},
           definition_target = ${v.definitionTarget}, definition_zh_hant = ${v.definitionZh},
           definition_ja = ${v.definitionJa}, definition_en = ${v.definitionEn},
+          display_zh_hant = COALESCE(${v.displayZhHant || null}, display_zh_hant),
           display_ja = COALESCE(display_ja, ${v.displayJa}), display_en = COALESCE(display_en, ${v.displayEn}),
           enrichment = ${s.sql.json(v.enrichment)}, backfill_status = 'filled', backfill_error = NULL,
           backfill_attempts = ${f.attempt}, backfill_attempts_version = ${v.enrichment.enrichVersion}, updated_at = ${s.now}

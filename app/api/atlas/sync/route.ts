@@ -81,6 +81,10 @@ export async function GET(req: Request) {
         fineLabel: item.fine_label,
         lemma: item.lemma,
         displayZhHant: item.display_zh_hant,
+        // Raw per-language names: sync is a delta, so the client picks by its
+        // current interface language instead of the server baking one in.
+        displayJa: item.display_ja,
+        displayEn: item.display_en,
         partOfSpeech: item.part_of_speech,
         cefrLevel: item.cefr_level,
         pronunciation: item.pronunciation,

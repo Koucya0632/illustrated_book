@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { guardLegacyAtlasWrite } from "@/lib/credits/legacy-server";
 import { getSettings } from "@/lib/users-db";
-import { confirmAtlasItem, getAtlasImage } from "@/lib/atlas-db";
+import { confirmAtlasItem, getAtlasImage, listAtlasCandidates } from "@/lib/atlas-db";
+import { confirmedChineseName } from "@/lib/atlas/gloss";
 import { checkAtlasCapacity } from "@/lib/atlas/entitlement";
 import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
 import { readLang } from "@/lib/cache-headers";
@@ -42,7 +43,21 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
     targetLanguageFromDirection(settings.learningDirection);
   const lemma = cleanText(body.lemma || body.fineLabel || body.primaryLabel);
   const primaryLabel = cleanText(body.primaryLabel || lemma);
-  const displayZhHant = cleanText(body.displayZhHant || body.zhHant || lemma);
+  const selectedCandidateId =
+    typeof body.selectedCandidateId === "string" && !invalidId(body.selectedCandidateId)
+      ? body.selectedCandidateId
+      : null;
+  // ?lang= wins over the stored setting so a just-switched uiLang is honoured.
+  const uiLang = readLang(req, settings.uiLang);
+  const candidate = selectedCandidateId
+    ? ((await listAtlasCandidates(userId, image.id)).find((c) => c.id === selectedCandidateId) ?? null)
+    : null;
+  const displayZhHant = confirmedChineseName({
+    lemma,
+    submitted: cleanText(body.displayZhHant || body.zhHant) || undefined,
+    candidate,
+    chineseFieldHidden: uiLang === "ja" || uiLang === "en",
+  });
   if (!lemma || !primaryLabel || !displayZhHant) {
     return NextResponse.json(
       { error: "lemma, primaryLabel and displayZhHant are required" },
@@ -65,15 +80,9 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
     );
   }
 
-  const selectedCandidateId =
-    typeof body.selectedCandidateId === "string" && !invalidId(body.selectedCandidateId)
-      ? body.selectedCandidateId
-      : null;
   // The capture sheet's gloss field, in the capturing user's UI language
   // (candidate gloss or a user edit). Routed into the matching per-language
-  // column; the enrich gloss pack fills whichever stays null. ?lang= wins over
-  // the stored setting so a just-switched uiLang routes the gloss correctly.
-  const uiLang = readLang(req, settings.uiLang);
+  // column; the enrich gloss pack fills whichever stays null.
   const displayGloss = cleanText(body.displayGloss, 80);
   const item = await confirmAtlasItem({
     userId,

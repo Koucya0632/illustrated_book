@@ -5,7 +5,7 @@ import { z } from "zod";
 import { enrichWord } from "@/lib/enrich";
 import { toZhHans } from "@/lib/opencc";
 import type { UiLang } from "@/lib/settings";
-import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
+import { needsChineseName, pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 import {
   JA_READING_SYSTEM,
   JapaneseReadingSchema,
@@ -83,6 +83,12 @@ async function generateJapaneseAtlasDefinition(input: {
 }
 
 const GlossPackSchema = z.object({
+  displayZhHant: z
+    .string()
+    .describe(
+      "A short everyday Traditional Chinese (Taiwan usage) word naming the same object as the headword. " +
+        "No pinyin, no explanations.",
+    ),
   displayJa: z
     .string()
     .describe(
@@ -132,7 +138,8 @@ export type GlossPack = z.infer<typeof GlossPackSchema>;
 async function generateAtlasGlossPack(input: {
   lemma: string;
   lemmaLanguage: "en" | "ja";
-  displayZhHant: string;
+  /// null when the item has no Chinese name yet (see needsChineseName).
+  displayZhHant: string | null;
   mnemonicZh: string | null;
   etymologyZh: string | null;
 }, tally: AiUsageTally): Promise<GlossPack | null> {
@@ -147,7 +154,7 @@ async function generateAtlasGlossPack(input: {
         "translate faithfully, never invent facts, and return an empty string when the source is empty.",
       prompt:
         `Headword (${input.lemmaLanguage === "ja" ? "Japanese" : "English"}): ${input.lemma}\n` +
-        `Traditional Chinese gloss: ${input.displayZhHant}\n` +
+        (input.displayZhHant ? `Traditional Chinese gloss: ${input.displayZhHant}\n` : "") +
         `Memory tip (zh-Hant): ${input.mnemonicZh ?? ""}\n` +
         `Origin note (zh-Hant): ${input.etymologyZh ?? ""}`,
     });
@@ -240,6 +247,7 @@ async function buildAtlasEnrichment(
 ): Promise<AtlasItemEnrichmentUpdate> {
   const isJa = item.target_language === "ja";
   const lemmaLanguage = item.target_language;
+  const missingChineseName = needsChineseName(item);
   const result = await enrichWord(
     {
       word: item.lemma,
@@ -277,7 +285,7 @@ async function buildAtlasEnrichment(
   const glossPack = await generateAtlasGlossPack({
     lemma: item.lemma,
     lemmaLanguage,
-    displayZhHant: item.display_zh_hant,
+    displayZhHant: missingChineseName ? null : item.display_zh_hant,
     mnemonicZh: result.mnemonic || null,
     etymologyZh: result.etymology || null,
   }, tally);
@@ -290,6 +298,7 @@ async function buildAtlasEnrichment(
     definitionZh: result.chineseDefinition || null,
     definitionJa,
     definitionEn,
+    displayZhHant: missingChineseName ? glossPack?.displayZhHant.trim() || null : null,
     displayJa: glossPack?.displayJa.trim() || null,
     displayEn: glossPack?.displayEn.trim() || null,
     enrichment: {

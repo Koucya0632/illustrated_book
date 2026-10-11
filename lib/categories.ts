@@ -33,7 +33,7 @@ import type { Category } from "@/types";
 export const categories: Category[] = [
   {
     id: "custom",
-    name: "Custom",
+    name: "Custom Atlas",
     nameZh: "自製圖鑑",
     emoji: "🧩",
     description: "用自己的照片建立的學習卡片",

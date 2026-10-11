@@ -11,7 +11,6 @@ import type {
   AtlasCollectionRow,
   AtlasDeckKey,
   AtlasDueCard,
-  AtlasEnrichment,
   AtlasImageRow,
   AtlasItemRow,
   AtlasMasteryRow,
@@ -114,21 +113,6 @@ export async function getAtlasItem(
     LIMIT 1
   `;
   return rows[0] ?? null;
-}
-
-export interface AtlasItemEnrichmentUpdate {
-  pronunciation: string | null;
-  reading: string | null;
-  readingSegments: FuriganaSegment[] | null;
-  definitionTarget: string | null;
-  definitionZh: string | null;
-  definitionJa: string | null;
-  definitionEn: string | null;
-  /// Set only when the item had no Chinese name of its own (needsChineseName).
-  displayZhHant: string | null;
-  displayJa: string | null;
-  displayEn: string | null;
-  enrichment: AtlasEnrichment;
 }
 
 export async function createAtlasCardsForItem(

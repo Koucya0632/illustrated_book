@@ -16,7 +16,7 @@ import { segmentFurigana } from "@/lib/kana";
 import { loadFuriganaDict } from "@/lib/furigana-dict";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 import { ATLAS_ENRICH_VERSION } from "@/lib/atlas/enrich-policy";
-import type { AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
+import type { EnrichmentFields } from "@/lib/atlas/item-writes";
 import { createAiUsageTally, type AiUsageTally } from "@/lib/atlas/ai-usage";
 
 // Cost-effective model for custom-card enrichment: OpenAI gpt-4o-mini called
@@ -213,7 +213,7 @@ export async function generateCreditEnrichment(item: AtlasItemRow) {
 async function buildAtlasEnrichment(
   item: AtlasItemRow,
   tally: AiUsageTally,
-): Promise<AtlasItemEnrichmentUpdate> {
+): Promise<EnrichmentFields> {
   const isJa = item.target_language === "ja";
   const lemmaLanguage = item.target_language;
   const missingChineseName = needsChineseName(item);

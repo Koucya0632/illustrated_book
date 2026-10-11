@@ -406,6 +406,9 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await f.wallet.readWallet(f.account)).available, 900);
       const [item] = await sql`SELECT * FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
       assert.equal(item.definition_target, "A small animal"); assert.equal(item.backfill_status, "filled");
+      // A 補充 pass sends no image; the column defaults to 1.
+      const [usage] = await sql`SELECT image_count FROM user_atlas_ai_usage WHERE image_id = ${item.image_id} AND operation = 'enrich'`;
+      assert.equal(usage.image_count, 0);
       assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "completed");
       assert.equal(await run(f.account, op.id), "idle");
     });
@@ -446,16 +449,32 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await other.operations.read(other.account, second.id)).fulfillmentState, "superseded");
     });
 
+    await t.test("ATLAS_ENRICH_MAX_ATTEMPTS is the one retry budget; 0 gives up before any model call", async () => {
+      const f = await fixture();
+      const { op, confirmed } = await included(f);
+      let calls = 0;
+      const run = createFulfillmentRunner(f.fulfillments, async () => { calls++; return enriched(); });
+      process.env.ATLAS_ENRICH_MAX_ATTEMPTS = "0";
+      try { assert.equal(await run(f.account, op.id), "idle"); } finally { delete process.env.ATLAS_ENRICH_MAX_ATTEMPTS; }
+      assert.equal(calls, 0);
+      assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "compensated");
+      const [given] = await sql`SELECT backfill_status FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
+      assert.equal(given.backfill_status, "skipped");
+    });
+
     await t.test("three invalid supplements compensate once using original paid and gift allocations", async () => {
       const f = await fixture(0);
       await f.wallet.grant(f.account, { key: "gift", source: "monthly", amount: 40, expiresAt: new Date("2026-10-03T12:03:00Z") });
       await f.wallet.grant(f.account, { key: "paid", source: "purchase", amount: 200, expiresAt: null });
-      const { op } = await included(f);
+      const { op, confirmed } = await included(f);
       const run = createFulfillmentRunner(f.fulfillments, async () => ({ ...enriched(), fields: { ...enriched().fields, definitionZh: "" } }));
       assert.equal(await run(f.account, op.id), "pending");
       f.setTime("2026-10-03T12:02:00Z"); assert.equal(await run(f.account, op.id), "pending");
       f.setTime("2026-10-03T12:04:00Z"); assert.equal(await run(f.account, op.id), "compensated");
       assert.equal(await run(f.account, op.id), "idle");
+      // Compensation is terminal, so the card is given up on — not left looking retryable.
+      const [given] = await sql`SELECT backfill_status, backfill_attempts, backfill_error FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
+      assert.deepEqual([given.backfill_status, given.backfill_attempts, given.backfill_error], ["skipped", 3, "invalid_ai_result"]);
       const balance = await f.wallet.readWallet(f.account);
       assert.equal(balance.available, 200); assert.equal(balance.paidAvailable, 200); assert.equal(balance.giftAvailable, 0);
       const ledger = await f.wallet.readLedger(f.account);

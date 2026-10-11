@@ -5,6 +5,8 @@ import { createCreditWallet, type CreditAccount, type CreditTransaction } from "
 import { OperationError, recognitionUsage } from "./contracts";
 import { enrichmentDelivery } from "./fulfillment-contracts";
 import type { AtlasItemRow } from "../atlas/types";
+import { giveUpEnrichment, recordAiUsage, writeEnrichment } from "../atlas/item-writes";
+import { ATLAS_ENRICH_VERSION, atlasEnrichMaxAttempts } from "../atlas/enrich-policy";
 
 type Row = Record<string, any>;
 export interface FulfillmentLease { token: string; stagedResult: unknown; item: AtlasItemRow }
@@ -48,8 +50,9 @@ export function createFulfillments(sql: postgres.Sql, clock = () => new Date()) 
   }
   async function compensate(s: CreditTransaction, f: Row, reason: string) {
     await s.compensate(`ai:${f.operation_id}`);
-    await s.sql`UPDATE user_atlas_items SET backfill_status = 'failed', backfill_error = ${reason}, updated_at = ${s.now}
-      WHERE id = ${f.confirmed_item_id} AND selected_candidate_id = ${f.confirmed_candidate_id} AND deleted_at IS NULL`;
+    // Compensation is terminal: nothing claims this fulfillment again, so the card is given up on, not "failed".
+    await giveUpEnrichment(s.sql, { itemId: f.confirmed_item_id, candidateId: f.confirmed_candidate_id, reason,
+      attempts: f.attempt, version: ATLAS_ENRICH_VERSION, now: s.now });
     return state(s, f, "compensated", reason);
   }
   return {
@@ -67,7 +70,7 @@ export function createFulfillments(sql: postgres.Sql, clock = () => new Date()) 
           await compensate(s, f, "result_uncertain"); return null;
         }
         const attempt = f.staged_result ? f.attempt : f.attempt + 1;
-        if (attempt > 3) { await compensate(s, f, "retry_exhausted"); return null; }
+        if (attempt > atlasEnrichMaxAttempts()) { await compensate(s, f, "retry_exhausted"); return null; }
         const token = randomUUID(), until = new Date(s.now.getTime() + 90_000);
         await s.sql`UPDATE ai_fulfillments SET state = 'running', attempt = ${attempt}, lease_token = ${token},
           lease_until = ${until}, updated_at = ${s.now} WHERE operation_id = ${id}`;
@@ -99,19 +102,8 @@ export function createFulfillments(sql: postgres.Sql, clock = () => new Date()) 
         if (!parsed.success) throw new OperationError("invalid_ai_result");
         if (!await item(s, f)) return state(s, f, "superseded", "item_changed");
         const { fields: v, usage, provider, model } = parsed.data;
-        await s.sql`UPDATE user_atlas_items SET pronunciation = ${v.pronunciation}, reading = ${v.reading},
-          reading_segments = ${v.readingSegments ? s.sql.json(v.readingSegments) : null},
-          definition_target = ${v.definitionTarget}, definition_zh_hant = ${v.definitionZh},
-          definition_ja = ${v.definitionJa}, definition_en = ${v.definitionEn},
-          display_zh_hant = COALESCE(${v.displayZhHant || null}, display_zh_hant),
-          display_ja = COALESCE(display_ja, ${v.displayJa}), display_en = COALESCE(display_en, ${v.displayEn}),
-          enrichment = ${s.sql.json(v.enrichment)}, backfill_status = 'filled', backfill_error = NULL,
-          backfill_attempts = ${f.attempt}, backfill_attempts_version = ${v.enrichment.enrichVersion}, updated_at = ${s.now}
-          WHERE id = ${f.confirmed_item_id} AND user_id = ${a.userId}`;
-        await s.sql`INSERT INTO user_atlas_ai_usage (user_id, image_id, provider, model, operation,
-          input_tokens, output_tokens, estimated_cost_usd, latency_ms, success)
-          VALUES (${a.userId}, ${f.image_id}, ${provider}, ${model}, 'enrich',
-            ${usage?.inputTokens ?? null}, ${usage?.outputTokens ?? null}, ${usage?.estimatedCostUsd ?? null}, ${usage?.latencyMs ?? null}, true)`;
+        await writeEnrichment(s.sql, { userId: a.userId, itemId: f.confirmed_item_id, fields: v, attempt: f.attempt, now: s.now });
+        await recordAiUsage(s.sql, { userId: a.userId, imageId: f.image_id, operation: "enrich", provider, model, imageCount: 0, usage });
         return state(s, f, "completed");
       });
     },
@@ -121,7 +113,7 @@ export function createFulfillments(sql: postgres.Sql, clock = () => new Date()) 
         const usage = recognitionUsage.safeParse(rawUsage);
         if (usage.success) await s.sql`UPDATE ai_fulfillment_attempts SET usage = ${s.sql.json(usage.data)} WHERE token = ${token}`;
         if (!await item(s, f)) return state(s, f, "superseded", "item_changed");
-        if (!uncertain && f.attempt >= 3) return compensate(s, f, reason);
+        if (!uncertain && f.attempt >= atlasEnrichMaxAttempts()) return compensate(s, f, reason);
         const next = new Date(s.now.getTime() + (uncertain ? 90_000 : 120_000));
         await s.sql`UPDATE ai_fulfillments SET next_attempt_at = ${next} WHERE operation_id = ${id}`;
         return state(s, f, uncertain ? "reconciling" : "pending", reason);

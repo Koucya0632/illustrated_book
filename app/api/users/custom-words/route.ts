@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { listAtlasCustomWords } from "@/lib/atlas-db";
 import { atlasItemToWord } from "@/lib/atlas/enrich";
-import { needsEnrichRefresh } from "@/lib/atlas/enrich-policy";
 import { pickAtlasGloss } from "@/lib/atlas/gloss";
 import { toZhHans } from "@/lib/opencc";
 import { readLang, readLearningDirection } from "@/lib/cache-headers";
@@ -51,14 +50,10 @@ export async function GET(req: Request) {
         // Full per-word detail in the same `Word` shape as
         // /api/atlas/items/{id}/detail — lets iOS open WordDetailView with
         // zero extra round-trips. Hero uses the full-size image; the grid card
-        // above keeps the thumb. Only embedded once the item is enriched
-        // ('filled', the usual case via capture-time enrich); otherwise we omit
-        // it so iOS still falls back to the detail endpoint, which lazy-enriches
-        // the item on first open. JA rows enriched under an older scheme (no
-        // Japanese definition and/or reading) are likewise left un-embedded so
-        // that detour re-enriches them.
+        // above keeps the thumb. Only embedded once 補充 has filled the item;
+        // until then iOS reads the detail endpoint, which serves name + image.
         detail:
-          item.backfill_status === "filled" && !needsEnrichRefresh(item)
+          item.backfill_status === "filled"
             ? atlasItemToWord(item, urls.imageUrl || thumb, uiLang)
             : undefined,
       };

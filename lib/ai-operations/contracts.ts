@@ -4,12 +4,16 @@ export const recognitionQuoteInput = z.object({
   imageId: z.string().uuid(),
   feature: z.enum(["atlas.recognize.primary", "atlas.recognize.precision"]),
   targetLanguage: z.enum(["en", "ja"]),
+  /** The capturing interface. Sent by current clients; the server derives the rest (captureForm). */
+  uiLanguage: z.enum(["zh-Hant", "zh-Hans", "ja", "en"]).optional(),
+  /** Only read from clients that predate `uiLanguage`, which decided this themselves. */
   glossLanguage: z.enum(["en", "ja"]).nullable().default(null),
 }).strict();
 export type RecognitionInput = z.infer<typeof recognitionQuoteInput>;
 export const acceptQuoteInput = z.object({ quoteId: z.string().uuid() }).strict();
 const correctedName = z.string().trim().min(1).max(120);
-/** Manual correction rides on the confirm; omitted fields keep the candidate's values. */
+/** Manual correction rides on the confirm; omitted fields keep the candidate's values —
+ *  except a Chinese name omitted beside a corrected lemma, which is regenerated (confirmedChineseName). */
 export const confirmCandidateInput = z.object({
   candidateId: z.string().uuid(),
   lemma: correctedName.optional(),

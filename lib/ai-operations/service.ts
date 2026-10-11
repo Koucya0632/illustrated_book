@@ -2,6 +2,8 @@ import { createHash, randomUUID } from "node:crypto";
 import { isDeepStrictEqual } from "node:util";
 import type postgres from "postgres";
 import { assertCreditKey, CREDIT_POLICY, CreditError } from "../credits/policy";
+import { captureForm } from "../atlas/gloss";
+import { confirmedNames, recordAiUsage, saveConfirmedItem } from "../atlas/item-writes";
 import { createCreditWallet, type CreditAccount, type CreditTransaction } from "../credits/wallet";
 import {
   OPERATION_TIMING, OperationError, recognitionDelivery, recognitionQuoteInput, recognitionUsage,
@@ -46,6 +48,8 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
     return {
       id: op.id as string, state: op.state as string, points: op.points as number,
       feature: op.input.feature as RecognitionInput["feature"], targetLanguage: op.input.targetLanguage as "en" | "ja",
+      // Which second field the correction form shows for this run; null when the client did not say its interface language.
+      correctionField: op.input.uiLanguage ? captureForm(op.input.uiLanguage, op.input.targetLanguage).field : null,
       imageId: op.image_id as string, priceVersion: op.price_version as string,
       failureCode: op.failure_code as string | null,
       result: op.state === "committed" ? op.result : null,
@@ -97,7 +101,8 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
       const parsed = recognitionQuoteInput.safeParse(rawInput);
       if (!parsed.success) throw new OperationError("invalid_ai_request");
       const input = parsed.data;
-      if (input.glossLanguage === input.targetLanguage) input.glossLanguage = null;
+      if (input.uiLanguage) input.glossLanguage = captureForm(input.uiLanguage, input.targetLanguage).glossLanguage;
+      else if (input.glossLanguage === input.targetLanguage) input.glossLanguage = null;
       return transact(a, async scope => {
         await holding(scope, a);
         const source = await image(scope, a, input.imageId);
@@ -290,11 +295,8 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
           model = ${result.model}, normalized_response = ${tx.json(result)}, finished_at = ${scope.now}, updated_at = ${scope.now}
           WHERE id = ${op.job_id} AND user_id = ${a.userId} RETURNING id`;
         if (!job) return release(scope, a, op, "input_unavailable");
-        await tx`INSERT INTO user_atlas_ai_usage (user_id, job_id, image_id, provider, model, operation,
-          input_tokens, output_tokens, estimated_cost_usd, latency_ms, success)
-          VALUES (${a.userId}, ${op.job_id}, ${op.image_id}, ${result.provider}, ${result.model}, ${result.stage},
-            ${result.usage?.inputTokens ?? null}, ${result.usage?.outputTokens ?? null},
-            ${result.usage?.estimatedCostUsd ?? null}, ${result.usage?.latencyMs ?? null}, true)`;
+        await recordAiUsage(tx, { userId: a.userId, imageId: op.image_id, jobId: op.job_id, operation: result.stage,
+          provider: result.provider, model: result.model, imageCount: result.usage?.imageCount ?? 1, usage: result.usage });
         const delivered = { jobId: op.job_id, candidates, recognition: result };
         await scope.settle(`ai:${op.id}`, "commit");
         await tx`UPDATE ai_operations SET state = 'committed', result = ${tx.json(delivered)}, failure_code = NULL,
@@ -330,37 +332,19 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
         if (!existing) await capacityAvailable(scope, a, limit, op.id);
         const itemId = existing?.id ?? randomUUID();
         const glossLanguage = op.input.glossLanguage as "en" | "ja" | null;
-        const lemma = correction.lemma ?? candidate.label;
-        const zhHant = correction.displayZhHant ?? candidate.zh_hant;
-        // A gloss only exists for a cross-language capture; never store one the run did not ask for.
-        const gloss = glossLanguage ? (correction.displayGloss === undefined ? candidate.gloss : correction.displayGloss) : null;
-        const source = lemma === candidate.label && zhHant === candidate.zh_hant && gloss === (glossLanguage ? candidate.gloss : null)
-          ? "candidate" : "manual";
-        const [item] = existing ? await tx`UPDATE user_atlas_items SET selected_candidate_id = ${candidateId},
-          target_language = ${op.input.targetLanguage}, primary_label = ${candidate.label}, lemma = ${lemma},
-          display_zh_hant = ${zhHant},
-          display_ja = ${glossLanguage === "ja" ? gloss : null},
-          display_en = ${glossLanguage === "en" ? gloss : null},
-          fine_label = NULL, part_of_speech = NULL, cefr_level = NULL, pronunciation = NULL,
-          reading = NULL, reading_segments = NULL, category = NULL, taxonomy_path = '{}',
-          definition_target = NULL, definition_zh_hant = NULL, definition_ja = NULL, definition_en = NULL,
-          example_target = NULL, example_zh_hant = NULL, note_zh_hant = NULL,
-          enrichment = '{}'::jsonb, backfill_status = 'pending', backfill_error = NULL,
-          backfill_attempts = 0, backfill_attempts_version = 0,
-          correction_source = ${source}, updated_at = ${scope.now}
-          WHERE id = ${itemId} AND user_id = ${a.userId} RETURNING *` :
-          await tx`INSERT INTO user_atlas_items (id, user_id, image_id, selected_candidate_id, target_language,
-            primary_label, lemma, display_zh_hant, display_ja, display_en, correction_source)
-            VALUES (${itemId}, ${a.userId}, ${op.image_id}, ${candidateId}, ${op.input.targetLanguage},
-              ${candidate.label}, ${lemma}, ${zhHant},
-              ${glossLanguage === "ja" ? gloss : null},
-              ${glossLanguage === "en" ? gloss : null}, ${source}) RETURNING *`;
+        // A run that never said its interface language can only be known to hide the Chinese name when it asked for a gloss.
+        const chineseFieldHidden = op.input.uiLanguage
+          ? captureForm(op.input.uiLanguage, op.input.targetLanguage).chineseFieldHidden : glossLanguage !== null;
+        const names = confirmedNames({ candidate: { label: candidate.label, zh_hant: candidate.zh_hant, gloss: candidate.gloss },
+          correction, glossLanguage, chineseFieldHidden });
+        const lemma = names.lemma;
+        const item = await saveConfirmedItem(tx, { itemId, exists: Boolean(existing), userId: a.userId, imageId: op.image_id,
+          candidateId, targetLanguage: op.input.targetLanguage, primaryLabel: candidate.label, names, now: scope.now });
         await tx`UPDATE ai_operations SET confirmed_item_id = ${itemId}, confirmed_candidate_id = ${candidateId}, confirmed_lemma = ${lemma},
           fulfillment_state = 'pending', updated_at = ${scope.now} WHERE id = ${op.id}`;
         await tx`INSERT INTO ai_fulfillments (operation_id, state, next_attempt_at, deadline_at, created_at, updated_at)
           VALUES (${op.id}, 'pending', ${scope.now}, ${dateAfter(scope.now, 24 * 60 * 60_000)}, ${scope.now}, ${scope.now})`;
         await tx`DELETE FROM atlas_capacity_reservations WHERE operation_id = ${op.id}`;
-        await tx`UPDATE user_atlas_images SET status = 'confirmed', updated_at = ${scope.now} WHERE id = ${op.image_id}`;
         return { item, operation: await view(scope, { ...op, confirmed_item_id: itemId, confirmed_candidate_id: candidateId, fulfillment_state: "pending" }) };
       });
     },

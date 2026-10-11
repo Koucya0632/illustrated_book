@@ -6,8 +6,4 @@ export class ManualOnlyAtlasProvider implements AtlasVisionProvider {
   async recognizePrimary(_input: AtlasVisionInput) {
     return emptyRecognitionResult(this.name, "manual", "manual input required");
   }
-
-  async recognizeFine(_input: AtlasVisionInput) {
-    return emptyRecognitionResult(this.name, "manual", "manual input required");
-  }
 }

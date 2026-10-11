@@ -406,8 +406,46 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await f.wallet.readWallet(f.account)).available, 900);
       const [item] = await sql`SELECT * FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
       assert.equal(item.definition_target, "A small animal"); assert.equal(item.backfill_status, "filled");
+      // A 補充 pass sends no image; the column defaults to 1.
+      const [usage] = await sql`SELECT image_count FROM user_atlas_ai_usage WHERE image_id = ${item.image_id} AND operation = 'enrich'`;
+      assert.equal(usage.image_count, 0);
       assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "completed");
       assert.equal(await run(f.account, op.id), "idle");
+    });
+    await t.test("the interface language decides the run's form; a client's own gloss language is not believed", async () => {
+      const f = await fixture();
+      // 英文介面學英文: no gloss whatever the client claims, and no Chinese on screen.
+      const quote = await f.operations.quote(f.account, { ...f.input, uiLanguage: "en", glossLanguage: "ja" });
+      assert.equal(quote.input.glossLanguage, null);
+      const op = await f.operations.accept(f.account, quote.id, "ui-language");
+      assert.equal(op.correctionField, "hidden");
+      const delivered = await f.finish(op.id), candidate = delivered.result.candidates[0];
+      // A released build still sends the candidate's Chinese name beside the corrected lemma.
+      const confirmed = await f.operations.confirm(f.account, op.id, candidate.id, { lemma: "kitten", displayZhHant: candidate.zhHant });
+      assert.equal(confirmed.item.display_zh_hant, "kitten");
+      assert.equal(confirmed.item.display_en, null);
+
+      const chinese = await fixture();
+      const zh = await chinese.operations.accept(chinese.account,
+        (await chinese.operations.quote(chinese.account, { ...chinese.input, uiLanguage: "zh-Hant" })).id, "zh");
+      assert.equal(zh.correctionField, "chineseName");
+      const shown = await chinese.finish(zh.id), picked = shown.result.candidates[0];
+      // On a Chinese interface the name was on screen, so leaving it is an answer.
+      const kept = await chinese.operations.confirm(chinese.account, zh.id, picked.id, { lemma: "kitten", displayZhHant: picked.zhHant });
+      assert.equal(kept.item.display_zh_hant, picked.zhHant);
+    });
+    await t.test("a rename with no Chinese name stores the lemma stand-in and the supplement writes the real one", async () => {
+      const f = await fixture();
+      const op = await f.accept(), delivered = await f.finish(op.id);
+      const confirmed = await f.operations.confirm(f.account, op.id, delivered.result.candidates[0].id, { lemma: "kitten" });
+      assert.equal(confirmed.item.display_zh_hant, "kitten");
+      const run = createFulfillmentRunner(f.fulfillments, async () => {
+        const result = enriched();
+        return { ...result, fields: { ...result.fields, displayZhHant: "小貓" } };
+      });
+      assert.equal(await run(f.account, op.id), "completed");
+      const [item] = await sql`SELECT display_zh_hant FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
+      assert.equal(item.display_zh_hant, "小貓");
     });
     await t.test("a manually corrected name keeps the included supplement; a later rename still withdraws it", async () => {
       const f = await fixture();
@@ -433,16 +471,32 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await other.operations.read(other.account, second.id)).fulfillmentState, "superseded");
     });
 
+    await t.test("ATLAS_ENRICH_MAX_ATTEMPTS is the one retry budget; 0 gives up before any model call", async () => {
+      const f = await fixture();
+      const { op, confirmed } = await included(f);
+      let calls = 0;
+      const run = createFulfillmentRunner(f.fulfillments, async () => { calls++; return enriched(); });
+      process.env.ATLAS_ENRICH_MAX_ATTEMPTS = "0";
+      try { assert.equal(await run(f.account, op.id), "idle"); } finally { delete process.env.ATLAS_ENRICH_MAX_ATTEMPTS; }
+      assert.equal(calls, 0);
+      assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "compensated");
+      const [given] = await sql`SELECT backfill_status FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
+      assert.equal(given.backfill_status, "skipped");
+    });
+
     await t.test("three invalid supplements compensate once using original paid and gift allocations", async () => {
       const f = await fixture(0);
       await f.wallet.grant(f.account, { key: "gift", source: "monthly", amount: 40, expiresAt: new Date("2026-10-03T12:03:00Z") });
       await f.wallet.grant(f.account, { key: "paid", source: "purchase", amount: 200, expiresAt: null });
-      const { op } = await included(f);
+      const { op, confirmed } = await included(f);
       const run = createFulfillmentRunner(f.fulfillments, async () => ({ ...enriched(), fields: { ...enriched().fields, definitionZh: "" } }));
       assert.equal(await run(f.account, op.id), "pending");
       f.setTime("2026-10-03T12:02:00Z"); assert.equal(await run(f.account, op.id), "pending");
       f.setTime("2026-10-03T12:04:00Z"); assert.equal(await run(f.account, op.id), "compensated");
       assert.equal(await run(f.account, op.id), "idle");
+      // Compensation is terminal, so the card is given up on — not left looking retryable.
+      const [given] = await sql`SELECT backfill_status, backfill_attempts, backfill_error FROM user_atlas_items WHERE id = ${confirmed.item.id}`;
+      assert.deepEqual([given.backfill_status, given.backfill_attempts, given.backfill_error], ["skipped", 3, "invalid_ai_result"]);
       const balance = await f.wallet.readWallet(f.account);
       assert.equal(balance.available, 200); assert.equal(balance.paidAvailable, 200); assert.equal(balance.giftAvailable, 0);
       const ledger = await f.wallet.readLedger(f.account);

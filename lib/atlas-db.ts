@@ -4,8 +4,6 @@ import { getSql } from "./db";
 import type { Rating, Status } from "./srs";
 import type { FuriganaSegment } from "./kana";
 import type {
-  AtlasCandidate,
-  AtlasCandidateRow,
   AtlasCardRow,
   AtlasCardStateRow,
   AtlasCollectionReviewStatus,
@@ -13,7 +11,6 @@ import type {
   AtlasCollectionRow,
   AtlasDeckKey,
   AtlasDueCard,
-  AtlasEnrichment,
   AtlasImageRow,
   AtlasItemRow,
   AtlasMasteryRow,
@@ -22,12 +19,9 @@ import type {
   AtlasPublicItemRow,
   AtlasPublicItemWithAuthorRow,
   AtlasRecognitionJobRow,
-  AtlasRecognitionStage,
   AtlasReviewStatus,
   AtlasTargetLanguage,
 } from "./atlas/types";
-import type { AtlasRecognitionResult } from "./atlas/vision-provider";
-import { nextBackfillAttempt } from "./atlas/enrich-policy";
 import {
   memberNeedsOwnReview,
   refusalForAdd,
@@ -38,63 +32,6 @@ function requireSql() {
   const sql = getSql();
   if (!sql) throw new Error("DATABASE_URL is not configured.");
   return sql;
-}
-
-export interface CreateAtlasImageInput {
-  id: string;
-  userId: string;
-  bucket: string;
-  originalPath: string;
-  thumbPath: string;
-  recognitionPath: string;
-  mimeType: string;
-  byteSize: number;
-  width: number | null;
-  height: number | null;
-  sha256: string;
-}
-
-export async function findAtlasImageByHash(
-  userId: string,
-  sha256: string,
-): Promise<AtlasImageRow | null> {
-  const sql = requireSql();
-  const rows = await sql<AtlasImageRow[]>`
-    SELECT *
-    FROM user_atlas_images
-    WHERE user_id = ${userId}::uuid
-      AND sha256 = ${sha256}
-      AND deleted_at IS NULL
-    ORDER BY created_at DESC
-    LIMIT 1
-  `;
-  return rows[0] ?? null;
-}
-
-export async function createAtlasImage(input: CreateAtlasImageInput): Promise<AtlasImageRow> {
-  const sql = requireSql();
-  const rows = await sql<AtlasImageRow[]>`
-    INSERT INTO user_atlas_images (
-      id, user_id, bucket, original_path, thumb_path, recognition_path,
-      mime_type, byte_size, width, height, sha256, updated_at
-    )
-    VALUES (
-      ${input.id}::uuid,
-      ${input.userId}::uuid,
-      ${input.bucket},
-      ${input.originalPath},
-      ${input.thumbPath},
-      ${input.recognitionPath},
-      ${input.mimeType},
-      ${input.byteSize},
-      ${input.width},
-      ${input.height},
-      ${input.sha256},
-      now()
-    )
-    RETURNING *
-  `;
-  return rows[0];
 }
 
 export async function getAtlasImage(
@@ -128,29 +65,6 @@ export async function listAtlasImages(
   `;
 }
 
-export async function createAtlasRecognitionJob(
-  userId: string,
-  imageId: string,
-  stage: AtlasRecognitionStage = "primary",
-): Promise<AtlasRecognitionJobRow> {
-  const sql = requireSql();
-  const rows = await sql<AtlasRecognitionJobRow[]>`
-    INSERT INTO user_atlas_recognition_jobs (
-      user_id, image_id, status, stage, strategy, updated_at
-    )
-    VALUES (
-      ${userId}::uuid,
-      ${imageId}::uuid,
-      'queued',
-      ${stage},
-      'cost_first',
-      now()
-    )
-    RETURNING *
-  `;
-  return rows[0];
-}
-
 export async function getLatestAtlasRecognitionJob(
   userId: string,
   imageId: string,
@@ -167,7 +81,7 @@ export async function getLatestAtlasRecognitionJob(
   return rows[0] ?? null;
 }
 
-export async function updateAtlasImageStatus(
+async function updateAtlasImageStatus(
   userId: string,
   imageId: string,
   status: AtlasImageRow["status"],
@@ -185,222 +99,6 @@ export async function updateAtlasImageStatus(
   `;
 }
 
-export async function markAtlasRecognitionRunning(
-  userId: string,
-  jobId: string,
-  provider: string,
-  stage: AtlasRecognitionStage,
-): Promise<void> {
-  const sql = requireSql();
-  await sql`
-    UPDATE user_atlas_recognition_jobs
-    SET status = 'running',
-        provider = ${provider},
-        stage = ${stage},
-        started_at = now(),
-        updated_at = now()
-    WHERE user_id = ${userId}::uuid
-      AND id = ${jobId}::uuid
-  `;
-}
-
-export async function completeAtlasRecognitionJob(
-  userId: string,
-  jobId: string,
-  result: AtlasRecognitionResult,
-): Promise<AtlasRecognitionJobRow | null> {
-  const sql = requireSql();
-  const topPrimary = result.primary[0]?.confidence ?? null;
-  const topFine = result.fine[0]?.confidence ?? null;
-  const rows = await sql<AtlasRecognitionJobRow[]>`
-    UPDATE user_atlas_recognition_jobs
-    SET status = 'needs_review',
-        provider = ${result.provider},
-        model = ${result.model},
-        stage = ${result.stage},
-        primary_confidence = ${topPrimary},
-        fine_confidence = ${topFine},
-        uncertainty_reason = ${result.uncertainty.reason},
-        normalized_response = ${sql.json(JSON.parse(JSON.stringify(result)))},
-        raw_response = ${result.raw == null ? null : sql.json(JSON.parse(JSON.stringify(result.raw)))},
-        finished_at = now(),
-        updated_at = now()
-    WHERE user_id = ${userId}::uuid
-      AND id = ${jobId}::uuid
-    RETURNING *
-  `;
-  return rows[0] ?? null;
-}
-
-export async function failAtlasRecognitionJob(
-  userId: string,
-  jobId: string,
-  error: string,
-): Promise<void> {
-  const sql = requireSql();
-  await sql`
-    UPDATE user_atlas_recognition_jobs
-    SET status = 'failed',
-        error = ${error},
-        finished_at = now(),
-        updated_at = now()
-    WHERE user_id = ${userId}::uuid
-      AND id = ${jobId}::uuid
-  `;
-}
-
-export async function replaceAtlasCandidates(
-  userId: string,
-  imageId: string,
-  jobId: string,
-  targetLanguage: AtlasTargetLanguage,
-  result: AtlasRecognitionResult,
-): Promise<AtlasCandidateRow[]> {
-  const sql = requireSql();
-  await sql`
-    DELETE FROM user_atlas_candidates
-    WHERE user_id = ${userId}::uuid
-      AND job_id = ${jobId}::uuid
-  `;
-
-  const rows: AtlasCandidateRow[] = [];
-  async function insertCandidate(
-    level: "primary" | "fine",
-    candidate: AtlasCandidate,
-    rank: number,
-  ) {
-    const inserted = await sql<AtlasCandidateRow[]>`
-      INSERT INTO user_atlas_candidates (
-        user_id, job_id, image_id, level, label, normalized_label,
-        zh_hant, gloss, target_term, target_language, taxonomy_node_id,
-        confidence, rank, source, metadata
-      )
-      VALUES (
-        ${userId}::uuid,
-        ${jobId}::uuid,
-        ${imageId}::uuid,
-        ${level},
-        ${candidate.label},
-        ${candidate.normalizedLabel},
-        ${candidate.zhHant},
-        ${candidate.gloss},
-        ${candidate.label},
-        ${targetLanguage},
-        ${candidate.taxonomyNodeId},
-        ${candidate.confidence},
-        ${rank},
-        ${result.provider},
-        ${sql.json({ stage: result.stage })}
-      )
-      RETURNING *
-    `;
-    rows.push(inserted[0]);
-  }
-
-  for (let i = 0; i < result.primary.length; i++) {
-    await insertCandidate("primary", result.primary[i], i + 1);
-  }
-  for (let i = 0; i < result.fine.length; i++) {
-    await insertCandidate("fine", result.fine[i], i + 1);
-  }
-  return rows;
-}
-
-export async function listAtlasCandidates(
-  userId: string,
-  imageId: string,
-): Promise<AtlasCandidateRow[]> {
-  const sql = requireSql();
-  return sql<AtlasCandidateRow[]>`
-    SELECT *
-    FROM user_atlas_candidates
-    WHERE user_id = ${userId}::uuid
-      AND image_id = ${imageId}::uuid
-    ORDER BY job_id, level, rank
-  `;
-}
-
-export interface ConfirmAtlasItemInput {
-  userId: string;
-  imageId: string;
-  selectedCandidateId: string | null;
-  targetLanguage: AtlasTargetLanguage;
-  primaryLabel: string;
-  fineLabel: string | null;
-  lemma: string;
-  displayZhHant: string;
-  /// Gloss in the capturing user's UI language, written into display_ja /
-  /// display_en; both null for Chinese UIs (displayZhHant is the gloss there).
-  displayJa: string | null;
-  displayEn: string | null;
-  partOfSpeech: string | null;
-  category: string | null;
-}
-
-export async function confirmAtlasItem(input: ConfirmAtlasItemInput): Promise<AtlasItemRow> {
-  const sql = requireSql();
-  const selectedCandidateId = input.selectedCandidateId;
-  const correctionSource = input.selectedCandidateId ? "candidate" : "manual";
-
-  // Idempotent: if this image already has a (non-deleted) item, update it in
-  // place rather than inserting a duplicate. This makes AtlasCaptureQueue resume
-  // safe — a job re-run after an app kill hits the same row instead of creating
-  // a second item — and also turns a re-confirm into an edit.
-  const existing = await sql<AtlasItemRow[]>`
-    SELECT * FROM user_atlas_items
-    WHERE user_id = ${input.userId}::uuid
-      AND image_id = ${input.imageId}::uuid
-      AND deleted_at IS NULL
-    LIMIT 1
-  `;
-
-  const rows = existing[0]
-    ? await sql<AtlasItemRow[]>`
-        UPDATE user_atlas_items SET
-          selected_candidate_id = ${selectedCandidateId}::uuid,
-          target_language = ${input.targetLanguage},
-          primary_label = ${input.primaryLabel},
-          fine_label = ${input.fineLabel},
-          lemma = ${input.lemma},
-          display_zh_hant = ${input.displayZhHant},
-          display_ja = ${input.displayJa},
-          display_en = ${input.displayEn},
-          part_of_speech = ${input.partOfSpeech},
-          category = ${input.category},
-          correction_source = ${correctionSource},
-          updated_at = now()
-        WHERE id = ${existing[0].id}::uuid
-        RETURNING *
-      `
-    : await sql<AtlasItemRow[]>`
-        INSERT INTO user_atlas_items (
-          user_id, image_id, selected_candidate_id, target_language,
-          primary_label, fine_label, lemma, display_zh_hant,
-          display_ja, display_en,
-          part_of_speech, category, correction_source, updated_at
-        )
-        VALUES (
-          ${input.userId}::uuid,
-          ${input.imageId}::uuid,
-          ${selectedCandidateId}::uuid,
-          ${input.targetLanguage},
-          ${input.primaryLabel},
-          ${input.fineLabel},
-          ${input.lemma},
-          ${input.displayZhHant},
-          ${input.displayJa},
-          ${input.displayEn},
-          ${input.partOfSpeech},
-          ${input.category},
-          ${correctionSource},
-          now()
-        )
-        RETURNING *
-      `;
-  await updateAtlasImageStatus(input.userId, input.imageId, "confirmed");
-  return rows[0];
-}
-
 export async function getAtlasItem(
   userId: string,
   itemId: string,
@@ -415,74 +113,6 @@ export async function getAtlasItem(
     LIMIT 1
   `;
   return rows[0] ?? null;
-}
-
-export interface AtlasItemEnrichmentUpdate {
-  pronunciation: string | null;
-  reading: string | null;
-  readingSegments: FuriganaSegment[] | null;
-  definitionTarget: string | null;
-  definitionZh: string | null;
-  definitionJa: string | null;
-  definitionEn: string | null;
-  displayJa: string | null;
-  displayEn: string | null;
-  enrichment: AtlasEnrichment;
-}
-
-/** Persist AI enrichment onto an item and flip backfill_status to 'filled'.
- *  Gloss columns use COALESCE so a confirm-time user edit (display_ja/en from
- *  the capture sheet) isn't clobbered by the generated value. */
-export async function updateAtlasItemEnrichment(
-  userId: string,
-  itemId: string,
-  fields: AtlasItemEnrichmentUpdate,
-): Promise<void> {
-  const sql = requireSql();
-  await sql`
-    UPDATE user_atlas_items SET
-      pronunciation      = ${fields.pronunciation},
-      reading            = ${fields.reading},
-      reading_segments   = ${fields.readingSegments ? sql.json(fields.readingSegments as never) : null},
-      definition_target  = ${fields.definitionTarget},
-      definition_zh_hant = ${fields.definitionZh},
-      definition_ja      = ${fields.definitionJa},
-      definition_en      = ${fields.definitionEn},
-      display_ja         = COALESCE(display_ja, ${fields.displayJa}),
-      display_en         = COALESCE(display_en, ${fields.displayEn}),
-      enrichment         = ${sql.json(fields.enrichment as never)},
-      backfill_status    = 'filled',
-      backfill_error     = NULL,
-      backfill_attempts  = 0,
-      backfill_attempts_version = ${fields.enrichment.enrichVersion ?? 0},
-      updated_at         = now()
-    WHERE user_id = ${userId}::uuid AND id = ${itemId}::uuid
-  `;
-}
-
-/** Spend one unit of the item's 補充 budget and record why the pass failed.
- *  Takes the row rather than an id because the budget is computed from it (see
- *  nextBackfillAttempt) — running out is what writes 'skipped'.
- *
- *  Read-then-write, so two concurrent 詳情 opens can each count as attempt 1.
- *  Left that way on purpose: this is a cost ceiling, not an invariant, and
- *  moving the arithmetic into SQL would mean writing the budget rule twice. */
-export async function markAtlasItemBackfillFailed(
-  userId: string,
-  item: AtlasItemRow,
-  error: string,
-): Promise<void> {
-  const sql = requireSql();
-  const next = nextBackfillAttempt(item);
-  await sql`
-    UPDATE user_atlas_items SET
-      backfill_status = ${next.status},
-      backfill_error  = ${error.slice(0, 500)},
-      backfill_attempts = ${next.attempts},
-      backfill_attempts_version = ${next.version},
-      updated_at      = now()
-    WHERE user_id = ${userId}::uuid AND id = ${item.id}::uuid
-  `;
 }
 
 export async function createAtlasCardsForItem(
@@ -1178,47 +808,6 @@ export async function insertAtlasStudyLog(input: {
       ${input.masteryAfter},
       ${input.clientSessionId},
       ${sql.json(input.metadata ?? {})}
-    )
-  `;
-}
-
-export async function insertAtlasAiUsage(input: {
-  userId: string;
-  /** Null for passes that aren't tied to a recognition job (補充 / enrich). */
-  jobId: string | null;
-  imageId: string | null;
-  provider: string;
-  model: string | null;
-  operation: string;
-  detailLevel: string | null;
-  inputTokens?: number;
-  outputTokens?: number;
-  imageCount?: number;
-  estimatedCostUsd?: number;
-  latencyMs?: number;
-  success: boolean;
-}): Promise<void> {
-  const sql = requireSql();
-  await sql`
-    INSERT INTO user_atlas_ai_usage (
-      user_id, job_id, image_id, provider, model, operation, detail_level,
-      input_tokens, output_tokens, image_count, estimated_cost_usd,
-      latency_ms, success
-    )
-    VALUES (
-      ${input.userId}::uuid,
-      ${input.jobId}::uuid,
-      ${input.imageId}::uuid,
-      ${input.provider},
-      ${input.model},
-      ${input.operation},
-      ${input.detailLevel},
-      ${input.inputTokens ?? null},
-      ${input.outputTokens ?? null},
-      ${input.imageCount ?? 1},
-      ${input.estimatedCostUsd ?? null},
-      ${input.latencyMs ?? null},
-      ${input.success}
     )
   `;
 }

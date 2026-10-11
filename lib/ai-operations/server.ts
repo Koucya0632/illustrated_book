@@ -7,7 +7,7 @@ import { createAiHandler } from "./http";
 import { createAiRunner } from "./runner";
 import { OperationError } from "./contracts";
 import { downloadAtlasObject } from "../atlas/storage";
-import { createEscalateAtlasProvider, createPrimaryAtlasProvider } from "../atlas/recognition";
+import { recognitionImage, recognizeAtlasImage } from "../atlas/recognition";
 import type { AtlasVisionInput } from "../atlas/vision-provider";
 import { hitRateLimit } from "../ratelimit";
 import { createFulfillments } from "./fulfillment";
@@ -58,13 +58,8 @@ export function serverAiRunner(operations = serverAiOperations()) {
       const [image] = await sql`SELECT original_path, mime_type, sha256 FROM user_atlas_images
         WHERE id = ${operation.image_id} AND user_id = ${operation.user_id} AND deleted_at IS NULL`;
       if (!image || image.sha256 !== operation.image_sha256) throw new OperationError("image_not_found");
-      const sharp = (await import("sharp")).default;
-      const bytes = await downloadAtlasObject(image.original_path);
-      const imageBytes = await sharp(bytes, { limitInputPixels: 24_000_000 })
-        .resize({ width: 1024, height: 1024, fit: "inside", withoutEnlargement: true })
-        .webp({ quality: 82 }).toBuffer();
-      return { imageBytes, mimeType: "image/webp", targetLanguage: operation.input.targetLanguage,
-        glossLanguage: operation.input.glossLanguage };
+      return { ...await recognitionImage(await downloadAtlasObject(image.original_path)),
+        targetLanguage: operation.input.targetLanguage, glossLanguage: operation.input.glossLanguage };
     },
     execute: async (input, { operation }) => {
       const envLimit = Number(process.env.ATLAS_AI_DAILY_GLOBAL);
@@ -77,11 +72,7 @@ export function serverAiRunner(operations = serverAiOperations()) {
         if (!result.available) throw new CreditError("credits_unavailable");
         if (!result.ok) throw new OperationError("rate_limited");
       }
-      if (operation.input.feature === "atlas.recognize.primary") {
-        return createPrimaryAtlasProvider("pro").recognizePrimary(input);
-      }
-      const provider = createEscalateAtlasProvider();
-      return provider.recognizeEscalated ? provider.recognizeEscalated(input) : provider.recognizePrimary(input);
+      return recognizeAtlasImage(operation.input.feature, input);
     },
   });
 }

@@ -24,6 +24,66 @@ type GlossFields = Pick<
   | "target_language"
 >;
 
+/** The second field of the capture correction form — the one that carries the meaning. */
+export type CaptureCorrectionField = "chineseName" | "gloss" | "hidden";
+
+/**
+ * What a capture asks of its user, over the {interface language × language
+ * being learned} grid. THE home of that grid on the server: the run's gloss
+ * language, the form field and "was the Chinese name on screen" are one answer
+ * read three ways, and they were each being derived somewhere else — the gloss
+ * language by every client, inside a View, on its way into a paid quote.
+ *
+ *   Chinese interface             → edits the Chinese name; no gloss
+ *   ja/en learning the other one  → edits a gloss in its own language
+ *   ja/en learning its own        → nothing to add: the lemma is the name
+ */
+export function captureForm(uiLanguage: UiLang, targetLanguage: "en" | "ja"): {
+  field: CaptureCorrectionField;
+  glossLanguage: "ja" | "en" | null;
+  chineseFieldHidden: boolean;
+} {
+  if (uiLanguage !== "ja" && uiLanguage !== "en") {
+    return { field: "chineseName", glossLanguage: null, chineseFieldHidden: false };
+  }
+  return uiLanguage === targetLanguage
+    ? { field: "hidden", glossLanguage: null, chineseFieldHidden: true }
+    : { field: "gloss", glossLanguage: uiLanguage, chineseFieldHidden: true };
+}
+
+/** The Chinese name a confirm should store.
+ *
+ *  A ja/en interface never shows the Chinese-name field, so when its user
+ *  renames the card the candidate's Chinese name rides through describing the
+ *  object they just corrected away from. Storing it would publish a wrong name
+ *  to every Chinese reader and feed the enrich prompts a contradiction.
+ *
+ *  `submitted` is undefined when the client did not send one. The lemma is the
+ *  stand-in ("no Chinese name yet"): display_zh_hant is NOT NULL, and
+ *  `needsChineseName` is how the enrich pass knows to write the real one. */
+export function confirmedChineseName(input: {
+  lemma: string;
+  submitted: string | undefined;
+  candidate: { label: string; zh_hant: string | null } | null;
+  /** True when the capturing interface is known not to be Chinese. */
+  chineseFieldHidden: boolean;
+}): string {
+  const { lemma, submitted, candidate } = input;
+  if (!candidate) return submitted ?? lemma;
+  // Clients prefill the label when the model gave no Chinese name.
+  const suggested = candidate.zh_hant ?? candidate.label;
+  const renamed = lemma !== candidate.label;
+  if (submitted === undefined) return renamed ? lemma : suggested;
+  if (renamed && input.chineseFieldHidden && submitted === suggested) return lemma;
+  return submitted;
+}
+
+/** Whether display_zh_hant is still the lemma stand-in. A Japanese headword
+ *  that really is its own Chinese name (山) is regenerated to the same thing. */
+export function needsChineseName(item: Pick<AtlasItemRow, "lemma" | "display_zh_hant">): boolean {
+  return item.display_zh_hant.trim() === item.lemma.trim();
+}
+
 /** Headline gloss of the lemma (word.chinese / list `chinese` slots).
  *  When the UI language equals the item's target language the short display
  *  would just repeat the lemma, so monolingual mode uses the explanatory

@@ -5,7 +5,7 @@ import { z } from "zod";
 import { enrichWord } from "@/lib/enrich";
 import { toZhHans } from "@/lib/opencc";
 import type { UiLang } from "@/lib/settings";
-import { pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
+import { needsChineseName, pickAtlasDefinition, pickAtlasGloss } from "@/lib/atlas/gloss";
 import {
   JA_READING_SYSTEM,
   JapaneseReadingSchema,
@@ -16,7 +16,7 @@ import { segmentFurigana } from "@/lib/kana";
 import { loadFuriganaDict } from "@/lib/furigana-dict";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 import { ATLAS_ENRICH_VERSION } from "@/lib/atlas/enrich-policy";
-import { insertAtlasAiUsage, type AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
+import type { EnrichmentFields } from "@/lib/atlas/item-writes";
 import { createAiUsageTally, type AiUsageTally } from "@/lib/atlas/ai-usage";
 
 // Cost-effective model for custom-card enrichment: OpenAI gpt-4o-mini called
@@ -83,6 +83,12 @@ async function generateJapaneseAtlasDefinition(input: {
 }
 
 const GlossPackSchema = z.object({
+  displayZhHant: z
+    .string()
+    .describe(
+      "A short everyday Traditional Chinese (Taiwan usage) word naming the same object as the headword. " +
+        "No pinyin, no explanations.",
+    ),
   displayJa: z
     .string()
     .describe(
@@ -132,7 +138,8 @@ export type GlossPack = z.infer<typeof GlossPackSchema>;
 async function generateAtlasGlossPack(input: {
   lemma: string;
   lemmaLanguage: "en" | "ja";
-  displayZhHant: string;
+  /// null when the item has no Chinese name yet (see needsChineseName).
+  displayZhHant: string | null;
   mnemonicZh: string | null;
   etymologyZh: string | null;
 }, tally: AiUsageTally): Promise<GlossPack | null> {
@@ -147,7 +154,7 @@ async function generateAtlasGlossPack(input: {
         "translate faithfully, never invent facts, and return an empty string when the source is empty.",
       prompt:
         `Headword (${input.lemmaLanguage === "ja" ? "Japanese" : "English"}): ${input.lemma}\n` +
-        `Traditional Chinese gloss: ${input.displayZhHant}\n` +
+        (input.displayZhHant ? `Traditional Chinese gloss: ${input.displayZhHant}\n` : "") +
         `Memory tip (zh-Hant): ${input.mnemonicZh ?? ""}\n` +
         `Origin note (zh-Hant): ${input.etymologyZh ?? ""}`,
     });
@@ -203,43 +210,13 @@ export async function generateCreditEnrichment(item: AtlasItemRow) {
       estimatedCostUsd: summary?.estimatedCostUsd, latencyMs: Math.round(performance.now() - started) } };
 }
 
-export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnrichmentUpdate> {
-  const tally = createAiUsageTally();
-  const t0 = performance.now();
-  let ok = false;
-  try {
-    const fields = await buildAtlasEnrichment(item, tally);
-    ok = true;
-    return fields;
-  } finally {
-    const summary = tally.summary();
-    // A failed pass is still logged (without tokens): the call may have billed.
-    if (summary || !ok) {
-      await insertAtlasAiUsage({
-        userId: item.user_id,
-        jobId: null,
-        imageId: item.image_id,
-        provider: "openai-direct",
-        model: summary?.model ?? null,
-        operation: "enrich",
-        detailLevel: null,
-        inputTokens: summary?.inputTokens,
-        outputTokens: summary?.outputTokens,
-        imageCount: 0,
-        estimatedCostUsd: summary?.estimatedCostUsd,
-        latencyMs: Math.round(performance.now() - t0),
-        success: ok,
-      }).catch((err) => console.warn("[atlas-enrich] usage log failed", err));
-    }
-  }
-}
-
 async function buildAtlasEnrichment(
   item: AtlasItemRow,
   tally: AiUsageTally,
-): Promise<AtlasItemEnrichmentUpdate> {
+): Promise<EnrichmentFields> {
   const isJa = item.target_language === "ja";
   const lemmaLanguage = item.target_language;
+  const missingChineseName = needsChineseName(item);
   const result = await enrichWord(
     {
       word: item.lemma,
@@ -277,7 +254,7 @@ async function buildAtlasEnrichment(
   const glossPack = await generateAtlasGlossPack({
     lemma: item.lemma,
     lemmaLanguage,
-    displayZhHant: item.display_zh_hant,
+    displayZhHant: missingChineseName ? null : item.display_zh_hant,
     mnemonicZh: result.mnemonic || null,
     etymologyZh: result.etymology || null,
   }, tally);
@@ -290,6 +267,7 @@ async function buildAtlasEnrichment(
     definitionZh: result.chineseDefinition || null,
     definitionJa,
     definitionEn,
+    displayZhHant: missingChineseName ? glossPack?.displayZhHant.trim() || null : null,
     displayJa: glossPack?.displayJa.trim() || null,
     displayEn: glossPack?.displayEn.trim() || null,
     enrichment: {

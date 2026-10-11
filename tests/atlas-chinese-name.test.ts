@@ -86,3 +86,23 @@ test("a rename on a cross-language run drops the Chinese name it could not see",
   const names = confirmedNames({ candidate: cat, correction: { lemma: "犬", displayZhHant: "貓" }, glossLanguage: "en", chineseFieldHidden: true });
   assert.deepEqual([names.lemma, names.displayZhHant, names.source], ["犬", "犬", "manual"]);
 });
+
+// ---- the capture form grid (lib/atlas/gloss.ts) ----
+
+import { captureForm } from "../lib/atlas/gloss";
+
+test("the capture form is one grid: field, gloss language and whether Chinese was on screen", () => {
+  const cell = (ui: "zh-Hant" | "zh-Hans" | "ja" | "en", target: "en" | "ja") => {
+    const f = captureForm(ui, target);
+    return `${f.field}/${f.glossLanguage}/${f.chineseFieldHidden}`;
+  };
+  for (const ui of ["zh-Hant", "zh-Hans"] as const) {
+    assert.equal(cell(ui, "en"), "chineseName/null/false");
+    assert.equal(cell(ui, "ja"), "chineseName/null/false");
+  }
+  assert.equal(cell("en", "ja"), "gloss/en/true");
+  assert.equal(cell("ja", "en"), "gloss/ja/true");
+  // 英文介面學英文、日文介面學日文: nothing to add, and no Chinese on screen.
+  assert.equal(cell("en", "en"), "hidden/null/true");
+  assert.equal(cell("ja", "ja"), "hidden/null/true");
+});

@@ -24,6 +24,33 @@ type GlossFields = Pick<
   | "target_language"
 >;
 
+/** The second field of the capture correction form — the one that carries the meaning. */
+export type CaptureCorrectionField = "chineseName" | "gloss" | "hidden";
+
+/**
+ * What a capture asks of its user, over the {interface language × language
+ * being learned} grid. THE home of that grid on the server: the run's gloss
+ * language, the form field and "was the Chinese name on screen" are one answer
+ * read three ways, and they were each being derived somewhere else — the gloss
+ * language by every client, inside a View, on its way into a paid quote.
+ *
+ *   Chinese interface             → edits the Chinese name; no gloss
+ *   ja/en learning the other one  → edits a gloss in its own language
+ *   ja/en learning its own        → nothing to add: the lemma is the name
+ */
+export function captureForm(uiLanguage: UiLang, targetLanguage: "en" | "ja"): {
+  field: CaptureCorrectionField;
+  glossLanguage: "ja" | "en" | null;
+  chineseFieldHidden: boolean;
+} {
+  if (uiLanguage !== "ja" && uiLanguage !== "en") {
+    return { field: "chineseName", glossLanguage: null, chineseFieldHidden: false };
+  }
+  return uiLanguage === targetLanguage
+    ? { field: "hidden", glossLanguage: null, chineseFieldHidden: true }
+    : { field: "gloss", glossLanguage: uiLanguage, chineseFieldHidden: true };
+}
+
 /** The Chinese name a confirm should store.
  *
  *  A ja/en interface never shows the Chinese-name field, so when its user

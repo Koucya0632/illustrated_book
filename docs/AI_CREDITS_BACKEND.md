@@ -292,3 +292,15 @@ Apple sandbox URL 指向 /api/billing/sandbox-notifications：外層與內層皆
 本輪未進行真實付費購買、未產生新 Apple 退款事件、未另確認裝置價格快取同步，也未作大規模負載或三端完整無障礙測試。部分退款與撤回的證據包含隔離資料庫測試。沒有另發公告或手動調整餘額。
 
 [完整正式上線證據](../../outputs/ai-credits-launch-20261006/README.md)。
+
+## 2026-10-11 舊 AI 路徑退役
+
+自製圖鑑的識別、確認與補充只走 `/api/ai`。`/api/atlas` 下的四個寫入（`POST images`、`images/:id/recognize`、`images/:id/confirm`、`items/:id/enrich`）改為固定拒絕（`refuseLegacyAtlasWrite`）：罐頭點數帳號 409 `update_required`，其他帳號 402。卡片詳情 GET 不再觸發補充。決策與取捨見 tuji-ios `docs/adr/0016`。
+
+連帶影響：
+
+- 回滾到 `MEMBERSHIP_POLICY=v1` 或 `AI_CREDITS_MODE=off` 後不再有任何拍照新增路徑；要回滾只能 revert。
+- `ATLAS_PRIMARY_PROVIDER_FREE` 不再讀取。`ATLAS_AI_PER_MINUTE_PER_IP` 不再讀取（點數路徑以每使用者每分鐘 12 次限流）。
+- `atlas_ai_reservations` 表不再寫入，未刪除。
+- 報價可帶 `uiLanguage`；帶了之後 `glossLanguage` 由伺服器依 `captureForm` 推出，操作回應多一個 `correctionField`。沒帶的舊版用戶端行為不變。
+- `ATLAS_ENRICH_VERSION` 只是戳記，升版不會重新補充既有卡片。

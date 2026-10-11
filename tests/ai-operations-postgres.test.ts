@@ -412,6 +412,28 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "completed");
       assert.equal(await run(f.account, op.id), "idle");
     });
+    await t.test("the interface language decides the run's form; a client's own gloss language is not believed", async () => {
+      const f = await fixture();
+      // 英文介面學英文: no gloss whatever the client claims, and no Chinese on screen.
+      const quote = await f.operations.quote(f.account, { ...f.input, uiLanguage: "en", glossLanguage: "ja" });
+      assert.equal(quote.input.glossLanguage, null);
+      const op = await f.operations.accept(f.account, quote.id, "ui-language");
+      assert.equal(op.correctionField, "hidden");
+      const delivered = await f.finish(op.id), candidate = delivered.result.candidates[0];
+      // A released build still sends the candidate's Chinese name beside the corrected lemma.
+      const confirmed = await f.operations.confirm(f.account, op.id, candidate.id, { lemma: "kitten", displayZhHant: candidate.zhHant });
+      assert.equal(confirmed.item.display_zh_hant, "kitten");
+      assert.equal(confirmed.item.display_en, null);
+
+      const chinese = await fixture();
+      const zh = await chinese.operations.accept(chinese.account,
+        (await chinese.operations.quote(chinese.account, { ...chinese.input, uiLanguage: "zh-Hant" })).id, "zh");
+      assert.equal(zh.correctionField, "chineseName");
+      const shown = await chinese.finish(zh.id), picked = shown.result.candidates[0];
+      // On a Chinese interface the name was on screen, so leaving it is an answer.
+      const kept = await chinese.operations.confirm(chinese.account, zh.id, picked.id, { lemma: "kitten", displayZhHant: picked.zhHant });
+      assert.equal(kept.item.display_zh_hant, picked.zhHant);
+    });
     await t.test("a rename with no Chinese name stores the lemma stand-in and the supplement writes the real one", async () => {
       const f = await fixture();
       const op = await f.accept(), delivered = await f.finish(op.id);

@@ -2,6 +2,7 @@ import { createHash, randomUUID } from "node:crypto";
 import { isDeepStrictEqual } from "node:util";
 import type postgres from "postgres";
 import { assertCreditKey, CREDIT_POLICY, CreditError } from "../credits/policy";
+import { captureForm } from "../atlas/gloss";
 import { confirmedNames, recordAiUsage, saveConfirmedItem } from "../atlas/item-writes";
 import { createCreditWallet, type CreditAccount, type CreditTransaction } from "../credits/wallet";
 import {
@@ -47,6 +48,8 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
     return {
       id: op.id as string, state: op.state as string, points: op.points as number,
       feature: op.input.feature as RecognitionInput["feature"], targetLanguage: op.input.targetLanguage as "en" | "ja",
+      // Which second field the correction form shows for this run; null when the client did not say its interface language.
+      correctionField: op.input.uiLanguage ? captureForm(op.input.uiLanguage, op.input.targetLanguage).field : null,
       imageId: op.image_id as string, priceVersion: op.price_version as string,
       failureCode: op.failure_code as string | null,
       result: op.state === "committed" ? op.result : null,
@@ -98,7 +101,8 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
       const parsed = recognitionQuoteInput.safeParse(rawInput);
       if (!parsed.success) throw new OperationError("invalid_ai_request");
       const input = parsed.data;
-      if (input.glossLanguage === input.targetLanguage) input.glossLanguage = null;
+      if (input.uiLanguage) input.glossLanguage = captureForm(input.uiLanguage, input.targetLanguage).glossLanguage;
+      else if (input.glossLanguage === input.targetLanguage) input.glossLanguage = null;
       return transact(a, async scope => {
         await holding(scope, a);
         const source = await image(scope, a, input.imageId);
@@ -328,9 +332,11 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
         if (!existing) await capacityAvailable(scope, a, limit, op.id);
         const itemId = existing?.id ?? randomUUID();
         const glossLanguage = op.input.glossLanguage as "en" | "ja" | null;
-        // A cross-language run is known to be a ja/en interface, where the Chinese name is never on screen.
+        // A run that never said its interface language can only be known to hide the Chinese name when it asked for a gloss.
+        const chineseFieldHidden = op.input.uiLanguage
+          ? captureForm(op.input.uiLanguage, op.input.targetLanguage).chineseFieldHidden : glossLanguage !== null;
         const names = confirmedNames({ candidate: { label: candidate.label, zh_hant: candidate.zh_hant, gloss: candidate.gloss },
-          correction, glossLanguage, chineseFieldHidden: glossLanguage !== null });
+          correction, glossLanguage, chineseFieldHidden });
         const lemma = names.lemma;
         const item = await saveConfirmedItem(tx, { itemId, exists: Boolean(existing), userId: a.userId, imageId: op.image_id,
           candidateId, targetLanguage: op.input.targetLanguage, primaryLabel: candidate.label, names, now: scope.now });

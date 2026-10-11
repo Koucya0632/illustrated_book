@@ -2140,9 +2140,17 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
     INSERT INTO category_translations (category_id, language, name) VALUES
       ('zodiac', 'ja', '星座'),
       ('fruits', 'ja', '果物'),
-      ('custom', 'ja', 'カスタム'),
+      ('custom', 'ja', 'マイ図鑑'),
       ('community', 'ja', '物見')
     ON CONFLICT (category_id, language) DO NOTHING
+  `;
+  // The seed above never overwrites, so a database that already holds the old
+  // ja name for `custom` needs this rename. Matching on the old value keeps it
+  // idempotent and leaves any later editorial edit alone.
+  await sql`
+    UPDATE category_translations
+       SET name = 'マイ図鑑'
+     WHERE category_id = 'custom' AND language = 'ja' AND name = 'カスタム'
   `;
   await sql`
     INSERT INTO category_translations (category_id, language, name)

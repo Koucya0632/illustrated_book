@@ -1,13 +1,5 @@
 import type { AtlasCandidate, AtlasRecognitionStage, AtlasTargetLanguage } from "./types";
 
-export interface AtlasTaxonomyHint {
-  id: string;
-  en: string;
-  zhHant: string;
-  aliases: string[];
-  parentId: string | null;
-}
-
 export interface AtlasVisionInput {
   imageBytes: Buffer;
   mimeType: string;
@@ -17,7 +9,6 @@ export interface AtlasVisionInput {
   /// (zhHant is their gloss) and UI==target (the label is the gloss) pass
   /// null, and the model is told to leave `gloss` null.
   glossLanguage?: "ja" | "en" | null;
-  taxonomyHint?: AtlasTaxonomyHint[];
   primaryHint?: string;
 }
 
@@ -49,7 +40,6 @@ export interface AtlasRecognitionResult {
 export interface AtlasVisionProvider {
   name: string;
   recognizePrimary(input: AtlasVisionInput): Promise<AtlasRecognitionResult>;
-  recognizeFine(input: AtlasVisionInput): Promise<AtlasRecognitionResult>;
   recognizeEscalated?(input: AtlasVisionInput): Promise<AtlasRecognitionResult>;
 }
 
@@ -67,12 +57,4 @@ export function emptyRecognitionResult(
     attributes: { colors: [], scene: null, count: null },
     uncertainty: { reason, needsEscalation: false },
   };
-}
-
-/// Whether a recognition gave the user anything to pick. Written as the
-/// `success` flag of its user_atlas_ai_usage row, and getAtlasUsage counts only
-/// successful rows — so an empty result (no labels, manual-only provider) does
-/// not use up the monthly quota (membership rule, decided 2026-09-27).
-export function recognitionFoundSomething(result: AtlasRecognitionResult): boolean {
-  return result.primary.length > 0 || result.fine.length > 0;
 }

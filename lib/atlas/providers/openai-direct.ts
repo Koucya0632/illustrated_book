@@ -72,10 +72,6 @@ export class OpenAIDirectAtlasProvider implements AtlasVisionProvider {
     return this.recognize(input, "primary");
   }
 
-  async recognizeFine(input: AtlasVisionInput): Promise<AtlasRecognitionResult> {
-    return this.recognize(input, "fine");
-  }
-
   async recognizeEscalated(input: AtlasVisionInput): Promise<AtlasRecognitionResult> {
     return this.recognize(input, "escalated");
   }

@@ -178,9 +178,4 @@ export class GoogleVisionAtlasProvider implements AtlasVisionProvider {
       raw,
     };
   }
-
-  async recognizeFine(input: AtlasVisionInput): Promise<AtlasRecognitionResult> {
-    void input;
-    return emptyRecognitionResult(this.name, "fine", "google vision fine recognition is not supported");
-  }
 }

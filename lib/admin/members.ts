@@ -124,46 +124,56 @@ function toSummary(row: MemberRow): MemberSummary {
 
 /**
  * Search members by TJ UID, email or nickname. An empty query lists everyone,
- * Pro first — at this scale that IS the member list, and Pro floating to the
- * top keeps it useful as the account count grows.
+ * paying members first — at this scale that IS the member list, and members
+ * floating to the top keeps it useful as the account count grows.
+ *
+ * "Paying member" is 永久會員 OR live Pro, computed ONCE as is_member and used by
+ * both the filter and the sort. It must stay a real boolean: an account with no
+ * user_entitlements row makes `e.tier = 'pro'` NULL, and NULL sorts FIRST under
+ * DESC — which sank every member below the LIMIT once we passed 50 accounts.
  */
 export async function searchMembers(
   query: string,
-  options: { proOnly?: boolean; limit?: number } = {},
+  options: { membersOnly?: boolean; limit?: number } = {},
 ): Promise<MemberSummary[]> {
   const sql = getSql();
   if (!sql) throw new Error("database unavailable");
   const q = query.trim();
   const pattern = q ? `%${q}%` : "";
-  const proOnly = options.proOnly ?? false;
+  const membersOnly = options.membersOnly ?? false;
   const limit = Math.min(Math.max(options.limit ?? 50, 1), 200);
 
   const rows = (await sql`
-    SELECT p.id, p.username, p.nickname, u.email, p.created_at,
-           e.tier       AS sub_tier,
-           e.expires_at AS sub_expires_at,
-           g.expires_at AS grant_expires_at,
-           EXISTS (SELECT 1 FROM user_lifetime_entitlements l
-                    WHERE l.user_id = p.id AND l.revoked_at IS NULL) AS has_lifetime
-      FROM profiles p
-      JOIN auth.users u ON u.id = p.id
-      LEFT JOIN user_entitlements e ON e.user_id = p.id
-      LEFT JOIN LATERAL (
-        SELECT max(expires_at) AS expires_at
-          FROM user_entitlement_grants
-         WHERE user_id = p.id AND revoked_at IS NULL AND expires_at > now()
-      ) g ON TRUE
-     WHERE (${pattern} = '' OR p.username ILIKE ${pattern}
-                            OR u.email ILIKE ${pattern}
-                            OR p.nickname ILIKE ${pattern})
-       AND (NOT ${proOnly} OR (
-             g.expires_at IS NOT NULL
-             OR (e.tier = 'pro' AND (e.expires_at IS NULL OR e.expires_at > now()))
-           ))
-     ORDER BY (
-       g.expires_at IS NOT NULL
-       OR (e.tier = 'pro' AND (e.expires_at IS NULL OR e.expires_at > now()))
-     ) DESC, p.created_at DESC
+    SELECT m.*
+      FROM (
+        SELECT p.id, p.username, p.nickname, u.email, p.created_at,
+               e.tier       AS sub_tier,
+               e.expires_at AS sub_expires_at,
+               g.expires_at AS grant_expires_at,
+               l.has_lifetime,
+               (
+                 l.has_lifetime
+                 OR g.expires_at IS NOT NULL
+                 OR COALESCE(e.tier = 'pro' AND (e.expires_at IS NULL OR e.expires_at > now()), FALSE)
+               ) AS is_member
+          FROM profiles p
+          JOIN auth.users u ON u.id = p.id
+          LEFT JOIN user_entitlements e ON e.user_id = p.id
+          LEFT JOIN LATERAL (
+            SELECT max(expires_at) AS expires_at
+              FROM user_entitlement_grants
+             WHERE user_id = p.id AND revoked_at IS NULL AND expires_at > now()
+          ) g ON TRUE
+          CROSS JOIN LATERAL (
+            SELECT EXISTS (SELECT 1 FROM user_lifetime_entitlements
+                            WHERE user_id = p.id AND revoked_at IS NULL) AS has_lifetime
+          ) l
+      ) m
+     WHERE (${pattern} = '' OR m.username ILIKE ${pattern}
+                            OR m.email ILIKE ${pattern}
+                            OR m.nickname ILIKE ${pattern})
+       AND (NOT ${membersOnly} OR m.is_member)
+     ORDER BY m.is_member DESC, m.created_at DESC
      LIMIT ${limit}
   `) as MemberRow[];
 

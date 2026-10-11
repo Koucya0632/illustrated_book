@@ -10,12 +10,12 @@ export default async function MembersPage(
 ) {
   const searchParams = await props.searchParams;
   const q = typeof searchParams.q === "string" ? searchParams.q : "";
-  const proOnly = searchParams.pro === "1";
+  const membersOnly = searchParams.pro === "1";
 
   let members: Awaited<ReturnType<typeof searchMembers>> = [];
   let error = "";
   try {
-    members = await searchMembers(q, { proOnly });
+    members = await searchMembers(q, { membersOnly });
   } catch (err) {
     error = err instanceof Error ? err.message : "查詢失敗";
   }
@@ -41,8 +41,8 @@ export default async function MembersPage(
           />
         </label>
         <label className="flex items-end gap-2 pb-2 text-sm text-ink">
-          <input type="checkbox" name="pro" value="1" defaultChecked={proOnly} />
-          只看 Pro
+          <input type="checkbox" name="pro" value="1" defaultChecked={membersOnly} />
+          只看會員（永久／Pro）
         </label>
         <div className="flex items-end gap-2">
           <button className="rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white">

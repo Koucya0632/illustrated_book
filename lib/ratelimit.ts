@@ -86,67 +86,6 @@ export function clientIpHash(req: Request): string {
   return createHash("sha256").update(ip).digest("hex").slice(0, 16);
 }
 
-function intEnv(name: string, fallback: number): number {
-  const raw = Number(process.env[name]);
-  return Number.isFinite(raw) && raw > 0 ? raw : fallback;
-}
-
-const DAY_SECONDS = 86_400;
-
-export type AtlasAiBackstopScope = "ip_burst" | "global";
-
-export interface AtlasAiBackstopResult {
-  ok: boolean;
-  scope?: AtlasAiBackstopScope;
-  /** User-facing (zh-Hant) copy the client can show verbatim. */
-  message?: string;
-  retryAfterSeconds?: number;
-}
-
-/**
- * Abuse backstops for atlas AI recognition: per-IP per-minute burst and a
- * global daily hard cap. These are NOT the per-user quota — that is tier-based
- * and enforced in lib/atlas/entitlement.ts, which calls this after its own
- * check. Env-tunable: ATLAS_AI_PER_MINUTE_PER_IP, ATLAS_AI_DAILY_GLOBAL.
- */
-export async function checkAtlasAiBackstops(ctx: {
-  ipHash: string;
-}): Promise<AtlasAiBackstopResult> {
-  const rules: { scope: AtlasAiBackstopScope; message: string; rule: RateRule }[] = [
-    {
-      scope: "ip_burst",
-      message: "操作太頻繁，請稍後再試。",
-      rule: {
-        bucket: `atlas-ai:ip:${ctx.ipHash}`,
-        windowSeconds: 60,
-        limit: intEnv("ATLAS_AI_PER_MINUTE_PER_IP", 12),
-      },
-    },
-    {
-      scope: "global",
-      message: "系統忙碌中，請稍後再試。",
-      rule: {
-        bucket: "atlas-ai:global",
-        windowSeconds: DAY_SECONDS,
-        limit: intEnv("ATLAS_AI_DAILY_GLOBAL", 5000),
-      },
-    },
-  ];
-
-  for (const entry of rules) {
-    const res = await hitRateLimit(entry.rule);
-    if (!res.ok) {
-      return {
-        ok: false,
-        scope: entry.scope,
-        message: entry.message,
-        retryAfterSeconds: res.retryAfterSeconds,
-      };
-    }
-  }
-  return { ok: true };
-}
-
 /** Drop counter rows for windows that have long since rolled over. */
 export async function cleanupOldRateLimitHits(olderThanDays = 2): Promise<number> {
   const sql = getSql();

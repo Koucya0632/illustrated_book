@@ -1,106 +1,14 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
-import { guardLegacyAtlasWrite } from "@/lib/credits/legacy-server";
-import { getSettings } from "@/lib/users-db";
-import { confirmAtlasItem, getAtlasImage, listAtlasCandidates } from "@/lib/atlas-db";
-import { confirmedChineseName } from "@/lib/atlas/gloss";
-import { checkAtlasCapacity } from "@/lib/atlas/entitlement";
-import { normalizeTargetLanguage, targetLanguageFromDirection } from "@/lib/atlas/normalize";
-import { readLang } from "@/lib/cache-headers";
+import { refuseLegacyAtlasWrite } from "@/lib/credits/legacy-server";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
-
-function cleanText(value: unknown, max = 120): string {
-  return typeof value === "string" ? value.trim().replace(/\s+/g, " ").slice(0, max) : "";
-}
-
-export async function POST(req: Request, props: { params: Promise<{ id: string }> }) {
-  const params = await props.params;
+// Retired: a card is confirmed from its operation (POST /api/ai/operations/:id/confirm).
+// See refuseLegacyAtlasWrite for what a released app receives.
+export async function POST() {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  const creditGuard = await guardLegacyAtlasWrite(userId);
-  if (creditGuard) return creditGuard;
-  if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
-
-  const image = await getAtlasImage(userId, params.id);
-  if (!image) return NextResponse.json({ error: "not found" }, { status: 404 });
-
-  let body: Record<string, unknown>;
-  try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "invalid body" }, { status: 400 });
-  }
-
-  const settings = await getSettings(userId);
-  const targetLanguage =
-    normalizeTargetLanguage(body.targetLanguage) ??
-    targetLanguageFromDirection(settings.learningDirection);
-  const lemma = cleanText(body.lemma || body.fineLabel || body.primaryLabel);
-  const primaryLabel = cleanText(body.primaryLabel || lemma);
-  const selectedCandidateId =
-    typeof body.selectedCandidateId === "string" && !invalidId(body.selectedCandidateId)
-      ? body.selectedCandidateId
-      : null;
-  // ?lang= wins over the stored setting so a just-switched uiLang is honoured.
-  const uiLang = readLang(req, settings.uiLang);
-  const candidate = selectedCandidateId
-    ? ((await listAtlasCandidates(userId, image.id)).find((c) => c.id === selectedCandidateId) ?? null)
-    : null;
-  const displayZhHant = confirmedChineseName({
-    lemma,
-    submitted: cleanText(body.displayZhHant || body.zhHant) || undefined,
-    candidate,
-    chineseFieldHidden: uiLang === "ja" || uiLang === "en",
-  });
-  if (!lemma || !primaryLabel || !displayZhHant) {
-    return NextResponse.json(
-      { error: "lemma, primaryLabel and displayZhHant are required" },
-      { status: 400 },
-    );
-  }
-
-  // Enforce the tier capacity before growing the collection (authoritative gate;
-  // the client also blocks at capture entry). Free hitting its cap → 402
-  // (upgrade raises it); Pro at its cap → 429 (must delete, upgrade won't help).
-  const capacity = await checkAtlasCapacity(userId);
-  if (!capacity.ok) {
-    return NextResponse.json(
-      {
-        error: capacity.upgradeable ? "quota_exceeded" : "capacity_full",
-        scope: "capacity",
-        message: capacity.message,
-      },
-      { status: capacity.upgradeable ? 402 : 429 },
-    );
-  }
-
-  // The capture sheet's gloss field, in the capturing user's UI language
-  // (candidate gloss or a user edit). Routed into the matching per-language
-  // column; the enrich gloss pack fills whichever stays null.
-  const displayGloss = cleanText(body.displayGloss, 80);
-  const item = await confirmAtlasItem({
-    userId,
-    imageId: image.id,
-    selectedCandidateId,
-    targetLanguage,
-    primaryLabel,
-    fineLabel: cleanText(body.fineLabel) || null,
-    lemma,
-    displayZhHant,
-    displayJa: uiLang === "ja" && displayGloss ? displayGloss : null,
-    displayEn: uiLang === "en" && displayGloss ? displayGloss : null,
-    partOfSpeech: cleanText(body.partOfSpeech, 40) || null,
-    category: cleanText(body.category, 60) || null,
-  });
-
-  return NextResponse.json(
-    { item },
-    { headers: { "Cache-Control": "private, no-store" } },
-  );
+  return refuseLegacyAtlasWrite(userId);
 }

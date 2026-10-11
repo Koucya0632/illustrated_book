@@ -65,7 +65,6 @@ test("the atlas answer path refuses locked items with a 200, like the study gate
 
 for (const route of [
   "app/api/atlas/items/[id]/cards/route.ts",
-  "app/api/atlas/items/[id]/enrich/route.ts",
   "app/api/atlas/items/[id]/publish/route.ts",
   "app/api/atlas/items/[id]/detail/route.ts",
 ]) {

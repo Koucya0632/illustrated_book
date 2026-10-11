@@ -16,7 +16,7 @@ import { segmentFurigana } from "@/lib/kana";
 import { loadFuriganaDict } from "@/lib/furigana-dict";
 import type { AtlasEnrichment, AtlasItemRow } from "@/lib/atlas/types";
 import { ATLAS_ENRICH_VERSION } from "@/lib/atlas/enrich-policy";
-import { insertAtlasAiUsage, type AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
+import type { AtlasItemEnrichmentUpdate } from "@/lib/atlas-db";
 import { createAiUsageTally, type AiUsageTally } from "@/lib/atlas/ai-usage";
 
 // Cost-effective model for custom-card enrichment: OpenAI gpt-4o-mini called
@@ -208,37 +208,6 @@ export async function generateCreditEnrichment(item: AtlasItemRow) {
   return { fields, provider: "openai-direct", model: summary?.model ?? null,
     usage: { inputTokens: summary?.inputTokens, outputTokens: summary?.outputTokens,
       estimatedCostUsd: summary?.estimatedCostUsd, latencyMs: Math.round(performance.now() - started) } };
-}
-
-export async function enrichAtlasItem(item: AtlasItemRow): Promise<AtlasItemEnrichmentUpdate> {
-  const tally = createAiUsageTally();
-  const t0 = performance.now();
-  let ok = false;
-  try {
-    const fields = await buildAtlasEnrichment(item, tally);
-    ok = true;
-    return fields;
-  } finally {
-    const summary = tally.summary();
-    // A failed pass is still logged (without tokens): the call may have billed.
-    if (summary || !ok) {
-      await insertAtlasAiUsage({
-        userId: item.user_id,
-        jobId: null,
-        imageId: item.image_id,
-        provider: "openai-direct",
-        model: summary?.model ?? null,
-        operation: "enrich",
-        detailLevel: null,
-        inputTokens: summary?.inputTokens,
-        outputTokens: summary?.outputTokens,
-        imageCount: 0,
-        estimatedCostUsd: summary?.estimatedCostUsd,
-        latencyMs: Math.round(performance.now() - t0),
-        success: ok,
-      }).catch((err) => console.warn("[atlas-enrich] usage log failed", err));
-    }
-  }
 }
 
 async function buildAtlasEnrichment(

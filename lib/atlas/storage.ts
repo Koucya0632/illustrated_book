@@ -23,14 +23,6 @@ export interface AtlasImageBuffers {
   thumb: Buffer;
 }
 
-export function atlasImagePaths(userId: string, imageId: string): AtlasImagePaths {
-  return {
-    originalPath: `${userId}/${imageId}/original.webp`,
-    thumbPath: `${userId}/${imageId}/thumb.webp`,
-    recognitionPath: `${userId}/${imageId}/recognition.webp`,
-  };
-}
-
 export async function ensureAtlasPrivateBucket(): Promise<void> {
   const supabase = createServiceRoleClient();
   const { error: getError } = await supabase.storage.getBucket(ATLAS_PRIVATE_BUCKET);

@@ -1,23 +1,14 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
-import { usesCreditBilling } from "@/lib/credits/legacy-server";
-import {
-  getAtlasImage,
-  getAtlasItem,
-  markAtlasItemBackfillFailed,
-  updateAtlasItemEnrichment,
-} from "@/lib/atlas-db";
-import { atlasItemToWord, enrichAtlasItem } from "@/lib/atlas/enrich";
-import { shouldEnrichForAccount } from "@/lib/atlas/enrich-policy";
-import { getMembershipAccess, isAtlasItemLocked } from "@/lib/atlas/entitlement";
-import { checkAtlasAiBackstops, clientIpHash } from "@/lib/ratelimit";
+import { getAtlasImage, getAtlasItem } from "@/lib/atlas-db";
+import { atlasItemToWord } from "@/lib/atlas/enrich";
+import { isAtlasItemLocked } from "@/lib/atlas/entitlement";
 import { getSettings } from "@/lib/users-db";
 import { readLang } from "@/lib/cache-headers";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-export const maxDuration = 60;
 
 function invalidId(id: string): boolean {
   return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
@@ -31,46 +22,16 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
-  let item = await getAtlasItem(userId, params.id);
+  const item = await getAtlasItem(userId, params.id);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
   const settings = await getSettings(userId);
   const uiLang = readLang(req, settings.uiLang);
 
-  // Lazy enrich: covers cards made before enrichment existed (or that missed the
-  // background pass). Also re-runs once for JA cards enriched under an older
-  // scheme (missing the Japanese target definition and/or kana reading) so they
-  // self-heal. First open is slower; later reads use the stored blob.
-  //
-  // This is a GET with a paid side effect (3-4 model calls), so the ceiling has
-  // to hold here rather than at the POST: shouldEnrichAtlasItem gives the item
-  // a finite budget, and the abuse backstop is consumed ONLY on the branch that
-  // actually spends — charging it at the top of the route would throttle plain
-  // browsing, which is legitimate and costs nothing. See docs/adr/0011.
-  // Locked items (over the cap after Pro ended) are still readable — the user
-  // must see what they have to decide what to delete — but spend nothing.
+  // A read is only a read: 補充 is the included fulfillment of the credit
+  // operation that made the card, run by the worker. This route used to carry
+  // a lazy paid pass for the pre-credit flow (docs/adr/0011, superseded for
+  // this path by 0016).
   const locked = await isAtlasItemLocked(userId, item.id);
-  // An unavailable policy lookup also skips AI; saved content stays readable.
-  const creditBilling = await usesCreditBilling(userId).catch(() => true);
-  if (!creditBilling && !locked && shouldEnrichForAccount(item, await getMembershipAccess(userId))) {
-    // A denied backstop is not an error for a reader: skip the paid pass and
-    // serve name + image, exactly as a failed one does.
-    const backstop = await checkAtlasAiBackstops({ ipHash: clientIpHash(req) });
-    if (backstop.ok) {
-      try {
-        const fields = await enrichAtlasItem(item);
-        await updateAtlasItemEnrichment(userId, item.id, fields);
-        const refreshed = await getAtlasItem(userId, item.id);
-        if (refreshed) item = refreshed;
-      } catch (err) {
-        await markAtlasItemBackfillFailed(
-          userId,
-          item,
-          err instanceof Error ? err.message : "enrich failed",
-        ).catch(() => {});
-        // fall through — still return name + image so the page isn't empty
-      }
-    }
-  }
 
   let imageUrl = "";
   const image = await getAtlasImage(userId, item.image_id);

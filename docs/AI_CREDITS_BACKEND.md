@@ -304,3 +304,30 @@ Apple sandbox URL 指向 /api/billing/sandbox-notifications：外層與內層皆
 - `atlas_ai_reservations` 表不再寫入，未刪除。
 - 報價可帶 `uiLanguage`；帶了之後 `glossLanguage` 由伺服器依 `captureForm` 推出，操作回應多一個 `correctionField`。沒帶的舊版用戶端行為不變。
 - `ATLAS_ENRICH_VERSION` 只是戳記，升版不會重新補充既有卡片。
+
+## 2026-10-12 助手問答（Claude Haiku 5.5）
+
+App 的助手先用裝置上的資料回答分類、收藏與詞條；本機答不了的問題才打 `/api/assistant/ask`，這是助手唯一會呼叫模型、唯一會扣點的地方。
+
+- `GET /api/assistant/ask`：回 `{ minPoints, maxPoints, available }`，不呼叫模型。App 在第一次要問之前讀它，才能事前告訴使用者價格範圍。
+- `POST /api/assistant/ask`：`{ requestId, question, uiLanguage, learningDirection, wordIds?, history? }` → `{ answer, inScope, wordIds, charged, available, minPoints, maxPoints }`。
+
+計價（`lib/assistant/pricing.ts`）：實際 token 成本 × 3 倍 ÷ 每點 US$0.0007，無條件進位，最少 1 點、最多 5 點。典型一輪（約 2,000 input＋300 output）是 2 點。
+
+扣點順序：
+
+1. 先讀錢包。非罐頭點數帳號 403；可用點數少於上限（5 點）就 409 `insufficient_credits`，不呼叫模型。
+2. 呼叫模型。失敗、逾時、被限流都不扣點。
+3. 回答在學習範圍內才扣：以 `assistant:<requestId>` 為 key 預扣並立即確認實際點數。錢包的結算只能照預扣全額，所以不是「預扣上限、結算較少」，而是算出實際點數後一次扣完。
+4. 模型判定不在語言學習範圍（`inScope: false`）或拒答：回一句說明，不扣點。
+5. 回答已產生但扣點時餘額剛好被別的操作用掉，或同一個 `requestId` 重送：照樣回答，該次 `charged` 為 0。
+
+開關與設定：
+
+- `ASSISTANT_AI_ENABLED=true` 且有 `ANTHROPIC_API_KEY` 才開；缺任一個，兩個方法都回 404。另外仍需 `AI_CREDITS_MODE=live`。
+- `ASSISTANT_AI_DAILY_GLOBAL`：全站每日上限，預設 5000。每人每分鐘 10 次、每天 300 次。
+- 模型固定 `claude-haiku-5-5`（計價表跟著它）；換模型要連 `ASSISTANT_PRICING` 一起改。
+
+沒有新增資料表。扣點記在既有的點數帳本（reference 為 `assistant:<requestId>`）；token 數與估算成本目前只寫一行 JSON log（`event: assistant_answer`），Hobby 方案的 log 只留一小時，要長期對帳得另外加表。
+
+本輪未以真實金鑰呼叫過模型：測試以假的 client 驗證送出的參數與回覆處理。

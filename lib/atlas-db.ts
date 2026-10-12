@@ -2131,6 +2131,8 @@ export interface AtlasReportRow {
   lemma: string | null;
   display_zh_hant: string | null;
   public_review_status: string | null;
+  /** The author's own row. Differs from the public copy after an auto-hide. */
+  item_review_status: string | null;
   collection_title: string | null;
   collection_slug: string | null;
   collection_review_status: string | null;
@@ -2150,11 +2152,13 @@ export async function listAtlasReports(
   if (status) {
     return sql<AtlasReportRow[]>`
       SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status,
+             ui.review_status AS item_review_status,
              c.title AS collection_title, c.slug AS collection_slug,
              c.review_status AS collection_review_status,
              pr.username AS author_handle
       FROM atlas_reports r
       LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+      LEFT JOIN user_atlas_items ui ON ui.id = r.source_item_id
       LEFT JOIN atlas_collections c
         ON r.target_type = 'collection' AND c.id = r.target_id
       LEFT JOIN profiles pr
@@ -2166,11 +2170,13 @@ export async function listAtlasReports(
   }
   return sql<AtlasReportRow[]>`
     SELECT r.*, p.lemma, p.display_zh_hant, p.review_status AS public_review_status,
+           ui.review_status AS item_review_status,
            c.title AS collection_title, c.slug AS collection_slug,
            c.review_status AS collection_review_status,
            pr.username AS author_handle
     FROM atlas_reports r
     LEFT JOIN atlas_public_items p ON p.id = r.public_item_id
+    LEFT JOIN user_atlas_items ui ON ui.id = r.source_item_id
     LEFT JOIN atlas_collections c
       ON r.target_type = 'collection' AND c.id = r.target_id
     LEFT JOIN profiles pr
@@ -2189,6 +2195,59 @@ export async function updateAtlasReportStatus(
   await sql`
     UPDATE atlas_reports SET status = ${status} WHERE id = ${id}::bigint
   `;
+}
+
+/**
+ * Admin: take down what a report points at, straight from the report queue.
+ *
+ * Closes every open report on the same target, not just the one clicked: once
+ * the thing is gone the others have nothing left to decide, and leaving them
+ * open would offer the same button again on each.
+ *
+ * Authors are refused — see maybeEscalateCollectionReport for why an identity
+ * has no takedown.
+ */
+export async function takedownAtlasReportTarget(
+  reportId: string,
+): Promise<"ok" | "not_found" | "unsupported"> {
+  const sql = requireSql();
+  const rows = await sql<
+    { target_type: AtlasReportTarget; target_id: string | null; source_item_id: string | null }[]
+  >`
+    SELECT target_type, target_id, source_item_id
+    FROM atlas_reports
+    WHERE id = ${reportId}::bigint
+  `;
+  const report = rows[0];
+  if (!report) return "not_found";
+
+  if (report.target_type === "item") {
+    if (!report.source_item_id) return "not_found";
+    await takedownAtlasPublicItem(report.source_item_id);
+  } else if (report.target_type === "collection") {
+    if (!report.target_id) return "not_found";
+    const collection = await takedownAtlasCollection(report.target_id);
+    if (!collection) return "not_found";
+  } else {
+    return "unsupported";
+  }
+
+  // After the takedown, so a failure here leaves the reports open and the
+  // button retryable rather than closing reports on content that is still up.
+  if (report.target_id) {
+    await sql`
+      UPDATE atlas_reports
+      SET status = 'reviewed'
+      WHERE target_type = ${report.target_type}
+        AND target_id = ${report.target_id}::uuid
+        AND status = 'open'
+    `;
+  } else {
+    await sql`
+      UPDATE atlas_reports SET status = 'reviewed' WHERE id = ${reportId}::bigint
+    `;
+  }
+  return "ok";
 }
 
 export interface AtlasFunnelReport {

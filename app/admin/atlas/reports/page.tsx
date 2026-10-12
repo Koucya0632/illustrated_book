@@ -51,6 +51,23 @@ function publicHref(r: AtlasReportRow): string | null {
   }
 }
 
+/** Moderation already removed it for good — nothing left for the button to do. */
+function isTakenDown(r: AtlasReportRow): boolean {
+  if (r.target_type === "collection") return r.collection_review_status === "takedown";
+  return r.target_type === "item" && r.item_review_status === "takedown";
+}
+
+/**
+ * Item and 合集 only, and only while the target still exists. Offered on an
+ * auto-hidden one too: that is merely waiting for a human, and this is the
+ * human deciding.
+ */
+function canTakeDown(r: AtlasReportRow): boolean {
+  if (isTakenDown(r)) return false;
+  if (r.target_type === "collection") return r.collection_review_status !== null;
+  return r.target_type === "item" && r.item_review_status !== null;
+}
+
 function allowedStatus(value: unknown): AtlasReportStatus | "" {
   return value === "open" || value === "reviewed" || value === "dismissed" ? value : "";
 }
@@ -70,11 +87,11 @@ export default async function AdminAtlasReportsPage(
         <div>
           <h1 className="text-2xl font-bold text-ink sm:text-3xl">公開圖鑑檢舉</h1>
           <p className="mt-1 text-sm text-muted">
-            共 {reports.length} 筆。下架內容請到{" "}
+            共 {reports.length} 筆。項目與合集可以直接在這裡下架；要復原請到{" "}
             <Link href="/admin/atlas" className="font-semibold text-sky-accent hover:underline">
               圖鑑審核
-            </Link>{" "}
-            用 Item ID 操作。
+            </Link>
+            。
           </p>
         </div>
       </header>
@@ -115,8 +132,14 @@ export default async function AdminAtlasReportsPage(
               <span className="rounded-full bg-cream px-2.5 py-1 text-xs font-bold text-ink">
                 {STATUS_LABELS[r.status] ?? r.status}
               </span>
-              {(r.public_review_status === "takedown" ||
-                r.collection_review_status === "pending_review") && (
+              {isTakenDown(r) && (
+                <span className="rounded-full bg-rose-100 px-2.5 py-1 text-xs font-semibold text-rose-700">
+                  已下架
+                </span>
+              )}
+              {!isTakenDown(r) &&
+                (r.public_review_status === "takedown" ||
+                  r.collection_review_status === "pending_review") && (
                 <span className="rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-800">
                   已自動下架
                 </span>
@@ -152,7 +175,9 @@ export default async function AdminAtlasReportsPage(
                   查看公開頁
                 </Link>
               )}
-              {r.status === "open" && <AtlasReportActions id={r.id} />}
+              {r.status === "open" && (
+                <AtlasReportActions id={r.id} canTakeDown={canTakeDown(r)} />
+              )}
             </div>
           </article>
         ))}

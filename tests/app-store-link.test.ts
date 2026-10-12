@@ -37,3 +37,10 @@ test("a campaign name Apple would not accept is refused whole", () => {
     assert.equal(resolveCampaign(source), null);
   }
 });
+
+test("the shipped provider id is the one App Store Connect generated", () => {
+  assert.equal(
+    appStoreUrl({ country: "JP", source: "threads" }),
+    "https://apps.apple.com/jp/app/id6781950004?pt=129057124&ct=threads&mt=8",
+  );
+});

@@ -10,10 +10,8 @@
 export const APP_STORE_ID = "6781950004";
 
 // The provider id from App Store Connect → App Analytics → Generate Campaign
-// Link. Not a secret — it is printed in every campaign link. Until it is set,
-// `src` is accepted and dropped: a link posted today starts counting the day
-// this is filled in, with no need to re-post it.
-export const APP_STORE_PROVIDER_ID: string | null = null;
+// Link. Not a secret — it is printed in every campaign link.
+export const APP_STORE_PROVIDER_ID: string | null = "129057124";
 
 const DEFAULT_STOREFRONT = "jp";
 const COUNTRY_CODE = /^[A-Z]{2}$/;

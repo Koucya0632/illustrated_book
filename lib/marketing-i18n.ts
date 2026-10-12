@@ -26,18 +26,18 @@ type Row = Record<UiLang, string>;
 const STRINGS: Record<string, Row> = {
   // ── Metadata ────────────────────────────────────────────────
   "meta.title": {
-    "zh-Hant": "Tuji · 圖鑑式單字學習",
+    "zh-Hant": "Tuji · 看圖學日文、英文單字",
     "zh-Hans": "Tuji · 图鉴式单词学习",
     ja: "Tuji · 図鑑で覚える単語学習",
-    en: "Tuji · Picture-first vocabulary",
+    en: "Tuji · Japanese & English words, picture-first",
   },
   "meta.desc": {
     "zh-Hant":
-      "看得見的單字，記得住的語言。Tuji 用日常生活的圖片、間隔複習與 AI 自製圖鑑，幫中文使用者學會生活英文和日文。",
+      "便利商店、藥妝店、超市——在日本生活會遇到的東西，看圖就記住。Tuji 用圖片、間隔複習與 AI 自製圖鑑，幫你學會生活日文和英文。",
     "zh-Hans":
       "看得见的单词，记得住的语言。Tuji 用日常生活的图片、间隔复习与 AI 自制图鉴，帮中文用户学会生活英语和日语。",
     ja: "見える単語は、忘れにくい。Tuji は日常の写真・間隔反復・AI 図鑑で、実生活の英語と日本語が身につく単語学習アプリです。",
-    en: "Words you can see stick better. Tuji teaches everyday English and Japanese with real-life photos, spaced repetition, and an AI-built picture atlas.",
+    en: "The everyday things you run into living in Japan, as picture cards. Tuji teaches everyday Japanese and English with real-life photos, spaced repetition, and an AI-built picture atlas.",
   },
 
   // ── Header / footer nav ─────────────────────────────────────
@@ -84,11 +84,11 @@ const STRINGS: Record<string, Row> = {
   "hero.accent": { "zh-Hant": "。", "zh-Hans": "。", ja: "。", en: "." },
   "hero.subhead": {
     "zh-Hant":
-      "Tuji 把日常生活變成你的單字圖鑑——圖片記憶、真人發音、間隔複習，再加上 AI 幫你把自己拍的照片變成單字卡。學英文和日文，從你眼前的世界開始。",
+      "Tuji 把日常生活變成你的單字圖鑑——圖片記憶、真人發音、間隔複習，再加上 AI 幫你把自己拍的照片變成單字卡。學日文和英文，從你眼前的世界開始。",
     "zh-Hans":
       "Tuji 把日常生活变成你的单词图鉴——图片记忆、真人发音、间隔复习，再加上 AI 帮你把自己拍的照片变成单词卡。学英语和日语，从你眼前的世界开始。",
     ja: "Tuji は日常を単語図鑑に変えます。写真で記憶し、ネイティブ音声で聞き、間隔反復で復習。さらに AI が自分で撮った写真を単語カードに変換。英語も日本語も、目の前の世界から学べます。",
-    en: "Tuji turns everyday life into your own picture dictionary — image-based memory, native audio, and spaced review, plus an AI that turns your own photos into flashcards. Learn English and Japanese, starting with the world in front of you.",
+    en: "Tuji turns everyday life into your own picture dictionary — image-based memory, native audio, and spaced review, plus an AI that turns your own photos into flashcards. Learn Japanese and English, starting with the world in front of you.",
   },
   "hero.stat1l": { "zh-Hant": "生活單字", "zh-Hans": "生活单词", ja: "生活の単語", en: "everyday words" },
   "hero.stat2l": { "zh-Hant": "雙語言學習", "zh-Hans": "双语言学习", ja: "2 言語対応", en: "two languages" },
@@ -226,12 +226,12 @@ const STRINGS: Record<string, Row> = {
     ja: "どの単語も発音を聞き、例文を読める。読み方・使い方まで身につき、ただ「見覚えがある」で終わりません。",
     en: "Hear the pronunciation and read an example for every word — learn how to say and use it, not just recognize it.",
   },
-  "feat.f5t": { "zh-Hant": "英文・日文", "zh-Hans": "英语・日语", ja: "英語・日本語", en: "English & Japanese" },
+  "feat.f5t": { "zh-Hant": "日文・英文", "zh-Hans": "英语・日语", ja: "英語・日本語", en: "Japanese & English" },
   "feat.f5b": {
-    "zh-Hant": "同一套圖鑑，支援英文與日文兩種學習目標，隨時切換學習方向。",
+    "zh-Hant": "同一套圖鑑，支援日文與英文兩種學習目標，隨時切換學習方向。",
     "zh-Hans": "同一套图鉴，支持英语与日语两种学习目标，随时切换学习方向。",
     ja: "同じ図鑑で、英語と日本語の 2 つの学習目標に対応。いつでも学習の方向を切り替えられます。",
-    en: "One picture atlas supports both English and Japanese as learning targets — switch direction anytime.",
+    en: "One picture atlas supports both Japanese and English as learning targets — switch direction anytime.",
   },
   "feat.f6t": { "zh-Hant": "進度看得見", "zh-Hans": "进度看得见", ja: "進捗が見える", en: "Visible progress" },
   "feat.f6b": {
@@ -397,19 +397,19 @@ const STRINGS: Record<string, Row> = {
   },
   "dl.accent": { "zh-Hant": "。", "zh-Hans": "。", ja: "。", en: "." },
   "dl.subhead": {
-    "zh-Hant": "立即下載 Tuji，用生活中的圖片開始學英文和日文。",
+    "zh-Hant": "立即下載 Tuji，用生活中的圖片開始學日文和英文。",
     "zh-Hans": "立即下载 Tuji，用生活中的图片开始学英语和日语。",
     ja: "今すぐ Tuji をダウンロードして、暮らしの中の写真で英語と日本語を学び始めましょう。",
-    en: "Download Tuji now and start learning English and Japanese with pictures from everyday life.",
+    en: "Download Tuji now and start learning Japanese and English with pictures from everyday life.",
   },
   "dl.contact": { "zh-Hant": "聯絡我們", "zh-Hans": "联系我们", ja: "お問い合わせ", en: "Contact us" },
 
   // ── Footer ──────────────────────────────────────────────────
   "foot.tagline": {
-    "zh-Hant": "圖鑑式單字學習。用日常生活的圖片，把英文和日文單字真正記進腦袋。",
+    "zh-Hant": "圖鑑式單字學習。用日常生活的圖片，把日文和英文單字真正記進腦袋。",
     "zh-Hans": "图鉴式单词学习。用日常生活的图片，把英语和日语单词真正记进脑袋。",
     ja: "図鑑で覚える単語学習。日常の写真で、英語と日本語の単語を本当に頭に残します。",
-    en: "Picture-first vocabulary. Use everyday photos to make English and Japanese words truly stick.",
+    en: "Picture-first vocabulary. Use everyday photos to make Japanese and English words truly stick.",
   },
   "foot.product": { "zh-Hant": "產品", "zh-Hans": "产品", ja: "プロダクト", en: "Product" },
   "foot.iosApp": { "zh-Hant": "iOS App", "zh-Hans": "iOS App", ja: "iOS App", en: "iOS App" },

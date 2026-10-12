@@ -1,19 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const APP_STORE_ID = "6781950004";
-const DEFAULT_STOREFRONT = "jp";
-const COUNTRY_CODE = /^[A-Z]{2}$/;
-
-function resolveStorefront(country: string | null) {
-  const normalized = country?.trim().toUpperCase();
-  return normalized && COUNTRY_CODE.test(normalized)
-    ? normalized.toLowerCase()
-    : DEFAULT_STOREFRONT;
-}
+import { appStoreUrl } from "@/lib/app-store-link";
 
 export function GET(request: NextRequest) {
-  const storefront = resolveStorefront(request.headers.get("x-vercel-ip-country"));
-  const destination = `https://apps.apple.com/${storefront}/app/id${APP_STORE_ID}`;
+  const destination = appStoreUrl({
+    country: request.headers.get("x-vercel-ip-country"),
+    source: request.nextUrl.searchParams.get("src"),
+  });
   const response = NextResponse.redirect(destination, 302);
 
   // The destination varies by visitor country, so never let a CDN reuse a

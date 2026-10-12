@@ -13,6 +13,7 @@ import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { localeTag } from "@/lib/i18n";
 import { getPublicLang } from "@/lib/public-lang";
+import { APP_STORE_ID } from "@/lib/app-store-link";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -40,9 +41,12 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tuji · 圖鑑式學英文",
+  title: "Tuji · 看圖學日文、英文單字",
   description:
-    "看得見的英文，記得住的單字。透過圖片、分類、發音、例句與測驗，學會生活英文。",
+    "看得見的單字，記得住的語言。透過圖片、分類、發音、例句與測驗，學會生活日文和英文。",
+  // Smart App Banner: iPhone Safari shows an "open in the App Store" strip at
+  // the top of every page. Safari only — other browsers ignore the tag.
+  itunes: { appId: APP_STORE_ID },
 };
 
 export default async function RootLayout({

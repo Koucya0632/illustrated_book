@@ -1,0 +1,39 @@
+import type postgres from "postgres";
+
+/**
+ * One row per answer the model produced — what it used and what was charged.
+ *
+ * The points ledger already records each charge; this is the other half: the
+ * tokens behind it. Answers that were not charged (out of scope, a lost race,
+ * a resend) are rows too, because they cost the same to produce.
+ */
+export const ASSISTANT_TABLES = ["assistant_usage"] as const;
+export const ASSISTANT_DDL = [
+  `CREATE TABLE IF NOT EXISTS assistant_usage (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    request_id UUID NOT NULL,
+    user_id UUID NOT NULL,
+    environment TEXT NOT NULL,
+    model TEXT NOT NULL,
+    in_scope BOOLEAN NOT NULL,
+    input_tokens INT NOT NULL CHECK (input_tokens >= 0),
+    output_tokens INT NOT NULL CHECK (output_tokens >= 0),
+    cache_read_tokens INT NOT NULL DEFAULT 0 CHECK (cache_read_tokens >= 0),
+    cache_write_tokens INT NOT NULL DEFAULT 0 CHECK (cache_write_tokens >= 0),
+    estimated_cost_usd NUMERIC(12, 6) NOT NULL CHECK (estimated_cost_usd >= 0),
+    points_charged INT NOT NULL CHECK (points_charged >= 0),
+    pricing_version TEXT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL,
+    FOREIGN KEY (user_id, environment) REFERENCES credit_accounts ON DELETE CASCADE
+  )`,
+  `CREATE INDEX IF NOT EXISTS assistant_usage_time_idx ON assistant_usage(environment, created_at)`,
+  `CREATE INDEX IF NOT EXISTS assistant_usage_user_idx ON assistant_usage(user_id, environment, created_at)`,
+  ...ASSISTANT_TABLES.map(table => `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`),
+] as const;
+
+/** Requires the credit schema: usage rows belong to a credit account. */
+export async function migrateAssistantSchema(sql: postgres.Sql): Promise<void> {
+  await sql.begin(async tx => {
+    for (const statement of ASSISTANT_DDL) await tx.unsafe(statement);
+  });
+}

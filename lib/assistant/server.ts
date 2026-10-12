@@ -7,6 +7,7 @@ import { hitRateLimit } from "../ratelimit";
 import { AssistantError } from "./contracts";
 import { createAssistantHandler } from "./http";
 import { createAssistantModel } from "./model";
+import { createAssistantUsageLog } from "./usage";
 
 /** Off unless switched on and given a key — a deploy without either answers 404. */
 const enabled = () => process.env.ASSISTANT_AI_ENABLED === "true" && Boolean(process.env.ANTHROPIC_API_KEY);
@@ -43,6 +44,10 @@ export const handleAssistantRequest = createAssistantHandler({
       .map(word => ({ id: word.id, word: word.word, reading: word.reading, meaning: word.chinese }));
   },
   ask: request => (model ??= createAssistantModel())(request),
-  record: entry => console.info(JSON.stringify(entry)),
+  record: entry => {
+    const sql = getSql();
+    if (!sql) throw new CreditError("credits_unavailable");
+    return createAssistantUsageLog(sql)(entry);
+  },
   reportError: () => console.error("[assistant] request failed"),
 });

@@ -24,6 +24,7 @@ import { lockDownPublicTables } from "../lib/rls-lockdown";
 import { WORD_INSIGHTS_DDL } from "../lib/word-insights-schema";
 import { migrateCreditSchema } from "../lib/credits/schema";
 import { migrateAiOperationsSchema } from "../lib/ai-operations/schema";
+import { migrateAssistantSchema } from "../lib/assistant/schema";
 
 const GUARDED_PUBLISH_SERIES = [
   { category: "professions", ids: MAIN_WORD_PROFESSIONS_IDS },
@@ -2904,6 +2905,7 @@ async function main() {
     }
     console.log(`[migrate] DDL applied (${DDL.length} statements).`);
     await migrateAiOperationsSchema(sql);
+    await migrateAssistantSchema(sql);
     // Before any content guard can fail the deploy — see lib/rls-lockdown.ts.
     const lockedEarly = await lockDownPublicTables(sql);
     console.log(`[migrate] RLS lockdown: ${lockedEarly.length} table(s) fixed${lockedEarly.length ? ` (${lockedEarly.join(", ")})` : ""}.`);

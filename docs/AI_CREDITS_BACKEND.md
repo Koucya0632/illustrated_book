@@ -328,6 +328,24 @@ App 的助手先用裝置上的資料回答分類、收藏與詞條；本機答�
 - `ASSISTANT_AI_DAILY_GLOBAL`：全站每日上限，預設 5000。每人每分鐘 10 次、每天 300 次。
 - 模型固定 `claude-haiku-5-5`（計價表跟著它）；換模型要連 `ASSISTANT_PRICING` 一起改。
 
-沒有新增資料表。扣點記在既有的點數帳本（reference 為 `assistant:<requestId>`）；token 數與估算成本目前只寫一行 JSON log（`event: assistant_answer`），Hobby 方案的 log 只留一小時，要長期對帳得另外加表。
+### 用量紀錄（`assistant_usage`）
+
+模型每產生一則回答就寫一列：`request_id`、帳號、模型、是否在範圍內、input／output／cache token 數、估算成本（美元）、實扣點數、計價版本、時間。沒扣點的回答（範圍外、扣點時輸掉競爭、重送）也會寫，因為它們花的成本一樣；同一個 `requestId` 重送會有兩列，因為模型真的跑了兩次。模型沒被呼叫到的請求（餘額不足、限流、模型失敗）不寫。
+
+寫入失敗不影響回答：回答照樣送出，只記一筆錯誤。RLS 已開、沒有任何 policy，用戶端讀不到。資料表由 `scripts/migrate.ts` 在正式部署時建立（`migrateAssistantSchema`）。
+
+對帳用的查詢：
+
+```sql
+SELECT date_trunc('day', created_at) AS day,
+       count(*) AS answers,
+       sum(input_tokens) AS input_tokens,
+       sum(output_tokens) AS output_tokens,
+       sum(estimated_cost_usd) AS cost_usd,
+       sum(points_charged) AS points
+  FROM assistant_usage
+ WHERE environment = 'production'
+ GROUP BY 1 ORDER BY 1 DESC;
+```
 
 本輪未以真實金鑰呼叫過模型：測試以假的 client 驗證送出的參數與回覆處理。

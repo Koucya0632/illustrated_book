@@ -8,6 +8,7 @@ import { createAssistantHandler } from "../lib/assistant/http";
 import type Anthropic from "@anthropic-ai/sdk";
 import { assistantPrompt, createAssistantModel } from "../lib/assistant/model";
 import { ASSISTANT_PRICING, assistantCostUsd, assistantPoints } from "../lib/assistant/pricing";
+import type { AssistantUsageRecord } from "../lib/assistant/usage";
 
 // --- pricing ---------------------------------------------------------------
 
@@ -69,13 +70,13 @@ const balance = (available: number, extra: Partial<CreditBalance> = {}) =>
 interface Options {
   user?: string | null; mode?: string; enabled?: boolean; available?: number; enrolled?: boolean;
   reply?: Partial<AssistantModelReply>; askFails?: Error; limited?: boolean; chargeFails?: CreditError;
-  reconciliation?: boolean;
+  reconciliation?: boolean; recordFails?: boolean;
 }
 
 function setup(options: Options = {}) {
   const asked: AssistantModelRequest[] = [];
   const charges: Array<{ key: string; points: number }> = [];
-  const records: Array<Record<string, unknown>> = [];
+  const records: AssistantUsageRecord[] = [];
   let available = options.available ?? 100;
   const handler = createAssistantHandler({
     currentUserId: async () => options.user === undefined ? "server-user" : options.user,
@@ -110,7 +111,10 @@ function setup(options: Options = {}) {
       return { answer: "答案", inScope: true, wordIds: [], usage: { inputTokens: 2000, outputTokens: 300 },
         ...options.reply };
     },
-    record: entry => { records.push(entry); },
+    record: async entry => {
+      if (options.recordFails) throw new Error("private database details");
+      records.push(entry);
+    },
     reportError: () => {},
   });
   return { handler, asked, charges, records };
@@ -155,8 +159,10 @@ test("an in-scope answer is charged by its tokens, once, under the request id", 
     answer: "答案", inScope: true, wordIds: ["apple"], charged: 2, available: 98, minPoints: 1, maxPoints: 5,
   });
   assert.deepEqual(charges, [{ key: `assistant:${requestId}`, points: 2 }]);
-  assert.equal(records[0].charged, 2);
-  assert.equal(records[0].inputTokens, 2000);
+  assert.deepEqual(records, [{
+    account: { userId: "server-user", environment: "sandbox" }, requestId, inScope: true,
+    usage: { inputTokens: 2000, outputTokens: 300 }, charged: 2,
+  }]);
 });
 
 test("the model receives catalogue entries for the ids, not client text", async () => {
@@ -173,6 +179,32 @@ test("an out-of-scope answer is returned and costs nothing", async () => {
   assert.equal(body.charged, 0);
   assert.equal(body.available, 100);
   assert.equal(charges.length, 0);
+});
+
+test("an answer that cost nothing is still recorded: it cost the same to produce", async () => {
+  const { handler, records } = setup({ reply: { inScope: false } });
+  await handler(question(), "ask");
+  assert.equal(records.length, 1);
+  assert.equal(records[0].inScope, false);
+  assert.equal(records[0].charged, 0);
+});
+
+test("a failed usage write does not take the answer away", async () => {
+  const { handler, charges } = setup({ recordFails: true });
+  const response = await handler(question(), "ask");
+  assert.equal(response.status, 200);
+  const body = await response.json();
+  assert.equal(body.answer, "答案");
+  assert.equal(body.charged, 2);
+  assert.equal(charges.length, 1);
+});
+
+test("nothing is recorded when the model was never reached", async () => {
+  for (const options of [{ available: 4 }, { limited: true }, { askFails: new AssistantError("assistant_unavailable") }]) {
+    const { handler, records } = setup(options);
+    await handler(question(), "ask");
+    assert.equal(records.length, 0);
+  }
 });
 
 test("fewer points than the ceiling refuses before the model is called", async () => {

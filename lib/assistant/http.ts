@@ -13,7 +13,8 @@ import {
   ASSISTANT_MAX_BODY_BYTES, AssistantError, assistantAskInput,
   type AssistantAskInput, type AssistantModelReply, type AssistantModelRequest, type AssistantWord,
 } from "./contracts";
-import { ASSISTANT_PRICING, assistantCostUsd, assistantPoints } from "./pricing";
+import { ASSISTANT_PRICING, assistantPoints } from "./pricing";
+import type { AssistantUsageRecord } from "./usage";
 
 interface Wallet {
   readWallet(account: CreditAccount): Promise<CreditBalance>;
@@ -30,8 +31,8 @@ export interface AssistantDependencies {
   rateLimit: (userId: string) => Promise<void>;
   loadWords: (input: Pick<AssistantAskInput, "wordIds" | "uiLanguage" | "learningDirection">) => Promise<AssistantWord[]>;
   ask: (request: AssistantModelRequest) => Promise<AssistantModelReply>;
-  /** One line per answered question: the only record of tokens against points. */
-  record: (entry: Record<string, unknown>) => void;
+  /** One row per answer the model produced: its tokens against the points charged. */
+  record: (entry: AssistantUsageRecord) => Promise<void>;
   reportError: () => void;
 }
 
@@ -118,12 +119,13 @@ export function createAssistantHandler(deps: AssistantDependencies) {
               !["insufficient_credits", "idempotency_conflict"].includes(error.code)) throw error;
         }
       }
-      deps.record({
-        event: "assistant_answer", environment: account.environment, inScope: reply.inScope, charged,
-        inputTokens: reply.usage.inputTokens, outputTokens: reply.usage.outputTokens,
-        estimatedCostUsd: Math.round(assistantCostUsd(reply.usage) * 1e6) / 1e6,
-        pricing: ASSISTANT_PRICING.version,
-      });
+      // Bookkeeping, not part of the answer: the person has paid and the reply
+      // exists, so a failed write is reported and the answer still goes out.
+      try {
+        await deps.record({ account, requestId: body.requestId, inScope: reply.inScope, usage: reply.usage, charged });
+      } catch {
+        deps.reportError();
+      }
       return Response.json({
         answer: reply.answer, inScope: reply.inScope, wordIds: reply.wordIds,
         charged, available, ...pricing,

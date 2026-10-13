@@ -170,8 +170,13 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
     },
     list(a: CreditAccount) {
       return transact(a, async scope => {
-        const rows = await scope.sql`SELECT * FROM ai_operations WHERE user_id = ${a.userId} AND environment = ${a.environment}
-          ORDER BY created_at DESC, id DESC LIMIT 50`;
+        // A result nobody picked from, whose photo has since been deleted, can never become a card:
+        // confirm refuses it. Clients reopen the newest unpicked result, so listing it left the
+        // capture screen stuck on candidates for a photo that is gone.
+        const rows = await scope.sql`SELECT o.* FROM ai_operations o WHERE o.user_id = ${a.userId} AND o.environment = ${a.environment}
+          AND NOT (o.state = 'committed' AND o.confirmed_item_id IS NULL AND NOT EXISTS (
+            SELECT 1 FROM user_atlas_images i WHERE i.id = o.image_id AND i.user_id = o.user_id AND i.deleted_at IS NULL))
+          ORDER BY o.created_at DESC, o.id DESC LIMIT 50`;
         const operations = [];
         for (const op of rows) operations.push(await view(scope, op));
         return { operations };

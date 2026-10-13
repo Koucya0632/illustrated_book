@@ -298,6 +298,24 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal((await f.wallet.readWallet(f.account)).available, 900);
     });
 
+    await t.test("an unpicked result whose photo was deleted leaves the list; a picked one stays", async () => {
+      const f = await fixture();
+      const picked = await f.accept();
+      const pickedResult = await f.finish(picked.id);
+      await f.operations.confirm(f.account, picked.id, pickedResult.result.candidates[0].id);
+      const secondImage = await f.newImage();
+      const waiting = await f.accept(randomUUID(), { ...f.input, imageId: secondImage });
+      await f.finish(waiting.id);
+      const listed = async () => (await f.operations.list(f.account)).operations.map(op => op.id).sort();
+      assert.deepEqual(await listed(), [picked.id, waiting.id].sort());
+
+      // Deleting a photo is a hard delete (lib/atlas-db.ts); nothing closes its operations.
+      await sql`DELETE FROM user_atlas_images WHERE id IN (${f.imageId}, ${secondImage})`;
+      assert.deepEqual(await listed(), [picked.id]);
+      // The run itself is still readable by id: only the "waiting for you" listing drops it.
+      assert.equal((await f.operations.read(f.account, waiting.id)).state, "committed");
+    });
+
     await t.test("expired confirmation holds recheck capacity without another debit", async () => {
       const f = await fixture();
       const op = await f.accept();

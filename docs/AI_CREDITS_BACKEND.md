@@ -349,3 +349,23 @@ SELECT date_trunc('day', created_at) AS day,
 ```
 
 本輪未以真實金鑰呼叫過模型：測試以假的 client 驗證送出的參數與回覆處理。
+
+## 2026-10-14 助手情境故事（Claude Haiku 5.5）
+
+助手的第二個付費步驟：使用者從官方圖鑑或自己的自製圖鑑選 1–3 個物品，再選場地、場地情況與難度，模型寫一段助手貓與「你」的對話（旁白與翻譯用介面語言、台詞用學習語言、日文附整句假名讀音）。
+
+- `GET /api/assistant/story?uiLanguage=`：回 `{ minPoints, maxPoints, available, scenes:[{id,label,situations:[{id,label}]}], levels:[{id,label,hint}] }`。場地清單由伺服器持有（`lib/assistant/story/scenes.ts`、`levels.ts`），標籤依 `uiLanguage`；加場地只要部署，不必發版。
+- `POST /api/assistant/story`：`{ requestId, uiLanguage, learningDirection, wordIds, sceneId, situationId, levelId }` → `{ story:{title,intro,segments:[{speaker,text,reading?,translation?,wordIds}]}, charged, available, minPoints, maxPoints }`。`speaker` 是 `narrator`／`cat`／`you`。
+- `wordIds`：1–3 個不重複；官方 id，或 `atlas:<uuid>`（只限本人、未刪除、且是目前學習語言的卡）。`saved:`（物見）一律拒絕。任何一個解析不到就 400，不呼叫模型。
+
+計價：與問 AI 同一條公式（`usagePoints`），自己的上下限 `STORY_PRICING`：最少 3 點、最多 10 點（樣本 13 則落在 3–9 點，日文因思考長度起伏較貴）。餘額不足 10 點就 409，不呼叫模型。扣點 key 是 `assistant-story:<requestId>`。
+
+不扣點的情況：模型失敗、拒答、被限流；以及故事裡有選的物品沒出現在任何一句台詞中（回 503 `assistant_unavailable`，但會寫一列 `charged = 0` 的用量紀錄，因為模型已經跑了）。
+
+日文讀音由模型產生，伺服器用 `lib/kana.ts` 的 `readingKeepsKana`／`restoreKanaRuns` 檢查：留有漢字的讀音直接不給，片假名被轉平假名的會還原。漢字唸錯檢查不出來。
+
+開關與限流：與問 AI 共用 `ASSISTANT_AI_ENABLED` 與 `ANTHROPIC_API_KEY`。每人每分鐘 3 次、每天 50 次；`ASSISTANT_STORY_DAILY_GLOBAL` 為全站每日上限，預設 2000。
+
+付費步驟的共同規則（登入、跨站、罐頭點數帳號、上限檢查、一次扣完、用量紀錄）抽到 `lib/assistant/paid.ts`，問 AI 與情境故事都走它。`assistant_usage` 多一欄 `feature`（`ask`／`story`，既有列為 `ask`），`migrate.ts` 會補上。
+
+調 prompt 時用 `npx tsx --env-file=.env.local scripts/sample-stories.ts out.json` 產一批樣本（需要 `ANTHROPIC_API_KEY`）。

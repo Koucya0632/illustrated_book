@@ -1902,6 +1902,8 @@ export type AtlasSavedItemRow = AtlasPublicItemRow & {
   source_reading: string | null;
   source_reading_segments: FuriganaSegment[] | null;
   source_pronunciation: string | null;
+  /** The author's public UID, so the client can apply its block list. */
+  author_handle: string | null;
 };
 
 export async function listAtlasSavedItems(
@@ -1916,15 +1918,55 @@ export async function listAtlasSavedItems(
     SELECT p.*,
            i.reading          AS source_reading,
            i.reading_segments AS source_reading_segments,
-           i.pronunciation AS source_pronunciation
+           i.pronunciation AS source_pronunciation,
+           pr.username        AS author_handle
     FROM atlas_saves s
     JOIN atlas_public_items p ON p.id = s.public_item_id
     LEFT JOIN user_atlas_items i ON i.id = p.source_item_id
+    LEFT JOIN profiles pr ON pr.id = p.owner_user_id
     WHERE s.user_id = ${userId}::uuid
       AND p.review_status = 'approved'
       AND p.target_language = ${targetLanguage}
     ORDER BY s.created_at DESC
     LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/**
+ * 收進 cards picked for a 情境故事, by public slug.
+ *
+ * Narrower than the saved list on purpose: a card only comes back when this
+ * person has saved it, it is still public (a takedown or the author's own
+ * withdrawal drops it), and its author is not someone this person blocked.
+ * Blocking leaves saved words in 圖鑑 (BlockStore on iOS), but a story is new
+ * use of someone's work, so it is refused here rather than trusted to the
+ * client's copy of the block list.
+ */
+export async function listStorySavedItems(
+  userId: string,
+  slugs: string[],
+  targetLanguage: AtlasTargetLanguage,
+): Promise<AtlasSavedItemRow[]> {
+  if (!slugs.length) return [];
+  const sql = requireSql();
+  return sql<AtlasSavedItemRow[]>`
+    SELECT p.*,
+           i.reading          AS source_reading,
+           i.reading_segments AS source_reading_segments,
+           i.pronunciation AS source_pronunciation,
+           NULL::text         AS author_handle
+    FROM atlas_saves s
+    JOIN atlas_public_items p ON p.id = s.public_item_id
+    LEFT JOIN user_atlas_items i ON i.id = p.source_item_id
+    WHERE s.user_id = ${userId}::uuid
+      AND p.public_slug = ANY(${slugs})
+      AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage}
+      AND NOT EXISTS (
+        SELECT 1 FROM user_blocks b
+        WHERE b.blocker_user_id = ${userId}::uuid
+          AND b.blocked_user_id = p.owner_user_id
+      )
   `;
 }
 

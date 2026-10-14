@@ -70,6 +70,23 @@ test("the saved list is language-scoped and approved-only", () => {
   assert.match(body, /review_status = 'approved'/);
 });
 
+// A story is new use of someone else's work, so the picker's copy of the
+// block list is not trusted: the server refuses a saved card unless this person
+// saved it, it is still public, and its author is not blocked.
+test("a saved card picked for a story must be saved, public and not from a blocked author", () => {
+  const body = fnBody(atlasDb, "listStorySavedItems");
+  assert.match(body, /FROM atlas_saves s/);
+  assert.match(body, /s\.user_id = \$\{userId\}::uuid/);
+  assert.match(body, /review_status = 'approved'/);
+  assert.match(body, /target_language = \$\{targetLanguage\}/);
+  assert.match(body, /NOT EXISTS \(\s*SELECT 1 FROM user_blocks b\s*WHERE b\.blocker_user_id = \$\{userId\}::uuid\s*AND b\.blocked_user_id = p\.owner_user_id/);
+});
+
+test("saved words carry the author's handle so the client can apply its block list", () => {
+  assert.match(fnBody(atlasDb, "listAtlasSavedItems"), /pr\.username\s+AS author_handle/);
+  assert.match(savedWordsRoute, /authorHandle: row\.author_handle/);
+});
+
 // The saved list spent its whole life joining `atlas_items`, a table that has
 // never existed — the real one is `user_atlas_items` — so every call to
 // GET /api/users/saved-words threw `relation "atlas_items" does not exist` and

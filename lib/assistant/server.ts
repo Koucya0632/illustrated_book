@@ -1,4 +1,4 @@
-import { getAtlasItem } from "@/lib/atlas-db";
+import { getAtlasItem, listStorySavedItems } from "@/lib/atlas-db";
 import { pickAtlasGloss } from "@/lib/atlas/gloss";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAllCardWords } from "@/lib/data";
@@ -71,7 +71,7 @@ export const handleStoryRequest = createStoryHandler({
   ...shared,
   rateLimit: rateLimiter("assistant-story", 3, 50, "ASSISTANT_STORY_DAILY_GLOBAL", 2000),
   loadWords: async ({ wordIds, uiLanguage, learningDirection }, userId) => {
-    const official = new Set(wordIds.filter(id => !id.startsWith("atlas:")));
+    const official = new Set(wordIds.filter(id => !id.startsWith("atlas:") && !id.startsWith("saved:")));
     const found = new Map<string, StoryWord>();
     if (official.size) {
       for (const word of await getAllCardWords(uiLanguage, learningDirection)) {
@@ -87,6 +87,15 @@ export const handleStoryRequest = createStoryHandler({
       found.set(id, {
         id, word: item.lemma, reading: item.reading ?? undefined,
         meaning: uiLanguage === "zh-Hans" ? toZhHans(gloss) : gloss,
+      });
+    }
+    // 收進 cards: saved, still public, author not blocked — see listStorySavedItems.
+    const slugs = wordIds.filter(id => id.startsWith("saved:")).map(id => id.slice("saved:".length));
+    for (const row of await listStorySavedItems(userId, slugs, target)) {
+      const id = `saved:${row.public_slug}`;
+      found.set(id, {
+        id, word: row.lemma, reading: row.source_reading ?? undefined,
+        meaning: uiLanguage === "zh-Hans" ? toZhHans(row.display_zh_hant) : row.display_zh_hant,
       });
     }
     return wordIds.flatMap(id => found.get(id) ?? []);

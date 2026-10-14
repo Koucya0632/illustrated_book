@@ -56,6 +56,12 @@ export interface PaidStep<Body extends { requestId: string }> {
   parse: (raw: unknown) => Body | null;
   /** The ledger key a request is charged under; a resend reuses it. */
   chargeKey: (requestId: string) => string;
+  /**
+   * False when the step charges what it cost, uncapped. `pricing` is then the
+   * typical range and the balance needed to start, and a result costing more
+   * than the person holds takes what they hold.
+   */
+  clamped?: boolean;
   /** Extra offer fields, such as the choices a step offers. */
   offer?: (request: Request) => Record<string, unknown>;
   produce: (body: Body, userId: string) => Promise<Produced>;
@@ -133,7 +139,9 @@ export function createPaidHandler<Body extends { requestId: string }>(deps: Paid
 
       let charged = 0, available = balance.available;
       if (delivered && produced.billable) {
-        const points = Math.min(pricing.maxPoints, Math.max(pricing.minPoints, produced.points));
+        const points = step.clamped === false
+          ? Math.min(produced.points, balance.available)
+          : Math.min(pricing.maxPoints, Math.max(pricing.minPoints, produced.points));
         try {
           const settled = await charge(wallet, account, step.chargeKey(body.requestId), points);
           charged = points;

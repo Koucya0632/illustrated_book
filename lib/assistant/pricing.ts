@@ -45,15 +45,24 @@ export function assistantCostUsd(usage: AssistantUsage): number {
 }
 
 /**
- * 情境故事's price list: the same rate as 問 AI, its own floor and ceiling. A
- * story is a few hundred words plus however long the model thinks, so it runs
- * 3–9 points in samples; the ceiling leaves room for a long one.
+ * 情境故事's price list: the same rate as 問 AI, with no ceiling — a story is
+ * charged exactly what its tokens cost, × markup. `minPoints`–`maxPoints` is
+ * not a clamp but the typical range said before the tap (samples ran 3–9),
+ * and `maxPoints` is also the balance a story needs to start.
  */
 export const STORY_PRICING = {
-  version: "assistant-story-2026-10",
+  version: "assistant-story-2026-10c",
   minPoints: 3,
   maxPoints: 10,
 } as const;
+
+/** Points for one story: its token cost × markup, rounded up, at least 1. No ceiling. */
+export function storyPoints(usage: AssistantUsage): number {
+  const p = ASSISTANT_PRICING;
+  const raw = Math.ceil((assistantCostUsd(usage) * p.markup) / p.pointUsd);
+  if (!Number.isFinite(raw)) throw new Error("story usage is not a number");
+  return Math.max(1, raw);
+}
 
 /** Points for one result: cost × markup, rounded up, held to the floor and ceiling. */
 export function usagePoints(usage: AssistantUsage, bounds: { minPoints: number; maxPoints: number }): number {

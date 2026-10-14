@@ -255,7 +255,8 @@ test("bad choices and items never reach the model", async () => {
     { wordIds: [] },
     { wordIds: ["a", "b", "c", "d"] },
     { wordIds: ["apple", "apple"] },
-    { wordIds: ["saved:someone-elses-card"] },
+    { wordIds: ["saved:"] },
+    { wordIds: ["saved:not a slug"] },
     { wordIds: ["atlas:not-a-uuid"] },
     { sceneId: "office", situationId: "shopping" },
     { levelId: "expert" },
@@ -266,6 +267,20 @@ test("bad choices and items never reach the model", async () => {
     assert.equal(written.length, 0);
     assert.equal(charges.length, 0);
   }
+});
+
+test("a 收進 card goes to the model like any other picked item", async () => {
+  // The fake dictionary spells an item as its own id; the story has to use both.
+  const { handler, written } = setup({ reply: story("りんごを三つ買います。", "saved:cup-1a2b3c4d") });
+  assert.equal((await handler(write({ wordIds: ["apple", "saved:cup-1a2b3c4d"] }), "write")).status, 200);
+  assert.deepEqual(written[0].words.map(word => word.id), ["apple", "saved:cup-1a2b3c4d"]);
+});
+
+test("a 收進 card that does not resolve — taken down, withdrawn, a blocked author, never saved — never reaches the model", async () => {
+  const card = "saved:cup-1a2b3c4d";
+  const { handler, written } = setup({ unknownIds: [card] });
+  assert.equal((await handler(write({ wordIds: ["apple", card] }), "write")).status, 400);
+  assert.equal(written.length, 0);
 });
 
 test("an item that does not resolve — someone else's card, a deleted one — never reaches the model", async () => {

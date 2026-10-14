@@ -20,13 +20,15 @@ export const STORY_MAX_WORDS = 3;
 const uiLanguage = z.enum(["zh-Hant", "zh-Hans", "ja", "en"]);
 const learningDirection = z.enum(["zh-en", "zh-ja"]);
 const ATLAS_ID = /^atlas:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const SAVED_ID = /^saved:[a-z0-9][a-z0-9-]{0,99}$/i;
 
 /**
- * A picked item: a catalogue id, or `atlas:<uuid>` for one of the person's own
- * cards. 物見 cards (`saved:`) belong to someone else and are not offered.
+ * A picked item: a catalogue id, `atlas:<uuid>` for one of the person's own
+ * cards, or `saved:<slug>` for a 物見 card they took in. Whether a saved card
+ * may still be used (public, author not blocked) is `loadWords`' answer.
  */
 const wordId = z.string().min(1).max(120).refine(id => {
-  if (id.startsWith("saved:")) return false;
+  if (id.startsWith("saved:")) return SAVED_ID.test(id);
   return id.startsWith("atlas:") ? ATLAS_ID.test(id) : !id.includes(":");
 });
 
@@ -44,7 +46,7 @@ export const storyInput = z.object({
 export type StoryInput = z.infer<typeof storyInput>;
 
 export interface StoryDependencies extends PaidDependencies {
-  /** The picked items, read from the catalogue and the person's own atlas. Unknown ids are left out. */
+  /** The picked items, read from the catalogue, the person's own atlas and their 收進 cards. Unknown or refused ids are left out. */
   loadWords: (input: Pick<StoryInput, "wordIds" | "uiLanguage" | "learningDirection">, userId: string) => Promise<StoryWord[]>;
   write: (request: StoryModelRequest) => Promise<StoryModelReply>;
 }

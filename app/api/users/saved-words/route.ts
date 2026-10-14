@@ -55,6 +55,9 @@ export async function GET(req: Request) {
     reading: row.source_reading ?? undefined,
     readingSegments: row.source_reading_segments ?? undefined,
     targetLanguage: row.target_language,
+    // Blocking does not remove a saved word, but a blocked author's card can
+    // no longer be picked for a 情境故事 — the client needs the handle to grey it out.
+    authorHandle: row.author_handle ?? undefined,
   }));
 
   return NextResponse.json(

@@ -160,8 +160,8 @@ test("an in-scope answer is charged by its tokens, once, under the request id", 
   });
   assert.deepEqual(charges, [{ key: `assistant:${requestId}`, points: 2 }]);
   assert.deepEqual(records, [{
-    account: { userId: "server-user", environment: "sandbox" }, requestId, inScope: true,
-    usage: { inputTokens: 2000, outputTokens: 300 }, charged: 2,
+    account: { userId: "server-user", environment: "sandbox" }, requestId, feature: "ask",
+    pricingVersion: "assistant-2026-10", inScope: true, usage: { inputTokens: 2000, outputTokens: 300 }, charged: 2,
   }]);
 });
 

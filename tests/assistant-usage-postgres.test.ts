@@ -41,7 +41,18 @@ test("assistant usage against isolated PostgreSQL", { skip: !databaseUrl }, asyn
       assert.equal(row.estimated_cost_usd, "0.000350");
       assert.equal(row.points_charged, 2);
       assert.equal(row.pricing_version, "assistant-2026-10");
+      assert.equal(row.feature, "ask");
       assert.equal(row.created_at.toISOString(), at.toISOString());
+    });
+
+    await t.test("a story row carries its feature and its own price list", async () => {
+      const requestId = randomUUID();
+      await record({ account, requestId, feature: "story", pricingVersion: "assistant-story-2026-10",
+        inScope: true, usage: { inputTokens: 1800, outputTokens: 1000 }, charged: 3 });
+      const [row] = await sql`SELECT feature, pricing_version FROM assistant_usage WHERE request_id = ${requestId}`;
+      assert.deepEqual([row.feature, row.pricing_version], ["story", "assistant-story-2026-10"]);
+      await assert.rejects(record({ account, requestId, feature: "other" as "story",
+        inScope: true, usage: { inputTokens: 1, outputTokens: 1 }, charged: 0 }));
     });
 
     await t.test("a resend under the same request id is a second row: the model ran twice", async () => {

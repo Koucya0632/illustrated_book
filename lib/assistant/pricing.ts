@@ -44,10 +44,24 @@ export function assistantCostUsd(usage: AssistantUsage): number {
   ) / 1_000_000;
 }
 
-/** Points for one answer: cost × markup, rounded up, held to the floor and ceiling. */
-export function assistantPoints(usage: AssistantUsage): number {
+/**
+ * 情境故事's price list: the same rate as 問 AI, its own floor and ceiling. A
+ * story is a few hundred words plus however long the model thinks, so it runs
+ * 3–9 points in samples; the ceiling leaves room for a long one.
+ */
+export const STORY_PRICING = {
+  version: "assistant-story-2026-10",
+  minPoints: 3,
+  maxPoints: 10,
+} as const;
+
+/** Points for one result: cost × markup, rounded up, held to the floor and ceiling. */
+export function usagePoints(usage: AssistantUsage, bounds: { minPoints: number; maxPoints: number }): number {
   const p = ASSISTANT_PRICING;
   const raw = Math.ceil((assistantCostUsd(usage) * p.markup) / p.pointUsd);
-  if (!Number.isFinite(raw)) return p.maxPoints;
-  return Math.min(p.maxPoints, Math.max(p.minPoints, raw));
+  if (!Number.isFinite(raw)) return bounds.maxPoints;
+  return Math.min(bounds.maxPoints, Math.max(bounds.minPoints, raw));
 }
+
+/** Points for one 問 AI answer. */
+export const assistantPoints = (usage: AssistantUsage) => usagePoints(usage, ASSISTANT_PRICING);

@@ -9,7 +9,7 @@
 import { z } from "zod";
 import { AssistantError } from "../contracts";
 import { createPaidHandler, type PaidDependencies } from "../paid";
-import { STORY_PRICING, usagePoints } from "../pricing";
+import { STORY_PRICING, storyPoints } from "../pricing";
 import { STORY_LEVELS, findLevel } from "./levels";
 import { missingWords, type StoryModelReply, type StoryModelRequest, type StoryWord } from "./model";
 import { STORY_SCENES, findScene, type StoryUiLanguage } from "./scenes";
@@ -72,6 +72,7 @@ export function createStoryHandler(deps: StoryDependencies) {
       return parsed.success ? parsed.data : null;
     },
     chargeKey: requestId => `assistant-story:${requestId}`,
+    clamped: false,
     offer: request => {
       const lang = uiLanguage.safeParse(new URL(request.url).searchParams.get("uiLanguage"));
       return storyChoices(lang.success ? lang.data : "zh-Hant");
@@ -90,7 +91,7 @@ export function createStoryHandler(deps: StoryDependencies) {
       return {
         usage: reply.usage,
         billable: true,
-        points: usagePoints(reply.usage, STORY_PRICING),
+        points: storyPoints(reply.usage),
         body: { story: reply.story },
       };
     },

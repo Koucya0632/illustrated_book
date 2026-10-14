@@ -20,7 +20,7 @@ export const STORY_LEVELS: StoryLevel[] = [
     label: { "zh-Hant": "入門", "zh-Hans": "入门", ja: "入門", en: "Starter" },
     hint: { "zh-Hant": "短句、基本禮貌體", "zh-Hans": "短句、基本礼貌体", ja: "短い文・です／ます", en: "Short, simple sentences" },
     guide: {
-      "zh-ja": "Every line is one short sentence of at most about 15 characters, in polite です/ます form only. Use only very common words (JLPT N5) besides the chosen items. No plain form, no casual contractions, no keigo.",
+      "zh-ja": "Every line is one short sentence of at most about 15 characters, in polite です/ます form only. Use only very common words (JLPT N5) besides the chosen items. No plain form, no casual contractions, no keigo. Easy does not mean kana-only: write those common words with their usual kanji (買います, 三つ, 全部, 円, 食べます) and no spaces between words, because the app shows furigana over every kanji.",
       "zh-en": "Every line is one short sentence of at most about 8 words, in the present simple. Use only very common words (CEFR A1) besides the chosen items. No idioms or phrasal verbs.",
     },
   },

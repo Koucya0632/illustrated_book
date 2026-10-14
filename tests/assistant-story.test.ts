@@ -4,11 +4,13 @@ import { randomUUID } from "node:crypto";
 import { creditConfig } from "../lib/credits/policy";
 import type { CreditBalance, CreditTransaction } from "../lib/credits/wallet";
 import { AssistantError } from "../lib/assistant/contracts";
-import { STORY_PRICING } from "../lib/assistant/pricing";
+import { STORY_PRICING, storyPoints } from "../lib/assistant/pricing";
 import { createStoryHandler } from "../lib/assistant/story/http";
 import { findLevel } from "../lib/assistant/story/levels";
+import type Anthropic from "@anthropic-ai/sdk";
 import {
-  lineReading, missingWords, storyPrompt, type Story, type StoryModelReply, type StoryModelRequest,
+  createStoryModel, isMonolingual, lineFurigana, lineReading, missingWords, moira, storyPrompt,
+  type Story, type StoryModelReply, type StoryModelRequest,
 } from "../lib/assistant/story/model";
 import { findScene } from "../lib/assistant/story/scenes";
 import type { AssistantUsageRecord } from "../lib/assistant/usage";
@@ -27,6 +29,80 @@ test("a reading is kept only when it is all kana and keeps the line's own kana",
 
 test("katakana folded to hiragana in a reading is restored, not dropped", () => {
   assert.equal(lineReading("今日もパソコンを見ますか。", "きょうもぱそこんをみますか。"), "きょうもパソコンをみますか。");
+});
+
+test("a checked reading becomes kana over each kanji run", () => {
+  assert.deepEqual(lineFurigana("三つ買います。", "みっつかいます。"), {
+    furigana: [
+      { text: "三", ruby: "みっ" }, { text: "つ", ruby: null }, { text: "買", ruby: "か" },
+      { text: "います。", ruby: null },
+    ],
+  });
+});
+
+test("a line that cannot be split keeps its whole reading", () => {
+  // Kana-only text has nothing to annotate.
+  assert.deepEqual(lineFurigana("りんご", "りんご"), { reading: "りんご" });
+});
+
+// --- languages -----------------------------------------------------------------
+
+test("only the interface language that is the one being learned is monolingual", () => {
+  assert.equal(isMonolingual({ uiLanguage: "ja", learningDirection: "zh-ja" }), true);
+  assert.equal(isMonolingual({ uiLanguage: "en", learningDirection: "zh-en" }), true);
+  for (const uiLanguage of ["zh-Hant", "zh-Hans"] as const) {
+    assert.equal(isMonolingual({ uiLanguage, learningDirection: "zh-ja" }), false);
+  }
+  assert.equal(isMonolingual({ uiLanguage: "ja", learningDirection: "zh-en" }), false);
+  assert.equal(isMonolingual({ uiLanguage: "en", learningDirection: "zh-ja" }), false);
+});
+
+function fakeClient(parsed: Record<string, unknown>) {
+  return { messages: { parse: async () => ({
+    stop_reason: "end_turn", usage: { input_tokens: 1800, output_tokens: 1000 }, parsed_output: parsed,
+  }) } } as unknown as Anthropic;
+}
+const modelReply = {
+  title: "t", intro: "i",
+  segments: [
+    { speaker: "narrator", text: "n", reading: "", translation: "", word_ids: [] },
+    { speaker: "cat", text: "りんごを三つ買います。", reading: "りんごをみっつかいます。", translation: "我買三個蘋果。",
+      word_ids: ["apple"] },
+  ],
+  word_notes: [{ id: "apple", note: "赤くて丸い果物" }, { id: "invented", note: "x" }, { id: "apple", note: "y" }],
+};
+const storyRequest = (uiLanguage: StoryModelRequest["uiLanguage"]): StoryModelRequest => ({
+  uiLanguage, learningDirection: "zh-ja", words: [apple],
+  ...findScene("supermarket", "shopping")!, level: findLevel("starter")!,
+});
+
+test("a bilingual story keeps translations and drops word notes", async () => {
+  const { story } = await createStoryModel(fakeClient(modelReply))(storyRequest("zh-Hant"));
+  assert.equal(story.segments[1].translation, "我買三個蘋果。");
+  assert.equal(story.wordNotes, undefined);
+  assert.ok(story.segments[1].furigana);
+  assert.equal(story.segments[1].reading, undefined);
+});
+
+test("a monolingual story drops translations and keeps one note per picked word", async () => {
+  const { story } = await createStoryModel(fakeClient(modelReply))(storyRequest("ja"));
+  assert.equal(story.segments[1].translation, undefined);
+  assert.deepEqual(story.wordNotes, [{ id: "apple", note: "赤くて丸い果物" }]);
+});
+
+test("a monolingual story without a note for a word falls back to the dictionary gloss", async () => {
+  const { story } = await createStoryModel(fakeClient({ ...modelReply, word_notes: [] }))(storyRequest("ja"));
+  assert.deepEqual(story.wordNotes, [{ id: "apple", note: "蘋果" }]);
+});
+
+test("the cat is Moira whatever the model spelled", () => {
+  assert.equal(moira("モイラと駅で電車を待つ"), "Moiraと駅で電車を待つ");
+  assert.equal(moira("和莫伊拉一起買蘋果"), "和Moira一起買蘋果");
+});
+
+test("the prompt says which mode the story is in", () => {
+  assert.match(storyPrompt(storyRequest("ja")), /Mode: monolingual/);
+  assert.match(storyPrompt(storyRequest("en")), /Mode: bilingual/);
 });
 
 // --- picked items ------------------------------------------------------------
@@ -64,6 +140,7 @@ const balance = (available: number) => ({ available, reconciliationRequired: fal
 
 interface Options {
   available?: number; reply?: Story; writeFails?: Error; unknownIds?: string[];
+  usage?: { inputTokens: number; outputTokens: number };
 }
 
 function setup(options: Options = {}) {
@@ -98,7 +175,7 @@ function setup(options: Options = {}) {
     write: async (request): Promise<StoryModelReply> => {
       written.push(request);
       if (options.writeFails) throw options.writeFails;
-      return { story: options.reply ?? story("りんごを三つ買います。"), usage: { inputTokens: 1800, outputTokens: 1000 } };
+      return { story: options.reply ?? story("りんごを三つ買います。"), usage: options.usage ?? { inputTokens: 1800, outputTokens: 1000 } };
     },
     record: async entry => { records.push(entry); },
     reportError: () => {},
@@ -127,7 +204,28 @@ test("the offer lists the choices in the interface language beside the price ran
   assert.deepEqual(body.levels.map((l: { id: string }) => l.id), ["starter", "elementary", "intermediate"]);
 });
 
-test("a delivered story is charged by its tokens, at least the floor, under its own key", async () => {
+test("a long story is charged what it cost, above the typical range", async () => {
+  // 2,000 in + 8,000 out ≈ US$0.0042 × 3 ÷ 0.0007 = 18 points.
+  const { handler, charges } = setup({ usage: { inputTokens: 2000, outputTokens: 8000 } });
+  const body = await (await handler(write(), "write")).json();
+  assert.equal(body.charged, 18);
+  assert.equal(charges[0].points, 18);
+  assert.ok(body.charged > STORY_PRICING.maxPoints);
+});
+
+test("a story costing more than the balance takes what is held, never more", async () => {
+  const { handler, charges } = setup({ available: 12, usage: { inputTokens: 2000, outputTokens: 8000 } });
+  const body = await (await handler(write(), "write")).json();
+  assert.equal(charges[0].points, 12);
+  assert.equal(body.available, 0);
+});
+
+test("a short story costs its tokens, not a floor", () => {
+  assert.equal(storyPoints({ inputTokens: 100, outputTokens: 10 }), 1);
+  assert.equal(storyPoints({ inputTokens: 2000, outputTokens: 700 }), 3);
+});
+
+test("a delivered story is charged by its tokens under its own key", async () => {
   const { handler, charges, records } = setup();
   const requestId = randomUUID();
   const response = await handler(write({ requestId }), "write");

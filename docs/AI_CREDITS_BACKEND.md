@@ -352,13 +352,13 @@ SELECT date_trunc('day', created_at) AS day,
 
 ## 2026-10-14 助手情境故事（Claude Haiku 5.5）
 
-助手的第二個付費步驟：使用者從官方圖鑑或自己的自製圖鑑選 1–3 個物品，再選場地、場地情況與難度，模型寫一段助手貓與「你」的對話（旁白與翻譯用介面語言、台詞用學習語言、日文附整句假名讀音）。
+助手的第二個付費步驟：使用者從官方圖鑑或自己的自製圖鑑選 1–3 個物品，再選場地、場地情況與難度，模型寫一段 Moira（貓）與「你」的對話（格式依語言而定，見下方 2026-10-14 小節）。
 
 - `GET /api/assistant/story?uiLanguage=`：回 `{ minPoints, maxPoints, available, scenes:[{id,label,situations:[{id,label}]}], levels:[{id,label,hint}] }`。場地清單由伺服器持有（`lib/assistant/story/scenes.ts`、`levels.ts`），標籤依 `uiLanguage`；加場地只要部署，不必發版。
 - `POST /api/assistant/story`：`{ requestId, uiLanguage, learningDirection, wordIds, sceneId, situationId, levelId }` → `{ story:{title,intro,segments:[{speaker,text,reading?,translation?,wordIds}]}, charged, available, minPoints, maxPoints }`。`speaker` 是 `narrator`／`cat`／`you`。
 - `wordIds`：1–3 個不重複；官方 id，或 `atlas:<uuid>`（只限本人、未刪除、且是目前學習語言的卡）。`saved:`（物見）一律拒絕。任何一個解析不到就 400，不呼叫模型。
 
-計價：與問 AI 同一條公式（`usagePoints`），自己的上下限 `STORY_PRICING`：最少 3 點、最多 10 點（樣本 13 則落在 3–9 點，日文因思考長度起伏較貴）。餘額不足 10 點就 409，不呼叫模型。扣點 key 是 `assistant-story:<requestId>`。
+計價：照實際 token 扣點、不設上限（見下方 2026-10-14 小節）。餘額不足 10 點就 409，不呼叫模型。扣點 key 是 `assistant-story:<requestId>`。
 
 不扣點的情況：模型失敗、拒答、被限流；以及故事裡有選的物品沒出現在任何一句台詞中（回 503 `assistant_unavailable`，但會寫一列 `charged = 0` 的用量紀錄，因為模型已經跑了）。
 
@@ -369,3 +369,11 @@ SELECT date_trunc('day', created_at) AS day,
 付費步驟的共同規則（登入、跨站、罐頭點數帳號、上限檢查、一次扣完、用量紀錄）抽到 `lib/assistant/paid.ts`，問 AI 與情境故事都走它。`assistant_usage` 多一欄 `feature`（`ask`／`story`，既有列為 `ask`），`migrate.ts` 會補上。
 
 調 prompt 時用 `npx tsx --env-file=.env.local scripts/sample-stories.ts out.json` 產一批樣本（需要 `ANTHROPIC_API_KEY`）。
+
+### 2026-10-14 情境故事：依語言調整格式、照實扣點、貓叫 Moira
+
+- **格式依介面語言 × 學習語言**：介面語言等於學習語言（日文介面學日文、英文介面學英文）時是 monolingual：台詞不附翻譯，`story.wordNotes` 給每個選的單字一句同語言說明（模型漏寫就用圖鑑釋義）。其他組合是 bilingual：每句台詞附介面語言翻譯，沒有 `wordNotes`。標題、開場、旁白一律用介面語言。
+- **日文假名**：台詞的讀音經 `lineReading` 檢查後，以 `segmentFurigana`（只做 run-level 對齊，不查字典）切成 `segment.furigana: [{text, ruby}]`；切不出來才退回整句 `reading`。日文台詞一律寫漢字、去掉詞間空格。
+- **計價不設上限**：`storyPoints` = 實際 token 成本 × 3 ÷ US$0.0007，無條件進位、至少 1 點。`STORY_PRICING` 的 3–10 只是事前告訴使用者的常見範圍，以及開始寫之前要求的最低餘額（10 點）；超過剩餘點數時扣到 0 為止。計價版本 `assistant-story-2026-10c`。
+- **Moira**：貓在每種語言都叫 Moira；模型音譯成 モイラ／莫伊拉 會被改回。
+- `max_tokens` 由 4096 提高到 8192（思考也算在內，樣本曾在 4096 被截斷）。

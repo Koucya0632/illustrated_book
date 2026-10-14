@@ -12,7 +12,7 @@ import {
   createStoryModel, isMonolingual, lineFurigana, lineReading, missingWords, moira, storyPrompt,
   type Story, type StoryModelReply, type StoryModelRequest,
 } from "../lib/assistant/story/model";
-import { findScene } from "../lib/assistant/story/scenes";
+import { STORY_SCENES, findScene } from "../lib/assistant/story/scenes";
 import type { AssistantUsageRecord } from "../lib/assistant/usage";
 
 // --- readings ----------------------------------------------------------------
@@ -73,7 +73,7 @@ const modelReply = {
 };
 const storyRequest = (uiLanguage: StoryModelRequest["uiLanguage"]): StoryModelRequest => ({
   uiLanguage, learningDirection: "zh-ja", words: [apple],
-  ...findScene("supermarket", "shopping")!, level: findLevel("starter")!,
+  ...findScene("supermarket", "daily")!, level: findLevel("starter")!,
 });
 
 test("a bilingual story keeps translations and drops word notes", async () => {
@@ -126,10 +126,10 @@ test("an item counts as used only in a spoken line", () => {
 test("the prompt carries the place, the situation, the level guide and the items", () => {
   const prompt = storyPrompt({
     uiLanguage: "zh-Hant", learningDirection: "zh-ja", words: [apple],
-    ...findScene("supermarket", "shopping")!, level: findLevel("starter")!,
+    ...findScene("supermarket", "daily")!, level: findLevel("starter")!,
   });
   assert.match(prompt, /Place: Supermarket \(超市\)/);
-  assert.match(prompt, /What is happening: Shopping \(買東西\)/);
+  assert.match(prompt, /What is happening: Everyday \(日常\)/);
   assert.match(prompt, /です\/ます form only/);
   assert.match(prompt, /"id":"apple"/);
 });
@@ -188,9 +188,15 @@ const write = (data: Record<string, unknown> = {}) =>
     method: "POST", headers: { "content-type": "application/json" },
     body: JSON.stringify({
       requestId: randomUUID(), uiLanguage: "zh-Hant", learningDirection: "zh-ja", wordIds: ["apple"],
-      sceneId: "supermarket", situationId: "shopping", levelId: "starter", ...data,
+      sceneId: "supermarket", situationId: "daily", levelId: "starter", ...data,
     }),
   });
+
+test("every place offers the same three situations: 日常, 工作, 閒聊", () => {
+  for (const scene of STORY_SCENES) {
+    assert.deepEqual(scene.situations.map(s => s.label["zh-Hant"]), ["日常", "工作", "閒聊"], scene.id);
+  }
+});
 
 test("the offer lists the choices in the interface language beside the price range", async () => {
   const { handler } = setup({ available: 42 });
@@ -200,7 +206,7 @@ test("the offer lists the choices in the interface language beside the price ran
   assert.equal(body.available, 42);
   const market = body.scenes.find((s: { id: string }) => s.id === "supermarket");
   assert.equal(market.label, "Supermarket");
-  assert.ok(market.situations.some((s: { label: string }) => s.label === "Shopping"));
+  assert.deepEqual(market.situations.map((s: { label: string }) => s.label), ["Everyday", "Work", "Small talk"]);
   assert.deepEqual(body.levels.map((l: { id: string }) => l.id), ["starter", "elementary", "intermediate"]);
 });
 
@@ -259,6 +265,7 @@ test("bad choices and items never reach the model", async () => {
     { wordIds: ["saved:not a slug"] },
     { wordIds: ["atlas:not-a-uuid"] },
     { sceneId: "office", situationId: "shopping" },
+    { sceneId: "station", situationId: "tickets" },
     { levelId: "expert" },
     { extra: true },
   ]) {

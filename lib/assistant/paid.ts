@@ -64,10 +64,22 @@ export interface PaidStep<Body extends { requestId: string }> {
   clamped?: boolean;
   /** Extra offer fields, such as the choices a step offers. */
   offer?: (request: Request) => Record<string, unknown>;
-  produce: (body: Body, userId: string) => Promise<Produced>;
+  /**
+   * `emit`, passed only when the caller asked for a stream, sends a piece of
+   * the result ahead of the rest. A step that never calls it is answered in
+   * one piece at the end, as before.
+   */
+  produce: (body: Body, userId: string, emit?: (part: Record<string, unknown>) => void) => Promise<Produced>;
+  /** True when the step can send its result in pieces (`Accept: application/x-ndjson`). */
+  streams?: boolean;
 }
 
 const headers = { "Cache-Control": "private, no-store" };
+const NDJSON = "application/x-ndjson";
+
+function wantsStream(request: Request): boolean {
+  return (request.headers.get("accept") ?? "").includes(NDJSON);
+}
 
 async function input<Body extends { requestId: string }>(request: Request, step: PaidStep<Body>): Promise<Body> {
   let raw: unknown;
@@ -104,6 +116,68 @@ function errorStatus(code: AssistantErrorCode): number {
 
 export function createPaidHandler<Body extends { requestId: string }>(deps: PaidDependencies, step: PaidStep<Body>) {
   const pricing = step.pricing;
+
+  /**
+   * The same run, answered a line of JSON at a time: each piece the step
+   * emits, then `done` with the whole result and its price, or `error`.
+   *
+   * The response starts only when the first piece exists. Until then a
+   * failure is the ordinary status code — a refused item is still a 400 —
+   * and only a failure after the person has started reading arrives as an
+   * `error` line. Nothing is charged for a run that ends in one.
+   */
+  async function streamRun(
+    body: Body,
+    userId: string,
+    settle: (produced: Produced) => Promise<{ charged: number; available: number }>,
+  ): Promise<Response> {
+    const encoder = new TextEncoder();
+    const early: Uint8Array[] = [];
+    let send: ((line: Uint8Array) => void) | null = null;
+    let started!: () => void;
+    const first = new Promise<"started">(resolve => { started = () => resolve("started"); });
+    const line = (value: Record<string, unknown>) => encoder.encode(`${JSON.stringify(value)}\n`);
+    const emit = (part: Record<string, unknown>) => {
+      if (send) send(line(part));
+      else { early.push(line(part)); started(); }
+    };
+    const run = step.produce(body, userId, emit);
+    // A failure before the first piece throws here, to the caller's catch.
+    const produced = await Promise.race([first, run]);
+    const finished = produced === "started" ? null : produced;
+    if (finished && "failed" in finished) {
+      await settle(finished);
+      return Response.json({ error: finished.failed }, { status: errorStatus(finished.failed), headers });
+    }
+
+    const stream = new ReadableStream<Uint8Array>({
+      async start(controller) {
+        let open = true;
+        // The person may leave mid-story; the run still finishes and is
+        // charged, as a request whose answer was lost would be.
+        send = chunk => {
+          if (!open) return;
+          try { controller.enqueue(chunk); } catch { open = false; }
+        };
+        for (const chunk of early) send(chunk);
+        let last: Record<string, unknown>;
+        try {
+          const result = finished ?? await run;
+          const { charged, available } = await settle(result);
+          last = "failed" in result
+            ? { type: "error", error: result.failed }
+            : { type: "done", ...result.body, charged, available, ...pricing };
+        } catch (error) {
+          if (!(error instanceof AssistantError)) deps.reportError();
+          last = { type: "error", error: error instanceof AssistantError ? error.code : "assistant_unavailable" };
+        }
+        send(line(last));
+        if (open) controller.close();
+      },
+    });
+    return new Response(stream, { headers: { ...headers, "Content-Type": NDJSON } });
+  }
+
   return async (request: Request, action: "offer" | "run"): Promise<Response> => {
     try {
       const userId = await deps.currentUserId();
@@ -134,37 +208,44 @@ export function createPaidHandler<Body extends { requestId: string }>(deps: Paid
       if (balance.available < pricing.maxPoints) throw new CreditError("insufficient_credits");
       await deps.rateLimit(userId);
 
-      const produced = await step.produce(body, userId);
-      const delivered = !("failed" in produced);
-
-      let charged = 0, available = balance.available;
-      if (delivered && produced.billable) {
-        const points = step.clamped === false
-          ? Math.min(produced.points, balance.available)
-          : Math.min(pricing.maxPoints, Math.max(pricing.minPoints, produced.points));
-        try {
-          const settled = await charge(wallet, account, step.chargeKey(body.requestId), points);
-          charged = points;
-          available = settled.wallet.available;
-        } catch (error) {
-          // The result exists and was paid for upstream. Losing a point or two
-          // to a race is cheaper than withholding it; a resend under the same
-          // id that priced differently was already charged the first time.
-          if (!(error instanceof CreditError) ||
-              !["insufficient_credits", "idempotency_conflict"].includes(error.code)) throw error;
+      /** Charges and records one finished result; what the person is told it cost. */
+      const settle = async (produced: Produced) => {
+        const delivered = !("failed" in produced);
+        let charged = 0, available = balance.available;
+        if (delivered && produced.billable) {
+          const points = step.clamped === false
+            ? Math.min(produced.points, balance.available)
+            : Math.min(pricing.maxPoints, Math.max(pricing.minPoints, produced.points));
+          try {
+            const settled = await charge(wallet, account, step.chargeKey(body.requestId), points);
+            charged = points;
+            available = settled.wallet.available;
+          } catch (error) {
+            // The result exists and was paid for upstream. Losing a point or two
+            // to a race is cheaper than withholding it; a resend under the same
+            // id that priced differently was already charged the first time.
+            if (!(error instanceof CreditError) ||
+                !["insufficient_credits", "idempotency_conflict"].includes(error.code)) throw error;
+          }
         }
-      }
-      // Bookkeeping, not part of the result: a failed write is reported and
-      // the response still goes out.
-      try {
-        await deps.record({
-          account, requestId: body.requestId, feature: step.feature, pricingVersion: step.pricingVersion,
-          inScope: delivered && produced.billable, usage: produced.usage, charged,
-        });
-      } catch {
-        deps.reportError();
-      }
-      if (!delivered) {
+        // Bookkeeping, not part of the result: a failed write is reported and
+        // the response still goes out.
+        try {
+          await deps.record({
+            account, requestId: body.requestId, feature: step.feature, pricingVersion: step.pricingVersion,
+            inScope: delivered && produced.billable, usage: produced.usage, charged,
+          });
+        } catch {
+          deps.reportError();
+        }
+        return { charged, available };
+      };
+
+      if (step.streams && wantsStream(request)) return await streamRun(body, userId, settle);
+
+      const produced = await step.produce(body, userId);
+      const { charged, available } = await settle(produced);
+      if ("failed" in produced) {
         return Response.json({ error: produced.failed }, { status: errorStatus(produced.failed), headers });
       }
       return Response.json({ ...produced.body, charged, available, ...pricing }, { headers });

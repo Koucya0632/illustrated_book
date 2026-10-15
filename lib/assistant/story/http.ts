@@ -2,16 +2,19 @@
 //
 // GET offers the places, situations and difficulties (labelled in the
 // interface language) beside the price range and the balance. POST writes one
-// story around one to three picked items. The paid-step rules are `../paid`'s;
-// what is added here is that a story which leaves out a picked item is not a
-// story the person asked for, so it is recorded and not charged.
+// story around one to three picked items — whole, or with
+// `Accept: application/x-ndjson` the opening and each segment as they are
+// written, then the whole story. The paid-step rules are `../paid`'s; what is
+// added here is that a story which leaves out a picked item is not a story the
+// person asked for, so it is not charged: withheld when it arrives whole, and
+// left free when the person has already been reading it.
 
 import { z } from "zod";
 import { AssistantError } from "../contracts";
 import { createPaidHandler, type PaidDependencies } from "../paid";
 import { STORY_PRICING, storyPoints } from "../pricing";
 import { STORY_LEVELS, findLevel } from "./levels";
-import { missingWords, type StoryModelReply, type StoryModelRequest, type StoryWord } from "./model";
+import { missingWords, type StoryModelReply, type StoryModelRequest, type StoryPart, type StoryWord } from "./model";
 import { STORY_SCENES, findScene, type StoryUiLanguage } from "./scenes";
 
 export const STORY_MAX_BODY_BYTES = 2048;
@@ -48,7 +51,7 @@ export type StoryInput = z.infer<typeof storyInput>;
 export interface StoryDependencies extends PaidDependencies {
   /** The picked items, read from the catalogue, the person's own atlas and their 收進 cards. Unknown or refused ids are left out. */
   loadWords: (input: Pick<StoryInput, "wordIds" | "uiLanguage" | "learningDirection">, userId: string) => Promise<StoryWord[]>;
-  write: (request: StoryModelRequest) => Promise<StoryModelReply>;
+  write: (request: StoryModelRequest, onPart?: (part: StoryPart) => void) => Promise<StoryModelReply>;
 }
 
 /** The choices, labelled for one interface language. */
@@ -75,11 +78,12 @@ export function createStoryHandler(deps: StoryDependencies) {
     },
     chargeKey: requestId => `assistant-story:${requestId}`,
     clamped: false,
+    streams: true,
     offer: request => {
       const lang = uiLanguage.safeParse(new URL(request.url).searchParams.get("uiLanguage"));
       return storyChoices(lang.success ? lang.data : "zh-Hant");
     },
-    produce: async (body, userId) => {
+    produce: async (body, userId, emit) => {
       const words = await deps.loadWords(body, userId);
       // Every id must resolve: a missing one is someone else's card, a deleted
       // one, or one from the other learning direction. Nothing has run yet.
@@ -88,8 +92,12 @@ export function createStoryHandler(deps: StoryDependencies) {
       const reply = await deps.write({
         uiLanguage: body.uiLanguage, learningDirection: body.learningDirection,
         words, scene, situation, level: findLevel(body.levelId)!,
-      });
-      if (missingWords(reply.story, words).length) return { usage: reply.usage, failed: "assistant_unavailable" };
+      }, emit);
+      if (missingWords(reply.story, words).length) {
+        return emit
+          ? { usage: reply.usage, billable: false, points: 0, body: { story: reply.story } }
+          : { usage: reply.usage, failed: "assistant_unavailable" };
+      }
       return {
         usage: reply.usage,
         billable: true,

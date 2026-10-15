@@ -10,8 +10,9 @@ import { findLevel } from "../lib/assistant/story/levels";
 import type Anthropic from "@anthropic-ai/sdk";
 import {
   createStoryModel, isMonolingual, lineFurigana, lineReading, missingWords, moira, storyPrompt,
-  type Story, type StoryModelReply, type StoryModelRequest,
+  type Story, type StoryModelReply, type StoryModelRequest, type StoryPart,
 } from "../lib/assistant/story/model";
+import { createReplyScanner } from "../lib/assistant/story/reply-scanner";
 import { STORY_SCENES, findScene } from "../lib/assistant/story/scenes";
 import type { AssistantUsageRecord } from "../lib/assistant/usage";
 
@@ -57,9 +58,18 @@ test("only the interface language that is the one being learned is monolingual",
   assert.equal(isMonolingual({ uiLanguage: "en", learningDirection: "zh-ja" }), false);
 });
 
+/** A model that streams `parsed` as JSON text in small, uneven pieces. */
 function fakeClient(parsed: Record<string, unknown>) {
-  return { messages: { parse: async () => ({
-    stop_reason: "end_turn", usage: { input_tokens: 1800, output_tokens: 1000 }, parsed_output: parsed,
+  const json = JSON.stringify(parsed);
+  return { messages: { stream: () => ({
+    async *[Symbol.asyncIterator]() {
+      for (let at = 0; at < json.length; at += 7) {
+        yield { type: "content_block_delta", delta: { type: "text_delta", text: json.slice(at, at + 7) } };
+      }
+    },
+    finalMessage: async () => ({
+      stop_reason: "end_turn", usage: { input_tokens: 1800, output_tokens: 1000 }, parsed_output: parsed,
+    }),
   }) } } as unknown as Anthropic;
 }
 const modelReply = {
@@ -93,6 +103,29 @@ test("a monolingual story drops translations and keeps one note per picked word"
 test("a monolingual story without a note for a word falls back to the dictionary gloss", async () => {
   const { story } = await createStoryModel(fakeClient({ ...modelReply, word_notes: [] }))(storyRequest("ja"));
   assert.deepEqual(story.wordNotes, [{ id: "apple", note: "蘋果" }]);
+});
+
+test("a reply is read field by field and segment by segment, however it is split", () => {
+  const reply = JSON.stringify({
+    title: "買\"蘋果\"", intro: "你們{走進}超市。",
+    segments: [{ speaker: "cat", text: "[a]", word_ids: ["x"] }, { speaker: "you", text: "b", word_ids: [] }],
+    word_notes: [{ id: "x", note: "n" }],
+  });
+  for (const size of [1, 3, 50, reply.length]) {
+    const fields: Array<[string, string]> = [];
+    const segments: unknown[] = [];
+    const scan = createReplyScanner({ field: (k, v) => fields.push([k, v]), segment: raw => segments.push(raw) });
+    for (let at = 0; at < reply.length; at += size) scan(reply.slice(at, at + size));
+    assert.deepEqual(fields, [["title", "買\"蘋果\""], ["intro", "你們{走進}超市。"]], `size ${size}`);
+    assert.deepEqual(segments.map(s => (s as { text: string }).text), ["[a]", "b"], `size ${size}`);
+  }
+});
+
+test("the opening and each segment are passed on as written, the same as the finished story", async () => {
+  const parts: StoryPart[] = [];
+  const { story } = await createStoryModel(fakeClient(modelReply))(storyRequest("zh-Hant"), part => parts.push(part));
+  assert.deepEqual(parts[0], { type: "opening", title: "t", intro: "i" });
+  assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
 });
 
 test("the cat is Moira whatever the model spelled", () => {
@@ -140,6 +173,8 @@ const balance = (available: number) => ({ available, reconciliationRequired: fal
 
 interface Options {
   available?: number; reply?: Story; writeFails?: Error; unknownIds?: string[];
+  /** Fail only after the opening has been passed on. */
+  failsMidway?: Error;
   usage?: { inputTokens: number; outputTokens: number };
 }
 
@@ -172,10 +207,14 @@ function setup(options: Options = {}) {
     rateLimit: async () => {},
     loadWords: async ({ wordIds }) => wordIds.filter(id => !options.unknownIds?.includes(id))
       .map(id => ({ id, word: id === "apple" ? "りんご" : id, meaning: id })),
-    write: async (request): Promise<StoryModelReply> => {
+    write: async (request, onPart): Promise<StoryModelReply> => {
       written.push(request);
       if (options.writeFails) throw options.writeFails;
-      return { story: options.reply ?? story("りんごを三つ買います。"), usage: options.usage ?? { inputTokens: 1800, outputTokens: 1000 } };
+      const reply = options.reply ?? story("りんごを三つ買います。");
+      onPart?.({ type: "opening", title: reply.title, intro: reply.intro });
+      if (options.failsMidway) throw options.failsMidway;
+      for (const segment of reply.segments) onPart?.({ type: "segment", segment });
+      return { story: reply, usage: options.usage ?? { inputTokens: 1800, outputTokens: 1000 } };
     },
     record: async entry => { records.push(entry); },
     reportError: () => {},
@@ -183,9 +222,9 @@ function setup(options: Options = {}) {
   return { handler, written, charges, records };
 }
 
-const write = (data: Record<string, unknown> = {}) =>
+const write = (data: Record<string, unknown> = {}, accept = "application/json") =>
   new Request("https://tuji.test/api/assistant/story", {
-    method: "POST", headers: { "content-type": "application/json" },
+    method: "POST", headers: { "content-type": "application/json", accept },
     body: JSON.stringify({
       requestId: randomUUID(), uiLanguage: "zh-Hant", learningDirection: "zh-ja", wordIds: ["apple"],
       sceneId: "supermarket", situationId: "daily", levelId: "starter", ...data,
@@ -322,4 +361,56 @@ test("a resend under the same request id is charged under the same key", async (
   await handler(write({ requestId }), "write");
   await handler(write({ requestId: requestId.toUpperCase() }), "write");
   assert.deepEqual(new Set(charges.map(c => c.key)), new Set([`assistant-story:${requestId}`]));
+});
+
+// --- streamed ------------------------------------------------------------------
+
+const streamed = (data: Record<string, unknown> = {}) => write(data, "application/x-ndjson");
+async function lines(response: Response) {
+  return (await response.text()).trim().split("\n").map(line => JSON.parse(line));
+}
+
+test("a streamed story sends its opening, each segment, then the whole story and its price", async () => {
+  const { handler, charges } = setup();
+  const response = await handler(streamed(), "write");
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "application/x-ndjson");
+  const sent = await lines(response);
+  assert.deepEqual(sent.map(line => line.type), ["opening", "segment", "segment", "done"]);
+  const done = sent[3];
+  assert.equal(done.story.segments.length, 2);
+  assert.equal(done.charged, 3);
+  assert.equal(done.available, 97);
+  assert.equal(charges.length, 1);
+});
+
+test("a streamed request still refuses bad items with a status, before anything is written", async () => {
+  const { handler, written } = setup({ unknownIds: ["atlas:00000000-0000-4000-8000-000000000000"] });
+  const response = await handler(streamed({ wordIds: ["apple", "atlas:00000000-0000-4000-8000-000000000000"] }), "write");
+  assert.equal(response.status, 400);
+  assert.equal(written.length, 0);
+});
+
+test("a model failure before the opening is a status; after it, an error line — neither is charged", async () => {
+  const before = setup({ writeFails: new AssistantError("rate_limited") });
+  assert.equal((await before.handler(streamed(), "write")).status, 429);
+  assert.equal(before.charges.length, 0);
+
+  const after = setup({ failsMidway: new AssistantError("assistant_unavailable") });
+  const response = await after.handler(streamed(), "write");
+  assert.equal(response.status, 200);
+  const sent = await lines(response);
+  assert.deepEqual(sent.map(line => line.type), ["opening", "error"]);
+  assert.equal(sent[1].error, "assistant_unavailable");
+  assert.equal(after.charges.length, 0);
+});
+
+test("a streamed story that leaves out a picked item is kept but not charged", async () => {
+  const { handler, charges, records } = setup({ reply: story("こんにちは。") });
+  const sent = await lines(await handler(streamed(), "write"));
+  const done = sent[sent.length - 1];
+  assert.equal(done.type, "done");
+  assert.equal(done.charged, 0);
+  assert.equal(charges.length, 0);
+  assert.equal(records[0].inScope, false);
 });

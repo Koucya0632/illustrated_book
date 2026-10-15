@@ -100,6 +100,6 @@ export const handleStoryRequest = createStoryHandler({
     }
     return wordIds.flatMap(id => found.get(id) ?? []);
   },
-  write: request => (storyModel ??= createStoryModel())(request),
+  write: (request, onPart) => (storyModel ??= createStoryModel())(request, onPart),
   reportError: () => console.error("[assistant-story] request failed"),
 });

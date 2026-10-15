@@ -1,6 +1,7 @@
 // 情境故事's model call: one short scene between Moira, the cat, and the person, built
-// around the items they picked. Same model and call shape as 問 AI
-// (`../model.ts`): one stateless request, one structured reply.
+// around the items they picked. Same model as 問 AI (`../model.ts`): one
+// stateless request, one structured reply — streamed, so the opening and each
+// segment can be passed on while the rest is still being written.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
@@ -10,6 +11,7 @@ import { isKanaOnly, isKanji, readingKeepsKana, restoreKanaRuns, segmentFurigana
 import { targetLanguageFor } from "../../settings";
 import { AssistantError } from "../contracts";
 import { ASSISTANT_MODEL, type AssistantUsage } from "../pricing";
+import { createReplyScanner } from "./reply-scanner";
 import type { StoryLearningDirection, StoryLevel } from "./levels";
 import type { StoryScene, StorySituation, StoryUiLanguage } from "./scenes";
 
@@ -192,11 +194,61 @@ export function lineReading(text: string, raw: string): string | null {
   return restoreKanaRuns(spoken, reading);
 }
 
+/** What the app is sent while a story is still being written. */
+export type StoryPart =
+  | { type: "opening"; title: string; intro: string }
+  | { type: "segment"; segment: StorySegment };
+
+type ReplySegment = z.infer<typeof segment>;
+
+/**
+ * One segment as the app gets it. The same steps run on a segment streamed
+ * early and on the finished reply, so the two cannot differ.
+ */
+function shapeSegment(s: ReplySegment, request: StoryModelRequest, picked: Set<string>): StorySegment {
+  const spoken = s.speaker !== "narrator";
+  const isJapanese = request.learningDirection === "zh-ja";
+  // Japanese has no spaces between words; a beginner line sometimes
+  // arrives spaced out like a children's book, which also defeats furigana.
+  const said = spoken ? unquote(s.text) : moira(s.text.trim());
+  const text = spoken && isJapanese ? said.replace(/[ \u3000]+/gu, "") : said;
+  const reading = spoken && isJapanese ? lineReading(text, s.reading) : null;
+  return {
+    speaker: s.speaker,
+    text,
+    ...(reading ? lineFurigana(text, reading) : {}),
+    ...(spoken && !isMonolingual(request) && s.translation.trim() ? { translation: moira(s.translation.trim()) } : {}),
+    wordIds: [...new Set(s.word_ids)].filter(id => picked.has(id)),
+  };
+}
+
+/**
+ * Writes one story. `onPart`, when given, hears the title and intro as soon
+ * as both are written and each segment as soon as it closes; the reply that
+ * resolves is still the whole story, built from the finished output.
+ */
 export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40_000, maxRetries: 1 })) {
-  return async (request: StoryModelRequest): Promise<StoryModelReply> => {
+  return async (request: StoryModelRequest, onPart?: (part: StoryPart) => void): Promise<StoryModelReply> => {
+    const picked = new Set(request.words.map(word => word.id));
+    const opening: { title?: string; intro?: string } = {};
+    let opened = false;
+    const scan = createReplyScanner({
+      field: (key, value) => {
+        if (key !== "title" && key !== "intro") return;
+        opening[key] = moira(value.trim());
+        if (!opened && opening.title !== undefined && opening.intro !== undefined) {
+          opened = true;
+          onPart?.({ type: "opening", title: opening.title, intro: opening.intro });
+        }
+      },
+      segment: raw => {
+        const parsed = segment.safeParse(raw);
+        if (opened && parsed.success) onPart?.({ type: "segment", segment: shapeSegment(parsed.data, request, picked) });
+      },
+    });
     let response;
     try {
-      response = await client.messages.parse({
+      const stream = client.messages.stream({
         model: ASSISTANT_MODEL,
         // Thinking counts toward this; samples used up to ~3,700 in all, and a
         // story cut off mid-JSON is a failure the person is not charged for.
@@ -205,6 +257,10 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
         output_config: { effort: "low", format: zodOutputFormat(reply) },
         messages: [{ role: "user", content: storyPrompt(request) }],
       });
+      for await (const event of stream) {
+        if (event.type === "content_block_delta" && event.delta.type === "text_delta") scan(event.delta.text);
+      }
+      response = await stream.finalMessage();
     } catch (error) {
       if (error instanceof Anthropic.RateLimitError) throw new AssistantError("rate_limited");
       if (error instanceof Anthropic.APIError) throw new AssistantError("assistant_unavailable");
@@ -220,29 +276,12 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
     if (response.stop_reason === "refusal" || !parsed || !parsed.segments.length) {
       throw new AssistantError("assistant_unavailable");
     }
-    const picked = new Set(request.words.map(word => word.id));
-    const isJapanese = request.learningDirection === "zh-ja";
-    const monolingual = isMonolingual(request);
     const story: Story = {
       title: moira(parsed.title.trim()),
       intro: moira(parsed.intro.trim()),
-      segments: parsed.segments.map(s => {
-        const spoken = s.speaker !== "narrator";
-        // Japanese has no spaces between words; a beginner line sometimes
-        // arrives spaced out like a children's book, which also defeats furigana.
-        const said = spoken ? unquote(s.text) : moira(s.text.trim());
-        const text = spoken && isJapanese ? said.replace(/[ \u3000]+/gu, "") : said;
-        const reading = spoken && isJapanese ? lineReading(text, s.reading) : null;
-        return {
-          speaker: s.speaker,
-          text,
-          ...(reading ? lineFurigana(text, reading) : {}),
-          ...(spoken && !monolingual && s.translation.trim() ? { translation: moira(s.translation.trim()) } : {}),
-          wordIds: [...new Set(s.word_ids)].filter(id => picked.has(id)),
-        };
-      }),
+      segments: parsed.segments.map(s => shapeSegment(s, request, picked)),
     };
-    if (monolingual) {
+    if (isMonolingual(request)) {
       // One note per picked word, in pick order. A word the model left out
       // falls back to the dictionary's own gloss, which in this mode is
       // already in the language being learned.

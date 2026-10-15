@@ -29,6 +29,10 @@ export const ASSISTANT_DDL = [
   // 情境故事 shares the table; rows written before it existed are 問 AI.
   `ALTER TABLE assistant_usage ADD COLUMN IF NOT EXISTS feature TEXT NOT NULL DEFAULT 'ask'
     CHECK (feature IN ('ask', 'story'))`,
+  // 主題對話 (lib/topic-chat) writes rows here too.
+  `ALTER TABLE assistant_usage DROP CONSTRAINT IF EXISTS assistant_usage_feature_check`,
+  `ALTER TABLE assistant_usage ADD CONSTRAINT assistant_usage_feature_check
+    CHECK (feature IN ('ask', 'story', 'chat'))`,
   `CREATE INDEX IF NOT EXISTS assistant_usage_time_idx ON assistant_usage(environment, created_at)`,
   `CREATE INDEX IF NOT EXISTS assistant_usage_user_idx ON assistant_usage(user_id, environment, created_at)`,
   ...ASSISTANT_TABLES.map(table => `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`),

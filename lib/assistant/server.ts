@@ -29,7 +29,7 @@ function sqlOrThrow() {
 }
 
 /** Per person per minute, per person per day, and the whole site per day (overridable by env). */
-function rateLimiter(prefix: string, perMinute: number, perDay: number, globalEnv: string, globalDefault: number) {
+export function rateLimiter(prefix: string, perMinute: number, perDay: number, globalEnv: string, globalDefault: number) {
   return async (userId: string) => {
     const envLimit = Number(process.env[globalEnv]);
     const global = Number.isSafeInteger(envLimit) && envLimit > 0 ? envLimit : globalDefault;

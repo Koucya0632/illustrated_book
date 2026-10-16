@@ -186,6 +186,8 @@ export interface ChatSummary {
   updatedAt: string;
   /** How many times the person answered. Zero means no review is offered. */
   answers: number;
+  /** Points this conversation's replies took. */
+  spent: number;
   review?: ChatReview;
 }
 

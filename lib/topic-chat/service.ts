@@ -179,6 +179,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
       id: chat.id, learningDirection: chat.learningDirection, topicId: chat.topicId,
       topicName: names.get(chat.topicId) ?? chat.topicId, topicVersion: chat.topicVersion, status: chat.status,
       createdAt: chat.createdAt.toISOString(), updatedAt: chat.updatedAt.toISOString(), answers: chat.answers,
+      spent: chat.spent,
       ...(chat.review ? { review: chat.review } : {}),
     };
   }
@@ -301,6 +302,10 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
     });
     let charged = 0, available = s.balance.available;
     if (landed && extra.billable) ({ charged, available } = await charge(s, requestId, generated.usage));
+    if (charged > 0) {
+      // Only what the wallet took is counted, so a retry already charged adds nothing.
+      await s.store.addSpent(chat.id, charged).catch(() => deps.reportError());
+    }
     await record(s, requestId, generated.usage, charged, landed && extra.billable);
     return { landed, charged, available };
   }

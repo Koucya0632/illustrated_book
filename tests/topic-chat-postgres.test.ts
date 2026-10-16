@@ -199,6 +199,8 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
         assert.equal(resent.status, 200);
         assert.equal(resent.json.messages.length, 4);
         assert.equal(resent.json.charged, 0);
+        // The conversation's total counts the reply once.
+        assert.equal(resent.json.chat.spent, sent.json.charged);
       }
       assert.equal(h.wallet.charges.size, 1);
       assert.equal(h.control.calls.filter(c => c.kind === "reply").length, 1);
@@ -244,6 +246,7 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
       assert.equal(result.status, 200);
       assert.equal(result.json.messages.length, 2);
       assert.equal(result.json.charged, 0);
+      assert.equal(result.json.chat.spent, 0);
       assert.equal(h.wallet.charges.size, 0);
       // The tokens were still spent: one usage row, nothing charged.
       assert.deepEqual(h.records.filter(r => r.requestId === requestId).map(r => r.charged), [0]);

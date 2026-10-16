@@ -33,6 +33,8 @@ export const TOPIC_CHAT_DDL = [
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     ended_at TIMESTAMPTZ
   )`,
+  // Points the conversation's replies took, for 目前消耗點數 and the review.
+  `ALTER TABLE topic_chats ADD COLUMN IF NOT EXISTS points_spent INT NOT NULL DEFAULT 0`,
   // One conversation to continue per learning direction.
   `CREATE UNIQUE INDEX IF NOT EXISTS topic_chats_one_active_idx
     ON topic_chats(user_id, learning_direction) WHERE status = 'active'`,

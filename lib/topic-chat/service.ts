@@ -541,11 +541,12 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
             const names = [...new Set(messages.filter(m => m.kind === "topic").map(m => String(m.body.name ?? "")))];
             // The whole conversation, so a long one is not cut short.
             const { lines } = transcript(messages, STATE_MESSAGES);
+            const answerTypes = reviewAnswerTypes(messages).map(({ type, pattern, answer, messageId }) => ({ type, pattern, answer, messageId }));
             let generated;
             try {
               generated = await deps.model().review({
                 uiLanguage: input.uiLanguage, learningDirection: chat.learningDirection, topics: names, transcript: lines,
-                untried: untriedTypes(messages),
+                untried: untriedTypes(messages), shown: answerTypes.map(a => a.answer),
               });
             } catch (error) {
               await s.store.fail(input.requestId);
@@ -559,7 +560,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
               review: {
                 topics: topicIds.map(([id, name]) => ({ id, name })),
                 ...generated.value,
-                answerTypes: reviewAnswerTypes(messages).map(({ type, pattern, answer, messageId }) => ({ type, pattern, answer, messageId })),
+                answerTypes,
               },
             });
             await record(s, input.requestId, generated.usage, 0, false);

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type Anthropic from "@anthropic-ai/sdk";
 import {
-  cleanPattern, createTopicChatModel, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
+  cleanPattern, createTopicChatModel, fromMoira, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
   type TopicMaterial, type TurnRequest,
 } from "../lib/topic-chat/model";
 import { earlierTurns, pickWords, spotRun } from "../lib/topic-chat/service";
@@ -73,7 +73,7 @@ test("English keeps its spaces and has no reading", () => {
 });
 
 test("a review keeps only sentences it can point to, corrections only from Moira's next line", () => {
-  const request = { ...ja, topics: ["街上"], untried: ["reason"], transcript: [
+  const request = { ...ja, topics: ["街上"], untried: ["reason"], shown: [], transcript: [
     { speaker: "moira" as const, id: "m1", text: "どこに行きたいですか？" },
     { speaker: "you" as const, id: "u1", text: "公園に行きたいです。", support: [] },
     { speaker: "moira" as const, id: "m2", text: "いいですね。何をしますか？" },
@@ -104,6 +104,32 @@ test("a review keeps only sentences it can point to, corrections only from Moira
   })!;
   assert.equal(tried.tryNext?.answerType, "reason");
   assert.equal(shapeReview(request, { sentences: [], try_next: { answer_type: "none", text: "", reading: "", translation: "" } }), null);
+});
+
+test("a correction may turn Moira's 'your' back into 'my', but not add words she never said", () => {
+  const request = { uiLanguage: "zh-Hant" as const, learningDirection: "zh-en" as const, topics: ["超市"], untried: [],
+    shown: ["He likes bananas because they are easy to eat."], transcript: [
+      { speaker: "you" as const, id: "u1", text: "I want to buy bananas. My son like banana.", support: [] },
+      { speaker: "moira" as const, id: "m1", text: "Bananas are great! Your son likes bananas, that is so sweet." },
+      { speaker: "you" as const, id: "u2", text: "He likes bananas because they are easy to eat.", support: [] },
+      { speaker: "moira" as const, id: "m2", text: "Easy to eat, yes!" },
+      { speaker: "you" as const, id: "u3", text: "我有帶袋子", support: [] },
+      { speaker: "moira" as const, id: "m3", text: "Good idea, you brought your own bag!" },
+    ] };
+  const s = (message_id: string, kind: "as_said" | "corrected" | "expressed", text: string) =>
+    ({ message_id, kind, text, reading: "", translation: "" });
+  const review = shapeReview(request, {
+    sentences: [
+      s("u1", "corrected", "My son likes bananas."),
+      s("u1", "corrected", "My son really loves bananas."), // "really loves" is not what Moira said
+      s("u2", "as_said", "He likes bananas because they are easy to eat."), // already a 答法 row
+      s("u3", "expressed", "I brought my own bag."),
+    ],
+    try_next: { answer_type: "none", text: "", reading: "", translation: "" },
+  })!;
+  assert.deepEqual(review.sentences.map(x => [x.messageId, x.kind]), [["u3", "expressed"], ["u1", "corrected"]]);
+  assert.equal(fromMoira(true, "花がきれいからです。", "私は花がきれいだからです。", "花がきれいだからですね。"), true);
+  assert.equal(fromMoira(true, "花がきれいからです。", "花はとてもきれいです。", "花がきれいだからですね。"), false);
 });
 
 test("the prompt says what to do and marks the person's text as theirs", () => {

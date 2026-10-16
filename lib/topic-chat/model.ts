@@ -134,6 +134,8 @@ export interface ReviewRequest {
   transcript: TranscriptLine[];
   /** 答法 the person has not answered, which 下次可以試 may use. */
   untried: string[];
+  /** Answers already shown under 練習過的答法, so 你說過的 does not repeat them. */
+  shown: string[];
 }
 
 /** What the model adds to a review; the server adds the topics and 練習過的答法. */
@@ -236,8 +238,10 @@ The conversation has ended. You pick what the person takes away from it. Use onl
   1. "expressed": they wrote in another language (usually their own), and your next line said it in the language being learned;
   2. "corrected": their sentence had a mistake, and your next line restated it correctly;
   3. "as_said": a good sentence they said themselves (prefer ones without mistakes).
-  For each: message_id (the id shown before the person's message), kind, and text — the sentence to keep, in the language being learned and in the person's own voice. For "as_said", copy it from their message (one sentence of it is fine). For "corrected" and "expressed", copy it word for word from your very next line, and pick it only if that line says it in a form the person could say themselves ("He likes bread", not "Your son likes bread"). Then reading and translation.
-- try_next: one short sentence the person could say next time about this conversation's topic, of one of the answer types listed as not tried yet, with that answer_type, reading and translation. All empty, with answer_type "none", if nothing fits.
+  Look for 1 and 2 first: go through every message of theirs that had a mistake or was not in the language being learned, and keep each one your next line answered.
+  For each: message_id (the id shown before the person's message), kind, and text — the sentence to keep, in the language being learned and in the person's own voice. For "as_said", copy it from their message (one sentence of it is fine). For "corrected" and "expressed", write what they meant the way your very next line said it, turned back into their voice: if they wrote "My son like banana." and you said "Your son likes bananas", keep "My son likes bananas."; if they wrote "我有帶袋子" and you said "you brought your own bag", keep "I brought my own bag." Use only words from their message and your next line (besides I/my/you/your); anything your next line did not say is not a correction you made. Then reading and translation.
+  Then fill the rest with "as_said", up to five in all; most conversations have five worth keeping. Never pick a sentence listed as already shown.
+- try_next: one short sentence the person could say next time about this conversation's topic, of one of the answer types listed as not tried yet that they also never used on their own anywhere in the transcript (if they wrote "I want to buy bread", want_to is not new to them), with that answer_type, reading and translation. All empty, with answer_type "none", if nothing fits.
 ${ANSWER_TYPE_GUIDE}
 
 Translations are in the interface language and empty in monolingual mode. For Japanese, readings are the whole sentence in kana; for English, empty.`;
@@ -559,6 +563,7 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
     review: request => call(REVIEW_SYSTEM,
       [...header(request), `Topics talked about: ${request.topics.join(", ")}`,
         `Answer types not tried yet: ${request.untried.length ? request.untried.join(", ") : "none"}`,
+        `Already shown: ${request.shown.length ? request.shown.join(" / ") : "none"}`,
         ...transcriptBlock(request.transcript, false, true)].join("\n"),
       reviewReply, raw => shapeReview(request, raw)),
   };
@@ -567,6 +572,28 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
 /** Width, case, spaces and punctuation set aside, to tell whether one sentence holds another. */
 export function plain(text: string): string {
   return text.normalize("NFKC").toLowerCase().replace(/[\s。．.,，、!！?？"'「」『』]/gu, "");
+}
+
+// Who is speaking changes between the person's sentence and Moira's restating of it.
+const PRONOUNS = new Set(["i", "me", "my", "mine", "myself", "you", "your", "yours", "yourself", "we", "us", "our"]);
+const JA_PRONOUNS = /(私|わたし|僕|ぼく|あなた)[はがも]?/gu;
+
+/**
+ * Whether a correction only uses what Moira's next line said: every word it
+ * has that the person's message did not must be in that line (pronouns aside,
+ * since Moira restates "my son" as "your son"). Japanese, without spaces,
+ * goes by character.
+ */
+export function fromMoira(japanese: boolean, original: string, corrected: string, moira: string): boolean {
+  if (japanese) {
+    const had = new Set(plain(original));
+    const said = new Set(plain(moira));
+    return [...plain(corrected.replace(JA_PRONOUNS, ""))].every(c => had.has(c) || said.has(c));
+  }
+  const words = (text: string) => text.normalize("NFKC").toLowerCase().match(/[\p{L}\p{N}']+/gu) ?? [];
+  const had = new Set(words(original));
+  const said = new Set(words(moira));
+  return words(corrected).every(w => had.has(w) || said.has(w) || PRONOUNS.has(w));
 }
 
 /**
@@ -579,6 +606,7 @@ export function plain(text: string): string {
 export function shapeReview(request: ReviewRequest, raw: z.infer<typeof reviewReply>): GeneratedReview | null {
   const lines = request.transcript;
   const seen = new Set<string>();
+  const shown = request.shown.map(plain).filter(Boolean);
   const picked: (ReviewSentence & { at: number })[] = [];
   for (const s of raw.sentences) {
     const at = lines.findIndex(line => line.speaker === "you" && line.id === s.message_id);
@@ -586,11 +614,12 @@ export function shapeReview(request: ReviewRequest, raw: z.infer<typeof reviewRe
     const said = lines[at] as Extract<TranscriptLine, { speaker: "you" }>;
     const text = targetText(request, s.text, s.reading, s.translation);
     if (!text || !plain(text.text) || seen.has(plain(text.text))) continue;
+    if (shown.some(a => a.includes(plain(text.text)) || plain(text.text).includes(a))) continue;
     if (s.kind === "as_said") {
       if (!plain(said.text).includes(plain(text.text))) continue;
     } else {
       const next = lines.slice(at + 1).find(line => line.speaker !== "topic");
-      if (next?.speaker !== "moira" || !plain(next.text).includes(plain(text.text))) continue;
+      if (next?.speaker !== "moira" || !fromMoira(request.learningDirection === "zh-ja", said.text, text.text, next.text)) continue;
       if (plain(said.text) === plain(text.text)) continue;
     }
     seen.add(plain(text.text));

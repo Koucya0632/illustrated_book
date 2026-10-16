@@ -22,7 +22,7 @@ import {
   type AiMessageBody, type ChatMessage, type ChatOffer, type ChatState, type ChatSummary,
   type LearningDirection, type RequestKind, type TopicChatErrorCode, type UiLanguage, type UserMessageBody,
 } from "./contracts";
-import { ANSWER_TYPES, ModelFailure, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
+import { ANSWER_TYPES, ModelFailure, type AskedQuestion, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
 import type { ChatRow, MessageRow, RequestRow, TopicChatStore } from "./store";
 
 export const TOPIC_CHAT_PRICING = {
@@ -140,6 +140,21 @@ function practised(messages: MessageRow[]): string[] {
     if (key && (ANSWER_TYPES as readonly string[]).includes(key) && !types.includes(key)) types.push(key);
   }
   return types;
+}
+
+/** How many of Moira's earlier questions a turn's prompt lists. */
+const ASKED_LIMIT = 30;
+
+/** Moira's questions in the current topic, oldest first, so a long chat does not ask them again. */
+export function askedQuestions(messages: MessageRow[], topicVersion: number, limit = ASKED_LIMIT): AskedQuestion[] {
+  const asked: AskedQuestion[] = [];
+  for (const m of messages) {
+    if (m.kind !== "ai" || m.topicVersion !== topicVersion) continue;
+    const body = m.body as unknown as AiMessageBody;
+    if (!body.awaitsAnswer) continue;
+    asked.push({ type: body.pattern?.key ?? "none", line: body.line.text });
+  }
+  return asked.slice(-limit);
 }
 
 export function createTopicChatHandler(deps: TopicChatDependencies) {
@@ -277,7 +292,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
     let generated;
     try {
       const topic = await topicOrThrow(chat.topicId, uiLanguage, chat.learningDirection);
-      const messages = await s.store.messages(chat.id, PROMPT_LINES * 2);
+      const messages = await s.store.messages(chat.id, STATE_MESSAGES);
       const { lines, truncated } = transcript(messages, PROMPT_LINES);
       const previous = latestAi(messages, chat.topicVersion);
       const switchedFrom = task.kind === "opening" ? previousTopicName(messages, chat.topicVersion) : undefined;
@@ -287,6 +302,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         transcript: lines, truncated,
         ...(previous ? { previous: previous.body as unknown as AiMessageBody } : {}),
         practised: practised(messages),
+        asked: askedQuestions(messages, chat.topicVersion),
         task: task.kind === "opening" && switchedFrom ? { kind: "opening", switchedFrom } : task,
       });
     } catch (error) {

@@ -89,8 +89,21 @@ export interface TurnRequest {
   previous?: AiMessageBody;
   /** Answer types of this conversation's patterns so far, oldest first, each once. */
   practised: string[];
+  /** Moira's questions in this topic, oldest first — further back than `transcript` reaches. */
+  asked: AskedQuestion[];
   task: TurnTask;
 }
+
+/** One of Moira's earlier turns that asked something, with the answer type its pattern took ("none" without one). */
+export interface AskedQuestion {
+  type: string;
+  line: string;
+}
+
+/** Answer types that take a conversation further than naming things does. */
+const DEEPER_TYPES = ["reason", "experience", "plan", "who", "when", "how_often", "describe", "choose_one"] as const;
+/** How many questions of one answer type may come in a row. */
+const SAME_TYPE_RUN = 2;
 
 export interface SimplifyRequest {
   uiLanguage: UiLanguage;
@@ -140,7 +153,8 @@ Who you are in the chat:
 How each turn works:
 - First respond to what the person actually said, then move one small step forward. Only build on what they said: buying bread in the morning does not mean bread is their breakfast. If they disagree with you or say no, accept it and go along with them.
 - Decide your question first, then the 跟著說 (pattern) is how the person answers *that* question, in their voice, with its verb and form: 何を使いますか → ＿＿を使います; お茶はどこにありますか → ＿＿にあります; 甘いですか、辛いですか → ＿＿です. It is never the question itself, and never a pattern from an earlier turn that this question does not take. Ask at most one easy question — or, after answering their question, simply leave room to talk, with no pattern.
-- Give at most one pattern and at most three options; every option is an answer to your question. Practice comes from the questions: when it fits the conversation, ask a next question of the same answer type as a recent turn, so the same pattern answers it again; when the conversation goes elsewhere, follow it and let the pattern change.
+- Give at most one pattern and at most three options; every option is an answer to your question. Practice comes from the questions: when it fits the conversation, ask a next question of the same answer type as a recent turn, so the same pattern answers it again — but not more than twice in a row; when the conversation goes elsewhere, follow it and let the pattern change.
+- Never ask again what the person already answered (your earlier questions are listed for you); build on their answer instead. A conversation goes deeper, not only sideways: after naming things, ask why, whether they have done it before, who with, when, or what they will do — not one more "what … ?" about the next thing.
 - The first time an answer type comes up in this conversation (it is not among those already practised), show your own answer to your question in your line before you ask it ("Moiraは甘いお酒が好きです。あなたは…"). When it was already practised, just ask — do not open every turn with "I … . And you?".
 - A yes/no question, or one whose answers would need different shapes, has no pattern: give whole sentences as options instead.
 - If they answer with one word, take it up naturally; the example gives the whole sentence, and you never make them repeat it. If they write in another language, understand it, give the way to say it, and carry on. If they say they don't know how to say something, keep the same question and make it easier. If they twice say they don't want to talk about something, change the angle and offer two new directions.
@@ -260,7 +274,19 @@ export function targetText(lang: Lang, rawText: string, rawReading: string, rawT
   };
 }
 
-const BLANK = /＿＿|___/u;
+const BLANKS = /＿＿|___/gu;
+const TYPE_PREFIX = new RegExp(`^(?:(?:${[...ANSWER_TYPES, "none"].join("|")})\\s*)+[:：]\\s*`, "u");
+
+/**
+ * A pattern as it can be shown: one blank, normalised, and no answer-type name
+ * in front of it ("where: ＿＿に座ります" has been seen) — or null.
+ */
+export function cleanPattern(raw: string): string | null {
+  const template = raw.trim()
+    .replace(TYPE_PREFIX, "")
+    .replace(/＿{2,}/gu, "＿＿").replace(/_{3,}/gu, "___");
+  return (template.match(BLANKS) ?? []).length === 1 ? template : null;
+}
 
 export function shapeOptions(lang: Lang, raw: z.infer<typeof option>[]): ChatOption[] {
   const seen = new Set<string>();
@@ -281,8 +307,8 @@ export function shapeTurn(request: Pick<TurnRequest, "uiLanguage" | "learningDir
   const known = new Set(request.topic.words.map(word => word.id));
   const opening = request.task.kind === "opening";
   const intent: AiIntent = opening ? "opening" : raw.intent === "opening" ? "share" : raw.intent;
-  const template = raw.pattern.trim();
-  const pattern: ChatPattern | undefined = raw.answer_type !== "none" && BLANK.test(template)
+  const template = cleanPattern(raw.pattern);
+  const pattern: ChatPattern | undefined = raw.answer_type !== "none" && template
     ? {
       key: raw.answer_type,
       template: request.learningDirection === "zh-ja" ? template.replace(/[ 　]+/gu, "") : template,
@@ -355,16 +381,35 @@ function turnSummary(turn: AiMessageBody): string[] {
     "<your_latest_turn>",
     JSON.stringify({
       line: turn.line.text,
-      pattern: turn.pattern ? `${turn.pattern.key}: ${turn.pattern.template}` : null,
+      answer_type: turn.pattern?.key ?? "none",
+      pattern: turn.pattern?.template ?? null,
       options: turn.options.map(o => o.answer.text),
     }),
     "</your_latest_turn>",
   ];
 }
 
+/** Your questions so far, and a nudge when one answer type has run as long as it may. */
+function askedBlock(asked: AskedQuestion[]): string[] {
+  if (!asked.length) return [];
+  const parts = [
+    "<questions_you_already_asked>",
+    ...asked.map(q => `- (${q.type}) ${q.line}`),
+    "</questions_you_already_asked>",
+  ];
+  const run = asked.slice(-SAME_TYPE_RUN).map(q => q.type);
+  if (run.length === SAME_TYPE_RUN && run[0] !== "none" && run.every(t => t === run[0])) {
+    const used = new Set(asked.map(q => q.type));
+    const fresh = DEEPER_TYPES.filter(t => !used.has(t));
+    parts.push(`Your last ${SAME_TYPE_RUN} questions were both "${run[0]}". This turn, ask a different kind of question, going deeper into what the person said${fresh.length ? ` (not asked yet: ${fresh.join(", ")})` : ""}.`);
+  }
+  return parts;
+}
+
 export function turnPrompt(request: TurnRequest): string {
   const parts = [...header(request), ...topicBlock(request.topic)];
   parts.push(`Answer types already practised in this conversation, oldest first: ${request.practised.length ? request.practised.join(", ") : "none yet"}`);
+  parts.push(...askedBlock(request.asked));
   parts.push(...transcriptBlock(request.transcript, request.truncated));
   if (request.previous) parts.push(...turnSummary(request.previous));
   const task = request.task;

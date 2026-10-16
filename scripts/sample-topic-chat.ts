@@ -51,7 +51,9 @@ async function main() {
       const { value, usage } = await model.turn({
         uiLanguage: script.ui, learningDirection: script.direction, topic, transcript, truncated: false,
         ...(previous ? { previous } : {}),
-        practised: [...new Set(turns.flatMap(t => t.moira.pattern?.key ?? []))], task,
+        practised: [...new Set(turns.flatMap(t => t.moira.pattern?.key ?? []))],
+        asked: turns.filter(t => t.moira.awaitsAnswer).map(t => ({ type: t.moira.pattern?.key ?? "none", line: t.moira.line.text })),
+        task,
       });
       if (task.kind === "reply") transcript.push({ speaker: "you", id: `u${turns.length}`, text: task.answer, support: [] });
       transcript.push({ speaker: "moira", id: `m${turns.length}`, text: value.line.text });

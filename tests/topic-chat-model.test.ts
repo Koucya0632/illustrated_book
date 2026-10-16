@@ -2,17 +2,17 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type Anthropic from "@anthropic-ai/sdk";
 import {
-  createTopicChatModel, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
+  cleanPattern, createTopicChatModel, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
   type TopicMaterial, type TurnRequest,
 } from "../lib/topic-chat/model";
-import { pickWords } from "../lib/topic-chat/service";
+import { askedQuestions, pickWords } from "../lib/topic-chat/service";
 
 const topic: TopicMaterial = {
   id: "street", name: "街上", nameEn: "Street",
   words: [{ id: "station", word: "駅", reading: "えき", meaning: "車站" }, { id: "park", word: "公園", reading: "こうえん", meaning: "公園" }],
 };
 const ja = { uiLanguage: "zh-Hant", learningDirection: "zh-ja" } as const;
-const request: TurnRequest = { ...ja, topic, transcript: [], truncated: false, practised: [], task: { kind: "opening" } };
+const request: TurnRequest = { ...ja, topic, transcript: [], truncated: false, practised: [], asked: [], task: { kind: "opening" } };
 
 const raw = {
   intent: "share" as const, scene: "想像散步 · モイラ 是你的同行夥伴",
@@ -125,4 +125,32 @@ test("two unusable replies are a failure that still reports what was spent", asy
   }) } } as unknown as Anthropic;
   await assert.rejects(createTopicChatModel(client).turn(request), (error: { code: string; usage: { inputTokens: number } }) =>
     error.code === "assistant_unavailable" && error.usage.inputTokens === 200);
+});
+
+test("a pattern loses an answer-type name in front of it and must have exactly one blank", () => {
+  assert.equal(cleanPattern("where:＿＿に座ります"), "＿＿に座ります");
+  assert.equal(cleanPattern("what what: I buy ___"), "I buy ___");
+  assert.equal(cleanPattern("＿＿＿＿を飲みます"), "＿＿を飲みます");
+  assert.equal(cleanPattern("I buy ___ with ___"), null);
+  assert.equal(cleanPattern("I buy bread."), null);
+  assert.equal(shapeTurn(request, { ...raw, pattern: "who: I buy ___ with ___" })!.pattern, undefined);
+});
+
+test("the prompt lists earlier questions and asks for another kind after two of the same", () => {
+  const asked = [{ type: "what", line: "何を飲みますか？" }, { type: "what", line: "何を食べますか？" }];
+  const prompt = turnPrompt({ ...request, asked });
+  assert.match(prompt, /<questions_you_already_asked>\n- \(what\) 何を飲みますか？/);
+  assert.match(prompt, /last 2 questions were both "what"/);
+  assert.match(prompt, /not asked yet: reason, experience/);
+  assert.doesNotMatch(turnPrompt({ ...request, asked: [asked[0], { type: "where", line: "どこ？" }] }), /were both/);
+  assert.doesNotMatch(turnPrompt(request), /questions_you_already_asked/);
+});
+
+test("asked questions come from this topic's turns that asked something", () => {
+  const ai = (id: string, topicVersion: number, awaitsAnswer: boolean, key?: string) => ({
+    id, kind: "ai" as const, topicId: "t", topicVersion, requestId: id, createdAt: new Date(),
+    body: { line: { text: id }, awaitsAnswer, ...(key ? { pattern: { key, template: "＿＿" } } : {}) },
+  });
+  const asked = askedQuestions([ai("old", 1, true, "what"), ai("a", 2, true, "where"), ai("b", 2, false), ai("c", 2, true)], 2);
+  assert.deepEqual(asked, [{ type: "where", line: "a" }, { type: "none", line: "c" }]);
 });

@@ -62,6 +62,13 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
     await migrateCreditSchema(sql);
     await migrateAiOperationsSchema(sql);
     await migrateAiOperationsSchema(sql);
+    // Running it again while requests read every table must not wait on them:
+    // an exclusive lock here deadlocked a production deploy.
+    await sql.begin(async reading => {
+      for (const table of AI_OPERATION_TABLES) await reading.unsafe(`SELECT 1 FROM ${table} LIMIT 1`);
+      const migrator = postgres(databaseUrl!, { max: 1, onnotice: () => {}, connection: { lock_timeout: 2000 } });
+      try { await migrateAiOperationsSchema(migrator); } finally { await migrator.end(); }
+    });
 
     async function fixture(points = 1000) {
       const userId = randomUUID(), imageId = randomUUID();

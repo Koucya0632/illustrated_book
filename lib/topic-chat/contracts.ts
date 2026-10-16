@@ -159,20 +159,38 @@ export interface ChatMessage {
   topic?: TopicMessageBody;
 }
 
-export interface ReviewPhrase {
+export const REVIEW_SENTENCE_KINDS = ["expressed", "corrected", "as_said"] as const;
+export type ReviewSentenceKind = (typeof REVIEW_SENTENCE_KINDS)[number];
+
+/**
+ * 「你說過的」: one of the person's messages, as the sentence to take away.
+ * "as_said": their own words. "corrected": Moira's restating of a sentence
+ * with a mistake. "expressed": how Moira said what they wrote in another
+ * language. The last two come word for word from Moira's next line.
+ */
+export interface ReviewSentence {
   text: TargetText;
-  /** "you": the person said it. "moira": Moira showed it. */
-  source: "you" | "moira";
+  kind: ReviewSentenceKind;
+  /** What the person wrote, when `text` is not it. */
+  original?: string;
   messageId: string;
 }
 
+/** 「練習過的答法」: a 答法 the person answered, with the 跟著說 and their answer. */
+export interface ReviewAnswerType {
+  type: string;
+  pattern: string;
+  answer: string;
+  messageId: string;
+}
+
+/** 回顧: what the person takes away from an ended conversation. */
 export interface ChatReview {
   topics: { id: string; name: string }[];
-  phrases: ReviewPhrase[];
-  /** 「下次可以試」: a new way of saying something, marked as a suggestion. */
-  tryNext?: TargetText;
-  /** One direction to talk about next time, in the interface language. */
-  nextIdea: string;
+  sentences: ReviewSentence[];
+  answerTypes: ReviewAnswerType[];
+  /** 「下次可以試」: a sentence of a 答法 not tried yet, marked as a suggestion. */
+  tryNext?: { answerType: string; text: TargetText };
 }
 
 export type ChatStatus = "active" | "ended";

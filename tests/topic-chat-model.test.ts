@@ -2,10 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type Anthropic from "@anthropic-ai/sdk";
 import {
-  cleanPattern, createTopicChatModel, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
+  cleanPattern, createTopicChatModel, fromMoira, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
   type TopicMaterial, type TurnRequest,
 } from "../lib/topic-chat/model";
 import { earlierTurns, pickWords, spotRun } from "../lib/topic-chat/service";
+import { fillingSentence, practisedTypes, reviewAnswerTypes, untriedTypes } from "../lib/topic-chat/answers";
 
 const topic: TopicMaterial = {
   id: "street", name: "街上", nameEn: "Street",
@@ -71,23 +72,64 @@ test("English keeps its spaces and has no reading", () => {
   assert.deepEqual(text, { text: "I'd like to go to the park.", translation: "我想去公園。" });
 });
 
-test("a review keeps only phrases it can point to, and no more of the person's than they said", () => {
-  const review = shapeReview({ ...ja, topics: ["街上"], transcript: [
-    { speaker: "moira", id: "m1", text: "どこに行きたいですか？" },
-    { speaker: "you", id: "u1", text: "公園に行きたいです。", support: [] },
-  ] }, {
-    phrases: [
-      { message_id: "u1", source: "you", text: "公園に行きたいです。", reading: "こうえんにいきたいです。", translation: "我想去公園。" },
-      { message_id: "u1", source: "you", text: "公園が好きです。", reading: "", translation: "" },
-      { message_id: "m1", source: "you", text: "どこに行きたいですか？", reading: "", translation: "" },
-      { message_id: "zzz", source: "moira", text: "嘘", reading: "", translation: "" },
-      { message_id: "m1", source: "moira", text: "どこに行きたいですか？", reading: "", translation: "" },
+test("a review keeps only sentences it can point to, corrections only from Moira's next line", () => {
+  const request = { ...ja, topics: ["街上"], untried: ["reason"], shown: [], transcript: [
+    { speaker: "moira" as const, id: "m1", text: "どこに行きたいですか？" },
+    { speaker: "you" as const, id: "u1", text: "公園に行きたいです。", support: [] },
+    { speaker: "moira" as const, id: "m2", text: "いいですね。何をしますか？" },
+    { speaker: "you" as const, id: "u2", text: "花がきれいからです。", support: [] },
+    { speaker: "moira" as const, id: "m3", text: "花がきれいだからですね。" },
+    { speaker: "you" as const, id: "u3", text: "我想吃冰淇淋", support: [] },
+    { speaker: "moira" as const, id: "m4", text: "アイスが食べたいです、と言います。いいですね。" },
+  ] };
+  const s = (message_id: string, kind: "as_said" | "corrected" | "expressed", text: string) =>
+    ({ message_id, kind, text, reading: "", translation: "" });
+  const review = shapeReview(request, {
+    sentences: [
+      s("u1", "as_said", "公園に行きたいです。"),
+      s("u1", "as_said", "公園が好きです。"), // not what they said
+      s("u2", "corrected", "花がきれいだからです。"), // in Moira's next line, punctuation aside
+      s("u2", "corrected", "花はとてもきれいです。"), // a correction Moira never made
+      s("m1", "as_said", "どこに行きたいですか？"), // not the person's
+      s("u3", "expressed", "アイスが食べたいです。"),
     ],
-    try_next: { text: "", reading: "", translation: "" },
-    next_idea: "下次聊聊公園裡做什麼。",
+    try_next: { answer_type: "what", text: "ケーキを食べます。", reading: "", translation: "" }, // already tried
   })!;
-  assert.deepEqual(review.phrases.map(p => [p.messageId, p.source]), [["u1", "you"], ["m1", "moira"]]);
+  assert.deepEqual(review.sentences.map(x => [x.messageId, x.kind, x.original]), [
+    ["u3", "expressed", "我想吃冰淇淋"], ["u2", "corrected", "花がきれいからです。"], ["u1", "as_said", undefined],
+  ]);
   assert.equal(review.tryNext, undefined);
+  const tried = shapeReview(request, {
+    sentences: [], try_next: { answer_type: "reason", text: "暑いからです。", reading: "", translation: "" },
+  })!;
+  assert.equal(tried.tryNext?.answerType, "reason");
+  assert.equal(shapeReview(request, { sentences: [], try_next: { answer_type: "none", text: "", reading: "", translation: "" } }), null);
+});
+
+test("a correction may turn Moira's 'your' back into 'my', but not add words she never said", () => {
+  const request = { uiLanguage: "zh-Hant" as const, learningDirection: "zh-en" as const, topics: ["超市"], untried: [],
+    shown: ["He likes bananas because they are easy to eat."], transcript: [
+      { speaker: "you" as const, id: "u1", text: "I want to buy bananas. My son like banana.", support: [] },
+      { speaker: "moira" as const, id: "m1", text: "Bananas are great! Your son likes bananas, that is so sweet." },
+      { speaker: "you" as const, id: "u2", text: "He likes bananas because they are easy to eat.", support: [] },
+      { speaker: "moira" as const, id: "m2", text: "Easy to eat, yes!" },
+      { speaker: "you" as const, id: "u3", text: "我有帶袋子", support: [] },
+      { speaker: "moira" as const, id: "m3", text: "Good idea, you brought your own bag!" },
+    ] };
+  const s = (message_id: string, kind: "as_said" | "corrected" | "expressed", text: string) =>
+    ({ message_id, kind, text, reading: "", translation: "" });
+  const review = shapeReview(request, {
+    sentences: [
+      s("u1", "corrected", "My son likes bananas."),
+      s("u1", "corrected", "My son really loves bananas."), // "really loves" is not what Moira said
+      s("u2", "as_said", "He likes bananas because they are easy to eat."), // already a 答法 row
+      s("u3", "expressed", "I brought my own bag."),
+    ],
+    try_next: { answer_type: "none", text: "", reading: "", translation: "" },
+  })!;
+  assert.deepEqual(review.sentences.map(x => [x.messageId, x.kind]), [["u3", "expressed"], ["u1", "corrected"]]);
+  assert.equal(fromMoira(true, "花がきれいからです。", "私は花がきれいだからです。", "花がきれいだからですね。"), true);
+  assert.equal(fromMoira(true, "花がきれいからです。", "花はとてもきれいです。", "花がきれいだからですね。"), false);
 });
 
 test("the prompt says what to do and marks the person's text as theirs", () => {
@@ -191,4 +233,26 @@ test("a spot run counts the latest turns of this topic in the same spot", () => 
     { spot: "bakery", turns: 2 });
   assert.equal(spotRun([ai("a", 1, true, { spot: "bakery" })], 2), undefined);
   assert.equal(spotRun([ai("a", 2, true)], 2), undefined);
+});
+
+test("an answer counts for its 答法 only when it has the 跟著說's shape, or was a picked option", () => {
+  assert.equal(fillingSentence("＿＿からです", "すっきりしているからです。"), "すっきりしているからです。");
+  assert.equal(fillingSentence("I buy ___.", "I buy tofu. My son like tofu too."), "I buy tofu.");
+  assert.equal(fillingSentence("はい、＿＿たことがあります", "はい、ひまわりを見たことがあります。台湾でも見ました。"), "はい、ひまわりを見たことがあります。");
+  assert.equal(fillingSentence("＿＿からです", "からです"), null);
+  assert.equal(fillingSentence("＿＿を飲みます", "ビール。"), null);
+  const row = (id: string, kind: "ai" | "user" | "topic", body: object, topicVersion = 1) =>
+    ({ id, kind, topicId: "t", topicVersion, requestId: id, createdAt: new Date(), body: body as never });
+  const ask = (id: string, key: string, template: string) =>
+    row(id, "ai", { line: { text: id }, awaitsAnswer: true, pattern: { key, template }, options: [], keywords: [], wordIds: [] });
+  const messages = [
+    ask("a1", "what", "＿＿を飲みます"), row("u1", "user", { text: "ビールを飲みます。", support: [] }),
+    ask("a2", "reason", "＿＿からです"), row("u2", "user", { text: "わかりません", support: [] }),
+    ask("a3", "where", "＿＿で飲みます"), row("u3", "user", { text: "家で飲みます。", support: ["option"] }),
+    ask("a4", "experience", "＿＿たことがあります"), row("t", "topic", { name: "x" }, 2), row("u4", "user", { text: "行ったことがあります", support: [] }, 2),
+  ];
+  assert.deepEqual(practisedTypes(messages), ["what", "where"]);
+  assert.deepEqual(reviewAnswerTypes(messages).map(a => a.type), ["where", "what"]);
+  assert.ok(untriedTypes(messages).includes("reason"));
+  assert.ok(!untriedTypes(messages).includes("what"));
 });

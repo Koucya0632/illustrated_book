@@ -1,6 +1,15 @@
 import type postgres from "postgres";
 
 export const AI_OPERATION_TABLES = ["ai_quotes", "ai_operations", "ai_operation_attempts", "atlas_capacity_reservations", "ai_fulfillments", "ai_fulfillment_attempts", "credit_image_uploads"] as const;
+
+const FULFILLMENT_STATES = ["unclaimed", "pending", "running", "reconciling", "completed", "compensated", "superseded"];
+
+// ALTER TABLE takes an exclusive lock even when it ends up changing nothing.
+// Every deploy runs this, and with live requests reading these tables it
+// deadlocked a production migrate (2026-10-16) — so only alter what needs it.
+function onlyIf(condition: string, ...statements: string[]): string {
+  return `DO $$ BEGIN IF ${condition} THEN ${statements.map(s => s + ";").join(" ")} END IF; END $$`;
+}
 export const AI_OPERATION_DDL = [
   `CREATE TABLE IF NOT EXISTS ai_quotes (
     id UUID PRIMARY KEY,
@@ -69,11 +78,16 @@ export const AI_OPERATION_DDL = [
     FOREIGN KEY (operation_id, user_id, environment) REFERENCES ai_operations(id, user_id, environment) ON DELETE CASCADE
   )`,
   `CREATE INDEX IF NOT EXISTS atlas_capacity_live_idx ON atlas_capacity_reservations(user_id, expires_at)`,
-  `ALTER TABLE ai_operations DROP CONSTRAINT IF EXISTS ai_operations_fulfillment_state_check`,
-  `ALTER TABLE ai_operations ADD CONSTRAINT ai_operations_fulfillment_state_check
-    CHECK (fulfillment_state IN ('unclaimed','pending','running','reconciling','completed','compensated','superseded'))`,
+  onlyIf(`NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid = 'ai_operations'::regclass
+      AND conname = 'ai_operations_fulfillment_state_check'
+      AND pg_get_constraintdef(oid) LIKE ALL (ARRAY[${FULFILLMENT_STATES.map(state => `'%''${state}''%'`).join(",")}]))`,
+    `ALTER TABLE ai_operations DROP CONSTRAINT IF EXISTS ai_operations_fulfillment_state_check`,
+    `ALTER TABLE ai_operations ADD CONSTRAINT ai_operations_fulfillment_state_check
+      CHECK (fulfillment_state IN (${FULFILLMENT_STATES.map(state => `'${state}'`).join(",")}))`),
   // The name the user confirmed (possibly corrected); the included supplement belongs to that name.
-  `ALTER TABLE ai_operations ADD COLUMN IF NOT EXISTS confirmed_lemma TEXT`,
+  onlyIf(`NOT EXISTS (SELECT 1 FROM pg_attribute WHERE attrelid = 'ai_operations'::regclass
+      AND attname = 'confirmed_lemma' AND NOT attisdropped)`,
+    `ALTER TABLE ai_operations ADD COLUMN confirmed_lemma TEXT`),
   `CREATE TABLE IF NOT EXISTS ai_fulfillments (
     operation_id UUID PRIMARY KEY REFERENCES ai_operations ON DELETE CASCADE,
     state TEXT NOT NULL CHECK (state IN ('pending','running','reconciling','completed','compensated','superseded')),
@@ -105,7 +119,8 @@ export const AI_OPERATION_DDL = [
   )`,
   `CREATE UNIQUE INDEX IF NOT EXISTS credit_image_uploads_hash_idx ON credit_image_uploads(user_id, sha256)
     WHERE state IN ('pending','cleanup')`,
-  ...AI_OPERATION_TABLES.map(table => `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`),
+  ...AI_OPERATION_TABLES.map(table => onlyIf(`NOT (SELECT relrowsecurity FROM pg_class WHERE oid = '${table}'::regclass)`,
+    `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`)),
 ] as const;
 
 export async function migrateAiOperationsSchema(sql: postgres.Sql): Promise<void> {

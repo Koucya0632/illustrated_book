@@ -22,6 +22,8 @@ export interface ChatRow {
   createdAt: Date;
   updatedAt: Date;
   answers: number;
+  /** Points its replies took. */
+  spent: number;
 }
 
 export interface MessageRow {
@@ -99,6 +101,7 @@ export interface TopicChatStore {
   commit(input: Commit): Promise<boolean>;
   fail(requestId: string): Promise<void>;
   stop(chatId: string, requestId: string): Promise<boolean>;
+  addSpent(chatId: string, points: number): Promise<void>;
   endChat(userId: string, chatId: string): Promise<ChatRow | null>;
   deleteChat(userId: string, chatId: string): Promise<boolean>;
 }
@@ -118,6 +121,7 @@ function chatRow(row: postgres.Row): ChatRow {
     id: row.id, userId: row.user_id, learningDirection: row.learning_direction, topicId: row.topic_id,
     topicVersion: row.topic_version, status: row.status, review: row.review ?? null,
     createdAt: row.created_at, updatedAt: row.updated_at, answers: Number(row.answers ?? 0),
+    spent: Number(row.points_spent ?? 0),
   };
 }
 
@@ -311,6 +315,10 @@ export function createTopicChatStore(sql: postgres.Sql): TopicChatStore {
       const rows = await sql`UPDATE topic_chat_requests SET status = 'stopped', updated_at = now()
         WHERE request_id = ${requestId} AND chat_id = ${chatId} AND status = 'pending' RETURNING 1`;
       return rows.length > 0;
+    },
+
+    async addSpent(chatId, points) {
+      await sql`UPDATE topic_chats SET points_spent = points_spent + ${points} WHERE id = ${chatId}`;
     },
 
     async endChat(userId, chatId) {

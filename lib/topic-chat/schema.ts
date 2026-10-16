@@ -33,6 +33,8 @@ export const TOPIC_CHAT_DDL = [
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     ended_at TIMESTAMPTZ
   )`,
+  // Reviews from before 回顧 kept sentences and 答法 are cleared; 「整理回顧」 makes them anew, free.
+  `UPDATE topic_chats SET review = NULL WHERE review IS NOT NULL AND NOT (review ? 'sentences')`,
   // Points the conversation's replies took, for 目前消耗點數 and the review.
   `ALTER TABLE topic_chats ADD COLUMN IF NOT EXISTS points_spent INT NOT NULL DEFAULT 0`,
   // One conversation to continue per learning direction.

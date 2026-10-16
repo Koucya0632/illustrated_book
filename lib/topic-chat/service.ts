@@ -22,7 +22,8 @@ import {
   type AiMessageBody, type ChatMessage, type ChatOffer, type ChatState, type ChatSummary,
   type LearningDirection, type RequestKind, type TopicChatErrorCode, type UiLanguage, type UserMessageBody,
 } from "./contracts";
-import { ANSWER_TYPES, ModelFailure, type EarlierTurn, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
+import { practisedTypes, reviewAnswerTypes, untriedTypes } from "./answers";
+import { ModelFailure, type EarlierTurn, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
 import type { ChatRow, MessageRow, RequestRow, TopicChatStore } from "./store";
 
 export const TOPIC_CHAT_PRICING = {
@@ -34,7 +35,6 @@ export const TOPIC_CHAT_PRICING = {
 /** How many messages a state carries, and how many a turn's prompt sees. */
 const STATE_MESSAGES = 200;
 const PROMPT_LINES = 24;
-const REVIEW_LINES = 80;
 /** Topic words handed to the model per turn. */
 const PROMPT_WORDS = 40;
 const LIST_LIMIT = 30;
@@ -135,16 +135,6 @@ export function pickWords(words: TopicWord[], messages: MessageRow[], limit = PR
   }
   const first = words.filter(word => recent.has(word.id));
   return [...first, ...words.filter(word => !recent.has(word.id))].slice(0, limit);
-}
-
-/** The answer types practised so far, oldest first. Names from before 答法 are left out. */
-function practised(messages: MessageRow[]): string[] {
-  const types: string[] = [];
-  for (const m of messages) {
-    const key = m.kind === "ai" ? (m.body as unknown as AiMessageBody).pattern?.key : undefined;
-    if (key && (ANSWER_TYPES as readonly string[]).includes(key) && !types.includes(key)) types.push(key);
-  }
-  return types;
 }
 
 /** How many of Moira's earlier turns a turn's prompt carries. */
@@ -324,7 +314,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         topic: { ...topic, words: pickWords(topic.words, messages) },
         transcript: lines, truncated,
         ...(previous ? { previous: previous.body as unknown as AiMessageBody } : {}),
-        practised: practised(messages),
+        practised: practisedTypes(messages),
         earlier: earlierTurns(messages, chat.topicVersion),
         ...(spotRun(messages, chat.topicVersion) ? { spotRun: spotRun(messages, chat.topicVersion) } : {}),
         task: task.kind === "opening" && switchedFrom ? { kind: "opening", switchedFrom } : task,
@@ -549,11 +539,13 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
             });
             const messages = await s.store.messages(chatId, STATE_MESSAGES);
             const names = [...new Set(messages.filter(m => m.kind === "topic").map(m => String(m.body.name ?? "")))];
-            const { lines } = transcript(messages, REVIEW_LINES);
+            // The whole conversation, so a long one is not cut short.
+            const { lines } = transcript(messages, STATE_MESSAGES);
             let generated;
             try {
               generated = await deps.model().review({
                 uiLanguage: input.uiLanguage, learningDirection: chat.learningDirection, topics: names, transcript: lines,
+                untried: untriedTypes(messages),
               });
             } catch (error) {
               await s.store.fail(input.requestId);
@@ -564,7 +556,11 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
               .map(m => [m.topicId, String(m.body.name ?? "")])).entries()];
             await s.store.commit({
               requestId: input.requestId, chatId, messages: [],
-              review: { topics: topicIds.map(([id, name]) => ({ id, name })), ...generated.value },
+              review: {
+                topics: topicIds.map(([id, name]) => ({ id, name })),
+                ...generated.value,
+                answerTypes: reviewAnswerTypes(messages).map(({ type, pattern, answer, messageId }) => ({ type, pattern, answer, messageId })),
+              },
             });
             await record(s, input.requestId, generated.usage, 0, false);
           }

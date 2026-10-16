@@ -17,9 +17,9 @@ import { targetLanguageFor } from "../settings";
 import { ASSISTANT_MODEL, type AssistantUsage } from "../assistant/pricing";
 import { lineFurigana, lineReading, moira } from "../assistant/story/model";
 import {
-  AI_INTENTS, TopicChatError,
+  AI_INTENTS, REVIEW_SENTENCE_KINDS, TopicChatError,
   type AiIntent, type AiMessageBody, type ChatKeyword, type ChatOption, type ChatPattern,
-  type LearningDirection, type ReviewPhrase, type SupportKind, type TargetText, type UiLanguage,
+  type ChatReview, type LearningDirection, type ReviewSentence, type SupportKind, type TargetText, type UiLanguage,
 } from "./contracts";
 
 /** One catalogue entry of the topic, as the server read it. */
@@ -87,7 +87,7 @@ export interface TurnRequest {
   truncated: boolean;
   /** The turn being answered or replaced, when there is one in this topic. */
   previous?: AiMessageBody;
-  /** Answer types of this conversation's patterns so far, oldest first, each once. */
+  /** Answer types the person has answered with their 跟著說 so far, oldest first, each once. */
   practised: string[];
   /** Moira's turns in this topic, oldest first — further back than `transcript` reaches. */
   earlier: EarlierTurn[];
@@ -132,7 +132,12 @@ export interface ReviewRequest {
   learningDirection: LearningDirection;
   topics: string[];
   transcript: TranscriptLine[];
+  /** 答法 the person has not answered, which 下次可以試 may use. */
+  untried: string[];
 }
+
+/** What the model adds to a review; the server adds the topics and 練習過的答法. */
+export type GeneratedReview = Pick<ChatReview, "sentences" | "tryNext">;
 
 export interface Generated<T> {
   value: T;
@@ -143,7 +148,7 @@ export interface TopicChatModel {
   turn(request: TurnRequest): Promise<Generated<AiMessageBody>>;
   simplify(request: SimplifyRequest): Promise<Generated<NonNullable<AiMessageBody["simpler"]>>>;
   express(request: ExpressRequest): Promise<Generated<TargetText>>;
-  review(request: ReviewRequest): Promise<Generated<{ phrases: ReviewPhrase[]; tryNext?: TargetText; nextIdea: string }>>;
+  review(request: ReviewRequest): Promise<Generated<GeneratedReview>>;
 }
 
 const UI_LANGUAGE = {
@@ -164,7 +169,7 @@ How each turn works:
 - Decide your question first, then the 跟著說 (pattern) is how the person answers *that* question, in their voice, with its verb and form: 何を使いますか → ＿＿を使います; お茶はどこにありますか → ＿＿にあります; 甘いですか、辛いですか → ＿＿です. It is never the question itself, and never a pattern from an earlier turn that this question does not take. Ask at most one easy question — or, after answering their question, simply leave room to talk, with no pattern.
 - Give at most one pattern and at most three options; every option is an answer to your question. Practice comes from the questions: when it fits the conversation, ask a next question of the same answer type as a recent turn, so the same pattern answers it again — but not more than twice in a row; when the conversation goes elsewhere, follow it and let the pattern change.
 - Never ask again what the person already answered (your earlier lines are listed for you); build on their answer instead. A conversation goes deeper, not only sideways: after naming things, ask why, whether they have done it before, who with, when, or what they will do — not one more "what … ?" about the next thing.
-- The first time an answer type comes up in this conversation (it is not among those already practised), show your own answer to your question in your line before you ask it ("Moiraは甘いお酒が好きです。あなたは…"). When it was already practised, just ask — do not open every turn with "I … . And you?".
+- The first time an answer type comes up in this conversation (the person has not answered one of its kind yet), show your own answer to your question in your line before you ask it ("Moiraは甘いお酒が好きです。あなたは…"). When it was already practised, just ask — do not open every turn with "I … . And you?".
 - A yes/no question, or one whose answers would need different shapes, has no pattern: give whole sentences as options instead.
 - If they answer with one word, take it up naturally; the example gives the whole sentence, and you never make them repeat it. If they write in another language, understand it, give the way to say it, and carry on. If they say they don't know how to say something, keep the same question and make it easier. If they twice say they don't want to talk about something, change the angle and offer two new directions.
 - If they ask you something, answer it fully first.
@@ -226,10 +231,15 @@ The person wrote what they want to say next, often in their own language, and as
 
 const REVIEW_SYSTEM = `${PARTNER}
 
-The conversation has ended and the person asked for a short review. Use only what is in the transcript; never invent progress.
-- phrases: two or three reusable sentences from the conversation, each with message_id (the id shown before that line), source ("you" when the person said it, "moira" when you showed it), text copied from that line or the reusable part of it, reading and translation. If the person answered only once, give at most one "you" phrase. Prefer sentences the person said.
-- try_next: one new, slightly different sentence they could try next time, with reading and translation, or all empty.
-- next_idea: one short sentence in the interface language suggesting what to talk about next time.
+The conversation has ended. You pick what the person takes away from it. Use only what is in the transcript; never invent progress or corrections.
+- sentences: up to five of the person's messages worth keeping, best first:
+  1. "expressed": they wrote in another language (usually their own), and your next line said it in the language being learned;
+  2. "corrected": their sentence had a mistake, and your next line restated it correctly;
+  3. "as_said": a good sentence they said themselves (prefer ones without mistakes).
+  For each: message_id (the id shown before the person's message), kind, and text — the sentence to keep, in the language being learned and in the person's own voice. For "as_said", copy it from their message (one sentence of it is fine). For "corrected" and "expressed", copy it word for word from your very next line, and pick it only if that line says it in a form the person could say themselves ("He likes bread", not "Your son likes bread"). Then reading and translation.
+- try_next: one short sentence the person could say next time about this conversation's topic, of one of the answer types listed as not tried yet, with that answer_type, reading and translation. All empty, with answer_type "none", if nothing fits.
+${ANSWER_TYPE_GUIDE}
+
 Translations are in the interface language and empty in monolingual mode. For Japanese, readings are the whole sentence in kana; for English, empty.`;
 
 const option = z.object({ label: z.string(), answer: z.string(), answer_reading: z.string(), answer_translation: z.string() });
@@ -256,11 +266,12 @@ const simplifyReply = z.object({
 });
 const expressReply = z.object({ text: z.string(), reading: z.string(), translation: z.string() });
 const reviewReply = z.object({
-  phrases: z.array(z.object({
-    message_id: z.string(), source: z.enum(["you", "moira"]), text: z.string(), reading: z.string(), translation: z.string(),
+  sentences: z.array(z.object({
+    message_id: z.string(), kind: z.enum(REVIEW_SENTENCE_KINDS), text: z.string(), reading: z.string(), translation: z.string(),
   })),
-  try_next: z.object({ text: z.string(), reading: z.string(), translation: z.string() }),
-  next_idea: z.string(),
+  try_next: z.object({
+    answer_type: z.enum([...ANSWER_TYPES, "none"]), text: z.string(), reading: z.string(), translation: z.string(),
+  }),
 });
 
 // --- shaping ---------------------------------------------------------------------
@@ -435,7 +446,7 @@ function earlierBlock(request: TurnRequest): string[] {
 
 export function turnPrompt(request: TurnRequest): string {
   const parts = [...header(request), ...topicBlock(request.topic)];
-  parts.push(`Answer types already practised in this conversation, oldest first: ${request.practised.length ? request.practised.join(", ") : "none yet"}`);
+  parts.push(`Answer types the person has already answered in this conversation, oldest first: ${request.practised.length ? request.practised.join(", ") : "none yet"}`);
   parts.push(...earlierBlock(request));
   parts.push(...transcriptBlock(request.transcript, request.truncated));
   if (request.previous) parts.push(...turnSummary(request.previous));
@@ -547,34 +558,51 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
 
     review: request => call(REVIEW_SYSTEM,
       [...header(request), `Topics talked about: ${request.topics.join(", ")}`,
+        `Answer types not tried yet: ${request.untried.length ? request.untried.join(", ") : "none"}`,
         ...transcriptBlock(request.transcript, false, true)].join("\n"),
       reviewReply, raw => shapeReview(request, raw)),
   };
 }
 
+/** Width, case, spaces and punctuation set aside, to tell whether one sentence holds another. */
+export function plain(text: string): string {
+  return text.normalize("NFKC").toLowerCase().replace(/[\s。．.,，、!！?？"'「」『』]/gu, "");
+}
+
 /**
- * Keeps only phrases whose message exists and was said by whom the model
- * claims, and no more of the person's own than they actually answered.
+ * Keeps only sentences that can be pointed to: the person's own words, or —
+ * for a correction or a way of saying something — words Moira's next line
+ * actually said, so a review never makes up a correction. Expressed first,
+ * then corrected, then as said; at most five. 下次可以試 must be of a 答法
+ * not tried yet.
  */
-export function shapeReview(request: ReviewRequest, raw: z.infer<typeof reviewReply>) {
-  const said = new Map<string, "you" | "moira">();
-  for (const line of request.transcript) if (line.speaker !== "topic") said.set(line.id, line.speaker);
-  const answers = request.transcript.filter(line => line.speaker === "you").length;
-  let yours = 0;
+export function shapeReview(request: ReviewRequest, raw: z.infer<typeof reviewReply>): GeneratedReview | null {
+  const lines = request.transcript;
   const seen = new Set<string>();
-  const phrases: ReviewPhrase[] = [];
-  for (const p of raw.phrases) {
-    if (said.get(p.message_id) !== p.source) continue;
-    if (p.source === "you" && yours >= answers) continue;
-    const text = targetText(request, p.text, p.reading, p.translation);
-    if (!text || seen.has(text.text)) continue;
-    seen.add(text.text);
-    if (p.source === "you") yours++;
-    phrases.push({ text, source: p.source, messageId: p.message_id });
-    if (phrases.length === 3) break;
+  const picked: (ReviewSentence & { at: number })[] = [];
+  for (const s of raw.sentences) {
+    const at = lines.findIndex(line => line.speaker === "you" && line.id === s.message_id);
+    if (at < 0) continue;
+    const said = lines[at] as Extract<TranscriptLine, { speaker: "you" }>;
+    const text = targetText(request, s.text, s.reading, s.translation);
+    if (!text || !plain(text.text) || seen.has(plain(text.text))) continue;
+    if (s.kind === "as_said") {
+      if (!plain(said.text).includes(plain(text.text))) continue;
+    } else {
+      const next = lines.slice(at + 1).find(line => line.speaker !== "topic");
+      if (next?.speaker !== "moira" || !plain(next.text).includes(plain(text.text))) continue;
+      if (plain(said.text) === plain(text.text)) continue;
+    }
+    seen.add(plain(text.text));
+    picked.push({ text, kind: s.kind, ...(s.kind === "as_said" ? {} : { original: said.text }), messageId: said.id, at });
   }
-  const nextIdea = moira(raw.next_idea.trim());
-  if (!phrases.length && !nextIdea) return null;
-  const tryNext = targetText(request, raw.try_next.text, raw.try_next.reading, raw.try_next.translation);
-  return { phrases, ...(tryNext ? { tryNext } : {}), nextIdea };
+  const sentences = picked
+    .sort((a, b) => REVIEW_SENTENCE_KINDS.indexOf(a.kind) - REVIEW_SENTENCE_KINDS.indexOf(b.kind) || a.at - b.at)
+    .slice(0, 5)
+    .map(({ at: _at, ...sentence }) => sentence);
+  const tryType = raw.try_next.answer_type;
+  const tryText = request.untried.includes(tryType)
+    ? targetText(request, raw.try_next.text, raw.try_next.reading, raw.try_next.translation) : null;
+  if (!sentences.length && !tryText) return null;
+  return { sentences, ...(tryText ? { tryNext: { answerType: tryType, text: tryText } } : {}) };
 }

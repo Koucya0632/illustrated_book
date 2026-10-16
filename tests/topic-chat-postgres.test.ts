@@ -9,7 +9,7 @@ import { migrateCreditSchema } from "../lib/credits/schema";
 import { migrateAssistantSchema } from "../lib/assistant/schema";
 import type { AssistantUsageRecord } from "../lib/assistant/usage";
 import type { AiMessageBody, ChatState } from "../lib/topic-chat/contracts";
-import { ModelFailure, type TopicChatModel, type TurnRequest } from "../lib/topic-chat/model";
+import { ModelFailure, type ReviewRequest, type TopicChatModel, type TurnRequest } from "../lib/topic-chat/model";
 import { TOPIC_CHAT_TABLES, migrateTopicChatSchema } from "../lib/topic-chat/schema";
 import { createTopicChatHandler, type TopicChatAction } from "../lib/topic-chat/service";
 import { createTopicChatStore } from "../lib/topic-chat/store";
@@ -21,7 +21,7 @@ const usage = { inputTokens: 3000, outputTokens: 400 };
 function turn(text: string, intent: AiMessageBody["intent"] = "share"): AiMessageBody {
   return {
     intent, line: { text, translation: "t" }, awaitsAnswer: true,
-    pattern: { key: "want_to_go", template: "＿＿に行きたいです。" },
+    pattern: { key: "want_to", template: "＿＿に行きたいです。" },
     options: [], keywords: [], wordIds: [], spot: "station exit",
   };
 }
@@ -59,8 +59,7 @@ function controllableModel() {
       const you = request.transcript.find(line => line.speaker === "you");
       return {
         value: {
-          phrases: you && you.speaker === "you" ? [{ text: { text: you.text }, source: "you" as const, messageId: you.id }] : [],
-          nextIdea: "next",
+          sentences: you && you.speaker === "you" ? [{ text: { text: you.text }, kind: "as_said" as const, messageId: you.id }] : [],
         },
         usage,
       };
@@ -121,6 +120,20 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
     // Both migrations must be safe to run a second time.
     await migrateAssistantSchema(sql);
     await migrateTopicChatSchema(sql);
+
+    // A review from before 回顧 kept sentences is cleared, to be made anew; a current one stays.
+    {
+      const owner = randomUUID();
+      const [old, current] = [randomUUID(), randomUUID()];
+      await sql`INSERT INTO auth.users (id) VALUES (${owner})`;
+      await sql`INSERT INTO topic_chats (id, user_id, learning_direction, topic_id, status, created_request_id, review) VALUES
+        (${old}, ${owner}, 'zh-ja', 'street', 'ended', ${randomUUID()}, ${JSON.stringify({ phrases: [], nextIdea: "" })}::text::jsonb),
+        (${current}, ${owner}, 'zh-en', 'street', 'ended', ${randomUUID()}, ${JSON.stringify({ sentences: [], answerTypes: [] })}::text::jsonb)`;
+      await migrateTopicChatSchema(sql);
+      const rows = await sql`SELECT id, review FROM topic_chats WHERE user_id = ${owner}`;
+      assert.equal(rows.find(r => r.id === old)!.review, null);
+      assert.deepEqual(rows.find(r => r.id === current)!.review, { sentences: [], answerTypes: [] });
+    }
 
     const tables = await sql`SELECT relname, relrowsecurity FROM pg_class WHERE relname = ANY(${[...TOPIC_CHAT_TABLES]})`;
     assert.equal(tables.length, TOPIC_CHAT_TABLES.length);
@@ -368,8 +381,14 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
       const reviewed = await h.post(chat.chat.id, "end", { requestId: randomUUID(), uiLanguage: "zh-Hant", review: true });
       const review = reviewed.json.chat.review!;
       assert.deepEqual(review.topics, [{ id: "street", name: "street-name" }]);
-      assert.equal(review.phrases.length, 1);
-      assert.equal(review.phrases[0].messageId, answered.messages[2].id);
+      assert.equal(review.sentences.length, 1);
+      assert.equal(review.sentences[0].messageId, answered.messages[2].id);
+      // 練習過的答法 comes from what was stored, not from the model: the answer had the 跟著說's shape.
+      assert.deepEqual(review.answerTypes, [
+        { type: "want_to", pattern: "＿＿に行きたいです。", answer: "公園に行きたいです。", messageId: answered.messages[2].id },
+      ]);
+      const reviewCall = h.control.calls.find(c => c.kind === "review")!.request as ReviewRequest;
+      assert.ok(!reviewCall.untried.includes("want_to"));
       // An ended chat takes no more answers.
       assert.equal((await h.reply(answered, "まだ")).json.error, "chat_ended");
     });

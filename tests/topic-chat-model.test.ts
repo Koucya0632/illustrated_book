@@ -12,13 +12,13 @@ const topic: TopicMaterial = {
   words: [{ id: "station", word: "駅", reading: "えき", meaning: "車站" }, { id: "park", word: "公園", reading: "こうえん", meaning: "公園" }],
 };
 const ja = { uiLanguage: "zh-Hant", learningDirection: "zh-ja" } as const;
-const request: TurnRequest = { ...ja, topic, transcript: [], truncated: false, recentPatterns: [], task: { kind: "opening" } };
+const request: TurnRequest = { ...ja, topic, transcript: [], truncated: false, practised: [], task: { kind: "opening" } };
 
 const raw = {
   intent: "share" as const, scene: "想像散步 · モイラ 是你的同行夥伴",
   line: "駅と コンビニが 見えます。あなたは、どこに行きたいですか？", line_reading: "えきとこんびにがみえます。あなたは、どこにいきたいですか？",
   line_translation: "可以看到車站和便利商店。你想去哪裡？", awaits_answer: true,
-  pattern_key: "want_to_go" as const, pattern: "＿＿に 行きたいです。", pattern_translation: "我想去＿＿。",
+  answer_type: "want_to" as const, pattern: "＿＿に 行きたいです。", pattern_translation: "我想去＿＿。",
   example: "公園に行きたいです。", example_reading: "こうえんにいきたいです。", example_translation: "我想去公園。",
   options: [
     { label: "公園", answer: "公園に行きたいです。", answer_reading: "こうえんにいきたいです。", answer_translation: "我想去公園。" },
@@ -49,7 +49,7 @@ test("a turn is cleaned before it is shown", () => {
 
 test("a pattern without a blank is no pattern; an empty line is no turn", () => {
   assert.equal(shapeTurn(request, { ...raw, pattern: "公園に行きたいです。" })!.pattern, undefined);
-  assert.equal(shapeTurn(request, { ...raw, pattern_key: "none" })!.pattern, undefined);
+  assert.equal(shapeTurn(request, { ...raw, answer_type: "none" })!.pattern, undefined);
   assert.equal(shapeTurn(request, { ...raw, line: "  " }), null);
   // Only an opening is called one.
   assert.equal(shapeTurn({ ...request, task: { kind: "another" } }, { ...raw, intent: "opening" })!.intent, "share");

@@ -22,7 +22,7 @@ import {
   type AiMessageBody, type ChatMessage, type ChatOffer, type ChatState, type ChatSummary,
   type LearningDirection, type RequestKind, type TopicChatErrorCode, type UiLanguage, type UserMessageBody,
 } from "./contracts";
-import { ModelFailure, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
+import { ANSWER_TYPES, ModelFailure, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
 import type { ChatRow, MessageRow, RequestRow, TopicChatStore } from "./store";
 
 export const TOPIC_CHAT_PRICING = {
@@ -132,13 +132,14 @@ export function pickWords(words: TopicWord[], messages: MessageRow[], limit = PR
   return [...first, ...words.filter(word => !recent.has(word.id))].slice(0, limit);
 }
 
-function recentPatterns(messages: MessageRow[]): string[] {
-  const keys: string[] = [];
-  for (const m of messages.slice(-8)) {
+/** The answer types practised so far, oldest first. Names from before 答法 are left out. */
+function practised(messages: MessageRow[]): string[] {
+  const types: string[] = [];
+  for (const m of messages) {
     const key = m.kind === "ai" ? (m.body as unknown as AiMessageBody).pattern?.key : undefined;
-    if (key && !keys.includes(key)) keys.push(key);
+    if (key && (ANSWER_TYPES as readonly string[]).includes(key) && !types.includes(key)) types.push(key);
   }
-  return keys;
+  return types;
 }
 
 export function createTopicChatHandler(deps: TopicChatDependencies) {
@@ -285,7 +286,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         topic: { ...topic, words: pickWords(topic.words, messages) },
         transcript: lines, truncated,
         ...(previous ? { previous: previous.body as unknown as AiMessageBody } : {}),
-        recentPatterns: recentPatterns(messages),
+        practised: practised(messages),
         task: task.kind === "opening" && switchedFrom ? { kind: "opening", switchedFrom } : task,
       });
     } catch (error) {

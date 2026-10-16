@@ -21,6 +21,12 @@ const SCRIPTS: Array<{ ui: UiLanguage; direction: LearningDirection; topic: stri
   { ui: "zh-Hant", direction: "zh-en", topic: "street", answers: ["I'd like to go to the park.", "bookstore", "What about you?"] },
   { ui: "ja", direction: "zh-ja", topic: "kitchen", answers: ["カレーを作りたいです。", "?another", "鍋です。"] },
   { ui: "en", direction: "zh-en", topic: "supermarket", answers: ["apples", "Because they are sweet."] },
+  // The 跟著說 must answer the question just asked: a sweet-or-dry question after 「＿＿が好きです」 was shown.
+  { ui: "zh-Hant", direction: "zh-ja", topic: "alcoholic-drinks", answers: ["梅酒が好きです。", "甘いです。", "週末に飲みます。", "ビールも好きです。"] },
+  // Choosing between two things, then when and how often.
+  { ui: "zh-Hant", direction: "zh-en", topic: "fruits", answers: ["apples", "sweet ones", "every day", "I had a mango yesterday."] },
+  // A run of answers of the same kind, to see repetition come from the questions.
+  { ui: "zh-Hant", direction: "zh-ja", topic: "convenience-store", answers: ["おにぎりを買いたいです。", "お茶。", "サンドイッチも買いたいです。", "あなたは？"] },
 ];
 
 async function topicOf(ui: UiLanguage, direction: LearningDirection, id: string): Promise<TopicMaterial> {
@@ -45,7 +51,7 @@ async function main() {
       const { value, usage } = await model.turn({
         uiLanguage: script.ui, learningDirection: script.direction, topic, transcript, truncated: false,
         ...(previous ? { previous } : {}),
-        recentPatterns: turns.flatMap(t => t.moira.pattern?.key ?? []), task,
+        practised: [...new Set(turns.flatMap(t => t.moira.pattern?.key ?? []))], task,
       });
       if (task.kind === "reply") transcript.push({ speaker: "you", id: `u${turns.length}`, text: task.answer, support: [] });
       transcript.push({ speaker: "moira", id: `m${turns.length}`, text: value.line.text });

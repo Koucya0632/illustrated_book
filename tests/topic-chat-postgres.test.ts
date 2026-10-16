@@ -22,7 +22,7 @@ function turn(text: string, intent: AiMessageBody["intent"] = "share"): AiMessag
   return {
     intent, line: { text, translation: "t" }, awaitsAnswer: true,
     pattern: { key: "want_to_go", template: "＿＿に行きたいです。" },
-    options: [], keywords: [], wordIds: [],
+    options: [], keywords: [], wordIds: [], spot: "station exit",
   };
 }
 
@@ -190,6 +190,11 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
       assert.equal(sent.status, 200);
       assert.deepEqual(sent.json.messages.map(m => m.kind), ["topic", "ai", "user", "ai"]);
       assert.equal(sent.json.messages[3].ai!.line.text, "re:コンビニに行きたいです。");
+      // Where in the scene a turn was is the server's to count, not the app's to see.
+      assert.ok(sent.json.messages.every(m => !m.ai || !("spot" in m.ai)));
+      const replyCall = h.control.calls.find(c => c.kind === "reply")!.request as TurnRequest;
+      assert.deepEqual(replyCall.spotRun, { spot: "station exit", turns: 1 });
+      assert.equal(replyCall.earlier.length, 1);
       assert.ok((sent.json.charged as number) >= 1);
       assert.equal(sent.json.chat.answers, 1);
       // The network dropped the answer; the app sends the same request twice more.

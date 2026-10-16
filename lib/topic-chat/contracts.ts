@@ -88,9 +88,9 @@ export interface TargetText {
 }
 
 /**
- * 「跟著說」: the reusable structure behind this turn. `key` is a fixed
- * internal name (see `PATTERN_KEYS`), so the same structure is recognised
- * across turns and topics however the model words it.
+ * 「跟著說」: how the person answers this turn's question. `key` is the
+ * question's 答法 (see `ANSWER_TYPES`), so the same kind of answer is
+ * recognised across turns and topics however the model words it.
  */
 export interface ChatPattern {
   key: string;
@@ -133,6 +133,8 @@ export interface AiMessageBody {
   wordIds: string[];
   /** 「簡單一點」: the same question again, easier, added under the turn. */
   simpler?: { note: string; line?: TargetText; options: ChatOption[] };
+  /** Server only, never sent: which part of the imagined scene the turn is in ("bakery section"). */
+  spot?: string;
 }
 
 export interface UserMessageBody {

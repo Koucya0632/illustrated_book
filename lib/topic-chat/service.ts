@@ -22,7 +22,7 @@ import {
   type AiMessageBody, type ChatMessage, type ChatOffer, type ChatState, type ChatSummary,
   type LearningDirection, type RequestKind, type TopicChatErrorCode, type UiLanguage, type UserMessageBody,
 } from "./contracts";
-import { ModelFailure, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
+import { ANSWER_TYPES, ModelFailure, type EarlierTurn, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
 import type { ChatRow, MessageRow, RequestRow, TopicChatStore } from "./store";
 
 export const TOPIC_CHAT_PRICING = {
@@ -90,9 +90,14 @@ function directionOf(request: Request): LearningDirection {
 }
 
 function toMessage(row: MessageRow): ChatMessage {
+  let body = row.body;
+  if (row.kind === "ai" && "spot" in body) {
+    const { spot: _spot, ...shown } = body;
+    body = shown;
+  }
   return {
     id: row.id, kind: row.kind, topicId: row.topicId, topicVersion: row.topicVersion,
-    createdAt: row.createdAt.toISOString(), [row.kind]: row.body,
+    createdAt: row.createdAt.toISOString(), [row.kind]: body,
   } as ChatMessage;
 }
 
@@ -132,13 +137,47 @@ export function pickWords(words: TopicWord[], messages: MessageRow[], limit = PR
   return [...first, ...words.filter(word => !recent.has(word.id))].slice(0, limit);
 }
 
-function recentPatterns(messages: MessageRow[]): string[] {
-  const keys: string[] = [];
-  for (const m of messages.slice(-8)) {
+/** The answer types practised so far, oldest first. Names from before 答法 are left out. */
+function practised(messages: MessageRow[]): string[] {
+  const types: string[] = [];
+  for (const m of messages) {
     const key = m.kind === "ai" ? (m.body as unknown as AiMessageBody).pattern?.key : undefined;
-    if (key && !keys.includes(key)) keys.push(key);
+    if (key && (ANSWER_TYPES as readonly string[]).includes(key) && !types.includes(key)) types.push(key);
   }
-  return keys;
+  return types;
+}
+
+/** How many of Moira's earlier turns a turn's prompt carries. */
+const EARLIER_LIMIT = 30;
+
+/**
+ * Moira's turns in the current topic, oldest first, so a long chat neither
+ * asks again what was answered nor has her say the same about herself.
+ */
+export function earlierTurns(messages: MessageRow[], topicVersion: number, limit = EARLIER_LIMIT): EarlierTurn[] {
+  const earlier: EarlierTurn[] = [];
+  for (const m of messages) {
+    if (m.kind !== "ai" || m.topicVersion !== topicVersion) continue;
+    const body = m.body as unknown as AiMessageBody;
+    earlier.push({ id: m.id, type: body.awaitsAnswer ? body.pattern?.key ?? "none" : null, line: body.line.text });
+  }
+  return earlier.slice(-limit);
+}
+
+/** The part of the scene the latest turns in this topic share, and how many in a row do. */
+export function spotRun(messages: MessageRow[], topicVersion: number): { spot: string; turns: number } | undefined {
+  let spot: string | undefined;
+  let turns = 0;
+  for (let i = messages.length - 1; i >= 0; i--) {
+    const m = messages[i];
+    if (m.topicVersion !== topicVersion) break;
+    if (m.kind !== "ai") continue;
+    const s = (m.body as unknown as AiMessageBody).spot;
+    if (!s || (spot !== undefined && s !== spot)) break;
+    spot = s;
+    turns++;
+  }
+  return spot ? { spot, turns } : undefined;
 }
 
 export function createTopicChatHandler(deps: TopicChatDependencies) {
@@ -276,7 +315,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
     let generated;
     try {
       const topic = await topicOrThrow(chat.topicId, uiLanguage, chat.learningDirection);
-      const messages = await s.store.messages(chat.id, PROMPT_LINES * 2);
+      const messages = await s.store.messages(chat.id, STATE_MESSAGES);
       const { lines, truncated } = transcript(messages, PROMPT_LINES);
       const previous = latestAi(messages, chat.topicVersion);
       const switchedFrom = task.kind === "opening" ? previousTopicName(messages, chat.topicVersion) : undefined;
@@ -285,7 +324,9 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         topic: { ...topic, words: pickWords(topic.words, messages) },
         transcript: lines, truncated,
         ...(previous ? { previous: previous.body as unknown as AiMessageBody } : {}),
-        recentPatterns: recentPatterns(messages),
+        practised: practised(messages),
+        earlier: earlierTurns(messages, chat.topicVersion),
+        ...(spotRun(messages, chat.topicVersion) ? { spotRun: spotRun(messages, chat.topicVersion) } : {}),
         task: task.kind === "opening" && switchedFrom ? { kind: "opening", switchedFrom } : task,
       });
     } catch (error) {

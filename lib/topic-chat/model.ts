@@ -89,14 +89,21 @@ export interface TurnRequest {
   previous?: AiMessageBody;
   /** Answer types of this conversation's patterns so far, oldest first, each once. */
   practised: string[];
-  /** Moira's questions in this topic, oldest first — further back than `transcript` reaches. */
-  asked: AskedQuestion[];
+  /** Moira's turns in this topic, oldest first — further back than `transcript` reaches. */
+  earlier: EarlierTurn[];
+  /** The part of the scene the latest turns are in, and for how many turns in a row. */
+  spotRun?: { spot: string; turns: number };
   task: TurnTask;
 }
 
-/** One of Moira's earlier turns that asked something, with the answer type its pattern took ("none" without one). */
-export interface AskedQuestion {
-  type: string;
+/**
+ * One of Moira's earlier turns in this topic: what she said, and the answer
+ * type its pattern took — "none" for a question without one, null when she
+ * asked nothing.
+ */
+export interface EarlierTurn {
+  id: string;
+  type: string | null;
   line: string;
 }
 
@@ -104,6 +111,8 @@ export interface AskedQuestion {
 const DEEPER_TYPES = ["reason", "experience", "plan", "who", "when", "how_often", "describe", "choose_one"] as const;
 /** How many questions of one answer type may come in a row. */
 const SAME_TYPE_RUN = 2;
+/** How many turns may stay in one part of the scene before Moira is told to move on. */
+const SPOT_RUN = 5;
 
 export interface SimplifyRequest {
   uiLanguage: UiLanguage;
@@ -154,11 +163,13 @@ How each turn works:
 - First respond to what the person actually said, then move one small step forward. Only build on what they said: buying bread in the morning does not mean bread is their breakfast. If they disagree with you or say no, accept it and go along with them.
 - Decide your question first, then the 跟著說 (pattern) is how the person answers *that* question, in their voice, with its verb and form: 何を使いますか → ＿＿を使います; お茶はどこにありますか → ＿＿にあります; 甘いですか、辛いですか → ＿＿です. It is never the question itself, and never a pattern from an earlier turn that this question does not take. Ask at most one easy question — or, after answering their question, simply leave room to talk, with no pattern.
 - Give at most one pattern and at most three options; every option is an answer to your question. Practice comes from the questions: when it fits the conversation, ask a next question of the same answer type as a recent turn, so the same pattern answers it again — but not more than twice in a row; when the conversation goes elsewhere, follow it and let the pattern change.
-- Never ask again what the person already answered (your earlier questions are listed for you); build on their answer instead. A conversation goes deeper, not only sideways: after naming things, ask why, whether they have done it before, who with, when, or what they will do — not one more "what … ?" about the next thing.
+- Never ask again what the person already answered (your earlier lines are listed for you); build on their answer instead. A conversation goes deeper, not only sideways: after naming things, ask why, whether they have done it before, who with, when, or what they will do — not one more "what … ?" about the next thing.
 - The first time an answer type comes up in this conversation (it is not among those already practised), show your own answer to your question in your line before you ask it ("Moiraは甘いお酒が好きです。あなたは…"). When it was already practised, just ask — do not open every turn with "I … . And you?".
 - A yes/no question, or one whose answers would need different shapes, has no pattern: give whole sentences as options instead.
 - If they answer with one word, take it up naturally; the example gives the whole sentence, and you never make them repeat it. If they write in another language, understand it, give the way to say it, and carry on. If they say they don't know how to say something, keep the same question and make it easier. If they twice say they don't want to talk about something, change the angle and offer two new directions.
 - If they ask you something, answer it fully first.
+- You have a few tastes of your own. Once you have said one, it stays true for the rest of the chat (if you said you like highballs, you still do) and you don't say it again; share something new about yourself only now and then, not every turn. When the person asks whether you like what they like, sometimes you do and sometimes you prefer something else — say which, kindly, in the language being learned (Moiraは紅茶よりコーヒーが好きです / Moira likes coffee more than tea). Don't keep answering "me too", and don't make every share a comparison.
+- The imagined scene moves: stay a few turns in one part of it (one shelf, one dish), then go on to another part of the topic — the next section, the next step, a related moment — and bring in topic words not used yet.
 - Correct only by naturally restating a better version; explain grammar only when asked. Never mark answers wrong, grade, or demand a retry.
 - Stay near the topic, letting the chat drift to related everyday life. Use the topic's dictionary words where they fit; never pretend a word outside the list is one of them.
 
@@ -187,7 +198,8 @@ ${ANSWER_TYPE_GUIDE}
 - example / example_reading / example_translation: one whole answer the person could send now, in their role.
 - options: up to three, each with label, answer, answer_reading, answer_translation.
 - keywords: up to three useful words for answering, each with text, reading, meaning (in the interface language) and word_id (an id from the topic words, or empty).
-- word_ids: ids of topic words your line or options use, to show as pictures. Only ids from the list.`;
+- word_ids: ids of topic words your line or options use, to show as pictures. Only ids from the list.
+- spot: one or two English words naming the broad part of the topic this turn is in — a section of the place, an occasion or a sub-topic, not the item or seat in it ("bakery", "checkout", "park", "ordering", "toasting"). Keep exactly the same words while you stay in that part.`;
 
 const PERSON_RULES = `When you write a sentence for the person to say (an example, an option, a rewritten answer), it is in their role and their voice — not yours.`;
 
@@ -237,6 +249,7 @@ const turnReply = z.object({
   options: z.array(option),
   keywords: z.array(z.object({ text: z.string(), reading: z.string(), meaning: z.string(), word_id: z.string() })),
   word_ids: z.array(z.string()),
+  spot: z.string(),
 });
 const simplifyReply = z.object({
   note: z.string(), line: z.string(), line_reading: z.string(), line_translation: z.string(), options: z.array(option),
@@ -299,6 +312,11 @@ export function shapeOptions(lang: Lang, raw: z.infer<typeof option>[]): ChatOpt
   }).slice(0, 3);
 }
 
+/** A spot label as it is compared from turn to turn. */
+export function spotOf(raw: string): string {
+  return raw.trim().toLowerCase().replace(/^(?:the|a|an)\s+/u, "").replace(/\s+/gu, " ").slice(0, 40);
+}
+
 /** A turn as the app gets it, or null when there is nothing to show. */
 export function shapeTurn(request: Pick<TurnRequest, "uiLanguage" | "learningDirection" | "topic" | "task">,
   raw: z.infer<typeof turnReply>): AiMessageBody | null {
@@ -338,6 +356,7 @@ export function shapeTurn(request: Pick<TurnRequest, "uiLanguage" | "learningDir
     options: shapeOptions(request, raw.options),
     keywords,
     wordIds: [...new Set([...raw.word_ids, ...keywords.flatMap(k => k.wordId ?? [])])].filter(id => known.has(id)).slice(0, 4),
+    ...(spotOf(raw.spot) ? { spot: spotOf(raw.spot) } : {}),
   };
 }
 
@@ -389,19 +408,27 @@ function turnSummary(turn: AiMessageBody): string[] {
   ];
 }
 
-/** Your questions so far, and a nudge when one answer type has run as long as it may. */
-function askedBlock(asked: AskedQuestion[]): string[] {
-  if (!asked.length) return [];
-  const parts = [
-    "<questions_you_already_asked>",
-    ...asked.map(q => `- (${q.type}) ${q.line}`),
-    "</questions_you_already_asked>",
-  ];
+/**
+ * Your lines from before what the conversation shows, and nudges when one
+ * answer type, or one part of the scene, has run as long as it may.
+ */
+function earlierBlock(request: TurnRequest): string[] {
+  const shown = new Set(request.transcript.flatMap(line => line.speaker === "moira" ? [line.id] : []));
+  const older = request.earlier.filter(turn => !shown.has(turn.id));
+  const parts = older.length ? [
+    "<your_earlier_lines>",
+    ...older.map(turn => `- ${turn.type === null ? "[said]" : `[asked, answer type ${turn.type}]`} ${turn.line}`),
+    "</your_earlier_lines>",
+  ] : [];
+  const asked = request.earlier.filter((turn): turn is EarlierTurn & { type: string } => turn.type !== null);
   const run = asked.slice(-SAME_TYPE_RUN).map(q => q.type);
   if (run.length === SAME_TYPE_RUN && run[0] !== "none" && run.every(t => t === run[0])) {
     const used = new Set(asked.map(q => q.type));
     const fresh = DEEPER_TYPES.filter(t => !used.has(t));
     parts.push(`Your last ${SAME_TYPE_RUN} questions were both "${run[0]}". This turn, ask a different kind of question, going deeper into what the person said${fresh.length ? ` (not asked yet: ${fresh.join(", ")})` : ""}.`);
+  }
+  if (request.spotRun && request.spotRun.turns >= SPOT_RUN) {
+    parts.push(`You have been at "${request.spotRun.spot}" for ${request.spotRun.turns} turns. This turn, after responding to the person, move the scene on to another part of the topic.`);
   }
   return parts;
 }
@@ -409,7 +436,7 @@ function askedBlock(asked: AskedQuestion[]): string[] {
 export function turnPrompt(request: TurnRequest): string {
   const parts = [...header(request), ...topicBlock(request.topic)];
   parts.push(`Answer types already practised in this conversation, oldest first: ${request.practised.length ? request.practised.join(", ") : "none yet"}`);
-  parts.push(...askedBlock(request.asked));
+  parts.push(...earlierBlock(request));
   parts.push(...transcriptBlock(request.transcript, request.truncated));
   if (request.previous) parts.push(...turnSummary(request.previous));
   const task = request.task;
@@ -466,16 +493,19 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
     system: string, prompt: string, schema: S, shape: (parsed: z.infer<S>) => T | null,
   ): Promise<Generated<T>> {
     let usage: AssistantUsage = { inputTokens: 0, outputTokens: 0 };
+    const format = zodOutputFormat(schema);
     for (let attempt = 0; attempt < 2; attempt++) {
       let response;
       try {
-        response = await client.messages.parse({
+        // Not `parse`: a reply off the schema (an answer type not in the list has
+        // been seen) would throw there and lose its tokens; here it is one more try.
+        response = await client.messages.create({
           model: ASSISTANT_MODEL,
           // Thinking counts toward this cap; a turn is a few short sentences.
           max_tokens: 3072,
           // The rules are the same for every turn; caching them is most of a turn's input.
           system: [{ type: "text", text: system, cache_control: { type: "ephemeral" } }],
-          output_config: { effort: "low", format: zodOutputFormat(schema) },
+          output_config: { effort: "low", format },
           messages: [{ role: "user", content: prompt }],
         });
       } catch (error) {
@@ -485,7 +515,13 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
       }
       usage = addUsage(usage, usageOf(response));
       if (response.stop_reason === "refusal") break;
-      const parsed = response.parsed_output as z.infer<S> | null;
+      const text = response.content.flatMap(block => block.type === "text" ? [block.text] : []).join("");
+      let parsed: z.infer<S> | null = null;
+      try {
+        parsed = format.parse(text);
+      } catch {
+        // Off the schema: asked for once more below.
+      }
       const value = parsed ? shape(parsed) : null;
       if (value !== null) return { value, usage };
     }

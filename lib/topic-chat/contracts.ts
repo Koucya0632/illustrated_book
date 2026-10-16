@@ -133,6 +133,8 @@ export interface AiMessageBody {
   wordIds: string[];
   /** 「簡單一點」: the same question again, easier, added under the turn. */
   simpler?: { note: string; line?: TargetText; options: ChatOption[] };
+  /** Server only, never sent: which part of the imagined scene the turn is in ("bakery section"). */
+  spot?: string;
 }
 
 export interface UserMessageBody {

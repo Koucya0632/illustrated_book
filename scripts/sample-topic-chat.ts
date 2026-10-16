@@ -52,7 +52,7 @@ async function main() {
         uiLanguage: script.ui, learningDirection: script.direction, topic, transcript, truncated: false,
         ...(previous ? { previous } : {}),
         practised: [...new Set(turns.flatMap(t => t.moira.pattern?.key ?? []))],
-        asked: turns.filter(t => t.moira.awaitsAnswer).map(t => ({ type: t.moira.pattern?.key ?? "none", line: t.moira.line.text })),
+        earlier: turns.map((t, i) => ({ id: `m${i}`, type: t.moira.awaitsAnswer ? t.moira.pattern?.key ?? "none" : null, line: t.moira.line.text })),
         task,
       });
       if (task.kind === "reply") transcript.push({ speaker: "you", id: `u${turns.length}`, text: task.answer, support: [] });

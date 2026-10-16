@@ -22,7 +22,7 @@ import {
   type AiMessageBody, type ChatMessage, type ChatOffer, type ChatState, type ChatSummary,
   type LearningDirection, type RequestKind, type TopicChatErrorCode, type UiLanguage, type UserMessageBody,
 } from "./contracts";
-import { ANSWER_TYPES, ModelFailure, type AskedQuestion, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
+import { ANSWER_TYPES, ModelFailure, type EarlierTurn, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
 import type { ChatRow, MessageRow, RequestRow, TopicChatStore } from "./store";
 
 export const TOPIC_CHAT_PRICING = {
@@ -90,9 +90,14 @@ function directionOf(request: Request): LearningDirection {
 }
 
 function toMessage(row: MessageRow): ChatMessage {
+  let body = row.body;
+  if (row.kind === "ai" && "spot" in body) {
+    const { spot: _spot, ...shown } = body;
+    body = shown;
+  }
   return {
     id: row.id, kind: row.kind, topicId: row.topicId, topicVersion: row.topicVersion,
-    createdAt: row.createdAt.toISOString(), [row.kind]: row.body,
+    createdAt: row.createdAt.toISOString(), [row.kind]: body,
   } as ChatMessage;
 }
 
@@ -142,19 +147,37 @@ function practised(messages: MessageRow[]): string[] {
   return types;
 }
 
-/** How many of Moira's earlier questions a turn's prompt lists. */
-const ASKED_LIMIT = 30;
+/** How many of Moira's earlier turns a turn's prompt carries. */
+const EARLIER_LIMIT = 30;
 
-/** Moira's questions in the current topic, oldest first, so a long chat does not ask them again. */
-export function askedQuestions(messages: MessageRow[], topicVersion: number, limit = ASKED_LIMIT): AskedQuestion[] {
-  const asked: AskedQuestion[] = [];
+/**
+ * Moira's turns in the current topic, oldest first, so a long chat neither
+ * asks again what was answered nor has her say the same about herself.
+ */
+export function earlierTurns(messages: MessageRow[], topicVersion: number, limit = EARLIER_LIMIT): EarlierTurn[] {
+  const earlier: EarlierTurn[] = [];
   for (const m of messages) {
     if (m.kind !== "ai" || m.topicVersion !== topicVersion) continue;
     const body = m.body as unknown as AiMessageBody;
-    if (!body.awaitsAnswer) continue;
-    asked.push({ type: body.pattern?.key ?? "none", line: body.line.text });
+    earlier.push({ id: m.id, type: body.awaitsAnswer ? body.pattern?.key ?? "none" : null, line: body.line.text });
   }
-  return asked.slice(-limit);
+  return earlier.slice(-limit);
+}
+
+/** The part of the scene the latest turns in this topic share, and how many in a row do. */
+export function spotRun(messages: MessageRow[], topicVersion: number): { spot: string; turns: number } | undefined {
+  let spot: string | undefined;
+  let turns = 0;
+  for (let i = messages.length - 1; i >= 0; i--) {
+    const m = messages[i];
+    if (m.topicVersion !== topicVersion) break;
+    if (m.kind !== "ai") continue;
+    const s = (m.body as unknown as AiMessageBody).spot;
+    if (!s || (spot !== undefined && s !== spot)) break;
+    spot = s;
+    turns++;
+  }
+  return spot ? { spot, turns } : undefined;
 }
 
 export function createTopicChatHandler(deps: TopicChatDependencies) {
@@ -302,7 +325,8 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         transcript: lines, truncated,
         ...(previous ? { previous: previous.body as unknown as AiMessageBody } : {}),
         practised: practised(messages),
-        asked: askedQuestions(messages, chat.topicVersion),
+        earlier: earlierTurns(messages, chat.topicVersion),
+        ...(spotRun(messages, chat.topicVersion) ? { spotRun: spotRun(messages, chat.topicVersion) } : {}),
         task: task.kind === "opening" && switchedFrom ? { kind: "opening", switchedFrom } : task,
       });
     } catch (error) {

@@ -26,6 +26,7 @@ import { migrateCreditSchema } from "../lib/credits/schema";
 import { migrateAiOperationsSchema } from "../lib/ai-operations/schema";
 import { migrateAssistantSchema } from "../lib/assistant/schema";
 import { migrateVocabularySchema } from "../lib/assistant/vocabulary/schema";
+import { migrateGrammarSchema } from "../lib/assistant/grammar/schema";
 import { migrateTopicChatSchema } from "../lib/topic-chat/schema";
 
 const GUARDED_PUBLISH_SERIES = [
@@ -2910,6 +2911,7 @@ async function main() {
     await migrateAssistantSchema(sql);
     await migrateTopicChatSchema(sql);
     await migrateVocabularySchema(sql);
+    await migrateGrammarSchema(sql);
     // Before any content guard can fail the deploy — see lib/rls-lockdown.ts.
     const lockedEarly = await lockDownPublicTables(sql);
     console.log(`[migrate] RLS lockdown: ${lockedEarly.length} table(s) fixed${lockedEarly.length ? ` (${lockedEarly.join(", ")})` : ""}.`);

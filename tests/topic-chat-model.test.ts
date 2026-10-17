@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type Anthropic from "@anthropic-ai/sdk";
 import {
-  cleanPattern, createTopicChatModel, fromMoira, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
+  cleanPattern, createTopicChatModel, fromMoira, inOtherLanguage, isMonolingual, shapeReview, shapeTurn, targetText, turnPrompt,
   type TopicMaterial, type TurnRequest,
 } from "../lib/topic-chat/model";
 import { earlierTurns, pickWords, spotRun } from "../lib/topic-chat/service";
@@ -183,6 +183,61 @@ test("two unusable replies are a failure that still reports what was spent", asy
   }) } } as unknown as Anthropic;
   await assert.rejects(createTopicChatModel(client).turn(request), (error: { code: string; usage: { inputTokens: number } }) =>
     error.code === "assistant_unavailable" && error.usage.inputTokens === 200);
+});
+
+const english = {
+  ...raw, line_translation: "I can see the station and a convenience store. Where do you want to go?",
+  options: raw.options.map(o => ({ ...o, answer_translation: "I want to go there." })),
+};
+
+test("a translation counts as another language only when it has letters and none of the interface's", () => {
+  assert.equal(inOtherLanguage("zh-Hant", "You put in honey? Sweet, nice."), true);
+  assert.equal(inOtherLanguage("zh-Hant", "你用醬油呢，很好。Moira喜歡甜的酒。"), false);
+  assert.equal(inOtherLanguage("zh-Hans", "OK，好的。"), false);
+  assert.equal(inOtherLanguage("zh-Hant", "Moira！"), false);
+  assert.equal(inOtherLanguage("zh-Hant", "……"), false);
+  assert.equal(inOtherLanguage("ja", "Because I like sweet things."), true);
+  assert.equal(inOtherLanguage("ja", "甘いものが好きだから。"), false);
+  assert.equal(inOtherLanguage("en", "我想去公園。"), true);
+  assert.equal(inOtherLanguage("en", "I want to go to the park."), false);
+});
+
+test("a reply translated into another language is asked for once more", async () => {
+  let calls = 0;
+  const client = { messages: { create: async () => {
+    calls++;
+    return { stop_reason: "end_turn", usage: { input_tokens: 100, output_tokens: 10 },
+      content: [{ type: "text", text: JSON.stringify(calls === 1 ? english : raw) }] };
+  } } } as unknown as Anthropic;
+  const generated = await createTopicChatModel(client).turn(request);
+  assert.equal(calls, 2);
+  assert.equal(generated.usage.inputTokens, 200);
+  assert.equal(generated.value.line.translation, "可以看到車站和便利商店。你想去哪裡？");
+});
+
+test("still in another language the second time, the turn is shown without those translations", async () => {
+  let calls = 0;
+  const client = { messages: { create: async () => {
+    calls++;
+    return { stop_reason: "end_turn", usage: { input_tokens: 100, output_tokens: 10 },
+      content: [{ type: "text", text: JSON.stringify(english) }] };
+  } } } as unknown as Anthropic;
+  const generated = await createTopicChatModel(client).turn(request);
+  assert.equal(calls, 2);
+  assert.equal(generated.value.line.translation, undefined);
+  assert.ok(generated.value.options.every(o => o.answer.translation === undefined));
+  assert.equal(generated.value.pattern?.translation, "我想去＿＿。");
+});
+
+test("monolingual mode never asks again over the language of a translation", async () => {
+  let calls = 0;
+  const client = { messages: { create: async () => {
+    calls++;
+    return { stop_reason: "end_turn", usage: { input_tokens: 100, output_tokens: 10 },
+      content: [{ type: "text", text: JSON.stringify(english) }] };
+  } } } as unknown as Anthropic;
+  await createTopicChatModel(client).turn({ ...request, uiLanguage: "ja" });
+  assert.equal(calls, 1);
 });
 
 test("a pattern loses an answer-type name in front of it and must have exactly one blank", () => {

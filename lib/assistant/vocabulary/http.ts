@@ -19,7 +19,8 @@ export interface VocabularyDependencies {
 export type VocabularyAction = "offer" | "generate" | "list" | "read" | "favorite" | "delete";
 const headers = { "Cache-Control": "private, no-store", "Vary": "Authorization, Cookie" };
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers });
-const scopeSchema = z.object({ uiLanguage: z.enum(["zh-Hant", "zh-Hans", "ja", "en"]), learningDirection: z.enum(["zh-en", "zh-ja"]) });
+// History is per learning direction only: a card keeps the language it was explained in.
+const scopeSchema = z.object({ learningDirection: z.enum(["zh-en", "zh-ja"]) });
 const uuid = z.string().uuid();
 
 export function createVocabularyHandler(deps: VocabularyDependencies) {
@@ -38,10 +39,18 @@ export function createVocabularyHandler(deps: VocabularyDependencies) {
       const store = deps.store();
       const enabled = config.mode === "live" && deps.enabled();
       if (action === "offer") {
-        let available = 0, eligible = false;
-        try { const balance = await deps.balance(account); available = balance.available; eligible = !balance.reconciliationRequired; }
-        catch (error) { if (!(error instanceof CreditError) || error.code !== "credits_not_enrolled") throw error; }
-        return json({ enabled: enabled && eligible, available, pricingVersion: VOCABULARY_VERSION,
+        // Why generation is closed decides what the person is told: switched off for everyone,
+        // or a member feature they could join. Off wins, so nobody is sold a closed feature.
+        let available = 0, reason: "disabled" | "membership" | null = enabled ? null : "disabled";
+        try {
+          const balance = await deps.balance(account);
+          available = balance.available;
+          if (balance.reconciliationRequired) reason ??= "disabled";
+        } catch (error) {
+          if (!(error instanceof CreditError) || error.code !== "credits_not_enrolled") throw error;
+          reason ??= "membership";
+        }
+        return json({ enabled: reason === null, reason, available, pricingVersion: VOCABULARY_VERSION,
           modes: modes.map(mode => ({ mode, ...PRICES[mode] })) });
       }
       // Saved purchases remain readable when new generation is disabled or membership ends.

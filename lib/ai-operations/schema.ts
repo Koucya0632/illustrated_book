@@ -1,15 +1,11 @@
 import type postgres from "postgres";
+import { onlyIf } from "../ddl";
 
 export const AI_OPERATION_TABLES = ["ai_quotes", "ai_operations", "ai_operation_attempts", "atlas_capacity_reservations", "ai_fulfillments", "ai_fulfillment_attempts", "credit_image_uploads"] as const;
 
 const FULFILLMENT_STATES = ["unclaimed", "pending", "running", "reconciling", "completed", "compensated", "superseded"];
 
 // ALTER TABLE takes an exclusive lock even when it ends up changing nothing.
-// Every deploy runs this, and with live requests reading these tables it
-// deadlocked a production migrate (2026-10-16) — so only alter what needs it.
-function onlyIf(condition: string, ...statements: string[]): string {
-  return `DO $$ BEGIN IF ${condition} THEN ${statements.map(s => s + ";").join(" ")} END IF; END $$`;
-}
 export const AI_OPERATION_DDL = [
   `CREATE TABLE IF NOT EXISTS ai_quotes (
     id UUID PRIMARY KEY,

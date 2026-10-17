@@ -6,7 +6,7 @@ export interface AssistantUsageRecord {
   account: CreditAccount;
   requestId: string;
   /** Which paid step produced it. Absent means 問 AI, the first one. */
-  feature?: "ask" | "story" | "chat";
+  feature?: "ask" | "story" | "chat" | "vocabulary";
   /** The step's price list. Absent means 問 AI's. */
   pricingVersion?: string;
   /** Whether the result was chargeable: an in-scope answer, a delivered story. */
@@ -17,7 +17,7 @@ export interface AssistantUsageRecord {
 }
 
 /** Writes one `assistant_usage` row. The model, the price list and the cost are stamped here. */
-export function createAssistantUsageLog(sql: postgres.Sql, clock: () => Date = () => new Date()) {
+export function createAssistantUsageLog(sql: postgres.Sql | postgres.TransactionSql, clock: () => Date = () => new Date()) {
   return async (record: AssistantUsageRecord): Promise<void> => {
     const { usage } = record;
     await sql`INSERT INTO assistant_usage

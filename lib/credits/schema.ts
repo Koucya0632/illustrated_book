@@ -1,4 +1,5 @@
 import type postgres from "postgres";
+import { onlyIf } from "../ddl";
 
 /** Additive DDL; no client policies. Only the server database role may write. */
 export const CREDIT_TABLES = [
@@ -131,6 +132,12 @@ export const CREDIT_DDL = [
     FOREIGN KEY (user_id, environment) REFERENCES credit_accounts ON DELETE CASCADE,
     FOREIGN KEY (lot_id, user_id, environment) REFERENCES credit_lots(id, user_id, environment)
   )`,
+  // Account deletion cascades through lots and reservations in the same transaction.
+  // Check their cross-links at commit, after both cascades, while still rejecting orphans.
+  ...[["credit_operation_allocations", "credit_operation_allocations_lot_id_user_id_environment_fkey"],
+    ["credit_store_transactions", "credit_store_transactions_lot_id_user_id_environment_fkey"]].map(([table, name]) =>
+    onlyIf(`NOT (SELECT condeferred FROM pg_constraint WHERE conrelid = '${table}'::regclass AND conname = '${name}')`,
+      `ALTER TABLE ${table} ALTER CONSTRAINT ${name} DEFERRABLE INITIALLY DEFERRED`)),
   `CREATE TABLE IF NOT EXISTS credit_store_notifications (
     environment TEXT NOT NULL CHECK (environment IN ('production','sandbox')),
     notification_id UUID NOT NULL, payload_hash TEXT NOT NULL, payload JSONB NOT NULL,

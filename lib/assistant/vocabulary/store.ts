@@ -71,10 +71,10 @@ export function createVocabularyStore(sql: postgres.Sql, wallet: Wallet, clock: 
         WHERE user_id = ${account.userId} AND environment = ${account.environment}
           AND request_id = ${id} AND status = 'pending'`;
     },
-    async list(account: CreditAccount, options: { uiLanguage: string; learningDirection: string; favorite: boolean; cursor?: string }) {
+    async list(account: CreditAccount, options: { learningDirection: string; favorite: boolean; cursor?: string }) {
       const rows = await sql`SELECT * FROM assistant_vocabulary_requests r
         WHERE r.user_id = ${account.userId} AND r.environment = ${account.environment}
-          AND r.ui_language = ${options.uiLanguage} AND r.learning_direction = ${options.learningDirection}
+          AND r.learning_direction = ${options.learningDirection}
           AND r.status = 'completed' AND (${!options.favorite} OR r.favorite)
           AND (${options.cursor ?? null}::uuid IS NULL OR (r.created_at, r.request_id) <
             (SELECT created_at, request_id FROM assistant_vocabulary_requests WHERE user_id = ${account.userId}

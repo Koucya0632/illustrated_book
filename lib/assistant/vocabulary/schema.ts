@@ -22,9 +22,11 @@ export const VOCABULARY_DDL = [
     deadline TIMESTAMPTZ NOT NULL,
     PRIMARY KEY (user_id, environment, request_id)
   )`,
-  `CREATE INDEX IF NOT EXISTS assistant_vocabulary_history_idx ON assistant_vocabulary_requests
-    (user_id, environment, learning_direction, ui_language, created_at DESC, request_id DESC)
+  `CREATE INDEX IF NOT EXISTS assistant_vocabulary_direction_history_idx ON assistant_vocabulary_requests
+    (user_id, environment, learning_direction, created_at DESC, request_id DESC)
     WHERE status = 'completed'`,
+  // The first history index also keyed ui_language; history no longer splits by it.
+  `DROP INDEX IF EXISTS assistant_vocabulary_history_idx`,
   onlyIf(`NOT (SELECT relrowsecurity FROM pg_class WHERE oid = 'assistant_vocabulary_requests'::regclass)`,
     `ALTER TABLE assistant_vocabulary_requests ENABLE ROW LEVEL SECURITY`),
 ] as const;

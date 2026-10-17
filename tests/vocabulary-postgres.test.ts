@@ -155,23 +155,37 @@ test("vocabulary atomic purchases and recovery against isolated PostgreSQL", { s
       assert.equal((await other.call("read", undefined, input.requestId)).status, 404);
       assert.equal(await f.store.read({ ...f.account, environment: "production" }, input.requestId), null);
       const list = (q: string) => f.call("list", undefined, undefined, q).then(r => r.json());
-      assert.equal((await list("?uiLanguage=zh-Hant&learningDirection=zh-en")).records.length, 1);
-      assert.equal((await list("?uiLanguage=ja&learningDirection=zh-en")).records.length, 0);
-      assert.equal((await list("?uiLanguage=zh-Hant&learningDirection=zh-ja")).records.length, 0);
+      // History splits by learning direction only; the interface language a card was made in does not hide it.
+      assert.equal((await list("?learningDirection=zh-en")).records.length, 1);
+      assert.equal((await list("?uiLanguage=ja&learningDirection=zh-en")).records.length, 1);
+      assert.equal((await list("?learningDirection=zh-ja")).records.length, 0);
       await f.call("favorite", { favorite: true }, input.requestId);
-      assert.equal((await list("?uiLanguage=zh-Hant&learningDirection=zh-en&favorite=true")).records.length, 1);
+      assert.equal((await list("?learningDirection=zh-en&favorite=true")).records.length, 1);
       await f.call("delete", undefined, input.requestId);
-      assert.equal((await list("?uiLanguage=zh-Hant&learningDirection=zh-en")).records.length, 0);
+      assert.equal((await list("?learningDirection=zh-en")).records.length, 0);
       assert.equal((await (await f.call("generate", input)).json()).record.status, "deleted");
       assert.equal(f.calls(), 1);
       const [{ input: removed, result }] = await sql`SELECT input, result FROM assistant_vocabulary_requests WHERE user_id = ${f.userId}`;
       assert.equal(removed, null); assert.equal(result, null);
     });
+    await t.test("the offer says why generation is closed: switched off beats membership", async () => {
+      const f = await fixture();
+      const offer = () => f.call("offer").then(r => r.json());
+      assert.deepEqual([(await offer()).enabled, (await offer()).reason], [true, null]);
+      const card = sampleInput("lookup", { uiLanguage: "ja" });
+      await f.call("generate", card);
+      const both = await (await f.call("list", undefined, undefined, "?learningDirection=zh-en")).json();
+      assert.equal(both.records[0].input.uiLanguage, "ja");
+      await sql`DELETE FROM credit_user_policies WHERE user_id = ${f.userId}`;
+      assert.deepEqual([(await offer()).enabled, (await offer()).reason], [false, "membership"]);
+      f.disable();
+      assert.deepEqual([(await offer()).enabled, (await offer()).reason], [false, "disabled"]);
+    });
     await t.test("history paginates without duplicates; schema denies client policies and cascades account deletion", async () => {
       const f = await fixture();
       for (let i = 0; i < 32; i++) await f.call("generate", sampleInput("lookup", { query: `term${i}` }));
-      const first = await (await f.call("list", undefined, undefined, "?uiLanguage=zh-Hant&learningDirection=zh-en")).json();
-      const second = await (await f.call("list", undefined, undefined, `?uiLanguage=zh-Hant&learningDirection=zh-en&cursor=${first.nextCursor}`)).json();
+      const first = await (await f.call("list", undefined, undefined, "?learningDirection=zh-en")).json();
+      const second = await (await f.call("list", undefined, undefined, `?learningDirection=zh-en&cursor=${first.nextCursor}`)).json();
       assert.equal(first.records.length, 30); assert.equal(second.records.length, 2);
       assert.equal(new Set([...first.records, ...second.records].map(r => r.id)).size, 32);
       const [table] = await sql`SELECT relrowsecurity FROM pg_class WHERE relname = 'assistant_vocabulary_requests'`;

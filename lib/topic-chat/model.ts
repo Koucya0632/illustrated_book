@@ -286,6 +286,30 @@ export function isMonolingual(request: { uiLanguage: UiLanguage; learningDirecti
 
 type Lang = { uiLanguage: UiLanguage; learningDirection: LearningDirection };
 
+const HAN = /\p{Script=Han}/u;
+const JAPANESE = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
+
+/**
+ * Whether a translation, note or meaning is written in some other language
+ * than the interface's. A whole turn has come back with every translation in
+ * English for a Chinese interface. Text with no letters (or only "Moira")
+ * passes, so it cannot be held against a reply.
+ */
+export function inOtherLanguage(uiLanguage: UiLanguage, text: string): boolean {
+  const letters = text.replace(/Moira/gu, "");
+  if (!/\p{L}/u.test(letters)) return false;
+  switch (uiLanguage) {
+    case "zh-Hant": case "zh-Hans": return !HAN.test(letters);
+    case "ja": return !JAPANESE.test(letters);
+    case "en": return JAPANESE.test(letters);
+  }
+}
+
+/** Whether any of what a reply writes in the interface language came out in another. Nothing to check in monolingual mode. */
+function strays(lang: Lang, texts: string[]): boolean {
+  return !isMonolingual(lang) && texts.some(text => inOtherLanguage(lang.uiLanguage, text));
+}
+
 /** A model's sentence in the language being learned, made ready to show — or null when it is empty. */
 export function targetText(lang: Lang, rawText: string, rawReading: string, rawTranslation: string): TargetText | null {
   const japanese = lang.learningDirection === "zh-ja";
@@ -295,10 +319,12 @@ export function targetText(lang: Lang, rawText: string, rawReading: string, rawT
   if (!text) return null;
   const reading = japanese ? lineReading(text, rawReading) : null;
   const translation = rawTranslation.trim();
+  // Still wrong on the second try: no translation beats one the person cannot read.
+  const readable = translation && !inOtherLanguage(lang.uiLanguage, translation);
   return {
     text,
     ...(reading ? lineFurigana(text, reading) : {}),
-    ...(!isMonolingual(lang) && translation ? { translation: moira(translation) } : {}),
+    ...(!isMonolingual(lang) && readable ? { translation: moira(translation) } : {}),
   };
 }
 
@@ -345,7 +371,8 @@ export function shapeTurn(request: Pick<TurnRequest, "uiLanguage" | "learningDir
     ? {
       key: raw.answer_type,
       template: request.learningDirection === "zh-ja" ? template.replace(/[ 　]+/gu, "") : template,
-      ...(!isMonolingual(request) && raw.pattern_translation.trim() ? { translation: raw.pattern_translation.trim() } : {}),
+      ...(!isMonolingual(request) && raw.pattern_translation.trim() && !inOtherLanguage(request.uiLanguage, raw.pattern_translation)
+        ? { translation: raw.pattern_translation.trim() } : {}),
     }
     : undefined;
   const keywords: ChatKeyword[] = raw.keywords.flatMap(k => {
@@ -504,8 +531,14 @@ export class ModelFailure extends TopicChatError {
 }
 
 export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout: 30_000, maxRetries: 1 })): TopicChatModel {
+  /**
+   * `translated` lists what of a reply is in the interface language. One that
+   * drifted into another language is asked for once more; on the last try it
+   * is shaped anyway, and the shaping leaves those translations out.
+   */
   async function call<S extends z.ZodTypeAny, T>(
-    system: string, prompt: string, schema: S, shape: (parsed: z.infer<S>) => T | null,
+    lang: Lang, system: string, prompt: string, schema: S,
+    translated: (parsed: z.infer<S>) => string[], shape: (parsed: z.infer<S>) => T | null,
   ): Promise<Generated<T>> {
     let usage: AssistantUsage = { inputTokens: 0, outputTokens: 0 };
     const format = zodOutputFormat(schema);
@@ -537,6 +570,7 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
       } catch {
         // Off the schema: asked for once more below.
       }
+      if (parsed && attempt === 0 && strays(lang, translated(parsed))) continue;
       const value = parsed ? shape(parsed) : null;
       if (value !== null) return { value, usage };
     }
@@ -544,11 +578,14 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
   }
 
   return {
-    turn: request => call(TURN_SYSTEM, turnPrompt(request), turnReply, raw => shapeTurn(request, raw)),
+    turn: request => call(request, TURN_SYSTEM, turnPrompt(request), turnReply, raw => [
+      raw.line_translation, raw.pattern_translation, raw.example_translation, raw.scene,
+      ...raw.options.map(o => o.answer_translation), ...raw.keywords.map(k => k.meaning),
+    ], raw => shapeTurn(request, raw)),
 
-    simplify: request => call(SIMPLIFY_SYSTEM,
+    simplify: request => call(request, SIMPLIFY_SYSTEM,
       [...supportPrompt(request), "Task: make your latest turn easier to answer."].join("\n"),
-      simplifyReply, raw => {
+      simplifyReply, raw => [raw.note, raw.line_translation, ...raw.options.map(o => o.answer_translation)], raw => {
         const note = raw.note.trim();
         const options = shapeOptions(request, raw.options);
         if (!note && !options.length) return null;
@@ -556,16 +593,16 @@ export function createTopicChatModel(client: Anthropic = new Anthropic({ timeout
         return { note: moira(note), ...(line ? { line } : {}), options };
       }),
 
-    express: request => call(EXPRESS_SYSTEM,
+    express: request => call(request, EXPRESS_SYSTEM,
       [...supportPrompt(request), "<what_the_person_wants_to_say>", request.idea, "</what_the_person_wants_to_say>"].join("\n"),
-      expressReply, raw => targetText(request, raw.text, raw.reading, raw.translation)),
+      expressReply, raw => [raw.translation], raw => targetText(request, raw.text, raw.reading, raw.translation)),
 
-    review: request => call(REVIEW_SYSTEM,
+    review: request => call(request, REVIEW_SYSTEM,
       [...header(request), `Topics talked about: ${request.topics.join(", ")}`,
         `Answer types not tried yet: ${request.untried.length ? request.untried.join(", ") : "none"}`,
         `Already shown: ${request.shown.length ? request.shown.join(" / ") : "none"}`,
         ...transcriptBlock(request.transcript, false, true)].join("\n"),
-      reviewReply, raw => shapeReview(request, raw)),
+      reviewReply, raw => [...raw.sentences.map(s => s.translation), raw.try_next.translation], raw => shapeReview(request, raw)),
   };
 }
 

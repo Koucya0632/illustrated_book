@@ -1,4 +1,5 @@
 import type postgres from "postgres";
+import { onlyIf } from "../ddl";
 
 /**
  * One row per answer the model produced — what it used and what was charged.
@@ -7,6 +8,7 @@ import type postgres from "postgres";
  * tokens behind it. Answers that were not charged (out of scope, a lost race,
  * a resend) are rows too, because they cost the same to produce.
  */
+const FEATURES = ["ask", "story", "chat", "vocabulary"];
 export const ASSISTANT_TABLES = ["assistant_usage"] as const;
 export const ASSISTANT_DDL = [
   `CREATE TABLE IF NOT EXISTS assistant_usage (
@@ -30,12 +32,16 @@ export const ASSISTANT_DDL = [
   `ALTER TABLE assistant_usage ADD COLUMN IF NOT EXISTS feature TEXT NOT NULL DEFAULT 'ask'
     CHECK (feature IN ('ask', 'story'))`,
   // 主題對話 (lib/topic-chat) writes rows here too.
-  `ALTER TABLE assistant_usage DROP CONSTRAINT IF EXISTS assistant_usage_feature_check`,
-  `ALTER TABLE assistant_usage ADD CONSTRAINT assistant_usage_feature_check
-    CHECK (feature IN ('ask', 'story', 'chat'))`,
+  onlyIf(`NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conrelid = 'assistant_usage'::regclass
+      AND conname = 'assistant_usage_feature_check'
+      AND pg_get_constraintdef(oid) LIKE ALL (ARRAY[${FEATURES.map(f => `'%''${f}''%'`).join(",")}]))`,
+    `ALTER TABLE assistant_usage DROP CONSTRAINT IF EXISTS assistant_usage_feature_check`,
+    `ALTER TABLE assistant_usage ADD CONSTRAINT assistant_usage_feature_check
+      CHECK (feature IN (${FEATURES.map(f => `'${f}'`).join(", ")}))`),
   `CREATE INDEX IF NOT EXISTS assistant_usage_time_idx ON assistant_usage(environment, created_at)`,
   `CREATE INDEX IF NOT EXISTS assistant_usage_user_idx ON assistant_usage(user_id, environment, created_at)`,
-  ...ASSISTANT_TABLES.map(table => `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`),
+  ...ASSISTANT_TABLES.map(table => onlyIf(`NOT (SELECT relrowsecurity FROM pg_class WHERE oid = '${table}'::regclass)`,
+    `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`)),
 ] as const;
 
 /** Requires the credit schema: usage rows belong to a credit account. */

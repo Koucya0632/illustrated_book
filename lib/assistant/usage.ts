@@ -6,7 +6,7 @@ export interface AssistantUsageRecord {
   account: CreditAccount;
   requestId: string;
   /** Which paid step produced it. Absent means 問 AI, the first one. */
-  feature?: "ask" | "story" | "chat" | "vocabulary";
+  feature?: "ask" | "story" | "chat" | "vocabulary" | "grammar";
   /** The step's price list. Absent means 問 AI's. */
   pricingVersion?: string;
   /** Whether the result was chargeable: an in-scope answer, a delivered story. */

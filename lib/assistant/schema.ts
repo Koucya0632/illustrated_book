@@ -8,7 +8,7 @@ import { onlyIf } from "../ddl";
  * tokens behind it. Answers that were not charged (out of scope, a lost race,
  * a resend) are rows too, because they cost the same to produce.
  */
-const FEATURES = ["ask", "story", "chat", "vocabulary"];
+const FEATURES = ["ask", "story", "chat", "vocabulary", "grammar"];
 export const ASSISTANT_TABLES = ["assistant_usage"] as const;
 export const ASSISTANT_DDL = [
   `CREATE TABLE IF NOT EXISTS assistant_usage (

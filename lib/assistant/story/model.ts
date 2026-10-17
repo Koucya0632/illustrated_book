@@ -1,5 +1,5 @@
 // 情境故事's model call: one short scene between Moira, the cat, and the person, built
-// around the items they picked. Same model as 問 AI (`../model.ts`): one
+// around the items they picked. Claude Haiku 5.5 (`ASSISTANT_MODEL`): one
 // stateless request, one structured reply — streamed, so the opening and each
 // segment can be passed on while the rest is still being written.
 

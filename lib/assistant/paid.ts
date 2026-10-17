@@ -1,5 +1,5 @@
-// The rules every paid 助手 step shares — 問 AI and 情境故事 — with what each
-// step does in between passed in. Kept in one place so the two cannot drift.
+// The rules every paid 助手 step shares, with what each step does in between
+// passed in. Kept in one place so the steps cannot drift.
 //
 // The order is the policy: nothing is spent until the person is known to be a
 // 罐頭點數 account holding at least the ceiling price, and nothing is charged

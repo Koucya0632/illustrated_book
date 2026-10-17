@@ -9,8 +9,6 @@ import { CreditError, userCreditConfig } from "../credits/policy";
 import { createCreditWallet } from "../credits/wallet";
 import { hitRateLimit } from "../ratelimit";
 import { AssistantError } from "./contracts";
-import { createAssistantHandler } from "./http";
-import { createAssistantModel } from "./model";
 import type { PaidDependencies } from "./paid";
 import { createStoryHandler } from "./story/http";
 import { createStoryModel, type StoryWord } from "./story/model";
@@ -19,7 +17,6 @@ import { createAssistantUsageLog } from "./usage";
 /** Off unless switched on and given a key — a deploy without either answers 404. */
 const enabled = () => process.env.ASSISTANT_AI_ENABLED === "true" && Boolean(process.env.ANTHROPIC_API_KEY);
 
-let model: ReturnType<typeof createAssistantModel> | undefined;
 let storyModel: ReturnType<typeof createStoryModel> | undefined;
 
 function sqlOrThrow() {
@@ -52,20 +49,6 @@ const shared: Omit<PaidDependencies, "rateLimit" | "reportError"> = {
   wallet: () => createCreditWallet(sqlOrThrow()),
   record: entry => createAssistantUsageLog(sqlOrThrow())(entry),
 };
-
-export const handleAssistantRequest = createAssistantHandler({
-  ...shared,
-  rateLimit: rateLimiter("assistant", 10, 300, "ASSISTANT_AI_DAILY_GLOBAL", 5000),
-  loadWords: async ({ wordIds, uiLanguage, learningDirection }) => {
-    if (!wordIds.length) return [];
-    const wanted = new Set(wordIds);
-    return (await getAllCardWords(uiLanguage, learningDirection))
-      .filter(word => wanted.has(word.id))
-      .map(word => ({ id: word.id, word: word.word, reading: word.reading, meaning: word.chinese }));
-  },
-  ask: request => (model ??= createAssistantModel())(request),
-  reportError: () => console.error("[assistant] request failed"),
-});
 
 export const handleStoryRequest = createStoryHandler({
   ...shared,

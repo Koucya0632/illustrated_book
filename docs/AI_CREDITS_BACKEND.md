@@ -307,6 +307,8 @@ Apple sandbox URL 指向 /api/billing/sandbox-notifications：外層與內層皆
 
 ## 2026-10-12 助手問答（Claude Haiku 5.5）
 
+> **2026-10-18 已移除。** App 拿掉「AI 問答」（tuji-ios #288），`/api/assistant/ask`、`lib/assistant/http.ts`、`lib/assistant/model.ts` 一併刪除，`ASSISTANT_AI_DAILY_GLOBAL` 不再讀取。舊版 App 讀報價拿到 404 會當成讀不到（`try?`），只回本機查詢的「找不到」、不再出現「問 AI」選項，也不扣點。以下保留作歷史紀錄；`ASSISTANT_PRICING` 的費率、`lib/assistant/paid.ts` 的扣點順序與 `assistant_usage` 仍由其他付費步驟沿用，既有 `feature = ask` 的列不動。
+
 App 的助手先用裝置上的資料回答分類、收藏與詞條；本機答不了的問題才打 `/api/assistant/ask`，這是助手唯一會呼叫模型、唯一會扣點的地方。
 
 - `GET /api/assistant/ask`：回 `{ minPoints, maxPoints, available }`，不呼叫模型。App 在第一次要問之前讀它，才能事前告訴使用者價格範圍。
@@ -325,7 +327,7 @@ App 的助手先用裝置上的資料回答分類、收藏與詞條；本機答�
 開關與設定：
 
 - `ASSISTANT_AI_ENABLED=true` 且有 `ANTHROPIC_API_KEY` 才開；缺任一個，兩個方法都回 404。另外仍需 `AI_CREDITS_MODE=live`。
-- `ASSISTANT_AI_DAILY_GLOBAL`：全站每日上限，預設 5000。每人每分鐘 10 次、每天 300 次。
+- `ASSISTANT_AI_DAILY_GLOBAL`（已不再讀取）：全站每日上限，預設 5000。每人每分鐘 10 次、每天 300 次。
 - 模型固定 `claude-haiku-5-5`（計價表跟著它）；換模型要連 `ASSISTANT_PRICING` 一起改。
 
 ### 用量紀錄（`assistant_usage`）

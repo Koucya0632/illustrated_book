@@ -71,6 +71,3 @@ export function usagePoints(usage: AssistantUsage, bounds: { minPoints: number; 
   if (!Number.isFinite(raw)) return bounds.maxPoints;
   return Math.min(bounds.maxPoints, Math.max(bounds.minPoints, raw));
 }
-
-/** Points for one 問 AI answer. */
-export const assistantPoints = (usage: AssistantUsage) => usagePoints(usage, ASSISTANT_PRICING);

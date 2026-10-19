@@ -1,0 +1,4661 @@
+{
+  "en": {
+    "Please bring a menu.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "bring",
+        "z": "拿來",
+        "j": "持ってきてください",
+        "e": "bring"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "menu",
+        "z": "菜單",
+        "j": "メニュー",
+        "e": "menu"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I kept the menu because I had not decided what to eat.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "kept",
+        "z": "留著",
+        "j": "手元に置きました",
+        "e": "kept"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "menu",
+        "z": "菜單",
+        "j": "メニュー",
+        "e": "menu"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "had not decided",
+        "z": "還沒決定",
+        "j": "まだ決めていませんでした",
+        "e": "had not decided"
+      },
+      {
+        "t": " what to "
+      },
+      {
+        "t": "eat",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Choose a dish on the ordering tablet.": [
+      {
+        "t": "Choose",
+        "z": "選擇",
+        "j": "選んでください",
+        "e": "choose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "dish",
+        "z": "餐點",
+        "j": "料理",
+        "e": "dish"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "ordering tablet",
+        "z": "點餐平板",
+        "j": "注文用タブレット",
+        "e": "ordering tablet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Check the quantity before you send your order from the ordering tablet.": [
+      {
+        "t": "Check",
+        "z": "確認",
+        "j": "確認してください",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "quantity",
+        "z": "數量",
+        "j": "数量",
+        "e": "quantity"
+      },
+      {
+        "t": " before you "
+      },
+      {
+        "t": "send",
+        "z": "送出",
+        "j": "送信する",
+        "e": "send"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "order",
+        "z": "訂單",
+        "j": "注文",
+        "e": "order"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "ordering tablet",
+        "z": "點餐平板",
+        "j": "注文用タブレット",
+        "e": "ordering tablet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please press the call button.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "press",
+        "z": "按",
+        "j": "押してください",
+        "e": "press"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "call button",
+        "z": "服務鈴按鈕",
+        "j": "呼び出しボタン",
+        "e": "call button"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I waved to a server because I had not noticed the call button.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "waved",
+        "z": "揮手",
+        "j": "手を振りました",
+        "e": "waved"
+      },
+      {
+        "t": " to a "
+      },
+      {
+        "t": "server",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "had not noticed",
+        "z": "沒注意到",
+        "j": "気づいていませんでした",
+        "e": "had not noticed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "call button",
+        "z": "服務鈴按鈕",
+        "j": "呼び出しボタン",
+        "e": "call button"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Wipe your hands with the wet hand towel.": [
+      {
+        "t": "Wipe",
+        "z": "擦",
+        "j": "拭いてください",
+        "e": "wipe"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "hands",
+        "z": "手",
+        "j": "手",
+        "e": "hands"
+      },
+      {
+        "t": " with the "
+      },
+      {
+        "t": "wet hand towel",
+        "z": "濕毛巾",
+        "j": "おしぼり",
+        "e": "wet hand towel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The wet hand towel was too hot, so I waited a little before using it.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "wet hand towel",
+        "z": "濕毛巾",
+        "j": "おしぼり",
+        "e": "wet hand towel"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too hot",
+        "z": "太燙",
+        "j": "熱すぎました",
+        "e": "too hot"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "little",
+        "z": "一下",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "Put your chopsticks on the chopstick rest.": [
+      {
+        "t": "Put",
+        "z": "放",
+        "j": "置いてください",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "chopsticks",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "chopstick rest",
+        "z": "筷架",
+        "j": "箸置き",
+        "e": "chopstick rest"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "There was no chopstick rest, so I rested my chopsticks on their paper sleeve.": [
+      {
+        "t": "There was no "
+      },
+      {
+        "t": "chopstick rest",
+        "z": "筷架",
+        "j": "箸置き",
+        "e": "chopstick rest"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "rested",
+        "z": "擱放",
+        "j": "置きました",
+        "e": "rested"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "chopsticks",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks"
+      },
+      {
+        "t": " on their "
+      },
+      {
+        "t": "paper sleeve",
+        "z": "紙套",
+        "j": "紙袋",
+        "e": "paper sleeve"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Take a paper napkin.": [
+      {
+        "t": "Take",
+        "z": "拿",
+        "j": "取ってください",
+        "e": "take"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "paper napkin",
+        "z": "紙餐巾",
+        "j": "紙ナプキン",
+        "e": "paper napkin"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Could you bring another paper napkin so I can wipe my mouth?": [
+      {
+        "t": "Could you "
+      },
+      {
+        "t": "bring",
+        "z": "拿來",
+        "j": "持ってきてもらえますか",
+        "e": "bring"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "another",
+        "z": "另一張",
+        "j": "もう一枚",
+        "e": "another"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "paper napkin",
+        "z": "紙餐巾",
+        "j": "紙ナプキン",
+        "e": "paper napkin"
+      },
+      {
+        "t": " so I can "
+      },
+      {
+        "t": "wipe",
+        "z": "擦",
+        "j": "拭く",
+        "e": "wipe"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "mouth",
+        "z": "嘴巴",
+        "j": "口",
+        "e": "mouth"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "Pour some water from the water pitcher.": [
+      {
+        "t": "Pour",
+        "z": "倒",
+        "j": "注いでください",
+        "e": "pour"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "water pitcher",
+        "z": "水壺",
+        "j": "水差し",
+        "e": "water pitcher"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I noticed the water pitcher was empty, I asked a server to refill it.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "noticed",
+        "z": "發現",
+        "j": "気づいた",
+        "e": "noticed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "water pitcher",
+        "z": "水壺",
+        "j": "水差し",
+        "e": "water pitcher"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空",
+        "e": "empty"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "asked",
+        "z": "請求",
+        "j": "頼みました",
+        "e": "asked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "server",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "refill",
+        "z": "加滿",
+        "j": "補充する",
+        "e": "refill"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "Put the cups on the serving tray.": [
+      {
+        "t": "Put",
+        "z": "放",
+        "j": "置いてください",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cups",
+        "z": "杯子",
+        "j": "コップ",
+        "e": "cups"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "serving tray",
+        "z": "托盤",
+        "j": "お盆",
+        "e": "serving tray"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Carry the serving tray slowly because the water spills easily.": [
+      {
+        "t": "Carry",
+        "z": "端著走",
+        "j": "運んでください",
+        "e": "carry"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "serving tray",
+        "z": "托盤",
+        "j": "お盆",
+        "e": "serving tray"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "spills",
+        "z": "灑出",
+        "j": "こぼれます",
+        "e": "spills"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "easily",
+        "z": "容易",
+        "j": "簡単に",
+        "e": "easily"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Where is the bill?": [
+      {
+        "t": "Where",
+        "z": "哪裡",
+        "j": "どこ",
+        "e": "where"
+      },
+      {
+        "t": " is the "
+      },
+      {
+        "t": "bill",
+        "z": "帳單",
+        "j": "会計伝票",
+        "e": "bill"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "The bill includes a drink we did not order, so could you check it?": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "bill",
+        "z": "帳單",
+        "j": "会計伝票",
+        "e": "bill"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "includes",
+        "z": "包含",
+        "j": "入っています",
+        "e": "includes"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "drink",
+        "z": "飲料",
+        "j": "飲み物",
+        "e": "drink"
+      },
+      {
+        "t": " we "
+      },
+      {
+        "t": "did not order",
+        "z": "沒點",
+        "j": "注文していません",
+        "e": "did not order"
+      },
+      {
+        "t": ", so could you "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確認してもらえますか",
+        "e": "check"
+      },
+      {
+        "t": " it?"
+      }
+    ],
+    "Let us sit in a booth.": [
+      {
+        "t": "Let us",
+        "z": "我們一起吧",
+        "j": "一緒にしましょう",
+        "e": "let us"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sit",
+        "z": "坐",
+        "j": "座る",
+        "e": "sit"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "booth",
+        "z": "卡座",
+        "j": "ボックス席",
+        "e": "booth"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "There are four of us, so we would like a booth if one is available.": [
+      {
+        "t": "There are "
+      },
+      {
+        "t": "four",
+        "z": "四個",
+        "j": "四人",
+        "e": "four"
+      },
+      {
+        "t": " of us, so we would "
+      },
+      {
+        "t": "like",
+        "z": "想要",
+        "j": "お願いしたい",
+        "e": "like"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "booth",
+        "z": "卡座",
+        "j": "ボックス席",
+        "e": "booth"
+      },
+      {
+        "t": " if one is "
+      },
+      {
+        "t": "available",
+        "z": "有空位",
+        "j": "空いている",
+        "e": "available"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Is this counter seat free?": [
+      {
+        "t": "Is this "
+      },
+      {
+        "t": "counter seat",
+        "z": "吧檯座位",
+        "j": "カウンター席",
+        "e": "counter seat"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "free",
+        "z": "空著",
+        "j": "空いている",
+        "e": "free"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "All the tables were full, but a counter seat was available, so I sat there.": [
+      {
+        "t": "All the "
+      },
+      {
+        "t": "tables",
+        "z": "餐桌",
+        "j": "テーブル席",
+        "e": "tables"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "full",
+        "z": "客滿",
+        "j": "満席",
+        "e": "full"
+      },
+      {
+        "t": ", but a "
+      },
+      {
+        "t": "counter seat",
+        "z": "吧檯座位",
+        "j": "カウンター席",
+        "e": "counter seat"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "available",
+        "z": "有空位",
+        "j": "空いている",
+        "e": "available"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "sat",
+        "z": "坐下",
+        "j": "座りました",
+        "e": "sat"
+      },
+      {
+        "t": " there."
+      }
+    ],
+    "Could we borrow a high chair?": [
+      {
+        "t": "Could we "
+      },
+      {
+        "t": "borrow",
+        "z": "借用",
+        "j": "借りる",
+        "e": "borrow"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "high chair",
+        "z": "兒童餐椅",
+        "j": "子ども用ハイチェア",
+        "e": "high chair"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "Check the safety strap before putting your child in the high chair.": [
+      {
+        "t": "Check",
+        "z": "確認",
+        "j": "確認してください",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "safety strap",
+        "z": "安全帶",
+        "j": "安全ベルト",
+        "e": "safety strap"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "putting",
+        "z": "讓坐進",
+        "j": "座らせる",
+        "e": "putting"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "child",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "high chair",
+        "z": "兒童餐椅",
+        "j": "子ども用ハイチェア",
+        "e": "high chair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please put some rice in this rice bowl.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "put",
+        "z": "盛入",
+        "j": "よそってください",
+        "e": "put"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "rice",
+        "z": "白飯",
+        "j": "ご飯",
+        "e": "cooked rice"
+      },
+      {
+        "t": " in this "
+      },
+      {
+        "t": "rice bowl",
+        "z": "飯碗",
+        "j": "茶碗",
+        "e": "rice bowl"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the rice bowl was hot, I held it with both hands.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "rice bowl",
+        "z": "飯碗",
+        "j": "茶碗",
+        "e": "rice bowl"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "hot",
+        "z": "燙的",
+        "j": "熱かった",
+        "e": "hot"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "held",
+        "z": "拿著",
+        "j": "持ちました",
+        "e": "held"
+      },
+      {
+        "t": " it with "
+      },
+      {
+        "t": "both hands",
+        "z": "雙手",
+        "j": "両手",
+        "e": "both hands"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This soup bowl has a lid.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "soup bowl",
+        "z": "湯碗",
+        "j": "汁椀",
+        "e": "soup bowl"
+      },
+      {
+        "t": " has a "
+      },
+      {
+        "t": "lid",
+        "z": "蓋子",
+        "j": "蓋",
+        "e": "lid"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I moved the soup bowl closer so I would not spill the miso soup.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "moved",
+        "z": "移動",
+        "j": "寄せました",
+        "e": "moved"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "soup bowl",
+        "z": "湯碗",
+        "j": "汁椀",
+        "e": "soup bowl"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "closer",
+        "z": "更近",
+        "j": "手元に",
+        "e": "closer"
+      },
+      {
+        "t": " so I would "
+      },
+      {
+        "t": "not spill",
+        "z": "不灑出",
+        "j": "こぼさない",
+        "e": "not spill"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "miso soup",
+        "z": "味噌湯",
+        "j": "味噌汁",
+        "e": "miso soup"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This ramen bowl is empty.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "ramen bowl",
+        "z": "拉麵碗",
+        "j": "ラーメン鉢",
+        "e": "ramen bowl"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空",
+        "e": "empty"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After finishing the noodles, I left some broth in the ramen bowl because it was too salty.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "finishing",
+        "z": "吃完",
+        "j": "食べ終える",
+        "e": "finishing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "noodles",
+        "z": "麵",
+        "j": "麺",
+        "e": "noodles"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "left",
+        "z": "留下",
+        "j": "残しました",
+        "e": "left"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "broth",
+        "z": "湯底",
+        "j": "スープ",
+        "e": "broth"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "ramen bowl",
+        "z": "拉麵碗",
+        "j": "ラーメン鉢",
+        "e": "ramen bowl"
+      },
+      {
+        "t": " because it was "
+      },
+      {
+        "t": "too salty",
+        "z": "太鹹",
+        "j": "塩辛すぎた",
+        "e": "too salty"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Pour soy sauce into the dipping dish.": [
+      {
+        "t": "Pour",
+        "z": "倒入",
+        "j": "注いでください",
+        "e": "pour"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "soy sauce",
+        "z": "醬油",
+        "j": "醤油",
+        "e": "soy sauce"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "dipping dish",
+        "z": "醬油碟",
+        "j": "醤油皿",
+        "e": "dipping dish"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the dipping dish was empty, I added some soy sauce before eating the sushi.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "dipping dish",
+        "z": "醬油碟",
+        "j": "醤油皿",
+        "e": "dipping dish"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空だった",
+        "e": "empty"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "added",
+        "z": "添加",
+        "j": "足しました",
+        "e": "added"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "soy sauce",
+        "z": "醬油",
+        "j": "醤油",
+        "e": "soy sauce"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "eating",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eating"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sushi",
+        "z": "壽司",
+        "j": "寿司",
+        "e": "sushi"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Use the serving chopsticks for the salad.": [
+      {
+        "t": "Use",
+        "z": "使用",
+        "j": "使ってください",
+        "e": "use"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "serving chopsticks",
+        "z": "公筷",
+        "j": "取り箸",
+        "e": "serving chopsticks"
+      },
+      {
+        "t": " for the "
+      },
+      {
+        "t": "salad",
+        "z": "沙拉",
+        "j": "サラダ",
+        "e": "salad"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please split the disposable chopsticks.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "split",
+        "z": "掰開",
+        "j": "割ってください",
+        "e": "split"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "disposable chopsticks",
+        "z": "免洗筷",
+        "j": "割り箸",
+        "e": "disposable chopsticks"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I dropped my disposable chopsticks on the floor, the server brought me a new pair.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "dropped",
+        "z": "掉落",
+        "j": "落としてしまった",
+        "e": "dropped"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "disposable chopsticks",
+        "z": "免洗筷",
+        "j": "割り箸",
+        "e": "disposable chopsticks"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "floor",
+        "z": "地板",
+        "j": "床",
+        "e": "floor"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "server",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "brought",
+        "z": "拿來",
+        "j": "持ってきてくれました",
+        "e": "brought"
+      },
+      {
+        "t": " me a "
+      },
+      {
+        "t": "new pair",
+        "z": "新的一雙",
+        "j": "新しい一膳",
+        "e": "new pair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This Japanese teacup has no handle.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "Japanese teacup",
+        "z": "日式茶杯",
+        "j": "湯飲み",
+        "e": "Japanese teacup"
+      },
+      {
+        "t": " has no "
+      },
+      {
+        "t": "handle",
+        "z": "把手",
+        "j": "取っ手",
+        "e": "handle"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I moved the Japanese teacup away from the table edge so my sleeve would not knock it over.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "moved",
+        "z": "移開",
+        "j": "離しました",
+        "e": "moved"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "Japanese teacup",
+        "z": "日式茶杯",
+        "j": "湯飲み",
+        "e": "Japanese teacup"
+      },
+      {
+        "t": " away from the "
+      },
+      {
+        "t": "table edge",
+        "z": "桌緣",
+        "j": "テーブルの端",
+        "e": "table edge"
+      },
+      {
+        "t": " so my "
+      },
+      {
+        "t": "sleeve",
+        "z": "袖子",
+        "j": "袖",
+        "e": "sleeve"
+      },
+      {
+        "t": " would not "
+      },
+      {
+        "t": "knock it over",
+        "z": "碰倒它",
+        "j": "当たって倒す",
+        "e": "knock it over",
+        "p": "phrasal verb"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please return the serving chopsticks to the platter so everyone can use them.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "return",
+        "z": "放回",
+        "j": "戻してください",
+        "e": "return"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "serving chopsticks",
+        "z": "公筷",
+        "j": "取り箸",
+        "e": "serving chopsticks"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "platter",
+        "z": "大餐盤",
+        "j": "大皿",
+        "e": "platter"
+      },
+      {
+        "t": " so "
+      },
+      {
+        "t": "everyone",
+        "z": "每個人",
+        "j": "みんな",
+        "e": "everyone"
+      },
+      {
+        "t": " can "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使える",
+        "e": "use"
+      },
+      {
+        "t": " them."
+      }
+    ],
+    "Please bring a Chinese soup spoon.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "bring",
+        "z": "拿來",
+        "j": "持ってきてください",
+        "e": "bring"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "Chinese soup spoon",
+        "z": "中式湯匙",
+        "j": "レンゲ",
+        "e": "Chinese soup spoon"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I used a Chinese soup spoon to drink the broth because the ramen bowl was too hot to lift.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "used",
+        "z": "使用",
+        "j": "使いました",
+        "e": "used"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "Chinese soup spoon",
+        "z": "中式湯匙",
+        "j": "レンゲ",
+        "e": "Chinese soup spoon"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "drink",
+        "z": "喝",
+        "j": "飲む",
+        "e": "drink"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "broth",
+        "z": "湯底",
+        "j": "スープ",
+        "e": "broth"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "ramen bowl",
+        "z": "拉麵碗",
+        "j": "ラーメン鉢",
+        "e": "ramen bowl"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too hot",
+        "z": "太燙",
+        "j": "熱すぎた",
+        "e": "too hot"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "lift",
+        "z": "拿起",
+        "j": "持ち上げる",
+        "e": "lift"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please turn the lazy Susan slowly.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "turn",
+        "z": "轉動",
+        "j": "回してください",
+        "e": "turn"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lazy Susan",
+        "z": "餐桌轉盤",
+        "j": "回転台",
+        "e": "lazy Susan"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before turning the lazy Susan, I checked that no one was taking food.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "turning",
+        "z": "轉動",
+        "j": "回す",
+        "e": "turning"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lazy Susan",
+        "z": "餐桌轉盤",
+        "j": "回転台",
+        "e": "lazy Susan"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " that "
+      },
+      {
+        "t": "no one",
+        "z": "沒有人",
+        "j": "誰も",
+        "e": "no one"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "taking",
+        "z": "夾取",
+        "j": "取っている",
+        "e": "taking"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "food",
+        "z": "食物",
+        "j": "料理",
+        "e": "food"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please bring a steak knife.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "bring",
+        "z": "拿來",
+        "j": "持ってきてください",
+        "e": "bring"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "steak knife",
+        "z": "牛排刀",
+        "j": "ステーキナイフ",
+        "e": "steak knife"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The steak knife was dull, so I asked the server to replace it.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "steak knife",
+        "z": "牛排刀",
+        "j": "ステーキナイフ",
+        "e": "steak knife"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "dull",
+        "z": "鈍的",
+        "j": "切れ味が悪かった",
+        "e": "dull"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "お願いしました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "server",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "replace",
+        "z": "更換",
+        "j": "交換する",
+        "e": "replace"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "Please hold the wine glass by the stem.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "hold",
+        "z": "握住",
+        "j": "持ってください",
+        "e": "hold"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wine glass",
+        "z": "葡萄酒杯",
+        "j": "ワイングラス",
+        "e": "wine glass"
+      },
+      {
+        "t": " by the "
+      },
+      {
+        "t": "stem",
+        "z": "杯腳",
+        "j": "脚",
+        "e": "stem"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the wine glass had a chip on the rim, I asked for a different one.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "wine glass",
+        "z": "葡萄酒杯",
+        "j": "ワイングラス",
+        "e": "wine glass"
+      },
+      {
+        "t": " had a "
+      },
+      {
+        "t": "chip",
+        "z": "缺角",
+        "j": "欠け",
+        "e": "chip"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "rim",
+        "z": "杯緣",
+        "j": "縁",
+        "e": "rim"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "asked for",
+        "z": "要求",
+        "j": "頼みました",
+        "e": "asked for"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "different",
+        "z": "另一個",
+        "j": "別の",
+        "e": "different"
+      },
+      {
+        "t": " one."
+      }
+    ],
+    "Please put a sake cup here.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "put",
+        "z": "放",
+        "j": "置いてください",
+        "e": "put"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "sake cup",
+        "z": "清酒杯",
+        "j": "お猪口",
+        "e": "sake cup"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "here",
+        "z": "這裡",
+        "j": "ここ",
+        "e": "here"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked for another sake cup because my friend wanted to try the sake too.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "asked for",
+        "z": "要求",
+        "j": "頼みました",
+        "e": "asked for"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "another",
+        "z": "另一個",
+        "j": "もう一つ",
+        "e": "another"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sake cup",
+        "z": "清酒杯",
+        "j": "お猪口",
+        "e": "sake cup"
+      },
+      {
+        "t": " because my "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wanted",
+        "z": "想",
+        "j": "したかった",
+        "e": "wanted"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "try",
+        "z": "嚐嚐",
+        "j": "味見する",
+        "e": "try"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sake",
+        "z": "清酒",
+        "j": "日本酒",
+        "e": "sake"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "too",
+        "z": "也",
+        "j": "も",
+        "e": "too"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please pour sake from the sake flask.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "pour",
+        "z": "倒出",
+        "j": "注いでください",
+        "e": "pour"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sake",
+        "z": "清酒",
+        "j": "日本酒",
+        "e": "sake"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "sake flask",
+        "z": "清酒壺",
+        "j": "徳利",
+        "e": "sake flask"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since the sake flask was empty, I asked the server if we could order another one.": [
+      {
+        "t": "Since the "
+      },
+      {
+        "t": "sake flask",
+        "z": "清酒壺",
+        "j": "徳利",
+        "e": "sake flask"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空だった",
+        "e": "empty"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "asked",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "server",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server"
+      },
+      {
+        "t": " if we could "
+      },
+      {
+        "t": "order",
+        "z": "點",
+        "j": "注文する",
+        "e": "order"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "another one",
+        "z": "再一壺",
+        "j": "もう一本",
+        "e": "another one"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please pass me the soy sauce dispenser.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "pass",
+        "z": "遞給",
+        "j": "取ってください",
+        "e": "pass"
+      },
+      {
+        "t": " me the "
+      },
+      {
+        "t": "soy sauce dispenser",
+        "z": "醬油壺",
+        "j": "醤油差し",
+        "e": "soy sauce dispenser"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the soy sauce dispenser's lid was loose, I held it in place while pouring.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "soy sauce dispenser",
+        "z": "醬油壺",
+        "j": "醤油差し",
+        "e": "soy sauce dispenser"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "lid",
+        "z": "蓋子",
+        "j": "蓋",
+        "e": "lid"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "loose",
+        "z": "鬆的",
+        "j": "緩んでいた",
+        "e": "loose"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "held",
+        "z": "按住",
+        "j": "押さえました",
+        "e": "held"
+      },
+      {
+        "t": " it in place while "
+      },
+      {
+        "t": "pouring",
+        "z": "倒出",
+        "j": "注ぐ",
+        "e": "pouring"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please take a pair of chopsticks from the chopstick holder.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "take",
+        "z": "拿",
+        "j": "取ってください",
+        "e": "take"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "pair",
+        "z": "一雙",
+        "j": "一膳",
+        "e": "pair"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "chopsticks",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "chopstick holder",
+        "z": "筷筒",
+        "j": "箸立て",
+        "e": "chopstick holder"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked my friend to pass me some chopsticks because I could not reach the chopstick holder.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼みました",
+        "e": "asked"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "pass",
+        "z": "遞給",
+        "j": "取ってくれる",
+        "e": "pass"
+      },
+      {
+        "t": " me some "
+      },
+      {
+        "t": "chopsticks",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks"
+      },
+      {
+        "t": " because I could not "
+      },
+      {
+        "t": "reach",
+        "z": "搆到",
+        "j": "手が届く",
+        "e": "reach"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "chopstick holder",
+        "z": "筷筒",
+        "j": "箸立て",
+        "e": "chopstick holder"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The server pushed the serving cart.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "server",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pushed",
+        "z": "推了",
+        "j": "押しました",
+        "e": "pushed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "serving cart",
+        "z": "餐車",
+        "j": "配膳ワゴン",
+        "e": "serving cart"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I moved my chair closer to the table so the serving cart could pass behind me.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "寄せました",
+        "e": "moved"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "chair",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "closer",
+        "z": "更靠近",
+        "j": "寄せて",
+        "e": "closer"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "table",
+        "z": "餐桌",
+        "j": "テーブル",
+        "e": "table"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "serving cart",
+        "z": "餐車",
+        "j": "配膳ワゴン",
+        "e": "serving cart"
+      },
+      {
+        "t": " could "
+      },
+      {
+        "t": "pass",
+        "z": "通過",
+        "j": "通れる",
+        "e": "pass"
+      },
+      {
+        "t": " behind me."
+      }
+    ]
+  },
+  "ja": {
+    "メニューを持ってきてください。": [
+      {
+        "t": "メニュー",
+        "z": "菜單",
+        "j": "メニュー",
+        "e": "menu",
+        "r": "メニュー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてください",
+        "z": "請拿來",
+        "j": "持ってきてください",
+        "e": "please bring",
+        "r": "もってきてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食べるものをまだ決めていなかったので、メニューを手元に置いておきました。": [
+      {
+        "t": "食べる",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat",
+        "r": "たべる"
+      },
+      {
+        "t": "ものを"
+      },
+      {
+        "t": "まだ",
+        "z": "還沒",
+        "j": "まだ",
+        "e": "not yet",
+        "r": "まだ"
+      },
+      {
+        "t": "決めていなかった",
+        "z": "尚未決定",
+        "j": "決めていなかった",
+        "e": "had not decided",
+        "r": "きめていなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "メニュー",
+        "z": "菜單",
+        "j": "メニュー",
+        "e": "menu",
+        "r": "メニュー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "手元",
+        "z": "手邊",
+        "j": "手元",
+        "e": "at hand",
+        "r": "てもと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いておきました",
+        "z": "暫時留著",
+        "j": "置いておきました",
+        "e": "kept for now",
+        "r": "おいておきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "注文用タブレットで料理を選んでください。": [
+      {
+        "t": "注文用タブレット",
+        "z": "點餐平板",
+        "j": "注文用タブレット",
+        "e": "ordering tablet",
+        "r": "ちゅうもんようタブレット"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "料理",
+        "z": "餐點",
+        "j": "料理",
+        "e": "dish",
+        "r": "りょうり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選んでください",
+        "z": "請選擇",
+        "j": "選んでください",
+        "e": "please choose",
+        "r": "えらんでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "注文用タブレットで注文を送信する前に、数量を確認してください。": [
+      {
+        "t": "注文用タブレット",
+        "z": "點餐平板",
+        "j": "注文用タブレット",
+        "e": "ordering tablet",
+        "r": "ちゅうもんようタブレット"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "注文",
+        "z": "訂單",
+        "j": "注文",
+        "e": "order",
+        "r": "ちゅうもん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "送信する",
+        "z": "送出",
+        "j": "送信する",
+        "e": "send",
+        "r": "そうしんする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "数量",
+        "z": "數量",
+        "j": "数量",
+        "e": "quantity",
+        "r": "すうりょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認してください",
+        "z": "請確認",
+        "j": "確認してください",
+        "e": "please check",
+        "r": "かくにんしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "呼び出しボタンを押してください。": [
+      {
+        "t": "呼び出しボタン",
+        "z": "服務鈴按鈕",
+        "j": "呼び出しボタン",
+        "e": "call button",
+        "r": "よびだしボタン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押してください",
+        "z": "請按",
+        "j": "押してください",
+        "e": "please press",
+        "r": "おしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "呼び出しボタンに気づかなかったので、店員に手を振りました。": [
+      {
+        "t": "呼び出しボタン",
+        "z": "服務鈴按鈕",
+        "j": "呼び出しボタン",
+        "e": "call button",
+        "r": "よびだしボタン"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "気づかなかった",
+        "z": "沒注意到",
+        "j": "気づかなかった",
+        "e": "did not notice",
+        "r": "きづかなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "手",
+        "z": "手",
+        "j": "手",
+        "e": "hand",
+        "r": "て"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "振りました",
+        "z": "揮了",
+        "j": "振りました",
+        "e": "waved",
+        "r": "ふりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "おしぼりで手を拭いてください。": [
+      {
+        "t": "おしぼり",
+        "z": "濕毛巾",
+        "j": "おしぼり",
+        "e": "wet hand towel",
+        "r": "おしぼり"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "手",
+        "z": "手",
+        "j": "手",
+        "e": "hands",
+        "r": "て"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "拭いてください",
+        "z": "請擦",
+        "j": "拭いてください",
+        "e": "please wipe",
+        "r": "ふいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "おしぼりが熱すぎたので、少し待ってから使いました。": [
+      {
+        "t": "おしぼり",
+        "z": "濕毛巾",
+        "j": "おしぼり",
+        "e": "wet hand towel",
+        "r": "おしぼり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "熱すぎた",
+        "z": "太燙",
+        "j": "熱すぎた",
+        "e": "was too hot",
+        "r": "あつすぎた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "少し",
+        "z": "一下",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "待って",
+        "z": "等了之後",
+        "j": "待って",
+        "e": "waited and then",
+        "r": "まって"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "使いました",
+        "z": "用了",
+        "j": "使いました",
+        "e": "used",
+        "r": "つかいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "箸を箸置きに置いてください。": [
+      {
+        "t": "箸",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks",
+        "r": "はし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "箸置き",
+        "z": "筷架",
+        "j": "箸置き",
+        "e": "chopstick rest",
+        "r": "はしおき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放",
+        "j": "置いてください",
+        "e": "please put",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "箸置きがなかったので、箸を紙袋の上に置きました。": [
+      {
+        "t": "箸置き",
+        "z": "筷架",
+        "j": "箸置き",
+        "e": "chopstick rest",
+        "r": "はしおき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "なかった",
+        "z": "沒有",
+        "j": "なかった",
+        "e": "was not there",
+        "r": "なかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "箸",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks",
+        "r": "はし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "紙袋",
+        "z": "紙套",
+        "j": "紙袋",
+        "e": "paper sleeve",
+        "r": "かみぶくろ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "上",
+        "z": "上面",
+        "j": "上",
+        "e": "top",
+        "r": "うえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置きました",
+        "z": "放了",
+        "j": "置きました",
+        "e": "put",
+        "r": "おきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "紙ナプキンを取ってください。": [
+      {
+        "t": "紙ナプキン",
+        "z": "紙餐巾",
+        "j": "紙ナプキン",
+        "e": "paper napkin",
+        "r": "かみナプキン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取ってください",
+        "z": "請拿",
+        "j": "取ってください",
+        "e": "please take",
+        "r": "とってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "口を拭きたいので、紙ナプキンをもう一枚持ってきてもらえますか。": [
+      {
+        "t": "口",
+        "z": "嘴巴",
+        "j": "口",
+        "e": "mouth",
+        "r": "くち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "拭きたい",
+        "z": "想擦",
+        "j": "拭きたい",
+        "e": "want to wipe",
+        "r": "ふきたい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "紙ナプキン",
+        "z": "紙餐巾",
+        "j": "紙ナプキン",
+        "e": "paper napkin",
+        "r": "かみナプキン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もう一枚",
+        "z": "再一張",
+        "j": "もう一枚",
+        "e": "one more",
+        "r": "もういちまい"
+      },
+      {
+        "t": "持ってきてもらえますか",
+        "z": "可以幫我拿來嗎",
+        "j": "持ってきてもらえますか",
+        "e": "could you bring",
+        "r": "もってきてもらえますか"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水差しから水を注いでください。": [
+      {
+        "t": "水差し",
+        "z": "水壺",
+        "j": "水差し",
+        "e": "water pitcher",
+        "r": "みずさし"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注いでください",
+        "z": "請倒",
+        "j": "注いでください",
+        "e": "please pour",
+        "r": "そそいでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水差しが空だと気づいたので、店員に水の補充を頼みました。": [
+      {
+        "t": "水差し",
+        "z": "水壺",
+        "j": "水差し",
+        "e": "water pitcher",
+        "r": "みずさし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空",
+        "z": "空的",
+        "j": "空",
+        "e": "empty",
+        "r": "から"
+      },
+      {
+        "t": "だと"
+      },
+      {
+        "t": "気づいた",
+        "z": "發現",
+        "j": "気づいた",
+        "e": "noticed",
+        "r": "きづいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "補充",
+        "z": "補水",
+        "j": "補充",
+        "e": "refill",
+        "r": "ほじゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "頼みました",
+        "z": "拜託了",
+        "j": "頼みました",
+        "e": "asked for",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "コップをお盆に置いてください。": [
+      {
+        "t": "コップ",
+        "z": "杯子",
+        "j": "コップ",
+        "e": "cups",
+        "r": "コップ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お盆",
+        "z": "托盤",
+        "j": "お盆",
+        "e": "serving tray",
+        "r": "おぼん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放",
+        "j": "置いてください",
+        "e": "please put",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水がこぼれやすいので、お盆をゆっくり運んでください。": [
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "こぼれやすい",
+        "z": "容易灑出",
+        "j": "こぼれやすい",
+        "e": "spills easily",
+        "r": "こぼれやすい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "お盆",
+        "z": "托盤",
+        "j": "お盆",
+        "e": "serving tray",
+        "r": "おぼん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "運んでください",
+        "z": "請端著走",
+        "j": "運んでください",
+        "e": "please carry",
+        "r": "はこんでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "会計伝票はどこですか。": [
+      {
+        "t": "会計伝票",
+        "z": "帳單",
+        "j": "会計伝票",
+        "e": "bill",
+        "r": "かいけいでんぴょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "どこ",
+        "z": "哪裡",
+        "j": "どこ",
+        "e": "where",
+        "r": "どこ"
+      },
+      {
+        "t": "ですか。"
+      }
+    ],
+    "会計伝票に注文していない飲み物が入っているので、確認してもらえますか。": [
+      {
+        "t": "会計伝票",
+        "z": "帳單",
+        "j": "会計伝票",
+        "e": "bill",
+        "r": "かいけいでんぴょう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "注文していない",
+        "z": "沒點的",
+        "j": "注文していない",
+        "e": "did not order",
+        "r": "ちゅうもんしていない"
+      },
+      {
+        "t": "飲み物",
+        "z": "飲料",
+        "j": "飲み物",
+        "e": "drink",
+        "r": "のみもの"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "入っている",
+        "z": "列在裡面",
+        "j": "入っている",
+        "e": "is included",
+        "r": "はいっている"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "確認してもらえますか",
+        "z": "可以幫忙確認嗎",
+        "j": "確認してもらえますか",
+        "e": "could you check",
+        "r": "かくにんしてもらえますか"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ボックス席に座りましょう。": [
+      {
+        "t": "ボックス席",
+        "z": "卡座",
+        "j": "ボックス席",
+        "e": "booth",
+        "r": "ボックスせき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "座りましょう",
+        "z": "坐吧",
+        "j": "座りましょう",
+        "e": "let us sit",
+        "r": "すわりましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "四人なので、空いていればボックス席をお願いしたいです。": [
+      {
+        "t": "四人",
+        "z": "四個人",
+        "j": "四人",
+        "e": "four people",
+        "r": "よにん"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "空いていれば",
+        "z": "如果有空位",
+        "j": "空いていれば",
+        "e": "if available",
+        "r": "あいていれば"
+      },
+      {
+        "t": "ボックス席",
+        "z": "卡座",
+        "j": "ボックス席",
+        "e": "booth",
+        "r": "ボックスせき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お願いしたいです",
+        "z": "想請您安排",
+        "j": "お願いしたいです",
+        "e": "would like to request",
+        "r": "おねがいしたいです"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このカウンター席は空いていますか。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "カウンター席",
+        "z": "吧檯座位",
+        "j": "カウンター席",
+        "e": "counter seat",
+        "r": "カウンターせき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "空いていますか",
+        "z": "有空嗎",
+        "j": "空いていますか",
+        "e": "is it available",
+        "r": "あいていますか"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "テーブル席は満席でしたが、カウンター席が空いていたので、そこに座りました。": [
+      {
+        "t": "テーブル席",
+        "z": "餐桌座位",
+        "j": "テーブル席",
+        "e": "table seating",
+        "r": "テーブルせき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "満席",
+        "z": "客滿",
+        "j": "満席",
+        "e": "full",
+        "r": "まんせき"
+      },
+      {
+        "t": "でしたが、"
+      },
+      {
+        "t": "カウンター席",
+        "z": "吧檯座位",
+        "j": "カウンター席",
+        "e": "counter seat",
+        "r": "カウンターせき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空いていた",
+        "z": "有空位",
+        "j": "空いていた",
+        "e": "was available",
+        "r": "あいていた"
+      },
+      {
+        "t": "ので、そこに"
+      },
+      {
+        "t": "座りました",
+        "z": "坐下了",
+        "j": "座りました",
+        "e": "sat",
+        "r": "すわりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子ども用ハイチェアを貸してもらえますか。": [
+      {
+        "t": "子ども用ハイチェア",
+        "z": "兒童餐椅",
+        "j": "子ども用ハイチェア",
+        "e": "high chair",
+        "r": "こどもようハイチェア"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貸してもらえますか",
+        "z": "可以借用嗎",
+        "j": "貸してもらえますか",
+        "e": "could we borrow",
+        "r": "かしてもらえますか"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子どもを子ども用ハイチェアに座らせる前に、安全ベルトを確認してください。": [
+      {
+        "t": "子ども",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child",
+        "r": "こども"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "子ども用ハイチェア",
+        "z": "兒童餐椅",
+        "j": "子ども用ハイチェア",
+        "e": "high chair",
+        "r": "こどもようハイチェア"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "座らせる",
+        "z": "讓坐下",
+        "j": "座らせる",
+        "e": "seat someone",
+        "r": "すわらせる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "安全ベルト",
+        "z": "安全帶",
+        "j": "安全ベルト",
+        "e": "safety strap",
+        "r": "あんぜんベルト"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認してください",
+        "z": "請確認",
+        "j": "確認してください",
+        "e": "please check",
+        "r": "かくにんしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この茶碗にご飯をよそってください。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "茶碗",
+        "z": "飯碗",
+        "j": "茶碗",
+        "e": "rice bowl",
+        "r": "ちゃわん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ご飯",
+        "z": "白飯",
+        "j": "ご飯",
+        "e": "cooked rice",
+        "r": "ごはん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "よそってください",
+        "z": "請盛入",
+        "j": "よそってください",
+        "e": "please serve",
+        "r": "よそってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "茶碗が熱かったので、両手で持ちました。": [
+      {
+        "t": "茶碗",
+        "z": "飯碗",
+        "j": "茶碗",
+        "e": "rice bowl",
+        "r": "ちゃわん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "熱かった",
+        "z": "燙的",
+        "j": "熱かった",
+        "e": "was hot",
+        "r": "あつかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "両手",
+        "z": "雙手",
+        "j": "両手",
+        "e": "both hands",
+        "r": "りょうて"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "持ちました",
+        "z": "拿著了",
+        "j": "持ちました",
+        "e": "held",
+        "r": "もちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この汁椀には蓋が付いています。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "汁椀",
+        "z": "湯碗",
+        "j": "汁椀",
+        "e": "soup bowl",
+        "r": "しるわん"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "蓋",
+        "z": "蓋子",
+        "j": "蓋",
+        "e": "lid",
+        "r": "ふた"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "付いています",
+        "z": "附有",
+        "j": "付いています",
+        "e": "is fitted with",
+        "r": "ついています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "味噌汁をこぼさないように、汁椀を手元に寄せました。": [
+      {
+        "t": "味噌汁",
+        "z": "味噌湯",
+        "j": "味噌汁",
+        "e": "miso soup",
+        "r": "みそしる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "こぼさない",
+        "z": "不灑出",
+        "j": "こぼさない",
+        "e": "not spill",
+        "r": "こぼさない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "汁椀",
+        "z": "湯碗",
+        "j": "汁椀",
+        "e": "soup bowl",
+        "r": "しるわん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "手元",
+        "z": "手邊",
+        "j": "手元",
+        "e": "close at hand",
+        "r": "てもと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "寄せました",
+        "z": "移近了",
+        "j": "寄せました",
+        "e": "moved closer",
+        "r": "よせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このラーメン鉢は空です。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "ラーメン鉢",
+        "z": "拉麵碗",
+        "j": "ラーメン鉢",
+        "e": "ramen bowl",
+        "r": "ラーメンばち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "空",
+        "z": "空的",
+        "j": "空",
+        "e": "empty",
+        "r": "から"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "スープが塩辛すぎたので、麺を食べ終えてもラーメン鉢に少し残しました。": [
+      {
+        "t": "スープ",
+        "z": "湯底",
+        "j": "スープ",
+        "e": "broth",
+        "r": "スープ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "塩辛すぎた",
+        "z": "太鹹",
+        "j": "塩辛すぎた",
+        "e": "was too salty",
+        "r": "しおからすぎた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "麺",
+        "z": "麵",
+        "j": "麺",
+        "e": "noodles",
+        "r": "めん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べ終えても",
+        "z": "即使吃完",
+        "j": "食べ終えても",
+        "e": "even after finishing eating",
+        "r": "たべおえても"
+      },
+      {
+        "t": "ラーメン鉢",
+        "z": "拉麵碗",
+        "j": "ラーメン鉢",
+        "e": "ramen bowl",
+        "r": "ラーメンばち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "少し",
+        "z": "一些",
+        "j": "少し",
+        "e": "some",
+        "r": "すこし"
+      },
+      {
+        "t": "残しました",
+        "z": "留下了",
+        "j": "残しました",
+        "e": "left",
+        "r": "のこしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "レンゲを持ってきてください。": [
+      {
+        "t": "レンゲ",
+        "z": "中式湯匙",
+        "j": "レンゲ",
+        "e": "Chinese soup spoon",
+        "r": "レンゲ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてください",
+        "z": "請拿來",
+        "j": "持ってきてください",
+        "e": "please bring",
+        "r": "もってきてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ラーメン鉢が熱くて持ち上げられなかったので、レンゲでスープを飲みました。": [
+      {
+        "t": "ラーメン鉢",
+        "z": "拉麵碗",
+        "j": "ラーメン鉢",
+        "e": "ramen bowl",
+        "r": "ラーメンばち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "熱くて",
+        "z": "燙而且",
+        "j": "熱くて",
+        "e": "was hot and",
+        "r": "あつくて"
+      },
+      {
+        "t": "持ち上げられなかった",
+        "z": "無法拿起",
+        "j": "持ち上げられなかった",
+        "e": "could not lift",
+        "r": "もちあげられなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "レンゲ",
+        "z": "中式湯匙",
+        "j": "レンゲ",
+        "e": "Chinese soup spoon",
+        "r": "レンゲ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "スープ",
+        "z": "湯底",
+        "j": "スープ",
+        "e": "broth",
+        "r": "スープ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "飲みました",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "r": "のみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "醤油皿に醤油を注いでください。": [
+      {
+        "t": "醤油皿",
+        "z": "醬油碟",
+        "j": "醤油皿",
+        "e": "dipping dish",
+        "r": "しょうゆざら"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "醤油",
+        "z": "醬油",
+        "j": "醤油",
+        "e": "soy sauce",
+        "r": "しょうゆ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注いでください",
+        "z": "請倒入",
+        "j": "注いでください",
+        "e": "please pour",
+        "r": "そそいでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "醤油皿が空だったので、寿司を食べる前に醤油を足しました。": [
+      {
+        "t": "醤油皿",
+        "z": "醬油碟",
+        "j": "醤油皿",
+        "e": "dipping dish",
+        "r": "しょうゆざら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空だった",
+        "z": "空的",
+        "j": "空だった",
+        "e": "was empty",
+        "r": "からだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "寿司",
+        "z": "壽司",
+        "j": "寿司",
+        "e": "sushi",
+        "r": "すし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べる",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat",
+        "r": "たべる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "醤油",
+        "z": "醬油",
+        "j": "醤油",
+        "e": "soy sauce",
+        "r": "しょうゆ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "足しました",
+        "z": "添加了",
+        "j": "足しました",
+        "e": "added",
+        "r": "たしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "サラダには取り箸を使ってください。": [
+      {
+        "t": "サラダ",
+        "z": "沙拉",
+        "j": "サラダ",
+        "e": "salad",
+        "r": "サラダ"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "取り箸",
+        "z": "公筷",
+        "j": "取り箸",
+        "e": "serving chopsticks",
+        "r": "とりばし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使ってください",
+        "z": "請使用",
+        "j": "使ってください",
+        "e": "please use",
+        "r": "つかってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "みんなが使えるように、取り箸を大皿に戻してください。": [
+      {
+        "t": "みんな",
+        "z": "每個人",
+        "j": "みんな",
+        "e": "everyone",
+        "r": "みんな"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "使える",
+        "z": "能使用",
+        "j": "使える",
+        "e": "can use",
+        "r": "つかえる"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "取り箸",
+        "z": "公筷",
+        "j": "取り箸",
+        "e": "serving chopsticks",
+        "r": "とりばし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "大皿",
+        "z": "大餐盤",
+        "j": "大皿",
+        "e": "platter",
+        "r": "おおざら"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻してください",
+        "z": "請放回",
+        "j": "戻してください",
+        "e": "please put back",
+        "r": "もどしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "割り箸を割ってください。": [
+      {
+        "t": "割り箸",
+        "z": "免洗筷",
+        "j": "割り箸",
+        "e": "disposable chopsticks",
+        "r": "わりばし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "割ってください",
+        "z": "請掰開",
+        "j": "割ってください",
+        "e": "please split",
+        "r": "わってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "割り箸を床に落としてしまったら、店員が新しい割り箸を持ってきてくれました。": [
+      {
+        "t": "割り箸",
+        "z": "免洗筷",
+        "j": "割り箸",
+        "e": "disposable chopsticks",
+        "r": "わりばし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "床",
+        "z": "地板",
+        "j": "床",
+        "e": "floor",
+        "r": "ゆか"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "落としてしまったら",
+        "z": "不小心掉落之後",
+        "j": "落としてしまったら",
+        "e": "when I accidentally dropped",
+        "r": "おとしてしまったら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "店員",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server",
+        "r": "てんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "新しい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new",
+        "r": "あたらしい"
+      },
+      {
+        "t": "割り箸",
+        "z": "免洗筷",
+        "j": "割り箸",
+        "e": "disposable chopsticks",
+        "r": "わりばし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてくれました",
+        "z": "幫我拿來了",
+        "j": "持ってきてくれました",
+        "e": "brought for me",
+        "r": "もってきてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この湯飲みには取っ手がありません。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "湯飲み",
+        "z": "日式茶杯",
+        "j": "湯飲み",
+        "e": "Japanese teacup",
+        "r": "ゆのみ"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "取っ手",
+        "z": "把手",
+        "j": "取っ手",
+        "e": "handle",
+        "r": "とって"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ありません",
+        "z": "沒有",
+        "j": "ありません",
+        "e": "does not have",
+        "r": "ありません"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "袖が当たって倒れないように、湯飲みをテーブルの端から離しました。": [
+      {
+        "t": "袖",
+        "z": "袖子",
+        "j": "袖",
+        "e": "sleeve",
+        "r": "そで"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "当たって",
+        "z": "碰到而",
+        "j": "当たって",
+        "e": "bump into and",
+        "r": "あたって"
+      },
+      {
+        "t": "倒れない",
+        "z": "不倒下",
+        "j": "倒れない",
+        "e": "not fall over",
+        "r": "たおれない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "湯飲み",
+        "z": "日式茶杯",
+        "j": "湯飲み",
+        "e": "Japanese teacup",
+        "r": "ゆのみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "テーブル",
+        "z": "餐桌",
+        "j": "テーブル",
+        "e": "table",
+        "r": "テーブル"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "端",
+        "z": "邊緣",
+        "j": "端",
+        "e": "edge",
+        "r": "はし"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "離しました",
+        "z": "移遠了",
+        "j": "離しました",
+        "e": "moved away",
+        "r": "はなしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "回転台をゆっくり回してください。": [
+      {
+        "t": "回転台",
+        "z": "餐桌轉盤",
+        "j": "回転台",
+        "e": "lazy Susan",
+        "r": "かいてんだい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "回してください",
+        "z": "請轉動",
+        "j": "回してください",
+        "e": "please turn",
+        "r": "まわしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "回転台を回す前に、誰も料理を取っていないか確認しました。": [
+      {
+        "t": "回転台",
+        "z": "餐桌轉盤",
+        "j": "回転台",
+        "e": "lazy Susan",
+        "r": "かいてんだい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "回す",
+        "z": "轉動",
+        "j": "回す",
+        "e": "turn",
+        "r": "まわす"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "誰も",
+        "z": "沒有人",
+        "j": "誰も",
+        "e": "no one",
+        "r": "だれも"
+      },
+      {
+        "t": "料理",
+        "z": "食物",
+        "j": "料理",
+        "e": "food",
+        "r": "りょうり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取っていない",
+        "z": "沒有夾取",
+        "j": "取っていない",
+        "e": "is not taking",
+        "r": "とっていない"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ステーキナイフを持ってきてください。": [
+      {
+        "t": "ステーキナイフ",
+        "z": "牛排刀",
+        "j": "ステーキナイフ",
+        "e": "steak knife",
+        "r": "ステーキナイフ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてください",
+        "z": "請拿來",
+        "j": "持ってきてください",
+        "e": "please bring",
+        "r": "もってきてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ステーキナイフの切れ味が悪かったので、店員に交換をお願いしました。": [
+      {
+        "t": "ステーキナイフ",
+        "z": "牛排刀",
+        "j": "ステーキナイフ",
+        "e": "steak knife",
+        "r": "ステーキナイフ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "切れ味",
+        "z": "鋒利度",
+        "j": "切れ味",
+        "e": "sharpness",
+        "r": "きれあじ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "悪かった",
+        "z": "不佳",
+        "j": "悪かった",
+        "e": "was poor",
+        "r": "わるかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "交換",
+        "z": "更換",
+        "j": "交換",
+        "e": "replacement",
+        "r": "こうかん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お願いしました",
+        "z": "請求了",
+        "j": "お願いしました",
+        "e": "asked for",
+        "r": "おねがいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ワイングラスの脚を持ってください。": [
+      {
+        "t": "ワイングラス",
+        "z": "葡萄酒杯",
+        "j": "ワイングラス",
+        "e": "wine glass",
+        "r": "ワイングラス"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "脚",
+        "z": "杯腳",
+        "j": "脚",
+        "e": "stem",
+        "r": "あし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってください",
+        "z": "請握住",
+        "j": "持ってください",
+        "e": "please hold",
+        "r": "もってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ワイングラスの縁が欠けていたので、別のグラスを頼みました。": [
+      {
+        "t": "ワイングラス",
+        "z": "葡萄酒杯",
+        "j": "ワイングラス",
+        "e": "wine glass",
+        "r": "ワイングラス"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "縁",
+        "z": "杯緣",
+        "j": "縁",
+        "e": "rim",
+        "r": "ふち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "欠けていた",
+        "z": "有缺角",
+        "j": "欠けていた",
+        "e": "was chipped",
+        "r": "かけていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "別",
+        "z": "另一個",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "グラス",
+        "z": "杯子",
+        "j": "グラス",
+        "e": "glass",
+        "r": "グラス"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "頼みました",
+        "z": "要求了",
+        "j": "頼みました",
+        "e": "asked for",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ここにお猪口を置いてください。": [
+      {
+        "t": "ここ",
+        "z": "這裡",
+        "j": "ここ",
+        "e": "here",
+        "r": "ここ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お猪口",
+        "z": "清酒杯",
+        "j": "お猪口",
+        "e": "sake cup",
+        "r": "おちょこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放",
+        "j": "置いてください",
+        "e": "please put",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達も日本酒を味見したかったので、お猪口をもう一つ頼みました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "も"
+      },
+      {
+        "t": "日本酒",
+        "z": "清酒",
+        "j": "日本酒",
+        "e": "sake",
+        "r": "にほんしゅ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "味見したかった",
+        "z": "想嚐嚐",
+        "j": "味見したかった",
+        "e": "wanted to try",
+        "r": "あじみしたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "お猪口",
+        "z": "清酒杯",
+        "j": "お猪口",
+        "e": "sake cup",
+        "r": "おちょこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もう一つ",
+        "z": "再一個",
+        "j": "もう一つ",
+        "e": "one more",
+        "r": "もうひとつ"
+      },
+      {
+        "t": "頼みました",
+        "z": "要求了",
+        "j": "頼みました",
+        "e": "asked for",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "徳利から日本酒を注いでください。": [
+      {
+        "t": "徳利",
+        "z": "清酒壺",
+        "j": "徳利",
+        "e": "sake flask",
+        "r": "とっくり"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "日本酒",
+        "z": "清酒",
+        "j": "日本酒",
+        "e": "sake",
+        "r": "にほんしゅ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注いでください",
+        "z": "請倒出",
+        "j": "注いでください",
+        "e": "please pour",
+        "r": "そそいでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "徳利が空だったので、もう一本注文できるか店員に聞きました。": [
+      {
+        "t": "徳利",
+        "z": "清酒壺",
+        "j": "徳利",
+        "e": "sake flask",
+        "r": "とっくり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空だった",
+        "z": "空的",
+        "j": "空だった",
+        "e": "was empty",
+        "r": "からだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "もう一本",
+        "z": "再一壺",
+        "j": "もう一本",
+        "e": "one more flask",
+        "r": "もういっぽん"
+      },
+      {
+        "t": "注文できる",
+        "z": "能點",
+        "j": "注文できる",
+        "e": "can order",
+        "r": "ちゅうもんできる"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "店員",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "聞きました",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "醤油差しを取ってください。": [
+      {
+        "t": "醤油差し",
+        "z": "醬油壺",
+        "j": "醤油差し",
+        "e": "soy sauce dispenser",
+        "r": "しょうゆさし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取ってください",
+        "z": "請遞給我",
+        "j": "取ってください",
+        "e": "please pass it to me",
+        "r": "とってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "醤油差しの蓋が緩んでいたので、押さえながら注ぎました。": [
+      {
+        "t": "醤油差し",
+        "z": "醬油壺",
+        "j": "醤油差し",
+        "e": "soy sauce dispenser",
+        "r": "しょうゆさし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "蓋",
+        "z": "蓋子",
+        "j": "蓋",
+        "e": "lid",
+        "r": "ふた"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "緩んでいた",
+        "z": "鬆了",
+        "j": "緩んでいた",
+        "e": "was loose",
+        "r": "ゆるんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "押さえながら",
+        "z": "一邊按住",
+        "j": "押さえながら",
+        "e": "while holding in place",
+        "r": "おさえながら"
+      },
+      {
+        "t": "注ぎました",
+        "z": "倒了",
+        "j": "注ぎました",
+        "e": "poured",
+        "r": "そそぎました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "箸立てから箸を一膳取ってください。": [
+      {
+        "t": "箸立て",
+        "z": "筷筒",
+        "j": "箸立て",
+        "e": "chopstick holder",
+        "r": "はしたて"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "箸",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks",
+        "r": "はし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一膳",
+        "z": "一雙",
+        "j": "一膳",
+        "e": "one pair",
+        "r": "いちぜん"
+      },
+      {
+        "t": "取ってください",
+        "z": "請拿",
+        "j": "取ってください",
+        "e": "please take",
+        "r": "とってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "箸立てに手が届かなかったので、友達に箸を取ってくれるように頼みました。": [
+      {
+        "t": "箸立て",
+        "z": "筷筒",
+        "j": "箸立て",
+        "e": "chopstick holder",
+        "r": "はしたて"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "手",
+        "z": "手",
+        "j": "手",
+        "e": "hand",
+        "r": "て"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "届かなかった",
+        "z": "搆不到",
+        "j": "届かなかった",
+        "e": "could not reach",
+        "r": "とどかなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "箸",
+        "z": "筷子",
+        "j": "箸",
+        "e": "chopsticks",
+        "r": "はし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取ってくれる",
+        "z": "幫我拿",
+        "j": "取ってくれる",
+        "e": "get for me",
+        "r": "とってくれる"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "頼みました",
+        "z": "請求了",
+        "j": "頼みました",
+        "e": "asked",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "店員が配膳ワゴンを押しました。": [
+      {
+        "t": "店員",
+        "z": "服務人員",
+        "j": "店員",
+        "e": "server",
+        "r": "てんいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "配膳ワゴン",
+        "z": "餐車",
+        "j": "配膳ワゴン",
+        "e": "serving cart",
+        "r": "はいぜんワゴン"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押しました",
+        "z": "推了",
+        "j": "押しました",
+        "e": "pushed",
+        "r": "おしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "配膳ワゴンが私の後ろを通れるように、椅子をテーブルに寄せました。": [
+      {
+        "t": "配膳ワゴン",
+        "z": "餐車",
+        "j": "配膳ワゴン",
+        "e": "serving cart",
+        "r": "はいぜんワゴン"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "me",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "後ろ",
+        "z": "身後",
+        "j": "後ろ",
+        "e": "behind",
+        "r": "うしろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "通れる",
+        "z": "能通過",
+        "j": "通れる",
+        "e": "can pass",
+        "r": "とおれる"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "椅子",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair",
+        "r": "いす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "テーブル",
+        "z": "餐桌",
+        "j": "テーブル",
+        "e": "table",
+        "r": "テーブル"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "寄せました",
+        "z": "移近了",
+        "j": "寄せました",
+        "e": "moved closer",
+        "r": "よせました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

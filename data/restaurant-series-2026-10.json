@@ -1,0 +1,1499 @@
+{
+  "schemaVersion": 1,
+  "series": "restaurant",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "Local candidate only; no production upload, database write, commit or deployment.",
+  "category": {
+    "id": "restaurant",
+    "name": "Restaurant",
+    "nameZh": "餐廳",
+    "nameJa": "レストラン",
+    "emoji": "🍽️",
+    "description": "日本餐廳常見的點餐設備、桌上用品、食具與座位",
+    "descriptionEn": "Ordering devices, table essentials, tableware, and seating in Japanese restaurants",
+    "descriptionJa": "日本の飲食店で見かける注文機器、卓上用品、食器と座席",
+    "color": "from-orange-100 to-amber-100",
+    "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/category-restaurant-v1-21d366d5e18d.webp"
+  },
+  "entries": [
+    {
+      "id": "menu",
+      "word": "menu",
+      "chinese": "菜單",
+      "chineseDefinition": "列出餐廳供應餐點與價格、供客人選餐的紙本冊頁。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmen.juː/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "菜單",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A printed list or booklet of the food and drinks a restaurant serves, usually with prices.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店で出している料理や飲み物、値段を載せた紙の一覧や冊子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please bring a menu.",
+          "ja": "メニューを持ってきてください。",
+          "zh": "請拿一份菜單來。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I kept the menu because I had not decided what to eat.",
+          "ja": "食べるものをまだ決めていなかったので、メニューを手元に置いておきました。",
+          "zh": "因為還沒決定要吃什麼，我把菜單留在手邊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "メニュー",
+      "jaReading": "メニュー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/menu-v1-790e4d547380.webp"
+    },
+    {
+      "id": "ordering-tablet",
+      "word": "ordering tablet",
+      "chinese": "點餐平板",
+      "chineseDefinition": "餐廳桌上供客人瀏覽餐點並直接送出訂單的平板裝置。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɔːr.dɚ.ɪŋ ˈtæb.lət/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "點餐平板",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tablet at a restaurant that customers use to view dishes and send their orders.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店で客が料理を選び、注文を送信するために使うタブレット端末。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Choose a dish on the ordering tablet.",
+          "ja": "注文用タブレットで料理を選んでください。",
+          "zh": "請在點餐平板上選擇餐點。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Check the quantity before you send your order from the ordering tablet.",
+          "ja": "注文用タブレットで注文を送信する前に、数量を確認してください。",
+          "zh": "從點餐平板送出訂單前，請先確認數量。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "注文用タブレット",
+      "jaReading": "ちゅうもんようタブレット",
+      "jaReadingSegments": [
+        {
+          "text": "注文用",
+          "ruby": "ちゅうもんよう"
+        },
+        {
+          "text": "タブレット",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/ordering-tablet-v1-30a844d3d842.webp"
+    },
+    {
+      "id": "call-button",
+      "word": "call button",
+      "chinese": "服務鈴按鈕",
+      "chineseDefinition": "放在餐桌上，按下後可通知店員前來服務的電子按鈕。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɔːl ˌbʌt.ən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "服務鈴按鈕",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A button on a restaurant table that customers press to ask a member of staff to come over.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店のテーブルに置かれ、押すと店員を呼べるボタン。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please press the call button.",
+          "ja": "呼び出しボタンを押してください。",
+          "zh": "請按服務鈴按鈕。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I waved to a server because I had not noticed the call button.",
+          "ja": "呼び出しボタンに気づかなかったので、店員に手を振りました。",
+          "zh": "因為沒注意到服務鈴按鈕，我向服務人員揮手。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "呼び出しボタン",
+      "jaReading": "よびだしボタン",
+      "jaReadingSegments": [
+        {
+          "text": "呼び出し",
+          "ruby": "よびだし"
+        },
+        {
+          "text": "ボタン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/call-button-v1-c22be5059a34.webp"
+    },
+    {
+      "id": "wet-hand-towel",
+      "word": "wet hand towel",
+      "chinese": "濕毛巾",
+      "chineseDefinition": "餐前提供給客人擦手的小條濕毛巾，日文稱おしぼり。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌwet ˈhænd ˌtaʊ.əl/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "濕毛巾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small damp towel offered to restaurant customers for wiping their hands before a meal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "食事の前などに手を拭くため、飲食店で出される小さな濡れたタオル。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Wipe your hands with the wet hand towel.",
+          "ja": "おしぼりで手を拭いてください。",
+          "zh": "請用濕毛巾擦手。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The wet hand towel was too hot, so I waited a little before using it.",
+          "ja": "おしぼりが熱すぎたので、少し待ってから使いました。",
+          "zh": "濕毛巾太燙，所以我等了一下才使用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "おしぼり",
+      "jaReading": "おしぼり",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/wet-hand-towel-v1-4f931c47c190.webp"
+    },
+    {
+      "id": "chopstick-rest",
+      "word": "chopstick rest",
+      "chinese": "筷架",
+      "chineseDefinition": "用來托住筷子前端、使筷尖不直接碰到桌面的小支架。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃɑːp.stɪk ˌrest/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "筷架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small support that holds the tips of chopsticks above the table.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "箸の先がテーブルに直接触れないよう、箸を載せる小さな道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your chopsticks on the chopstick rest.",
+          "ja": "箸を箸置きに置いてください。",
+          "zh": "請把筷子放在筷架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "There was no chopstick rest, so I rested my chopsticks on their paper sleeve.",
+          "ja": "箸置きがなかったので、箸を紙袋の上に置きました。",
+          "zh": "因為沒有筷架，我把筷子擱在筷子的紙套上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "箸置き",
+      "jaReading": "はしおき",
+      "jaReadingSegments": [
+        {
+          "text": "箸",
+          "ruby": "はし"
+        },
+        {
+          "text": "置き",
+          "ruby": "おき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/chopstick-rest-v1-7178cc2826ba.webp"
+    },
+    {
+      "id": "paper-napkin",
+      "word": "paper napkin",
+      "chinese": "紙餐巾",
+      "chineseDefinition": "用餐時擦嘴或擦手的一次性紙巾，與布餐巾及廚房紙巾區分。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpeɪ.pɚ ˌnæp.kɪn/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "紙餐巾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A disposable paper square used to wipe the mouth or hands during a meal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "食事中に口や手を拭くために使う、使い捨ての紙製ナプキン。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Take a paper napkin.",
+          "ja": "紙ナプキンを取ってください。",
+          "zh": "請拿一張紙餐巾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Could you bring another paper napkin so I can wipe my mouth?",
+          "ja": "口を拭きたいので、紙ナプキンをもう一枚持ってきてもらえますか。",
+          "zh": "我想擦嘴，可以再拿一張紙餐巾給我嗎？",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "紙ナプキン",
+      "jaReading": "かみナプキン",
+      "jaReadingSegments": [
+        {
+          "text": "紙",
+          "ruby": "かみ"
+        },
+        {
+          "text": "ナプキン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/paper-napkin-v1-835fe674eb34.webp"
+    },
+    {
+      "id": "water-pitcher",
+      "word": "water pitcher",
+      "chinese": "水壺",
+      "chineseDefinition": "餐桌上用來盛水與倒水、有把手和壺嘴的容器，不是煮水用的水壺。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwɔː.t̬ɚ ˌpɪtʃ.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "水壺",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A container with a handle and a spout used to hold and pour drinking water at a table.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲み水を入れ、コップなどに注ぐための、取っ手と注ぎ口が付いた容器。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Pour some water from the water pitcher.",
+          "ja": "水差しから水を注いでください。",
+          "zh": "請從水壺倒一些水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I noticed the water pitcher was empty, I asked a server to refill it.",
+          "ja": "水差しが空だと気づいたので、店員に水の補充を頼みました。",
+          "zh": "發現水壺空了之後，我請服務人員補水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "水差し",
+      "jaReading": "みずさし",
+      "jaReadingSegments": [
+        {
+          "text": "水差し",
+          "ruby": "みずさし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/water-pitcher-v1-d5c1bda0ab69.webp"
+    },
+    {
+      "id": "serving-tray",
+      "word": "serving tray",
+      "chinese": "托盤",
+      "chineseDefinition": "用來一次端送餐點或飲料、四周有低邊的平盤。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɝː.vɪŋ ˌtreɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "托盤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A flat object with a raised edge used to carry dishes or drinks when serving a meal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "料理や飲み物を載せて運ぶための、浅い縁が付いた平たい道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the cups on the serving tray.",
+          "ja": "コップをお盆に置いてください。",
+          "zh": "請把杯子放在托盤上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Carry the serving tray slowly because the water spills easily.",
+          "ja": "水がこぼれやすいので、お盆をゆっくり運んでください。",
+          "zh": "因為水容易灑出，請慢慢端著托盤走。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "お盆",
+      "jaReading": "おぼん",
+      "jaReadingSegments": [
+        {
+          "text": "お",
+          "ruby": null
+        },
+        {
+          "text": "盆",
+          "ruby": "ぼん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/serving-tray-v1-33694e82d063.webp"
+    },
+    {
+      "id": "restaurant-bill",
+      "word": "bill",
+      "chinese": "帳單",
+      "chineseDefinition": "餐廳結帳前列出已點餐飲與應付金額的單據，與付完款取得的收據不同。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bɪl/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "帳單",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A restaurant document listing the food and drinks ordered and the amount still to be paid.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店で注文した料理や飲み物、支払う金額が書かれた、会計前の伝票。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Where is the bill?",
+          "ja": "会計伝票はどこですか。",
+          "zh": "帳單在哪裡？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The bill includes a drink we did not order, so could you check it?",
+          "ja": "会計伝票に注文していない飲み物が入っているので、確認してもらえますか。",
+          "zh": "帳單上有我們沒點的飲料，可以幫忙確認嗎？",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "会計伝票",
+      "jaReading": "かいけいでんぴょう",
+      "jaReadingSegments": [
+        {
+          "text": "会計",
+          "ruby": "かいけい"
+        },
+        {
+          "text": "伝票",
+          "ruby": "でんぴょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/restaurant-bill-v1-704627ddb540.webp"
+    },
+    {
+      "id": "restaurant-booth",
+      "word": "booth",
+      "chinese": "卡座",
+      "chineseDefinition": "餐廳裡以長椅和隔背圍出、通常配有固定餐桌的座位區。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/buːθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "卡座",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A partly enclosed restaurant seating area with bench seats around a table.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店で、背もたれなどで仕切られたベンチ状の座席とテーブルがある席。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Let us sit in a booth.",
+          "ja": "ボックス席に座りましょう。",
+          "zh": "我們坐卡座吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "There are four of us, so we would like a booth if one is available.",
+          "ja": "四人なので、空いていればボックス席をお願いしたいです。",
+          "zh": "我們有四個人，如果有空位，想請您安排卡座。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ボックス席",
+      "jaReading": "ボックスせき",
+      "jaReadingSegments": [
+        {
+          "text": "ボックス",
+          "ruby": null
+        },
+        {
+          "text": "席",
+          "ruby": "せき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/restaurant-booth-v1-21d366d5e18d.webp"
+    },
+    {
+      "id": "counter-seat",
+      "word": "counter seat",
+      "chinese": "吧檯座位",
+      "chineseDefinition": "面向長形餐飲吧檯、常供一人使用的座位，不限供酒場所。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkaʊn.t̬ɚ ˌsiːt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "吧檯座位",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A seat facing a long restaurant counter, often used by a customer dining alone.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店の長いカウンターに向かって座る席。一人で食事をするときにも使われる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Is this counter seat free?",
+          "ja": "このカウンター席は空いていますか。",
+          "zh": "這個吧檯座位空著嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "All the tables were full, but a counter seat was available, so I sat there.",
+          "ja": "テーブル席は満席でしたが、カウンター席が空いていたので、そこに座りました。",
+          "zh": "餐桌座位都客滿了，不過吧檯還有空位，所以我坐在那裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カウンター席",
+      "jaReading": "カウンターせき",
+      "jaReadingSegments": [
+        {
+          "text": "カウンター",
+          "ruby": null
+        },
+        {
+          "text": "席",
+          "ruby": "せき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/counter-seat-v1-f286dc3513e4.webp"
+    },
+    {
+      "id": "high-chair",
+      "word": "high chair",
+      "chinese": "兒童餐椅",
+      "chineseDefinition": "讓幼兒能在餐桌高度用餐、附護欄或安全帶的高腳椅。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhaɪ ˌtʃer/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "兒童餐椅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tall chair with a safety bar or strap that lets a small child sit at dining-table height.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "幼児が食卓の高さで座れるようにした、安全ベルトやガードの付いた脚の高い椅子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Could we borrow a high chair?",
+          "ja": "子ども用ハイチェアを貸してもらえますか。",
+          "zh": "可以借用一張兒童餐椅嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Check the safety strap before putting your child in the high chair.",
+          "ja": "子どもを子ども用ハイチェアに座らせる前に、安全ベルトを確認してください。",
+          "zh": "讓孩子坐進兒童餐椅前，請先確認安全帶。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "子ども用ハイチェア",
+      "jaReading": "こどもようハイチェア",
+      "jaReadingSegments": [
+        {
+          "text": "子ども用",
+          "ruby": "こどもよう"
+        },
+        {
+          "text": "ハイチェア",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/high-chair-v1-c43d18ebd7e0.webp"
+    },
+    {
+      "id": "rice-bowl",
+      "word": "rice bowl",
+      "chinese": "飯碗",
+      "chineseDefinition": "盛白飯用的小碗，通常有圈足，與較大的拌料碗及拉麵碗區分。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈraɪs ˌboʊl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飯碗",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small bowl used for serving and eating cooked rice, often with a foot ring.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ご飯をよそって食べるための小さな器。大きな調理用のボウルやラーメン鉢とは区別する。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please put some rice in this rice bowl.",
+          "ja": "この茶碗にご飯をよそってください。",
+          "zh": "請在這個飯碗裡盛一些飯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the rice bowl was hot, I held it with both hands.",
+          "ja": "茶碗が熱かったので、両手で持ちました。",
+          "zh": "因為飯碗很燙，我用雙手拿著它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "茶碗",
+      "jaReading": "ちゃわん",
+      "jaReadingSegments": [
+        {
+          "text": "茶碗",
+          "ruby": "ちゃわん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/rice-bowl-v1-2a566a70fef4.webp"
+    },
+    {
+      "id": "soup-bowl",
+      "word": "soup bowl",
+      "chinese": "湯碗",
+      "chineseDefinition": "盛味噌湯等湯品的小型碗，日式常見款為漆器，有些附蓋。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsuːp ˌboʊl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "湯碗",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bowl for serving soup; the Japanese style shown is a small lacquer bowl, sometimes fitted with a lid.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "味噌汁などの汁物を入れる椀。漆器などで作られ、蓋が付いたものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This soup bowl has a lid.",
+          "ja": "この汁椀には蓋が付いています。",
+          "zh": "這個湯碗有蓋子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I moved the soup bowl closer so I would not spill the miso soup.",
+          "ja": "味噌汁をこぼさないように、汁椀を手元に寄せました。",
+          "zh": "為了不灑出味噌湯，我把湯碗移近了一點。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "汁椀",
+      "jaReading": "しるわん",
+      "jaReadingSegments": [
+        {
+          "text": "汁椀",
+          "ruby": "しるわん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/soup-bowl-v1-fe5383cf9b32.webp"
+    },
+    {
+      "id": "ramen-bowl",
+      "word": "ramen bowl",
+      "chinese": "拉麵碗",
+      "chineseDefinition": "盛拉麵和湯底用、碗口較寬而且較深的大碗。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrɑː.mən ˌboʊl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "拉麵碗",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A large, deep bowl with a broad rim used to serve ramen noodles and broth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ラーメンの麺とスープを入れるための、口が広く深さのある大きな鉢。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This ramen bowl is empty.",
+          "ja": "このラーメン鉢は空です。",
+          "zh": "這個拉麵碗是空的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finishing the noodles, I left some broth in the ramen bowl because it was too salty.",
+          "ja": "スープが塩辛すぎたので、麺を食べ終えてもラーメン鉢に少し残しました。",
+          "zh": "因為湯太鹹，吃完麵後，我在拉麵碗裡留了一些湯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ラーメン鉢",
+      "jaReading": "ラーメンばち",
+      "jaReadingSegments": [
+        {
+          "text": "ラーメン",
+          "ruby": null
+        },
+        {
+          "text": "鉢",
+          "ruby": "ばち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/ramen-bowl-v1-8ce3946372b6.webp"
+    },
+    {
+      "id": "soup-spoon",
+      "word": "Chinese soup spoon",
+      "chinese": "中式湯匙",
+      "chineseDefinition": "短柄、深匙面、常搭配拉麵或湯品使用的中式湯匙，日文稱レンゲ。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌtʃaɪˈniːz ˈsuːp ˌspuːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "中式湯匙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A deep, short-handled spoon of the kind often served with noodles and soup in East Asian restaurants.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スープなどをすくって飲むための、深いくぼみと短い柄があるさじ。ラーメンなどに添えられる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please bring a Chinese soup spoon.",
+          "ja": "レンゲを持ってきてください。",
+          "zh": "請拿一支中式湯匙來。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I used a Chinese soup spoon to drink the broth because the ramen bowl was too hot to lift.",
+          "ja": "ラーメン鉢が熱くて持ち上げられなかったので、レンゲでスープを飲みました。",
+          "zh": "因為拉麵碗太燙拿不起來，我用中式湯匙喝湯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "レンゲ",
+      "jaReading": "レンゲ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/soup-spoon-v1-f97c7d5d0ca5.webp"
+    },
+    {
+      "id": "dipping-dish",
+      "word": "dipping dish",
+      "chinese": "醬油碟",
+      "chineseDefinition": "放少量醬油等沾醬的小淺碟，常搭配壽司或生魚片。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdɪp.ɪŋ ˌdɪʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "醬油碟",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small, shallow dish for a dipping sauce, such as the soy sauce served with sushi.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "寿司や刺身などを食べるとき、少量の醤油を入れてつけるための小さな浅い皿。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Pour soy sauce into the dipping dish.",
+          "ja": "醤油皿に醤油を注いでください。",
+          "zh": "請把醬油倒進醬油碟。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the dipping dish was empty, I added some soy sauce before eating the sushi.",
+          "ja": "醤油皿が空だったので、寿司を食べる前に醤油を足しました。",
+          "zh": "因為醬油碟空了，我在吃壽司前加了一些醬油。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "醤油皿",
+      "jaReading": "しょうゆざら",
+      "jaReadingSegments": [
+        {
+          "text": "醤油",
+          "ruby": "しょうゆ"
+        },
+        {
+          "text": "皿",
+          "ruby": "ざら"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/dipping-dish-v1-8841e0707011.webp"
+    },
+    {
+      "id": "serving-chopsticks",
+      "word": "serving chopsticks",
+      "chinese": "公筷",
+      "chineseDefinition": "供大家從共用餐盤夾取食物的筷子，與個人吃飯用筷及烹調用長筷用途不同。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɝː.vɪŋ ˌtʃɑːp.stɪks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "公筷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Chopsticks set out for transferring food from a shared dish to individual plates, rather than for eating directly.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "大皿などに盛られた料理を、それぞれの皿に取り分けるために添える箸。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Use the serving chopsticks for the salad.",
+          "ja": "サラダには取り箸を使ってください。",
+          "zh": "夾沙拉時請使用公筷。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Please return the serving chopsticks to the platter so everyone can use them.",
+          "ja": "みんなが使えるように、取り箸を大皿に戻してください。",
+          "zh": "請把公筷放回大餐盤上，讓大家都能使用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "取り箸",
+      "jaReading": "とりばし",
+      "jaReadingSegments": [
+        {
+          "text": "取り",
+          "ruby": "とり"
+        },
+        {
+          "text": "箸",
+          "ruby": "ばし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/serving-chopsticks-v1-38325e761819.webp"
+    },
+    {
+      "id": "disposable-chopsticks",
+      "word": "disposable chopsticks",
+      "chinese": "免洗筷",
+      "chineseDefinition": "通常為一次性木製或竹製、使用前常須掰開的一雙筷子。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈspoʊ.zə.bəl ˈtʃɑːp.stɪks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "免洗筷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pair of single-use wooden or bamboo chopsticks, often joined at one end and split apart before use.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "使い始めに二本に割って使うことが多い、使い捨ての木製や竹製の箸。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please split the disposable chopsticks.",
+          "ja": "割り箸を割ってください。",
+          "zh": "請把免洗筷掰開。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I dropped my disposable chopsticks on the floor, the server brought me a new pair.",
+          "ja": "割り箸を床に落としてしまったら、店員が新しい割り箸を持ってきてくれました。",
+          "zh": "我的免洗筷掉到地上後，服務人員拿了新的一雙給我。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "割り箸",
+      "jaReading": "わりばし",
+      "jaReadingSegments": [
+        {
+          "text": "割り",
+          "ruby": "わり"
+        },
+        {
+          "text": "箸",
+          "ruby": "ばし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/disposable-chopsticks-v1-17528fc942e0.webp"
+    },
+    {
+      "id": "japanese-teacup",
+      "word": "Japanese teacup",
+      "chinese": "日式茶杯",
+      "chineseDefinition": "喝茶用、通常沒有把手的日式杯子，與有把手的馬克杯區分。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌdʒæp.ənˈiːz ˈtiː.kʌp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "日式茶杯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese-style cup for drinking tea, typically without a handle.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "お茶などを飲むための、通常は取っ手のない和風のコップ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This Japanese teacup has no handle.",
+          "ja": "この湯飲みには取っ手がありません。",
+          "zh": "這個日式茶杯沒有把手。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I moved the Japanese teacup away from the table edge so my sleeve would not knock it over.",
+          "ja": "袖が当たって倒れないように、湯飲みをテーブルの端から離しました。",
+          "zh": "為了不讓袖子碰倒日式茶杯，我把它移離桌緣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "湯飲み",
+      "jaReading": "ゆのみ",
+      "jaReadingSegments": [
+        {
+          "text": "湯",
+          "ruby": "ゆ"
+        },
+        {
+          "text": "飲み",
+          "ruby": "のみ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/japanese-teacup-v1-27afd183b980.webp"
+    },
+    {
+      "id": "lazy-susan",
+      "word": "lazy Susan",
+      "chinese": "餐桌轉盤",
+      "chineseDefinition": "放在餐桌中央、可旋轉以方便大家取用共用餐點的圓形平台，不是整張餐桌。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌleɪ.zi ˈsuː.zən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "餐桌轉盤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A rotating platform placed on a dining table so that people can reach shared dishes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "食卓の中央に置き、料理を取りやすくするために回す台。食卓全体ではなく、その上で回る部分を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please turn the lazy Susan slowly.",
+          "ja": "回転台をゆっくり回してください。",
+          "zh": "請慢慢轉動餐桌轉盤。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before turning the lazy Susan, I checked that no one was taking food.",
+          "ja": "回転台を回す前に、誰も料理を取っていないか確認しました。",
+          "zh": "轉動餐桌轉盤前，我先確認沒有人正在夾菜。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "回転台",
+      "jaReading": "かいてんだい",
+      "jaReadingSegments": [
+        {
+          "text": "回転",
+          "ruby": "かいてん"
+        },
+        {
+          "text": "台",
+          "ruby": "だい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/lazy-susan-v1-bf22071aeb08.webp"
+    },
+    {
+      "id": "steak-knife",
+      "word": "steak knife",
+      "chinese": "牛排刀",
+      "chineseDefinition": "用餐時切肉用的小型鋒利餐刀，常有鋸齒刃；與鈍口奶油刀及廚房切菜刀區分。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsteɪk ˌnaɪf/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牛排刀",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sharp table knife for cutting meat while eating, often with a serrated edge.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "食事中に肉を切るための、よく切れる小型のナイフ。刃が波状のものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please bring a steak knife.",
+          "ja": "ステーキナイフを持ってきてください。",
+          "zh": "請拿一把牛排刀來。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The steak knife was dull, so I asked the server to replace it.",
+          "ja": "ステーキナイフの切れ味が悪かったので、店員に交換をお願いしました。",
+          "zh": "因為牛排刀不夠鋒利，我請服務人員更換。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ステーキナイフ",
+      "jaReading": "ステーキナイフ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/steak-knife-v1-f8b40c7338f0.webp"
+    },
+    {
+      "id": "wine-glass",
+      "word": "wine glass",
+      "chinese": "葡萄酒杯",
+      "chineseDefinition": "喝葡萄酒用的杯子，圖示為有杯肚、細杯腳及圓形杯底的高腳款，可用於紅酒或白酒。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwaɪn ˌɡlæs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "葡萄酒杯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A glass for drinking wine; the type shown has a rounded bowl, a slender stem, and a flat foot.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ワインを飲むためのグラス。図のように、丸みのあるボウル、細い脚、台座を持つものが一般的。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please hold the wine glass by the stem.",
+          "ja": "ワイングラスの脚を持ってください。",
+          "zh": "請握住葡萄酒杯的杯腳。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the wine glass had a chip on the rim, I asked for a different one.",
+          "ja": "ワイングラスの縁が欠けていたので、別のグラスを頼みました。",
+          "zh": "因為葡萄酒杯的杯緣有缺角，我要求換另一個杯子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ワイングラス",
+      "jaReading": "ワイングラス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/wine-glass-v1-50947fcd0715.webp"
+    },
+    {
+      "id": "sake-cup",
+      "word": "sake cup",
+      "chinese": "清酒杯",
+      "chineseDefinition": "喝日本清酒用的小杯子，常見陶瓷款比一般茶杯矮小。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɑː.keɪ ˌkʌp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "清酒杯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small cup used for drinking Japanese sake, often made of ceramic.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "日本酒を少しずつ飲むための小さな杯。陶磁器などで作られる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please put a sake cup here.",
+          "ja": "ここにお猪口を置いてください。",
+          "zh": "請在這裡放一個清酒杯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I asked for another sake cup because my friend wanted to try the sake too.",
+          "ja": "友達も日本酒を味見したかったので、お猪口をもう一つ頼みました。",
+          "zh": "因為朋友也想嚐嚐清酒，我再要了一個清酒杯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "お猪口",
+      "jaReading": "おちょこ",
+      "jaReadingSegments": [
+        {
+          "text": "お",
+          "ruby": null
+        },
+        {
+          "text": "猪口",
+          "ruby": "ちょこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/sake-cup-v1-16aafb3be307.webp"
+    },
+    {
+      "id": "sake-flask",
+      "word": "sake flask",
+      "chinese": "清酒壺",
+      "chineseDefinition": "盛裝並倒出日本清酒的細頸小壺，常見款為沒有把手的陶瓷壺。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɑː.keɪ ˌflæsk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "清酒壺",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A narrow-necked vessel used to serve and pour Japanese sake, commonly a small ceramic flask.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "日本酒を入れて注ぐための、首が細く胴が膨らんだ容器。陶磁器などで作られる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please pour sake from the sake flask.",
+          "ja": "徳利から日本酒を注いでください。",
+          "zh": "請從清酒壺倒出清酒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since the sake flask was empty, I asked the server if we could order another one.",
+          "ja": "徳利が空だったので、もう一本注文できるか店員に聞きました。",
+          "zh": "因為清酒壺空了，我問服務人員能不能再點一壺。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "徳利",
+      "jaReading": "とっくり",
+      "jaReadingSegments": [
+        {
+          "text": "徳利",
+          "ruby": "とっくり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/sake-flask-v1-c14deb8de114.webp"
+    },
+    {
+      "id": "soy-sauce-dispenser",
+      "word": "soy sauce dispenser",
+      "chinese": "醬油壺",
+      "chineseDefinition": "放在餐桌上、可補充醬油並少量倒出的容器，與販售用醬油瓶或沾醬碟區分。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɔɪ ˌsɔːs dɪˈspen.sɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "醬油壺",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A refillable tabletop container with a spout for pouring small amounts of soy sauce.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "食卓に置き、少量ずつ醤油を注ぐための容器。醤油を入れる皿や、販売用の瓶とは区別する。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please pass me the soy sauce dispenser.",
+          "ja": "醤油差しを取ってください。",
+          "zh": "請把醬油壺遞給我。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the soy sauce dispenser's lid was loose, I held it in place while pouring.",
+          "ja": "醤油差しの蓋が緩んでいたので、押さえながら注ぎました。",
+          "zh": "因為醬油壺的蓋子鬆了，我倒的時候按住蓋子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "醤油差し",
+      "jaReading": "しょうゆさし",
+      "jaReadingSegments": [
+        {
+          "text": "醤油",
+          "ruby": "しょうゆ"
+        },
+        {
+          "text": "差し",
+          "ruby": "さし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/soy-sauce-dispenser-v1-de83074a9794.webp"
+    },
+    {
+      "id": "chopstick-holder",
+      "word": "chopstick holder",
+      "chinese": "筷筒",
+      "chineseDefinition": "餐桌上供筷子直立收納、讓客人拿取的筒狀容器，與橫放筷尖的筷架區分。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃɑːp.stɪk ˌhoʊl.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "筷筒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An upright tabletop container that holds chopsticks for diners to take.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "箸を立てて入れ、食卓で取りやすくしておくための筒状の容器。箸置きとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please take a pair of chopsticks from the chopstick holder.",
+          "ja": "箸立てから箸を一膳取ってください。",
+          "zh": "請從筷筒拿一雙筷子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I asked my friend to pass me some chopsticks because I could not reach the chopstick holder.",
+          "ja": "箸立てに手が届かなかったので、友達に箸を取ってくれるように頼みました。",
+          "zh": "因為搆不到筷筒，我請朋友把筷子遞給我。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "箸立て",
+      "jaReading": "はしたて",
+      "jaReadingSegments": [
+        {
+          "text": "箸",
+          "ruby": "はし"
+        },
+        {
+          "text": "立て",
+          "ruby": "たて"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/chopstick-holder-v1-5dda8081c1a2.webp"
+    },
+    {
+      "id": "serving-cart",
+      "word": "serving cart",
+      "chinese": "餐車",
+      "chineseDefinition": "餐廳裡供人推行、用來運送餐點或餐具的有輪層架車，不是火車餐車或自動送餐機器人。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɝː.vɪŋ ˌkɑːrt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "餐車",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A wheeled cart pushed by staff to carry meals or tableware around a restaurant.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲食店で料理や食器を運ぶために、人が押して使う車輪付きのワゴン。配膳ロボットではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The server pushed the serving cart.",
+          "ja": "店員が配膳ワゴンを押しました。",
+          "zh": "服務人員推著餐車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I moved my chair closer to the table so the serving cart could pass behind me.",
+          "ja": "配膳ワゴンが私の後ろを通れるように、椅子をテーブルに寄せました。",
+          "zh": "我把椅子往餐桌挪近，讓餐車能從我身後通過。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "配膳ワゴン",
+      "jaReading": "はいぜんワゴン",
+      "jaReadingSegments": [
+        {
+          "text": "配膳",
+          "ruby": "はいぜん"
+        },
+        {
+          "text": "ワゴン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/restaurant-2026-10/serving-cart-v1-e6686d671bb8.webp"
+    }
+  ]
+}

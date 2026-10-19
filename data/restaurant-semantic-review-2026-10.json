@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "Individual review of every authored candidate and both examples, including contextual spans. Not an independent native-speaker review.",
+  "entries": [
+    {
+      "kind": "example",
+      "wordId": "menu",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "索取紙本菜單的自然服務情境；持ってきてください完整保留請求語氣。",
+      "sourceSha256": "baddff832f88499aa6df4013d53eebf85a1f84a036a97be53f4ba2cb145a4ff7"
+    },
+    {
+      "kind": "example",
+      "wordId": "menu",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "未決定吃什麼→保留菜單的因果相符；置いておきました表留待稍後使用。",
+      "sourceSha256": "cc542c8bf1b7e2d7fed24da7420bea52ec8b31727a66f03f3cffbf63d7dfb670"
+    },
+    {
+      "kind": "word",
+      "wordId": "menu",
+      "verdict": "pass",
+      "reason": "紙本菜單與點餐平板分開；第一句索取菜單，第二句以尚未決定餐點為理由多看菜單，具實質因果。",
+      "sourceSha256": "3728aabe05b718b72016bf3b9062c81d98b6a2b2fe3b6deea319651f41c62434"
+    },
+    {
+      "kind": "example",
+      "wordId": "ordering-tablet",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "平板選餐指令三語一致；料理為餐點而非烹飪動作。",
+      "sourceSha256": "0edea7bfb60135fb432a40fc68214944085ace052cad7003a93689628999fad4"
+    },
+    {
+      "kind": "example",
+      "wordId": "ordering-tablet",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "送出前確認數量的先後關係完整；前是時間義，非空間前面。",
+      "sourceSha256": "40730c68c880a988c23edc76f4bbd1ed9386a9f97afe8b93ea6ea73b567fa8b2"
+    },
+    {
+      "kind": "word",
+      "wordId": "ordering-tablet",
+      "verdict": "pass",
+      "reason": "點餐設備而非一般平板；簡單句操作選餐，複雜句確認數量後送單，時間順序清楚。",
+      "sourceSha256": "660411e945de290237f629ff8b32251e30d916140ea0f95ec7a468c312fe26e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "call-button",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "按電子呼叫鈕的直接請求，兩個實詞詞塊均可點。",
+      "sourceSha256": "c8784f37ce6463daffbb1164f7939eb65397ed15dbbef2423e46fd6fa8da4e01"
+    },
+    {
+      "kind": "example",
+      "wordId": "call-button",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "未注意設備而以手勢叫人，生活動機合理；手を振る拆為名詞及動詞並保留助詞。",
+      "sourceSha256": "6313bdbd1bb2bae4a585573264d82b16845020d463da2f3c93a0257bff8781de"
+    },
+    {
+      "kind": "word",
+      "wordId": "call-button",
+      "verdict": "pass",
+      "reason": "以桌面電子呼叫按鈕為單一概念；第一句請按鈕，第二句因未注意到按鈕而揮手，非重複用例。",
+      "sourceSha256": "3f893fd4dd5b222c76dafc114d70924f8bd6adef3d5be26f1b8e2703ccea11c7"
+    },
+    {
+      "kind": "example",
+      "wordId": "wet-hand-towel",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "符合おしぼり餐前擦手的用途；無加入擦臉等其他用法。",
+      "sourceSha256": "582def14ec657abac7ded90acf8b15a728cd396e279dc263bfbd2306dbc05389"
+    },
+    {
+      "kind": "example",
+      "wordId": "wet-hand-towel",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "溫熱おしぼり的可想像情境；日文同時表達原因與等待後再使用的順序。",
+      "sourceSha256": "49d29dbc7a85c2df307472d851135913a4b7d527b2e253551ccaaa1a13e03a1c"
+    },
+    {
+      "kind": "word",
+      "wordId": "wet-hand-towel",
+      "verdict": "pass",
+      "reason": "小條餐前濕毛巾，不與浴室毛巾或便利店濕毛巾機混淆；第二句以熱度說明延後使用。",
+      "sourceSha256": "8a186f57468d2e07a5b9fe92e887129bd582d694f851654e6916dbadddf4cc89"
+    },
+    {
+      "kind": "example",
+      "wordId": "chopstick-rest",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "使用支架承托筷子，箸與箸置き分成兩個獨立概念。",
+      "sourceSha256": "7b17197cd6039acb137c6d8f681afe3bad3556dde5342226c50f536870c7c7f8"
+    },
+    {
+      "kind": "example",
+      "wordId": "chopstick-rest",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "箸的紙袋在餐廳語境指筷子紙套；三語保留沒有筷架與改放紙套的因果。",
+      "sourceSha256": "198382f5ad9af39f9485725de402dd0c9ec8ca9a478f014664842a111943fb7f"
+    },
+    {
+      "kind": "word",
+      "wordId": "chopstick-rest",
+      "verdict": "pass",
+      "reason": "筷架支撐筷尖的功能明確；第一句放筷，第二句因筷架缺席改放紙套，具因果及替代行為。",
+      "sourceSha256": "e41e2d34ff9afd081abd935d092c769efdf06d74ebc9fbb1be3e10d788be8e94"
+    },
+    {
+      "kind": "example",
+      "wordId": "paper-napkin",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "取餐巾的簡單生活指令，非空泛定義句。",
+      "sourceSha256": "06ee382b229bf5b13522d937790bc92b1a1e648df29f5163c4558e8cb062fc6d"
+    },
+    {
+      "kind": "example",
+      "wordId": "paper-napkin",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "擦嘴目的與再索取一張對齊；持ってきてもらえますか完整活用及禮貌請求。",
+      "sourceSha256": "ffef0594fc7466745e45bfbe9856d845fbe32c3308b34799203c85d45d736001"
+    },
+    {
+      "kind": "word",
+      "wordId": "paper-napkin",
+      "verdict": "pass",
+      "reason": "紙餐巾固定紙製餐桌用途，不混同廚房紙巾；先取餐巾再擦嘴，複雜句增加需求原因與禮貌請求。",
+      "sourceSha256": "8b43faab58e61e9c6ccf4ed64d7a33b117dae2ef32d677b0934be34214c0ac1e"
+    },
+    {
+      "kind": "example",
+      "wordId": "water-pitcher",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "水差し用來倒水的用途正確，未帶入加熱或保溫概念。",
+      "sourceSha256": "fd97bf4e4130de64716c2916e622851454c1b1011baa51491dda4261422377cc"
+    },
+    {
+      "kind": "example",
+      "wordId": "water-pitcher",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "察覺空壺→請服務人員補水的事件順序及動機相符，空讀から。",
+      "sourceSha256": "d65fd24188f02110602f583041ac32b6d0ee2f4c80f53a7e55f22f70dc56a60b"
+    },
+    {
+      "kind": "word",
+      "wordId": "water-pitcher",
+      "verdict": "pass",
+      "reason": "定義限制為倒飲用水的pitcher，不混成kettle；第一句倒水，第二句察覺空壺後請補水。",
+      "sourceSha256": "5191b35d6d9e32f77e03b59187d1b38e8cb0a90918bb67d775503de78c7f52ee"
+    },
+    {
+      "kind": "example",
+      "wordId": "serving-tray",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "托盤承載杯子的場景合理，與盛食物的一次性包裝分開。",
+      "sourceSha256": "80a8e60a7f823b2293d3ee6ec0bd4359a9aee09ff848b67ed5f9244a29f72332"
+    },
+    {
+      "kind": "example",
+      "wordId": "serving-tray",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "こぼれやすい表易灑，原因對應慢端托盤；英文spills在此指水灑出而非傾倒動作。",
+      "sourceSha256": "4071180e921dbf49d2b1608f36262f740b4cf7f798e72e20e35d68d935445103"
+    },
+    {
+      "kind": "word",
+      "wordId": "serving-tray",
+      "verdict": "pass",
+      "reason": "餐飲托盤與超市食品包裝盤分開；第一句放杯，第二句因水易灑而緩慢端送，功能一致。",
+      "sourceSha256": "51fbcf5cf225e2e74f4f764d9abd4e042a381290b2acd97a88e6e7f66830c29f"
+    },
+    {
+      "kind": "example",
+      "wordId": "restaurant-bill",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "尋找結帳前傳票，沒有誤用付款後的レシート。",
+      "sourceSha256": "6a8a660e61e2dd5c804fca63e9696009df4b14e2eb1cf74485d2418c07f0dc0c"
+    },
+    {
+      "kind": "example",
+      "wordId": "restaurant-bill",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "未點飲料列入帳單→請求查核，否定及因果三語保留。",
+      "sourceSha256": "4f29f8fd2c2f0f658bb34332e53654ef55a86042ea279c7dcd8381dcf1a96435"
+    },
+    {
+      "kind": "word",
+      "wordId": "restaurant-bill",
+      "verdict": "pass",
+      "reason": "帳單限定結帳前，與既有receipt區分；第一句找帳單，第二句因多算飲料而請求查核。",
+      "sourceSha256": "02672aa7bee940ef1a80f2633f682ddbde0023c5d0f0aeb4a88ab344ba352434"
+    },
+    {
+      "kind": "example",
+      "wordId": "restaurant-booth",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "選擇卡座的邀請；let us為固定勸誘表達，日文座りましょう完整。",
+      "sourceSha256": "e393c227ba1f2dbeb35328780a639b50d1aa3856ff102ec1f7929fc0e923dff8"
+    },
+    {
+      "kind": "example",
+      "wordId": "restaurant-booth",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "四人為請求座型的原因，同時保留有空位的條件；不宣稱所有卡座固定四席。",
+      "sourceSha256": "550652fa37883cc2bdd4c6dc3742d8fcd893ab5520acb831395cf659405f5bec"
+    },
+    {
+      "kind": "word",
+      "wordId": "restaurant-booth",
+      "verdict": "pass",
+      "reason": "booth限定餐廳卡座，非電話亭或展位；第一句選座，第二句因四人用餐而請卡座，難度有因果提升。",
+      "sourceSha256": "9fe84671184d0e8fb636c7a945936580b81576549b276e451f6e95440986152f"
+    },
+    {
+      "kind": "example",
+      "wordId": "counter-seat",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "free在此指空位而非免費，三語gloss均用空位義。",
+      "sourceSha256": "cfd3dfd98b3d950a28cf7fc5f808104d2fede79a8647054434c1af792de60e85"
+    },
+    {
+      "kind": "example",
+      "wordId": "counter-seat",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "桌席滿與吧檯空形成轉折，再導出選座結果；未誤解counter為收銀櫃檯。",
+      "sourceSha256": "31c067a14aaec57308e7077afaa46ea2360f155444f6db428bf7891a77f6d9e4"
+    },
+    {
+      "kind": "word",
+      "wordId": "counter-seat",
+      "verdict": "pass",
+      "reason": "カウンター席為餐廳吧檯用餐位置，不限制為酒吧；先問空位，再在桌席滿座時選吧檯席。",
+      "sourceSha256": "0de56c86464f31d0af8795362a0c41d4171d795211dc1e8d09b8b4814c865581"
+    },
+    {
+      "kind": "example",
+      "wordId": "high-chair",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "向餐廳借高腳餐椅的禮貌詢問，英文borrow對應日文貸してもらう，兩句語意一致。",
+      "sourceSha256": "e7c2afd5bc6d7df5efbae22a4d6c38a3d3b7d611ba93356beba10ed4f2178e21"
+    },
+    {
+      "kind": "example",
+      "wordId": "high-chair",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "座らせる正確表使孩子入座，順序及安全帶物件對齊，非自動推薦醫療或育兒方法。",
+      "sourceSha256": "540963399c61c0ae80e7711b72c47a93b6da0ba9125ba4491f20dadd1754d83b"
+    },
+    {
+      "kind": "word",
+      "wordId": "high-chair",
+      "verdict": "pass",
+      "reason": "high chair明確為高腳幼兒餐椅而非一般矮兒童椅；第一句請椅子，第二句帶入入座前檢查帶子的順序。",
+      "sourceSha256": "1f92a82f3e984b72b3813f95c3bc8b5601c415ecc5be5a18eea5c2741234bba0"
+    },
+    {
+      "kind": "example",
+      "wordId": "rice-bowl",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "よそう是盛飯的自然動詞；英文put在此對應把熟飯盛入飯碗，三語沒有改成煮米。",
+      "sourceSha256": "195809aba1414d3c0dd27e742dea25c2a82569723969bf37422412a820344f7d"
+    },
+    {
+      "kind": "example",
+      "wordId": "rice-bowl",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因碗的溫度而使用雙手，生活因果完整；両手與both hands相符。",
+      "sourceSha256": "7c48caf1c2e5f208e3256ec921d537a1d8df299d978547a21a2dacdf74fc4d5a"
+    },
+    {
+      "kind": "word",
+      "wordId": "rice-bowl",
+      "verdict": "pass",
+      "reason": "茶碗限定日常飯碗，非茶道茶碗或泛用調理ボウル；第一句請盛飯，第二句因碗熱而改用雙手拿，含實質因果。",
+      "sourceSha256": "9df4c48354107619506ed21fcb346b9933b4228eb9d6cae8b33de38a9607c024"
+    },
+    {
+      "kind": "example",
+      "wordId": "soup-bowl",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "只敘述當下湯碗附蓋，未把所有汁椀都寫成必定有蓋。",
+      "sourceSha256": "91933e356e28694f64751ff47ef76ddb8c384f942e9e55d4e79e6a3d0af83289"
+    },
+    {
+      "kind": "example",
+      "wordId": "soup-bowl",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "目的關係由ように表達；手元是移近身邊的語境，不是把湯移入另一個碗。",
+      "sourceSha256": "663ec4a305417eafa7085607f59b3c1d58e193992de5a07e953c350613dc6b16"
+    },
+    {
+      "kind": "word",
+      "wordId": "soup-bowl",
+      "verdict": "pass",
+      "reason": "汁椀表盛湯用椀，圖片採日式漆器但定義不宣稱湯碗一律有蓋；第一句描述這只碗有蓋，第二句為免灑湯而移近，難度分明。",
+      "sourceSha256": "0987cbe207b44371e16b23ec378fcdbf1628cfa3d3ae32f60d19ae73a15ca488"
+    },
+    {
+      "kind": "example",
+      "wordId": "ramen-bowl",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "空碗的簡單狀態句，空讀から，未誤譯天空或空間。",
+      "sourceSha256": "47a25c05852418a9b7cdd3d8e74386bc804b3b4328467bdfc2f4045817855e68"
+    },
+    {
+      "kind": "example",
+      "wordId": "ramen-bowl",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "留在碗裡的是湯而非麵；英文it明確指broth，三語保留吃完麵後及過鹹原因。",
+      "sourceSha256": "b1a3b72cae566428f7e0b78ef66fd9bb8f59731dcc708afc48af748dd5d17b0d"
+    },
+    {
+      "kind": "word",
+      "wordId": "ramen-bowl",
+      "verdict": "pass",
+      "reason": "ラーメン鉢與小茶碗、汁椀按用途和尺寸區分；先辨認空碗，後以湯過鹹解釋麵吃完仍留湯，否定及轉折均對齊。",
+      "sourceSha256": "5f84748ee4e235502787e5127bf105a9e160db09424213f966ca342002ee32f6"
+    },
+    {
+      "kind": "example",
+      "wordId": "soup-spoon",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "索取中式深湯匙的請求，レンゲ與Chinese soup spoon為同一短柄深匙形態，未混成一般金屬茶匙。",
+      "sourceSha256": "7950b29b2371be65dea05ecf9c5aec6f72627a2389fb1c3ddd8d232359aff74f"
+    },
+    {
+      "kind": "example",
+      "wordId": "soup-spoon",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "太燙以致拿不起來的結果在日文用熱くて＋持ち上げられなかった保留；用湯匙喝的是湯底。",
+      "sourceSha256": "fd6f0ed30288ff4f4af11bd3c49bb68c72e83c207138568ce309d6ec094ae08b"
+    },
+    {
+      "kind": "word",
+      "wordId": "soup-spoon",
+      "verdict": "pass",
+      "reason": "Chinese soup spoon與中式湯匙、レンゲ對應深匙面短柄的特定湯匙形態，與既有泛用spoon區分；第一句索取，第二句因碗太燙改用湯匙喝湯。",
+      "sourceSha256": "f7190884b166c2bfd3bc6165db62b09aed603afb92f3477370218efd77a06ce9"
+    },
+    {
+      "kind": "example",
+      "wordId": "dipping-dish",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "容器與內容分開可點；醤油皿讀しょうゆざら，三語同為倒入而非拿碟。",
+      "sourceSha256": "eb97ce4f099475d18997ec5270e3f28ddb1534f693e538ae5942252d9c144ca1"
+    },
+    {
+      "kind": "example",
+      "wordId": "dipping-dish",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "空碟是補醬油的原因；食べる前表示吃壽司前，時間義及添加動作三語對齊。",
+      "sourceSha256": "3a61ff78398a58a797d9748c3dea07021bc1642c90c42f26a5a9c1846205828f"
+    },
+    {
+      "kind": "word",
+      "wordId": "dipping-dish",
+      "verdict": "pass",
+      "reason": "醤油皿為沾醬小淺碟，與既有一般plate用途不同；第一句倒醬油，第二句因碟空而在吃壽司前補醬油，時間與因果明確。",
+      "sourceSha256": "eeded71699635435b3a478de827581169372193684eedf74300f3d2774d992dd"
+    },
+    {
+      "kind": "example",
+      "wordId": "serving-chopsticks",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "沙拉為共用菜餚，請使用取り箸而非泛稱個人筷子；英日未加入額外健康斷言。",
+      "sourceSha256": "66292a41adf32515137db6319a8e022b8ca0a3d15908fd11e130c4c663338c86"
+    },
+    {
+      "kind": "example",
+      "wordId": "serving-chopsticks",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "return與戻してください都表示把公筷放回共用大盤，目的為供大家使用；物件、目的及三語意思一致。",
+      "sourceSha256": "72e58b9e1c63dab717569c432ef091b3cf7828149739ccd74ab6920463ff1ef1"
+    },
+    {
+      "kind": "word",
+      "wordId": "serving-chopsticks",
+      "verdict": "pass",
+      "reason": "取り箸的區別在分食用途而非材質或固定長度；圖片用共用大盤提供語境。先選用公筷，再為供其他人使用而放回大盤，功能一致。",
+      "sourceSha256": "8c10b0988b1de13829a92b0d668a503920bdb0c364ead70c904bcce0db0bf7ce"
+    },
+    {
+      "kind": "example",
+      "wordId": "disposable-chopsticks",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "joined割り箸使用前掰開的動作準確，未誤寫為折斷筷子。",
+      "sourceSha256": "b9bde4a6afe03fbda70e29e7fd79fe90cc8af0993753804fde3bc5750ec47bbd"
+    },
+    {
+      "kind": "example",
+      "wordId": "disposable-chopsticks",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "掉地後服務人員帶來新筷的先後關係完整；しまった包含意外語氣，三語沒有變成要求重用地上筷子。",
+      "sourceSha256": "bd64d6f608ebb20370a0d7b99313929daa15610ad4cce7d1c4bc37d6e9770e13"
+    },
+    {
+      "kind": "word",
+      "wordId": "disposable-chopsticks",
+      "verdict": "pass",
+      "reason": "割り箸與既有一般箸及割り箸ディスペンサー區分為一次性筷子本身；先示範掰開，複雜句因掉地而取得新筷，情境與事件清楚。",
+      "sourceSha256": "0edc640ab747cd62951ce5b1bf093a1b53da56c7fff193c114ad530b10e3463f"
+    },
+    {
+      "kind": "example",
+      "wordId": "japanese-teacup",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "否定has no與ありません對齊；日式茶杯的具體外觀可由圖片辨認。",
+      "sourceSha256": "f33095ef127f867d5e7666633be54013c878c0bdc8aeca50a1bbf9bc60d13d93"
+    },
+    {
+      "kind": "example",
+      "wordId": "japanese-teacup",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "目的為避免袖子碰倒杯子，英日中主客體及動作一致；端是桌緣，非筷子同音詞。",
+      "sourceSha256": "46739a83e9debb57092a172c5bb3bdd52e95a726cb00051e3985128a6872738f"
+    },
+    {
+      "kind": "word",
+      "wordId": "japanese-teacup",
+      "verdict": "pass",
+      "reason": "湯飲み對應日式無把手茶杯，不把泛指teacup限定成所有都無把手；第一句觀察此杯無把手，第二句為免袖子碰倒而移離桌緣，具目的關係。",
+      "sourceSha256": "5a2720c2401f5648f429fd0d783d347052280ba2a5fdb57ac7b448d9af4992d5"
+    },
+    {
+      "kind": "example",
+      "wordId": "lazy-susan",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "慢轉共用餐桌轉盤的請求，回す在此為轉動平台而非轉彎。",
+      "sourceSha256": "811ef838811fa2c08f045bbed530dc33edc5baa8c97a057ad9f0a754be788bea"
+    },
+    {
+      "kind": "example",
+      "wordId": "lazy-susan",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "轉動前先確認他人未取菜，否定、進行狀態及先後關係三語一致；前為時間義。",
+      "sourceSha256": "6fc3cdc1e4e153a37362b66ce152f8213026b0c5d7ebb1e06cabf5dd394061d0"
+    },
+    {
+      "kind": "word",
+      "wordId": "lazy-susan",
+      "verdict": "pass",
+      "reason": "lazy Susan限定餐桌中央可旋轉平台，與整張圓桌或工業轉台區分；第一句請慢轉，第二句先確認無人夾菜再轉，關係自然明確。",
+      "sourceSha256": "394e26547b9890636b0cc4dce64bacd9ddca038e96194918153205080f51035a"
+    },
+    {
+      "kind": "example",
+      "wordId": "steak-knife",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "向餐廳索取切肉用刀的短請求；沒有新增菜色詞條。",
+      "sourceSha256": "1be20dc0fdb0432949978b621cc2710761b219b474b3bdb9e944e673abcdb535"
+    },
+    {
+      "kind": "example",
+      "wordId": "steak-knife",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "dull在此為刀刃鈍而非無聊，對應切れ味が悪い；因果及更換請求完整保留。",
+      "sourceSha256": "d88e1bccd604d5b37a9d255c24cde53a3ec4d2129a19b49cc748ccc2d9ab0e96"
+    },
+    {
+      "kind": "word",
+      "wordId": "steak-knife",
+      "verdict": "pass",
+      "reason": "牛排刀限定用餐時切肉用刀，並明示鋸齒非所有款式必備；第一句索取，第二句因切不利而請店員更換，與既有一般餐刀區分。",
+      "sourceSha256": "8c815ac5fabb410dcd30d22d4849250d9fa056990837042955d4b136d83b730e"
+    },
+    {
+      "kind": "example",
+      "wordId": "wine-glass",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "stem與脚在此都指高腳杯杯腳，未用植物莖或人的腿義。",
+      "sourceSha256": "b3cb7583a577f88621aaa002ae9f933d9ca1eab2dc0f689f9ab846ff608e1fd9"
+    },
+    {
+      "kind": "example",
+      "wordId": "wine-glass",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "chip指玻璃缺角，不是薯片；日文欠けていた保留已存在缺損的狀態及換杯原因。",
+      "sourceSha256": "5fc378b9f40b022da6744451e021ab35f2bdb1153403d287645d80bd7ac0dc6d"
+    },
+    {
+      "kind": "word",
+      "wordId": "wine-glass",
+      "verdict": "pass",
+      "reason": "wine glass以葡萄酒杯對齊ワイングラス，避免把所有葡萄酒杯誤限縮為紅酒專用；先拿杯腳，複雜句因杯緣缺角請換杯。",
+      "sourceSha256": "927c9ff009a2a67b75a8e70c6ff6544460713ec06cad116e60d30a1d00bf194e"
+    },
+    {
+      "kind": "example",
+      "wordId": "sake-cup",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "擺放清酒小杯的直接請求；ここ為位置指示，完整保留於句子。",
+      "sourceSha256": "b64ee4ffc6ffd09779032b49cb0b510b534a324d8695e6a9a0c1e659dc0c963c"
+    },
+    {
+      "kind": "example",
+      "wordId": "sake-cup",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "朋友也想試酒是再要小杯的理由，too對應も，another對應もう一つ，人物及數量一致。",
+      "sourceSha256": "1dd6977fd602ec0394d0d60e6b765c90ad9c9ea89b3114705b5af7257d482c48"
+    },
+    {
+      "kind": "word",
+      "wordId": "sake-cup",
+      "verdict": "pass",
+      "reason": "お猪口為清酒小杯，與日式茶杯按用途及小型杯形分開；第一句放杯，第二句因朋友也想試酒而多要一杯，不新增飲料詞。",
+      "sourceSha256": "3c6fd7761cab12bcecb6aefbf8ac6a866622c5dc8107a55e29b147eb04c7bd96"
+    },
+    {
+      "kind": "example",
+      "wordId": "sake-flask",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "器具與內容分成可點名詞，徳利讀音完整為とっくり。",
+      "sourceSha256": "440ba193c413c135c48d2ae62c3990f1f110a48c109d04810881f88706ebb164"
+    },
+    {
+      "kind": "example",
+      "wordId": "sake-flask",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "以空壺引出再點一壺的詢問，是否能點的疑問語氣與一本計數三語對齊。",
+      "sourceSha256": "f14cd557f7c2b8fa43bfae00439ded9d51ad850db3cb3c69b1da0577a09e9168"
+    },
+    {
+      "kind": "word",
+      "wordId": "sake-flask",
+      "verdict": "pass",
+      "reason": "徳利為清酒盛裝及倒酒容器，非花瓶、茶壺或酒瓶商品；第一句倒酒，第二句壺空後詢問能否再點一壺，情境自然。",
+      "sourceSha256": "24ce8c6c6f5e36208e069ba71d3eaad8065dd9a9c86e41f1e3ac1b0e70ca79c2"
+    },
+    {
+      "kind": "example",
+      "wordId": "soy-sauce-dispenser",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "取ってください在桌邊請對方遞調味容器的語境自然，與pass me一致。",
+      "sourceSha256": "e4c4743b3140c41f71546dac53cd81264143a85947859b0b88eecd46232a090d"
+    },
+    {
+      "kind": "example",
+      "wordId": "soy-sauce-dispenser",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "按住的對象為蓋子，while與ながら保留同時動作；loose指蓋鬆而非醬油稀。",
+      "sourceSha256": "060b2cd0c1bb4c9d8b3a8dc345a1028ef133b94a440d1c841931753a0237e3ad"
+    },
+    {
+      "kind": "word",
+      "wordId": "soy-sauce-dispenser",
+      "verdict": "pass",
+      "reason": "醤油差し是桌上可補充倒醬油器具，與已收錄醬油調味料及醤油皿不同；第一句遞壺，第二句因蓋鬆而倒時按住蓋子。",
+      "sourceSha256": "afd64272cca1d387f7a9b604298825ca0b99e6d920f54123fba3fbcdb7ee857d"
+    },
+    {
+      "kind": "example",
+      "wordId": "chopstick-holder",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "筷子的一雙對應一膳，筷筒與筷子本身可分別點擊。",
+      "sourceSha256": "9e6531212746084b8520f248d7e1f64242a21f2cf8b82f6088ae8314da72cba7"
+    },
+    {
+      "kind": "example",
+      "wordId": "chopstick-holder",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "無法搆到筷筒是請朋友代取的原因，否定及受益方向一致；手が届く的詞塊分名詞及完整否定動詞。",
+      "sourceSha256": "1c6b98a15c9eec51eb93b02d6ee710b86e953e4f8a9d9a634b0b3b744c932600"
+    },
+    {
+      "kind": "word",
+      "wordId": "chopstick-holder",
+      "verdict": "pass",
+      "reason": "箸立て為直立收納筒，不是小筷架或盒式割り箸ディスペンサー；先拿筷，再因拿不到筷筒請朋友代取，兩例用途不同。",
+      "sourceSha256": "8adab29fac65229aa7fcc22ec5d0ecceadc1b13b71e155e8e1800ce3ab1ddd74"
+    },
+    {
+      "kind": "example",
+      "wordId": "serving-cart",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "由服務人員推行的動作凸顯手推餐車，不是機器人自主行走。",
+      "sourceSha256": "736efbb431f7318a65548ca5f45375be07868477923dced0c8b6e838cf57a9ce"
+    },
+    {
+      "kind": "example",
+      "wordId": "serving-cart",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "移椅靠桌是讓餐車從身後通過的目的，三語保留位置與移動方向，非把餐車移到桌邊。",
+      "sourceSha256": "99d5caaed78c53db95a75897a79e88db0f876c2826d37b69ab9085ccd210003e"
+    },
+    {
+      "kind": "word",
+      "wordId": "serving-cart",
+      "verdict": "pass",
+      "reason": "配膳ワゴン明確為手推有輪餐車，與機器人及火車餐車區分；先描述推車，後為讓餐車通行而移椅，目的關係自然。",
+      "sourceSha256": "02729d9dcfcb316f61f015d35528b50409953e799a44e3207be7096301b1d2dc"
+    }
+  ]
+}

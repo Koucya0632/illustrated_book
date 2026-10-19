@@ -71,7 +71,14 @@
     "clothing:prepare-publish": "node --env-file=.env.local scripts/prepare-clothing-publish-plan.mjs",
     "clothing:publish": "tsx --env-file=.env.local scripts/publish-clothing-series.ts",
     "audit:study-choices": "tsx --env-file=.env.local scripts/audit-study-choices.ts",
-    "sync:study-choices": "node scripts/sync-study-choice-data.mjs"
+    "sync:study-choices": "node scripts/sync-study-choice-data.mjs",
+    "restaurant:prepare-images": "node scripts/prepare-restaurant-images.mjs",
+    "restaurant:review": "node scripts/prepare-restaurant-semantic-review.mjs",
+    "restaurant:audio:plan": "node scripts/plan-restaurant-audio.mjs",
+    "restaurant:audio:generate:local": "node --env-file=.env.local scripts/generate-restaurant-candidate-audio.mjs",
+    "restaurant:audio:verify": "node scripts/verify-restaurant-audio.mjs",
+    "restaurant:prepare-publish": "node --env-file=.env.local scripts/prepare-restaurant-publish-plan.mjs",
+    "restaurant:publish": "tsx --env-file=.env.local scripts/publish-restaurant-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

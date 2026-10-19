@@ -1,0 +1,222 @@
+{
+  "reviewer": "Codex",
+  "mode": "individual visual inspection of every original",
+  "references": [
+    {
+      "id": "ordering-tablet",
+      "url": "https://corp.skylark.co.jp/Portals/0/images/about/business/skylark_business_jp.pdf",
+      "supports": "Tabletop food-photo digital menu; inferred generic visual without branded UI."
+    },
+    {
+      "ids": [
+        "rice-bowl",
+        "soup-bowl",
+        "japanese-teacup"
+      ],
+      "url": "https://www.muji.com/jp/ja/store/cmdty/section/T20014/",
+      "supports": "Japanese tableware categories and shapes; illustration is an unbranded inference, not a copy of a product."
+    },
+    {
+      "id": "serving-chopsticks",
+      "url": "https://www.kikkoman.com/jp/kiifc/publication/foodculture/pdf/no11_j_003_008.pdf",
+      "supports": "Serving chopsticks accompany communal food for dividing between diners."
+    },
+    {
+      "ids": [
+        "sake-cup",
+        "sake-flask"
+      ],
+      "url": "https://aokishuzo.stores.jp/items/61307eeaacbcb0609342fe26",
+      "supports": "Tokkuri and small sake cups, including snake-eye interior pattern; no brand reproduced."
+    },
+    {
+      "id": "steak-knife",
+      "url": "https://www.nitori-net.jp/ec/product/8914479s/",
+      "supports": "Wood-handle steak knife form; generic unbranded interpretation."
+    },
+    {
+      "id": "soy-sauce-dispenser",
+      "url": "https://jp.daisonet.com/products/4550480078656",
+      "supports": "Tabletop soy sauce dispenser product category; illustration uses a generic glass form."
+    }
+  ],
+  "items": [
+    {
+      "id": "menu",
+      "decision": "pass",
+      "reason": "翻開的護套紙本菜單含餐點照片與排版線條，裝訂與雙頁清楚，與電子點餐平板有別；白底、無品牌或浮水印，四邊完整。",
+      "sourceSha256": "9916061c05271279c63eea333cef522a1973c533399cf108600480b3ea463486"
+    },
+    {
+      "id": "ordering-tablet",
+      "decision": "pass",
+      "reason": "橫置黑色平板及桌上支架，螢幕有餐點照片與點選圖示，呈現餐廳點餐用途；無商標或亂碼，日本連鎖餐廳數位菜單形態可對照すかいらーく官方資料。",
+      "sourceSha256": "1179895c04ee666ecde4ebae489f7a070cf8410c9ac9fc1498cd36b63d576a52"
+    },
+    {
+      "id": "call-button",
+      "decision": "pass",
+      "reason": "奶白小型桌上無線裝置，單一紅色按鈕與指示燈均可見，與金屬機械服務鈴不同；白底且沒有額外環境。",
+      "sourceSha256": "1eb9567d724d8b3b20739687a878b5dd6ebb20794a37c303acc97ee63290b44e"
+    },
+    {
+      "id": "wet-hand-towel",
+      "decision": "pass",
+      "reason": "小條白色棉質毛巾捲放在窄木托上，毛圈和捲口清楚，符合日本餐前おしぼり形態；無浴室布景。",
+      "sourceSha256": "cce962ef03f16c05fbf460b01698b586db8ed62b3668a009930f86fd9fa22e54"
+    },
+    {
+      "id": "chopstick-rest",
+      "decision": "pass",
+      "reason": "青花陶瓷筷架凹槽支撐筷尖；重做後兩根筷子的前後端都完整在畫面內，主體沒有裁切，與餐具或小碟可辨。",
+      "sourceSha256": "6e2c6ddc976d0973e9f127726a133b9cf52a1525251443b32be1c516930e3dcd"
+    },
+    {
+      "id": "paper-napkin",
+      "decision": "pass",
+      "reason": "白色薄紙餐巾折角露出紙層與壓紋，表現紙製而非厚布毛巾；白底、無包裝商標。",
+      "sourceSha256": "09f77cceab36598436a3d41821e0f50835a69a12845916375de14d8e537a56c5"
+    },
+    {
+      "id": "water-pitcher",
+      "decision": "pass",
+      "reason": "透明壺身能見水位，握把、壺嘴與上蓋完整；沒有電熱底座或煮水部件，符合餐桌倒水水差し。",
+      "sourceSha256": "d59a06fb693d35f11ba53ac940de4f45230d8c4c500c2a6edba7d76f3dcda75c"
+    },
+    {
+      "id": "serving-tray",
+      "decision": "pass",
+      "reason": "黑外紅內長方托盤有低邊與圓角，空盤形狀完整，為日本餐廳端餐托盤而非白色泡棉食品盤。",
+      "sourceSha256": "c7b30f53754aa35e1b70e043cd11abae98d2754b165235961604eb2ae76f1f10"
+    },
+    {
+      "id": "restaurant-bill",
+      "decision": "pass",
+      "reason": "帳單夾內傳票列餐點、數量、金額和合計，沒有付款完成章；日文文字自然、無店家商標，結帳前單據概念明確。",
+      "sourceSha256": "e057e7cc7f27599910019f64b5d58f2951f26c04e38de4cf882f12da3bf10f35"
+    },
+    {
+      "id": "restaurant-booth",
+      "decision": "pass",
+      "reason": "相向的高背軟墊長椅與中間餐桌完整可見，座位圍合特徵清楚，無其他房間布景或裁切。",
+      "sourceSha256": "3f9e118c28c1d6c91941fc104cb81a1423b5258edfbd49a0bdcf78cedae04cf0"
+    },
+    {
+      "id": "counter-seat",
+      "decision": "pass",
+      "reason": "單張椅子面向長形木製餐飲吧檯，吧檯與座位關係清楚，沒有酒瓶等使概念限縮為酒吧的物件；白底且結構完整。",
+      "sourceSha256": "0ebaee3fa751e5731ba4ea7e8f34304465144449df622c41edf257ec70b25566"
+    },
+    {
+      "id": "high-chair",
+      "decision": "pass",
+      "reason": "高腳木椅有幼兒護欄、安全帶與腳踏板，椅腳完整落地，符合餐廳幼兒高腳椅，沒有把普通椅子當餐椅。",
+      "sourceSha256": "5177e8f77c27629e046cadd149b721b2e23d1f32c82977844ffd34fa2a31d9a4"
+    },
+    {
+      "id": "rice-bowl",
+      "decision": "pass",
+      "reason": "小型圓腹陶瓷碗有圈足及青花植物紋，符合日常飯碗形態；沒有拌料工具或大型深鍋，白底完整，與拉麵碗的寬深形狀不同。",
+      "sourceSha256": "cfeb05e588cd128ffb06aa72abf4e35f50c8f92ba1ff3797e3c18c6ea3ae4c7d"
+    },
+    {
+      "id": "soup-bowl",
+      "decision": "pass",
+      "reason": "黑色外壁、暗紅內壁的日式漆器湯椀及可分離椀蓋完整可見，符合汁椀參考形態；空椀和碗蓋均未裁切。",
+      "sourceSha256": "f363e30ef04adbfe7d7d8b932d3e1f206ca81c21f54c8e15e630aea6823e1816"
+    },
+    {
+      "id": "ramen-bowl",
+      "decision": "pass",
+      "reason": "大開口、深腹與小圈足的陶瓷麵碗，碗緣藍色雷紋為拉麵碗常見裝飾，沒有偽文字或品牌；完整展示容積及碗口。",
+      "sourceSha256": "927b6c0de485b4f2de318e54be75ca08b0a1e42b09a7e9778dab68f628bb20e8"
+    },
+    {
+      "id": "soup-spoon",
+      "decision": "pass",
+      "reason": "白瓷レンゲ的深橢圓匙面、短而厚的彎柄與末端彎鉤完整，能與一般金屬湯匙區分；白底無多餘餐點。",
+      "sourceSha256": "34914e4ae35f91b888098ea9f3e0e945c6b0214e61e6cfbc308f45bd6ad2dad0"
+    },
+    {
+      "id": "dipping-dish",
+      "decision": "pass",
+      "reason": "小而淺的白瓷碟內有少量深色醬油，外緣與醬汁液面都清楚；用沾醬用途區分一般餐盤，沒有壽司等搶走主體。",
+      "sourceSha256": "abaf29746ce8d00d5ca57d1112fb3d59a46838c34c8fc9371d03576591aed0b1"
+    },
+    {
+      "id": "serving-chopsticks",
+      "decision": "pass",
+      "reason": "一雙竹製公筷置於共用大盤上，筷子的兩端完整且前景突出；共享沙拉提供分食語境，不依賴固定筷長或材質定義公筷。",
+      "sourceSha256": "29fbb8c45926726bfdaf58fd867b1e40383b0cea722d65c0e5fca539f977af1c"
+    },
+    {
+      "id": "disposable-chopsticks",
+      "decision": "pass",
+      "reason": "淺色未上漆割り箸頂端尚連著、下端分成兩支，旁邊有無品牌紙套，能辨認一次性筷子本身而非筷子機；全部完整在白底內。",
+      "sourceSha256": "2bbbe97d541b3f6a044873d76a6be225c8262fb0e8c1a281e099aa973512e8e7"
+    },
+    {
+      "id": "japanese-teacup",
+      "decision": "pass",
+      "reason": "直筒略圓的陶瓷湯飲み沒有把手，口緣、圈足及自然米綠釉色完整，符合日常日式茶杯，與馬克杯和碗區分。",
+      "sourceSha256": "92e774a0af9872b139f518631f38a151d8f8e19f20e2474932bfe53471922a01"
+    },
+    {
+      "id": "lazy-susan",
+      "decision": "pass",
+      "reason": "圓形玻璃轉盤明顯高於木餐桌，第二版已把旋轉軸承放到玻璃下方並讓上表面保持平整；玻璃轉盤與整張桌子可辨，無食物或其他環境。",
+      "sourceSha256": "c37605dc04ca4fe63a9c3598a4a9af573baff74b958537e168510add5528d3fd"
+    },
+    {
+      "id": "steak-knife",
+      "decision": "pass",
+      "reason": "窄而尖的鋸齒金屬刀刃、木柄及兩枚鉚釘完整可見，能區分切肉餐刀、鈍口奶油刀和寬刃廚刀；沒有商標或菜色。",
+      "sourceSha256": "d756c6041e7e3810187899a03d656441bd92880c87aa1ca2d5929f32728b3a0f"
+    },
+    {
+      "id": "wine-glass",
+      "decision": "pass",
+      "reason": "透明鬱金香杯肚、細杯腳與圓底完整，形態符合有腳葡萄酒杯，與水杯及細長香檳杯不同；空杯、白底且邊線可辨。",
+      "sourceSha256": "285b4769c5f6dc3997fede34246d5f240f115f6acaa44419112185627c57f711"
+    },
+    {
+      "id": "sake-cup",
+      "decision": "pass",
+      "reason": "矮小外張的白瓷お猪口，內底雙藍圈的蛇之目樣式清楚，與高筒湯飲み形狀分開；沒有品牌文字或酒液。",
+      "sourceSha256": "90f6e5436483c534fbbe867377b0fcc6ddbc46ccbf38b057635b4b689337b900"
+    },
+    {
+      "id": "sake-flask",
+      "decision": "pass",
+      "reason": "白瓷徳利的圓腹、窄頸、開口及無把手形態完整；旁邊小清酒杯補足盛酒用途語境，壺仍為主要物件，避免誤作花瓶。",
+      "sourceSha256": "de45e643ad47f9c6c3a430ab04384bb156b16dd395273fbad86c1ed27495c2a8"
+    },
+    {
+      "id": "soy-sauce-dispenser",
+      "decision": "pass",
+      "reason": "小型透明玻璃壺可見深色醬油，黑蓋有短注口和通氣孔，符合桌上少量倒醬油的器具；沒有商品標籤，不是大型販售瓶或水壺。",
+      "sourceSha256": "3747ec75daf3e591c779962a679153c9f55230f93147b9add0f410bf752ba027"
+    },
+    {
+      "id": "chopstick-holder",
+      "decision": "pass",
+      "reason": "開口木製直筒內有多支直立筷子，筒身和筷尾完整可見；與橫放筷尖的箸置き及盒式抽取筷子機可辨。",
+      "sourceSha256": "aa18853988dc574e01d878043a1ac8a478921c5eb98ba6bc9edfa8589a4a7bce"
+    },
+    {
+      "id": "serving-cart",
+      "decision": "pass",
+      "reason": "不鏽鋼三層手推車有推把和腳輪，頂層少量空盤交代餐飲服務用途；沒有螢幕或機器人造型，後輪有正常視角遮擋而非缺件。",
+      "sourceSha256": "434ba5cf1b19970ec54a728aab0e800567e5a80088f314f5af3acc7e3016e4ca"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "lazy-susan",
+      "variant": "original",
+      "decision": "fail",
+      "reason": "旋轉軸承被放在玻璃上方，妨礙平台承放餐盤，已改用修正版。",
+      "sourceSha256": "25425974620f4fc5c85df1f7790e480fad6d0a3ecd63328f1d1948dc8ea186e4"
+    }
+  ]
+}

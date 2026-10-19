@@ -237,6 +237,16 @@ export const categories: Category[] = [
     imageUrl:
       "https://img.nexflow.team/word-images/category-zodiac.webp",
   },
+  {
+    id: "restaurant",
+    name: "Restaurant",
+    nameZh: "餐廳",
+    emoji: "🍽️",
+    description: "日本餐廳常見的點餐設備、桌上用品、食具與座位",
+    descriptionEn: "Ordering devices, table essentials, tableware, and seating in Japanese restaurants",
+    color: "from-orange-100 to-amber-100",
+    imageUrl: "https://img.nexflow.team/word-images/restaurant-2026-10/category-restaurant-v1-21d366d5e18d.webp",
+  },
 ];
 
 // This list is used only when the database is unavailable. A fallback cannot
@@ -248,7 +258,8 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "alcoholic-drinks" &&
     category.id !== "convenience-store" &&
     category.id !== "drugstore" &&
-    category.id !== "clothing",
+    category.id !== "clothing" &&
+    category.id !== "restaurant",
 );
 
 export const getCategory = (id: string): Category | undefined =>

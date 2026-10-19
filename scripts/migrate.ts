@@ -19,6 +19,7 @@ import { MAIN_WORD_CONVENIENCE_STORE_IDS } from "../lib/main-word-convenience-st
 import { MAIN_WORD_DRUGSTORE_IDS } from "../lib/main-word-drugstore-2026-09";
 import { MAIN_WORD_CLOTHING_IDS } from "../lib/main-word-clothing-2026-09";
 import { MAIN_WORD_RESTAURANT_IDS } from "../lib/main-word-restaurant-2026-10";
+import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "../lib/main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 import { lockDownPublicTables } from "../lib/rls-lockdown";
@@ -37,6 +38,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "drugstore", ids: MAIN_WORD_DRUGSTORE_IDS },
   { category: "clothing", ids: MAIN_WORD_CLOTHING_IDS },
   { category: "restaurant", ids: MAIN_WORD_RESTAURANT_IDS },
+  { category: "concert-fan-support", ids: MAIN_WORD_CONCERT_FAN_SUPPORT_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),
@@ -2643,6 +2645,9 @@ async function setupStudyLogsPartitioning(sql: any) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function seedV2(sql: any, list: typeof seedWords = seedWords) {
   for (const w of list) {
+    // Guard the write boundary too: no caller may accidentally publish a
+    // dedicated series by passing the full static seed or a renamed category.
+    if (isGuardedPublishWord(w)) continue;
     // words row (new columns only — no legacy after Phase 3 drop).
     await sql`
       INSERT INTO words (

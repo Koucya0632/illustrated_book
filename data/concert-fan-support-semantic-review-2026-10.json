@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "Individual editorial review of all 16 concepts and 32 examples, including all English/Japanese contextual spans. Not an independent native-speaker review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "concert-ticket",
+      "verdict": "pass",
+      "reason": "票券概念包含紙本與電子票，圖示紙本不限定所有演唱會採紙票；與交通票機區分。",
+      "sourceSha256": "cb66336866e8c418f6ae9d9f5e522bcbd2f0ab7a62244c69dfd1fdd9786b4557"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-ticket",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "買票的單一動作，買いました保留已完成語氣。",
+      "sourceSha256": "cdc7c8efc429a35a067a2c070d2afb44775044b5d98080b92056a60cf529fafc"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-ticket",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先核對日期再訂房的時間關係三語一致，前に為時間義。",
+      "sourceSha256": "80fdfc76cad9fdf98e99b26142282fa050584e7c57b9434ac42d3a91bd87039f"
+    },
+    {
+      "kind": "word",
+      "wordId": "light-stick",
+      "verdict": "pass",
+      "reason": "ペンライト採日本演唱會慣用詞，定義為應援發光棒而非手電筒或雷射筆。",
+      "sourceSha256": "27503c5bf4550521e34e591388487897e295c308407128968e2704811a5c8d41"
+    },
+    {
+      "kind": "example",
+      "wordId": "light-stick",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "色彩描述短句，私の對應my，非泛稱粉紅手燈。",
+      "sourceSha256": "4b61532cdf15583eaf38bdc30010701f0a3762151b15e70c925328ec7a0934e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "light-stick",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "つかなくなっていた表過去已不亮的狀態；帶備用電池的原因完整，未聲稱所有手燈可換電池。",
+      "sourceSha256": "512fba2b656ef03a8f7defdc885e9d287636abbb8e7a472ec17a4e65e1ea9c54"
+    },
+    {
+      "kind": "word",
+      "wordId": "cheering-fan",
+      "verdict": "pass",
+      "reason": "うちわ明確為非摺疊扇，fan在此不是粉絲或現有電風扇；圖案不需文字也能表達應援。",
+      "sourceSha256": "852ec5896d09db4269566c456abd1d645fc56f931897dfca5bb0dbbc12eb7e56"
+    },
+    {
+      "kind": "example",
+      "wordId": "cheering-fan",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "作りました對應手作完成，使用日常自製應援物的情境。",
+      "sourceSha256": "e25395aacfa1e08f277b242c192f65e2c951736b2690243d5894ddc5e26c8bd5"
+    },
+    {
+      "kind": "example",
+      "wordId": "cheering-fan",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "胸口高度與後方視線的目的關係對齊；是個人行動，沒有宣稱所有場館統一規則。",
+      "sourceSha256": "d3f89c608063a90c3bf6e1d251401f940c3dbe7d46b0b2a675f610e8421c6e17"
+    },
+    {
+      "kind": "word",
+      "wordId": "uchiwa-cover",
+      "verdict": "pass",
+      "reason": "保護套與扇子分列，日本商品亦稱うちわカバー；英文保留uchi­wa避免與電風扇防塵罩混淆。",
+      "sourceSha256": "7e379fb6cd48e71cc2c5efe54a214cc3d77455497e611426e51592cf8915591b"
+    },
+    {
+      "kind": "example",
+      "wordId": "uchiwa-cover",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "放入保護套的動作把容器與被保護扇面清楚分開。",
+      "sourceSha256": "98e9bcc3e04633e5bc2f5c7845387a7d7bdfb1572ca16421a0c2682c5b593302"
+    },
+    {
+      "kind": "example",
+      "wordId": "uchiwa-cover",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "避免照片刮傷是使用保護套的具體原因；使っています表示持續使用。",
+      "sourceSha256": "4a63ac553966c724aad312d1b229d74c460b119e49ff9d35e965c8c3bb91dead"
+    },
+    {
+      "kind": "word",
+      "wordId": "admission-wristband",
+      "verdict": "pass",
+      "reason": "手環用途為入場資格辨識，與運動護腕、智慧手錶區分。",
+      "sourceSha256": "3b7e2434fc37b0a778d9121e0066befac798d5d4cfaa00af84546804d88f75b1"
+    },
+    {
+      "kind": "example",
+      "wordId": "admission-wristband",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "工作人員請求出示的情境自然，見せてください完整保留請求。",
+      "sourceSha256": "bda3c492356a74e689bc50953e828c7f23aed9cdc0a8bf2f9a0567af65f3dd0d"
+    },
+    {
+      "kind": "example",
+      "wordId": "admission-wristband",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "まで保留終點，外さないでください完整否定請求；音樂祭而非泛指每日手環。",
+      "sourceSha256": "6aff31815e4858a8b828d30fec5ccfa07e09ef4be2a721c8b2ca6d7068769932"
+    },
+    {
+      "kind": "word",
+      "wordId": "binoculars",
+      "verdict": "pass",
+      "reason": "雙筒結構為辨識特徵，英語binoculars固定複數詞形；用途不限演唱會但情境符合。",
+      "sourceSha256": "a047540d5500f52fd7448ec9320280bda42bb05ca91a327e2e014ccdd0a56d29"
+    },
+    {
+      "kind": "example",
+      "wordId": "binoculars",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "持ってきました表帶來而非購買或借用，三語一致。",
+      "sourceSha256": "b9d363fe68ccf2b744282bf360aa04d729e9a457b15eca93d8ba957e1287c28a"
+    },
+    {
+      "kind": "example",
+      "wordId": "binoculars",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "座位距離導致借望遠鏡，遠かった保留過去，舞台與席各自可點。",
+      "sourceSha256": "a6145e4f8e7cc8d0b4e48ef4182bcec979d3b3da575c54ce7ad0dfcaa0baa545"
+    },
+    {
+      "kind": "word",
+      "wordId": "concert-earplugs",
+      "verdict": "pass",
+      "reason": "耳塞降低音量而非完全隔音，與耳機、助聽器區分；無療效或保證安全的宣稱。",
+      "sourceSha256": "a1afa03d2e1a69ff484b30bc97dd8b26d4c8b6d4274da7d7b7978a70d93ca701"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-earplugs",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "put in與着けました均為佩戴耳塞的完成動作。",
+      "sourceSha256": "fa161db718d058310cb9960279426bff8c6d9a2258c599186f04a2186fa07a61"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-earplugs",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "大きそうだった對應預料音量大，裝入包包的動作與否定／時態無漂移。",
+      "sourceSha256": "dd496aacaa66c14211cdc4277355905495a71505579e4ac07855a3f1e16eb971"
+    },
+    {
+      "kind": "word",
+      "wordId": "acrylic-stand",
+      "verdict": "pass",
+      "reason": "立牌需有印刷薄板與可插入底座，不是壓克力展示架；圖像採原創人物。",
+      "sourceSha256": "38a894375ad9c3936ff2d689b2ef59cbf8819fd560dcd8d5bd70f2210839d478"
+    },
+    {
+      "kind": "example",
+      "wordId": "acrylic-stand",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "この的指示義、小さい的尺寸義完整對應。",
+      "sourceSha256": "f22b8aa97e9bfd2067c4f15e26145fd202ca3ee0c669b232562eea69b6b24ad3"
+    },
+    {
+      "kind": "example",
+      "wordId": "acrylic-stand",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "包裹防破裂的目的句，割れない保留否定且並未保證不會破裂。",
+      "sourceSha256": "f8d41bd86e0a4f90fdeb3fbcd5a82af7af7d4d6e5c0e3ba30247eb3f1545d37b"
+    },
+    {
+      "kind": "word",
+      "wordId": "pin-badge",
+      "verdict": "pass",
+      "reason": "缶バッジ限定有背面別針的金屬徽章，圖片需顯示前後以排除磁鐵或貼紙。",
+      "sourceSha256": "b75cf4c9f7881130e6fe814340390275f5ebc1ebddd18e0f464498110b12bbd1"
+    },
+    {
+      "kind": "example",
+      "wordId": "pin-badge",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "付けました表示別上而非把徽章放進包包。",
+      "sourceSha256": "b9494d6cd834d175092cf5c84ad2a88b97b3feb09089eef41dd8ae0fcaf4471a"
+    },
+    {
+      "kind": "example",
+      "wordId": "pin-badge",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "偏好歌手不同形成交換動機，友達と是與朋友交換而非贈送。",
+      "sourceSha256": "4c1b3ea304f267e9c56eb396826c02cc739376bcd2d89a6d0f441192e69d9c05"
+    },
+    {
+      "kind": "word",
+      "wordId": "concert-streamer",
+      "verdict": "pass",
+      "reason": "銀テープ為演出效果金屬色長帶，不是黏性膠帶；可為銀或其他金屬色。",
+      "sourceSha256": "b02c420ec61431cb877a900c0a90161fdf6a58dd46a84ff2f380c87c70bb1d97"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-streamer",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "落ちてきました表由上落到附近，沒有宣稱可任意撿取或爭搶。",
+      "sourceSha256": "68c08f7bb9f3af0675e18718fed5bec1adbb5877dc77a8d462b31bc2a8499f7c"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-streamer",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "卷收避免摺痕的目的關係清楚，rolled up對應巻きました而非折疊。",
+      "sourceSha256": "c7f923e26e46791f11459007eec6946647759c5343b36331a0bff4677f87c427"
+    },
+    {
+      "kind": "word",
+      "wordId": "streamer-holder",
+      "verdict": "pass",
+      "reason": "參照日本銀テホルダー商品，固定為可掛包的小型卷帶收納，不混同大型收藏冊。",
+      "sourceSha256": "2518dcce72d5bd20999b9c6bacc2a3ff03f237da0848b2a6e72748ad1ec5ff97"
+    },
+    {
+      "kind": "example",
+      "wordId": "streamer-holder",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "購買容器的簡單句，與收集銀帶本體不同。",
+      "sourceSha256": "bb2ee500563d3d2a0dcc53199fac46d8bc7214643397b61c28e79ab874eecb5f"
+    },
+    {
+      "kind": "example",
+      "wordId": "streamer-holder",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "透明材質的選擇有看見內容物的目的；ribbon在此明確指銀帶。",
+      "sourceSha256": "cf75b5e7d862c7b0af4dad458e7c630079448233befdf65b4359442bcf0bb377"
+    },
+    {
+      "kind": "word",
+      "wordId": "fan-display-bag",
+      "verdict": "pass",
+      "reason": "痛バッグ讀いたバッグ，英文採說明性fan display bag；定義以透明展示區界定，不是一般手提包。",
+      "sourceSha256": "e3e64c2d768299669ebd86dcb87fc6b8438ff7234ff4d674c4b47ed6045dfbd7"
+    },
+    {
+      "kind": "example",
+      "wordId": "fan-display-bag",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "她的與紫色兩個要點三語保留，痛不按字面翻痛苦。",
+      "sourceSha256": "328da7e4d95ddaf5c887b19354cfcdf4607e514128cf62f3006549597e2d34bb"
+    },
+    {
+      "kind": "example",
+      "wordId": "fan-display-bag",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "排列徽章以露出每個圖案，與改造包體的動作區分。",
+      "sourceSha256": "0122fd7a7c827c52fc8860cc294092f513e74884e180b57abcb6a9241fe69e47"
+    },
+    {
+      "kind": "word",
+      "wordId": "ticket-holder",
+      "verdict": "pass",
+      "reason": "ticket holder此處為票券容器而非持票人；扁平保護套與銀帶吊飾分列。",
+      "sourceSha256": "ed0e844d8cfa57ada7230d9cd0c6387d3fb179c9938f915799856ba5cfb87d84"
+    },
+    {
+      "kind": "example",
+      "wordId": "ticket-holder",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "入っています描述票已在容器中的狀態，非入場動作。",
+      "sourceSha256": "4d40c3371a0d388710e89bb215f484e8b52e7217869b7638e34bada59d73b837"
+    },
+    {
+      "kind": "example",
+      "wordId": "ticket-holder",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "入口快速取用的目的與放口袋動作對齊，取り出せる完整可能形讀音。",
+      "sourceSha256": "771fede47f30f679130c5714ab12175bc7b41ec5568bbf98d98cf6dd96d4acaf"
+    },
+    {
+      "kind": "word",
+      "wordId": "merchandise-booth",
+      "verdict": "pass",
+      "reason": "ブース是現場攤位而非永久店舖，商品皆無藝人品牌，圖以攤位空間為主。",
+      "sourceSha256": "c3037e89c9c24d4abd2edc3149ef6980e72556e121fd7915de3b7d4ef91bdcf8"
+    },
+    {
+      "kind": "example",
+      "wordId": "merchandise-booth",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "外的位置敘述提供真實找攤位情境，未暗示每場都設室外。",
+      "sourceSha256": "932573596cf475e872c746a3623605d446fa158fa1b68963da162d68e49ffc0f"
+    },
+    {
+      "kind": "example",
+      "wordId": "merchandise-booth",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "かもしれなかった保留不確定可能售罄，不翻成已賣完；早めに表提早。",
+      "sourceSha256": "256e5ca31ae301ad9633396840d64b616f93ec994d751785a71670a9da3a8da5"
+    },
+    {
+      "kind": "word",
+      "wordId": "microphone-stand",
+      "verdict": "pass",
+      "reason": "與正式庫microphone分開：本詞只指可調立架，圖不以麥克風為主體。",
+      "sourceSha256": "8f3f6d5e241add4e4b65bb712bd8d0361414e0ce3d6375af1baa0d49a51f4702"
+    },
+    {
+      "kind": "example",
+      "wordId": "microphone-stand",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "下げてください為調低架子的請求，沒有換成拿走或降低音量。",
+      "sourceSha256": "6be5287001398cee2faf72bd4743de533b2c4d7aaf42300bbaa87e3366d011b7"
+    },
+    {
+      "kind": "example",
+      "wordId": "microphone-stand",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "高度過高的原因、彩排前的先後皆保留；省略日文第二次受詞仍清楚。",
+      "sourceSha256": "96503845149b1c6b0931ab796926985fa0d01d759cfad743e5ac0b1bc04b8712"
+    },
+    {
+      "kind": "word",
+      "wordId": "concert-stage",
+      "verdict": "pass",
+      "reason": "舞台是演出平台而非整個會場或活動本身，圖要有平台、燈架且不展示品牌。",
+      "sourceSha256": "1fd44bd0006e539bf991f2abe48784ebd792dd8830f5d9d01708575a447a795d"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-stage",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "尺寸描述的簡單句，主詞仍是舞台。",
+      "sourceSha256": "c2f634f5aff0c5db66551cf68a4a2016c1c06ff175a0d33151d9bf8c2e136c1b"
+    },
+    {
+      "kind": "example",
+      "wordId": "concert-stage",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "まで表等待直到亮燈，near保留為近く，沒有改成進入舞台。",
+      "sourceSha256": "9debe09bb55e9723cbcc4e7d9e204c2070e1eeea4503a1574f35d25156b70b4a"
+    }
+  ]
+}

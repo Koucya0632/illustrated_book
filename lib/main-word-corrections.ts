@@ -4,6 +4,7 @@ import { MAIN_WORD_CONVENIENCE_STORE_CORRECTIONS } from "./main-word-convenience
 import { MAIN_WORD_DRUGSTORE_CORRECTIONS } from "./main-word-drugstore-2026-09";
 import { MAIN_WORD_CLOTHING_CORRECTIONS } from "./main-word-clothing-2026-09";
 import { MAIN_WORD_RESTAURANT_CORRECTIONS } from "./main-word-restaurant-2026-10";
+import { MAIN_WORD_CONCERT_FAN_SUPPORT_CORRECTIONS } from "./main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_CORRECTIONS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS } from "./main-word-expansion-2026-09-batch-3";
@@ -109,6 +110,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_DRUGSTORE_CORRECTIONS,
   ...MAIN_WORD_CLOTHING_CORRECTIONS,
   ...MAIN_WORD_RESTAURANT_CORRECTIONS,
+  ...MAIN_WORD_CONCERT_FAN_SUPPORT_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",

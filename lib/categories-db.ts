@@ -9,6 +9,7 @@ import { localizeCategory, type CategoryTranslation } from "./word-localize";
 import type { UiLang } from "./settings";
 import { getSql } from "./db";
 import { MAIN_WORD_RESTAURANT_IDS } from "./main-word-restaurant-2026-10";
+import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "./main-word-concert-fan-support-2026-10";
 
 interface CategoryRow {
   id: string;
@@ -38,14 +39,21 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
                   jsonb_build_object('name', ct.name, 'description', ct.description))
            FROM category_translations ct WHERE ct.category_id = c.id) AS translations
       FROM categories c
-      WHERE c.id <> 'restaurant' OR NOT EXISTS (
+      WHERE (c.id <> 'restaurant' OR NOT EXISTS (
         SELECT 1 FROM unnest(${MAIN_WORD_RESTAURANT_IDS}::text[]) AS planned(id)
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'restaurant' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
-      )
+      )) AND (c.id <> 'concert-fan-support' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_CONCERT_FAN_SUPPORT_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'concert-fan-support' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      ))
       ORDER BY c.sort_order, c.id
     `) as unknown as CategoryRow[];
     if (rows.length === 0) return staticCategories.map((c) => localizeCategory(c, lang));

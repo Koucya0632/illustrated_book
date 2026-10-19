@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "Every generated original inspected individually in the image tool result, then rechecked as a full contact sheet after WebP conversion.",
+  "references": [
+    "https://ruifan.co.jp/",
+    "https://www.sanrio.co.jp/special/enjoyidol/goods/",
+    "https://corporate.sanrio.co.jp/news/assets/pdf/2019/20220308102818305s.pdf"
+  ],
+  "items": [
+    {
+      "id": "light-stick",
+      "decision": "pass",
+      "reason": "粉紅發光圓筒、白色電池握柄、電源鍵及腕帶完整，符合日本演唱會ペンライト；不是照明手電筒。白底無品牌。",
+      "sourceSha256": "133015c01822c7049b34436f2b0a5c6cf87343794406239b7259c4d54b7c3cd3"
+    },
+    {
+      "id": "concert-ticket",
+      "decision": "pass",
+      "reason": "紙本長方票、可撕票根與LIVE／座位號及觀眾剪影使演唱會票券可辨識；必要字樣清楚且沒有藝人、品牌或真實QR碼。",
+      "sourceSha256": "0a46d27a398fe68b1c2a1f9e1fcf11155d172d2946ee42c88f53b40de538ef31"
+    },
+    {
+      "id": "cheering-fan",
+      "decision": "pass",
+      "reason": "非摺疊圓扇、塑膠短柄與粉紅愛心應援裝飾完整，無藝人肖像或文字；與扇風機和扇套區分。",
+      "sourceSha256": "acd5e4ebc487d79792d982348b508d1987c1154bbbcb16a7da12d6178df0b9f0"
+    },
+    {
+      "id": "uchiwa-cover",
+      "decision": "pass",
+      "reason": "透明圓面袋、粉紅包邊拉鍊及下方柄部收納空間可見，空套不混入扇子本體；白底及材質反光不遮蔽輪廓。",
+      "sourceSha256": "fdef47a4b17eed0ffe6ea54b72597e10475ee9821a32dfc5c31d7c1840e9045c"
+    },
+    {
+      "id": "admission-wristband",
+      "decision": "pass",
+      "reason": "布製環帶與黑色單向滑扣清楚，音符圖案支持活動入場辨識；無錶面或運動護腕結構。",
+      "sourceSha256": "81ec4903138bcae87842948d3c19ccbefe50d71f73c3475757c32e3b73983646"
+    },
+    {
+      "id": "binoculars",
+      "decision": "pass",
+      "reason": "兩個鏡筒、鏡片、中央調焦輪與頸帶完整，為演唱會常見攜帶式雙筒望遠鏡；白底無商標。",
+      "sourceSha256": "0c05a9788f12f4c1c9470ddaf5e3bbc65af424b36c6fc8cdabc3e674c4b6642c"
+    },
+    {
+      "id": "concert-earplugs",
+      "decision": "pass",
+      "reason": "成對透明多層矽膠耳塞與圓形濾音元件可見，沒有電線或耳機發聲單元；相對尺寸放大呈現辨識特徵。",
+      "sourceSha256": "24db5044c67da57e6078f75a93b49beb643c85d60fc5915ee44649ae51f2802d"
+    },
+    {
+      "id": "acrylic-stand",
+      "decision": "pass",
+      "reason": "平面印刷原創人物、透明裁切邊及插入橢圓底座的接合均可見；明確為壓克力立牌而非立體公仔。",
+      "sourceSha256": "ba307a23ea804a5c0356109aa9d088e7912ea801ca288ef9e33540fb93003f31"
+    },
+    {
+      "id": "pin-badge",
+      "decision": "pass",
+      "reason": "圓形徽章正面星形與背面金屬別針並列，能排除磁鐵或貼紙；無品牌，正反兩視圖屬同一物件說明。",
+      "sourceSha256": "a010d5249272e63133c76238535b58ee0917343c1329310a0b8a9b987b00d33e"
+    },
+    {
+      "id": "concert-streamer",
+      "decision": "pass",
+      "reason": "單條連續銀色反光薄帶、鬆卷與切邊清楚，不是紙屑或有黏性膠帶；無字與白底符合詞義。",
+      "sourceSha256": "876b3ff377e534d40e157aa7dcf170e24fae2d7d8954685f3b905f1690128171"
+    },
+    {
+      "id": "streamer-holder",
+      "decision": "pass",
+      "reason": "透明短筒中有卷好的銀帶，頂蓋、短鏈與龍蝦扣完整；與長銀帶本體及大型收納冊明確不同。",
+      "sourceSha256": "142a40c245b8d1b4c773620eccbcd2d28b9050f3a755037ce35d659cea007a1f"
+    },
+    {
+      "id": "fan-display-bag",
+      "decision": "pass",
+      "reason": "紫色托特包具有透明展示窗，徽章整齊排列且提把與包體完整；屬痛バッグ的展示結構，非一般透明購物袋。",
+      "sourceSha256": "cfbd93af43999b7f389db70b46df20b4ed150a9cfe4716a67f9f6b969439c3a3"
+    },
+    {
+      "id": "ticket-holder",
+      "decision": "pass",
+      "reason": "扁平透明保護套的紫邊超出票券，內部音符票與撕線可見；可辨容器及被保護的票，沒有吊繩或商標。",
+      "sourceSha256": "e58a9a37366dea0f8f47cc5a4f022281b6ce7ba046ffd9a68c951689df3559b0"
+    },
+    {
+      "id": "merchandise-booth",
+      "decision": "pass",
+      "reason": "完整帳篷、售物櫃台、掛衣架與徽章手燈陳列，構成演唱會周邊攤位；空間場景是詞義所需且背景白。",
+      "sourceSha256": "05eeb51733e8990fc4526dc0414cb7279a9be2328b158a5e9a5032aefbdc3745"
+    },
+    {
+      "id": "microphone-stand",
+      "decision": "pass",
+      "reason": "圓形配重底座、伸縮立桿、高度鎖扣與空麥克風夾完整，主體是架子且沒有以麥克風替代。",
+      "sourceSha256": "22f250c0269048406868c12d67d71e1e0c7fbf554f1114275f913b5158fc6790"
+    },
+    {
+      "id": "concert-stage",
+      "decision": "pass",
+      "reason": "高起平台、前階梯、燈光桁架與後幕完整，白底隔離整個舞台；不是整座會場，也沒有表演者或品牌干擾。",
+      "sourceSha256": "1e3f6a833fcbfeddf73d72edacaa30f0adb40c710377b62c53f1bc0001a47f9d"
+    },
+    {
+      "id": "category-concert-fan-support",
+      "decision": "pass",
+      "reason": "手燈、應援扇、望遠鏡與透明徽章展示包形成清楚分類組合；白底且物件均可辨，沒有文字或藝人品牌。",
+      "sourceSha256": "af8a60783122bda0a28cec37b246a853186e69948bbe0e3935d11f3a46c0e565"
+    }
+  ]
+}

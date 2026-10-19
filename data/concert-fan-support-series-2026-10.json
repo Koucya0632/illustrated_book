@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "series": "concert-fan-support",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "Local candidate only; production upload, database publication, commit and deployment need separate explicit authorization.",
+  "category": {
+    "id": "concert-fan-support",
+    "name": "Concerts & Fan Support",
+    "nameZh": "演唱會與粉絲應援",
+    "nameJa": "コンサートと応援グッズ",
+    "emoji": "🎤",
+    "description": "入場用品、粉絲應援與收藏周邊，以及演唱會舞台設備",
+    "descriptionEn": "Admission essentials, fan support and collectible merchandise, and concert stage equipment",
+    "descriptionJa": "入場用品、応援やコレクションのグッズ、コンサートの舞台設備",
+    "color": "from-pink-100 to-violet-100",
+    "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/category-concert-fan-support-v1-813321fbf8e2.webp"
+  },
+  "entries": [
+    {
+      "id": "concert-ticket",
+      "word": "concert ticket",
+      "chinese": "演唱會門票",
+      "chineseDefinition": "用來進入特定演唱會的紙本或電子票券；圖片呈現紙本票。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːn.sɚt ˌtɪk.ɪt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "演唱會門票",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A paper or digital ticket that allows entry to a particular concert.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "特定のコンサートに入場するための紙や電子のチケット。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a concert ticket.",
+          "ja": "コンサートチケットを買いました。",
+          "zh": "我買了一張演唱會門票。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Check the date on your concert ticket before you book a hotel.",
+          "ja": "ホテルを予約する前に、コンサートチケットの日付を確認してください。",
+          "zh": "訂飯店前，請先確認演唱會門票上的日期。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コンサートチケット",
+      "jaReading": "コンサートチケット",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/concert-ticket-v1-d7e3d95a0fdc.webp"
+    },
+    {
+      "id": "light-stick",
+      "word": "light stick",
+      "chinese": "應援手燈",
+      "chineseDefinition": "演唱會觀眾拿在手中揮動、可發出彩色光的棒狀應援用品。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlaɪt ˌstɪk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "應援手燈",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A handheld illuminated stick that fans wave to support performers at a concert.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンサートなどで出演者を応援するときに振る、棒状に光る道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My light stick is pink.",
+          "ja": "私のペンライトはピンクです。",
+          "zh": "我的應援手燈是粉紅色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I brought spare batteries because my light stick had stopped working.",
+          "ja": "ペンライトがつかなくなっていたので、予備の電池を持ってきました。",
+          "zh": "因為我的應援手燈已經不亮了，我帶了備用電池來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ペンライト",
+      "jaReading": "ペンライト",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/light-stick-v1-c1eeb1f4b0ab.webp"
+    },
+    {
+      "id": "cheering-fan",
+      "word": "cheering fan",
+      "chinese": "應援扇",
+      "chineseDefinition": "印有圖案或應援訊息、用來支持表演者的非摺疊式手持扇。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃɪr.ɪŋ ˌfæn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "應援扇",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A rigid handheld fan decorated with a picture or message to support a performer.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "出演者を応援するために、写真やメッセージなどを付けたうちわ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I made a cheering fan.",
+          "ja": "応援うちわを作りました。",
+          "zh": "我做了一把應援扇。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I keep my cheering fan at chest level so that people behind me can see.",
+          "ja": "後ろの人にも見えるように、応援うちわは胸の高さで持ちます。",
+          "zh": "為了讓後面的人也看得到，我把應援扇拿在胸口的高度。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "応援うちわ",
+      "jaReading": "おうえんうちわ",
+      "jaReadingSegments": [
+        {
+          "text": "応援",
+          "ruby": "おうえん"
+        },
+        {
+          "text": "うちわ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/cheering-fan-v1-9f78cbb842ac.webp"
+    },
+    {
+      "id": "uchiwa-cover",
+      "word": "uchiwa fan cover",
+      "chinese": "應援扇保護套",
+      "chineseDefinition": "套在うちわ扇面外、避免攜帶時磨損或弄髒的保護套。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/uːˈtʃiː.wə ˈfæn ˌkʌv.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "應援扇保護套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A protective sleeve for the broad face of a Japanese uchiwa fan.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "うちわの表面を覆い、持ち運ぶときの傷や汚れを防ぐカバー。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the fan in its uchiwa fan cover.",
+          "ja": "うちわをうちわカバーに入れてください。",
+          "zh": "請把扇子放進應援扇保護套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I use an uchiwa fan cover because I do not want the picture to get scratched.",
+          "ja": "写真に傷を付けたくないので、うちわカバーを使っています。",
+          "zh": "因為不想讓照片刮傷，我使用應援扇保護套。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "うちわカバー",
+      "jaReading": "うちわカバー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/uchiwa-cover-v1-c05492d50df9.webp"
+    },
+    {
+      "id": "admission-wristband",
+      "word": "admission wristband",
+      "chinese": "入場手環",
+      "chineseDefinition": "戴在手腕上、供工作人員辨識入場資格的活動手環。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ədˈmɪʃ.ən ˈrɪst.bænd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "入場手環",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A band worn around the wrist to show that someone has permission to enter an event.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "イベントに入場できることを示すために、手首に着けるバンド。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please show your admission wristband.",
+          "ja": "入場用リストバンドを見せてください。",
+          "zh": "請出示入場手環。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Do not remove your admission wristband until the festival is over.",
+          "ja": "フェスが終わるまで、入場用リストバンドを外さないでください。",
+          "zh": "音樂祭結束前，請不要取下入場手環。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "入場用リストバンド",
+      "jaReading": "にゅうじょうようリストバンド",
+      "jaReadingSegments": [
+        {
+          "text": "入場用",
+          "ruby": "にゅうじょうよう"
+        },
+        {
+          "text": "リストバンド",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/admission-wristband-v1-81958643a004.webp"
+    },
+    {
+      "id": "binoculars",
+      "word": "binoculars",
+      "chinese": "雙筒望遠鏡",
+      "chineseDefinition": "用雙眼透過兩個鏡筒觀看遠處物體的光學器材。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bɪˈnɑː.kjə.lɚz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "雙筒望遠鏡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An optical device with two tubes that lets you see distant things more clearly with both eyes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "二つの筒のレンズを通して、遠くのものを両目で大きく見るための道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I brought my binoculars.",
+          "ja": "双眼鏡を持ってきました。",
+          "zh": "我帶了雙筒望遠鏡來。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I borrowed binoculars because my seat was far from the stage.",
+          "ja": "席がステージから遠かったので、双眼鏡を借りました。",
+          "zh": "因為座位離舞台很遠，我借了雙筒望遠鏡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "双眼鏡",
+      "jaReading": "そうがんきょう",
+      "jaReadingSegments": [
+        {
+          "text": "双眼鏡",
+          "ruby": "そうがんきょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/binoculars-v1-90ebd7b9ce4d.webp"
+    },
+    {
+      "id": "concert-earplugs",
+      "word": "concert earplugs",
+      "chinese": "演唱會耳塞",
+      "chineseDefinition": "在現場音樂活動中使用、藉由降低進入耳朵的音量來保護聽力的耳塞。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːn.sɚt ˈɪr.plʌɡz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "演唱會耳塞",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Earplugs designed to reduce sound levels while listening to live music.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ライブの音を聞くときに、耳に入る音量を抑えるための耳栓。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put in my concert earplugs.",
+          "ja": "ライブ用耳栓を着けました。",
+          "zh": "我戴上了演唱會耳塞。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I packed concert earplugs because I expected the music to be loud.",
+          "ja": "音が大きそうだったので、ライブ用耳栓をかばんに入れました。",
+          "zh": "因為預料音樂會很大聲，我把演唱會耳塞放進包包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ライブ用耳栓",
+      "jaReading": "ライブようみみせん",
+      "jaReadingSegments": [
+        {
+          "text": "ライブ",
+          "ruby": null
+        },
+        {
+          "text": "用",
+          "ruby": "よう"
+        },
+        {
+          "text": "耳栓",
+          "ruby": "みみせん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/concert-earplugs-v1-a7a7451bb2b8.webp"
+    },
+    {
+      "id": "acrylic-stand",
+      "word": "acrylic stand",
+      "chinese": "壓克力立牌",
+      "chineseDefinition": "把印有角色或人物圖案的壓克力薄板插入底座、可直立展示的周邊商品。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/əˈkrɪl.ɪk stænd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "壓克力立牌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A printed acrylic figure or picture that slots into a base for upright display.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "人物やキャラクターなどを印刷したアクリル板を、台座に差して飾るグッズ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This acrylic stand is small.",
+          "ja": "このアクリルスタンドは小さいです。",
+          "zh": "這個壓克力立牌很小。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wrapped the acrylic stand in a towel so that it would not break in my bag.",
+          "ja": "かばんの中で割れないように、アクリルスタンドをタオルで包みました。",
+          "zh": "為了避免壓克力立牌在包包裡破裂，我用毛巾把它包起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アクリルスタンド",
+      "jaReading": "アクリルスタンド",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/acrylic-stand-v1-dff4439e32cf.webp"
+    },
+    {
+      "id": "pin-badge",
+      "word": "pin badge",
+      "chinese": "徽章",
+      "chineseDefinition": "表面印有圖案、背面帶別針，可別在衣物或包包上的圓形金屬徽章。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɪn ˌbædʒ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "徽章",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small printed metal badge with a pin on the back for attaching it to clothing or a bag.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "表に絵などがあり、裏のピンで服やかばんに付けられる金属製のバッジ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put a pin badge on my bag.",
+          "ja": "かばんに缶バッジを付けました。",
+          "zh": "我在包包上別了一個徽章。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I traded a pin badge with a friend because we liked different singers.",
+          "ja": "好きな歌手が違ったので、友達と缶バッジを交換しました。",
+          "zh": "因為喜歡的歌手不同，我和朋友交換了徽章。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "缶バッジ",
+      "jaReading": "かんバッジ",
+      "jaReadingSegments": [
+        {
+          "text": "缶",
+          "ruby": "かん"
+        },
+        {
+          "text": "バッジ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/pin-badge-v1-6d65c9e8618d.webp"
+    },
+    {
+      "id": "concert-streamer",
+      "word": "concert streamer",
+      "chinese": "演唱會銀帶",
+      "chineseDefinition": "演唱會演出效果中撒出的長條金屬色薄帶，常被觀眾留作紀念。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːn.sɚt ˈstriː.mɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "演唱會銀帶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long metallic ribbon released as a concert effect and sometimes kept as a souvenir.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンサートの演出で飛ばされ、観客が記念に持ち帰ることもある金属色の細長いテープ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "A concert streamer landed near me.",
+          "ja": "銀テープが近くに落ちてきました。",
+          "zh": "一條演唱會銀帶落在我附近。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I rolled up the concert streamer carefully so that it would not get creased.",
+          "ja": "折り目が付かないように、銀テープを丁寧に巻きました。",
+          "zh": "為了避免出現摺痕，我小心地把演唱會銀帶捲起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "銀テープ",
+      "jaReading": "ぎんテープ",
+      "jaReadingSegments": [
+        {
+          "text": "銀",
+          "ruby": "ぎん"
+        },
+        {
+          "text": "テープ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/concert-streamer-v1-86b46facb7cb.webp"
+    },
+    {
+      "id": "streamer-holder",
+      "word": "concert streamer holder",
+      "chinese": "銀帶收納吊飾",
+      "chineseDefinition": "把演唱會銀帶捲起收納，並可掛在包包上展示的小型透明吊飾。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːn.sɚt ˈstriː.mɚ ˌhoʊl.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "銀帶收納吊飾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small clear holder that stores a rolled concert streamer and can hang from a bag.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンサートの銀テープを巻いて入れ、かばんなどに付けられる小さな透明のホルダー。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a concert streamer holder.",
+          "ja": "銀テープホルダーを買いました。",
+          "zh": "我買了一個銀帶收納吊飾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I chose a clear concert streamer holder so that I could see the ribbon inside.",
+          "ja": "中のテープが見えるように、透明な銀テープホルダーを選びました。",
+          "zh": "為了看見裡面的銀帶，我選了透明的銀帶收納吊飾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "銀テープホルダー",
+      "jaReading": "ぎんテープホルダー",
+      "jaReadingSegments": [
+        {
+          "text": "銀",
+          "ruby": "ぎん"
+        },
+        {
+          "text": "テープホルダー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/streamer-holder-v1-8a1c100db2ca.webp"
+    },
+    {
+      "id": "fan-display-bag",
+      "word": "fan display bag",
+      "chinese": "痛包",
+      "chineseDefinition": "具有透明展示區，可排列喜愛人物徽章或周邊的應援包；日文常稱痛バッグ。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfæn dɪˈspleɪ bæɡ/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "痛包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bag with a clear display panel for showing badges or other fan merchandise.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "好きな人物やキャラクターの缶バッジなどを、透明な面から見えるように飾るバッグ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Her fan display bag is purple.",
+          "ja": "彼女の痛バッグは紫です。",
+          "zh": "她的痛包是紫色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I arranged the badges in my fan display bag so that every picture could be seen.",
+          "ja": "全部の絵が見えるように、痛バッグの中の缶バッジを並べました。",
+          "zh": "為了讓每個圖案都看得見，我排列了痛包裡的徽章。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "痛バッグ",
+      "jaReading": "いたバッグ",
+      "jaReadingSegments": [
+        {
+          "text": "痛",
+          "ruby": "いた"
+        },
+        {
+          "text": "バッグ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/fan-display-bag-v1-cfa72cf8b0ae.webp"
+    },
+    {
+      "id": "ticket-holder",
+      "word": "ticket holder",
+      "chinese": "票券收納套",
+      "chineseDefinition": "用來保護並攜帶紙本票券的扁平套袋。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtɪk.ɪt ˌhoʊl.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "票券收納套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A flat sleeve or case used to protect and carry paper tickets.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紙のチケットを傷めずに持ち運ぶための薄いケース。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The ticket is in the ticket holder.",
+          "ja": "チケットはチケットホルダーに入っています。",
+          "zh": "票券放在票券收納套裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I put the ticket holder in my pocket so that I could take it out quickly at the entrance.",
+          "ja": "入口ですぐに取り出せるように、チケットホルダーをポケットに入れました。",
+          "zh": "為了在入口能迅速拿出來，我把票券收納套放進口袋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "チケットホルダー",
+      "jaReading": "チケットホルダー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/ticket-holder-v1-fffa13c44788.webp"
+    },
+    {
+      "id": "merchandise-booth",
+      "word": "merchandise booth",
+      "chinese": "周邊販售攤位",
+      "chineseDefinition": "演唱會或活動現場販售藝人、活動相關周邊商品的攤位。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɝː.tʃən.daɪz buːθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "周邊販售攤位",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A stall at a concert or event that sells merchandise related to the performers or event.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンサートやイベントの会場で、出演者などに関するグッズを売るブース。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The merchandise booth is outside.",
+          "ja": "物販ブースは外にあります。",
+          "zh": "周邊販售攤位在外面。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I went to the merchandise booth early because the badges might sell out.",
+          "ja": "缶バッジが売り切れるかもしれなかったので、早めに物販ブースへ行きました。",
+          "zh": "因為徽章可能會賣完，我提早去了周邊販售攤位。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "物販ブース",
+      "jaReading": "ぶっぱんブース",
+      "jaReadingSegments": [
+        {
+          "text": "物販",
+          "ruby": "ぶっぱん"
+        },
+        {
+          "text": "ブース",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/merchandise-booth-v1-54a34a5ce9f9.webp"
+    },
+    {
+      "id": "microphone-stand",
+      "word": "microphone stand",
+      "chinese": "麥克風架",
+      "chineseDefinition": "支撐麥克風並可調整高度或角度的立架。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmaɪ.krə.foʊn stænd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "麥克風架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An adjustable support that holds a microphone in position.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "マイクを固定し、高さや向きを調節できるスタンド。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please lower the microphone stand.",
+          "ja": "マイクスタンドを下げてください。",
+          "zh": "請把麥克風架調低。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I adjusted the microphone stand before the rehearsal because it was too high.",
+          "ja": "マイクスタンドが高すぎたので、リハーサルの前に調節しました。",
+          "zh": "因為麥克風架太高，我在彩排前調整了它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "マイクスタンド",
+      "jaReading": "マイクスタンド",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/microphone-stand-v1-f69583a5db66.webp"
+    },
+    {
+      "id": "concert-stage",
+      "word": "concert stage",
+      "chinese": "演唱會舞台",
+      "chineseDefinition": "演唱會中供表演者演出、通常高於觀眾地面的平台及演出區。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːn.sɚt steɪdʒ/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "演唱會舞台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The raised platform and performance area where musicians perform at a concert.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンサートで出演者が演奏や歌を披露するための、客席より高く作られた場所。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The concert stage is large.",
+          "ja": "コンサートステージは大きいです。",
+          "zh": "演唱會舞台很大。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We waited near the concert stage until the lights came on.",
+          "ja": "照明がつくまで、コンサートステージの近くで待っていました。",
+          "zh": "我們在演唱會舞台附近等到燈光亮起。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コンサートステージ",
+      "jaReading": "コンサートステージ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/concert-stage-v1-f74c2b775b8a.webp"
+    }
+  ]
+}

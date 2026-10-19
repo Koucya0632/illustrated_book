@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { publicFallbackWords } from "../lib/words";
 
 const source = readFileSync(
   new URL("../scripts/publish-professions-series.ts", import.meta.url),
@@ -53,10 +54,11 @@ test("the professions publisher is a read-only dry run unless all write gates ar
 });
 
 test("public fallbacks cannot expose the guarded series before database publication", () => {
-  assert.match(
-    wordsSource,
-    /export const publicFallbackWords:[\s\S]*!\["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing"\]\.includes\(word\.category\)/,
-  );
+  // Check behavior so adding a guarded category does not break an assertion
+  // that pins the literal spelling of an older, shorter category array.
+  for (const category of ["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support"]) {
+    assert.equal(publicFallbackWords.some((word) => word.category === category), false, category);
+  }
   assert.match(publicData, /import \{ publicFallbackWords as staticWords \} from "\.\/words"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "professions"/);
   assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "alcoholic-drinks"/);

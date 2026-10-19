@@ -78,7 +78,14 @@
     "restaurant:audio:generate:local": "node --env-file=.env.local scripts/generate-restaurant-candidate-audio.mjs",
     "restaurant:audio:verify": "node scripts/verify-restaurant-audio.mjs",
     "restaurant:prepare-publish": "node --env-file=.env.local scripts/prepare-restaurant-publish-plan.mjs",
-    "restaurant:publish": "tsx --env-file=.env.local scripts/publish-restaurant-series.ts"
+    "restaurant:publish": "tsx --env-file=.env.local scripts/publish-restaurant-series.ts",
+    "concert-fan-support:prepare-images": "node scripts/prepare-concert-fan-support-images.mjs",
+    "concert-fan-support:review": "node scripts/prepare-concert-fan-support-semantic-review.mjs",
+    "concert-fan-support:audio:plan": "node scripts/plan-concert-fan-support-audio.mjs",
+    "concert-fan-support:audio:generate:local": "node --env-file=.env.local scripts/generate-concert-fan-support-candidate-audio.mjs",
+    "concert-fan-support:audio:verify": "node scripts/verify-concert-fan-support-audio.mjs",
+    "concert-fan-support:prepare-publish": "node --env-file=.env.local scripts/prepare-concert-fan-support-publish-plan.mjs",
+    "concert-fan-support:publish": "tsx --env-file=.env.local scripts/publish-concert-fan-support-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

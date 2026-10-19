@@ -8,6 +8,7 @@ import {
 import { MAIN_WORD_DRUGSTORE_IDS, MAIN_WORD_DRUGSTORE_WORDS } from "./main-word-drugstore-2026-09";
 import { MAIN_WORD_CLOTHING_IDS, MAIN_WORD_CLOTHING_WORDS } from "./main-word-clothing-2026-09";
 import { MAIN_WORD_RESTAURANT_IDS, MAIN_WORD_RESTAURANT_WORDS } from "./main-word-restaurant-2026-10";
+import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS, MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS } from "./main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_FRUITS_WORDS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_WORDS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_WORDS } from "./main-word-expansion-2026-09-batch-3";
@@ -1751,6 +1752,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_DRUGSTORE_WORDS as LegacyWord[]),
   ...(MAIN_WORD_CLOTHING_WORDS as LegacyWord[]),
   ...(MAIN_WORD_RESTAURANT_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
@@ -1763,11 +1765,12 @@ export const words: Word[] = [
 // to serve an incomplete catalogue than to expose an unreleased series.
 export const publicFallbackWords: Word[] = words.filter(
   (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant"].includes(word.category) &&
+    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support"].includes(word.category) &&
     !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
     !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
-    !MAIN_WORD_RESTAURANT_IDS.includes(word.id),
+    !MAIN_WORD_RESTAURANT_IDS.includes(word.id) &&
+    !MAIN_WORD_CONCERT_FAN_SUPPORT_IDS.includes(word.id),
 );
 
 export const getWord = (id: string): Word | undefined =>

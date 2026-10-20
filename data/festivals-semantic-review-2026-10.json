@@ -1,0 +1,696 @@
+{
+  "reviewer": "Codex; individual language/concept review",
+  "scope": "30 words and both examples including every authored span; previous 14-word snapshots matched exactly before retaining their verdicts",
+  "entries": [
+    {
+      "kind": "example",
+      "wordId": "happi-coat",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "法被を着るという短い完結した行動。三語とも過去の着用で、着ましたの活用全体を読み・語釈に含めた。",
+      "sourceSha256": "f7a61798ef3da81b46dda6fdf0ee1039e3ab47ee1718887c020bffa3af55cd27"
+    },
+    {
+      "kind": "example",
+      "wordId": "happi-coat",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "手伝いをするために法被を借りる因果を扱う。英語の was helping は当時の役割を表し、日文の手伝うのでと整合する。",
+      "sourceSha256": "5f87b842285b03b2fd988ee65b5b639a49325da31f26253c3f1d9046bfc81776"
+    },
+    {
+      "kind": "word",
+      "wordId": "happi-coat",
+      "verdict": "pass",
+      "reason": "法被は祭礼の短い上着で、既存の浴衣・着物とは丈と用途が異なる。英語にも coat を添えて衣類を特定した。",
+      "sourceSha256": "2b65497a15f1d987efcc8fe12d457290cdcacb22a4b529a036768c54dda9c9be"
+    },
+    {
+      "kind": "example",
+      "wordId": "hachimaki",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "鉢巻きを締める自然な依頼。副詞と動詞を別にし、締めてください全体を可点単位にした。",
+      "sourceSha256": "7c657be05c50be391fe4eaa86386d9ca8406510234634a5d1e9d458299466abb"
+    },
+    {
+      "kind": "example",
+      "wordId": "hachimaki",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "肩で神輿を担ぐ動作中に鉢巻きが緩む場面。間にと while が同じ時間関係を保ち、緩みましたは状態変化の語釈。",
+      "sourceSha256": "cf8152b52a367fd7c5e36bb2520b7f6d05d14353ce45fbe78394f675797bbc22"
+    },
+    {
+      "kind": "word",
+      "wordId": "hachimaki",
+      "verdict": "pass",
+      "reason": "鉢巻きは額に巻く布帯であり、髪を留める硬いカチューシャとは別。hachimaki headband は祭礼の布形を限定する。",
+      "sourceSha256": "22726cd44c790fb47a759bcee91ef2984c4e65338fe484df72289a8b5313ef00"
+    },
+    {
+      "kind": "example",
+      "wordId": "geta",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "目の前の下駄の色を述べる一命題。日文のこのは不可点のまま、赤いですの読みを終止形まで収録。",
+      "sourceSha256": "9cb3e877a6c884a3d5b9b19d93c12b3e54d283ddef46e45816ec5ba99d312751"
+    },
+    {
+      "kind": "example",
+      "wordId": "geta",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "長時間の歩行が足の痛みにつながる因果。三語とも木屐・時間の長さ・痛みを保持し、形容詞の変化形も一単位で読む。",
+      "sourceSha256": "b8017f776eccca3bff64e32e1216bdc4facd0ae9d4d7f6f073d798300a672d54"
+    },
+    {
+      "kind": "word",
+      "wordId": "geta",
+      "verdict": "pass",
+      "reason": "下駄の木の台と鼻緒を定義し、一般的なサンダルや草履と区別。英語は複数形 sandals を用いて一足を表す。",
+      "sourceSha256": "7c0a2ee6cf289fc58c71ba8d3e0901e1f10bd67875e8c206daa75a969fe1e1d9"
+    },
+    {
+      "kind": "example",
+      "wordId": "portable-shrine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "共同で神輿を担ぐ祭礼の典型的動作。担いでいますは進行の助動詞まで読みを持ち、everyone の三語義も揃う。",
+      "sourceSha256": "843cfe32a102c3a3f664dca2c00608526d9b3d6f92c21d51ce07c011972df9b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "portable-shrine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "重い神輿を再度担ぐ前の休憩という時間順序。前にを独立した空間義の可点塊にせず、主要な五つの語彙を分離。",
+      "sourceSha256": "6d9261087bb61e93af32357dea790437a18a31bc5226949147279c172561b91a"
+    },
+    {
+      "kind": "word",
+      "wordId": "portable-shrine",
+      "verdict": "pass",
+      "reason": "神輿は神様の乗り物で、肩で担ぐ。車輪で引く山車と定義・画像条件を分け、portable shrine と対応させた。",
+      "sourceSha256": "685fb04033c8fa70c5192b3340e54e164c912aa207f5ccf1750daf9f738f4753"
+    },
+    {
+      "kind": "example",
+      "wordId": "festival-float",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "観客が接近する山車を知らせる短い場面。来ますを来るの辞書形だけにせず、そのまま読む。",
+      "sourceSha256": "2fd3ed755d747d12b3201619220a93fe1f9d6db65d8212252e5f197d4dcc7365"
+    },
+    {
+      "kind": "example",
+      "wordId": "festival-float",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "通過まで道端で待つ時間の終点を until／までで対応。場所と待つ動詞を別の可点語にしている。",
+      "sourceSha256": "6d30e4cabbe4a00ecb8858e846a0889b6fbc8832ba74ef6252b56e58b16445b5"
+    },
+    {
+      "kind": "word",
+      "wordId": "festival-float",
+      "verdict": "pass",
+      "reason": "山車のだしという読みを明示し、引いて移動する車の意味で統一。神輿の肩担ぎの説明を流用していない。",
+      "sourceSha256": "2e8c5d78f47884267e5f7926d22b0f77e01eee0c1c9ee6547f4735a63e26224a"
+    },
+    {
+      "kind": "example",
+      "wordId": "paper-lantern",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "祭典準備中指定懸掛位置的短請求。日文つるす自然搭配提灯，here 的位置義也對應。",
+      "sourceSha256": "61ffd4d8e8a44521e1edbe370289674fa0011b4a57231df3255f469bed813a9f"
+    },
+    {
+      "kind": "example",
+      "wordId": "paper-lantern",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為避免雨淋而取下紙提燈的因果合理。英語 looked like rain 是固定天氣表達，日文雨與降りそうだった分開且讀音包含推量過去形。",
+      "sourceSha256": "8f96b9808bb5686ad33902c06903a107b01816075f789e0f3cccb25fc6059c41"
+    },
+    {
+      "kind": "word",
+      "wordId": "paper-lantern",
+      "verdict": "pass",
+      "reason": "提灯限定為有骨架的紙燈籠，與石燈籠或天燈分開。ちょうちん完整讀音與紙罩定義對應。",
+      "sourceSha256": "1267982a78c3e6707b2a2dba8348e89f6afd96cd8d986f2bba398cdd8b284901"
+    },
+    {
+      "kind": "example",
+      "wordId": "taiko-drum",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "一人演奏太鼓的進行動作，play 在此為敲奏而非玩耍。たたいています完整活用可點。",
+      "sourceSha256": "148b3ae51b4cf74b5c55293a81ec7a2c703885467701b549aa438406aa7ff272"
+    },
+    {
+      "kind": "example",
+      "wordId": "taiko-drum",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "聲音大而移遠聆聽的結果明確。大きかった在音的語境譯成 loud，非尺寸大；日文六個實詞沒有合併成子句。",
+      "sourceSha256": "929dfa870f88ceddb8e27ff1b83811e69d0c8a3bcf8513d3ca265950d7be3c97"
+    },
+    {
+      "kind": "word",
+      "wordId": "taiko-drum",
+      "verdict": "pass",
+      "reason": "太鼓對應日式傳統鼓而非西式爵士鼓組。定義保留多種鼓形，不錯誤宣稱所有太鼓皆有同一尺寸或支架。",
+      "sourceSha256": "09751f7bfb897dc2a77d8526e6b1e65acf4ab7768033650582c78fd5922f6160"
+    },
+    {
+      "kind": "example",
+      "wordId": "festival-mask",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "攤位購買一個お面的簡單場景。量詞一つ可點且讀ひとつ；不把お面誤作口罩。",
+      "sourceSha256": "8384046ae030fa788d61f099cd185c329ca797dc0a47de6a80226629d4ba797f"
+    },
+    {
+      "kind": "example",
+      "wordId": "festival-mask",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "戴面具悶熱後移到頭側是可想像的實際用法。原因與移動位置三語一致，顔・頭・横分別注釋。",
+      "sourceSha256": "18734c71459c2b80eb8a8a27a1d9863563ad60cc106e8324af3148a996a548ee"
+    },
+    {
+      "kind": "word",
+      "wordId": "festival-mask",
+      "verdict": "pass",
+      "reason": "お面指裝飾面具，與既有不織布マスク及美容面膜分離。圖片採無版權角色的狐狸面具，英文加 festival 避免防護口罩義。",
+      "sourceSha256": "599e4542896667e2947c48a84faeb29c9ab9f44edb692de37c7f8d954e8af09c"
+    },
+    {
+      "kind": "example",
+      "wordId": "goldfish-scooping",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "邀請嘗試攤位遊戲，やってみましょう包含嘗試及邀約語氣，與英文 Let’s try 一致。",
+      "sourceSha256": "d6dbc6f1abfd18025f67342e6902769b16b52a6d231e395296e66ff306cde22a"
+    },
+    {
+      "kind": "example",
+      "wordId": "goldfish-scooping",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "ポイ破裂前成功撈到兩條魚的時間關係及數量三語一致。すくえました保留可能形成功含義，ポイ解作紙撈網。",
+      "sourceSha256": "63266f682ee3e835e1aa217257b31e44fa6dd482e3e9000149f6e9d554f55605"
+    },
+    {
+      "kind": "word",
+      "wordId": "goldfish-scooping",
+      "verdict": "pass",
+      "reason": "金魚すくい是活動而非單獨金魚。中英日定義保留薄紙ポイ與水池；圖像須同時看見金魚、紙網及小碗。",
+      "sourceSha256": "58a1750645139d1307f5e29c25e14932ac5d560e154079eecbc25e37aee8fb23"
+    },
+    {
+      "kind": "example",
+      "wordId": "water-balloon-fishing",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "回述試玩活動的一命題。ヨーヨー的長音採完整假名，遊戲名稱與嘗試動詞分開。",
+      "sourceSha256": "0d16c9962a7c596de4fc06eb8e6538839c6b611ef745108c17734136351b7cf7"
+    },
+    {
+      "kind": "example",
+      "wordId": "water-balloon-fishing",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "失敗後重試有明確因果，針在遊戲語境是鉤子而非縫衣針。日文もう一度與主要動詞分開，英文 tried again 作固定重試語組。",
+      "sourceSha256": "1e5b291f301c2dc914c462322d8a6e47fa2be441bef444821d688beddf41c560"
+    },
+    {
+      "kind": "word",
+      "wordId": "water-balloon-fishing",
+      "verdict": "pass",
+      "reason": "ヨーヨー釣り不是硬質玩具溜溜球的垂釣。定義明確為帶橡皮筋的水風船，英文以 water balloon fishing 表達遊戲。",
+      "sourceSha256": "9da7ae0759f6fdc0c348076dbe003fc8e0b3b4b0e8c7857c613ca475fadc228b"
+    },
+    {
+      "kind": "example",
+      "wordId": "candy-apple",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "攤位點餐的自然省略英文與日文請求。蘋果糖與數量一個為可點詞彙；please及ください保留原文但不可點，避免文法碎片。",
+      "sourceSha256": "3ae690c4265cb73abf2e6a992acbdab6025df30fb672997874d4df067f2ad43d"
+    },
+    {
+      "kind": "example",
+      "wordId": "candy-apple",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "硬糖衣導致切小塊再食用的場景合理，非聲稱攤位一定提供刀。硬さ與切分結果在三語一致。",
+      "sourceSha256": "15ff5be4e8bea2f90563d9ad595a1aa794a2e7663fbefc7c7fa81b01ee0141c6"
+    },
+    {
+      "kind": "word",
+      "wordId": "candy-apple",
+      "verdict": "pass",
+      "reason": "りんご飴是整顆蘋果硬糖衣，不是焦糖蘋果或蘋果口味糖果；candy apple與繁中蘋果糖同指。",
+      "sourceSha256": "7e0c9848660b38a6b784356bbc23f73b08975c1498e07bbd9442bd91c9ba6c16"
+    },
+    {
+      "kind": "example",
+      "wordId": "cotton-candy",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "表達對拉絲糖的偏好，喜歡的語釈與好きです完整讀音對應。保留兩個可點實詞。",
+      "sourceSha256": "77c835bb3984cd405a7637f45dc76ba07c57bc3b7832a1194a626692788e9925"
+    },
+    {
+      "kind": "example",
+      "wordId": "cotton-candy",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "融化前分享食用有時間順序，英文 shared 由日文分けて食べました完整表達；兩個日文動詞各自可點。",
+      "sourceSha256": "af11fb67def7d447924357370695de36c41ce7fc0463b09c88080d1f9d6f60a7"
+    },
+    {
+      "kind": "word",
+      "wordId": "cotton-candy",
+      "verdict": "pass",
+      "reason": "繁中棉花糖有 marshmallow 歧義，因此標籤補拉絲糖，英日限定 cotton candy／綿あめ。",
+      "sourceSha256": "a9f2e30af935239fe4eec654a3faf6035a04f09c799907fad6da60e9a71eeb7c"
+    },
+    {
+      "kind": "example",
+      "wordId": "shaved-ice",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "點草莓口味刨冰的日常請求。いちご味是一個複合名詞，味讀あじ，英文 strawberry 語釈為口味。",
+      "sourceSha256": "3c78ce28c5a699298b9389985092de786a3a540846025a205a803be1554685e1"
+    },
+    {
+      "kind": "example",
+      "wordId": "shaved-ice",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "炎熱促成排隊購買的因果與行動順序三語相符。列與並んで分開，hot 在此為天氣而非食物溫度。",
+      "sourceSha256": "245bb25c69890ec3dcb3284ecce8ef9b76947c26f4863a776570d06d4dbc1a3f"
+    },
+    {
+      "kind": "word",
+      "wordId": "shaved-ice",
+      "verdict": "pass",
+      "reason": "かき氷是削冰加糖漿，非冰淇淋或整塊冰。讀音かきごおり含連濁與長母音，與文字分段可重組。",
+      "sourceSha256": "67dca3bda4d2a239ce7c9dbe86e06b9366a982be8e0b34f92e050ced0343137c"
+    },
+    {
+      "kind": "word",
+      "wordId": "ring-toss",
+      "verdict": "pass",
+      "reason": "輪投げ是將圓環套上直立目標的遊戲，英語 ring toss 與繁中套圈圈一致；與撈金魚及釣水球的工具和動作明確區分。",
+      "sourceSha256": "38951594a3e4e9be6f9c869756cb87c08765b9c22664e96b38ed59aa56ca0cd0"
+    },
+    {
+      "kind": "example",
+      "wordId": "ring-toss",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "邀請一起玩套圈圈是短而自然的生活句。遊びましょう包含勸誘語氣並有完整讀音，輪投げ為固定活動名。",
+      "sourceSha256": "b5151726a5696f6abe9548eb1ac1ee5470a70c224ccc65560d3339ea6e338dd8"
+    },
+    {
+      "kind": "example",
+      "wordId": "ring-toss",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "第一圈落空、第二圈成功套柱的轉折明確，三語保留順序及結果。外れました在此解作沒套中，二つ目還原為第二個圈，七個可點詞塊均未合併子句。",
+      "sourceSha256": "c199202eb97715a7e4490004588d2488a96c3df7bb45780dffbf916d94a70352"
+    },
+    {
+      "kind": "example",
+      "wordId": "takoyaki",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "食物溫度以熱い表示，英文 hot 不作辣或炎熱；短句描述一個可感知狀態。",
+      "sourceSha256": "a5d2c56c43debe753f63a9a4ff609ca9a8219e9ac06a170cafdf1040db812d4c"
+    },
+    {
+      "kind": "example",
+      "wordId": "takoyaki",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "內部燙促成等待後食用，因果及先後三語一致。日文中與熱かった各自可點，待って保留促音讀音。",
+      "sourceSha256": "369f3ee0f189e83c03c8ded039ff6700556ff89266629ea9bad2cd02e939aaa7"
+    },
+    {
+      "kind": "word",
+      "wordId": "takoyaki",
+      "verdict": "pass",
+      "reason": "たこ焼き指包有章魚塊的球形麵糊小吃，不是整隻烤章魚或肉丸；三語定義均保留球形與內餡。",
+      "sourceSha256": "8b44fddd9aa02c71990510cdc4719610ae9b49cb91fbcb99dd83898fc02042da"
+    },
+    {
+      "kind": "example",
+      "wordId": "yakisoba",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "祭典攤位購買炒麵的直接用法，沒有混成湯麵或蕎麥麵。",
+      "sourceSha256": "fbb64ef2080ecfc8f07c43a62b7130a9a4cf2bc364937349cb4e502e35192bb9"
+    },
+    {
+      "kind": "example",
+      "wordId": "yakisoba",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "份量大所以與妹妹分享食用是具體因果；younger sister保留妹的親屬方向，兩個日文動詞分開。",
+      "sourceSha256": "5dcfa13f0ad0f51e5c3672ecd4555d4373cbc4bccfd708541bfd59b4bb366ca5"
+    },
+    {
+      "kind": "word",
+      "wordId": "yakisoba",
+      "verdict": "pass",
+      "reason": "焼きそば使用中華麺，不因そば一詞而誤稱蕎麥麵；日式炒麵與英文借詞yakisoba同指。",
+      "sourceSha256": "464a038adc55e0b0bbde2ead91ab9de1c39e2110cfac5d09327819b055e420c9"
+    },
+    {
+      "kind": "example",
+      "wordId": "okonomiyaki",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "實際分食前的請求，切ってください完整含依頼助動詞與促音；非定義句。",
+      "sourceSha256": "3c681f27699ead711d900e40603d32ba27f38a45025f6993fc0bb827906d6562"
+    },
+    {
+      "kind": "example",
+      "wordId": "okonomiyaki",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "朋友的飲食偏好導致客製點餐；苦手在食物語境為不喜歡，マヨネーズ抜き拆成食材與不加，沒有合成整句。",
+      "sourceSha256": "74f73e20ea7f7f0d33282e2b672ac8b8ac83176fb1d9a48b6726866b43d175a6"
+    },
+    {
+      "kind": "word",
+      "wordId": "okonomiyaki",
+      "verdict": "pass",
+      "reason": "繁中大阪燒對應大阪風お好み焼き，定義明示本圖形式，避免把廣島層疊麵條型說成唯一外觀。",
+      "sourceSha256": "f5914a21231e4c6fdd51e5bfee3bbde7f6a6dce8f15c96328d4992da9c5f8780"
+    },
+    {
+      "kind": "example",
+      "wordId": "yakitori",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "兩串點餐的短句，二本讀にほん且以串計數；ください不作獨立文法可點塊。",
+      "sourceSha256": "3b17bf637c9e56bc5b85a973dba8b2e2efb014806681e5dd335c081d370ef5c2"
+    },
+    {
+      "kind": "example",
+      "wordId": "yakitori",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "父親比較兩種調味再作選擇，三語對照一致。八個日文可點單位達上限但各保留實詞粒度，塩味讀しおあじ。",
+      "sourceSha256": "574608ab8e077bc80696733787e0e98ad80251ccdd2d9f6b52b7963abf9cf631"
+    },
+    {
+      "kind": "word",
+      "wordId": "yakitori",
+      "verdict": "pass",
+      "reason": "焼き鳥限定雞肉類串燒，非所有串烤通稱；例句使用本作竹籤量詞，圖中雞肉與蔥段合理。",
+      "sourceSha256": "08c806f1c8533b92faa5a8a58da6ae17a9781938a90f13746867fa61a5b317c9"
+    },
+    {
+      "kind": "example",
+      "wordId": "grilled-corn",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "攤位點一支玉米的簡單請求，英語ear與日文一本對應，いっぽん讀音完整。",
+      "sourceSha256": "c4bf3d3b7a8aa60da73b4de9801f176d6a21d59a31cb89a910ace229264f8f89"
+    },
+    {
+      "kind": "example",
+      "wordId": "grilled-corn",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "燙而拿不住導致索取袋子，英文got與日文もらいました均為取得結果，沒有只問卻已收到的漂移。",
+      "sourceSha256": "a973985b742b5a674290eb1dae03760c37adbd8ec24c9973e76716e284a49571"
+    },
+    {
+      "kind": "word",
+      "wordId": "grilled-corn",
+      "verdict": "pass",
+      "reason": "整支烤玉米不是玉米粒、爆米花或澱粉；與既有cornstarch完全不同，日文頭詞保留焼き的烹調方式。",
+      "sourceSha256": "4424750298cad438df8039bdbc877d64a8f8125a71ee1c08194b089f6d9f98ae"
+    },
+    {
+      "kind": "example",
+      "wordId": "grilled-squid",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "直接購買祭典整隻烤魷魚，頭詞與定義一致，不引入大阪粉物義。",
+      "sourceSha256": "1dba4ed5c527188bfcfada5093d04a11481e93b1b9c522b80b4c763e99d38765"
+    },
+    {
+      "kind": "example",
+      "wordId": "grilled-squid",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "切小塊有明確食用目的，孩子複數與容易吃的條件三語相同；英文small與pieces各自標註，日文食べやすい是完整派生形。",
+      "sourceSha256": "2e6089e631465e7d1e00f5dad0ec77a22bc33544621e6098384417d6e170f529"
+    },
+    {
+      "kind": "word",
+      "wordId": "grilled-squid",
+      "verdict": "pass",
+      "reason": "イカ焼き有大阪粉物的別義，本詞明確限定整隻串烤魷魚，三語解釋與預定圖片不混用麵糊薄餅。",
+      "sourceSha256": "bec467a8fa6707b135459efe31e86df43df81bd14c07802f2f9c07b74f64c4fb"
+    },
+    {
+      "kind": "example",
+      "wordId": "chocolate-banana",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "甜味的單一感受自然，甘いです不是親暱或寬鬆的其他字義。",
+      "sourceSha256": "a2f96dceaa4a373162c9822a8f219d72acee096a2be87cb6dd0bed821b431a9e"
+    },
+    {
+      "kind": "example",
+      "wordId": "chocolate-banana",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "融化促成移到陰涼處食用，因果與食用地點一致。溶け始めていた保留開始、持續及過去的完整讀音。",
+      "sourceSha256": "b8dcfa324243373e0662c8034b73951bdd8f4e3e8b50cdc5b3ba210962f43e04"
+    },
+    {
+      "kind": "word",
+      "wordId": "chocolate-banana",
+      "verdict": "pass",
+      "reason": "チョコバナナ限定裹巧克力的整根香蕉甜點，非香蕉口味巧克力棒；三語均保留實際香蕉本體。",
+      "sourceSha256": "287fafeebd8af2d46fa714bb6c13ac9f07c7ff2e4f7554bbfa7a065f60ea39a4"
+    },
+    {
+      "kind": "example",
+      "wordId": "ramune",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "直接飲用的生活動作，cold描述飲料溫度，三個可點實詞各自完整。",
+      "sourceSha256": "8b64f1b0a7dfcc187467bfa54006a611a5b6f9ebb8bd439ce37f16835d48baa4"
+    },
+    {
+      "kind": "example",
+      "wordId": "ramune",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "開瓶困難導致攤販協助，保留彈珠瓶的真實操作情境；押し下げられなかった完整包含可能否定過去，非僅詞頭。",
+      "sourceSha256": "520b74f6ac5de9879024ad797b8d466746533cb142ee55aee30dbf0efc961b51"
+    },
+    {
+      "kind": "word",
+      "wordId": "ramune",
+      "verdict": "pass",
+      "reason": "ラムネ此處是彈珠瓶碳酸飲料，不是同名糖果。定義使用典型瓶裝而非斷言所有包裝皆有彈珠。",
+      "sourceSha256": "734eb7ce9035374d47d8c5b528efcfc0dcf5ce0793655adfe9393f13afcf079b"
+    },
+    {
+      "kind": "example",
+      "wordId": "shooting-gallery",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "邀請參加祭典遊戲的簡單句，沒有引入真實武器訓練或空泛百科敘述。",
+      "sourceSha256": "a147f22f2c47183b3be40c78157e853123f8aa27bb4a2eb5205e413fdb94325c"
+    },
+    {
+      "kind": "example",
+      "wordId": "shooting-gallery",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "命中卻未倒的轉折清楚，的讀まと，倒れませんでした包含完整過去否定。三語均為打中同一個目標而未倒下的結果。",
+      "sourceSha256": "3b9c8ce8b8e4153c62710146f6502d5861d801570388024f9663cfd20ba70641"
+    },
+    {
+      "kind": "word",
+      "wordId": "shooting-gallery",
+      "verdict": "pass",
+      "reason": "射的限定祭典玩具槍目標遊戲，不是實彈射擊場；英文shooting gallery以festival game stall定義限定此義。",
+      "sourceSha256": "8092c0722e00522299aa108ef683c9ca3f5eb8201761dd724f02557b245ee356"
+    },
+    {
+      "kind": "example",
+      "wordId": "superball-scooping",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "單一撈球事件含具體顏色，日文活動名是固定複合詞，紅色與球另作兩個詞塊。",
+      "sourceSha256": "74d8876127322c4fe4ac90dfa956f8ee631a4cc2fbef47bc54d22085ea319fb0"
+    },
+    {
+      "kind": "example",
+      "wordId": "superball-scooping",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "紙膜破裂導致停止遊戲的因果具體；ポイ語釈為紙網，非撈魚動物或釣水球鉤。",
+      "sourceSha256": "e6dd69a5d94dd527999ee707c417fa235a7e76e13f58c507c651db27bb172af6"
+    },
+    {
+      "kind": "word",
+      "wordId": "superball-scooping",
+      "verdict": "pass",
+      "reason": "英文採可直接理解的bouncy ball scooping，日文保留一般遊戲名スーパーボールすくい；區別金魚與水球，不把固體彈力球畫成有橡皮筋的水風船。",
+      "sourceSha256": "e6c60c4228b990ddcb991fc55ac5235c057fe68847673b8996af42292637f3d5"
+    },
+    {
+      "kind": "example",
+      "wordId": "lottery-draw",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "抽到獎品的一個事件自然，當たりました在此為中獎，與射的的打中語境不同。",
+      "sourceSha256": "a36489f65912bf1db60e35acb62957df5c56a4a38d7ab7b9d1ff71bf4b737d5a"
+    },
+    {
+      "kind": "example",
+      "wordId": "lottery-draw",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "三張券可玩一次的條件引出參加原因，數量三枚／一回與英文three／once一致，條件助詞不誤譯為獨立詞義。",
+      "sourceSha256": "aeccb997f8501cc225e6d71ef7235ff896dc32272b33141b804a9b7a0914a740"
+    },
+    {
+      "kind": "word",
+      "wordId": "lottery-draw",
+      "verdict": "pass",
+      "reason": "くじ引き是抽出籤的祭典遊戲，不是神社おみくじ或購買樂透彩；定義以遊戲及獎品限定lottery draw的範圍。",
+      "sourceSha256": "93ff65d04ccf0c80532d8afa67d017fdf3d13d4b35790b0541f95db94cd70903"
+    },
+    {
+      "kind": "example",
+      "wordId": "jinbei",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "描述當下穿著的狀態，着ています讀きています，不誤用穿鞋動詞履く。",
+      "sourceSha256": "a72080a8f9161b9326a5b629ffcb37ea4a202fda1c1f9b0cb38038353246904a"
+    },
+    {
+      "kind": "example",
+      "wordId": "jinbei",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "活動便利造成服裝替代，兒子與浴衣均保留；日文動きやすい是可活動的派生形，代わり與助詞に分開。",
+      "sourceSha256": "c4294d357e99b43d2c3556d6cb5ed3f3f4a1c5197d572c25bb4043a53c50f44c"
+    },
+    {
+      "kind": "word",
+      "wordId": "jinbei",
+      "verdict": "pass",
+      "reason": "甚平是短上衣配短褲的夏季套裝，與既有浴衣及本批法被在下身、繫法和用途均有區別。",
+      "sourceSha256": "b8d95383a922f41e814d22e9218f384d242db91801d06eadb6546be03851094e"
+    },
+    {
+      "kind": "example",
+      "wordId": "drawstring-bag",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "放錢包入袋的一個日常動作，に不可點，巾着袋與財布不是整句語塊。",
+      "sourceSha256": "d08c47eb9420c20eebb1f51f87471e3efd3e76618e4767997e6f7520c613b781"
+    },
+    {
+      "kind": "example",
+      "wordId": "drawstring-bag",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "收緊袋口的明確目的為防零錢掉落；口按袋口語境譯作opening，落ちない保留否定讀音。",
+      "sourceSha256": "7ce53506263794e7f75e9569ef322df88bfe23f22ee3f9659a89a08edcbeb1e1"
+    },
+    {
+      "kind": "word",
+      "wordId": "drawstring-bag",
+      "verdict": "pass",
+      "reason": "巾着袋由穿繩收攏袋口定義，非拉鍊小包或玩偶展示袋；きんちゃくぶくろ保留袋的連濁讀音。",
+      "sourceSha256": "9a59f3fefffb28797fac690c04fe068b19bd34cd8c8ab5732163021e587e5f3e"
+    },
+    {
+      "kind": "example",
+      "wordId": "folding-fan",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "展開摺扇用開く且讀ひらく，依頼活用完整讀ひらいてください，與一般門的あける不同。",
+      "sourceSha256": "c243aefa56ab62ef8076e7fd1d72181f752eb0832f3e687db0ed668d790beb6f"
+    },
+    {
+      "kind": "example",
+      "wordId": "folding-fan",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "避免扇骨折斷的目的與先摺後收的順序同時存在。折れない的break與畳んで的fold分開，沒有把兩種摺折概念混作同義。",
+      "sourceSha256": "eada64fc1c916b5ad3f3f4d934b7376148d474eb5430ab075427693166720c83"
+    },
+    {
+      "kind": "word",
+      "wordId": "folding-fan",
+      "verdict": "pass",
+      "reason": "扇子是可摺合的扇骨手扇，與既有電風扇及不能摺合的應援うちわ可明確區分。",
+      "sourceSha256": "1ef8632feb7b197ca1939e7d5b69d3cb79b326d1318c042d2f3dca61529e86be"
+    },
+    {
+      "kind": "example",
+      "wordId": "fireworks",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "觀賞煙火的簡單感受，英文複數fireworks與日文無數形式自然對應。",
+      "sourceSha256": "3bac79511638edd0420f01840357505b9fbf8b37fad7580d87f8a33e8cfd023e"
+    },
+    {
+      "kind": "example",
+      "wordId": "fireworks",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "河邊等到結束的時間終點明確，until與まで對應；そば在此為旁邊而非蕎麥麵。",
+      "sourceSha256": "f35e0735e4ee58d03e87914797b327fe5b53ff3c39811d829e2d475b5769368a"
+    },
+    {
+      "kind": "word",
+      "wordId": "fireworks",
+      "verdict": "pass",
+      "reason": "花火是較廣的煙火總稱，圖像選空中綻放形式，與下一詞線香花火的具體手持小型種類保留上下位關係而非重複詞頭。",
+      "sourceSha256": "02567094535f4f65fe32802bbb6967d6f293f6d4285d82fc3d33801e97b6714d"
+    },
+    {
+      "kind": "example",
+      "wordId": "japanese-sparkler",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "短句描述燃燒結束，went out為熄滅的片語動詞，不誤作外出。",
+      "sourceSha256": "0fb8831095649b95249969f059960abc3edd63022a521e0206c61f49a3e50b62"
+    },
+    {
+      "kind": "example",
+      "wordId": "japanese-sparkler",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "移動手導致末端火球掉落，符合長手線香花火外觀；落ちてしまいました含結果與遺憾語氣的完整活用讀音。",
+      "sourceSha256": "e12621a6876e3fc5965b4d1dfba1a881cdc73319a1f532470cd8fcfe7c9a940c"
+    },
+    {
+      "kind": "word",
+      "wordId": "japanese-sparkler",
+      "verdict": "pass",
+      "reason": "線香花火特指會形成小火球的傳統品種，圖像採長手紙捻式，不以一般金屬線仙女棒冒充；英語加Japanese限定文化品種。",
+      "sourceSha256": "1a61622be3984e74a88019425649f522b1c68563411b6273d0dce7f833f1e9f6"
+    }
+  ]
+}

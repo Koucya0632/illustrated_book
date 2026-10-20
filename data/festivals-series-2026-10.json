@@ -1,0 +1,1550 @@
+{
+  "schemaVersion": 1,
+  "series": "festivals",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "Local preparation only. Production uploads, database writes, commit, and deployment require separate authorization.",
+  "category": {
+    "id": "festivals",
+    "name": "Japanese Festivals",
+    "nameZh": "祭典",
+    "nameJa": "祭り",
+    "emoji": "🏮",
+    "description": "日本祭典常見的服飾、祭具、遊戲、小吃與煙火",
+    "descriptionEn": "Clothing, ceremonial objects, games, treats, and fireworks at Japanese festivals",
+    "descriptionJa": "日本の祭りで見かける衣装や祭具、縁日の遊び、食べ物と花火",
+    "color": "from-red-100 to-amber-100",
+    "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/category-festivals-v1-4fe785b00c74.webp"
+  },
+  "entries": [
+    {
+      "id": "happi-coat",
+      "word": "happi coat",
+      "chinese": "法被（祭典短外套）",
+      "chineseDefinition": "日本祭典或活動時穿的短外套，通常前襟敞開，可搭配腰帶。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhæp.i koʊt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "法被（祭典短外套）",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short traditional Japanese coat worn at festivals and other events.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "祭りや行事などで着る、前が開いた丈の短い上着。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I wore a happi coat.",
+          "ja": "法被を着ました。",
+          "zh": "我穿了法被。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I borrowed a happi coat because I was helping at the festival.",
+          "ja": "祭りを手伝うので、法被を借りました。",
+          "zh": "因為要在祭典幫忙，我借了法被。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "法被",
+      "jaReading": "はっぴ",
+      "jaReadingSegments": [
+        {
+          "text": "法被",
+          "ruby": "はっぴ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/happi-coat-v1-6260c081d3bc.webp"
+    },
+    {
+      "id": "hachimaki",
+      "word": "hachimaki headband",
+      "chinese": "鉢卷（日式頭巾）",
+      "chineseDefinition": "繞在額頭並綁緊的窄長布帶，常見於祭典、運動或工作時。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhɑː.tʃiˈmɑː.ki ˈhed.bænd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鉢卷（日式頭巾）",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A strip of cloth tied around the forehead, often worn at Japanese festivals or during physical activity.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "額に巻いて結ぶ細長い布。祭りや運動、作業のときなどに使う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Tie your hachimaki headband tightly.",
+          "ja": "鉢巻きをしっかり締めてください。",
+          "zh": "請把鉢卷綁緊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My hachimaki headband came loose while I was carrying the portable shrine.",
+          "ja": "神輿を担いでいる間に、鉢巻きが緩みました。",
+          "zh": "我扛神輿時，鉢卷鬆開了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "鉢巻き",
+      "jaReading": "はちまき",
+      "jaReadingSegments": [
+        {
+          "text": "鉢巻き",
+          "ruby": "はちまき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/hachimaki-v1-612efe47269f.webp"
+    },
+    {
+      "id": "geta",
+      "word": "geta sandals",
+      "chinese": "木屐",
+      "chineseDefinition": "日本傳統的木製鞋履，以夾腳鞋帶固定，鞋底常有突起的木齒。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɡet.ə ˈsæn.dəlz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "木屐",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Traditional Japanese wooden sandals with fabric thongs and often raised wooden supports.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "木の台に鼻緒を付けた日本の履物。底に歯が付いているものが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "These geta sandals are red.",
+          "ja": "この下駄は赤いです。",
+          "zh": "這雙木屐是紅色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My feet hurt because I walked in geta sandals for a long time.",
+          "ja": "下駄で長く歩いたので、足が痛くなりました。",
+          "zh": "因為穿著木屐走了很久，我的腳變痛了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "下駄",
+      "jaReading": "げた",
+      "jaReadingSegments": [
+        {
+          "text": "下駄",
+          "ruby": "げた"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/geta-v1-5e8acbb4623e.webp"
+    },
+    {
+      "id": "portable-shrine",
+      "word": "portable shrine",
+      "chinese": "神輿",
+      "chineseDefinition": "日本祭典中供神明乘坐、由人以長木桿肩扛移動的小型神殿。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɔːr.tə.bəl ʃraɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "神輿",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small shrine carried on poles in a Japanese festival procession.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "祭りのときに神様を乗せ、担ぎ棒を使って人が肩で担ぐ小さな社。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Everyone is carrying the portable shrine.",
+          "ja": "みんなで神輿を担いでいます。",
+          "zh": "大家正一起扛著神輿。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We rested before carrying the heavy portable shrine again.",
+          "ja": "重い神輿をまた担ぐ前に、休憩しました。",
+          "zh": "再次扛起沉重的神輿之前，我們休息了一下。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "神輿",
+      "jaReading": "みこし",
+      "jaReadingSegments": [
+        {
+          "text": "神輿",
+          "ruby": "みこし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/portable-shrine-v1-8b6ea6933364.webp"
+    },
+    {
+      "id": "festival-float",
+      "word": "festival float",
+      "chinese": "山車（祭典花車）",
+      "chineseDefinition": "日本祭典遊行中裝飾華麗、通常裝有輪子並由人拉行的車臺。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfes.tə.vəl floʊt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "山車（祭典花車）",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A decorated wheeled structure pulled in a festival procession.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "祭りの行列で引いて動かす、飾りを付けた車。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "A festival float is coming.",
+          "ja": "山車が来ます。",
+          "zh": "山車要過來了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We waited by the roadside until the festival float passed.",
+          "ja": "山車が通り過ぎるまで、道端で待ちました。",
+          "zh": "我們在路旁等到山車通過。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "山車",
+      "jaReading": "だし",
+      "jaReadingSegments": [
+        {
+          "text": "山車",
+          "ruby": "だし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/festival-float-v1-45318d6a794c.webp"
+    },
+    {
+      "id": "paper-lantern",
+      "word": "paper lantern",
+      "chinese": "提燈",
+      "chineseDefinition": "以紙覆在可伸縮骨架外的傳統照明器具，祭典常將它懸掛裝飾或照明。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpeɪ.pər ˈlæn.tərn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "提燈",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A traditional lantern with a paper covering over a collapsible frame, often hung at festivals.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "伸び縮みする骨組みに紙を張った明かりの道具。祭りではつるして使うことが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Hang the paper lantern here.",
+          "ja": "提灯をここにつるしてください。",
+          "zh": "請把提燈掛在這裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We took down the paper lanterns because it looked like rain.",
+          "ja": "雨が降りそうだったので、提灯を外しました。",
+          "zh": "因為看起來快下雨了，我們把提燈取下。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "提灯",
+      "jaReading": "ちょうちん",
+      "jaReadingSegments": [
+        {
+          "text": "提灯",
+          "ruby": "ちょうちん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/paper-lantern-v1-fea56acde85f.webp"
+    },
+    {
+      "id": "taiko-drum",
+      "word": "taiko drum",
+      "chinese": "太鼓",
+      "chineseDefinition": "日本傳統的鼓，以木製鼓身和繃緊的鼓皮構成，常用鼓棒敲奏。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtaɪ.koʊ drʌm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "太鼓",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A traditional Japanese drum, usually played with wooden sticks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "木の胴に皮を張った日本の打楽器。ばちでたたいて演奏することが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He is playing a taiko drum.",
+          "ja": "彼は太鼓をたたいています。",
+          "zh": "他正在敲太鼓。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The taiko drums were loud, so we listened from farther away.",
+          "ja": "太鼓の音が大きかったので、少し離れて聞きました。",
+          "zh": "太鼓的聲音很大，所以我們離遠一點聽。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "太鼓",
+      "jaReading": "たいこ",
+      "jaReadingSegments": [
+        {
+          "text": "太鼓",
+          "ruby": "たいこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/taiko-drum-v1-8a418227ae69.webp"
+    },
+    {
+      "id": "festival-mask",
+      "word": "festival mask",
+      "chinese": "祭典面具",
+      "chineseDefinition": "祭典攤位販售、可戴在臉上或頭側的裝飾面具；此處不指防疫口罩。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfes.tə.vəl mæsk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "祭典面具",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A decorative face mask sold or worn at festivals, rather than a protective medical mask.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "祭りなどで売られる、顔を覆ったり頭の横に付けたりする飾りの面。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought one festival mask.",
+          "ja": "お面を一つ買いました。",
+          "zh": "我買了一個祭典面具。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My face got hot, so I shifted the festival mask to the side of my head.",
+          "ja": "顔が熱くなったので、お面を頭の横にずらしました。",
+          "zh": "臉變熱了，所以我把祭典面具移到頭側。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "お面",
+      "jaReading": "おめん",
+      "jaReadingSegments": [
+        {
+          "text": "お面",
+          "ruby": "おめん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/festival-mask-v1-dcc15cc42ecb.webp"
+    },
+    {
+      "id": "goldfish-scooping",
+      "word": "goldfish scooping",
+      "chinese": "撈金魚",
+      "chineseDefinition": "日本祭典中用稱為「ポイ」的薄紙撈網，從水池撈金魚的遊戲。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɡoʊld.fɪʃ ˈskuː.pɪŋ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "撈金魚",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A festival game in which players use a thin paper scoop to catch goldfish in a shallow pool.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ポイと呼ばれる薄い紙の道具を使い、水の中の金魚をすくう縁日の遊び。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Let's try goldfish scooping.",
+          "ja": "金魚すくいをやってみましょう。",
+          "zh": "一起試試撈金魚吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I scooped up two fish in the goldfish-scooping game before my paper scoop tore.",
+          "ja": "ポイが破れる前に、金魚すくいで二匹すくえました。",
+          "zh": "紙撈網破掉之前，我在撈金魚遊戲中撈到了兩條魚。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "金魚すくい",
+      "jaReading": "きんぎょすくい",
+      "jaReadingSegments": [
+        {
+          "text": "金魚すくい",
+          "ruby": "きんぎょすくい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/goldfish-scooping-v1-fd1dd9c94a03.webp"
+    },
+    {
+      "id": "water-balloon-fishing",
+      "word": "water balloon fishing",
+      "chinese": "釣水球",
+      "chineseDefinition": "以帶鉤的線釣起附有橡皮筋水球的祭典遊戲；水球可像溜溜球般彈動。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwɔː.tər bəˈluːn ˈfɪʃ.ɪŋ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "釣水球",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese festival game in which players hook small water-filled balloons fitted with elastic loops.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ゴムの輪が付いた小さな水風船を、針の付いた糸などで釣り上げる縁日の遊び。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I tried water balloon fishing.",
+          "ja": "ヨーヨー釣りをやってみました。",
+          "zh": "我試玩了釣水球。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The hook came off during water balloon fishing, so I tried again.",
+          "ja": "ヨーヨー釣りで針が外れたので、もう一度挑戦しました。",
+          "zh": "釣水球時鉤子掉了，所以我再挑戰了一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ヨーヨー釣り",
+      "jaReading": "よーよーつり",
+      "jaReadingSegments": [
+        {
+          "text": "ヨーヨー釣り",
+          "ruby": "よーよーつり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/water-balloon-fishing-v1-f22b2d12ea15.webp"
+    },
+    {
+      "id": "candy-apple",
+      "word": "candy apple",
+      "chinese": "蘋果糖",
+      "chineseDefinition": "將整顆蘋果裹上硬糖衣並插上竹籤的祭典甜食。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæn.di ˈæp.əl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蘋果糖",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An apple on a stick coated with a hard sugar shell.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "りんごに棒を刺し、表面を硬い飴で包んだ菓子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "One candy apple, please.",
+          "ja": "りんご飴を一つください。",
+          "zh": "請給我一個蘋果糖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The candy apple was hard, so I cut it into small pieces.",
+          "ja": "りんご飴が硬かったので、小さく切りました。",
+          "zh": "蘋果糖很硬，所以我把它切成小塊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "りんご飴",
+      "jaReading": "りんごあめ",
+      "jaReadingSegments": [
+        {
+          "text": "りんご飴",
+          "ruby": "りんごあめ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/candy-apple-v1-b3ca38b74806.webp"
+    },
+    {
+      "id": "cotton-candy",
+      "word": "cotton candy",
+      "chinese": "棉花糖（拉絲糖）",
+      "chineseDefinition": "把加熱的糖拉成細絲、蓬鬆如棉花的甜食，此處不指 marshmallow。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑː.tən ˈkæn.di/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "棉花糖（拉絲糖）",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A fluffy sweet made from fine strands of spun sugar.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "砂糖を溶かして細い糸状にし、綿のようにふんわりまとめた菓子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I like cotton candy.",
+          "ja": "私は綿あめが好きです。",
+          "zh": "我喜歡棉花糖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We shared the cotton candy before it melted.",
+          "ja": "溶ける前に、綿あめを分けて食べました。",
+          "zh": "棉花糖融化之前，我們分著吃了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "綿あめ",
+      "jaReading": "わたあめ",
+      "jaReadingSegments": [
+        {
+          "text": "綿あめ",
+          "ruby": "わたあめ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/cotton-candy-v1-95c1e73fd654.webp"
+    },
+    {
+      "id": "shaved-ice",
+      "word": "shaved ice",
+      "chinese": "刨冰",
+      "chineseDefinition": "將冰削成細碎冰片後淋上糖漿的甜點，日本祭典常見。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃeɪvd aɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "刨冰",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A dessert of finely shaved ice topped with flavored syrup.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "氷を細かく削り、シロップなどをかけて食べる冷たい菓子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Strawberry shaved ice, please.",
+          "ja": "いちご味のかき氷をください。",
+          "zh": "請給我草莓口味的刨冰。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "It was hot, so I bought shaved ice after waiting in line.",
+          "ja": "暑かったので、列に並んでかき氷を買いました。",
+          "zh": "天氣很熱，所以我排隊買了刨冰。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "かき氷",
+      "jaReading": "かきごおり",
+      "jaReadingSegments": [
+        {
+          "text": "かき氷",
+          "ruby": "かきごおり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/shaved-ice-v1-5b2749d78e84.webp"
+    },
+    {
+      "id": "ring-toss",
+      "word": "ring toss",
+      "chinese": "套圈圈",
+      "chineseDefinition": "把圓環投向直立的柱子或目標物，設法將它套住的遊戲。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrɪŋ tɔːs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "套圈圈",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A game in which players throw rings and try to land them over upright targets.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "輪を投げて、立てた棒などの的に入れる遊び。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Let’s play ring toss.",
+          "ja": "輪投げで遊びましょう。",
+          "zh": "一起玩套圈圈吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My first ring missed in ring toss, but the second one landed on a peg.",
+          "ja": "輪投げで最初の輪は外れましたが、二つ目は棒に入りました。",
+          "zh": "玩套圈圈時，我第一個圈沒套中，但第二個套在柱子上了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "輪投げ",
+      "jaReading": "わなげ",
+      "jaReadingSegments": [
+        {
+          "text": "輪投げ",
+          "ruby": "わなげ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/ring-toss-v1-b2f690cd65e5.webp"
+    },
+    {
+      "id": "takoyaki",
+      "word": "takoyaki",
+      "chinese": "章魚燒",
+      "chineseDefinition": "把章魚塊包入麵糊，放在半球形模具中烤成圓球的日式小吃。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌtɑː.koʊˈjɑː.ki/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "章魚燒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Small round Japanese batter snacks cooked with pieces of octopus inside.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小麦粉の生地にたこを入れ、丸い形に焼いた食べ物。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The takoyaki is hot.",
+          "ja": "たこ焼きは熱いです。",
+          "zh": "章魚燒很燙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The takoyaki was hot inside, so I waited a little before eating it.",
+          "ja": "たこ焼きは中が熱かったので、少し待ってから食べました。",
+          "zh": "章魚燒裡面很燙，所以我等了一下才吃。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "たこ焼き",
+      "jaReading": "たこやき",
+      "jaReadingSegments": [
+        {
+          "text": "たこ焼き",
+          "ruby": "たこやき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/takoyaki-v1-8d4defd03228.webp"
+    },
+    {
+      "id": "yakisoba",
+      "word": "yakisoba",
+      "chinese": "日式炒麵",
+      "chineseDefinition": "把中華風小麥麵條與蔬菜、肉等拌炒，常以日式醬汁調味的炒麵。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌjɑː.kiˈsoʊ.bə/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "日式炒麵",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Japanese stir-fried wheat noodles, often cooked with vegetables, meat, and a savory sauce.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "中華麺を野菜や肉などと炒め、ソースなどで味を付けた料理。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought yakisoba.",
+          "ja": "焼きそばを買いました。",
+          "zh": "我買了日式炒麵。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I shared the yakisoba with my younger sister because the portion was large.",
+          "ja": "量が多かったので、妹と焼きそばを分けて食べました。",
+          "zh": "份量很多，所以我和妹妹分著吃了日式炒麵。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "焼きそば",
+      "jaReading": "やきそば",
+      "jaReadingSegments": [
+        {
+          "text": "焼きそば",
+          "ruby": "やきそば"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/yakisoba-v1-c7201c281cfc.webp"
+    },
+    {
+      "id": "okonomiyaki",
+      "word": "okonomiyaki",
+      "chinese": "大阪燒",
+      "chineseDefinition": "以麵糊、高麗菜等材料煎成的日式鹹餅；此詞圖採大阪風、材料混入麵糊的形式。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/oʊˌkoʊ.noʊ.miˈjɑː.ki/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "大阪燒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese savory pancake made with batter, cabbage, and other ingredients; this entry depicts the Osaka-style version.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小麦粉の生地にキャベツなどを加えて焼く料理。この項目では具を生地に混ぜる大阪風を示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please cut the okonomiyaki.",
+          "ja": "お好み焼きを切ってください。",
+          "zh": "請把大阪燒切開。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I ordered okonomiyaki without mayonnaise because my friend doesn't like it.",
+          "ja": "友達はマヨネーズが苦手なので、お好み焼きはマヨネーズ抜きで頼みました。",
+          "zh": "朋友不喜歡美乃滋，所以我點了不加美乃滋的大阪燒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "お好み焼き",
+      "jaReading": "おこのみやき",
+      "jaReadingSegments": [
+        {
+          "text": "お好み焼き",
+          "ruby": "おこのみやき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/okonomiyaki-v1-2b52c5e20819.webp"
+    },
+    {
+      "id": "yakitori",
+      "word": "yakitori",
+      "chinese": "烤雞肉串",
+      "chineseDefinition": "將雞肉等雞的部位串在竹籤上烤製的料理，常以鹽或醬汁調味。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌjɑː.kiˈtɔːr.i/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "烤雞肉串",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Japanese skewers of grilled chicken, commonly seasoned with salt or a savory glaze.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "鶏肉などを串に刺して焼いた料理。塩やタレで味を付けることが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Two yakitori skewers, please.",
+          "ja": "焼き鳥を二本ください。",
+          "zh": "請給我兩串烤雞肉串。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I chose salted yakitori because my father prefers it to sweet sauce.",
+          "ja": "父は甘いタレより塩味が好きなので、塩味の焼き鳥を選びました。",
+          "zh": "父親比起甜醬更喜歡鹽味，所以我選了鹽味烤雞肉串。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "焼き鳥",
+      "jaReading": "やきとり",
+      "jaReadingSegments": [
+        {
+          "text": "焼き鳥",
+          "ruby": "やきとり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/yakitori-v1-aa6c2e987832.webp"
+    },
+    {
+      "id": "grilled-corn",
+      "word": "grilled corn",
+      "chinese": "烤玉米",
+      "chineseDefinition": "把整支玉米烤熟，表面可刷醬汁調味的食物。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɡrɪld kɔːrn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "烤玉米",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An ear of corn cooked over heat, often brushed with a savory sauce.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "とうもろこしを丸ごと焼いた食べ物。しょうゆなどを塗って焼くこともある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "One ear of grilled corn, please.",
+          "ja": "焼きとうもろこしを一本ください。",
+          "zh": "請給我一支烤玉米。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I got a bag because the grilled corn was too hot to hold.",
+          "ja": "焼きとうもろこしが熱くて持てなかったので、袋をもらいました。",
+          "zh": "烤玉米太燙拿不住，所以我拿了一個袋子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "焼きとうもろこし",
+      "jaReading": "やきとうもろこし",
+      "jaReadingSegments": [
+        {
+          "text": "焼きとうもろこし",
+          "ruby": "やきとうもろこし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/grilled-corn-v1-2194e2d7e56d.webp"
+    },
+    {
+      "id": "grilled-squid",
+      "word": "grilled squid",
+      "chinese": "烤魷魚",
+      "chineseDefinition": "將魷魚直接烤熟並調味的食物；此處指祭典常見的整隻串烤形式。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɡrɪld skwɪd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "烤魷魚",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Squid cooked by grilling; this entry depicts a whole squid on a skewer sold at festivals.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "いかをそのまま焼いた料理。ここでは祭りで見かける、いかを丸ごと串に刺したものを指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought grilled squid.",
+          "ja": "イカ焼きを買いました。",
+          "zh": "我買了烤魷魚。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We cut the grilled squid into small pieces so the children could eat it easily.",
+          "ja": "子どもたちが食べやすいように、イカ焼きを小さく切りました。",
+          "zh": "為了讓孩子們方便吃，我們把烤魷魚切成小塊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "イカ焼き",
+      "jaReading": "いかやき",
+      "jaReadingSegments": [
+        {
+          "text": "イカ焼き",
+          "ruby": "いかやき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/grilled-squid-v1-3846edcec904.webp"
+    },
+    {
+      "id": "chocolate-banana",
+      "word": "chocolate banana",
+      "chinese": "巧克力香蕉",
+      "chineseDefinition": "在剝皮香蕉外裹上巧克力，通常插上竹籤並加彩色糖粒的甜食。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃɑːk.lət bəˈnæn.ə/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "巧克力香蕉",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A peeled banana on a stick coated with chocolate, often decorated with sprinkles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "皮をむいたバナナに棒を刺し、チョコレートをかけた菓子。カラースプレーなどを飾ることもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The chocolate banana is sweet.",
+          "ja": "チョコバナナは甘いです。",
+          "zh": "巧克力香蕉很甜。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The chocolate was starting to melt, so I ate my chocolate banana in the shade.",
+          "ja": "チョコが溶け始めていたので、日陰でチョコバナナを食べました。",
+          "zh": "巧克力開始融化了，所以我在陰涼處吃了巧克力香蕉。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "チョコバナナ",
+      "jaReading": "ちょこばなな",
+      "jaReadingSegments": [
+        {
+          "text": "チョコバナナ",
+          "ruby": "ちょこばなな"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/chocolate-banana-v1-f2faa63a50f2.webp"
+    },
+    {
+      "id": "ramune",
+      "word": "ramune",
+      "chinese": "彈珠汽水",
+      "chineseDefinition": "日本常見的碳酸飲料，典型玻璃瓶以瓶頸中的玻璃彈珠密封，按下彈珠即可開瓶。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrɑː.mʊˌneɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "彈珠汽水",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese carbonated soft drink traditionally sold in a glass bottle sealed with a marble.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "瓶の口をビー玉でふさぐ独特の瓶で売られることが多い炭酸飲料。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I drank cold ramune.",
+          "ja": "冷たいラムネを飲みました。",
+          "zh": "我喝了冰涼的彈珠汽水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The vendor opened my ramune because I could not push down the marble.",
+          "ja": "ビー玉を押し下げられなかったので、店員さんがラムネを開けてくれました。",
+          "zh": "我按不下玻璃彈珠，所以攤販幫我打開了彈珠汽水。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ラムネ",
+      "jaReading": "らむね",
+      "jaReadingSegments": [
+        {
+          "text": "ラムネ",
+          "ruby": "らむね"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/ramune-v1-b5680572e569.webp"
+    },
+    {
+      "id": "shooting-gallery",
+      "word": "shooting gallery",
+      "chinese": "射擊遊戲攤位",
+      "chineseDefinition": "祭典中以玩具槍射出軟木塞等彈丸、嘗試擊倒目標的遊戲攤位。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃuː.tɪŋ ˈɡæl.ər.i/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "射擊遊戲攤位",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A festival game stall where players use a toy gun to knock down targets with corks or similar projectiles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "祭りなどで、おもちゃの銃からコルクなどを飛ばして的を倒す遊び。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Let's try the shooting gallery.",
+          "ja": "射的をやってみましょう。",
+          "zh": "一起試試攤位的射擊遊戲吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I hit the target at the shooting gallery, but it did not fall over.",
+          "ja": "射的で的に当てましたが、倒れませんでした。",
+          "zh": "我在射擊遊戲攤位打中了目標，但它沒有倒下。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "射的",
+      "jaReading": "しゃてき",
+      "jaReadingSegments": [
+        {
+          "text": "射的",
+          "ruby": "しゃてき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/shooting-gallery-v1-42cb8da6260e.webp"
+    },
+    {
+      "id": "superball-scooping",
+      "word": "bouncy ball scooping",
+      "chinese": "撈彈力球",
+      "chineseDefinition": "用薄紙撈網從淺水盆撈起彩色彈力球的祭典遊戲。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbaʊn.si bɔːl ˈskuː.pɪŋ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "撈彈力球",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A festival game in which players scoop small floating rubber balls from water with a thin paper scoop.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "薄い紙のポイを使い、水に浮かぶ小さなゴムのボールをすくう縁日の遊び。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I scooped up a red ball in the bouncy ball scooping game.",
+          "ja": "スーパーボールすくいで赤いボールをすくいました。",
+          "zh": "我在撈彈力球遊戲中撈起了一顆紅球。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I stopped playing bouncy ball scooping because my paper scoop tore.",
+          "ja": "ポイが破れたので、スーパーボールすくいをやめました。",
+          "zh": "紙撈網破了，所以我停止玩撈彈力球。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スーパーボールすくい",
+      "jaReading": "すーぱーぼーるすくい",
+      "jaReadingSegments": [
+        {
+          "text": "スーパーボールすくい",
+          "ruby": "すーぱーぼーるすくい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/superball-scooping-v1-39480955e1e0.webp"
+    },
+    {
+      "id": "lottery-draw",
+      "word": "lottery draw",
+      "chinese": "抽籤遊戲",
+      "chineseDefinition": "抽出籤券，依隨機結果決定是否得獎或獎品的遊戲；此處指祭典抽獎。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɑː.tər.i drɔː/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "抽籤遊戲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A festival game in which players draw a ticket to determine a prize or outcome by chance.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "くじを引き、その結果によって当たりや景品が決まる遊び。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I won a prize in the lottery draw.",
+          "ja": "くじ引きで景品が当たりました。",
+          "zh": "我在抽籤遊戲中抽中了獎品。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I entered the lottery draw because I could play once with three tickets.",
+          "ja": "券が三枚あれば一回できるので、くじ引きに参加しました。",
+          "zh": "有三張券就可以玩一次，所以我參加了抽籤遊戲。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "くじ引き",
+      "jaReading": "くじびき",
+      "jaReadingSegments": [
+        {
+          "text": "くじ引き",
+          "ruby": "くじびき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/lottery-draw-v1-9140e7bdaccc.webp"
+    },
+    {
+      "id": "jinbei",
+      "word": "jinbei",
+      "chinese": "甚平（日式短套裝）",
+      "chineseDefinition": "日本夏季穿的休閒套裝，通常由側邊綁帶短袖上衣及短褲組成。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdʒɪn.beɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "甚平（日式短套裝）",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A casual Japanese summer outfit, usually consisting of a short-sleeved side-tied top and shorts.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "わきのひもで結ぶ短い袖の上着と半ズボンなどを組み合わせた、夏向けの和服。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "He is wearing a jinbei.",
+          "ja": "彼は甚平を着ています。",
+          "zh": "他穿著甚平。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My son wore a jinbei instead of a yukata because it was easier to move in.",
+          "ja": "動きやすいので、息子は浴衣の代わりに甚平を着ました。",
+          "zh": "因為比較方便活動，兒子穿了甚平，沒有穿浴衣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "甚平",
+      "jaReading": "じんべい",
+      "jaReadingSegments": [
+        {
+          "text": "甚平",
+          "ruby": "じんべい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/jinbei-v1-c9e991ea8ee3.webp"
+    },
+    {
+      "id": "drawstring-bag",
+      "word": "drawstring bag",
+      "chinese": "束口袋",
+      "chineseDefinition": "袋口穿有繩子，可拉緊繩子收攏開口的小袋子。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdrɔː.strɪŋ bæɡ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "束口袋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bag whose opening is closed by pulling a cord threaded around its top.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "袋の口に通したひもを引いて、口を絞って閉じる袋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put my wallet in the drawstring bag.",
+          "ja": "巾着袋に財布を入れました。",
+          "zh": "我把錢包放進束口袋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I firmly tightened the drawstring bag's opening so my coins would not fall out.",
+          "ja": "小銭が落ちないように、巾着袋の口をしっかり絞りました。",
+          "zh": "為了不讓零錢掉出來，我把束口袋的袋口牢牢束緊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "巾着袋",
+      "jaReading": "きんちゃくぶくろ",
+      "jaReadingSegments": [
+        {
+          "text": "巾着袋",
+          "ruby": "きんちゃくぶくろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/drawstring-bag-v1-0c0aa287fe9a.webp"
+    },
+    {
+      "id": "folding-fan",
+      "word": "folding fan",
+      "chinese": "摺扇",
+      "chineseDefinition": "由多根扇骨和紙或布扇面組成，可展開及摺合的手持扇。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊl.dɪŋ fæn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "摺扇",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A handheld fan with hinged ribs that allow it to open and fold closed.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "骨と紙や布などで作られ、開いたり畳んだりできる手持ちの扇。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Open the folding fan.",
+          "ja": "扇子を開いてください。",
+          "zh": "請打開摺扇。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I folded the folding fan before putting it in my bag so it would not break.",
+          "ja": "折れないように、扇子を畳んでからバッグに入れました。",
+          "zh": "為了避免折斷，我先把摺扇摺好，再放進包包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "扇子",
+      "jaReading": "せんす",
+      "jaReadingSegments": [
+        {
+          "text": "扇子",
+          "ruby": "せんす"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/folding-fan-v1-f93d1c05b2a1.webp"
+    },
+    {
+      "id": "fireworks",
+      "word": "fireworks",
+      "chinese": "煙火",
+      "chineseDefinition": "點燃後會發出光、火花或聲響的煙火；此詞圖以空中綻放的煙火呈現。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfaɪr.wɜːrks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "煙火",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Devices that produce colored light, sparks, or sound when ignited; this image shows an aerial fireworks display.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "火を付けると光や火花、音などを出すもの。この項目の絵は打ち上げ花火を示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The fireworks are beautiful.",
+          "ja": "花火がきれいです。",
+          "zh": "煙火很漂亮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We waited by the river until the fireworks ended.",
+          "ja": "花火が終わるまで、川のそばで待ちました。",
+          "zh": "我們在河邊等到煙火結束。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "花火",
+      "jaReading": "はなび",
+      "jaReadingSegments": [
+        {
+          "text": "花火",
+          "ruby": "はなび"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/fireworks-v1-5ce3ed97c796.webp"
+    },
+    {
+      "id": "japanese-sparkler",
+      "word": "Japanese sparkler",
+      "chinese": "線香花火",
+      "chineseDefinition": "日本傳統的小型手持煙火，燃燒時在細長末端形成小火球並散出細小火花。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌdʒæp.əˈniːz ˈspɑːr.klər/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "線香花火",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A traditional small Japanese sparkler that forms a glowing ball at its tip and gives off delicate sparks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "細長い先に小さな火の玉ができ、細かな火花を散らす日本の伝統的な手持ち花火。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The Japanese sparkler went out.",
+          "ja": "線香花火が消えました。",
+          "zh": "線香花火熄滅了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The glowing ball fell from my Japanese sparkler because I moved my hand.",
+          "ja": "手を動かしたので、線香花火の火の玉が落ちてしまいました。",
+          "zh": "我動了手，所以線香花火的小火球掉下來了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "線香花火",
+      "jaReading": "せんこうはなび",
+      "jaReadingSegments": [
+        {
+          "text": "線香花火",
+          "ruby": "せんこうはなび"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/festivals-2026-10/japanese-sparkler-v1-9b22107cae7f.webp"
+    }
+  ]
+}

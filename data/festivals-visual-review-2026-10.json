@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "series": "festivals",
+  "reviewer": "Codex; every original source image inspected individually",
+  "references": [
+    "https://www.japan.travel/en/guide/get-involved-in-local-festivals/",
+    "https://www.japan.travel/en/sg/story/japanfestival-guidebook/",
+    "https://www.gotokyo.org/en/spot/ev058/index.html",
+    "https://www.gotokyo.org/jp/story/guide/summer/index.html",
+    "https://www.japan.travel/en/blog/matsuri-street-food/",
+    "https://www.japan.travel/en/sg/story/instagrammable-and-traditional-stalls-summer-festival-japaneseni/",
+    "https://tsutsuitokimasa.jp/senkohanabi-tokimasa",
+    "https://www.eventec.co.jp/product/menu_maturi.html",
+    "https://shop.muji.com/jp/wp-content/uploads/sites/3/2019/06/14103615/0614_cm.pdf"
+  ],
+  "items": [
+    {
+      "id": "happi-coat",
+      "decision": "pass",
+      "reason": "短丈的靛藍棉外套、敞開前襟、黑色領邊及白色幾何下擺清楚；沒有長裙擺或浴衣腰帶，與既有和服及浴衣可區別。",
+      "sourceSha256": "04ff11ea674035644922e74813477d0f250cd2c7e5954376662fe93992d193d2"
+    },
+    {
+      "id": "hachimaki",
+      "decision": "pass",
+      "reason": "窄長白布繞成額帶，後方可見結及兩條布尾；中央紅圓是裝飾，無文字或硬質髮箍，符合鉢卷形式。",
+      "sourceSha256": "24919a35061b5c76cb03c299b12df6877ae19d5c451879651b8396cc8173e69f"
+    },
+    {
+      "id": "geta",
+      "decision": "pass",
+      "reason": "一雙木底鞋具紅色鼻緒，翻側的一隻清楚露出兩道木齒；木屐結構完整，非平底草履或橡膠拖鞋。",
+      "sourceSha256": "19adf12dad825ca4b7d21f2976bb8f69c1667f5e786dd71326246fbadbda1332"
+    },
+    {
+      "id": "portable-shrine",
+      "decision": "pass",
+      "reason": "黑金小型社殿、鳳凰屋頂與兩根平行長擔棒都清楚可見；無車輪，符合肩扛神輿並可與山車區別。",
+      "sourceSha256": "f7a843814b9e32513e5de12c83d4f505296808be995a4d8b426b4c13025fe436"
+    },
+    {
+      "id": "festival-float",
+      "decision": "pass",
+      "reason": "高木製車臺、屋頂亭、四輪結構與前方牽引粗繩明確；沒有神輿長擔棒，表達拉行的祭典山車。",
+      "sourceSha256": "c4b1c6934fd1e0ab254d91cf389cf511f70bf44c34c7c3738c609060be2a78ca"
+    },
+    {
+      "id": "paper-lantern",
+      "decision": "pass",
+      "reason": "紅色摺疊紙罩、橫向骨架、上下黑框及掛環完整；沒有天燈開口、宮燈流蘇或商標文字，符合日本提燈。",
+      "sourceSha256": "8da7a3f81bab3582ee9e6584fea15b3780e9795410aa84e31e0651fc7d7a54a1"
+    },
+    {
+      "id": "taiko-drum",
+      "decision": "pass",
+      "reason": "木製桶狀鼓身、兩端鼓皮、固定黑釘及鼓棒清楚，附合理木架；不是西式鼓組，主體未裁切。",
+      "sourceSha256": "84087e4118e84fa05ba9fa6e1030ffa1724da01ea5617cfa64a255ab01c58946"
+    },
+    {
+      "id": "festival-mask",
+      "decision": "pass",
+      "reason": "白底紅紋狐狸面具具尖耳、眼孔與繫帶，為祭典裝飾面具；沒有防護口罩結構、授權角色或商標。",
+      "sourceSha256": "04228b205232133d27170b55f3d38c0a1fff8ae08fb714da5603ee450590437f"
+    },
+    {
+      "id": "goldfish-scooping",
+      "decision": "pass",
+      "reason": "淺水盆中的活金魚、白色薄紙ポイ及盛魚小碗構成完整遊戲；紙膜明顯，未誤畫成網眼漁網或寵物魚缸。",
+      "sourceSha256": "320e4866b8062c3e77d72c1c58212067ec805ab7a20d621c734604d0332c34a9"
+    },
+    {
+      "id": "water-balloon-fishing",
+      "decision": "pass",
+      "reason": "水盆內彩色小水球各帶細橡皮筋環，紙繩末端小鉤正勾住中央環；不是硬質溜溜球或一般釣魚組。",
+      "sourceSha256": "c428b6240b3f81a5f99948707079302de81f9a72df32944bbc7c7dfb5410289b"
+    },
+    {
+      "id": "candy-apple",
+      "decision": "pass",
+      "reason": "整顆蘋果覆透明亮紅硬糖衣並插木棒，果形仍清楚；無焦糖或巧克力，正確呈現りんご飴。",
+      "sourceSha256": "feca7ed23a2f57ec928c04d083ba065ff42af1ad5812d7c47e1c6b1db370e4d2"
+    },
+    {
+      "id": "cotton-candy",
+      "decision": "pass",
+      "reason": "淡粉色蓬鬆細糖絲包覆紙棒，纖維紋理清楚；不是棉花、冰淇淋或marshmallow，符合綿あめ。",
+      "sourceSha256": "ed8a6d949302363d6511fd5938ade7294ef698e27d32c225c5b227720edd890c"
+    },
+    {
+      "id": "shaved-ice",
+      "decision": "pass",
+      "reason": "透明碗內堆起薄碎冰片並淋紅色糖漿，附小匙；冰片輪廓可辨而非冰淇淋球，符合かき氷。",
+      "sourceSha256": "186e4b7e88cc2a80a48b9b493688c7a3a766ac33b4c34e0603c498365a9569b0"
+    },
+    {
+      "id": "ring-toss",
+      "decision": "pass",
+      "reason": "五根直立木柱固定於低木板，一個紅繩環已套住中央柱，旁放三個投擲環；目標與投擲工具完整可見。",
+      "sourceSha256": "51b2dcf6bcf9f9b32a8becf1f54e6b65cc0a39231f4c5cc57f81496c20592681"
+    },
+    {
+      "id": "category-festivals",
+      "decision": "pass",
+      "reason": "紅提燈、靛藍法被、狐狸面具、太鼓與蘋果糖形成單一白底分類組圖；各物件可辨、無街景或文字，代表本系列服飾祭具與小吃。",
+      "sourceSha256": "05b95b56b49bed34b7fd6e97fb94d2d11ce1b74ace1861a496bcff9a87c9f3cb"
+    },
+    {
+      "id": "takoyaki",
+      "decision": "pass",
+      "reason": "木舟中圓球狀麵糊小吃覆醬汁、美乃滋、柴魚與青海苔，剖面清楚露出章魚塊；並非肉丸或整隻烤章魚，容器完整無文字。",
+      "sourceSha256": "3fe359a19791ab2acfdb5ec5e4522871786e6cd391b218bad63a812da979bdf0"
+    },
+    {
+      "id": "yakisoba",
+      "decision": "pass",
+      "reason": "紙盤內乾炒細麵、高麗菜與豬肉片配少量紅薑，麵上醬色自然；沒有湯汁或義大利麵配料，符合日式祭典炒麵。",
+      "sourceSha256": "31f3cce104dd7df8e1783a4f3366267d657812cfe5b7ed557b01d4c8282fcd34"
+    },
+    {
+      "id": "okonomiyaki",
+      "decision": "pass",
+      "reason": "圓形厚鹹餅與分開小片露出混入麵糊的高麗菜，醬汁、美乃滋和柴魚可辨；為大阪風，無廣島層疊麵條或披薩餡。",
+      "sourceSha256": "f33181633bbb191812fe5db79c27e8239afadd28a23bbeadf965ac94361ed7fc"
+    },
+    {
+      "id": "yakitori",
+      "decision": "pass",
+      "reason": "三支竹籤串著雞肉塊與蔥段，醬色及少量焦痕自然；不是牛肉串或整隻雞腿，紙盤與竹籤未裁切。",
+      "sourceSha256": "dbb2ec8e97f77d69a7da0c01fef06b7c045df4831278e2ebc24dc1d4721c3a17"
+    },
+    {
+      "id": "grilled-corn",
+      "decision": "pass",
+      "reason": "整支去皮玉米的金黃顆粒、焦痕及醬汁明確，帶單支木棒並置於紙盤；不會與爆米花、玉米粉或散粒混淆。",
+      "sourceSha256": "b68a8a4157f0c32364d020802743fd4317a02b962a09351426895e67c7d31eb6"
+    },
+    {
+      "id": "grilled-squid",
+      "decision": "pass",
+      "reason": "完整筒狀魷魚身、兩側尾鰭與前端腕足連接，表面切痕及烤醬可見；是整隻串烤，沒有粉物薄餅或章魚外形。",
+      "sourceSha256": "a991325ad064174d54fc9d6657ddecdf3593b1ca8778e0c07fd7bcdb9f3fc457"
+    },
+    {
+      "id": "chocolate-banana",
+      "decision": "pass",
+      "reason": "彎曲香蕉本體外覆深色巧克力及彩色糖粒，木棒僅從底部插入；無果皮、包裝或矩形巧克力棒誤導。",
+      "sourceSha256": "866f716043f179cf9700c84bc45bde9f3693189f9311c6c77075ecd7a6e260ff"
+    },
+    {
+      "id": "ramune",
+      "decision": "pass",
+      "reason": "透明玻璃瓶具收窄瓶頸與彈珠容納腔，一顆玻璃彈珠可辨，藍色開瓶蓋與氣泡符合飲料；不是同名糖果或普通塑膠汽水瓶。",
+      "sourceSha256": "f23407be265bb498a503d821fd6f6e401acc5b2e2f6d89eab661d1b74ba2a9d8"
+    },
+    {
+      "id": "shooting-gallery",
+      "decision": "pass",
+      "reason": "木製遊戲櫃台與後方目標架成套，玩具槍有橘色槍口且旁有軟木塞，三個小玩具為目標；明確是祭典射的攤位。",
+      "sourceSha256": "b2e68beb36e6ae6736bdd610564f23143b750cdb7ab2332924f16ed923c63656"
+    },
+    {
+      "id": "superball-scooping",
+      "decision": "pass",
+      "reason": "淺水盆內大量小而實心的彩色彈力球、白紙ポイ及兩球小碗清楚；無魚、氣球結頭或橡皮筋，與金魚及釣水球圖可區分。",
+      "sourceSha256": "46484e6f1bda24b1135af0c75dbf540d9df6897861799c1c4f12ef364cc2c14b"
+    },
+    {
+      "id": "lottery-draw",
+      "decision": "pass",
+      "reason": "紅色抽籤箱上有伸手孔及三角摺紙籤，旁放同型籤與小鴨獎品；不含神社籤筒、御神籤、彩球機或文字。",
+      "sourceSha256": "8d1a49a52bf69bedcee1b37420dc041668567acf2756f93fd41f9970cbd35334"
+    },
+    {
+      "id": "jinbei",
+      "decision": "pass",
+      "reason": "靛藍短袖交襟上衣側邊有綁帶，下方為同布料短褲，兩件完整可見；與浴衣長衣及單件法被有明確外形差別。",
+      "sourceSha256": "6430f4df844260855ab774ca9c36356ed299f7f52b2bba6f52600dd18c365ea1"
+    },
+    {
+      "id": "drawstring-bag",
+      "decision": "pass",
+      "reason": "軟布袋頂部有聚攏袋口，兩側編繩及結尾完整，幾何和風布樣自然；沒有拉鍊、背帶或玩偶展示窗。",
+      "sourceSha256": "0eaf781e68ab3bf9d54fcfd16b2c6abf15014d86448f1bbbfa1d6fd9cdb36b26"
+    },
+    {
+      "id": "folding-fan",
+      "decision": "pass",
+      "reason": "半圓紙扇面與多根竹扇骨匯於下方樞軸，藍白浪紋無文字；可摺結構明確，不是圓形團扇或電風扇。",
+      "sourceSha256": "6828e778da6e15578b4b8f7e730231786357ba4019c844909e8dda95ded034a6"
+    },
+    {
+      "id": "fireworks",
+      "decision": "pass",
+      "reason": "單一圓形空中煙火由亮點向外放射多色火花軌跡，分岔及下垂尾跡可辨；白底上彩色軌跡清楚，沒有夜景矩形或實體火箭混淆。",
+      "sourceSha256": "d33cfd7d290d87ce5f9c791ef1046ba24f7babb15d6ed95e92c47a3d55db9c8d"
+    },
+    {
+      "id": "japanese-sparkler",
+      "decision": "pass",
+      "reason": "細長粉白紙捻垂直朝下，末端小火球散出纖細分岔火花，符合長手線香花火；不是粗金屬線仙女棒，紙身與火花完整。",
+      "sourceSha256": "a9262abdcfd560c54d4fee87627f244614b459b45c7821a3cd2d70629313656e"
+    }
+  ]
+}

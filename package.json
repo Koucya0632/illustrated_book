@@ -99,7 +99,14 @@
     "anime-fan-merch-expansion:audio:generate:local": "node --env-file=.env.local scripts/generate-anime-fan-merch-expansion-candidate-audio.mjs",
     "anime-fan-merch-expansion:audio:verify": "node scripts/verify-anime-fan-merch-expansion-audio.mjs",
     "anime-fan-merch-expansion:prepare-publish": "node --env-file=.env.local scripts/prepare-anime-fan-merch-expansion-publish-plan.mjs",
-    "anime-fan-merch-expansion:publish": "tsx --env-file=.env.local scripts/publish-anime-fan-merch-expansion-series.ts"
+    "anime-fan-merch-expansion:publish": "tsx --env-file=.env.local scripts/publish-anime-fan-merch-expansion-series.ts",
+    "festivals:prepare-images": "node scripts/prepare-festivals-images.mjs",
+    "festivals:review": "node scripts/prepare-festivals-semantic-review.mjs",
+    "festivals:audio:plan": "node scripts/plan-festivals-audio.mjs",
+    "festivals:audio:generate:local": "node --env-file=.env.local scripts/generate-festivals-candidate-audio.mjs",
+    "festivals:audio:verify": "node scripts/verify-festivals-audio.mjs",
+    "festivals:prepare-publish": "node --env-file=.env.local scripts/prepare-festivals-publish-plan.mjs",
+    "festivals:publish": "tsx --env-file=.env.local scripts/publish-festivals-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

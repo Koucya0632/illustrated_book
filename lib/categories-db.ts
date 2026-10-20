@@ -11,6 +11,7 @@ import { getSql } from "./db";
 import { MAIN_WORD_RESTAURANT_IDS } from "./main-word-restaurant-2026-10";
 import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "./main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_STATION_COMMUTING_IDS } from "./main-word-station-commuting-2026-10";
+import { MAIN_WORD_FESTIVALS_IDS } from "./main-word-festivals-2026-10";
 
 interface CategoryRow {
   id: string;
@@ -59,6 +60,13 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'station-commuting' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      )) AND (c.id <> 'festivals' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_FESTIVALS_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'festivals' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       ))

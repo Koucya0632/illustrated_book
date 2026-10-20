@@ -1,0 +1,4580 @@
+{
+  "en": {
+    "I wore a happi coat.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wore",
+        "z": "穿了",
+        "j": "着ました",
+        "e": "wore"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "happi coat",
+        "z": "法被",
+        "j": "法被",
+        "e": "happi coat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I borrowed a happi coat because I was helping at the festival.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "borrowed",
+        "z": "借了",
+        "j": "借りました",
+        "e": "borrowed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "happi coat",
+        "z": "法被",
+        "j": "法被",
+        "e": "happi coat"
+      },
+      {
+        "t": " because I was "
+      },
+      {
+        "t": "helping",
+        "z": "幫忙",
+        "j": "手伝う",
+        "e": "helping"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "festival",
+        "z": "祭典",
+        "j": "祭り",
+        "e": "festival"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Tie your hachimaki headband tightly.": [
+      {
+        "t": "Tie",
+        "z": "綁緊",
+        "j": "締めてください",
+        "e": "tie"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "hachimaki headband",
+        "z": "鉢卷",
+        "j": "鉢巻き",
+        "e": "hachimaki headband"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tightly",
+        "z": "緊緊地",
+        "j": "しっかり",
+        "e": "tightly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My hachimaki headband came loose while I was carrying the portable shrine.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "hachimaki headband",
+        "z": "鉢卷",
+        "j": "鉢巻き",
+        "e": "hachimaki headband"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "came loose",
+        "z": "鬆開了",
+        "j": "緩みました",
+        "e": "came loose"
+      },
+      {
+        "t": " while I was "
+      },
+      {
+        "t": "carrying",
+        "z": "扛著",
+        "j": "担いでいる",
+        "e": "carrying"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "portable shrine",
+        "z": "神輿",
+        "j": "神輿",
+        "e": "portable shrine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "These geta sandals are red.": [
+      {
+        "t": "These "
+      },
+      {
+        "t": "geta sandals",
+        "z": "木屐",
+        "j": "下駄",
+        "e": "geta sandals"
+      },
+      {
+        "t": " are "
+      },
+      {
+        "t": "red",
+        "z": "紅色的",
+        "j": "赤いです",
+        "e": "red"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My feet hurt because I walked in geta sandals for a long time.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "feet",
+        "z": "腳",
+        "j": "足",
+        "e": "feet"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hurt",
+        "z": "變痛了",
+        "j": "痛くなりました",
+        "e": "hurt"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "walked",
+        "z": "走路",
+        "j": "歩いた",
+        "e": "walked"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "geta sandals",
+        "z": "木屐",
+        "j": "下駄",
+        "e": "geta sandals"
+      },
+      {
+        "t": " for a "
+      },
+      {
+        "t": "long time",
+        "z": "很久",
+        "j": "長く",
+        "e": "long time"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Everyone is carrying the portable shrine.": [
+      {
+        "t": "Everyone",
+        "z": "大家",
+        "j": "みんな",
+        "e": "everyone"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "carrying",
+        "z": "扛著",
+        "j": "担いでいます",
+        "e": "carrying"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "portable shrine",
+        "z": "神輿",
+        "j": "神輿",
+        "e": "portable shrine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We rested before carrying the heavy portable shrine again.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "rested",
+        "z": "休息了",
+        "j": "休憩しました",
+        "e": "rested"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "carrying",
+        "z": "扛",
+        "j": "担ぐ",
+        "e": "carrying"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "heavy",
+        "z": "沉重的",
+        "j": "重い",
+        "e": "heavy"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "portable shrine",
+        "z": "神輿",
+        "j": "神輿",
+        "e": "portable shrine"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "again",
+        "z": "再次",
+        "j": "また",
+        "e": "again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "A festival float is coming.": [
+      {
+        "t": "A "
+      },
+      {
+        "t": "festival float",
+        "z": "山車",
+        "j": "山車",
+        "e": "festival float"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "coming",
+        "z": "要過來了",
+        "j": "来ます",
+        "e": "coming"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We waited by the roadside until the festival float passed.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " by the "
+      },
+      {
+        "t": "roadside",
+        "z": "路旁",
+        "j": "道端",
+        "e": "roadside"
+      },
+      {
+        "t": " until the "
+      },
+      {
+        "t": "festival float",
+        "z": "山車",
+        "j": "山車",
+        "e": "festival float"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "passed",
+        "z": "通過",
+        "j": "通り過ぎる",
+        "e": "passed"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Hang the paper lantern here.": [
+      {
+        "t": "Hang",
+        "z": "掛起",
+        "j": "つるしてください",
+        "e": "hang"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "paper lantern",
+        "z": "提燈",
+        "j": "提灯",
+        "e": "paper lantern"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "here",
+        "z": "這裡",
+        "j": "ここ",
+        "e": "here"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We took down the paper lanterns because it looked like rain.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "took down",
+        "z": "取下了",
+        "j": "外しました",
+        "e": "took down"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "paper lanterns",
+        "z": "提燈",
+        "j": "提灯",
+        "e": "paper lanterns"
+      },
+      {
+        "t": " because it "
+      },
+      {
+        "t": "looked like rain",
+        "z": "看起來快下雨",
+        "j": "雨が降りそうだった",
+        "e": "looked like rain"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "He is playing a taiko drum.": [
+      {
+        "t": "He is "
+      },
+      {
+        "t": "playing",
+        "z": "敲奏",
+        "j": "たたいています",
+        "e": "playing"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "taiko drum",
+        "z": "太鼓",
+        "j": "太鼓",
+        "e": "taiko drum"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The taiko drums were loud, so we listened from farther away.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "taiko drums",
+        "z": "太鼓",
+        "j": "太鼓",
+        "e": "taiko drums"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "loud",
+        "z": "大聲的",
+        "j": "音が大きかった",
+        "e": "loud"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "listened",
+        "z": "聆聽了",
+        "j": "聞きました",
+        "e": "listened"
+      },
+      {
+        "t": " from "
+      },
+      {
+        "t": "farther away",
+        "z": "更遠的地方",
+        "j": "少し離れて",
+        "e": "farther away"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought one festival mask.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " one "
+      },
+      {
+        "t": "festival mask",
+        "z": "祭典面具",
+        "j": "お面",
+        "e": "festival mask"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My face got hot, so I shifted the festival mask to the side of my head.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "face",
+        "z": "臉",
+        "j": "顔",
+        "e": "face"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "got hot",
+        "z": "變熱了",
+        "j": "暑くなりました",
+        "e": "got hot"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "shifted",
+        "z": "移了",
+        "j": "ずらしました",
+        "e": "shifted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "festival mask",
+        "z": "祭典面具",
+        "j": "お面",
+        "e": "festival mask"
+      },
+      {
+        "t": " to the side of my "
+      },
+      {
+        "t": "head",
+        "z": "頭",
+        "j": "頭",
+        "e": "head"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Let's try goldfish scooping.": [
+      {
+        "t": "Let's "
+      },
+      {
+        "t": "try",
+        "z": "試試",
+        "j": "やってみましょう",
+        "e": "try"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "goldfish scooping",
+        "z": "撈金魚",
+        "j": "金魚すくい",
+        "e": "goldfish scooping"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I scooped up two fish in the goldfish-scooping game before my paper scoop tore.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "scooped up",
+        "z": "撈到了",
+        "j": "すくえました",
+        "e": "scooped up"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "two fish",
+        "z": "兩條魚",
+        "j": "二匹",
+        "e": "two fish"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "goldfish-scooping game",
+        "z": "撈金魚遊戲",
+        "j": "金魚すくい",
+        "e": "goldfish-scooping game"
+      },
+      {
+        "t": " before my "
+      },
+      {
+        "t": "paper scoop",
+        "z": "紙撈網",
+        "j": "ポイ",
+        "e": "paper scoop"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tore",
+        "z": "破了",
+        "j": "破れる",
+        "e": "tore"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I tried water balloon fishing.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "tried",
+        "z": "試玩了",
+        "j": "やってみました",
+        "e": "tried"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "water balloon fishing",
+        "z": "釣水球",
+        "j": "ヨーヨー釣り",
+        "e": "water balloon fishing"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The hook came off during water balloon fishing, so I tried again.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hook",
+        "z": "鉤子",
+        "j": "針",
+        "e": "hook"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "came off",
+        "z": "脫落了",
+        "j": "外れました",
+        "e": "came off"
+      },
+      {
+        "t": " during "
+      },
+      {
+        "t": "water balloon fishing",
+        "z": "釣水球",
+        "j": "ヨーヨー釣り",
+        "e": "water balloon fishing"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "tried again",
+        "z": "再挑戰了一次",
+        "j": "もう一度挑戦しました",
+        "e": "tried again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "One candy apple, please.": [
+      {
+        "t": "One",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "candy apple",
+        "z": "蘋果糖",
+        "j": "りんご飴",
+        "e": "candy apple"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "please"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The candy apple was hard, so I cut it into small pieces.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "candy apple",
+        "z": "蘋果糖",
+        "j": "りんご飴",
+        "e": "candy apple"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "hard",
+        "z": "硬的",
+        "j": "硬かった",
+        "e": "hard"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "cut",
+        "z": "切了",
+        "j": "切りました",
+        "e": "cut"
+      },
+      {
+        "t": " it into "
+      },
+      {
+        "t": "small pieces",
+        "z": "小塊",
+        "j": "小さく",
+        "e": "small pieces"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I like cotton candy.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "like",
+        "z": "喜歡",
+        "j": "好きです",
+        "e": "like"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cotton candy",
+        "z": "棉花糖",
+        "j": "綿あめ",
+        "e": "cotton candy"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We shared the cotton candy before it melted.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "shared",
+        "z": "分著吃了",
+        "j": "分けて食べました",
+        "e": "shared"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cotton candy",
+        "z": "棉花糖",
+        "j": "綿あめ",
+        "e": "cotton candy"
+      },
+      {
+        "t": " before it "
+      },
+      {
+        "t": "melted",
+        "z": "融化",
+        "j": "溶ける",
+        "e": "melted"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Strawberry shaved ice, please.": [
+      {
+        "t": "Strawberry",
+        "z": "草莓口味",
+        "j": "いちご味",
+        "e": "strawberry-flavored"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shaved ice",
+        "z": "刨冰",
+        "j": "かき氷",
+        "e": "shaved ice"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "please"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "It was hot, so I bought shaved ice after waiting in line.": [
+      {
+        "t": "It was "
+      },
+      {
+        "t": "hot",
+        "z": "炎熱的",
+        "j": "暑かった",
+        "e": "hot"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shaved ice",
+        "z": "刨冰",
+        "j": "かき氷",
+        "e": "shaved ice"
+      },
+      {
+        "t": " after "
+      },
+      {
+        "t": "waiting",
+        "z": "排隊等候",
+        "j": "並んで",
+        "e": "waiting"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "line",
+        "z": "隊伍",
+        "j": "列",
+        "e": "line"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Let’s play ring toss.": [
+      {
+        "t": "Let’s "
+      },
+      {
+        "t": "play",
+        "z": "玩",
+        "j": "遊びましょう",
+        "e": "play"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ring toss",
+        "z": "套圈圈",
+        "j": "輪投げ",
+        "e": "ring toss"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My first ring missed in ring toss, but the second one landed on a peg.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "first",
+        "z": "第一個",
+        "j": "最初の",
+        "e": "first"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ring",
+        "z": "圈",
+        "j": "輪",
+        "e": "ring"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "missed",
+        "z": "沒套中",
+        "j": "外れました",
+        "e": "missed"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "ring toss",
+        "z": "套圈圈",
+        "j": "輪投げ",
+        "e": "ring toss"
+      },
+      {
+        "t": ", but the "
+      },
+      {
+        "t": "second one",
+        "z": "第二個圈",
+        "j": "二つ目",
+        "e": "second ring"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "landed",
+        "z": "套上了",
+        "j": "入りました",
+        "e": "landed"
+      },
+      {
+        "t": " on a "
+      },
+      {
+        "t": "peg",
+        "z": "柱子",
+        "j": "棒",
+        "e": "peg"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The takoyaki is hot.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "takoyaki",
+        "z": "章魚燒",
+        "j": "たこ焼き",
+        "e": "takoyaki"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "hot",
+        "z": "燙的",
+        "j": "熱いです",
+        "e": "hot"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The takoyaki was hot inside, so I waited a little before eating it.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "takoyaki",
+        "z": "章魚燒",
+        "j": "たこ焼き",
+        "e": "takoyaki"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "hot",
+        "z": "燙的",
+        "j": "熱かった",
+        "e": "hot"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "inside",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待って",
+        "e": "waited"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "little",
+        "z": "一下子",
+        "j": "少し",
+        "e": "little"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "eating",
+        "z": "吃",
+        "j": "食べました",
+        "e": "eating"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "I bought yakisoba.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "yakisoba",
+        "z": "日式炒麵",
+        "j": "焼きそば",
+        "e": "yakisoba"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I shared the yakisoba with my younger sister because the portion was large.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "shared",
+        "z": "分著吃了",
+        "j": "分けて食べました",
+        "e": "shared"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "yakisoba",
+        "z": "日式炒麵",
+        "j": "焼きそば",
+        "e": "yakisoba"
+      },
+      {
+        "t": " with my "
+      },
+      {
+        "t": "younger sister",
+        "z": "妹妹",
+        "j": "妹",
+        "e": "younger sister"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "portion",
+        "z": "份量",
+        "j": "量",
+        "e": "portion"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "large",
+        "z": "多的",
+        "j": "多かった",
+        "e": "large"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please cut the okonomiyaki.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "cut",
+        "z": "切開",
+        "j": "切ってください",
+        "e": "cut"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "okonomiyaki",
+        "z": "大阪燒",
+        "j": "お好み焼き",
+        "e": "okonomiyaki"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I ordered okonomiyaki without mayonnaise because my friend doesn't like it.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "ordered",
+        "z": "點了",
+        "j": "頼みました",
+        "e": "ordered"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "okonomiyaki",
+        "z": "大阪燒",
+        "j": "お好み焼き",
+        "e": "okonomiyaki"
+      },
+      {
+        "t": " without "
+      },
+      {
+        "t": "mayonnaise",
+        "z": "美乃滋",
+        "j": "マヨネーズ",
+        "e": "mayonnaise"
+      },
+      {
+        "t": " because my "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " doesn't "
+      },
+      {
+        "t": "like",
+        "z": "喜歡",
+        "j": "好き",
+        "e": "like"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "Two yakitori skewers, please.": [
+      {
+        "t": "Two",
+        "z": "兩串",
+        "j": "二本",
+        "e": "two"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "yakitori skewers",
+        "z": "烤雞肉串",
+        "j": "焼き鳥",
+        "e": "yakitori skewers"
+      },
+      {
+        "t": ", please."
+      }
+    ],
+    "I chose salted yakitori because my father prefers it to sweet sauce.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "salted",
+        "z": "鹽味的",
+        "j": "塩味の",
+        "e": "salted"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "yakitori",
+        "z": "烤雞肉串",
+        "j": "焼き鳥",
+        "e": "yakitori"
+      },
+      {
+        "t": " because my "
+      },
+      {
+        "t": "father",
+        "z": "父親",
+        "j": "父",
+        "e": "father"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "prefers",
+        "z": "更喜歡",
+        "j": "より好き",
+        "e": "prefers"
+      },
+      {
+        "t": " it to "
+      },
+      {
+        "t": "sweet",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sauce",
+        "z": "醬汁",
+        "j": "タレ",
+        "e": "sauce"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "One ear of grilled corn, please.": [
+      {
+        "t": "One",
+        "z": "一支",
+        "j": "一本",
+        "e": "one"
+      },
+      {
+        "t": " ear of "
+      },
+      {
+        "t": "grilled corn",
+        "z": "烤玉米",
+        "j": "焼きとうもろこし",
+        "e": "grilled corn"
+      },
+      {
+        "t": ", please."
+      }
+    ],
+    "I got a bag because the grilled corn was too hot to hold.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "got",
+        "z": "拿到了",
+        "j": "もらいました",
+        "e": "got"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bag",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "grilled corn",
+        "z": "烤玉米",
+        "j": "焼きとうもろこし",
+        "e": "grilled corn"
+      },
+      {
+        "t": " was too "
+      },
+      {
+        "t": "hot",
+        "z": "燙的",
+        "j": "熱い",
+        "e": "hot"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "hold",
+        "z": "拿著",
+        "j": "持つ",
+        "e": "hold"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought grilled squid.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "grilled squid",
+        "z": "烤魷魚",
+        "j": "イカ焼き",
+        "e": "grilled squid"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We cut the grilled squid into small pieces so the children could eat it easily.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "cut",
+        "z": "切了",
+        "j": "切りました",
+        "e": "cut"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "grilled squid",
+        "z": "烤魷魚",
+        "j": "イカ焼き",
+        "e": "grilled squid"
+      },
+      {
+        "t": " into "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さい",
+        "e": "small"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pieces",
+        "z": "塊",
+        "j": "切れ",
+        "e": "pieces"
+      },
+      {
+        "t": " so the "
+      },
+      {
+        "t": "children",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children"
+      },
+      {
+        "t": " could "
+      },
+      {
+        "t": "eat",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "easily",
+        "z": "容易地",
+        "j": "食べやすく",
+        "e": "easily"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The chocolate banana is sweet.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "chocolate banana",
+        "z": "巧克力香蕉",
+        "j": "チョコバナナ",
+        "e": "chocolate banana"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "sweet",
+        "z": "甜的",
+        "j": "甘いです",
+        "e": "sweet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The chocolate was starting to melt, so I ate my chocolate banana in the shade.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "chocolate",
+        "z": "巧克力",
+        "j": "チョコ",
+        "e": "chocolate"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "starting to melt",
+        "z": "開始融化",
+        "j": "溶け始めていた",
+        "e": "starting to melt"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "ate",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "chocolate banana",
+        "z": "巧克力香蕉",
+        "j": "チョコバナナ",
+        "e": "chocolate banana"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "shade",
+        "z": "陰涼處",
+        "j": "日陰",
+        "e": "shade"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I drank cold ramune.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "drank",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cold",
+        "z": "冰涼的",
+        "j": "冷たい",
+        "e": "cold"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ramune",
+        "z": "彈珠汽水",
+        "j": "ラムネ",
+        "e": "ramune"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The vendor opened my ramune because I could not push down the marble.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "vendor",
+        "z": "攤販",
+        "j": "店員さん",
+        "e": "vendor"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "opened",
+        "z": "打開了",
+        "j": "開けてくれました",
+        "e": "opened"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "ramune",
+        "z": "彈珠汽水",
+        "j": "ラムネ",
+        "e": "ramune"
+      },
+      {
+        "t": " because I could not "
+      },
+      {
+        "t": "push down",
+        "z": "按下",
+        "j": "押し下げる",
+        "e": "push down"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "marble",
+        "z": "玻璃彈珠",
+        "j": "ビー玉",
+        "e": "marble"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Let's try the shooting gallery.": [
+      {
+        "t": "Let's "
+      },
+      {
+        "t": "try",
+        "z": "試試",
+        "j": "やってみましょう",
+        "e": "try"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shooting gallery",
+        "z": "射擊遊戲攤位",
+        "j": "射的",
+        "e": "shooting gallery"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I hit the target at the shooting gallery, but it did not fall over.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "hit",
+        "z": "打中了",
+        "j": "当てました",
+        "e": "hit"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "target",
+        "z": "目標",
+        "j": "的",
+        "e": "target"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "shooting gallery",
+        "z": "射擊遊戲攤位",
+        "j": "射的",
+        "e": "shooting gallery"
+      },
+      {
+        "t": ", but it did not "
+      },
+      {
+        "t": "fall over",
+        "z": "倒下",
+        "j": "倒れる",
+        "e": "fall over"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I scooped up a red ball in the bouncy ball scooping game.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "scooped up",
+        "z": "撈起了",
+        "j": "すくいました",
+        "e": "scooped up"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "red",
+        "z": "紅色的",
+        "j": "赤い",
+        "e": "red"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ball",
+        "z": "球",
+        "j": "ボール",
+        "e": "ball"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "bouncy ball scooping game",
+        "z": "撈彈力球遊戲",
+        "j": "スーパーボールすくい",
+        "e": "bouncy ball scooping game"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I stopped playing bouncy ball scooping because my paper scoop tore.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "stopped",
+        "z": "停止了",
+        "j": "やめました",
+        "e": "stopped"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "playing",
+        "z": "玩",
+        "j": "遊ぶ",
+        "e": "playing"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bouncy ball scooping",
+        "z": "撈彈力球",
+        "j": "スーパーボールすくい",
+        "e": "bouncy ball scooping"
+      },
+      {
+        "t": " because my "
+      },
+      {
+        "t": "paper scoop",
+        "z": "紙撈網",
+        "j": "ポイ",
+        "e": "paper scoop"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tore",
+        "z": "破了",
+        "j": "破れた",
+        "e": "tore"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I won a prize in the lottery draw.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "won",
+        "z": "抽中了",
+        "j": "当たりました",
+        "e": "won"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "prize",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "lottery draw",
+        "z": "抽籤遊戲",
+        "j": "くじ引き",
+        "e": "lottery draw"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I entered the lottery draw because I could play once with three tickets.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "entered",
+        "z": "參加了",
+        "j": "参加しました",
+        "e": "entered"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lottery draw",
+        "z": "抽籤遊戲",
+        "j": "くじ引き",
+        "e": "lottery draw"
+      },
+      {
+        "t": " because I could "
+      },
+      {
+        "t": "play",
+        "z": "玩",
+        "j": "できる",
+        "e": "play"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "once",
+        "z": "一次",
+        "j": "一回",
+        "e": "once"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "three",
+        "z": "三張",
+        "j": "三枚",
+        "e": "three"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tickets",
+        "z": "券",
+        "j": "券",
+        "e": "tickets"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "He is wearing a jinbei.": [
+      {
+        "t": "He is "
+      },
+      {
+        "t": "wearing",
+        "z": "穿著",
+        "j": "着ています",
+        "e": "wearing"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "jinbei",
+        "z": "甚平",
+        "j": "甚平",
+        "e": "jinbei"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My son wore a jinbei instead of a yukata because it was easier to move in.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "son",
+        "z": "兒子",
+        "j": "息子",
+        "e": "son"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wore",
+        "z": "穿了",
+        "j": "着ました",
+        "e": "wore"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "jinbei",
+        "z": "甚平",
+        "j": "甚平",
+        "e": "jinbei"
+      },
+      {
+        "t": " instead of a "
+      },
+      {
+        "t": "yukata",
+        "z": "浴衣",
+        "j": "浴衣",
+        "e": "yukata"
+      },
+      {
+        "t": " because it was "
+      },
+      {
+        "t": "easier",
+        "z": "更容易",
+        "j": "やすい",
+        "e": "easier"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "move",
+        "z": "活動",
+        "j": "動く",
+        "e": "move"
+      },
+      {
+        "t": " in."
+      }
+    ],
+    "I put my wallet in the drawstring bag.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放入了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "wallet",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "drawstring bag",
+        "z": "束口袋",
+        "j": "巾着袋",
+        "e": "drawstring bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Open the folding fan.": [
+      {
+        "t": "Open",
+        "z": "打開",
+        "j": "開いてください",
+        "e": "open"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "folding fan",
+        "z": "摺扇",
+        "j": "扇子",
+        "e": "folding fan"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I folded the folding fan before putting it in my bag so it would not break.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "folded",
+        "z": "摺好了",
+        "j": "畳んで",
+        "e": "folded"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "folding fan",
+        "z": "摺扇",
+        "j": "扇子",
+        "e": "folding fan"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "putting",
+        "z": "放入",
+        "j": "入れました",
+        "e": "putting"
+      },
+      {
+        "t": " it in my "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "バッグ",
+        "e": "bag"
+      },
+      {
+        "t": " so it would not "
+      },
+      {
+        "t": "break",
+        "z": "折斷",
+        "j": "折れる",
+        "e": "break"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The fireworks are beautiful.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "fireworks",
+        "z": "煙火",
+        "j": "花火",
+        "e": "fireworks"
+      },
+      {
+        "t": " are "
+      },
+      {
+        "t": "beautiful",
+        "z": "漂亮的",
+        "j": "きれいです",
+        "e": "beautiful"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We waited by the river until the fireworks ended.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " by the "
+      },
+      {
+        "t": "river",
+        "z": "河邊",
+        "j": "川",
+        "e": "river"
+      },
+      {
+        "t": " until the "
+      },
+      {
+        "t": "fireworks",
+        "z": "煙火",
+        "j": "花火",
+        "e": "fireworks"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ended",
+        "z": "結束",
+        "j": "終わる",
+        "e": "ended"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The Japanese sparkler went out.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "Japanese sparkler",
+        "z": "線香花火",
+        "j": "線香花火",
+        "e": "Japanese sparkler"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "went out",
+        "z": "熄滅了",
+        "j": "消えました",
+        "e": "went out"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The glowing ball fell from my Japanese sparkler because I moved my hand.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "glowing ball",
+        "z": "小火球",
+        "j": "火の玉",
+        "e": "glowing ball"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fell",
+        "z": "掉下了",
+        "j": "落ちてしまいました",
+        "e": "fell"
+      },
+      {
+        "t": " from my "
+      },
+      {
+        "t": "Japanese sparkler",
+        "z": "線香花火",
+        "j": "線香花火",
+        "e": "Japanese sparkler"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "moved",
+        "z": "動了",
+        "j": "動かした",
+        "e": "moved"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hand",
+        "z": "手",
+        "j": "手",
+        "e": "hand"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I firmly tightened the drawstring bag's opening so my coins would not fall out.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "firmly",
+        "z": "牢牢地",
+        "j": "しっかり",
+        "e": "firmly"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tightened",
+        "z": "束緊了",
+        "j": "絞りました",
+        "e": "tightened"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "drawstring bag",
+        "z": "束口袋",
+        "j": "巾着袋",
+        "e": "drawstring bag"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "opening",
+        "z": "袋口",
+        "j": "口",
+        "e": "opening"
+      },
+      {
+        "t": " so my "
+      },
+      {
+        "t": "coins",
+        "z": "零錢",
+        "j": "小銭",
+        "e": "coins"
+      },
+      {
+        "t": " would not "
+      },
+      {
+        "t": "fall out",
+        "z": "掉出來",
+        "j": "落ちる",
+        "e": "fall out"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "法被を着ました。": [
+      {
+        "t": "法被",
+        "z": "法被",
+        "j": "法被",
+        "e": "happi coat",
+        "r": "はっぴ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着ました",
+        "z": "穿了",
+        "j": "着ました",
+        "e": "wore",
+        "r": "きました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "祭りを手伝うので、法被を借りました。": [
+      {
+        "t": "祭り",
+        "z": "祭典",
+        "j": "祭り",
+        "e": "festival",
+        "r": "まつり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "手伝う",
+        "z": "幫忙",
+        "j": "手伝う",
+        "e": "help",
+        "r": "てつだう"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "法被",
+        "z": "法被",
+        "j": "法被",
+        "e": "happi coat",
+        "r": "はっぴ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "借りました",
+        "z": "借了",
+        "j": "借りました",
+        "e": "borrowed",
+        "r": "かりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "鉢巻きをしっかり締めてください。": [
+      {
+        "t": "鉢巻き",
+        "z": "鉢卷",
+        "j": "鉢巻き",
+        "e": "hachimaki headband",
+        "r": "はちまき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "しっかり",
+        "z": "牢牢地",
+        "j": "しっかり",
+        "e": "tightly",
+        "r": "しっかり"
+      },
+      {
+        "t": "締めてください",
+        "z": "請綁緊",
+        "j": "締めてください",
+        "e": "please tie",
+        "r": "しめてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "神輿を担いでいる間に、鉢巻きが緩みました。": [
+      {
+        "t": "神輿",
+        "z": "神輿",
+        "j": "神輿",
+        "e": "portable shrine",
+        "r": "みこし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "担いでいる",
+        "z": "扛著",
+        "j": "担いでいる",
+        "e": "carrying",
+        "r": "かついでいる"
+      },
+      {
+        "t": "間に、"
+      },
+      {
+        "t": "鉢巻き",
+        "z": "鉢卷",
+        "j": "鉢巻き",
+        "e": "hachimaki headband",
+        "r": "はちまき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "緩みました",
+        "z": "鬆開了",
+        "j": "緩みました",
+        "e": "came loose",
+        "r": "ゆるみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この下駄は赤いです。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "下駄",
+        "z": "木屐",
+        "j": "下駄",
+        "e": "geta sandals",
+        "r": "げた"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "赤いです",
+        "z": "是紅色的",
+        "j": "赤いです",
+        "e": "are red",
+        "r": "あかいです"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "下駄で長く歩いたので、足が痛くなりました。": [
+      {
+        "t": "下駄",
+        "z": "木屐",
+        "j": "下駄",
+        "e": "geta sandals",
+        "r": "げた"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "長く",
+        "z": "長時間地",
+        "j": "長く",
+        "e": "for a long time",
+        "r": "ながく"
+      },
+      {
+        "t": "歩いた",
+        "z": "走了路",
+        "j": "歩いた",
+        "e": "walked",
+        "r": "あるいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "足",
+        "z": "腳",
+        "j": "足",
+        "e": "feet",
+        "r": "あし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "痛くなりました",
+        "z": "變痛了",
+        "j": "痛くなりました",
+        "e": "started to hurt",
+        "r": "いたくなりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "みんなで神輿を担いでいます。": [
+      {
+        "t": "みんな",
+        "z": "大家",
+        "j": "みんな",
+        "e": "everyone",
+        "r": "みんな"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "神輿",
+        "z": "神輿",
+        "j": "神輿",
+        "e": "portable shrine",
+        "r": "みこし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "担いでいます",
+        "z": "正扛著",
+        "j": "担いでいます",
+        "e": "are carrying",
+        "r": "かついでいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "重い神輿をまた担ぐ前に、休憩しました。": [
+      {
+        "t": "重い",
+        "z": "沉重的",
+        "j": "重い",
+        "e": "heavy",
+        "r": "おもい"
+      },
+      {
+        "t": "神輿",
+        "z": "神輿",
+        "j": "神輿",
+        "e": "portable shrine",
+        "r": "みこし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "また",
+        "z": "再次",
+        "j": "また",
+        "e": "again",
+        "r": "また"
+      },
+      {
+        "t": "担ぐ",
+        "z": "扛",
+        "j": "担ぐ",
+        "e": "carry",
+        "r": "かつぐ"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "休憩しました",
+        "z": "休息了",
+        "j": "休憩しました",
+        "e": "rested",
+        "r": "きゅうけいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "山車が来ます。": [
+      {
+        "t": "山車",
+        "z": "山車",
+        "j": "山車",
+        "e": "festival float",
+        "r": "だし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "来ます",
+        "z": "要過來了",
+        "j": "来ます",
+        "e": "is coming",
+        "r": "きます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "山車が通り過ぎるまで、道端で待ちました。": [
+      {
+        "t": "山車",
+        "z": "山車",
+        "j": "山車",
+        "e": "festival float",
+        "r": "だし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "通り過ぎる",
+        "z": "通過",
+        "j": "通り過ぎる",
+        "e": "pass",
+        "r": "とおりすぎる"
+      },
+      {
+        "t": "まで、"
+      },
+      {
+        "t": "道端",
+        "z": "路旁",
+        "j": "道端",
+        "e": "roadside",
+        "r": "みちばた"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "提灯をここにつるしてください。": [
+      {
+        "t": "提灯",
+        "z": "提燈",
+        "j": "提灯",
+        "e": "paper lantern",
+        "r": "ちょうちん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ここ",
+        "z": "這裡",
+        "j": "ここ",
+        "e": "here",
+        "r": "ここ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つるしてください",
+        "z": "請掛起",
+        "j": "つるしてください",
+        "e": "please hang",
+        "r": "つるしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨が降りそうだったので、提灯を外しました。": [
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "降りそうだった",
+        "z": "看起來快要下了",
+        "j": "降りそうだった",
+        "e": "looked likely to fall",
+        "r": "ふりそうだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "提灯",
+        "z": "提燈",
+        "j": "提灯",
+        "e": "paper lanterns",
+        "r": "ちょうちん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "外しました",
+        "z": "取下了",
+        "j": "外しました",
+        "e": "took down",
+        "r": "はずしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼は太鼓をたたいています。": [
+      {
+        "t": "彼",
+        "z": "他",
+        "j": "彼",
+        "e": "he",
+        "r": "かれ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "太鼓",
+        "z": "太鼓",
+        "j": "太鼓",
+        "e": "taiko drum",
+        "r": "たいこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "たたいています",
+        "z": "正敲奏",
+        "j": "たたいています",
+        "e": "is playing",
+        "r": "たたいています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "太鼓の音が大きかったので、少し離れて聞きました。": [
+      {
+        "t": "太鼓",
+        "z": "太鼓",
+        "j": "太鼓",
+        "e": "taiko drums",
+        "r": "たいこ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "音",
+        "z": "聲音",
+        "j": "音",
+        "e": "sound",
+        "r": "おと"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "大きかった",
+        "z": "很大聲",
+        "j": "大きかった",
+        "e": "was loud",
+        "r": "おおきかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "少し",
+        "z": "稍微",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "離れて",
+        "z": "離遠一點",
+        "j": "離れて",
+        "e": "moving farther away",
+        "r": "はなれて"
+      },
+      {
+        "t": "聞きました",
+        "z": "聆聽了",
+        "j": "聞きました",
+        "e": "listened",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お面を一つ買いました。": [
+      {
+        "t": "お面",
+        "z": "祭典面具",
+        "j": "お面",
+        "e": "festival mask",
+        "r": "おめん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一つ",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one",
+        "r": "ひとつ"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "顔が熱くなったので、お面を頭の横にずらしました。": [
+      {
+        "t": "顔",
+        "z": "臉",
+        "j": "顔",
+        "e": "face",
+        "r": "かお"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "熱くなった",
+        "z": "變熱了",
+        "j": "熱くなった",
+        "e": "got hot",
+        "r": "あつくなった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "お面",
+        "z": "祭典面具",
+        "j": "お面",
+        "e": "festival mask",
+        "r": "おめん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "頭",
+        "z": "頭",
+        "j": "頭",
+        "e": "head",
+        "r": "あたま"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "z": "側邊",
+        "j": "横",
+        "e": "side",
+        "r": "よこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ずらしました",
+        "z": "移開了",
+        "j": "ずらしました",
+        "e": "shifted",
+        "r": "ずらしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "金魚すくいをやってみましょう。": [
+      {
+        "t": "金魚すくい",
+        "z": "撈金魚",
+        "j": "金魚すくい",
+        "e": "goldfish scooping",
+        "r": "きんぎょすくい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "やってみましょう",
+        "z": "一起試試吧",
+        "j": "やってみましょう",
+        "e": "let's try",
+        "r": "やってみましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ポイが破れる前に、金魚すくいで二匹すくえました。": [
+      {
+        "t": "ポイ",
+        "z": "紙撈網",
+        "j": "ポイ",
+        "e": "paper scoop",
+        "r": "ぽい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "破れる",
+        "z": "破掉",
+        "j": "破れる",
+        "e": "tear",
+        "r": "やぶれる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "金魚すくい",
+        "z": "撈金魚",
+        "j": "金魚すくい",
+        "e": "goldfish scooping",
+        "r": "きんぎょすくい"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "二匹",
+        "z": "兩條魚",
+        "j": "二匹",
+        "e": "two fish",
+        "r": "にひき"
+      },
+      {
+        "t": "すくえました",
+        "z": "成功撈到了",
+        "j": "すくえました",
+        "e": "managed to scoop up",
+        "r": "すくえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ヨーヨー釣りをやってみました。": [
+      {
+        "t": "ヨーヨー釣り",
+        "z": "釣水球",
+        "j": "ヨーヨー釣り",
+        "e": "water balloon fishing",
+        "r": "よーよーつり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "やってみました",
+        "z": "試玩了",
+        "j": "やってみました",
+        "e": "tried",
+        "r": "やってみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ヨーヨー釣りで針が外れたので、もう一度挑戦しました。": [
+      {
+        "t": "ヨーヨー釣り",
+        "z": "釣水球",
+        "j": "ヨーヨー釣り",
+        "e": "water balloon fishing",
+        "r": "よーよーつり"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "針",
+        "z": "鉤子",
+        "j": "針",
+        "e": "hook",
+        "r": "はり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "外れた",
+        "z": "脫落了",
+        "j": "外れた",
+        "e": "came off",
+        "r": "はずれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "もう一度",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "once more",
+        "r": "もういちど"
+      },
+      {
+        "t": "挑戦しました",
+        "z": "挑戰了",
+        "j": "挑戦しました",
+        "e": "tried",
+        "r": "ちょうせんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "りんご飴を一つください。": [
+      {
+        "t": "りんご飴",
+        "z": "蘋果糖",
+        "j": "りんご飴",
+        "e": "candy apple",
+        "r": "りんごあめ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一つ",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one",
+        "r": "ひとつ"
+      },
+      {
+        "t": "ください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "りんご飴が硬かったので、小さく切りました。": [
+      {
+        "t": "りんご飴",
+        "z": "蘋果糖",
+        "j": "りんご飴",
+        "e": "candy apple",
+        "r": "りんごあめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "硬かった",
+        "z": "很硬",
+        "j": "硬かった",
+        "e": "was hard",
+        "r": "かたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "小さく",
+        "z": "成小塊",
+        "j": "小さく",
+        "e": "into small pieces",
+        "r": "ちいさく"
+      },
+      {
+        "t": "切りました",
+        "z": "切了",
+        "j": "切りました",
+        "e": "cut",
+        "r": "きりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "私は綿あめが好きです。": [
+      {
+        "t": "私"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "綿あめ",
+        "z": "棉花糖",
+        "j": "綿あめ",
+        "e": "cotton candy",
+        "r": "わたあめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "好きです",
+        "z": "喜歡",
+        "j": "好きです",
+        "e": "like",
+        "r": "すきです"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "溶ける前に、綿あめを分けて食べました。": [
+      {
+        "t": "溶ける",
+        "z": "融化",
+        "j": "溶ける",
+        "e": "melt",
+        "r": "とける"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "綿あめ",
+        "z": "棉花糖",
+        "j": "綿あめ",
+        "e": "cotton candy",
+        "r": "わたあめ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "分けて",
+        "z": "分開",
+        "j": "分けて",
+        "e": "sharing",
+        "r": "わけて"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "いちご味のかき氷をください。": [
+      {
+        "t": "いちご味",
+        "z": "草莓口味",
+        "j": "いちご味",
+        "e": "strawberry flavor",
+        "r": "いちごあじ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "かき氷",
+        "z": "刨冰",
+        "j": "かき氷",
+        "e": "shaved ice",
+        "r": "かきごおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "暑かったので、列に並んでかき氷を買いました。": [
+      {
+        "t": "暑かった",
+        "z": "很熱",
+        "j": "暑かった",
+        "e": "was hot",
+        "r": "あつかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "列",
+        "z": "隊伍",
+        "j": "列",
+        "e": "line",
+        "r": "れつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "並んで",
+        "z": "排隊",
+        "j": "並んで",
+        "e": "waiting in line",
+        "r": "ならんで"
+      },
+      {
+        "t": "かき氷",
+        "z": "刨冰",
+        "j": "かき氷",
+        "e": "shaved ice",
+        "r": "かきごおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "輪投げで遊びましょう。": [
+      {
+        "t": "輪投げ",
+        "z": "套圈圈",
+        "j": "輪投げ",
+        "e": "ring toss",
+        "r": "わなげ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "遊びましょう",
+        "z": "一起玩吧",
+        "j": "遊びましょう",
+        "e": "let’s play",
+        "r": "あそびましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "輪投げで最初の輪は外れましたが、二つ目は棒に入りました。": [
+      {
+        "t": "輪投げ",
+        "z": "套圈圈",
+        "j": "輪投げ",
+        "e": "ring toss",
+        "r": "わなげ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "最初",
+        "z": "第一個",
+        "j": "最初",
+        "e": "first",
+        "r": "さいしょ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "輪",
+        "z": "圈",
+        "j": "輪",
+        "e": "ring",
+        "r": "わ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "外れました",
+        "z": "沒套中",
+        "j": "外れました",
+        "e": "missed",
+        "r": "はずれました"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "二つ目",
+        "z": "第二個圈",
+        "j": "二つ目",
+        "e": "second ring",
+        "r": "ふたつめ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "棒",
+        "z": "柱子",
+        "j": "棒",
+        "e": "peg",
+        "r": "ぼう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りました",
+        "z": "套進去了",
+        "j": "入りました",
+        "e": "landed on",
+        "r": "はいりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "たこ焼きは熱いです。": [
+      {
+        "t": "たこ焼き",
+        "z": "章魚燒",
+        "j": "たこ焼き",
+        "e": "takoyaki",
+        "r": "たこやき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "熱いです",
+        "z": "很燙",
+        "j": "熱いです",
+        "e": "is hot",
+        "r": "あついです"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "たこ焼きは中が熱かったので、少し待ってから食べました。": [
+      {
+        "t": "たこ焼き",
+        "z": "章魚燒",
+        "j": "たこ焼き",
+        "e": "takoyaki",
+        "r": "たこやき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "中",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside",
+        "r": "なか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "熱かった",
+        "z": "很燙",
+        "j": "熱かった",
+        "e": "was hot",
+        "r": "あつかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "少し",
+        "z": "一下子",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "待って",
+        "z": "等待",
+        "j": "待って",
+        "e": "waiting",
+        "r": "まって"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "焼きそばを買いました。": [
+      {
+        "t": "焼きそば",
+        "z": "日式炒麵",
+        "j": "焼きそば",
+        "e": "yakisoba",
+        "r": "やきそば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "量が多かったので、妹と焼きそばを分けて食べました。": [
+      {
+        "t": "量",
+        "z": "份量",
+        "j": "量",
+        "e": "portion",
+        "r": "りょう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "多かった",
+        "z": "很多",
+        "j": "多かった",
+        "e": "was large",
+        "r": "おおかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "妹",
+        "z": "妹妹",
+        "j": "妹",
+        "e": "younger sister",
+        "r": "いもうと"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "焼きそば",
+        "z": "日式炒麵",
+        "j": "焼きそば",
+        "e": "yakisoba",
+        "r": "やきそば"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "分けて",
+        "z": "分開",
+        "j": "分けて",
+        "e": "sharing",
+        "r": "わけて"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お好み焼きを切ってください。": [
+      {
+        "t": "お好み焼き",
+        "z": "大阪燒",
+        "j": "お好み焼き",
+        "e": "okonomiyaki",
+        "r": "おこのみやき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切ってください",
+        "z": "請切開",
+        "j": "切ってください",
+        "e": "please cut",
+        "r": "きってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達はマヨネーズが苦手なので、お好み焼きはマヨネーズ抜きで頼みました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "マヨネーズ",
+        "z": "美乃滋",
+        "j": "マヨネーズ",
+        "e": "mayonnaise",
+        "r": "まよねーず"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "苦手",
+        "z": "不喜歡",
+        "j": "苦手",
+        "e": "dislikes",
+        "r": "にがて"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "お好み焼き",
+        "z": "大阪燒",
+        "j": "お好み焼き",
+        "e": "okonomiyaki",
+        "r": "おこのみやき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "マヨネーズ",
+        "z": "美乃滋",
+        "j": "マヨネーズ",
+        "e": "mayonnaise",
+        "r": "まよねーず"
+      },
+      {
+        "t": "抜き",
+        "z": "不加",
+        "j": "抜き",
+        "e": "without",
+        "r": "ぬき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "頼みました",
+        "z": "點了",
+        "j": "頼みました",
+        "e": "ordered",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "焼き鳥を二本ください。": [
+      {
+        "t": "焼き鳥",
+        "z": "烤雞肉串",
+        "j": "焼き鳥",
+        "e": "yakitori",
+        "r": "やきとり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "二本",
+        "z": "兩串",
+        "j": "二本",
+        "e": "two skewers",
+        "r": "にほん"
+      },
+      {
+        "t": "ください。"
+      }
+    ],
+    "父は甘いタレより塩味が好きなので、塩味の焼き鳥を選びました。": [
+      {
+        "t": "父",
+        "z": "父親",
+        "j": "父",
+        "e": "father",
+        "r": "ちち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "甘い",
+        "z": "甜的",
+        "j": "甘い",
+        "e": "sweet",
+        "r": "あまい"
+      },
+      {
+        "t": "タレ",
+        "z": "醬汁",
+        "j": "タレ",
+        "e": "sauce",
+        "r": "たれ"
+      },
+      {
+        "t": "より"
+      },
+      {
+        "t": "塩味",
+        "z": "鹽味",
+        "j": "塩味",
+        "e": "salt flavor",
+        "r": "しおあじ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "好き",
+        "z": "喜歡",
+        "j": "好き",
+        "e": "likes",
+        "r": "すき"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "塩味",
+        "z": "鹽味",
+        "j": "塩味",
+        "e": "salt flavor",
+        "r": "しおあじ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "焼き鳥",
+        "z": "烤雞肉串",
+        "j": "焼き鳥",
+        "e": "yakitori",
+        "r": "やきとり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "焼きとうもろこしを一本ください。": [
+      {
+        "t": "焼きとうもろこし",
+        "z": "烤玉米",
+        "j": "焼きとうもろこし",
+        "e": "grilled corn",
+        "r": "やきとうもろこし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一本",
+        "z": "一支",
+        "j": "一本",
+        "e": "one ear",
+        "r": "いっぽん"
+      },
+      {
+        "t": "ください。"
+      }
+    ],
+    "焼きとうもろこしが熱くて持てなかったので、袋をもらいました。": [
+      {
+        "t": "焼きとうもろこし",
+        "z": "烤玉米",
+        "j": "焼きとうもろこし",
+        "e": "grilled corn",
+        "r": "やきとうもろこし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "熱くて",
+        "z": "很燙",
+        "j": "熱くて",
+        "e": "being hot",
+        "r": "あつくて"
+      },
+      {
+        "t": "持てなかった",
+        "z": "拿不住",
+        "j": "持てなかった",
+        "e": "could not hold",
+        "r": "もてなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "袋",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "r": "ふくろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もらいました",
+        "z": "拿到了",
+        "j": "もらいました",
+        "e": "received",
+        "r": "もらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "イカ焼きを買いました。": [
+      {
+        "t": "イカ焼き",
+        "z": "烤魷魚",
+        "j": "イカ焼き",
+        "e": "grilled squid",
+        "r": "いかやき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子どもたちが食べやすいように、イカ焼きを小さく切りました。": [
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "children",
+        "r": "こどもたち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "食べやすい",
+        "z": "方便吃",
+        "j": "食べやすい",
+        "e": "easy to eat",
+        "r": "たべやすい"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "イカ焼き",
+        "z": "烤魷魚",
+        "j": "イカ焼き",
+        "e": "grilled squid",
+        "r": "いかやき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "小さく",
+        "z": "成小塊",
+        "j": "小さく",
+        "e": "into small pieces",
+        "r": "ちいさく"
+      },
+      {
+        "t": "切りました",
+        "z": "切了",
+        "j": "切りました",
+        "e": "cut",
+        "r": "きりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "チョコバナナは甘いです。": [
+      {
+        "t": "チョコバナナ",
+        "z": "巧克力香蕉",
+        "j": "チョコバナナ",
+        "e": "chocolate banana",
+        "r": "ちょこばなな"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "甘いです",
+        "z": "很甜",
+        "j": "甘いです",
+        "e": "is sweet",
+        "r": "あまいです"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "チョコが溶け始めていたので、日陰でチョコバナナを食べました。": [
+      {
+        "t": "チョコ",
+        "z": "巧克力",
+        "j": "チョコ",
+        "e": "chocolate",
+        "r": "ちょこ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "溶け始めていた",
+        "z": "開始融化了",
+        "j": "溶け始めていた",
+        "e": "was starting to melt",
+        "r": "とけはじめていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "日陰",
+        "z": "陰涼處",
+        "j": "日陰",
+        "e": "shade",
+        "r": "ひかげ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "チョコバナナ",
+        "z": "巧克力香蕉",
+        "j": "チョコバナナ",
+        "e": "chocolate banana",
+        "r": "ちょこばなな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "冷たいラムネを飲みました。": [
+      {
+        "t": "冷たい",
+        "z": "冰涼的",
+        "j": "冷たい",
+        "e": "cold",
+        "r": "つめたい"
+      },
+      {
+        "t": "ラムネ",
+        "z": "彈珠汽水",
+        "j": "ラムネ",
+        "e": "ramune",
+        "r": "らむね"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "飲みました",
+        "z": "喝了",
+        "j": "飲みました",
+        "e": "drank",
+        "r": "のみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ビー玉を押し下げられなかったので、店員さんがラムネを開けてくれました。": [
+      {
+        "t": "ビー玉",
+        "z": "玻璃彈珠",
+        "j": "ビー玉",
+        "e": "marble",
+        "r": "びーだま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押し下げられなかった",
+        "z": "按不下去",
+        "j": "押し下げられなかった",
+        "e": "could not push down",
+        "r": "おしさげられなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員さん",
+        "z": "攤販",
+        "j": "店員さん",
+        "e": "vendor",
+        "r": "てんいんさん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ラムネ",
+        "z": "彈珠汽水",
+        "j": "ラムネ",
+        "e": "ramune",
+        "r": "らむね"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けてくれました",
+        "z": "幫我打開了",
+        "j": "開けてくれました",
+        "e": "opened for me",
+        "r": "あけてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "射的をやってみましょう。": [
+      {
+        "t": "射的",
+        "z": "射擊遊戲",
+        "j": "射的",
+        "e": "shooting gallery",
+        "r": "しゃてき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "やってみましょう",
+        "z": "一起試試吧",
+        "j": "やってみましょう",
+        "e": "let's try",
+        "r": "やってみましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "射的で的に当てましたが、倒れませんでした。": [
+      {
+        "t": "射的",
+        "z": "射擊遊戲",
+        "j": "射的",
+        "e": "shooting gallery",
+        "r": "しゃてき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "的",
+        "z": "目標",
+        "j": "的",
+        "e": "target",
+        "r": "まと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "当てました",
+        "z": "打中了",
+        "j": "当てました",
+        "e": "hit",
+        "r": "あてました"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "倒れませんでした",
+        "z": "沒有倒下",
+        "j": "倒れませんでした",
+        "e": "did not fall over",
+        "r": "たおれませんでした"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スーパーボールすくいで赤いボールをすくいました。": [
+      {
+        "t": "スーパーボールすくい",
+        "z": "撈彈力球",
+        "j": "スーパーボールすくい",
+        "e": "bouncy ball scooping",
+        "r": "すーぱーぼーるすくい"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "赤い",
+        "z": "紅色的",
+        "j": "赤い",
+        "e": "red",
+        "r": "あかい"
+      },
+      {
+        "t": "ボール",
+        "z": "球",
+        "j": "ボール",
+        "e": "ball",
+        "r": "ぼーる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "すくいました",
+        "z": "撈起了",
+        "j": "すくいました",
+        "e": "scooped up",
+        "r": "すくいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ポイが破れたので、スーパーボールすくいをやめました。": [
+      {
+        "t": "ポイ",
+        "z": "紙撈網",
+        "j": "ポイ",
+        "e": "paper scoop",
+        "r": "ぽい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "破れた",
+        "z": "破了",
+        "j": "破れた",
+        "e": "tore",
+        "r": "やぶれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "スーパーボールすくい",
+        "z": "撈彈力球",
+        "j": "スーパーボールすくい",
+        "e": "bouncy ball scooping",
+        "r": "すーぱーぼーるすくい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "やめました",
+        "z": "停止了",
+        "j": "やめました",
+        "e": "stopped",
+        "r": "やめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "くじ引きで景品が当たりました。": [
+      {
+        "t": "くじ引き",
+        "z": "抽籤遊戲",
+        "j": "くじ引き",
+        "e": "lottery draw",
+        "r": "くじびき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "景品",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize",
+        "r": "けいひん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "当たりました",
+        "z": "抽中了",
+        "j": "当たりました",
+        "e": "won",
+        "r": "あたりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "券が三枚あれば一回できるので、くじ引きに参加しました。": [
+      {
+        "t": "券",
+        "z": "券",
+        "j": "券",
+        "e": "tickets",
+        "r": "けん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "三枚",
+        "z": "三張",
+        "j": "三枚",
+        "e": "three tickets",
+        "r": "さんまい"
+      },
+      {
+        "t": "あれば"
+      },
+      {
+        "t": "一回",
+        "z": "一次",
+        "j": "一回",
+        "e": "once",
+        "r": "いっかい"
+      },
+      {
+        "t": "できる",
+        "z": "可以玩",
+        "j": "できる",
+        "e": "can play",
+        "r": "できる"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "くじ引き",
+        "z": "抽籤遊戲",
+        "j": "くじ引き",
+        "e": "lottery draw",
+        "r": "くじびき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "参加しました",
+        "z": "參加了",
+        "j": "参加しました",
+        "e": "entered",
+        "r": "さんかしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼は甚平を着ています。": [
+      {
+        "t": "彼",
+        "z": "他",
+        "j": "彼",
+        "e": "he",
+        "r": "かれ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "甚平",
+        "z": "甚平",
+        "j": "甚平",
+        "e": "jinbei",
+        "r": "じんべい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着ています",
+        "z": "穿著",
+        "j": "着ています",
+        "e": "is wearing",
+        "r": "きています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "動きやすいので、息子は浴衣の代わりに甚平を着ました。": [
+      {
+        "t": "動きやすい",
+        "z": "方便活動",
+        "j": "動きやすい",
+        "e": "easy to move in",
+        "r": "うごきやすい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "息子",
+        "z": "兒子",
+        "j": "息子",
+        "e": "son",
+        "r": "むすこ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "浴衣",
+        "z": "浴衣",
+        "j": "浴衣",
+        "e": "yukata",
+        "r": "ゆかた"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "代わり",
+        "z": "代替",
+        "j": "代わり",
+        "e": "instead",
+        "r": "かわり"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "甚平",
+        "z": "甚平",
+        "j": "甚平",
+        "e": "jinbei",
+        "r": "じんべい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着ました",
+        "z": "穿了",
+        "j": "着ました",
+        "e": "wore",
+        "r": "きました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "巾着袋に財布を入れました。": [
+      {
+        "t": "巾着袋",
+        "z": "束口袋",
+        "j": "巾着袋",
+        "e": "drawstring bag",
+        "r": "きんちゃくぶくろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "財布",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet",
+        "r": "さいふ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れました",
+        "z": "放入了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "小銭が落ちないように、巾着袋の口をしっかり絞りました。": [
+      {
+        "t": "小銭",
+        "z": "零錢",
+        "j": "小銭",
+        "e": "coins",
+        "r": "こぜに"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "落ちない",
+        "z": "不會掉落",
+        "j": "落ちない",
+        "e": "will not fall out",
+        "r": "おちない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "巾着袋",
+        "z": "束口袋",
+        "j": "巾着袋",
+        "e": "drawstring bag",
+        "r": "きんちゃくぶくろ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "口",
+        "z": "袋口",
+        "j": "口",
+        "e": "opening",
+        "r": "くち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "しっかり",
+        "z": "牢牢地",
+        "j": "しっかり",
+        "e": "firmly",
+        "r": "しっかり"
+      },
+      {
+        "t": "絞りました",
+        "z": "束緊了",
+        "j": "絞りました",
+        "e": "tightened",
+        "r": "しぼりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "扇子を開いてください。": [
+      {
+        "t": "扇子",
+        "z": "摺扇",
+        "j": "扇子",
+        "e": "folding fan",
+        "r": "せんす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開いてください",
+        "z": "請打開",
+        "j": "開いてください",
+        "e": "please open",
+        "r": "ひらいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "折れないように、扇子を畳んでからバッグに入れました。": [
+      {
+        "t": "折れない",
+        "z": "不會折斷",
+        "j": "折れない",
+        "e": "will not break",
+        "r": "おれない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "扇子",
+        "z": "摺扇",
+        "j": "扇子",
+        "e": "folding fan",
+        "r": "せんす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "畳んで",
+        "z": "摺好",
+        "j": "畳んで",
+        "e": "folding",
+        "r": "たたんで"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "バッグ",
+        "z": "包包",
+        "j": "バッグ",
+        "e": "bag",
+        "r": "ばっぐ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "放入了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花火がきれいです。": [
+      {
+        "t": "花火",
+        "z": "煙火",
+        "j": "花火",
+        "e": "fireworks",
+        "r": "はなび"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "きれいです",
+        "z": "很漂亮",
+        "j": "きれいです",
+        "e": "are beautiful",
+        "r": "きれいです"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花火が終わるまで、川のそばで待ちました。": [
+      {
+        "t": "花火",
+        "z": "煙火",
+        "j": "花火",
+        "e": "fireworks",
+        "r": "はなび"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "終わる",
+        "z": "結束",
+        "j": "終わる",
+        "e": "end",
+        "r": "おわる"
+      },
+      {
+        "t": "まで、"
+      },
+      {
+        "t": "川",
+        "z": "河",
+        "j": "川",
+        "e": "river",
+        "r": "かわ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "そば",
+        "z": "旁邊",
+        "j": "そば",
+        "e": "beside",
+        "r": "そば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "線香花火が消えました。": [
+      {
+        "t": "線香花火",
+        "z": "線香花火",
+        "j": "線香花火",
+        "e": "Japanese sparkler",
+        "r": "せんこうはなび"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "消えました",
+        "z": "熄滅了",
+        "j": "消えました",
+        "e": "went out",
+        "r": "きえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "手を動かしたので、線香花火の火の玉が落ちてしまいました。": [
+      {
+        "t": "手",
+        "z": "手",
+        "j": "手",
+        "e": "hand",
+        "r": "て"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "動かした",
+        "z": "動了",
+        "j": "動かした",
+        "e": "moved",
+        "r": "うごかした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "線香花火",
+        "z": "線香花火",
+        "j": "線香花火",
+        "e": "Japanese sparkler",
+        "r": "せんこうはなび"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "火の玉",
+        "z": "小火球",
+        "j": "火の玉",
+        "e": "glowing ball",
+        "r": "ひのたま"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "落ちてしまいました",
+        "z": "掉下了",
+        "j": "落ちてしまいました",
+        "e": "fell off",
+        "r": "おちてしまいました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

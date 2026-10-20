@@ -11,6 +11,7 @@ import { MAIN_WORD_CLOTHING_IDS, MAIN_WORD_CLOTHING_WORDS } from "./main-word-cl
 import { MAIN_WORD_RESTAURANT_IDS, MAIN_WORD_RESTAURANT_WORDS } from "./main-word-restaurant-2026-10";
 import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS, MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS } from "./main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_STATION_COMMUTING_IDS, MAIN_WORD_STATION_COMMUTING_WORDS } from "./main-word-station-commuting-2026-10";
+import { MAIN_WORD_FESTIVALS_IDS, MAIN_WORD_FESTIVALS_WORDS } from "./main-word-festivals-2026-10";
 import { MAIN_WORD_FRUITS_WORDS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_WORDS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_WORDS } from "./main-word-expansion-2026-09-batch-3";
@@ -1757,6 +1758,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS as LegacyWord[]),
   ...(MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS as LegacyWord[]),
   ...(MAIN_WORD_STATION_COMMUTING_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_FESTIVALS_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
@@ -1769,14 +1771,15 @@ export const words: Word[] = [
 // to serve an incomplete catalogue than to expose an unreleased series.
 export const publicFallbackWords: Word[] = words.filter(
   (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting"].includes(word.category) &&
+    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals"].includes(word.category) &&
     !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
     !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
     !MAIN_WORD_RESTAURANT_IDS.includes(word.id) &&
     !MAIN_WORD_CONCERT_FAN_SUPPORT_IDS.includes(word.id) &&
     !MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS.includes(word.id) &&
-    !MAIN_WORD_STATION_COMMUTING_IDS.includes(word.id),
+    !MAIN_WORD_STATION_COMMUTING_IDS.includes(word.id) &&
+    !MAIN_WORD_FESTIVALS_IDS.includes(word.id),
 );
 
 export const getWord = (id: string): Word | undefined =>

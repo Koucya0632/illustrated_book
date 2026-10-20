@@ -106,7 +106,14 @@
     "festivals:audio:generate:local": "node --env-file=.env.local scripts/generate-festivals-candidate-audio.mjs",
     "festivals:audio:verify": "node scripts/verify-festivals-audio.mjs",
     "festivals:prepare-publish": "node --env-file=.env.local scripts/prepare-festivals-publish-plan.mjs",
-    "festivals:publish": "tsx --env-file=.env.local scripts/publish-festivals-series.ts"
+    "festivals:publish": "tsx --env-file=.env.local scripts/publish-festivals-series.ts",
+    "cherry-blossom-season:prepare-images": "node scripts/prepare-cherry-blossom-season-images.mjs",
+    "cherry-blossom-season:review": "node scripts/prepare-cherry-blossom-season-semantic-review.mjs",
+    "cherry-blossom-season:audio:plan": "node scripts/plan-cherry-blossom-season-audio.mjs",
+    "cherry-blossom-season:audio:generate:local": "node --env-file=.env.local scripts/generate-cherry-blossom-season-candidate-audio.mjs",
+    "cherry-blossom-season:audio:verify": "node scripts/verify-cherry-blossom-season-audio.mjs",
+    "cherry-blossom-season:prepare-publish": "node --env-file=.env.local scripts/prepare-cherry-blossom-season-publish-plan.mjs",
+    "cherry-blossom-season:publish": "tsx --env-file=.env.local scripts/publish-cherry-blossom-season-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

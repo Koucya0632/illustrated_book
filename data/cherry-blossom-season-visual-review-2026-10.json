@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "series": "cherry-blossom-season",
+  "reviewer": "Codex; every original image inspected individually, expanded scope reviewed 2026-10-20",
+  "items": [
+    {
+      "id": "cherry-blossom",
+      "decision": "pass",
+      "reason": "三朵開放淡粉五瓣花、瓣尖凹口與黃花蕊清楚，短花梗連枝，與水果櫻桃區分；白底且無文字。",
+      "sourceSha256": "2ceb19a4a580061ca15e93acc826426454908f2907a4fed19a34aa392259fb4e"
+    },
+    {
+      "id": "flower-bud",
+      "decision": "pass",
+      "reason": "三顆閉合粉紅花苞有紅褐萼片，未呈現開放花冠，能與開花詞區分；枝段完整、白底。",
+      "sourceSha256": "4be1a9e4166a41b32db608d29b9d860749c9d1e9a368ed6ceda2fe1269b2fa34"
+    },
+    {
+      "id": "petal",
+      "decision": "pass",
+      "reason": "單片淡粉花瓣，圓頂中央小凹口、尖窄深粉基部與薄片質感明確；無其他花朵干擾。",
+      "sourceSha256": "76a21b4a6f50cdbff90f909e94af69b85e81502004b1af0a84762f3bc873fe59"
+    },
+    {
+      "id": "cherry-blossom-viewing",
+      "decision": "pass",
+      "reason": "三人坐在藍墊上吃便當並看櫻花，花見活動清楚，人物與樹皆完整；小片地面僅支撐必要情境，外圍白底。",
+      "sourceSha256": "a6adb1bbaf1affccddf69ecb53c665b270be9810ae09042ff954edaea15e5b4c"
+    },
+    {
+      "id": "night-cherry-blossoms",
+      "decision": "pass",
+      "reason": "下方兩盞燈照亮櫻花，局部深藍暈景表達夜間並漸退至白底，夜間線索對詞義必要；無無關背景或字樣。",
+      "sourceSha256": "7bd9e15301dcb5f5d8fcff4e3ac1aa847beb9d1f25e3f0c0e2dc57533a86a4cb"
+    },
+    {
+      "id": "cherry-tree-avenue",
+      "decision": "pass",
+      "reason": "路徑兩側多棵櫻樹成排並沿透視後退，林蔭道幾何清楚，與單樹區分；外圍白底，正式輸出另加留白。",
+      "sourceSha256": "c2c1b5105ce5f0b1afb2892f41c1e8c15efda33a59a8549774177d2c7f95bff0"
+    },
+    {
+      "id": "sakura-mochi",
+      "decision": "pass",
+      "reason": "道明寺式外皮有明顯粉紅米粒、側面紅豆餡與半包的橄欖褐鹽漬鋸齒櫻葉，吻合農水省外觀，非光滑包子或草莓大福。",
+      "sourceSha256": "f996fa77393fd1f6b7cd2c3685cb18074938e23b16251fed1cbaa494ede44b0c"
+    },
+    {
+      "id": "hanami-dango",
+      "decision": "pass",
+      "reason": "一根竹籤上恰有粉紅、白、綠三顆糰子，上尖下柄完整，沒有醬汁，符合花見三色糰子。",
+      "sourceSha256": "9bf84f959f1341c79668acc20e76c06abdf59332c41b7f9413fbe5a3cd7ea7c1"
+    },
+    {
+      "id": "picnic-sheet",
+      "decision": "pass",
+      "reason": "藍色薄防水編織塑膠地墊展開，矩形、折痕與加固角落可見；四角完整，沒有被褥或食物，符合日本花見用具。",
+      "sourceSha256": "aec67e18310bcceeb1b08277e31c66010609668c1a2bec5692a733adc57b7b41"
+    },
+    {
+      "id": "tiered-lunch-box",
+      "decision": "pass",
+      "reason": "深色漆面朱紅內側的三個同形方盒，兩層堆疊一層分開並帶盒蓋，疊層結構明確，非一般單層便當盒。",
+      "sourceSha256": "a388547af40ecf8d30246f9e24bb4e75ee8c24c1caaecf6e3b5e7312032ebc5d"
+    },
+    {
+      "id": "category-cherry-blossom-season",
+      "decision": "pass",
+      "reason": "櫻花枝、三色糰子、米粒櫻餅與藍色野餐墊構成季節主題，無品牌、文字或多餘裝飾，白底完整留白。",
+      "sourceSha256": "f0ba6411ac0f4164ee19dda1127dcdba30a9346536fdd98ebb002d1397dbe7cb"
+    },
+    {
+      "id": "weeping-cherry-tree",
+      "decision": "pass",
+      "reason": "長而細的花枝向下垂成花幕，樹幹與枝尖完整，與一般上展樹冠清楚區分；淡粉花形與白底符合圖鑑風格。",
+      "sourceSha256": "225bf5531b8245d2ec5a148d85a961e55d21833ee5ba53e2ce065e426c54cf9f"
+    },
+    {
+      "id": "double-flowered-cherry",
+      "decision": "pass",
+      "reason": "三朵粉色櫻花呈多層重瓣，能辨識紅褐花萼、細花梗與鋸齒葉，沒有玫瑰花心或刺；與原有五瓣櫻花區分。",
+      "sourceSha256": "003c40a6d7965983264e4b1272deb8f41de69e4a0c9699b35656cbf7d22d16b5"
+    },
+    {
+      "id": "full-bloom",
+      "decision": "pass",
+      "reason": "整棵樹冠密布已開的淡粉花朵、枝幹仍可見，沒有大量未開花苞或綠葉；樹形完整且純白外圍留白，直接表達盛開狀態。",
+      "sourceSha256": "8bc6c69305a0d5b2f11609632f71997101559ab6f8a82c3249a89b06fe778979"
+    },
+    {
+      "id": "cherry-blossom-shower",
+      "decision": "pass",
+      "reason": "右側可辨識大量單片花瓣在空中順風飛舞並落到地面，非雪花或整朵花；與靜止單樹、水面花筏不同，白底場景緊湊。",
+      "sourceSha256": "afd485d05947021d61b40bdc9e99fabf526f06803095227bd86a4d6cf8e250e3"
+    },
+    {
+      "id": "cherry-blossom-petal-raft",
+      "decision": "pass",
+      "reason": "藍綠水面上粉紅落瓣聚集成密片，清水邊緣有零散花瓣與漣漪，沒有木筏或船；小段石岸僅提供水面尺度，外圍退至白底。",
+      "sourceSha256": "285a85a062ef2e82a9d5f8fbab02a722319cdd792165aec6aacf4dec53c335c8"
+    },
+    {
+      "id": "cherry-blossom-festival",
+      "decision": "pass",
+      "reason": "盛開櫻樹下有兩個臨時點心攤、燈籠與步行訪客，構成春季賞櫻活動會場；無神輿、夏季煙火或偽文字，場景完整孤立於白底。",
+      "sourceSha256": "8f79b70a2a0d0d6b64b2458eb434eb0124b4d686d20109cc85561be82780c0dd"
+    },
+    {
+      "id": "hanami-bento",
+      "decision": "pass",
+      "reason": "單層餐盒內有飯糰、玉子燒、炸雞、蝦與蔬菜，完整餐食占主體；春櫻紋盒蓋為季節線索，沒有品牌文字，與空的重箱容器區分。",
+      "sourceSha256": "56c2eaef62a0a04081f43bacc19c68bb06b76d67be2f154bb51852ee47b298e6"
+    },
+    {
+      "id": "cherry-blossom-tea",
+      "decision": "pass",
+      "reason": "白色無把手日式杯盛透明淡色熱水，一朵帶梗櫻花在水中泡開；沒有茶葉、深色茶湯或奶泡，符合桜湯而非一般茶葉飲品。",
+      "sourceSha256": "133acd906a82c1d20c9f9dc28564f98f25362f94bb00a04c47f99589363d9c69"
+    },
+    {
+      "id": "salt-pickled-cherry-blossoms",
+      "decision": "pass",
+      "reason": "小碟上有多朵皺縮深粉花朵，保留褐綠細梗並附可見鹽粒；明顯是醃漬花而非鮮花、櫻葉或已沖泡的茶。",
+      "sourceSha256": "35712331a382f278c6882fb13c2785f8bbada50db9552ac237361066bfb036a8"
+    },
+    {
+      "id": "cherry-blossom-rice",
+      "decision": "pass",
+      "reason": "白米飯中混有少量粉紅櫻花碎片，上方有帶梗花朵，米粒熟軟分明；不是粉紅糯米櫻餅、蝦飯或醬油色靜岡同名飯，白碗完整無裝飾。",
+      "sourceSha256": "af4718f12e10c91a775c2eaadb8d47dcfc42658acca95ecf7785102748a91123"
+    }
+  ]
+}

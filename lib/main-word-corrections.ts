@@ -8,6 +8,7 @@ import { MAIN_WORD_RESTAURANT_CORRECTIONS } from "./main-word-restaurant-2026-10
 import { MAIN_WORD_CONCERT_FAN_SUPPORT_CORRECTIONS } from "./main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_STATION_COMMUTING_CORRECTIONS } from "./main-word-station-commuting-2026-10";
 import { MAIN_WORD_FESTIVALS_CORRECTIONS } from "./main-word-festivals-2026-10";
+import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_CORRECTIONS } from "./main-word-cherry-blossom-season-2026-10";
 import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_CORRECTIONS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS } from "./main-word-expansion-2026-09-batch-3";
@@ -117,6 +118,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_CORRECTIONS,
   ...MAIN_WORD_STATION_COMMUTING_CORRECTIONS,
   ...MAIN_WORD_FESTIVALS_CORRECTIONS,
+  ...MAIN_WORD_CHERRY_BLOSSOM_SEASON_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",

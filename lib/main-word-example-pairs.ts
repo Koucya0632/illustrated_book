@@ -8,6 +8,7 @@ import { MAIN_WORD_RESTAURANT_EXAMPLE_PAIRS } from "./main-word-restaurant-2026-
 import { MAIN_WORD_CONCERT_FAN_SUPPORT_EXAMPLE_PAIRS } from "./main-word-concert-fan-support-2026-10";
 import { MAIN_WORD_STATION_COMMUTING_EXAMPLE_PAIRS } from "./main-word-station-commuting-2026-10";
 import { MAIN_WORD_FESTIVALS_EXAMPLE_PAIRS } from "./main-word-festivals-2026-10";
+import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_EXAMPLE_PAIRS } from "./main-word-cherry-blossom-season-2026-10";
 import { MAIN_WORD_FRUITS_EXAMPLE_PAIRS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS } from "./main-word-professions-2026-09";
 import { MAIN_WORD_EXPANSION_BATCH_3_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-3";
@@ -177,6 +178,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_EXAMPLE_PAIRS,
     MAIN_WORD_STATION_COMMUTING_EXAMPLE_PAIRS,
     MAIN_WORD_FESTIVALS_EXAMPLE_PAIRS,
+    MAIN_WORD_CHERRY_BLOSSOM_SEASON_EXAMPLE_PAIRS,
   );
 
 export function selectMainWordExamplePairs(

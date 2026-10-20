@@ -1,0 +1,175 @@
+{
+  "reviewer": "Codex, individual editorial review",
+  "references": [
+    "https://www.japan.travel/en/sg/story/time-japans-favourite-spring-activity-hanami-manners-and-what-br/",
+    "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_26_osaka.html",
+    "https://www.japan.travel/en/sg/guide/sakura-flavoured-sweets-spring/",
+    "https://www.japan.travel/en/sg/story/japan-cherry-blossom-season-types/",
+    "https://www.hirosakipark.jp/sakura/hanami/highlights/enjoy04/",
+    "https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/sakura_no_hana_zuke.html",
+    "https://fujinokuni.shokunomiyako-shizuoka.pref.shizuoka.jp/culture/article/1845",
+    "https://www.data.jma.go.jp/cpd/j_climate/kinki/main.html"
+  ],
+  "entries": [
+    {
+      "wordId": "cherry-blossom",
+      "wordReason": "桜對應櫻樹花朵；英文 cherry blossom 與既有水果 cherry／さくらんぼ 明確分開。讀音さくら完整。",
+      "exampleReasons": [
+        "以拍照呈現實際賞花動作；三語皆是拍攝櫻花，A2 的單一動作清楚。",
+        "預報降雨促使今天去看櫻花，ので與 today／tomorrow 的時間與原因三語一致；與拍照句用途不同。"
+      ]
+    },
+    {
+      "wordId": "flower-bud",
+      "wordReason": "つぼみ是未開的花，圖像指定櫻花花苞而不把一般詞義限制為櫻花；純假名讀音一致。",
+      "exampleReasons": [
+        "近看花苞顏色是可想像的觀察情境；pink／ピンク／粉紅三語一致。",
+        "花苞仍閉合使人延後到下週再來，まだ／ので／来週包含時間與原因，與顏色觀察形成難度差。"
+      ]
+    },
+    {
+      "wordId": "petal",
+      "wordReason": "花びら是花朵的單片而非整朵；櫻花花瓣末端凹口作辨識特徵，讀音はなびら正確。",
+      "exampleReasons": [
+        "花瓣掉在肩上是賞櫻時自然遇到的單一事件；沒有把花瓣當整朵花。",
+        "拍照前取走頭髮上的花瓣，三語保留先後、頭髮與拍照；複句增加時間關係。"
+      ]
+    },
+    {
+      "wordId": "cherry-blossom-viewing",
+      "wordReason": "花見在本系列用於賞櫻；定義容納散步與野餐，不誤說一定喝酒或聚餐。",
+      "exampleReasons": [
+        "邀朋友去賞櫻是簡短可用的邀約，三語人物與活動相同。",
+        "因公園禁止飲食而邊走邊賞櫻，原因與ながら的同時活動明確；沒有鼓勵違反公園規則。"
+      ]
+    },
+    {
+      "wordId": "night-cherry-blossoms",
+      "wordReason": "夜桜表示夜間櫻花而非花種，英文完整加 at night，よざくら涵蓋連濁。",
+      "exampleReasons": [
+        "晚間拍夜櫻直接使用概念，英文 at night 與夜桜等義。",
+        "因照明八點結束而提早出發，三語保留八點、結束與提早的因果；無虛構特定景點時刻。"
+      ]
+    },
+    {
+      "wordId": "cherry-tree-avenue",
+      "wordReason": "桜並木的核心是沿路成排櫻樹，英文 avenue 不限定車道；與單棵櫻樹和公園區分。",
+      "exampleReasons": [
+        "沿櫻花林蔭道散步具體呈現空間用法，三語都是步行而非搭車。",
+        "較遠仍選擇走櫻花林蔭道到車站，遠回り／longer way／繞遠路與讓步一致。"
+      ]
+    },
+    {
+      "wordId": "sakura-mochi",
+      "wordReason": "依農林水產省區分薄皮長命寺與粒狀道明寺，定義不把所有桜餅都寫成糯米球；圖指定道明寺。",
+      "exampleReasons": [
+        "茶配櫻餅是常見食用場景，英文 tea 不擅加綠茶種類，三語一致。",
+        "吃之前剝下葉子是個人行為，未斷言櫻葉不可食；時間與wrapped修飾關係三語一致。"
+      ]
+    },
+    {
+      "wordId": "hanami-dango",
+      "wordReason": "花見団子具體對應粉紅白綠三色串糰子；不與醬油みたらし団子混同，はなみだんご讀音完整。",
+      "exampleReasons": [
+        "以三色描述手中糰子，教學內容直接且不引入色彩象徵等未證實說法。",
+        "商店快關門而先買糰子，因果、先に與關門將近三語一致；與描述色彩句不同。"
+      ]
+    },
+    {
+      "wordId": "picnic-sheet",
+      "wordReason": "レジャーシート為日本常用戶外地墊名稱；英文 picnic sheet 不誤作床單，圖以薄防水墊呈現。",
+      "exampleReasons": [
+        "鋪墊子是直接可實作請求；省略日文地點仍與英文簡單請求一致。",
+        "草地濕所以先擦墊底再摺，三語保持濕草原因、底面與先後；不是只拉長簡單句。"
+      ]
+    },
+    {
+      "wordId": "tiered-lunch-box",
+      "wordReason": "重箱為上下堆疊食盒，與既有一般便當盒區分；じゅうばこ為正確連濁，不將用途限於賞櫻。",
+      "exampleReasons": [
+        "把飯糰裝入重箱是準備賞櫻餐食的具體動作，三語一致。",
+        "因重箱沉重而提議分開搬運各層，理由與提議三語對應，表現可拆疊構造並區別於裝食物句。"
+      ]
+    },
+    {
+      "wordId": "weeping-cherry-tree",
+      "wordReason": "しだれ桜指枝條下垂的櫻樹類型，定義未誤說只有單一品種或顏色；しだれざくら的濁音與字面完整相符。",
+      "exampleReasons": [
+        "在垂枝櫻下會合是清楚的日常地點用法；三語都保留樹下與碰面，單一事件適合A2。",
+        "枝低垂導致彎腰通過，三語保留低枝、彎腰與樹下路徑，原因複句與簡單會合句用途不同。"
+      ]
+    },
+    {
+      "wordId": "double-flowered-cherry",
+      "wordReason": "八重桜為重瓣櫻花總稱；英語double-flowered不解釋成恰好十瓣，定義容納多層花瓣與不同品種。",
+      "exampleReasons": [
+        "拍攝八重櫻照片是簡明真實用法，三語主體一致，照片與拍攝動詞分開可點。",
+        "其他櫻花已落而八重櫻仍開，對比限於當次觀察，未宣稱所有八重櫻必定晚開；三語保留讓步與仍然。"
+      ]
+    },
+    {
+      "wordId": "full-bloom",
+      "wordReason": "満開是開花狀態而非櫻花品種；英文full bloom以in full bloom入句，未把滿開誤定為每一朵百分之百都開。",
+      "exampleReasons": [
+        "桜が満開です直接表達眼前狀態，英語與繁中相同，兩個語言各有至少兩個詞塊。",
+        "看到櫻花滿開而更改行程，原因與結果三語一致，實際旅行決策使複句有新教學用途。"
+      ]
+    },
+    {
+      "wordId": "cherry-blossom-shower",
+      "wordReason": "花吹雪以空中飛舞落瓣為核心，與水面的花筏及一般掉落單片花瓣區分；英文shower在此為紛落而非下雨或淋浴。",
+      "exampleReasons": [
+        "走在櫻吹雪中是具體賞櫻經驗，三語同一動作，日文中／歩きました的讀音完整。",
+        "花瓣落在長椅上，先拂掉再坐，原因與先後關係三語保留；詞塊shower與brushed off皆依語境翻譯。"
+      ]
+    },
+    {
+      "wordId": "cherry-blossom-petal-raft",
+      "wordReason": "花筏在本系列限定水面落櫻聚集景象，不混入同名植物或真木筏；英文直接交代petals防止單獨raft的誤義。",
+      "exampleReasons": [
+        "觀賞水面花筏是自然賞櫻活動，水面、花筏與眺めました分開，沒有將整句變成單一可點詞塊。",
+        "風向改變後花筏漂走，三語相同事件與時間觸發，流れていきました完整讀音包含所有活用。"
+      ]
+    },
+    {
+      "wordId": "cherry-blossom-festival",
+      "wordReason": "桜まつり為活動名稱而非一般花見行為，定義以可能有攤位或活動表達差異，未宣稱每場一定有神輿或煙火。",
+      "exampleReasons": [
+        "在櫻花祭買點心可想像且日常，活動、點心與購買動詞三語一致。",
+        "活動擁擠而約在入口會合，因果與共同決定三語對應，混んでいた及待ち合わせることにしました讀音完整。"
+      ]
+    },
+    {
+      "wordId": "hanami-bento",
+      "wordReason": "花見弁当是賞櫻餐食，與前批重箱容器區分；定義不將某套食材強定為唯一標準。",
+      "exampleReasons": [
+        "在樹下吃賞櫻便當，三語保留地點與食用事件，適合作為A2單一生活用法。",
+        "朋友不能吃蝦而挑選無蝦便當，否定、人物與選擇原因三語一致；未擅加未提供的過敏診斷。"
+      ]
+    },
+    {
+      "wordId": "cherry-blossom-tea",
+      "wordReason": "桜湯為鹽漬花加熱水的飲品，英語常稱tea但明寫通常無茶葉；不混入櫻葉茶或粉紅拿鐵。",
+      "exampleReasons": [
+        "杯中花朵泡開是可觀察的飲用經驗，三語皆指一朵花在飲品中綻開。",
+        "太鹹後加熱水是合理日常調整，しょっぱすぎた與too salty一致；沒有把飲品描寫成必然甜茶。"
+      ]
+    },
+    {
+      "wordId": "salt-pickled-cherry-blossoms",
+      "wordReason": "桜の塩漬け在此明確指食用花，不與前批櫻餅所用鹽漬葉混同；讀音しおづけ保留連濁。",
+      "exampleReasons": [
+        "購買鹽漬櫻花是單一日常購物動作，兩語皆有完整主詞概念與動詞詞塊。",
+        "先泡水再加入米飯是符合鹽漬食材用法的料理情境，三語順序一致，未夾入未查證的具體配方比例。"
+      ]
+    },
+    {
+      "wordId": "cherry-blossom-rice",
+      "wordReason": "桜ご飯在此明定使用食用櫻花，避免與某些地方同名但不含櫻花的醬油飯混淆；圖像與例句皆限此義。",
+      "exampleReasons": [
+        "飯香很好是實際用餐感受，三語都描述香味，日文いい與香り為不同可點單位。",
+        "為了在電車上吃，把剩下櫻花飯做成飯糰，目的、剩飯與製作動作三語一致，對比簡單感受句有明確關係。"
+      ]
+    }
+  ]
+}

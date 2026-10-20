@@ -1,0 +1,3439 @@
+{
+  "en": {
+    "I took a photo of the cherry blossoms.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "took",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "photo",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "cherry blossoms",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Rain is forecast for tomorrow, so we went to see the cherry blossoms today.": [
+      {
+        "t": "Rain",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "forecast",
+        "z": "預報",
+        "j": "予報されている",
+        "e": "forecast"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "tomorrow",
+        "z": "明天",
+        "j": "明日",
+        "e": "tomorrow"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "went",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "see",
+        "z": "看",
+        "j": "見る",
+        "e": "see"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cherry blossoms",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "today",
+        "z": "今天",
+        "j": "今日",
+        "e": "today"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The flower buds are pink.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "flower buds",
+        "z": "花苞",
+        "j": "つぼみ",
+        "e": "flower buds"
+      },
+      {
+        "t": " are "
+      },
+      {
+        "t": "pink",
+        "z": "粉紅色",
+        "j": "ピンク",
+        "e": "pink"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The flower buds were still closed, so we decided to come back next week.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "flower buds",
+        "z": "花苞",
+        "j": "つぼみ",
+        "e": "flower buds"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "still",
+        "z": "還",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "closed",
+        "z": "未開的",
+        "j": "開いていない",
+        "e": "closed"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "decided",
+        "z": "決定了",
+        "j": "決めました",
+        "e": "decided"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "come back",
+        "z": "再來",
+        "j": "また来る",
+        "e": "come back"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "next week",
+        "z": "下週",
+        "j": "来週",
+        "e": "next week"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "A petal fell on my shoulder.": [
+      {
+        "t": "A "
+      },
+      {
+        "t": "petal",
+        "z": "花瓣",
+        "j": "花びら",
+        "e": "petal"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fell",
+        "z": "落下了",
+        "j": "落ちました",
+        "e": "fell"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "shoulder",
+        "z": "肩膀",
+        "j": "肩",
+        "e": "shoulder"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before taking a photo, I removed the petals from my hair.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "taking",
+        "z": "拍攝",
+        "j": "撮る",
+        "e": "taking"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "photo",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "removed",
+        "z": "拿掉了",
+        "j": "取りました",
+        "e": "removed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "petals",
+        "z": "花瓣",
+        "j": "花びら",
+        "e": "petals"
+      },
+      {
+        "t": " from my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Let's go cherry blossom viewing with our friends.": [
+      {
+        "t": "Let's "
+      },
+      {
+        "t": "go",
+        "z": "去",
+        "j": "行きましょう",
+        "e": "go"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cherry blossom viewing",
+        "z": "賞櫻",
+        "j": "花見",
+        "e": "cherry blossom viewing"
+      },
+      {
+        "t": " with our "
+      },
+      {
+        "t": "friends",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friends"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Food and drink were not allowed in the park, so we enjoyed cherry blossom viewing while walking.": [
+      {
+        "t": "Food",
+        "z": "食物",
+        "j": "食べ物",
+        "e": "food"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "drink",
+        "z": "飲料",
+        "j": "飲み物",
+        "e": "drink"
+      },
+      {
+        "t": " were not "
+      },
+      {
+        "t": "allowed",
+        "z": "允許的",
+        "j": "許可された",
+        "e": "allowed"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "park",
+        "z": "公園",
+        "j": "公園",
+        "e": "park"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "enjoyed",
+        "z": "享受了",
+        "j": "楽しみました",
+        "e": "enjoyed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cherry blossom viewing",
+        "z": "賞櫻",
+        "j": "花見",
+        "e": "cherry blossom viewing"
+      },
+      {
+        "t": " while "
+      },
+      {
+        "t": "walking",
+        "z": "走路",
+        "j": "歩く",
+        "e": "walking"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I took photos of the cherry blossoms at night.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "took",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "photos",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "cherry blossoms",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "night",
+        "z": "夜晚",
+        "j": "夜",
+        "e": "night"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The lights were due to go off at eight, so we left early to see the cherry blossoms at night.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "lights",
+        "z": "照明",
+        "j": "ライトアップ",
+        "e": "lights"
+      },
+      {
+        "t": " were due to "
+      },
+      {
+        "t": "go off",
+        "z": "熄滅",
+        "j": "消える",
+        "e": "go off"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "eight",
+        "z": "八點",
+        "j": "八時",
+        "e": "eight"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "left",
+        "z": "出發了",
+        "j": "出発しました",
+        "e": "left"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "see",
+        "z": "看",
+        "j": "見る",
+        "e": "see"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cherry blossoms",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "night",
+        "z": "夜晚",
+        "j": "夜",
+        "e": "night"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We walked along the cherry tree avenue.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "walked",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked"
+      },
+      {
+        "t": " along the "
+      },
+      {
+        "t": "cherry tree avenue",
+        "z": "櫻花林蔭道",
+        "j": "桜並木",
+        "e": "cherry tree avenue"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Although it was the longer way, we took the cherry tree avenue to the station.": [
+      {
+        "t": "Although it was the "
+      },
+      {
+        "t": "longer",
+        "z": "較遠的",
+        "j": "遠回りの",
+        "e": "longer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "way",
+        "z": "路線",
+        "j": "道",
+        "e": "way"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "took",
+        "z": "走了",
+        "j": "通りました",
+        "e": "took"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cherry tree avenue",
+        "z": "櫻花林蔭道",
+        "j": "桜並木",
+        "e": "cherry tree avenue"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "station",
+        "z": "車站",
+        "j": "駅",
+        "e": "station"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I ate sakura mochi with tea.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "ate",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sakura mochi",
+        "z": "櫻餅",
+        "j": "桜餅",
+        "e": "sakura mochi"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "tea",
+        "z": "茶",
+        "j": "お茶",
+        "e": "tea"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before eating my sakura mochi, I peeled off the leaf wrapped around it.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "eating",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eating"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "sakura mochi",
+        "z": "櫻餅",
+        "j": "桜餅",
+        "e": "sakura mochi"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "peeled off",
+        "z": "剝下了",
+        "j": "はがしました",
+        "e": "peeled off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "leaf",
+        "z": "葉子",
+        "j": "葉",
+        "e": "leaf"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wrapped",
+        "z": "包裹的",
+        "j": "巻いてある",
+        "e": "wrapped"
+      },
+      {
+        "t": " around it."
+      }
+    ],
+    "The hanami dango has three colors.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hanami dango",
+        "z": "花見糰子",
+        "j": "花見団子",
+        "e": "hanami dango"
+      },
+      {
+        "t": " has "
+      },
+      {
+        "t": "three",
+        "z": "三種",
+        "j": "三つ",
+        "e": "three"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "colors",
+        "z": "顏色",
+        "j": "色",
+        "e": "colors"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The shop was about to close, so I bought hanami dango first.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "shop",
+        "z": "店",
+        "j": "店",
+        "e": "shop"
+      },
+      {
+        "t": " was about to "
+      },
+      {
+        "t": "close",
+        "z": "關門",
+        "j": "閉まる",
+        "e": "close"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hanami dango",
+        "z": "花見糰子",
+        "j": "花見団子",
+        "e": "hanami dango"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "first",
+        "z": "先",
+        "j": "先に",
+        "e": "first"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please spread out the picnic sheet.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "spread out",
+        "z": "鋪開",
+        "j": "広げてください",
+        "e": "spread out"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "picnic sheet",
+        "z": "野餐墊",
+        "j": "レジャーシート",
+        "e": "picnic sheet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The grass was wet, so I wiped the bottom of the picnic sheet before folding it.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "grass",
+        "z": "草",
+        "j": "草",
+        "e": "grass"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "wet",
+        "z": "濕的",
+        "j": "ぬれている",
+        "e": "wet"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "wiped",
+        "z": "擦了",
+        "j": "拭きました",
+        "e": "wiped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bottom",
+        "z": "底面",
+        "j": "裏",
+        "e": "bottom"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "picnic sheet",
+        "z": "野餐墊",
+        "j": "レジャーシート",
+        "e": "picnic sheet"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "folding",
+        "z": "摺疊",
+        "j": "畳む",
+        "e": "folding"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "I packed rice balls in the tiered lunch box.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "packed",
+        "z": "裝了",
+        "j": "詰めました",
+        "e": "packed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rice balls",
+        "z": "飯糰",
+        "j": "おにぎり",
+        "e": "rice balls"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "tiered lunch box",
+        "z": "重箱便當盒",
+        "j": "重箱",
+        "e": "tiered lunch box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The tiered lunch box is heavy, so let's carry the tiers separately.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "tiered lunch box",
+        "z": "重箱便當盒",
+        "j": "重箱",
+        "e": "tiered lunch box"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "heavy",
+        "z": "重的",
+        "j": "重い",
+        "e": "heavy"
+      },
+      {
+        "t": ", so let's "
+      },
+      {
+        "t": "carry",
+        "z": "搬運",
+        "j": "運びましょう",
+        "e": "carry"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "tiers",
+        "z": "各層",
+        "j": "段",
+        "e": "tiers"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "separately",
+        "z": "分開地",
+        "j": "分けて",
+        "e": "separately"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We met under the weeping cherry tree.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "met",
+        "z": "碰面了",
+        "j": "会いました",
+        "e": "met"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "weeping cherry tree",
+        "z": "垂枝櫻",
+        "j": "しだれ桜",
+        "e": "weeping cherry tree"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The branches hung low, so we bent down to pass under the weeping cherry tree.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "branches",
+        "z": "枝條",
+        "j": "枝",
+        "e": "branches"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hung",
+        "z": "垂著",
+        "j": "垂れていた",
+        "e": "hung"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "low",
+        "z": "低低地",
+        "j": "低く",
+        "e": "low"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "bent down",
+        "z": "彎下腰",
+        "j": "かがみました",
+        "e": "bent down"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "pass",
+        "z": "通過",
+        "j": "通る",
+        "e": "pass"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "weeping cherry tree",
+        "z": "垂枝櫻",
+        "j": "しだれ桜",
+        "e": "weeping cherry tree"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I photographed the double-flowered cherry.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "photographed",
+        "z": "拍攝了",
+        "j": "写真を撮りました",
+        "e": "photographed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "double-flowered cherry",
+        "z": "八重櫻",
+        "j": "八重桜",
+        "e": "double-flowered cherry"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The double-flowered cherry was still blooming, although the other cherry trees had lost their flowers.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "double-flowered cherry",
+        "z": "八重櫻",
+        "j": "八重桜",
+        "e": "double-flowered cherry"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "still",
+        "z": "還",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "blooming",
+        "z": "開花",
+        "j": "咲いている",
+        "e": "blooming"
+      },
+      {
+        "t": ", although the "
+      },
+      {
+        "t": "other",
+        "z": "其他的",
+        "j": "ほかの",
+        "e": "other"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cherry trees",
+        "z": "櫻樹",
+        "j": "桜",
+        "e": "cherry trees"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "lost",
+        "z": "落掉了",
+        "j": "散らした",
+        "e": "lost"
+      },
+      {
+        "t": " their "
+      },
+      {
+        "t": "flowers",
+        "z": "花朵",
+        "j": "花",
+        "e": "flowers"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cherry trees are in full bloom.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cherry trees",
+        "z": "櫻樹",
+        "j": "桜",
+        "e": "cherry trees"
+      },
+      {
+        "t": " are in "
+      },
+      {
+        "t": "full bloom",
+        "z": "滿開",
+        "j": "満開",
+        "e": "full bloom"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We changed our plans because the cherry trees were in full bloom.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "changed",
+        "z": "更改了",
+        "j": "変更しました",
+        "e": "changed"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "plans",
+        "z": "行程",
+        "j": "予定",
+        "e": "plans"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "cherry trees",
+        "z": "櫻樹",
+        "j": "桜",
+        "e": "cherry trees"
+      },
+      {
+        "t": " were in "
+      },
+      {
+        "t": "full bloom",
+        "z": "滿開",
+        "j": "満開",
+        "e": "full bloom"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We walked through a cherry blossom shower.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "walked",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked"
+      },
+      {
+        "t": " through a "
+      },
+      {
+        "t": "cherry blossom shower",
+        "z": "櫻吹雪",
+        "j": "花吹雪",
+        "e": "cherry blossom shower"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "A cherry blossom shower covered the bench, so I brushed off the petals before sitting down.": [
+      {
+        "t": "A "
+      },
+      {
+        "t": "cherry blossom shower",
+        "z": "櫻吹雪",
+        "j": "花吹雪",
+        "e": "cherry blossom shower"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "covered",
+        "z": "覆蓋了",
+        "j": "覆いました",
+        "e": "covered"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bench",
+        "z": "長椅",
+        "j": "ベンチ",
+        "e": "bench"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "brushed off",
+        "z": "拂掉了",
+        "j": "払いました",
+        "e": "brushed off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "petals",
+        "z": "花瓣",
+        "j": "花びら",
+        "e": "petals"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "sitting down",
+        "z": "坐下",
+        "j": "座る",
+        "e": "sitting down"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We watched the raft of cherry blossom petals on the water.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "watched",
+        "z": "觀賞了",
+        "j": "眺めました",
+        "e": "watched"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "raft of cherry blossom petals",
+        "z": "花筏",
+        "j": "花筏",
+        "e": "raft of cherry blossom petals"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "water",
+        "z": "水面",
+        "j": "水面",
+        "e": "water"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The raft of cherry blossom petals drifted away when the wind changed direction.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "raft of cherry blossom petals",
+        "z": "花筏",
+        "j": "花筏",
+        "e": "raft of cherry blossom petals"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "drifted away",
+        "z": "漂走了",
+        "j": "流れていきました",
+        "e": "drifted away"
+      },
+      {
+        "t": " when the "
+      },
+      {
+        "t": "wind",
+        "z": "風",
+        "j": "風",
+        "e": "wind"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "changed",
+        "z": "改變了",
+        "j": "変わった",
+        "e": "changed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "direction",
+        "z": "方向",
+        "j": "向き",
+        "e": "direction"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We bought snacks at the cherry blossom festival.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "snacks",
+        "z": "點心",
+        "j": "おやつ",
+        "e": "snacks"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "cherry blossom festival",
+        "z": "櫻花祭",
+        "j": "桜まつり",
+        "e": "cherry blossom festival"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cherry blossom festival was crowded, so we agreed to meet at the entrance.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cherry blossom festival",
+        "z": "櫻花祭",
+        "j": "桜まつり",
+        "e": "cherry blossom festival"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠的",
+        "j": "混んでいた",
+        "e": "crowded"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "agreed",
+        "z": "約好了",
+        "j": "決めました",
+        "e": "agreed"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "meet",
+        "z": "碰面",
+        "j": "待ち合わせる",
+        "e": "meet"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We ate our hanami bento under a tree.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "ate",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "hanami bento",
+        "z": "賞櫻便當",
+        "j": "花見弁当",
+        "e": "hanami bento"
+      },
+      {
+        "t": " under a "
+      },
+      {
+        "t": "tree",
+        "z": "樹",
+        "j": "木",
+        "e": "tree"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I chose a hanami bento without shrimp because my friend cannot eat shrimp.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "hanami bento",
+        "z": "賞櫻便當",
+        "j": "花見弁当",
+        "e": "hanami bento"
+      },
+      {
+        "t": " without "
+      },
+      {
+        "t": "shrimp",
+        "z": "蝦",
+        "j": "エビ",
+        "e": "shrimp"
+      },
+      {
+        "t": " because my "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " cannot "
+      },
+      {
+        "t": "eat",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shrimp",
+        "z": "蝦",
+        "j": "エビ",
+        "e": "shrimp"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "A blossom opened in my cherry blossom tea.": [
+      {
+        "t": "A "
+      },
+      {
+        "t": "blossom",
+        "z": "花朵",
+        "j": "花",
+        "e": "blossom"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "opened",
+        "z": "綻開了",
+        "j": "開きました",
+        "e": "opened"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "cherry blossom tea",
+        "z": "櫻花茶",
+        "j": "桜湯",
+        "e": "cherry blossom tea"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cherry blossom tea was too salty, so I added more hot water.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cherry blossom tea",
+        "z": "櫻花茶",
+        "j": "桜湯",
+        "e": "cherry blossom tea"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too",
+        "z": "太",
+        "j": "すぎる",
+        "e": "too"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "salty",
+        "z": "鹹的",
+        "j": "しょっぱい",
+        "e": "salty"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "added",
+        "z": "加了",
+        "j": "足しました",
+        "e": "added"
+      },
+      {
+        "t": " more "
+      },
+      {
+        "t": "hot water",
+        "z": "熱水",
+        "j": "お湯",
+        "e": "hot water"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought salt-pickled cherry blossoms.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "salt-pickled cherry blossoms",
+        "z": "鹽漬櫻花",
+        "j": "桜の塩漬け",
+        "e": "salt-pickled cherry blossoms"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I soaked the salt-pickled cherry blossoms in water before adding them to the rice.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "soaked",
+        "z": "浸泡了",
+        "j": "浸しました",
+        "e": "soaked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "salt-pickled cherry blossoms",
+        "z": "鹽漬櫻花",
+        "j": "桜の塩漬け",
+        "e": "salt-pickled cherry blossoms"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "adding",
+        "z": "加入",
+        "j": "加える",
+        "e": "adding"
+      },
+      {
+        "t": " them to the "
+      },
+      {
+        "t": "rice",
+        "z": "米飯",
+        "j": "ご飯",
+        "e": "rice"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cherry blossom rice smells lovely.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cherry blossom rice",
+        "z": "櫻花飯",
+        "j": "桜ご飯",
+        "e": "cherry blossom rice"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "smells",
+        "z": "聞起來",
+        "j": "香りがする",
+        "e": "smells"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lovely",
+        "z": "很香的",
+        "j": "いい香りの",
+        "e": "lovely"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I made rice balls with the leftover cherry blossom rice so we could eat them on the train.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "made",
+        "z": "做了",
+        "j": "作りました",
+        "e": "made"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rice balls",
+        "z": "飯糰",
+        "j": "おにぎり",
+        "e": "rice balls"
+      },
+      {
+        "t": " with the "
+      },
+      {
+        "t": "leftover",
+        "z": "剩下的",
+        "j": "残った",
+        "e": "leftover"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cherry blossom rice",
+        "z": "櫻花飯",
+        "j": "桜ご飯",
+        "e": "cherry blossom rice"
+      },
+      {
+        "t": " so we could "
+      },
+      {
+        "t": "eat",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat"
+      },
+      {
+        "t": " them on the "
+      },
+      {
+        "t": "train",
+        "z": "電車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "桜の写真を撮りました。": [
+      {
+        "t": "桜",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms",
+        "r": "さくら"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮りました",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "明日は雨の予報なので、今日、桜を見に行きました。": [
+      {
+        "t": "明日",
+        "z": "明天",
+        "j": "明日",
+        "e": "tomorrow",
+        "r": "あした"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "予報",
+        "z": "預報",
+        "j": "予報",
+        "e": "forecast",
+        "r": "よほう"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "今日",
+        "z": "今天",
+        "j": "今日",
+        "e": "today",
+        "r": "きょう"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "桜",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms",
+        "r": "さくら"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見",
+        "z": "看",
+        "j": "見る",
+        "e": "see",
+        "r": "み"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "行きました",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went",
+        "r": "いきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "つぼみはピンクです。": [
+      {
+        "t": "つぼみ",
+        "z": "花苞",
+        "j": "つぼみ",
+        "e": "flower buds",
+        "r": "つぼみ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ピンク",
+        "z": "粉紅色",
+        "j": "ピンク",
+        "e": "pink",
+        "r": "ぴんく"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "つぼみがまだ開いていなかったので、来週また来ることにしました。": [
+      {
+        "t": "つぼみ",
+        "z": "花苞",
+        "j": "つぼみ",
+        "e": "flower buds",
+        "r": "つぼみ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "still",
+        "r": "まだ"
+      },
+      {
+        "t": "開いていなかった",
+        "z": "還沒開",
+        "j": "開いていなかった",
+        "e": "had not opened",
+        "r": "ひらいていなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "来週",
+        "z": "下週",
+        "j": "来週",
+        "e": "next week",
+        "r": "らいしゅう"
+      },
+      {
+        "t": "また",
+        "z": "再",
+        "j": "また",
+        "e": "again",
+        "r": "また"
+      },
+      {
+        "t": "来ることにしました",
+        "z": "決定要來",
+        "j": "来ることにしました",
+        "e": "decided to come",
+        "r": "くることにしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "肩に花びらが落ちました。": [
+      {
+        "t": "肩",
+        "z": "肩膀",
+        "j": "肩",
+        "e": "shoulder",
+        "r": "かた"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "花びら",
+        "z": "花瓣",
+        "j": "花びら",
+        "e": "petal",
+        "r": "はなびら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "落ちました",
+        "z": "落下了",
+        "j": "落ちました",
+        "e": "fell",
+        "r": "おちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "写真を撮る前に、髪についた花びらを取りました。": [
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮る",
+        "z": "拍攝",
+        "j": "撮る",
+        "e": "take",
+        "r": "とる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "髪",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair",
+        "r": "かみ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ついた",
+        "z": "黏上的",
+        "j": "ついた",
+        "e": "stuck",
+        "r": "ついた"
+      },
+      {
+        "t": "花びら",
+        "z": "花瓣",
+        "j": "花びら",
+        "e": "petals",
+        "r": "はなびら"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取りました",
+        "z": "拿掉了",
+        "j": "取りました",
+        "e": "removed",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達と花見に行きましょう。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friends",
+        "r": "ともだち"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "花見",
+        "z": "賞櫻",
+        "j": "花見",
+        "e": "cherry blossom viewing",
+        "r": "はなみ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "行きましょう",
+        "z": "一起去吧",
+        "j": "行きましょう",
+        "e": "let's go",
+        "r": "いきましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "公園では飲食が禁止されていたので、歩きながら花見を楽しみました。": [
+      {
+        "t": "公園",
+        "z": "公園",
+        "j": "公園",
+        "e": "park",
+        "r": "こうえん"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "飲食",
+        "z": "飲食",
+        "j": "飲食",
+        "e": "eating and drinking",
+        "r": "いんしょく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "禁止されていた",
+        "z": "當時被禁止",
+        "j": "禁止されていた",
+        "e": "was prohibited",
+        "r": "きんしされていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "歩きながら",
+        "z": "邊走路",
+        "j": "歩きながら",
+        "e": "while walking",
+        "r": "あるきながら"
+      },
+      {
+        "t": "花見",
+        "z": "賞櫻",
+        "j": "花見",
+        "e": "cherry blossom viewing",
+        "r": "はなみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "楽しみました",
+        "z": "享受了",
+        "j": "楽しみました",
+        "e": "enjoyed",
+        "r": "たのしみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "夜桜の写真を撮りました。": [
+      {
+        "t": "夜桜",
+        "z": "夜櫻",
+        "j": "夜桜",
+        "e": "cherry blossoms at night",
+        "r": "よざくら"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮りました",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ライトアップが八時に終わる予定だったので、夜桜を見るために早めに出発しました。": [
+      {
+        "t": "ライトアップ",
+        "z": "照明",
+        "j": "ライトアップ",
+        "e": "illumination",
+        "r": "らいとあっぷ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "八時",
+        "z": "八點",
+        "j": "八時",
+        "e": "eight o'clock",
+        "r": "はちじ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "終わる予定だった",
+        "z": "原定要結束",
+        "j": "終わる予定だった",
+        "e": "was due to end",
+        "r": "おわるよていだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "夜桜",
+        "z": "夜櫻",
+        "j": "夜桜",
+        "e": "cherry blossoms at night",
+        "r": "よざくら"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見る",
+        "z": "看",
+        "j": "見る",
+        "e": "see",
+        "r": "みる"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "早めに",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early",
+        "r": "はやめに"
+      },
+      {
+        "t": "出発しました",
+        "z": "出發了",
+        "j": "出発しました",
+        "e": "left",
+        "r": "しゅっぱつしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜並木を歩きました。": [
+      {
+        "t": "桜並木",
+        "z": "櫻花林蔭道",
+        "j": "桜並木",
+        "e": "cherry tree avenue",
+        "r": "さくらなみき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "歩きました",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked",
+        "r": "あるきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "遠回りでしたが、桜並木を通って駅まで行きました。": [
+      {
+        "t": "遠回りでした",
+        "z": "繞遠路",
+        "j": "遠回りでした",
+        "e": "was the longer way",
+        "r": "とおまわりでした"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "桜並木",
+        "z": "櫻花林蔭道",
+        "j": "桜並木",
+        "e": "cherry tree avenue",
+        "r": "さくらなみき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "通って",
+        "z": "經過",
+        "j": "通って",
+        "e": "via",
+        "r": "とおって"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "行きました",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went",
+        "r": "いきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お茶と一緒に桜餅を食べました。": [
+      {
+        "t": "お茶",
+        "z": "茶",
+        "j": "お茶",
+        "e": "tea",
+        "r": "おちゃ"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together",
+        "r": "いっしょに"
+      },
+      {
+        "t": "桜餅",
+        "z": "櫻餅",
+        "j": "桜餅",
+        "e": "sakura mochi",
+        "r": "さくらもち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜餅を食べる前に、周りに巻いてある葉をはがしました。": [
+      {
+        "t": "桜餅",
+        "z": "櫻餅",
+        "j": "桜餅",
+        "e": "sakura mochi",
+        "r": "さくらもち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べる",
+        "z": "吃",
+        "j": "食べる",
+        "e": "eat",
+        "r": "たべる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "周り",
+        "z": "周圍",
+        "j": "周り",
+        "e": "outside",
+        "r": "まわり"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "巻いてある",
+        "z": "包著的",
+        "j": "巻いてある",
+        "e": "wrapped",
+        "r": "まいてある"
+      },
+      {
+        "t": "葉",
+        "z": "葉子",
+        "j": "葉",
+        "e": "leaf",
+        "r": "は"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "はがしました",
+        "z": "剝下了",
+        "j": "はがしました",
+        "e": "peeled off",
+        "r": "はがしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花見団子には三つの色があります。": [
+      {
+        "t": "花見団子",
+        "z": "花見糰子",
+        "j": "花見団子",
+        "e": "hanami dango",
+        "r": "はなみだんご"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "三つ",
+        "z": "三種",
+        "j": "三つ",
+        "e": "three",
+        "r": "みっつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "色",
+        "z": "顏色",
+        "j": "色",
+        "e": "colors",
+        "r": "いろ"
+      },
+      {
+        "t": "があります。"
+      }
+    ],
+    "店がもうすぐ閉まるので、先に花見団子を買いました。": [
+      {
+        "t": "店",
+        "z": "店",
+        "j": "店",
+        "e": "shop",
+        "r": "みせ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "もうすぐ",
+        "z": "快要",
+        "j": "もうすぐ",
+        "e": "soon",
+        "r": "もうすぐ"
+      },
+      {
+        "t": "閉まる",
+        "z": "關門",
+        "j": "閉まる",
+        "e": "close",
+        "r": "しまる"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "先に",
+        "z": "先",
+        "j": "先に",
+        "e": "first",
+        "r": "さきに"
+      },
+      {
+        "t": "花見団子",
+        "z": "花見糰子",
+        "j": "花見団子",
+        "e": "hanami dango",
+        "r": "はなみだんご"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "レジャーシートを広げてください。": [
+      {
+        "t": "レジャーシート",
+        "z": "野餐墊",
+        "j": "レジャーシート",
+        "e": "picnic sheet",
+        "r": "れじゃーしーと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "広げてください",
+        "z": "請鋪開",
+        "j": "広げてください",
+        "e": "please spread out",
+        "r": "ひろげてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "草がぬれていたので、レジャーシートの裏を拭いてから畳みました。": [
+      {
+        "t": "草",
+        "z": "草",
+        "j": "草",
+        "e": "grass",
+        "r": "くさ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ぬれていた",
+        "z": "當時是濕的",
+        "j": "ぬれていた",
+        "e": "was wet",
+        "r": "ぬれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "レジャーシート",
+        "z": "野餐墊",
+        "j": "レジャーシート",
+        "e": "picnic sheet",
+        "r": "れじゃーしーと"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "裏",
+        "z": "底面",
+        "j": "裏",
+        "e": "underside",
+        "r": "うら"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "拭いて",
+        "z": "擦拭",
+        "j": "拭いて",
+        "e": "wiped",
+        "r": "ふいて"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "畳みました",
+        "z": "摺起來了",
+        "j": "畳みました",
+        "e": "folded",
+        "r": "たたみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "重箱におにぎりを詰めました。": [
+      {
+        "t": "重箱",
+        "z": "重箱便當盒",
+        "j": "重箱",
+        "e": "tiered lunch box",
+        "r": "じゅうばこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "おにぎり",
+        "z": "飯糰",
+        "j": "おにぎり",
+        "e": "rice balls",
+        "r": "おにぎり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "詰めました",
+        "z": "裝進了",
+        "j": "詰めました",
+        "e": "packed",
+        "r": "つめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "重箱が重いので、段を分けて運びましょう。": [
+      {
+        "t": "重箱",
+        "z": "重箱便當盒",
+        "j": "重箱",
+        "e": "tiered lunch box",
+        "r": "じゅうばこ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "重い",
+        "z": "很重",
+        "j": "重い",
+        "e": "heavy",
+        "r": "おもい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "段",
+        "z": "各層",
+        "j": "段",
+        "e": "tiers",
+        "r": "だん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "分けて",
+        "z": "分開",
+        "j": "分けて",
+        "e": "separately",
+        "r": "わけて"
+      },
+      {
+        "t": "運びましょう",
+        "z": "一起搬吧",
+        "j": "運びましょう",
+        "e": "let's carry",
+        "r": "はこびましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "しだれ桜の下で会いました。": [
+      {
+        "t": "しだれ桜",
+        "z": "垂枝櫻",
+        "j": "しだれ桜",
+        "e": "weeping cherry tree",
+        "r": "しだれざくら"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下方",
+        "j": "下",
+        "e": "underneath",
+        "r": "した"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "会いました",
+        "z": "碰面了",
+        "j": "会いました",
+        "e": "met",
+        "r": "あいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "枝が低く垂れていたので、かがんでしだれ桜の下を通りました。": [
+      {
+        "t": "枝",
+        "z": "枝條",
+        "j": "枝",
+        "e": "branches",
+        "r": "えだ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "低く",
+        "z": "低低地",
+        "j": "低く",
+        "e": "low",
+        "r": "ひくく"
+      },
+      {
+        "t": "垂れていた",
+        "z": "垂著",
+        "j": "垂れていた",
+        "e": "were hanging",
+        "r": "たれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "かがんで",
+        "z": "彎下腰",
+        "j": "かがんで",
+        "e": "bending down",
+        "r": "かがんで"
+      },
+      {
+        "t": "しだれ桜",
+        "z": "垂枝櫻",
+        "j": "しだれ桜",
+        "e": "weeping cherry tree",
+        "r": "しだれざくら"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下方",
+        "j": "下",
+        "e": "underneath",
+        "r": "した"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "通りました",
+        "z": "通過了",
+        "j": "通りました",
+        "e": "passed",
+        "r": "とおりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "八重桜の写真を撮りました。": [
+      {
+        "t": "八重桜",
+        "z": "八重櫻",
+        "j": "八重桜",
+        "e": "double-flowered cherry",
+        "r": "やえざくら"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮りました",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ほかの桜は散っていましたが、八重桜はまだ咲いていました。": [
+      {
+        "t": "ほか",
+        "z": "其他",
+        "j": "ほか",
+        "e": "others",
+        "r": "ほか"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "桜",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms",
+        "r": "さくら"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "散っていました",
+        "z": "已凋落了",
+        "j": "散っていました",
+        "e": "had fallen",
+        "r": "ちっていました"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "八重桜",
+        "z": "八重櫻",
+        "j": "八重桜",
+        "e": "double-flowered cherry",
+        "r": "やえざくら"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "still",
+        "r": "まだ"
+      },
+      {
+        "t": "咲いていました",
+        "z": "還在開花",
+        "j": "咲いていました",
+        "e": "was blooming",
+        "r": "さいていました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜が満開です。": [
+      {
+        "t": "桜",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms",
+        "r": "さくら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "満開",
+        "z": "滿開",
+        "j": "満開",
+        "e": "full bloom",
+        "r": "まんかい"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "桜が満開だったので、予定を変更しました。": [
+      {
+        "t": "桜",
+        "z": "櫻花",
+        "j": "桜",
+        "e": "cherry blossoms",
+        "r": "さくら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "満開",
+        "z": "滿開",
+        "j": "満開",
+        "e": "full bloom",
+        "r": "まんかい"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "予定",
+        "z": "行程",
+        "j": "予定",
+        "e": "plans",
+        "r": "よてい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "変更しました",
+        "z": "更改了",
+        "j": "変更しました",
+        "e": "changed",
+        "r": "へんこうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花吹雪の中を歩きました。": [
+      {
+        "t": "花吹雪",
+        "z": "櫻吹雪",
+        "j": "花吹雪",
+        "e": "cherry blossom shower",
+        "r": "はなふぶき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "z": "之中",
+        "j": "中",
+        "e": "amid",
+        "r": "なか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "歩きました",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked",
+        "r": "あるきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "花吹雪でベンチに花びらが積もったので、座る前に払いました。": [
+      {
+        "t": "花吹雪",
+        "z": "櫻吹雪",
+        "j": "花吹雪",
+        "e": "cherry blossom shower",
+        "r": "はなふぶき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ベンチ",
+        "z": "長椅",
+        "j": "ベンチ",
+        "e": "bench",
+        "r": "べんち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "花びら",
+        "z": "花瓣",
+        "j": "花びら",
+        "e": "petals",
+        "r": "はなびら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "積もった",
+        "z": "堆積了",
+        "j": "積もった",
+        "e": "piled up",
+        "r": "つもった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "座る",
+        "z": "坐下",
+        "j": "座る",
+        "e": "sit down",
+        "r": "すわる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "払いました",
+        "z": "拂掉了",
+        "j": "払いました",
+        "e": "brushed off",
+        "r": "はらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水面の花筏を眺めました。": [
+      {
+        "t": "水面",
+        "z": "水面",
+        "j": "水面",
+        "e": "water surface",
+        "r": "すいめん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "花筏",
+        "z": "花筏",
+        "j": "花筏",
+        "e": "raft of cherry blossom petals",
+        "r": "はないかだ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "眺めました",
+        "z": "觀賞了",
+        "j": "眺めました",
+        "e": "watched",
+        "r": "ながめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "風向きが変わると、花筏が流れていきました。": [
+      {
+        "t": "風向き",
+        "z": "風向",
+        "j": "風向き",
+        "e": "wind direction",
+        "r": "かざむき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "変わる",
+        "z": "改變",
+        "j": "変わる",
+        "e": "change",
+        "r": "かわる"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "花筏",
+        "z": "花筏",
+        "j": "花筏",
+        "e": "raft of cherry blossom petals",
+        "r": "はないかだ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "流れていきました",
+        "z": "漂走了",
+        "j": "流れていきました",
+        "e": "drifted away",
+        "r": "ながれていきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜まつりでおやつを買いました。": [
+      {
+        "t": "桜まつり",
+        "z": "櫻花祭",
+        "j": "桜まつり",
+        "e": "cherry blossom festival",
+        "r": "さくらまつり"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "おやつ",
+        "z": "點心",
+        "j": "おやつ",
+        "e": "snacks",
+        "r": "おやつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜まつりが混んでいたので、入口で待ち合わせることにしました。": [
+      {
+        "t": "桜まつり",
+        "z": "櫻花祭",
+        "j": "桜まつり",
+        "e": "cherry blossom festival",
+        "r": "さくらまつり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "人很多",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "入口",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance",
+        "r": "いりぐち"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ち合わせることにしました",
+        "z": "約好要碰面",
+        "j": "待ち合わせることにしました",
+        "e": "agreed to meet",
+        "r": "まちあわせることにしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "木の下で花見弁当を食べました。": [
+      {
+        "t": "木",
+        "z": "樹",
+        "j": "木",
+        "e": "tree",
+        "r": "き"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "z": "下方",
+        "j": "下",
+        "e": "underneath",
+        "r": "した"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "花見弁当",
+        "z": "賞櫻便當",
+        "j": "花見弁当",
+        "e": "hanami bento",
+        "r": "はなみべんとう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達はエビが食べられないので、エビの入っていない花見弁当を選びました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "エビ",
+        "z": "蝦",
+        "j": "エビ",
+        "e": "shrimp",
+        "r": "えび"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "食べられない",
+        "z": "不能吃",
+        "j": "食べられない",
+        "e": "cannot eat",
+        "r": "たべられない"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "エビ",
+        "z": "蝦",
+        "j": "エビ",
+        "e": "shrimp",
+        "r": "えび"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "入っていない",
+        "z": "不含",
+        "j": "入っていない",
+        "e": "not containing",
+        "r": "はいっていない"
+      },
+      {
+        "t": "花見弁当",
+        "z": "賞櫻便當",
+        "j": "花見弁当",
+        "e": "hanami bento",
+        "r": "はなみべんとう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜湯の中で花が開きました。": [
+      {
+        "t": "桜湯",
+        "z": "櫻花茶",
+        "j": "桜湯",
+        "e": "cherry blossom tea",
+        "r": "さくらゆ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside",
+        "r": "なか"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "花",
+        "z": "花朵",
+        "j": "花",
+        "e": "blossom",
+        "r": "はな"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "開きました",
+        "z": "綻開了",
+        "j": "開きました",
+        "e": "opened",
+        "r": "ひらきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜湯がしょっぱすぎたので、お湯を足しました。": [
+      {
+        "t": "桜湯",
+        "z": "櫻花茶",
+        "j": "桜湯",
+        "e": "cherry blossom tea",
+        "r": "さくらゆ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "しょっぱすぎた",
+        "z": "太鹹了",
+        "j": "しょっぱすぎた",
+        "e": "was too salty",
+        "r": "しょっぱすぎた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "お湯",
+        "z": "熱水",
+        "j": "お湯",
+        "e": "hot water",
+        "r": "おゆ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "足しました",
+        "z": "又加了",
+        "j": "足しました",
+        "e": "added more",
+        "r": "たしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜の塩漬けを買いました。": [
+      {
+        "t": "桜の塩漬け",
+        "z": "鹽漬櫻花",
+        "j": "桜の塩漬け",
+        "e": "salt-pickled cherry blossoms",
+        "r": "さくらのしおづけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜の塩漬けを水に浸してから、ご飯に加えました。": [
+      {
+        "t": "桜の塩漬け",
+        "z": "鹽漬櫻花",
+        "j": "桜の塩漬け",
+        "e": "salt-pickled cherry blossoms",
+        "r": "さくらのしおづけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "水",
+        "z": "水",
+        "j": "水",
+        "e": "water",
+        "r": "みず"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "浸して",
+        "z": "浸泡",
+        "j": "浸して",
+        "e": "soaked",
+        "r": "ひたして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "ご飯",
+        "z": "米飯",
+        "j": "ご飯",
+        "e": "rice",
+        "r": "ごはん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "加えました",
+        "z": "加入了",
+        "j": "加えました",
+        "e": "added",
+        "r": "くわえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "桜ご飯はいい香りがします。": [
+      {
+        "t": "桜ご飯",
+        "z": "櫻花飯",
+        "j": "桜ご飯",
+        "e": "cherry blossom rice",
+        "r": "さくらごはん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "いい",
+        "z": "好的",
+        "j": "いい",
+        "e": "pleasant",
+        "r": "いい"
+      },
+      {
+        "t": "香り",
+        "z": "香氣",
+        "j": "香り",
+        "e": "aroma",
+        "r": "かおり"
+      },
+      {
+        "t": "がします。"
+      }
+    ],
+    "電車で食べられるように、残った桜ご飯でおにぎりを作りました。": [
+      {
+        "t": "電車",
+        "z": "電車",
+        "j": "電車",
+        "e": "train",
+        "r": "でんしゃ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "食べられる",
+        "z": "能吃",
+        "j": "食べられる",
+        "e": "can eat",
+        "r": "たべられる"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "残った",
+        "z": "剩下的",
+        "j": "残った",
+        "e": "leftover",
+        "r": "のこった"
+      },
+      {
+        "t": "桜ご飯",
+        "z": "櫻花飯",
+        "j": "桜ご飯",
+        "e": "cherry blossom rice",
+        "r": "さくらごはん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "おにぎり",
+        "z": "飯糰",
+        "j": "おにぎり",
+        "e": "rice balls",
+        "r": "おにぎり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作りました",
+        "z": "做了",
+        "j": "作りました",
+        "e": "made",
+        "r": "つくりました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

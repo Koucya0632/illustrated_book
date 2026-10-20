@@ -1,3 +1,4 @@
+import cherryBlossomSeasonCandidate from "../data/cherry-blossom-season-series-2026-10.json";
 import festivalsCandidate from "../data/festivals-series-2026-10.json";
 import type { Category } from "@/types";
 
@@ -269,6 +270,7 @@ export const categories: Category[] = [
     imageUrl: "https://img.nexflow.team/word-images/station-commuting-2026-10/category-station-commuting-v1-cf0c0f64b246.webp",
   },
   festivalsCandidate.category,
+  cherryBlossomSeasonCandidate.category,
 ];
 
 // This list is used only when the database is unavailable. A fallback cannot
@@ -284,7 +286,8 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "restaurant" &&
     category.id !== "concert-fan-support" &&
     category.id !== "station-commuting" &&
-    category.id !== "festivals",
+    category.id !== "festivals" &&
+    category.id !== "cherry-blossom-season",
 );
 
 export const getCategory = (id: string): Category | undefined =>

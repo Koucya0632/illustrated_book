@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "series": "cherry-blossom-season",
+  "reviewer": "Codex, individual editorial review",
+  "scope": "Every candidate headword, both examples, and all English/Japanese lexical spans; individual reasons in authored editorial notes.",
+  "references": [
+    "https://www.japan.travel/en/sg/story/time-japans-favourite-spring-activity-hanami-manners-and-what-br/",
+    "https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_26_osaka.html",
+    "https://www.japan.travel/en/sg/guide/sakura-flavoured-sweets-spring/",
+    "https://www.japan.travel/en/sg/story/japan-cherry-blossom-season-types/",
+    "https://www.hirosakipark.jp/sakura/hanami/highlights/enjoy04/",
+    "https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/sakura_no_hana_zuke.html",
+    "https://fujinokuni.shokunomiyako-shizuoka.pref.shizuoka.jp/culture/article/1845",
+    "https://www.data.jma.go.jp/cpd/j_climate/kinki/main.html"
+  ],
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom",
+      "verdict": "pass",
+      "reason": "桜對應櫻樹花朵；英文 cherry blossom 與既有水果 cherry／さくらんぼ 明確分開。讀音さくら完整。",
+      "sourceSha256": "dda6c6f56fca97e871552b35e3859a3e7515f89c4fb9d6859ad185cec71e7816"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以拍照呈現實際賞花動作；三語皆是拍攝櫻花，A2 的單一動作清楚。",
+      "sourceSha256": "70b3faae4ef5fd5678ca9e391f1795fced435678e84ab0ebe1e9a933432183bb"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "預報降雨促使今天去看櫻花，ので與 today／tomorrow 的時間與原因三語一致；與拍照句用途不同。",
+      "sourceSha256": "602f4e6a9ee557b02dc8de5bda2d9984a2ece825be56be82360771e8a554fc9f"
+    },
+    {
+      "kind": "word",
+      "wordId": "flower-bud",
+      "verdict": "pass",
+      "reason": "つぼみ是未開的花，圖像指定櫻花花苞而不把一般詞義限制為櫻花；純假名讀音一致。",
+      "sourceSha256": "b1ab6e97422acb11b0ca5b8998a2d2c784b0ddd8a5de4786eb65a004642927c4"
+    },
+    {
+      "kind": "example",
+      "wordId": "flower-bud",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "近看花苞顏色是可想像的觀察情境；pink／ピンク／粉紅三語一致。",
+      "sourceSha256": "1f5672c4747c3e1d613456761cfc5cd58e8efedee0244bc319ea44da576665ab"
+    },
+    {
+      "kind": "example",
+      "wordId": "flower-bud",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "花苞仍閉合使人延後到下週再來，まだ／ので／来週包含時間與原因，與顏色觀察形成難度差。",
+      "sourceSha256": "93c370fd716dd4bf6bab2cc6b59e272daf63871eb242b3aeed14c5e457ff837b"
+    },
+    {
+      "kind": "word",
+      "wordId": "petal",
+      "verdict": "pass",
+      "reason": "花びら是花朵的單片而非整朵；櫻花花瓣末端凹口作辨識特徵，讀音はなびら正確。",
+      "sourceSha256": "f562d369c8dec58f36c1550b211e7366c9d4ba2fe9e6cd5ef0bd6745e7037c8b"
+    },
+    {
+      "kind": "example",
+      "wordId": "petal",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "花瓣掉在肩上是賞櫻時自然遇到的單一事件；沒有把花瓣當整朵花。",
+      "sourceSha256": "4c69142acd834b5f49412dd7c3b34268ebf5201eaaa9029d04893099adee8c12"
+    },
+    {
+      "kind": "example",
+      "wordId": "petal",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "拍照前取走頭髮上的花瓣，三語保留先後、頭髮與拍照；複句增加時間關係。",
+      "sourceSha256": "bb5817522ffc5146ad857f2681328a672634364150a0d3abaab31682d35ed6f6"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom-viewing",
+      "verdict": "pass",
+      "reason": "花見在本系列用於賞櫻；定義容納散步與野餐，不誤說一定喝酒或聚餐。",
+      "sourceSha256": "bad94a0fb385141c88103d435389fe67c21302d7ffa2b928141202763d4a2753"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-viewing",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "邀朋友去賞櫻是簡短可用的邀約，三語人物與活動相同。",
+      "sourceSha256": "6dd7e32221eda91d84e599c417e7266e36ca153c9b8870fc5b21c2b055f5ae0a"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-viewing",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因公園禁止飲食而邊走邊賞櫻，原因與ながら的同時活動明確；沒有鼓勵違反公園規則。",
+      "sourceSha256": "d75e664ed4509a92b71e0ec483f12185bc446bd47ad9007f2d1b7414202f6bb1"
+    },
+    {
+      "kind": "word",
+      "wordId": "night-cherry-blossoms",
+      "verdict": "pass",
+      "reason": "夜桜表示夜間櫻花而非花種，英文完整加 at night，よざくら涵蓋連濁。",
+      "sourceSha256": "964a2dc84ff9460e88b22d0b2430b652e7959b01c4331c71a2ce75f75b9505a8"
+    },
+    {
+      "kind": "example",
+      "wordId": "night-cherry-blossoms",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "晚間拍夜櫻直接使用概念，英文 at night 與夜桜等義。",
+      "sourceSha256": "09b593e1ea2371f37ee04ad7190e150338aa6f5eecdc867641fa379dc2d42f27"
+    },
+    {
+      "kind": "example",
+      "wordId": "night-cherry-blossoms",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因照明八點結束而提早出發，三語保留八點、結束與提早的因果；無虛構特定景點時刻。",
+      "sourceSha256": "f3c3d45b27bf7cd899db2d1d3647a9ef93d65994b926616593c4c5747339fb57"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-tree-avenue",
+      "verdict": "pass",
+      "reason": "桜並木的核心是沿路成排櫻樹，英文 avenue 不限定車道；與單棵櫻樹和公園區分。",
+      "sourceSha256": "7d905fb65a8a89af498c263cf3dee101ee5008716e0e76dc25c5bf2b986a8672"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-tree-avenue",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "沿櫻花林蔭道散步具體呈現空間用法，三語都是步行而非搭車。",
+      "sourceSha256": "5b923471196314b07804cc73f2fed2a51333621cfbaf17f15c298cbb825e2614"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-tree-avenue",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "較遠仍選擇走櫻花林蔭道到車站，遠回り／longer way／繞遠路與讓步一致。",
+      "sourceSha256": "7c3588798a0dfe9c63df57edc75c39e98706749e29de2183e6ee37da259fbe33"
+    },
+    {
+      "kind": "word",
+      "wordId": "sakura-mochi",
+      "verdict": "pass",
+      "reason": "依農林水產省區分薄皮長命寺與粒狀道明寺，定義不把所有桜餅都寫成糯米球；圖指定道明寺。",
+      "sourceSha256": "ba3c8e2bec1a7caa7cd2a30c845d7a0439d9934026a68ff9e69dc9f2a14947b5"
+    },
+    {
+      "kind": "example",
+      "wordId": "sakura-mochi",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "茶配櫻餅是常見食用場景，英文 tea 不擅加綠茶種類，三語一致。",
+      "sourceSha256": "ea662ebaa1ef9be9ae481eceb70f1a6183cbe938c51990eefb8d30da260920bc"
+    },
+    {
+      "kind": "example",
+      "wordId": "sakura-mochi",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "吃之前剝下葉子是個人行為，未斷言櫻葉不可食；時間與wrapped修飾關係三語一致。",
+      "sourceSha256": "c5cdf5ac36a697a41fcbbb10f05727c0a725c008431f8bb94a0a09d85f237afa"
+    },
+    {
+      "kind": "word",
+      "wordId": "hanami-dango",
+      "verdict": "pass",
+      "reason": "花見団子具體對應粉紅白綠三色串糰子；不與醬油みたらし団子混同，はなみだんご讀音完整。",
+      "sourceSha256": "863be37ba3051d69a58c3540ee89005a1c6a5d415c3e6e13ababcaaa7ff3ec0f"
+    },
+    {
+      "kind": "example",
+      "wordId": "hanami-dango",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以三色描述手中糰子，教學內容直接且不引入色彩象徵等未證實說法。",
+      "sourceSha256": "007003263e6cf15cf23be561b89b099b2125bf3ca9e67317ca47490f4778ce4f"
+    },
+    {
+      "kind": "example",
+      "wordId": "hanami-dango",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "商店快關門而先買糰子，因果、先に與關門將近三語一致；與描述色彩句不同。",
+      "sourceSha256": "2a619175fb88ec4b0930d7c1d2b06cd392fb75239139ffc08255af194a35e4a2"
+    },
+    {
+      "kind": "word",
+      "wordId": "picnic-sheet",
+      "verdict": "pass",
+      "reason": "レジャーシート為日本常用戶外地墊名稱；英文 picnic sheet 不誤作床單，圖以薄防水墊呈現。",
+      "sourceSha256": "eef7a2f5879840c411aae06e42e6f0cbf568ea23d9f6c345ecb657a6a28383ec"
+    },
+    {
+      "kind": "example",
+      "wordId": "picnic-sheet",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "鋪墊子是直接可實作請求；省略日文地點仍與英文簡單請求一致。",
+      "sourceSha256": "c420ae42c04a5af6f5bdbbc5affa37ca4f056716b6e7c994c1f2b7483156199d"
+    },
+    {
+      "kind": "example",
+      "wordId": "picnic-sheet",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "草地濕所以先擦墊底再摺，三語保持濕草原因、底面與先後；不是只拉長簡單句。",
+      "sourceSha256": "0ced6abd5d9f159120f981527e2b710fc8adc113f7d65a96d46e08ac7f9cc664"
+    },
+    {
+      "kind": "word",
+      "wordId": "tiered-lunch-box",
+      "verdict": "pass",
+      "reason": "重箱為上下堆疊食盒，與既有一般便當盒區分；じゅうばこ為正確連濁，不將用途限於賞櫻。",
+      "sourceSha256": "d031e51e1d29e229c23ba2ef761a8ecc007e687857e4c9fd2ff6d2952f48f8e3"
+    },
+    {
+      "kind": "example",
+      "wordId": "tiered-lunch-box",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把飯糰裝入重箱是準備賞櫻餐食的具體動作，三語一致。",
+      "sourceSha256": "9ae7fb140fa9281bf2331c4e6ea62e03c798fa0e7486e597cb23ebcb8b029895"
+    },
+    {
+      "kind": "example",
+      "wordId": "tiered-lunch-box",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因重箱沉重而提議分開搬運各層，理由與提議三語對應，表現可拆疊構造並區別於裝食物句。",
+      "sourceSha256": "fc0670702e18f2faefeead246577e3a7351f6bb2dcfd4a0e0c7e3c8f9f6353f3"
+    },
+    {
+      "kind": "word",
+      "wordId": "weeping-cherry-tree",
+      "verdict": "pass",
+      "reason": "しだれ桜指枝條下垂的櫻樹類型，定義未誤說只有單一品種或顏色；しだれざくら的濁音與字面完整相符。",
+      "sourceSha256": "35d18b0dfe8cff7a8663d54aacbb1b8cb1f4f82051ad5ad221a0ff50aad2758c"
+    },
+    {
+      "kind": "example",
+      "wordId": "weeping-cherry-tree",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在垂枝櫻下會合是清楚的日常地點用法；三語都保留樹下與碰面，單一事件適合A2。",
+      "sourceSha256": "881db305a913bc39a32ac9ac2865efc42990c0f08732df0622434948d6d0e8b5"
+    },
+    {
+      "kind": "example",
+      "wordId": "weeping-cherry-tree",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "枝低垂導致彎腰通過，三語保留低枝、彎腰與樹下路徑，原因複句與簡單會合句用途不同。",
+      "sourceSha256": "95f5901c0eff108df21903d94e5fdcc0087dabc85a40b806c9c415ba981fea4c"
+    },
+    {
+      "kind": "word",
+      "wordId": "double-flowered-cherry",
+      "verdict": "pass",
+      "reason": "八重桜為重瓣櫻花總稱；英語double-flowered不解釋成恰好十瓣，定義容納多層花瓣與不同品種。",
+      "sourceSha256": "19d1b9bc3df399dd74eda586db58c3436b485e8b7016bcc1909dbdb77f5da346"
+    },
+    {
+      "kind": "example",
+      "wordId": "double-flowered-cherry",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "拍攝八重櫻照片是簡明真實用法，三語主體一致，照片與拍攝動詞分開可點。",
+      "sourceSha256": "e651a3bdc2a825bb86142ff2e7e9ce345e3b3f65b7fddac78b4c50ccc662257e"
+    },
+    {
+      "kind": "example",
+      "wordId": "double-flowered-cherry",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "其他櫻花已落而八重櫻仍開，對比限於當次觀察，未宣稱所有八重櫻必定晚開；三語保留讓步與仍然。",
+      "sourceSha256": "727559c1ce49b424e745ed810b750a0c88d3de0e37615f0d1015e6bac45ed6b4"
+    },
+    {
+      "kind": "word",
+      "wordId": "full-bloom",
+      "verdict": "pass",
+      "reason": "満開是開花狀態而非櫻花品種；英文full bloom以in full bloom入句，未把滿開誤定為每一朵百分之百都開。",
+      "sourceSha256": "81dde49595ec7b046515cf61ad3521f49d1f048f7baca3cf1f6dc8b0e8b16e9e"
+    },
+    {
+      "kind": "example",
+      "wordId": "full-bloom",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "桜が満開です直接表達眼前狀態，英語與繁中相同，兩個語言各有至少兩個詞塊。",
+      "sourceSha256": "8eee51b12b0f8a39470e8703b9d78a4e1c351b01b73b8ee9d70f4f8eea2ad085"
+    },
+    {
+      "kind": "example",
+      "wordId": "full-bloom",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "看到櫻花滿開而更改行程，原因與結果三語一致，實際旅行決策使複句有新教學用途。",
+      "sourceSha256": "3576361d56eb6b26714fbe10fb74044a9f7003dd35f68c1010a9471f1469f20a"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom-shower",
+      "verdict": "pass",
+      "reason": "花吹雪以空中飛舞落瓣為核心，與水面的花筏及一般掉落單片花瓣區分；英文shower在此為紛落而非下雨或淋浴。",
+      "sourceSha256": "532f682281ee60fafad275db8ddc1f9645f927eeed492610d12d12a9ef7272cb"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-shower",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "走在櫻吹雪中是具體賞櫻經驗，三語同一動作，日文中／歩きました的讀音完整。",
+      "sourceSha256": "10abb8fa65c30a7537e128bd456b41713225afa732e5791db94e1d5d1ca287b9"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-shower",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "花瓣落在長椅上，先拂掉再坐，原因與先後關係三語保留；詞塊shower與brushed off皆依語境翻譯。",
+      "sourceSha256": "ae5c087483537cd4ccbce941824e5c271ed71b1face411b7e9ce24b75ae2d5cf"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom-petal-raft",
+      "verdict": "pass",
+      "reason": "花筏在本系列限定水面落櫻聚集景象，不混入同名植物或真木筏；英文直接交代petals防止單獨raft的誤義。",
+      "sourceSha256": "12b84e3701450a336d36e999abb7de23e94ab200653928144573f72db3aab4ac"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-petal-raft",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "觀賞水面花筏是自然賞櫻活動，水面、花筏與眺めました分開，沒有將整句變成單一可點詞塊。",
+      "sourceSha256": "18a51c75d9ac9e26550a41c486d4e5f0af3080d5f40674408f5dce5798010aa2"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-petal-raft",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "風向改變後花筏漂走，三語相同事件與時間觸發，流れていきました完整讀音包含所有活用。",
+      "sourceSha256": "ae7b2ea923835ea03e71f1f55eb0ba1cf83ab905f4c031900088d0e77211899a"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom-festival",
+      "verdict": "pass",
+      "reason": "桜まつり為活動名稱而非一般花見行為，定義以可能有攤位或活動表達差異，未宣稱每場一定有神輿或煙火。",
+      "sourceSha256": "c0f1e018a3701961ad62e655087c9154c9b832314961ebb36551d5d2d6d31a71"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-festival",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在櫻花祭買點心可想像且日常，活動、點心與購買動詞三語一致。",
+      "sourceSha256": "7760f1fc1485c35148e20b444b1e634655d4fb646247b86459e683cf70679b23"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-festival",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "活動擁擠而約在入口會合，因果與共同決定三語對應，混んでいた及待ち合わせることにしました讀音完整。",
+      "sourceSha256": "baa27515e129f5dd4c246b24d10d4a1a8b26ededda03e949b6be5a75f9d1b561"
+    },
+    {
+      "kind": "word",
+      "wordId": "hanami-bento",
+      "verdict": "pass",
+      "reason": "花見弁当是賞櫻餐食，與前批重箱容器區分；定義不將某套食材強定為唯一標準。",
+      "sourceSha256": "541268a4f2224b59727cbd4bfbe9d070489937917c399dffea7980cd0154949e"
+    },
+    {
+      "kind": "example",
+      "wordId": "hanami-bento",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在樹下吃賞櫻便當，三語保留地點與食用事件，適合作為A2單一生活用法。",
+      "sourceSha256": "c9852ed5190188c206e3c32cf885262df118d56a4c354db25860e47d89bd3d2a"
+    },
+    {
+      "kind": "example",
+      "wordId": "hanami-bento",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "朋友不能吃蝦而挑選無蝦便當，否定、人物與選擇原因三語一致；未擅加未提供的過敏診斷。",
+      "sourceSha256": "624d79938cc8e75b4beb632cb8a1712da2b89046888e8c6c636ca389e761f3f1"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom-tea",
+      "verdict": "pass",
+      "reason": "桜湯為鹽漬花加熱水的飲品，英語常稱tea但明寫通常無茶葉；不混入櫻葉茶或粉紅拿鐵。",
+      "sourceSha256": "111b820a49da075c4392b29251da2066bee4e39ab2e3f3249c7b80ef471f06ac"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-tea",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "杯中花朵泡開是可觀察的飲用經驗，三語皆指一朵花在飲品中綻開。",
+      "sourceSha256": "0b1cd88a119907b7d3d906f9234bb33720c0fee5c357dc1f708c7b887e3f9121"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-tea",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "太鹹後加熱水是合理日常調整，しょっぱすぎた與too salty一致；沒有把飲品描寫成必然甜茶。",
+      "sourceSha256": "49bdde9f4723b8e7fd654f64421398ec455e235276fd80c18bef71500e5b7375"
+    },
+    {
+      "kind": "word",
+      "wordId": "salt-pickled-cherry-blossoms",
+      "verdict": "pass",
+      "reason": "桜の塩漬け在此明確指食用花，不與前批櫻餅所用鹽漬葉混同；讀音しおづけ保留連濁。",
+      "sourceSha256": "b33c57dc4818a5093cef1f18e60450e4edfcb479691dafe6bf616689f75ad39a"
+    },
+    {
+      "kind": "example",
+      "wordId": "salt-pickled-cherry-blossoms",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "購買鹽漬櫻花是單一日常購物動作，兩語皆有完整主詞概念與動詞詞塊。",
+      "sourceSha256": "da8ea08fb201faaaa6cdf62ecddfc228ac3bfb2888b98b52f0b01777516f43a1"
+    },
+    {
+      "kind": "example",
+      "wordId": "salt-pickled-cherry-blossoms",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先泡水再加入米飯是符合鹽漬食材用法的料理情境，三語順序一致，未夾入未查證的具體配方比例。",
+      "sourceSha256": "c9c64e42cc18226e0f962a1bad62018f5ea4b518b0a1397329c795ccf5f13a77"
+    },
+    {
+      "kind": "word",
+      "wordId": "cherry-blossom-rice",
+      "verdict": "pass",
+      "reason": "桜ご飯在此明定使用食用櫻花，避免與某些地方同名但不含櫻花的醬油飯混淆；圖像與例句皆限此義。",
+      "sourceSha256": "5cdb8207b432fac1a046603aa0eaef272a69190cb2f36e8fd4cc6c987b1b8f07"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-rice",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "飯香很好是實際用餐感受，三語都描述香味，日文いい與香り為不同可點單位。",
+      "sourceSha256": "859cc4e0dd48d9fa2f00fb079300351c38fc7a441fc01c2c0065efadbbb245b4"
+    },
+    {
+      "kind": "example",
+      "wordId": "cherry-blossom-rice",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為了在電車上吃，把剩下櫻花飯做成飯糰，目的、剩飯與製作動作三語一致，對比簡單感受句有明確關係。",
+      "sourceSha256": "0e32b56ba740e1b3fd3cc23e79d5168b83996030dda021eb1aa166c8dc117d72"
+    }
+  ]
+}

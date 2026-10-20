@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: July 3, 2026
+Last updated: October 20, 2026
 
 Tuji is provided by Hong Kuok Wai. This Privacy Policy explains how we collect, use, disclose, store, and protect information when you use the Tuji mobile app, website, APIs, and related services (together, the "Service").
 
@@ -49,19 +49,36 @@ If you use Tuji's Atlas or custom picture dictionary features, we may collect:
 
 Atlas images are private by default unless you choose to publish, share, or make them public.
 
-### 1.4 Payment and Subscription Information
+### 1.4 AI Assistant Content
 
-Tuji Pro subscriptions are processed by Apple through the App Store. We do not receive or store your full payment card number.
+If you use Tuji's text-based AI features (AI vocabulary, AI grammar, story time, and topic chat), we collect:
+
+- The words, phrases, grammar questions, situations, and other text you enter or select.
+- Messages you send in a topic chat, including text produced by voice input.
+- The results the AI returns, such as vocabulary cards, grammar explanations and practice sets, stories, chat replies, and chat reviews.
+- Request records, such as the feature used, learning direction, interface language, model information, token usage, and the Can Points charged.
+
+These records are linked to your account so you can see your history, and they are deleted when you delete your account.
+
+### 1.5 Voice Input and Read-Aloud Practice
+
+Voice input and read-aloud ("read it back") practice use your device's microphone and Apple's speech recognition. Where your device supports it, recognition runs on the device; otherwise Apple may process the audio under Apple's own privacy policy.
+
+We do not receive your audio. Only the recognized text you choose to send, such as a voice-typed chat message, reaches Tuji. Read-aloud recordings are kept temporarily on your device so you can play them back, are replaced by your next attempt, and are never uploaded.
+
+### 1.6 Payment and Can Points Information
+
+Lifetime Membership and Can Points packs are one-time purchases processed by Apple through the App Store. We do not receive or store your full payment card number.
 
 We may store:
 
-- Subscription tier.
-- Subscription source.
-- Expiration date.
-- App Store transaction identifiers, including original transaction identifiers.
-- Purchase, renewal, refund, expiration, or subscription status information received from Apple.
+- Membership status and the date it was granted.
+- Store transaction identifiers, including original transaction identifiers.
+- Purchase, refund, and revocation information received from Apple.
+- Your Can Points balance and a ledger of points granted (monthly allowance, daily check-in, purchases, or adjustments), reserved, charged, refunded, or expired.
+- Daily check-in records.
 
-### 1.5 Push Notification Information
+### 1.7 Push Notification Information
 
 If you enable push notifications, we may collect:
 
@@ -72,7 +89,7 @@ If you enable push notifications, we may collect:
 
 We use this information to send and manage notifications and to stop notifications when you sign out or delete your account.
 
-### 1.6 Technical, Usage, and Diagnostic Information
+### 1.8 Technical, Usage, and Diagnostic Information
 
 We may collect limited technical and usage information, including:
 
@@ -86,7 +103,7 @@ We may collect limited technical and usage information, including:
 
 Tuji uses Firebase Crashlytics for crash reporting. We configure crash reporting to avoid intentionally sending email addresses, user IDs, uploaded images, learning content, search text, access tokens, or other sensitive content. However, diagnostic reports may include technical information necessary to diagnose crashes and improve app stability.
 
-### 1.7 Cookies and Local Storage
+### 1.9 Cookies and Local Storage
 
 The Service may use cookies, local storage, and similar technologies to:
 
@@ -105,9 +122,10 @@ We use information to:
 - Create, authenticate, and manage accounts.
 - Provide learning, study, progress, favorites, settings, and Atlas features.
 - Sync data across devices.
-- Process subscriptions and provide paid features.
+- Process purchases, manage Can Points, and provide paid features.
 - Send push notifications if you enable them.
 - Provide AI image recognition and vocabulary suggestions.
+- Provide AI vocabulary, grammar, story, and topic chat features.
 - Respond to support requests and issue reports.
 - Detect, prevent, and investigate abuse, fraud, security incidents, and service misuse.
 - Debug, maintain, analyze, and improve the Service.
@@ -117,7 +135,7 @@ We use information to:
 
 If you are located in the European Economic Area, the United Kingdom, or another region that requires a legal basis for processing personal information, we process personal information based on one or more of the following legal bases:
 
-- Performance of a contract, such as providing the Service, account features, learning progress, subscriptions, and requested features.
+- Performance of a contract, such as providing the Service, account features, learning progress, purchases, and requested features.
 - Consent, such as when you enable push notifications, use certain optional features, or where consent is required for advertising or cookies.
 - Legitimate interests, such as improving the Service, maintaining security, preventing abuse, debugging, and understanding basic product usage.
 - Compliance with legal obligations, such as tax, accounting, consumer protection, billing, and regulatory requirements.
@@ -125,7 +143,9 @@ If you are located in the European Economic Area, the United Kingdom, or another
 
 Where processing is based on consent, you may withdraw your consent where applicable. Withdrawing consent does not affect processing that occurred before the withdrawal.
 
-## 4. AI Image Recognition
+## 4. AI Features
+
+### 4.1 AI Image Recognition
 
 When you use Atlas image recognition, your uploaded image or a processed copy of it may be sent to third-party AI or vision providers, such as Google Cloud Vision or OpenAI, to identify objects and generate vocabulary suggestions.
 
@@ -139,17 +159,21 @@ You should not upload images that contain:
 - People who have not consented to the upload.
 - Content that you do not have the right to upload.
 
+Images submitted for public sharing may also be checked by Google Cloud Vision for unsafe content, faces, and text.
+
+### 4.2 AI Vocabulary, Grammar, Stories, and Topic Chat
+
+When you use these features, the text you enter or select (see section 1.4), together with your learning direction, interface language, and, for stories and topic chat, the selected words, situation, level, or topic and earlier messages in the same chat, is sent to Anthropic to generate a response. We send it without your email address or name.
+
+Do not enter sensitive personal information, such as passwords, payment details, government IDs, health information, or other people's private information, into these features.
+
+### 4.3 Accuracy
+
 AI results may be inaccurate. You are responsible for reviewing and correcting AI-generated suggestions before relying on them or publishing them.
 
 ## 5. Advertising
 
-Tuji may show rewarded ads through Google AdMob. The app is configured to request non-personalized ads.
-
-Even when non-personalized ads are requested, Google AdMob may still process limited device, advertising, network, and diagnostic information to deliver ads, measure performance, prevent fraud, and comply with legal obligations.
-
-We do not intentionally use advertising data to track you across apps or websites owned by other companies.
-
-Depending on your region, Google or Tuji may request consent for cookies, local storage, advertising identifiers, or personal data use where required by law.
+Tuji does not show advertising and does not share your information with advertising networks. We do not track you across apps or websites owned by other companies.
 
 ## 6. How We Share Information
 
@@ -159,12 +183,11 @@ We may share information with the following categories of recipients:
 
 - Service providers that host, store, process, secure, monitor, or support the Service.
 - Authentication providers, such as Apple, Google, and Supabase.
-- Cloud and database providers, such as Supabase and Vercel.
-- AI and vision providers, such as OpenAI and Google Cloud Vision, when you use AI recognition features.
+- Cloud, storage, and database providers, such as Supabase, Vercel, and Cloudflare.
+- AI and vision providers, such as OpenAI and Google Cloud Vision, when you use AI recognition features, and Anthropic, when you use the AI vocabulary, grammar, story, or topic chat features.
 - Translation providers, such as Google Translate, when translation features are used.
-- Payment and subscription processors, such as Apple.
+- Payment processors, such as Apple.
 - Crash reporting and diagnostics providers, such as Firebase Crashlytics.
-- Advertising providers, such as Google AdMob, for rewarded ads.
 - Law enforcement, regulators, courts, or other parties when required by law or necessary to protect rights, safety, and security.
 - Other users or the public, only when you choose to publish, share, or make content public.
 
@@ -191,7 +214,8 @@ In general:
 - Learning progress and settings are retained while your account exists or until you delete or clear them.
 - Uploaded Atlas images and related private content are retained while your account exists or until deleted.
 - Public content may remain available until unpublished, removed, or deleted.
-- Payment and subscription records may be retained as needed for billing, audit, fraud prevention, and legal compliance.
+- AI assistant records (section 1.4) are retained while your account exists or until deleted.
+- Payment and Can Points records may be retained as needed for billing, audit, fraud prevention, and legal compliance.
 - Crash, diagnostic, event, and log data may be retained for a limited period for security, debugging, and product improvement.
 - Aggregated or de-identified information may be retained longer.
 
@@ -242,11 +266,11 @@ If you are a California resident, this section provides additional information.
 Categories of personal information we may collect include:
 
 - Identifiers, such as email address, user ID, username, device ID, and transaction identifiers.
-- Customer records, such as account and subscription information.
-- Commercial information, such as subscription tier and purchase status.
+- Customer records, such as account and membership information.
+- Commercial information, such as membership status, purchase history, and Can Points balance and ledger.
 - Internet or network activity, such as usage events, session identifiers, and server logs.
 - Geolocation-related information at a limited level, such as approximate location inferred from IP address by infrastructure providers.
-- Audio, electronic, visual, or similar information, such as uploaded images.
+- Audio, electronic, visual, or similar information, such as uploaded images. (We do not receive voice recordings; see section 1.5.)
 - Inferences, such as learning progress, mastery, and study preferences.
 - Sensitive personal information only if you choose to upload content that contains it. You should avoid uploading sensitive content.
 
@@ -268,9 +292,11 @@ The Service may rely on third-party services, including:
 
 - Supabase for authentication, database, storage, and backend services.
 - Vercel for hosting and serverless infrastructure.
-- Apple for App Store subscriptions, Sign in with Apple, and push notification infrastructure.
-- Google for Google Sign-In, Google Cloud Vision, Google Translate, AdMob, and Firebase Crashlytics.
-- OpenAI for AI image recognition or related AI features.
+- Cloudflare for storing and serving public images.
+- Apple for App Store purchases, Sign in with Apple, speech recognition, and push notification infrastructure.
+- Google for Google Sign-In, Google Cloud Vision, Google Translate, and Firebase Crashlytics.
+- OpenAI for AI image recognition and related card content.
+- Anthropic for the AI vocabulary, grammar, story, and topic chat features.
 
 Your use of third-party services may be subject to their own terms and privacy policies.
 

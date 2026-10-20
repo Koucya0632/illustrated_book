@@ -92,7 +92,14 @@
     "station-commuting:audio:generate:local": "node --env-file=.env.local scripts/generate-station-commuting-candidate-audio.mjs",
     "station-commuting:audio:verify": "node scripts/verify-station-commuting-audio.mjs",
     "station-commuting:prepare-publish": "node --env-file=.env.local scripts/prepare-station-commuting-publish-plan.mjs",
-    "station-commuting:publish": "tsx --env-file=.env.local scripts/publish-station-commuting-series.ts"
+    "station-commuting:publish": "tsx --env-file=.env.local scripts/publish-station-commuting-series.ts",
+    "anime-fan-merch-expansion:prepare-images": "node scripts/prepare-anime-fan-merch-expansion-images.mjs",
+    "anime-fan-merch-expansion:review": "node scripts/prepare-anime-fan-merch-expansion-semantic-review.mjs",
+    "anime-fan-merch-expansion:audio:plan": "node scripts/plan-anime-fan-merch-expansion-audio.mjs",
+    "anime-fan-merch-expansion:audio:generate:local": "node --env-file=.env.local scripts/generate-anime-fan-merch-expansion-candidate-audio.mjs",
+    "anime-fan-merch-expansion:audio:verify": "node scripts/verify-anime-fan-merch-expansion-audio.mjs",
+    "anime-fan-merch-expansion:prepare-publish": "node --env-file=.env.local scripts/prepare-anime-fan-merch-expansion-publish-plan.mjs",
+    "anime-fan-merch-expansion:publish": "tsx --env-file=.env.local scripts/publish-anime-fan-merch-expansion-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

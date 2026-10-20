@@ -1,3 +1,4 @@
+import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_CORRECTIONS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type postgres from "postgres";
 import { MAIN_WORD_ALCOHOLIC_DRINKS_CORRECTIONS } from "./main-word-alcoholic-drinks-2026-09";
 import { MAIN_WORD_CONVENIENCE_STORE_CORRECTIONS } from "./main-word-convenience-store-2026-09";
@@ -112,6 +113,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_CLOTHING_CORRECTIONS,
   ...MAIN_WORD_RESTAURANT_CORRECTIONS,
   ...MAIN_WORD_CONCERT_FAN_SUPPORT_CORRECTIONS,
+  ...MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_CORRECTIONS,
   ...MAIN_WORD_STATION_COMMUTING_CORRECTIONS,
   {
     id: "bowl",

@@ -1,3 +1,4 @@
+import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS, MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type { Example, Word, WordRelation } from "@/types";
 import imageUrls from "./image-urls.json";
 import { MAIN_WORD_ALCOHOLIC_DRINKS_WORDS } from "./main-word-alcoholic-drinks-2026-09";
@@ -1754,6 +1755,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_CLOTHING_WORDS as LegacyWord[]),
   ...(MAIN_WORD_RESTAURANT_WORDS as LegacyWord[]),
   ...(MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS as LegacyWord[]),
   ...(MAIN_WORD_STATION_COMMUTING_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
@@ -1773,6 +1775,7 @@ export const publicFallbackWords: Word[] = words.filter(
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
     !MAIN_WORD_RESTAURANT_IDS.includes(word.id) &&
     !MAIN_WORD_CONCERT_FAN_SUPPORT_IDS.includes(word.id) &&
+    !MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS.includes(word.id) &&
     !MAIN_WORD_STATION_COMMUTING_IDS.includes(word.id),
 );
 

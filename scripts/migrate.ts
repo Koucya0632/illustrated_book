@@ -1,3 +1,4 @@
+import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS } from "../lib/main-word-anime-fan-merch-expansion-2026-10";
 // Idempotent: creates tables if missing, seeds the words table if empty,
 // generates cards. Targets Supabase Postgres (or any standard Postgres URL
 // in DATABASE_URL). Runs at build time via the `vercel-build` script.
@@ -40,6 +41,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "clothing", ids: MAIN_WORD_CLOTHING_IDS },
   { category: "restaurant", ids: MAIN_WORD_RESTAURANT_IDS },
   { category: "concert-fan-support", ids: MAIN_WORD_CONCERT_FAN_SUPPORT_IDS },
+  { category: "concert-fan-support", ids: MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS },
   { category: "station-commuting", ids: MAIN_WORD_STATION_COMMUTING_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
@@ -2093,12 +2095,14 @@ async function readGuardedSeriesPublicationState(
         `${category}:${id}`,
     ),
   );
-  return new Map(
-    GUARDED_PUBLISH_SERIES.map(({ category, ids }) => [
-      category,
-      ids.every((id) => guardedPublishedKeys.has(`${category}:${id}`)),
-    ]),
-  );
+  // A category may have several independently guarded expansion batches.
+  // Metadata is safe to seed only after every batch is fully published.
+  const states = new Map<string, boolean>();
+  for (const { category, ids } of GUARDED_PUBLISH_SERIES) {
+    states.set(category, (states.get(category) ?? true) &&
+      ids.every((id) => guardedPublishedKeys.has(`${category}:${id}`)));
+  }
+  return states;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "Individual editorial review of all 16 additional concepts and 32 examples, with every contextual English/Japanese span. Not an independent native-speaker review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "character-figure",
+      "verdict": "pass",
+      "reason": "フィギュア為立體角色模型，與既有平面アクリルスタンド分開，英語以character限定人形義。",
+      "sourceSha256": "11bef802ed4ff702c88ac25f1fdbd4e62915c207dd6fe58de5e0497a69fe2869"
+    },
+    {
+      "kind": "example",
+      "wordId": "character-figure",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "上架展示的單一完成動作；棚與shelf、置きました與put一致。",
+      "sourceSha256": "d5a6be5475c1892b50c2d204ad8c925741522940e9fb02cc46d62ca8a87714d1"
+    },
+    {
+      "kind": "example",
+      "wordId": "character-figure",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "日照強造成移離窗邊的因果完整，離れた場所保留較遠位置，不擴張成材質保證。",
+      "sourceSha256": "24b157d2e5456e236df3dde38eae326db16d25f2e2ae98adc26854194c9f212a"
+    },
+    {
+      "kind": "word",
+      "wordId": "plush-toy",
+      "verdict": "pass",
+      "reason": "ぬいぐるみ是填充布偶，不把普通玩具或真實貓當成主體；柔軟材質為定義特徵。",
+      "sourceSha256": "08d3ca1a213ab863002dff73616c9e39f1db0e42489505e07d0cddd48ca9fe0f"
+    },
+    {
+      "kind": "example",
+      "wordId": "plush-toy",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "柔軟觸感短句三語一致，この對應this。",
+      "sourceSha256": "48d24f51fa0abfe4b57129fb04841cd917c0688d942ce72839005ad18e8c74f2"
+    },
+    {
+      "kind": "example",
+      "wordId": "plush-toy",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "電車攜帶時防髒的目的關係清楚，汚れない保留否定，與清洗玩偶不同。",
+      "sourceSha256": "4ed5c313aeb401362e4e1ac4d5cfc4c69c989f41d7089cf647f65c4f4f5f4f81"
+    },
+    {
+      "kind": "word",
+      "wordId": "acrylic-keychain",
+      "verdict": "pass",
+      "reason": "壓克力薄片帶掛環，與立牌底座、軟膠吊飾區分；官方商品亦使用acrylic keychain。",
+      "sourceSha256": "efa308d46308e295b5177dfd8d5f4eac7d73d899d0d9c96db11ebdf6f2438109"
+    },
+    {
+      "kind": "example",
+      "wordId": "acrylic-keychain",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "付けました是掛上，不是放進包內。",
+      "sourceSha256": "9add867be56e2a3d5dd801095fc94b34704a950dbb57980203a6a78a70f62a56"
+    },
+    {
+      "kind": "example",
+      "wordId": "acrylic-keychain",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不想刮傷的原因與洗包前取下的時間順序完整，三語it指吊飾。",
+      "sourceSha256": "bdcc40ed5fb303276b11a03dd31697de9c2b7978fbe2d52cf60d3d0a5bec8971"
+    },
+    {
+      "kind": "word",
+      "wordId": "rubber-keychain",
+      "verdict": "pass",
+      "reason": "日本ラバー周邊常用柔軟合成材質，定義避免限為天然橡膠；浮雕與不透明材質區分壓克力。",
+      "sourceSha256": "e839c407591016b51dc6b84c75fd3693fd39bc64f24d5c16b208b6fcc77022fc"
+    },
+    {
+      "kind": "example",
+      "wordId": "rubber-keychain",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "私の與my一致，顏色描述提供簡單句。",
+      "sourceSha256": "323d80b64da87e2392a69dde96fe75890e80927100e888200bdf5c27e20c7c97"
+    },
+    {
+      "kind": "example",
+      "wordId": "rubber-keychain",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "凸起圖案形成選擇理由，raised不是抬高物件，浮き出た保留立體紋樣義。",
+      "sourceSha256": "270189bb877ee4986ab2b9a21251b3cc0ac677e7e8b09b5d11e3e2ddcb2e61e2"
+    },
+    {
+      "kind": "word",
+      "wordId": "photo-card",
+      "verdict": "pass",
+      "reason": "本詞限藝人照片收藏卡，不與名片、會員卡或一般角色遊戲卡混為一談；不是即影即有照片專稱チェキ。",
+      "sourceSha256": "01573608f7c0354e46beafa3b553ba791e63a92cc240527d214e1c1ef5835000"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "友達と表示與朋友交換而非送給，交易物仍是小卡。",
+      "sourceSha256": "b36c73c4b9de324020da12ec7e507b7f347028c12551bfe51895a1fe4c10a93c"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "一取出就入套的緊接時間關係對齊，日文省略取出受詞仍由フォトカード清楚承接。",
+      "sourceSha256": "b7487f12738f6a8238b30b60c0fd3f36395454cc5be27613acd069e60c726666"
+    },
+    {
+      "kind": "word",
+      "wordId": "trading-card-sleeve",
+      "verdict": "pass",
+      "reason": "スリーブ為柔軟單張薄套，與硬質トレカケース及多頁相冊分列。",
+      "sourceSha256": "d153f8170ca3beb876f90107989af98cdb8e927e66d9d4a464b9fba4e83a5673"
+    },
+    {
+      "kind": "example",
+      "wordId": "trading-card-sleeve",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "卡片放入薄套的指令，容器與內容物清楚分開。",
+      "sourceSha256": "c2116e8684aa7601df0b688fe4289ca5ec3d84c52362efc7a606608c0bd5f3f4"
+    },
+    {
+      "kind": "example",
+      "wordId": "trading-card-sleeve",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "較大尺寸是先核對大小的原因，before與前に保留時間義，複數sleeves不改成單一卡片。",
+      "sourceSha256": "09a1a6c7e7918a65993ce62656901ea3718cb8ce246aee2b01c74df3ccfc347b"
+    },
+    {
+      "kind": "word",
+      "wordId": "photo-card-holder",
+      "verdict": "pass",
+      "reason": "限定硬質透明卡片ケース，與收藏者這種holder的人義、軟薄套及票券長套不同。",
+      "sourceSha256": "003e6a5a67ef33699f235b053d88a39663bf401afb1dcf72c65acd9586d4f32b"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-card-holder",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "透明材質短句符合硬殼卡套用途。",
+      "sourceSha256": "848a983765c422726fa80ef5d08ea1603272fb5430adcc5915388c740b6ad883"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-card-holder",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "閉めました保留關上、抜け落ちない保留不滑落，避免誤解為抽卡或丟棄。",
+      "sourceSha256": "84cbd602d38ce82a67e176c00dab4c1aa1d51546d3dab8c6fcecf92ff8dbb6d8"
+    },
+    {
+      "kind": "word",
+      "wordId": "photo-card-album",
+      "verdict": "pass",
+      "reason": "以透明口袋頁整理多卡的相冊，不是音樂專輯，也不是單張硬殼。",
+      "sourceSha256": "aacbda1007094919a6dc6f8d975bf2ef0e1864050fc48c16c3cb70295ad3d9b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-card-album",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "いっぱい在此是裝滿，非人物眾多；my與私の一致。",
+      "sourceSha256": "dfa845068d056a043aa48224be4cd28c5a81f03fcef99aa8cedf6902f7c2d018"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-card-album",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "又購卡導致加頁，買い足した涵蓋more cards，沒有無故替換購買者。",
+      "sourceSha256": "51dbe4a27186ff2cf7b4b70b3c200badea056b71385b82345023debe0222eb93"
+    },
+    {
+      "kind": "word",
+      "wordId": "mini-shikishi",
+      "verdict": "pass",
+      "reason": "色紙在此讀しきし，為厚紙收藏板而非いろがみ彩色紙；官方商品採ミニ色紙。",
+      "sourceSha256": "5a9857f2a8d68ce5968efcddc1187b8af17caa0f3b08ab8be1d7adbfc5938a4b"
+    },
+    {
+      "kind": "example",
+      "wordId": "mini-shikishi",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "桌上展示的生活情境，飾りました不譯成繪畫。",
+      "sourceSha256": "3f411ee8f90f1f97753920eb585a0521ba3777f00197452300cb0a793f1de76d"
+    },
+    {
+      "kind": "example",
+      "wordId": "mini-shikishi",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "避免厚紙角折彎造成入盒的理由完整，corners對應角，保護盒不變成相框。",
+      "sourceSha256": "c5ff001633dd5a6ac7b8818a88449b3a0a0b0c15d830e31ccf33e1a956500bb0"
+    },
+    {
+      "kind": "word",
+      "wordId": "wall-scroll",
+      "verdict": "pass",
+      "reason": "日本動漫タペストリー指印花布掛畫，英語用wall scroll，圖需有布料、掛繩與桿，非牆紙或大型織毯。",
+      "sourceSha256": "13d55199b0372b9386d832afa0dfe2cab8a967c7d58e82126d39359429849211"
+    },
+    {
+      "kind": "example",
+      "wordId": "wall-scroll",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "掛在自己房間的完成動作，in my room未漂移為店內。",
+      "sourceSha256": "4a9b406c2788f9615e9b02eb1286bd664309c6df53411fb42d87abec8cf3bcdd"
+    },
+    {
+      "kind": "example",
+      "wordId": "wall-scroll",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "捲收避免布料皺摺的目的與搬家前的時間關係均保留。",
+      "sourceSha256": "ee4036b9636342267139952a70f8cd99f740f3d800a7c2e0bee25c8c731a1515"
+    },
+    {
+      "kind": "word",
+      "wordId": "blind-box",
+      "verdict": "pass",
+      "reason": "密封與未知／不可挑款是辨識點，不能把普通透明包裝盒當盲盒；圖用問號提示未知款式。",
+      "sourceSha256": "2f79b0c3c8582dda863fedf21326dd99f65643024c862a25c884dcc9875ac72a"
+    },
+    {
+      "kind": "example",
+      "wordId": "blind-box",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "開けました是拆盒，非抽選中獎；不虛構獎率。",
+      "sourceSha256": "e5050979bc3605c990fb982b75da9fc166aa2b074de5d342ff771f79510b0caa"
+    },
+    {
+      "kind": "example",
+      "wordId": "blind-box",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不可選內容導致只買一盒的保守購買情境，just one與一つだけ一致。",
+      "sourceSha256": "d717451a7a5deb60c5994f90e9a05bc683ab719970c7897fd03e88134f8b6157"
+    },
+    {
+      "kind": "word",
+      "wordId": "capsule-toy",
+      "verdict": "pass",
+      "reason": "カプセルトイ用一般名稱而非品牌ガシャポン；玩具與膠囊共同表明用途，不是藥丸。",
+      "sourceSha256": "9d28d2f0beabbdb9e4ac27c80576f1f4a9efcde8812d189baba75d1f1e34a1e7"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "向朋友展示已取得的玩具，未誤寫成展示扭蛋機。",
+      "sourceSha256": "b5f6a66abff9753c99010e300bfb4def1ce31d6da684861573ed29ac09f933dc"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "欲しかった與wanted保留原先想要的款式，出た與got對應取到玩具的結果。",
+      "sourceSha256": "9f6c5b6d6588f4a97a21d34f6bb129336feb77e5bd3eaf61a2fe8c29970c6912"
+    },
+    {
+      "kind": "word",
+      "wordId": "badge-cover",
+      "verdict": "pass",
+      "reason": "透明圓套保護既有缶バッジ表面，保留背面針，不是徽章本體或普通塑膠圓片。",
+      "sourceSha256": "7c9c5a974d02a1184bbd4852442437994df53c605a020a193347054cd7a80089"
+    },
+    {
+      "kind": "example",
+      "wordId": "badge-cover",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "小さすぎます保留too，不能僅譯小。",
+      "sourceSha256": "65a6c7e12566df46adabcf5785ed5f6b9dc238aa7c198a5cd3fe4ef079f346ef"
+    },
+    {
+      "kind": "example",
+      "wordId": "badge-cover",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "尺寸不同所以先測量，再購買的因果與先後關係完整，測量對象為徽章。",
+      "sourceSha256": "d02f77aec8bdd8965f7b53321a00ebb80a9a6f32f9af147be73157caf4b3e630"
+    },
+    {
+      "kind": "word",
+      "wordId": "plush-pouch",
+      "verdict": "pass",
+      "reason": "玩偶專用小包與徽章展示痛包不同；透明窗是常見款式，定義不要求全部都有。",
+      "sourceSha256": "17f770b33a96a783d45125cab02d54769491a5d35f53767c546391c76edfc833"
+    },
+    {
+      "kind": "example",
+      "wordId": "plush-pouch",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "小包放在大包裡的位置關係明確，不把玩偶與容器混同。",
+      "sourceSha256": "6f42563d589775d18cec45e3a111f104e937f7f512dc00bb408cd564759344ff"
+    },
+    {
+      "kind": "example",
+      "wordId": "plush-pouch",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "可見內容物是選透明窗款式的目的，doll此處明確指絨毛玩偶。",
+      "sourceSha256": "39f33937fa0e7181b2d4f5cb2b92607e4bdf76cbbef8129f22617839e7b4ef4c"
+    },
+    {
+      "kind": "word",
+      "wordId": "light-stick-case",
+      "verdict": "pass",
+      "reason": "長形手燈容器與既有ペンライト本體、圓扇套分開；日文ケース可為袋或硬盒。",
+      "sourceSha256": "276d6b9e29c2832c1b62204831a4191669e20b7cd9bfe9e2b88fceee22fb689b"
+    },
+    {
+      "kind": "example",
+      "wordId": "light-stick-case",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "packed具體譯成放入包包，未新增遺失或購買動作。",
+      "sourceSha256": "00f58a184ff96a4bb8a575c8d5297edbf94ed2a8f3c4cc62743a8999c6c044a7"
+    },
+    {
+      "kind": "example",
+      "wordId": "light-stick-case",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "新手燈較長導致核對收納長度，兩個長度概念及比較義三語一致。",
+      "sourceSha256": "19b2b9749347aeff974d6e207de9cd8b35c8a2e3ba50bb45c952a3a690cee10d"
+    },
+    {
+      "kind": "word",
+      "wordId": "figure-display-case",
+      "verdict": "pass",
+      "reason": "透明外罩和底座構成展示盒，與公仔本體及開放式展示架區分；減灰非完全密封保證。",
+      "sourceSha256": "016a3d8868a6ef6accd3a79bbdea369897b0377c59a1dc9d703c654bf6cbdc0a"
+    },
+    {
+      "kind": "example",
+      "wordId": "figure-display-case",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "掃除しました是清潔盒子，不是清潔收藏人物。",
+      "sourceSha256": "b3e9b081d87e24bfc403c6f38451a87d5972660ef2ee3d665403718273cefb3a"
+    },
+    {
+      "kind": "example",
+      "wordId": "figure-display-case",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "原盒放不下導致買更高的盒子，前の為原先而非空間前方，入らなかった保留否定過去。",
+      "sourceSha256": "aeda7bde90228f5c8ad3b400562ea68b8d7c86c3be566e0aca5bd2975bb4de40"
+    }
+  ]
+}

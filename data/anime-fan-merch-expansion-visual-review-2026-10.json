@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "All 17 original assets individually visually inspected in image-generation results; WebP contact sheet checked separately.",
+  "items": [
+    {
+      "id": "character-figure",
+      "decision": "pass",
+      "reason": "有立體衣服、頭髮與圓底座的原創角色模型，與平面壓克力立牌不同；全身與白底完整。",
+      "sourceSha256": "ccdf7cc0ea6448682a59283af445ab35286e626b550ec1ccefcfd9a59df0a961"
+    },
+    {
+      "id": "plush-toy",
+      "decision": "pass",
+      "reason": "紫貓具有毛絨、接縫與柔軟填充輪廓，可辨絨毛玩偶而非塑膠模型。",
+      "sourceSha256": "4fb13241bebcb8c1a1f82eb9d6ea0272c17287dbf2e3142aad67b44aa8832f62"
+    },
+    {
+      "id": "acrylic-keychain",
+      "decision": "pass",
+      "reason": "透明裁切板邊、平面人物印刷及金屬鏈圈清楚，壓克力材質與掛飾用途吻合。",
+      "sourceSha256": "00cc073af89126e2ff0d50c8c6859714cf924f6b930362a4e7f506086330e6f4"
+    },
+    {
+      "id": "rubber-keychain",
+      "decision": "pass",
+      "reason": "紫貓凸起圖案、消光軟膠面與黑色厚邊可見，與透明壓克力吊飾區分。",
+      "sourceSha256": "de00788f74bd3e6ac259d95a858994798fa4f72c84f30f8dbfb8be74b208c2f8"
+    },
+    {
+      "id": "photo-card",
+      "decision": "pass",
+      "reason": "小張圓角亮面歌手肖像卡，無名片文字或金融卡晶片；虛構人物和白底適合偶像小卡。",
+      "sourceSha256": "8b107e685255551e07ea402f440d7b74eb309300f59e5d7977b46a61eb324ef9"
+    },
+    {
+      "id": "trading-card-sleeve",
+      "decision": "pass",
+      "reason": "透明薄膜開口、柔軟邊緣及部分插入的素色卡展示卡套結構，沒有硬殼框。",
+      "sourceSha256": "6e6cc91a10dadf88fb03463169343cedff05a38eecd8b12bfefd753efbe6f883"
+    },
+    {
+      "id": "photo-card-holder",
+      "decision": "pass",
+      "reason": "粉色硬框、透明面板與扣鏈構成硬殼卡套，內有虛構歌手卡；與薄卡套不同。",
+      "sourceSha256": "3a76fced70266cb7d888fad49be0b2bd5bcadfb0a77f7d6bb411673a79e0dc7e"
+    },
+    {
+      "id": "photo-card-album",
+      "decision": "pass",
+      "reason": "打開的紫色活頁冊具有金屬環與透明分格卡頁，可辨收藏冊，沒有文字或品牌。",
+      "sourceSha256": "7b14b64f49813c6c1fc571cfc348f381bc6effa91d1a9a677fe230a11c9ed674"
+    },
+    {
+      "id": "mini-shikishi",
+      "decision": "pass",
+      "reason": "正方厚紙板的側面厚度與金色包邊可見，原創人物印刷在硬板上；沒有掛畫桿或布料。",
+      "sourceSha256": "05429301cab542e5ddf29ec0955af4e17badb644214cc2339fccdde87a999e40"
+    },
+    {
+      "id": "wall-scroll",
+      "decision": "pass",
+      "reason": "長方布面、上下掛桿與上方掛繩完整，原創成年角色印刷支持動漫布掛畫概念。",
+      "sourceSha256": "f898018538b897418a52fab94b56d01cd1bb0b02b564a2bd530f6ce30db20a08"
+    },
+    {
+      "id": "blind-box",
+      "decision": "pass",
+      "reason": "封閉紙盒、匿名模型剪影與唯一問號顯示未知內容物，無真實系列或品牌。",
+      "sourceSha256": "1108ce8a8899bf0455e212857a1eb143897c503bb5663c202ab4b37f87eb676a"
+    },
+    {
+      "id": "capsule-toy",
+      "decision": "pass",
+      "reason": "透明扭蛋半球與紫色下殼分開，內有小型原創貓玩具；膠囊尺度與收藏用途清楚。",
+      "sourceSha256": "072d7496228f153ab01cc13aa86e4b63d0bb1a31f81b49f759c51b032a6d1a49"
+    },
+    {
+      "id": "badge-cover",
+      "decision": "pass",
+      "reason": "透明圓袋封邊與開口包覆部分插入的星形徽章，保護套邊界清晰，非裸徽章。",
+      "sourceSha256": "2d7041f8a3ecbd689f35f6f80877f31a92d0f2ab47728a93f10e57b517bee550"
+    },
+    {
+      "id": "plush-pouch",
+      "decision": "pass",
+      "reason": "小型拉鍊包、手提環與透明前窗包住貓玩偶，清楚顯示玩偶攜帶收納用途。",
+      "sourceSha256": "6a0bfb6f02d42840456218f004fad230c6e7519f3ceafb94cf23c1e8eeee816f"
+    },
+    {
+      "id": "light-stick-case",
+      "decision": "pass",
+      "reason": "長條襯墊袋、拉鍊與內部手燈可見，袋體主導畫面，與手燈本體或鉛筆盒區分。",
+      "sourceSha256": "47e10520da45ee75623e8d5d23ea025156c6851e36288ecc62d16beb040b7992"
+    },
+    {
+      "id": "figure-display-case",
+      "decision": "pass",
+      "reason": "透明六面盒、黑底座及盒內立體公仔完整可見，盒壁反光和空間明確呈現展示盒。",
+      "sourceSha256": "f9b2e4751c3eb83b83ea5f1515ab4c44c53f8647a3e052adf9aa659dd0ecc3f6"
+    },
+    {
+      "id": "category-anime-fan-merch",
+      "decision": "pass",
+      "reason": "立體角色公仔、紫貓玩偶、小卡保護套與手燈組合涵蓋動漫收藏與演唱會追星；白底、無真實品牌。",
+      "sourceSha256": "853be79ff6e56f5d3db4b2ad1ae0e9805eea05b6505c1a57ff6e5e95e7f65f80"
+    }
+  ]
+}

@@ -1,0 +1,792 @@
+{
+  "schemaVersion": 1,
+  "series": "anime-fan-merch-expansion",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "Expansion of the existing concert-fan-support category; prior release content and IDs are preserved.",
+  "category": {
+    "id": "concert-fan-support",
+    "name": "Anime & Fan Merchandise",
+    "nameZh": "動漫與追星周邊",
+    "nameJa": "アニメ・推し活グッズ",
+    "emoji": "🎀",
+    "description": "動漫收藏、追星應援與演唱會常見周邊用品",
+    "descriptionEn": "Anime collectibles, fan merchandise, and concert essentials",
+    "descriptionJa": "アニメのコレクショングッズ、推し活やコンサートで使うアイテム",
+    "color": "from-pink-100 to-violet-100",
+    "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/category-anime-fan-merch-v1-e17d4b8ac7d9.webp"
+  },
+  "categoryBefore": {
+    "id": "concert-fan-support",
+    "name": "Concerts & Fan Support",
+    "name_zh": "演唱會與粉絲應援",
+    "emoji": "🎤",
+    "description": "入場用品、粉絲應援與收藏周邊，以及演唱會舞台設備",
+    "description_en": "Admission essentials, fan support and collectible merchandise, and concert stage equipment",
+    "color": "from-pink-100 to-violet-100",
+    "image_url": "https://img.nexflow.team/word-images/concert-fan-support-2026-10/category-concert-fan-support-v1-813321fbf8e2.webp"
+  },
+  "categoryTranslationsBefore": [
+    {
+      "category_id": "concert-fan-support",
+      "language": "ja",
+      "name": "コンサートと応援グッズ",
+      "description": "入場用品、応援やコレクションのグッズ、コンサートの舞台設備"
+    }
+  ],
+  "entries": [
+    {
+      "id": "character-figure",
+      "word": "character figure",
+      "chinese": "角色公仔",
+      "chineseDefinition": "把動漫或作品中的角色做成立體造型、供收藏展示的模型。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈker.ək.tɚ ˌfɪɡ.jɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "角色公仔",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A three-dimensional model of a character, made for collecting and display.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "アニメなどのキャラクターを立体にした、飾ったり集めたりするための模型。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put the character figure on my shelf.",
+          "ja": "フィギュアを棚に置きました。",
+          "zh": "我把角色公仔放在層架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I moved the character figure away from the window because the sunlight was strong.",
+          "ja": "日差しが強かったので、フィギュアを窓から離れた場所に移しました。",
+          "zh": "因為陽光很強，我把角色公仔移到離窗戶較遠的地方。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "フィギュア",
+      "jaReading": "フィギュア",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/character-figure-v1-17283d84bbaf.webp"
+    },
+    {
+      "id": "plush-toy",
+      "word": "plush toy",
+      "chinese": "絨毛玩偶",
+      "chineseDefinition": "以布料縫製並填充柔軟材料的玩偶，可作為角色或動物造型周邊。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplʌʃ tɔɪ/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "絨毛玩偶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soft stuffed toy made from fabric and filled with a soft material.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "布を縫い合わせ、中に綿などを詰めて作った柔らかい人形。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This plush toy is soft.",
+          "ja": "このぬいぐるみは柔らかいです。",
+          "zh": "這個絨毛玩偶很柔軟。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I put the plush toy in a pouch so that it would not get dirty on the train.",
+          "ja": "電車で汚れないように、ぬいぐるみをポーチに入れました。",
+          "zh": "為了避免絨毛玩偶在電車上弄髒，我把它放進收納包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ぬいぐるみ",
+      "jaReading": "ぬいぐるみ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/plush-toy-v1-5194d07e403a.webp"
+    },
+    {
+      "id": "acrylic-keychain",
+      "word": "acrylic keychain",
+      "chinese": "壓克力吊飾",
+      "chineseDefinition": "印有圖案的壓克力薄片，連接鑰匙圈或吊扣，可掛在包包等處的周邊。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/əˈkrɪl.ɪk ˈkiː.tʃeɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "壓克力吊飾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A printed acrylic charm attached to a ring or clasp for hanging from keys or a bag.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "絵などを印刷したアクリル板にリングや金具を付け、かばんなどに下げられるグッズ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I attached an acrylic keychain to my bag.",
+          "ja": "かばんにアクリルキーホルダーを付けました。",
+          "zh": "我在包包上掛了一個壓克力吊飾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I removed the acrylic keychain before washing my bag because I did not want to scratch it.",
+          "ja": "傷を付けたくなかったので、かばんを洗う前にアクリルキーホルダーを外しました。",
+          "zh": "因為不想刮傷壓克力吊飾，我在洗包包前先把它取下來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アクリルキーホルダー",
+      "jaReading": "アクリルキーホルダー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/acrylic-keychain-v1-f6153d7d0699.webp"
+    },
+    {
+      "id": "rubber-keychain",
+      "word": "rubber keychain",
+      "chinese": "軟膠吊飾",
+      "chineseDefinition": "以柔軟橡膠感材質製成圖案薄片、帶掛環或吊扣的周邊。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrʌb.ɚ ˈkiː.tʃeɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "軟膠吊飾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A flexible rubber-like character charm attached to a ring or clasp.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "柔らかいラバー素材などでキャラクターの形を作り、リングや金具を付けたグッズ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My rubber keychain is purple.",
+          "ja": "私のラバーキーホルダーは紫です。",
+          "zh": "我的軟膠吊飾是紫色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I chose the rubber keychain because I liked its raised design.",
+          "ja": "浮き出た模様が気に入ったので、そのラバーキーホルダーを選びました。",
+          "zh": "因為喜歡凸起的圖案，我選了那個軟膠吊飾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ラバーキーホルダー",
+      "jaReading": "ラバーキーホルダー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/rubber-keychain-v1-ec63c485e64b.webp"
+    },
+    {
+      "id": "photo-card",
+      "word": "photo card",
+      "chinese": "偶像小卡",
+      "chineseDefinition": "印有藝人照片、供粉絲收藏或交換的小型卡片。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊ.toʊ kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "偶像小卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small collectible card printed with a photograph of a performer.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "出演者の写真を印刷した、ファンが集めたり交換したりする小さなカード。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I traded a photo card with a friend.",
+          "ja": "友達とフォトカードを交換しました。",
+          "zh": "我和朋友交換了一張偶像小卡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I put the photo card in a sleeve as soon as I took it out of the package.",
+          "ja": "袋から出したらすぐに、フォトカードをスリーブに入れました。",
+          "zh": "我一把偶像小卡從包裝取出，就立刻放進卡套。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "フォトカード",
+      "jaReading": "フォトカード",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/photo-card-v1-f832de37e3e7.webp"
+    },
+    {
+      "id": "trading-card-sleeve",
+      "word": "trading card sleeve",
+      "chinese": "收藏卡卡套",
+      "chineseDefinition": "包住單張收藏卡、避免表面磨損的薄型柔軟保護套。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtreɪ.dɪŋ kɑːrd sliːv/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "收藏卡卡套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A thin flexible protective sleeve for a collectible card.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "トレーディングカードなどを一枚ずつ入れ、表面の傷を防ぐ薄く柔らかい保護袋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the card in a trading card sleeve.",
+          "ja": "カードをトレカスリーブに入れてください。",
+          "zh": "請把卡片放進收藏卡卡套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked the size before buying trading card sleeves because my cards were larger than usual.",
+          "ja": "カードが普通より大きかったので、トレカスリーブを買う前にサイズを確認しました。",
+          "zh": "因為卡片比一般的大，我在購買收藏卡卡套前先確認尺寸。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "トレカスリーブ",
+      "jaReading": "トレカスリーブ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/trading-card-sleeve-v1-672a1051ac04.webp"
+    },
+    {
+      "id": "photo-card-holder",
+      "word": "photo card holder",
+      "chinese": "小卡硬殼保護套",
+      "chineseDefinition": "保護並攜帶照片小卡或收藏卡的硬質透明外殼。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊ.toʊ kɑːrd ˌhoʊl.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "小卡硬殼保護套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A rigid transparent case for protecting and carrying a photo card or collectible card.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "フォトカードやトレーディングカードを保護して持ち歩くための、硬い透明のケース。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This photo card holder is clear.",
+          "ja": "このトレカケースは透明です。",
+          "zh": "這個小卡硬殼保護套是透明的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I closed the photo card holder securely so that the card would not slip out.",
+          "ja": "カードが抜け落ちないように、トレカケースをしっかり閉めました。",
+          "zh": "為了避免卡片滑落，我把小卡硬殼保護套關牢。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "トレカケース",
+      "jaReading": "トレカケース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/photo-card-holder-v1-5d7632ab511d.webp"
+    },
+    {
+      "id": "photo-card-album",
+      "word": "photo card album",
+      "chinese": "小卡收藏冊",
+      "chineseDefinition": "內有透明卡片口袋頁、可整理多張照片小卡的冊子。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊ.toʊ kɑːrd ˈæl.bəm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "小卡收藏冊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An album with clear pocket pages for organizing collectible photo cards.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "透明なポケットのあるページにフォトカードを入れ、まとめて保管するアルバム。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My photo card album is full.",
+          "ja": "私のフォトカードアルバムはいっぱいです。",
+          "zh": "我的小卡收藏冊已經放滿了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I added a page to my photo card album because I had bought more cards.",
+          "ja": "カードを買い足したので、フォトカードアルバムにページを追加しました。",
+          "zh": "因為又買了更多卡片，我在小卡收藏冊裡增加了一頁。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "フォトカードアルバム",
+      "jaReading": "フォトカードアルバム",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/photo-card-album-v1-54913c2a5c8f.webp"
+    },
+    {
+      "id": "mini-shikishi",
+      "word": "mini shikishi board",
+      "chinese": "迷你色紙",
+      "chineseDefinition": "印有角色或作品插圖、常帶金色邊框的小型厚紙收藏板。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɪn.i ʃiˈkiː.ʃi bɔːrd/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "迷你色紙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small thick Japanese art board printed with character artwork, often with a gold border.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "キャラクターなどのイラストを印刷した、金色の縁が付くこともある小さな厚紙の色紙。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I displayed a mini shikishi board on my desk.",
+          "ja": "机にミニ色紙を飾りました。",
+          "zh": "我在書桌上擺了一張迷你色紙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I put the mini shikishi board in a case because I did not want its corners to bend.",
+          "ja": "角を曲げたくなかったので、ミニ色紙をケースに入れました。",
+          "zh": "因為不想讓邊角折彎，我把迷你色紙放進保護盒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ミニ色紙",
+      "jaReading": "ミニしきし",
+      "jaReadingSegments": [
+        {
+          "text": "ミニ",
+          "ruby": null
+        },
+        {
+          "text": "色紙",
+          "ruby": "しきし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/mini-shikishi-v1-52a28d169920.webp"
+    },
+    {
+      "id": "wall-scroll",
+      "word": "wall scroll",
+      "chinese": "布掛畫",
+      "chineseDefinition": "印有插圖、上下以桿固定並可用繩掛起的布製展示品。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwɔːl skroʊl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "布掛畫",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A printed fabric picture held by rods and hung on a wall with a cord.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "イラストなどを印刷した布に棒やひもを付け、壁に掛けて飾るグッズ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I hung the wall scroll in my room.",
+          "ja": "部屋にタペストリーを掛けました。",
+          "zh": "我在房間裡掛了一幅布掛畫。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I rolled up the wall scroll before moving so that the fabric would not crease.",
+          "ja": "布にしわが付かないように、引っ越しの前にタペストリーを巻きました。",
+          "zh": "為了避免布料產生皺摺，我在搬家前把布掛畫捲起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "タペストリー",
+      "jaReading": "タペストリー",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/wall-scroll-v1-4e1568b803c9.webp"
+    },
+    {
+      "id": "blind-box",
+      "word": "blind box",
+      "chinese": "盲盒",
+      "chineseDefinition": "購買時無法直接看見或挑選裡面款式、裝有隨機收藏品的密封盒。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈblaɪnd bɑːks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "盲盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sealed box containing a collectible whose design cannot be chosen or seen before opening.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "開けるまで中の種類が分からず、好きな種類を選べないコレクション用の箱入り商品。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I opened a blind box.",
+          "ja": "ブラインドボックスを開けました。",
+          "zh": "我拆開了一個盲盒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since I could not choose the contents, I bought just one blind box.",
+          "ja": "中身を選べないので、ブラインドボックスは一つだけ買いました。",
+          "zh": "因為無法挑選內容物，我只買了一個盲盒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ブラインドボックス",
+      "jaReading": "ブラインドボックス",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/blind-box-v1-9fa61e317c74.webp"
+    },
+    {
+      "id": "capsule-toy",
+      "word": "capsule toy",
+      "chinese": "扭蛋玩具",
+      "chineseDefinition": "通常從扭蛋機取得、裝在小型塑膠膠囊中的收藏玩具。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæp.səl tɔɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "扭蛋玩具",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small collectible toy usually sold in a plastic capsule through a vending machine.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "主に専用の自動販売機から、プラスチックのカプセルに入って出てくる小さな玩具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I showed my capsule toy to a friend.",
+          "ja": "友達にカプセルトイを見せました。",
+          "zh": "我把扭蛋玩具拿給朋友看。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I took a photo because I got the capsule toy I wanted.",
+          "ja": "欲しかったカプセルトイが出たので、写真を撮りました。",
+          "zh": "因為拿到了想要的扭蛋玩具，我拍了一張照片。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カプセルトイ",
+      "jaReading": "カプセルトイ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/capsule-toy-v1-d9190b8a346d.webp"
+    },
+    {
+      "id": "badge-cover",
+      "word": "pin badge cover",
+      "chinese": "徽章保護套",
+      "chineseDefinition": "包覆徽章表面以避免刮傷、並留有背面別針使用空間的透明保護套。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɪn bædʒ ˌkʌv.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "徽章保護套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A clear protective cover that fits over a pin badge while leaving its fastening usable.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "缶バッジの表面を傷から守り、裏のピンを使えるようにした透明のカバー。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This pin badge cover is too small.",
+          "ja": "この缶バッジカバーは小さすぎます。",
+          "zh": "這個徽章保護套太小了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I measured the badge before buying a pin badge cover because the sizes were different.",
+          "ja": "サイズが違ったので、缶バッジカバーを買う前にバッジの大きさを測りました。",
+          "zh": "因為尺寸不同，我在購買徽章保護套前先量了徽章的大小。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "缶バッジカバー",
+      "jaReading": "かんバッジカバー",
+      "jaReadingSegments": [
+        {
+          "text": "缶",
+          "ruby": "かん"
+        },
+        {
+          "text": "バッジカバー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/badge-cover-v1-737a18a64812.webp"
+    },
+    {
+      "id": "plush-pouch",
+      "word": "plush toy pouch",
+      "chinese": "玩偶收納包",
+      "chineseDefinition": "用來保護並攜帶小型絨毛玩偶、常有透明展示窗的收納包。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplʌʃ tɔɪ paʊtʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "玩偶收納包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A pouch used to protect and carry a small plush toy, often with a clear display window.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小さなぬいぐるみを入れて持ち歩くためのポーチで、透明な窓が付いたものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The plush toy pouch is in my bag.",
+          "ja": "ぬいぐるみポーチはかばんの中にあります。",
+          "zh": "玩偶收納包在我的包包裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I chose a plush toy pouch with a clear window so that I could see the doll inside.",
+          "ja": "中のぬいぐるみが見えるように、透明な窓のあるぬいぐるみポーチを選びました。",
+          "zh": "為了看得到裡面的玩偶，我選了有透明窗的玩偶收納包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ぬいぐるみポーチ",
+      "jaReading": "ぬいぐるみポーチ",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/plush-pouch-v1-8448ebbd1d2e.webp"
+    },
+    {
+      "id": "light-stick-case",
+      "word": "light stick case",
+      "chinese": "手燈收納袋",
+      "chineseDefinition": "用來保護與攜帶演唱會手燈的長形收納袋或盒。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlaɪt stɪk keɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手燈收納袋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long protective pouch or case for carrying a concert light stick.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "コンサート用のペンライトを傷めずに持ち運ぶための細長いケース。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I packed the light stick case.",
+          "ja": "ペンライトケースをかばんに入れました。",
+          "zh": "我把手燈收納袋放進包包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked the length of the light stick case because my new light stick was longer.",
+          "ja": "新しいペンライトのほうが長かったので、ペンライトケースの長さを確認しました。",
+          "zh": "因為新的手燈比較長，我確認了手燈收納袋的長度。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ペンライトケース",
+      "jaReading": "ペンライトケース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/light-stick-case-v1-9929ad7bb38c.webp"
+    },
+    {
+      "id": "figure-display-case",
+      "word": "figure display case",
+      "chinese": "公仔展示盒",
+      "chineseDefinition": "可看見內部收藏公仔、減少灰塵附著的透明展示盒。",
+      "category": "concert-fan-support",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɪɡ.jɚ dɪˈspleɪ keɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "公仔展示盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A transparent display case that keeps a collectible figure visible and helps protect it from dust.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "フィギュアを外から見える状態で飾り、ほこりから守るための透明なケース。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I cleaned the figure display case.",
+          "ja": "フィギュアケースを掃除しました。",
+          "zh": "我清潔了公仔展示盒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I bought a taller figure display case because the figure did not fit in the old one.",
+          "ja": "前のケースにフィギュアが入らなかったので、もっと背の高いフィギュアケースを買いました。",
+          "zh": "因為公仔放不進原本的盒子，我買了一個更高的公仔展示盒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "フィギュアケース",
+      "jaReading": "フィギュアケース",
+      "jaReadingSegments": null,
+      "imageUrl": "https://img.nexflow.team/word-images/anime-fan-merch-2026-10-20/figure-display-case-v1-54a712dc65ee.webp"
+    }
+  ]
+}

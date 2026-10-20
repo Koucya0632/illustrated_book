@@ -1,3 +1,4 @@
+import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_EXAMPLE_PAIRS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type { CEFRLevel } from "@/types";
 import { MAIN_WORD_ALCOHOLIC_DRINKS_EXAMPLE_PAIRS } from "./main-word-alcoholic-drinks-2026-09";
 import { MAIN_WORD_CONVENIENCE_STORE_EXAMPLE_PAIRS } from "./main-word-convenience-store-2026-09";
@@ -172,6 +173,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_CLOTHING_EXAMPLE_PAIRS,
     MAIN_WORD_RESTAURANT_EXAMPLE_PAIRS,
     MAIN_WORD_CONCERT_FAN_SUPPORT_EXAMPLE_PAIRS,
+    MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_EXAMPLE_PAIRS,
     MAIN_WORD_STATION_COMMUTING_EXAMPLE_PAIRS,
   );
 

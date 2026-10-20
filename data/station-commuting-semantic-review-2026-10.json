@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "Individual editorial review of all 16 concepts, 32 examples and their contextual English/Japanese spans. Not an independent native-speaker review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "commuter-pass",
+      "verdict": "pass",
+      "reason": "定期券按期間與區間反覆乘車，與儲值IC卡的付費方式分開；定義涵蓋實體與手機票證。",
+      "sourceSha256": "3c4d9a366e4565aeb543ef6d178f10759fd87c59ac19c96aca7b083a11cc8bf0"
+    },
+    {
+      "kind": "example",
+      "wordId": "commuter-pass",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "買いました為已完成購買，兩個詞彙點為買與定期券，無多加車資或使用限制。",
+      "sourceSha256": "5766ad6d67396922fc6917c8ffd1e2c421a7d3084b843461b6f71e8dd2e0c737"
+    },
+    {
+      "kind": "example",
+      "wordId": "commuter-pass",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "before expired與切れる前に保留先續購後到期的順序；更新是續期而非儲值。",
+      "sourceSha256": "d0ebd5d1faf947796659323136c70342705979112ac7b66b299a8e33102c10cc"
+    },
+    {
+      "kind": "word",
+      "wordId": "transit-ic-card",
+      "verdict": "pass",
+      "reason": "交通系ICカード為日本慣用總稱，不把特定品牌或有接點的晶片卡當作概念。",
+      "sourceSha256": "eb350c3c8eb815fd31582c317f0d9a891c09e69bbca38b3aaa4d530a5bf911a3"
+    },
+    {
+      "kind": "example",
+      "wordId": "transit-ic-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "タッチしてください對應tap的操作指示，here與ここ的指示位置一致。",
+      "sourceSha256": "3c5e35a52ce96de3fce481311f2fe0a5135bc8c72d494bbe8d8cfb61e583f7ba"
+    },
+    {
+      "kind": "example",
+      "wordId": "transit-ic-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "餘額偏低引起乘車前儲值；topped up在此是加值而非更新定期券。",
+      "sourceSha256": "4e6eb163486547757dd50510c4185511e556ba6ab59f34416cbcc0ec326dec8b"
+    },
+    {
+      "kind": "word",
+      "wordId": "train-ticket",
+      "verdict": "pass",
+      "reason": "乗車券與乘車資格一致，定義說明紙票圖示而未宣稱所有鐵路旅程都用紙票。",
+      "sourceSha256": "5491eca055e4dbe70f68b1277a92d24035b1da04b09bdae901550076c05e610d"
+    },
+    {
+      "kind": "example",
+      "wordId": "train-ticket",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "lost與なくしました同為遺失，沒有把忘帶和弄丟混為一談。",
+      "sourceSha256": "3441ce35262ee1a0973e538cf376a06db86cb16df4093475ced0543648261056"
+    },
+    {
+      "kind": "example",
+      "wordId": "train-ticket",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "may need保留可能性；日文ことがある避免把所有出口都要驗紙票寫成絕對規則。",
+      "sourceSha256": "31062b490bad7f363a7c56c4d9fa918ecef96c809d699c9962ae176ee8fb7f16"
+    },
+    {
+      "kind": "word",
+      "wordId": "pass-case",
+      "verdict": "pass",
+      "reason": "パスケース指交通票卡的薄卡套，與演唱會チケットホルダー的大型票券套分開。",
+      "sourceSha256": "b7d62fc594916205607c38695e172d795025e32f8b4c9da680ab14c410595446"
+    },
+    {
+      "kind": "example",
+      "wordId": "pass-case",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "所有者與藍色狀態清楚；私是完整代名詞，非日文助詞。",
+      "sourceSha256": "da48d6a1f1b53e2e0c74df4ce74c1a97689a8decde46b60fc16ac0b384bc60ae"
+    },
+    {
+      "kind": "example",
+      "wordId": "pass-case",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "clip to bag與かばんに留める一致；quickly/すぐ在找卡情境皆表示方便取用，未加入刷卡功能。",
+      "sourceSha256": "94f7616f48f11397d6d94f453c1fc04946a37174a7071b68d9a8e7749e7d2bf1"
+    },
+    {
+      "kind": "word",
+      "wordId": "fare-adjustment-machine",
+      "verdict": "pass",
+      "reason": "精算機以補付車資為核心，與已收錄的券売機及自動改札機分開。",
+      "sourceSha256": "864c097a87786de97c85c0e9ac1801fdd06a1833200180fd883ad0fffd2e9dfe"
+    },
+    {
+      "kind": "example",
+      "wordId": "fare-adjustment-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "簡單位置敘述；英文beside是完整位置詞，日文隣に不切成可點助詞。",
+      "sourceSha256": "5563b948e8f5227f6f60e42a47634b95ea75f41281eed71b0d443f6fb41331e7"
+    },
+    {
+      "kind": "example",
+      "wordId": "fare-adjustment-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "原因是既有票額不足，支付的是差額而非再買全程票；三語因果與過去時一致。",
+      "sourceSha256": "a666d63249ba153719310e479e0a37b9fb4d62482872fb9b0ea03c195cbd792a"
+    },
+    {
+      "kind": "word",
+      "wordId": "station-platform",
+      "verdict": "pass",
+      "reason": "ホーム為日本車站月台常用詞，不把platform screen door的門當作整個月台。",
+      "sourceSha256": "0756040fe64d59b914d30c8267ff1d0a9159fd5ad34e2bc451ec934b6e46c01a"
+    },
+    {
+      "kind": "example",
+      "wordId": "station-platform",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "on platform與ホームで皆為候車地點，日文省略主語不改變事件。",
+      "sourceSha256": "ab2f46ccc90b1fdd4fb126ef600f90f7b4366a8ff6cbaccfb1bb2e6ba5802111"
+    },
+    {
+      "kind": "example",
+      "wordId": "station-platform",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "目的地確認後換月台以搭正確車的時間與目的關係保留；catch非抓住的字面義。",
+      "sourceSha256": "1f23542a7332d9fc4e01935bf6754bdd727ce68396e480b4878de99c66e77a1b"
+    },
+    {
+      "kind": "word",
+      "wordId": "railway-tracks",
+      "verdict": "pass",
+      "reason": "線路包含平行鋼軌與支承構件，與月台與路面車道分清楚；英文採常見複數。",
+      "sourceSha256": "e9ae90d3a22c3939838e5ce3bd2d66b711007ba26e7cdae77c1437ec881fa94f"
+    },
+    {
+      "kind": "example",
+      "wordId": "railway-tracks",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "禁止在軌道行走是清楚的單一指示，不用危險行為當正面示範。",
+      "sourceSha256": "18277e593bcfdb88909c21a3791638eb3392e6daa815fabdf5c2176c4ec915db"
+    },
+    {
+      "kind": "example",
+      "wordId": "railway-tracks",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "if條件與instead of替代動作完整；助けを求める為自然固定表達，非把整句併成單一點擊。",
+      "sourceSha256": "5e8adf2e7a02e350978934007b21f801f787f6b80d930dda95cb0642b1cec524"
+    },
+    {
+      "kind": "word",
+      "wordId": "route-map",
+      "verdict": "pass",
+      "reason": "路線図表現站點連線與轉乘，與地理道路地圖不同。",
+      "sourceSha256": "d30479b2a99d21e6054aaf535b95fdc6ed386cbc121b31faca47e2733cdba6e9"
+    },
+    {
+      "kind": "example",
+      "wordId": "route-map",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "check指查看資訊，確認してください自然，不暗示對地圖真偽檢驗。",
+      "sourceSha256": "2f7b93395fa10308e3c5d035e9d1311e96cc56819b8fd961c5c9949ff5eb0718"
+    },
+    {
+      "kind": "example",
+      "wordId": "route-map",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "買票前看路線圖找轉乘站；where間接問句和どこで…か對應，非只問目的地。",
+      "sourceSha256": "b6a9544856c7e0a7bd6f4b04c01c440cc423eb5dd16fe3032e5fd7da86fd9481"
+    },
+    {
+      "kind": "word",
+      "wordId": "departure-board",
+      "verdict": "pass",
+      "reason": "發車資訊板不是靜態時刻表；定義含目的地與發車資訊，不把看板當車站名稱牌。",
+      "sourceSha256": "e528ac6e2e272708c76fb72971bbf52b56cb1b81fd3619fe70e8641b601f8fa0"
+    },
+    {
+      "kind": "example",
+      "wordId": "departure-board",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "主動shows與被動表示されています對同一可見狀態；next僅修飾下一班車。",
+      "sourceSha256": "e0fffcd6ac7a2ed99c6b9826b3a82f8dd8e307c173a0467a118108a496e92a1d"
+    },
+    {
+      "kind": "example",
+      "wordId": "departure-board",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "看板誤點資訊引發向公司告知遲到，英文would be為過去視角的未來，日文遅れる理由自然對應。",
+      "sourceSha256": "2b0316afb42700fe0f4faa8323c894e8f2e0044ed49e4536d2f51963c336532d"
+    },
+    {
+      "kind": "word",
+      "wordId": "coin-locker",
+      "verdict": "pass",
+      "reason": "日本慣用コインロッカー不保證僅收硬幣；定義明列電子支付款式，圖示可採傳統投幣型。",
+      "sourceSha256": "b1741dacc9ea2eb4beaf7997c4f20f6855fa3feb576479e7f41fa0d4da715dc9"
+    },
+    {
+      "kind": "example",
+      "wordId": "coin-locker",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "put…in與入れました表示將包放入櫃內，不加入未說明的付款步驟。",
+      "sourceSha256": "b3b6bc4650b3f2284f2b034d8debbb24015a13d4102b03e592b20bc9264d95d7"
+    },
+    {
+      "kind": "example",
+      "wordId": "coin-locker",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "full以空いていなかった表示沒有空櫃，left為寄放非遺留；改寄飯店具有實際行李情境。",
+      "sourceSha256": "c543f52d4272a921db5085c8f4cf093fb28961e14acbb80a2a930c0da4062e60"
+    },
+    {
+      "kind": "word",
+      "wordId": "priority-seat",
+      "verdict": "pass",
+      "reason": "優先席按需要優先使用，沒有把整節車廂或一般指定席誤當此概念。",
+      "sourceSha256": "6f9fea91a2c6bd00a860223ab78f017e8474bb85203f2251f985c9db0ddc5c13"
+    },
+    {
+      "kind": "example",
+      "wordId": "priority-seat",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "此座位靠近門是具體指示句，未聲稱所有優先席位置一樣。",
+      "sourceSha256": "94b242a55b54f2236e2aaf3486a1003378ce181b42beb4f87b5fb7bc19476196"
+    },
+    {
+      "kind": "example",
+      "wordId": "priority-seat",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "雖累仍讓座的轉折保留；譲りました表讓座給上車孕婦，不是售出或預約座位。",
+      "sourceSha256": "f6a2977bb4171061e7bf19a792ea16238c1baa9f2e2585476419625f5f698570"
+    },
+    {
+      "kind": "word",
+      "wordId": "train-luggage-rack",
+      "verdict": "pass",
+      "reason": "網棚是日本通勤電車座位上方開放架，現代金屬桿架也沿用此詞，不是行李箱或機艙封閉櫃。",
+      "sourceSha256": "362ea3a5f75ce81aa02877e858395d95a9d91a86a8c2653a02c018f9583c60d7"
+    },
+    {
+      "kind": "example",
+      "wordId": "train-luggage-rack",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "包在架上三語一致，日文自然省略所有者，不引入別人行李。",
+      "sourceSha256": "08cecb9743ff06df8ed6272c9b92b0edbaf8b6ca72feec9e2c19ce35577bc9ba"
+    },
+    {
+      "kind": "example",
+      "wordId": "train-luggage-rack",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "before與前に對齊；leave behind譯置き忘れる，明確為下車漏帶而非寄存。",
+      "sourceSha256": "4f26be7efb60f3e825b4358a72cfc0f6eadf49ea865b00f3cdef14b876890e2d"
+    },
+    {
+      "kind": "word",
+      "wordId": "platform-bench",
+      "verdict": "pass",
+      "reason": "連排候車椅與長椅皆屬候車設施；日文ホームのベンチ保留位置限定。",
+      "sourceSha256": "11db5daed75f128cd09137ca11af1ec6e01d47dbb0afcc7f66aa1bde4b2db0e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "platform-bench",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "Let us與ましょう為提議，沒有改成命令或既成事件。",
+      "sourceSha256": "3c8421a416777bf79b37e3a50bb264f76c8e5f1fbd2e04c648571ae8789aaf09"
+    },
+    {
+      "kind": "example",
+      "wordId": "platform-bench",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "十分鐘等待造成休息選擇；足元對應腳邊，行李沒佔用椅面，八個日文點擊仍為詞彙單位。",
+      "sourceSha256": "300dcf10c6f188d8f40539f897e05400276a7726d53b05a71d4bd6286aef2beb"
+    },
+    {
+      "kind": "word",
+      "wordId": "emergency-intercom",
+      "verdict": "pass",
+      "reason": "東京メトロ官方說明車內非常通報裝置可向乘務員通話，與月台停車按鈕及火災警報器分開。",
+      "sourceSha256": "d068b8c27cb589aedf1c4e797b940ac44654c4c56a92798062570f06d3d659c7"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-intercom",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "具體車門旁位置句，只描述圖示一具設備，不聲稱所有列車位置相同。",
+      "sourceSha256": "c4b137e9b927171e03aac346058a4e3a10d34530667ed731fdf4491d0ee56936"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-intercom",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "乘客倒下為具體緊急情境；使用通話裝置告知狀況，而非宣稱按下即一定停車；三語事件順序一致。",
+      "sourceSha256": "6123ce9711cc24a76a6e11a10dcd4a4d4527b77f91553aea871005d1ed87c4b0"
+    },
+    {
+      "kind": "word",
+      "wordId": "elevator",
+      "verdict": "pass",
+      "reason": "電梯是封閉升降廂，與連續階梯式電扶梯不同；英文elevator為美式，定義提供lift對應。",
+      "sourceSha256": "117334074e72b9fda537aaef996f9adddde6d89d2c81ee8a79f8b73ec87ee47c"
+    },
+    {
+      "kind": "example",
+      "wordId": "elevator",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "指示這座通月台，非所有電梯都通月台的泛稱；elevator與ホーム是完整點擊詞。",
+      "sourceSha256": "5ee41f0d0233a5fbcb62cfd1dca2f2792b75b9a67683e24bc4ab0bd2c4a632a6"
+    },
+    {
+      "kind": "example",
+      "wordId": "elevator",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "行李重為原因，instead of與代わりに表替代搬上樓梯；日文使いました自然表搭乘。",
+      "sourceSha256": "857cd74fdaf7ff041d8fde1bc586dd1e1f51e1555e004d359c002972ff3be4d4"
+    },
+    {
+      "kind": "word",
+      "wordId": "escalator",
+      "verdict": "pass",
+      "reason": "エスカレーター連續移動階梯與扶手帶為定義特徵，與直立電梯及平面電動步道區分。",
+      "sourceSha256": "98ad2c797a2f9cc4a69986f106e29494e6fa753de699162ee5b1e533b64f7c05"
+    },
+    {
+      "kind": "example",
+      "wordId": "escalator",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "握扶手指示自然，沒有加入左右側站立習慣或行走建議。",
+      "sourceSha256": "0bc0065cdc0c7946494423f34a06384bdb0cecef652b3a3ec231dc479309f702"
+    },
+    {
+      "kind": "example",
+      "wordId": "escalator",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "停止運轉後由站務員提供替代路線，教えてくれました表受益者為我們；未指示把停運電扶梯當樓梯。",
+      "sourceSha256": "1afb5687d89e93a1fa31e39aaf00798716ff0cb6a36b376f48b89862dd6ad672"
+    }
+  ]
+}

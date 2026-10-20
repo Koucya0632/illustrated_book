@@ -1,0 +1,2783 @@
+{
+  "en": {
+    "I bought a commuter pass.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "commuter pass",
+        "z": "通勤定期券",
+        "j": "定期券",
+        "e": "commuter pass"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I renewed my commuter pass before it expired.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "renewed",
+        "z": "續購了",
+        "j": "更新しました",
+        "e": "renewed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "commuter pass",
+        "z": "通勤定期券",
+        "j": "定期券",
+        "e": "commuter pass"
+      },
+      {
+        "t": " before it "
+      },
+      {
+        "t": "expired",
+        "z": "到期",
+        "j": "有効期限が切れました",
+        "e": "expired"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Tap your transit IC card here.": [
+      {
+        "t": "Tap",
+        "z": "感應",
+        "j": "タッチしてください",
+        "e": "tap"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "transit IC card",
+        "z": "交通IC卡",
+        "j": "交通系ICカード",
+        "e": "transit IC card"
+      },
+      {
+        "t": " here."
+      }
+    ],
+    "Because the balance was low, I topped up my transit IC card before boarding.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "balance",
+        "z": "餘額",
+        "j": "残高",
+        "e": "balance"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "low",
+        "z": "不足",
+        "j": "少ない",
+        "e": "low"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "topped up",
+        "z": "儲值了",
+        "j": "チャージしました",
+        "e": "added credit to"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "transit IC card",
+        "z": "交通IC卡",
+        "j": "交通系ICカード",
+        "e": "transit IC card"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "boarding",
+        "z": "乘車",
+        "j": "乗車する",
+        "e": "boarding"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I lost my train ticket.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "lost",
+        "z": "弄丟了",
+        "j": "なくしました",
+        "e": "lost"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "train ticket",
+        "z": "火車票",
+        "j": "乗車券",
+        "e": "train ticket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Keep your train ticket until you leave the station, because you may need it at the exit.": [
+      {
+        "t": "Keep",
+        "z": "保留",
+        "j": "保管してください",
+        "e": "keep"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "train ticket",
+        "z": "火車票",
+        "j": "乗車券",
+        "e": "train ticket"
+      },
+      {
+        "t": " until you "
+      },
+      {
+        "t": "leave",
+        "z": "離開",
+        "j": "出る",
+        "e": "leave"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "station",
+        "z": "車站",
+        "j": "駅",
+        "e": "station"
+      },
+      {
+        "t": ", because you may "
+      },
+      {
+        "t": "need",
+        "z": "需要",
+        "j": "必要になる",
+        "e": "need"
+      },
+      {
+        "t": " it at the "
+      },
+      {
+        "t": "exit",
+        "z": "出口",
+        "j": "出口",
+        "e": "exit"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My pass case is blue.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "pass case",
+        "z": "票卡夾",
+        "j": "パスケース",
+        "e": "pass case"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "blue",
+        "z": "藍色",
+        "j": "青い",
+        "e": "blue"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I clipped my pass case to my bag so that I could find it quickly at the gate.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "clipped",
+        "z": "夾上了",
+        "j": "留めました",
+        "e": "clipped"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "pass case",
+        "z": "票卡夾",
+        "j": "パスケース",
+        "e": "pass case"
+      },
+      {
+        "t": " to my "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": " so that I could "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "quickly",
+        "z": "很快地",
+        "j": "すぐ",
+        "e": "quickly"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "gate",
+        "z": "閘門",
+        "j": "改札",
+        "e": "ticket gate"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The fare adjustment machine is beside the gate.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "fare adjustment machine",
+        "z": "補票精算機",
+        "j": "精算機",
+        "e": "fare adjustment machine"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "beside",
+        "z": "在旁邊",
+        "j": "隣に",
+        "e": "beside"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "gate",
+        "z": "閘門",
+        "j": "改札",
+        "e": "ticket gate"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since my ticket did not cover the full fare, I paid the difference at the fare adjustment machine.": [
+      {
+        "t": "Since my "
+      },
+      {
+        "t": "ticket",
+        "z": "車票",
+        "j": "きっぷ",
+        "e": "ticket"
+      },
+      {
+        "t": " did not "
+      },
+      {
+        "t": "cover",
+        "z": "涵蓋",
+        "j": "含む",
+        "e": "cover"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "full fare",
+        "z": "全額車資",
+        "j": "運賃の全額",
+        "e": "full fare"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "paid",
+        "z": "支付了",
+        "j": "払いました",
+        "e": "paid"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "difference",
+        "z": "差額",
+        "j": "差額",
+        "e": "difference"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "fare adjustment machine",
+        "z": "補票精算機",
+        "j": "精算機",
+        "e": "fare adjustment machine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We waited on the station platform.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "waited",
+        "z": "等候了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "station platform",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "station platform"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After I checked the destination, I moved to the other station platform to catch the right train.": [
+      {
+        "t": "After I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "destination",
+        "z": "目的地",
+        "j": "行き先",
+        "e": "destination"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "移動しました",
+        "e": "moved"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "other",
+        "z": "另一個",
+        "j": "別の",
+        "e": "other"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "station platform",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "station platform"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "catch",
+        "z": "搭乘",
+        "j": "乗る",
+        "e": "catch"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "right train",
+        "z": "正確班次",
+        "j": "乗るべき電車",
+        "e": "right train"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Do not walk on the railway tracks.": [
+      {
+        "t": "Do not "
+      },
+      {
+        "t": "walk",
+        "z": "步行",
+        "j": "歩く",
+        "e": "walk"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "railway tracks",
+        "z": "鐵軌",
+        "j": "線路",
+        "e": "railway tracks"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "If you drop something onto the railway tracks, ask a station attendant for help instead of climbing down.": [
+      {
+        "t": "If you "
+      },
+      {
+        "t": "drop",
+        "z": "掉落",
+        "j": "落とす",
+        "e": "drop"
+      },
+      {
+        "t": " something onto the "
+      },
+      {
+        "t": "railway tracks",
+        "z": "鐵軌",
+        "j": "線路",
+        "e": "railway tracks"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "ask",
+        "z": "請求",
+        "j": "頼む",
+        "e": "ask"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "station attendant",
+        "z": "站務員",
+        "j": "駅員",
+        "e": "station attendant"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "help",
+        "z": "協助",
+        "j": "助け",
+        "e": "help"
+      },
+      {
+        "t": " instead of "
+      },
+      {
+        "t": "climbing down",
+        "z": "爬下去",
+        "j": "降りる",
+        "e": "climbing down"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Check the route map.": [
+      {
+        "t": "Check",
+        "z": "查看",
+        "j": "確認してください",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "route map",
+        "z": "路線圖",
+        "j": "路線図",
+        "e": "route map"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I looked at the route map to find where I needed to change trains before buying a ticket.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "looked at",
+        "z": "查看了",
+        "j": "見ました",
+        "e": "looked at"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "route map",
+        "z": "路線圖",
+        "j": "路線図",
+        "e": "route map"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "find",
+        "z": "找出",
+        "j": "調べる",
+        "e": "find"
+      },
+      {
+        "t": " where I needed to "
+      },
+      {
+        "t": "change trains",
+        "z": "轉乘",
+        "j": "乗り換える",
+        "e": "change trains"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "buying",
+        "z": "購買",
+        "j": "買う",
+        "e": "buying"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "ticket",
+        "z": "車票",
+        "j": "きっぷ",
+        "e": "ticket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The departure board shows the next train.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "departure board",
+        "z": "發車資訊看板",
+        "j": "発車案内板",
+        "e": "departure board"
+      },
+      {
+        "t": " shows the "
+      },
+      {
+        "t": "next train",
+        "z": "下一班列車",
+        "j": "次の電車",
+        "e": "next train"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the departure board showed a delay, I called my office to explain why I would be late.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "departure board",
+        "z": "發車資訊看板",
+        "j": "発車案内板",
+        "e": "departure board"
+      },
+      {
+        "t": " showed a "
+      },
+      {
+        "t": "delay",
+        "z": "誤點",
+        "j": "遅れ",
+        "e": "delay"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "called",
+        "z": "打電話給",
+        "j": "電話しました",
+        "e": "called"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "office",
+        "z": "公司",
+        "j": "会社",
+        "e": "office"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "explain",
+        "z": "說明",
+        "j": "説明する",
+        "e": "explain"
+      },
+      {
+        "t": " why I would be "
+      },
+      {
+        "t": "late",
+        "z": "遲到",
+        "j": "遅れる",
+        "e": "late"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put my bag in a coin locker.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "coin locker",
+        "z": "投幣式置物櫃",
+        "j": "コインロッカー",
+        "e": "coin locker"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the large coin lockers were full, I left my suitcase at the hotel.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "large",
+        "z": "大型的",
+        "j": "大きい",
+        "e": "large"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "coin lockers",
+        "z": "置物櫃",
+        "j": "コインロッカー",
+        "e": "coin lockers"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "full",
+        "z": "已滿",
+        "j": "空いていない",
+        "e": "full"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "left",
+        "z": "寄放了",
+        "j": "預けました",
+        "e": "left for safekeeping"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "suitcase",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "hotel",
+        "z": "飯店",
+        "j": "ホテル",
+        "e": "hotel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This priority seat is near the door.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "priority seat",
+        "z": "優先席",
+        "j": "優先席",
+        "e": "priority seat"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "near",
+        "z": "靠近",
+        "j": "近くに",
+        "e": "near"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "door",
+        "z": "車門",
+        "j": "ドア",
+        "e": "door"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When a pregnant passenger boarded, I offered her my priority seat even though I was tired.": [
+      {
+        "t": "When a "
+      },
+      {
+        "t": "pregnant passenger",
+        "z": "懷孕乘客",
+        "j": "妊娠中の乗客",
+        "e": "pregnant passenger"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "boarded",
+        "z": "上車了",
+        "j": "乗ってきました",
+        "e": "boarded"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "offered",
+        "z": "讓出了",
+        "j": "譲りました",
+        "e": "offered"
+      },
+      {
+        "t": " her my "
+      },
+      {
+        "t": "priority seat",
+        "z": "優先席",
+        "j": "優先席",
+        "e": "priority seat"
+      },
+      {
+        "t": " even though I was "
+      },
+      {
+        "t": "tired",
+        "z": "累了",
+        "j": "疲れていました",
+        "e": "tired"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My bag is on the train luggage rack.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": " is on the "
+      },
+      {
+        "t": "train luggage rack",
+        "z": "車廂行李架",
+        "j": "網棚",
+        "e": "train luggage rack"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before you get off, check the train luggage rack so that you do not leave behind any bags.": [
+      {
+        "t": "Before you "
+      },
+      {
+        "t": "get off",
+        "z": "下車",
+        "j": "降りる",
+        "e": "get off"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確認してください",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "train luggage rack",
+        "z": "車廂行李架",
+        "j": "網棚",
+        "e": "train luggage rack"
+      },
+      {
+        "t": " so that you do not "
+      },
+      {
+        "t": "leave behind",
+        "z": "忘記帶走",
+        "j": "置き忘れる",
+        "e": "leave behind"
+      },
+      {
+        "t": " any "
+      },
+      {
+        "t": "bags",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bags"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Let us sit on the platform bench.": [
+      {
+        "t": "Let us "
+      },
+      {
+        "t": "sit",
+        "z": "坐",
+        "j": "座りましょう",
+        "e": "sit"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "platform bench",
+        "z": "月台長椅",
+        "j": "ホームのベンチ",
+        "e": "platform bench"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since we had ten minutes before the train arrived, we rested on a platform bench with our bags at our feet.": [
+      {
+        "t": "Since we had "
+      },
+      {
+        "t": "ten minutes",
+        "z": "十分鐘",
+        "j": "十分",
+        "e": "ten minutes"
+      },
+      {
+        "t": " before the "
+      },
+      {
+        "t": "train",
+        "z": "列車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "抵達",
+        "j": "来る",
+        "e": "arrived"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "rested",
+        "z": "休息了",
+        "j": "休みました",
+        "e": "rested"
+      },
+      {
+        "t": " on a "
+      },
+      {
+        "t": "platform bench",
+        "z": "月台長椅",
+        "j": "ホームのベンチ",
+        "e": "platform bench"
+      },
+      {
+        "t": " with our "
+      },
+      {
+        "t": "bags",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bags"
+      },
+      {
+        "t": " at our "
+      },
+      {
+        "t": "feet",
+        "z": "腳邊",
+        "j": "足元",
+        "e": "feet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The emergency intercom is beside the door.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "emergency intercom",
+        "z": "緊急通話裝置",
+        "j": "非常通報装置",
+        "e": "emergency intercom"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "beside",
+        "z": "在旁邊",
+        "j": "隣に",
+        "e": "beside"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "door",
+        "z": "車門",
+        "j": "ドア",
+        "e": "door"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When a passenger collapsed, I used the emergency intercom to tell the train staff what had happened.": [
+      {
+        "t": "When a "
+      },
+      {
+        "t": "passenger",
+        "z": "乘客",
+        "j": "乗客",
+        "e": "passenger"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "collapsed",
+        "z": "倒下了",
+        "j": "倒れました",
+        "e": "collapsed"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使いました",
+        "e": "used"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "emergency intercom",
+        "z": "緊急通話裝置",
+        "j": "非常通報装置",
+        "e": "emergency intercom"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "tell",
+        "z": "告知",
+        "j": "伝える",
+        "e": "tell"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "train staff",
+        "z": "乘務員",
+        "j": "乗務員",
+        "e": "train staff"
+      },
+      {
+        "t": " what had "
+      },
+      {
+        "t": "happened",
+        "z": "發生",
+        "j": "起きた",
+        "e": "happened"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The elevator goes to the platform.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "elevator",
+        "z": "電梯",
+        "j": "エレベーター",
+        "e": "elevator"
+      },
+      {
+        "t": " goes to the "
+      },
+      {
+        "t": "platform",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I had a heavy suitcase, I took the elevator instead of carrying it up the stairs.": [
+      {
+        "t": "Because I had a "
+      },
+      {
+        "t": "heavy",
+        "z": "很重的",
+        "j": "重い",
+        "e": "heavy"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "suitcase",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "took",
+        "z": "搭乘了",
+        "j": "使いました",
+        "e": "took"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "elevator",
+        "z": "電梯",
+        "j": "エレベーター",
+        "e": "elevator"
+      },
+      {
+        "t": " instead of "
+      },
+      {
+        "t": "carrying",
+        "z": "搬運",
+        "j": "運ぶ",
+        "e": "carrying"
+      },
+      {
+        "t": " it up the "
+      },
+      {
+        "t": "stairs",
+        "z": "樓梯",
+        "j": "階段",
+        "e": "stairs"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Hold the handrail on the escalator.": [
+      {
+        "t": "Hold",
+        "z": "握住",
+        "j": "つかまってください",
+        "e": "hold"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "handrail",
+        "z": "扶手",
+        "j": "手すり",
+        "e": "handrail"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "escalator",
+        "z": "電扶梯",
+        "j": "エスカレーター",
+        "e": "escalator"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the escalator was stopped, a station attendant showed us a different route to the platform.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "escalator",
+        "z": "電扶梯",
+        "j": "エスカレーター",
+        "e": "escalator"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "stopped",
+        "z": "停止運轉",
+        "j": "止まっていました",
+        "e": "stopped"
+      },
+      {
+        "t": ", a "
+      },
+      {
+        "t": "station attendant",
+        "z": "站務員",
+        "j": "駅員",
+        "e": "station attendant"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "指引了",
+        "j": "教えました",
+        "e": "showed"
+      },
+      {
+        "t": " us a "
+      },
+      {
+        "t": "different route",
+        "z": "另一條路",
+        "j": "別の行き方",
+        "e": "different route"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "platform",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "定期券を買いました。": [
+      {
+        "t": "定期券",
+        "z": "通勤定期券",
+        "j": "定期券",
+        "e": "commuter pass",
+        "r": "ていきけん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "有効期限が切れる前に、定期券を更新しました。": [
+      {
+        "t": "有効期限",
+        "z": "有效期限",
+        "j": "有効期限",
+        "e": "validity period",
+        "r": "ゆうこうきげん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "切れる",
+        "z": "到期",
+        "j": "切れる",
+        "e": "expire",
+        "r": "きれる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "定期券",
+        "z": "通勤定期券",
+        "j": "定期券",
+        "e": "commuter pass",
+        "r": "ていきけん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "更新しました",
+        "z": "續購了",
+        "j": "更新しました",
+        "e": "renewed",
+        "r": "こうしんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "交通系ICカードをここにタッチしてください。": [
+      {
+        "t": "交通系ICカード",
+        "z": "交通IC卡",
+        "j": "交通系ICカード",
+        "e": "transit IC card",
+        "r": "こうつうけいアイシーカード"
+      },
+      {
+        "t": "をここに"
+      },
+      {
+        "t": "タッチしてください",
+        "z": "請感應",
+        "j": "タッチしてください",
+        "e": "please tap",
+        "r": "タッチしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "残高が少なかったので、乗車する前に交通系ICカードにチャージしました。": [
+      {
+        "t": "残高",
+        "z": "餘額",
+        "j": "残高",
+        "e": "balance",
+        "r": "ざんだか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "少なかった",
+        "z": "不足",
+        "j": "少なかった",
+        "e": "was low",
+        "r": "すくなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "乗車する",
+        "z": "乘車",
+        "j": "乗車する",
+        "e": "board",
+        "r": "じょうしゃする"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "交通系ICカード",
+        "z": "交通IC卡",
+        "j": "交通系ICカード",
+        "e": "transit IC card",
+        "r": "こうつうけいアイシーカード"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "チャージしました",
+        "z": "儲值了",
+        "j": "チャージしました",
+        "e": "added credit",
+        "r": "チャージしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "乗車券をなくしました。": [
+      {
+        "t": "乗車券",
+        "z": "火車票",
+        "j": "乗車券",
+        "e": "train ticket",
+        "r": "じょうしゃけん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "なくしました",
+        "z": "弄丟了",
+        "j": "なくしました",
+        "e": "lost",
+        "r": "なくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "出口で必要になることがあるので、駅を出るまで乗車券を保管してください。": [
+      {
+        "t": "出口",
+        "z": "出口",
+        "j": "出口",
+        "e": "exit",
+        "r": "でぐち"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "必要になる",
+        "z": "需要",
+        "j": "必要になる",
+        "e": "be needed",
+        "r": "ひつようになる"
+      },
+      {
+        "t": "ことがあるので、"
+      },
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "離開",
+        "j": "出る",
+        "e": "leave",
+        "r": "でる"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "乗車券",
+        "z": "火車票",
+        "j": "乗車券",
+        "e": "train ticket",
+        "r": "じょうしゃけん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "保管してください",
+        "z": "請保留",
+        "j": "保管してください",
+        "e": "please keep",
+        "r": "ほかんしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "私のパスケースは青いです。": [
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "パスケース",
+        "z": "票卡夾",
+        "j": "パスケース",
+        "e": "pass case",
+        "r": "パスケース"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "青い",
+        "z": "藍色",
+        "j": "青い",
+        "e": "blue",
+        "r": "あおい"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "改札ですぐ見つけられるように、パスケースをかばんに留めました。": [
+      {
+        "t": "改札",
+        "z": "閘門",
+        "j": "改札",
+        "e": "ticket gate",
+        "r": "かいさつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "すぐ",
+        "z": "很快地",
+        "j": "すぐ",
+        "e": "quickly",
+        "r": "すぐ"
+      },
+      {
+        "t": "見つけられる",
+        "z": "能找到",
+        "j": "見つけられる",
+        "e": "can find",
+        "r": "みつけられる"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "パスケース",
+        "z": "票卡夾",
+        "j": "パスケース",
+        "e": "pass case",
+        "r": "パスケース"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "留めました",
+        "z": "夾上了",
+        "j": "留めました",
+        "e": "clipped",
+        "r": "とめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "精算機は改札の隣にあります。": [
+      {
+        "t": "精算機",
+        "z": "補票精算機",
+        "j": "精算機",
+        "e": "fare adjustment machine",
+        "r": "せいさんき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "改札",
+        "z": "閘門",
+        "j": "改札",
+        "e": "ticket gate",
+        "r": "かいさつ"
+      },
+      {
+        "t": "の隣にあります。"
+      }
+    ],
+    "きっぷの金額では運賃が足りなかったので、精算機で差額を払いました。": [
+      {
+        "t": "きっぷ",
+        "z": "車票",
+        "j": "きっぷ",
+        "e": "ticket",
+        "r": "きっぷ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "金額",
+        "z": "金額",
+        "j": "金額",
+        "e": "amount",
+        "r": "きんがく"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "運賃",
+        "z": "車資",
+        "j": "運賃",
+        "e": "fare",
+        "r": "うんちん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "足りなかった",
+        "z": "不足",
+        "j": "足りなかった",
+        "e": "was insufficient",
+        "r": "たりなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "精算機",
+        "z": "補票精算機",
+        "j": "精算機",
+        "e": "fare adjustment machine",
+        "r": "せいさんき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "差額",
+        "z": "差額",
+        "j": "差額",
+        "e": "difference",
+        "r": "さがく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "払いました",
+        "z": "支付了",
+        "j": "払いました",
+        "e": "paid",
+        "r": "はらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ホームで待ちました。": [
+      {
+        "t": "ホーム",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "station platform",
+        "r": "ホーム"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等候了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "行き先を確認してから、乗るべき電車に乗るために別のホームへ移動しました。": [
+      {
+        "t": "行き先",
+        "z": "目的地",
+        "j": "行き先",
+        "e": "destination",
+        "r": "いきさき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "z": "確認後",
+        "j": "確認して",
+        "e": "after checking",
+        "r": "かくにんして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "乗るべき",
+        "z": "應搭乘的",
+        "j": "乗るべき",
+        "e": "the one to take",
+        "r": "のるべき"
+      },
+      {
+        "t": "電車",
+        "z": "電車",
+        "j": "電車",
+        "e": "train",
+        "r": "でんしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "乗る",
+        "z": "搭乘",
+        "j": "乗る",
+        "e": "board",
+        "r": "のる"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "別の",
+        "z": "另一個",
+        "j": "別の",
+        "e": "another",
+        "r": "べつの"
+      },
+      {
+        "t": "ホーム",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "station platform",
+        "r": "ホーム"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "移動しました",
+        "z": "移動了",
+        "j": "移動しました",
+        "e": "moved",
+        "r": "いどうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "線路の上を歩かないでください。": [
+      {
+        "t": "線路",
+        "z": "鐵軌",
+        "j": "線路",
+        "e": "railway tracks",
+        "r": "せんろ"
+      },
+      {
+        "t": "の上を"
+      },
+      {
+        "t": "歩かないでください",
+        "z": "請勿步行",
+        "j": "歩かないでください",
+        "e": "please do not walk",
+        "r": "あるかないでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "線路に物を落としたら、自分で降りずに、駅員に助けを求めてください。": [
+      {
+        "t": "線路",
+        "z": "鐵軌",
+        "j": "線路",
+        "e": "railway tracks",
+        "r": "せんろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "物",
+        "z": "東西",
+        "j": "物",
+        "e": "something",
+        "r": "もの"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "落としたら",
+        "z": "若掉落",
+        "j": "落としたら",
+        "e": "if you drop",
+        "r": "おとしたら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "自分",
+        "z": "自己",
+        "j": "自分",
+        "e": "yourself",
+        "r": "じぶん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "降りずに",
+        "z": "不要下去",
+        "j": "降りずに",
+        "e": "without climbing down",
+        "r": "おりずに"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "駅員",
+        "z": "站務員",
+        "j": "駅員",
+        "e": "station attendant",
+        "r": "えきいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "助けを求めてください",
+        "z": "請求協助",
+        "j": "助けを求めてください",
+        "e": "please ask for help",
+        "r": "たすけをもとめてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "路線図を確認してください。": [
+      {
+        "t": "路線図",
+        "z": "路線圖",
+        "j": "路線図",
+        "e": "route map",
+        "r": "ろせんず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認してください",
+        "z": "請查看",
+        "j": "確認してください",
+        "e": "please check",
+        "r": "かくにんしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "きっぷを買う前に、どこで乗り換えるか調べるために路線図を見ました。": [
+      {
+        "t": "きっぷ",
+        "z": "車票",
+        "j": "きっぷ",
+        "e": "ticket",
+        "r": "きっぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買う",
+        "z": "購買",
+        "j": "買う",
+        "e": "buy",
+        "r": "かう"
+      },
+      {
+        "t": "前に、どこで"
+      },
+      {
+        "t": "乗り換える",
+        "z": "轉乘",
+        "j": "乗り換える",
+        "e": "change trains",
+        "r": "のりかえる"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "調べる",
+        "z": "查詢",
+        "j": "調べる",
+        "e": "find out",
+        "r": "しらべる"
+      },
+      {
+        "t": "ために"
+      },
+      {
+        "t": "路線図",
+        "z": "路線圖",
+        "j": "路線図",
+        "e": "route map",
+        "r": "ろせんず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見ました",
+        "z": "查看了",
+        "j": "見ました",
+        "e": "looked at",
+        "r": "みました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "発車案内板に次の電車が表示されています。": [
+      {
+        "t": "発車案内板",
+        "z": "發車資訊看板",
+        "j": "発車案内板",
+        "e": "departure board",
+        "r": "はっしゃあんないばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "次",
+        "z": "下一個",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "電車",
+        "z": "列車",
+        "j": "電車",
+        "e": "train",
+        "r": "でんしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "表示されています",
+        "z": "顯示著",
+        "j": "表示されています",
+        "e": "is displayed",
+        "r": "ひょうじされています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "発車案内板に遅れが表示されたので、会社に電話して、遅れる理由を説明しました。": [
+      {
+        "t": "発車案内板",
+        "z": "發車資訊看板",
+        "j": "発車案内板",
+        "e": "departure board",
+        "r": "はっしゃあんないばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "遅れ",
+        "z": "誤點",
+        "j": "遅れ",
+        "e": "delay",
+        "r": "おくれ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "表示された",
+        "z": "顯示了",
+        "j": "表示された",
+        "e": "was displayed",
+        "r": "ひょうじされた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "会社",
+        "z": "公司",
+        "j": "会社",
+        "e": "office",
+        "r": "かいしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "電話して",
+        "z": "打電話",
+        "j": "電話して",
+        "e": "called",
+        "r": "でんわして"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "遅れる",
+        "z": "遲到",
+        "j": "遅れる",
+        "e": "be late",
+        "r": "おくれる"
+      },
+      {
+        "t": "理由",
+        "z": "原因",
+        "j": "理由",
+        "e": "reason",
+        "r": "りゆう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "説明しました",
+        "z": "說明了",
+        "j": "説明しました",
+        "e": "explained",
+        "r": "せつめいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "かばんをコインロッカーに入れました。": [
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "コインロッカー",
+        "z": "投幣式置物櫃",
+        "j": "コインロッカー",
+        "e": "coin locker",
+        "r": "コインロッカー"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "放進了",
+        "j": "入れました",
+        "e": "put inside",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大きいコインロッカーがどれも空いていなかったので、スーツケースはホテルに預けました。": [
+      {
+        "t": "大きい",
+        "z": "大型的",
+        "j": "大きい",
+        "e": "large",
+        "r": "おおきい"
+      },
+      {
+        "t": "コインロッカー",
+        "z": "置物櫃",
+        "j": "コインロッカー",
+        "e": "coin lockers",
+        "r": "コインロッカー"
+      },
+      {
+        "t": "がどれも"
+      },
+      {
+        "t": "空いていなかった",
+        "z": "沒有空位",
+        "j": "空いていなかった",
+        "e": "were all occupied",
+        "r": "あいていなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "スーツケース",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase",
+        "r": "スーツケース"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ホテル",
+        "z": "飯店",
+        "j": "ホテル",
+        "e": "hotel",
+        "r": "ホテル"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "預けました",
+        "z": "寄放了",
+        "j": "預けました",
+        "e": "left for safekeeping",
+        "r": "あずけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この優先席はドアの近くにあります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "優先席",
+        "z": "優先席",
+        "j": "優先席",
+        "e": "priority seat",
+        "r": "ゆうせんせき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ドア",
+        "z": "車門",
+        "j": "ドア",
+        "e": "door",
+        "r": "ドア"
+      },
+      {
+        "t": "の近くにあります。"
+      }
+    ],
+    "妊娠中の乗客が乗ってきたとき、疲れていましたが、座っていた優先席を譲りました。": [
+      {
+        "t": "妊娠中",
+        "z": "懷孕中",
+        "j": "妊娠中",
+        "e": "pregnant",
+        "r": "にんしんちゅう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "乗客",
+        "z": "乘客",
+        "j": "乗客",
+        "e": "passenger",
+        "r": "じょうきゃく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乗ってきた",
+        "z": "上車了",
+        "j": "乗ってきた",
+        "e": "boarded",
+        "r": "のってきた"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "疲れていました",
+        "z": "累了",
+        "j": "疲れていました",
+        "e": "was tired",
+        "r": "つかれていました"
+      },
+      {
+        "t": "が、"
+      },
+      {
+        "t": "座っていた",
+        "z": "坐著的",
+        "j": "座っていた",
+        "e": "was sitting in",
+        "r": "すわっていた"
+      },
+      {
+        "t": "優先席",
+        "z": "優先席",
+        "j": "優先席",
+        "e": "priority seat",
+        "r": "ゆうせんせき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "譲りました",
+        "z": "讓出了",
+        "j": "譲りました",
+        "e": "gave up",
+        "r": "ゆずりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "かばんは網棚の上にあります。": [
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "網棚",
+        "z": "車廂行李架",
+        "j": "網棚",
+        "e": "train luggage rack",
+        "r": "あみだな"
+      },
+      {
+        "t": "の上にあります。"
+      }
+    ],
+    "降りる前に、かばんを置き忘れないように網棚を確認してください。": [
+      {
+        "t": "降りる",
+        "z": "下車",
+        "j": "降りる",
+        "e": "get off",
+        "r": "おりる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bags",
+        "r": "かばん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置き忘れない",
+        "z": "不忘記帶走",
+        "j": "置き忘れない",
+        "e": "do not leave behind",
+        "r": "おきわすれない"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "網棚",
+        "z": "車廂行李架",
+        "j": "網棚",
+        "e": "train luggage rack",
+        "r": "あみだな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認してください",
+        "z": "請確認",
+        "j": "確認してください",
+        "e": "please check",
+        "r": "かくにんしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ホームのベンチに座りましょう。": [
+      {
+        "t": "ホームのベンチ",
+        "z": "月台長椅",
+        "j": "ホームのベンチ",
+        "e": "platform bench",
+        "r": "ホームのベンチ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "座りましょう",
+        "z": "坐吧",
+        "j": "座りましょう",
+        "e": "let us sit",
+        "r": "すわりましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "電車が来るまで十分あったので、かばんを足元に置いて、ホームのベンチで休みました。": [
+      {
+        "t": "電車",
+        "z": "列車",
+        "j": "電車",
+        "e": "train",
+        "r": "でんしゃ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "来る",
+        "z": "抵達",
+        "j": "来る",
+        "e": "arrive",
+        "r": "くる"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "十分",
+        "z": "十分鐘",
+        "j": "十分",
+        "e": "ten minutes",
+        "r": "じゅっぷん"
+      },
+      {
+        "t": "あったので、"
+      },
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bags",
+        "r": "かばん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "足元",
+        "z": "腳邊",
+        "j": "足元",
+        "e": "at our feet",
+        "r": "あしもと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いて",
+        "z": "放著",
+        "j": "置いて",
+        "e": "placing",
+        "r": "おいて"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "ホームのベンチ",
+        "z": "月台長椅",
+        "j": "ホームのベンチ",
+        "e": "platform bench",
+        "r": "ホームのベンチ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "休みました",
+        "z": "休息了",
+        "j": "休みました",
+        "e": "rested",
+        "r": "やすみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "非常通報装置はドアの隣にあります。": [
+      {
+        "t": "非常通報装置",
+        "z": "緊急通話裝置",
+        "j": "非常通報装置",
+        "e": "emergency intercom",
+        "r": "ひじょうつうほうそうち"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ドア",
+        "z": "車門",
+        "j": "ドア",
+        "e": "door",
+        "r": "ドア"
+      },
+      {
+        "t": "の隣にあります。"
+      }
+    ],
+    "乗客が倒れたとき、非常通報装置を使って、乗務員に何が起きたかを伝えました。": [
+      {
+        "t": "乗客",
+        "z": "乘客",
+        "j": "乗客",
+        "e": "passenger",
+        "r": "じょうきゃく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "倒れた",
+        "z": "倒下了",
+        "j": "倒れた",
+        "e": "collapsed",
+        "r": "たおれた"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "非常通報装置",
+        "z": "緊急通話裝置",
+        "j": "非常通報装置",
+        "e": "emergency intercom",
+        "r": "ひじょうつうほうそうち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "z": "使用",
+        "j": "使って",
+        "e": "using",
+        "r": "つかって"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "乗務員",
+        "z": "乘務員",
+        "j": "乗務員",
+        "e": "train staff",
+        "r": "じょうむいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "何が起きたか",
+        "z": "發生了什麼事",
+        "j": "何が起きたか",
+        "e": "what happened",
+        "r": "なにがおきたか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "伝えました",
+        "z": "告知了",
+        "j": "伝えました",
+        "e": "told",
+        "r": "つたえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このエレベーターはホームに行きます。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "エレベーター",
+        "z": "電梯",
+        "j": "エレベーター",
+        "e": "elevator",
+        "r": "エレベーター"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ホーム",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform",
+        "r": "ホーム"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "行きます",
+        "z": "通往",
+        "j": "行きます",
+        "e": "goes to",
+        "r": "いきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スーツケースが重かったので、階段で運ぶ代わりにエレベーターを使いました。": [
+      {
+        "t": "スーツケース",
+        "z": "行李箱",
+        "j": "スーツケース",
+        "e": "suitcase",
+        "r": "スーツケース"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "重かった",
+        "z": "很重",
+        "j": "重かった",
+        "e": "was heavy",
+        "r": "おもかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "階段",
+        "z": "樓梯",
+        "j": "階段",
+        "e": "stairs",
+        "r": "かいだん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "運ぶ",
+        "z": "搬運",
+        "j": "運ぶ",
+        "e": "carry",
+        "r": "はこぶ"
+      },
+      {
+        "t": "代わりに"
+      },
+      {
+        "t": "エレベーター",
+        "z": "電梯",
+        "j": "エレベーター",
+        "e": "elevator",
+        "r": "エレベーター"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使いました",
+        "z": "搭乘了",
+        "j": "使いました",
+        "e": "used",
+        "r": "つかいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "エスカレーターでは手すりにつかまってください。": [
+      {
+        "t": "エスカレーター",
+        "z": "電扶梯",
+        "j": "エスカレーター",
+        "e": "escalator",
+        "r": "エスカレーター"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "手すり",
+        "z": "扶手",
+        "j": "手すり",
+        "e": "handrail",
+        "r": "てすり"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つかまってください",
+        "z": "請握住",
+        "j": "つかまってください",
+        "e": "please hold on",
+        "r": "つかまってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "エスカレーターが止まっていたので、駅員がホームへの別の行き方を教えてくれました。": [
+      {
+        "t": "エスカレーター",
+        "z": "電扶梯",
+        "j": "エスカレーター",
+        "e": "escalator",
+        "r": "エスカレーター"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "止まっていた",
+        "z": "停止運轉",
+        "j": "止まっていた",
+        "e": "was stopped",
+        "r": "とまっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "駅員",
+        "z": "站務員",
+        "j": "駅員",
+        "e": "station attendant",
+        "r": "えきいん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ホーム",
+        "z": "月台",
+        "j": "ホーム",
+        "e": "platform",
+        "r": "ホーム"
+      },
+      {
+        "t": "への"
+      },
+      {
+        "t": "別の",
+        "z": "另一個",
+        "j": "別の",
+        "e": "another",
+        "r": "べつの"
+      },
+      {
+        "t": "行き方",
+        "z": "走法",
+        "j": "行き方",
+        "e": "way to get there",
+        "r": "いきかた"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教えてくれました",
+        "z": "告訴了我們",
+        "j": "教えてくれました",
+        "e": "showed us",
+        "r": "おしえてくれました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

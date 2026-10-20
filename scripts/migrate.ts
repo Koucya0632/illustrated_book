@@ -20,6 +20,7 @@ import { MAIN_WORD_DRUGSTORE_IDS } from "../lib/main-word-drugstore-2026-09";
 import { MAIN_WORD_CLOTHING_IDS } from "../lib/main-word-clothing-2026-09";
 import { MAIN_WORD_RESTAURANT_IDS } from "../lib/main-word-restaurant-2026-10";
 import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "../lib/main-word-concert-fan-support-2026-10";
+import { MAIN_WORD_STATION_COMMUTING_IDS } from "../lib/main-word-station-commuting-2026-10";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 import { lockDownPublicTables } from "../lib/rls-lockdown";
@@ -39,6 +40,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "clothing", ids: MAIN_WORD_CLOTHING_IDS },
   { category: "restaurant", ids: MAIN_WORD_RESTAURANT_IDS },
   { category: "concert-fan-support", ids: MAIN_WORD_CONCERT_FAN_SUPPORT_IDS },
+  { category: "station-commuting", ids: MAIN_WORD_STATION_COMMUTING_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),

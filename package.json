@@ -85,7 +85,14 @@
     "concert-fan-support:audio:generate:local": "node --env-file=.env.local scripts/generate-concert-fan-support-candidate-audio.mjs",
     "concert-fan-support:audio:verify": "node scripts/verify-concert-fan-support-audio.mjs",
     "concert-fan-support:prepare-publish": "node --env-file=.env.local scripts/prepare-concert-fan-support-publish-plan.mjs",
-    "concert-fan-support:publish": "tsx --env-file=.env.local scripts/publish-concert-fan-support-series.ts"
+    "concert-fan-support:publish": "tsx --env-file=.env.local scripts/publish-concert-fan-support-series.ts",
+    "station-commuting:prepare-images": "node scripts/prepare-station-commuting-images.mjs",
+    "station-commuting:review": "node scripts/prepare-station-commuting-semantic-review.mjs",
+    "station-commuting:audio:plan": "node scripts/plan-station-commuting-audio.mjs",
+    "station-commuting:audio:generate:local": "node --env-file=.env.local scripts/generate-station-commuting-candidate-audio.mjs",
+    "station-commuting:audio:verify": "node scripts/verify-station-commuting-audio.mjs",
+    "station-commuting:prepare-publish": "node --env-file=.env.local scripts/prepare-station-commuting-publish-plan.mjs",
+    "station-commuting:publish": "tsx --env-file=.env.local scripts/publish-station-commuting-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

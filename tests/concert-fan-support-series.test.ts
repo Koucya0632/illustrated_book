@@ -82,9 +82,9 @@ test('ordinary category seeding refuses absent, draft, partial and wrong-categor
 
 test('database absence, database error and an empty category query all use the guarded fallback',async()=>{
  const source=read('lib/categories-db.ts').replace(/^import .*;\n/gm,'').replace('export async function','async function');
- const create=new Function('getSql','staticCategories','localizeCategory','MAIN_WORD_CONCERT_FAN_SUPPORT_IDS','MAIN_WORD_RESTAURANT_IDS',compile(`${source}\nreturn getCategoriesFromDb;`));
+ const create=new Function('getSql','staticCategories','localizeCategory','MAIN_WORD_CONCERT_FAN_SUPPORT_IDS','MAIN_WORD_RESTAURANT_IDS','MAIN_WORD_STATION_COMMUTING_IDS',compile(`${source}\nreturn getCategoriesFromDb;`));
  for(const getSql of [()=>null,()=>async()=>{throw Error('offline');},()=>async()=>[]]){
-  const load=create(getSql,publicFallbackCategories,(v:unknown)=>v,MAIN_WORD_CONCERT_FAN_SUPPORT_IDS,[]);
+  const load=create(getSql,publicFallbackCategories,(v:unknown)=>v,MAIN_WORD_CONCERT_FAN_SUPPORT_IDS,[],[]);
   const result=await load();
   assert.equal(result.some((c:{id:string})=>c.id==='concert-fan-support'),false);
   assert.ok(result.length>0);

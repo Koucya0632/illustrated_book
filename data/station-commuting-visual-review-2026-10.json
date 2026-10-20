@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex",
+  "scope": "Every source PNG inspected at original resolution in generated tool output; contact sheet additionally reviewed before release preparation.",
+  "references": [
+    "https://www.jreast.co.jp/suica/ic/use/",
+    "https://ssl.tokyometro.jp/support/faq_answer?faqno=OpenFAQ-000156&lang=ja"
+  ],
+  "items": [
+    {
+      "id": "commuter-pass",
+      "decision": "pass",
+      "reason": "票面清楚寫定期券、A駅至B駅與半年期間；不與無區間的IC卡混淆，白底單一卡片完整。",
+      "sourceSha256": "fc0e5d3a6f333e688e4133500e67ef9ef122262a0eda6cfeb6497c038da1074f"
+    },
+    {
+      "id": "transit-ic-card",
+      "decision": "pass",
+      "reason": "無品牌藍色非接觸式卡，IC與感應符號清楚；沒有金屬接點、路線或期限，與定期券分開。",
+      "sourceSha256": "f950bc3b075b16b3ae447e30b8823e6fe9fc361360d5b753a0d006e81f5bc910"
+    },
+    {
+      "id": "train-ticket",
+      "decision": "pass",
+      "reason": "日本小張橘色紙票有乗車券、起站與車資，非西式登機證或演唱會票；票面數字僅為示意。",
+      "sourceSha256": "0c7d820a4881ada4ff7d9d0d9c774ea259aaa2199bb88aa6f5a65a992ae09755"
+    },
+    {
+      "id": "pass-case",
+      "decision": "pass",
+      "reason": "薄型透明窗卡套與伸縮扣完整，卡套是明確主體，沒有誤畫成大型錢包。",
+      "sourceSha256": "21ec8df7694c609823e124c6b1395442e7b723b6a6f6a1c74b18fbd587559482"
+    },
+    {
+      "id": "fare-adjustment-machine",
+      "decision": "pass",
+      "reason": "機身精算標示、螢幕、投入槽與找零口清楚，為日本車資精算機而非閘門或商品販賣機。",
+      "sourceSha256": "b7c5a8631f76225f25c5e125c3abafd45c4f04382e9efeab175b3e5e3a3537fc"
+    },
+    {
+      "id": "station-platform",
+      "decision": "pass",
+      "reason": "高起月台邊緣、旁側鐵軌、黃條與雨棚構成日本候車區，月台面積為主體，不只畫車門。",
+      "sourceSha256": "cafbf228c3453a2ae36489eab10f42000cc2840c111152868026c5887b6004c3"
+    },
+    {
+      "id": "railway-tracks",
+      "decision": "pass",
+      "reason": "兩條平行鋼軌、混凝土枕木與道碴完整；短軌段獨立白底，無路面車道混淆。",
+      "sourceSha256": "a0a89bcfe854d8471906d6c434e20edbcce7c451bcfbb73dd81965f960e599f0"
+    },
+    {
+      "id": "route-map",
+      "decision": "pass",
+      "reason": "三色線及圓形站點、轉乘交會清楚；路線図標題正確，示意路網不冒充真實營運地圖。",
+      "sourceSha256": "79942c8651d9e70ba14b5e6bbd73d1c15b3c28b21b1d76dc384eddbb81c16b5b"
+    },
+    {
+      "id": "departure-board",
+      "decision": "pass",
+      "reason": "黑色電子板顯示兩班時間、種別、目的地與月台號，發車概念明確，非站名牌或一般時鐘。",
+      "sourceSha256": "db335489eee7440267d685d3c704bf8d37e9248fd1d587d47e7a6a6ccd40076d"
+    },
+    {
+      "id": "coin-locker",
+      "decision": "pass",
+      "reason": "多格金屬付費櫃有獨立投幣鎖與鑰匙，部分打開可辨置物空間，非包裹宅配箱。",
+      "sourceSha256": "ac4c1fc52c09ebffa5a74be6f82bc31114360db789e877b0a5757a84ecf27de4"
+    },
+    {
+      "id": "priority-seat",
+      "decision": "pass",
+      "reason": "三連藍色車廂座位有優先席標題與長者、孕婦、傷者及抱嬰圖示；明確區別一般月台長椅。",
+      "sourceSha256": "04e528cca2658e6829fffac6f9232a2fb178073e0350ffa4802ae41c540cf672"
+    },
+    {
+      "id": "train-luggage-rack",
+      "decision": "pass",
+      "reason": "座位上方的金屬開放式置物架帶支撐桿，包包放於架上，非地面置物架或封閉機艙行李櫃。",
+      "sourceSha256": "b00f98a9bd0534f85cdcb401c03fce471a0f6f8082d248a527f6c63c407d876e"
+    },
+    {
+      "id": "platform-bench",
+      "decision": "pass",
+      "reason": "四連硬質候車座椅、固定支腳及月台黃條，與有軟墊的車內優先席不同；主體完整，背景克制。",
+      "sourceSha256": "44f58fbffa9b88d53b726ece340a423e1344c1eef2e88eb6945bc6a6291e541b"
+    },
+    {
+      "id": "emergency-intercom",
+      "decision": "pass",
+      "reason": "紅色保護蓋按鈕、SOS電話圖示、喇叭與麥克風構成雙向通報裝置，沒有火災圖示或緊急煞車拉柄。",
+      "sourceSha256": "fb37e9e72d8b2ef6ab71ef43308572100e68555c9374b0bbf457ec14df8b06f6"
+    },
+    {
+      "id": "elevator",
+      "decision": "pass",
+      "reason": "不鏽鋼中開門、升降廂、扶手及輪椅標誌清楚，為車站可及電梯，非電扶梯或一般房門。",
+      "sourceSha256": "df6aed8c0304f853829975c9c691ecfc8090ed875bfe32dd45b683cea840136c"
+    },
+    {
+      "id": "escalator",
+      "decision": "pass",
+      "reason": "連續移動階梯、上下端梳板、玻璃護欄與黑色扶手帶完整，明確與直立電梯區分。",
+      "sourceSha256": "12e1ff5be3e5a3e578541a8858268212537fda32628c112abe752a6f87720c66"
+    },
+    {
+      "id": "category-station-commuting",
+      "decision": "pass",
+      "reason": "銀色藍帶通勤列車、候車月台、票卡夾與IC卡共同呈現車站通勤；無品牌、人物或多餘標語。",
+      "sourceSha256": "062d2b81a7c4ff068255528fe857e0d3426d3742510ca23bb19c9e9db856aeb2"
+    }
+  ]
+}

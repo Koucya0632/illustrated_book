@@ -257,6 +257,16 @@ export const categories: Category[] = [
     color: "from-pink-100 to-violet-100",
     imageUrl: "https://img.nexflow.team/word-images/concert-fan-support-2026-10/category-concert-fan-support-v1-813321fbf8e2.webp",
   },
+  {
+    id: "station-commuting",
+    name: "Stations & Commuting",
+    nameZh: "車站與通勤",
+    emoji: "🚉",
+    description: "日本車站的票卡、候車設施、行車資訊與車廂用品",
+    descriptionEn: "Tickets, travel cards, platform facilities, station information, and train amenities in Japan",
+    color: "from-sky-100 to-blue-100",
+    imageUrl: "https://img.nexflow.team/word-images/station-commuting-2026-10/category-station-commuting-v1-cf0c0f64b246.webp",
+  },
 ];
 
 // This list is used only when the database is unavailable. A fallback cannot
@@ -270,7 +280,8 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "drugstore" &&
     category.id !== "clothing" &&
     category.id !== "restaurant" &&
-    category.id !== "concert-fan-support",
+    category.id !== "concert-fan-support" &&
+    category.id !== "station-commuting",
 );
 
 export const getCategory = (id: string): Category | undefined =>

@@ -1,0 +1,836 @@
+{
+  "schemaVersion": 1,
+  "series": "station-commuting",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "Local preparation only. No production upload, database write, commit, or deployment is authorized.",
+  "category": {
+    "id": "station-commuting",
+    "name": "Stations & Commuting",
+    "nameZh": "車站與通勤",
+    "nameJa": "駅と通勤",
+    "emoji": "🚉",
+    "description": "日本車站的票卡、候車設施、行車資訊與車廂用品",
+    "descriptionEn": "Tickets, travel cards, platform facilities, station information, and train amenities in Japan",
+    "descriptionJa": "日本の駅で使うきっぷやカード、ホームの設備、案内表示と車内の用品",
+    "color": "from-sky-100 to-blue-100",
+    "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/category-station-commuting-v1-cf0c0f64b246.webp"
+  },
+  "entries": [
+    {
+      "id": "commuter-pass",
+      "word": "commuter pass",
+      "chinese": "通勤定期券",
+      "chineseDefinition": "在指定期間及路線區間內可反覆搭乘的交通票證，可為卡片或手機中的票證。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəˈmjuː.tər pæs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "通勤定期券",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A travel pass allowing repeated journeys on a specified route during a set period.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "決められた期間と区間で繰り返し乗車できる乗車券。カードやモバイルの形がある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a commuter pass.",
+          "ja": "定期券を買いました。",
+          "zh": "我買了通勤定期券。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I renewed my commuter pass before it expired.",
+          "ja": "有効期限が切れる前に、定期券を更新しました。",
+          "zh": "我在通勤定期券到期前續購了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "定期券",
+      "jaReading": "ていきけん",
+      "jaReadingSegments": [
+        {
+          "text": "定期券",
+          "ruby": "ていきけん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/commuter-pass-v1-d249a807b37d.webp"
+    },
+    {
+      "id": "transit-ic-card",
+      "word": "transit IC card",
+      "chinese": "交通IC卡",
+      "chineseDefinition": "可感應讀取、通常先儲值再扣除車資的交通智慧卡；部分卡片也可載入定期券。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtræn.zɪt ˌaɪˈsiː kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "交通IC卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A contactless smart card used to pay public transport fares, usually from stored credit.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "改札機などにタッチして運賃を支払う非接触型のカード。チャージして使うものが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Tap your transit IC card here.",
+          "ja": "交通系ICカードをここにタッチしてください。",
+          "zh": "請在這裡感應交通IC卡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the balance was low, I topped up my transit IC card before boarding.",
+          "ja": "残高が少なかったので、乗車する前に交通系ICカードにチャージしました。",
+          "zh": "因為餘額不足，我在乘車前替交通IC卡儲值了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "交通系ICカード",
+      "jaReading": "こうつうけいアイシーカード",
+      "jaReadingSegments": [
+        {
+          "text": "交通系ICカード",
+          "ruby": "こうつうけいアイシーカード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/transit-ic-card-v1-6d9539873a80.webp"
+    },
+    {
+      "id": "train-ticket",
+      "word": "train ticket",
+      "chinese": "火車票",
+      "chineseDefinition": "搭乘鐵路所需的乘車票券；圖示為日本常見的小張紙本車票。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtreɪn ˌtɪk.ɪt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "火車票",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A ticket that permits a passenger to travel by train.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "鉄道に乗るためのきっぷ。ここでは駅で買う小さな紙のきっぷを示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I lost my train ticket.",
+          "ja": "乗車券をなくしました。",
+          "zh": "我弄丟了火車票。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Keep your train ticket until you leave the station, because you may need it at the exit.",
+          "ja": "出口で必要になることがあるので、駅を出るまで乗車券を保管してください。",
+          "zh": "請保留火車票直到離開車站，因為出口可能還需要用到。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "乗車券",
+      "jaReading": "じょうしゃけん",
+      "jaReadingSegments": [
+        {
+          "text": "乗車券",
+          "ruby": "じょうしゃけん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/train-ticket-v1-92beb2725c60.webp"
+    },
+    {
+      "id": "pass-case",
+      "word": "pass case",
+      "chinese": "票卡夾",
+      "chineseDefinition": "收納交通卡或定期券的薄型卡套，常有透明窗口或伸縮掛繩。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæs ˌkeɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "票卡夾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A slim holder for a travel card or commuter pass, often with a clear window.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "交通系ICカードや定期券を入れる薄いケース。透明な窓やリールが付いたものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My pass case is blue.",
+          "ja": "私のパスケースは青いです。",
+          "zh": "我的票卡夾是藍色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I clipped my pass case to my bag so that I could find it quickly at the gate.",
+          "ja": "改札ですぐ見つけられるように、パスケースをかばんに留めました。",
+          "zh": "我把票卡夾夾在包包上，方便在閘門前找到。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "パスケース",
+      "jaReading": "パスケース",
+      "jaReadingSegments": [
+        {
+          "text": "パスケース",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/pass-case-v1-ffb8d54367bc.webp"
+    },
+    {
+      "id": "fare-adjustment-machine",
+      "word": "fare adjustment machine",
+      "chinese": "補票精算機",
+      "chineseDefinition": "車站內用來補付不足車資或進行相關票卡精算的機器。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfer əˈdʒʌst.mənt məˌʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "補票精算機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A station machine used to pay a fare difference or settle a ticket before leaving.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "乗り越しなどで不足した運賃の支払いをする駅の機械。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The fare adjustment machine is beside the gate.",
+          "ja": "精算機は改札の隣にあります。",
+          "zh": "補票精算機在閘門旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since my ticket did not cover the full fare, I paid the difference at the fare adjustment machine.",
+          "ja": "きっぷの金額では運賃が足りなかったので、精算機で差額を払いました。",
+          "zh": "因為車票金額不足以支付全額車資，我在補票精算機支付了差額。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "精算機",
+      "jaReading": "せいさんき",
+      "jaReadingSegments": [
+        {
+          "text": "精算機",
+          "ruby": "せいさんき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/fare-adjustment-machine-v1-e7b32b5f2492.webp"
+    },
+    {
+      "id": "station-platform",
+      "word": "station platform",
+      "chinese": "月台",
+      "chineseDefinition": "鐵軌旁供乘客候車及上下車的高起區域。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsteɪ.ʃən ˌplæt.fɔːrm/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "月台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The raised area beside railway tracks where passengers wait for and board trains.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "線路に沿って設けられ、乗客が列車を待ったり乗り降りしたりする場所。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We waited on the station platform.",
+          "ja": "ホームで待ちました。",
+          "zh": "我們在月台等候。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After I checked the destination, I moved to the other station platform to catch the right train.",
+          "ja": "行き先を確認してから、乗るべき電車に乗るために別のホームへ移動しました。",
+          "zh": "確認目的地後，我移動到另一個月台，搭乘正確班次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ホーム",
+      "jaReading": "ホーム",
+      "jaReadingSegments": [
+        {
+          "text": "ホーム",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/station-platform-v1-f3a9fcfeec48.webp"
+    },
+    {
+      "id": "railway-tracks",
+      "word": "railway tracks",
+      "chinese": "鐵軌",
+      "chineseDefinition": "由兩條平行鋼軌及枕木等構成，供列車行駛的軌道。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈreɪl.weɪ træks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鐵軌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The parallel rails and supporting sleepers on which trains run.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "列車が走るための、レールやまくらぎなどからできた道。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Do not walk on the railway tracks.",
+          "ja": "線路の上を歩かないでください。",
+          "zh": "請勿在鐵軌上行走。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "If you drop something onto the railway tracks, ask a station attendant for help instead of climbing down.",
+          "ja": "線路に物を落としたら、自分で降りずに、駅員に助けを求めてください。",
+          "zh": "如果東西掉到鐵軌上，請找站務員協助，不要自行爬下去。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "線路",
+      "jaReading": "せんろ",
+      "jaReadingSegments": [
+        {
+          "text": "線路",
+          "ruby": "せんろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/railway-tracks-v1-0c91bc6c6c7b.webp"
+    },
+    {
+      "id": "route-map",
+      "word": "route map",
+      "chinese": "路線圖",
+      "chineseDefinition": "顯示交通路線、車站及轉乘關係的示意圖。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈruːt mæp/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "路線圖",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A diagram showing transport lines, stations, and connections between them.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "交通機関の路線や駅、乗り換えのつながりを示した図。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Check the route map.",
+          "ja": "路線図を確認してください。",
+          "zh": "請查看路線圖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I looked at the route map to find where I needed to change trains before buying a ticket.",
+          "ja": "きっぷを買う前に、どこで乗り換えるか調べるために路線図を見ました。",
+          "zh": "買票前，我查看路線圖，找出要在哪裡轉乘。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "路線図",
+      "jaReading": "ろせんず",
+      "jaReadingSegments": [
+        {
+          "text": "路線図",
+          "ruby": "ろせんず"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/route-map-v1-d69885c6ffe5.webp"
+    },
+    {
+      "id": "departure-board",
+      "word": "departure board",
+      "chinese": "發車資訊看板",
+      "chineseDefinition": "車站顯示即將發車班次、目的地、時間或月台的資訊板。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈpɑːr.tʃər bɔːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "發車資訊看板",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A station display showing upcoming trains, their destinations, and departure information.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "これから発車する列車の行き先、時刻、番線などを表示する案内板。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The departure board shows the next train.",
+          "ja": "発車案内板に次の電車が表示されています。",
+          "zh": "發車資訊看板顯示著下一班列車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the departure board showed a delay, I called my office to explain why I would be late.",
+          "ja": "発車案内板に遅れが表示されたので、会社に電話して、遅れる理由を説明しました。",
+          "zh": "發車資訊看板顯示誤點時，我打電話到公司說明會遲到的原因。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "発車案内板",
+      "jaReading": "はっしゃあんないばん",
+      "jaReadingSegments": [
+        {
+          "text": "発車案内板",
+          "ruby": "はっしゃあんないばん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/departure-board-v1-bed09c18484d.webp"
+    },
+    {
+      "id": "coin-locker",
+      "word": "coin locker",
+      "chinese": "投幣式置物櫃",
+      "chineseDefinition": "車站等處供付費暫存行李的置物櫃，傳統型使用硬幣，也有支援電子支付的款式。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɔɪn ˌlɑː.kər/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "投幣式置物櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A paid locker for temporarily storing bags, traditionally operated with coins.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "駅などで料金を払って荷物を一時的に預けるロッカー。現金や電子決済に対応するものがある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put my bag in a coin locker.",
+          "ja": "かばんをコインロッカーに入れました。",
+          "zh": "我把包包放進投幣式置物櫃。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the large coin lockers were full, I left my suitcase at the hotel.",
+          "ja": "大きいコインロッカーがどれも空いていなかったので、スーツケースはホテルに預けました。",
+          "zh": "因為大型置物櫃都滿了，我把行李箱寄放在飯店。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コインロッカー",
+      "jaReading": "コインロッカー",
+      "jaReadingSegments": [
+        {
+          "text": "コインロッカー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/coin-locker-v1-2ca834fb5b89.webp"
+    },
+    {
+      "id": "priority-seat",
+      "word": "priority seat",
+      "chinese": "優先席",
+      "chineseDefinition": "車廂內優先提供給高齡者、身心障礙者、孕婦等有需要乘客的座位。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/praɪˈɔːr.ə.ti siːt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "優先席",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A seat intended to give priority to passengers who need it, such as older or disabled people and pregnant passengers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "高齢者、障害のある人、妊娠中の人など、座席を必要とする人が優先して利用する席。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This priority seat is near the door.",
+          "ja": "この優先席はドアの近くにあります。",
+          "zh": "這個優先席靠近車門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When a pregnant passenger boarded, I offered her my priority seat even though I was tired.",
+          "ja": "妊娠中の乗客が乗ってきたとき、疲れていましたが、座っていた優先席を譲りました。",
+          "zh": "一位懷孕乘客上車時，雖然我很累，還是把坐著的優先席讓給了她。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "優先席",
+      "jaReading": "ゆうせんせき",
+      "jaReadingSegments": [
+        {
+          "text": "優先席",
+          "ruby": "ゆうせんせき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/priority-seat-v1-1ef2210efa91.webp"
+    },
+    {
+      "id": "train-luggage-rack",
+      "word": "train luggage rack",
+      "chinese": "車廂行李架",
+      "chineseDefinition": "電車座位上方用來放置包包等行李的開放式架子。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtreɪn ˈlʌɡ.ɪdʒ ræk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "車廂行李架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An open shelf above train seats for bags and other luggage.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "電車の座席の上にあり、かばんなどの荷物を置くための棚。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My bag is on the train luggage rack.",
+          "ja": "かばんは網棚の上にあります。",
+          "zh": "我的包包在車廂行李架上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before you get off, check the train luggage rack so that you do not leave behind any bags.",
+          "ja": "降りる前に、かばんを置き忘れないように網棚を確認してください。",
+          "zh": "下車前請確認車廂行李架，避免忘記帶走包包。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "網棚",
+      "jaReading": "あみだな",
+      "jaReadingSegments": [
+        {
+          "text": "網棚",
+          "ruby": "あみだな"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/train-luggage-rack-v1-6d7644fc1a23.webp"
+    },
+    {
+      "id": "platform-bench",
+      "word": "platform bench",
+      "chinese": "月台長椅",
+      "chineseDefinition": "設置在車站月台上供候車乘客休息的長椅或連排座椅。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplæt.fɔːrm bentʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "月台長椅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bench or connected row of seats on a station platform for waiting passengers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "駅のホームで電車を待つ人が座るためのベンチや連結した座席。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Let us sit on the platform bench.",
+          "ja": "ホームのベンチに座りましょう。",
+          "zh": "我們坐月台長椅吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since we had ten minutes before the train arrived, we rested on a platform bench with our bags at our feet.",
+          "ja": "電車が来るまで十分あったので、かばんを足元に置いて、ホームのベンチで休みました。",
+          "zh": "因為列車還有十分鐘才到，我們坐在月台長椅上休息，把包包放在腳邊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ホームのベンチ",
+      "jaReading": "ホームのベンチ",
+      "jaReadingSegments": [
+        {
+          "text": "ホームのベンチ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/platform-bench-v1-274828268781.webp"
+    },
+    {
+      "id": "emergency-intercom",
+      "word": "emergency intercom",
+      "chinese": "緊急通話裝置",
+      "chineseDefinition": "車廂內讓乘客在緊急狀況下向乘務員通報並通話的設備。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˈmɜːr.dʒən.si ˈɪn.tər.kɑːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "緊急通話裝置",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A device passengers use to contact train staff during an emergency.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "車内で緊急のときに乗務員へ知らせ、通話するための装置。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The emergency intercom is beside the door.",
+          "ja": "非常通報装置はドアの隣にあります。",
+          "zh": "緊急通話裝置在車門旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When a passenger collapsed, I used the emergency intercom to tell the train staff what had happened.",
+          "ja": "乗客が倒れたとき、非常通報装置を使って、乗務員に何が起きたかを伝えました。",
+          "zh": "有乘客倒下時，我使用緊急通話裝置告知乘務員發生了什麼事。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "非常通報装置",
+      "jaReading": "ひじょうつうほうそうち",
+      "jaReadingSegments": [
+        {
+          "text": "非常通報装置",
+          "ruby": "ひじょうつうほうそうち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/emergency-intercom-v1-ab3afd30012c.webp"
+    },
+    {
+      "id": "elevator",
+      "word": "elevator",
+      "chinese": "電梯",
+      "chineseDefinition": "以封閉升降廂在不同樓層間載運人或物品的設備；此系列圖示為車站電梯。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈel.ə.veɪ.tər/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電梯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A moving compartment that carries people or goods between floors; shown here as a station lift.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "人や荷物をかごに乗せて上下の階へ運ぶ設備。ここでは駅のエレベーターを示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The elevator goes to the platform.",
+          "ja": "このエレベーターはホームに行きます。",
+          "zh": "這座電梯通往月台。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I had a heavy suitcase, I took the elevator instead of carrying it up the stairs.",
+          "ja": "スーツケースが重かったので、階段で運ぶ代わりにエレベーターを使いました。",
+          "zh": "因為行李箱很重，我搭電梯，沒有把它搬上樓梯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "エレベーター",
+      "jaReading": "エレベーター",
+      "jaReadingSegments": [
+        {
+          "text": "エレベーター",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/elevator-v1-0d8907067136.webp"
+    },
+    {
+      "id": "escalator",
+      "word": "escalator",
+      "chinese": "電扶梯",
+      "chineseDefinition": "由連續移動的階梯及扶手帶組成、載人往返樓層的設備。",
+      "category": "station-commuting",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈes.kə.leɪ.tər/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電扶梯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A moving staircase with a continuous handrail that carries people between levels.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "動く階段と手すりで人を上下の階へ運ぶ設備。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Hold the handrail on the escalator.",
+          "ja": "エスカレーターでは手すりにつかまってください。",
+          "zh": "搭電扶梯時請握住扶手。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the escalator was stopped, a station attendant showed us a different route to the platform.",
+          "ja": "エスカレーターが止まっていたので、駅員がホームへの別の行き方を教えてくれました。",
+          "zh": "電扶梯停止運轉時，站務員告訴我們另一條前往月台的路。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "エスカレーター",
+      "jaReading": "エスカレーター",
+      "jaReadingSegments": [
+        {
+          "text": "エスカレーター",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/station-commuting-2026-10/escalator-v1-6eed102813b4.webp"
+    }
+  ]
+}

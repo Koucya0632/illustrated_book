@@ -160,16 +160,34 @@ interface RawEntry {
   localizedTexts: LocalizedTextMap;
 }
 
+// The catalogue is cached as CATALOGUE_SHARDS separate data-cache entries, not
+// one. A single entry stopped being cached at all on 2026-10 (~1,000 words):
+// Vercel's data cache refuses items over 2 MB by UTF-8 bytes, while Next's
+// own guard measures `JSON.stringify(...).length` — UTF-16 units, which count
+// a CJK character as 1 instead of 3 — so it never warns. The entry was ~2.0M
+// chars but ~2.5 MB on the wire, every request missed, and each one pulled the
+// whole catalogue across the pooler again (Supabase egress).
+//
+// A word's shard is a hash of its id, so it always lands in the same shard:
+// shards refreshing at slightly different moments can be momentarily stale,
+// but can never duplicate or drop a word. `ord` is the word's position in the
+// whole catalogue, so the merged list keeps the old category/word order.
+const CATALOGUE_SHARDS = 8;
+// Well under the 2 MB ceiling, so a growing catalogue warns long before a
+// shard silently stops being cached.
+const SHARD_WARN_BYTES = 1024 * 1024;
+
 // One query, five correlated subqueries — each aggregating a child table to
 // jsonb. With ≤ a few thousand rows and the per-child word_id indexes this
 // stays at one round trip and EXPLAIN shows it as a single Sort + nested-
 // loop with hash-aggregated children, not N+1.
-const fetchAllFromDb = unstable_cache(
-  async (): Promise<RawEntry[]> => {
+const fetchShardFromDb = unstable_cache(
+  async (shard: number): Promise<{ ord: number; entry: RawEntry }[]> => {
     const sql = getSql();
-    if (!sql) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
+    if (!sql) return [];
     const rows = (await sql`
       SELECT
+        o.ord,
         w.id, w.word, w.also_known_as, w.category, w.part_of_speech,
         w.pronunciation, w.audio_url, w.image_url, w.cefr_level, w.status,
         w.collocations, w.note, w.etymology, w.chinese_definition, w.forms,
@@ -201,19 +219,44 @@ const fetchAllFromDb = unstable_cache(
          WHERE m.word_id = w.id AND m.kind = 'audio' AND m.locale IS NOT NULL) AS audio_by_locale,
         (SELECT jsonb_object_agg(lt.field || '|' || lt.language, lt.value)
          FROM word_localized_texts lt WHERE lt.word_id = w.id) AS localized_texts
-      FROM words w
-      WHERE w.deleted_at IS NULL AND w.status = 'published'
-      ORDER BY w.category, w.word
-    `) as unknown as Row[];
-    return rows.map(rowToWord);
+      FROM (
+        SELECT w.id, row_number() OVER (ORDER BY w.category, w.word)::int AS ord
+        FROM words w
+        WHERE w.deleted_at IS NULL AND w.status = 'published'
+      ) o
+      JOIN words w ON w.id = o.id
+      WHERE mod(abs(hashtext(o.id)), ${CATALOGUE_SHARDS}) = ${shard}
+      ORDER BY o.ord
+    `) as unknown as (Row & { ord: number })[];
+    const entries = rows.map((r) => ({ ord: r.ord, entry: rowToWord(r) }));
+    const bytes = Buffer.byteLength(JSON.stringify(entries));
+    if (bytes > SHARD_WARN_BYTES) {
+      console.warn(
+        `[data] catalogue shard ${shard} is ${bytes} bytes; raise CATALOGUE_SHARDS before it reaches the 2 MB data-cache limit`,
+      );
+    }
+    return entries;
   },
   // v7: Japanese definitions were upgraded from headword placeholders to
   // explanatory text. Bump the persistent Vercel data-cache key so the
   // production deploy cannot retain the pre-backfill rows.
   // v8: added per-locale pronunciation audio (audio_by_locale).
-  ["all-words-v8"],
+  // v9: split into CATALOGUE_SHARDS entries (the shard number is part of the
+  // key via the argument). Changing CATALOGUE_SHARDS needs a bump too.
+  ["all-words-v9"],
   { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS },
 );
+
+async function fetchAllFromDb(): Promise<RawEntry[]> {
+  if (!getSql()) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
+  const shards = await Promise.all(
+    Array.from({ length: CATALOGUE_SHARDS }, (_, shard) => fetchShardFromDb(shard)),
+  );
+  return shards
+    .flat()
+    .sort((a, b) => a.ord - b.ord)
+    .map((s) => s.entry);
+}
 
 async function getAllRawEntries(): Promise<RawEntry[]> {
   if (!dbEnabled()) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));

@@ -1,4 +1,4 @@
-# 校園系列：50 詞已發布至正式資料庫
+# 校園系列：50 詞已正式發布並部署
 
 2026-10-22（日本時間）。分類 campus／校園／学校生活／School & Campus。
 
@@ -79,9 +79,10 @@
 - 發布後 SELECT-only 交易逐欄比對全部主詞、讀音、釋義、例句、詞塊、三語 gloss、分類、卡片與 media，與不可變計畫完全一致。
 - 正式全庫 1065 詞、2130 例句結構檢查通過。全庫語意覆核未於本次重做；本次範圍為校園 50 詞與 100 例句，先確認正式資料及來源雜湊一致，才沿用 150 筆個別編輯判斷，檢查通過。
 - 501 個遠端物件另行完整重新下載：51 WebP 格式／尺寸／雜湊、450 MP3 完整 frame sequence／雜湊均通過。主詞音檔 150 列、例句音檔 300 列覆蓋通過。
-- 已使 Vercel words tag 失效，處理發布前一小時資料快取。兩方向 API、普通與 cache-busting 回應及分類／詳情路由仍在驗證。
-- iOS CardWord API 線路格式將由 checker 驗證；未執行實機。未修改 iOS，另有未提交變更於 Tuji.xcodeproj/project.pbxproj 與 Tuji/Resources/i18n/Localizable.xcstrings，已保留。
-- 本次提交後即部署正式站，部署結果另記於本報告及 output/campus-release-20261022。
+- 已使 Vercel words tag 失效，處理發布前一小時資料快取。兩方向普通與 cache-busting API 均為 1065 詞、其中校園 50 詞，完整 payload 與音檔投影一致。100 個校園詳情回應的目標例句及詞塊，以及分類與詞條 HTML 路由檢查均通過（部署後複查也通過）。
+- iOS CardWord API 線路格式已由 checker 驗證，無阻斷解析問題；未執行實機。未修改 iOS，另有未提交變更於 Tuji.xcodeproj/project.pbxproj 與 Tuji/Resources/i18n/Localizable.xcstrings，已保留。
+- 網站內容提交：`1d6b5642a19809e02de66b8d0725b96e2695b8aa`。正式部署 `dpl_unaBWKhVKaSN4adMTgttw5WcctW3` 已 Ready，兩個正式網域均切換完成。部署後 DB 逐欄比對與 109 個 API／路由探針均通過。
+- 全庫 API 檢查另外列出四個既有詞的平／片假名表示差異：picnic-sheet、superball-scooping、chocolate-banana、ramune。均在本次校園範圍外，未改動；不阻斷 Codable 解析。這份發布報告不宣稱整個詞庫語意全面通過。
 
 ## 發布清單與稽核證據
 
@@ -98,6 +99,16 @@
 - 音檔檢查：output/campus-audio-candidates/verification-report.json
 - 唯讀發布預演：output/campus-preparation/expansion-publisher-dry-run.log
 
+## 部署結果與限制
+
+- 正式頁面：https://tuji.nexflow.team/category/campus 。瀏覽器確認顯示 50 詞且圖片正常；截圖為 `output/campus-release-20261022/campus-live.png`。
+- iOS API 網域：https://everyday-english-picture-dictionary.vercel.app ，與主網域都回傳 1065 詞、其中校園 50 詞。
+- 正式部署：https://everyday-english-picture-dictionary-bj0kumo0y.vercel.app 。網站內容 commit 為 `1d6b5642a19809e02de66b8d0725b96e2695b8aa`；本機提交，未 push GitHub。
+- 首次部署 `dpl_HCfNj8BFyExfrhm3eAYjHSBwaSDh` 因例行整庫同步耗時而取消（非正式內容回滾）。該次已完成 DDL、既有 1065 張卡片同步；未新增卡片。取消後再次執行正式 DB 逐欄比對、全庫主詞與例句結構檢查，均通過。
+- 成功部署使用 `output/campus-release-20261022/vercel-build-only.json` 單次覆寫 `buildCommand: npm run build`，保留原有 regions 與 crons。專案原始 vercel.json／package.json 的例行部署行為未因此修改。此次資料庫結構與專用發布均已先套用及驗證，故無須再跑整庫 backfill。
+- 動作合計：501 個新素材上傳、1 次整批發布交易、2 次部署嘗試（1 次取消、1 次 Ready）。另有首次部署的既有例行 migration；不把它描述成只有一次 DB 寫入。
+- 最終機器可讀發布紀錄：`output/campus-release-20261022/release.json`。API 證據：`output/campus-release-20261022/api-after-deployment.json`。完整全庫語意及全庫媒體未於本次重做；iOS 未實機測試。
+
 ## 正式環境動作與證據
 
 - 上傳 501 個新物件（51 WebP、450 MP3），未覆寫既有物件。
@@ -106,7 +117,7 @@
 - 正式資料逐欄比對：`output/campus-release-20261022/database-exact-match.json`。
 - 校園語意與音檔覆蓋：`output/campus-release-20261022/content-review.json`。
 - 遠端 501 物件完整 bytes：`output/campus-release-20261022/remote-media.json`。
-- 全庫結構：`output/campus-release-20261022/catalog-examples/audit.json`（結構通過，全庫語意仍 pending；本次校園語意另檔完整通過）。
+- 全庫結構：`output/campus-release-20261022/catalog-examples-final/audit.json`（結構通過，全庫語意仍 pending；本次校園語意另檔完整通過）。
 
 ## 日本日常外觀與用語參考
 

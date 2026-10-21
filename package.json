@@ -113,7 +113,16 @@
     "cherry-blossom-season:audio:generate:local": "node --env-file=.env.local scripts/generate-cherry-blossom-season-candidate-audio.mjs",
     "cherry-blossom-season:audio:verify": "node scripts/verify-cherry-blossom-season-audio.mjs",
     "cherry-blossom-season:prepare-publish": "node --env-file=.env.local scripts/prepare-cherry-blossom-season-publish-plan.mjs",
-    "cherry-blossom-season:publish": "tsx --env-file=.env.local scripts/publish-cherry-blossom-season-series.ts"
+    "cherry-blossom-season:publish": "tsx --env-file=.env.local scripts/publish-cherry-blossom-season-series.ts",
+    "collecting-hobbies:prepare-images": "node scripts/prepare-collecting-hobbies-images.mjs",
+    "collecting-hobbies:review": "node scripts/prepare-collecting-hobbies-semantic-review.mjs",
+    "collecting-hobbies:audio:plan": "node scripts/plan-collecting-hobbies-audio.mjs",
+    "collecting-hobbies:audio:generate:local": "node --env-file=.env.local scripts/generate-collecting-hobbies-candidate-audio.mjs",
+    "collecting-hobbies:audio:verify": "node scripts/verify-collecting-hobbies-audio.mjs",
+    "collecting-hobbies:prepare-publish": "node --env-file=.env.local scripts/prepare-collecting-hobbies-publish-plan.mjs",
+    "collecting-hobbies:publish": "tsx --env-file=.env.local scripts/publish-collecting-hobbies-series.ts",
+    "collecting-hobbies:content": "node scripts/prepare-collecting-hobbies-content.mjs",
+    "collecting-hobbies:review:bind": "node scripts/bind-collecting-hobbies-editorial-review.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

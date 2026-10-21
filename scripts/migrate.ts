@@ -24,6 +24,7 @@ import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "../lib/main-word-concert-fan-
 import { MAIN_WORD_STATION_COMMUTING_IDS } from "../lib/main-word-station-commuting-2026-10";
 import { MAIN_WORD_FESTIVALS_IDS } from "../lib/main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS } from "../lib/main-word-cherry-blossom-season-2026-10";
+import { MAIN_WORD_COLLECTING_HOBBIES_IDS } from "../lib/main-word-collecting-hobbies-2026-10";
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 import { lockDownPublicTables } from "../lib/rls-lockdown";
@@ -47,6 +48,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "station-commuting", ids: MAIN_WORD_STATION_COMMUTING_IDS },
   { category: "festivals", ids: MAIN_WORD_FESTIVALS_IDS },
   { category: "cherry-blossom-season", ids: MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS },
+  { category: "collecting-hobbies", ids: MAIN_WORD_COLLECTING_HOBBIES_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),

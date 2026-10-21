@@ -1,0 +1,759 @@
+{
+  "schemaVersion": 1,
+  "series": "collecting-hobbies",
+  "reviewer": "Codex, individual editorial review",
+  "scope": "Every candidate headword, both examples, and all English/Japanese lexical spans; individual reasons in authored editorial notes.",
+  "references": [
+    "https://www.pokemon-card.com/products/index.html",
+    "https://www.tamiya.com/japan/rc/oyakudachi/tool.html",
+    "https://www.takaratomy.co.jp/products/category/minicar.html",
+    "https://www.katomodels.com/",
+    "https://www.mint.go.jp/faq-list/faq_coin",
+    "https://www.pokemon-card.com/products/index.html?dateLowerM=1&dateUpperD=15&dateUpperM=6&dateUpperY=2026&productType=peripheral",
+    "https://www.gashapon.jp/shop/smart.php",
+    "https://gashapon.jp/sustainability/",
+    "https://www.taito.co.jp/how-to/",
+    "https://www.bandainamco.co.jp/ir/library/assets/pdf/2025/integratedreports2025_jp.pdf",
+    "https://gashapon.jp/news/info_180724.html",
+    "https://www.bandai.co.jp/candy/products/2025/4570117922015000.html",
+    "https://www.kotobukiya.co.jp/series/action-figure/"
+  ],
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "trading-card",
+      "verdict": "pass",
+      "reason": "以遊戲卡面區別既有藝人フォトカード；トレーディングカード是通用名稱，不限定品牌。",
+      "sourceSha256": "f814c28dc970ce511d6677b2ca708680dca38594cbb3da76d3553d82265aa36e"
+    },
+    {
+      "kind": "example",
+      "wordId": "trading-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把卡牌放入卡套是保護收藏的具體動作，三語沒有混成小卡或信用卡。",
+      "sourceSha256": "9e05da2eb99c5647b31acefb567eb22579f8a16a755c53c638448cde0b9f90b0"
+    },
+    {
+      "kind": "example",
+      "wordId": "trading-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "交換前確認卡牌邊角，時間順序與檢查位置一致；較簡單句多出先後關係。",
+      "sourceSha256": "68ebe3c04fa9ebe670fe1111198871a439ecf77614b4a3112dcafd2213c4003f"
+    },
+    {
+      "kind": "word",
+      "wordId": "booster-pack",
+      "verdict": "pass",
+      "reason": "拡張パック依卡牌官方商品分類採用，與裝玩具的既有盲盒有不同內容與包裝。",
+      "sourceSha256": "d5cacb9bb2e53eaf03c3d0e92c22b8c914945f9db8c6527f7350545233a2284d"
+    },
+    {
+      "kind": "example",
+      "wordId": "booster-pack",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "購買一包是自然的商店情境，沒有暗示一定會抽中稀有卡。",
+      "sourceSha256": "6809746b53d14eb7b590b2cb64e3519c88a41350578f1cc17351a83ba7405086"
+    },
+    {
+      "kind": "example",
+      "wordId": "booster-pack",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "希望與朋友一起開封而暫不拆包，三語保留原因、共同開封與否定。",
+      "sourceSha256": "790afb98d54e94ed237f3c7cde98353b35af33336df637c1915d691010edd74d"
+    },
+    {
+      "kind": "word",
+      "wordId": "deck-box",
+      "verdict": "pass",
+      "reason": "デッキケース裝整副牌組，依厚度與掀蓋結構區別既有單張トレカケース。",
+      "sourceSha256": "a43c1c259254ea5dd897606c3150ef28be6892e0ab6ddab90212b22d1abb2d85"
+    },
+    {
+      "kind": "example",
+      "wordId": "deck-box",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請求打開牌組盒是對戰準備情境，英日繁中動作一致。",
+      "sourceSha256": "b0049a6fd8656138ec25e90df6f3726d947666b83c4953e9ce8b3914891f4101"
+    },
+    {
+      "kind": "example",
+      "wordId": "deck-box",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "卡套增加厚度導致牌組盒放不下，因果與否定對應，沒有誤寫成單卡尺寸問題。",
+      "sourceSha256": "e7b6177ec3468bcba9d118a8f2ea5adefd665438d9ff34448bf113918fba67a4"
+    },
+    {
+      "kind": "word",
+      "wordId": "card-playmat",
+      "verdict": "pass",
+      "reason": "以卡牌遊戲脈絡限定プレイマット，不混成嬰兒遊戲墊或滑鼠墊。",
+      "sourceSha256": "8765628a49bbc300ce940724a02c95505e028350beb685ffa2bba07a09c12505"
+    },
+    {
+      "kind": "example",
+      "wordId": "card-playmat",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "鋪墊子是對戰前的直接請求，動詞敷く與spread out對應。",
+      "sourceSha256": "e387ccd262155ddd807dd36baca22e6bfdaabd7a15bcb73df631c754f56a1845"
+    },
+    {
+      "kind": "example",
+      "wordId": "card-playmat",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "收納前等待完全乾燥是有時間條件的保養行為，三語沒有新增清洗方式。",
+      "sourceSha256": "b17f469f93b36964b9ac2f7e2ce5da839025e479ec37ddb45af82232e140d741"
+    },
+    {
+      "kind": "word",
+      "wordId": "plastic-model-kit",
+      "verdict": "pass",
+      "reason": "プラモデル是需組裝的塑膠套件，與既有完成品フィギュア分開；不以特定機器人品牌代稱。",
+      "sourceSha256": "33dcbcd680eebf66c14010c61661708f3aa976254138b331a59f7bab2e1c5129"
+    },
+    {
+      "kind": "example",
+      "wordId": "plastic-model-kit",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "購入套件作為興趣活動起點，句意簡單並完整對齊。",
+      "sourceSha256": "e11bcfda109e6ce234f7d24f38bf19e873327cc326f5b07eebbcbe436a14d1ba"
+    },
+    {
+      "kind": "example",
+      "wordId": "plastic-model-kit",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "完成後打算拍照，終わったら引入完成條件與予定，區別於購買句。",
+      "sourceSha256": "73a76804164644b61b3aa156790119801d2e6a752badf1745a0eb467281667fb"
+    },
+    {
+      "kind": "word",
+      "wordId": "model-sprue",
+      "verdict": "pass",
+      "reason": "採用模型語境的ランナー，依田宮說明是連著零件的框，不是慢跑者；英語sprue採模型常用義。",
+      "sourceSha256": "f5e12bba020897fbe741afc4b3a5bf7b2de711c0ef84ad03b42b1cecf5efebd6"
+    },
+    {
+      "kind": "example",
+      "wordId": "model-sprue",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在框上找到小零件是組裝前的可見事件，三語保留位置。",
+      "sourceSha256": "b963de4ca27067d8d778782eec5668432bf6d472378747f20a369cf3997d7b3a"
+    },
+    {
+      "kind": "example",
+      "wordId": "model-sprue",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "未確認說明書前不剪零件，先後與否定一致，示範ランナー的實際操作語境。",
+      "sourceSha256": "9f695a3a8bded7f46cf9bfc57f4291bf325cef9a59bc859d15630ee9cf508d5c"
+    },
+    {
+      "kind": "word",
+      "wordId": "model-nippers",
+      "verdict": "pass",
+      "reason": "模型用ニッパー指定塑膠零件用途，外觀是短刃雙柄鉗而非一般剪刀。",
+      "sourceSha256": "68add1515969eb236d88813c158d45dc413546a9c18030cbf3f226380f490c7b"
+    },
+    {
+      "kind": "example",
+      "wordId": "model-nippers",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "剪取零件是此工具主要用途，英語nippers作複數與日文工具名稱自然對應。",
+      "sourceSha256": "e911622639b10209875ec40a0e85eaed5e2ec6d7d68bc881e9c3bbf515907d68"
+    },
+    {
+      "kind": "example",
+      "wordId": "model-nippers",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "刀刃精細所以蓋上護套再收納，原因與順序完整對齊，沒有宣稱可剪金屬。",
+      "sourceSha256": "3a88f52650bf907da0c63076118bbc361629b2a252fbda8988f343a5b8a4f03b"
+    },
+    {
+      "kind": "word",
+      "wordId": "die-cast-car",
+      "verdict": "pass",
+      "reason": "ダイキャストミニカー保留金屬壓鑄限定，避免把所有ミニカー都說成金屬；外觀參考日本常見掌上模型車。",
+      "sourceSha256": "e0fb73e691ff18c9e0b662074bf1ebcc53cad8b26afdb013e65566e03ff0f4f8"
+    },
+    {
+      "kind": "example",
+      "wordId": "die-cast-car",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "陳列三輛模型車是具體收藏活動，數量三語相同。",
+      "sourceSha256": "84a21f50639185abc52c84f79e5db08e039d10e4f37f761c806a97df178e10ac"
+    },
+    {
+      "kind": "example",
+      "wordId": "die-cast-car",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "塗裝已剝落而避免觸碰車頂，因果、物件部位與行為一致，與陳列句不同。",
+      "sourceSha256": "fc74d949257928203c9a7cf2d8f47ec3df306a3f578d5ba0a9b2f8580526e5aa"
+    },
+    {
+      "kind": "word",
+      "wordId": "model-train",
+      "verdict": "pass",
+      "reason": "鉄道模型與實際火車不同；圖指定日本通勤電車縮尺車輛及模型軌道，保留玩賞模型特徵。",
+      "sourceSha256": "be4f2e5a54cd03b1991cbe7e90cfa51d16837965faab604f913777f7e88e8538"
+    },
+    {
+      "kind": "example",
+      "wordId": "model-train",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把車放上軌道為實際操作，不把模型誤稱通勤工具。",
+      "sourceSha256": "4a68c5496f4420b58e3f368ae396aaca64d3d82d5836455624447a812366bfae"
+    },
+    {
+      "kind": "example",
+      "wordId": "model-train",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "清除軌道灰塵後恢復順暢，先後與結果完整對應；不延伸到電路維修建議。",
+      "sourceSha256": "df7afea10eee347ba89dd080889f457e08f672bd0e507e5830f4b416a9e514c6"
+    },
+    {
+      "kind": "word",
+      "wordId": "dollhouse",
+      "verdict": "pass",
+      "reason": "ドールハウス是具可佈置內部的縮小房屋，不是人偶本身或真實住宅。",
+      "sourceSha256": "66ddae8cc6544d760f5216776c33970d1f4fe9d290fcb388356d093c666d17b0"
+    },
+    {
+      "kind": "example",
+      "wordId": "dollhouse",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在娃娃屋放小椅子表現縮尺家具用途；三語位置及物件相同。",
+      "sourceSha256": "61805a5a1bf9968d0ff74cc18e3233e2651b5073cf87934422611a23ee7a4c31"
+    },
+    {
+      "kind": "example",
+      "wordId": "dollhouse",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "樓梯窄所以換小椅子，理由、替換及尺寸比較都對齊，與簡單擺放形成不同教學內容。",
+      "sourceSha256": "7fe37bdea8598a9a740df59b17663226847831b849489b35d6ae1198e73335f5"
+    },
+    {
+      "kind": "word",
+      "wordId": "commemorative-coin",
+      "verdict": "pass",
+      "reason": "記念硬貨限正式硬幣，不把紀念章當貨幣；圖用展示盒與硬幣正反面紋樣，避開錯誤真幣仿製細節。",
+      "sourceSha256": "936cb2344155798dc1c3210b1168fc86db9df65204c754d16e7a24bdfd04e272"
+    },
+    {
+      "kind": "example",
+      "wordId": "commemorative-coin",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "向家人展示是日常收藏分享，未包含投資或價值宣稱。",
+      "sourceSha256": "a683353c9d270fd64a8f67425dc6dcb405550c48f9dea85b701679c8001a4a84"
+    },
+    {
+      "kind": "example",
+      "wordId": "commemorative-coin",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "確認年份後收入盒中，時間順序與保管動作一致；與展示句有實質區別。",
+      "sourceSha256": "a979f78c59cb59e4880674cd874ca5c886b5fc7a7cf170ded2413513524a29b2"
+    },
+    {
+      "kind": "word",
+      "wordId": "stamp-album",
+      "verdict": "pass",
+      "reason": "切手アルバム用於郵票，與既有ゴム印及藝人小卡相簿明確分開；不使用易混淆的スタンプ帳。",
+      "sourceSha256": "3a87f2521687b49a2ac7e608ee52033e45b4db2e824cfc326a6a4dc97080d01a"
+    },
+    {
+      "kind": "example",
+      "wordId": "stamp-album",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "翻開冊子是直接日常動作，英文open與開きました自然對應。",
+      "sourceSha256": "2d9f9fd36b006b49cf516baa4a00bcebf83c74cfe413fba56599f9e17cf2bf5d"
+    },
+    {
+      "kind": "example",
+      "wordId": "stamp-album",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "按國別整理所以易於尋找，因果、分類依據與單張郵票指涉一致。",
+      "sourceSha256": "e89ebd31ab806f548d8e5f4de29c46492909a4b64b5ccd5be1ee0f4ca92e3ec0"
+    },
+    {
+      "kind": "word",
+      "wordId": "capsule-toy-machine",
+      "verdict": "pass",
+      "reason": "カプセルトイ自販機指機台本身，區別既有カプセルトイ玩具；不用品牌名作通稱，也未斷言所有機器只收硬幣。",
+      "sourceSha256": "55d262ced30f764af1aa0223a5dbbf24b62824cfd6a9e8b27e1be3e07a5acf79"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "轉動機台把手是可見操作，英日繁中均為請求，不混成打開膠囊。",
+      "sourceSha256": "219011636af600fd61938616ecca3ce1f6cdc0ab5a5ab0eb78697f415482b38b"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "機台已空使人改選別台，原因、過去時間與選擇結果三語相符，較單一步驟句有明顯難度差。",
+      "sourceSha256": "4fc5773ffce70414198315d6ceb320bd4870974e34b0380fb0389f60e02191df"
+    },
+    {
+      "kind": "word",
+      "wordId": "toy-capsule",
+      "verdict": "pass",
+      "reason": "カプセル在本系列限定玩具包裝義，與藥物膠囊及內部玩具區分；圖為可拆中空雙半殼。",
+      "sourceSha256": "bfc4731bae59a27ffd3c2ad86d6cce7a230035dec0ed1190c0bc5395bf289af0"
+    },
+    {
+      "kind": "example",
+      "wordId": "toy-capsule",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "打開容器是單一日常動作，沒有說打開或拆壞玩具。",
+      "sourceSha256": "38b5c45bf19116cf814f36924395b795df2d8565a839b4539eb313c21f63b69d"
+    },
+    {
+      "kind": "example",
+      "wordId": "toy-capsule",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "取出玩具後回收空殼，保留先後、空容器與回收箱，呈現與開封不同的使用階段。",
+      "sourceSha256": "4aef30f55cf27e7621f72be4f8a37902d6361347ab9869f4a4b3391c882acc36"
+    },
+    {
+      "kind": "word",
+      "wordId": "capsule-toy-leaflet",
+      "verdict": "pass",
+      "reason": "ミニブック採扭蛋內附摺頁語境，並非另一本故事書；英文以leaflet明確表達薄摺紙。",
+      "sourceSha256": "e8b0eabaf45989c0b9d74a3f662c20eb006c0508d99113e823aa106429f5fbce"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy-leaflet",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "攤開摺頁是實際開箱行為，沒有把它當主商品。",
+      "sourceSha256": "36fc577f3d10a9b7e690fe2652c0f598702dab0fee773e522609412ef22421e1"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy-leaflet",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "發現缺件後先查看摺頁再問店員，三語保留缺一件、查看與詢問的次序，非字典定義句。",
+      "sourceSha256": "ca9448d06b945efbc0053b20475709cb9ef3ee6394360b7b3788eefb27ece88a"
+    },
+    {
+      "kind": "word",
+      "wordId": "capsule-recycling-bin",
+      "verdict": "pass",
+      "reason": "空カプセル回収ボックス有指定回收物，依官方膠囊回收活動區分一般垃圾；不宣稱各店或自治體規則皆相同。",
+      "sourceSha256": "8af13026b73595df580b7fdf2460afc31f504a2c4e99869ab7b0cb622d9478bb"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-recycling-bin",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "投入空殼是正確對象與用途，日文回収ボックス為語境省略而非不同物品。",
+      "sourceSha256": "5dfde00b2e187d88000e74fe6ad47f2aa806894f417cc1c84748d9c69fa0f60f"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-recycling-bin",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "未找到回收箱所以詢問店員，否定、原因與詢問對象三語一致，未鼓勵投入普通垃圾桶。",
+      "sourceSha256": "0af3830a68aad08a85a45adf15cf4c9cdd07e6e6c842c5fafcb19f077c3c30c0"
+    },
+    {
+      "kind": "word",
+      "wordId": "capsule-toy-shop",
+      "verdict": "pass",
+      "reason": "専門店指集中販售扭蛋的店，與綜合遊樂場不同；圖需顯示機台列與店面而不只一台機器。",
+      "sourceSha256": "944758b0f01e2f3f4bb78c868f38e94890897d0c91d85a7af686bdde65e10f99"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy-shop",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "進店是單一移動事件，三語均指專賣店。",
+      "sourceSha256": "1149b07889d82545ddda02ce1431b0380822143da07f2477e776304aadcb7f22"
+    },
+    {
+      "kind": "example",
+      "wordId": "capsule-toy-shop",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "店裡擁擠而先查看入口附近機台，因果及範圍一致，沒有虛構特定商店陳列規則。",
+      "sourceSha256": "b2279f0fb5afff859b5200513e39de8d04f5a24cf53d47a40736ed1a7c420d4d"
+    },
+    {
+      "kind": "word",
+      "wordId": "claw-machine",
+      "verdict": "pass",
+      "reason": "クレーンゲーム機是機台通稱，與工程起重機區分；定義容納玩偶及其他獎品，不使用特定品牌名。",
+      "sourceSha256": "7ce5a66ef0639fd6e5553eea921159eb8fcfc8df9eec3358f69f5729ab94e40d"
+    },
+    {
+      "kind": "example",
+      "wordId": "claw-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以機台玩一次是自然遊樂場活動，沒有保證一定獲獎。",
+      "sourceSha256": "a4dc839484904163fe34b08c0ce1838811ba9df8f12f1c8f63a3137067cf97dc"
+    },
+    {
+      "kind": "example",
+      "wordId": "claw-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "獎品卡住時向店員求助，三語保留狀態與求助行為，不提供不當搖晃機台方法。",
+      "sourceSha256": "ce5cf9dd5fdf619a0cb1f99a0e908bbd39b45da2decf055cdab965248c0d38b8"
+    },
+    {
+      "kind": "word",
+      "wordId": "arcade-claw",
+      "verdict": "pass",
+      "reason": "アーム採日本遊樂場用語，語境限定機械爪而非人手臂；定義不把所有機種限定三爪。",
+      "sourceSha256": "f85cce3aa6e506774ffb5aa6691ead53c25686b6eb78ba9239d0c12054403835"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-claw",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "觀察爪下降是一個可見事件，英日繁中動作相同。",
+      "sourceSha256": "f6904583e9c9858f2c34a3e3211ee51969f9068b434adf7206d7bb3506e5c0ac"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-claw",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "從側面查看爪與獎品位置以對準，目的、觀察方向及兩物相對位置一致。",
+      "sourceSha256": "1c368d90fb83b15223d88b76e633e4d12694efa75da13465f3059edb4871db55"
+    },
+    {
+      "kind": "word",
+      "wordId": "arcade-joystick",
+      "verdict": "pass",
+      "reason": "ジョイスティック為桿狀控制器而非整個手把；不假定每台夾娃娃機都有此裝置。",
+      "sourceSha256": "05a12e2f9d7e5240fd0931cbb1d78dff41e84cf793af5faad3d3a1756ff75532"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-joystick",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "向右推搖桿為直接操作請求，左右方向三語一致。",
+      "sourceSha256": "b55b8dcaf69df9ebcbae6dbf9c5dd213498a015e092fa66da60667aff77bc3a7"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-joystick",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "感到難以操作而向店員說明，原因與回報對象一致；不推斷機械故障或自行維修。",
+      "sourceSha256": "08b76b04b66b5f56ebd3cfccb1a1872a340722258b9927620e87ca426efe323e"
+    },
+    {
+      "kind": "word",
+      "wordId": "arcade-start-button",
+      "verdict": "pass",
+      "reason": "スタートボタン限定開始功能，不把所有機台按鈕都稱開始鈕；未聲稱每款夾娃娃機均採同樣控制方式。",
+      "sourceSha256": "a1542ea82e43237d3ba4041f3fa9c03e80e79db242b35810a6a40ce0b4225ff4"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-start-button",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "找到開始按鈕是單一辨識動作，適合簡單句且與圖像相符。",
+      "sourceSha256": "5d73033811e63bf12bda3c5fe565965c1d2feb0708f7a6a8a9445f0e6a29df65"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-start-button",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "讀完螢幕說明再按鈕，順序與所在位置三語一致，顯示實際開始遊戲流程。",
+      "sourceSha256": "8e77bcb3986775d0f9db719c64fd853da76cc8c733cd28928cabcbb9f0e5ad65"
+    },
+    {
+      "kind": "word",
+      "wordId": "coin-slot",
+      "verdict": "pass",
+      "reason": "コイン投入口是進幣開口，與取幣盤、退款口或取物口分開；不把所有投入口都說成接受代幣。",
+      "sourceSha256": "2f10149796445aef31295d02104cf5b54f6e28e08386c70464ca387bd593f3f3"
+    },
+    {
+      "kind": "example",
+      "wordId": "coin-slot",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "指認開口為簡單句，英日繁中均帶指示與相同物件。",
+      "sourceSha256": "cb1d929a117e9367f76d135901197bc01af93534e0705448d10cdc4b54f424f8"
+    },
+    {
+      "kind": "example",
+      "wordId": "coin-slot",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "硬幣放不進而檢查尺寸，原因、否定與大小三語對齊；特別避免把常見退幣盤誤說成原投幣口。",
+      "sourceSha256": "607685dc2c9bc65e4f11691c217e6d91886292b7dacbd42be80b98befa4fefaf"
+    },
+    {
+      "kind": "word",
+      "wordId": "prize-retrieval-hatch",
+      "verdict": "pass",
+      "reason": "景品取り出し口是取回已獲得物品的出口，區別櫃內落下洞口及機台維修門。",
+      "sourceSha256": "b636c4145aeac992c1e1f42a075c6cc69eddcc506afa5a7619731a42ab2e9075"
+    },
+    {
+      "kind": "example",
+      "wordId": "prize-retrieval-hatch",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "從出口拿取獎品是正確使用方式，不涉及伸手進入遊戲區。",
+      "sourceSha256": "476d9b5926e56f1299154d7e8342f2dd611a1efa410705591e26839684d09dfa"
+    },
+    {
+      "kind": "example",
+      "wordId": "prize-retrieval-hatch",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "獎品未落到出口時請店員確認，否定、まだ與求助三語相符，不鼓勵自行撬門。",
+      "sourceSha256": "85d8356a39c72b2056063e6b60ce1e91b92955a6ad1c948c3f19515a9915c4b6"
+    },
+    {
+      "kind": "word",
+      "wordId": "change-machine",
+      "verdict": "pass",
+      "reason": "両替機在本系列指定日圓換零錢而非外幣換匯或ATM；依遊樂場遊玩說明選擇機型。",
+      "sourceSha256": "dc8cf99f6c4e617493cf95c4b527fe16fdcf2b926a473b72d24226f521b1b969"
+    },
+    {
+      "kind": "example",
+      "wordId": "change-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問機台位置是日本遊樂場自然需求，三語疑問相同。",
+      "sourceSha256": "049bc63b98e74a4ab3b6b0195a59a4325709b23b1be5757306eb8fd372567f82"
+    },
+    {
+      "kind": "example",
+      "wordId": "change-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "只有千圓鈔所以先換硬幣，金額、紙鈔與原因三語完整對齊，不宣稱任何面額都可投入。",
+      "sourceSha256": "603434aa595330e0fea4be66cf082213b11af49cf68682f5ee21a6db00479f84"
+    },
+    {
+      "kind": "word",
+      "wordId": "arcade-token",
+      "verdict": "pass",
+      "reason": "ゲーム用メダル為遊樂場代幣，與原本紀念幣的法定貨幣概念分開；未聲稱可投入全部夾娃娃機。",
+      "sourceSha256": "99f2da8463004784cc5b5a6274ba54936486d6f271d4bee7cc390891326a9837"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-token",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "五枚代幣放在盤上是整理動作，數量與位置三語一致。",
+      "sourceSha256": "c2df159afd92202377c90a09b7345bc3ab1f5d951b50dc5d99320f6122539eaa"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-token",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "特定代幣無法在別店使用所以留在本店玩，限定這批代幣而非推論所有店通用規則。",
+      "sourceSha256": "ca41a690be7e5a495955f87f991faaf6c6f1ac904a104f00a01de706478e13cf"
+    },
+    {
+      "kind": "word",
+      "wordId": "amusement-arcade",
+      "verdict": "pass",
+      "reason": "ゲームセンター指室內電子遊樂場，不是兒童遊具場；以多種機台區別扭蛋專賣店。",
+      "sourceSha256": "7fb74e5d29c4e00b33774ca9394ed43808eff2c58025a7893aab71f138d870b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "amusement-arcade",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "相約見面為自然生活用途，日文待ち合わせ與met一致。",
+      "sourceSha256": "03f2146c3475e692730ed14d9309a71730b80afb04968de0b7906815ca9d60d6"
+    },
+    {
+      "kind": "example",
+      "wordId": "amusement-arcade",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "室內擁擠所以在外面等朋友到，原因、等待地點與終點條件三語一致。",
+      "sourceSha256": "7af7c313832e0582a42f5f6a33eae76c0f629e94d86a3736160641368880de75"
+    },
+    {
+      "kind": "word",
+      "wordId": "candy-toy",
+      "verdict": "pass",
+      "reason": "食玩是食品與玩具一起販售的產品，不是可吃玩具；依萬代食品玩具產品分類，圖需同時具玩具和獨立糖果。",
+      "sourceSha256": "fcfc386a36ac0d1545c7bec1c6f117354599e8d8498cb6d7ca4d751b4cc0e1ce"
+    },
+    {
+      "kind": "example",
+      "wordId": "candy-toy",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在店裡挑選一個食玩為自然購物，三語均指單件商品，避免a box of toys讓人誤以為一盒必有多件玩具。",
+      "sourceSha256": "67a340e19c73d6c010b1cc6e9dfd7dc5923838bd97255f7481f72e6f7538e5ee"
+    },
+    {
+      "kind": "example",
+      "wordId": "candy-toy",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先取出另包口香糖再組裝模型，先後與兩種物件清楚分開，避免把塑膠當食品。",
+      "sourceSha256": "9d25bd5d4e1f1a7b19a645ac9c011e83c03511bdb112710da2e1fac863ec000d"
+    },
+    {
+      "kind": "word",
+      "wordId": "miniature-food-model",
+      "verdict": "pass",
+      "reason": "ミニチュアフード是縮小不可食模型，與真食物、餐廳等比例食品模型區分；圖有尺度參照。",
+      "sourceSha256": "059c38e2c52c9d45471a7b745d056503a3580306dcfb30e71496950160557469"
+    },
+    {
+      "kind": "example",
+      "wordId": "miniature-food-model",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把微縮食物放上小桌是娃娃屋的合理場景，三語位置相同。",
+      "sourceSha256": "77dd59eb1ca494fbad8a794806164871053834faddbe234b991b335453bd7e17"
+    },
+    {
+      "kind": "example",
+      "wordId": "miniature-food-model",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "看似真食物但尺寸不合娃娃屋，轉折與太小結果關係對齊，沒有把模型描述成可食物。",
+      "sourceSha256": "be32adbfe98c73e8860e83122081ba88bb8df76d1928f674563cd544e6adc2ef"
+    },
+    {
+      "kind": "word",
+      "wordId": "action-figure",
+      "verdict": "pass",
+      "reason": "アクションフィギュア以可動關節定義，為既有一般角色公仔的具體子類，不重建同義詞；圖需清楚顯示關節。",
+      "sourceSha256": "13cadfdd2690839853f612f3fb0366b6ed7a1d1d7ea101ea3b8021a0b67c027b"
+    },
+    {
+      "kind": "example",
+      "wordId": "action-figure",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "彎曲膝關節是此物件的定義性使用，英日繁中部位與動作相符。",
+      "sourceSha256": "b87e81c9436c4ec2e3a5128f759e005082685cccaa1ef502ab6eb6fb586b7edc"
+    },
+    {
+      "kind": "example",
+      "wordId": "action-figure",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "改姿勢前檢查關節活動方向，時間與確認對象一致，未宣稱可無限制扭動。",
+      "sourceSha256": "e29de7f799038fcfbf6823ea3e457d5a99472e34a02415b070f2f05b8f0facdd"
+    },
+    {
+      "kind": "word",
+      "wordId": "collectible-doll",
+      "verdict": "pass",
+      "reason": "ドール在本項限定收藏換裝硬質人偶，與ぬいぐるみ軟填充玩偶區分；不是把所有人偶都限定高價收藏用途。",
+      "sourceSha256": "289b39f47c0641a540844119acc88544a7870b467b9df9eb0a595984aa7cca61"
+    },
+    {
+      "kind": "example",
+      "wordId": "collectible-doll",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "替人偶換裝是自然收藏活動，日文着せ替える含換衣而非只替換衣服物件。",
+      "sourceSha256": "ff17ada67bfa6d46d523f29a637a137903ca749675ffc233daaf9a572b882ba5"
+    },
+    {
+      "kind": "example",
+      "wordId": "collectible-doll",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "髮易打結所以拍照前輕梳，原因、時間與溫柔動作三語一致，不涉及真人護髮建議。",
+      "sourceSha256": "baeb1a81211a2acc71e11c05b633368534e1301b9bd4514951a607231390ca0e"
+    },
+    {
+      "kind": "word",
+      "wordId": "collectible-sticker",
+      "verdict": "pass",
+      "reason": "コレクションシール有可黏貼背膠與台紙，區別未黏性卡牌；收藏用途不限定一定不撕或一定全套。",
+      "sourceSha256": "f63dde5b540ddb619efcf350dac4830de23ab5ef69431b34c8ef4e1b95d6db7d"
+    },
+    {
+      "kind": "example",
+      "wordId": "collectible-sticker",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "連同台紙保存是常見收藏方式，英日繁中同時保留保存動作與台紙。",
+      "sourceSha256": "fb51155e303c4564e0cc95b10c904b775f77609e9cabb78be0f21d151bbdcf6b"
+    },
+    {
+      "kind": "example",
+      "wordId": "collectible-sticker",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "尺寸比預期大而改貼其他頁，原因、預期比較與替代位置一致，與未撕保存句展示不同使用選擇。",
+      "sourceSha256": "ef40046187a240a6c61352d25fef4550c57f551e738fd445faedd2d4a787c548"
+    },
+    {
+      "kind": "word",
+      "wordId": "building-block-set",
+      "verdict": "pass",
+      "reason": "ブロックセット為可拆接積木套組，不是模型零件框或建築材料；不以品牌名代替通稱。",
+      "sourceSha256": "c9cc0fd010d7f8a458375fe30f2ad008e72b1edf215fa2740ea03d3b2a3571d6"
+    },
+    {
+      "kind": "example",
+      "wordId": "building-block-set",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "用積木造房屋是直接且常見的玩法，三語保留共同製作與成品。",
+      "sourceSha256": "6b9b8c0d58b67ea424e1a1c5418e5dd476efcbc3c1c6efe35fd96c071ed5945c"
+    },
+    {
+      "kind": "example",
+      "wordId": "building-block-set",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "按顏色整理後找到遺失紅色零件，時間與結果、顏色三語一致，與搭建句有不同教學用途。",
+      "sourceSha256": "e67d36cd158f5e7241c2684f073c9269939d90a1982d475bd22a2e06bfd3682b"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import collectingHobbiesCandidate from "../data/collecting-hobbies-series-2026-10.json";
 import cherryBlossomSeasonCandidate from "../data/cherry-blossom-season-series-2026-10.json";
 import festivalsCandidate from "../data/festivals-series-2026-10.json";
 import type { Category } from "@/types";
@@ -271,6 +272,7 @@ export const categories: Category[] = [
   },
   festivalsCandidate.category,
   cherryBlossomSeasonCandidate.category,
+  collectingHobbiesCandidate.category,
 ];
 
 // This list is used only when the database is unavailable. A fallback cannot
@@ -287,7 +289,8 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "concert-fan-support" &&
     category.id !== "station-commuting" &&
     category.id !== "festivals" &&
-    category.id !== "cherry-blossom-season",
+    category.id !== "cherry-blossom-season" &&
+    category.id !== "collecting-hobbies",
 );
 
 export const getCategory = (id: string): Category | undefined =>

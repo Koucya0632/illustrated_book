@@ -1,0 +1,1667 @@
+{
+  "schemaVersion": 1,
+  "series": "collecting-hobbies",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "New main-catalog category. Existing anime/fan merchandise is preserved. Local preparation only; production upload, DB publication, commit and deployment require separate authorization.",
+  "category": {
+    "id": "collecting-hobbies",
+    "name": "Collecting Hobbies",
+    "nameZh": "收藏型娛樂",
+    "nameJa": "コレクションの趣味",
+    "emoji": "🧩",
+    "description": "扭蛋、夾娃娃與遊樂場用品，卡牌、模型和收藏玩具，以及紀念幣與郵票的整理保存",
+    "descriptionEn": "Capsule toys, claw machines and arcade essentials, trading cards, models, collectible toys, coins, and stamps",
+    "descriptionJa": "カプセルトイやクレーンゲーム、カードゲーム、模型とコレクショントイ、記念硬貨や切手の整理・保管",
+    "color": "from-indigo-100 to-amber-100",
+    "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/category-collecting-hobbies-v1-f10170ff05ae.webp"
+  },
+  "references": [
+    "https://www.pokemon-card.com/products/index.html",
+    "https://www.tamiya.com/japan/rc/oyakudachi/tool.html",
+    "https://www.takaratomy.co.jp/products/category/minicar.html",
+    "https://www.katomodels.com/",
+    "https://www.mint.go.jp/faq-list/faq_coin",
+    "https://www.pokemon-card.com/products/index.html?dateLowerM=1&dateUpperD=15&dateUpperM=6&dateUpperY=2026&productType=peripheral",
+    "https://www.gashapon.jp/shop/smart.php",
+    "https://gashapon.jp/sustainability/",
+    "https://www.taito.co.jp/how-to/",
+    "https://www.bandainamco.co.jp/ir/library/assets/pdf/2025/integratedreports2025_jp.pdf",
+    "https://gashapon.jp/news/info_180724.html",
+    "https://www.bandai.co.jp/candy/products/2025/4570117922015000.html",
+    "https://www.kotobukiya.co.jp/series/action-figure/"
+  ],
+  "entries": [
+    {
+      "id": "trading-card",
+      "word": "trading card",
+      "chinese": "集換式卡牌",
+      "chineseDefinition": "可供收藏、交換，有些也能用來對戰的卡牌；此處呈現遊戲卡牌，與藝人小卡區分。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtreɪ.dɪŋ kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "集換式卡牌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A collectible card that can be traded; some are also used to play games.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "集めたり交換したりするカード。対戦ゲームで使うものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the trading card in a sleeve.",
+          "ja": "トレーディングカードをスリーブに入れてください。",
+          "zh": "請把集換式卡牌放進卡套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before trading the card, I checked its corners.",
+          "ja": "トレーディングカードを交換する前に、角を確認しました。",
+          "zh": "交換集換式卡牌前，我確認了它的邊角。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "トレーディングカード",
+      "jaReading": "とれーでぃんぐかーど",
+      "jaReadingSegments": [
+        {
+          "text": "トレーディングカード",
+          "ruby": "とれーでぃんぐかーど"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/trading-card-v1-d9bb9a74e853.webp"
+    },
+    {
+      "id": "booster-pack",
+      "word": "booster pack",
+      "chinese": "卡牌擴充包",
+      "chineseDefinition": "裝有數張卡牌的密封補充包，通常開封前無法知道每張卡的種類。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbuː.stɚ pæk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "卡牌擴充包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sealed pack of additional trading game cards, usually with contents unknown before opening.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カードゲームのカードを追加するための袋入り商品。通常、中のカードは開封するまで分からない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a booster pack.",
+          "ja": "拡張パックを一つ買いました。",
+          "zh": "我買了一包卡牌擴充包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I want to open the booster pack with a friend, so I have not opened it yet.",
+          "ja": "友達と一緒に拡張パックを開けたいので、まだ開けていません。",
+          "zh": "我想和朋友一起拆卡牌擴充包，所以還沒有拆。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "拡張パック",
+      "jaReading": "かくちょうぱっく",
+      "jaReadingSegments": [
+        {
+          "text": "拡張パック",
+          "ruby": "かくちょうぱっく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/booster-pack-v1-b85bebb83ee9.webp"
+    },
+    {
+      "id": "deck-box",
+      "word": "deck box",
+      "chinese": "牌組收納盒",
+      "chineseDefinition": "用來收納並攜帶一整副遊戲牌組的盒子；與保護單張卡的硬卡套不同。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdek bɑːks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牌組收納盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A box for storing and carrying a deck of game cards.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "対戦に使う一組のカードをまとめて収納し、持ち運ぶための箱。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please open the deck box.",
+          "ja": "デッキケースを開けてください。",
+          "zh": "請打開牌組收納盒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The sleeved cards were too thick to fit in this deck box.",
+          "ja": "スリーブに入れたカードは厚すぎて、このデッキケースに入りませんでした。",
+          "zh": "套上卡套的卡牌太厚，放不進這個牌組收納盒。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "デッキケース",
+      "jaReading": "でっきけーす",
+      "jaReadingSegments": [
+        {
+          "text": "デッキケース",
+          "ruby": "でっきけーす"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/deck-box-v1-7961e0af36d1.webp"
+    },
+    {
+      "id": "card-playmat",
+      "word": "card playmat",
+      "chinese": "卡牌對戰墊",
+      "chineseDefinition": "鋪在桌上進行卡牌遊戲的墊子，可保護卡牌並方便拿取。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kɑːrd ˈpleɪ.mæt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "卡牌對戰墊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A mat laid on a table for playing card games and protecting the cards.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カードゲームをするときにテーブルに敷くマット。カードを傷から守り、扱いやすくする。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please spread out the card playmat.",
+          "ja": "プレイマットを敷いてください。",
+          "zh": "請鋪開卡牌對戰墊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Wait until the card playmat is completely dry before putting it away.",
+          "ja": "プレイマットをしまう前に、完全に乾くまで待ってください。",
+          "zh": "收起卡牌對戰墊前，請等它完全乾燥。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "プレイマット",
+      "jaReading": "ぷれいまっと",
+      "jaReadingSegments": [
+        {
+          "text": "プレイマット",
+          "ruby": "ぷれいまっと"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/card-playmat-v1-4d8bb07c3ba2.webp"
+    },
+    {
+      "id": "plastic-model-kit",
+      "word": "plastic model kit",
+      "chinese": "塑膠組裝模型",
+      "chineseDefinition": "把塑膠零件依說明組裝成車輛、機器人等縮小模型的套件。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈplæs.tɪk ˈmɑː.dəl kɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "塑膠組裝模型",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A kit of plastic parts assembled into a model, such as a vehicle or robot.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "プラスチックの部品を組み立てて、車やロボットなどの模型を作るキット。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a plastic model kit.",
+          "ja": "プラモデルを買いました。",
+          "zh": "我買了一組塑膠組裝模型。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I finish assembling the plastic model kit, I plan to take a photo.",
+          "ja": "プラモデルを組み立て終わったら、写真を撮る予定です。",
+          "zh": "組好塑膠模型後，我打算拍張照片。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "プラモデル",
+      "jaReading": "ぷらもでる",
+      "jaReadingSegments": [
+        {
+          "text": "プラモデル",
+          "ruby": "ぷらもでる"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/plastic-model-kit-v1-e19c844c6ee8.webp"
+    },
+    {
+      "id": "model-sprue",
+      "word": "model sprue",
+      "chinese": "模型零件框",
+      "chineseDefinition": "塑膠模型套件中，成形時連接並固定各個零件的塑膠框架。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɑː.dəl spruː/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "模型零件框",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The molded plastic framework holding the parts of a model kit before assembly.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "プラモデルの部品がつながっている、成形時にできるプラスチックの枠。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "There is a small part on the model sprue.",
+          "ja": "ランナーに小さな部品があります。",
+          "zh": "模型零件框上有一個小零件。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Do not cut parts off the model sprue until you have checked the instructions.",
+          "ja": "説明書を確認するまで、ランナーから部品を切り離さないでください。",
+          "zh": "確認說明書之前，請不要把零件從模型零件框上剪下。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ランナー",
+      "jaReading": "らんなー",
+      "jaReadingSegments": [
+        {
+          "text": "ランナー",
+          "ruby": "らんなー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/model-sprue-v1-048206d97662.webp"
+    },
+    {
+      "id": "model-nippers",
+      "word": "model nippers",
+      "chinese": "模型剪鉗",
+      "chineseDefinition": "用於把塑膠模型零件從零件框剪下的小型剪鉗；不作為剪金屬線的通用工具。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɑː.dəl ˈnɪp.ɚz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "模型剪鉗",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Small cutters designed to remove plastic model parts from their sprues.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "プラモデルの部品をランナーから切り離すための、プラスチック用の小型工具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I cut off a part with the model nippers.",
+          "ja": "模型用ニッパーで部品を切り離しました。",
+          "zh": "我用模型剪鉗剪下了一個零件。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The blades are delicate, so I put a cap on the model nippers before storing them.",
+          "ja": "刃が繊細なので、模型用ニッパーにキャップを付けてからしまいました。",
+          "zh": "刀刃很精細，所以我先替模型剪鉗蓋上護套再收起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "模型用ニッパー",
+      "jaReading": "もけいようにっぱー",
+      "jaReadingSegments": [
+        {
+          "text": "模型用ニッパー",
+          "ruby": "もけいようにっぱー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/model-nippers-v1-4c20bd234d18.webp"
+    },
+    {
+      "id": "die-cast-car",
+      "word": "die-cast car",
+      "chinese": "壓鑄模型車",
+      "chineseDefinition": "車身主要以金屬壓鑄成形的縮小模型車，常用於收藏或把玩。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdaɪ.kæst kɑːr/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "壓鑄模型車",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A miniature car with a body made mainly of die-cast metal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "主に金属を型に流し込んで作った、小さな模型の車。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I lined up three die-cast cars.",
+          "ja": "ダイキャストミニカーを三台並べました。",
+          "zh": "我排好了三輛壓鑄模型車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The paint was chipped, so I avoided touching the roof of the die-cast car.",
+          "ja": "塗装が剥がれていたので、ダイキャストミニカーの屋根には触らないようにしました。",
+          "zh": "塗裝有剝落，所以我盡量不碰那輛壓鑄模型車的車頂。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ダイキャストミニカー",
+      "jaReading": "だいきゃすとみにかー",
+      "jaReadingSegments": [
+        {
+          "text": "ダイキャストミニカー",
+          "ruby": "だいきゃすとみにかー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/die-cast-car-v1-adc09e622d85.webp"
+    },
+    {
+      "id": "model-train",
+      "word": "model train",
+      "chinese": "鐵道模型",
+      "chineseDefinition": "依比例縮小的鐵路車輛模型；此處指可在模型軌道上行駛的形式。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɑː.dəl treɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鐵道模型",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A scale model of a railway vehicle, here one designed to run on model track.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "鉄道車両を小さく再現した模型。ここでは模型の線路の上を走らせるものを指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put the model train on the track.",
+          "ja": "鉄道模型を線路に載せました。",
+          "zh": "我把鐵道模型放上軌道。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After I removed the dust from the track, the model train ran smoothly again.",
+          "ja": "線路のほこりを取ったら、鉄道模型がまたスムーズに走りました。",
+          "zh": "清掉軌道的灰塵後，鐵道模型又順暢地行駛了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "鉄道模型",
+      "jaReading": "てつどうもけい",
+      "jaReadingSegments": [
+        {
+          "text": "鉄道模型",
+          "ruby": "てつどうもけい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/model-train-v1-7a806e8f5727.webp"
+    },
+    {
+      "id": "dollhouse",
+      "word": "dollhouse",
+      "chinese": "娃娃屋",
+      "chineseDefinition": "可擺放迷你家具及人偶的小型房屋模型，供遊玩、製作或收藏。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdɑːl.haʊs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "娃娃屋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A miniature house for arranging small furniture and dolls, used for play or collecting.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小さな家具や人形を置いて楽しむ、家の形をした模型。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put a tiny chair in the dollhouse.",
+          "ja": "ドールハウスに小さな椅子を置きました。",
+          "zh": "我在娃娃屋裡放了一張小椅子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The dollhouse stairs were narrow, so I chose a smaller chair instead.",
+          "ja": "ドールハウスの階段が狭かったので、代わりにもっと小さな椅子を選びました。",
+          "zh": "娃娃屋的樓梯很窄，所以我改選了一張更小的椅子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ドールハウス",
+      "jaReading": "どーるはうす",
+      "jaReadingSegments": [
+        {
+          "text": "ドールハウス",
+          "ruby": "どーるはうす"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/dollhouse-v1-86ec16344fac.webp"
+    },
+    {
+      "id": "commemorative-coin",
+      "word": "commemorative coin",
+      "chinese": "紀念幣",
+      "chineseDefinition": "為紀念特定事件、人物或周年而發行的硬幣，常作為收藏；與不具貨幣性質的紀念章不同。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəˈmem.ə.rə.tɪv kɔɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "紀念幣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A coin issued to commemorate an event, person, or anniversary.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "出来事や人物、周年などを記念して発行される硬貨。記念メダルとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I showed my family a commemorative coin.",
+          "ja": "家族に記念硬貨を見せました。",
+          "zh": "我給家人看了一枚紀念幣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After checking the year, I put the commemorative coin back in its case.",
+          "ja": "年号を確認してから、記念硬貨をケースに戻しました。",
+          "zh": "確認年份後，我把紀念幣放回盒子裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "記念硬貨",
+      "jaReading": "きねんこうか",
+      "jaReadingSegments": [
+        {
+          "text": "記念硬貨",
+          "ruby": "きねんこうか"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/commemorative-coin-v1-94a4f6cb782a.webp"
+    },
+    {
+      "id": "stamp-album",
+      "word": "stamp album",
+      "chinese": "集郵冊",
+      "chineseDefinition": "用來分類、保存與展示郵票的冊子；不是蓋章收集冊或相片冊。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/stæmp ˈæl.bəm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "集郵冊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An album for organizing, preserving, and displaying postage stamps.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵便切手を整理して保管したり、眺めたりするためのアルバム。スタンプ帳とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I opened my stamp album.",
+          "ja": "切手アルバムを開きました。",
+          "zh": "我翻開了集郵冊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I organized my stamp album by country, so each stamp is easy to find.",
+          "ja": "切手アルバムを国ごとに整理したので、一枚ずつ探しやすくなりました。",
+          "zh": "我把集郵冊按國別整理好了，所以每張郵票都很容易找到。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "切手アルバム",
+      "jaReading": "きってあるばむ",
+      "jaReadingSegments": [
+        {
+          "text": "切手アルバム",
+          "ruby": "きってあるばむ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/stamp-album-v1-1de703c70193.webp"
+    },
+    {
+      "id": "capsule-toy-machine",
+      "word": "capsule toy machine",
+      "chinese": "扭蛋機",
+      "chineseDefinition": "販售膠囊玩具的機器，常見款式需付款後轉動把手取出膠囊；與膠囊裡的扭蛋玩具不同。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæp.səl tɔɪ məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "扭蛋機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A vending machine that dispenses capsule toys, often operated by turning a handle after payment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "代金を払ってカプセル入りのおもちゃを買う自動販売機。ハンドルを回すタイプなどがある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Turn the handle on the capsule toy machine.",
+          "ja": "カプセルトイ自販機のハンドルを回してください。",
+          "zh": "請轉動扭蛋機的把手。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The capsule toy machine was empty, so I chose a different one.",
+          "ja": "カプセルトイ自販機が空だったので、別の台を選びました。",
+          "zh": "扭蛋機已經空了，所以我選了別台。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カプセルトイ自販機",
+      "jaReading": "かぷせるといじはんき",
+      "jaReadingSegments": [
+        {
+          "text": "カプセルトイ自販機",
+          "ruby": "かぷせるといじはんき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-toy-machine-v1-328aee44cf37.webp"
+    },
+    {
+      "id": "toy-capsule",
+      "word": "toy capsule",
+      "chinese": "扭蛋膠囊",
+      "chineseDefinition": "裝扭蛋玩具的中空塑膠容器，通常由兩部分扣合；此處不是藥物膠囊。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/tɔɪ ˈkæp.səl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "扭蛋膠囊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hollow plastic container, usually made of two joining parts, used to hold a capsule toy.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カプセルトイを入れる、中が空洞のプラスチック容器。一般に二つの部分を合わせて閉じる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I opened the toy capsule.",
+          "ja": "カプセルを開けました。",
+          "zh": "我打開了扭蛋膠囊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After taking out the toy, I put the empty capsule in the collection box.",
+          "ja": "おもちゃを取り出してから、空のカプセルを回収ボックスに入れました。",
+          "zh": "取出玩具後，我把空膠囊放進回收箱。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カプセル",
+      "jaReading": "かぷせる",
+      "jaReadingSegments": [
+        {
+          "text": "カプセル",
+          "ruby": "かぷせる"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/toy-capsule-v1-179d702619de.webp"
+    },
+    {
+      "id": "capsule-toy-leaflet",
+      "word": "capsule toy leaflet",
+      "chinese": "扭蛋款式介紹紙",
+      "chineseDefinition": "扭蛋膠囊內附的小張摺頁，介紹款式、組裝方式或商品注意事項。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæp.səl tɔɪ ˈliː.flət/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "扭蛋款式介紹紙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small folded leaflet included with a capsule toy, showing the lineup, assembly information, or product notes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カプセルトイに付いている小さな紙の説明書。種類や組み立て方、注意事項などが載っている。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I unfolded the capsule toy leaflet.",
+          "ja": "ミニブックを広げました。",
+          "zh": "我攤開了扭蛋款式介紹紙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "One part was missing, so I checked the capsule toy leaflet before asking the staff.",
+          "ja": "部品が一つ足りなかったので、店員に聞く前にミニブックを確認しました。",
+          "zh": "少了一個零件，所以我先查看扭蛋款式介紹紙，再詢問店員。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ミニブック",
+      "jaReading": "みにぶっく",
+      "jaReadingSegments": [
+        {
+          "text": "ミニブック",
+          "ruby": "みにぶっく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-toy-leaflet-v1-87627bc4bf5e.webp"
+    },
+    {
+      "id": "capsule-recycling-bin",
+      "word": "capsule recycling bin",
+      "chinese": "空膠囊回收箱",
+      "chineseDefinition": "店內供投入空扭蛋膠囊、集中回收的箱子；不是一般垃圾桶。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæp.səl ˌriːˈsaɪ.klɪŋ bɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "空膠囊回收箱",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A collection bin provided for returning empty capsule toy containers for recycling.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "使い終わったカプセルトイの空カプセルを集め、リサイクルするための箱。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the empty capsule in the capsule recycling bin.",
+          "ja": "空のカプセルを回収ボックスに入れてください。",
+          "zh": "請把空膠囊放進空膠囊回收箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not find the capsule recycling bin, so I asked a member of staff.",
+          "ja": "空カプセル回収ボックスが見つからなかったので、店員に聞きました。",
+          "zh": "我找不到空膠囊回收箱，所以問了店員。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "空カプセル回収ボックス",
+      "jaReading": "からかぷせるかいしゅうぼっくす",
+      "jaReadingSegments": [
+        {
+          "text": "空カプセル回収ボックス",
+          "ruby": "からかぷせるかいしゅうぼっくす"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-recycling-bin-v1-27af2b48e584.webp"
+    },
+    {
+      "id": "capsule-toy-shop",
+      "word": "capsule toy shop",
+      "chinese": "扭蛋專賣店",
+      "chineseDefinition": "以扭蛋機及膠囊玩具為主要商品的專門店。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæp.səl tɔɪ ʃɑːp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "扭蛋專賣店",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shop specializing in capsule toy vending machines and their toys.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カプセルトイの販売を中心に、多くのカプセルトイ自販機を置いている店。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We entered the capsule toy shop.",
+          "ja": "カプセルトイ専門店に入りました。",
+          "zh": "我們走進了扭蛋專賣店。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The capsule toy shop was crowded, so we looked at the machines near the entrance first.",
+          "ja": "カプセルトイ専門店が混んでいたので、先に入り口近くの台を見ました。",
+          "zh": "扭蛋專賣店很擠，所以我們先看了入口附近的機台。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カプセルトイ専門店",
+      "jaReading": "かぷせるといせんもんてん",
+      "jaReadingSegments": [
+        {
+          "text": "カプセルトイ専門店",
+          "ruby": "かぷせるといせんもんてん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-toy-shop-v1-2bb5f9b96ac7.webp"
+    },
+    {
+      "id": "claw-machine",
+      "word": "claw machine",
+      "chinese": "夾娃娃機",
+      "chineseDefinition": "玩家操作機械爪，嘗試移動或夾取獎品的遊樂機台；獎品不一定是娃娃。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/klɔː məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "夾娃娃機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine in which the player controls a claw to try to move or pick up prizes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "アームを操作して景品をつかんだり動かしたりし、獲得を目指すゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I played the claw machine once.",
+          "ja": "クレーンゲーム機で一回遊びました。",
+          "zh": "我玩了一次夾娃娃機。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The prize got stuck in the claw machine, so I asked the staff for help.",
+          "ja": "クレーンゲーム機の景品が引っかかったので、店員に助けを求めました。",
+          "zh": "獎品卡在夾娃娃機裡，所以我向店員求助。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "クレーンゲーム機",
+      "jaReading": "くれーんげーむき",
+      "jaReadingSegments": [
+        {
+          "text": "クレーンゲーム機",
+          "ruby": "くれーんげーむき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/claw-machine-v1-3334ef8c8966.webp"
+    },
+    {
+      "id": "arcade-claw",
+      "word": "arcade claw",
+      "chinese": "夾娃娃機機械爪",
+      "chineseDefinition": "夾娃娃機中吊掛的抓取機構，常有兩爪或三爪；此處不指人的手臂。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɑːrˈkeɪd klɔː/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "夾娃娃機機械爪",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The suspended gripping mechanism of a claw machine, often with two or three prongs.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "クレーンゲーム機の中で、景品をつかんだり押したりする部分。二本爪や三本爪などがある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The arcade claw moved down.",
+          "ja": "アームが下がりました。",
+          "zh": "夾娃娃機的機械爪降下來了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To line up the arcade claw, I checked its position relative to the prize from the side.",
+          "ja": "アームの位置を合わせるために、横から景品との位置関係を確認しました。",
+          "zh": "為了對準機械爪，我從側面確認它與獎品的相對位置。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アーム",
+      "jaReading": "あーむ",
+      "jaReadingSegments": [
+        {
+          "text": "アーム",
+          "ruby": "あーむ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-claw-v1-3a20b48d044f.webp"
+    },
+    {
+      "id": "arcade-joystick",
+      "word": "arcade joystick",
+      "chinese": "遊戲搖桿",
+      "chineseDefinition": "以推動桿身方向控制遊戲的操作裝置；此處指機台面板上的直立搖桿。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɑːrˈkeɪd ˈdʒɔɪ.stɪk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "遊戲搖桿",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An upright control stick on an arcade machine, moved in different directions to control a game.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ゲーム機の操作盤に付いた棒状の操作装置。倒す方向でゲーム内の動きなどを操作する。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Move the arcade joystick to the right.",
+          "ja": "ジョイスティックを右に倒してください。",
+          "zh": "請把遊戲搖桿推向右邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The arcade joystick was hard to move, so I told a member of staff.",
+          "ja": "ジョイスティックが動かしにくかったので、店員に伝えました。",
+          "zh": "遊戲搖桿很難推動，所以我告訴了店員。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ジョイスティック",
+      "jaReading": "じょいすてぃっく",
+      "jaReadingSegments": [
+        {
+          "text": "ジョイスティック",
+          "ruby": "じょいすてぃっく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-joystick-v1-7c12450befec.webp"
+    },
+    {
+      "id": "arcade-start-button",
+      "word": "arcade start button",
+      "chinese": "遊戲開始按鈕",
+      "chineseDefinition": "遊戲機上用來開始遊戲或操作階段的按鈕；功能依機種而異。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɑːrˈkeɪd stɑːrt ˈbʌt.ən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "遊戲開始按鈕",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A button used to start a game or an operating stage on an arcade machine.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ゲーム機でゲームや操作の段階を始めるためのボタン。働きは機種によって異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I found the arcade start button.",
+          "ja": "スタートボタンを見つけました。",
+          "zh": "我找到了遊戲開始按鈕。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After reading the instructions on the screen, I pressed the arcade start button.",
+          "ja": "画面の説明を読んでから、スタートボタンを押しました。",
+          "zh": "讀完畫面上的說明後，我按下了遊戲開始按鈕。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スタートボタン",
+      "jaReading": "すたーとぼたん",
+      "jaReadingSegments": [
+        {
+          "text": "スタートボタン",
+          "ruby": "すたーとぼたん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-start-button-v1-625ff3d43bc5.webp"
+    },
+    {
+      "id": "coin-slot",
+      "word": "coin slot",
+      "chinese": "投幣口",
+      "chineseDefinition": "機器上供投入硬幣或指定代幣的狹窄開口；可投入的種類依機器而定。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kɔɪn slɑːt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "投幣口",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A narrow opening in a machine for inserting coins or specified tokens.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "硬貨や指定されたメダルを機械に入れるための細い口。使える種類は機械によって異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This is the coin slot.",
+          "ja": "これがコイン投入口です。",
+          "zh": "這是投幣口。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The coin would not go into the coin slot, so I checked its size.",
+          "ja": "コイン投入口に硬貨が入らなかったので、大きさを確認しました。",
+          "zh": "硬幣放不進投幣口，所以我確認了它的大小。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コイン投入口",
+      "jaReading": "こいんとうにゅうぐち",
+      "jaReadingSegments": [
+        {
+          "text": "コイン投入口",
+          "ruby": "こいんとうにゅうぐち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/coin-slot-v1-c1e47d689198.webp"
+    },
+    {
+      "id": "prize-retrieval-hatch",
+      "word": "prize retrieval hatch",
+      "chinese": "取物口",
+      "chineseDefinition": "夾娃娃機等機台下方，供取出已落入獎品槽內物品的開口或翻蓋門。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/praɪz rɪˈtriː.vəl hætʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "取物口",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An opening or flap in a prize machine through which a won prize is collected.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ゲーム機の中から落ちてきた景品を取り出すための口や扉。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Take your prize from the prize retrieval hatch.",
+          "ja": "景品取り出し口から景品を取ってください。",
+          "zh": "請從取物口拿取獎品。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The prize had not dropped down to the prize retrieval hatch yet, so I asked the staff to check.",
+          "ja": "景品がまだ景品取り出し口まで落ちてこなかったので、店員に確認をお願いしました。",
+          "zh": "獎品還沒有落到取物口，所以我請店員確認。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "景品取り出し口",
+      "jaReading": "けいひんとりだしぐち",
+      "jaReadingSegments": [
+        {
+          "text": "景品取り出し口",
+          "ruby": "けいひんとりだしぐち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/prize-retrieval-hatch-v1-f8f942fd7777.webp"
+    },
+    {
+      "id": "change-machine",
+      "word": "change machine",
+      "chinese": "兌幣機",
+      "chineseDefinition": "把紙鈔或較大面額硬幣換成同一貨幣的小額硬幣的機器；此處不是外幣兌換機。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/tʃeɪndʒ məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "兌幣機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A machine that changes notes or larger coins into smaller coins of the same currency.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紙幣や大きな額の硬貨を、同じ通貨の小額の硬貨に替える機械。ここでは外貨両替機ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Where is the change machine?",
+          "ja": "両替機はどこですか。",
+          "zh": "兌幣機在哪裡？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I only had a thousand-yen note, so I used the change machine to get coins.",
+          "ja": "千円札しかなかったので、両替機で硬貨に替えました。",
+          "zh": "我只有一張千圓紙鈔，所以用兌幣機換了硬幣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "両替機",
+      "jaReading": "りょうがえき",
+      "jaReadingSegments": [
+        {
+          "text": "両替機",
+          "ruby": "りょうがえき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/change-machine-v1-4a3dacfc44c4.webp"
+    },
+    {
+      "id": "arcade-token",
+      "word": "arcade token",
+      "chinese": "遊戲代幣",
+      "chineseDefinition": "供指定遊樂場或遊戲使用的代幣，不是一般流通硬幣；不能假定夾娃娃機都可使用。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɑːrˈkeɪd ˈtoʊ.kən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "遊戲代幣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A token used for designated arcade games rather than as ordinary money.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ゲームセンターの指定されたゲームで使うメダル。通常のお金ではなく、使える店や機械が決まっている。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put five arcade tokens on the tray.",
+          "ja": "ゲーム用メダルを五枚トレーに置きました。",
+          "zh": "我把五枚遊戲代幣放在盤子上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "These arcade tokens cannot be used at the other arcade, so I will use them here.",
+          "ja": "このゲーム用メダルは別のゲームセンターでは使えないので、ここで使います。",
+          "zh": "這些遊戲代幣不能在別家遊樂場使用，所以我要在這裡用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ゲーム用メダル",
+      "jaReading": "げーむようめだる",
+      "jaReadingSegments": [
+        {
+          "text": "ゲーム用メダル",
+          "ruby": "げーむようめだる"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-token-v1-5823da7784b2.webp"
+    },
+    {
+      "id": "amusement-arcade",
+      "word": "amusement arcade",
+      "chinese": "遊樂場",
+      "chineseDefinition": "設有夾娃娃機、音樂遊戲或電子遊戲機等設備的室內遊樂場所；此處不是兒童戶外遊戲場。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/əˈmjuːz.mənt ɑːrˈkeɪd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "遊樂場",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An indoor place with machines for playing video games, rhythm games, or prize games.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "クレーンゲーム機、音楽ゲーム機、ビデオゲーム機などを置いて遊べる施設。屋外の遊び場ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We met at the amusement arcade.",
+          "ja": "ゲームセンターで待ち合わせました。",
+          "zh": "我們約在遊樂場見面。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The amusement arcade was crowded, so we waited outside until our friends arrived.",
+          "ja": "ゲームセンターが混んでいたので、友達が来るまで外で待ちました。",
+          "zh": "遊樂場很擠，所以我們在外面等朋友到。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ゲームセンター",
+      "jaReading": "げーむせんたー",
+      "jaReadingSegments": [
+        {
+          "text": "ゲームセンター",
+          "ruby": "げーむせんたー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/amusement-arcade-v1-f231501769b9.webp"
+    },
+    {
+      "id": "candy-toy",
+      "word": "candy toy",
+      "chinese": "食玩",
+      "chineseDefinition": "將糖果、口香糖等食品與小玩具或模型一起販售的商品；玩具本身不能吃。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæn.di tɔɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "食玩",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A product sold as a small toy or model packaged together with candy or another small food item.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "お菓子などの食品と、小さなおもちゃや模型を一緒にした商品。おもちゃ自体は食べられない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I chose a candy toy at the shop.",
+          "ja": "店で食玩を一つ選びました。",
+          "zh": "我在店裡選了一個食玩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before assembling the candy toy, I took out the separately wrapped gum.",
+          "ja": "食玩を組み立てる前に、別の袋に入ったガムを取り出しました。",
+          "zh": "組裝食玩前，我先取出了另外包裝的口香糖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "食玩",
+      "jaReading": "しょくがん",
+      "jaReadingSegments": [
+        {
+          "text": "食玩",
+          "ruby": "しょくがん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/candy-toy-v1-634b8be18b12.webp"
+    },
+    {
+      "id": "miniature-food-model",
+      "word": "miniature food model",
+      "chinese": "迷你食物模型",
+      "chineseDefinition": "縮小製作的食物造型模型，供收藏、娃娃屋或展示使用，不能食用。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɪn.i.ə.tʃɚ fuːd ˈmɑː.dəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "迷你食物模型",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tiny non-edible model of food, made for collecting, dollhouses, or display.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "食べ物を小さく再現した、食べられない模型。コレクションやドールハウスなどで使う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I placed a miniature food model on the tiny table.",
+          "ja": "ミニチュアフードを小さなテーブルに置きました。",
+          "zh": "我把迷你食物模型放在小桌上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The miniature food model looked real, but it was too small for my dollhouse.",
+          "ja": "ミニチュアフードは本物のようでしたが、私のドールハウスには小さすぎました。",
+          "zh": "迷你食物模型看起來很逼真，但對我的娃娃屋來說太小了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ミニチュアフード",
+      "jaReading": "みにちゅあふーど",
+      "jaReadingSegments": [
+        {
+          "text": "ミニチュアフード",
+          "ruby": "みにちゅあふーど"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/miniature-food-model-v1-7f656723f5da.webp"
+    },
+    {
+      "id": "action-figure",
+      "word": "action figure",
+      "chinese": "可動公仔",
+      "chineseDefinition": "具有可動關節、能調整姿勢的角色模型，與固定姿勢的展示公仔不同。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈæk.ʃən ˌfɪɡ.jɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "可動公仔",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A character model with movable joints that allow it to be posed.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "関節を動かしてポーズを変えられるキャラクターの人形や模型。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bent the action figure's knees.",
+          "ja": "アクションフィギュアの膝を曲げました。",
+          "zh": "我彎曲了可動公仔的膝蓋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before changing the action figure's pose, I checked which way its joints could move.",
+          "ja": "アクションフィギュアのポーズを変える前に、関節が動く方向を確認しました。",
+          "zh": "改變可動公仔的姿勢前，我確認了關節可以活動的方向。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アクションフィギュア",
+      "jaReading": "あくしょんふぃぎゅあ",
+      "jaReadingSegments": [
+        {
+          "text": "アクションフィギュア",
+          "ruby": "あくしょんふぃぎゅあ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/action-figure-v1-623501768ba7.webp"
+    },
+    {
+      "id": "collectible-doll",
+      "word": "collectible doll",
+      "chinese": "收藏人偶",
+      "chineseDefinition": "以收藏、展示或換裝為主要用途的人形玩偶；此處指硬質身體搭配服裝的人偶，不是絨毛玩偶。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəˈlek.tə.bəl dɑːl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "收藏人偶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A human-shaped doll kept for collecting, display, or changing outfits; here one with a hard body and fabric clothes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "集めたり飾ったり、着せ替えたりして楽しむ人形。ここでは硬い体に布の服を着せるものを指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I changed the collectible doll's clothes.",
+          "ja": "ドールを着せ替えました。",
+          "zh": "我替收藏人偶換了衣服。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the collectible doll's hair tangles easily, I brushed it gently before taking photos.",
+          "ja": "ドールの髪は絡まりやすいので、写真を撮る前に優しくとかしました。",
+          "zh": "收藏人偶的頭髮容易打結，所以拍照前我輕輕地梳了它的頭髮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ドール",
+      "jaReading": "どーる",
+      "jaReadingSegments": [
+        {
+          "text": "ドール",
+          "ruby": "どーる"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/collectible-doll-v1-df1ccf109857.webp"
+    },
+    {
+      "id": "collectible-sticker",
+      "word": "collectible sticker",
+      "chinese": "收藏貼紙",
+      "chineseDefinition": "以蒐集圖案或系列為目的保存的黏貼式貼紙，可能有亮面或特殊印刷；與卡牌不同。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəˈlek.tə.bəl ˈstɪk.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "收藏貼紙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sticker collected for its design or as part of a series, sometimes with special printing.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "絵柄やシリーズを集めて楽しむためのシール。光沢や特殊な印刷のあるものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I stored the collectible sticker with its backing paper.",
+          "ja": "コレクションシールを台紙ごと保管しました。",
+          "zh": "我把收藏貼紙連同台紙一起保存。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The collectible sticker was larger than I expected, so I put it on a different album page.",
+          "ja": "コレクションシールが思ったより大きかったので、別のアルバムのページに貼りました。",
+          "zh": "收藏貼紙比我想的大，所以我把它貼到相簿的另一頁。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コレクションシール",
+      "jaReading": "これくしょんしーる",
+      "jaReadingSegments": [
+        {
+          "text": "コレクションシール",
+          "ruby": "これくしょんしーる"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/collectible-sticker-v1-d5ee9915b842.webp"
+    },
+    {
+      "id": "building-block-set",
+      "word": "building block set",
+      "chinese": "組裝積木",
+      "chineseDefinition": "由多塊可相互接合的積木組成的玩具套組，可拼搭房屋、車輛等造型。",
+      "category": "collecting-hobbies",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɪl.dɪŋ blɑːk set/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "組裝積木",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A set of interlocking toy blocks used to build shapes such as houses or vehicles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "互いにつなげられるブロックを組み合わせ、家や車などを作って遊ぶセット。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We built a house with the building block set.",
+          "ja": "ブロックセットで家を作りました。",
+          "zh": "我們用組裝積木蓋了一間房子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After sorting the building block set by color, we found the missing red piece.",
+          "ja": "ブロックセットを色ごとに分けたら、なくなった赤い部品が見つかりました。",
+          "zh": "把組裝積木按顏色分類後，我們找到了遺失的紅色零件。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ブロックセット",
+      "jaReading": "ぶろっくせっと",
+      "jaReadingSegments": [
+        {
+          "text": "ブロックセット",
+          "ruby": "ぶろっくせっと"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/building-block-set-v1-5c3cadb2db52.webp"
+    }
+  ]
+}

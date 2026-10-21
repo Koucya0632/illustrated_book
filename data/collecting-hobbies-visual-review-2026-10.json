@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "series": "collecting-hobbies",
+  "reviewer": "Codex, every new original and selected edit inspected individually; prior twelve word-image passes reused only after source SHA-256 equality",
+  "items": [
+    {
+      "id": "trading-card",
+      "decision": "pass",
+      "reason": "三張扇形卡牌具幻想角色圖面與遊戲符號，清楚區別藝人照片小卡；無商標、文字或裁切，白底完整。",
+      "sourceSha256": "6387789b49a4014156ac809643d983af821d44ca27d4d546afadde99361e840b"
+    },
+    {
+      "id": "booster-pack",
+      "decision": "pass",
+      "reason": "單個銀色鋁箔小包上下皆有壓封邊，包裝未拆且為卡牌比例；非盲盒紙箱，白底無品牌。",
+      "sourceSha256": "e3e2ff28d6cd85c1b26a54d887950aa313dd526fb8dab6109c805c662437edfd"
+    },
+    {
+      "id": "deck-box",
+      "decision": "pass",
+      "reason": "深型掀蓋牌組盒內裝厚疊套卡，容量與結構明顯不同於單張硬卡套，白底完整。",
+      "sourceSha256": "a5a63cb653ba0eca3dbb9c55efda1ecd2331ca26d5a102d635a1f43994886830"
+    },
+    {
+      "id": "card-playmat",
+      "decision": "pass",
+      "reason": "矩形織物墊有卡牌放置區和兩張尺度參照卡，翻角可見橡膠底；非滑鼠墊或嬰兒地墊，無多餘設備。",
+      "sourceSha256": "363c4b9bc19bee709a4a5e7d670635ae3578897fb6e8a06f7d50552da324b525"
+    },
+    {
+      "id": "plastic-model-kit",
+      "decision": "pass",
+      "reason": "開盒套件展示未組裝車殼、底盤、車輪與連框零件，呈現需組裝的模型；與完成品模型車區別，白底。",
+      "sourceSha256": "3b20f6e2b0338a28ed2618cc3c85d28acb1adad097bce804e3fbdb3819ae22f1"
+    },
+    {
+      "id": "model-sprue",
+      "decision": "pass",
+      "reason": "單一完整塑膠框以細接點連住車身與小零件，框架與流道可見，精確呈現ランナー；無盒或工具搶主體。",
+      "sourceSha256": "ed0f6369d4bc75957e10ee7fdafea4df8dd50671a53e1521a072508bfd68e38b"
+    },
+    {
+      "id": "model-nippers",
+      "decision": "pass",
+      "reason": "雙短柄、回彈簧與短側剪刃構成模型剪鉗，沒有長尖嘴或剪刀指環；全件可見且無品牌。",
+      "sourceSha256": "878685ad426c862895e037c3c15e50d2aec539e2e9650a15ed8b8ae4246353b9"
+    },
+    {
+      "id": "die-cast-car",
+      "decision": "pass",
+      "reason": "掌上比例藍色小汽車旁有小紙盒，輪軸與金屬漆質感支持壓鑄模型；日本常見小型車外觀，白底不作真車場景。",
+      "sourceSha256": "787464608be5e86cfb46b48ef5d3954ca372a6f7d2db24120d0bf1f6aa11088c"
+    },
+    {
+      "id": "model-train",
+      "decision": "pass",
+      "reason": "單節銀綠日本通勤電車模型放在獨立短模型軌道，細小轉向架與短底座呈現縮尺物；無車站環境或營運商標誌。",
+      "sourceSha256": "31105ded72817981694b03890692a421ca792ee4706d493bb4ee70ac6ac3a550"
+    },
+    {
+      "id": "dollhouse",
+      "decision": "pass",
+      "reason": "雙層開放式木製娃娃屋具迷你家具與連層樓梯，整屋模型可見而非真實室內；家具支援例句與縮尺辨識。",
+      "sourceSha256": "3ade54aa7ce1a926ed1d5f17223a589ac02e58df0d481ba80d702decef3a37dd"
+    },
+    {
+      "id": "commemorative-coin",
+      "decision": "pass",
+      "reason": "重製版銀幣有日本国與1000面額，櫻樹紀念圖案、透明幣盒和展示盒，足以區別無面額紀念章；僅作示意，非特定真幣圖錄。",
+      "sourceSha256": "a85e9f9512e53ea57d681459f5bf55b2a9a5da6c9302f8c741a0a52aaec94a0b"
+    },
+    {
+      "id": "stamp-album",
+      "decision": "pass",
+      "reason": "打開的冊頁有透明條袋與齒孔邊郵票，風景及動植物小圖呈現集郵收藏；不同於蓋章冊、藝人卡冊。",
+      "sourceSha256": "8d0b82d2b8dc9b819b668146ed01bc2cce325c2d1d8035e9cfa85c730ca30722"
+    },
+    {
+      "id": "capsule-toy-machine",
+      "decision": "pass",
+      "reason": "白色立式機台有裝滿彩色膠囊的透明上艙、投幣口、轉把與下方取物口；圖示是原創玩具，沒有品牌字樣，與膠囊玩具本體分開。",
+      "sourceSha256": "d0ccc2ed2672db871750a7603dffc9a04ac9bbd81d7acbc9a385dc8f4e27d2c9"
+    },
+    {
+      "id": "toy-capsule",
+      "decision": "pass",
+      "reason": "透明上半殼與藍色下半殼分離、扣緣和空內部可見，明確是包裝容器而非實心球或藥物；白底無多餘玩具。",
+      "sourceSha256": "6a4b2cf549d6573848da17073b00ed8e7f50e5b9a313cfecf2cc366c1a9f7685"
+    },
+    {
+      "id": "capsule-toy-leaflet",
+      "decision": "pass",
+      "reason": "手風琴摺頁顯示四種小動物玩具與組裝圖，紙張摺痕可見，符合膠囊內附款式紙；沒有假文字。",
+      "sourceSha256": "17e2e412c9a7359a1fd8aae1bb931647f27f6ad676544d8c0148e1266b01d4df"
+    },
+    {
+      "id": "capsule-recycling-bin",
+      "decision": "pass",
+      "reason": "上方圓孔、透明箱體與內部空膠囊半殼、膠囊回收圖示共同指向指定回收箱，不是一般垃圾桶。",
+      "sourceSha256": "29da361e3dad6ea764de98e705f9a17d2e301c96becdc8cd47edad000dc03e40"
+    },
+    {
+      "id": "capsule-toy-shop",
+      "decision": "pass",
+      "reason": "店面開口與左右整排上下疊置的轉把扭蛋機呈現專賣店，與單台機器區分；重製後招牌空白，機台款式紙只留玩具圖，無品牌及假字。",
+      "sourceSha256": "2816dce08948b4fb5125bb36c8d3b80cae3c4d3b94ea8aa4f17113023c626cab"
+    },
+    {
+      "id": "claw-machine",
+      "decision": "pass",
+      "reason": "完整玻璃櫃內有吊掛三爪與絨毛獎品，面板有搖桿按鈕，下方有取物口，辨識為夾娃娃機而非工程吊車；白底無品牌。",
+      "sourceSha256": "c1e75ea0c07a8a659d9df3c8542127c53d61d50d6c2d550271ab4b3e41b4eb4e"
+    },
+    {
+      "id": "arcade-claw",
+      "decision": "pass",
+      "reason": "吊索、圓柱驅動座與三支彎曲金屬爪完整呈現夾取機構，不是人手或整台機器；三爪之間有清楚間隔。",
+      "sourceSha256": "9da8b0d0af3d35c60e847b727783bc5d336159fc58a9759a36236560f6831b37"
+    },
+    {
+      "id": "arcade-joystick",
+      "decision": "pass",
+      "reason": "紅球握頭、短金屬桿、黑色防塵套及安裝板構成直立遊戲搖桿，沒有整個手把或其他按鈕干擾。",
+      "sourceSha256": "b6171022719dcbf27a1a0885e2a348ec412f61c98c05ba6d06f7126b19bdbda0"
+    },
+    {
+      "id": "arcade-start-button",
+      "decision": "pass",
+      "reason": "綠色凸面按鈕與黑色框座、播放三角形提供開始功能線索；以小面板隔離主體，不擅加文字品牌。",
+      "sourceSha256": "97ddc13e6652e4dffeabccde68504b9c39f9a1a54c5c57e2294998a42711dbe5"
+    },
+    {
+      "id": "coin-slot",
+      "decision": "pass",
+      "reason": "金屬狹縫上有半插入硬幣，旁有退幣控制構造，能辨識進幣口；無整機或取幣盤混成主體。",
+      "sourceSha256": "cd7925c9fd80dad1d4a17d378621c07d172e39c377ffadec67e0beec4e68bed0"
+    },
+    {
+      "id": "prize-retrieval-hatch",
+      "decision": "pass",
+      "reason": "白色機台下段有寬開口、透明防護翻蓋與已落入的熊玩偶，明確是拿取獎品的出口而非玻璃櫃遊戲區。",
+      "sourceSha256": "0eb67dd3c50ed769927250816f1ee930ac6e328906a0d996aae7240b0ac25c8c"
+    },
+    {
+      "id": "change-machine",
+      "decision": "pass",
+      "reason": "上方紙鈔入口、紙鈔轉硬幣圖示及下方取幣盤構成換零錢機，沒有ATM操作螢幕或外幣標示；與本項日圓換零錢詞義相符。",
+      "sourceSha256": "3df08e7703de4fd077e0322d45c053d391940094fb4cbc7b1f16948453bf5157"
+    },
+    {
+      "id": "arcade-token",
+      "decision": "pass",
+      "reason": "三枚黃銅色代幣壓有遊戲機和星星圖案，沒有法定面額或國家名稱，與原紀念幣的貨幣設計區分。",
+      "sourceSha256": "c6f26fcaa34bfa44b3dfa4caaaefca99e3529e080da834aeff242bba99d57acd"
+    },
+    {
+      "id": "amusement-arcade",
+      "decision": "pass",
+      "reason": "開放式室內店面有夾娃娃、音樂節奏及電子遊戲機與通道，可辨為日本遊樂場，並非只有扭蛋的店；清理版螢幕用抽象圖像，無假字和已知角色。",
+      "sourceSha256": "381807b9c6d74b17196985c79dab4a0b5e189b17e739cb61fa021010b8ed8fa7"
+    },
+    {
+      "id": "candy-toy",
+      "decision": "pass",
+      "reason": "開盒商品旁分開擺放可組裝機器人與獨立透明包裝口香糖，食品與不可食玩具清楚分開；完整白底無品牌。",
+      "sourceSha256": "90ad2d2a163fe82e4e8b58c2ed8824662b0dfd31ffa961cb9cffb0e5f96a1314"
+    },
+    {
+      "id": "miniature-food-model",
+      "decision": "pass",
+      "reason": "小托盤上的米飯、烤魚和湯碗旁有硬幣尺度參照，呈現娃娃屋級微縮食物模型；表面有模型光澤而非餐廳實物場景。",
+      "sourceSha256": "df5797acc420bad432bb0132c56b03c4940b27c62c4ce1bad99d23da30e126b7"
+    },
+    {
+      "id": "action-figure",
+      "decision": "pass",
+      "reason": "橘灰機器人肩、肘、髖與膝關節皆可見，屈膝伸手姿勢凸顯可動性，與固定公仔區分；無品牌或武器道具。",
+      "sourceSha256": "01a9262e40767dc7f4fd003510edf519e061ea429a464ccf0ce0efc722a38e74"
+    },
+    {
+      "id": "collectible-doll",
+      "decision": "pass",
+      "reason": "硬質身體、手腕膝蓋關節、布衣與支架呈現換裝收藏人偶，不是軟填充玩偶或真人照片；全身完整。",
+      "sourceSha256": "62fe217dd32b97cdb4e9324d7c3260728c0e2ed0e95db90dd7a8c7a509b33d78"
+    },
+    {
+      "id": "collectible-sticker",
+      "decision": "pass",
+      "reason": "小貼紙頁有六種原創圖案，星形貼紙角掀開露背膠與台紙，明確可黏貼而非卡牌；無文字商標。",
+      "sourceSha256": "1476a2d309699b9d085ed907a132fb9bff11de54a32810b8a9557db3a14db4ad"
+    },
+    {
+      "id": "building-block-set",
+      "decision": "pass",
+      "reason": "色彩積木房屋與散件可見凸點接合構造，表示可拆接套組而非塑膠模型零件；清理版全部凸點光滑無字，白底完整。",
+      "sourceSha256": "5bf391546d1e92ace8ba1e498834c16c9ebf70bc304f4d8d6c8d1b56bf229d33"
+    },
+    {
+      "id": "category-collecting-hobbies",
+      "decision": "pass",
+      "reason": "扭蛋機與玻璃夾娃娃機為最大主體，前方卡牌、模型框與小車補足原系列；清理版卡牌只留原創圖案與幾何區塊，小車無品牌，白底完整。",
+      "sourceSha256": "2d62c2485a7b0591f21f452b25bb606992813c9191292b1c46eaa17820bbb24e"
+    }
+  ],
+  "rejected": [
+    {
+      "file": "output/collecting-hobbies-2026-10/rejected/commemorative-coin-no-denomination.png",
+      "decision": "fail",
+      "reason": "No denomination: resembles a commemorative medal rather than a coin."
+    },
+    {
+      "file": "output/collecting-hobbies-expansion-2026-10/rejected/capsule-toy-shop-branded.png",
+      "decision": "fail",
+      "reason": "Visible branded shop signage."
+    },
+    {
+      "file": "output/collecting-hobbies-expansion-2026-10/rejected/amusement-arcade-before-cleanup.png",
+      "decision": "fail",
+      "reason": "Unwanted small text, game characters or branding; replaced with a cleaned version."
+    },
+    {
+      "file": "output/collecting-hobbies-expansion-2026-10/rejected/building-block-set-before-cleanup.png",
+      "decision": "fail",
+      "reason": "Embossed brand lettering on studs."
+    },
+    {
+      "file": "output/collecting-hobbies-expansion-2026-10/rejected/category-collecting-hobbies-before-cleanup.png",
+      "decision": "fail",
+      "reason": "Unwanted small text, game characters or branding; replaced with a cleaned version."
+    }
+  ]
+}

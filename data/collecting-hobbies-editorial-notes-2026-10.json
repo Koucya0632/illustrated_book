@@ -1,0 +1,276 @@
+{
+  "reviewer": "Codex, individual editorial review",
+  "references": [
+    "https://www.pokemon-card.com/products/index.html",
+    "https://www.tamiya.com/japan/rc/oyakudachi/tool.html",
+    "https://www.takaratomy.co.jp/products/category/minicar.html",
+    "https://www.katomodels.com/",
+    "https://www.mint.go.jp/faq-list/faq_coin",
+    "https://www.pokemon-card.com/products/index.html?dateLowerM=1&dateUpperD=15&dateUpperM=6&dateUpperY=2026&productType=peripheral",
+    "https://www.gashapon.jp/shop/smart.php",
+    "https://gashapon.jp/sustainability/",
+    "https://www.taito.co.jp/how-to/",
+    "https://www.bandainamco.co.jp/ir/library/assets/pdf/2025/integratedreports2025_jp.pdf",
+    "https://gashapon.jp/news/info_180724.html",
+    "https://www.bandai.co.jp/candy/products/2025/4570117922015000.html",
+    "https://www.kotobukiya.co.jp/series/action-figure/"
+  ],
+  "entries": [
+    {
+      "wordId": "trading-card",
+      "wordReason": "以遊戲卡面區別既有藝人フォトカード；トレーディングカード是通用名稱，不限定品牌。",
+      "exampleReasons": [
+        "把卡牌放入卡套是保護收藏的具體動作，三語沒有混成小卡或信用卡。",
+        "交換前確認卡牌邊角，時間順序與檢查位置一致；較簡單句多出先後關係。"
+      ]
+    },
+    {
+      "wordId": "booster-pack",
+      "wordReason": "拡張パック依卡牌官方商品分類採用，與裝玩具的既有盲盒有不同內容與包裝。",
+      "exampleReasons": [
+        "購買一包是自然的商店情境，沒有暗示一定會抽中稀有卡。",
+        "希望與朋友一起開封而暫不拆包，三語保留原因、共同開封與否定。"
+      ]
+    },
+    {
+      "wordId": "deck-box",
+      "wordReason": "デッキケース裝整副牌組，依厚度與掀蓋結構區別既有單張トレカケース。",
+      "exampleReasons": [
+        "請求打開牌組盒是對戰準備情境，英日繁中動作一致。",
+        "卡套增加厚度導致牌組盒放不下，因果與否定對應，沒有誤寫成單卡尺寸問題。"
+      ]
+    },
+    {
+      "wordId": "card-playmat",
+      "wordReason": "以卡牌遊戲脈絡限定プレイマット，不混成嬰兒遊戲墊或滑鼠墊。",
+      "exampleReasons": [
+        "鋪墊子是對戰前的直接請求，動詞敷く與spread out對應。",
+        "收納前等待完全乾燥是有時間條件的保養行為，三語沒有新增清洗方式。"
+      ]
+    },
+    {
+      "wordId": "plastic-model-kit",
+      "wordReason": "プラモデル是需組裝的塑膠套件，與既有完成品フィギュア分開；不以特定機器人品牌代稱。",
+      "exampleReasons": [
+        "購入套件作為興趣活動起點，句意簡單並完整對齊。",
+        "完成後打算拍照，終わったら引入完成條件與予定，區別於購買句。"
+      ]
+    },
+    {
+      "wordId": "model-sprue",
+      "wordReason": "採用模型語境的ランナー，依田宮說明是連著零件的框，不是慢跑者；英語sprue採模型常用義。",
+      "exampleReasons": [
+        "在框上找到小零件是組裝前的可見事件，三語保留位置。",
+        "未確認說明書前不剪零件，先後與否定一致，示範ランナー的實際操作語境。"
+      ]
+    },
+    {
+      "wordId": "model-nippers",
+      "wordReason": "模型用ニッパー指定塑膠零件用途，外觀是短刃雙柄鉗而非一般剪刀。",
+      "exampleReasons": [
+        "剪取零件是此工具主要用途，英語nippers作複數與日文工具名稱自然對應。",
+        "刀刃精細所以蓋上護套再收納，原因與順序完整對齊，沒有宣稱可剪金屬。"
+      ]
+    },
+    {
+      "wordId": "die-cast-car",
+      "wordReason": "ダイキャストミニカー保留金屬壓鑄限定，避免把所有ミニカー都說成金屬；外觀參考日本常見掌上模型車。",
+      "exampleReasons": [
+        "陳列三輛模型車是具體收藏活動，數量三語相同。",
+        "塗裝已剝落而避免觸碰車頂，因果、物件部位與行為一致，與陳列句不同。"
+      ]
+    },
+    {
+      "wordId": "model-train",
+      "wordReason": "鉄道模型與實際火車不同；圖指定日本通勤電車縮尺車輛及模型軌道，保留玩賞模型特徵。",
+      "exampleReasons": [
+        "把車放上軌道為實際操作，不把模型誤稱通勤工具。",
+        "清除軌道灰塵後恢復順暢，先後與結果完整對應；不延伸到電路維修建議。"
+      ]
+    },
+    {
+      "wordId": "dollhouse",
+      "wordReason": "ドールハウス是具可佈置內部的縮小房屋，不是人偶本身或真實住宅。",
+      "exampleReasons": [
+        "在娃娃屋放小椅子表現縮尺家具用途；三語位置及物件相同。",
+        "樓梯窄所以換小椅子，理由、替換及尺寸比較都對齊，與簡單擺放形成不同教學內容。"
+      ]
+    },
+    {
+      "wordId": "commemorative-coin",
+      "wordReason": "記念硬貨限正式硬幣，不把紀念章當貨幣；圖用展示盒與硬幣正反面紋樣，避開錯誤真幣仿製細節。",
+      "exampleReasons": [
+        "向家人展示是日常收藏分享，未包含投資或價值宣稱。",
+        "確認年份後收入盒中，時間順序與保管動作一致；與展示句有實質區別。"
+      ]
+    },
+    {
+      "wordId": "stamp-album",
+      "wordReason": "切手アルバム用於郵票，與既有ゴム印及藝人小卡相簿明確分開；不使用易混淆的スタンプ帳。",
+      "exampleReasons": [
+        "翻開冊子是直接日常動作，英文open與開きました自然對應。",
+        "按國別整理所以易於尋找，因果、分類依據與單張郵票指涉一致。"
+      ]
+    },
+    {
+      "wordId": "capsule-toy-machine",
+      "wordReason": "カプセルトイ自販機指機台本身，區別既有カプセルトイ玩具；不用品牌名作通稱，也未斷言所有機器只收硬幣。",
+      "exampleReasons": [
+        "轉動機台把手是可見操作，英日繁中均為請求，不混成打開膠囊。",
+        "機台已空使人改選別台，原因、過去時間與選擇結果三語相符，較單一步驟句有明顯難度差。"
+      ]
+    },
+    {
+      "wordId": "toy-capsule",
+      "wordReason": "カプセル在本系列限定玩具包裝義，與藥物膠囊及內部玩具區分；圖為可拆中空雙半殼。",
+      "exampleReasons": [
+        "打開容器是單一日常動作，沒有說打開或拆壞玩具。",
+        "取出玩具後回收空殼，保留先後、空容器與回收箱，呈現與開封不同的使用階段。"
+      ]
+    },
+    {
+      "wordId": "capsule-toy-leaflet",
+      "wordReason": "ミニブック採扭蛋內附摺頁語境，並非另一本故事書；英文以leaflet明確表達薄摺紙。",
+      "exampleReasons": [
+        "攤開摺頁是實際開箱行為，沒有把它當主商品。",
+        "發現缺件後先查看摺頁再問店員，三語保留缺一件、查看與詢問的次序，非字典定義句。"
+      ]
+    },
+    {
+      "wordId": "capsule-recycling-bin",
+      "wordReason": "空カプセル回収ボックス有指定回收物，依官方膠囊回收活動區分一般垃圾；不宣稱各店或自治體規則皆相同。",
+      "exampleReasons": [
+        "投入空殼是正確對象與用途，日文回収ボックス為語境省略而非不同物品。",
+        "未找到回收箱所以詢問店員，否定、原因與詢問對象三語一致，未鼓勵投入普通垃圾桶。"
+      ]
+    },
+    {
+      "wordId": "capsule-toy-shop",
+      "wordReason": "専門店指集中販售扭蛋的店，與綜合遊樂場不同；圖需顯示機台列與店面而不只一台機器。",
+      "exampleReasons": [
+        "進店是單一移動事件，三語均指專賣店。",
+        "店裡擁擠而先查看入口附近機台，因果及範圍一致，沒有虛構特定商店陳列規則。"
+      ]
+    },
+    {
+      "wordId": "claw-machine",
+      "wordReason": "クレーンゲーム機是機台通稱，與工程起重機區分；定義容納玩偶及其他獎品，不使用特定品牌名。",
+      "exampleReasons": [
+        "以機台玩一次是自然遊樂場活動，沒有保證一定獲獎。",
+        "獎品卡住時向店員求助，三語保留狀態與求助行為，不提供不當搖晃機台方法。"
+      ]
+    },
+    {
+      "wordId": "arcade-claw",
+      "wordReason": "アーム採日本遊樂場用語，語境限定機械爪而非人手臂；定義不把所有機種限定三爪。",
+      "exampleReasons": [
+        "觀察爪下降是一個可見事件，英日繁中動作相同。",
+        "從側面查看爪與獎品位置以對準，目的、觀察方向及兩物相對位置一致。"
+      ]
+    },
+    {
+      "wordId": "arcade-joystick",
+      "wordReason": "ジョイスティック為桿狀控制器而非整個手把；不假定每台夾娃娃機都有此裝置。",
+      "exampleReasons": [
+        "向右推搖桿為直接操作請求，左右方向三語一致。",
+        "感到難以操作而向店員說明，原因與回報對象一致；不推斷機械故障或自行維修。"
+      ]
+    },
+    {
+      "wordId": "arcade-start-button",
+      "wordReason": "スタートボタン限定開始功能，不把所有機台按鈕都稱開始鈕；未聲稱每款夾娃娃機均採同樣控制方式。",
+      "exampleReasons": [
+        "找到開始按鈕是單一辨識動作，適合簡單句且與圖像相符。",
+        "讀完螢幕說明再按鈕，順序與所在位置三語一致，顯示實際開始遊戲流程。"
+      ]
+    },
+    {
+      "wordId": "coin-slot",
+      "wordReason": "コイン投入口是進幣開口，與取幣盤、退款口或取物口分開；不把所有投入口都說成接受代幣。",
+      "exampleReasons": [
+        "指認開口為簡單句，英日繁中均帶指示與相同物件。",
+        "硬幣放不進而檢查尺寸，原因、否定與大小三語對齊；特別避免把常見退幣盤誤說成原投幣口。"
+      ]
+    },
+    {
+      "wordId": "prize-retrieval-hatch",
+      "wordReason": "景品取り出し口是取回已獲得物品的出口，區別櫃內落下洞口及機台維修門。",
+      "exampleReasons": [
+        "從出口拿取獎品是正確使用方式，不涉及伸手進入遊戲區。",
+        "獎品未落到出口時請店員確認，否定、まだ與求助三語相符，不鼓勵自行撬門。"
+      ]
+    },
+    {
+      "wordId": "change-machine",
+      "wordReason": "両替機在本系列指定日圓換零錢而非外幣換匯或ATM；依遊樂場遊玩說明選擇機型。",
+      "exampleReasons": [
+        "詢問機台位置是日本遊樂場自然需求，三語疑問相同。",
+        "只有千圓鈔所以先換硬幣，金額、紙鈔與原因三語完整對齊，不宣稱任何面額都可投入。"
+      ]
+    },
+    {
+      "wordId": "arcade-token",
+      "wordReason": "ゲーム用メダル為遊樂場代幣，與原本紀念幣的法定貨幣概念分開；未聲稱可投入全部夾娃娃機。",
+      "exampleReasons": [
+        "五枚代幣放在盤上是整理動作，數量與位置三語一致。",
+        "特定代幣無法在別店使用所以留在本店玩，限定這批代幣而非推論所有店通用規則。"
+      ]
+    },
+    {
+      "wordId": "amusement-arcade",
+      "wordReason": "ゲームセンター指室內電子遊樂場，不是兒童遊具場；以多種機台區別扭蛋專賣店。",
+      "exampleReasons": [
+        "相約見面為自然生活用途，日文待ち合わせ與met一致。",
+        "室內擁擠所以在外面等朋友到，原因、等待地點與終點條件三語一致。"
+      ]
+    },
+    {
+      "wordId": "candy-toy",
+      "wordReason": "食玩是食品與玩具一起販售的產品，不是可吃玩具；依萬代食品玩具產品分類，圖需同時具玩具和獨立糖果。",
+      "exampleReasons": [
+        "在店裡挑選一個食玩為自然購物，三語均指單件商品，避免a box of toys讓人誤以為一盒必有多件玩具。",
+        "先取出另包口香糖再組裝模型，先後與兩種物件清楚分開，避免把塑膠當食品。"
+      ]
+    },
+    {
+      "wordId": "miniature-food-model",
+      "wordReason": "ミニチュアフード是縮小不可食模型，與真食物、餐廳等比例食品模型區分；圖有尺度參照。",
+      "exampleReasons": [
+        "把微縮食物放上小桌是娃娃屋的合理場景，三語位置相同。",
+        "看似真食物但尺寸不合娃娃屋，轉折與太小結果關係對齊，沒有把模型描述成可食物。"
+      ]
+    },
+    {
+      "wordId": "action-figure",
+      "wordReason": "アクションフィギュア以可動關節定義，為既有一般角色公仔的具體子類，不重建同義詞；圖需清楚顯示關節。",
+      "exampleReasons": [
+        "彎曲膝關節是此物件的定義性使用，英日繁中部位與動作相符。",
+        "改姿勢前檢查關節活動方向，時間與確認對象一致，未宣稱可無限制扭動。"
+      ]
+    },
+    {
+      "wordId": "collectible-doll",
+      "wordReason": "ドール在本項限定收藏換裝硬質人偶，與ぬいぐるみ軟填充玩偶區分；不是把所有人偶都限定高價收藏用途。",
+      "exampleReasons": [
+        "替人偶換裝是自然收藏活動，日文着せ替える含換衣而非只替換衣服物件。",
+        "髮易打結所以拍照前輕梳，原因、時間與溫柔動作三語一致，不涉及真人護髮建議。"
+      ]
+    },
+    {
+      "wordId": "collectible-sticker",
+      "wordReason": "コレクションシール有可黏貼背膠與台紙，區別未黏性卡牌；收藏用途不限定一定不撕或一定全套。",
+      "exampleReasons": [
+        "連同台紙保存是常見收藏方式，英日繁中同時保留保存動作與台紙。",
+        "尺寸比預期大而改貼其他頁，原因、預期比較與替代位置一致，與未撕保存句展示不同使用選擇。"
+      ]
+    },
+    {
+      "wordId": "building-block-set",
+      "wordReason": "ブロックセット為可拆接積木套組，不是模型零件框或建築材料；不以品牌名代替通稱。",
+      "exampleReasons": [
+        "用積木造房屋是直接且常見的玩法，三語保留共同製作與成品。",
+        "按顏色整理後找到遺失紅色零件，時間與結果、顏色三語一致，與搭建句有不同教學用途。"
+      ]
+    }
+  ]
+}

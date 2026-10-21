@@ -1,0 +1,5568 @@
+{
+  "en": {
+    "Put the trading card in a sleeve.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "入れてください",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "trading card",
+        "z": "集換式卡牌",
+        "j": "トレーディングカード",
+        "e": "trading card"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "sleeve",
+        "z": "卡套",
+        "j": "スリーブ",
+        "e": "sleeve"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before trading the card, I checked its corners.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "trading",
+        "z": "交換",
+        "j": "交換する",
+        "e": "trading"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "card",
+        "z": "卡牌",
+        "j": "カード",
+        "e": "card"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "corners",
+        "z": "邊角",
+        "j": "角",
+        "e": "corners"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought a booster pack.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "booster pack",
+        "z": "卡牌擴充包",
+        "j": "拡張パック",
+        "e": "booster pack"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I want to open the booster pack with a friend, so I have not opened it yet.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "want",
+        "z": "想要",
+        "j": "したい",
+        "e": "want"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "open",
+        "z": "拆開",
+        "j": "開ける",
+        "e": "open"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "booster pack",
+        "z": "卡牌擴充包",
+        "j": "拡張パック",
+        "e": "booster pack"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": ", so I have not "
+      },
+      {
+        "t": "opened",
+        "z": "拆開",
+        "j": "開けた",
+        "e": "opened"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "yet",
+        "z": "還",
+        "j": "まだ",
+        "e": "yet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please open the deck box.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "open",
+        "z": "打開",
+        "j": "開ける",
+        "e": "open"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "deck box",
+        "z": "牌組收納盒",
+        "j": "デッキケース",
+        "e": "deck box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The sleeved cards were too thick to fit in this deck box.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "sleeved",
+        "z": "套上卡套的",
+        "j": "スリーブに入れた",
+        "e": "sleeved"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cards",
+        "z": "卡牌",
+        "j": "カード",
+        "e": "cards"
+      },
+      {
+        "t": " were too "
+      },
+      {
+        "t": "thick",
+        "z": "厚的",
+        "j": "厚い",
+        "e": "thick"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "fit",
+        "z": "放得進",
+        "j": "入る",
+        "e": "fit"
+      },
+      {
+        "t": " in this "
+      },
+      {
+        "t": "deck box",
+        "z": "牌組收納盒",
+        "j": "デッキケース",
+        "e": "deck box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please spread out the card playmat.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "spread out",
+        "z": "鋪開",
+        "j": "敷く",
+        "e": "spread out"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "card playmat",
+        "z": "卡牌對戰墊",
+        "j": "プレイマット",
+        "e": "card playmat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Wait until the card playmat is completely dry before putting it away.": [
+      {
+        "t": "Wait",
+        "z": "等待",
+        "j": "待つ",
+        "e": "wait"
+      },
+      {
+        "t": " until the "
+      },
+      {
+        "t": "card playmat",
+        "z": "卡牌對戰墊",
+        "j": "プレイマット",
+        "e": "card playmat"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "completely",
+        "z": "完全",
+        "j": "完全に",
+        "e": "completely"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dry",
+        "z": "乾燥的",
+        "j": "乾いた",
+        "e": "dry"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "putting it away",
+        "z": "收起它",
+        "j": "しまう",
+        "e": "putting it away"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought a plastic model kit.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "plastic model kit",
+        "z": "塑膠組裝模型",
+        "j": "プラモデル",
+        "e": "plastic model kit"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I finish assembling the plastic model kit, I plan to take a photo.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "finish",
+        "z": "完成",
+        "j": "終える",
+        "e": "finish"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "assembling",
+        "z": "組裝",
+        "j": "組み立てる",
+        "e": "assembling"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "plastic model kit",
+        "z": "塑膠組裝模型",
+        "j": "プラモデル",
+        "e": "plastic model kit"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "plan",
+        "z": "打算",
+        "j": "予定している",
+        "e": "plan"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "take",
+        "z": "拍攝",
+        "j": "撮る",
+        "e": "take"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "photo",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "There is a small part on the model sprue.": [
+      {
+        "t": "There is a "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "part",
+        "z": "零件",
+        "j": "部品",
+        "e": "part"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "model sprue",
+        "z": "模型零件框",
+        "j": "ランナー",
+        "e": "model sprue"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Do not cut parts off the model sprue until you have checked the instructions.": [
+      {
+        "t": "Do not "
+      },
+      {
+        "t": "cut",
+        "z": "剪下",
+        "j": "切り離す",
+        "e": "cut"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "parts",
+        "z": "零件",
+        "j": "部品",
+        "e": "parts"
+      },
+      {
+        "t": " off the "
+      },
+      {
+        "t": "model sprue",
+        "z": "模型零件框",
+        "j": "ランナー",
+        "e": "model sprue"
+      },
+      {
+        "t": " until you have "
+      },
+      {
+        "t": "checked",
+        "z": "確認",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "instructions",
+        "z": "說明書",
+        "j": "説明書",
+        "e": "instructions"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I cut off a part with the model nippers.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "cut off",
+        "z": "剪下了",
+        "j": "切り離しました",
+        "e": "cut off"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "part",
+        "z": "零件",
+        "j": "部品",
+        "e": "part"
+      },
+      {
+        "t": " with the "
+      },
+      {
+        "t": "model nippers",
+        "z": "模型剪鉗",
+        "j": "模型用ニッパー",
+        "e": "model nippers"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The blades are delicate, so I put a cap on the model nippers before storing them.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "blades",
+        "z": "刀刃",
+        "j": "刃",
+        "e": "blades"
+      },
+      {
+        "t": " are "
+      },
+      {
+        "t": "delicate",
+        "z": "精細的",
+        "j": "繊細な",
+        "e": "delicate"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "put",
+        "z": "裝上了",
+        "j": "付けました",
+        "e": "put"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "cap",
+        "z": "護套",
+        "j": "キャップ",
+        "e": "cap"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "model nippers",
+        "z": "模型剪鉗",
+        "j": "模型用ニッパー",
+        "e": "model nippers"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "storing",
+        "z": "收起",
+        "j": "しまう",
+        "e": "storing"
+      },
+      {
+        "t": " them."
+      }
+    ],
+    "I lined up three die-cast cars.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "lined up",
+        "z": "排好了",
+        "j": "並べました",
+        "e": "lined up"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "three",
+        "z": "三輛",
+        "j": "三台",
+        "e": "three"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "die-cast cars",
+        "z": "壓鑄模型車",
+        "j": "ダイキャストミニカー",
+        "e": "die-cast cars"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The paint was chipped, so I avoided touching the roof of the die-cast car.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "paint",
+        "z": "塗裝",
+        "j": "塗装",
+        "e": "paint"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "chipped",
+        "z": "有剝落的",
+        "j": "剥がれた",
+        "e": "chipped"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "avoided",
+        "z": "避免了",
+        "j": "避けました",
+        "e": "avoided"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "touching",
+        "z": "觸碰",
+        "j": "触る",
+        "e": "touching"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "roof",
+        "z": "車頂",
+        "j": "屋根",
+        "e": "roof"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "die-cast car",
+        "z": "壓鑄模型車",
+        "j": "ダイキャストミニカー",
+        "e": "die-cast car"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put the model train on the track.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放上了",
+        "j": "載せました",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "model train",
+        "z": "鐵道模型",
+        "j": "鉄道模型",
+        "e": "model train"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "track",
+        "z": "軌道",
+        "j": "線路",
+        "e": "track"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After I removed the dust from the track, the model train ran smoothly again.": [
+      {
+        "t": "After I "
+      },
+      {
+        "t": "removed",
+        "z": "清掉了",
+        "j": "取りました",
+        "e": "removed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "dust",
+        "z": "灰塵",
+        "j": "ほこり",
+        "e": "dust"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "track",
+        "z": "軌道",
+        "j": "線路",
+        "e": "track"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "model train",
+        "z": "鐵道模型",
+        "j": "鉄道模型",
+        "e": "model train"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ran",
+        "z": "行駛了",
+        "j": "走りました",
+        "e": "ran"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "smoothly",
+        "z": "順暢地",
+        "j": "スムーズに",
+        "e": "smoothly"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "again",
+        "z": "又",
+        "j": "また",
+        "e": "again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put a tiny chair in the dollhouse.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放了",
+        "j": "置きました",
+        "e": "put"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "tiny",
+        "z": "很小的",
+        "j": "小さな",
+        "e": "tiny"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chair",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "dollhouse",
+        "z": "娃娃屋",
+        "j": "ドールハウス",
+        "e": "dollhouse"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The dollhouse stairs were narrow, so I chose a smaller chair instead.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "dollhouse",
+        "z": "娃娃屋",
+        "j": "ドールハウス",
+        "e": "dollhouse"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stairs",
+        "z": "樓梯",
+        "j": "階段",
+        "e": "stairs"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "narrow",
+        "z": "狹窄的",
+        "j": "狭い",
+        "e": "narrow"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "smaller",
+        "z": "更小的",
+        "j": "もっと小さな",
+        "e": "smaller"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chair",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "instead",
+        "z": "改為",
+        "j": "代わりに",
+        "e": "instead"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I showed my family a commemorative coin.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "showed",
+        "z": "給人看了",
+        "j": "見せました",
+        "e": "showed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "family",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "commemorative coin",
+        "z": "紀念幣",
+        "j": "記念硬貨",
+        "e": "commemorative coin"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After checking the year, I put the commemorative coin back in its case.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "checking",
+        "z": "確認",
+        "j": "確認する",
+        "e": "checking"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "year",
+        "z": "年份",
+        "j": "年号",
+        "e": "year"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "put",
+        "z": "放了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "commemorative coin",
+        "z": "紀念幣",
+        "j": "記念硬貨",
+        "e": "commemorative coin"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "back",
+        "z": "回去",
+        "j": "元に",
+        "e": "back"
+      },
+      {
+        "t": " in its "
+      },
+      {
+        "t": "case",
+        "z": "盒子",
+        "j": "ケース",
+        "e": "case"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I opened my stamp album.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "opened",
+        "z": "翻開了",
+        "j": "開きました",
+        "e": "opened"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "stamp album",
+        "z": "集郵冊",
+        "j": "切手アルバム",
+        "e": "stamp album"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I organized my stamp album by country, so each stamp is easy to find.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "organized",
+        "z": "整理了",
+        "j": "整理しました",
+        "e": "organized"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "stamp album",
+        "z": "集郵冊",
+        "j": "切手アルバム",
+        "e": "stamp album"
+      },
+      {
+        "t": " by "
+      },
+      {
+        "t": "country",
+        "z": "國家",
+        "j": "国",
+        "e": "country"
+      },
+      {
+        "t": ", so each "
+      },
+      {
+        "t": "stamp",
+        "z": "郵票",
+        "j": "切手",
+        "e": "stamp"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "easy",
+        "z": "容易的",
+        "j": "簡単な",
+        "e": "easy"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Turn the handle on the capsule toy machine.": [
+      {
+        "t": "Turn",
+        "z": "轉動",
+        "j": "回す",
+        "e": "turn"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "handle",
+        "z": "把手",
+        "j": "ハンドル",
+        "e": "handle"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "capsule toy machine",
+        "z": "扭蛋機",
+        "j": "カプセルトイ自販機",
+        "e": "capsule toy machine"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The capsule toy machine was empty, so I chose a different one.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "capsule toy machine",
+        "z": "扭蛋機",
+        "j": "カプセルトイ自販機",
+        "e": "capsule toy machine"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空の",
+        "e": "empty"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "different",
+        "z": "別的",
+        "j": "別の",
+        "e": "different"
+      },
+      {
+        "t": " one."
+      }
+    ],
+    "I opened the toy capsule.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "opened",
+        "z": "打開了",
+        "j": "開けました",
+        "e": "opened"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "toy capsule",
+        "z": "扭蛋膠囊",
+        "j": "カプセル",
+        "e": "toy capsule"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After taking out the toy, I put the empty capsule in the collection box.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "taking out",
+        "z": "取出",
+        "j": "取り出す",
+        "e": "taking out"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "toy",
+        "z": "玩具",
+        "j": "おもちゃ",
+        "e": "toy"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "put",
+        "z": "放進了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空の",
+        "e": "empty"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "capsule",
+        "z": "膠囊",
+        "j": "カプセル",
+        "e": "capsule"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "collection box",
+        "z": "回收箱",
+        "j": "回収ボックス",
+        "e": "collection box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I unfolded the capsule toy leaflet.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "unfolded",
+        "z": "攤開了",
+        "j": "広げました",
+        "e": "unfolded"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "capsule toy leaflet",
+        "z": "扭蛋款式介紹紙",
+        "j": "ミニブック",
+        "e": "capsule toy leaflet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "One part was missing, so I checked the capsule toy leaflet before asking the staff.": [
+      {
+        "t": "One",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "part",
+        "z": "零件",
+        "j": "部品",
+        "e": "part"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "missing",
+        "z": "缺少的",
+        "j": "足りない",
+        "e": "missing"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "checked",
+        "z": "查看了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "capsule toy leaflet",
+        "z": "扭蛋款式介紹紙",
+        "j": "ミニブック",
+        "e": "capsule toy leaflet"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "asking",
+        "z": "詢問",
+        "j": "聞く",
+        "e": "asking"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "staff",
+        "z": "店員",
+        "j": "店員",
+        "e": "staff"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the empty capsule in the capsule recycling bin.": [
+      {
+        "t": "Put",
+        "z": "放進",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "empty",
+        "z": "空的",
+        "j": "空の",
+        "e": "empty"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "capsule",
+        "z": "膠囊",
+        "j": "カプセル",
+        "e": "capsule"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "capsule recycling bin",
+        "z": "空膠囊回收箱",
+        "j": "回収ボックス",
+        "e": "capsule recycling bin"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I could not find the capsule recycling bin, so I asked a member of staff.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "capsule recycling bin",
+        "z": "空膠囊回收箱",
+        "j": "空カプセル回収ボックス",
+        "e": "capsule recycling bin"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "member of staff",
+        "z": "店員",
+        "j": "店員",
+        "e": "member of staff"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We entered the capsule toy shop.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "entered",
+        "z": "走進了",
+        "j": "入りました",
+        "e": "entered"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "capsule toy shop",
+        "z": "扭蛋專賣店",
+        "j": "カプセルトイ専門店",
+        "e": "capsule toy shop"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The capsule toy shop was crowded, so we looked at the machines near the entrance first.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "capsule toy shop",
+        "z": "扭蛋專賣店",
+        "j": "カプセルトイ専門店",
+        "e": "capsule toy shop"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠的",
+        "j": "混んでいる",
+        "e": "crowded"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "looked at",
+        "z": "看了",
+        "j": "見ました",
+        "e": "looked at"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "machines",
+        "z": "機台",
+        "j": "台",
+        "e": "machines"
+      },
+      {
+        "t": " near the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入り口",
+        "e": "entrance"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "first",
+        "z": "先",
+        "j": "先に",
+        "e": "first"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I played the claw machine once.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "played",
+        "z": "玩了",
+        "j": "遊びました",
+        "e": "played"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "claw machine",
+        "z": "夾娃娃機",
+        "j": "クレーンゲーム機",
+        "e": "claw machine"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "once",
+        "z": "一次",
+        "j": "一回",
+        "e": "once"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The prize got stuck in the claw machine, so I asked the staff for help.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "prize",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "got stuck",
+        "z": "卡住了",
+        "j": "引っかかりました",
+        "e": "got stuck"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "claw machine",
+        "z": "夾娃娃機",
+        "j": "クレーンゲーム機",
+        "e": "claw machine"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "求めました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "staff",
+        "z": "店員",
+        "j": "店員",
+        "e": "staff"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "help",
+        "z": "協助",
+        "j": "助け",
+        "e": "help"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The arcade claw moved down.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "arcade claw",
+        "z": "夾娃娃機機械爪",
+        "j": "アーム",
+        "e": "arcade claw"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "moved down",
+        "z": "降下來了",
+        "j": "下がりました",
+        "e": "moved down"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Move the arcade joystick to the right.": [
+      {
+        "t": "Move",
+        "z": "推動",
+        "j": "倒す",
+        "e": "move"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "arcade joystick",
+        "z": "遊戲搖桿",
+        "j": "ジョイスティック",
+        "e": "arcade joystick"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "right",
+        "z": "右邊",
+        "j": "右",
+        "e": "right"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The arcade joystick was hard to move, so I told a member of staff.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "arcade joystick",
+        "z": "遊戲搖桿",
+        "j": "ジョイスティック",
+        "e": "arcade joystick"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "hard",
+        "z": "困難的",
+        "j": "難しい",
+        "e": "hard"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "move",
+        "z": "推動",
+        "j": "動かす",
+        "e": "move"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "told",
+        "z": "告訴了",
+        "j": "伝えました",
+        "e": "told"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "member of staff",
+        "z": "店員",
+        "j": "店員",
+        "e": "member of staff"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I found the arcade start button.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "found",
+        "z": "找到了",
+        "j": "見つけました",
+        "e": "found"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "arcade start button",
+        "z": "遊戲開始按鈕",
+        "j": "スタートボタン",
+        "e": "arcade start button"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After reading the instructions on the screen, I pressed the arcade start button.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "reading",
+        "z": "閱讀",
+        "j": "読む",
+        "e": "reading"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "instructions",
+        "z": "說明",
+        "j": "説明",
+        "e": "instructions"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "screen",
+        "z": "畫面",
+        "j": "画面",
+        "e": "screen"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "pressed",
+        "z": "按下了",
+        "j": "押しました",
+        "e": "pressed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "arcade start button",
+        "z": "遊戲開始按鈕",
+        "j": "スタートボタン",
+        "e": "arcade start button"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This is the coin slot.": [
+      {
+        "t": "This",
+        "z": "這個",
+        "j": "これ",
+        "e": "this"
+      },
+      {
+        "t": " is the "
+      },
+      {
+        "t": "coin slot",
+        "z": "投幣口",
+        "j": "コイン投入口",
+        "e": "coin slot"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Take your prize from the prize retrieval hatch.": [
+      {
+        "t": "Take",
+        "z": "拿取",
+        "j": "取る",
+        "e": "take"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "prize",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "prize retrieval hatch",
+        "z": "取物口",
+        "j": "景品取り出し口",
+        "e": "prize retrieval hatch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Where is the change machine?": [
+      {
+        "t": "Where",
+        "z": "哪裡",
+        "j": "どこ",
+        "e": "where"
+      },
+      {
+        "t": " is the "
+      },
+      {
+        "t": "change machine",
+        "z": "兌幣機",
+        "j": "両替機",
+        "e": "change machine"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "I only had a thousand-yen note, so I used the change machine to get coins.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "only",
+        "z": "只有",
+        "j": "しか",
+        "e": "only"
+      },
+      {
+        "t": " had a "
+      },
+      {
+        "t": "thousand-yen note",
+        "z": "千圓紙鈔",
+        "j": "千円札",
+        "e": "thousand-yen note"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使いました",
+        "e": "used"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "change machine",
+        "z": "兌幣機",
+        "j": "両替機",
+        "e": "change machine"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "get",
+        "z": "取得",
+        "j": "手に入れる",
+        "e": "get"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "coins",
+        "z": "硬幣",
+        "j": "硬貨",
+        "e": "coins"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put five arcade tokens on the tray.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放了",
+        "j": "置きました",
+        "e": "put"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "five",
+        "z": "五枚",
+        "j": "五枚",
+        "e": "five"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arcade tokens",
+        "z": "遊戲代幣",
+        "j": "ゲーム用メダル",
+        "e": "arcade tokens"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "tray",
+        "z": "盤子",
+        "j": "トレー",
+        "e": "tray"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "These arcade tokens cannot be used at the other arcade, so I will use them here.": [
+      {
+        "t": "These "
+      },
+      {
+        "t": "arcade tokens",
+        "z": "遊戲代幣",
+        "j": "ゲーム用メダル",
+        "e": "arcade tokens"
+      },
+      {
+        "t": " cannot be "
+      },
+      {
+        "t": "used",
+        "z": "使用",
+        "j": "使われる",
+        "e": "used"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "other",
+        "z": "別的",
+        "j": "別の",
+        "e": "other"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arcade",
+        "z": "遊樂場",
+        "j": "ゲームセンター",
+        "e": "arcade"
+      },
+      {
+        "t": ", so I will "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " them "
+      },
+      {
+        "t": "here",
+        "z": "這裡",
+        "j": "ここ",
+        "e": "here"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We met at the amusement arcade.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "met",
+        "z": "約好見面",
+        "j": "待ち合わせました",
+        "e": "met"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "amusement arcade",
+        "z": "遊樂場",
+        "j": "ゲームセンター",
+        "e": "amusement arcade"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The amusement arcade was crowded, so we waited outside until our friends arrived.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "amusement arcade",
+        "z": "遊樂場",
+        "j": "ゲームセンター",
+        "e": "amusement arcade"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠的",
+        "j": "混んでいる",
+        "e": "crowded"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "outside",
+        "z": "外面",
+        "j": "外",
+        "e": "outside"
+      },
+      {
+        "t": " until our "
+      },
+      {
+        "t": "friends",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friends"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "到了",
+        "j": "来ました",
+        "e": "arrived"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before assembling the candy toy, I took out the separately wrapped gum.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "assembling",
+        "z": "組裝",
+        "j": "組み立てる",
+        "e": "assembling"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "candy toy",
+        "z": "食玩",
+        "j": "食玩",
+        "e": "candy toy"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "took out",
+        "z": "取出了",
+        "j": "取り出しました",
+        "e": "took out"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "separately",
+        "z": "分開地",
+        "j": "別に",
+        "e": "separately"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wrapped",
+        "z": "包裝的",
+        "j": "包まれた",
+        "e": "wrapped"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gum",
+        "z": "口香糖",
+        "j": "ガム",
+        "e": "gum"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I placed a miniature food model on the tiny table.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "placed",
+        "z": "放了",
+        "j": "置きました",
+        "e": "placed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "miniature food model",
+        "z": "迷你食物模型",
+        "j": "ミニチュアフード",
+        "e": "miniature food model"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "tiny",
+        "z": "小的",
+        "j": "小さな",
+        "e": "tiny"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "table",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The miniature food model looked real, but it was too small for my dollhouse.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "miniature food model",
+        "z": "迷你食物模型",
+        "j": "ミニチュアフード",
+        "e": "miniature food model"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "looked",
+        "z": "看起來",
+        "j": "見えた",
+        "e": "looked"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "real",
+        "z": "真實的",
+        "j": "本物の",
+        "e": "real"
+      },
+      {
+        "t": ", but it was too "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さい",
+        "e": "small"
+      },
+      {
+        "t": " for my "
+      },
+      {
+        "t": "dollhouse",
+        "z": "娃娃屋",
+        "j": "ドールハウス",
+        "e": "dollhouse"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bent the action figure's knees.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bent",
+        "z": "彎曲了",
+        "j": "曲げました",
+        "e": "bent"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "action figure",
+        "z": "可動公仔",
+        "j": "アクションフィギュア",
+        "e": "action figure"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "knees",
+        "z": "膝蓋",
+        "j": "膝",
+        "e": "knees"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before changing the action figure's pose, I checked which way its joints could move.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "changing",
+        "z": "改變",
+        "j": "変える",
+        "e": "changing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "action figure",
+        "z": "可動公仔",
+        "j": "アクションフィギュア",
+        "e": "action figure"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "pose",
+        "z": "姿勢",
+        "j": "ポーズ",
+        "e": "pose"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " which "
+      },
+      {
+        "t": "way",
+        "z": "方向",
+        "j": "方向",
+        "e": "direction"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "joints",
+        "z": "關節",
+        "j": "関節",
+        "e": "joints"
+      },
+      {
+        "t": " could "
+      },
+      {
+        "t": "move",
+        "z": "活動",
+        "j": "動く",
+        "e": "move"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I changed the collectible doll's clothes.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "changed",
+        "z": "更換了",
+        "j": "替えました",
+        "e": "changed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "collectible doll",
+        "z": "收藏人偶",
+        "j": "ドール",
+        "e": "collectible doll"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "clothes",
+        "z": "衣服",
+        "j": "服",
+        "e": "clothes"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the collectible doll's hair tangles easily, I brushed it gently before taking photos.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "collectible doll",
+        "z": "收藏人偶",
+        "j": "ドール",
+        "e": "collectible doll"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tangles",
+        "z": "打結",
+        "j": "絡まる",
+        "e": "tangles"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "easily",
+        "z": "容易地",
+        "j": "簡単に",
+        "e": "easily"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "brushed",
+        "z": "梳了",
+        "j": "とかしました",
+        "e": "brushed"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "gently",
+        "z": "輕輕地",
+        "j": "優しく",
+        "e": "gently"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "taking",
+        "z": "拍攝",
+        "j": "撮る",
+        "e": "taking"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "photos",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I stored the collectible sticker with its backing paper.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "stored",
+        "z": "保存了",
+        "j": "保管しました",
+        "e": "stored"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "collectible sticker",
+        "z": "收藏貼紙",
+        "j": "コレクションシール",
+        "e": "collectible sticker"
+      },
+      {
+        "t": " with its "
+      },
+      {
+        "t": "backing paper",
+        "z": "台紙",
+        "j": "台紙",
+        "e": "backing paper"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The collectible sticker was larger than I expected, so I put it on a different album page.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "collectible sticker",
+        "z": "收藏貼紙",
+        "j": "コレクションシール",
+        "e": "collectible sticker"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "larger",
+        "z": "更大的",
+        "j": "より大きな",
+        "e": "larger"
+      },
+      {
+        "t": " than I "
+      },
+      {
+        "t": "expected",
+        "z": "預期了",
+        "j": "思っていた",
+        "e": "expected"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "put",
+        "z": "貼上了",
+        "j": "貼りました",
+        "e": "put"
+      },
+      {
+        "t": " it on a "
+      },
+      {
+        "t": "different",
+        "z": "別的",
+        "j": "別の",
+        "e": "different"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "album",
+        "z": "相簿",
+        "j": "アルバム",
+        "e": "album"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "page",
+        "z": "頁",
+        "j": "ページ",
+        "e": "page"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We built a house with the building block set.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "built",
+        "z": "蓋了",
+        "j": "作りました",
+        "e": "built"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "house",
+        "z": "房子",
+        "j": "家",
+        "e": "house"
+      },
+      {
+        "t": " with the "
+      },
+      {
+        "t": "building block set",
+        "z": "組裝積木",
+        "j": "ブロックセット",
+        "e": "building block set"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After sorting the building block set by color, we found the missing red piece.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "sorting",
+        "z": "分類",
+        "j": "分ける",
+        "e": "sorting"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "building block set",
+        "z": "組裝積木",
+        "j": "ブロックセット",
+        "e": "building block set"
+      },
+      {
+        "t": " by "
+      },
+      {
+        "t": "color",
+        "z": "顏色",
+        "j": "色",
+        "e": "color"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "found",
+        "z": "找到了",
+        "j": "見つかりました",
+        "e": "found"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "missing",
+        "z": "遺失的",
+        "j": "なくなった",
+        "e": "missing"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "red",
+        "z": "紅色的",
+        "j": "赤い",
+        "e": "red"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "piece",
+        "z": "零件",
+        "j": "部品",
+        "e": "piece"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "To line up the arcade claw, I checked its position relative to the prize from the side.": [
+      {
+        "t": "To "
+      },
+      {
+        "t": "line up",
+        "z": "對準",
+        "j": "位置を合わせる",
+        "e": "line up"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "arcade claw",
+        "z": "夾娃娃機機械爪",
+        "j": "アーム",
+        "e": "arcade claw"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "position",
+        "z": "位置",
+        "j": "位置",
+        "e": "position"
+      },
+      {
+        "t": " relative to the "
+      },
+      {
+        "t": "prize",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "side",
+        "z": "側面",
+        "j": "横",
+        "e": "side"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The coin would not go into the coin slot, so I checked its size.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "coin",
+        "z": "硬幣",
+        "j": "硬貨",
+        "e": "coin"
+      },
+      {
+        "t": " would not "
+      },
+      {
+        "t": "go",
+        "z": "進入",
+        "j": "入る",
+        "e": "go"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "coin slot",
+        "z": "投幣口",
+        "j": "コイン投入口",
+        "e": "coin slot"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "size",
+        "z": "大小",
+        "j": "大きさ",
+        "e": "size"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I chose a candy toy at the shop.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "candy toy",
+        "z": "食玩",
+        "j": "食玩",
+        "e": "candy toy"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "shop",
+        "z": "店",
+        "j": "店",
+        "e": "shop"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The prize had not dropped down to the prize retrieval hatch yet, so I asked the staff to check.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "prize",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize"
+      },
+      {
+        "t": " had not "
+      },
+      {
+        "t": "dropped down",
+        "z": "落下來",
+        "j": "落ちてきた",
+        "e": "dropped down"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "prize retrieval hatch",
+        "z": "取物口",
+        "j": "景品取り出し口",
+        "e": "prize retrieval hatch"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "yet",
+        "z": "還",
+        "j": "まだ",
+        "e": "yet"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "お願いしました",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "staff",
+        "z": "店員",
+        "j": "店員",
+        "e": "staff"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "トレーディングカードをスリーブに入れてください。": [
+      {
+        "t": "トレーディングカード",
+        "z": "集換式卡牌",
+        "j": "トレーディングカード",
+        "e": "trading card",
+        "r": "とれーでぃんぐかーど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "スリーブ",
+        "z": "卡套",
+        "j": "スリーブ",
+        "e": "sleeve",
+        "r": "すりーぶ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please put in",
+        "r": "いれてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "トレーディングカードを交換する前に、角を確認しました。": [
+      {
+        "t": "トレーディングカード",
+        "z": "集換式卡牌",
+        "j": "トレーディングカード",
+        "e": "trading card",
+        "r": "とれーでぃんぐかーど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "交換する",
+        "z": "交換",
+        "j": "交換する",
+        "e": "trade",
+        "r": "こうかんする"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "角",
+        "z": "邊角",
+        "j": "角",
+        "e": "corners",
+        "r": "かど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "拡張パックを一つ買いました。": [
+      {
+        "t": "拡張パック",
+        "z": "卡牌擴充包",
+        "j": "拡張パック",
+        "e": "booster pack",
+        "r": "かくちょうぱっく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一つ",
+        "z": "一包",
+        "j": "一つ",
+        "e": "one",
+        "r": "ひとつ"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達と一緒に拡張パックを開けたいので、まだ開けていません。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together",
+        "r": "いっしょに"
+      },
+      {
+        "t": "拡張パック",
+        "z": "卡牌擴充包",
+        "j": "拡張パック",
+        "e": "booster pack",
+        "r": "かくちょうぱっく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けたい",
+        "z": "想拆開",
+        "j": "開けたい",
+        "e": "want to open",
+        "r": "あけたい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "yet",
+        "r": "まだ"
+      },
+      {
+        "t": "開けていません",
+        "z": "還沒有拆開",
+        "j": "開けていません",
+        "e": "have not opened",
+        "r": "あけていません"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "デッキケースを開けてください。": [
+      {
+        "t": "デッキケース",
+        "z": "牌組收納盒",
+        "j": "デッキケース",
+        "e": "deck box",
+        "r": "でっきけーす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けてください",
+        "z": "請打開",
+        "j": "開けてください",
+        "e": "please open",
+        "r": "あけてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スリーブに入れたカードは厚すぎて、このデッキケースに入りませんでした。": [
+      {
+        "t": "スリーブ",
+        "z": "卡套",
+        "j": "スリーブ",
+        "e": "sleeves",
+        "r": "すりーぶ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れた",
+        "z": "裝入的",
+        "j": "入れた",
+        "e": "put in",
+        "r": "いれた"
+      },
+      {
+        "t": "カード",
+        "z": "卡牌",
+        "j": "カード",
+        "e": "cards",
+        "r": "かーど"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "厚すぎて",
+        "z": "因為太厚",
+        "j": "厚すぎて",
+        "e": "being too thick",
+        "r": "あつすぎて"
+      },
+      {
+        "t": "、この"
+      },
+      {
+        "t": "デッキケース",
+        "z": "牌組收納盒",
+        "j": "デッキケース",
+        "e": "deck box",
+        "r": "でっきけーす"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りませんでした",
+        "z": "放不進去",
+        "j": "入りませんでした",
+        "e": "did not fit",
+        "r": "はいりませんでした"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "プレイマットを敷いてください。": [
+      {
+        "t": "プレイマット",
+        "z": "卡牌對戰墊",
+        "j": "プレイマット",
+        "e": "card playmat",
+        "r": "ぷれいまっと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "敷いてください",
+        "z": "請鋪開",
+        "j": "敷いてください",
+        "e": "please spread out",
+        "r": "しいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "プレイマットをしまう前に、完全に乾くまで待ってください。": [
+      {
+        "t": "プレイマット",
+        "z": "卡牌對戰墊",
+        "j": "プレイマット",
+        "e": "card playmat",
+        "r": "ぷれいまっと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "しまう",
+        "z": "收起",
+        "j": "しまう",
+        "e": "put away",
+        "r": "しまう"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "完全に",
+        "z": "完全",
+        "j": "完全に",
+        "e": "completely",
+        "r": "かんぜんに"
+      },
+      {
+        "t": "乾く",
+        "z": "乾燥",
+        "j": "乾く",
+        "e": "dry",
+        "r": "かわく"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "待ってください",
+        "z": "請等待",
+        "j": "待ってください",
+        "e": "please wait",
+        "r": "まってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "プラモデルを買いました。": [
+      {
+        "t": "プラモデル",
+        "z": "塑膠組裝模型",
+        "j": "プラモデル",
+        "e": "plastic model kit",
+        "r": "ぷらもでる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "プラモデルを組み立て終わったら、写真を撮る予定です。": [
+      {
+        "t": "プラモデル",
+        "z": "塑膠組裝模型",
+        "j": "プラモデル",
+        "e": "plastic model kit",
+        "r": "ぷらもでる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "組み立て終わったら",
+        "z": "組裝完成後",
+        "j": "組み立て終わったら",
+        "e": "when finished assembling",
+        "r": "くみたておわったら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮る",
+        "z": "拍攝",
+        "j": "撮る",
+        "e": "take",
+        "r": "とる"
+      },
+      {
+        "t": "予定",
+        "z": "打算",
+        "j": "予定",
+        "e": "plan",
+        "r": "よてい"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "ランナーに小さな部品があります。": [
+      {
+        "t": "ランナー",
+        "z": "模型零件框",
+        "j": "ランナー",
+        "e": "model sprue",
+        "r": "らんなー"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "小さな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small",
+        "r": "ちいさな"
+      },
+      {
+        "t": "部品",
+        "z": "零件",
+        "j": "部品",
+        "e": "part",
+        "r": "ぶひん"
+      },
+      {
+        "t": "があります。"
+      }
+    ],
+    "説明書を確認するまで、ランナーから部品を切り離さないでください。": [
+      {
+        "t": "説明書",
+        "z": "說明書",
+        "j": "説明書",
+        "e": "instructions",
+        "r": "せつめいしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認する",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check",
+        "r": "かくにんする"
+      },
+      {
+        "t": "まで、"
+      },
+      {
+        "t": "ランナー",
+        "z": "模型零件框",
+        "j": "ランナー",
+        "e": "model sprue",
+        "r": "らんなー"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "部品",
+        "z": "零件",
+        "j": "部品",
+        "e": "parts",
+        "r": "ぶひん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切り離さないでください",
+        "z": "請不要剪下",
+        "j": "切り離さないでください",
+        "e": "please do not cut off",
+        "r": "きりはなさないでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "模型用ニッパーで部品を切り離しました。": [
+      {
+        "t": "模型用ニッパー",
+        "z": "模型剪鉗",
+        "j": "模型用ニッパー",
+        "e": "model nippers",
+        "r": "もけいようにっぱー"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "部品",
+        "z": "零件",
+        "j": "部品",
+        "e": "part",
+        "r": "ぶひん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切り離しました",
+        "z": "剪下了",
+        "j": "切り離しました",
+        "e": "cut off",
+        "r": "きりはなしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "刃が繊細なので、模型用ニッパーにキャップを付けてからしまいました。": [
+      {
+        "t": "刃",
+        "z": "刀刃",
+        "j": "刃",
+        "e": "blades",
+        "r": "は"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "繊細",
+        "z": "精細",
+        "j": "繊細",
+        "e": "delicate",
+        "r": "せんさい"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "模型用ニッパー",
+        "z": "模型剪鉗",
+        "j": "模型用ニッパー",
+        "e": "model nippers",
+        "r": "もけいようにっぱー"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "キャップ",
+        "z": "護套",
+        "j": "キャップ",
+        "e": "cap",
+        "r": "きゃっぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "付けて",
+        "z": "裝上",
+        "j": "付けて",
+        "e": "put on",
+        "r": "つけて"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "しまいました",
+        "z": "收起來了",
+        "j": "しまいました",
+        "e": "stored away",
+        "r": "しまいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ダイキャストミニカーを三台並べました。": [
+      {
+        "t": "ダイキャストミニカー",
+        "z": "壓鑄模型車",
+        "j": "ダイキャストミニカー",
+        "e": "die-cast cars",
+        "r": "だいきゃすとみにかー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "三台",
+        "z": "三輛",
+        "j": "三台",
+        "e": "three cars",
+        "r": "さんだい"
+      },
+      {
+        "t": "並べました",
+        "z": "排好了",
+        "j": "並べました",
+        "e": "lined up",
+        "r": "ならべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "塗装が剥がれていたので、ダイキャストミニカーの屋根には触らないようにしました。": [
+      {
+        "t": "塗装",
+        "z": "塗裝",
+        "j": "塗装",
+        "e": "paint",
+        "r": "とそう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "剥がれていた",
+        "z": "有剝落",
+        "j": "剥がれていた",
+        "e": "was chipped",
+        "r": "はがれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ダイキャストミニカー",
+        "z": "壓鑄模型車",
+        "j": "ダイキャストミニカー",
+        "e": "die-cast car",
+        "r": "だいきゃすとみにかー"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "屋根",
+        "z": "車頂",
+        "j": "屋根",
+        "e": "roof",
+        "r": "やね"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "触らないようにしました",
+        "z": "盡量不碰",
+        "j": "触らないようにしました",
+        "e": "made sure not to touch",
+        "r": "さわらないようにしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "鉄道模型を線路に載せました。": [
+      {
+        "t": "鉄道模型",
+        "z": "鐵道模型",
+        "j": "鉄道模型",
+        "e": "model train",
+        "r": "てつどうもけい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "線路",
+        "z": "軌道",
+        "j": "線路",
+        "e": "track",
+        "r": "せんろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "載せました",
+        "z": "放上了",
+        "j": "載せました",
+        "e": "put on",
+        "r": "のせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "線路のほこりを取ったら、鉄道模型がまたスムーズに走りました。": [
+      {
+        "t": "線路",
+        "z": "軌道",
+        "j": "線路",
+        "e": "track",
+        "r": "せんろ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ほこり",
+        "z": "灰塵",
+        "j": "ほこり",
+        "e": "dust",
+        "r": "ほこり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取ったら",
+        "z": "清掉之後",
+        "j": "取ったら",
+        "e": "after removing",
+        "r": "とったら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "鉄道模型",
+        "z": "鐵道模型",
+        "j": "鉄道模型",
+        "e": "model train",
+        "r": "てつどうもけい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "また",
+        "z": "又",
+        "j": "また",
+        "e": "again",
+        "r": "また"
+      },
+      {
+        "t": "スムーズに",
+        "z": "順暢地",
+        "j": "スムーズに",
+        "e": "smoothly",
+        "r": "すむーずに"
+      },
+      {
+        "t": "走りました",
+        "z": "行駛了",
+        "j": "走りました",
+        "e": "ran",
+        "r": "はしりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドールハウスに小さな椅子を置きました。": [
+      {
+        "t": "ドールハウス",
+        "z": "娃娃屋",
+        "j": "ドールハウス",
+        "e": "dollhouse",
+        "r": "どーるはうす"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "小さな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "tiny",
+        "r": "ちいさな"
+      },
+      {
+        "t": "椅子",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair",
+        "r": "いす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置きました",
+        "z": "放了",
+        "j": "置きました",
+        "e": "put",
+        "r": "おきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドールハウスの階段が狭かったので、代わりにもっと小さな椅子を選びました。": [
+      {
+        "t": "ドールハウス",
+        "z": "娃娃屋",
+        "j": "ドールハウス",
+        "e": "dollhouse",
+        "r": "どーるはうす"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "階段",
+        "z": "樓梯",
+        "j": "階段",
+        "e": "stairs",
+        "r": "かいだん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "狭かった",
+        "z": "很窄",
+        "j": "狭かった",
+        "e": "were narrow",
+        "r": "せまかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "代わりに",
+        "z": "改為",
+        "j": "代わりに",
+        "e": "instead",
+        "r": "かわりに"
+      },
+      {
+        "t": "もっと",
+        "z": "更",
+        "j": "もっと",
+        "e": "more",
+        "r": "もっと"
+      },
+      {
+        "t": "小さな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small",
+        "r": "ちいさな"
+      },
+      {
+        "t": "椅子",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair",
+        "r": "いす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家族に記念硬貨を見せました。": [
+      {
+        "t": "家族",
+        "z": "家人",
+        "j": "家族",
+        "e": "family",
+        "r": "かぞく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "記念硬貨",
+        "z": "紀念幣",
+        "j": "記念硬貨",
+        "e": "commemorative coin",
+        "r": "きねんこうか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せました",
+        "z": "給人看了",
+        "j": "見せました",
+        "e": "showed",
+        "r": "みせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "年号を確認してから、記念硬貨をケースに戻しました。": [
+      {
+        "t": "年号",
+        "z": "年份",
+        "j": "年号",
+        "e": "year",
+        "r": "ねんごう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "z": "確認後",
+        "j": "確認して",
+        "e": "checked",
+        "r": "かくにんして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "記念硬貨",
+        "z": "紀念幣",
+        "j": "記念硬貨",
+        "e": "commemorative coin",
+        "r": "きねんこうか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ケース",
+        "z": "盒子",
+        "j": "ケース",
+        "e": "case",
+        "r": "けーす"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻しました",
+        "z": "放回了",
+        "j": "戻しました",
+        "e": "put back",
+        "r": "もどしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "切手アルバムを開きました。": [
+      {
+        "t": "切手アルバム",
+        "z": "集郵冊",
+        "j": "切手アルバム",
+        "e": "stamp album",
+        "r": "きってあるばむ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開きました",
+        "z": "翻開了",
+        "j": "開きました",
+        "e": "opened",
+        "r": "ひらきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "切手アルバムを国ごとに整理したので、一枚ずつ探しやすくなりました。": [
+      {
+        "t": "切手アルバム",
+        "z": "集郵冊",
+        "j": "切手アルバム",
+        "e": "stamp album",
+        "r": "きってあるばむ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "国ごと",
+        "z": "按國別",
+        "j": "国ごと",
+        "e": "by country",
+        "r": "くにごと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "整理した",
+        "z": "整理好了",
+        "j": "整理した",
+        "e": "organized",
+        "r": "せいりした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "一枚ずつ",
+        "z": "每一張",
+        "j": "一枚ずつ",
+        "e": "each stamp",
+        "r": "いちまいずつ"
+      },
+      {
+        "t": "探しやすくなりました",
+        "z": "變得容易找到",
+        "j": "探しやすくなりました",
+        "e": "became easy to find",
+        "r": "さがしやすくなりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カプセルトイ自販機のハンドルを回してください。": [
+      {
+        "t": "カプセルトイ自販機",
+        "z": "扭蛋機",
+        "j": "カプセルトイ自販機",
+        "e": "capsule toy machine",
+        "r": "かぷせるといじはんき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ハンドル",
+        "z": "把手",
+        "j": "ハンドル",
+        "e": "handle",
+        "r": "はんどる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "回してください",
+        "z": "請轉動",
+        "j": "回してください",
+        "e": "please turn",
+        "r": "まわしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カプセルトイ自販機が空だったので、別の台を選びました。": [
+      {
+        "t": "カプセルトイ自販機",
+        "z": "扭蛋機",
+        "j": "カプセルトイ自販機",
+        "e": "capsule toy machine",
+        "r": "かぷせるといじはんき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "空だった",
+        "z": "已經空了",
+        "j": "空だった",
+        "e": "was empty",
+        "r": "からだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "別",
+        "z": "別的",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "台",
+        "z": "機台",
+        "j": "台",
+        "e": "machine",
+        "r": "だい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カプセルを開けました。": [
+      {
+        "t": "カプセル",
+        "z": "扭蛋膠囊",
+        "j": "カプセル",
+        "e": "toy capsule",
+        "r": "かぷせる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けました",
+        "z": "打開了",
+        "j": "開けました",
+        "e": "opened",
+        "r": "あけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "おもちゃを取り出してから、空のカプセルを回収ボックスに入れました。": [
+      {
+        "t": "おもちゃ",
+        "z": "玩具",
+        "j": "おもちゃ",
+        "e": "toy",
+        "r": "おもちゃ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取り出して",
+        "z": "取出",
+        "j": "取り出して",
+        "e": "took out",
+        "r": "とりだして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "空",
+        "z": "空的",
+        "j": "空",
+        "e": "empty",
+        "r": "から"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "カプセル",
+        "z": "膠囊",
+        "j": "カプセル",
+        "e": "capsule",
+        "r": "かぷせる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "回収ボックス",
+        "z": "回收箱",
+        "j": "回収ボックス",
+        "e": "collection box",
+        "r": "かいしゅうぼっくす"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "放進了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ミニブックを広げました。": [
+      {
+        "t": "ミニブック",
+        "z": "扭蛋款式介紹紙",
+        "j": "ミニブック",
+        "e": "capsule toy leaflet",
+        "r": "みにぶっく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "広げました",
+        "z": "攤開了",
+        "j": "広げました",
+        "e": "unfolded",
+        "r": "ひろげました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "部品が一つ足りなかったので、店員に聞く前にミニブックを確認しました。": [
+      {
+        "t": "部品",
+        "z": "零件",
+        "j": "部品",
+        "e": "part",
+        "r": "ぶひん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "一つ",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one",
+        "r": "ひとつ"
+      },
+      {
+        "t": "足りなかった",
+        "z": "缺少了",
+        "j": "足りなかった",
+        "e": "was missing",
+        "r": "たりなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "staff",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "聞く",
+        "z": "詢問",
+        "j": "聞く",
+        "e": "ask",
+        "r": "きく"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "ミニブック",
+        "z": "扭蛋款式介紹紙",
+        "j": "ミニブック",
+        "e": "capsule toy leaflet",
+        "r": "みにぶっく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "查看了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "空のカプセルを回収ボックスに入れてください。": [
+      {
+        "t": "空",
+        "z": "空的",
+        "j": "空",
+        "e": "empty",
+        "r": "から"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "カプセル",
+        "z": "膠囊",
+        "j": "カプセル",
+        "e": "capsule",
+        "r": "かぷせる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "回収ボックス",
+        "z": "空膠囊回收箱",
+        "j": "回収ボックス",
+        "e": "capsule recycling bin",
+        "r": "かいしゅうぼっくす"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れてください",
+        "z": "請放進",
+        "j": "入れてください",
+        "e": "please put in",
+        "r": "いれてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "空カプセル回収ボックスが見つからなかったので、店員に聞きました。": [
+      {
+        "t": "空カプセル回収ボックス",
+        "z": "空膠囊回收箱",
+        "j": "空カプセル回収ボックス",
+        "e": "capsule recycling bin",
+        "r": "からかぷせるかいしゅうぼっくす"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つからなかった",
+        "z": "找不到",
+        "j": "見つからなかった",
+        "e": "could not find",
+        "r": "みつからなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "member of staff",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "聞きました",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カプセルトイ専門店に入りました。": [
+      {
+        "t": "カプセルトイ専門店",
+        "z": "扭蛋專賣店",
+        "j": "カプセルトイ専門店",
+        "e": "capsule toy shop",
+        "r": "かぷせるといせんもんてん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りました",
+        "z": "走進了",
+        "j": "入りました",
+        "e": "entered",
+        "r": "はいりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カプセルトイ専門店が混んでいたので、先に入り口近くの台を見ました。": [
+      {
+        "t": "カプセルトイ専門店",
+        "z": "扭蛋專賣店",
+        "j": "カプセルトイ専門店",
+        "e": "capsule toy shop",
+        "r": "かぷせるといせんもんてん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "很擠",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "先に",
+        "z": "先",
+        "j": "先に",
+        "e": "first",
+        "r": "さきに"
+      },
+      {
+        "t": "入り口",
+        "z": "入口",
+        "j": "入り口",
+        "e": "entrance",
+        "r": "いりぐち"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "nearby",
+        "r": "ちかく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "台",
+        "z": "機台",
+        "j": "台",
+        "e": "machines",
+        "r": "だい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見ました",
+        "z": "看了",
+        "j": "見ました",
+        "e": "looked at",
+        "r": "みました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "クレーンゲーム機で一回遊びました。": [
+      {
+        "t": "クレーンゲーム機",
+        "z": "夾娃娃機",
+        "j": "クレーンゲーム機",
+        "e": "claw machine",
+        "r": "くれーんげーむき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "一回",
+        "z": "一次",
+        "j": "一回",
+        "e": "once",
+        "r": "いっかい"
+      },
+      {
+        "t": "遊びました",
+        "z": "玩了",
+        "j": "遊びました",
+        "e": "played",
+        "r": "あそびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "クレーンゲーム機の景品が引っかかったので、店員に助けを求めました。": [
+      {
+        "t": "クレーンゲーム機",
+        "z": "夾娃娃機",
+        "j": "クレーンゲーム機",
+        "e": "claw machine",
+        "r": "くれーんげーむき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "景品",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize",
+        "r": "けいひん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "引っかかった",
+        "z": "卡住了",
+        "j": "引っかかった",
+        "e": "got stuck",
+        "r": "ひっかかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "staff",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "助け",
+        "z": "協助",
+        "j": "助け",
+        "e": "help",
+        "r": "たすけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "求めました",
+        "z": "請求了",
+        "j": "求めました",
+        "e": "asked for",
+        "r": "もとめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アームが下がりました。": [
+      {
+        "t": "アーム",
+        "z": "夾娃娃機機械爪",
+        "j": "アーム",
+        "e": "arcade claw",
+        "r": "あーむ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "下がりました",
+        "z": "降下來了",
+        "j": "下がりました",
+        "e": "moved down",
+        "r": "さがりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アームの位置を合わせるために、横から景品との位置関係を確認しました。": [
+      {
+        "t": "アーム",
+        "z": "夾娃娃機機械爪",
+        "j": "アーム",
+        "e": "arcade claw",
+        "r": "あーむ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "位置",
+        "z": "位置",
+        "j": "位置",
+        "e": "position",
+        "r": "いち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "合わせる",
+        "z": "對準",
+        "j": "合わせる",
+        "e": "align",
+        "r": "あわせる"
+      },
+      {
+        "t": "ために、"
+      },
+      {
+        "t": "横",
+        "z": "側面",
+        "j": "横",
+        "e": "side",
+        "r": "よこ"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "景品",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize",
+        "r": "けいひん"
+      },
+      {
+        "t": "との"
+      },
+      {
+        "t": "位置関係",
+        "z": "相對位置",
+        "j": "位置関係",
+        "e": "relative position",
+        "r": "いちかんけい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ジョイスティックを右に倒してください。": [
+      {
+        "t": "ジョイスティック",
+        "z": "遊戲搖桿",
+        "j": "ジョイスティック",
+        "e": "arcade joystick",
+        "r": "じょいすてぃっく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "右",
+        "z": "右邊",
+        "j": "右",
+        "e": "right",
+        "r": "みぎ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "倒してください",
+        "z": "請推動",
+        "j": "倒してください",
+        "e": "please tilt",
+        "r": "たおしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ジョイスティックが動かしにくかったので、店員に伝えました。": [
+      {
+        "t": "ジョイスティック",
+        "z": "遊戲搖桿",
+        "j": "ジョイスティック",
+        "e": "arcade joystick",
+        "r": "じょいすてぃっく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "動かしにくかった",
+        "z": "很難推動",
+        "j": "動かしにくかった",
+        "e": "was hard to move",
+        "r": "うごかしにくかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "member of staff",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "伝えました",
+        "z": "告訴了",
+        "j": "伝えました",
+        "e": "told",
+        "r": "つたえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スタートボタンを見つけました。": [
+      {
+        "t": "スタートボタン",
+        "z": "遊戲開始按鈕",
+        "j": "スタートボタン",
+        "e": "arcade start button",
+        "r": "すたーとぼたん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見つけました",
+        "z": "找到了",
+        "j": "見つけました",
+        "e": "found",
+        "r": "みつけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "画面の説明を読んでから、スタートボタンを押しました。": [
+      {
+        "t": "画面",
+        "z": "畫面",
+        "j": "画面",
+        "e": "screen",
+        "r": "がめん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "説明",
+        "z": "說明",
+        "j": "説明",
+        "e": "instructions",
+        "r": "せつめい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "読んで",
+        "z": "閱讀",
+        "j": "読んで",
+        "e": "read",
+        "r": "よんで"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "スタートボタン",
+        "z": "遊戲開始按鈕",
+        "j": "スタートボタン",
+        "e": "arcade start button",
+        "r": "すたーとぼたん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "押しました",
+        "z": "按下了",
+        "j": "押しました",
+        "e": "pressed",
+        "r": "おしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "これがコイン投入口です。": [
+      {
+        "t": "これ",
+        "z": "這個",
+        "j": "これ",
+        "e": "this",
+        "r": "これ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "コイン投入口",
+        "z": "投幣口",
+        "j": "コイン投入口",
+        "e": "coin slot",
+        "r": "こいんとうにゅうぐち"
+      },
+      {
+        "t": "です。"
+      }
+    ],
+    "景品取り出し口から景品を取ってください。": [
+      {
+        "t": "景品取り出し口",
+        "z": "取物口",
+        "j": "景品取り出し口",
+        "e": "prize retrieval hatch",
+        "r": "けいひんとりだしぐち"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "景品",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize",
+        "r": "けいひん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取ってください",
+        "z": "請拿取",
+        "j": "取ってください",
+        "e": "please take",
+        "r": "とってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "景品がまだ景品取り出し口まで落ちてこなかったので、店員に確認をお願いしました。": [
+      {
+        "t": "景品",
+        "z": "獎品",
+        "j": "景品",
+        "e": "prize",
+        "r": "けいひん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "yet",
+        "r": "まだ"
+      },
+      {
+        "t": "景品取り出し口",
+        "z": "取物口",
+        "j": "景品取り出し口",
+        "e": "prize retrieval hatch",
+        "r": "けいひんとりだしぐち"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "落ちてこなかった",
+        "z": "沒有落下來",
+        "j": "落ちてこなかった",
+        "e": "had not fallen down",
+        "r": "おちてこなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "店員",
+        "z": "店員",
+        "j": "店員",
+        "e": "staff",
+        "r": "てんいん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "確認",
+        "z": "確認",
+        "j": "確認",
+        "e": "check",
+        "r": "かくにん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お願いしました",
+        "z": "請求了",
+        "j": "お願いしました",
+        "e": "asked for",
+        "r": "おねがいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "両替機はどこですか。": [
+      {
+        "t": "両替機",
+        "z": "兌幣機",
+        "j": "両替機",
+        "e": "change machine",
+        "r": "りょうがえき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "どこ",
+        "z": "哪裡",
+        "j": "どこ",
+        "e": "where",
+        "r": "どこ"
+      },
+      {
+        "t": "ですか。"
+      }
+    ],
+    "千円札しかなかったので、両替機で硬貨に替えました。": [
+      {
+        "t": "千円札",
+        "z": "千圓紙鈔",
+        "j": "千円札",
+        "e": "thousand-yen note",
+        "r": "せんえんさつ"
+      },
+      {
+        "t": "しか"
+      },
+      {
+        "t": "なかった",
+        "z": "沒有其他的",
+        "j": "なかった",
+        "e": "had no other",
+        "r": "なかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "両替機",
+        "z": "兌幣機",
+        "j": "両替機",
+        "e": "change machine",
+        "r": "りょうがえき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "硬貨",
+        "z": "硬幣",
+        "j": "硬貨",
+        "e": "coins",
+        "r": "こうか"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "替えました",
+        "z": "兌換了",
+        "j": "替えました",
+        "e": "exchanged",
+        "r": "かえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ゲーム用メダルを五枚トレーに置きました。": [
+      {
+        "t": "ゲーム用メダル",
+        "z": "遊戲代幣",
+        "j": "ゲーム用メダル",
+        "e": "arcade tokens",
+        "r": "げーむようめだる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "五枚",
+        "z": "五枚",
+        "j": "五枚",
+        "e": "five tokens",
+        "r": "ごまい"
+      },
+      {
+        "t": "トレー",
+        "z": "盤子",
+        "j": "トレー",
+        "e": "tray",
+        "r": "とれー"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置きました",
+        "z": "放了",
+        "j": "置きました",
+        "e": "put",
+        "r": "おきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このゲーム用メダルは別のゲームセンターでは使えないので、ここで使います。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "ゲーム用メダル",
+        "z": "遊戲代幣",
+        "j": "ゲーム用メダル",
+        "e": "arcade tokens",
+        "r": "げーむようめだる"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "別",
+        "z": "別的",
+        "j": "別",
+        "e": "other",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ゲームセンター",
+        "z": "遊樂場",
+        "j": "ゲームセンター",
+        "e": "arcade",
+        "r": "げーむせんたー"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "使えない",
+        "z": "不能使用",
+        "j": "使えない",
+        "e": "cannot be used",
+        "r": "つかえない"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ここ",
+        "z": "這裡",
+        "j": "ここ",
+        "e": "here",
+        "r": "ここ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "使います",
+        "z": "要使用",
+        "j": "使います",
+        "e": "will use",
+        "r": "つかいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ゲームセンターで待ち合わせました。": [
+      {
+        "t": "ゲームセンター",
+        "z": "遊樂場",
+        "j": "ゲームセンター",
+        "e": "amusement arcade",
+        "r": "げーむせんたー"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ち合わせました",
+        "z": "約好見面",
+        "j": "待ち合わせました",
+        "e": "met by arrangement",
+        "r": "まちあわせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ゲームセンターが混んでいたので、友達が来るまで外で待ちました。": [
+      {
+        "t": "ゲームセンター",
+        "z": "遊樂場",
+        "j": "ゲームセンター",
+        "e": "amusement arcade",
+        "r": "げーむせんたー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "很擠",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friends",
+        "r": "ともだち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "来る",
+        "z": "到來",
+        "j": "来る",
+        "e": "arrive",
+        "r": "くる"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "外",
+        "z": "外面",
+        "j": "外",
+        "e": "outside",
+        "r": "そと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食玩を組み立てる前に、別の袋に入ったガムを取り出しました。": [
+      {
+        "t": "食玩",
+        "z": "食玩",
+        "j": "食玩",
+        "e": "candy toy",
+        "r": "しょくがん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "組み立てる",
+        "z": "組裝",
+        "j": "組み立てる",
+        "e": "assemble",
+        "r": "くみたてる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "別",
+        "z": "另外的",
+        "j": "別",
+        "e": "separate",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "袋",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "r": "ふくろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入った",
+        "z": "裝在裡面的",
+        "j": "入った",
+        "e": "contained in",
+        "r": "はいった"
+      },
+      {
+        "t": "ガム",
+        "z": "口香糖",
+        "j": "ガム",
+        "e": "gum",
+        "r": "がむ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取り出しました",
+        "z": "取出了",
+        "j": "取り出しました",
+        "e": "took out",
+        "r": "とりだしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ミニチュアフードを小さなテーブルに置きました。": [
+      {
+        "t": "ミニチュアフード",
+        "z": "迷你食物模型",
+        "j": "ミニチュアフード",
+        "e": "miniature food model",
+        "r": "みにちゅあふーど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "小さな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "tiny",
+        "r": "ちいさな"
+      },
+      {
+        "t": "テーブル",
+        "z": "桌子",
+        "j": "テーブル",
+        "e": "table",
+        "r": "てーぶる"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置きました",
+        "z": "放了",
+        "j": "置きました",
+        "e": "placed",
+        "r": "おきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ミニチュアフードは本物のようでしたが、私のドールハウスには小さすぎました。": [
+      {
+        "t": "ミニチュアフード",
+        "z": "迷你食物模型",
+        "j": "ミニチュアフード",
+        "e": "miniature food model",
+        "r": "みにちゅあふーど"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "本物",
+        "z": "真品",
+        "j": "本物",
+        "e": "real thing",
+        "r": "ほんもの"
+      },
+      {
+        "t": "のようでしたが、"
+      },
+      {
+        "t": "私",
+        "z": "我",
+        "j": "私",
+        "e": "I",
+        "r": "わたし"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ドールハウス",
+        "z": "娃娃屋",
+        "j": "ドールハウス",
+        "e": "dollhouse",
+        "r": "どーるはうす"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "小さすぎました",
+        "z": "太小了",
+        "j": "小さすぎました",
+        "e": "was too small",
+        "r": "ちいさすぎました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アクションフィギュアの膝を曲げました。": [
+      {
+        "t": "アクションフィギュア",
+        "z": "可動公仔",
+        "j": "アクションフィギュア",
+        "e": "action figure",
+        "r": "あくしょんふぃぎゅあ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "膝",
+        "z": "膝蓋",
+        "j": "膝",
+        "e": "knees",
+        "r": "ひざ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "曲げました",
+        "z": "彎曲了",
+        "j": "曲げました",
+        "e": "bent",
+        "r": "まげました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アクションフィギュアのポーズを変える前に、関節が動く方向を確認しました。": [
+      {
+        "t": "アクションフィギュア",
+        "z": "可動公仔",
+        "j": "アクションフィギュア",
+        "e": "action figure",
+        "r": "あくしょんふぃぎゅあ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ポーズ",
+        "z": "姿勢",
+        "j": "ポーズ",
+        "e": "pose",
+        "r": "ぽーず"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "変える",
+        "z": "改變",
+        "j": "変える",
+        "e": "change",
+        "r": "かえる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "関節",
+        "z": "關節",
+        "j": "関節",
+        "e": "joints",
+        "r": "かんせつ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "動く",
+        "z": "活動",
+        "j": "動く",
+        "e": "move",
+        "r": "うごく"
+      },
+      {
+        "t": "方向",
+        "z": "方向",
+        "j": "方向",
+        "e": "direction",
+        "r": "ほうこう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドールを着せ替えました。": [
+      {
+        "t": "ドール",
+        "z": "收藏人偶",
+        "j": "ドール",
+        "e": "collectible doll",
+        "r": "どーる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着せ替えました",
+        "z": "換裝了",
+        "j": "着せ替えました",
+        "e": "changed the outfit",
+        "r": "きせかえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドールの髪は絡まりやすいので、写真を撮る前に優しくとかしました。": [
+      {
+        "t": "ドール",
+        "z": "收藏人偶",
+        "j": "ドール",
+        "e": "collectible doll",
+        "r": "どーる"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair",
+        "r": "かみ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "絡まりやすい",
+        "z": "容易打結",
+        "j": "絡まりやすい",
+        "e": "tangles easily",
+        "r": "からまりやすい"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮る",
+        "z": "拍攝",
+        "j": "撮る",
+        "e": "take",
+        "r": "とる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "優しく",
+        "z": "輕輕地",
+        "j": "優しく",
+        "e": "gently",
+        "r": "やさしく"
+      },
+      {
+        "t": "とかしました",
+        "z": "梳了",
+        "j": "とかしました",
+        "e": "brushed",
+        "r": "とかしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "コレクションシールを台紙ごと保管しました。": [
+      {
+        "t": "コレクションシール",
+        "z": "收藏貼紙",
+        "j": "コレクションシール",
+        "e": "collectible sticker",
+        "r": "これくしょんしーる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "台紙ごと",
+        "z": "連同台紙",
+        "j": "台紙ごと",
+        "e": "with its backing paper",
+        "r": "だいしごと"
+      },
+      {
+        "t": "保管しました",
+        "z": "保存了",
+        "j": "保管しました",
+        "e": "stored",
+        "r": "ほかんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "コレクションシールが思ったより大きかったので、別のアルバムのページに貼りました。": [
+      {
+        "t": "コレクションシール",
+        "z": "收藏貼紙",
+        "j": "コレクションシール",
+        "e": "collectible sticker",
+        "r": "これくしょんしーる"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "思った",
+        "z": "預期的",
+        "j": "思った",
+        "e": "expected",
+        "r": "おもった"
+      },
+      {
+        "t": "より"
+      },
+      {
+        "t": "大きかった",
+        "z": "比較大",
+        "j": "大きかった",
+        "e": "was larger",
+        "r": "おおきかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "別",
+        "z": "別的",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "アルバム",
+        "z": "相簿",
+        "j": "アルバム",
+        "e": "album",
+        "r": "あるばむ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ページ",
+        "z": "頁",
+        "j": "ページ",
+        "e": "page",
+        "r": "ぺーじ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "貼りました",
+        "z": "貼上了",
+        "j": "貼りました",
+        "e": "stuck on",
+        "r": "はりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ブロックセットで家を作りました。": [
+      {
+        "t": "ブロックセット",
+        "z": "組裝積木",
+        "j": "ブロックセット",
+        "e": "building block set",
+        "r": "ぶろっくせっと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "家",
+        "z": "房子",
+        "j": "家",
+        "e": "house",
+        "r": "いえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作りました",
+        "z": "製作了",
+        "j": "作りました",
+        "e": "built",
+        "r": "つくりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ブロックセットを色ごとに分けたら、なくなった赤い部品が見つかりました。": [
+      {
+        "t": "ブロックセット",
+        "z": "組裝積木",
+        "j": "ブロックセット",
+        "e": "building block set",
+        "r": "ぶろっくせっと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "色ごと",
+        "z": "按顏色",
+        "j": "色ごと",
+        "e": "by color",
+        "r": "いろごと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "分けたら",
+        "z": "分類後",
+        "j": "分けたら",
+        "e": "after sorting",
+        "r": "わけたら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "なくなった",
+        "z": "遺失的",
+        "j": "なくなった",
+        "e": "missing",
+        "r": "なくなった"
+      },
+      {
+        "t": "赤い",
+        "z": "紅色的",
+        "j": "赤い",
+        "e": "red",
+        "r": "あかい"
+      },
+      {
+        "t": "部品",
+        "z": "零件",
+        "j": "部品",
+        "e": "piece",
+        "r": "ぶひん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つかりました",
+        "z": "找到了",
+        "j": "見つかりました",
+        "e": "was found",
+        "r": "みつかりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "コイン投入口に硬貨が入らなかったので、大きさを確認しました。": [
+      {
+        "t": "コイン投入口",
+        "z": "投幣口",
+        "j": "コイン投入口",
+        "e": "coin slot",
+        "r": "こいんとうにゅうぐち"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "硬貨",
+        "z": "硬幣",
+        "j": "硬貨",
+        "e": "coin",
+        "r": "こうか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "入らなかった",
+        "z": "放不進去",
+        "j": "入らなかった",
+        "e": "would not go in",
+        "r": "はいらなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "大きさ",
+        "z": "大小",
+        "j": "大きさ",
+        "e": "size",
+        "r": "おおきさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "店で食玩を一つ選びました。": [
+      {
+        "t": "店",
+        "z": "店",
+        "j": "店",
+        "e": "shop",
+        "r": "みせ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "食玩",
+        "z": "食玩",
+        "j": "食玩",
+        "e": "candy toy",
+        "r": "しょくがん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一つ",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one",
+        "r": "ひとつ"
+      },
+      {
+        "t": "選びました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

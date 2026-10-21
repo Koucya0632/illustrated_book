@@ -1,8 +1,8 @@
 # 收藏型娛樂系列（2026-10-21，擴充版）
 
-狀態：**本地準備完成，尚未正式發布**。本次依確認追加 20 詞，整批為 32 詞。這份計畫取代原本 12 詞／121 個素材的候選計畫；原始不可變計畫與快照仍保留於 output/collecting-hobbies-12-word-superseded/。
+狀態：**正式資料庫及媒體已發布，程式碼已提交；部署與公開回應的最終結果以 release-ledger.json 為準**。本次依確認追加 20 詞，整批為 32 詞。這份計畫取代原本 12 詞／121 個素材的候選計畫；原始不可變計畫與快照仍保留於 output/collecting-hobbies-12-word-superseded/。
 
-目前正式主圖鑑的唯讀預檢為 983 詞。若本批完整發布且沒有其他變動，將是 1015 詞；目前正式數量並未增加。
+正式主圖鑑由發布前的 983 詞增至 1,015 詞，新增 32 詞。
 
 本地交付：32 詞、96 筆三語釋義、64 句英日繁中例句、128 個英日句子版本（1127 個完整詞塊）、32 張詞圖＋1 張分類封面、288 段音檔。正式發布計畫共 **321 個媒體物件**。
 
@@ -12,53 +12,53 @@
 
 | 繁中 | English | 日本語 | 讀音 |
 | --- | --- | --- | --- |
-| 集換式卡牌 | trading card | トレーディングカード | とれーでぃんぐかーど |
-| 卡牌擴充包 | booster pack | 拡張パック | かくちょうぱっく |
-| 牌組收納盒 | deck box | デッキケース | でっきけーす |
-| 卡牌對戰墊 | card playmat | プレイマット | ぷれいまっと |
-| 塑膠組裝模型 | plastic model kit | プラモデル | ぷらもでる |
-| 模型零件框 | model sprue | ランナー | らんなー |
-| 模型剪鉗 | model nippers | 模型用ニッパー | もけいようにっぱー |
-| 壓鑄模型車 | die-cast car | ダイキャストミニカー | だいきゃすとみにかー |
+| 集換式卡牌 | trading card | トレーディングカード | トレーディングカード |
+| 卡牌擴充包 | booster pack | 拡張パック | かくちょうパック |
+| 牌組收納盒 | deck box | デッキケース | デッキケース |
+| 卡牌對戰墊 | card playmat | プレイマット | プレイマット |
+| 塑膠組裝模型 | plastic model kit | プラモデル | プラモデル |
+| 模型零件框 | model sprue | ランナー | ランナー |
+| 模型剪鉗 | model nippers | 模型用ニッパー | もけいようニッパー |
+| 壓鑄模型車 | die-cast car | ダイキャストミニカー | ダイキャストミニカー |
 | 鐵道模型 | model train | 鉄道模型 | てつどうもけい |
-| 娃娃屋 | dollhouse | ドールハウス | どーるはうす |
+| 娃娃屋 | dollhouse | ドールハウス | ドールハウス |
 | 紀念幣 | commemorative coin | 記念硬貨 | きねんこうか |
-| 集郵冊 | stamp album | 切手アルバム | きってあるばむ |
+| 集郵冊 | stamp album | 切手アルバム | きってアルバム |
 
 ## 本次追加：扭蛋相關
 
 | 繁中 | English | 日本語 | 讀音 |
 | --- | --- | --- | --- |
-| 扭蛋機 | capsule toy machine | カプセルトイ自販機 | かぷせるといじはんき |
-| 扭蛋膠囊 | toy capsule | カプセル | かぷせる |
-| 扭蛋款式介紹紙 | capsule toy leaflet | ミニブック | みにぶっく |
-| 空膠囊回收箱 | capsule recycling bin | 空カプセル回収ボックス | からかぷせるかいしゅうぼっくす |
-| 扭蛋專賣店 | capsule toy shop | カプセルトイ専門店 | かぷせるといせんもんてん |
+| 扭蛋機 | capsule toy machine | カプセルトイ自販機 | カプセルトイじはんき |
+| 扭蛋膠囊 | toy capsule | カプセル | カプセル |
+| 扭蛋款式介紹紙 | capsule toy leaflet | ミニブック | ミニブック |
+| 空膠囊回收箱 | capsule recycling bin | 空カプセル回収ボックス | からカプセルかいしゅうボックス |
+| 扭蛋專賣店 | capsule toy shop | カプセルトイ専門店 | カプセルトイせんもんてん |
 
 ## 本次追加：夾娃娃與遊樂場
 
 | 繁中 | English | 日本語 | 讀音 |
 | --- | --- | --- | --- |
-| 夾娃娃機 | claw machine | クレーンゲーム機 | くれーんげーむき |
-| 夾娃娃機機械爪 | arcade claw | アーム | あーむ |
-| 遊戲搖桿 | arcade joystick | ジョイスティック | じょいすてぃっく |
-| 遊戲開始按鈕 | arcade start button | スタートボタン | すたーとぼたん |
-| 投幣口 | coin slot | コイン投入口 | こいんとうにゅうぐち |
+| 夾娃娃機 | claw machine | クレーンゲーム機 | クレーンゲームき |
+| 夾娃娃機機械爪 | arcade claw | アーム | アーム |
+| 遊戲搖桿 | arcade joystick | ジョイスティック | ジョイスティック |
+| 遊戲開始按鈕 | arcade start button | スタートボタン | スタートボタン |
+| 投幣口 | coin slot | コイン投入口 | コインとうにゅうぐち |
 | 取物口 | prize retrieval hatch | 景品取り出し口 | けいひんとりだしぐち |
 | 兌幣機 | change machine | 両替機 | りょうがえき |
-| 遊戲代幣 | arcade token | ゲーム用メダル | げーむようめだる |
-| 遊樂場 | amusement arcade | ゲームセンター | げーむせんたー |
+| 遊戲代幣 | arcade token | ゲーム用メダル | ゲームようメダル |
+| 遊樂場 | amusement arcade | ゲームセンター | ゲームセンター |
 
 ## 本次追加：收藏玩具
 
 | 繁中 | English | 日本語 | 讀音 |
 | --- | --- | --- | --- |
 | 食玩 | candy toy | 食玩 | しょくがん |
-| 迷你食物模型 | miniature food model | ミニチュアフード | みにちゅあふーど |
-| 可動公仔 | action figure | アクションフィギュア | あくしょんふぃぎゅあ |
-| 收藏人偶 | collectible doll | ドール | どーる |
-| 收藏貼紙 | collectible sticker | コレクションシール | これくしょんしーる |
-| 組裝積木 | building block set | ブロックセット | ぶろっくせっと |
+| 迷你食物模型 | miniature food model | ミニチュアフード | ミニチュアフード |
+| 可動公仔 | action figure | アクションフィギュア | アクションフィギュア |
+| 收藏人偶 | collectible doll | ドール | ドール |
+| 收藏貼紙 | collectible sticker | コレクションシール | コレクションシール |
+| 組裝積木 | building block set | ブロックセット | ブロックセット |
 
 ## 圖片預覽
 
@@ -75,13 +75,13 @@
 - 33 張原圖及選定修正版均逐張檢視，正式 WebP 為 1024×1024，具白底留白、不同內容雜湊與不同 Storage 路徑。
 - 96 段主詞、192 段例句音檔，涵蓋 en-US、en-GB、ja-JP；新增 180 段，原 108 段來源相符而沿用。來源文字、owner/locale、位元組、SHA-256、MP3 metadata 及完整解碼通過。未宣稱逐段人工聆聽。
 - 101 項相關測試、TypeScript 檢查、正式建置與差異格式檢查通過。一般 migration、未發布類別與新 ID 防護沿用動態完整集合，現為全部 32 詞；缺資料庫、資料庫錯誤、空查詢與同步查詢仍不曝光候選。
-- 正式 DB SELECT-only 預檢及發布器預設 dry-run 通過：候選 ID、英日詞頭、分類／翻譯及句子均無衝突。R2 只讀列舉通過，沒有上傳。
+- 正式 DB SELECT-only 預檢及發布器預設 dry-run 通過：候選 ID、英日詞頭、分類／翻譯及句子均無衝突。發布前 R2 只讀列舉通過；其後已依授權完成 create-only 上傳。
 
-## 等待正式發布後驗證的層
+## 正式發布後驗證
 
-正式資料庫完整內容、遠端 WebP／MP3 位元組、英文與日文學習方向 API、實際 iOS 解碼、分類及明細路由、普通與破快取回應均尚待發布後驗證。部署與裝置快取未檢查。這些狀態分開記錄在 release-ledger.json，本地通過不代表已上線。
+正式資料庫完整內容及全部遠端 WebP／MP3 位元組與完整 MP3 frame 檢查已通過；英文與日文學習方向 API、實際 iOS 解碼、分類及明細路由、普通與破快取回應正在驗證。部署與裝置快取未檢查。這些狀態分開記錄在 release-ledger.json，本地通過不代表已上線。
 
-已執行外部動作只有 ImageGen 生成／修圖、Google TTS 產生本地音檔、正式 DB SELECT 與 Storage 列舉。**正式上傳 0、正式 DB 寫入 0、commit 0、deploy 0**。iOS 工作樹未修改。
+已執行 ImageGen 生成／修圖、Google TTS 產生音檔、正式 DB 與 Storage 預檢，以及獲授權的發布動作。**正式上傳 321 個物件、正式 DB 已以單一交易發布 32 詞；程式碼已提交，deploy 進行中**。iOS 工作樹未修改。
 
 ## 發布計畫與檢查證據
 
@@ -95,7 +95,7 @@
 
 計畫檔 SHA-256：`59fd22395a4a4c8be0cd5a347e1acb5fa27faae976f96e12779267e0b0097d5e`。內容 digest：`20cce9c693f9caba14d4c998cc734200e9e8cdb2b42b812d476a374080799752`。
 
-正式套用前需明確授權媒體上傳及 DB 發布，重新執行唯讀預檢並比對 DB／Storage 指紋，沿用同一份可恢復 manifest。先取得真正的 Postgres example IDs，再構成例句音檔路徑；以 create-only 上傳，完整重抓並驗證全部 321 個素材，最後以單一交易新增相依內容與發布全部 32 詞。提交與部署仍須分別授權。
+已取得上傳、DB 發布、提交及部署授權。正式套用流程為：重新執行唯讀預檢並比對 DB／Storage 指紋，沿用同一份可恢復 manifest。先取得真正的 Postgres example IDs，再構成例句音檔路徑；以 create-only 上傳，完整重抓並驗證全部 321 個素材，最後以單一交易新增相依內容與發布全部 32 詞。內容提交為 `2c51b97ac81a3113b1f6f1ed1504a89f2aca7bb3`，後續讀音修正另以新提交保存；自動正式部署的 commit 與最終結果記錄在 release-ledger.json。
 
 ## 全部例句
 
@@ -466,3 +466,24 @@
 - [gashapon.jp](https://gashapon.jp/news/info_180724.html)
 - [www.bandai.co.jp](https://www.bandai.co.jp/candy/products/2025/4570117922015000.html)
 - [www.kotobukiya.co.jp](https://www.kotobukiya.co.jp/series/action-figure/)
+
+## 正式發布記錄
+
+- 2026-10-21：321 個不可變物件上傳並重抓驗證後，以單一交易發布完整 32 詞。
+- 主發布 commit：`2c51b97`。
+- [可恢復發布 manifest](../output/collecting-hobbies-publish-prep/apply-manifest-2026-10-21T04-15-29-348Z.json)
+- [發布後資料庫比對](../output/collecting-hobbies-postrelease/database-verification.json)
+- [發布後例句與個別語意覆核](../output/collecting-hobbies-postrelease/series-example-audit/audit.json)
+- [全部 321 個遠端素材驗證](../output/collecting-hobbies-postrelease/remote-media-verification.json)
+- 全庫 1,015 詞的結構檢查通過；本批語意覆核 32 詞／64 例句通過。未宣稱重新完成其他 983 詞的語意覆核。
+
+## 發布後讀音修正
+
+公開 API 檢查發現原候選把片假名讀音統一轉成平假名。已逐詞覆核並修正 27 詞：純假名詞保留字形，混合詞只替漢字注音，假名段的 ruby 為 null。例句、句中完整假名讀音、詞義及音檔來源文字均相同。原始不可變發布計畫及 apply manifest 保留原貌；修正以獨立清單及單一、比對舊值的資料庫交易記錄。
+
+- [讀音修正清單](/Users/rex/Desktop/tuji/tuji-web/data/collecting-hobbies-reading-correction-2026-10.json)
+- [讀音修正正式交易紀錄](/Users/rex/Desktop/tuji/tuji-web/output/collecting-hobbies-postrelease/reading-correction-applied.json)
+- [API／快取／路由驗證](/Users/rex/Desktop/tuji/tuji-web/output/collecting-hobbies-postrelease/api-verification.json)
+- [實際 iOS 型別解碼驗證](/Users/rex/Desktop/tuji/tuji-web/output/collecting-hobbies-postrelease/ios-decode-verification.json)
+
+發布後讀音修正的 46 項相關測試、型別檢查及本地正式建置通過。API 檢查保留全目錄的發現，與本批 32 詞結果分開，不將既有目錄或裝置快取宣稱為全數通過。

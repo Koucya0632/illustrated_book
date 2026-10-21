@@ -1,5 +1,6 @@
 import type { CEFRLevel, Definition } from "@/types";
 import candidate from "../data/collecting-hobbies-series-2026-10.json";
+import readingCorrection from "../data/collecting-hobbies-reading-correction-2026-10.json";
 import type { MainWordCorrection } from "./main-word-corrections";
 import type { MainWordExamplePair } from "./main-word-example-pairs";
 
@@ -46,7 +47,7 @@ export const MAIN_WORD_COLLECTING_HOBBIES_CORRECTIONS: MainWordCorrection[] =
         id,
         oldJa: jaDefinition,
         ja,
-        oldJaReading: jaReading,
+        oldJaReading: readingCorrection.entries.find((entry) => entry.wordId === id)?.before.reading ?? jaReading,
         jaReading,
         jaReadingSegments,
         jaDefinition: { old: jaDefinition, value: jaDefinition },

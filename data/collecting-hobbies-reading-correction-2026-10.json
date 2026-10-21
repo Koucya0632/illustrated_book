@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "series": "collecting-hobbies",
+  "basePlanSha256": "59fd22395a4a4c8be0cd5a347e1acb5fa27faae976f96e12779267e0b0097d5e",
+  "scope": "Headword Japanese reading, pronunciation and furigana only. Spoken texts, examples, sentence readings, media and immutable original plan stay unchanged.",
+  "entries": [
+    {
+      "wordId": "trading-card",
+      "term": "トレーディングカード",
+      "before": {
+        "reading": "とれーでぃんぐかーど",
+        "pronunciation": "とれーでぃんぐかーど",
+        "readingSegments": [
+          {
+            "text": "トレーディングカード",
+            "ruby": "とれーでぃんぐかーど"
+          }
+        ]
+      },
+      "after": {
+        "reading": "トレーディングカード",
+        "pronunciation": "トレーディングカード",
+        "readingSegments": [
+          {
+            "text": "トレーディングカード",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「トレーディングカード」全為假名，讀音直接保留「トレーディングカード」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "booster-pack",
+      "term": "拡張パック",
+      "before": {
+        "reading": "かくちょうぱっく",
+        "pronunciation": "かくちょうぱっく",
+        "readingSegments": [
+          {
+            "text": "拡張パック",
+            "ruby": "かくちょうぱっく"
+          }
+        ]
+      },
+      "after": {
+        "reading": "かくちょうパック",
+        "pronunciation": "かくちょうパック",
+        "readingSegments": [
+          {
+            "text": "拡張",
+            "ruby": "かくちょう"
+          },
+          {
+            "text": "パック",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「拡張パック」只對「拡張＝かくちょう」注音；「パック」保留原假名。"
+    },
+    {
+      "wordId": "deck-box",
+      "term": "デッキケース",
+      "before": {
+        "reading": "でっきけーす",
+        "pronunciation": "でっきけーす",
+        "readingSegments": [
+          {
+            "text": "デッキケース",
+            "ruby": "でっきけーす"
+          }
+        ]
+      },
+      "after": {
+        "reading": "デッキケース",
+        "pronunciation": "デッキケース",
+        "readingSegments": [
+          {
+            "text": "デッキケース",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「デッキケース」全為假名，讀音直接保留「デッキケース」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "card-playmat",
+      "term": "プレイマット",
+      "before": {
+        "reading": "ぷれいまっと",
+        "pronunciation": "ぷれいまっと",
+        "readingSegments": [
+          {
+            "text": "プレイマット",
+            "ruby": "ぷれいまっと"
+          }
+        ]
+      },
+      "after": {
+        "reading": "プレイマット",
+        "pronunciation": "プレイマット",
+        "readingSegments": [
+          {
+            "text": "プレイマット",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「プレイマット」全為假名，讀音直接保留「プレイマット」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "plastic-model-kit",
+      "term": "プラモデル",
+      "before": {
+        "reading": "ぷらもでる",
+        "pronunciation": "ぷらもでる",
+        "readingSegments": [
+          {
+            "text": "プラモデル",
+            "ruby": "ぷらもでる"
+          }
+        ]
+      },
+      "after": {
+        "reading": "プラモデル",
+        "pronunciation": "プラモデル",
+        "readingSegments": [
+          {
+            "text": "プラモデル",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「プラモデル」全為假名，讀音直接保留「プラモデル」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "model-sprue",
+      "term": "ランナー",
+      "before": {
+        "reading": "らんなー",
+        "pronunciation": "らんなー",
+        "readingSegments": [
+          {
+            "text": "ランナー",
+            "ruby": "らんなー"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ランナー",
+        "pronunciation": "ランナー",
+        "readingSegments": [
+          {
+            "text": "ランナー",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ランナー」全為假名，讀音直接保留「ランナー」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "model-nippers",
+      "term": "模型用ニッパー",
+      "before": {
+        "reading": "もけいようにっぱー",
+        "pronunciation": "もけいようにっぱー",
+        "readingSegments": [
+          {
+            "text": "模型用ニッパー",
+            "ruby": "もけいようにっぱー"
+          }
+        ]
+      },
+      "after": {
+        "reading": "もけいようニッパー",
+        "pronunciation": "もけいようニッパー",
+        "readingSegments": [
+          {
+            "text": "模型用",
+            "ruby": "もけいよう"
+          },
+          {
+            "text": "ニッパー",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「模型用ニッパー」只對「模型用＝もけいよう」注音；「ニッパー」保留原假名。"
+    },
+    {
+      "wordId": "die-cast-car",
+      "term": "ダイキャストミニカー",
+      "before": {
+        "reading": "だいきゃすとみにかー",
+        "pronunciation": "だいきゃすとみにかー",
+        "readingSegments": [
+          {
+            "text": "ダイキャストミニカー",
+            "ruby": "だいきゃすとみにかー"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ダイキャストミニカー",
+        "pronunciation": "ダイキャストミニカー",
+        "readingSegments": [
+          {
+            "text": "ダイキャストミニカー",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ダイキャストミニカー」全為假名，讀音直接保留「ダイキャストミニカー」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "dollhouse",
+      "term": "ドールハウス",
+      "before": {
+        "reading": "どーるはうす",
+        "pronunciation": "どーるはうす",
+        "readingSegments": [
+          {
+            "text": "ドールハウス",
+            "ruby": "どーるはうす"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ドールハウス",
+        "pronunciation": "ドールハウス",
+        "readingSegments": [
+          {
+            "text": "ドールハウス",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ドールハウス」全為假名，讀音直接保留「ドールハウス」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "stamp-album",
+      "term": "切手アルバム",
+      "before": {
+        "reading": "きってあるばむ",
+        "pronunciation": "きってあるばむ",
+        "readingSegments": [
+          {
+            "text": "切手アルバム",
+            "ruby": "きってあるばむ"
+          }
+        ]
+      },
+      "after": {
+        "reading": "きってアルバム",
+        "pronunciation": "きってアルバム",
+        "readingSegments": [
+          {
+            "text": "切手",
+            "ruby": "きって"
+          },
+          {
+            "text": "アルバム",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「切手アルバム」只對「切手＝きって」注音；「アルバム」保留原假名。"
+    },
+    {
+      "wordId": "capsule-toy-machine",
+      "term": "カプセルトイ自販機",
+      "before": {
+        "reading": "かぷせるといじはんき",
+        "pronunciation": "かぷせるといじはんき",
+        "readingSegments": [
+          {
+            "text": "カプセルトイ自販機",
+            "ruby": "かぷせるといじはんき"
+          }
+        ]
+      },
+      "after": {
+        "reading": "カプセルトイじはんき",
+        "pronunciation": "カプセルトイじはんき",
+        "readingSegments": [
+          {
+            "text": "カプセルトイ",
+            "ruby": null
+          },
+          {
+            "text": "自販機",
+            "ruby": "じはんき"
+          }
+        ]
+      },
+      "reason": "「カプセルトイ自販機」只對「自販機＝じはんき」注音；「カプセルトイ」保留原假名。"
+    },
+    {
+      "wordId": "toy-capsule",
+      "term": "カプセル",
+      "before": {
+        "reading": "かぷせる",
+        "pronunciation": "かぷせる",
+        "readingSegments": [
+          {
+            "text": "カプセル",
+            "ruby": "かぷせる"
+          }
+        ]
+      },
+      "after": {
+        "reading": "カプセル",
+        "pronunciation": "カプセル",
+        "readingSegments": [
+          {
+            "text": "カプセル",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「カプセル」全為假名，讀音直接保留「カプセル」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "capsule-toy-leaflet",
+      "term": "ミニブック",
+      "before": {
+        "reading": "みにぶっく",
+        "pronunciation": "みにぶっく",
+        "readingSegments": [
+          {
+            "text": "ミニブック",
+            "ruby": "みにぶっく"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ミニブック",
+        "pronunciation": "ミニブック",
+        "readingSegments": [
+          {
+            "text": "ミニブック",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ミニブック」全為假名，讀音直接保留「ミニブック」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "capsule-recycling-bin",
+      "term": "空カプセル回収ボックス",
+      "before": {
+        "reading": "からかぷせるかいしゅうぼっくす",
+        "pronunciation": "からかぷせるかいしゅうぼっくす",
+        "readingSegments": [
+          {
+            "text": "空カプセル回収ボックス",
+            "ruby": "からかぷせるかいしゅうぼっくす"
+          }
+        ]
+      },
+      "after": {
+        "reading": "からカプセルかいしゅうボックス",
+        "pronunciation": "からカプセルかいしゅうボックス",
+        "readingSegments": [
+          {
+            "text": "空",
+            "ruby": "から"
+          },
+          {
+            "text": "カプセル",
+            "ruby": null
+          },
+          {
+            "text": "回収",
+            "ruby": "かいしゅう"
+          },
+          {
+            "text": "ボックス",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「空カプセル回収ボックス」只對「空＝から」、「回収＝かいしゅう」注音；「カプセル」、「ボックス」保留原假名。"
+    },
+    {
+      "wordId": "capsule-toy-shop",
+      "term": "カプセルトイ専門店",
+      "before": {
+        "reading": "かぷせるといせんもんてん",
+        "pronunciation": "かぷせるといせんもんてん",
+        "readingSegments": [
+          {
+            "text": "カプセルトイ専門店",
+            "ruby": "かぷせるといせんもんてん"
+          }
+        ]
+      },
+      "after": {
+        "reading": "カプセルトイせんもんてん",
+        "pronunciation": "カプセルトイせんもんてん",
+        "readingSegments": [
+          {
+            "text": "カプセルトイ",
+            "ruby": null
+          },
+          {
+            "text": "専門店",
+            "ruby": "せんもんてん"
+          }
+        ]
+      },
+      "reason": "「カプセルトイ専門店」只對「専門店＝せんもんてん」注音；「カプセルトイ」保留原假名。"
+    },
+    {
+      "wordId": "claw-machine",
+      "term": "クレーンゲーム機",
+      "before": {
+        "reading": "くれーんげーむき",
+        "pronunciation": "くれーんげーむき",
+        "readingSegments": [
+          {
+            "text": "クレーンゲーム機",
+            "ruby": "くれーんげーむき"
+          }
+        ]
+      },
+      "after": {
+        "reading": "クレーンゲームき",
+        "pronunciation": "クレーンゲームき",
+        "readingSegments": [
+          {
+            "text": "クレーンゲーム",
+            "ruby": null
+          },
+          {
+            "text": "機",
+            "ruby": "き"
+          }
+        ]
+      },
+      "reason": "「クレーンゲーム機」只對「機＝き」注音；「クレーンゲーム」保留原假名。"
+    },
+    {
+      "wordId": "arcade-claw",
+      "term": "アーム",
+      "before": {
+        "reading": "あーむ",
+        "pronunciation": "あーむ",
+        "readingSegments": [
+          {
+            "text": "アーム",
+            "ruby": "あーむ"
+          }
+        ]
+      },
+      "after": {
+        "reading": "アーム",
+        "pronunciation": "アーム",
+        "readingSegments": [
+          {
+            "text": "アーム",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「アーム」全為假名，讀音直接保留「アーム」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "arcade-joystick",
+      "term": "ジョイスティック",
+      "before": {
+        "reading": "じょいすてぃっく",
+        "pronunciation": "じょいすてぃっく",
+        "readingSegments": [
+          {
+            "text": "ジョイスティック",
+            "ruby": "じょいすてぃっく"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ジョイスティック",
+        "pronunciation": "ジョイスティック",
+        "readingSegments": [
+          {
+            "text": "ジョイスティック",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ジョイスティック」全為假名，讀音直接保留「ジョイスティック」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "arcade-start-button",
+      "term": "スタートボタン",
+      "before": {
+        "reading": "すたーとぼたん",
+        "pronunciation": "すたーとぼたん",
+        "readingSegments": [
+          {
+            "text": "スタートボタン",
+            "ruby": "すたーとぼたん"
+          }
+        ]
+      },
+      "after": {
+        "reading": "スタートボタン",
+        "pronunciation": "スタートボタン",
+        "readingSegments": [
+          {
+            "text": "スタートボタン",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「スタートボタン」全為假名，讀音直接保留「スタートボタン」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "coin-slot",
+      "term": "コイン投入口",
+      "before": {
+        "reading": "こいんとうにゅうぐち",
+        "pronunciation": "こいんとうにゅうぐち",
+        "readingSegments": [
+          {
+            "text": "コイン投入口",
+            "ruby": "こいんとうにゅうぐち"
+          }
+        ]
+      },
+      "after": {
+        "reading": "コインとうにゅうぐち",
+        "pronunciation": "コインとうにゅうぐち",
+        "readingSegments": [
+          {
+            "text": "コイン",
+            "ruby": null
+          },
+          {
+            "text": "投入口",
+            "ruby": "とうにゅうぐち"
+          }
+        ]
+      },
+      "reason": "「コイン投入口」只對「投入口＝とうにゅうぐち」注音；「コイン」保留原假名。"
+    },
+    {
+      "wordId": "arcade-token",
+      "term": "ゲーム用メダル",
+      "before": {
+        "reading": "げーむようめだる",
+        "pronunciation": "げーむようめだる",
+        "readingSegments": [
+          {
+            "text": "ゲーム用メダル",
+            "ruby": "げーむようめだる"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ゲームようメダル",
+        "pronunciation": "ゲームようメダル",
+        "readingSegments": [
+          {
+            "text": "ゲーム",
+            "ruby": null
+          },
+          {
+            "text": "用",
+            "ruby": "よう"
+          },
+          {
+            "text": "メダル",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ゲーム用メダル」只對「用＝よう」注音；「ゲーム」、「メダル」保留原假名。"
+    },
+    {
+      "wordId": "amusement-arcade",
+      "term": "ゲームセンター",
+      "before": {
+        "reading": "げーむせんたー",
+        "pronunciation": "げーむせんたー",
+        "readingSegments": [
+          {
+            "text": "ゲームセンター",
+            "ruby": "げーむせんたー"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ゲームセンター",
+        "pronunciation": "ゲームセンター",
+        "readingSegments": [
+          {
+            "text": "ゲームセンター",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ゲームセンター」全為假名，讀音直接保留「ゲームセンター」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "miniature-food-model",
+      "term": "ミニチュアフード",
+      "before": {
+        "reading": "みにちゅあふーど",
+        "pronunciation": "みにちゅあふーど",
+        "readingSegments": [
+          {
+            "text": "ミニチュアフード",
+            "ruby": "みにちゅあふーど"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ミニチュアフード",
+        "pronunciation": "ミニチュアフード",
+        "readingSegments": [
+          {
+            "text": "ミニチュアフード",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ミニチュアフード」全為假名，讀音直接保留「ミニチュアフード」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "action-figure",
+      "term": "アクションフィギュア",
+      "before": {
+        "reading": "あくしょんふぃぎゅあ",
+        "pronunciation": "あくしょんふぃぎゅあ",
+        "readingSegments": [
+          {
+            "text": "アクションフィギュア",
+            "ruby": "あくしょんふぃぎゅあ"
+          }
+        ]
+      },
+      "after": {
+        "reading": "アクションフィギュア",
+        "pronunciation": "アクションフィギュア",
+        "readingSegments": [
+          {
+            "text": "アクションフィギュア",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「アクションフィギュア」全為假名，讀音直接保留「アクションフィギュア」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "collectible-doll",
+      "term": "ドール",
+      "before": {
+        "reading": "どーる",
+        "pronunciation": "どーる",
+        "readingSegments": [
+          {
+            "text": "ドール",
+            "ruby": "どーる"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ドール",
+        "pronunciation": "ドール",
+        "readingSegments": [
+          {
+            "text": "ドール",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ドール」全為假名，讀音直接保留「ドール」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "collectible-sticker",
+      "term": "コレクションシール",
+      "before": {
+        "reading": "これくしょんしーる",
+        "pronunciation": "これくしょんしーる",
+        "readingSegments": [
+          {
+            "text": "コレクションシール",
+            "ruby": "これくしょんしーる"
+          }
+        ]
+      },
+      "after": {
+        "reading": "コレクションシール",
+        "pronunciation": "コレクションシール",
+        "readingSegments": [
+          {
+            "text": "コレクションシール",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「コレクションシール」全為假名，讀音直接保留「コレクションシール」，不另轉平假名或重複注音。"
+    },
+    {
+      "wordId": "building-block-set",
+      "term": "ブロックセット",
+      "before": {
+        "reading": "ぶろっくせっと",
+        "pronunciation": "ぶろっくせっと",
+        "readingSegments": [
+          {
+            "text": "ブロックセット",
+            "ruby": "ぶろっくせっと"
+          }
+        ]
+      },
+      "after": {
+        "reading": "ブロックセット",
+        "pronunciation": "ブロックセット",
+        "readingSegments": [
+          {
+            "text": "ブロックセット",
+            "ruby": null
+          }
+        ]
+      },
+      "reason": "「ブロックセット」全為假名，讀音直接保留「ブロックセット」，不另轉平假名或重複注音。"
+    }
+  ]
+}

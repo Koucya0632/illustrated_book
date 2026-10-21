@@ -73,11 +73,11 @@
       ],
       "relatedWords": [],
       "ja": "トレーディングカード",
-      "jaReading": "とれーでぃんぐかーど",
+      "jaReading": "トレーディングカード",
       "jaReadingSegments": [
         {
           "text": "トレーディングカード",
-          "ruby": "とれーでぃんぐかーど"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/trading-card-v1-d9bb9a74e853.webp"
@@ -124,11 +124,15 @@
       ],
       "relatedWords": [],
       "ja": "拡張パック",
-      "jaReading": "かくちょうぱっく",
+      "jaReading": "かくちょうパック",
       "jaReadingSegments": [
         {
-          "text": "拡張パック",
-          "ruby": "かくちょうぱっく"
+          "text": "拡張",
+          "ruby": "かくちょう"
+        },
+        {
+          "text": "パック",
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/booster-pack-v1-b85bebb83ee9.webp"
@@ -175,11 +179,11 @@
       ],
       "relatedWords": [],
       "ja": "デッキケース",
-      "jaReading": "でっきけーす",
+      "jaReading": "デッキケース",
       "jaReadingSegments": [
         {
           "text": "デッキケース",
-          "ruby": "でっきけーす"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/deck-box-v1-7961e0af36d1.webp"
@@ -226,11 +230,11 @@
       ],
       "relatedWords": [],
       "ja": "プレイマット",
-      "jaReading": "ぷれいまっと",
+      "jaReading": "プレイマット",
       "jaReadingSegments": [
         {
           "text": "プレイマット",
-          "ruby": "ぷれいまっと"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/card-playmat-v1-4d8bb07c3ba2.webp"
@@ -277,11 +281,11 @@
       ],
       "relatedWords": [],
       "ja": "プラモデル",
-      "jaReading": "ぷらもでる",
+      "jaReading": "プラモデル",
       "jaReadingSegments": [
         {
           "text": "プラモデル",
-          "ruby": "ぷらもでる"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/plastic-model-kit-v1-e19c844c6ee8.webp"
@@ -328,11 +332,11 @@
       ],
       "relatedWords": [],
       "ja": "ランナー",
-      "jaReading": "らんなー",
+      "jaReading": "ランナー",
       "jaReadingSegments": [
         {
           "text": "ランナー",
-          "ruby": "らんなー"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/model-sprue-v1-048206d97662.webp"
@@ -379,11 +383,15 @@
       ],
       "relatedWords": [],
       "ja": "模型用ニッパー",
-      "jaReading": "もけいようにっぱー",
+      "jaReading": "もけいようニッパー",
       "jaReadingSegments": [
         {
-          "text": "模型用ニッパー",
-          "ruby": "もけいようにっぱー"
+          "text": "模型用",
+          "ruby": "もけいよう"
+        },
+        {
+          "text": "ニッパー",
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/model-nippers-v1-4c20bd234d18.webp"
@@ -430,11 +438,11 @@
       ],
       "relatedWords": [],
       "ja": "ダイキャストミニカー",
-      "jaReading": "だいきゃすとみにかー",
+      "jaReading": "ダイキャストミニカー",
       "jaReadingSegments": [
         {
           "text": "ダイキャストミニカー",
-          "ruby": "だいきゃすとみにかー"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/die-cast-car-v1-adc09e622d85.webp"
@@ -532,11 +540,11 @@
       ],
       "relatedWords": [],
       "ja": "ドールハウス",
-      "jaReading": "どーるはうす",
+      "jaReading": "ドールハウス",
       "jaReadingSegments": [
         {
           "text": "ドールハウス",
-          "ruby": "どーるはうす"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/dollhouse-v1-86ec16344fac.webp"
@@ -634,11 +642,15 @@
       ],
       "relatedWords": [],
       "ja": "切手アルバム",
-      "jaReading": "きってあるばむ",
+      "jaReading": "きってアルバム",
       "jaReadingSegments": [
         {
-          "text": "切手アルバム",
-          "ruby": "きってあるばむ"
+          "text": "切手",
+          "ruby": "きって"
+        },
+        {
+          "text": "アルバム",
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/stamp-album-v1-1de703c70193.webp"
@@ -685,11 +697,15 @@
       ],
       "relatedWords": [],
       "ja": "カプセルトイ自販機",
-      "jaReading": "かぷせるといじはんき",
+      "jaReading": "カプセルトイじはんき",
       "jaReadingSegments": [
         {
-          "text": "カプセルトイ自販機",
-          "ruby": "かぷせるといじはんき"
+          "text": "カプセルトイ",
+          "ruby": null
+        },
+        {
+          "text": "自販機",
+          "ruby": "じはんき"
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-toy-machine-v1-328aee44cf37.webp"
@@ -736,11 +752,11 @@
       ],
       "relatedWords": [],
       "ja": "カプセル",
-      "jaReading": "かぷせる",
+      "jaReading": "カプセル",
       "jaReadingSegments": [
         {
           "text": "カプセル",
-          "ruby": "かぷせる"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/toy-capsule-v1-179d702619de.webp"
@@ -787,11 +803,11 @@
       ],
       "relatedWords": [],
       "ja": "ミニブック",
-      "jaReading": "みにぶっく",
+      "jaReading": "ミニブック",
       "jaReadingSegments": [
         {
           "text": "ミニブック",
-          "ruby": "みにぶっく"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-toy-leaflet-v1-87627bc4bf5e.webp"
@@ -838,11 +854,23 @@
       ],
       "relatedWords": [],
       "ja": "空カプセル回収ボックス",
-      "jaReading": "からかぷせるかいしゅうぼっくす",
+      "jaReading": "からカプセルかいしゅうボックス",
       "jaReadingSegments": [
         {
-          "text": "空カプセル回収ボックス",
-          "ruby": "からかぷせるかいしゅうぼっくす"
+          "text": "空",
+          "ruby": "から"
+        },
+        {
+          "text": "カプセル",
+          "ruby": null
+        },
+        {
+          "text": "回収",
+          "ruby": "かいしゅう"
+        },
+        {
+          "text": "ボックス",
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-recycling-bin-v1-27af2b48e584.webp"
@@ -889,11 +917,15 @@
       ],
       "relatedWords": [],
       "ja": "カプセルトイ専門店",
-      "jaReading": "かぷせるといせんもんてん",
+      "jaReading": "カプセルトイせんもんてん",
       "jaReadingSegments": [
         {
-          "text": "カプセルトイ専門店",
-          "ruby": "かぷせるといせんもんてん"
+          "text": "カプセルトイ",
+          "ruby": null
+        },
+        {
+          "text": "専門店",
+          "ruby": "せんもんてん"
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/capsule-toy-shop-v1-2bb5f9b96ac7.webp"
@@ -940,11 +972,15 @@
       ],
       "relatedWords": [],
       "ja": "クレーンゲーム機",
-      "jaReading": "くれーんげーむき",
+      "jaReading": "クレーンゲームき",
       "jaReadingSegments": [
         {
-          "text": "クレーンゲーム機",
-          "ruby": "くれーんげーむき"
+          "text": "クレーンゲーム",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/claw-machine-v1-3334ef8c8966.webp"
@@ -991,11 +1027,11 @@
       ],
       "relatedWords": [],
       "ja": "アーム",
-      "jaReading": "あーむ",
+      "jaReading": "アーム",
       "jaReadingSegments": [
         {
           "text": "アーム",
-          "ruby": "あーむ"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-claw-v1-3a20b48d044f.webp"
@@ -1042,11 +1078,11 @@
       ],
       "relatedWords": [],
       "ja": "ジョイスティック",
-      "jaReading": "じょいすてぃっく",
+      "jaReading": "ジョイスティック",
       "jaReadingSegments": [
         {
           "text": "ジョイスティック",
-          "ruby": "じょいすてぃっく"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-joystick-v1-7c12450befec.webp"
@@ -1093,11 +1129,11 @@
       ],
       "relatedWords": [],
       "ja": "スタートボタン",
-      "jaReading": "すたーとぼたん",
+      "jaReading": "スタートボタン",
       "jaReadingSegments": [
         {
           "text": "スタートボタン",
-          "ruby": "すたーとぼたん"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-start-button-v1-625ff3d43bc5.webp"
@@ -1144,11 +1180,15 @@
       ],
       "relatedWords": [],
       "ja": "コイン投入口",
-      "jaReading": "こいんとうにゅうぐち",
+      "jaReading": "コインとうにゅうぐち",
       "jaReadingSegments": [
         {
-          "text": "コイン投入口",
-          "ruby": "こいんとうにゅうぐち"
+          "text": "コイン",
+          "ruby": null
+        },
+        {
+          "text": "投入口",
+          "ruby": "とうにゅうぐち"
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/coin-slot-v1-c1e47d689198.webp"
@@ -1297,11 +1337,19 @@
       ],
       "relatedWords": [],
       "ja": "ゲーム用メダル",
-      "jaReading": "げーむようめだる",
+      "jaReading": "ゲームようメダル",
       "jaReadingSegments": [
         {
-          "text": "ゲーム用メダル",
-          "ruby": "げーむようめだる"
+          "text": "ゲーム",
+          "ruby": null
+        },
+        {
+          "text": "用",
+          "ruby": "よう"
+        },
+        {
+          "text": "メダル",
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/arcade-token-v1-5823da7784b2.webp"
@@ -1348,11 +1396,11 @@
       ],
       "relatedWords": [],
       "ja": "ゲームセンター",
-      "jaReading": "げーむせんたー",
+      "jaReading": "ゲームセンター",
       "jaReadingSegments": [
         {
           "text": "ゲームセンター",
-          "ruby": "げーむせんたー"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/amusement-arcade-v1-f231501769b9.webp"
@@ -1450,11 +1498,11 @@
       ],
       "relatedWords": [],
       "ja": "ミニチュアフード",
-      "jaReading": "みにちゅあふーど",
+      "jaReading": "ミニチュアフード",
       "jaReadingSegments": [
         {
           "text": "ミニチュアフード",
-          "ruby": "みにちゅあふーど"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/miniature-food-model-v1-7f656723f5da.webp"
@@ -1501,11 +1549,11 @@
       ],
       "relatedWords": [],
       "ja": "アクションフィギュア",
-      "jaReading": "あくしょんふぃぎゅあ",
+      "jaReading": "アクションフィギュア",
       "jaReadingSegments": [
         {
           "text": "アクションフィギュア",
-          "ruby": "あくしょんふぃぎゅあ"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/action-figure-v1-623501768ba7.webp"
@@ -1552,11 +1600,11 @@
       ],
       "relatedWords": [],
       "ja": "ドール",
-      "jaReading": "どーる",
+      "jaReading": "ドール",
       "jaReadingSegments": [
         {
           "text": "ドール",
-          "ruby": "どーる"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/collectible-doll-v1-df1ccf109857.webp"
@@ -1603,11 +1651,11 @@
       ],
       "relatedWords": [],
       "ja": "コレクションシール",
-      "jaReading": "これくしょんしーる",
+      "jaReading": "コレクションシール",
       "jaReadingSegments": [
         {
           "text": "コレクションシール",
-          "ruby": "これくしょんしーる"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/collectible-sticker-v1-d5ee9915b842.webp"
@@ -1654,11 +1702,11 @@
       ],
       "relatedWords": [],
       "ja": "ブロックセット",
-      "jaReading": "ぶろっくせっと",
+      "jaReading": "ブロックセット",
       "jaReadingSegments": [
         {
           "text": "ブロックセット",
-          "ruby": "ぶろっくせっと"
+          "ruby": null
         }
       ],
       "imageUrl": "https://img.nexflow.team/word-images/collecting-hobbies-2026-10/building-block-set-v1-5c3cadb2db52.webp"

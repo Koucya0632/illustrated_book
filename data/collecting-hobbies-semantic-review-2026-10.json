@@ -23,8 +23,8 @@
       "kind": "word",
       "wordId": "trading-card",
       "verdict": "pass",
-      "reason": "以遊戲卡面區別既有藝人フォトカード；トレーディングカード是通用名稱，不限定品牌。",
-      "sourceSha256": "f814c28dc970ce511d6677b2ca708680dca38594cbb3da76d3553d82265aa36e"
+      "reason": "以遊戲卡面區別既有藝人フォトカード；トレーディングカード是通用名稱，不限定品牌。 「トレーディングカード」全為假名，讀音直接保留「トレーディングカード」，不另轉平假名或重複注音。",
+      "sourceSha256": "08b1a6050a8e7cb4246c4bea71b8e9d76741d9dae459510b8b5814c63edc0dab"
     },
     {
       "kind": "example",
@@ -46,8 +46,8 @@
       "kind": "word",
       "wordId": "booster-pack",
       "verdict": "pass",
-      "reason": "拡張パック依卡牌官方商品分類採用，與裝玩具的既有盲盒有不同內容與包裝。",
-      "sourceSha256": "d5cacb9bb2e53eaf03c3d0e92c22b8c914945f9db8c6527f7350545233a2284d"
+      "reason": "拡張パック依卡牌官方商品分類採用，與裝玩具的既有盲盒有不同內容與包裝。 「拡張パック」只對「拡張＝かくちょう」注音；「パック」保留原假名。",
+      "sourceSha256": "79136bcf3647f90f2838e8132a25dd7d9df5e276afce42a37f1affa555b5e6c9"
     },
     {
       "kind": "example",
@@ -69,8 +69,8 @@
       "kind": "word",
       "wordId": "deck-box",
       "verdict": "pass",
-      "reason": "デッキケース裝整副牌組，依厚度與掀蓋結構區別既有單張トレカケース。",
-      "sourceSha256": "a43c1c259254ea5dd897606c3150ef28be6892e0ab6ddab90212b22d1abb2d85"
+      "reason": "デッキケース裝整副牌組，依厚度與掀蓋結構區別既有單張トレカケース。 「デッキケース」全為假名，讀音直接保留「デッキケース」，不另轉平假名或重複注音。",
+      "sourceSha256": "46269c1128661a459a998620c8e2783fc6085012d41c461d137b3d51bdd13ebd"
     },
     {
       "kind": "example",
@@ -92,8 +92,8 @@
       "kind": "word",
       "wordId": "card-playmat",
       "verdict": "pass",
-      "reason": "以卡牌遊戲脈絡限定プレイマット，不混成嬰兒遊戲墊或滑鼠墊。",
-      "sourceSha256": "8765628a49bbc300ce940724a02c95505e028350beb685ffa2bba07a09c12505"
+      "reason": "以卡牌遊戲脈絡限定プレイマット，不混成嬰兒遊戲墊或滑鼠墊。 「プレイマット」全為假名，讀音直接保留「プレイマット」，不另轉平假名或重複注音。",
+      "sourceSha256": "009bfea9feb1ec554707e150f4509dc980ae18c28ada4db3c7ffa9837ff88818"
     },
     {
       "kind": "example",
@@ -115,8 +115,8 @@
       "kind": "word",
       "wordId": "plastic-model-kit",
       "verdict": "pass",
-      "reason": "プラモデル是需組裝的塑膠套件，與既有完成品フィギュア分開；不以特定機器人品牌代稱。",
-      "sourceSha256": "33dcbcd680eebf66c14010c61661708f3aa976254138b331a59f7bab2e1c5129"
+      "reason": "プラモデル是需組裝的塑膠套件，與既有完成品フィギュア分開；不以特定機器人品牌代稱。 「プラモデル」全為假名，讀音直接保留「プラモデル」，不另轉平假名或重複注音。",
+      "sourceSha256": "dca8690a025516388b2700382892fe0be539fc9866831f4a911db999b6378477"
     },
     {
       "kind": "example",
@@ -138,8 +138,8 @@
       "kind": "word",
       "wordId": "model-sprue",
       "verdict": "pass",
-      "reason": "採用模型語境的ランナー，依田宮說明是連著零件的框，不是慢跑者；英語sprue採模型常用義。",
-      "sourceSha256": "f5e12bba020897fbe741afc4b3a5bf7b2de711c0ef84ad03b42b1cecf5efebd6"
+      "reason": "採用模型語境的ランナー，依田宮說明是連著零件的框，不是慢跑者；英語sprue採模型常用義。 「ランナー」全為假名，讀音直接保留「ランナー」，不另轉平假名或重複注音。",
+      "sourceSha256": "be85e398c912b6fe7cde4c9803c73f7c75fecb2a7bcdd67ee46ebee140564b50"
     },
     {
       "kind": "example",
@@ -161,8 +161,8 @@
       "kind": "word",
       "wordId": "model-nippers",
       "verdict": "pass",
-      "reason": "模型用ニッパー指定塑膠零件用途，外觀是短刃雙柄鉗而非一般剪刀。",
-      "sourceSha256": "68add1515969eb236d88813c158d45dc413546a9c18030cbf3f226380f490c7b"
+      "reason": "模型用ニッパー指定塑膠零件用途，外觀是短刃雙柄鉗而非一般剪刀。 「模型用ニッパー」只對「模型用＝もけいよう」注音；「ニッパー」保留原假名。",
+      "sourceSha256": "22951761a1857660ada50e7f041307e9f41009c1eaeeb45f8fa91bbc5567c528"
     },
     {
       "kind": "example",
@@ -184,8 +184,8 @@
       "kind": "word",
       "wordId": "die-cast-car",
       "verdict": "pass",
-      "reason": "ダイキャストミニカー保留金屬壓鑄限定，避免把所有ミニカー都說成金屬；外觀參考日本常見掌上模型車。",
-      "sourceSha256": "e0fb73e691ff18c9e0b662074bf1ebcc53cad8b26afdb013e65566e03ff0f4f8"
+      "reason": "ダイキャストミニカー保留金屬壓鑄限定，避免把所有ミニカー都說成金屬；外觀參考日本常見掌上模型車。 「ダイキャストミニカー」全為假名，讀音直接保留「ダイキャストミニカー」，不另轉平假名或重複注音。",
+      "sourceSha256": "0ea3301505af06b996219372f5f446eb9ef6ce90db92d77f51ba6d64c4cdfffe"
     },
     {
       "kind": "example",
@@ -230,8 +230,8 @@
       "kind": "word",
       "wordId": "dollhouse",
       "verdict": "pass",
-      "reason": "ドールハウス是具可佈置內部的縮小房屋，不是人偶本身或真實住宅。",
-      "sourceSha256": "66ddae8cc6544d760f5216776c33970d1f4fe9d290fcb388356d093c666d17b0"
+      "reason": "ドールハウス是具可佈置內部的縮小房屋，不是人偶本身或真實住宅。 「ドールハウス」全為假名，讀音直接保留「ドールハウス」，不另轉平假名或重複注音。",
+      "sourceSha256": "dfecee91fb9e1dc962a595d9304f1f3eded7ad9c85c8645c85aaad3194f8ad7b"
     },
     {
       "kind": "example",
@@ -276,8 +276,8 @@
       "kind": "word",
       "wordId": "stamp-album",
       "verdict": "pass",
-      "reason": "切手アルバム用於郵票，與既有ゴム印及藝人小卡相簿明確分開；不使用易混淆的スタンプ帳。",
-      "sourceSha256": "3a87f2521687b49a2ac7e608ee52033e45b4db2e824cfc326a6a4dc97080d01a"
+      "reason": "切手アルバム用於郵票，與既有ゴム印及藝人小卡相簿明確分開；不使用易混淆的スタンプ帳。 「切手アルバム」只對「切手＝きって」注音；「アルバム」保留原假名。",
+      "sourceSha256": "7412cc0dc625553b5bcefd2e9ca579ad6253dcf3d86126ea4c79e9fcd0333ad5"
     },
     {
       "kind": "example",
@@ -299,8 +299,8 @@
       "kind": "word",
       "wordId": "capsule-toy-machine",
       "verdict": "pass",
-      "reason": "カプセルトイ自販機指機台本身，區別既有カプセルトイ玩具；不用品牌名作通稱，也未斷言所有機器只收硬幣。",
-      "sourceSha256": "55d262ced30f764af1aa0223a5dbbf24b62824cfd6a9e8b27e1be3e07a5acf79"
+      "reason": "カプセルトイ自販機指機台本身，區別既有カプセルトイ玩具；不用品牌名作通稱，也未斷言所有機器只收硬幣。 「カプセルトイ自販機」只對「自販機＝じはんき」注音；「カプセルトイ」保留原假名。",
+      "sourceSha256": "3d02563a880bb1386f4bdb425dba4fe4f8acbab6b13bca7f1cf6daff7582983a"
     },
     {
       "kind": "example",
@@ -322,8 +322,8 @@
       "kind": "word",
       "wordId": "toy-capsule",
       "verdict": "pass",
-      "reason": "カプセル在本系列限定玩具包裝義，與藥物膠囊及內部玩具區分；圖為可拆中空雙半殼。",
-      "sourceSha256": "bfc4731bae59a27ffd3c2ad86d6cce7a230035dec0ed1190c0bc5395bf289af0"
+      "reason": "カプセル在本系列限定玩具包裝義，與藥物膠囊及內部玩具區分；圖為可拆中空雙半殼。 「カプセル」全為假名，讀音直接保留「カプセル」，不另轉平假名或重複注音。",
+      "sourceSha256": "d6fa7ccdd16d49299b230169cb32d1faa54d6d0d4d6f46428cde65447c21b924"
     },
     {
       "kind": "example",
@@ -345,8 +345,8 @@
       "kind": "word",
       "wordId": "capsule-toy-leaflet",
       "verdict": "pass",
-      "reason": "ミニブック採扭蛋內附摺頁語境，並非另一本故事書；英文以leaflet明確表達薄摺紙。",
-      "sourceSha256": "e8b0eabaf45989c0b9d74a3f662c20eb006c0508d99113e823aa106429f5fbce"
+      "reason": "ミニブック採扭蛋內附摺頁語境，並非另一本故事書；英文以leaflet明確表達薄摺紙。 「ミニブック」全為假名，讀音直接保留「ミニブック」，不另轉平假名或重複注音。",
+      "sourceSha256": "112d5402056e62be16581c2e209c52e755735e43070cddbda0fe1701b892ecfa"
     },
     {
       "kind": "example",
@@ -368,8 +368,8 @@
       "kind": "word",
       "wordId": "capsule-recycling-bin",
       "verdict": "pass",
-      "reason": "空カプセル回収ボックス有指定回收物，依官方膠囊回收活動區分一般垃圾；不宣稱各店或自治體規則皆相同。",
-      "sourceSha256": "8af13026b73595df580b7fdf2460afc31f504a2c4e99869ab7b0cb622d9478bb"
+      "reason": "空カプセル回収ボックス有指定回收物，依官方膠囊回收活動區分一般垃圾；不宣稱各店或自治體規則皆相同。 「空カプセル回収ボックス」只對「空＝から」、「回収＝かいしゅう」注音；「カプセル」、「ボックス」保留原假名。",
+      "sourceSha256": "11a9a9a2c1c1223de35e3e9766b67a1e9feadf0c00de0bc83c2b198b5dbc8560"
     },
     {
       "kind": "example",
@@ -391,8 +391,8 @@
       "kind": "word",
       "wordId": "capsule-toy-shop",
       "verdict": "pass",
-      "reason": "専門店指集中販售扭蛋的店，與綜合遊樂場不同；圖需顯示機台列與店面而不只一台機器。",
-      "sourceSha256": "944758b0f01e2f3f4bb78c868f38e94890897d0c91d85a7af686bdde65e10f99"
+      "reason": "専門店指集中販售扭蛋的店，與綜合遊樂場不同；圖需顯示機台列與店面而不只一台機器。 「カプセルトイ専門店」只對「専門店＝せんもんてん」注音；「カプセルトイ」保留原假名。",
+      "sourceSha256": "4d3acfd6a4cf3aae9c8ca946a1ca9218524520323fea509d0efc7eef20568893"
     },
     {
       "kind": "example",
@@ -414,8 +414,8 @@
       "kind": "word",
       "wordId": "claw-machine",
       "verdict": "pass",
-      "reason": "クレーンゲーム機是機台通稱，與工程起重機區分；定義容納玩偶及其他獎品，不使用特定品牌名。",
-      "sourceSha256": "7ce5a66ef0639fd6e5553eea921159eb8fcfc8df9eec3358f69f5729ab94e40d"
+      "reason": "クレーンゲーム機是機台通稱，與工程起重機區分；定義容納玩偶及其他獎品，不使用特定品牌名。 「クレーンゲーム機」只對「機＝き」注音；「クレーンゲーム」保留原假名。",
+      "sourceSha256": "4463f5b34348786a89d896eae4cca1860eefe5f030eb4b965fa5e7fefc1f86f6"
     },
     {
       "kind": "example",
@@ -437,8 +437,8 @@
       "kind": "word",
       "wordId": "arcade-claw",
       "verdict": "pass",
-      "reason": "アーム採日本遊樂場用語，語境限定機械爪而非人手臂；定義不把所有機種限定三爪。",
-      "sourceSha256": "f85cce3aa6e506774ffb5aa6691ead53c25686b6eb78ba9239d0c12054403835"
+      "reason": "アーム採日本遊樂場用語，語境限定機械爪而非人手臂；定義不把所有機種限定三爪。 「アーム」全為假名，讀音直接保留「アーム」，不另轉平假名或重複注音。",
+      "sourceSha256": "4cb2b10892fc642a01824032d4a616ab67dfbe15aaf1531385d1ab4ef541d4e8"
     },
     {
       "kind": "example",
@@ -460,8 +460,8 @@
       "kind": "word",
       "wordId": "arcade-joystick",
       "verdict": "pass",
-      "reason": "ジョイスティック為桿狀控制器而非整個手把；不假定每台夾娃娃機都有此裝置。",
-      "sourceSha256": "05a12e2f9d7e5240fd0931cbb1d78dff41e84cf793af5faad3d3a1756ff75532"
+      "reason": "ジョイスティック為桿狀控制器而非整個手把；不假定每台夾娃娃機都有此裝置。 「ジョイスティック」全為假名，讀音直接保留「ジョイスティック」，不另轉平假名或重複注音。",
+      "sourceSha256": "f8cee427145f8d14ce19a42f79e77b443365d1f3577d7898c6e6d7afe967ce1e"
     },
     {
       "kind": "example",
@@ -483,8 +483,8 @@
       "kind": "word",
       "wordId": "arcade-start-button",
       "verdict": "pass",
-      "reason": "スタートボタン限定開始功能，不把所有機台按鈕都稱開始鈕；未聲稱每款夾娃娃機均採同樣控制方式。",
-      "sourceSha256": "a1542ea82e43237d3ba4041f3fa9c03e80e79db242b35810a6a40ce0b4225ff4"
+      "reason": "スタートボタン限定開始功能，不把所有機台按鈕都稱開始鈕；未聲稱每款夾娃娃機均採同樣控制方式。 「スタートボタン」全為假名，讀音直接保留「スタートボタン」，不另轉平假名或重複注音。",
+      "sourceSha256": "453c09918db8d60909c941b62b291cb13b0c2d2d465b934f7a0d4de227a35c12"
     },
     {
       "kind": "example",
@@ -506,8 +506,8 @@
       "kind": "word",
       "wordId": "coin-slot",
       "verdict": "pass",
-      "reason": "コイン投入口是進幣開口，與取幣盤、退款口或取物口分開；不把所有投入口都說成接受代幣。",
-      "sourceSha256": "2f10149796445aef31295d02104cf5b54f6e28e08386c70464ca387bd593f3f3"
+      "reason": "コイン投入口是進幣開口，與取幣盤、退款口或取物口分開；不把所有投入口都說成接受代幣。 「コイン投入口」只對「投入口＝とうにゅうぐち」注音；「コイン」保留原假名。",
+      "sourceSha256": "5bbb9f906da39f4a5737d76a1111eaa5efae84b5cd7f45024728dd0cbed43faf"
     },
     {
       "kind": "example",
@@ -575,8 +575,8 @@
       "kind": "word",
       "wordId": "arcade-token",
       "verdict": "pass",
-      "reason": "ゲーム用メダル為遊樂場代幣，與原本紀念幣的法定貨幣概念分開；未聲稱可投入全部夾娃娃機。",
-      "sourceSha256": "99f2da8463004784cc5b5a6274ba54936486d6f271d4bee7cc390891326a9837"
+      "reason": "ゲーム用メダル為遊樂場代幣，與原本紀念幣的法定貨幣概念分開；未聲稱可投入全部夾娃娃機。 「ゲーム用メダル」只對「用＝よう」注音；「ゲーム」、「メダル」保留原假名。",
+      "sourceSha256": "7b981d9e6de58c394b6ac775b4085939cd21880321ce7c15fea48119afcffc6e"
     },
     {
       "kind": "example",
@@ -598,8 +598,8 @@
       "kind": "word",
       "wordId": "amusement-arcade",
       "verdict": "pass",
-      "reason": "ゲームセンター指室內電子遊樂場，不是兒童遊具場；以多種機台區別扭蛋專賣店。",
-      "sourceSha256": "7fb74e5d29c4e00b33774ca9394ed43808eff2c58025a7893aab71f138d870b2"
+      "reason": "ゲームセンター指室內電子遊樂場，不是兒童遊具場；以多種機台區別扭蛋專賣店。 「ゲームセンター」全為假名，讀音直接保留「ゲームセンター」，不另轉平假名或重複注音。",
+      "sourceSha256": "f353755ca5c2724daed5cb9576960a1c9d2823a8f05e87e3b8fb358fbbb82824"
     },
     {
       "kind": "example",
@@ -644,8 +644,8 @@
       "kind": "word",
       "wordId": "miniature-food-model",
       "verdict": "pass",
-      "reason": "ミニチュアフード是縮小不可食模型，與真食物、餐廳等比例食品模型區分；圖有尺度參照。",
-      "sourceSha256": "059c38e2c52c9d45471a7b745d056503a3580306dcfb30e71496950160557469"
+      "reason": "ミニチュアフード是縮小不可食模型，與真食物、餐廳等比例食品模型區分；圖有尺度參照。 「ミニチュアフード」全為假名，讀音直接保留「ミニチュアフード」，不另轉平假名或重複注音。",
+      "sourceSha256": "15b3f2f71155aa7b82ad19f7bdb629180b5be91cdd0c1959d2db4cbeabad3c4e"
     },
     {
       "kind": "example",
@@ -667,8 +667,8 @@
       "kind": "word",
       "wordId": "action-figure",
       "verdict": "pass",
-      "reason": "アクションフィギュア以可動關節定義，為既有一般角色公仔的具體子類，不重建同義詞；圖需清楚顯示關節。",
-      "sourceSha256": "13cadfdd2690839853f612f3fb0366b6ed7a1d1d7ea101ea3b8021a0b67c027b"
+      "reason": "アクションフィギュア以可動關節定義，為既有一般角色公仔的具體子類，不重建同義詞；圖需清楚顯示關節。 「アクションフィギュア」全為假名，讀音直接保留「アクションフィギュア」，不另轉平假名或重複注音。",
+      "sourceSha256": "8727b6571ece5d8f2b91138101f2da559579d40efb0ff4af9cac8d5577917106"
     },
     {
       "kind": "example",
@@ -690,8 +690,8 @@
       "kind": "word",
       "wordId": "collectible-doll",
       "verdict": "pass",
-      "reason": "ドール在本項限定收藏換裝硬質人偶，與ぬいぐるみ軟填充玩偶區分；不是把所有人偶都限定高價收藏用途。",
-      "sourceSha256": "289b39f47c0641a540844119acc88544a7870b467b9df9eb0a595984aa7cca61"
+      "reason": "ドール在本項限定收藏換裝硬質人偶，與ぬいぐるみ軟填充玩偶區分；不是把所有人偶都限定高價收藏用途。 「ドール」全為假名，讀音直接保留「ドール」，不另轉平假名或重複注音。",
+      "sourceSha256": "46c48e9073f01168b1b07a2bc72d1cb2805327aece48cd461008948e747515e3"
     },
     {
       "kind": "example",
@@ -713,8 +713,8 @@
       "kind": "word",
       "wordId": "collectible-sticker",
       "verdict": "pass",
-      "reason": "コレクションシール有可黏貼背膠與台紙，區別未黏性卡牌；收藏用途不限定一定不撕或一定全套。",
-      "sourceSha256": "f63dde5b540ddb619efcf350dac4830de23ab5ef69431b34c8ef4e1b95d6db7d"
+      "reason": "コレクションシール有可黏貼背膠與台紙，區別未黏性卡牌；收藏用途不限定一定不撕或一定全套。 「コレクションシール」全為假名，讀音直接保留「コレクションシール」，不另轉平假名或重複注音。",
+      "sourceSha256": "1bab9fc56738bf7636d4db3f5d5df34da74e30e81031dd997018d67efba7e651"
     },
     {
       "kind": "example",
@@ -736,8 +736,8 @@
       "kind": "word",
       "wordId": "building-block-set",
       "verdict": "pass",
-      "reason": "ブロックセット為可拆接積木套組，不是模型零件框或建築材料；不以品牌名代替通稱。",
-      "sourceSha256": "c9cc0fd010d7f8a458375fe30f2ad008e72b1edf215fa2740ea03d3b2a3571d6"
+      "reason": "ブロックセット為可拆接積木套組，不是模型零件框或建築材料；不以品牌名代替通稱。 「ブロックセット」全為假名，讀音直接保留「ブロックセット」，不另轉平假名或重複注音。",
+      "sourceSha256": "8bdf07db15c910f876e35074fbdca0e8cebf63c65f58ecf41da385b3b0dad07d"
     },
     {
       "kind": "example",

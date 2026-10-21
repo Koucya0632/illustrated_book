@@ -36,6 +36,10 @@ test('all headword readings, examples and contextual annotations match their ind
   assert.deepEqual(entry.examples.map(e=>e.cefrLevel),['A2','B1']);
   assert.notEqual(entry.examples[0].en,entry.examples[1].en);
   assert.ok(entry.pronunciation&&entry.chineseDefinition&&entry.ja&&entry.jaReading);
+  if (/^[\p{Script=Hiragana}\p{Script=Katakana}ー・\s]+$/u.test(entry.ja)) {
+   assert.equal(entry.jaReading,entry.ja,`${entry.id}: kana keeps its written form`);
+   assert.ok(entry.jaReadingSegments.every(segment=>segment.ruby===null));
+  }
   if(entry.jaReadingSegments){assert.equal(entry.jaReadingSegments.map(s=>s.text).join(''),entry.ja);assert.equal(entry.jaReadingSegments.map(s=>s.ruby??s.text).join(''),entry.jaReading);}
   const wr=review.entries.find(r=>r.kind==='word'&&r.wordId===entry.id)!;
   assert.equal(wr.verdict,'pass');assert.ok(wr.reason);assert.equal(wr.sourceSha256,hash(entry));

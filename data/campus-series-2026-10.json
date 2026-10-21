@@ -1,0 +1,2582 @@
+{
+  "schemaVersion": 1,
+  "series": "campus",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "New Japanese daily-life school series. Preserve existing stationery, uniform, bus and profession entries. Local preparation only; production uploads, DB writes, commit and deployment require separate authorization.",
+  "category": {
+    "id": "campus",
+    "name": "School & Campus",
+    "nameZh": "校園",
+    "nameJa": "学校生活",
+    "emoji": "🏫",
+    "description": "教室與校內設施、上課教具，以及日本校園常見的換鞋與配膳用品",
+    "descriptionEn": "School rooms, campus facilities, classroom tools, and everyday school essentials in Japan",
+    "descriptionJa": "教室や校内の施設、授業の道具、上履きや給食当番の用品",
+    "color": "from-sky-100 to-emerald-100",
+    "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/category-campus-v1-2a5c916d2f94.webp"
+  },
+  "references": [
+    "https://www.mext.go.jp/b_menu/toukei/chousa01/kouritsu/yougo/1262955.htm",
+    "https://www.mext.go.jp/b_menu/shingi/chousa/shisetu/001/toushin/03082201/004.htm",
+    "https://www.tjf.or.jp/shogakusei/kentaro/school/s02_j.html",
+    "https://www.randoseru.gr.jp/size/",
+    "https://jp.yamaha.com/musical-instruments/educational-equipment/products/",
+    "https://www.yamaha.com/ja/musical_instrument_guide/recorder/",
+    "https://www.st-paulsplaza.com/goods/2741/",
+    "https://maruzen-kitchen.co.jp/product/delivery-equipment/serving-table/item-haizen_010/",
+    "https://www.kokuyo.com/stationery/category/bag-pouch/bag-case/6604/",
+    "https://www.iwamakokuban.co.jp/product/magnet/entry-364.html"
+  ],
+  "entries": [
+    {
+      "id": "classroom",
+      "word": "classroom",
+      "chinese": "教室",
+      "chineseDefinition": "學生上課的房間，通常設有課桌椅與黑板。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈklæs.ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "教室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A room where students have lessons.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "児童や生徒が授業を受ける部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please open the classroom windows.",
+          "ja": "教室の窓を開けてください。",
+          "zh": "請打開教室的窗戶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Our next lesson is in a different classroom, so take your textbook.",
+          "ja": "次の授業は別の教室なので、教科書を持っていってください。",
+          "zh": "下一堂課在別間教室上，所以請帶著課本過去。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "教室",
+      "jaReading": "きょうしつ",
+      "jaReadingSegments": [
+        {
+          "text": "教室",
+          "ruby": "きょうしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/classroom-v1-9f158fbe7753.webp"
+    },
+    {
+      "id": "blackboard",
+      "word": "blackboard",
+      "chinese": "黑板",
+      "chineseDefinition": "用粉筆書寫的教學板，常見為深綠色或黑色；與白板不同。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈblæk.bɔːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "黑板",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A dark board written on with chalk, often black or dark green.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "チョークで文字や図を書く、黒色や濃い緑色の板。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Write your name on the blackboard.",
+          "ja": "黒板に名前を書いてください。",
+          "zh": "請把名字寫在黑板上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not read the blackboard from the back, so I moved to the front.",
+          "ja": "後ろから黒板の字が読めなかったので、前の席に移りました。",
+          "zh": "我從後面看不清黑板上的字，所以換到了前面的座位。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "黒板",
+      "jaReading": "こくばん",
+      "jaReadingSegments": [
+        {
+          "text": "黒板",
+          "ruby": "こくばん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/blackboard-v1-512464d9e14d.webp"
+    },
+    {
+      "id": "chalk",
+      "word": "chalk",
+      "chinese": "粉筆",
+      "chineseDefinition": "在黑板上書寫或畫圖的條狀材料，常見為白色或彩色。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/tʃɔːk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "粉筆",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A stick of material used for writing or drawing on a blackboard.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "黒板に文字や図を書くための、白色や色付きの棒状の道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please lend me some white chalk.",
+          "ja": "白いチョークを貸してください。",
+          "zh": "請借我白色粉筆。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The chalk broke, so I took another piece from the box.",
+          "ja": "チョークが折れたので、箱から別の一本を取りました。",
+          "zh": "粉筆斷了，所以我從盒子裡另拿了一支。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "チョーク",
+      "jaReading": "チョーク",
+      "jaReadingSegments": [
+        {
+          "text": "チョーク",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/chalk-v1-a3468be48b28.webp"
+    },
+    {
+      "id": "blackboard-eraser",
+      "word": "blackboard eraser",
+      "chinese": "黑板擦",
+      "chineseDefinition": "用來擦除黑板粉筆字的板擦，通常有布面或毛氈擦拭面。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈblæk.bɔːrd ɪˈreɪ.sɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "黑板擦",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tool with a cloth or felt surface for removing chalk from a blackboard.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "布やフェルトの面で、黒板のチョークの文字を消す道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the blackboard eraser back on the chalk tray.",
+          "ja": "黒板消しをチョーク受けに戻してください。",
+          "zh": "請把黑板擦放回粉筆槽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "If the blackboard eraser is dusty, clean it before using it.",
+          "ja": "黒板消しに粉がたまっていたら、使う前にきれいにしてください。",
+          "zh": "如果黑板擦積了粉塵，請先清乾淨再使用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "黒板消し",
+      "jaReading": "こくばんけし",
+      "jaReadingSegments": [
+        {
+          "text": "黒板消し",
+          "ruby": "こくばんけし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/blackboard-eraser-v1-0ca741f4a6cf.webp"
+    },
+    {
+      "id": "textbook",
+      "word": "textbook",
+      "chinese": "課本",
+      "chineseDefinition": "依學科編排、在課堂學習時使用的書，與筆記本不同。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtekst.bʊk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "課本",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A book used to study a particular subject in class.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "教科の内容を学ぶために、授業で使う本。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Open your textbook to page ten.",
+          "ja": "教科書の十ページを開いてください。",
+          "zh": "請把課本翻到第十頁。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I left my textbook at home, so I asked the student next to me to share theirs.",
+          "ja": "教科書を家に忘れたので、隣の人に一緒に見せてもらうよう頼みました。",
+          "zh": "我把課本忘在家裡，所以請旁邊的同學讓我一起看他的課本。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "教科書",
+      "jaReading": "きょうかしょ",
+      "jaReadingSegments": [
+        {
+          "text": "教科書",
+          "ruby": "きょうかしょ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/textbook-v1-38444856b55c.webp"
+    },
+    {
+      "id": "school-shoe-locker",
+      "word": "school shoe locker",
+      "chinese": "學校鞋櫃",
+      "chineseDefinition": "校舍入口收納學生室外鞋或室內鞋的分格鞋櫃，不是一般置物櫃。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ʃuː ˈlɑː.kɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校鞋櫃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A compartmented shoe cabinet at a school entrance for outdoor or indoor shoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学校の昇降口などで、外靴や上履きを入れる棚や箱。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your shoes in your school shoe locker.",
+          "ja": "自分の下駄箱に靴を入れてください。",
+          "zh": "請把鞋子放進自己的學校鞋櫃。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked the name on the school shoe locker so I would not use the wrong one.",
+          "ja": "下駄箱を間違えないように、名前を確認しました。",
+          "zh": "為了不放錯學校鞋櫃，我確認了上面的名字。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "下駄箱",
+      "jaReading": "げたばこ",
+      "jaReadingSegments": [
+        {
+          "text": "下駄箱",
+          "ruby": "げたばこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-shoe-locker-v1-79f95642e903.webp"
+    },
+    {
+      "id": "indoor-school-shoes",
+      "word": "indoor school shoes",
+      "chinese": "校內室內鞋",
+      "chineseDefinition": "進入校舍後換穿的室內鞋；日本學校常見白布鞋身、橡膠底與腳背鬆緊帶的款式。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɪn.dɔːr skuːl ʃuːz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "校內室內鞋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Shoes worn inside a school building after changing out of outdoor shoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "外靴から履き替えて、校舎の中で履く靴。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Change into your indoor school shoes at the entrance.",
+          "ja": "玄関で上履きに履き替えてください。",
+          "zh": "請在玄關換上校內室內鞋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I washed my indoor school shoes on Sunday because I needed them on Monday.",
+          "ja": "月曜日に使うので、日曜日に上履きを洗いました。",
+          "zh": "因為星期一要穿，我在星期日洗了校內室內鞋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "上履き",
+      "jaReading": "うわばき",
+      "jaReadingSegments": [
+        {
+          "text": "上履き",
+          "ruby": "うわばき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/indoor-school-shoes-v1-d43553655f48.webp"
+    },
+    {
+      "id": "randoseru",
+      "word": "Japanese school backpack",
+      "chinese": "日式小學生書包",
+      "chineseDefinition": "日本小學生常用的硬挺箱型雙肩書包，設有大翻蓋與背帶。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌdʒæp.əˈniːz skuːl ˈbæk.pæk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "日式小學生書包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A structured, box-shaped backpack with a large flap, commonly used by Japanese elementary school children.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "日本の小学生がよく使う、大きなかぶせと肩ベルトの付いた箱形の通学用かばん。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your textbook in your Japanese school backpack.",
+          "ja": "ランドセルに教科書を入れてください。",
+          "zh": "請把課本放進日式小學生書包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My Japanese school backpack felt heavy, so I took out the books I did not need.",
+          "ja": "ランドセルが重かったので、使わない本を出しました。",
+          "zh": "日式小學生書包很重，所以我把用不到的書拿了出來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ランドセル",
+      "jaReading": "ランドセル",
+      "jaReadingSegments": [
+        {
+          "text": "ランドセル",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/randoseru-v1-07704607f7e7.webp"
+    },
+    {
+      "id": "schoolyard",
+      "word": "schoolyard",
+      "chinese": "學校操場",
+      "chineseDefinition": "校園中供下課活動、集合或體育課使用的戶外場地。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈskuːl.jɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校操場",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An outdoor area at a school used for play, gatherings, or sports.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "休み時間の遊びや体育、集合などに使う、学校の屋外の場所。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We play in the schoolyard during break.",
+          "ja": "休み時間に校庭で遊びます。",
+          "zh": "我們下課時在學校操場玩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The schoolyard was wet after the rain, so we stayed inside.",
+          "ja": "雨の後で校庭がぬれていたので、校舎の中で過ごしました。",
+          "zh": "雨後學校操場還是濕的，所以我們留在校舍裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "校庭",
+      "jaReading": "こうてい",
+      "jaReadingSegments": [
+        {
+          "text": "校庭",
+          "ruby": "こうてい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/schoolyard-v1-22389c0f861b.webp"
+    },
+    {
+      "id": "school-gymnasium",
+      "word": "school gymnasium",
+      "chinese": "學校體育館",
+      "chineseDefinition": "學校內進行體育活動的室內大空間，也可用於集會。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl dʒɪmˈneɪ.zi.əm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校體育館",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A large indoor space at a school used for physical education and sometimes assemblies.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "体育の授業や運動をするための大きな屋内施設。学校の集会にも使われる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We play basketball in the school gymnasium.",
+          "ja": "体育館でバスケットボールをします。",
+          "zh": "我們在學校體育館打籃球。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "It started raining, so our PE lesson was moved to the school gymnasium.",
+          "ja": "雨が降り始めたので、体育の授業は体育館で行うことになりました。",
+          "zh": "開始下雨了，所以體育課改到學校體育館上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "体育館",
+      "jaReading": "たいいくかん",
+      "jaReadingSegments": [
+        {
+          "text": "体育館",
+          "ruby": "たいいくかん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-gymnasium-v1-5c249be199fa.webp"
+    },
+    {
+      "id": "school-infirmary",
+      "word": "school infirmary",
+      "chinese": "保健室",
+      "chineseDefinition": "學生身體不適或受傷時，接受初步照護或短暫休息的校內房間。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ɪnˈfɝː.mɚ.i/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "保健室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A room at a school where students receive basic care or rest when unwell or injured.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "体調が悪いときやけがをしたときに、手当てを受けたり休んだりする学校の部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I went to the school infirmary with a friend.",
+          "ja": "友達と保健室に行きました。",
+          "zh": "我和朋友去了保健室。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I had a headache, so I told my teacher and rested in the school infirmary.",
+          "ja": "頭が痛かったので、先生に伝えてから保健室で休みました。",
+          "zh": "我頭痛，所以告訴老師後到保健室休息。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "保健室",
+      "jaReading": "ほけんしつ",
+      "jaReadingSegments": [
+        {
+          "text": "保健室",
+          "ruby": "ほけんしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-infirmary-v1-074cab5fa6e0.webp"
+    },
+    {
+      "id": "staff-room",
+      "word": "staff room",
+      "chinese": "教職員辦公室",
+      "chineseDefinition": "學校教師及職員準備課務、處理校務的共用辦公室。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈstæf ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "教職員辦公室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shared room where teachers and other school staff prepare lessons and do administrative work.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "先生や職員が授業の準備や学校の仕事をする部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I met my teacher in the staff room.",
+          "ja": "職員室で先生に会いました。",
+          "zh": "我在教職員辦公室見到了老師。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before entering the staff room, I knocked and asked if I could come in.",
+          "ja": "職員室に入る前に、ノックして、入ってもいいか聞きました。",
+          "zh": "進教職員辦公室前，我先敲門，問能不能進去。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "職員室",
+      "jaReading": "しょくいんしつ",
+      "jaReadingSegments": [
+        {
+          "text": "職員室",
+          "ruby": "しょくいんしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/staff-room-v1-c20a94accde0.webp"
+    },
+    {
+      "id": "school-library",
+      "word": "school library",
+      "chinese": "學校圖書室",
+      "chineseDefinition": "校內收藏與借閱圖書、供學生閱讀的房間。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ˈlaɪ.brer.i/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校圖書室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A room at a school where students can read and borrow books.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学校の本を置き、読書や本の貸し出しを行う部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I borrowed a book from the school library.",
+          "ja": "図書室で本を一冊借りました。",
+          "zh": "我在學校圖書室借了一本書。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The book I wanted was already on loan, so I reserved it at the school library.",
+          "ja": "読みたい本が貸し出し中だったので、図書室で予約しました。",
+          "zh": "想看的書已經被借走了，所以我在學校圖書室辦了預約。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "図書室",
+      "jaReading": "としょしつ",
+      "jaReadingSegments": [
+        {
+          "text": "図書室",
+          "ruby": "としょしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-library-v1-4dbdf8a0efc9.webp"
+    },
+    {
+      "id": "school-lunch",
+      "word": "school lunch",
+      "chinese": "學校供餐",
+      "chineseDefinition": "學校為學生提供的餐點；此處指日本校園常見的午餐供餐，不是自帶便當。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl lʌntʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校供餐",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A meal provided for students by a school; here, the lunch served at Japanese schools.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学校が児童や生徒に提供する食事。ここでは学校で食べる昼食を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "What is for school lunch today?",
+          "ja": "今日の給食は何ですか。",
+          "zh": "今天的學校供餐吃什麼？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finishing my school lunch, I returned my tray to the serving table.",
+          "ja": "給食を食べ終わってから、トレーを配膳台に戻しました。",
+          "zh": "吃完學校供餐後，我把餐盤送回配膳台。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "給食",
+      "jaReading": "きゅうしょく",
+      "jaReadingSegments": [
+        {
+          "text": "給食",
+          "ruby": "きゅうしょく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-lunch-v1-4e0919f3cdb3.webp"
+    },
+    {
+      "id": "lunch-serving-apron",
+      "word": "lunch-serving apron",
+      "chinese": "配膳圍裙",
+      "chineseDefinition": "學校配膳時穿在衣服外保持衛生的圍裙或罩衣，常搭配帽子使用。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlʌntʃˌsɝː.vɪŋ ˈeɪ.prən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "配膳圍裙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An apron or protective smock worn over clothes when serving school lunch.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "給食を配るときに、衛生のために服の上から着るエプロンやかっぽう着。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put on your lunch-serving apron before serving.",
+          "ja": "配膳する前に給食エプロンを着てください。",
+          "zh": "請在配膳前穿上配膳圍裙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After my turn ended, I washed the lunch-serving apron and passed it to the next person.",
+          "ja": "当番が終わってから、給食エプロンを洗って次の人に渡しました。",
+          "zh": "輪值結束後，我洗好配膳圍裙，再交給下一個人。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "給食エプロン",
+      "jaReading": "きゅうしょくエプロン",
+      "jaReadingSegments": [
+        {
+          "text": "給食エプロン",
+          "ruby": "きゅうしょくエプロン"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/lunch-serving-apron-v1-038dc7d1f90c.webp"
+    },
+    {
+      "id": "vaulting-box",
+      "word": "vaulting box",
+      "chinese": "跳箱",
+      "chineseDefinition": "體育課練習跳越的器材，由可堆疊木製箱層與軟墊頂面組成。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈvɔːl.tɪŋ bɑːks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "跳箱",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A piece of gym equipment with stacked wooden sections and a padded top, used for jumping over.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "木の段を積み、上にクッションを付けた、跳び越える運動に使う器具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Place the vaulting box beside the mat.",
+          "ja": "跳び箱をマットの横に置いてください。",
+          "zh": "請把跳箱放在墊子旁。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the teacher checked the mat, we took turns jumping over the vaulting box.",
+          "ja": "先生がマットを確認してから、順番に跳び箱を跳びました。",
+          "zh": "老師確認墊子後，我們輪流跳過跳箱。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "跳び箱",
+      "jaReading": "とびばこ",
+      "jaReadingSegments": [
+        {
+          "text": "跳び箱",
+          "ruby": "とびばこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/vaulting-box-v1-ab9909ad619f.webp"
+    },
+    {
+      "id": "science-room",
+      "word": "science room",
+      "chinese": "自然科學教室",
+      "chineseDefinition": "校內進行自然科學實驗與觀察的專科教室，常設實驗桌與水槽。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsaɪ.əns ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "自然科學教室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school room equipped for science lessons, experiments, and observations.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "実験や観察など、理科の授業を行うための教室。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We looked at leaves in the science room.",
+          "ja": "理科室で葉を観察しました。",
+          "zh": "我們在自然科學教室觀察了葉片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the experiment, we washed the beakers and left them in the science room.",
+          "ja": "実験が終わってから、ビーカーを洗って理科室に置いておきました。",
+          "zh": "實驗結束後，我們洗了燒杯，把它們留在自然科學教室。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "理科室",
+      "jaReading": "りかしつ",
+      "jaReadingSegments": [
+        {
+          "text": "理科室",
+          "ruby": "りかしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/science-room-v1-5d4b6b46c0a2.webp"
+    },
+    {
+      "id": "music-room",
+      "word": "music room",
+      "chinese": "音樂教室",
+      "chineseDefinition": "校內上音樂課、練唱或演奏樂器的專科教室。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmjuː.zɪk ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "音樂教室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A room at a school used for music lessons, singing, and playing instruments.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歌を歌ったり楽器を演奏したりする、音楽の授業のための教室。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We practice singing in the music room.",
+          "ja": "音楽室で歌の練習します。",
+          "zh": "我們在音樂教室練唱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Another class was using the music room, so we waited in the corridor.",
+          "ja": "別のクラスが音楽室を使っていたので、廊下で待ちました。",
+          "zh": "別班正在使用音樂教室，所以我們在走廊等。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "音楽室",
+      "jaReading": "おんがくしつ",
+      "jaReadingSegments": [
+        {
+          "text": "音楽室",
+          "ruby": "おんがくしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/music-room-v1-a7309bd46197.webp"
+    },
+    {
+      "id": "school-gate",
+      "word": "school gate",
+      "chinese": "校門",
+      "chineseDefinition": "校園出入口的門或門柱，用來界定進出學校的位置。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ɡeɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "校門",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A gate or gateway marking an entrance to school grounds.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学校の敷地に出入りするための門。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Meet me at the school gate.",
+          "ja": "校門で会いましょう。",
+          "zh": "我們在校門見面吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not find my water bottle, so I went back to the school gate.",
+          "ja": "水筒が見つからなかったので、校門まで戻りました。",
+          "zh": "我找不到水壺，所以回到了校門。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "校門",
+      "jaReading": "こうもん",
+      "jaReadingSegments": [
+        {
+          "text": "校門",
+          "ruby": "こうもん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-gate-v1-a3936995b44d.webp"
+    },
+    {
+      "id": "school-corridor",
+      "word": "school corridor",
+      "chinese": "校舍走廊",
+      "chineseDefinition": "校舍內連接教室與其他房間的通道。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ˈkɔːr.ə.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "校舍走廊",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A passage inside a school building connecting classrooms and other rooms.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "校舎の中で、教室などの部屋をつなぐ通路。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Walk slowly in the school corridor.",
+          "ja": "廊下はゆっくり歩いてください。",
+          "zh": "在校舍走廊請慢慢走。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We were carrying a large table, so we asked everyone to clear the school corridor.",
+          "ja": "大きな机を運んでいたので、廊下を空けてもらうようみんなに頼みました。",
+          "zh": "我們正在搬大桌子，所以請大家把校舍走廊讓出來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "廊下",
+      "jaReading": "ろうか",
+      "jaReadingSegments": [
+        {
+          "text": "廊下",
+          "ruby": "ろうか"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-corridor-v1-98d99147310b.webp"
+    },
+    {
+      "id": "principal-office",
+      "word": "principal's office",
+      "chinese": "校長室",
+      "chineseDefinition": "校長處理校務及接待訪客的校內辦公室。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈprɪn.sə.pəlz ˈɑː.fɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "校長室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The office where a school principal works and meets visitors.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "校長先生が学校の仕事をしたり、来客と話したりする部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please knock on the door of the principal's office.",
+          "ja": "校長室のドアをノックしてください。",
+          "zh": "請敲校長室的門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The principal was meeting a parent, so I waited outside the principal's office.",
+          "ja": "校長先生が保護者と面談していたので、校長室の外で待ちました。",
+          "zh": "校長正在和家長面談，所以我在校長室外等。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "校長室",
+      "jaReading": "こうちょうしつ",
+      "jaReadingSegments": [
+        {
+          "text": "校長室",
+          "ruby": "こうちょうしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/principal-office-v1-9e687c149641.webp"
+    },
+    {
+      "id": "art-room",
+      "word": "art room",
+      "chinese": "美術教室",
+      "chineseDefinition": "校內繪畫、雕塑等美術課程使用的教室，常設工作桌及洗手台。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɑːrt ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "美術教室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school room used for drawing, painting, and other art lessons.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "絵を描いたり作品を作ったりする、美術の授業のための教室。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We painted in the art room.",
+          "ja": "美術室で絵を描きました。",
+          "zh": "我們在美術教室畫畫。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before leaving the art room, we washed the brushes and wiped the tables.",
+          "ja": "美術室を出る前に、筆を洗って、机を拭きました。",
+          "zh": "離開美術教室前，我們洗了畫筆並擦了桌子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "美術室",
+      "jaReading": "びじゅつしつ",
+      "jaReadingSegments": [
+        {
+          "text": "美術室",
+          "ruby": "びじゅつしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/art-room-v1-1a296ca7bb97.webp"
+    },
+    {
+      "id": "home-economics-room",
+      "word": "home economics room",
+      "chinese": "家政教室",
+      "chineseDefinition": "校內學習烹飪、縫紉及生活技能的專科教室。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhoʊm iː.kəˈnɑː.mɪks ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "家政教室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school room used for lessons in cooking, sewing, and practical home skills.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "調理や裁縫など、家庭科の授業を行う教室。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We made soup in the home economics room.",
+          "ja": "家庭科室でスープを作りました。",
+          "zh": "我們在家政教室煮了湯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After using the home economics room, we checked that the taps were closed.",
+          "ja": "家庭科室を使った後、蛇口が閉まっているか確認しました。",
+          "zh": "使用家政教室後，我們確認了水龍頭有沒有關好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "家庭科室",
+      "jaReading": "かていかしつ",
+      "jaReadingSegments": [
+        {
+          "text": "家庭科室",
+          "ruby": "かていかしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/home-economics-room-v1-a4679f403551.webp"
+    },
+    {
+      "id": "computer-room",
+      "word": "computer room",
+      "chinese": "電腦教室",
+      "chineseDefinition": "學校配有多台電腦，供資訊課程與數位學習使用的教室。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəmˈpjuː.tɚ ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電腦教室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school room equipped with computers for lessons and digital learning.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "授業で使うパソコンをまとめて設置した教室。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please sit in the front row of the computer room.",
+          "ja": "パソコン室の前の列に座ってください。",
+          "zh": "請坐在電腦教室前排。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before leaving the computer room, I saved my work and logged out.",
+          "ja": "パソコン室を出る前に、作業内容を保存して、ログアウトしました。",
+          "zh": "離開電腦教室前，我先儲存作業成果，再登出。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "パソコン室",
+      "jaReading": "パソコンしつ",
+      "jaReadingSegments": [
+        {
+          "text": "パソコン室",
+          "ruby": "パソコンしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/computer-room-v1-200a29f508c7.webp"
+    },
+    {
+      "id": "school-broadcasting-room",
+      "word": "school broadcasting room",
+      "chinese": "校園廣播室",
+      "chineseDefinition": "校內操作廣播設備、播放通知或午間節目的房間。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ˈbrɔːd.kæs.tɪŋ ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "校園廣播室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school room used to operate announcements and other broadcasts over the school speakers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "校内放送の機器を操作し、お知らせや番組を流す部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We tested the microphone in the school broadcasting room.",
+          "ja": "放送室でマイクを試しました。",
+          "zh": "我們在校園廣播室測試了麥克風。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The announcement was long, so we practiced reading it in the school broadcasting room.",
+          "ja": "お知らせが長かったので、放送室で読む 練習しました。",
+          "zh": "通知很長，所以我們在校園廣播室練習朗讀。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "放送室",
+      "jaReading": "ほうそうしつ",
+      "jaReadingSegments": [
+        {
+          "text": "放送室",
+          "ruby": "ほうそうしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-broadcasting-room-v1-807f5a2e11ee.webp"
+    },
+    {
+      "id": "school-changing-room",
+      "word": "school changing room",
+      "chinese": "學校更衣室",
+      "chineseDefinition": "學校內供更換體育服或泳裝的房間。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ˈtʃeɪn.dʒɪŋ ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校更衣室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A room at a school where students change into sportswear or swimwear.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "体操服や水着などに着替えるための学校の部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please leave your bag in the school changing room.",
+          "ja": "更衣室にかばんを置いてください。",
+          "zh": "請把袋子放在學校更衣室。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I noticed that I had forgotten my towel when I reached the school changing room.",
+          "ja": "更衣室に着いたとき、タオルを忘れたことに気づきました。",
+          "zh": "到了學校更衣室時，我才發現忘了帶毛巾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "更衣室",
+      "jaReading": "こういしつ",
+      "jaReadingSegments": [
+        {
+          "text": "更衣室",
+          "ruby": "こういしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-changing-room-v1-0669f2cb9f5a.webp"
+    },
+    {
+      "id": "school-swimming-pool",
+      "word": "school swimming pool",
+      "chinese": "學校游泳池",
+      "chineseDefinition": "學校內供游泳課和水中活動使用的泳池。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ˈswɪm.ɪŋ puːl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學校游泳池",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A swimming pool at a school, used for swimming lessons and water activities.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "水泳の授業などで使う、学校に設けられたプール。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The school swimming pool is closed today.",
+          "ja": "今日は学校のプールが閉まっています。",
+          "zh": "學校游泳池今天關閉。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The weather was bad, so our lesson at the school swimming pool was canceled.",
+          "ja": "天気が悪かったので、学校のプールでの授業は中止になりました。",
+          "zh": "天氣不好，所以學校游泳池的課程取消了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "プール",
+      "jaReading": "プール",
+      "jaReadingSegments": [
+        {
+          "text": "プール",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-swimming-pool-v1-caeed11fbadc.webp"
+    },
+    {
+      "id": "sports-equipment-room",
+      "word": "sports equipment room",
+      "chinese": "體育器材室",
+      "chineseDefinition": "學校收納球類、墊子及其他體育器材的房間。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/spɔːrts ɪˈkwɪp.mənt ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "體育器材室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school storage room for balls, mats, and other sports equipment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ボールやマットなど、体育で使う道具を保管する部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please return the balls to the sports equipment room.",
+          "ja": "ボールを体育倉庫に戻してください。",
+          "zh": "請把球放回體育器材室。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After counting the balls, we put away the mats in the sports equipment room.",
+          "ja": "ボールを数えてから、体育倉庫にマットを片付けました。",
+          "zh": "清點球之後，我們把墊子收進體育器材室。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "体育倉庫",
+      "jaReading": "たいいくそうこ",
+      "jaReadingSegments": [
+        {
+          "text": "体育倉庫",
+          "ruby": "たいいくそうこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/sports-equipment-room-v1-d95f54a432ba.webp"
+    },
+    {
+      "id": "pencil-case",
+      "word": "pencil case",
+      "chinese": "鉛筆盒",
+      "chineseDefinition": "用來收納鉛筆、橡皮擦等文具的小盒或小袋。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpen.səl keɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鉛筆盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small box or pouch for pencils, erasers, and other writing tools.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "鉛筆や消しゴムなどの筆記用具を入れる箱や小さな袋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please open your pencil case.",
+          "ja": "筆箱を開けてください。",
+          "zh": "請打開鉛筆盒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not find my eraser, so I emptied my pencil case onto the desk.",
+          "ja": "消しゴムが見つからなかったので、筆箱の中身を机に出しました。",
+          "zh": "找不到橡皮擦，所以我把鉛筆盒裡的東西倒在桌上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "筆箱",
+      "jaReading": "ふでばこ",
+      "jaReadingSegments": [
+        {
+          "text": "筆箱",
+          "ruby": "ふでばこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/pencil-case-v1-af8203a1bf29.webp"
+    },
+    {
+      "id": "rubber-eraser",
+      "word": "rubber eraser",
+      "chinese": "橡皮擦",
+      "chineseDefinition": "擦除紙上鉛筆痕跡的小塊橡膠或合成材料。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrʌb.ɚ ɪˈreɪ.sɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "橡皮擦",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small piece of rubber or synthetic material used to remove pencil marks from paper.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紙に書いた鉛筆の跡を消すための、ゴムなどでできた文房具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please lend me your rubber eraser.",
+          "ja": "消しゴムを貸してください。",
+          "zh": "請借我橡皮擦。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The rubber eraser was dirty, so I rubbed it on scrap paper first.",
+          "ja": "消しゴムが汚れていたので、先にいらない紙でこすりました。",
+          "zh": "橡皮擦髒了，所以我先在廢紙上擦了擦。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "消しゴム",
+      "jaReading": "けしゴム",
+      "jaReadingSegments": [
+        {
+          "text": "消しゴム",
+          "ruby": "けしゴム"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/rubber-eraser-v1-35c9ae2674c2.webp"
+    },
+    {
+      "id": "pencil-sharpener",
+      "word": "pencil sharpener",
+      "chinese": "削鉛筆機",
+      "chineseDefinition": "削去鉛筆外層並磨出筆尖的工具；此處呈現桌上手搖款。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpen.səl ˌʃɑːr.pən.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "削鉛筆機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tool for sharpening pencils; the illustration shows a desktop hand-cranked model.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "鉛筆の先を削ってとがらせる道具。ここでは卓上の手動式を示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The pencil sharpener is on the shelf.",
+          "ja": "鉛筆削りは棚にあります。",
+          "zh": "削鉛筆機在架子上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The pencil sharpener was full, so I emptied the shavings before using it.",
+          "ja": "鉛筆削りがいっぱいだったので、使う前に削りかすを捨てました。",
+          "zh": "削鉛筆機滿了，所以我先倒掉鉛筆屑再使用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "鉛筆削り",
+      "jaReading": "えんぴつけずり",
+      "jaReadingSegments": [
+        {
+          "text": "鉛筆削り",
+          "ruby": "えんぴつけずり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/pencil-sharpener-v1-0ec577af5334.webp"
+    },
+    {
+      "id": "protractor",
+      "word": "protractor",
+      "chinese": "量角器",
+      "chineseDefinition": "測量或畫出角度的工具，常見為有刻度的透明半圓形。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/prəˈtræk.tɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "量角器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A tool with degree markings used to measure or draw angles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "角度を測ったり、角度を決めて線を引いたりする道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please measure this angle with a protractor.",
+          "ja": "分度器でこの角度を測ってください。",
+          "zh": "請用量角器量這個角度。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I moved the protractor because its center did not match the corner of the angle.",
+          "ja": "分度器の中心が角の頂点に合っていなかったので、位置を直しました。",
+          "zh": "量角器中心沒對準角的頂點，所以我調整了它的位置。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "分度器",
+      "jaReading": "ぶんどき",
+      "jaReadingSegments": [
+        {
+          "text": "分度器",
+          "ruby": "ぶんどき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/protractor-v1-6f541add31aa.webp"
+    },
+    {
+      "id": "drawing-compass",
+      "word": "drawing compass",
+      "chinese": "圓規",
+      "chineseDefinition": "以一腳固定圓心、另一腳持筆畫圓的雙腳繪圖工具；不是指南針。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdrɔː.ɪŋ ˌkʌm.pəs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "圓規",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A two-legged drawing tool with a point and a pencil for drawing circles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "片方の針を中心に固定し、もう片方の鉛筆で円を描く道具。方位磁針とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I drew a circle with a drawing compass.",
+          "ja": "コンパスで円を描きました。",
+          "zh": "我用圓規畫了一個圓。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The circle was too small, so I opened the drawing compass wider and tried again.",
+          "ja": "円が小さすぎたので、コンパスを広げて、もう一度描きました。",
+          "zh": "圓太小了，所以我把圓規張大，再畫了一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "コンパス",
+      "jaReading": "コンパス",
+      "jaReadingSegments": [
+        {
+          "text": "コンパス",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/drawing-compass-v1-3af4ea9ca36c.webp"
+    },
+    {
+      "id": "set-square",
+      "word": "set square",
+      "chinese": "三角板",
+      "chineseDefinition": "三角形的製圖尺，可畫直角與特定角度的線。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈset skwer/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "三角板",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A triangular drawing tool used for right angles and other fixed angles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "直角など、決まった角度の線を引くための三角形の定規。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Use a set square to draw a right angle.",
+          "ja": "三角定規で直角を描いてください。",
+          "zh": "請用三角板畫直角。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I held the set square firmly so it would not move while I drew the line.",
+          "ja": "線を引く間に動かないように、三角定規をしっかり押さえました。",
+          "zh": "為了畫線時不讓三角板移動，我穩穩地按住了它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "三角定規",
+      "jaReading": "さんかくじょうぎ",
+      "jaReadingSegments": [
+        {
+          "text": "三角定規",
+          "ruby": "さんかくじょうぎ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/set-square-v1-e0e7ddaffee5.webp"
+    },
+    {
+      "id": "recorder",
+      "word": "recorder",
+      "chinese": "直笛",
+      "chineseDefinition": "正面排列指孔、從吹口送氣發聲的直吹木管樂器；學校常見樹脂製款。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/rɪˈkɔːr.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "直笛",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A wind instrument with finger holes and a whistle-like mouthpiece, often used in school music lessons.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "吹き口から息を入れ、指で穴をふさいで演奏する縦笛。学校では樹脂製もよく使われる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please cover the holes on your recorder.",
+          "ja": "リコーダーの穴をふさいでください。",
+          "zh": "請蓋住直笛上的孔。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The note squeaked, so I checked whether my fingers covered the recorder holes.",
+          "ja": "甲高い音が出たので、指でリコーダーの穴をふさいでいるか確認しました。",
+          "zh": "直笛發出尖聲，所以我確認手指有沒有蓋住指孔。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "リコーダー",
+      "jaReading": "リコーダー",
+      "jaReadingSegments": [
+        {
+          "text": "リコーダー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/recorder-v1-7c306eb41979.webp"
+    },
+    {
+      "id": "melodica",
+      "word": "melodica",
+      "chinese": "鍵盤口琴",
+      "chineseDefinition": "一邊吹氣、一邊按鍵發聲的小型鍵盤吹奏樂器，常附吹管。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/məˈlɑː.dɪ.kə/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鍵盤口琴",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small keyboard wind instrument played by blowing air while pressing keys.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "息を吹き込みながら鍵盤を押して音を出す、小型の楽器。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please connect the tube to your melodica.",
+          "ja": "鍵盤ハーモニカにホースをつないでください。",
+          "zh": "請把吹管接上鍵盤口琴。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked that the tube was connected before we started playing the melodica together.",
+          "ja": "一緒に鍵盤ハーモニカを演奏する前に、ホースがつながっているか確認しました。",
+          "zh": "一起演奏鍵盤口琴之前，我確認了吹管有沒有接好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "鍵盤ハーモニカ",
+      "jaReading": "けんばんハーモニカ",
+      "jaReadingSegments": [
+        {
+          "text": "鍵盤ハーモニカ",
+          "ruby": "けんばんハーモニカ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/melodica-v1-c7c2d9735db7.webp"
+    },
+    {
+      "id": "pe-uniform",
+      "word": "PE uniform",
+      "chinese": "體育服",
+      "chineseDefinition": "學校體育課穿的運動上衣與褲子，與日常校服不同。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌpiːˈiː ˈjuː.nə.fɔːrm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "體育服",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school outfit worn for physical education, usually a sports top and shorts or trousers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "体育の授業などで着る、運動用の上着やズボン。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I packed my PE uniform last night.",
+          "ja": "昨夜、体操服をかばんに入れました。",
+          "zh": "我昨晚把體育服裝進袋子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My PE uniform was still damp, so I hung it by the window before school.",
+          "ja": "体操服がまだ湿っていたので、登校前に窓際に干しました。",
+          "zh": "體育服還有點濕，所以我上學前把它晾在窗邊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "体操服",
+      "jaReading": "たいそうふく",
+      "jaReadingSegments": [
+        {
+          "text": "体操服",
+          "ruby": "たいそうふく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/pe-uniform-v1-8f31f6691a6c.webp"
+    },
+    {
+      "id": "indoor-shoe-bag",
+      "word": "indoor shoe bag",
+      "chinese": "室內鞋袋",
+      "chineseDefinition": "用來攜帶校內室內鞋的小布袋，通常有提把或抽繩。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɪn.dɔːr ʃuː bæɡ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "室內鞋袋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small bag for carrying indoor school shoes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学校の上履きを入れて持ち運ぶための袋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please put your shoes in the indoor shoe bag.",
+          "ja": "上履きを上履き袋に入れてください。",
+          "zh": "請把室內鞋放進室內鞋袋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wrote my name on the indoor shoe bag so I would not mix it up with my friend's.",
+          "ja": "友達の上履き袋と取り違えないように、自分の袋に名前を書きました。",
+          "zh": "為了不和朋友的室內鞋袋弄混，我在自己的袋子上寫了名字。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "上履き袋",
+      "jaReading": "うわばきぶくろ",
+      "jaReadingSegments": [
+        {
+          "text": "上履き袋",
+          "ruby": "うわばきぶくろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/indoor-shoe-bag-v1-03f5f9462710.webp"
+    },
+    {
+      "id": "class-timetable",
+      "word": "class timetable",
+      "chinese": "課表",
+      "chineseDefinition": "列出每天各節課科目與順序的表格。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/klæs ˈtaɪmˌteɪ.bəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "課表",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A schedule showing the subjects and order of lessons each day.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "曜日ごとの授業の科目や順番を示した表。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please check tomorrow's class timetable.",
+          "ja": "明日の時間割を確認してください。",
+          "zh": "請確認明天的課表。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The class timetable had changed, so I repacked my bag before bed.",
+          "ja": "時間割が変わっていたので、寝る前にかばんの中身を入れ替えました。",
+          "zh": "課表有變更，所以我睡前重新整理了書包裡的東西。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "時間割",
+      "jaReading": "じかんわり",
+      "jaReadingSegments": [
+        {
+          "text": "時間割",
+          "ruby": "じかんわり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/class-timetable-v1-2700274f274c.webp"
+    },
+    {
+      "id": "school-communication-notebook",
+      "word": "school communication notebook",
+      "chinese": "聯絡簿",
+      "chineseDefinition": "記錄作業、攜帶物品或親師訊息的學校用簿冊。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl kəˌmjuː.nəˈkeɪ.ʃən ˈnoʊt.bʊk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "聯絡簿",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school notebook used for homework reminders, required items, and messages between home and school.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "宿題や持ち物、家庭と学校の連絡などを書き留める帳面。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please show your parent the school communication notebook.",
+          "ja": "連絡帳を保護者に見せてください。",
+          "zh": "請把聯絡簿拿給家長看。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I forgot what to bring, so I checked the school communication notebook again.",
+          "ja": "持ってくる物を忘れたので、もう一度連絡帳を確認しました。",
+          "zh": "我忘了要帶什麼，所以又確認了一次聯絡簿。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "連絡帳",
+      "jaReading": "れんらくちょう",
+      "jaReadingSegments": [
+        {
+          "text": "連絡帳",
+          "ruby": "れんらくちょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-communication-notebook-v1-e4a1264b3ca2.webp"
+    },
+    {
+      "id": "workbook",
+      "word": "workbook",
+      "chinese": "作業本",
+      "chineseDefinition": "印有題目與作答空間的練習用書，與空白筆記本不同。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwɝːk.bʊk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "作業本",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A book containing exercises and space for students to write their answers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "問題や練習課題が載り、答えを書き込んで学習する本。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please finish this page of your workbook.",
+          "ja": "ドリルのこのページを終わらせてください。",
+          "zh": "請完成作業本的這一頁。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I checked my answers after finishing the workbook exercises.",
+          "ja": "ドリルの問題を解き終わってから、答えを確認しました。",
+          "zh": "做完作業本的練習題後，我檢查了答案。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ドリル",
+      "jaReading": "ドリル",
+      "jaReadingSegments": [
+        {
+          "text": "ドリル",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/workbook-v1-c6cf73b0dbab.webp"
+    },
+    {
+      "id": "test-paper",
+      "word": "test paper",
+      "chinese": "考卷",
+      "chineseDefinition": "印有考試題目或供填寫答案的試卷紙張。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtest ˌpeɪ.pɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "考卷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sheet or set of sheets containing test questions or space for answers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "テストの問題が印刷されたり、答えを書き込んだりする用紙。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please write your name on the test paper.",
+          "ja": "テスト用紙に名前を書いてください。",
+          "zh": "請在考卷上寫名字。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before handing in my test paper, I checked that I had answered every question.",
+          "ja": "テスト用紙を提出する前に、全部の問題に答えたか確認しました。",
+          "zh": "交出考卷前，我確認了是否每一題都作答了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "テスト用紙",
+      "jaReading": "テストようし",
+      "jaReadingSegments": [
+        {
+          "text": "テスト用紙",
+          "ruby": "テストようし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/test-paper-v1-75866235323d.webp"
+    },
+    {
+      "id": "report-card",
+      "word": "report card",
+      "chinese": "成績單",
+      "chineseDefinition": "學校記錄學生各科學習表現及評語的文件。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/rɪˈpɔːrt kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "成績單",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school document recording a student’s performance in subjects and sometimes teacher comments.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "各教科の学習の様子や評価などを家庭に知らせる学校の書類。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I showed my family my report card.",
+          "ja": "家族に通知表を見せました。",
+          "zh": "我把成績單給家人看。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After reading the teacher's comments on my report card, I set a goal for the next term.",
+          "ja": "通知表の先生のコメントを読んでから、来学期の目標を立てました。",
+          "zh": "看完老師在成績單上的評語後，我訂下了下學期的目標。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "通知表",
+      "jaReading": "つうちひょう",
+      "jaReadingSegments": [
+        {
+          "text": "通知表",
+          "ruby": "つうちひょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/report-card-v1-5df561c2fca4.webp"
+    },
+    {
+      "id": "class-journal",
+      "word": "class journal",
+      "chinese": "班級日誌",
+      "chineseDefinition": "由班級記錄當日活動、出席狀況或值日事項的簿冊。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/klæs ˈdʒɝː.nəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "班級日誌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A book used to record a class’s daily activities, attendance, or duty notes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "その日の学級の活動や当番の仕事などを記録する帳面。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please write today's date in the class journal.",
+          "ja": "学級日誌に今日の日付を書いてください。",
+          "zh": "請在班級日誌寫上今天的日期。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was on duty, so I recorded the class activities in the class journal before going home.",
+          "ja": "日直だったので、帰る前にクラスの活動を学級日誌に記録しました。",
+          "zh": "因為今天輪我值日，我放學回家前把班級活動記在班級日誌裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "学級日誌",
+      "jaReading": "がっきゅうにっし",
+      "jaReadingSegments": [
+        {
+          "text": "学級日誌",
+          "ruby": "がっきゅうにっし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/class-journal-v1-f7889cb5763a.webp"
+    },
+    {
+      "id": "blackboard-eraser-cleaner",
+      "word": "blackboard eraser cleaner",
+      "chinese": "黑板擦清潔機",
+      "chineseDefinition": "吸除黑板擦上粉筆灰的電動清潔設備，通常有上方吸入口與集塵部。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈblæk.bɔːrd ɪˌreɪ.sɚ ˈkliː.nɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "黑板擦清潔機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An electric machine that removes chalk dust from a blackboard eraser by suction.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "黒板消しに付いたチョークの粉を吸い取る電動の機械。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The blackboard eraser cleaner is beside the window.",
+          "ja": "黒板消しクリーナーは窓の横にあります。",
+          "zh": "黑板擦清潔機在窗戶旁。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After cleaning the eraser, I turned off the blackboard eraser cleaner before leaving the room.",
+          "ja": "黒板消しをきれいにしてから、部屋を出る前に黒板消しクリーナーの電源を切りました。",
+          "zh": "清乾淨黑板擦後，我在離開房間前關掉了黑板擦清潔機。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "黒板消しクリーナー",
+      "jaReading": "こくばんけしクリーナー",
+      "jaReadingSegments": [
+        {
+          "text": "黒板消しクリーナー",
+          "ruby": "こくばんけしクリーナー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/blackboard-eraser-cleaner-v1-83b2ece243c2.webp"
+    },
+    {
+      "id": "jump-rope",
+      "word": "jump rope",
+      "chinese": "跳繩",
+      "chineseDefinition": "兩端有握柄、供跳躍運動使用的繩子；此處指器材本身。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdʒʌmp roʊp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "跳繩",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A rope with a handle at each end, used for skipping over as exercise.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "両端に持ち手があり、回して跳ぶ運動に使う縄。ここでは道具を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please bring your jump rope tomorrow.",
+          "ja": "明日、縄跳びを持ってきてください。",
+          "zh": "明天請帶跳繩來。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My jump rope was too long, so I adjusted it before practice.",
+          "ja": "縄跳びが長すぎたので、練習の前に長さを調整しました。",
+          "zh": "跳繩太長了，所以我在練習前調整了長度。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "縄跳び",
+      "jaReading": "なわとび",
+      "jaReadingSegments": [
+        {
+          "text": "縄跳び",
+          "ruby": "なわとび"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/jump-rope-v1-e88a8c49b176.webp"
+    },
+    {
+      "id": "relay-baton",
+      "word": "relay baton",
+      "chinese": "接力棒",
+      "chineseDefinition": "接力賽中由隊員依序傳遞的短棒。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈriː.leɪ bəˌtɑːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "接力棒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short tube or stick passed from one runner to the next in a relay race.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "リレーで、走者から次の走者へ受け渡す短い棒。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please pass the relay baton to the next runner.",
+          "ja": "次の走者にバトンを渡してください。",
+          "zh": "請把接力棒傳給下一位跑者。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We dropped the relay baton during practice, so we practiced the handover again.",
+          "ja": "練習中にバトンを落としたので、受け渡しをもう一度練習しました。",
+          "zh": "練習時掉了接力棒，所以我們又練了一次交接。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "バトン",
+      "jaReading": "バトン",
+      "jaReadingSegments": [
+        {
+          "text": "バトン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/relay-baton-v1-60da64172b00.webp"
+    },
+    {
+      "id": "red-white-sports-cap",
+      "word": "reversible sports cap",
+      "chinese": "紅白帽",
+      "chineseDefinition": "可翻面切換紅白兩色、用來區分隊伍的學校運動帽。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/rɪˈvɝː.sə.bəl spɔːrts kæp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "紅白帽",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A school sports cap that can be turned inside out to show red or white for team identification.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "裏返して赤と白を使い分け、体育などで組を区別する帽子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please wear your reversible sports cap for PE.",
+          "ja": "体育では赤白帽をかぶってください。",
+          "zh": "體育課請戴紅白帽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was on the white team, so I turned my reversible sports cap inside out to show the white side.",
+          "ja": "白組だったので、赤白帽を裏返して、白い面を外にしました。",
+          "zh": "我分到白隊，所以把紅白帽翻面，讓白色那面朝外。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "赤白帽",
+      "jaReading": "あかしろぼう",
+      "jaReadingSegments": [
+        {
+          "text": "赤白帽",
+          "ruby": "あかしろぼう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/red-white-sports-cap-v1-d52e947b8cff.webp"
+    },
+    {
+      "id": "school-lunch-trolley",
+      "word": "school lunch trolley",
+      "chinese": "配膳推車",
+      "chineseDefinition": "在學校運送供餐食物、食器或食缸的輪式推車。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl lʌntʃ ˈtrɑː.li/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "配膳推車",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A wheeled cart used to move school lunch food, containers, and dishes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "給食の食缶や食器などを運ぶ、車輪の付いた台車。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please push the school lunch trolley slowly.",
+          "ja": "給食ワゴンをゆっくり押してください。",
+          "zh": "請慢慢推配膳推車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We checked that the way was clear before moving the school lunch trolley into the classroom.",
+          "ja": "給食ワゴンを教室に入れる前に、通路に物がないか確認しました。",
+          "zh": "把配膳推車推進教室前，我們確認了通道上有沒有障礙物。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "給食ワゴン",
+      "jaReading": "きゅうしょくワゴン",
+      "jaReadingSegments": [
+        {
+          "text": "給食ワゴン",
+          "ruby": "きゅうしょくワゴン"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/school-lunch-trolley-v1-51542ad3f919.webp"
+    },
+    {
+      "id": "randoseru-cover",
+      "word": "school backpack cover",
+      "chinese": "日式書包保護套",
+      "chineseDefinition": "套在ランドセル翻蓋外側，減少刮傷與髒污的保護套；不代表完全防水雨罩。",
+      "category": "campus",
+      "partOfSpeech": "noun",
+      "pronunciation": "/skuːl ˈbæk.pæk ˌkʌv.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "日式書包保護套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cover fitted over a randoseru flap to help protect it from scratches and dirt.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ランドセルのかぶせに取り付け、傷や汚れから守るカバー。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please wipe your school backpack cover.",
+          "ja": "ランドセルカバーを拭いてください。",
+          "zh": "請擦拭日式書包保護套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The school backpack cover had slipped, so I refitted it before leaving home.",
+          "ja": "ランドセルカバーがずれていたので、家を出る前に付け直しました。",
+          "zh": "日式書包保護套滑開了，所以我出門前重新裝好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ランドセルカバー",
+      "jaReading": "ランドセルカバー",
+      "jaReadingSegments": [
+        {
+          "text": "ランドセルカバー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/campus-2026-10/randoseru-cover-v1-a5b2150ac563.webp"
+    }
+  ]
+}

@@ -1,0 +1,1158 @@
+{
+  "schemaVersion": 1,
+  "series": "campus",
+  "reviewer": "Codex, individual concept and sentence review with contextual spans",
+  "scope": "Every new word and both examples; exact source digests bind these judgments.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "classroom",
+      "verdict": "pass",
+      "reason": "教室指一般上課空間，以課桌椅與黑板區別職員室及專科教室。",
+      "sourceSha256": "c74afa5b5668f89e0af2df89d20a67193a947f3c2d70112dd36536ef7bfbc6e2"
+    },
+    {
+      "kind": "example",
+      "wordId": "classroom",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "開教室窗戶是直接生活請求，三語的房間與動作一致。",
+      "sourceSha256": "e83278b7d4a446b48088a136f08d1b410f0f5d20232072d2b987e5e71e906327"
+    },
+    {
+      "kind": "example",
+      "wordId": "classroom",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因下節改在別間教室而攜帶課本，保留時間、原因與移動，難度高於單一請求。",
+      "sourceSha256": "923eee1b7b4ac5adf800c1ac3b161e681e0cde819c5f370cffd886b2d8f39960"
+    },
+    {
+      "kind": "word",
+      "wordId": "blackboard",
+      "verdict": "pass",
+      "reason": "黒板依粉筆書寫功能界定，深綠色仍是blackboard，與既有白板分開。",
+      "sourceSha256": "fee4212a56fb87876326ee7b428114749380bed3561d1d4d79073411f4812741"
+    },
+    {
+      "kind": "example",
+      "wordId": "blackboard",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把姓名寫在黑板上是上課常見指示，三語姓名與位置相同。",
+      "sourceSha256": "d185b2198d827b9bfda802509beb2e5e8cd4b96d473c34d35e4f2bf31cf98675"
+    },
+    {
+      "kind": "example",
+      "wordId": "blackboard",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "後排看不清板書所以換前排，包含原因與結果，沒有把板面本身誤作字體。",
+      "sourceSha256": "dfb460676b88d76237f26630fa4e949867afd9e771480677a2b2b63b33913ec3"
+    },
+    {
+      "kind": "word",
+      "wordId": "chalk",
+      "verdict": "pass",
+      "reason": "チョーク指書寫粉筆，圖以無包裝短棒呈現，非蠟筆或白板筆。",
+      "sourceSha256": "067df64746606a4dca74d9400f664a651445be005c8c3875d85f6dedc6239e4d"
+    },
+    {
+      "kind": "example",
+      "wordId": "chalk",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "借白粉筆的請求自然，英日繁中均保留白色與借用。",
+      "sourceSha256": "e9b63039f640418309372478f60e2d63e7e0f840992f940d4d9d924c6aec1682"
+    },
+    {
+      "kind": "example",
+      "wordId": "chalk",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因粉筆折斷而拿另一支，有明確因果，與借用句不重複。",
+      "sourceSha256": "528d3a7cb182e63c90a48a057619d9a088691644dc04200fdaa3f6beec3dd2e5"
+    },
+    {
+      "kind": "word",
+      "wordId": "blackboard-eraser",
+      "verdict": "pass",
+      "reason": "黒板消し清除粉筆，與既有eraser實為白板擦的詞條不同，採完整穩定ID。",
+      "sourceSha256": "dbabf3f715efaa6799178d2219673209547f8a2dc0f069a2ff05f33131c06184"
+    },
+    {
+      "kind": "example",
+      "wordId": "blackboard-eraser",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "歸回黑板擦至粉筆槽是具體整理行為，三語位置一致。",
+      "sourceSha256": "ec92ff84c333c0f34348d64f0397e826eed2b38b6e37d93bbf56636f278d5e44"
+    },
+    {
+      "kind": "example",
+      "wordId": "blackboard-eraser",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "擦拭面積塵後先清理再用，條件與先後關係自然；不描述在戶外亂拍粉塵。",
+      "sourceSha256": "f5240930be83da5febee72ecb715fd30362b97c9db775a57c67b9d2dfceb6b86"
+    },
+    {
+      "kind": "word",
+      "wordId": "textbook",
+      "verdict": "pass",
+      "reason": "教科書是學科用書，明確區別既有ノート及一般讀物。",
+      "sourceSha256": "c479824693a56cff711f582d8a3bf60b5c04b969fc0b9de933d287b38eb9b3f7"
+    },
+    {
+      "kind": "example",
+      "wordId": "textbook",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "翻到課本十頁是常見課堂指示，頁數三語相同。",
+      "sourceSha256": "ee7a7b22bf6b20c8511542850cd4b3d523629d0b6d878ab431bf9a7de2be3eca"
+    },
+    {
+      "kind": "example",
+      "wordId": "textbook",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "忘帶課本所以請鄰座共看，保留因果、忘帶地點與請求對象。",
+      "sourceSha256": "3d9784e92b68ab16752022c86c9c509c4dc81cf664fc798e3efa8121542903d8"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-shoe-locker",
+      "verdict": "pass",
+      "reason": "下駄箱在校園指分格鞋櫃，不要求有鎖；英語完整詞限定學校鞋用櫃。",
+      "sourceSha256": "e83b9a8f58de8046dd1c3c669883abefd57b8bdce457a5e1ec03f79b6c70395c"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-shoe-locker",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "將鞋收進個人鞋格是日本進校舍的具體行為，三語收納一致。",
+      "sourceSha256": "14c66e438dfd37dae8bf2d8de9cf2d869375d41c61f57bc95d78049b72bf0cbc"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-shoe-locker",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先核對鞋櫃名字避免放錯格，原因與先後相同，未聲稱所有學校標號方式一致。",
+      "sourceSha256": "8cae248d4093ace32f51f5b4008af51e9ca9d49001f07084d0e524c81ca61af6"
+    },
+    {
+      "kind": "word",
+      "wordId": "indoor-school-shoes",
+      "verdict": "pass",
+      "reason": "上履き指校舍內專用鞋，白布橡膠底款式為常見示例，定義不限定所有學校同款。",
+      "sourceSha256": "a5b3ba56c26240b3aa8683cf0bb98578d24c4ef8c35f2c9038abcde636f8bcea"
+    },
+    {
+      "kind": "example",
+      "wordId": "indoor-school-shoes",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "玄關換穿上履き是有參考來源的學校生活，三語均為換鞋。",
+      "sourceSha256": "ead82d346ad17af9eae3c31ad2b7e397256ed02483630085b4fb98d1f03ca992"
+    },
+    {
+      "kind": "example",
+      "wordId": "indoor-school-shoes",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "星期一需使用所以星期日清洗，因果與兩個星期日名精確對齊。",
+      "sourceSha256": "8b6fa6549878bb6f450245616c99e1e664bb5c638f609a2c1f81a7fbfba5dbff"
+    },
+    {
+      "kind": "word",
+      "wordId": "randoseru",
+      "verdict": "pass",
+      "reason": "ランドセル以箱型大翻蓋雙肩結構區別一般背包，英語採明確描述性名稱，中文明示小學生用途。",
+      "sourceSha256": "e8fde44d2a7b0ff0af8cf7a43c1b2048cdc76d48c2be5e13c459903a5ecf7bd9"
+    },
+    {
+      "kind": "example",
+      "wordId": "randoseru",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把課本裝進ランドセル是日常準備，沒有混成手提書包。",
+      "sourceSha256": "52f65e0d4abd4bbd5dff7f5aff4c047bf50acbc3d5cf5426bc305d72f915be77"
+    },
+    {
+      "kind": "example",
+      "wordId": "randoseru",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "背負沉重所以取出不用的書，保留因果與不用這一限定，不暗示學校要求。",
+      "sourceSha256": "773189d0b4c5936d39d52d633e60ea4b8029aabcb3efcb0a4c82d9da654af3e5"
+    },
+    {
+      "kind": "word",
+      "wordId": "schoolyard",
+      "verdict": "pass",
+      "reason": "校庭為學校戶外活動地面，非公園或室內體育館，圖以日本常見土操場呈現。",
+      "sourceSha256": "2db3e6129165c2426c9b28c8bdf28a334370cdca5f6197e444497adcbead24b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "schoolyard",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "下課在校庭玩有明確時間與地點，三語一致。",
+      "sourceSha256": "ef59a713cc60f7eb4502380e7eddfa386787c98e4fe37e7df1aac544de574e0f"
+    },
+    {
+      "kind": "example",
+      "wordId": "schoolyard",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因雨天地面濕而留在室內，保留原因和行動，複雜句不只是加形容詞。",
+      "sourceSha256": "642fbd25b66b6653158782dc93138376a76fd0b08be71c462b808172e3402b39"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-gymnasium",
+      "verdict": "pass",
+      "reason": "体育館用室內球場、木地板與高屋頂辨識，不與健身房器械房混淆。",
+      "sourceSha256": "ed2b3e1cce01783b812e51aa33d6759cd4c20f5fa89aa9425ccb91b13fda0e92"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-gymnasium",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "體育館打籃球是直接可想像的活動，三語運動相同。",
+      "sourceSha256": "22122c824983619a9ea8220b1dbf2bc7ce0d4d0782c21f1d98a122e6867fe5e0"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-gymnasium",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因下雨把原定戶外體育課移至館內，因果與課程移動自然。",
+      "sourceSha256": "22080098b29db26f129e944c0e924c4a8e5ed7187d73a68f0747211468d8f1a4"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-infirmary",
+      "verdict": "pass",
+      "reason": "保健室是校內初步照護空間，區別醫院、診所與職業詞養護教諭。",
+      "sourceSha256": "7bd5862622c953a892130dae14e41b331c6e672dd6fa3bea59d84df174499381"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-infirmary",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "陪同朋友到保健室是生活敘事，三語同伴與目的地一致。",
+      "sourceSha256": "b0b3553da25941a4bb5224238c615d3f39388a8263feb6f505701a047ab46f37"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-infirmary",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因頭痛先向教師告知再休息，保留因果和順序，不提供醫療處置建議。",
+      "sourceSha256": "48b1843a040c20f8300b13cb70c31f4822fad676eab4c02ad667d2fb7ba0db61"
+    },
+    {
+      "kind": "word",
+      "wordId": "staff-room",
+      "verdict": "pass",
+      "reason": "職員室是教師工作的共用室，staff room依學校語境界定，不當作僅供休息的休息室。",
+      "sourceSha256": "5d2d4a3a5ea14fa1eba7d894a1fd1f913e5f7bf48b186771097654c1c4f9c925"
+    },
+    {
+      "kind": "example",
+      "wordId": "staff-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在職員室見到老師是自然校園敘事，三語人物與地點一致。",
+      "sourceSha256": "9eb063a711491e11cdab60d5aa0b821200c247ab54d9f82e842f51fdddc9e63b"
+    },
+    {
+      "kind": "example",
+      "wordId": "staff-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先敲門確認再進入是日常禮貌情境，時間順序與動作對齊。",
+      "sourceSha256": "cfef94714499210fb18c0262a790684826991211148c772b50483cf4e895874f"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-library",
+      "verdict": "pass",
+      "reason": "図書室依校內房間處理，不與校外公共圖書館概念合併。",
+      "sourceSha256": "571069816aff903515af70953b6541aa54cb7ae6064b39cbe49df1a106597f00"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-library",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在校內圖書室借一本書是常見用途，借閱不是購買。",
+      "sourceSha256": "c0fc7c4670303b21160539cd3b95b20a65248b9cb877cb6d27440f35a27196ca"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-library",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "要借的書被借走所以預約，英日繁中保留既有借出狀態與後續行動。",
+      "sourceSha256": "32f9f24809975eab996cd07d39a8cd3bf33c22e97e792882a474fa57c2b2da79"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-lunch",
+      "verdict": "pass",
+      "reason": "給食限定學校提供的餐食，與自帶弁当、食堂單點區別；圖用配餐盤與牛奶。",
+      "sourceSha256": "d36928c0ec5ebf4f03f28360fd326b16bf50e82d0da5d4f6adb33a9dbf0123bf"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-lunch",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問今天供餐內容是自然對話，三語保留今天與問題。",
+      "sourceSha256": "fcad9aaeb59409c99f53703566fec901e6daf91a8c9276fd45c77addccbd22bd"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-lunch",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "吃完供餐才把盤子送回配膳台，保留時間順序，未混成回家清洗餐具。",
+      "sourceSha256": "2d36987cb398fbbfaaa0586b53525d7f64001b6bd068bed572f96d1b03211df2"
+    },
+    {
+      "kind": "word",
+      "wordId": "lunch-serving-apron",
+      "verdict": "pass",
+      "reason": "給食エプロン採配膳用罩衣概念，與既有一般料理圍裙用用途及白罩衣外觀區別。",
+      "sourceSha256": "4f6bf196d9c12226a43392d96d2add8759cebdf3bad191d5663d17aed457671f"
+    },
+    {
+      "kind": "example",
+      "wordId": "lunch-serving-apron",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "配膳前穿上圍裙是實際衛生準備，先後在三語一致。",
+      "sourceSha256": "021df265e9b94fa5bfe8c8525467b1ae00cef5e783795b1ca84ea68a9d375aaf"
+    },
+    {
+      "kind": "example",
+      "wordId": "lunch-serving-apron",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "輪值結束後洗淨交下一人，保留完成、清洗與交接三步，不聲稱各校制度完全相同。",
+      "sourceSha256": "c640ccb80a860e88b4e1dfa9a5978de3c1a74b020d91e11453326bd4fb181815"
+    },
+    {
+      "kind": "word",
+      "wordId": "vaulting-box",
+      "verdict": "pass",
+      "reason": "跳び箱以分層木箱和軟墊頂面辨識，與鞍馬、跳馬平台不同。",
+      "sourceSha256": "5cf6e12c945c0a20f36febc23b005bc1fb747424951cb9414c03eda8ea8190fb"
+    },
+    {
+      "kind": "example",
+      "wordId": "vaulting-box",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "教師旁邊放跳箱是準備課程的具體位置指示，不涉及自行挑戰高度。",
+      "sourceSha256": "cc1dce8a22d0364d829068fdfbcf828550915fe0b0819bf6760fdbe721290540"
+    },
+    {
+      "kind": "example",
+      "wordId": "vaulting-box",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "教師確認墊子位置後學生才跳，先後與確認者一致，沒有無指導危險示範。",
+      "sourceSha256": "a6b5ef425692645c43328a9bbf7d7c1dfb002fd5e82fa7120d97dedbfef42705"
+    },
+    {
+      "kind": "word",
+      "wordId": "science-room",
+      "verdict": "pass",
+      "reason": "理科室是教學實驗空間，以實驗桌水槽區別研究機構實驗室或一般教室。",
+      "sourceSha256": "e03b721a6d6a40089aab818c441e453444aded6e3d8af9488237124478c88f38"
+    },
+    {
+      "kind": "example",
+      "wordId": "science-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在理科室觀察葉片是簡單、安全的日常課程，三語標本與動作一致。",
+      "sourceSha256": "5ac5413b124a4980929837f5afb7632f1158b7e6e8561b6e57e780cecbccddfa"
+    },
+    {
+      "kind": "example",
+      "wordId": "science-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "實驗結束後清洗燒杯並留在室內，先後、清洗及歸置一致。",
+      "sourceSha256": "54338fa7ea49fbf9adb43cf6f0aba6efaff6a817546442166e02300097982054"
+    },
+    {
+      "kind": "word",
+      "wordId": "music-room",
+      "verdict": "pass",
+      "reason": "音楽室為校內音樂教學房間，以鋼琴和椅列辨識，不當作演奏廳或錄音室。",
+      "sourceSha256": "9f9553a1fc57dd3f86843505e80e0d14afe34bc18b11efe7ebc665005fac12f2"
+    },
+    {
+      "kind": "example",
+      "wordId": "music-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "音樂教室練唱是直接校園用途，三語對齊。",
+      "sourceSha256": "71ffc0abbdf0dfd3f876d1a4636a30069ec9ed0d62617aba95114460195ab2c2"
+    },
+    {
+      "kind": "example",
+      "wordId": "music-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "其他班正在使用所以走廊等待，因果與使用者是別班清楚。",
+      "sourceSha256": "ca626c258baf7efd3c370e2a43e39ab48c63e217a66a130683b9796201bf9022"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-gate",
+      "verdict": "pass",
+      "reason": "校門是校地入口而非校舍玄關，圖顯示門柱及可開關門扇。",
+      "sourceSha256": "d949b69b6824f4d87d759e3c06b675d6232e53942aa1987354a40823f86e4319"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-gate",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "校門見面是具體地標用法，三語地點一致。",
+      "sourceSha256": "497274145e66ed0a6444a2e88bc33faba4cb102f800c1f6e3ffc77450c5d8fdc"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-gate",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "遺失水瓶所以回到校門，保留原因、物件與返回，不暗示在門口已找回。",
+      "sourceSha256": "7eaa1d7e02483d81dffd903df8da67553b5c33b02107207b4398ffdbdde60ce1"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-corridor",
+      "verdict": "pass",
+      "reason": "廊下在本分類限定校舍內走廊，不與街道或有月台的通道混同。",
+      "sourceSha256": "acbfb7b6651bd05329bb22d270ac269fe480dff68d67caaa5d35ce865849c8e5"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-corridor",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "走廊慢走是直接自然的校園提醒，三語副詞一致。",
+      "sourceSha256": "1b25ae0e867d8c6794866f663de944748bb474c974a1ece0c97848434bcf6f47"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-corridor",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因搬大桌而請他人騰出走廊，保留原因、當時搬運狀態與請求，難度有提升。",
+      "sourceSha256": "e128445452477615a77aca3269739769f641036931236756a416150bf9fc7b90"
+    },
+    {
+      "kind": "word",
+      "wordId": "principal-office",
+      "verdict": "pass",
+      "reason": "校長室為校長專用辦公室，與共用職員室分開；不把處罰學生當作唯一用途。",
+      "sourceSha256": "d55029162c8ce5ce629e7f23adf1f1e338ea89552bd9b8b081bcd7e3def9dc46"
+    },
+    {
+      "kind": "example",
+      "wordId": "principal-office",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "敲門請求的房間和動作三語相同，適合簡單校園情境。",
+      "sourceSha256": "51d4bb26fe1d6a7859a11f97b7a2af50b7a855147069673f21125be152f73e66"
+    },
+    {
+      "kind": "example",
+      "wordId": "principal-office",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "家長面談造成在外等待，保留進行狀態、人物與因果。",
+      "sourceSha256": "0f1ef9c41149f696adc01f8567dc75326aa64b815bdda9ebc7ac99b0c5b4e3b0"
+    },
+    {
+      "kind": "word",
+      "wordId": "art-room",
+      "verdict": "pass",
+      "reason": "美術室以創作工作桌、畫具和作品架界定，非美術館或一般教室。",
+      "sourceSha256": "a06873028497fadeaf89c937f92b5962e8e6c696f68e93a622a5b8f5d9aea32c"
+    },
+    {
+      "kind": "example",
+      "wordId": "art-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "美術課創作是具體用途，人物省略符合日文自然敘事。",
+      "sourceSha256": "c045a503d59b1081f94bc636151d9bc3573dbd3a769ea057e87f682f101c485b"
+    },
+    {
+      "kind": "example",
+      "wordId": "art-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "離開前清洗與擦桌兩動作有時間關係，三語工具及順序一致。",
+      "sourceSha256": "5b5f7e483f79fe75275ef84ceea442a8bb36cfbeccd39a446713fc7ec3aa3013"
+    },
+    {
+      "kind": "word",
+      "wordId": "home-economics-room",
+      "verdict": "pass",
+      "reason": "家庭科室兼具烹飪及縫紉教學用途，與家用廚房或餐廳區別。",
+      "sourceSha256": "de2273af197a48dd4bab3971d0c44eedf91913a7e735101af63b9935b666a5d1"
+    },
+    {
+      "kind": "example",
+      "wordId": "home-economics-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "課程料理情境自然，三語料理相同。",
+      "sourceSha256": "fb712750821fc321f0fa405ec728441c6b3256c79a1d0b965c80d931d51c2a36"
+    },
+    {
+      "kind": "example",
+      "wordId": "home-economics-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "課後確認狀態構成時間加間接疑問，三語檢查對象一致。",
+      "sourceSha256": "8e3e9524141bcb5dfeba8ea64dd2ed6df0d86616b999c4f1ae7cab5bb9a84c96"
+    },
+    {
+      "kind": "word",
+      "wordId": "computer-room",
+      "verdict": "pass",
+      "reason": "パソコン室為有多個學生座位的教學空間，非伺服器機房。",
+      "sourceSha256": "ddb2063aa0307ba15c104e7bc4d456d4a58b6846656fb3be3e9463f7d31ed552"
+    },
+    {
+      "kind": "example",
+      "wordId": "computer-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "座位指示明確，三語前排位置一致。",
+      "sourceSha256": "3eaea60caafe4e49c8aa53027bfe41a640289feaa1a5aa47d40b0f18ba5a3d06"
+    },
+    {
+      "kind": "example",
+      "wordId": "computer-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "離開前儲存及登出有實質先後，非單純電腦物件堆疊。",
+      "sourceSha256": "320509a0acc060b95ffb410fdf0f482843740e16871f4f2de093cb958cf03143"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-broadcasting-room",
+      "verdict": "pass",
+      "reason": "放送室為校內廣播操作空間，與商業電台或錄音室規模不同。",
+      "sourceSha256": "16c8a040a9f20066e735858d4befa681f7392d0ea51c2ae968f33e6be6a2ae4d"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-broadcasting-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "廣播前測試麥克風為直接日常任務，三語一致。",
+      "sourceSha256": "038d6e7f3bdbca60e6cb16a107c1c0071595c4d086caf2c6886312d845a69296"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-broadcasting-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因篇幅長而練讀的因果自然，沒有新增演說或錄製等不一致事件。",
+      "sourceSha256": "b99c02c7ec26464b850b156fb47ec255c5581f1c06bc56e15035a0e8cc891f36"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-changing-room",
+      "verdict": "pass",
+      "reason": "更衣室為換衣空間，以長椅和衣物櫃區別鞋櫃或商店試衣間。",
+      "sourceSha256": "56f86190c92674ef798f81aab43e6958c0467d528b49c5db6691af55fd75f0ed"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-changing-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "放置袋子的指示直接，三語未加入鎖櫃或換衣細節。",
+      "sourceSha256": "a9ab6654cbff2e4b57f13a1541549ceb9f0373cc9bbcebb34bd5f8acf2bad8f1"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-changing-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "到達時發現先前遺漏有時間層次，三語毛巾和認知事件對應。",
+      "sourceSha256": "dddfa741cac964098dd914244570080ae1805c2fa8fb75cbfaf17e78dd9e0723"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-swimming-pool",
+      "verdict": "pass",
+      "reason": "プール在此限定學校教學泳池，不增加遊樂園滑水道或度假池特徵。",
+      "sourceSha256": "c8f00f2f990b3b0cec8e5a17c0055909a6ccb88a7b59355740025632a94170c0"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-swimming-pool",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "今天的開放狀態是單一命題，三語沒有編造原因。",
+      "sourceSha256": "13d4a095198b96187ae053503c3160763b34c7a4aba490b92661fb1f49741866"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-swimming-pool",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "天氣導致停課是自然因果，未把取消課程等同泳池永久關閉。",
+      "sourceSha256": "d631c1bfd6663a4415610daf2adbc8916c9ec0d74fcb907aaf8cf149d8ffda49"
+    },
+    {
+      "kind": "word",
+      "wordId": "sports-equipment-room",
+      "verdict": "pass",
+      "reason": "体育倉庫是器材存放室，非進行運動的体育館；圖以收納架和成疊墊辨識。",
+      "sourceSha256": "154419797954a444ab08036ed96b8d110a360e963bd395e3245ed8e3fed8ba07"
+    },
+    {
+      "kind": "example",
+      "wordId": "sports-equipment-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "器材歸置的動作、物件和目的地一致。",
+      "sourceSha256": "c6c8b66cba9259a059e55bbcea9c83f75e8574375d8c27c831e80860566cbd1b"
+    },
+    {
+      "kind": "example",
+      "wordId": "sports-equipment-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "清點與收墊分為兩步，時間和兩種器材三語對齊。",
+      "sourceSha256": "524705329ab6946ae5c98ad9e9e0fe20daced8728f9a3a5bffbad8b5aa958713"
+    },
+    {
+      "kind": "word",
+      "wordId": "pencil-case",
+      "verdict": "pass",
+      "reason": "筆箱以文具收納功能定義，允許盒與袋款，不混成化妝包。",
+      "sourceSha256": "fb537f9fa3653cc1503573c2b7acf3f212b75eba25d8fec6ab939c5f13d9904f"
+    },
+    {
+      "kind": "example",
+      "wordId": "pencil-case",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "打開個人物品是直接指示，三語一致。",
+      "sourceSha256": "19f57296c69e8d844b258431d212af6d29fdd42cae8f05c579a7a3bbe44469d8"
+    },
+    {
+      "kind": "example",
+      "wordId": "pencil-case",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "找不到橡皮擦導致倒出內容，因果和位置相同。",
+      "sourceSha256": "91a7b2e42b1a30be32a6b86a7c0e864b2646792a59a357729d6a8cf9d8931db5"
+    },
+    {
+      "kind": "word",
+      "wordId": "rubber-eraser",
+      "verdict": "pass",
+      "reason": "使用rubber-eraser新ID，與既有ID eraser所指白板擦區分；消しゴム讀音保留ゴム片假名。",
+      "sourceSha256": "0cd914dbec8aad3b4f28c9effcecd194c93e415b12333eb0ac56e2c70076cd6d"
+    },
+    {
+      "kind": "example",
+      "wordId": "rubber-eraser",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "借橡皮擦的簡單請求自然，非借黑板擦。",
+      "sourceSha256": "80349485d9660f34f9fa3966e7161003c0e623e2e59ed81deaa3eac2792a90b3"
+    },
+    {
+      "kind": "example",
+      "wordId": "rubber-eraser",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "髒污導致先在廢紙清理，三語因果與清理方式一致。",
+      "sourceSha256": "99fd78c0bc25c623f444d3c4233e320c802d312dd68585c7c9334692830d22e2"
+    },
+    {
+      "kind": "word",
+      "wordId": "pencil-sharpener",
+      "verdict": "pass",
+      "reason": "鉛筆削り以削鉛筆功能界定，圖用手搖機區別碎紙機或一般收納盒。",
+      "sourceSha256": "10b891eee61ba3f8a486037dca8acb81ccbca8625d95d0601319473a7ae3b774"
+    },
+    {
+      "kind": "example",
+      "wordId": "pencil-sharpener",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "位置敘述單一明確，英日繁中架子一致。",
+      "sourceSha256": "df2f1f5c41af944a0315c7e0036bde4e68bfa53c04d24336d5d2c4e92912ad4c"
+    },
+    {
+      "kind": "example",
+      "wordId": "pencil-sharpener",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "滿屑造成先清空再使用，三語因果與先後對齊。",
+      "sourceSha256": "7f62c357b5389a204c183d1b57b4627185c6c27bfa63cff2df77d4b515bd5c3d"
+    },
+    {
+      "kind": "word",
+      "wordId": "protractor",
+      "verdict": "pass",
+      "reason": "分度器必須有角度刻度與中心參考點，與半圓尺或圓規不同。",
+      "sourceSha256": "979b8f6be393e73f23a092b3ef59e332c301f80ded047913e6da0db4def7632f"
+    },
+    {
+      "kind": "example",
+      "wordId": "protractor",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "工具和測角用途明確，三語一致。",
+      "sourceSha256": "a609a78982dae08b5389870758348f1e8cded44588402221d4232653eda86730"
+    },
+    {
+      "kind": "example",
+      "wordId": "protractor",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "中心與頂點未對準引發調整，三語保持同一測量問題。",
+      "sourceSha256": "8b30f06b0a511013fede163326c134879f3210189c5e6f5e86703d4d2e5b1291"
+    },
+    {
+      "kind": "word",
+      "wordId": "drawing-compass",
+      "verdict": "pass",
+      "reason": "英文加drawing消除指南針歧義，コンパス圖必須有鉛筆腳與針腳。",
+      "sourceSha256": "5dba7621b533b5d9ca7dc5dc6c863f435abe9571b894568342fd91129fe733b7"
+    },
+    {
+      "kind": "example",
+      "wordId": "drawing-compass",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "直接呈現圓規畫圓功能，非指向方位。",
+      "sourceSha256": "92e798b3e53394313d36fb1b5705bc289cd02dc045cb3448fcdc958c24508338"
+    },
+    {
+      "kind": "example",
+      "wordId": "drawing-compass",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "調整張幅改變圓大小，因果和再次繪製對齊。",
+      "sourceSha256": "ff9b1a7b6b11d092eb7366eaa79cbd3b1d708b37b32e5bb28a48ac2b45123279"
+    },
+    {
+      "kind": "word",
+      "wordId": "set-square",
+      "verdict": "pass",
+      "reason": "三角定規是固定角度三角製圖尺，與既有一般定規或量角器分開。",
+      "sourceSha256": "e0135709990b3d6cb7b1171c6055e35701323d33870a8d88f6d58074d3b43eaf"
+    },
+    {
+      "kind": "example",
+      "wordId": "set-square",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "工具用途是固定直角，三語對齊。",
+      "sourceSha256": "dc68f15fb1b519867b99dd7b0d58a4bdd6810d2d87615409a65358b40a6a54fd"
+    },
+    {
+      "kind": "example",
+      "wordId": "set-square",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "目的與同時動作自然，固定的是尺而非紙張。",
+      "sourceSha256": "b34c37de63855ad1bbc823415c5abcc222eb5175b583893d40090a8e34b9f5aa"
+    },
+    {
+      "kind": "word",
+      "wordId": "recorder",
+      "verdict": "pass",
+      "reason": "recorder在此為直笛而非錄音機，參考樂器廠商確認學校常見樹脂外觀。",
+      "sourceSha256": "be53b921de4cfa7dfa0a1996b89c68bb1f93313c8d7c36493bffe3297b38e9b4"
+    },
+    {
+      "kind": "example",
+      "wordId": "recorder",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "指孔操作與樂器概念一致，三語簡單指令。",
+      "sourceSha256": "4f5c591b1e520f2c44fbcda09fbf7bd4f1bbc1d7284b01a65fcbf88bd3c7b357"
+    },
+    {
+      "kind": "example",
+      "wordId": "recorder",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "檢查指孔覆蓋為實際練習，不把尖聲唯一歸因於器材損壞。",
+      "sourceSha256": "23402ecdf80de369079ee3de2ed438c71b99dd5290a8664e8935687d8fc1bf46"
+    },
+    {
+      "kind": "word",
+      "wordId": "melodica",
+      "verdict": "pass",
+      "reason": "採通用名鍵盤ハーモニカ而非商品名ピアニカ，圖保留鍵盤及吹管，不當作電子琴。",
+      "sourceSha256": "174024c0b19ad2234d8675488b72dd75c16bffff1c7468c93b7310a8a6dcd789"
+    },
+    {
+      "kind": "example",
+      "wordId": "melodica",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "連接吹管為桌上吹奏準備，物件關係三語相同。",
+      "sourceSha256": "39da378ca35eb8df2e3e90380902823b22d4e6e9b5f84a47fd73cf9762538b63"
+    },
+    {
+      "kind": "example",
+      "wordId": "melodica",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "合奏前檢查連接狀態，有先後及間接疑問，三語一致。",
+      "sourceSha256": "953b58e1857f58922efa7ecf8f8f0bd3d98ec322a542634992ad0657f0b59e27"
+    },
+    {
+      "kind": "word",
+      "wordId": "pe-uniform",
+      "verdict": "pass",
+      "reason": "体操服為學校運動服，與既有学校の制服正裝明確區分。",
+      "sourceSha256": "db34aaa4622d7a3fe18d4cabc5e105fe585bf4c6cbba133d1900a12028565406"
+    },
+    {
+      "kind": "example",
+      "wordId": "pe-uniform",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "前一晚準備運動服合理，三語時間對齊且沒有把packed誤作穿上。",
+      "sourceSha256": "0f54b0db6a29f5b504b04339f4826a76d5754d5735bda99333599ff49c4ffe93"
+    },
+    {
+      "kind": "example",
+      "wordId": "pe-uniform",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "未乾造成出門前晾衣，時間、原因與位置相同。",
+      "sourceSha256": "caccfe682c6e595999d1321cf1802e415a446931e1c72c07c36cd2e7f7a59254"
+    },
+    {
+      "kind": "word",
+      "wordId": "indoor-shoe-bag",
+      "verdict": "pass",
+      "reason": "上履き袋與鞋本體、下駄箱分別建詞，布袋需顯示足夠鞋容量。",
+      "sourceSha256": "bc86800152f498349a2ad6339a2c8b77a85927f39de844dd06f7f937aea2d620"
+    },
+    {
+      "kind": "example",
+      "wordId": "indoor-shoe-bag",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "收納動作與鞋袋用途一致，英文shoes由句子與袋子語境限定室內鞋。",
+      "sourceSha256": "4a692d175d87861dbd5589ea66d3a0d275fb97dd9bbd767dbd0d788c19656605"
+    },
+    {
+      "kind": "example",
+      "wordId": "indoor-shoe-bag",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "寫名字是防止拿錯的目的關係，不把朋友姓名寫到自己袋上。",
+      "sourceSha256": "2675514337aeb45a6c3517bd58281167a03ede51a8e67a9bf88821b055b3ebdf"
+    },
+    {
+      "kind": "word",
+      "wordId": "class-timetable",
+      "verdict": "pass",
+      "reason": "時間割為每日課節安排，與行事曆、考卷或交通時刻表不同。",
+      "sourceSha256": "1df6925599bf29e8fe038506cefb975a1f433d3140d4236e2ff2d97c8bc3c9d6"
+    },
+    {
+      "kind": "example",
+      "wordId": "class-timetable",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "對照隔日課表是日常準備，三語日期與動作一致。",
+      "sourceSha256": "f880286ef316a163bddb09bae645c1ccf31ef9e34eb1bc657a5c479d80baa796"
+    },
+    {
+      "kind": "example",
+      "wordId": "class-timetable",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "課表變更帶來重整內容的因果清楚，三語保留睡前。",
+      "sourceSha256": "d5e9cefbfdd5ff0e2454f30e714b5af6baef2abdfa5546578f7f119c56cd37a1"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-communication-notebook",
+      "verdict": "pass",
+      "reason": "連絡帳按學校與家庭溝通用途區別一般ノート，不聲稱所有學校都用同一制度。",
+      "sourceSha256": "3c095074964bb9014927d90fbe84fb8a6b19038fac22fb50f39b5a84a41ed1e9"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-communication-notebook",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "傳遞訊息用途具體，三語對象是家長。",
+      "sourceSha256": "12533eb2d910405affab31d4b2d82d6c1233f8313672d6a6c1ba52ed12974484"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-communication-notebook",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "忘記攜帶清單而重新查看有因果，沒有誤成忘帶聯絡簿。",
+      "sourceSha256": "7cab0fd4066a8dad813e4b4a17cda6f80773289b111d7e9b219e6cd36272b303"
+    },
+    {
+      "kind": "word",
+      "wordId": "workbook",
+      "verdict": "pass",
+      "reason": "ドリル指題目練習冊，非電鑽或一般空白ノート；不與教科書混同。",
+      "sourceSha256": "863fbfe663125a2dd2b6f01c896092e0c30ed74f15a66a630fdf7d631d9e1ec6"
+    },
+    {
+      "kind": "example",
+      "wordId": "workbook",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "完成指定頁是明確學習任務，三語沒有增加科目或截止日。",
+      "sourceSha256": "5ec0ae2abd68b4228c9d3a822d8c93e4c80722c5ec53e53a89603c8d739e537d"
+    },
+    {
+      "kind": "example",
+      "wordId": "workbook",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "作答後核對有實質先後，與簡單句完成指定頁的重點不同。",
+      "sourceSha256": "86c40e07d12351fad0c7536ff845230b0a08a4088c4df49e005e3298ae4acb07"
+    },
+    {
+      "kind": "word",
+      "wordId": "test-paper",
+      "verdict": "pass",
+      "reason": "テスト用紙為學校試卷，與通知表成績紀錄或練習冊不同。",
+      "sourceSha256": "43cd6ded665594b57bbe145af6961b6167bcb57d9c24507e02d995bf8533e3e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "test-paper",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "考前寫名是直接具體指令，三語物件一致。",
+      "sourceSha256": "a6c30125b4f50f6c554c77e574cf9613a6925244482bf36169a8b078b41fffdb"
+    },
+    {
+      "kind": "example",
+      "wordId": "test-paper",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "交卷前檢查涵蓋全部題目，並未宣稱每題都答對。",
+      "sourceSha256": "aa356c441ee1bc7404aca9081ad6ff410165b49bcce4cbc2741f6592db32b76c"
+    },
+    {
+      "kind": "word",
+      "wordId": "report-card",
+      "verdict": "pass",
+      "reason": "通知表為學習表現報告，可包含評語，未限定為數字分數或排名。",
+      "sourceSha256": "b07dd0f7d43c752b38acaaa6f460e70c4ec054325808d7c644f1f8febd4fd16c"
+    },
+    {
+      "kind": "example",
+      "wordId": "report-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "分享學習結果是日常情境，不暗示好壞評價。",
+      "sourceSha256": "366add3078a116fc45c5f3852c4d2c0427e3f8f3e6d36cf32771b4a43a9d93db"
+    },
+    {
+      "kind": "example",
+      "wordId": "report-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "閱讀回饋後規劃下期，人物與時間對齊。",
+      "sourceSha256": "a4a463f9d67af3ff1b5442a8525b7e5447b9b420c8b4c7c528c97da92e42bf06"
+    },
+    {
+      "kind": "word",
+      "wordId": "class-journal",
+      "verdict": "pass",
+      "reason": "学級日誌為全班共同紀錄，與個人日記及親師連絡帳分開。",
+      "sourceSha256": "529c7a8d61caf70319eeb39414e99dbd41de7a6dc05467ba3ad004c51c40fe96"
+    },
+    {
+      "kind": "example",
+      "wordId": "class-journal",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "日期登錄是具體班務，不是個人感想。",
+      "sourceSha256": "765ef56b36cb6f3a82d3493bf6a468f683d09837a2bf14a357976853f0af28a6"
+    },
+    {
+      "kind": "example",
+      "wordId": "class-journal",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "值日角色帶出回家前完成紀錄的原因和時間。",
+      "sourceSha256": "517299238cbbba336fc8330d2f1bd3edef3b59bc696f46a9249c751a8e934d98"
+    },
+    {
+      "kind": "word",
+      "wordId": "blackboard-eraser-cleaner",
+      "verdict": "pass",
+      "reason": "クリーナー清理的是板擦而非粉筆本體，採頂面吸入口與集塵機身區別板擦。",
+      "sourceSha256": "d4fcf2a2aa2fed7a3654733cf12bda60a82691f9eb4a00f56fb450aa3513239b"
+    },
+    {
+      "kind": "example",
+      "wordId": "blackboard-eraser-cleaner",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "單一設備位置描述自然，未把清潔機當作黑板擦。",
+      "sourceSha256": "312b6c73400b4721b1272c69b9739233bd5bfbb5f46804927ec109b3525b4583"
+    },
+    {
+      "kind": "example",
+      "wordId": "blackboard-eraser-cleaner",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "完成清理再關電源有先後；無拆機或接觸運作部位指示。",
+      "sourceSha256": "94487779189bb6ca9a0c408eb8c783bc50ee34dc3706495ebfc3350f3acd542b"
+    },
+    {
+      "kind": "word",
+      "wordId": "jump-rope",
+      "verdict": "pass",
+      "reason": "縄跳び可指活動，本詞圖與英語jump rope限定有雙柄的繩子。",
+      "sourceSha256": "f1f2fb4979d88c012068c4da3c44a49a8544be67854073df28e05abe013f90fa"
+    },
+    {
+      "kind": "example",
+      "wordId": "jump-rope",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "攜帶器材的請求清楚，不把跳繩動作當可攜物。",
+      "sourceSha256": "9763fcbe66eb641642d5cdf003a287660afc42cd8e653e83237e2a16387315fd"
+    },
+    {
+      "kind": "example",
+      "wordId": "jump-rope",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "器材長度問題導致練習前調整，原因與時間一致。",
+      "sourceSha256": "6cd70543b4cdb325491bf35831a7f955bacd17475320357ad9f7679682d168cf"
+    },
+    {
+      "kind": "word",
+      "wordId": "relay-baton",
+      "verdict": "pass",
+      "reason": "バトン限定接力賽短棒，與指揮棒、拐杖或玩具魔法棒不同。",
+      "sourceSha256": "752174e004a218364079e13da66ac22f6e0e5ad0d9ec3db1537071022bea0152"
+    },
+    {
+      "kind": "example",
+      "wordId": "relay-baton",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "傳棒的對象與順序三語清楚。",
+      "sourceSha256": "c9126c2a09f4964cd8ff2d88fac7b25d9e73aaa7c31f6772971fc6a074b1f8de"
+    },
+    {
+      "kind": "example",
+      "wordId": "relay-baton",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "掉棒引發針對性交接練習，非無意義拉長句子。",
+      "sourceSha256": "89e6a3211c6ca31693946a64168575cf398ed46589c6e10a54094a204eb5ed4d"
+    },
+    {
+      "kind": "word",
+      "wordId": "red-white-sports-cap",
+      "verdict": "pass",
+      "reason": "赤白帽以紅白可翻面功能區別既有キャップ，未假設所有學校的隊色規則一致。",
+      "sourceSha256": "201c4568551f323922e246ce1699801cc9080148716adbe57943886e8418735f"
+    },
+    {
+      "kind": "example",
+      "wordId": "red-white-sports-cap",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "課堂戴帽指示自然，未加入紅隊或白隊。",
+      "sourceSha256": "57e91c6593b0b093365415acd5e7506d31e7de13385ad081320123f58140d918"
+    },
+    {
+      "kind": "example",
+      "wordId": "red-white-sports-cap",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "白隊導致翻到白面，三語因果一致，英文inside out表現翻面功能。",
+      "sourceSha256": "33db77b8275578825016d6866a7217f8855f80cbea9249fc1d7c7806b977bbf8"
+    },
+    {
+      "kind": "word",
+      "wordId": "school-lunch-trolley",
+      "verdict": "pass",
+      "reason": "給食ワゴン以輪式架和食缸食器呈現，區別固定配膳台或餐廳上菜車。",
+      "sourceSha256": "169619af28c0470d3a91249aa5535dd5083c699113261460b2c06f4fedf9fafd"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-lunch-trolley",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "推車速度指示簡單，無載人或競速情境。",
+      "sourceSha256": "64ddda13e13d34c189e826b97c118018b48ce225ae63378b78b03d1efeaf2b85"
+    },
+    {
+      "kind": "example",
+      "wordId": "school-lunch-trolley",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先檢查通道再運送，有自然的時間及狀態檢查，三語同一事件。",
+      "sourceSha256": "da8cce56664020ce34ee5fbc60b2ed82d5409746f60290edd8ff34786015de1f"
+    },
+    {
+      "kind": "word",
+      "wordId": "randoseru-cover",
+      "verdict": "pass",
+      "reason": "依製造商用途定位為翻蓋保護套，未誤稱能包覆全包的防水雨罩。",
+      "sourceSha256": "fe1a0bf243e19da772c1b5553c1f28eb5f71ae7e493473d498dacca61bed3121"
+    },
+    {
+      "kind": "example",
+      "wordId": "randoseru-cover",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "保護套清潔指令自然，物件不是書包本體。",
+      "sourceSha256": "f9dc4981a30388b5eff9b4c88c65d3e417b1bcb67f4f46487493628bd8f16f2d"
+    },
+    {
+      "kind": "example",
+      "wordId": "randoseru-cover",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "滑位導致出門前調整，沒有無據的防雨效果宣稱。",
+      "sourceSha256": "8e7eb3831742e74d9d80339db5f0e095a26a9215cbf07a052cc5024750767744"
+    }
+  ]
+}

@@ -1,0 +1,8871 @@
+{
+  "en": {
+    "Please open the classroom windows.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "open",
+        "z": "打開",
+        "j": "開ける",
+        "e": "open"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "classroom",
+        "z": "教室",
+        "j": "教室",
+        "e": "classroom"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "windows",
+        "z": "窗戶",
+        "j": "窓",
+        "e": "windows"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Our next lesson is in a different classroom, so take your textbook.": [
+      {
+        "t": "Our "
+      },
+      {
+        "t": "next",
+        "z": "下一個",
+        "j": "次の",
+        "e": "next"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "lesson",
+        "z": "課",
+        "j": "授業",
+        "e": "lesson"
+      },
+      {
+        "t": " is in a "
+      },
+      {
+        "t": "different",
+        "z": "別的",
+        "j": "別の",
+        "e": "different"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "classroom",
+        "z": "教室",
+        "j": "教室",
+        "e": "classroom"
+      },
+      {
+        "t": ", so "
+      },
+      {
+        "t": "take",
+        "z": "帶過去",
+        "j": "持っていく",
+        "e": "take"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "textbook",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Write your name on the blackboard.": [
+      {
+        "t": "Write",
+        "z": "寫",
+        "j": "書く",
+        "e": "write"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "name",
+        "z": "名字",
+        "j": "名前",
+        "e": "name"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "blackboard",
+        "z": "黑板",
+        "j": "黒板",
+        "e": "blackboard"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I could not read the blackboard from the back, so I moved to the front.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "read",
+        "z": "看清字",
+        "j": "字を読む",
+        "e": "read"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "blackboard",
+        "z": "黑板",
+        "j": "黒板",
+        "e": "blackboard"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "back",
+        "z": "後面",
+        "j": "後ろ",
+        "e": "back"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "移りました",
+        "e": "moved"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "front",
+        "z": "前面",
+        "j": "前",
+        "e": "front"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please lend me some white chalk.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "lend",
+        "z": "借給",
+        "j": "貸す",
+        "e": "lend"
+      },
+      {
+        "t": " me some "
+      },
+      {
+        "t": "white",
+        "z": "白色的",
+        "j": "白い",
+        "e": "white"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chalk",
+        "z": "粉筆",
+        "j": "チョーク",
+        "e": "chalk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The chalk broke, so I took another piece from the box.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "chalk",
+        "z": "粉筆",
+        "j": "チョーク",
+        "e": "chalk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "broke",
+        "z": "斷了",
+        "j": "折れた",
+        "e": "broke"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "took",
+        "z": "拿了",
+        "j": "取った",
+        "e": "took"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "another",
+        "z": "另一個",
+        "j": "別の",
+        "e": "another"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "piece",
+        "z": "一支",
+        "j": "一本",
+        "e": "piece"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "box",
+        "z": "盒子",
+        "j": "箱",
+        "e": "box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the blackboard eraser back on the chalk tray.": [
+      {
+        "t": "Put",
+        "z": "放",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "blackboard eraser",
+        "z": "黑板擦",
+        "j": "黒板消し",
+        "e": "blackboard eraser"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "back",
+        "z": "回去",
+        "j": "元に",
+        "e": "back"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "chalk tray",
+        "z": "粉筆槽",
+        "j": "チョーク受け",
+        "e": "chalk tray"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "If the blackboard eraser is dusty, clean it before using it.": [
+      {
+        "t": "If the "
+      },
+      {
+        "t": "blackboard eraser",
+        "z": "黑板擦",
+        "j": "黒板消し",
+        "e": "blackboard eraser"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "dusty",
+        "z": "積了粉塵的",
+        "j": "粉がたまった",
+        "e": "dusty"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "clean",
+        "z": "清乾淨",
+        "j": "きれいにする",
+        "e": "clean"
+      },
+      {
+        "t": " it before "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "Open your textbook to page ten.": [
+      {
+        "t": "Open",
+        "z": "翻開",
+        "j": "開く",
+        "e": "open"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "textbook",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "page ten",
+        "z": "第十頁",
+        "j": "十ページ",
+        "e": "page ten"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I left my textbook at home, so I asked the student next to me to share theirs.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "left",
+        "z": "忘了帶",
+        "j": "忘れた",
+        "e": "left"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "textbook",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "home",
+        "z": "家裡",
+        "j": "家",
+        "e": "home"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼んだ",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "student",
+        "z": "同學",
+        "j": "生徒",
+        "e": "student"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "next to",
+        "z": "在旁邊",
+        "j": "隣の",
+        "e": "next to"
+      },
+      {
+        "t": " me to "
+      },
+      {
+        "t": "share",
+        "z": "共用",
+        "j": "一緒に使う",
+        "e": "share"
+      },
+      {
+        "t": " theirs."
+      }
+    ],
+    "Put your shoes in your school shoe locker.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "shoes",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes"
+      },
+      {
+        "t": " in your "
+      },
+      {
+        "t": "school shoe locker",
+        "z": "學校鞋櫃",
+        "j": "下駄箱",
+        "e": "school shoe locker"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I checked the name on the school shoe locker so I would not use the wrong one.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "name",
+        "z": "名字",
+        "j": "名前",
+        "e": "name"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "school shoe locker",
+        "z": "學校鞋櫃",
+        "j": "下駄箱",
+        "e": "school shoe locker"
+      },
+      {
+        "t": " so I would not "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wrong",
+        "z": "錯誤的",
+        "j": "違う",
+        "e": "wrong"
+      },
+      {
+        "t": " one."
+      }
+    ],
+    "Change into your indoor school shoes at the entrance.": [
+      {
+        "t": "Change into",
+        "z": "換上",
+        "j": "履き替える",
+        "e": "change into"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "indoor school shoes",
+        "z": "校內室內鞋",
+        "j": "上履き",
+        "e": "indoor school shoes"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "entrance",
+        "z": "玄關",
+        "j": "玄関",
+        "e": "entrance"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I washed my indoor school shoes on Sunday because I needed them on Monday.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "washed",
+        "z": "洗了",
+        "j": "洗いました",
+        "e": "washed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "indoor school shoes",
+        "z": "校內室內鞋",
+        "j": "上履き",
+        "e": "indoor school shoes"
+      },
+      {
+        "t": " on "
+      },
+      {
+        "t": "Sunday",
+        "z": "星期日",
+        "j": "日曜日",
+        "e": "Sunday"
+      },
+      {
+        "t": " because I "
+      },
+      {
+        "t": "needed",
+        "z": "需要",
+        "j": "必要だった",
+        "e": "needed"
+      },
+      {
+        "t": " them on "
+      },
+      {
+        "t": "Monday",
+        "z": "星期一",
+        "j": "月曜日",
+        "e": "Monday"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put your textbook in your Japanese school backpack.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "textbook",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook"
+      },
+      {
+        "t": " in your "
+      },
+      {
+        "t": "Japanese school backpack",
+        "z": "日式小學生書包",
+        "j": "ランドセル",
+        "e": "Japanese school backpack"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My Japanese school backpack felt heavy, so I took out the books I did not need.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "Japanese school backpack",
+        "z": "日式小學生書包",
+        "j": "ランドセル",
+        "e": "Japanese school backpack"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "felt",
+        "z": "感覺",
+        "j": "感じた",
+        "e": "felt"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "heavy",
+        "z": "重的",
+        "j": "重い",
+        "e": "heavy"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "took out",
+        "z": "拿出",
+        "j": "取り出した",
+        "e": "took out"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "books",
+        "z": "書",
+        "j": "本",
+        "e": "books"
+      },
+      {
+        "t": " I did not "
+      },
+      {
+        "t": "need",
+        "z": "需要",
+        "j": "必要とする",
+        "e": "need"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We play in the schoolyard during break.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "play",
+        "z": "玩",
+        "j": "遊ぶ",
+        "e": "play"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "schoolyard",
+        "z": "學校操場",
+        "j": "校庭",
+        "e": "schoolyard"
+      },
+      {
+        "t": " during "
+      },
+      {
+        "t": "break",
+        "z": "下課時間",
+        "j": "休み時間",
+        "e": "break"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The schoolyard was wet after the rain, so we stayed inside.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "schoolyard",
+        "z": "學校操場",
+        "j": "校庭",
+        "e": "schoolyard"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "wet",
+        "z": "濕的",
+        "j": "ぬれた",
+        "e": "wet"
+      },
+      {
+        "t": " after the "
+      },
+      {
+        "t": "rain",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "stayed",
+        "z": "待著",
+        "j": "過ごした",
+        "e": "stayed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "inside",
+        "z": "室內",
+        "j": "中",
+        "e": "inside"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We play basketball in the school gymnasium.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "play",
+        "z": "打",
+        "j": "する",
+        "e": "play"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "basketball",
+        "z": "籃球",
+        "j": "バスケットボール",
+        "e": "basketball"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "school gymnasium",
+        "z": "學校體育館",
+        "j": "体育館",
+        "e": "school gymnasium"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "It started raining, so our PE lesson was moved to the school gymnasium.": [
+      {
+        "t": "It "
+      },
+      {
+        "t": "started",
+        "z": "開始",
+        "j": "始まった",
+        "e": "started"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "raining",
+        "z": "下雨",
+        "j": "雨が降る",
+        "e": "raining"
+      },
+      {
+        "t": ", so our "
+      },
+      {
+        "t": "PE lesson",
+        "z": "體育課",
+        "j": "体育の授業",
+        "e": "PE lesson"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "moved",
+        "z": "移到了",
+        "j": "移された",
+        "e": "moved"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "school gymnasium",
+        "z": "學校體育館",
+        "j": "体育館",
+        "e": "school gymnasium"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I went to the school infirmary with a friend.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "went",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "school infirmary",
+        "z": "保健室",
+        "j": "保健室",
+        "e": "school infirmary"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I had a headache, so I told my teacher and rested in the school infirmary.": [
+      {
+        "t": "I had a "
+      },
+      {
+        "t": "headache",
+        "z": "頭痛",
+        "j": "頭痛",
+        "e": "headache"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "told",
+        "z": "告訴了",
+        "j": "伝えた",
+        "e": "told"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "teacher",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "rested",
+        "z": "休息了",
+        "j": "休んだ",
+        "e": "rested"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "school infirmary",
+        "z": "保健室",
+        "j": "保健室",
+        "e": "school infirmary"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I met my teacher in the staff room.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "met",
+        "z": "見到了",
+        "j": "会いました",
+        "e": "met"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "teacher",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "staff room",
+        "z": "教職員辦公室",
+        "j": "職員室",
+        "e": "staff room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before entering the staff room, I knocked and asked if I could come in.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "entering",
+        "z": "進入",
+        "j": "入る",
+        "e": "entering"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "staff room",
+        "z": "教職員辦公室",
+        "j": "職員室",
+        "e": "staff room"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "knocked",
+        "z": "敲了門",
+        "j": "ノックした",
+        "e": "knocked"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "asked",
+        "z": "問了",
+        "j": "聞いた",
+        "e": "asked"
+      },
+      {
+        "t": " if I could "
+      },
+      {
+        "t": "come in",
+        "z": "進來",
+        "j": "入る",
+        "e": "come in"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I borrowed a book from the school library.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "borrowed",
+        "z": "借了",
+        "j": "借りました",
+        "e": "borrowed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "book",
+        "z": "書",
+        "j": "本",
+        "e": "book"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "school library",
+        "z": "學校圖書室",
+        "j": "図書室",
+        "e": "school library"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The book I wanted was already on loan, so I reserved it at the school library.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "book",
+        "z": "書",
+        "j": "本",
+        "e": "book"
+      },
+      {
+        "t": " I "
+      },
+      {
+        "t": "wanted",
+        "z": "想要的",
+        "j": "欲しかった",
+        "e": "wanted"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "already",
+        "z": "已經",
+        "j": "すでに",
+        "e": "already"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "on loan",
+        "z": "借出中",
+        "j": "貸し出し中",
+        "e": "on loan"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "reserved",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "reserved"
+      },
+      {
+        "t": " it at the "
+      },
+      {
+        "t": "school library",
+        "z": "學校圖書室",
+        "j": "図書室",
+        "e": "school library"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "What is for school lunch today?": [
+      {
+        "t": "What is for "
+      },
+      {
+        "t": "school lunch",
+        "z": "學校供餐",
+        "j": "給食",
+        "e": "school lunch"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "today",
+        "z": "今天",
+        "j": "今日",
+        "e": "today"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "After finishing my school lunch, I returned my tray to the serving table.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "finishing",
+        "z": "吃完",
+        "j": "食べ終わる",
+        "e": "finishing"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "school lunch",
+        "z": "學校供餐",
+        "j": "給食",
+        "e": "school lunch"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "returned",
+        "z": "送回了",
+        "j": "戻しました",
+        "e": "returned"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "tray",
+        "z": "餐盤",
+        "j": "トレー",
+        "e": "tray"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "serving table",
+        "z": "配膳台",
+        "j": "配膳台",
+        "e": "serving table"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put on your lunch-serving apron before serving.": [
+      {
+        "t": "Put on",
+        "z": "穿上",
+        "j": "着る",
+        "e": "put on"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "lunch-serving apron",
+        "z": "配膳圍裙",
+        "j": "給食エプロン",
+        "e": "lunch-serving apron"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "serving",
+        "z": "配膳",
+        "j": "配膳する",
+        "e": "serving"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After my turn ended, I washed the lunch-serving apron and passed it to the next person.": [
+      {
+        "t": "After my "
+      },
+      {
+        "t": "turn",
+        "z": "輪值",
+        "j": "当番",
+        "e": "turn"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ended",
+        "z": "結束了",
+        "j": "終わった",
+        "e": "ended"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "washed",
+        "z": "洗了",
+        "j": "洗った",
+        "e": "washed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "lunch-serving apron",
+        "z": "配膳圍裙",
+        "j": "給食エプロン",
+        "e": "lunch-serving apron"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "passed",
+        "z": "交給了",
+        "j": "渡した",
+        "e": "passed"
+      },
+      {
+        "t": " it to the "
+      },
+      {
+        "t": "next",
+        "z": "下一個",
+        "j": "次の",
+        "e": "next"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "person",
+        "z": "人",
+        "j": "人",
+        "e": "person"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Place the vaulting box beside the mat.": [
+      {
+        "t": "Place",
+        "z": "放置",
+        "j": "置く",
+        "e": "place"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "vaulting box",
+        "z": "跳箱",
+        "j": "跳び箱",
+        "e": "vaulting box"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "beside",
+        "z": "在旁邊",
+        "j": "横に",
+        "e": "beside"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mat",
+        "z": "墊子",
+        "j": "マット",
+        "e": "mat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the teacher checked the mat, we took turns jumping over the vaulting box.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "teacher",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mat",
+        "z": "墊子",
+        "j": "マット",
+        "e": "mat"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "took turns",
+        "z": "輪流",
+        "j": "順番にした",
+        "e": "took turns"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "jumping over",
+        "z": "跳過",
+        "j": "跳び越える",
+        "e": "jumping over"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "vaulting box",
+        "z": "跳箱",
+        "j": "跳び箱",
+        "e": "vaulting box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We looked at leaves in the science room.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "looked at",
+        "z": "觀察了",
+        "j": "観察しました",
+        "e": "looked at"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "leaves",
+        "z": "葉片",
+        "j": "葉",
+        "e": "leaves"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "science room",
+        "z": "自然科學教室",
+        "j": "理科室",
+        "e": "science room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the experiment, we washed the beakers and left them in the science room.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "experiment",
+        "z": "實驗",
+        "j": "実験",
+        "e": "experiment"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "washed",
+        "z": "洗了",
+        "j": "洗った",
+        "e": "washed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "beakers",
+        "z": "燒杯",
+        "j": "ビーカー",
+        "e": "beakers"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "left",
+        "z": "留在",
+        "j": "置いておいた",
+        "e": "left"
+      },
+      {
+        "t": " them in the "
+      },
+      {
+        "t": "science room",
+        "z": "自然科學教室",
+        "j": "理科室",
+        "e": "science room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We practice singing in the music room.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "practice",
+        "z": "練習",
+        "j": "練習する",
+        "e": "practice"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "singing",
+        "z": "唱歌",
+        "j": "歌うこと",
+        "e": "singing"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "music room",
+        "z": "音樂教室",
+        "j": "音楽室",
+        "e": "music room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Another class was using the music room, so we waited in the corridor.": [
+      {
+        "t": "Another",
+        "z": "另一個",
+        "j": "別の",
+        "e": "another"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "class",
+        "z": "班級",
+        "j": "クラス",
+        "e": "class"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使っている",
+        "e": "using"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "music room",
+        "z": "音樂教室",
+        "j": "音楽室",
+        "e": "music room"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "corridor",
+        "z": "走廊",
+        "j": "廊下",
+        "e": "corridor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Meet me at the school gate.": [
+      {
+        "t": "Meet",
+        "z": "見面",
+        "j": "会う",
+        "e": "meet"
+      },
+      {
+        "t": " me at the "
+      },
+      {
+        "t": "school gate",
+        "z": "校門",
+        "j": "校門",
+        "e": "school gate"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I could not find my water bottle, so I went back to the school gate.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "water bottle",
+        "z": "水壺",
+        "j": "水筒",
+        "e": "water bottle"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "went back",
+        "z": "回去了",
+        "j": "戻った",
+        "e": "went back"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "school gate",
+        "z": "校門",
+        "j": "校門",
+        "e": "school gate"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Walk slowly in the school corridor.": [
+      {
+        "t": "Walk",
+        "z": "走路",
+        "j": "歩く",
+        "e": "walk"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "school corridor",
+        "z": "校舍走廊",
+        "j": "廊下",
+        "e": "school corridor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We were carrying a large table, so we asked everyone to clear the school corridor.": [
+      {
+        "t": "We were "
+      },
+      {
+        "t": "carrying",
+        "z": "搬運",
+        "j": "運んでいる",
+        "e": "carrying"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "large",
+        "z": "大的",
+        "j": "大きな",
+        "e": "large"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "table",
+        "z": "桌子",
+        "j": "机",
+        "e": "table"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼んだ",
+        "e": "asked"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "everyone",
+        "z": "大家",
+        "j": "みんな",
+        "e": "everyone"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "clear",
+        "z": "騰空",
+        "j": "空ける",
+        "e": "clear"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "school corridor",
+        "z": "校舍走廊",
+        "j": "廊下",
+        "e": "school corridor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please knock on the door of the principal's office.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "knock",
+        "z": "敲門",
+        "j": "ノックする",
+        "e": "knock"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "door",
+        "z": "門",
+        "j": "ドア",
+        "e": "door"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "principal's office",
+        "z": "校長室",
+        "j": "校長室",
+        "e": "principal's office"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The principal was meeting a parent, so I waited outside the principal's office.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "principal",
+        "z": "校長",
+        "j": "校長先生",
+        "e": "principal"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "meeting",
+        "z": "會見",
+        "j": "面談する",
+        "e": "meeting"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "parent",
+        "z": "家長",
+        "j": "保護者",
+        "e": "parent"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等待",
+        "j": "待った",
+        "e": "waited"
+      },
+      {
+        "t": " outside the "
+      },
+      {
+        "t": "principal's office",
+        "z": "校長室",
+        "j": "校長室",
+        "e": "principal's office"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We painted in the art room.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "painted",
+        "z": "畫畫",
+        "j": "絵を描いた",
+        "e": "painted"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "art room",
+        "z": "美術教室",
+        "j": "美術室",
+        "e": "art room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before leaving the art room, we washed the brushes and wiped the tables.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "leaving",
+        "z": "離開",
+        "j": "出る",
+        "e": "leaving"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "art room",
+        "z": "美術教室",
+        "j": "美術室",
+        "e": "art room"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "washed",
+        "z": "洗了",
+        "j": "洗った",
+        "e": "washed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "brushes",
+        "z": "畫筆",
+        "j": "筆",
+        "e": "brushes"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "wiped",
+        "z": "擦了",
+        "j": "拭いた",
+        "e": "wiped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "tables",
+        "z": "桌子",
+        "j": "机",
+        "e": "tables"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We made soup in the home economics room.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "made",
+        "z": "做了",
+        "j": "作った",
+        "e": "made"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "soup",
+        "z": "湯",
+        "j": "スープ",
+        "e": "soup"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "home economics room",
+        "z": "家政教室",
+        "j": "家庭科室",
+        "e": "home economics room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After using the home economics room, we checked that the taps were closed.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "home economics room",
+        "z": "家政教室",
+        "j": "家庭科室",
+        "e": "home economics room"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "taps",
+        "z": "水龍頭",
+        "j": "蛇口",
+        "e": "taps"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "closed",
+        "z": "關好的",
+        "j": "閉まった",
+        "e": "closed"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please sit in the front row of the computer room.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "sit",
+        "z": "坐下",
+        "j": "座る",
+        "e": "sit"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "front",
+        "z": "前面",
+        "j": "前",
+        "e": "front"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "row",
+        "z": "排",
+        "j": "列",
+        "e": "row"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "computer room",
+        "z": "電腦教室",
+        "j": "パソコン室",
+        "e": "computer room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before leaving the computer room, I saved my work and logged out.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "leaving",
+        "z": "離開",
+        "j": "出る",
+        "e": "leaving"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "computer room",
+        "z": "電腦教室",
+        "j": "パソコン室",
+        "e": "computer room"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "saved",
+        "z": "儲存了",
+        "j": "保存した",
+        "e": "saved"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "work",
+        "z": "作業成果",
+        "j": "作業内容",
+        "e": "work"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "logged out",
+        "z": "登出了",
+        "j": "ログアウトした",
+        "e": "logged out"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We tested the microphone in the school broadcasting room.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "tested",
+        "z": "測試了",
+        "j": "試した",
+        "e": "tested"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "microphone",
+        "z": "麥克風",
+        "j": "マイク",
+        "e": "microphone"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "school broadcasting room",
+        "z": "校園廣播室",
+        "j": "放送室",
+        "e": "school broadcasting room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The announcement was long, so we practiced reading it in the school broadcasting room.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "announcement",
+        "z": "通知",
+        "j": "お知らせ",
+        "e": "announcement"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "long",
+        "z": "長的",
+        "j": "長い",
+        "e": "long"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "practiced",
+        "z": "練習了",
+        "j": "練習した",
+        "e": "practiced"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reading",
+        "z": "朗讀",
+        "j": "読む",
+        "e": "reading"
+      },
+      {
+        "t": " it in the "
+      },
+      {
+        "t": "school broadcasting room",
+        "z": "校園廣播室",
+        "j": "放送室",
+        "e": "school broadcasting room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please leave your bag in the school changing room.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "leave",
+        "z": "放置",
+        "j": "置く",
+        "e": "leave"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "bag",
+        "z": "袋子",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "school changing room",
+        "z": "學校更衣室",
+        "j": "更衣室",
+        "e": "school changing room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I noticed that I had forgotten my towel when I reached the school changing room.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "noticed",
+        "z": "發現",
+        "j": "気づいた",
+        "e": "noticed"
+      },
+      {
+        "t": " that I had "
+      },
+      {
+        "t": "forgotten",
+        "z": "忘了帶",
+        "j": "忘れた",
+        "e": "forgotten"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "towel",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towel"
+      },
+      {
+        "t": " when I "
+      },
+      {
+        "t": "reached",
+        "z": "到達",
+        "j": "着いた",
+        "e": "reached"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "school changing room",
+        "z": "學校更衣室",
+        "j": "更衣室",
+        "e": "school changing room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The school swimming pool is closed today.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "school swimming pool",
+        "z": "學校游泳池",
+        "j": "学校のプール",
+        "e": "school swimming pool"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "closed",
+        "z": "關閉的",
+        "j": "閉まっている",
+        "e": "closed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "today",
+        "z": "今天",
+        "j": "今日",
+        "e": "today"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The weather was bad, so our lesson at the school swimming pool was canceled.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "weather",
+        "z": "天氣",
+        "j": "天気",
+        "e": "weather"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "bad",
+        "z": "不好的",
+        "j": "悪い",
+        "e": "bad"
+      },
+      {
+        "t": ", so our "
+      },
+      {
+        "t": "lesson",
+        "z": "課",
+        "j": "授業",
+        "e": "lesson"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "school swimming pool",
+        "z": "學校游泳池",
+        "j": "学校のプール",
+        "e": "school swimming pool"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "canceled",
+        "z": "取消了",
+        "j": "中止された",
+        "e": "canceled"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please return the balls to the sports equipment room.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "return",
+        "z": "歸還",
+        "j": "戻す",
+        "e": "return"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "balls",
+        "z": "球",
+        "j": "ボール",
+        "e": "balls"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "sports equipment room",
+        "z": "體育器材室",
+        "j": "体育倉庫",
+        "e": "sports equipment room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After counting the balls, we put away the mats in the sports equipment room.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "counting",
+        "z": "清點",
+        "j": "数える",
+        "e": "counting"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "balls",
+        "z": "球",
+        "j": "ボール",
+        "e": "balls"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "put away",
+        "z": "收好",
+        "j": "片付けた",
+        "e": "put away"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mats",
+        "z": "墊子",
+        "j": "マット",
+        "e": "mats"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "sports equipment room",
+        "z": "體育器材室",
+        "j": "体育倉庫",
+        "e": "sports equipment room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please open your pencil case.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "open",
+        "z": "打開",
+        "j": "開ける",
+        "e": "open"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "pencil case",
+        "z": "鉛筆盒",
+        "j": "筆箱",
+        "e": "pencil case"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I could not find my eraser, so I emptied my pencil case onto the desk.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "eraser",
+        "z": "橡皮擦",
+        "j": "消しゴム",
+        "e": "eraser"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "emptied",
+        "z": "倒空了",
+        "j": "空にした",
+        "e": "emptied"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "pencil case",
+        "z": "鉛筆盒",
+        "j": "筆箱",
+        "e": "pencil case"
+      },
+      {
+        "t": " onto the "
+      },
+      {
+        "t": "desk",
+        "z": "桌子",
+        "j": "机",
+        "e": "desk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please lend me your rubber eraser.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "lend",
+        "z": "借給",
+        "j": "貸す",
+        "e": "lend"
+      },
+      {
+        "t": " me your "
+      },
+      {
+        "t": "rubber eraser",
+        "z": "橡皮擦",
+        "j": "消しゴム",
+        "e": "rubber eraser"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The rubber eraser was dirty, so I rubbed it on scrap paper first.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "rubber eraser",
+        "z": "橡皮擦",
+        "j": "消しゴム",
+        "e": "rubber eraser"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "dirty",
+        "z": "髒的",
+        "j": "汚れた",
+        "e": "dirty"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "rubbed",
+        "z": "擦了",
+        "j": "こすった",
+        "e": "rubbed"
+      },
+      {
+        "t": " it on "
+      },
+      {
+        "t": "scrap paper",
+        "z": "廢紙",
+        "j": "いらない紙",
+        "e": "scrap paper"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "first",
+        "z": "先",
+        "j": "先に",
+        "e": "first"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pencil sharpener is on the shelf.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pencil sharpener",
+        "z": "削鉛筆機",
+        "j": "鉛筆削り",
+        "e": "pencil sharpener"
+      },
+      {
+        "t": " is on the "
+      },
+      {
+        "t": "shelf",
+        "z": "架子",
+        "j": "棚",
+        "e": "shelf"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The pencil sharpener was full, so I emptied the shavings before using it.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "pencil sharpener",
+        "z": "削鉛筆機",
+        "j": "鉛筆削り",
+        "e": "pencil sharpener"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "full",
+        "z": "滿了的",
+        "j": "いっぱいの",
+        "e": "full"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "emptied",
+        "z": "倒掉了",
+        "j": "捨てた",
+        "e": "emptied"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shavings",
+        "z": "鉛筆屑",
+        "j": "削りかす",
+        "e": "shavings"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "Please measure this angle with a protractor.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "measure",
+        "z": "測量",
+        "j": "測る",
+        "e": "measure"
+      },
+      {
+        "t": " this "
+      },
+      {
+        "t": "angle",
+        "z": "角度",
+        "j": "角度",
+        "e": "angle"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "protractor",
+        "z": "量角器",
+        "j": "分度器",
+        "e": "protractor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I moved the protractor because its center did not match the corner of the angle.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "動かした",
+        "e": "moved"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "protractor",
+        "z": "量角器",
+        "j": "分度器",
+        "e": "protractor"
+      },
+      {
+        "t": " because its "
+      },
+      {
+        "t": "center",
+        "z": "中心",
+        "j": "中心",
+        "e": "center"
+      },
+      {
+        "t": " did not "
+      },
+      {
+        "t": "match",
+        "z": "對準",
+        "j": "合う",
+        "e": "match"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "corner",
+        "z": "頂點",
+        "j": "頂点",
+        "e": "corner"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "angle",
+        "z": "角",
+        "j": "角",
+        "e": "angle"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I drew a circle with a drawing compass.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "drew",
+        "z": "畫了",
+        "j": "描いた",
+        "e": "drew"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "circle",
+        "z": "圓",
+        "j": "円",
+        "e": "circle"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "drawing compass",
+        "z": "圓規",
+        "j": "コンパス",
+        "e": "drawing compass"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The circle was too small, so I opened the drawing compass wider and tried again.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "circle",
+        "z": "圓",
+        "j": "円",
+        "e": "circle"
+      },
+      {
+        "t": " was too "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さい",
+        "e": "small"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "opened",
+        "z": "張開了",
+        "j": "広げた",
+        "e": "opened"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "drawing compass",
+        "z": "圓規",
+        "j": "コンパス",
+        "e": "drawing compass"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wider",
+        "z": "更寬",
+        "j": "もっと広く",
+        "e": "wider"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "tried",
+        "z": "嘗試了",
+        "j": "試した",
+        "e": "tried"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "again",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Use a set square to draw a right angle.": [
+      {
+        "t": "Use a "
+      },
+      {
+        "t": "set square",
+        "z": "三角板",
+        "j": "三角定規",
+        "e": "set square"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "draw",
+        "z": "畫",
+        "j": "引く",
+        "e": "draw"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "right angle",
+        "z": "直角",
+        "j": "直角",
+        "e": "right angle"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I held the set square firmly so it would not move while I drew the line.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "held",
+        "z": "按住了",
+        "j": "押さえた",
+        "e": "held"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "set square",
+        "z": "三角板",
+        "j": "三角定規",
+        "e": "set square"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "firmly",
+        "z": "穩穩地",
+        "j": "しっかり",
+        "e": "firmly"
+      },
+      {
+        "t": " so it would not "
+      },
+      {
+        "t": "move",
+        "z": "移動",
+        "j": "動く",
+        "e": "move"
+      },
+      {
+        "t": " while I "
+      },
+      {
+        "t": "drew",
+        "z": "畫",
+        "j": "引く",
+        "e": "drew"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "line",
+        "z": "線",
+        "j": "線",
+        "e": "line"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please cover the holes on your recorder.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "cover",
+        "z": "蓋住",
+        "j": "ふさぐ",
+        "e": "cover"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "holes",
+        "z": "孔",
+        "j": "穴",
+        "e": "holes"
+      },
+      {
+        "t": " on your "
+      },
+      {
+        "t": "recorder",
+        "z": "直笛",
+        "j": "リコーダー",
+        "e": "recorder"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The note squeaked, so I checked whether my fingers covered the recorder holes.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "note",
+        "z": "音",
+        "j": "音",
+        "e": "note"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "squeaked",
+        "z": "發出尖聲",
+        "j": "高い音が出た",
+        "e": "squeaked"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " whether my "
+      },
+      {
+        "t": "fingers",
+        "z": "手指",
+        "j": "指",
+        "e": "fingers"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "covered",
+        "z": "蓋住",
+        "j": "ふさぐ",
+        "e": "covered"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "recorder",
+        "z": "直笛",
+        "j": "リコーダー",
+        "e": "recorder"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "holes",
+        "z": "孔",
+        "j": "穴",
+        "e": "holes"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please connect the tube to your melodica.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "connect",
+        "z": "接上",
+        "j": "つなぐ",
+        "e": "connect"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "tube",
+        "z": "吹管",
+        "j": "ホース",
+        "e": "tube"
+      },
+      {
+        "t": " to your "
+      },
+      {
+        "t": "melodica",
+        "z": "鍵盤口琴",
+        "j": "鍵盤ハーモニカ",
+        "e": "melodica"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I checked that the tube was connected before we started playing the melodica together.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "tube",
+        "z": "吹管",
+        "j": "ホース",
+        "e": "tube"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "connected",
+        "z": "接好的",
+        "j": "つながった",
+        "e": "connected"
+      },
+      {
+        "t": " before we "
+      },
+      {
+        "t": "started",
+        "z": "開始",
+        "j": "始めた",
+        "e": "started"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "playing",
+        "z": "演奏",
+        "j": "演奏する",
+        "e": "playing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "melodica",
+        "z": "鍵盤口琴",
+        "j": "鍵盤ハーモニカ",
+        "e": "melodica"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "together",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I packed my PE uniform last night.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "packed",
+        "z": "裝好了",
+        "j": "入れた",
+        "e": "packed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "PE uniform",
+        "z": "體育服",
+        "j": "体操服",
+        "e": "pe uniform"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "last night",
+        "z": "昨晚",
+        "j": "昨夜",
+        "e": "last night"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My PE uniform was still damp, so I hung it by the window before school.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "PE uniform",
+        "z": "體育服",
+        "j": "体操服",
+        "e": "pe uniform"
+      },
+      {
+        "t": " was still "
+      },
+      {
+        "t": "damp",
+        "z": "潮濕的",
+        "j": "湿った",
+        "e": "damp"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "hung",
+        "z": "掛了",
+        "j": "掛けた",
+        "e": "hung"
+      },
+      {
+        "t": " it by the "
+      },
+      {
+        "t": "window",
+        "z": "窗戶",
+        "j": "窓",
+        "e": "window"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "school",
+        "z": "上學",
+        "j": "登校",
+        "e": "school"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please put your shoes in the indoor shoe bag.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "shoes",
+        "z": "鞋子",
+        "j": "上履き",
+        "e": "shoes"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "indoor shoe bag",
+        "z": "室內鞋袋",
+        "j": "上履き袋",
+        "e": "indoor shoe bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wrote my name on the indoor shoe bag so I would not mix it up with my friend's.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wrote",
+        "z": "寫了",
+        "j": "書いた",
+        "e": "wrote"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "name",
+        "z": "名字",
+        "j": "名前",
+        "e": "name"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "indoor shoe bag",
+        "z": "室內鞋袋",
+        "j": "上履き袋",
+        "e": "indoor shoe bag"
+      },
+      {
+        "t": " so I would not "
+      },
+      {
+        "t": "mix it up",
+        "z": "弄混",
+        "j": "取り違える",
+        "e": "mix it up"
+      },
+      {
+        "t": " with my "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": "'s."
+      }
+    ],
+    "Please check tomorrow's class timetable.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tomorrow",
+        "z": "明天",
+        "j": "明日",
+        "e": "tomorrow"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "class timetable",
+        "z": "課表",
+        "j": "時間割",
+        "e": "class timetable"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The class timetable had changed, so I repacked my bag before bed.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "class timetable",
+        "z": "課表",
+        "j": "時間割",
+        "e": "class timetable"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "changed",
+        "z": "變更了",
+        "j": "変わった",
+        "e": "changed"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "repacked",
+        "z": "重新整理了",
+        "j": "詰め直した",
+        "e": "repacked"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "bag",
+        "z": "袋子",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "bed",
+        "z": "睡覺",
+        "j": "就寝",
+        "e": "bed"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please show your parent the school communication notebook.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "show",
+        "z": "給人看",
+        "j": "見せる",
+        "e": "show"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "parent",
+        "z": "家長",
+        "j": "保護者",
+        "e": "parent"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "school communication notebook",
+        "z": "聯絡簿",
+        "j": "連絡帳",
+        "e": "school communication notebook"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I forgot what to bring, so I checked the school communication notebook again.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "forgot",
+        "z": "忘了",
+        "j": "忘れた",
+        "e": "forgot"
+      },
+      {
+        "t": " what to "
+      },
+      {
+        "t": "bring",
+        "z": "帶來",
+        "j": "持ってくる",
+        "e": "bring"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "school communication notebook",
+        "z": "聯絡簿",
+        "j": "連絡帳",
+        "e": "school communication notebook"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "again",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please finish this page of your workbook.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "finish",
+        "z": "完成",
+        "j": "終える",
+        "e": "finish"
+      },
+      {
+        "t": " this "
+      },
+      {
+        "t": "page",
+        "z": "頁",
+        "j": "ページ",
+        "e": "page"
+      },
+      {
+        "t": " of your "
+      },
+      {
+        "t": "workbook",
+        "z": "作業本",
+        "j": "ドリル",
+        "e": "workbook"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I checked my answers after finishing the workbook exercises.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "answers",
+        "z": "答案",
+        "j": "答え",
+        "e": "answers"
+      },
+      {
+        "t": " after "
+      },
+      {
+        "t": "finishing",
+        "z": "做完",
+        "j": "終える",
+        "e": "finishing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "workbook",
+        "z": "作業本",
+        "j": "ドリル",
+        "e": "workbook"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "exercises",
+        "z": "練習題",
+        "j": "問題",
+        "e": "exercises"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please write your name on the test paper.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "write",
+        "z": "寫",
+        "j": "書く",
+        "e": "write"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "name",
+        "z": "名字",
+        "j": "名前",
+        "e": "name"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "test paper",
+        "z": "考卷",
+        "j": "テスト用紙",
+        "e": "test paper"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before handing in my test paper, I checked that I had answered every question.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "handing in",
+        "z": "交出",
+        "j": "提出する",
+        "e": "handing in"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "test paper",
+        "z": "考卷",
+        "j": "テスト用紙",
+        "e": "test paper"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " that I had "
+      },
+      {
+        "t": "answered",
+        "z": "回答了",
+        "j": "答えた",
+        "e": "answered"
+      },
+      {
+        "t": " every "
+      },
+      {
+        "t": "question",
+        "z": "題目",
+        "j": "問題",
+        "e": "question"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I showed my family my report card.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "showed",
+        "z": "給人看了",
+        "j": "見せた",
+        "e": "showed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "family",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "report card",
+        "z": "成績單",
+        "j": "通知表",
+        "e": "report card"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After reading the teacher's comments on my report card, I set a goal for the next term.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "reading",
+        "z": "閱讀",
+        "j": "読む",
+        "e": "reading"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "teacher",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "comments",
+        "z": "評語",
+        "j": "コメント",
+        "e": "comments"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "report card",
+        "z": "成績單",
+        "j": "通知表",
+        "e": "report card"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "set",
+        "z": "訂下了",
+        "j": "立てた",
+        "e": "set"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "goal",
+        "z": "目標",
+        "j": "目標",
+        "e": "goal"
+      },
+      {
+        "t": " for the "
+      },
+      {
+        "t": "next term",
+        "z": "下學期",
+        "j": "来学期",
+        "e": "next term"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please write today's date in the class journal.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "write",
+        "z": "寫",
+        "j": "書く",
+        "e": "write"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "today",
+        "z": "今天",
+        "j": "今日",
+        "e": "today"
+      },
+      {
+        "t": "'s "
+      },
+      {
+        "t": "date",
+        "z": "日期",
+        "j": "日付",
+        "e": "date"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "class journal",
+        "z": "班級日誌",
+        "j": "学級日誌",
+        "e": "class journal"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I was on duty, so I recorded the class activities in the class journal before going home.": [
+      {
+        "t": "I was on "
+      },
+      {
+        "t": "duty",
+        "z": "值日",
+        "j": "日直",
+        "e": "duty"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "recorded",
+        "z": "記錄了",
+        "j": "記録した",
+        "e": "recorded"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "class",
+        "z": "班級",
+        "j": "クラス",
+        "e": "class"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "activities",
+        "z": "活動",
+        "j": "活動",
+        "e": "activities"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "class journal",
+        "z": "班級日誌",
+        "j": "学級日誌",
+        "e": "class journal"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "going home",
+        "z": "回家",
+        "j": "帰る",
+        "e": "going home"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The blackboard eraser cleaner is beside the window.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "blackboard eraser cleaner",
+        "z": "黑板擦清潔機",
+        "j": "黒板消しクリーナー",
+        "e": "blackboard eraser cleaner"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "beside"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "window",
+        "z": "窗戶",
+        "j": "窓",
+        "e": "window"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After cleaning the eraser, I turned off the blackboard eraser cleaner before leaving the room.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "cleaning",
+        "z": "清理",
+        "j": "掃除する",
+        "e": "cleaning"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "eraser",
+        "z": "黑板擦",
+        "j": "黒板消し",
+        "e": "eraser"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "turned off",
+        "z": "關掉了",
+        "j": "切った",
+        "e": "turned off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "blackboard eraser cleaner",
+        "z": "黑板擦清潔機",
+        "j": "黒板消しクリーナー",
+        "e": "blackboard eraser cleaner"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "leaving",
+        "z": "離開",
+        "j": "出る",
+        "e": "leaving"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please bring your jump rope tomorrow.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "bring",
+        "z": "帶來",
+        "j": "持ってくる",
+        "e": "bring"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "jump rope",
+        "z": "跳繩",
+        "j": "縄跳び",
+        "e": "jump rope"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tomorrow",
+        "z": "明天",
+        "j": "明日",
+        "e": "tomorrow"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My jump rope was too long, so I adjusted it before practice.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "jump rope",
+        "z": "跳繩",
+        "j": "縄跳び",
+        "e": "jump rope"
+      },
+      {
+        "t": " was too "
+      },
+      {
+        "t": "long",
+        "z": "長的",
+        "j": "長い",
+        "e": "long"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted"
+      },
+      {
+        "t": " it before "
+      },
+      {
+        "t": "practice",
+        "z": "練習",
+        "j": "練習",
+        "e": "practice"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please pass the relay baton to the next runner.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "pass",
+        "z": "傳遞",
+        "j": "渡す",
+        "e": "pass"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "relay baton",
+        "z": "接力棒",
+        "j": "バトン",
+        "e": "relay baton"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "next",
+        "z": "下一位",
+        "j": "次の",
+        "e": "next"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "runner",
+        "z": "跑者",
+        "j": "走者",
+        "e": "runner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We dropped the relay baton during practice, so we practiced the handover again.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "dropped",
+        "z": "掉了",
+        "j": "落とした",
+        "e": "dropped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "relay baton",
+        "z": "接力棒",
+        "j": "バトン",
+        "e": "relay baton"
+      },
+      {
+        "t": " during "
+      },
+      {
+        "t": "practice",
+        "z": "練習",
+        "j": "練習",
+        "e": "practice"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "practiced",
+        "z": "練習了",
+        "j": "練習した",
+        "e": "practiced"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "handover",
+        "z": "交接",
+        "j": "受け渡し",
+        "e": "handover"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "again",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please wear your reversible sports cap for PE.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "wear",
+        "z": "戴",
+        "j": "かぶる",
+        "e": "wear"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "reversible sports cap",
+        "z": "紅白帽",
+        "j": "赤白帽",
+        "e": "reversible sports cap"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "PE",
+        "z": "體育課",
+        "j": "体育",
+        "e": "pe"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please push the school lunch trolley slowly.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "push",
+        "z": "推",
+        "j": "押す",
+        "e": "push"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "school lunch trolley",
+        "z": "配膳推車",
+        "j": "給食ワゴン",
+        "e": "school lunch trolley"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We checked that the way was clear before moving the school lunch trolley into the classroom.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "way",
+        "z": "通道",
+        "j": "通路",
+        "e": "way"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "clear",
+        "z": "無障礙物的",
+        "j": "物のない",
+        "e": "clear"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "moving",
+        "z": "移動",
+        "j": "動かす",
+        "e": "moving"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "school lunch trolley",
+        "z": "配膳推車",
+        "j": "給食ワゴン",
+        "e": "school lunch trolley"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "classroom",
+        "z": "教室",
+        "j": "教室",
+        "e": "classroom"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please wipe your school backpack cover.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "wipe",
+        "z": "擦拭",
+        "j": "拭く",
+        "e": "wipe"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "school backpack cover",
+        "z": "日式書包保護套",
+        "j": "ランドセルカバー",
+        "e": "school backpack cover"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The school backpack cover had slipped, so I refitted it before leaving home.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "school backpack cover",
+        "z": "日式書包保護套",
+        "j": "ランドセルカバー",
+        "e": "school backpack cover"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "slipped",
+        "z": "滑開了",
+        "j": "ずれた",
+        "e": "slipped"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "refitted",
+        "z": "重新裝好了",
+        "j": "付け直した",
+        "e": "refitted"
+      },
+      {
+        "t": " it before "
+      },
+      {
+        "t": "leaving home",
+        "z": "出門",
+        "j": "家を出る",
+        "e": "leaving home"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I was on the white team, so I turned my reversible sports cap inside out to show the white side.": [
+      {
+        "t": "I was on the "
+      },
+      {
+        "t": "white team",
+        "z": "白隊",
+        "j": "白組",
+        "e": "white team"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "turned",
+        "z": "翻轉了",
+        "j": "裏返した",
+        "e": "turned"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "reversible sports cap",
+        "z": "紅白帽",
+        "j": "赤白帽",
+        "e": "reversible sports cap"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "inside out",
+        "z": "內外翻面",
+        "j": "裏返しに",
+        "e": "inside out"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "show",
+        "z": "露出",
+        "j": "見せる",
+        "e": "show"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "white",
+        "z": "白色的",
+        "j": "白い",
+        "e": "white"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "side",
+        "z": "一面",
+        "j": "面",
+        "e": "side"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "教室の窓を開けてください。": [
+      {
+        "t": "教室",
+        "z": "教室",
+        "j": "教室",
+        "e": "classroom",
+        "r": "きょうしつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "窓",
+        "z": "窗戶",
+        "j": "窓",
+        "e": "windows",
+        "r": "まど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けてください",
+        "z": "請打開",
+        "j": "開けてください",
+        "e": "please open",
+        "r": "あけてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "次の授業は別の教室なので、教科書を持っていってください。": [
+      {
+        "t": "次",
+        "z": "下一個",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "授業",
+        "z": "課",
+        "j": "授業",
+        "e": "lesson",
+        "r": "じゅぎょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "別",
+        "z": "別的",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "教室",
+        "z": "教室",
+        "j": "教室",
+        "e": "classroom",
+        "r": "きょうしつ"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "教科書",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook",
+        "r": "きょうかしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持っていってください",
+        "z": "請帶過去",
+        "j": "持っていってください",
+        "e": "please take along",
+        "r": "もっていってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "黒板に名前を書いてください。": [
+      {
+        "t": "黒板",
+        "z": "黑板",
+        "j": "黒板",
+        "e": "blackboard",
+        "r": "こくばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "名前",
+        "z": "名字",
+        "j": "名前",
+        "e": "name",
+        "r": "なまえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書いてください",
+        "z": "請寫",
+        "j": "書いてください",
+        "e": "please write",
+        "r": "かいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "後ろから黒板の字が読めなかったので、前の席に移りました。": [
+      {
+        "t": "後ろ",
+        "z": "後面",
+        "j": "後ろ",
+        "e": "back",
+        "r": "うしろ"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "黒板",
+        "z": "黑板",
+        "j": "黒板",
+        "e": "blackboard",
+        "r": "こくばん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "字",
+        "z": "字",
+        "j": "字",
+        "e": "writing",
+        "r": "じ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "読めなかった",
+        "z": "沒能看清字",
+        "j": "読めなかった",
+        "e": "could not read",
+        "r": "よめなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "前",
+        "z": "前面",
+        "j": "前",
+        "e": "front",
+        "r": "まえ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "席",
+        "z": "座位",
+        "j": "席",
+        "e": "seat",
+        "r": "せき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "移りました",
+        "z": "移到了",
+        "j": "移りました",
+        "e": "moved",
+        "r": "うつりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "白いチョークを貸してください。": [
+      {
+        "t": "白い",
+        "z": "白色的",
+        "j": "白い",
+        "e": "white",
+        "r": "しろい"
+      },
+      {
+        "t": "チョーク",
+        "z": "粉筆",
+        "j": "チョーク",
+        "e": "chalk",
+        "r": "ちょーく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貸してください",
+        "z": "請借給我",
+        "j": "貸してください",
+        "e": "please lend me",
+        "r": "かしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "チョークが折れたので、箱から別の一本を取りました。": [
+      {
+        "t": "チョーク",
+        "z": "粉筆",
+        "j": "チョーク",
+        "e": "chalk",
+        "r": "ちょーく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "折れた",
+        "z": "斷了",
+        "j": "折れた",
+        "e": "broke",
+        "r": "おれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "箱",
+        "z": "盒子",
+        "j": "箱",
+        "e": "box",
+        "r": "はこ"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "別",
+        "z": "另一個",
+        "j": "別",
+        "e": "another",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "一本",
+        "z": "一支",
+        "j": "一本",
+        "e": "one piece",
+        "r": "いっぽん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取りました",
+        "z": "拿了",
+        "j": "取りました",
+        "e": "took",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "黒板消しをチョーク受けに戻してください。": [
+      {
+        "t": "黒板消し",
+        "z": "黑板擦",
+        "j": "黒板消し",
+        "e": "blackboard eraser",
+        "r": "こくばんけし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "チョーク受け",
+        "z": "粉筆槽",
+        "j": "チョーク受け",
+        "e": "chalk tray",
+        "r": "ちょーくうけ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻してください",
+        "z": "請放回",
+        "j": "戻してください",
+        "e": "please put back",
+        "r": "もどしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "黒板消しに粉がたまっていたら、使う前にきれいにしてください。": [
+      {
+        "t": "黒板消し",
+        "z": "黑板擦",
+        "j": "黒板消し",
+        "e": "blackboard eraser",
+        "r": "こくばんけし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "粉",
+        "z": "粉塵",
+        "j": "粉",
+        "e": "dust",
+        "r": "こな"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "たまっていたら",
+        "z": "如果積了",
+        "j": "たまっていたら",
+        "e": "if it has accumulated",
+        "r": "たまっていたら"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "使う",
+        "z": "使用",
+        "j": "使う",
+        "e": "use",
+        "r": "つかう"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "きれいにしてください",
+        "z": "請清乾淨",
+        "j": "きれいにしてください",
+        "e": "please clean",
+        "r": "きれいにしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "教科書の十ページを開いてください。": [
+      {
+        "t": "教科書",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook",
+        "r": "きょうかしょ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "十ページ",
+        "z": "第十頁",
+        "j": "十ページ",
+        "e": "page ten",
+        "r": "じゅっぺーじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開いてください",
+        "z": "請翻開",
+        "j": "開いてください",
+        "e": "please open",
+        "r": "ひらいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "教科書を家に忘れたので、隣の人に一緒に見せてもらうよう頼みました。": [
+      {
+        "t": "教科書",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook",
+        "r": "きょうかしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "家",
+        "z": "家裡",
+        "j": "家",
+        "e": "home",
+        "r": "いえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "忘れた",
+        "z": "忘了帶",
+        "j": "忘れた",
+        "e": "left behind",
+        "r": "わすれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "隣",
+        "z": "旁邊",
+        "j": "隣",
+        "e": "next seat",
+        "r": "となり"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "person",
+        "r": "ひと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together",
+        "r": "いっしょに"
+      },
+      {
+        "t": "見せてもらう",
+        "z": "讓我看",
+        "j": "見せてもらう",
+        "e": "let me look",
+        "r": "みせてもらう"
+      },
+      {
+        "t": "よう"
+      },
+      {
+        "t": "頼みました",
+        "z": "請求了",
+        "j": "頼みました",
+        "e": "asked",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自分の下駄箱に靴を入れてください。": [
+      {
+        "t": "自分",
+        "z": "自己",
+        "j": "自分",
+        "e": "your own",
+        "r": "じぶん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下駄箱",
+        "z": "學校鞋櫃",
+        "j": "下駄箱",
+        "e": "school shoe locker",
+        "r": "げたばこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "靴",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes",
+        "r": "くつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please put in",
+        "r": "いれてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "下駄箱を間違えないように、名前を確認しました。": [
+      {
+        "t": "下駄箱",
+        "z": "學校鞋櫃",
+        "j": "下駄箱",
+        "e": "school shoe locker",
+        "r": "げたばこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "間違えない",
+        "z": "不弄錯",
+        "j": "間違えない",
+        "e": "not mistake",
+        "r": "まちがえない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "名前",
+        "z": "名字",
+        "j": "名前",
+        "e": "name",
+        "r": "なまえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "玄関で上履きに履き替えてください。": [
+      {
+        "t": "玄関",
+        "z": "玄關",
+        "j": "玄関",
+        "e": "entrance",
+        "r": "げんかん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "上履き",
+        "z": "校內室內鞋",
+        "j": "上履き",
+        "e": "indoor school shoes",
+        "r": "うわばき"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "履き替えてください",
+        "z": "請換穿",
+        "j": "履き替えてください",
+        "e": "please change shoes",
+        "r": "はきかえてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "月曜日に使うので、日曜日に上履きを洗いました。": [
+      {
+        "t": "月曜日",
+        "z": "星期一",
+        "j": "月曜日",
+        "e": "Monday",
+        "r": "げつようび"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "使う",
+        "z": "使用",
+        "j": "使う",
+        "e": "use",
+        "r": "つかう"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "日曜日",
+        "z": "星期日",
+        "j": "日曜日",
+        "e": "Sunday",
+        "r": "にちようび"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "上履き",
+        "z": "校內室內鞋",
+        "j": "上履き",
+        "e": "indoor school shoes",
+        "r": "うわばき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗いました",
+        "z": "洗了",
+        "j": "洗いました",
+        "e": "washed",
+        "r": "あらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ランドセルに教科書を入れてください。": [
+      {
+        "t": "ランドセル",
+        "z": "日式小學生書包",
+        "j": "ランドセル",
+        "e": "randoseru",
+        "r": "らんどせる"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "教科書",
+        "z": "課本",
+        "j": "教科書",
+        "e": "textbook",
+        "r": "きょうかしょ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please put in",
+        "r": "いれてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ランドセルが重かったので、使わない本を出しました。": [
+      {
+        "t": "ランドセル",
+        "z": "日式小學生書包",
+        "j": "ランドセル",
+        "e": "randoseru",
+        "r": "らんどせる"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "重かった",
+        "z": "很重",
+        "j": "重かった",
+        "e": "was heavy",
+        "r": "おもかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "使わない",
+        "z": "用不到的",
+        "j": "使わない",
+        "e": "not needed",
+        "r": "つかわない"
+      },
+      {
+        "t": "本",
+        "z": "書",
+        "j": "本",
+        "e": "books",
+        "r": "ほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出しました",
+        "z": "拿出來了",
+        "j": "出しました",
+        "e": "took out",
+        "r": "だしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "休み時間に校庭で遊びます。": [
+      {
+        "t": "休み時間",
+        "z": "下課時間",
+        "j": "休み時間",
+        "e": "break",
+        "r": "やすみじかん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "校庭",
+        "z": "學校操場",
+        "j": "校庭",
+        "e": "schoolyard",
+        "r": "こうてい"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "遊びます",
+        "z": "玩",
+        "j": "遊びます",
+        "e": "play",
+        "r": "あそびます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨の後で校庭がぬれていたので、校舎の中で過ごしました。": [
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "after",
+        "r": "あと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "校庭",
+        "z": "學校操場",
+        "j": "校庭",
+        "e": "schoolyard",
+        "r": "こうてい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ぬれていた",
+        "z": "是濕的",
+        "j": "ぬれていた",
+        "e": "was wet",
+        "r": "ぬれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "校舎",
+        "z": "校舍",
+        "j": "校舎",
+        "e": "school building",
+        "r": "こうしゃ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside",
+        "r": "なか"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "過ごしました",
+        "z": "待著度過了",
+        "j": "過ごしました",
+        "e": "spent the time",
+        "r": "すごしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "体育館でバスケットボールをします。": [
+      {
+        "t": "体育館",
+        "z": "學校體育館",
+        "j": "体育館",
+        "e": "school gymnasium",
+        "r": "たいいくかん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "バスケットボール",
+        "z": "籃球",
+        "j": "バスケットボール",
+        "e": "basketball",
+        "r": "ばすけっとぼーる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "します",
+        "z": "打",
+        "j": "します",
+        "e": "play",
+        "r": "します"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨が降り始めたので、体育の授業は体育館で行うことになりました。": [
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "降り始めた",
+        "z": "開始下了",
+        "j": "降り始めた",
+        "e": "started falling",
+        "r": "ふりはじめた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "体育",
+        "z": "體育",
+        "j": "体育",
+        "e": "PE",
+        "r": "たいいく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "授業",
+        "z": "課",
+        "j": "授業",
+        "e": "lesson",
+        "r": "じゅぎょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "体育館",
+        "z": "學校體育館",
+        "j": "体育館",
+        "e": "school gymnasium",
+        "r": "たいいくかん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "行うことになりました",
+        "z": "決定在此進行",
+        "j": "行うことになりました",
+        "e": "was arranged to be held",
+        "r": "おこなうことになりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達と保健室に行きました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "保健室",
+        "z": "保健室",
+        "j": "保健室",
+        "e": "school infirmary",
+        "r": "ほけんしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "行きました",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went",
+        "r": "いきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "頭が痛かったので、先生に伝えてから保健室で休みました。": [
+      {
+        "t": "頭",
+        "z": "頭",
+        "j": "頭",
+        "e": "head",
+        "r": "あたま"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "痛かった",
+        "z": "痛",
+        "j": "痛かった",
+        "e": "hurt",
+        "r": "いたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "先生",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher",
+        "r": "せんせい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "伝えて",
+        "z": "告訴後",
+        "j": "伝えて",
+        "e": "told",
+        "r": "つたえて"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "保健室",
+        "z": "保健室",
+        "j": "保健室",
+        "e": "school infirmary",
+        "r": "ほけんしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "休みました",
+        "z": "休息了",
+        "j": "休みました",
+        "e": "rested",
+        "r": "やすみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "職員室で先生に会いました。": [
+      {
+        "t": "職員室",
+        "z": "教職員辦公室",
+        "j": "職員室",
+        "e": "staff room",
+        "r": "しょくいんしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "先生",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher",
+        "r": "せんせい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "会いました",
+        "z": "見到了",
+        "j": "会いました",
+        "e": "met",
+        "r": "あいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "職員室に入る前に、ノックして、入ってもいいか聞きました。": [
+      {
+        "t": "職員室",
+        "z": "教職員辦公室",
+        "j": "職員室",
+        "e": "staff room",
+        "r": "しょくいんしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入る",
+        "z": "進入",
+        "j": "入る",
+        "e": "enter",
+        "r": "はいる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "ノックして",
+        "z": "敲門後",
+        "j": "ノックして",
+        "e": "knocked",
+        "r": "のっくして"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "入ってもいい",
+        "z": "可以進去",
+        "j": "入ってもいい",
+        "e": "may come in",
+        "r": "はいってもいい"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "聞きました",
+        "z": "問了",
+        "j": "聞きました",
+        "e": "asked",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "図書室で本を一冊借りました。": [
+      {
+        "t": "図書室",
+        "z": "學校圖書室",
+        "j": "図書室",
+        "e": "school library",
+        "r": "としょしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "本",
+        "z": "書",
+        "j": "本",
+        "e": "book",
+        "r": "ほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一冊",
+        "z": "一本",
+        "j": "一冊",
+        "e": "one book",
+        "r": "いっさつ"
+      },
+      {
+        "t": "借りました",
+        "z": "借了",
+        "j": "借りました",
+        "e": "borrowed",
+        "r": "かりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "読みたい本が貸し出し中だったので、図書室で予約しました。": [
+      {
+        "t": "読みたい",
+        "z": "想看的",
+        "j": "読みたい",
+        "e": "want to read",
+        "r": "よみたい"
+      },
+      {
+        "t": "本",
+        "z": "書",
+        "j": "本",
+        "e": "book",
+        "r": "ほん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "貸し出し中",
+        "z": "借出中",
+        "j": "貸し出し中",
+        "e": "on loan",
+        "r": "かしだしちゅう"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "図書室",
+        "z": "學校圖書室",
+        "j": "図書室",
+        "e": "school library",
+        "r": "としょしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "予約しました",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "reserved",
+        "r": "よやくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "今日の給食は何ですか。": [
+      {
+        "t": "今日",
+        "z": "今天",
+        "j": "今日",
+        "e": "today",
+        "r": "きょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "給食",
+        "z": "學校供餐",
+        "j": "給食",
+        "e": "school lunch",
+        "r": "きゅうしょく"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "何",
+        "z": "什麼",
+        "j": "何",
+        "e": "what",
+        "r": "なん"
+      },
+      {
+        "t": "ですか。"
+      }
+    ],
+    "給食を食べ終わってから、トレーを配膳台に戻しました。": [
+      {
+        "t": "給食",
+        "z": "學校供餐",
+        "j": "給食",
+        "e": "school lunch",
+        "r": "きゅうしょく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "食べ終わって",
+        "z": "吃完後",
+        "j": "食べ終わって",
+        "e": "finished eating",
+        "r": "たべおわって"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "トレー",
+        "z": "餐盤",
+        "j": "トレー",
+        "e": "tray",
+        "r": "とれー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "配膳台",
+        "z": "配膳台",
+        "j": "配膳台",
+        "e": "serving table",
+        "r": "はいぜんだい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻しました",
+        "z": "送回了",
+        "j": "戻しました",
+        "e": "returned",
+        "r": "もどしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "配膳する前に給食エプロンを着てください。": [
+      {
+        "t": "配膳する",
+        "z": "配膳",
+        "j": "配膳する",
+        "e": "serve lunch",
+        "r": "はいぜんする"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "給食エプロン",
+        "z": "配膳圍裙",
+        "j": "給食エプロン",
+        "e": "lunch-serving apron",
+        "r": "きゅうしょくえぷろん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着てください",
+        "z": "請穿上",
+        "j": "着てください",
+        "e": "please put on",
+        "r": "きてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "当番が終わってから、給食エプロンを洗って次の人に渡しました。": [
+      {
+        "t": "当番",
+        "z": "輪值",
+        "j": "当番",
+        "e": "turn on duty",
+        "r": "とうばん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "終わって",
+        "z": "結束後",
+        "j": "終わって",
+        "e": "ended",
+        "r": "おわって"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "給食エプロン",
+        "z": "配膳圍裙",
+        "j": "給食エプロン",
+        "e": "lunch-serving apron",
+        "r": "きゅうしょくえぷろん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗って",
+        "z": "洗好後",
+        "j": "洗って",
+        "e": "washed",
+        "r": "あらって"
+      },
+      {
+        "t": "次",
+        "z": "下一個",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "person",
+        "r": "ひと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "渡しました",
+        "z": "交給了",
+        "j": "渡しました",
+        "e": "passed to",
+        "r": "わたしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "跳び箱をマットの横に置いてください。": [
+      {
+        "t": "跳び箱",
+        "z": "跳箱",
+        "j": "跳び箱",
+        "e": "vaulting box",
+        "r": "とびばこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "マット",
+        "z": "墊子",
+        "j": "マット",
+        "e": "mat",
+        "r": "まっと"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "z": "旁邊",
+        "j": "横",
+        "e": "side",
+        "r": "よこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please place",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "先生がマットを確認してから、順番に跳び箱を跳びました。": [
+      {
+        "t": "先生",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher",
+        "r": "せんせい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "マット",
+        "z": "墊子",
+        "j": "マット",
+        "e": "mat",
+        "r": "まっと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "z": "確認後",
+        "j": "確認して",
+        "e": "checked",
+        "r": "かくにんして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "順番に",
+        "z": "輪流",
+        "j": "順番に",
+        "e": "in turn",
+        "r": "じゅんばんに"
+      },
+      {
+        "t": "跳び箱",
+        "z": "跳箱",
+        "j": "跳び箱",
+        "e": "vaulting box",
+        "r": "とびばこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "跳びました",
+        "z": "跳過了",
+        "j": "跳びました",
+        "e": "jumped over",
+        "r": "とびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理科室で葉を観察しました。": [
+      {
+        "t": "理科室",
+        "z": "自然科學教室",
+        "j": "理科室",
+        "e": "science room",
+        "r": "りかしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "葉",
+        "z": "葉片",
+        "j": "葉",
+        "e": "leaves",
+        "r": "は"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "観察しました",
+        "z": "觀察了",
+        "j": "観察しました",
+        "e": "observed",
+        "r": "かんさつしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "実験が終わってから、ビーカーを洗って理科室に置いておきました。": [
+      {
+        "t": "実験",
+        "z": "實驗",
+        "j": "実験",
+        "e": "experiment",
+        "r": "じっけん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "終わって",
+        "z": "結束後",
+        "j": "終わって",
+        "e": "ended",
+        "r": "おわって"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "ビーカー",
+        "z": "燒杯",
+        "j": "ビーカー",
+        "e": "beakers",
+        "r": "びーかー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗って",
+        "z": "洗了",
+        "j": "洗って",
+        "e": "washed",
+        "r": "あらって"
+      },
+      {
+        "t": "理科室",
+        "z": "自然科學教室",
+        "j": "理科室",
+        "e": "science room",
+        "r": "りかしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いておきました",
+        "z": "留在那裡了",
+        "j": "置いておきました",
+        "e": "left there",
+        "r": "おいておきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "音楽室で歌の練習します。": [
+      {
+        "t": "音楽室",
+        "z": "音樂教室",
+        "j": "音楽室",
+        "e": "music room",
+        "r": "おんがくしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "歌",
+        "z": "歌唱",
+        "j": "歌",
+        "e": "singing",
+        "r": "うた"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "練習します",
+        "z": "練習",
+        "j": "練習します",
+        "e": "practice",
+        "r": "れんしゅうします"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "別のクラスが音楽室を使っていたので、廊下で待ちました。": [
+      {
+        "t": "別",
+        "z": "另一個",
+        "j": "別",
+        "e": "another",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "クラス",
+        "z": "班級",
+        "j": "クラス",
+        "e": "class",
+        "r": "くらす"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "音楽室",
+        "z": "音樂教室",
+        "j": "音楽室",
+        "e": "music room",
+        "r": "おんがくしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使っていた",
+        "z": "正在使用",
+        "j": "使っていた",
+        "e": "was using",
+        "r": "つかっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "廊下",
+        "z": "走廊",
+        "j": "廊下",
+        "e": "corridor",
+        "r": "ろうか"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "校門で会いましょう。": [
+      {
+        "t": "校門",
+        "z": "校門",
+        "j": "校門",
+        "e": "school gate",
+        "r": "こうもん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "会いましょう",
+        "z": "見面吧",
+        "j": "会いましょう",
+        "e": "let us meet",
+        "r": "あいましょう"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "水筒が見つからなかったので、校門まで戻りました。": [
+      {
+        "t": "水筒",
+        "z": "水壺",
+        "j": "水筒",
+        "e": "water bottle",
+        "r": "すいとう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つからなかった",
+        "z": "找不到",
+        "j": "見つからなかった",
+        "e": "could not find",
+        "r": "みつからなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "校門",
+        "z": "校門",
+        "j": "校門",
+        "e": "school gate",
+        "r": "こうもん"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "戻りました",
+        "z": "回到了",
+        "j": "戻りました",
+        "e": "went back",
+        "r": "もどりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "廊下はゆっくり歩いてください。": [
+      {
+        "t": "廊下",
+        "z": "校舍走廊",
+        "j": "廊下",
+        "e": "school corridor",
+        "r": "ろうか"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "歩いてください",
+        "z": "請走路",
+        "j": "歩いてください",
+        "e": "please walk",
+        "r": "あるいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大きな机を運んでいたので、廊下を空けてもらうようみんなに頼みました。": [
+      {
+        "t": "大きな",
+        "z": "大的",
+        "j": "大きな",
+        "e": "large",
+        "r": "おおきな"
+      },
+      {
+        "t": "机",
+        "z": "桌子",
+        "j": "机",
+        "e": "table",
+        "r": "つくえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "運んでいた",
+        "z": "正在搬運",
+        "j": "運んでいた",
+        "e": "were carrying",
+        "r": "はこんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "廊下",
+        "z": "校舍走廊",
+        "j": "廊下",
+        "e": "school corridor",
+        "r": "ろうか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "空けてもらう",
+        "z": "請人騰出",
+        "j": "空けてもらう",
+        "e": "have cleared",
+        "r": "あけてもらう"
+      },
+      {
+        "t": "よう"
+      },
+      {
+        "t": "みんな",
+        "z": "大家",
+        "j": "みんな",
+        "e": "everyone",
+        "r": "みんな"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "頼みました",
+        "z": "請求了",
+        "j": "頼みました",
+        "e": "asked",
+        "r": "たのみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "校長室のドアをノックしてください。": [
+      {
+        "t": "校長室",
+        "z": "校長室",
+        "j": "校長室",
+        "e": "principal's office",
+        "r": "こうちょうしつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ドア",
+        "z": "門",
+        "j": "ドア",
+        "e": "door",
+        "r": "どあ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ノックしてください",
+        "z": "請敲門",
+        "j": "ノックしてください",
+        "e": "please knock",
+        "r": "のっくしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "校長先生が保護者と面談していたので、校長室の外で待ちました。": [
+      {
+        "t": "校長先生",
+        "z": "校長",
+        "j": "校長先生",
+        "e": "principal",
+        "r": "こうちょうせんせい"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "保護者",
+        "z": "家長",
+        "j": "保護者",
+        "e": "parent",
+        "r": "ほごしゃ"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "面談していた",
+        "z": "正在面談",
+        "j": "面談していた",
+        "e": "was meeting",
+        "r": "めんだんしていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "校長室",
+        "z": "校長室",
+        "j": "校長室",
+        "e": "principal's office",
+        "r": "こうちょうしつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "外",
+        "z": "外面",
+        "j": "外",
+        "e": "outside",
+        "r": "そと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美術室で絵を描きました。": [
+      {
+        "t": "美術室",
+        "z": "美術教室",
+        "j": "美術室",
+        "e": "art room",
+        "r": "びじゅつしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "絵",
+        "z": "畫",
+        "j": "絵",
+        "e": "picture",
+        "r": "え"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "描きました",
+        "z": "畫了",
+        "j": "描きました",
+        "e": "painted",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美術室を出る前に、筆を洗って、机を拭きました。": [
+      {
+        "t": "美術室",
+        "z": "美術教室",
+        "j": "美術室",
+        "e": "art room",
+        "r": "びじゅつしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "離開",
+        "j": "出る",
+        "e": "leave",
+        "r": "でる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "筆",
+        "z": "畫筆",
+        "j": "筆",
+        "e": "brushes",
+        "r": "ふで"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗って",
+        "z": "洗了",
+        "j": "洗って",
+        "e": "washed",
+        "r": "あらって"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "机",
+        "z": "桌子",
+        "j": "机",
+        "e": "tables",
+        "r": "つくえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "拭きました",
+        "z": "擦了",
+        "j": "拭きました",
+        "e": "wiped",
+        "r": "ふきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家庭科室でスープを作りました。": [
+      {
+        "t": "家庭科室",
+        "z": "家政教室",
+        "j": "家庭科室",
+        "e": "home economics room",
+        "r": "かていかしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "スープ",
+        "z": "湯",
+        "j": "スープ",
+        "e": "soup",
+        "r": "すーぷ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "作りました",
+        "z": "做了",
+        "j": "作りました",
+        "e": "made",
+        "r": "つくりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家庭科室を使った後、蛇口が閉まっているか確認しました。": [
+      {
+        "t": "家庭科室",
+        "z": "家政教室",
+        "j": "家庭科室",
+        "e": "home economics room",
+        "r": "かていかしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使った",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used",
+        "r": "つかった"
+      },
+      {
+        "t": "後、"
+      },
+      {
+        "t": "蛇口",
+        "z": "水龍頭",
+        "j": "蛇口",
+        "e": "taps",
+        "r": "じゃぐち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "閉まっている",
+        "z": "關著",
+        "j": "閉まっている",
+        "e": "are closed",
+        "r": "しまっている"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パソコン室の前の列に座ってください。": [
+      {
+        "t": "パソコン室",
+        "z": "電腦教室",
+        "j": "パソコン室",
+        "e": "computer room",
+        "r": "ぱそこんしつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "前",
+        "z": "前面",
+        "j": "前",
+        "e": "front",
+        "r": "まえ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "列",
+        "z": "排",
+        "j": "列",
+        "e": "row",
+        "r": "れつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "座ってください",
+        "z": "請坐下",
+        "j": "座ってください",
+        "e": "please sit",
+        "r": "すわってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パソコン室を出る前に、作業内容を保存して、ログアウトしました。": [
+      {
+        "t": "パソコン室",
+        "z": "電腦教室",
+        "j": "パソコン室",
+        "e": "computer room",
+        "r": "ぱそこんしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "離開",
+        "j": "出る",
+        "e": "leave",
+        "r": "でる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "作業内容",
+        "z": "作業成果",
+        "j": "作業内容",
+        "e": "work",
+        "r": "さぎょうないよう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "保存して",
+        "z": "儲存後",
+        "j": "保存して",
+        "e": "saved",
+        "r": "ほぞんして"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "ログアウトしました",
+        "z": "登出了",
+        "j": "ログアウトしました",
+        "e": "logged out",
+        "r": "ろぐあうとしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "放送室でマイクを試しました。": [
+      {
+        "t": "放送室",
+        "z": "校園廣播室",
+        "j": "放送室",
+        "e": "school broadcasting room",
+        "r": "ほうそうしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "マイク",
+        "z": "麥克風",
+        "j": "マイク",
+        "e": "microphone",
+        "r": "まいく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "試しました",
+        "z": "測試了",
+        "j": "試しました",
+        "e": "tested",
+        "r": "ためしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お知らせが長かったので、放送室で読む 練習しました。": [
+      {
+        "t": "お知らせ",
+        "z": "通知",
+        "j": "お知らせ",
+        "e": "announcement",
+        "r": "おしらせ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "長かった",
+        "z": "很長",
+        "j": "長かった",
+        "e": "was long",
+        "r": "ながかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "放送室",
+        "z": "校園廣播室",
+        "j": "放送室",
+        "e": "school broadcasting room",
+        "r": "ほうそうしつ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "読む",
+        "z": "朗讀",
+        "j": "読む",
+        "e": "read",
+        "r": "よむ"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "練習しました",
+        "z": "練習了",
+        "j": "練習しました",
+        "e": "practiced",
+        "r": "れんしゅうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "更衣室にかばんを置いてください。": [
+      {
+        "t": "更衣室",
+        "z": "學校更衣室",
+        "j": "更衣室",
+        "e": "school changing room",
+        "r": "こういしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "かばん",
+        "z": "袋子",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please leave",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "更衣室に着いたとき、タオルを忘れたことに気づきました。": [
+      {
+        "t": "更衣室",
+        "z": "學校更衣室",
+        "j": "更衣室",
+        "e": "school changing room",
+        "r": "こういしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "着いた",
+        "z": "到達",
+        "j": "着いた",
+        "e": "arrived",
+        "r": "ついた"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "タオル",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towel",
+        "r": "たおる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "忘れた",
+        "z": "忘了帶",
+        "j": "忘れた",
+        "e": "had forgotten",
+        "r": "わすれた"
+      },
+      {
+        "t": "ことに"
+      },
+      {
+        "t": "気づきました",
+        "z": "發現了",
+        "j": "気づきました",
+        "e": "noticed",
+        "r": "きづきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "今日は学校のプールが閉まっています。": [
+      {
+        "t": "今日",
+        "z": "今天",
+        "j": "今日",
+        "e": "today",
+        "r": "きょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "学校",
+        "z": "學校",
+        "j": "学校",
+        "e": "school",
+        "r": "がっこう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "プール",
+        "z": "游泳池",
+        "j": "プール",
+        "e": "pool",
+        "r": "ぷーる"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "閉まっています",
+        "z": "關閉著",
+        "j": "閉まっています",
+        "e": "is closed",
+        "r": "しまっています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "天気が悪かったので、学校のプールでの授業は中止になりました。": [
+      {
+        "t": "天気",
+        "z": "天氣",
+        "j": "天気",
+        "e": "weather",
+        "r": "てんき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "悪かった",
+        "z": "不好",
+        "j": "悪かった",
+        "e": "was bad",
+        "r": "わるかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "学校",
+        "z": "學校",
+        "j": "学校",
+        "e": "school",
+        "r": "がっこう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "プール",
+        "z": "游泳池",
+        "j": "プール",
+        "e": "pool",
+        "r": "ぷーる"
+      },
+      {
+        "t": "での"
+      },
+      {
+        "t": "授業",
+        "z": "課",
+        "j": "授業",
+        "e": "lesson",
+        "r": "じゅぎょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "中止になりました",
+        "z": "取消了",
+        "j": "中止になりました",
+        "e": "was canceled",
+        "r": "ちゅうしになりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ボールを体育倉庫に戻してください。": [
+      {
+        "t": "ボール",
+        "z": "球",
+        "j": "ボール",
+        "e": "balls",
+        "r": "ぼーる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "体育倉庫",
+        "z": "體育器材室",
+        "j": "体育倉庫",
+        "e": "sports equipment room",
+        "r": "たいいくそうこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻してください",
+        "z": "請歸還",
+        "j": "戻してください",
+        "e": "please return",
+        "r": "もどしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ボールを数えてから、体育倉庫にマットを片付けました。": [
+      {
+        "t": "ボール",
+        "z": "球",
+        "j": "ボール",
+        "e": "balls",
+        "r": "ぼーる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "数えて",
+        "z": "清點後",
+        "j": "数えて",
+        "e": "counted",
+        "r": "かぞえて"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "体育倉庫",
+        "z": "體育器材室",
+        "j": "体育倉庫",
+        "e": "sports equipment room",
+        "r": "たいいくそうこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "マット",
+        "z": "墊子",
+        "j": "マット",
+        "e": "mats",
+        "r": "まっと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "片付けました",
+        "z": "收好了",
+        "j": "片付けました",
+        "e": "put away",
+        "r": "かたづけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "筆箱を開けてください。": [
+      {
+        "t": "筆箱",
+        "z": "鉛筆盒",
+        "j": "筆箱",
+        "e": "pencil case",
+        "r": "ふでばこ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けてください",
+        "z": "請打開",
+        "j": "開けてください",
+        "e": "please open",
+        "r": "あけてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "消しゴムが見つからなかったので、筆箱の中身を机に出しました。": [
+      {
+        "t": "消しゴム",
+        "z": "橡皮擦",
+        "j": "消しゴム",
+        "e": "eraser",
+        "r": "けしごむ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つからなかった",
+        "z": "找不到",
+        "j": "見つからなかった",
+        "e": "could not find",
+        "r": "みつからなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "筆箱",
+        "z": "鉛筆盒",
+        "j": "筆箱",
+        "e": "pencil case",
+        "r": "ふでばこ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中身",
+        "z": "內容物",
+        "j": "中身",
+        "e": "contents",
+        "r": "なかみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "机",
+        "z": "桌子",
+        "j": "机",
+        "e": "desk",
+        "r": "つくえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "出しました",
+        "z": "倒出來了",
+        "j": "出しました",
+        "e": "emptied out",
+        "r": "だしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "消しゴムを貸してください。": [
+      {
+        "t": "消しゴム",
+        "z": "橡皮擦",
+        "j": "消しゴム",
+        "e": "rubber eraser",
+        "r": "けしごむ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貸してください",
+        "z": "請借給我",
+        "j": "貸してください",
+        "e": "please lend me",
+        "r": "かしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "消しゴムが汚れていたので、先にいらない紙でこすりました。": [
+      {
+        "t": "消しゴム",
+        "z": "橡皮擦",
+        "j": "消しゴム",
+        "e": "rubber eraser",
+        "r": "けしごむ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "汚れていた",
+        "z": "髒了",
+        "j": "汚れていた",
+        "e": "was dirty",
+        "r": "よごれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "先に",
+        "z": "先",
+        "j": "先に",
+        "e": "first",
+        "r": "さきに"
+      },
+      {
+        "t": "いらない",
+        "z": "不要的",
+        "j": "いらない",
+        "e": "scrap",
+        "r": "いらない"
+      },
+      {
+        "t": "紙",
+        "z": "紙",
+        "j": "紙",
+        "e": "paper",
+        "r": "かみ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "こすりました",
+        "z": "擦了",
+        "j": "こすりました",
+        "e": "rubbed",
+        "r": "こすりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "鉛筆削りは棚にあります。": [
+      {
+        "t": "鉛筆削り",
+        "z": "削鉛筆機",
+        "j": "鉛筆削り",
+        "e": "pencil sharpener",
+        "r": "えんぴつけずり"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "棚",
+        "z": "架子",
+        "j": "棚",
+        "e": "shelf",
+        "r": "たな"
+      },
+      {
+        "t": "にあります。"
+      }
+    ],
+    "鉛筆削りがいっぱいだったので、使う前に削りかすを捨てました。": [
+      {
+        "t": "鉛筆削り",
+        "z": "削鉛筆機",
+        "j": "鉛筆削り",
+        "e": "pencil sharpener",
+        "r": "えんぴつけずり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "いっぱいだった",
+        "z": "滿了",
+        "j": "いっぱいだった",
+        "e": "was full",
+        "r": "いっぱいだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "使う",
+        "z": "使用",
+        "j": "使う",
+        "e": "use",
+        "r": "つかう"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "削りかす",
+        "z": "鉛筆屑",
+        "j": "削りかす",
+        "e": "shavings",
+        "r": "けずりかす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "捨てました",
+        "z": "倒掉了",
+        "j": "捨てました",
+        "e": "emptied out",
+        "r": "すてました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "分度器でこの角度を測ってください。": [
+      {
+        "t": "分度器",
+        "z": "量角器",
+        "j": "分度器",
+        "e": "protractor",
+        "r": "ぶんどき"
+      },
+      {
+        "t": "でこの"
+      },
+      {
+        "t": "角度",
+        "z": "角度",
+        "j": "角度",
+        "e": "angle",
+        "r": "かくど"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "測ってください",
+        "z": "請測量",
+        "j": "測ってください",
+        "e": "please measure",
+        "r": "はかってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "分度器の中心が角の頂点に合っていなかったので、位置を直しました。": [
+      {
+        "t": "分度器",
+        "z": "量角器",
+        "j": "分度器",
+        "e": "protractor",
+        "r": "ぶんどき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中心",
+        "z": "中心",
+        "j": "中心",
+        "e": "center",
+        "r": "ちゅうしん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "角",
+        "z": "角",
+        "j": "角",
+        "e": "angle",
+        "r": "かく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "頂点",
+        "z": "頂點",
+        "j": "頂点",
+        "e": "vertex",
+        "r": "ちょうてん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "合っていなかった",
+        "z": "沒對準",
+        "j": "合っていなかった",
+        "e": "was not aligned",
+        "r": "あっていなかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "位置",
+        "z": "位置",
+        "j": "位置",
+        "e": "position",
+        "r": "いち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "直しました",
+        "z": "調整了",
+        "j": "直しました",
+        "e": "adjusted",
+        "r": "なおしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "コンパスで円を描きました。": [
+      {
+        "t": "コンパス",
+        "z": "圓規",
+        "j": "コンパス",
+        "e": "drawing compass",
+        "r": "こんぱす"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "円",
+        "z": "圓",
+        "j": "円",
+        "e": "circle",
+        "r": "えん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "描きました",
+        "z": "畫了",
+        "j": "描きました",
+        "e": "drew",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "円が小さすぎたので、コンパスを広げて、もう一度描きました。": [
+      {
+        "t": "円",
+        "z": "圓",
+        "j": "円",
+        "e": "circle",
+        "r": "えん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "小さすぎた",
+        "z": "太小了",
+        "j": "小さすぎた",
+        "e": "was too small",
+        "r": "ちいさすぎた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "コンパス",
+        "z": "圓規",
+        "j": "コンパス",
+        "e": "drawing compass",
+        "r": "こんぱす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "広げて",
+        "z": "張開後",
+        "j": "広げて",
+        "e": "opened wider",
+        "r": "ひろげて"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "もう一度",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again",
+        "r": "もういちど"
+      },
+      {
+        "t": "描きました",
+        "z": "畫了",
+        "j": "描きました",
+        "e": "drew",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "三角定規で直角を描いてください。": [
+      {
+        "t": "三角定規",
+        "z": "三角板",
+        "j": "三角定規",
+        "e": "set square",
+        "r": "さんかくじょうぎ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "直角",
+        "z": "直角",
+        "j": "直角",
+        "e": "right angle",
+        "r": "ちょっかく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "描いてください",
+        "z": "請畫",
+        "j": "描いてください",
+        "e": "please draw",
+        "r": "かいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "線を引く間に動かないように、三角定規をしっかり押さえました。": [
+      {
+        "t": "線",
+        "z": "線",
+        "j": "線",
+        "e": "line",
+        "r": "せん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "引く",
+        "z": "畫",
+        "j": "引く",
+        "e": "draw",
+        "r": "ひく"
+      },
+      {
+        "t": "間に"
+      },
+      {
+        "t": "動かない",
+        "z": "不移動",
+        "j": "動かない",
+        "e": "not move",
+        "r": "うごかない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "三角定規",
+        "z": "三角板",
+        "j": "三角定規",
+        "e": "set square",
+        "r": "さんかくじょうぎ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "しっかり",
+        "z": "穩穩地",
+        "j": "しっかり",
+        "e": "firmly",
+        "r": "しっかり"
+      },
+      {
+        "t": "押さえました",
+        "z": "按住了",
+        "j": "押さえました",
+        "e": "held down",
+        "r": "おさえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "リコーダーの穴をふさいでください。": [
+      {
+        "t": "リコーダー",
+        "z": "直笛",
+        "j": "リコーダー",
+        "e": "recorder",
+        "r": "りこーだー"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "穴",
+        "z": "孔",
+        "j": "穴",
+        "e": "holes",
+        "r": "あな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ふさいでください",
+        "z": "請蓋住",
+        "j": "ふさいでください",
+        "e": "please cover",
+        "r": "ふさいでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "甲高い音が出たので、指でリコーダーの穴をふさいでいるか確認しました。": [
+      {
+        "t": "甲高い",
+        "z": "尖銳高亢的",
+        "j": "甲高い",
+        "e": "shrill",
+        "r": "かんだかい"
+      },
+      {
+        "t": "音",
+        "z": "音",
+        "j": "音",
+        "e": "note",
+        "r": "おと"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "出た",
+        "z": "發出來了",
+        "j": "出た",
+        "e": "came out",
+        "r": "でた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "指",
+        "z": "手指",
+        "j": "指",
+        "e": "fingers",
+        "r": "ゆび"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "リコーダー",
+        "z": "直笛",
+        "j": "リコーダー",
+        "e": "recorder",
+        "r": "りこーだー"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "穴",
+        "z": "孔",
+        "j": "穴",
+        "e": "holes",
+        "r": "あな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ふさいでいる",
+        "z": "蓋住了",
+        "j": "ふさいでいる",
+        "e": "are covering",
+        "r": "ふさいでいる"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "鍵盤ハーモニカにホースをつないでください。": [
+      {
+        "t": "鍵盤ハーモニカ",
+        "z": "鍵盤口琴",
+        "j": "鍵盤ハーモニカ",
+        "e": "melodica",
+        "r": "けんばんはーもにか"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ホース",
+        "z": "吹管",
+        "j": "ホース",
+        "e": "tube",
+        "r": "ほーす"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つないでください",
+        "z": "請接上",
+        "j": "つないでください",
+        "e": "please connect",
+        "r": "つないでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "一緒に鍵盤ハーモニカを演奏する前に、ホースがつながっているか確認しました。": [
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together",
+        "r": "いっしょに"
+      },
+      {
+        "t": "鍵盤ハーモニカ",
+        "z": "鍵盤口琴",
+        "j": "鍵盤ハーモニカ",
+        "e": "melodica",
+        "r": "けんばんはーもにか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "演奏する",
+        "z": "演奏",
+        "j": "演奏する",
+        "e": "play",
+        "r": "えんそうする"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "ホース",
+        "z": "吹管",
+        "j": "ホース",
+        "e": "tube",
+        "r": "ほーす"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "つながっている",
+        "z": "接好了",
+        "j": "つながっている",
+        "e": "is connected",
+        "r": "つながっている"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "昨夜、体操服をかばんに入れました。": [
+      {
+        "t": "昨夜",
+        "z": "昨晚",
+        "j": "昨夜",
+        "e": "last night",
+        "r": "さくや"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "体操服",
+        "z": "體育服",
+        "j": "体操服",
+        "e": "PE uniform",
+        "r": "たいそうふく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "かばん",
+        "z": "袋子",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "裝好了",
+        "j": "入れました",
+        "e": "packed",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "体操服がまだ湿っていたので、登校前に窓際に干しました。": [
+      {
+        "t": "体操服",
+        "z": "體育服",
+        "j": "体操服",
+        "e": "PE uniform",
+        "r": "たいそうふく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "still",
+        "r": "まだ"
+      },
+      {
+        "t": "湿っていた",
+        "z": "潮濕著",
+        "j": "湿っていた",
+        "e": "was damp",
+        "r": "しめっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "登校",
+        "z": "上學",
+        "j": "登校",
+        "e": "going to school",
+        "r": "とうこう"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "窓際",
+        "z": "窗邊",
+        "j": "窓際",
+        "e": "by the window",
+        "r": "まどぎわ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "干しました",
+        "z": "晾了",
+        "j": "干しました",
+        "e": "hung to dry",
+        "r": "ほしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "上履きを上履き袋に入れてください。": [
+      {
+        "t": "上履き",
+        "z": "室內鞋",
+        "j": "上履き",
+        "e": "indoor shoes",
+        "r": "うわばき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "上履き袋",
+        "z": "室內鞋袋",
+        "j": "上履き袋",
+        "e": "indoor shoe bag",
+        "r": "うわばきぶくろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please put in",
+        "r": "いれてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達の上履き袋と取り違えないように、自分の袋に名前を書きました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "上履き袋",
+        "z": "室內鞋袋",
+        "j": "上履き袋",
+        "e": "indoor shoe bag",
+        "r": "うわばきぶくろ"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "取り違えない",
+        "z": "不弄混",
+        "j": "取り違えない",
+        "e": "not mix up",
+        "r": "とりちがえない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "自分",
+        "z": "自己",
+        "j": "自分",
+        "e": "my own",
+        "r": "じぶん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "袋",
+        "z": "袋子",
+        "j": "袋",
+        "e": "bag",
+        "r": "ふくろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "名前",
+        "z": "名字",
+        "j": "名前",
+        "e": "name",
+        "r": "なまえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書きました",
+        "z": "寫了",
+        "j": "書きました",
+        "e": "wrote",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "明日の時間割を確認してください。": [
+      {
+        "t": "明日",
+        "z": "明天",
+        "j": "明日",
+        "e": "tomorrow",
+        "r": "あした"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "時間割",
+        "z": "課表",
+        "j": "時間割",
+        "e": "class timetable",
+        "r": "じかんわり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認してください",
+        "z": "請確認",
+        "j": "確認してください",
+        "e": "please check",
+        "r": "かくにんしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "時間割が変わっていたので、寝る前にかばんの中身を入れ替えました。": [
+      {
+        "t": "時間割",
+        "z": "課表",
+        "j": "時間割",
+        "e": "class timetable",
+        "r": "じかんわり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "変わっていた",
+        "z": "已經變更了",
+        "j": "変わっていた",
+        "e": "had changed",
+        "r": "かわっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "寝る",
+        "z": "睡覺",
+        "j": "寝る",
+        "e": "go to bed",
+        "r": "ねる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "かばん",
+        "z": "袋子",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中身",
+        "z": "內容物",
+        "j": "中身",
+        "e": "contents",
+        "r": "なかみ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れ替えました",
+        "z": "更換了",
+        "j": "入れ替えました",
+        "e": "repacked",
+        "r": "いれかえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "連絡帳を保護者に見せてください。": [
+      {
+        "t": "連絡帳",
+        "z": "聯絡簿",
+        "j": "連絡帳",
+        "e": "school communication notebook",
+        "r": "れんらくちょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "保護者",
+        "z": "家長",
+        "j": "保護者",
+        "e": "parent",
+        "r": "ほごしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "見せてください",
+        "z": "請給人看",
+        "j": "見せてください",
+        "e": "please show",
+        "r": "みせてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "持ってくる物を忘れたので、もう一度連絡帳を確認しました。": [
+      {
+        "t": "持ってくる",
+        "z": "帶來",
+        "j": "持ってくる",
+        "e": "bring",
+        "r": "もってくる"
+      },
+      {
+        "t": "物",
+        "z": "物品",
+        "j": "物",
+        "e": "items",
+        "r": "もの"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "忘れた",
+        "z": "忘了",
+        "j": "忘れた",
+        "e": "forgot",
+        "r": "わすれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "もう一度",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again",
+        "r": "もういちど"
+      },
+      {
+        "t": "連絡帳",
+        "z": "聯絡簿",
+        "j": "連絡帳",
+        "e": "school communication notebook",
+        "r": "れんらくちょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドリルのこのページを終わらせてください。": [
+      {
+        "t": "ドリル",
+        "z": "作業本",
+        "j": "ドリル",
+        "e": "workbook",
+        "r": "どりる"
+      },
+      {
+        "t": "のこの"
+      },
+      {
+        "t": "ページ",
+        "z": "頁",
+        "j": "ページ",
+        "e": "page",
+        "r": "ぺーじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "終わらせてください",
+        "z": "請完成",
+        "j": "終わらせてください",
+        "e": "please finish",
+        "r": "おわらせてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ドリルの問題を解き終わってから、答えを確認しました。": [
+      {
+        "t": "ドリル",
+        "z": "作業本",
+        "j": "ドリル",
+        "e": "workbook",
+        "r": "どりる"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "問題",
+        "z": "練習題",
+        "j": "問題",
+        "e": "exercises",
+        "r": "もんだい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "解き終わって",
+        "z": "做完後",
+        "j": "解き終わって",
+        "e": "finished solving",
+        "r": "ときおわって"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "答え",
+        "z": "答案",
+        "j": "答え",
+        "e": "answers",
+        "r": "こたえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "テスト用紙に名前を書いてください。": [
+      {
+        "t": "テスト用紙",
+        "z": "考卷",
+        "j": "テスト用紙",
+        "e": "test paper",
+        "r": "てすとようし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "名前",
+        "z": "名字",
+        "j": "名前",
+        "e": "name",
+        "r": "なまえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書いてください",
+        "z": "請寫",
+        "j": "書いてください",
+        "e": "please write",
+        "r": "かいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "テスト用紙を提出する前に、全部の問題に答えたか確認しました。": [
+      {
+        "t": "テスト用紙",
+        "z": "考卷",
+        "j": "テスト用紙",
+        "e": "test paper",
+        "r": "てすとようし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "提出する",
+        "z": "交出",
+        "j": "提出する",
+        "e": "hand in",
+        "r": "ていしゅつする"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "全部",
+        "z": "全部",
+        "j": "全部",
+        "e": "all",
+        "r": "ぜんぶ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "問題",
+        "z": "題目",
+        "j": "問題",
+        "e": "questions",
+        "r": "もんだい"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "答えた",
+        "z": "回答了",
+        "j": "答えた",
+        "e": "answered",
+        "r": "こたえた"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家族に通知表を見せました。": [
+      {
+        "t": "家族",
+        "z": "家人",
+        "j": "家族",
+        "e": "family",
+        "r": "かぞく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "通知表",
+        "z": "成績單",
+        "j": "通知表",
+        "e": "report card",
+        "r": "つうちひょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見せました",
+        "z": "給人看了",
+        "j": "見せました",
+        "e": "showed",
+        "r": "みせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "通知表の先生のコメントを読んでから、来学期の目標を立てました。": [
+      {
+        "t": "通知表",
+        "z": "成績單",
+        "j": "通知表",
+        "e": "report card",
+        "r": "つうちひょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "先生",
+        "z": "老師",
+        "j": "先生",
+        "e": "teacher",
+        "r": "せんせい"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "コメント",
+        "z": "評語",
+        "j": "コメント",
+        "e": "comments",
+        "r": "こめんと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "読んで",
+        "z": "讀了",
+        "j": "読んで",
+        "e": "read",
+        "r": "よんで"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "来学期",
+        "z": "下學期",
+        "j": "来学期",
+        "e": "next term",
+        "r": "らいがっき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "目標",
+        "z": "目標",
+        "j": "目標",
+        "e": "goal",
+        "r": "もくひょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "立てました",
+        "z": "訂下了",
+        "j": "立てました",
+        "e": "set",
+        "r": "たてました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "学級日誌に今日の日付を書いてください。": [
+      {
+        "t": "学級日誌",
+        "z": "班級日誌",
+        "j": "学級日誌",
+        "e": "class journal",
+        "r": "がっきゅうにっし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "今日",
+        "z": "今天",
+        "j": "今日",
+        "e": "today",
+        "r": "きょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "日付",
+        "z": "日期",
+        "j": "日付",
+        "e": "date",
+        "r": "ひづけ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書いてください",
+        "z": "請寫",
+        "j": "書いてください",
+        "e": "please write",
+        "r": "かいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "日直だったので、帰る前にクラスの活動を学級日誌に記録しました。": [
+      {
+        "t": "日直",
+        "z": "值日",
+        "j": "日直",
+        "e": "on duty",
+        "r": "にっちょく"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "帰る",
+        "z": "回家",
+        "j": "帰る",
+        "e": "go home",
+        "r": "かえる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "クラス",
+        "z": "班級",
+        "j": "クラス",
+        "e": "class",
+        "r": "くらす"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "活動",
+        "z": "活動",
+        "j": "活動",
+        "e": "activities",
+        "r": "かつどう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "学級日誌",
+        "z": "班級日誌",
+        "j": "学級日誌",
+        "e": "class journal",
+        "r": "がっきゅうにっし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "記録しました",
+        "z": "記錄了",
+        "j": "記録しました",
+        "e": "recorded",
+        "r": "きろくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "黒板消しクリーナーは窓の横にあります。": [
+      {
+        "t": "黒板消しクリーナー",
+        "z": "黑板擦清潔機",
+        "j": "黒板消しクリーナー",
+        "e": "blackboard eraser cleaner",
+        "r": "こくばんけしくりーなー"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "窓",
+        "z": "窗戶",
+        "j": "窓",
+        "e": "window",
+        "r": "まど"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "z": "旁邊",
+        "j": "横",
+        "e": "side",
+        "r": "よこ"
+      },
+      {
+        "t": "にあります。"
+      }
+    ],
+    "黒板消しをきれいにしてから、部屋を出る前に黒板消しクリーナーの電源を切りました。": [
+      {
+        "t": "黒板消し",
+        "z": "黑板擦",
+        "j": "黒板消し",
+        "e": "eraser",
+        "r": "こくばんけし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "きれいにして",
+        "z": "清理後",
+        "j": "きれいにして",
+        "e": "cleaned",
+        "r": "きれいにして"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "離開",
+        "j": "出る",
+        "e": "leave",
+        "r": "でる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "黒板消しクリーナー",
+        "z": "黑板擦清潔機",
+        "j": "黒板消しクリーナー",
+        "e": "blackboard eraser cleaner",
+        "r": "こくばんけしくりーなー"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "電源",
+        "z": "電源",
+        "j": "電源",
+        "e": "power",
+        "r": "でんげん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切りました",
+        "z": "關掉了",
+        "j": "切りました",
+        "e": "turned off",
+        "r": "きりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "明日、縄跳びを持ってきてください。": [
+      {
+        "t": "明日",
+        "z": "明天",
+        "j": "明日",
+        "e": "tomorrow",
+        "r": "あした"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "縄跳び",
+        "z": "跳繩",
+        "j": "縄跳び",
+        "e": "jump rope",
+        "r": "なわとび"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持ってきてください",
+        "z": "請帶來",
+        "j": "持ってきてください",
+        "e": "please bring",
+        "r": "もってきてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "縄跳びが長すぎたので、練習の前に長さを調整しました。": [
+      {
+        "t": "縄跳び",
+        "z": "跳繩",
+        "j": "縄跳び",
+        "e": "jump rope",
+        "r": "なわとび"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "長すぎた",
+        "z": "太長了",
+        "j": "長すぎた",
+        "e": "was too long",
+        "r": "ながすぎた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "練習",
+        "z": "練習",
+        "j": "練習",
+        "e": "practice",
+        "r": "れんしゅう"
+      },
+      {
+        "t": "の前に"
+      },
+      {
+        "t": "長さ",
+        "z": "長度",
+        "j": "長さ",
+        "e": "length",
+        "r": "ながさ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整しました",
+        "z": "調整了",
+        "j": "調整しました",
+        "e": "adjusted",
+        "r": "ちょうせいしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "次の走者にバトンを渡してください。": [
+      {
+        "t": "次",
+        "z": "下一位",
+        "j": "次",
+        "e": "next",
+        "r": "つぎ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "走者",
+        "z": "跑者",
+        "j": "走者",
+        "e": "runner",
+        "r": "そうしゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "バトン",
+        "z": "接力棒",
+        "j": "バトン",
+        "e": "relay baton",
+        "r": "ばとん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "渡してください",
+        "z": "請傳遞",
+        "j": "渡してください",
+        "e": "please pass",
+        "r": "わたしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "練習中にバトンを落としたので、受け渡しをもう一度練習しました。": [
+      {
+        "t": "練習",
+        "z": "練習",
+        "j": "練習",
+        "e": "practice",
+        "r": "れんしゅう"
+      },
+      {
+        "t": "中に"
+      },
+      {
+        "t": "バトン",
+        "z": "接力棒",
+        "j": "バトン",
+        "e": "relay baton",
+        "r": "ばとん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "落とした",
+        "z": "掉了",
+        "j": "落とした",
+        "e": "dropped",
+        "r": "おとした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "受け渡し",
+        "z": "交接",
+        "j": "受け渡し",
+        "e": "handover",
+        "r": "うけわたし"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もう一度",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again",
+        "r": "もういちど"
+      },
+      {
+        "t": "練習しました",
+        "z": "練習了",
+        "j": "練習しました",
+        "e": "practiced",
+        "r": "れんしゅうしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "体育では赤白帽をかぶってください。": [
+      {
+        "t": "体育",
+        "z": "體育課",
+        "j": "体育",
+        "e": "PE",
+        "r": "たいいく"
+      },
+      {
+        "t": "では"
+      },
+      {
+        "t": "赤白帽",
+        "z": "紅白帽",
+        "j": "赤白帽",
+        "e": "reversible sports cap",
+        "r": "あかしろぼう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "かぶってください",
+        "z": "請戴上",
+        "j": "かぶってください",
+        "e": "please wear",
+        "r": "かぶってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "白組だったので、赤白帽を裏返して、白い面を外にしました。": [
+      {
+        "t": "白組",
+        "z": "白隊",
+        "j": "白組",
+        "e": "white team",
+        "r": "しろぐみ"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "赤白帽",
+        "z": "紅白帽",
+        "j": "赤白帽",
+        "e": "reversible sports cap",
+        "r": "あかしろぼう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "裏返して",
+        "z": "翻面後",
+        "j": "裏返して",
+        "e": "turned inside out",
+        "r": "うらがえして"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "白い",
+        "z": "白色的",
+        "j": "白い",
+        "e": "white",
+        "r": "しろい"
+      },
+      {
+        "t": "面",
+        "z": "一面",
+        "j": "面",
+        "e": "side",
+        "r": "めん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "外",
+        "z": "外面",
+        "j": "外",
+        "e": "outside",
+        "r": "そと"
+      },
+      {
+        "t": "にしました。"
+      }
+    ],
+    "給食ワゴンをゆっくり押してください。": [
+      {
+        "t": "給食ワゴン",
+        "z": "配膳推車",
+        "j": "給食ワゴン",
+        "e": "school lunch trolley",
+        "r": "きゅうしょくわごん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "押してください",
+        "z": "請推",
+        "j": "押してください",
+        "e": "please push",
+        "r": "おしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "給食ワゴンを教室に入れる前に、通路に物がないか確認しました。": [
+      {
+        "t": "給食ワゴン",
+        "z": "配膳推車",
+        "j": "給食ワゴン",
+        "e": "school lunch trolley",
+        "r": "きゅうしょくわごん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "教室",
+        "z": "教室",
+        "j": "教室",
+        "e": "classroom",
+        "r": "きょうしつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れる",
+        "z": "推入",
+        "j": "入れる",
+        "e": "bring in",
+        "r": "いれる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "通路",
+        "z": "通道",
+        "j": "通路",
+        "e": "passage",
+        "r": "つうろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "物",
+        "z": "物品",
+        "j": "物",
+        "e": "objects",
+        "r": "もの"
+      },
+      {
+        "t": "がないか"
+      },
+      {
+        "t": "確認しました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked",
+        "r": "かくにんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ランドセルカバーを拭いてください。": [
+      {
+        "t": "ランドセルカバー",
+        "z": "日式書包保護套",
+        "j": "ランドセルカバー",
+        "e": "school backpack cover",
+        "r": "らんどせるかばー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "拭いてください",
+        "z": "請擦拭",
+        "j": "拭いてください",
+        "e": "please wipe",
+        "r": "ふいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ランドセルカバーがずれていたので、家を出る前に付け直しました。": [
+      {
+        "t": "ランドセルカバー",
+        "z": "日式書包保護套",
+        "j": "ランドセルカバー",
+        "e": "school backpack cover",
+        "r": "らんどせるかばー"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ずれていた",
+        "z": "滑開了",
+        "j": "ずれていた",
+        "e": "had slipped",
+        "r": "ずれていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "家",
+        "z": "家",
+        "j": "家",
+        "e": "home",
+        "r": "いえ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "出門",
+        "j": "出る",
+        "e": "leave",
+        "r": "でる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "付け直しました",
+        "z": "重新裝好了",
+        "j": "付け直しました",
+        "e": "refitted",
+        "r": "つけなおしました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

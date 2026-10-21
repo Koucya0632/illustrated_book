@@ -122,7 +122,15 @@
     "collecting-hobbies:prepare-publish": "node --env-file=.env.local scripts/prepare-collecting-hobbies-publish-plan.mjs",
     "collecting-hobbies:publish": "tsx --env-file=.env.local scripts/publish-collecting-hobbies-series.ts",
     "collecting-hobbies:content": "node scripts/prepare-collecting-hobbies-content.mjs",
-    "collecting-hobbies:review:bind": "node scripts/bind-collecting-hobbies-editorial-review.mjs"
+    "collecting-hobbies:review:bind": "node scripts/bind-collecting-hobbies-editorial-review.mjs",
+    "campus:prepare-images": "node scripts/prepare-campus-images.mjs",
+    "campus:review": "node scripts/prepare-campus-semantic-review.mjs",
+    "campus:audio:plan": "node scripts/plan-campus-audio.mjs",
+    "campus:audio:generate:local": "node --env-file=.env.local scripts/generate-campus-candidate-audio.mjs",
+    "campus:audio:verify": "node scripts/verify-campus-audio.mjs",
+    "campus:prepare-publish": "node --env-file=.env.local scripts/prepare-campus-publish-plan.mjs",
+    "campus:publish": "tsx --env-file=.env.local scripts/publish-campus-series.ts",
+    "campus:content": "node scripts/prepare-campus-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

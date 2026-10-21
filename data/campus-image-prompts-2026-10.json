@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "series": "campus",
+  "mode": "built-in imagegen",
+  "prompts": [
+    {
+      "id": "classroom",
+      "tool": "built-in imagegen",
+      "prompt": "Japanese classroom cutaway with individual pale wooden student desks, green chalkboard and side windows, semi-realistic catalog illustration on pure white background, no text or people.",
+      "localSource": "output/campus-2026-10/sources/classroom.png"
+    },
+    {
+      "id": "blackboard",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: A single wide rectangular Japanese classroom green chalkboard, slim aluminum frame and narrow chalk tray, one small white chalk stick for scale. Full board isolated, no room, no writing. Distinct from whiteboard. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No people, no captions, no watermark, no invented brand, no collage, no border.",
+      "localSource": "output/campus-2026-10/sources/blackboard.png"
+    },
+    {
+      "id": "chalk",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: Four short cylindrical classroom chalk sticks, three white and one pale yellow, with matte dusty mineral texture, arranged as a single small group. No box, no crayons, no pens, no blackboard. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No people, no captions, no watermark, no invented brand, no collage, no border.",
+      "localSource": "output/campus-2026-10/sources/chalk.png"
+    },
+    {
+      "id": "blackboard-eraser",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: One Japanese classroom chalkboard eraser, long rectangular orange wooden top with curved black grip and clearly visible thick navy felt cloth underside; three-quarter side view. Not whiteboard magnet or rubber pencil eraser. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No people, no captions, no watermark, no invented brand, no collage, no border.",
+      "localSource": "output/campus-2026-10/sources/blackboard-eraser.png"
+    },
+    {
+      "id": "textbook",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: Two thin Japanese school subject textbooks, one open showing subtle diagrams of leaves and simple geometric figures on cream paper, one closed with a plain muted blue cover underneath. Only abstract diagrams, NO readable text, numbers, school emblems or brand. Distinct from blank notebook. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No people, no captions, no watermark, no invented brand, no collage, no border.",
+      "localSource": "output/campus-2026-10/sources/textbook.png"
+    },
+    {
+      "id": "school-shoe-locker",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: A single freestanding Japanese school entrance shoe cabinet: pale cream metal cubby shelves, 4 columns by 4 rows, open rectangular compartments, a few compartments contain plain outdoor sneakers or white uwabaki. Full cabinet with open cubbies visible, no doors or locks, no people, no names or numbers. Not a tall clothes locker. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No text, captions, watermark, brand, collage or border.",
+      "localSource": "output/campus-2026-10/sources/school-shoe-locker.png"
+    },
+    {
+      "id": "indoor-school-shoes",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: One pair of Japanese elementary school uwabaki indoor shoes, white canvas low slip-on shoes, broad white elastic strap across each instep, blue rubber toe caps and thin light rubber soles. Show both complete shoes in three-quarter view. Not slippers, lace-up trainers or ballet pointe shoes. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No text, captions, watermark, brand, collage or border.",
+      "localSource": "output/campus-2026-10/sources/indoor-school-shoes.png"
+    },
+    {
+      "id": "randoseru",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture-dictionary asset, semi-realistic catalog rendering. Subject: One complete Japanese elementary school randoseru backpack in deep red, rigid structured rectangular box-shaped leather body, large smooth rounded front flap, two substantial padded shoulder straps visible, small side safety rings, no logos. Three-quarter view shows front and one side and the pair of shoulder straps behind. Not a generic fabric backpack. Pure white seamless background, centered complete subject, generous padding at every edge, soft realistic shadow, Japanese daily-life appearance, clean material detail. No text, captions, watermark, brand, collage or border.",
+      "localSource": "output/campus-2026-10/sources/randoseru.png"
+    },
+    {
+      "id": "schoolyard",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture-dictionary asset. A contemporary Japanese schoolyard as one coherent miniature architectural scene: broad level tan compacted-earth outdoor sports ground with a few subtle white running-track curves, a simple climbing bar on one edge, a low three-storey school building in the distant rear for context. The open ground is dominant. No asphalt city playground or elaborate park. Complete freestanding vignette with all boundaries fading into pure white, high three-quarter view, no people, no text. Clean semi-realistic catalog rendering, natural materials and soft lighting, no brand, watermark, text, captions, collage, frame or border.",
+      "localSource": "output/campus-2026-10/sources/schoolyard.png"
+    },
+    {
+      "id": "school-gymnasium",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture-dictionary asset. A Japanese school gymnasium as a unified semi-realistic miniature architectural cutaway: spacious wooden indoor basketball court with crisp simple court lines, high ceiling with steel trusses, wall-mounted basketball hoop, small stage at one end, windows high on walls. Full room isolated as a vignette on white with padding. No exercise machines, no people, no scores, no signage. Clean semi-realistic catalog rendering, natural materials and soft lighting, no brand, watermark, text, captions, collage, frame or border.",
+      "localSource": "output/campus-2026-10/sources/school-gymnasium.png"
+    },
+    {
+      "id": "school-infirmary",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture-dictionary asset. A Japanese school infirmary as one clean modest architectural cutaway room: two simple white rest beds divided by pale privacy curtains, a small nurse desk, handwashing sink, closed medical storage cabinet. Calm daylight, recognizable school care room rather than hospital ward, no operating theatre, no red cross logo, no medical text. Full vignette on pure white with generous padding, no people. Clean semi-realistic catalog rendering, natural materials and soft lighting, no brand, watermark, text, captions, collage, frame or border.",
+      "localSource": "output/campus-2026-10/sources/school-infirmary.png"
+    },
+    {
+      "id": "staff-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture-dictionary asset. A contemporary Japanese school teachers' staff room as one coherent architectural cutaway vignette. Two compact rows of adult office desks face each other, each with plain folders, closed laptop and swivel chair. Shared rear storage cabinets and a small meeting table, bright windows. Clearly a room where multiple teachers work, not a classroom, lounge or private principal office. All boundaries visible on a pure white background, no people. Clean semi-realistic catalog rendering, natural materials, soft light, centered complete subject with generous white margin. No text, logos, watermark, captions, collage or frame.",
+      "localSource": "output/campus-2026-10/sources/staff-room.png"
+    },
+    {
+      "id": "school-library",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture-dictionary asset. A modest Japanese school library room as a single semi-realistic architectural cutaway vignette: several low wooden bookcases filled with colorful thin books, two reading tables with child-size chairs, small checkout desk, daylight windows. Books have plain unlabeled spines. Clearly library rather than bookstore, no retail displays. Complete isolated room on pure white, generous padding, no people. Clean semi-realistic catalog rendering, natural materials, soft light, centered complete subject with generous white margin. No text, logos, watermark, captions, collage or frame.",
+      "localSource": "output/campus-2026-10/sources/school-library.png"
+    },
+    {
+      "id": "school-lunch",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture-dictionary asset. One Japanese elementary school kyushoku lunch meal on a plain pale blue rectangular tray: small bowl of steamed white rice, small bowl of vegetable soup, plate with a modest grilled fish portion and cooked vegetables, plain white milk carton without writing, reusable chopsticks resting beside bowls. Semi-realistic food catalog rendering, balanced portions, no bento box, no packaged convenience-store meal. Entire tray and all utensils visible, pure white background. Clean semi-realistic catalog rendering, natural materials, soft light, centered complete subject with generous white margin. No text, logos, watermark, captions, collage or frame.",
+      "localSource": "output/campus-2026-10/sources/school-lunch.png"
+    },
+    {
+      "id": "lunch-serving-apron",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. One square Tuji picture dictionary asset for 給食エプロン / lunch-serving apron. A single Japanese elementary school lunch-duty white cotton kappogi smock, long sleeves gathered at wrists, round neck, wide protective body, simple rear ties subtly visible, displayed empty in a natural garment shape, with a small matching white elastic cap placed beside it. Entire smock and cap centered on pure white, generous padding, semi-realistic catalog rendering, soft shadow. Not a sleeveless chef apron, medical laboratory coat or chef jacket. No person, mannequin, hanger, gloves, mask, text, logos, border or watermark.",
+      "localSource": "output/campus-2026-10/sources/lunch-serving-apron.png"
+    },
+    {
+      "id": "vaulting-box",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. One square Tuji picture dictionary asset for 跳び箱 / vaulting box. A single classic Japanese school PE vaulting box: five stacked hollow trapezoid wooden sections narrowing upward, warm natural wood with oval carry-holes on the side of each section, rectangular thick padded beige canvas top, solid lower base. Three-quarter view showing long side and front, sturdy realistic construction. Entire equipment centered on pure white background, generous padding, semi-realistic catalog rendering, soft shadow. No people, surrounding gym, springboard, numerals, text, logos, border or watermark. Not a pommel horse or modern vaulting table.",
+      "localSource": "output/campus-2026-10/sources/vaulting-box.png"
+    },
+    {
+      "id": "science-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture dictionary asset for 理科室 / science room. A Japanese school science classroom as one semi-realistic architectural cutaway vignette, with several sturdy rectangular dark-topped student laboratory benches, integrated small sinks and taps, stools, a few clean empty glass beakers, one simple school microscope, glass-door supply cupboard, green chalkboard, side windows. Modest teaching room, not a high-tech research or medical laboratory. Entire room with all edges fully visible isolated on pure white background, generous margin, warm realistic materials, soft daylight. No chemicals in use, people, readable text, signs, logos, watermark or collage.",
+      "localSource": "output/campus-2026-10/sources/science-room.png"
+    },
+    {
+      "id": "music-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. A freestanding miniature architectural diorama of a Japanese school music classroom, centered on a pure white studio tabletop background, square composition. The whole tiny model is fully in frame, with 20 percent empty white margin surrounding all four sides. It has two walls and a floor, no front wall, viewed from high three-quarter angle. Inside: simple student chairs in rows, a green board with blank musical staff lines, a cabinet with hand percussion and recorders. A plain brown UPRIGHT PIANO stands at front left, with its broad solid wood BACK PANEL facing the camera; the keyboard and any maker label face the wall and are NOT visible. No grand piano. No writing anywhere, no gold lettering, no text or labels. Semi-realistic clean catalog rendering, natural wood and soft shadows, no people, watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/music-room.png"
+    },
+    {
+      "id": "school-gate",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Single square Tuji picture dictionary asset for 校門 / school gate. A contemporary Japanese public school entrance gate: two short square light-gray stone/concrete pillars supporting a modest dark metal sliding gate, partly open to show a straight entrance path and a very small unobtrusive portion of a three-storey school building behind. Gate and pillars dominate, not a whole school aerial view. Pillars completely blank, NO name plaques, lettering, crest, signs or logos. Complete unified architectural vignette with outer boundaries fading into pure white background, generous margin, centered three-quarter eye-level view, semi-realistic clean rendering, no people, vehicles, watermark, frame or collage.",
+      "localSource": "output/campus-2026-10/sources/school-gate.png"
+    },
+    {
+      "id": "school-corridor",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. A small freestanding ARCHITECTURAL SCALE MODEL of a Japanese school corridor, on a pure WHITE studio backdrop. This is a model viewed FROM OUTSIDE AND ABOVE, NOT a photo taken inside a corridor. Show the WHOLE MODEL within a square image, leaving at least 15 percent empty white space at all edges. Narrow rectangular floor slab with three classroom sliding doors on its back wall, windows along the opposite side with the near window wall cut away low for visibility. A clean empty passage connects the classroom doors. The whole corridor model has visibly finite ends and sits on white, no room extends out of frame. Pale polished floor, gray metal door frames, cream walls, soft realistic daylight. Semi-realistic catalog illustration with natural proportions. No people, text, signs, labels, brands, watermark or collage.",
+      "localSource": "output/campus-2026-10/sources/school-corridor.png"
+    },
+    {
+      "id": "category-campus",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary category cover for School & Campus in Japan. One coherent semi-realistic miniature architectural school scene: a modest three-storey Japanese school building with rows of windows, flat roof and central entrance, connected school gymnasium at one side, a compact tan schoolyard in front with subtle white track lines, gate and a few green trees at edges. The whole school complex is a single complete isolated architectural model centered on pure white studio background, generous white margin around all sides. Calm warm daylight, natural detail, no people. No school name, text, clock numbers, signs, logos, flags, watermark, collage, border or captions. Friendly realistic catalog style, not cartoon or flat icon.",
+      "localSource": "output/campus-2026-10/sources/category-campus.png"
+    },
+    {
+      "id": "principal-office",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A modest Japanese school principal's office as a complete miniature architectural cutaway: one adult executive desk with simple chair, two visitor chairs facing it, low bookcase and small meeting table, tall side window. No rows of desks or student desks. A single room with floor and two walls, viewed from outside above, complete model centered on pure white with generous margins. No person, emblems, wall portraits, plaques or lettering. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/principal-office.png"
+    },
+    {
+      "id": "art-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A Japanese school art classroom as a complete miniature architectural cutaway: broad shared wooden worktables with stools, jars of paintbrushes, a few small easels displaying simple leaf studies, a drying rack of artwork and wall sink. One coherent room, no people. All floor and wall edges visible, semi-realistic miniature viewed from outside above on white. No words, brand labels, famous paintings or posters. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/art-room.png"
+    },
+    {
+      "id": "home-economics-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A Japanese school home economics classroom miniature architectural cutaway with several modest shared cooking islands, each with a small sink and stovetop, stools, closed cooking utensil cupboards, and at one side a plain sewing machine on a table. School instructional room, not restaurant kitchen. Complete model on pure white with generous margins, natural wood and stainless steel, no people, food preparation in progress, labels or brand markings. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/home-economics-room.png"
+    },
+    {
+      "id": "computer-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A Japanese school computer classroom as a complete miniature architectural cutaway model, three neat rows of student desks with desktop monitors, keyboards and mice facing a teacher station and green board, chairs, side windows. Screens blank soft blue. Clearly school IT classroom not server room. Full model with finite floor and walls surrounded by white space, no people, on-screen text, logos or labels. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/computer-room.png"
+    },
+    {
+      "id": "school-broadcasting-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A modest Japanese school broadcasting room as one complete miniature architectural cutaway. Compact desk with a small audio mixing console, one gooseneck microphone, desktop microphone with plain foam head, headphones, plain laptop, two chairs, wall loudspeaker and simple sound-absorbing panels. No commercial radio station neon or recording booth luxury. Complete model on pure white with margins, no people, lettering, brand logos or signs. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/school-broadcasting-room.png"
+    },
+    {
+      "id": "school-changing-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A school changing room as a complete clean miniature architectural cutaway: pale metal clothes lockers with tall doors, two low wooden benches, wall hooks and a small high window. No shoes as main subject, no shop fitting mirrors, no toilets or showers. Empty room with complete floor slab and two walls fully visible centered on pure white, no people, numbers, labels or logos. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/school-changing-room.png"
+    },
+    {
+      "id": "school-swimming-pool",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A Japanese school outdoor swimming pool as one finite miniature architectural model on pure white: rectangular modest lap pool with calm clear pale blue water, simple lane ropes, light-gray perimeter deck, stainless-steel ladder and low metal safety fence. A small portion of plain school building behind. Entire pool and all four edges visible, no people, slides, resort decorations, written depth labels, logos or readable text. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/school-swimming-pool.png"
+    },
+    {
+      "id": "sports-equipment-room",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A Japanese school sports equipment storage room as a complete miniature architectural cutaway on pure white. Compact room with steel ball cages holding basketballs and volleyballs, neatly stacked gym mats, a rack of hoops and a closed storage shelf, clear walkway. Clearly storage, not gym court. All edges fully visible, empty of people, no labels, numbers, logos or text. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/sports-equipment-room.png"
+    },
+    {
+      "id": "pencil-case",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school pencil case, rigid rectangular pale blue hinged double-sided style opened to reveal a few plain wooden pencils, a small white eraser and slim ruler in fitted compartments. Full case with open lid and contents centered on pure white. No cosmetic supplies, cartoon characters, logos, letters or printed brand. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/pencil-case.png"
+    },
+    {
+      "id": "rubber-eraser",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One small white rectangular rubber eraser for pencil marks, half inside a simple pale blue paper sleeve, a few tiny eraser crumbs alongside for scale. Clean white rubber with one gently rounded used corner. No lettering or logo on sleeve, not chalkboard eraser, no brush or felt. Centered complete object on white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/rubber-eraser.png"
+    },
+    {
+      "id": "pencil-sharpener",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One desktop hand-cranked Japanese school pencil sharpener, compact pale blue and cream box-shaped body, clearly visible rear crank handle and front pencil-insertion hole, transparent lower drawer with a few wooden pencil shavings. Three-quarter view shows both the entry face and side crank. No electric cable, logos, writing or pencils hiding defining parts. Whole machine on white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/pencil-sharpener.png"
+    },
+    {
+      "id": "protractor",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One transparent semicircular plastic school protractor on white, crisp and geometrically accurate 180-degree curved arc, straight bottom baseline, visible central origin tick, fine evenly spaced radial ticks and legible small angle numerals 0, 30, 60, 90, 120, 150, 180 in correct order. No brand or captions. Slight three-quarter top view, whole object visible with broad white margins. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/protractor.png"
+    },
+    {
+      "id": "drawing-compass",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One school drawing compass on white, two metal legs joined at an adjustable hinge, one leg ending in a fine steel center point, the other securely holding a short wooden pencil with a graphite tip. Slightly open so both distinct legs and tips are fully visible. Not a navigation compass, dividers without a pencil, or a mechanical caliper. No logos or lettering. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/drawing-compass.png"
+    },
+    {
+      "id": "set-square",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One clear transparent plastic 45-45-90 degree triangular set square with hollow triangular center and ruler ticks along the straight outer edges. Correct continuous triangle geometry, a single unmistakable right-angle corner, no separate ruler, no protractor, no navigation equipment. Whole tool centered on white, subtle translucent edge shadow, no brands or unnecessary text. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/set-square.png"
+    },
+    {
+      "id": "recorder",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school soprano recorder wind instrument, dark brown resin body with cream-colored beaked mouthpiece and foot ring, front finger holes visible down the straight body, twin small holes near the bottom, bell at far end. Three-quarter diagonal view, complete full instrument from mouthpiece to bell. Not transverse flute or audio recorder. Pure white, no brand, letters or musical notes. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/recorder.png"
+    },
+    {
+      "id": "melodica",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Photograph-style catalog illustration of a small 25-key school melodica on pure white. One pale-blue blow-powered keyboard with a flexible white ribbed blowing tube attached at the left and a black mouthpiece at tube end. Keyboard has EXACTLY TWO OCTAVES from C to C. Exactly FIFTEEN WHITE KEYS and TEN BLACK KEYS. The only black-key clusters, LEFT TO RIGHT, are: TWO, THREE, TWO, THREE. Four clusters total. A wider white gap between each cluster. Look like a real piano keyboard, not evenly alternating black and white. All white keys parallel and physically coherent. Slight high front angle, complete instrument and tube centered with padding. NO labels, words, musical note names, brand, case, watermark or other instruments.",
+      "localSource": "output/campus-2026-10/sources/melodica.png"
+    },
+    {
+      "id": "pe-uniform",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. A Japanese school PE uniform displayed as one coordinated outfit: short-sleeve white sports T-shirt with navy collar and sleeve edging, and navy knee-length sports shorts with elastic waistband, arranged neatly side by side in a natural garment shape. No person, mannequin, shoes, school crest, name patch or brand. Distinct from formal school uniform or swimming clothes. Pure white background. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/pe-uniform.png"
+    },
+    {
+      "id": "indoor-shoe-bag",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school uwabaki carrying bag, simple sturdy light-blue cloth rectangular shoe bag with short single carry handle and a fastening loop, open enough at top to show just the heels of white indoor school shoes. Bag dominates, full bag and handle visible, no cartoon print, brand, person, text or background props. Pure white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/indoor-shoe-bag.png"
+    },
+    {
+      "id": "class-timetable",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One school class timetable printed on a white sheet, centered flat on white background with soft paper-edge shadow. Accurate tidy grid: five columns under Japanese weekdays 月 火 水 木 金 and six numbered lesson rows; small readable subject names 国語 算数 理科 音楽 体育 図工 in selected cells. Minimal pale-blue header shading. Title exactly 時間割. No brand, school name, people or decorative clip art. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/class-timetable.png"
+    },
+    {
+      "id": "school-communication-notebook",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese elementary school communication notebook, small thin booklet with pale mint cover labeled exactly 連絡帳, opened slightly so a page shows tidy blank ruled fields for date, homework and items to bring. A plain small pencil rests beside it. Notebook should be recognizable as school-home messages, not address book or phone directory. Only the essential Japanese title, no brand or personal names. White background. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/school-communication-notebook.png"
+    },
+    {
+      "id": "workbook",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One elementary school math practice workbook open on pure white, thin bound book with a few large simple arithmetic exercises 3 + 2 = □ and 7 − 4 = □ plus ample blank answer spaces and a few counting-circle diagrams. Pale yellow plain cover partly visible beneath pages. No answer key, no complex fake text, no logo or brand. Clear distinction from blank lined notebook and expository textbook. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/workbook.png"
+    },
+    {
+      "id": "test-paper",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One loose school test sheet on white, header title exactly テスト, blank name line labeled 名前, and several numbered simple math questions with empty answer boxes. One discreet red teacher checkmark near a completed example but no scores, names, school identity or brand. Thin single unbound sheet, not a workbook or report card. Whole paper edges visible. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "editPrompt": "Edit this Japanese school test sheet. Remove the red checkmark to the right of the first answer completely. Instead draw ONE thin red teacher's CIRCLE around the correct handwritten answer 5 inside its answer box, as Japanese teachers commonly mark a correct answer. No checkmarks, crosses or ticks anywhere. Keep all text, mathematical questions, white page, empty name line, paper shape and white background exactly unchanged. Do not add scores, names or new writing.",
+      "localSource": "output/campus-2026-10/sources/test-paper.png"
+    },
+    {
+      "id": "report-card",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school report card document, folded paper opened to show a structured grid of subject rows and assessment columns, plus a ruled teacher-comment section. Title exactly 通知表. Essential readable subject rows 国語 算数 理科 音楽 体育, simple circles in a few assessment cells, no numeric grades, personal names, rankings, school identity or brand. Whole open paper centered on white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/report-card.png"
+    },
+    {
+      "id": "class-journal",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school class journal booklet with a plain muted brown cover titled exactly 学級日誌, opened enough to show a daily log page with simple boxes for date, class activities and duty notes, mostly blank ruled lines. No private diary decoration, no school crest, people, personal names or brand. Full thin bound book visible centered on pure white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/class-journal.png"
+    },
+    {
+      "id": "blackboard-eraser-cleaner",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese electric chalkboard eraser cleaner, a small cream-colored rectangular tabletop suction machine with a navy top roller-grille intake, side power switch, transparent lower dust collection compartment with light chalk dust, and short neatly coiled electric cable. An orange-and-blue felt chalkboard eraser rests flat across the top intake to demonstrate use. Machine dominates, no brand or labels. Full assembly on white, no person. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/blackboard-eraser-cleaner.png"
+    },
+    {
+      "id": "jump-rope",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One simple school jump rope with two plain blue plastic grip handles connected by a single thin red rope, rope arranged in a loose clear oval so both handles and complete cord are visible. No tangled extra ropes, logos, writing, person or other sports equipment. Semi-realistic clean material details, centered on pure white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/jump-rope.png"
+    },
+    {
+      "id": "relay-baton",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One hollow lightweight red relay running baton lying diagonally on pure white, smooth cylindrical tube with both rounded open ends, a subtle second blue baton placed just behind for school sports context. Short hand-held size, no grip knob, flags, conductor tip, logos or lettering. Complete simple equipment with generous margin. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/relay-baton.png"
+    },
+    {
+      "id": "red-white-sports-cap",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school reversible red-and-white sports cap, soft cloth crown with small curved brim and thin white elastic chin strap. Exterior red, one small folded-back edge reveals white lining clearly showing reversible construction. Single cap, not a pair, no emblem or name tag. Whole cap and chin strap visible on pure white. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/red-white-sports-cap.png"
+    },
+    {
+      "id": "school-lunch-trolley",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One Japanese school lunch distribution trolley, stainless-steel three-tier wheeled cart with sturdy push handle and four caster wheels. Upper shelf holds two lidded stainless food containers, middle shelf a basket of stacked small bowls and trays, lower shelf a closed supply basket. Whole trolley centered on white, complete wheels and handle visible, no food mess, logos, text, person or restaurant waiter. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/school-lunch-trolley.png"
+    },
+    {
+      "id": "randoseru-cover",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary asset. One transparent protective flap cover designed for a Japanese elementary school randoseru backpack, clear flexible vinyl rectangular rounded panel with navy edging and small securing loops. Shown partly fitted over the large front flap of a plain red randoseru so its protective role is obvious; lift a small lower cover corner to show distinct transparent material. Backpack as supporting form, cover edges and fastening visible. Not an all-over rain poncho. White, no text, logos or emblems. Semi-realistic catalog rendering, accurate Japanese daily-life appearance, centered complete subject, clean natural materials, soft studio shadow, generous pure white surrounding space. No watermark, collage or border.",
+      "localSource": "output/campus-2026-10/sources/randoseru-cover.png"
+    }
+  ]
+}

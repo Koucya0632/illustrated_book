@@ -13,6 +13,7 @@ import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS, MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS 
 import { MAIN_WORD_STATION_COMMUTING_IDS, MAIN_WORD_STATION_COMMUTING_WORDS } from "./main-word-station-commuting-2026-10";
 import { MAIN_WORD_FESTIVALS_IDS, MAIN_WORD_FESTIVALS_WORDS } from "./main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS, MAIN_WORD_CHERRY_BLOSSOM_SEASON_WORDS } from "./main-word-cherry-blossom-season-2026-10";
+import { MAIN_WORD_CAMPUS_IDS, MAIN_WORD_CAMPUS_WORDS } from "./main-word-campus-2026-10";
 import { MAIN_WORD_COLLECTING_HOBBIES_IDS, MAIN_WORD_COLLECTING_HOBBIES_WORDS } from "./main-word-collecting-hobbies-2026-10";
 import { MAIN_WORD_FRUITS_WORDS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_WORDS } from "./main-word-professions-2026-09";
@@ -1763,6 +1764,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_FESTIVALS_WORDS as LegacyWord[]),
   ...(MAIN_WORD_CHERRY_BLOSSOM_SEASON_WORDS as LegacyWord[]),
   ...(MAIN_WORD_COLLECTING_HOBBIES_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_CAMPUS_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
@@ -1775,7 +1777,7 @@ export const words: Word[] = [
 // to serve an incomplete catalogue than to expose an unreleased series.
 export const publicFallbackWords: Word[] = words.filter(
   (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies"].includes(word.category) &&
+    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus"].includes(word.category) &&
     !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
     !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
@@ -1785,7 +1787,8 @@ export const publicFallbackWords: Word[] = words.filter(
     !MAIN_WORD_STATION_COMMUTING_IDS.includes(word.id) &&
     !MAIN_WORD_FESTIVALS_IDS.includes(word.id) &&
     !MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS.includes(word.id) &&
-    !MAIN_WORD_COLLECTING_HOBBIES_IDS.includes(word.id),
+    !MAIN_WORD_COLLECTING_HOBBIES_IDS.includes(word.id) &&
+    !MAIN_WORD_CAMPUS_IDS.includes(word.id),
 );
 
 export const getWord = (id: string): Word | undefined =>

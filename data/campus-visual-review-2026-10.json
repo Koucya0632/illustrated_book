@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "series": "campus",
+  "reviewer": "Codex, 30 new selected originals inspected individually; 21 prior image verdicts reused only after matching source SHA-256",
+  "items": [
+    {
+      "id": "classroom",
+      "decision": "pass",
+      "reason": "單人木桌椅排向綠色黑板，側窗和教師桌構成日本普通教室；完整空間有白底，沒有混成辦公室。",
+      "sourceSha256": "f5710573b08482213e3aabb6757ea9e5fe107b5dcd7db5910cf1180d5f599aff"
+    },
+    {
+      "id": "blackboard",
+      "decision": "pass",
+      "reason": "深綠板面、金屬邊框和下方粉筆槽清楚可見；槽上的白粉筆支持黒板概念，非白板，四周留白。",
+      "sourceSha256": "e0712d33a220c711223bdb2a13697bb3fa0ce848b06733905352f03e47a2e859"
+    },
+    {
+      "id": "chalk",
+      "decision": "pass",
+      "reason": "三白一黃短圓棒具粉質粗糙表面，無蠟筆紙套或筆尖；全件與端面可見，白底完整。",
+      "sourceSha256": "9d33bfa2f49cb23496c2f4d9c2203ab586a9272a5ad0fc2a7b20711441800f98"
+    },
+    {
+      "id": "blackboard-eraser",
+      "decision": "pass",
+      "reason": "橘木上蓋、弧形握帶與厚藍色布面構成粉筆板擦，與磁性白板擦或橡皮擦不同；無品牌且主體完整。",
+      "sourceSha256": "f73cba5186faa18f38b6ef1553549b27bf8c69572afbcc6716705aa74dceb4c9"
+    },
+    {
+      "id": "textbook",
+      "decision": "pass",
+      "reason": "翻開書頁有葉片及幾何教學圖，並有閉合書本作參照，能區別空白筆記本；沒有可讀亂字或品牌。",
+      "sourceSha256": "5c35d35a86e4106f9d3068f3aae0ce8bc90ed2c2f90755af8b94d1a92d3679ac"
+    },
+    {
+      "id": "school-shoe-locker",
+      "decision": "pass",
+      "reason": "四乘四開口鞋格內有室外鞋及上履き，為校舍入口常見下駄箱；不是直立衣物櫃，整櫃白底完整。",
+      "sourceSha256": "498511a0924fb26543d9e995d0f987982ac798c106c85994126d47f04ae9a2ee"
+    },
+    {
+      "id": "indoor-school-shoes",
+      "decision": "pass",
+      "reason": "白布鞋身、寬腳背鬆緊帶和藍色橡膠鞋頭為常見上履き樣式；一雙鞋完整，無鞋帶、品牌或芭蕾鞋特徵。",
+      "sourceSha256": "fc77cb083714b694a177cbb5326462de90eb475b42ba6de62ce56ecbffb9b578"
+    },
+    {
+      "id": "randoseru",
+      "decision": "pass",
+      "reason": "紅色硬挺箱型書包具大翻蓋、雙厚肩帶與側環，符合ランドセル而非軟布背包；全件無字白底。",
+      "sourceSha256": "cae5aa598b672eb58e9c1997ed5e279c55dcbce7140f527bf129c19f49b49a0f"
+    },
+    {
+      "id": "schoolyard",
+      "decision": "pass",
+      "reason": "土色大操場與白跑道線為主體，後方校舍和邊緣球門提供學校位置；非公園遊具場，外沿融入白底。",
+      "sourceSha256": "5e7d3ce1f777d1a95b31674cc748446361edbf13602dad154fc7708836b5dc2b"
+    },
+    {
+      "id": "school-gymnasium",
+      "decision": "pass",
+      "reason": "高屋頂桁架、木質室內球場、籃框及端部舞台構成日本學校體育館；無健身器械，整館剖面完整。",
+      "sourceSha256": "cc660332be0a79dde97b84d2803298d8eaebc335b13d34d5e4f6b925909296a4"
+    },
+    {
+      "id": "school-infirmary",
+      "decision": "pass",
+      "reason": "兩張休息床、隔簾、小型照護桌和洗手台呈現校內保健室；規模與器材未變成手術室或醫院病房。",
+      "sourceSha256": "3fd13fd9b756864ea0fa2656015222e293e0bb785f494498b5793ee75f28714f"
+    },
+    {
+      "id": "staff-room",
+      "decision": "pass",
+      "reason": "成人辦公桌成排相向，附資料夾、辦公椅及共用會議桌，明確是教職員工作室而非學生教室；白底完整。",
+      "sourceSha256": "475b7dcfb9679f934723c4db011641466a7add9b4a4a2584258e6a9c1b414435"
+    },
+    {
+      "id": "school-library",
+      "decision": "pass",
+      "reason": "低書架、閱讀桌椅及借還櫃台呈現學校圖書室；書脊無亂字，沒有販售標價或書店陳列。",
+      "sourceSha256": "8b59f8cb41f96af36a8e7285ba90b9353a77ea3f245c0c7f9c4bf3f10f7d22c3"
+    },
+    {
+      "id": "school-lunch",
+      "decision": "pass",
+      "reason": "餐盤上有飯、蔬菜湯、魚與配菜、無字牛奶盒及筷子，符合日本給食常見一餐；不是便當盒或便利商店包裝。",
+      "sourceSha256": "fa645529a31a915749e55ceaaba6e90f1a2eeeeb147e5d451fc860b7d1e11451"
+    },
+    {
+      "id": "lunch-serving-apron",
+      "decision": "pass",
+      "reason": "白色長袖罩衣有束袖與側後繫帶，旁有配膳帽，符合給食用かっぽう着；無醫師前襟或品牌，白底完整。",
+      "sourceSha256": "e8d1393ff98ea6e0854eb5554b887a4a49adba8a47004805d4ed508f6a6ab612"
+    },
+    {
+      "id": "vaulting-box",
+      "decision": "pass",
+      "reason": "可分層木製梯形箱、側面搬運孔和厚帆布頂墊清楚呈現跳び箱，沒有鞍馬把手，整件完整白底。",
+      "sourceSha256": "eeef714519f7a0a0f4dbe29c835ff4b1f63a7f1f1c2ec35764a15f39bb7cdb59"
+    },
+    {
+      "id": "science-room",
+      "decision": "pass",
+      "reason": "黑色實驗桌有水槽與龍頭，附燒杯、顯微鏡及教學黑板，符合學校理科室而非醫學實驗室；完整白底剖面。",
+      "sourceSha256": "35f753ecdde64c052b1cd9dd48d09784e982772141f536654890ba05647525fe"
+    },
+    {
+      "id": "music-room",
+      "decision": "pass",
+      "reason": "選用重製版：五線黑板、學生椅與打擊樂器櫃足以辨識音樂教室；直立鋼琴背面朝鏡頭，不再露出原版品牌字樣，白底完整。",
+      "sourceSha256": "51835f680c50ffdef9807c97c7f719d730e2a0099871afddbd648bb0e175c881"
+    },
+    {
+      "id": "school-gate",
+      "decision": "pass",
+      "reason": "雙石柱、金屬門與入校路徑為主要物件，後方校舍只作定位；空白柱面無虛構校名，完整外沿白底。",
+      "sourceSha256": "25b278d04f04ad7c58f4882e7172fd14991f8bf66c21dfa6a16e84c4e4d2d2e2"
+    },
+    {
+      "id": "school-corridor",
+      "decision": "pass",
+      "reason": "選用重製版：長形通道串接三處教室滑門，近側以剖面低牆呈現窗側結構；完整有限空間置於白底，不採初版滿版室內照片。",
+      "sourceSha256": "d59e98bccd88faf95a32f112abd1cc17269498793cd18c251e40ef38dfc53179"
+    },
+    {
+      "id": "category-campus",
+      "decision": "pass",
+      "reason": "校舍、相連體育館、土操場與校門構成同一校園，足以概括系列；無校名、品牌或人群，單一完整白底場景。",
+      "sourceSha256": "414dbf69e81b481b9aab77020b466ce1935f23f09f1f302db4d3ce1016358c4f"
+    },
+    {
+      "id": "principal-office",
+      "decision": "pass",
+      "reason": "單一主管辦公桌與訪客座椅、接待桌構成校長辦公室，沒有成排教師桌；完整房間白底。",
+      "sourceSha256": "81b833b0bdeefbcdfac749e54caee006af7f6f12acfeb9d7f5a20f67f6ea310b"
+    },
+    {
+      "id": "art-room",
+      "decision": "pass",
+      "reason": "共用工作桌有畫具，另有葉片畫架、作品乾燥架與水槽，能辨識美術創作教室；未用名畫或品牌。",
+      "sourceSha256": "9b6f8519182634a9bed908dd9a2491f1de77a769b3d91702bb1835d13aeb5623"
+    },
+    {
+      "id": "home-economics-room",
+      "decision": "pass",
+      "reason": "多組料理島有爐台與水槽，側邊有縫紉機，呈現家庭科烹飪及裁縫教學；空間完整白底。",
+      "sourceSha256": "22bf0950ea3a562a13a47e78496d24c423c7731a23455168ec56b384191c3f72"
+    },
+    {
+      "id": "computer-room",
+      "decision": "pass",
+      "reason": "多台學生電腦、鍵盤與滑鼠朝向教師站和黑板，為教學機房而非伺服器室；螢幕無文字。",
+      "sourceSha256": "16a2e202a97bdc635bbe3c08a3120edae6a5dffbd1f7770c6438628fd3dd6f19"
+    },
+    {
+      "id": "school-broadcasting-room",
+      "decision": "pass",
+      "reason": "小型混音台、雙麥克風、耳機及壁掛喇叭在緊湊校室內，符合校內廣播而非商業電台；無招牌。",
+      "sourceSha256": "f380a905f096060956833fabdc7e2c489dbc1a189da1cfb0d995791cf3572637"
+    },
+    {
+      "id": "school-changing-room",
+      "decision": "pass",
+      "reason": "高衣物櫃、長椅和掛鉤構成更衣空間，無鞋格或商店試衣鏡；整室白底無人。",
+      "sourceSha256": "f8b93e47c3a29cce9cc805b1119561f0833195f36553b21708878b25e1910b83"
+    },
+    {
+      "id": "school-swimming-pool",
+      "decision": "pass",
+      "reason": "長方形泳池具水道繩、上下梯與安全圍欄，後方低校舍作定位；沒有度假池遊樂設施，整池完整。",
+      "sourceSha256": "79394b5307361f5543aee53e6e221b87354c158f090ed4d64d7c95c102bdfe03"
+    },
+    {
+      "id": "sports-equipment-room",
+      "decision": "pass",
+      "reason": "球籠、成疊體操墊、呼拉圈與器材架明確呈現倉儲用途，沒有比賽球場；有限室內空間白底。",
+      "sourceSha256": "0129726c369dca7e227e1c0c9e5a7031ec8108f4ea7f400371d09442320473da"
+    },
+    {
+      "id": "pencil-case",
+      "decision": "pass",
+      "reason": "開蓋硬式鉛筆盒裝有整列鉛筆、橡皮擦及尺，鉸鏈、扣具與收納結構清楚，無品牌或角色圖樣。",
+      "sourceSha256": "5bc7768872effb265c12fea3726503e55bff7c38ad52680279860fa67449da71"
+    },
+    {
+      "id": "rubber-eraser",
+      "decision": "pass",
+      "reason": "白色小塊擦體配無字紙套，角部使用痕跡與橡皮屑說明紙上鉛筆擦除用途；不同於布面板擦。",
+      "sourceSha256": "7a660aa73d84f05377580a91b474bc89cffb031a6e1ef21ba6ff27fb7fe49c4d"
+    },
+    {
+      "id": "pencil-sharpener",
+      "decision": "pass",
+      "reason": "插筆孔、側後手搖柄和透明鉛筆屑抽屜同時可見，為桌上削鉛筆機；整機無字白底。",
+      "sourceSha256": "34f885ba1af7a227de4a97537f8c0ff44424b0908a8919433361be66d4af009d"
+    },
+    {
+      "id": "protractor",
+      "decision": "pass",
+      "reason": "透明半圓工具有中央原點、基準線及0至180的主要角度標示，90在頂部，能辨識分度器；無品牌。",
+      "sourceSha256": "9192fc19ee032431046ca5271b0e0e3bf75c686bdb15951c18621352e3c63127"
+    },
+    {
+      "id": "drawing-compass",
+      "decision": "pass",
+      "reason": "雙腳鉸鏈一側為針腳、一側確實夾住短鉛筆，兩尖端與握柄完整，為畫圓圓規而非指南針或無筆分規。",
+      "sourceSha256": "e30cd48b246caec7ce614b8c628feea7322865c6c01267f8edbc9fb199e7d584"
+    },
+    {
+      "id": "set-square",
+      "decision": "pass",
+      "reason": "透明三角尺具單一直角、三角中空區與外緣刻度，形狀完整，與半圓量角器不同。",
+      "sourceSha256": "3055a4d44ca6993fa0b4b3ef3421e3ced053524a72d7e2755813d0f4a50bbaf7"
+    },
+    {
+      "id": "recorder",
+      "decision": "pass",
+      "reason": "直吹口、正面指孔與末端喇叭口構成樹脂直笛，全長無裁切和品牌；不與橫笛或錄音機混淆。",
+      "sourceSha256": "f2d219dd9f288f524a8a4e8f4c92ad34696cab76e84da480f19e5b8802f0a9c1"
+    },
+    {
+      "id": "melodica",
+      "decision": "pass",
+      "reason": "選用25鍵重製版：黑鍵呈二、三、二、三的正常分組，附吹管與吹口，能區別電子琴；前兩版黑鍵錯誤未選用。",
+      "sourceSha256": "2c483900a07748dd69eaa0d1405fa7efb7bb5735a20147f31df1ee26f6f3552d"
+    },
+    {
+      "id": "pe-uniform",
+      "decision": "pass",
+      "reason": "白色短袖運動上衣搭深藍運動短褲，無校徽名牌，為日本常見體操服樣式，與既有正式校服分開。",
+      "sourceSha256": "a50cf218751a210c54f36183cf09b693a623a05dd327b9ac481f88f55ce42410"
+    },
+    {
+      "id": "indoor-shoe-bag",
+      "decision": "pass",
+      "reason": "布製長方鞋袋有提把及扣環，上方露出一雙室內鞋後跟，顯示攜鞋容量與用途；無人物品牌。",
+      "sourceSha256": "b8b9bfa792001d5d7ed8b4627a5398487665009bf538eb0583919f138e67ec02"
+    },
+    {
+      "id": "class-timetable",
+      "decision": "pass",
+      "reason": "時間割標題、月到金五欄及六節課行與學科名稱清楚，為可讀的學校課表而非交通時刻表；白紙完整。",
+      "sourceSha256": "0d989c6b54e2337a1b3badeaa647038855a7d6d4ce3dec929f0187b05e3611c5"
+    },
+    {
+      "id": "school-communication-notebook",
+      "decision": "pass",
+      "reason": "連絡帳封面與宿題、持ってくるもの、連絡欄明確呈現聯絡簿用途；無個人訊息或品牌，紙頁完整。",
+      "sourceSha256": "a5cfd9d23f146d850fb2f59463dadb091ba75f3197ae1c052fb8720bcf9e9282"
+    },
+    {
+      "id": "workbook",
+      "decision": "pass",
+      "reason": "裝訂練習冊有算式、空白作答框和數量圖示，與空白ノート及說明性教科書區分；算式未填錯答案。",
+      "sourceSha256": "8ec6181e80a2111e90b5bf0f4e55fa1be5694c0ec5eea714ff6d383673d1e2aa"
+    },
+    {
+      "id": "test-paper",
+      "decision": "pass",
+      "reason": "選用修正版：單張テスト用紙有姓名空欄、題號及作答框，正確答案5改用紅圈標示；未保留原版勾號。",
+      "sourceSha256": "8160d0ae9329fd98f45352292d0967998c4b3582b7f3d2fc70974155c086d5a3"
+    },
+    {
+      "id": "report-card",
+      "decision": "pass",
+      "reason": "通知表具各科評量欄與先生からのコメント區，沒有考題或排名，為學習表現報告；可讀日文與完整白紙。",
+      "sourceSha256": "ad4f1f055cbc2531da8737184482528d79619746212e74cf94c65b2875ebcf75"
+    },
+    {
+      "id": "class-journal",
+      "decision": "pass",
+      "reason": "学級日誌封面配日期、學級活動及當番紀錄欄，區別個人日記與連絡帳；未填姓名或虛構私訊。",
+      "sourceSha256": "8c857b31ae4b2f03c5026ca86bfc0a8fbd51cbf0e4e1232d8b65864825e5c4e5"
+    },
+    {
+      "id": "blackboard-eraser-cleaner",
+      "decision": "pass",
+      "reason": "頂面格柵吸入口承接布面黑板擦，下方集塵槽與側邊電源開關、電線構成電動清潔機；清理對象不是粉筆本體。",
+      "sourceSha256": "142fe431789fddbe17b952484952c4195d7cda36db08d18e8aad1e1f98ced541"
+    },
+    {
+      "id": "jump-rope",
+      "decision": "pass",
+      "reason": "一條連續紅繩連接兩個藍色握柄，整繩和雙柄可見，沒有斷裂或多餘繩段；無人物品牌。",
+      "sourceSha256": "e6b1c5146fd152d893c5c9a8d4df43c52340adc8d2ce2d9480d1a065dda3deaa"
+    },
+    {
+      "id": "relay-baton",
+      "decision": "pass",
+      "reason": "紅藍兩根輕量中空短管端面可見，無指揮棒尖頭或手杖握柄，符合接力棒簡單器材外觀。",
+      "sourceSha256": "1d16305dff594fd6995cf0ec8d39c2480a9c79ab54e53880782d5b8557c3c05e"
+    },
+    {
+      "id": "red-white-sports-cap",
+      "decision": "pass",
+      "reason": "紅帽外層、翻起可見的白色內面和細下顎鬆緊帶共同表現赤白帽，與一般有品牌棒球帽分開。",
+      "sourceSha256": "171dbf886bc215fc7eab23950d9586c2f964dab4da7ebade4020ccf59c3379f7"
+    },
+    {
+      "id": "school-lunch-trolley",
+      "decision": "pass",
+      "reason": "三層金屬輪架有推把，載食缸、食器籃及餐盤，為供餐運送用途；整車與腳輪完整，非固定桌。",
+      "sourceSha256": "74b070af9b04cd534d585617fa25f5ee2e39e9a01e67ea73651541763d0e5abf"
+    },
+    {
+      "id": "randoseru-cover",
+      "decision": "pass",
+      "reason": "透明乙烯面板以深藍包邊與固定帶覆住ランドセル翻蓋，小角掀起可辨獨立保護套；沒有包覆全包的雨罩。",
+      "sourceSha256": "4823864238a9573bbfae6b9e1bf10b88d8dd93d7ba066592ec71c8ad5476c98e"
+    }
+  ]
+}

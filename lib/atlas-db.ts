@@ -27,6 +27,7 @@ import {
   refusalForAdd,
   type AtlasCollectionAddRefusal,
 } from "./atlas/collection-membership";
+import { atlasContainsPattern } from "./atlas/public-query";
 
 function requireSql() {
   const sql = getSql();
@@ -2904,6 +2905,77 @@ export async function listPublicAtlasCollections(
     ORDER BY (cards.item_count >= ${ATLAS_COLLECTION_FEATURED_MIN_ITEMS}) DESC,
              cards.published_at DESC
     LIMIT ${Math.min(100, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/**
+ * 物見 search over approved collections in one learning language: title,
+ * description, or the author's public name.
+ *
+ * The author match is only on a *confirmed* identity (a username exists) —
+ * the same rule `publicAuthor()` uses to decide whether a name is shown at
+ * all, so a search can never reveal who wrote something the card itself
+ * keeps anonymous. Title hits rank above description / author hits; the
+ * feed's size-then-recency order breaks ties.
+ */
+export async function searchPublicAtlasCollections(
+  query: string,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 20,
+): Promise<AtlasPublicCollectionCardRow[]> {
+  const sql = requireSql();
+  const pattern = atlasContainsPattern(query.trim());
+  return sql<AtlasPublicCollectionCardRow[]>`
+    SELECT * FROM (
+      SELECT ${collectionCardSelect(sql)},
+             (c.title ILIKE ${pattern}) AS title_hit
+      FROM atlas_collections c
+      JOIN profiles pr ON pr.id = c.owner_user_id
+      LEFT JOIN atlas_public_items cover ON cover.id = c.cover_public_item_id
+      WHERE c.target_language = ${targetLanguage}
+        AND c.review_status = 'approved'
+        AND (
+          c.title ILIKE ${pattern}
+          OR c.description ILIKE ${pattern}
+          OR (pr.username IS NOT NULL AND (
+            pr.username ILIKE ${pattern} OR pr.nickname ILIKE ${pattern}
+          ))
+        )
+    ) cards
+    ORDER BY cards.title_hit DESC,
+             (cards.item_count >= ${ATLAS_COLLECTION_FEATURED_MIN_ITEMS}) DESC,
+             cards.published_at DESC
+    LIMIT ${Math.min(50, Math.max(1, Math.floor(limit)))}
+  `;
+}
+
+/**
+ * 物見 search over approved public cards in one learning language: the word
+ * itself (猫 / ねこ / kettle) or its 繁中 gloss (貓 / 水壺). Exact matches
+ * first, then prefix, then anywhere; newest within each.
+ */
+export async function searchAtlasPublicItems(
+  query: string,
+  targetLanguage: AtlasTargetLanguage,
+  limit = 30,
+): Promise<AtlasPublicItemWithAuthorRow[]> {
+  const sql = requireSql();
+  const trimmed = query.trim();
+  const pattern = atlasContainsPattern(trimmed);
+  // "%needle%" → "needle%": the same escaped needle, anchored at the start.
+  const prefix = pattern.slice(1);
+  return sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE pi.target_language = ${targetLanguage}
+      AND pi.review_status = 'approved'
+      AND (pi.lemma ILIKE ${pattern} OR pi.display_zh_hant ILIKE ${pattern})
+    ORDER BY
+      (lower(pi.lemma) = lower(${trimmed}) OR pi.display_zh_hant = ${trimmed}) DESC,
+      (pi.lemma ILIKE ${prefix} OR pi.display_zh_hant ILIKE ${prefix}) DESC,
+      pi.published_at DESC
+    LIMIT ${Math.min(60, Math.max(1, Math.floor(limit)))}
   `;
 }
 

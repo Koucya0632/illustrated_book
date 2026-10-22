@@ -1,3 +1,4 @@
+import arcadeCandidate from "../data/arcade-series-2026-10.json";
 import emergencyKitCandidate from "../data/emergency-kit-series-2026-10.json";
 import campusCandidate from "../data/campus-series-2026-10.json";
 import onsenRyokanCandidate from "../data/onsen-ryokan-series-2026-10.json";
@@ -277,6 +278,7 @@ export const categories: Category[] = [
   cherryBlossomSeasonCandidate.category,
   collectingHobbiesCandidate.category,
   campusCandidate.category,
+  arcadeCandidate.category,
   onsenRyokanCandidate.category,
   emergencyKitCandidate.category,
 ];
@@ -298,6 +300,7 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "cherry-blossom-season" &&
     category.id !== "collecting-hobbies" &&
     category.id !== "campus" &&
+    category.id !== "arcade" &&
     category.id !== "onsen-ryokan" &&
     category.id !== "emergency-kit",
 );

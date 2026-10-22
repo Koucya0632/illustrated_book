@@ -3,6 +3,7 @@
 // the client-safe static list — it stays in sync via scripts/migrate.ts.
 
 import "server-only";
+import { MAIN_WORD_ARCADE_IDS } from "./main-word-arcade-2026-10";
 import type { Category } from "@/types";
 import { publicFallbackCategories as staticCategories } from "./categories";
 import { localizeCategory, type CategoryTranslation } from "./word-localize";
@@ -86,6 +87,13 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'collecting-hobbies' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      )) AND (c.id <> 'arcade' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_ARCADE_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'arcade' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       )) AND (c.id <> 'campus' OR NOT EXISTS (

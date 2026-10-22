@@ -146,7 +146,14 @@
     "onsen-ryokan:audio:verify": "node scripts/verify-onsen-ryokan-audio.mjs",
     "onsen-ryokan:prepare-publish": "node --env-file=.env.local scripts/prepare-onsen-ryokan-publish-plan.mjs",
     "onsen-ryokan:publish": "tsx --env-file=.env.local scripts/publish-onsen-ryokan-series.ts",
-    "onsen-ryokan:content": "node scripts/prepare-onsen-ryokan-content.mjs"
+    "onsen-ryokan:content": "node scripts/prepare-onsen-ryokan-content.mjs",
+    "arcade:prepare-images": "node scripts/prepare-arcade-images.mjs",
+    "arcade:review": "node scripts/prepare-arcade-semantic-review.mjs",
+    "arcade:audio:plan": "node scripts/plan-arcade-audio.mjs",
+    "arcade:audio:generate:local": "node --env-file=.env.local scripts/generate-arcade-candidate-audio.mjs",
+    "arcade:audio:verify": "node scripts/verify-arcade-audio.mjs",
+    "arcade:prepare-publish": "node --env-file=.env.local scripts/prepare-arcade-publish-plan.mjs",
+    "arcade:publish": "tsx --env-file=.env.local scripts/publish-arcade-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

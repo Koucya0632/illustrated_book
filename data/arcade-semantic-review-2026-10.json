@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "series": "arcade",
+  "reviewer": "Codex: individual authored concept, sentence, and contextual span review",
+  "scope": "All 12 new words and their 24 examples. Digests bind each evidence-based verdict to exact content.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "arcade-cabinet",
+      "verdict": "pass",
+      "reason": "筐体指實體機台，不等同家庭遊戲機；圖片限定常見螢幕與搖桿按鍵機台。",
+      "sourceSha256": "0e34c26554ad52db56d304ecd0b613d5ec28b113928680f00cd41a6bb4ca0f9c"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-cabinet",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "兩支搖桿的硬體觀察合理，日文以二つ計數，三語數量一致。",
+      "sourceSha256": "ad48164b2df7e58e352ae364965caef0b0aa8d74469e6b5f14e0da7e6aec3a63"
+    },
+    {
+      "kind": "example",
+      "wordId": "arcade-cabinet",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "機台使用中而等候的因果清楚，不暗示插隊或佔台；三語時態一致。",
+      "sourceSha256": "813ff2bf41d2a3902d5478dd238851b08edd677dbc04c0d9303a79a002eca4f7"
+    },
+    {
+      "kind": "word",
+      "wordId": "rhythm-game-machine",
+      "verdict": "pass",
+      "reason": "採官方常用的音楽ゲーム機，圖片用按鍵式音樂機，與獨立跳舞機詞條區別。",
+      "sourceSha256": "351b28f2871a11dfefb0bc87cd48191c1ad148257b461ddaedbf3f8618849c2a"
+    },
+    {
+      "kind": "example",
+      "wordId": "rhythm-game-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "選曲是實際遊玩步驟，三語的請求、物件與機台相同。",
+      "sourceSha256": "74c74c831f9cdb5a43974ccde7e3f8447fc19f64cff92002ee848d83578cb6d0"
+    },
+    {
+      "kind": "example",
+      "wordId": "rhythm-game-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "歌曲太難而另選較簡單的歌曲，因果和比較清楚；不假設機台有歌曲播放減速功能。",
+      "sourceSha256": "558fe4c2c51697ef26fee159bbb9efd97d90eba9f2c13c923f139f7d8a0b806c"
+    },
+    {
+      "kind": "word",
+      "wordId": "racing-game-machine",
+      "verdict": "pass",
+      "reason": "賽車機以座椅、方向盤、踏板和道路畫面識別，與真車或通用街機不同。",
+      "sourceSha256": "7a83bb87fbd43e3c8534794645737957a0e02012355de4b403f4499a4375c16d"
+    },
+    {
+      "kind": "example",
+      "wordId": "racing-game-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "握方向盤的單一步驟適合作簡單句，三語部件沒有變成一般手把。",
+      "sourceSha256": "8506a519a99df30f97006dfeb588af074bfe4272ff85501938f29b23cda58c28"
+    },
+    {
+      "kind": "example",
+      "wordId": "racing-game-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "遊玩前為踩到踏板而調座椅，同時保留時間與目的；日文八個實詞塊。",
+      "sourceSha256": "1cf4539afb51dd9e91bb3a3595e1fff501ee4bee06953a8bc09ab7b46dc2ca27"
+    },
+    {
+      "kind": "word",
+      "wordId": "shooting-game-machine",
+      "verdict": "pass",
+      "reason": "明確限定槍型控制器街機，與既有祭典射的攤位及真實武器分開。",
+      "sourceSha256": "f8a9fa82f45b68ddca5adb360504056fff783a8231a8e76a368fdfd4c9fd957b"
+    },
+    {
+      "kind": "example",
+      "wordId": "shooting-game-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "目標限定螢幕內的遊戲目標，三語均是遊玩操作。",
+      "sourceSha256": "b5d483c542305c8fe66d897398e7e9badf36654c880fe559cd66e84582232c09"
+    },
+    {
+      "kind": "example",
+      "wordId": "shooting-game-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "歸還控制器以便下一人使用，先後與目的均有實質內容；未加入投幣規則。",
+      "sourceSha256": "3121eaa2953bde044758fffcb24ba5585e2553204c1e98ce3d219801bb9611ef"
+    },
+    {
+      "kind": "word",
+      "wordId": "basketball-arcade-machine",
+      "verdict": "pass",
+      "reason": "定義限定計分機台而非運動場籃框，回球斜坡與防護網為圖片辨識特徵。",
+      "sourceSha256": "111f1c9a08da95e1b1f0e700d8666fc5e8705d14305a4bc27c1b8235d6568708"
+    },
+    {
+      "kind": "example",
+      "wordId": "basketball-arcade-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "直接投球請求，英日繁中都以籃框為目標，沒有把ゴール當足球門。",
+      "sourceSha256": "bd37bee95b8e64548bee9136ef677ce4ed3b38122da33cec201bb336b1f02cd1"
+    },
+    {
+      "kind": "example",
+      "wordId": "basketball-arcade-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "平手後再比一次自然，有明確原因；不把虛構分數當機台規格。",
+      "sourceSha256": "55ff86ce6cc1ed75c7c7d585fda4af16b0a8baf70d8ce2796df929c60feff81f"
+    },
+    {
+      "kind": "word",
+      "wordId": "dance-game-machine",
+      "verdict": "pass",
+      "reason": "跳舞機屬音樂遊戲的具體機型，腳踏平台是與按鍵式音樂機的區辨。",
+      "sourceSha256": "a6e385340ee7d46f8815f85b11ec413a9e866f52a1b2e74783e909164cac9ed1"
+    },
+    {
+      "kind": "example",
+      "wordId": "dance-game-machine",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "上平台準備遊玩為單一指示，stage在此譯平台而非演唱舞台。",
+      "sourceSha256": "088a8a9315e26270fcc8d339e03e7e87400960a65335cd9f29083c01155e9290"
+    },
+    {
+      "kind": "example",
+      "wordId": "dance-game-machine",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "條件與下一首歌前的時間限制清楚，三語對齊且是合理遊玩情境。",
+      "sourceSha256": "edb5d879dfd414bfd5e95a104aab3bcfc7038935e28ca20a734f48e546211b9c"
+    },
+    {
+      "kind": "word",
+      "wordId": "medal-pusher",
+      "verdict": "pass",
+      "reason": "推幣機使用店內メダル，與現金賭博及單純代幣詞條分開；不描述兌獎。",
+      "sourceSha256": "c1e352f5dcffc35d746babb7419a199ca7863ca2dca068b1257fa81c3044e7dc"
+    },
+    {
+      "kind": "example",
+      "wordId": "medal-pusher",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "單枚投入的操作三語一致，token不誤為日本流通硬幣。",
+      "sourceSha256": "bbe9a8e3bc8a5c8018318583363b541282de730fb3fb269d356a44bad2571bd9"
+    },
+    {
+      "kind": "example",
+      "wordId": "medal-pusher",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "離台前收取受け皿中的代幣，有時間關係；沒有暗示代幣可攜出店外。",
+      "sourceSha256": "18d6e8b7726c707b38a8570ca2d54f81c9f250ebfcd32df6b1710ca02ea06a43"
+    },
+    {
+      "kind": "word",
+      "wordId": "photo-sticker-booth",
+      "verdict": "pass",
+      "reason": "採通用正式名プリントシール機，不以商標プリクラ作唯一詞頭；與證件照機區別。",
+      "sourceSha256": "e7f702831a35444129d89b60ab1b4d48f6bf6059058c9289d4ddb00655f41e0b"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-sticker-booth",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "邀朋友拍照自然，英日繁中的建議語氣一致。",
+      "sourceSha256": "2548a019ded5a414ca669a61f299444edf8032f4e42cd34b4496860553827869"
+    },
+    {
+      "kind": "example",
+      "wordId": "photo-sticker-booth",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "拍完再剪分貼紙為典型情境，先後與分享結果一致，區別一般相館印相。",
+      "sourceSha256": "bff6bc131b3b4a1104fdafbbd5284c3e50baabb6ef5b315d9571b5e3a5872313"
+    },
+    {
+      "kind": "word",
+      "wordId": "air-hockey-table",
+      "verdict": "pass",
+      "reason": "以打氣孔平面、圓盤及兩端球門區別撞球與桌上足球；日本常見遊戲桌。",
+      "sourceSha256": "12f06db20611182f5340373230da027d5c99f9438f382756e6fcac558e2c5d2a"
+    },
+    {
+      "kind": "example",
+      "wordId": "air-hockey-table",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "圓盤位置的簡單敘述，puck未誤譯成球。",
+      "sourceSha256": "37425e201ae242f6b4afc1c25a381601631cb7c90c738f8f61de2d84e1a78064"
+    },
+    {
+      "kind": "example",
+      "wordId": "air-hockey-table",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "停止滑動後請店員檢查，因果與授受表達自然，不擅自斷定故障原因。",
+      "sourceSha256": "a9e87ed3c2879e6dc48533da9a3b58fb2a5467172e78d6df1219b15ecf0ae702"
+    },
+    {
+      "kind": "word",
+      "wordId": "amusement-ic-card",
+      "verdict": "pass",
+      "reason": "依Sega官方區分保存遊玩資料的IC卡與電子支付卡；IC讀アイシー，不能保留拉丁字母讀音。",
+      "sourceSha256": "b1295424d53958c2be533ec730d34da8f8203bb85807629cff936959d771693c"
+    },
+    {
+      "kind": "example",
+      "wordId": "amusement-ic-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "感應讀卡機為實際操作，沒有聲稱這張卡支付費用。",
+      "sourceSha256": "9e4b82a32eb7ce3eb02aea6e01923e55e826396958892fed0adc1cd9e263f744"
+    },
+    {
+      "kind": "example",
+      "wordId": "amusement-ic-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "忘卡導致無法讀取資料，因果和否定過去式完整；未泛稱完全不能遊玩。",
+      "sourceSha256": "9a3ff9d2d44d34d03714f6ddedd3c865c55d1384c5b0be30a3786c94958d3502"
+    },
+    {
+      "kind": "word",
+      "wordId": "medal-cup",
+      "verdict": "pass",
+      "reason": "限定裝代幣的店內容器，圖以開口塑膠小杯和少量代幣區別飲料杯。",
+      "sourceSha256": "77ccb54e66ecfb70d44a3117e9087c90158ba2f83fc032633df7a9d5ce10fb77"
+    },
+    {
+      "kind": "example",
+      "wordId": "medal-cup",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把代幣裝杯是具體整理動作，與飲用、獎盃等其他cup義無關。",
+      "sourceSha256": "23e9a0a84fbe625803e76a772ee0ff4a3e8cea970f76b20b2cf33a030e19a38b"
+    },
+    {
+      "kind": "example",
+      "wordId": "medal-cup",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "杯滿再向店員要一杯，有明確因果；三語均是額外一個容器。",
+      "sourceSha256": "618f0ebb48dee46d3b6ce04b7aedfff2293873ae656dd58083103cf4ae962b73"
+    },
+    {
+      "kind": "word",
+      "wordId": "medal-dispenser",
+      "verdict": "pass",
+      "reason": "依Taito和Sega說明使用貸出機，與既有両替機分開；借出遊戲代幣不是換現金。",
+      "sourceSha256": "ac05a56c59d03cb37a06fdb5b7527137b9d22c583d23e3c2a52fdd681711f208"
+    },
+    {
+      "kind": "example",
+      "wordId": "medal-dispenser",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "日本營運用語以借代幣表達，繁中用取得保留功能且不誤導可兌現。",
+      "sourceSha256": "431fbd666c53025e788b18a4f39a6ddf940783edaf18b7835800d2ea27660413"
+    },
+    {
+      "kind": "example",
+      "wordId": "medal-dispenser",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "停用後詢問另一台位置，有因果與間接問句，與簡單借幣動作不同。",
+      "sourceSha256": "1890a503af748dfbe0c2b83b55a6f8484821f66eb79d7997df73dc6ab57fed74"
+    }
+  ]
+}

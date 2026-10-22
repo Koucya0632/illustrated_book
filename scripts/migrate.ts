@@ -25,6 +25,7 @@ import { MAIN_WORD_STATION_COMMUTING_IDS } from "../lib/main-word-station-commut
 import { MAIN_WORD_FESTIVALS_IDS } from "../lib/main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS } from "../lib/main-word-cherry-blossom-season-2026-10";
 import { MAIN_WORD_EMERGENCY_KIT_IDS } from "../lib/main-word-emergency-kit-2026-10";
+import { MAIN_WORD_ARCADE_IDS } from "../lib/main-word-arcade-2026-10";
 import { MAIN_WORD_CAMPUS_IDS } from "../lib/main-word-campus-2026-10";
 import { MAIN_WORD_ONSEN_RYOKAN_IDS } from "../lib/main-word-onsen-ryokan-2026-10";
 import { MAIN_WORD_COLLECTING_HOBBIES_IDS } from "../lib/main-word-collecting-hobbies-2026-10";
@@ -54,6 +55,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "cherry-blossom-season", ids: MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS },
   { category: "collecting-hobbies", ids: MAIN_WORD_COLLECTING_HOBBIES_IDS },
   { category: "campus", ids: MAIN_WORD_CAMPUS_IDS },
+  { category: "arcade", ids: MAIN_WORD_ARCADE_IDS },
   { category: "onsen-ryokan", ids: MAIN_WORD_ONSEN_RYOKAN_IDS },
   { category: "emergency-kit", ids: MAIN_WORD_EMERGENCY_KIT_IDS },
 ] as const;

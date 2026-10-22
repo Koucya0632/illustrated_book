@@ -278,6 +278,7 @@ const EXAMPLE_SPAN_OVERLAY_PATHS = [
   new URL("../data/example-spans-cherry-blossom-season-2026-10.json", import.meta.url),
   new URL("../data/example-spans-collecting-hobbies-2026-10.json", import.meta.url),
   new URL("../data/example-spans-campus-2026-10.json", import.meta.url),
+  new URL("../data/example-spans-arcade-2026-10.json", import.meta.url),
   new URL("../data/example-spans-onsen-ryokan-2026-10.json", import.meta.url),
   new URL("../data/example-spans-emergency-kit-2026-10.json", import.meta.url),
 ];

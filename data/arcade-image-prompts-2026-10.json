@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "series": "arcade",
+  "mode": "built-in imagegen",
+  "prompts": [
+    {
+      "id": "arcade-cabinet",
+      "tool": "built-in imagegen",
+      "subject": "A single contemporary Japanese sit-down video arcade cabinet, low wide white cabinet, large upright landscape monitor displaying only abstract colored game shapes, two player control panels with ball-top joysticks and round buttons, two simple stools. Clearly a physical game cabinet, not a home console or a claw machine.",
+      "localSource": "output/arcade-2026-10/sources/arcade-cabinet.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary vocabulary image, square. Subject: A single contemporary Japanese sit-down video arcade cabinet, low wide white cabinet, large upright landscape monitor displaying only abstract colored game shapes, two player control panels with ball-top joysticks and round buttons, two simple stools. Clearly a physical game cabinet, not a home console or a claw machine. Style: semi-realistic clean catalog 3D illustration, believable materials, soft studio lighting. White seamless background, centered isolated entire subject with generous white padding and small grounding shadow. No room, people, borders, watermark, invented brands, labels, text or readable numbers. Save a distinct source asset for arcade-cabinet."
+    },
+    {
+      "id": "rhythm-game-machine",
+      "tool": "built-in imagegen",
+      "subject": "A contemporary Japanese upright arcade rhythm music game machine with a large vertical screen displaying colored musical beat lanes, a clearly integrated panel of seven large illuminated rectangular keys and one black turntable disk. Not a piano, not a dance platform. No branded design, no words or logos.",
+      "localSource": "output/arcade-2026-10/sources/rhythm-game-machine.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary vocabulary image, square. Subject: A contemporary Japanese upright arcade rhythm music game machine with a large vertical screen displaying colored musical beat lanes, a clearly integrated panel of seven large illuminated rectangular keys and one black turntable disk. Not a piano, not a dance platform. No branded design, no words or logos. Style: semi-realistic clean catalog 3D illustration, believable materials, soft studio lighting. White seamless background, centered isolated entire subject with generous white padding and small grounding shadow. No room, people, borders, watermark, invented brands, labels, text or readable numbers. Save a distinct source asset for rhythm-game-machine."
+    },
+    {
+      "id": "racing-game-machine",
+      "tool": "built-in imagegen",
+      "subject": "A single Japanese sit-down arcade racing game machine: molded seat, steering wheel, accelerator and brake pedals, wide video screen displaying a simple stylized road, integrated bright cabinet. Complete unit fully visible. No logos or lettering.",
+      "localSource": "output/arcade-2026-10/sources/racing-game-machine.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary vocabulary image, square. Subject: A single Japanese sit-down arcade racing game machine: molded seat, steering wheel, accelerator and brake pedals, wide video screen displaying a simple stylized road, integrated bright cabinet. Complete unit fully visible. No logos or lettering. Style: semi-realistic clean catalog 3D illustration, believable materials, soft studio lighting. White seamless background, centered isolated entire subject with generous white padding and small grounding shadow. No room, people, borders, watermark, invented brands, labels, text or readable numbers. Save a distinct source asset for racing-game-machine."
+    },
+    {
+      "id": "shooting-game-machine",
+      "tool": "built-in imagegen",
+      "subject": "A Japanese arcade light-gun shooting cabinet with a large screen showing harmless abstract circular target graphics, two brightly colored plastic tethered gun-shaped game controllers docked in holders, integrated control shelf. No people, no realistic weapons, no violence. Entire cabinet.",
+      "localSource": "output/arcade-2026-10/sources/shooting-game-machine.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A Japanese arcade light-gun shooting cabinet with a large screen showing harmless abstract circular target graphics, two brightly colored plastic tethered gun-shaped game controllers docked in holders, integrated control shelf. No people, no realistic weapons, no violence. Entire cabinet. Semi-realistic clean catalog 3D illustration with believable proportions and materials, soft studio light. Centered complete isolated subject on pure white background with generous white padding, small shadow. No room, people, border, watermark, brand, labels, lettering, readable numbers."
+    },
+    {
+      "id": "basketball-arcade-machine",
+      "tool": "built-in imagegen",
+      "subject": "A Japanese arcade basketball shooting game machine: one metal hoop with net at rear, protective side cage, inclined ball-return ramp holding three small orange basketballs, integrated electronic score panel showing unlettered lights. Whole machine, no people.",
+      "localSource": "output/arcade-2026-10/sources/basketball-arcade-machine.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A Japanese arcade basketball shooting game machine: one metal hoop with net at rear, protective side cage, inclined ball-return ramp holding three small orange basketballs, integrated electronic score panel showing unlettered lights. Whole machine, no people. Semi-realistic clean catalog 3D illustration with believable proportions and materials, soft studio light. Centered complete isolated subject on pure white background with generous white padding, small shadow. No room, people, border, watermark, brand, labels, lettering, readable numbers."
+    },
+    {
+      "id": "dance-game-machine",
+      "tool": "built-in imagegen",
+      "subject": "A Japanese arcade dance game machine with an upright colorful screen showing abstract beat arrows, a complete floor dance platform clearly connected in front with large colored arrow foot panels and rear safety rail. Whole machine, no brand.",
+      "localSource": "output/arcade-2026-10/sources/dance-game-machine.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A Japanese arcade dance game machine with an upright colorful screen showing abstract beat arrows, a complete floor dance platform clearly connected in front with large colored arrow foot panels and rear safety rail. Whole machine, no brand. Semi-realistic clean catalog 3D illustration with believable proportions and materials, soft studio light. Centered complete isolated subject on pure white background with generous white padding, small shadow. No room, people, border, watermark, brand, labels, lettering, readable numbers."
+    },
+    {
+      "id": "medal-pusher",
+      "tool": "built-in imagegen",
+      "subject": "A Japanese medal pusher arcade machine: clear glass enclosure exposing a dense bed of small identical silver arcade tokens on stepped horizontal moving pusher shelves and a visible token collection tray at bottom, player input coin chute. No slot reels, no cash, no casino motifs, no prizes.",
+      "localSource": "output/arcade-2026-10/sources/medal-pusher.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A Japanese medal pusher arcade machine: clear glass enclosure exposing a dense bed of small identical silver arcade tokens on stepped horizontal moving pusher shelves and a visible token collection tray at bottom, player input coin chute. No slot reels, no cash, no casino motifs, no prizes. Semi-realistic clean catalog 3D illustration with believable proportions and materials, soft studio light. Centered complete isolated subject on pure white background with generous white padding, small shadow. No room, people, border, watermark, brand, labels, lettering, readable numbers."
+    },
+    {
+      "id": "photo-sticker-booth",
+      "tool": "built-in imagegen",
+      "subject": "A modern Japanese photo sticker booth, pastel white and lilac compact walk-in photography enclosure, side entrance with curtain partly open revealing camera and photography seat, adjacent integrated touch editing screen and small sticker output slot. No passport photo signage, no logos, no lettering.",
+      "localSource": "output/arcade-2026-10/sources/photo-sticker-booth.png",
+      "prompt": "Use case: product-mockup. Square Tuji picture dictionary educational catalog image. A contemporary Japanese purikura PHOTO STICKER machine, not a passport or ID photo booth. Show a very wide pastel pink walk-in booth sized for three friends STANDING together, full-height open curtained doorway with standing floor space, camera and large ring softbox lights on interior rear wall, NO CHAIR, NO STOOL. Attached EXTERNAL editing desk on right, with two large angled touchscreens and two tethered drawing stylus pens, clearly showing colorful decorative heart and star stickers surrounding abstract portrait silhouettes. Small output tray at exterior bottom dispensing ONE SMALL SHEET OF SIX square portrait photo stickers. This wide standing photo space plus external dual stylus editing desk must unmistakably identify Japanese photo sticker machines. Clean semi-realistic catalog 3D illustration, pure white background, complete machine isolated with generous padding, no environment or people, no brand, no lettering, no invented words, no watermark."
+    },
+    {
+      "id": "air-hockey-table",
+      "tool": "built-in imagegen",
+      "subject": "A contemporary Japanese amusement arcade air hockey table, broad glossy white perforated playing surface with tiny air holes, red and blue side edging, goal slots at both short ends, two round plastic striker mallets and one small flat puck on surface, low central overhead electronic light/score arch. Entire free-standing table. Not pool, not table soccer. No printed numbers.",
+      "localSource": "output/arcade-2026-10/sources/air-hockey-table.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A contemporary Japanese amusement arcade air hockey table, broad glossy white perforated playing surface with tiny air holes, red and blue side edging, goal slots at both short ends, two round plastic striker mallets and one small flat puck on surface, low central overhead electronic light/score arch. Entire free-standing table. Not pool, not table soccer. No printed numbers. Semi-realistic clean catalog 3D illustration, believable materials and proportions, soft studio light. Pure white background, centered fully visible isolated subject with generous whitespace on all sides and restrained grounding shadow. No surrounding room, people, borders, watermark, invented brands, labels or unnecessary text."
+    },
+    {
+      "id": "amusement-ic-card",
+      "tool": "built-in imagegen",
+      "subject": "One generic contactless arcade player-data IC card, credit-card sized thin plastic with rounded corners, a simple abstract geometric colorful design and a small unlettered contactless wave icon. A single card at a slight perspective so its thin edge is visible. No metallic payment chip, no bank digits, no credit card logo, no transit branding, no letters or text.",
+      "localSource": "output/arcade-2026-10/sources/amusement-ic-card.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: One generic contactless arcade player-data IC card, credit-card sized thin plastic with rounded corners, a simple abstract geometric colorful design and a small unlettered contactless wave icon. A single card at a slight perspective so its thin edge is visible. No metallic payment chip, no bank digits, no credit card logo, no transit branding, no letters or text. Semi-realistic clean catalog 3D illustration, believable materials and proportions, soft studio light. Pure white background, centered fully visible isolated subject with generous whitespace on all sides and restrained grounding shadow. No surrounding room, people, borders, watermark, invented brands, labels or unnecessary text.",
+      "editPrompt": "Precise object edit for Tuji picture dictionary. Preserve this exact single thin rounded-corner plastic card, its perspective, blue turquoise orange geometric design, soft lighting, contactless wave symbol, pure white background and white padding. Add one clearly visible small centered WHITE ARCADE JOYSTICK ICON: a recognizable ball-top stick above a simple flat control panel with two round buttons. The joystick icon should make it recognizable as an arcade game player-data IC card instead of a generic transit card. No letters, digits, words, bank logo, metallic payment chip or other new objects."
+    },
+    {
+      "id": "medal-cup",
+      "tool": "built-in imagegen",
+      "subject": "A small open semi-translucent pink plastic tub used in a Japanese game center to hold silver arcade tokens. Short cylindrical cup with wide open top, slightly tapered sides, no handle, no lid or straw. About two-thirds filled with small identical silver metal game tokens, several token faces visible without lettering. Not a trophy or drinking cup. One main subject.",
+      "localSource": "output/arcade-2026-10/sources/medal-cup.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A small open semi-translucent pink plastic tub used in a Japanese game center to hold silver arcade tokens. Short cylindrical cup with wide open top, slightly tapered sides, no handle, no lid or straw. About two-thirds filled with small identical silver metal game tokens, several token faces visible without lettering. Not a trophy or drinking cup. One main subject. Semi-realistic clean catalog 3D illustration, believable materials and proportions, soft studio light. Pure white background, centered fully visible isolated subject with generous whitespace on all sides and restrained grounding shadow. No surrounding room, people, borders, watermark, invented brands, labels or unnecessary text."
+    },
+    {
+      "id": "medal-dispenser",
+      "tool": "built-in imagegen",
+      "subject": "A Japanese game-center token lending dispenser machine, compact upright metal kiosk with a banknote intake slot near top, a few large colored unlettered selection buttons, and a very wide open lower token discharge bowl holding a visible heap of identical silver arcade tokens. NO bank cash, NO paper tickets, no roulette or slot reels. Clearly dispenses game tokens, rather than a bill-to-currency change machine. Entire kiosk, no people.",
+      "localSource": "output/arcade-2026-10/sources/medal-dispenser.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A Japanese game-center token lending dispenser machine, compact upright metal kiosk with a banknote intake slot near top, a few large colored unlettered selection buttons, and a very wide open lower token discharge bowl holding a visible heap of identical silver arcade tokens. NO bank cash, NO paper tickets, no roulette or slot reels. Clearly dispenses game tokens, rather than a bill-to-currency change machine. Entire kiosk, no people. Semi-realistic clean catalog 3D illustration, believable materials and proportions, soft studio light. Pure white background, centered fully visible isolated subject with generous whitespace on all sides and restrained grounding shadow. No surrounding room, people, borders, watermark, invented brands, labels or unnecessary text."
+    },
+    {
+      "id": "category-arcade",
+      "tool": "built-in imagegen",
+      "subject": "A small isometric cutaway vignette of a Japanese game-center corner, isolated on white. Four clearly different generic machines neatly arranged: a seated video-game cabinet with joystick, an arcade racing machine with seat and steering wheel, a rhythm machine with bright button panel, and a pink photo-sticker booth with curtain. No walls or ceiling, only a small simple white floor island. No people, no brands, no letters, no labels. Machines all recognizable, do not crop.",
+      "localSource": "output/arcade-2026-10/sources/category-arcade.png",
+      "prompt": "Use case: product-mockup. Asset type: Tuji picture dictionary image, square. Subject: A small isometric cutaway vignette of a Japanese game-center corner, isolated on white. Four clearly different generic machines neatly arranged: a seated video-game cabinet with joystick, an arcade racing machine with seat and steering wheel, a rhythm machine with bright button panel, and a pink photo-sticker booth with curtain. No walls or ceiling, only a small simple white floor island. No people, no brands, no letters, no labels. Machines all recognizable, do not crop. Semi-realistic clean catalog 3D illustration, believable materials and proportions, soft studio light. Pure white background, centered fully visible isolated subject with generous whitespace on all sides and restrained grounding shadow. No surrounding room, people, borders, watermark, invented brands, labels or unnecessary text."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "series": "arcade",
+  "reviewer": "Codex: original-format inspection of every selected source image",
+  "items": [
+    {
+      "id": "arcade-cabinet",
+      "decision": "pass",
+      "reason": "雙人搖桿、按鍵面板、大螢幕及低座椅構成日本常見街機；完整白底無字樣。",
+      "sourceSha256": "bf498a0c2bd9d7ee132c29802a4258bf1b55f9a3056db437cc73cf834c5b3148"
+    },
+    {
+      "id": "rhythm-game-machine",
+      "decision": "pass",
+      "reason": "節奏落下畫面、七個發光鍵及轉盤使按鍵式音樂遊戲機可辨識，與腳踏跳舞機分開。",
+      "sourceSha256": "c0bfc0f7b83de51a94d5ec6c39aec32eb65bb9e61010df64649e839c7b81d12c"
+    },
+    {
+      "id": "racing-game-machine",
+      "decision": "pass",
+      "reason": "座椅、方向盤、雙踏板與道路畫面一體，呈現賽車遊戲機而非真車；全機可見。",
+      "sourceSha256": "48f0a5918c6002c2c7340fc4e187a3eaf5819a16045b817be8a0770b36c8c7f0"
+    },
+    {
+      "id": "shooting-game-machine",
+      "decision": "pass",
+      "reason": "紅藍塑膠槍型控制器帶連接線並有置架，畫面為抽象標靶，明確是街機而非祭典射的。",
+      "sourceSha256": "f2f6b8d016ccfde16aeaac8a09a5cb9d100e49f599a30caac0409183e58c4820"
+    },
+    {
+      "id": "basketball-arcade-machine",
+      "decision": "pass",
+      "reason": "籃框網、防護籠、回球斜坡及三顆球清楚，機台完整，與一般籃球場區分。",
+      "sourceSha256": "800f993bab9228793e9a22aaebf612a0771225f655bbec27b2f0796983114f7f"
+    },
+    {
+      "id": "dance-game-machine",
+      "decision": "pass",
+      "reason": "連接螢幕機台的雙人箭頭踏板與後扶手完整，足踏操作特徵清楚，無品牌文字。",
+      "sourceSha256": "be9a68664d8f387bfc9e8ea06a903fdaacedd3e7c51fe75a9917386892cf043e"
+    },
+    {
+      "id": "medal-pusher",
+      "decision": "pass",
+      "reason": "玻璃內階梯推盤、密集代幣、投入口和下方收集盤皆可見，無現金兌獎或賭場圖樣。",
+      "sourceSha256": "f999e4cc2eababac194d617046e692ed108afe82706d23772157c68fc5f8f882"
+    },
+    {
+      "id": "photo-sticker-booth",
+      "decision": "pass",
+      "reason": "重製版有多人站立空間、燈光鏡頭、外側雙觸控筆編輯桌與六格照片貼紙出口，已排除證件照機外觀。",
+      "sourceSha256": "c5085fb01c1a39bdd066bbc7b9cd8bf69001dabdb2d9dd3d2e152fc0a882a7ba"
+    },
+    {
+      "id": "air-hockey-table",
+      "decision": "pass",
+      "reason": "打氣孔桌面、兩端球門、兩個推柄及扁圓盤均清楚，完整桌體白底；轉檔另加留白。",
+      "sourceSha256": "31ee360e4f412b0d0dbe36ae0387c6e937e63fc4284c078271fffbec565cc655"
+    },
+    {
+      "id": "amusement-ic-card",
+      "decision": "pass",
+      "reason": "修正版卡片有明顯街機搖桿圖示及感應符號，無銀行晶片、卡號或交通品牌，足以提示街機資料卡。",
+      "sourceSha256": "9e9640a0f909f0ac6b58c6f9a00b6d87e6238ddcae5c10bf2a8620d039450735"
+    },
+    {
+      "id": "medal-cup",
+      "decision": "pass",
+      "reason": "透明粉色開口小桶盛裝無面額代幣，無吸管、飲料或獎盃把手，符合店內代幣杯用途。",
+      "sourceSha256": "a51a832d77339b3006f29cd4e2621d8d3f227d13d53c1450bfe761bb44bafb9c"
+    },
+    {
+      "id": "medal-dispenser",
+      "decision": "pass",
+      "reason": "上方紙鈔入口、多選擇按鍵與寬大代幣出口，代幣托盤內無流通貨幣面額，與一般兌幣機作功能區分。",
+      "sourceSha256": "6f710d266f03d56b5e89abdc7524d71072d371b05708f8c550f49aed1c78572e"
+    },
+    {
+      "id": "category-arcade",
+      "decision": "pass",
+      "reason": "白色小型空間內並列搖桿、賽車、音樂與攝影機台，整體遊戲中心概念明確，無人、品牌或環境雜物。",
+      "sourceSha256": "f84b661637cf174858427bfbce324b3f8715e7e9cfb3c8429b5513f7cebf9e0b"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "photo-sticker-booth",
+      "sourceFile": "output/arcade-2026-10/rejected/photo-sticker-booth-v1.png",
+      "decision": "fail",
+      "categories": [
+        "daily-life-mismatch"
+      ],
+      "reason": "窄亭、座椅與單人鏡頭配置較像證件照機，缺少拍貼機外側編輯區。",
+      "sourceSha256": "3445d5de133ae22d7411bc2b6ee3d382265fcf8be8ba98f9af479ef205956e04"
+    },
+    {
+      "id": "amusement-ic-card",
+      "sourceFile": "output/arcade-2026-10/rejected/amusement-ic-card-v1.png",
+      "decision": "fail",
+      "categories": [
+        "semantic-mismatch"
+      ],
+      "reason": "只有一般感應圖示，無法與交通或其他感應卡作概念區別。",
+      "sourceSha256": "5c6544b685a3cc97448ebbce2da3639fb6cda425bd77df5b3e8d6ac88597e896"
+    }
+  ]
+}

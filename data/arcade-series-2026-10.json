@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "series": "arcade",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "Japanese game-center series. Existing collecting-hobbies words remain unchanged pending user scope preference. No production actions authorized.",
+  "category": {
+    "id": "arcade",
+    "name": "Game Center",
+    "nameZh": "遊戲中心",
+    "nameJa": "ゲームセンター",
+    "emoji": "🕹️",
+    "description": "日本遊戲中心常見的遊戲機台、拍貼設備與遊玩用品",
+    "descriptionEn": "Arcade machines, photo sticker booths, and game-center essentials in Japan",
+    "descriptionJa": "ゲームセンターで見かけるゲーム機、プリントシール機、遊ぶための用品",
+    "color": "from-violet-100 to-cyan-100",
+    "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/category-arcade-v1-96c01d5a5450.webp"
+  },
+  "references": [
+    "https://bandainamco-am.co.jp/game_center/game/index.html",
+    "https://gamecenter-guide.sega.com/ja/etiquette/",
+    "https://www.taito.co.jp/how-to/"
+  ],
+  "entries": [
+    {
+      "id": "arcade-cabinet",
+      "word": "arcade cabinet",
+      "chinese": "街機機台",
+      "chineseDefinition": "裝有螢幕與操作面板、供玩家遊玩的街機機台；此處以按鍵與搖桿式機台為例。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɑːrˈkeɪd ˈkæb.ɪ.nət/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "街機機台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cabinet containing the screen and controls of an arcade video game.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "アーケードゲームの画面や操作部分を収めた機械の本体。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This arcade cabinet has two joysticks.",
+          "ja": "このアーケード筐体にはジョイスティックが二つあります。",
+          "zh": "這台街機機台有兩支搖桿。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The arcade cabinet was occupied, so we waited for our turn.",
+          "ja": "アーケード筐体が使用中だったので、順番を待ちました。",
+          "zh": "街機機台有人在用，所以我們等候輪到自己。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アーケード筐体",
+      "jaReading": "アーケードきょうたい",
+      "jaReadingSegments": [
+        {
+          "text": "アーケード",
+          "ruby": null
+        },
+        {
+          "text": "筐体",
+          "ruby": "きょうたい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/arcade-cabinet-v1-206060c04ee9.webp"
+    },
+    {
+      "id": "rhythm-game-machine",
+      "word": "rhythm game machine",
+      "chinese": "音樂遊戲機",
+      "chineseDefinition": "配合音樂節奏按鍵、觸控或操作的遊戲機；此處以按鍵式機台為例。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrɪð.əm ɡeɪm məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "音樂遊戲機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine on which players operate controls in time with music.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "音楽のリズムに合わせてボタンなどを操作して遊ぶゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Choose a song on the rhythm game machine.",
+          "ja": "音楽ゲーム機で曲を選んでください。",
+          "zh": "請在音樂遊戲機上選一首歌。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "This song was too difficult, so I chose an easier one on the rhythm game machine.",
+          "ja": "この曲は難しすぎたので、音楽ゲーム機でもっと簡単な曲を選びました。",
+          "zh": "這首歌太難了，所以我在音樂遊戲機上選了更簡單的一首。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "音楽ゲーム機",
+      "jaReading": "おんがくゲームき",
+      "jaReadingSegments": [
+        {
+          "text": "音楽",
+          "ruby": "おんがく"
+        },
+        {
+          "text": "ゲーム",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/rhythm-game-machine-v1-a597386f0810.webp"
+    },
+    {
+      "id": "racing-game-machine",
+      "word": "racing game machine",
+      "chinese": "賽車遊戲機",
+      "chineseDefinition": "以方向盤、踏板與螢幕模擬駕駛競賽的遊戲機。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈreɪ.sɪŋ ɡeɪm məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "賽車遊戲機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine with a steering wheel and pedals for playing racing games.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ハンドルやペダルを操作して車のレースを楽しむゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Hold the steering wheel of the racing game machine.",
+          "ja": "レースゲーム機のハンドルを握ってください。",
+          "zh": "請握住賽車遊戲機的方向盤。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before starting the racing game machine, I adjusted the seat so I could reach the pedals.",
+          "ja": "レースゲーム機で遊ぶ前に、ペダルに足が届くように座席を調整しました。",
+          "zh": "玩賽車遊戲機前，我調整了座椅，讓腳能踩到踏板。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "レースゲーム機",
+      "jaReading": "レースゲームき",
+      "jaReadingSegments": [
+        {
+          "text": "レースゲーム",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/racing-game-machine-v1-970b157f72bf.webp"
+    },
+    {
+      "id": "shooting-game-machine",
+      "word": "shooting game machine",
+      "chinese": "射擊遊戲機",
+      "chineseDefinition": "使用遊戲用槍型控制器瞄準螢幕目標的街機；此處限定光線槍式機台。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃuː.tɪŋ ɡeɪm məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "射擊遊戲機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine with gun-shaped controllers for aiming at targets on a screen.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "銃の形をしたコントローラーで画面の標的を狙うゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Aim at the targets on the shooting game machine.",
+          "ja": "シューティングゲーム機の画面の的を狙ってください。",
+          "zh": "請瞄準射擊遊戲機螢幕上的目標。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After playing the shooting game machine, put the controller back so the next player can use it.",
+          "ja": "シューティングゲーム機で遊んだら、次の人が使えるようにコントローラーを元に戻してください。",
+          "zh": "玩完射擊遊戲機後，請把控制器放回原位，讓下一位玩家使用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "シューティングゲーム機",
+      "jaReading": "シューティングゲームき",
+      "jaReadingSegments": [
+        {
+          "text": "シューティングゲーム",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/shooting-game-machine-v1-0f43f482b96a.webp"
+    },
+    {
+      "id": "basketball-arcade-machine",
+      "word": "basketball arcade machine",
+      "chinese": "投籃遊戲機",
+      "chineseDefinition": "附籃框、防護網與回球斜坡、在限定時間內計分的投籃機台。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæs.kɪt.bɔːl ɑːrˈkeɪd məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "投籃遊戲機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine with a hoop and ball return that counts basketball shots.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "制限時間内にボールをゴールに投げ入れて得点を競うゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Throw the ball into the hoop on the basketball arcade machine.",
+          "ja": "バスケットボールゲーム機のゴールにボールを投げ入れてください。",
+          "zh": "請把球投進投籃遊戲機的籃框。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We played the basketball arcade machine again because our scores were tied.",
+          "ja": "同点だったので、バスケットボールゲーム機でもう一度勝負しました。",
+          "zh": "因為平手，我們又用投籃遊戲機比了一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "バスケットボールゲーム機",
+      "jaReading": "バスケットボールゲームき",
+      "jaReadingSegments": [
+        {
+          "text": "バスケットボールゲーム",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/basketball-arcade-machine-v1-8144c8a19276.webp"
+    },
+    {
+      "id": "dance-game-machine",
+      "word": "dance game machine",
+      "chinese": "跳舞遊戲機",
+      "chineseDefinition": "玩家站在感應踏板上，隨螢幕指示與音樂踩踏的遊戲機。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dæns ɡeɪm məˈʃiːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "跳舞遊戲機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine played by stepping on floor panels in time with music.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "音楽や画面の指示に合わせて、足元のパネルを踏んで遊ぶゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Stand on the dance game machine platform.",
+          "ja": "ダンスゲーム機のステージに立ってください。",
+          "zh": "請站上跳舞遊戲機的平台。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "If you get tired on the dance game machine, take a break before the next song.",
+          "ja": "ダンスゲーム機で疲れたら、次の曲の前に休憩してください。",
+          "zh": "如果玩跳舞遊戲機累了，請在下一首歌之前休息。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ダンスゲーム機",
+      "jaReading": "ダンスゲームき",
+      "jaReadingSegments": [
+        {
+          "text": "ダンスゲーム",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/dance-game-machine-v1-75dccc23d7c2.webp"
+    },
+    {
+      "id": "medal-pusher",
+      "word": "medal pusher",
+      "chinese": "推幣機",
+      "chineseDefinition": "將遊戲用代幣投入推盤，藉移動平台將代幣推落以取得更多代幣的機台；代幣不可換現金。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmed.əl ˈpʊʃ.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "推幣機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An arcade machine in which moving shelves push game tokens over an edge.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "メダルを投入し、動く台でメダルを押し出して落とすゲーム機。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put a token into the medal pusher.",
+          "ja": "メダルプッシャーにメダルを一枚入れてください。",
+          "zh": "請把一枚代幣投入推幣機。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before leaving the medal pusher, I collected the tokens from the tray.",
+          "ja": "メダルプッシャーを離れる前に、受け皿のメダルを回収しました。",
+          "zh": "離開推幣機前，我收好了托盤裡的代幣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "メダルプッシャー",
+      "jaReading": "メダルプッシャー",
+      "jaReadingSegments": [
+        {
+          "text": "メダルプッシャー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/medal-pusher-v1-99aa1c106443.webp"
+    },
+    {
+      "id": "photo-sticker-booth",
+      "word": "photo sticker booth",
+      "chinese": "拍貼機",
+      "chineseDefinition": "拍攝人像並輸出照片貼紙的機台，通常包含拍攝空間與影像編輯區。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊ.toʊ ˈstɪk.ɚ buːð/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "拍貼機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A booth that takes photos and prints them as stickers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "写真を撮影し、シールとして印刷する機械。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Let us take photos in the photo sticker booth.",
+          "ja": "プリントシール機で写真を撮りましょう。",
+          "zh": "我們用拍貼機拍照吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After using the photo sticker booth, we cut the sticker sheet and shared it.",
+          "ja": "プリントシール機で撮影した後、シールを切って分けました。",
+          "zh": "用拍貼機拍完後，我們把照片貼紙剪開分了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "プリントシール機",
+      "jaReading": "プリントシールき",
+      "jaReadingSegments": [
+        {
+          "text": "プリントシール",
+          "ruby": null
+        },
+        {
+          "text": "機",
+          "ruby": "き"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/photo-sticker-booth-v1-919e5b40684e.webp"
+    },
+    {
+      "id": "air-hockey-table",
+      "word": "air hockey table",
+      "chinese": "氣墊曲棍球桌",
+      "chineseDefinition": "桌面吹出氣流，讓圓盤滑行，玩家用推柄將圓盤打入對方球門的遊戲桌。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/er ˈhɑː.ki ˈteɪ.bəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "氣墊曲棍球桌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A game table that blows air through its surface so a puck slides easily.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空気で浮くパックを打ち合い、相手のゴールを狙うゲーム用の台。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The puck is on the air hockey table.",
+          "ja": "エアホッケー台の上にパックがあります。",
+          "zh": "圓盤在氣墊曲棍球桌上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The puck stopped moving, so we asked a staff member to check the air hockey table.",
+          "ja": "パックが動かなくなったので、店員さんにエアホッケー台を確認してもらいました。",
+          "zh": "圓盤不動了，所以我們請店員檢查氣墊曲棍球桌。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "エアホッケー台",
+      "jaReading": "エアホッケーだい",
+      "jaReadingSegments": [
+        {
+          "text": "エアホッケー",
+          "ruby": null
+        },
+        {
+          "text": "台",
+          "ruby": "だい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/air-hockey-table-v1-429b94b5081c.webp"
+    },
+    {
+      "id": "amusement-ic-card",
+      "word": "amusement IC card",
+      "chinese": "街機遊戲資料卡",
+      "chineseDefinition": "可在相容街機上讀取、保存玩家遊戲資料的感應卡；不等同交通卡或儲值卡。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/əˈmjuːz.mənt ˌaɪˈsiː kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "街機遊戲資料卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A contactless card used to identify a player and save data on compatible arcade games.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "対応するゲーム機でプレイヤーを識別し、プレイデータを保存するためのICカード。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Tap your amusement IC card on the reader.",
+          "ja": "アミューズメントICカードを読み取り機にかざしてください。",
+          "zh": "請把街機遊戲資料卡靠近讀卡機感應。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I forgot my amusement IC card, so I could not load my saved game data.",
+          "ja": "アミューズメントICカードを忘れたので、保存したプレイデータを読み込めませんでした。",
+          "zh": "我忘了帶街機遊戲資料卡，所以無法載入儲存的遊戲資料。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アミューズメントICカード",
+      "jaReading": "アミューズメントアイシーカード",
+      "jaReadingSegments": [
+        {
+          "text": "アミューズメント",
+          "ruby": null
+        },
+        {
+          "text": "IC",
+          "ruby": "アイシー"
+        },
+        {
+          "text": "カード",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/amusement-ic-card-v1-62cbfca4a7a9.webp"
+    },
+    {
+      "id": "medal-cup",
+      "word": "medal cup",
+      "chinese": "代幣杯",
+      "chineseDefinition": "遊戲中心用來盛裝遊戲用代幣的塑膠杯或小桶。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmed.əl kʌp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "代幣杯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cup or small tub used to hold tokens at an amusement arcade.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ゲームセンターでメダルを入れて持つためのカップ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the tokens in the medal cup.",
+          "ja": "メダルをメダルカップに入れてください。",
+          "zh": "請把代幣放進代幣杯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The medal cup was full, so I asked a staff member for another one.",
+          "ja": "メダルカップがいっぱいになったので、店員さんにもう一つもらいました。",
+          "zh": "代幣杯滿了，所以我向店員又要了一個。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "メダルカップ",
+      "jaReading": "メダルカップ",
+      "jaReadingSegments": [
+        {
+          "text": "メダルカップ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/medal-cup-v1-aa231e868527.webp"
+    },
+    {
+      "id": "medal-dispenser",
+      "word": "medal dispenser",
+      "chinese": "代幣租借機",
+      "chineseDefinition": "投入現金等方式取得店內遊戲用代幣的機台；與將紙鈔換成流通硬幣的兌幣機不同。",
+      "category": "arcade",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmed.əl dɪˈspen.sɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "代幣租借機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A machine that supplies arcade game tokens in exchange for payment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "現金などを入れて、店内で遊ぶためのメダルを借りる機械。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Get some tokens from the medal dispenser.",
+          "ja": "メダル貸出機でメダルを借りてください。",
+          "zh": "請用代幣租借機取得一些代幣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The medal dispenser was broken, so I asked where the other one was.",
+          "ja": "メダル貸出機が故障中だったので、別の機械がどこにあるか聞きました。",
+          "zh": "代幣租借機故障了，所以我詢問另一台在哪裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "メダル貸出機",
+      "jaReading": "メダルかしだしき",
+      "jaReadingSegments": [
+        {
+          "text": "メダル",
+          "ruby": null
+        },
+        {
+          "text": "貸出機",
+          "ruby": "かしだしき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/arcade-2026-10/medal-dispenser-v1-8b976b6de6dc.webp"
+    }
+  ]
+}

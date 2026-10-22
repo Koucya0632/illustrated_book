@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "series": "emergency-kit",
+  "reviewer": "Codex, individual inspection of every generated PNG before encoding",
+  "references": [
+    "https://www.bousai.metro.tokyo.lg.jp/content/tb2023/pageindices/index42.html",
+    "https://www.onisifoods.co.jp/about/index.html"
+  ],
+  "items": [
+    {
+      "id": "emergency-go-bag",
+      "decision": "pass",
+      "reason": "紅色雙肩包已裝入水瓶與摺好的反光毯，提把、雙肩帶及反光條可辨；呈現預先備妥的防災包，白底無品牌。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/emergency-go-bag.png",
+      "sourceSha256": "e5bf6f7b1999a5d6a4c7d9c045abf99bce0ca4d954598b79d91a975b144963a1"
+    },
+    {
+      "id": "flashlight",
+      "decision": "pass",
+      "reason": "黑色手持筒身、前端LED反射杯及手腕繩清楚完整，與頭燈及燈籠區別，沒有多餘道具。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/flashlight.png",
+      "sourceSha256": "7db43c40994f14e433f5c7077167579b745f0a21a37a4bf9294732fdbf7506d6"
+    },
+    {
+      "id": "hand-crank-radio",
+      "decision": "pass",
+      "reason": "橘色收音機同時具喇叭、調諧旋鈕、天線及展開手搖曲柄；曲柄把手清楚，無假字或品牌。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/hand-crank-radio.png",
+      "sourceSha256": "99eb4ba9b45edf4a841b6de199ef1d7ceadc77341ca4fb331d29464afc325a08"
+    },
+    {
+      "id": "headlamp",
+      "decision": "pass",
+      "reason": "燈體固定於可調鬆緊頭帶前方，整圈頭帶可見，無人像與車輛，符合頭戴式ヘッドライト。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/headlamp.png",
+      "sourceSha256": "70e67c25ffe3e527ef8894c6b6747a138133520471abfec81b19d8f601c7f391"
+    },
+    {
+      "id": "emergency-whistle",
+      "decision": "pass",
+      "reason": "橘色哨體的吹口、出氣孔與掛繩皆完整可辨，孤立主體符合求救哨，非警報按鈕。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/emergency-whistle.png",
+      "sourceSha256": "66a7039b35877d2eedaa9fa4636a6bf93183a7e8451ffa36b72d6899f2210a97"
+    },
+    {
+      "id": "emergency-blanket",
+      "decision": "pass",
+      "reason": "展開的銀色反光薄片具有細薄皺褶，旁有同材質摺小狀態；非厚織物毛毯，定義特徵完整。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/emergency-blanket.png",
+      "sourceSha256": "28f70d75dac23fe9c64f34444b9dbb6a9a84d437a0a4a88a8cb158bafb03b593"
+    },
+    {
+      "id": "disposable-toilet-kit",
+      "decision": "pass",
+      "reason": "未使用的不透明排泄袋、摺平備袋及密封凝固劑小包形成組合，沒有馬桶座或水桶，符合袋裝携帯トイレ概念。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/disposable-toilet-kit.png",
+      "sourceSha256": "fd6508a4618397fd7669d45687573ddb461a272720f681607b3b8147e128c069"
+    },
+    {
+      "id": "alpha-rice",
+      "decision": "pass",
+      "reason": "站立袋中與袋前可見乾燥熟飯顆粒，附匙、未呈現生米袋或熱飯碗；乾燥即食米飯的包裝形態合理。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/alpha-rice.png",
+      "sourceSha256": "463e78fc9c99538b59a9724d37053625c77191e0a356c93bc7ef02927ae7e0ed"
+    },
+    {
+      "id": "collapsible-water-bag",
+      "decision": "pass",
+      "reason": "透明軟袋具提把、旋蓋和側邊摺痕，水線可見；袋身柔軟可壓平而非硬式儲水桶。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/collapsible-water-bag.png",
+      "sourceSha256": "81dc06b43fa664fb552d12f90807eb51c2c6d5da01ee6f12ac236366ed10cec5"
+    },
+    {
+      "id": "cotton-work-gloves",
+      "decision": "pass",
+      "reason": "一雙白棉紗編織手套具清楚五指、羅紋袖口與可見織紋，沒有橡膠或皮革材質，符合軍手。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/cotton-work-gloves.png",
+      "sourceSha256": "49e3891efa01c2191ad83ef36a37ec3cb217e4645e3d0ed221be783b0fa1e2a2"
+    },
+    {
+      "id": "hardtack",
+      "decision": "pass",
+      "reason": "厚實小塊長方餅乾具排氣孔及乾燥斷面，金屬罐呈現保存用途，沒有普通夾心餅或軟麵包特徵。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/hardtack.png",
+      "sourceSha256": "16f626d3526faa77c3ce74dbdf09960ab938a88908bca7750eae6b7260266b2e"
+    },
+    {
+      "id": "aa-battery",
+      "decision": "pass",
+      "reason": "兩顆圓柱電池比例與正極凸點清楚，僅保留必要AA尺寸標示，區別鈕扣與AAA規格；無品牌或假字。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/aa-battery.png",
+      "sourceSha256": "6d40f97d1d6187df7ae4daa7b13fe79ed37b892472f03c0a91da9e2b7be69ce8"
+    },
+    {
+      "id": "first-aid-kit",
+      "decision": "pass",
+      "reason": "打開的紅色急救袋內含捲繃、紗布、貼布與剪刀，用品收納清楚，沒有錯放藥品或傷口場景。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/first-aid-kit.png",
+      "sourceSha256": "af6f8f62c5e5256e5654d02177b85ce752b786534662664e2c4d6f0fc457e327"
+    },
+    {
+      "id": "rain-poncho",
+      "decision": "pass",
+      "reason": "黃色寬披覆輪廓、連帽及頭套開口明確；無分離褲管或合身外套版型，白底完整呈現斗篷雨衣。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/rain-poncho.png",
+      "sourceSha256": "bf0661741a8ab5465e50d0840ef500db9144dcb787d448f3e514706d6379d8b6"
+    },
+    {
+      "id": "power-bank",
+      "decision": "pass",
+      "reason": "薄型外接電池具USB輸出埠、四點電量燈與短線，沒有插牆插腳，不會誤認市電充電器。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/power-bank.png",
+      "sourceSha256": "182ce492db5cbcbb9079eba63389e4f27806e832795a50341ffb6659487743af"
+    },
+    {
+      "id": "category-emergency-kit",
+      "decision": "pass",
+      "reason": "防災背包搭配手電筒、可見曲柄收音機、水瓶、保溫毯與急救袋；封面用品可辨，修除調諧窗假字後只保留簡單刻度。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/category-emergency-kit.png",
+      "sourceSha256": "3ee3fc4a9e35299b536e121aff4ae70725315827f251e005d32c852f644b2636"
+    },
+    {
+      "id": "emergency-contact-card",
+      "decision": "pass",
+      "reason": "紅色標頭卡片以人像及電話圖示配空白填寫線，透明保護套完整，沒有真實個資、信用卡晶片或假字。",
+      "sourceFile": "output/emergency-kit-2026-10/sources/emergency-contact-card.png",
+      "sourceSha256": "0442a888c0755551822b4eb7ad8bbaf27f52a18eeb809534093a0fe896b7dc67"
+    }
+  ]
+}

@@ -1,0 +1,2783 @@
+{
+  "en": {
+    "Put the emergency go bag by the front door.": [
+      {
+        "t": "Put",
+        "z": "放",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "emergency go bag",
+        "z": "防災包",
+        "j": "非常用持ち出し袋",
+        "e": "emergency go bag"
+      },
+      {
+        "t": " by the "
+      },
+      {
+        "t": "front door",
+        "z": "玄關",
+        "j": "玄関",
+        "e": "front door"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The emergency go bag was too heavy, so I packed fewer things.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "emergency go bag",
+        "z": "防災包",
+        "j": "非常用持ち出し袋",
+        "e": "emergency go bag"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too heavy",
+        "z": "太重",
+        "j": "重すぎる",
+        "e": "too heavy"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "packed",
+        "z": "裝了",
+        "j": "詰めた",
+        "e": "packed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "fewer",
+        "z": "更少的",
+        "j": "より少ない",
+        "e": "fewer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "things",
+        "z": "物品",
+        "j": "物",
+        "e": "things"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please turn on the flashlight.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "turn on",
+        "z": "打開",
+        "j": "つける",
+        "e": "turn on"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "flashlight",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the power went out, I used a flashlight to find my shoes.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "power",
+        "z": "電力",
+        "j": "電気",
+        "e": "power"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "went out",
+        "z": "中斷了",
+        "j": "止まった",
+        "e": "went out"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "flashlight",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "shoes",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Adjust the strap on your headlamp.": [
+      {
+        "t": "Adjust",
+        "z": "調整",
+        "j": "調節する",
+        "e": "adjust"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "strap",
+        "z": "固定帶",
+        "j": "ベルト",
+        "e": "strap"
+      },
+      {
+        "t": " on your "
+      },
+      {
+        "t": "headlamp",
+        "z": "頭燈",
+        "j": "ヘッドライト",
+        "e": "headlamp"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wore a headlamp because I was carrying bags in both hands.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wore",
+        "z": "戴上了",
+        "j": "つけた",
+        "e": "wore"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "headlamp",
+        "z": "頭燈",
+        "j": "ヘッドライト",
+        "e": "headlamp"
+      },
+      {
+        "t": " because I was "
+      },
+      {
+        "t": "carrying",
+        "z": "提著",
+        "j": "持っている",
+        "e": "carrying"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "bags",
+        "z": "行李",
+        "j": "荷物",
+        "e": "bags"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "both hands",
+        "z": "雙手",
+        "j": "両手",
+        "e": "both hands"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Turn the handle on the hand-crank radio.": [
+      {
+        "t": "Turn",
+        "z": "轉動",
+        "j": "回す",
+        "e": "turn"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "handle",
+        "z": "把手",
+        "j": "ハンドル",
+        "e": "handle"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "hand-crank radio",
+        "z": "手搖收音機",
+        "j": "手回しラジオ",
+        "e": "hand-crank radio"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I charged the hand-crank radio before turning it on to check the news.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "charged",
+        "z": "充電了",
+        "j": "充電した",
+        "e": "charged"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hand-crank radio",
+        "z": "手搖收音機",
+        "j": "手回しラジオ",
+        "e": "hand-crank radio"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "turning",
+        "z": "打開",
+        "j": "つける",
+        "e": "turning"
+      },
+      {
+        "t": " it on to "
+      },
+      {
+        "t": "check",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "news",
+        "z": "新聞",
+        "j": "ニュース",
+        "e": "news"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Keep an emergency whistle in your backpack pocket.": [
+      {
+        "t": "Keep",
+        "z": "放著",
+        "j": "入れておく",
+        "e": "keep"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "emergency whistle",
+        "z": "求救哨",
+        "j": "ホイッスル",
+        "e": "emergency whistle"
+      },
+      {
+        "t": " in your "
+      },
+      {
+        "t": "backpack",
+        "z": "背包",
+        "j": "リュック",
+        "e": "backpack"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pocket",
+        "z": "口袋",
+        "j": "ポケット",
+        "e": "pocket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I could not find the emergency whistle in my bag, so I moved it to a small pouch.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "emergency whistle",
+        "z": "求救哨",
+        "j": "ホイッスル",
+        "e": "emergency whistle"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "moved",
+        "z": "移到",
+        "j": "移した",
+        "e": "moved"
+      },
+      {
+        "t": " it to a "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pouch",
+        "z": "收納袋",
+        "j": "ポーチ",
+        "e": "pouch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Unfold the emergency blanket carefully.": [
+      {
+        "t": "Unfold",
+        "z": "展開",
+        "j": "広げる",
+        "e": "unfold"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "emergency blanket",
+        "z": "緊急保溫毯",
+        "j": "アルミブランケット",
+        "e": "emergency blanket"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "carefully",
+        "z": "小心地",
+        "j": "そっと",
+        "e": "carefully"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I felt cold at the shelter, so I put an emergency blanket around my shoulders.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "felt",
+        "z": "感覺",
+        "j": "感じた",
+        "e": "felt"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cold",
+        "z": "冷",
+        "j": "寒い",
+        "e": "cold"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "shelter",
+        "z": "避難所",
+        "j": "避難所",
+        "e": "shelter"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "put",
+        "z": "放上",
+        "j": "掛けた",
+        "e": "put"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "emergency blanket",
+        "z": "緊急保溫毯",
+        "j": "アルミブランケット",
+        "e": "emergency blanket"
+      },
+      {
+        "t": " around my "
+      },
+      {
+        "t": "shoulders",
+        "z": "肩膀",
+        "j": "肩",
+        "e": "shoulders"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Pack a disposable toilet kit in your emergency bag.": [
+      {
+        "t": "Pack",
+        "z": "裝入",
+        "j": "入れる",
+        "e": "pack"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "disposable toilet kit",
+        "z": "攜帶式廁所組",
+        "j": "携帯トイレ",
+        "e": "disposable toilet kit"
+      },
+      {
+        "t": " in your "
+      },
+      {
+        "t": "emergency bag",
+        "z": "防災包",
+        "j": "防災バッグ",
+        "e": "emergency bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before using the disposable toilet kit, I read the instructions on the packet.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "disposable toilet kit",
+        "z": "攜帶式廁所組",
+        "j": "携帯トイレ",
+        "e": "disposable toilet kit"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "read",
+        "z": "讀了",
+        "j": "読んだ",
+        "e": "read"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "instructions",
+        "z": "說明",
+        "j": "説明",
+        "e": "instructions"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "packet",
+        "z": "包裝袋",
+        "j": "袋",
+        "e": "packet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Close the cap on the collapsible water bag.": [
+      {
+        "t": "Close",
+        "z": "關好",
+        "j": "閉める",
+        "e": "close"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cap",
+        "z": "蓋子",
+        "j": "ふた",
+        "e": "cap"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "collapsible water bag",
+        "z": "折疊儲水袋",
+        "j": "給水バッグ",
+        "e": "collapsible water bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the collapsible water bag dried, I folded it and put it away.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "collapsible water bag",
+        "z": "折疊儲水袋",
+        "j": "給水バッグ",
+        "e": "collapsible water bag"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dried",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "dried"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "folded",
+        "z": "摺好了",
+        "j": "畳んだ",
+        "e": "folded"
+      },
+      {
+        "t": " it and "
+      },
+      {
+        "t": "put it away",
+        "z": "把它收起來",
+        "j": "しまった",
+        "e": "put it away"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Read the directions on the dehydrated cooked rice pouch.": [
+      {
+        "t": "Read",
+        "z": "閱讀",
+        "j": "読む",
+        "e": "read"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "directions",
+        "z": "說明",
+        "j": "説明",
+        "e": "directions"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "dehydrated cooked rice",
+        "z": "即食乾燥米飯",
+        "j": "アルファ米",
+        "e": "dehydrated cooked rice"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pouch",
+        "z": "包裝袋",
+        "j": "袋",
+        "e": "pouch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We had no hot water, so we rehydrated the dehydrated cooked rice with cold water.": [
+      {
+        "t": "We had no "
+      },
+      {
+        "t": "hot water",
+        "z": "熱水",
+        "j": "お湯",
+        "e": "hot water"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "rehydrated",
+        "z": "加水復原了",
+        "j": "水で戻した",
+        "e": "rehydrated"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "dehydrated cooked rice",
+        "z": "即食乾燥米飯",
+        "j": "アルファ米",
+        "e": "dehydrated cooked rice"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "cold water",
+        "z": "冷水",
+        "j": "水",
+        "e": "cold water"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I shared the hardtack with my family.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "shared",
+        "z": "分享",
+        "j": "分けた",
+        "e": "shared"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hardtack",
+        "z": "乾糧餅乾",
+        "j": "乾パン",
+        "e": "hardtack"
+      },
+      {
+        "t": " with my "
+      },
+      {
+        "t": "family",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The hardtack was nearing its best-before date, so I bought a new tin.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hardtack",
+        "z": "乾糧餅乾",
+        "j": "乾パン",
+        "e": "hardtack"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "nearing",
+        "z": "接近",
+        "j": "近づいている",
+        "e": "nearing"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "best-before date",
+        "z": "賞味期限",
+        "j": "賞味期限",
+        "e": "best-before date"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買った",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "new",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tin",
+        "z": "罐",
+        "j": "缶",
+        "e": "tin"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Wear cotton work gloves when carrying boxes.": [
+      {
+        "t": "Wear",
+        "z": "戴",
+        "j": "はめる",
+        "e": "wear"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cotton work gloves",
+        "z": "棉紗工作手套",
+        "j": "軍手",
+        "e": "cotton work gloves"
+      },
+      {
+        "t": " when "
+      },
+      {
+        "t": "carrying",
+        "z": "搬運",
+        "j": "運ぶ",
+        "e": "carrying"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "boxes",
+        "z": "箱子",
+        "j": "箱",
+        "e": "boxes"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My cotton work gloves got wet, so I changed to a dry pair.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "cotton work gloves",
+        "z": "棉紗工作手套",
+        "j": "軍手",
+        "e": "cotton work gloves"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "got wet",
+        "z": "濕了",
+        "j": "ぬれた",
+        "e": "got wet"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "changed",
+        "z": "換了",
+        "j": "替えた",
+        "e": "changed"
+      },
+      {
+        "t": " to a "
+      },
+      {
+        "t": "dry",
+        "z": "乾的",
+        "j": "乾いた",
+        "e": "dry"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pair",
+        "z": "一雙",
+        "j": "一組",
+        "e": "pair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Check that the first-aid kit has bandages.": [
+      {
+        "t": "Check",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": " that the "
+      },
+      {
+        "t": "first-aid kit",
+        "z": "急救包",
+        "j": "救急セット",
+        "e": "first-aid kit"
+      },
+      {
+        "t": " has "
+      },
+      {
+        "t": "bandages",
+        "z": "繃帶",
+        "j": "包帯",
+        "e": "bandages"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After using the gauze, I added a new pack to the first-aid kit.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "gauze",
+        "z": "紗布",
+        "j": "ガーゼ",
+        "e": "gauze"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "added",
+        "z": "補入了",
+        "j": "補充した",
+        "e": "added"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "new",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pack",
+        "z": "一包",
+        "j": "一袋",
+        "e": "pack"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "first-aid kit",
+        "z": "急救包",
+        "j": "救急セット",
+        "e": "first-aid kit"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "This flashlight needs two AA batteries.": [
+      {
+        "t": "This "
+      },
+      {
+        "t": "flashlight",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "needs",
+        "z": "需要",
+        "j": "必要とする",
+        "e": "needs"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "two",
+        "z": "兩個",
+        "j": "二つ",
+        "e": "two"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "AA batteries",
+        "z": "三號電池",
+        "j": "単三電池",
+        "e": "AA batteries"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before buying replacement AA batteries, I checked the size in the flashlight.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "buying",
+        "z": "購買",
+        "j": "買う",
+        "e": "buying"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "replacement",
+        "z": "替換用的",
+        "j": "交換用の",
+        "e": "replacement"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "AA batteries",
+        "z": "三號電池",
+        "j": "単三電池",
+        "e": "AA batteries"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "size",
+        "z": "尺寸",
+        "j": "サイズ",
+        "e": "size"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "flashlight",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Connect your phone to the power bank.": [
+      {
+        "t": "Connect",
+        "z": "連接",
+        "j": "つなぐ",
+        "e": "connect"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "power bank",
+        "z": "行動電源",
+        "j": "モバイルバッテリー",
+        "e": "power bank"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wanted to charge my phone, but the power bank was empty.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wanted",
+        "z": "想要",
+        "j": "したかった",
+        "e": "wanted"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "charge",
+        "z": "充電",
+        "j": "充電する",
+        "e": "charge"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": ", but the "
+      },
+      {
+        "t": "power bank",
+        "z": "行動電源",
+        "j": "モバイルバッテリー",
+        "e": "power bank"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "empty",
+        "z": "沒電的",
+        "j": "残量がない",
+        "e": "empty"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Keep a rain poncho in your bag.": [
+      {
+        "t": "Keep",
+        "z": "放著",
+        "j": "入れておく",
+        "e": "keep"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "rain poncho",
+        "z": "斗篷雨衣",
+        "j": "レインポンチョ",
+        "e": "rain poncho"
+      },
+      {
+        "t": " in your "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Since we had to walk in the rain, we put on rain ponchos before leaving.": [
+      {
+        "t": "Since we had to "
+      },
+      {
+        "t": "walk",
+        "z": "行走",
+        "j": "歩く",
+        "e": "walk"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "rain",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "put on",
+        "z": "穿上",
+        "j": "着た",
+        "e": "put on"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rain ponchos",
+        "z": "斗篷雨衣",
+        "j": "レインポンチョ",
+        "e": "rain ponchos"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "leaving",
+        "z": "出發",
+        "j": "出発",
+        "e": "leaving"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Keep your emergency contact card in your wallet.": [
+      {
+        "t": "Keep",
+        "z": "保存",
+        "j": "入れておく",
+        "e": "keep"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "emergency contact card",
+        "z": "緊急聯絡卡",
+        "j": "緊急連絡カード",
+        "e": "emergency contact card"
+      },
+      {
+        "t": " in your "
+      },
+      {
+        "t": "wallet",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My sister changed her phone number, so I updated my emergency contact card.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "sister",
+        "z": "姊姊",
+        "j": "姉",
+        "e": "older sister"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "changed",
+        "z": "換了",
+        "j": "変えた",
+        "e": "changed"
+      },
+      {
+        "t": " her "
+      },
+      {
+        "t": "phone number",
+        "z": "電話號碼",
+        "j": "電話番号",
+        "e": "phone number"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "updated",
+        "z": "更新了",
+        "j": "書き直した",
+        "e": "updated"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "emergency contact card",
+        "z": "緊急聯絡卡",
+        "j": "緊急連絡カード",
+        "e": "emergency contact card"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "非常用持ち出し袋を玄関に置いてください。": [
+      {
+        "t": "非常用持ち出し袋",
+        "r": "ひじょうようもちだしぶくろ",
+        "z": "防災包",
+        "j": "非常用持ち出し袋",
+        "e": "emergency go bag"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "玄関",
+        "r": "げんかん",
+        "z": "玄關",
+        "j": "玄関",
+        "e": "entrance"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いてください",
+        "r": "おいてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please put"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "非常用持ち出し袋が重すぎたので、中身を減らしました。": [
+      {
+        "t": "非常用持ち出し袋",
+        "r": "ひじょうようもちだしぶくろ",
+        "z": "防災包",
+        "j": "非常用持ち出し袋",
+        "e": "emergency go bag"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "重すぎた",
+        "r": "おもすぎた",
+        "z": "太重了",
+        "j": "重すぎた",
+        "e": "was too heavy"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "中身",
+        "r": "なかみ",
+        "z": "內容物",
+        "j": "中身",
+        "e": "contents"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "減らしました",
+        "r": "へらしました",
+        "z": "減少了",
+        "j": "減らしました",
+        "e": "reduced"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "懐中電灯をつけてください。": [
+      {
+        "t": "懐中電灯",
+        "r": "かいちゅうでんとう",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つけてください",
+        "r": "つけてください",
+        "z": "請打開",
+        "j": "つけてください",
+        "e": "please turn on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "停電したとき、懐中電灯で靴を探しました。": [
+      {
+        "t": "停電した",
+        "r": "ていでんした",
+        "z": "停電了",
+        "j": "停電した",
+        "e": "the power went out"
+      },
+      {
+        "t": "とき、"
+      },
+      {
+        "t": "懐中電灯",
+        "r": "かいちゅうでんとう",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "靴",
+        "r": "くつ",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "探しました",
+        "r": "さがしました",
+        "z": "找了",
+        "j": "探しました",
+        "e": "looked for"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ヘッドライトのベルトを調節してください。": [
+      {
+        "t": "ヘッドライト",
+        "r": "へっどらいと",
+        "z": "頭燈",
+        "j": "ヘッドライト",
+        "e": "headlamp"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ベルト",
+        "r": "べると",
+        "z": "固定帶",
+        "j": "ベルト",
+        "e": "strap"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調節してください",
+        "r": "ちょうせつしてください",
+        "z": "請調整",
+        "j": "調節してください",
+        "e": "please adjust"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "両手に荷物を持っていたので、ヘッドライトをつけました。": [
+      {
+        "t": "両手",
+        "r": "りょうて",
+        "z": "雙手",
+        "j": "両手",
+        "e": "both hands"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "荷物",
+        "r": "にもつ",
+        "z": "行李",
+        "j": "荷物",
+        "e": "bags"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "持っていた",
+        "r": "もっていた",
+        "z": "提著",
+        "j": "持っていた",
+        "e": "was carrying"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ヘッドライト",
+        "r": "へっどらいと",
+        "z": "頭燈",
+        "j": "ヘッドライト",
+        "e": "headlamp"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つけました",
+        "r": "つけました",
+        "z": "戴上了",
+        "j": "つけました",
+        "e": "put on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "手回しラジオのハンドルを回してください。": [
+      {
+        "t": "手回しラジオ",
+        "r": "てまわしらじお",
+        "z": "手搖收音機",
+        "j": "手回しラジオ",
+        "e": "hand-crank radio"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ハンドル",
+        "r": "はんどる",
+        "z": "把手",
+        "j": "ハンドル",
+        "e": "handle"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "回してください",
+        "r": "まわしてください",
+        "z": "請轉動",
+        "j": "回してください",
+        "e": "please turn"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ニュースを確認するために、手回しラジオを充電してからつけました。": [
+      {
+        "t": "ニュース",
+        "r": "にゅーす",
+        "z": "新聞",
+        "j": "ニュース",
+        "e": "news"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認する",
+        "r": "かくにんする",
+        "z": "確認",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": "ために、"
+      },
+      {
+        "t": "手回しラジオ",
+        "r": "てまわしらじお",
+        "z": "手搖收音機",
+        "j": "手回しラジオ",
+        "e": "hand-crank radio"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "充電して",
+        "r": "じゅうでんして",
+        "z": "充電後",
+        "j": "充電して",
+        "e": "charged"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "つけました",
+        "r": "つけました",
+        "z": "打開了",
+        "j": "つけました",
+        "e": "turned on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "リュックのポケットにホイッスルを入れておいてください。": [
+      {
+        "t": "リュック",
+        "r": "りゅっく",
+        "z": "背包",
+        "j": "リュック",
+        "e": "backpack"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ポケット",
+        "r": "ぽけっと",
+        "z": "口袋",
+        "j": "ポケット",
+        "e": "pocket"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ホイッスル",
+        "r": "ほいっする",
+        "z": "求救哨",
+        "j": "ホイッスル",
+        "e": "emergency whistle"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れておいてください",
+        "r": "いれておいてください",
+        "z": "請預先放著",
+        "j": "入れておいてください",
+        "e": "please keep inside"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "かばんの中でホイッスルが見つからなかったので、小さなポーチに移しました。": [
+      {
+        "t": "かばん",
+        "r": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "r": "なか",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ホイッスル",
+        "r": "ほいっする",
+        "z": "求救哨",
+        "j": "ホイッスル",
+        "e": "emergency whistle"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つからなかった",
+        "r": "みつからなかった",
+        "z": "找不到",
+        "j": "見つからなかった",
+        "e": "could not find"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "小さな",
+        "r": "ちいさな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": "ポーチ",
+        "r": "ぽーち",
+        "z": "收納袋",
+        "j": "ポーチ",
+        "e": "pouch"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "移しました",
+        "r": "うつしました",
+        "z": "移放了",
+        "j": "移しました",
+        "e": "moved"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アルミブランケットをそっと広げてください。": [
+      {
+        "t": "アルミブランケット",
+        "r": "あるみぶらんけっと",
+        "z": "緊急保溫毯",
+        "j": "アルミブランケット",
+        "e": "emergency blanket"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "そっと",
+        "r": "そっと",
+        "z": "小心地",
+        "j": "そっと",
+        "e": "gently"
+      },
+      {
+        "t": "広げてください",
+        "r": "ひろげてください",
+        "z": "請展開",
+        "j": "広げてください",
+        "e": "please unfold"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "避難所で寒くなったので、アルミブランケットを肩に掛けました。": [
+      {
+        "t": "避難所",
+        "r": "ひなんじょ",
+        "z": "避難所",
+        "j": "避難所",
+        "e": "shelter"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "寒くなった",
+        "r": "さむくなった",
+        "z": "覺得冷了",
+        "j": "寒くなった",
+        "e": "became cold"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "アルミブランケット",
+        "r": "あるみぶらんけっと",
+        "z": "緊急保溫毯",
+        "j": "アルミブランケット",
+        "e": "emergency blanket"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "肩",
+        "r": "かた",
+        "z": "肩膀",
+        "j": "肩",
+        "e": "shoulders"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "掛けました",
+        "r": "かけました",
+        "z": "披上了",
+        "j": "掛けました",
+        "e": "draped"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "防災バッグに携帯トイレを入れてください。": [
+      {
+        "t": "防災バッグ",
+        "r": "ぼうさいばっぐ",
+        "z": "防災包",
+        "j": "防災バッグ",
+        "e": "emergency bag"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "携帯トイレ",
+        "r": "けいたいといれ",
+        "z": "攜帶式廁所組",
+        "j": "携帯トイレ",
+        "e": "disposable toilet kit"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れてください",
+        "r": "いれてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please pack"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "携帯トイレを使う前に、袋に書かれた説明を読みました。": [
+      {
+        "t": "携帯トイレ",
+        "r": "けいたいといれ",
+        "z": "攜帶式廁所組",
+        "j": "携帯トイレ",
+        "e": "disposable toilet kit"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使う",
+        "r": "つかう",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "袋",
+        "r": "ふくろ",
+        "z": "包裝袋",
+        "j": "袋",
+        "e": "packet"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "書かれた",
+        "r": "かかれた",
+        "z": "寫著的",
+        "j": "書かれた",
+        "e": "written"
+      },
+      {
+        "t": "説明",
+        "r": "せつめい",
+        "z": "說明",
+        "j": "説明",
+        "e": "instructions"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "読みました",
+        "r": "よみました",
+        "z": "讀了",
+        "j": "読みました",
+        "e": "read"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "給水バッグのふたを閉めてください。": [
+      {
+        "t": "給水バッグ",
+        "r": "きゅうすいばっぐ",
+        "z": "折疊儲水袋",
+        "j": "給水バッグ",
+        "e": "collapsible water bag"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ふた",
+        "r": "ふた",
+        "z": "蓋子",
+        "j": "ふた",
+        "e": "cap"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "閉めてください",
+        "r": "しめてください",
+        "z": "請關好",
+        "j": "閉めてください",
+        "e": "please close"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "給水バッグが乾いてから、畳んでしまいました。": [
+      {
+        "t": "給水バッグ",
+        "r": "きゅうすいばっぐ",
+        "z": "折疊儲水袋",
+        "j": "給水バッグ",
+        "e": "collapsible water bag"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乾いて",
+        "r": "かわいて",
+        "z": "乾了",
+        "j": "乾いて",
+        "e": "dried"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "畳んで",
+        "r": "たたんで",
+        "z": "摺好",
+        "j": "畳んで",
+        "e": "folded"
+      },
+      {
+        "t": "しまいました",
+        "r": "しまいました",
+        "z": "收起來了",
+        "j": "しまいました",
+        "e": "put away"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "アルファ米の袋の説明を読んでください。": [
+      {
+        "t": "アルファ米",
+        "r": "あるふぁまい",
+        "z": "即食乾燥米飯",
+        "j": "アルファ米",
+        "e": "dehydrated cooked rice"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "袋",
+        "r": "ふくろ",
+        "z": "包裝袋",
+        "j": "袋",
+        "e": "pouch"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "説明",
+        "r": "せつめい",
+        "z": "說明",
+        "j": "説明",
+        "e": "directions"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "読んでください",
+        "r": "よんでください",
+        "z": "請閱讀",
+        "j": "読んでください",
+        "e": "please read"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お湯がなかったので、アルファ米を水で戻しました。": [
+      {
+        "t": "お湯",
+        "r": "おゆ",
+        "z": "熱水",
+        "j": "お湯",
+        "e": "hot water"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "なかった",
+        "r": "なかった",
+        "z": "沒有",
+        "j": "なかった",
+        "e": "there was none"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "アルファ米",
+        "r": "あるふぁまい",
+        "z": "即食乾燥米飯",
+        "j": "アルファ米",
+        "e": "dehydrated cooked rice"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "水",
+        "r": "みず",
+        "z": "冷水",
+        "j": "水",
+        "e": "cold water"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "戻しました",
+        "r": "もどしました",
+        "z": "復原了",
+        "j": "戻しました",
+        "e": "rehydrated"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "家族と乾パンを分けました。": [
+      {
+        "t": "家族",
+        "r": "かぞく",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "乾パン",
+        "r": "かんぱん",
+        "z": "乾糧餅乾",
+        "j": "乾パン",
+        "e": "hardtack"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "分けました",
+        "r": "わけました",
+        "z": "分享了",
+        "j": "分けました",
+        "e": "shared"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "乾パンの賞味期限が近づいていたので、新しい缶を買いました。": [
+      {
+        "t": "乾パン",
+        "r": "かんぱん",
+        "z": "乾糧餅乾",
+        "j": "乾パン",
+        "e": "hardtack"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "賞味期限",
+        "r": "しょうみきげん",
+        "z": "賞味期限",
+        "j": "賞味期限",
+        "e": "best-before date"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "近づいていた",
+        "r": "ちかづいていた",
+        "z": "快到了",
+        "j": "近づいていた",
+        "e": "was approaching"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "新しい",
+        "r": "あたらしい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": "缶",
+        "r": "かん",
+        "z": "罐",
+        "j": "缶",
+        "e": "tin"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "r": "かいました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "箱を運ぶときは軍手をはめてください。": [
+      {
+        "t": "箱",
+        "r": "はこ",
+        "z": "箱子",
+        "j": "箱",
+        "e": "boxes"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "運ぶ",
+        "r": "はこぶ",
+        "z": "搬運",
+        "j": "運ぶ",
+        "e": "carry"
+      },
+      {
+        "t": "ときは"
+      },
+      {
+        "t": "軍手",
+        "r": "ぐんて",
+        "z": "棉紗工作手套",
+        "j": "軍手",
+        "e": "cotton work gloves"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "はめてください",
+        "r": "はめてください",
+        "z": "請戴上",
+        "j": "はめてください",
+        "e": "please put on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "軍手がぬれたので、乾いたものに替えました。": [
+      {
+        "t": "軍手",
+        "r": "ぐんて",
+        "z": "棉紗工作手套",
+        "j": "軍手",
+        "e": "cotton work gloves"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ぬれた",
+        "r": "ぬれた",
+        "z": "濕了",
+        "j": "ぬれた",
+        "e": "got wet"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "乾いた",
+        "r": "かわいた",
+        "z": "乾的",
+        "j": "乾いた",
+        "e": "dry"
+      },
+      {
+        "t": "もの",
+        "r": "もの",
+        "z": "那一雙",
+        "j": "もの",
+        "e": "pair"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "替えました",
+        "r": "かえました",
+        "z": "換了",
+        "j": "替えました",
+        "e": "changed"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "救急セットに包帯があるか確認してください。": [
+      {
+        "t": "救急セット",
+        "r": "きゅうきゅうせっと",
+        "z": "急救包",
+        "j": "救急セット",
+        "e": "first-aid kit"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "包帯",
+        "r": "ほうたい",
+        "z": "繃帶",
+        "j": "包帯",
+        "e": "bandages"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ある",
+        "r": "ある",
+        "z": "有",
+        "j": "ある",
+        "e": "there are"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認してください",
+        "r": "かくにんしてください",
+        "z": "請確認",
+        "j": "確認してください",
+        "e": "please check"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ガーゼを使った後、救急セットに新しいガーゼを一袋補充しました。": [
+      {
+        "t": "ガーゼ",
+        "r": "がーぜ",
+        "z": "紗布",
+        "j": "ガーゼ",
+        "e": "gauze"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使った",
+        "r": "つかった",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": "後",
+        "r": "あと",
+        "z": "之後",
+        "j": "後",
+        "e": "after"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "救急セット",
+        "r": "きゅうきゅうせっと",
+        "z": "急救包",
+        "j": "救急セット",
+        "e": "first-aid kit"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "新しい",
+        "r": "あたらしい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": "ガーゼ",
+        "r": "がーぜ",
+        "z": "紗布",
+        "j": "ガーゼ",
+        "e": "gauze"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一袋",
+        "r": "ひとふくろ",
+        "z": "一包",
+        "j": "一袋",
+        "e": "one pack"
+      },
+      {
+        "t": "補充しました",
+        "r": "ほじゅうしました",
+        "z": "補充了",
+        "j": "補充しました",
+        "e": "replenished"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この懐中電灯には単三電池が二本必要です。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "懐中電灯",
+        "r": "かいちゅうでんとう",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": "には"
+      },
+      {
+        "t": "単三電池",
+        "r": "たんさんでんち",
+        "z": "三號電池",
+        "j": "単三電池",
+        "e": "AA batteries"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "二本",
+        "r": "にほん",
+        "z": "兩顆",
+        "j": "二本",
+        "e": "two batteries"
+      },
+      {
+        "t": "必要です",
+        "r": "ひつようです",
+        "z": "需要",
+        "j": "必要です",
+        "e": "are needed"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "交換用の単三電池を買う前に、懐中電灯に入っている電池のサイズを確認しました。": [
+      {
+        "t": "交換用",
+        "r": "こうかんよう",
+        "z": "替換用",
+        "j": "交換用",
+        "e": "replacement"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "単三電池",
+        "r": "たんさんでんち",
+        "z": "三號電池",
+        "j": "単三電池",
+        "e": "AA batteries"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買う",
+        "r": "かう",
+        "z": "購買",
+        "j": "買う",
+        "e": "buy"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "懐中電灯",
+        "r": "かいちゅうでんとう",
+        "z": "手電筒",
+        "j": "懐中電灯",
+        "e": "flashlight"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入っている",
+        "r": "はいっている",
+        "z": "裝在裡面的",
+        "j": "入っている",
+        "e": "inside"
+      },
+      {
+        "t": "電池",
+        "r": "でんち",
+        "z": "電池",
+        "j": "電池",
+        "e": "batteries"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "サイズ",
+        "r": "さいず",
+        "z": "尺寸",
+        "j": "サイズ",
+        "e": "size"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認しました",
+        "r": "かくにんしました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホをモバイルバッテリーにつないでください。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "モバイルバッテリー",
+        "r": "もばいるばってりー",
+        "z": "行動電源",
+        "j": "モバイルバッテリー",
+        "e": "power bank"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つないでください",
+        "r": "つないでください",
+        "z": "請連接",
+        "j": "つないでください",
+        "e": "please connect"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホを充電したかったのですが、モバイルバッテリーの残量がありませんでした。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "充電したかった",
+        "r": "じゅうでんしたかった",
+        "z": "想充電",
+        "j": "充電したかった",
+        "e": "wanted to charge"
+      },
+      {
+        "t": "のですが、"
+      },
+      {
+        "t": "モバイルバッテリー",
+        "r": "もばいるばってりー",
+        "z": "行動電源",
+        "j": "モバイルバッテリー",
+        "e": "power bank"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "残量",
+        "r": "ざんりょう",
+        "z": "剩餘電量",
+        "j": "残量",
+        "e": "remaining charge"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ありませんでした",
+        "r": "ありませんでした",
+        "z": "沒有了",
+        "j": "ありませんでした",
+        "e": "there was none"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "かばんにレインポンチョを入れておいてください。": [
+      {
+        "t": "かばん",
+        "r": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "レインポンチョ",
+        "r": "れいんぽんちょ",
+        "z": "斗篷雨衣",
+        "j": "レインポンチョ",
+        "e": "rain poncho"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れておいてください",
+        "r": "いれておいてください",
+        "z": "請預先放著",
+        "j": "入れておいてください",
+        "e": "please keep inside"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨の中を歩く必要があったので、出発前にレインポンチョを着ました。": [
+      {
+        "t": "雨",
+        "r": "あめ",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "r": "なか",
+        "z": "之中",
+        "j": "中",
+        "e": "in"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "歩く",
+        "r": "あるく",
+        "z": "行走",
+        "j": "歩く",
+        "e": "walk"
+      },
+      {
+        "t": "必要があった",
+        "r": "ひつようがあった",
+        "z": "有必要",
+        "j": "必要があった",
+        "e": "had to"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "出発前",
+        "r": "しゅっぱつまえ",
+        "z": "出發前",
+        "j": "出発前",
+        "e": "before leaving"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "レインポンチョ",
+        "r": "れいんぽんちょ",
+        "z": "斗篷雨衣",
+        "j": "レインポンチョ",
+        "e": "rain poncho"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着ました",
+        "r": "きました",
+        "z": "穿上了",
+        "j": "着ました",
+        "e": "put on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "緊急連絡カードを財布に入れておいてください。": [
+      {
+        "t": "緊急連絡カード",
+        "r": "きんきゅうれんらくかーど",
+        "z": "緊急聯絡卡",
+        "j": "緊急連絡カード",
+        "e": "emergency contact card"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "財布",
+        "r": "さいふ",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れておいてください",
+        "r": "いれておいてください",
+        "z": "請放著保存",
+        "j": "入れておいてください",
+        "e": "please keep inside"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "姉の電話番号が変わったので、緊急連絡カードを書き直しました。": [
+      {
+        "t": "姉",
+        "r": "あね",
+        "z": "姊姊",
+        "j": "姉",
+        "e": "older sister"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "電話番号",
+        "r": "でんわばんごう",
+        "z": "電話號碼",
+        "j": "電話番号",
+        "e": "phone number"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "変わった",
+        "r": "かわった",
+        "z": "變更了",
+        "j": "変わった",
+        "e": "changed"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "緊急連絡カード",
+        "r": "きんきゅうれんらくかーど",
+        "z": "緊急聯絡卡",
+        "j": "緊急連絡カード",
+        "e": "emergency contact card"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書き直しました",
+        "r": "かきなおしました",
+        "z": "重新填寫了",
+        "j": "書き直しました",
+        "e": "updated"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

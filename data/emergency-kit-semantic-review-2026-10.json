@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "series": "emergency-kit",
+  "reviewer": "Codex, individual concept, sentence and contextual annotation review",
+  "scope": "Every new word and both examples, bound to exact source digests. Format checks do not independently prove semantic quality.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "emergency-go-bag",
+      "verdict": "pass",
+      "reason": "英語go bag與非常用持ち出し袋皆指預先裝妥的避難用品包；區別空背包與在家備蓄。",
+      "sourceSha256": "1f6e54c477451d331fc31d12bff791715e5d28608dd168fc12cd5de2a3097acb"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-go-bag",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "放在玄關是具體的收納請求，三語位置與物件一致。",
+      "sourceSha256": "55f61cbb4729e282df1b459870c32943e8d6d20c0989796e7a49e14fe01e86bd"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-go-bag",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "包太重而減量，有原因與結果；未規定固定重量或刪除必要用品。",
+      "sourceSha256": "f3d8a8ec8d758caf81ce6f271c14dbb355d7299ea205ddeec3523be8dbd068dd"
+    },
+    {
+      "kind": "word",
+      "wordId": "flashlight",
+      "verdict": "pass",
+      "reason": "懐中電灯是手持照明，與頭戴燈及燈籠不同，英語採美式flashlight。",
+      "sourceSha256": "785dc1bf7ca9ee39ed18b212d61ad66971269d553e830fd1b0e6d6ecbd78ee23"
+    },
+    {
+      "kind": "example",
+      "wordId": "flashlight",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "打開手電筒是單一自然請求，三語對齊。",
+      "sourceSha256": "f9e61ca9281649f5c5dd4515ab526e32481e3f0285aaaaa5d0b7af8587ed591d"
+    },
+    {
+      "kind": "example",
+      "wordId": "flashlight",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "停電後用手電筒尋找鞋子，保留時間與用途，未變成危險逃生指引。",
+      "sourceSha256": "850cefc2e33cd298801ae682913d55a23d7a6312eea4303f21c72603995dfa03"
+    },
+    {
+      "kind": "word",
+      "wordId": "headlamp",
+      "verdict": "pass",
+      "reason": "ヘッドライト有車燈多義，定義與圖明確限定頭帶式照明，英文用headlamp。",
+      "sourceSha256": "baf3d884c172ba2f67a3a1768d9f4c4c00a2afc2989214ccc068a6292d9ec65f"
+    },
+    {
+      "kind": "example",
+      "wordId": "headlamp",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "調整頭帶是自然使用行為，英文strap與日文ベルト同指固定帶。",
+      "sourceSha256": "09f4ae7cfe4bc91e89d59dd96eb3df4b75d44970e7e13ae717e3a18e71296094"
+    },
+    {
+      "kind": "example",
+      "wordId": "headlamp",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因雙手提袋而戴頭燈，因果一致，與簡單句調整帶子不同。",
+      "sourceSha256": "db92d01f69fc899b25ee0dd72370f657417d46282da7a51ccc2bb9280fc085a7"
+    },
+    {
+      "kind": "word",
+      "wordId": "hand-crank-radio",
+      "verdict": "pass",
+      "reason": "手回しラジオ以可轉曲柄為關鍵，不把一般攜帶式收音機或充電器混入。",
+      "sourceSha256": "f15e7a7f9a899903a8721956e86753cc09ab690d5ff84f1f68519803e3084e53"
+    },
+    {
+      "kind": "example",
+      "wordId": "hand-crank-radio",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "轉動收音機把手為直接動作，三語對齊。",
+      "sourceSha256": "c0c3ebe7c07ab4143d423a6f30f8c8a0f0c621addb1846cd859eeaf879316fd1"
+    },
+    {
+      "kind": "example",
+      "wordId": "hand-crank-radio",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為確認新聞先充電再開機，有目的及先後，不宣稱所有機型同一充電時長。",
+      "sourceSha256": "bf4cb68ba069fb47b40d1c8a80e094923e54373a7c59c6ea0269f2142db19572"
+    },
+    {
+      "kind": "word",
+      "wordId": "emergency-whistle",
+      "verdict": "pass",
+      "reason": "英語限定求救用途；ホイッスル日文常稱哨子，定義說明本系列的使用範圍。",
+      "sourceSha256": "57d568daed265816b0511f7321d75fd66ba8994f027de2205c612a259f24b912"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-whistle",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "放進背包口袋是具體收納行為，三語口袋位置一致。",
+      "sourceSha256": "d06c3cd9725fc7747ded4873a835cf0b26cbb16f0de1c9a2c9cc78755bd353a0"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-whistle",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "找不到包裡的哨子而改放小袋，保留原因及換位置，不杜撰求救節奏。",
+      "sourceSha256": "4efd6e78e57eff9c242bb4a563f0d4eae625ee4ffbd0c62e1b1e247c063a8559"
+    },
+    {
+      "kind": "word",
+      "wordId": "emergency-blanket",
+      "verdict": "pass",
+      "reason": "アルミブランケット是反光薄膜保溫片，明確區別既有毛布，未宣稱保證防低體溫。",
+      "sourceSha256": "2b19a7597705ac916cea5a1097e77596b00851a53a36f875908326067853e102"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-blanket",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "小心展開是合理使用情境，三語動作相同。",
+      "sourceSha256": "5748000fe74e6f650156e490ea39375413fa192fe70427c8305f202437b9780c"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-blanket",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "在避難所感到冷而披肩，有原因、地點及用途，無醫療療效主張。",
+      "sourceSha256": "913fbdf528458cd749a7ecb9d0f3e21b68aba0f0f60450cb5f228ddbcad9bcf8"
+    },
+    {
+      "kind": "word",
+      "wordId": "disposable-toilet-kit",
+      "verdict": "pass",
+      "reason": "携帯トイレ限定袋與凝固材料組，區別既有トイレ及座架式簡易廁所，符合東京都資料。",
+      "sourceSha256": "ac0cf3da12a3b13cdd01f64eda718e7c2d1eda88c15901d9aed2dc7d6a7ab16c"
+    },
+    {
+      "kind": "example",
+      "wordId": "disposable-toilet-kit",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把組包放進防災包是直接準備行為，三語一致。",
+      "sourceSha256": "9d4a8260eac4ee49579e7d8329b619a64b119702981f88d43662e5ae67ce5219"
+    },
+    {
+      "kind": "example",
+      "wordId": "disposable-toilet-kit",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "使用前讀包裝說明有先後關係，避免把單一產品操作當所有產品規則。",
+      "sourceSha256": "5d63a30802641ccb151068f228b2e633c5c64c7be7f07b4b9aede7e40a92bf8f"
+    },
+    {
+      "kind": "word",
+      "wordId": "collapsible-water-bag",
+      "verdict": "pass",
+      "reason": "給水バッグ限定可摺平袋狀容器，與硬式水桶、水壺及飲水機分開。",
+      "sourceSha256": "0e70197758bc9908a7c067fabea99dfbfc210a617d09e0f5d3dfa65ab1c41102"
+    },
+    {
+      "kind": "example",
+      "wordId": "collapsible-water-bag",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "關緊袋蓋是具體操作，三語對齊。",
+      "sourceSha256": "0993c7cc614f1eef1181ae466d1648def2f8ae8a97ca704344be6019c03815b1"
+    },
+    {
+      "kind": "example",
+      "wordId": "collapsible-water-bag",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "晾乾後摺好收納，時間順序自然且有意義，不暗示未標示飲用等級的材料可裝飲水。",
+      "sourceSha256": "32f9df32a49df25873cba1a23cc13f52b858d8fa7b641b7686b6297a28510f8f"
+    },
+    {
+      "kind": "word",
+      "wordId": "alpha-rice",
+      "verdict": "pass",
+      "reason": "アルファ米是煮熟後乾燥再復水的保存食，不是生米、普通白飯或僅靠加熱的微波飯，據尾西食品說明。",
+      "sourceSha256": "5ef151fa7423c7a36ace85bddc0fd6a26542b7d965ad88c342cdad1b37355266"
+    },
+    {
+      "kind": "example",
+      "wordId": "alpha-rice",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "先看袋子說明是自然準備步驟，三語一致。",
+      "sourceSha256": "47c1bba4d006fd937d2baa2cb601dc2fcc034bd18127967b26cc968a88b29dcc"
+    },
+    {
+      "kind": "example",
+      "wordId": "alpha-rice",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "沒有熱水所以以水復原，保留條件與結果；不套用特定品牌固定等待分鐘。",
+      "sourceSha256": "d441bb426d86c7d95884365ec667a8c45216d65b7cdbd9c07b59d81ba180b21d"
+    },
+    {
+      "kind": "word",
+      "wordId": "hardtack",
+      "verdict": "pass",
+      "reason": "乾パン是低水分硬餅乾，與普通點心、罐頭或麵包不同；不把所有餅乾都稱hardtack。",
+      "sourceSha256": "c3cc6fd8744bde3115d62a1fe2cde64ee8d47d6c3b20587660b13df13721160f"
+    },
+    {
+      "kind": "example",
+      "wordId": "hardtack",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "分給家人是具體分享行為，三語份量均未硬設數字。",
+      "sourceSha256": "09e5d0efbb39f1aff32977f0bc4ec53553718fee7316657b62d1fca88bae8e01"
+    },
+    {
+      "kind": "example",
+      "wordId": "hardtack",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "保存期限將到而補換，保留原因與行動，未給營養或食用安全期限建議。",
+      "sourceSha256": "6ac3a6ca1ca6f2b14db74312abe7d8302db690e278ebc7e18f1cc34a14432ef6"
+    },
+    {
+      "kind": "word",
+      "wordId": "cotton-work-gloves",
+      "verdict": "pass",
+      "reason": "軍手為紗線編織工作手套，與既有一般手袋分開；定義不將普通軍手當耐切割用品。",
+      "sourceSha256": "30efa36ab85a48ffceedeac837939f1623ac29bdeb430d398e27414869c92738"
+    },
+    {
+      "kind": "example",
+      "wordId": "cotton-work-gloves",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "搬紙箱時戴手套為合理日常用途，沒有暗示可抓玻璃。",
+      "sourceSha256": "767bc7c2789845188e53a14600656a4728b59dbc3fb67bc055aef20c41ed3b50"
+    },
+    {
+      "kind": "example",
+      "wordId": "cotton-work-gloves",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "濕手套換乾的，因果與濕乾對比三語一致。",
+      "sourceSha256": "51f6630639ace2f1e46382496e8e78037605e08c936804dd07210482e0fe034a"
+    },
+    {
+      "kind": "word",
+      "wordId": "first-aid-kit",
+      "verdict": "pass",
+      "reason": "救急セット指用品集合，而非救護車或單一醫藥品；圖呈現開口軟袋與繃帶。",
+      "sourceSha256": "cd9d7f6ecfb94a35ab40195b652c4cbb66d7a53db4c9193afe98b9ce0a72a9db"
+    },
+    {
+      "kind": "example",
+      "wordId": "first-aid-kit",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "確認包內是否有繃帶是具體準備指示，非醫療處置建議。",
+      "sourceSha256": "906c2b96d0b89d02bf9622ca85d0b55775929b6394cd57e35fc86714fd044b83"
+    },
+    {
+      "kind": "example",
+      "wordId": "first-aid-kit",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "用掉紗布後補入新紗布，先後及同一耗材三語一致。",
+      "sourceSha256": "b7fb1df11bd47ae9a38b3fe9a448be004ace32afc4c72003455ba5bdeefb0881"
+    },
+    {
+      "kind": "word",
+      "wordId": "aa-battery",
+      "verdict": "pass",
+      "reason": "台灣三號、日本単三與AA規格對應正確；未用battery泛稱掩蓋尺寸差異。",
+      "sourceSha256": "bd5a9b62ebfb8143ccf7a579629eb02bbf78157cd83f6354b9db3981180960f3"
+    },
+    {
+      "kind": "example",
+      "wordId": "aa-battery",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "這支手電筒需兩顆AA為特定器材例句，非聲稱所有手電筒相同。",
+      "sourceSha256": "78a4bc61494d36852db73178403fe3295c7e411dd1821da23c9bc1fb9962ac5a"
+    },
+    {
+      "kind": "example",
+      "wordId": "aa-battery",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "買替換電池前確認尺寸有先後，避免誤選AAA。",
+      "sourceSha256": "616148c4309c91c3989ed46bcafd3c23a5bfdcc1b575520eb8238e065bf4160d"
+    },
+    {
+      "kind": "word",
+      "wordId": "power-bank",
+      "verdict": "pass",
+      "reason": "モバイルバッテリー為可攜充電電池，與插牆充電器及AA乾電池不同。",
+      "sourceSha256": "c2a941e15b989a07fd45b8135e7321aad8ad1401d65aa976ca9dc5e64801a460"
+    },
+    {
+      "kind": "example",
+      "wordId": "power-bank",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "將手機接上行動電源是單一具體操作，三語一致。",
+      "sourceSha256": "baf65aa2e0a201ab43c3ec917b39537ccba422474abd7ca48af5af152a704d97"
+    },
+    {
+      "kind": "example",
+      "wordId": "power-bank",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "想充手機卻發現行動電源沒電，有轉折，不提供航空或充電安全法規。",
+      "sourceSha256": "5c97e2505a7078d11bcfe5f738241ebc91666fed89da07049ea0351d7bbfe143"
+    },
+    {
+      "kind": "word",
+      "wordId": "rain-poncho",
+      "verdict": "pass",
+      "reason": "レインポンチョ以寬披覆輪廓與頭套式結構區別普通雨衣、雨傘及保溫毯。",
+      "sourceSha256": "bf0d49f1b49a82b6ff9eaf1bc9b3f3da40e4659e6041087deb24e8b9e418fcc0"
+    },
+    {
+      "kind": "example",
+      "wordId": "rain-poncho",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把斗篷雨衣收在包中是直接收納句，三語一致。",
+      "sourceSha256": "db9d51faaae27c42cd11faa173b9ddd8b82a87941c119a58540ceeaa81ca20bf"
+    },
+    {
+      "kind": "example",
+      "wordId": "rain-poncho",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因要在雨中行走而出門前穿上，原因與先後有實質難度，非僅延長描述。",
+      "sourceSha256": "9ebce1593eac619de6a25e1ea817aca449da2437303502151fc954416d7705cc"
+    },
+    {
+      "kind": "word",
+      "wordId": "emergency-contact-card",
+      "verdict": "pass",
+      "reason": "緊急連絡カード為記錄聯絡資料的實體卡，不是電話卡或避難地圖；例句不含真實個資。",
+      "sourceSha256": "01adb7c24b9bd8476d20c5023158ac3b3cf97cfeea1f1f4d17b23395b299d682"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-contact-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "錢包內保存卡片是單一日常指示，三語位置一致。",
+      "sourceSha256": "92351cd80468e3d74d613069cc29977a95707e50d750a8ce4ef03e1cdb6a3d0a"
+    },
+    {
+      "kind": "example",
+      "wordId": "emergency-contact-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "家人換電話後更新卡片，原因與更新對象一致，並非泛泛定義句。",
+      "sourceSha256": "bfb89a2f3e7281ac7023ec909ed73f53aa0f73daa4a5c7d3f3aabfa42b3e8362"
+    }
+  ]
+}

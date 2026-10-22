@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "series": "emergency-kit",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "New main-catalog emergency go-bag vocabulary. Preserve existing blankets, canned food and general gloves. Local preparation only; production uploads, DB writes, commit and deployment require separate authorization.",
+  "category": {
+    "id": "emergency-kit",
+    "name": "Emergency Kit",
+    "nameZh": "防災包",
+    "nameJa": "防災バッグ",
+    "emoji": "🎒",
+    "description": "避難攜行用品、照明與聯絡工具、保暖、飲食和衛生用品",
+    "descriptionEn": "Go-bag essentials for lighting, communication, warmth, food and hygiene",
+    "descriptionJa": "持ち出し袋に備える明かりや連絡、防寒、食事、衛生の用品",
+    "color": "from-orange-100 to-red-100",
+    "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/category-emergency-kit-v1-53048659cb64.webp"
+  },
+  "references": [
+    "https://www.city.itabashi.tokyo.jp/bousai/bousai/sonae/1005662.html",
+    "https://www.bousai.go.jp/kohou/kouhoubousai/r02/99/pdf/bs99.pdf",
+    "https://www.bousai.metro.tokyo.lg.jp/content/tb2023/pageindices/index42.html",
+    "https://www.onisifoods.co.jp/about/index.html",
+    "https://www.onisifoods.co.jp/faq/"
+  ],
+  "entries": [
+    {
+      "id": "emergency-go-bag",
+      "word": "emergency go bag",
+      "chinese": "防災包",
+      "chineseDefinition": "預先裝好避難時要帶走的基本用品、可隨時攜帶的袋子，常見為雙肩背包。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˈmɝː.dʒən.si ɡoʊ bæɡ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "防災包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bag packed with essential supplies to take when evacuating in an emergency.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "避難するときにすぐ持ち出せるよう、必要な物をまとめて入れておく袋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the emergency go bag by the front door.",
+          "ja": "非常用持ち出し袋を玄関に置いてください。",
+          "zh": "請把防災包放在玄關。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The emergency go bag was too heavy, so I packed fewer things.",
+          "ja": "非常用持ち出し袋が重すぎたので、中身を減らしました。",
+          "zh": "防災包太重了，所以我減少了裡面的東西。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "非常用持ち出し袋",
+      "jaReading": "ひじょうようもちだしぶくろ",
+      "jaReadingSegments": [
+        {
+          "text": "非常用持ち出し袋",
+          "ruby": "ひじょうようもちだしぶくろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/emergency-go-bag-v1-9d57f7841a70.webp"
+    },
+    {
+      "id": "flashlight",
+      "word": "flashlight",
+      "chinese": "手電筒",
+      "chineseDefinition": "拿在手上、用電池供電的攜帶式照明工具。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈflæʃ.laɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手電筒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small portable electric light held in the hand.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "手に持って周囲を照らす、持ち運びのできる電灯。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please turn on the flashlight.",
+          "ja": "懐中電灯をつけてください。",
+          "zh": "請打開手電筒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the power went out, I used a flashlight to find my shoes.",
+          "ja": "停電したとき、懐中電灯で靴を探しました。",
+          "zh": "停電時，我用手電筒找鞋子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "懐中電灯",
+      "jaReading": "かいちゅうでんとう",
+      "jaReadingSegments": [
+        {
+          "text": "懐中電灯",
+          "ruby": "かいちゅうでんとう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/flashlight-v1-c4771b661590.webp"
+    },
+    {
+      "id": "headlamp",
+      "word": "headlamp",
+      "chinese": "頭燈",
+      "chineseDefinition": "用頭帶固定在頭上、讓雙手可以空出的照明燈；此處不是車頭燈。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhed.læmp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "頭燈",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A light worn on the head with a strap, leaving the hands free.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "頭にベルトで固定し、両手を空けたまま使えるライト。ここでは車の前照灯ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Adjust the strap on your headlamp.",
+          "ja": "ヘッドライトのベルトを調節してください。",
+          "zh": "請調整頭燈的固定帶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wore a headlamp because I was carrying bags in both hands.",
+          "ja": "両手に荷物を持っていたので、ヘッドライトをつけました。",
+          "zh": "因為雙手都提著行李，我戴上了頭燈。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ヘッドライト",
+      "jaReading": "ヘッドライト",
+      "jaReadingSegments": [
+        {
+          "text": "ヘッドライト",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/headlamp-v1-38dcb8422849.webp"
+    },
+    {
+      "id": "hand-crank-radio",
+      "word": "hand-crank radio",
+      "chinese": "手搖收音機",
+      "chineseDefinition": "可用手轉動把手發電或充電的攜帶式收音機。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhænd.kræŋk ˈreɪ.di.oʊ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手搖收音機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A portable radio that can be powered or charged by turning a handle.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ハンドルを手で回して発電や充電ができる携帯ラジオ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Turn the handle on the hand-crank radio.",
+          "ja": "手回しラジオのハンドルを回してください。",
+          "zh": "請轉動手搖收音機的把手。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I charged the hand-crank radio before turning it on to check the news.",
+          "ja": "ニュースを確認するために、手回しラジオを充電してからつけました。",
+          "zh": "為了確認新聞，我先替手搖收音機充電再開機。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "手回しラジオ",
+      "jaReading": "てまわしラジオ",
+      "jaReadingSegments": [
+        {
+          "text": "手回しラジオ",
+          "ruby": "てまわしラジオ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/hand-crank-radio-v1-af4c1ec3e458.webp"
+    },
+    {
+      "id": "emergency-whistle",
+      "word": "emergency whistle",
+      "chinese": "求救哨",
+      "chineseDefinition": "在緊急時發出尖銳聲響、讓別人注意自己位置的小型哨子。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˈmɝː.dʒən.si ˈwɪs.əl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "求救哨",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small whistle carried to attract attention in an emergency.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "非常時などに音で周囲へ自分の存在を知らせるための笛。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Keep an emergency whistle in your backpack pocket.",
+          "ja": "リュックのポケットにホイッスルを入れておいてください。",
+          "zh": "請在背包口袋裡放一個求救哨。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not find the emergency whistle in my bag, so I moved it to a small pouch.",
+          "ja": "かばんの中でホイッスルが見つからなかったので、小さなポーチに移しました。",
+          "zh": "我在包裡找不到求救哨，所以把它改放到小收納袋。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ホイッスル",
+      "jaReading": "ホイッスル",
+      "jaReadingSegments": [
+        {
+          "text": "ホイッスル",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/emergency-whistle-v1-b6d776e603d1.webp"
+    },
+    {
+      "id": "emergency-blanket",
+      "word": "emergency blanket",
+      "chinese": "緊急保溫毯",
+      "chineseDefinition": "由輕薄反光薄膜製成、可摺小收納的緊急保暖用毯，與織物毛毯不同。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˈmɝː.dʒən.si ˈblæŋ.kɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "緊急保溫毯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A lightweight reflective sheet that folds compactly and helps retain body heat in an emergency.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "薄い反射フィルムでできた、体の熱を逃がしにくくする軽量の防寒用シート。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Unfold the emergency blanket carefully.",
+          "ja": "アルミブランケットをそっと広げてください。",
+          "zh": "請小心展開緊急保溫毯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I felt cold at the shelter, so I put an emergency blanket around my shoulders.",
+          "ja": "避難所で寒くなったので、アルミブランケットを肩に掛けました。",
+          "zh": "我在避難所覺得冷，所以把緊急保溫毯披在肩上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アルミブランケット",
+      "jaReading": "アルミブランケット",
+      "jaReadingSegments": [
+        {
+          "text": "アルミブランケット",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/emergency-blanket-v1-25240b668573.webp"
+    },
+    {
+      "id": "disposable-toilet-kit",
+      "word": "disposable toilet kit",
+      "chinese": "攜帶式廁所組",
+      "chineseDefinition": "緊急時使用的排泄袋與吸收或凝固材料組，可不沖水使用；此處不是有座架的簡易馬桶。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈspoʊ.zə.bəl ˈtɔɪ.lət kɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "攜帶式廁所組",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A disposable waste-bag kit with absorbent or solidifying material for use without flushing.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "袋と吸収材や凝固剤などを使い、水で流さずに排泄物を処理する携帯用のトイレ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Pack a disposable toilet kit in your emergency bag.",
+          "ja": "防災バッグに携帯トイレを入れてください。",
+          "zh": "請在防災包裡放入攜帶式廁所組。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before using the disposable toilet kit, I read the instructions on the packet.",
+          "ja": "携帯トイレを使う前に、袋に書かれた説明を読みました。",
+          "zh": "使用攜帶式廁所組前，我讀了包裝袋上的說明。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "携帯トイレ",
+      "jaReading": "けいたいトイレ",
+      "jaReadingSegments": [
+        {
+          "text": "携帯トイレ",
+          "ruby": "けいたいトイレ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/disposable-toilet-kit-v1-cc09cda42c7d.webp"
+    },
+    {
+      "id": "collapsible-water-bag",
+      "word": "collapsible water bag",
+      "chinese": "折疊儲水袋",
+      "chineseDefinition": "裝水使用、空時可壓扁收納的袋狀容器，通常有提把與旋蓋。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəˈlæp.sə.bəl ˈwɔː.tɚ bæɡ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "折疊儲水袋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A flexible water container that can be folded flat when empty.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "水を入れて運ぶための袋状の容器。空のときは小さく畳める。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Close the cap on the collapsible water bag.",
+          "ja": "給水バッグのふたを閉めてください。",
+          "zh": "請關好折疊儲水袋的蓋子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the collapsible water bag dried, I folded it and put it away.",
+          "ja": "給水バッグが乾いてから、畳んでしまいました。",
+          "zh": "折疊儲水袋乾了之後，我把它摺好收起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "給水バッグ",
+      "jaReading": "きゅうすいバッグ",
+      "jaReadingSegments": [
+        {
+          "text": "給水バッグ",
+          "ruby": "きゅうすいバッグ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/collapsible-water-bag-v1-b8f05ebeb360.webp"
+    },
+    {
+      "id": "alpha-rice",
+      "word": "dehydrated cooked rice",
+      "chinese": "即食乾燥米飯",
+      "chineseDefinition": "煮熟後乾燥保存、加水或熱水並等待指定時間即可復原的米飯，常作為防災食品。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌdiːˈhaɪ.dreɪ.tɪd kʊkt raɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "即食乾燥米飯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Cooked rice that has been dried for storage and is rehydrated with water before eating.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "炊いたご飯を乾燥させ、水やお湯を加えて戻して食べる保存食。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Read the directions on the dehydrated cooked rice pouch.",
+          "ja": "アルファ米の袋の説明を読んでください。",
+          "zh": "請閱讀即食乾燥米飯包裝袋上的說明。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We had no hot water, so we rehydrated the dehydrated cooked rice with cold water.",
+          "ja": "お湯がなかったので、アルファ米を水で戻しました。",
+          "zh": "因為沒有熱水，我們用冷水讓即食乾燥米飯復原。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アルファ米",
+      "jaReading": "アルファまい",
+      "jaReadingSegments": [
+        {
+          "text": "アルファ米",
+          "ruby": "アルファまい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/alpha-rice-v1-8fe3e705d4d1.webp"
+    },
+    {
+      "id": "hardtack",
+      "word": "hardtack",
+      "chinese": "乾糧餅乾",
+      "chineseDefinition": "含水量低、質地堅硬且適合長期保存的餅乾，常見於防災備糧。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhɑːrd.tæk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "乾糧餅乾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hard, dry biscuit made for long storage, often kept as emergency food.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "水分が少なく、長く保存できるように作られた硬いビスケット。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I shared the hardtack with my family.",
+          "ja": "家族と乾パンを分けました。",
+          "zh": "我與家人分享了乾糧餅乾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The hardtack was nearing its best-before date, so I bought a new tin.",
+          "ja": "乾パンの賞味期限が近づいていたので、新しい缶を買いました。",
+          "zh": "乾糧餅乾快到賞味期限了，所以我買了新的一罐。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "乾パン",
+      "jaReading": "かんパン",
+      "jaReadingSegments": [
+        {
+          "text": "乾パン",
+          "ruby": "かんパン"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/hardtack-v1-ec7da0f09674.webp"
+    },
+    {
+      "id": "cotton-work-gloves",
+      "word": "cotton work gloves",
+      "chinese": "棉紗工作手套",
+      "chineseDefinition": "以棉紗等纖維編織的工作手套，與防寒手套、橡膠手套或防割手套不同。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑː.tən wɝːk ɡlʌvz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "棉紗工作手套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Knitted work gloves made from cotton yarn or similar fibers for ordinary handling tasks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "綿などの糸を編んで作られた、作業用の手袋。防刃手袋とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Wear cotton work gloves when carrying boxes.",
+          "ja": "箱を運ぶときは軍手をはめてください。",
+          "zh": "搬箱子時請戴棉紗工作手套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My cotton work gloves got wet, so I changed to a dry pair.",
+          "ja": "軍手がぬれたので、乾いたものに替えました。",
+          "zh": "棉紗工作手套濕了，所以我換了一雙乾的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "軍手",
+      "jaReading": "ぐんて",
+      "jaReadingSegments": [
+        {
+          "text": "軍手",
+          "ruby": "ぐんて"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/cotton-work-gloves-v1-d639608681b7.webp"
+    },
+    {
+      "id": "first-aid-kit",
+      "word": "first-aid kit",
+      "chinese": "急救包",
+      "chineseDefinition": "集中收納繃帶、紗布等基本傷口處理用品的盒子或袋子。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌfɝːstˈeɪd kɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "急救包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A box or pouch containing basic supplies such as bandages and gauze for minor injuries.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "包帯やガーゼなど、けがの応急手当に使う用品をまとめたもの。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Check that the first-aid kit has bandages.",
+          "ja": "救急セットに包帯があるか確認してください。",
+          "zh": "請確認急救包裡有沒有繃帶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After using the gauze, I added a new pack to the first-aid kit.",
+          "ja": "ガーゼを使った後、救急セットに新しいガーゼを一袋補充しました。",
+          "zh": "用完紗布後，我在急救包裡補了一包新紗布。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "救急セット",
+      "jaReading": "きゅうきゅうセット",
+      "jaReadingSegments": [
+        {
+          "text": "救急セット",
+          "ruby": "きゅうきゅうセット"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/first-aid-kit-v1-5fae51c5cc8e.webp"
+    },
+    {
+      "id": "aa-battery",
+      "word": "AA battery",
+      "chinese": "三號電池",
+      "chineseDefinition": "AA規格的圓柱形電池，在台灣常稱三號電池，日本稱單三電池。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌeɪˈeɪ ˈbæt̬.ɚ.i/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "三號電池",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cylindrical battery in the AA size, used in many small devices.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小型の機器などに使う、単三形の円筒状の電池。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This flashlight needs two AA batteries.",
+          "ja": "この懐中電灯には単三電池が二本必要です。",
+          "zh": "這支手電筒需要兩顆三號電池。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before buying replacement AA batteries, I checked the size in the flashlight.",
+          "ja": "交換用の単三電池を買う前に、懐中電灯に入っている電池のサイズを確認しました。",
+          "zh": "買替換用的三號電池前，我確認了手電筒裡電池的尺寸。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "単三電池",
+      "jaReading": "たんさんでんち",
+      "jaReadingSegments": [
+        {
+          "text": "単三電池",
+          "ruby": "たんさんでんち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/aa-battery-v1-a292167bef4c.webp"
+    },
+    {
+      "id": "power-bank",
+      "word": "power bank",
+      "chinese": "行動電源",
+      "chineseDefinition": "可充電並攜帶的外接電池，用來替手機等裝置供電。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpaʊ.ɚ bæŋk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行動電源",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A portable rechargeable battery used to charge a phone or other device.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スマートフォンなどを充電するために持ち歩く、充電式の外付けバッテリー。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Connect your phone to the power bank.",
+          "ja": "スマホをモバイルバッテリーにつないでください。",
+          "zh": "請把手機接上行動電源。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wanted to charge my phone, but the power bank was empty.",
+          "ja": "スマホを充電したかったのですが、モバイルバッテリーの残量がありませんでした。",
+          "zh": "我想替手機充電，但行動電源已經沒電了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "モバイルバッテリー",
+      "jaReading": "モバイルバッテリー",
+      "jaReadingSegments": [
+        {
+          "text": "モバイルバッテリー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/power-bank-v1-969525855a30.webp"
+    },
+    {
+      "id": "rain-poncho",
+      "word": "rain poncho",
+      "chinese": "斗篷雨衣",
+      "chineseDefinition": "從頭套入、寬鬆披覆身體且常帶帽子的斗篷式雨衣。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/reɪn ˈpɑːn.tʃoʊ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "斗篷雨衣",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A loose waterproof cape, usually with a hood, worn over clothes in the rain.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "頭からかぶって体を覆う、ゆったりした形のフード付き雨具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Keep a rain poncho in your bag.",
+          "ja": "かばんにレインポンチョを入れておいてください。",
+          "zh": "請在包裡放一件斗篷雨衣。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Since we had to walk in the rain, we put on rain ponchos before leaving.",
+          "ja": "雨の中を歩く必要があったので、出発前にレインポンチョを着ました。",
+          "zh": "因為得在雨中行走，我們出發前穿上了斗篷雨衣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "レインポンチョ",
+      "jaReading": "レインポンチョ",
+      "jaReadingSegments": [
+        {
+          "text": "レインポンチョ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/rain-poncho-v1-4ea8594cce48.webp"
+    },
+    {
+      "id": "emergency-contact-card",
+      "word": "emergency contact card",
+      "chinese": "緊急聯絡卡",
+      "chineseDefinition": "記有家人等緊急聯絡人資料、可放在錢包或防災包中的卡片。",
+      "category": "emergency-kit",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˈmɝː.dʒən.si ˈkɑːn.tækt kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "緊急聯絡卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A card listing people and phone numbers to contact in an emergency.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "非常時に連絡する相手の名前や電話番号などを書いたカード。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Keep your emergency contact card in your wallet.",
+          "ja": "緊急連絡カードを財布に入れておいてください。",
+          "zh": "請把緊急聯絡卡放在錢包裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My sister changed her phone number, so I updated my emergency contact card.",
+          "ja": "姉の電話番号が変わったので、緊急連絡カードを書き直しました。",
+          "zh": "姊姊換了電話號碼，所以我更新了緊急聯絡卡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "緊急連絡カード",
+      "jaReading": "きんきゅうれんらくカード",
+      "jaReadingSegments": [
+        {
+          "text": "緊急連絡カード",
+          "ruby": "きんきゅうれんらくカード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/emergency-kit-2026-10/emergency-contact-card-v1-ba76f80ff624.webp"
+    }
+  ]
+}

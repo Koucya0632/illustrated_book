@@ -138,7 +138,15 @@
     "emergency-kit:audio:verify": "node scripts/verify-emergency-kit-audio.mjs",
     "emergency-kit:prepare-publish": "node --env-file=.env.local scripts/prepare-emergency-kit-publish-plan.mjs",
     "emergency-kit:publish": "tsx --env-file=.env.local scripts/publish-emergency-kit-series.ts",
-    "emergency-kit:content": "node scripts/prepare-emergency-kit-content.mjs"
+    "emergency-kit:content": "node scripts/prepare-emergency-kit-content.mjs",
+    "onsen-ryokan:prepare-images": "node scripts/prepare-onsen-ryokan-images.mjs",
+    "onsen-ryokan:review": "node scripts/prepare-onsen-ryokan-semantic-review.mjs",
+    "onsen-ryokan:audio:plan": "node scripts/plan-onsen-ryokan-audio.mjs",
+    "onsen-ryokan:audio:generate:local": "node --env-file=.env.local scripts/generate-onsen-ryokan-candidate-audio.mjs",
+    "onsen-ryokan:audio:verify": "node scripts/verify-onsen-ryokan-audio.mjs",
+    "onsen-ryokan:prepare-publish": "node --env-file=.env.local scripts/prepare-onsen-ryokan-publish-plan.mjs",
+    "onsen-ryokan:publish": "tsx --env-file=.env.local scripts/publish-onsen-ryokan-series.ts",
+    "onsen-ryokan:content": "node scripts/prepare-onsen-ryokan-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

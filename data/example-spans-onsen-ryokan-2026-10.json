@@ -1,0 +1,3383 @@
+{
+  "en": {
+    "What time is check-in at the hot spring inn?": [
+      {
+        "t": "What time",
+        "z": "幾點",
+        "j": "何時",
+        "e": "what time"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "check-in",
+        "z": "入住",
+        "j": "チェックイン",
+        "e": "check-in"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "hot spring inn",
+        "z": "溫泉旅館",
+        "j": "温泉旅館",
+        "e": "hot spring inn"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "We wanted a bath before dinner, so we arrived at the hot spring inn early.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "wanted",
+        "z": "想要",
+        "j": "したかった",
+        "e": "wanted"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bath",
+        "z": "泡湯",
+        "j": "入浴",
+        "e": "bath"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "arrived",
+        "z": "抵達了",
+        "j": "着いた",
+        "e": "arrived"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "hot spring inn",
+        "z": "溫泉旅館",
+        "j": "温泉旅館",
+        "e": "hot spring inn"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Where is the communal bath?": [
+      {
+        "t": "Where",
+        "z": "哪裡",
+        "j": "どこ",
+        "e": "where"
+      },
+      {
+        "t": " is the "
+      },
+      {
+        "t": "communal bath",
+        "z": "大浴場",
+        "j": "大浴場",
+        "e": "communal bath"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "The communal bath was being cleaned, so I went after breakfast.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "communal bath",
+        "z": "大浴場",
+        "j": "大浴場",
+        "e": "communal bath"
+      },
+      {
+        "t": " was being "
+      },
+      {
+        "t": "cleaned",
+        "z": "清掃",
+        "j": "清掃",
+        "e": "cleaned"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "went",
+        "z": "去了",
+        "j": "行った",
+        "e": "went"
+      },
+      {
+        "t": " after "
+      },
+      {
+        "t": "breakfast",
+        "z": "早餐",
+        "j": "朝食",
+        "e": "breakfast"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I used the open-air bath before dinner.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "利用した",
+        "e": "used"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "open-air bath",
+        "z": "露天浴池",
+        "j": "露天風呂",
+        "e": "open-air bath"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The rain got heavier, so I left the open-air bath early.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "rain",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "got heavier",
+        "z": "變大了",
+        "j": "強くなった",
+        "e": "got heavier"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "left",
+        "z": "離開了",
+        "j": "上がった",
+        "e": "left"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "open-air bath",
+        "z": "露天浴池",
+        "j": "露天風呂",
+        "e": "open-air bath"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Can I book the private bath for tonight?": [
+      {
+        "t": "Can I "
+      },
+      {
+        "t": "book",
+        "z": "預約",
+        "j": "予約する",
+        "e": "book"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "private bath",
+        "z": "包場浴池",
+        "j": "貸切風呂",
+        "e": "private bath"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "tonight",
+        "z": "今晚",
+        "j": "今夜",
+        "e": "tonight"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "The private bath was booked at six, so we reserved it for seven.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "private bath",
+        "z": "包場浴池",
+        "j": "貸切風呂",
+        "e": "private bath"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "booked",
+        "z": "被預約了",
+        "j": "予約済み",
+        "e": "booked"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "six",
+        "z": "六點",
+        "j": "六時",
+        "e": "six"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "reserved",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "reserved"
+      },
+      {
+        "t": " it for "
+      },
+      {
+        "t": "seven",
+        "z": "七點",
+        "j": "七時",
+        "e": "seven"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I will use the indoor bath today.": [
+      {
+        "t": "I will "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "利用する",
+        "e": "use"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "indoor bath",
+        "z": "室內浴池",
+        "j": "内湯",
+        "e": "indoor bath"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "today",
+        "z": "今天",
+        "j": "今日",
+        "e": "today"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "It was cold outside, so I chose the indoor bath instead of the open-air bath.": [
+      {
+        "t": "It was "
+      },
+      {
+        "t": "cold",
+        "z": "寒冷的",
+        "j": "寒い",
+        "e": "cold"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "outside",
+        "z": "外面",
+        "j": "外",
+        "e": "outside"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "chose",
+        "z": "選擇了",
+        "j": "選んだ",
+        "e": "chose"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "indoor bath",
+        "z": "室內浴池",
+        "j": "内湯",
+        "e": "indoor bath"
+      },
+      {
+        "t": " instead of the "
+      },
+      {
+        "t": "open-air bath",
+        "z": "露天浴池",
+        "j": "露天風呂",
+        "e": "open-air bath"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Does this inn have a footbath?": [
+      {
+        "t": "Does this "
+      },
+      {
+        "t": "inn",
+        "z": "旅館",
+        "j": "旅館",
+        "e": "inn"
+      },
+      {
+        "t": " have a "
+      },
+      {
+        "t": "footbath",
+        "z": "足湯",
+        "j": "足湯",
+        "e": "footbath"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "After our walk, we soaked our feet in the footbath before returning to our room.": [
+      {
+        "t": "After our "
+      },
+      {
+        "t": "walk",
+        "z": "散步",
+        "j": "散歩",
+        "e": "walk"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "soaked",
+        "z": "浸泡了",
+        "j": "つけた",
+        "e": "soaked"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "feet",
+        "z": "腳",
+        "j": "足",
+        "e": "feet"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "footbath",
+        "z": "足湯",
+        "j": "足湯",
+        "e": "footbath"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "returning",
+        "z": "回去",
+        "j": "戻る",
+        "e": "returning"
+      },
+      {
+        "t": " to our "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Leave your clothes in the bath changing area.": [
+      {
+        "t": "Leave",
+        "z": "放著",
+        "j": "置いておく",
+        "e": "leave"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "clothes",
+        "z": "衣服",
+        "j": "服",
+        "e": "clothes"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "bath changing area",
+        "z": "浴場更衣區",
+        "j": "脱衣所",
+        "e": "bath changing area"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I forgot my towel, so I went back to the bath changing area before bathing.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "forgot",
+        "z": "忘了",
+        "j": "忘れた",
+        "e": "forgot"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "towel",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towel"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "went back",
+        "z": "回去了",
+        "j": "戻った",
+        "e": "went back"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "bath changing area",
+        "z": "浴場更衣區",
+        "j": "脱衣所",
+        "e": "bath changing area"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "bathing",
+        "z": "泡湯",
+        "j": "入浴",
+        "e": "bathing"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Wash your body in the bath washing area.": [
+      {
+        "t": "Wash",
+        "z": "清洗",
+        "j": "洗う",
+        "e": "wash"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "body",
+        "z": "身體",
+        "j": "体",
+        "e": "body"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "bath washing area",
+        "z": "浴場洗澡區",
+        "j": "洗い場",
+        "e": "bath washing area"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before getting into the bath, rinse off the soap in the bath washing area.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "getting into",
+        "z": "進入",
+        "j": "入る",
+        "e": "getting into"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "bath",
+        "z": "浴池",
+        "j": "湯船",
+        "e": "bath"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "rinse off",
+        "z": "沖乾淨",
+        "j": "洗い流す",
+        "e": "rinse off"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "soap",
+        "z": "肥皂",
+        "j": "せっけん",
+        "e": "soap"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "bath washing area",
+        "z": "浴場洗澡區",
+        "j": "洗い場",
+        "e": "bath washing area"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put your clothes in the clothes basket.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "clothes",
+        "z": "衣服",
+        "j": "服",
+        "e": "clothes"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "clothes basket",
+        "z": "更衣籃",
+        "j": "脱衣かご",
+        "e": "clothes basket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My clothes basket was on the top shelf, just where I had left it.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "clothes basket",
+        "z": "更衣籃",
+        "j": "脱衣かご",
+        "e": "clothes basket"
+      },
+      {
+        "t": " was on the "
+      },
+      {
+        "t": "top",
+        "z": "最上層",
+        "j": "一番上",
+        "e": "top"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shelf",
+        "z": "置物架",
+        "j": "棚",
+        "e": "shelf"
+      },
+      {
+        "t": ", just where I had "
+      },
+      {
+        "t": "left",
+        "z": "放置了",
+        "j": "置いた",
+        "e": "left"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "I booked a Japanese-style room.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "booked",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "booked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "Japanese-style room",
+        "z": "和室",
+        "j": "和室",
+        "e": "Japanese-style room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We chose a Japanese-style room because we were traveling with a small child.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "chose",
+        "z": "選擇了",
+        "j": "選んだ",
+        "e": "chose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "Japanese-style room",
+        "z": "和室",
+        "j": "和室",
+        "e": "Japanese-style room"
+      },
+      {
+        "t": " because we were "
+      },
+      {
+        "t": "traveling",
+        "z": "旅行",
+        "j": "旅行する",
+        "e": "traveling"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "small",
+        "z": "年幼的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "child",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please take off your shoes before stepping on the tatami mat.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "take off",
+        "z": "脫掉",
+        "j": "脱ぐ",
+        "e": "take off"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "shoes",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "stepping",
+        "z": "踏上",
+        "j": "上がる",
+        "e": "stepping"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "tatami mat",
+        "z": "榻榻米",
+        "j": "畳",
+        "e": "tatami mat"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I spilled tea on the tatami mat, so I wiped it up immediately.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "spilled",
+        "z": "打翻了",
+        "j": "こぼした",
+        "e": "spilled"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tea",
+        "z": "茶",
+        "j": "お茶",
+        "e": "tea"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "tatami mat",
+        "z": "榻榻米",
+        "j": "畳",
+        "e": "tatami mat"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "wiped it up",
+        "z": "擦乾了",
+        "j": "拭き取った",
+        "e": "wiped it up"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "immediately",
+        "z": "立刻",
+        "j": "すぐに",
+        "e": "immediately"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Close the shoji screen gently.": [
+      {
+        "t": "Close",
+        "z": "關上",
+        "j": "閉める",
+        "e": "close"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shoji screen",
+        "z": "障子紙拉門",
+        "j": "障子",
+        "e": "shoji screen"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gently",
+        "z": "輕輕地",
+        "j": "静かに",
+        "e": "gently"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The morning light was bright, so I closed the shoji screen to dim the room a little.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "morning",
+        "z": "早晨",
+        "j": "朝",
+        "e": "morning"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "light",
+        "z": "陽光",
+        "j": "日差し",
+        "e": "light"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "bright",
+        "z": "刺眼的",
+        "j": "まぶしい",
+        "e": "bright"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "closed",
+        "z": "關上了",
+        "j": "閉めた",
+        "e": "closed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shoji screen",
+        "z": "障子紙拉門",
+        "j": "障子",
+        "e": "shoji screen"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "dim",
+        "z": "使變暗",
+        "j": "暗くする",
+        "e": "dim"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "a little",
+        "z": "稍微",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Open the fusuma sliding panel.": [
+      {
+        "t": "Open",
+        "z": "拉開",
+        "j": "開ける",
+        "e": "open"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "fusuma sliding panel",
+        "z": "襖拉門",
+        "j": "ふすま",
+        "e": "fusuma sliding panel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Someone was sleeping next door, so I closed the fusuma sliding panel between the rooms.": [
+      {
+        "t": "Someone",
+        "z": "有人",
+        "j": "誰か",
+        "e": "someone"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "sleeping",
+        "z": "睡覺",
+        "j": "寝ている",
+        "e": "sleeping"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "next door",
+        "z": "隔壁",
+        "j": "隣",
+        "e": "next door"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "closed",
+        "z": "關上了",
+        "j": "閉めた",
+        "e": "closed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "fusuma sliding panel",
+        "z": "襖拉門",
+        "j": "ふすま",
+        "e": "fusuma sliding panel"
+      },
+      {
+        "t": " between the "
+      },
+      {
+        "t": "rooms",
+        "z": "房間",
+        "j": "部屋",
+        "e": "rooms"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "There are flowers in the tokonoma alcove.": [
+      {
+        "t": "There are "
+      },
+      {
+        "t": "flowers",
+        "z": "花",
+        "j": "花",
+        "e": "flowers"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "tokonoma alcove",
+        "z": "床之間",
+        "j": "床の間",
+        "e": "tokonoma alcove"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked the staff whether I could put my luggage in the tokonoma alcove.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "asked",
+        "z": "詢問了",
+        "j": "聞いた",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "staff",
+        "z": "旅館人員",
+        "j": "宿の人",
+        "e": "staff"
+      },
+      {
+        "t": " whether I could "
+      },
+      {
+        "t": "put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "luggage",
+        "z": "行李",
+        "j": "荷物",
+        "e": "luggage"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "tokonoma alcove",
+        "z": "床之間",
+        "j": "床の間",
+        "e": "tokonoma alcove"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the tea on the low dining table.": [
+      {
+        "t": "Put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "tea",
+        "z": "茶",
+        "j": "お茶",
+        "e": "tea"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "low dining table",
+        "z": "和式矮餐桌",
+        "j": "座卓",
+        "e": "low dining table"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before laying out the futons, we moved the low dining table to the side of the room.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "laying out",
+        "z": "鋪設",
+        "j": "敷く",
+        "e": "laying out"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "futons",
+        "z": "日式寢具",
+        "j": "布団",
+        "e": "futons"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "動かした",
+        "e": "moved"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "low dining table",
+        "z": "和式矮餐桌",
+        "j": "座卓",
+        "e": "low dining table"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "side",
+        "z": "邊上",
+        "j": "端",
+        "e": "side"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the haori jacket over your yukata.": [
+      {
+        "t": "Put",
+        "z": "穿上",
+        "j": "着る",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "haori jacket",
+        "z": "羽織外罩",
+        "j": "羽織",
+        "e": "haori jacket"
+      },
+      {
+        "t": " over your "
+      },
+      {
+        "t": "yukata",
+        "z": "浴衣",
+        "j": "浴衣",
+        "e": "yukata"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The corridor was a little cold, so I went back to my room for a haori jacket.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "corridor",
+        "z": "走廊",
+        "j": "廊下",
+        "e": "corridor"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "a little",
+        "z": "有點",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cold",
+        "z": "冷的",
+        "j": "寒い",
+        "e": "cold"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "went back",
+        "z": "回去了",
+        "j": "戻った",
+        "e": "went back"
+      },
+      {
+        "t": " to my "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": " for a "
+      },
+      {
+        "t": "haori jacket",
+        "z": "羽織外罩",
+        "j": "羽織",
+        "e": "haori jacket"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I asked the ryokan attendant about dinner time.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "asked",
+        "z": "詢問了",
+        "j": "聞いた",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ryokan attendant",
+        "z": "旅館接待員",
+        "j": "仲居",
+        "e": "ryokan attendant"
+      },
+      {
+        "t": " about "
+      },
+      {
+        "t": "dinner time",
+        "z": "晚餐時間",
+        "j": "夕食の時間",
+        "e": "dinner time"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because I have a food allergy, I told the ryokan attendant before dinner.": [
+      {
+        "t": "Because I have a "
+      },
+      {
+        "t": "food allergy",
+        "z": "食物過敏",
+        "j": "食物アレルギー",
+        "e": "food allergy"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "told",
+        "z": "告訴了",
+        "j": "伝えた",
+        "e": "told"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ryokan attendant",
+        "z": "旅館接待員",
+        "j": "仲居",
+        "e": "ryokan attendant"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We are having a kaiseki meal tonight.": [
+      {
+        "t": "We are "
+      },
+      {
+        "t": "having",
+        "z": "享用",
+        "j": "いただく",
+        "e": "having"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "kaiseki meal",
+        "z": "會席料理",
+        "j": "会席料理",
+        "e": "kaiseki meal"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "tonight",
+        "z": "今晚",
+        "j": "今夜",
+        "e": "tonight"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The kaiseki meal arrived one course at a time, so we ate slowly.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "kaiseki meal",
+        "z": "會席料理",
+        "j": "会席料理",
+        "e": "kaiseki meal"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "arrived",
+        "z": "送上來了",
+        "j": "出てきた",
+        "e": "arrived"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "one course at a time",
+        "z": "一道一道",
+        "j": "一品ずつ",
+        "e": "one course at a time"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "ate",
+        "z": "用餐了",
+        "j": "食事をした",
+        "e": "ate"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought a hot spring bun.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "hot spring bun",
+        "z": "溫泉饅頭",
+        "j": "温泉まんじゅう",
+        "e": "hot spring bun"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before checking out, I bought a box of hot spring buns for my family.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "checking out",
+        "z": "退房",
+        "j": "チェックアウトする",
+        "e": "checking out"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "box",
+        "z": "一盒",
+        "j": "一箱",
+        "e": "box"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "hot spring buns",
+        "z": "溫泉饅頭",
+        "j": "温泉まんじゅう",
+        "e": "hot spring buns"
+      },
+      {
+        "t": " for my "
+      },
+      {
+        "t": "family",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please collect your room key at the front desk.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "collect",
+        "z": "領取",
+        "j": "受け取る",
+        "e": "collect"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "room key",
+        "z": "房間鑰匙",
+        "j": "ルームキー",
+        "e": "room key"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "front desk",
+        "z": "櫃檯",
+        "j": "フロント",
+        "e": "front desk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I was afraid of losing my room key, so I left it at the front desk before going out.": [
+      {
+        "t": "I was "
+      },
+      {
+        "t": "afraid",
+        "z": "擔心的",
+        "j": "心配な",
+        "e": "afraid"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "losing",
+        "z": "弄丟",
+        "j": "なくす",
+        "e": "losing"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "room key",
+        "z": "房間鑰匙",
+        "j": "ルームキー",
+        "e": "room key"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "left",
+        "z": "寄放了",
+        "j": "預けた",
+        "e": "left"
+      },
+      {
+        "t": " it at the "
+      },
+      {
+        "t": "front desk",
+        "z": "櫃檯",
+        "j": "フロント",
+        "e": "front desk"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "going out",
+        "z": "外出",
+        "j": "外出する",
+        "e": "going out"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "温泉旅館のチェックインは何時ですか。": [
+      {
+        "t": "温泉旅館",
+        "z": "溫泉旅館",
+        "j": "温泉旅館",
+        "e": "hot spring inn",
+        "r": "おんせんりょかん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "チェックイン",
+        "z": "入住",
+        "j": "チェックイン",
+        "e": "check-in",
+        "r": "ちぇっくいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "何時",
+        "z": "幾點",
+        "j": "何時",
+        "e": "what time",
+        "r": "なんじ"
+      },
+      {
+        "t": "ですか。"
+      }
+    ],
+    "夕食前にお風呂に入りたかったので、温泉旅館に早めに着きました。": [
+      {
+        "t": "夕食前",
+        "z": "晚餐前",
+        "j": "夕食の前",
+        "e": "before dinner",
+        "r": "ゆうしょくまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お風呂",
+        "z": "澡堂",
+        "j": "お風呂",
+        "e": "bath",
+        "r": "おふろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りたかった",
+        "z": "想泡湯",
+        "j": "入りたかった",
+        "e": "wanted to bathe",
+        "r": "はいりたかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "温泉旅館",
+        "z": "溫泉旅館",
+        "j": "温泉旅館",
+        "e": "hot spring inn",
+        "r": "おんせんりょかん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "早めに",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early",
+        "r": "はやめに"
+      },
+      {
+        "t": "着きました",
+        "z": "抵達了",
+        "j": "着きました",
+        "e": "arrived",
+        "r": "つきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大浴場はどこですか。": [
+      {
+        "t": "大浴場",
+        "z": "大浴場",
+        "j": "大浴場",
+        "e": "communal bath",
+        "r": "だいよくじょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "どこ",
+        "z": "哪裡",
+        "j": "どこ",
+        "e": "where",
+        "r": "どこ"
+      },
+      {
+        "t": "ですか。"
+      }
+    ],
+    "大浴場は清掃中だったので、朝食後に入りました。": [
+      {
+        "t": "大浴場",
+        "z": "大浴場",
+        "j": "大浴場",
+        "e": "communal bath",
+        "r": "だいよくじょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "清掃中",
+        "z": "清掃中",
+        "j": "清掃中",
+        "e": "being cleaned",
+        "r": "せいそうちゅう"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "朝食後",
+        "z": "早餐後",
+        "j": "朝食の後",
+        "e": "after breakfast",
+        "r": "ちょうしょくご"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りました",
+        "z": "去泡湯了",
+        "j": "入りました",
+        "e": "went in for a bath",
+        "r": "はいりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "夕食前に露天風呂に入りました。": [
+      {
+        "t": "夕食前",
+        "z": "晚餐前",
+        "j": "夕食の前",
+        "e": "before dinner",
+        "r": "ゆうしょくまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "露天風呂",
+        "z": "露天浴池",
+        "j": "露天風呂",
+        "e": "open-air bath",
+        "r": "ろてんぶろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りました",
+        "z": "泡了湯",
+        "j": "入りました",
+        "e": "took a bath",
+        "r": "はいりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨が強くなったので、露天風呂から早めに上がりました。": [
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "強くなった",
+        "z": "變大了",
+        "j": "強くなった",
+        "e": "got heavier",
+        "r": "つよくなった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "露天風呂",
+        "z": "露天浴池",
+        "j": "露天風呂",
+        "e": "open-air bath",
+        "r": "ろてんぶろ"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "早めに",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early",
+        "r": "はやめに"
+      },
+      {
+        "t": "上がりました",
+        "z": "離開浴池了",
+        "j": "お風呂を出ました",
+        "e": "got out of the bath",
+        "r": "あがりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "今夜の貸切風呂を予約できますか。": [
+      {
+        "t": "今夜",
+        "z": "今晚",
+        "j": "今夜",
+        "e": "tonight",
+        "r": "こんや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "貸切風呂",
+        "z": "包場浴池",
+        "j": "貸切風呂",
+        "e": "private bath",
+        "r": "かしきりぶろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "予約できます",
+        "z": "可以預約",
+        "j": "予約できます",
+        "e": "can reserve",
+        "r": "よやくできます"
+      },
+      {
+        "t": "か。"
+      }
+    ],
+    "六時の貸切風呂は予約が入っていたので、七時に予約しました。": [
+      {
+        "t": "六時",
+        "z": "六點",
+        "j": "六時",
+        "e": "six oclock",
+        "r": "ろくじ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "貸切風呂",
+        "z": "包場浴池",
+        "j": "貸切風呂",
+        "e": "private bath",
+        "r": "かしきりぶろ"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "予約",
+        "z": "預約",
+        "j": "予約",
+        "e": "reservation",
+        "r": "よやく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "入っていた",
+        "z": "已有了",
+        "j": "入っていた",
+        "e": "had been made",
+        "r": "はいっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "七時",
+        "z": "七點",
+        "j": "七時",
+        "e": "seven oclock",
+        "r": "しちじ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "予約しました",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "reserved",
+        "r": "よやくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "今日は内湯に入ります。": [
+      {
+        "t": "今日",
+        "z": "今天",
+        "j": "今日",
+        "e": "today",
+        "r": "きょう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "内湯",
+        "z": "室內浴池",
+        "j": "内湯",
+        "e": "indoor bath",
+        "r": "うちゆ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入ります",
+        "z": "要泡湯",
+        "j": "入ります",
+        "e": "will bathe",
+        "r": "はいります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "外は寒かったので、露天風呂ではなく内湯に入りました。": [
+      {
+        "t": "外",
+        "z": "外面",
+        "j": "外",
+        "e": "outside",
+        "r": "そと"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "寒かった",
+        "z": "很冷",
+        "j": "寒かった",
+        "e": "was cold",
+        "r": "さむかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "露天風呂",
+        "z": "露天浴池",
+        "j": "露天風呂",
+        "e": "open-air bath",
+        "r": "ろてんぶろ"
+      },
+      {
+        "t": "ではなく"
+      },
+      {
+        "t": "内湯",
+        "z": "室內浴池",
+        "j": "内湯",
+        "e": "indoor bath",
+        "r": "うちゆ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入りました",
+        "z": "泡了湯",
+        "j": "入りました",
+        "e": "took a bath",
+        "r": "はいりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "この旅館に足湯はありますか。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "旅館",
+        "z": "旅館",
+        "j": "旅館",
+        "e": "inn",
+        "r": "りょかん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "足湯",
+        "z": "足湯",
+        "j": "足湯",
+        "e": "footbath",
+        "r": "あしゆ"
+      },
+      {
+        "t": "はありますか。"
+      }
+    ],
+    "散歩の後、足湯に入ってから部屋に戻りました。": [
+      {
+        "t": "散歩",
+        "z": "散步",
+        "j": "散歩",
+        "e": "walk",
+        "r": "さんぽ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "後",
+        "z": "之後",
+        "j": "後",
+        "e": "afterwards",
+        "r": "あと"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "足湯",
+        "z": "足湯",
+        "j": "足湯",
+        "e": "footbath",
+        "r": "あしゆ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入って",
+        "z": "泡了之後",
+        "j": "入って",
+        "e": "bathed",
+        "r": "はいって"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻りました",
+        "z": "回去了",
+        "j": "戻りました",
+        "e": "returned",
+        "r": "もどりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "服は脱衣所に置いてください。": [
+      {
+        "t": "服",
+        "z": "衣服",
+        "j": "服",
+        "e": "clothes",
+        "r": "ふく"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "脱衣所",
+        "z": "浴場更衣區",
+        "j": "脱衣所",
+        "e": "bath changing area",
+        "r": "だついじょ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please leave",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "タオルを忘れたので、入浴前に脱衣所へ戻りました。": [
+      {
+        "t": "タオル",
+        "z": "毛巾",
+        "j": "タオル",
+        "e": "towel",
+        "r": "たおる"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "忘れた",
+        "z": "忘了",
+        "j": "忘れた",
+        "e": "forgot",
+        "r": "わすれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "入浴前",
+        "z": "泡湯前",
+        "j": "入浴の前",
+        "e": "before bathing",
+        "r": "にゅうよくまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "脱衣所",
+        "z": "浴場更衣區",
+        "j": "脱衣所",
+        "e": "bath changing area",
+        "r": "だついじょ"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "戻りました",
+        "z": "回去了",
+        "j": "戻りました",
+        "e": "went back",
+        "r": "もどりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "洗い場で体を洗ってください。": [
+      {
+        "t": "洗い場",
+        "z": "浴場洗澡區",
+        "j": "洗い場",
+        "e": "bath washing area",
+        "r": "あらいば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "体",
+        "z": "身體",
+        "j": "体",
+        "e": "body",
+        "r": "からだ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗ってください",
+        "z": "請清洗",
+        "j": "洗ってください",
+        "e": "please wash",
+        "r": "あらってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "湯船に入る前に、洗い場でせっけんを洗い流してください。": [
+      {
+        "t": "湯船",
+        "z": "浴池",
+        "j": "湯船",
+        "e": "bath",
+        "r": "ゆぶね"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入る",
+        "z": "進入",
+        "j": "入る",
+        "e": "get into",
+        "r": "はいる"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "洗い場",
+        "z": "浴場洗澡區",
+        "j": "洗い場",
+        "e": "bath washing area",
+        "r": "あらいば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "せっけん",
+        "z": "肥皂",
+        "j": "せっけん",
+        "e": "soap",
+        "r": "せっけん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗い流してください",
+        "z": "請沖乾淨",
+        "j": "洗い流してください",
+        "e": "please rinse off",
+        "r": "あらいながしてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "脱衣かごに服を入れてください。": [
+      {
+        "t": "脱衣かご",
+        "z": "更衣籃",
+        "j": "脱衣かご",
+        "e": "clothes basket",
+        "r": "だついかご"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "服",
+        "z": "衣服",
+        "j": "服",
+        "e": "clothes",
+        "r": "ふく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please put in",
+        "r": "いれてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自分の脱衣かごは、置いたとおり棚の一番上にありました。": [
+      {
+        "t": "自分",
+        "z": "自己",
+        "j": "自分",
+        "e": "oneself",
+        "r": "じぶん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "脱衣かご",
+        "z": "更衣籃",
+        "j": "脱衣かご",
+        "e": "clothes basket",
+        "r": "だついかご"
+      },
+      {
+        "t": "は、"
+      },
+      {
+        "t": "置いた",
+        "z": "放置的",
+        "j": "置いた",
+        "e": "had placed",
+        "r": "おいた"
+      },
+      {
+        "t": "とおり",
+        "z": "如同",
+        "j": "とおり",
+        "e": "just as",
+        "r": "とおり"
+      },
+      {
+        "t": "棚",
+        "z": "置物架",
+        "j": "棚",
+        "e": "shelf",
+        "r": "たな"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "一番上",
+        "z": "最上層",
+        "j": "一番上",
+        "e": "top shelf",
+        "r": "いちばんうえ"
+      },
+      {
+        "t": "にありました。"
+      }
+    ],
+    "和室を予約しました。": [
+      {
+        "t": "和室",
+        "z": "和室",
+        "j": "和室",
+        "e": "Japanese-style room",
+        "r": "わしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "予約しました",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "booked",
+        "r": "よやくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "小さな子どもと一緒だったので、和室を選びました。": [
+      {
+        "t": "小さな",
+        "z": "年幼的",
+        "j": "小さな",
+        "e": "small",
+        "r": "ちいさな"
+      },
+      {
+        "t": "子ども",
+        "z": "孩子",
+        "j": "子ども",
+        "e": "child",
+        "r": "こども"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "一緒",
+        "z": "一起",
+        "j": "一緒",
+        "e": "together",
+        "r": "いっしょ"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "和室",
+        "z": "和室",
+        "j": "和室",
+        "e": "Japanese-style room",
+        "r": "わしつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "z": "選擇了",
+        "j": "選びました",
+        "e": "chose",
+        "r": "えらびました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "畳に上がる前に靴を脱いでください。": [
+      {
+        "t": "畳",
+        "z": "榻榻米",
+        "j": "畳",
+        "e": "tatami mat",
+        "r": "たたみ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "上がる",
+        "z": "踏上",
+        "j": "上がる",
+        "e": "step onto",
+        "r": "あがる"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "靴",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes",
+        "r": "くつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "脱いでください",
+        "z": "請脫掉",
+        "j": "脱いでください",
+        "e": "please take off",
+        "r": "ぬいでください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "畳にお茶をこぼしたので、すぐに拭き取りました。": [
+      {
+        "t": "畳",
+        "z": "榻榻米",
+        "j": "畳",
+        "e": "tatami mat",
+        "r": "たたみ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お茶",
+        "z": "茶",
+        "j": "お茶",
+        "e": "tea",
+        "r": "おちゃ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "こぼした",
+        "z": "打翻了",
+        "j": "こぼした",
+        "e": "spilled",
+        "r": "こぼした"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "すぐに",
+        "z": "立刻",
+        "j": "すぐに",
+        "e": "immediately",
+        "r": "すぐに"
+      },
+      {
+        "t": "拭き取りました",
+        "z": "擦乾了",
+        "j": "拭き取りました",
+        "e": "wiped up",
+        "r": "ふきとりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "障子を静かに閉めてください。": [
+      {
+        "t": "障子",
+        "z": "障子紙拉門",
+        "j": "障子",
+        "e": "shoji screen",
+        "r": "しょうじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "静かに",
+        "z": "輕輕地",
+        "j": "静かに",
+        "e": "gently",
+        "r": "しずかに"
+      },
+      {
+        "t": "閉めてください",
+        "z": "請關上",
+        "j": "閉めてください",
+        "e": "please close",
+        "r": "しめてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "朝の日差しがまぶしかったので、障子を閉めて部屋を少し暗くしました。": [
+      {
+        "t": "朝",
+        "z": "早晨",
+        "j": "朝",
+        "e": "morning",
+        "r": "あさ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "日差し",
+        "z": "陽光",
+        "j": "日差し",
+        "e": "sunlight",
+        "r": "ひざし"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まぶしかった",
+        "z": "很刺眼",
+        "j": "まぶしかった",
+        "e": "was bright",
+        "r": "まぶしかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "障子",
+        "z": "障子紙拉門",
+        "j": "障子",
+        "e": "shoji screen",
+        "r": "しょうじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "閉めて",
+        "z": "關上了",
+        "j": "閉めて",
+        "e": "closed",
+        "r": "しめて"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "少し",
+        "z": "稍微",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "暗くしました",
+        "z": "使變暗了",
+        "j": "暗くしました",
+        "e": "made darker",
+        "r": "くらくしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ふすまを開けてください。": [
+      {
+        "t": "ふすま",
+        "z": "襖拉門",
+        "j": "ふすま",
+        "e": "fusuma sliding panel",
+        "r": "ふすま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開けてください",
+        "z": "請拉開",
+        "j": "開けてください",
+        "e": "please open",
+        "r": "あけてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "隣で人が寝ていたので、部屋の間のふすまを閉めました。": [
+      {
+        "t": "隣",
+        "z": "隔壁",
+        "j": "隣",
+        "e": "next door",
+        "r": "となり"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "person",
+        "r": "ひと"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "寝ていた",
+        "z": "正在睡覺",
+        "j": "寝ていた",
+        "e": "was sleeping",
+        "r": "ねていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "rooms",
+        "r": "へや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "間",
+        "z": "之間",
+        "j": "間",
+        "e": "between",
+        "r": "あいだ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "ふすま",
+        "z": "襖拉門",
+        "j": "ふすま",
+        "e": "fusuma sliding panel",
+        "r": "ふすま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "閉めました",
+        "z": "關上了",
+        "j": "閉めました",
+        "e": "closed",
+        "r": "しめました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "床の間に花が飾ってあります。": [
+      {
+        "t": "床の間",
+        "z": "床之間",
+        "j": "床の間",
+        "e": "tokonoma alcove",
+        "r": "とこのま"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "花",
+        "z": "花",
+        "j": "花",
+        "e": "flowers",
+        "r": "はな"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "飾ってあります",
+        "z": "陳設著",
+        "j": "飾ってあります",
+        "e": "are displayed",
+        "r": "かざってあります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "床の間に荷物を置いてもいいか、宿の人に聞きました。": [
+      {
+        "t": "床の間",
+        "z": "床之間",
+        "j": "床の間",
+        "e": "tokonoma alcove",
+        "r": "とこのま"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "荷物",
+        "z": "行李",
+        "j": "荷物",
+        "e": "luggage",
+        "r": "にもつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置いてもいい",
+        "z": "可以放置",
+        "j": "置いてもいい",
+        "e": "may put",
+        "r": "おいてもいい"
+      },
+      {
+        "t": "か、"
+      },
+      {
+        "t": "宿",
+        "z": "旅館",
+        "j": "宿",
+        "e": "inn",
+        "r": "やど"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "人",
+        "z": "人員",
+        "j": "人",
+        "e": "staff member",
+        "r": "ひと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "聞きました",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "座卓にお茶を置いてください。": [
+      {
+        "t": "座卓",
+        "z": "和式矮餐桌",
+        "j": "座卓",
+        "e": "low dining table",
+        "r": "ざたく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お茶",
+        "z": "茶",
+        "j": "お茶",
+        "e": "tea",
+        "r": "おちゃ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置いてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please put",
+        "r": "おいてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "布団を敷く前に、座卓を部屋の端に寄せました。": [
+      {
+        "t": "布団",
+        "z": "日式寢具",
+        "j": "布団",
+        "e": "futons",
+        "r": "ふとん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "敷く",
+        "z": "鋪設",
+        "j": "敷く",
+        "e": "lay out",
+        "r": "しく"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "座卓",
+        "z": "和式矮餐桌",
+        "j": "座卓",
+        "e": "low dining table",
+        "r": "ざたく"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "端",
+        "z": "邊上",
+        "j": "端",
+        "e": "side",
+        "r": "はし"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "寄せました",
+        "z": "移到一旁了",
+        "j": "寄せました",
+        "e": "moved aside",
+        "r": "よせました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "浴衣の上に羽織を着てください。": [
+      {
+        "t": "浴衣",
+        "z": "浴衣",
+        "j": "浴衣",
+        "e": "yukata",
+        "r": "ゆかた"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "上",
+        "z": "外面",
+        "j": "上",
+        "e": "over",
+        "r": "うえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "羽織",
+        "z": "羽織外罩",
+        "j": "羽織",
+        "e": "haori jacket",
+        "r": "はおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "着てください",
+        "z": "請穿上",
+        "j": "着てください",
+        "e": "please wear",
+        "r": "きてください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "廊下が少し寒かったので、羽織を取りに部屋へ戻りました。": [
+      {
+        "t": "廊下",
+        "z": "走廊",
+        "j": "廊下",
+        "e": "corridor",
+        "r": "ろうか"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "少し",
+        "z": "有點",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "寒かった",
+        "z": "很冷",
+        "j": "寒かった",
+        "e": "was cold",
+        "r": "さむかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "羽織",
+        "z": "羽織外罩",
+        "j": "羽織",
+        "e": "haori jacket",
+        "r": "はおり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "取りに",
+        "z": "去拿",
+        "j": "取りに",
+        "e": "to get",
+        "r": "とりに"
+      },
+      {
+        "t": "部屋",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room",
+        "r": "へや"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "戻りました",
+        "z": "回去了",
+        "j": "戻りました",
+        "e": "went back",
+        "r": "もどりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "仲居さんに夕食の時間を聞きました。": [
+      {
+        "t": "仲居さん",
+        "z": "旅館接待員",
+        "j": "仲居さん",
+        "e": "ryokan attendant",
+        "r": "なかいさん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "夕食",
+        "z": "晚餐",
+        "j": "夕食",
+        "e": "dinner",
+        "r": "ゆうしょく"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "時間",
+        "z": "時間",
+        "j": "時間",
+        "e": "time",
+        "r": "じかん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "聞きました",
+        "z": "詢問了",
+        "j": "聞きました",
+        "e": "asked",
+        "r": "ききました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "食物アレルギーがあるので、夕食前に仲居さんに伝えました。": [
+      {
+        "t": "食物アレルギー",
+        "z": "食物過敏",
+        "j": "食物アレルギー",
+        "e": "food allergy",
+        "r": "しょくもつあれるぎー"
+      },
+      {
+        "t": "があるので、"
+      },
+      {
+        "t": "夕食前",
+        "z": "晚餐前",
+        "j": "夕食の前",
+        "e": "before dinner",
+        "r": "ゆうしょくまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "仲居さん",
+        "z": "旅館接待員",
+        "j": "仲居さん",
+        "e": "ryokan attendant",
+        "r": "なかいさん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "伝えました",
+        "z": "告訴了",
+        "j": "伝えました",
+        "e": "told",
+        "r": "つたえました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "今夜は会席料理をいただきます。": [
+      {
+        "t": "今夜",
+        "z": "今晚",
+        "j": "今夜",
+        "e": "tonight",
+        "r": "こんや"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "会席料理",
+        "z": "會席料理",
+        "j": "会席料理",
+        "e": "kaiseki meal",
+        "r": "かいせきりょうり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "いただきます",
+        "z": "要享用",
+        "j": "いただきます",
+        "e": "will enjoy a meal",
+        "r": "いただきます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "会席料理は一品ずつ出てきたので、ゆっくり食べました。": [
+      {
+        "t": "会席料理",
+        "z": "會席料理",
+        "j": "会席料理",
+        "e": "kaiseki meal",
+        "r": "かいせきりょうり"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "一品ずつ",
+        "z": "一道一道",
+        "j": "一品ずつ",
+        "e": "one course at a time",
+        "r": "いっぴんずつ"
+      },
+      {
+        "t": "出てきた",
+        "z": "送上來了",
+        "j": "出てきた",
+        "e": "was served",
+        "r": "でてきた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly",
+        "r": "ゆっくり"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "温泉まんじゅうを一つ買いました。": [
+      {
+        "t": "温泉まんじゅう",
+        "z": "溫泉饅頭",
+        "j": "温泉まんじゅう",
+        "e": "hot spring bun",
+        "r": "おんせんまんじゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一つ",
+        "z": "一個",
+        "j": "一つ",
+        "e": "one",
+        "r": "ひとつ"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "チェックアウトする前に、家族へのお土産に温泉まんじゅうを一箱買いました。": [
+      {
+        "t": "チェックアウトする",
+        "z": "退房",
+        "j": "チェックアウトする",
+        "e": "check out",
+        "r": "ちぇっくあうとする"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "家族",
+        "z": "家人",
+        "j": "家族",
+        "e": "family",
+        "r": "かぞく"
+      },
+      {
+        "t": "への"
+      },
+      {
+        "t": "お土産",
+        "z": "伴手禮",
+        "j": "お土産",
+        "e": "souvenir gift",
+        "r": "おみやげ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "温泉まんじゅう",
+        "z": "溫泉饅頭",
+        "j": "温泉まんじゅう",
+        "e": "hot spring buns",
+        "r": "おんせんまんじゅう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一箱",
+        "z": "一盒",
+        "j": "一箱",
+        "e": "one box",
+        "r": "ひとはこ"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "フロントでルームキーを受け取ってください。": [
+      {
+        "t": "フロント",
+        "z": "櫃檯",
+        "j": "フロント",
+        "e": "front desk",
+        "r": "ふろんと"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ルームキー",
+        "z": "房間鑰匙",
+        "j": "ルームキー",
+        "e": "room key",
+        "r": "るーむきー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "受け取ってください",
+        "z": "請領取",
+        "j": "受け取ってください",
+        "e": "please collect",
+        "r": "うけとってください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ルームキーをなくすのが心配だったので、外出前にフロントに預けました。": [
+      {
+        "t": "ルームキー",
+        "z": "房間鑰匙",
+        "j": "ルームキー",
+        "e": "room key",
+        "r": "るーむきー"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "なくす",
+        "z": "弄丟",
+        "j": "なくす",
+        "e": "lose",
+        "r": "なくす"
+      },
+      {
+        "t": "のが"
+      },
+      {
+        "t": "心配だった",
+        "z": "當時擔心",
+        "j": "心配だった",
+        "e": "was worried",
+        "r": "しんぱいだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "外出前",
+        "z": "外出前",
+        "j": "外出の前",
+        "e": "before going out",
+        "r": "がいしゅつまえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "フロント",
+        "z": "櫃檯",
+        "j": "フロント",
+        "e": "front desk",
+        "r": "ふろんと"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "預けました",
+        "z": "寄放了",
+        "j": "預けました",
+        "e": "left for safekeeping",
+        "r": "あずけました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

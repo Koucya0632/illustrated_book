@@ -11,6 +11,7 @@ import { MAIN_WORD_FESTIVALS_EXAMPLE_PAIRS } from "./main-word-festivals-2026-10
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_EXAMPLE_PAIRS } from "./main-word-cherry-blossom-season-2026-10";
 import { MAIN_WORD_EMERGENCY_KIT_EXAMPLE_PAIRS } from "./main-word-emergency-kit-2026-10";
 import { MAIN_WORD_CAMPUS_EXAMPLE_PAIRS } from "./main-word-campus-2026-10";
+import { MAIN_WORD_ONSEN_RYOKAN_EXAMPLE_PAIRS } from "./main-word-onsen-ryokan-2026-10";
 import { MAIN_WORD_COLLECTING_HOBBIES_EXAMPLE_PAIRS } from "./main-word-collecting-hobbies-2026-10";
 import { MAIN_WORD_FRUITS_EXAMPLE_PAIRS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS } from "./main-word-professions-2026-09";
@@ -184,6 +185,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_CHERRY_BLOSSOM_SEASON_EXAMPLE_PAIRS,
     MAIN_WORD_COLLECTING_HOBBIES_EXAMPLE_PAIRS,
     MAIN_WORD_CAMPUS_EXAMPLE_PAIRS,
+    MAIN_WORD_ONSEN_RYOKAN_EXAMPLE_PAIRS,
     MAIN_WORD_EMERGENCY_KIT_EXAMPLE_PAIRS,
   );
 

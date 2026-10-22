@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "series": "onsen-ryokan",
+  "prompts": [
+    {
+      "id": "onsen-ryokan",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, full defining features visible, centered with generous white margins, subtle grounding shadow. No text, labels, logos, watermark, decorative frames, people unless explicitly requested. A small traditional Japanese hot-spring inn exterior as a self-contained architectural vignette: two-story wooden ryokan with tiled roof, inviting entrance, and a clearly visible small steaming stone hot-spring pool at the side. The inn is the dominant subject. No town or landscape around it.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "communal-bath",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, full defining features visible, centered with generous white margins, subtle grounding shadow. No text, labels, logos, watermark, decorative frames, people unless explicitly requested. Cutaway architectural vignette of a large communal Japanese ryokan bath hall, with one wide rectangular communal soaking pool for several guests and three wall-mounted washing stations with mirrors and low stools. The space has enclosing walls and a visible roof section, not a swimming pool. Warm stone and wood, steaming hot water, no bathers.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "open-air-bath",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, full defining features visible, centered with generous white margins, subtle grounding shadow. No text, labels, logos, watermark, decorative frames, people unless explicitly requested. An outdoor Japanese rotenburo hot spring bath: a low wide irregular stone-rimmed soaking pool with steaming pale blue water, exposed to open air, a short bamboo privacy fence behind and two small natural rocks. Self-contained architectural vignette, no ceiling, no surrounding landscape, no people.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "private-bath",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, full defining features visible, centered with generous white margins, subtle grounding shadow. No text, labels, logos, watermark, decorative frames, people unless explicitly requested. A compact Japanese ryokan private bath suite for exclusive use by one party: cutaway small wood-paneled room with one small square hinoki tub holding gently steaming water, a single washing station, and one clearly closed private entrance door with simple interior lock. Isolated miniature architectural vignette with white outside the room. No signs, no people.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "indoor-bath",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, complete defining features, centered generous white padding. Subtle shadow. No text, labels, logos, watermark, people or decorative frame. A compact Japanese indoor onsen bath, self-contained cutaway architectural vignette. Single stone rectangular soaking pool holding steaming hot water inside a fully enclosed room, with visible ceiling beams, walls, and a closed frosted-glass window; no outdoor opening or landscape. Pool is dominant; no shower stations needed.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "footbath",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, complete defining features, centered generous white padding. Subtle shadow. No text, labels, logos, watermark, people or decorative frame. A Japanese onsen footbath, self-contained small architectural vignette: a long narrow shallow trough of warm water, wooden benches immediately alongside it for seated guests to soak only feet and calves, and a small simple wooden canopy over the benches. Clearly too shallow/narrow for full-body bathing; no people.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "bath-changing-area",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, complete defining features, centered generous white padding. Subtle shadow. No text, labels, logos, watermark, people or decorative frame. Cutaway dry Japanese ryokan bath changing room: wooden open cubby shelving holding wicker clothes baskets, a clean dry floor, and a small vanity mirror area. No water, no bathtub or shower. Spatial vignette isolated on white with generous padding.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "bath-washing-area",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, complete defining features, centered generous white padding. Subtle shadow. No text, labels, logos, watermark, people or decorative frame. A section of Japanese communal-bath washing area: three low individual wall-mounted shower stations with mirrors, handheld shower hoses and mixer taps, each with a low bath stool and wash basin on a wet tiled floor. A self-contained wall-and-floor cutaway isolated on white. NO soaking pool or bathtub.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "changing-basket",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with natural materials and accurate Japanese daily-life design. Pure white background, isolated subject, complete defining features, centered generous white padding. Subtle shadow. No text, labels, logos, watermark, people or decorative frame. One empty Japanese bath changing basket for clean removed clothes, shallow rounded rectangular light-brown woven rattan basket with open top and low walls. Show the inside clearly from three-quarter overhead. No clothes, no lid, no laundry machine, no handle.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "low-dining-table",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with accurate Japanese daily-life design, natural materials, soft light. Pure white background, isolated subject, fully visible with generous white padding, subtle grounding shadow. No text, numbers, brand, logo, watermark, frame. One Japanese zataku low dining table, polished warm dark wood rectangular tabletop with softly rounded corners, four short sturdy legs for sitting on the floor. Table alone with no chairs or dishes, no futon blanket, no tall legs. Three-quarter product view.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "haori-jacket",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with accurate Japanese daily-life design, natural materials, soft light. Pure white background, isolated subject, fully visible with generous white padding, subtle grounding shadow. No text, numbers, brand, logo, watermark, frame. One traditional Japanese haori outer jacket as provided in a ryokan: navy-blue subtly textured fabric, short hip-length open front, wide kimono-style sleeves, contrasting pale lining subtly visible, small front fastening cords. Garment alone shaped as if on an invisible mannequin; no person, no hanger, no yukata underneath, no belt.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "ryokan-attendant",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with accurate Japanese daily-life design, natural materials, soft light. Pure white background, isolated subject, fully visible with generous white padding, subtle grounding shadow. No text, numbers, brand, logo, watermark, frame. One adult Japanese ryokan guest attendant standing full-body, politely presenting a small tray with a teapot and two cups. Modest understated mauve kimono, obi, neat practical hair, tabi socks and simple indoor sandals. Warm professional expression and natural realistic hands. Person is the primary subject, no background room. No stereotypes, no sexualization, no geisha makeup, no nametag or lettering.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "kaiseki-meal",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with accurate Japanese daily-life design, natural materials, soft light. Pure white background, isolated subject, fully visible with generous white padding, subtle grounding shadow. No text, numbers, brand, logo, watermark, frame. A Japanese ryokan kaiseki multi-course dinner shown as an educational overview of several small portions: sashimi on a small plate, grilled fish, simmered vegetables in a bowl, a lidded soup bowl with lid set aside, a rice bowl, and a tiny pickle dish. Coherent modest portions in varied refined Japanese ceramic dishes neatly arranged as one meal on a plain low rectangular lacquer tray. No table, no person, no alcohol or ornate decoration.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": false,
+      "rejectionReason": "Too similar to an everyday Japanese set meal on one tray."
+    },
+    {
+      "id": "hot-spring-bun",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with accurate Japanese daily-life design, natural materials, soft light. Pure white background, isolated subject, fully visible with generous white padding, subtle grounding shadow. No text, numbers, brand, logo, watermark, frame. Two Japanese onsen manju sweet buns: one whole small round brown steamed bun and one cut half showing dense dark red sweet azuki bean paste filling and a thin brown soft dough skin. On a tiny plain white saucer, isolated on white. No savory meat filling, no packaging, no writing or stamps.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "room-key",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration with accurate Japanese daily-life design, natural materials, soft light. Pure white background, isolated subject, fully visible with generous white padding, subtle grounding shadow. No text, numbers, brand, logo, watermark, frame. A traditional Japanese ryokan room key: one silver metal door key attached by a plain metal ring to one long narrow solid honey-colored wooden rectangular key fob. Fob completely blank without room numbers, lettering or patterns. Whole object flat in a gentle diagonal three-quarter product view, no hand.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "japanese-style-room",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration of accurate Japanese daily-life design. Pure white background outside the isolated subject. Complete features and generous white margins, soft natural light and subtle shadow. No text, brands, logos, watermark, people or decorative frame. A traditional ryokan Japanese-style guest room shown as a compact cutaway room vignette: six tatami floor mats with dark cloth edges, a plain low wooden table with two floor cushions, translucent shoji window and opaque sliding panel at the side. Room is the subject, no Western bed, no elaborate landscape, no bath.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "tatami-mat",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration of accurate Japanese daily-life design. Pure white background outside the isolated subject. Complete features and generous white margins, soft natural light and subtle shadow. No text, brands, logos, watermark, people or decorative frame. ONE separate traditional Japanese tatami floor mat, thick elongated rectangular panel with finely woven pale green-beige igusa surface and two dark blue fabric borders along its long edges. Three-quarter overhead product view showing the thickness, isolated on white. Not a room, not a yoga mat, no pillows.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "shoji-screen",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration of accurate Japanese daily-life design. Pure white background outside the isolated subject. Complete features and generous white margins, soft natural light and subtle shadow. No text, brands, logos, watermark, people or decorative frame. A pair of traditional Japanese shoji sliding screens in a plain minimal wooden track frame, one slightly slid aside. Fine wooden square lattices covered with translucent off-white paper. Full freestanding door-and-frame assembly isolated on white, no surrounding room, no landscape, no opaque painted panels.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "fusuma-panel",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration of accurate Japanese daily-life design. Pure white background outside the isolated subject. Complete features and generous white margins, soft natural light and subtle shadow. No text, brands, logos, watermark, people or decorative frame. A pair of Japanese fusuma sliding panels in a minimal dark wooden track frame: large flat opaque warm ivory paper-covered surfaces, narrow dark borders, one small dark round recessed finger pull in each panel, one panel slightly slid aside. Entire frame isolated on white, no wooden lattice grids, no translucent paper, no painted scenery.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "tokonoma-alcove",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary asset. Semi-realistic high-quality catalog illustration of accurate Japanese daily-life design. Pure white background outside the isolated subject. Complete features and generous white margins, soft natural light and subtle shadow. No text, brands, logos, watermark, people or decorative frame. A traditional Japanese tokonoma display alcove as a self-contained architectural cutaway: recessed wall niche, slightly raised polished wood base, a single plain neutral hanging scroll with one simple ink brush landscape but NO calligraphy or writing, and a small ikebana flower arrangement. Plain supporting post at one side. No bed, no altar, no furniture outside alcove.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "category-onsen-ryokan",
+      "prompt": "Create ONE square 1024x1024 Tuji picture dictionary category cover for Japanese hot spring inns. Semi-realistic refined catalog illustration, pure white background, cohesive compact miniature cutaway vignette. A small welcoming traditional wooden ryokan with tiled roof occupies the back-left; beside it is a steaming stone-rimmed open-air hot spring pool; the front-right reveals a little tatami guest-room corner with a low wooden table and one teacup. Warm wood, pale sage tatami, soft steam and gently glowing windows. Three-quarter elevated view, all structures and objects fully within the frame and generously padded by white. No text, logos, brands, watermark, collage borders, mountain background, trees outside the vignette, or people. A calm educational cover with clear shapes visible at small size.",
+      "version": 1,
+      "tool": "built-in imagegen",
+      "selected": true
+    },
+    {
+      "id": "kaiseki-meal",
+      "version": 2,
+      "tool": "built-in imagegen",
+      "prompt": "Create ONE square 1024x1024 Tuji educational picture dictionary illustration of a formal Japanese ryokan 会席料理 kaiseki multi-course dinner. This is a visual overview of courses normally served in succession: arrange EIGHT distinct small refined dishes in an elegant airy grouping directly on white, each portion petite. Include a hassun appetizer plate with three tiny seasonal bites, a delicate sashimi dish with three slices, a grilled fish course on a narrow ceramic plate, a lidded simmered vegetable bowl with lid aside, a chawanmushi cup with lid aside, one tiny pickles dish, a SMALL rice bowl toward the back, and a tiny seasonal fruit dessert dish. Dishes are varied understated Japanese pottery and lacquerware. Emphasize the sequence and variety of formal small courses rather than a standardized everyday meal on one tray. No large dominant rice bowl, no single cafeteria tray, no place mat, no table, no person, no drinks, no text, brands, logos, watermark. Semi-realistic polished catalog rendering, accurate edible food and natural ceramic textures, elevated three-quarter view. Entire grouping centered with broad white margins, all dishes visible, gentle soft shadow.",
+      "selected": true,
+      "status": "visually-accepted"
+    }
+  ]
+}

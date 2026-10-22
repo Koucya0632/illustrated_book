@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "series": "onsen-ryokan",
+  "reviewer": "Codex, individual concept and sentence editorial review",
+  "scope": "Every new word and both examples, with individually authored contextual glosses; no independent model review or listening-quality claim.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "onsen-ryokan",
+      "verdict": "pass",
+      "reason": "限定有溫泉設施的旅館，英日詞義一致，不把所有旅館或飯店都當溫泉旅館。",
+      "sourceSha256": "e8a63224452fa4ef8866f9fa1f4c293d100e5fc38257c55c05519bf620242afa"
+    },
+    {
+      "kind": "example",
+      "wordId": "onsen-ryokan",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問溫泉旅館入住時間是實際住宿對話，三語問題與場所相符。",
+      "sourceSha256": "622f775d928edd4e5fc314ffa71ec42aceb491ff7bf0fb4cd0c3bdead14dd3b0"
+    },
+    {
+      "kind": "example",
+      "wordId": "onsen-ryokan",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因想在晚餐前泡湯而提早到旅館，保留願望、時間與提早抵達的因果。",
+      "sourceSha256": "48ae4e9a3e0637c1f7c086d43e5e188022a13f53f7a0eb3f8b22889f4f0420fa"
+    },
+    {
+      "kind": "word",
+      "wordId": "communal-bath",
+      "verdict": "pass",
+      "reason": "大浴場以共用的大浴池區別私人浴室；不聲稱必然是露天或所有浴場都用天然泉水。",
+      "sourceSha256": "2e34a70677465661a6a2e6e50184d3e90daa9214bc3ef904d206f8ec5a5d55a2"
+    },
+    {
+      "kind": "example",
+      "wordId": "communal-bath",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問大浴場位置是直接住宿用例，與定義一致。",
+      "sourceSha256": "2d6e0dbf12288988095ca90e9ada285f6dbd05bea740627ded3e418ff89ea458"
+    },
+    {
+      "kind": "example",
+      "wordId": "communal-bath",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因清掃而改在早餐後入浴，保留暫停使用原因及改變的時間。",
+      "sourceSha256": "33b59148f5a0ead3202c13268283720da929d0b554bf99a1e271ab52bb9e4f54"
+    },
+    {
+      "kind": "word",
+      "wordId": "open-air-bath",
+      "verdict": "pass",
+      "reason": "露天風呂的關鍵是戶外浴池，不以岩石造型或一定看得到山景作必要條件。",
+      "sourceSha256": "8ee54ba6317d5a0aa89d2a190383577862e3032ffca43dc63bac72fa7cf56c7d"
+    },
+    {
+      "kind": "example",
+      "wordId": "open-air-bath",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "晚餐前使用露天浴池是簡單自然的個人安排。",
+      "sourceSha256": "0a363c32371468344c274be94daeb563a9d37a650d90bb52979f651ec0b13e7a"
+    },
+    {
+      "kind": "example",
+      "wordId": "open-air-bath",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因雨勢變大而提早離池，三語均是雨量變化導致提早結束。",
+      "sourceSha256": "d51f8e0581604d671ac5ed6a5a7cf1906d13970d2364d0efbb332e9804bb2328"
+    },
+    {
+      "kind": "word",
+      "wordId": "private-bath",
+      "verdict": "pass",
+      "reason": "貸切風呂以一組專用界定，與客房附設浴池及公共大浴場區別，圖僅顯示小型獨立浴室。",
+      "sourceSha256": "0280177a1e63d09a6101af71efec79bc8a504ba89a7a0970fb14d6782017c1f0"
+    },
+    {
+      "kind": "example",
+      "wordId": "private-bath",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "預約當晚包場浴池是直接服務對話，不宣稱所有旅館有同一制度。",
+      "sourceSha256": "58ee7c5cfee9099c78bfa6201eac7b962a356206b8a9bbdf47232c5f15e91fdf"
+    },
+    {
+      "kind": "example",
+      "wordId": "private-bath",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "六點時段已被訂走所以改約七點，保留滿位原因及新時間。",
+      "sourceSha256": "3ef5fab449c0b1aa782ea4686e6bc4e2b1ada373b6e745cba8635fa68f625090"
+    },
+    {
+      "kind": "word",
+      "wordId": "indoor-bath",
+      "verdict": "pass",
+      "reason": "内湯依室內位置分類，大浴場依共用規模分類，兩者可重疊但教學對比軸不同。",
+      "sourceSha256": "12e232812ac3e3d2a3ee67726cfdfc060cb84383ba96c7d634d6baac2a6a6f5f"
+    },
+    {
+      "kind": "example",
+      "wordId": "indoor-bath",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "當天選擇室內浴池是明確選項，不誤譯成私人客房浴室。",
+      "sourceSha256": "e2cbde310ffee18782bc7d8e7aa66a1b5b819295a1c30a57579d40aae9b9e8f2"
+    },
+    {
+      "kind": "example",
+      "wordId": "indoor-bath",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "外面很冷所以改泡室內池，三語選擇與原因一致。",
+      "sourceSha256": "2a3b605b818d30238f4a89eb50125eb0e1c2e9fa03bf251935c37b886fdb91fe"
+    },
+    {
+      "kind": "word",
+      "wordId": "footbath",
+      "verdict": "pass",
+      "reason": "足湯顯示座位與淺水槽，區別全身入浴池；不聲稱足湯都有醫療功效。",
+      "sourceSha256": "926a57e1e6bf650138570f847ea702df1066384925cf0bba1ceb42a49a4b6ce0"
+    },
+    {
+      "kind": "example",
+      "wordId": "footbath",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問是否備有足湯是直接旅館設施對話。",
+      "sourceSha256": "8e2da63e41672910853c9825b1af2237498ef9d5fe1205957ac9aef4e88fb73b"
+    },
+    {
+      "kind": "example",
+      "wordId": "footbath",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "散步後泡足湯再回房間，三語時間順序和回去地點相符。",
+      "sourceSha256": "545757c8ac951e4a7115a397d9ec9ae58b5baa21f03fa2e513d8355d082c1635"
+    },
+    {
+      "kind": "word",
+      "wordId": "bath-changing-area",
+      "verdict": "pass",
+      "reason": "脱衣所限定浴場脫換衣物區，與校園更衣室及浴室內洗い場區別。",
+      "sourceSha256": "25f45a9d4e6c9f8a25e764bd4874720b69a82fd96177cc487c9b0fe7fc0287d7"
+    },
+    {
+      "kind": "example",
+      "wordId": "bath-changing-area",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把衣物留在乾區是明確用途，沒有把衣服帶進浴池。",
+      "sourceSha256": "aad8854dfd60ae49fb5dde914709cb14391aa75e0e9f2afb52c0b6dd75f12046"
+    },
+    {
+      "kind": "example",
+      "wordId": "bath-changing-area",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "泡湯前想起忘帶毛巾而回更衣區，三語原因及返回動作相符。",
+      "sourceSha256": "5f2e90eca4932734d633fa6f5d4dbb9850cdd8aaaad79da754023c7070728c1d"
+    },
+    {
+      "kind": "word",
+      "wordId": "bath-washing-area",
+      "verdict": "pass",
+      "reason": "洗い場以清洗身體的水龍頭與座位呈現，不畫成泡湯浴池或廚房水槽。",
+      "sourceSha256": "5ac1a44856df3171a5f44325617dad0d393cdff85a58c14836516fbb74abcc19"
+    },
+    {
+      "kind": "example",
+      "wordId": "bath-washing-area",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在洗澡區洗身體是簡單自然的用途說明，場景明確。",
+      "sourceSha256": "2d1c73fd25b477785a9e07b1630d2f6653242cd5bae4fa91527c163b17c94aa1"
+    },
+    {
+      "kind": "example",
+      "wordId": "bath-washing-area",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "入池前沖乾淨泡沫符合浴場用途，時間順序三語一致。",
+      "sourceSha256": "05616e1b50614094e79d37c622b149e423e16bfe7709d5c0cc3bfdff40d215d1"
+    },
+    {
+      "kind": "word",
+      "wordId": "changing-basket",
+      "verdict": "pass",
+      "reason": "更衣籃以泡湯期間暫放乾衣物界定，避免和洗衣籃混義。",
+      "sourceSha256": "8936a4ddab620672bb5b25801dbda1de59d0ddc25dfefdac8b99d9cee9fc32fb"
+    },
+    {
+      "kind": "example",
+      "wordId": "changing-basket",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請把衣服放進更衣籃是直接使用情境，三語物件一致。",
+      "sourceSha256": "c1452d069e09591adfdb49c7f8fb547721e86b5ff3ef0a0a523135eb32e1ecc4"
+    },
+    {
+      "kind": "example",
+      "wordId": "changing-basket",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "籃子仍在自己放置的最上層，三語保留所有者、原位置與位置未變的關係。",
+      "sourceSha256": "77e2a5d93d22d56da82851c5b94f17b24fd98b5660d0401e3165c4bff5b05fd5"
+    },
+    {
+      "kind": "word",
+      "wordId": "japanese-style-room",
+      "verdict": "pass",
+      "reason": "和室是空間類型，榻榻米是地板材料，與單件家具或所有旅館客房區別。",
+      "sourceSha256": "1a7e10375a728841ba7adb2d87a4c056d7761f81c701034226f857f69057c0d5"
+    },
+    {
+      "kind": "example",
+      "wordId": "japanese-style-room",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "預約和室是簡單住宿需求，三語房型一致。",
+      "sourceSha256": "a6c69ae58045a525c3f9ed121a174d1e1314fd2517cea03fe3318842743fe6f5"
+    },
+    {
+      "kind": "example",
+      "wordId": "japanese-style-room",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "有小孩同行因而選擇可鋪寢具的和室，保留同行者和房型選擇原因。",
+      "sourceSha256": "f2b448601f7eeaf82978e29d2fb74a0792a218d4c4a81d1a24014476cd8f4f91"
+    },
+    {
+      "kind": "word",
+      "wordId": "tatami-mat",
+      "verdict": "pass",
+      "reason": "畳作地板鋪材，定義承認現代材質及無邊款式，不把所有畳限定天然稻草。",
+      "sourceSha256": "6f8990d67eb5ddd700dd012971ffa216ae327a1ad1578a54d4d7f06a19a4bae6"
+    },
+    {
+      "kind": "example",
+      "wordId": "tatami-mat",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "禁止穿鞋踏上榻榻米是明確旅館使用提醒。",
+      "sourceSha256": "e3066821a5ef7dca073b60fcc35f70c6848999f1341a2386dc2e5aa1d237a6aa"
+    },
+    {
+      "kind": "example",
+      "wordId": "tatami-mat",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "打翻茶後立刻擦乾，三語原因與處理動作一致，沒有使用清潔藥劑的臆測。",
+      "sourceSha256": "e487bc81384e8f22b180963888bf2749bfc7879e4a19eed753a0cae3e6caedc8"
+    },
+    {
+      "kind": "word",
+      "wordId": "shoji-screen",
+      "verdict": "pass",
+      "reason": "障子以木格與透光紙辨識，明確區別不透光襖與玻璃窗。",
+      "sourceSha256": "d79a91507a6349040c9885e1f0977fa86092930e742f7b2184944dd10940772e"
+    },
+    {
+      "kind": "example",
+      "wordId": "shoji-screen",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "輕輕關障子是常見室內請求，副詞三語對齊。",
+      "sourceSha256": "b2c04ebfdf7e6372ea700e3cbc9acd161d2051a573fdd6cad54fdba23a2b2759"
+    },
+    {
+      "kind": "example",
+      "wordId": "shoji-screen",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "早晨太亮而關障子使房間稍暗，沒有誤稱障子可完全遮光。",
+      "sourceSha256": "b42d1caa817b4053b24dbf7fc9acc6486efe1786c0e6cacb11e6b8a20ed78aae"
+    },
+    {
+      "kind": "word",
+      "wordId": "fusuma-panel",
+      "verdict": "pass",
+      "reason": "ふすま採常見平假名詞頭，圖以不透光面板與凹入拉手區別障子木格透光紙。 英語借詞讀音另依 Merriam-Webster 的 ˈfüsəˌmä 核對末音節 /mɑː/。",
+      "sourceSha256": "7a2a99491dfc6c3c1ec3df1b0fc11393b7d7e52acf0f171ef3597061d1ca0a95"
+    },
+    {
+      "kind": "example",
+      "wordId": "fusuma-panel",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "拉開襖是直接操作，未錯譯為折疊屏風。",
+      "sourceSha256": "8f47cbea985c803bdf4bd4e5ee155b1f81f21109944b5e01c7fd640ebed41d8c"
+    },
+    {
+      "kind": "example",
+      "wordId": "fusuma-panel",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "關上兩室間的襖因隔壁有人睡覺，保留原因與隔間位置，不暗示完全隔音。",
+      "sourceSha256": "85d07394e70daef62bedeb53a75642cd1f75d2e8a82469d265db1159d2616194"
+    },
+    {
+      "kind": "word",
+      "wordId": "tokonoma-alcove",
+      "verdict": "pass",
+      "reason": "床の間是展示凹間，不把床字譯成睡床；掛軸與花器只作辨識線索。",
+      "sourceSha256": "44aeabac129b712883fb342d79d37a39650234068f54eab94bcff1d2b9c0e4e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "tokonoma-alcove",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "注意到床之間花卉是自然的客房觀察，非百科句。",
+      "sourceSha256": "e2f0209f2dc6188da11e261917ef8a69e4408e3557264600befc8db31d10c89d"
+    },
+    {
+      "kind": "example",
+      "wordId": "tokonoma-alcove",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不知道是否可放行李而詢問旅館人員，表達疑問而非教導把行李放展示區。",
+      "sourceSha256": "bc40f4867370a16d348f6fc8807ba699d570e8652b8cf899e6db0d177cc08497"
+    },
+    {
+      "kind": "word",
+      "wordId": "low-dining-table",
+      "verdict": "pass",
+      "reason": "座卓以地板坐姿使用的矮桌界定，與既有沙發茶几用使用情境區別，圖不含暖桌棉被。",
+      "sourceSha256": "c344b6b99a7f3076d79f4e9cd882f94096e9c9841a3c2005cbaaf999d5f7bbb1"
+    },
+    {
+      "kind": "example",
+      "wordId": "low-dining-table",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把茶放在矮餐桌上是簡單具體的使用場景。",
+      "sourceSha256": "750a03556c38b34158952ef9657d0c332881c311b3382b1c01ac6932741ea219"
+    },
+    {
+      "kind": "example",
+      "wordId": "low-dining-table",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "鋪寢具前先移開座卓，保留兩步先後和日式客房用途。",
+      "sourceSha256": "662ea0d8dd72c445a7b7907801440fb29fb1acdb0e123bab4dfef07887b4e54e"
+    },
+    {
+      "kind": "word",
+      "wordId": "haori-jacket",
+      "verdict": "pass",
+      "reason": "羽織是外罩，與浴衣和西式浴袍區別；不聲稱每家旅館都提供。 英語借詞讀音另依 Merriam-Webster 的 ˈhau̇rē 核對為 /ˈhaʊ.ri/。",
+      "sourceSha256": "10d7dd376d88309fc515c92b1e4254a9496348d627a86e5ef1d41b41720a43ab"
+    },
+    {
+      "kind": "example",
+      "wordId": "haori-jacket",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "浴衣外加羽織是正確層次的穿著請求，三語一致。",
+      "sourceSha256": "37db1eaef0e90c31b355b07eb00a3f644cd3098ef25ef68037470ed0c4657815"
+    },
+    {
+      "kind": "example",
+      "wordId": "haori-jacket",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "走廊稍冷而回房拿羽織，保留原因與返回目的，不混成冬季外套。",
+      "sourceSha256": "84e29e13721e1b4fd28eb0c5dd221c94fd5cec12fcad6390a59bc5ce9eedb2c4"
+    },
+    {
+      "kind": "word",
+      "wordId": "ryokan-attendant",
+      "verdict": "pass",
+      "reason": "仲居限定日式旅館及料理店接客服務，與櫃檯結帳職員區別，不按性別限定職業。",
+      "sourceSha256": "e50ea08185566798435c7d568e5c77e7be268c0e9f55518ae7564b0f4ff48023"
+    },
+    {
+      "kind": "example",
+      "wordId": "ryokan-attendant",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問接待員晚餐時間是自然住宿對話。",
+      "sourceSha256": "639659843b53dbcea2c9b1f03fb26b4db46032fd768aa8f044effc8bc25c66b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "ryokan-attendant",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因餐食過敏需求而事先告知接待員，保留時間與對象，不宣稱已保證供餐安全。",
+      "sourceSha256": "8a588bd9de84d55c776422bea4a54e7c4b5ed2c7586864afdc8bcddb5e6ce44c"
+    },
+    {
+      "kind": "word",
+      "wordId": "kaiseki-meal",
+      "verdict": "pass",
+      "reason": "以会席料理明確處理旅館多道日式餐食，註明英文同音詞不等於茶事懐石。",
+      "sourceSha256": "1b886f341b379eaedcfeb088213dad5d1e5d468f3d55f11e7886e5a743cb4a88"
+    },
+    {
+      "kind": "example",
+      "wordId": "kaiseki-meal",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "當晚享用會席料理是自然旅館安排，不把所有日式套餐都當會席。",
+      "sourceSha256": "9a0446c8f934387d75333f8f01568ea451cb1cbf34fc98f45826ebe2d12f5116"
+    },
+    {
+      "kind": "example",
+      "wordId": "kaiseki-meal",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "一道道上菜所以慢慢用餐，保留服務順序與用餐速度的因果，圖為識別用多道餐食總覽。",
+      "sourceSha256": "1ba40cde8d04467356f16f52048b34f41eee0e3c3333c2133806a28d60923dc1"
+    },
+    {
+      "kind": "word",
+      "wordId": "hot-spring-bun",
+      "verdict": "pass",
+      "reason": "温泉まんじゅう以溫泉地伴手禮甜饅頭界定，區別中華肉包，不推定使用溫泉水。",
+      "sourceSha256": "1198d804c7be6d3f44bc3ca83b0b0e4d9010958cdfb3592d16d32c4c2a455a83"
+    },
+    {
+      "kind": "example",
+      "wordId": "hot-spring-bun",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "買一個甜饅頭是簡單真實消費情境。",
+      "sourceSha256": "88a29eb31b5c4b60d4512b4b38941e18f03a22fda6f10fbce59a0a4028b0c063"
+    },
+    {
+      "kind": "example",
+      "wordId": "hot-spring-bun",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "退房前買一盒給家人，保留時間、數量與贈禮對象。",
+      "sourceSha256": "788acf886085e6a40673da650a32f99def83f0fb1447c8a7794f14eafbec9032"
+    },
+    {
+      "kind": "word",
+      "wordId": "room-key",
+      "verdict": "pass",
+      "reason": "ルームキー詞義含鑰匙及房卡，圖選實體金屬鑰匙和長吊牌，沒有誤當紀念鑰匙圈。",
+      "sourceSha256": "f5a4f7b2a9f6821c4141563c107682bb7ef84043f1546fc0d78fb4122c4e83e3"
+    },
+    {
+      "kind": "example",
+      "wordId": "room-key",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "櫃檯領取房間鑰匙是自然入住流程，三語對象一致。",
+      "sourceSha256": "7a8832b6c1535290cf909580e2020876d0fcb3abf49df647ddced75971c6c0fa"
+    },
+    {
+      "kind": "example",
+      "wordId": "room-key",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "怕遺失而在外出前寄放櫃檯，保留擔心、時間及寄存，不宣稱各旅館必須寄存。",
+      "sourceSha256": "5fe5d5d27eb222d01f0fc2bed00f1f9738d45014eb332b51e3f6b15a9dbf23ab"
+    }
+  ]
+}

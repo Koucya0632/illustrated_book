@@ -15,6 +15,7 @@ import { MAIN_WORD_FESTIVALS_IDS } from "./main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS } from "./main-word-cherry-blossom-season-2026-10";
 import { MAIN_WORD_EMERGENCY_KIT_IDS } from "./main-word-emergency-kit-2026-10";
 import { MAIN_WORD_CAMPUS_IDS } from "./main-word-campus-2026-10";
+import { MAIN_WORD_ONSEN_RYOKAN_IDS } from "./main-word-onsen-ryokan-2026-10";
 import { MAIN_WORD_COLLECTING_HOBBIES_IDS } from "./main-word-collecting-hobbies-2026-10";
 
 interface CategoryRow {
@@ -92,6 +93,13 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'campus' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      )) AND (c.id <> 'onsen-ryokan' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_ONSEN_RYOKAN_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'onsen-ryokan' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       )) AND (c.id <> 'emergency-kit' OR NOT EXISTS (

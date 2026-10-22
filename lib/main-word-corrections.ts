@@ -11,6 +11,7 @@ import { MAIN_WORD_FESTIVALS_CORRECTIONS } from "./main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_CORRECTIONS } from "./main-word-cherry-blossom-season-2026-10";
 import { MAIN_WORD_EMERGENCY_KIT_CORRECTIONS } from "./main-word-emergency-kit-2026-10";
 import { MAIN_WORD_CAMPUS_CORRECTIONS } from "./main-word-campus-2026-10";
+import { MAIN_WORD_ONSEN_RYOKAN_CORRECTIONS } from "./main-word-onsen-ryokan-2026-10";
 import { MAIN_WORD_COLLECTING_HOBBIES_CORRECTIONS } from "./main-word-collecting-hobbies-2026-10";
 import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
 import { MAIN_WORD_PROFESSIONS_CORRECTIONS } from "./main-word-professions-2026-09";
@@ -124,6 +125,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_CHERRY_BLOSSOM_SEASON_CORRECTIONS,
   ...MAIN_WORD_COLLECTING_HOBBIES_CORRECTIONS,
   ...MAIN_WORD_CAMPUS_CORRECTIONS,
+  ...MAIN_WORD_ONSEN_RYOKAN_CORRECTIONS,
   ...MAIN_WORD_EMERGENCY_KIT_CORRECTIONS,
   {
     id: "bowl",

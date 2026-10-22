@@ -9,6 +9,7 @@ import {
   OPERATION_TIMING, OperationError, recognitionDelivery, recognitionQuoteInput, recognitionUsage,
   type CandidateCorrection, type RecognitionInput, type RecognitionDelivery,
 } from "./contracts";
+import { recordCaptureUsage } from "./usage";
 
 type Row = Record<string, any>;
 export interface WorkLease { operation: Row; token: string; stagedResult: RecognitionDelivery | null }
@@ -93,6 +94,7 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
       finished_at = ${scope.now}, updated_at = ${scope.now} WHERE id = ${op.job_id} AND user_id = ${a.userId}`;
     await scope.sql`UPDATE ai_operation_attempts SET outcome = 'released', finished_at = ${scope.now}
       WHERE operation_id = ${op.id} AND attempt = ${op.attempt} AND finished_at IS NULL`;
+    await recordCaptureUsage(scope.sql, op.id);
     return view(scope, { ...op, state: "released", failure_code: reason });
   }
 
@@ -311,6 +313,7 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
           WHERE operation_id = ${op.id}`;
         await tx`UPDATE user_atlas_images SET status = CASE WHEN status IN ('confirmed','cards_ready') THEN status ELSE 'needs_review' END,
           updated_at = ${scope.now} WHERE id = ${op.image_id} AND user_id = ${a.userId}`;
+        await recordCaptureUsage(tx, op.id);
         return view(scope, { ...op, state: "committed", result: delivered, failure_code: null });
       });
     },

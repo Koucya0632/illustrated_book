@@ -32,6 +32,7 @@ import { WORD_INSIGHTS_DDL } from "../lib/word-insights-schema";
 import { migrateCreditSchema } from "../lib/credits/schema";
 import { migrateAiOperationsSchema } from "../lib/ai-operations/schema";
 import { migrateAssistantSchema } from "../lib/assistant/schema";
+import { backfillCaptureUsage } from "../lib/ai-operations/usage";
 import { migrateVocabularySchema } from "../lib/assistant/vocabulary/schema";
 import { migrateGrammarSchema } from "../lib/assistant/grammar/schema";
 import { migrateTopicChatSchema } from "../lib/topic-chat/schema";
@@ -2930,6 +2931,7 @@ async function main() {
     console.log(`[migrate] DDL applied (${DDL.length} statements).`);
     await migrateAiOperationsSchema(sql);
     await migrateAssistantSchema(sql);
+    console.log(`[migrate] capture usage backfill: ${await backfillCaptureUsage(sql)} row(s).`);
     await migrateTopicChatSchema(sql);
     await migrateVocabularySchema(sql);
     await migrateGrammarSchema(sql);

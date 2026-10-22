@@ -336,6 +336,13 @@ App 的助手先用裝置上的資料回答分類、收藏與詞條；本機答�
 
 寫入失敗不影響回答：回答照樣送出，只記一筆錯誤。RLS 已開、沒有任何 policy，用戶端讀不到。資料表由 `scripts/migrate.ts` 在正式部署時建立（`migrateAssistantSchema`）。
 
+> **2026-10-22 起是所有付費 AI 的用量紀錄，用途是定價。**
+>
+> - **拍照做卡也寫進來**（`feature = 'capture'`，`lib/ai-operations/usage.ts`）：一次識別操作一列，`request_id` 是 operation id。辨識與補充的所有嘗試加總，`points_charged` 是補償後的淨額（失敗釋放、補充補償都是 0）。在識別 commit／release 與補充 completed／compensated／superseded 時從 attempts 重算後 upsert；寫入包在 savepoint 裡，失敗不會讓結算回滾。每次部署 `migrate.ts` 會補寫沒有列的已結算操作（第一次部署＝回填舊資料）。
+> - **刪帳號時保留、切斷身分**：FK 改為 `ON DELETE SET NULL (user_id)`，刪帳號後列還在，`user_id` 變 null。理由見 tuji-ios `docs/adr/0018-usage-records-outlive-accounts.md`。
+> - **`/admin/credits` 的「實際倍率」**：正式環境近 30 天，功能 × 價目版本，Σ扣點×`pointUsd` ÷ Σ估算成本，分母含沒扣點的呼叫，對照 `markup`（3×）；不滿 50 次顯示「樣本不足」不判讀（`lib/credits/markup-report.ts`）。
+> - **每月對帳**：同一頁顯示本月（UTC）助手估算成本，跟 Anthropic console 帳單比，差超過 10% 就修 `lib/assistant/pricing.ts` 的費率。拍照做卡的供應商（Google Vision、OpenAI 共用 key）另外計費，無法單獨對帳。
+
 對帳用的查詢：
 
 ```sql

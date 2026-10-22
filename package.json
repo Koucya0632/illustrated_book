@@ -130,7 +130,15 @@
     "campus:audio:verify": "node scripts/verify-campus-audio.mjs",
     "campus:prepare-publish": "node --env-file=.env.local scripts/prepare-campus-publish-plan.mjs",
     "campus:publish": "tsx --env-file=.env.local scripts/publish-campus-series.ts",
-    "campus:content": "node scripts/prepare-campus-content.mjs"
+    "campus:content": "node scripts/prepare-campus-content.mjs",
+    "emergency-kit:prepare-images": "node scripts/prepare-emergency-kit-images.mjs",
+    "emergency-kit:review": "node scripts/prepare-emergency-kit-semantic-review.mjs",
+    "emergency-kit:audio:plan": "node scripts/plan-emergency-kit-audio.mjs",
+    "emergency-kit:audio:generate:local": "node --env-file=.env.local scripts/generate-emergency-kit-candidate-audio.mjs",
+    "emergency-kit:audio:verify": "node scripts/verify-emergency-kit-audio.mjs",
+    "emergency-kit:prepare-publish": "node --env-file=.env.local scripts/prepare-emergency-kit-publish-plan.mjs",
+    "emergency-kit:publish": "tsx --env-file=.env.local scripts/publish-emergency-kit-series.ts",
+    "emergency-kit:content": "node scripts/prepare-emergency-kit-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

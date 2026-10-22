@@ -1,0 +1,93 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": {
+    "emergency-go-bag": "Use case: product-mockup. Asset type: Tuji picture dictionary square catalog illustration. Primary request: One emergency evacuation go bag, Japanese 非常用持ち出し袋. A compact red emergency backpack with two padded shoulder straps, top handle, front zip pocket, subtle reflective strips, main compartment slightly open showing a capped water bottle and silver emergency blanket tucked inside. No scattered supplies outside. Semi-realistic friendly detailed catalog rendering, matte fabric textures, centered full object in three-quarter view, white seamless background, generous padding on all edges, soft restrained shadow, no people, no text, no logos, no brand, no watermark. 1024 by 1024.",
+    "flashlight": "Use case: product-mockup. Asset type: Tuji picture dictionary square catalog illustration. Semi-realistic detailed friendly product rendering, centered on pure white seamless background, generous whitespace all around, full subject visible, soft small shadow, authentic everyday Japanese retail form where relevant, no setting, no people, no text, no logos or brands, no watermark. 1024 square. Subject: One ordinary handheld LED flashlight (懐中電灯), black cylindrical body with silver circular reflector and wrist loop. Entire object, turned off, three-quarter view.",
+    "hand-crank-radio": "Use case: product-mockup. Asset type: Tuji picture dictionary square catalog illustration. Semi-realistic detailed friendly product rendering, centered on pure white seamless background, generous whitespace all around, full subject visible, soft small shadow, authentic everyday Japanese retail form where relevant, no setting, no people, no text, no logos or brands, no watermark. 1024 square. Subject: One compact portable emergency AM/FM radio (手回しラジオ), orange body, obvious unfolded hand-operated charging crank on side with small turning handle, short extended telescopic antenna, speaker grille, analog tuning dial without text or numeric markings. Entire device, three-quarter angle clearly displaying crank.",
+    "headlamp": "Use case: product-mockup. Asset type: Tuji picture dictionary square catalog illustration. Semi-realistic detailed friendly product rendering, centered on pure white seamless background, generous whitespace all around, full subject visible, soft small shadow, authentic everyday Japanese retail form where relevant, no setting, no people, no text, no logos or brands, no watermark. 1024 square. Subject: One wearable LED headlamp (ヘッドライト) attached to a visible adjustable elastic headband. Lamp on front of curved headband, no person or head. Show strap distinctly so it cannot be confused with a handheld flashlight.",
+    "emergency-whistle": "Use case: product-mockup. Asset type: Tuji picture dictionary square catalog illustration. Semi-realistic detailed friendly product rendering, centered on pure white seamless background, generous whitespace all around, full subject visible, soft small shadow, authentic everyday Japanese retail form where relevant, no setting, no people, no text, no logos or brands, no watermark. 1024 square. Subject: One bright orange pea-less safety whistle (ホイッスル) with short black lanyard, clearly show mouthpiece and air opening. No other objects.",
+    "emergency-blanket": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: A thin metallic silver emergency survival blanket (アルミブランケット), opened into a broad wrinkled reflective rectangular foil sheet, partly softly folded, with one compact folded silver packet beside it as the same product. Extremely thin foil film, no fabric weave, no plush bedding, no person.",
+    "disposable-toilet-kit": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: A Japanese emergency disposable toilet kit (携帯トイレ): one opened opaque dark waste collection bag with wide open top and flat gusset, beside a small plain silver sealed packet of absorbent solidifying powder and a spare folded dark bag. Clean unused product. No toilet bowl, no seat, no bucket, no liquid, no waste. Make bag-and-sachet kit recognizable.",
+    "alpha-rice": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: A single open plain unbranded stand-up retort-style pouch of dehydrated cooked rice (アルファ米), showing dry cooked rice grains inside, small matching pile of distinct dried rice grains in front, and a simple white spoon. This is dry pre-cooked rice to rehydrate with water, not raw rice in a burlap sack and not a steaming cooked bowl. Pouch has no lettering or markings.",
+    "collapsible-water-bag": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: One collapsible water carrier bag (給水バッグ) made of translucent flexible food-grade plastic, broad soft rectangular gusseted body partly filled with clear water, integrated carry handle at top and blue screw cap on a short corner spout. Empty-style folds at sides visibly demonstrate foldable pouch, not rigid jerry can, not hydration backpack.",
+    "cotton-work-gloves": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: A single pair of off-white knitted cotton work gloves (軍手) laid flat with slightly staggered arrangement, all five fingers visible on each glove, ribbed elastic cuffs with a thin yellow edge, clearly woven cotton knit texture. No latex, no leather, no winter insulation, no hands inside.",
+    "hardtack": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: Japanese kanpan hardtack (乾パン): several small thick golden-brown rectangular hard biscuits with neat docking holes, one biscuit broken to show dry dense texture, beside a small open plain unbranded metal storage tin filled with matching biscuits. No soft bread, no cookies with chocolate, no crackers wrapper text.",
+    "aa-battery": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: Two AA size cylindrical dry-cell batteries (単三電池), upright side by side with one slightly angled, neutral silver and dark blue bodies, clear raised positive terminals and flat negative base visible on angled cell. Each has small accurate AA marking only; no other lettering, no brand, no invented logos. Realistic AA 1:3.5 diameter-to-height proportion, not AAA and not button cell.",
+    "first-aid-kit": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: One compact open zippered first-aid kit (救急セット), red fabric pouch, containing visible neatly organized rolled gauze bandages, sealed sterile gauze packet with no writing, adhesive bandage strips and small blunt scissors. Several defining supplies visible inside, no medical cross symbol, no medicine pills or bottles, no injuries.",
+    "rain-poncho": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: One yellow hooded rain poncho (レインポンチョ), presented empty as a hanging garment with softly draped broad cape silhouette, open loose sides, central neck opening and hood. No person, no mannequin or visible hanger, no separate sleeves or trouser legs, full poncho fits with white margin. Clearly a waterproof loose cape, not a fitted rain jacket.",
+    "power-bank": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: One slim rectangular portable phone power bank (モバイルバッテリー), neutral light gray matte body, USB output ports and four tiny charge indicator lights clearly visible, with one short USB charging cable plugged into its output, cable loop resting beside it. No phone, no wall plug, no electric outlet, no lettering, no numerical display.",
+    "category-emergency-kit": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: Category cover for emergency go-bag vocabulary: one red compact evacuation backpack in the center rear, with a carefully arranged small set of essential supplies in front: black handheld flashlight, orange hand-crank radio with visible crank, folded silver reflective emergency blanket, capped clear water bottle, and small red first-aid pouch. All subjects completely within frame, no huge pile, cohesive recognizable Japanese emergency-kit shopping catalog composition, white seamless background.",
+    "emergency-contact-card": "Use case: product-mockup. Tuji square dictionary catalog illustration, semi-realistic detailed product rendering, isolated on pure white, full centered subject, generous padding, small soft shadow, no people, no text or pseudo-text, no logo, no brand, no watermark. 1024 square. Subject: A single wallet-sized emergency contact card (緊急連絡カード), white rounded rectangular stiff paper in a simple clear protective sleeve, red header band, a small person silhouette icon then empty ruled field, a telephone handset icon then empty ruled field, another small person and phone icon row. Top-down slight three-quarter angle. No readable names or phone numbers, no actual text, no pseudo-text, no medical cross, no credit card chip or bank logos. Clearly an emergency contact information form.",
+    "category-emergency-kit-edit": "Use case: precise-object-edit. Refine this Tuji emergency-kit category cover. Preserve the backpack, flashlight, water bottle, folded silver blanket, first-aid pouch, exact composition, white background, realistic rendering, colors, and all proportions. Change only the tiny rectangular radio tuning window: remove all numerals, tiny letters, and pseudo-text; replace with a clean dark window containing just a few simple unlabeled tick lines and one green tuning indicator. There must be no writing anywhere in the image. Keep everything else identical."
+  },
+  "sources": [
+    {
+      "id": "emergency-go-bag",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-77c9b366-256f-4c94-b023-062164ee9aa8.png"
+    },
+    {
+      "id": "flashlight",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-9378538f-a707-482f-8036-2e13aeee5d5d.png"
+    },
+    {
+      "id": "hand-crank-radio",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-0c01be6c-2cb2-40e0-b7eb-151e831751e4.png"
+    },
+    {
+      "id": "headlamp",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-3090b81b-f1d9-4cd8-a871-f20a77ad7ea8.png"
+    },
+    {
+      "id": "emergency-whistle",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-928edff2-1fa7-4ff8-9af9-a31267eb0416.png"
+    },
+    {
+      "id": "emergency-blanket",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-b86b111e-ab53-440d-8af7-00cced00cde3.png"
+    },
+    {
+      "id": "disposable-toilet-kit",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-d393fbfd-7d89-41be-ae7e-a38f9af560df.png"
+    },
+    {
+      "id": "alpha-rice",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-25a18c59-b0fe-43a3-a777-f9fe9d7efce1.png"
+    },
+    {
+      "id": "collapsible-water-bag",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-aaf6c260-7190-4478-9296-07d3d62f15fb.png"
+    },
+    {
+      "id": "cotton-work-gloves",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-a1f83e81-293f-4e5e-bc63-23ce0d54719a.png"
+    },
+    {
+      "id": "hardtack",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-7781ffdf-7a3e-4f79-86e3-494338fc9d74.png"
+    },
+    {
+      "id": "aa-battery",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-271f99ff-b1fc-4436-a807-16a0ecb6d011.png"
+    },
+    {
+      "id": "first-aid-kit",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-b10dbba7-4b83-484e-91cf-d8ffb0acddc7.png"
+    },
+    {
+      "id": "rain-poncho",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-8d083a04-d3b6-4277-96d0-69c86f9de90a.png"
+    },
+    {
+      "id": "power-bank",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-59b1e940-1a78-4c4f-9ec9-00f288e42f12.png"
+    },
+    {
+      "id": "category-emergency-kit",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-2b42e691-7a33-4128-a516-9a425c9fdc0f.png"
+    },
+    {
+      "id": "emergency-contact-card",
+      "source": "/Users/rex/.codex/generated_images/01a160ec-ab3e-7521-8ee6-bf819608c0cc/exec-8c3aea35-c39a-4f9f-8bef-9393ee287a01.png"
+    }
+  ]
+}

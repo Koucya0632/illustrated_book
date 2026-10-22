@@ -7,6 +7,7 @@ import { enrichmentDelivery } from "./fulfillment-contracts";
 import type { AtlasItemRow } from "../atlas/types";
 import { giveUpEnrichment, recordAiUsage, writeEnrichment } from "../atlas/item-writes";
 import { ATLAS_ENRICH_VERSION, atlasEnrichMaxAttempts } from "../atlas/enrich-policy";
+import { recordCaptureUsage } from "./usage";
 
 type Row = Record<string, any>;
 export interface FulfillmentLease { token: string; stagedResult: unknown; item: AtlasItemRow }
@@ -34,6 +35,8 @@ export function createFulfillments(sql: postgres.Sql, clock = () => new Date()) 
     await s.sql`UPDATE ai_operations SET fulfillment_state = ${value}, updated_at = ${s.now} WHERE id = ${f.operation_id}`;
     await s.sql`UPDATE ai_fulfillment_attempts SET outcome = ${value}, finished_at = ${s.now}
       WHERE operation_id = ${f.operation_id} AND finished_at IS NULL`;
+    // The supplement's attempts and any compensation settle the operation's 用量紀錄 row.
+    if (terminal.has(value)) await recordCaptureUsage(s.sql, f.operation_id);
     return value;
   }
   function fence(s: CreditTransaction, f: Row, token: string) {

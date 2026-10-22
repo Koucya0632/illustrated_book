@@ -17,6 +17,8 @@ import { createCreditUploads } from "../lib/ai-operations/uploads";
 import { createCreditStore } from "../lib/credits/store";
 import type { StoreSnapshot } from "../lib/credits/store-contracts";
 import { creditOperationsReport } from "../lib/credits/operations-report";
+import { migrateAssistantSchema } from "../lib/assistant/schema";
+import { backfillCaptureUsage } from "../lib/ai-operations/usage";
 
 const databaseUrl = process.env.CREDIT_TEST_DATABASE_URL;
 const errorCode = (code: string) => (error: unknown) =>
@@ -62,6 +64,8 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
     await migrateCreditSchema(sql);
     await migrateAiOperationsSchema(sql);
     await migrateAiOperationsSchema(sql);
+    // Settlement writes the operation's 用量紀錄 row.
+    await migrateAssistantSchema(sql);
     // Running it again while requests read every table must not wait on them:
     // an exclusive lock here deadlocked a production deploy.
     await sql.begin(async reading => {
@@ -737,6 +741,69 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
         }
       });
     });
+    const captureRow = async (id: string) =>
+      (await sql`SELECT * FROM assistant_usage WHERE feature = 'capture' AND request_id = ${id}`);
+    const costing = (usd: number) => ({ ...delivery(), usage: { latencyMs: 1, inputTokens: 100, outputTokens: 10, estimatedCostUsd: usd } });
+
+    await t.test("a settled 識別操作 is one 用量紀錄 row; its supplement's cost joins it", async () => {
+      const f = await fixture();
+      const op = await f.accept(), delivered = await f.finish(op.id, costing(0.005));
+      let [row] = await captureRow(op.id);
+      assert.deepEqual([row.points_charged, row.in_scope, row.input_tokens, row.output_tokens, row.estimated_cost_usd, row.model],
+        [100, true, 100, 10, "0.005000", "fixture"]);
+      assert.equal(row.pricing_version, delivered.priceVersion);
+      assert.equal(row.user_id, f.account.userId);
+      await f.operations.confirm(f.account, op.id, delivered.result.candidates[0].id);
+      const run = createFulfillmentRunner(f.fulfillments, async () =>
+        ({ ...enriched(), usage: { latencyMs: 1, inputTokens: 20, estimatedCostUsd: 0.0004 } }));
+      assert.equal(await run(f.account, op.id), "completed");
+      const rows = await captureRow(op.id);
+      assert.equal(rows.length, 1); [row] = rows;
+      assert.deepEqual([row.points_charged, row.input_tokens, row.estimated_cost_usd], [100, 120, "0.005400"]);
+    });
+
+    await t.test("a released run and a compensated supplement keep their cost and take no points", async () => {
+      const f = await fixture();
+      const failed = await f.accept();
+      const run = createAiRunner(f.operations, { prepare: async () => 1, execute: async () => ({ ...costing(0.003), primary: [] }) });
+      assert.equal(await run(f.account, failed.id), "released");
+      const [released] = await captureRow(failed.id);
+      assert.deepEqual([released.points_charged, released.in_scope, released.estimated_cost_usd], [0, false, "0.003000"]);
+
+      const g = await fixture(), { op } = await included(g);
+      assert.equal((await captureRow(op.id))[0].points_charged, 100);
+      process.env.ATLAS_ENRICH_MAX_ATTEMPTS = "0";
+      try { await createFulfillmentRunner(g.fulfillments, async () => enriched())(g.account, op.id); }
+      finally { delete process.env.ATLAS_ENRICH_MAX_ATTEMPTS; }
+      assert.equal((await g.operations.read(g.account, op.id)).fulfillmentState, "compensated");
+      const [compensated] = await captureRow(op.id);
+      assert.deepEqual([compensated.points_charged, compensated.in_scope], [0, true]);
+    });
+
+    await t.test("an operation still running has no row; the backfill writes only the missing ones", async () => {
+      const f = await fixture();
+      const waiting = await f.accept();
+      assert.equal((await captureRow(waiting.id)).length, 0);
+      const settled = await f.accept(undefined, { ...f.input, imageId: await f.newImage() });
+      await f.finish(settled.id, costing(0.002));
+      await sql`DELETE FROM assistant_usage WHERE feature = 'capture' AND request_id = ${settled.id}`;
+      assert.ok(await backfillCaptureUsage(sql) >= 1);
+      const [back] = await captureRow(settled.id);
+      assert.deepEqual([back.points_charged, back.estimated_cost_usd], [100, "0.002000"]);
+      assert.equal(await backfillCaptureUsage(sql), 0);
+      assert.equal((await captureRow(waiting.id)).length, 0);
+    });
+
+    await t.test("a deleted account's capture rows stay, tied to no one", async () => {
+      const f = await fixture();
+      const op = await f.accept();
+      await f.finish(op.id, costing(0.001));
+      await sql`DELETE FROM auth.users WHERE id = ${f.account.userId}`;
+      assert.equal((await sql`SELECT 1 FROM ai_operations WHERE id = ${op.id}`).length, 0);
+      const [kept] = await captureRow(op.id);
+      assert.deepEqual([kept.user_id, kept.points_charged, kept.estimated_cost_usd], [null, 100, "0.001000"]);
+    });
+
     await t.test("operations report counts retry cost separately by environment and leaves the ledger untouched", async () => {
       const [attempt] = await sql`SELECT operation_id,attempt,started_at FROM ai_operation_attempts ORDER BY started_at DESC LIMIT 1`;
       await sql`UPDATE ai_operation_attempts SET usage=${sql.json({ estimatedCostUsd: 0.25 })}

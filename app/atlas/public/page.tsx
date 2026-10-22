@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { listAtlasPublicItems } from "@/lib/atlas-db";
 import { atlasPublicImageUrl } from "@/lib/atlas/storage";
 
 export const dynamic = "force-dynamic";
+
+// Unmoderated user uploads: crawlable for links, not listed in results.
+export const metadata: Metadata = {
+  title: "公開圖鑑 · Tuji",
+  robots: { index: false, follow: true },
+};
 
 export default async function PublicAtlasPage() {
   const items = await listAtlasPublicItems(80);

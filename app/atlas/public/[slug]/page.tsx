@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAtlasPublicItem } from "@/lib/atlas-db";
@@ -6,6 +7,21 @@ import { publicAuthor } from "@/lib/public-author";
 import ReportButton from "./ReportButton";
 
 export const dynamic = "force-dynamic";
+
+// User uploads are moderated only after a report, so they are shareable but
+// kept out of search results; the curated /word pages carry the SEO weight.
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const slug = (await props.params).slug.trim().toLowerCase();
+  const item = /^[a-z0-9-]{1,80}$/.test(slug) ? await getAtlasPublicItem(slug) : null;
+  if (!item) return { robots: { index: false } };
+  const title = `${item.lemma}（${item.display_zh_hant}）· Tuji 公開圖鑑`;
+  const imageUrl = atlasPublicImageUrl(item.image_public_path);
+  return {
+    title,
+    robots: { index: false, follow: true },
+    openGraph: { title, images: imageUrl ? [imageUrl] : undefined },
+  };
+}
 
 export default async function PublicAtlasDetailPage(
   props: {

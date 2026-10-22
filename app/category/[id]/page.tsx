@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import WordCard from "@/components/WordCard";
@@ -9,11 +10,45 @@ import { getCurrentUserId } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { t } from "@/lib/i18n";
+import { isPublicTopicCategory } from "@/lib/site";
 import VisitTracker from "./VisitTracker";
 
 // Forced dynamic so the category title / count strings render in the
 // signed-in user's UI language.
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await props.params;
+  const [cats, items] = await Promise.all([
+    getCategoriesFromDb("zh-Hant"),
+    getWordsByCategory(id, "zh-Hant", "zh-en"),
+  ]);
+  const category = cats.find((c) => c.id === id);
+  if (!category) return {};
+  const sample = items
+    .slice(0, 6)
+    .map((w) => w.chinese)
+    .join("、");
+  const title = `${category.nameZh}的日文、英文單字圖鑑（${items.length} 個）· Tuji`;
+  const description = `看圖學${category.nameZh}會遇到的日文和英文單字：${sample}……每個單字都有圖片、發音與例句。`;
+  const canonical = `/category/${encodeURIComponent(id)}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    // Per-user decks are empty for anonymous visitors.
+    robots: isPublicTopicCategory(id) ? undefined : { index: false },
+    openGraph: {
+      type: "website",
+      siteName: "Tuji",
+      locale: "zh_TW",
+      url: canonical,
+      title,
+      description,
+      images: [items.find((w) => w.imageUrl)?.imageUrl ?? "/marketing/og-home.jpg"],
+    },
+  };
+}
 
 export default async function CategoryPage(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;

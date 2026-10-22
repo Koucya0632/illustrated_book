@@ -7,6 +7,9 @@ import imageUrls from "@/lib/image-urls.json";
 import { getPublicLang } from "@/lib/public-lang";
 import { mt } from "@/lib/marketing-i18n";
 import type { UiLang } from "@/lib/settings";
+import { APP_STORE_ID } from "@/lib/app-store-link";
+import { getCategoriesFromDb } from "@/lib/categories-db";
+import { SITE_URL, isPublicTopicCategory } from "@/lib/site";
 
 // Word images live in Supabase Storage (see next.config.js). `/public/word-images/`
 // is gitignored and never deployed, so local paths 404 in prod — resolve the
@@ -18,8 +21,27 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: mt(lang, "meta.title"),
     description: mt(lang, "meta.desc"),
+    alternates: { canonical: "/" },
   };
 }
+
+// schema.org app description, so search engines (and AI summaries built on
+// them) can tell this page is a language-learning app, not a generic site.
+const appJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Tuji",
+  alternateName: "Tuji 看圖學日文",
+  description:
+    "看圖學日文、英文生活單字的 App：圖片記憶、真人發音、例句、間隔複習，以及用 AI 把自己拍的照片變成單字卡。",
+  applicationCategory: "EducationalApplication",
+  operatingSystem: "iOS",
+  inLanguage: ["zh-TW", "ja", "en"],
+  url: SITE_URL,
+  downloadUrl: `https://apps.apple.com/app/id${APP_STORE_ID}`,
+  image: `${SITE_URL}/brand/tuji-app-icon.png`,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "TWD" },
+};
 
 const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 const HERO_CAPTURE_IMAGE = "/marketing/atlas-capture-cards.webp";
@@ -143,8 +165,13 @@ function MarqueeRow({
 
 export default async function MarketingHomePage() {
   const lang = await getPublicLang();
+  const topics = (await getCategoriesFromDb(lang)).filter((c) => isPublicTopicCategory(c.id));
   return (
     <PublicShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
+      />
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="overflow-hidden">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-16 pt-12 lg:grid-cols-[0.94fr_1.06fr] lg:pb-24 lg:pt-20">
@@ -286,6 +313,42 @@ export default async function MarketingHomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── 生活單字分類 ─────────────────────────────────────── */}
+      {/* Plain links into /category/* — the only path a crawler has from the
+          homepage into the ~1,100 public word pages. */}
+      {topics.length > 0 && (
+        <section id="words" className="scroll-mt-20 pb-16 lg:pb-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="max-w-2xl">
+              <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
+                {mt(lang, "browse.eyebrow")}
+              </div>
+              <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
+                {mt(lang, "browse.title")}
+              </h2>
+              <p className="mt-4 text-base leading-7 text-tuji-ink2">{mt(lang, "browse.subtitle")}</p>
+            </div>
+            <ul className="mt-8 grid grid-cols-2 gap-px bg-tuji-rule sm:grid-cols-3 lg:grid-cols-4">
+              {topics.map((c) => (
+                <li key={c.id}>
+                  <Link
+                    href={`/category/${c.id}`}
+                    className="flex h-full items-center gap-3 bg-tuji-paper p-4 transition duration-120 hover:bg-tuji-paper2"
+                  >
+                    <span className="text-2xl" aria-hidden="true">
+                      {c.emoji}
+                    </span>
+                    <span className="min-w-0 truncate text-[15px] font-bold text-tuji-ink">
+                      {lang === "en" ? c.name : c.nameZh}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* ── 自製圖鑑 ─────────────────────────────────────────── */}
       <section id="atlas" className="scroll-mt-20 pb-16 lg:pb-20">

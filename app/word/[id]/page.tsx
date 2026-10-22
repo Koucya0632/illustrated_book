@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FavoriteButton from "@/components/FavoriteButton";
@@ -40,6 +41,44 @@ function learningSentence(
   return example.target ?? (targetLanguage === "ja" ? "" : example.en);
 }
 
+// One URL per word serves searches in both languages ("電鍋 日文" and
+// "電鍋 英文"), so the title and description name the Japanese and English
+// headwords whatever the visitor's own learning direction is.
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await props.params;
+  const [en, ja] = await Promise.all([
+    getLearningWord(id, "zh-Hant", "zh-en"),
+    getLearningWord(id, "zh-Hant", "zh-ja"),
+  ]);
+  if (!en) return {};
+  const zh = en.chinese;
+  const jaLabel = ja ? (ja.reading && ja.reading !== ja.word ? `${ja.word}（${ja.reading}）` : ja.word) : "";
+  const title = ja
+    ? `${zh} 日文、英文怎麼說？${jaLabel}・${en.word} · Tuji`
+    : `${zh} 英文怎麼說？${en.word} · Tuji`;
+  const jaExample = ja?.examples.find((e) => e.target)?.target;
+  const description = [
+    ja ? `「${zh}」的日文是「${jaLabel}」，英文是「${en.word}」。` : `「${zh}」的英文是「${en.word}」。`,
+    "附圖片、真人發音與例句",
+    jaExample ? `：${jaExample}` : "。",
+  ].join("");
+  const canonical = `/word/${encodeURIComponent(id)}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      type: "article",
+      siteName: "Tuji",
+      locale: "zh_TW",
+      url: canonical,
+      title,
+      description,
+      images: en.imageUrl ? [{ url: en.imageUrl, alt: `${zh} ${en.word}` }] : undefined,
+    },
+  };
+}
+
 export default async function WordDetailPage(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   const userId = await getCurrentUserId();
@@ -47,12 +86,20 @@ export default async function WordDetailPage(props: { params: Promise<{ id: stri
   const lang = settings.uiLang;
   const tr = (key: string, vars?: Record<string, string | number>) => t(lang, key, vars);
 
-  const [w, cats] = await Promise.all([
+  // The same word in the language the reader is NOT studying, shown as a
+  // compact panel so every page teaches both 日文 and 英文.
+  const counterpartDirection = settings.learningDirection === "zh-ja" ? "zh-en" : "zh-ja";
+  const [w, counterpart, cats] = await Promise.all([
     getLearningWord(params.id, lang, settings.learningDirection),
+    getLearningWord(params.id, lang, counterpartDirection),
     getCategoriesFromDb(lang),
   ]);
   if (!w) notFound();
   const cat = cats.find((c) => c.id === w.category);
+  const counterpartExamples = (counterpart?.examples ?? [])
+    .map((ex) => ({ sentence: learningSentence(ex, counterpart?.targetLanguage), zh: ex.zh }))
+    .filter((ex) => ex.sentence)
+    .slice(0, 2);
 
   // After localization, `definitions` carries only the chosen language. The
   // "other languages" panel below is reserved for definitions in OTHER
@@ -262,6 +309,46 @@ export default async function WordDetailPage(props: { params: Promise<{ id: stri
 
         {/* Right column: tabbed 譯義 / 詞形變化 / 來源故事 */}
         <div className="flex flex-col gap-4">
+          {counterpart && (
+            <section className="rounded-[22px] bg-white p-5 shadow-soft">
+              <h2 className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-tuji-ink3">
+                {tr(counterpart.targetLanguage === "ja" ? "word.counterpartJa" : "word.counterpartEn")}
+              </h2>
+              <div className="mt-2 flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div
+                    lang={counterpart.targetLanguage}
+                    className="font-display text-2xl font-extrabold tracking-tight text-tuji-ink"
+                  >
+                    {counterpart.word}
+                  </div>
+                  {counterpart.pronunciation && counterpart.pronunciation !== counterpart.word && (
+                    <div lang={counterpart.targetLanguage} className="mt-1 font-mono text-sm text-tuji-ink2">
+                      {counterpart.pronunciation}
+                    </div>
+                  )}
+                </div>
+                <PronunciationButton
+                  text={counterpart.word}
+                  audioUrls={counterpart.audioUrls}
+                  language={counterpart.targetLanguage}
+                  size="md"
+                />
+              </div>
+              {counterpartExamples.length > 0 && (
+                <ul className="mt-4 flex flex-col gap-2 border-t border-black/5 pt-3">
+                  {counterpartExamples.map((ex, i) => (
+                    <li key={i}>
+                      <div lang={counterpart.targetLanguage} className="text-[14px] font-semibold leading-relaxed text-tuji-ink">
+                        {ex.sentence}
+                      </div>
+                      {ex.zh && <div className="mt-0.5 text-[13px] text-tuji-ink3">{ex.zh}</div>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          )}
           <DefinitionTabs tabs={tabs} />
         </div>
       </div>

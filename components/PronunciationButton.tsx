@@ -12,8 +12,13 @@ export default function PronunciationButton({
   size = "md",
   label = "播放發音",
   wordId,
+  language,
 }: {
   text: string;
+  /** Overrides the language implied by the user's learning direction — for
+   *  text that is deliberately in the other language (the word page's
+   *  日文/英文 counterpart panel). */
+  language?: "en" | "ja";
   /** Pre-generated clips keyed by locale ("en-US"/"en-GB"/"ja-JP"). When the
    *  resolved locale has a clip it plays that; otherwise falls back to
    *  on-device synthesis of `text`. */
@@ -35,7 +40,8 @@ export default function PronunciationButton({
   function handle(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
-    const lang = learningDirection === "zh-ja" ? "ja-JP" : accentToLang(accent);
+    const target = language ?? (learningDirection === "zh-ja" ? "ja" : "en");
+    const lang = target === "ja" ? "ja-JP" : accentToLang(accent);
     const url = audioUrls?.[lang];
     // A clip plays regardless of speechSynthesis support; only block when we'd
     // have to fall back to synthesis and the browser can't do it.

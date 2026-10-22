@@ -26,7 +26,7 @@ type Row = Record<UiLang, string>;
 const STRINGS: Record<string, Row> = {
   // ── Metadata ────────────────────────────────────────────────
   "meta.title": {
-    "zh-Hant": "Tuji · 看圖學日文、英文單字",
+    "zh-Hant": "Tuji · 學日文、英文單字 App｜看圖記住生活單字",
     "zh-Hans": "Tuji · 图鉴式单词学习",
     ja: "Tuji · 図鑑で覚える単語学習",
     en: "Tuji · Japanese & English words, picture-first",
@@ -38,6 +38,21 @@ const STRINGS: Record<string, Row> = {
       "看得见的单词，记得住的语言。Tuji 用日常生活的图片、间隔复习与 AI 自制图鉴，帮中文用户学会生活英语和日语。",
     ja: "見える単語は、忘れにくい。Tuji は日常の写真・間隔反復・AI 図鑑で、実生活の英語と日本語が身につく単語学習アプリです。",
     en: "The everyday things you run into living in Japan, as picture cards. Tuji teaches everyday Japanese and English with real-life photos, spaced repetition, and an AI-built picture atlas.",
+  },
+
+  // ── 生活單字分類 (crawlable index of the public word pages) ───
+  "browse.eyebrow": { "zh-Hant": "單字圖鑑", "zh-Hans": "单词图鉴", ja: "単語図鑑", en: "Word atlas" },
+  "browse.title": {
+    "zh-Hant": "按場景瀏覽生活單字",
+    "zh-Hans": "按场景浏览生活单词",
+    ja: "場面別に生活の単語を見る",
+    en: "Browse everyday words by place",
+  },
+  "browse.subtitle": {
+    "zh-Hant": "每個單字都有圖片、日文與英文、發音和例句，不用下載也能先看看。",
+    "zh-Hans": "每个单词都有图片、日语与英语、发音和例句，不用下载也能先看看。",
+    ja: "どの単語にも写真・日本語と英語・発音・例文つき。アプリなしでも見られます。",
+    en: "Every word has a picture, Japanese and English, audio and example sentences. No download needed to look around.",
   },
 
   // ── Header / footer nav ─────────────────────────────────────

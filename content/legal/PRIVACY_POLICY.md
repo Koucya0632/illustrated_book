@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: October 20, 2026
+Last updated: October 22, 2026
 
 Tuji is provided by Hong Kuok Wai. This Privacy Policy explains how we collect, use, disclose, store, and protect information when you use the Tuji mobile app, website, APIs, and related services (together, the "Service").
 
@@ -58,7 +58,7 @@ If you use Tuji's text-based AI features (AI vocabulary, AI grammar, story time,
 - The results the AI returns, such as vocabulary cards, grammar explanations and practice sets, stories, chat replies, and chat reviews.
 - Request records, such as the feature used, learning direction, interface language, model information, token usage, and the Can Points charged.
 
-These records are linked to your account so you can see your history, and they are deleted when you delete your account.
+These records are linked to your account so you can see your history, and they are deleted when you delete your account, except for the usage figures described in section 8, which are kept with the link to your account removed.
 
 ### 1.5 Voice Input and Read-Aloud Practice
 
@@ -215,6 +215,7 @@ In general:
 - Uploaded Atlas images and related private content are retained while your account exists or until deleted.
 - Public content may remain available until unpublished, removed, or deleted.
 - AI assistant records (section 1.4) are retained while your account exists or until deleted.
+- Usage figures for paid AI features, including AI image recognition, are kept after you delete your account, with the link to your account removed. A usage figure records only the feature used, the price list, model information, token counts, the estimated cost, the Can Points charged, and the time. It contains nothing you entered or uploaded and nothing the AI returned. We use these figures to check and set the prices of AI features.
 - Payment and Can Points records may be retained as needed for billing, audit, fraud prevention, and legal compliance.
 - Crash, diagnostic, event, and log data may be retained for a limited period for security, debugging, and product improvement.
 - Aggregated or de-identified information may be retained longer.
@@ -226,6 +227,8 @@ Deleted data may remain in encrypted backups for a limited period before being o
 You may delete your account from within the app where the feature is available, or by contacting us at nexflow0632@gmail.com.
 
 Deleting your account is intended to remove your account and associated app data, including profile information, learning progress, private Atlas images, settings, push tokens, and other user-linked records, except where retention is required or permitted by law, security, fraud prevention, billing, dispute resolution, or backup processes.
+
+Usage figures for paid AI features are not deleted. Instead, the link to your account is removed, so they can no longer be connected to you (see section 8).
 
 Some information may not be controlled by Tuji:
 

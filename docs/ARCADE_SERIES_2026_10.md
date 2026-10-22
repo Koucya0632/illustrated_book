@@ -1,4 +1,4 @@
-# 遊戲中心系列
+# 遊戲中心系列：已正式發布並部署
 
 2026-10-22（日本時間）。分類：arcade／遊戲中心／ゲームセンター／Game Center。
 
@@ -40,7 +40,18 @@
 
 ## 部署
 
-內容已發布，網頁正式部署與部署後驗證待完成。部署使用單次 npm run build 設定並保留既有 regions/crons；資料庫結構已存在，內容由專用發布器完成，部署不再執行一般 migration/backfill。
+正式頁面：[遊戲中心](https://tuji.nexflow.team/category/arcade)。部署使用單次 npm run build 設定並保留既有 regions/crons；沒有執行一般 migration/backfill。
+
+- 內容提交：0189454（本機提交，未 push GitHub）。
+- 部署：dpl_EKRVJoMNUQBQmqo1shrif42bhZWi，狀態 Ready；https://everyday-english-picture-dictionary-4hecy9km2.vercel.app。兩個正式網域已切換。
+- 部署後兩網域共 70 個 API／HTML 探針通過：兩方向一般與 cache-busting payload、主詞音檔投影、分類三語／封面、48 個詳情回應的例句與詞塊、分類與詳情 HTML 路由。
+- 部署後 SELECT-only 正式 DB 逐欄比對再次通過；既有 9 個相關詞的詞頭、原分類與發布狀態均未改動。
+- 瀏覽器確認分類標示 12 個單字、詞圖正常；畫面為 output/arcade-release-20261022/arcade-live.png。
+- 全庫 API checker 另記錄 picnic-sheet、superball-scooping、chocolate-banana、ramune 四個既有詞的平／片假名表示差異；本批 12 詞沒有這類問題。未改動這些範圍外詞條，不把它們隱藏為全庫健康。
+- 正式動作：121 個新物件（0 覆寫）、24 個正式例句 ID 預留、1 次完整內容發布交易、1 次 words 標籤快取失效、1 次正式部署。沒有 rollback，也未修改自訂或收藏詞。
+- 最終紀錄：output/arcade-release-20261022/release.json；部署後證據為 api-after-deployment.json、api-after-deployment-primary.json 與 database-after-deployment.log。
+
+本次沒有重做全庫語意／媒體覆核或 iOS 實機測試，也沒有逐段主觀聽音。
 
 ## 參考
 

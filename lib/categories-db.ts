@@ -14,6 +14,7 @@ import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "./main-word-concert-fan-suppo
 import { MAIN_WORD_STATION_COMMUTING_IDS } from "./main-word-station-commuting-2026-10";
 import { MAIN_WORD_FESTIVALS_IDS } from "./main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS } from "./main-word-cherry-blossom-season-2026-10";
+import { MAIN_WORD_HAIR_SALON_IDS } from "./main-word-hair-salon-2026-10";
 import { MAIN_WORD_EMERGENCY_KIT_IDS } from "./main-word-emergency-kit-2026-10";
 import { MAIN_WORD_CAMPUS_IDS } from "./main-word-campus-2026-10";
 import { MAIN_WORD_ONSEN_RYOKAN_IDS } from "./main-word-onsen-ryokan-2026-10";
@@ -115,6 +116,14 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'emergency-kit' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      ))
+      AND (c.id <> 'hair-salon' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_HAIR_SALON_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'hair-salon' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       ))

@@ -1,0 +1,1558 @@
+{
+  "schemaVersion": 1,
+  "series": "hair-salon",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "30 distinct hair salon/barbershop concepts. Existing published words are preserved. Production upload, DB write, commit and deployment require separate authorization.",
+  "category": {
+    "id": "hair-salon",
+    "name": "Barbershop & Hair Salon",
+    "nameZh": "理髮／美容院",
+    "nameJa": "理容室・美容室",
+    "emoji": "💇",
+    "description": "理髮與美髮店面、專用設備、剪髮與造型用品及髮型",
+    "descriptionEn": "Barbershops, hair salons, specialist equipment, styling products and hairstyles",
+    "descriptionJa": "理容室・美容室の設備、道具、整髪料と髪型",
+    "color": "from-pink-100 to-purple-100",
+    "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/category-hair-salon-v1-816e513c6757.webp"
+  },
+  "references": [
+    "https://www.tb-net.jp/product/",
+    "https://www.tb-net.jp/product/chair/",
+    "https://www.kai-group.com/support/faq/grooming/haircut/",
+    "https://www.feather.co.jp/pdf/bh_Products/ribiyo2411.pdf",
+    "https://7beauty.jp/pickup/hair-accessory",
+    "https://www.gatsby.jp/product/hairstyling/index.html"
+  ],
+  "entries": [
+    {
+      "id": "barbershop",
+      "word": "barbershop",
+      "chinese": "理髮店",
+      "chineseDefinition": "提供剪髮、修整鬍鬚或刮臉等服務的店；日文也常說床屋。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑːr.bɚ.ʃɑːp/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "理髮店",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shop where a barber cuts hair and may shave or trim facial hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪を切ったり、ひげをそったりして容姿を整える店。床屋ともいう。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My dad gets his hair cut at this barbershop.",
+          "ja": "父はこの理容室で髪を切ってもらいます。",
+          "zh": "爸爸在這家理髮店剪頭髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My usual barbershop is closed on Mondays, so I booked a haircut for Tuesday.",
+          "ja": "いつもの理容室は月曜日が休みなので、火曜日にカットを予約しました。",
+          "zh": "我常去的理髮店週一休息，所以我預約週二剪髮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "理容室",
+      "jaReading": "りようしつ",
+      "jaReadingSegments": [
+        {
+          "text": "理容室",
+          "ruby": "りようしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/barbershop-v1-02522ac38345.webp"
+    },
+    {
+      "id": "hair-salon",
+      "word": "hair salon",
+      "chinese": "美容院",
+      "chineseDefinition": "提供剪髮、造型、染髮或燙髮等美髮服務的店，此處不是美容護膚中心。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher səˌlɑːn/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "美容院",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A business that offers haircuts, styling, coloring, or other hair services.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カットやヘアセット、カラー、パーマなどの施術を受けられる店。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please book an appointment at the hair salon for Saturday.",
+          "ja": "土曜日に美容室の予約をお願いします。",
+          "zh": "請幫我預約週六到美容院。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because it was my first time coloring my hair, I visited the hair salon for a consultation beforehand.",
+          "ja": "初めて髪を染めるので、事前に美容室で相談しました。",
+          "zh": "因為是第一次染髮，我事先到美容院諮詢。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "美容室",
+      "jaReading": "びようしつ",
+      "jaReadingSegments": [
+        {
+          "text": "美容室",
+          "ruby": "びようしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-salon-v1-73e871fcf2b0.webp"
+    },
+    {
+      "id": "barber-pole",
+      "word": "barber pole",
+      "chinese": "理髮店三色燈",
+      "chineseDefinition": "理髮店門前常見、帶紅白藍螺旋條紋的圓柱形招牌燈。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑːr.bɚ poʊl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "理髮店三色燈",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A striped cylindrical sign outside a barbershop, often with red, white, and blue spirals.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "理容店の前などに置く、赤・白・青などのらせん模様が入った円柱形の看板。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barber pole is beside the entrance.",
+          "ja": "入口の横にサインポールがあります。",
+          "zh": "入口旁邊有理髮店三色燈。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I saw the spinning barber pole, I finally found the entrance.",
+          "ja": "回っているサインポールが見えて、やっと入口が分かりました。",
+          "zh": "我看到轉動的理髮店三色燈，終於找到入口。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "サインポール",
+      "jaReading": "サインポール",
+      "jaReadingSegments": [
+        {
+          "text": "サインポール",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/barber-pole-v1-e86314201837.webp"
+    },
+    {
+      "id": "barber-chair",
+      "word": "barber chair",
+      "chinese": "理髮椅",
+      "chineseDefinition": "理髮店供客人剪髮或刮臉時坐的專用椅，常有扶手、腳踏與可調靠背。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑːr.bɚ tʃer/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "理髮椅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An adjustable chair used for customers during haircuts or shaves at a barbershop.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "理容室でカットや顔そりの際に客が座る、背もたれや高さを調節できる椅子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please sit in the barber chair.",
+          "ja": "理容椅子に座ってください。",
+          "zh": "請坐在理髮椅上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before shaving my face, the barber reclined the barber chair.",
+          "ja": "顔をそる前に、理容師が理容椅子の背もたれを倒しました。",
+          "zh": "刮臉前，理髮師放倒了理髮椅的椅背。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "理容椅子",
+      "jaReading": "りよういす",
+      "jaReadingSegments": [
+        {
+          "text": "理容椅子",
+          "ruby": "りよういす"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/barber-chair-v1-bd8ebb91b616.webp"
+    },
+    {
+      "id": "shampoo-basin",
+      "word": "shampoo basin",
+      "chinese": "洗髮盆",
+      "chineseDefinition": "美容院用來替客人洗頭、前緣有托住頸部凹口的專用盆。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃæmˈpuː ˈbeɪ.sən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "洗髮盆",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A salon basin with a neck recess, used for washing a customer’s hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "首を置くためのくぼみがあり、美容室などで髪を洗うために使う専用のボウル。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Rest your neck on the shampoo basin.",
+          "ja": "シャンプーボウルに首を預けてください。",
+          "zh": "請把頸部靠在洗髮盆上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My neck felt uncomfortable during the wash, so I shifted my position at the shampoo basin.",
+          "ja": "洗髪中に首がつらくなったので、シャンプーボウルでの姿勢を変えました。",
+          "zh": "洗頭時我的頸部不舒服，所以調整了靠在洗髮盆上的姿勢。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "シャンプーボウル",
+      "jaReading": "シャンプーボウル",
+      "jaReadingSegments": [
+        {
+          "text": "シャンプーボウル",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/shampoo-basin-v1-91661cc887b0.webp"
+    },
+    {
+      "id": "haircut-cape",
+      "word": "haircut cape",
+      "chinese": "剪髮圍布",
+      "chineseDefinition": "剪髮時圍在客人身上、遮住肩膀與衣服以接住碎髮的布。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher.kʌt keɪp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "剪髮圍布",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A covering worn around a customer’s shoulders to keep cut hair off their clothes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "切った髪が服に付かないよう、カットの際に客の肩や体を覆う布。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please fasten the haircut cape.",
+          "ja": "カットクロスを留めてください。",
+          "zh": "請扣好剪髮圍布。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The haircut cape felt too tight, so I asked the stylist to loosen it.",
+          "ja": "カットクロスがきつかったので、美容師に緩めてもらいました。",
+          "zh": "剪髮圍布太緊，所以我請美髮師把它放鬆。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カットクロス",
+      "jaReading": "カットクロス",
+      "jaReadingSegments": [
+        {
+          "text": "カットクロス",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/haircut-cape-v1-433b3f563cc8.webp"
+    },
+    {
+      "id": "hair-clippers",
+      "word": "hair clippers",
+      "chinese": "電推剪",
+      "chineseDefinition": "以往復刀齒修短頭髮的電動剪髮工具，常搭配長度導梳。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher ˌklɪp.ɚz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電推剪",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An electric tool with moving toothed blades for cutting hair short.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "動く刃で髪を短く刈る電動の道具。長さを調節するアタッチメントを付けて使うこともある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barber uses hair clippers on the sides.",
+          "ja": "理容師がバリカンで横の髪を刈ります。",
+          "zh": "理髮師用電推剪修兩側的頭髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I disliked the sound of the hair clippers, so I asked for scissors instead.",
+          "ja": "バリカンの音が苦手だったので、代わりにはさみを使ってもらいました。",
+          "zh": "我不喜歡電推剪的聲音，所以請理髮師改用剪刀。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "バリカン",
+      "jaReading": "バリカン",
+      "jaReadingSegments": [
+        {
+          "text": "バリカン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-clippers-v1-4135e8ff4d2d.webp"
+    },
+    {
+      "id": "thinning-scissors",
+      "word": "thinning scissors",
+      "chinese": "打薄剪",
+      "chineseDefinition": "刀刃帶梳齒、用來減少髮量而非整束剪斷的美髮剪刀。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈθɪn.ɪŋ ˌsɪz.ɚz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "打薄剪",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Scissors with a toothed blade used to reduce hair bulk without cutting every strand.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "刃の一方または両方にくし状の歯があり、髪の量を減らすためのはさみ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "These thinning scissors have teeth on one blade.",
+          "ja": "このすきばさみは片方の刃に歯があります。",
+          "zh": "這把打薄剪的一側刀刃有梳齒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My hair felt too thick, so the stylist used thinning scissors on the ends.",
+          "ja": "髪の量が多すぎたので、美容師が毛先にすきばさみを使いました。",
+          "zh": "我的髮量太多，所以美髮師用打薄剪修整髮尾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "すきばさみ",
+      "jaReading": "すきばさみ",
+      "jaReadingSegments": [
+        {
+          "text": "すきばさみ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/thinning-scissors-v1-aa009d6e8a11.webp"
+    },
+    {
+      "id": "hair-cutting-scissors",
+      "word": "hair-cutting scissors",
+      "chinese": "剪髮剪刀",
+      "chineseDefinition": "專門剪頭髮、兩側為連續直刃的剪刀，與齒刃打薄剪不同。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈherˌkʌt̬.ɪŋ ˌsɪz.ɚz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "剪髮剪刀",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Sharp scissors with continuous cutting edges designed for cutting hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪を切るための専用のはさみ。すきばさみと異なり、刃にくし状の歯がない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the hair-cutting scissors in the tool pouch.",
+          "ja": "カットばさみを道具入れにしまってください。",
+          "zh": "請把剪髮剪刀收進工具袋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I borrowed hair-cutting scissors, so I did not have to use my paper scissors.",
+          "ja": "カットばさみを借りられたので、紙用のはさみを使わずに済みました。",
+          "zh": "我借到了剪髮剪刀，所以不必使用剪紙用的剪刀。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カットばさみ",
+      "jaReading": "カットばさみ",
+      "jaReadingSegments": [
+        {
+          "text": "カットばさみ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-cutting-scissors-v1-1e36dda59c99.webp"
+    },
+    {
+      "id": "round-hairbrush",
+      "word": "round hairbrush",
+      "chinese": "圓筒髮梳",
+      "chineseDefinition": "刷毛環繞圓筒狀梳身、常在吹整時用來做出髮彎的髮梳。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/raʊnd ˈher.brʌʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "圓筒髮梳",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cylindrical hairbrush with bristles around the barrel, often used when blow-drying.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "筒状の部分の周りに毛が付いたブラシ。ブローで髪に丸みを付けるときなどに使う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The stylist shapes my bangs with a round hairbrush.",
+          "ja": "美容師がロールブラシで前髪を整えます。",
+          "zh": "美髮師用圓筒髮梳整理我的瀏海。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My hair caught in the round hairbrush, so I stopped pulling and untangled it slowly.",
+          "ja": "髪がロールブラシに絡まったので、引っ張るのをやめてゆっくりほどきました。",
+          "zh": "頭髮纏在圓筒髮梳上，所以我停止拉扯，慢慢把頭髮解開。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ロールブラシ",
+      "jaReading": "ロールブラシ",
+      "jaReadingSegments": [
+        {
+          "text": "ロールブラシ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/round-hairbrush-v1-54607cd7cccf.webp"
+    },
+    {
+      "id": "sectioning-clip",
+      "word": "sectioning clip",
+      "chinese": "分區髮夾",
+      "chineseDefinition": "剪髮或造型時，暫時夾住分區髮束的長形彈簧髮夾。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsek.ʃən.ɪŋ klɪp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "分區髮夾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long spring-loaded clip that holds sections of hair out of the way during styling or cutting.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カットやセットのとき、分けた髪を一時的に留めておく細長いクリップ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Hold the top section with a sectioning clip.",
+          "ja": "上の髪をダッカールで留めてください。",
+          "zh": "請用分區髮夾夾住上層的頭髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The sectioning clip slipped, so I divided the hair into smaller sections and tried again.",
+          "ja": "ダッカールが滑ったので、髪をもっと細かく分けて留め直しました。",
+          "zh": "分區髮夾滑落了，所以我把頭髮分成更小束再夾一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ダッカール",
+      "jaReading": "ダッカール",
+      "jaReadingSegments": [
+        {
+          "text": "ダッカール",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/sectioning-clip-v1-b9502fc76f6b.webp"
+    },
+    {
+      "id": "mist-spray-bottle",
+      "word": "mist spray bottle",
+      "chinese": "噴霧水瓶",
+      "chineseDefinition": "按壓噴頭可把水噴成細霧、剪髮時用來打濕頭髮的可補充水瓶。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/mɪst spreɪ ˈbɑː.t̬əl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "噴霧水瓶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A refillable bottle that sprays a fine mist of water, used to dampen hair before cutting.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "水を細かい霧にして吹き付ける容器。ここでは髪を湿らせるために使うもの。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Fill the mist spray bottle with water.",
+          "ja": "霧吹きに水を入れてください。",
+          "zh": "請把水裝進噴霧水瓶。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The ends had dried, so the stylist dampened them with a mist spray bottle before cutting.",
+          "ja": "毛先が乾いていたので、美容師は切る前に霧吹きで湿らせました。",
+          "zh": "髮尾乾了，所以美髮師在剪之前用噴霧水瓶把它噴濕。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "霧吹き",
+      "jaReading": "きりふき",
+      "jaReadingSegments": [
+        {
+          "text": "霧吹き",
+          "ruby": "きりふき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/mist-spray-bottle-v1-0405ba8d80b2.webp"
+    },
+    {
+      "id": "hair-color-brush",
+      "word": "hair color brush",
+      "chinese": "染髮刷",
+      "chineseDefinition": "用來把染髮劑刷到髮束或髮根、常有扁平刷毛與細長柄的工具。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher ˌkʌl.ɚ brʌʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "染髮刷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A flat brush used to apply hair dye to sections of hair or the roots.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪や根元にカラー剤を塗るための、平たい毛先と細長い柄の付いたハケ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The stylist applies dye with a hair color brush.",
+          "ja": "美容師がカラー用ハケでカラー剤を塗ります。",
+          "zh": "美髮師用染髮刷塗染髮劑。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After finishing the color, the stylist washed the hair color brush and left it to dry.",
+          "ja": "カラーが終わると、美容師はカラー用ハケを洗って乾かしておきました。",
+          "zh": "染髮結束後，美髮師把染髮刷洗淨並晾乾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カラー用ハケ",
+      "jaReading": "カラーようハケ",
+      "jaReadingSegments": [
+        {
+          "text": "カラー用ハケ",
+          "ruby": "カラーようハケ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-color-brush-v1-fe622aa1b23f.webp"
+    },
+    {
+      "id": "perm-rod",
+      "word": "perm rod",
+      "chinese": "燙髮捲",
+      "chineseDefinition": "燙髮時用來捲住髮束、通常帶固定橡皮筋的圓柱形小工具。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/pɝːm rɑːd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "燙髮捲",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small cylindrical tool used to hold hair in a curl during a perm.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "パーマをかけるときに髪を巻き付け、ゴムなどで固定する筒状の道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The stylist wraps a strand around a perm rod.",
+          "ja": "美容師がパーマロッドに毛束を巻きます。",
+          "zh": "美髮師把一束頭髮捲在燙髮捲上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wanted loose curls, so the stylist chose thicker perm rods.",
+          "ja": "ゆるいカールにしたかったので、美容師は太めのパーマロッドを選びました。",
+          "zh": "我想要較鬆的捲度，所以美髮師選了較粗的燙髮捲。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "パーマロッド",
+      "jaReading": "パーマロッド",
+      "jaReadingSegments": [
+        {
+          "text": "パーマロッド",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/perm-rod-v1-b075b976e52c.webp"
+    },
+    {
+      "id": "hair-straightener",
+      "word": "hair straightener",
+      "chinese": "離子夾",
+      "chineseDefinition": "以兩片加熱平板夾住髮束、用來拉直或整理頭髮的電器。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher ˌstreɪ.t̬ən.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "離子夾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An electric hair-styling tool with two heated flat plates used to straighten hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "二枚の平らな加熱プレートで髪を挟み、まっすぐに整える器具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She straightens her bangs with a hair straightener.",
+          "ja": "彼女はストレートアイロンで前髪を伸ばします。",
+          "zh": "她用離子夾把瀏海夾直。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After using the hair straightener, I checked that it was unplugged.",
+          "ja": "ストレートアイロンを使った後、プラグを抜いたか確認しました。",
+          "zh": "使用離子夾後，我確認插頭是否已拔除。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ストレートアイロン",
+      "jaReading": "ストレートアイロン",
+      "jaReadingSegments": [
+        {
+          "text": "ストレートアイロン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-straightener-v1-f31d22cf3f24.webp"
+    },
+    {
+      "id": "curling-iron",
+      "word": "curling iron",
+      "chinese": "電捲棒",
+      "chineseDefinition": "以圓筒形加熱棒捲出髮彎的電動造型工具。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɝː.lɪŋ ˌaɪ.ɚn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電捲棒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An electric styling tool with a heated barrel for making curls in hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "筒状の部分を加熱し、髪を巻き付けてカールを作る器具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The stylist curls the ends with a curling iron.",
+          "ja": "美容師がカールアイロンで毛先を巻きます。",
+          "zh": "美髮師用電捲棒把髮尾捲彎。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The curling iron was still hot, so I waited for it to cool before putting it away.",
+          "ja": "カールアイロンがまだ熱かったので、冷めてからしまいました。",
+          "zh": "電捲棒還很燙，所以我等它冷卻後才收起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カールアイロン",
+      "jaReading": "カールアイロン",
+      "jaReadingSegments": [
+        {
+          "text": "カールアイロン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/curling-iron-v1-84d462ca9205.webp"
+    },
+    {
+      "id": "hand-mirror",
+      "word": "hand mirror",
+      "chinese": "手持鏡",
+      "chineseDefinition": "帶握柄、可以拿在手上，常用來查看後腦髮型的鏡子。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/hænd ˈmɪr.ɚ/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手持鏡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A mirror with a handle, held in the hand to view the face or the back of a hairstyle.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "手で持って使う、柄の付いた鏡。後ろの髪型を確認するときなどにも使う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Could I borrow the hand mirror?",
+          "ja": "手鏡を貸してもらえますか。",
+          "zh": "可以借我手持鏡嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not see the back of my hair, so the stylist showed it to me with a hand mirror.",
+          "ja": "後ろの髪が見えなかったので、美容師が手鏡で見せてくれました。",
+          "zh": "我看不到後面的頭髮，所以美髮師用手持鏡讓我看。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "手鏡",
+      "jaReading": "てかがみ",
+      "jaReadingSegments": [
+        {
+          "text": "手鏡",
+          "ruby": "てかがみ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hand-mirror-v1-fce6a5837cbc.webp"
+    },
+    {
+      "id": "haircut",
+      "word": "haircut",
+      "chinese": "剪髮",
+      "chineseDefinition": "剪短或修整頭髮的服務或動作；此處不是髮型本身。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher.kʌt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "剪髮",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The service or act of cutting and shaping someone’s hair.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪を切って長さや形を整えること。ここでは美容室などで受ける施術を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I would like just a haircut, please.",
+          "ja": "カットだけお願いします。",
+          "zh": "我只要剪髮，謝謝。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My bangs were covering my eyes, so I booked a haircut.",
+          "ja": "前髪が目にかかっていたので、カットを予約しました。",
+          "zh": "瀏海遮住眼睛了，所以我預約了剪髮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カット",
+      "jaReading": "カット",
+      "jaReadingSegments": [
+        {
+          "text": "カット",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/haircut-v1-5edda3cd850e.webp"
+    },
+    {
+      "id": "neck-duster",
+      "word": "neck duster",
+      "chinese": "碎髮刷",
+      "chineseDefinition": "剪髮後用來掃掉頸部或衣領碎髮、帶短柄與蓬鬆刷毛的專用刷子。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/nek ˈdʌs.tɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "碎髮刷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soft, short-handled brush used to remove loose cut hair from the neck or collar.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "カットの後、首や襟元に付いた細かい毛を払うための、柔らかい毛の付いたブラシ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barber brushes hair off my neck with a neck duster.",
+          "ja": "理容師がネックブラシで首の毛を払います。",
+          "zh": "理髮師用碎髮刷掃掉我脖子上的碎髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the haircut, the barber used a neck duster to remove hair from my collar.",
+          "ja": "カットの後、理容師がネックブラシで襟元の毛を払ってくれました。",
+          "zh": "剪髮後，理髮師用碎髮刷幫我掃掉衣領上的碎髮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ネックブラシ",
+      "jaReading": "ネックブラシ",
+      "jaReadingSegments": [
+        {
+          "text": "ネックブラシ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/neck-duster-v1-aa36f1fa9d86.webp"
+    },
+    {
+      "id": "shaving-brush",
+      "word": "shaving brush",
+      "chinese": "刮鬍刷",
+      "chineseDefinition": "用來把刮鬍皂或刮鬍霜打出泡沫並塗在臉上的短柄圓頭刷。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃeɪ.vɪŋ brʌʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "刮鬍刷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A brush used to make shaving lather and spread it on the face before shaving.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "顔そりの前に、シェービング剤を泡立てたり顔に塗ったりするためのブラシ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barber wets the shaving brush.",
+          "ja": "理容師がシェービングブラシをぬらします。",
+          "zh": "理髮師把刮鬍刷打濕。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After the shave, the barber rinsed the shaving brush and left it to dry.",
+          "ja": "顔そりが終わると、理容師はシェービングブラシをすすいで乾かしておきました。",
+          "zh": "刮臉結束後，理髮師把刮鬍刷沖洗乾淨並晾乾。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "シェービングブラシ",
+      "jaReading": "シェービングブラシ",
+      "jaReadingSegments": [
+        {
+          "text": "シェービングブラシ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/shaving-brush-v1-91a702f17250.webp"
+    },
+    {
+      "id": "straight-razor",
+      "word": "straight razor",
+      "chinese": "折疊剃刀",
+      "chineseDefinition": "理髮店刮臉時使用的直刃剃刀，此處指刀刃可折入握柄收納的款式，也包括替換刀片式。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/streɪt ˈreɪ.zɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "折疊剃刀",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A straight-edged shaving razor whose blade folds into its handle; the pictured type may use replaceable blades.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "顔そりに使う、刃を柄に折り畳んで収納できる直刃のかみそり。替刃式のものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The barber unfolds the straight razor.",
+          "ja": "理容師がシェービングレザーを開きます。",
+          "zh": "理髮師打開折疊剃刀。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was nervous about the straight razor, so I asked the barber to explain the shave.",
+          "ja": "シェービングレザーが少し怖かったので、理容師に顔そりの説明をお願いしました。",
+          "zh": "我對折疊剃刀有點害怕，所以請理髮師說明刮臉流程。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "シェービングレザー",
+      "jaReading": "シェービングレザー",
+      "jaReadingSegments": [
+        {
+          "text": "シェービングレザー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/straight-razor-v1-3e7127fd416b.webp"
+    },
+    {
+      "id": "hair-color-bowl",
+      "word": "hair color bowl",
+      "chinese": "染髮調色碗",
+      "chineseDefinition": "染髮時盛裝及混合染髮劑的專用容器，常有握柄或倒口。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher ˌkʌl.ɚ boʊl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "染髮調色碗",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A salon bowl used to hold and mix hair coloring products before application.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ヘアカラーの施術で、カラー剤を入れたり混ぜたりするための容器。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The stylist mixes dye in a hair color bowl.",
+          "ja": "美容師がカラーカップでカラー剤を混ぜます。",
+          "zh": "美髮師在染髮調色碗裡混合染髮劑。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the hair color bowl was still wet, the stylist wiped it before mixing the dye.",
+          "ja": "カラーカップがまだぬれていたので、美容師は拭いてからカラー剤を混ぜました。",
+          "zh": "染髮調色碗還濕著，所以美髮師先擦乾，再混合染髮劑。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カラーカップ",
+      "jaReading": "カラーカップ",
+      "jaReadingSegments": [
+        {
+          "text": "カラーカップ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-color-bowl-v1-845e0f68c6de.webp"
+    },
+    {
+      "id": "salon-trolley",
+      "word": "salon trolley",
+      "chinese": "美髮工具推車",
+      "chineseDefinition": "理美容師在店內移動及收納剪刀、梳子等用品的多層輪式工具車。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/səˈlɑːn ˈtrɑː.li/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "美髮工具推車",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A wheeled salon cart with trays or drawers for keeping styling tools close at hand.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "理美容室で道具を収納し、施術する場所へ動かして使う、キャスター付きのワゴン。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Move the salon trolley beside the chair.",
+          "ja": "サロンワゴンを椅子の横に動かしてください。",
+          "zh": "請把美髮工具推車移到椅子旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The salon trolley was blocking the aisle, so the stylist moved it closer to the mirror.",
+          "ja": "サロンワゴンが通路をふさいでいたので、美容師は鏡のそばに寄せました。",
+          "zh": "美髮工具推車擋住通道，所以美髮師把它移近鏡子。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "サロンワゴン",
+      "jaReading": "サロンワゴン",
+      "jaReadingSegments": [
+        {
+          "text": "サロンワゴン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/salon-trolley-v1-80aac65ba219.webp"
+    },
+    {
+      "id": "hooded-hair-dryer",
+      "word": "hooded hair dryer",
+      "chinese": "罩式烘髮機",
+      "chineseDefinition": "以罩住頭部上方的大型烘罩送出暖風、常附支架的美髮烘乾設備，與環形加溫器不同。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhʊd.ɪd ˈher ˌdraɪ.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "罩式烘髮機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A salon dryer with a large hood that directs warm air around the head while the customer sits beneath it.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "客が下に座り、頭を覆うフードから温風を当てて髪を乾かす機器。輪形の加温器とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She sits under the hooded hair dryer.",
+          "ja": "彼女はフードドライヤーの下に座っています。",
+          "zh": "她坐在罩式烘髮機下。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The hooded hair dryer was too low, so the stylist raised it before I sat down.",
+          "ja": "フードドライヤーが低すぎたので、美容師は私が座る前に高さを上げました。",
+          "zh": "罩式烘髮機太低，所以美髮師在我坐下之前把它調高。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "フードドライヤー",
+      "jaReading": "フードドライヤー",
+      "jaReadingSegments": [
+        {
+          "text": "フードドライヤー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hooded-hair-dryer-v1-8514191709ed.webp"
+    },
+    {
+      "id": "hair-wax",
+      "word": "hair wax",
+      "chinese": "髮蠟",
+      "chineseDefinition": "膏狀或蠟狀的頭髮造型用品，可用來整理髮束與髮尾；與透明凝膠不同。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈher wæks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "髮蠟",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A waxy or paste-like hair product used to shape hair and define strands.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪の束感や形を整えるために使う、ペースト状やワックス状の整髪料。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I use hair wax on the ends.",
+          "ja": "毛先にヘアワックスを付けます。",
+          "zh": "我把髮蠟抹在髮尾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I had used too much hair wax, so I washed my hair and started again.",
+          "ja": "ヘアワックスを付けすぎたので、髪を洗ってセットし直しました。",
+          "zh": "我抹了太多髮蠟，所以洗頭後重新造型。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ヘアワックス",
+      "jaReading": "ヘアワックス",
+      "jaReadingSegments": [
+        {
+          "text": "ヘアワックス",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/hair-wax-v1-33cd6b1d5502.webp"
+    },
+    {
+      "id": "styling-gel",
+      "word": "styling gel",
+      "chinese": "造型髮膠",
+      "chineseDefinition": "以凝膠質地幫助固定頭髮形狀的造型用品，此處不是定型噴霧。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈstaɪ.lɪŋ dʒel/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "造型髮膠",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A gel-based product applied to hair to shape it and hold a hairstyle.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "髪に付けて形を整え、髪型を保つために使うジェル状の整髪料。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I style my hair with styling gel.",
+          "ja": "スタイリングジェルで髪を整えます。",
+          "zh": "我用造型髮膠整理頭髮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The styling gel dried too quickly, so I dampened my hands and restyled my hair.",
+          "ja": "スタイリングジェルが早く乾きすぎたので、手を湿らせて髪を整え直しました。",
+          "zh": "造型髮膠乾得太快，所以我把手弄濕後重新整理頭髮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スタイリングジェル",
+      "jaReading": "スタイリングジェル",
+      "jaReadingSegments": [
+        {
+          "text": "スタイリングジェル",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/styling-gel-v1-ccc4f631c064.webp"
+    },
+    {
+      "id": "bangs",
+      "word": "bangs",
+      "chinese": "瀏海",
+      "chineseDefinition": "從頭頂前方垂在額頭上的頭髮；英式英語通常稱fringe。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bæŋz/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "瀏海",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Hair cut to fall over the forehead; commonly called a fringe in British English.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "額に垂れるように切った、頭の前側の髪。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please trim my bangs a little.",
+          "ja": "前髪を少し切ってください。",
+          "zh": "請把我的瀏海修短一點。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My bangs looked shorter when they dried, so I asked to leave them longer next time.",
+          "ja": "乾くと前髪が短く見えたので、次は長めに残してほしいと頼みました。",
+          "zh": "瀏海乾了之後看起來比較短，所以我請美髮師下次留長一點。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "前髪",
+      "jaReading": "まえがみ",
+      "jaReadingSegments": [
+        {
+          "text": "前髪",
+          "ruby": "まえがみ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/bangs-v1-96277c2c379c.webp"
+    },
+    {
+      "id": "sideburns",
+      "word": "sideburns",
+      "chinese": "鬢角",
+      "chineseDefinition": "從太陽穴沿耳朵前方往下生長的頭髮，與耳後頭髮或下巴鬍鬚不同。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsaɪd.bɝːnz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鬢角",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Strips of hair growing down from the temples in front of the ears.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "こめかみから耳の前に沿って下へ伸びる髪。あごひげや耳の後ろの髪とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please tidy up my sideburns.",
+          "ja": "もみあげを整えてください。",
+          "zh": "請幫我整理鬢角。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My sideburns were uneven, so the barber trimmed them to the same length.",
+          "ja": "もみあげの長さが違ったので、理容師が左右をそろえてくれました。",
+          "zh": "我的鬢角長短不一，所以理髮師幫我把兩邊修成一樣長。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "もみあげ",
+      "jaReading": "もみあげ",
+      "jaReadingSegments": [
+        {
+          "text": "もみあげ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/sideburns-v1-813304ae134d.webp"
+    },
+    {
+      "id": "bob-cut",
+      "word": "bob cut",
+      "chinese": "鮑伯頭",
+      "chineseDefinition": "髮尾大致落在下巴附近、外輪廓俐落的短髮造型；長度與是否有瀏海可依款式不同。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɑːb kʌt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鮑伯頭",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short hairstyle with a defined outline, often with the ends near chin level.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "あごの辺りなどで長さをそろえ、輪郭をはっきりさせた短めの髪型。前髪の有無などで形が変わる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "She asked for a bob cut.",
+          "ja": "彼女はボブをお願いしました。",
+          "zh": "她要求剪鮑伯頭。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wanted a shorter style, but the stylist suggested a bob cut that would still cover my ears.",
+          "ja": "短くしたかったのですが、美容師は耳が隠れるボブを勧めてくれました。",
+          "zh": "我想剪短一點，但美髮師建議剪仍能蓋住耳朵的鮑伯頭。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ボブ",
+      "jaReading": "ボブ",
+      "jaReadingSegments": [
+        {
+          "text": "ボブ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/bob-cut-v1-c4602211ffe3.webp"
+    },
+    {
+      "id": "buzz-cut",
+      "word": "buzz cut",
+      "chinese": "寸頭",
+      "chineseDefinition": "用電推剪把整頭頭髮剪得非常短的髮型；此處指保留短髮茬，不是光頭或頂部留長的平頂頭。",
+      "category": "hair-salon",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbʌz kʌt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "寸頭",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A haircut in which the hair is clipped very short all over the head.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "バリカンなどで頭全体の髪を非常に短く刈った髪型。ここでは少し毛を残すものを指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I chose a buzz cut.",
+          "ja": "坊主頭を選びました。",
+          "zh": "我選了寸頭。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After getting a buzz cut, I was surprised at how quickly my hair dried.",
+          "ja": "坊主頭にしたら、髪がすぐ乾いて驚きました。",
+          "zh": "剪成寸頭後，我很驚訝頭髮竟然這麼快就乾了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "坊主頭",
+      "jaReading": "ぼうずあたま",
+      "jaReadingSegments": [
+        {
+          "text": "坊主頭",
+          "ruby": "ぼうずあたま"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/hair-salon-2026-10/buzz-cut-v1-ee58e39bba0a.webp"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "series": "hair-salon",
+  "reviewer": "Codex, every original image inspected individually",
+  "criteria": "Every original inspected for concept identity, Japanese daily-life form, distinguishing features and catalog style. Existing source digests retained; final complete WebP contact sheet reviewed after encoding.",
+  "references": [
+    "https://www.tb-net.jp/product/chair/",
+    "https://www.tb-net.jp/product/shampoo/",
+    "https://yspark.official.ec/items/28693613",
+    "https://www.kai-group.com/support/faq/grooming/haircut/",
+    "https://www.feather.co.jp/pdf/bh_Products/ribiyo2411.pdf",
+    "https://www.tb-net.jp/product/",
+    "https://www.gatsby.jp/product/hairstyling/index.html"
+  ],
+  "items": [
+    {
+      "id": "barbershop",
+      "decision": "pass",
+      "reason": "完整獨立店面、入口與玻璃窗清楚，門旁有紅白藍螺旋招牌，室內可見理容椅；可辨識理容室整體，無品牌文字。",
+      "sourceFile": "output/hair-salon-2026-10/sources/barbershop.png",
+      "sourceSha256": "097834e7d17ae9e65eac4b9022073554dd288ef9066bbff57ded1fd992703733"
+    },
+    {
+      "id": "hair-salon",
+      "decision": "pass",
+      "reason": "淺木色美容室門面，窗內兩組造型椅與立鏡清楚，無三色燈以免與理容室圖混淆；白底建物情境完整。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-salon.png",
+      "sourceSha256": "b4647f7f0ad20e706af87c4c0bf8dea040db4eebd3895041a582317b28b5da3c"
+    },
+    {
+      "id": "barber-pole",
+      "decision": "pass",
+      "reason": "紅白藍螺旋圓柱燈罩、金屬上下蓋與牆面支架齊全，辨識為日本理容店サインポール，沒有店面搶主體。",
+      "sourceFile": "output/hair-salon-2026-10/sources/barber-pole.png",
+      "sourceSha256": "1c695f1e6b57caf7d0a8f6cab46915ee5c5ebf08b019a1855a93405024ff61c9"
+    },
+    {
+      "id": "barber-chair",
+      "decision": "pass",
+      "reason": "高背軟墊、獨立頭枕、扶手、液壓圓底與寬腳踏清楚，符合理容客用椅；單一完整設備而非普通扶手椅。",
+      "sourceFile": "output/hair-salon-2026-10/sources/barber-chair.png",
+      "sourceSha256": "635f324078df98268b3f9fb8b47eb306c2745488880b40549459c413ac7a3f8b"
+    },
+    {
+      "id": "shampoo-basin",
+      "decision": "pass",
+      "reason": "黑色陶瓷深盆前方明顯U形托頸凹口，搭配混水龍頭及手持沖洗頭；與洗手盆及完整洗髮躺椅可區分。",
+      "sourceFile": "output/hair-salon-2026-10/sources/shampoo-basin.png",
+      "sourceSha256": "cb6e6d8a0bec68a6ef1e2ac94cf20b5634735e7436697950114796d8bd7489c7"
+    },
+    {
+      "id": "haircut-cape",
+      "decision": "pass",
+      "reason": "黑色寬圍布從圓形領口覆蓋肩部及身前，無袖或圍裙腰帶；中性無頭展示架只支撐布形，主體是客用カットクロス。",
+      "sourceFile": "output/hair-salon-2026-10/sources/haircut-cape.png",
+      "sourceSha256": "24bb20f515ee41c76c59cce106ed0d2539bd5ac6b6a96d72f805e6197242abd9"
+    },
+    {
+      "id": "hair-clippers",
+      "decision": "pass",
+      "reason": "電動機身頂端直線金屬刀齒與側邊調整桿清楚，旁有一個導梳呈現長度配件；不是旋轉式電鬍刀。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-clippers.png",
+      "sourceSha256": "6e25fe2117486e5710b7a77674667804cd1c91e1e49157e63cdaf9e0f86777c2"
+    },
+    {
+      "id": "thinning-scissors",
+      "decision": "pass",
+      "reason": "一側連續梳齒、一側平滑刀刃清楚可見，圓指環與樞軸形狀合理；可與雙直刃剪髮剪刀直接區分。",
+      "sourceFile": "output/hair-salon-2026-10/sources/thinning-scissors.png",
+      "sourceSha256": "f3cf9e236e81935a92ea3e8ef698b33daffa4b6fc4468c11b32cbb842d40ae44"
+    },
+    {
+      "id": "hair-cutting-scissors",
+      "decision": "pass",
+      "reason": "兩片連續無齒鋒刃、纖細指環與小指托完整，呈現專用美髮剪刀；沒有打薄齒或廚房剪刀粗柄。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-cutting-scissors.png",
+      "sourceSha256": "16be1ca2ee33c88e84d4a9ddc8d9a30548e0bc3ac7bef95da4c48995658f884c"
+    },
+    {
+      "id": "round-hairbrush",
+      "decision": "pass",
+      "reason": "木柄接圓筒梳身，刷毛環繞筒面，端面可辨圓形；明確區別平板髮刷及電熱捲髮工具。",
+      "sourceFile": "output/hair-salon-2026-10/sources/round-hairbrush.png",
+      "sourceSha256": "0e028df7d4461bf88e44eb6269c06e222733a90b444d65d232ff70a51adcd070"
+    },
+    {
+      "id": "sectioning-clip",
+      "decision": "pass",
+      "reason": "長形上下夾臂、後端金屬彈簧與內側小齒可見，張口顯示夾住分區髮束的結構；無裝飾或辦公夾形式。",
+      "sourceFile": "output/hair-salon-2026-10/sources/sectioning-clip.png",
+      "sourceSha256": "9f8ea3f332742b6cbd3dc262807a72fd6776690db5c82be384431f85d46e4056"
+    },
+    {
+      "id": "mist-spray-bottle",
+      "decision": "pass",
+      "reason": "透明瓶身有水、吸管與可按扳機噴頭，無標籤及氣霧罐外形；可辨可補水霧吹，非定型噴霧產品。",
+      "sourceFile": "output/hair-salon-2026-10/sources/mist-spray-bottle.png",
+      "sourceSha256": "30da71b4794ad509d4132a65c0cc04b95fd1fee1a56d9459cbd8f24ec41e0671"
+    },
+    {
+      "id": "hair-color-brush",
+      "decision": "pass",
+      "reason": "扁平刷頭、短而密的直刷毛與長尖尾柄清楚，符合塗抹染髮劑的カラー用ハケ；與梳髮刷的放射刷毛不同。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-color-brush.png",
+      "sourceSha256": "a509bbaad75cf992ca7a003c3874bff2eaff0e47d1db77fc24dec332d745f129"
+    },
+    {
+      "id": "perm-rod",
+      "decision": "pass",
+      "reason": "紫色塑膠筒體、中段較細、通孔及橫跨兩端的固定橡皮筋清楚，非電熱工具；無電線或金屬加熱夾。",
+      "sourceFile": "output/hair-salon-2026-10/sources/perm-rod.png",
+      "sourceSha256": "e38ac677777ff58bb0b06880a6233b550e03f9c061f38278a96ca5d8df4c524f"
+    },
+    {
+      "id": "hair-straightener",
+      "decision": "pass",
+      "reason": "鉸接雙夾臂打開，內側平直加熱板清楚可見；整體為雙平板器具而非圓筒電捲棒，電線只是附屬線索。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-straightener.png",
+      "sourceSha256": "df5f60681a1197d7796147f7ddd6c5534207a73604bad578546d01b7c3cee771"
+    },
+    {
+      "id": "curling-iron",
+      "decision": "pass",
+      "reason": "銀色圓筒加熱棒、貼合筒身的彈簧夾片、隔熱握柄與尾端電線明確；無雙平板，與離子夾有可辨差別。",
+      "sourceFile": "output/hair-salon-2026-10/sources/curling-iron.png",
+      "sourceSha256": "7c4aa8064db9d255a2c70ffa57c6859ae9c5d5ed07a4cb1dc39262f7fb66c894"
+    },
+    {
+      "id": "hand-mirror",
+      "decision": "pass",
+      "reason": "橢圓反射鏡面連接長握柄，單一鏡體完整；無折疊盒蓋及桌上支架，區別コンパクトミラー。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hand-mirror.png",
+      "sourceSha256": "6f68c1147ebafa8c0bc3ae009cc2bd2704b4cf139d443936595179117e9ed7d1"
+    },
+    {
+      "id": "haircut",
+      "decision": "pass",
+      "reason": "美髮師以剪刀修剪手指間提起的髮束，顧客穿剪髮圍布，動作及剪刀遠離臉部；可見正在剪髮而非只呈現髮型。",
+      "sourceFile": "output/hair-salon-2026-10/sources/haircut.png",
+      "sourceSha256": "da73367bf0bd6521ab6fa3b549b2d512e7a743bb21c55db6ce15de84251bc606"
+    },
+    {
+      "id": "category-hair-salon",
+      "decision": "pass",
+      "reason": "理容椅、具有托頸凹口的洗髮盆、直刃剪刀與圓筒梳合成一致的理美容設備組；白底、無文字與品牌，適合作分類封面。",
+      "sourceFile": "output/hair-salon-2026-10/sources/category-hair-salon.png",
+      "sourceSha256": "5a8b05a028674a5997ff5c0f110cc2cd78f275a875e811a26e539489e101d449"
+    },
+    {
+      "id": "neck-duster",
+      "decision": "pass",
+      "reason": "短木柄上方是明顯寬扇形蓬鬆毛束，適合掃除頸部碎髮；與本批窄圓毛束、帶泡沫的刮鬍刷形狀可區分，白底無文字。",
+      "sourceFile": "output/hair-salon-2026-10/sources/neck-duster.png",
+      "sourceSha256": "a70706d53a0a94b746582cfd5f187c1bcdf44e2ec18bc0ce963932693b51360c"
+    },
+    {
+      "id": "shaving-brush",
+      "decision": "pass",
+      "reason": "奶白短柄、圓形密集毛束與頂端少量刮鬍泡沫清楚，辨識剃鬚起泡刷；沒有寬扇形碎髮刷的輪廓或髮梳結構。",
+      "sourceFile": "output/hair-salon-2026-10/sources/shaving-brush.png",
+      "sourceSha256": "f9a6f1496f57c070d35699f3f827e7018c7b1354739231249bf4cc2a78fc769a"
+    },
+    {
+      "id": "straight-razor",
+      "decision": "pass",
+      "reason": "銀色直刃刀片座以鉸接連到黑色折疊握柄，刀刃可收進握柄，整個工具完整；非既有T型刮鬍刀、剪刀或固定菜刀。",
+      "sourceFile": "output/hair-salon-2026-10/sources/straight-razor.png",
+      "sourceSha256": "40cfe437100ebbaee08b37f84d82e4ca45539eb44e544f6393080530c836e6b7"
+    },
+    {
+      "id": "hair-color-bowl",
+      "decision": "pass",
+      "reason": "黑色塑膠碗有專用握柄、倒口及內壁無字刻線，底部紫色乳膏提供染劑線索；碗為主體，沒有混入刷具或食品。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-color-bowl.png",
+      "sourceSha256": "152f70224dc38287e4ea974a055c1847f633bdbc5b116cc6aa3a23b10dd295d1"
+    },
+    {
+      "id": "salon-trolley",
+      "decision": "pass",
+      "reason": "黑色多層淺抽盤、四個小腳輪及側邊圓形吹風機收納架明確，符合理美容工具車；無送餐大托盤與餐具。",
+      "sourceFile": "output/hair-salon-2026-10/sources/salon-trolley.png",
+      "sourceSha256": "6a7103bef707d5bb0348040ba3279e1a9b2df2f91d3673438f1f356304bfd75d"
+    },
+    {
+      "id": "hooded-hair-dryer",
+      "decision": "pass",
+      "reason": "完整大型罩體有前方開口、內部送風孔、可調高度立柱及輪式底座，明顯為罩式乾髮機；不是環形紅外加溫器或手持吹風機。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hooded-hair-dryer.png",
+      "sourceSha256": "0aa92b2c65cf0d210e2757a79fc2f331dc4625c2edb4b3ada30051b4a2582f9f"
+    },
+    {
+      "id": "hair-wax",
+      "decision": "pass",
+      "reason": "低矮圓罐及分離罐蓋完整，不透明乳白蠟膏有能維持形狀的尖峰質地；相對本批透明凝膠具可辨質地差異，無品牌文字。",
+      "sourceFile": "output/hair-salon-2026-10/sources/hair-wax.png",
+      "sourceSha256": "de344402ac570723d5a363c2c6b132d6487d1d3b6b6115a80b063090e57af3a4"
+    },
+    {
+      "id": "styling-gel",
+      "decision": "pass",
+      "reason": "透明軟管內可見淡藍凝膠，旁有透明膠狀小峰，黑翻蓋及管身完整；與不透明髮蠟、油及噴霧包裝可區分。",
+      "sourceFile": "output/hair-salon-2026-10/sources/styling-gel.png",
+      "sourceSha256": "ba453f50ea6fbd12f603638b67e86b36aa5ef819942a7e9baef023c239fb1829"
+    },
+    {
+      "id": "bangs",
+      "decision": "pass",
+      "reason": "正面成人展示頭的額頭上有清楚連續瀏海，髮束止於眉毛附近，其餘頭髮收在耳後；額前髮束是明確辨識線索，非整體短髮剪裁。",
+      "sourceFile": "output/hair-salon-2026-10/sources/bangs.png",
+      "sourceSha256": "8314375e4444afd3d9f147d9ff7f789fef3879c00167aa4f086736f256dfe94e"
+    },
+    {
+      "id": "sideburns",
+      "decision": "pass",
+      "reason": "側前方展示頭可見耳前由太陽穴延伸向下的一條深色髮帶，耳朵、臉頰與下顎清楚且無鬍鬚；不混成耳後頭髮或下巴鬍子。",
+      "sourceFile": "output/hair-salon-2026-10/sources/sideburns.png",
+      "sourceSha256": "449c79ca3ea81362db19b1ea5c85cf17fbb3345af3507e3e99ac4e6c497aadaa"
+    },
+    {
+      "id": "bob-cut",
+      "decision": "pass",
+      "reason": "完整三分之四側前展示頭有下巴附近齊切、向內彎的俐落短髮外輪廓，兩側髮尾清楚；不是長髮、馬尾或僅額前瀏海。",
+      "sourceFile": "output/hair-salon-2026-10/sources/bob-cut.png",
+      "sourceSha256": "03b6df2caedc8ee39ad34d433591d1a9739401ea5eea11d8efca3e7aa1a5ba37"
+    },
+    {
+      "id": "buzz-cut",
+      "decision": "pass",
+      "reason": "整個頭頂及兩側都是極短可見髮茬，沿自然圓頭型，沒有平頂或留長頂髮；可辨寸頭而非剃光或crew cut。",
+      "sourceFile": "output/hair-salon-2026-10/sources/buzz-cut.png",
+      "sourceSha256": "d9c111020bf8f66a0e5f2afdb92c9e2aed71c91ed9ead813867398914c33449d"
+    }
+  ]
+}

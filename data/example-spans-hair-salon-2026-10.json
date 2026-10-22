@@ -1,0 +1,5721 @@
+{
+  "en": {
+    "My dad gets his hair cut at this barbershop.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "dad",
+        "z": "爸爸",
+        "j": "父",
+        "e": "dad"
+      },
+      {
+        "t": " gets his "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cut",
+        "z": "剪",
+        "j": "切る",
+        "e": "cut"
+      },
+      {
+        "t": " at this "
+      },
+      {
+        "t": "barbershop",
+        "z": "理髮店",
+        "j": "理容室",
+        "e": "barbershop"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My usual barbershop is closed on Mondays, so I booked a haircut for Tuesday.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "usual",
+        "z": "平常去的",
+        "j": "いつもの",
+        "e": "usual"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "barbershop",
+        "z": "理髮店",
+        "j": "理容室",
+        "e": "barbershop"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "closed",
+        "z": "休息",
+        "j": "休み",
+        "e": "closed"
+      },
+      {
+        "t": " on "
+      },
+      {
+        "t": "Mondays",
+        "z": "週一",
+        "j": "月曜日",
+        "e": "Mondays"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "booked",
+        "z": "預約了",
+        "j": "予約した",
+        "e": "booked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "haircut",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "Tuesday",
+        "z": "週二",
+        "j": "火曜日",
+        "e": "Tuesday"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please book an appointment at the hair salon for Saturday.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "book",
+        "z": "預約",
+        "j": "予約する",
+        "e": "book"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "appointment",
+        "z": "預約時段",
+        "j": "予約",
+        "e": "appointment"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "hair salon",
+        "z": "美容院",
+        "j": "美容室",
+        "e": "hair salon"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "Saturday",
+        "z": "週六",
+        "j": "土曜日",
+        "e": "Saturday"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because it was my first time coloring my hair, I visited the hair salon for a consultation beforehand.": [
+      {
+        "t": "Because it was my "
+      },
+      {
+        "t": "first time",
+        "z": "第一次",
+        "j": "初めて",
+        "e": "first time"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "coloring",
+        "z": "染色",
+        "j": "染める",
+        "e": "coloring"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "visited",
+        "z": "到訪了",
+        "j": "訪れた",
+        "e": "visited"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hair salon",
+        "z": "美容院",
+        "j": "美容室",
+        "e": "hair salon"
+      },
+      {
+        "t": " for a "
+      },
+      {
+        "t": "consultation",
+        "z": "諮詢",
+        "j": "相談",
+        "e": "consultation"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "beforehand",
+        "z": "事先",
+        "j": "事前に",
+        "e": "beforehand"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The barber pole is beside the entrance.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barber pole",
+        "z": "理髮店三色燈",
+        "j": "サインポール",
+        "e": "barber pole"
+      },
+      {
+        "t": " is beside the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please sit in the barber chair.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "sit",
+        "z": "坐",
+        "j": "座る",
+        "e": "sit"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "barber chair",
+        "z": "理髮椅",
+        "j": "理容椅子",
+        "e": "barber chair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before shaving my face, the barber reclined the barber chair.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "shaving",
+        "z": "刮",
+        "j": "そる",
+        "e": "shaving"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "face",
+        "z": "臉",
+        "j": "顔",
+        "e": "face"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "reclined",
+        "z": "放倒椅背",
+        "j": "背もたれを倒した",
+        "e": "reclined"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "barber chair",
+        "z": "理髮椅",
+        "j": "理容椅子",
+        "e": "barber chair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Rest your neck on the shampoo basin.": [
+      {
+        "t": "Rest",
+        "z": "靠放",
+        "j": "預ける",
+        "e": "rest"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "neck",
+        "z": "頸部",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "shampoo basin",
+        "z": "洗髮盆",
+        "j": "シャンプーボウル",
+        "e": "shampoo basin"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My neck felt uncomfortable during the wash, so I shifted my position at the shampoo basin.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "neck",
+        "z": "頸部",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": " felt "
+      },
+      {
+        "t": "uncomfortable",
+        "z": "不舒服",
+        "j": "つらい",
+        "e": "uncomfortable"
+      },
+      {
+        "t": " during the "
+      },
+      {
+        "t": "wash",
+        "z": "洗頭",
+        "j": "洗髪",
+        "e": "hair wash"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "shifted",
+        "z": "調整了",
+        "j": "変えた",
+        "e": "shifted"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "position",
+        "z": "姿勢",
+        "j": "姿勢",
+        "e": "position"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "shampoo basin",
+        "z": "洗髮盆",
+        "j": "シャンプーボウル",
+        "e": "shampoo basin"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please fasten the haircut cape.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "fasten",
+        "z": "扣好",
+        "j": "留める",
+        "e": "fasten"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "haircut cape",
+        "z": "剪髮圍布",
+        "j": "カットクロス",
+        "e": "haircut cape"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The haircut cape felt too tight, so I asked the stylist to loosen it.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "haircut cape",
+        "z": "剪髮圍布",
+        "j": "カットクロス",
+        "e": "haircut cape"
+      },
+      {
+        "t": " felt "
+      },
+      {
+        "t": "too tight",
+        "z": "太緊",
+        "j": "きつすぎる",
+        "e": "too tight"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼んだ",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "loosen",
+        "z": "放鬆",
+        "j": "緩める",
+        "e": "loosen"
+      },
+      {
+        "t": " it."
+      }
+    ],
+    "The barber uses hair clippers on the sides.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "uses",
+        "z": "使用",
+        "j": "使う",
+        "e": "uses"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair clippers",
+        "z": "電推剪",
+        "j": "バリカン",
+        "e": "hair clippers"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "sides",
+        "z": "兩側的頭髮",
+        "j": "横の髪",
+        "e": "sides"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I disliked the sound of the hair clippers, so I asked for scissors instead.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "disliked",
+        "z": "不喜歡",
+        "j": "苦手だった",
+        "e": "disliked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "sound",
+        "z": "聲音",
+        "j": "音",
+        "e": "sound"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "hair clippers",
+        "z": "電推剪",
+        "j": "バリカン",
+        "e": "hair clippers"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼んだ",
+        "e": "asked"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "scissors",
+        "z": "剪刀",
+        "j": "はさみ",
+        "e": "scissors"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "instead",
+        "z": "改用",
+        "j": "代わりに",
+        "e": "instead"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "These thinning scissors have teeth on one blade.": [
+      {
+        "t": "These "
+      },
+      {
+        "t": "thinning scissors",
+        "z": "打薄剪",
+        "j": "すきばさみ",
+        "e": "thinning scissors"
+      },
+      {
+        "t": " have "
+      },
+      {
+        "t": "teeth",
+        "z": "梳齒",
+        "j": "歯",
+        "e": "teeth"
+      },
+      {
+        "t": " on "
+      },
+      {
+        "t": "one blade",
+        "z": "一側刀刃",
+        "j": "片方の刃",
+        "e": "one blade"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My hair felt too thick, so the stylist used thinning scissors on the ends.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " felt "
+      },
+      {
+        "t": "too thick",
+        "z": "太厚重",
+        "j": "量が多すぎる",
+        "e": "too thick"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "thinning scissors",
+        "z": "打薄剪",
+        "j": "すきばさみ",
+        "e": "thinning scissors"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "ends",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the hair-cutting scissors in the tool pouch.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "しまう",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hair-cutting scissors",
+        "z": "剪髮剪刀",
+        "j": "カットばさみ",
+        "e": "hair-cutting scissors"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "tool pouch",
+        "z": "工具袋",
+        "j": "道具入れ",
+        "e": "tool pouch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I borrowed hair-cutting scissors, so I did not have to use my paper scissors.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "borrowed",
+        "z": "借到了",
+        "j": "借りた",
+        "e": "borrowed"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair-cutting scissors",
+        "z": "剪髮剪刀",
+        "j": "カットばさみ",
+        "e": "hair-cutting scissors"
+      },
+      {
+        "t": ", so I did not have to "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "paper scissors",
+        "z": "剪紙用剪刀",
+        "j": "紙用のはさみ",
+        "e": "paper scissors"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The stylist shapes my bangs with a round hairbrush.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shapes",
+        "z": "整理造型",
+        "j": "整える",
+        "e": "shapes"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "bangs",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "round hairbrush",
+        "z": "圓筒髮梳",
+        "j": "ロールブラシ",
+        "e": "round hairbrush"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My hair caught in the round hairbrush, so I stopped pulling and untangled it slowly.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "caught",
+        "z": "纏住了",
+        "j": "絡まった",
+        "e": "caught"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "round hairbrush",
+        "z": "圓筒髮梳",
+        "j": "ロールブラシ",
+        "e": "round hairbrush"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "stopped",
+        "z": "停止了",
+        "j": "やめた",
+        "e": "stopped"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "pulling",
+        "z": "拉扯",
+        "j": "引っ張る",
+        "e": "pulling"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "untangled",
+        "z": "解開了",
+        "j": "ほどいた",
+        "e": "untangled"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "slowly",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Hold the top section with a sectioning clip.": [
+      {
+        "t": "Hold",
+        "z": "固定",
+        "j": "留める",
+        "e": "hold"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "top section",
+        "z": "上層髮束",
+        "j": "上の髪",
+        "e": "top section"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "sectioning clip",
+        "z": "分區髮夾",
+        "j": "ダッカール",
+        "e": "sectioning clip"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The sectioning clip slipped, so I divided the hair into smaller sections and tried again.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "sectioning clip",
+        "z": "分區髮夾",
+        "j": "ダッカール",
+        "e": "sectioning clip"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "slipped",
+        "z": "滑落了",
+        "j": "滑った",
+        "e": "slipped"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "divided",
+        "z": "分開了",
+        "j": "分けた",
+        "e": "divided"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " into "
+      },
+      {
+        "t": "smaller sections",
+        "z": "更小髮束",
+        "j": "もっと細かい束",
+        "e": "smaller sections"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "tried again",
+        "z": "再試一次",
+        "j": "やり直した",
+        "e": "tried again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Fill the mist spray bottle with water.": [
+      {
+        "t": "Fill",
+        "z": "裝滿",
+        "j": "入れる",
+        "e": "fill"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mist spray bottle",
+        "z": "噴霧水瓶",
+        "j": "霧吹き",
+        "e": "mist spray bottle"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "water",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The ends had dried, so the stylist dampened them with a mist spray bottle before cutting.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "ends",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "dried",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "dried"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dampened",
+        "z": "弄濕了",
+        "j": "湿らせた",
+        "e": "dampened"
+      },
+      {
+        "t": " them with a "
+      },
+      {
+        "t": "mist spray bottle",
+        "z": "噴霧水瓶",
+        "j": "霧吹き",
+        "e": "mist spray bottle"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "cutting",
+        "z": "剪髮",
+        "j": "切る",
+        "e": "cutting"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The stylist applies dye with a hair color brush.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "applies",
+        "z": "塗抹",
+        "j": "塗る",
+        "e": "applies"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dye",
+        "z": "染髮劑",
+        "j": "カラー剤",
+        "e": "hair dye"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "hair color brush",
+        "z": "染髮刷",
+        "j": "カラー用ハケ",
+        "e": "hair color brush"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After finishing the color, the stylist washed the hair color brush and left it to dry.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "finishing",
+        "z": "完成",
+        "j": "終える",
+        "e": "finishing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "color",
+        "z": "染髮",
+        "j": "カラー",
+        "e": "color treatment"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "washed",
+        "z": "洗淨了",
+        "j": "洗った",
+        "e": "washed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hair color brush",
+        "z": "染髮刷",
+        "j": "カラー用ハケ",
+        "e": "hair color brush"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "left",
+        "z": "放著",
+        "j": "置いた",
+        "e": "left"
+      },
+      {
+        "t": " it to "
+      },
+      {
+        "t": "dry",
+        "z": "乾",
+        "j": "乾く",
+        "e": "dry"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The stylist wraps a strand around a perm rod.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wraps",
+        "z": "捲上",
+        "j": "巻く",
+        "e": "wraps"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "strand",
+        "z": "髮束",
+        "j": "毛束",
+        "e": "strand"
+      },
+      {
+        "t": " around a "
+      },
+      {
+        "t": "perm rod",
+        "z": "燙髮捲",
+        "j": "パーマロッド",
+        "e": "perm rod"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wanted loose curls, so the stylist chose thicker perm rods.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wanted",
+        "z": "想要",
+        "j": "したかった",
+        "e": "wanted"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "loose curls",
+        "z": "較鬆捲度",
+        "j": "ゆるいカール",
+        "e": "loose curls"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選んだ",
+        "e": "chose"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "thicker",
+        "z": "較粗的",
+        "j": "太めの",
+        "e": "thicker"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "perm rods",
+        "z": "燙髮捲",
+        "j": "パーマロッド",
+        "e": "perm rods"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She straightens her bangs with a hair straightener.": [
+      {
+        "t": "She "
+      },
+      {
+        "t": "straightens",
+        "z": "夾直",
+        "j": "伸ばす",
+        "e": "straightens"
+      },
+      {
+        "t": " her "
+      },
+      {
+        "t": "bangs",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "hair straightener",
+        "z": "離子夾",
+        "j": "ストレートアイロン",
+        "e": "hair straightener"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After using the hair straightener, I checked that it was unplugged.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "using",
+        "z": "使用",
+        "j": "使う",
+        "e": "using"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hair straightener",
+        "z": "離子夾",
+        "j": "ストレートアイロン",
+        "e": "hair straightener"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " that it was "
+      },
+      {
+        "t": "unplugged",
+        "z": "已拔除插頭",
+        "j": "プラグを抜いた",
+        "e": "unplugged"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The stylist curls the ends with a curling iron.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "curls",
+        "z": "捲彎",
+        "j": "巻く",
+        "e": "curls"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ends",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "curling iron",
+        "z": "電捲棒",
+        "j": "カールアイロン",
+        "e": "curling iron"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The curling iron was still hot, so I waited for it to cool before putting it away.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "curling iron",
+        "z": "電捲棒",
+        "j": "カールアイロン",
+        "e": "curling iron"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "still",
+        "z": "還",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hot",
+        "z": "燙",
+        "j": "熱い",
+        "e": "hot"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等待了",
+        "j": "待った",
+        "e": "waited"
+      },
+      {
+        "t": " for it to "
+      },
+      {
+        "t": "cool",
+        "z": "冷卻",
+        "j": "冷める",
+        "e": "cool"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "putting it away",
+        "z": "把它收起來",
+        "j": "しまう",
+        "e": "putting it away"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Could I borrow the hand mirror?": [
+      {
+        "t": "Could I "
+      },
+      {
+        "t": "borrow",
+        "z": "借用",
+        "j": "借りる",
+        "e": "borrow"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "hand mirror",
+        "z": "手持鏡",
+        "j": "手鏡",
+        "e": "hand mirror"
+      },
+      {
+        "t": "?"
+      }
+    ],
+    "I could not see the back of my hair, so the stylist showed it to me with a hand mirror.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "see",
+        "z": "看見",
+        "j": "見る",
+        "e": "see"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "back",
+        "z": "後面",
+        "j": "後ろ",
+        "e": "back"
+      },
+      {
+        "t": " of my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "showed",
+        "z": "展示了",
+        "j": "見せた",
+        "e": "showed"
+      },
+      {
+        "t": " it to me with a "
+      },
+      {
+        "t": "hand mirror",
+        "z": "手持鏡",
+        "j": "手鏡",
+        "e": "hand mirror"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I would like just a haircut, please.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "would like",
+        "z": "想要",
+        "j": "希望する",
+        "e": "would like"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "just",
+        "z": "只",
+        "j": "だけ",
+        "e": "just"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "haircut",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": ", please."
+      }
+    ],
+    "My bangs were covering my eyes, so I booked a haircut.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "bangs",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "covering",
+        "z": "遮住",
+        "j": "覆っている",
+        "e": "covering"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "eyes",
+        "z": "眼睛",
+        "j": "目",
+        "e": "eyes"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "booked",
+        "z": "預約了",
+        "j": "予約した",
+        "e": "booked"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "haircut",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When I saw the spinning barber pole, I finally found the entrance.": [
+      {
+        "t": "When I "
+      },
+      {
+        "t": "saw",
+        "z": "看見了",
+        "j": "見えた",
+        "e": "saw"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "spinning",
+        "z": "轉動的",
+        "j": "回っている",
+        "e": "spinning"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "barber pole",
+        "z": "理髮店三色燈",
+        "j": "サインポール",
+        "e": "barber pole"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "finally",
+        "z": "終於",
+        "j": "やっと",
+        "e": "finally"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "found",
+        "z": "找到了",
+        "j": "分かった",
+        "e": "found"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "entrance",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The barber brushes hair off my neck with a neck duster.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "brushes",
+        "z": "刷掉",
+        "j": "払う",
+        "e": "brushes away"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair",
+        "z": "碎髮",
+        "j": "毛",
+        "e": "loose hair"
+      },
+      {
+        "t": " off my "
+      },
+      {
+        "t": "neck",
+        "z": "脖子",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "neck duster",
+        "z": "碎髮刷",
+        "j": "ネックブラシ",
+        "e": "neck duster"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the haircut, the barber used a neck duster to remove hair from my collar.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "haircut",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "neck duster",
+        "z": "碎髮刷",
+        "j": "ネックブラシ",
+        "e": "neck duster"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "remove",
+        "z": "去除",
+        "j": "払う",
+        "e": "remove"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair",
+        "z": "碎髮",
+        "j": "毛",
+        "e": "loose hair"
+      },
+      {
+        "t": " from my "
+      },
+      {
+        "t": "collar",
+        "z": "衣領",
+        "j": "襟元",
+        "e": "collar"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The barber wets the shaving brush.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wets",
+        "z": "打濕",
+        "j": "ぬらす",
+        "e": "wets"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shaving brush",
+        "z": "刮鬍刷",
+        "j": "シェービングブラシ",
+        "e": "shaving brush"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After the shave, the barber rinsed the shaving brush and left it to dry.": [
+      {
+        "t": "After the "
+      },
+      {
+        "t": "shave",
+        "z": "刮臉",
+        "j": "顔そり",
+        "e": "shave"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "rinsed",
+        "z": "沖洗了",
+        "j": "すすいだ",
+        "e": "rinsed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shaving brush",
+        "z": "刮鬍刷",
+        "j": "シェービングブラシ",
+        "e": "shaving brush"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "left",
+        "z": "放著",
+        "j": "置いた",
+        "e": "left"
+      },
+      {
+        "t": " it to "
+      },
+      {
+        "t": "dry",
+        "z": "乾",
+        "j": "乾く",
+        "e": "dry"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The barber unfolds the straight razor.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "unfolds",
+        "z": "打開",
+        "j": "開く",
+        "e": "unfolds"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "straight razor",
+        "z": "折疊剃刀",
+        "j": "シェービングレザー",
+        "e": "straight razor"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I was nervous about the straight razor, so I asked the barber to explain the shave.": [
+      {
+        "t": "I was "
+      },
+      {
+        "t": "nervous",
+        "z": "緊張的",
+        "j": "不安な",
+        "e": "nervous"
+      },
+      {
+        "t": " about the "
+      },
+      {
+        "t": "straight razor",
+        "z": "折疊剃刀",
+        "j": "シェービングレザー",
+        "e": "straight razor"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼んだ",
+        "e": "asked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "explain",
+        "z": "說明",
+        "j": "説明する",
+        "e": "explain"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "shave",
+        "z": "刮臉流程",
+        "j": "顔そり",
+        "e": "shaving process"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The stylist mixes dye in a hair color bowl.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "mixes",
+        "z": "混合",
+        "j": "混ぜる",
+        "e": "mixes"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dye",
+        "z": "染髮劑",
+        "j": "カラー剤",
+        "e": "hair dye"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "hair color bowl",
+        "z": "染髮調色碗",
+        "j": "カラーカップ",
+        "e": "hair color bowl"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the hair color bowl was still wet, the stylist wiped it before mixing the dye.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "hair color bowl",
+        "z": "染髮調色碗",
+        "j": "カラーカップ",
+        "e": "hair color bowl"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "still",
+        "z": "還",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wet",
+        "z": "濕的",
+        "j": "ぬれている",
+        "e": "wet"
+      },
+      {
+        "t": ", the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "wiped",
+        "z": "擦拭了",
+        "j": "拭いた",
+        "e": "wiped"
+      },
+      {
+        "t": " it before "
+      },
+      {
+        "t": "mixing",
+        "z": "混合",
+        "j": "混ぜる",
+        "e": "mixing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "dye",
+        "z": "染髮劑",
+        "j": "カラー剤",
+        "e": "hair dye"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Move the salon trolley beside the chair.": [
+      {
+        "t": "Move",
+        "z": "移動",
+        "j": "動かす",
+        "e": "move"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "salon trolley",
+        "z": "美髮工具推車",
+        "j": "サロンワゴン",
+        "e": "salon trolley"
+      },
+      {
+        "t": " beside the "
+      },
+      {
+        "t": "chair",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The salon trolley was blocking the aisle, so the stylist moved it closer to the mirror.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "salon trolley",
+        "z": "美髮工具推車",
+        "j": "サロンワゴン",
+        "e": "salon trolley"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "blocking",
+        "z": "擋住",
+        "j": "ふさいでいる",
+        "e": "blocking"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "aisle",
+        "z": "通道",
+        "j": "通路",
+        "e": "aisle"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "動かした",
+        "e": "moved"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "closer",
+        "z": "更靠近",
+        "j": "もっと近く",
+        "e": "closer"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "mirror",
+        "z": "鏡子",
+        "j": "鏡",
+        "e": "mirror"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She sits under the hooded hair dryer.": [
+      {
+        "t": "She "
+      },
+      {
+        "t": "sits",
+        "z": "坐著",
+        "j": "座っている",
+        "e": "sits"
+      },
+      {
+        "t": " under the "
+      },
+      {
+        "t": "hooded hair dryer",
+        "z": "罩式烘髮機",
+        "j": "フードドライヤー",
+        "e": "hooded hair dryer"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The hooded hair dryer was too low, so the stylist raised it before I sat down.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hooded hair dryer",
+        "z": "罩式烘髮機",
+        "j": "フードドライヤー",
+        "e": "hooded hair dryer"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too low",
+        "z": "太低",
+        "j": "低すぎる",
+        "e": "too low"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "raised",
+        "z": "調高了",
+        "j": "高さを上げた",
+        "e": "raised"
+      },
+      {
+        "t": " it before I "
+      },
+      {
+        "t": "sat down",
+        "z": "坐下",
+        "j": "座った",
+        "e": "sat down"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I use hair wax on the ends.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair wax",
+        "z": "髮蠟",
+        "j": "ヘアワックス",
+        "e": "hair wax"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "ends",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I had used too much hair wax, so I washed my hair and started again.": [
+      {
+        "t": "I had "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "too much",
+        "z": "太多",
+        "j": "多すぎる",
+        "e": "too much"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "hair wax",
+        "z": "髮蠟",
+        "j": "ヘアワックス",
+        "e": "hair wax"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "washed",
+        "z": "洗了",
+        "j": "洗った",
+        "e": "washed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "started again",
+        "z": "重新做",
+        "j": "やり直した",
+        "e": "started again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I style my hair with styling gel.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "style",
+        "z": "整理造型",
+        "j": "整える",
+        "e": "style"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " with "
+      },
+      {
+        "t": "styling gel",
+        "z": "造型髮膠",
+        "j": "スタイリングジェル",
+        "e": "styling gel"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The styling gel dried too quickly, so I dampened my hands and restyled my hair.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "styling gel",
+        "z": "造型髮膠",
+        "j": "スタイリングジェル",
+        "e": "styling gel"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dried",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "dried"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "too quickly",
+        "z": "太快",
+        "j": "早すぎる",
+        "e": "too quickly"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "dampened",
+        "z": "弄濕了",
+        "j": "湿らせた",
+        "e": "dampened"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hands",
+        "z": "雙手",
+        "j": "手",
+        "e": "hands"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "restyled",
+        "z": "重新造型了",
+        "j": "整え直した",
+        "e": "restyled"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please trim my bangs a little.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "trim",
+        "z": "修剪",
+        "j": "切りそろえる",
+        "e": "trim"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "bangs",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "a little",
+        "z": "一點",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My bangs looked shorter when they dried, so I asked to leave them longer next time.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "bangs",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "looked",
+        "z": "看起來",
+        "j": "見えた",
+        "e": "looked"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "shorter",
+        "z": "更短",
+        "j": "より短く",
+        "e": "shorter"
+      },
+      {
+        "t": " when they "
+      },
+      {
+        "t": "dried",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "dried"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "asked",
+        "z": "請求了",
+        "j": "頼んだ",
+        "e": "asked"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "leave",
+        "z": "保留",
+        "j": "残す",
+        "e": "leave"
+      },
+      {
+        "t": " them "
+      },
+      {
+        "t": "longer",
+        "z": "長一點",
+        "j": "長めに",
+        "e": "longer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "next time",
+        "z": "下次",
+        "j": "次回",
+        "e": "next time"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please tidy up my sideburns.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "tidy up",
+        "z": "整理",
+        "j": "整える",
+        "e": "tidy up"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "sideburns",
+        "z": "鬢角",
+        "j": "もみあげ",
+        "e": "sideburns"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My sideburns were uneven, so the barber trimmed them to the same length.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "sideburns",
+        "z": "鬢角",
+        "j": "もみあげ",
+        "e": "sideburns"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "uneven",
+        "z": "長短不一",
+        "j": "長さが違う",
+        "e": "uneven"
+      },
+      {
+        "t": ", so the "
+      },
+      {
+        "t": "barber",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "trimmed",
+        "z": "修剪了",
+        "j": "切りそろえた",
+        "e": "trimmed"
+      },
+      {
+        "t": " them to the "
+      },
+      {
+        "t": "same length",
+        "z": "相同長度",
+        "j": "同じ長さ",
+        "e": "same length"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "She asked for a bob cut.": [
+      {
+        "t": "She "
+      },
+      {
+        "t": "asked for",
+        "z": "要求",
+        "j": "お願いした",
+        "e": "asked for"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bob cut",
+        "z": "鮑伯頭",
+        "j": "ボブ",
+        "e": "bob cut"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wanted a shorter style, but the stylist suggested a bob cut that would still cover my ears.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wanted",
+        "z": "想要",
+        "j": "したかった",
+        "e": "wanted"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "shorter",
+        "z": "較短的",
+        "j": "もっと短い",
+        "e": "shorter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "style",
+        "z": "髮型",
+        "j": "髪型",
+        "e": "hairstyle"
+      },
+      {
+        "t": ", but the "
+      },
+      {
+        "t": "stylist",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "suggested",
+        "z": "建議了",
+        "j": "勧めた",
+        "e": "suggested"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "bob cut",
+        "z": "鮑伯頭",
+        "j": "ボブ",
+        "e": "bob cut"
+      },
+      {
+        "t": " that would still "
+      },
+      {
+        "t": "cover",
+        "z": "蓋住",
+        "j": "隠す",
+        "e": "cover"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "ears",
+        "z": "耳朵",
+        "j": "耳",
+        "e": "ears"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I chose a buzz cut.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "chose",
+        "z": "選了",
+        "j": "選んだ",
+        "e": "chose"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "buzz cut",
+        "z": "寸頭",
+        "j": "坊主頭",
+        "e": "buzz cut"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After getting a buzz cut, I was surprised at how quickly my hair dried.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "getting",
+        "z": "剪成",
+        "j": "してもらう",
+        "e": "getting"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "buzz cut",
+        "z": "寸頭",
+        "j": "坊主頭",
+        "e": "buzz cut"
+      },
+      {
+        "t": ", I was "
+      },
+      {
+        "t": "surprised",
+        "z": "驚訝",
+        "j": "驚いた",
+        "e": "surprised"
+      },
+      {
+        "t": " at how "
+      },
+      {
+        "t": "quickly",
+        "z": "很快地",
+        "j": "すぐに",
+        "e": "quickly"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hair",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "dried",
+        "z": "乾了",
+        "j": "乾いた",
+        "e": "dried"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "父はこの理容室で髪を切ってもらいます。": [
+      {
+        "t": "父",
+        "r": "ちち",
+        "z": "爸爸",
+        "j": "父",
+        "e": "dad"
+      },
+      {
+        "t": "はこの"
+      },
+      {
+        "t": "理容室",
+        "r": "りようしつ",
+        "z": "理髮店",
+        "j": "理容室",
+        "e": "barbershop"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "切ってもらいます",
+        "r": "きってもらいます",
+        "z": "請人剪",
+        "j": "切ってもらいます",
+        "e": "have it cut"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "いつもの理容室は月曜日が休みなので、火曜日にカットを予約しました。": [
+      {
+        "t": "いつもの",
+        "r": "いつもの",
+        "z": "平常去的",
+        "j": "いつもの",
+        "e": "usual"
+      },
+      {
+        "t": "理容室",
+        "r": "りようしつ",
+        "z": "理髮店",
+        "j": "理容室",
+        "e": "barbershop"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "月曜日",
+        "r": "げつようび",
+        "z": "週一",
+        "j": "月曜日",
+        "e": "Monday"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "休み",
+        "r": "やすみ",
+        "z": "休息",
+        "j": "休み",
+        "e": "closed"
+      },
+      {
+        "t": "なので、"
+      },
+      {
+        "t": "火曜日",
+        "r": "かようび",
+        "z": "週二",
+        "j": "火曜日",
+        "e": "Tuesday"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "カット",
+        "r": "かっと",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "予約しました",
+        "r": "よやくしました",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "booked"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "土曜日に美容室の予約をお願いします。": [
+      {
+        "t": "土曜日",
+        "r": "どようび",
+        "z": "週六",
+        "j": "土曜日",
+        "e": "Saturday"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "美容室",
+        "r": "びようしつ",
+        "z": "美容院",
+        "j": "美容室",
+        "e": "hair salon"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "予約",
+        "r": "よやく",
+        "z": "預約",
+        "j": "予約",
+        "e": "appointment"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お願いします",
+        "r": "おねがいします",
+        "z": "麻煩您",
+        "j": "お願いします",
+        "e": "please"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "初めて髪を染めるので、事前に美容室で相談しました。": [
+      {
+        "t": "初めて",
+        "r": "はじめて",
+        "z": "第一次",
+        "j": "初めて",
+        "e": "for the first time"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "染める",
+        "r": "そめる",
+        "z": "染色",
+        "j": "染める",
+        "e": "color"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "事前",
+        "r": "じぜん",
+        "z": "事先",
+        "j": "事前",
+        "e": "beforehand"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "美容室",
+        "r": "びようしつ",
+        "z": "美容院",
+        "j": "美容室",
+        "e": "hair salon"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "相談しました",
+        "r": "そうだんしました",
+        "z": "諮詢了",
+        "j": "相談しました",
+        "e": "had a consultation"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "入口の横にサインポールがあります。": [
+      {
+        "t": "入口",
+        "r": "いりぐち",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "r": "よこ",
+        "z": "旁邊",
+        "j": "横",
+        "e": "beside"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "サインポール",
+        "r": "さいんぽーる",
+        "z": "理髮店三色燈",
+        "j": "サインポール",
+        "e": "barber pole"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "r": "あります",
+        "z": "有",
+        "j": "あります",
+        "e": "there is"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "回っているサインポールが見えて、やっと入口が分かりました。": [
+      {
+        "t": "回っている",
+        "r": "まわっている",
+        "z": "轉動中的",
+        "j": "回っている",
+        "e": "spinning"
+      },
+      {
+        "t": "サインポール",
+        "r": "さいんぽーる",
+        "z": "理髮店三色燈",
+        "j": "サインポール",
+        "e": "barber pole"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見えて",
+        "r": "みえて",
+        "z": "看見後",
+        "j": "見えて",
+        "e": "came into view"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "やっと",
+        "r": "やっと",
+        "z": "終於",
+        "j": "やっと",
+        "e": "finally"
+      },
+      {
+        "t": "入口",
+        "r": "いりぐち",
+        "z": "入口",
+        "j": "入口",
+        "e": "entrance"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "分かりました",
+        "r": "わかりました",
+        "z": "找到了",
+        "j": "分かりました",
+        "e": "located"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理容椅子に座ってください。": [
+      {
+        "t": "理容椅子",
+        "r": "りよういす",
+        "z": "理髮椅",
+        "j": "理容椅子",
+        "e": "barber chair"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "座ってください",
+        "r": "すわってください",
+        "z": "請坐下",
+        "j": "座ってください",
+        "e": "please sit"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "顔をそる前に、理容師が理容椅子の背もたれを倒しました。": [
+      {
+        "t": "顔",
+        "r": "かお",
+        "z": "臉",
+        "j": "顔",
+        "e": "face"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "そる",
+        "r": "そる",
+        "z": "刮",
+        "j": "そる",
+        "e": "shave"
+      },
+      {
+        "t": "前に、"
+      },
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "理容椅子",
+        "r": "りよういす",
+        "z": "理髮椅",
+        "j": "理容椅子",
+        "e": "barber chair"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "背もたれ",
+        "r": "せもたれ",
+        "z": "椅背",
+        "j": "背もたれ",
+        "e": "backrest"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "倒しました",
+        "r": "たおしました",
+        "z": "放倒了",
+        "j": "倒しました",
+        "e": "reclined"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シャンプーボウルに首を預けてください。": [
+      {
+        "t": "シャンプーボウル",
+        "r": "しゃんぷーぼうる",
+        "z": "洗髮盆",
+        "j": "シャンプーボウル",
+        "e": "shampoo basin"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "首",
+        "r": "くび",
+        "z": "頸部",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "預けてください",
+        "r": "あずけてください",
+        "z": "請靠放",
+        "j": "預けてください",
+        "e": "please rest"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "洗髪中に首がつらくなったので、シャンプーボウルでの姿勢を変えました。": [
+      {
+        "t": "洗髪中",
+        "r": "せんぱつちゅう",
+        "z": "洗頭時",
+        "j": "洗髪中",
+        "e": "during the wash"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "首",
+        "r": "くび",
+        "z": "頸部",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "つらくなった",
+        "r": "つらくなった",
+        "z": "變得不舒服",
+        "j": "つらくなった",
+        "e": "became uncomfortable"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "シャンプーボウル",
+        "r": "しゃんぷーぼうる",
+        "z": "洗髮盆",
+        "j": "シャンプーボウル",
+        "e": "shampoo basin"
+      },
+      {
+        "t": "での"
+      },
+      {
+        "t": "姿勢",
+        "r": "しせい",
+        "z": "姿勢",
+        "j": "姿勢",
+        "e": "position"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "変えました",
+        "r": "かえました",
+        "z": "調整了",
+        "j": "変えました",
+        "e": "changed"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カットクロスを留めてください。": [
+      {
+        "t": "カットクロス",
+        "r": "かっとくろす",
+        "z": "剪髮圍布",
+        "j": "カットクロス",
+        "e": "haircut cape"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "留めてください",
+        "r": "とめてください",
+        "z": "請扣好",
+        "j": "留めてください",
+        "e": "please fasten"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カットクロスがきつかったので、美容師に緩めてもらいました。": [
+      {
+        "t": "カットクロス",
+        "r": "かっとくろす",
+        "z": "剪髮圍布",
+        "j": "カットクロス",
+        "e": "haircut cape"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "きつかった",
+        "r": "きつかった",
+        "z": "太緊了",
+        "j": "きつかった",
+        "e": "was tight"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "緩めてもらいました",
+        "r": "ゆるめてもらいました",
+        "z": "請人放鬆了",
+        "j": "緩めてもらいました",
+        "e": "had it loosened"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理容師がバリカンで横の髪を刈ります。": [
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "バリカン",
+        "r": "ばりかん",
+        "z": "電推剪",
+        "j": "バリカン",
+        "e": "hair clippers"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "横",
+        "r": "よこ",
+        "z": "側面",
+        "j": "横",
+        "e": "sides"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "刈ります",
+        "r": "かります",
+        "z": "修剪",
+        "j": "刈ります",
+        "e": "clip"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "バリカンの音が苦手だったので、代わりにはさみを使ってもらいました。": [
+      {
+        "t": "バリカン",
+        "r": "ばりかん",
+        "z": "電推剪",
+        "j": "バリカン",
+        "e": "hair clippers"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "音",
+        "r": "おと",
+        "z": "聲音",
+        "j": "音",
+        "e": "sound"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "苦手だった",
+        "r": "にがてだった",
+        "z": "不喜歡",
+        "j": "苦手だった",
+        "e": "disliked"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "代わり",
+        "r": "かわり",
+        "z": "代替",
+        "j": "代わり",
+        "e": "instead"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "はさみ",
+        "r": "はさみ",
+        "z": "剪刀",
+        "j": "はさみ",
+        "e": "scissors"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使ってもらいました",
+        "r": "つかってもらいました",
+        "z": "請人使用了",
+        "j": "使ってもらいました",
+        "e": "had someone use"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "このすきばさみは片方の刃に歯があります。": [
+      {
+        "t": "この"
+      },
+      {
+        "t": "すきばさみ",
+        "r": "すきばさみ",
+        "z": "打薄剪",
+        "j": "すきばさみ",
+        "e": "thinning scissors"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "片方",
+        "r": "かたほう",
+        "z": "一側",
+        "j": "片方",
+        "e": "one side"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "刃",
+        "r": "は",
+        "z": "刀刃",
+        "j": "刃",
+        "e": "blade"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "歯",
+        "r": "は",
+        "z": "梳齒",
+        "j": "歯",
+        "e": "teeth"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "r": "あります",
+        "z": "有",
+        "j": "あります",
+        "e": "have"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "髪の量が多すぎたので、美容師が毛先にすきばさみを使いました。": [
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "量",
+        "r": "りょう",
+        "z": "髮量",
+        "j": "量",
+        "e": "amount"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "多すぎた",
+        "r": "おおすぎた",
+        "z": "太多了",
+        "j": "多すぎた",
+        "e": "was excessive"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "毛先",
+        "r": "けさき",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "すきばさみ",
+        "r": "すきばさみ",
+        "z": "打薄剪",
+        "j": "すきばさみ",
+        "e": "thinning scissors"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使いました",
+        "r": "つかいました",
+        "z": "使用了",
+        "j": "使いました",
+        "e": "used"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カットばさみを道具入れにしまってください。": [
+      {
+        "t": "カットばさみ",
+        "r": "かっとばさみ",
+        "z": "剪髮剪刀",
+        "j": "カットばさみ",
+        "e": "hair-cutting scissors"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "道具入れ",
+        "r": "どうぐいれ",
+        "z": "工具袋",
+        "j": "道具入れ",
+        "e": "tool pouch"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "しまってください",
+        "r": "しまってください",
+        "z": "請收好",
+        "j": "しまってください",
+        "e": "please put away"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カットばさみを借りられたので、紙用のはさみを使わずに済みました。": [
+      {
+        "t": "カットばさみ",
+        "r": "かっとばさみ",
+        "z": "剪髮剪刀",
+        "j": "カットばさみ",
+        "e": "hair-cutting scissors"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "借りられた",
+        "r": "かりられた",
+        "z": "借到了",
+        "j": "借りられた",
+        "e": "was able to borrow"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "紙用",
+        "r": "かみよう",
+        "z": "剪紙用",
+        "j": "紙用",
+        "e": "for paper"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "はさみ",
+        "r": "はさみ",
+        "z": "剪刀",
+        "j": "はさみ",
+        "e": "scissors"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使わずに済みました",
+        "r": "つかわずにすみました",
+        "z": "不必使用了",
+        "j": "使わずに済みました",
+        "e": "did not have to use"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美容師がロールブラシで前髪を整えます。": [
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ロールブラシ",
+        "r": "ろーるぶらし",
+        "z": "圓筒髮梳",
+        "j": "ロールブラシ",
+        "e": "round hairbrush"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "前髪",
+        "r": "まえがみ",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "整えます",
+        "r": "ととのえます",
+        "z": "整理",
+        "j": "整えます",
+        "e": "shape"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "髪がロールブラシに絡まったので、引っ張るのをやめてゆっくりほどきました。": [
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ロールブラシ",
+        "r": "ろーるぶらし",
+        "z": "圓筒髮梳",
+        "j": "ロールブラシ",
+        "e": "round hairbrush"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "絡まった",
+        "r": "からまった",
+        "z": "纏住了",
+        "j": "絡まった",
+        "e": "got tangled"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "引っ張る",
+        "r": "ひっぱる",
+        "z": "拉扯",
+        "j": "引っ張る",
+        "e": "pull"
+      },
+      {
+        "t": "のを"
+      },
+      {
+        "t": "やめて",
+        "r": "やめて",
+        "z": "停止後",
+        "j": "やめて",
+        "e": "stopped"
+      },
+      {
+        "t": "ゆっくり",
+        "r": "ゆっくり",
+        "z": "慢慢地",
+        "j": "ゆっくり",
+        "e": "slowly"
+      },
+      {
+        "t": "ほどきました",
+        "r": "ほどきました",
+        "z": "解開了",
+        "j": "ほどきました",
+        "e": "untangled"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "上の髪をダッカールで留めてください。": [
+      {
+        "t": "上",
+        "r": "うえ",
+        "z": "上層",
+        "j": "上",
+        "e": "top"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ダッカール",
+        "r": "だっかーる",
+        "z": "分區髮夾",
+        "j": "ダッカール",
+        "e": "sectioning clip"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "留めてください",
+        "r": "とめてください",
+        "z": "請夾住",
+        "j": "留めてください",
+        "e": "please secure"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ダッカールが滑ったので、髪をもっと細かく分けて留め直しました。": [
+      {
+        "t": "ダッカール",
+        "r": "だっかーる",
+        "z": "分區髮夾",
+        "j": "ダッカール",
+        "e": "sectioning clip"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "滑った",
+        "r": "すべった",
+        "z": "滑落了",
+        "j": "滑った",
+        "e": "slipped"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "もっと",
+        "r": "もっと",
+        "z": "更加",
+        "j": "もっと",
+        "e": "more"
+      },
+      {
+        "t": "細かく",
+        "r": "こまかく",
+        "z": "分得細小",
+        "j": "細かく",
+        "e": "into smaller sections"
+      },
+      {
+        "t": "分けて",
+        "r": "わけて",
+        "z": "分開後",
+        "j": "分けて",
+        "e": "divided"
+      },
+      {
+        "t": "留め直しました",
+        "r": "とめなおしました",
+        "z": "重新夾好了",
+        "j": "留め直しました",
+        "e": "secured again"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "霧吹きに水を入れてください。": [
+      {
+        "t": "霧吹き",
+        "r": "きりふき",
+        "z": "噴霧水瓶",
+        "j": "霧吹き",
+        "e": "mist spray bottle"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "水",
+        "r": "みず",
+        "z": "水",
+        "j": "水",
+        "e": "water"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れてください",
+        "r": "いれてください",
+        "z": "請裝入",
+        "j": "入れてください",
+        "e": "please fill"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "毛先が乾いていたので、美容師は切る前に霧吹きで湿らせました。": [
+      {
+        "t": "毛先",
+        "r": "けさき",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "乾いていた",
+        "r": "かわいていた",
+        "z": "已經乾了",
+        "j": "乾いていた",
+        "e": "had dried"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "切る",
+        "r": "きる",
+        "z": "剪",
+        "j": "切る",
+        "e": "cut"
+      },
+      {
+        "t": "前に"
+      },
+      {
+        "t": "霧吹き",
+        "r": "きりふき",
+        "z": "噴霧水瓶",
+        "j": "霧吹き",
+        "e": "mist spray bottle"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "湿らせました",
+        "r": "しめらせました",
+        "z": "弄濕了",
+        "j": "湿らせました",
+        "e": "dampened"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美容師がカラー用ハケでカラー剤を塗ります。": [
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "カラー用ハケ",
+        "r": "からーようはけ",
+        "z": "染髮刷",
+        "j": "カラー用ハケ",
+        "e": "hair color brush"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "カラー剤",
+        "r": "からーざい",
+        "z": "染髮劑",
+        "j": "カラー剤",
+        "e": "hair dye"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "塗ります",
+        "r": "ぬります",
+        "z": "塗抹",
+        "j": "塗ります",
+        "e": "apply"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カラーが終わると、美容師はカラー用ハケを洗って乾かしておきました。": [
+      {
+        "t": "カラー",
+        "r": "からー",
+        "z": "染髮",
+        "j": "カラー",
+        "e": "color treatment"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "終わる",
+        "r": "おわる",
+        "z": "結束",
+        "j": "終わる",
+        "e": "finish"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "カラー用ハケ",
+        "r": "からーようはけ",
+        "z": "染髮刷",
+        "j": "カラー用ハケ",
+        "e": "hair color brush"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗って",
+        "r": "あらって",
+        "z": "洗淨後",
+        "j": "洗って",
+        "e": "washed"
+      },
+      {
+        "t": "乾かしておきました",
+        "r": "かわかしておきました",
+        "z": "預先晾乾了",
+        "j": "乾かしておきました",
+        "e": "left to dry"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美容師がパーマロッドに毛束を巻きます。": [
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "パーマロッド",
+        "r": "ぱーまろっど",
+        "z": "燙髮捲",
+        "j": "パーマロッド",
+        "e": "perm rod"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "毛束",
+        "r": "けたば",
+        "z": "髮束",
+        "j": "毛束",
+        "e": "strand"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "巻きます",
+        "r": "まきます",
+        "z": "捲上",
+        "j": "巻きます",
+        "e": "wrap"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ゆるいカールにしたかったので、美容師は太めのパーマロッドを選びました。": [
+      {
+        "t": "ゆるい",
+        "r": "ゆるい",
+        "z": "較鬆的",
+        "j": "ゆるい",
+        "e": "loose"
+      },
+      {
+        "t": "カール",
+        "r": "かーる",
+        "z": "捲度",
+        "j": "カール",
+        "e": "curls"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "したかった",
+        "r": "したかった",
+        "z": "想做成",
+        "j": "したかった",
+        "e": "wanted to make"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "太め",
+        "r": "ふとめ",
+        "z": "較粗",
+        "j": "太め",
+        "e": "thicker"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "パーマロッド",
+        "r": "ぱーまろっど",
+        "z": "燙髮捲",
+        "j": "パーマロッド",
+        "e": "perm rods"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "r": "えらびました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼女はストレートアイロンで前髪を伸ばします。": [
+      {
+        "t": "彼女",
+        "r": "かのじょ",
+        "z": "她",
+        "j": "彼女",
+        "e": "she"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ストレートアイロン",
+        "r": "すとれーとあいろん",
+        "z": "離子夾",
+        "j": "ストレートアイロン",
+        "e": "hair straightener"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "前髪",
+        "r": "まえがみ",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "伸ばします",
+        "r": "のばします",
+        "z": "夾直",
+        "j": "伸ばします",
+        "e": "straighten"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ストレートアイロンを使った後、プラグを抜いたか確認しました。": [
+      {
+        "t": "ストレートアイロン",
+        "r": "すとれーとあいろん",
+        "z": "離子夾",
+        "j": "ストレートアイロン",
+        "e": "hair straightener"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使った",
+        "r": "つかった",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": "後",
+        "r": "あと",
+        "z": "之後",
+        "j": "後",
+        "e": "after"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "プラグ",
+        "r": "ぷらぐ",
+        "z": "插頭",
+        "j": "プラグ",
+        "e": "plug"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "抜いた",
+        "r": "ぬいた",
+        "z": "拔除了",
+        "j": "抜いた",
+        "e": "unplugged"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "r": "かくにんしました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美容師がカールアイロンで毛先を巻きます。": [
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "カールアイロン",
+        "r": "かーるあいろん",
+        "z": "電捲棒",
+        "j": "カールアイロン",
+        "e": "curling iron"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "毛先",
+        "r": "けさき",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "巻きます",
+        "r": "まきます",
+        "z": "捲彎",
+        "j": "巻きます",
+        "e": "curl"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カールアイロンがまだ熱かったので、冷めてからしまいました。": [
+      {
+        "t": "カールアイロン",
+        "r": "かーるあいろん",
+        "z": "電捲棒",
+        "j": "カールアイロン",
+        "e": "curling iron"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ",
+        "r": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": "熱かった",
+        "r": "あつかった",
+        "z": "很燙",
+        "j": "熱かった",
+        "e": "was hot"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "冷めて",
+        "r": "さめて",
+        "z": "冷卻後",
+        "j": "冷めて",
+        "e": "cooled"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "しまいました",
+        "r": "しまいました",
+        "z": "收起來了",
+        "j": "しまいました",
+        "e": "put away"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "手鏡を貸してもらえますか。": [
+      {
+        "t": "手鏡",
+        "r": "てかがみ",
+        "z": "手持鏡",
+        "j": "手鏡",
+        "e": "hand mirror"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貸してもらえますか",
+        "r": "かしてもらえますか",
+        "z": "可以借給我嗎",
+        "j": "貸してもらえますか",
+        "e": "could you lend me"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "後ろの髪が見えなかったので、美容師が手鏡で見せてくれました。": [
+      {
+        "t": "後ろ",
+        "r": "うしろ",
+        "z": "後面",
+        "j": "後ろ",
+        "e": "back"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見えなかった",
+        "r": "みえなかった",
+        "z": "看不到",
+        "j": "見えなかった",
+        "e": "could not see"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "手鏡",
+        "r": "てかがみ",
+        "z": "手持鏡",
+        "j": "手鏡",
+        "e": "hand mirror"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "見せてくれました",
+        "r": "みせてくれました",
+        "z": "讓我看了",
+        "j": "見せてくれました",
+        "e": "showed me"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カットだけお願いします。": [
+      {
+        "t": "カット",
+        "r": "かっと",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": "だけ"
+      },
+      {
+        "t": "お願いします",
+        "r": "おねがいします",
+        "z": "麻煩您",
+        "j": "お願いします",
+        "e": "please"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "前髪が目にかかっていたので、カットを予約しました。": [
+      {
+        "t": "前髪",
+        "r": "まえがみ",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "目",
+        "r": "め",
+        "z": "眼睛",
+        "j": "目",
+        "e": "eyes"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "かかっていた",
+        "r": "かかっていた",
+        "z": "遮住了",
+        "j": "かかっていた",
+        "e": "was covering"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "カット",
+        "r": "かっと",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "予約しました",
+        "r": "よやくしました",
+        "z": "預約了",
+        "j": "予約しました",
+        "e": "booked"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理容師がネックブラシで首の毛を払います。": [
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ネックブラシ",
+        "r": "ねっくぶらし",
+        "z": "碎髮刷",
+        "j": "ネックブラシ",
+        "e": "neck duster"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "首",
+        "r": "くび",
+        "z": "脖子",
+        "j": "首",
+        "e": "neck"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "毛",
+        "r": "け",
+        "z": "碎髮",
+        "j": "毛",
+        "e": "loose hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "払います",
+        "r": "はらいます",
+        "z": "掃掉",
+        "j": "払います",
+        "e": "brush away"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カットの後、理容師がネックブラシで襟元の毛を払ってくれました。": [
+      {
+        "t": "カット",
+        "r": "かっと",
+        "z": "剪髮",
+        "j": "カット",
+        "e": "haircut"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "後",
+        "r": "あと",
+        "z": "之後",
+        "j": "後",
+        "e": "after"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "ネックブラシ",
+        "r": "ねっくぶらし",
+        "z": "碎髮刷",
+        "j": "ネックブラシ",
+        "e": "neck duster"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "襟元",
+        "r": "えりもと",
+        "z": "衣領處",
+        "j": "襟元",
+        "e": "collar"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "毛",
+        "r": "け",
+        "z": "碎髮",
+        "j": "毛",
+        "e": "loose hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "払ってくれました",
+        "r": "はらってくれました",
+        "z": "幫我掃掉了",
+        "j": "払ってくれました",
+        "e": "brushed away for me"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理容師がシェービングブラシをぬらします。": [
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "シェービングブラシ",
+        "r": "しぇーびんぐぶらし",
+        "z": "刮鬍刷",
+        "j": "シェービングブラシ",
+        "e": "shaving brush"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ぬらします",
+        "r": "ぬらします",
+        "z": "打濕",
+        "j": "ぬらします",
+        "e": "wet"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "顔そりが終わると、理容師はシェービングブラシをすすいで乾かしておきました。": [
+      {
+        "t": "顔そり",
+        "r": "かおそり",
+        "z": "刮臉",
+        "j": "顔そり",
+        "e": "shave"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "終わる",
+        "r": "おわる",
+        "z": "結束",
+        "j": "終わる",
+        "e": "finish"
+      },
+      {
+        "t": "と、"
+      },
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "シェービングブラシ",
+        "r": "しぇーびんぐぶらし",
+        "z": "刮鬍刷",
+        "j": "シェービングブラシ",
+        "e": "shaving brush"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "すすいで",
+        "r": "すすいで",
+        "z": "沖洗後",
+        "j": "すすいで",
+        "e": "rinsed"
+      },
+      {
+        "t": "乾かしておきました",
+        "r": "かわかしておきました",
+        "z": "預先晾乾了",
+        "j": "乾かしておきました",
+        "e": "left to dry"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "理容師がシェービングレザーを開きます。": [
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "シェービングレザー",
+        "r": "しぇーびんぐれざー",
+        "z": "折疊剃刀",
+        "j": "シェービングレザー",
+        "e": "straight razor"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開きます",
+        "r": "ひらきます",
+        "z": "打開",
+        "j": "開きます",
+        "e": "unfold"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "シェービングレザーが少し怖かったので、理容師に顔そりの説明をお願いしました。": [
+      {
+        "t": "シェービングレザー",
+        "r": "しぇーびんぐれざー",
+        "z": "折疊剃刀",
+        "j": "シェービングレザー",
+        "e": "straight razor"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "少し",
+        "r": "すこし",
+        "z": "有點",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": "怖かった",
+        "r": "こわかった",
+        "z": "害怕",
+        "j": "怖かった",
+        "e": "was afraid"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "顔そり",
+        "r": "かおそり",
+        "z": "刮臉",
+        "j": "顔そり",
+        "e": "shave"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "説明",
+        "r": "せつめい",
+        "z": "說明",
+        "j": "説明",
+        "e": "explanation"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お願いしました",
+        "r": "おねがいしました",
+        "z": "請求了",
+        "j": "お願いしました",
+        "e": "asked for"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "美容師がカラーカップでカラー剤を混ぜます。": [
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "カラーカップ",
+        "r": "からーかっぷ",
+        "z": "染髮調色碗",
+        "j": "カラーカップ",
+        "e": "hair color bowl"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "カラー剤",
+        "r": "からーざい",
+        "z": "染髮劑",
+        "j": "カラー剤",
+        "e": "hair dye"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "混ぜます",
+        "r": "まぜます",
+        "z": "混合",
+        "j": "混ぜます",
+        "e": "mix"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カラーカップがまだぬれていたので、美容師は拭いてからカラー剤を混ぜました。": [
+      {
+        "t": "カラーカップ",
+        "r": "からーかっぷ",
+        "z": "染髮調色碗",
+        "j": "カラーカップ",
+        "e": "hair color bowl"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "まだ",
+        "r": "まだ",
+        "z": "還",
+        "j": "まだ",
+        "e": "still"
+      },
+      {
+        "t": "ぬれていた",
+        "r": "ぬれていた",
+        "z": "濕著",
+        "j": "ぬれていた",
+        "e": "was wet"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "拭いて",
+        "r": "ふいて",
+        "z": "擦乾後",
+        "j": "拭いて",
+        "e": "wiped"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "カラー剤",
+        "r": "からーざい",
+        "z": "染髮劑",
+        "j": "カラー剤",
+        "e": "hair dye"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "混ぜました",
+        "r": "まぜました",
+        "z": "混合了",
+        "j": "混ぜました",
+        "e": "mixed"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "サロンワゴンを椅子の横に動かしてください。": [
+      {
+        "t": "サロンワゴン",
+        "r": "さろんわごん",
+        "z": "美髮工具推車",
+        "j": "サロンワゴン",
+        "e": "salon trolley"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "椅子",
+        "r": "いす",
+        "z": "椅子",
+        "j": "椅子",
+        "e": "chair"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "r": "よこ",
+        "z": "旁邊",
+        "j": "横",
+        "e": "beside"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "動かしてください",
+        "r": "うごかしてください",
+        "z": "請移動",
+        "j": "動かしてください",
+        "e": "please move"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "サロンワゴンが通路をふさいでいたので、美容師は鏡のそばに寄せました。": [
+      {
+        "t": "サロンワゴン",
+        "r": "さろんわごん",
+        "z": "美髮工具推車",
+        "j": "サロンワゴン",
+        "e": "salon trolley"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "通路",
+        "r": "つうろ",
+        "z": "通道",
+        "j": "通路",
+        "e": "aisle"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ふさいでいた",
+        "r": "ふさいでいた",
+        "z": "擋住了",
+        "j": "ふさいでいた",
+        "e": "was blocking"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "鏡",
+        "r": "かがみ",
+        "z": "鏡子",
+        "j": "鏡",
+        "e": "mirror"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "そば",
+        "r": "そば",
+        "z": "附近",
+        "j": "そば",
+        "e": "nearby"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "寄せました",
+        "r": "よせました",
+        "z": "移近了",
+        "j": "寄せました",
+        "e": "moved closer"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼女はフードドライヤーの下に座っています。": [
+      {
+        "t": "彼女",
+        "r": "かのじょ",
+        "z": "她",
+        "j": "彼女",
+        "e": "she"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "フードドライヤー",
+        "r": "ふーどどらいやー",
+        "z": "罩式烘髮機",
+        "j": "フードドライヤー",
+        "e": "hooded hair dryer"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "下",
+        "r": "した",
+        "z": "下方",
+        "j": "下",
+        "e": "underneath"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "座っています",
+        "r": "すわっています",
+        "z": "坐著",
+        "j": "座っています",
+        "e": "is sitting"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "フードドライヤーが低すぎたので、美容師は私が座る前に高さを上げました。": [
+      {
+        "t": "フードドライヤー",
+        "r": "ふーどどらいやー",
+        "z": "罩式烘髮機",
+        "j": "フードドライヤー",
+        "e": "hooded hair dryer"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "低すぎた",
+        "r": "ひくすぎた",
+        "z": "太低了",
+        "j": "低すぎた",
+        "e": "was too low"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "私",
+        "r": "わたし",
+        "z": "我",
+        "j": "私",
+        "e": "I"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "座る",
+        "r": "すわる",
+        "z": "坐下",
+        "j": "座る",
+        "e": "sit down"
+      },
+      {
+        "t": "前",
+        "r": "まえ",
+        "z": "之前",
+        "j": "前",
+        "e": "before"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "高さ",
+        "r": "たかさ",
+        "z": "高度",
+        "j": "高さ",
+        "e": "height"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "上げました",
+        "r": "あげました",
+        "z": "調高了",
+        "j": "上げました",
+        "e": "raised"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "毛先にヘアワックスを付けます。": [
+      {
+        "t": "毛先",
+        "r": "けさき",
+        "z": "髮尾",
+        "j": "毛先",
+        "e": "ends"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ヘアワックス",
+        "r": "へあわっくす",
+        "z": "髮蠟",
+        "j": "ヘアワックス",
+        "e": "hair wax"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "付けます",
+        "r": "つけます",
+        "z": "抹上",
+        "j": "付けます",
+        "e": "apply"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ヘアワックスを付けすぎたので、髪を洗ってセットし直しました。": [
+      {
+        "t": "ヘアワックス",
+        "r": "へあわっくす",
+        "z": "髮蠟",
+        "j": "ヘアワックス",
+        "e": "hair wax"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "付けすぎた",
+        "r": "つけすぎた",
+        "z": "抹太多了",
+        "j": "付けすぎた",
+        "e": "applied too much"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗って",
+        "r": "あらって",
+        "z": "洗完後",
+        "j": "洗って",
+        "e": "washed"
+      },
+      {
+        "t": "セットし直しました",
+        "r": "せっとしなおしました",
+        "z": "重新造型了",
+        "j": "セットし直しました",
+        "e": "restyled"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スタイリングジェルで髪を整えます。": [
+      {
+        "t": "スタイリングジェル",
+        "r": "すたいりんぐじぇる",
+        "z": "造型髮膠",
+        "j": "スタイリングジェル",
+        "e": "styling gel"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "整えます",
+        "r": "ととのえます",
+        "z": "整理",
+        "j": "整えます",
+        "e": "style"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スタイリングジェルが早く乾きすぎたので、手を湿らせて髪を整え直しました。": [
+      {
+        "t": "スタイリングジェル",
+        "r": "すたいりんぐじぇる",
+        "z": "造型髮膠",
+        "j": "スタイリングジェル",
+        "e": "styling gel"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "早く",
+        "r": "はやく",
+        "z": "很快地",
+        "j": "早く",
+        "e": "quickly"
+      },
+      {
+        "t": "乾きすぎた",
+        "r": "かわきすぎた",
+        "z": "乾得過快了",
+        "j": "乾きすぎた",
+        "e": "dried too readily"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "手",
+        "r": "て",
+        "z": "雙手",
+        "j": "手",
+        "e": "hands"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "湿らせて",
+        "r": "しめらせて",
+        "z": "弄濕後",
+        "j": "湿らせて",
+        "e": "dampened"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "整え直しました",
+        "r": "ととのえなおしました",
+        "z": "重新整理了",
+        "j": "整え直しました",
+        "e": "restyled"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "前髪を少し切ってください。": [
+      {
+        "t": "前髪",
+        "r": "まえがみ",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "少し",
+        "r": "すこし",
+        "z": "一點",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": "切ってください",
+        "r": "きってください",
+        "z": "請修剪",
+        "j": "切ってください",
+        "e": "please trim"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "乾くと前髪が短く見えたので、次は長めに残してほしいと頼みました。": [
+      {
+        "t": "乾く",
+        "r": "かわく",
+        "z": "乾",
+        "j": "乾く",
+        "e": "dry"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "前髪",
+        "r": "まえがみ",
+        "z": "瀏海",
+        "j": "前髪",
+        "e": "bangs"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "短く",
+        "r": "みじかく",
+        "z": "較短地",
+        "j": "短く",
+        "e": "shorter"
+      },
+      {
+        "t": "見えた",
+        "r": "みえた",
+        "z": "看起來",
+        "j": "見えた",
+        "e": "looked"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "次",
+        "r": "つぎ",
+        "z": "下次",
+        "j": "次",
+        "e": "next time"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "長め",
+        "r": "ながめ",
+        "z": "長一點",
+        "j": "長め",
+        "e": "longer"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "残してほしい",
+        "r": "のこしてほしい",
+        "z": "希望留著",
+        "j": "残してほしい",
+        "e": "would like it left"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "頼みました",
+        "r": "たのみました",
+        "z": "請求了",
+        "j": "頼みました",
+        "e": "asked"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "もみあげを整えてください。": [
+      {
+        "t": "もみあげ",
+        "r": "もみあげ",
+        "z": "鬢角",
+        "j": "もみあげ",
+        "e": "sideburns"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "整えてください",
+        "r": "ととのえてください",
+        "z": "請整理",
+        "j": "整えてください",
+        "e": "please tidy up"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "もみあげの長さが違ったので、理容師が左右をそろえてくれました。": [
+      {
+        "t": "もみあげ",
+        "r": "もみあげ",
+        "z": "鬢角",
+        "j": "もみあげ",
+        "e": "sideburns"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "長さ",
+        "r": "ながさ",
+        "z": "長度",
+        "j": "長さ",
+        "e": "length"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "違った",
+        "r": "ちがった",
+        "z": "不同",
+        "j": "違った",
+        "e": "differed"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "理容師",
+        "r": "りようし",
+        "z": "理髮師",
+        "j": "理容師",
+        "e": "barber"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "左右",
+        "r": "さゆう",
+        "z": "左右兩邊",
+        "j": "左右",
+        "e": "both sides"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "そろえてくれました",
+        "r": "そろえてくれました",
+        "z": "幫我修齊了",
+        "j": "そろえてくれました",
+        "e": "evened up for me"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "彼女はボブをお願いしました。": [
+      {
+        "t": "彼女",
+        "r": "かのじょ",
+        "z": "她",
+        "j": "彼女",
+        "e": "she"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "ボブ",
+        "r": "ぼぶ",
+        "z": "鮑伯頭",
+        "j": "ボブ",
+        "e": "bob cut"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "お願いしました",
+        "r": "おねがいしました",
+        "z": "要求了",
+        "j": "お願いしました",
+        "e": "asked for"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "短くしたかったのですが、美容師は耳が隠れるボブを勧めてくれました。": [
+      {
+        "t": "短く",
+        "r": "みじかく",
+        "z": "短一點",
+        "j": "短く",
+        "e": "shorter"
+      },
+      {
+        "t": "したかった",
+        "r": "したかった",
+        "z": "想弄成",
+        "j": "したかった",
+        "e": "wanted to make"
+      },
+      {
+        "t": "のですが、"
+      },
+      {
+        "t": "美容師",
+        "r": "びようし",
+        "z": "美髮師",
+        "j": "美容師",
+        "e": "stylist"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "耳",
+        "r": "みみ",
+        "z": "耳朵",
+        "j": "耳",
+        "e": "ears"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "隠れる",
+        "r": "かくれる",
+        "z": "被蓋住",
+        "j": "隠れる",
+        "e": "be covered"
+      },
+      {
+        "t": "ボブ",
+        "r": "ぼぶ",
+        "z": "鮑伯頭",
+        "j": "ボブ",
+        "e": "bob cut"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれました",
+        "r": "すすめてくれました",
+        "z": "向我建議了",
+        "j": "勧めてくれました",
+        "e": "suggested to me"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "坊主頭を選びました。": [
+      {
+        "t": "坊主頭",
+        "r": "ぼうずあたま",
+        "z": "寸頭",
+        "j": "坊主頭",
+        "e": "buzz cut"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "選びました",
+        "r": "えらびました",
+        "z": "選了",
+        "j": "選びました",
+        "e": "chose"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "坊主頭にしたら、髪がすぐ乾いて驚きました。": [
+      {
+        "t": "坊主頭",
+        "r": "ぼうずあたま",
+        "z": "寸頭",
+        "j": "坊主頭",
+        "e": "buzz cut"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "したら",
+        "r": "したら",
+        "z": "剪成之後",
+        "j": "したら",
+        "e": "after getting"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "髪",
+        "r": "かみ",
+        "z": "頭髮",
+        "j": "髪",
+        "e": "hair"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "すぐ",
+        "r": "すぐ",
+        "z": "很快",
+        "j": "すぐ",
+        "e": "quickly"
+      },
+      {
+        "t": "乾いて",
+        "r": "かわいて",
+        "z": "乾了",
+        "j": "乾いて",
+        "e": "dried"
+      },
+      {
+        "t": "驚きました",
+        "r": "おどろきました",
+        "z": "很驚訝",
+        "j": "驚きました",
+        "e": "was surprised"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

@@ -24,6 +24,7 @@ import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "../lib/main-word-concert-fan-
 import { MAIN_WORD_STATION_COMMUTING_IDS } from "../lib/main-word-station-commuting-2026-10";
 import { MAIN_WORD_FESTIVALS_IDS } from "../lib/main-word-festivals-2026-10";
 import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS } from "../lib/main-word-cherry-blossom-season-2026-10";
+import { MAIN_WORD_HAIR_SALON_IDS } from "../lib/main-word-hair-salon-2026-10";
 import { MAIN_WORD_EMERGENCY_KIT_IDS } from "../lib/main-word-emergency-kit-2026-10";
 import { MAIN_WORD_ARCADE_IDS } from "../lib/main-word-arcade-2026-10";
 import { MAIN_WORD_CAMPUS_IDS } from "../lib/main-word-campus-2026-10";
@@ -58,6 +59,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "arcade", ids: MAIN_WORD_ARCADE_IDS },
   { category: "onsen-ryokan", ids: MAIN_WORD_ONSEN_RYOKAN_IDS },
   { category: "emergency-kit", ids: MAIN_WORD_EMERGENCY_KIT_IDS },
+  { category: "hair-salon", ids: MAIN_WORD_HAIR_SALON_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),

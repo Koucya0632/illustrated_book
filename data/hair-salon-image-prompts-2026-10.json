@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "series": "hair-salon",
+  "engine": "built-in imagegen",
+  "prompts": [
+    {
+      "id": "barbershop",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: Tuji educational picture dictionary, one square image, 1024x1024. Subject: a contemporary small Japanese BARBERSHOP (理容室), exterior storefront shown as an isolated miniature architectural scene on pure white. Clearly visible entrance, glass front and a single red white blue spiral barber pole mounted by the entrance. Through window just one padded barber chair and wall mirror. No people. Semi-realistic polished catalog illustration, neutral natural colors, complete building front with generous white padding, restrained grounding shadow. No text, no logos, no signage lettering, no watermark. This image depicts the shop as a whole, not just the barber pole. Save final source asset for project."
+    },
+    {
+      "id": "hair-salon",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A contemporary small Japanese hair salon 美容室, isolated miniature storefront with glass entrance and two light elegant styling chairs facing large mirrors visible through windows. Minimal pale timber furnishings. No barber pole. Whole storefront, not an equipment closeup. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "barber-pole",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One upright wall-mount cylindrical barber pole, red white and blue diagonal spiral stripes under clear cylindrical glass with chrome caps and unobtrusive mounting brackets. Entire pole visible. No shop building. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "barber-chair",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One contemporary Japanese professional barber chair, dark brown padded upholstery, reclining high back, small adjustable headrest, sturdy chrome armrests, large metal footrest and hydraulic circular base. Three-quarter view. Entire chair visible, no people. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "shampoo-basin",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One professional Japanese salon shampoo basin only: glossy black ceramic deep bowl, clear U-shaped ergonomic neck recess at the front rim, chrome mixer tap and flexible handheld shower sprayer, mounted on a minimal pedestal. No customer, chair, or bathroom vanity. Front three-quarter view with neck recess clearly visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "haircut-cape",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One black salon haircut cape draped on an unobtrusive headless shoulder form: wide circular fabric covers chest, shoulders and lap with small round adjustable neck closure. Clearly a customer haircut cape, not stylist apron or coat. No arms, face or room. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "hair-clippers",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One professional electric hair clipper with visible straight metallic toothed cutting blade, black ergonomic body, side taper lever; one separate clip-on black guard comb nearby. Entire tool visible, no brand, no rotary shaver. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "thinning-scissors",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One professional silver thinning scissors, slightly open, exactly one blade has a continuous row of fine comb-like teeth and opposing blade is smooth sharp straight edge. Two circular finger rings, finger rest, central pivot. All defining teeth clearly visible. No comb or hair. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "hair-cutting-scissors",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One professional silver hair-cutting scissors, open slightly, two smooth continuous sharp straight blades WITHOUT teeth, two circular finger rings and a small curved pinky rest. Elegant specialist hairdressing shears, not kitchen scissors. Entire tool visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "round-hairbrush",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One round hairbrush with cylindrical barrel completely surrounded by radial dark bristles and a simple wooden handle. Three-quarter diagonal view clearly showing round cylinder cross section and bristles on all sides. No flat paddle brush, no electrical cord. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "sectioning-clip",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One long black professional salon sectioning clip called ダッカール, partly opened to show its elongated curved upper and lower jaws, spring hinge at rear and small gripping teeth inside. Utilitarian hair section clip, not decorative claw clip or stationery clip. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "mist-spray-bottle",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One plain refillable salon fine-mist water spray bottle with trigger pump, translucent clear body containing water and black ergonomic trigger spray head. Unlabeled. Not aerosol hair spray, no chemicals, no liquid spray cloud. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "hair-color-brush",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One black hair dye applicator brush, flat short rectangular bristle head with straight dense bristles, long narrow pointed tail handle. Clearly an application brush, not a hairbrush or comb. Entire tool visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "perm-rod",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One medium purple plastic salon perm rod with a hollow vented cylindrical body, slightly narrower middle and flared ends, and thin attached elastic securing band stretched lengthwise from one end to the other. No electricity, no hair, no heating clamp. Detailed believable perm rod. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "hair-straightener",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One black electric hair straightener, hinged tong shape slightly open clearly showing TWO long smooth FLAT ceramic heating plates facing each other. Cord exiting hinge end neatly curved. Full appliance visible. No cylindrical barrel. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "curling-iron",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One electric curling iron with long smooth silver CYLINDRICAL heating barrel and narrow curved spring clamp along barrel, black insulated handle and cool tip, attached black cord loosely curved. Entire tool visible, no flat plates. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "hand-mirror",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One handheld oval salon mirror with thin black frame and a long integrated handle, single reflective glass surface at slight three-quarter angle showing only neutral studio reflection. Whole mirror visible. No folding compact, no stand. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "haircut",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A small isolated Japanese salon haircut vignette, one adult customer seated wearing a dark haircut cape, professional stylist standing alongside carefully trimming a small section of hair with silver hair-cutting scissors and comb. The active cutting of hair is unmistakable, natural hand anatomy and safe positioning away from face. Minimal chair only, no room or extra props. Friendly semi-realistic illustration, no gender stereotypes. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "category-hair-salon",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A compact educational catalog arrangement representing a hair salon: one elegant dark padded hydraulic barber chair centered, silver haircutting shears and a black round hairbrush tastefully placed beside its base, and a standalone black ceramic shampoo basin with neck notch slightly behind. Three coherent related salon objects, uncluttered, no people, no barber pole needed. Style: polished semi-realistic catalog rendering suitable for Japanese daily life. Pure clean white background, complete subject centered with generous padding on all sides, soft restrained grounding shadow, recognizable realistic proportions and materials. No text, no letters, no logos, no invented brands, no watermark, no border. Generate ONLY this single concept; no contact sheet or multi-panel layout."
+    },
+    {
+      "id": "straight-razor",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One contemporary Japanese barbershop folding straight shaving razor with replaceable blade holder, partly open about 130 degrees. Slim matte black folding handle, silver straight blade holder and narrow smooth shaving edge. Clearly a professional shaving razor, no teeth, NOT a fixed Japanese kitchen knife, NOT a cartridge T-shaped razor. Entire tool centered, no people. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "hair-color-bowl",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One reusable black plastic hair color mixing bowl, shallow round shape, handle on one side, pouring spout opposite side, subtle molded graduation not visible as text. Small amount of thick pale purple cream in bottom suggests dye mixing. No brush or packaging. Clearly professional salon mixing bowl, no kitchen food. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "shaving-brush",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One traditional barber shaving brush, upright: short cream resin handle and a rounded tall knot of dense soft tan-gray bristles. A small amount of white shaving lather at the tips. No razor, bowl or face. A cylindrical rounded shaving brush, NOT broad fan-shaped neck duster. Entire object visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "salon-trolley",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One contemporary Japanese salon tool trolley: compact black rolling cart, three shallow pull-out trays, slim frame, four small caster wheels, top tray with integral empty circular hairdryer holder. A few closed drawers slightly offset to show function, no tools or bottles, no text. Entire cart visible, not a food serving cart. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "neck-duster",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One professional barber neck duster brush: very dense broad fan/dome tuft of soft short dark bristles on a short rounded wooden handle, standing upright. Intended for dusting tiny cut hairs off the neck, NOT a long-handled makeup brush, NOT a narrow shaving brush, NOT a hairbrush. Entire brush visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "hooded-hair-dryer",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One professional freestanding salon hooded hair dryer, black and silver. Large domed hood with open front face area and inner air vents, on height-adjustable vertical stand and five caster base. Clearly a dryer hood that surrounds the top of a seated customer's head, NOT a ring-shaped infrared heater, NOT a handheld dryer, NOT a helmet or futuristic device. No people or chair. No readable controls or lettering. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "hair-wax",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One open low round matte charcoal salon hair wax pot with lid set beside it, showing thick opaque ivory wax paste with a small sculpted peak. Plain unbranded packaging with no label, words or logos. Clearly firm wax styling paste, NOT translucent gel, not oil or spray. Entire product visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "styling-gel",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: One clear squeeze tube of hair styling gel standing on a plain black flip cap, a neat small transparent pale-blue gel dollop beside it. Completely unbranded, no text or graphics. Gel is visibly translucent glossy, NOT opaque hair wax or cream, no aerosol. Entire tube and gel visible. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "bangs",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A single neutral adult mannequin head bust with simple non-identifying softly modeled face and dark straight hair. Main defining feature is a clearly visible full fringe / bangs cut across the forehead just above the eyebrows. Front view, forehead fringe prominent and recognizable. Remaining hair neatly behind ears, no hands or tools. Complete head centered with padding. Educational semi-realistic hair illustration. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "sideburns",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A single neutral adult mannequin head bust in clear three-quarter side view, with short dark hair and one conspicuous tidy strip of hair extending from temple down in FRONT of the ear to about mid-ear level. Clean-shaven cheek and jaw; no beard or mustache. Ear and temple hair strip clearly visible and distinct from hair behind ear. Sideburn is main teaching subject. Complete head padded on white, no labels or arrows. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "bob-cut",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A single neutral adult mannequin head bust with simple non-identifying softly modeled face, dark sleek chin-length bob haircut, clean even blunt perimeter curving gently inward along jaw. Both sides of hair and chin-level ends clearly visible. Three-quarter front view, no bangs covering the eyes, no long hair below shoulders, no braid or ponytail. Full head and hair outline visible with padding. Educational semi-realistic illustration. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    },
+    {
+      "id": "buzz-cut",
+      "mode": "built-in",
+      "prompt": "Use case: product-mockup. Asset: one square Tuji picture dictionary source image, 1024x1024. Subject: A single neutral adult mannequin head bust with simple non-identifying softly modeled face, uniformly very short dark clipped hair about 3 mm across the whole scalp. Hair texture visible, not fully bald; natural rounded head contour, NOT a flat-top crew cut, NOT a fade with long top, no beard. Three-quarter front view shows top and sides equally short. Entire head padded on white. Educational semi-realistic illustration. Style: polished semi-realistic catalog rendering suitable for Japanese daily life, consistent with a clean salon equipment picture dictionary. Pure white background, complete main subject centered with generous padding on all sides, soft restrained grounding shadow, accurate recognizable proportions and materials. No text, letters, logos, invented brands, watermarks, borders, labels or panels. Generate only this single concept, not a contact sheet."
+    }
+  ]
+}

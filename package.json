@@ -153,7 +153,15 @@
     "arcade:audio:generate:local": "node --env-file=.env.local scripts/generate-arcade-candidate-audio.mjs",
     "arcade:audio:verify": "node scripts/verify-arcade-audio.mjs",
     "arcade:prepare-publish": "node --env-file=.env.local scripts/prepare-arcade-publish-plan.mjs",
-    "arcade:publish": "tsx --env-file=.env.local scripts/publish-arcade-series.ts"
+    "arcade:publish": "tsx --env-file=.env.local scripts/publish-arcade-series.ts",
+    "hair-salon:prepare-images": "node scripts/prepare-hair-salon-images.mjs",
+    "hair-salon:review": "node scripts/prepare-hair-salon-semantic-review.mjs",
+    "hair-salon:audio:plan": "node scripts/plan-hair-salon-audio.mjs",
+    "hair-salon:audio:generate:local": "node --env-file=.env.local scripts/generate-hair-salon-candidate-audio.mjs",
+    "hair-salon:audio:verify": "node scripts/verify-hair-salon-audio.mjs",
+    "hair-salon:prepare-publish": "node --env-file=.env.local scripts/prepare-hair-salon-publish-plan.mjs",
+    "hair-salon:publish": "tsx --env-file=.env.local scripts/publish-hair-salon-series.ts",
+    "hair-salon:content": "node scripts/prepare-hair-salon-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

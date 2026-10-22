@@ -1,0 +1,698 @@
+{
+  "schemaVersion": 1,
+  "series": "hair-salon",
+  "reviewer": "Codex, individual concept and three-language sentence/span review",
+  "scope": "All 30 concepts and both examples per concept. Earlier verdicts retained only after exact snapshot validation; twelve new concepts individually reviewed with specific reasons.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "barbershop",
+      "verdict": "pass",
+      "reason": "barbershop對應理容室，區別美容室；以店面及三色燈辨識，定義不按顧客性別劃分。",
+      "sourceSha256": "20be24e2d86e52bca8abe83d261fb628f5861d83a68dafd9fedc64b2dfb78f88"
+    },
+    {
+      "kind": "example",
+      "wordId": "barbershop",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "父親在理髮店剪髮是具體日常事件，三語行為與人物一致。",
+      "sourceSha256": "40b1222b1884adff4a97728cc6f4a2f308047d9c0a7b5645369c4479d04964d0"
+    },
+    {
+      "kind": "example",
+      "wordId": "barbershop",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "常去的店週一休息，因果連到改約週二；保留特定店家而非全日本店休日規則。",
+      "sourceSha256": "0e055c6e2c2d2b42363f065a8cc0a1f00f89d252856c3783092d730aaa55ad2f"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-salon",
+      "verdict": "pass",
+      "reason": "hair salon限定美髮美容室，不與beauty spa或美容師人物混用；中譯美容院定義明示美髮。",
+      "sourceSha256": "90c576ff6370be6e3c1ad6debd13374f47b8758f3d6794fb13ad1aaeab586d60"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-salon",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "預約週六到美容院是常見請求，三語保留日期。",
+      "sourceSha256": "e9fb0be9492d174a29997ad6acbf4f99d6c87d10853341ce24004110e1842f07"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-salon",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "第一次染髮而事先到美容院諮詢，原因及時間自然，區別簡單預約情境。",
+      "sourceSha256": "e81338c8694101ddc836bfa5869556cdeb0b505bd1ff261628e4d8895ef2d16a"
+    },
+    {
+      "kind": "word",
+      "wordId": "barber-pole",
+      "verdict": "pass",
+      "reason": "サインポール是螺旋柱狀理容招牌，簡單句辨識門旁位置，修訂進階句以看到轉動招牌後找到入口呈現實際用途；未將旋轉等同營業。",
+      "sourceSha256": "487659589007b9e0da25ebb8fc283ce38494b8692850bb8228bef2300fa35183"
+    },
+    {
+      "kind": "example",
+      "wordId": "barber-pole",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "門旁的三色燈是實際找店線索，三語位置一致。",
+      "sourceSha256": "f7e1bee48bc3c499c09bee926789551b01877846aa264f1e12493a28cdfb9ded"
+    },
+    {
+      "kind": "example",
+      "wordId": "barber-pole",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "When引出看見三色燈的時間條件，finally found保留隨後找到入口的結果，與日文見えて及繁中看到後終於找到對齊；不同於簡單句的靜態位置。",
+      "sourceSha256": "95ed29e337e6e61d3ac6560a7221c7f8f6a678c0d889105e28e88b52aea10d69"
+    },
+    {
+      "kind": "word",
+      "wordId": "barber-chair",
+      "verdict": "pass",
+      "reason": "理容椅子以腳踏、扶手及可傾靠背區別一般椅子與輕型美容椅，英日同指客用設備。",
+      "sourceSha256": "71199f38ee1a44b7e13e804123373d87b1370b2819d18212e98e021f7cd1d1d6"
+    },
+    {
+      "kind": "example",
+      "wordId": "barber-chair",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "坐上理髮椅為單一自然請求，三語無額外服務。",
+      "sourceSha256": "b6d757f55830e5be2b06edf7f834a0aab60a9d7765d0d79380fc4ab5317cd92e"
+    },
+    {
+      "kind": "example",
+      "wordId": "barber-chair",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "刮臉前理髮師放倒椅背，時間及施作者一致，具體呈現設備用途。",
+      "sourceSha256": "c5ff51b03f4357df85969e61b0ee93389e4fe126867a1d0c58d89dd3472c9344"
+    },
+    {
+      "kind": "word",
+      "wordId": "shampoo-basin",
+      "verdict": "pass",
+      "reason": "シャンプーボウル是有頸部凹口的洗髮盆，區別家用洗手台及整套躺椅設備。",
+      "sourceSha256": "3c4c0abcd880661bc684a7df0914d4e9ebafe56fcfb1e0db412e17b4b9e9c359"
+    },
+    {
+      "kind": "example",
+      "wordId": "shampoo-basin",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "放鬆頸部靠上盆沿是常見洗頭請求，三語同一動作。",
+      "sourceSha256": "b9649780d66502ec442b80bf116f8dd659c039666cd178cd843486d9e6d12d6b"
+    },
+    {
+      "kind": "example",
+      "wordId": "shampoo-basin",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "洗頭時頸部不舒服而調整位置，時間及原因具體，非醫療操作指示。",
+      "sourceSha256": "fbe74c140fa960c6c5189a9af27107e71f52bdaa27cccb7e45b08d6c29148241"
+    },
+    {
+      "kind": "word",
+      "wordId": "haircut-cape",
+      "verdict": "pass",
+      "reason": "カットクロス是客人穿的剪髮圍布，區別理髮師圍裙、毛巾或雨披。",
+      "sourceSha256": "074056711f52138206c8494411187ce34cdfc8ee86562bec65581dbd671f5e45"
+    },
+    {
+      "kind": "example",
+      "wordId": "haircut-cape",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "扣好圍布的請求只描述動作，三語一致。",
+      "sourceSha256": "f23144b41476e4522dc6018e0bc07834baef3c7881a1d0c4a633f3ca5b4d3643"
+    },
+    {
+      "kind": "example",
+      "wordId": "haircut-cape",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "圍布過緊而請放鬆，原因與請求相連；不與簡單句扣上重複。",
+      "sourceSha256": "5670f575d509600e350a37e846b210ebf4639ff3cc7d3be8be3bcf1f5a1408ca"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-clippers",
+      "verdict": "pass",
+      "reason": "hair clippers為複數形式的電推剪，バリカン不是鬍鬚用旋轉電鬍刀，圖需有刀齒。",
+      "sourceSha256": "a64b0bc176a213075eefe2608d33f4c83c3f8ebf275745b5af4266da47807569"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-clippers",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "理髮師使用電推剪修兩側是常見行為，兩側指頭側髮。",
+      "sourceSha256": "741f0c9296cd0e8acea1c1e5438ce31dcafd0a43d249a45a8e18df945d9294ac"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-clippers",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因不喜歡聲音而改用剪刀，因果與工具對比三語保留，不涉操作教學。",
+      "sourceSha256": "767b0fe6847d1ed92c8c70d11d49d3cb6b87fb8b07078d9c6a6e9d83d861c6f3"
+    },
+    {
+      "kind": "word",
+      "wordId": "thinning-scissors",
+      "verdict": "pass",
+      "reason": "すきばさみ以齒狀刀刃減量，與一般はさみ及直刃カットばさみ分開。",
+      "sourceSha256": "61a9b7acf00c2d4d0aa25d0edc819aa0976d93c562f9d2d8fb1af2cb584c469e"
+    },
+    {
+      "kind": "example",
+      "wordId": "thinning-scissors",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "展示梳齒讓讀者辨識器材，日常店內觀察三語相符。",
+      "sourceSha256": "9238b6f21961a08be85173762e3085b52735d0f0ed01d54e779284666bee1571"
+    },
+    {
+      "kind": "example",
+      "wordId": "thinning-scissors",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "髮量太厚而在髮尾用打薄剪，原因及操作主體一致，不給特定剪髮比例。",
+      "sourceSha256": "886360eec04235bade2d4a9bec2c5717e24a62298649ed81ad1ef93fb989fbe9"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-cutting-scissors",
+      "verdict": "pass",
+      "reason": "專用カットばさみ限定雙直刃剪髮工具，既有scissors為一般はさみ，近義但不是同一專用概念。",
+      "sourceSha256": "9a6cc866170a64fde6e71e77ec40126c41be4dd1deef13fcb4e49825a1572eb7"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-cutting-scissors",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把剪刀放入工具袋是具體收納，不使用危險操作說明。",
+      "sourceSha256": "1c21bdea1f05d5a64eb4ed57efd011e02757e7aa0cb90671b3ea75f4a0a1edbc"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-cutting-scissors",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "借到專用剪髮剪刀才不必用紙剪，先後與用途對比保留。",
+      "sourceSha256": "c3626b664b468e9af214e2dcad53c8734d28b8fca99f5c77dd0e78dabb61dd3a"
+    },
+    {
+      "kind": "word",
+      "wordId": "round-hairbrush",
+      "verdict": "pass",
+      "reason": "ロールブラシ以圓筒刷毛辨識，區別既有平面hairbrush及電捲棒。",
+      "sourceSha256": "fc51bc58012ec9bba89034c6fae4f1b7ccd32171ebd875c67cdf3d200f3d9664"
+    },
+    {
+      "kind": "example",
+      "wordId": "round-hairbrush",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "使用圓筒梳吹整瀏海是合理生活用法，三語對齊。",
+      "sourceSha256": "670ae965e11b874d379097e4deb7abcd74bb894421aa6b9567a37d16af2b3e0b"
+    },
+    {
+      "kind": "example",
+      "wordId": "round-hairbrush",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "頭髮纏住而停止拉扯、慢慢解開，因果及後續動作自然，未變成加熱教學。",
+      "sourceSha256": "6dbd398a369983348cc492881b6e1d1a12ffc563269248478ac6e18549aeab86"
+    },
+    {
+      "kind": "word",
+      "wordId": "sectioning-clip",
+      "verdict": "pass",
+      "reason": "ダッカール為造型分區的長形髮夾，區別裝飾髮夾、曬棉被夾及辦公夾子。",
+      "sourceSha256": "900ec5e7ff37bf95362113682c04247809379c71ab49853fbae49ceb29c3da7b"
+    },
+    {
+      "kind": "example",
+      "wordId": "sectioning-clip",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "夾起上層頭髮是實際用途，三語上層位置一致。",
+      "sourceSha256": "d9782c3a79343efd6953f05ce080e174f46a815e84da37c6b0bd896468333c14"
+    },
+    {
+      "kind": "example",
+      "wordId": "sectioning-clip",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "夾子滑落後分成較小髮束重夾，因果與再次嘗試的語意明確。",
+      "sourceSha256": "026f4a942a69b948cabf164d1dccf15f9514d9fb6496c444434ea53f53169ea4"
+    },
+    {
+      "kind": "word",
+      "wordId": "mist-spray-bottle",
+      "verdict": "pass",
+      "reason": "霧吹き限定裝水的可補充噴瓶，與定型用hair spray及彩妝噴霧不是同一概念。",
+      "sourceSha256": "50e221d0f720c1679f5431efa9c011081d26c3c0e39df388fb7c0ac9c8f2331c"
+    },
+    {
+      "kind": "example",
+      "wordId": "mist-spray-bottle",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "加水到噴瓶為日常補充動作，三語一致。",
+      "sourceSha256": "a2981f95a793d074fb6e8603ccc9c0fd8ee97f6d47720cbf94fe00b2cd044c52"
+    },
+    {
+      "kind": "example",
+      "wordId": "mist-spray-bottle",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "髮尾乾了所以剪前噴濕，有原因及先後，未把水誤譯定型液。",
+      "sourceSha256": "ca8ef272d4bedda3c8b3f9c014b62f7ebc6df4d0775780bc9d229580a8d18c90"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-color-brush",
+      "verdict": "pass",
+      "reason": "カラー用ハケ為塗染劑工具，區別染髮劑本身、圓筒梳及彩妝刷；讀音包含カラー及ハケ。",
+      "sourceSha256": "fc8300121518d786e91e40d1da26e060e2d86bf3dd2ba9e0b6933dcc50ab67e6"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-color-brush",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "使用刷子塗染髮劑描述服務場景，三語相同，不是化學用量指引。",
+      "sourceSha256": "92f7f486ba9e34996c8ffbcbd88feab0285efcbf50bb57110b8896bc729091a2"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-color-brush",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "染完後清洗刷具並晾乾有先後及結果，區別簡單句塗抹用途。",
+      "sourceSha256": "a1fb9f142aa42569fc83a5467f9da2e1df492803c9d54f6a87050ac5a8858949"
+    },
+    {
+      "kind": "word",
+      "wordId": "perm-rod",
+      "verdict": "pass",
+      "reason": "パーマロッド為化學燙髮捲芯，與加熱電捲棒及普通髮捲不同；圖要有橡皮筋固定件。",
+      "sourceSha256": "d8e5c3c403f4721b391e9104639f30f200f7f9e130466e5c03d74afaaf890dbd"
+    },
+    {
+      "kind": "example",
+      "wordId": "perm-rod",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "捲上一小束頭髮是店內可觀察動作，三語相符。",
+      "sourceSha256": "dfbc6e0e3548c8b7dfbc0d326dd809c20f20d88f1c6c76eed593b63ecd556454"
+    },
+    {
+      "kind": "example",
+      "wordId": "perm-rod",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "想要較大彎度而選較粗捲芯，因果符合一般燙髮語境，未承諾單一效果或用藥。",
+      "sourceSha256": "d21494fa0d88a1d1477047fded622d12ce68837df390e0bacf7f54879a1e0b22"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-straightener",
+      "verdict": "pass",
+      "reason": "ストレートアイロン為雙平板離子夾，與圓筒電捲棒及衣物熨斗不同。",
+      "sourceSha256": "286f228fa3a43eb66fbaa20a451229fdf6088ff185e9b3dad7f8fc5c9c27b5cd"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-straightener",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以離子夾整理瀏海為常見用途，三語主體一致。",
+      "sourceSha256": "c9bb65f98f99db6f22b209919c5dc01ae668bd7f525fe6354560c6f90eb874d9"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-straightener",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "使用後確認插頭已拔除，時間及確認從句有實質難度，未加入溫度或療效主張。",
+      "sourceSha256": "e2a397936876b9e5192444adc8dd5455ec92fa98825bf561a3cd290012acd83e"
+    },
+    {
+      "kind": "word",
+      "wordId": "curling-iron",
+      "verdict": "pass",
+      "reason": "カールアイロン以圓筒熱棒與夾片辨識，區別平板離子夾及非加熱燙髮捲。",
+      "sourceSha256": "d8082cbb2cb0ee1dba1771694981fa4dcc08c74b32333c20d4bac506319a0c83"
+    },
+    {
+      "kind": "example",
+      "wordId": "curling-iron",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在髮尾做捲度為具體造型情境，三語不混成燙髮。",
+      "sourceSha256": "551154791a71d0e7ca0b7371c1816f8a8edffa9fd1b2171fdae9812172744a48"
+    },
+    {
+      "kind": "example",
+      "wordId": "curling-iron",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "棒子尚熱所以等待冷卻再收，原因與時間關係完整，保持簡單生活語境。",
+      "sourceSha256": "84a7ee7909338cbe1b9ce26a4023b8cebc231041c33722f0662e7d3afa515fc8"
+    },
+    {
+      "kind": "word",
+      "wordId": "hand-mirror",
+      "verdict": "pass",
+      "reason": "手鏡限定有柄手持鏡，區別既有折疊compact mirror、壁鏡與全身鏡。",
+      "sourceSha256": "b58516ac3d78e50e5a2c4c106ed36f6080b54e4ab5fcb9d477cbbf01a96c240a"
+    },
+    {
+      "kind": "example",
+      "wordId": "hand-mirror",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請借手鏡為短請求，英文Could modal保留但不點擊。",
+      "sourceSha256": "cc3e6dc11650195fe3aad1dd9c7ec2adc8a54241892135c6e2c597bb6a9f6a3d"
+    },
+    {
+      "kind": "example",
+      "wordId": "hand-mirror",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "後腦髮型看不見而請美髮師持鏡展示，原因及服務用途一致。",
+      "sourceSha256": "102943739b39d5a5586bdc093abcb49ef4a492478c5b646e6b7685313bbe65d6"
+    },
+    {
+      "kind": "word",
+      "wordId": "haircut",
+      "verdict": "pass",
+      "reason": "haircut可指髮型亦可指剪髮，本詞限定服務義，圖需有人正在剪髮，カット語境一致。",
+      "sourceSha256": "67c0380974a9f44264d61501842d0f3cdae39f431e72a4ba36b551084701d929"
+    },
+    {
+      "kind": "example",
+      "wordId": "haircut",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請只剪髮不附洗染為常見點餐式服務請求，三語just一致。",
+      "sourceSha256": "71a7200a41fa4b8cc38ead75104cd814b96642489c2850dba4e82d3b231e4e26"
+    },
+    {
+      "kind": "example",
+      "wordId": "haircut",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "瀏海遮眼而預約剪髮有原因與行動，與簡單句選服務不同。",
+      "sourceSha256": "0b8d6f59b16f288b41f06dbdbd72dff60801905a6bd773487e4eb9dbae36da60"
+    },
+    {
+      "kind": "word",
+      "wordId": "neck-duster",
+      "verdict": "pass",
+      "reason": "ネックブラシ對應清理碎髮的短柄蓬鬆刷，區別剃鬚起泡刷、髮刷與彩妝刷。",
+      "sourceSha256": "8831d84d5392291fd5e41bfb2492d32aafdf2e2ac27fe3d2f809e88b3b5bba1f"
+    },
+    {
+      "kind": "example",
+      "wordId": "neck-duster",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "理髮師刷掉頸部碎髮是工具的實際用途，英日繁中施作者及位置一致。",
+      "sourceSha256": "e92b92abff5f08bfda8e83028e5e7cfad34949863c748cb4bf9fca99251a68f7"
+    },
+    {
+      "kind": "example",
+      "wordId": "neck-duster",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "剪髮後再清理衣領，明確先後及用途，與簡單句頸部清理有不同位置。",
+      "sourceSha256": "5d7466bbb354e30a131e6213ef415201401fe68fb20f77467a88b7b9d26a9aac"
+    },
+    {
+      "kind": "word",
+      "wordId": "shaving-brush",
+      "verdict": "pass",
+      "reason": "シェービングブラシ為剃鬚起泡及塗泡刷，圓形毛束與短柄區別寬扇形碎髮刷。",
+      "sourceSha256": "2a78157446004c973889466b536ce1303b287f8d465d7d11b8f5e4f4bd5fc774"
+    },
+    {
+      "kind": "example",
+      "wordId": "shaving-brush",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "理髮師打濕刷具是具體準備動作，三語同一物件。",
+      "sourceSha256": "9157cd3b635233ffdc1d81b4b9b6fe96a76741f357dd89821a398975d5662206"
+    },
+    {
+      "kind": "example",
+      "wordId": "shaving-brush",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "刮臉完成後清洗晾乾，有先後與兩個後續動作，未聲稱特定衛生規則。",
+      "sourceSha256": "30cb2aafb2198bb1f30e39fdd65485721e1720a24f90f381eb76bb191c301033"
+    },
+    {
+      "kind": "word",
+      "wordId": "straight-razor",
+      "verdict": "pass",
+      "reason": "straight razor限定折疊直刃剃刀，與既有通用razor及T型刮鬍刀不同；日文レザー是razor而非皮革。",
+      "sourceSha256": "4c3d122670210dc403154c3b61d6a29215fb21504fbc8c5031e5b3ac88950ff7"
+    },
+    {
+      "kind": "example",
+      "wordId": "straight-razor",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "打開折疊剃刀描述店內準備行為，沒有教導刀刃接觸皮膚的角度或操作。",
+      "sourceSha256": "8975f2a81355295ca0a02bd34c96953dedd25e1b1c7c6a62f559c1c6ebe84ec6"
+    },
+    {
+      "kind": "example",
+      "wordId": "straight-razor",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因緊張而請理髮師解釋刮臉流程，有原因與請求；三語不加入醫療承諾。",
+      "sourceSha256": "9fc883e318e273d7e777850b46ebed563c2805dd4b61070d36f08dc691736e15"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-color-bowl",
+      "verdict": "pass",
+      "reason": "カラーカップ在理美容語境為染髮調色碗，區別食器及染髮刷；中文加染髮消除一般調色盤歧義。",
+      "sourceSha256": "62a6d1ebfa186b6b2b5cceb92976b241cd295e1d1861853031dbfac2d45a211c"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-color-bowl",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "美髮師在碗中混合染髮劑為具體用途，三語一致，未提供用量或配方。",
+      "sourceSha256": "cd3b4c7f3958f3ab998cde1858c65bad5b639a127278460c6d40db6241fc02ae"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-color-bowl",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "碗仍濕而先擦乾再混合，原因及先後完整，屬特定場景描述而非通用化學規則。",
+      "sourceSha256": "3e3fa55ab05347d3cf54545306a552d8952db9ac3a10bb1eac5b6a1c0d82c3a7"
+    },
+    {
+      "kind": "word",
+      "wordId": "salon-trolley",
+      "verdict": "pass",
+      "reason": "サロンワゴン限定理美容工具推車，抽屜托盤及器材架區別已收錄餐車與給食推車。",
+      "sourceSha256": "1057b97a5e0fd03237776d25c7dfc76ca478eae31135b0d1fdaf5532a99ca4a9"
+    },
+    {
+      "kind": "example",
+      "wordId": "salon-trolley",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把推車移到椅旁為常見工作動作，三語目標位置一致。",
+      "sourceSha256": "d243d00a714b5efb10ce1523e90c53f86e0b0f904de8aa11d62ff8c641811d2b"
+    },
+    {
+      "kind": "example",
+      "wordId": "salon-trolley",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "推車擋通路而移近鏡子，有原因與結果；未變成只在店內使用的空泛句。",
+      "sourceSha256": "6fe013caece7017c266c83cd7333645f5c2b79a1d50723b6ba1a3c649f88320b"
+    },
+    {
+      "kind": "word",
+      "wordId": "hooded-hair-dryer",
+      "verdict": "pass",
+      "reason": "フードドライヤー用罩體與送風乾髮區別手持ドライヤー及環形加溫機，主詞圖片需有罩內通風結構。",
+      "sourceSha256": "2281efdffddb5751c693a16f5d613d06022b2ce1352e780e063be602e2613561"
+    },
+    {
+      "kind": "example",
+      "wordId": "hooded-hair-dryer",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "坐在罩式烘髮機下是單一生活場景，三語主體她一致。",
+      "sourceSha256": "5eadf7bcd8d31c68944ad16d08be073477df7a487bc52aaf73d554cbb6192011"
+    },
+    {
+      "kind": "example",
+      "wordId": "hooded-hair-dryer",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "罩體太低而在入座前調高，原因、時間與動作完整，未提供溫度或療效建議。",
+      "sourceSha256": "a211abd41fc0ea503484838e14b55169fb3fd4b5dee7d06fdcf1b529a05f3819"
+    },
+    {
+      "kind": "word",
+      "wordId": "hair-wax",
+      "verdict": "pass",
+      "reason": "ヘアワックス為不透明蠟膏造型品，區別既有髮油、定型噴霧與本次透明髮膠。",
+      "sourceSha256": "c3cec8ffc846bf696452e0b4c1c7d8285577d076c3a709a9413018eb703c033d"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-wax",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把髮蠟抹在髮尾是具體使用情境，英日繁中位置一致。",
+      "sourceSha256": "1fb4089e53b3d809f149d7831433a1a9e3f981b95646ec93c1e963e06477ce3e"
+    },
+    {
+      "kind": "example",
+      "wordId": "hair-wax",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "抹太多所以洗掉重做，因果與後續動作真實，非功效或髮質泛化。",
+      "sourceSha256": "05eea9fb08cd6e04247f17d9cef3066f0e27d32f191c2594d8fc759ea9bbd45f"
+    },
+    {
+      "kind": "word",
+      "wordId": "styling-gel",
+      "verdict": "pass",
+      "reason": "styling gel以凝膠質地區別hair spray及hair wax，繁中加造型且定義限定凝膠以免髮膠多義。",
+      "sourceSha256": "5218f00532b4e00041bc005de7569ba0c21f0e9baa1542f133c7939a35b63125"
+    },
+    {
+      "kind": "example",
+      "wordId": "styling-gel",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "用凝膠整理頭髮是直接日常動作，三語一致。",
+      "sourceSha256": "6a014070a37dfb8a3b7494f808f7a944f7c88400331b22460113c58382f572e7"
+    },
+    {
+      "kind": "example",
+      "wordId": "styling-gel",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "乾得太快而濕手重新整理，原因與修正行動完整，描述單次經驗而不宣稱所有凝膠可重塑。",
+      "sourceSha256": "38e8a89d123151aae28a39594d6bfc6632192591d87c8fbdbb66af0cd2d2357a"
+    },
+    {
+      "kind": "word",
+      "wordId": "bangs",
+      "verdict": "pass",
+      "reason": "美式複數bangs與日文前髪同指額前髮束；英式fringe作別稱說明，不以瀏海代指整個髮型。",
+      "sourceSha256": "d061a050d13993a32250b8b48859559dcd25618664b3c43fb29b3ba449a071a3"
+    },
+    {
+      "kind": "example",
+      "wordId": "bangs",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請稍修瀏海是實際到店請求，三語little與少し及一點相符。",
+      "sourceSha256": "d016bb9cb383042bf902a3cd6111f768c3526cc0f7edf58c891c45ecf78c7dee"
+    },
+    {
+      "kind": "example",
+      "wordId": "bangs",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "吹乾後看起來變短而要求下次留長，時間、原因與下次請求對齊，與本次修剪不同。",
+      "sourceSha256": "f6c10822c13d66338b0a539ca540d53811fae0d0cdc14b0f980feaaa9a253691"
+    },
+    {
+      "kind": "word",
+      "wordId": "sideburns",
+      "verdict": "pass",
+      "reason": "sideburns對應もみあげ，位置在耳前及太陽穴下方，不混成後頸髮或下巴鬍鬚。",
+      "sourceSha256": "f38a3f16861902f639f67d466dc27ee61f5f5b53352f7446983bdfcab11375d8"
+    },
+    {
+      "kind": "example",
+      "wordId": "sideburns",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請整理鬢角為自然到店請求，tidy up與整えて包含相同整理語意。",
+      "sourceSha256": "a0aff47e07792e4beb50db48c232023868fa3754fee53e10fb174df50bf9aec2"
+    },
+    {
+      "kind": "example",
+      "wordId": "sideburns",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "左右長短不同而請理髮師修齊，有原因與結果；三語同指鬢角長度。",
+      "sourceSha256": "421b241290aaf1147bd72e09baaa9f6955b53b44f137eeb55a1bc571156a8182"
+    },
+    {
+      "kind": "word",
+      "wordId": "bob-cut",
+      "verdict": "pass",
+      "reason": "bob cut與ボブ為髮型概念，不是剪髮服務或單指瀏海；定義留有款式變化，圖採典型下巴長度。",
+      "sourceSha256": "029b2059d895f6665fc30d968376e97145b2ba0bf2151b4cce610777de32e2f6"
+    },
+    {
+      "kind": "example",
+      "wordId": "bob-cut",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "向美髮師要求鮑伯頭為具體選擇，三語同一人物與髮型。",
+      "sourceSha256": "39259bc8c76da7dca0f9f3d2a79504b2dbb5782b3c2266d9988d1f36fe786a1c"
+    },
+    {
+      "kind": "example",
+      "wordId": "bob-cut",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "想剪短但獲建議保留蓋耳長度，轉折及相對長度有意義，三語不把bob等同固定精確公分。",
+      "sourceSha256": "ce917aacd82d07754d344827fe8f75e83ff3d253dc1aea176bc31f8a588d7a10"
+    },
+    {
+      "kind": "word",
+      "wordId": "buzz-cut",
+      "verdict": "pass",
+      "reason": "buzz cut以整頭極短髮茬對應坊主頭，繁中採寸頭以避開平頭常指平頂或較長crew cut；不混成光頭。",
+      "sourceSha256": "82b07fdf37a6e429fec760517349d1176206dd5c5801253377232a747e995e5a"
+    },
+    {
+      "kind": "example",
+      "wordId": "buzz-cut",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "選擇寸頭為一次具體髮型決定，三語過去時一致。",
+      "sourceSha256": "1b12085b101371ed23645c26daa09c23d4a02091981a4477ab0666b5a94d0958"
+    },
+    {
+      "kind": "example",
+      "wordId": "buzz-cut",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "剪成寸頭後驚訝乾得快，有先後與感受，描述個人經驗不泛化所有髮質。",
+      "sourceSha256": "a25f60ae48b9a6b4063967e2aae3eafd7b8a2c69a1ed087d86aa12ff91a30ca1"
+    }
+  ]
+}

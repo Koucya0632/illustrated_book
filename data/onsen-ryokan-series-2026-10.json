@@ -1,0 +1,1050 @@
+{
+  "schemaVersion": 1,
+  "series": "onsen-ryokan",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "New main-catalog onsen/ryokan concepts only. Existing yukata, futon, slippers, bathing tools and towels remain unchanged. Local preparation; separate authorization is required for production uploads, DB writes, commit and deployment.",
+  "category": {
+    "id": "onsen-ryokan",
+    "name": "Hot Spring Inns",
+    "nameZh": "溫泉旅館",
+    "nameJa": "温泉旅館",
+    "emoji": "♨️",
+    "description": "溫泉浴場、和式客房、旅館接待與餐食",
+    "descriptionEn": "Hot spring baths, Japanese-style guest rooms, inn service and meals",
+    "descriptionJa": "温泉の風呂、和室、旅館の接客や食事",
+    "color": "from-orange-100 to-amber-100",
+    "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/category-onsen-ryokan-v1-8faf837f91e0.webp"
+  },
+  "references": [
+    "https://www.mlit.go.jp/kankocho/ryokan/list_ja-6.html",
+    "https://www.erin.jpf.go.jp/materials/vocabulary/download/erin_lesson11_vocabulary_list_tw.pdf",
+    "https://www.mlit.go.jp/tagengo-db/en/R1-01169.html",
+    "https://www.japan.travel/en/guide/japanese-ryokan/",
+    "https://www.zuien.jp/en/manual",
+    "https://nihonryouri.jp/howto.html",
+    "https://www.merriam-webster.com/dictionary/haori",
+    "https://www.merriam-webster.com/dictionary/fusuma"
+  ],
+  "entries": [
+    {
+      "id": "onsen-ryokan",
+      "word": "hot spring inn",
+      "chinese": "溫泉旅館",
+      "chineseDefinition": "提供溫泉入浴設施的旅館，常有和式客房與餐食服務；不是所有日式旅館都有溫泉。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhɑːt ˈsprɪŋ ɪn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "溫泉旅館",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An inn with bathing facilities supplied by a natural hot spring.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "温泉を利用した入浴設備がある旅館。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "What time is check-in at the hot spring inn?",
+          "ja": "温泉旅館のチェックインは何時ですか。",
+          "zh": "溫泉旅館幾點可以入住？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We wanted a bath before dinner, so we arrived at the hot spring inn early.",
+          "ja": "夕食前にお風呂に入りたかったので、温泉旅館に早めに着きました。",
+          "zh": "我們想在晚餐前泡湯，所以提早到了溫泉旅館。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "温泉旅館",
+      "jaReading": "おんせんりょかん",
+      "jaReadingSegments": [
+        {
+          "text": "温泉旅館",
+          "ruby": "おんせんりょかん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/onsen-ryokan-v1-27d986933ca7.webp"
+    },
+    {
+      "id": "communal-bath",
+      "word": "communal bath",
+      "chinese": "大浴場",
+      "chineseDefinition": "供多位住客共同使用、設有較大浴池的浴場；不等於游泳池。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kəˈmjuː.nəl bæθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "大浴場",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shared bathing area with a large soaking bath for multiple guests.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "多くの宿泊客が共同で使う、大きな浴槽のある浴場。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Where is the communal bath?",
+          "ja": "大浴場はどこですか。",
+          "zh": "大浴場在哪裡？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The communal bath was being cleaned, so I went after breakfast.",
+          "ja": "大浴場は清掃中だったので、朝食後に入りました。",
+          "zh": "大浴場當時正在清掃，所以我在早餐後才去泡湯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "大浴場",
+      "jaReading": "だいよくじょう",
+      "jaReadingSegments": [
+        {
+          "text": "大浴場",
+          "ruby": "だいよくじょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/communal-bath-v1-1aae4a8b1187.webp"
+    },
+    {
+      "id": "open-air-bath",
+      "word": "open-air bath",
+      "chinese": "露天浴池",
+      "chineseDefinition": "設在戶外、可接觸外界空氣的浴池；此處為溫泉旅館的露天泡湯設施。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌoʊ.pən ˈer bæθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "露天浴池",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An outdoor soaking bath exposed to the open air.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "屋外にあり、外の空気に触れながら入れる風呂。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I used the open-air bath before dinner.",
+          "ja": "夕食前に露天風呂に入りました。",
+          "zh": "我在晚餐前泡了露天浴池。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The rain got heavier, so I left the open-air bath early.",
+          "ja": "雨が強くなったので、露天風呂から早めに上がりました。",
+          "zh": "雨勢變大了，所以我提早離開露天浴池。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "露天風呂",
+      "jaReading": "ろてんぶろ",
+      "jaReadingSegments": [
+        {
+          "text": "露天風呂",
+          "ruby": "ろてんぶろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/open-air-bath-v1-c5de6a93165e.webp"
+    },
+    {
+      "id": "private-bath",
+      "word": "private bath",
+      "chinese": "包場浴池",
+      "chineseDefinition": "在約定時間內由同一組客人專用的浴池；不一定設在客房內。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpraɪ.vət bæθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "包場浴池",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bath reserved for exclusive use by one guest or group for a period of time.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "決められた時間、ほかの客と一緒にならずに一組で利用できる風呂。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Can I book the private bath for tonight?",
+          "ja": "今夜の貸切風呂を予約できますか。",
+          "zh": "我可以預約今晚的包場浴池嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The private bath was booked at six, so we reserved it for seven.",
+          "ja": "六時の貸切風呂は予約が入っていたので、七時に予約しました。",
+          "zh": "六點的包場浴池已有人預約，所以我們改約了七點。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "貸切風呂",
+      "jaReading": "かしきりぶろ",
+      "jaReadingSegments": [
+        {
+          "text": "貸切風呂",
+          "ruby": "かしきりぶろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/private-bath-v1-02ea148c5403.webp"
+    },
+    {
+      "id": "indoor-bath",
+      "word": "indoor bath",
+      "chinese": "室內浴池",
+      "chineseDefinition": "設在建築物內的泡湯浴池；相對於露天風呂，不限定是否共用。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɪn.dɔːr bæθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "室內浴池",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soaking bath inside a building, as opposed to an open-air bath.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "建物の中にある風呂。露天風呂と区別して使う言い方。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I will use the indoor bath today.",
+          "ja": "今日は内湯に入ります。",
+          "zh": "我今天要泡室內浴池。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "It was cold outside, so I chose the indoor bath instead of the open-air bath.",
+          "ja": "外は寒かったので、露天風呂ではなく内湯に入りました。",
+          "zh": "外面很冷，所以我沒有泡露天浴池，而是泡了室內浴池。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "内湯",
+      "jaReading": "うちゆ",
+      "jaReadingSegments": [
+        {
+          "text": "内湯",
+          "ruby": "うちゆ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/indoor-bath-v1-c984a484da59.webp"
+    },
+    {
+      "id": "footbath",
+      "word": "footbath",
+      "chinese": "足湯",
+      "chineseDefinition": "坐著把腳與小腿浸在溫水中的淺池或設施，此處為溫泉足湯。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfʊt.bæθ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "足湯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shallow bath in which people soak their feet and lower legs.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "座って足やふくらはぎを湯につけるための浅い風呂。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Does this inn have a footbath?",
+          "ja": "この旅館に足湯はありますか。",
+          "zh": "這間旅館有足湯嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After our walk, we soaked our feet in the footbath before returning to our room.",
+          "ja": "散歩の後、足湯に入ってから部屋に戻りました。",
+          "zh": "散步後，我們先泡了足湯才回房間。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "足湯",
+      "jaReading": "あしゆ",
+      "jaReadingSegments": [
+        {
+          "text": "足湯",
+          "ruby": "あしゆ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/footbath-v1-b927b069a8b2.webp"
+    },
+    {
+      "id": "bath-changing-area",
+      "word": "bath changing area",
+      "chinese": "浴場更衣區",
+      "chineseDefinition": "浴場旁供人脫換衣物、存放衣服的空間，與濕的洗澡區分開。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bæθ ˈtʃeɪn.dʒɪŋ ˌer.i.ə/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "浴場更衣區",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A dry area beside a bathing room where bathers remove and put on clothes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "入浴の前後に服を脱いだり着たりする、浴室の外の場所。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Leave your clothes in the bath changing area.",
+          "ja": "服は脱衣所に置いてください。",
+          "zh": "請把衣服放在浴場更衣區。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I forgot my towel, so I went back to the bath changing area before bathing.",
+          "ja": "タオルを忘れたので、入浴前に脱衣所へ戻りました。",
+          "zh": "我忘了拿毛巾，所以在泡湯前回到了浴場更衣區。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "脱衣所",
+      "jaReading": "だついじょ",
+      "jaReadingSegments": [
+        {
+          "text": "脱衣所",
+          "ruby": "だついじょ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/bath-changing-area-v1-bea2ece68f79.webp"
+    },
+    {
+      "id": "bath-washing-area",
+      "word": "bath washing area",
+      "chinese": "浴場洗澡區",
+      "chineseDefinition": "浴場內設有水龍頭或淋浴設備、供入池前清洗身體的區域。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/bæθ ˈwɑː.ʃɪŋ ˌer.i.ə/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "浴場洗澡區",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The area with taps or showers where bathers wash before entering a soaking bath.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "浴場で、湯船に入る前に体や髪を洗うための場所。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Wash your body in the bath washing area.",
+          "ja": "洗い場で体を洗ってください。",
+          "zh": "請在浴場洗澡區清洗身體。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before getting into the bath, rinse off the soap in the bath washing area.",
+          "ja": "湯船に入る前に、洗い場でせっけんを洗い流してください。",
+          "zh": "進入浴池前，請先在浴場洗澡區沖乾淨肥皂。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "洗い場",
+      "jaReading": "あらいば",
+      "jaReadingSegments": [
+        {
+          "text": "洗い場",
+          "ruby": "あらいば"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/bath-washing-area-v1-96058d12068d.webp"
+    },
+    {
+      "id": "changing-basket",
+      "word": "clothes basket",
+      "chinese": "更衣籃",
+      "chineseDefinition": "浴場更衣區用來暫放脫下衣物的籃子；不是帶去洗衣的髒衣籃。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkloʊðz ˌbæs.kɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "更衣籃",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A basket in a bath changing area for holding clothes while the owner bathes.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "脱衣所で、入浴中に脱いだ服を入れておくかご。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your clothes in the clothes basket.",
+          "ja": "脱衣かごに服を入れてください。",
+          "zh": "請把衣服放進更衣籃。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My clothes basket was on the top shelf, just where I had left it.",
+          "ja": "自分の脱衣かごは、置いたとおり棚の一番上にありました。",
+          "zh": "我的更衣籃就在置物架最上層，位置和我放時一樣。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "脱衣かご",
+      "jaReading": "だついかご",
+      "jaReadingSegments": [
+        {
+          "text": "脱衣かご",
+          "ruby": "だついかご"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/changing-basket-v1-25c26cc0da60.webp"
+    },
+    {
+      "id": "japanese-style-room",
+      "word": "Japanese-style room",
+      "chinese": "和室",
+      "chineseDefinition": "以榻榻米地板等日式設計為特色的房間，旅館常用作客房。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌdʒæp.əˈniːz staɪl ruːm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "和室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A room designed in the traditional Japanese style, typically with tatami flooring.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "畳を敷くなど、日本の伝統的な様式で造られた部屋。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I booked a Japanese-style room.",
+          "ja": "和室を予約しました。",
+          "zh": "我預約了和室。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We chose a Japanese-style room because we were traveling with a small child.",
+          "ja": "小さな子どもと一緒だったので、和室を選びました。",
+          "zh": "因為帶著年幼的孩子同行，我們選了和室。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "和室",
+      "jaReading": "わしつ",
+      "jaReadingSegments": [
+        {
+          "text": "和室",
+          "ruby": "わしつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/japanese-style-room-v1-dcafa66ee835.webp"
+    },
+    {
+      "id": "tatami-mat",
+      "word": "tatami mat",
+      "chinese": "榻榻米",
+      "chineseDefinition": "和室使用的厚板狀地墊，表面有細密編織紋理，常見款式有布邊。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/təˈtɑː.mi mæt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "榻榻米",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A thick rectangular Japanese floor mat with a finely woven surface, often finished with fabric edging.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "和室の床に敷く、織った表面をもつ厚い長方形の敷物。縁に布を付けたものが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please take off your shoes before stepping on the tatami mat.",
+          "ja": "畳に上がる前に靴を脱いでください。",
+          "zh": "踏上榻榻米前，請先脫鞋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I spilled tea on the tatami mat, so I wiped it up immediately.",
+          "ja": "畳にお茶をこぼしたので、すぐに拭き取りました。",
+          "zh": "我把茶打翻在榻榻米上，所以立刻擦乾了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "畳",
+      "jaReading": "たたみ",
+      "jaReadingSegments": [
+        {
+          "text": "畳",
+          "ruby": "たたみ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/tatami-mat-v1-88c5fd6124d1.webp"
+    },
+    {
+      "id": "shoji-screen",
+      "word": "shoji screen",
+      "chinese": "障子紙拉門",
+      "chineseDefinition": "以木格框貼透光紙製成的日式拉門或隔扇，與不透光的襖不同。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃoʊ.dʒi skriːn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "障子紙拉門",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sliding Japanese screen with a wooden lattice covered in translucent paper.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "木の格子に光を通す紙を貼った、日本の引き戸や仕切り。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Close the shoji screen gently.",
+          "ja": "障子を静かに閉めてください。",
+          "zh": "請輕輕關上障子紙拉門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The morning light was bright, so I closed the shoji screen to dim the room a little.",
+          "ja": "朝の日差しがまぶしかったので、障子を閉めて部屋を少し暗くしました。",
+          "zh": "早晨的陽光很刺眼，所以我關上障子紙拉門，讓房間稍微暗一點。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "障子",
+      "jaReading": "しょうじ",
+      "jaReadingSegments": [
+        {
+          "text": "障子",
+          "ruby": "しょうじ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/shoji-screen-v1-c2e67d2b6ab0.webp"
+    },
+    {
+      "id": "fusuma-panel",
+      "word": "fusuma sliding panel",
+      "chinese": "襖拉門",
+      "chineseDefinition": "表面貼有不透光紙或布的日式拉門，常用來分隔和室或遮住壁櫥。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfuː.səˌmɑː ˈslaɪ.dɪŋ ˈpæn.əl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "襖拉門",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An opaque Japanese sliding panel covered with paper or cloth, used between rooms or in front of a closet.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紙や布を貼った、光を通さない引き戸。和室の仕切りや押し入れの戸に使う。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Open the fusuma sliding panel.",
+          "ja": "ふすまを開けてください。",
+          "zh": "請拉開襖拉門。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Someone was sleeping next door, so I closed the fusuma sliding panel between the rooms.",
+          "ja": "隣で人が寝ていたので、部屋の間のふすまを閉めました。",
+          "zh": "隔壁有人在睡覺，所以我關上了兩個房間之間的襖拉門。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ふすま",
+      "jaReading": "ふすま",
+      "jaReadingSegments": [
+        {
+          "text": "ふすま",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/fusuma-panel-v1-68e7ae2feb96.webp"
+    },
+    {
+      "id": "tokonoma-alcove",
+      "word": "tokonoma alcove",
+      "chinese": "床之間",
+      "chineseDefinition": "和室內用來陳設掛軸、插花等的凹入空間，通常有稍高的地台；不是睡床。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌtoʊ.kəˈnoʊ.mə ˈæl.koʊv/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "床之間",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A recessed display space in a Japanese-style room, often with a raised base, for a hanging scroll or flowers.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "和室で、掛け軸や生け花などを飾るための、床を少し高くした空間。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "There are flowers in the tokonoma alcove.",
+          "ja": "床の間に花が飾ってあります。",
+          "zh": "床之間擺著花。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I asked the staff whether I could put my luggage in the tokonoma alcove.",
+          "ja": "床の間に荷物を置いてもいいか、宿の人に聞きました。",
+          "zh": "我問旅館人員可不可以把行李放在床之間。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "床の間",
+      "jaReading": "とこのま",
+      "jaReadingSegments": [
+        {
+          "text": "床の間",
+          "ruby": "とこのま"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/tokonoma-alcove-v1-791e709b4b6b.webp"
+    },
+    {
+      "id": "low-dining-table",
+      "word": "low dining table",
+      "chinese": "和式矮餐桌",
+      "chineseDefinition": "坐在地板或坐墊上時使用的矮桌，可用來用餐或喝茶；與沙發前的茶几不同。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/loʊ ˈdaɪ.nɪŋ ˌteɪ.bəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "和式矮餐桌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A low table used for meals or tea while sitting on the floor.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "床や座布団に座って、食事やお茶などに使う背の低い机。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the tea on the low dining table.",
+          "ja": "座卓にお茶を置いてください。",
+          "zh": "請把茶放在和式矮餐桌上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before laying out the futons, we moved the low dining table to the side of the room.",
+          "ja": "布団を敷く前に、座卓を部屋の端に寄せました。",
+          "zh": "鋪日式寢具前，我們把和式矮餐桌移到房間邊。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "座卓",
+      "jaReading": "ざたく",
+      "jaReadingSegments": [
+        {
+          "text": "座卓",
+          "ruby": "ざたく"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/low-dining-table-v1-1dce28319083.webp"
+    },
+    {
+      "id": "haori-jacket",
+      "word": "haori jacket",
+      "chinese": "羽織外罩",
+      "chineseDefinition": "穿在和服或浴衣外面的短外罩，溫泉旅館也可能提供館內穿用的款式。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhaʊ.ri ˈdʒæk.ɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "羽織外罩",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short Japanese outer jacket worn over a kimono or yukata.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "着物や浴衣の上に重ねて着る、丈の短い上着。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the haori jacket over your yukata.",
+          "ja": "浴衣の上に羽織を着てください。",
+          "zh": "請在浴衣外穿上羽織外罩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The corridor was a little cold, so I went back to my room for a haori jacket.",
+          "ja": "廊下が少し寒かったので、羽織を取りに部屋へ戻りました。",
+          "zh": "走廊有點冷，所以我回房間拿羽織外罩。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "羽織",
+      "jaReading": "はおり",
+      "jaReadingSegments": [
+        {
+          "text": "羽織",
+          "ruby": "はおり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/haori-jacket-v1-094b0180d871.webp"
+    },
+    {
+      "id": "ryokan-attendant",
+      "word": "ryokan attendant",
+      "chinese": "旅館接待員",
+      "chineseDefinition": "日式旅館或料理店中負責接待、客房服務與送餐等工作的服務人員。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/riˈoʊ.kɑːn əˈten.dənt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "旅館接待員",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An attendant who welcomes guests and provides room or meal service at a Japanese inn or restaurant.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "旅館や料理店で、客の案内や食事の用意などをする係。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I asked the ryokan attendant about dinner time.",
+          "ja": "仲居さんに夕食の時間を聞きました。",
+          "zh": "我向旅館接待員詢問了晚餐時間。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because I have a food allergy, I told the ryokan attendant before dinner.",
+          "ja": "食物アレルギーがあるので、夕食前に仲居さんに伝えました。",
+          "zh": "因為我有食物過敏，所以在晚餐前告訴了旅館接待員。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "仲居",
+      "jaReading": "なかい",
+      "jaReadingSegments": [
+        {
+          "text": "仲居",
+          "ruby": "なかい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/ryokan-attendant-v1-fdbafd6f763e.webp"
+    },
+    {
+      "id": "kaiseki-meal",
+      "word": "kaiseki meal",
+      "chinese": "會席料理",
+      "chineseDefinition": "由多道菜組成的正式日式餐食，旅館常以當季食材安排；此處指會席，不是茶事的懷石。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kaɪˈseɪ.ki miːl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "會席料理",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A formal Japanese meal served in multiple courses, often featuring seasonal ingredients; here, banquet-style kaiseki rather than tea-ceremony cuisine.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "季節の食材などを使った料理を、何品も順に出す日本料理の食事。ここでは茶事の懐石ではなく、会席を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We are having a kaiseki meal tonight.",
+          "ja": "今夜は会席料理をいただきます。",
+          "zh": "我們今晚要享用會席料理。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The kaiseki meal arrived one course at a time, so we ate slowly.",
+          "ja": "会席料理は一品ずつ出てきたので、ゆっくり食べました。",
+          "zh": "會席料理一道一道送上來，所以我們慢慢用餐。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "会席料理",
+      "jaReading": "かいせきりょうり",
+      "jaReadingSegments": [
+        {
+          "text": "会席料理",
+          "ruby": "かいせきりょうり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/kaiseki-meal-v1-a55bfc095d2c.webp"
+    },
+    {
+      "id": "hot-spring-bun",
+      "word": "hot spring bun",
+      "chinese": "溫泉饅頭",
+      "chineseDefinition": "溫泉地常見、通常包紅豆餡的日式饅頭伴手禮，不表示一定用溫泉水製作。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌhɑːt ˈsprɪŋ bʌn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "溫泉饅頭",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese sweet bun, usually filled with sweet bean paste, sold as a souvenir in hot spring towns.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "温泉地の土産として売られる、あんを包んだまんじゅう。必ず温泉の湯で作るわけではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought a hot spring bun.",
+          "ja": "温泉まんじゅうを一つ買いました。",
+          "zh": "我買了一個溫泉饅頭。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before checking out, I bought a box of hot spring buns for my family.",
+          "ja": "チェックアウトする前に、家族へのお土産に温泉まんじゅうを一箱買いました。",
+          "zh": "退房前，我買了一盒溫泉饅頭當作給家人的伴手禮。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "温泉まんじゅう",
+      "jaReading": "おんせんまんじゅう",
+      "jaReadingSegments": [
+        {
+          "text": "温泉まんじゅう",
+          "ruby": "おんせんまんじゅう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/hot-spring-bun-v1-f7ea23146611.webp"
+    },
+    {
+      "id": "room-key",
+      "word": "room key",
+      "chinese": "房間鑰匙",
+      "chineseDefinition": "用來開啟住宿客房門鎖的鑰匙，也可指房卡；此系列圖片採旅館常見的鑰匙與長形吊牌。",
+      "category": "onsen-ryokan",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ruːm kiː/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "房間鑰匙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A key or key card used to unlock a guest room.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "宿泊する部屋の鍵を開けるための鍵やカード。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please collect your room key at the front desk.",
+          "ja": "フロントでルームキーを受け取ってください。",
+          "zh": "請到櫃檯領取房間鑰匙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was afraid of losing my room key, so I left it at the front desk before going out.",
+          "ja": "ルームキーをなくすのが心配だったので、外出前にフロントに預けました。",
+          "zh": "我擔心弄丟房間鑰匙，所以外出前先寄放在櫃檯。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ルームキー",
+      "jaReading": "ルームキー",
+      "jaReadingSegments": [
+        {
+          "text": "ルームキー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/room-key-v1-26d87f42a81b.webp"
+    }
+  ]
+}

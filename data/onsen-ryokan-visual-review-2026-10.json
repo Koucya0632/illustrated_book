@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "series": "onsen-ryokan",
+  "reviewer": "Codex; every selected original inspected individually",
+  "items": [
+    {
+      "id": "onsen-ryokan",
+      "decision": "pass",
+      "reason": "完整兩層木造旅館為主體，瓦屋頂與入口明確，側邊有冒蒸氣的浴池；無品牌或虛構文字，入口溫泉符號是相關標準圖示。",
+      "sourceSha256": "ddae34402769b2e2e7aa325adac0c9720ca09376c43a82686009ab2f681b5ee0"
+    },
+    {
+      "id": "communal-bath",
+      "decision": "pass",
+      "reason": "室內大浴池可容多人，旁有三組低位淋浴座，木構屋頂和共用浴池區完整；不是泳池或單人浴缸。",
+      "sourceSha256": "01169f093bd1915d54c0fb095e5558d8cb7f09126037cc89b4e10fc74979c861"
+    },
+    {
+      "id": "open-air-bath",
+      "decision": "pass",
+      "reason": "石圍浴池向露天空間開放，竹圍籬提供隱私，水面有蒸氣；沒有屋頂，與室內池區分清楚。",
+      "sourceSha256": "a36fc425e5121cd843b4323b11fe413a44a25bed2834c3bb627630255a915973"
+    },
+    {
+      "id": "private-bath",
+      "decision": "pass",
+      "reason": "小型獨立浴室有木浴槽、一組清洗設備及帶內鎖的關閉入口，符合一組專用的包場空間；專用時段仍由文字說明。",
+      "sourceSha256": "5b46c05c37315f2dc058f20faea5ccd56a7498b507f34e7829b459aa24f39f8f"
+    },
+    {
+      "id": "indoor-bath",
+      "decision": "pass",
+      "reason": "浴池置於有屋頂、木牆和關閉霧面窗的室內，完整包圍結構清楚，與無頂露天浴池不同。",
+      "sourceSha256": "b3979eb9b36684370f41a41ce05c46949aff7509e733ce291c451542400661d9"
+    },
+    {
+      "id": "footbath",
+      "decision": "pass",
+      "reason": "窄淺水槽兩側緊接座板，上有簡單木棚，比例適合坐著浸腳而非全身泡湯。",
+      "sourceSha256": "21f56ae3f31b391e2b348883d8a9d1b023238e4ee1fcbf71c33f954b35968291"
+    },
+    {
+      "id": "bath-changing-area",
+      "decision": "pass",
+      "reason": "乾燥木地板、脫衣籃置物格及梳妝鏡構成更衣空間，沒有浴池或淋浴，符合脫衣所用途。",
+      "sourceSha256": "4c788854d67b96e7294255cfce83f0569617244a2a4ec0d2c73298c2b8afce1f"
+    },
+    {
+      "id": "bath-washing-area",
+      "decision": "pass",
+      "reason": "三組低位鏡面、手持淋浴、水龍頭及風呂椅排列於濕磁磚地面；清洗區主體清楚，無浸泡浴池。",
+      "sourceSha256": "a1c690ff9c9625c5222788c4cdfb12007198f83d52f8a6305926f9233af3bb8c"
+    },
+    {
+      "id": "changing-basket",
+      "decision": "pass",
+      "reason": "單一淺長方形藤編開口籃，內部和低側壁可見，無洗衣機、髒衣或高提把；符合暫放脫下衣物的更衣籃。",
+      "sourceSha256": "af35a6247352f14a24f9093daec94045ad6e662b6ab33158b29bc57bc4865302"
+    },
+    {
+      "id": "japanese-style-room",
+      "decision": "pass",
+      "reason": "榻榻米地板、低桌、坐墊、障子和襖構成完整和室空間，未混入西式床或浴室；圖用整個房間辨識。",
+      "sourceSha256": "c349e9f2d95c5d5416790f4d90cc87cfa86d0e834e828965f64f428c77dd1e33"
+    },
+    {
+      "id": "tatami-mat",
+      "decision": "pass",
+      "reason": "單片厚長方形鋪材有細密編織表面及兩條深藍長邊布緣，厚度可見，與薄瑜珈墊或整間和室不同。",
+      "sourceSha256": "721c23f59155f65bc1424865bbc9376546aa22509b4002f440812735abdc2592"
+    },
+    {
+      "id": "shoji-screen",
+      "decision": "pass",
+      "reason": "木格覆透光白紙的滑動隔扇置於導軌框內，格柵及透光紙是主體，不是全實心襖。",
+      "sourceSha256": "bd428e64603132c9039a5ba603cf71ef3a8c310f3bd6ffa488a2ffff3da7e3b2"
+    },
+    {
+      "id": "fusuma-panel",
+      "decision": "pass",
+      "reason": "不透光米色面板配深色邊框與圓形凹入拉手，滑動軌道清楚；沒有障子的細木格或透光紙。",
+      "sourceSha256": "00f133e26abb1ec571539da36edbc7aa7fe9909e5fa7d87683d5f0615a8f3782"
+    },
+    {
+      "id": "tokonoma-alcove",
+      "decision": "pass",
+      "reason": "凹入展示空間有略高木地台、掛軸和插花，側柱與凹間完整；掛軸為山水圖而非亂碼文字，未畫成睡床或佛壇。",
+      "sourceSha256": "c11c5edbb9bf5c857ed2dd19663e34ef112f4a317ef4a723c4d02e8905d62254"
+    },
+    {
+      "id": "low-dining-table",
+      "decision": "pass",
+      "reason": "低矮四腳木桌整體可見，沒有椅子及暖桌棉被，桌面與桌腳比例適合席地使用。",
+      "sourceSha256": "58897939e8a2ab076ed9588a6dac0644fc9a4bcc33a9646ca9bfcac38acf5640"
+    },
+    {
+      "id": "haori-jacket",
+      "decision": "pass",
+      "reason": "深藍短外罩具開襟、寬袖、淺色內裡及前繫帶，無腰帶、長袍下襬或人體，與浴衣和西式浴袍可區別。",
+      "sourceSha256": "e564f197161e5b2f14145d98d056ed9985e4ac83701e3dfb88c60936fecda0e6"
+    },
+    {
+      "id": "ryokan-attendant",
+      "decision": "pass",
+      "reason": "全身接待人員以素雅和服、整潔髮型和雙手端茶盤表現服務工作，無藝妓妝、品牌或誇張服飾；人物和手部完整。",
+      "sourceSha256": "3ba9f1d232c811924c053abfbea5e0e4627951b2a9ffcb759fd9291e3f202ba1"
+    },
+    {
+      "id": "kaiseki-meal",
+      "decision": "pass",
+      "reason": "選用第二版：八件分開器皿呈現八寸、刺身、烤物、煮物、茶碗蒸、漬物、飯和水果；小份多道料理總覽比單托盤定食更明確，實際上菜順序由例句說明。",
+      "sourceSha256": "1b5d9b38861b8dcc7e598ba1db3eecbfe373d7307150383c36de838dd28d5381"
+    },
+    {
+      "id": "hot-spring-bun",
+      "decision": "pass",
+      "reason": "棕色蒸饅頭及切面明確顯示深紅豆餡、薄外皮和甜點比例，無肉餡、肉包摺紋、包裝品牌或印字。",
+      "sourceSha256": "3e2f865e8e6e04c4eba17064b2df05b2507c4f66b230bebe213a1b24755ecad3"
+    },
+    {
+      "id": "room-key",
+      "decision": "pass",
+      "reason": "銀色實體門匙連接長木吊牌，鑰匙齒和吊環可見，木牌無房號文字；符合旅館房匙圖像而非紀念鑰匙圈。",
+      "sourceSha256": "d99e1ebe4cc3807d75e58a76a141ff6062d3d170e82ec4fe193aebbec085ba27"
+    },
+    {
+      "id": "category-onsen-ryokan",
+      "decision": "pass",
+      "reason": "木造旅館、冒蒸氣石池與和室角落構成同一緊湊封面，白底留白完整、無人無品牌，縮圖仍可辨識旅館與泡湯主題。",
+      "sourceSha256": "4c1633bf8a54bcf5774f29da02cda3916efa7096f1d2fd99ad24b663f44f175e"
+    }
+  ],
+  "rejected": [
+    {
+      "id": "kaiseki-meal",
+      "version": 1,
+      "decision": "fail",
+      "categories": [
+        "semantic-mismatch"
+      ],
+      "reason": "單一托盤的飯、湯與幾道菜太像一般定食，缺少會席多道小份料理的明確表現。",
+      "sourceFile": "output/onsen-ryokan-2026-10/sources/kaiseki-meal-v1-rejected.png"
+    }
+  ]
+}

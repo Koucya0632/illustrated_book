@@ -1,3 +1,4 @@
+import { MAIN_WORD_ARCADE_IDS, MAIN_WORD_ARCADE_WORDS } from "./main-word-arcade-2026-10";
 import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS, MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type { Example, Word, WordRelation } from "@/types";
 import imageUrls from "./image-urls.json";
@@ -1767,6 +1768,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_CHERRY_BLOSSOM_SEASON_WORDS as LegacyWord[]),
   ...(MAIN_WORD_COLLECTING_HOBBIES_WORDS as LegacyWord[]),
   ...(MAIN_WORD_CAMPUS_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_ARCADE_WORDS as LegacyWord[]),
   ...(MAIN_WORD_ONSEN_RYOKAN_WORDS as LegacyWord[]),
   ...(MAIN_WORD_EMERGENCY_KIT_WORDS as LegacyWord[]),
 ].map((w) => {
@@ -1781,7 +1783,7 @@ export const words: Word[] = [
 // to serve an incomplete catalogue than to expose an unreleased series.
 export const publicFallbackWords: Word[] = words.filter(
   (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "emergency-kit", "onsen-ryokan"].includes(word.category) &&
+    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "arcade", "emergency-kit", "onsen-ryokan"].includes(word.category) &&
     !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
     !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
@@ -1793,6 +1795,7 @@ export const publicFallbackWords: Word[] = words.filter(
     !MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS.includes(word.id) &&
     !MAIN_WORD_COLLECTING_HOBBIES_IDS.includes(word.id) &&
     !MAIN_WORD_CAMPUS_IDS.includes(word.id) &&
+    !MAIN_WORD_ARCADE_IDS.includes(word.id) &&
     !MAIN_WORD_ONSEN_RYOKAN_IDS.includes(word.id) &&
     !MAIN_WORD_EMERGENCY_KIT_IDS.includes(word.id),
 );

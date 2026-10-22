@@ -1,4 +1,4 @@
-# 防災包系列：16 詞正式發布
+# 防災包系列：16 詞已正式發布並部署
 
 2026-10-22（日本時間）。分類 `emergency-kit`／防災包／防災バッグ／Emergency Kit。
 
@@ -35,7 +35,7 @@
 - 17 張選用原圖已逐張檢視，編碼後總覽亦已檢視；提示詞及內建 image_gen 來源保存在 `data/emergency-kit-image-prompts-2026-10.json`。
 - 型別檢查、87 項系列／發布防護測試、網站建置通過；全套測試 862 通過、9 項原有跳過、0 失敗。
 - 例行 migration 防護所有新 ID 及分類；公開無 DB／DB 錯誤備援與同步助手隱藏本批；分類只在全批 published 且未刪除時可見。實際分類查詢已在唯讀交易驗證。
-- API、快取收斂與正式部署：進行中，完成證據見後續段落。
+- 正式部署 Ready，兩個正式網域各 43 個 API／路由探針通過；普通與 cache-busting 雙向詞庫均為 1081 詞並含防災包 16 詞，主詞音檔投影一致。繁中／英／日分類名稱及 64 個詞條詳情回應通過。iOS CardWord 線路格式驗證通過，未實機測試。
 - 沒有修改 iOS。原有專案設定與 Localizable.xcstrings 的未提交變更保留；不涉及自訂及收藏詞。
 
 ## 不可變計畫與發布清單
@@ -61,3 +61,18 @@
 - [www.bousai.metro.tokyo.lg.jp](https://www.bousai.metro.tokyo.lg.jp/content/tb2023/pageindices/index42.html)
 - [www.onisifoods.co.jp](https://www.onisifoods.co.jp/about/index.html)
 - [www.onisifoods.co.jp](https://www.onisifoods.co.jp/faq/)
+
+## 正式部署結果
+
+- 內容提交：`6c2da44f110bb5a183cc32af08f05ada4173433a`。
+- 部署：`dpl_EzF7ogGrJDLCb4KMmqFpBmLgvs37`，Ready。
+- 正式分類：[防災包](https://tuji.nexflow.team/category/emergency-kit)。
+- 兩個正式網域：tuji.nexflow.team、everyday-english-picture-dictionary.vercel.app 均切換至新版。
+- 部署後再次以唯讀交易逐欄比對資料庫，完全符合原計畫。
+- 詞庫 words tag 已失效，普通及 cache-busting 回應已收斂。
+- 最終機器可讀紀錄：`output/emergency-kit-release-20261022/release.json`。
+- API／路由：`output/emergency-kit-release-20261022/api-after-deployment.json` 與 `api-after-deployment-primary.json`。
+- 個別圖片來源／正式 WebP／遠端雜湊證據：`output/emergency-kit-release-20261022/visual-review.json`。
+- 全庫 API checker 列出四個既有範圍外平／片假名差異：picnic-sheet、superball-scooping、chocolate-banana、ramune；沒有阻斷解碼，未在本次修改。
+- 正式動作合計：161 個新素材、32 例句 ID 預留、1 次整批發布交易、1 次快取 tag 失效、1 次部署及本機提交；部署未執行 migration／整庫同步，Git 遠端未推送。
+- 未執行 iOS 實機、整庫人工語意／圖片複核或全音訊聽審；本系列所需資料、媒體、API、路由與快取驗證均通過。

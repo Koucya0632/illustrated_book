@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "series": "bank",
+  "reviewer": "Codex, individual concept and three-language sentence/span review",
+  "scope": "All 12 concepts and both examples per concept; individual editorial judgments, not independent human review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "passbook",
+      "verdict": "pass",
+      "reason": "通帳限定紙本帳戶交易冊，與提款卡、護照分開；不宣稱所有帳戶都有紙本存摺。",
+      "sourceSha256": "065487127e6378b7577d615ad3171b6e9b777db56c2e1d52cc0d8cbf1160fa4d"
+    },
+    {
+      "kind": "example",
+      "wordId": "passbook",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把存摺放入包中為單一出門準備動作，三語同一物件與位置。",
+      "sourceSha256": "74fa03ea472db26f4bb33f19059ea39d8f40e2e1752ff27b39d9fb76ec5f50b5"
+    },
+    {
+      "kind": "example",
+      "wordId": "passbook",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "存摺頁數用完而到銀行換新本，原因及結果相符，教學內容不同於收納句。",
+      "sourceSha256": "3ae08f6d603791e3c7c83cb7231b0723c8c78aa849530f0113fb7855dfc99002"
+    },
+    {
+      "kind": "word",
+      "wordId": "cash-card",
+      "verdict": "pass",
+      "reason": "cash card對應日本キャッシュカード，明確區別信用卡及儲值卡；不保證具有簽帳付款功能。",
+      "sourceSha256": "340593d68e637197d1093a33b512e896becf15ad3ace266e7753d653b6892f97"
+    },
+    {
+      "kind": "example",
+      "wordId": "cash-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把提款卡插入ATM為具體單一步驟；三語保留卡片與機器。",
+      "sourceSha256": "9c882c35ffc26b5472c30d06db2f3ebf6c9c791394ddda040cae2d3f37107458"
+    },
+    {
+      "kind": "example",
+      "wordId": "cash-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "離開銀行前檢查是否取回提款卡，時間與間接確認結構形成B1層次。",
+      "sourceSha256": "e1eaf02d375f113c42fde892177bee7cc3d76f5469b655689c35cb3344cf146d"
+    },
+    {
+      "kind": "word",
+      "wordId": "bank-counter",
+      "verdict": "pass",
+      "reason": "銀行窓口是服務設施，與既有銀行窓口係的人物概念區別；圖需客席及辦理文件空間。",
+      "sourceSha256": "3eebe41184d330503e3d6ba5facfd20d8f21fd0406d786941621c93bbf91e43b"
+    },
+    {
+      "kind": "example",
+      "wordId": "bank-counter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在櫃台出示存摺為自然臨櫃情境，三語位置及動作相符。",
+      "sourceSha256": "a58650470ddbac3b2c7759d5b9f1dee33f01203683986f2247b0d3532b5aa5b6"
+    },
+    {
+      "kind": "example",
+      "wordId": "bank-counter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不知道填表方式而向櫃台詢問，因果與人物行動一致，非定義句。",
+      "sourceSha256": "8b9cb3761f43929bbb1445536c7c1c34e1752d5351819bf12c688d5951fbd342"
+    },
+    {
+      "kind": "word",
+      "wordId": "queue-ticket",
+      "verdict": "pass",
+      "reason": "番号札是候位順序票，不是車票或收據；銀行為本系列語境而不宣稱銀行專有。",
+      "sourceSha256": "8a9fefbbc1af41091e20272ac78e7967503005d5c1c3e10a3cf0179c75613d3d"
+    },
+    {
+      "kind": "example",
+      "wordId": "queue-ticket",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "拿號碼牌為直接生活請求，日文取って及英文take同一動作。",
+      "sourceSha256": "a7b322a918bc1755dc5003f12ffbbd5a0c85255a132ec0d7614df228b45adb44"
+    },
+    {
+      "kind": "example",
+      "wordId": "queue-ticket",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "號碼被叫到後拿票前往櫃台，時間條件及動作一致，區別取號句。",
+      "sourceSha256": "ed61ca3520c20dc2811b9344d9ab46ce865761169e3f701fa19ea495c3bc8976"
+    },
+    {
+      "kind": "word",
+      "wordId": "queue-ticket-dispenser",
+      "verdict": "pass",
+      "reason": "番号札発券機限定候位取號機，與既有車站券売機及便利商店ATM的功能不同。",
+      "sourceSha256": "b908c3ca00b8e220663630ae8e03c5ac57ac121c993d65246a0109d487b0b3b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "queue-ticket-dispenser",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "取號機位於入口為直接可觀察位置，英日中一致。",
+      "sourceSha256": "56dce396896176e885507ae8fe59304ec907f6cf66e70137503e538239584fdf"
+    },
+    {
+      "kind": "example",
+      "wordId": "queue-ticket-dispenser",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不清楚操作而請行員協助，疑問嵌入及因果提供B1難度。",
+      "sourceSha256": "74e8e37f3adc6f5e54099c52e9321a8e877cc5e9309cb3fb5c7e0ef36815bf90"
+    },
+    {
+      "kind": "word",
+      "wordId": "form-filling-desk",
+      "verdict": "pass",
+      "reason": "記入台是客用填表台，不是行員服務櫃台；圖需書寫檯面、筆及空白表單。",
+      "sourceSha256": "66c6e849be91aa5bc9a72eb3d86934ec92fc1db7341c7b2ed0df22b608fe0958"
+    },
+    {
+      "kind": "example",
+      "wordId": "form-filling-desk",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "填單台上有筆為可觀察簡單敘述，三語數量無衝突。",
+      "sourceSha256": "54c2cf2377e6f6ee4173a8f551772c5ea7de3e1dc6ca57f1cdac9eb14d9289aa"
+    },
+    {
+      "kind": "example",
+      "wordId": "form-filling-desk",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "等候順序同時到台上填文件，有同時進行關係，區別單純物品位置句。",
+      "sourceSha256": "9183f6fd93a4cf1fe87a26d8b4ce9b5b82392d810ba48d32cee81cdd1ac95034"
+    },
+    {
+      "kind": "word",
+      "wordId": "personal-seal",
+      "verdict": "pass",
+      "reason": "印鑑限定個人姓名章，與辦公室既有ゴム印分開；不宣稱現今所有銀行業務都需要印章。",
+      "sourceSha256": "527a1ceb38bbe7aa8f6162fde305a0793f86931895f7072c7303faaf25ed568e"
+    },
+    {
+      "kind": "example",
+      "wordId": "personal-seal",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "個人印章放入盒中為單一收納請求，沒有加入銀行規則。",
+      "sourceSha256": "874970a4b8d81603d3e116d218c48082a7e173e98e8dcec569ca07c1cbe78c41"
+    },
+    {
+      "kind": "example",
+      "wordId": "personal-seal",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "家中印章相似而先確認姓名再拿取，原因與時間次序相符。",
+      "sourceSha256": "a46e278d585e478a561948dcd688e830be75f9d450d76e90871f5944c739e4b0"
+    },
+    {
+      "kind": "word",
+      "wordId": "seal-case",
+      "verdict": "pass",
+      "reason": "印鑑ケース是印章容器，與印鑑本體及朱肉分開；圖以狹長開蓋盒及印章槽辨識。",
+      "sourceSha256": "ce191d3d33c74f1179f0d5ae0261d26c7192381cf697e76ab217cd7c5c322bc9"
+    },
+    {
+      "kind": "example",
+      "wordId": "seal-case",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "合上盒蓋為單一請求，三語同一動作。",
+      "sourceSha256": "f31c42ec99c6e6651b703bd9a509932fb6754ff1c7644bd342b63a8bc03c7c59"
+    },
+    {
+      "kind": "example",
+      "wordId": "seal-case",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "出發去銀行前檢查盒中是否有印章，有時間與嵌入疑問結構。",
+      "sourceSha256": "038af0d9cb5f8ab2bcf2776529cb88735c9b148432884ba318bac2248212ced7"
+    },
+    {
+      "kind": "word",
+      "wordId": "bank-transfer-form",
+      "verdict": "pass",
+      "reason": "振込依頼書為匯款請求文件，與存入自己帳戶用入金伝票區分；用官方稱呼。",
+      "sourceSha256": "c5bb173a2d35643a56fa35af76f74407bd39ed3284bbc123ae22817b36d2f8de"
+    },
+    {
+      "kind": "example",
+      "wordId": "bank-transfer-form",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在匯款申請書填姓名為具體簡單請求，三語一致。",
+      "sourceSha256": "5b897868fd9fc2c09807a624823e7693022b43791628bfd6df71a25dc6f2edfd"
+    },
+    {
+      "kind": "example",
+      "wordId": "bank-transfer-form",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "提交前再次確認收款人姓名，時間與再次檢查一致，未提出帳務或費率建議。",
+      "sourceSha256": "ef47618a98e6aa9f57623e5fda51dca7273a101a0ae7aa3423152596fb50829a"
+    },
+    {
+      "kind": "word",
+      "wordId": "deposit-slip",
+      "verdict": "pass",
+      "reason": "入金伝票是存入款項的表單，不等於匯款依頼書；定義保留銀行間名稱格式差異。",
+      "sourceSha256": "5487c89fc2b11887f0f4ad23acda60b6b4f6d9a7161db523a2fe511a6bf57733"
+    },
+    {
+      "kind": "example",
+      "wordId": "deposit-slip",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在存款單填金額是直接單一步驟，三語金額相符。",
+      "sourceSha256": "c111371368ffbf3b9b08fce6058398a0b0c0873b4be6d630787b62273770bb12"
+    },
+    {
+      "kind": "example",
+      "wordId": "deposit-slip",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "發現金額寫錯而領取新單有自然因果，與簡單填寫句有內容區別。",
+      "sourceSha256": "36b576a2e0a89bdfea1716609320a0a9997cb5f6e2063d29ff39f4957e9a52b4"
+    },
+    {
+      "kind": "word",
+      "wordId": "cash-envelope",
+      "verdict": "pass",
+      "reason": "現金封筒限定銀行鈔票收納信封，明確不混成郵局現金書留用封筒；圖不需真實帳戶或銀行品牌。",
+      "sourceSha256": "abf623a1184e738a380085a27f01822f55a52801b18137d2d585b167e99873a3"
+    },
+    {
+      "kind": "example",
+      "wordId": "cash-envelope",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把鈔票裝進信封為單一生活動作，三語一致。",
+      "sourceSha256": "26ec65ce70f65e409f833c154f39b11172b0b192941592d75c98fd7747af3b87"
+    },
+    {
+      "kind": "example",
+      "wordId": "cash-envelope",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "封筒破了所以移到新封筒，有原因結果並保留款項移動。",
+      "sourceSha256": "2895ab6f6f430808ab3a091d92baebfabbb911ea332002d0cb077acd22c29806"
+    },
+    {
+      "kind": "word",
+      "wordId": "banknote-counter",
+      "verdict": "pass",
+      "reason": "紙幣計数機以送料槽、滾輪、出鈔槽計算張數，與ATM和硬幣計數機區分；不宣稱必能驗偽。",
+      "sourceSha256": "beabb4033e2211cbcfc76c15f23e86ea56da8e701dda424674af0df312ed8a6f"
+    },
+    {
+      "kind": "example",
+      "wordId": "banknote-counter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "行員用點鈔機數鈔為直接可觀察銀行場景，三語角色及動作相符。",
+      "sourceSha256": "b34434e7a15ca282eca4da07999d1d5bc1ec22f74445cdb1088ff7b173d52b81"
+    },
+    {
+      "kind": "example",
+      "wordId": "banknote-counter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "鈔票卡住而行員停機檢查，有原因與連續動作，沒有教授拆機或安全操作。",
+      "sourceSha256": "63ad473a9d8a11c5b23e3cae890368602cf1e5dee6fd996c0fc72ae824598f1a"
+    }
+  ]
+}

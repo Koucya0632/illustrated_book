@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "series": "bank",
+  "reviewer": "Codex; each original image inspected individually in image-generation tool output",
+  "scope": "12 word assets and one category cover; final WebP contact-sheet review follows conversion",
+  "items": [
+    {
+      "id": "passbook",
+      "decision": "pass",
+      "reason": "開頁有存提款與餘額欄，藍色封面標示通帳；呈現同一冊型的開合視圖，不是護照或支票簿。紙張完整、白底無品牌。",
+      "sourceSha256": "50e3a2293a81f6004b11bf5a4cf17a63c1ee4025a6c1a52a715abe8ecf226fc8"
+    },
+    {
+      "id": "cash-card",
+      "decision": "pass",
+      "reason": "單一卡片有IC晶片與キャッシュカード標示，沒有信用卡付款網絡符號或個資，與日本銀行提款卡概念相符。",
+      "sourceSha256": "177be4412ea8c269d3424dceb8abee4e46188f6a3e78c932fcc7ac3959a869c8"
+    },
+    {
+      "id": "bank-counter",
+      "decision": "pass",
+      "reason": "服務桌有客席、行員工作區、文件與低隱私隔板，編號3辨識臨櫃服務；不是售貨收銀台或空的辦公桌。",
+      "sourceSha256": "35012c8220c7dc78a5aadce14314c658e50cef0b17dfb65031eca165625e5953"
+    },
+    {
+      "id": "queue-ticket",
+      "decision": "pass",
+      "reason": "小型熱感紙號碼牌僅有受付番号及027，彎曲紙張清楚，沒有票價、目的地或商品清單。",
+      "sourceSha256": "a0f6ee1d7e29cbbdb0adddc18e24b7e5df46c3b71f5d0344dc2ee3e1d82ed181"
+    },
+    {
+      "id": "queue-ticket-dispenser",
+      "decision": "pass",
+      "reason": "直立小觸控螢幕、服務選項與吐出027紙票的細窄印出口清楚；沒有收鈔口或現金出口，區別ATM及車票販賣機。",
+      "sourceSha256": "ba5d9f91008a42ba2e7cf7fba2bedf5817ce321334faf370f98360b06efeb5de"
+    },
+    {
+      "id": "form-filling-desk",
+      "decision": "pass",
+      "reason": "完整站立式填表台配兩支鏈筆及空白表單架；沒有行員電腦或收銀機，與銀行窓口圖片分別明確。",
+      "sourceSha256": "784276b31e63f3f1f52566f32923399f49b1379aafe1f16794a622ae0f9350e1"
+    },
+    {
+      "id": "personal-seal",
+      "decision": "pass",
+      "reason": "圓柱姓名章與小蓋完整可見，圓形凸起姓名印面而非辦公室橡皮章；已選用修正印面字形方向的版本，沒有多餘墨墊或文件。",
+      "sourceSha256": "2ab3397bab094f0b038d491bee4c690daa80f24bbf44d0936ba4b0c3239b4b74"
+    },
+    {
+      "id": "seal-case",
+      "decision": "pass",
+      "reason": "狹長開蓋保護盒、紅絨印章凹槽及端部朱肉明確，盒內沒有印章，主體是容器而非姓名章或珠寶盒。",
+      "sourceSha256": "f2e633921a0ae8da831bab2c40c4a14fd907be02e8e4d69275587b54c14acdd6"
+    },
+    {
+      "id": "bank-transfer-form",
+      "decision": "pass",
+      "reason": "粉色表格有振込依頼書標題及收款銀行、受取人、金額與申請人分欄，符合匯款申請而非存款單；必要標籤正確且未填入個資。",
+      "sourceSha256": "c8a58a062c8ffd65f2164322b5c56da10714468dcd44ba2c96f7d578c61c593a"
+    },
+    {
+      "id": "deposit-slip",
+      "decision": "pass",
+      "reason": "綠色入金伝票僅列帳號、姓名、金額及印章欄，沒有匯款收款銀行區；與粉色匯款表視覺及概念可區別，名稱格式依銀行而異。",
+      "sourceSha256": "908d8d0842f84be78ef862c4371c46f4efef6f65195a4014d4343483ea279fc9"
+    },
+    {
+      "id": "cash-envelope",
+      "decision": "pass",
+      "reason": "窄長普通紙信封內有部分露出的日圓風格示意鈔票，主體為現金封筒；沒有現金書留郵件的郵政標誌或複雜封口。",
+      "sourceSha256": "e227b8d7204ce6c6bd33408c23cbee018a0233c6c2c475f747387a1403641437"
+    },
+    {
+      "id": "banknote-counter",
+      "decision": "pass",
+      "reason": "桌上機器有上方送料槽、滾輪及下方收鈔槽，數字100作張數顯示；鈔票僅為無肖像示意，不作現行日圓版面教學。",
+      "sourceSha256": "879cf603111a381c7817a23befe4fc81227fde33a1a7e7270f0a95a1e75bfe29"
+    },
+    {
+      "id": "category-bank",
+      "decision": "pass",
+      "reason": "日本銀行大廳模型將窓口、客席、番号札設備及記入台組成一致場景，銀行標示與藍色通帳支援分類識別；白色周邊無品牌。",
+      "sourceSha256": "cefd43abcc88a48fd37e2b858e40def94bc990ccc06ba5bc4b792a7eb12ba334"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { MAIN_WORD_BANK_IDS, MAIN_WORD_BANK_WORDS } from "./main-word-bank-2026-10";
 import { MAIN_WORD_HAIR_SALON_IDS, MAIN_WORD_HAIR_SALON_WORDS } from "./main-word-hair-salon-2026-10";
 import { MAIN_WORD_ARCADE_IDS, MAIN_WORD_ARCADE_WORDS } from "./main-word-arcade-2026-10";
 import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS, MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS } from "./main-word-anime-fan-merch-expansion-2026-10";
@@ -1773,6 +1774,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_ONSEN_RYOKAN_WORDS as LegacyWord[]),
   ...(MAIN_WORD_EMERGENCY_KIT_WORDS as LegacyWord[]),
   ...(MAIN_WORD_HAIR_SALON_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_BANK_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
@@ -1785,7 +1787,7 @@ export const words: Word[] = [
 // to serve an incomplete catalogue than to expose an unreleased series.
 export const publicFallbackWords: Word[] = words.filter(
   (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "arcade", "emergency-kit", "onsen-ryokan", "hair-salon"].includes(word.category) &&
+    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "arcade", "emergency-kit", "onsen-ryokan", "hair-salon", "bank"].includes(word.category) &&
     !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
     !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
@@ -1800,7 +1802,8 @@ export const publicFallbackWords: Word[] = words.filter(
     !MAIN_WORD_ARCADE_IDS.includes(word.id) &&
     !MAIN_WORD_ONSEN_RYOKAN_IDS.includes(word.id) &&
     !MAIN_WORD_EMERGENCY_KIT_IDS.includes(word.id) &&
-    !MAIN_WORD_HAIR_SALON_IDS.includes(word.id),
+    !MAIN_WORD_HAIR_SALON_IDS.includes(word.id) &&
+    !MAIN_WORD_BANK_IDS.includes(word.id),
 );
 
 export const getWord = (id: string): Word | undefined =>

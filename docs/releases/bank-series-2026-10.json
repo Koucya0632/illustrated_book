@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "series": "bank",
+  "publishedAt": "2026-10-22T14:47:33.705Z",
+  "scope": "12 newly published bank-category words; custom and saved words excluded",
+  "summary": {
+    "words": 12,
+    "definitions": 36,
+    "examples": 24,
+    "spanSentences": 48,
+    "wordImages": 12,
+    "categoryImages": 1,
+    "audioClips": 108,
+    "storageObjects": 121
+  },
+  "publishedCatalogBefore": 1143,
+  "publishedCatalogAfter": 1155,
+  "planDigest": "7cc1fe3bde3602664971f184e45e96166c5bd143da2903b3c57541346d3dcc52",
+  "immutablePlanFileSha256": "f6f50df7b0fcdc72f4cdc47bebeb6cb0153ffc0d88ced4066ebaaeaffd2862e7",
+  "applyManifestSha256": "a728d92f85a70fe7463edd43b58bbed09794df5a18be0a9752a3c610e3900f6c",
+  "exampleIds": {
+    "passbook:0": "3511",
+    "passbook:1": "3512",
+    "cash-card:0": "3513",
+    "cash-card:1": "3514",
+    "bank-counter:0": "3515",
+    "bank-counter:1": "3516",
+    "queue-ticket:0": "3517",
+    "queue-ticket:1": "3518",
+    "queue-ticket-dispenser:0": "3519",
+    "queue-ticket-dispenser:1": "3520",
+    "form-filling-desk:0": "3521",
+    "form-filling-desk:1": "3522",
+    "personal-seal:0": "3523",
+    "personal-seal:1": "3524",
+    "seal-case:0": "3525",
+    "seal-case:1": "3526",
+    "bank-transfer-form:0": "3527",
+    "bank-transfer-form:1": "3528",
+    "deposit-slip:0": "3529",
+    "deposit-slip:1": "3530",
+    "cash-envelope:0": "3531",
+    "cash-envelope:1": "3532",
+    "banknote-counter:0": "3533",
+    "banknote-counter:1": "3534"
+  },
+  "checks": {
+    "scope": "12-word bank series. Existing whole-catalog semantic review is outside this release.",
+    "storedContent": "passed",
+    "exampleStructure": "passed",
+    "semanticReview": "passed: all 12 words and 24 examples",
+    "wordImages": "passed: 12 remote WebPs and full visual review",
+    "categoryImage": "passed: remote WebP hash matches reviewed cover",
+    "headwordAudio": "passed: 36",
+    "exampleAudio": "passed: 72",
+    "remoteBytes": "passed: 121 SHA-256/size matches; 108 full MP3 frame sequences",
+    "englishApi": "passed: ordinary/cache-busting converge",
+    "japaneseApi": "passed: ordinary/cache-busting converge",
+    "iOSDecodeShape": "passed: no blocking-decode issues; no device test performed",
+    "categoryAndWordRoutes": "passed: 26 ordinary/cache-busting HTML probes; 24 bilingual detail API projections",
+    "mainIntegration": "49 related tests, TypeScript and Next.js build passed against latest origin/main",
+    "globalLimits": {
+      "exampleMechanicalStatus": "passed",
+      "globalSemanticReviewStatus": "not completed in this release",
+      "existingJapaneseReadingIssueIds": [
+        "picnic-sheet",
+        "superball-scooping",
+        "chocolate-banana",
+        "ramune"
+      ]
+    },
+    "manualDeployment": "not performed"
+  },
+  "objects": [
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/category-bank-v1-fbc16db4f79f.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/category-bank-v1-fbc16db4f79f.webp",
+      "bytes": 83034,
+      "sha256": "fbc16db4f79fc813de323afeb4facbe52321f8b962d9a7d59b20a04491343165",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/passbook-v1-74ac76694386.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/passbook-v1-74ac76694386.webp",
+      "bytes": 74860,
+      "sha256": "74ac76694386ba1770ae344faa51779cbc6d1df6a57231361d5c96c3e1c40dda",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "passbook/en-US/2d63e5ace97fc38e2e24.mp3",
+      "url": "https://img.nexflow.team/word-audio/passbook/en-US/2d63e5ace97fc38e2e24.mp3",
+      "bytes": 4032,
+      "sha256": "2d63e5ace97fc38e2e24ba967ad519f92bb94d215d5435edca236b5b7474990b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "passbook/en-GB/b6ac6f4f66f7fcc03e02.mp3",
+      "url": "https://img.nexflow.team/word-audio/passbook/en-GB/b6ac6f4f66f7fcc03e02.mp3",
+      "bytes": 2976,
+      "sha256": "b6ac6f4f66f7fcc03e02908c261cd856882fa9475d6f1e53456f6d6c395a2c22",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "passbook/ja-JP/b06fbebd8aba852b6f2f.mp3",
+      "url": "https://img.nexflow.team/word-audio/passbook/ja-JP/b06fbebd8aba852b6f2f.mp3",
+      "bytes": 3456,
+      "sha256": "b06fbebd8aba852b6f2fe288a7b3c2ae3100594b5f3b1f49447ca95c00a67a04",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3511/en-US/c46747ad1bf9bf17e6ad.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3511/en-US/c46747ad1bf9bf17e6ad.mp3",
+      "bytes": 8064,
+      "sha256": "c46747ad1bf9bf17e6ade3931f87e7f17991902fae1a52a0bcb9bbf16304289e",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3511/en-GB/61eb4bfb44a1adbbe558.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3511/en-GB/61eb4bfb44a1adbbe558.mp3",
+      "bytes": 7872,
+      "sha256": "61eb4bfb44a1adbbe558041b66e100b60ee74aff70141fc9d20d3cbed3f8b897",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3511/ja-JP/b071d354b07b1d8a0a25.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3511/ja-JP/b071d354b07b1d8a0a25.mp3",
+      "bytes": 6912,
+      "sha256": "b071d354b07b1d8a0a257a5706be2db7f8d2aa49c51d321b1946f51f992af81a",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3512/en-US/061edff9b06effcbb727.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3512/en-US/061edff9b06effcbb727.mp3",
+      "bytes": 15744,
+      "sha256": "061edff9b06effcbb727915fe48a9ab5e840f7d8031716d9cbfe1236cb12dab7",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3512/en-GB/d7f1cf4a37fd2e521f73.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3512/en-GB/d7f1cf4a37fd2e521f73.mp3",
+      "bytes": 17184,
+      "sha256": "d7f1cf4a37fd2e521f73983d826cf35cdaf662aa8767f63b78cf9b8da73cc9eb",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3512/ja-JP/eb3ac0fa81684cc9b975.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3512/ja-JP/eb3ac0fa81684cc9b975.mp3",
+      "bytes": 22944,
+      "sha256": "eb3ac0fa81684cc9b975da3493723a6bc655aba63e530755793b1d4cda55b95b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/cash-card-v1-12310beb4c23.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/cash-card-v1-12310beb4c23.webp",
+      "bytes": 22650,
+      "sha256": "12310beb4c2365632eacf05d8f93233d3fa2b5c5d9167db272470a1452db754e",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "cash-card/en-US/cd754389d39e3f2d2e44.mp3",
+      "url": "https://img.nexflow.team/word-audio/cash-card/en-US/cd754389d39e3f2d2e44.mp3",
+      "bytes": 5184,
+      "sha256": "cd754389d39e3f2d2e44b61a93763c6dda0a0972e500d7e0d04b662f435c64b8",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "cash-card/en-GB/a21dd671813be067f28a.mp3",
+      "url": "https://img.nexflow.team/word-audio/cash-card/en-GB/a21dd671813be067f28a.mp3",
+      "bytes": 6432,
+      "sha256": "a21dd671813be067f28a5ef80d5261843b1bdcb19ec9aec07a8b079a2c3d5344",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "cash-card/ja-JP/bd8daee8188276fbc316.mp3",
+      "url": "https://img.nexflow.team/word-audio/cash-card/ja-JP/bd8daee8188276fbc316.mp3",
+      "bytes": 4992,
+      "sha256": "bd8daee8188276fbc3168c9deccaf23ade50faf5d7e45b617140791f77537534",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3513/en-US/432722d37f9b8c0243cc.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3513/en-US/432722d37f9b8c0243cc.mp3",
+      "bytes": 8352,
+      "sha256": "432722d37f9b8c0243cca72bd6ae97a0cdcfab3f0f0e90b3ce772c396afe4f74",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3513/en-GB/febfbbe54a5e7ad8b37b.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3513/en-GB/febfbbe54a5e7ad8b37b.mp3",
+      "bytes": 11136,
+      "sha256": "febfbbe54a5e7ad8b37b86d2263aa79d864a5ffbf9c1568b3ebf85836cf619e7",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3513/ja-JP/a615599136c708e23c71.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3513/ja-JP/a615599136c708e23c71.mp3",
+      "bytes": 13632,
+      "sha256": "a615599136c708e23c7198de9eb9441e9a3c9126f0000202841d02fe986f492b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3514/en-US/5c9bcabf967c83b3e8b8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3514/en-US/5c9bcabf967c83b3e8b8.mp3",
+      "bytes": 15552,
+      "sha256": "5c9bcabf967c83b3e8b87be34d0c4611938209bd8df8f60fb2a33742f6bfa784",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3514/en-GB/9c354d691209c5d4b456.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3514/en-GB/9c354d691209c5d4b456.mp3",
+      "bytes": 15744,
+      "sha256": "9c354d691209c5d4b456304acf5a95f19d94e0383b296ddad32476421ba99a51",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3514/ja-JP/6b262b213a1c608ee2d9.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3514/ja-JP/6b262b213a1c608ee2d9.mp3",
+      "bytes": 17376,
+      "sha256": "6b262b213a1c608ee2d922fc111213c7e7101b73340409e233daf6c209633647",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/bank-counter-v1-5fd2cc372891.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/bank-counter-v1-5fd2cc372891.webp",
+      "bytes": 52800,
+      "sha256": "5fd2cc37289144281d06bb0852d3edc897b2f204ae2a6275b2986968562ee276",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "bank-counter/en-US/4f53c86d7725cc88cadc.mp3",
+      "url": "https://img.nexflow.team/word-audio/bank-counter/en-US/4f53c86d7725cc88cadc.mp3",
+      "bytes": 6912,
+      "sha256": "4f53c86d7725cc88cadc79f66d35347d51bf1748b0f829ea3a6a5216a6622c85",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "bank-counter/en-GB/eed40f89d4553d6261c4.mp3",
+      "url": "https://img.nexflow.team/word-audio/bank-counter/en-GB/eed40f89d4553d6261c4.mp3",
+      "bytes": 3552,
+      "sha256": "eed40f89d4553d6261c4ddaa79b2cc75cc862a795d2f5f95eeacdf67db3c2f74",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "bank-counter/ja-JP/992bfd9782db9aa26d74.mp3",
+      "url": "https://img.nexflow.team/word-audio/bank-counter/ja-JP/992bfd9782db9aa26d74.mp3",
+      "bytes": 5472,
+      "sha256": "992bfd9782db9aa26d74e94e7d09686e31c9c4815715d2492142e2a2c2171005",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3515/en-US/6e04995174591f75ccf3.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3515/en-US/6e04995174591f75ccf3.mp3",
+      "bytes": 9504,
+      "sha256": "6e04995174591f75ccf3102d940a389bdebb66b656c915053d96eb85118ee429",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3515/en-GB/ac3af5e1eb5b235ca8ed.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3515/en-GB/ac3af5e1eb5b235ca8ed.mp3",
+      "bytes": 7392,
+      "sha256": "ac3af5e1eb5b235ca8ed2c8ba4319abc2decf9ee75e52cf6588d9121d9e0e565",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3515/ja-JP/ae0a2a86558f6625ea44.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3515/ja-JP/ae0a2a86558f6625ea44.mp3",
+      "bytes": 13056,
+      "sha256": "ae0a2a86558f6625ea44137e8410ccd74d5a9edf4b4fab6369bededb54c31914",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3516/en-US/b41414c26d6821552595.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3516/en-US/b41414c26d6821552595.mp3",
+      "bytes": 15936,
+      "sha256": "b41414c26d682155259581dc45f22987f4633563101d735412a2a76898701c8c",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3516/en-GB/40da4966ebf3d6788d3d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3516/en-GB/40da4966ebf3d6788d3d.mp3",
+      "bytes": 14976,
+      "sha256": "40da4966ebf3d6788d3d9f35abc62239d530aa29252d4078ac8ee3f03e3a1115",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3516/ja-JP/0a7b2b29e8d0f8528a18.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3516/ja-JP/0a7b2b29e8d0f8528a18.mp3",
+      "bytes": 19104,
+      "sha256": "0a7b2b29e8d0f8528a18c3635b4ea021a729d9bb022935794b9a4788f4f8a0d1",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/queue-ticket-v1-eefde7435a1e.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/queue-ticket-v1-eefde7435a1e.webp",
+      "bytes": 27326,
+      "sha256": "eefde7435a1e6cb393328cc2f053eabae09665d0a7c6a4551140b6a5f6426cea",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "queue-ticket/en-US/933e4e1523d6208a930a.mp3",
+      "url": "https://img.nexflow.team/word-audio/queue-ticket/en-US/933e4e1523d6208a930a.mp3",
+      "bytes": 2784,
+      "sha256": "933e4e1523d6208a930a5bf66a15fcc01404047fac3f3bb5d1b6122c1e44cb5f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "queue-ticket/en-GB/0c1995d1cd958dde2c59.mp3",
+      "url": "https://img.nexflow.team/word-audio/queue-ticket/en-GB/0c1995d1cd958dde2c59.mp3",
+      "bytes": 3456,
+      "sha256": "0c1995d1cd958dde2c59b8b074ba3a643898b810c37b179bf4cc0194f64b1b50",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "queue-ticket/ja-JP/a71be2f9359535ccc0f1.mp3",
+      "url": "https://img.nexflow.team/word-audio/queue-ticket/ja-JP/a71be2f9359535ccc0f1.mp3",
+      "bytes": 4224,
+      "sha256": "a71be2f9359535ccc0f1d4fe3a4df751e87835eed78f4489b96331388e4deefb",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3517/en-US/18c0928ecacad3a4b542.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3517/en-US/18c0928ecacad3a4b542.mp3",
+      "bytes": 4992,
+      "sha256": "18c0928ecacad3a4b542275ab9d7a83c0401cc984ad0d5584c6acf94119eee79",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3517/en-GB/383c148370b2927b3158.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3517/en-GB/383c148370b2927b3158.mp3",
+      "bytes": 6144,
+      "sha256": "383c148370b2927b31587b17f031cd293ce40c7d79bcfe11d6184cbaf3973248",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3517/ja-JP/fb1c48fc1fb096912ca2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3517/ja-JP/fb1c48fc1fb096912ca2.mp3",
+      "bytes": 7296,
+      "sha256": "fb1c48fc1fb096912ca2176a994b7ae1252fda5b69a4adb8455577433015daba",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3518/en-US/2dd1883657c78950666b.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3518/en-US/2dd1883657c78950666b.mp3",
+      "bytes": 14976,
+      "sha256": "2dd1883657c78950666b628ae358290c8237958a273f990e2056fe321bb9353d",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3518/en-GB/d78a20d012abe30e5f9d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3518/en-GB/d78a20d012abe30e5f9d.mp3",
+      "bytes": 13056,
+      "sha256": "d78a20d012abe30e5f9d4896f0b16e93f4ce80c0bbaf81ee9d7516ea0ab20523",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3518/ja-JP/3ef9a22fc6c786b37d3f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3518/ja-JP/3ef9a22fc6c786b37d3f.mp3",
+      "bytes": 19584,
+      "sha256": "3ef9a22fc6c786b37d3fbbb48544c34b9c8ef1bd7465ba7bc497d9183b472d7f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/queue-ticket-dispenser-v1-0c1e42f771e8.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/queue-ticket-dispenser-v1-0c1e42f771e8.webp",
+      "bytes": 13652,
+      "sha256": "0c1e42f771e885269d9869cce948727b72e3a9cc5b59620369cedc1f7bdcd322",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "queue-ticket-dispenser/en-US/b841e1172d5a0ac94723.mp3",
+      "url": "https://img.nexflow.team/word-audio/queue-ticket-dispenser/en-US/b841e1172d5a0ac94723.mp3",
+      "bytes": 6624,
+      "sha256": "b841e1172d5a0ac947233db3487b84dc77ffd48674a2eab4a0b8e5e95b6869f5",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "queue-ticket-dispenser/en-GB/44cb844e184807624183.mp3",
+      "url": "https://img.nexflow.team/word-audio/queue-ticket-dispenser/en-GB/44cb844e184807624183.mp3",
+      "bytes": 6144,
+      "sha256": "44cb844e184807624183fbaddde845ff265a4c9572e345e21adc970f97b01504",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "queue-ticket-dispenser/ja-JP/8d762f4d301b83e2b826.mp3",
+      "url": "https://img.nexflow.team/word-audio/queue-ticket-dispenser/ja-JP/8d762f4d301b83e2b826.mp3",
+      "bytes": 6816,
+      "sha256": "8d762f4d301b83e2b82619ff023013a7a16ae94054f718f340efbc728c70ca3b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3519/en-US/bc29304d4ad3e16c3a84.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3519/en-US/bc29304d4ad3e16c3a84.mp3",
+      "bytes": 11136,
+      "sha256": "bc29304d4ad3e16c3a8453913df1b5d4e276d1a7b416be99ba373e67ea56fa9a",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3519/en-GB/208497ca49af89436a4a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3519/en-GB/208497ca49af89436a4a.mp3",
+      "bytes": 11424,
+      "sha256": "208497ca49af89436a4a5a29af0ddd7a686ba21bc3627a88fbbe805b08701bf1",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3519/ja-JP/c2593c6766de2fa3401d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3519/ja-JP/c2593c6766de2fa3401d.mp3",
+      "bytes": 15264,
+      "sha256": "c2593c6766de2fa3401d3d50294446dc941697c099fc5f13f73ff5540029e07c",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3520/en-US/b86f6cade6eda11a16a5.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3520/en-US/b86f6cade6eda11a16a5.mp3",
+      "bytes": 20352,
+      "sha256": "b86f6cade6eda11a16a5ebe59639666c4618e7d625aa2af80bc37dff576a1788",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3520/en-GB/497b6731b4008df708ef.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3520/en-GB/497b6731b4008df708ef.mp3",
+      "bytes": 20256,
+      "sha256": "497b6731b4008df708ef57e1672623366234795f4e9d1a4b8098515c1b964577",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3520/ja-JP/0620ced1686c9b9ac087.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3520/ja-JP/0620ced1686c9b9ac087.mp3",
+      "bytes": 21696,
+      "sha256": "0620ced1686c9b9ac0874e6af0564003b7319992ece6c1df433305ff18fa9aa5",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/form-filling-desk-v1-a4ec445bbb26.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/form-filling-desk-v1-a4ec445bbb26.webp",
+      "bytes": 28010,
+      "sha256": "a4ec445bbb26499e66117791f011b89de53576af74c7ad510b4af3c11d26b63c",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "form-filling-desk/en-US/4fe754d46b57de72dea2.mp3",
+      "url": "https://img.nexflow.team/word-audio/form-filling-desk/en-US/4fe754d46b57de72dea2.mp3",
+      "bytes": 4416,
+      "sha256": "4fe754d46b57de72dea2f16783d515be25a9fde864248c5f6e92aa6097e4d7d1",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "form-filling-desk/en-GB/53a97b1aece3526ecac7.mp3",
+      "url": "https://img.nexflow.team/word-audio/form-filling-desk/en-GB/53a97b1aece3526ecac7.mp3",
+      "bytes": 4704,
+      "sha256": "53a97b1aece3526ecac73b29de09541d4d6cee4646553e03000ed2f46580baac",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "form-filling-desk/ja-JP/2f59867b2fdc5f38e24c.mp3",
+      "url": "https://img.nexflow.team/word-audio/form-filling-desk/ja-JP/2f59867b2fdc5f38e24c.mp3",
+      "bytes": 6336,
+      "sha256": "2f59867b2fdc5f38e24c96acbae2d61eebfa24f84ee1c20aa71f1ae67175305b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3521/en-US/2062d63680d772136c18.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3521/en-US/2062d63680d772136c18.mp3",
+      "bytes": 10272,
+      "sha256": "2062d63680d772136c18a7b1fa4709fe19692829409dcb4ecaf8efc4dfd8d81f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3521/en-GB/0e212c1350d7a09907f2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3521/en-GB/0e212c1350d7a09907f2.mp3",
+      "bytes": 10272,
+      "sha256": "0e212c1350d7a09907f271255bd8f39681f1ea54e8c1871b87dba4292fad8795",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3521/ja-JP/ac8236167b6950befefa.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3521/ja-JP/ac8236167b6950befefa.mp3",
+      "bytes": 7392,
+      "sha256": "ac8236167b6950befefa74d14383bb563fb417232259a35c77228b960e1e70cd",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3522/en-US/471ac576572cd2c862a1.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3522/en-US/471ac576572cd2c862a1.mp3",
+      "bytes": 18624,
+      "sha256": "471ac576572cd2c862a1d894d2a03d6cf5ce399f2742e91fdccaea769936fdef",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3522/en-GB/ce218f12ed9fad170417.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3522/en-GB/ce218f12ed9fad170417.mp3",
+      "bytes": 17376,
+      "sha256": "ce218f12ed9fad170417d7ebe84554ddd8d212ec23fb891fd673828f95cdcba8",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3522/ja-JP/86b4328bf5d42575f3e6.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3522/ja-JP/86b4328bf5d42575f3e6.mp3",
+      "bytes": 17856,
+      "sha256": "86b4328bf5d42575f3e6426e671d62ec4221559efccd5f3edae31c9d638334ea",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/personal-seal-v1-c551ab8f727f.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/personal-seal-v1-c551ab8f727f.webp",
+      "bytes": 33142,
+      "sha256": "c551ab8f727f47b56f2386ccfe6ea3469bd2990dc4751391802a45719ca8f92b",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "personal-seal/en-US/ec87f0c031fb55e71e36.mp3",
+      "url": "https://img.nexflow.team/word-audio/personal-seal/en-US/ec87f0c031fb55e71e36.mp3",
+      "bytes": 4032,
+      "sha256": "ec87f0c031fb55e71e36ad69f0dbebf3831e8f12dcceb6ddc6ee4ea4113eba6f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "personal-seal/en-GB/0ed05275753c29048383.mp3",
+      "url": "https://img.nexflow.team/word-audio/personal-seal/en-GB/0ed05275753c29048383.mp3",
+      "bytes": 3552,
+      "sha256": "0ed05275753c290483835bf9b20c0862be25c278fd687cbb3d600a70ce75c3be",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "personal-seal/ja-JP/9cfa61316384d699a97c.mp3",
+      "url": "https://img.nexflow.team/word-audio/personal-seal/ja-JP/9cfa61316384d699a97c.mp3",
+      "bytes": 4704,
+      "sha256": "9cfa61316384d699a97cde45012ddd541b25342a8ae9fd93822eb96b76f4fb0b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3523/en-US/286b1a86defbb28e60f8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3523/en-US/286b1a86defbb28e60f8.mp3",
+      "bytes": 9312,
+      "sha256": "286b1a86defbb28e60f814a27b06a5931291cf358bfa864fb43f56db8c9d9831",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3523/en-GB/40bf52202dd971e8c0ce.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3523/en-GB/40bf52202dd971e8c0ce.mp3",
+      "bytes": 9504,
+      "sha256": "40bf52202dd971e8c0ce6808bc84c9933c85e5c864bc4503888437497e33728e",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3523/ja-JP/96b1c72b5cb2deef46bb.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3523/ja-JP/96b1c72b5cb2deef46bb.mp3",
+      "bytes": 8352,
+      "sha256": "96b1c72b5cb2deef46bb6601bd0e89ac22b8b38a607a3302c35d372f26cbf031",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3524/en-US/9fca6495e3d920749f44.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3524/en-US/9fca6495e3d920749f44.mp3",
+      "bytes": 20256,
+      "sha256": "9fca6495e3d920749f44b17b266aafae8081544890db1368621adf17026cc57f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3524/en-GB/6c2287a69cf6c5f63cad.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3524/en-GB/6c2287a69cf6c5f63cad.mp3",
+      "bytes": 18336,
+      "sha256": "6c2287a69cf6c5f63cad92af4b02c5173d5023f519a90788cf514b010ff8d30e",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3524/ja-JP/69256ac4f62f7451d157.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3524/ja-JP/69256ac4f62f7451d157.mp3",
+      "bytes": 21216,
+      "sha256": "69256ac4f62f7451d157001c1b8e54833de4f54124a2c72ab66bd44aee5bfb7d",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/seal-case-v1-5c5735f56f17.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/seal-case-v1-5c5735f56f17.webp",
+      "bytes": 76468,
+      "sha256": "5c5735f56f1764433b5ede224a61f3e4572b9aeae8f03c59226f0efaca0ac8ca",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "seal-case/en-US/5b6308e057373d5a665a.mp3",
+      "url": "https://img.nexflow.team/word-audio/seal-case/en-US/5b6308e057373d5a665a.mp3",
+      "bytes": 3936,
+      "sha256": "5b6308e057373d5a665a63af7a01035be46a87c628e2b2eb849728fafbf7b591",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "seal-case/en-GB/ee92d215c326ae3c5fb8.mp3",
+      "url": "https://img.nexflow.team/word-audio/seal-case/en-GB/ee92d215c326ae3c5fb8.mp3",
+      "bytes": 3936,
+      "sha256": "ee92d215c326ae3c5fb86b71f2c75f30bd144c987a941cbac63318e651400a0c",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "seal-case/ja-JP/b97f46f81c29596fb2d8.mp3",
+      "url": "https://img.nexflow.team/word-audio/seal-case/ja-JP/b97f46f81c29596fb2d8.mp3",
+      "bytes": 4032,
+      "sha256": "b97f46f81c29596fb2d89f0dbcade4d1447893bdfa47f1e66fc875cdc185b91f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3525/en-US/f10f444503726a4d1462.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3525/en-US/f10f444503726a4d1462.mp3",
+      "bytes": 7296,
+      "sha256": "f10f444503726a4d1462586a31be81dfe22057036fbb16eb60c23d251d8d27a9",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3525/en-GB/9742d2991297217ceab7.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3525/en-GB/9742d2991297217ceab7.mp3",
+      "bytes": 8064,
+      "sha256": "9742d2991297217ceab7986f54fe7d630cef2a66078ec0508f516d1e190e2a01",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3525/ja-JP/a88a4372fa867a686d3a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3525/ja-JP/a88a4372fa867a686d3a.mp3",
+      "bytes": 7296,
+      "sha256": "a88a4372fa867a686d3a42f09366bad0a3336e378d985754aebfc426d9338b6f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3526/en-US/ebdab9e761d4dd84ff9e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3526/en-US/ebdab9e761d4dd84ff9e.mp3",
+      "bytes": 17376,
+      "sha256": "ebdab9e761d4dd84ff9ee3cd4e937694f53d058493b373df79525bcbef637835",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3526/en-GB/26777e4ca642ca7f286f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3526/en-GB/26777e4ca642ca7f286f.mp3",
+      "bytes": 18336,
+      "sha256": "26777e4ca642ca7f286f99a214e46260f71af575389be31673b8b23ab3fbd5e6",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3526/ja-JP/b6e5d14b631c1381a4ee.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3526/ja-JP/b6e5d14b631c1381a4ee.mp3",
+      "bytes": 21024,
+      "sha256": "b6e5d14b631c1381a4eee8470583a9da36549ddbe1b800553c93f4fa4c67047f",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/bank-transfer-form-v1-c8d88829cdce.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/bank-transfer-form-v1-c8d88829cdce.webp",
+      "bytes": 59092,
+      "sha256": "c8d88829cdce33197ab3edc3773b2404d22917df4d500960677ba0b32b2a6d59",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "bank-transfer-form/en-US/d8a07a0cff012a3cb417.mp3",
+      "url": "https://img.nexflow.team/word-audio/bank-transfer-form/en-US/d8a07a0cff012a3cb417.mp3",
+      "bytes": 5664,
+      "sha256": "d8a07a0cff012a3cb417d6ce68110e2cf416eb35c9a5244a6f087c3c4c738010",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "bank-transfer-form/en-GB/3d220d33e41b4bc2693e.mp3",
+      "url": "https://img.nexflow.team/word-audio/bank-transfer-form/en-GB/3d220d33e41b4bc2693e.mp3",
+      "bytes": 4704,
+      "sha256": "3d220d33e41b4bc2693ef6ecbbc3799b59136d22d9283a04049831718d5dd335",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "bank-transfer-form/ja-JP/03ff3d35d339ac00196a.mp3",
+      "url": "https://img.nexflow.team/word-audio/bank-transfer-form/ja-JP/03ff3d35d339ac00196a.mp3",
+      "bytes": 6624,
+      "sha256": "03ff3d35d339ac00196a86f4cd7115f3ff574dfd00664ea9eb59df1dc3ecd939",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3527/en-US/7ed304cba6edd1aad8b2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3527/en-US/7ed304cba6edd1aad8b2.mp3",
+      "bytes": 11904,
+      "sha256": "7ed304cba6edd1aad8b2fedbe702a582585d968814e0576bf0d21ed9c5607dba",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3527/en-GB/fde10437e6cd3b48d36c.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3527/en-GB/fde10437e6cd3b48d36c.mp3",
+      "bytes": 10464,
+      "sha256": "fde10437e6cd3b48d36c28ea556c70e67ad0867ee55f948d7edd73ce053c702b",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3527/ja-JP/ca7da34a100a242b7cf2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3527/ja-JP/ca7da34a100a242b7cf2.mp3",
+      "bytes": 13824,
+      "sha256": "ca7da34a100a242b7cf2c8069c5122a34dc6574664b706d0d5e7fedbf1a44fbe",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3528/en-US/50dbeefd9f89b5ad2982.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3528/en-US/50dbeefd9f89b5ad2982.mp3",
+      "bytes": 17952,
+      "sha256": "50dbeefd9f89b5ad298214d6d5391e74c3d6a0dd4d662d3314a3a68c57a26697",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3528/en-GB/16366cce0bc2e61c25b4.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3528/en-GB/16366cce0bc2e61c25b4.mp3",
+      "bytes": 20352,
+      "sha256": "16366cce0bc2e61c25b4a041cbf0869bd19e9d3ef1b0969d557347caeb1d43ce",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3528/ja-JP/da23cfd2d879bee84b4a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3528/ja-JP/da23cfd2d879bee84b4a.mp3",
+      "bytes": 23904,
+      "sha256": "da23cfd2d879bee84b4ab5121d312b38f92eb9f20cdcfe001a65a65239accdb6",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/deposit-slip-v1-38d69f4c6f15.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/deposit-slip-v1-38d69f4c6f15.webp",
+      "bytes": 45814,
+      "sha256": "38d69f4c6f1566098f58f616744bc3366bdb1090379be8b23b6ad2f234016554",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "deposit-slip/en-US/903adad020221f3a5ab0.mp3",
+      "url": "https://img.nexflow.team/word-audio/deposit-slip/en-US/903adad020221f3a5ab0.mp3",
+      "bytes": 3936,
+      "sha256": "903adad020221f3a5ab017ba8f6b18a96fd0c32a5de9e06f0c6341bf60f545ea",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "deposit-slip/en-GB/7b7d6e8d6154ddb8bee9.mp3",
+      "url": "https://img.nexflow.team/word-audio/deposit-slip/en-GB/7b7d6e8d6154ddb8bee9.mp3",
+      "bytes": 5664,
+      "sha256": "7b7d6e8d6154ddb8bee96dbdbd244877d6b7acb5e9bddce0316186e1b90b927a",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "deposit-slip/ja-JP/e99270fbbba6cb56056e.mp3",
+      "url": "https://img.nexflow.team/word-audio/deposit-slip/ja-JP/e99270fbbba6cb56056e.mp3",
+      "bytes": 5664,
+      "sha256": "e99270fbbba6cb56056e0162d8d0fdf39d413601889d0b494a82fce89708f9ff",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3529/en-US/38968e592eb7eab519c2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3529/en-US/38968e592eb7eab519c2.mp3",
+      "bytes": 8352,
+      "sha256": "38968e592eb7eab519c2008b3096e53437f7d43f47ac85a2cfa902378856978d",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3529/en-GB/acee4051d0f9a2e508c8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3529/en-GB/acee4051d0f9a2e508c8.mp3",
+      "bytes": 8736,
+      "sha256": "acee4051d0f9a2e508c85efc0d86f71bf1192744b93b7ecb875239a333346734",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3529/ja-JP/750b313d1e04d88a648d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3529/ja-JP/750b313d1e04d88a648d.mp3",
+      "bytes": 12192,
+      "sha256": "750b313d1e04d88a648d9819856e53d1145b0c1d3d3b990f7efa3e00e9a22742",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3530/en-US/f10e6c04830adcce487d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3530/en-US/f10e6c04830adcce487d.mp3",
+      "bytes": 11616,
+      "sha256": "f10e6c04830adcce487d3fb3289086f83c75fcd87be8f1d39480bca37e51070e",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3530/en-GB/6e4c9d76f92d947658ce.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3530/en-GB/6e4c9d76f92d947658ce.mp3",
+      "bytes": 14016,
+      "sha256": "6e4c9d76f92d947658ce87c1968c839a6b948cf5761127c1bd1e8fbc928d3870",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3530/ja-JP/fa118bd951d25726faf8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3530/ja-JP/fa118bd951d25726faf8.mp3",
+      "bytes": 20352,
+      "sha256": "fa118bd951d25726faf80842fbf2e3bc45f3bf083156f17187776f254ee41e06",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/cash-envelope-v1-289eb57cb364.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/cash-envelope-v1-289eb57cb364.webp",
+      "bytes": 26980,
+      "sha256": "289eb57cb3646642ecfd32a3374ea8e7073f10735ea6925a2894f3c696f98b12",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "cash-envelope/en-US/d30433bf337230dad409.mp3",
+      "url": "https://img.nexflow.team/word-audio/cash-envelope/en-US/d30433bf337230dad409.mp3",
+      "bytes": 7872,
+      "sha256": "d30433bf337230dad40943a5addbd6f0e8c280e356d9af0848fddafd55a84414",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "cash-envelope/en-GB/03c5f7d348a3da558fe3.mp3",
+      "url": "https://img.nexflow.team/word-audio/cash-envelope/en-GB/03c5f7d348a3da558fe3.mp3",
+      "bytes": 4704,
+      "sha256": "03c5f7d348a3da558fe3353a5f80975a2ef08e1463a306086d303b5a876afffb",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "cash-envelope/ja-JP/708208d8d5c2943138eb.mp3",
+      "url": "https://img.nexflow.team/word-audio/cash-envelope/ja-JP/708208d8d5c2943138eb.mp3",
+      "bytes": 6144,
+      "sha256": "708208d8d5c2943138eb5585728fc5ac747b0481e3145169dbcb5b424ac67298",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3531/en-US/3ae8b59f7b3080298062.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3531/en-US/3ae8b59f7b3080298062.mp3",
+      "bytes": 7776,
+      "sha256": "3ae8b59f7b3080298062f3fe466b043bd11dbc11ba34924e2f8928124b73765a",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3531/en-GB/3ffe1f07c81987e1693a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3531/en-GB/3ffe1f07c81987e1693a.mp3",
+      "bytes": 7584,
+      "sha256": "3ffe1f07c81987e1693ae7a9a721a3fc7fc56942330dc5f416c03d778b45c274",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3531/ja-JP/2b73aacaee4f6f8979c0.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3531/ja-JP/2b73aacaee4f6f8979c0.mp3",
+      "bytes": 11904,
+      "sha256": "2b73aacaee4f6f8979c0e4eef096df100f3b819186ad6d80b6d5cd23d9b6a0ce",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3532/en-US/c2d9127db46aedf08b45.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3532/en-US/c2d9127db46aedf08b45.mp3",
+      "bytes": 17376,
+      "sha256": "c2d9127db46aedf08b45824ff42f7f65470e20dc6f0ea1234a1b116e5c22de48",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3532/en-GB/601d2da550348c692af8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3532/en-GB/601d2da550348c692af8.mp3",
+      "bytes": 16224,
+      "sha256": "601d2da550348c692af88522098b6421e9f258df6ff3ab8e56d0ce783d35efeb",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3532/ja-JP/4682c4d7708fa558eb09.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3532/ja-JP/4682c4d7708fa558eb09.mp3",
+      "bytes": 19776,
+      "sha256": "4682c4d7708fa558eb095df4fa22a2dd1e143a7591233f2b05b6d41976de2c82",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-images",
+      "storagePath": "bank-2026-10/banknote-counter-v1-9e68bab0d80a.webp",
+      "url": "https://img.nexflow.team/word-images/bank-2026-10/banknote-counter-v1-9e68bab0d80a.webp",
+      "bytes": 72142,
+      "sha256": "9e68bab0d80a1467bef79121d779a9db04e91bc98a922f2f5634736bcaea7914",
+      "mimeType": "image/webp",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "banknote-counter/en-US/a7e54f9153f7dfb31ec0.mp3",
+      "url": "https://img.nexflow.team/word-audio/banknote-counter/en-US/a7e54f9153f7dfb31ec0.mp3",
+      "bytes": 4032,
+      "sha256": "a7e54f9153f7dfb31ec0b04290eff5bef343a7627a5d8685e5e808447723c036",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "banknote-counter/en-GB/5de562bf8f299d902873.mp3",
+      "url": "https://img.nexflow.team/word-audio/banknote-counter/en-GB/5de562bf8f299d902873.mp3",
+      "bytes": 4704,
+      "sha256": "5de562bf8f299d902873388d1ca5c98ec9f6e33f8b942fc302fc9c4c97d9616c",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "banknote-counter/ja-JP/05d6cec82400340e100a.mp3",
+      "url": "https://img.nexflow.team/word-audio/banknote-counter/ja-JP/05d6cec82400340e100a.mp3",
+      "bytes": 7584,
+      "sha256": "05d6cec82400340e100ab66af227740accc2728426a9259dbe446165fc21c9fe",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3533/en-US/ee32a970059252843849.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3533/en-US/ee32a970059252843849.mp3",
+      "bytes": 11616,
+      "sha256": "ee32a97005925284384933ace429fa1c9a25f7029e2ce271cd33f1bbfe2c21d4",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3533/en-GB/e2449ba5b267f5a49b86.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3533/en-GB/e2449ba5b267f5a49b86.mp3",
+      "bytes": 10656,
+      "sha256": "e2449ba5b267f5a49b8671b632df4e2a0ca16011a1874c8dfd9bc132022a8fe1",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3533/ja-JP/fab679ad1a75581ab999.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3533/ja-JP/fab679ad1a75581ab999.mp3",
+      "bytes": 15264,
+      "sha256": "fab679ad1a75581ab999176767add3f1b9c96a697853cb6ded0abd8852cab140",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3534/en-US/9657ab5863740854a805.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3534/en-US/9657ab5863740854a805.mp3",
+      "bytes": 22944,
+      "sha256": "9657ab5863740854a805029dadb7cae48ac9ad964ebea7d32a4935ed72982f4c",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3534/en-GB/f65f2730de8ce545f076.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3534/en-GB/f65f2730de8ce545f076.mp3",
+      "bytes": 20544,
+      "sha256": "f65f2730de8ce545f076caa73befcd12a1c57ec6c791a9d80dd17a58fa50c893",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    },
+    {
+      "bucket": "word-audio",
+      "storagePath": "examples/3534/ja-JP/f19187288a39b5e2170e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3534/ja-JP/f19187288a39b5e2170e.mp3",
+      "bytes": 23136,
+      "sha256": "f19187288a39b5e2170e1189c72cf95d622ec820dcafc2eb24ef3c55ecfb6897",
+      "mimeType": "audio/mpeg",
+      "verified": true
+    }
+  ]
+}

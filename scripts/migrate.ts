@@ -1,3 +1,4 @@
+import { MAIN_WORD_BANK_IDS } from "../lib/main-word-bank-2026-10";
 import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS } from "../lib/main-word-anime-fan-merch-expansion-2026-10";
 // Idempotent: creates tables if missing, seeds the words table if empty,
 // generates cards. Targets Supabase Postgres (or any standard Postgres URL
@@ -60,6 +61,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "onsen-ryokan", ids: MAIN_WORD_ONSEN_RYOKAN_IDS },
   { category: "emergency-kit", ids: MAIN_WORD_EMERGENCY_KIT_IDS },
   { category: "hair-salon", ids: MAIN_WORD_HAIR_SALON_IDS },
+  { category: "bank", ids: MAIN_WORD_BANK_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),

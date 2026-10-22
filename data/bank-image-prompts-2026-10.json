@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "series": "bank",
+  "generationMode": "built-in",
+  "prompts": [
+    {
+      "id": "passbook",
+      "prompt": "Use case: product-mockup. Tuji educational picture dictionary, one square 1024x1024 semi-realistic catalog illustration. Subject: one Japanese bank passbook (通帳), small blue paper booklet opened to a spread with neat pale ruled transaction columns, modest closed blue cover visible below. Necessary tiny Japanese title 通帳 on cover, no bank brand, no readable account numbers or personal information. This is a bank passbook, not passport or checkbook. Entire booklet visible, centered, generous white margins, pure white background, soft restrained ground shadow, detailed believable paper. No other objects, no caption, no watermark."
+    },
+    {
+      "id": "cash-card",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, centered entire subject, generous margins, pure white backdrop, restrained soft shadow, no brand, no watermark, no caption. One generic Japanese bank cash card, pale blue rigid rectangular card with rounded corners and small gold IC chip, minimal generic bank building pictogram and tiny necessary Japanese label キャッシュカード. No payment-network symbols, credit card logo, name, account number, or personal data. This is an ATM withdrawal/deposit cash card, not a credit card."
+    },
+    {
+      "id": "bank-counter",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, centered entire subject, generous margins, pure white backdrop, restrained soft shadow, no brand, no watermark, no caption. One isolated modern Japanese bank customer service counter module, cream counter and blue customer chair, small upright counter number 3, low clear privacy side panels, staff workstation on the far side with monitor and document tray. No people. Show service counter as main object, with customer knee space; not a store cash register and not an ATM. Clean cutaway vignette without room background."
+    },
+    {
+      "id": "queue-ticket",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, centered entire subject, generous margins, pure white backdrop, restrained soft shadow, no brand, no watermark, no caption. One small white thermal-paper waiting-number ticket, slightly curled, dominant black number 027, small Japanese label 受付番号 above the digits. Only that label and the number. No QR code, brand, prices, account details. This is a bank queue number slip, not a rail ticket or shopping receipt."
+    },
+    {
+      "id": "queue-ticket-dispenser",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, centered entire subject, generous margins, pure white backdrop, restrained soft shadow, no brand, no watermark, no caption. One compact upright Japanese bank queue-number dispenser kiosk, small touchscreen with three plain muted rectangular option blocks, small printer slot clearly dispensing a white thermal ticket marked 027, sturdy slim floor stand. No banknotes or cash slots, not an ATM, not train ticket vending machine. No readable screen text or logo."
+    },
+    {
+      "id": "deposit-slip",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, complete centered subject, generous white margins, pure white background, soft restrained shadow. No invented brand, watermark, caption or personal data. One Japanese bank deposit slip, single horizontal pale green paper form in three-quarter view. Exact necessary heading 入金伝票. Organized blank boxes labelled 口座番号, お名前, 金額, with one small round blank seal box. No recipient or destination-bank fields: this is a deposit form, distinct from a transfer form. No filled-in amounts, account numbers, logos or decorative props."
+    },
+    {
+      "id": "cash-envelope",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, complete centered subject, generous white margins, pure white background, soft restrained shadow. No invented brand, watermark, caption or personal data. One ordinary Japanese bank cash envelope, narrow tall pale cream paper envelope lying diagonally, its top flap open with two partially visible generic Japanese-yen-style banknotes tucked inside. Show small simple heading 現金封筒 on the front, no bank logo or personal data. Banknotes show only abstract muted blue-grey line patterns, no identifiable portrait or exact replicas. Not a postal registered-cash envelope: no registered-mail label, red postal marks or complex sealing strips."
+    },
+    {
+      "id": "banknote-counter",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, complete centered subject, generous white margins, pure white background, soft restrained shadow. No invented brand, watermark, caption or personal data. One compact desktop banknote counting machine common in Japan, pale grey housing with dark controls, visible upper hopper holding a small stack of generic yen-style banknotes, rubber feeder rollers, lower output receiving pocket with a small counted stack, simple digital display 100. No coin bowl, no large ATM cabinet, no brand, no external cable clutter. Banknotes use restrained Japanese-yen-like grey-blue patterns without portrait detail or readable serial numbers."
+    },
+    {
+      "id": "category-bank",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, complete centered subject, generous white margins, pure white background, soft restrained shadow. No invented brand, watermark, caption or personal data. Category cover for a Japanese bank picture dictionary. One cohesive isolated miniature modern Japanese bank branch lobby vignette, modest service counter with a blue customer chair, standing queue-ticket dispenser at the left, a form-filling stand at the right, and a blue passbook in the foreground. Small simple wall sign 銀行 as necessary identification. Three-quarter perspective cutaway model, no outer classical columns or dollar signs. No people, brand or clutter. Clean white surrounding background, excellent at small size."
+    },
+    {
+      "id": "form-filling-desk",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, entire subject centered, generous white margins, pure white backdrop, restrained soft grounding shadow, no brand, watermark or caption. A Japanese bank standing-height form-filling desk (記入台), light grey writing surface with open knee space, two attached black pens on chains and a narrow upright rack holding blank paper forms along its back edge. One isolated complete desk, no computer, no cash register, no staff chair, no people or room. Avoid a service teller counter: this is a customer self-service desk with pens and forms."
+    },
+    {
+      "id": "personal-seal",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, entire subject centered, generous white margins, pure white backdrop, restrained soft grounding shadow, no brand, watermark or caption. One Japanese personal name seal (印鑑), polished dark reddish-brown cylindrical hanko about finger-length, lying diagonally with its round engraved end facing the viewer and one minimal recessed fictional Japanese surname 田中. Small protective cap beside it. No rubber office stamp, no ink pad, no case, no paper or seal impression. The cylindrical name-seal body is the main subject."
+    },
+    {
+      "id": "seal-case",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, entire subject centered, generous white margins, pure white backdrop, restrained soft grounding shadow, no brand, watermark or caption. One open Japanese personal-seal carrying case (印鑑ケース), small narrow clamshell black leather-like exterior with metal rim clasp, hinged lid open, fitted red velvet longitudinal cylindrical recess inside, and a small round covered vermilion ink compartment at one end. EMPTY long recess, no seal inside; container itself is main subject. No jewelry or writing."
+    },
+    {
+      "id": "bank-transfer-form",
+      "prompt": "Use case: product-mockup. Tuji Japanese daily-life picture dictionary. Square 1024x1024 semi-realistic catalog illustration, entire subject centered, generous white margins, pure white backdrop, restrained soft grounding shadow, no brand, watermark or caption. One Japanese domestic bank transfer request form, a single pale pink rectangular paper sheet in gentle three-quarter view. Necessary heading 振込依頼書, clear separated blank boxes with small accurate Japanese headings 振込先, 受取人, 金額, ご依頼人. Empty account fields, no personal information, no bank logo, no English caption. Printed organized form, not receipt, not banknote. Form fills center with generous white border."
+    }
+  ],
+  "edits": [
+    {
+      "id": "personal-seal",
+      "prompt": "Edit the provided Japanese personal name seal catalog illustration. Preserve exactly the polished reddish brown cylinder, detached cap, white background, composition and material. Change ONLY the two raised characters on the round stamping face: the seal face must bear the HORIZONTALLY MIRRORED version of 田中, as an actual Japanese hanko printing face would have so the printed impression reads normally. Mirror the letter shapes, do not merely reorder the two characters. The name remains vertically stacked with reversed letterforms. No extra object or text. Accurate Japanese name-stamp printing face.",
+      "original": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-f5931e5c-e957-4cb1-a203-66c64f4734c4.png",
+      "selected": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-8b1a04bb-5851-4760-99ed-b30b8dc41ecd.png",
+      "reason": "Printing-face letterforms corrected to the mirrored engraving direction."
+    }
+  ],
+  "sources": [
+    {
+      "id": "passbook",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-1b99f00e-1ddc-4430-b27f-bb42e7dee2ac.png"
+    },
+    {
+      "id": "cash-card",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-218faa17-d215-4813-abbb-b478e23d086f.png"
+    },
+    {
+      "id": "bank-counter",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-82891aec-37b2-4665-9879-3478a1e719ba.png"
+    },
+    {
+      "id": "queue-ticket",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-7e576a5b-96d7-4f98-92af-7f58a8b81081.png"
+    },
+    {
+      "id": "queue-ticket-dispenser",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-225f21a9-16e1-4852-8481-6800fd0330e6.png"
+    },
+    {
+      "id": "deposit-slip",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-90fc13c3-a529-4455-af65-470b0f1c4579.png"
+    },
+    {
+      "id": "cash-envelope",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-5d9f80bc-4271-4670-a66b-d97611da40c4.png"
+    },
+    {
+      "id": "banknote-counter",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-53270846-6300-4e5b-8967-618b0ee9403a.png"
+    },
+    {
+      "id": "category-bank",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-77b0f152-fee2-4fd7-a578-dec062eccf2d.png"
+    },
+    {
+      "id": "form-filling-desk",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-642f2bfd-ef16-4295-b7ff-bd931c20d707.png"
+    },
+    {
+      "id": "personal-seal",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-8b1a04bb-5851-4760-99ed-b30b8dc41ecd.png"
+    },
+    {
+      "id": "seal-case",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-020ed9dd-5f12-4891-9807-fb4f5497c5de.png"
+    },
+    {
+      "id": "bank-transfer-form",
+      "path": "/Users/rex/.codex/generated_images/01a16401-a429-7f21-a047-cd85b79f8b8f/exec-5c3ffe8a-97aa-4f73-82c0-896cb344adce.png"
+    }
+  ]
+}

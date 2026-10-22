@@ -161,7 +161,15 @@
     "hair-salon:audio:verify": "node scripts/verify-hair-salon-audio.mjs",
     "hair-salon:prepare-publish": "node --env-file=.env.local scripts/prepare-hair-salon-publish-plan.mjs",
     "hair-salon:publish": "tsx --env-file=.env.local scripts/publish-hair-salon-series.ts",
-    "hair-salon:content": "node scripts/prepare-hair-salon-content.mjs"
+    "hair-salon:content": "node scripts/prepare-hair-salon-content.mjs",
+    "bank:prepare-images": "node scripts/prepare-bank-images.mjs",
+    "bank:review": "node scripts/prepare-bank-semantic-review.mjs",
+    "bank:audio:plan": "node scripts/plan-bank-audio.mjs",
+    "bank:audio:generate:local": "node --env-file=.env.local scripts/generate-bank-candidate-audio.mjs",
+    "bank:audio:verify": "node scripts/verify-bank-audio.mjs",
+    "bank:prepare-publish": "node --env-file=.env.local scripts/prepare-bank-publish-plan.mjs",
+    "bank:publish": "tsx --env-file=.env.local scripts/publish-bank-series.ts",
+    "bank:content": "node scripts/prepare-bank-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

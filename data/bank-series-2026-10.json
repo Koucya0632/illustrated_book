@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 1,
+  "series": "bank",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "12 distinct bank objects and facilities. Existing bank, bank teller and convenience-store ATM remain unchanged. Local preparation only.",
+  "category": {
+    "id": "bank",
+    "name": "Bank",
+    "nameZh": "銀行",
+    "nameJa": "銀行",
+    "emoji": "🏦",
+    "description": "日本銀行常見的存摺、提款卡、臨櫃文件與取號設施",
+    "descriptionEn": "Passbooks, cash cards, counter forms and queue facilities at Japanese banks",
+    "descriptionJa": "日本の銀行で見かける通帳、キャッシュカード、窓口の書類や受付設備",
+    "color": "from-sky-100 to-blue-100",
+    "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/category-bank-v1-fbc16db4f79f.webp"
+  },
+  "references": [
+    "https://www.bk.mufg.jp/kouza/order/",
+    "https://www.bk.mufg.jp/regulation/furikomi.html",
+    "https://www.bk.mufg.jp/houjin/chohyo_kinyu.html",
+    "https://www.daito-inc.co.jp/products_cat/note/"
+  ],
+  "entries": [
+    {
+      "id": "passbook",
+      "word": "passbook",
+      "chinese": "存摺",
+      "chineseDefinition": "記錄銀行帳戶存提款等交易與餘額的小冊子；此處指紙本存摺。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæs.bʊk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "存摺",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small bank booklet recording transactions and the balance of an account.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "銀行口座の入出金や残高などを記録する小さな冊子。ここでは紙の通帳を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put my passbook in my bag.",
+          "ja": "通帳をかばんに入れます。",
+          "zh": "我把存摺放進包裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My passbook had no blank pages left, so I went to the bank to get a new one.",
+          "ja": "通帳の空きページがなくなったので、銀行へ新しい通帳をもらいに行きました。",
+          "zh": "存摺沒有空白頁了，所以我去銀行領一本新的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "通帳",
+      "jaReading": "つうちょう",
+      "jaReadingSegments": [
+        {
+          "text": "通帳",
+          "ruby": "つうちょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/passbook-v1-74ac76694386.webp"
+    },
+    {
+      "id": "cash-card",
+      "word": "cash card",
+      "chinese": "提款卡",
+      "chineseDefinition": "用於銀行提款機存提款等帳戶操作的卡片；此處不指信用卡或儲值卡。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæʃ kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "提款卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bank card used to access an account at an ATM, for example to withdraw cash.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ATMなどで口座の預け入れや引き出しに使うカード。ここではクレジットカードやプリペイドカードとは区別する。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Insert your cash card into the ATM.",
+          "ja": "ATMにキャッシュカードを入れてください。",
+          "zh": "請把提款卡插入提款機。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before leaving the bank, I checked that I had taken my cash card back.",
+          "ja": "銀行を出る前に、キャッシュカードを受け取ったか確認しました。",
+          "zh": "離開銀行前，我確認自己是否已取回提款卡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "キャッシュカード",
+      "jaReading": "キャッシュカード",
+      "jaReadingSegments": [
+        {
+          "text": "キャッシュカード",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/cash-card-v1-12310beb4c23.webp"
+    },
+    {
+      "id": "bank-counter",
+      "word": "bank counter",
+      "chinese": "銀行櫃台",
+      "chineseDefinition": "銀行內由行員接待客戶、辦理業務的服務櫃台。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæŋk ˌkaʊn.t̬ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "銀行櫃台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A service counter in a bank where staff help customers with transactions.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "銀行で、行員が客の手続きを受け付けるカウンター。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Show your passbook at the bank counter.",
+          "ja": "銀行窓口で通帳を見せてください。",
+          "zh": "請在銀行櫃台出示存摺。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I did not know how to fill in the form, so I asked at the bank counter.",
+          "ja": "書類の書き方が分からなかったので、銀行窓口で聞きました。",
+          "zh": "我不知道表格怎麼填，所以到銀行櫃台詢問。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "銀行窓口",
+      "jaReading": "ぎんこうまどぐち",
+      "jaReadingSegments": [
+        {
+          "text": "銀行窓口",
+          "ruby": "ぎんこうまどぐち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/bank-counter-v1-5fd2cc372891.webp"
+    },
+    {
+      "id": "queue-ticket",
+      "word": "queue ticket",
+      "chinese": "號碼牌",
+      "chineseDefinition": "取號等候服務時領取、印有順序號碼的紙牌；此處指銀行候位用號碼牌。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkjuː ˌtɪk.ɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "號碼牌",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A numbered ticket showing a customer’s place in a service queue.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "窓口などで順番を待つときに受け取る、番号が書かれた札。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please take a queue ticket.",
+          "ja": "番号札を取ってください。",
+          "zh": "請拿一張號碼牌。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When my number was called, I took my queue ticket to the counter.",
+          "ja": "番号を呼ばれたら、番号札を持って窓口へ行きました。",
+          "zh": "號碼被叫到時，我拿著號碼牌走到櫃台。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "番号札",
+      "jaReading": "ばんごうふだ",
+      "jaReadingSegments": [
+        {
+          "text": "番号札",
+          "ruby": "ばんごうふだ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/queue-ticket-v1-eefde7435a1e.webp"
+    },
+    {
+      "id": "queue-ticket-dispenser",
+      "word": "queue ticket dispenser",
+      "chinese": "取號機",
+      "chineseDefinition": "供客戶選擇服務或按鈕後，印出候位號碼牌的機器。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkjuː ˌtɪk.ɪt dɪˌspen.sɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "取號機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A machine that issues numbered tickets to people waiting for service.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "窓口などで待つ人に、順番の番号札を発行する機械。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The queue ticket dispenser is by the entrance.",
+          "ja": "番号札発券機は入口のそばにあります。",
+          "zh": "取號機在入口旁。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was not sure how to use the queue ticket dispenser, so I asked a staff member for help.",
+          "ja": "番号札発券機の使い方が分からなかったので、行員に手伝ってもらいました。",
+          "zh": "我不確定取號機怎麼用，所以請銀行行員幫忙。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "番号札発券機",
+      "jaReading": "ばんごうふだはっけんき",
+      "jaReadingSegments": [
+        {
+          "text": "番号札発券機",
+          "ruby": "ばんごうふだはっけんき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/queue-ticket-dispenser-v1-0c1e42f771e8.webp"
+    },
+    {
+      "id": "form-filling-desk",
+      "word": "form-filling desk",
+      "chinese": "填單台",
+      "chineseDefinition": "銀行或公共服務場所供人站著填寫表格的桌台，常附筆具與空白表格。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɔːrm ˌfɪl.ɪŋ desk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "填單台",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A desk provided for customers to fill in forms, often with pens and blank forms.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "客が書類を記入するための台。銀行や公共施設などに置かれ、ペンや用紙が備えられていることがある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "There is a pen on the form-filling desk.",
+          "ja": "記入台にペンがあります。",
+          "zh": "填單台上有一支筆。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "While waiting for my turn, I filled in the form at the form-filling desk.",
+          "ja": "順番を待っている間に、記入台で書類を書きました。",
+          "zh": "等候輪到我的時候，我在填單台填寫表格。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "記入台",
+      "jaReading": "きにゅうだい",
+      "jaReadingSegments": [
+        {
+          "text": "記入台",
+          "ruby": "きにゅうだい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/form-filling-desk-v1-a4ec445bbb26.webp"
+    },
+    {
+      "id": "personal-seal",
+      "word": "personal seal",
+      "chinese": "個人印章",
+      "chineseDefinition": "用姓名印面在文件上蓋印的個人印章；此處以日本常見圓柱形姓名章為主。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɝː.sən.əl siːl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "個人印章",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A personal name stamp used to put a seal impression on documents.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "書類などに名前の印影を押すための道具。ここでは個人の名前を彫った印章を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your personal seal in its case.",
+          "ja": "印鑑をケースに入れてください。",
+          "zh": "請把個人印章放進盒子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My family’s personal seals look alike, so I checked the name before taking mine.",
+          "ja": "家族の印鑑は似ているので、名前を確認してから自分のものを取りました。",
+          "zh": "家人的個人印章很相似，所以我先確認姓名，再拿自己的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "印鑑",
+      "jaReading": "いんかん",
+      "jaReadingSegments": [
+        {
+          "text": "印鑑",
+          "ruby": "いんかん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/personal-seal-v1-c551ab8f727f.webp"
+    },
+    {
+      "id": "seal-case",
+      "word": "seal case",
+      "chinese": "印章盒",
+      "chineseDefinition": "收納個人印章的小型保護盒，常有可開合的上蓋。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsiːl keɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "印章盒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small protective case used to store a personal seal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "印鑑をしまって保護するための小さなケース。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Close the seal case.",
+          "ja": "印鑑ケースを閉めてください。",
+          "zh": "請合上印章盒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before going to the bank, I checked whether my seal was inside the seal case.",
+          "ja": "銀行へ行く前に、印鑑ケースに印鑑が入っているか確認しました。",
+          "zh": "去銀行前，我確認印章盒裡是否放了印章。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "印鑑ケース",
+      "jaReading": "いんかんケース",
+      "jaReadingSegments": [
+        {
+          "text": "印鑑ケース",
+          "ruby": "いんかんケース"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/seal-case-v1-5c5735f56f17.webp"
+    },
+    {
+      "id": "bank-transfer-form",
+      "word": "bank transfer form",
+      "chinese": "匯款申請書",
+      "chineseDefinition": "向銀行申請將款項匯入指定帳戶時，填寫收款人、帳號與金額等資訊的表格。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæŋk ˌtræns.fɝː fɔːrm/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "匯款申請書",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A form used to request a transfer of money to a specified bank account.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "指定した口座へ振り込むために、振込先や金額などを記入する書類。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Write your name on the bank transfer form.",
+          "ja": "振込依頼書に名前を書いてください。",
+          "zh": "請在匯款申請書上填寫姓名。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before handing in the bank transfer form, I checked the recipient’s name again.",
+          "ja": "振込依頼書を出す前に、受取人の名前をもう一度確認しました。",
+          "zh": "提交匯款申請書前，我再次確認收款人的姓名。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "振込依頼書",
+      "jaReading": "ふりこみいらいしょ",
+      "jaReadingSegments": [
+        {
+          "text": "振込依頼書",
+          "ruby": "ふりこみいらいしょ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/bank-transfer-form-v1-c8d88829cdce.webp"
+    },
+    {
+      "id": "deposit-slip",
+      "word": "deposit slip",
+      "chinese": "存款單",
+      "chineseDefinition": "臨櫃存入款項時填寫帳戶與存入金額的紙本表單，各銀行名稱與格式可能不同。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈpɑː.zɪt slɪp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "存款單",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A form recording the account and amount of money to be deposited at a bank counter.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "窓口でお金を預け入れるときに、口座や金額などを記入する用紙。銀行によって名称や書式が異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Write the amount on the deposit slip.",
+          "ja": "入金伝票に金額を書いてください。",
+          "zh": "請在存款單上填寫金額。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wrote the wrong amount on the deposit slip, so I got a new one.",
+          "ja": "入金伝票の金額を書き間違えたので、新しい用紙をもらいました。",
+          "zh": "我在存款單上寫錯了金額，所以領了一張新的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "入金伝票",
+      "jaReading": "にゅうきんでんぴょう",
+      "jaReadingSegments": [
+        {
+          "text": "入金伝票",
+          "ruby": "にゅうきんでんぴょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/deposit-slip-v1-38d69f4c6f15.webp"
+    },
+    {
+      "id": "cash-envelope",
+      "word": "cash envelope",
+      "chinese": "現金信封",
+      "chineseDefinition": "用來暫時收放鈔票的信封；此處指銀行常見現金信封，不是現金掛號信封。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæʃ ˌen.və.loʊp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "現金信封",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An envelope for holding banknotes, such as those provided near bank ATMs.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紙幣を入れて持ち運ぶための封筒。ここでは銀行などに置かれる封筒を指し、現金書留用封筒とは区別する。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the banknotes in the cash envelope.",
+          "ja": "紙幣を現金封筒に入れてください。",
+          "zh": "請把鈔票放進現金信封。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The cash envelope had torn, so I moved the banknotes into a new one.",
+          "ja": "現金封筒が破れていたので、紙幣を新しい封筒に移しました。",
+          "zh": "現金信封破了，所以我把鈔票移到新的信封裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "現金封筒",
+      "jaReading": "げんきんふうとう",
+      "jaReadingSegments": [
+        {
+          "text": "現金封筒",
+          "ruby": "げんきんふうとう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/cash-envelope-v1-289eb57cb364.webp"
+    },
+    {
+      "id": "banknote-counter",
+      "word": "banknote counter",
+      "chinese": "點鈔機",
+      "chineseDefinition": "將鈔票逐張送過感應裝置以計算張數的機器；不等同驗鈔機或提款機。",
+      "category": "bank",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæŋk.noʊt ˌkaʊn.t̬ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "點鈔機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A machine that feeds banknotes through rollers to count them.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "紙幣を送りながら、その枚数を数える機械。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The clerk counts the banknotes with a banknote counter.",
+          "ja": "行員が紙幣計数機で紙幣を数えます。",
+          "zh": "行員用點鈔機數鈔票。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "A banknote got stuck in the banknote counter, so the clerk stopped the machine to check it.",
+          "ja": "紙幣計数機に紙幣が詰まったので、行員が機械を止めて確認しました。",
+          "zh": "一張鈔票卡在點鈔機裡，所以行員停下機器檢查。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "紙幣計数機",
+      "jaReading": "しへいけいすうき",
+      "jaReadingSegments": [
+        {
+          "text": "紙幣計数機",
+          "ruby": "しへいけいすうき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/bank-2026-10/banknote-counter-v1-9e68bab0d80a.webp"
+    }
+  ]
+}

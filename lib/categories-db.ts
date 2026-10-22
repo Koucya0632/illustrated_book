@@ -1,3 +1,4 @@
+import { MAIN_WORD_BANK_IDS } from "./main-word-bank-2026-10";
 // DB-aware loader for categories. Server-only because it imports the
 // postgres driver via lib/db. Use `categories` from `lib/categories` for
 // the client-safe static list — it stays in sync via scripts/migrate.ts.
@@ -124,6 +125,14 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'hair-salon' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      ))
+      AND (c.id <> 'bank' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_BANK_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'bank' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       ))

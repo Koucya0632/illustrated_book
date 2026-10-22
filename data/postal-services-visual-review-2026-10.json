@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "series": "postal-services",
+  "reviewer": "Codex, every selected original PNG inspected individually",
+  "items": [
+    {
+      "id": "postage-stamp",
+      "decision": "pass",
+      "reason": "單張具完整齒孔邊緣的紙質郵票，櫻花圖案與獨立未蓋戳狀態清楚；白底無品牌，不與橡皮印混淆。",
+      "sourceSha256": "e4b4c2d347020e32ae69b70606726579282b2793165854e28750d85d6fee86b3"
+    },
+    {
+      "id": "postcard",
+      "decision": "pass",
+      "reason": "無信封的單張郵寄卡片，郵票及七格郵遞區號欄可辨，沒有私人的地址資料；整張完整顯示。",
+      "sourceSha256": "a9ad29dd330cf4bcf101b2b56e75b70840048d49aa88f59f96b0bec17036bbec"
+    },
+    {
+      "id": "letter",
+      "decision": "pass",
+      "reason": "摺開的書信紙與開口信封，紙面筆跡表示訊息內容，主體為信而非空信封；背景乾淨。",
+      "sourceSha256": "106a159586d58527441bde5c43fdede3a205e158cb0b0989e9fb53befd905364"
+    },
+    {
+      "id": "parcel",
+      "decision": "pass",
+      "reason": "牛皮紙包妥並繫繩的寄件包裹，白色標籤與郵票清楚，和敞開的空紙箱不同。",
+      "sourceSha256": "f4c31e779cff257ae956f7d010117e7f8f717981373775113480be1b1e819fb7"
+    },
+    {
+      "id": "postal-counter",
+      "decision": "pass",
+      "reason": "郵務櫃檯、包裹秤、寄件表單及標準〒標誌共同限定郵務用途；無銀行ATM及多餘人物。",
+      "sourceSha256": "ce8bbd6f3caab8691725f4aa6d470faab8ddd5fc44969297a7ac2dff85a58b98"
+    },
+    {
+      "id": "shipping-label",
+      "decision": "pass",
+      "reason": "白色貼紙上分開的紅藍寄收件欄與條碼主導畫面，貼在包裹上，沒有真實姓名地址。",
+      "sourceSha256": "6bc062f5ac2346f08040a603527c75865b43216a584e02e20b4a71211eab8291"
+    },
+    {
+      "id": "delivery-notice",
+      "decision": "pass",
+      "reason": "重生成版本僅保留正確的不在票標題；空白日期及時間欄和條碼呈現通知單形狀，沒有錯誤的服務說明。",
+      "sourceSha256": "4499547d2aaddeaaab58318f871d0a09a6e0b4146b9b37966964ef8669892cf6"
+    },
+    {
+      "id": "postal-scale",
+      "decision": "pass",
+      "reason": "平金屬秤台、立式克數顯示及其上的封筒呈現郵務秤重設備，沒有廚房秤盤或體重計踏板。",
+      "sourceSha256": "f86f6afd0eb1ba2ccab7a6c334c0a4622b858725d8464d5f4a93ccaa99e570b0"
+    },
+    {
+      "id": "cardboard-box",
+      "decision": "pass",
+      "reason": "敞開四片箱蓋、可見瓦楞邊的空紙箱，與已封裝包裹區分；完整留白。",
+      "sourceSha256": "7eec7d4b4673b7bfdd293a7b969639dfab419e10e131a48218a666c1c584cc38"
+    },
+    {
+      "id": "packing-tape",
+      "decision": "pass",
+      "reason": "寬棕色封箱膠帶卷與拉出的膠帶端可見，尺寸形狀有別於窄辦公室透明膠帶。",
+      "sourceSha256": "7bdcbb3e730a0c8a5364789bf763827a79d9957e52a106c3ff687657f6cd9a70"
+    },
+    {
+      "id": "bubble-wrap",
+      "decision": "pass",
+      "reason": "透明塑膠捲片的密集圓形氣泡清楚可見，非平滑保鮮膜；白底仍有足夠輪廓。",
+      "sourceSha256": "73b78406c834540fb9b24891e1f6fe7518a519d32336520a3a06a456ed1a1a51"
+    },
+    {
+      "id": "padded-envelope",
+      "decision": "pass",
+      "reason": "牛皮紙信封開口露出氣泡內襯，完整外形和緩衝層同時可辨，與一般封筒不同。",
+      "sourceSha256": "96441a84c6a049a972e4751492344a403d2bcd6d505b81930364af79d0898ecb"
+    },
+    {
+      "id": "registered-mail",
+      "decision": "pass",
+      "reason": "封面正確書留紅色標記及追蹤條碼，表示掛號寄件；無不必要品牌及個資。",
+      "sourceSha256": "4f98aceed2e5244a15f0b07f5ddf707d5a4cf8370aaa45b84582d47f3953944d"
+    },
+    {
+      "id": "express-mail",
+      "decision": "pass",
+      "reason": "直式封筒頂端明顯紅線與正確速達文字呈現日本國內快捷標記；和書留圖形不同。",
+      "sourceSha256": "2065ee2bc90c9f2edfb062f307d04bd7c0765770cbacebc259014988f220c29d"
+    },
+    {
+      "id": "postmark",
+      "decision": "pass",
+      "reason": "最終重生成版本以大型黑色日期圓戳跨蓋郵票及平整信封正面，戳記佔主要畫面，無背面封口線，縮圖仍可辨識消印。",
+      "sourceSha256": "00e8c921ccb6a9b8837ab87bf9fd48640da402ffcd920a3206c32bbcf31c5e17"
+    },
+    {
+      "id": "household-mailbox",
+      "decision": "pass",
+      "reason": "壁掛金屬住家信箱有防雨投信蓋、取信門與鎖；非街頭公共紅色郵筒。",
+      "sourceSha256": "7e2dbd63a45009cf4f684cba616170a26dfceaa47c2b3674ed8a76613fbe5284"
+    },
+    {
+      "id": "category-postal-services",
+      "decision": "pass",
+      "reason": "小型日本郵局店面、標準〒標記和門前紅色公共郵筒共同辨識分類；建物完整置於白底。",
+      "sourceSha256": "b6c8a7c9d62843adf4e26d1bc4032e6a70ff8b8899a6db62d34965826158c57a"
+    }
+  ]
+}

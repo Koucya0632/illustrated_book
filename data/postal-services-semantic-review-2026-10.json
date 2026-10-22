@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "series": "postal-services",
+  "reviewer": "Codex, individually authored and reviewed concept, sentence and lexical annotations",
+  "scope": "All 16 words and 32 examples, with individual reasons and exact source hashes. Structural validation is separate from editorial judgment.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "postage-stamp",
+      "verdict": "pass",
+      "reason": "切手是支付郵資的紙票，與既有ゴム印和切手アルバム區別。",
+      "sourceSha256": "fdef750f8f6e46483a025123a9ca455c915a290160f6ed57b496f4bbf523299f"
+    },
+    {
+      "kind": "example",
+      "wordId": "postage-stamp",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "貼郵票到封筒上是具體寄信動作；三語相同。",
+      "sourceSha256": "02da1b954e4486e42f2d1e8c85eb01de79c05e814f216952b42882ea7acc304d"
+    },
+    {
+      "kind": "example",
+      "wordId": "postage-stamp",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不確定郵資而到櫃檯詢問，原因與動作清楚，不假定面額。",
+      "sourceSha256": "a025c053ab4de71b76a82e4f0e4c4230cf7051094b5d64a18526a6a66e43353e"
+    },
+    {
+      "kind": "word",
+      "wordId": "postcard",
+      "verdict": "pass",
+      "reason": "はがき指郵寄卡片，區別收藏卡與一般信封。",
+      "sourceSha256": "4fe880bfa6eeaf9b0705b54dab4ba16e9de1d9a7fea66f9b1e95dfc3ac8d3751"
+    },
+    {
+      "kind": "example",
+      "wordId": "postcard",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "寄明信片給祖母是自然家庭情境，收件人三語一致。",
+      "sourceSha256": "e7e27e2e35404787179e6e301e805249b9cfacc117a6691b48de2b9286f02bc0"
+    },
+    {
+      "kind": "example",
+      "wordId": "postcard",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "寫錯地址導致改用新卡，日文ので有明確因果而非延長簡單句。",
+      "sourceSha256": "07e240d9c4fecce7d4bf6456d80fc14f3c6ae0bcb1b17b5a2f43f8c2b05b5b90"
+    },
+    {
+      "kind": "word",
+      "wordId": "letter",
+      "verdict": "pass",
+      "reason": "手紙限定紙本訊息，不把letter的字母義帶進本概念。",
+      "sourceSha256": "0621ad87a002b6d18c5313618544399d82f9599f88d077ee9875fadf88f944ae"
+    },
+    {
+      "kind": "example",
+      "wordId": "letter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "寫信給朋友是直接生活動作，與例句難度相稱。",
+      "sourceSha256": "74e41fc2f57aef182d4c64ea63d5e540c1039415dd2957d5cd14db22b9caf9f7"
+    },
+    {
+      "kind": "example",
+      "wordId": "letter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "寄信前重讀以檢查錯誤，目的與先後關係完整保留。",
+      "sourceSha256": "d218de65df6991862f0527747b78a77141407fb0347476c458082e6f2428544e"
+    },
+    {
+      "kind": "word",
+      "wordId": "parcel",
+      "verdict": "pass",
+      "reason": "小包是包裝完成的寄送物，不是空紙箱或郵務職業。",
+      "sourceSha256": "082ceb7bb31fb6db3e7613e6881d5ee053eb5c7b8a7d58bde09c405477d5a0bb"
+    },
+    {
+      "kind": "example",
+      "wordId": "parcel",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "帶包裹到郵局交寄，三語目的地一致。",
+      "sourceSha256": "5ad9299c9889ad1b7d9b2791fc5e274be44f205fb3ecdc27722dbde997b48b90"
+    },
+    {
+      "kind": "example",
+      "wordId": "parcel",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "擔心內容破損而增加緩衝材，原因和處置有實際用途。",
+      "sourceSha256": "2256f65baa74eee1ba6b1f73ad2cfe0a9b90bf2260a252475be849d0f5db5650"
+    },
+    {
+      "kind": "word",
+      "wordId": "postal-counter",
+      "verdict": "pass",
+      "reason": "郵便窓口限定郵務，與銀行窓口及便利商店宅配便受付不同。",
+      "sourceSha256": "6ea342613c35c19615b5f4905e786dd55ef0f335595388155431791695cb295f"
+    },
+    {
+      "kind": "example",
+      "wordId": "postal-counter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在郵務櫃檯買郵票是直接、可想像的交易。",
+      "sourceSha256": "28fd0b11a6ea2e684f317bfce8847b48d2b5602024dc405e0e6fa9ea1df0efff"
+    },
+    {
+      "kind": "example",
+      "wordId": "postal-counter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因櫃檯擁擠而先寫寄件單，原因與先後順序一致。",
+      "sourceSha256": "46ac839af08c2964e394a4492c6dbf359ccdf2057fc66bb2f80ca7224f1f9450"
+    },
+    {
+      "kind": "word",
+      "wordId": "shipping-label",
+      "verdict": "pass",
+      "reason": "送り状是配送標籤表單，不混成購物收據；日本郵便官方提供對應紙本標籤。",
+      "sourceSha256": "af22853c5803920ebef4e4248a5eea217a9bb3605806fd2e47f3f7cf51b9e775"
+    },
+    {
+      "kind": "example",
+      "wordId": "shipping-label",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在標籤寫地址為常見寄件步驟，未添加未提供的個資。",
+      "sourceSha256": "f99414a5ede1045a2c5550d4e0dd0abd7ab805c3663af18eeeeedb2e05c359e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "shipping-label",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "寄出前檢查收件人姓名，是先後加目的關係。",
+      "sourceSha256": "4dbc341328acd2802dd94f329e9bc6c0aad2c4391be20e459a6a3f8428dacc1e"
+    },
+    {
+      "kind": "word",
+      "wordId": "delivery-notice",
+      "verdict": "pass",
+      "reason": "不在票為紙本未能投遞通知，不等於包裹本體或手機一般通知。",
+      "sourceSha256": "f7721fe4ba3b54962b3a6adc454faf2d892f7a9568f9b4ec2d2818849e5d738b"
+    },
+    {
+      "kind": "example",
+      "wordId": "delivery-notice",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在住家信箱發現不在票，區別公共郵筒。",
+      "sourceSha256": "6f0baa047d09cbfd5e91a1e34dfe57da9e22c67d5f33343474882aacc75bd38b"
+    },
+    {
+      "kind": "example",
+      "wordId": "delivery-notice",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "當時不在家所以收到通知，三語因果與時間一致。",
+      "sourceSha256": "6c3e3e8689d94f25dbcaabb4f38bcebefa5cb1fd45f1b8812b7dd0e7ec2a2943"
+    },
+    {
+      "kind": "word",
+      "wordId": "postal-scale",
+      "verdict": "pass",
+      "reason": "郵便はかり以郵件秤重為用途，區別體重計及廚房秤。",
+      "sourceSha256": "00140fe5a5c284145b4315f8228fc0f45a0c7e80dd1cf71e452b845dcdecf069"
+    },
+    {
+      "kind": "example",
+      "wordId": "postal-scale",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把信放到郵資秤是簡單操作，沒有暗示費率。",
+      "sourceSha256": "aede06f0fcd4a39e84528e0efff173e02ba71e240b65df32083a13bb68e55570"
+    },
+    {
+      "kind": "example",
+      "wordId": "postal-scale",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "封筒變重後再秤，是條件變化引起的行動。 詞塊另確認形容詞、程度副詞與主要動詞分開，保留原句及完整假名。",
+      "sourceSha256": "2f4d20e78cb5f20895520f87bef99916863783dabdaa48099e159a17874e37f4"
+    },
+    {
+      "kind": "word",
+      "wordId": "cardboard-box",
+      "verdict": "pass",
+      "reason": "段ボール箱是空的包裝容器，與已包妥的小包分開。",
+      "sourceSha256": "7b706a8830e096890a69a980cabace684123592aa972cc0a562f8aacf676c2cd"
+    },
+    {
+      "kind": "example",
+      "wordId": "cardboard-box",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把書裝進紙箱是明確包裝行為，物件三語相同。",
+      "sourceSha256": "3ebeeb480e79f19f2e792ce95f789e5501651907ee734d39c37e62f3a17f3783"
+    },
+    {
+      "kind": "example",
+      "wordId": "cardboard-box",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "箱太大而加紙避免晃動，保留原因及目的。",
+      "sourceSha256": "6fbd8ffa042d90e512d664503ac6c3b6b461243132ec0f28ec71b6b7973b1257"
+    },
+    {
+      "kind": "word",
+      "wordId": "packing-tape",
+      "verdict": "pass",
+      "reason": "梱包テープ是封箱用途，和既有セロテープ概念不同。",
+      "sourceSha256": "a28b1a015982286e15f7db54214649c73edb1e167c0cddbd7ef5691a2d523043"
+    },
+    {
+      "kind": "example",
+      "wordId": "packing-tape",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以封箱膠帶封紙箱，日文閉じる符合黏合後狀態。",
+      "sourceSha256": "a67ae8a26bc49de0177b0a1344396f1f4bbc9965c3d8574adcd27952d6163c74"
+    },
+    {
+      "kind": "example",
+      "wordId": "packing-tape",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "底部快開裂所以補強，區別首次封箱與後續加固。",
+      "sourceSha256": "b9236c7be257888a86d846d6ab9d74d658064b2ce588952fc6361b3ffc7a199d"
+    },
+    {
+      "kind": "word",
+      "wordId": "bubble-wrap",
+      "verdict": "pass",
+      "reason": "気泡緩衝材具密集氣泡，非普通塑膠膜；日文採非商標通用名稱。",
+      "sourceSha256": "4df75829b9e984f4566a2095857d462799becdcec1d95d172c641df32a49d2b2"
+    },
+    {
+      "kind": "example",
+      "wordId": "bubble-wrap",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "包裹杯子是具體保護動作。",
+      "sourceSha256": "53d97ea7758e36e75fca9f4d0e628f07f2830a6d4c9eeaa93484749e35dbb188"
+    },
+    {
+      "kind": "example",
+      "wordId": "bubble-wrap",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "杯子易碎所以裝箱前包好，三語同樣保留原因與順序。",
+      "sourceSha256": "cf2fe9b11b00c366bd717300811ad00b3c420f481873eb489f4338e68f359cae"
+    },
+    {
+      "kind": "word",
+      "wordId": "padded-envelope",
+      "verdict": "pass",
+      "reason": "クッション封筒以內襯緩衝層區別一般封筒及銀行現金封筒。",
+      "sourceSha256": "21d5dcfb5311d27f83f0d8bb6ca30b3d06896c06de8b56e28dac52156a22640b"
+    },
+    {
+      "kind": "example",
+      "wordId": "padded-envelope",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把吊飾放入氣泡信封是合適尺寸的小物寄送。",
+      "sourceSha256": "2154c5b11e88a0e69f5ef4a9f45598963d86b8a5d42a3d085f36a1b8d3965c3e"
+    },
+    {
+      "kind": "example",
+      "wordId": "padded-envelope",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "擔心吊飾受刮而選緩衝信封，未宣稱可完全防止損壞。",
+      "sourceSha256": "b21af126bb4b79fae50f5e6448c8cea64eed5ac0e86f85cb8471c41d7c046b5c"
+    },
+    {
+      "kind": "word",
+      "wordId": "registered-mail",
+      "verdict": "pass",
+      "reason": "書留是寄送紀錄服務，與速達的速度用途區別；不泛稱任何種類都有相同賠償。",
+      "sourceSha256": "6f596f3a9a09f10ae5494988a82592b1c61ed9931c1d898de4854b2cdb3328e4"
+    },
+    {
+      "kind": "example",
+      "wordId": "registered-mail",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "要求以掛號寄文件，自然服務請求，三語一致。",
+      "sourceSha256": "e5ab97b1b263db248a21d326012051d0ee11b67b23a1571c623dd383af7d42fb"
+    },
+    {
+      "kind": "example",
+      "wordId": "registered-mail",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "文件重要所以採掛號，因果清楚且不保證不遺失。",
+      "sourceSha256": "3d16a40e8c012e9ad51ee41208314666d2b424f5fba84d5a741ddd3de01c3cd9"
+    },
+    {
+      "kind": "word",
+      "wordId": "express-mail",
+      "verdict": "pass",
+      "reason": "速達限定日本國內加速服務，不等同國際EMS或時間保證。",
+      "sourceSha256": "701c441c4c64662f40a090cc1359bb799cce571907193be2f90343c082ce3044"
+    },
+    {
+      "kind": "example",
+      "wordId": "express-mail",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以速達寄信是常見窓口請求，與掛號分開。",
+      "sourceSha256": "cfcba00b5e3de7917c8b3fd7e12d6cf98669860c05f8e16c09b0d7204268a23b"
+    },
+    {
+      "kind": "example",
+      "wordId": "express-mail",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "時間不多而改用速達的理由自然，避免隔天必達的承諾。 詞塊另確認形容詞、程度副詞與主要動詞分開，保留原句及完整假名。",
+      "sourceSha256": "d1228d30b95eb90b343cd2efcabcbb1b388ce998b06a6b6cc4bb3ecf2f1176fd"
+    },
+    {
+      "kind": "word",
+      "wordId": "postmark",
+      "verdict": "pass",
+      "reason": "消印為已蓋出的郵務戳記，非橡皮印工具；不保證每種戳都帶同樣資料。",
+      "sourceSha256": "90acc0863ed7913fce1a3b4449087c5a53b8db6905ec6a523870049312bc0f92"
+    },
+    {
+      "kind": "example",
+      "wordId": "postmark",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "查看明信片上的郵戳，場所與物件對應自然。",
+      "sourceSha256": "f75217d80a36613df8ab4dffa2d5af691e590e8e4205b4e28f2716b5bcd641aa"
+    },
+    {
+      "kind": "example",
+      "wordId": "postmark",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "日期看不清而用放大鏡查看，因果與動作一致。",
+      "sourceSha256": "22eaa685a5a4601915d06bc2458e5f6126fb6c1cb464b79922382b9da40b8e6d"
+    },
+    {
+      "kind": "word",
+      "wordId": "household-mailbox",
+      "verdict": "pass",
+      "reason": "郵便受け接收投遞物，與街頭供投寄的郵便ポスト方向不同。",
+      "sourceSha256": "086ea47526d9d542e89faa36b2c585e0f968cd23e320eae94fe3c8e702fc4a32"
+    },
+    {
+      "kind": "example",
+      "wordId": "household-mailbox",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "早晨檢查住家信箱是具體習慣，用法與圖片一致。",
+      "sourceSha256": "75d459ef7d2a51865406a2e017dc73872c4aed3f120be79f63efe687c806d690"
+    },
+    {
+      "kind": "example",
+      "wordId": "household-mailbox",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "離家前查看並發現重要信件，時間及結果比簡單句複雜。",
+      "sourceSha256": "48b393ff818845b91705c047ce14568b9ecf0527575bdd389c840700730d942f"
+    }
+  ]
+}

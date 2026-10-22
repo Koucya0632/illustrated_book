@@ -1120,5 +1120,21 @@
   "bank-transfer-form": "https://img.nexflow.team/word-images/bank-2026-10/bank-transfer-form-v1-c8d88829cdce.webp",
   "deposit-slip": "https://img.nexflow.team/word-images/bank-2026-10/deposit-slip-v1-38d69f4c6f15.webp",
   "cash-envelope": "https://img.nexflow.team/word-images/bank-2026-10/cash-envelope-v1-289eb57cb364.webp",
-  "banknote-counter": "https://img.nexflow.team/word-images/bank-2026-10/banknote-counter-v1-9e68bab0d80a.webp"
+  "banknote-counter": "https://img.nexflow.team/word-images/bank-2026-10/banknote-counter-v1-9e68bab0d80a.webp",
+  "postage-stamp": "https://img.nexflow.team/word-images/postal-services-2026-10/postage-stamp-v1-2f588c67105b.webp",
+  "postcard": "https://img.nexflow.team/word-images/postal-services-2026-10/postcard-v1-f45d34643554.webp",
+  "letter": "https://img.nexflow.team/word-images/postal-services-2026-10/letter-v1-41f5661ad3cd.webp",
+  "parcel": "https://img.nexflow.team/word-images/postal-services-2026-10/parcel-v1-c9bb0034b2aa.webp",
+  "postal-counter": "https://img.nexflow.team/word-images/postal-services-2026-10/postal-counter-v1-db3143dc4be5.webp",
+  "shipping-label": "https://img.nexflow.team/word-images/postal-services-2026-10/shipping-label-v1-6345aae1f5f8.webp",
+  "delivery-notice": "https://img.nexflow.team/word-images/postal-services-2026-10/delivery-notice-v1-1a08b2aa7e22.webp",
+  "postal-scale": "https://img.nexflow.team/word-images/postal-services-2026-10/postal-scale-v1-fb29dc93f859.webp",
+  "cardboard-box": "https://img.nexflow.team/word-images/postal-services-2026-10/cardboard-box-v1-5bd1fcefa4b1.webp",
+  "packing-tape": "https://img.nexflow.team/word-images/postal-services-2026-10/packing-tape-v1-9ebd1598ee8a.webp",
+  "bubble-wrap": "https://img.nexflow.team/word-images/postal-services-2026-10/bubble-wrap-v1-fe87c21e2a95.webp",
+  "padded-envelope": "https://img.nexflow.team/word-images/postal-services-2026-10/padded-envelope-v1-287c59fcc20f.webp",
+  "registered-mail": "https://img.nexflow.team/word-images/postal-services-2026-10/registered-mail-v1-3e90c0df80e0.webp",
+  "express-mail": "https://img.nexflow.team/word-images/postal-services-2026-10/express-mail-v1-ebacaffc9792.webp",
+  "postmark": "https://img.nexflow.team/word-images/postal-services-2026-10/postmark-v1-75445cbad7d8.webp",
+  "household-mailbox": "https://img.nexflow.team/word-images/postal-services-2026-10/household-mailbox-v1-4d27b59db006.webp"
 }

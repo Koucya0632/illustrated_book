@@ -1,3 +1,4 @@
+import { MAIN_WORD_POSTAL_SERVICES_EXAMPLE_PAIRS } from "./main-word-postal-services-2026-10";
 import { MAIN_WORD_BANK_EXAMPLE_PAIRS } from "./main-word-bank-2026-10";
 import { MAIN_WORD_HAIR_SALON_EXAMPLE_PAIRS } from "./main-word-hair-salon-2026-10";
 import { MAIN_WORD_ARCADE_EXAMPLE_PAIRS } from "./main-word-arcade-2026-10";
@@ -193,6 +194,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_EMERGENCY_KIT_EXAMPLE_PAIRS,
     MAIN_WORD_HAIR_SALON_EXAMPLE_PAIRS,
     MAIN_WORD_BANK_EXAMPLE_PAIRS,
+    MAIN_WORD_POSTAL_SERVICES_EXAMPLE_PAIRS,
   );
 
 export function selectMainWordExamplePairs(

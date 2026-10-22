@@ -169,7 +169,14 @@
     "bank:audio:verify": "node scripts/verify-bank-audio.mjs",
     "bank:prepare-publish": "node --env-file=.env.local scripts/prepare-bank-publish-plan.mjs",
     "bank:publish": "tsx --env-file=.env.local scripts/publish-bank-series.ts",
-    "bank:content": "node scripts/prepare-bank-content.mjs"
+    "bank:content": "node scripts/prepare-bank-content.mjs",
+    "postal-services:prepare-images": "node scripts/prepare-postal-services-images.mjs",
+    "postal-services:review": "node scripts/prepare-postal-services-semantic-review.mjs",
+    "postal-services:audio:plan": "node scripts/plan-postal-services-audio.mjs",
+    "postal-services:audio:generate:local": "node --env-file=.env.local scripts/generate-postal-services-candidate-audio.mjs",
+    "postal-services:audio:verify": "node scripts/verify-postal-services-audio.mjs",
+    "postal-services:prepare-publish": "node --env-file=.env.local scripts/prepare-postal-services-publish-plan.mjs",
+    "postal-services:publish": "tsx --env-file=.env.local scripts/publish-postal-services-series.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

@@ -1,0 +1,842 @@
+{
+  "schemaVersion": 1,
+  "series": "postal-services",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "16 new concepts. Existing post-office, mailbox, envelope and postal professions remain unchanged. Separate authorization required for production Storage/DB, commit and deployment.",
+  "category": {
+    "id": "postal-services",
+    "name": "Post Office",
+    "nameZh": "郵局",
+    "nameJa": "郵便局",
+    "emoji": "📮",
+    "description": "寄信、包裹、包裝用品與郵務服務",
+    "descriptionEn": "Letters, parcels, packing materials and postal services",
+    "descriptionJa": "手紙、荷物、梱包用品と郵便サービス",
+    "color": "from-red-100 to-orange-100",
+    "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/category-postal-services-v1-34177d37d1f6.webp"
+  },
+  "references": [
+    "https://www.post.japanpost.jp/service/fuka_service/kakitome/",
+    "https://www.post.japanpost.jp/service/fuka_service/sokutatsu/",
+    "https://www.post.japanpost.jp/service/you_pack/",
+    "https://www.lp.jpapp.pf.japanpost.jp/service/tracking/"
+  ],
+  "entries": [
+    {
+      "id": "postage-stamp",
+      "word": "postage stamp",
+      "chinese": "郵票",
+      "chineseDefinition": "貼在郵件上、表示已付郵資的小紙票；此處不是蓋章用的印章。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊ.stɪdʒ stæmp/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "郵票",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small official paper label attached to mail to show that postage has been paid.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵便料金を支払ったことを示すため、郵便物に貼る小さな証票。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put a postage stamp on the envelope.",
+          "ja": "封筒に切手を貼ってください。",
+          "zh": "請在信封上貼郵票。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was unsure about the postage, so I asked which postage stamp to buy.",
+          "ja": "郵便料金が分からなかったので、どの切手を買えばいいか聞きました。",
+          "zh": "我不確定郵資，所以詢問該買哪種郵票。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "切手",
+      "jaReading": "きって",
+      "jaReadingSegments": [
+        {
+          "text": "切手",
+          "ruby": "きって"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postage-stamp-v1-2f588c67105b.webp"
+    },
+    {
+      "id": "postcard",
+      "word": "postcard",
+      "chinese": "明信片",
+      "chineseDefinition": "不用另裝信封、可直接寫上訊息與收件地址寄送的卡片。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊst.kɑːrd/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "明信片",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A card for a message and an address that can be sent through the mail without an envelope.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "通信文と宛名を書き、封筒に入れずに送れる郵便用のカード。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I sent a postcard to my grandmother.",
+          "ja": "祖母にはがきを送りました。",
+          "zh": "我寄了明信片給祖母。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wrote the wrong address on the postcard, so I used a new one.",
+          "ja": "はがきの住所を間違えたので、新しいはがきを使いました。",
+          "zh": "我把明信片上的地址寫錯了，所以改用一張新的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "はがき",
+      "jaReading": "はがき",
+      "jaReadingSegments": [
+        {
+          "text": "はがき",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postcard-v1-f45d34643554.webp"
+    },
+    {
+      "id": "letter",
+      "word": "letter",
+      "chinese": "信件",
+      "chineseDefinition": "寫給某人的書面訊息，此處指可用郵寄方式送出的紙本信件。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlet̬.ɚ/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "信件",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A written message on paper sent to another person, often in an envelope.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "相手に伝えたいことを紙に書いたもの。封筒に入れて郵送することが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I wrote a letter to my friend.",
+          "ja": "友達に手紙を書きました。",
+          "zh": "我寫了一封信給朋友。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before mailing the letter, I read it again to check for mistakes.",
+          "ja": "手紙を出す前に、間違いがないかもう一度読みました。",
+          "zh": "寄信前，我再讀了一遍，檢查有沒有錯誤。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "手紙",
+      "jaReading": "てがみ",
+      "jaReadingSegments": [
+        {
+          "text": "手紙",
+          "ruby": "てがみ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/letter-v1-41f5661ad3cd.webp"
+    },
+    {
+      "id": "parcel",
+      "word": "parcel",
+      "chinese": "包裹",
+      "chineseDefinition": "為了郵寄或運送而包裝好的物品；此處指包裹本身。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɑːr.səl/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "包裹",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An item or group of items wrapped or packed for mailing or delivery.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵送や配送のために、品物を包んだり箱に入れたりしたもの。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I took the parcel to the post office.",
+          "ja": "小包を郵便局に持っていきました。",
+          "zh": "我把包裹帶到郵局。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I added more padding to the parcel because I was worried the contents might break.",
+          "ja": "中身が割れないか心配だったので、小包に緩衝材を足しました。",
+          "zh": "我擔心內容物會破掉，所以在包裹裡加了緩衝材。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "小包",
+      "jaReading": "こづつみ",
+      "jaReadingSegments": [
+        {
+          "text": "小包",
+          "ruby": "こづつみ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/parcel-v1-c9bb0034b2aa.webp"
+    },
+    {
+      "id": "postal-counter",
+      "word": "postal counter",
+      "chinese": "郵務櫃檯",
+      "chineseDefinition": "郵局辦理寄信、交寄包裹或郵件相關業務的服務櫃檯。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊ.stəl ˈkaʊn.t̬ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "郵務櫃檯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A post office service counter for sending letters and parcels or handling other mail services.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵便局で、手紙や荷物の差し出しなどの郵便業務を受け付ける窓口。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought stamps at the postal counter.",
+          "ja": "郵便窓口で切手を買いました。",
+          "zh": "我在郵務櫃檯買了郵票。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The postal counter was busy, so I filled out the shipping label while waiting.",
+          "ja": "郵便窓口が混んでいたので、待っている間に送り状を書きました。",
+          "zh": "郵務櫃檯很擁擠，所以我等候時先填了寄件標籤。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "郵便窓口",
+      "jaReading": "ゆうびんまどぐち",
+      "jaReadingSegments": [
+        {
+          "text": "郵便窓口",
+          "ruby": "ゆうびんまどぐち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postal-counter-v1-db3143dc4be5.webp"
+    },
+    {
+      "id": "shipping-label",
+      "word": "shipping label",
+      "chinese": "寄件標籤",
+      "chineseDefinition": "寄包裹時填寫寄件人、收件人及配送資訊，貼在包裹上的標籤或表單。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃɪp.ɪŋ ˌleɪ.bəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "寄件標籤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A label or form on a parcel showing the sender, recipient, and delivery information.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "荷物の送り主や届け先、配送に必要な情報を記入して荷物に付ける伝票。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Write the address on the shipping label.",
+          "ja": "送り状に住所を書いてください。",
+          "zh": "請在寄件標籤上寫地址。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before sending the parcel, I checked the recipient name on the shipping label.",
+          "ja": "小包を送る前に、送り状の受取人の名前を確認しました。",
+          "zh": "寄出包裹前，我核對了寄件標籤上的收件人姓名。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "送り状",
+      "jaReading": "おくりじょう",
+      "jaReadingSegments": [
+        {
+          "text": "送り状",
+          "ruby": "おくりじょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/shipping-label-v1-6345aae1f5f8.webp"
+    },
+    {
+      "id": "delivery-notice",
+      "word": "delivery notice",
+      "chinese": "不在通知單",
+      "chineseDefinition": "無法當場交付郵件或包裹時留下的通知單，可用來查詢領取或再投遞方式。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈlɪv.ɚ.i ˈnoʊ.t̬ɪs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "不在通知單",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A slip left when an item could not be delivered, with information about collection or redelivery.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵便物や荷物を配達できなかったときに残され、受け取りや再配達の案内が書かれた紙。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "There is a delivery notice in the mailbox.",
+          "ja": "郵便受けに不在票が入っています。",
+          "zh": "住家信箱裡有一張不在通知單。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was out when the parcel arrived, so the mail carrier left a delivery notice.",
+          "ja": "小包が届いたとき留守だったので、郵便配達員が不在票を残しました。",
+          "zh": "包裹送達時我不在家，所以郵差留下了不在通知單。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "不在票",
+      "jaReading": "ふざいひょう",
+      "jaReadingSegments": [
+        {
+          "text": "不在票",
+          "ruby": "ふざいひょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/delivery-notice-v1-1a08b2aa7e22.webp"
+    },
+    {
+      "id": "postal-scale",
+      "word": "postal scale",
+      "chinese": "郵資秤",
+      "chineseDefinition": "用來秤量信件或包裹重量、協助計算郵資的秤。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊ.stəl skeɪl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "郵資秤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A scale for weighing letters or parcels to help determine postage.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵便料金を確認するために、手紙や荷物の重さを量るはかり。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the letter on the postal scale.",
+          "ja": "郵便はかりに手紙を載せてください。",
+          "zh": "請把信放在郵資秤上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The envelope became heavier, so I weighed it again on the postal scale.",
+          "ja": "封筒が重くなったので、郵便はかりでもう一度量りました。",
+          "zh": "信封變重了，所以我又用郵資秤秤了一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "郵便はかり",
+      "jaReading": "ゆうびんはかり",
+      "jaReadingSegments": [
+        {
+          "text": "郵便はかり",
+          "ruby": "ゆうびんはかり"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postal-scale-v1-fb29dc93f859.webp"
+    },
+    {
+      "id": "cardboard-box",
+      "word": "cardboard box",
+      "chinese": "紙箱",
+      "chineseDefinition": "以瓦楞紙板製成、用於裝物及運送的箱子。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːrd.bɔːrd bɑːks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "紙箱",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A box made of corrugated cardboard, used for packing and transporting items.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "波状の紙を挟んだ板紙で作られ、品物の梱包や運搬に使う箱。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the books in the cardboard box.",
+          "ja": "段ボール箱に本を入れてください。",
+          "zh": "請把書放進紙箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The cardboard box was too big, so I added paper to keep the books from moving.",
+          "ja": "段ボール箱が大きすぎたので、本が動かないように紙を詰めました。",
+          "zh": "紙箱太大了，所以我塞了紙，防止書本晃動。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "段ボール箱",
+      "jaReading": "だんぼーるばこ",
+      "jaReadingSegments": [
+        {
+          "text": "段ボール箱",
+          "ruby": "だんぼーるばこ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/cardboard-box-v1-5bd1fcefa4b1.webp"
+    },
+    {
+      "id": "packing-tape",
+      "word": "packing tape",
+      "chinese": "封箱膠帶",
+      "chineseDefinition": "用於黏合紙箱接縫、固定包裝的寬膠帶，並非一般窄透明膠帶。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæk.ɪŋ teɪp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "封箱膠帶",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Wide adhesive tape used to seal cartons and secure packages.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "箱の継ぎ目を閉じたり荷物を固定したりするための幅広い粘着テープ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Seal the box with packing tape.",
+          "ja": "梱包テープで箱を閉じてください。",
+          "zh": "請用封箱膠帶封好箱子。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The bottom of the box was coming open, so I reinforced it with packing tape.",
+          "ja": "箱の底が開きそうだったので、梱包テープで補強しました。",
+          "zh": "箱底快要開了，所以我用封箱膠帶補強。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "梱包テープ",
+      "jaReading": "こんぽうテープ",
+      "jaReadingSegments": [
+        {
+          "text": "梱包テープ",
+          "ruby": "こんぽうテープ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/packing-tape-v1-9ebd1598ee8a.webp"
+    },
+    {
+      "id": "bubble-wrap",
+      "word": "bubble wrap",
+      "chinese": "氣泡布",
+      "chineseDefinition": "帶有許多小氣泡、用來減少物品受撞擊的塑膠緩衝包材。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbʌb.əl ræp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "氣泡布",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Plastic packing material with small air-filled bubbles that cushion items against impacts.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小さな空気の粒が並んだ、品物への衝撃を和らげるプラスチック製の包装材。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Wrap the cup in bubble wrap.",
+          "ja": "カップを気泡緩衝材で包んでください。",
+          "zh": "請用氣泡布把杯子包起來。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The cup is fragile, so I wrapped it in bubble wrap before putting it in the box.",
+          "ja": "カップは割れやすいので、箱に入れる前に気泡緩衝材で包みました。",
+          "zh": "杯子容易破，所以我裝箱前先用氣泡布把它包好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "気泡緩衝材",
+      "jaReading": "きほうかんしょうざい",
+      "jaReadingSegments": [
+        {
+          "text": "気泡緩衝材",
+          "ruby": "きほうかんしょうざい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/bubble-wrap-v1-fe87c21e2a95.webp"
+    },
+    {
+      "id": "padded-envelope",
+      "word": "padded envelope",
+      "chinese": "氣泡信封",
+      "chineseDefinition": "內層有氣泡或其他緩衝材料、可保護小物的郵寄信封。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæd.ɪd ˈen.və.loʊp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "氣泡信封",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A mailing envelope lined with cushioning material to protect small items.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "小物を保護するために、内側に気泡などの緩衝材が付いた郵送用の封筒。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the keychain in a padded envelope.",
+          "ja": "キーホルダーをクッション封筒に入れてください。",
+          "zh": "請把鑰匙圈放進氣泡信封。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I chose a padded envelope because I was worried the keychain might get scratched.",
+          "ja": "キーホルダーに傷が付くのが心配だったので、クッション封筒を選びました。",
+          "zh": "我擔心鑰匙圈會被刮傷，所以選了氣泡信封。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "クッション封筒",
+      "jaReading": "クッションふうとう",
+      "jaReadingSegments": [
+        {
+          "text": "クッション封筒",
+          "ruby": "クッションふうとう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/padded-envelope-v1-287c59fcc20f.webp"
+    },
+    {
+      "id": "registered-mail",
+      "word": "registered mail",
+      "chinese": "掛號郵件",
+      "chineseDefinition": "寄送過程會留下紀錄的掛號郵件服務；實際保障依服務種類而異。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌredʒ.ə.stɚd ˈmeɪl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "掛號郵件",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A postal service that records the handling and delivery of mail.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "郵便物の引き受けや配達などの記録を残す郵便サービス。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please send these documents by registered mail.",
+          "ja": "この書類を書留で送ってください。",
+          "zh": "請把這些文件以掛號寄出。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "These documents are important, so I decided to send them by registered mail.",
+          "ja": "大切な書類なので、書留で送ることにしました。",
+          "zh": "這些文件很重要，所以我決定以掛號寄出。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "書留",
+      "jaReading": "かきとめ",
+      "jaReadingSegments": [
+        {
+          "text": "書留",
+          "ruby": "かきとめ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/registered-mail-v1-3e90c0df80e0.webp"
+    },
+    {
+      "id": "express-mail",
+      "word": "express mail",
+      "chinese": "快捷郵件",
+      "chineseDefinition": "為加快投遞而加購的快捷郵件服務；此處對應日本國內的速達。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪkˈspres meɪl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "快捷郵件",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An additional postal service for faster delivery of mail; here, Japanese domestic express delivery.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "通常より早く届けるために利用する郵便の追加サービス。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please send this letter by express mail.",
+          "ja": "この手紙を速達で送ってください。",
+          "zh": "請把這封信以快捷郵件寄出。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "There was little time left, so I sent the letter by express mail.",
+          "ja": "時間があまりなかったので、手紙を速達で出しました。",
+          "zh": "剩下的時間不多，所以我把信以快捷郵件寄出。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "速達",
+      "jaReading": "そくたつ",
+      "jaReadingSegments": [
+        {
+          "text": "速達",
+          "ruby": "そくたつ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/express-mail-v1-ebacaffc9792.webp"
+    },
+    {
+      "id": "postmark",
+      "word": "postmark",
+      "chinese": "郵戳",
+      "chineseDefinition": "郵務處理時蓋在郵票或郵件上的戳記，用來註銷郵票等。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpoʊst.mɑːrk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "郵戳",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A postal mark applied to a stamp or mail, often to cancel the stamp.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "切手が使用済みであることなどを示すため、郵便物や切手に押される印。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Look at the postmark on this postcard.",
+          "ja": "このはがきの消印を見てください。",
+          "zh": "請看這張明信片上的郵戳。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The date on the postmark was faint, so I used a magnifying glass to read it.",
+          "ja": "消印の日付が薄かったので、虫眼鏡で読みました。",
+          "zh": "郵戳上的日期很淡，所以我用放大鏡讀它。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "消印",
+      "jaReading": "けしいん",
+      "jaReadingSegments": [
+        {
+          "text": "消印",
+          "ruby": "けしいん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postmark-v1-75445cbad7d8.webp"
+    },
+    {
+      "id": "household-mailbox",
+      "word": "household mailbox",
+      "chinese": "住家信箱",
+      "chineseDefinition": "住家用來接收已投遞信件、明信片或通知單的信箱。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhaʊs.hoʊld ˈmeɪl.bɑːks/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "住家信箱",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A box at a home for receiving delivered letters, postcards, and notices.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "配達された手紙やはがき、通知などを受け取るため、住宅に設置する箱。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I check the household mailbox every morning.",
+          "ja": "毎朝、郵便受けを確認します。",
+          "zh": "我每天早上查看住家信箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I checked the household mailbox before leaving, I found an important letter.",
+          "ja": "出かける前に郵便受けを確認したら、大切な手紙が入っていました。",
+          "zh": "我出門前查看住家信箱時，發現裡面有一封重要的信。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "郵便受け",
+      "jaReading": "ゆうびんうけ",
+      "jaReadingSegments": [
+        {
+          "text": "郵便受け",
+          "ruby": "ゆうびんうけ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/household-mailbox-v1-4d27b59db006.webp"
+    }
+  ]
+}

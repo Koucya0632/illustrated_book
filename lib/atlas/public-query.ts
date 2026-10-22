@@ -48,3 +48,42 @@ export function parseAtlasByLemmaQuery(searchParams: URLSearchParams): AtlasByLe
     query: { lemma, lang, limit: clampByLemmaLimit(searchParams.get("limit")) },
   };
 }
+
+export const ATLAS_SEARCH_QUERY_MAX = 40;
+
+export interface AtlasSearchQuery {
+  q: string;
+  lang: AtlasTargetLanguage;
+}
+
+export type AtlasSearchParse =
+  | { ok: true; query: AtlasSearchQuery }
+  | { ok: false; error: "invalid q" | "invalid lang" };
+
+/**
+ * Parses ?q=&lang= for /api/atlas/public/search (物見 search).
+ *
+ * `lang` is required for the same reason as by-lemma: 物見 follows the
+ * learner's direction, and a default would mix the two decks. The length cap
+ * keeps arbitrary input from minting CDN cache entries of any size.
+ */
+export function parseAtlasSearchQuery(searchParams: URLSearchParams): AtlasSearchParse {
+  const q = (searchParams.get("q") ?? "").trim();
+  if (!q || q.length > ATLAS_SEARCH_QUERY_MAX) {
+    return { ok: false, error: "invalid q" };
+  }
+
+  const lang = targetLanguage(searchParams.get("lang"));
+  if (!lang) return { ok: false, error: "invalid lang" };
+
+  return { ok: true, query: { q, lang } };
+}
+
+/**
+ * `%needle%` for ILIKE with the user's own wildcards escaped, so 「100%」 is
+ * searched for literally instead of matching everything that starts with 100.
+ * Default ESCAPE char is backslash.
+ */
+export function atlasContainsPattern(needle: string): string {
+  return `%${needle.replace(/[\\%_]/g, "\\$&")}%`;
+}

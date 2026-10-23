@@ -139,6 +139,22 @@ export function scoreVisionModeration(input: {
   return hits;
 }
 
+/**
+ * A 合集頭像 has no human queue behind it: it is refused or it is live. So it is
+ * refused only for nsfw/violence the classifier calls LIKELY (0.8) or worse.
+ * POSSIBLE turned down ordinary food photos, and `pii` is an OCR digit pattern
+ * that a menu or a shop sign trips. Pure — unit tested.
+ */
+export const COLLECTION_AVATAR_REJECT_SCORE = 0.8;
+
+export function collectionAvatarRefused(hits: AtlasModerationHit[]): boolean {
+  return hits.some(
+    (hit) =>
+      (hit.category === "nsfw" || hit.category === "violence") &&
+      hit.score >= COLLECTION_AVATAR_REJECT_SCORE,
+  );
+}
+
 /** Applies thresholds to hits. Pure — unit tested. */
 export function decideAtlasModeration(
   hits: AtlasModerationHit[],

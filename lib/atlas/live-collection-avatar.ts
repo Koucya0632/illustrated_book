@@ -1,6 +1,6 @@
 import "server-only";
 import { getOwnedAtlasCollection, updateAtlasCollectionAvatar } from "@/lib/atlas-db";
-import { atlasModerationThresholds, runAtlasImageModeration } from "@/lib/atlas/moderation";
+import { collectionAvatarRefused, runAtlasImageModeration } from "@/lib/atlas/moderation";
 import {
   createCollectionAvatarSignedUrl,
   removeCollectionAvatar,
@@ -24,9 +24,12 @@ export const collectionAvatar = createCollectionAvatarModule({
   async moderateImage(bytes) {
     const moderation = await runAtlasImageModeration(Buffer.from(bytes));
     if (moderation.degraded) return "unavailable";
-    const { soft } = atlasModerationThresholds();
-    const unsafe = moderation.hits.some((hit) => hit.category !== "face" && hit.score >= soft);
-    return moderation.verdict === "rejected" || unsafe ? "rejected" : "accepted";
+    if (moderation.verdict === "rejected" || collectionAvatarRefused(moderation.hits)) {
+      // The reader only sees "pick another photo"; this is the one place that says why.
+      console.warn("[atlas/collections/avatar] rejected", { verdict: moderation.verdict, hits: moderation.hits });
+      return "rejected";
+    }
+    return "accepted";
   },
   async uploadImage(userId, collectionId, bytes) {
     return uploadCollectionAvatar(userId, collectionId, Buffer.from(bytes));

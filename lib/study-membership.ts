@@ -14,8 +14,24 @@
 import type { MembershipPolicy, MembershipTier } from "@/lib/atlas/membership";
 import type { QueueThemeScope } from "@/lib/study-sources";
 
-/** Category ids (words.category), not word lists: newly published words join automatically. */
-export const FREE_STUDY_CATEGORIES: readonly string[] = ["fruits", "bedroom"];
+/**
+ * Category ids (words.category), not word lists: newly published words join automatically.
+ *
+ * All of the 留學生 主題組合 plus the original two (ADR-0020). Kept as its own list,
+ * not derived from the preset: what is free is pricing, what is in a preset is
+ * curation. Removing a theme from here takes its learned words out of a
+ * non-member's reviews too.
+ */
+export const FREE_STUDY_CATEGORIES: readonly string[] = [
+  "fruits",
+  "bedroom",
+  "campus",
+  "identity-documents",
+  "bank",
+  "postal-services",
+  "station-commuting",
+  "convenience-store",
+];
 
 export interface StudyAccess {
   tier: MembershipTier;

@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "series": "airport",
+  "reviewer": "Codex individual concept, trilingual sentence and lexical-span review",
+  "scope": "All 20 words and 40 examples individually judged; original 8 exact snapshots verified before reuse. No independent human review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "airport-terminal",
+      "verdict": "pass",
+      "reason": "空港ターミナル限定旅客建築，與整座機場及個別登機口分開；讀音保留ターミナル書寫。",
+      "sourceSha256": "0cce5ae611bb688e7d82a5879fea2fccdd65924a9a3042390a46e5198c5c1ea4"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-terminal",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在航廈前會合是單一直接請求，三語位置相同。",
+      "sourceSha256": "ba0792a9d7f3eafff485e74caefc1d8d8a8565528beb9471ad1fca6b31952c28"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-terminal",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "航空公司使用不同航廈而先確認的原因關係自然，沒有把不同機場混為一談。",
+      "sourceSha256": "a581a0adaecc36dda70136d6620cf19bd0e3f436eddc1cb72234ed337ded8093"
+    },
+    {
+      "kind": "word",
+      "wordId": "check-in-counter",
+      "verdict": "pass",
+      "reason": "チェックインカウンター指航空報到櫃檯，釋義與候機區的搭乗口區別明確。",
+      "sourceSha256": "fc65b6f08c3db6023df9cd619a6a9c3a8a44312f8be2e9e7f87e9711407a2256"
+    },
+    {
+      "kind": "example",
+      "wordId": "check-in-counter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問櫃檯位置是常見簡單問句，三語都是位置詢問。",
+      "sourceSha256": "6030a81de807d3def727830c41418f7f9732ffb6d509a8924c688d4536985f42"
+    },
+    {
+      "kind": "example",
+      "wordId": "check-in-counter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "尚未開放與附近等候形成原因關係，不加入固定開放時間的規則。",
+      "sourceSha256": "9d2635bbee17ff3c4599b989e90746b965370af356e0fc8fe091bae035402905"
+    },
+    {
+      "kind": "word",
+      "wordId": "boarding-pass",
+      "verdict": "pass",
+      "reason": "搭乗券對應boarding pass，明確不是護照或預訂確認信，圖示紙本只是其中一種形式。",
+      "sourceSha256": "f48c1ddd03e8ef9fae2e0e73757de4f9b5e5b3f8a9909b9e6c669889eddb4856"
+    },
+    {
+      "kind": "example",
+      "wordId": "boarding-pass",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "出示登機證的請求符合機場使用，英日中指向相同憑證。",
+      "sourceSha256": "6dd1701f2844f66930c307602474f47ec89be3e2cfa8df3bdf1a1e9c9f7866b5"
+    },
+    {
+      "kind": "example",
+      "wordId": "boarding-pass",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "擔心手機電量不足而列印的原因成立，三語都保留同一預防行為。",
+      "sourceSha256": "aa5ff8c5660978dde4f3ea7bcb60ccd5273b690813df84a1ef850c563410ebe8"
+    },
+    {
+      "kind": "word",
+      "wordId": "security-checkpoint",
+      "verdict": "pass",
+      "reason": "保安検査場定位安全檢查，未與出入國審查混用，圖片必須含人身及行李檢查設備。",
+      "sourceSha256": "4896478101ffed5ec4b83f01311c0272b97dc3637994a88c5351b43dc8e67dff"
+    },
+    {
+      "kind": "example",
+      "wordId": "security-checkpoint",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "直接前往安檢處的請求符合流程，go與進む在此均為前往。",
+      "sourceSha256": "c28edd7e83d1d62bed97ccf2f4a985a9b073bd1319c29dd9e4042e59c2b976c9"
+    },
+    {
+      "kind": "example",
+      "wordId": "security-checkpoint",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "排隊人多而提早前往形成實質因果，沒有虛構普遍時間規定。",
+      "sourceSha256": "2ac0d9e0b56310208411faa0a9ed1b13a46c1f4d3b44fb1f9e616bae5dbd5652"
+    },
+    {
+      "kind": "word",
+      "wordId": "boarding-gate",
+      "verdict": "pass",
+      "reason": "搭乗口為登機入口，與辦理報到的櫃檯和整棟航廈分開。",
+      "sourceSha256": "75965e28aed37907424549d61813d633f1e4c756bd8d889c33a4a7ee69708b6e"
+    },
+    {
+      "kind": "example",
+      "wordId": "boarding-gate",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在登機口等朋友是直接日常描述，三語主客體一致。",
+      "sourceSha256": "5943a773ce70c986cd0cad509d891ac028554fa63bdeef11f0f73610a00299da"
+    },
+    {
+      "kind": "example",
+      "wordId": "boarding-gate",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "登機口變更導致購物前重查告示牌，包含原因及時間關係，沒有套用車站發車案內板詞頭。",
+      "sourceSha256": "b3b64c7588db4feca4e5b4b8df17229bc9197c7a57e7d2585d6ea8da04c63f78"
+    },
+    {
+      "kind": "word",
+      "wordId": "baggage-carousel",
+      "verdict": "pass",
+      "reason": "ターンテーブル限定機場行李輸送帶語境，英文baggage carousel排除唱盤；成田抵達流程使用此詞。",
+      "sourceSha256": "3e3a3eae050dcdd89252462858b84294a3162cd15c3cceb77307e58c2a9430d8"
+    },
+    {
+      "kind": "example",
+      "wordId": "baggage-carousel",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "看見自己的包在轉盤上是具體單一場景，三語位置一致。",
+      "sourceSha256": "d7fb13e67537c6107284243b3ce18e751eeb3429da8fcb7d7d7ab120eb1f682f"
+    },
+    {
+      "kind": "example",
+      "wordId": "baggage-carousel",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "相似行李箱造成先看標籤再拿取的理由清楚，三語均保留先確認再拿的順序。",
+      "sourceSha256": "ce4a6285dbe22e778f9df214c9d2a089dacff82b3017a316fded0370c3354a66"
+    },
+    {
+      "kind": "word",
+      "wordId": "baggage-cart",
+      "verdict": "pass",
+      "reason": "手荷物カート是旅客推行的行李車，與超市購物車及作業車分開，讀音保留カート。",
+      "sourceSha256": "1ffec614d77c81566fc0926901ad006e4e0fb1c2e5cb7abb24c6b2f8c70cd015"
+    },
+    {
+      "kind": "example",
+      "wordId": "baggage-cart",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把包放上推車是直接請求，三語動作及目標一致。",
+      "sourceSha256": "afb30bbf06595fd29e9158929df2cb0323eb12c58c0b314f8ccef4c2bd4e70f7"
+    },
+    {
+      "kind": "example",
+      "wordId": "baggage-cart",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "行李重所以改用推車到巴士站，三語原因及終點相同，沒有宣稱可帶出特定限制區域。",
+      "sourceSha256": "ecc99bad6cf6b3d66a4745fe2484ce05e275faea818df2d3d1c58ce1d4235c7e"
+    },
+    {
+      "kind": "word",
+      "wordId": "baggage-claim-tag",
+      "verdict": "pass",
+      "reason": "手荷物引換証指旅客留存的託運憑證，與箱上行李條及聯絡資料吊牌有別，外觀以收據為主。",
+      "sourceSha256": "4d32c580837c311dc7df7a29e94b42be11d2ce16ff6bdbf5eeba92a8e9670e02"
+    },
+    {
+      "kind": "example",
+      "wordId": "baggage-claim-tag",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "保管領取憑證的直接請求合理，三語沒有誤稱登機證。",
+      "sourceSha256": "5a346bf3f38a4ace9e42864f19995de48303590b61762bb490dcb6edce1a275b"
+    },
+    {
+      "kind": "example",
+      "wordId": "baggage-claim-tag",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "行李未到而向人員出示憑證協助查找，三語否定、因果及目的相符。",
+      "sourceSha256": "69cc34856de1b0dac891001f48863ef6dd7a87ab33289b67a58eb6acbe3512f9"
+    },
+    {
+      "kind": "word",
+      "wordId": "suitcase",
+      "verdict": "pass",
+      "reason": "スーツケース為旅行箱，與一般かばん及託運憑證分開；輪式圖像只是常見形式而非定義必要條件。",
+      "sourceSha256": "dd4d64039bbe24a25d7dc7b7911a1bf3b188f89e0c247984d4951131c6107dab"
+    },
+    {
+      "kind": "example",
+      "wordId": "suitcase",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "行李箱很重是單一直接描述，三語一致。",
+      "sourceSha256": "bd7937bba3edf2e73f30367e1409657662c58e458f62a4ebc4558abe3414124e"
+    },
+    {
+      "kind": "example",
+      "wordId": "suitcase",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "比預想重而取出衣物，具有比較與原因，沒有加入固定航空重量規定。",
+      "sourceSha256": "074e1015d96aa245ab89f29d021e728b4c68c1bf1db8e88f1508e8edbff755f9"
+    },
+    {
+      "kind": "word",
+      "wordId": "self-check-in-kiosk",
+      "verdict": "pass",
+      "reason": "自動チェックイン機的核心是報到與票券終端，與自動手荷物預け機及便利商店マルチメディア端末不同。",
+      "sourceSha256": "8eae1511a8ee3e6a1ee6052924936ea4fae1f76476aed27223fe92b285ed6de6"
+    },
+    {
+      "kind": "example",
+      "wordId": "self-check-in-kiosk",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "用機器列印登機證為直接可想像的操作，不保證所有機型功能。",
+      "sourceSha256": "278b25741b1d61aa542d0633571bba3f74cbf811602f0a5d1340d94f5d2ace8f"
+    },
+    {
+      "kind": "example",
+      "wordId": "self-check-in-kiosk",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "首次使用而請人員教操作，原因與請求的三語關係一致。",
+      "sourceSha256": "45a5e848d84b2848872fb6ab00d52b5f2d6063774f50ec0696131b530e22891a"
+    },
+    {
+      "kind": "word",
+      "wordId": "self-service-bag-drop",
+      "verdict": "pass",
+      "reason": "自動手荷物預け機依ANA及成田用語，定義要求自動託運輸送功能，非報到機或普通輸送帶。",
+      "sourceSha256": "1e5dae7ebb94cfff92c98d2826103dffaff83558494dee9b7581e2a418816310"
+    },
+    {
+      "kind": "example",
+      "wordId": "self-service-bag-drop",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "機器在旁邊是直接空間描述，三語沒有附加流程要求。",
+      "sourceSha256": "5e61ca8ed5735e6c683ea2d3de4f34831ae254c74c65b80bb3ca36353e0e8942"
+    },
+    {
+      "kind": "example",
+      "wordId": "self-service-bag-drop",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "讀懂畫面指示再放行李符合操作情境，以時間先後構成進階句，不宣稱普遍機型步驟。",
+      "sourceSha256": "f68d968e6c536ea9e0ff6b334a1a3406a62bd7932ac6f6283d5cd4939a17affc"
+    },
+    {
+      "kind": "word",
+      "wordId": "flight-information-display",
+      "verdict": "pass",
+      "reason": "フライト案内板限定航空資訊，與既有車站departure-board／発車案内板分開，圖像須有航班線索。",
+      "sourceSha256": "a6c13f32b85d21a33f9174409ddd890c446573052c279b0cd0f3d36179be021b"
+    },
+    {
+      "kind": "example",
+      "wordId": "flight-information-display",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "看板確認登機口為直接機場行為，三語一致。",
+      "sourceSha256": "5cb37ca5be342d86bc52595e51333d204f4c8dc15fe61a82310b121c31ddeb9a"
+    },
+    {
+      "kind": "example",
+      "wordId": "flight-information-display",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先看資訊再找座位保留明確時間順序，為進階句而非單純拉長形容詞。",
+      "sourceSha256": "4c98dd73b1168b0e2d2cd886a466602f70e5c2881061a97f74e4a9d90a12614b"
+    },
+    {
+      "kind": "word",
+      "wordId": "jet-bridge",
+      "verdict": "pass",
+      "reason": "ボーディングブリッジ對應可動封閉通道，與橋梁、露天登機梯和登機口本身區別清楚。",
+      "sourceSha256": "a938661cc6a62a1015e7b5d9782f14401393db5c2dc349ebfc2a9e7e1d041bc1"
+    },
+    {
+      "kind": "example",
+      "wordId": "jet-bridge",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "步行通過空橋是旅客常見使用，三語動作相同。",
+      "sourceSha256": "1a7f4ec81b1121bcfbf5e90d93735fddc06afab025cb3a46f9e3381a90cc2cc4"
+    },
+    {
+      "kind": "example",
+      "wordId": "jet-bridge",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "下雨仍未淋濕包含讓步及結果，原因來自封閉通道而非一般露天橋。",
+      "sourceSha256": "c7557c55da08b24dbf16bbdb47dc612fceae9160509a9ed3587803db8834acc0"
+    },
+    {
+      "kind": "word",
+      "wordId": "passport-control-counter",
+      "verdict": "pass",
+      "reason": "出入国審査カウンター限定人工審查窗口，與自動閘門、海關及保安檢查不同，沒有概括所有旅客必走人工窗口。",
+      "sourceSha256": "fbffc7f59b21190654cb66bbab16863decd920a06be2266df8e51c2e151a817e"
+    },
+    {
+      "kind": "example",
+      "wordId": "passport-control-counter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "櫃檯出示護照是直接旅行情境，三語一致。",
+      "sourceSha256": "dd1209b14a23ba88d4aa903ad710c9f8191e931e35be41ecacb65f4e7884b858"
+    },
+    {
+      "kind": "example",
+      "wordId": "passport-control-counter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "確認指示後選擇審查窗口隊伍，具時間先後且避免列出易變的國籍分流規則。",
+      "sourceSha256": "4a724c23db87574fe63fa66fa9792bbc3c4c25c0ecfeabfdc5e9611eea395c5c"
+    },
+    {
+      "kind": "word",
+      "wordId": "customs-counter",
+      "verdict": "pass",
+      "reason": "税関カウンター是設施而非既有customs-officer職業，與出入國審查分開；圖示檢查台為其使用場景。",
+      "sourceSha256": "fed6b28cc64e2fd10b17a2e1b2a4df356b17e1f5eef7da0c5e42f94d64d4fbab"
+    },
+    {
+      "kind": "example",
+      "wordId": "customs-counter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "在海關櫃檯打開行李箱是合理檢查情境，不表示每次旅行都需要開箱。",
+      "sourceSha256": "60c1b9f17ff2aba7ebea5ee212cf508c6b6ffa783ea5f4070de9c652c7ffabce"
+    },
+    {
+      "kind": "example",
+      "wordId": "customs-counter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "人員詢問內容而開箱展示有因果，三語同一動作，未給出法規性建議。",
+      "sourceSha256": "c1401ebe1c883c792559ecba8acaff45a256f67996a3f87dd915ceefd59951c1"
+    },
+    {
+      "kind": "word",
+      "wordId": "duty-free-shop",
+      "verdict": "pass",
+      "reason": "免税店採機場零售語境，明確限定適用條件而不提供現行額度或泛稱所有商品免稅。",
+      "sourceSha256": "094cef9666df1446272101f04f21f45b6a48e841b7a4ede19de4a9cf1a741133"
+    },
+    {
+      "kind": "example",
+      "wordId": "duty-free-shop",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "購買香水是機場免稅店常見直接場景，三語商品一致。",
+      "sourceSha256": "4e45b5a3834bffdb1f2a70cf9d351d4f5b953f6ee11312b0a7768a9dedc724d1"
+    },
+    {
+      "kind": "example",
+      "wordId": "duty-free-shop",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先比價再決定是否購買有順序及間接疑問，沒有宣稱免稅一定較便宜。",
+      "sourceSha256": "1ada7e138c21ed728857c8ee3c8f16e95397fe946d86d1c717bb562781df8173"
+    },
+    {
+      "kind": "word",
+      "wordId": "airport-lounge",
+      "verdict": "pass",
+      "reason": "空港ラウンジ為專用休息室，與一般候機座位區及餐廳不同；未宣稱免費或一律可入內。",
+      "sourceSha256": "dcec70fca51546963385369b37e3fa303b31265afa1e77c94d977d230f0af592"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-lounge",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "休息室喝咖啡為直接可想像的使用，三語一致。",
+      "sourceSha256": "378a2ba632967cc8e997c6d72ba8ed16b176bc03c626c7b0b0ae448785d5e2f9"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-lounge",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "航班延誤所以待到接近登機時間有因果及時間終點，不把延誤等同自動取得入場資格。",
+      "sourceSha256": "54007a35f1de50026ff67315f5ecbde0a689d811bd172d387b278e739b296fdc"
+    },
+    {
+      "kind": "word",
+      "wordId": "airport-shuttle-bus",
+      "verdict": "pass",
+      "reason": "空港シャトルバス可含相關設施接送，釋義清楚限定本圖航廈接駁；非既有一般市區巴士改名。",
+      "sourceSha256": "24057030d15ff847ef4fa2c6f503e7773fd0dc065fdd8e0763e24f18c9aec15b"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-shuttle-bus",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "巴士在入口外是直接定位，三語同一位置。",
+      "sourceSha256": "d7e6d37c29887360c346b219ef62911751fc662e27953391ed78dc1723fe786e"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-shuttle-bus",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "需到另一航廈所以搭巴士而非步行，原因與選擇對照成立，未宣稱所有航廈都可步行或免費接駁。",
+      "sourceSha256": "69d74b9cc852c2397d202b03aff1374f97ea070aae37dece137967e5abe36004"
+    },
+    {
+      "kind": "word",
+      "wordId": "runway",
+      "verdict": "pass",
+      "reason": "滑走路對應起降跑道而非誘導路，圖片要求白色中心線與跑道端線而不以一般公路代替。",
+      "sourceSha256": "d8c4c1c2b61e8388ea3a832f8d2620f486fe70168a9e02fce80d07f8aa748ff9"
+    },
+    {
+      "kind": "example",
+      "wordId": "runway",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "從窗邊觀看跑道是旅客可達情境，沒有鼓勵進入管制區域。",
+      "sourceSha256": "0d065f9cb0e1a216d45ff8c5b5b3fc7630e3cf3053eb00d00c8b92c44a9548dd"
+    },
+    {
+      "kind": "example",
+      "wordId": "runway",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "窗邊觀看至飛機起飛保留時間終點，日文離陸する與英文take off一致。",
+      "sourceSha256": "253d3ace561c8d010ffcf16137e982ebc303867d05c968af94fc747e7dbc0474"
+    },
+    {
+      "kind": "word",
+      "wordId": "airport-control-tower",
+      "verdict": "pass",
+      "reason": "管制塔為高處全向可視的航空管制設施，與觀景塔、燈塔及通訊鐵塔不同；英文control tower在機場分類語境明確。",
+      "sourceSha256": "45d242efe1b4a3b383369754d4aaffa0cb1708acc5e058063f8a217e2572974c"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-control-tower",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "指認窗外塔的位置是簡單觀察，三語相符。",
+      "sourceSha256": "20ed38878d3d003eab74a514b593fb761115864d4ecd88e8a81a7c4ddf8fd393"
+    },
+    {
+      "kind": "example",
+      "wordId": "airport-control-tower",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "等待搭機時拍攝塔是旅客可想像場景，時間附屬句帶出進階結構而非職業工作模板。",
+      "sourceSha256": "25414e580a74312a30ec732a7a32d605ed1560df201a7679747cd2052f0e18f3"
+    }
+  ]
+}

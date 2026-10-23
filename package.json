@@ -184,7 +184,15 @@
     "identity-documents:audio:verify": "node scripts/verify-identity-documents-audio.mjs",
     "identity-documents:prepare-publish": "node --env-file=.env.local scripts/prepare-identity-documents-publish-plan.mjs",
     "identity-documents:publish": "tsx --env-file=.env.local scripts/publish-identity-documents-series.ts",
-    "identity-documents:content": "node scripts/prepare-identity-documents-content.mjs"
+    "identity-documents:content": "node scripts/prepare-identity-documents-content.mjs",
+    "airport:prepare-images": "node scripts/prepare-airport-images.mjs",
+    "airport:review": "node scripts/prepare-airport-semantic-review.mjs",
+    "airport:audio:plan": "node scripts/plan-airport-audio.mjs",
+    "airport:audio:generate:local": "node --env-file=.env.local scripts/generate-airport-candidate-audio.mjs",
+    "airport:audio:verify": "node scripts/verify-airport-audio.mjs",
+    "airport:prepare-publish": "node --env-file=.env.local scripts/prepare-airport-publish-plan.mjs",
+    "airport:publish": "tsx --env-file=.env.local scripts/publish-airport-series.ts",
+    "airport:content": "node scripts/prepare-airport-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex original PNG individual visual review",
+  "items": [
+    {
+      "id": "airport-terminal",
+      "decision": "pass",
+      "reason": "重製後航廈兩端外牆與登機橋完整可見，玻璃旅客建築為主體、空側飛機提供辨識線索；不以整座機場或跑道代替航廈。道路底座邊緣接近畫邊，正式WebP另留白。",
+      "sourceSha256": "2ed9193096ad7c7d0ad574db2c04839fa6ef474bc13b6c5d8333d17c41618562"
+    },
+    {
+      "id": "check-in-counter",
+      "decision": "pass",
+      "reason": "櫃檯工作站旁有低位行李秤重輸送帶及行李箱，上方航班螢幕具機場線索；沒有登機閘門，與登機口可分辨。",
+      "sourceSha256": "0386c923a235a53920c8411facffb0119aaac642abf5b1d8a13813851b721f82"
+    },
+    {
+      "id": "boarding-pass",
+      "decision": "pass",
+      "reason": "紙本票券有可撕副聯、BOARDING PASS、登機口及座位資訊；清晰區別無座位資訊的行李憑證。為簡化教學示意，非實際可用票券。",
+      "sourceSha256": "f7cd36f38c6da49841c334ec75c67913cb4ef6432ba8e146ea32b683a9c56cce"
+    },
+    {
+      "id": "security-checkpoint",
+      "decision": "pass",
+      "reason": "X光行李隧道、托盤輸送帶與旁邊人身檢測門同時完整呈現，符合安檢場而非海關或護照查驗。",
+      "sourceSha256": "45369aad5c7288679ad7028d333a585637004132810d77b79aa02f981604d786"
+    },
+    {
+      "id": "boarding-gate",
+      "decision": "pass",
+      "reason": "登機證掃描閘門、GATE 12及連向飛機的空橋入口共同辨識登機口；沒有行李秤重櫃檯。標準導引字樣屬必要線索。",
+      "sourceSha256": "888da4728b565d5902d2b3fcb832c6850d457ea63c0d865851beb4a16eb9d7f6"
+    },
+    {
+      "id": "baggage-carousel",
+      "decision": "pass",
+      "reason": "橢圓連續黑色分片輸送帶、不鏽鋼邊緣與兩件託運箱，符合抵達區行李轉盤；不是唱盤或報到輸送帶。",
+      "sourceSha256": "0cc59ee2544c64693fc120f5419deab45ce2db87f6ad8e7c1ff076771471b8ef"
+    },
+    {
+      "id": "baggage-cart",
+      "decision": "pass",
+      "reason": "不鏽鋼手推架、上方小籃及下方大型低平台完整，底輪可辨；符合機場行李車，沒有超市大型深籃。",
+      "sourceSha256": "0ff925ca283b989e387479b4942e0cf5852f6ac85f22323b5e4d9d65d660be7f"
+    },
+    {
+      "id": "baggage-claim-tag",
+      "decision": "pass",
+      "reason": "旅客留存收據佔主體，與旁邊箱上行李條的編號相符；沒有座位或登機口資訊。NH217是航班代碼線索，無航空公司標誌，非有效憑證。",
+      "sourceSha256": "f80191ec44b19b48a2a2380cac7907c67d27c18a7c3ea0249e543ee305214925"
+    },
+    {
+      "id": "category-airport",
+      "decision": "pass",
+      "reason": "航廈、飛機及空橋組成單一機場場景，行李箱提供旅客線索；白底、無品牌、主體輪廓清楚。分類封面允許多物件場景。",
+      "sourceSha256": "194f1dc1f5a5e42857bab4899b5c2ac6be4f309ed1c9abd0142d34aa7c4d0f5c"
+    },
+    {
+      "id": "suitcase",
+      "decision": "pass",
+      "reason": "單件硬殼旅行箱完整，拉桿、拉鍊、側提把及四輪可辨；白底無品牌，沒有把一般背包當成行李箱。",
+      "sourceSha256": "6ddf1fcb8fe82dfa3ddacaf092e768d4b890c725ed7a875669b71656dc471e62"
+    },
+    {
+      "id": "self-check-in-kiosk",
+      "decision": "pass",
+      "reason": "立式觸控螢幕、護照掃描平台及票券列印出口共同指向航空自助報到；未附行李輸送帶，與託運機清楚分開。",
+      "sourceSha256": "963d9ecea55fa7db6f50bbcdf1b09a55d7a3cb5a951a3145c6b6902c38a3e741"
+    },
+    {
+      "id": "self-service-bag-drop",
+      "decision": "pass",
+      "reason": "行李位於機器輸送帶上，雙側安全門及旁側自助螢幕與條碼掃描器清楚，無人工櫃檯，符合自助託運用途。",
+      "sourceSha256": "4401a1b26dc1fd3cdb7efe2580ae81eb53f595c605339e953a584b860eb8d9c7"
+    },
+    {
+      "id": "flight-information-display",
+      "decision": "pass",
+      "reason": "FLIGHTS、飛機圖示、航班代碼、目的地、登機口及狀態欄位清楚；與既有車站發車案內板不同。資料屬虛構示意，非即時班表。",
+      "sourceSha256": "9e78a5e613f48f8b99eb5e2537ed3ee3fc8ce506aec4e8b08f0413e80f29963d"
+    },
+    {
+      "id": "jet-bridge",
+      "decision": "pass",
+      "reason": "外部視角呈現封閉伸縮玻璃廊道、機門端風琴罩、支柱與底輪，整段主橋可見。左右局部航廈牆與機身為必要連接背景，不把空橋當成一般橋梁。",
+      "sourceSha256": "ba757ea000074a7353f91a20e1c9f9b89fc705751ab8608c8f03fd74d572c78b"
+    },
+    {
+      "id": "passport-control-counter",
+      "decision": "pass",
+      "reason": "IMMIGRATION標示、玻璃隔板、旅券傳遞開口與掃描工作站共同辨識人工出入國審查；沒有行李檢查台或X光隧道。",
+      "sourceSha256": "3d7f3beca0fc81db5da54f9377c5246d92332f1a4ceef6769fe693408cc5cbc6"
+    },
+    {
+      "id": "customs-counter",
+      "decision": "pass",
+      "reason": "CUSTOMS標示、低位寬檢查台及打開的行李箱構成海關檢查情境，沒有把玻璃護照審查亭當成海關。",
+      "sourceSha256": "4e01ddd14e4c30ba77a5fc3e06c1db0eff01d2df7efaf482b18c1ac8be1dfdf5"
+    },
+    {
+      "id": "duty-free-shop",
+      "decision": "pass",
+      "reason": "DUTY FREE標示、香水與化妝品陳列及收銀區辨識機場免稅零售店；無品牌標誌，店舖外框完整，無多餘周邊環境。",
+      "sourceSha256": "4339357bbd29353b1ed5e732f62e9e7c8066ec2413569642bd333d1d7666ca1d"
+    },
+    {
+      "id": "airport-lounge",
+      "decision": "pass",
+      "reason": "四張扶手椅、小桌及飲品區構成休息室，窗外飛機與LOUNGE標示補足機場語境；沒有登機閘口或餐廳座席。",
+      "sourceSha256": "7633cf3c14cc27a41105c257b83604989d5f97ae882824a2f5496e10d17aa36d"
+    },
+    {
+      "id": "airport-shuttle-bus",
+      "decision": "pass",
+      "reason": "完整低地板巴士、左側旅客門、機場飛機圖示及大窗符合日本航廈接駁車形式；未畫成有右側乘客門的靠右行駛車種。",
+      "sourceSha256": "c0ccccd538b5fd428c4d2ea76f8395f3675f74d19c5f44a2550d43e2dc6207f6"
+    },
+    {
+      "id": "airport-control-tower",
+      "decision": "pass",
+      "reason": "窄高塔身、頂端外傾環視玻璃管制室與天線完整，無燈塔燈室或觀景台遊客設施；白底單一塔體輪廓清楚。",
+      "sourceSha256": "b30e5cd126a57fac8ee5890456030ee996e31a2c91453dc3c70df0358ae0da67"
+    },
+    {
+      "id": "runway",
+      "decision": "pass",
+      "reason": "修正版保留長形起降道、白色中心虛線與兩端端線；邊燈已由錯誤的滑行道藍燈改為白燈，兩端跑道號16/34互為反向。完整道路輪廓有白底留白，無車流或誘導路誤認線索。",
+      "sourceSha256": "947f97511733cb6987a76bf2388aed8454775cfedd1b17c8e22075094f56a648"
+    }
+  ]
+}

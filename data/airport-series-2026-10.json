@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "series": "airport",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "20 airport concepts, including the user-approved 12-word expansion. Existing passport, airplane and station departure-board remain in their categories. Production Storage/DB, commit and deployment require separate authorization.",
+  "category": {
+    "id": "airport",
+    "name": "Airport",
+    "nameZh": "機場",
+    "nameJa": "空港",
+    "emoji": "✈️",
+    "description": "從報到、安檢、登機到領取行李的機場物件與設施",
+    "descriptionEn": "Airport facilities and items for check-in, security, boarding and baggage reclaim",
+    "descriptionJa": "チェックイン、保安検査、搭乗、手荷物の受け取りに使う空港の設備や持ち物",
+    "color": "from-sky-100 to-indigo-100",
+    "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/category-airport-v1-eac9156d84d9.webp"
+  },
+  "references": [
+    "https://www.narita-airport.jp/ja/airportguide/inter-dep/",
+    "https://www.narita-airport.jp/ja/airportguide/security/security-check/",
+    "https://www.narita-airport.jp/ja/airportguide/dom-arr/",
+    "https://www.narita-airport.jp/ja/airportguide/inter-arr/",
+    "https://www.narita-airport.jp/ja/service/ud/guide/",
+    "https://www.ana.co.jp/ja/jp/guide/boarding-procedures/baggage/international/baggagedrop/"
+  ],
+  "entries": [
+    {
+      "id": "airport-terminal",
+      "word": "airport terminal",
+      "chinese": "航廈",
+      "chineseDefinition": "機場內供旅客辦理報到、出發與抵達手續的建築物；不是整座機場。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈer.pɔːrt ˈtɝː.mə.nəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "航廈",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A passenger building at an airport used for arrivals, departures and flight services.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で搭乗手続きや出発・到着のために使う旅客用の建物。空港全体ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Meet me outside the airport terminal.",
+          "ja": "空港ターミナルの前で会いましょう。",
+          "zh": "我們在航廈前會合吧。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Airlines use different airport terminals, so I checked which one to go to before leaving home.",
+          "ja": "航空会社によって使う空港ターミナルが違うので、家を出る前に行き先を確認しました。",
+          "zh": "不同航空公司使用的航廈不同，所以我出門前先確認了該去哪裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "空港ターミナル",
+      "jaReading": "くうこうターミナル",
+      "jaReadingSegments": [
+        {
+          "text": "空港ターミナル",
+          "ruby": "くうこうターミナル"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/airport-terminal-v1-69defb206fda.webp"
+    },
+    {
+      "id": "check-in-counter",
+      "word": "check-in counter",
+      "chinese": "報到櫃檯",
+      "chineseDefinition": "機場內由航空公司辦理搭機報到及行李託運的櫃檯。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃek.ɪn ˌkaʊn.tɚ/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "報到櫃檯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airline service desk at an airport where passengers check in and hand over checked baggage.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で航空会社の搭乗手続きをしたり、荷物を預けたりする窓口。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Where is the check-in counter?",
+          "ja": "チェックインカウンターはどこですか。",
+          "zh": "報到櫃檯在哪裡？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The check-in counter was not open yet, so we waited on a nearby bench.",
+          "ja": "チェックインカウンターがまだ開いていなかったので、近くのベンチで待ちました。",
+          "zh": "報到櫃檯還沒開放，所以我們在附近的長椅上等候。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "チェックインカウンター",
+      "jaReading": "チェックインカウンター",
+      "jaReadingSegments": [
+        {
+          "text": "チェックインカウンター",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/check-in-counter-v1-8f7a6435d616.webp"
+    },
+    {
+      "id": "boarding-pass",
+      "word": "boarding pass",
+      "chinese": "登機證",
+      "chineseDefinition": "完成搭機報到後供安檢及登機確認的憑證，可為紙本或電子形式；圖示紙本。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɔːr.dɪŋ pæs/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "登機證",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A paper or electronic pass issued after check-in and used for security and boarding.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "搭乗手続き後に発行され、保安検査や搭乗の際に確認する券。紙や電子の形式がある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please show your boarding pass.",
+          "ja": "搭乗券を見せてください。",
+          "zh": "請出示你的登機證。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was worried that my phone battery might run out, so I printed my boarding pass.",
+          "ja": "スマホの電池が切れると困るので、搭乗券を印刷しておきました。",
+          "zh": "我擔心手機沒電會很麻煩，所以事先印好了登機證。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "搭乗券",
+      "jaReading": "とうじょうけん",
+      "jaReadingSegments": [
+        {
+          "text": "搭乗券",
+          "ruby": "とうじょうけん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/boarding-pass-v1-85bf8562fa0f.webp"
+    },
+    {
+      "id": "security-checkpoint",
+      "word": "security checkpoint",
+      "chinese": "安檢處",
+      "chineseDefinition": "機場內對旅客及隨身行李進行安全檢查的區域；不是護照查驗或海關。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/sɪˈkjʊr.ə.ti ˈtʃek.pɔɪnt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "安檢處",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airport area where passengers and their cabin baggage undergo security screening.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で旅客の身体や機内持ち込み手荷物の安全確認を行う場所。出入国審査や税関とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please go to the security checkpoint.",
+          "ja": "保安検査場へ進んでください。",
+          "zh": "請前往安檢處。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "There was a long line at the security checkpoint, so we went there earlier than planned.",
+          "ja": "保安検査場に長い列ができていたので、予定より早く向かいました。",
+          "zh": "安檢處排了很長的隊伍，所以我們比原定時間更早前往。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "保安検査場",
+      "jaReading": "ほあんけんさじょう",
+      "jaReadingSegments": [
+        {
+          "text": "保安検査場",
+          "ruby": "ほあんけんさじょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/security-checkpoint-v1-9df703aaf5d2.webp"
+    },
+    {
+      "id": "boarding-gate",
+      "word": "boarding gate",
+      "chinese": "登機口",
+      "chineseDefinition": "機場候機區內讓旅客驗證登機證並進入飛機的出入口。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbɔːr.dɪŋ ɡeɪt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "登機口",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The airport departure-area entrance where passengers are admitted to board their aircraft.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港の出発エリアで搭乗券を確認し、飛行機に乗るために通る入口。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I am waiting at the boarding gate.",
+          "ja": "搭乗口で待っています。",
+          "zh": "我正在登機口等候。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The boarding gate had changed, so I checked the display again before shopping.",
+          "ja": "搭乗口が変更になったので、買い物の前にもう一度案内表示を確認しました。",
+          "zh": "登機口變更了，所以我購物前再次確認了指示看板。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "搭乗口",
+      "jaReading": "とうじょうぐち",
+      "jaReadingSegments": [
+        {
+          "text": "搭乗口",
+          "ruby": "とうじょうぐち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/boarding-gate-v1-76ea9d1f32d5.webp"
+    },
+    {
+      "id": "baggage-carousel",
+      "word": "baggage carousel",
+      "chinese": "行李轉盤",
+      "chineseDefinition": "機場行李領取區用來循環輸送抵達旅客託運行李的轉盤式輸送帶。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæɡ.ɪdʒ ˌker.əˈsel/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行李轉盤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A circulating conveyor at airport arrivals that delivers passengers’ checked baggage.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港の手荷物受取所で、預けた荷物が流れてくる回転式のコンベヤー。ここでは音楽用の機器ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My bag is on the baggage carousel.",
+          "ja": "私のかばんがターンテーブルにあります。",
+          "zh": "我的包在行李轉盤上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "There were similar suitcases on the baggage carousel, so I checked the tag before picking mine up.",
+          "ja": "ターンテーブルに似たスーツケースがあったので、自分の荷物を取る前にタグを確認しました。",
+          "zh": "行李轉盤上有相似的行李箱，所以我拿自己的行李前先確認了標籤。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ターンテーブル",
+      "jaReading": "ターンテーブル",
+      "jaReadingSegments": [
+        {
+          "text": "ターンテーブル",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/baggage-carousel-v1-2cf2e7c428e5.webp"
+    },
+    {
+      "id": "baggage-cart",
+      "word": "baggage cart",
+      "chinese": "行李推車",
+      "chineseDefinition": "機場供旅客搬運行李的手推車，具有較低的大型載物平台。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæɡ.ɪdʒ kɑːrt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行李推車",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hand-pushed airport trolley with a low platform for transporting passengers’ baggage.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で旅客が荷物を運ぶために使う、低い荷台の付いた手押しのカート。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your bag on the baggage cart.",
+          "ja": "手荷物カートにかばんを載せてください。",
+          "zh": "請把包放上行李推車。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My luggage was heavy, so I used a baggage cart to get to the bus stop.",
+          "ja": "荷物が重かったので、手荷物カートを使ってバス乗り場まで運びました。",
+          "zh": "行李很重，所以我用行李推車把它運到巴士乘車處。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "手荷物カート",
+      "jaReading": "てにもつカート",
+      "jaReadingSegments": [
+        {
+          "text": "手荷物カート",
+          "ruby": "てにもつカート"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/baggage-cart-v1-507e4d1d5e0b.webp"
+    },
+    {
+      "id": "baggage-claim-tag",
+      "word": "baggage claim tag",
+      "chinese": "行李領取憑證",
+      "chineseDefinition": "託運行李時交給旅客留存、用於確認或追查行李的憑證；不是掛在行李箱上的聯絡資料吊牌。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbæɡ.ɪdʒ kleɪm tæɡ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行李領取憑證",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A receipt retained by a passenger after checking baggage, used to identify or trace the checked bag.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "荷物を預けたときに受け取り、預けた荷物の確認や問い合わせに使う控え。持ち主の連絡先を書く名札とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please keep your baggage claim tag.",
+          "ja": "手荷物引換証を保管してください。",
+          "zh": "請保管好你的行李領取憑證。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My bag did not arrive, so I showed my baggage claim tag to a staff member and asked for help finding it.",
+          "ja": "預けた荷物が出てこなかったので、係の人に手荷物引換証を見せて探してもらいました。",
+          "zh": "託運的行李沒有出來，所以我向工作人員出示行李領取憑證，請對方幫忙找。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "手荷物引換証",
+      "jaReading": "てにもつひきかえしょう",
+      "jaReadingSegments": [
+        {
+          "text": "手荷物引換証",
+          "ruby": "てにもつひきかえしょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/baggage-claim-tag-v1-ddecb6859b71.webp"
+    },
+    {
+      "id": "suitcase",
+      "word": "suitcase",
+      "chinese": "行李箱",
+      "chineseDefinition": "旅行時用來裝衣物與隨身物品的箱子，通常有提把，常見款式帶輪子與拉桿。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsuːt.keɪs/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行李箱",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A case for carrying clothes and belongings when travelling, often fitted with wheels and a telescopic handle.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "旅行のときに衣類や持ち物を入れて運ぶ箱型のかばん。車輪や伸縮する持ち手が付いたものが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This suitcase is heavy.",
+          "ja": "このスーツケースは重いです。",
+          "zh": "這個行李箱很重。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My suitcase was heavier than I expected, so I took out some clothes.",
+          "ja": "スーツケースが思ったより重かったので、服を何枚か取り出しました。",
+          "zh": "行李箱比我想的重，所以我取出了幾件衣服。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スーツケース",
+      "jaReading": "スーツケース",
+      "jaReadingSegments": [
+        {
+          "text": "スーツケース",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/suitcase-v1-8f1e065aa10a.webp"
+    },
+    {
+      "id": "self-check-in-kiosk",
+      "word": "self-service check-in kiosk",
+      "chinese": "自助報到機",
+      "chineseDefinition": "讓旅客自行辦理搭機報到、列印登機證等手續的機場終端設備；不同於輸送託運行李的機器。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌselfˈsɝː.vɪs ˈtʃek.ɪn ˌkiː.ɑːsk/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "自助報到機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airport terminal device where passengers check themselves in and may print a boarding pass; distinct from a bag-drop conveyor.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で旅客が自分で搭乗手続きや搭乗券の発行などを行う端末。荷物を搬送する自動手荷物預け機とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I printed my boarding pass at the self-service check-in kiosk.",
+          "ja": "自動チェックイン機で搭乗券を印刷しました。",
+          "zh": "我在自助報到機印了登機證。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "It was my first time using a self-service check-in kiosk, so I asked a staff member to show me how.",
+          "ja": "自動チェックイン機を使うのは初めてだったので、係の人に操作方法を教えてもらいました。",
+          "zh": "這是我第一次使用自助報到機，所以我請工作人員教我操作方法。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "自動チェックイン機",
+      "jaReading": "じどうチェックインき",
+      "jaReadingSegments": [
+        {
+          "text": "自動チェックイン機",
+          "ruby": "じどうチェックインき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/self-check-in-kiosk-v1-3221e3dcc3a5.webp"
+    },
+    {
+      "id": "self-service-bag-drop",
+      "word": "self-service bag drop",
+      "chinese": "自助行李託運機",
+      "chineseDefinition": "旅客依螢幕指示自行將行李送入託運輸送帶的機場設備；不是單純的報到終端。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌselfˈsɝː.vɪs bæɡ drɑːp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "自助行李託運機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airport station where passengers follow on-screen instructions to place checked baggage on an automated conveyor.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "画面の案内に従って、旅客が自分で荷物をベルトに載せて預ける空港の設備。搭乗手続き用の端末だけの機械とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The self-service bag drop is next to the counter.",
+          "ja": "自動手荷物預け機はカウンターの隣にあります。",
+          "zh": "自助行李託運機在櫃檯旁邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After reading the instructions on the self-service bag drop screen, I put my suitcase on the belt.",
+          "ja": "自動手荷物預け機の画面の案内を読んでから、スーツケースをベルトに載せました。",
+          "zh": "看過自助行李託運機螢幕上的指示後，我把行李箱放上輸送帶。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "自動手荷物預け機",
+      "jaReading": "じどうてにもつあずけき",
+      "jaReadingSegments": [
+        {
+          "text": "自動手荷物預け機",
+          "ruby": "じどうてにもつあずけき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/self-service-bag-drop-v1-ff75e14c097f.webp"
+    },
+    {
+      "id": "flight-information-display",
+      "word": "flight information display",
+      "chinese": "航班資訊看板",
+      "chineseDefinition": "顯示航班時間、目的地、登機口與運航狀態等資訊的機場看板；不是車站發車案內板。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/flaɪt ˌɪn.fɚˈmeɪ.ʃən dɪˈspleɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "航班資訊看板",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airport display listing flight times, destinations, gates and flight status.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で便の時刻、行き先、搭乗口や運航状況などを表示する案内板。駅の発車案内板とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I checked the gate on the flight information display.",
+          "ja": "フライト案内板で搭乗口を確認しました。",
+          "zh": "我在航班資訊看板上確認了登機口。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before looking for a seat, I checked the departure time on the flight information display.",
+          "ja": "席を探す前に、フライト案内板で出発時刻を確認しました。",
+          "zh": "找座位之前，我先在航班資訊看板上確認了出發時間。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "フライト案内板",
+      "jaReading": "フライトあんないばん",
+      "jaReadingSegments": [
+        {
+          "text": "フライト案内板",
+          "ruby": "フライトあんないばん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/flight-information-display-v1-18c5cc4ac75a.webp"
+    },
+    {
+      "id": "jet-bridge",
+      "word": "jet bridge",
+      "chinese": "登機空橋",
+      "chineseDefinition": "連接航廈登機口與飛機艙門、供旅客步行登機或下機的封閉式通道。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdʒet ˌbrɪdʒ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "登機空橋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An enclosed movable passage connecting an airport terminal gate to an aircraft door.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港の搭乗口と飛行機のドアをつなぎ、乗り降りのときに歩いて通る可動式の通路。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "We walked through the jet bridge.",
+          "ja": "ボーディングブリッジを歩いて渡りました。",
+          "zh": "我們步行通過了登機空橋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although it was raining, we stayed dry because we boarded through the jet bridge.",
+          "ja": "雨が降っていましたが、ボーディングブリッジを通って搭乗したので、ぬれずに済みました。",
+          "zh": "雖然在下雨，但我們經由登機空橋登機，所以沒有淋濕。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ボーディングブリッジ",
+      "jaReading": "ボーディングブリッジ",
+      "jaReadingSegments": [
+        {
+          "text": "ボーディングブリッジ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/jet-bridge-v1-433e0feff553.webp"
+    },
+    {
+      "id": "passport-control-counter",
+      "word": "passport control counter",
+      "chinese": "護照查驗櫃檯",
+      "chineseDefinition": "由出入境審查人員確認旅客護照及入出境資格的櫃檯；不同於海關行李檢查處。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæs.pɔːrt kənˌtroʊl ˌkaʊn.tɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "護照查驗櫃檯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A staffed airport counter where immigration officers inspect passports and entry or exit eligibility, distinct from customs baggage inspection.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "出入国審査の係官が旅券や入国・出国に必要な事項を確認する窓口。荷物を確認する税関とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I showed my passport at the passport control counter.",
+          "ja": "出入国審査カウンターでパスポートを見せました。",
+          "zh": "我在護照查驗櫃檯出示了護照。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After checking the sign, I joined the line for the passport control counter.",
+          "ja": "案内表示を確認してから、出入国審査カウンターの列に並びました。",
+          "zh": "確認指示看板後，我排進護照查驗櫃檯的隊伍。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "出入国審査カウンター",
+      "jaReading": "しゅつにゅうこくしんさカウンター",
+      "jaReadingSegments": [
+        {
+          "text": "出入国審査カウンター",
+          "ruby": "しゅつにゅうこくしんさカウンター"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/passport-control-counter-v1-3dd1841d4360.webp"
+    },
+    {
+      "id": "customs-counter",
+      "word": "customs counter",
+      "chinese": "海關櫃檯",
+      "chineseDefinition": "機場內辦理海關申報、詢問或行李檢查的櫃檯；不是護照查驗櫃檯。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkʌs.təmz ˌkaʊn.tɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "海關櫃檯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airport customs counter for declarations, questions or baggage examination, separate from passport control.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で税関申告の確認、問い合わせや荷物の検査などを行う窓口。出入国審査の窓口とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I opened my suitcase at the customs counter.",
+          "ja": "税関カウンターでスーツケースを開けました。",
+          "zh": "我在海關櫃檯打開了行李箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "A staff member asked about the contents at the customs counter, so I opened my bag to show them.",
+          "ja": "税関カウンターで係の人に中身を聞かれたので、かばんを開けて見せました。",
+          "zh": "海關櫃檯的工作人員詢問內容物，所以我打開包讓對方看。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "税関カウンター",
+      "jaReading": "ぜいかんカウンター",
+      "jaReadingSegments": [
+        {
+          "text": "税関カウンター",
+          "ruby": "ぜいかんカウンター"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/customs-counter-v1-c31fcec07300.webp"
+    },
+    {
+      "id": "duty-free-shop",
+      "word": "duty-free shop",
+      "chinese": "免稅店",
+      "chineseDefinition": "依適用條件免徵部分稅費販售商品的商店；此處指機場免稅購物店，不代表所有旅客或商品均適用。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌduː.tiˈfriː ʃɑːp/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "免稅店",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shop selling goods exempt from certain duties or taxes under applicable conditions; here, an airport duty-free shop.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "一定の条件で関税などの税が免除された商品を販売する店。ここでは空港の免税店を指し、すべての商品や旅客に無条件で適用される意味ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I bought perfume at the duty-free shop.",
+          "ja": "免税店で香水を買いました。",
+          "zh": "我在免稅店買了香水。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I compared prices at the duty-free shop before deciding whether to buy the perfume.",
+          "ja": "香水を買うかどうか決める前に、免税店で値段を比べました。",
+          "zh": "決定是否購買香水之前，我先在免稅店比較了價格。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "免税店",
+      "jaReading": "めんぜいてん",
+      "jaReadingSegments": [
+        {
+          "text": "免税店",
+          "ruby": "めんぜいてん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/duty-free-shop-v1-02e963c27d9d.webp"
+    },
+    {
+      "id": "airport-lounge",
+      "word": "airport lounge",
+      "chinese": "機場貴賓室",
+      "chineseDefinition": "機場內提供座位、飲品等服務的專用休息空間，使用資格或費用依設施而異。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈer.pɔːrt laʊndʒ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "機場貴賓室",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A dedicated airport seating and refreshment space with access conditions or charges that vary by facility.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港内で座席や飲み物などを利用できる専用の休憩スペース。利用条件や料金は施設によって異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I drank coffee in the airport lounge.",
+          "ja": "空港ラウンジでコーヒーを飲みました。",
+          "zh": "我在機場貴賓室喝了咖啡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My flight was delayed, so I stayed in the airport lounge until it was nearly time to board.",
+          "ja": "飛行機が遅れたので、搭乗時刻が近づくまで空港ラウンジで過ごしました。",
+          "zh": "航班延誤了，所以我在機場貴賓室待到接近登機時間。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "空港ラウンジ",
+      "jaReading": "くうこうラウンジ",
+      "jaReadingSegments": [
+        {
+          "text": "空港ラウンジ",
+          "ruby": "くうこうラウンジ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/airport-lounge-v1-380202a2e6ea.webp"
+    },
+    {
+      "id": "airport-shuttle-bus",
+      "word": "airport shuttle bus",
+      "chinese": "機場接駁巴士",
+      "chineseDefinition": "在機場及相關設施之間接送旅客的巴士；本圖與例句採航廈間接駁用途。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈer.pɔːrt ˈʃʌt.əl bʌs/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "機場接駁巴士",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A bus transporting passengers between an airport and related facilities; illustrated here as an inter-terminal shuttle.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港やその関連施設の間で旅客を運ぶバス。ここではターミナル間の移動に使う便を示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The airport shuttle bus is outside the entrance.",
+          "ja": "空港シャトルバスは入口の外にあります。",
+          "zh": "機場接駁巴士在入口外。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I needed to go to another terminal, so I took the airport shuttle bus instead of walking.",
+          "ja": "別のターミナルへ行く必要があったので、歩かずに空港シャトルバスに乗りました。",
+          "zh": "我需要前往另一個航廈，所以搭了機場接駁巴士而沒有步行。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "空港シャトルバス",
+      "jaReading": "くうこうシャトルバス",
+      "jaReadingSegments": [
+        {
+          "text": "空港シャトルバス",
+          "ruby": "くうこうシャトルバス"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/airport-shuttle-bus-v1-a7ee7b93ffc6.webp"
+    },
+    {
+      "id": "runway",
+      "word": "runway",
+      "chinese": "跑道",
+      "chineseDefinition": "機場供飛機起飛與降落使用的長條地面區域；不同於連接停機區與跑道的滑行道。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrʌn.weɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "跑道",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A long prepared strip at an airport used for aircraft take-off and landing, distinct from a taxiway.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で飛行機が離陸や着陸に使う細長い地面の区域。駐機場と滑走路を結ぶ誘導路とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I can see the runway from the window.",
+          "ja": "窓から滑走路が見えます。",
+          "zh": "我從窗戶看得到跑道。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I watched the runway from the window until the plane took off.",
+          "ja": "飛行機が離陸するまで、窓から滑走路を眺めていました。",
+          "zh": "直到飛機起飛，我都從窗戶望著跑道。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "滑走路",
+      "jaReading": "かっそうろ",
+      "jaReadingSegments": [
+        {
+          "text": "滑走路",
+          "ruby": "かっそうろ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/runway-v1-b7fdc7575c6d.webp"
+    },
+    {
+      "id": "airport-control-tower",
+      "word": "control tower",
+      "chinese": "航空管制塔",
+      "chineseDefinition": "機場內供航空管制人員觀察機場並協調飛機起降與地面活動的塔式設施。",
+      "category": "airport",
+      "partOfSpeech": "noun",
+      "pronunciation": "/kənˈtroʊl ˌtaʊ.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "航空管制塔",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An airport tower where air traffic controllers observe the airfield and coordinate aircraft take-offs, landings and ground movements.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "空港で管制官が周囲を見渡し、飛行機の離着陸や地上の動きを調整するための塔。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The control tower is over there.",
+          "ja": "管制塔はあそこにあります。",
+          "zh": "航空管制塔在那邊。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "While waiting for my flight, I took a photo of the control tower through the window.",
+          "ja": "飛行機を待っている間に、窓越しに管制塔の写真を撮りました。",
+          "zh": "等候搭機時，我隔著窗戶拍了航空管制塔的照片。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "管制塔",
+      "jaReading": "かんせいとう",
+      "jaReadingSegments": [
+        {
+          "text": "管制塔",
+          "ruby": "かんせいとう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/airport-2026-10/airport-control-tower-v1-1784f0e92a19.webp"
+    }
+  ]
+}

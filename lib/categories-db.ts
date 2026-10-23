@@ -1,4 +1,5 @@
 import { MAIN_WORD_IDENTITY_DOCUMENTS_IDS } from "./main-word-identity-documents-2026-10";
+import { MAIN_WORD_AIRPORT_IDS } from "./main-word-airport-2026-10";
 import { MAIN_WORD_POSTAL_SERVICES_IDS } from "./main-word-postal-services-2026-10";
 import { MAIN_WORD_BANK_IDS } from "./main-word-bank-2026-10";
 // DB-aware loader for categories. Server-only because it imports the
@@ -151,6 +152,14 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'identity-documents' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      ))
+      AND (c.id <> 'airport' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_AIRPORT_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'airport' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       ))

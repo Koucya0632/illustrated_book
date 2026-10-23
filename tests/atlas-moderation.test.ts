@@ -7,6 +7,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  collectionAvatarRefused,
   decideAtlasModeration,
   detectPiiInText,
   runAtlasTextModeration,
@@ -73,4 +74,19 @@ test("text moderation flags links as spam", () => {
   const hits = runAtlasTextModeration(["buy now https://spam.example", null]);
   assert.ok(hits.some((h) => h.category === "spam"));
   assert.equal(runAtlasTextModeration(["kettle", "水壺", null, null]).length, 0);
+});
+
+test("a collection avatar is refused only for LIKELY nsfw or violence", () => {
+  const possible = scoreVisionModeration({
+    safeSearch: { adult: "UNLIKELY", violence: "POSSIBLE", racy: "POSSIBLE" },
+  });
+  assert.equal(collectionAvatarRefused(possible), false);
+
+  // A menu's digits trip the PII pattern; on a cover the owner chose, that is not a refusal.
+  const menu = scoreVisionModeration({ ocrText: "ご予約 03-1234-5678" });
+  assert.ok(menu.some((hit) => hit.category === "pii"));
+  assert.equal(collectionAvatarRefused(menu), false);
+
+  assert.equal(collectionAvatarRefused(scoreVisionModeration({ safeSearch: { racy: "LIKELY" } })), true);
+  assert.equal(collectionAvatarRefused(scoreVisionModeration({ safeSearch: { violence: "VERY_LIKELY" } })), true);
 });

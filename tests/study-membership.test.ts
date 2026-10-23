@@ -1,5 +1,6 @@
 // Pins the official-atlas study gate (docs/MEMBERSHIP_ENGINEERING_CHECKLIST.md
-// §3). In v2 a signed-in non-member learns and reviews only fruits and bedroom;
+// §3). In v2 a signed-in non-member learns and reviews only the free themes
+// (fruits, bedroom and all of the 留學生 主題組合 — ADR-0020);
 // their 自製圖鑑 and saved 物見 cards stay out of the queue. Members and v1
 // are untouched.
 //
@@ -10,7 +11,7 @@
 //   - The answer route re-checks with the same rule, so a client (or a cached
 //     queue from before the cutover) can't write progress the queue wouldn't serve.
 //   - The whitelist is category ids, never a word count: new words published
-//     into fruits/bedroom join automatically.
+//     into a free theme join automatically.
 
 import assert from "node:assert/strict";
 import test from "node:test";
@@ -25,8 +26,19 @@ const free2 = { tier: "free" as const, policy: "v2" as const };
 const life2 = { tier: "lifetime" as const, policy: "v2" as const };
 const free1 = { tier: "free" as const, policy: "v1" as const };
 
-test("the whitelist is fruits and bedroom, by category id", () => {
-  assert.deepEqual([...FREE_STUDY_CATEGORIES].sort(), ["bedroom", "fruits"]);
+const FREE = [
+  "bank",
+  "bedroom",
+  "campus",
+  "convenience-store",
+  "fruits",
+  "identity-documents",
+  "postal-services",
+  "station-commuting",
+];
+
+test("the whitelist is fruits, bedroom and the 留學生 themes, by category id", () => {
+  assert.deepEqual([...FREE_STUDY_CATEGORIES].sort(), FREE);
 });
 
 test("v1 and members pass through untouched", () => {
@@ -37,7 +49,7 @@ test("v1 and members pass through untouched", () => {
 
 test("v2 non-member with no filter gets exactly the whitelist, not everything", () => {
   const s = applyMembershipStudyScope(resolveQueueThemeScope([], false), free2);
-  assert.deepEqual([...s.publicCategories].sort(), ["bedroom", "fruits"]);
+  assert.deepEqual([...s.publicCategories].sort(), FREE);
   assert.equal(s.shouldFetchPublic, true);
   assert.equal(s.wantsCustom, false);
   assert.equal(s.wantsCommunity, false);
@@ -56,7 +68,7 @@ test("v2 non-member picking only locked themes fetches nothing public", () => {
 
 test("v2 non-member review is limited to the whitelist too — other progress is kept, not reviewed", () => {
   const s = applyMembershipStudyScope(resolveQueueThemeScope([], true), free2);
-  assert.deepEqual([...s.publicCategories].sort(), ["bedroom", "fruits"]);
+  assert.deepEqual([...s.publicCategories].sort(), FREE);
   assert.equal(s.wantsCustom, false);
   assert.equal(s.wantsCommunity, false);
 });
@@ -90,7 +102,7 @@ test("the answer route checks every source, and refuses with 200 — never a 4xx
 import { studyableCategories } from "../lib/study-membership";
 
 test("clients are told the whitelist only when the gate applies; null means everything", () => {
-  assert.deepEqual([...(studyableCategories(free2) ?? [])].sort(), ["bedroom", "fruits"]);
+  assert.deepEqual([...(studyableCategories(free2) ?? [])].sort(), FREE);
   assert.equal(studyableCategories(free1), null);
   assert.equal(studyableCategories(life2), null);
 });

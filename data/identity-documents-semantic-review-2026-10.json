@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "series": "identity-documents",
+  "reviewer": "Codex, individual concept and three-language sentence/span review",
+  "scope": "All 10 concepts and 20 examples, individual editorial judgments; not an independent human review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "passport",
+      "verdict": "pass",
+      "reason": "パスポート指旅行證件，不是登機證或在留卡；日本護照僅作外觀示例，不將國籍限定在詞義。",
+      "sourceSha256": "3342f42aca1817fd760df3c716e6500b2710e7d08640f1aabca194e6ba22c902"
+    },
+    {
+      "kind": "example",
+      "wordId": "passport",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把護照放進包裡是單一旅行準備動作；三語同一物件及位置。",
+      "sourceSha256": "db08e88a495de7d6ea190d7d7bf0afd87e772b41980226c52bcc312d00cfab78"
+    },
+    {
+      "kind": "example",
+      "wordId": "passport",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先確認效期再預訂國際航班，時間先後清楚；與簡單收納句有實質區別。",
+      "sourceSha256": "269b137608f4c5ab8c47536a81d93c9b1a7aea213bf00bb760ca0b95be0f3bff"
+    },
+    {
+      "kind": "word",
+      "wordId": "drivers-license",
+      "verdict": "pass",
+      "reason": "運転免許証限定駕駛資格證件；傳統卡式仍存在，不將My Number卡一概視為駕照。",
+      "sourceSha256": "e463aed6ef9ce1ce3cc6d4c625689cd51bd4e54909122d949a0518272dbd7ab8"
+    },
+    {
+      "kind": "example",
+      "wordId": "drivers-license",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請求出示駕照是一個直接且自然的日常請求，三語皆為禮貌命令。",
+      "sourceSha256": "870b1c43c87d772881bffd0036c77be63bc8da6cc959505f7d4b008fea46f50e"
+    },
+    {
+      "kind": "example",
+      "wordId": "drivers-license",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "租車前發現駕照留在家中而折返，發現及結果連貫，沒有推定各地租車法規。",
+      "sourceSha256": "a244ce574742995a70adf4dd3118272778ecf56a2331c5126eff4ffd0071c147"
+    },
+    {
+      "kind": "word",
+      "wordId": "residence-card",
+      "verdict": "pass",
+      "reason": "在留カード是中長期外國居民的證件，不等於住民票；採2026新式外觀，未混成特定在留卡。",
+      "sourceSha256": "0ab1059daf562857901cc65e162698d773d5338a3bea126c9e9e1e0d9cfc7f78"
+    },
+    {
+      "kind": "example",
+      "wordId": "residence-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "取出錢包中的在留卡為單一動作，三語持有位置一致。",
+      "sourceSha256": "3b3630a84f8e8eca4d211b25bf0197d8d076c48620918930ccdf1833200ef35d"
+    },
+    {
+      "kind": "example",
+      "wordId": "residence-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "新卡姓名拼字錯誤而詢問窗口，因果明確；不將拼字錯誤自行更改視為合法手續。",
+      "sourceSha256": "77bf45e3c5b7f014ff38a0ff8be7807e4409a047abd3fa64f514ba4643e5333b"
+    },
+    {
+      "kind": "word",
+      "wordId": "my-number-card",
+      "verdict": "pass",
+      "reason": "マイナンバーカード限定實體IC卡而非通知書；不宣稱持有即自動開通健保或駕照功能。",
+      "sourceSha256": "4b7e414adc6462a6ca65a1ead9b1a151885fb0a0f760fe34e4c3abe280c08cc2"
+    },
+    {
+      "kind": "example",
+      "wordId": "my-number-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "請把個人編號卡收進盒套為簡單收納請求，無額外制度假設。",
+      "sourceSha256": "e2438a1d3de7f325d8099684e0d82f73d5ff29d131b5c9f0debb5505e6ee00c5"
+    },
+    {
+      "kind": "example",
+      "wordId": "my-number-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不確定卡片暗號而先看備忘錄，原因及先後一致；不鼓勵把暗號與卡同放。",
+      "sourceSha256": "a6e4594d3aa5b21227922682b333c9b1e7076b2acc0c1e0b4acab2c34d71ce2e"
+    },
+    {
+      "kind": "word",
+      "wordId": "student-id-card",
+      "verdict": "pass",
+      "reason": "学生証是學籍證件，不是社員証或圖書借閱證；圖用學校卡式但不虛構校名。",
+      "sourceSha256": "82c07ef3b23270545a851af61d629d297149363935e6d8012282cbca7af4c8cf"
+    },
+    {
+      "kind": "example",
+      "wordId": "student-id-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "學生證位於桌上為直接位置描述，三語皆同一位置。",
+      "sourceSha256": "510bdc1368c339990377451868cde7c83a7d1a0fc5635d0da52c8403777f55fb"
+    },
+    {
+      "kind": "example",
+      "wordId": "student-id-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因為想使用學生折扣而於購票時出示證件，有目的與時機，未保證所有票都適用折扣。",
+      "sourceSha256": "755eceb4af23f60feda2ef9bb0f3f302617fda44370d899467c8f7d4cadb1bda"
+    },
+    {
+      "kind": "word",
+      "wordId": "international-driving-permit",
+      "verdict": "pass",
+      "reason": "国外運転免許証對應日本核發的國際駕駛文件，不等於外國駕照翻譯；明示依目的地規則。",
+      "sourceSha256": "63d89de1a9b97da462855eeb8bd4def16dfec9632dd392e5cb8dbf76012059d7"
+    },
+    {
+      "kind": "example",
+      "wordId": "international-driving-permit",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把許可證放入文件夾是單一整理動作，避免不當宣稱可在所有國家開車。",
+      "sourceSha256": "60d6652bfad8ec836055e0a71946d48525d72a0bed7b0078e217ea1c184e9bbc"
+    },
+    {
+      "kind": "example",
+      "wordId": "international-driving-permit",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "旅行前確認目的地能否使用，嵌入疑問提供B1難度；沒有代替使用者判斷法律效力。",
+      "sourceSha256": "f15acd78197e5b554009db5bf2294c2e4d7393b96dd8d0e6002dcb650c494463"
+    },
+    {
+      "kind": "word",
+      "wordId": "health-insurance-eligibility-certificate",
+      "verdict": "pass",
+      "reason": "資格確認書採現行醫保用文件，與已到期的舊健康保険証及資格情報のお知らせ分開；外觀不宣稱全國單一樣式。",
+      "sourceSha256": "e66b70281e5f0c38371e5a497bb32701fcd637cc15c98e2e4ce9e5ae8f94f9ae"
+    },
+    {
+      "kind": "example",
+      "wordId": "health-insurance-eligibility-certificate",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "於醫院櫃台出示資格確認書是實際使用場景，三語地點與動作一致。",
+      "sourceSha256": "39cf3abd20f200f801b3bd7dd52c1241ab37c60ada999ba50bfa8d65ebce4473"
+    },
+    {
+      "kind": "example",
+      "wordId": "health-insurance-eligibility-certificate",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "文件寄達後先確認效期再收好，時間及動作順序清楚；不臆造固定年限。",
+      "sourceSha256": "d10ebae1d4a2bd2470fae933ef5843cb139577e3acfc7b6c9370632f31dbcbb1"
+    },
+    {
+      "kind": "word",
+      "wordId": "residence-certificate",
+      "verdict": "pass",
+      "reason": "住民票の写し是政府核發的住民紀錄副本，繁中採住民票謄本並解釋；不誤譯為在留卡或自行影本。",
+      "sourceSha256": "cd9196312d979c5eef18b281b98c7450ddcb4ad0f5b32d7b3b126145cf0ae2cb"
+    },
+    {
+      "kind": "example",
+      "wordId": "residence-certificate",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "領取一份住民票副本為單一行政生活事件，沒有混入卡片。",
+      "sourceSha256": "f3f3408cb72f248b239ef6243b4c1c7eb606602ba04490d4811123ca277590a3"
+    },
+    {
+      "kind": "example",
+      "wordId": "residence-certificate",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "已被要求提交所以回家前領取，有原因及時間先後；沒有假設所有申請皆須此件。",
+      "sourceSha256": "73aa1d05e09cc474e083036bc7dc5217517eb0ddbcded9770ddb5eb3955a459a"
+    },
+    {
+      "kind": "word",
+      "wordId": "seal-registration-certificate",
+      "verdict": "pass",
+      "reason": "印鑑登録証明書是帶有登記印影的官方紙本證明，與印鑑登録証卡及印鑑實物三者分開。",
+      "sourceSha256": "ca6ac5688329d79c655bb14ca976394395f06f540f208dd8a2a9c0a9f7870998"
+    },
+    {
+      "kind": "example",
+      "wordId": "seal-registration-certificate",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把證明書放進信封為單一整理請求，三語物件一致。",
+      "sourceSha256": "12d45ad1b4101471db4b460ac0473c0b39f2ee090c9a797c3f85b1773b0a2fa6"
+    },
+    {
+      "kind": "example",
+      "wordId": "seal-registration-certificate",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "合約要求提交證明書而事先確認份數，有原因及時間關係；不泛稱所有合約都需要。",
+      "sourceSha256": "10f1a37bfc4079ea0d4e9238be024e722e03af8425a808d7f6bcd1d2b1258351"
+    },
+    {
+      "kind": "word",
+      "wordId": "seal-registration-card",
+      "verdict": "pass",
+      "reason": "印鑑登録証限定登錄卡，釋義明確說明與證明書關係；不同自治體外觀可不同。",
+      "sourceSha256": "1fd7079ebcfba33efd31bbd65852bc0844e598fb6daba9c33a5ae9fb671627e1"
+    },
+    {
+      "kind": "example",
+      "wordId": "seal-registration-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把卡拿給窗口人員看是直接行政情境，沒有把卡說成證明書。",
+      "sourceSha256": "628c2eb3f2b82e1657e1921f68daaa0c57b0c411397b067561703d4e11357faf"
+    },
+    {
+      "kind": "example",
+      "wordId": "seal-registration-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為免弄丟而與平常付款卡分開保管，有目的及比較對照；不改寫實際申領規則。",
+      "sourceSha256": "949df7499fe228b745f13ccd968fbb1c2e30d3aac53165f7ed1ecb415ac5b217"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { MAIN_WORD_IDENTITY_DOCUMENTS_CORRECTIONS } from "./main-word-identity-documents-2026-10";
 import { MAIN_WORD_POSTAL_SERVICES_CORRECTIONS } from "./main-word-postal-services-2026-10";
 import { MAIN_WORD_BANK_CORRECTIONS } from "./main-word-bank-2026-10";
 import { MAIN_WORD_HAIR_SALON_CORRECTIONS } from "./main-word-hair-salon-2026-10";
@@ -135,6 +136,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_HAIR_SALON_CORRECTIONS,
   ...MAIN_WORD_BANK_CORRECTIONS,
   ...MAIN_WORD_POSTAL_SERVICES_CORRECTIONS,
+  ...MAIN_WORD_IDENTITY_DOCUMENTS_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",

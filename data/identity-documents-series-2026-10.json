@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "series": "identity-documents",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "10 new identity and official-certificate concepts. Existing employee-id-card stays in office. Production Storage/DB, commit and deployment require separate authorization.",
+  "category": {
+    "id": "identity-documents",
+    "name": "Identification & Certificates",
+    "nameZh": "證件",
+    "nameJa": "身分証・証明書",
+    "emoji": "🪪",
+    "description": "日本日常使用的身分證件、駕駛證件與官方證明文件",
+    "descriptionEn": "Identity cards, driving documents and official certificates used in Japan",
+    "descriptionJa": "日本の日常生活で使う身分証、運転に関する書類や公的な証明書",
+    "color": "from-indigo-100 to-sky-100",
+    "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/category-identity-documents-v1-ff8359e2a246.webp"
+  },
+  "references": [
+    "https://www.moj.go.jp/isa/applications/procedures/whatzairyu_00001.html",
+    "https://www.mhlw.go.jp/stf/newpage_50657.html",
+    "https://www.mhlw.go.jp/content/10200000/001516101.pdf",
+    "https://www.kojinbango-card.go.jp/kojinbango-/",
+    "https://www.npa.go.jp/bureau/traffic/r4kaisei_main.html",
+    "https://www.npa.go.jp/policies/policy/online-keikaku/20211004_kokugaiuntenmenkyoshou_gaiyou.pdf",
+    "https://www.city.shinjuku.lg.jp/todokede/koseki03_000005.html",
+    "https://www.city.shinjuku.lg.jp/todokede/koseki03_000009_f.html"
+  ],
+  "entries": [
+    {
+      "id": "passport",
+      "word": "passport",
+      "chinese": "護照",
+      "chineseDefinition": "由政府核發、在國際旅行時證明持有人身分與國籍的旅行證件；此處圖示日本護照。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæs.pɔːrt/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "護照",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An official travel document identifying its holder and nationality for international travel.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "海外へ渡航するときに、持ち主の身元や国籍を証明する公的な書類。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your passport in your bag.",
+          "ja": "パスポートをかばんに入れてください。",
+          "zh": "請把護照放進包裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before booking an international flight, I checked when my passport would expire.",
+          "ja": "国際線を予約する前に、パスポートの有効期限を確認しました。",
+          "zh": "預訂國際航班前，我先確認了護照的有效期限。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "パスポート",
+      "jaReading": "パスポート",
+      "jaReadingSegments": [
+        {
+          "text": "パスポート",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/passport-v1-f57fc8ad485f.webp"
+    },
+    {
+      "id": "drivers-license",
+      "word": "driver's license",
+      "chinese": "駕駛執照",
+      "chineseDefinition": "證明持有人獲准駕駛指定車輛的證件；圖示日本傳統卡式駕照。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdraɪ.vɚz ˌlaɪ.səns/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "駕駛執照",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An official document showing that its holder is licensed to drive specified types of vehicles.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "一定の種類の車両を運転する免許を受けていることを示す証明書。図は従来型のカードを示す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please show me your driver's license.",
+          "ja": "運転免許証を見せてください。",
+          "zh": "請出示你的駕駛執照。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before renting a car, I realized I had left my driver's license at home, so I went back to get it.",
+          "ja": "車を借りる前に、運転免許証を家に忘れたことに気づいたので、取りに戻りました。",
+          "zh": "租車前，我發現駕駛執照忘在家裡，所以回去拿。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "運転免許証",
+      "jaReading": "うんてんめんきょしょう",
+      "jaReadingSegments": [
+        {
+          "text": "運転免許証",
+          "ruby": "うんてんめんきょしょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/drivers-license-v1-57def9a0fe3b.webp"
+    },
+    {
+      "id": "residence-card",
+      "word": "residence card",
+      "chinese": "在留卡",
+      "chineseDefinition": "日本發給中長期居留外國人的身分與在留資格證件；不同於住民票或護照。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈrez.ɪ.dəns kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "在留卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese identification card issued to foreign nationals with medium- or long-term resident status.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "日本に中長期間在留する外国人に交付され、身分や在留資格などを示すカード。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I take my residence card out of my wallet.",
+          "ja": "財布から在留カードを出します。",
+          "zh": "我從錢包裡拿出在留卡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The name on my new residence card was misspelled, so I asked at the counter.",
+          "ja": "新しい在留カードの名前のつづりが間違っていたので、窓口で聞きました。",
+          "zh": "新在留卡上的姓名拼錯了，所以我向窗口詢問。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "在留カード",
+      "jaReading": "ざいりゅうカード",
+      "jaReadingSegments": [
+        {
+          "text": "在留カード",
+          "ruby": "ざいりゅうカード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/residence-card-v1-087cf90e4751.webp"
+    },
+    {
+      "id": "my-number-card",
+      "word": "My Number card",
+      "chinese": "個人編號卡",
+      "chineseDefinition": "日本含個人編號與身分資料的IC卡，亦稱My Number卡；不是紙本個人編號通知書。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/maɪ ˈnʌm.bɚ kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "個人編號卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese IC identification card associated with the holder’s individual number.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "個人番号に関する情報や本人確認に使う情報が記録された、日本のICカード。個人番号通知書とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your My Number card in its case.",
+          "ja": "マイナンバーカードをケースに入れてください。",
+          "zh": "請把個人編號卡放進卡套。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was unsure of my My Number card PIN, so I checked my notes before leaving home.",
+          "ja": "マイナンバーカードの暗証番号があやふやだったので、家を出る前にメモを確認しました。",
+          "zh": "我不太確定個人編號卡的密碼，所以出門前先查看了筆記。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "マイナンバーカード",
+      "jaReading": "マイナンバーカード",
+      "jaReadingSegments": [
+        {
+          "text": "マイナンバーカード",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/my-number-card-v1-1c08e99f1f91.webp"
+    },
+    {
+      "id": "student-id-card",
+      "word": "student ID card",
+      "chinese": "學生證",
+      "chineseDefinition": "由學校核發、證明持有人在該校就讀的證件。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈstuː.dənt aɪˈdiː kɑːrd/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "學生證",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A card issued by a school or university to identify a person as one of its students.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "学校が発行する、その学校の学生であることを示す証明書。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My student ID card is on the desk.",
+          "ja": "学生証は机の上にあります。",
+          "zh": "我的學生證在桌上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I wanted to use the student discount, so I showed my student ID card when buying the ticket.",
+          "ja": "学割を使いたかったので、チケットを買うときに学生証を見せました。",
+          "zh": "我想使用學生折扣，所以買票時出示了學生證。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "学生証",
+      "jaReading": "がくせいしょう",
+      "jaReadingSegments": [
+        {
+          "text": "学生証",
+          "ruby": "がくせいしょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/student-id-card-v1-5699e30864a0.webp"
+    },
+    {
+      "id": "international-driving-permit",
+      "word": "international driving permit",
+      "chinese": "國際駕駛許可證",
+      "chineseDefinition": "配合適用國際公約、供境外駕車使用的駕駛證件；此處指日本核發的國外運轉免許證，效力依目的地規定。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌɪn.t̬ɚˈnæʃ.ən.əl ˈdraɪ.vɪŋ ˌpɝː.mɪt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "國際駕駛許可證",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A document issued under an international convention for driving abroad, subject to destination rules; here, the permit issued in Japan.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "国際条約に基づいて国外で運転するために発行される書類。ここでは日本で交付される国外運転免許証を指し、使える条件は渡航先による。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put my international driving permit in a folder.",
+          "ja": "国外運転免許証をファイルに入れます。",
+          "zh": "我把國際駕駛許可證放進文件夾。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before the trip, I checked whether my international driving permit could be used at my destination.",
+          "ja": "旅行の前に、渡航先で国外運転免許証が使えるか確認しました。",
+          "zh": "旅行前，我先確認了國際駕駛許可證是否能在目的地使用。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "国外運転免許証",
+      "jaReading": "こくがいうんてんめんきょしょう",
+      "jaReadingSegments": [
+        {
+          "text": "国外運転免許証",
+          "ruby": "こくがいうんてんめんきょしょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/international-driving-permit-v1-0b345502be64.webp"
+    },
+    {
+      "id": "health-insurance-eligibility-certificate",
+      "word": "health insurance eligibility certificate",
+      "chinese": "健保資格確認書",
+      "chineseDefinition": "日本醫療保險者核發、供確認參保資格的文件，可供未使用My Number健保功能等適用者就醫時出示；與資格資訊通知書不同。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhelθ ɪnˌʃʊr.əns ˌel.ɪ.dʒəˈbɪl.ə.t̬i sɚˈtɪf.ə.kət/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "健保資格確認書",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A document issued by a Japanese health insurer to verify insurance eligibility, including for eligible people who do not use a My Number card for health insurance.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "医療保険の資格を確認するために保険者が交付する書類。マイナ保険証を使わない人などが受診時に提示する。「資格情報のお知らせ」とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I show my health insurance eligibility certificate at the hospital reception desk.",
+          "ja": "病院の受付で資格確認書を見せます。",
+          "zh": "我在醫院櫃台出示健保資格確認書。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When my health insurance eligibility certificate arrived, I checked its expiry date before putting it away.",
+          "ja": "資格確認書が届いたとき、有効期限を確認してから保管しました。",
+          "zh": "健保資格確認書寄到後，我先確認有效期限，再收好。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "資格確認書",
+      "jaReading": "しかくかくにんしょ",
+      "jaReadingSegments": [
+        {
+          "text": "資格確認書",
+          "ruby": "しかくかくにんしょ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/health-insurance-eligibility-certificate-v1-dffdf161b8bc.webp"
+    },
+    {
+      "id": "residence-certificate",
+      "word": "certificate of residence",
+      "chinese": "住民票謄本",
+      "chineseDefinition": "由日本市區町村核發、證明住址及住民登記事項的住民票副本；不是自己影印的文件，也不是在留卡。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/sɚˈtɪf.ə.kət əv ˈrez.ɪ.dəns/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "住民票謄本",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An official copy of a Japanese municipal resident record certifying registered residence details.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "市区町村が交付する、住所などの住民登録の内容を証明する書類。自分で取ったコピーや在留カードとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I received a certificate of residence.",
+          "ja": "住民票の写しを受け取りました。",
+          "zh": "我領到了住民票謄本。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I had been asked to submit a certificate of residence, so I picked one up before going home.",
+          "ja": "住民票の写しを提出するように言われたので、家に帰る前にもらってきました。",
+          "zh": "有人要求我提交住民票謄本，所以我回家前先去領了一份。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "住民票の写し",
+      "jaReading": "じゅうみんひょうのうつし",
+      "jaReadingSegments": [
+        {
+          "text": "住民票の写し",
+          "ruby": "じゅうみんひょうのうつし"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/residence-certificate-v1-1cb9d6572d9b.webp"
+    },
+    {
+      "id": "seal-registration-certificate",
+      "word": "seal registration certificate",
+      "chinese": "印鑑證明書",
+      "chineseDefinition": "證明某印影已登記為本人印鑑的官方文件；不同於申領時使用的印鑑登錄卡。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/siːl ˌredʒ.ɪˈstreɪ.ʃən sɚˈtɪf.ə.kət/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "印鑑證明書",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An official document certifying a seal impression registered to a person.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "印影が本人の印鑑として登録されていることを証明する公的な書類。印鑑登録証のカードとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the seal registration certificate in the envelope.",
+          "ja": "印鑑登録証明書を封筒に入れてください。",
+          "zh": "請把印鑑證明書放進信封。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The contract required a seal registration certificate, so I checked beforehand how many copies I needed.",
+          "ja": "契約に印鑑登録証明書が必要だったので、何通いるか事前に確認しました。",
+          "zh": "這份合約需要印鑑證明書，所以我事先確認了需要幾份。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "印鑑登録証明書",
+      "jaReading": "いんかんとうろくしょうめいしょ",
+      "jaReadingSegments": [
+        {
+          "text": "印鑑登録証明書",
+          "ruby": "いんかんとうろくしょうめいしょ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/seal-registration-certificate-v1-c135765a8844.webp"
+    },
+    {
+      "id": "seal-registration-card",
+      "word": "seal registration card",
+      "chinese": "印鑑登錄卡",
+      "chineseDefinition": "日本市區町村在印鑑登記後核發的卡片，可供臨櫃申領印鑑證明書；不是印鑑證明書本身。",
+      "category": "identity-documents",
+      "partOfSpeech": "noun",
+      "pronunciation": "/siːl ˌredʒ.ɪˈstreɪ.ʃən kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "印鑑登錄卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese municipal card issued after seal registration and used when requesting a seal registration certificate at a counter.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "印鑑を登録したときに市区町村が交付するカード。窓口で印鑑登録証明書を請求するときなどに使う。証明書そのものではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I show my seal registration card to the clerk.",
+          "ja": "係の人に印鑑登録証を見せます。",
+          "zh": "我向承辦人出示印鑑登錄卡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To avoid losing my seal registration card, I keep it separate from the cards I use for shopping.",
+          "ja": "印鑑登録証をなくさないように、買い物に使うカードとは分けて保管しています。",
+          "zh": "為了避免弄丟印鑑登錄卡，我把它和購物時使用的卡片分開保管。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "印鑑登録証",
+      "jaReading": "いんかんとうろくしょう",
+      "jaReadingSegments": [
+        {
+          "text": "印鑑登録証",
+          "ruby": "いんかんとうろくしょう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/identity-documents-2026-10/seal-registration-card-v1-ac1ce0a2e7f7.webp"
+    }
+  ]
+}

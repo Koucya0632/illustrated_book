@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "series": "identity-documents",
+  "reviewer": "Codex, every original source viewed individually; illustrative forms rather than exact official replicas",
+  "items": [
+    {
+      "id": "passport",
+      "decision": "pass",
+      "reason": "酒紅色封面、金色菊紋、旅券標題及生物辨識標記清楚，完整閉合小冊與白底留白可識別日本護照；未展示身分資料頁。",
+      "sourceSha256": "c41dadca9a331e3d2b1b4788da196b1f9a2474a28a26077a01944857f580158a",
+      "references": []
+    },
+    {
+      "id": "drivers-license",
+      "decision": "pass",
+      "reason": "橫向卡、右側照片、藍色效期帶與運転免許証標題共同辨識日本傳統卡式駕照，與左側照片的My Number卡分開；欄位資料以灰線呈現。",
+      "sourceSha256": "5df1309693a2df69cfca6aae0353de7e24955c345efeb0848dd9a851a738e1ee",
+      "references": []
+    },
+    {
+      "id": "residence-card",
+      "decision": "pass",
+      "reason": "淡粉色新式卡面、左下照片、右側綠色資格帶及在留カード標題，對照2026年官方新式欄位說明與券面示意；沒有My Number標誌，保留白底與完整卡邊。",
+      "sourceSha256": "2da2eb6c600dbbe572e588602e18341dc0566c0a991616297eb6a85a56b2295e",
+      "references": [
+        "https://www.moj.go.jp/isa/tokutei",
+        "https://www.mhlw.go.jp/content/11601000/001739201.pdf"
+      ]
+    },
+    {
+      "id": "my-number-card",
+      "decision": "pass",
+      "reason": "淡粉色橫向卡、左側照片、個人番号カード標題及右側追記框呈現實體卡正面，沒有把背面個人編號或金色接觸晶片畫到正面；灰線示意欄位。",
+      "sourceSha256": "e73b50bd94b272fc297f07c6e8b0d6ac5df1868f910da05626473e90f2d49c22",
+      "references": []
+    },
+    {
+      "id": "student-id-card",
+      "decision": "pass",
+      "reason": "深藍學生証標題、學生照片及條碼表明學校核發的學生證，無虛構校名，與公司員工證概念區分；卡片完整且白底。",
+      "sourceSha256": "32dd10da143282b34af75503c9b8fa5f78b4f979c82541cd5ca72d85e020d9a4",
+      "references": []
+    },
+    {
+      "id": "international-driving-permit",
+      "decision": "pass",
+      "reason": "灰色紙本小冊、側邊裝訂及國外運転免許証與英文標題支援日本核發國際駕駛文件，與塑膠駕照及酒紅護照形態分開。",
+      "sourceSha256": "73c2490a64a55c08fe3618415b2d13d9707005377e2b3d843a43caa866f26054",
+      "references": []
+    },
+    {
+      "id": "health-insurance-eligibility-certificate",
+      "decision": "pass",
+      "reason": "淡黃色卡式紙張標有資格確認書及國民健康保險、效期與保險者欄位，無照片或晶片；採官方允許的卡式示意，不宣稱所有保險者同一外觀。",
+      "sourceSha256": "1f85e29fd28b1a2fd59c21792136a979b59b407dbe59b4a0b4a493e8258cf368",
+      "references": []
+    },
+    {
+      "id": "residence-certificate",
+      "decision": "pass",
+      "reason": "完整直式證明紙、住民票の写し標題、戶內成員表與核發章辨識官方住民紀錄副本，與在留塑膠卡及自製影本分開；白底無場景。",
+      "sourceSha256": "b60a2900ccfe7846310493a7b22b9ffc4a4a837df3f0bfb84da00ceb05b7abd7",
+      "references": []
+    },
+    {
+      "id": "seal-registration-certificate",
+      "decision": "pass",
+      "reason": "直式證明紙明確標示印鑑登録証明書，中央印影框、紅色圓印及下方登記事項表呈現證明內容，與登錄卡及實體印章分開。",
+      "sourceSha256": "0b2cff417cd017bbdce283ea2409ce0f8743855c08c52a98e7373eccd608eeef",
+      "references": []
+    },
+    {
+      "id": "seal-registration-card",
+      "decision": "pass",
+      "reason": "淡藍色橫向塑膠卡、印鑑登録証標題與登錄資料灰線表示自治體卡式登錄證，沒有紙本印影證明或人物照片；整卡白底。",
+      "sourceSha256": "f943704cd70e907dbd2b418b1920c443fa3c6c1bde3b62c46f44c8deb36337c6",
+      "references": []
+    },
+    {
+      "id": "category-identity-documents",
+      "decision": "pass",
+      "reason": "護照、左照片粉色卡、右照片藍帶駕照及直式證明紙形成證件分類組圖，主物件完整、互相可辨，白底無旅行道具；細節僅為辨識示意。",
+      "sourceSha256": "b23105a2a0767a3ff3b8122df6ab5aec6f9a7c259a07b0fce066de81d15838c5",
+      "references": []
+    }
+  ]
+}

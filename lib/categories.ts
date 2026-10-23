@@ -1,3 +1,4 @@
+import identityDocumentsCandidate from "../data/identity-documents-series-2026-10.json";
 import postalServicesCandidate from "../data/postal-services-series-2026-10.json";
 import bankCandidate from "../data/bank-series-2026-10.json";
 import hairSalonCandidate from "../data/hair-salon-series-2026-10.json";
@@ -287,6 +288,7 @@ export const categories: Category[] = [
   hairSalonCandidate.category,
   bankCandidate.category,
   postalServicesCandidate.category,
+  identityDocumentsCandidate.category,
 ];
 
 // This list is used only when the database is unavailable. A fallback cannot
@@ -311,7 +313,8 @@ export const publicFallbackCategories: Category[] = categories.filter(
     category.id !== "emergency-kit" &&
     category.id !== "hair-salon" &&
     category.id !== "bank" &&
-    category.id !== "postal-services",
+    category.id !== "postal-services" &&
+    category.id !== "identity-documents",
 );
 
 export const getCategory = (id: string): Category | undefined =>

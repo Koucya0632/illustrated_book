@@ -1136,5 +1136,15 @@
   "registered-mail": "https://img.nexflow.team/word-images/postal-services-2026-10/registered-mail-v1-3e90c0df80e0.webp",
   "express-mail": "https://img.nexflow.team/word-images/postal-services-2026-10/express-mail-v1-ebacaffc9792.webp",
   "postmark": "https://img.nexflow.team/word-images/postal-services-2026-10/postmark-v1-75445cbad7d8.webp",
-  "household-mailbox": "https://img.nexflow.team/word-images/postal-services-2026-10/household-mailbox-v1-4d27b59db006.webp"
+  "household-mailbox": "https://img.nexflow.team/word-images/postal-services-2026-10/household-mailbox-v1-4d27b59db006.webp",
+  "passport": "https://img.nexflow.team/word-images/identity-documents-2026-10/passport-v1-f57fc8ad485f.webp",
+  "drivers-license": "https://img.nexflow.team/word-images/identity-documents-2026-10/drivers-license-v1-57def9a0fe3b.webp",
+  "residence-card": "https://img.nexflow.team/word-images/identity-documents-2026-10/residence-card-v1-087cf90e4751.webp",
+  "my-number-card": "https://img.nexflow.team/word-images/identity-documents-2026-10/my-number-card-v1-1c08e99f1f91.webp",
+  "student-id-card": "https://img.nexflow.team/word-images/identity-documents-2026-10/student-id-card-v1-5699e30864a0.webp",
+  "international-driving-permit": "https://img.nexflow.team/word-images/identity-documents-2026-10/international-driving-permit-v1-0b345502be64.webp",
+  "health-insurance-eligibility-certificate": "https://img.nexflow.team/word-images/identity-documents-2026-10/health-insurance-eligibility-certificate-v1-dffdf161b8bc.webp",
+  "residence-certificate": "https://img.nexflow.team/word-images/identity-documents-2026-10/residence-certificate-v1-1cb9d6572d9b.webp",
+  "seal-registration-certificate": "https://img.nexflow.team/word-images/identity-documents-2026-10/seal-registration-certificate-v1-c135765a8844.webp",
+  "seal-registration-card": "https://img.nexflow.team/word-images/identity-documents-2026-10/seal-registration-card-v1-ac1ce0a2e7f7.webp"
 }

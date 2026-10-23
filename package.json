@@ -176,7 +176,15 @@
     "postal-services:audio:generate:local": "node --env-file=.env.local scripts/generate-postal-services-candidate-audio.mjs",
     "postal-services:audio:verify": "node scripts/verify-postal-services-audio.mjs",
     "postal-services:prepare-publish": "node --env-file=.env.local scripts/prepare-postal-services-publish-plan.mjs",
-    "postal-services:publish": "tsx --env-file=.env.local scripts/publish-postal-services-series.ts"
+    "postal-services:publish": "tsx --env-file=.env.local scripts/publish-postal-services-series.ts",
+    "identity-documents:prepare-images": "node scripts/prepare-identity-documents-images.mjs",
+    "identity-documents:review": "node scripts/prepare-identity-documents-semantic-review.mjs",
+    "identity-documents:audio:plan": "node scripts/plan-identity-documents-audio.mjs",
+    "identity-documents:audio:generate:local": "node --env-file=.env.local scripts/generate-identity-documents-candidate-audio.mjs",
+    "identity-documents:audio:verify": "node scripts/verify-identity-documents-audio.mjs",
+    "identity-documents:prepare-publish": "node --env-file=.env.local scripts/prepare-identity-documents-publish-plan.mjs",
+    "identity-documents:publish": "tsx --env-file=.env.local scripts/publish-identity-documents-series.ts",
+    "identity-documents:content": "node scripts/prepare-identity-documents-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

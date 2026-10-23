@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "series": "identity-documents",
+  "mode": "built-in image_gen",
+  "items": [
+    {
+      "id": "passport",
+      "prompt": "Use case: product-mockup. Asset: Tuji Japanese daily-life picture dictionary, square 1024x1024. A single closed Japanese passport booklet, dark burgundy cover, clearly recognizable gold chrysanthemum emblem and small gold '日本国旅券' and 'JAPAN PASSPORT' cover title, small biometric passport icon near bottom. Semi-realistic clean catalog illustration with subtly rounded edges, full object viewed at slight angle, centered, generous pure white margin, soft restrained shadow. This is an educational object illustration; no personal data or opened identity page. No props, hands, environment, border, watermark or decorative text."
+    },
+    {
+      "id": "drivers-license",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A Japanese conventional plastic driver's license card, landscape orientation, off-white fine patterned surface, recognizable blue expiry band and portrait at lower right, Japanese title '運転免許証'. Use a small fictional illustrated portrait. Three-quarter view from slightly above. Do not use American driving license layout."
+    },
+    {
+      "id": "my-number-card",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. Front face only of a Japanese My Number card: pale pink subtle patterned plastic horizontal card, fictional portrait on left, restrained pink and pale green ornamental security-pattern cues and label '個人番号カード' near top. No visible IC gold contact chip on front, no number on front, no rabbit mascot. Other fields as faint gray strokes. Slight three-quarter view."
+    },
+    {
+      "id": "student-id-card",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A Japanese student ID card, horizontal white plastic card with navy header labeled '学生証', small fictional student portrait on right, gray placeholder lines on left, small non-scannable decorative barcode near lower edge. No university logo or invented school name. Slight three-quarter view."
+    },
+    {
+      "id": "seal-registration-card",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A Japanese municipal seal registration card, landscape pale blue plastic card with the clear title '印鑑登録証', a simple abstract flower rosette motif and neutral placeholder lines. No portrait, no chip, no seal stamp, no certificate paper. Slight three-quarter view."
+    },
+    {
+      "id": "residence-certificate",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A single portrait A4-style Japanese certificate of residence sheet titled '住民票の写し', pale cream subtle patterned paper, neat black printed household table and gray placeholder lines, small muted red square official-seal-like mark low on page. No passport portrait or plastic card, no real names or data. Slight angle, full sheet visible."
+    },
+    {
+      "id": "seal-registration-certificate",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A single portrait A4-style Japanese seal registration certificate sheet titled '印鑑登録証明書', pale cream subtly patterned paper, prominent empty square impression panel containing one deep-red round fictional personal seal impression, concise table of gray placeholder lines below, small muted red square issuance mark at bottom. No plastic card, no separate physical seal stamp. Entire page at slight angle."
+    },
+    {
+      "id": "health-insurance-eligibility-certificate",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A single Japanese paper card-format health insurance eligibility certificate, landscape pale yellow card, heading '資格確認書' and small '国民健康保険', carefully ruled fields represented as gray strokes, no face portrait or chip. This is the current eligibility certificate, not the expired traditional insurance card. No medical cross, no credit-card decoration. Slight three-quarter view."
+    },
+    {
+      "id": "international-driving-permit",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A Japanese-issued international driving permit booklet, gray paper cover, clearly labeled '国外運転免許証' and 'INTERNATIONAL DRIVING PERMIT', smaller neutral printed lines, staple-bound paper booklet slightly open showing plain inner pages. No passport chrysanthemum or plastic card. Fully visible at slight three-quarter angle."
+    },
+    {
+      "id": "category-identity-documents",
+      "prompt": "Use case: product-mockup. Asset: square 1024x1024 Tuji Japanese daily-life dictionary illustration. Semi-realistic clean catalog rendering, one isolated subject centered on pure white, entirely visible with generous margins and restrained soft grounding shadow. Educational illustrative specimen, no real personal details, no valid ID numbers, no watermark, no environment, no props or hands. Use only the stated essential type label, do not add pseudo-text; represent other fields with clean gray strokes. A compact balanced arrangement of a closed burgundy Japanese passport, a pale pink My Number-like identification card with fictional portrait on left, a blue-banded Japanese driving license with portrait on right, and a pale A4 certificate sheet behind. These four items form one category-cover composition. Only essential passport emblem and short 'PASSPORT' label; other information as understated gray strokes. Generous white space all around, no bags, travel props or background scene."
+    },
+    {
+      "id": "residence-card",
+      "prompt": "Use case: product-mockup. Asset: 1024x1024 Tuji Japanese daily-life dictionary image. A single front face of a Japanese NEW-STYLE residence card issued from June 2026, horizontal plastic card: softly pale pink and cream patterned background, a fictional small portrait at LOWER LEFT, black clear essential title '在留カード' at UPPER RIGHT. Gray placeholder name/address lines across top; on the right half a small pale-green status-of-residence band above a gray ruled rectangular area. No portrait at right, no old green-blue residence card layout. No My Number rabbit mascot or individual-number label, no visible gold contact chip. All personal fields are uninformative gray strokes, no real data, no numbers. Educational semi-realistic catalog illustration, complete card viewed at slight angle, centered and isolated on pure white background with generous padding and minimal soft shadow. No hands, objects, scene, border or watermark. This is an illustrative specimen showing recognizable broad features, not a functional identity document."
+    }
+  ]
+}

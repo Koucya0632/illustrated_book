@@ -1573,7 +1573,8 @@ export interface AtlasAuthorRow {
  * 公開卡片 counts what a reader can actually reach: approved items that sit in at
  * least one approved collection, every language together. A public card outside
  * any collection never shows in 探索, and counting it read as 「公開卡片 17」 over
- * seven cards anyone could find. `listAtlasAuthorItems` lists the same set.
+ * seven cards anyone could find. `listAtlasAuthorItems` lists the same set, and
+ * 被收藏 counts saves on that set plus saves on approved collections.
  *
  * Returns null for unknown usernames and for authors with nothing public, so
  * the endpoint can't be used to enumerate accounts. Also null when the account
@@ -1598,6 +1599,13 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
           ON saved_item.id = item_saves.public_item_id
         WHERE saved_item.owner_user_id = pr.id
           AND saved_item.review_status = 'approved'
+          -- Same set as 公開卡片: saves on a card no reader can reach don't count.
+          AND EXISTS (
+            SELECT 1 FROM atlas_collection_items ci
+            JOIN atlas_collections c ON c.id = ci.collection_id
+            WHERE ci.public_item_id = saved_item.id
+              AND c.review_status = 'approved'
+          )
       ) + (
         SELECT count(*)::int
         FROM atlas_collection_saves collection_saves

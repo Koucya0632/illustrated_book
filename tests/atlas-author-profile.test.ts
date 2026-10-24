@@ -70,6 +70,25 @@ test("an account with zero approved items still resolves", () => {
   assert.match(authorRow, /LEFT JOIN atlas_public_items p/);
 });
 
+// 公開卡片 is what a reader can reach. A public card outside every collection
+// never shows in 探索, so the header and the 圖鑑 grid both leave it out — and
+// they must leave out the same set, or the number lies about the grid under it.
+test("the header count and the item list both keep to cards in an approved collection", () => {
+  const authorRow = fnBody(atlasDb, "getAtlasAuthor");
+  for (const query of [authorRow, items]) {
+    assert.match(query, /EXISTS \(\s*SELECT 1 FROM atlas_collection_items ci\s+JOIN atlas_collections c ON c\.id = ci\.collection_id/);
+    assert.match(query, /c\.review_status = 'approved'/);
+    // Every language: a profile is a body of work, not the visitor's study set.
+    assert.doesNotMatch(query, /target_language/);
+  }
+});
+
+test("a collection card counts only approved members", () => {
+  const start = atlasDb.indexOf("const collectionCardSelect");
+  const card = atlasDb.slice(start, atlasDb.indexOf("AS item_count", start));
+  assert.match(card, /member\.review_status = 'approved'/);
+});
+
 // MARK: - Collections: capped, unscoped, approved-only
 
 test("an author's collections are capped, because nothing else caps them", () => {

@@ -1570,6 +1570,11 @@ export interface AtlasAuthorRow {
  * (docs/COMMUNITY_ATLAS_PLAN.md §3C). Counts only approved items — a takedown
  * must not keep inflating an author's numbers.
  *
+ * 公開卡片 counts what a reader can actually reach: approved items that sit in at
+ * least one approved collection, every language together. A public card outside
+ * any collection never shows in 探索, and counting it read as 「公開卡片 17」 over
+ * seven cards anyone could find. `listAtlasAuthorItems` lists the same set.
+ *
  * Returns null for unknown usernames and for authors with nothing public, so
  * the endpoint can't be used to enumerate accounts. Also null when the account
  * never confirmed a public identity: without consent there is no author to
@@ -1605,6 +1610,12 @@ export async function getAtlasAuthor(username: string): Promise<AtlasAuthorRow |
     LEFT JOIN atlas_public_items p
       ON p.owner_user_id = pr.id
      AND p.review_status = 'approved'
+     AND EXISTS (
+       SELECT 1 FROM atlas_collection_items ci
+       JOIN atlas_collections c ON c.id = ci.collection_id
+       WHERE ci.public_item_id = p.id
+         AND c.review_status = 'approved'
+     )
     WHERE pr.username = ${username}
     GROUP BY pr.id, pr.username, pr.nickname, pr.avatar, pr.bio, pr.created_at
     LIMIT 1
@@ -1637,6 +1648,13 @@ export async function listAtlasAuthorItems(
     LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
     WHERE pi.owner_user_id = ${userId}::uuid
       AND pi.review_status = 'approved'
+      -- The set 公開卡片 counts (see getAtlasAuthor): in an approved collection.
+      AND EXISTS (
+        SELECT 1 FROM atlas_collection_items ci
+        JOIN atlas_collections c ON c.id = ci.collection_id
+        WHERE ci.public_item_id = pi.id
+          AND c.review_status = 'approved'
+      )
     ORDER BY pi.published_at DESC
     LIMIT ${Math.min(300, Math.max(1, Math.floor(limit)))}
   `;
@@ -2523,8 +2541,10 @@ const collectionCardSelect = (sql: ReturnType<typeof requireSql>) => sql`
   -- item gate is invisible here, and a card reading 「內容 5」 over four tiles
   -- is a count that lies.
   (SELECT count(*)::int FROM atlas_collection_items ci
-    WHERE ci.collection_id = c.id
-      AND ci.public_item_id IS NOT NULL) AS item_count,
+    JOIN atlas_public_items member
+      ON member.id = ci.public_item_id
+     AND member.review_status = 'approved'
+    WHERE ci.collection_id = c.id) AS item_count,
   (SELECT count(*)::int FROM atlas_collection_saves cs
     WHERE cs.collection_id = c.id) AS save_count,
   COALESCE(

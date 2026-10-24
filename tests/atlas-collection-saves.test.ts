@@ -51,6 +51,9 @@ test("author impact includes item saves and collection saves", () => {
   const author = fnBody(atlasDb, "getAtlasAuthor");
   assert.match(author, /FROM atlas_saves item_saves/);
   assert.match(author, /FROM atlas_collection_saves collection_saves/);
+  // Item saves follow 公開卡片: only cards inside an approved collection.
+  const itemSaves = author.slice(author.indexOf("FROM atlas_saves item_saves"), author.indexOf(") + ("));
+  assert.match(itemSaves, /WHERE ci\.public_item_id = saved_item\.id\s+AND c\.review_status = 'approved'/);
 });
 
 test("batch learning is one capacity-checked transaction and creates both card types", () => {

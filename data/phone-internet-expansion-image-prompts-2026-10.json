@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "series": "phone-internet",
+  "mode": "built-in image_gen",
+  "expansion": [
+    {
+      "id": "phone-strap",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: A single wrist-length phone strap, sage green woven cord loop with a small silver swivel clasp and a thin short attachment tether. Display unattached by itself in a clear loose oval, all ends visible. No phone, no neck lanyard, no bag."
+    },
+    {
+      "id": "car-phone-mount",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: A single empty black car air-vent smartphone holder, front adjustable padded side clamps, two bottom supports, and the rear vent clip visible from a three-quarter angle. All parts within frame, no car interior, no phone. Clearly a vent-mounted holder rather than a desktop stand."
+    },
+    {
+      "id": "selfie-stick",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One extended compact telescopic selfie stick, matte black handle at bottom, silver telescopic rod and empty horizontal smartphone clamp at top, small shutter button on handle. Whole stick visible diagonally with generous padding, no tripod legs, no phone, no person."
+    },
+    {
+      "id": "usb-hub",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One compact silver USB hub with four distinct USB-A female ports along the front and one short attached cable ending in a USB-C male plug. Show all four ports and the whole cable and plug. No Ethernet port, no memory slots, no separate devices."
+    },
+    {
+      "id": "usb-c-ethernet-adapter",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One silver USB-C Ethernet adapter, single short attached cable with a USB-C male plug, small rectangular body with exactly ONE large RJ45 female network socket visible at opposite end, socket with eight gold contacts and locking-clip opening. No USB-A ports, no multiple sockets, no loose Ethernet cable."
+    },
+    {
+      "id": "card-reader",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One compact external USB memory-card reader, dark gray body, a full-size SD slot with an unbranded SD card partially inserted, smaller microSD slot beside it, attached short USB-C cable entirely in frame. No bank-card payment terminal, no screen, no credit cards."
+    },
+    {
+      "id": "microsd-card",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One tiny black microSD memory card alone, three-quarter view showing front with exact standardized white text 'microSD' only, distinctive irregular stepped side profile and notch, beveled edges. No SIM card, no gold SIM contact face, no full-size SD adapter."
+    },
+    {
+      "id": "wifi-extender",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One wall-plug Wi-Fi range extender, white compact rectangular body, two upright short external antennas, front small row of signal indicator dots and small round pairing button, Japanese Type-A two flat parallel plug blades visible from a slight side three-quarter angle. Not a mobile battery hotspot, no screen, no cables."
+    },
+    {
+      "id": "app",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic modern smartphone shown front-on, screen with a simple neat home screen grid of colorful rounded square application icons; ONE blue icon with a white calendar pictogram raised slightly forward and highlighted with a subtle blue ring to identify an app. No readable text, no numbers, no branded app icons, no detached floating decorations."
+    },
+    {
+      "id": "notification",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic modern smartphone front-on, simple neutral lock screen and exactly ONE prominent rounded notification banner near the top showing a small blue bell icon and two short neutral gray horizontal placeholder lines. No readable text, no numbers, no home screen app grid, no floating bell outside phone."
+    },
+    {
+      "id": "password",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic smartphone front-on displaying a simple login password-entry field with exactly eight black bullet dots, a small padlock icon next to the field, and a plain blue confirm button with a white right-arrow icon. No actual password characters, no numeric code, no readable words, no brand. Field and lock are central and clear."
+    },
+    {
+      "id": "verification-code",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic smartphone front-on displaying a verification-code input panel with six separate square cells containing exact digits '4 8 2 6 1 9', and a small SMS message banner above containing the same exact code '482619'. A small speech-bubble icon identifies the SMS. No bullet dots, no padlock, no other readable text, no branded UI."
+    },
+    {
+      "id": "screenshot",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic modern smartphone front-on showing a simple unbranded photo of a green leaf on pale background. In the bottom-left corner INSIDE the screen show a small bordered screenshot preview thumbnail containing a miniature exact copy of the ENTIRE current phone screen, distinct white border and subtle shadow, as immediately after taking a screenshot. No camera lens icon, no shutter controls, no words, no arrows or hand."
+    },
+    {
+      "id": "airplane-mode",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic smartphone front-on showing a minimal settings panel, one central row with a bright orange square containing a white airplane silhouette and a clearly green on-toggle at the right. Same tiny airplane icon in top status bar. No text, no Wi-Fi arcs, no cellular signal bars, no other app icons."
+    },
+    {
+      "id": "personal-hotspot",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic smartphone upright with a blue screen showing a clear linked-chain personal hotspot symbol, next to a smaller open laptop with a matching blue connection symbol. A restrained set of three curved wireless connection arcs between phone and laptop communicates phone sharing its internet with the laptop. White isolated background. No separate router, no cables, no words or numbers."
+    },
+    {
+      "id": "mobile-data",
+      "prompt": "Use case: product-mockup. Tuji Japanese everyday picture dictionary. Single square semi-realistic catalog illustration. Pure white background, full subject centered with generous margin, gentle shadow, contemporary familiar Japanese daily-life appearance. No brand, logo, watermark, decorative scene or unwanted text. Subject: One generic smartphone front-on, screen showing a clear minimalist cellular antenna tower symbol with rising cellular signal bars and two opposing up/down arrows. Top status bar shows cellular signal bars and exact standardized '5G' only. NO Wi-Fi arcs or router. No map, no app grid, no other words."
+    }
+  ],
+  "edits": [
+    {
+      "id": "app",
+      "intent": "edit",
+      "input": "output/phone-internet-2026-10/rejected/app-branded-icons.png",
+      "prompt": "Edit this dictionary illustration. Keep the smartphone body, pure white background, semi-realistic rendering, framing and highlighted central blue calendar application icon. Replace every OTHER application icon with simple generic unbranded pictograms or abstract geometric shapes, using a total of nine icons in a 3 by 3 grid, with the highlighted blue calendar at the CENTER. No Apple Photos rainbow flower, Apple Maps roads, branded logos, recognizable commercial app marks, letters, words or numbers. All icons should feel generic and distinct. The highlighted calendar must be the unmistakable subject representing one app. Keep the entire phone visible with generous padding. Do not add objects."
+    },
+    {
+      "id": "screenshot",
+      "intent": "edit",
+      "input": "output/phone-internet-2026-10/rejected/screenshot-phone-in-thumbnail.png",
+      "prompt": "Precise small edit: Keep the main smartphone, main leaf image, white background, composition and lighting completely unchanged. Fix ONLY the screenshot-preview thumbnail at the bottom left INSIDE the screen. It must be a small rounded rectangular miniature of the DISPLAY CONTENT ONLY: green leaf on light gray background. Remove the tiny black phone frame, notch, camera, and device outline currently inside this thumbnail. A thin white screenshot-preview border and subtle shadow may remain. The thumbnail must NOT depict another phone, only a captured image of the leaf screen content. No new objects, no words, no icons."
+    }
+  ]
+}

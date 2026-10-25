@@ -1,3 +1,4 @@
+import { MAIN_WORD_PHONE_INTERNET_IDS } from "../lib/main-word-phone-internet-2026-10";
 import { MAIN_WORD_IDENTITY_DOCUMENTS_IDS } from "../lib/main-word-identity-documents-2026-10";
 import { MAIN_WORD_AIRPORT_IDS } from "../lib/main-word-airport-2026-10";
 import { MAIN_WORD_POSTAL_SERVICES_IDS } from "../lib/main-word-postal-services-2026-10";
@@ -68,6 +69,7 @@ const GUARDED_PUBLISH_SERIES = [
   { category: "postal-services", ids: MAIN_WORD_POSTAL_SERVICES_IDS },
   { category: "identity-documents", ids: MAIN_WORD_IDENTITY_DOCUMENTS_IDS },
   { category: "airport", ids: MAIN_WORD_AIRPORT_IDS },
+  { category: "phone-internet", ids: MAIN_WORD_PHONE_INTERNET_IDS },
 ] as const;
 const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
   GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),

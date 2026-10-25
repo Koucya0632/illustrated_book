@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "series": "phone-internet",
+  "reviewer": "Codex, individual concept and three-language sentence/span review",
+  "scope": "All 26 concepts and 52 examples; individual editorial judgments, not an independent human review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "phone-case",
+      "verdict": "pass",
+      "reason": "スマホケース限定包覆機背和側邊的外殼，與螢幕貼及手機本體區分。",
+      "sourceSha256": "45c40d16ae3244603f8bc9f6e29e62f6bdc2835193b2780562eb2a978b679e20"
+    },
+    {
+      "kind": "example",
+      "wordId": "phone-case",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "藍色手機殼的單一外觀描述，三語顏色及所有者一致。",
+      "sourceSha256": "d65e28466abbe5f15f2dd32682473bc806c7c0664cdd9a32a48a5454bdeb0cf0"
+    },
+    {
+      "kind": "example",
+      "wordId": "phone-case",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因為手機殼裂了而購買新殼，原因與結果清楚，避免把裂殼說成裂螢幕。",
+      "sourceSha256": "044d43dd3854d3a70b053467e8c9cf29fb57cb13ebad648d957646ccbfc3e2d6"
+    },
+    {
+      "kind": "word",
+      "wordId": "screen-protector",
+      "verdict": "pass",
+      "reason": "画面保護フィルム是貼在螢幕上的薄片，涵蓋玻璃保護貼，與包覆機身的殼分開。",
+      "sourceSha256": "00afcefe787875f3a4cc55390ec123a7a3a3cd7069a1adde400232d14b6922d7"
+    },
+    {
+      "kind": "example",
+      "wordId": "screen-protector",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "替手機貼保護貼是單一日常動作，英日繁中物件一致。",
+      "sourceSha256": "ca43db4309332d65fe2710dd51bcd132d138cd707525018301b90cecb415adad"
+    },
+    {
+      "kind": "example",
+      "wordId": "screen-protector",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "先擦拭畫面再貼保護貼有明確先後，wipe clean未誤譯成修理或換螢幕。",
+      "sourceSha256": "2a8eb5a9bac98cacaee1ead49ee1311c5f8b273ff8b330cec8485860d55e4cf5"
+    },
+    {
+      "kind": "word",
+      "wordId": "charging-cable",
+      "verdict": "pass",
+      "reason": "充電ケーブル指線材，沒有把USB-C接頭普遍化為所有充電線，也未與充電器重複。",
+      "sourceSha256": "b2cb9e53f8d956fde26b124d4edfff355f917d063936e6a3312207c1fb3bb296"
+    },
+    {
+      "kind": "example",
+      "wordId": "charging-cable",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "借用充電線是直接禮貌請求，三語皆為借用而非索取。",
+      "sourceSha256": "4b3ff8c5e708920c70150e4981929a90d1e064f2129aadde7fb93b8a54e2ea99"
+    },
+    {
+      "kind": "example",
+      "wordId": "charging-cable",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因線長不足而把手機移近插座，有因果；未聲稱所有線材均支援快速充電。",
+      "sourceSha256": "96f131c0c77688e77e346045a82aa84f7a4a3cc7d283e8f91d5b501e3df2a658"
+    },
+    {
+      "kind": "word",
+      "wordId": "wireless-charger",
+      "verdict": "pass",
+      "reason": "ワイヤレス充電器以手機端無需插線為區別；沒有誤稱充電座本身完全不用電線。",
+      "sourceSha256": "6e43c7ddf37f35555dd67f4b79d8f07f14fda24c46f0bb3a9aff84fb3f2dbd76"
+    },
+    {
+      "kind": "example",
+      "wordId": "wireless-charger",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把手機放上無線充電器是簡單操作，未把所有手機都說成支援。",
+      "sourceSha256": "0263fd53416b7aa47de6bf0c2b34ebf587bbbd9dd044a241a26b4e4b79767800"
+    },
+    {
+      "kind": "example",
+      "wordId": "wireless-charger",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "換殼後無法充電而先取下殼再試，因果和時序自然，未推論所有殼都不相容。",
+      "sourceSha256": "d280ac157e138f604e731ca90c957b452526a4cfef5d4fc8b2ba492671128ad8"
+    },
+    {
+      "kind": "word",
+      "wordId": "phone-stand",
+      "verdict": "pass",
+      "reason": "スマホスタンド採桌上支撐架，與自拍棒、車用夾具及平板架分開。",
+      "sourceSha256": "0e00e11ee9f63cc5c7bc1bced660bc3f75f573a7b259b36742ce3950112cb183"
+    },
+    {
+      "kind": "example",
+      "wordId": "phone-stand",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把支架放在桌上是單一擺放動作，沒有聲稱支架具有充電功能。",
+      "sourceSha256": "704ef49e4ee0d59547574960cdb296b4fe7f26d2a63cea3dd2d3af894ec880e0"
+    },
+    {
+      "kind": "example",
+      "wordId": "phone-stand",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為空出雙手做飯而使用支架看食譜，目的關係明確，與簡單擺放句有教學差異。",
+      "sourceSha256": "1af9029166956aaf5e879538e69e108064d3ce1e5627ae20acef6141a099cc07"
+    },
+    {
+      "kind": "word",
+      "wordId": "sim-card",
+      "verdict": "pass",
+      "reason": "SIMカード限定實體通信晶片卡；讀音シム完整處理拉丁字母，與eSIM及microSD分開。",
+      "sourceSha256": "b0c20b9802fae69627e6da65ba8b949fc151b08e346087e5ecd8add260dfb693"
+    },
+    {
+      "kind": "example",
+      "wordId": "sim-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "將SIM卡放進托盤為單一實際動作，沒有混成插記憶卡。",
+      "sourceSha256": "f273ebb04730dac15ec53ddd2a8cc024f9987214ba0b77bb0b42b6f121e22043"
+    },
+    {
+      "kind": "example",
+      "wordId": "sim-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "換手機前確認SIM卡尺寸相容，時間與嵌入疑問形成B1；未聲稱所有SIM皆通用。",
+      "sourceSha256": "b2ae8efd0176ef9f8f198669303fec739505c751575a2f210bcccf06324f0179"
+    },
+    {
+      "kind": "word",
+      "wordId": "sim-eject-tool",
+      "verdict": "pass",
+      "reason": "SIMピン採日本日常簡稱，定義限定退出SIM托盤的工具；不是縫衣針或別針。",
+      "sourceSha256": "29d15ddd97028789f1982f77297d90a51c15ed8146baa3b3f47a75bff842edb9"
+    },
+    {
+      "kind": "example",
+      "wordId": "sim-eject-tool",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把退卡針收進小盒是直接收納動作，三語容器及大小一致。",
+      "sourceSha256": "48597c140e4991332169f174d7a43ffe1c61c93ff57f664a2b407043a79dfbc1"
+    },
+    {
+      "kind": "example",
+      "wordId": "sim-eject-tool",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "找不到退卡針而暫緩更換SIM卡，因果及時間界線一致，沒有不當替代工具建議。",
+      "sourceSha256": "84c5efb25576b38d81b3368be90c72149c0bf8a1fa0c80b2ba1a3f1cfa22120c"
+    },
+    {
+      "kind": "word",
+      "wordId": "mobile-wifi-router",
+      "verdict": "pass",
+      "reason": "モバイルルーター限定可攜式行動網路分享器，與既有家用router及手機熱點區分。",
+      "sourceSha256": "eea0e74f89b88cd21f4db3435b5770bd6451a40158a8bfe3422c020a6fac1571"
+    },
+    {
+      "kind": "example",
+      "wordId": "mobile-wifi-router",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "替行動路由器充電是單一操作，符合電池供電設備特性。",
+      "sourceSha256": "3b4e88478cfbb708510a1e9f398db776488d39dfa6e0bca87b10fb15cc54f4db"
+    },
+    {
+      "kind": "example",
+      "wordId": "mobile-wifi-router",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因住宿Wi-Fi太慢而借用可攜式路由器，有實際原因及替代方案，未保證行動網路必定較快。",
+      "sourceSha256": "f2e32ec1cd5a801003a9352ef3ee2fe13265bb98dc8055a957bae3f89f2b0236"
+    },
+    {
+      "kind": "word",
+      "wordId": "ethernet-cable",
+      "verdict": "pass",
+      "reason": "LANケーブル採日本常見詞，圖片指定RJ45，與充電線、電話線清楚區別。",
+      "sourceSha256": "8b5df7019c01ea361127401be0ecf17888083e6c339c6b7e9eb1cd53be75c3c7"
+    },
+    {
+      "kind": "example",
+      "wordId": "ethernet-cable",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "將網路線接到路由器是單一連線動作，未混成無線配對。",
+      "sourceSha256": "124bed6914891a5f1c9f4b5630837d9bedc41c5ca3aca9406c392b4fb19585a8"
+    },
+    {
+      "kind": "example",
+      "wordId": "ethernet-cable",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "Wi-Fi不穩而用網路線連電腦與路由器，因果和連接兩端一致，未宣稱所有電腦都有網路孔。",
+      "sourceSha256": "75062dae5cd6eccf7d02ca4dd55d2ed58b625626872cdf9f9fa0964d1b583573"
+    },
+    {
+      "kind": "word",
+      "wordId": "wireless-earbuds",
+      "verdict": "pass",
+      "reason": "ワイヤレスイヤホン是入耳式無線耳機，與既有頭戴式headphones區分；圖片採左右獨立款但詞義未過度限縮。",
+      "sourceSha256": "5e42333e0d690c4db82ece03fbe8bdc9f50dd9b9dfab82727644eb82b94b6e64"
+    },
+    {
+      "kind": "example",
+      "wordId": "wireless-earbuds",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把無線耳機放回盒中是簡單收納請求，三語皆為返回盒內。",
+      "sourceSha256": "31d216cde5680cb8e23502c31741fa2d8e4c4ec3b26411ad3cbb005d90f9f326"
+    },
+    {
+      "kind": "example",
+      "wordId": "wireless-earbuds",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "搭車前先確認電量再收入包中，時間順序清楚；與簡單收納句的重點不同。",
+      "sourceSha256": "aaed0ec7e453f6f7bf946cb323baea7b356bd05944d106a1fac3cf37ccbc90fe"
+    },
+    {
+      "kind": "word",
+      "wordId": "phone-strap",
+      "verdict": "pass",
+      "reason": "スマホストラップ指手機用繩帶，圖片選手腕款但定義未排除其他長度，與通勤つり革不同。",
+      "sourceSha256": "90cc6e72140602846cb52f741933aa42579fd2cd4ea95908504d24236767407f"
+    },
+    {
+      "kind": "example",
+      "wordId": "phone-strap",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把繩帶裝在手機上為單一操作，三語皆為安裝掛繩。",
+      "sourceSha256": "5435eb874f6acae63b47206b482638b1963e6792e7af73ca3a37e31b0c88f52b"
+    },
+    {
+      "kind": "example",
+      "wordId": "phone-strap",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為避免搭車時掉落手機而使用掛繩，有明確目的，不宣稱掛繩能保證防摔。",
+      "sourceSha256": "3f612c752f86d623ff4138eb5e766732013897a6e370544b3e28602555965a8b"
+    },
+    {
+      "kind": "word",
+      "wordId": "car-phone-mount",
+      "verdict": "pass",
+      "reason": "車載スマホホルダー限定車內固定用途，與桌上phone stand區分，出風口夾式是圖片選型而非全部定義。",
+      "sourceSha256": "a71c7d5af48f0e23cf38c999d255f2c7d42adb2a41fb8ddaf32f71917a4081b5"
+    },
+    {
+      "kind": "example",
+      "wordId": "car-phone-mount",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "將手機放進車架是停車準備動作，三語指向相同支撐架。",
+      "sourceSha256": "75bbdcb1749ec579e5f632ceade3522f8c9987911ee97bf26ffdfb31e81338bd"
+    },
+    {
+      "kind": "example",
+      "wordId": "car-phone-mount",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "出發前調整角度以看清地圖，先後及目的都清楚，未寫成駕駛途中操作手機。",
+      "sourceSha256": "d3c5b7881c9fa3fe57aac890e7b82d0fa263582a90b2977d0fe5ed36ec71d395"
+    },
+    {
+      "kind": "word",
+      "wordId": "selfie-stick",
+      "verdict": "pass",
+      "reason": "自撮り棒具伸縮桿與手機夾，與腳架及單純手機支架不同，詞義包含相機但圖用手機款。",
+      "sourceSha256": "0075c9c445aae02675f19ffe206c990baa8af65b8200bcbbfe4f8e3cb5e39aa1"
+    },
+    {
+      "kind": "example",
+      "wordId": "selfie-stick",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "用自拍棒拍照為單一日常使用場景，沒有把棒子說成拍攝主體。",
+      "sourceSha256": "94985fafee41a6066beb181a010b058386c01e707ab57d093e8f568c9f59233f"
+    },
+    {
+      "kind": "example",
+      "wordId": "selfie-stick",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為讓所有人入鏡而伸長自拍棒，目的及動作一致，與簡單拍照句有實質差別。",
+      "sourceSha256": "bcaabc188ac0b4cdc44c46662367d35da81c1e917c250d964ca1b32d67b23c31"
+    },
+    {
+      "kind": "word",
+      "wordId": "usb-hub",
+      "verdict": "pass",
+      "reason": "USBハブ提供多個USB埠，不把LAN轉接器或讀卡機當作相同概念，讀音完整展開USB。",
+      "sourceSha256": "e5ecd298103a3cdac441130c9afb29352dda747ca4ad7e7a06c0a245edf437eb"
+    },
+    {
+      "kind": "example",
+      "wordId": "usb-hub",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把USB集線器接上電腦是單一動作，三語連接兩端一致。",
+      "sourceSha256": "71fcaf8ba3d1faf45458b837cdebf9c3679920482168ac664e23bec1a022799b"
+    },
+    {
+      "kind": "example",
+      "wordId": "usb-hub",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因電腦端子不夠而用集線器接鍵盤滑鼠，因果及用途明確，未宣稱所有裝置均免供電。",
+      "sourceSha256": "fabf09ceb0550c8adf37c987d334a86b7dc71e5f5082274c8bd9878e32509aab"
+    },
+    {
+      "kind": "word",
+      "wordId": "usb-c-ethernet-adapter",
+      "verdict": "pass",
+      "reason": "USB-C LANアダプター以USB-C插頭加RJ45孔為定義特徵，與多USB孔集線器及網路線區別。",
+      "sourceSha256": "697fededb8a843de5e305ea10905b3848b770c99cd2ea02db8c2bfe26064e5fe"
+    },
+    {
+      "kind": "example",
+      "wordId": "usb-c-ethernet-adapter",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "找出轉接器是簡單尋物場景，沒有加入難以理解的驅動程式敘述。",
+      "sourceSha256": "32982c788b5bfad8d8255655b39d4f2f4003ea2d1466e725773699b2e5dd410f"
+    },
+    {
+      "kind": "example",
+      "wordId": "usb-c-ethernet-adapter",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "筆電無網路孔而使用轉接器為具體原因，未保證所有USB-C手機都支援有線網路。",
+      "sourceSha256": "951a70a4b9c6ac62f3eb49898e4a2e4ff9733916b917f4895cd66e116497d73e"
+    },
+    {
+      "kind": "word",
+      "wordId": "card-reader",
+      "verdict": "pass",
+      "reason": "card reader有多義，三語定義均限定記憶卡用途，避免圖為SD讀卡機卻例句講金融交易。",
+      "sourceSha256": "2161c0dbcfda6f9665e67668c87344bf8496599de76d9732b768c651e4d1dea7"
+    },
+    {
+      "kind": "example",
+      "wordId": "card-reader",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把記憶卡插入讀卡機是單一實際動作，所有語言物件一致。",
+      "sourceSha256": "a59699d9006af8c7c998d16d6265c45b8ea4f9c05272a2af3d38c149ab3cd888"
+    },
+    {
+      "kind": "example",
+      "wordId": "card-reader",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "相片傳輸完成後才拔讀卡機有先後關係，未把讀卡機誤當儲存相片的本體。",
+      "sourceSha256": "7153fc8b92103557746e7e652f2fdf0d0fddd5be25162db29a365bdb21765f9f"
+    },
+    {
+      "kind": "word",
+      "wordId": "microsd-card",
+      "verdict": "pass",
+      "reason": "microSDカード用於資料儲存而非行動門號，讀音展開micro及SD；與本批SIM卡區分。",
+      "sourceSha256": "e36698b2b7f486f6add451e43cfa4aa022ada70bc550829220315be85ff66570"
+    },
+    {
+      "kind": "example",
+      "wordId": "microsd-card",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "相機插入microSD卡是相容機型上的簡單動作，未宣稱所有手機皆可擴充。",
+      "sourceSha256": "597b5881fedf40d17336b87ed5d174ac9f8b8699bdba65142f673a2495ab1558"
+    },
+    {
+      "kind": "example",
+      "wordId": "microsd-card",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因卡片容量已滿而先備份再刪照片，原因及順序一致，沒有引導未備份直接清除。",
+      "sourceSha256": "6ed8add00f2ff39f53f3ecfd1b7f646399ef725800671f3bf1f501d1a9aadfa2"
+    },
+    {
+      "kind": "word",
+      "wordId": "wifi-extender",
+      "verdict": "pass",
+      "reason": "Wi-Fi中継機延伸既有無線網路，與自帶行動回線的モバイルルーター不同；不宣稱會提高原本回線速度。",
+      "sourceSha256": "907be5123637404c9cc8250fd48dd51f038aa2ce9c9c78efc0bef3d65d266be9"
+    },
+    {
+      "kind": "example",
+      "wordId": "wifi-extender",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "把延伸器插入插座是單一步驟，圖片採日本常見插牆型。",
+      "sourceSha256": "35b89551da71ab8ffd34af8f3ca8f0bf70ec8a78e342b0b7d5cba846b84a7cc5"
+    },
+    {
+      "kind": "example",
+      "wordId": "wifi-extender",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "房間收訊弱而在走廊設置中繼機為實際因果，未寫成放在完全收不到訊號處仍可工作。",
+      "sourceSha256": "a7af4dc44b1e06c4dbe8e1f2777fa12ba9803f61682923dbc00e4fed4ff470c7"
+    },
+    {
+      "kind": "word",
+      "wordId": "app",
+      "verdict": "pass",
+      "reason": "アプリ指應用軟體而非手機本體或通知，圖片以單一被強調的程式圖示表意。",
+      "sourceSha256": "903d36ecba6d8c72986eaa0c2da98277d29ca279688057806007e42c76beb1f2"
+    },
+    {
+      "kind": "example",
+      "wordId": "app",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "開啟地圖應用程式是直接日常請求，三語都指定地圖用途。",
+      "sourceSha256": "c51d3d4403abf9fc4a399968f121bbc088c5163950197296a6741d017fdcc2d7"
+    },
+    {
+      "kind": "example",
+      "wordId": "app",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為騰出儲存空間而刪除不用的程式，有目的與修飾關係，未把程式刪除說成帳戶註銷。",
+      "sourceSha256": "02c8a6ef35a71a921a08de0ed16ee7958f673026b7b3e6c0a92701f6d3785a3f"
+    },
+    {
+      "kind": "word",
+      "wordId": "notification",
+      "verdict": "pass",
+      "reason": "通知限定數位提醒語境，與通知表、訊息內容本身及應用程式圖示不同。",
+      "sourceSha256": "4f2e45d5c656897ef5bdb45c13308f628ed13575f2607935b56308fb03a13db2"
+    },
+    {
+      "kind": "example",
+      "wordId": "notification",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "手機收到通知是單一日常事件，三語均為裝置上的提醒。",
+      "sourceSha256": "4a29b8158624057f7a756808936d88a8d0ccdfe1ff7fa2b7d27b217f1ca09618"
+    },
+    {
+      "kind": "example",
+      "wordId": "notification",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "工作中因提醒過多而暫時關閉，因果及時間限制一致，未建議永久關閉重要警示。",
+      "sourceSha256": "828702d36ab21f2e638745dcc2c7260b95d73106dd7d2b1028dd05641b628ab0"
+    },
+    {
+      "kind": "word",
+      "wordId": "password",
+      "verdict": "pass",
+      "reason": "パスワード是秘密存取字串，與一次性認証コード分開；圖以遮蔽圓點呈現而非真實密碼。",
+      "sourceSha256": "0312d29db60fd4b869193316e05d0ea9b3e7b72a3197dab002c007da14c71679"
+    },
+    {
+      "kind": "example",
+      "wordId": "password",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "輸入密碼是單一直接請求，三語均未要求公開或分享密碼。",
+      "sourceSha256": "b11109599f76c9cef8d74e7f0d74d27b569999b3c2d115c8e5d6d2fb0679230e"
+    },
+    {
+      "kind": "example",
+      "wordId": "password",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "忘記密碼而從登入畫面重設，原因與處理方式自然，沒有把驗證碼當成新密碼。",
+      "sourceSha256": "d3b747cc1b58a25f3601b90ffd38275c669a21d9adb5f711f6f088324d5f51e9"
+    },
+    {
+      "kind": "word",
+      "wordId": "verification-code",
+      "verdict": "pass",
+      "reason": "認証コード採本批一次性短碼語境，不把所有驗證碼都限定六位；示意數字不是實際帳號資料。",
+      "sourceSha256": "87f45ceca6ce8ae5acaf803ab04dbe7088505b1e1c35747dada8f0ea872c34e6"
+    },
+    {
+      "kind": "example",
+      "wordId": "verification-code",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "輸入簡訊收到的碼是直接生活操作，三語來源都為文字訊息。",
+      "sourceSha256": "1659b2205f92e41eab8b4fd2ac860972e9e34ef3341841f3d9210ee477b3fb99"
+    },
+    {
+      "kind": "example",
+      "wordId": "verification-code",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "驗證碼過期而申請新碼具原因與結果，沒有引導轉傳給他人。",
+      "sourceSha256": "68fec28df0c8d6428443f0300e570a1b2c2ea629af22221633d3640ad73db27c"
+    },
+    {
+      "kind": "word",
+      "wordId": "screenshot",
+      "verdict": "pass",
+      "reason": "スクリーンショット限定系統擷取畫面的靜態影像，與相機拍螢幕及螢幕錄影區分。",
+      "sourceSha256": "f5e127a41ccf3b6506ff97394717cf3988af3dd75f0993dd61cd1dfcca3aa616"
+    },
+    {
+      "kind": "example",
+      "wordId": "screenshot",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "截取地圖畫面是單一操作，三語沒有變成拍攝實體地圖。",
+      "sourceSha256": "b7355ee59109bd2aaa50dba3a56b36787e5e736cec560f1f7511dc0c08a21f66"
+    },
+    {
+      "kind": "example",
+      "wordId": "screenshot",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "為方便稍後找到預約編號而先截圖，目的關係明確，沒有混成下載原始文件。",
+      "sourceSha256": "113ff06ef36a14c984459618cfa858417d1c1fb229dcf8aaf5d10551ac8fb8ff"
+    },
+    {
+      "kind": "word",
+      "wordId": "airplane-mode",
+      "verdict": "pass",
+      "reason": "機内モード不等於關機，也不保證所有Wi-Fi及Bluetooth永遠關閉；釋義保留裝置差異。",
+      "sourceSha256": "ab33e3556bc671999e97640deabeddbe183d4f6a97d460fe89d58f2b89f1be32"
+    },
+    {
+      "kind": "example",
+      "wordId": "airplane-mode",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "開啟飛航模式是單一步驟，三語操作方向一致。",
+      "sourceSha256": "d8a22b35853c2600150ebede3aca8a75ef69f9eb0d4f1b18bb023f9083c4eb5e"
+    },
+    {
+      "kind": "example",
+      "wordId": "airplane-mode",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "收到落地通知後關閉飛航模式並聯絡家人，有時間及連續動作，未當成通用航空規則。",
+      "sourceSha256": "ec0cb4004b0c2f05375413f2d42d7b7fc4c3c4c8c97d6ba18cb5446cc58ddfcf"
+    },
+    {
+      "kind": "word",
+      "wordId": "personal-hotspot",
+      "verdict": "pass",
+      "reason": "インターネット共有採iPhone介面用語，亦說明為手機分享行動回線的熱點功能，不等於實體行動路由器。",
+      "sourceSha256": "d78be4d99df4f2726d7c186fcee8f1c9d879cda4be794bbc6c7529c674800618"
+    },
+    {
+      "kind": "example",
+      "wordId": "personal-hotspot",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "啟用手機熱點為簡單請求，三語都是分享功能而非一般Wi-Fi連線。",
+      "sourceSha256": "57f229229de56d0bbf921062a2f475249ba4c51e82db38cc2f295e12a62e65fa"
+    },
+    {
+      "kind": "example",
+      "wordId": "personal-hotspot",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "咖啡店無Wi-Fi而以手機熱點連筆電，原因及設備方向清楚，不假定所有門號方案都支援。",
+      "sourceSha256": "70f704842be509d80126148ce61856b30123888dcccdf250a5e79446dcc85fcd"
+    },
+    {
+      "kind": "word",
+      "wordId": "mobile-data",
+      "verdict": "pass",
+      "reason": "モバイルデータ通信限定電信行動回線，與資料檔案、Wi-Fi及熱點分享功能區分。",
+      "sourceSha256": "03c263189879167340a52e09f7163be0a94c2dd4b0f69b5203ed2d58edad846a"
+    },
+    {
+      "kind": "example",
+      "wordId": "mobile-data",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "以行動數據查看地圖是直接日常用途，三語動作及連線方式一致。",
+      "sourceSha256": "f9486f2a919f8dafe296ebf31f82194dba1800c0ebfce54ce22238eca46b7786"
+    },
+    {
+      "kind": "example",
+      "wordId": "mobile-data",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "照片改用家中Wi-Fi上傳以減少行動數據用量，有目的及對照，未宣稱Wi-Fi在所有情況都免費。",
+      "sourceSha256": "8f6d385a226008d3c5ef922fb5b8a120d4bd85702251a2b0652a11d8c19a2879"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {inspectMp3Bytes} from '/Users/rex/.codex/skills/audit-tuji-atlas/scripts/check-word-audio-contract.mjs';
+const root='output/phone-internet-audio-candidates';
+const manifest=JSON.parse(fs.readFileSync(`${root}/generated-manifest.json`));
+const results=Object.entries(manifest.generated).map(([key,clip])=>({key,...inspectMp3Bytes(fs.readFileSync(`${root}/${clip.file}`))}));
+const expected=JSON.parse(fs.readFileSync('output/phone-internet-audio-plan/manifest.json')).jobs.length;
+const issues=results.filter(r=>!r.valid||!r.frames).map(r=>r.key);
+if(results.length!==expected)issues.push(`expected ${expected}, found ${results.length}`);
+const report={checkedAt:new Date().toISOString(),clips:results.length,passed:issues.length===0,issues,results};
+fs.writeFileSync(`${root}/mp3-frames-report.json`,JSON.stringify(report,null,2)+'\n');
+console.log({clips:results.length,passed:report.passed,issues});if(issues.length)process.exitCode=1;

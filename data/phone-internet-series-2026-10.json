@@ -1,0 +1,1351 @@
+{
+  "schemaVersion": 1,
+  "series": "phone-internet",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "26 phone-accessory, network-device and phone-operation concepts. Existing smartphone, charger, power bank, headphones and home router stay in their original categories. Production uploads, DB writes, commit and deployment require separate authorization.",
+  "category": {
+    "id": "phone-internet",
+    "name": "Phones & Internet",
+    "nameZh": "手機與網路",
+    "nameJa": "スマホ・インターネット",
+    "emoji": "📱",
+    "description": "手機配件、網路連線設備與日常手機操作",
+    "descriptionEn": "Phone accessories, network equipment and everyday phone features",
+    "descriptionJa": "スマホのアクセサリー、ネット接続機器や日常の操作機能",
+    "color": "from-sky-100 to-indigo-100",
+    "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/category-phone-internet-v1-36d6fe6199e5.webp"
+  },
+  "references": [
+    "https://support.apple.com/ja-jp/109357",
+    "https://www.softbank.jp/mobile/special/support-channel/contents/?c=205&q=SIM",
+    "https://shop.uqwimax.jp/shop/guide/home-router-mobile-router/"
+  ],
+  "entries": [
+    {
+      "id": "phone-case",
+      "word": "phone case",
+      "chinese": "手機殼",
+      "chineseDefinition": "包覆手機背面與側邊、提供保護的外殼；不是螢幕保護貼。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊn keɪs/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手機殼",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A protective cover fitted around the back and sides of a mobile phone.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スマートフォンの背面や側面を覆って保護するカバー。画面に貼る保護フィルムとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My phone case is blue.",
+          "ja": "私のスマホケースは青いです。",
+          "zh": "我的手機殼是藍色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My phone case cracked, so I bought a new one.",
+          "ja": "スマホケースにひびが入ったので、新しいものを買いました。",
+          "zh": "我的手機殼裂了，所以我買了一個新的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スマホケース",
+      "jaReading": "スマホケース",
+      "jaReadingSegments": [
+        {
+          "text": "スマホケース",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/phone-case-v1-c8a5746c3c65.webp"
+    },
+    {
+      "id": "screen-protector",
+      "word": "screen protector",
+      "chinese": "螢幕保護貼",
+      "chineseDefinition": "貼在手機等裝置螢幕表面、用於保護畫面的薄片，包含玻璃材質款式。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈskriːn prəˌtek.tɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "螢幕保護貼",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A thin protective sheet, including glass types, applied to a device screen.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スマートフォンなどの画面に貼って保護する薄いシート。ガラス製のものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put a screen protector on my phone.",
+          "ja": "スマホに画面保護フィルムを貼ります。",
+          "zh": "我在手機上貼螢幕保護貼。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before applying the screen protector, I wiped the screen clean.",
+          "ja": "画面保護フィルムを貼る前に、画面をきれいに拭きました。",
+          "zh": "貼螢幕保護貼之前，我先把螢幕擦乾淨。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "画面保護フィルム",
+      "jaReading": "がめんほごフィルム",
+      "jaReadingSegments": [
+        {
+          "text": "画面保護フィルム",
+          "ruby": "がめんほごフィルム"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/screen-protector-v1-447965d5e7d7.webp"
+    },
+    {
+      "id": "charging-cable",
+      "word": "charging cable",
+      "chinese": "充電線",
+      "chineseDefinition": "連接裝置與電源以充電的線材；此處圖示兩端皆為USB-C的款式，不是充電器本體。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtʃɑːr.dʒɪŋ ˌkeɪ.bəl/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "充電線",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cable connecting a device to a power source for charging; the illustration shows a USB-C to USB-C type.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "機器を電源につないで充電するためのケーブル。図は両端がUSB-Cのものを示し、充電器本体とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please lend me a charging cable.",
+          "ja": "充電ケーブルを貸してください。",
+          "zh": "請借我一條充電線。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The charging cable was too short, so I moved my phone closer to the outlet.",
+          "ja": "充電ケーブルが短すぎたので、スマホをコンセントの近くに移しました。",
+          "zh": "充電線太短了，所以我把手機移到插座附近。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "充電ケーブル",
+      "jaReading": "じゅうでんケーブル",
+      "jaReadingSegments": [
+        {
+          "text": "充電ケーブル",
+          "ruby": "じゅうでんケーブル"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/charging-cable-v1-93da04904c45.webp"
+    },
+    {
+      "id": "wireless-charger",
+      "word": "wireless charger",
+      "chinese": "無線充電器",
+      "chineseDefinition": "讓相容裝置放在上面即可充電、不必把線插入裝置充電孔的充電器；充電器本身仍需電源。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwaɪr.ləs ˈtʃɑːr.dʒɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "無線充電器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A charger that transfers power to a compatible device without a cable plugged into that device.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "対応する機器を載せて、機器の端子にケーブルを挿さずに充電できる充電器。充電器自体には電源が必要。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your phone on the wireless charger.",
+          "ja": "ワイヤレス充電器にスマホを置いてください。",
+          "zh": "請把手機放在無線充電器上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After changing the case, my phone would not charge on the wireless charger, so I removed the case and tried again.",
+          "ja": "ケースを替えたらワイヤレス充電器で充電できなくなったので、ケースを外してもう一度試しました。",
+          "zh": "換了手機殼後，手機無法用無線充電器充電，所以我拆下殼再試一次。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ワイヤレス充電器",
+      "jaReading": "ワイヤレスじゅうでんき",
+      "jaReadingSegments": [
+        {
+          "text": "ワイヤレス充電器",
+          "ruby": "ワイヤレスじゅうでんき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/wireless-charger-v1-ca7efc780d86.webp"
+    },
+    {
+      "id": "phone-stand",
+      "word": "phone stand",
+      "chinese": "手機支架",
+      "chineseDefinition": "讓手機以適合觀看的角度立在桌面等平面上的支架。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊn stænd/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手機支架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A support that holds a mobile phone at a viewing angle on a flat surface.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "机などの上で、スマートフォンを見やすい角度に支える台。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the phone stand on the desk.",
+          "ja": "スマホスタンドを机に置いてください。",
+          "zh": "請把手機支架放在桌上。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To keep my hands free while cooking, I use a phone stand to read the recipe.",
+          "ja": "料理中に両手を使えるように、スマホスタンドを使ってレシピを見ています。",
+          "zh": "為了做飯時能空出雙手，我用手機支架看食譜。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スマホスタンド",
+      "jaReading": "スマホスタンド",
+      "jaReadingSegments": [
+        {
+          "text": "スマホスタンド",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/phone-stand-v1-6e82475a2d17.webp"
+    },
+    {
+      "id": "sim-card",
+      "word": "SIM card",
+      "chinese": "SIM卡",
+      "chineseDefinition": "插入相容裝置、用於識別行動通信門號的實體晶片卡；此處圖示nano-SIM，不是eSIM或記憶卡。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɪm kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "SIM卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A physical chip card that identifies a mobile subscription in a compatible device; shown as a nano-SIM.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "対応する機器に挿して、携帯電話の契約者情報を識別するための小さなICカード。図はnano-SIMで、eSIMやメモリーカードとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the SIM card in the tray.",
+          "ja": "SIMカードをトレイに入れてください。",
+          "zh": "請把SIM卡放進托盤。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before changing phones, I checked whether my SIM card was the right size.",
+          "ja": "スマホを買い替える前に、SIMカードのサイズが合うか確認しました。",
+          "zh": "換手機前，我確認了SIM卡的尺寸是否合適。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "SIMカード",
+      "jaReading": "シムカード",
+      "jaReadingSegments": [
+        {
+          "text": "SIMカード",
+          "ruby": "シムカード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/sim-card-v1-10c0e1c0da70.webp"
+    },
+    {
+      "id": "sim-eject-tool",
+      "word": "SIM eject tool",
+      "chinese": "退卡針",
+      "chineseDefinition": "插入SIM卡托旁指定小孔、用來退出卡托的小型金屬工具。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɪm ɪˌdʒekt tuːl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "退卡針",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small metal tool inserted into the designated hole beside a SIM tray to release it.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "SIMトレイの横にある専用の穴に挿して、トレイを取り出すための小さな金属製の道具。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Keep the SIM eject tool in a small box.",
+          "ja": "SIMピンは小さな箱に入れておいてください。",
+          "zh": "請把退卡針收在小盒子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I could not find the SIM eject tool, so I waited until the next day to change the SIM card.",
+          "ja": "SIMピンが見つからなかったので、SIMカードの交換は翌日まで待ちました。",
+          "zh": "我找不到退卡針，所以等到隔天才更換SIM卡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "SIMピン",
+      "jaReading": "シムピン",
+      "jaReadingSegments": [
+        {
+          "text": "SIMピン",
+          "ruby": "シムピン"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/sim-eject-tool-v1-d881e4fe3c76.webp"
+    },
+    {
+      "id": "mobile-wifi-router",
+      "word": "mobile Wi-Fi router",
+      "chinese": "行動Wi-Fi路由器",
+      "chineseDefinition": "可攜帶、以行動通信網路連線並透過Wi-Fi分享網路的路由器；不是家用固定式路由器。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmoʊ.bəl ˈwaɪ.faɪ ˌruː.t̬ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行動Wi-Fi路由器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A portable router that uses a mobile network connection and shares it over Wi-Fi.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "携帯電話の通信回線を使い、Wi-Fiでほかの機器をインターネットにつなぐ、持ち運べるルーター。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I charge the mobile Wi-Fi router.",
+          "ja": "モバイルルーターを充電します。",
+          "zh": "我替行動Wi-Fi路由器充電。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The hotel Wi-Fi was too slow, so I borrowed a mobile Wi-Fi router from a friend.",
+          "ja": "ホテルのWi-Fiが遅すぎたので、友達にモバイルルーターを借りました。",
+          "zh": "飯店的Wi-Fi太慢了，所以我向朋友借了一台行動Wi-Fi路由器。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "モバイルルーター",
+      "jaReading": "モバイルルーター",
+      "jaReadingSegments": [
+        {
+          "text": "モバイルルーター",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/mobile-wifi-router-v1-d1302196f4d3.webp"
+    },
+    {
+      "id": "ethernet-cable",
+      "word": "Ethernet cable",
+      "chinese": "網路線",
+      "chineseDefinition": "用於乙太網路有線連線的線材；此處圖示RJ45接頭，不是電話線或USB充電線。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈiː.θɚ.net ˌkeɪ.bəl/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "網路線",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cable for a wired Ethernet network connection; shown with RJ45 connectors.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "有線LANで機器同士をつなぐためのケーブル。図はRJ45端子のもので、電話線やUSBケーブルとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Connect the Ethernet cable to the router.",
+          "ja": "LANケーブルをルーターにつないでください。",
+          "zh": "請把網路線接到路由器。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the Wi-Fi was unstable, I connected my computer to the router with an Ethernet cable.",
+          "ja": "Wi-Fiが不安定だったので、LANケーブルでパソコンとルーターをつなぎました。",
+          "zh": "因為Wi-Fi不穩定，我用網路線把電腦和路由器連接起來。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "LANケーブル",
+      "jaReading": "ランケーブル",
+      "jaReadingSegments": [
+        {
+          "text": "LANケーブル",
+          "ruby": "ランケーブル"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/ethernet-cable-v1-b6c2d6f08e8d.webp"
+    },
+    {
+      "id": "wireless-earbuds",
+      "word": "wireless earbuds",
+      "chinese": "無線耳機",
+      "chineseDefinition": "無需音源連接線、放在耳內使用的小型耳機；此處圖示附充電盒的左右獨立款式。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwaɪr.ləs ˈɪr.bʌdz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "無線耳機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Small earphones worn in the ears without a cable to the audio source; shown as a true-wireless pair with a charging case.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "音を出す機器とケーブルでつながずに使う、耳に入れる小型のイヤホン。図は左右が独立した充電ケース付きのもの。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the wireless earbuds back in their case.",
+          "ja": "ワイヤレスイヤホンをケースに戻してください。",
+          "zh": "請把無線耳機放回盒裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before boarding the train, I checked the battery level of my wireless earbuds and put them in my bag.",
+          "ja": "電車に乗る前に、ワイヤレスイヤホンの電池残量を確認して、かばんに入れました。",
+          "zh": "搭電車前，我確認了無線耳機的剩餘電量，再把耳機放進包裡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ワイヤレスイヤホン",
+      "jaReading": "ワイヤレスイヤホン",
+      "jaReadingSegments": [
+        {
+          "text": "ワイヤレスイヤホン",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/wireless-earbuds-v1-da26d94104e3.webp"
+    },
+    {
+      "id": "phone-strap",
+      "word": "phone strap",
+      "chinese": "手機掛繩",
+      "chineseDefinition": "繫在手機或手機殼上、方便握持或攜帶的繩帶；此處圖示手腕款。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfoʊn stræp/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手機掛繩",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cord or strap attached to a phone or its case for holding or carrying it; shown as a wrist strap.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "持ったり持ち運んだりしやすいように、スマホやケースに取り付けるひも。図は手首に通すタイプ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I attach a phone strap to my phone.",
+          "ja": "スマホにスマホストラップを付けます。",
+          "zh": "我在手機上裝上手機掛繩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I use a phone strap so that I do not drop my phone on the train.",
+          "ja": "電車の中でスマホを落とさないように、スマホストラップを使っています。",
+          "zh": "為了避免在電車上掉落手機，我使用手機掛繩。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スマホストラップ",
+      "jaReading": "スマホストラップ",
+      "jaReadingSegments": [
+        {
+          "text": "スマホストラップ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/phone-strap-v1-2431895fb366.webp"
+    },
+    {
+      "id": "car-phone-mount",
+      "word": "car phone mount",
+      "chinese": "車用手機架",
+      "chineseDefinition": "固定在車內、用來支撐手機的架具；此處圖示出風口夾式。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːr foʊn maʊnt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "車用手機架",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A holder fitted inside a car to support a phone; shown as an air-vent clip type.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "車内に取り付けてスマホを支える器具。図はエアコンの吹き出し口に固定するタイプ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put your phone in the car phone mount.",
+          "ja": "車載スマホホルダーにスマホを置いてください。",
+          "zh": "請把手機放進車用手機架。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before setting off, I adjusted the car phone mount so that I could see the map clearly.",
+          "ja": "出発する前に、地図がよく見えるように車載スマホホルダーの角度を調整しました。",
+          "zh": "出發前，我調整了車用手機架的角度，讓自己能看清楚地圖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "車載スマホホルダー",
+      "jaReading": "しゃさいスマホホルダー",
+      "jaReadingSegments": [
+        {
+          "text": "車載スマホホルダー",
+          "ruby": "しゃさいスマホホルダー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/car-phone-mount-v1-995d11d358e3.webp"
+    },
+    {
+      "id": "selfie-stick",
+      "word": "selfie stick",
+      "chinese": "自拍棒",
+      "chineseDefinition": "將手機或相機固定在伸縮桿前端，方便從較遠處自拍的工具。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsel.fi stɪk/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "自拍棒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An extendable pole that holds a phone or camera farther away for taking a selfie.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スマホやカメラを先端に固定し、離れた位置から自分を撮るための伸縮する棒。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I take a photo with a selfie stick.",
+          "ja": "自撮り棒で写真を撮ります。",
+          "zh": "我用自拍棒拍照。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I extended the selfie stick so that everyone would fit in the photo.",
+          "ja": "全員が写真に入るように、自撮り棒を伸ばしました。",
+          "zh": "為了讓所有人都入鏡，我把自拍棒伸長了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "自撮り棒",
+      "jaReading": "じどりぼう",
+      "jaReadingSegments": [
+        {
+          "text": "自撮り棒",
+          "ruby": "じどりぼう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/selfie-stick-v1-c336025fdfe3.webp"
+    },
+    {
+      "id": "usb-hub",
+      "word": "USB hub",
+      "chinese": "USB集線器",
+      "chineseDefinition": "讓一個USB連接埠可連接多個USB裝置的周邊設備。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌjuː.esˈbiː hʌb/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "USB集線器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A device that expands one USB port into several connections for USB devices.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "一つのUSB端子から複数のUSB機器を接続できるようにする周辺機器。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Connect the USB hub to your computer.",
+          "ja": "USBハブをパソコンにつないでください。",
+          "zh": "請把USB集線器接到電腦。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My computer did not have enough ports, so I used a USB hub to connect the keyboard and mouse.",
+          "ja": "パソコンの端子が足りなかったので、USBハブを使ってキーボードとマウスをつなぎました。",
+          "zh": "電腦的連接埠不夠，所以我用USB集線器連接鍵盤和滑鼠。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "USBハブ",
+      "jaReading": "ユーエスビーハブ",
+      "jaReadingSegments": [
+        {
+          "text": "USBハブ",
+          "ruby": "ユーエスビーハブ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/usb-hub-v1-4ec9639cae0e.webp"
+    },
+    {
+      "id": "usb-c-ethernet-adapter",
+      "word": "USB-C Ethernet adapter",
+      "chinese": "USB-C網路轉接器",
+      "chineseDefinition": "透過USB-C連接埠提供乙太網路接孔、讓相容裝置可插網路線的轉接器。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌjuː.esˌbiːˈsiː ˈiː.θɚ.net əˌdæp.tɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "USB-C網路轉接器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An adapter that provides an Ethernet socket through a USB-C connection on a compatible device.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "対応する機器のUSB-C端子につなぎ、LANケーブルを挿せるようにする変換機器。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My USB-C Ethernet adapter is in the bag.",
+          "ja": "USB-C LANアダプターはかばんの中にあります。",
+          "zh": "我的USB-C網路轉接器在包裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My laptop had no Ethernet port, so I connected the cable through a USB-C Ethernet adapter.",
+          "ja": "ノートパソコンにLAN端子がなかったので、USB-C LANアダプターを使ってケーブルをつなぎました。",
+          "zh": "筆電沒有網路孔，所以我透過USB-C網路轉接器接上網路線。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "USB-C LANアダプター",
+      "jaReading": "ユーエスビーシーランアダプター",
+      "jaReadingSegments": [
+        {
+          "text": "USB-C LANアダプター",
+          "ruby": "ユーエスビーシーランアダプター"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/usb-c-ethernet-adapter-v1-718f75415af9.webp"
+    },
+    {
+      "id": "card-reader",
+      "word": "card reader",
+      "chinese": "讀卡機",
+      "chineseDefinition": "讀取SD卡等記憶卡資料的裝置；此處指記憶卡讀卡機，不是金融卡或付款讀卡設備。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɑːrd ˌriː.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "讀卡機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A device for reading data from memory cards such as SD cards; here, a memory-card reader rather than a payment terminal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "SDカードなどのメモリーカードに保存されたデータを読み取る機器。ここでは決済用ではなくメモリーカード用を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Put the memory card in the card reader.",
+          "ja": "カードリーダーにメモリーカードを挿してください。",
+          "zh": "請把記憶卡插入讀卡機。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After copying the photos to my computer, I unplugged the card reader.",
+          "ja": "写真をパソコンにコピーしてから、カードリーダーを抜きました。",
+          "zh": "把照片複製到電腦後，我才拔下讀卡機。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "カードリーダー",
+      "jaReading": "カードリーダー",
+      "jaReadingSegments": [
+        {
+          "text": "カードリーダー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/card-reader-v1-596cba3d4bdf.webp"
+    },
+    {
+      "id": "microsd-card",
+      "word": "microSD card",
+      "chinese": "microSD記憶卡",
+      "chineseDefinition": "用來儲存照片等資料的小型microSD規格記憶卡；不是用來識別門號的SIM卡。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌmaɪ.kroʊ.esˈdiː kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "microSD記憶卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small microSD-format memory card for storing data such as photos, distinct from a SIM card.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "写真などのデータを保存する、小型のmicroSD規格のメモリーカード。SIMカードとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I put a microSD card in the camera.",
+          "ja": "カメラにmicroSDカードを入れます。",
+          "zh": "我把microSD記憶卡放進相機。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The microSD card was full, so I backed up the photos before deleting them.",
+          "ja": "microSDカードがいっぱいになったので、写真をバックアップしてから削除しました。",
+          "zh": "microSD記憶卡滿了，所以我先備份照片，再把照片刪除。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "microSDカード",
+      "jaReading": "マイクロエスディーカード",
+      "jaReadingSegments": [
+        {
+          "text": "microSDカード",
+          "ruby": "マイクロエスディーカード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/microsd-card-v1-ee85e77b08d8.webp"
+    },
+    {
+      "id": "wifi-extender",
+      "word": "Wi-Fi extender",
+      "chinese": "Wi-Fi訊號延伸器",
+      "chineseDefinition": "接收既有Wi-Fi訊號並延伸無線網路覆蓋範圍的設備；不會自行提供行動通信門號。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈwaɪ.faɪ ɪkˌsten.dɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "Wi-Fi訊號延伸器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A device that extends the coverage of an existing Wi-Fi network.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "既存のWi-Fiの電波を受けて中継し、無線ネットワークが届く範囲を広げる機器。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Plug the Wi-Fi extender into the outlet.",
+          "ja": "Wi-Fi中継機をコンセントに挿してください。",
+          "zh": "請把Wi-Fi訊號延伸器插入插座。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The signal in my room was weak, so I installed a Wi-Fi extender in the hallway.",
+          "ja": "部屋の電波が弱かったので、廊下にWi-Fi中継機を設置しました。",
+          "zh": "房間裡的訊號很弱，所以我在走廊設置了Wi-Fi訊號延伸器。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "Wi-Fi中継機",
+      "jaReading": "ワイファイちゅうけいき",
+      "jaReadingSegments": [
+        {
+          "text": "Wi-Fi中継機",
+          "ruby": "ワイファイちゅうけいき"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/wifi-extender-v1-13dde3788556.webp"
+    },
+    {
+      "id": "app",
+      "word": "app",
+      "chinese": "應用程式",
+      "chineseDefinition": "在手機等裝置上執行特定功能的應用軟體；圖示以手機主畫面上的程式圖示代表。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/æp/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "應用程式",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A software application that performs a particular function on a device such as a phone.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スマホなどで特定の機能を使うためのソフトウェア。図はホーム画面のアイコンで表している。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Open the map app.",
+          "ja": "地図アプリを開いてください。",
+          "zh": "請開啟地圖應用程式。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To free up storage space, I deleted the apps I no longer used.",
+          "ja": "空き容量を増やすために、使わなくなったアプリを削除しました。",
+          "zh": "為了騰出儲存空間，我刪除了已不再使用的應用程式。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "アプリ",
+      "jaReading": "アプリ",
+      "jaReadingSegments": [
+        {
+          "text": "アプリ",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/app-v1-ed13461e59d4.webp"
+    },
+    {
+      "id": "notification",
+      "word": "notification",
+      "chinese": "通知",
+      "chineseDefinition": "手機或應用程式顯示的訊息、更新等提醒；此處指數位裝置通知。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌnoʊ.t̬ə.fɪˈkeɪ.ʃən/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "通知",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An alert on a digital device about a message, update or other event.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "メッセージや更新などがあったことを、スマホやアプリが知らせる表示。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I got a notification on my phone.",
+          "ja": "スマホに通知が来ました。",
+          "zh": "我的手機收到一則通知。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was getting too many notifications, so I turned them off while I was working.",
+          "ja": "通知が多すぎたので、仕事をしている間はオフにしました。",
+          "zh": "通知太多了，所以我在工作期間把通知關閉了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "通知",
+      "jaReading": "つうち",
+      "jaReadingSegments": [
+        {
+          "text": "通知",
+          "ruby": "つうち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/notification-v1-394a67fa0d5d.webp"
+    },
+    {
+      "id": "password",
+      "word": "password",
+      "chinese": "密碼",
+      "chineseDefinition": "用來驗證使用者身分或取得存取權限的秘密字串；與一次性驗證碼不同。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpæs.wɝːd/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "密碼",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A secret string used to verify identity or gain access, distinct from a one-time verification code.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "本人確認や利用の許可を得るために入力する秘密の文字列。一度だけ使う認証コードとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please enter your password.",
+          "ja": "パスワードを入力してください。",
+          "zh": "請輸入你的密碼。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I forgot my password, so I reset it from the login screen.",
+          "ja": "パスワードを忘れたので、ログイン画面から再設定しました。",
+          "zh": "我忘記密碼了，所以從登入畫面重新設定。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "パスワード",
+      "jaReading": "パスワード",
+      "jaReadingSegments": [
+        {
+          "text": "パスワード",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/password-v1-0cbb50923f41.webp"
+    },
+    {
+      "id": "verification-code",
+      "word": "verification code",
+      "chinese": "驗證碼",
+      "chineseDefinition": "服務提供者傳送、供確認身分或操作的短碼；此處指以簡訊等取得的短效驗證碼。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌver.ə.fɪˈkeɪ.ʃən koʊd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "驗證碼",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A short code sent by a service to confirm identity or an action; here, a temporary code received by message.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "本人や操作の確認のためにサービスから送られる短いコード。ここではSMSなどで受け取る、一時的に使うものを指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Enter the verification code from the text message.",
+          "ja": "SMSで届いた認証コードを入力してください。",
+          "zh": "請輸入簡訊收到的驗證碼。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The verification code had expired, so I requested a new one.",
+          "ja": "認証コードの有効期限が切れていたので、新しいコードを送ってもらいました。",
+          "zh": "驗證碼已經過期，所以我申請傳送新的驗證碼。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "認証コード",
+      "jaReading": "にんしょうコード",
+      "jaReadingSegments": [
+        {
+          "text": "認証コード",
+          "ruby": "にんしょうコード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/verification-code-v1-ebc6689da490.webp"
+    },
+    {
+      "id": "screenshot",
+      "word": "screenshot",
+      "chinese": "螢幕截圖",
+      "chineseDefinition": "將裝置當下螢幕顯示內容擷取成的靜態影像；不是用相機拍攝螢幕的照片。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈskriːn.ʃɑːt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "螢幕截圖",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A still image captured directly from what is displayed on a device screen.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "機器の画面に表示されている内容を、そのまま静止画像として保存したもの。画面をカメラで撮った写真とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Take a screenshot of the map.",
+          "ja": "地図のスクリーンショットを撮ってください。",
+          "zh": "請把地圖畫面截圖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I took a screenshot so that I could quickly find the reservation number later.",
+          "ja": "後で予約番号をすぐに見つけられるように、スクリーンショットを撮りました。",
+          "zh": "為了稍後能很快找到預約編號，我先截了圖。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "スクリーンショット",
+      "jaReading": "スクリーンショット",
+      "jaReadingSegments": [
+        {
+          "text": "スクリーンショット",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/screenshot-v1-4e50bf76d1bb.webp"
+    },
+    {
+      "id": "airplane-mode",
+      "word": "airplane mode",
+      "chinese": "飛航模式",
+      "chineseDefinition": "停止裝置行動通信等無線連線的設定；Wi-Fi與藍牙的實際開關行為依裝置與設定而異。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈer.pleɪn moʊd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "飛航模式",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A device setting that disables cellular and certain other wireless connections; Wi-Fi and Bluetooth behavior depends on the device and settings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "携帯電話の通信などを停止する設定。Wi-FiやBluetoothの動作は、機器や設定によって異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Turn on airplane mode.",
+          "ja": "機内モードをオンにしてください。",
+          "zh": "請開啟飛航模式。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After hearing the arrival announcement, I turned off airplane mode and contacted my family.",
+          "ja": "到着のアナウンスを聞いてから、機内モードをオフにして家族に連絡しました。",
+          "zh": "聽到抵達的廣播後，我關閉飛航模式並聯絡家人。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "機内モード",
+      "jaReading": "きないモード",
+      "jaReadingSegments": [
+        {
+          "text": "機内モード",
+          "ruby": "きないモード"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/airplane-mode-v1-5de58eb83a80.webp"
+    },
+    {
+      "id": "personal-hotspot",
+      "word": "personal hotspot",
+      "chinese": "個人熱點",
+      "chineseDefinition": "讓其他裝置使用手機行動網路連線的分享功能；此處指手機提供的Wi-Fi熱點。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈpɝː.sən.əl ˈhɑːt.spɑːt/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "個人熱點",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A phone feature that shares its mobile internet connection with other devices; here, a phone-provided Wi-Fi hotspot.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "スマホのモバイル回線をほかの機器と共有する機能。ここではスマホが提供するWi-Fi接続を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Turn on the personal hotspot on your phone.",
+          "ja": "スマホのインターネット共有をオンにしてください。",
+          "zh": "請開啟手機的個人熱點。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The cafe had no Wi-Fi, so I connected my laptop through my personal hotspot.",
+          "ja": "カフェにWi-Fiがなかったので、インターネット共有でノートパソコンをネットにつなぎました。",
+          "zh": "咖啡店沒有Wi-Fi，所以我透過個人熱點讓筆電連上網路。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "インターネット共有",
+      "jaReading": "インターネットきょうゆう",
+      "jaReadingSegments": [
+        {
+          "text": "インターネット共有",
+          "ruby": "インターネットきょうゆう"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/personal-hotspot-v1-ce88c5277324.webp"
+    },
+    {
+      "id": "mobile-data",
+      "word": "mobile data",
+      "chinese": "行動數據",
+      "chineseDefinition": "透過電信業者的行動通信網路傳送與接收資料的連線方式，不是Wi-Fi。",
+      "category": "phone-internet",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmoʊ.bəl ˈdeɪ.t̬ə/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "行動數據",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Data communication through a mobile carrier network rather than Wi-Fi.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "Wi-Fiではなく、携帯電話会社の回線を使ってデータを送受信すること。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I check the map using mobile data.",
+          "ja": "モバイルデータ通信で地図を確認します。",
+          "zh": "我用行動數據查看地圖。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "To use less mobile data, I upload photos over Wi-Fi at home.",
+          "ja": "モバイルデータ通信の使用量を減らすために、家のWi-Fiで写真をアップロードしています。",
+          "zh": "為了減少行動數據用量，我使用家中的Wi-Fi上傳照片。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "モバイルデータ通信",
+      "jaReading": "モバイルデータつうしん",
+      "jaReadingSegments": [
+        {
+          "text": "モバイルデータ通信",
+          "ruby": "モバイルデータつうしん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/phone-internet-2026-10/mobile-data-v1-be6abac5f258.webp"
+    }
+  ]
+}

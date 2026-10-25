@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "series": "phone-internet",
+  "reviewer": "Codex; every original source inspected individually",
+  "items": [
+    {
+      "id": "phone-case",
+      "decision": "pass",
+      "reason": "空殼的鏡頭開孔、包覆邊緣及按鍵位置清楚，沒有把手機本體當成殼；淺藍矽膠外觀可見於日本日常，白底無品牌。",
+      "sourceSha256": "0a7c72a5fb26e6591f192238f35d2eda519acbd8989266fbef8e143873807f25"
+    },
+    {
+      "id": "screen-protector",
+      "decision": "pass",
+      "reason": "透明薄片、圓角、聽筒孔及掀起的背膜能辨識螢幕保護貼，沒有手機外框或厚殼；白底呈現反光與透明邊緣。",
+      "sourceSha256": "6523ef9b22ef5a785c4392d89975eff654baa6382a12a138744db25f5d16d799"
+    },
+    {
+      "id": "charging-cable",
+      "decision": "pass",
+      "reason": "單條灰色線材兩端皆為橢圓USB-C插頭，接頭與線身完整可見，與RJ45網路線和插牆充電器不同。",
+      "sourceSha256": "84db741f9a65b2d8e367dd82530211322547049c5b6b3253504d056dad3e7d57"
+    },
+    {
+      "id": "wireless-charger",
+      "decision": "pass",
+      "reason": "圓形低矮充電盤、頂面充電線圈示意、指示燈與供電線可辨識無線充電座；主體完整，沒有暗示充電座不需電源。",
+      "sourceSha256": "90ba707adf1daeaab05b2d5173d0f82f79e5dc8cdbd2659099a45482469c74cd"
+    },
+    {
+      "id": "phone-stand",
+      "decision": "pass",
+      "reason": "空的桌上金屬支架有傾斜靠板、兩個底托、鉸鏈及穩定底座；不是自拍棒或平板本體，白底清楚。",
+      "sourceSha256": "46d185863a45f7f8ca096dcf1e4a755b5e0306f1445e8d06e5c80e5b631710f0"
+    },
+    {
+      "id": "sim-card",
+      "decision": "pass",
+      "reason": "實體小型晶片卡有切角、白色基底及分隔金色接點，沒有記憶卡的黑色外殼或eSIM圖示；可辨識SIM卡，非精密尺寸教材。",
+      "sourceSha256": "03536f82440dd3113ace3df37ad7bfede9503604592a3bac046b46349ca44332"
+    },
+    {
+      "id": "sim-eject-tool",
+      "decision": "pass",
+      "reason": "銀色橢圓握環延伸一根直的細針，沒有別針扣頭、縫針孔或多餘工具；形狀符合日本常見SIM取出工具。",
+      "sourceSha256": "51a18b259ca2da0e280e0c1e950bcb509ffc63405d9fa05df3f365ec2ee7b4b3"
+    },
+    {
+      "id": "mobile-wifi-router",
+      "decision": "pass",
+      "reason": "掌上圓角裝置有Wi-Fi、行動訊號與電池圖示及電源鍵，沒有手機應用圖示、家用外接天線或固定底座；可辨識可攜式熱點。",
+      "sourceSha256": "f7ec62be8ab7ca39d690b6ea3a61ae886c459395d30b80bb9be62b559404ba87"
+    },
+    {
+      "id": "ethernet-cable",
+      "decision": "pass",
+      "reason": "藍色線兩端為透明RJ45接頭，八個金屬接點、卡扣及護套可辨識，與USB-C及較窄電話線接頭不同。",
+      "sourceSha256": "9daf02115378090938e5bd6f83b7dd4d02c8eb15199103e0067b023909fe4e5a"
+    },
+    {
+      "id": "wireless-earbuds",
+      "decision": "pass",
+      "reason": "左右兩顆入耳式耳機與矽膠耳塞在開啟的充電盒中，沒有線材或頭戴支架，與既有headphones區分，無品牌文字。",
+      "sourceSha256": "2c0db86f0577c6a1c0aac34021a259f8b7867bf2b4b5a8c8199b5678d8407891"
+    },
+    {
+      "id": "phone-strap",
+      "decision": "pass",
+      "reason": "綠色編織手腕環、金屬扣與末端細繩均完整可見，可繫於手機殼；不是車廂吊環或長頸帶，白底無文字。",
+      "sourceSha256": "b8a819dad84ef1d6f1d681f114da8823a1e9c96f017bf0ff78c9a73b5efcca83"
+    },
+    {
+      "id": "car-phone-mount",
+      "decision": "pass",
+      "reason": "黑色手機托架有左右夾爪、下托及後方出風口夾片，車載固定特徵清楚，與桌上支架不同。",
+      "sourceSha256": "4083dedfc23391a2e70126e61f17bfce9b462bfc9cf8858d63730295678f222c"
+    },
+    {
+      "id": "selfie-stick",
+      "decision": "pass",
+      "reason": "伸出的多節金屬桿、握把按鍵及空手機夾均可見，整根棒及腕繩完整，沒有把三腳架誤作主體。",
+      "sourceSha256": "b3f29ce71176a3416a3a8adbbebd3445dfccf2763be7f8c4ae497051e909a268"
+    },
+    {
+      "id": "usb-hub",
+      "decision": "pass",
+      "reason": "四個USB-A母孔加短線USB-C公頭清楚，所有端點可見；沒有LAN孔或記憶卡插槽，能辨識USB集線器。",
+      "sourceSha256": "e25023911054d3efd9d4419faf708e03c4fda04d28b2114100fe57ad84fa4241"
+    },
+    {
+      "id": "usb-c-ethernet-adapter",
+      "decision": "pass",
+      "reason": "短線一端USB-C公頭、另一端單一RJ45網路孔可見八接點及卡扣缺口，與集線器和網路線不同。",
+      "sourceSha256": "9d1eff7357941ce5bc86fbfbbbcda9a6a35a5e245de7474f765f70ffd2372707"
+    },
+    {
+      "id": "card-reader",
+      "decision": "pass",
+      "reason": "較大的SD槽插有記憶卡，旁有較小microSD槽及USB-C線，沒有付款螢幕、刷卡槽或信用卡。",
+      "sourceSha256": "4f8cc42674387539151745674294154813201a17e05c24f91b2d9cddb67b49bf"
+    },
+    {
+      "id": "microsd-card",
+      "decision": "pass",
+      "reason": "黑色小卡有microSD標準規格標示和階梯凹口，不是白色金接點SIM卡；無品牌、容量假字或轉接套。",
+      "sourceSha256": "004488985ad4177696d5e0cef481c7f38662479ceb8ae95d9de994c0bd618bbe"
+    },
+    {
+      "id": "wifi-extender",
+      "decision": "pass",
+      "reason": "插牆型白色裝置有雙天線、訊號燈及兩片平行扁插腳，符合日本A型插頭外觀；無電池螢幕，與行動分享器分開。",
+      "sourceSha256": "4dcffb9570cebe4910c1f5adcb31e4b04df237d24fbc6a5d81e21154a5ff15ca"
+    },
+    {
+      "id": "app",
+      "decision": "pass",
+      "reason": "修正版以九個通用圖示呈現主畫面，中央單一日曆圖示有清楚外框強調；移除初版近似品牌的圖示，無文字或商標。",
+      "sourceSha256": "089bff79ef27b45e9faaa40d7b2c3a81d6a36ffcc36c4620892bdd78f98b4b0f"
+    },
+    {
+      "id": "notification",
+      "decision": "pass",
+      "reason": "手機上方只有一則帶鈴鐺與中性文字線的通知橫幅，與主畫面程式圖示及完整簡訊畫面區分，無可讀假字。",
+      "sourceSha256": "155bc6ada5cd8e6d09f36fbc15f7071c5c30b772345048c7e5b6976c3e56c867"
+    },
+    {
+      "id": "password",
+      "decision": "pass",
+      "reason": "登入欄位以八個遮蔽圓點及小鎖呈現秘密密碼，沒有六格驗證數字；手機完整、白底無帳號資料。",
+      "sourceSha256": "782ea6c8492f749460ceb91c6948792201ebeba3129ae317d5ca4d9f9fde7828"
+    },
+    {
+      "id": "verification-code",
+      "decision": "pass",
+      "reason": "簡訊通知及六個輸入格均顯示相同示意碼482619，來源與輸入目標一致，與遮蔽密碼明確區分。",
+      "sourceSha256": "ba5699c1deb6a169b0cbfba9effc89104047f93d2bdce57bed1b01b03b94cb03"
+    },
+    {
+      "id": "screenshot",
+      "decision": "pass",
+      "reason": "修正版左下小預覽只含同一葉片畫面、白色邊框及陰影，移除初版縮圖內的手機殼和瀏海，符合螢幕截圖預覽。",
+      "sourceSha256": "235de8d6a42f021ce7c1d0879e70b26367975ca098f3d5b3a9dea978b1749213"
+    },
+    {
+      "id": "airplane-mode",
+      "decision": "pass",
+      "reason": "飛機符號、綠色開啟切換鈕及狀態列飛機圖示一致，沒有矛盾的行動訊號圖示；清楚代表飛航模式設定。",
+      "sourceSha256": "e05708c86b828c2eef3c2a79aa964b2b75fdc8668ec2de7d9fd81cde1027df72"
+    },
+    {
+      "id": "personal-hotspot",
+      "decision": "pass",
+      "reason": "手機和筆電呈相同分享連結符號，兩者間有無線連線示意，沒有另放路由器；代表手機分享網路而非購買熱點設備。",
+      "sourceSha256": "20807890054b25345fbfc8f547aa9b85b1440d2f454829365db00d2d3533cc12"
+    },
+    {
+      "id": "mobile-data",
+      "decision": "pass",
+      "reason": "手機顯示行動基地台、訊號格與上下傳箭頭，狀態列5G標記辨識行動回線；無Wi-Fi符號，與個人熱點區分。",
+      "sourceSha256": "658ecc069a30dcd4aa9d3ea0663e6500996bd2b42085fc32190afc04319df15b"
+    },
+    {
+      "id": "category-phone-internet",
+      "decision": "pass",
+      "reason": "手機Wi-Fi圖示、可攜式分享器、USB-C線及SIM卡構成四件清楚物件，白底有留白，無多餘標籤或品牌，可代表手機與網路系列。",
+      "sourceSha256": "0e90ee91483dc8aafbb2c8d74a88c65ed2f0d6c780d74ac2e9ceaf225b6ca263"
+    }
+  ]
+}

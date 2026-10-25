@@ -1,0 +1,4610 @@
+{
+  "en": {
+    "My phone case is blue.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "phone case",
+        "z": "手機殼",
+        "j": "スマホケース",
+        "e": "phone case"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "blue",
+        "z": "藍色的",
+        "j": "青い",
+        "e": "blue"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My phone case cracked, so I bought a new one.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "phone case",
+        "z": "手機殼",
+        "j": "スマホケース",
+        "e": "phone case"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cracked",
+        "z": "裂了",
+        "j": "ひびが入った",
+        "e": "cracked"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買った",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "new",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": " one."
+      }
+    ],
+    "I put a screen protector on my phone.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "貼上",
+        "j": "貼る",
+        "e": "apply"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "screen protector",
+        "z": "螢幕保護貼",
+        "j": "画面保護フィルム",
+        "e": "screen protector"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before applying the screen protector, I wiped the screen clean.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "applying",
+        "z": "貼上",
+        "j": "貼る",
+        "e": "applying"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "screen protector",
+        "z": "螢幕保護貼",
+        "j": "画面保護フィルム",
+        "e": "screen protector"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "wiped",
+        "z": "擦拭了",
+        "j": "拭いた",
+        "e": "wiped"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "screen",
+        "z": "螢幕",
+        "j": "画面",
+        "e": "screen"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "clean",
+        "z": "乾淨的",
+        "j": "きれいな",
+        "e": "clean"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please lend me a charging cable.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "lend",
+        "z": "借給",
+        "j": "貸す",
+        "e": "lend"
+      },
+      {
+        "t": " me a "
+      },
+      {
+        "t": "charging cable",
+        "z": "充電線",
+        "j": "充電ケーブル",
+        "e": "charging cable"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The charging cable was too short, so I moved my phone closer to the outlet.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "charging cable",
+        "z": "充電線",
+        "j": "充電ケーブル",
+        "e": "charging cable"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too short",
+        "z": "太短",
+        "j": "短すぎる",
+        "e": "too short"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "moved",
+        "z": "移動了",
+        "j": "移した",
+        "e": "moved"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "closer",
+        "z": "更近",
+        "j": "より近くに",
+        "e": "closer"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "outlet",
+        "z": "插座",
+        "j": "コンセント",
+        "e": "power outlet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put your phone on the wireless charger.": [
+      {
+        "t": "Put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "wireless charger",
+        "z": "無線充電器",
+        "j": "ワイヤレス充電器",
+        "e": "wireless charger"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After changing the case, my phone would not charge on the wireless charger, so I removed the case and tried again.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "changing",
+        "z": "更換",
+        "j": "替える",
+        "e": "changing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "case",
+        "z": "手機殼",
+        "j": "ケース",
+        "e": "phone case"
+      },
+      {
+        "t": ", my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": " would not "
+      },
+      {
+        "t": "charge",
+        "z": "充電",
+        "j": "充電する",
+        "e": "charge"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "wireless charger",
+        "z": "無線充電器",
+        "j": "ワイヤレス充電器",
+        "e": "wireless charger"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "removed",
+        "z": "拆下了",
+        "j": "外した",
+        "e": "removed"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "case",
+        "z": "手機殼",
+        "j": "ケース",
+        "e": "phone case"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "tried again",
+        "z": "再試一次",
+        "j": "もう一度試した",
+        "e": "tried again"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the phone stand on the desk.": [
+      {
+        "t": "Put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "phone stand",
+        "z": "手機支架",
+        "j": "スマホスタンド",
+        "e": "phone stand"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "desk",
+        "z": "桌子",
+        "j": "机",
+        "e": "desk"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "To keep my hands free while cooking, I use a phone stand to read the recipe.": [
+      {
+        "t": "To keep my "
+      },
+      {
+        "t": "hands",
+        "z": "雙手",
+        "j": "両手",
+        "e": "hands"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "free",
+        "z": "不被占用的",
+        "j": "自由に使える",
+        "e": "free"
+      },
+      {
+        "t": " while "
+      },
+      {
+        "t": "cooking",
+        "z": "做飯",
+        "j": "料理",
+        "e": "cooking"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "phone stand",
+        "z": "手機支架",
+        "j": "スマホスタンド",
+        "e": "phone stand"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "read",
+        "z": "閱讀",
+        "j": "読む",
+        "e": "read"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "recipe",
+        "z": "食譜",
+        "j": "レシピ",
+        "e": "recipe"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the SIM card in the tray.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "SIM card",
+        "z": "SIM卡",
+        "j": "SIMカード",
+        "e": "SIM card"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "tray",
+        "z": "托盤",
+        "j": "トレイ",
+        "e": "tray"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before changing phones, I checked whether my SIM card was the right size.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "changing phones",
+        "z": "換手機",
+        "j": "スマホを買い替える",
+        "e": "changing phones"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " whether my "
+      },
+      {
+        "t": "SIM card",
+        "z": "SIM卡",
+        "j": "SIMカード",
+        "e": "SIM card"
+      },
+      {
+        "t": " was the "
+      },
+      {
+        "t": "right size",
+        "z": "合適尺寸",
+        "j": "合うサイズ",
+        "e": "right size"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Keep the SIM eject tool in a small box.": [
+      {
+        "t": "Keep",
+        "z": "收好",
+        "j": "保管する",
+        "e": "keep"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "SIM eject tool",
+        "z": "退卡針",
+        "j": "SIMピン",
+        "e": "SIM eject tool"
+      },
+      {
+        "t": " in a "
+      },
+      {
+        "t": "small",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "box",
+        "z": "盒子",
+        "j": "箱",
+        "e": "box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I could not find the SIM eject tool, so I waited until the next day to change the SIM card.": [
+      {
+        "t": "I could not "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "SIM eject tool",
+        "z": "退卡針",
+        "j": "SIMピン",
+        "e": "SIM eject tool"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待った",
+        "e": "waited"
+      },
+      {
+        "t": " until the "
+      },
+      {
+        "t": "next day",
+        "z": "隔天",
+        "j": "翌日",
+        "e": "next day"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "change",
+        "z": "更換",
+        "j": "交換する",
+        "e": "change"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "SIM card",
+        "z": "SIM卡",
+        "j": "SIMカード",
+        "e": "SIM card"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I charge the mobile Wi-Fi router.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "charge",
+        "z": "充電",
+        "j": "充電する",
+        "e": "charge"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "mobile Wi-Fi router",
+        "z": "行動Wi-Fi路由器",
+        "j": "モバイルルーター",
+        "e": "mobile Wi-Fi router"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The hotel Wi-Fi was too slow, so I borrowed a mobile Wi-Fi router from a friend.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "hotel",
+        "z": "飯店",
+        "j": "ホテル",
+        "e": "hotel"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "Wi-Fi",
+        "z": "無線網路",
+        "j": "ワイファイ",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "too slow",
+        "z": "太慢",
+        "j": "遅すぎる",
+        "e": "too slow"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "borrowed",
+        "z": "借了",
+        "j": "借りた",
+        "e": "borrowed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "mobile Wi-Fi router",
+        "z": "行動Wi-Fi路由器",
+        "j": "モバイルルーター",
+        "e": "mobile Wi-Fi router"
+      },
+      {
+        "t": " from a "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Connect the Ethernet cable to the router.": [
+      {
+        "t": "Connect",
+        "z": "連接",
+        "j": "つなぐ",
+        "e": "connect"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "Ethernet cable",
+        "z": "網路線",
+        "j": "LANケーブル",
+        "e": "Ethernet cable"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "router",
+        "z": "路由器",
+        "j": "ルーター",
+        "e": "router"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Because the Wi-Fi was unstable, I connected my computer to the router with an Ethernet cable.": [
+      {
+        "t": "Because the "
+      },
+      {
+        "t": "Wi-Fi",
+        "z": "無線網路",
+        "j": "ワイファイ",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "unstable",
+        "z": "不穩定的",
+        "j": "不安定な",
+        "e": "unstable"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "connected",
+        "z": "連接了",
+        "j": "つないだ",
+        "e": "connected"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "computer",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "router",
+        "z": "路由器",
+        "j": "ルーター",
+        "e": "router"
+      },
+      {
+        "t": " with an "
+      },
+      {
+        "t": "Ethernet cable",
+        "z": "網路線",
+        "j": "LANケーブル",
+        "e": "Ethernet cable"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the wireless earbuds back in their case.": [
+      {
+        "t": "Put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "wireless earbuds",
+        "z": "無線耳機",
+        "j": "ワイヤレスイヤホン",
+        "e": "wireless earbuds"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "back",
+        "z": "回去",
+        "j": "元に",
+        "e": "back"
+      },
+      {
+        "t": " in their "
+      },
+      {
+        "t": "case",
+        "z": "耳機盒",
+        "j": "ケース",
+        "e": "earbud case"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before boarding the train, I checked the battery level of my wireless earbuds and put them in my bag.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "boarding",
+        "z": "搭乘",
+        "j": "乗る",
+        "e": "boarding"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "train",
+        "z": "電車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "checked",
+        "z": "確認了",
+        "j": "確認した",
+        "e": "checked"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "battery level",
+        "z": "剩餘電量",
+        "j": "電池残量",
+        "e": "battery level"
+      },
+      {
+        "t": " of my "
+      },
+      {
+        "t": "wireless earbuds",
+        "z": "無線耳機",
+        "j": "ワイヤレスイヤホン",
+        "e": "wireless earbuds"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " them in my "
+      },
+      {
+        "t": "bag",
+        "z": "包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I attach a phone strap to my phone.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "attach",
+        "z": "裝上",
+        "j": "付ける",
+        "e": "attach"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "phone strap",
+        "z": "手機掛繩",
+        "j": "スマホストラップ",
+        "e": "phone strap"
+      },
+      {
+        "t": " to my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I use a phone strap so that I do not drop my phone on the train.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "use",
+        "z": "使用",
+        "j": "使う",
+        "e": "use"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "phone strap",
+        "z": "手機掛繩",
+        "j": "スマホストラップ",
+        "e": "phone strap"
+      },
+      {
+        "t": " so that I do not "
+      },
+      {
+        "t": "drop",
+        "z": "掉落",
+        "j": "落とす",
+        "e": "drop"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "train",
+        "z": "電車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put your phone in the car phone mount.": [
+      {
+        "t": "Put",
+        "z": "放置",
+        "j": "置く",
+        "e": "put"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "car phone mount",
+        "z": "車用手機架",
+        "j": "車載スマホホルダー",
+        "e": "car phone mount"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before setting off, I adjusted the car phone mount so that I could see the map clearly.": [
+      {
+        "t": "Before "
+      },
+      {
+        "t": "setting off",
+        "z": "出發",
+        "j": "出発する",
+        "e": "setting off"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "adjusted",
+        "z": "調整了",
+        "j": "調整した",
+        "e": "adjusted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "car phone mount",
+        "z": "車用手機架",
+        "j": "車載スマホホルダー",
+        "e": "car phone mount"
+      },
+      {
+        "t": " so that I could "
+      },
+      {
+        "t": "see",
+        "z": "看見",
+        "j": "見る",
+        "e": "see"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "map",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "clearly",
+        "z": "清楚地",
+        "j": "よく",
+        "e": "clearly"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I take a photo with a selfie stick.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "take a photo",
+        "z": "拍照",
+        "j": "写真を撮る",
+        "e": "take a photo"
+      },
+      {
+        "t": " with a "
+      },
+      {
+        "t": "selfie stick",
+        "z": "自拍棒",
+        "j": "自撮り棒",
+        "e": "selfie stick"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I extended the selfie stick so that everyone would fit in the photo.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "extended",
+        "z": "伸長了",
+        "j": "伸ばした",
+        "e": "extended"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "selfie stick",
+        "z": "自拍棒",
+        "j": "自撮り棒",
+        "e": "selfie stick"
+      },
+      {
+        "t": " so that "
+      },
+      {
+        "t": "everyone",
+        "z": "所有人",
+        "j": "全員",
+        "e": "everyone"
+      },
+      {
+        "t": " would "
+      },
+      {
+        "t": "fit",
+        "z": "能放得下",
+        "j": "入る",
+        "e": "fit"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "photo",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Connect the USB hub to your computer.": [
+      {
+        "t": "Connect",
+        "z": "連接",
+        "j": "つなぐ",
+        "e": "connect"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "USB hub",
+        "z": "USB集線器",
+        "j": "USBハブ",
+        "e": "USB hub"
+      },
+      {
+        "t": " to your "
+      },
+      {
+        "t": "computer",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My computer did not have enough ports, so I used a USB hub to connect the keyboard and mouse.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "computer",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": " did not have "
+      },
+      {
+        "t": "enough",
+        "z": "足夠的",
+        "j": "十分な",
+        "e": "enough"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ports",
+        "z": "連接埠",
+        "j": "端子",
+        "e": "ports"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "used",
+        "z": "使用了",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "USB hub",
+        "z": "USB集線器",
+        "j": "USBハブ",
+        "e": "USB hub"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "connect",
+        "z": "連接",
+        "j": "つなぐ",
+        "e": "connect"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "keyboard",
+        "z": "鍵盤",
+        "j": "キーボード",
+        "e": "keyboard"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "mouse",
+        "z": "滑鼠",
+        "j": "マウス",
+        "e": "mouse"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My USB-C Ethernet adapter is in the bag.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "USB-C Ethernet adapter",
+        "z": "USB-C網路轉接器",
+        "j": "USB-C LANアダプター",
+        "e": "USB-C Ethernet adapter"
+      },
+      {
+        "t": " is in the "
+      },
+      {
+        "t": "bag",
+        "z": "包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My laptop had no Ethernet port, so I connected the cable through a USB-C Ethernet adapter.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "laptop",
+        "z": "筆電",
+        "j": "ノートパソコン",
+        "e": "laptop"
+      },
+      {
+        "t": " had no "
+      },
+      {
+        "t": "Ethernet port",
+        "z": "網路孔",
+        "j": "LAN端子",
+        "e": "Ethernet port"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "connected",
+        "z": "連接了",
+        "j": "つないだ",
+        "e": "connected"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "cable",
+        "z": "網路線",
+        "j": "LANケーブル",
+        "e": "Ethernet cable"
+      },
+      {
+        "t": " through a "
+      },
+      {
+        "t": "USB-C Ethernet adapter",
+        "z": "USB-C網路轉接器",
+        "j": "USB-C LANアダプター",
+        "e": "USB-C Ethernet adapter"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Put the memory card in the card reader.": [
+      {
+        "t": "Put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "memory card",
+        "z": "記憶卡",
+        "j": "メモリーカード",
+        "e": "memory card"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "card reader",
+        "z": "讀卡機",
+        "j": "カードリーダー",
+        "e": "card reader"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After copying the photos to my computer, I unplugged the card reader.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "copying",
+        "z": "複製",
+        "j": "コピーする",
+        "e": "copying"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "photos",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": " to my "
+      },
+      {
+        "t": "computer",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "unplugged",
+        "z": "拔下了",
+        "j": "抜いた",
+        "e": "unplugged"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "card reader",
+        "z": "讀卡機",
+        "j": "カードリーダー",
+        "e": "card reader"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put a microSD card in the camera.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放入",
+        "j": "入れる",
+        "e": "put"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "microSD card",
+        "z": "microSD記憶卡",
+        "j": "microSDカード",
+        "e": "microSD card"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "camera",
+        "z": "相機",
+        "j": "カメラ",
+        "e": "camera"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The microSD card was full, so I backed up the photos before deleting them.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "microSD card",
+        "z": "microSD記憶卡",
+        "j": "microSDカード",
+        "e": "microSD card"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "full",
+        "z": "滿的",
+        "j": "いっぱいの",
+        "e": "full"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "backed up",
+        "z": "備份了",
+        "j": "バックアップした",
+        "e": "backed up"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "photos",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "deleting",
+        "z": "刪除",
+        "j": "削除する",
+        "e": "deleting"
+      },
+      {
+        "t": " them."
+      }
+    ],
+    "Plug the Wi-Fi extender into the outlet.": [
+      {
+        "t": "Plug",
+        "z": "插入",
+        "j": "挿す",
+        "e": "plug in"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "Wi-Fi extender",
+        "z": "Wi-Fi訊號延伸器",
+        "j": "Wi-Fi中継機",
+        "e": "Wi-Fi extender"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "outlet",
+        "z": "插座",
+        "j": "コンセント",
+        "e": "power outlet"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The signal in my room was weak, so I installed a Wi-Fi extender in the hallway.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "signal",
+        "z": "訊號",
+        "j": "電波",
+        "e": "signal"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "room",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "weak",
+        "z": "弱的",
+        "j": "弱い",
+        "e": "weak"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "installed",
+        "z": "設置了",
+        "j": "設置した",
+        "e": "installed"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "Wi-Fi extender",
+        "z": "Wi-Fi訊號延伸器",
+        "j": "Wi-Fi中継機",
+        "e": "Wi-Fi extender"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "hallway",
+        "z": "走廊",
+        "j": "廊下",
+        "e": "hallway"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Open the map app.": [
+      {
+        "t": "Open",
+        "z": "開啟",
+        "j": "開く",
+        "e": "open"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "map app",
+        "z": "地圖應用程式",
+        "j": "地図アプリ",
+        "e": "map app"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "To free up storage space, I deleted the apps I no longer used.": [
+      {
+        "t": "To "
+      },
+      {
+        "t": "free up",
+        "z": "騰出",
+        "j": "空ける",
+        "e": "free up"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "storage space",
+        "z": "儲存空間",
+        "j": "保存容量",
+        "e": "storage space"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "deleted",
+        "z": "刪除了",
+        "j": "削除した",
+        "e": "deleted"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "apps",
+        "z": "應用程式",
+        "j": "アプリ",
+        "e": "apps"
+      },
+      {
+        "t": " I "
+      },
+      {
+        "t": "no longer",
+        "z": "不再",
+        "j": "もう〜ない",
+        "e": "no longer"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "used",
+        "z": "使用",
+        "j": "使った",
+        "e": "used"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I got a notification on my phone.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "got",
+        "z": "收到",
+        "j": "来た",
+        "e": "received"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "notification",
+        "z": "通知",
+        "j": "通知",
+        "e": "notification"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I was getting too many notifications, so I turned them off while I was working.": [
+      {
+        "t": "I was "
+      },
+      {
+        "t": "getting",
+        "z": "收到",
+        "j": "受け取る",
+        "e": "receiving"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "too many",
+        "z": "太多",
+        "j": "多すぎる",
+        "e": "too many"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "notifications",
+        "z": "通知",
+        "j": "通知",
+        "e": "notifications"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "turned them off",
+        "z": "關閉這些通知",
+        "j": "通知をオフにした",
+        "e": "turned the notifications off"
+      },
+      {
+        "t": " while I was "
+      },
+      {
+        "t": "working",
+        "z": "工作",
+        "j": "仕事をする",
+        "e": "working"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Please enter your password.": [
+      {
+        "t": "Please "
+      },
+      {
+        "t": "enter",
+        "z": "輸入",
+        "j": "入力する",
+        "e": "enter"
+      },
+      {
+        "t": " your "
+      },
+      {
+        "t": "password",
+        "z": "密碼",
+        "j": "パスワード",
+        "e": "password"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I forgot my password, so I reset it from the login screen.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "forgot",
+        "z": "忘記了",
+        "j": "忘れた",
+        "e": "forgot"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "password",
+        "z": "密碼",
+        "j": "パスワード",
+        "e": "password"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "reset",
+        "z": "重新設定",
+        "j": "再設定する",
+        "e": "reset"
+      },
+      {
+        "t": " it from the "
+      },
+      {
+        "t": "login screen",
+        "z": "登入畫面",
+        "j": "ログイン画面",
+        "e": "login screen"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Enter the verification code from the text message.": [
+      {
+        "t": "Enter",
+        "z": "輸入",
+        "j": "入力する",
+        "e": "enter"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "verification code",
+        "z": "驗證碼",
+        "j": "認証コード",
+        "e": "verification code"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "text message",
+        "z": "簡訊",
+        "j": "SMS",
+        "e": "text message"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The verification code had expired, so I requested a new one.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "verification code",
+        "z": "驗證碼",
+        "j": "認証コード",
+        "e": "verification code"
+      },
+      {
+        "t": " had "
+      },
+      {
+        "t": "expired",
+        "z": "過期了",
+        "j": "有効期限が切れた",
+        "e": "expired"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "requested",
+        "z": "申請了",
+        "j": "送ってもらうよう頼んだ",
+        "e": "requested"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "new",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": " one."
+      }
+    ],
+    "Take a screenshot of the map.": [
+      {
+        "t": "Take",
+        "z": "擷取",
+        "j": "撮る",
+        "e": "take"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "screenshot",
+        "z": "螢幕截圖",
+        "j": "スクリーンショット",
+        "e": "screenshot"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "map",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I took a screenshot so that I could quickly find the reservation number later.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "took",
+        "z": "擷取了",
+        "j": "撮った",
+        "e": "took"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "screenshot",
+        "z": "螢幕截圖",
+        "j": "スクリーンショット",
+        "e": "screenshot"
+      },
+      {
+        "t": " so that I could "
+      },
+      {
+        "t": "quickly",
+        "z": "很快地",
+        "j": "すぐに",
+        "e": "quickly"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "reservation number",
+        "z": "預約編號",
+        "j": "予約番号",
+        "e": "reservation number"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "later",
+        "z": "稍後",
+        "j": "後で",
+        "e": "later"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Turn on airplane mode.": [
+      {
+        "t": "Turn on",
+        "z": "開啟",
+        "j": "オンにする",
+        "e": "turn on"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "airplane mode",
+        "z": "飛航模式",
+        "j": "機内モード",
+        "e": "airplane mode"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After hearing the arrival announcement, I turned off airplane mode and contacted my family.": [
+      {
+        "t": "After "
+      },
+      {
+        "t": "hearing",
+        "z": "聽到",
+        "j": "聞く",
+        "e": "hearing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "arrival announcement",
+        "z": "抵達廣播",
+        "j": "到着のアナウンス",
+        "e": "arrival announcement"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "turned off",
+        "z": "關閉了",
+        "j": "オフにした",
+        "e": "turned off"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "airplane mode",
+        "z": "飛航模式",
+        "j": "機内モード",
+        "e": "airplane mode"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "contacted",
+        "z": "聯絡了",
+        "j": "連絡した",
+        "e": "contacted"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "family",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Turn on the personal hotspot on your phone.": [
+      {
+        "t": "Turn on",
+        "z": "開啟",
+        "j": "オンにする",
+        "e": "turn on"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "personal hotspot",
+        "z": "個人熱點",
+        "j": "インターネット共有",
+        "e": "personal hotspot"
+      },
+      {
+        "t": " on your "
+      },
+      {
+        "t": "phone",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The cafe had no Wi-Fi, so I connected my laptop through my personal hotspot.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "cafe",
+        "z": "咖啡店",
+        "j": "カフェ",
+        "e": "cafe"
+      },
+      {
+        "t": " had no "
+      },
+      {
+        "t": "Wi-Fi",
+        "z": "無線網路",
+        "j": "ワイファイ",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "connected",
+        "z": "連接了",
+        "j": "つないだ",
+        "e": "connected"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "laptop",
+        "z": "筆電",
+        "j": "ノートパソコン",
+        "e": "laptop"
+      },
+      {
+        "t": " through my "
+      },
+      {
+        "t": "personal hotspot",
+        "z": "個人熱點",
+        "j": "インターネット共有",
+        "e": "personal hotspot"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I check the map using mobile data.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "check",
+        "z": "查看",
+        "j": "確認する",
+        "e": "check"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "map",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": " using "
+      },
+      {
+        "t": "mobile data",
+        "z": "行動數據",
+        "j": "モバイルデータ通信",
+        "e": "mobile data"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "To use less mobile data, I upload photos over Wi-Fi at home.": [
+      {
+        "t": "To "
+      },
+      {
+        "t": "use less",
+        "z": "減少使用",
+        "j": "使用量を減らす",
+        "e": "use less"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "mobile data",
+        "z": "行動數據",
+        "j": "モバイルデータ通信",
+        "e": "mobile data"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "upload",
+        "z": "上傳",
+        "j": "アップロードする",
+        "e": "upload"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "photos",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": " over "
+      },
+      {
+        "t": "Wi-Fi",
+        "z": "無線網路",
+        "j": "ワイファイ",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "home",
+        "z": "家",
+        "j": "家",
+        "e": "home"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "私のスマホケースは青いです。": [
+      {
+        "t": "私",
+        "r": "わたし",
+        "z": "我",
+        "j": "私",
+        "e": "I"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "スマホケース",
+        "r": "すまほけーす",
+        "z": "手機殼",
+        "j": "スマホケース",
+        "e": "phone case"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "青いです",
+        "r": "あおいです",
+        "z": "是藍色的",
+        "j": "青いです",
+        "e": "is blue"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホケースにひびが入ったので、新しいものを買いました。": [
+      {
+        "t": "スマホケース",
+        "r": "すまほけーす",
+        "z": "手機殼",
+        "j": "スマホケース",
+        "e": "phone case"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "ひびが入った",
+        "r": "ひびがはいった",
+        "z": "裂了",
+        "j": "ひびが入った",
+        "e": "cracked"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "新しい",
+        "r": "あたらしい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": "ものを"
+      },
+      {
+        "t": "買いました",
+        "r": "かいました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホに画面保護フィルムを貼ります。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "画面保護フィルム",
+        "r": "がめんほごふぃるむ",
+        "z": "螢幕保護貼",
+        "j": "画面保護フィルム",
+        "e": "screen protector"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貼ります",
+        "r": "はります",
+        "z": "貼上",
+        "j": "貼ります",
+        "e": "apply"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "画面保護フィルムを貼る前に、画面をきれいに拭きました。": [
+      {
+        "t": "画面保護フィルム",
+        "r": "がめんほごふぃるむ",
+        "z": "螢幕保護貼",
+        "j": "画面保護フィルム",
+        "e": "screen protector"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貼る",
+        "r": "はる",
+        "z": "貼上",
+        "j": "貼る",
+        "e": "apply"
+      },
+      {
+        "t": "前",
+        "r": "まえ",
+        "z": "之前",
+        "j": "前",
+        "e": "before"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "画面",
+        "r": "がめん",
+        "z": "螢幕",
+        "j": "画面",
+        "e": "screen"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "きれいに",
+        "r": "きれいに",
+        "z": "乾淨地",
+        "j": "きれいに",
+        "e": "clean"
+      },
+      {
+        "t": "拭きました",
+        "r": "ふきました",
+        "z": "擦拭了",
+        "j": "拭きました",
+        "e": "wiped"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "充電ケーブルを貸してください。": [
+      {
+        "t": "充電ケーブル",
+        "r": "じゅうでんけーぶる",
+        "z": "充電線",
+        "j": "充電ケーブル",
+        "e": "charging cable"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "貸してください",
+        "r": "かしてください",
+        "z": "請借給我",
+        "j": "貸してください",
+        "e": "please lend me"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "充電ケーブルが短すぎたので、スマホをコンセントの近くに移しました。": [
+      {
+        "t": "充電ケーブル",
+        "r": "じゅうでんけーぶる",
+        "z": "充電線",
+        "j": "充電ケーブル",
+        "e": "charging cable"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "短すぎた",
+        "r": "みじかすぎた",
+        "z": "太短了",
+        "j": "短すぎた",
+        "e": "was too short"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "コンセント",
+        "r": "こんせんと",
+        "z": "插座",
+        "j": "コンセント",
+        "e": "power outlet"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "r": "ちかく",
+        "z": "附近",
+        "j": "近く",
+        "e": "nearby"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "移しました",
+        "r": "うつしました",
+        "z": "移動了",
+        "j": "移しました",
+        "e": "moved"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ワイヤレス充電器にスマホを置いてください。": [
+      {
+        "t": "ワイヤレス充電器",
+        "r": "わいやれすじゅうでんき",
+        "z": "無線充電器",
+        "j": "ワイヤレス充電器",
+        "e": "wireless charger"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置いてください",
+        "r": "おいてください",
+        "z": "請放上",
+        "j": "置いてください",
+        "e": "please place"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ケースを替えたらワイヤレス充電器で充電できなくなったので、ケースを外してもう一度試しました。": [
+      {
+        "t": "ケース",
+        "r": "けーす",
+        "z": "手機殼",
+        "j": "ケース",
+        "e": "phone case"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "替えたら",
+        "r": "かえたら",
+        "z": "更換後",
+        "j": "替えたら",
+        "e": "after changing"
+      },
+      {
+        "t": "ワイヤレス充電器",
+        "r": "わいやれすじゅうでんき",
+        "z": "無線充電器",
+        "j": "ワイヤレス充電器",
+        "e": "wireless charger"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "充電できなくなった",
+        "r": "じゅうでんできなくなった",
+        "z": "變得無法充電",
+        "j": "充電できなくなった",
+        "e": "could no longer charge"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ケース",
+        "r": "けーす",
+        "z": "手機殼",
+        "j": "ケース",
+        "e": "phone case"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "外して",
+        "r": "はずして",
+        "z": "拆下後",
+        "j": "外して",
+        "e": "removed"
+      },
+      {
+        "t": "もう一度",
+        "r": "もういちど",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again"
+      },
+      {
+        "t": "試しました",
+        "r": "ためしました",
+        "z": "試了",
+        "j": "試しました",
+        "e": "tried"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホスタンドを机に置いてください。": [
+      {
+        "t": "スマホスタンド",
+        "r": "すまほすたんど",
+        "z": "手機支架",
+        "j": "スマホスタンド",
+        "e": "phone stand"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "机",
+        "r": "つくえ",
+        "z": "桌子",
+        "j": "机",
+        "e": "desk"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "置いてください",
+        "r": "おいてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please put"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "料理中に両手を使えるように、スマホスタンドを使ってレシピを見ています。": [
+      {
+        "t": "料理中",
+        "r": "りょうりちゅう",
+        "z": "做飯時",
+        "j": "料理中",
+        "e": "while cooking"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "両手",
+        "r": "りょうて",
+        "z": "雙手",
+        "j": "両手",
+        "e": "both hands"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使える",
+        "r": "つかえる",
+        "z": "能使用",
+        "j": "使える",
+        "e": "can use"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "スマホスタンド",
+        "r": "すまほすたんど",
+        "z": "手機支架",
+        "j": "スマホスタンド",
+        "e": "phone stand"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "r": "つかって",
+        "z": "使用",
+        "j": "使って",
+        "e": "using"
+      },
+      {
+        "t": "レシピ",
+        "r": "れしぴ",
+        "z": "食譜",
+        "j": "レシピ",
+        "e": "recipe"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見ています",
+        "r": "みています",
+        "z": "正在看",
+        "j": "見ています",
+        "e": "am looking at"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "SIMカードをトレイに入れてください。": [
+      {
+        "t": "SIMカード",
+        "r": "しむかーど",
+        "z": "SIM卡",
+        "j": "SIMカード",
+        "e": "SIM card"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "トレイ",
+        "r": "とれい",
+        "z": "托盤",
+        "j": "トレイ",
+        "e": "tray"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れてください",
+        "r": "いれてください",
+        "z": "請放入",
+        "j": "入れてください",
+        "e": "please put in"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホを買い替える前に、SIMカードのサイズが合うか確認しました。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買い替える",
+        "r": "かいかえる",
+        "z": "換購",
+        "j": "買い替える",
+        "e": "replace"
+      },
+      {
+        "t": "前",
+        "r": "まえ",
+        "z": "之前",
+        "j": "前",
+        "e": "before"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "SIMカード",
+        "r": "しむかーど",
+        "z": "SIM卡",
+        "j": "SIMカード",
+        "e": "SIM card"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "サイズ",
+        "r": "さいず",
+        "z": "尺寸",
+        "j": "サイズ",
+        "e": "size"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "合う",
+        "r": "あう",
+        "z": "合適",
+        "j": "合う",
+        "e": "fit"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "確認しました",
+        "r": "かくにんしました",
+        "z": "確認了",
+        "j": "確認しました",
+        "e": "checked"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "SIMピンは小さな箱に入れておいてください。": [
+      {
+        "t": "SIMピン",
+        "r": "しむぴん",
+        "z": "退卡針",
+        "j": "SIMピン",
+        "e": "SIM eject tool"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "小さな",
+        "r": "ちいさな",
+        "z": "小的",
+        "j": "小さな",
+        "e": "small"
+      },
+      {
+        "t": "箱",
+        "r": "はこ",
+        "z": "盒子",
+        "j": "箱",
+        "e": "box"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れておいてください",
+        "r": "いれておいてください",
+        "z": "請收放在裡面",
+        "j": "入れておいてください",
+        "e": "please keep in"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "SIMピンが見つからなかったので、SIMカードの交換は翌日まで待ちました。": [
+      {
+        "t": "SIMピン",
+        "r": "しむぴん",
+        "z": "退卡針",
+        "j": "SIMピン",
+        "e": "SIM eject tool"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "見つからなかった",
+        "r": "みつからなかった",
+        "z": "沒找到",
+        "j": "見つからなかった",
+        "e": "could not be found"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "SIMカード",
+        "r": "しむかーど",
+        "z": "SIM卡",
+        "j": "SIMカード",
+        "e": "SIM card"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "交換",
+        "r": "こうかん",
+        "z": "更換",
+        "j": "交換",
+        "e": "replacement"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "翌日",
+        "r": "よくじつ",
+        "z": "隔天",
+        "j": "翌日",
+        "e": "next day"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "待ちました",
+        "r": "まちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "モバイルルーターを充電します。": [
+      {
+        "t": "モバイルルーター",
+        "r": "もばいるるーたー",
+        "z": "行動Wi-Fi路由器",
+        "j": "モバイルルーター",
+        "e": "mobile Wi-Fi router"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "充電します",
+        "r": "じゅうでんします",
+        "z": "充電",
+        "j": "充電します",
+        "e": "charge"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ホテルのWi-Fiが遅すぎたので、友達にモバイルルーターを借りました。": [
+      {
+        "t": "ホテル",
+        "r": "ほてる",
+        "z": "飯店",
+        "j": "ホテル",
+        "e": "hotel"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "Wi-Fi",
+        "r": "わいふぁい",
+        "z": "無線網路",
+        "j": "Wi-Fi",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "遅すぎた",
+        "r": "おそすぎた",
+        "z": "太慢了",
+        "j": "遅すぎた",
+        "e": "was too slow"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "友達",
+        "r": "ともだち",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "モバイルルーター",
+        "r": "もばいるるーたー",
+        "z": "行動Wi-Fi路由器",
+        "j": "モバイルルーター",
+        "e": "mobile Wi-Fi router"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "借りました",
+        "r": "かりました",
+        "z": "借了",
+        "j": "借りました",
+        "e": "borrowed"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "LANケーブルをルーターにつないでください。": [
+      {
+        "t": "LANケーブル",
+        "r": "らんけーぶる",
+        "z": "網路線",
+        "j": "LANケーブル",
+        "e": "Ethernet cable"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ルーター",
+        "r": "るーたー",
+        "z": "路由器",
+        "j": "ルーター",
+        "e": "router"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つないでください",
+        "r": "つないでください",
+        "z": "請連接",
+        "j": "つないでください",
+        "e": "please connect"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "Wi-Fiが不安定だったので、LANケーブルでパソコンとルーターをつなぎました。": [
+      {
+        "t": "Wi-Fi",
+        "r": "わいふぁい",
+        "z": "無線網路",
+        "j": "Wi-Fi",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "不安定だった",
+        "r": "ふあんていだった",
+        "z": "不穩定",
+        "j": "不安定だった",
+        "e": "was unstable"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "LANケーブル",
+        "r": "らんけーぶる",
+        "z": "網路線",
+        "j": "LANケーブル",
+        "e": "Ethernet cable"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "パソコン",
+        "r": "ぱそこん",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "ルーター",
+        "r": "るーたー",
+        "z": "路由器",
+        "j": "ルーター",
+        "e": "router"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つなぎました",
+        "r": "つなぎました",
+        "z": "連接了",
+        "j": "つなぎました",
+        "e": "connected"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ワイヤレスイヤホンをケースに戻してください。": [
+      {
+        "t": "ワイヤレスイヤホン",
+        "r": "わいやれすいやほん",
+        "z": "無線耳機",
+        "j": "ワイヤレスイヤホン",
+        "e": "wireless earbuds"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ケース",
+        "r": "けーす",
+        "z": "耳機盒",
+        "j": "ケース",
+        "e": "earbud case"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "戻してください",
+        "r": "もどしてください",
+        "z": "請放回",
+        "j": "戻してください",
+        "e": "please put back"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "電車に乗る前に、ワイヤレスイヤホンの電池残量を確認して、かばんに入れました。": [
+      {
+        "t": "電車",
+        "r": "でんしゃ",
+        "z": "電車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "乗る",
+        "r": "のる",
+        "z": "搭乘",
+        "j": "乗る",
+        "e": "board"
+      },
+      {
+        "t": "前",
+        "r": "まえ",
+        "z": "之前",
+        "j": "前",
+        "e": "before"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "ワイヤレスイヤホン",
+        "r": "わいやれすいやほん",
+        "z": "無線耳機",
+        "j": "ワイヤレスイヤホン",
+        "e": "wireless earbuds"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "電池残量",
+        "r": "でんちざんりょう",
+        "z": "剩餘電量",
+        "j": "電池残量",
+        "e": "battery level"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認して",
+        "r": "かくにんして",
+        "z": "確認後",
+        "j": "確認して",
+        "e": "checked"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "かばん",
+        "r": "かばん",
+        "z": "包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "r": "いれました",
+        "z": "放入了",
+        "j": "入れました",
+        "e": "put in"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホにスマホストラップを付けます。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "スマホストラップ",
+        "r": "すまほすとらっぷ",
+        "z": "手機掛繩",
+        "j": "スマホストラップ",
+        "e": "phone strap"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "付けます",
+        "r": "つけます",
+        "z": "裝上",
+        "j": "付けます",
+        "e": "attach"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "電車の中でスマホを落とさないように、スマホストラップを使っています。": [
+      {
+        "t": "電車",
+        "r": "でんしゃ",
+        "z": "電車",
+        "j": "電車",
+        "e": "train"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "r": "なか",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "落とさない",
+        "r": "おとさない",
+        "z": "不掉落",
+        "j": "落とさない",
+        "e": "not drop"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "スマホストラップ",
+        "r": "すまほすとらっぷ",
+        "z": "手機掛繩",
+        "j": "スマホストラップ",
+        "e": "phone strap"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使っています",
+        "r": "つかっています",
+        "z": "在使用",
+        "j": "使っています",
+        "e": "use"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "車載スマホホルダーにスマホを置いてください。": [
+      {
+        "t": "車載スマホホルダー",
+        "r": "しゃさいすまほほるだー",
+        "z": "車用手機架",
+        "j": "車載スマホホルダー",
+        "e": "car phone mount"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "置いてください",
+        "r": "おいてください",
+        "z": "請放置",
+        "j": "置いてください",
+        "e": "please put"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "出発する前に、地図がよく見えるように車載スマホホルダーの角度を調整しました。": [
+      {
+        "t": "出発する",
+        "r": "しゅっぱつする",
+        "z": "出發",
+        "j": "出発する",
+        "e": "set off"
+      },
+      {
+        "t": "前",
+        "r": "まえ",
+        "z": "之前",
+        "j": "前",
+        "e": "before"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "地図",
+        "r": "ちず",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "よく",
+        "r": "よく",
+        "z": "清楚地",
+        "j": "よく",
+        "e": "clearly"
+      },
+      {
+        "t": "見える",
+        "r": "みえる",
+        "z": "看得見",
+        "j": "見える",
+        "e": "can see"
+      },
+      {
+        "t": "ように"
+      },
+      {
+        "t": "車載スマホホルダー",
+        "r": "しゃさいすまほほるだー",
+        "z": "車用手機架",
+        "j": "車載スマホホルダー",
+        "e": "car phone mount"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "角度",
+        "r": "かくど",
+        "z": "角度",
+        "j": "角度",
+        "e": "angle"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "調整しました",
+        "r": "ちょうせいしました",
+        "z": "調整了",
+        "j": "調整しました",
+        "e": "adjusted"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "自撮り棒で写真を撮ります。": [
+      {
+        "t": "自撮り棒",
+        "r": "じどりぼう",
+        "z": "自拍棒",
+        "j": "自撮り棒",
+        "e": "selfie stick"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "写真",
+        "r": "しゃしん",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮ります",
+        "r": "とります",
+        "z": "拍攝",
+        "j": "撮ります",
+        "e": "take a photo"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "全員が写真に入るように、自撮り棒を伸ばしました。": [
+      {
+        "t": "全員",
+        "r": "ぜんいん",
+        "z": "所有人",
+        "j": "全員",
+        "e": "everyone"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "写真",
+        "r": "しゃしん",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入る",
+        "r": "はいる",
+        "z": "入鏡",
+        "j": "入る",
+        "e": "fit in the photo"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "自撮り棒",
+        "r": "じどりぼう",
+        "z": "自拍棒",
+        "j": "自撮り棒",
+        "e": "selfie stick"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "伸ばしました",
+        "r": "のばしました",
+        "z": "伸長了",
+        "j": "伸ばしました",
+        "e": "extended"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "USBハブをパソコンにつないでください。": [
+      {
+        "t": "USBハブ",
+        "r": "ゆーえすびーはぶ",
+        "z": "USB集線器",
+        "j": "USBハブ",
+        "e": "USB hub"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "パソコン",
+        "r": "ぱそこん",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つないでください",
+        "r": "つないでください",
+        "z": "請連接",
+        "j": "つないでください",
+        "e": "please connect"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パソコンの端子が足りなかったので、USBハブを使ってキーボードとマウスをつなぎました。": [
+      {
+        "t": "パソコン",
+        "r": "ぱそこん",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "端子",
+        "r": "たんし",
+        "z": "連接埠",
+        "j": "端子",
+        "e": "port"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "足りなかった",
+        "r": "たりなかった",
+        "z": "不夠",
+        "j": "足りなかった",
+        "e": "were not enough"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "USBハブ",
+        "r": "ゆーえすびーはぶ",
+        "z": "USB集線器",
+        "j": "USBハブ",
+        "e": "USB hub"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "r": "つかって",
+        "z": "使用",
+        "j": "使って",
+        "e": "using"
+      },
+      {
+        "t": "キーボード",
+        "r": "きーぼーど",
+        "z": "鍵盤",
+        "j": "キーボード",
+        "e": "keyboard"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "マウス",
+        "r": "まうす",
+        "z": "滑鼠",
+        "j": "マウス",
+        "e": "mouse"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つなぎました",
+        "r": "つなぎました",
+        "z": "連接了",
+        "j": "つなぎました",
+        "e": "connected"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "USB-C LANアダプターはかばんの中にあります。": [
+      {
+        "t": "USB-C LANアダプター",
+        "r": "ゆーえすびーしーらんあだぷたー",
+        "z": "USB-C網路轉接器",
+        "j": "USB-C LANアダプター",
+        "e": "USB-C Ethernet adapter"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "かばん",
+        "r": "かばん",
+        "z": "包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "中",
+        "r": "なか",
+        "z": "裡面",
+        "j": "中",
+        "e": "inside"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "あります",
+        "r": "あります",
+        "z": "在",
+        "j": "あります",
+        "e": "is located"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "ノートパソコンにLAN端子がなかったので、USB-C LANアダプターを使ってケーブルをつなぎました。": [
+      {
+        "t": "ノートパソコン",
+        "r": "のーとぱそこん",
+        "z": "筆電",
+        "j": "ノートパソコン",
+        "e": "laptop"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "LAN端子",
+        "r": "らんたんし",
+        "z": "網路孔",
+        "j": "LAN端子",
+        "e": "Ethernet port"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "なかった",
+        "r": "なかった",
+        "z": "沒有",
+        "j": "なかった",
+        "e": "there was no"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "USB-C LANアダプター",
+        "r": "ゆーえすびーしーらんあだぷたー",
+        "z": "USB-C網路轉接器",
+        "j": "USB-C LANアダプター",
+        "e": "USB-C Ethernet adapter"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "使って",
+        "r": "つかって",
+        "z": "使用",
+        "j": "使って",
+        "e": "using"
+      },
+      {
+        "t": "ケーブル",
+        "r": "けーぶる",
+        "z": "網路線",
+        "j": "ケーブル",
+        "e": "Ethernet cable"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つなぎました",
+        "r": "つなぎました",
+        "z": "連接了",
+        "j": "つなぎました",
+        "e": "connected"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カードリーダーにメモリーカードを挿してください。": [
+      {
+        "t": "カードリーダー",
+        "r": "かーどりーだー",
+        "z": "讀卡機",
+        "j": "カードリーダー",
+        "e": "card reader"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "メモリーカード",
+        "r": "めもりーかーど",
+        "z": "記憶卡",
+        "j": "メモリーカード",
+        "e": "memory card"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "挿してください",
+        "r": "さしてください",
+        "z": "請插入",
+        "j": "挿してください",
+        "e": "please insert"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "写真をパソコンにコピーしてから、カードリーダーを抜きました。": [
+      {
+        "t": "写真",
+        "r": "しゃしん",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "パソコン",
+        "r": "ぱそこん",
+        "z": "電腦",
+        "j": "パソコン",
+        "e": "computer"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "コピーして",
+        "r": "こぴーして",
+        "z": "複製後",
+        "j": "コピーして",
+        "e": "copied"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "カードリーダー",
+        "r": "かーどりーだー",
+        "z": "讀卡機",
+        "j": "カードリーダー",
+        "e": "card reader"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "抜きました",
+        "r": "ぬきました",
+        "z": "拔下了",
+        "j": "抜きました",
+        "e": "unplugged"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カメラにmicroSDカードを入れます。": [
+      {
+        "t": "カメラ",
+        "r": "かめら",
+        "z": "相機",
+        "j": "カメラ",
+        "e": "camera"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "microSDカード",
+        "r": "まいくろえすでぃーかーど",
+        "z": "microSD記憶卡",
+        "j": "microSDカード",
+        "e": "microSD card"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れます",
+        "r": "いれます",
+        "z": "放入",
+        "j": "入れます",
+        "e": "put in"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "microSDカードがいっぱいになったので、写真をバックアップしてから削除しました。": [
+      {
+        "t": "microSDカード",
+        "r": "まいくろえすでぃーかーど",
+        "z": "microSD記憶卡",
+        "j": "microSDカード",
+        "e": "microSD card"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "いっぱいになった",
+        "r": "いっぱいになった",
+        "z": "變滿了",
+        "j": "いっぱいになった",
+        "e": "became full"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "写真",
+        "r": "しゃしん",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "バックアップして",
+        "r": "ばっくあっぷして",
+        "z": "備份後",
+        "j": "バックアップして",
+        "e": "backed up"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "削除しました",
+        "r": "さくじょしました",
+        "z": "刪除了",
+        "j": "削除しました",
+        "e": "deleted"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "Wi-Fi中継機をコンセントに挿してください。": [
+      {
+        "t": "Wi-Fi中継機",
+        "r": "わいふぁいちゅうけいき",
+        "z": "Wi-Fi訊號延伸器",
+        "j": "Wi-Fi中継機",
+        "e": "Wi-Fi extender"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "コンセント",
+        "r": "こんせんと",
+        "z": "插座",
+        "j": "コンセント",
+        "e": "power outlet"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "挿してください",
+        "r": "さしてください",
+        "z": "請插入",
+        "j": "挿してください",
+        "e": "please plug in"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "部屋の電波が弱かったので、廊下にWi-Fi中継機を設置しました。": [
+      {
+        "t": "部屋",
+        "r": "へや",
+        "z": "房間",
+        "j": "部屋",
+        "e": "room"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "電波",
+        "r": "でんぱ",
+        "z": "訊號",
+        "j": "電波",
+        "e": "signal"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "弱かった",
+        "r": "よわかった",
+        "z": "很弱",
+        "j": "弱かった",
+        "e": "was weak"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "廊下",
+        "r": "ろうか",
+        "z": "走廊",
+        "j": "廊下",
+        "e": "hallway"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "Wi-Fi中継機",
+        "r": "わいふぁいちゅうけいき",
+        "z": "Wi-Fi訊號延伸器",
+        "j": "Wi-Fi中継機",
+        "e": "Wi-Fi extender"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "設置しました",
+        "r": "せっちしました",
+        "z": "設置了",
+        "j": "設置しました",
+        "e": "installed"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "地図アプリを開いてください。": [
+      {
+        "t": "地図アプリ",
+        "r": "ちずあぷり",
+        "z": "地圖應用程式",
+        "j": "地図アプリ",
+        "e": "map app"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "開いてください",
+        "r": "ひらいてください",
+        "z": "請開啟",
+        "j": "開いてください",
+        "e": "please open"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "空き容量を増やすために、使わなくなったアプリを削除しました。": [
+      {
+        "t": "空き容量",
+        "r": "あきようりょう",
+        "z": "可用儲存空間",
+        "j": "空き容量",
+        "e": "free storage space"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "増やす",
+        "r": "ふやす",
+        "z": "增加",
+        "j": "増やす",
+        "e": "increase"
+      },
+      {
+        "t": "ために、"
+      },
+      {
+        "t": "使わなくなった",
+        "r": "つかわなくなった",
+        "z": "已不再使用的",
+        "j": "使わなくなった",
+        "e": "no longer used"
+      },
+      {
+        "t": "アプリ",
+        "r": "あぷり",
+        "z": "應用程式",
+        "j": "アプリ",
+        "e": "apps"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "削除しました",
+        "r": "さくじょしました",
+        "z": "刪除了",
+        "j": "削除しました",
+        "e": "deleted"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホに通知が来ました。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "通知",
+        "r": "つうち",
+        "z": "通知",
+        "j": "通知",
+        "e": "notification"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "来ました",
+        "r": "きました",
+        "z": "收到了",
+        "j": "来ました",
+        "e": "arrived"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "通知が多すぎたので、仕事をしている間はオフにしました。": [
+      {
+        "t": "通知",
+        "r": "つうち",
+        "z": "通知",
+        "j": "通知",
+        "e": "notifications"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "多すぎた",
+        "r": "おおすぎた",
+        "z": "太多了",
+        "j": "多すぎた",
+        "e": "were too many"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "仕事",
+        "r": "しごと",
+        "z": "工作",
+        "j": "仕事",
+        "e": "work"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "している",
+        "r": "している",
+        "z": "正在做",
+        "j": "している",
+        "e": "am doing"
+      },
+      {
+        "t": "間",
+        "r": "あいだ",
+        "z": "期間",
+        "j": "間",
+        "e": "while"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "オフにしました",
+        "r": "おふにしました",
+        "z": "關閉了",
+        "j": "オフにしました",
+        "e": "turned off"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パスワードを入力してください。": [
+      {
+        "t": "パスワード",
+        "r": "ぱすわーど",
+        "z": "密碼",
+        "j": "パスワード",
+        "e": "password"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入力してください",
+        "r": "にゅうりょくしてください",
+        "z": "請輸入",
+        "j": "入力してください",
+        "e": "please enter"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "パスワードを忘れたので、ログイン画面から再設定しました。": [
+      {
+        "t": "パスワード",
+        "r": "ぱすわーど",
+        "z": "密碼",
+        "j": "パスワード",
+        "e": "password"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "忘れた",
+        "r": "わすれた",
+        "z": "忘記了",
+        "j": "忘れた",
+        "e": "forgot"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "ログイン画面",
+        "r": "ろぐいんがめん",
+        "z": "登入畫面",
+        "j": "ログイン画面",
+        "e": "login screen"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "再設定しました",
+        "r": "さいせっていしました",
+        "z": "重新設定了",
+        "j": "再設定しました",
+        "e": "reset"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "SMSで届いた認証コードを入力してください。": [
+      {
+        "t": "SMS",
+        "r": "えすえむえす",
+        "z": "簡訊",
+        "j": "SMS",
+        "e": "text message"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "届いた",
+        "r": "とどいた",
+        "z": "收到的",
+        "j": "届いた",
+        "e": "received"
+      },
+      {
+        "t": "認証コード",
+        "r": "にんしょうこーど",
+        "z": "驗證碼",
+        "j": "認証コード",
+        "e": "verification code"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入力してください",
+        "r": "にゅうりょくしてください",
+        "z": "請輸入",
+        "j": "入力してください",
+        "e": "please enter"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "認証コードの有効期限が切れていたので、新しいコードを送ってもらいました。": [
+      {
+        "t": "認証コード",
+        "r": "にんしょうこーど",
+        "z": "驗證碼",
+        "j": "認証コード",
+        "e": "verification code"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "有効期限",
+        "r": "ゆうこうきげん",
+        "z": "有效期限",
+        "j": "有効期限",
+        "e": "expiry date"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "切れていた",
+        "r": "きれていた",
+        "z": "已經過了",
+        "j": "切れていた",
+        "e": "had expired"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "新しい",
+        "r": "あたらしい",
+        "z": "新的",
+        "j": "新しい",
+        "e": "new"
+      },
+      {
+        "t": "コード",
+        "r": "こーど",
+        "z": "碼",
+        "j": "コード",
+        "e": "code"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "送ってもらいました",
+        "r": "おくってもらいました",
+        "z": "請對方傳送了",
+        "j": "送ってもらいました",
+        "e": "had one sent"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "地図のスクリーンショットを撮ってください。": [
+      {
+        "t": "地図",
+        "r": "ちず",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "スクリーンショット",
+        "r": "すくりーんしょっと",
+        "z": "螢幕截圖",
+        "j": "スクリーンショット",
+        "e": "screenshot"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮ってください",
+        "r": "とってください",
+        "z": "請擷取",
+        "j": "撮ってください",
+        "e": "please take"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "後で予約番号をすぐに見つけられるように、スクリーンショットを撮りました。": [
+      {
+        "t": "後",
+        "r": "あと",
+        "z": "之後",
+        "j": "後",
+        "e": "later"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "予約番号",
+        "r": "よやくばんごう",
+        "z": "預約編號",
+        "j": "予約番号",
+        "e": "reservation number"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "すぐに",
+        "r": "すぐに",
+        "z": "很快地",
+        "j": "すぐに",
+        "e": "quickly"
+      },
+      {
+        "t": "見つけられる",
+        "r": "みつけられる",
+        "z": "能找到",
+        "j": "見つけられる",
+        "e": "can find"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "スクリーンショット",
+        "r": "すくりーんしょっと",
+        "z": "螢幕截圖",
+        "j": "スクリーンショット",
+        "e": "screenshot"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮りました",
+        "r": "とりました",
+        "z": "擷取了",
+        "j": "撮りました",
+        "e": "took"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "機内モードをオンにしてください。": [
+      {
+        "t": "機内モード",
+        "r": "きないもーど",
+        "z": "飛航模式",
+        "j": "機内モード",
+        "e": "airplane mode"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "オンにしてください",
+        "r": "おんにしてください",
+        "z": "請開啟",
+        "j": "オンにしてください",
+        "e": "please turn on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "到着のアナウンスを聞いてから、機内モードをオフにして家族に連絡しました。": [
+      {
+        "t": "到着",
+        "r": "とうちゃく",
+        "z": "抵達",
+        "j": "到着",
+        "e": "arrival"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "アナウンス",
+        "r": "あなうんす",
+        "z": "廣播通知",
+        "j": "アナウンス",
+        "e": "announcement"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "聞いて",
+        "r": "きいて",
+        "z": "聽到後",
+        "j": "聞いて",
+        "e": "heard"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "機内モード",
+        "r": "きないもーど",
+        "z": "飛航模式",
+        "j": "機内モード",
+        "e": "airplane mode"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "オフにして",
+        "r": "おふにして",
+        "z": "關閉後",
+        "j": "オフにして",
+        "e": "turned off"
+      },
+      {
+        "t": "家族",
+        "r": "かぞく",
+        "z": "家人",
+        "j": "家族",
+        "e": "family"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "連絡しました",
+        "r": "れんらくしました",
+        "z": "聯絡了",
+        "j": "連絡しました",
+        "e": "contacted"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "スマホのインターネット共有をオンにしてください。": [
+      {
+        "t": "スマホ",
+        "r": "すまほ",
+        "z": "手機",
+        "j": "スマホ",
+        "e": "phone"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "インターネット共有",
+        "r": "いんたーねっときょうゆう",
+        "z": "個人熱點",
+        "j": "インターネット共有",
+        "e": "personal hotspot"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "オンにしてください",
+        "r": "おんにしてください",
+        "z": "請開啟",
+        "j": "オンにしてください",
+        "e": "please turn on"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カフェにWi-Fiがなかったので、インターネット共有でノートパソコンをネットにつなぎました。": [
+      {
+        "t": "カフェ",
+        "r": "かふぇ",
+        "z": "咖啡店",
+        "j": "カフェ",
+        "e": "cafe"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "Wi-Fi",
+        "r": "わいふぁい",
+        "z": "無線網路",
+        "j": "Wi-Fi",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "なかった",
+        "r": "なかった",
+        "z": "沒有",
+        "j": "なかった",
+        "e": "there was no"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "インターネット共有",
+        "r": "いんたーねっときょうゆう",
+        "z": "個人熱點",
+        "j": "インターネット共有",
+        "e": "personal hotspot"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "ノートパソコン",
+        "r": "のーとぱそこん",
+        "z": "筆電",
+        "j": "ノートパソコン",
+        "e": "laptop"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "ネット",
+        "r": "ねっと",
+        "z": "網路",
+        "j": "ネット",
+        "e": "internet"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "つなぎました",
+        "r": "つなぎました",
+        "z": "連上了",
+        "j": "つなぎました",
+        "e": "connected"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "モバイルデータ通信で地図を確認します。": [
+      {
+        "t": "モバイルデータ通信",
+        "r": "もばいるでーたつうしん",
+        "z": "行動數據",
+        "j": "モバイルデータ通信",
+        "e": "mobile data"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "地図",
+        "r": "ちず",
+        "z": "地圖",
+        "j": "地図",
+        "e": "map"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "確認します",
+        "r": "かくにんします",
+        "z": "查看",
+        "j": "確認します",
+        "e": "check"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "モバイルデータ通信の使用量を減らすために、家のWi-Fiで写真をアップロードしています。": [
+      {
+        "t": "モバイルデータ通信",
+        "r": "もばいるでーたつうしん",
+        "z": "行動數據",
+        "j": "モバイルデータ通信",
+        "e": "mobile data"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "使用量",
+        "r": "しようりょう",
+        "z": "用量",
+        "j": "使用量",
+        "e": "usage"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "減らす",
+        "r": "へらす",
+        "z": "減少",
+        "j": "減らす",
+        "e": "reduce"
+      },
+      {
+        "t": "ために、"
+      },
+      {
+        "t": "家",
+        "r": "いえ",
+        "z": "家",
+        "j": "家",
+        "e": "home"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "Wi-Fi",
+        "r": "わいふぁい",
+        "z": "無線網路",
+        "j": "Wi-Fi",
+        "e": "Wi-Fi"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "写真",
+        "r": "しゃしん",
+        "z": "照片",
+        "j": "写真",
+        "e": "photos"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "アップロードしています",
+        "r": "あっぷろーどしています",
+        "z": "在上傳",
+        "j": "アップロードしています",
+        "e": "upload"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

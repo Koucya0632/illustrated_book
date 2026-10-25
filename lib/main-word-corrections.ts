@@ -1,3 +1,4 @@
+import { MAIN_WORD_PHONE_INTERNET_CORRECTIONS } from "./main-word-phone-internet-2026-10";
 import { MAIN_WORD_IDENTITY_DOCUMENTS_CORRECTIONS } from "./main-word-identity-documents-2026-10";
 import { MAIN_WORD_AIRPORT_CORRECTIONS } from "./main-word-airport-2026-10";
 import { MAIN_WORD_POSTAL_SERVICES_CORRECTIONS } from "./main-word-postal-services-2026-10";
@@ -139,6 +140,7 @@ export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
   ...MAIN_WORD_POSTAL_SERVICES_CORRECTIONS,
   ...MAIN_WORD_IDENTITY_DOCUMENTS_CORRECTIONS,
   ...MAIN_WORD_AIRPORT_CORRECTIONS,
+  ...MAIN_WORD_PHONE_INTERNET_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",

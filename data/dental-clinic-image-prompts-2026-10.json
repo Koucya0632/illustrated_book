@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "series": "dental-clinic",
+  "mode": "built-in image_gen",
+  "images": [
+    {
+      "id": "dental-clinic",
+      "prompt": "Use case: product-mockup. Asset: one Tuji picture dictionary image for dental-clinic. A small contemporary Japanese dental clinic storefront, a single-story cream facade with glass entrance, two simple windows and a modest tooth pictogram sign. No writing or lettering. The tooth pictogram and a glimpse of a dental treatment chair through one window distinguish this clinic from other shops. An isolated architectural miniature with no street, cars, trees or people. Semi-realistic clean catalog 3D rendering. Pure white background, centered single subject, whole silhouette visible, generous padding, subtle grounding shadow. No watermark, logo, invented brand, text, border, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-f8173380-5012-4dce-94c1-54c43ba52180.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-clinic.png"
+    },
+    {
+      "id": "dental-chair",
+      "prompt": "Use case: product-mockup. Create one square Tuji picture dictionary illustration for dental chair / 歯科診療台. Semi-realistic clean catalog 3D rendering, pure white background, centered with generous padding and soft grounding shadow. A contemporary Japanese dental treatment chair: pale mint reclining padded seat, adjustable headrest, white base, articulated overhead dental examination lamp, compact attached instrument console and rinse bowl. Show the complete unit in three-quarter view, no room, no people, no brands, no lettering, no watermark. One clear recognizable chair assembly, clinically believable equipment. 1024 square.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-2d09a0c1-c025-4bbe-8206-79d06562b736.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-chair.png"
+    },
+    {
+      "id": "dental-mirror",
+      "prompt": "Use case: product-mockup. Asset: one Tuji picture dictionary image for dental-mirror. One stainless steel dental mouth mirror with slender textured handle, an angled short neck and small circular reflective mirror head. Whole item visible on a diagonal, no other instruments. Semi-realistic clean catalog 3D rendering. Pure white background, centered single subject, whole silhouette visible, generous padding, subtle grounding shadow. No watermark, logo, invented brand, text, border, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-953d1d7b-542b-4028-b086-a4bfe2838300.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-mirror.png"
+    },
+    {
+      "id": "dental-bib",
+      "prompt": "Use case: product-mockup. Asset: one Tuji picture dictionary image for dental-bib. One pale blue disposable dental patient bib, rectangular lightly embossed absorbent paper with waterproof backing, suspended in a gentle chest-shaped curve from a small metallic bib clip chain attached at the two upper corners. Show complete bib and chain, no person or torso, no gown or lead apron. Semi-realistic clean catalog 3D rendering. Pure white background, centered single subject, whole silhouette visible, generous padding, subtle grounding shadow. No watermark, logo, invented brand, text, border, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-27129086-e8aa-40d7-a715-7c69ac028274.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-bib.png"
+    },
+    {
+      "id": "dental-suction-tip",
+      "prompt": "Use case: product-mockup. Asset: one Tuji picture dictionary image for dental-suction-tip. One slender disposable dental saliva ejector tube, translucent milky flexible tube bent into a gentle hooked curve with a small rounded perforated blue suction tip. Compact smooth connector at the other end. Not a large high-volume suction hose, not a syringe or toothbrush. Whole isolated tube. Semi-realistic clean catalog 3D rendering. Pure white background, centered single subject, whole silhouette visible, generous padding, subtle grounding shadow. No watermark, logo, invented brand, text, border, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-08d3b63a-0ebb-4d47-b96f-15bcf4d77501.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-suction-tip.png"
+    },
+    {
+      "id": "dental-filling",
+      "prompt": "Use case: scientific-educational. One Tuji picture dictionary image for dental-filling. Scientific educational dental illustration of one whole molar tooth with an ivory tooth-colored inlay filling visible in the chewing surface. A subtle fine boundary distinguishes the small central filling from the surrounding natural enamel. Show a second small same-shape inlay just above its matching central recess as a gentle exploded view, visually unmistakable as local filling that fits INSIDE the top of the tooth, not a crown covering the tooth. No labels, no arrows, no gum or blood. Semi-realistic clean catalog 3D rendering. Pure white background, centered subject with generous padding, complete silhouette, subtle shadow. No watermark, logo, brand, text, decorative frames, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-f5a0e54c-1043-4b57-8f2f-c492447d98c2.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-filling.png"
+    },
+    {
+      "id": "dental-crown",
+      "prompt": "Use case: scientific-educational. One Tuji picture dictionary image for dental-crown. Scientific educational catalog rendering: a single realistic ivory ceramic artificial FRONT TOOTH dental crown cap hovering slightly above a prepared short front tooth stump in a small clean pink gum base. Smooth incisor shape, open hollow lower edge visibly fits over the stump. The crown is the prominent subject, with no roots on the crown. Distinguish full crown cap from small inlay filling. No clinical gore, labels or arrows. Semi-realistic clean catalog 3D rendering. Pure white background, centered subject with generous padding, complete silhouette, subtle shadow. No watermark, logo, brand, text, decorative frames, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-bca8248c-92a5-48c2-97cd-8ef9c68da713.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-crown.png"
+    },
+    {
+      "id": "dentures",
+      "prompt": "Use case: scientific-educational. One Tuji picture dictionary image for dentures. One complete upper removable full denture, realistic pale pink acrylic gum base and orderly ivory artificial teeth, horseshoe dental arch with smooth palate plate, shown in three-quarter view so the removable appliance is clear. No face, jawbone, case or additional loose teeth. Semi-realistic clean catalog 3D rendering. Pure white background, centered subject with generous padding, complete silhouette, subtle shadow. No watermark, logo, brand, text, decorative frames, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-c9f18382-7046-4360-b3de-3dc860845011.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dentures.png"
+    },
+    {
+      "id": "orthodontic-braces",
+      "prompt": "Use case: scientific-educational. One Tuji picture dictionary image for orthodontic-braces. A clean educational model of upper and lower teeth in a restrained small pink gum base, front three-quarter view showing FIXED metal orthodontic braces: small individual brackets attached to the front surfaces and a single thin metal arch wire passing through bracket slots on each arch. No extra wires, no face, no hands, no invisible aligner, no blood. Semi-realistic clean catalog 3D rendering. Pure white background, centered subject with generous padding, complete silhouette, subtle shadow. No watermark, logo, brand, text, decorative frames, or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-46e8d687-0970-40e0-b0bc-874d4d2fba8f.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/orthodontic-braces.png"
+    },
+    {
+      "id": "dental-impression-tray",
+      "prompt": "Use case: product-mockup. One Tuji picture dictionary image for dental-impression-tray. One U-shaped stainless steel upper dental impression tray with a short flat handle and evenly spaced small perforations, partly filled with smooth pale lavender dental impression material. Three-quarter top view reveals the horseshoe channel and palate portion. No teeth, no dentures, no hands, no surgical scene. Semi-realistic clean catalog rendering, pure white background. Centered recognizable subject, complete silhouette, generous padding, subtle grounding shadow. No watermark, brand, text, decorative borders or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-b284cc7f-f667-4af6-85cc-e97a9f9ed019.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-impression-tray.png"
+    },
+    {
+      "id": "intraoral-camera",
+      "prompt": "Use case: product-mockup. One Tuji picture dictionary image for intraoral-camera. One modern pen-shaped dental intraoral camera: slim ivory white ergonomic wand, a short angled head with a tiny visible dark camera lens and a ring of tiny white LEDs near the distal end, one discreet control button and a short cable emerging from its base. Whole object visible, no monitor, no toothbrush bristles, no dental mirror, no text. Semi-realistic clean catalog rendering, pure white background. Centered recognizable subject, complete silhouette, generous padding, subtle grounding shadow. No watermark, brand, text, decorative borders or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-ba9bb895-9d38-4b0e-8aab-5d5f9d91fb14.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/intraoral-camera.png"
+    },
+    {
+      "id": "tooth-cavity",
+      "prompt": "Use case: product-mockup. One Tuji picture dictionary image for tooth-cavity. Accurate non-graphic educational dental model: a single ivory molar tooth with complete crown and short roots, three-quarter view from slightly above. One clearly visible small dark-brown irregular cavity in the chewing surface central groove. Surrounding enamel looks intact. Localized decayed hole, not an all-black tooth, no blood, no mouth, no faces, no labels or arrows. Semi-realistic clean catalog rendering, pure white background. Centered recognizable subject, complete silhouette, generous padding, subtle grounding shadow. No watermark, brand, text, decorative borders or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-615d549c-d284-4c3c-8e72-9b130708de96.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/tooth-cavity.png"
+    },
+    {
+      "id": "dental-x-ray",
+      "prompt": "Use case: scientific-educational. One Tuji picture dictionary image for dental-x-ray. A single small rectangular dental periapical X-ray film with softly rounded corners, held upright by a discreet neutral white display stand. The black-and-gray radiograph clearly depicts three adjacent molar teeth with crowns, natural long roots, root canals and surrounding jawbone texture, anatomically coherent. This is an X-ray IMAGE, not an X-ray machine. No numbers, letters, labels or patient information. Film fully visible. Semi-realistic clean catalog rendering. Pure white background, centered complete subject, generous padding and subtle shadow. No watermark, brands, text, decorative borders or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-c1fca43b-9abd-4431-b43f-0723cb0f3be0.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-x-ray.png"
+    },
+    {
+      "id": "interdental-brush",
+      "prompt": "Use case: product-mockup. One Tuji picture dictionary image for interdental-brush. One L-shaped interdental cleaning brush with a small teal plastic angled handle and a very thin cylindrical spiral of tiny white bristles around a fine wire at its short head. Whole item in close-up isolated catalog view. Not a normal toothbrush, not dental floss, no teeth, no package, no brands. Semi-realistic clean catalog rendering, pure white background. Centered recognizable subject, complete silhouette, generous padding, subtle grounding shadow. No watermark, brand, text, decorative borders or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-9f0c4f86-aac5-4719-b585-584992d30d28.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/interdental-brush.png"
+    },
+    {
+      "id": "category-dental-clinic",
+      "prompt": "Use case: scientific-educational. One Tuji picture dictionary image for category-dental-clinic. A welcoming contemporary Japanese dental chair unit as the large central subject, mint upholstered reclining chair, articulated examination lamp and compact rinse bowl. In the foreground beside it, only one small stainless dental mouth mirror and one small ivory molar tooth model. A composed dental-clinic category cover rather than a room. No walls, people, room scenery, title, signage, lettering or brand. Semi-realistic clean catalog rendering. Pure white background, centered complete subject, generous padding and subtle shadow. No watermark, brands, text, decorative borders or unrelated props. Square 1024 image.",
+      "originalGeneratedPath": "/Users/rex/.codex/generated_images/01a17864-740a-7600-ab1d-f5d25c74eca0/exec-7b5947df-128b-4e93-96eb-9648674904ef.png",
+      "sourceFile": "output/dental-clinic-2026-10/sources/category-dental-clinic.png"
+    }
+  ]
+}

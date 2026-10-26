@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 1,
+  "series": "dental-clinic",
+  "state": "reviewed-local-candidate",
+  "scopeNote": "14 dental-clinic concepts. Existing dentist, dental hygienist, toothbrush, toothpaste, dental floss and mouthwash stay in their original categories. Educational vocabulary, not individualized treatment advice. Production upload, database writes, commit and deployment require separate explicit authorization.",
+  "category": {
+    "id": "dental-clinic",
+    "name": "Dental Clinic",
+    "nameZh": "牙科診所",
+    "nameJa": "歯科医院",
+    "emoji": "🦷",
+    "description": "牙科診所的診療設備、修復物與口腔照護用品",
+    "descriptionEn": "Dental clinic equipment, restorations and oral care items",
+    "descriptionJa": "歯科医院の診療設備、修復物、口腔ケア用品",
+    "color": "from-cyan-100 to-teal-100",
+    "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/category-dental-clinic-v1-802e740e75f0.webp"
+  },
+  "references": [
+    "https://www.jda.or.jp/go/check.html",
+    "https://www.jda.or.jp/consultation/vol-08.html",
+    "https://www.jda.or.jp/Foreign-temporary-workers/pdf/mouth-Health-Handbook_v02.pdf",
+    "https://pd.dental-plaza.com/",
+    "https://www.morita.com/jmmc/ja/products/diagnostic-and-imaging/intraoral-camera/penviewer/",
+    "https://www.lion-dent-health.or.jp/labo/article/tool/04-1/",
+    "https://www.gc.dental/japan/products/professional/impression-material/impression-trays",
+    "https://service.yoshida-dental.co.jp/ca/series/10337/spec"
+  ],
+  "entries": [
+    {
+      "id": "dental-clinic",
+      "word": "dental clinic",
+      "chinese": "牙科診所",
+      "chineseDefinition": "提供牙齒與口腔檢查及治療的診所。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl ˈklɪn.ɪk/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科診所",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A clinic that provides examinations and treatment for teeth and the mouth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯や口の検査、治療などを行う診療所。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dental clinic is near the station.",
+          "ja": "歯科医院は駅の近くにあります。",
+          "zh": "牙科診所在車站附近。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my tooth hurt, I made an appointment at the dental clinic.",
+          "ja": "歯が痛かったので、歯科医院に予約を入れました。",
+          "zh": "因為牙齒痛，我預約了牙科診所。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "歯科医院",
+      "jaReading": "しかいいん",
+      "jaReadingSegments": [
+        {
+          "text": "歯科医院",
+          "ruby": "しかいいん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-clinic-v1-1c96f0a8f996.webp"
+    },
+    {
+      "id": "dental-chair",
+      "word": "dental chair",
+      "chinese": "牙科診療椅",
+      "chineseDefinition": "牙科檢查或治療時供病人坐臥、可調整角度的診療椅。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl tʃer/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科診療椅",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An adjustable reclining chair used by patients during dental examinations or treatment.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯科の診察や治療の際に患者が座ったり横になったりする、角度を調節できる椅子。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please sit in the dental chair.",
+          "ja": "歯科診療台に座ってください。",
+          "zh": "請坐上牙科診療椅。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before the examination began, the dentist lowered the backrest of the dental chair.",
+          "ja": "診察が始まる前に、歯科医師が歯科診療台の背もたれを倒しました。",
+          "zh": "檢查開始前，牙醫把牙科診療椅的椅背放倒了。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "歯科診療台",
+      "jaReading": "しかしんりょうだい",
+      "jaReadingSegments": [
+        {
+          "text": "歯科診療台",
+          "ruby": "しかしんりょうだい"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-chair-v1-1de0eec31c74.webp"
+    },
+    {
+      "id": "dental-mirror",
+      "word": "dental mirror",
+      "chinese": "牙科口鏡",
+      "chineseDefinition": "帶細長握柄的小圓鏡，供牙科人員查看口腔內不易直接看見的部位。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl ˈmɪr.ɚ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科口鏡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small mirror on a slender handle used to see areas inside the mouth that are hard to view directly.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "口の中の直接見えにくい部分を見るために使う、細い柄の付いた小さな鏡。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dental mirror has a small round mirror.",
+          "ja": "デンタルミラーには小さな丸い鏡が付いています。",
+          "zh": "牙科口鏡帶有一面小圓鏡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the back teeth were hard to see, the dentist used a dental mirror.",
+          "ja": "奥歯が見えにくかったので、歯科医師はデンタルミラーを使いました。",
+          "zh": "因為後牙不容易看見，牙醫使用了牙科口鏡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "デンタルミラー",
+      "jaReading": "デンタルミラー",
+      "jaReadingSegments": [
+        {
+          "text": "デンタルミラー",
+          "ruby": null
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-mirror-v1-180d6716f733.webp"
+    },
+    {
+      "id": "dental-bib",
+      "word": "dental bib",
+      "chinese": "牙科圍巾",
+      "chineseDefinition": "牙科診療時覆在病人胸前、用來保護衣服的防水圍巾。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl bɪb/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科圍巾",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A protective bib placed over a dental patient’s chest to keep clothing dry and clean.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯科診療の際に患者の胸元に掛け、衣服のぬれや汚れを防ぐためのエプロン。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This dental bib is blue.",
+          "ja": "この歯科用エプロンは青いです。",
+          "zh": "這條牙科圍巾是藍色的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When I rinsed my mouth, water splashed onto the dental bib.",
+          "ja": "口をすすいだとき、水が歯科用エプロンに飛びました。",
+          "zh": "我漱口時，水濺到了牙科圍巾上。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "歯科用エプロン",
+      "jaReading": "しかようエプロン",
+      "jaReadingSegments": [
+        {
+          "text": "歯科用エプロン",
+          "ruby": "しかようエプロン"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-bib-v1-37b85747050a.webp"
+    },
+    {
+      "id": "dental-suction-tip",
+      "word": "dental suction tip",
+      "chinese": "牙科吸唾管",
+      "chineseDefinition": "連接牙科吸引設備、放入口中吸走唾液等液體的細管；此處指細型吸唾管。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl ˈsʌk.ʃən tɪp/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科吸唾管",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A slender tube connected to dental suction equipment to remove saliva and other fluids from the mouth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯科の吸引装置につなぎ、口の中の唾液などを吸い取るための細い管。ここでは細型のものを指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dental suction tip removes saliva.",
+          "ja": "排唾管は唾液を吸い取ります。",
+          "zh": "牙科吸唾管會吸走唾液。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because saliva had collected during treatment, the dental hygienist used a dental suction tip.",
+          "ja": "治療中に唾液がたまったので、歯科衛生士が排唾管を使いました。",
+          "zh": "因為治療中積了唾液，牙科衛生士使用了牙科吸唾管。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "排唾管",
+      "jaReading": "はいだかん",
+      "jaReadingSegments": [
+        {
+          "text": "排唾管",
+          "ruby": "はいだかん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-suction-tip-v1-39863017d53e.webp"
+    },
+    {
+      "id": "dental-filling",
+      "word": "dental filling",
+      "chinese": "補牙填補物",
+      "chineseDefinition": "用來填補牙齒缺損部分、恢復牙齒形狀的材料；不指覆蓋整個牙冠的被せ物。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl ˈfɪl.ɪŋ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "補牙填補物",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Material used to fill a damaged area of a tooth and restore its shape, rather than a crown covering the tooth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯の欠けた部分などを埋めて形を補う材料。歯全体を覆う被せ物とは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dentist checked my dental filling.",
+          "ja": "歯科医師が歯の詰め物を確認しました。",
+          "zh": "牙醫檢查了我的補牙填補物。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My dental filling fell out while I was eating, so I called the clinic.",
+          "ja": "食事中に歯の詰め物が取れたので、医院に電話しました。",
+          "zh": "我的補牙填補物在吃飯時掉了，所以我打電話給診所。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "詰め物",
+      "jaReading": "つめもの",
+      "jaReadingSegments": [
+        {
+          "text": "詰め物",
+          "ruby": "つめもの"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-filling-v1-de13b28f129c.webp"
+    },
+    {
+      "id": "dental-crown",
+      "word": "dental crown",
+      "chinese": "牙冠套",
+      "chineseDefinition": "套在經修整的牙齒上、覆蓋牙冠部分以恢復外形的人工修復物。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl kraʊn/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙冠套",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An artificial cap fitted over a prepared tooth to restore the shape of its visible crown.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "形を整えた歯の上にかぶせ、歯冠部の形などを補う人工の修復物。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "This dental crown is for a front tooth.",
+          "ja": "この被せ物は前歯用です。",
+          "zh": "這個牙冠套是給前牙用的。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The dental crown felt too high, so I asked the dentist to check it.",
+          "ja": "被せ物が高すぎる気がしたので、歯科医師に確認してもらいました。",
+          "zh": "我覺得牙冠套太高了，所以請牙醫檢查。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "被せ物",
+      "jaReading": "かぶせもの",
+      "jaReadingSegments": [
+        {
+          "text": "被せ物",
+          "ruby": "かぶせもの"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-crown-v1-2a71fce7948b.webp"
+    },
+    {
+      "id": "dentures",
+      "word": "dentures",
+      "chinese": "活動假牙",
+      "chineseDefinition": "用來補足缺失牙齒、可自行取下的人工牙齒裝置，可為部分或全口型。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.tʃɚz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "活動假牙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "Removable artificial teeth that replace some or all missing teeth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "失った歯を補うための、取り外しができる人工の歯。部分入れ歯と総入れ歯がある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My dentures are in the case.",
+          "ja": "入れ歯はケースに入っています。",
+          "zh": "我的活動假牙放在盒子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because my dentures no longer fitted well, I took them to the dental clinic.",
+          "ja": "入れ歯が合わなくなったので、歯科医院に持っていきました。",
+          "zh": "因為活動假牙變得不合了，我把它帶到牙科診所。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "入れ歯",
+      "jaReading": "いれば",
+      "jaReadingSegments": [
+        {
+          "text": "入れ歯",
+          "ruby": "いれば"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dentures-v1-c539108063f7.webp"
+    },
+    {
+      "id": "orthodontic-braces",
+      "word": "braces",
+      "chinese": "牙齒矯正器",
+      "chineseDefinition": "用來逐步調整齒列位置的裝置；本詞圖示為固定式托槽與金屬線矯正器。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbreɪ.sɪz/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙齒矯正器",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An orthodontic appliance used to gradually move teeth; the pictured type has fixed brackets and a wire.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯並びを少しずつ整えるための装置。図はブラケットとワイヤーを使う固定式のもの。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "My braces have a metal wire.",
+          "ja": "私の歯列矯正装置には金属のワイヤーがあります。",
+          "zh": "我的牙齒矯正器有一條金屬線。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After I got braces, I returned to the clinic for my first checkup.",
+          "ja": "歯列矯正装置を付けた後、初めての診察のために医院へ戻りました。",
+          "zh": "裝上牙齒矯正器後，我回到診所做第一次檢查。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "歯列矯正装置",
+      "jaReading": "しれつきょうせいそうち",
+      "jaReadingSegments": [
+        {
+          "text": "歯列矯正装置",
+          "ruby": "しれつきょうせいそうち"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/orthodontic-braces-v1-31742a4fbc04.webp"
+    },
+    {
+      "id": "dental-impression-tray",
+      "word": "dental impression tray",
+      "chinese": "牙科取模托盤",
+      "chineseDefinition": "裝入取模材料並放入口腔，用來取得牙齒與牙齦形狀的弧形托盤。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl ɪmˈpreʃ.ən treɪ/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科取模托盤",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A curved tray that holds impression material in the mouth to record the shape of teeth and gums.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯や歯ぐきの型を取る際に、印象材を入れて口の中に置く弓形のトレー。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dental impression tray holds soft material.",
+          "ja": "印象用トレーには柔らかい材料が入っています。",
+          "zh": "牙科取模托盤裡裝著柔軟的材料。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before taking the impression, the dentist chose a dental impression tray that fitted my mouth.",
+          "ja": "型を取る前に、歯科医師は口に合う印象用トレーを選びました。",
+          "zh": "取模前，牙醫選了符合我口腔大小的牙科取模托盤。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "印象用トレー",
+      "jaReading": "いんしょうようトレー",
+      "jaReadingSegments": [
+        {
+          "text": "印象用トレー",
+          "ruby": "いんしょうようトレー"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-impression-tray-v1-e502d7cdd78a.webp"
+    },
+    {
+      "id": "intraoral-camera",
+      "word": "intraoral camera",
+      "chinese": "口內攝影機",
+      "chineseDefinition": "可伸入口腔拍攝牙齒與牙齦影像的小型攝影機，通常外型細長。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌɪn.trəˈɔːr.əl ˈkæm.rə/",
+      "cefrLevel": "B2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "口內攝影機",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small camera, often shaped like a wand, used to capture images of teeth and gums inside the mouth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "口の中に入れて歯や歯ぐきの画像を撮影する、小型で細長いカメラ。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The intraoral camera takes pictures of teeth.",
+          "ja": "口腔内カメラで歯の写真を撮ります。",
+          "zh": "用口內攝影機拍攝牙齒照片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I looked at the image from the intraoral camera while the dentist explained it.",
+          "ja": "歯科医師の説明を聞きながら、口腔内カメラの画像を見ました。",
+          "zh": "我一邊聽牙醫說明，一邊看口內攝影機的影像。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "口腔内カメラ",
+      "jaReading": "こうくうないカメラ",
+      "jaReadingSegments": [
+        {
+          "text": "口腔内カメラ",
+          "ruby": "こうくうないカメラ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/intraoral-camera-v1-a055c487cb9a.webp"
+    },
+    {
+      "id": "tooth-cavity",
+      "word": "cavity",
+      "chinese": "蛀牙",
+      "chineseDefinition": "牙齒因齲蝕形成的受損或蛀洞；此處指牙齒蛀洞，不是一般空腔。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkæv.ə.t̬i/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蛀牙",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A decayed area or hole in a tooth; here cavity refers to tooth decay rather than a general hollow space.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯がむしばまれて傷んだり穴が開いたりした状態。ここでは歯のう蝕を指す。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I have a cavity in a back tooth.",
+          "ja": "奥歯に虫歯があります。",
+          "zh": "我的後牙有蛀牙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Although my tooth did not hurt, the dentist found a cavity during the checkup.",
+          "ja": "歯は痛くなかったのに、診察で歯科医師が虫歯を見つけました。",
+          "zh": "雖然牙齒不痛，牙醫卻在檢查時發現了蛀牙。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "虫歯",
+      "jaReading": "むしば",
+      "jaReadingSegments": [
+        {
+          "text": "虫歯",
+          "ruby": "むしば"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/tooth-cavity-v1-a5661b73bbfd.webp"
+    },
+    {
+      "id": "dental-x-ray",
+      "word": "dental X-ray",
+      "chinese": "牙科X光片",
+      "chineseDefinition": "使用X光拍攝牙齒及周圍組織所得的影像；此詞指影像而非拍攝機器。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈden.təl ˈeks.reɪ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙科X光片",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "An X-ray image of teeth and surrounding structures, rather than the imaging machine itself.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "エックス線で撮影した、歯やその周囲の様子が分かる画像。撮影装置そのものではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "The dental X-ray shows the roots of the teeth.",
+          "ja": "歯のレントゲン写真には歯の根が写っています。",
+          "zh": "牙科X光片上看得到牙根。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The dentist explained the treatment area while looking at the dental X-ray.",
+          "ja": "歯科医師は歯のレントゲン写真を見ながら、治療する場所を説明しました。",
+          "zh": "牙醫一邊看牙科X光片，一邊說明要治療的位置。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "歯のレントゲン写真",
+      "jaReading": "はのレントゲンしゃしん",
+      "jaReadingSegments": [
+        {
+          "text": "歯のレントゲン写真",
+          "ruby": "はのレントゲンしゃしん"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-x-ray-v1-b51f8012342a.webp"
+    },
+    {
+      "id": "interdental-brush",
+      "word": "interdental brush",
+      "chinese": "牙間刷",
+      "chineseDefinition": "刷頭細小、用來清潔牙縫的刷子，與一般牙刷及牙線不同。",
+      "category": "dental-clinic",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌɪn.t̬ɚˈden.təl brʌʃ/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "牙間刷",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small narrow brush designed for cleaning spaces between teeth, distinct from a toothbrush or dental floss.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歯と歯の間を清掃するための、小さく細いブラシ。通常の歯ブラシやフロスとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Do you have a small interdental brush?",
+          "ja": "小さい歯間ブラシはありますか。",
+          "zh": "有小尺寸的牙間刷嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I was unsure which size of interdental brush to choose, so I asked the dental hygienist.",
+          "ja": "歯間ブラシのサイズ選びに迷ったので、歯科衛生士に聞きました。",
+          "zh": "我不確定該選哪個尺寸的牙間刷，所以詢問了牙科衛生士。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "歯間ブラシ",
+      "jaReading": "しかんブラシ",
+      "jaReadingSegments": [
+        {
+          "text": "歯間ブラシ",
+          "ruby": "しかんブラシ"
+        }
+      ],
+      "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/interdental-brush-v1-d75a5fbe5018.webp"
+    }
+  ]
+}

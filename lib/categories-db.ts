@@ -1,3 +1,4 @@
+import { MAIN_WORD_DENTAL_CLINIC_IDS } from "./main-word-dental-clinic-2026-10";
 import { MAIN_WORD_PHONE_INTERNET_IDS } from "./main-word-phone-internet-2026-10";
 import { MAIN_WORD_IDENTITY_DOCUMENTS_IDS } from "./main-word-identity-documents-2026-10";
 import { MAIN_WORD_AIRPORT_IDS } from "./main-word-airport-2026-10";
@@ -169,6 +170,14 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         WHERE NOT EXISTS (
           SELECT 1 FROM words w WHERE w.id = planned.id
             AND w.category = 'phone-internet' AND w.status = 'published'
+            AND w.deleted_at IS NULL
+        )
+      ))
+      AND (c.id <> 'dental-clinic' OR NOT EXISTS (
+        SELECT 1 FROM unnest(${MAIN_WORD_DENTAL_CLINIC_IDS}::text[]) AS planned(id)
+        WHERE NOT EXISTS (
+          SELECT 1 FROM words w WHERE w.id = planned.id
+            AND w.category = 'dental-clinic' AND w.status = 'published'
             AND w.deleted_at IS NULL
         )
       ))

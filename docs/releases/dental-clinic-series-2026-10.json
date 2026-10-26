@@ -1,0 +1,1371 @@
+{
+  "schemaVersion": 1,
+  "series": "dental-clinic",
+  "status": "published-verified",
+  "checkedAt": "2026-10-26T14:20:54.659Z",
+  "summary": {
+    "words": 14,
+    "definitions": 42,
+    "examples": 28,
+    "spanSentences": 56,
+    "wordImages": 14,
+    "categoryImages": 1,
+    "audioClips": 126,
+    "storageObjects": 141
+  },
+  "publishedCatalogBefore": 1227,
+  "publishedCatalogAfter": 1241,
+  "planDigest": "1697247815fa9ea1f3a479ea1e71cfe484340f65bd0fc4abad570ed5a9624436",
+  "planFileSha256": "c945b3100fcdbdbfd30258fc2a92114f7e9bad63b81461401ea233ba520bf9de",
+  "immutablePlan": "docs/releases/dental-clinic-publish-plan-c945b3100fcdbdbfd30258fc2a92114f7e9bad63b81461401ea233ba520bf9de.json",
+  "applyManifest": "docs/releases/dental-clinic-apply-manifest-2026-10-26T14-05-09-691Z.json",
+  "applyManifestSha256": "a365f6bc4f1b4fb5fba0b82c4e3d18a1a97f7f9f2552d9f73dd88c5696f7c59d",
+  "operationalRecoveryManifest": "output/dental-clinic-publish-prep/apply-manifest-2026-10-26T14-05-09-691Z.json",
+  "productionActions": {
+    "storageUploads": 141,
+    "storageOverwrites": 0,
+    "databaseSeriesPublications": 1,
+    "publishedWords": 14,
+    "publishedExamples": 28,
+    "exampleIdsReserved": 28,
+    "manualDeployments": 0
+  },
+  "verification": {
+    "database": {
+      "passed": true,
+      "readOnly": true,
+      "exactPlanProjection": true,
+      "publishedCount": 1241
+    },
+    "contentReview": {
+      "passed": true,
+      "wordJudgments": 14,
+      "exampleJudgments": 28,
+      "source": "individual current-source-bound Codex judgments"
+    },
+    "audioDatabase": {
+      "passed": true,
+      "headwordClips": 42,
+      "exampleClips": 84
+    },
+    "remoteMedia": {
+      "passed": true,
+      "objects": 141,
+      "images": 15,
+      "audio": 126,
+      "completeMp3Frames": true,
+      "fullSha256": true
+    },
+    "api": {
+      "checkedAt": "2026-10-26T14:14:04.262Z",
+      "baseUrl": "https://everyday-english-picture-dictionary.vercel.app",
+      "passed": true,
+      "probes": [
+        {
+          "key": "zh-ja-ordinary",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "total": 1241,
+          "seriesWords": 14,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "age": "82",
+            "x-vercel-cache": "HIT",
+            "x-nextjs-cache": null,
+            "etag": "W/\"FDaVDdrALS80AD5KlbR5x6\"",
+            "date": "Mon, 26 Oct 2026 14:12:40 GMT"
+          },
+          "issues": []
+        },
+        {
+          "key": "zh-ja-bust",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024042972",
+          "status": 200,
+          "total": 1241,
+          "seriesWords": 14,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "age": "0",
+            "x-vercel-cache": "MISS",
+            "x-nextjs-cache": null,
+            "etag": "W/\"FDaVDdrALS80AD5KlbR5x6\"",
+            "date": "Mon, 26 Oct 2026 14:14:03 GMT"
+          },
+          "issues": []
+        },
+        {
+          "key": "zh-en-ordinary",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "total": 1241,
+          "seriesWords": 14,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "age": "82",
+            "x-vercel-cache": "HIT",
+            "x-nextjs-cache": null,
+            "etag": "W/\"49x6vQnqT29u87TYbx/Gde\"",
+            "date": "Mon, 26 Oct 2026 14:12:41 GMT"
+          },
+          "issues": []
+        },
+        {
+          "key": "zh-en-bust",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en&_audit=dental-1793024043549",
+          "status": 200,
+          "total": 1241,
+          "seriesWords": 14,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "age": "0",
+            "x-vercel-cache": "MISS",
+            "x-nextjs-cache": null,
+            "etag": "W/\"49x6vQnqT29u87TYbx/Gde\"",
+            "date": "Mon, 26 Oct 2026 14:14:03 GMT"
+          },
+          "issues": []
+        }
+      ],
+      "categories": [
+        {
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/categories?lang=zh-Hant",
+          "status": 200,
+          "category": {
+            "id": "dental-clinic",
+            "name": "Dental Clinic",
+            "nameZh": "牙科診所",
+            "emoji": "🦷",
+            "description": "牙科診所的診療設備、修復物與口腔照護用品",
+            "descriptionEn": "Dental clinic equipment, restorations and oral care items",
+            "color": "from-cyan-100 to-teal-100",
+            "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/category-dental-clinic-v1-802e740e75f0.webp"
+          }
+        },
+        {
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/categories?lang=zh-Hant&_audit=dental-1793024043966",
+          "status": 200,
+          "category": {
+            "id": "dental-clinic",
+            "name": "Dental Clinic",
+            "nameZh": "牙科診所",
+            "emoji": "🦷",
+            "description": "牙科診所的診療設備、修復物與口腔照護用品",
+            "descriptionEn": "Dental clinic equipment, restorations and oral care items",
+            "color": "from-cyan-100 to-teal-100",
+            "imageUrl": "https://img.nexflow.team/word-images/dental-clinic-2026-10/category-dental-clinic-v1-802e740e75f0.webp"
+          }
+        }
+      ],
+      "issues": [],
+      "outsideSeriesFindings": [
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-ordinary",
+          "id": "picnic-sheet",
+          "field": "reading",
+          "actual": "\"れじゃーしーと\"",
+          "expected": "kana-only headword (レジャーシート)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-ordinary",
+          "id": "superball-scooping",
+          "field": "reading",
+          "actual": "\"すーぱーぼーるすくい\"",
+          "expected": "kana-only headword (スーパーボールすくい)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-ordinary",
+          "id": "chocolate-banana",
+          "field": "reading",
+          "actual": "\"ちょこばなな\"",
+          "expected": "kana-only headword (チョコバナナ)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-ordinary",
+          "id": "ramune",
+          "field": "reading",
+          "actual": "\"らむね\"",
+          "expected": "kana-only headword (ラムネ)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-bust",
+          "id": "picnic-sheet",
+          "field": "reading",
+          "actual": "\"れじゃーしーと\"",
+          "expected": "kana-only headword (レジャーシート)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-bust",
+          "id": "superball-scooping",
+          "field": "reading",
+          "actual": "\"すーぱーぼーるすくい\"",
+          "expected": "kana-only headword (スーパーボールすくい)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-bust",
+          "id": "chocolate-banana",
+          "field": "reading",
+          "actual": "\"ちょこばなな\"",
+          "expected": "kana-only headword (チョコバナナ)"
+        },
+        {
+          "category": "semantic-inconsistency",
+          "source": "zh-ja-bust",
+          "id": "ramune",
+          "field": "reading",
+          "actual": "\"らむね\"",
+          "expected": "kana-only headword (ラムネ)"
+        }
+      ]
+    },
+    "routes": {
+      "checkedAt": "2026-10-26T14:16:01.520Z",
+      "passed": true,
+      "requests": 71,
+      "details": 56,
+      "wordPages": 14,
+      "categoryPages": 1,
+      "issues": [],
+      "results": [
+        {
+          "kind": "detail",
+          "id": "dental-clinic",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-clinic?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "795e4d3972161e58c1a0e4698a4faec33543f9d9465f6ce6a736fdc932f0edec",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-clinic",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-clinic?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "795e4d3972161e58c1a0e4698a4faec33543f9d9465f6ce6a736fdc932f0edec",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-clinic",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-clinic",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "3239e71e57ba5513016b033769fdb0bf24f91058e205b3fe294c9f114a75a53f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-chair",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-chair?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9d658d4c09bf94a6a7c23e528bcec4a074645145d6c294541e6e9b8f2618cf3f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-chair",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-chair?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "404e2a74747e1712f81b1f79c484025d44748203daf1b4c54b25a2f8ee17f981",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-chair",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-chair?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "404e2a74747e1712f81b1f79c484025d44748203daf1b4c54b25a2f8ee17f981",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-mirror",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-mirror?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "13a8894d0263227703e26a67ba11396d524d416d642439a23cd08b55ce94fa61",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-chair",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-chair",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "3106504cc4bb28921a4fbd12e6d3203fc0db2e23d62146f9b6e8ffbca6b7e6e1",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-mirror",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-mirror?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "13a8894d0263227703e26a67ba11396d524d416d642439a23cd08b55ce94fa61",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-chair",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-chair?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9d658d4c09bf94a6a7c23e528bcec4a074645145d6c294541e6e9b8f2618cf3f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-clinic",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-clinic?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "541365f4c626f99511b103dc0430d5dfbda32a898055f7aee22772b43373070a",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-mirror",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-mirror?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "4c4805a15112e36aad780b8ea129b532f63ab369f113ce1d9e368bd3ebab702b",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-clinic",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-clinic?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "541365f4c626f99511b103dc0430d5dfbda32a898055f7aee22772b43373070a",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-mirror",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-mirror?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "4c4805a15112e36aad780b8ea129b532f63ab369f113ce1d9e368bd3ebab702b",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-bib",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-bib?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "8cc6b002d8d61cdcc75f5d70b7f77df007de45c4cb062416c8c2167f3fb3dd63",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-mirror",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-mirror",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "640cb69cd7daa0c615c05c6fae78a171fc901840594629727e6636835021bbbe",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-bib",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-bib?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9da1d4335290105ece80dc99f6ea6aa980ed46c4035a47ee1a14bd5c747626f7",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-bib",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-bib?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9da1d4335290105ece80dc99f6ea6aa980ed46c4035a47ee1a14bd5c747626f7",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-bib",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-bib?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "8cc6b002d8d61cdcc75f5d70b7f77df007de45c4cb062416c8c2167f3fb3dd63",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-suction-tip",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-suction-tip?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e65dfb1f18685a6dade8f1da1348f7145cae960b948c7f109f775c39b24466f4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-suction-tip",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-suction-tip?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e65dfb1f18685a6dade8f1da1348f7145cae960b948c7f109f775c39b24466f4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-suction-tip",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-suction-tip?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "c8977fd66ebe44521963fba80ce36c9e16a02f6420485acdb4d97add523b6ec2",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-bib",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-bib",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b88051e173ad6f601fb760e3e4d509e87c235021fda8e2653d36ee084795ce5b",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-suction-tip",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-suction-tip?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "c8977fd66ebe44521963fba80ce36c9e16a02f6420485acdb4d97add523b6ec2",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-filling",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-filling?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "a88f65c39991a02da87746bd1b589e92e5358c39ce97b6a7a3ff0ebb3175e927",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-filling",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-filling?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "1c40b1516c9048889f1c8f611e648e6a5be8cb13e231abb777c7b46335229881",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-filling",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-filling?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "1c40b1516c9048889f1c8f611e648e6a5be8cb13e231abb777c7b46335229881",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-filling",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-filling?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "a88f65c39991a02da87746bd1b589e92e5358c39ce97b6a7a3ff0ebb3175e927",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-crown",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-crown?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "HIT",
+            "age": "83"
+          },
+          "sha256": "202c9f3e3953efc230bf19b2e4ad7a03257bd06bd8626c9b87f65394f3ef323e",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-crown",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-crown?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "HIT",
+            "age": "115"
+          },
+          "sha256": "0efbab8e1ffccd08ca7cfecd9b0fb31a4cb7709dd36b97648fe9d1f3a6fd1344",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-filling",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-filling",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "5fa7eb9e8c26617953466cff6b5b1afa87d3eb200d10bbf4825b9ef54ff7853c",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-crown",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-crown?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "202c9f3e3953efc230bf19b2e4ad7a03257bd06bd8626c9b87f65394f3ef323e",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-crown",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-crown?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "0efbab8e1ffccd08ca7cfecd9b0fb31a4cb7709dd36b97648fe9d1f3a6fd1344",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dentures",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dentures?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "f82f8b400d14db8e6421b87c192ee1302735aa76ccbcdbebf43598de96cbc8f9",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-crown",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-crown",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "5ca28e63c16b404736d2effd33f0586f57ef233a251f7a6852872d6d3d8a0fc8",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dentures",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dentures?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "be5f26277338d08a35b615b2bcc5e8f759c2c273093017b65b0320e9773da5a4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dentures",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dentures?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "be5f26277338d08a35b615b2bcc5e8f759c2c273093017b65b0320e9773da5a4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dentures",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dentures?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "f82f8b400d14db8e6421b87c192ee1302735aa76ccbcdbebf43598de96cbc8f9",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "orthodontic-braces",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/orthodontic-braces?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "a5dfbbe9f1ca3e4b02176d0146e6d7dd2eb1f599f8559ed548105fe734226c9f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "orthodontic-braces",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/orthodontic-braces?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e38070dae2cd56b9c3121a929f66ce2f62dc052d7645ee10c049554d5c9a0f1c",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "orthodontic-braces",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/orthodontic-braces?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e38070dae2cd56b9c3121a929f66ce2f62dc052d7645ee10c049554d5c9a0f1c",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "orthodontic-braces",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/orthodontic-braces?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "a5dfbbe9f1ca3e4b02176d0146e6d7dd2eb1f599f8559ed548105fe734226c9f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-impression-tray",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-impression-tray?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "8aad0593f66e93e35a92d9a2b5d964db6d897732ea38bbeb4574c4b51fa6beb4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-impression-tray",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-impression-tray?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "8aad0593f66e93e35a92d9a2b5d964db6d897732ea38bbeb4574c4b51fa6beb4",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "orthodontic-braces",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/orthodontic-braces",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "393a3de0cb680ff396ac040a263f15bc59c1210322ba0752f8f90d006372b7d1",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-suction-tip",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-suction-tip",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "bce80a5c2c2e409c76372310184c19530d34f9e1f7d7c7fa214051a190bd44df",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-impression-tray",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-impression-tray?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9f52207eeba7ca335147f09102fa1b3a6482c7fc2260352e6e1d497b184cde64",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-impression-tray",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-impression-tray?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9f52207eeba7ca335147f09102fa1b3a6482c7fc2260352e6e1d497b184cde64",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "intraoral-camera",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/intraoral-camera?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9f02b50bf3de0cb6a4195c3c33f9df883f4c5df67daf1cf37db689effa742b4c",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-impression-tray",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-impression-tray",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "0fdc9e1301824518943757da31bb3e65ff22c0018818812c8a4fb70d3d272922",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "intraoral-camera",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/intraoral-camera?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b462e70c811da04a1b4708ca5b6a762dd9a2fe891224ddb60de2a097bedccf4f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "intraoral-camera",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/intraoral-camera?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b462e70c811da04a1b4708ca5b6a762dd9a2fe891224ddb60de2a097bedccf4f",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "intraoral-camera",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/intraoral-camera?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "9f02b50bf3de0cb6a4195c3c33f9df883f4c5df67daf1cf37db689effa742b4c",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dentures",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dentures",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b93d89d510013cb9acbeeb7456981b42f8c668f0630eb8792ca0381bd835e1af",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "tooth-cavity",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/tooth-cavity?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "3d21b9c39c7ecc5058183fc0270f21d9e635bf35c6e5851238540316be6c77fd",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "tooth-cavity",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/tooth-cavity?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "3d21b9c39c7ecc5058183fc0270f21d9e635bf35c6e5851238540316be6c77fd",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "intraoral-camera",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/intraoral-camera",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "c41e365f34950436d28d43a30dddeedf8801a5e16123d3d9414601fe837b470a",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "tooth-cavity",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/tooth-cavity?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b8085bf1c0d12691b04baf94d24aaa0e8b77c671aa293f3739946f307df03977",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "tooth-cavity",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/tooth-cavity?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b8085bf1c0d12691b04baf94d24aaa0e8b77c671aa293f3739946f307df03977",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-x-ray",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-x-ray?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e71d2281f8c5c9511cb098f2919a1471b9b1da8f3e17e3a25789b6c134f527e4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-x-ray",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-x-ray?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e71d2281f8c5c9511cb098f2919a1471b9b1da8f3e17e3a25789b6c134f527e4",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-x-ray",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-x-ray?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "ef56640b8bbad21d2e90446c6015e9aa7a45d3b7dae5393cd244069f3619918c",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "dental-x-ray",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/dental-x-ray?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "ef56640b8bbad21d2e90446c6015e9aa7a45d3b7dae5393cd244069f3619918c",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "interdental-brush",
+          "direction": "zh-en",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/interdental-brush?lang=zh-Hant&learning=zh-en",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "02d7bf676466fcc9bf2c02003be42cf81b05d22154b5fd680c51991361b01dd3",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "interdental-brush",
+          "direction": "zh-en",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/interdental-brush?lang=zh-Hant&learning=zh-en&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "02d7bf676466fcc9bf2c02003be42cf81b05d22154b5fd680c51991361b01dd3",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "interdental-brush",
+          "direction": "zh-ja",
+          "bust": false,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/interdental-brush?lang=zh-Hant&learning=zh-ja",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "5cc369ca3d999d119cef54377a71d8496f29c3cd86246b4452a16755dfb768c3",
+          "issues": []
+        },
+        {
+          "kind": "detail",
+          "id": "interdental-brush",
+          "direction": "zh-ja",
+          "bust": true,
+          "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/interdental-brush?lang=zh-Hant&learning=zh-ja&_audit=dental-1793024156775",
+          "status": 200,
+          "headers": {
+            "cache-control": "public, max-age=60",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "5cc369ca3d999d119cef54377a71d8496f29c3cd86246b4452a16755dfb768c3",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "tooth-cavity",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/tooth-cavity",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "1502f46d4f79294bd3b935dd0cc30ae8c17536f05ca611d290a47749da84527c",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "dental-x-ray",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/dental-x-ray",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "8ec5e9c1b97adc5027e6c43db06c5d5b996e061fb2ba795413ba4d95e293156f",
+          "issues": []
+        },
+        {
+          "kind": "category-page",
+          "id": "dental-clinic",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/category/dental-clinic",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "e544bf2d0f6d648c23156ced669ece98105061792d25ebfcf370feb531962dd9",
+          "issues": []
+        },
+        {
+          "kind": "word-page",
+          "id": "interdental-brush",
+          "url": "https://everyday-english-picture-dictionary.vercel.app/word/interdental-brush",
+          "status": 200,
+          "headers": {
+            "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+            "x-vercel-cache": "MISS",
+            "age": "0"
+          },
+          "sha256": "b171d7d8944121ecf63d984ac97c41607343e6134b5eefb2692de077510df0e3",
+          "issues": []
+        }
+      ]
+    },
+    "catalogStructure": {
+      "passed": true,
+      "counts": {
+        "words": 1241,
+        "examples": 2482,
+        "batches": 63,
+        "reviewedWords": 0,
+        "reviewedExamples": 0,
+        "reviewHints": 3
+      },
+      "fullCatalogSemanticReview": "not completed; this release alone individually reviewed"
+    }
+  },
+  "integration": {
+    "base": "03fcff747b7e5d68b1464b2b97033f2b9d5a9ac8",
+    "targetBranch": "main",
+    "scope": "dental-clinic only; original feature branch and unrelated pet-supplies/rental-equipment changes preserved",
+    "localTests": {
+      "total": 950,
+      "passed": 939,
+      "skipped": 11,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "webpackProductionBuild": "passed",
+    "fixtureEval": "passed",
+    "defaultTurbopackBuild": "local failure in unchanged Google font resolution; origin/main CI 40218847066 passed; release CI checked after push",
+    "deviceTest": "not checked"
+  },
+  "outsideSeriesFindings": [
+    {
+      "category": "semantic-inconsistency",
+      "source": "zh-ja-bust",
+      "id": "picnic-sheet",
+      "field": "reading",
+      "actual": "\"れじゃーしーと\"",
+      "expected": "kana-only headword (レジャーシート)"
+    },
+    {
+      "category": "semantic-inconsistency",
+      "source": "zh-ja-bust",
+      "id": "superball-scooping",
+      "field": "reading",
+      "actual": "\"すーぱーぼーるすくい\"",
+      "expected": "kana-only headword (スーパーボールすくい)"
+    },
+    {
+      "category": "semantic-inconsistency",
+      "source": "zh-ja-bust",
+      "id": "chocolate-banana",
+      "field": "reading",
+      "actual": "\"ちょこばなな\"",
+      "expected": "kana-only headword (チョコバナナ)"
+    },
+    {
+      "category": "semantic-inconsistency",
+      "source": "zh-ja-bust",
+      "id": "ramune",
+      "field": "reading",
+      "actual": "\"らむね\"",
+      "expected": "kana-only headword (ラムネ)"
+    }
+  ],
+  "evidence": {
+    "stored-content-verification.json": {
+      "file": "output/dental-clinic-post-release/stored-content-verification.json",
+      "sha256": "b0b0392c983ce9b8acbfa24406734cb5c25f493f8dc160947df5da3fdc6ac8a8"
+    },
+    "audio-database.json": {
+      "file": "output/dental-clinic-post-release/audio-database.json",
+      "sha256": "a6c6aec90164df53f4fffe13f50fb399d0726467e65b0b58c2f352fb295357a8"
+    },
+    "remote-media-verification.json": {
+      "file": "output/dental-clinic-post-release/remote-media-verification.json",
+      "sha256": "9890d10136c92985fcde0047250958fabb5663e88cd358c041a4ec159062b516"
+    },
+    "content-review.json": {
+      "file": "output/dental-clinic-post-release/content-review.json",
+      "sha256": "5c17ccd5909f1335754ba64c06156653f121429461e149982b7f24d348024536"
+    },
+    "api-verification.json": {
+      "file": "output/dental-clinic-post-release/api-verification.json",
+      "sha256": "3d6ce7c7c298dab828630b791937e865c06ae49dce4236cf16c8293983cae825"
+    },
+    "routes-verification.json": {
+      "file": "output/dental-clinic-post-release/routes-verification.json",
+      "sha256": "7f9e6b2f14e34b9b43fcf0edd55afb5a074c70d44df3f38bfb18ff82e75652f6"
+    },
+    "catalog-examples/audit.json": {
+      "file": "output/dental-clinic-post-release/catalog-examples/audit.json",
+      "sha256": "94f9007f76b1ee0ce167c51ba751ff10d324ddd42e5739507c8f970ac81353e6"
+    }
+  },
+  "limitations": [
+    "No full-catalog semantic or visual audit claimed.",
+    "Four pre-existing non-dental kana-reading spelling warnings retained and not changed.",
+    "No iOS device run or manual deployment."
+  ]
+}

@@ -200,7 +200,15 @@
     "phone-internet:audio:verify": "node scripts/verify-phone-internet-audio.mjs",
     "phone-internet:prepare-publish": "node --env-file=.env.local scripts/prepare-phone-internet-publish-plan.mjs",
     "phone-internet:publish": "tsx --env-file=.env.local scripts/publish-phone-internet-series.ts",
-    "phone-internet:content": "node scripts/prepare-phone-internet-content.mjs"
+    "phone-internet:content": "node scripts/prepare-phone-internet-content.mjs",
+    "dental-clinic:prepare-images": "node scripts/prepare-dental-clinic-images.mjs",
+    "dental-clinic:review": "node scripts/prepare-dental-clinic-semantic-review.mjs",
+    "dental-clinic:audio:plan": "node scripts/plan-dental-clinic-audio.mjs",
+    "dental-clinic:audio:generate:local": "node --env-file=.env.local scripts/generate-dental-clinic-candidate-audio.mjs",
+    "dental-clinic:audio:verify": "node scripts/verify-dental-clinic-audio.mjs",
+    "dental-clinic:prepare-publish": "node --env-file=.env.local scripts/prepare-dental-clinic-publish-plan.mjs",
+    "dental-clinic:publish": "tsx --env-file=.env.local scripts/publish-dental-clinic-series.ts",
+    "dental-clinic:content": "node scripts/prepare-dental-clinic-content.mjs"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",

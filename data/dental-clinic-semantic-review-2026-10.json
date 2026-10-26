@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "series": "dental-clinic",
+  "reviewer": "Codex, individual concept and three-language sentence/span review",
+  "scope": "All 14 concepts and 28 examples; individual editorial judgments, not an independent human review.",
+  "entries": [
+    {
+      "kind": "word",
+      "wordId": "dental-clinic",
+      "verdict": "pass",
+      "reason": "歯科医院指場所，與既有歯科医師及歯科衛生士的人員概念分開；しかいいん讀音完整。",
+      "sourceSha256": "24cd0eeaf8e599b2a02f4a5d04d2ef3816a36a5d3a9fa53916664a50e2c9451e"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-clinic",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "車站附近是單一位置資訊，三語地點一致。",
+      "sourceSha256": "4e7fb908e2626228cbc4ab7a9f852acbfa0ff3fae216c82b0be20ded725c37e6"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-clinic",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "牙痛導致預約牙科診所的因果具體；予約を入れる拆成名詞和完整動詞，未加入治療建議。",
+      "sourceSha256": "7cec480f228c816490b8f49defac4bc9beeb280123b11f450ac8d8312be0840b"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-chair",
+      "verdict": "pass",
+      "reason": "歯科診療台是可躺的病人診療椅，與醫師圓凳及一般病床不同；圖可包含附屬燈和器械單元。",
+      "sourceSha256": "6a62c6c6acc7ba692a52e41b549e426319b0bb25d7aa4f395f787074c97faf69"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-chair",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "坐上診療椅是單一請求，座ってください完整保留。",
+      "sourceSha256": "73620981393ee82f65fdf15c08bc4d7b3817b48e1adbe822a9b67b111777a577"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-chair",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "檢查前調整椅背的先後關係三語一致，未將治療燈當作主體。",
+      "sourceSha256": "55f0796786d7f0212b9cedfa352cbe08c31feb365c59525879a81c50980ffa7e"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-mirror",
+      "verdict": "pass",
+      "reason": "デンタルミラー為帶柄小口鏡，不是手持化妝鏡；純片假名主詞讀音保持原樣。",
+      "sourceSha256": "abc3708fd0920184398c674f06edd78b2af621737a1b89c9f341b45193016d27"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-mirror",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "小鏡面是可辨識的物件特徵，三語均為small而非放大效果。",
+      "sourceSha256": "a5ec5203ef89831fe06f4f9ddbfeab8f7d66d1b677cd2d1858fb90390e6ce390"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-mirror",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "因後牙不易看見而使用口鏡為診療中觀察情境，奥歯的語境義為back teeth。",
+      "sourceSha256": "1126d0f76424e08f520eea60544e86a056f41cffaa93ebfea4c8865e418a05fd"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-bib",
+      "verdict": "pass",
+      "reason": "歯科用エプロン指胸前防水圍巾，與鉛防護衣及醫師制服不同；不限定所有診所均用同一材質。",
+      "sourceSha256": "7a9f88f1bde20e662f4836648cba062f358d69c1db79524834852f6a5d99be16"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-bib",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "藍色是該張圖的具體顏色敘述，未聲稱牙科圍巾全為藍色。",
+      "sourceSha256": "2d71ca564390e53c7d033f7e210ee4e2212fa439514a6c2cd26b11a1714bdd44"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-bib",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "漱口時水濺上圍巾的時間關係自然；三語均是濺到圍巾而非衣服。",
+      "sourceSha256": "93bdcac6ecb0ce52463c5f3ee8f038d47a73a914ddba0552bb951ba86300866b"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-suction-tip",
+      "verdict": "pass",
+      "reason": "排唾管限定細型saliva ejector，避免與粗型口腔外バキューム混淆；はいだかん是完整讀音。",
+      "sourceSha256": "dcd41cc7161a3728cf86906307f1456db23ff797dc167ad7b3c57f656f381220"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-suction-tip",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "吸走唾液為直接功能敘述，唾液一詞三語一致。",
+      "sourceSha256": "d0672d4863bae225f4b573257ab7ce1b36f0f4579a7e645f58e6c78fbbbfc002"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-suction-tip",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "治療中唾液累積而使用管子的因果自然；沒有要求讀者自行使用器械。",
+      "sourceSha256": "3ff154dc9d62e8c2acd3511750bee8480e7a180b72dd72c7c2b8f2ea2a73410c"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-filling",
+      "verdict": "pass",
+      "reason": "詰め物是局部填補物，與下一詞覆蓋牙冠的被せ物分清；不把所有填補物限定為銀色。",
+      "sourceSha256": "9c23a739b9311307783513d12a5181845451534b8f6a3dce42f6811249f9f4cd"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-filling",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "牙醫檢查既有填補物是單一診療動作，與進階句脫落後聯絡診所的情境不同。",
+      "sourceSha256": "72108222e225bb02a7961109a60f76a1e3935c900c2994c393f7ee406908b4df"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-filling",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "進食時脫落後致電診所包含時間和因果，三語沒有自行黏回等醫療指示。",
+      "sourceSha256": "090fc07d33f50b272087eda5fc13a4c8a3244de345595edddbd7242c838ed0ee"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-crown",
+      "verdict": "pass",
+      "reason": "被せ物為人工牙冠套，與天然歯冠及局部詰め物分開；日文採患者常用語。",
+      "sourceSha256": "a5b2848939280703e6b57de7b57861364aa635e7b8738bc28025c1b6f7f41093"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-crown",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "前牙的牙冠套位置三語一致，不把套子稱為拔掉的整顆牙。",
+      "sourceSha256": "818eb8acf4377cdf8a510bac8a004a216f0645fd5ab4265de840cff909e514f5"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-crown",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "感覺偏高後請牙醫檢查為患者敘述，三語保留主觀感受而非確診。",
+      "sourceSha256": "f5f35f8e9d589ac720b1bb5b1eff20587848fe560b3f2a55a1affa9052e5810a"
+    },
+    {
+      "kind": "word",
+      "wordId": "dentures",
+      "verdict": "pass",
+      "reason": "入れ歯此處限定可摘式裝置，與固定牙冠套及植牙分開；英文dentures以複數作詞頭。",
+      "sourceSha256": "b71ace74013b856d150fce0cc80d0ff1163ed751c731ed19a6877f1c1a97b850"
+    },
+    {
+      "kind": "example",
+      "wordId": "dentures",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "裝在盒中是合理日常收納狀態，未提供清潔保存時長的醫療建議。",
+      "sourceSha256": "1efeb1cec5347b2b87cd51d57c476fa04555b7bb56b4e49e055c7c82eb9e7632"
+    },
+    {
+      "kind": "example",
+      "wordId": "dentures",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "變得不合後帶去診所的因果一致，合わなくなった保留狀態改變。",
+      "sourceSha256": "43ec25906e8bb21ff94299d4c44ffc0b1c2c8b3139a892f5cdf1722b0f55d6a0"
+    },
+    {
+      "kind": "word",
+      "wordId": "orthodontic-braces",
+      "verdict": "pass",
+      "reason": "braces採牙科複數義，排除吊帶與支架；歯列矯正装置較廣，釋義明示圖為固定式托槽線型而非透明牙套。",
+      "sourceSha256": "93d9789a1b50a5a468b473f6d0e7f809bf116e6b6e8af2dfbe040eb31f8e1d02"
+    },
+    {
+      "kind": "example",
+      "wordId": "orthodontic-braces",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "有金屬線是所示固定式器具的辨識特徵，未宣稱所有矯正裝置都有線。",
+      "sourceSha256": "57301be82cd2b211cf90d25706d1fc7afd70b200e14d6ce61793a5cbf57c24a7"
+    },
+    {
+      "kind": "example",
+      "wordId": "orthodontic-braces",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "裝器具後初次複診，時間句自然且三語均為戴上之後，不暗示自行調線。",
+      "sourceSha256": "f3a75e0dfdd1e495372c2849273f7b385a89ca61bba2d009c39719fba5c1fded"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-impression-tray",
+      "verdict": "pass",
+      "reason": "印象用トレー是裝材料的托盤，與已取出的齒模、活動假牙及咬合板分清。",
+      "sourceSha256": "734039d66fa4fbff7c9f39cc37b40f12249990c63937ab923dc2dfb440bf8d5d"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-impression-tray",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "材料在托盤裡的簡單描述準確，印象材為複合名詞不任意拆開。",
+      "sourceSha256": "415c3c98e2eab1052fea487d23eaebe595709901c6724e0517a254a3662df780"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-impression-tray",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "取模前選尺寸有時間關係與具體動作；選擇者牙醫三語一致。",
+      "sourceSha256": "e33390ec4d350ed8c760f9db1526b1ee09c2bbf2bda5030f5328cd23711ced2e"
+    },
+    {
+      "kind": "word",
+      "wordId": "intraoral-camera",
+      "verdict": "pass",
+      "reason": "口腔内カメラ是細長光學攝影機，與X光設備及口鏡不同；口腔採醫療用讀音こうくう。",
+      "sourceSha256": "4ad9fe72a098a942c2a8e0fb357eaf261267744eaac76c466c3c66543b9a069a"
+    },
+    {
+      "kind": "example",
+      "wordId": "intraoral-camera",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "拍牙齒照片是單一功能描述，未稱可透視牙根。",
+      "sourceSha256": "1a6bfcda653d5776f05b19dc131f40a2cf2c428c43c804d5b6120f76e9272702"
+    },
+    {
+      "kind": "example",
+      "wordId": "intraoral-camera",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "在螢幕看剛拍的影像是常見診療說明，複合修飾句保留拍攝來源與顯示位置。",
+      "sourceSha256": "7d319014554f077bd5a16b1a502648390fadd46fa0681052f3c4b699259ada79"
+    },
+    {
+      "kind": "word",
+      "wordId": "tooth-cavity",
+      "verdict": "pass",
+      "reason": "cavity限定牙齒蛀洞，日文虫歯用日常疾病概念；圖片須呈現牙面局部蛀洞而不是整顆黑牙。",
+      "sourceSha256": "be0ccb07776dd0287e9ff4fc7fc78edb357f58995ee28cdd56b7efdf04edef3a"
+    },
+    {
+      "kind": "example",
+      "wordId": "tooth-cavity",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "後牙有一處蛀牙三語一致，無臆測症狀或治療。",
+      "sourceSha256": "b786ea2d73fd5326fed4a9328776fd950843b3db26bc94766864d695f2642354"
+    },
+    {
+      "kind": "example",
+      "wordId": "tooth-cavity",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不痛但檢查發現蛀牙有逆接關係，不把疼痛當作唯一有無蛀牙標準。",
+      "sourceSha256": "5865e4f47a6b406297b1a83fa18de186b907d41e1f59c5d10a2741a0b85ce425"
+    },
+    {
+      "kind": "word",
+      "wordId": "dental-x-ray",
+      "verdict": "pass",
+      "reason": "dental X-ray採影像義，與口內攝影機的可見光照片及X光機器分開；レントゲン外來語讀音完整。",
+      "sourceSha256": "0436db7c8901d289167af1c9bbf68f829251b7418e82c862b147a992eb609943"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-x-ray",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "顯示牙根是X光片的可辨識資訊，英文roots複數與日文集合表達相容。",
+      "sourceSha256": "df0f787085fb99caed8eec4ed23ce0d4caa34137dcef5eca6ef72040920767f5"
+    },
+    {
+      "kind": "example",
+      "wordId": "dental-x-ray",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "牙醫邊看影像邊說明的位置關係自然，三語均是說明治療位置而非保證療效。",
+      "sourceSha256": "4824af2f59e4f93fdecd17fe7b04bb4cbf87e7cdd0337587e7e33c5f93e0d785"
+    },
+    {
+      "kind": "word",
+      "wordId": "interdental-brush",
+      "verdict": "pass",
+      "reason": "歯間ブラシ是微型圓柱刷頭，不是牙線棒或普通牙刷；保留既有dental-floss和toothbrush。",
+      "sourceSha256": "1b9daa8e86cf4ce26e0b7238e44eb03cf9d6aee2541d56ee1ebe5f3bcbca9265"
+    },
+    {
+      "kind": "example",
+      "wordId": "interdental-brush",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "詢問小尺寸為選購時可用的單一問句，未加入適用對象的醫療判定。",
+      "sourceSha256": "9022c73d357c50eb8f6eff2fdab993b29ee6485b22d74767e522214fcf4e75c2"
+    },
+    {
+      "kind": "example",
+      "wordId": "interdental-brush",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "不確定尺寸而詢問衛生士的因果自然，三語一致且沒有給出具體尺寸建議。",
+      "sourceSha256": "1e8e36a3404b7724d0b4cf25fdd82922e219139db485f818ceb08614674b3c25"
+    }
+  ]
+}

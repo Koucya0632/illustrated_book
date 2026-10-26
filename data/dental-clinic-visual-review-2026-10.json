@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "series": "dental-clinic",
+  "reviewer": "Codex: every original PNG individually viewed",
+  "items": [
+    {
+      "id": "dental-clinic",
+      "decision": "pass",
+      "reason": "白色獨立診所立面有牙齒圖示，窗內能辨識診療椅與燈；沒有文字招牌或街景雜物，可與普通商店區分。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-clinic.png",
+      "sourceSha256": "6fdb422f296530a8584b67dbc0c7f65fba45f87722717b9b45388c4df6331628"
+    },
+    {
+      "id": "dental-chair",
+      "decision": "pass",
+      "reason": "可躺式薄荷色座椅、可調頭枕、診療燈與漱口盆構成完整牙科單元；主椅清楚，並非醫師圓凳。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-chair.png",
+      "sourceSha256": "abc0292994492e57918eaf7e1764644b7f1263edee0c67b6fd2d350e84501e9e"
+    },
+    {
+      "id": "dental-mirror",
+      "decision": "pass",
+      "reason": "小圓反射鏡、彎頸與細長金屬防滑握柄完整可見；符合牙科口鏡而非化妝手鏡。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-mirror.png",
+      "sourceSha256": "493785b9ba8d099b3d5cf7a76551023ea253a7abfb9ddaaf2ccfce9c75d4cafa"
+    },
+    {
+      "id": "dental-bib",
+      "decision": "pass",
+      "reason": "藍色壓紋矩形胸前圍巾搭配兩端夾鏈，無袖與鉛衣結構；與例句藍色一致，背景乾淨。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-bib.png",
+      "sourceSha256": "984bd5eb1b3f555d9b6bab9c3b135de323c8929287d47398c5f37e37f845a333"
+    },
+    {
+      "id": "dental-suction-tip",
+      "decision": "pass",
+      "reason": "透明細彎管與藍色多孔圓頭清楚，末端有接頭；可辨識細型排唾管，非粗口外吸引罩。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-suction-tip.png",
+      "sourceSha256": "bcbde6917b369b5917083707cb4a9925916d91e9dabff621cac6a4644eb173ad"
+    },
+    {
+      "id": "dental-filling",
+      "decision": "pass",
+      "reason": "臼齒中央局部凹槽與懸浮嵌體互相對應，周圍仍保留完整琺瑯質；局部填補物不會誤認成整個牙冠套。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-filling.png",
+      "sourceSha256": "ff840305b3765c1173a6e1ab1df74152e88632c0b54caf60db26793ae578d16d"
+    },
+    {
+      "id": "dental-crown",
+      "decision": "pass",
+      "reason": "前牙形中空冠套懸在磨短牙柱上方，下緣開口清楚；與局部嵌體及有牙根天然牙區分。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-crown.png",
+      "sourceSha256": "45479a028fdaa421b7cdecfa0b1b41921cf0d72156bd2ece059e37a4694e6734"
+    },
+    {
+      "id": "dentures",
+      "decision": "pass",
+      "reason": "粉紅壓克力上顎基托、完整人工齒列與顎板形成可取下整組假牙；沒有頭臉或骨骼混淆。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dentures.png",
+      "sourceSha256": "489a5d496044918cc3edbbbc17a57441345f1aec374789c032e3fe828a721983"
+    },
+    {
+      "id": "orthodontic-braces",
+      "decision": "pass",
+      "reason": "上下牙列前面均有個別金屬托槽及連續弓線，固定式矯正器辨識特徵完整；沒有透明牙套或多餘纜線。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/orthodontic-braces.png",
+      "sourceSha256": "d9f5621ff37ac5f6e123068185680be55ccb88d63674d1849f8ed3d3e7a25d99"
+    },
+    {
+      "id": "dental-impression-tray",
+      "decision": "pass",
+      "reason": "有短柄、邊緣穿孔及U形承料槽，淡紫取模材料位於槽內；圖為下顎式托盤，候選定義涵蓋上下顎而未錯稱上顎。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-impression-tray.png",
+      "sourceSha256": "20cde4a1461cd380e78b208d536a1d944d97e698ad3a0f0f6d03cee72fe8a849"
+    },
+    {
+      "id": "intraoral-camera",
+      "decision": "pass",
+      "reason": "細長白色手持鏡身、末端小鏡頭及LED清楚，無刷毛與鏡面；可辨識光學口內攝影機。連接線延至邊緣但完整主體未裁切。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/intraoral-camera.png",
+      "sourceSha256": "2e2b6d8d5cc36ef460d10e9caa48fa2a0d26f4096ed1c0e269c99c7c3af1f822"
+    },
+    {
+      "id": "tooth-cavity",
+      "decision": "pass",
+      "reason": "臼齒咬合面中央有局部棕黑色不規則蛀洞，其餘牙冠與牙根完整；沒有血腥或把整顆牙塗黑。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/tooth-cavity.png",
+      "sourceSha256": "79551df2e292c01fa70795ed022baf103566383c6b7fe96b79edf2ca33edb8ee"
+    },
+    {
+      "id": "dental-x-ray",
+      "decision": "pass",
+      "reason": "灰階小牙片呈現三顆牙與牙根、根管及周圍骨紋理；圖示為影像而非X光機，沒有病人資料或標籤。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/dental-x-ray.png",
+      "sourceSha256": "f2c9cfda9eeb1416e53ad175c6e5284d6ef966c395214f185d825f3b5082b0de"
+    },
+    {
+      "id": "interdental-brush",
+      "decision": "pass",
+      "reason": "L形握柄配微細金屬線與圓柱刷毛，符合日本常見L字型牙間刷；不會誤認為普通牙刷或牙線棒。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/interdental-brush.png",
+      "sourceSha256": "a792afe4a91b813cc7546e8c79bb0f8a94e70ebaaafcafb73d13da58739cf23b"
+    },
+    {
+      "id": "category-dental-clinic",
+      "decision": "pass",
+      "reason": "診療椅與牙科燈為主，前方僅口鏡和小牙齒模型作分類線索；白底留白充足，無診間雜景與標題文字。",
+      "sourceFile": "output/dental-clinic-2026-10/sources/category-dental-clinic.png",
+      "sourceSha256": "bb72df252dd6593a22f6e599e3a2cffb59a2277db4386fb8ddddad050b51ad70"
+    }
+  ]
+}

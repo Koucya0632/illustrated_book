@@ -1,3 +1,4 @@
+import { MAIN_WORD_DENTAL_CLINIC_IDS, MAIN_WORD_DENTAL_CLINIC_WORDS } from "./main-word-dental-clinic-2026-10";
 import { MAIN_WORD_PHONE_INTERNET_IDS, MAIN_WORD_PHONE_INTERNET_WORDS } from "./main-word-phone-internet-2026-10";
 import { MAIN_WORD_IDENTITY_DOCUMENTS_IDS, MAIN_WORD_IDENTITY_DOCUMENTS_WORDS } from "./main-word-identity-documents-2026-10";
 import { MAIN_WORD_AIRPORT_IDS, MAIN_WORD_AIRPORT_WORDS } from "./main-word-airport-2026-10";
@@ -1783,6 +1784,7 @@ export const words: Word[] = [
   ...(MAIN_WORD_IDENTITY_DOCUMENTS_WORDS as LegacyWord[]),
   ...(MAIN_WORD_AIRPORT_WORDS as LegacyWord[]),
   ...(MAIN_WORD_PHONE_INTERNET_WORDS as LegacyWord[]),
+  ...(MAIN_WORD_DENTAL_CLINIC_WORDS as LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
@@ -1795,7 +1797,7 @@ export const words: Word[] = [
 // to serve an incomplete catalogue than to expose an unreleased series.
 export const publicFallbackWords: Word[] = words.filter(
   (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "arcade", "emergency-kit", "onsen-ryokan", "hair-salon", "bank", "postal-services", "identity-documents", "airport", "phone-internet"].includes(word.category) &&
+    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "arcade", "emergency-kit", "onsen-ryokan", "hair-salon", "bank", "postal-services", "identity-documents", "airport", "phone-internet", "dental-clinic"].includes(word.category) &&
     !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
     !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
     !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
@@ -1815,6 +1817,7 @@ export const publicFallbackWords: Word[] = words.filter(
     !MAIN_WORD_POSTAL_SERVICES_IDS.includes(word.id) &&
     !MAIN_WORD_IDENTITY_DOCUMENTS_IDS.includes(word.id) &&
     !MAIN_WORD_PHONE_INTERNET_IDS.includes(word.id) &&
+    !MAIN_WORD_DENTAL_CLINIC_IDS.includes(word.id) &&
     !MAIN_WORD_AIRPORT_IDS.includes(word.id),
 );
 

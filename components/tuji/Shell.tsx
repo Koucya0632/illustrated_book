@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ProfileAvatar from "./ProfileAvatar";
 import { useT } from "@/components/I18n";
+import { isHiddenRoute, PERSONAL_FEATURES_ENABLED } from "@/lib/features";
 
 interface NavItem {
   id: string;
@@ -14,7 +15,7 @@ interface NavItem {
   match: (p: string) => boolean;
 }
 
-const NAV: NavItem[] = [
+const ALL_NAV: NavItem[] = [
   { id: "today", labelKey: "nav.today", href: "/today", icon: "☀️", match: (p) => p === "/today" },
   {
     id: "cards",
@@ -44,6 +45,8 @@ const NAV: NavItem[] = [
     match: (p) => p.startsWith("/me") || p.startsWith("/settings") || p.startsWith("/favorites"),
   },
 ];
+
+const NAV = ALL_NAV.filter((it) => !isHiddenRoute(it.href));
 
 // Auth routes get a clean, sidebar-free layout — just the brand mark + the
 // centered form, on the Tuji cream background.
@@ -123,7 +126,7 @@ export default function TujiShell({
           })}
         </nav>
 
-        <div className="mt-auto">
+        {PERSONAL_FEATURES_ENABLED && <div className="mt-auto">
           {user ? (
             <Link
               href="/settings"
@@ -153,7 +156,7 @@ export default function TujiShell({
               </Link>
             </div>
           )}
-        </div>
+        </div>}
       </aside>
 
       {/* ── Mobile top header ── */}
@@ -180,7 +183,9 @@ export default function TujiShell({
         <main className="min-w-0 flex-1 pb-24 md:pb-0">{children}</main>
 
         {/* ── Mobile bottom tab bar ── */}
-        <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-6 border-t border-black/5 bg-white pb-[env(safe-area-inset-bottom)] pt-2 md:hidden">
+        <nav className="fixed inset-x-0 bottom-0 z-40 grid border-t border-black/5 bg-white pb-[env(safe-area-inset-bottom)] pt-2 md:hidden"
+          style={{ gridTemplateColumns: `repeat(${NAV.length}, minmax(0, 1fr))` }}
+        >
           {NAV.map((it) => {
             const on = it.match(pathname);
             const center = it.id === "play";

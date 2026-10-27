@@ -8,6 +8,7 @@ import { useSettings } from "@/components/SettingsProvider";
 import { useT } from "@/components/I18n";
 import FavoriteButton from "@/components/FavoriteButton";
 import { WordTile } from "@/components/tuji/ui";
+import { PERSONAL_FEATURES_ENABLED } from "@/lib/features";
 
 // Progressive disclosure: render PAGE_SIZE tiles up-front, then expose a
 // "顯示更多" button that bumps the visible count by another PAGE_SIZE.
@@ -56,12 +57,14 @@ export default function CardsBrowser() {
           </div>
           <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink sm:text-3xl">{t("cards.title")}</h1>
         </div>
-        <Link
-          href="/favorites"
-          className="shrink-0 text-xs font-extrabold text-tuji-teal hover:underline"
-        >
-          {t("nav.fav")}
-        </Link>
+        {PERSONAL_FEATURES_ENABLED && (
+          <Link
+            href="/favorites"
+            className="shrink-0 text-xs font-extrabold text-tuji-teal hover:underline"
+          >
+            {t("nav.fav")}
+          </Link>
+        )}
       </header>
 
       {/* Category chips */}

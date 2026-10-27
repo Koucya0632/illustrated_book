@@ -11,6 +11,7 @@ import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { t } from "@/lib/i18n";
 import { isPublicTopicCategory } from "@/lib/site";
+import { PERSONAL_FEATURES_ENABLED } from "@/lib/features";
 import VisitTracker from "./VisitTracker";
 
 // Forced dynamic so the category title / count strings render in the
@@ -100,15 +101,17 @@ export default async function CategoryPage(props: { params: Promise<{ id: string
         )}
       </section>
 
-      <div className="mt-10 flex justify-center">
-        <Link
-          href="/study"
-          className="tuji-press rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white"
-          style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
-        >
-          {tr("cat.studyCta")}
-        </Link>
-      </div>
+      {PERSONAL_FEATURES_ENABLED && (
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/study"
+            className="tuji-press rounded-2xl bg-tuji-teal px-6 py-3 text-sm font-extrabold text-white"
+            style={{ ["--press-shadow" as string]: shade(TUJI.teal, -16) }}
+          >
+            {tr("cat.studyCta")}
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

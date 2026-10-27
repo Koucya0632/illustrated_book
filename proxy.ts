@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ADMIN_COOKIE, verifyAdminToken } from "@/lib/auth";
 import { updateSupabaseSession } from "@/lib/supabase/middleware";
+import { isHiddenRoute } from "@/lib/features";
 
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
@@ -17,6 +18,11 @@ export async function proxy(req: NextRequest) {
     const loginUrl = new URL("/login", req.url);
     loginUrl.searchParams.set("next", pathname);
     return NextResponse.redirect(loginUrl);
+  }
+
+  // Learning/account features are switched off site-wide (lib/features.ts).
+  if (isHiddenRoute(pathname)) {
+    return NextResponse.redirect(new URL("/cards", req.url));
   }
 
   // Everything else: refresh the Supabase session cookie so server components

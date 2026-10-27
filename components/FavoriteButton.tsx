@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { isFavorite, subscribe, toggleFavorite } from "@/lib/storage";
 import { track } from "@/lib/analytics";
+import { PERSONAL_FEATURES_ENABLED } from "@/lib/features";
 
 export default function FavoriteButton({
   id,
@@ -31,6 +32,8 @@ export default function FavoriteButton({
     setFav(next);
     if (next) track({ type: "favorite", wordId: id });
   }
+
+  if (!PERSONAL_FEATURES_ENABLED) return null;
 
   return (
     <button

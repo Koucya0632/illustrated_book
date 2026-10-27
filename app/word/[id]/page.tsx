@@ -12,6 +12,7 @@ import { getMasteryRow, getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import { t } from "@/lib/i18n";
 import MarkLearned from "./MarkLearned";
+import { PERSONAL_FEATURES_ENABLED } from "@/lib/features";
 import EventTracker from "@/components/EventTracker";
 import DefinitionTabs from "./DefinitionTabs";
 
@@ -188,7 +189,7 @@ export default async function WordDetailPage(props: { params: Promise<{ id: stri
       <EventTracker wordId={w.id} category={w.category} />
 
       {/* Mastery progress bar */}
-      <div className="mb-4">
+      {PERSONAL_FEATURES_ENABLED && <div className="mb-4">
         <div className="mb-1 flex items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.16em] text-tuji-ink3">
           <span>{tr("word.mastery")}</span>
           <span>{mastery !== null ? `${Math.round(mastery)}%` : tr("word.noRecord")}</span>
@@ -201,7 +202,7 @@ export default async function WordDetailPage(props: { params: Promise<{ id: stri
             />
           )}
         </div>
-      </div>
+      </div>}
 
       {/* Breadcrumb + actions */}
       <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-bold text-tuji-ink3">

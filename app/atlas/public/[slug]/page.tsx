@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAtlasPublicItem } from "@/lib/atlas-db";
+import { getCurrentUserId } from "@/lib/current-user";
 import { atlasPublicImageUrl } from "@/lib/atlas/storage";
 import { publicAuthor } from "@/lib/public-author";
 import ReportButton from "./ReportButton";
@@ -31,7 +32,7 @@ export default async function PublicAtlasDetailPage(
   const params = await props.params;
   const slug = params.slug.trim().toLowerCase();
   if (!/^[a-z0-9-]{1,80}$/.test(slug)) notFound();
-  const item = await getAtlasPublicItem(slug);
+  const [item, userId] = await Promise.all([getAtlasPublicItem(slug), getCurrentUserId()]);
   if (!item) notFound();
 
   const imageUrl = atlasPublicImageUrl(item.image_public_path);
@@ -73,20 +74,23 @@ export default async function PublicAtlasDetailPage(
                 `publicAuthor` is the only thing allowed to name them. */}
             <Meta label="來源" value={author ? `由 ${author.displayName} 分享` : "Tuji 公開圖鑑"} />
           </dl>
-          <div className="mt-6 flex flex-wrap gap-2">
-            <Link
-              href="/atlas"
-              className="rounded-2xl bg-tuji-yellow px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-card"
-            >
-              建立我的圖鑑
-            </Link>
-            <Link
-              href="/atlas/study"
-              className="rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-card"
-            >
-              複習我的卡片
-            </Link>
-          </div>
+          {/* Both actions are for signed-in users' own cards. */}
+          {userId && (
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Link
+                href="/atlas"
+                className="rounded-2xl bg-tuji-yellow px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-card"
+              >
+                建立我的圖鑑
+              </Link>
+              <Link
+                href="/atlas/study"
+                className="rounded-2xl bg-tuji-teal px-5 py-3 text-sm font-extrabold text-white shadow-card"
+              >
+                複習我的卡片
+              </Link>
+            </div>
+          )}
           <div className="mt-6 border-t border-black/5 pt-4">
             <ReportButton slug={item.public_slug} />
           </div>

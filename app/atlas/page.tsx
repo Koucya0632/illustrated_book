@@ -9,7 +9,8 @@ export const metadata = { title: "自制圖鑑 · Tuji" };
 
 export default async function AtlasPage() {
   const userId = await getCurrentUserId();
-  if (!userId) redirect("/signin?next=/atlas");
+  // Signed-out visitors browse 物見 instead of being sent to sign in.
+  if (!userId) redirect("/atlas/public");
   if (await usesCreditBilling(userId)) return <CreditAtlasClient key={userId} userId={userId} />;
   // 拍照新增 runs only on 罐頭點數 — there is no second flow to fall back to.
   // Cards a former member already made stay reviewable.

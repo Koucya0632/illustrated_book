@@ -30,8 +30,8 @@ const ALL_NAV: NavItem[] = [
   },
   {
     id: "atlas",
-    labelKey: "nav.atlas",
-    href: "/atlas",
+    labelKey: "nav.publicAtlas",
+    href: "/atlas/public",
     icon: "🖼️",
     match: (p) => p.startsWith("/atlas"),
   },

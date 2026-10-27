@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { listAtlasPublicItems } from "@/lib/atlas-db";
+import { getCurrentUserId } from "@/lib/current-user";
 import { atlasPublicImageUrl } from "@/lib/atlas/storage";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PublicAtlasPage() {
-  const items = await listAtlasPublicItems(80);
+  const [items, userId] = await Promise.all([listAtlasPublicItems(80), getCurrentUserId()]);
 
   return (
     <main className="mx-auto max-w-6xl px-5 py-6 sm:px-7">
@@ -25,12 +26,14 @@ export default async function PublicAtlasPage() {
             公開圖鑑
           </h1>
         </div>
-        <Link
-          href="/atlas"
-          className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-soft"
-        >
-          建立我的圖鑑
-        </Link>
+        {userId && (
+          <Link
+            href="/atlas"
+            className="inline-flex items-center justify-center rounded-2xl bg-white px-5 py-3 text-sm font-extrabold text-tuji-ink shadow-soft"
+          >
+            建立我的圖鑑
+          </Link>
+        )}
       </header>
 
       {items.length === 0 ? (

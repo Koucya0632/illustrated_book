@@ -1,0 +1,1117 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-postal-2026-10",
+  "workBatch": "winter-2026-01",
+  "mode": "existing-category-expansion",
+  "productionWriteAllowed": false,
+  "releaseShape": {
+    "insertWordIds": [
+      "new-years-postcard",
+      "mourning-postcard"
+    ],
+    "updateWordIds": []
+  },
+  "category": {
+    "id": "postal-services",
+    "name": "Post Office",
+    "nameZh": "郵局",
+    "emoji": "📮",
+    "description": "寄信、包裹、包裝用品與郵務服務",
+    "descriptionEn": "Letters, parcels, packing materials and postal services",
+    "color": "from-red-100 to-orange-100",
+    "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/category-postal-services-v1-34177d37d1f6.webp",
+    "nameJa": "郵便局",
+    "descriptionJa": "手紙、荷物、梱包用品と郵便サービス"
+  },
+  "categoryBefore": {
+    "category": {
+      "id": "postal-services",
+      "name": "Post Office",
+      "name_zh": "郵局",
+      "emoji": "📮",
+      "description": "寄信、包裹、包裝用品與郵務服務",
+      "description_en": "Letters, parcels, packing materials and postal services",
+      "color": "from-red-100 to-orange-100",
+      "image_url": "https://img.nexflow.team/word-images/postal-services-2026-10/category-postal-services-v1-34177d37d1f6.webp"
+    },
+    "translations": [
+      {
+        "category_id": "postal-services",
+        "language": "ja",
+        "name": "郵便局",
+        "description": "手紙、荷物、梱包用品と郵便サービス"
+      }
+    ]
+  },
+  "sources": {
+    "content": {
+      "file": "data/winter-postal-2026-10.json",
+      "sha256": "554e091d7488fa6d0b66b7670d0b6dbdaaa444922a42c881cdfb8a47c5326aab"
+    },
+    "spans": {
+      "file": "data/example-spans-winter-postal-2026-10.json",
+      "sha256": "5416f06b22ae6c63e005a6c65958702a6cbbafeaf7d318b9549ed8029caf0d4a"
+    },
+    "imagePrompts": {
+      "file": "data/winter-postal-2026-10-image-prompts.json",
+      "sha256": "39881500569ff2e339bf4128ffb19663b85132fbcdd295ef27b3f75fc2e43369"
+    },
+    "images": {
+      "file": "output/winter-postal-2026-10/image-manifest.json",
+      "sha256": "8d3fb0d894656f3b98109e31733d0f93761dc956352709c400ece1b51287b434"
+    },
+    "audioPlan": {
+      "file": "output/winter-postal-2026-10/audio-plan/manifest.json",
+      "sha256": "e3ff52c085639965563b4c735ad7620a4027b1ec08612ab0e67ee4cb893a76b5"
+    },
+    "audio": {
+      "file": "output/winter-postal-2026-10/audio-candidates/generated-manifest.json",
+      "sha256": "3833ca7fe952ad91e876ea1ef35f53a11be1c82f4b804222fe28a0eee7c0c50b"
+    },
+    "audioVerification": {
+      "file": "output/winter-postal-2026-10/audio-candidates/verification-report.json",
+      "sha256": "5d8c454b17b6c0a2f0a450c68ac7a2f3aa9937e425887a2cf2932515f6f6dc10"
+    },
+    "frameVerification": {
+      "file": "output/winter-postal-2026-10/audio-candidates/mp3-frames-report.json",
+      "sha256": "83d4eea79bcc21959ce739bff8952a066f0d22f094bcabb968a9394612ec561f"
+    },
+    "semanticReview": {
+      "file": "output/winter-postal-2026-10/independent-review-content.json",
+      "sha256": "3be1772a38af394a78efd36ecdacdd2819eb1fce334f03231b8eabb12ae287a0"
+    },
+    "visualReview": {
+      "file": "output/winter-postal-2026-10/independent-review-images.json",
+      "sha256": "613657d7a61291089b690c70da4a95fd0ba09718baf8493842cab86dbad45594"
+    },
+    "audioReview": {
+      "file": "output/winter-postal-2026-10/independent-review-audio.json",
+      "sha256": "6e72c2033f2b6a0acbc95cf333d7ba840964f7c85ef45cc015b34e11f2ccd6f2"
+    },
+    "publisher": {
+      "file": "scripts/publish-winter-postal-2026-10.ts",
+      "sha256": "531adc29a7cdb84a71e69d20d5a19cb2b9f1fc678658c9e2da28af5a60181831"
+    },
+    "planner": {
+      "file": "scripts/prepare-winter-postal-2026-10-publish-plan.mjs",
+      "sha256": "4840fc44d0ab5a7d15a040c5b89bb6530e56c8e4884417a9ea387bcb7044dc2c"
+    },
+    "preparation": {
+      "file": "scripts/prepare-winter-postal-2026-10.mjs",
+      "sha256": "ecfeb4be4d2cd70aef12b68adc216128cd0d142972461a5f7ea10bc4e1bcb8da"
+    },
+    "canonicalImageIntegrationPatch": {
+      "file": "data/winter-postal-2026-10-canonical-images.patch",
+      "sha256": "767555bea0a9d83ecd4350f16e71b4378afaae8114c45077511c20c0d3843c45"
+    }
+  },
+  "entries": [
+    {
+      "operation": "insert",
+      "contentDigest": "3f6ebf60859d02e12989b5a6d3906138b599555a11a53afa58dab45c9a912065",
+      "word": {
+        "id": "new-years-postcard",
+        "word": "New Year's postcard",
+        "chinese": "賀年明信片",
+        "chineseDefinition": "日本郵便發行、供新年問候使用的郵資已付明信片，帶有「年賀」標示及抽獎號碼。年賀状指新年問候信，不限使用這種明信片。",
+        "category": "postal-services",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˌnuː jɪrz ˈpoʊst.kɑːrd/",
+        "cefrLevel": "B1",
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "賀年明信片",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A postage-paid postcard issued by Japan Post for New Year greetings, marked for New Year delivery and carrying a lottery number. A New Year's greeting can also be sent on other stationery.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "日本郵便が年始のあいさつ用に発行する、年賀の表示とお年玉くじの番号がある料金込みのはがき。年賀状は新年のあいさつを記した書状で、通常はがきなどでも送れる。",
+            "sortOrder": 0
+          }
+        ],
+        "examples": [
+          {
+            "en": "I'd like ten New Year's postcards.",
+            "ja": "年賀はがきを十枚ください。",
+            "zh": "我想買十張賀年明信片。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+            "ja": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+            "zh": "因為可能寫錯收件地址，我多買了幾張賀年明信片。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "relatedWords": [
+          "postcard"
+        ],
+        "ja": "年賀はがき",
+        "jaReading": "ねんがはがき",
+        "jaReadingSegments": [
+          {
+            "text": "年賀",
+            "ruby": "ねんが"
+          },
+          {
+            "text": "はがき",
+            "ruby": null
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp"
+      },
+      "image": {
+        "id": "new-years-postcard",
+        "bucket": "word-images",
+        "storagePath": "winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+        "url": "https://img.nexflow.team/word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+        "localFile": "output/winter-postal-2026-10/images/webp/new-years-postcard-v1-aede1269151f.webp",
+        "sourceFile": "output/winter-postal-2026-10/images/source/new-years-postcard-v1.png",
+        "bytes": 104724,
+        "contentSha256": "aede1269151f024d2fb9f62e6e54fb49983010bfc575927e3940236c9410e51d",
+        "mimeType": "image/webp",
+        "width": 1254,
+        "height": 1254,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "new-years-postcard",
+          "wordId": "new-years-postcard",
+          "locale": "en-US",
+          "sourceText": "New Year's postcard",
+          "sourceLanguage": "en",
+          "sourceDigest": "682d7f61b811ab21f8281e64cde931d80aa09299d5fe0b47f320180bcbb8c14c",
+          "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-US/682d7f61b811ab21f8281e64cde931d80aa09299d5fe0b47f320180bcbb8c14c.mp3",
+          "bytes": 7296,
+          "contentSha256": "d32616bef2f1451d1abd221b3629324e8a82aed135cc0188321b153c55cae9aa",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "new-years-postcard/en-US/d32616bef2f1451d1abd.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "new-years-postcard",
+          "wordId": "new-years-postcard",
+          "locale": "en-GB",
+          "sourceText": "New Year's postcard",
+          "sourceLanguage": "en",
+          "sourceDigest": "0afdeaa2788911773804db4e39725bb22f3d3175f75ad5341bacc26cde5c315d",
+          "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-GB/0afdeaa2788911773804db4e39725bb22f3d3175f75ad5341bacc26cde5c315d.mp3",
+          "bytes": 5472,
+          "contentSha256": "7eb4fb773347315ffcdceb15fd70bf3c9e319b46a70063e6bb5d759c6f8fa95c",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "new-years-postcard/en-GB/7eb4fb773347315ffcdc.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "new-years-postcard",
+          "wordId": "new-years-postcard",
+          "locale": "ja-JP",
+          "sourceText": "年賀はがき",
+          "sourceLanguage": "ja",
+          "sourceDigest": "e28d546a9a5698fe232a4ddc5ad3e21e1133fee5e243ebdb200714e8d3dfbc38",
+          "localFile": "output/winter-postal-2026-10/audio-candidates/headword/ja-JP/e28d546a9a5698fe232a4ddc5ad3e21e1133fee5e243ebdb200714e8d3dfbc38.mp3",
+          "bytes": 4512,
+          "contentSha256": "8082a1ed707d7dd3417ab7c682d55ad560fc8f5a7c4fa06e6aab13d06f6824b8",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "new-years-postcard/ja-JP/8082a1ed707d7dd3417a.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "new-years-postcard:0",
+          "sortOrder": 0,
+          "en": "I'd like ten New Year's postcards.",
+          "ja": "年賀はがきを十枚ください。",
+          "zh": "我想買十張賀年明信片。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "I'd "
+              },
+              {
+                "t": "like",
+                "z": "想要",
+                "j": "ほしい",
+                "e": "would like"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "ten",
+                "z": "十張",
+                "j": "十枚",
+                "e": "ten"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "New Year's postcards",
+                "z": "賀年明信片",
+                "j": "年賀はがき",
+                "e": "New Year's postcards"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "年賀はがき",
+                "z": "賀年明信片",
+                "j": "年賀はがき",
+                "e": "New Year's postcards",
+                "r": "ねんがはがき"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "十枚",
+                "z": "十張",
+                "j": "十枚",
+                "e": "ten cards",
+                "r": "じゅうまい"
+              },
+              {
+                "t": "ください",
+                "z": "請給我",
+                "j": "ください",
+                "e": "please give me",
+                "r": "ください"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "new-years-postcard:0",
+              "wordId": "new-years-postcard",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "I'd like ten New Year's postcards.",
+              "sourceLanguage": "en",
+              "sourceDigest": "1539eaa83e3793dc18bb9d3ac8fff6eebbb4f45ca3b823bcba1970f6900b2919",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/1539eaa83e3793dc18bb9d3ac8fff6eebbb4f45ca3b823bcba1970f6900b2919.mp3",
+              "bytes": 8736,
+              "contentSha256": "5f1c53f64a8702a671a218c61fab5633a2a9b68b4d28496388bb582261817c2f",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/5f1c53f64a8702a671a2.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "new-years-postcard:0",
+              "wordId": "new-years-postcard",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "I'd like ten New Year's postcards.",
+              "sourceLanguage": "en",
+              "sourceDigest": "d716a449252bc509c7fb9c32482e915eb28ae24e367754ec582d817ba3b00464",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/d716a449252bc509c7fb9c32482e915eb28ae24e367754ec582d817ba3b00464.mp3",
+              "bytes": 9312,
+              "contentSha256": "fa5e92e32280934fe64c960c68b2e9861229a84924180a60c6e693ea38156241",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/fa5e92e32280934fe64c.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "new-years-postcard:0",
+              "wordId": "new-years-postcard",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "年賀はがきを十枚ください。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "a30279cc8064513090d01201e97e7d1b282438744e768bfc98e1fe66982eade2",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/a30279cc8064513090d01201e97e7d1b282438744e768bfc98e1fe66982eade2.mp3",
+              "bytes": 9024,
+              "contentSha256": "8b7c7ff90ad7e037910d90b045d946c4f3325dad67532f80aa1ab4968f16dd18",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/8b7c7ff90ad7e037910d.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "new-years-postcard:1",
+          "sortOrder": 1,
+          "en": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+          "ja": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+          "zh": "因為可能寫錯收件地址，我多買了幾張賀年明信片。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "bought",
+                "z": "買了",
+                "j": "買った",
+                "e": "bought"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "extra",
+                "z": "額外的",
+                "j": "多めの",
+                "e": "extra"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "New Year's postcards",
+                "z": "賀年明信片",
+                "j": "年賀はがき",
+                "e": "New Year's postcards"
+              },
+              {
+                "t": " because I might "
+              },
+              {
+                "t": "make a mistake",
+                "z": "弄錯",
+                "j": "間違える",
+                "e": "make a mistake"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "writing",
+                "z": "填寫",
+                "j": "書く",
+                "e": "writing"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "addresses",
+                "z": "收件地址",
+                "j": "宛名",
+                "e": "addresses"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "宛名",
+                "z": "收件地址",
+                "j": "宛名",
+                "e": "addresses",
+                "r": "あてな"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "書き間違えるかもしれない",
+                "z": "可能寫錯",
+                "j": "書き間違えるかもしれない",
+                "e": "might make a mistake writing",
+                "r": "かきまちがえるかもしれない"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "年賀はがき",
+                "z": "賀年明信片",
+                "j": "年賀はがき",
+                "e": "New Year's postcards",
+                "r": "ねんがはがき"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "多めに",
+                "z": "多一些",
+                "j": "多めに",
+                "e": "extra",
+                "r": "おおめに"
+              },
+              {
+                "t": "買いました",
+                "z": "買了",
+                "j": "買った",
+                "e": "bought",
+                "r": "かいました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "new-years-postcard:1",
+              "wordId": "new-years-postcard",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+              "sourceLanguage": "en",
+              "sourceDigest": "b67630e7b22e59fd61f16256831f54ff57ded27afa88d8681dc66fd562c0c5a9",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/b67630e7b22e59fd61f16256831f54ff57ded27afa88d8681dc66fd562c0c5a9.mp3",
+              "bytes": 19296,
+              "contentSha256": "d6853065408ee9010d1f969a170b79bbecec5c322e4fad053025e06e1f9a0ebf",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/d6853065408ee9010d1f.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "new-years-postcard:1",
+              "wordId": "new-years-postcard",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+              "sourceLanguage": "en",
+              "sourceDigest": "341aa32c4d123329591183af9d384c9e474dc405f609204ea3b6ad135458c7f6",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/341aa32c4d123329591183af9d384c9e474dc405f609204ea3b6ad135458c7f6.mp3",
+              "bytes": 18144,
+              "contentSha256": "e6ae23b4c6336dae80a3bbd21abc69671557457b7ed2044d91a961d2485aa268",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/e6ae23b4c6336dae80a3.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "new-years-postcard:1",
+              "wordId": "new-years-postcard",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "8ce03995ec7b8f348f213a26b8e2638c963041bf819b8af577822e1681f5ca18",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/8ce03995ec7b8f348f213a26b8e2638c963041bf819b8af577822e1681f5ca18.mp3",
+              "bytes": 20064,
+              "contentSha256": "f526360c0dbcea92b15c4abaa7f00a1e321d1320c434feefbf18915434b7c9be",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/f526360c0dbcea92b15c.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "35119ab7997343067eae3c68563154cb72d71fc5b6cd0cea07065c06da9d7be0",
+      "word": {
+        "id": "mourning-postcard",
+        "word": "mourning postcard",
+        "chinese": "服喪明信片",
+        "chineseDefinition": "因近親去世而告知對方將不寄新年賀卡的明信片。收到後通常避免寄年賀状給對方，改以寒中問候致意；這不表示服喪者不能收賀年卡。",
+        "category": "postal-services",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈmɔːr.nɪŋ ˌpoʊst.kɑːrd/",
+        "cefrLevel": "B1",
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "服喪明信片",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A postcard explaining that the sender will refrain from New Year greetings because of a bereavement. Recipients commonly send a winter greeting instead; receiving a New Year card while in mourning is not itself improper.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "近親者の不幸により、新年のあいさつを控えることを知らせるはがき。受け取った側は年賀状を控え、寒中見舞いを送ることが多いが、喪中の人が年賀状を受け取ること自体はマナー違反ではない。",
+            "sortOrder": 0
+          }
+        ],
+        "examples": [
+          {
+            "en": "I received a mourning postcard from a friend.",
+            "ja": "友達から喪中はがきが届きました。",
+            "zh": "我收到了朋友寄來的服喪明信片。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+            "ja": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+            "zh": "我收到了服喪明信片，所以決定改寄寒中問候卡，而不寄賀年卡。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "relatedWords": [
+          "postcard"
+        ],
+        "ja": "喪中はがき",
+        "jaReading": "もちゅうはがき",
+        "jaReadingSegments": [
+          {
+            "text": "喪中",
+            "ruby": "もちゅう"
+          },
+          {
+            "text": "はがき",
+            "ruby": null
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp"
+      },
+      "image": {
+        "id": "mourning-postcard",
+        "bucket": "word-images",
+        "storagePath": "winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+        "url": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+        "localFile": "output/winter-postal-2026-10/images/webp/mourning-postcard-v1-375f8f182275.webp",
+        "sourceFile": "output/winter-postal-2026-10/images/source/mourning-postcard-v1.png",
+        "bytes": 89138,
+        "contentSha256": "375f8f182275ad36e8f8a2f2c63133f0821b37ad0e83cf251562503a580a4439",
+        "mimeType": "image/webp",
+        "width": 1254,
+        "height": 1254,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "mourning-postcard",
+          "wordId": "mourning-postcard",
+          "locale": "en-US",
+          "sourceText": "mourning postcard",
+          "sourceLanguage": "en",
+          "sourceDigest": "aa23df3193dbe45f116b912e168871079a21d82a7a12390ad36a8d412af9020d",
+          "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-US/aa23df3193dbe45f116b912e168871079a21d82a7a12390ad36a8d412af9020d.mp3",
+          "bytes": 7872,
+          "contentSha256": "ec1d84e6121ccbe990715812a55b5e2d1df490eb5b645ab1c02ca55ca562befd",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "mourning-postcard/en-US/ec1d84e6121ccbe99071.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "mourning-postcard",
+          "wordId": "mourning-postcard",
+          "locale": "en-GB",
+          "sourceText": "mourning postcard",
+          "sourceLanguage": "en",
+          "sourceDigest": "5aeb07134a9fb880dbfe47c944da784a2d2607e3f041732bde56aff8717e3272",
+          "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-GB/5aeb07134a9fb880dbfe47c944da784a2d2607e3f041732bde56aff8717e3272.mp3",
+          "bytes": 4992,
+          "contentSha256": "70383ea1fb6636da0b0de00d9d081fdc1af24eae8bee733b08caa19f423398df",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "mourning-postcard/en-GB/70383ea1fb6636da0b0d.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "mourning-postcard",
+          "wordId": "mourning-postcard",
+          "locale": "ja-JP",
+          "sourceText": "喪中はがき",
+          "sourceLanguage": "ja",
+          "sourceDigest": "cf128dd4d10573bee8584bcc5f153962418f2937827f8012bbcec9ff74b4934e",
+          "localFile": "output/winter-postal-2026-10/audio-candidates/headword/ja-JP/cf128dd4d10573bee8584bcc5f153962418f2937827f8012bbcec9ff74b4934e.mp3",
+          "bytes": 5184,
+          "contentSha256": "d8f17204a658f06a47d850c2ed962a2bad30d228128c0751cea28bc8b73ef4a7",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "mourning-postcard/ja-JP/d8f17204a658f06a47d8.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "mourning-postcard:0",
+          "sortOrder": 0,
+          "en": "I received a mourning postcard from a friend.",
+          "ja": "友達から喪中はがきが届きました。",
+          "zh": "我收到了朋友寄來的服喪明信片。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "received",
+                "z": "收到了",
+                "j": "届いた",
+                "e": "received"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "mourning postcard",
+                "z": "服喪明信片",
+                "j": "喪中はがき",
+                "e": "mourning postcard"
+              },
+              {
+                "t": " from a "
+              },
+              {
+                "t": "friend",
+                "z": "朋友",
+                "j": "友達",
+                "e": "friend"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "友達",
+                "z": "朋友",
+                "j": "友達",
+                "e": "friend",
+                "r": "ともだち"
+              },
+              {
+                "t": "から"
+              },
+              {
+                "t": "喪中はがき",
+                "z": "服喪明信片",
+                "j": "喪中はがき",
+                "e": "mourning postcard",
+                "r": "もちゅうはがき"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "届きました",
+                "z": "寄到了",
+                "j": "届いた",
+                "e": "arrived",
+                "r": "とどきました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "mourning-postcard:0",
+              "wordId": "mourning-postcard",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "I received a mourning postcard from a friend.",
+              "sourceLanguage": "en",
+              "sourceDigest": "663ac73c92705f72084c4ecc1aacde4bb758fced2969362dec9dbfe34563c948",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/663ac73c92705f72084c4ecc1aacde4bb758fced2969362dec9dbfe34563c948.mp3",
+              "bytes": 9024,
+              "contentSha256": "00cca33f3a3ab640c6d1e78d6d89ef72e38b206b1f48ce4496c2cdeba8de7677",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/00cca33f3a3ab640c6d1.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "mourning-postcard:0",
+              "wordId": "mourning-postcard",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "I received a mourning postcard from a friend.",
+              "sourceLanguage": "en",
+              "sourceDigest": "82f2388c0d5a150e511422f1461113c489244043a88e02c3bd3070b116a9136c",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/82f2388c0d5a150e511422f1461113c489244043a88e02c3bd3070b116a9136c.mp3",
+              "bytes": 8832,
+              "contentSha256": "5d7a61ad24a43f73386ec5fc98e4bef126066ccbc9339c8997cf5aa22f47aa03",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/5d7a61ad24a43f73386e.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "mourning-postcard:0",
+              "wordId": "mourning-postcard",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "友達から喪中はがきが届きました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "8c348678249cc0df7273d9d5a4129da5c0de4d5c56241c4a03c55049761bb4da",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/8c348678249cc0df7273d9d5a4129da5c0de4d5c56241c4a03c55049761bb4da.mp3",
+              "bytes": 10752,
+              "contentSha256": "8628d20b425f9b3a65d8e55f030f0933d0a85d714a306a2e5302106ba0471192",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/8628d20b425f9b3a65d8.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "mourning-postcard:1",
+          "sortOrder": 1,
+          "en": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+          "ja": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+          "zh": "我收到了服喪明信片，所以決定改寄寒中問候卡，而不寄賀年卡。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "received",
+                "z": "收到了",
+                "j": "届いた",
+                "e": "received"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "mourning postcard",
+                "z": "服喪明信片",
+                "j": "喪中はがき",
+                "e": "mourning postcard"
+              },
+              {
+                "t": ", so I "
+              },
+              {
+                "t": "decided",
+                "z": "決定了",
+                "j": "決めた",
+                "e": "decided"
+              },
+              {
+                "t": " to "
+              },
+              {
+                "t": "send",
+                "z": "寄送",
+                "j": "送る",
+                "e": "send"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "winter greeting",
+                "z": "寒中問候卡",
+                "j": "寒中見舞い",
+                "e": "winter greeting"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "instead of",
+                "z": "而非",
+                "j": "の代わりに",
+                "e": "instead of"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "New Year's card",
+                "z": "賀年卡",
+                "j": "年賀状",
+                "e": "New Year's card"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "喪中はがき",
+                "z": "服喪明信片",
+                "j": "喪中はがき",
+                "e": "mourning postcard",
+                "r": "もちゅうはがき"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "届いた",
+                "z": "寄到了",
+                "j": "届いた",
+                "e": "arrived",
+                "r": "とどいた"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "年賀状",
+                "z": "賀年卡",
+                "j": "年賀状",
+                "e": "New Year's card",
+                "r": "ねんがじょう"
+              },
+              {
+                "t": "の"
+              },
+              {
+                "t": "代わりに",
+                "z": "取而代之",
+                "j": "代わりに",
+                "e": "instead",
+                "r": "かわりに"
+              },
+              {
+                "t": "寒中見舞い",
+                "z": "寒中問候卡",
+                "j": "寒中見舞い",
+                "e": "winter greeting",
+                "r": "かんちゅうみまい"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "送ることにしました",
+                "z": "決定寄送",
+                "j": "送ることにした",
+                "e": "decided to send",
+                "r": "おくることにしました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "mourning-postcard:1",
+              "wordId": "mourning-postcard",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+              "sourceLanguage": "en",
+              "sourceDigest": "3d37d0772315825a67b21c3703733b65cee6c24c14c5e7cdaf6a1e2a6c7b1262",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/3d37d0772315825a67b21c3703733b65cee6c24c14c5e7cdaf6a1e2a6c7b1262.mp3",
+              "bytes": 20256,
+              "contentSha256": "caee769a59cad9a5e1c616e8da8503b04d600fc8e3cbd7aeef920fd0e828587e",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/caee769a59cad9a5e1c6.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "mourning-postcard:1",
+              "wordId": "mourning-postcard",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+              "sourceLanguage": "en",
+              "sourceDigest": "e6321e32030f681fabc0dc65d271ce2ba82d85c708c39d260c3e502bde21d730",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/e6321e32030f681fabc0dc65d271ce2ba82d85c708c39d260c3e502bde21d730.mp3",
+              "bytes": 24384,
+              "contentSha256": "1cbc78f51a6bb1c113ee1d80477c51e65780f16bccd79cb5a033e1a5f175d2c1",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/1cbc78f51a6bb1c113ee.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "mourning-postcard:1",
+              "wordId": "mourning-postcard",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "882d582e5fbbbb14b21a0d51195d3dc61ca201c59e8678f24704b8bc49572816",
+              "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/882d582e5fbbbb14b21a0d51195d3dc61ca201c59e8678f24704b8bc49572816.mp3",
+              "bytes": 23424,
+              "contentSha256": "230676fc7dd8371c1a8be83edff90626ffed62afd026ed83f0be23b2e769fc2c",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/230676fc7dd8371c1a8b.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "independentReviews": {
+    "semantic": "pass",
+    "visual": "pass",
+    "audio": "pass"
+  },
+  "summary": {
+    "words": 2,
+    "definitions": 6,
+    "examples": 4,
+    "spanSentences": 8,
+    "wordImages": 2,
+    "categoryImages": 0,
+    "audioClips": 18,
+    "storageObjects": 20
+  },
+  "applyContract": [
+    "Fresh SELECT-only preflight; confirm logical DB and physical Storage targets immediately before separately authorized apply.",
+    "Reserve PostgreSQL example IDs and journal owner-key mapping before constructing example-audio paths; candidate word:slot keys are not database IDs.",
+    "Create-only immutable media; full remote bytes verification before a single content/publication transaction.",
+    "Reuse existing category unchanged; no category creation, translation update, cover upload, or rollback deletion.",
+    "Verify production content, remote bytes, API projections and ordinary/cache-busting user routes before recording release."
+  ],
+  "limitations": [
+    "Images are concept illustrations, not current-year official postal specimens or usable postage.",
+    "No subjective full-clip listening review or production/device verification is claimed."
+  ],
+  "postPublicationIntegration": {
+    "status": "deferred-until-db-published-and-verified",
+    "canonicalImagePatch": {
+      "file": "data/winter-postal-2026-10-canonical-images.patch",
+      "sha256": "767555bea0a9d83ecd4350f16e71b4378afaae8114c45077511c20c0d3843c45",
+      "applied": false
+    },
+    "wordIds": [
+      "new-years-postcard",
+      "mourning-postcard"
+    ],
+    "requiredOrder": [
+      "DB完整發布並驗證後，才可在本地套用本批canonical image映射補丁；不得提前增加公開首頁用來計算詞數的映射key。",
+      "套用前重新確認補丁仍適用且保留其他映射；commit、push及deploy均須另外授權。",
+      "正式上線後的圖片全層稽核，須等待canonical image映射層同步完成，不能以DB已發布代稱全部圖片來源一致。"
+    ]
+  },
+  "planDigest": "c1bf605ad90121f1c7c348bc865ef2f49dd165b8110aa4a1198bf8ed1bdde2f1",
+  "createdAt": "2026-10-29T08:35:47.929Z",
+  "status": "prepared",
+  "databasePreflight": {
+    "checkedAt": "2026-10-29T06:03:03.721Z",
+    "transactionReadOnly": true,
+    "databaseHostFingerprint": "15749fae6d13",
+    "logicalTargetFingerprint": "ff5cae26be7059d0d2127c76395c4b1b07d0a8902ecae30dad8ba03558975fe7",
+    "publishedCount": 1241,
+    "collisionRows": [],
+    "japaneseCollisions": [],
+    "categories": [
+      {
+        "id": "postal-services",
+        "name": "Post Office",
+        "name_zh": "郵局",
+        "emoji": "📮",
+        "description": "寄信、包裹、包裝用品與郵務服務",
+        "description_en": "Letters, parcels, packing materials and postal services",
+        "color": "from-red-100 to-orange-100",
+        "image_url": "https://img.nexflow.team/word-images/postal-services-2026-10/category-postal-services-v1-34177d37d1f6.webp"
+      }
+    ],
+    "categoryTranslations": [
+      {
+        "category_id": "postal-services",
+        "language": "ja",
+        "name": "郵便局",
+        "description": "手紙、荷物、梱包用品と郵便サービス"
+      }
+    ],
+    "related": [
+      {
+        "id": "postcard",
+        "word": "postcard",
+        "status": "published",
+        "term": "はがき"
+      }
+    ],
+    "sentenceCollisions": [],
+    "passed": true
+  },
+  "storageTarget": {
+    "backend": "r2",
+    "fingerprint": "767c84c9d992"
+  }
+}

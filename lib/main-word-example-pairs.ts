@@ -1,4 +1,5 @@
 import { MAIN_WORD_DENTAL_CLINIC_EXAMPLE_PAIRS } from "./main-word-dental-clinic-2026-10";
+import { MAIN_WORD_WINTER_POSTAL_EXAMPLE_PAIRS } from "./main-word-winter-postal-2026-10";
 import { MAIN_WORD_PHONE_INTERNET_EXAMPLE_PAIRS } from "./main-word-phone-internet-2026-10";
 import { MAIN_WORD_IDENTITY_DOCUMENTS_EXAMPLE_PAIRS } from "./main-word-identity-documents-2026-10";
 import { MAIN_WORD_AIRPORT_EXAMPLE_PAIRS } from "./main-word-airport-2026-10";
@@ -203,6 +204,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
     MAIN_WORD_AIRPORT_EXAMPLE_PAIRS,
     MAIN_WORD_PHONE_INTERNET_EXAMPLE_PAIRS,
     MAIN_WORD_DENTAL_CLINIC_EXAMPLE_PAIRS,
+    MAIN_WORD_WINTER_POSTAL_EXAMPLE_PAIRS,
   );
 
 export function selectMainWordExamplePairs(

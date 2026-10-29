@@ -1,0 +1,14 @@
+✔ regression: standalone kudasai becomes untappable and preserves displayed text (1.379208ms)
+✔ all other spans, glosses, words, examples and media are unchanged (0.302667ms)
+✔ unexpected old gloss refuses rather than deleting edited content (0.381ms)
+✔ unexpected old span reading refuses (0.273209ms)
+✔ CAS accepts exactly before/after and refuses unrelated changes (8.702208ms)
+✔ v2 sidecar contains only the one untap change; original remains intact (0.349625ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.293459

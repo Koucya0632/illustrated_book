@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-29T06:07:13.464Z",
+  "sourceSha256": "554e091d7488fa6d0b66b7670d0b6dbdaaa444922a42c881cdfb8a47c5326aab",
+  "spansSha256": "5416f06b22ae6c63e005a6c65958702a6cbbafeaf7d318b9549ed8029caf0d4a",
+  "words": 2,
+  "examples": 4,
+  "spanArrays": 8,
+  "images": 2,
+  "audioClips": 18,
+  "structure": "passed",
+  "localImages": "passed",
+  "localAudio": "passed",
+  "independentSemanticReview": "passed",
+  "independentVisualReview": "passed",
+  "productionUploads": 0,
+  "databaseWrites": 0,
+  "scope": "Local candidate artifacts only; no seed/fallback/runtime registration.",
+  "issues": []
+}

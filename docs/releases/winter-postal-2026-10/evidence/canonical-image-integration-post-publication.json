@@ -1,0 +1,14 @@
+{
+  "status": "applied-locally-after-database-publication",
+  "preservedAllPriorMappings": true,
+  "activeAddedIds": [
+    "mourning-postcard",
+    "new-years-postcard"
+  ],
+  "beforeCount": 1241,
+  "currentCount": 1243,
+  "canonicalSha256": "f97e64e24e405d524fd99b64deb322d71bde43595d291907465576722a8fa26e",
+  "patchFile": "data/winter-postal-2026-10-canonical-images.patch",
+  "commit": "not authorized/performed",
+  "deployment": "not authorized/performed"
+}

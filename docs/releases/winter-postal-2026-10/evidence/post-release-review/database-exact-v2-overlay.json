@@ -1,0 +1,255 @@
+{
+  "status": "pass",
+  "transactionReadOnly": true,
+  "exactComparatorQueryCount": 17,
+  "queries": [
+    "\n    SELECT id, word, also_known_as, category, part_of_speech, pronunciation,\n           image_url, audio_url, cefr_level, status, collocations, note,\n           chinese_definition, image_source_url, image_license, image_credit,\n           etymology, forms, deleted_at\n    FROM words WHERE id = ANY(?) ORDER BY id \n  ",
+    "\n    SELECT word_id, language, definition, cefr_level, sort_order\n    FROM word_definitions WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT word_id, language, term, reading, pronunciation, reading_segments, audio_url\n    FROM word_terms WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT id::text, word_id, sentence, cefr_level, sort_order\n    FROM word_examples WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT t.example_id::text, t.language, t.translation\n    FROM word_example_translations t\n    JOIN word_examples e ON e.id = t.example_id\n    WHERE e.word_id = ANY(?)\n    \n  ",
+    "\n    SELECT source_word_id, target_word_id, relation_type, note\n    FROM word_relations WHERE source_word_id = ANY(?) \n  ",
+    "\n    SELECT word_id, category_id, is_primary\n    FROM word_categories WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT id, name, name_zh, emoji, description, description_en, color, image_url\n    FROM categories WHERE id = ? \n  ",
+    "\n        SELECT category_id, language, name, description\n        FROM category_translations\n        WHERE category_id = ? AND language = 'ja'\n        \n      ",
+    "\n    SELECT word_id, lower(term) AS term FROM word_terms ORDER BY word_id\n  ",
+    "\n    SELECT sentence_language, sentence, sort_order, text, base_form,\n           part_of_speech, reading, word_id, version\n    FROM sentence_spans\n    WHERE (sentence_language = 'en' AND sentence = ANY(?))\n       OR (sentence_language = 'ja' AND sentence = ANY(?))\n    \n  ",
+    "\n    SELECT g.sentence_language, g.sentence, g.sort_order, g.language, g.gloss\n    FROM sentence_span_glosses g\n    WHERE (g.sentence_language = 'en' AND g.sentence = ANY(?))\n       OR (g.sentence_language = 'ja' AND g.sentence = ANY(?))\n    \n  ",
+    "\n    SELECT word_id, tag_id FROM word_tags WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT word_id, field, language, value\n    FROM word_localized_texts WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT word_id, kind, url, storage_path, mime_type, width, height,\n           duration_ms, source_url, license, credit, prompt, model, locale,\n           is_primary, sort_order, metadata\n    FROM word_media WHERE word_id = ANY(?) \n  ",
+    "\n    SELECT m.example_id::text, m.locale, m.url, m.storage_path, m.mime_type,\n           m.duration_ms, m.model\n    FROM word_example_media m\n    JOIN word_examples e ON e.id = m.example_id\n    WHERE e.word_id = ANY(?)\n    \n  ",
+    "\n    SELECT word_id, card_type, front, back, explanation, tags, deck_key\n    FROM cards WHERE word_id = ANY(?) \n  "
+  ],
+  "words": [
+    {
+      "id": "mourning-postcard",
+      "word": "mourning postcard",
+      "category": "postal-services",
+      "status": "published",
+      "image_url": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp"
+    },
+    {
+      "id": "new-years-postcard",
+      "word": "New Year's postcard",
+      "category": "postal-services",
+      "status": "published",
+      "image_url": "https://img.nexflow.team/word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp"
+    }
+  ],
+  "media": [
+    {
+      "word_id": "mourning-postcard",
+      "kind": "audio",
+      "locale": "en-GB",
+      "url": "https://img.nexflow.team/word-audio/mourning-postcard/en-GB/70383ea1fb6636da0b0d.mp3",
+      "storage_path": "mourning-postcard/en-GB/70383ea1fb6636da0b0d.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "word_id": "mourning-postcard",
+      "kind": "audio",
+      "locale": "en-US",
+      "url": "https://img.nexflow.team/word-audio/mourning-postcard/en-US/ec1d84e6121ccbe99071.mp3",
+      "storage_path": "mourning-postcard/en-US/ec1d84e6121ccbe99071.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "word_id": "mourning-postcard",
+      "kind": "audio",
+      "locale": "ja-JP",
+      "url": "https://img.nexflow.team/word-audio/mourning-postcard/ja-JP/d8f17204a658f06a47d8.mp3",
+      "storage_path": "mourning-postcard/ja-JP/d8f17204a658f06a47d8.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "word_id": "mourning-postcard",
+      "kind": "image",
+      "locale": null,
+      "url": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+      "storage_path": "winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+      "mime_type": "image/webp",
+      "model": "imagegen"
+    },
+    {
+      "word_id": "new-years-postcard",
+      "kind": "audio",
+      "locale": "en-GB",
+      "url": "https://img.nexflow.team/word-audio/new-years-postcard/en-GB/7eb4fb773347315ffcdc.mp3",
+      "storage_path": "new-years-postcard/en-GB/7eb4fb773347315ffcdc.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "word_id": "new-years-postcard",
+      "kind": "audio",
+      "locale": "en-US",
+      "url": "https://img.nexflow.team/word-audio/new-years-postcard/en-US/d32616bef2f1451d1abd.mp3",
+      "storage_path": "new-years-postcard/en-US/d32616bef2f1451d1abd.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "word_id": "new-years-postcard",
+      "kind": "audio",
+      "locale": "ja-JP",
+      "url": "https://img.nexflow.team/word-audio/new-years-postcard/ja-JP/8082a1ed707d7dd3417a.mp3",
+      "storage_path": "new-years-postcard/ja-JP/8082a1ed707d7dd3417a.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "word_id": "new-years-postcard",
+      "kind": "image",
+      "locale": null,
+      "url": "https://img.nexflow.team/word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+      "storage_path": "winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+      "mime_type": "image/webp",
+      "model": "imagegen"
+    }
+  ],
+  "examples": [
+    {
+      "id": "3709",
+      "word_id": "mourning-postcard",
+      "sentence": "I received a mourning postcard from a friend.",
+      "sort_order": 0,
+      "cefr_level": "A2"
+    },
+    {
+      "id": "3710",
+      "word_id": "mourning-postcard",
+      "sentence": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+      "sort_order": 1,
+      "cefr_level": "B1"
+    },
+    {
+      "id": "3707",
+      "word_id": "new-years-postcard",
+      "sentence": "I'd like ten New Year's postcards.",
+      "sort_order": 0,
+      "cefr_level": "A2"
+    },
+    {
+      "id": "3708",
+      "word_id": "new-years-postcard",
+      "sentence": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+      "sort_order": 1,
+      "cefr_level": "B1"
+    }
+  ],
+  "exampleMedia": [
+    {
+      "example_id": "3707",
+      "locale": "en-GB",
+      "url": "https://img.nexflow.team/word-audio/examples/3707/en-GB/fa5e92e32280934fe64c.mp3",
+      "storage_path": "examples/3707/en-GB/fa5e92e32280934fe64c.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3707",
+      "locale": "en-US",
+      "url": "https://img.nexflow.team/word-audio/examples/3707/en-US/5f1c53f64a8702a671a2.mp3",
+      "storage_path": "examples/3707/en-US/5f1c53f64a8702a671a2.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3707",
+      "locale": "ja-JP",
+      "url": "https://img.nexflow.team/word-audio/examples/3707/ja-JP/8b7c7ff90ad7e037910d.mp3",
+      "storage_path": "examples/3707/ja-JP/8b7c7ff90ad7e037910d.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3708",
+      "locale": "en-GB",
+      "url": "https://img.nexflow.team/word-audio/examples/3708/en-GB/e6ae23b4c6336dae80a3.mp3",
+      "storage_path": "examples/3708/en-GB/e6ae23b4c6336dae80a3.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3708",
+      "locale": "en-US",
+      "url": "https://img.nexflow.team/word-audio/examples/3708/en-US/d6853065408ee9010d1f.mp3",
+      "storage_path": "examples/3708/en-US/d6853065408ee9010d1f.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3708",
+      "locale": "ja-JP",
+      "url": "https://img.nexflow.team/word-audio/examples/3708/ja-JP/f526360c0dbcea92b15c.mp3",
+      "storage_path": "examples/3708/ja-JP/f526360c0dbcea92b15c.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3709",
+      "locale": "en-GB",
+      "url": "https://img.nexflow.team/word-audio/examples/3709/en-GB/5d7a61ad24a43f73386e.mp3",
+      "storage_path": "examples/3709/en-GB/5d7a61ad24a43f73386e.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3709",
+      "locale": "en-US",
+      "url": "https://img.nexflow.team/word-audio/examples/3709/en-US/00cca33f3a3ab640c6d1.mp3",
+      "storage_path": "examples/3709/en-US/00cca33f3a3ab640c6d1.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3709",
+      "locale": "ja-JP",
+      "url": "https://img.nexflow.team/word-audio/examples/3709/ja-JP/8628d20b425f9b3a65d8.mp3",
+      "storage_path": "examples/3709/ja-JP/8628d20b425f9b3a65d8.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3710",
+      "locale": "en-GB",
+      "url": "https://img.nexflow.team/word-audio/examples/3710/en-GB/1cbc78f51a6bb1c113ee.mp3",
+      "storage_path": "examples/3710/en-GB/1cbc78f51a6bb1c113ee.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3710",
+      "locale": "en-US",
+      "url": "https://img.nexflow.team/word-audio/examples/3710/en-US/caee769a59cad9a5e1c6.mp3",
+      "storage_path": "examples/3710/en-US/caee769a59cad9a5e1c6.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    },
+    {
+      "example_id": "3710",
+      "locale": "ja-JP",
+      "url": "https://img.nexflow.team/word-audio/examples/3710/ja-JP/230676fc7dd8371c1a8b.mp3",
+      "storage_path": "examples/3710/ja-JP/230676fc7dd8371c1a8b.mp3",
+      "mime_type": "audio/mpeg",
+      "model": "chirp-3-hd"
+    }
+  ],
+  "correctionOverlay": {
+    "file": "output/winter-postal-2026-10/correction-v2/correction-plan-745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2.json",
+    "sha256": "745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2",
+    "sidecarSha256": "6eb60ce4c9a458e39652a85a7f5928f212ef6a7c7d92149c7e3b32ef53ae57f5",
+    "journalStatus": "applied",
+    "scope": {
+      "wordId": "new-years-postcard",
+      "exampleId": "3707",
+      "language": "ja",
+      "sentence": "年賀はがきを十枚ください。",
+      "sortOrder": 3
+    }
+  }
+}

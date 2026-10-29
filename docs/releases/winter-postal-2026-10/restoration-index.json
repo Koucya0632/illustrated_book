@@ -1,0 +1,371 @@
+{
+  "schemaVersion": 1,
+  "workBatch": "winter-2026-01",
+  "note": "Exact historical artifact bytes. Restore only to ignored output paths. Do not rerun apply or regenerate reviewed sources.",
+  "artifacts": [
+    {
+      "originalPath": "output/winter-postal-2026-10/publish-plan-4dc7b1fd16da209521dfd360f7359a066c17508cfd64e306d1c3a911533a8dea.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/publish-plan-4dc7b1fd16da209521dfd360f7359a066c17508cfd64e306d1c3a911533a8dea.json",
+      "bytes": 44084,
+      "sha256": "4dc7b1fd16da209521dfd360f7359a066c17508cfd64e306d1c3a911533a8dea"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/apply-manifest-2026-10-29T08-51-06-358Z.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/apply-manifest-2026-10-29T08-51-06-358Z.json",
+      "bytes": 15047,
+      "sha256": "54f22c4aa5725d87a3974290bb916d92f2969e87cb0a928dc32f85898eeeab17"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/latest-plan.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/latest-plan.json",
+      "bytes": 287,
+      "sha256": "18b3360b0cbd98e8329f0a2dc6df5915d95c77d30891dfb1872ec55a6ea8e3c2"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/image-manifest.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/image-manifest.json",
+      "bytes": 1275,
+      "sha256": "8d3fb0d894656f3b98109e31733d0f93761dc956352709c400ece1b51287b434"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/audio-plan/manifest.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/audio-plan/manifest.json",
+      "bytes": 4578,
+      "sha256": "e3ff52c085639965563b4c735ad7620a4027b1ec08612ab0e67ee4cb893a76b5"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/audio-candidates/generated-manifest.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/audio-candidates/generated-manifest.json",
+      "bytes": 9978,
+      "sha256": "3833ca7fe952ad91e876ea1ef35f53a11be1c82f4b804222fe28a0eee7c0c50b"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/audio-candidates/verification-report.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/audio-candidates/verification-report.json",
+      "bytes": 683,
+      "sha256": "5d8c454b17b6c0a2f0a450c68ac7a2f3aa9937e425887a2cf2932515f6f6dc10"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/audio-candidates/mp3-frames-report.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/audio-candidates/mp3-frames-report.json",
+      "bytes": 6433,
+      "sha256": "83d4eea79bcc21959ce739bff8952a066f0d22f094bcabb968a9394612ec561f"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/independent-review-content.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/independent-review-content.json",
+      "bytes": 19311,
+      "sha256": "3be1772a38af394a78efd36ecdacdd2819eb1fce334f03231b8eabb12ae287a0"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/independent-review-images.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/independent-review-images.json",
+      "bytes": 3240,
+      "sha256": "613657d7a61291089b690c70da4a95fd0ba09718baf8493842cab86dbad45594"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/independent-review-audio.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/independent-review-audio.json",
+      "bytes": 7524,
+      "sha256": "6e72c2033f2b6a0acbc95cf333d7ba840964f7c85ef45cc015b34e11f2ccd6f2"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/independent-review-publisher.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/independent-review-publisher.json",
+      "bytes": 13711,
+      "sha256": "abe5c25b9aa9314874d4317657f510d291d6859940ed5f50ae465fdf9b71e574"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/independent-review-integration.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/independent-review-integration.json",
+      "bytes": 2772,
+      "sha256": "6b675d3791cb7954bc231543e42c5ba947f2fdbd201384539da3581ccd523344"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/publisher-dry-run.txt",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/publisher-dry-run.txt",
+      "bytes": 828,
+      "sha256": "cba6f5a7ce7e04a9f07926a99be05ade06f944779d24fc9faaed36a96da5e426"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/preparation-report.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/preparation-report.json",
+      "bytes": 610,
+      "sha256": "cae5d82d4be6bba75906cc888317549ff0484c9ec866d4e7a52579426314e3fb"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/canonical-image-integration-post-publication.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/canonical-image-integration-post-publication.json",
+      "bytes": 463,
+      "sha256": "dd5e36750f0ce56b7a8fc98ef658348086f8ff4c67eb39ae364aed729d78ef9a"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/correction-v2/correction-plan-745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/correction-v2/correction-plan-745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2.json",
+      "bytes": 150631,
+      "sha256": "745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/correction-v2/correction-apply-745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/correction-v2/correction-apply-745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2.json",
+      "bytes": 227233,
+      "sha256": "4cf53a3646db4170e1c29697ccb2b287a49fd6b0f54354618a30b1f49ad285e4"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/correction-v2/latest-plan.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/correction-v2/latest-plan.json",
+      "bytes": 182,
+      "sha256": "834770f5a9d5491896d4536c644f82717920f95c92b45404aa784b07be755067"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/correction-v2/local-tests.txt",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/correction-v2/local-tests.txt",
+      "bytes": 593,
+      "sha256": "e6ad5fa55991717369ecf1b64d4431460b0a40e74fc8967bac79151c69ffa0f1"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/correction-v2/dry-run.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/correction-v2/dry-run.json",
+      "bytes": 568,
+      "sha256": "9bcba9f2da1795579d35d827d35aeab753e17a92e840420386d7bbf121fe80e3"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/final-summary.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/final-summary.json",
+      "bytes": 4568,
+      "sha256": "3ffa50fc4e8c7116adb83f2462e2e29250d321d206d3f120c9b2788968165cc2"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/independent-correction-v2-review.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/independent-correction-v2-review.json",
+      "bytes": 1751,
+      "sha256": "13cb6fb53b8ebeee59278289127e97ac2c77a7431fb3453ec1b1391f9a48e645"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/database-exact-v2-overlay.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/database-exact-v2-overlay.json",
+      "bytes": 11287,
+      "sha256": "05986effc1cfc05e59307a785eff602b50dd3c049407fbb949399aadc4f74d1b"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/correction-after-state-readback.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/correction-after-state-readback.json",
+      "bytes": 568,
+      "sha256": "20a84efc70212022c371b12870af56d46166bce69a1d40411111ee4fa91f0cb7"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/remote-objects.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/remote-objects.json",
+      "bytes": 22936,
+      "sha256": "c7e5c615da362fe1e636d5bec6615ec57478c3a7dd2601da7108ace63ce68262"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/scoped-examples-source.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/scoped-examples-source.json",
+      "bytes": 11960,
+      "sha256": "b81ef39dfa250d2e56fd792ad68169e4867f95b90b4e038650a1d5ec21d5b38d"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/scoped-semantic-review.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/scoped-semantic-review.json",
+      "bytes": 3617,
+      "sha256": "363b2caae8b302a53578d16be6de6a4453a0a0928e61fedab4bdb60d1dcf5854"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/homepage-count.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/homepage-count.json",
+      "bytes": 360,
+      "sha256": "7151b44bb3f42bae9ce12fa324f2b71d65e7655beede52b6b672ac903534dc96"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-review/scoped-official-example-check/audit.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-review/scoped-official-example-check/audit.json",
+      "bytes": 1377,
+      "sha256": "9108535817912c363fead7f1ffa612ac6750a08bb2108125f971a58ad7e62e38"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/post-release-example-contract-final/audit.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/post-release-example-contract-final/audit.json",
+      "bytes": 2578,
+      "sha256": "3494ae6933fdda9a1c5b18884f53cb6e1a88259b9e578befe4863b5d6fa99e5a"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/database-preflight.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/database-preflight.json",
+      "bytes": 1162,
+      "sha256": "6ddf10bf800cbcf97fca6f041c67d59654238fc3f6533ab4d6327dbdeb00f981"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/api-preflight.json",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/api-preflight.json",
+      "bytes": 5866,
+      "sha256": "eb1febc27ae19f4771f64a1f5fd20ab669c36a5038fd855967d9aad05735d678"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/plan-negative-tests.txt",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/plan-negative-tests.txt",
+      "bytes": 663,
+      "sha256": "5c9a7db0f78765b2257a891ad2fd15919842601caeb3510de24929482f7f3f73"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/typecheck-final.log",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/typecheck-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/build-final.log",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/build-final.log",
+      "bytes": 5550,
+      "sha256": "18163f93934adf355d279139c2fbc48e636cd7308e3c4dd6b041055d91d6d601"
+    },
+    {
+      "originalPath": "output/winter-postal-2026-10/preview.html",
+      "portablePath": "docs/releases/winter-postal-2026-10/evidence/preview.html",
+      "bytes": 10121,
+      "sha256": "bcfc7f451a6648889603bdb276deaaea39bde99db95ed0d555c5d1d570bcc2d3"
+    }
+  ],
+  "media": [
+    {
+      "localFile": "output/winter-postal-2026-10/images/webp/new-years-postcard-v1-aede1269151f.webp",
+      "url": "https://img.nexflow.team/word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+      "bytes": 104724,
+      "contentSha256": "aede1269151f024d2fb9f62e6e54fb49983010bfc575927e3940236c9410e51d",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-US/682d7f61b811ab21f8281e64cde931d80aa09299d5fe0b47f320180bcbb8c14c.mp3",
+      "url": "https://img.nexflow.team/word-audio/new-years-postcard/en-US/d32616bef2f1451d1abd.mp3",
+      "bytes": 7296,
+      "contentSha256": "d32616bef2f1451d1abd221b3629324e8a82aed135cc0188321b153c55cae9aa",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-GB/0afdeaa2788911773804db4e39725bb22f3d3175f75ad5341bacc26cde5c315d.mp3",
+      "url": "https://img.nexflow.team/word-audio/new-years-postcard/en-GB/7eb4fb773347315ffcdc.mp3",
+      "bytes": 5472,
+      "contentSha256": "7eb4fb773347315ffcdceb15fd70bf3c9e319b46a70063e6bb5d759c6f8fa95c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/headword/ja-JP/e28d546a9a5698fe232a4ddc5ad3e21e1133fee5e243ebdb200714e8d3dfbc38.mp3",
+      "url": "https://img.nexflow.team/word-audio/new-years-postcard/ja-JP/8082a1ed707d7dd3417a.mp3",
+      "bytes": 4512,
+      "contentSha256": "8082a1ed707d7dd3417ab7c682d55ad560fc8f5a7c4fa06e6aab13d06f6824b8",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/1539eaa83e3793dc18bb9d3ac8fff6eebbb4f45ca3b823bcba1970f6900b2919.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3707/en-US/5f1c53f64a8702a671a2.mp3",
+      "bytes": 8736,
+      "contentSha256": "5f1c53f64a8702a671a218c61fab5633a2a9b68b4d28496388bb582261817c2f",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/d716a449252bc509c7fb9c32482e915eb28ae24e367754ec582d817ba3b00464.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3707/en-GB/fa5e92e32280934fe64c.mp3",
+      "bytes": 9312,
+      "contentSha256": "fa5e92e32280934fe64c960c68b2e9861229a84924180a60c6e693ea38156241",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/a30279cc8064513090d01201e97e7d1b282438744e768bfc98e1fe66982eade2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3707/ja-JP/8b7c7ff90ad7e037910d.mp3",
+      "bytes": 9024,
+      "contentSha256": "8b7c7ff90ad7e037910d90b045d946c4f3325dad67532f80aa1ab4968f16dd18",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/b67630e7b22e59fd61f16256831f54ff57ded27afa88d8681dc66fd562c0c5a9.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3708/en-US/d6853065408ee9010d1f.mp3",
+      "bytes": 19296,
+      "contentSha256": "d6853065408ee9010d1f969a170b79bbecec5c322e4fad053025e06e1f9a0ebf",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/341aa32c4d123329591183af9d384c9e474dc405f609204ea3b6ad135458c7f6.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3708/en-GB/e6ae23b4c6336dae80a3.mp3",
+      "bytes": 18144,
+      "contentSha256": "e6ae23b4c6336dae80a3bbd21abc69671557457b7ed2044d91a961d2485aa268",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/8ce03995ec7b8f348f213a26b8e2638c963041bf819b8af577822e1681f5ca18.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3708/ja-JP/f526360c0dbcea92b15c.mp3",
+      "bytes": 20064,
+      "contentSha256": "f526360c0dbcea92b15c4abaa7f00a1e321d1320c434feefbf18915434b7c9be",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/images/webp/mourning-postcard-v1-375f8f182275.webp",
+      "url": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+      "bytes": 89138,
+      "contentSha256": "375f8f182275ad36e8f8a2f2c63133f0821b37ad0e83cf251562503a580a4439",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-US/aa23df3193dbe45f116b912e168871079a21d82a7a12390ad36a8d412af9020d.mp3",
+      "url": "https://img.nexflow.team/word-audio/mourning-postcard/en-US/ec1d84e6121ccbe99071.mp3",
+      "bytes": 7872,
+      "contentSha256": "ec1d84e6121ccbe990715812a55b5e2d1df490eb5b645ab1c02ca55ca562befd",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/headword/en-GB/5aeb07134a9fb880dbfe47c944da784a2d2607e3f041732bde56aff8717e3272.mp3",
+      "url": "https://img.nexflow.team/word-audio/mourning-postcard/en-GB/70383ea1fb6636da0b0d.mp3",
+      "bytes": 4992,
+      "contentSha256": "70383ea1fb6636da0b0de00d9d081fdc1af24eae8bee733b08caa19f423398df",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/headword/ja-JP/cf128dd4d10573bee8584bcc5f153962418f2937827f8012bbcec9ff74b4934e.mp3",
+      "url": "https://img.nexflow.team/word-audio/mourning-postcard/ja-JP/d8f17204a658f06a47d8.mp3",
+      "bytes": 5184,
+      "contentSha256": "d8f17204a658f06a47d850c2ed962a2bad30d228128c0751cea28bc8b73ef4a7",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/663ac73c92705f72084c4ecc1aacde4bb758fced2969362dec9dbfe34563c948.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3709/en-US/00cca33f3a3ab640c6d1.mp3",
+      "bytes": 9024,
+      "contentSha256": "00cca33f3a3ab640c6d1e78d6d89ef72e38b206b1f48ce4496c2cdeba8de7677",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/82f2388c0d5a150e511422f1461113c489244043a88e02c3bd3070b116a9136c.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3709/en-GB/5d7a61ad24a43f73386e.mp3",
+      "bytes": 8832,
+      "contentSha256": "5d7a61ad24a43f73386ec5fc98e4bef126066ccbc9339c8997cf5aa22f47aa03",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/8c348678249cc0df7273d9d5a4129da5c0de4d5c56241c4a03c55049761bb4da.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3709/ja-JP/8628d20b425f9b3a65d8.mp3",
+      "bytes": 10752,
+      "contentSha256": "8628d20b425f9b3a65d8e55f030f0933d0a85d714a306a2e5302106ba0471192",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-US/3d37d0772315825a67b21c3703733b65cee6c24c14c5e7cdaf6a1e2a6c7b1262.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3710/en-US/caee769a59cad9a5e1c6.mp3",
+      "bytes": 20256,
+      "contentSha256": "caee769a59cad9a5e1c616e8da8503b04d600fc8e3cbd7aeef920fd0e828587e",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/en-GB/e6321e32030f681fabc0dc65d271ce2ba82d85c708c39d260c3e502bde21d730.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3710/en-GB/1cbc78f51a6bb1c113ee.mp3",
+      "bytes": 24384,
+      "contentSha256": "1cbc78f51a6bb1c113ee1d80477c51e65780f16bccd79cb5a033e1a5f175d2c1",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-postal-2026-10/audio-candidates/example/ja-JP/882d582e5fbbbb14b21a0d51195d3dc61ca201c59e8678f24704b8bc49572816.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3710/ja-JP/230676fc7dd8371c1a8b.mp3",
+      "bytes": 23424,
+      "contentSha256": "230676fc7dd8371c1a8be83edff90626ffed62afd026ed83f0be23b2e769fc2c",
+      "mimeType": "audio/mpeg"
+    }
+  ]
+}

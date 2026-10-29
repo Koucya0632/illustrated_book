@@ -1,0 +1,173 @@
+{
+  "checkedAt": "2026-10-29T05:59:23.848Z",
+  "probes": [
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%B9%B4%E8%B3%80&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "年賀",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%B9%B4%E8%B3%80&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "年賀",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%96%AA%E4%B8%AD&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "喪中",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%96%AA%E4%B8%AD&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "喪中",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%AF%E3%81%8C%E3%81%8D&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "household-mailbox",
+            "word": "郵便受け",
+            "chinese": "住家信箱",
+            "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/household-mailbox-v1-4d27b59db006.webp",
+            "category": "postal-services",
+            "pronunciation": "ゆうびんうけ",
+            "reading": "ゆうびんうけ",
+            "readingSegments": [
+              {
+                "ruby": "ゆうびんうけ",
+                "text": "郵便受け"
+              }
+            ],
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/household-mailbox/ja-JP/9d31dd4bc7eca91f2ed2.mp3"
+            }
+          },
+          {
+            "id": "postcard",
+            "word": "はがき",
+            "chinese": "明信片",
+            "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postcard-v1-f45d34643554.webp",
+            "category": "postal-services",
+            "pronunciation": "はがき",
+            "reading": "はがき",
+            "readingSegments": [
+              {
+                "ruby": null,
+                "text": "はがき"
+              }
+            ],
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/postcard/ja-JP/2120b43abd551309f10e.mp3"
+            }
+          },
+          {
+            "id": "mailbox",
+            "word": "郵便ポスト",
+            "chinese": "郵筒",
+            "imageUrl": "https://img.nexflow.team/word-images/mailbox-ai-6f49be0294e9.webp",
+            "category": "street",
+            "pronunciation": "ゆうびんポスト",
+            "reading": "ゆうびんポスト",
+            "readingSegments": [
+              {
+                "ruby": "ゆう",
+                "text": "郵"
+              },
+              {
+                "ruby": "びん",
+                "text": "便"
+              },
+              {
+                "ruby": null,
+                "text": "ポ"
+              },
+              {
+                "ruby": null,
+                "text": "ス"
+              },
+              {
+                "ruby": null,
+                "text": "ト"
+              }
+            ],
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/mailbox/ja-JP.mp3"
+            }
+          }
+        ],
+        "query": "はがき",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%AF%E3%81%8C%E3%81%8D&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "household-mailbox",
+            "word": "household mailbox",
+            "chinese": "住家信箱",
+            "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/household-mailbox-v1-4d27b59db006.webp",
+            "category": "postal-services",
+            "pronunciation": "/ˈhaʊs.hoʊld ˈmeɪl.bɑːks/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/household-mailbox/en-US/b2fd1dc8ec0d2de9092c.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/household-mailbox/en-GB/852f59271e82085a64e0.mp3"
+            }
+          },
+          {
+            "id": "postcard",
+            "word": "postcard",
+            "chinese": "明信片",
+            "imageUrl": "https://img.nexflow.team/word-images/postal-services-2026-10/postcard-v1-f45d34643554.webp",
+            "category": "postal-services",
+            "pronunciation": "/ˈpoʊst.kɑːrd/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/postcard/en-US/81f4c4eef4a843a2bcfb.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/postcard/en-GB/5fdaeb5e55c27a1d5f9b.mp3"
+            }
+          },
+          {
+            "id": "mailbox",
+            "word": "mailbox",
+            "chinese": "郵筒",
+            "imageUrl": "https://img.nexflow.team/word-images/mailbox-ai-6f49be0294e9.webp",
+            "category": "street",
+            "pronunciation": "/ˈmeɪl.bɑːks/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/mailbox/en-US.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/mailbox/en-GB.mp3"
+            }
+          }
+        ],
+        "query": "はがき",
+        "limit": 200
+      }
+    }
+  ]
+}

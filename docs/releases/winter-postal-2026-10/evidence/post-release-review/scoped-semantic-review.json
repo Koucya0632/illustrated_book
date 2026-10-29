@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-29T11:46:31.443539+00:00",
+  "sourceFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-examples-source.json",
+  "sourceSha256": "b81ef39dfa250d2e56fd792ad68169e4867f95b90b4e038650a1d5ec21d5b38d",
+  "evidence": "Current DB snapshot plus exact original-plan/v2-sidecar overlay comparator; prior full trilingual gloss review revalidated against unchanged bytes except explicitly reviewed target untap change.",
+  "words": [
+    {
+      "id": "mourning-postcard",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "兩句均屬年賀欠禮通知：簡單句為收到朋友通知，複雜句為因此決定改寄寒中問候。兩個教學事件不同，A2收件敘述與B1原因及替代決策形成實質難度差異，並保留收到通知後常見應對而非絕對禁令的正確用法。",
+      "examples": [
+        {
+          "exampleId": "3709",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "收到朋友寄來的喪中通知為自然的日常事件，三語保留朋友來源與收到通知的動作；友達から…届きました為直接A2句型。英日各3個tap，received／届きました按收到／寄到語境對齊，もちゅうはがき及とどきました讀音完整。"
+        },
+        {
+          "exampleId": "3710",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "收到喪中通知後決定改寄寒中問候而非賀年卡，英日繁中因果、決定與替代關係一致；此為個人生活選擇，沒有教成服喪者禁止收賀年狀。届いたので與送ることにしました構成B1複句，與簡單收件句有實質難度差異。英7／日6個tap對應各語境；代わりに為固定表達、の不點，かんちゅうみまい與おくることにしました讀音完整。"
+        }
+      ]
+    },
+    {
+      "id": "new-years-postcard",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "兩句均使用日本郵便年賀明信片概念：簡單句教窗口購買數量，複雜句教為防宛名寫錯而多買備用。場景不同且皆日常可用，A2直接請求與B1推量因果清楚分級，三語事件一致；當前v2只改ください可點邊界，沒有更動句子與音檔。",
+      "examples": [
+        {
+          "exampleId": "3707",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "郵局窗口購買十張年賀はがき的請求自然且明確，英日繁中均保留十張與想購買的事件；日文為簡單A2請求，與複雜句的因果推量形成難度差異。英文3個詞彙tap，日文只保留年賀はがき與十枚兩個tap；ください與助詞、標點保留原文但不單獨可點，完整讀音ねんがはがき／じゅうまい正確。"
+        },
+        {
+          "exampleId": "3708",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "擔心填寫宛名出錯而多買備用卡，是合理日常情境；かもしれないので表達推量與原因，符合B1且不只是拉長簡單句。三語保留可能性、寫錯收件資訊、多買的因果事件。英6／日5個tap的語境義及完整活用讀音相符；宛名在填寫收件資訊的此語境譯為收件地址可接受。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-postal-2026-10",
+  "workBatch": "winter-2026-01",
+  "state": "local-candidate-awaiting-independent-review",
+  "scopeNote": "Expansion of existing postal-services; two candidates, no category creation/updates, no production writes, no static fallback registration.",
+  "category": {
+    "id": "postal-services",
+    "existing": true,
+    "free": true
+  },
+  "references": [
+    "https://www.post.japanpost.jp/service/send/domestic/mail/postcard/",
+    "https://www.post.japanpost.jp/enjoy/culture/howto/stamp/",
+    "https://data.schoolpost.jp/9716/1475/8269/online_nenga_teacher_tebiki.pdf"
+  ],
+  "editorialDecisions": [
+    {
+      "candidate": "年賀状",
+      "decision": "not-a-separate-entry",
+      "reason": "年賀状 describes the greeting sent; 年賀はがき is the specific postage-paid card used at the postal counter. Retain the required 年賀はがき, explain 年賀状 in definitions, and avoid visually overlapping entries."
+    },
+    {
+      "candidate": "喪中はがき",
+      "decision": "qualify-recipient-guidance",
+      "reason": "Japan Post teaches that people in mourning may receive New Year cards. Retain the common recipient practice of refraining and sending a winter greeting, without teaching a prohibition."
+    }
+  ],
+  "entries": [
+    {
+      "id": "new-years-postcard",
+      "word": "New Year's postcard",
+      "chinese": "賀年明信片",
+      "chineseDefinition": "日本郵便發行、供新年問候使用的郵資已付明信片，帶有「年賀」標示及抽獎號碼。年賀状指新年問候信，不限使用這種明信片。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌnuː jɪrz ˈpoʊst.kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "賀年明信片",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A postage-paid postcard issued by Japan Post for New Year greetings, marked for New Year delivery and carrying a lottery number. A New Year's greeting can also be sent on other stationery.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "日本郵便が年始のあいさつ用に発行する、年賀の表示とお年玉くじの番号がある料金込みのはがき。年賀状は新年のあいさつを記した書状で、通常はがきなどでも送れる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I'd like ten New Year's postcards.",
+          "ja": "年賀はがきを十枚ください。",
+          "zh": "我想買十張賀年明信片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+          "ja": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+          "zh": "因為可能寫錯收件地址，我多買了幾張賀年明信片。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "postcard"
+      ],
+      "ja": "年賀はがき",
+      "jaReading": "ねんがはがき",
+      "jaReadingSegments": [
+        {
+          "text": "年賀",
+          "ruby": "ねんが"
+        },
+        {
+          "text": "はがき",
+          "ruby": null
+        }
+      ]
+    },
+    {
+      "id": "mourning-postcard",
+      "word": "mourning postcard",
+      "chinese": "服喪明信片",
+      "chineseDefinition": "因近親去世而告知對方將不寄新年賀卡的明信片。收到後通常避免寄年賀状給對方，改以寒中問候致意；這不表示服喪者不能收賀年卡。",
+      "category": "postal-services",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈmɔːr.nɪŋ ˌpoʊst.kɑːrd/",
+      "cefrLevel": "B1",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "服喪明信片",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A postcard explaining that the sender will refrain from New Year greetings because of a bereavement. Recipients commonly send a winter greeting instead; receiving a New Year card while in mourning is not itself improper.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "近親者の不幸により、新年のあいさつを控えることを知らせるはがき。受け取った側は年賀状を控え、寒中見舞いを送ることが多いが、喪中の人が年賀状を受け取ること自体はマナー違反ではない。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "I received a mourning postcard from a friend.",
+          "ja": "友達から喪中はがきが届きました。",
+          "zh": "我收到了朋友寄來的服喪明信片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+          "ja": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+          "zh": "我收到了服喪明信片，所以決定改寄寒中問候卡，而不寄賀年卡。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "postcard"
+      ],
+      "ja": "喪中はがき",
+      "jaReading": "もちゅうはがき",
+      "jaReadingSegments": [
+        {
+          "text": "喪中",
+          "ruby": "もちゅう"
+        },
+        {
+          "text": "はがき",
+          "ruby": null
+        }
+      ]
+    }
+  ]
+}

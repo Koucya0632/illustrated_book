@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "scope": "Independent read-only review of target-only kudasai untap correction before root apply",
+  "planSha256": "745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2",
+  "toolSha256": "66a911d8be24213d713467bfbd2f174c5f4f134a43454bf4b510f133ddf533aa",
+  "v2SidecarSha256": "6eb60ce4c9a458e39652a85a7f5928f212ef6a7c7d92149c7e3b32ef53ae57f5",
+  "verdictReason": "Standaloneください is removed as a tappable request fragment to match current boundary contract; 年賀はがき and 十枚 retain two useful lexical taps. Displayed sentences and their audio are unchanged.",
+  "checks": {
+    "originalAppliedPlanAndManifestHashesBound": true,
+    "allSourceHashesMatch": true,
+    "onlyOneSpanReadingChangedToNull": true,
+    "onlyThreeTargetGlossRowsRemoved": true,
+    "otherWordTermDefinitionExampleTranslationSpanGlossMediaSnapshotsUnchanged": true,
+    "v2SidecarOnlyTargetTappabilityFieldsRemoved": true,
+    "sentenceReconstructionUnchanged": true,
+    "remainingJapaneseTapCount": 2,
+    "dryRunMode": "READ ONLY, state before, readyForApply true, zero writes",
+    "applyGuard": "Requires exact logical DB fingerprint, correction plan hash and independent review hashes; compares full before/after snapshots inside serializable table-locked transaction; checks exactly3 deletions/1 update; postcondition exact; drift aborts",
+    "resumeGuard": "Deterministic journal required for resume; accepts exact before/after only; original immutable release artifacts unchanged"
+  },
+  "issues": [],
+  "productionWritesByReviewer": 0,
+  "notChecked": [
+    "root authorized apply execution",
+    "correction after-state DB snapshot",
+    "ordinary/cache-busting HTTP visibility of new untappable boundary"
+  ]
+}

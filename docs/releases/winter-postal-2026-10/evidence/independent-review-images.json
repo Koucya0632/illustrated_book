@@ -1,0 +1,75 @@
+{
+  "workBatch": "winter-2026-01",
+  "scope": "Two local candidate images only; no published-catalog or remote-object audit",
+  "reviewerRole": "independent reviewer, not producer",
+  "viewedAllSourcePngAndFormalWebp": true,
+  "manifestSha256": "8d3fb0d894656f3b98109e31733d0f93761dc956352709c400ece1b51287b434",
+  "status": "pass",
+  "issues": [],
+  "items": [
+    {
+      "wordId": "new-years-postcard",
+      "verdict": "pass",
+      "axes": {
+        "semanticIdentity": "pass",
+        "japaneseDailyLife": "pass",
+        "catalogStyle": "pass",
+        "usability": "pass"
+      },
+      "sourceSha256": "f5095345cca794af55a9772ded51eb917c39b312461c35a2a9c92b278368818d",
+      "sha256": "aede1269151f024d2fb9f62e6e54fb49983010bfc575927e3940236c9410e51d",
+      "localPath": "images/webp/new-years-postcard-v1-aede1269151f.webp",
+      "reason": "原PNG與正式WebP皆逐張檢視：單張直式平面明信片，紅色年賀標示、七格郵遞區號框、左上郵資印記圖與底部六位抽獎號碼共同區別一般明信片；無折線、信封、人物或環境道具。主體全幅保留於白底，紅梅圖像符合年賀視覺語彙。",
+      "acceptableLimitations": [
+        "郵資印記省略實際面額、年份與官方細節，抽獎號碼為示意數字；適合概念插圖，不可稱為當年度官方票樣或可直接郵寄的真實郵品複製。"
+      ],
+      "mechanical": {
+        "format": "WEBP",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 104724,
+        "manifestHashAndSizeMatch": true,
+        "sourceHashMatch": true,
+        "uniqueStoragePath": true
+      }
+    },
+    {
+      "wordId": "mourning-postcard",
+      "verdict": "pass",
+      "axes": {
+        "semanticIdentity": "pass",
+        "japaneseDailyLife": "pass",
+        "catalogStyle": "pass",
+        "usability": "pass"
+      },
+      "sourceSha256": "1735a001e7a33bb98290a3412eb3265afe2f0d31093f277189ac95b764909711",
+      "sha256": "375f8f182275ad36e8f8a2f2c63133f0821b37ad0e83cf251562503a580a4439",
+      "localPath": "images/webp/mourning-postcard-v1-375f8f182275.webp",
+      "reason": "原PNG與正式WebP皆逐張檢視：單張直式平面通知明信片，三列可讀日文為喪中につき／年末年始のご挨拶を／ご遠慮申し上げます，準確表達年賀欠禮；淡灰芒草、灰墨文字及大幅留白，無賀年紅金、黑框、遺照、臉或宗教物品，不會誤認為葬儀場景或折式弔唁卡。",
+      "acceptableLimitations": [
+        "為省略寄件人、日期與故人資訊的通用概念插圖，不是完整可寄用通知文面；省略個資不妨礙辨識。"
+      ],
+      "mechanical": {
+        "format": "WEBP",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 89138,
+        "manifestHashAndSizeMatch": true,
+        "sourceHashMatch": true,
+        "uniqueStoragePath": true
+      }
+    }
+  ],
+  "references": [
+    "https://www.post.japanpost.jp/service/send/domestic/mail/postcard/",
+    "https://www.post.japanpost.jp/enjoy/culture/howto/stamp/"
+  ],
+  "notChecked": [
+    "production database",
+    "canonical image list",
+    "ordinary API",
+    "cache-busting API",
+    "remote objects",
+    "device cache"
+  ]
+}

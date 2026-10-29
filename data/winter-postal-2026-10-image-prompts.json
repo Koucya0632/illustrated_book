@@ -1,0 +1,13 @@
+{
+  "generationMode": "built-in image_gen",
+  "entries": [
+    {
+      "id": "new-years-postcard",
+      "prompt": "Use case: product-mockup. Create one square educational picture-dictionary catalog image of a Japanese New Year's prepaid postal postcard, 年賀はがき. Semi-realistic clean catalog illustration with convincing paper, restrained soft shadow, isolated on pure white, centered complete object, generous whitespace. Show ONE flat rectangular portrait postcard, address side facing viewer with a slight natural three-quarter angle so thickness is visible, NOT a folding greeting card. Its defining Japanese standard features: small tasteful red prepaid postage indicium near upper left (small stylized plum blossom illustration, no price or year), immediately below it clearly legible red Japanese text exactly『年賀』, seven little red postal code boxes in upper right, fine quiet address guide line, and a small six-digit lottery number 123456 in a restrained bottom margin. Most of card blank. Do not show handwritten personal names or addresses, no branding or logos, no invented text, no watermark. Not an envelope, not an international Christmas card, no person, no surrounding props, no background scene. Preserve true tall postcard aspect ratio within square canvas. Output high-resolution standalone single asset."
+    },
+    {
+      "id": "mourning-postcard",
+      "prompt": "Use case: product-mockup. Create ONE square educational Japanese daily-life picture-dictionary catalog illustration: a 喪中はがき, Japanese mourning-notice postcard, a flat portrait rectangular single sheet NOT a folded card and NOT an envelope. Semi-realistic catalog rendering, fine off-white paper, very light soft grounding shadow, isolated centered on pure white background, fully visible with generous padding and subtle three-quarter angle. Show its message side, solemn and restrained Japanese contemporary stationery, sparse tasteful pale gray ink drawing of thin autumn grasses along lower left only, no flowers with religious associations. Right side has clear elegant vertical Japanese print exactly『喪中につき』in one column and『年末年始のご挨拶を』and『ご遠慮申し上げます』in two adjacent columns. Only those three exact text columns, arranged in natural Japanese right-to-left vertical order, no personal names, no dates, no extra text. The typography gray not black, smaller than the card with plenty of blank space. No black mourning border, no deceased portrait, no faces, no people, no religious symbols, no funeral altar, no cross, no incense, no festive red or gold, no envelope, no brands, no watermark, no surrounding scene. Recognizable ordinary mailed notification stationery rather than a sympathy greeting card."
+    }
+  ]
+}

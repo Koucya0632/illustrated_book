@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "checkedAt": "2026-10-29T11:47:26.239Z",
+  "source": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-examples-source.json",
+  "scope": {
+    "publishedMainWordsOnly": true,
+    "customWords": false,
+    "savedWords": false,
+    "publicApiExamplesChecked": false
+  },
+  "counts": {
+    "words": 2,
+    "examples": 4,
+    "batches": 1,
+    "reviewedWords": 2,
+    "reviewedExamples": 4,
+    "reviewHints": 0
+  },
+  "mechanicalStatus": "passed",
+  "semanticReviewStatus": "passed",
+  "summary": {
+    "total": 0,
+    "categories": {}
+  },
+  "issues": [],
+  "reviewHints": [],
+  "artifacts": {
+    "outputDir": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-official-example-check",
+    "auditFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-official-example-check/audit.json",
+    "markdownFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-official-example-check/audit.md",
+    "examplesFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-official-example-check/examples.json",
+    "reviewFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-review/scoped-official-example-check/semantic-review.json"
+  }
+}

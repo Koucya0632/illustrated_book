@@ -1,0 +1,362 @@
+{
+  "en": {
+    "I'd like ten New Year's postcards.": [
+      {
+        "t": "I'd "
+      },
+      {
+        "t": "like",
+        "z": "想要",
+        "j": "ほしい",
+        "e": "would like"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "ten",
+        "z": "十張",
+        "j": "十枚",
+        "e": "ten"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "New Year's postcards",
+        "z": "賀年明信片",
+        "j": "年賀はがき",
+        "e": "New Year's postcards"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought extra New Year's postcards because I might make a mistake writing the addresses.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買った",
+        "e": "bought"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "extra",
+        "z": "額外的",
+        "j": "多めの",
+        "e": "extra"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "New Year's postcards",
+        "z": "賀年明信片",
+        "j": "年賀はがき",
+        "e": "New Year's postcards"
+      },
+      {
+        "t": " because I might "
+      },
+      {
+        "t": "make a mistake",
+        "z": "弄錯",
+        "j": "間違える",
+        "e": "make a mistake"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "writing",
+        "z": "填寫",
+        "j": "書く",
+        "e": "writing"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "addresses",
+        "z": "收件地址",
+        "j": "宛名",
+        "e": "addresses"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I received a mourning postcard from a friend.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "received",
+        "z": "收到了",
+        "j": "届いた",
+        "e": "received"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "mourning postcard",
+        "z": "服喪明信片",
+        "j": "喪中はがき",
+        "e": "mourning postcard"
+      },
+      {
+        "t": " from a "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "received",
+        "z": "收到了",
+        "j": "届いた",
+        "e": "received"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "mourning postcard",
+        "z": "服喪明信片",
+        "j": "喪中はがき",
+        "e": "mourning postcard"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "decided",
+        "z": "決定了",
+        "j": "決めた",
+        "e": "decided"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "send",
+        "z": "寄送",
+        "j": "送る",
+        "e": "send"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "winter greeting",
+        "z": "寒中問候卡",
+        "j": "寒中見舞い",
+        "e": "winter greeting"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "instead of",
+        "z": "而非",
+        "j": "の代わりに",
+        "e": "instead of"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "New Year's card",
+        "z": "賀年卡",
+        "j": "年賀状",
+        "e": "New Year's card"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "年賀はがきを十枚ください。": [
+      {
+        "t": "年賀はがき",
+        "z": "賀年明信片",
+        "j": "年賀はがき",
+        "e": "New Year's postcards",
+        "r": "ねんがはがき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "十枚",
+        "z": "十張",
+        "j": "十枚",
+        "e": "ten cards",
+        "r": "じゅうまい"
+      },
+      {
+        "t": "ください"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。": [
+      {
+        "t": "宛名",
+        "z": "收件地址",
+        "j": "宛名",
+        "e": "addresses",
+        "r": "あてな"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書き間違えるかもしれない",
+        "z": "可能寫錯",
+        "j": "書き間違えるかもしれない",
+        "e": "might make a mistake writing",
+        "r": "かきまちがえるかもしれない"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "年賀はがき",
+        "z": "賀年明信片",
+        "j": "年賀はがき",
+        "e": "New Year's postcards",
+        "r": "ねんがはがき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "多めに",
+        "z": "多一些",
+        "j": "多めに",
+        "e": "extra",
+        "r": "おおめに"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買った",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達から喪中はがきが届きました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "喪中はがき",
+        "z": "服喪明信片",
+        "j": "喪中はがき",
+        "e": "mourning postcard",
+        "r": "もちゅうはがき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "届きました",
+        "z": "寄到了",
+        "j": "届いた",
+        "e": "arrived",
+        "r": "とどきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。": [
+      {
+        "t": "喪中はがき",
+        "z": "服喪明信片",
+        "j": "喪中はがき",
+        "e": "mourning postcard",
+        "r": "もちゅうはがき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "届いた",
+        "z": "寄到了",
+        "j": "届いた",
+        "e": "arrived",
+        "r": "とどいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "年賀状",
+        "z": "賀年卡",
+        "j": "年賀状",
+        "e": "New Year's card",
+        "r": "ねんがじょう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "代わりに",
+        "z": "取而代之",
+        "j": "代わりに",
+        "e": "instead",
+        "r": "かわりに"
+      },
+      {
+        "t": "寒中見舞い",
+        "z": "寒中問候卡",
+        "j": "寒中見舞い",
+        "e": "winter greeting",
+        "r": "かんちゅうみまい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "送ることにしました",
+        "z": "決定寄送",
+        "j": "送ることにした",
+        "e": "decided to send",
+        "r": "おくることにしました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

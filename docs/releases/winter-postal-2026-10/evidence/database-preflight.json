@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-10-29T06:03:03.721Z",
+  "transactionReadOnly": true,
+  "databaseHostFingerprint": "15749fae6d13",
+  "logicalTargetFingerprint": "ff5cae26be7059d0d2127c76395c4b1b07d0a8902ecae30dad8ba03558975fe7",
+  "publishedCount": 1241,
+  "collisionRows": [],
+  "japaneseCollisions": [],
+  "categories": [
+    {
+      "id": "postal-services",
+      "name": "Post Office",
+      "name_zh": "郵局",
+      "emoji": "📮",
+      "description": "寄信、包裹、包裝用品與郵務服務",
+      "description_en": "Letters, parcels, packing materials and postal services",
+      "color": "from-red-100 to-orange-100",
+      "image_url": "https://img.nexflow.team/word-images/postal-services-2026-10/category-postal-services-v1-34177d37d1f6.webp"
+    }
+  ],
+  "categoryTranslations": [
+    {
+      "category_id": "postal-services",
+      "language": "ja",
+      "name": "郵便局",
+      "description": "手紙、荷物、梱包用品と郵便サービス"
+    }
+  ],
+  "related": [
+    {
+      "id": "postcard",
+      "word": "postcard",
+      "status": "published",
+      "term": "はがき"
+    }
+  ],
+  "sentenceCollisions": [],
+  "passed": true
+}

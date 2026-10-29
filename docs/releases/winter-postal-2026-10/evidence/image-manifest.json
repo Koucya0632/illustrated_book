@@ -1,0 +1,31 @@
+{
+  "generationMode": "built-in image_gen",
+  "items": [
+    {
+      "wordId": "new-years-postcard",
+      "sourcePath": "images/source/new-years-postcard-v1.png",
+      "sourceSha256": "f5095345cca794af55a9772ded51eb917c39b312461c35a2a9c92b278368818d",
+      "localPath": "images/webp/new-years-postcard-v1-aede1269151f.webp",
+      "mimeType": "image/webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 104724,
+      "sha256": "aede1269151f024d2fb9f62e6e54fb49983010bfc575927e3940236c9410e51d",
+      "storagePath": "word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+      "visualReview": "pending-independent-review"
+    },
+    {
+      "wordId": "mourning-postcard",
+      "sourcePath": "images/source/mourning-postcard-v1.png",
+      "sourceSha256": "1735a001e7a33bb98290a3412eb3265afe2f0d31093f277189ac95b764909711",
+      "localPath": "images/webp/mourning-postcard-v1-375f8f182275.webp",
+      "mimeType": "image/webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 89138,
+      "sha256": "375f8f182275ad36e8f8a2f2c63133f0821b37ad0e83cf251562503a580a4439",
+      "storagePath": "word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+      "visualReview": "pending-independent-review"
+    }
+  ]
+}

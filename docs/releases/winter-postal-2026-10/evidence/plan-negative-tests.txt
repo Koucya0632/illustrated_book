@@ -1,0 +1,15 @@
+✔ reviewed valid plan reaches DB configuration only after local validation (191.621209ms)
+✔ tampered content digest is rejected before database access (186.120916ms)
+✔ existing-category expansion rejects category cover uploads (189.480916ms)
+✔ existing-category expansion rejects a different category (187.722709ms)
+✔ independent semantic pass is required (195.351541ms)
+✔ changed reviewed source hash is rejected even with recomputed plan digest (200.049083ms)
+✔ changed media size is rejected before database access (192.005792ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1384.151208

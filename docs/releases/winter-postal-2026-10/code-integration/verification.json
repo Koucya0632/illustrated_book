@@ -1,0 +1,250 @@
+{
+  "worktree": "/Users/rex/Desktop/tuji/output/worktrees/winter-postal-release",
+  "branch": "codex/winter-postal-release-20261029",
+  "base": "f461266",
+  "scope": "Only the already-published winter-2026-01 integration; no batch2, no public seed word additions, no migration execution",
+  "originalSourcesVerified": [
+    {
+      "label": "content",
+      "file": "data/winter-postal-2026-10.json",
+      "sha256": "554e091d7488fa6d0b66b7670d0b6dbdaaa444922a42c881cdfb8a47c5326aab"
+    },
+    {
+      "label": "spans",
+      "file": "data/example-spans-winter-postal-2026-10.json",
+      "sha256": "5416f06b22ae6c63e005a6c65958702a6cbbafeaf7d318b9549ed8029caf0d4a"
+    },
+    {
+      "label": "imagePrompts",
+      "file": "data/winter-postal-2026-10-image-prompts.json",
+      "sha256": "39881500569ff2e339bf4128ffb19663b85132fbcdd295ef27b3f75fc2e43369"
+    },
+    {
+      "label": "images",
+      "file": "docs/releases/winter-postal-2026-10/evidence/image-manifest.json",
+      "sha256": "8d3fb0d894656f3b98109e31733d0f93761dc956352709c400ece1b51287b434"
+    },
+    {
+      "label": "audioPlan",
+      "file": "docs/releases/winter-postal-2026-10/evidence/audio-plan/manifest.json",
+      "sha256": "e3ff52c085639965563b4c735ad7620a4027b1ec08612ab0e67ee4cb893a76b5"
+    },
+    {
+      "label": "audio",
+      "file": "docs/releases/winter-postal-2026-10/evidence/audio-candidates/generated-manifest.json",
+      "sha256": "3833ca7fe952ad91e876ea1ef35f53a11be1c82f4b804222fe28a0eee7c0c50b"
+    },
+    {
+      "label": "audioVerification",
+      "file": "docs/releases/winter-postal-2026-10/evidence/audio-candidates/verification-report.json",
+      "sha256": "5d8c454b17b6c0a2f0a450c68ac7a2f3aa9937e425887a2cf2932515f6f6dc10"
+    },
+    {
+      "label": "frameVerification",
+      "file": "docs/releases/winter-postal-2026-10/evidence/audio-candidates/mp3-frames-report.json",
+      "sha256": "83d4eea79bcc21959ce739bff8952a066f0d22f094bcabb968a9394612ec561f"
+    },
+    {
+      "label": "semanticReview",
+      "file": "docs/releases/winter-postal-2026-10/evidence/independent-review-content.json",
+      "sha256": "3be1772a38af394a78efd36ecdacdd2819eb1fce334f03231b8eabb12ae287a0"
+    },
+    {
+      "label": "visualReview",
+      "file": "docs/releases/winter-postal-2026-10/evidence/independent-review-images.json",
+      "sha256": "613657d7a61291089b690c70da4a95fd0ba09718baf8493842cab86dbad45594"
+    },
+    {
+      "label": "audioReview",
+      "file": "docs/releases/winter-postal-2026-10/evidence/independent-review-audio.json",
+      "sha256": "6e72c2033f2b6a0acbc95cf333d7ba840964f7c85ef45cc015b34e11f2ccd6f2"
+    },
+    {
+      "label": "publisher",
+      "file": "scripts/publish-winter-postal-2026-10.ts",
+      "sha256": "531adc29a7cdb84a71e69d20d5a19cb2b9f1fc678658c9e2da28af5a60181831"
+    },
+    {
+      "label": "planner",
+      "file": "scripts/prepare-winter-postal-2026-10-publish-plan.mjs",
+      "sha256": "4840fc44d0ab5a7d15a040c5b89bb6530e56c8e4884417a9ea387bcb7044dc2c"
+    },
+    {
+      "label": "preparation",
+      "file": "scripts/prepare-winter-postal-2026-10.mjs",
+      "sha256": "ecfeb4be4d2cd70aef12b68adc216128cd0d142972461a5f7ea10bc4e1bcb8da"
+    },
+    {
+      "label": "canonicalImageIntegrationPatch",
+      "file": "data/winter-postal-2026-10-canonical-images.patch",
+      "sha256": "767555bea0a9d83ecd4350f16e71b4378afaae8114c45077511c20c0d3843c45"
+    }
+  ],
+  "sourceCount": 15,
+  "canonicalRegistry": {
+    "before": 1208,
+    "after": 1210,
+    "added": [
+      "mourning-postcard",
+      "new-years-postcard"
+    ],
+    "preservedPriorValues": true
+  },
+  "runtimeAndTestHashes": {
+    "lib/main-word-winter-postal-2026-10.ts": "f0e9f2e037e0381017b2af723b107fb42cb400d61382c1bd9405e4d86038efe3",
+    "lib/main-word-example-pairs.ts": "3d99a16976b7b83ad72c1ce21db59b2ab363e98e43738c8caf115c8e8b1144e4",
+    "lib/example-span-corpus.ts": "e388c80514626f510e18f3b164726c0e40b8ec33bc46d613f9a59cf01c4c53cd",
+    "lib/image-urls.json": "447fbe9e2e6a7269a2c246344ef876f19ca7b2200ffa4c998eb19b59ca8da78e",
+    "tests/main-word-example-pairs.test.ts": "88f0154e7b554b644609c5846345a355e64642eea5fedc027f6b2886ab26842a",
+    "tests/winter-postal-2026-10-migration.test.ts": "988b98c8fc668658192de64ca71e1787162235e2787cdba1ad77f76790014c21",
+    "tests/winter-postal-2026-10-plan.test.mjs": "dd00c5e66df6257c617158c8e17aedc6940ce92696cb38c9e1461289a7dc0cc7",
+    "tests/winter-postal-2026-10-kudasai-v2.test.mjs": "2581acf5dc87ea81eb5059e8ae140f509411904f28f5152100c5b9026ae2760e",
+    "scripts/restore-winter-postal-2026-10-evidence.mjs": "e8cccc1c9125fd135d02dbb659cb14cfc4c298ef525da6dd38cb8caf5db73ab4"
+  },
+  "checks": {
+    "targetedOffline": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "requiresIgnoredOutput": false,
+      "requiresDatabase": false
+    },
+    "normalMigrationFixtures": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "affectedExampleTests": {
+      "total": 21,
+      "passed": 21,
+      "failed": 0
+    },
+    "fullSuite": {
+      "total": 967,
+      "passed": 956,
+      "skipped": 11,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "standardBuild": "passed; normal npm run build with local lockfile dependencies, no .env, no migrate",
+    "links": "all release handbook local links exist"
+  },
+  "normalMigrationLiveReadonly": {
+    "mode": "SELECT-only; no migration/apply invoked",
+    "publishedCount": 1243,
+    "pairCount": 1243,
+    "missingPairIds": [],
+    "classifications": [
+      {
+        "id": "new-years-postcard",
+        "state": "target"
+      },
+      {
+        "id": "mourning-postcard",
+        "state": "target"
+      }
+    ],
+    "exampleRows": 4,
+    "sentenceGroups": 8,
+    "checks": [
+      {
+        "wordId": "new-years-postcard",
+        "sortOrder": 0,
+        "language": "en",
+        "sentence": "I'd like ten New Year's postcards.",
+        "spanCount": 7,
+        "authoredSpanCount": 7,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "new-years-postcard",
+        "sortOrder": 0,
+        "language": "ja",
+        "sentence": "年賀はがきを十枚ください。",
+        "spanCount": 5,
+        "authoredSpanCount": 5,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "new-years-postcard",
+        "sortOrder": 1,
+        "language": "en",
+        "sentence": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+        "spanCount": 13,
+        "authoredSpanCount": 13,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "new-years-postcard",
+        "sortOrder": 1,
+        "language": "ja",
+        "sentence": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+        "spanCount": 9,
+        "authoredSpanCount": 9,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "mourning-postcard",
+        "sortOrder": 0,
+        "language": "en",
+        "sentence": "I received a mourning postcard from a friend.",
+        "spanCount": 7,
+        "authoredSpanCount": 7,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "mourning-postcard",
+        "sortOrder": 0,
+        "language": "ja",
+        "sentence": "友達から喪中はがきが届きました。",
+        "spanCount": 6,
+        "authoredSpanCount": 6,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "mourning-postcard",
+        "sortOrder": 1,
+        "language": "en",
+        "sentence": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+        "spanCount": 15,
+        "authoredSpanCount": 15,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      },
+      {
+        "wordId": "mourning-postcard",
+        "sortOrder": 1,
+        "language": "ja",
+        "sentence": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+        "spanCount": 11,
+        "authoredSpanCount": 11,
+        "fullTextReadingGlossMatch": true,
+        "needsSync": false
+      }
+    ],
+    "expectedNormalMigrationResult": {
+      "updated": 0,
+      "unchanged": 2,
+      "spanSentencesUpdated": 0
+    },
+    "passed": true
+  },
+  "limitations": [
+    "No production migration executed locally; real function exercised with SELECT-only fixtures plus actual DB data compared SELECT-only.",
+    "Original media bytes remain out of Git; restore --media downloads verified public objects only when explicitly requested.",
+    "Original PNG generation sources are retained in producing workspace, not portable Git evidence."
+  ],
+  "productionActions": {
+    "databaseWrites": 0,
+    "uploads": 0,
+    "commits": 0,
+    "pushes": 0,
+    "deploys": 0
+  }
+}

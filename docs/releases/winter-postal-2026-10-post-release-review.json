@@ -1,0 +1,107 @@
+{
+  "workBatch": "winter-2026-01",
+  "checkedAt": "2026-10-29T11:48:31.017626+00:00",
+  "status": "passed",
+  "scope": "This published batch only: 2 words, 4 examples, 8 English/Japanese sentence span groups, 2 images and 18 audio clips. Not a whole-catalog semantic/visual health claim.",
+  "releasePlanSha256": "4dc7b1fd16da209521dfd360f7359a066c17508cfd64e306d1c3a911533a8dea",
+  "releaseManifestSha256": "54f22c4aa5725d87a3974290bb916d92f2969e87cb0a928dc32f85898eeeab17",
+  "correctionPlanSha256": "745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2",
+  "v2SidecarSha256": "6eb60ce4c9a458e39652a85a7f5928f212ef6a7c7d92149c7e3b32ef53ae57f5",
+  "layers": {
+    "exactDatabaseOriginalPlanPlusV2Overlay": "passed",
+    "correctionFullSnapshotAfterState": "passed",
+    "remoteImages": {
+      "status": "passed",
+      "count": 2,
+      "fullBytesHashMimeDimensions": true,
+      "visualReview": "Original independent per-image judgment reused only because remote hash equals reviewed bytes."
+    },
+    "headwordAudio": {
+      "status": "passed",
+      "count": 6
+    },
+    "exampleAudio": {
+      "status": "passed",
+      "count": 12
+    },
+    "remoteMp3FullFramesHashMime": "passed, all18",
+    "scopedOfficialExampleMechanical": "passed",
+    "scopedOfficialIndividualSemantic": "passed, 2pair/4example judgments",
+    "localCanonicalMapping": "passed, matches published DB image URLs",
+    "productionStaticCanonicalDeploy": "not performed; no commit/push/deploy authorized in this run",
+    "publicHttpAndCache": [
+      {
+        "host": "tuji.nexflow.team",
+        "status": "passed",
+        "probes": 20,
+        "allHttp200": true,
+        "listCacheConvergence": [
+          {
+            "learning": "zh-en",
+            "ordinaryTotal": 1243,
+            "cacheBustingTotal": 1243,
+            "publishedIdSetsEqual": true,
+            "batchProjectionEqual": true
+          },
+          {
+            "learning": "zh-ja",
+            "ordinaryTotal": 1243,
+            "cacheBustingTotal": 1243,
+            "publishedIdSetsEqual": true,
+            "batchProjectionEqual": true
+          }
+        ],
+        "allTargetDetailSpansMatchV2": true,
+        "kudasaiUntappableInOrdinaryAndCacheBusting": true,
+        "evidenceFile": "http-probes-tuji.nexflow.team.json"
+      },
+      {
+        "host": "everyday-english-picture-dictionary.vercel.app",
+        "status": "passed",
+        "probes": 20,
+        "allHttp200": true,
+        "listCacheConvergence": [
+          {
+            "learning": "zh-en",
+            "ordinaryTotal": 1243,
+            "cacheBustingTotal": 1243,
+            "publishedIdSetsEqual": true,
+            "batchProjectionEqual": true
+          },
+          {
+            "learning": "zh-ja",
+            "ordinaryTotal": 1243,
+            "cacheBustingTotal": 1243,
+            "publishedIdSetsEqual": true,
+            "batchProjectionEqual": true
+          }
+        ],
+        "allTargetDetailSpansMatchV2": true,
+        "kudasaiUntappableInOrdinaryAndCacheBusting": true,
+        "evidenceFile": "http-probes-everyday-english-picture-dictionary.vercel.app.json"
+      }
+    ],
+    "iosDecodeShape": "Batch required fields, Japanese reading array and learning-specific headword audio projections passed; no device run.",
+    "subjectiveAudioListening": "not checked"
+  },
+  "officialScopedEvidence": {
+    "audit": "scoped-official-example-check/audit.json",
+    "auditSha256": "9108535817912c363fead7f1ffa612ac6750a08bb2108125f971a58ad7e62e38",
+    "review": "scoped-official-example-check/semantic-review.json",
+    "source": "scoped-examples-source.json",
+    "sourceSha256": "b81ef39dfa250d2e56fd792ad68169e4867f95b90b4e038650a1d5ec21d5b38d"
+  },
+  "issues": [],
+  "historyNotes": [
+    "Initial custom-domain Japanese ordinary-list cache was stale; final ordinary/cache-busting probes on both hosts contain1243 IDs and identical batch projections.",
+    "Initial reviewer JSON object-key-order comparison produced a false readingSegments issue; normalized fields matched, no production reading correction was needed.",
+    "Official boundary checker caught standalone tappableください. Root applied separately reviewed exact3-gloss/1-span correction; final checks use immutable original release plan plus explicit v2 overlay, never pretend DB still equals old tappability."
+  ],
+  "productionWritesByReviewer": 0,
+  "notChecked": [
+    "whole-catalog semantic/visual review",
+    "subjective audio listening",
+    "iOS physical-device playback",
+    "deployment/device-cache refresh"
+  ]
+}

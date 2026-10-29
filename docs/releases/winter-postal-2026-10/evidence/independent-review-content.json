@@ -1,0 +1,606 @@
+{
+  "workBatch": "winter-2026-01",
+  "round": 2,
+  "scope": "2 local candidate words, 4 trilingual examples and all 8 sentence span groups",
+  "status": "pass",
+  "sourceHashes": {
+    "contentSha256": "554e091d7488fa6d0b66b7670d0b6dbdaaa444922a42c881cdfb8a47c5326aab",
+    "spansSha256": "5416f06b22ae6c63e005a6c65958702a6cbbafeaf7d318b9549ed8029caf0d4a"
+  },
+  "words": [
+    {
+      "wordId": "new-years-postcard",
+      "verdict": "pass",
+      "reason": "年賀はがき的日本郵便預付郵資、年賀標示與抽獎號碼，以及ねんがはがき讀音分段皆正確；已修正年賀状為新年のあいさつを記した書状，與繁中新年問候信對齊，並解釋可用普通明信片寄送，兩者概念邊界清楚。",
+      "issues": []
+    },
+    {
+      "wordId": "mourning-postcard",
+      "verdict": "pass",
+      "reason": "喪中はがき讀音もちゅうはがき正確，三語定義皆保留寄件者年賀欠禮的本旨；收到者通常改寒中問候與服喪者仍可收年賀狀的說明，符合日郵切手禮節與官方教材，未教成禁止收賀年狀。",
+      "issues": []
+    }
+  ],
+  "examples": [
+    {
+      "wordId": "new-years-postcard",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "窗口買十張的請求自然，三語保留十張數量；日文ください為簡單A2請求。英日tap各3個，名詞、數量與請求詞的語境gloss正確，ねんがはがき／じゅうまい讀音完整。",
+      "tapCounts": {
+        "en": 3,
+        "ja": 3
+      },
+      "exactSentenceReconstruction": true,
+      "completeThreeLanguageGlosses": true,
+      "completeJapaneseReadings": true
+    },
+    {
+      "wordId": "new-years-postcard",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "擔心寫錯宛名而多買備用卡為真實日常因果情境，かもしれないので構成B1難度；三語保留可能性、因果、多買的行動。英tap6個、日tap5個，不把整句當一塊；活用かきまちがえるかもしれない與かいました完整，宛名依填寫收件資訊語境譯地址可接受。",
+      "tapCounts": {
+        "en": 6,
+        "ja": 5
+      },
+      "exactSentenceReconstruction": true,
+      "completeThreeLanguageGlosses": true,
+      "completeJapaneseReadings": true
+    },
+    {
+      "wordId": "mourning-postcard",
+      "slot": 0,
+      "verdict": "pass",
+      "reason": "收到朋友寄來喪中通知是合理常見情境；日文友達から…届きました為A2，英中保留寄件來源。英日tap各3個，received／届きました的語境對齊，もちゅうはがき與とどきました讀音完整。",
+      "tapCounts": {
+        "en": 3,
+        "ja": 3
+      },
+      "exactSentenceReconstruction": true,
+      "completeThreeLanguageGlosses": true,
+      "completeJapaneseReadings": true
+    },
+    {
+      "wordId": "mourning-postcard",
+      "slot": 1,
+      "verdict": "pass",
+      "reason": "收到通知後決定改寄寒中問候，三語保留因果與instead of替代關係，並非宣稱普遍禁令；届いたので／送ることにしました呈現B1複句。英tap7個、日tap6個，の不點而代わりに作固定表達可接受，完整おくることにしました讀音與決定寄送語境義一致。",
+      "tapCounts": {
+        "en": 7,
+        "ja": 6
+      },
+      "exactSentenceReconstruction": true,
+      "completeThreeLanguageGlosses": true,
+      "completeJapaneseReadings": true
+    }
+  ],
+  "issues": [],
+  "references": [
+    "https://www.post.japanpost.jp/service/send/domestic/mail/postcard/",
+    "https://www.post.japanpost.jp/enjoy/culture/howto/stamp/",
+    "https://data.schoolpost.jp/9716/1475/8269/online_nenga_teacher_tebiki.pdf"
+  ],
+  "reviewedSource": {
+    "content": {
+      "schemaVersion": 1,
+      "series": "winter-postal-2026-10",
+      "workBatch": "winter-2026-01",
+      "state": "local-candidate-awaiting-independent-review",
+      "scopeNote": "Expansion of existing postal-services; two candidates, no category creation/updates, no production writes, no static fallback registration.",
+      "category": {
+        "id": "postal-services",
+        "existing": true,
+        "free": true
+      },
+      "references": [
+        "https://www.post.japanpost.jp/service/send/domestic/mail/postcard/",
+        "https://www.post.japanpost.jp/enjoy/culture/howto/stamp/",
+        "https://data.schoolpost.jp/9716/1475/8269/online_nenga_teacher_tebiki.pdf"
+      ],
+      "editorialDecisions": [
+        {
+          "candidate": "年賀状",
+          "decision": "not-a-separate-entry",
+          "reason": "年賀状 describes the greeting sent; 年賀はがき is the specific postage-paid card used at the postal counter. Retain the required 年賀はがき, explain 年賀状 in definitions, and avoid visually overlapping entries."
+        },
+        {
+          "candidate": "喪中はがき",
+          "decision": "qualify-recipient-guidance",
+          "reason": "Japan Post teaches that people in mourning may receive New Year cards. Retain the common recipient practice of refraining and sending a winter greeting, without teaching a prohibition."
+        }
+      ],
+      "entries": [
+        {
+          "id": "new-years-postcard",
+          "word": "New Year's postcard",
+          "chinese": "賀年明信片",
+          "chineseDefinition": "日本郵便發行、供新年問候使用的郵資已付明信片，帶有「年賀」標示及抽獎號碼。年賀状指新年問候信，不限使用這種明信片。",
+          "category": "postal-services",
+          "partOfSpeech": "noun",
+          "pronunciation": "/ˌnuː jɪrz ˈpoʊst.kɑːrd/",
+          "cefrLevel": "B1",
+          "definitions": [
+            {
+              "language": "zh",
+              "definition": "賀年明信片",
+              "sortOrder": 0
+            },
+            {
+              "language": "en",
+              "definition": "A postage-paid postcard issued by Japan Post for New Year greetings, marked for New Year delivery and carrying a lottery number. A New Year's greeting can also be sent on other stationery.",
+              "sortOrder": 0
+            },
+            {
+              "language": "ja",
+              "definition": "日本郵便が年始のあいさつ用に発行する、年賀の表示とお年玉くじの番号がある料金込みのはがき。年賀状は新年のあいさつを記した書状で、通常はがきなどでも送れる。",
+              "sortOrder": 0
+            }
+          ],
+          "examples": [
+            {
+              "en": "I'd like ten New Year's postcards.",
+              "ja": "年賀はがきを十枚ください。",
+              "zh": "我想買十張賀年明信片。",
+              "cefrLevel": "A2"
+            },
+            {
+              "en": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+              "ja": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+              "zh": "因為可能寫錯收件地址，我多買了幾張賀年明信片。",
+              "cefrLevel": "B1"
+            }
+          ],
+          "relatedWords": [
+            "postcard"
+          ],
+          "ja": "年賀はがき",
+          "jaReading": "ねんがはがき",
+          "jaReadingSegments": [
+            {
+              "text": "年賀",
+              "ruby": "ねんが"
+            },
+            {
+              "text": "はがき",
+              "ruby": null
+            }
+          ]
+        },
+        {
+          "id": "mourning-postcard",
+          "word": "mourning postcard",
+          "chinese": "服喪明信片",
+          "chineseDefinition": "因近親去世而告知對方將不寄新年賀卡的明信片。收到後通常避免寄年賀状給對方，改以寒中問候致意；這不表示服喪者不能收賀年卡。",
+          "category": "postal-services",
+          "partOfSpeech": "noun",
+          "pronunciation": "/ˈmɔːr.nɪŋ ˌpoʊst.kɑːrd/",
+          "cefrLevel": "B1",
+          "definitions": [
+            {
+              "language": "zh",
+              "definition": "服喪明信片",
+              "sortOrder": 0
+            },
+            {
+              "language": "en",
+              "definition": "A postcard explaining that the sender will refrain from New Year greetings because of a bereavement. Recipients commonly send a winter greeting instead; receiving a New Year card while in mourning is not itself improper.",
+              "sortOrder": 0
+            },
+            {
+              "language": "ja",
+              "definition": "近親者の不幸により、新年のあいさつを控えることを知らせるはがき。受け取った側は年賀状を控え、寒中見舞いを送ることが多いが、喪中の人が年賀状を受け取ること自体はマナー違反ではない。",
+              "sortOrder": 0
+            }
+          ],
+          "examples": [
+            {
+              "en": "I received a mourning postcard from a friend.",
+              "ja": "友達から喪中はがきが届きました。",
+              "zh": "我收到了朋友寄來的服喪明信片。",
+              "cefrLevel": "A2"
+            },
+            {
+              "en": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+              "ja": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+              "zh": "我收到了服喪明信片，所以決定改寄寒中問候卡，而不寄賀年卡。",
+              "cefrLevel": "B1"
+            }
+          ],
+          "relatedWords": [
+            "postcard"
+          ],
+          "ja": "喪中はがき",
+          "jaReading": "もちゅうはがき",
+          "jaReadingSegments": [
+            {
+              "text": "喪中",
+              "ruby": "もちゅう"
+            },
+            {
+              "text": "はがき",
+              "ruby": null
+            }
+          ]
+        }
+      ]
+    },
+    "spans": {
+      "en": {
+        "I'd like ten New Year's postcards.": [
+          {
+            "t": "I'd "
+          },
+          {
+            "t": "like",
+            "z": "想要",
+            "j": "ほしい",
+            "e": "would like"
+          },
+          {
+            "t": " "
+          },
+          {
+            "t": "ten",
+            "z": "十張",
+            "j": "十枚",
+            "e": "ten"
+          },
+          {
+            "t": " "
+          },
+          {
+            "t": "New Year's postcards",
+            "z": "賀年明信片",
+            "j": "年賀はがき",
+            "e": "New Year's postcards"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "I bought extra New Year's postcards because I might make a mistake writing the addresses.": [
+          {
+            "t": "I "
+          },
+          {
+            "t": "bought",
+            "z": "買了",
+            "j": "買った",
+            "e": "bought"
+          },
+          {
+            "t": " "
+          },
+          {
+            "t": "extra",
+            "z": "額外的",
+            "j": "多めの",
+            "e": "extra"
+          },
+          {
+            "t": " "
+          },
+          {
+            "t": "New Year's postcards",
+            "z": "賀年明信片",
+            "j": "年賀はがき",
+            "e": "New Year's postcards"
+          },
+          {
+            "t": " because I might "
+          },
+          {
+            "t": "make a mistake",
+            "z": "弄錯",
+            "j": "間違える",
+            "e": "make a mistake"
+          },
+          {
+            "t": " "
+          },
+          {
+            "t": "writing",
+            "z": "填寫",
+            "j": "書く",
+            "e": "writing"
+          },
+          {
+            "t": " the "
+          },
+          {
+            "t": "addresses",
+            "z": "收件地址",
+            "j": "宛名",
+            "e": "addresses"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "I received a mourning postcard from a friend.": [
+          {
+            "t": "I "
+          },
+          {
+            "t": "received",
+            "z": "收到了",
+            "j": "届いた",
+            "e": "received"
+          },
+          {
+            "t": " a "
+          },
+          {
+            "t": "mourning postcard",
+            "z": "服喪明信片",
+            "j": "喪中はがき",
+            "e": "mourning postcard"
+          },
+          {
+            "t": " from a "
+          },
+          {
+            "t": "friend",
+            "z": "朋友",
+            "j": "友達",
+            "e": "friend"
+          },
+          {
+            "t": "."
+          }
+        ],
+        "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.": [
+          {
+            "t": "I "
+          },
+          {
+            "t": "received",
+            "z": "收到了",
+            "j": "届いた",
+            "e": "received"
+          },
+          {
+            "t": " a "
+          },
+          {
+            "t": "mourning postcard",
+            "z": "服喪明信片",
+            "j": "喪中はがき",
+            "e": "mourning postcard"
+          },
+          {
+            "t": ", so I "
+          },
+          {
+            "t": "decided",
+            "z": "決定了",
+            "j": "決めた",
+            "e": "decided"
+          },
+          {
+            "t": " to "
+          },
+          {
+            "t": "send",
+            "z": "寄送",
+            "j": "送る",
+            "e": "send"
+          },
+          {
+            "t": " a "
+          },
+          {
+            "t": "winter greeting",
+            "z": "寒中問候卡",
+            "j": "寒中見舞い",
+            "e": "winter greeting"
+          },
+          {
+            "t": " "
+          },
+          {
+            "t": "instead of",
+            "z": "而非",
+            "j": "の代わりに",
+            "e": "instead of"
+          },
+          {
+            "t": " a "
+          },
+          {
+            "t": "New Year's card",
+            "z": "賀年卡",
+            "j": "年賀状",
+            "e": "New Year's card"
+          },
+          {
+            "t": "."
+          }
+        ]
+      },
+      "ja": {
+        "年賀はがきを十枚ください。": [
+          {
+            "t": "年賀はがき",
+            "z": "賀年明信片",
+            "j": "年賀はがき",
+            "e": "New Year's postcards",
+            "r": "ねんがはがき"
+          },
+          {
+            "t": "を"
+          },
+          {
+            "t": "十枚",
+            "z": "十張",
+            "j": "十枚",
+            "e": "ten cards",
+            "r": "じゅうまい"
+          },
+          {
+            "t": "ください",
+            "z": "請給我",
+            "j": "ください",
+            "e": "please give me",
+            "r": "ください"
+          },
+          {
+            "t": "。"
+          }
+        ],
+        "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。": [
+          {
+            "t": "宛名",
+            "z": "收件地址",
+            "j": "宛名",
+            "e": "addresses",
+            "r": "あてな"
+          },
+          {
+            "t": "を"
+          },
+          {
+            "t": "書き間違えるかもしれない",
+            "z": "可能寫錯",
+            "j": "書き間違えるかもしれない",
+            "e": "might make a mistake writing",
+            "r": "かきまちがえるかもしれない"
+          },
+          {
+            "t": "ので、"
+          },
+          {
+            "t": "年賀はがき",
+            "z": "賀年明信片",
+            "j": "年賀はがき",
+            "e": "New Year's postcards",
+            "r": "ねんがはがき"
+          },
+          {
+            "t": "を"
+          },
+          {
+            "t": "多めに",
+            "z": "多一些",
+            "j": "多めに",
+            "e": "extra",
+            "r": "おおめに"
+          },
+          {
+            "t": "買いました",
+            "z": "買了",
+            "j": "買った",
+            "e": "bought",
+            "r": "かいました"
+          },
+          {
+            "t": "。"
+          }
+        ],
+        "友達から喪中はがきが届きました。": [
+          {
+            "t": "友達",
+            "z": "朋友",
+            "j": "友達",
+            "e": "friend",
+            "r": "ともだち"
+          },
+          {
+            "t": "から"
+          },
+          {
+            "t": "喪中はがき",
+            "z": "服喪明信片",
+            "j": "喪中はがき",
+            "e": "mourning postcard",
+            "r": "もちゅうはがき"
+          },
+          {
+            "t": "が"
+          },
+          {
+            "t": "届きました",
+            "z": "寄到了",
+            "j": "届いた",
+            "e": "arrived",
+            "r": "とどきました"
+          },
+          {
+            "t": "。"
+          }
+        ],
+        "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。": [
+          {
+            "t": "喪中はがき",
+            "z": "服喪明信片",
+            "j": "喪中はがき",
+            "e": "mourning postcard",
+            "r": "もちゅうはがき"
+          },
+          {
+            "t": "が"
+          },
+          {
+            "t": "届いた",
+            "z": "寄到了",
+            "j": "届いた",
+            "e": "arrived",
+            "r": "とどいた"
+          },
+          {
+            "t": "ので、"
+          },
+          {
+            "t": "年賀状",
+            "z": "賀年卡",
+            "j": "年賀状",
+            "e": "New Year's card",
+            "r": "ねんがじょう"
+          },
+          {
+            "t": "の"
+          },
+          {
+            "t": "代わりに",
+            "z": "取而代之",
+            "j": "代わりに",
+            "e": "instead",
+            "r": "かわりに"
+          },
+          {
+            "t": "寒中見舞い",
+            "z": "寒中問候卡",
+            "j": "寒中見舞い",
+            "e": "winter greeting",
+            "r": "かんちゅうみまい"
+          },
+          {
+            "t": "を"
+          },
+          {
+            "t": "送ることにしました",
+            "z": "決定寄送",
+            "j": "送ることにした",
+            "e": "decided to send",
+            "r": "おくることにしました"
+          },
+          {
+            "t": "。"
+          }
+        ]
+      }
+    }
+  },
+  "notChecked": [
+    "production preflight execution (producer evidence read separately)",
+    "production/API/cache state"
+  ],
+  "resolvedIssues": [
+    {
+      "id": "definition-concept-boundary",
+      "resolvedInRound": 2,
+      "reason": "年賀状已改為新年のあいさつを記した書状，與繁中問候信對齊。"
+    }
+  ]
+}

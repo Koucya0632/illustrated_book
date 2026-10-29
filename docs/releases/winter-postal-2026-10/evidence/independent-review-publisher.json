@@ -1,0 +1,338 @@
+{
+  "workBatch": "winter-2026-01",
+  "scope": "Independent static review of guarded publisher and sealed local plan, plus two real read-only default invocations; no apply/rollback executed",
+  "status": "pass",
+  "planFile": "publish-plan-4dc7b1fd16da209521dfd360f7359a066c17508cfd64e306d1c3a911533a8dea.json",
+  "planSha256": "4dc7b1fd16da209521dfd360f7359a066c17508cfd64e306d1c3a911533a8dea",
+  "planDigest": "c1bf605ad90121f1c7c348bc865ef2f49dd165b8110aa4a1198bf8ed1bdde2f1",
+  "publisher": {
+    "file": "scripts/publish-winter-postal-2026-10.ts",
+    "sha256": "531adc29a7cdb84a71e69d20d5a19cb2b9f1fc678658c9e2da28af5a60181831"
+  },
+  "planner": {
+    "file": "scripts/prepare-winter-postal-2026-10-publish-plan.mjs",
+    "sha256": "4840fc44d0ab5a7d15a040c5b89bb6530e56c8e4884417a9ea387bcb7044dc2c"
+  },
+  "summary": {
+    "words": 2,
+    "definitions": 6,
+    "examples": 4,
+    "spanSentences": 8,
+    "wordImages": 2,
+    "categoryImages": 0,
+    "audioClips": 18,
+    "storageObjects": 20
+  },
+  "sourceVerification": [
+    {
+      "key": "content",
+      "file": "data/winter-postal-2026-10.json",
+      "sha256": "554e091d7488fa6d0b66b7670d0b6dbdaaa444922a42c881cdfb8a47c5326aab",
+      "verified": true
+    },
+    {
+      "key": "spans",
+      "file": "data/example-spans-winter-postal-2026-10.json",
+      "sha256": "5416f06b22ae6c63e005a6c65958702a6cbbafeaf7d318b9549ed8029caf0d4a",
+      "verified": true
+    },
+    {
+      "key": "imagePrompts",
+      "file": "data/winter-postal-2026-10-image-prompts.json",
+      "sha256": "39881500569ff2e339bf4128ffb19663b85132fbcdd295ef27b3f75fc2e43369",
+      "verified": true
+    },
+    {
+      "key": "images",
+      "file": "output/winter-postal-2026-10/image-manifest.json",
+      "sha256": "8d3fb0d894656f3b98109e31733d0f93761dc956352709c400ece1b51287b434",
+      "verified": true
+    },
+    {
+      "key": "audioPlan",
+      "file": "output/winter-postal-2026-10/audio-plan/manifest.json",
+      "sha256": "e3ff52c085639965563b4c735ad7620a4027b1ec08612ab0e67ee4cb893a76b5",
+      "verified": true
+    },
+    {
+      "key": "audio",
+      "file": "output/winter-postal-2026-10/audio-candidates/generated-manifest.json",
+      "sha256": "3833ca7fe952ad91e876ea1ef35f53a11be1c82f4b804222fe28a0eee7c0c50b",
+      "verified": true
+    },
+    {
+      "key": "audioVerification",
+      "file": "output/winter-postal-2026-10/audio-candidates/verification-report.json",
+      "sha256": "5d8c454b17b6c0a2f0a450c68ac7a2f3aa9937e425887a2cf2932515f6f6dc10",
+      "verified": true
+    },
+    {
+      "key": "frameVerification",
+      "file": "output/winter-postal-2026-10/audio-candidates/mp3-frames-report.json",
+      "sha256": "83d4eea79bcc21959ce739bff8952a066f0d22f094bcabb968a9394612ec561f",
+      "verified": true
+    },
+    {
+      "key": "semanticReview",
+      "file": "output/winter-postal-2026-10/independent-review-content.json",
+      "sha256": "3be1772a38af394a78efd36ecdacdd2819eb1fce334f03231b8eabb12ae287a0",
+      "verified": true
+    },
+    {
+      "key": "visualReview",
+      "file": "output/winter-postal-2026-10/independent-review-images.json",
+      "sha256": "613657d7a61291089b690c70da4a95fd0ba09718baf8493842cab86dbad45594",
+      "verified": true
+    },
+    {
+      "key": "audioReview",
+      "file": "output/winter-postal-2026-10/independent-review-audio.json",
+      "sha256": "6e72c2033f2b6a0acbc95cf333d7ba840964f7c85ef45cc015b34e11f2ccd6f2",
+      "verified": true
+    },
+    {
+      "key": "publisher",
+      "file": "scripts/publish-winter-postal-2026-10.ts",
+      "sha256": "531adc29a7cdb84a71e69d20d5a19cb2b9f1fc678658c9e2da28af5a60181831",
+      "verified": true
+    },
+    {
+      "key": "planner",
+      "file": "scripts/prepare-winter-postal-2026-10-publish-plan.mjs",
+      "sha256": "4840fc44d0ab5a7d15a040c5b89bb6530e56c8e4884417a9ea387bcb7044dc2c",
+      "verified": true
+    },
+    {
+      "key": "preparation",
+      "file": "scripts/prepare-winter-postal-2026-10.mjs",
+      "sha256": "ecfeb4be4d2cd70aef12b68adc216128cd0d142972461a5f7ea10bc4e1bcb8da",
+      "verified": true
+    },
+    {
+      "key": "canonicalImageIntegrationPatch",
+      "file": "data/winter-postal-2026-10-canonical-images.patch",
+      "sha256": "767555bea0a9d83ecd4350f16e71b4378afaae8114c45077511c20c0d3843c45",
+      "verified": true
+    }
+  ],
+  "mediaVerification": [
+    {
+      "key": "word-images|winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+      "sha256": "aede1269151f024d2fb9f62e6e54fb49983010bfc575927e3940236c9410e51d",
+      "bytes": 104724,
+      "verified": true
+    },
+    {
+      "key": "word-audio|new-years-postcard/en-US/d32616bef2f1451d1abd.mp3",
+      "sha256": "d32616bef2f1451d1abd221b3629324e8a82aed135cc0188321b153c55cae9aa",
+      "bytes": 7296,
+      "verified": true
+    },
+    {
+      "key": "word-audio|new-years-postcard/en-GB/7eb4fb773347315ffcdc.mp3",
+      "sha256": "7eb4fb773347315ffcdceb15fd70bf3c9e319b46a70063e6bb5d759c6f8fa95c",
+      "bytes": 5472,
+      "verified": true
+    },
+    {
+      "key": "word-audio|new-years-postcard/ja-JP/8082a1ed707d7dd3417a.mp3",
+      "sha256": "8082a1ed707d7dd3417ab7c682d55ad560fc8f5a7c4fa06e6aab13d06f6824b8",
+      "bytes": 4512,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-US/5f1c53f64a8702a671a2.mp3",
+      "sha256": "5f1c53f64a8702a671a218c61fab5633a2a9b68b4d28496388bb582261817c2f",
+      "bytes": 8736,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-GB/fa5e92e32280934fe64c.mp3",
+      "sha256": "fa5e92e32280934fe64c960c68b2e9861229a84924180a60c6e693ea38156241",
+      "bytes": 9312,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/ja-JP/8b7c7ff90ad7e037910d.mp3",
+      "sha256": "8b7c7ff90ad7e037910d90b045d946c4f3325dad67532f80aa1ab4968f16dd18",
+      "bytes": 9024,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-US/d6853065408ee9010d1f.mp3",
+      "sha256": "d6853065408ee9010d1f969a170b79bbecec5c322e4fad053025e06e1f9a0ebf",
+      "bytes": 19296,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-GB/e6ae23b4c6336dae80a3.mp3",
+      "sha256": "e6ae23b4c6336dae80a3bbd21abc69671557457b7ed2044d91a961d2485aa268",
+      "bytes": 18144,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/ja-JP/f526360c0dbcea92b15c.mp3",
+      "sha256": "f526360c0dbcea92b15c4abaa7f00a1e321d1320c434feefbf18915434b7c9be",
+      "bytes": 20064,
+      "verified": true
+    },
+    {
+      "key": "word-images|winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
+      "sha256": "375f8f182275ad36e8f8a2f2c63133f0821b37ad0e83cf251562503a580a4439",
+      "bytes": 89138,
+      "verified": true
+    },
+    {
+      "key": "word-audio|mourning-postcard/en-US/ec1d84e6121ccbe99071.mp3",
+      "sha256": "ec1d84e6121ccbe990715812a55b5e2d1df490eb5b645ab1c02ca55ca562befd",
+      "bytes": 7872,
+      "verified": true
+    },
+    {
+      "key": "word-audio|mourning-postcard/en-GB/70383ea1fb6636da0b0d.mp3",
+      "sha256": "70383ea1fb6636da0b0de00d9d081fdc1af24eae8bee733b08caa19f423398df",
+      "bytes": 4992,
+      "verified": true
+    },
+    {
+      "key": "word-audio|mourning-postcard/ja-JP/d8f17204a658f06a47d8.mp3",
+      "sha256": "d8f17204a658f06a47d850c2ed962a2bad30d228128c0751cea28bc8b73ef4a7",
+      "bytes": 5184,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-US/00cca33f3a3ab640c6d1.mp3",
+      "sha256": "00cca33f3a3ab640c6d1e78d6d89ef72e38b206b1f48ce4496c2cdeba8de7677",
+      "bytes": 9024,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-GB/5d7a61ad24a43f73386e.mp3",
+      "sha256": "5d7a61ad24a43f73386ec5fc98e4bef126066ccbc9339c8997cf5aa22f47aa03",
+      "bytes": 8832,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/ja-JP/8628d20b425f9b3a65d8.mp3",
+      "sha256": "8628d20b425f9b3a65d8e55f030f0933d0a85d714a306a2e5302106ba0471192",
+      "bytes": 10752,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-US/caee769a59cad9a5e1c6.mp3",
+      "sha256": "caee769a59cad9a5e1c616e8da8503b04d600fc8e3cbd7aeef920fd0e828587e",
+      "bytes": 20256,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/en-GB/1cbc78f51a6bb1c113ee.mp3",
+      "sha256": "1cbc78f51a6bb1c113ee1d80477c51e65780f16bccd79cb5a033e1a5f175d2c1",
+      "bytes": 24384,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/{exampleId}/ja-JP/230676fc7dd8371c1a8b.mp3",
+      "sha256": "230676fc7dd8371c1a8be83edff90626ffed62afd026ed83f0be23b2e769fc2c",
+      "bytes": 23424,
+      "verified": true
+    }
+  ],
+  "checks": [
+    {
+      "layer": "existing-category-scope",
+      "verdict": "pass",
+      "reason": "No category/translation INSERT/UPDATE/DELETE; no category cover storage object. Existing category and Japanese translation snapshots compared in preflight and stored-content assertions."
+    },
+    {
+      "layer": "default-read-only",
+      "verdict": "pass",
+      "reason": "Actual default invocation returned exit0 with candidateRows=0 and no collisions. Main returns before manifest creation/nextval/PUT unless APPLY is set; database preflight uses sql.begin(read only)."
+    },
+    {
+      "layer": "create-only-capability",
+      "verdict": "pass",
+      "reason": "Actual S3 HEAD/LIST-only probe passed. Separate default invocation with process-local S3 credential variables cleared returned exit1, databaseWriteReady=true but storageCreateOnlyReady=false/writeReady=false. No apply invocation used. Dedicated S3 PUT requires IfNoneMatch=* and refuses non-create-only options."
+    },
+    {
+      "layer": "id-mapping-and-recovery",
+      "verdict": "pass",
+      "reason": "Sequence IDs occur only after apply confirmations; owner mapping is atomically journaled before constructing example paths. Resumption binds original plan, DB, backend, physical target and resolved IDs; no manifest/IDs reserved during reviewed dry-runs."
+    },
+    {
+      "layer": "media-and-transaction",
+      "verdict": "pass",
+      "reason": "20 distinct object keys match independently reviewed bytes. Storage upload intents/checkpoints, full remote MIME/size/hash checks and final all-object pass precede single insertDraftContent+publishDraft transaction; no committed draft child rows in this path. Reviewed statically; not applied."
+    },
+    {
+      "layer": "related-words",
+      "verdict": "pass",
+      "reason": "Each entry has postcard relation; insertDraftContent INSERTs word_relations after word insertion. assertStoredContentMatchesPlan compares actual source/target/type/note row sets in both draft/published phases.",
+      "evidenceLines": [
+        486,
+        718
+      ]
+    },
+    {
+      "layer": "rollback",
+      "verdict": "pass",
+      "reason": "Rollback verifies applied plan/content/ID identities, outside relations/spans/sentence reuse and user references; deletes only batch words and matching spans, retains existing category/translations and content-addressed Storage objects. Reviewed statically; no rollback executed."
+    },
+    {
+      "layer": "post-publication-canonical-integration",
+      "verdict": "pass",
+      "reason": "Sealed plan now binds independently reviewed deferred patch SHA and explicit order: apply only after DB publication+verification, recheck preservation, separately authorize commit/push/deploy, and do not claim all image sources converge until canonical mapping is synchronized. Current registry remains byte-identical to pre-batch snapshot."
+    }
+  ],
+  "issues": [],
+  "resolvedReviewIssues": [
+    {
+      "id": "journal-before-path-resolution",
+      "resolution": "Mapping now persisted immediately after reserveExampleIds and before buildStorageObjects."
+    },
+    {
+      "id": "create-only-transport-before-sequence",
+      "resolution": "Dedicated R2 S3 client and read-only capability probe run before IDs/manifests; unsupported/unusable transport rejects apply before reservation."
+    }
+  ],
+  "observedDryRuns": [
+    {
+      "mode": "default",
+      "exitCode": 0,
+      "databaseWriteReady": true,
+      "storageCreateOnlyReady": true,
+      "writeReady": true,
+      "candidateRows": 0,
+      "storageObjects": 20
+    },
+    {
+      "mode": "default-with-process-local-s3-credentials-cleared",
+      "exitCode": 1,
+      "databaseWriteReady": true,
+      "storageCreateOnlyReady": false,
+      "writeReady": false,
+      "candidateRows": 0
+    }
+  ],
+  "notChecked": [
+    "actual production PUT/write permission (no object write performed)",
+    "apply transaction or rollback integration execution",
+    "forced interruption after real uploads/DB commit",
+    "remote media and ordinary/cache-busting post-release API convergence",
+    "subjective audio listening"
+  ],
+  "planHistory": [
+    {
+      "planSha256": "c63e75c71cee3b16ece9f961c18a38fa1577fe3aaec1906f2b7da102dd2f1d38",
+      "planFile": "publish-plan-c63e75c71cee3b16ece9f961c18a38fa1577fe3aaec1906f2b7da102dd2f1d38.json",
+      "reason": "Superseded only to bind deferred canonical-map integration patch; existing publisher, content, span and media entries unchanged."
+    }
+  ],
+  "incrementalFinalReview": {
+    "previousPlannerSha256": "9da8994ce4642123cf80762637ece0aaacaca4e77ab2c10746e71252313d228f",
+    "currentPlannerSha256": "4840fc44d0ab5a7d15a040c5b89bb6530e56c8e4884417a9ea387bcb7044dc2c",
+    "unchangedPublisher": true,
+    "unchangedEntriesAndMedia": true,
+    "sourceCount": 15,
+    "integrationReviewFile": "output/winter-postal-2026-10/independent-review-integration.json"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "SELECT-only",
+  "publishedCount": 1243,
+  "originMainPairCount": 1241,
+  "missingPairIds": [
+    "mourning-postcard",
+    "new-years-postcard"
+  ]
+}

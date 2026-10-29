@@ -1,0 +1,106 @@
+{
+  "mode": "SELECT-only; no migration/apply invoked",
+  "publishedCount": 1243,
+  "pairCount": 1243,
+  "missingPairIds": [],
+  "classifications": [
+    {
+      "id": "new-years-postcard",
+      "state": "target"
+    },
+    {
+      "id": "mourning-postcard",
+      "state": "target"
+    }
+  ],
+  "exampleRows": 4,
+  "sentenceGroups": 8,
+  "checks": [
+    {
+      "wordId": "new-years-postcard",
+      "sortOrder": 0,
+      "language": "en",
+      "sentence": "I'd like ten New Year's postcards.",
+      "spanCount": 7,
+      "authoredSpanCount": 7,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "new-years-postcard",
+      "sortOrder": 0,
+      "language": "ja",
+      "sentence": "年賀はがきを十枚ください。",
+      "spanCount": 5,
+      "authoredSpanCount": 5,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "new-years-postcard",
+      "sortOrder": 1,
+      "language": "en",
+      "sentence": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+      "spanCount": 13,
+      "authoredSpanCount": 13,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "new-years-postcard",
+      "sortOrder": 1,
+      "language": "ja",
+      "sentence": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+      "spanCount": 9,
+      "authoredSpanCount": 9,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "mourning-postcard",
+      "sortOrder": 0,
+      "language": "en",
+      "sentence": "I received a mourning postcard from a friend.",
+      "spanCount": 7,
+      "authoredSpanCount": 7,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "mourning-postcard",
+      "sortOrder": 0,
+      "language": "ja",
+      "sentence": "友達から喪中はがきが届きました。",
+      "spanCount": 6,
+      "authoredSpanCount": 6,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "mourning-postcard",
+      "sortOrder": 1,
+      "language": "en",
+      "sentence": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+      "spanCount": 15,
+      "authoredSpanCount": 15,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    },
+    {
+      "wordId": "mourning-postcard",
+      "sortOrder": 1,
+      "language": "ja",
+      "sentence": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+      "spanCount": 11,
+      "authoredSpanCount": 11,
+      "fullTextReadingGlossMatch": true,
+      "needsSync": false
+    }
+  ],
+  "expectedNormalMigrationResult": {
+    "updated": 0,
+    "unchanged": 2,
+    "spanSentencesUpdated": 0
+  },
+  "passed": true
+}

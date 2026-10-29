@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-29T11:46:31.443539+00:00",
+  "source": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-example-contract-final/examples.json",
+  "parentSnapshotSha256": "99866c3a213032c8c1945e5434baf322c1ad4e02ef47ef4d7221b40bbc745983",
+  "scope": "winter-2026-01 only; 2 words / 4 current published examples after v2 correction",
+  "words": [
+    {
+      "id": "mourning-postcard",
+      "enTerm": "mourning postcard",
+      "jaTerm": "喪中はがき",
+      "zhDefinition": "服喪明信片",
+      "examples": [
+        {
+          "id": "3709",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "I received a mourning postcard from a friend.",
+          "ja": "友達から喪中はがきが届きました。",
+          "zh": "我收到了朋友寄來的服喪明信片。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I received a mourning postcard from a friend.",
+              "texts": [
+                "I ",
+                "received",
+                " a ",
+                "mourning postcard",
+                " from a ",
+                "friend",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 6,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "友達から喪中はがきが届きました。",
+              "texts": [
+                "友達",
+                "から",
+                "喪中はがき",
+                "が",
+                "届きました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "ともだち",
+                null,
+                "もちゅうはがき",
+                null,
+                "とどきました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          },
+          "sourceIndex": 0
+        },
+        {
+          "id": "3710",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+          "ja": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+          "zh": "我收到了服喪明信片，所以決定改寄寒中問候卡，而不寄賀年卡。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 15,
+              "glossedSpanCount": 7,
+              "partialGlossCount": 0,
+              "missingReadingCount": 7,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card.",
+              "texts": [
+                "I ",
+                "received",
+                " a ",
+                "mourning postcard",
+                ", so I ",
+                "decided",
+                " to ",
+                "send",
+                " a ",
+                "winter greeting",
+                " ",
+                "instead of",
+                " a ",
+                "New Year's card",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 11,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 6,
+              "reconstructed": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。",
+              "texts": [
+                "喪中はがき",
+                "が",
+                "届いた",
+                "ので、",
+                "年賀状",
+                "の",
+                "代わりに",
+                "寒中見舞い",
+                "を",
+                "送ることにしました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "もちゅうはがき",
+                null,
+                "とどいた",
+                null,
+                "ねんがじょう",
+                null,
+                "かわりに",
+                "かんちゅうみまい",
+                null,
+                "おくることにしました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          },
+          "sourceIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "new-years-postcard",
+      "enTerm": "New Year's postcard",
+      "jaTerm": "年賀はがき",
+      "zhDefinition": "賀年明信片",
+      "examples": [
+        {
+          "id": "3707",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "I'd like ten New Year's postcards.",
+          "ja": "年賀はがきを十枚ください。",
+          "zh": "我想買十張賀年明信片。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I'd like ten New Year's postcards.",
+              "texts": [
+                "I'd ",
+                "like",
+                " ",
+                "ten",
+                " ",
+                "New Year's postcards",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 5,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 2,
+              "reconstructed": "年賀はがきを十枚ください。",
+              "texts": [
+                "年賀はがき",
+                "を",
+                "十枚",
+                "ください",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                false
+              ],
+              "readings": [
+                "ねんがはがき",
+                null,
+                "じゅうまい",
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          },
+          "sourceIndex": 0
+        },
+        {
+          "id": "3708",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+          "ja": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+          "zh": "因為可能寫錯收件地址，我多買了幾張賀年明信片。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 13,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 6,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I bought extra New Year's postcards because I might make a mistake writing the addresses.",
+              "texts": [
+                "I ",
+                "bought",
+                " ",
+                "extra",
+                " ",
+                "New Year's postcards",
+                " because I might ",
+                "make a mistake",
+                " ",
+                "writing",
+                " the ",
+                "addresses",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 9,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 5,
+              "reconstructed": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。",
+              "texts": [
+                "宛名",
+                "を",
+                "書き間違えるかもしれない",
+                "ので、",
+                "年賀はがき",
+                "を",
+                "多めに",
+                "買いました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "あてな",
+                null,
+                "かきまちがえるかもしれない",
+                null,
+                "ねんがはがき",
+                null,
+                "おおめに",
+                "かいました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          },
+          "sourceIndex": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "passed": true,
+  "clips": 18,
+  "results": [
+    {
+      "key": "headword|new-years-postcard|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 76,
+      "parsedBytes": 7296,
+      "trailingBytes": 0,
+      "bytes": 7296
+    },
+    {
+      "key": "headword|new-years-postcard|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 57,
+      "parsedBytes": 5472,
+      "trailingBytes": 0,
+      "bytes": 5472
+    },
+    {
+      "key": "headword|new-years-postcard|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 47,
+      "parsedBytes": 4512,
+      "trailingBytes": 0,
+      "bytes": 4512
+    },
+    {
+      "key": "example|new-years-postcard:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 91,
+      "parsedBytes": 8736,
+      "trailingBytes": 0,
+      "bytes": 8736
+    },
+    {
+      "key": "example|new-years-postcard:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 97,
+      "parsedBytes": 9312,
+      "trailingBytes": 0,
+      "bytes": 9312
+    },
+    {
+      "key": "example|new-years-postcard:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 94,
+      "parsedBytes": 9024,
+      "trailingBytes": 0,
+      "bytes": 9024
+    },
+    {
+      "key": "example|new-years-postcard:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 201,
+      "parsedBytes": 19296,
+      "trailingBytes": 0,
+      "bytes": 19296
+    },
+    {
+      "key": "example|new-years-postcard:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 189,
+      "parsedBytes": 18144,
+      "trailingBytes": 0,
+      "bytes": 18144
+    },
+    {
+      "key": "example|new-years-postcard:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 209,
+      "parsedBytes": 20064,
+      "trailingBytes": 0,
+      "bytes": 20064
+    },
+    {
+      "key": "headword|mourning-postcard|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 82,
+      "parsedBytes": 7872,
+      "trailingBytes": 0,
+      "bytes": 7872
+    },
+    {
+      "key": "headword|mourning-postcard|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 52,
+      "parsedBytes": 4992,
+      "trailingBytes": 0,
+      "bytes": 4992
+    },
+    {
+      "key": "headword|mourning-postcard|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 54,
+      "parsedBytes": 5184,
+      "trailingBytes": 0,
+      "bytes": 5184
+    },
+    {
+      "key": "example|mourning-postcard:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 94,
+      "parsedBytes": 9024,
+      "trailingBytes": 0,
+      "bytes": 9024
+    },
+    {
+      "key": "example|mourning-postcard:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 92,
+      "parsedBytes": 8832,
+      "trailingBytes": 0,
+      "bytes": 8832
+    },
+    {
+      "key": "example|mourning-postcard:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 112,
+      "parsedBytes": 10752,
+      "trailingBytes": 0,
+      "bytes": 10752
+    },
+    {
+      "key": "example|mourning-postcard:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 211,
+      "parsedBytes": 20256,
+      "trailingBytes": 0,
+      "bytes": 20256
+    },
+    {
+      "key": "example|mourning-postcard:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 254,
+      "parsedBytes": 24384,
+      "trailingBytes": 0,
+      "bytes": 24384
+    },
+    {
+      "key": "example|mourning-postcard:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 244,
+      "parsedBytes": 23424,
+      "trailingBytes": 0,
+      "bytes": 23424
+    }
+  ]
+}

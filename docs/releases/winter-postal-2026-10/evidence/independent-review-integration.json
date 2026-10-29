@@ -1,0 +1,66 @@
+{
+  "workBatch": "winter-2026-01",
+  "status": "pass",
+  "scope": "Current canonical registry unchanged; deferred patch verified only in isolated temporary fixture, not applied to project",
+  "canonicalSha256": "92b68f3df5ae52a1aa1a82af7542a0fc550831495067f355caf7889253a87541",
+  "canonicalBeforeSha256": "92b68f3df5ae52a1aa1a82af7542a0fc550831495067f355caf7889253a87541",
+  "beforeCount": 1241,
+  "currentCount": 1241,
+  "activeAddedIds": [],
+  "patch": {
+    "file": "data/winter-postal-2026-10-canonical-images.patch",
+    "sha256": "767555bea0a9d83ecd4350f16e71b4378afaae8114c45077511c20c0d3843c45",
+    "isolatedFixtureApplyCheck": "pass",
+    "isolatedFixtureApply": "pass",
+    "proposedAddedIds": [
+      "mourning-postcard",
+      "new-years-postcard"
+    ],
+    "preservesAllExistingMappings": true,
+    "matchesReviewedManifestUrls": true,
+    "applyToProject": "not performed; deferred until authorized DB publication"
+  },
+  "checks": [
+    {
+      "layer": "canonical-preservation",
+      "verdict": "pass",
+      "reason": "Current canonical JSON bytes equal pre-change snapshot exactly; all 1241 mappings preserved, no candidate keys active."
+    },
+    {
+      "layer": "deferred-integration",
+      "verdict": "pass",
+      "reason": "Patch applies cleanly to isolated copy, adds only two reviewed URLs, changes no existing mappings; project registry left untouched. Patch should be applied only after confirmed DB publication and within separate commit/deploy authority."
+    },
+    {
+      "layer": "seed-and-fallback-isolation",
+      "verdict": "pass",
+      "reason": "App/lib/migration have no new candidate content imports; lib/words.ts uses imageMap only as an ID-based URL lookup for existing word arrays, not as a word factory. Before correction, only registry contained candidate IDs; those are now removed."
+    },
+    {
+      "layer": "public-homepage-count",
+      "verdict": "pass",
+      "reason": "app/page.tsx still counts registry keys, but active canonical map is restored from1243 to original1241; no new unreleased IDs are counted. Homepage implementation untouched."
+    }
+  ],
+  "issues": [],
+  "resolvedIssues": [
+    {
+      "id": "unreleased-map-inflates-public-count",
+      "reason": "Candidate additions removed from active canonical registry; post-publication patch retained outside application import paths."
+    }
+  ],
+  "history": [
+    {
+      "reviewedCurrentSha256": "92b68f3df5ae52a1aa1a82af7542a0fc550831495067f355caf7889253a87541",
+      "status": "needs-revision",
+      "issueIds": [
+        "unreleased-map-inflates-public-count"
+      ]
+    }
+  ],
+  "notChecked": [
+    "actual future project patch application after DB publication",
+    "published-site behavior or deployment",
+    "production writes"
+  ]
+}

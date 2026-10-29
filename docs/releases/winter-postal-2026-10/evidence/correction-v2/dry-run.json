@@ -1,0 +1,11 @@
+{
+  "mode": "dry-run",
+  "plan": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/correction-v2/correction-plan-745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2.json",
+  "planSha256": "745ad740a5d986a4af64da616ccd127b21757f1521118774b07f727398b773d2",
+  "databaseHostFingerprint": "15749fae6d13",
+  "state": "before",
+  "readyForApply": true,
+  "beforeSha256": "a91869b2cb28521955da0d6ea1512cfd732c86fc8f38bdd8191730c2e34e484b",
+  "afterSha256": "0377ed013a0d0bcc5a63d21b0f7d51aa339849a07df86517d83337abc7d07f69",
+  "databaseWrites": 0
+}

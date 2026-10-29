@@ -1,0 +1,78 @@
+{
+  "ok": false,
+  "checkedAt": "2026-10-29T11:44:59.522Z",
+  "source": "database",
+  "scope": {
+    "publishedMainWordsOnly": true,
+    "customWords": false,
+    "savedWords": false,
+    "publicApiExamplesChecked": false
+  },
+  "counts": {
+    "words": 1243,
+    "examples": 2486,
+    "batches": 63,
+    "reviewedWords": 0,
+    "reviewedExamples": 0,
+    "reviewHints": 3
+  },
+  "mechanicalStatus": "passed",
+  "semanticReviewStatus": "pending",
+  "summary": {
+    "total": 1,
+    "categories": {
+      "review-incomplete": 1
+    }
+  },
+  "issues": [
+    {
+      "category": "review-incomplete",
+      "source": "semantic-review",
+      "wordId": "response",
+      "exampleId": null,
+      "slot": null,
+      "field": "review",
+      "actual": "null",
+      "expected": "completed semantic-review object with a words array"
+    }
+  ],
+  "reviewHints": [
+    {
+      "category": "daily-life-mismatch",
+      "source": "template-prefilter",
+      "wordId": "coin-slot",
+      "exampleId": "3233",
+      "slot": "simple",
+      "field": "en",
+      "actual": "\"This is the coin slot.\"",
+      "expected": "full semantic review for a concrete, useful daily-life situation"
+    },
+    {
+      "category": "daily-life-mismatch",
+      "source": "template-prefilter",
+      "wordId": "coin-slot",
+      "exampleId": "3233",
+      "slot": "simple",
+      "field": "zh",
+      "actual": "\"這是投幣口。\"",
+      "expected": "full semantic review for a concrete, useful daily-life situation"
+    },
+    {
+      "category": "daily-life-mismatch",
+      "source": "template-prefilter",
+      "wordId": "self-check-in-kiosk",
+      "exampleId": "3606",
+      "slot": "complex",
+      "field": "zh",
+      "actual": "\"這是我第一次使用自助報到機，所以我請工作人員教我操作方法。\"",
+      "expected": "full semantic review for a concrete, useful daily-life situation"
+    }
+  ],
+  "artifacts": {
+    "outputDir": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-example-contract-final",
+    "auditFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-example-contract-final/audit.json",
+    "markdownFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-example-contract-final/audit.md",
+    "examplesFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-example-contract-final/examples.json",
+    "reviewFile": "/Users/rex/Desktop/tuji/tuji-web/output/winter-postal-2026-10/post-release-example-contract-final/semantic-review.json"
+  }
+}

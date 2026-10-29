@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-postal-2026-10",
+  "verifiedAt": "2026-10-29T05:59:25.300Z",
+  "sourceManifest": "generated-manifest.json",
+  "clipsVerified": 18,
+  "breakdown": {
+    "headwords": {
+      "en-US": 2,
+      "en-GB": 2,
+      "ja-JP": 2
+    },
+    "examples": {
+      "en-US": 4,
+      "en-GB": 4,
+      "ja-JP": 4
+    }
+  },
+  "durationSeconds": {
+    "minimum": 1.128,
+    "maximum": 6.096,
+    "total": 54.144
+  },
+  "checks": [
+    "plan membership",
+    "exact spoken source and owner",
+    "path containment",
+    "byte count",
+    "SHA-256",
+    "MP3 header",
+    "ffprobe metadata",
+    "full ffmpeg decode"
+  ],
+  "issues": [],
+  "passed": true
+}

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-postal-2026-10",
+  "state": "candidate-audio-planned",
+  "productionWriteAllowed": false,
+  "note": "Example ownerKey values are candidate references, not production example IDs. Resolve them inside the guarded publisher transaction.",
+  "summary": {
+    "words": 2,
+    "examples": 4,
+    "clips": 18,
+    "headwords": {
+      "total": 6,
+      "en-US": 2,
+      "en-GB": 2,
+      "ja-JP": 2
+    },
+    "examplesByLocale": {
+      "total": 12,
+      "en-US": 4,
+      "en-GB": 4,
+      "ja-JP": 4
+    }
+  },
+  "issues": [],
+  "jobs": [
+    {
+      "kind": "headword",
+      "ownerKey": "new-years-postcard",
+      "wordId": "new-years-postcard",
+      "locale": "en-US",
+      "text": "New Year's postcard"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "new-years-postcard",
+      "wordId": "new-years-postcard",
+      "locale": "en-GB",
+      "text": "New Year's postcard"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "new-years-postcard",
+      "wordId": "new-years-postcard",
+      "locale": "ja-JP",
+      "text": "年賀はがき"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "new-years-postcard:0",
+      "wordId": "new-years-postcard",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "I'd like ten New Year's postcards."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "new-years-postcard:0",
+      "wordId": "new-years-postcard",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "I'd like ten New Year's postcards."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "new-years-postcard:0",
+      "wordId": "new-years-postcard",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "年賀はがきを十枚ください。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "new-years-postcard:1",
+      "wordId": "new-years-postcard",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "I bought extra New Year's postcards because I might make a mistake writing the addresses."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "new-years-postcard:1",
+      "wordId": "new-years-postcard",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "I bought extra New Year's postcards because I might make a mistake writing the addresses."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "new-years-postcard:1",
+      "wordId": "new-years-postcard",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "宛名を書き間違えるかもしれないので、年賀はがきを多めに買いました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "mourning-postcard",
+      "wordId": "mourning-postcard",
+      "locale": "en-US",
+      "text": "mourning postcard"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "mourning-postcard",
+      "wordId": "mourning-postcard",
+      "locale": "en-GB",
+      "text": "mourning postcard"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "mourning-postcard",
+      "wordId": "mourning-postcard",
+      "locale": "ja-JP",
+      "text": "喪中はがき"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "mourning-postcard:0",
+      "wordId": "mourning-postcard",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "I received a mourning postcard from a friend."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "mourning-postcard:0",
+      "wordId": "mourning-postcard",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "I received a mourning postcard from a friend."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "mourning-postcard:0",
+      "wordId": "mourning-postcard",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "友達から喪中はがきが届きました。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "mourning-postcard:1",
+      "wordId": "mourning-postcard",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "mourning-postcard:1",
+      "wordId": "mourning-postcard",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "I received a mourning postcard, so I decided to send a winter greeting instead of a New Year's card."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "mourning-postcard:1",
+      "wordId": "mourning-postcard",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "喪中はがきが届いたので、年賀状の代わりに寒中見舞いを送ることにしました。"
+    }
+  ]
+}

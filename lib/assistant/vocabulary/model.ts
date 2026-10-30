@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 import { ASSISTANT_MODEL, type AssistantUsage } from "../pricing";
+import { cachedSystem } from "../system-prompt";
 import { analysisSchema, lookupSchema, mnemonicSchema, candidateSchema, modelReplySchema, VocabularyError,
   type VocabularyInput, type VocabularyReply } from "./contracts";
 
@@ -56,7 +57,7 @@ export function createVocabularyModel(client: Anthropic = new Anthropic({ timeou
       message: z.string(), candidates: z.array(candidateSchema), content: content.nullable() });
     const response = await client.messages.parse({
       model: ASSISTANT_MODEL, max_tokens: input.mode === "analysis" ? 6000 : 4000,
-      system: `${COMMON_PROMPT}\n\n${MODE_PROMPTS[input.mode]}`,
+      system: cachedSystem(COMMON_PROMPT, MODE_PROMPTS[input.mode]),
       output_config: { effort: "low", format: zodOutputFormat(output) },
       messages: [{ role: "user", content: JSON.stringify({ query: input.query, context: input.context,
         selectedSense: input.selectedSense, uiLanguage: input.uiLanguage, learningDirection: input.learningDirection }) }],

@@ -11,6 +11,7 @@ import { isKanaOnly, isKanji, readingKeepsKana, restoreKanaRuns, segmentFurigana
 import { targetLanguageFor } from "../../settings";
 import { AssistantError } from "../contracts";
 import { ASSISTANT_MODEL, type AssistantUsage } from "../pricing";
+import { cachedSystem } from "../system-prompt";
 import { createReplyScanner } from "./reply-scanner";
 import type { StoryLearningDirection, StoryLevel } from "./levels";
 import type { StoryScene, StorySituation, StoryUiLanguage } from "./scenes";
@@ -253,7 +254,7 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
         // Thinking counts toward this; samples used up to ~3,700 in all, and a
         // story cut off mid-JSON is a failure the person is not charged for.
         max_tokens: 8192,
-        system: SYSTEM,
+        system: cachedSystem(SYSTEM),
         output_config: { effort: "low", format: zodOutputFormat(reply) },
         messages: [{ role: "user", content: storyPrompt(request) }],
       });

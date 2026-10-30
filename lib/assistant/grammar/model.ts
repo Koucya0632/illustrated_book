@@ -2,6 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 import { ASSISTANT_MODEL, type AssistantUsage } from "../pricing";
+import { cachedSystem } from "../system-prompt";
 import { candidateSchema, comparisonSchema, explanationSchema, GrammarError, modelReplySchema, practiceSchema,
   type GrammarInput, type GrammarReply } from "./contracts";
 
@@ -80,7 +81,7 @@ export function createGrammarModel(client: Anthropic = new Anthropic({ timeout: 
       message: z.string(), candidates: z.array(candidateSchema), content: content.nullable() });
     const response = await client.messages.parse({
       model: ASSISTANT_MODEL, max_tokens: input.mode === "practice" ? 12000 : 6000,
-      system: `${COMMON_PROMPT}\n\n${MODE_PROMPTS[input.mode]}`,
+      system: cachedSystem(COMMON_PROMPT, MODE_PROMPTS[input.mode]),
       output_config: { effort: "low", format: zodOutputFormat(output) },
       messages: [{ role: "user", content: JSON.stringify({ query: input.query, context: input.context,
         compareWith: input.compareWith, focus: input.focus,

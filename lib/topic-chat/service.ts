@@ -22,7 +22,7 @@ import {
   type AiMessageBody, type ChatMessage, type ChatOffer, type ChatState, type ChatSummary,
   type LearningDirection, type RequestKind, type TopicChatErrorCode, type UiLanguage, type UserMessageBody,
 } from "./contracts";
-import { practisedTypes, reviewAnswerTypes, untriedTypes } from "./answers";
+import { practisedAcross, reviewAnswerTypes, untriedTypes } from "./answers";
 import { ModelFailure, type EarlierTurn, type TopicChatModel, type TopicMaterial, type TopicWord, type TranscriptLine, type TurnTask } from "./model";
 import type { ChatRow, MessageRow, RequestRow, TopicChatStore } from "./store";
 
@@ -37,6 +37,15 @@ const STATE_MESSAGES = 200;
 const PROMPT_LINES = 24;
 /** Topic words handed to the model per turn. */
 const PROMPT_WORDS = 40;
+/**
+ * How far back 答法 practice is remembered: the conversations before this one
+ * that `practised` reads, and how many of each one's latest messages. The
+ * window is the recency rule — a 答法 answered in one of these counts as
+ * practised, older than them it does not — and the answer is a set of at most
+ * 16 names either way, so there is nothing to gain from reading a whole history.
+ */
+const PRACTISED_CHATS = 6;
+const PRACTISED_MESSAGES = 60;
 const LIST_LIMIT = 30;
 
 interface Wallet {
@@ -305,7 +314,10 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
     let generated;
     try {
       const topic = await topicOrThrow(chat.topicId, uiLanguage, chat.learningDirection);
-      const messages = await s.store.messages(chat.id, STATE_MESSAGES);
+      const [messages, otherChats] = await Promise.all([
+        s.store.messages(chat.id, STATE_MESSAGES),
+        s.store.earlierChats(s.userId, chat.learningDirection, chat.id, PRACTISED_CHATS, PRACTISED_MESSAGES),
+      ]);
       const { lines, truncated } = transcript(messages, PROMPT_LINES);
       const previous = latestAi(messages, chat.topicVersion);
       const switchedFrom = task.kind === "opening" ? previousTopicName(messages, chat.topicVersion) : undefined;
@@ -314,7 +326,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         topic: { ...topic, words: pickWords(topic.words, messages) },
         transcript: lines, truncated,
         ...(previous ? { previous: previous.body as unknown as AiMessageBody } : {}),
-        practised: practisedTypes(messages),
+        practised: practisedAcross(messages, otherChats),
         earlier: earlierTurns(messages, chat.topicVersion),
         ...(spotRun(messages, chat.topicVersion) ? { spotRun: spotRun(messages, chat.topicVersion) } : {}),
         task: task.kind === "opening" && switchedFrom ? { kind: "opening", switchedFrom } : task,
@@ -537,7 +549,10 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
               await s.store.fail(input.requestId);
               throw error;
             });
-            const messages = await s.store.messages(chatId, STATE_MESSAGES);
+            const [messages, otherChats] = await Promise.all([
+              s.store.messages(chatId, STATE_MESSAGES),
+              s.store.earlierChats(s.userId, chat.learningDirection, chatId, PRACTISED_CHATS, PRACTISED_MESSAGES),
+            ]);
             const names = [...new Set(messages.filter(m => m.kind === "topic").map(m => String(m.body.name ?? "")))];
             // The whole conversation, so a long one is not cut short.
             const { lines } = transcript(messages, STATE_MESSAGES);
@@ -546,7 +561,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
             try {
               generated = await deps.model().review({
                 uiLanguage: input.uiLanguage, learningDirection: chat.learningDirection, topics: names, transcript: lines,
-                untried: untriedTypes(messages), shown: answerTypes.map(a => a.answer),
+                untried: untriedTypes(practisedAcross(messages, otherChats)), shown: answerTypes.map(a => a.answer),
               });
             } catch (error) {
               await s.store.fail(input.requestId);

@@ -36,6 +36,9 @@ export interface MessageRow {
   createdAt: Date;
 }
 
+/** The part of a message that says whether a 答法 was practised (./answers). */
+export type AnswerMessage = Pick<MessageRow, "id" | "kind" | "topicVersion" | "body">;
+
 export interface RequestRow {
   requestId: string;
   chatId: string;
@@ -80,6 +83,14 @@ export interface TopicChatStore {
   chatCreatedBy(userId: string, requestId: string): Promise<ChatRow | null>;
   /** The latest `limit` messages, oldest first. */
   messages(chatId: string, limit: number): Promise<MessageRow[]>;
+  /**
+   * The latest `perChat` messages of the person's `chats` most recent *other*
+   * conversations in this direction, newest conversation first and oldest
+   * message first within each. Only the fields ./answers reads are selected,
+   * because this runs on every turn and a body is large.
+   */
+  earlierChats(userId: string, direction: LearningDirection, exceptChatId: string,
+    chats: number, perChat: number): Promise<AnswerMessage[][]>;
   /** The pending chat-changing generation, after expiring one a crashed run left behind. */
   pending(chatId: string): Promise<RequestRow | null>;
   request(chatId: string, requestId: string): Promise<RequestRow | null>;
@@ -178,6 +189,32 @@ export function createTopicChatStore(sql: postgres.Sql): TopicChatStore {
         id: row.id, kind: row.kind, topicId: row.topic_id, topicVersion: row.topic_version,
         requestId: row.request_id, body: row.body, createdAt: row.created_at,
       }));
+    },
+
+    async earlierChats(userId, direction, exceptChatId, chats, perChat) {
+      const rows = await sql`SELECT c.rank, m.id, m.kind, m.topic_version,
+          m.body -> 'pattern' AS pattern, m.body ->> 'text' AS text, m.body -> 'support' AS support
+        FROM (
+          SELECT id, (row_number() OVER (ORDER BY updated_at DESC))::int AS rank FROM topic_chats
+          WHERE user_id = ${userId} AND learning_direction = ${direction} AND id <> ${exceptChatId}
+          ORDER BY updated_at DESC LIMIT ${chats}
+        ) c
+        JOIN LATERAL (
+          SELECT id, kind, topic_version, body, seq FROM topic_chat_messages
+          WHERE chat_id = c.id ORDER BY seq DESC LIMIT ${perChat}
+        ) m ON true
+        ORDER BY c.rank, m.seq`;
+      const byChat = new Map<number, AnswerMessage[]>();
+      for (const row of rows) {
+        const body: Record<string, unknown> = {};
+        if (row.pattern !== null) body.pattern = row.pattern;
+        if (row.text !== null) body.text = row.text;
+        if (row.support !== null) body.support = row.support;
+        const message = { id: row.id, kind: row.kind, topicVersion: row.topic_version, body };
+        const earlier = byChat.get(row.rank);
+        if (earlier) earlier.push(message); else byChat.set(row.rank, [message]);
+      }
+      return [...byChat.values()];
     },
 
     async pending(chatId) {

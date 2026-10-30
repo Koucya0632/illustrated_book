@@ -6,7 +6,7 @@ import {
   type TopicMaterial, type TurnRequest,
 } from "../lib/topic-chat/model";
 import { earlierTurns, pickWords, spotRun } from "../lib/topic-chat/service";
-import { fillingSentence, practisedTypes, reviewAnswerTypes, untriedTypes } from "../lib/topic-chat/answers";
+import { fillingSentence, practisedAcross, practisedTypes, reviewAnswerTypes, untriedTypes } from "../lib/topic-chat/answers";
 
 const topic: TopicMaterial = {
   id: "street", name: "街上", nameEn: "Street",
@@ -308,6 +308,20 @@ test("an answer counts for its 答法 only when it has the 跟著說's shape, or
   ];
   assert.deepEqual(practisedTypes(messages), ["what", "where"]);
   assert.deepEqual(reviewAnswerTypes(messages).map(a => a.type), ["where", "what"]);
-  assert.ok(untriedTypes(messages).includes("reason"));
-  assert.ok(!untriedTypes(messages).includes("what"));
+  assert.ok(untriedTypes(practisedTypes(messages)).includes("reason"));
+  assert.ok(!untriedTypes(practisedTypes(messages)).includes("what"));
+
+  // Earlier conversations are scanned one by one, so the question "b2" leaves
+  // unanswered is not answered by the next conversation's first line — which is
+  // exactly what reading them as one transcript would get wrong.
+  const earlier = [
+    [ask("b1", "reason", "＿＿からです"), row("v1", "user", { text: "安いからです。", support: [] }),
+      ask("b2", "plan", "＿＿に行きます")],
+    [row("v2", "user", { text: "公園に行きます。", support: [] })],
+  ];
+  assert.deepEqual(practisedAcross(messages, earlier), ["what", "where", "reason"]);
+  assert.ok(!untriedTypes(practisedAcross(messages, earlier)).includes("reason"));
+  assert.ok(untriedTypes(practisedAcross(messages, earlier)).includes("plan"));
+  // 練習過的答法 stays this conversation's: a review looks back on it, not on the others.
+  assert.deepEqual(reviewAnswerTypes(messages).map(a => a.type), ["where", "what"]);
 });

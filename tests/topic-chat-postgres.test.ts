@@ -403,6 +403,34 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
       assert.equal(chats.find(c => c.id === first.chat.id)!.status, "ended");
     });
 
+    await t.test("答法 practised in an earlier conversation count in the next one", async () => {
+      const h = await harness();
+      const first = (await h.start()).json;
+      // Every turn the fixture writes asks a want_to pattern, so an answer of
+      // that shape practises it — and this chat's opening had seen none.
+      assert.deepEqual((h.control.calls.at(-1)!.request as TurnRequest).practised, []);
+      await h.reply(first, "公園に行きたいです。");
+
+      // Starting another conversation ends this one; the practice carries over.
+      const second = (await h.start("zoo")).json;
+      assert.deepEqual((h.control.calls.at(-1)!.request as TurnRequest).practised, ["want_to"]);
+
+      // The store hands ./answers one conversation at a time, oldest message
+      // first, carrying only the fields it reads.
+      const earlier = await createTopicChatStore(sql).earlierChats(h.userId, "zh-ja", second.chat.id, 6, 60);
+      assert.deepEqual(earlier.map(chat => chat.map(m => m.kind)), [["topic", "ai", "user", "ai"]]);
+      assert.equal(earlier[0].find(m => m.kind === "user")!.body.text, "公園に行きたいです。");
+      assert.equal((earlier[0][1].body.pattern as { key: string }).key, "want_to");
+      assert.equal(earlier[0][1].body.line, undefined);
+
+      // 下次可以試 must not offer back what they did in the conversation before.
+      await h.reply(second, "猫が好きです。");
+      await h.post(second.chat.id, "end", { requestId: randomUUID(), uiLanguage: "zh-Hant", review: true });
+      const review = h.control.calls.find(c => c.kind === "review")!.request as ReviewRequest;
+      assert.ok(!review.untried.includes("want_to"));
+      assert.ok(review.untried.includes("reason"));
+    });
+
     await t.test("deleting a chat mid-reply: the reply does not bring it back", async () => {
       const h = await harness();
       const chat = (await h.start()).json;

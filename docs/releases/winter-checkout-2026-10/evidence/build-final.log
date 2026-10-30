@@ -1,0 +1,194 @@
+▲ Next.js 16.3.4 (Turbopack)
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/rex/Desktop/tuji/output/worktrees/winter-checkout-preparation/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/rex/Desktop/tuji/output/worktrees/winter-checkout-preparation/output/winter-checkout-2026-10/integration-fixture/package-lock.json
+
+✓ Running next.config.js took 6ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.6s
+  Running TypeScript ...
+  Finished TypeScript in 6.8s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/29) ...
+  Generating static pages using 9 workers (7/29) 
+  Generating static pages using 9 workers (14/29) 
+  Generating static pages using 9 workers (21/29) 
+✓ Generating static pages using 9 workers (29/29) in 79ms
+  Finalizing page optimization ...
+
+Route (app)                                           Revalidate  Expire
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /admin
+├ ƒ /admin/atlas
+├ ƒ /admin/atlas/collections
+├ ƒ /admin/atlas/funnel
+├ ƒ /admin/atlas/reports
+├ ƒ /admin/credits
+├ ƒ /admin/feedback
+├ ƒ /admin/members
+├ ƒ /admin/members/[id]
+├ ƒ /admin/reports
+├ ƒ /admin/stats
+├ ƒ /admin/words
+├ ƒ /admin/words/[id]/edit
+├ ƒ /admin/words/new
+├ ƒ /api/admin/atlas/collections/[id]
+├ ƒ /api/admin/atlas/funnel
+├ ƒ /api/admin/atlas/items
+├ ƒ /api/admin/atlas/items/[id]
+├ ƒ /api/admin/atlas/reports/[id]
+├ ƒ /api/admin/feedback/[id]
+├ ƒ /api/admin/fetch-image
+├ ƒ /api/admin/members/[id]/credit-grants
+├ ƒ /api/admin/members/[id]/credit-refunds
+├ ƒ /api/admin/members/[id]/entitlement
+├ ƒ /api/admin/reports/[id]
+├ ƒ /api/admin/upload
+├ ƒ /api/admin/words
+├ ƒ /api/admin/words/[id]
+├ ƒ /api/admin/words/[id]/enrich
+├ ƒ /api/ai/images
+├ ƒ /api/ai/operations
+├ ƒ /api/ai/operations/[id]
+├ ƒ /api/ai/operations/[id]/cancel
+├ ƒ /api/ai/operations/[id]/confirm
+├ ƒ /api/ai/quotes
+├ ƒ /api/assistant/grammar
+├ ƒ /api/assistant/grammar/records
+├ ƒ /api/assistant/grammar/records/[id]
+├ ƒ /api/assistant/story
+├ ƒ /api/assistant/vocabulary
+├ ƒ /api/assistant/vocabulary/records
+├ ƒ /api/assistant/vocabulary/records/[id]
+├ ƒ /api/atlas/collections
+├ ƒ /api/atlas/collections/[id]
+├ ƒ /api/atlas/collections/[id]/avatar
+├ ƒ /api/atlas/collections/[id]/items
+├ ƒ /api/atlas/collections/[id]/items/[publicItemId]
+├ ƒ /api/atlas/collections/[id]/publish
+├ ƒ /api/atlas/collections/[id]/withdraw
+├ ƒ /api/atlas/collections/candidates
+├ ƒ /api/atlas/entitlement
+├ ƒ /api/atlas/images
+├ ƒ /api/atlas/images/[id]
+├ ƒ /api/atlas/images/[id]/confirm
+├ ƒ /api/atlas/images/[id]/recognize
+├ ƒ /api/atlas/items/[id]
+├ ƒ /api/atlas/items/[id]/cards
+├ ƒ /api/atlas/items/[id]/detail
+├ ƒ /api/atlas/items/[id]/enrich
+├ ƒ /api/atlas/items/[id]/publish
+├ ƒ /api/atlas/items/[id]/withdraw
+├ ƒ /api/atlas/public
+├ ƒ /api/atlas/public/[slug]
+├ ƒ /api/atlas/public/[slug]/report
+├ ƒ /api/atlas/public/[slug]/save
+├ ƒ /api/atlas/public/authors/[username]
+├ ƒ /api/atlas/public/authors/[username]/report
+├ ƒ /api/atlas/public/by-lemma
+├ ƒ /api/atlas/public/collections
+├ ƒ /api/atlas/public/collections/[slug]
+├ ƒ /api/atlas/public/collections/[slug]/learn
+├ ƒ /api/atlas/public/collections/[slug]/report
+├ ƒ /api/atlas/public/collections/[slug]/save
+├ ƒ /api/atlas/public/collections/saved
+├ ƒ /api/atlas/public/search
+├ ƒ /api/atlas/study/answer
+├ ƒ /api/atlas/study/queue
+├ ƒ /api/atlas/sync
+├ ƒ /api/auth/login
+├ ƒ /api/auth/logout
+├ ƒ /api/billing/appstore-notifications
+├ ƒ /api/billing/play/verify
+├ ƒ /api/billing/sandbox-notifications
+├ ƒ /api/billing/verify
+├ ƒ /api/categories
+├ ƒ /api/credits/benefits/monthly/claim
+├ ƒ /api/credits/catalog
+├ ƒ /api/credits/check-in
+├ ƒ /api/credits/ledger
+├ ƒ /api/credits/purchases/verify
+├ ƒ /api/credits/wallet
+├ ƒ /api/cron/ai-fulfillments
+├ ƒ /api/cron/ai-image-cleanup
+├ ƒ /api/cron/ai-operations
+├ ƒ /api/cron/atlas-cleanup
+├ ƒ /api/cron/credit-monthly
+├ ƒ /api/cron/credit-store-notifications
+├ ƒ /api/cron/partman
+├ ƒ /api/cron/play-voided
+├ ƒ /api/events
+├ ƒ /api/search
+├ ƒ /api/study/answer
+├ ƒ /api/study/queue
+├ ƒ /api/study/reports
+├ ƒ /api/study/stats
+├ ƒ /api/test_smoke/whoami
+├ ƒ /api/topic-chat
+├ ƒ /api/topic-chat/[id]
+├ ƒ /api/topic-chat/[id]/[action]
+├ ƒ /api/users/blocks
+├ ƒ /api/users/blocks/[handle]
+├ ƒ /api/users/custom-words
+├ ƒ /api/users/delete-account
+├ ƒ /api/users/favorites
+├ ƒ /api/users/feedback
+├ ƒ /api/users/learned
+├ ƒ /api/users/mastery
+├ ƒ /api/users/me
+├ ƒ /api/users/profile
+├ ƒ /api/users/progress
+├ ƒ /api/users/push-token
+├ ƒ /api/users/saved-words
+├ ƒ /api/users/settings
+├ ƒ /api/users/study-calendar
+├ ƒ /api/users/sync
+├ ƒ /api/users/top-words
+├ ƒ /api/users/word-lists
+├ ƒ /api/users/word-lists/[id]
+├ ƒ /api/users/word-lists/[id]/words
+├ ƒ /api/users/word-lists/order
+├ ƒ /api/users/word-notes
+├ ƒ /api/users/word-notes/[wordId]
+├ ƒ /api/words
+├ ƒ /api/words/[id]
+├ ƒ /api/words/[id]/insights
+├ ○ /apple-icon.png
+├ ƒ /atlas
+├ ƒ /atlas/public
+├ ƒ /atlas/public/[slug]
+├ ƒ /atlas/study
+├ ƒ /auth/callback
+├ ƒ /auth/confirmed
+├ ƒ /cards
+├ ƒ /category/[id]
+├ ƒ /download
+├ ƒ /favorites
+├ ○ /icon.png
+├ ƒ /login
+├ ƒ /me
+├ ƒ /privacy
+├ ƒ /progress
+├ ƒ /register
+├ ○ /robots.txt
+├ ƒ /search
+├ ƒ /settings
+├ ƒ /signin
+├ ○ /sitemap.xml                                              1d      1y
+├ ƒ /study
+├ ƒ /support
+├ ƒ /terms
+├ ƒ /today
+└ ƒ /word/[id]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

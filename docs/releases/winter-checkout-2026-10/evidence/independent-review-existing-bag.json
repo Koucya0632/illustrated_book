@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "reviewedAt": "2026-10-30T03:20:06.527683+00:00",
+  "sourceSha256": "a781059478fa35d34667e04b01e1d1d2e848661e4d9779aac902eb84f8f6e725",
+  "source": "data/winter-checkout-2026-10-existing-bag-update.json",
+  "mechanicalPreservation": {
+    "status": "pass",
+    "beforeSnapshotMatchesResearch": true,
+    "unchangedGroups": [
+      "terms",
+      "definitions",
+      "examples",
+      "translations",
+      "wordMedia",
+      "exampleMedia",
+      "categoryLinks",
+      "relations",
+      "cards",
+      "triggers"
+    ],
+    "onlyWordFieldsChanged": [
+      "also_known_as appends literal alias",
+      "note appends Traditional Chinese contextual usage after exact original prefix"
+    ],
+    "localizedNotesChanged": [
+      "en",
+      "ja"
+    ],
+    "localizedNoteRowCountBefore": 2,
+    "localizedNoteRowCountAfter": 2,
+    "noUnusedZhHantLocalizedRow": true,
+    "localizedEtymologiesUnchanged": true,
+    "allOriginalNotePrefixesPreserved": true,
+    "headwordsExamplesMediaPrimaryCategoryEntitlementsPreserved": true
+  },
+  "semantic": {
+    "alias": "pass: contextual searchable alias is appropriate; not a headword rename or universal equivalence of every plastic bag to checkout bag.",
+    "enNote": "pass: explicitly plastic checkout carry-home bag; broader ビニール袋 explained.",
+    "zhNote": "pass: appended words.note explicitly limits checkout plastic carry-home bags; broader plastic bag distinction is preserved. Actual zh-Hant localizer reads base words.note, now fixture-proven.",
+    "jaNote": "pass: revised added first sentence explicitly narrows to plastic bags received at checkout for carry-home purchases; aligns en/zh and avoids including customer own reusable bags. Original prefix and broad-vs-contextual distinction preserved.",
+    "existingExamples": [
+      {
+        "id": 1425,
+        "verdict": "pass",
+        "reason": "Cashier placing meat in a plastic bag remains natural broad ビニール袋 use; contextual alias need not apply to every broad example."
+      },
+      {
+        "id": 1426,
+        "verdict": "pass",
+        "reason": "Leaking meat package put into separate plastic bag is valid protective bag use; note explicitly distinguishes broad ビニール袋 from carry-home checkout レジ袋. No sentence/audio change required."
+      }
+    ]
+  },
+  "reference": "https://www.meti.go.jp/policy/recycle/plasticbag/plasticbag_top.html?aid=HPV_43846_futakuchi",
+  "limits": [
+    "Candidate content and actual localizer fixture passed; production HTTP/cache verification remains pending publication.",
+    "CAS/rollback and final locked publisher plan are separate review."
+  ],
+  "productionWrites": 0,
+  "runtimeDisplay": {
+    "status": "pass-local-fixture",
+    "report": "independent-bag-display-fixture.json",
+    "sha256": "87a4e6aadd43741901ada6280009a9eac186b523c7f9ab48702ec95e4f73ed4f",
+    "method": "Imported actual localizeWord used transitively by GET /api/words/[id]; all three UI languages resolve the exact after-state note, retain old prefix and preserve other localized Word fields.",
+    "languages": {
+      "zh-Hant": "words.note",
+      "en": "localized note|en",
+      "ja": "localized note|ja"
+    },
+    "liveHttp": "pending publication"
+  },
+  "resolvedIssues": [
+    {
+      "previousSourceSha256": "c060907576dcac3a95b18ec8ca6e82d0ef0594c136b8b954a1c5b11249ec790d",
+      "change": "Only appended ja note first sentence narrowed to checkout-received plastic bag. No other proposed delta expanded."
+    },
+    {
+      "previousSourceSha256": "78848f9052e2c80556d9ba91b6cdcb3b440bfabbd5e6eea1dd8732050521dc78",
+      "problem": "note|zh-Hant row was not read by current localizer",
+      "change": "Move exact Traditional Chinese contextual usage into words.note append, remove unused new localized row; retain en/ja note appends; no runtime localizer change."
+    }
+  ]
+}

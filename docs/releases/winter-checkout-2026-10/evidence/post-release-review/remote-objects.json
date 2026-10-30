@@ -1,0 +1,769 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-30T08:55:07.628007+00:00",
+  "objects": [
+    {
+      "key": "word-images|winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+      "url": "https://img.nexflow.team/word-images/winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+      "bytes": 87202,
+      "sha256": "966db51b2ea2436b4cdf11b2fb0f1643653d8cb60764837218f884e8d245b3bb",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:05 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "87202",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"303d73f5e7b0344aad1d99668d55dd0f\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:25 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "99",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0NN8EzyJiwVIMfvibEesBN5LQBjBLydsJNzEPj5JfgD9jaV3p8sB3jCz0Tww1K%2B7%2B%2FkmKL3X88YShz5nqwLLsdvw66O%2BdhzR7uysNL%2BpzdRvJLxxu0JH%2FKCa6AV1evxhOBqyabNiNCHVrvl%2F0z%2Bp\"}]}",
+        "CF-RAY": "a52932f46c7bf597-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-966db51b2ea2436b4cdf11b2fb0f1643653d8cb60764837218f884e8d245b3bb.webp",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "key": "word-audio|point-card/en-US/b7f0180a06af53c9f87d.mp3",
+      "url": "https://img.nexflow.team/word-audio/point-card/en-US/b7f0180a06af53c9f87d.mp3",
+      "bytes": 4032,
+      "sha256": "b7f0180a06af53c9f87d1945b60f08c11cecfc522929987562aec1590083195d",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:05 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4032",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"ac8457b6dc3ffb16065a8ef6bdcaa35c\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:25 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "99",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0%2FbHURRngNpDOlJbHx9UtOuEV%2FQKWKznL7f8tii5ijIhEFbZGXEJ%2FdOBbsrnCetvAvKiiuqJU7K8yytaZqFqOT8vt6m0WPVPkn%2FJfQCe63g8w5RshNKzRHJwZQ%2FrnDIyZISgKDoX1uijC%2Bj7XQYr\"}]}",
+        "CF-RAY": "a52932f5bf64e363-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-b7f0180a06af53c9f87d1945b60f08c11cecfc522929987562aec1590083195d.mp3",
+      "frames": {
+        "frames": 42,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4032,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|point-card/en-GB/187bda3821035278847a.mp3",
+      "url": "https://img.nexflow.team/word-audio/point-card/en-GB/187bda3821035278847a.mp3",
+      "bytes": 7872,
+      "sha256": "187bda3821035278847a2498756e976537b02ca98a2cd7477e545ecd99f99355",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7872",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"6f71a51b11fe7ee0e80d14120ae27dd6\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:26 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "99",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=4EksBvL6gAOq15hbplj5ICE9BdWg4mRgmdpYpLavg2DiobM4sTHObhOSjpBflTDACZcNtAsbtoPXV8s466OUiD9vLd3hRZfyfPrsOvmOrCTa%2BJm9EWwnVu3fn3uG9OAITjAyDyvQk4vJ3h6kaRFA\"}]}",
+        "CF-RAY": "a52932f74e74e38a-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-187bda3821035278847a2498756e976537b02ca98a2cd7477e545ecd99f99355.mp3",
+      "frames": {
+        "frames": 82,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7872,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+      "url": "https://img.nexflow.team/word-audio/point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+      "bytes": 6624,
+      "sha256": "89b8ed1ea698b35d600261180d980b87c1e6632f6106992adf195f36c5f6555c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "6624",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"fe341ec737af0dfa4879c17323f67159\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:26 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "99",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=3%2FrDkwhlOnc%2FjNyRa6fcSJgFJkoW1UizjqUE3NzaqzhHTB%2FmJefSjKEX5JtUZNGTB1RwaHyyzOvtkrU1rZC9IfAtCDJRdCabJPH3qhfXtbyjr7J9%2Fck%2BNfQ6N%2FaDuPdHq49oTyW2x1ERWCnt0vXD\"}]}",
+        "CF-RAY": "a52932f808ef7358-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-89b8ed1ea698b35d600261180d980b87c1e6632f6106992adf195f36c5f6555c.mp3",
+      "frames": {
+        "frames": 69,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6624,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+      "bytes": 8064,
+      "sha256": "46c838a19375cdc4dcdc0c6c3033411110ec573e724f7f79aeb58fb402734c7c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8064",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"08d8745fd666eb4c55898a740b99c9aa\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:27 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "98",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=llwz2nQ37WM93jHS%2BeAt8pMad7Dzge%2Bol4zPLEt0oVosovTCOX1mryT8eCBzYAbxoYLxrlYg71u4ua99NQtO4F5xZVVSWqervI6plyN9vkrcjw8nFW3cdsB35bKgqrmFcD9c%2BS5Z%2BvIFy6Td9bNV\"}]}",
+        "CF-RAY": "a52932f8cc379e27-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-46c838a19375cdc4dcdc0c6c3033411110ec573e724f7f79aeb58fb402734c7c.mp3",
+      "frames": {
+        "frames": 84,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8064,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+      "bytes": 8544,
+      "sha256": "3973cfc929947ff08a17b45386edd786936bb9037602adb597abbd93e5cebbe0",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8544",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"956131097aafadcb9fdf6cf5cba73900\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:27 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "98",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=IsrfcXmTCC5J9AgVX%2BnwkHJaqT67aqOulbkg9qPcX4ulIwLyCS0aq06Cq%2F7BYtM9%2Bxoe3%2BCAcfC4Hg9L77pk10fXR%2Fjw0d1%2BpAMgoX59jmyQVnW3RWznjgY42%2F3RUSZ8j0mD7nTfh9j%2Blz1i%2BnWk\"}]}",
+        "CF-RAY": "a52932f94f0c005d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-3973cfc929947ff08a17b45386edd786936bb9037602adb597abbd93e5cebbe0.mp3",
+      "frames": {
+        "frames": 89,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8544,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+      "bytes": 8256,
+      "sha256": "a116d2a7fadd4392ea9141bb1c239223b17fe8e01f324e2a3c069b29029a3c6b",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8256",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"06efc0dc07129922ecdaefc7029c4ca9\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:28 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "97",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=y3bQVYbZO05NHAUKc5kto2wDFDESJkOzuCWRZP8HKwe5gR%2BUS%2F9pFqIVATrIDautVHqV4YsQt8vfyFDqdaYycP%2FbwfYSONnx2civTMpUF%2FOAcWxd5NuKyVcMeRxtZXR2gGRlQuL7pJVg1X9%2FkeGv\"}]}",
+        "CF-RAY": "a52932f9d901817d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-a116d2a7fadd4392ea9141bb1c239223b17fe8e01f324e2a3c069b29029a3c6b.mp3",
+      "frames": {
+        "frames": 86,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8256,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+      "bytes": 18144,
+      "sha256": "645d2ba1046e39d00fa1aa0994d91151c7a59bd0eee86e3990fd6771ea69c327",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "18144",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"19eeb8454ca8dec79d4ec7bd9a3b88a5\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:28 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "97",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ZBKvcxT62lgQCK94Rlw5BFprT%2FuII7TOY5VtJDztHITtUY6XpMNpLHoPO%2BfuCkUjti29iYHrJSXsM2KVMGPVFYJMmIRfbjkJCkGOEo7IiT9J8VEzji9VOoVEI9POi5ouI%2FptBQMSoQVi7STGdRWW\"}]}",
+        "CF-RAY": "a52932fa5b3d25c6-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-645d2ba1046e39d00fa1aa0994d91151c7a59bd0eee86e3990fd6771ea69c327.mp3",
+      "frames": {
+        "frames": 189,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 18144,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+      "bytes": 17184,
+      "sha256": "beaa25f340ff395ce158fb37a300b9ec735628f0057922e896c5d648c9ac49c7",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "17184",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"4ccfefa194525f12a7f22de98f581d10\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:29 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "97",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=oj1JzBHrwqh2G04iUTbEOnnIv5tPXXBUXXpZf600X0zMntCidMJA1XJE48LECi81I%2BP0iPESY6mx4cV0siwS706b4DoVKfCLjZ4EeZ%2FqcDwCx9%2FL1NVTCgI3wwZRJTWRiLcEURLdbh5CMPf1UNia\"}]}",
+        "CF-RAY": "a52932fad9f77897-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-beaa25f340ff395ce158fb37a300b9ec735628f0057922e896c5d648c9ac49c7.mp3",
+      "frames": {
+        "frames": 179,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17184,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3712/ja-JP/a798711d65825c898a19.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3712/ja-JP/a798711d65825c898a19.mp3",
+      "bytes": 15264,
+      "sha256": "a798711d65825c898a19a865ad91d06b4844076319e20005186ec814965b0553",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "15264",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"afcdb7fccac07d4778b6f9bd6bd310e5\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:29 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "96",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Ut7kWghJ0ZfbXfyQkXqvn%2FdSWMWANcPkvUychFSooYCjzuL5V5de9SEW0fWnV5nhamhrpuUw6jj%2BnGnHEz5Qi5KyweuAlzO7ovfGpxIzTqKJ3w0AlvlQOQGx0blIiJupd1BcCD7Pj03blOBhFvKB\"}]}",
+        "CF-RAY": "a52932fb6b23f2d4-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-a798711d65825c898a19a865ad91d06b4844076319e20005186ec814965b0553.mp3",
+      "frames": {
+        "frames": 159,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 15264,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+      "url": "https://img.nexflow.team/word-images/winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+      "bytes": 47724,
+      "sha256": "3371fb120053825ae8bf74c3f396b8dd84a5876aeaad7d7ef94d9d7f888f6277",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "47724",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"8840ee4f5190a6cd9a77cc8df9a676c3\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:30 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "96",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=a%2BHQqf8FAC1cawO%2FIt5fpgmXIAs7H%2F7rci8Qr82uzHyxakAfMyKL15807WV1B1Jlp%2FlWZn0hlebf1wOGKlsPbYSh2QlvF8Qk5Vh8kEVjCk1vd75HTgZZgbNp%2FXGerSh4Xnv6E%2FYw2RC1mSAsPvYc\"}]}",
+        "CF-RAY": "a52932fbfaebeb7e-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-3371fb120053825ae8bf74c3f396b8dd84a5876aeaad7d7ef94d9d7f888f6277.webp",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "key": "word-audio|drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+      "url": "https://img.nexflow.team/word-audio/drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+      "bytes": 7392,
+      "sha256": "fddce0f010e4a944d007efde37f5fb534cd7c5f5ebc3d24096bf66a378a4a4aa",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:06 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7392",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"3c84ddc5e7979208a52ca5935f0ebe08\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:30 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "96",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=AJOY6P7ScDw7CeCYtDRLladju8JLpe3%2FXdPUWI1aoDjJF7B2gn%2Bf1opyM9Q4S9ehZlArOv28RSt7QL2GVQgM6F0s%2BSzS%2Bx6SjDLThuYDaIeAG9CuOZVMtJQ3n%2F6TAQn8SVsIruMiWpk9wgDKwgg0\"}]}",
+        "CF-RAY": "a52932fc68ebed81-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-fddce0f010e4a944d007efde37f5fb534cd7c5f5ebc3d24096bf66a378a4a4aa.mp3",
+      "frames": {
+        "frames": 77,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7392,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+      "url": "https://img.nexflow.team/word-audio/drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+      "bytes": 7296,
+      "sha256": "359952278ddb9f4fe686e64ca56990905ef378d58c802716ea1680be1ad88e69",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7296",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"8ba1a55958cbe8f8628c1e3ca4b2ba6c\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:31 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "95",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=zEYBDlurvJMTl5RPSI%2FrHynTC%2B6X9ojRq%2FDdyXaYKbDRhh5A0N8fhoAg64KUfIuHCbYpuxhWJ%2BOI0V6Rb4dr0z23RLdqjwDWfOi3wSSOKi3YCEIJo9h1FZ0uiP0eB8GqSYJU6UwFsBQwK4izhADF\"}]}",
+        "CF-RAY": "a52932fcfd09d78d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-359952278ddb9f4fe686e64ca56990905ef378d58c802716ea1680be1ad88e69.mp3",
+      "frames": {
+        "frames": 76,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7296,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+      "url": "https://img.nexflow.team/word-audio/drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+      "bytes": 6144,
+      "sha256": "2591a3fd134463c90c8affe2e0db7a20719941296200e87709a1420c1572b94c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "6144",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"9805c895bc9e5dcc51631a6fc2b323e5\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:31 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "95",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=nxBoxq8tJ%2F2p3XYwsNBX3%2FkpYNVy63%2F8RBSfhSzm7YmB7J8KUN1kU2JN6sr%2BVEZGi2GHKcRZtlC3ERCqxw5WAlZT3ZB9Y8IJbn%2BBqcJXxSo1zgjPAJeCZlxPnkQOEa2KeOax6o5q0RkbdCgU5FZf\"}]}",
+        "CF-RAY": "a52932fd6e8aac71-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-2591a3fd134463c90c8affe2e0db7a20719941296200e87709a1420c1572b94c.mp3",
+      "frames": {
+        "frames": 64,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6144,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+      "bytes": 9984,
+      "sha256": "954ac8d7c0dc4f523ebd20e1d7a3889bd7d77c02e732a0cba8c735a4e18aeb8d",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9984",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"beba5f2f4dda81389996d412f2ba4161\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:31 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "95",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=kBq%2FwMsU2ZCOP5bsQh5oBvr7%2BIOtduWQI0N2tJovr2MjOBIo9GIDrk35FzVbHnmK%2BgIO7TV0%2FwguCJMO4GSu10cp%2BP2WmgEJPQWuLCqeRibng9iSIqDaUN0Xh3nXgR%2Fi2g3Si%2FlGetDv759f%2BJPK\"}]}",
+        "CF-RAY": "a52932fddc82908a-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-954ac8d7c0dc4f523ebd20e1d7a3889bd7d77c02e732a0cba8c735a4e18aeb8d.mp3",
+      "frames": {
+        "frames": 104,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9984,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+      "bytes": 7776,
+      "sha256": "09a1b861bc6fc6cd0f4e0487b8b4887bf5df4b8052eceddb5c929ca8a25fa3fc",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7776",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"012dc32df793a2fd0b2919be0b47b47c\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:32 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "94",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=TSZSWklzSptd0qZZ3GwIDnq%2BE5aEQi1g9PduLVFJNfy8UqV9QiQVAj034uDSQVwW0i5taJParhroGgq8vHAI3xiUx0IO%2FsCScd6Ci50zADRwKe5V%2BLugfhVxWfoAGK1bjlJ%2BRSmgi9L%2FbGB0rTtE\"}]}",
+        "CF-RAY": "a52932fe5891dc2a-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-09a1b861bc6fc6cd0f4e0487b8b4887bf5df4b8052eceddb5c929ca8a25fa3fc.mp3",
+      "frames": {
+        "frames": 81,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7776,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+      "bytes": 9024,
+      "sha256": "fa6bd693a3a9ed601f04175101688583203fb3b1d5c6390a21793df97a8cecca",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9024",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"59c2c459187df156eebc509c9d360a28\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:33 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "93",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=goUHqjd1v3JIglqfIyyKXv2fE%2BCnX9VVvMDKpNU2s8KvC%2BLJ1kCQP7zGA2L5QPA7LOo6SciS0iU48Jiwam20oTtk5x4rFCVnyMG39foOYIEmwkOpJsaS3p01%2F4sVKB9wdPOpw4to5frM25ij857h\"}]}",
+        "CF-RAY": "a52932fedc1bd76c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-fa6bd693a3a9ed601f04175101688583203fb3b1d5c6390a21793df97a8cecca.mp3",
+      "frames": {
+        "frames": 94,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9024,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+      "bytes": 14976,
+      "sha256": "8052f7d539bbeb92630dcd4baf5c98176524f28ddb7c73af463cbe57412bf66a",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "14976",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"948dbbe49fb6e781783cb6a5677190d3\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:33 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "93",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=QmQVSc9hOfLM%2FMhlfw72bh6xaxz8Kt3Pt6DEqvO%2FvhWkVHv7kJ6QAFH6xO%2Bag5b7cKhLVAM3YEa7f5YT5olNHjhEVQYsFPxhblA3YI9AE7ipWqmRPC%2FZjR7QFPa6sYilLlZoy0CMpB695mlOBAVL\"}]}",
+        "CF-RAY": "a52932ff4c7014be-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-8052f7d539bbeb92630dcd4baf5c98176524f28ddb7c73af463cbe57412bf66a.mp3",
+      "frames": {
+        "frames": 156,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 14976,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+      "bytes": 13344,
+      "sha256": "b6cf03fe2a6787b3910d24ee8aadee7b884b30868a305dc85da204c5f44c3e46",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "13344",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"f4d5991d1c3abc4ed08a0b0806b420f5\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:34 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "92",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=GNC9KD2KeUQpaMoln9Xo%2B2wvMc8V2s8VPA0apv91255b4nIljR6RdpC0teVK3ZPZ9Jr8yANcbZxFznqquQr7b12iqWrGHp%2FstlR3DOhZCX6y9vTxtC2g%2Bg9yu940MxyKnLsuTCx%2F1pIDPmekPE2r\"}]}",
+        "CF-RAY": "a52932ffdd2121b5-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-b6cf03fe2a6787b3910d24ee8aadee7b884b30868a305dc85da204c5f44c3e46.mp3",
+      "frames": {
+        "frames": 139,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 13344,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+      "bytes": 17664,
+      "sha256": "9aa5983e9c2c7607e5ab786e88b8d7f8e8231a702a0efa8202bd3a0a236a5e19",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 30 Oct 2026 08:55:07 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "17664",
+        "Connection": "close",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "ETag": "\"ee78c701b68ac7d47448e4ff8cfd76ec\"",
+        "Last-Modified": "Fri, 30 Oct 2026 08:53:34 GMT",
+        "Accept-Ranges": "bytes",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "92",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=myFmpMCVpYZFyRUVBTxODxWfY4OGkurKxZCv4wdHg1ctNceG0YdRpg2QMLa0Ihr5IpW1lg60L8aoP4l0IQi7HlASh466t5Hu1x5CMkpKsVHVW3O0MeIRVbkxfOA4dTyQ%2BzMDJH19C8Hv5nS9yCXf\"}]}",
+        "CF-RAY": "a52933004833d790-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-checkout-2026-10/post-release-review/remote-9aa5983e9c2c7607e5ab786e88b8d7f8e8231a702a0efa8202bd3a0a236a5e19.mp3",
+      "frames": {
+        "frames": 184,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17664,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    }
+  ],
+  "allRemoteHashesMatchManifest": true,
+  "subjectiveListening": "not checked",
+  "productionWrites": 0
+}

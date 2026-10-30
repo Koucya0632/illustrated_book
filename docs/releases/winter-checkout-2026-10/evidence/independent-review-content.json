@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "reviewedAt": "2026-10-30T03:10:49.152231+00:00",
+  "reviewer": "independent winter batch reviewer; separate from producer",
+  "scope": "2 local candidate main words,4 examples,8 sentence span sets; not published catalog audit",
+  "sourceHashes": {
+    "contentSha256": "b23f58ea2928812372adb0884124c4c6329461db914c1be0f7d6d898f5227c22",
+    "spansSha256": "f907ffb825eb30f59e9a90ad9ba56efbb5d55e04d0f480e180dd497f896d7fdb",
+    "bagProposalSha256": "a781059478fa35d34667e04b01e1d1d2e848661e4d9779aac902eb84f8f6e725"
+  },
+  "sources": [
+    {
+      "path": "data/winter-checkout-2026-10.json",
+      "sha256": "b23f58ea2928812372adb0884124c4c6329461db914c1be0f7d6d898f5227c22"
+    },
+    {
+      "path": "data/example-spans-winter-checkout-2026-10.json",
+      "sha256": "f907ffb825eb30f59e9a90ad9ba56efbb5d55e04d0f480e180dd497f896d7fdb"
+    }
+  ],
+  "words": [
+    {
+      "wordId": "point-card",
+      "verdict": "pass",
+      "reason": "loyalty card／ポイントカード／集點卡均聚焦購物回饋點數；三語說明允許App及同卡兼有會員功能，故不與既有membership-card構成錯誤互斥；相關詞明列membership-card。純片假名主詞讀音及分段一致。",
+      "pairVerdict": "pass",
+      "pairReason": "兩句各一筆，A2直接問話/請求與B1實質因果句形成難度及功能差異，非只換時間人物；所有三語與本詞概念相符。"
+    },
+    {
+      "wordId": "drinking-straw",
+      "verdict": "pass",
+      "reason": "drinking straw／ストロー／吸管一致指中空飲用管，三語區分攪拌棒；未限定所有吸管材質或尺寸，與受審圖片一般細吸管相符。純片假名主詞讀音及分段一致。",
+      "pairVerdict": "pass",
+      "pairReason": "兩句各一筆，A2直接問話/請求與B1實質因果句形成難度及功能差異，非只換時間人物；所有三語與本詞概念相符。"
+    }
+  ],
+  "examples": [
+    {
+      "wordId": "point-card",
+      "slot": 0,
+      "exampleId": "point-card:0",
+      "cefrLevel": "A2",
+      "verdict": "pass",
+      "reason": "A2簡句是店方要求出示卡片，英日中人物、動作、物件一致；見せてください自然可用，不預設所有門店一定由店員開口。英2/日2個可點詞塊：show、loyalty card及ポイントカード、完整見せてください，みせてください覆蓋整個活用。",
+      "spans": [
+        {
+          "language": "en",
+          "reconstructsExactly": true,
+          "tapCount": 2,
+          "tapTexts": [
+            "show",
+            "loyalty card"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "language": "ja",
+          "reconstructsExactly": true,
+          "tapCount": 2,
+          "tapTexts": [
+            "ポイントカード",
+            "見せてください"
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "wordId": "point-card",
+      "slot": 1,
+      "exampleId": "point-card:1",
+      "cefrLevel": "B1",
+      "verdict": "pass",
+      "reason": "B1句以忘帶實體卡導致改用App累點的因果呈現不同教學內容；三語均保留忘帶、App、累點。英6/日5個可點詞塊，forgot的忘帶語境、collect points的累點義正確，わすれた與ためました完整。",
+      "spans": [
+        {
+          "language": "en",
+          "reconstructsExactly": true,
+          "tapCount": 6,
+          "tapTexts": [
+            "forgot",
+            "loyalty card",
+            "used",
+            "app",
+            "collect",
+            "points"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "language": "ja",
+          "reconstructsExactly": true,
+          "tapCount": 5,
+          "tapTexts": [
+            "ポイントカード",
+            "忘れた",
+            "アプリ",
+            "ポイント",
+            "ためました"
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "wordId": "drinking-straw",
+      "slot": 0,
+      "exampleId": "drinking-straw:0",
+      "cefrLevel": "A2",
+      "verdict": "pass",
+      "reason": "A2簡句是結帳時詢問是否附吸管，Shall I include與お付けしますか及中文問句意圖一致；沒有承諾所有商店均免費或必然附贈。英2/日2個可點詞塊，お付けします讀おつけします完整，助詞及問句尾不可點。",
+      "spans": [
+        {
+          "language": "en",
+          "reconstructsExactly": true,
+          "tapCount": 2,
+          "tapTexts": [
+            "include",
+            "drinking straw"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "language": "ja",
+          "reconstructsExactly": true,
+          "tapCount": 2,
+          "tapTexts": [
+            "ストロー",
+            "お付けします"
+          ],
+          "verdict": "pass"
+        }
+      ]
+    },
+    {
+      "wordId": "drinking-straw",
+      "slot": 1,
+      "exampleId": "drinking-straw:1",
+      "cefrLevel": "B1",
+      "verdict": "pass",
+      "reason": "B1句以吸管太短為原因，再請求較長的一支，三語因果、比較與請求一致；自然的實際使用情境，與簡句功能不同。英4/日5個可點詞塊，asked for作固定請求搭配，短すぎた與お願いしました保留完整活用，讀音正確；もっと與長い分開。",
+      "spans": [
+        {
+          "language": "en",
+          "reconstructsExactly": true,
+          "tapCount": 4,
+          "tapTexts": [
+            "drinking straw",
+            "short",
+            "asked for",
+            "longer"
+          ],
+          "verdict": "pass"
+        },
+        {
+          "language": "ja",
+          "reconstructsExactly": true,
+          "tapCount": 5,
+          "tapTexts": [
+            "ストロー",
+            "短すぎた",
+            "もっと",
+            "長い",
+            "お願いしました"
+          ],
+          "verdict": "pass"
+        }
+      ]
+    }
+  ],
+  "mechanical": {
+    "wordCount": 2,
+    "exampleCount": 4,
+    "spanSetCount": 8,
+    "exactReconstruction": true,
+    "allThreeGlosses": true,
+    "kanaReadingsFull": true,
+    "headwordSegmentsReconstruct": true
+  },
+  "references": [
+    {
+      "url": "https://www.lawson.co.jp/ponta/",
+      "supports": "Shopping points collection/redemption, app-linked card use and combined card functions; retailer-specific facts are not generalized into universal guarantees."
+    },
+    {
+      "url": "https://www.family.co.jp/sustainability/material_issues/environment/nature.html",
+      "supports": "Daily-life drinking-straw concept; no universal material or provision claim."
+    }
+  ],
+  "notChecked": [
+    "subjective audio listening",
+    "audio bytes and metadata pending separate review",
+    "publisher/transaction/plan",
+    "production DB/API/cache"
+  ],
+  "productionWrites": 0,
+  "officialValidation": {
+    "file": "independent-official-checker/audit.json",
+    "sha256": "6cc53660ff5d7eebbdd309b45da55decf0197e3c32ace9f1ce8f326c81f77b4c",
+    "mechanicalStatus": "passed",
+    "semanticReviewStatus": "passed",
+    "issues": 0,
+    "inputSha256": "2d83d1f654a01214892b8708f697bf3659bb827f41a132050b9b1bb3d870f4ce",
+    "projectionMatchesSourceExactly": true
+  },
+  "existingBagUpdate": {
+    "verdict": "pass",
+    "reason": "Revised precise contextual alias/note proposal preserves every original prefix and all unrelated fields. Traditional Chinese append is in actual displayed words.note; en/ja append existing localized notes. Actual localizeWord fixture proves all three displayed notes exactly match proposed values and other fields remain unchanged. Original two meat/plastic-bag examples remain valid.",
+    "report": "independent-review-existing-bag.json",
+    "reportSha256": "f73f82c656c10aa37b730c8a33ca9ab44679f5816739caa2d3df8fdae54a6492"
+  }
+}

@@ -1,0 +1,15 @@
+✔ reviewable delta appends only one alias and preserves every original field/prefix (7.208708ms)
+✔ changing classification or audio in proposal is rejected (0.659458ms)
+✔ erasing an existing note prefix is rejected (0.125625ms)
+✔ actual forward helper changes one alias row and the base note plus exactly two localized note rows (1.057542ms)
+✔ owned rollback helper restores exact before-state without touching headword/media/category (0.737083ms)
+✔ later edited notes or examples refuse before any DML (1.391166ms)
+✔ later edits also prevent reverse helper from overwriting user changes (0.532208ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.177292

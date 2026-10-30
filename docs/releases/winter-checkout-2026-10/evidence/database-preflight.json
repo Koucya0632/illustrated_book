@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-30T08:47:02.116Z",
+  "transactionReadOnly": true,
+  "databaseHostFingerprint": "15749fae6d13",
+  "logicalTargetFingerprint": "ff5cae26be7059d0d2127c76395c4b1b07d0a8902ecae30dad8ba03558975fe7",
+  "publishedCount": 1243,
+  "existingBagState": "before",
+  "collisionRows": [],
+  "japaneseCollisions": [],
+  "categories": [
+    {
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "name_zh": "便利商店",
+      "emoji": "🏪",
+      "description": "認識日本便利商店裡常見的設備、服務與商品",
+      "description_en": "Everyday equipment, services, and food found in Japanese convenience stores",
+      "color": "from-sky-100 to-orange-100",
+      "image_url": "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp"
+    }
+  ],
+  "categoryTranslations": [
+    {
+      "category_id": "convenience-store",
+      "language": "ja",
+      "name": "コンビニ",
+      "description": "日本のコンビニで見かける設備・サービス・商品"
+    }
+  ],
+  "related": [
+    {
+      "id": "membership-card",
+      "word": "membership card",
+      "status": "published",
+      "term": "会員カード"
+    }
+  ],
+  "sentenceCollisions": [],
+  "passed": true
+}

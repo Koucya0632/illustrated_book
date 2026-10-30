@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-checkout-2026-10",
+  "verifiedAt": "2026-10-30T03:09:26.787Z",
+  "sourceManifest": "generated-manifest.json",
+  "clipsVerified": 18,
+  "breakdown": {
+    "headwords": {
+      "en-US": 2,
+      "en-GB": 2,
+      "ja-JP": 2
+    },
+    "examples": {
+      "en-US": 4,
+      "en-GB": 4,
+      "ja-JP": 4
+    }
+  },
+  "durationSeconds": {
+    "minimum": 1.008,
+    "maximum": 4.536,
+    "total": 46.896
+  },
+  "checks": [
+    "plan membership",
+    "exact spoken source and owner",
+    "path containment",
+    "byte count",
+    "SHA-256",
+    "MP3 header",
+    "ffprobe metadata",
+    "full ffmpeg decode"
+  ],
+  "issues": [],
+  "passed": true
+}

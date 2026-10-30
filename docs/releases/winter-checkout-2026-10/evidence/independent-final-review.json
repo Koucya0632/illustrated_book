@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "workBatch": "winter-2026-02",
+  "reviewer": "checkout_reviewer; independent from checkout_producer",
+  "reviewedAt": "2026-10-30T08:49:31.685238+00:00",
+  "status": "pass-prepublication-preparation",
+  "releaseStatus": "not-published-awaiting-explicit-authorization",
+  "plan": {
+    "file": "output/winter-checkout-2026-10/publish-plan-0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f.json",
+    "sha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f",
+    "planDigest": "1f0f7620d564cdc22a1f5a63b9b5338326ac457a6a5af45bae7f1ffc7ea9e585",
+    "allCurrentSourceHashesMatch": true
+  },
+  "sourceHashes": {
+    "scripts/publish-winter-checkout-2026-10.ts": "25196f38c648838d1903bdc8fcb3e264e461fa59ecdba9fd105ff5258bc7fbd7",
+    "scripts/winter-checkout-2026-10-existing-bag.mjs": "d097ad4f82e6462cdce3ccb4b25e4f17b7440d59bfcef8e36940eea89f63973b",
+    "scripts/prepare-winter-checkout-2026-10-publish-plan.mjs": "637f113f276ed4be0b2c6cda80d3e8ebf4310d2b94f46dc9b9cc0104886d8212",
+    "data/winter-checkout-2026-10-postpublication-integration.patch": "556537f13a814b5b8c5f023a4d2aa4adebc4ea7c9ada58056eae6dc1e510e8bd",
+    "data/winter-checkout-2026-10-canonical-images.patch": "8b8ff7e1420b8c53b4fc325333452e37b08e327980e5bf54fe701f7b304fa8b5",
+    "data/winter-checkout-2026-10-postpublication-integration.json": "60978aae4401a215f2fa79e636ef8d12f2c74f623a64f77d9ac27dcc1b14fca1",
+    "data/winter-checkout-2026-10-existing-bag-update.json": "a781059478fa35d34667e04b01e1d1d2e848661e4d9779aac902eb84f8f6e725"
+  },
+  "evidenceHashes": {
+    "independent-review-content.json": "c76760f099e87ec234be7f4511930d43cc9ecfde347c02ca8f1e3812fd0867ae",
+    "independent-review-images.json": "6171bd2b6a07847338d09defd7bc524601dd025f9d1401c73735d8f76c6c5682",
+    "independent-review-audio.json": "f16cf0b19fb649456dc7bfca326aa8a70f17745537143fcd1fc21d21b41434ea",
+    "independent-review-existing-bag.json": "f73f82c656c10aa37b730c8a33ca9ab44679f5816739caa2d3df8fdae54a6492",
+    "independent-official-checker/audit.json": "6cc53660ff5d7eebbdd309b45da55decf0197e3c32ace9f1ce8f326c81f77b4c",
+    "independent-final-dry-run.log": "cbe96155bc69975907d12137b225c74da1befba4cdd73f229419495345263220",
+    "independent-final-note-tests.log": "cd355b5c429496628796a64a21983caf9519167722c3139280631d54ce0c8247",
+    "independent-final-display-check.log": "4ca29751bc759d3ed12bed8882cc81528f8d8a548672d33989253393690e069f",
+    "independent-final-integration-tests.log": "a930339fc17d214ec3030dbc36a9314129df06db9211f6a15d9e35fb1d6182f2",
+    "postpublication-fixture-report.json": "d233f54a019f5d0efd5c4a66dc2e3684d7317d2b2836bfb53b01afef065edc65",
+    "build-final.log": "63d0701f35d29d481ec1191522e4d72b091aed7b82785266a2bdf1f639941253",
+    "typecheck-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "counts": {
+    "words": 2,
+    "existingWordUpdates": 1,
+    "aliasRowsUpdated": 1,
+    "baseNoteRowsUpdated": 1,
+    "localizedNoteRowsChanged": 2,
+    "definitions": 6,
+    "examples": 4,
+    "spanSentences": 8,
+    "wordImages": 2,
+    "categoryImages": 0,
+    "audioClips": 18,
+    "storageObjects": 20
+  },
+  "layers": {
+    "individualContentAndSpans": "passed; previous independent per-item judgments reused only after exact current hashes verified;2words4examples8sets",
+    "existingBagMeaningAndVisibleProjection": "passed; exact proposal hash, original prefixes retained, actual localizer and actual detail/row adapter tested for3UI languages×2directions",
+    "localImages": "passed;2WebP bytes exact to individually viewed independent reports and image manifest",
+    "localHeadwordAudio": "passed-mechanical;6clips source text/locale/bytes/hashes/frame and full decode review bound to unchanged source",
+    "localExampleAudio": "passed-mechanical;12clips source text/locale/bytes/hashes/frame and full decode review bound to unchanged source",
+    "subjectiveAudioListening": "not checked",
+    "publisherDefaultDryRun": "passed; reviewer independently executed final immutable plan;SELECT-only DB transaction and HeadBucket/ListObjects only;0existing candidates0conflicts,full bag before-state;both target fingerprints matched",
+    "publisherApplySafety": "passed-code-review; explicit apply+DB/storage fingerprints;create-only IfNoneMatch;original-manifest resume;persist owner-ID map before paths;full remote byte verify;single SERIALIZABLE locked content transaction;fresh conflict preflight under locks;full bag CAS and before/after stored-row compare",
+    "rollbackSafety": "passed-code-and-fixture; exact after-state guards, outside reuse/user reference checks,original category retained,onlyowned bag delta restored,new2 removed,storage retained;actual production rollback not executed",
+    "bagCASFixtures": "passed;7/7 independently rerun",
+    "detailProjectionFixtures": "passed;6/6 independently rerun;independent actual-localizer3language fixture reproduced same report hash",
+    "deferredIntegrationFixtures": "passed;4/4 independently rerun real migration synchronizer;published no-op/full corpus no-op/unpublished absent from fallback/lateredits reject;patch4file before-after hashes exact,canonical2keys-only,English staticnote-only",
+    "typecheck": "passed;producer exit0;independent repeat exit0",
+    "isolatedProductionBuild": "passed;producer exit0,reviewer inspected complete compilation/type/prerender/routes log;next build without migrate or DB environment",
+    "productionDatabaseContent": "pending authorized publication",
+    "remoteNewWebpMp3Bytes": "pending authorized upload",
+    "productionEnglishJapaneseApiAndIosShape": "pending authorized publication",
+    "ordinaryAndCacheBustingSearchDetailCategory": "pending authorized publication; include literalレジ袋 search and3UI-language bag note projection",
+    "canonicalImageRegistryInLiveApp": "pending postpublication separately authorized commit/push/deployment",
+    "deviceTest": "not checked"
+  },
+  "resolvedFindings": [
+    {
+      "id": "zh-note-invisible",
+      "resolution": "Move Chinese note append to words.note actually used by zh-Hant;en/ja localized append only;no global localizer change."
+    },
+    {
+      "id": "upload-period-conflict-race",
+      "resolution": "Added fresh inspectDatabase under table locks before any content mutation;requires newSeries+writeReady;category tables also locked."
+    },
+    {
+      "id": "manual-localized-maintenance-reversion",
+      "resolution": "Deferred precise English etymology-en bag-note patch now included in immutable plan sources, same exact after-state note;all other fields and entries unchanged."
+    }
+  ],
+  "issues": [],
+  "limitations": [
+    "This approves preparation and reviewed guarded mechanisms, not authority to execute production writes.",
+    "No subjective all-clip listening judgment; audio pass is source/locale/byte/frame/decode evidence.",
+    "No production publication, storage upload, rollback, migration, commit, push or deployment executed by reviewer.",
+    "Postpublication patches remain unapplied in primary worktree;isolated fixture only.",
+    "Prior79984565 plan is obsolete, retained for history, not applicable."
+  ],
+  "productionWrites": 0
+}

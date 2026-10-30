@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "scope": "Actual restorer in isolated directory without .env,DB,node_modules,original ignored output or media",
+  "productionWrites": 0,
+  "runs": [
+    {
+      "mode": "verified-only",
+      "verifiedArtifacts": 48,
+      "restoredFiles": 0,
+      "downloadedMedia": 0,
+      "productionWrites": 0
+    },
+    {
+      "mode": "restored",
+      "verifiedArtifacts": 48,
+      "restoredFiles": 48,
+      "downloadedMedia": 0,
+      "productionWrites": 0
+    },
+    {
+      "mode": "restored",
+      "verifiedArtifacts": 48,
+      "restoredFiles": 0,
+      "downloadedMedia": 0,
+      "productionWrites": 0
+    }
+  ],
+  "restoredArtifactCount": 48,
+  "sourceCount": 12,
+  "allRestoredBytesMatchIndex": true,
+  "idempotentSecondRestore": true,
+  "refusesOverwriteDifferentBytes": true,
+  "mediaDownload": "not executed"
+}

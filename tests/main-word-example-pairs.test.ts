@@ -36,13 +36,15 @@ import { MAIN_WORD_CORRECTIONS } from "../lib/main-word-corrections";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "../lib/living-room-main-word-corrections";
 import { words } from "../lib/words";
 import winterPostalRelease from "../docs/releases/winter-postal-2026-10.json";
+import winterCheckoutRelease from "../docs/releases/winter-checkout-2026-10.json";
 
 test("every published main word has one complete simple/complex example pair", () => {
   // Winter words are already published in the DB, but deliberately absent
   // from public static seeds. The published fixture includes those releases.
   assert.equal(winterPostalRelease.manifest.status, "applied");
+  assert.equal(winterCheckoutRelease.manifest.status, "applied");
   const releasedWinterIds = new Set(
-    Object.keys(winterPostalRelease.manifest.resolvedExampleIds).map((owner) => owner.split(":")[0]),
+    [...Object.keys(winterPostalRelease.manifest.resolvedExampleIds), ...Object.keys(winterCheckoutRelease.manifest.resolvedExampleIds)].map((owner) => owner.split(":")[0]),
   );
   const publishedIds = [
     ...words.filter(({ status }) => status === "published").map(({ id }) => id),

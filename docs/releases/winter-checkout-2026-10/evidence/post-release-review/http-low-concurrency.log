@@ -1,0 +1,101 @@
+{
+  "probes": 76,
+  "issues": [
+    {
+      "url": "https://tuji.nexflow.team/api/words/point-card?lang=zh-Hant&learning=zh-en",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-en",
+      "reason": "id required nonempty string"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/plastic-bag?lang=zh-Hant&learning=zh-en",
+      "reason": "bag note stale/mismatch zh-Hant"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/drinking-straw?lang=zh-Hant&learning=zh-en",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/plastic-bag?lang=en&learning=zh-en",
+      "reason": "bag note stale/mismatch en"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/plastic-bag?lang=ja&learning=zh-en",
+      "reason": "bag note stale/mismatch ja"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-ja",
+      "reason": "id required nonempty string"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/drinking-straw?lang=zh-Hant&learning=zh-ja",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/point-card?lang=zh-Hant&learning=zh-ja",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/plastic-bag?lang=zh-Hant&learning=zh-ja",
+      "reason": "bag note stale/mismatch zh-Hant"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/plastic-bag?lang=en&learning=zh-ja",
+      "reason": "bag note stale/mismatch en"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/plastic-bag?lang=ja&learning=zh-ja",
+      "reason": "bag note stale/mismatch ja"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/point-card?lang=zh-Hant&learning=zh-en",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en",
+      "reason": "id required nonempty string"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/drinking-straw?lang=zh-Hant&learning=zh-en",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/plastic-bag?lang=zh-Hant&learning=zh-en",
+      "reason": "bag note stale/mismatch zh-Hant"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/plastic-bag?lang=ja&learning=zh-en",
+      "reason": "bag note stale/mismatch ja"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/plastic-bag?lang=en&learning=zh-en",
+      "reason": "bag note stale/mismatch en"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja",
+      "reason": "id required nonempty string"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/drinking-straw?lang=zh-Hant&learning=zh-ja",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/point-card?lang=zh-Hant&learning=zh-ja",
+      "reason": "HTTP 404"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/plastic-bag?lang=zh-Hant&learning=zh-ja",
+      "reason": "bag note stale/mismatch zh-Hant"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/plastic-bag?lang=en&learning=zh-ja",
+      "reason": "bag note stale/mismatch en"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/plastic-bag?lang=ja&learning=zh-ja",
+      "reason": "bag note stale/mismatch ja"
+    }
+  ]
+}

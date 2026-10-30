@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-checkout-2026-10",
+  "workBatch": "winter-2026-02",
+  "state": "local-candidate-awaiting-independent-review",
+  "scopeNote": "Two new convenience-store words plus guarded alias/localized-note update of existing supermarket plastic-bag; preserve its headword, examples, media, category and study entitlement. No public seed/fallback registration.",
+  "category": {
+    "id": "convenience-store",
+    "existing": true,
+    "free": true
+  },
+  "references": [
+    "https://www.lawson.co.jp/ponta/",
+    "https://www.family.co.jp/sustainability/with-sustainability/universal_s24.html",
+    "https://www.inq.family.co.jp/familymart/QA_Customer/web/knowledge15504.html",
+    "https://www.family.co.jp/sustainability/material_issues/environment/nature.html"
+  ],
+  "editorialDecisions": [
+    {
+      "candidate": "レジ袋",
+      "decision": "reuse-plastic-bag-no-new-id",
+      "reason": "Published image is already a handled checkout bag. Add contextual alias/note only, retaining supermarket study entitlement; do not claim all linked T002 words are free."
+    },
+    {
+      "candidate": "ポイントカード",
+      "decision": "distinct-points-function-related-membership-card",
+      "reason": "Existing membership card teaches membership identity; new concept teaches reward points. Functions may coexist on the same card, so definitions must not make them mutually exclusive."
+    },
+    {
+      "candidate": "店員問話",
+      "decision": "checkout-prompts-may-be-spoken-or-displayed",
+      "reason": "Retailer guidance includes automated prompts; no promise that every clerk asks each question."
+    }
+  ],
+  "entries": [
+    {
+      "id": "point-card",
+      "word": "loyalty card",
+      "chinese": "集點卡",
+      "chineseDefinition": "購物時用來累積或使用回饋點數的卡片，也可能顯示在商店的App中；同一張卡片也可以兼具會員卡功能。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈlɔɪ.əl.ti kɑːrd/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "集點卡",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A card used to collect or use reward points when shopping. It may also be available in an app and may serve as a membership card.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "買い物でポイントをためたり、たまったポイントを使ったりするためのカード。アプリに表示するものもあり、会員証を兼ねる場合もある。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Please show your loyalty card.",
+          "ja": "ポイントカードを見せてください。",
+          "zh": "請出示您的集點卡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I forgot my loyalty card, so I used the app to collect points.",
+          "ja": "ポイントカードを忘れたので、アプリでポイントをためました。",
+          "zh": "因為忘帶集點卡，我用App累積點數。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [
+        "membership-card"
+      ],
+      "ja": "ポイントカード",
+      "jaReading": "ポイントカード",
+      "jaReadingSegments": [
+        {
+          "text": "ポイントカード",
+          "ruby": null
+        }
+      ]
+    },
+    {
+      "id": "drinking-straw",
+      "word": "drinking straw",
+      "chinese": "吸管",
+      "chineseDefinition": "用來吸飲料的細長中空管子；此處不是攪拌飲料的攪拌棒。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdrɪŋ.kɪŋ strɔː/",
+      "cefrLevel": "A2",
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "吸管",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A narrow hollow tube used to sip a drink, rather than a stick used to stir it.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "飲み物を吸って飲むための細い管。飲み物をかき混ぜるマドラーとは異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "examples": [
+        {
+          "en": "Shall I include a drinking straw?",
+          "ja": "ストローをお付けしますか？",
+          "zh": "需要附一支吸管嗎？",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The drinking straw was too short, so I asked for a longer one.",
+          "ja": "ストローが短すぎたので、もっと長いものをお願いしました。",
+          "zh": "吸管太短了，所以我請對方提供更長的。",
+          "cefrLevel": "B1"
+        }
+      ],
+      "relatedWords": [],
+      "ja": "ストロー",
+      "jaReading": "ストロー",
+      "jaReadingSegments": [
+        {
+          "text": "ストロー",
+          "ruby": null
+        }
+      ]
+    }
+  ]
+}

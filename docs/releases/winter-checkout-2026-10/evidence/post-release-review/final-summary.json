@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "workBatch": "winter-2026-02",
+  "status": "passed-data-publication-and-user-visible-routes",
+  "reviewer": "checkout_reviewer independent of producer;read-only postrelease review",
+  "checkedAt": "2026-10-30T09:03:20.555315+00:00",
+  "scope": "New2 main-catalog words plus complete owned existing plastic-bag delta. This is not a full-catalog semantic/image/audio audit.",
+  "planSha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f",
+  "manifest": {
+    "file": "output/winter-checkout-2026-10/apply-manifest-2026-10-30T08-53-19-832Z.json",
+    "sha256": "0ec9857ccc725d27d52fd8b00059637c386311ceaaa104cffb278b8394402a10",
+    "status": "applied",
+    "appliedAt": "2026-10-30T08:53:41.884Z",
+    "resolvedExampleIds": {
+      "point-card:0": "3711",
+      "point-card:1": "3712",
+      "drinking-straw:0": "3713",
+      "drinking-straw:1": "3714"
+    },
+    "storageObjects": 20,
+    "uploadedByRun": 20,
+    "existingBagUpdateApplied": true
+  },
+  "evidenceHashes": {
+    "database-exact.json": "0c1deaf4c25f8a69df075e1333dd3bc1bf3ebdb46c1e8a9e9d6b4d06e3501721",
+    "remote-objects.json": "283f57d1c586fecbb6d6bf86fcfaa3e2d153bc7ef515fe8d5d50df78d97beb36",
+    "scoped-examples-source.json": "9d6343126d24dfb42ccabc535b451148c7198c3c2da7cde6759dbb0a0ec7eab0",
+    "scoped-semantic-review.json": "f1ae2f888b13d1101bae282a8f440b2a28d08bb733630522eca6f3af15c3704d",
+    "scoped-official-checker/audit.json": "fe97050cc0d1cce0eb3e5ece01c23f9f50ab7652c6a445b9582c6d7fec85fa54",
+    "http-probes-compact.json": "c64431ecb0921bb59e21cf5a657d2b6f245cf719340fd658c41f377801df9934",
+    "scoped-official-api-shape.json": "969209f28bb8d6ae8ad249575e178b40fe260b717d514d54d9361d887c125542",
+    "local-integration-proof.json": "c3fd969d038286c43338a12b14a9ad2615c36ce52bd866cb551431f416e14898",
+    "portable-restoration-independent.json": "25449f1344574db81096f4f5f2f328e7590e9c32ef63eecfedd46a206e7f4e3e"
+  },
+  "layers": {
+    "newDatabaseContent": "passed; actual source comparator SELECT-only snapshot matches all word/term/definition/example/translations/span/gloss/relation/category/cards/media rows to immutable plan",
+    "existingBagExactDelta": "passed; full after snapshot equal; aliases appendレジ袋,baseTraditionalChinese note append and2localizednotes only;all old prefixes/headword/reading/definitions/examples/media/category/cards/rights unchanged",
+    "fullDatabaseMechanicalAudit": "passed;root official audit-main-words final checked1245published noissues;not full semantics",
+    "scopedExampleMechanical": "passed;official checker2words4examples8span sets0issues",
+    "scopedIndividualSemantic": "passed;prior individual reasons reused only after all actual DB texts/spans/glosses exact to reviewed current source;real numeric3711-3714 IDs mapped",
+    "images": "passed;all2 remote WebP completebytes SHA MIME dimensions1254²;identical to independently visually reviewed local images",
+    "headwordAudio": "passed-mechanical;6required owner-locales actual DB/source+remote fullhash andLayerIIIframes+full decode",
+    "exampleAudio": "passed-mechanical;12required owner-locales actualDB/source+remote fullhash andLayerIIIframes+full decode",
+    "subjectiveAudioListening": "not checked",
+    "apiIosCardWordShape": "passed;official auditWordsPayload on all8captured scoped2word list probes;bothlearning directions,2hosts,ordinary/bust;0issues",
+    "apiAudioProjection": "passed;all8listprobes exact locale-set+DBURLs,zh-ja onlyja-JP,zh-en onlyen-US/en-GB",
+    "detailExamplesAndSpans": "passed;bothnewwords,directions,2hosts,ordinary/bust;target+translations+zh+2example structure and span reconstruction match actual plan. zh-ja intentionally omits english en display.",
+    "bagVisibleNotesAndSearch": "passed;3UIlang×2learning×2hosts×ordinary/bust exact note values plus literalレジ袋 true/api/search returnsbag bothlearningdirections",
+    "categoryAndPages": "passed;2hosts ordinary/bust categoriesAPI plus convenience-storecategory/newword/bagHTML allHTTP200",
+    "ordinaryAndBustingCache": "passed-after-convergence;76uniqueprobeURLs0issues,30JSON ordinary/bust pairs selected batch payload exactly identical;ordinarylists1245",
+    "localCodeIntegration": "passed;exactreviewed patches appliedafterDBpublish;2pairs/8spans/2canonicalURLs/enbagstaticnote only;complete1245publishedpaircoverage;fixture scoped onlyreleased IDs,restorer read-only download optional",
+    "portableEvidence": "passed for48artifact/12source snapshot independently restored withoutenv/DB/node_modules/output;idempotent andmismatchrefusal verified. Producer addingfinalreports subsequently mustreverify expandedindex.",
+    "commitPushDeployment": "not executed forbatch2;requiresseparateauthorization;productionGitcanonical integration pending",
+    "deviceTest": "not checked"
+  },
+  "cacheOperationsByRoot": [
+    "onewords-tag invalidate",
+    "onewords-tag delete;no broad purge"
+  ],
+  "verificationIncident": {
+    "observed": "Initial HTTP audit created Promises eagerly, starting all requests together; contemporaneous transient HTTP500 on category/bag pages and EMAXCONN maxclient200 captured by root. Global causation not independently proved.",
+    "mitigation": "Stopped network checks>=60sec;deferredtasks max2 then ordinaryretry strictlysequential;noDB configurationchange/sessiontermination;subsequentroutes200 androotDB audit0issues.",
+    "evidence": "../verification-load-incident.json",
+    "initialReportCorrections": "Early detail audit compared absent ja/en instead of intentional target/translations projection and early q onlist route was ineffective;fixed before final76baseline;true/api/search finalverified."
+  },
+  "unresolvedBlockingIssues": [],
+  "limitations": [
+    "No claim of whole1245catalog semantic/image/audiohealth.",
+    "No subjectiveallcliplistening orrealdevice test.",
+    "Data publication verified;localcodeintegration notyet committed/pushed/deployed."
+  ],
+  "reviewerProductionWrites": 0,
+  "rootAuditEvidence": {
+    "file": "output/winter-checkout-2026-10/database-main-word-audit-final.log",
+    "sha256": "cbbc1df8172aeedb3c173a9b1d6a18afe86a4870f29096de57d8f5eea11999a4"
+  },
+  "incidentEvidenceSha256": "e429d09b7a68206c634a767b078e5fe591b1b60ae7f4444a448315e42cbf64ef"
+}

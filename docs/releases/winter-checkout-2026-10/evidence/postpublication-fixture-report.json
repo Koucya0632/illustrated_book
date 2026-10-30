@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "fixture": "isolated copy with deferred patches applied; no live database",
+  "migrationTests": 4,
+  "bagStaticNoteOnly": "all other JSON entries and fields unchanged",
+  "mainWorktreePatchState": "unapplied",
+  "previewSha256": "5a60b732a8808c6635dccbf50d8874cc138adeabad1f9d8bf2b19d376add8742",
+  "previewImages": 2,
+  "previewAudio": 18,
+  "allPreviewResourcesExist": true,
+  "productionWrites": 0
+}

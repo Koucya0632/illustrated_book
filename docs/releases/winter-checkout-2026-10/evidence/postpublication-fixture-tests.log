@@ -1,0 +1,12 @@
+✔ normal migration recognizes both published winter pairs and leaves corrected spans untouched (59.856458ms)
+✔ the complete registered published corpus can pass the real migration no-op path (94.787667ms)
+✔ unpublished winter IDs are refused before mutation and never added to public fallback words (35.996833ms)
+✔ a later edited example aborts before migration may replace or sync anything (35.692292ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 387.593209

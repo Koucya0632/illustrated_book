@@ -1,0 +1,85 @@
+{
+  "status": "preparation-complete-awaiting-final-independent-program-review-and-production-authorization",
+  "plan": {
+    "file": "publish-plan-0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f.json",
+    "sha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f",
+    "planDigest": "1f0f7620d564cdc22a1f5a63b9b5338326ac457a6a5af45bae7f1ffc7ea9e585",
+    "status": "prepared"
+  },
+  "summary": {
+    "words": 2,
+    "existingWordUpdates": 1,
+    "aliasRowsUpdated": 1,
+    "baseNoteRowsUpdated": 1,
+    "localizedNoteRowsChanged": 2,
+    "definitions": 6,
+    "examples": 4,
+    "spanSentences": 8,
+    "wordImages": 2,
+    "categoryImages": 0,
+    "audioClips": 18,
+    "storageObjects": 20
+  },
+  "checks": {
+    "selectOnlyDatabasePreflight": "passed",
+    "productionSearchReadOnlyPreflight": "passed",
+    "defaultPublisherDryRun": "passed",
+    "existingBagCasFixtureTests": 7,
+    "actualNoteProjectionTests": 6,
+    "actualMigrationIntegrationFixtureTests": 4,
+    "typecheck": "passed",
+    "isolatedPostPublicationNextBuild": "passed",
+    "patchesRemainUnapplied": true
+  },
+  "evidence": [
+    "database-preflight.json",
+    "api-preflight.json",
+    "publisher-dry-run-final.txt",
+    "existing-bag-tests-final.log",
+    "note-projection-tests-final.log",
+    "postpublication-fixture-tests.log",
+    "postpublication-fixture-report.json",
+    "typecheck-final.log",
+    "build-final.log"
+  ],
+  "sources": {
+    "publisher": {
+      "file": "scripts/publish-winter-checkout-2026-10.ts",
+      "sha256": "25196f38c648838d1903bdc8fcb3e264e461fa59ecdba9fd105ff5258bc7fbd7"
+    },
+    "postPublicationIntegrationPatch": {
+      "file": "data/winter-checkout-2026-10-postpublication-integration.patch",
+      "sha256": "556537f13a814b5b8c5f023a4d2aa4adebc4ea7c9ada58056eae6dc1e510e8bd"
+    },
+    "postPublicationIntegrationMetadata": {
+      "file": "data/winter-checkout-2026-10-postpublication-integration.json",
+      "sha256": "60978aae4401a215f2fa79e636ef8d12f2c74f623a64f77d9ac27dcc1b14fca1"
+    },
+    "canonicalImageIntegrationPatch": {
+      "file": "data/winter-checkout-2026-10-canonical-images.patch",
+      "sha256": "8b8ff7e1420b8c53b4fc325333452e37b08e327980e5bf54fe701f7b304fa8b5"
+    },
+    "existingBagProposal": {
+      "file": "data/winter-checkout-2026-10-existing-bag-update.json",
+      "sha256": "a781059478fa35d34667e04b01e1d1d2e848661e4d9779aac902eb84f8f6e725"
+    },
+    "existingBagModule": {
+      "file": "scripts/winter-checkout-2026-10-existing-bag.mjs",
+      "sha256": "d097ad4f82e6462cdce3ccb4b25e4f17b7440d59bfcef8e36940eea89f63973b"
+    }
+  },
+  "productionActions": {
+    "storageUploads": 0,
+    "databaseWrites": 0,
+    "exampleIdsReserved": 0,
+    "commits": 0,
+    "pushes": 0,
+    "deployments": 0
+  },
+  "limitations": [
+    "No subjective full-clip listening review; technical MP3/source/locale/frame/decoding review passed.",
+    "Production remote-byte/API/cache/iOS decoding verification pending authorized publication.",
+    "Commit/push/deploy require separate authorization.",
+    "Normal deployment does not overwrite bag alias/base note/JA note; reviewed proposal retains exact data delta. Deferred static English note patch protects future manual localized-text maintenance."
+  ]
+}

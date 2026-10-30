@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-30T03:11:00.349Z",
+  "sourceFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-checkout-preparation/output/winter-checkout-2026-10/independent-official-checker/examples.json",
+  "words": [
+    {
+      "id": "point-card",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "point-card:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "point-card:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "drinking-straw",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "drinking-straw:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "drinking-straw:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}

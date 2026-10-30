@@ -1,0 +1,708 @@
+{
+  "series": "winter-checkout-2026-10",
+  "planSha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f",
+  "artifacts": [
+    {
+      "originalPath": "output/winter-checkout-2026-10/api-preflight.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/api-preflight.json",
+      "bytes": 1720,
+      "sha256": "d563beae757a8bb72f04b502c9345cd311174092720b6531cec8801527144abc"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/apply-manifest-2026-10-30T08-53-19-832Z.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/apply-manifest-2026-10-30T08-53-19-832Z.json",
+      "bytes": 42525,
+      "sha256": "0ec9857ccc725d27d52fd8b00059637c386311ceaaa104cffb278b8394402a10"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/audio-candidates/generated-manifest.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/audio-candidates/generated-manifest.json",
+      "bytes": 9252,
+      "sha256": "bfa2161b2ba8c99c04aadea7da2c32057bcb6220f58a0dbe46c6e20843c5c43f"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/audio-candidates/mp3-frames-report.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/audio-candidates/mp3-frames-report.json",
+      "bytes": 6332,
+      "sha256": "cbc01ce3dd7bca918a0f74decb5832ed29b405c73878419c1821f2ae7abcecdc"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/audio-candidates/verification-report.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/audio-candidates/verification-report.json",
+      "bytes": 685,
+      "sha256": "b92107dbc7b3131e1392e07651793fc1c830272b7129ef3a12b2bd2f9205624a"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/audio-plan/manifest.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/audio-plan/manifest.json",
+      "bytes": 4167,
+      "sha256": "76727793f183d4c7a3182d30594c915039e224ee5adbbac24f48bb73caa64bc1"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/build-final.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/build-final.log",
+      "bytes": 6293,
+      "sha256": "63d0701f35d29d481ec1191522e4d72b091aed7b82785266a2bdf1f639941253"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/database-preflight.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/database-preflight.json",
+      "bytes": 1261,
+      "sha256": "5508a707971f1e6d509c6b7ce9de91f71cf62330ecf48409f8c4f4cf837b78e7"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/existing-bag-tests-final.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/existing-bag-tests-final.log",
+      "bytes": 729,
+      "sha256": "7653f311106f0bfe7f27f4f731e0bc80a1b6defa2c9c211e61ec7671c11eb521"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/image-manifest.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/image-manifest.json",
+      "bytes": 1234,
+      "sha256": "dedac612d8178b841a4e3f5ddca9439f1eae7e61211800fc3c07bf3142808a74"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-bag-display-fixture.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-bag-display-fixture.json",
+      "bytes": 2410,
+      "sha256": "87a4e6aadd43741901ada6280009a9eac186b523c7f9ab48702ec95e4f73ed4f"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-review-audio.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-review-audio.json",
+      "bytes": 21397,
+      "sha256": "f16cf0b19fb649456dc7bfca326aa8a70f17745537143fcd1fc21d21b41434ea"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-review-content.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-review-content.json",
+      "bytes": 7926,
+      "sha256": "c76760f099e87ec234be7f4511930d43cc9ecfde347c02ca8f1e3812fd0867ae"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-review-existing-bag.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-review-existing-bag.json",
+      "bytes": 3910,
+      "sha256": "f73f82c656c10aa37b730c8a33ca9ab44679f5816739caa2d3df8fdae54a6492"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-review-images.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-review-images.json",
+      "bytes": 4106,
+      "sha256": "6171bd2b6a07847338d09defd7bc524601dd025f9d1401c73735d8f76c6c5682"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/integration-local-tests.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/integration-local-tests.log",
+      "bytes": 2637,
+      "sha256": "412854dcd99bba22c28fdb45f575b71074783a05f048aeac74ee51457b7a997f"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/integration-local-typecheck.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/integration-local-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/latest-plan.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/latest-plan.json",
+      "bytes": 287,
+      "sha256": "090da51cfbf5be617f93cd17fb354c8bc2000c403dd0c26d4aff17ea79b367aa"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/note-projection-tests-final.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/note-projection-tests-final.log",
+      "bytes": 641,
+      "sha256": "856a6def9d58deeec28ea8ddfde25947ccb8caad3a8cbf0c879db3916fb89504"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/postpublication-fixture-report.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/postpublication-fixture-report.json",
+      "bytes": 427,
+      "sha256": "d233f54a019f5d0efd5c4a66dc2e3684d7317d2b2836bfb53b01afef065edc65"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/postpublication-fixture-tests.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/postpublication-fixture-tests.log",
+      "bytes": 528,
+      "sha256": "f8387786dea15953ab7a76b75c301ecfc70d30e88bb735af2a9a24abf3739740"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/preparation-report.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/preparation-report.json",
+      "bytes": 610,
+      "sha256": "12b959071c3374dc038c7b7a43b16d8c00adca90305c2abef67529c7925edb02"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/preview.html",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/preview.html",
+      "bytes": 9997,
+      "sha256": "5a60b732a8808c6635dccbf50d8874cc138adeabad1f9d8bf2b19d376add8742"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/producer-final-preparation-report.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/producer-final-preparation-report.json",
+      "bytes": 3282,
+      "sha256": "9967ffbfce468705f1c5608b66eea1f70920f3e76b7a0d8a252abfd9429671d3"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/publish-plan-0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/publish-plan-0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f.json",
+      "bytes": 73089,
+      "sha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/publish-plan.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/publish-plan.json",
+      "bytes": 73089,
+      "sha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/publisher-dry-run-final.txt",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/publisher-dry-run-final.txt",
+      "bytes": 981,
+      "sha256": "cbe96155bc69975907d12137b225c74da1befba4cdd73f229419495345263220"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/typecheck-final.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/typecheck-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-final-review.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-final-review.json",
+      "bytes": 7249,
+      "sha256": "8c8e1e89be3d1570cfa95b40fd017d25fae6641746a6cbd143e15c7be3bf8b62"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-final-review.md",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-final-review.md",
+      "bytes": 1701,
+      "sha256": "a2fff35e0f624e11455284cc834bf12c57f7f1534f46cdf921a8dba774953558"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-final-dry-run.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-final-dry-run.log",
+      "bytes": 981,
+      "sha256": "cbe96155bc69975907d12137b225c74da1befba4cdd73f229419495345263220"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-final-typecheck.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-final-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-official-checker/audit.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-official-checker/audit.json",
+      "bytes": 1480,
+      "sha256": "6cc53660ff5d7eebbdd309b45da55decf0197e3c32ace9f1ce8f326c81f77b4c"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/independent-official-checker/semantic-review.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/independent-official-checker/semantic-review.json",
+      "bytes": 1343,
+      "sha256": "aca0b708d9efca29518ce0d2011f28bbcc97293b44ba31d342c95fe8599bf9dd"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-examples-source.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-examples-source.json",
+      "bytes": 10519,
+      "sha256": "9d6343126d24dfb42ccabc535b451148c7198c3c2da7cde6759dbb0a0ec7eab0"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/remote-objects.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/remote-objects.json",
+      "bytes": 33165,
+      "sha256": "283f57d1c586fecbb6d6bf86fcfaa3e2d153bc7ef515fe8d5d50df78d97beb36"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-initial.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/http-initial.log",
+      "bytes": 9037,
+      "sha256": "5273156483e9c7d81e4639fee723335ce0a090bbe9006b42fac40f2037dc8f10"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-after-invalidation.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/http-after-invalidation.log",
+      "bytes": 6342,
+      "sha256": "9d46f0201784a6625718ad57296bb29999de23fe50d556bc8ad23eb9bfb3d095"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/database-exact.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/database-exact.json",
+      "bytes": 369055,
+      "sha256": "0c1deaf4c25f8a69df075e1333dd3bc1bf3ebdb46c1e8a9e9d6b4d06e3501721"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-low-concurrency.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/http-low-concurrency.log",
+      "bytes": 3785,
+      "sha256": "6d75ccf5a89cf5976b95345a9bb208f0e4701c27722616308ded3a9ea0355f11"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-checker.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-checker.log",
+      "bytes": 1575,
+      "sha256": "fe97050cc0d1cce0eb3e5ece01c23f9f50ab7652c6a445b9582c6d7fec85fa54"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-semantic-review.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-semantic-review.json",
+      "bytes": 2895,
+      "sha256": "f1ae2f888b13d1101bae282a8f440b2a28d08bb733630522eca6f3af15c3704d"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-checker/audit.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-checker/audit.json",
+      "bytes": 1575,
+      "sha256": "fe97050cc0d1cce0eb3e5ece01c23f9f50ab7652c6a445b9582c6d7fec85fa54"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-checker/semantic-review.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-checker/semantic-review.json",
+      "bytes": 1318,
+      "sha256": "401a891a4b4633f4674eed6f193f9d62f18e66a873dd2c9f8f3da8268a66ed58"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-checker/examples.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-checker/examples.json",
+      "bytes": 10558,
+      "sha256": "4fe1105fb73372200e5ff5be1e90604063bcfc02e39eda5a3d4775e993bf3138"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-checker/audit.md",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-checker/audit.md",
+      "bytes": 264,
+      "sha256": "09b1967da9ba01b5cbb13a820a08662bdd1f0f4eb31a45a89a5d4700d894f4fb"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-checker/batches/batch-001.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-checker/batches/batch-001.json",
+      "bytes": 10408,
+      "sha256": "394e9ce76e641e6d96be5dd1b1b0c745bf77de361eebfb51baaa21db9729c65f"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/database-main-word-audit-final.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/database-main-word-audit-final.log",
+      "bytes": 63,
+      "sha256": "cbbc1df8172aeedb3c173a9b1d6a18afe86a4870f29096de57d8f5eea11999a4"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/cache-invalidate-words.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/cache-invalidate-words.log",
+      "bytes": 88,
+      "sha256": "81c754afeb1d1fd37d43d77d46f25870e2215b3c7e5e4957c323e08b2ef2d4ec"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/cache-delete-words.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/cache-delete-words.log",
+      "bytes": 84,
+      "sha256": "5fc7bc396890288ac835c17157631216dd0341d4145766c5deb52bafd1d97d22"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/verification-load-incident.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/verification-load-incident.json",
+      "bytes": 1921,
+      "sha256": "e429d09b7a68206c634a767b078e5fe591b1b60ae7f4444a448315e42cbf64ef"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/offline-entry-tests.log",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/offline-entry-tests.log",
+      "bytes": 726,
+      "sha256": "dfb02eb5b4f2c01f9c08b548965140a2c3b6e11e03b8e9689abc56bffd38afa4"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/final-summary.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/final-summary.json",
+      "bytes": 6293,
+      "sha256": "9ac33065dee1761e10171b0d98772218416fcc63fffb37c101db613d4e19c94b"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/final-summary.md",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/final-summary.md",
+      "bytes": 2045,
+      "sha256": "06003b23383ac0c43f7636e41fca390dda27c6d2ffb00313e4cc5ed01376273e"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-probes-compact.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/http-probes-compact.json",
+      "bytes": 331858,
+      "sha256": "c64431ecb0921bb59e21cf5a657d2b6f245cf719340fd658c41f377801df9934"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/scoped-official-api-shape.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/scoped-official-api-shape.json",
+      "bytes": 1642,
+      "sha256": "969209f28bb8d6ae8ad249575e178b40fe260b717d514d54d9361d887c125542"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/local-integration-proof.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/local-integration-proof.json",
+      "bytes": 294,
+      "sha256": "c3fd969d038286c43338a12b14a9ad2615c36ce52bd866cb551431f416e14898"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/portable-restoration-independent.json",
+      "portablePath": "docs/releases/winter-checkout-2026-10/evidence/post-release-review/portable-restoration-independent.json",
+      "bytes": 844,
+      "sha256": "25449f1344574db81096f4f5f2f328e7590e9c32ef63eecfedd46a206e7f4e3e"
+    }
+  ],
+  "sources": [
+    {
+      "file": "data/winter-checkout-2026-10.json",
+      "sha256": "b23f58ea2928812372adb0884124c4c6329461db914c1be0f7d6d898f5227c22"
+    },
+    {
+      "file": "data/example-spans-winter-checkout-2026-10.json",
+      "sha256": "f907ffb825eb30f59e9a90ad9ba56efbb5d55e04d0f480e180dd497f896d7fdb"
+    },
+    {
+      "file": "data/winter-checkout-2026-10-image-prompts.json",
+      "sha256": "da503012276a4ce4ed74e460d9629b2d2e3786903e4eff8ddfa5195b6d65df34"
+    },
+    {
+      "file": "scripts/publish-winter-checkout-2026-10.ts",
+      "sha256": "25196f38c648838d1903bdc8fcb3e264e461fa59ecdba9fd105ff5258bc7fbd7"
+    },
+    {
+      "file": "scripts/prepare-winter-checkout-2026-10-publish-plan.mjs",
+      "sha256": "637f113f276ed4be0b2c6cda80d3e8ebf4310d2b94f46dc9b9cc0104886d8212"
+    },
+    {
+      "file": "scripts/prepare-winter-checkout-2026-10.mjs",
+      "sha256": "cf5471a0d24efb255f287b306fcc86c5bb28bd787ee4dfe247d4580021cdb510"
+    },
+    {
+      "file": "data/winter-checkout-2026-10-postpublication-integration.patch",
+      "sha256": "556537f13a814b5b8c5f023a4d2aa4adebc4ea7c9ada58056eae6dc1e510e8bd"
+    },
+    {
+      "file": "data/winter-checkout-2026-10-postpublication-integration.json",
+      "sha256": "60978aae4401a215f2fa79e636ef8d12f2c74f623a64f77d9ac27dcc1b14fca1"
+    },
+    {
+      "file": "data/winter-checkout-2026-10-canonical-images.patch",
+      "sha256": "8b8ff7e1420b8c53b4fc325333452e37b08e327980e5bf54fe701f7b304fa8b5"
+    },
+    {
+      "file": "data/winter-checkout-2026-10-existing-bag-update.json",
+      "sha256": "a781059478fa35d34667e04b01e1d1d2e848661e4d9779aac902eb84f8f6e725"
+    },
+    {
+      "file": "scripts/winter-checkout-2026-10-existing-bag.mjs",
+      "sha256": "d097ad4f82e6462cdce3ccb4b25e4f17b7440d59bfcef8e36940eea89f63973b"
+    },
+    {
+      "file": "scripts/check-winter-checkout-2026-10-contract.mjs",
+      "sha256": "4d966e68961308bb8a653f32a6db152ba160c1194ec3fbe470355ac99173cacd"
+    }
+  ],
+  "media": [
+    {
+      "key": "word-images|winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+      "bucket": "word-images",
+      "storagePath": "winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+      "url": "https://img.nexflow.team/word-images/winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+      "localFile": "output/winter-checkout-2026-10/images/webp/point-card-v1-966db51b2ea2.webp",
+      "bytes": 87202,
+      "contentSha256": "966db51b2ea2436b4cdf11b2fb0f1643653d8cb60764837218f884e8d245b3bb",
+      "mimeType": "image/webp",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|point-card/en-US/b7f0180a06af53c9f87d.mp3",
+      "bucket": "word-audio",
+      "storagePath": "point-card/en-US/b7f0180a06af53c9f87d.mp3",
+      "url": "https://img.nexflow.team/word-audio/point-card/en-US/b7f0180a06af53c9f87d.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-US/4a065ed8362258505f0989601ba64853c4432e5cf2d45d005756539e720e3aff.mp3",
+      "bytes": 4032,
+      "contentSha256": "b7f0180a06af53c9f87d1945b60f08c11cecfc522929987562aec1590083195d",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|point-card/en-GB/187bda3821035278847a.mp3",
+      "bucket": "word-audio",
+      "storagePath": "point-card/en-GB/187bda3821035278847a.mp3",
+      "url": "https://img.nexflow.team/word-audio/point-card/en-GB/187bda3821035278847a.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-GB/583ae96fd0f1bccfc44ff9de67336f84ce70540d283cfb9e10975e78c8f0fe1a.mp3",
+      "bytes": 7872,
+      "contentSha256": "187bda3821035278847a2498756e976537b02ca98a2cd7477e545ecd99f99355",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+      "bucket": "word-audio",
+      "storagePath": "point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+      "url": "https://img.nexflow.team/word-audio/point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/ja-JP/e396c948fe020ef9f654635af485be3bd580052ec105b75ef0fe022bab95aae7.mp3",
+      "bytes": 6624,
+      "contentSha256": "89b8ed1ea698b35d600261180d980b87c1e6632f6106992adf195f36c5f6555c",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/14e8e483d15b8bf129aea4278112eca113bf79611c75ccff6fe98fbcfcad3b83.mp3",
+      "bytes": 8064,
+      "contentSha256": "46c838a19375cdc4dcdc0c6c3033411110ec573e724f7f79aeb58fb402734c7c",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/abeb44d844affae7e1ee160867f634a8ccc4706bdd04d5544284cb443add2576.mp3",
+      "bytes": 8544,
+      "contentSha256": "3973cfc929947ff08a17b45386edd786936bb9037602adb597abbd93e5cebbe0",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/5ec5b9cfe78db106b3574981c457aba2dec0bb2e706d2b801fd9aaa026f29328.mp3",
+      "bytes": 8256,
+      "contentSha256": "a116d2a7fadd4392ea9141bb1c239223b17fe8e01f324e2a3c069b29029a3c6b",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/cb06186e57c478230376fec0a979926d70266d724250df5f6a565a46aae4cd62.mp3",
+      "bytes": 18144,
+      "contentSha256": "645d2ba1046e39d00fa1aa0994d91151c7a59bd0eee86e3990fd6771ea69c327",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/15bf9939b928eb88eb0025a567357f717731d4335b6378a777229c6b684a7ace.mp3",
+      "bytes": 17184,
+      "contentSha256": "beaa25f340ff395ce158fb37a300b9ec735628f0057922e896c5d648c9ac49c7",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3712/ja-JP/a798711d65825c898a19.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3712/ja-JP/a798711d65825c898a19.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3712/ja-JP/a798711d65825c898a19.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/d7617079ca8b499b21d2c0aa720eb9ef53b0d770c629da08a1723f97408ff5e9.mp3",
+      "bytes": 15264,
+      "contentSha256": "a798711d65825c898a19a865ad91d06b4844076319e20005186ec814965b0553",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-images|winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+      "bucket": "word-images",
+      "storagePath": "winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+      "url": "https://img.nexflow.team/word-images/winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+      "localFile": "output/winter-checkout-2026-10/images/webp/drinking-straw-v1-3371fb120053.webp",
+      "bytes": 47724,
+      "contentSha256": "3371fb120053825ae8bf74c3f396b8dd84a5876aeaad7d7ef94d9d7f888f6277",
+      "mimeType": "image/webp",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+      "bucket": "word-audio",
+      "storagePath": "drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+      "url": "https://img.nexflow.team/word-audio/drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-US/d5e1f01902ca629c26489af07f5660f6c45797e9c9b8cad5467716d50b5dd26e.mp3",
+      "bytes": 7392,
+      "contentSha256": "fddce0f010e4a944d007efde37f5fb534cd7c5f5ebc3d24096bf66a378a4a4aa",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+      "bucket": "word-audio",
+      "storagePath": "drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+      "url": "https://img.nexflow.team/word-audio/drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-GB/306c63d7d19ba5c18ab3cbbd014a0fb8e51488c16f93c939dac4f952c0f1f16d.mp3",
+      "bytes": 7296,
+      "contentSha256": "359952278ddb9f4fe686e64ca56990905ef378d58c802716ea1680be1ad88e69",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+      "bucket": "word-audio",
+      "storagePath": "drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+      "url": "https://img.nexflow.team/word-audio/drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/ja-JP/2de7fd1d34eb99d15dbe958ed00dc110bb871ef6cac05822b5d46cb4dd9acca8.mp3",
+      "bytes": 6144,
+      "contentSha256": "2591a3fd134463c90c8affe2e0db7a20719941296200e87709a1420c1572b94c",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/83ef61a3ed618af250dfca47d03b55cbe69d24494c41420838bd712d6bc3eeae.mp3",
+      "bytes": 9984,
+      "contentSha256": "954ac8d7c0dc4f523ebd20e1d7a3889bd7d77c02e732a0cba8c735a4e18aeb8d",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/f338b761c0a291565eabafd2fcad82a0297cf8862c017b4f94dc25ada7071d04.mp3",
+      "bytes": 7776,
+      "contentSha256": "09a1b861bc6fc6cd0f4e0487b8b4887bf5df4b8052eceddb5c929ca8a25fa3fc",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/6412c24358757e8f80d38f61a6f08f002595aae796fd2bbc04e6982f3aaee13d.mp3",
+      "bytes": 9024,
+      "contentSha256": "fa6bd693a3a9ed601f04175101688583203fb3b1d5c6390a21793df97a8cecca",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/0f1d13cca2c3abfb823f2d4f34c9c1cec69b94769a79b10641bf6c1367298da6.mp3",
+      "bytes": 14976,
+      "contentSha256": "8052f7d539bbeb92630dcd4baf5c98176524f28ddb7c73af463cbe57412bf66a",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/b8fe51f5a5731dd0001d66440db8c971785b8d1bb397320efecb8f1319785e93.mp3",
+      "bytes": 13344,
+      "contentSha256": "b6cf03fe2a6787b3910d24ee8aadee7b884b30868a305dc85da204c5f44c3e46",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    },
+    {
+      "key": "word-audio|examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+      "bucket": "word-audio",
+      "storagePath": "examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+      "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/342ef1c4a109f43f1eb95d4919a6865c38866d0013119390102b38902156de88.mp3",
+      "bytes": 17664,
+      "contentSha256": "9aa5983e9c2c7607e5ab786e88b8d7f8e8231a702a0efa8202bd3a0a236a5e19",
+      "mimeType": "audio/mpeg",
+      "existedBefore": false,
+      "uploadedByRun": true,
+      "uploadIntent": true,
+      "verified": true
+    }
+  ],
+  "notes": [
+    "Only actually applied 0202e769 plan is restored; obsolete prepared plans excluded.",
+    "Original PNG generation files remain local; optional media restoration downloads the 20 published WebP/MP3 objects only."
+  ],
+  "largeLocalRawReferences": [
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-probes-1793350471968.json",
+      "bytes": 13167393,
+      "sha256": "062967575e3c9add1e09952e130a20cea34d44142f12d33787422411c762baba"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-probes-1793350532197.json",
+      "bytes": 13212199,
+      "sha256": "3bc22733205993d9873b29c38a08e3e6cbf189778b7c57368b11f406a64d50bc"
+    },
+    {
+      "originalPath": "output/winter-checkout-2026-10/post-release-review/http-probes-final-merged.json",
+      "bytes": 6828293,
+      "sha256": "479277a18354be9d68afeae1017d614a029670a601b377d91520a630b4c107d4"
+    }
+  ],
+  "status": "published-data-and-user-routes-verified; local-code-integration-ready; commit-push-deploy-not-performed"
+}

@@ -1,0 +1,294 @@
+{
+  "passed": true,
+  "clips": 18,
+  "results": [
+    {
+      "key": "headword|point-card|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 42,
+      "parsedBytes": 4032,
+      "trailingBytes": 0,
+      "bytes": 4032
+    },
+    {
+      "key": "headword|point-card|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 82,
+      "parsedBytes": 7872,
+      "trailingBytes": 0,
+      "bytes": 7872
+    },
+    {
+      "key": "headword|point-card|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 69,
+      "parsedBytes": 6624,
+      "trailingBytes": 0,
+      "bytes": 6624
+    },
+    {
+      "key": "example|point-card:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 84,
+      "parsedBytes": 8064,
+      "trailingBytes": 0,
+      "bytes": 8064
+    },
+    {
+      "key": "example|point-card:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 89,
+      "parsedBytes": 8544,
+      "trailingBytes": 0,
+      "bytes": 8544
+    },
+    {
+      "key": "example|point-card:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 86,
+      "parsedBytes": 8256,
+      "trailingBytes": 0,
+      "bytes": 8256
+    },
+    {
+      "key": "example|point-card:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 189,
+      "parsedBytes": 18144,
+      "trailingBytes": 0,
+      "bytes": 18144
+    },
+    {
+      "key": "example|point-card:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 179,
+      "parsedBytes": 17184,
+      "trailingBytes": 0,
+      "bytes": 17184
+    },
+    {
+      "key": "example|point-card:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 159,
+      "parsedBytes": 15264,
+      "trailingBytes": 0,
+      "bytes": 15264
+    },
+    {
+      "key": "headword|drinking-straw|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 77,
+      "parsedBytes": 7392,
+      "trailingBytes": 0,
+      "bytes": 7392
+    },
+    {
+      "key": "headword|drinking-straw|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 76,
+      "parsedBytes": 7296,
+      "trailingBytes": 0,
+      "bytes": 7296
+    },
+    {
+      "key": "headword|drinking-straw|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 64,
+      "parsedBytes": 6144,
+      "trailingBytes": 0,
+      "bytes": 6144
+    },
+    {
+      "key": "example|drinking-straw:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 104,
+      "parsedBytes": 9984,
+      "trailingBytes": 0,
+      "bytes": 9984
+    },
+    {
+      "key": "example|drinking-straw:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 81,
+      "parsedBytes": 7776,
+      "trailingBytes": 0,
+      "bytes": 7776
+    },
+    {
+      "key": "example|drinking-straw:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 94,
+      "parsedBytes": 9024,
+      "trailingBytes": 0,
+      "bytes": 9024
+    },
+    {
+      "key": "example|drinking-straw:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 156,
+      "parsedBytes": 14976,
+      "trailingBytes": 0,
+      "bytes": 14976
+    },
+    {
+      "key": "example|drinking-straw:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 139,
+      "parsedBytes": 13344,
+      "trailingBytes": 0,
+      "bytes": 13344
+    },
+    {
+      "key": "example|drinking-straw:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 184,
+      "parsedBytes": 17664,
+      "trailingBytes": 0,
+      "bytes": 17664
+    }
+  ]
+}

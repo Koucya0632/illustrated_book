@@ -1,0 +1,892 @@
+{
+  "schemaVersion": 1,
+  "wordId": "plastic-bag",
+  "state": "local-proposal-awaiting-independent-review",
+  "operation": "append-contextual-alias-and-localized-note",
+  "before": {
+    "word": [
+      {
+        "id": "plastic-bag",
+        "note": "plastic(塑膠)+bag(袋)",
+        "word": "plastic bag",
+        "forms": [
+          {
+            "label": "複數",
+            "value": "plastic bags"
+          }
+        ],
+        "status": "published",
+        "category": "supermarket",
+        "audio_url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+        "etymology": "plastic（塑膠）＋ bag（袋）。plastic 來自希臘文 plastikos（可塑造的），詞根 plassein（捏、塑形）；bag 來自古諾斯語 baggi。組合就是「塑膠做的袋子」，20 世紀後普及的容器。",
+        "image_url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+        "cefr_level": null,
+        "created_at": "2026-05-29T19:12:49.276083+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-06-04T07:56:40.887656+00:00",
+        "collocations": [],
+        "image_credit": null,
+        "also_known_as": [],
+        "image_license": "local-upload",
+        "pronunciation": "/ˈplæs.tɪk bæɡ/",
+        "part_of_speech": "noun",
+        "image_source_url": "https://loremflickr.com/600/450/plastic,bag?lock=1138624888",
+        "chinese_definition": "以薄而柔軟的塑膠材質製成的袋子。"
+      }
+    ],
+    "terms": [
+      {
+        "term": "plastic bag",
+        "reading": null,
+        "word_id": "plastic-bag",
+        "language": "en",
+        "audio_url": null,
+        "updated_at": "2026-10-29T12:46:25.595029+00:00",
+        "pronunciation": "/ˈplæs.tɪk bæɡ/",
+        "reading_segments": null
+      },
+      {
+        "term": "ビニール袋",
+        "reading": "ビニールぶくろ",
+        "word_id": "plastic-bag",
+        "language": "ja",
+        "audio_url": null,
+        "updated_at": "2026-08-06T14:14:26.270626+00:00",
+        "pronunciation": "ビニールぶくろ",
+        "reading_segments": [
+          {
+            "ruby": null,
+            "text": "ビ"
+          },
+          {
+            "ruby": null,
+            "text": "ニ"
+          },
+          {
+            "ruby": null,
+            "text": "ー"
+          },
+          {
+            "ruby": null,
+            "text": "ル"
+          },
+          {
+            "ruby": "ぶくろ",
+            "text": "袋"
+          }
+        ]
+      }
+    ],
+    "definitions": [
+      {
+        "id": 2295,
+        "word_id": "plastic-bag",
+        "language": "en",
+        "cefr_level": null,
+        "created_at": "2026-06-03T23:03:24.678582+00:00",
+        "definition": "A bag made of thin, flexible plastic.",
+        "sort_order": 0,
+        "updated_at": "2026-06-03T23:03:24.678582+00:00"
+      },
+      {
+        "id": 1827,
+        "word_id": "plastic-bag",
+        "language": "ja",
+        "cefr_level": null,
+        "created_at": "2026-05-31T13:08:02.990006+00:00",
+        "definition": "「ビニール袋」とは、薄くて柔らかいプラスチック素材で作られた袋のことです。",
+        "sort_order": 0,
+        "updated_at": "2026-06-25T10:20:00.013642+00:00"
+      },
+      {
+        "id": 1314,
+        "word_id": "plastic-bag",
+        "language": "zh",
+        "cefr_level": null,
+        "created_at": "2026-05-29T19:12:49.300045+00:00",
+        "definition": "塑膠袋",
+        "sort_order": 0,
+        "updated_at": "2026-05-29T19:12:49.300045+00:00"
+      }
+    ],
+    "examples": [
+      {
+        "id": 1425,
+        "word_id": "plastic-bag",
+        "sentence": "The cashier put the meat in a plastic bag.",
+        "cefr_level": "A2",
+        "created_at": "2026-08-24T06:33:48.121701+00:00",
+        "sort_order": 0
+      },
+      {
+        "id": 1426,
+        "word_id": "plastic-bag",
+        "sentence": "Because the meat package was leaking, the cashier put it in a separate plastic bag.",
+        "cefr_level": "B1",
+        "created_at": "2026-08-24T06:33:48.121701+00:00",
+        "sort_order": 1
+      }
+    ],
+    "translations": [
+      {
+        "language": "ja",
+        "example_id": 1425,
+        "translation": "レジ係が肉をビニール袋に入れました。"
+      },
+      {
+        "language": "zh",
+        "example_id": 1425,
+        "translation": "收銀員把肉裝進塑膠袋。"
+      },
+      {
+        "language": "ja",
+        "example_id": 1426,
+        "translation": "肉のパックから汁が出ていたので、レジ係が別のビニール袋へ入れました。"
+      },
+      {
+        "language": "zh",
+        "example_id": 1426,
+        "translation": "肉品包裝滲出汁液，所以收銀員另裝一個塑膠袋。"
+      }
+    ],
+    "localizedTexts": [
+      {
+        "field": "etymology",
+        "value": "plastic + bag. Plastic comes from Greek plastikos (able to be molded), from plassein (to mold); bag from Old Norse baggi. Together: a bag made of plastic — the container that spread after the 20th century.",
+        "word_id": "plastic-bag",
+        "language": "en"
+      },
+      {
+        "field": "etymology",
+        "value": "複合語 plastic + bag。",
+        "word_id": "plastic-bag",
+        "language": "ja"
+      },
+      {
+        "field": "note",
+        "value": "plastic + bag",
+        "word_id": "plastic-bag",
+        "language": "en"
+      },
+      {
+        "field": "note",
+        "value": "plastic（プラスチック）+ bag（袋）。",
+        "word_id": "plastic-bag",
+        "language": "ja"
+      }
+    ],
+    "wordMedia": [
+      {
+        "id": 365,
+        "url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+        "kind": "image",
+        "model": null,
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": null,
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": null,
+        "created_at": "2026-05-29T19:21:19.099045+00:00",
+        "is_primary": true,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": null
+      },
+      {
+        "id": 1077,
+        "url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+        "kind": "audio",
+        "model": "chirp-3-hd",
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": "en-US",
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-06-25T12:55:08.686673+00:00",
+        "is_primary": false,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": "plastic-bag/en-US.mp3"
+      },
+      {
+        "id": 1078,
+        "url": "https://img.nexflow.team/word-audio/plastic-bag/en-GB.mp3",
+        "kind": "audio",
+        "model": "chirp-3-hd",
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": "en-GB",
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-06-25T12:55:09.455697+00:00",
+        "is_primary": false,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": "plastic-bag/en-GB.mp3"
+      },
+      {
+        "id": 1578,
+        "url": "https://img.nexflow.team/word-audio/plastic-bag/ja-JP.mp3",
+        "kind": "audio",
+        "model": "chirp-3-hd",
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": "ja-JP",
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-06-25T13:02:12.172686+00:00",
+        "is_primary": false,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": "plastic-bag/ja-JP.mp3"
+      }
+    ],
+    "exampleMedia": [
+      {
+        "id": 1766,
+        "url": "https://img.nexflow.team/word-audio/examples/1425/en-GB/ef4f60a605bd41d0382c.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-GB",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:07.035068+00:00",
+        "example_id": 1425,
+        "duration_ms": null,
+        "storage_path": "examples/1425/en-GB/ef4f60a605bd41d0382c.mp3"
+      },
+      {
+        "id": 1765,
+        "url": "https://img.nexflow.team/word-audio/examples/1425/en-US/f6efefabfa61f1718271.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-US",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:06.165732+00:00",
+        "example_id": 1425,
+        "duration_ms": null,
+        "storage_path": "examples/1425/en-US/f6efefabfa61f1718271.mp3"
+      },
+      {
+        "id": 1767,
+        "url": "https://img.nexflow.team/word-audio/examples/1425/ja-JP/77d78a3795ceb183813a.mp3",
+        "model": "chirp-3-hd",
+        "locale": "ja-JP",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:08.25004+00:00",
+        "example_id": 1425,
+        "duration_ms": null,
+        "storage_path": "examples/1425/ja-JP/77d78a3795ceb183813a.mp3"
+      },
+      {
+        "id": 1769,
+        "url": "https://img.nexflow.team/word-audio/examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-GB",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:11.738228+00:00",
+        "example_id": 1426,
+        "duration_ms": null,
+        "storage_path": "examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3"
+      },
+      {
+        "id": 1768,
+        "url": "https://img.nexflow.team/word-audio/examples/1426/en-US/48cdbc2adc925fa93be5.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-US",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:10.367482+00:00",
+        "example_id": 1426,
+        "duration_ms": null,
+        "storage_path": "examples/1426/en-US/48cdbc2adc925fa93be5.mp3"
+      },
+      {
+        "id": 1770,
+        "url": "https://img.nexflow.team/word-audio/examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3",
+        "model": "chirp-3-hd",
+        "locale": "ja-JP",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:13.151189+00:00",
+        "example_id": 1426,
+        "duration_ms": null,
+        "storage_path": "examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3"
+      }
+    ],
+    "categoryLinks": [
+      {
+        "word_id": "plastic-bag",
+        "created_at": "2026-05-29T19:21:19.162774+00:00",
+        "is_primary": true,
+        "category_id": "supermarket"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2852,
+        "note": null,
+        "created_at": "2026-05-29T19:12:54.764102+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "garbage-bag",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 2816,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.496034+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "plastic-bag",
+        "target_word_id": "bag"
+      },
+      {
+        "id": 2815,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.471778+00:00",
+        "relation_type": "antonym",
+        "source_word_id": "plastic-bag",
+        "target_word_id": "reusable-bag"
+      },
+      {
+        "id": 2817,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.520245+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "plastic-bag",
+        "target_word_id": "reusable-bag"
+      },
+      {
+        "id": 3286,
+        "note": null,
+        "created_at": "2026-09-07T11:57:51.746663+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "produce-bag-roll",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 3208,
+        "note": null,
+        "created_at": "2026-09-04T23:09:16.990405+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "recycling-box",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 2818,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.81176+00:00",
+        "relation_type": "antonym",
+        "source_word_id": "reusable-bag",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 2819,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.834512+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "reusable-bag",
+        "target_word_id": "plastic-bag"
+      }
+    ],
+    "cards": [
+      {
+        "id": 39956,
+        "back": "plastic bag",
+        "tags": [
+          "supermarket",
+          "noun",
+          "看圖選英文"
+        ],
+        "front": "",
+        "word_id": "plastic-bag",
+        "deck_key": "image-en",
+        "card_type": "回想卡",
+        "created_at": "2026-06-01T11:31:19.787076+00:00",
+        "explanation": "plastic bag /ˈplæs.tɪk bæɡ/ — 塑膠袋"
+      },
+      {
+        "id": 77898,
+        "back": "ビニール袋",
+        "tags": [
+          "image",
+          "ja"
+        ],
+        "front": "",
+        "word_id": "plastic-bag",
+        "deck_key": "image-ja",
+        "card_type": "回想卡",
+        "created_at": "2026-06-23T18:49:08.851471+00:00",
+        "explanation": "ビニール袋 ビニールぶくろ"
+      }
+    ],
+    "triggers": []
+  },
+  "after": {
+    "word": [
+      {
+        "id": "plastic-bag",
+        "note": "plastic(塑膠)+bag(袋)\n\n購物結帳時，用來提著商品帶走的塑膠袋通常稱為「レジ袋（レジぶくろ）」。ビニール袋是較廣的說法，並非所有塑膠袋都叫レジ袋。",
+        "word": "plastic bag",
+        "forms": [
+          {
+            "label": "複數",
+            "value": "plastic bags"
+          }
+        ],
+        "status": "published",
+        "category": "supermarket",
+        "audio_url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+        "etymology": "plastic（塑膠）＋ bag（袋）。plastic 來自希臘文 plastikos（可塑造的），詞根 plassein（捏、塑形）；bag 來自古諾斯語 baggi。組合就是「塑膠做的袋子」，20 世紀後普及的容器。",
+        "image_url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+        "cefr_level": null,
+        "created_at": "2026-05-29T19:12:49.276083+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-06-04T07:56:40.887656+00:00",
+        "collocations": [],
+        "image_credit": null,
+        "also_known_as": [
+          "レジ袋"
+        ],
+        "image_license": "local-upload",
+        "pronunciation": "/ˈplæs.tɪk bæɡ/",
+        "part_of_speech": "noun",
+        "image_source_url": "https://loremflickr.com/600/450/plastic,bag?lock=1138624888",
+        "chinese_definition": "以薄而柔軟的塑膠材質製成的袋子。"
+      }
+    ],
+    "terms": [
+      {
+        "term": "plastic bag",
+        "reading": null,
+        "word_id": "plastic-bag",
+        "language": "en",
+        "audio_url": null,
+        "updated_at": "2026-10-29T12:46:25.595029+00:00",
+        "pronunciation": "/ˈplæs.tɪk bæɡ/",
+        "reading_segments": null
+      },
+      {
+        "term": "ビニール袋",
+        "reading": "ビニールぶくろ",
+        "word_id": "plastic-bag",
+        "language": "ja",
+        "audio_url": null,
+        "updated_at": "2026-08-06T14:14:26.270626+00:00",
+        "pronunciation": "ビニールぶくろ",
+        "reading_segments": [
+          {
+            "ruby": null,
+            "text": "ビ"
+          },
+          {
+            "ruby": null,
+            "text": "ニ"
+          },
+          {
+            "ruby": null,
+            "text": "ー"
+          },
+          {
+            "ruby": null,
+            "text": "ル"
+          },
+          {
+            "ruby": "ぶくろ",
+            "text": "袋"
+          }
+        ]
+      }
+    ],
+    "definitions": [
+      {
+        "id": 2295,
+        "word_id": "plastic-bag",
+        "language": "en",
+        "cefr_level": null,
+        "created_at": "2026-06-03T23:03:24.678582+00:00",
+        "definition": "A bag made of thin, flexible plastic.",
+        "sort_order": 0,
+        "updated_at": "2026-06-03T23:03:24.678582+00:00"
+      },
+      {
+        "id": 1827,
+        "word_id": "plastic-bag",
+        "language": "ja",
+        "cefr_level": null,
+        "created_at": "2026-05-31T13:08:02.990006+00:00",
+        "definition": "「ビニール袋」とは、薄くて柔らかいプラスチック素材で作られた袋のことです。",
+        "sort_order": 0,
+        "updated_at": "2026-06-25T10:20:00.013642+00:00"
+      },
+      {
+        "id": 1314,
+        "word_id": "plastic-bag",
+        "language": "zh",
+        "cefr_level": null,
+        "created_at": "2026-05-29T19:12:49.300045+00:00",
+        "definition": "塑膠袋",
+        "sort_order": 0,
+        "updated_at": "2026-05-29T19:12:49.300045+00:00"
+      }
+    ],
+    "examples": [
+      {
+        "id": 1425,
+        "word_id": "plastic-bag",
+        "sentence": "The cashier put the meat in a plastic bag.",
+        "cefr_level": "A2",
+        "created_at": "2026-08-24T06:33:48.121701+00:00",
+        "sort_order": 0
+      },
+      {
+        "id": 1426,
+        "word_id": "plastic-bag",
+        "sentence": "Because the meat package was leaking, the cashier put it in a separate plastic bag.",
+        "cefr_level": "B1",
+        "created_at": "2026-08-24T06:33:48.121701+00:00",
+        "sort_order": 1
+      }
+    ],
+    "translations": [
+      {
+        "language": "ja",
+        "example_id": 1425,
+        "translation": "レジ係が肉をビニール袋に入れました。"
+      },
+      {
+        "language": "zh",
+        "example_id": 1425,
+        "translation": "收銀員把肉裝進塑膠袋。"
+      },
+      {
+        "language": "ja",
+        "example_id": 1426,
+        "translation": "肉のパックから汁が出ていたので、レジ係が別のビニール袋へ入れました。"
+      },
+      {
+        "language": "zh",
+        "example_id": 1426,
+        "translation": "肉品包裝滲出汁液，所以收銀員另裝一個塑膠袋。"
+      }
+    ],
+    "localizedTexts": [
+      {
+        "field": "etymology",
+        "value": "plastic + bag. Plastic comes from Greek plastikos (able to be molded), from plassein (to mold); bag from Old Norse baggi. Together: a bag made of plastic — the container that spread after the 20th century.",
+        "word_id": "plastic-bag",
+        "language": "en"
+      },
+      {
+        "field": "etymology",
+        "value": "複合語 plastic + bag。",
+        "word_id": "plastic-bag",
+        "language": "ja"
+      },
+      {
+        "field": "note",
+        "value": "plastic + bag\n\nAt checkout, a plastic bag used to carry purchases home is called レジ袋 (レジぶくろ) in Japanese. ビニール袋 is a broader term, so not every plastic bag is a レジ袋.",
+        "word_id": "plastic-bag",
+        "language": "en"
+      },
+      {
+        "field": "note",
+        "value": "plastic（プラスチック）+ bag（袋）。\n\nレジで受け取る、買った商品を持ち帰るためのプラスチック製の袋は「レジ袋」と呼びます。「ビニール袋」は薄いプラスチック製の袋を広く指すため、すべてのビニール袋がレジ袋とは限りません。",
+        "word_id": "plastic-bag",
+        "language": "ja"
+      }
+    ],
+    "wordMedia": [
+      {
+        "id": 365,
+        "url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+        "kind": "image",
+        "model": null,
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": null,
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": null,
+        "created_at": "2026-05-29T19:21:19.099045+00:00",
+        "is_primary": true,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": null
+      },
+      {
+        "id": 1077,
+        "url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+        "kind": "audio",
+        "model": "chirp-3-hd",
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": "en-US",
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-06-25T12:55:08.686673+00:00",
+        "is_primary": false,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": "plastic-bag/en-US.mp3"
+      },
+      {
+        "id": 1078,
+        "url": "https://img.nexflow.team/word-audio/plastic-bag/en-GB.mp3",
+        "kind": "audio",
+        "model": "chirp-3-hd",
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": "en-GB",
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-06-25T12:55:09.455697+00:00",
+        "is_primary": false,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": "plastic-bag/en-GB.mp3"
+      },
+      {
+        "id": 1578,
+        "url": "https://img.nexflow.team/word-audio/plastic-bag/ja-JP.mp3",
+        "kind": "audio",
+        "model": "chirp-3-hd",
+        "width": null,
+        "credit": null,
+        "height": null,
+        "locale": "ja-JP",
+        "prompt": null,
+        "license": null,
+        "word_id": "plastic-bag",
+        "metadata": {},
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-06-25T13:02:12.172686+00:00",
+        "is_primary": false,
+        "sort_order": 0,
+        "source_url": null,
+        "duration_ms": null,
+        "storage_path": "plastic-bag/ja-JP.mp3"
+      }
+    ],
+    "exampleMedia": [
+      {
+        "id": 1766,
+        "url": "https://img.nexflow.team/word-audio/examples/1425/en-GB/ef4f60a605bd41d0382c.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-GB",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:07.035068+00:00",
+        "example_id": 1425,
+        "duration_ms": null,
+        "storage_path": "examples/1425/en-GB/ef4f60a605bd41d0382c.mp3"
+      },
+      {
+        "id": 1765,
+        "url": "https://img.nexflow.team/word-audio/examples/1425/en-US/f6efefabfa61f1718271.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-US",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:06.165732+00:00",
+        "example_id": 1425,
+        "duration_ms": null,
+        "storage_path": "examples/1425/en-US/f6efefabfa61f1718271.mp3"
+      },
+      {
+        "id": 1767,
+        "url": "https://img.nexflow.team/word-audio/examples/1425/ja-JP/77d78a3795ceb183813a.mp3",
+        "model": "chirp-3-hd",
+        "locale": "ja-JP",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:08.25004+00:00",
+        "example_id": 1425,
+        "duration_ms": null,
+        "storage_path": "examples/1425/ja-JP/77d78a3795ceb183813a.mp3"
+      },
+      {
+        "id": 1769,
+        "url": "https://img.nexflow.team/word-audio/examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-GB",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:11.738228+00:00",
+        "example_id": 1426,
+        "duration_ms": null,
+        "storage_path": "examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3"
+      },
+      {
+        "id": 1768,
+        "url": "https://img.nexflow.team/word-audio/examples/1426/en-US/48cdbc2adc925fa93be5.mp3",
+        "model": "chirp-3-hd",
+        "locale": "en-US",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:10.367482+00:00",
+        "example_id": 1426,
+        "duration_ms": null,
+        "storage_path": "examples/1426/en-US/48cdbc2adc925fa93be5.mp3"
+      },
+      {
+        "id": 1770,
+        "url": "https://img.nexflow.team/word-audio/examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3",
+        "model": "chirp-3-hd",
+        "locale": "ja-JP",
+        "mime_type": "audio/mpeg",
+        "created_at": "2026-09-03T02:54:13.151189+00:00",
+        "example_id": 1426,
+        "duration_ms": null,
+        "storage_path": "examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3"
+      }
+    ],
+    "categoryLinks": [
+      {
+        "word_id": "plastic-bag",
+        "created_at": "2026-05-29T19:21:19.162774+00:00",
+        "is_primary": true,
+        "category_id": "supermarket"
+      }
+    ],
+    "relations": [
+      {
+        "id": 2852,
+        "note": null,
+        "created_at": "2026-05-29T19:12:54.764102+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "garbage-bag",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 2816,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.496034+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "plastic-bag",
+        "target_word_id": "bag"
+      },
+      {
+        "id": 2815,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.471778+00:00",
+        "relation_type": "antonym",
+        "source_word_id": "plastic-bag",
+        "target_word_id": "reusable-bag"
+      },
+      {
+        "id": 2817,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.520245+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "plastic-bag",
+        "target_word_id": "reusable-bag"
+      },
+      {
+        "id": 3286,
+        "note": null,
+        "created_at": "2026-09-07T11:57:51.746663+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "produce-bag-roll",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 3208,
+        "note": null,
+        "created_at": "2026-09-04T23:09:16.990405+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "recycling-box",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 2818,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.81176+00:00",
+        "relation_type": "antonym",
+        "source_word_id": "reusable-bag",
+        "target_word_id": "plastic-bag"
+      },
+      {
+        "id": 2819,
+        "note": null,
+        "created_at": "2026-05-29T19:12:49.834512+00:00",
+        "relation_type": "see-also",
+        "source_word_id": "reusable-bag",
+        "target_word_id": "plastic-bag"
+      }
+    ],
+    "cards": [
+      {
+        "id": 39956,
+        "back": "plastic bag",
+        "tags": [
+          "supermarket",
+          "noun",
+          "看圖選英文"
+        ],
+        "front": "",
+        "word_id": "plastic-bag",
+        "deck_key": "image-en",
+        "card_type": "回想卡",
+        "created_at": "2026-06-01T11:31:19.787076+00:00",
+        "explanation": "plastic bag /ˈplæs.tɪk bæɡ/ — 塑膠袋"
+      },
+      {
+        "id": 77898,
+        "back": "ビニール袋",
+        "tags": [
+          "image",
+          "ja"
+        ],
+        "front": "",
+        "word_id": "plastic-bag",
+        "deck_key": "image-ja",
+        "card_type": "回想卡",
+        "created_at": "2026-06-23T18:49:08.851471+00:00",
+        "explanation": "ビニール袋 ビニールぶくろ"
+      }
+    ],
+    "triggers": []
+  },
+  "allowedChanges": [
+    "word[0].also_known_as: append レジ袋, retain all previous aliases",
+    "word[0].note: retain exact existing prefix, append Traditional-Chinese contextual usage",
+    "localizedTexts[field=note,language=en|ja]: retain exact existing prefixes, append contextual usage; no unused zh-Hant localized row"
+  ],
+  "unchanged": [
+    "headword",
+    "reading",
+    "definitions",
+    "displayed examples and translations",
+    "all headword/example audio",
+    "image",
+    "primary category supermarket",
+    "category links",
+    "membership/free-study rights",
+    "all non-note localized texts"
+  ],
+  "publication": "CAS full before-state in same transaction as complete two-word publication; aliases and Traditional-Chinese base note change in one word row plus exactly two localized note rows; rollback refuses subsequent drift and restores only this exact owned delta"
+}

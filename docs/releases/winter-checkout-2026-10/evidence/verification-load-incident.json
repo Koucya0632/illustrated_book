@@ -1,0 +1,67 @@
+{
+  "status": "transient-errors-observed",
+  "observations": [
+    {
+      "timestamp": "2026-10-30T08:55:36.772Z",
+      "requestPath": "/word/plastic-bag",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:36.771Z",
+      "requestPath": "/word/plastic-bag",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:36.695Z",
+      "requestPath": "/category/convenience-store",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:36.693Z",
+      "requestPath": "/category/convenience-store",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:32.945Z",
+      "requestPath": "/word/plastic-bag",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:32.942Z",
+      "requestPath": "/word/plastic-bag",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:32.806Z",
+      "requestPath": "/category/convenience-store",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:32.803Z",
+      "requestPath": "/category/convenience-store",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:32.799Z",
+      "requestPath": "/category/convenience-store",
+      "error": "EMAXCONN",
+      "limit": 200
+    },
+    {
+      "timestamp": "2026-10-30T08:55:32.794Z",
+      "requestPath": "/category/convenience-store",
+      "error": "EMAXCONN",
+      "limit": 200
+    }
+  ],
+  "auditLoad": "Initial HTTP audit eagerly started promises; corrected to deferred execution with max concurrency 2. Causation of the global connection ceiling is not independently proven.",
+  "recovery": "Subsequent low-concurrency route probes passed without 500. No DB config changes or session termination."
+}

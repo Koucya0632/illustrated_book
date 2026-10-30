@@ -1,0 +1,31 @@
+{
+  "generationMode": "built-in image_gen",
+  "items": [
+    {
+      "wordId": "point-card",
+      "sourcePath": "images/source/point-card-v1.png",
+      "sourceSha256": "0ecbbf9079e62b43edb63b53a8ce1255091b4979e3e5683e79e5e943cfc08fc0",
+      "localPath": "images/webp/point-card-v1-966db51b2ea2.webp",
+      "sha256": "966db51b2ea2436b4cdf11b2fb0f1643653d8cb60764837218f884e8d245b3bb",
+      "bytes": 87202,
+      "width": 1254,
+      "height": 1254,
+      "storagePath": "word-images/winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+      "mimeType": "image/webp",
+      "visualReview": "pending-independent-review"
+    },
+    {
+      "wordId": "drinking-straw",
+      "sourcePath": "images/source/drinking-straw-v1.png",
+      "sourceSha256": "a03fad9d1975b72c0393af58b1775094c120dd6d2ecf1a63c8061f5c76c41457",
+      "localPath": "images/webp/drinking-straw-v1-3371fb120053.webp",
+      "sha256": "3371fb120053825ae8bf74c3f396b8dd84a5876aeaad7d7ef94d9d7f888f6277",
+      "bytes": 47724,
+      "width": 1254,
+      "height": 1254,
+      "storagePath": "word-images/winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+      "mimeType": "image/webp",
+      "visualReview": "pending-independent-review"
+    }
+  ]
+}

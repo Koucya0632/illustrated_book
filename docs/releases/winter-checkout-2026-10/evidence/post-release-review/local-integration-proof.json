@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "source": "Current local pair/span integration versus exact read-only DB snapshot and immutable plan",
+  "publishedCount": 1245,
+  "publishedPairCoverageComplete": true,
+  "newWordPairAndSpansExact": true,
+  "codeDeployment": "not executed",
+  "productionWrites": 0
+}

@@ -1,0 +1,35 @@
+✔ every published main word has one complete simple/complex example pair (2.331208ms)
+✔ complex examples express a real relationship instead of only being longer (0.611958ms)
+✔ target, known legacy, missing-ja seed, and edited states are distinguished (0.174583ms)
+✔ the deployed bathroom template pair is a guarded previous target (0.138833ms)
+✔ the audited bathroom pair corrections accept only their exact deployed predecessor (0.233959ms)
+✔ the audited kitchen pair corrections accept the exact deployed pair in one migration (0.229209ms)
+✔ the audited bedroom pair corrections accept the exact deployed pair in one migration (0.244417ms)
+✔ the audited living-room pair corrections accept only the exact deployed predecessor (0.311167ms)
+✔ the audited transportation pair corrections accept only their exact deployed predecessors (0.29025ms)
+✔ transportation terminology and revised examples stay aligned in all three languages (0.36525ms)
+✔ coverage follows the current published ID set rather than a fixed count (0.615292ms)
+✔ every target example ships its English and Japanese tappable translations (76.789334ms)
+✔ every bathroom simple example teaches a concrete daily use (4.997542ms)
+✔ every corrected kitchen simple example teaches a concrete daily use (0.149584ms)
+✔ every bedroom simple example teaches a concrete daily use (0.277666ms)
+✔ the audited living-room examples keep the target concept and aligned daily meaning (0.127417ms)
+✔ the audited living-room definitions use ordinary indoor terms and the full concept (0.063708ms)
+✔ normal migration recognizes both published winter pairs and leaves corrected spans untouched (79.903291ms)
+✔ the complete registered published corpus can pass the real migration no-op path (109.367709ms)
+✔ unpublished winter IDs are refused before mutation and never added to public fallback words (33.818833ms)
+✔ a later edited example aborts before migration may replace or sync anything (34.426542ms)
+✔ actual row adapter/localizer/detail projects zh-Hant usage note for zh-en (0.526208ms)
+✔ actual row adapter/localizer/detail projects zh-Hant usage note for zh-ja (0.069542ms)
+✔ actual row adapter/localizer/detail projects en usage note for zh-en (0.091542ms)
+✔ actual row adapter/localizer/detail projects en usage note for zh-ja (0.100084ms)
+✔ actual row adapter/localizer/detail projects ja usage note for zh-en (0.089166ms)
+✔ actual row adapter/localizer/detail projects ja usage note for zh-ja (0.05275ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 482.781208

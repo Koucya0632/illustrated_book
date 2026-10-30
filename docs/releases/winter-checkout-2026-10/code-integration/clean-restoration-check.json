@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "cleanTemporaryCheckout": true,
+  "noOriginalOutputOrEnvironmentRequired": true,
+  "results": [
+    {
+      "mode": "verified-only",
+      "verifiedArtifacts": 58,
+      "restoredFiles": 0,
+      "downloadedMedia": 0,
+      "productionWrites": 0
+    },
+    {
+      "mode": "restored",
+      "verifiedArtifacts": 58,
+      "restoredFiles": 58,
+      "downloadedMedia": 0,
+      "productionWrites": 0
+    }
+  ],
+  "artifactCount": 58,
+  "sourceDependencyCount": 12,
+  "restorationIndexSha256": "d9df199fd17945f6887c9a01b31f4c00d8cfa3f4d935dd41ba801e24096875f1",
+  "productionWrites": 0
+}

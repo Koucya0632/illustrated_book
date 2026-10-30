@@ -1,0 +1,11 @@
+--- a/lib/image-urls.json
++++ b/lib/image-urls.json
+@@ -1208,5 +1208,7 @@
+   "dental-x-ray": "https://img.nexflow.team/word-images/dental-clinic-2026-10/dental-x-ray-v1-b51f8012342a.webp",
+   "interdental-brush": "https://img.nexflow.team/word-images/dental-clinic-2026-10/interdental-brush-v1-d75a5fbe5018.webp",
+   "new-years-postcard": "https://img.nexflow.team/word-images/winter-postal-2026-10/new-years-postcard-v1-aede1269151f.webp",
+-  "mourning-postcard": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp"
++  "mourning-postcard": "https://img.nexflow.team/word-images/winter-postal-2026-10/mourning-postcard-v1-375f8f182275.webp",
++  "point-card": "https://img.nexflow.team/word-images/winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
++  "drinking-straw": "https://img.nexflow.team/word-images/winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp"
+ }

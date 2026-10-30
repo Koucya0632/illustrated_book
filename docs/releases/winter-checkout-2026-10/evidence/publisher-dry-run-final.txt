@@ -1,0 +1,32 @@
+{
+  "mode": "dry-run",
+  "databaseHostFingerprint": "15749fae6d13",
+  "storageBackend": "r2",
+  "storageTargetFingerprint": "767c84c9d992",
+  "words": 2,
+  "examples": 4,
+  "storageObjects": 20,
+  "existingWordUpdates": 1,
+  "existingBagState": "before",
+  "existingBagMatches": true,
+  "baseNoteRowsUpdated": 1,
+  "localizedNoteRowsChanged": 2,
+  "missingTables": [],
+  "candidateRows": 0,
+  "candidateStates": {},
+  "headwordConflicts": 0,
+  "japaneseConflicts": 0,
+  "spanCollisions": 0,
+  "categoryExists": true,
+  "categoryMatches": true,
+  "categoryTranslationMatches": true,
+  "databaseWriteReady": true,
+  "storageCapability": {
+    "configured": true,
+    "readOnlyProbePassed": true,
+    "atomicCreateOnlyTransport": true
+  },
+  "storageCreateOnlyReady": true,
+  "writeReady": true
+}
+[winter-checkout-2026-10:publish] dry run only; no Storage or database changes. A separately authorized apply must pass --apply --confirm-host 15749fae6d13 --confirm-storage 767c84c9d992

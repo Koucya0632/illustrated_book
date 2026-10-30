@@ -1,0 +1,360 @@
+{
+  "version": 1,
+  "scope": "Actual published DB scoped to current batch2 new words; complete word/example/span/gloss equality to immutable reviewed source independently proved by exact comparator.",
+  "parentDbEvidenceSha256": "0c1deaf4c25f8a69df075e1333dd3bc1bf3ebdb46c1e8a9e9d6b4d06e3501721",
+  "words": [
+    {
+      "id": "drinking-straw",
+      "enTerm": "drinking straw",
+      "jaTerm": "ストロー",
+      "zhDefinition": "用來吸飲料的細長中空管子；此處不是攪拌飲料的攪拌棒。",
+      "examples": [
+        {
+          "id": "3713",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Shall I include a drinking straw?",
+          "ja": "ストローをお付けしますか？",
+          "zh": "需要附一支吸管嗎？",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 5,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 2,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Shall I include a drinking straw?",
+              "texts": [
+                "Shall I ",
+                "include",
+                " a ",
+                "drinking straw",
+                "?"
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 4,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 2,
+              "reconstructed": "ストローをお付けしますか？",
+              "texts": [
+                "ストロー",
+                "を",
+                "お付けします",
+                "か？"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "ストロー",
+                null,
+                "おつけします",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3714",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "The drinking straw was too short, so I asked for a longer one.",
+          "ja": "ストローが短すぎたので、もっと長いものをお願いしました。",
+          "zh": "吸管太短了，所以我請對方提供更長的。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 9,
+              "glossedSpanCount": 4,
+              "partialGlossCount": 0,
+              "missingReadingCount": 4,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "The drinking straw was too short, so I asked for a longer one.",
+              "texts": [
+                "The ",
+                "drinking straw",
+                " was too ",
+                "short",
+                ", so I ",
+                "asked for",
+                " a ",
+                "longer",
+                " one."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 9,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 5,
+              "reconstructed": "ストローが短すぎたので、もっと長いものをお願いしました。",
+              "texts": [
+                "ストロー",
+                "が",
+                "短すぎた",
+                "ので、",
+                "もっと",
+                "長い",
+                "ものを",
+                "お願いしました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "ストロー",
+                null,
+                "みじかすぎた",
+                null,
+                "もっと",
+                "ながい",
+                null,
+                "おねがいしました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "point-card",
+      "enTerm": "loyalty card",
+      "jaTerm": "ポイントカード",
+      "zhDefinition": "購物時用來累積或使用回饋點數的卡片，也可能顯示在商店的App中；同一張卡片也可以兼具會員卡功能。",
+      "examples": [
+        {
+          "id": "3711",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please show your loyalty card.",
+          "ja": "ポイントカードを見せてください。",
+          "zh": "請出示您的集點卡。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 5,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 2,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please show your loyalty card.",
+              "texts": [
+                "Please ",
+                "show",
+                " your ",
+                "loyalty card",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 4,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 2,
+              "reconstructed": "ポイントカードを見せてください。",
+              "texts": [
+                "ポイントカード",
+                "を",
+                "見せてください",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "ポイントカード",
+                null,
+                "みせてください",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3712",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I forgot my loyalty card, so I used the app to collect points.",
+          "ja": "ポイントカードを忘れたので、アプリでポイントをためました。",
+          "zh": "因為忘帶集點卡，我用App累積點數。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 13,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 6,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I forgot my loyalty card, so I used the app to collect points.",
+              "texts": [
+                "I ",
+                "forgot",
+                " my ",
+                "loyalty card",
+                ", so I ",
+                "used",
+                " the ",
+                "app",
+                " to ",
+                "collect",
+                " ",
+                "points",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 10,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 5,
+              "reconstructed": "ポイントカードを忘れたので、アプリでポイントをためました。",
+              "texts": [
+                "ポイントカード",
+                "を",
+                "忘れた",
+                "ので、",
+                "アプリ",
+                "で",
+                "ポイント",
+                "を",
+                "ためました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "ポイントカード",
+                null,
+                "わすれた",
+                null,
+                "アプリ",
+                null,
+                "ポイント",
+                null,
+                "ためました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

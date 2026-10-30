@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "proposalSha256": "a781059478fa35d34667e04b01e1d1d2e848661e4d9779aac902eb84f8f6e725",
+  "fixture": "Actual localizeWord imported; no cloned implementation",
+  "checks": [
+    {
+      "lang": "zh-Hant",
+      "status": "pass",
+      "beforeNote": "plastic(塑膠)+bag(袋)",
+      "visibleAfterNote": "plastic(塑膠)+bag(袋)\n\n購物結帳時，用來提著商品帶走的塑膠袋通常稱為「レジ袋（レジぶくろ）」。ビニール袋是較廣的說法，並非所有塑膠袋都叫レジ袋。",
+      "source": "words.note",
+      "originalPrefixPreserved": true,
+      "otherLocalizedWordFieldsUnchanged": true
+    },
+    {
+      "lang": "en",
+      "status": "pass",
+      "beforeNote": "plastic + bag",
+      "visibleAfterNote": "plastic + bag\n\nAt checkout, a plastic bag used to carry purchases home is called レジ袋 (レジぶくろ) in Japanese. ビニール袋 is a broader term, so not every plastic bag is a レジ袋.",
+      "source": "word_localized_texts note|en",
+      "originalPrefixPreserved": true,
+      "otherLocalizedWordFieldsUnchanged": true
+    },
+    {
+      "lang": "ja",
+      "status": "pass",
+      "beforeNote": "plastic（プラスチック）+ bag（袋）。",
+      "visibleAfterNote": "plastic（プラスチック）+ bag（袋）。\n\nレジで受け取る、買った商品を持ち帰るためのプラスチック製の袋は「レジ袋」と呼びます。「ビニール袋」は薄いプラスチック製の袋を広く指すため、すべてのビニール袋がレジ袋とは限りません。",
+      "source": "word_localized_texts note|ja",
+      "originalPrefixPreserved": true,
+      "otherLocalizedWordFieldsUnchanged": true
+    }
+  ],
+  "callPath": [
+    "GET /api/words/[id] -> getLearningWord",
+    "getLearningWord -> localizeWord",
+    "localizeWord -> pickLocalizedText for note"
+  ],
+  "codeSources": {
+    "app/api/words/[id]/route.ts": "b332225bd5810d30be466b665cdd8edae49067beccc2e3f4c97fce691938c224",
+    "lib/data.ts": "6a8ae6bfbd2eee6ae106a9be90677304b172252f550b35b6ae4ee24a8c5d20a4",
+    "lib/word-localize.ts": "5edf0d2dda32daa404d247e011058be37ccd36132b617661706cf920fec8088c"
+  },
+  "limitations": [
+    "Local candidate fixture, not production DB or live HTTP proof.",
+    "Post-publication ordinary and cache-busting detail/search probes remain required."
+  ],
+  "productionWrites": 0
+}

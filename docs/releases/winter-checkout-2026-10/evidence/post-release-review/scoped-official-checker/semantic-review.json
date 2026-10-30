@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-30T08:55:51.446Z",
+  "sourceFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-checkout-preparation/output/winter-checkout-2026-10/post-release-review/scoped-official-checker/examples.json",
+  "words": [
+    {
+      "id": "drinking-straw",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3713",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3714",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "point-card",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3711",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3712",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}

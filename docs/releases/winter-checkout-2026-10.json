@@ -1,0 +1,1188 @@
+{
+  "workBatch": "winter-2026-02",
+  "planSha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f",
+  "manifestFile": "output/winter-checkout-2026-10/apply-manifest-2026-10-30T08-53-19-832Z.json",
+  "manifestSha256": "0ec9857ccc725d27d52fd8b00059637c386311ceaaa104cffb278b8394402a10",
+  "manifest": {
+    "schemaVersion": 1,
+    "series": "winter-checkout-2026-10",
+    "status": "applied",
+    "createdAt": "2026-10-30T08:53:19.832Z",
+    "updatedAt": "2026-10-30T08:53:41.884Z",
+    "databaseHostFingerprint": "15749fae6d13",
+    "storageBackend": "r2",
+    "storageTargetFingerprint": "767c84c9d992",
+    "planFile": "output/winter-checkout-2026-10/publish-plan-0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f.json",
+    "planSha256": "0202e76914194fac29433bbf8905d1b13ebd9479c0b2d772b2668d489deb7e0f",
+    "categoryExistedBefore": true,
+    "categoryBefore": {
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "name_zh": "便利商店",
+      "emoji": "🏪",
+      "description": "認識日本便利商店裡常見的設備、服務與商品",
+      "description_en": "Everyday equipment, services, and food found in Japanese convenience stores",
+      "color": "from-sky-100 to-orange-100",
+      "image_url": "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp"
+    },
+    "existingBagBefore": {
+      "word": [
+        {
+          "id": "plastic-bag",
+          "note": "plastic(塑膠)+bag(袋)",
+          "word": "plastic bag",
+          "forms": [
+            {
+              "label": "複數",
+              "value": "plastic bags"
+            }
+          ],
+          "status": "published",
+          "category": "supermarket",
+          "audio_url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+          "etymology": "plastic（塑膠）＋ bag（袋）。plastic 來自希臘文 plastikos（可塑造的），詞根 plassein（捏、塑形）；bag 來自古諾斯語 baggi。組合就是「塑膠做的袋子」，20 世紀後普及的容器。",
+          "image_url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+          "cefr_level": null,
+          "created_at": "2026-05-29T19:12:49.276083+00:00",
+          "deleted_at": null,
+          "updated_at": "2026-06-04T07:56:40.887656+00:00",
+          "collocations": [],
+          "image_credit": null,
+          "also_known_as": [],
+          "image_license": "local-upload",
+          "pronunciation": "/ˈplæs.tɪk bæɡ/",
+          "part_of_speech": "noun",
+          "image_source_url": "https://loremflickr.com/600/450/plastic,bag?lock=1138624888",
+          "chinese_definition": "以薄而柔軟的塑膠材質製成的袋子。"
+        }
+      ],
+      "terms": [
+        {
+          "term": "plastic bag",
+          "reading": null,
+          "word_id": "plastic-bag",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-29T12:46:25.595029+00:00",
+          "pronunciation": "/ˈplæs.tɪk bæɡ/",
+          "reading_segments": null
+        },
+        {
+          "term": "ビニール袋",
+          "reading": "ビニールぶくろ",
+          "word_id": "plastic-bag",
+          "language": "ja",
+          "audio_url": null,
+          "updated_at": "2026-08-06T14:14:26.270626+00:00",
+          "pronunciation": "ビニールぶくろ",
+          "reading_segments": [
+            {
+              "ruby": null,
+              "text": "ビ"
+            },
+            {
+              "ruby": null,
+              "text": "ニ"
+            },
+            {
+              "ruby": null,
+              "text": "ー"
+            },
+            {
+              "ruby": null,
+              "text": "ル"
+            },
+            {
+              "ruby": "ぶくろ",
+              "text": "袋"
+            }
+          ]
+        }
+      ],
+      "definitions": [
+        {
+          "id": 2295,
+          "word_id": "plastic-bag",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-06-03T23:03:24.678582+00:00",
+          "definition": "A bag made of thin, flexible plastic.",
+          "sort_order": 0,
+          "updated_at": "2026-06-03T23:03:24.678582+00:00"
+        },
+        {
+          "id": 1827,
+          "word_id": "plastic-bag",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-05-31T13:08:02.990006+00:00",
+          "definition": "「ビニール袋」とは、薄くて柔らかいプラスチック素材で作られた袋のことです。",
+          "sort_order": 0,
+          "updated_at": "2026-06-25T10:20:00.013642+00:00"
+        },
+        {
+          "id": 1314,
+          "word_id": "plastic-bag",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-05-29T19:12:49.300045+00:00",
+          "definition": "塑膠袋",
+          "sort_order": 0,
+          "updated_at": "2026-05-29T19:12:49.300045+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 1425,
+          "word_id": "plastic-bag",
+          "sentence": "The cashier put the meat in a plastic bag.",
+          "cefr_level": "A2",
+          "created_at": "2026-08-24T06:33:48.121701+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 1426,
+          "word_id": "plastic-bag",
+          "sentence": "Because the meat package was leaking, the cashier put it in a separate plastic bag.",
+          "cefr_level": "B1",
+          "created_at": "2026-08-24T06:33:48.121701+00:00",
+          "sort_order": 1
+        }
+      ],
+      "translations": [
+        {
+          "language": "ja",
+          "example_id": 1425,
+          "translation": "レジ係が肉をビニール袋に入れました。"
+        },
+        {
+          "language": "zh",
+          "example_id": 1425,
+          "translation": "收銀員把肉裝進塑膠袋。"
+        },
+        {
+          "language": "ja",
+          "example_id": 1426,
+          "translation": "肉のパックから汁が出ていたので、レジ係が別のビニール袋へ入れました。"
+        },
+        {
+          "language": "zh",
+          "example_id": 1426,
+          "translation": "肉品包裝滲出汁液，所以收銀員另裝一個塑膠袋。"
+        }
+      ],
+      "localizedTexts": [
+        {
+          "field": "etymology",
+          "value": "plastic + bag. Plastic comes from Greek plastikos (able to be molded), from plassein (to mold); bag from Old Norse baggi. Together: a bag made of plastic — the container that spread after the 20th century.",
+          "word_id": "plastic-bag",
+          "language": "en"
+        },
+        {
+          "field": "etymology",
+          "value": "複合語 plastic + bag。",
+          "word_id": "plastic-bag",
+          "language": "ja"
+        },
+        {
+          "field": "note",
+          "value": "plastic + bag",
+          "word_id": "plastic-bag",
+          "language": "en"
+        },
+        {
+          "field": "note",
+          "value": "plastic（プラスチック）+ bag（袋）。",
+          "word_id": "plastic-bag",
+          "language": "ja"
+        }
+      ],
+      "wordMedia": [
+        {
+          "id": 365,
+          "url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+          "kind": "image",
+          "model": null,
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": null,
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": null,
+          "created_at": "2026-05-29T19:21:19.099045+00:00",
+          "is_primary": true,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": null
+        },
+        {
+          "id": 1077,
+          "url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+          "kind": "audio",
+          "model": "chirp-3-hd",
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": "en-US",
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-06-25T12:55:08.686673+00:00",
+          "is_primary": false,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": "plastic-bag/en-US.mp3"
+        },
+        {
+          "id": 1078,
+          "url": "https://img.nexflow.team/word-audio/plastic-bag/en-GB.mp3",
+          "kind": "audio",
+          "model": "chirp-3-hd",
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": "en-GB",
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-06-25T12:55:09.455697+00:00",
+          "is_primary": false,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": "plastic-bag/en-GB.mp3"
+        },
+        {
+          "id": 1578,
+          "url": "https://img.nexflow.team/word-audio/plastic-bag/ja-JP.mp3",
+          "kind": "audio",
+          "model": "chirp-3-hd",
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": "ja-JP",
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-06-25T13:02:12.172686+00:00",
+          "is_primary": false,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": "plastic-bag/ja-JP.mp3"
+        }
+      ],
+      "exampleMedia": [
+        {
+          "id": 1766,
+          "url": "https://img.nexflow.team/word-audio/examples/1425/en-GB/ef4f60a605bd41d0382c.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-GB",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:07.035068+00:00",
+          "example_id": 1425,
+          "duration_ms": null,
+          "storage_path": "examples/1425/en-GB/ef4f60a605bd41d0382c.mp3"
+        },
+        {
+          "id": 1765,
+          "url": "https://img.nexflow.team/word-audio/examples/1425/en-US/f6efefabfa61f1718271.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-US",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:06.165732+00:00",
+          "example_id": 1425,
+          "duration_ms": null,
+          "storage_path": "examples/1425/en-US/f6efefabfa61f1718271.mp3"
+        },
+        {
+          "id": 1767,
+          "url": "https://img.nexflow.team/word-audio/examples/1425/ja-JP/77d78a3795ceb183813a.mp3",
+          "model": "chirp-3-hd",
+          "locale": "ja-JP",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:08.25004+00:00",
+          "example_id": 1425,
+          "duration_ms": null,
+          "storage_path": "examples/1425/ja-JP/77d78a3795ceb183813a.mp3"
+        },
+        {
+          "id": 1769,
+          "url": "https://img.nexflow.team/word-audio/examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-GB",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:11.738228+00:00",
+          "example_id": 1426,
+          "duration_ms": null,
+          "storage_path": "examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3"
+        },
+        {
+          "id": 1768,
+          "url": "https://img.nexflow.team/word-audio/examples/1426/en-US/48cdbc2adc925fa93be5.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-US",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:10.367482+00:00",
+          "example_id": 1426,
+          "duration_ms": null,
+          "storage_path": "examples/1426/en-US/48cdbc2adc925fa93be5.mp3"
+        },
+        {
+          "id": 1770,
+          "url": "https://img.nexflow.team/word-audio/examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3",
+          "model": "chirp-3-hd",
+          "locale": "ja-JP",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:13.151189+00:00",
+          "example_id": 1426,
+          "duration_ms": null,
+          "storage_path": "examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3"
+        }
+      ],
+      "categoryLinks": [
+        {
+          "word_id": "plastic-bag",
+          "created_at": "2026-05-29T19:21:19.162774+00:00",
+          "is_primary": true,
+          "category_id": "supermarket"
+        }
+      ],
+      "relations": [
+        {
+          "id": 2852,
+          "note": null,
+          "created_at": "2026-05-29T19:12:54.764102+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "garbage-bag",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 2816,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.496034+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "plastic-bag",
+          "target_word_id": "bag"
+        },
+        {
+          "id": 2815,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.471778+00:00",
+          "relation_type": "antonym",
+          "source_word_id": "plastic-bag",
+          "target_word_id": "reusable-bag"
+        },
+        {
+          "id": 2817,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.520245+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "plastic-bag",
+          "target_word_id": "reusable-bag"
+        },
+        {
+          "id": 3286,
+          "note": null,
+          "created_at": "2026-09-07T11:57:51.746663+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "produce-bag-roll",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 3208,
+          "note": null,
+          "created_at": "2026-09-04T23:09:16.990405+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "recycling-box",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 2818,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.81176+00:00",
+          "relation_type": "antonym",
+          "source_word_id": "reusable-bag",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 2819,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.834512+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "reusable-bag",
+          "target_word_id": "plastic-bag"
+        }
+      ],
+      "cards": [
+        {
+          "id": 39956,
+          "back": "plastic bag",
+          "tags": [
+            "supermarket",
+            "noun",
+            "看圖選英文"
+          ],
+          "front": "",
+          "word_id": "plastic-bag",
+          "deck_key": "image-en",
+          "card_type": "回想卡",
+          "created_at": "2026-06-01T11:31:19.787076+00:00",
+          "explanation": "plastic bag /ˈplæs.tɪk bæɡ/ — 塑膠袋"
+        },
+        {
+          "id": 77898,
+          "back": "ビニール袋",
+          "tags": [
+            "image",
+            "ja"
+          ],
+          "front": "",
+          "word_id": "plastic-bag",
+          "deck_key": "image-ja",
+          "card_type": "回想卡",
+          "created_at": "2026-06-23T18:49:08.851471+00:00",
+          "explanation": "ビニール袋 ビニールぶくろ"
+        }
+      ],
+      "triggers": []
+    },
+    "existingBagAfter": {
+      "word": [
+        {
+          "id": "plastic-bag",
+          "note": "plastic(塑膠)+bag(袋)\n\n購物結帳時，用來提著商品帶走的塑膠袋通常稱為「レジ袋（レジぶくろ）」。ビニール袋是較廣的說法，並非所有塑膠袋都叫レジ袋。",
+          "word": "plastic bag",
+          "forms": [
+            {
+              "label": "複數",
+              "value": "plastic bags"
+            }
+          ],
+          "status": "published",
+          "category": "supermarket",
+          "audio_url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+          "etymology": "plastic（塑膠）＋ bag（袋）。plastic 來自希臘文 plastikos（可塑造的），詞根 plassein（捏、塑形）；bag 來自古諾斯語 baggi。組合就是「塑膠做的袋子」，20 世紀後普及的容器。",
+          "image_url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+          "cefr_level": null,
+          "created_at": "2026-05-29T19:12:49.276083+00:00",
+          "deleted_at": null,
+          "updated_at": "2026-06-04T07:56:40.887656+00:00",
+          "collocations": [],
+          "image_credit": null,
+          "also_known_as": [
+            "レジ袋"
+          ],
+          "image_license": "local-upload",
+          "pronunciation": "/ˈplæs.tɪk bæɡ/",
+          "part_of_speech": "noun",
+          "image_source_url": "https://loremflickr.com/600/450/plastic,bag?lock=1138624888",
+          "chinese_definition": "以薄而柔軟的塑膠材質製成的袋子。"
+        }
+      ],
+      "terms": [
+        {
+          "term": "plastic bag",
+          "reading": null,
+          "word_id": "plastic-bag",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-29T12:46:25.595029+00:00",
+          "pronunciation": "/ˈplæs.tɪk bæɡ/",
+          "reading_segments": null
+        },
+        {
+          "term": "ビニール袋",
+          "reading": "ビニールぶくろ",
+          "word_id": "plastic-bag",
+          "language": "ja",
+          "audio_url": null,
+          "updated_at": "2026-08-06T14:14:26.270626+00:00",
+          "pronunciation": "ビニールぶくろ",
+          "reading_segments": [
+            {
+              "ruby": null,
+              "text": "ビ"
+            },
+            {
+              "ruby": null,
+              "text": "ニ"
+            },
+            {
+              "ruby": null,
+              "text": "ー"
+            },
+            {
+              "ruby": null,
+              "text": "ル"
+            },
+            {
+              "ruby": "ぶくろ",
+              "text": "袋"
+            }
+          ]
+        }
+      ],
+      "definitions": [
+        {
+          "id": 2295,
+          "word_id": "plastic-bag",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-06-03T23:03:24.678582+00:00",
+          "definition": "A bag made of thin, flexible plastic.",
+          "sort_order": 0,
+          "updated_at": "2026-06-03T23:03:24.678582+00:00"
+        },
+        {
+          "id": 1827,
+          "word_id": "plastic-bag",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-05-31T13:08:02.990006+00:00",
+          "definition": "「ビニール袋」とは、薄くて柔らかいプラスチック素材で作られた袋のことです。",
+          "sort_order": 0,
+          "updated_at": "2026-06-25T10:20:00.013642+00:00"
+        },
+        {
+          "id": 1314,
+          "word_id": "plastic-bag",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-05-29T19:12:49.300045+00:00",
+          "definition": "塑膠袋",
+          "sort_order": 0,
+          "updated_at": "2026-05-29T19:12:49.300045+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 1425,
+          "word_id": "plastic-bag",
+          "sentence": "The cashier put the meat in a plastic bag.",
+          "cefr_level": "A2",
+          "created_at": "2026-08-24T06:33:48.121701+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 1426,
+          "word_id": "plastic-bag",
+          "sentence": "Because the meat package was leaking, the cashier put it in a separate plastic bag.",
+          "cefr_level": "B1",
+          "created_at": "2026-08-24T06:33:48.121701+00:00",
+          "sort_order": 1
+        }
+      ],
+      "translations": [
+        {
+          "language": "ja",
+          "example_id": 1425,
+          "translation": "レジ係が肉をビニール袋に入れました。"
+        },
+        {
+          "language": "zh",
+          "example_id": 1425,
+          "translation": "收銀員把肉裝進塑膠袋。"
+        },
+        {
+          "language": "ja",
+          "example_id": 1426,
+          "translation": "肉のパックから汁が出ていたので、レジ係が別のビニール袋へ入れました。"
+        },
+        {
+          "language": "zh",
+          "example_id": 1426,
+          "translation": "肉品包裝滲出汁液，所以收銀員另裝一個塑膠袋。"
+        }
+      ],
+      "localizedTexts": [
+        {
+          "field": "etymology",
+          "value": "plastic + bag. Plastic comes from Greek plastikos (able to be molded), from plassein (to mold); bag from Old Norse baggi. Together: a bag made of plastic — the container that spread after the 20th century.",
+          "word_id": "plastic-bag",
+          "language": "en"
+        },
+        {
+          "field": "etymology",
+          "value": "複合語 plastic + bag。",
+          "word_id": "plastic-bag",
+          "language": "ja"
+        },
+        {
+          "field": "note",
+          "value": "plastic + bag\n\nAt checkout, a plastic bag used to carry purchases home is called レジ袋 (レジぶくろ) in Japanese. ビニール袋 is a broader term, so not every plastic bag is a レジ袋.",
+          "word_id": "plastic-bag",
+          "language": "en"
+        },
+        {
+          "field": "note",
+          "value": "plastic（プラスチック）+ bag（袋）。\n\nレジで受け取る、買った商品を持ち帰るためのプラスチック製の袋は「レジ袋」と呼びます。「ビニール袋」は薄いプラスチック製の袋を広く指すため、すべてのビニール袋がレジ袋とは限りません。",
+          "word_id": "plastic-bag",
+          "language": "ja"
+        }
+      ],
+      "wordMedia": [
+        {
+          "id": 365,
+          "url": "https://img.nexflow.team/word-images/plastic-bag.webp",
+          "kind": "image",
+          "model": null,
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": null,
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": null,
+          "created_at": "2026-05-29T19:21:19.099045+00:00",
+          "is_primary": true,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": null
+        },
+        {
+          "id": 1077,
+          "url": "https://img.nexflow.team/word-audio/plastic-bag/en-US.mp3",
+          "kind": "audio",
+          "model": "chirp-3-hd",
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": "en-US",
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-06-25T12:55:08.686673+00:00",
+          "is_primary": false,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": "plastic-bag/en-US.mp3"
+        },
+        {
+          "id": 1078,
+          "url": "https://img.nexflow.team/word-audio/plastic-bag/en-GB.mp3",
+          "kind": "audio",
+          "model": "chirp-3-hd",
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": "en-GB",
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-06-25T12:55:09.455697+00:00",
+          "is_primary": false,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": "plastic-bag/en-GB.mp3"
+        },
+        {
+          "id": 1578,
+          "url": "https://img.nexflow.team/word-audio/plastic-bag/ja-JP.mp3",
+          "kind": "audio",
+          "model": "chirp-3-hd",
+          "width": null,
+          "credit": null,
+          "height": null,
+          "locale": "ja-JP",
+          "prompt": null,
+          "license": null,
+          "word_id": "plastic-bag",
+          "metadata": {},
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-06-25T13:02:12.172686+00:00",
+          "is_primary": false,
+          "sort_order": 0,
+          "source_url": null,
+          "duration_ms": null,
+          "storage_path": "plastic-bag/ja-JP.mp3"
+        }
+      ],
+      "exampleMedia": [
+        {
+          "id": 1766,
+          "url": "https://img.nexflow.team/word-audio/examples/1425/en-GB/ef4f60a605bd41d0382c.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-GB",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:07.035068+00:00",
+          "example_id": 1425,
+          "duration_ms": null,
+          "storage_path": "examples/1425/en-GB/ef4f60a605bd41d0382c.mp3"
+        },
+        {
+          "id": 1765,
+          "url": "https://img.nexflow.team/word-audio/examples/1425/en-US/f6efefabfa61f1718271.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-US",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:06.165732+00:00",
+          "example_id": 1425,
+          "duration_ms": null,
+          "storage_path": "examples/1425/en-US/f6efefabfa61f1718271.mp3"
+        },
+        {
+          "id": 1767,
+          "url": "https://img.nexflow.team/word-audio/examples/1425/ja-JP/77d78a3795ceb183813a.mp3",
+          "model": "chirp-3-hd",
+          "locale": "ja-JP",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:08.25004+00:00",
+          "example_id": 1425,
+          "duration_ms": null,
+          "storage_path": "examples/1425/ja-JP/77d78a3795ceb183813a.mp3"
+        },
+        {
+          "id": 1769,
+          "url": "https://img.nexflow.team/word-audio/examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-GB",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:11.738228+00:00",
+          "example_id": 1426,
+          "duration_ms": null,
+          "storage_path": "examples/1426/en-GB/907f855dbd8adeb0ffb5.mp3"
+        },
+        {
+          "id": 1768,
+          "url": "https://img.nexflow.team/word-audio/examples/1426/en-US/48cdbc2adc925fa93be5.mp3",
+          "model": "chirp-3-hd",
+          "locale": "en-US",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:10.367482+00:00",
+          "example_id": 1426,
+          "duration_ms": null,
+          "storage_path": "examples/1426/en-US/48cdbc2adc925fa93be5.mp3"
+        },
+        {
+          "id": 1770,
+          "url": "https://img.nexflow.team/word-audio/examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3",
+          "model": "chirp-3-hd",
+          "locale": "ja-JP",
+          "mime_type": "audio/mpeg",
+          "created_at": "2026-09-03T02:54:13.151189+00:00",
+          "example_id": 1426,
+          "duration_ms": null,
+          "storage_path": "examples/1426/ja-JP/8dc5dee9a4d24b4368e7.mp3"
+        }
+      ],
+      "categoryLinks": [
+        {
+          "word_id": "plastic-bag",
+          "created_at": "2026-05-29T19:21:19.162774+00:00",
+          "is_primary": true,
+          "category_id": "supermarket"
+        }
+      ],
+      "relations": [
+        {
+          "id": 2852,
+          "note": null,
+          "created_at": "2026-05-29T19:12:54.764102+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "garbage-bag",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 2816,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.496034+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "plastic-bag",
+          "target_word_id": "bag"
+        },
+        {
+          "id": 2815,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.471778+00:00",
+          "relation_type": "antonym",
+          "source_word_id": "plastic-bag",
+          "target_word_id": "reusable-bag"
+        },
+        {
+          "id": 2817,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.520245+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "plastic-bag",
+          "target_word_id": "reusable-bag"
+        },
+        {
+          "id": 3286,
+          "note": null,
+          "created_at": "2026-09-07T11:57:51.746663+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "produce-bag-roll",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 3208,
+          "note": null,
+          "created_at": "2026-09-04T23:09:16.990405+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "recycling-box",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 2818,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.81176+00:00",
+          "relation_type": "antonym",
+          "source_word_id": "reusable-bag",
+          "target_word_id": "plastic-bag"
+        },
+        {
+          "id": 2819,
+          "note": null,
+          "created_at": "2026-05-29T19:12:49.834512+00:00",
+          "relation_type": "see-also",
+          "source_word_id": "reusable-bag",
+          "target_word_id": "plastic-bag"
+        }
+      ],
+      "cards": [
+        {
+          "id": 39956,
+          "back": "plastic bag",
+          "tags": [
+            "supermarket",
+            "noun",
+            "看圖選英文"
+          ],
+          "front": "",
+          "word_id": "plastic-bag",
+          "deck_key": "image-en",
+          "card_type": "回想卡",
+          "created_at": "2026-06-01T11:31:19.787076+00:00",
+          "explanation": "plastic bag /ˈplæs.tɪk bæɡ/ — 塑膠袋"
+        },
+        {
+          "id": 77898,
+          "back": "ビニール袋",
+          "tags": [
+            "image",
+            "ja"
+          ],
+          "front": "",
+          "word_id": "plastic-bag",
+          "deck_key": "image-ja",
+          "card_type": "回想卡",
+          "created_at": "2026-06-23T18:49:08.851471+00:00",
+          "explanation": "ビニール袋 ビニールぶくろ"
+        }
+      ],
+      "triggers": []
+    },
+    "resolvedExampleIds": {
+      "point-card:0": "3711",
+      "point-card:1": "3712",
+      "drinking-straw:0": "3713",
+      "drinking-straw:1": "3714"
+    },
+    "storageObjects": [
+      {
+        "key": "word-images|winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+        "bucket": "word-images",
+        "storagePath": "winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+        "url": "https://img.nexflow.team/word-images/winter-checkout-2026-10/point-card-v1-966db51b2ea2.webp",
+        "localFile": "output/winter-checkout-2026-10/images/webp/point-card-v1-966db51b2ea2.webp",
+        "bytes": 87202,
+        "contentSha256": "966db51b2ea2436b4cdf11b2fb0f1643653d8cb60764837218f884e8d245b3bb",
+        "mimeType": "image/webp",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|point-card/en-US/b7f0180a06af53c9f87d.mp3",
+        "bucket": "word-audio",
+        "storagePath": "point-card/en-US/b7f0180a06af53c9f87d.mp3",
+        "url": "https://img.nexflow.team/word-audio/point-card/en-US/b7f0180a06af53c9f87d.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-US/4a065ed8362258505f0989601ba64853c4432e5cf2d45d005756539e720e3aff.mp3",
+        "bytes": 4032,
+        "contentSha256": "b7f0180a06af53c9f87d1945b60f08c11cecfc522929987562aec1590083195d",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|point-card/en-GB/187bda3821035278847a.mp3",
+        "bucket": "word-audio",
+        "storagePath": "point-card/en-GB/187bda3821035278847a.mp3",
+        "url": "https://img.nexflow.team/word-audio/point-card/en-GB/187bda3821035278847a.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-GB/583ae96fd0f1bccfc44ff9de67336f84ce70540d283cfb9e10975e78c8f0fe1a.mp3",
+        "bytes": 7872,
+        "contentSha256": "187bda3821035278847a2498756e976537b02ca98a2cd7477e545ecd99f99355",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+        "bucket": "word-audio",
+        "storagePath": "point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+        "url": "https://img.nexflow.team/word-audio/point-card/ja-JP/89b8ed1ea698b35d6002.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/ja-JP/e396c948fe020ef9f654635af485be3bd580052ec105b75ef0fe022bab95aae7.mp3",
+        "bytes": 6624,
+        "contentSha256": "89b8ed1ea698b35d600261180d980b87c1e6632f6106992adf195f36c5f6555c",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3711/en-US/46c838a19375cdc4dcdc.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/14e8e483d15b8bf129aea4278112eca113bf79611c75ccff6fe98fbcfcad3b83.mp3",
+        "bytes": 8064,
+        "contentSha256": "46c838a19375cdc4dcdc0c6c3033411110ec573e724f7f79aeb58fb402734c7c",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3711/en-GB/3973cfc929947ff08a17.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/abeb44d844affae7e1ee160867f634a8ccc4706bdd04d5544284cb443add2576.mp3",
+        "bytes": 8544,
+        "contentSha256": "3973cfc929947ff08a17b45386edd786936bb9037602adb597abbd93e5cebbe0",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3711/ja-JP/a116d2a7fadd4392ea91.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/5ec5b9cfe78db106b3574981c457aba2dec0bb2e706d2b801fd9aaa026f29328.mp3",
+        "bytes": 8256,
+        "contentSha256": "a116d2a7fadd4392ea9141bb1c239223b17fe8e01f324e2a3c069b29029a3c6b",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3712/en-US/645d2ba1046e39d00fa1.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/cb06186e57c478230376fec0a979926d70266d724250df5f6a565a46aae4cd62.mp3",
+        "bytes": 18144,
+        "contentSha256": "645d2ba1046e39d00fa1aa0994d91151c7a59bd0eee86e3990fd6771ea69c327",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3712/en-GB/beaa25f340ff395ce158.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/15bf9939b928eb88eb0025a567357f717731d4335b6378a777229c6b684a7ace.mp3",
+        "bytes": 17184,
+        "contentSha256": "beaa25f340ff395ce158fb37a300b9ec735628f0057922e896c5d648c9ac49c7",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3712/ja-JP/a798711d65825c898a19.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3712/ja-JP/a798711d65825c898a19.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3712/ja-JP/a798711d65825c898a19.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/d7617079ca8b499b21d2c0aa720eb9ef53b0d770c629da08a1723f97408ff5e9.mp3",
+        "bytes": 15264,
+        "contentSha256": "a798711d65825c898a19a865ad91d06b4844076319e20005186ec814965b0553",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-images|winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+        "bucket": "word-images",
+        "storagePath": "winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+        "url": "https://img.nexflow.team/word-images/winter-checkout-2026-10/drinking-straw-v1-3371fb120053.webp",
+        "localFile": "output/winter-checkout-2026-10/images/webp/drinking-straw-v1-3371fb120053.webp",
+        "bytes": 47724,
+        "contentSha256": "3371fb120053825ae8bf74c3f396b8dd84a5876aeaad7d7ef94d9d7f888f6277",
+        "mimeType": "image/webp",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+        "bucket": "word-audio",
+        "storagePath": "drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+        "url": "https://img.nexflow.team/word-audio/drinking-straw/en-US/fddce0f010e4a944d007.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-US/d5e1f01902ca629c26489af07f5660f6c45797e9c9b8cad5467716d50b5dd26e.mp3",
+        "bytes": 7392,
+        "contentSha256": "fddce0f010e4a944d007efde37f5fb534cd7c5f5ebc3d24096bf66a378a4a4aa",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+        "bucket": "word-audio",
+        "storagePath": "drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+        "url": "https://img.nexflow.team/word-audio/drinking-straw/en-GB/359952278ddb9f4fe686.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/en-GB/306c63d7d19ba5c18ab3cbbd014a0fb8e51488c16f93c939dac4f952c0f1f16d.mp3",
+        "bytes": 7296,
+        "contentSha256": "359952278ddb9f4fe686e64ca56990905ef378d58c802716ea1680be1ad88e69",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+        "bucket": "word-audio",
+        "storagePath": "drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+        "url": "https://img.nexflow.team/word-audio/drinking-straw/ja-JP/2591a3fd134463c90c8a.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/headword/ja-JP/2de7fd1d34eb99d15dbe958ed00dc110bb871ef6cac05822b5d46cb4dd9acca8.mp3",
+        "bytes": 6144,
+        "contentSha256": "2591a3fd134463c90c8affe2e0db7a20719941296200e87709a1420c1572b94c",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3713/en-US/954ac8d7c0dc4f523ebd.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/83ef61a3ed618af250dfca47d03b55cbe69d24494c41420838bd712d6bc3eeae.mp3",
+        "bytes": 9984,
+        "contentSha256": "954ac8d7c0dc4f523ebd20e1d7a3889bd7d77c02e732a0cba8c735a4e18aeb8d",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3713/en-GB/09a1b861bc6fc6cd0f4e.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/f338b761c0a291565eabafd2fcad82a0297cf8862c017b4f94dc25ada7071d04.mp3",
+        "bytes": 7776,
+        "contentSha256": "09a1b861bc6fc6cd0f4e0487b8b4887bf5df4b8052eceddb5c929ca8a25fa3fc",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3713/ja-JP/fa6bd693a3a9ed601f04.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/6412c24358757e8f80d38f61a6f08f002595aae796fd2bbc04e6982f3aaee13d.mp3",
+        "bytes": 9024,
+        "contentSha256": "fa6bd693a3a9ed601f04175101688583203fb3b1d5c6390a21793df97a8cecca",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3714/en-US/8052f7d539bbeb92630d.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-US/0f1d13cca2c3abfb823f2d4f34c9c1cec69b94769a79b10641bf6c1367298da6.mp3",
+        "bytes": 14976,
+        "contentSha256": "8052f7d539bbeb92630dcd4baf5c98176524f28ddb7c73af463cbe57412bf66a",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3714/en-GB/b6cf03fe2a6787b3910d.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/b8fe51f5a5731dd0001d66440db8c971785b8d1bb397320efecb8f1319785e93.mp3",
+        "bytes": 13344,
+        "contentSha256": "b6cf03fe2a6787b3910d24ee8aadee7b884b30868a305dc85da204c5f44c3e46",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      },
+      {
+        "key": "word-audio|examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+        "bucket": "word-audio",
+        "storagePath": "examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+        "url": "https://img.nexflow.team/word-audio/examples/3714/ja-JP/9aa5983e9c2c7607e5ab.mp3",
+        "localFile": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/342ef1c4a109f43f1eb95d4919a6865c38866d0013119390102b38902156de88.mp3",
+        "bytes": 17664,
+        "contentSha256": "9aa5983e9c2c7607e5ab786e88b8d7f8e8231a702a0efa8202bd3a0a236a5e19",
+        "mimeType": "audio/mpeg",
+        "existedBefore": false,
+        "uploadedByRun": true,
+        "uploadIntent": true,
+        "verified": true
+      }
+    ],
+    "existingBagUpdateApplied": true,
+    "appliedAt": "2026-10-30T08:53:41.884Z"
+  },
+  "codeIntegrationStatus": "local-only; commit/push/deploy not yet authorized"
+}

@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "checker": "Official auditWordsPayload unchanged; captured batch2 CardWord payloads only",
+  "results": [
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-en",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-ja",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-en&review=1793350627122",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-ja&review=1793350627122",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en&review=1793350627122",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja&review=1793350627122",
+      "wordCount": 2,
+      "issues": [],
+      "status": "passed"
+    }
+  ],
+  "productionWrites": 0
+}

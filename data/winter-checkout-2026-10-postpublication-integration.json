@@ -1,0 +1,27 @@
+{
+  "state": "unapplied-until-complete-publication-and-verification",
+  "scope": "Post-publication pair/span registration and exact English bag-note persistence; canonical image mapping is a separate deferred patch. No word seeds, category changes or routine bag writer.",
+  "changes": [
+    {
+      "file": "lib/main-word-winter-checkout-2026-10.ts",
+      "beforeSha256": null,
+      "afterSha256": "4c2604c8352ec6b0a09d7fdab8fd0805e49a672c70c84a21cfcb3e07d91cc0fd"
+    },
+    {
+      "file": "lib/main-word-example-pairs.ts",
+      "beforeSha256": "3d99a16976b7b83ad72c1ce21db59b2ab363e98e43738c8caf115c8e8b1144e4",
+      "afterSha256": "8dc042fae1449c26b3632fd832287ab434afddc615f42dba5b4248b5c9dfd497"
+    },
+    {
+      "file": "lib/example-span-corpus.ts",
+      "beforeSha256": "e388c80514626f510e18f3b164726c0e40b8ec33bc46d613f9a59cf01c4c53cd",
+      "afterSha256": "25c100531004e6b1e23561703129ae8238a182dab39ea81290fb7424b12c2b9a"
+    },
+    {
+      "file": "data/etymology-en.json",
+      "beforeSha256": "1ce926dd5fca1d574b61e3ea90749b6f1b0f49b667d21a70c66d3bf47cf3bd5c",
+      "afterSha256": "fcd957e150e78c1d4c6abc61708a8fba0bc2abfd27503169a124d2e938d4a890"
+    }
+  ],
+  "bagPersistence": "After publication only, append the reviewed English bag-note usage to data/etymology-en.json, preserving all other fields and entries, so future manual apply-localized-texts does not restore the old note. Traditional-Chinese base note, Japanese note and alias exact deltas remain in the reviewed proposal; normal migration does not rewrite these fields."
+}

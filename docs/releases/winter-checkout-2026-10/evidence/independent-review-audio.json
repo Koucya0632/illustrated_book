@@ -1,0 +1,768 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "reviewedAt": "2026-10-30T03:12:55.638241+00:00",
+  "scope": "Local candidate 6 headword and 12 example audio clips, no remote objects",
+  "generatedManifestSha256": "bfa2161b2ba8c99c04aadea7da2c32057bcb6220f58a0dbe46c6e20843c5c43f",
+  "contentSha256": "b23f58ea2928812372adb0884124c4c6329461db914c1be0f7d6d898f5227c22",
+  "checks": [
+    "Exact expected owner/locale set derived from actual 2-word source",
+    "Exact sourceText and text equality to headword or complete example",
+    "Local path containment, actual byte size and SHA256",
+    "Local audio/mpeg identification and every Layer III frame through EOF",
+    "Independent ffprobe and full ffmpeg decode for all 18 clips"
+  ],
+  "counts": {
+    "clips": 18,
+    "headword": 6,
+    "example": 12
+  },
+  "results": [
+    {
+      "key": "headword|point-card|en-US",
+      "kind": "headword",
+      "ownerKey": "point-card",
+      "locale": "en-US",
+      "sourceText": "loyalty card",
+      "file": "output/winter-checkout-2026-10/audio-candidates/headword/en-US/4a065ed8362258505f0989601ba64853c4432e5cf2d45d005756539e720e3aff.mp3",
+      "bytes": 4032,
+      "sha256": "b7f0180a06af53c9f87d1945b60f08c11cecfc522929987562aec1590083195d",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 42,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4032,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.008000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|point-card:0|en-US",
+      "kind": "example",
+      "ownerKey": "point-card:0",
+      "locale": "en-US",
+      "sourceText": "Please show your loyalty card.",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-US/14e8e483d15b8bf129aea4278112eca113bf79611c75ccff6fe98fbcfcad3b83.mp3",
+      "bytes": 8064,
+      "sha256": "46c838a19375cdc4dcdc0c6c3033411110ec573e724f7f79aeb58fb402734c7c",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 84,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8064,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "2.016000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|point-card:1|en-US",
+      "kind": "example",
+      "ownerKey": "point-card:1",
+      "locale": "en-US",
+      "sourceText": "I forgot my loyalty card, so I used the app to collect points.",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-US/cb06186e57c478230376fec0a979926d70266d724250df5f6a565a46aae4cd62.mp3",
+      "bytes": 18144,
+      "sha256": "645d2ba1046e39d00fa1aa0994d91151c7a59bd0eee86e3990fd6771ea69c327",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 189,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 18144,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "4.536000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "headword|point-card|en-GB",
+      "kind": "headword",
+      "ownerKey": "point-card",
+      "locale": "en-GB",
+      "sourceText": "loyalty card",
+      "file": "output/winter-checkout-2026-10/audio-candidates/headword/en-GB/583ae96fd0f1bccfc44ff9de67336f84ce70540d283cfb9e10975e78c8f0fe1a.mp3",
+      "bytes": 7872,
+      "sha256": "187bda3821035278847a2498756e976537b02ca98a2cd7477e545ecd99f99355",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 82,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7872,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.968000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|point-card:0|en-GB",
+      "kind": "example",
+      "ownerKey": "point-card:0",
+      "locale": "en-GB",
+      "sourceText": "Please show your loyalty card.",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/abeb44d844affae7e1ee160867f634a8ccc4706bdd04d5544284cb443add2576.mp3",
+      "bytes": 8544,
+      "sha256": "3973cfc929947ff08a17b45386edd786936bb9037602adb597abbd93e5cebbe0",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 89,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8544,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "2.136000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|point-card:1|en-GB",
+      "kind": "example",
+      "ownerKey": "point-card:1",
+      "locale": "en-GB",
+      "sourceText": "I forgot my loyalty card, so I used the app to collect points.",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/15bf9939b928eb88eb0025a567357f717731d4335b6378a777229c6b684a7ace.mp3",
+      "bytes": 17184,
+      "sha256": "beaa25f340ff395ce158fb37a300b9ec735628f0057922e896c5d648c9ac49c7",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 179,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17184,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "4.296000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "headword|point-card|ja-JP",
+      "kind": "headword",
+      "ownerKey": "point-card",
+      "locale": "ja-JP",
+      "sourceText": "ポイントカード",
+      "file": "output/winter-checkout-2026-10/audio-candidates/headword/ja-JP/e396c948fe020ef9f654635af485be3bd580052ec105b75ef0fe022bab95aae7.mp3",
+      "bytes": 6624,
+      "sha256": "89b8ed1ea698b35d600261180d980b87c1e6632f6106992adf195f36c5f6555c",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 69,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6624,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.656000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|point-card:0|ja-JP",
+      "kind": "example",
+      "ownerKey": "point-card:0",
+      "locale": "ja-JP",
+      "sourceText": "ポイントカードを見せてください。",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/5ec5b9cfe78db106b3574981c457aba2dec0bb2e706d2b801fd9aaa026f29328.mp3",
+      "bytes": 8256,
+      "sha256": "a116d2a7fadd4392ea9141bb1c239223b17fe8e01f324e2a3c069b29029a3c6b",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 86,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8256,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "2.064000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|point-card:1|ja-JP",
+      "kind": "example",
+      "ownerKey": "point-card:1",
+      "locale": "ja-JP",
+      "sourceText": "ポイントカードを忘れたので、アプリでポイントをためました。",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/d7617079ca8b499b21d2c0aa720eb9ef53b0d770c629da08a1723f97408ff5e9.mp3",
+      "bytes": 15264,
+      "sha256": "a798711d65825c898a19a865ad91d06b4844076319e20005186ec814965b0553",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 159,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 15264,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "3.816000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "headword|drinking-straw|en-US",
+      "kind": "headword",
+      "ownerKey": "drinking-straw",
+      "locale": "en-US",
+      "sourceText": "drinking straw",
+      "file": "output/winter-checkout-2026-10/audio-candidates/headword/en-US/d5e1f01902ca629c26489af07f5660f6c45797e9c9b8cad5467716d50b5dd26e.mp3",
+      "bytes": 7392,
+      "sha256": "fddce0f010e4a944d007efde37f5fb534cd7c5f5ebc3d24096bf66a378a4a4aa",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 77,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7392,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.848000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|drinking-straw:0|en-US",
+      "kind": "example",
+      "ownerKey": "drinking-straw:0",
+      "locale": "en-US",
+      "sourceText": "Shall I include a drinking straw?",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-US/83ef61a3ed618af250dfca47d03b55cbe69d24494c41420838bd712d6bc3eeae.mp3",
+      "bytes": 9984,
+      "sha256": "954ac8d7c0dc4f523ebd20e1d7a3889bd7d77c02e732a0cba8c735a4e18aeb8d",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 104,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9984,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "2.496000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|drinking-straw:1|en-US",
+      "kind": "example",
+      "ownerKey": "drinking-straw:1",
+      "locale": "en-US",
+      "sourceText": "The drinking straw was too short, so I asked for a longer one.",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-US/0f1d13cca2c3abfb823f2d4f34c9c1cec69b94769a79b10641bf6c1367298da6.mp3",
+      "bytes": 14976,
+      "sha256": "8052f7d539bbeb92630dcd4baf5c98176524f28ddb7c73af463cbe57412bf66a",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 156,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 14976,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "3.744000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "headword|drinking-straw|en-GB",
+      "kind": "headword",
+      "ownerKey": "drinking-straw",
+      "locale": "en-GB",
+      "sourceText": "drinking straw",
+      "file": "output/winter-checkout-2026-10/audio-candidates/headword/en-GB/306c63d7d19ba5c18ab3cbbd014a0fb8e51488c16f93c939dac4f952c0f1f16d.mp3",
+      "bytes": 7296,
+      "sha256": "359952278ddb9f4fe686e64ca56990905ef378d58c802716ea1680be1ad88e69",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 76,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7296,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.824000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|drinking-straw:0|en-GB",
+      "kind": "example",
+      "ownerKey": "drinking-straw:0",
+      "locale": "en-GB",
+      "sourceText": "Shall I include a drinking straw?",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/f338b761c0a291565eabafd2fcad82a0297cf8862c017b4f94dc25ada7071d04.mp3",
+      "bytes": 7776,
+      "sha256": "09a1b861bc6fc6cd0f4e0487b8b4887bf5df4b8052eceddb5c929ca8a25fa3fc",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 81,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7776,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.944000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|drinking-straw:1|en-GB",
+      "kind": "example",
+      "ownerKey": "drinking-straw:1",
+      "locale": "en-GB",
+      "sourceText": "The drinking straw was too short, so I asked for a longer one.",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/en-GB/b8fe51f5a5731dd0001d66440db8c971785b8d1bb397320efecb8f1319785e93.mp3",
+      "bytes": 13344,
+      "sha256": "b6cf03fe2a6787b3910d24ee8aadee7b884b30868a305dc85da204c5f44c3e46",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 139,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 13344,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "3.336000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "headword|drinking-straw|ja-JP",
+      "kind": "headword",
+      "ownerKey": "drinking-straw",
+      "locale": "ja-JP",
+      "sourceText": "ストロー",
+      "file": "output/winter-checkout-2026-10/audio-candidates/headword/ja-JP/2de7fd1d34eb99d15dbe958ed00dc110bb871ef6cac05822b5d46cb4dd9acca8.mp3",
+      "bytes": 6144,
+      "sha256": "2591a3fd134463c90c8affe2e0db7a20719941296200e87709a1420c1572b94c",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 64,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6144,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "1.536000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|drinking-straw:0|ja-JP",
+      "kind": "example",
+      "ownerKey": "drinking-straw:0",
+      "locale": "ja-JP",
+      "sourceText": "ストローをお付けしますか？",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/6412c24358757e8f80d38f61a6f08f002595aae796fd2bbc04e6982f3aaee13d.mp3",
+      "bytes": 9024,
+      "sha256": "fa6bd693a3a9ed601f04175101688583203fb3b1d5c6390a21793df97a8cecca",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 94,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9024,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "2.256000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    },
+    {
+      "key": "example|drinking-straw:1|ja-JP",
+      "kind": "example",
+      "ownerKey": "drinking-straw:1",
+      "locale": "ja-JP",
+      "sourceText": "ストローが短すぎたので、もっと長いものをお願いしました。",
+      "file": "output/winter-checkout-2026-10/audio-candidates/example/ja-JP/342ef1c4a109f43f1eb95d4919a6865c38866d0013119390102b38902156de88.mp3",
+      "bytes": 17664,
+      "sha256": "9aa5983e9c2c7607e5ab786e88b8d7f8e8231a702a0efa8202bd3a0a236a5e19",
+      "mimeType": "audio/mpeg",
+      "frameParsing": {
+        "frames": 184,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17664,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "mp3",
+            "sample_rate": "24000",
+            "channels": 1
+          }
+        ],
+        "format": {
+          "format_name": "mp3",
+          "duration": "4.416000"
+        }
+      },
+      "fullDecode": "pass",
+      "verdict": "pass"
+    }
+  ],
+  "subjectiveListening": "not checked; byte validation and source metadata do not prove the spoken wording, accent, or subjective voice quality",
+  "notChecked": [
+    "remote storage MIME and bytes",
+    "production media rows",
+    "API projection",
+    "subjective listening"
+  ],
+  "productionWrites": 0
+}

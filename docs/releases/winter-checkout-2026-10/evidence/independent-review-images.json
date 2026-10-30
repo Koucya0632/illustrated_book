@@ -1,0 +1,84 @@
+{
+  "workBatch": "winter-2026-02",
+  "checkedAt": "2026-10-30T03:05:40.051519+00:00",
+  "scope": "Two local candidate images only; all2 original PNG and all2 formal WebP viewed individually. Existing membership-card image viewed only for comparison.",
+  "status": "pass",
+  "manifestSha256": "dedac612d8178b841a4e3f5ddca9439f1eae7e61211800fc3c07bf3142808a74",
+  "reviewerRole": "independent reviewer, not producer",
+  "viewedAllSourcePngAndFormalWebp": true,
+  "items": [
+    {
+      "wordId": "point-card",
+      "verdict": "pass",
+      "reason": "已逐張看原PNG與正式WebP，並對照既有membership-card正式圖。新圖為單張圓角橫式實體卡，清楚正確標示ポイントカード與P點數識別，條碼支持結帳掃卡情境；沒有會員身分等級、集章格、金額餘額、信用卡晶片／卡組織標誌或支付動作。與既有MEMBER卡的藍白波紋及多星版面並非同圖重用，教學焦點可辨為購物集點卡。",
+      "acceptableLimitations": [
+        "會員資格與累點功能可存在同一張卡；圖片只表示本詞聚焦集點功能，不證明卡片功能互斥，也不是任何真實零售商的品牌或可掃描有效卡。條碼及P為概念識別。"
+      ],
+      "sha256": "966db51b2ea2436b4cdf11b2fb0f1643653d8cb60764837218f884e8d245b3bb",
+      "sourceSha256": "0ecbbf9079e62b43edb63b53a8ce1255091b4979e3e5683e79e5e943cfc08fc0",
+      "localPath": "images/webp/point-card-v1-966db51b2ea2.webp",
+      "axes": {
+        "semanticIdentity": "pass",
+        "japaneseDailyLife": "pass",
+        "catalogStyle": "pass",
+        "usability": "pass"
+      },
+      "mechanical": {
+        "format": "WEBP",
+        "sourceFormat": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 87202,
+        "manifestSizeAndHashMatch": true,
+        "sourceHashMatch": true,
+        "uniqueStorageKey": true
+      }
+    },
+    {
+      "wordId": "drinking-straw",
+      "verdict": "pass",
+      "reason": "已逐張看原PNG與正式WebP。完整單支細長飲用吸管，白管紅直紋、可彎蛇腹段與兩端中空開口清楚，長短段比例符合飲料吸管；不是實心攪拌棒、筷子、工業管線或粗珍奶管。純白背景上仍靠管壁陰影與紅紋維持對比，主體兩端完整未裁切。",
+      "acceptableLimitations": [
+        "此為常見可彎式吸管的通用概念圖，不主張日本所有店鋪都提供同款或都用塑膠；材料與提供方式由店家而異。"
+      ],
+      "sha256": "3371fb120053825ae8bf74c3f396b8dd84a5876aeaad7d7ef94d9d7f888f6277",
+      "sourceSha256": "a03fad9d1975b72c0393af58b1775094c120dd6d2ecf1a63c8061f5c76c41457",
+      "localPath": "images/webp/drinking-straw-v1-3371fb120053.webp",
+      "axes": {
+        "semanticIdentity": "pass",
+        "japaneseDailyLife": "pass",
+        "catalogStyle": "pass",
+        "usability": "pass"
+      },
+      "mechanical": {
+        "format": "WEBP",
+        "sourceFormat": "PNG",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 47724,
+        "manifestSizeAndHashMatch": true,
+        "sourceHashMatch": true,
+        "uniqueStorageKey": true
+      }
+    }
+  ],
+  "issues": [],
+  "comparisonEvidence": {
+    "membershipCardFile": "membership-card.webp",
+    "sha256": "a084f763cb39c2270a4c8644bf3b755fed8144312cf7057af8823dd8c8f654d0",
+    "finding": "Shared rectangular card form is expected; clear points label and different layout establish the new instructional focus without claiming functions are mutually exclusive."
+  },
+  "references": [
+    "https://www.lawson.co.jp/ponta/",
+    "https://www.family.co.jp/sustainability/material_issues/environment/nature.html"
+  ],
+  "inferenceNote": "Appearance judgments combine actual local images with retailer descriptions; the images are generic illustrations rather than reproductions of current branded products.",
+  "notChecked": [
+    "production upload",
+    "canonical registry",
+    "ordinary or cache-busting API",
+    "remote object bytes",
+    "complete content/audio/publisher review"
+  ],
+  "productionWrites": 0
+}

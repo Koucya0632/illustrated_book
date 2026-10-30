@@ -1,0 +1,13 @@
+{
+  "generationMode": "built-in image_gen",
+  "entries": [
+    {
+      "id": "point-card",
+      "prompt": "Use case: product-mockup. Create ONE square Japanese daily-life picture-dictionary catalog illustration of a store loyalty points card, ポイントカード. A single standard credit-card-size landscape PLASTIC loyalty card, light sky-blue and ivory, satin smooth surface with rounded corners, at a restrained three-quarter angle, complete and centered on a pure white background with generous padding and a soft grounding shadow. Semi-realistic clean product illustration. Its defining function is collecting/redeeming store points, not proving membership or identity: print the exact Japanese title 『ポイントカード』 clearly once across the upper part; below it one simple generic star-shaped points icon containing a plain P, and a modest black barcode along the lower edge. No cardholder name, no portrait, no actual brand, no fictional shop brand, no bank logo, no credit-card chip, no currency or stored-value amounts, no account numbers, no expiry date, no stamp grid or punch card circles, no wallet, no hands or other props, no scene, no watermark. Do not write MEMBER or create an ID card. All necessary text must be the exact Japanese title and the one P only. The result is a timeless generic Japanese retail rewards card concept, not a copy of a specific retailer's branded card."
+    },
+    {
+      "id": "drinking-straw",
+      "prompt": "Use case: product-mockup. Create ONE square educational picture-dictionary catalog illustration of a drinking straw, ストロー. Show a single ordinary slender white plastic flexible drinking straw with one subtle red stripe along its length, a short corrugated flexible elbow near the top bent about 35 degrees, and a clearly hollow open tubular drinking end. It must be visibly a thin hollow drinking tube, not a solid chopstick, pen, cable, or candy cane. Semi-realistic clean product illustration, believable matte material, isolated on pure white background with restrained soft shadow for contrast. The complete straw lies diagonally across the composition from lower left toward upper right, centered, with generous padding at both ends and no clipping. Natural proportions around 20cm long and 5mm diameter; sufficiently clear corrugation and dark opening to recognize it even at small size. Universal daily-life form commonly used with takeaway drinks. No drink or cup, no wrapper, no extra straws, no people or hands, no scene, no labels or text, no brand, no watermark."
+    }
+  ]
+}

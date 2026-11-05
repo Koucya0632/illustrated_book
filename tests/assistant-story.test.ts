@@ -14,7 +14,7 @@ import {
 } from "../lib/assistant/story/model";
 import { createReplyScanner } from "../lib/assistant/story/reply-scanner";
 import { STORY_SCENES, findScene } from "../lib/assistant/story/scenes";
-import { storyStageCue } from "../lib/assistant/story/stage";
+import { STORY_STAGES, createStoryStageResolver, storyStageCue, storyStageGuide } from "../lib/assistant/story/stage";
 import type { AssistantUsageRecord } from "../lib/assistant/usage";
 
 // --- readings ----------------------------------------------------------------
@@ -64,6 +64,7 @@ function fakeClient(parsed: Record<string, unknown>, observe?: (request: Record<
   const json = JSON.stringify(parsed);
   return { messages: { stream: (request: Record<string, unknown>) => {
     observe?.(request);
+    const format = (request.output_config as { format: { parse: (text: string) => unknown } }).format;
     return {
     async *[Symbol.asyncIterator]() {
       for (let at = 0; at < json.length; at += 7) {
@@ -71,7 +72,7 @@ function fakeClient(parsed: Record<string, unknown>, observe?: (request: Record<
       }
     },
     finalMessage: async () => ({
-      stop_reason: "end_turn", usage: { input_tokens: 1800, output_tokens: 1000 }, parsed_output: parsed,
+      stop_reason: "end_turn", usage: { input_tokens: 1800, output_tokens: 1000 }, parsed_output: format.parse(json),
     }),
     };
   } } } as unknown as Anthropic;
@@ -182,19 +183,69 @@ test("Simplified Chinese interface fields agree in the opening, streamed lines a
   assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
 });
 
-test("supermarket presentation stays in one model call without delaying it for extra thinking", async () => {
+test("every current place has presentation in one model call without extra thinking", async () => {
   const requests: Record<string, unknown>[] = [];
   const model = createStoryModel(fakeClient(modelReply, request => requests.push(request)));
-  await model(storyRequest("en"));
-  assert.equal(requests.length, 1);
-  assert.deepEqual(requests[0].thinking, { type: "disabled" });
-  await model({ ...storyRequest("en"), ...findScene("office", "chat")! });
-  assert.equal(requests.length, 2);
-  assert.equal(requests[1].thinking, undefined);
+  for (const scene of STORY_SCENES) {
+    await model({ ...storyRequest("en"), ...findScene(scene.id, "chat")! });
+    assert.deepEqual(requests.at(-1)?.thinking, { type: "disabled" });
+  }
+  assert.equal(requests.length, STORY_SCENES.length);
+  assert.deepEqual(Object.keys(STORY_STAGES).sort(), STORY_SCENES.map(s => s.id).sort());
+  assert.equal(storyStageGuide("future-place"), undefined);
+  assert.equal(storyStageCue({ areaId: "general", moiraAction: "greet" }, "future-place"), undefined);
+});
+
+for (const [sceneId, stage] of Object.entries(STORY_STAGES)) {
+  test(`${sceneId} streams every local area and prop with final parity`, async () => {
+    const stages = stage.areas.map(areaId => ({ areaId, moiraAction: "listen" }))
+      .concat(stage.props.map(moiraAction => ({ areaId: "general", moiraAction })));
+    const text = "Moira performs the stated action in this narration.";
+    const raw = { ...modelReply, segments: stages.map(cue => ({
+      ...modelReply.segments[0], text, stage: { ...cue, propEvidence: text },
+    })) };
+    const parts: StoryPart[] = [];
+    const { story } = await createStoryModel(fakeClient(raw))(
+      { ...storyRequest("zh-Hant"), ...findScene(sceneId, "daily")! }, p => parts.push(p),
+    );
+    assert.deepEqual(story.segments.map(s => s.stage), stages);
+    assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
+    for (const [otherId, other] of Object.entries(STORY_STAGES)) {
+      if (otherId === sceneId) continue;
+      for (const areaId of other.areas) {
+        if (!stage.areas.some(id => id === areaId)) assert.equal(storyStageCue({ areaId }, sceneId), undefined);
+      }
+      for (const moiraAction of other.props) {
+        if (!stage.props.some(id => id === moiraAction)) assert.equal(storyStageCue({ moiraAction }, sceneId), undefined);
+      }
+    }
+  });
+}
+
+test("props require exact narration evidence and cannot survive a later put-down", () => {
+  const resolve = createStoryStageResolver("supermarket");
+  assert.deepEqual(resolve({ areaId: "produce", moiraAction: "hold_apple" }, "cat", "I like apples."), { areaId: "produce" });
+  assert.deepEqual(resolve({ areaId: "produce", moiraAction: "hold_apple", propEvidence: "Moira holds an apple." }, "narrator", "You hold an apple."), { areaId: "produce" });
+  const evidence = "Moira holds an apple.";
+  assert.deepEqual(resolve({ areaId: "produce", moiraAction: "hold_apple", propEvidence: evidence }, "narrator", evidence), { areaId: "produce", moiraAction: "hold_apple" });
+  assert.deepEqual(resolve({ areaId: "produce", moiraAction: "hold_apple" }, "cat", "It looks good."), { areaId: "produce", moiraAction: "hold_apple" });
+  resolve({ areaId: "produce", moiraAction: "nod" }, "narrator", "Moira puts the apple in a bag.");
+  assert.deepEqual(resolve({ areaId: "produce", moiraAction: "hold_apple" }, "cat", "Let's pay."), { areaId: "produce" });
+});
+
+test("spoken location suggestions preserve the last setting in resolved snapshots", () => {
+  const resolve = createStoryStageResolver("office");
+  resolve({ areaId: "desk", moiraAction: "think" }, "narrator", "Moira sits at her desk.");
+  assert.deepEqual(resolve({ areaId: "meeting", moiraAction: "point" }, "cat", "Let's go to the meeting room."), { areaId: "desk", moiraAction: "point" });
+  assert.deepEqual(resolve({ areaId: "meeting", moiraAction: "nod" }, "narrator", "They arrive in the meeting room."), { areaId: "meeting", moiraAction: "nod" });
+  assert.deepEqual(resolve({ areaId: "unknown", moiraAction: "listen" }, "you", "A new room."), { moiraAction: "listen" });
+  assert.deepEqual(resolve({ areaId: "meeting", moiraAction: "think" }, "cat", "Where are we?"), { areaId: "general", moiraAction: "think" });
 });
 
 test("the cat is Moira whatever the model spelled", () => {
   assert.equal(moira("モイラと駅で電車を待つ"), "Moiraと駅で電車を待つ");
+  assert.equal(moira("モアイラさんと休憩室に入る"), "Moiraさんと休憩室に入る");
+  assert.equal(moira("モアが椅子に座り、モアラと話す"), "Moiraが椅子に座り、Moiraと話す");
   assert.equal(moira("和莫伊拉一起買蘋果"), "和Moira一起買蘋果");
 });
 

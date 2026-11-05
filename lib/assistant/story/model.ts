@@ -86,6 +86,7 @@ The scene is for vocabulary practice, so:
 Format:
 - The cat's name is Moira, written exactly that way in the Latin alphabet in every language, never translated or transliterated.
 - title, intro and narration are always in the interface language, never in the language being learned: with an English interface they are English even when the spoken lines are Japanese.
+- In a Chinese interface, every narration stays completely in Chinese, including its final sentence. Refer to picked items by their Chinese dictionary meanings in narration, not their Japanese entry labels. Paraphrase staff remarks in Chinese too. Only cat/you dialogue uses Japanese when Japanese is being learned.
 - title: a short original title in the requested interface language.
 - intro: one or two original sentences in the requested interface language that set the scene, addressing the person as "you" in that language. It is part of the story: never mention practising, learning or vocabulary. The intro must follow the requested interface language even when the spoken dialogue is in a different language.
 - segments: 8 to 14 spoken lines with 2 to 4 short narration segments placed between them, never two narrations in a row.
@@ -132,7 +133,7 @@ function generationReply(request: StoryModelRequest) {
       speaker: z.literal("narrator"),
       // Put the language anchor immediately before text, so even late
       // narration cannot inherit the language of the preceding dialogue.
-      narrationLanguage: z.literal(ui),
+      narrationLanguage: z.literal(request.uiLanguage === "zh-Hant" ? "繁體中文" : request.uiLanguage === "zh-Hans" ? "简体中文" : ui),
       text: z.string().describe(`Narration entirely in ${ui}, including the final narration. Never switch to ${learning} unless it is also ${ui}. Write the cat's name as Moira.`),
       reading: z.literal(""), translation: z.literal(""),
       word_ids: generated.shape.word_ids,
@@ -174,6 +175,7 @@ export function storyPrompt(request: StoryModelRequest): string {
     "<picked_items>",
     ...request.words.map(word => JSON.stringify({ id: word.id, word: word.word, reading: word.reading, meaning: word.meaning })),
     "</picked_items>",
+    `Before ending, make sure every required item appears in cat/you spoken dialogue, not only narration or notes: ${JSON.stringify(request.words.map(word => word.word))}. The language contract and spoken-item coverage take priority over presentation hints.`,
   ].join("\n");
 }
 
@@ -186,7 +188,7 @@ export function usesWord(text: string, word: StoryWord): boolean {
   return [word.word, word.reading].some(form => form && haystack.includes(form.toLowerCase()));
 }
 
-/** Ids of picked items that no spoken line uses. A story missing one is not delivered. */
+/** Ids absent from spoken lines; an incomplete story is never charged. */
 export function missingWords(story: Story, words: StoryWord[]): string[] {
   const lines = story.segments.filter(s => s.speaker !== "narrator");
   const kana = (line: StorySegment) => line.reading ?? line.furigana?.map(f => f.ruby ?? f.text).join("") ?? "";

@@ -9,12 +9,14 @@ import { z } from "zod";
 import { EMPTY_FURIGANA_DICT } from "../../furigana-dict";
 import { isKanaOnly, isKanji, readingKeepsKana, restoreKanaRuns, segmentFurigana, type FuriganaSegment } from "../../kana";
 import { targetLanguageFor } from "../../settings";
+import { toZhHans } from "../../opencc";
 import { AssistantError } from "../contracts";
 import { ASSISTANT_MODEL, type AssistantUsage } from "../pricing";
 import { cachedSystem } from "../system-prompt";
 import { createReplyScanner } from "./reply-scanner";
 import type { StoryLearningDirection, StoryLevel } from "./levels";
 import type { StoryScene, StorySituation, StoryUiLanguage } from "./scenes";
+import { STAGE_GUIDE, storyStageCue, type StoryStageCue } from "./stage";
 
 /** One picked item, read by the server from the catalogue or the person's own atlas. */
 export interface StoryWord {
@@ -45,6 +47,7 @@ export interface StorySegment {
   translation?: string;
   /** Picked items this line uses. */
   wordIds: string[];
+  stage?: StoryStageCue;
 }
 
 export interface StoryWordNote {
@@ -83,8 +86,8 @@ The scene is for vocabulary practice, so:
 Format:
 - The cat's name is Moira, written exactly that way in the Latin alphabet in every language, never translated or transliterated.
 - title, intro and narration are always in the interface language, never in the language being learned: with an English interface they are English even when the spoken lines are Japanese.
-- title: a short title in the interface language, like "和Moira一起買蘋果".
-- intro: one or two sentences of story in the interface language that set the scene, addressing the person as "you" (你 / あなた etc.), like "你和Moira走進超市，在水果區看到一籃紅色的蘋果。你想買一些回家，Moira陪你一起挑選。" It is part of the story: never mention practising, learning or vocabulary.
+- title: a short original title in the requested interface language.
+- intro: one or two original sentences in the requested interface language that set the scene, addressing the person as "you" in that language. It is part of the story: never mention practising, learning or vocabulary. The intro must follow the requested interface language even when the spoken dialogue is in a different language.
 - segments: 8 to 14 spoken lines with 2 to 4 short narration segments placed between them, never two narrations in a row.
   - Narration: speaker "narrator", text in the interface language, reading and translation empty.
   - A spoken line: speaker "cat" or "you", text in the language being learned. In bilingual mode, translation is the line in the interface language; in monolingual mode, translation is empty. When the language being learned is Japanese, reading is the whole line in kana with no kanji left and no spaces, keeping katakana words in katakana and punctuation as in the line; otherwise reading is empty. Spoken text is not wrapped in quotation marks.
@@ -101,12 +104,19 @@ const segment = z.object({
   reading: z.string(),
   translation: z.string(),
   word_ids: z.array(z.string()),
+  // Validate presentation separately: a malformed hint must not drop a line.
+  stage: z.unknown().optional(),
 });
 const reply = z.object({
   title: z.string(),
   intro: z.string(),
-  segments: z.array(segment),
+  segments: z.array(segment.omit({ stage: true })),
   word_notes: z.array(z.object({ id: z.string(), note: z.string() })),
+});
+const stageReply = reply.extend({
+  segments: z.array(segment.extend({
+    stage: z.object({ areaId: z.string(), moiraAction: z.string() }).nullable(),
+  })),
 });
 
 const UI_LANGUAGE = {
@@ -132,6 +142,7 @@ export function storyPrompt(request: StoryModelRequest): string {
     `Place: ${request.scene.label.en} (${request.scene.label[ui]})`,
     `What is happening: ${request.situation.label.en} (${request.situation.label[ui]})`,
     `Difficulty: ${request.level.label.en}. ${request.level.guide[request.learningDirection]}`,
+    `Output language contract: title, intro, every narrator text and every translation must be in ${UI_LANGUAGE[ui]}. All cat/you text must be in ${LEARNING[request.learningDirection]}. Do not copy the language of examples or item glosses into these fields.`,
     "",
     "<picked_items>",
     ...request.words.map(word => JSON.stringify({ id: word.id, word: word.word, reading: word.reading, meaning: word.meaning })),
@@ -211,16 +222,23 @@ function shapeSegment(s: ReplySegment, request: StoryModelRequest, picked: Set<s
   const isJapanese = request.learningDirection === "zh-ja";
   // Japanese has no spaces between words; a beginner line sometimes
   // arrives spaced out like a children's book, which also defeats furigana.
-  const said = spoken ? unquote(s.text) : moira(s.text.trim());
+  const said = spoken ? unquote(s.text) : interfaceText(s.text.trim(), request.uiLanguage);
   const text = spoken && isJapanese ? said.replace(/[ \u3000]+/gu, "") : said;
   const reading = spoken && isJapanese ? lineReading(text, s.reading) : null;
+  const stage = storyStageCue(s.stage, request.scene.id);
   return {
     speaker: s.speaker,
     text,
     ...(reading ? lineFurigana(text, reading) : {}),
-    ...(spoken && !isMonolingual(request) && s.translation.trim() ? { translation: moira(s.translation.trim()) } : {}),
+    ...(spoken && !isMonolingual(request) && s.translation.trim() ? { translation: interfaceText(s.translation.trim(), request.uiLanguage) } : {}),
     wordIds: [...new Set(s.word_ids)].filter(id => picked.has(id)),
+    ...(stage ? { stage } : {}),
   };
+}
+
+function interfaceText(text: string, language: StoryUiLanguage): string {
+  const named = moira(text);
+  return language === "zh-Hans" ? toZhHans(named) : named;
 }
 
 /**
@@ -236,7 +254,7 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
     const scan = createReplyScanner({
       field: (key, value) => {
         if (key !== "title" && key !== "intro") return;
-        opening[key] = moira(value.trim());
+        opening[key] = interfaceText(value.trim(), request.uiLanguage);
         if (!opened && opening.title !== undefined && opening.intro !== undefined) {
           opened = true;
           onPart?.({ type: "opening", title: opening.title, intro: opening.intro });
@@ -254,8 +272,11 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
         // Thinking counts toward this; samples used up to ~3,700 in all, and a
         // story cut off mid-JSON is a failure the person is not charged for.
         max_tokens: 8192,
-        system: cachedSystem(SYSTEM),
-        output_config: { effort: "low", format: zodOutputFormat(reply) },
+        // Presentation labels need no extra reasoning pass before the opening.
+        // Keep other places on their existing provider defaults.
+        ...(request.scene.id === "supermarket" ? { thinking: { type: "disabled" as const } } : {}),
+        system: cachedSystem(SYSTEM, ...(request.scene.id === "supermarket" ? [STAGE_GUIDE] : [])),
+        output_config: { effort: "low", format: zodOutputFormat(request.scene.id === "supermarket" ? stageReply : reply) },
         messages: [{ role: "user", content: storyPrompt(request) }],
       });
       for await (const event of stream) {
@@ -278,8 +299,8 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
       throw new AssistantError("assistant_unavailable");
     }
     const story: Story = {
-      title: moira(parsed.title.trim()),
-      intro: moira(parsed.intro.trim()),
+      title: interfaceText(parsed.title.trim(), request.uiLanguage),
+      intro: interfaceText(parsed.intro.trim(), request.uiLanguage),
       segments: parsed.segments.map(s => shapeSegment(s, request, picked)),
     };
     if (isMonolingual(request)) {

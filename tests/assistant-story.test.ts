@@ -14,6 +14,7 @@ import {
 } from "../lib/assistant/story/model";
 import { createReplyScanner } from "../lib/assistant/story/reply-scanner";
 import { STORY_SCENES, findScene } from "../lib/assistant/story/scenes";
+import { storyStageCue } from "../lib/assistant/story/stage";
 import type { AssistantUsageRecord } from "../lib/assistant/usage";
 
 // --- readings ----------------------------------------------------------------
@@ -59,9 +60,11 @@ test("only the interface language that is the one being learned is monolingual",
 });
 
 /** A model that streams `parsed` as JSON text in small, uneven pieces. */
-function fakeClient(parsed: Record<string, unknown>) {
+function fakeClient(parsed: Record<string, unknown>, observe?: (request: Record<string, unknown>) => void) {
   const json = JSON.stringify(parsed);
-  return { messages: { stream: () => ({
+  return { messages: { stream: (request: Record<string, unknown>) => {
+    observe?.(request);
+    return {
     async *[Symbol.asyncIterator]() {
       for (let at = 0; at < json.length; at += 7) {
         yield { type: "content_block_delta", delta: { type: "text_delta", text: json.slice(at, at + 7) } };
@@ -70,7 +73,8 @@ function fakeClient(parsed: Record<string, unknown>) {
     finalMessage: async () => ({
       stop_reason: "end_turn", usage: { input_tokens: 1800, output_tokens: 1000 }, parsed_output: parsed,
     }),
-  }) } } as unknown as Anthropic;
+    };
+  } } } as unknown as Anthropic;
 }
 const modelReply = {
   title: "t", intro: "i",
@@ -126,6 +130,67 @@ test("the opening and each segment are passed on as written, the same as the fin
   const { story } = await createStoryModel(fakeClient(modelReply))(storyRequest("zh-Hant"), part => parts.push(part));
   assert.deepEqual(parts[0], { type: "opening", title: "t", intro: "i" });
   assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
+});
+
+test("stage hints survive chunked streaming and agree with the final story", async () => {
+  const raw = { ...modelReply, segments: modelReply.segments.map(s => ({
+    ...s, stage: { areaId: "produce", moiraAction: s.speaker === "cat" ? "point" : "listen" },
+  })) };
+  const parts: StoryPart[] = [];
+  const { story } = await createStoryModel(fakeClient(raw))(storyRequest("zh-Hant"), p => parts.push(p));
+  assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
+  assert.deepEqual(story.segments[1].stage, { areaId: "produce", moiraAction: "point" });
+  assert.equal(story.segments[1].text, "りんごを三つ買います。");
+});
+
+test("bad optional presentation never drops story text, translation or readings", async () => {
+  for (const stage of [undefined, null, 42, [], "produce", { areaId: 7, moiraAction: [] }, { areaId: "freezer", moiraAction: "invented" }]) {
+    const raw = { ...modelReply, segments: modelReply.segments.map(s => ({ ...s, stage })) };
+    const parts: StoryPart[] = [];
+    const { story } = await createStoryModel(fakeClient(raw))(storyRequest("zh-Hant"), p => parts.push(p));
+    assert.equal(story.segments.length, 2);
+    assert.equal(story.segments[1].text, "りんごを三つ買います。");
+    assert.equal(story.segments[1].translation, "我買三個蘋果。");
+    assert.ok(story.segments[1].furigana);
+    assert.equal(story.segments[1].stage, undefined);
+    assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
+  }
+});
+
+test("presentation validates fields independently and never leaks into another place", async () => {
+  assert.deepEqual(storyStageCue({ areaId: "frozen", moiraAction: "listen" }, "supermarket"), { moiraAction: "listen" });
+  assert.deepEqual(storyStageCue({ areaId: "checkout", moiraAction: false }, "supermarket"), { areaId: "checkout" });
+  assert.deepEqual(storyStageCue({ areaId: "produce", moiraAction: "hold_apple" }, "supermarket"), { areaId: "produce", moiraAction: "hold_apple" });
+  const request = { ...storyRequest("en"), ...findScene("office", "chat")! };
+  const raw = { ...modelReply, segments: modelReply.segments.map(s => ({ ...s, stage: { areaId: "produce", moiraAction: "hold_apple" } })) };
+  const { story } = await createStoryModel(fakeClient(raw))(request);
+  assert.ok(story.segments.every(s => s.stage === undefined));
+});
+
+test("Simplified Chinese interface fields agree in the opening, streamed lines and final story", async () => {
+  const raw = { ...modelReply, title: "蘋果", intro: "你們準備買蘋果。", segments: [
+    { ...modelReply.segments[0], text: "Moira選了蘋果。" },
+    { ...modelReply.segments[1], translation: "我們買三顆蘋果。" },
+  ] };
+  const parts: StoryPart[] = [];
+  const { story } = await createStoryModel(fakeClient(raw))(storyRequest("zh-Hans"), p => parts.push(p));
+  assert.equal(story.title, "苹果");
+  assert.equal(story.intro, "你们准备买苹果。");
+  assert.equal(story.segments[0].text, "Moira选了苹果。");
+  assert.equal(story.segments[1].translation, "我们买三颗苹果。");
+  assert.deepEqual(parts[0], { type: "opening", title: story.title, intro: story.intro });
+  assert.deepEqual(parts.slice(1).map(p => p.type === "segment" && p.segment), story.segments);
+});
+
+test("supermarket presentation stays in one model call without delaying it for extra thinking", async () => {
+  const requests: Record<string, unknown>[] = [];
+  const model = createStoryModel(fakeClient(modelReply, request => requests.push(request)));
+  await model(storyRequest("en"));
+  assert.equal(requests.length, 1);
+  assert.deepEqual(requests[0].thinking, { type: "disabled" });
+  await model({ ...storyRequest("en"), ...findScene("office", "chat")! });
+  assert.equal(requests.length, 2);
+  assert.equal(requests[1].thinking, undefined);
 });
 
 test("the cat is Moira whatever the model spelled", () => {

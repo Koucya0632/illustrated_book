@@ -142,7 +142,7 @@ function generationReply(request: StoryModelRequest) {
     generated.extend({
       speaker: z.enum(["cat", "you"]),
       text: z.string().describe(`Spoken dialogue entirely in ${learning}.`),
-      translation: isMonolingual(request) ? z.literal("") : z.string().describe(`Translation entirely in ${ui}.`),
+      translation: isMonolingual(request) ? z.literal("") : z.string().min(1).describe(`REQUIRED nonempty translation entirely in ${ui}; never an empty string.`),
     }),
   ])) });
 }
@@ -176,6 +176,8 @@ export function storyPrompt(request: StoryModelRequest): string {
     ...request.words.map(word => JSON.stringify({ id: word.id, word: word.word, reading: word.reading, meaning: word.meaning })),
     "</picked_items>",
     `Before ending, make sure every required item appears in cat/you spoken dialogue, not only narration or notes: ${JSON.stringify(request.words.map(word => word.word))}. The language contract and spoken-item coverage take priority over presentation hints.`,
+    isMonolingual(request) ? "Spoken-line translations are empty in this monolingual story."
+      : `Every cat/you line must have a nonempty ${UI_LANGUAGE[ui]} translation, including the last line. Do not omit translations while writing presentation hints.`,
   ].join("\n");
 }
 

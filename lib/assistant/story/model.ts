@@ -16,7 +16,7 @@ import { cachedSystem } from "../system-prompt";
 import { createReplyScanner } from "./reply-scanner";
 import type { StoryLearningDirection, StoryLevel } from "./levels";
 import type { StoryScene, StorySituation, StoryUiLanguage } from "./scenes";
-import { STAGE_GUIDE, storyStageCue, type StoryStageCue } from "./stage";
+import { createStoryStageResolver, storyStageGuide, storyStageOptions, type StoryStageCue } from "./stage";
 
 /** One picked item, read by the server from the catalogue or the person's own atlas. */
 export interface StoryWord {
@@ -86,6 +86,7 @@ The scene is for vocabulary practice, so:
 Format:
 - The cat's name is Moira, written exactly that way in the Latin alphabet in every language, never translated or transliterated.
 - title, intro and narration are always in the interface language, never in the language being learned: with an English interface they are English even when the spoken lines are Japanese.
+- In a Chinese interface, every narration stays completely in Chinese, including its final sentence. Refer to picked items by their Chinese dictionary meanings in narration, not their Japanese entry labels. Paraphrase staff remarks in Chinese too. Only cat/you dialogue uses Japanese when Japanese is being learned.
 - title: a short original title in the requested interface language.
 - intro: one or two original sentences in the requested interface language that set the scene, addressing the person as "you" in that language. It is part of the story: never mention practising, learning or vocabulary. The intro must follow the requested interface language even when the spoken dialogue is in a different language.
 - segments: 8 to 14 spoken lines with 2 to 4 short narration segments placed between them, never two narrations in a row.
@@ -113,11 +114,38 @@ const reply = z.object({
   segments: z.array(segment.omit({ stage: true })),
   word_notes: z.array(z.object({ id: z.string(), note: z.string() })),
 });
-const stageReply = reply.extend({
-  segments: z.array(segment.extend({
-    stage: z.object({ areaId: z.string(), moiraAction: z.string() }).nullable(),
-  })),
-});
+// The SDK must accept arbitrary optional presentation even if a provider
+// violates its requested schema; only required story content can reject it.
+const contentReply = reply.extend({ segments: z.array(segment) });
+
+function generationReply(request: StoryModelRequest) {
+  const options = storyStageOptions(request.scene.id);
+  const presentationFields = options ? {
+    stage: z.object({
+      areaId: z.enum(options.areas), propEvidence: z.string(), moiraAction: z.enum(options.actions),
+    }),
+  } : {};
+  const generated = segment.omit({ stage: true }).extend(presentationFields);
+  const ui = UI_LANGUAGE[request.uiLanguage];
+  const learning = LEARNING[request.learningDirection];
+  return reply.extend({ segments: z.array(z.union([
+    z.object({
+      speaker: z.literal("narrator"),
+      // Put the language anchor immediately before text, so even late
+      // narration cannot inherit the language of the preceding dialogue.
+      narrationLanguage: z.literal(request.uiLanguage === "zh-Hant" ? "繁體中文" : request.uiLanguage === "zh-Hans" ? "简体中文" : ui),
+      text: z.string().describe(`Narration entirely in ${ui}, including the final narration. Never switch to ${learning} unless it is also ${ui}. Write the cat's name as Moira.`),
+      reading: z.literal(""), translation: z.literal(""),
+      word_ids: generated.shape.word_ids,
+      ...presentationFields,
+    }),
+    generated.extend({
+      speaker: z.enum(["cat", "you"]),
+      text: z.string().describe(`Spoken dialogue entirely in ${learning}.`),
+      translation: isMonolingual(request) ? z.literal("") : z.string().min(1).describe(`REQUIRED nonempty translation entirely in ${ui}; never an empty string.`),
+    }),
+  ])) });
+}
 
 const UI_LANGUAGE = {
   "zh-Hant": "Traditional Chinese", "zh-Hans": "Simplified Chinese", ja: "Japanese", en: "English",
@@ -147,6 +175,9 @@ export function storyPrompt(request: StoryModelRequest): string {
     "<picked_items>",
     ...request.words.map(word => JSON.stringify({ id: word.id, word: word.word, reading: word.reading, meaning: word.meaning })),
     "</picked_items>",
+    `Before ending, make sure every required item appears in cat/you spoken dialogue, not only narration or notes: ${JSON.stringify(request.words.map(word => word.word))}. The language contract and spoken-item coverage take priority over presentation hints.`,
+    isMonolingual(request) ? "Spoken-line translations are empty in this monolingual story."
+      : `Every cat/you line must have a nonempty ${UI_LANGUAGE[ui]} translation, including the last line. Do not omit translations while writing presentation hints.`,
   ].join("\n");
 }
 
@@ -159,7 +190,7 @@ export function usesWord(text: string, word: StoryWord): boolean {
   return [word.word, word.reading].some(form => form && haystack.includes(form.toLowerCase()));
 }
 
-/** Ids of picked items that no spoken line uses. A story missing one is not delivered. */
+/** Ids absent from spoken lines; an incomplete story is never charged. */
 export function missingWords(story: Story, words: StoryWord[]): string[] {
   const lines = story.segments.filter(s => s.speaker !== "narrator");
   const kana = (line: StorySegment) => line.reading ?? line.furigana?.map(f => f.ruby ?? f.text).join("") ?? "";
@@ -179,7 +210,7 @@ export function lineFurigana(text: string, reading: string): Pick<StorySegment, 
 }
 
 /** The cat is Moira in every language; a model sometimes transliterates it anyway. */
-const MOIRA_SPELLINGS = /モイラ|莫伊拉|莫依拉|莫伊菈|莫拉伊/gu;
+const MOIRA_SPELLINGS = /モイラ|モアイラ|モアラ|モア(?=さん|と|が|は|を|の|に|も|、|。|$)|莫伊拉|莫依拉|莫伊菈|莫拉伊/gu;
 export const moira = (text: string) => text.replace(MOIRA_SPELLINGS, "Moira");
 
 /** A spoken line sometimes comes wrapped in 「」 or quotes; the bubble is the quote. */
@@ -217,7 +248,10 @@ type ReplySegment = z.infer<typeof segment>;
  * One segment as the app gets it. The same steps run on a segment streamed
  * early and on the finished reply, so the two cannot differ.
  */
-function shapeSegment(s: ReplySegment, request: StoryModelRequest, picked: Set<string>): StorySegment {
+function shapeSegment(
+  s: ReplySegment, request: StoryModelRequest, picked: Set<string>,
+  resolveStage: ReturnType<typeof createStoryStageResolver>,
+): StorySegment {
   const spoken = s.speaker !== "narrator";
   const isJapanese = request.learningDirection === "zh-ja";
   // Japanese has no spaces between words; a beginner line sometimes
@@ -225,7 +259,7 @@ function shapeSegment(s: ReplySegment, request: StoryModelRequest, picked: Set<s
   const said = spoken ? unquote(s.text) : interfaceText(s.text.trim(), request.uiLanguage);
   const text = spoken && isJapanese ? said.replace(/[ \u3000]+/gu, "") : said;
   const reading = spoken && isJapanese ? lineReading(text, s.reading) : null;
-  const stage = storyStageCue(s.stage, request.scene.id);
+  const stage = resolveStage(s.stage, s.speaker, s.text);
   return {
     speaker: s.speaker,
     text,
@@ -251,6 +285,7 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
     const picked = new Set(request.words.map(word => word.id));
     const opening: { title?: string; intro?: string } = {};
     let opened = false;
+    const streamStage = createStoryStageResolver(request.scene.id);
     const scan = createReplyScanner({
       field: (key, value) => {
         if (key !== "title" && key !== "intro") return;
@@ -262,10 +297,11 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
       },
       segment: raw => {
         const parsed = segment.safeParse(raw);
-        if (opened && parsed.success) onPart?.({ type: "segment", segment: shapeSegment(parsed.data, request, picked) });
+        if (opened && parsed.success) onPart?.({ type: "segment", segment: shapeSegment(parsed.data, request, picked, streamStage) });
       },
     });
     let response;
+    const stageGuide = storyStageGuide(request.scene.id);
     try {
       const stream = client.messages.stream({
         model: ASSISTANT_MODEL,
@@ -273,10 +309,15 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
         // story cut off mid-JSON is a failure the person is not charged for.
         max_tokens: 8192,
         // Presentation labels need no extra reasoning pass before the opening.
-        // Keep other places on their existing provider defaults.
-        ...(request.scene.id === "supermarket" ? { thinking: { type: "disabled" as const } } : {}),
-        system: cachedSystem(SYSTEM, ...(request.scene.id === "supermarket" ? [STAGE_GUIDE] : [])),
-        output_config: { effort: "low", format: zodOutputFormat(request.scene.id === "supermarket" ? stageReply : reply) },
+        ...(stageGuide ? { thinking: { type: "disabled" as const } } : {}),
+        system: cachedSystem(SYSTEM, ...(stageGuide ? [stageGuide] : [])),
+        output_config: {
+          effort: "low",
+          format: {
+            ...zodOutputFormat(generationReply(request)),
+            parse: (content: string) => contentReply.parse(JSON.parse(content)),
+          },
+        },
         messages: [{ role: "user", content: storyPrompt(request) }],
       });
       for await (const event of stream) {
@@ -298,10 +339,11 @@ export function createStoryModel(client: Anthropic = new Anthropic({ timeout: 40
     if (response.stop_reason === "refusal" || !parsed || !parsed.segments.length) {
       throw new AssistantError("assistant_unavailable");
     }
+    const finalStage = createStoryStageResolver(request.scene.id);
     const story: Story = {
       title: interfaceText(parsed.title.trim(), request.uiLanguage),
       intro: interfaceText(parsed.intro.trim(), request.uiLanguage),
-      segments: parsed.segments.map(s => shapeSegment(s, request, picked)),
+      segments: parsed.segments.map(s => shapeSegment(s, request, picked, finalStage)),
     };
     if (isMonolingual(request)) {
       // One note per picked word, in pick order. A word the model left out

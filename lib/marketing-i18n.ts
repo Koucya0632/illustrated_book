@@ -65,16 +65,22 @@ const STRINGS: Record<string, Row> = {
   "nav.support": { "zh-Hant": "支援", "zh-Hans": "支持", ja: "サポート", en: "Support" },
 
   "cta.getApp": {
-    "zh-Hant": "取得 iOS App",
-    "zh-Hans": "获取 iOS App",
-    ja: "iOS アプリを入手",
-    en: "Get the iOS App",
+    "zh-Hant": "下載 App",
+    "zh-Hans": "下载 App",
+    ja: "アプリを入手",
+    en: "Get the App",
   },
   "cta.download": {
     "zh-Hant": "下載 iOS App",
     "zh-Hans": "下载 iOS App",
     ja: "iOS アプリをダウンロード",
     en: "Download the iOS App",
+  },
+  "cta.downloadAndroid": {
+    "zh-Hant": "下載 Android App",
+    "zh-Hans": "下载 Android App",
+    ja: "Android アプリをダウンロード",
+    en: "Download the Android App",
   },
 
   // ── Hero ────────────────────────────────────────────────────
@@ -405,10 +411,10 @@ const STRINGS: Record<string, Row> = {
 
   // ── Download CTA ────────────────────────────────────────────
   "dl.title": {
-    "zh-Hant": "Tuji 現在就在 App Store",
-    "zh-Hans": "Tuji 现在就在 App Store",
-    ja: "Tuji は App Store で公開中",
-    en: "Tuji is on the App Store",
+    "zh-Hant": "iPhone、Android 都能下載",
+    "zh-Hans": "iPhone、Android 都能下载",
+    ja: "iPhone でも Android でも",
+    en: "On iPhone and Android",
   },
   "dl.accent": { "zh-Hant": "。", "zh-Hans": "。", ja: "。", en: "." },
   "dl.subhead": {
@@ -428,6 +434,7 @@ const STRINGS: Record<string, Row> = {
   },
   "foot.product": { "zh-Hant": "產品", "zh-Hans": "产品", ja: "プロダクト", en: "Product" },
   "foot.iosApp": { "zh-Hant": "iOS App", "zh-Hans": "iOS App", ja: "iOS App", en: "iOS App" },
+  "foot.androidApp": { "zh-Hant": "Android App", "zh-Hans": "Android App", ja: "Android App", en: "Android App" },
   "foot.supportLegal": {
     "zh-Hant": "支援與法律",
     "zh-Hans": "支持与法律",

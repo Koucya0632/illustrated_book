@@ -71,7 +71,8 @@ export default function SupportPage() {
               </p>
               <p>
                 App Store subscriptions are managed by Apple. Deleting your Tuji account does not
-                automatically cancel an App Store subscription.
+                automatically cancel an App Store subscription. Google Play purchases are managed
+                by Google in the same way.
               </p>
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -108,7 +109,8 @@ export default function SupportPage() {
               {/* Same reasoning as the UID note above: a payment receipt does not
                   identify the Tuji account that should have been unlocked. */}
               <p>
-                <strong>Lifetime membership</strong> (永久會員) is a one-time App Store purchase,
+                <strong>Lifetime membership</strong> (永久會員) is a one-time App Store or Google
+                Play purchase,
                 not a subscription. It unlocks every official picture-dictionary series, 20
                 personal atlas cards, 10 AI recognitions a month, personal word lists and notes,
                 and saving, studying and publishing in 物見. Tuji Pro includes everything in
@@ -119,6 +121,10 @@ export default function SupportPage() {
                 Restore it the same way as Pro: 設定 → Tuji Pro → 恢復購買. If Apple refunds a
                 Lifetime purchase, the membership is removed from your account; your study
                 progress, word lists, notes and cards are kept.
+              </p>
+              <p>
+                On Android, Lifetime membership is bought through Google Play, and Google handles
+                its billing and refunds. Tuji Pro subscriptions are sold in the iPhone app.
               </p>
               <p>
                 Paid but still not unlocked? Send it from 我的 → 意見回饋 inside the app so your

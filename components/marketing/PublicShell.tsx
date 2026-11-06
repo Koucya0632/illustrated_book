@@ -89,8 +89,11 @@ export default async function PublicShell({ children }: { children: React.ReactN
                 <Link href="/#community" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "nav.community")}
                 </Link>
-                <Link href="/download" className="transition duration-120 hover:text-tuji-brand">
+                <Link href="/download?platform=ios" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "foot.iosApp")}
+                </Link>
+                <Link href="/download?platform=android" className="transition duration-120 hover:text-tuji-brand">
+                  {mt(lang, "foot.androidApp")}
                 </Link>
               </div>
             </div>

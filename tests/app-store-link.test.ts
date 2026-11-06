@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { appStoreUrl, resolveCampaign } from "../lib/app-store-link";
+import { appStoreUrl, playStoreUrl, resolveCampaign, resolvePlatform } from "../lib/app-store-link";
 
 const PRODUCT_PAGE = "https://apps.apple.com/jp/app/id6781950004";
 
@@ -43,4 +43,26 @@ test("the shipped provider id is the one App Store Connect generated", () => {
     appStoreUrl({ country: "JP", source: "threads" }),
     "https://apps.apple.com/jp/app/id6781950004?pt=129057124&ct=threads&mt=8",
   );
+});
+
+test("the Play link carries the campaign as an install referrer", () => {
+  assert.equal(
+    playStoreUrl({ source: "threads" }),
+    "https://play.google.com/store/apps/details?id=app.tuji.android&referrer=utm_source%3Dthreads%26utm_campaign%3Dthreads",
+  );
+  assert.equal(
+    playStoreUrl({ source: "a b" }),
+    "https://play.google.com/store/apps/details?id=app.tuji.android",
+  );
+});
+
+test("an Android browser goes to Play unless a platform is named", () => {
+  const android = "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Chrome/130 Mobile";
+  const iphone = "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15";
+  assert.equal(resolvePlatform({ platform: null, userAgent: android }), "android");
+  assert.equal(resolvePlatform({ platform: null, userAgent: iphone }), "ios");
+  assert.equal(resolvePlatform({ platform: null, userAgent: null }), "ios");
+  assert.equal(resolvePlatform({ platform: "ios", userAgent: android }), "ios");
+  assert.equal(resolvePlatform({ platform: " Android ", userAgent: iphone }), "android");
+  assert.equal(resolvePlatform({ platform: "windows", userAgent: android }), "android");
 });

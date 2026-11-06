@@ -6,7 +6,7 @@ import Mascot from "@/components/tuji/Mascot";
 export const metadata: Metadata = {
   title: "Support · Tuji",
   description:
-    "Contact Tuji support, get help with Lifetime membership or a Tuji Pro subscription, and learn how to request account deletion.",
+    "Contact Tuji support, get help with Lifetime membership and AI points, and learn how to request account deletion.",
 };
 
 export default function SupportPage() {
@@ -70,9 +70,8 @@ export default function SupportPage() {
                 security, billing, backup, dispute resolution, or moderation purposes.
               </p>
               <p>
-                App Store subscriptions are managed by Apple. Deleting your Tuji account does not
-                automatically cancel an App Store subscription. Google Play purchases are managed
-                by Google in the same way.
+                Deleting your Tuji account does not refund App Store or Google Play purchases, or
+                cancel an old App Store subscription; those are managed by Apple or Google.
               </p>
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -87,44 +86,34 @@ export default function SupportPage() {
 
           <div className="bg-tuji-paper2 p-6">
             <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
-              Subscription &amp; billing
+              Membership &amp; billing
             </div>
-            <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink">Tuji Pro</h2>
+            <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink">Lifetime membership</h2>
             <div className="mt-5 space-y-4 text-sm leading-7 text-tuji-ink2">
               <p>
-                Tuji Pro is an auto-renewable subscription sold through the App Store. It is
-                currently offered in four lengths — 1 month, 3 months, 6 months, and 1 year. Prices
-                are shown in the App Store for your region.
+                <strong>Lifetime membership</strong> (永久會員) is a one-time App Store or Google
+                Play purchase, not a subscription. It unlocks every official picture-dictionary
+                series, 200 personal atlas cards, personal word lists and notes, and saving,
+                studying and publishing in 物見. Prices are shown in the store for your region.
               </p>
               <p>
-                Billing, renewal, cancellation, and refunds are handled by Apple. Cancel or switch
-                plans in your Apple account settings; we cannot cancel or refund a subscription on
-                your behalf.
+                AI recognition runs on points. Members get 1,000 points every month (unused ones
+                do not carry over) and 10 points for each day they check in after studying, up to
+                300 a month. A recognition costs 100 points, a precision recognition 200. Point
+                packs can be bought in the app; check-in and purchased points do not expire.
               </p>
               <p>
-                New device, or reinstalled the app? Open 設定 → Tuji Pro → 恢復購買 to restore your
-                subscription. One App Store subscription unlocks Pro on one Tuji account at a
-                time — restoring it on another account moves the entitlement there.
+                Tuji Pro subscriptions are no longer sold. Members who still had Pro were moved to
+                Lifetime membership with points.
               </p>
               {/* Same reasoning as the UID note above: a payment receipt does not
                   identify the Tuji account that should have been unlocked. */}
               <p>
-                <strong>Lifetime membership</strong> (永久會員) is a one-time App Store or Google
-                Play purchase,
-                not a subscription. It unlocks every official picture-dictionary series, 20
-                personal atlas cards, 10 AI recognitions a month, personal word lists and notes,
-                and saving, studying and publishing in 物見. Tuji Pro includes everything in
-                Lifetime membership, and when a Pro subscription ends you keep Lifetime
-                membership.
-              </p>
-              <p>
-                Restore it the same way as Pro: 設定 → Tuji Pro → 恢復購買. If Apple refunds a
-                Lifetime purchase, the membership is removed from your account; your study
-                progress, word lists, notes and cards are kept.
-              </p>
-              <p>
-                On Android, Lifetime membership is bought through Google Play, and Google handles
-                its billing and refunds. Tuji Pro subscriptions are sold in the iPhone app.
+                New device, or reinstalled the app? Tap 恢復購買 on the membership screen in the
+                app. Billing and refunds are handled by Apple or Google, depending on where you
+                bought; we cannot refund a purchase on your behalf. If a Lifetime purchase is
+                refunded, the membership is removed from your account; your study progress, word
+                lists, notes and cards are kept.
               </p>
               <p>
                 Paid but still not unlocked? Send it from 我的 → 意見回饋 inside the app so your

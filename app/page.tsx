@@ -416,7 +416,7 @@ export default async function MarketingHomePage() {
                 ))}
               </div>
             </div>
-            {/* Free/Pro quotas, no prices: App Store pricing is per-region. */}
+            {/* Plan and points, no prices: store pricing is per-region. */}
             <div className="px-6 pb-6 sm:px-10 sm:pb-10 lg:px-14 lg:pb-12">
               <p className="border-t border-tuji-paper/20 pt-6 text-sm leading-6 text-tuji-paper/75">
                 {mt(lang, "atlas.proNote")}

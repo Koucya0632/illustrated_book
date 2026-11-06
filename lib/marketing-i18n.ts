@@ -336,16 +336,16 @@ const STRINGS: Record<string, Row> = {
     ja: "写真はあなた専用の図鑑に入り、毎日の学習と復習に加わります。",
     en: "The photo joins your personal atlas and enters your daily study and review.",
   },
-  // Quotas mirror atlasLimitsForTier() in lib/atlas/entitlement.ts and the iOS
-  // paywall benefits. Deliberately no amounts: App Store prices are per-region,
+  // Numbers mirror CREDIT_POLICY in lib/credits/policy.ts (Pro stopped selling
+  // 2026-10-06). Deliberately no prices: store prices are per-region,
   // so anything written here would be wrong for most visitors.
   "atlas.proNote": {
     "zh-Hant":
-      "免費方案可建立 3 格自製圖鑑、每月 30 次 AI 辨識。Tuji Pro 擴充到 300 格與每月 500 次，並解鎖高精度辨識（每月 30 次）；提供月、3 個月、半年與年方案，價格請見 App Store。",
+      "部分官方圖鑑免費學。永久會員一次購買，解鎖全部官方圖鑑和 200 格自製圖鑑，每月送 1,000 點，學習後簽到每天再送 10 點；AI 辨識一次 100 點，不夠可以加購。價格請見 App Store 或 Google Play。",
     "zh-Hans":
-      "免费方案可建立 3 格自制图鉴、每月 30 次 AI 识别。Tuji Pro 扩充到 300 格与每月 500 次，并解锁高精度识别（每月 30 次）；提供月、3 个月、半年与年方案，价格请见 App Store。",
-    ja: "無料プランは自作図鑑 3 枠、AI 認識は月 30 回まで。Tuji Pro なら 300 枠・月 500 回に広がり、高精度認識（月 30 回）も使えます。1 か月・3 か月・6 か月・1 年のプランがあり、価格は App Store でご確認ください。",
-    en: "The free plan covers 3 custom atlas slots and 30 AI recognitions a month. Tuji Pro raises that to 300 slots and 500 a month and unlocks precision recognition (30 a month), in 1-month, 3-month, 6-month, and yearly plans — see the App Store for pricing.",
+      "部分官方图鉴免费学。永久会员一次购买，解锁全部官方图鉴和 200 格自制图鉴，每月送 1,000 点，学习后签到每天再送 10 点；AI 识别一次 100 点，不够可以加购。价格请见 App Store 或 Google Play。",
+    ja: "公式図鑑の一部は無料で学べます。永久会員は一回の購入で、すべての公式図鑑と自作図鑑 200 枠が使えます。毎月 1,000 ポイント、学習後のチェックインで毎日 10 ポイント。AI 認識は 1 回 100 ポイントで、足りなければ追加購入できます。価格は App Store または Google Play でご確認ください。",
+    en: "Some official series are free. Lifetime membership is a one-time purchase that unlocks every official series and 200 custom atlas slots, with 1,000 points a month plus 10 for each day you check in after studying. An AI recognition costs 100 points, and you can buy more. See the App Store or Google Play for pricing.",
   },
 
   // ── Sightings (community) ───────────────────────────────────

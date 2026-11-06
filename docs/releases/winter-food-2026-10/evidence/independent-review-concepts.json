@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "workBatch": "winter-2026-03",
+  "reviewer": "winter_food_reviewer",
+  "status": "pass-concept-selection-only",
+  "reviewedAt": "2026-10-30T14:50:07.739189+00:00",
+  "scope": "8 proposed new food concepts against producer READ ONLY research snapshots; no independent DB query or production mutation. Final authored content/media/publisher not yet reviewed.",
+  "sourceHashes": {
+    "database-research.json": "de3b1f2fd4d28fb68dfa0e7f5d4058a80b547c4a3a4b678a8c56d1ae561e510d",
+    "api-research.json": "163f00426fb4939c30d07b9cb196df649d77c369134a592c725289ab25f3c20a",
+    "research-database.mjs": "857fc271f1ef407be8548ea73f6557c14166cd0b213c2f6518d1e5a809d7efce"
+  },
+  "observedPublishedCount": 1245,
+  "observedRelatedIds": [
+    "egg-carton",
+    "hot-spring-bun",
+    "oden-warmer",
+    "steamed-bun-warmer"
+  ],
+  "queryFalsePositive": "leggings matches substring egg in English; not an egg concept.",
+  "entries": [
+    {
+      "id": "oden",
+      "japanese": "おでん",
+      "english": "oden",
+      "verdict": "pass",
+      "reason": "既有oden-warmer的英日釋義明確是分隔加熱設備；新詞為高湯煮成的食物，不同實體。圖片應以一碗具材與高湯表現成品，不畫保溫設備。",
+      "requiredConstraints": "Link oden-warmer; ingredients may link the five reviewed food nouns."
+    },
+    {
+      "id": "steamed-meat-bun",
+      "japanese": "肉まん",
+      "english": "steamed meat bun",
+      "verdict": "pass",
+      "reason": "既有steamed-bun-warmer是透明蒸氣展示設備；hot-spring-bun是通常豆餡的伴手禮甜饅頭，均非鹹肉餡中華包。中華まん是更大的分類，不另新增其泛稱。",
+      "requiredConstraints": "Typical pork may be noted without declaring all meat buns contain only pork; show pale pleated bun and visible cooked meat filling."
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "japanese": "焼き芋",
+      "english": "roasted sweet potato",
+      "verdict": "pass",
+      "reason": "研究snapshot未出現同義詞。概念是烤熟甘藷而非生甘藷或普通馬鈴薯；官方零售商FAQ表明並非各地各店供應。",
+      "requiredConstraints": "Show red-purple skin and broken golden cooked flesh; qualify availability."
+    },
+    {
+      "id": "daikon-radish",
+      "japanese": "大根",
+      "english": "daikon radish",
+      "verdict": "pass",
+      "reason": "研究snapshot沒有大根／daikon／radish詞條；可新增通用食材，不另為關東煮厚切蘿蔔立同義詞。",
+      "requiredConstraints": "Generic vegetable definition and raw white root image; note/example may explain thick cooked oden rounds."
+    },
+    {
+      "id": "egg",
+      "japanese": "卵",
+      "english": "egg",
+      "verdict": "pass",
+      "reason": "既有egg-carton是有凹槽保護雞蛋的包裝盒；API卵命中的furikake與mayonnaise只是含蛋的調味品提及，均非雞蛋本身。",
+      "requiredConstraints": "Generic chicken egg definition and intact shell image. Oden use is usually a peeled boiled egg; do not define all eggs as boiled eggs."
+    },
+    {
+      "id": "chikuwa",
+      "japanese": "ちくわ",
+      "english": "chikuwa",
+      "verdict": "pass",
+      "reason": "研究snapshot及API沒有同義詞。管狀魚漿食品可與一般魚漿製品區分；中心通孔是辨識特徵，不等於竹輪麩或香腸。",
+      "requiredConstraints": "Show browned fish-paste tube with visible continuous hole, not solid sausage or wheat-gluten chikuwa-bu."
+    },
+    {
+      "id": "hanpen",
+      "japanese": "はんぺん",
+      "english": "hanpen",
+      "verdict": "pass",
+      "reason": "研究snapshot及API沒有同義詞。紀文說明以白身魚漿、卵白、山藥等含氣形成蓬鬆食感，與硬豆腐或切片蘿蔔不同。",
+      "requiredConstraints": "Show soft white puffed square/triangle fish cake with fine porous texture; do not claim oden is its only use."
+    },
+    {
+      "id": "konjac",
+      "japanese": "こんにゃく",
+      "english": "konjac",
+      "verdict": "pass",
+      "reason": "研究snapshot及API沒有同義詞。日本こんにゃく協會將板蒟蒻與其他形態區分；本圖採灰黑細點板／三角塊是可辨的常見形式。",
+      "requiredConstraints": "Definition covers konjac food, not raw plant, noodles only, or fruit dessert jelly; do not claim every konjac is grey or triangular."
+    }
+  ],
+  "references": [
+    "https://www.family.co.jp/goods/chukaman.html",
+    "https://www.family.co.jp/goods/chukaman/0240161.html",
+    "https://www.inq.family.co.jp/familymart/QA_Customer/web/knowledge14857.html",
+    "https://www.kibun.co.jp/brand/hanpen/lineup/index.html",
+    "https://www.kibun.co.jp/brand/chikuwa/",
+    "https://www.takahama.co.jp/syokuiku/336/",
+    "https://www.konnyaku.or.jp/know/type/"
+  ],
+  "category": "convenience-store (existing free theme); no existing word/category entitlements changed",
+  "pending": [
+    "Exact drafted content and readings",
+    "16 trilingual examples and 32 authored span arrays if all 8 retained",
+    "Every actual PNG/WebP visual review",
+    "All local headword/example audio and source metadata",
+    "Immutable final plan and publisher/default-dry-run safety",
+    "Production layers after separate authorization"
+  ],
+  "productionWrites": 0
+}

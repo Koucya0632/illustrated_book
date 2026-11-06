@@ -1,0 +1,22 @@
+{
+  "state": "unapplied-until-complete-publication-and-verification",
+  "scope": "Only register eight new published example pairs and authored sentence spans; no words/category seed or public fallback registration. Canonical image mapping is a separate deferred patch.",
+  "changes": [
+    {
+      "file": "lib/main-word-winter-food-2026-10.ts",
+      "beforeSha256": null,
+      "afterSha256": "00608739f560fd26aee58ccafcaf3010e9115994d8082d9e930ac13230def26c"
+    },
+    {
+      "file": "lib/main-word-example-pairs.ts",
+      "beforeSha256": "8dc042fae1449c26b3632fd832287ab434afddc615f42dba5b4248b5c9dfd497",
+      "afterSha256": "75d51f43672b9ece45c6cead70abb53cdd77c694891c0ac5f3b68bfc9a23ab95"
+    },
+    {
+      "file": "lib/example-span-corpus.ts",
+      "beforeSha256": "25c100531004e6b1e23561703129ae8238a182dab39ea81290fb7424b12c2b9a",
+      "afterSha256": "8f781278a42330d4f56715893c590f4dcb9a9a4caf289282d4b644a4f4efe9ba"
+    }
+  ],
+  "notesPersistence": "Current static etymology-en.json has none of these eight IDs; manual localized-text apply therefore has no stale note to overwrite. New base/en/ja notes are owned by the dedicated publisher and normal migration does not rewrite them."
+}

@@ -1,0 +1,3932 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-food-2026-10",
+  "workBatch": "winter-2026-03",
+  "mode": "existing-category-expansion",
+  "productionWriteAllowed": false,
+  "releaseShape": {
+    "insertWordIds": [
+      "oden",
+      "steamed-meat-bun",
+      "roasted-sweet-potato",
+      "daikon-radish",
+      "egg",
+      "chikuwa",
+      "hanpen",
+      "konjac"
+    ],
+    "updateWordIds": []
+  },
+  "category": {
+    "id": "convenience-store",
+    "name": "Convenience Store",
+    "nameZh": "便利商店",
+    "emoji": "🏪",
+    "description": "認識日本便利商店裡常見的設備、服務與商品",
+    "descriptionEn": "Everyday equipment, services, and food found in Japanese convenience stores",
+    "color": "from-sky-100 to-orange-100",
+    "imageUrl": "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp",
+    "nameJa": "コンビニ",
+    "descriptionJa": "日本のコンビニで見かける設備・サービス・商品"
+  },
+  "categoryBefore": {
+    "category": {
+      "id": "convenience-store",
+      "name": "Convenience Store",
+      "name_zh": "便利商店",
+      "emoji": "🏪",
+      "description": "認識日本便利商店裡常見的設備、服務與商品",
+      "description_en": "Everyday equipment, services, and food found in Japanese convenience stores",
+      "color": "from-sky-100 to-orange-100",
+      "image_url": "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp"
+    },
+    "translations": [
+      {
+        "category_id": "convenience-store",
+        "language": "ja",
+        "name": "コンビニ",
+        "description": "日本のコンビニで見かける設備・サービス・商品"
+      }
+    ]
+  },
+  "sources": {
+    "content": {
+      "file": "data/winter-food-2026-10.json",
+      "sha256": "d16af799f1eb99ce70ac88c3a9638a5b84f7cc34a6006c4421d8b8c5631f44f7"
+    },
+    "spans": {
+      "file": "data/example-spans-winter-food-2026-10.json",
+      "sha256": "c797f84ea3b6ee8084ddd00d7c40bdb0002e15fb35af50d0c919cbc46dffc33f"
+    },
+    "imagePrompts": {
+      "file": "data/winter-food-2026-10-image-prompts.json",
+      "sha256": "2554fb7708f6252736eb66acb3e0f5ad5da5760111c5bf6d1d6227b7ee8f316f"
+    },
+    "images": {
+      "file": "output/winter-food-2026-10/image-manifest.json",
+      "sha256": "5bb3372afcecd49586f26611b8a3af56ef9f93a85140e5e972456a595e626348"
+    },
+    "audioPlan": {
+      "file": "output/winter-food-2026-10/audio-plan/manifest.json",
+      "sha256": "c0e665bb9c6c2774996f9d3ae074e75a9da3c051e61b64749f877c12854ad082"
+    },
+    "audio": {
+      "file": "output/winter-food-2026-10/audio-candidates/generated-manifest.json",
+      "sha256": "33db7472ffb1a1ec8639c3d3f6f900da2534296a7190fbeda985ffe342713e60"
+    },
+    "audioVerification": {
+      "file": "output/winter-food-2026-10/audio-candidates/verification-report.json",
+      "sha256": "672b64de5939f3cec445cae89454e557291cbfd684063d97b6d486cbce8d3e85"
+    },
+    "frameVerification": {
+      "file": "output/winter-food-2026-10/audio-candidates/mp3-frames-report.json",
+      "sha256": "d102ba12c96524df323116a66e2a3c839d39d557a2a91dde06aa738da0de3ffb"
+    },
+    "semanticReview": {
+      "file": "output/winter-food-2026-10/independent-review-content.json",
+      "sha256": "40bca1c61d865e8028fecb7bc0c456ede1a88c99446ac0a6c91c9ca2cd16cb3e"
+    },
+    "visualReview": {
+      "file": "output/winter-food-2026-10/independent-review-images.json",
+      "sha256": "114a2ebcd42015f9c28916af8b02ef3745be4729234ee178a8b6eeb173ba4d69"
+    },
+    "audioReview": {
+      "file": "output/winter-food-2026-10/independent-review-audio.json",
+      "sha256": "b171d274b73305b66fbffa30ffb761aa69668776e6195e6477d5ec6acbb89463"
+    },
+    "publisher": {
+      "file": "scripts/publish-winter-food-2026-10.ts",
+      "sha256": "71f5474db2846e4152640b8c9b1527b443bc2fdaa4d455f50ee89f8930a67696"
+    },
+    "planner": {
+      "file": "scripts/prepare-winter-food-2026-10-publish-plan.mjs",
+      "sha256": "41ac33e9766c37cd55ab92288464e09ba46d67827011c8902df7a39a333193b7"
+    },
+    "preparation": {
+      "file": "scripts/prepare-winter-food-2026-10.mjs",
+      "sha256": "c892d08e29300c9f5cf1eccc8350d13787ed93aecb2ccb07f1f075ea83ee311c"
+    },
+    "canonicalImageIntegrationPatch": {
+      "file": "data/winter-food-2026-10-canonical-images.patch",
+      "sha256": "9df3c433674f3fe7b22b596b9f16ad72a2855e62b20b1c1f62911e81db3f7bea"
+    },
+    "postPublicationIntegrationPatch": {
+      "file": "data/winter-food-2026-10-postpublication-integration.patch",
+      "sha256": "3d227b99fa1ae454a7f83d7de24cd0243599f847a1369fe3e83900f5e15a7eb9"
+    },
+    "postPublicationIntegrationMetadata": {
+      "file": "data/winter-food-2026-10-postpublication-integration.json",
+      "sha256": "4205726d88ef5cb2c426d3f73bdb47e802917815c8a8a16c633acb8078ed98ad"
+    }
+  },
+  "entries": [
+    {
+      "operation": "insert",
+      "contentDigest": "9dede4fb15f2db97d35f785dec7aab2c0767c879ac2f74476048b2e170925d76",
+      "word": {
+        "id": "oden",
+        "word": "oden",
+        "chinese": "關東煮",
+        "chineseDefinition": "把白蘿蔔、蛋、蒟蒻或魚漿製品等食材放入調味高湯中燉煮的日式料理。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈoʊ.den/",
+        "cefrLevel": "B1",
+        "ja": "おでん",
+        "jaReading": "おでん",
+        "jaReadingSegments": [
+          {
+            "text": "おでん",
+            "ruby": null
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "關東煮",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A Japanese dish of ingredients such as daikon radish, eggs, konjac and fish cakes simmered in seasoned broth.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "大根や卵、こんにゃく、練り物などを、味をつけただしで煮た料理。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "指煮好的料理，不是保溫設備。用料依地區與店家不同；供應情況也因季節與店鋪而異。",
+        "localizedNotes": {
+          "en": "This is the prepared dish, rather than the equipment that keeps it warm. Ingredients and availability vary by region, shop and season.",
+          "ja": "料理そのものを指し、保温する機械とは異なる。具や販売状況は地域・店・季節によって異なる。"
+        },
+        "relatedWords": [
+          "oden-warmer",
+          "daikon-radish",
+          "egg",
+          "chikuwa",
+          "hanpen",
+          "konjac"
+        ],
+        "examples": [
+          {
+            "en": "Please give me one serving of oden.",
+            "ja": "おでんを一人前お願いします。",
+            "zh": "請給我一人份的關東煮。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "The oden was hot, so I waited a little before eating it.",
+            "ja": "おでんが熱かったので、少し待ってから食べました。",
+            "zh": "關東煮很燙，所以我稍等了一下才吃。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/oden-v2-5fa7defa0bb8.webp"
+      },
+      "image": {
+        "id": "oden",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/oden-v2-5fa7defa0bb8.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/oden-v2-5fa7defa0bb8.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/oden-v2-5fa7defa0bb8.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/oden-v2.png",
+        "bytes": 34898,
+        "contentSha256": "5fa7defa0bb86396e7790740060ce80eee20ed6c5588375e2f54482fd0dbcf57",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "oden",
+          "wordId": "oden",
+          "locale": "en-US",
+          "sourceText": "oden",
+          "sourceLanguage": "en",
+          "sourceDigest": "93cc50fa19626f360c4b1c9aeed7d273f6f557bbc6a8cf10847fa0989fa487a8",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/93cc50fa19626f360c4b1c9aeed7d273f6f557bbc6a8cf10847fa0989fa487a8.mp3",
+          "bytes": 4512,
+          "contentSha256": "8021c7b5a5ed303e3b9c42e152199de5e0604f7915425393c10c534833ba520c",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "oden/en-US/8021c7b5a5ed303e3b9c.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "oden",
+          "wordId": "oden",
+          "locale": "en-GB",
+          "sourceText": "oden",
+          "sourceLanguage": "en",
+          "sourceDigest": "48d074dcf0e9ff8168b24025f8efefbb27e610464db3f8d6a0ae836a648cbcc0",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/48d074dcf0e9ff8168b24025f8efefbb27e610464db3f8d6a0ae836a648cbcc0.mp3",
+          "bytes": 4896,
+          "contentSha256": "f4dc0f081297413466691c226eda4dd818c04d93a4b854856dfa29919728c754",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "oden/en-GB/f4dc0f08129741346669.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "oden",
+          "wordId": "oden",
+          "locale": "ja-JP",
+          "sourceText": "おでん",
+          "sourceLanguage": "ja",
+          "sourceDigest": "0aeaea2cf1089b2c341452f80985c828a6667fa16882b641b119f30856e28fdb",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/0aeaea2cf1089b2c341452f80985c828a6667fa16882b641b119f30856e28fdb.mp3",
+          "bytes": 3936,
+          "contentSha256": "596025af639c86e592a7fa56464ef173382834123504e8bcd6ce09efe2845236",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "oden/ja-JP/596025af639c86e592a7.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "oden:0",
+          "sortOrder": 0,
+          "en": "Please give me one serving of oden.",
+          "ja": "おでんを一人前お願いします。",
+          "zh": "請給我一人份的關東煮。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "Please "
+              },
+              {
+                "t": "give",
+                "z": "提供",
+                "j": "渡す",
+                "e": "give"
+              },
+              {
+                "t": " me "
+              },
+              {
+                "t": "one serving",
+                "z": "一人份",
+                "j": "一人前",
+                "e": "one serving"
+              },
+              {
+                "t": " of "
+              },
+              {
+                "t": "oden",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "おでん",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden",
+                "r": "おでん"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "一人前",
+                "z": "一人份",
+                "j": "一人前",
+                "e": "one serving",
+                "r": "いちにんまえ"
+              },
+              {
+                "t": "お願いします",
+                "z": "麻煩給我",
+                "j": "お願いします",
+                "e": "please give me",
+                "r": "おねがいします"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "oden:0",
+              "wordId": "oden",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "Please give me one serving of oden.",
+              "sourceLanguage": "en",
+              "sourceDigest": "78f43a5cda682736d7f0551b87e2488d234ffdf94c3fa07e7e42133463768648",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/78f43a5cda682736d7f0551b87e2488d234ffdf94c3fa07e7e42133463768648.mp3",
+              "bytes": 7584,
+              "contentSha256": "6b07599d18c3a49d12aee3b4776a9d9969233211bedc6740210281775c56329c",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/6b07599d18c3a49d12ae.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "oden:0",
+              "wordId": "oden",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "Please give me one serving of oden.",
+              "sourceLanguage": "en",
+              "sourceDigest": "dac2a023d6fce0efb06d93d184b071ca3f2808cd809c1d8929999cf06d2dd173",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/dac2a023d6fce0efb06d93d184b071ca3f2808cd809c1d8929999cf06d2dd173.mp3",
+              "bytes": 8736,
+              "contentSha256": "88366355079904e3826b89f7182060c99553b5fd4fbd8bd3a16d1b9c8a2bbb92",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/88366355079904e3826b.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "oden:0",
+              "wordId": "oden",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "おでんを一人前お願いします。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "8387ea744219dff23aa60a5581b017afb712a4c5c0b703c36e1c43ff5440ac82",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/8387ea744219dff23aa60a5581b017afb712a4c5c0b703c36e1c43ff5440ac82.mp3",
+              "bytes": 11424,
+              "contentSha256": "aad8c56978318d18eb471be777b31bba75a4fe7e90dbb7f53d5366530fe04fce",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/aad8c56978318d18eb47.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "oden:1",
+          "sortOrder": 1,
+          "en": "The oden was hot, so I waited a little before eating it.",
+          "ja": "おでんが熱かったので、少し待ってから食べました。",
+          "zh": "關東煮很燙，所以我稍等了一下才吃。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "The "
+              },
+              {
+                "t": "oden",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden"
+              },
+              {
+                "t": " was "
+              },
+              {
+                "t": "hot",
+                "z": "燙",
+                "j": "熱い",
+                "e": "hot"
+              },
+              {
+                "t": ", so I "
+              },
+              {
+                "t": "waited",
+                "z": "等了一下",
+                "j": "待った",
+                "e": "waited"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "a little",
+                "z": "稍微",
+                "j": "少し",
+                "e": "a little"
+              },
+              {
+                "t": " before "
+              },
+              {
+                "t": "eating",
+                "z": "吃",
+                "j": "食べる",
+                "e": "eating"
+              },
+              {
+                "t": " it."
+              }
+            ],
+            "ja": [
+              {
+                "t": "おでん",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden",
+                "r": "おでん"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "熱かった",
+                "z": "很燙",
+                "j": "熱かった",
+                "e": "was hot",
+                "r": "あつかった"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "少し",
+                "z": "稍微",
+                "j": "少し",
+                "e": "a little",
+                "r": "すこし"
+              },
+              {
+                "t": "待って",
+                "z": "等了一下",
+                "j": "待った",
+                "e": "waited",
+                "r": "まって"
+              },
+              {
+                "t": "から"
+              },
+              {
+                "t": "食べました",
+                "z": "吃了",
+                "j": "食べた",
+                "e": "ate",
+                "r": "たべました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "oden:1",
+              "wordId": "oden",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "The oden was hot, so I waited a little before eating it.",
+              "sourceLanguage": "en",
+              "sourceDigest": "c4fc3b61b9c61c96605e8a110cdd62698c8cfbbe921f969b01d27bdc5bba0514",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/c4fc3b61b9c61c96605e8a110cdd62698c8cfbbe921f969b01d27bdc5bba0514.mp3",
+              "bytes": 16512,
+              "contentSha256": "994f907f42fa406e4df487ebadedb862a9f4f7d3bae550e2bc7bf1d179434420",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/994f907f42fa406e4df4.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "oden:1",
+              "wordId": "oden",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "The oden was hot, so I waited a little before eating it.",
+              "sourceLanguage": "en",
+              "sourceDigest": "6cffbf5bef4e5fb35104b0ba85d97881f34aa0a160009899738fa71a6373e7c8",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/6cffbf5bef4e5fb35104b0ba85d97881f34aa0a160009899738fa71a6373e7c8.mp3",
+              "bytes": 14784,
+              "contentSha256": "fcb881c387a22c5df7f61cd40c05266d52d9c541f84b5387a68d556ce98c565a",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/fcb881c387a22c5df7f6.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "oden:1",
+              "wordId": "oden",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "おでんが熱かったので、少し待ってから食べました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "94d69980c38e815d9fcd55d6ebe88007f7c0bc900b194836699eb2a61c937f9b",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/94d69980c38e815d9fcd55d6ebe88007f7c0bc900b194836699eb2a61c937f9b.mp3",
+              "bytes": 15072,
+              "contentSha256": "a632a2188c20e56b075a07dfcf06972a79ab08106817894ad19aab686789b904",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/a632a2188c20e56b075a.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "0a4856bad4e6f654f9b7ba80eecf7ab72bf065a0686553672ec7f85707f48e56",
+      "word": {
+        "id": "steamed-meat-bun",
+        "word": "steamed meat bun",
+        "chinese": "肉包",
+        "chineseDefinition": "以柔軟麵皮包入調味肉餡後蒸熟的包子；在日本常見豬肉餡。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/stiːmd miːt bʌn/",
+        "cefrLevel": "A2",
+        "ja": "肉まん",
+        "jaReading": "にくまん",
+        "jaReadingSegments": [
+          {
+            "text": "肉",
+            "ruby": "にく"
+          },
+          {
+            "text": "まん",
+            "ruby": null
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "肉包",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A soft bun filled with seasoned meat and cooked by steaming, commonly with pork in Japan.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "味をつけた肉の具を柔らかい生地で包んで蒸したもの。日本では豚肉を使うことが多い。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "肉まん是中華まん的一種，不是中華まん整類；餡料可能還含蔬菜等配料。實際品項與供應因店而異。",
+        "localizedNotes": {
+          "en": "Nikuman is one kind of chukaman, rather than the whole category. The filling may also include vegetables and other ingredients, and availability varies by shop.",
+          "ja": "肉まんは中華まんの一種で、中華まん全体を指す言葉ではない。野菜などが入ることもあり、商品や販売状況は店によって異なる。"
+        },
+        "relatedWords": [
+          "steamed-bun-warmer"
+        ],
+        "examples": [
+          {
+            "en": "Please put the steamed meat bun in a bag.",
+            "ja": "肉まんを袋に入れてください。",
+            "zh": "請把肉包裝進袋子裡。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+            "ja": "バスを待っている間におなかがすいたので、肉まんを買いました。",
+            "zh": "等公車時肚子餓了，所以我買了一個肉包。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp"
+      },
+      "image": {
+        "id": "steamed-meat-bun",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/steamed-meat-bun-v2-8822b71eab8e.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/steamed-meat-bun-v2.png",
+        "bytes": 39018,
+        "contentSha256": "8822b71eab8e0ec914fbfe22824acccfe3f42576fdb8873fec386d9551140dac",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "steamed-meat-bun",
+          "wordId": "steamed-meat-bun",
+          "locale": "en-US",
+          "sourceText": "steamed meat bun",
+          "sourceLanguage": "en",
+          "sourceDigest": "67bf8c82343674a90628aae44c84ef00bc61c230f044a2c4dc3a6cde917f1292",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/67bf8c82343674a90628aae44c84ef00bc61c230f044a2c4dc3a6cde917f1292.mp3",
+          "bytes": 4896,
+          "contentSha256": "fcdd1c630ce013e3135b18f0bfaaaa8297286490da9eede315b387656a9a7c34",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "steamed-meat-bun/en-US/fcdd1c630ce013e3135b.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "steamed-meat-bun",
+          "wordId": "steamed-meat-bun",
+          "locale": "en-GB",
+          "sourceText": "steamed meat bun",
+          "sourceLanguage": "en",
+          "sourceDigest": "17c2c1a9c8c7ebec3f5a18c092fdc623ab26aee34c481405ff4f1644e5840879",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/17c2c1a9c8c7ebec3f5a18c092fdc623ab26aee34c481405ff4f1644e5840879.mp3",
+          "bytes": 5664,
+          "contentSha256": "3f9ba9883cb29effbadab8a152731a166cb8fc0e7acb375d884a82af9d7bbf5c",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "steamed-meat-bun/en-GB/3f9ba9883cb29effbada.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "steamed-meat-bun",
+          "wordId": "steamed-meat-bun",
+          "locale": "ja-JP",
+          "sourceText": "肉まん",
+          "sourceLanguage": "ja",
+          "sourceDigest": "a0b9f8e951a8851cb8e9c0d8e5ccdc7ec481d0001a992dc2d7eb79430c38a5d8",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/a0b9f8e951a8851cb8e9c0d8e5ccdc7ec481d0001a992dc2d7eb79430c38a5d8.mp3",
+          "bytes": 4896,
+          "contentSha256": "5e043f3ba65c451ee7a41dae09bd155350fbf56452806abe7aa24d7db990b00a",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "steamed-meat-bun/ja-JP/5e043f3ba65c451ee7a4.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "steamed-meat-bun:0",
+          "sortOrder": 0,
+          "en": "Please put the steamed meat bun in a bag.",
+          "ja": "肉まんを袋に入れてください。",
+          "zh": "請把肉包裝進袋子裡。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "Please "
+              },
+              {
+                "t": "put",
+                "z": "放入",
+                "j": "入れる",
+                "e": "put"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "steamed meat bun",
+                "z": "肉包",
+                "j": "肉まん",
+                "e": "steamed meat bun"
+              },
+              {
+                "t": " in a "
+              },
+              {
+                "t": "bag",
+                "z": "袋子",
+                "j": "袋",
+                "e": "bag"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "肉まん",
+                "z": "肉包",
+                "j": "肉まん",
+                "e": "steamed meat bun",
+                "r": "にくまん"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "袋",
+                "z": "袋子",
+                "j": "袋",
+                "e": "bag",
+                "r": "ふくろ"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "入れてください",
+                "z": "請放入",
+                "j": "入れてください",
+                "e": "please put in",
+                "r": "いれてください"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "steamed-meat-bun:0",
+              "wordId": "steamed-meat-bun",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "Please put the steamed meat bun in a bag.",
+              "sourceLanguage": "en",
+              "sourceDigest": "e0148d90eeb43a477326aa218e413e43c1be0dbad7bcbc6926c491b9ba4bc9da",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/e0148d90eeb43a477326aa218e413e43c1be0dbad7bcbc6926c491b9ba4bc9da.mp3",
+              "bytes": 8544,
+              "contentSha256": "bb547eb88d6ffe0235ebddc06823c1ca9fa4c1d38e4e26115d23fa4113c9713f",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/bb547eb88d6ffe0235eb.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "steamed-meat-bun:0",
+              "wordId": "steamed-meat-bun",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "Please put the steamed meat bun in a bag.",
+              "sourceLanguage": "en",
+              "sourceDigest": "52ca8025d98b7a3a43a514abe1f2fdefc1cd70c3d3d0fca76f72964b116eda6d",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/52ca8025d98b7a3a43a514abe1f2fdefc1cd70c3d3d0fca76f72964b116eda6d.mp3",
+              "bytes": 12576,
+              "contentSha256": "a594e954a225752994799fbd1577c933584519451848439402d0d466a2d09a41",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/a594e954a22575299479.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "steamed-meat-bun:0",
+              "wordId": "steamed-meat-bun",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "肉まんを袋に入れてください。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "2bed0b8da90a6c7e55dbf9e8782e645c75a5c901f0aed52b626196971f2bf482",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/2bed0b8da90a6c7e55dbf9e8782e645c75a5c901f0aed52b626196971f2bf482.mp3",
+              "bytes": 8544,
+              "contentSha256": "e39f67066595a5a701ed9c99a4cbd7f4a2454e94d4f60306654ebe54952944db",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/e39f67066595a5a701ed.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "steamed-meat-bun:1",
+          "sortOrder": 1,
+          "en": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+          "ja": "バスを待っている間におなかがすいたので、肉まんを買いました。",
+          "zh": "等公車時肚子餓了，所以我買了一個肉包。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "bought",
+                "z": "買了",
+                "j": "買った",
+                "e": "bought"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "steamed meat bun",
+                "z": "肉包",
+                "j": "肉まん",
+                "e": "steamed meat bun"
+              },
+              {
+                "t": " because I was "
+              },
+              {
+                "t": "hungry",
+                "z": "肚子餓",
+                "j": "おなかがすいた",
+                "e": "hungry"
+              },
+              {
+                "t": " while "
+              },
+              {
+                "t": "waiting",
+                "z": "等待",
+                "j": "待つ",
+                "e": "waiting"
+              },
+              {
+                "t": " for the "
+              },
+              {
+                "t": "bus",
+                "z": "公車",
+                "j": "バス",
+                "e": "bus"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "バス",
+                "z": "公車",
+                "j": "バス",
+                "e": "bus",
+                "r": "バス"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "待っている",
+                "z": "正在等",
+                "j": "待っている",
+                "e": "waiting",
+                "r": "まっている"
+              },
+              {
+                "t": "間に"
+              },
+              {
+                "t": "おなか",
+                "z": "肚子",
+                "j": "おなか",
+                "e": "stomach",
+                "r": "おなか"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "すいた",
+                "z": "餓了",
+                "j": "すいた",
+                "e": "became hungry",
+                "r": "すいた"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "肉まん",
+                "z": "肉包",
+                "j": "肉まん",
+                "e": "steamed meat bun",
+                "r": "にくまん"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "買いました",
+                "z": "買了",
+                "j": "買った",
+                "e": "bought",
+                "r": "かいました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "steamed-meat-bun:1",
+              "wordId": "steamed-meat-bun",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+              "sourceLanguage": "en",
+              "sourceDigest": "eccd19746b27fabf5872ef6dd9702067b84f18384fa88a9fe53d9ac5b188536e",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/eccd19746b27fabf5872ef6dd9702067b84f18384fa88a9fe53d9ac5b188536e.mp3",
+              "bytes": 19392,
+              "contentSha256": "7f59669019ccaf2ab0a269aa36fff44b1389c6cc4c0dd0819842e1f7f8fffb96",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/7f59669019ccaf2ab0a2.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "steamed-meat-bun:1",
+              "wordId": "steamed-meat-bun",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+              "sourceLanguage": "en",
+              "sourceDigest": "828fc56f97870454c991178167d38c23e72796fddf346876ae49f9ff3e25736b",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/828fc56f97870454c991178167d38c23e72796fddf346876ae49f9ff3e25736b.mp3",
+              "bytes": 17376,
+              "contentSha256": "ca4b574fb69bcd1ea796350b4c144b4ec46a57033cd001dbf757d058f14214c1",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/ca4b574fb69bcd1ea796.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "steamed-meat-bun:1",
+              "wordId": "steamed-meat-bun",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "バスを待っている間におなかがすいたので、肉まんを買いました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "88a4b08f430730312d176da44f46ef3180dcd1ab14c537aef3304bb029542144",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/88a4b08f430730312d176da44f46ef3180dcd1ab14c537aef3304bb029542144.mp3",
+              "bytes": 20352,
+              "contentSha256": "8d738111a3ba19beac9c456b9433c19390e86a6dcc9880254b5a1ce221988a64",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/8d738111a3ba19beac9c.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "2bd5dab53f83bdf572d3fd740c116eb5a0603938ed0d3eb22fecc4767aca5548",
+      "word": {
+        "id": "roasted-sweet-potato",
+        "word": "roasted sweet potato",
+        "chinese": "烤地瓜",
+        "chineseDefinition": "把地瓜整條烤熟的食物，常連皮販售，剖開後能看到香甜的地瓜肉。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈroʊ.stɪd swiːt pəˈteɪ.toʊ/",
+        "cefrLevel": "A2",
+        "ja": "焼き芋",
+        "jaReading": "やきいも",
+        "jaReadingSegments": [
+          {
+            "text": "焼き",
+            "ruby": "やき"
+          },
+          {
+            "text": "芋",
+            "ruby": "いも"
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "烤地瓜",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A sweet potato roasted whole, often sold with its skin on and split open to reveal the cooked flesh.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "さつまいもを丸ごと焼いた食べ物。皮がついたまま売られることも多い。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "有些便利商店供應烤地瓜，但並非每個地區或每家店都有販售。",
+        "localizedNotes": {
+          "en": "Some convenience stores sell roasted sweet potatoes, but they are not available in every area or shop.",
+          "ja": "焼き芋を販売するコンビニもあるが、すべての地域や店舗で扱っているわけではない。"
+        },
+        "relatedWords": [],
+        "examples": [
+          {
+            "en": "This roasted sweet potato is very sweet.",
+            "ja": "この焼き芋はとても甘いです。",
+            "zh": "這條烤地瓜很甜。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+            "ja": "その店では焼き芋が売り切れていたので、別の店に行きました。",
+            "zh": "那家店的烤地瓜賣完了，所以我去了另一家店。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp"
+      },
+      "image": {
+        "id": "roasted-sweet-potato",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/roasted-sweet-potato-v2.png",
+        "bytes": 43028,
+        "contentSha256": "ed5e9d35dd9390c9586f383c9ce016c110a38c58a54ca40ee86ad6ad83e73d22",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "roasted-sweet-potato",
+          "wordId": "roasted-sweet-potato",
+          "locale": "en-US",
+          "sourceText": "roasted sweet potato",
+          "sourceLanguage": "en",
+          "sourceDigest": "e43f9d7902c8e6a97e5a24c86ae4d358e754bbab5bee3a8a560dd47ef1c48845",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/e43f9d7902c8e6a97e5a24c86ae4d358e754bbab5bee3a8a560dd47ef1c48845.mp3",
+          "bytes": 7296,
+          "contentSha256": "0042cda1adec9773dd31d5a2ed03616ed229967ea890ee69046057149d4c336c",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "roasted-sweet-potato/en-US/0042cda1adec9773dd31.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "roasted-sweet-potato",
+          "wordId": "roasted-sweet-potato",
+          "locale": "en-GB",
+          "sourceText": "roasted sweet potato",
+          "sourceLanguage": "en",
+          "sourceDigest": "c964bc70f1ae505d36dd3c5e9017ac2082d866fdeee16db18b908665816c136a",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/c964bc70f1ae505d36dd3c5e9017ac2082d866fdeee16db18b908665816c136a.mp3",
+          "bytes": 8064,
+          "contentSha256": "5b69f32abe23860332fca248d5b58b579007ea89a906a05cc413aad0edb9bdcd",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "roasted-sweet-potato/en-GB/5b69f32abe23860332fc.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "roasted-sweet-potato",
+          "wordId": "roasted-sweet-potato",
+          "locale": "ja-JP",
+          "sourceText": "焼き芋",
+          "sourceLanguage": "ja",
+          "sourceDigest": "65e8758145e2a2613ccbace4e4f9abe04ba402edad1ef4757e6712c92cf45c36",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/65e8758145e2a2613ccbace4e4f9abe04ba402edad1ef4757e6712c92cf45c36.mp3",
+          "bytes": 4704,
+          "contentSha256": "fba7c41d5580413f7b54a0923f3c720e4aa86459953dffe92588eaf0d0f5b6e5",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "roasted-sweet-potato/ja-JP/fba7c41d5580413f7b54.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "roasted-sweet-potato:0",
+          "sortOrder": 0,
+          "en": "This roasted sweet potato is very sweet.",
+          "ja": "この焼き芋はとても甘いです。",
+          "zh": "這條烤地瓜很甜。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "This "
+              },
+              {
+                "t": "roasted sweet potato",
+                "z": "烤地瓜",
+                "j": "焼き芋",
+                "e": "roasted sweet potato"
+              },
+              {
+                "t": " is "
+              },
+              {
+                "t": "very",
+                "z": "很",
+                "j": "とても",
+                "e": "very"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "sweet",
+                "z": "甜",
+                "j": "甘い",
+                "e": "sweet"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "この"
+              },
+              {
+                "t": "焼き芋",
+                "z": "烤地瓜",
+                "j": "焼き芋",
+                "e": "roasted sweet potato",
+                "r": "やきいも"
+              },
+              {
+                "t": "は"
+              },
+              {
+                "t": "とても",
+                "z": "很",
+                "j": "とても",
+                "e": "very",
+                "r": "とても"
+              },
+              {
+                "t": "甘いです",
+                "z": "甜",
+                "j": "甘い",
+                "e": "is sweet",
+                "r": "あまいです"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "roasted-sweet-potato:0",
+              "wordId": "roasted-sweet-potato",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "This roasted sweet potato is very sweet.",
+              "sourceLanguage": "en",
+              "sourceDigest": "72dee00adc17e4f7c8a366c33318d7acffe7a55258a4eb645b2bb27d56c633b8",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/72dee00adc17e4f7c8a366c33318d7acffe7a55258a4eb645b2bb27d56c633b8.mp3",
+              "bytes": 12864,
+              "contentSha256": "7d0d1fd5cdb35a7de7933ae20af81d7bdb285b7a59ba2a4e3ec445d8e52f9848",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/7d0d1fd5cdb35a7de793.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "roasted-sweet-potato:0",
+              "wordId": "roasted-sweet-potato",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "This roasted sweet potato is very sweet.",
+              "sourceLanguage": "en",
+              "sourceDigest": "a034dc4abad390c03ad0e7a8f3dec58b276ec4384dbc09b06f42fd336bfd2de7",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/a034dc4abad390c03ad0e7a8f3dec58b276ec4384dbc09b06f42fd336bfd2de7.mp3",
+              "bytes": 11712,
+              "contentSha256": "31fd2ac4b90575ad3af026e9c6473da2c5c496973c0ac19c403467759a82cd17",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/31fd2ac4b90575ad3af0.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "roasted-sweet-potato:0",
+              "wordId": "roasted-sweet-potato",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "この焼き芋はとても甘いです。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "30a1301e2704c8a0d7a4036f6e51654e035cc3b1f19872b9c528cc3f002fe288",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/30a1301e2704c8a0d7a4036f6e51654e035cc3b1f19872b9c528cc3f002fe288.mp3",
+              "bytes": 9792,
+              "contentSha256": "47b0e5e4b29555974732f74a58bf2490295208e358bb6b5aa1eccb22a2ab26c2",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/47b0e5e4b29555974732.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "roasted-sweet-potato:1",
+          "sortOrder": 1,
+          "en": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+          "ja": "その店では焼き芋が売り切れていたので、別の店に行きました。",
+          "zh": "那家店的烤地瓜賣完了，所以我去了另一家店。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "The "
+              },
+              {
+                "t": "store",
+                "z": "店",
+                "j": "店",
+                "e": "store"
+              },
+              {
+                "t": " had "
+              },
+              {
+                "t": "sold out",
+                "z": "賣完",
+                "j": "売り切れた",
+                "e": "sold out"
+              },
+              {
+                "t": " of "
+              },
+              {
+                "t": "roasted sweet potatoes",
+                "z": "烤地瓜",
+                "j": "焼き芋",
+                "e": "roasted sweet potatoes"
+              },
+              {
+                "t": ", so I "
+              },
+              {
+                "t": "went",
+                "z": "去了",
+                "j": "行った",
+                "e": "went"
+              },
+              {
+                "t": " to "
+              },
+              {
+                "t": "another",
+                "z": "另一家",
+                "j": "別の",
+                "e": "another"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "store",
+                "z": "店",
+                "j": "店",
+                "e": "store"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "その"
+              },
+              {
+                "t": "店",
+                "z": "店",
+                "j": "店",
+                "e": "store",
+                "r": "みせ"
+              },
+              {
+                "t": "では"
+              },
+              {
+                "t": "焼き芋",
+                "z": "烤地瓜",
+                "j": "焼き芋",
+                "e": "roasted sweet potatoes",
+                "r": "やきいも"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "売り切れていた",
+                "z": "賣完了",
+                "j": "売り切れていた",
+                "e": "had sold out",
+                "r": "うりきれていた"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "別",
+                "z": "另一個",
+                "j": "別",
+                "e": "another",
+                "r": "べつ"
+              },
+              {
+                "t": "の"
+              },
+              {
+                "t": "店",
+                "z": "店",
+                "j": "店",
+                "e": "store",
+                "r": "みせ"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "行きました",
+                "z": "去了",
+                "j": "行った",
+                "e": "went",
+                "r": "いきました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "roasted-sweet-potato:1",
+              "wordId": "roasted-sweet-potato",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+              "sourceLanguage": "en",
+              "sourceDigest": "e7acb18672fc04feb67bd3e30cf454b1a899ba3ae08f82eca4820b3f086c3dd5",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/e7acb18672fc04feb67bd3e30cf454b1a899ba3ae08f82eca4820b3f086c3dd5.mp3",
+              "bytes": 19296,
+              "contentSha256": "8a1fea6df1e74fb0910c73af039c39fab03800392aa06cd4f7b583d4e20177bb",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/8a1fea6df1e74fb0910c.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "roasted-sweet-potato:1",
+              "wordId": "roasted-sweet-potato",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+              "sourceLanguage": "en",
+              "sourceDigest": "7cebf66022f8a21e1566525afce87607ff02d83509881d2dade0773e7a5601c8",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/7cebf66022f8a21e1566525afce87607ff02d83509881d2dade0773e7a5601c8.mp3",
+              "bytes": 16032,
+              "contentSha256": "a6a8f2a34058a786fd67388f26e5f5ea014f9ff57f27b04f9368c3f87816d846",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/a6a8f2a34058a786fd67.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "roasted-sweet-potato:1",
+              "wordId": "roasted-sweet-potato",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "その店では焼き芋が売り切れていたので、別の店に行きました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "05142a39331451368117f145fd3b57bb3f6e58ba05c79ec7b54695c8b8b2b1ac",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/05142a39331451368117f145fd3b57bb3f6e58ba05c79ec7b54695c8b8b2b1ac.mp3",
+              "bytes": 18816,
+              "contentSha256": "42741a5e5e8584155fb3c723de7390e093c5a48131dfc44ad8b3621d3e818110",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/42741a5e5e8584155fb3.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "ded7d0a3943adfe3fe17f3ae883107582149543ded680a5ef67c89b5770b450d",
+      "word": {
+        "id": "daikon-radish",
+        "word": "daikon radish",
+        "chinese": "白蘿蔔",
+        "chineseDefinition": "根部大而多為白色的蘿蔔，可用來生食、醃漬或烹煮。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈdaɪ.kɒn ˈræd.ɪʃ/",
+        "cefrLevel": "B1",
+        "ja": "大根",
+        "jaReading": "だいこん",
+        "jaReadingSegments": [
+          {
+            "text": "大根",
+            "ruby": "だいこん"
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "白蘿蔔",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A large radish with a usually white root, eaten raw, pickled or cooked.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "大きく、多くは白い根を食べる野菜。生で食べたり、漬物や煮物にしたりする。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "大根指蔬菜本身；在關東煮點餐時，通常指切成厚圓片後燉煮的白蘿蔔。",
+        "localizedNotes": {
+          "en": "Daikon names the vegetable itself. When ordering oden, it usually means a thick slice of the radish simmered in the broth.",
+          "ja": "大根は野菜そのものの名前。おでんを注文するときは、厚めの輪切りにして煮た大根を指すことが多い。"
+        },
+        "relatedWords": [
+          "oden"
+        ],
+        "examples": [
+          {
+            "en": "Please add one piece of daikon radish.",
+            "ja": "大根を一つ入れてください。",
+            "zh": "請加一塊白蘿蔔。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+            "ja": "大根がまだ硬かったので、さらに10分煮ました。",
+            "zh": "白蘿蔔還很硬，所以我又煮了十分鐘。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp"
+      },
+      "image": {
+        "id": "daikon-radish",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/daikon-radish-v1-c1b8aab7e672.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/daikon-radish-v1.png",
+        "bytes": 30904,
+        "contentSha256": "c1b8aab7e672c50d8c4d7b6396f2edfaead99598bf663bca7a39a9e2e0e21112",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "daikon-radish",
+          "wordId": "daikon-radish",
+          "locale": "en-US",
+          "sourceText": "daikon radish",
+          "sourceLanguage": "en",
+          "sourceDigest": "e23d3e9fd751ddaee685d3ef7a862ef56f9a1fee47b66606af6c96886dbdb51b",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/e23d3e9fd751ddaee685d3ef7a862ef56f9a1fee47b66606af6c96886dbdb51b.mp3",
+          "bytes": 6816,
+          "contentSha256": "2a94a091101b2e121b2db962960740c245ea8b01a25787e28b1fceb240977524",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "daikon-radish/en-US/2a94a091101b2e121b2d.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "daikon-radish",
+          "wordId": "daikon-radish",
+          "locale": "en-GB",
+          "sourceText": "daikon radish",
+          "sourceLanguage": "en",
+          "sourceDigest": "602b5b4f071f90bd080881f964cfee74dc8c39c9fbbf40152a101372a66e1acd",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/602b5b4f071f90bd080881f964cfee74dc8c39c9fbbf40152a101372a66e1acd.mp3",
+          "bytes": 4512,
+          "contentSha256": "88d57f530da35255cca72bfded0f8e1d116942dfe2729fd6e148276e8ea182b2",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "daikon-radish/en-GB/88d57f530da35255cca7.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "daikon-radish",
+          "wordId": "daikon-radish",
+          "locale": "ja-JP",
+          "sourceText": "大根",
+          "sourceLanguage": "ja",
+          "sourceDigest": "6c30d608ab51ee8979bef1b035c266a2ca5353f06bd8df63b209efe3a9bca6a6",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/6c30d608ab51ee8979bef1b035c266a2ca5353f06bd8df63b209efe3a9bca6a6.mp3",
+          "bytes": 6144,
+          "contentSha256": "00e57429efbf8dcf1acc23114c30c43e9e40474cfff03d61d437582185129345",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "daikon-radish/ja-JP/00e57429efbf8dcf1acc.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "daikon-radish:0",
+          "sortOrder": 0,
+          "en": "Please add one piece of daikon radish.",
+          "ja": "大根を一つ入れてください。",
+          "zh": "請加一塊白蘿蔔。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "Please "
+              },
+              {
+                "t": "add",
+                "z": "加入",
+                "j": "入れる",
+                "e": "add"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "one piece",
+                "z": "一塊",
+                "j": "一つ",
+                "e": "one piece"
+              },
+              {
+                "t": " of "
+              },
+              {
+                "t": "daikon radish",
+                "z": "白蘿蔔",
+                "j": "大根",
+                "e": "daikon radish"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "大根",
+                "z": "白蘿蔔",
+                "j": "大根",
+                "e": "daikon radish",
+                "r": "だいこん"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "一つ",
+                "z": "一塊",
+                "j": "一つ",
+                "e": "one piece",
+                "r": "ひとつ"
+              },
+              {
+                "t": "入れてください",
+                "z": "請加入",
+                "j": "入れてください",
+                "e": "please add",
+                "r": "いれてください"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "daikon-radish:0",
+              "wordId": "daikon-radish",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "Please add one piece of daikon radish.",
+              "sourceLanguage": "en",
+              "sourceDigest": "a01b401e4d246a21e76736daed4b44d0bcffdc0739c98567f4abcd221ff1f5af",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/a01b401e4d246a21e76736daed4b44d0bcffdc0739c98567f4abcd221ff1f5af.mp3",
+              "bytes": 11232,
+              "contentSha256": "cc2aabaeb94373c3d8a3aa4a61b4fb678ecaed105cbbb21027d936e72b94746c",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/cc2aabaeb94373c3d8a3.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "daikon-radish:0",
+              "wordId": "daikon-radish",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "Please add one piece of daikon radish.",
+              "sourceLanguage": "en",
+              "sourceDigest": "cb22ea300b57df36cadf057324a9aa856289735fb9bb4b096e7d3ad289906ca6",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/cb22ea300b57df36cadf057324a9aa856289735fb9bb4b096e7d3ad289906ca6.mp3",
+              "bytes": 12672,
+              "contentSha256": "d258293675778e7ef8447948ad53ddb9dbe6e9890373ce3f9e1fc06c55e6863b",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/d258293675778e7ef844.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "daikon-radish:0",
+              "wordId": "daikon-radish",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "大根を一つ入れてください。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "a05d892b5a556ff4e1b4ec2fece43896278c4e5277b7708a919fb3f7fd6f64de",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/a05d892b5a556ff4e1b4ec2fece43896278c4e5277b7708a919fb3f7fd6f64de.mp3",
+              "bytes": 9984,
+              "contentSha256": "24c103f196fe9c4e1e5ea5d410c836c2df8bcde0cd586227ba078fb755e69e61",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/24c103f196fe9c4e1e5e.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "daikon-radish:1",
+          "sortOrder": 1,
+          "en": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+          "ja": "大根がまだ硬かったので、さらに10分煮ました。",
+          "zh": "白蘿蔔還很硬，所以我又煮了十分鐘。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "The "
+              },
+              {
+                "t": "daikon radish",
+                "z": "白蘿蔔",
+                "j": "大根",
+                "e": "daikon radish"
+              },
+              {
+                "t": " was "
+              },
+              {
+                "t": "still",
+                "z": "還",
+                "j": "まだ",
+                "e": "still"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "hard",
+                "z": "硬",
+                "j": "硬い",
+                "e": "hard"
+              },
+              {
+                "t": ", so I "
+              },
+              {
+                "t": "simmered",
+                "z": "燉煮了",
+                "j": "煮た",
+                "e": "simmered"
+              },
+              {
+                "t": " it for "
+              },
+              {
+                "t": "another ten minutes",
+                "z": "再十分鐘",
+                "j": "さらに十分",
+                "e": "another ten minutes"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "大根",
+                "z": "白蘿蔔",
+                "j": "大根",
+                "e": "daikon radish",
+                "r": "だいこん"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "まだ",
+                "z": "還",
+                "j": "まだ",
+                "e": "still",
+                "r": "まだ"
+              },
+              {
+                "t": "硬かった",
+                "z": "很硬",
+                "j": "硬かった",
+                "e": "was hard",
+                "r": "かたかった"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "さらに",
+                "z": "再",
+                "j": "さらに",
+                "e": "another",
+                "r": "さらに"
+              },
+              {
+                "t": "10分",
+                "z": "十分鐘",
+                "j": "十分間",
+                "e": "ten minutes",
+                "r": "じゅっぷん"
+              },
+              {
+                "t": "煮ました",
+                "z": "煮了",
+                "j": "煮た",
+                "e": "simmered",
+                "r": "にました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "daikon-radish:1",
+              "wordId": "daikon-radish",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+              "sourceLanguage": "en",
+              "sourceDigest": "657b719343c054786f20022639adf94affa35d1956bfa39352b716939e33f693",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/657b719343c054786f20022639adf94affa35d1956bfa39352b716939e33f693.mp3",
+              "bytes": 14784,
+              "contentSha256": "ed4c5ab6111c69529397d17f5ed18b3fc58851db9d27a79b408f9a6d285a00bd",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/ed4c5ab6111c69529397.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "daikon-radish:1",
+              "wordId": "daikon-radish",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+              "sourceLanguage": "en",
+              "sourceDigest": "46e7aaae2411c8e020fa1cc529aad191f9468866aa0e401dfac08d5ce7d5d16f",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/46e7aaae2411c8e020fa1cc529aad191f9468866aa0e401dfac08d5ce7d5d16f.mp3",
+              "bytes": 15552,
+              "contentSha256": "173f644f86864e565049ed88787f75a24d9d071929bc583d94aee62d3b717979",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/173f644f86864e565049.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "daikon-radish:1",
+              "wordId": "daikon-radish",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "大根がまだ硬かったので、さらに10分煮ました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "486fb4a763b91f1e8210820b6ee6e4e1c04515ef2742042e6334072b3f1a7458",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/486fb4a763b91f1e8210820b6ee6e4e1c04515ef2742042e6334072b3f1a7458.mp3",
+              "bytes": 13536,
+              "contentSha256": "bf7afc6663a75d44ffa34f5b352869b7e95251f5f0dcad93dadc119b6ee8bdcd",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/bf7afc6663a75d44ffa3.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "f3d257f0e1de58ddd7a7453b5a5d3089f80aa6895b4844edd517a624de38715d",
+      "word": {
+        "id": "egg",
+        "word": "egg",
+        "chinese": "雞蛋",
+        "chineseDefinition": "雞產下、由蛋殼包住蛋白與蛋黃的食材，可用不同方式烹調。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/eɡ/",
+        "cefrLevel": "A1",
+        "ja": "卵",
+        "jaReading": "たまご",
+        "jaReadingSegments": [
+          {
+            "text": "卵",
+            "ruby": "たまご"
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "雞蛋",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A food laid by a hen, with a shell around the white and yolk, which can be prepared in different ways.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "鶏が産む、殻の中に白身と黄身が入っている食べ物。さまざまな料理に使う。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "這裡指雞蛋本身，不是裝蛋的卵パック。卵並不只指水煮蛋；關東煮中的卵通常是煮熟並剝殼後再入鍋的蛋。",
+        "localizedNotes": {
+          "en": "This is the egg itself, not an egg carton. Tamago does not mean only boiled egg; in oden it usually refers to an egg that has been boiled and peeled before simmering.",
+          "ja": "ここでは卵そのものを指し、卵パックとは区別する。卵はゆで卵だけを意味しないが、おでんでは、ゆでて殻をむいた卵を使うことが多い。"
+        },
+        "relatedWords": [
+          "egg-carton",
+          "oden"
+        ],
+        "examples": [
+          {
+            "en": "Please add one egg to the oden.",
+            "ja": "おでんに卵を一つ入れてください。",
+            "zh": "請在關東煮裡加一顆蛋。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+            "ja": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。",
+            "zh": "為了讓蛋吸收高湯的味道，我先剝殼才放進關東煮。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/egg-v1-c014f21f1b36.webp"
+      },
+      "image": {
+        "id": "egg",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/egg-v1-c014f21f1b36.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/egg-v1-c014f21f1b36.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/egg-v1-c014f21f1b36.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/egg-v1.png",
+        "bytes": 33208,
+        "contentSha256": "c014f21f1b3674daff39f7292cdf66e7a7c881181d109f93763d5dc2050e94bf",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "egg",
+          "wordId": "egg",
+          "locale": "en-US",
+          "sourceText": "egg",
+          "sourceLanguage": "en",
+          "sourceDigest": "de477a7b5372978e5aa4f64fc8e6284d09416232d3a6047b4d8d05d4e40f0639",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/de477a7b5372978e5aa4f64fc8e6284d09416232d3a6047b4d8d05d4e40f0639.mp3",
+          "bytes": 3456,
+          "contentSha256": "0e31cb8abc753c263d4580f0e2d06222ea8c685242f17d9efc193b02d650c698",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "egg/en-US/0e31cb8abc753c263d45.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "egg",
+          "wordId": "egg",
+          "locale": "en-GB",
+          "sourceText": "egg",
+          "sourceLanguage": "en",
+          "sourceDigest": "e8b046f2036853372ebae6bc14d24ce0c01f536288fa529ebf0f617c6e424fb9",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/e8b046f2036853372ebae6bc14d24ce0c01f536288fa529ebf0f617c6e424fb9.mp3",
+          "bytes": 2112,
+          "contentSha256": "d626c2483ce85fb2d52d113d3b438a4cf09eff4c4be53f06691f095315f178c7",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "egg/en-GB/d626c2483ce85fb2d52d.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "egg",
+          "wordId": "egg",
+          "locale": "ja-JP",
+          "sourceText": "卵",
+          "sourceLanguage": "ja",
+          "sourceDigest": "12679529aa62b7e2409c98301ff7dc4e365ed104108103021b4fe35cf15712be",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/12679529aa62b7e2409c98301ff7dc4e365ed104108103021b4fe35cf15712be.mp3",
+          "bytes": 4992,
+          "contentSha256": "7db3da20a0ce31a9ce0c0c096a1d1fd24827ce7c1fdddfc94549d3fac434ca3c",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "egg/ja-JP/7db3da20a0ce31a9ce0c.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "egg:0",
+          "sortOrder": 0,
+          "en": "Please add one egg to the oden.",
+          "ja": "おでんに卵を一つ入れてください。",
+          "zh": "請在關東煮裡加一顆蛋。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "Please "
+              },
+              {
+                "t": "add",
+                "z": "加入",
+                "j": "入れる",
+                "e": "add"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "one",
+                "z": "一顆",
+                "j": "一つ",
+                "e": "one"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "egg",
+                "z": "蛋",
+                "j": "卵",
+                "e": "egg"
+              },
+              {
+                "t": " to the "
+              },
+              {
+                "t": "oden",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "おでん",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden",
+                "r": "おでん"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "卵",
+                "z": "蛋",
+                "j": "卵",
+                "e": "egg",
+                "r": "たまご"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "一つ",
+                "z": "一顆",
+                "j": "一つ",
+                "e": "one",
+                "r": "ひとつ"
+              },
+              {
+                "t": "入れてください",
+                "z": "請加入",
+                "j": "入れてください",
+                "e": "please add",
+                "r": "いれてください"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "egg:0",
+              "wordId": "egg",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "Please add one egg to the oden.",
+              "sourceLanguage": "en",
+              "sourceDigest": "84fce9d2c6c7f84e374113616d80b3c988d1d442bb552caeb8494acd08df67a2",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/84fce9d2c6c7f84e374113616d80b3c988d1d442bb552caeb8494acd08df67a2.mp3",
+              "bytes": 8064,
+              "contentSha256": "13610f6753810f74d3934219407e7a1736bcee4fc7ecb762e77fe4f5b54de457",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/13610f6753810f74d393.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "egg:0",
+              "wordId": "egg",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "Please add one egg to the oden.",
+              "sourceLanguage": "en",
+              "sourceDigest": "a4046ee0ca0ee8a35e642b40f76e60ff36285a7d956e5e33d1a5f224ae4ac182",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/a4046ee0ca0ee8a35e642b40f76e60ff36285a7d956e5e33d1a5f224ae4ac182.mp3",
+              "bytes": 6912,
+              "contentSha256": "2aae4ce5e8c537c23646c6a9cc5a0d68837bd127f01e666e5fb8bb80fa9d45c8",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/2aae4ce5e8c537c23646.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "egg:0",
+              "wordId": "egg",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "おでんに卵を一つ入れてください。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "82841bb1b9be51cc58d6284202bc24769be9ec69687475e99f3ca5c1ec3b82ce",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/82841bb1b9be51cc58d6284202bc24769be9ec69687475e99f3ca5c1ec3b82ce.mp3",
+              "bytes": 10944,
+              "contentSha256": "4a8ed6396eb8cafe868dcaf7734823b6e289cd86e8ff072ab37ad75325fc1d6c",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/4a8ed6396eb8cafe868d.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "egg:1",
+          "sortOrder": 1,
+          "en": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+          "ja": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。",
+          "zh": "為了讓蛋吸收高湯的味道，我先剝殼才放進關東煮。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "peeled",
+                "z": "剝殼了",
+                "j": "殻をむいた",
+                "e": "peeled"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "eggs",
+                "z": "蛋",
+                "j": "卵",
+                "e": "eggs"
+              },
+              {
+                "t": " before "
+              },
+              {
+                "t": "putting",
+                "z": "放入",
+                "j": "入れる",
+                "e": "putting"
+              },
+              {
+                "t": " them in the "
+              },
+              {
+                "t": "oden",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden"
+              },
+              {
+                "t": " so that they could "
+              },
+              {
+                "t": "absorb",
+                "z": "吸收",
+                "j": "吸う",
+                "e": "absorb"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "broth",
+                "z": "高湯",
+                "j": "だし",
+                "e": "broth"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "だし",
+                "z": "高湯",
+                "j": "だし",
+                "e": "broth",
+                "r": "だし"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "しみ込む",
+                "z": "滲入",
+                "j": "しみ込む",
+                "e": "soak in",
+                "r": "しみこむ"
+              },
+              {
+                "t": "ように、"
+              },
+              {
+                "t": "卵",
+                "z": "蛋",
+                "j": "卵",
+                "e": "eggs",
+                "r": "たまご"
+              },
+              {
+                "t": "の"
+              },
+              {
+                "t": "殻",
+                "z": "蛋殼",
+                "j": "殻",
+                "e": "shells",
+                "r": "から"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "むいて",
+                "z": "剝掉",
+                "j": "むいた",
+                "e": "peeled",
+                "r": "むいて"
+              },
+              {
+                "t": "から"
+              },
+              {
+                "t": "おでん",
+                "z": "關東煮",
+                "j": "おでん",
+                "e": "oden",
+                "r": "おでん"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "入れました",
+                "z": "放入了",
+                "j": "入れた",
+                "e": "put in",
+                "r": "いれました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "egg:1",
+              "wordId": "egg",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+              "sourceLanguage": "en",
+              "sourceDigest": "209fd2e3a1360d21d9d7b72db1c7c574488c01a2d0678a501f5634bdce9d2f1f",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/209fd2e3a1360d21d9d7b72db1c7c574488c01a2d0678a501f5634bdce9d2f1f.mp3",
+              "bytes": 18816,
+              "contentSha256": "c188d02257cc8bec22647ae263f2ca1f21e12c1934c4e866389779e13e132ba2",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/c188d02257cc8bec2264.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "egg:1",
+              "wordId": "egg",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+              "sourceLanguage": "en",
+              "sourceDigest": "82bc5efe682d2d6de3e9373fd52e1674f4fc2f984d775b96ff847b95b35015d9",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/82bc5efe682d2d6de3e9373fd52e1674f4fc2f984d775b96ff847b95b35015d9.mp3",
+              "bytes": 20544,
+              "contentSha256": "4c5e6850ad71a81911da8d3a571cf9d52343b3c4e9c9c5714833e71209dade17",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/4c5e6850ad71a81911da.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "egg:1",
+              "wordId": "egg",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "494f7d614f78f959d01136d414cd74b1c97070d503cbeb5aa27c1a265560977e",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/494f7d614f78f959d01136d414cd74b1c97070d503cbeb5aa27c1a265560977e.mp3",
+              "bytes": 19584,
+              "contentSha256": "c5337e6f61300a9fb6549019ddcf9007a46cb205370435459c1ed444cfd58050",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/c5337e6f61300a9fb654.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "57b40bf095de8471b799422ac77b343e9fe4fd7b1d4d0edeaca76c55161461e8",
+      "word": {
+        "id": "chikuwa",
+        "word": "chikuwa",
+        "chinese": "竹輪",
+        "chineseDefinition": "把魚漿做成中空管狀並加熱成形的日式魚漿製品，常見外層帶烤褐色。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/tʃɪˈkuː.wə/",
+        "cefrLevel": "B1",
+        "ja": "ちくわ",
+        "jaReading": "ちくわ",
+        "jaReadingSegments": [
+          {
+            "text": "ちくわ",
+            "ruby": null
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "竹輪",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A Japanese tube-shaped fish cake with a hollow centre, made from fish paste and often browned on the outside.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "魚のすり身を筒状にして加熱した練り物。中心に穴があり、表面に焼き色がついたものが多い。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "關東煮常用燉煮竹輪；ちくわ與以小麥粉製成的ちくわぶ是不同食物。",
+        "localizedNotes": {
+          "en": "Chikuwa is used in oden. It is different from chikuwabu, a wheat-flour food with a similar name.",
+          "ja": "おでんの具にも使う。名前が似ているちくわぶは小麦粉から作る別の食べ物。"
+        },
+        "relatedWords": [
+          "oden"
+        ],
+        "examples": [
+          {
+            "en": "Please slice the chikuwa thinly.",
+            "ja": "ちくわを薄く切ってください。",
+            "zh": "請把竹輪切成薄片。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+            "ja": "ちくわが長かったので、半分に切ってから鍋に入れました。",
+            "zh": "竹輪很長，所以我先切成兩半才放進鍋裡。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp"
+      },
+      "image": {
+        "id": "chikuwa",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/chikuwa-v1-adfcd55e054d.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/chikuwa-v1.png",
+        "bytes": 59080,
+        "contentSha256": "adfcd55e054d21de743279d0e166b061f3266197166dd0ad19195c68212f7823",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "chikuwa",
+          "wordId": "chikuwa",
+          "locale": "en-US",
+          "sourceText": "chikuwa",
+          "sourceLanguage": "en",
+          "sourceDigest": "3ae6ad89192c996e44f9d48242f67f36e168db6fc64638fa86e79dd7389d4033",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/3ae6ad89192c996e44f9d48242f67f36e168db6fc64638fa86e79dd7389d4033.mp3",
+          "bytes": 4896,
+          "contentSha256": "79e3b7d1a666487c969114e4265d1928b091ab129a309a81731233f55774a4a6",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "chikuwa/en-US/79e3b7d1a666487c9691.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "chikuwa",
+          "wordId": "chikuwa",
+          "locale": "en-GB",
+          "sourceText": "chikuwa",
+          "sourceLanguage": "en",
+          "sourceDigest": "097178180818c6396665eb763303d74561b8fde1038dade2eed17fe7fcb2424b",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/097178180818c6396665eb763303d74561b8fde1038dade2eed17fe7fcb2424b.mp3",
+          "bytes": 5184,
+          "contentSha256": "4486d207ec72c9831218e271de0332767ae94eeed0b7cd27b779a69ed3280e17",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "chikuwa/en-GB/4486d207ec72c9831218.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "chikuwa",
+          "wordId": "chikuwa",
+          "locale": "ja-JP",
+          "sourceText": "ちくわ",
+          "sourceLanguage": "ja",
+          "sourceDigest": "d4dc7b56832120fd9acf45ed5116b323ca58cc4763095d9b23fe3586febc1c52",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/d4dc7b56832120fd9acf45ed5116b323ca58cc4763095d9b23fe3586febc1c52.mp3",
+          "bytes": 5472,
+          "contentSha256": "83b5658348ebb104f7392f213e5418de997ad719d17be961bc0dd64026b51a8f",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "chikuwa/ja-JP/83b5658348ebb104f739.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "chikuwa:0",
+          "sortOrder": 0,
+          "en": "Please slice the chikuwa thinly.",
+          "ja": "ちくわを薄く切ってください。",
+          "zh": "請把竹輪切成薄片。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "Please "
+              },
+              {
+                "t": "slice",
+                "z": "切片",
+                "j": "切る",
+                "e": "slice"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "chikuwa",
+                "z": "竹輪",
+                "j": "ちくわ",
+                "e": "chikuwa"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "thinly",
+                "z": "薄薄地",
+                "j": "薄く",
+                "e": "thinly"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "ちくわ",
+                "z": "竹輪",
+                "j": "ちくわ",
+                "e": "chikuwa",
+                "r": "ちくわ"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "薄く",
+                "z": "薄薄地",
+                "j": "薄く",
+                "e": "thinly",
+                "r": "うすく"
+              },
+              {
+                "t": "切ってください",
+                "z": "請切",
+                "j": "切ってください",
+                "e": "please slice",
+                "r": "きってください"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "chikuwa:0",
+              "wordId": "chikuwa",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "Please slice the chikuwa thinly.",
+              "sourceLanguage": "en",
+              "sourceDigest": "ae76ad2787ded94980cf3c6ee7852e1efa6b0ea92ff9644d02099c467a25ed57",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/ae76ad2787ded94980cf3c6ee7852e1efa6b0ea92ff9644d02099c467a25ed57.mp3",
+              "bytes": 12192,
+              "contentSha256": "b1c169688ba1c8b49accd6502538ec121824d6aeb1c9f5bb9c93debdee679fde",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/b1c169688ba1c8b49acc.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "chikuwa:0",
+              "wordId": "chikuwa",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "Please slice the chikuwa thinly.",
+              "sourceLanguage": "en",
+              "sourceDigest": "51c72438f4bb263eaddd9e0d4f9c12e670a06a7d7290bed4d0986ea56370d768",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/51c72438f4bb263eaddd9e0d4f9c12e670a06a7d7290bed4d0986ea56370d768.mp3",
+              "bytes": 9792,
+              "contentSha256": "65d0729c366ed3ae0c34058acabe23cf0a208e18edb424c3d8707d3444414318",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/65d0729c366ed3ae0c34.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "chikuwa:0",
+              "wordId": "chikuwa",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "ちくわを薄く切ってください。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "27361c82244fd01d507f4905ae36d204198f48bbebd69ebb15c2fbb8bbab7063",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/27361c82244fd01d507f4905ae36d204198f48bbebd69ebb15c2fbb8bbab7063.mp3",
+              "bytes": 10656,
+              "contentSha256": "a041399f1753275496764febce0e6b50319c89ad329690f0cd4bd26ddc93db1b",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/a041399f175327549676.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "chikuwa:1",
+          "sortOrder": 1,
+          "en": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+          "ja": "ちくわが長かったので、半分に切ってから鍋に入れました。",
+          "zh": "竹輪很長，所以我先切成兩半才放進鍋裡。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "Because the "
+              },
+              {
+                "t": "chikuwa",
+                "z": "竹輪",
+                "j": "ちくわ",
+                "e": "chikuwa"
+              },
+              {
+                "t": " was "
+              },
+              {
+                "t": "long",
+                "z": "長",
+                "j": "長い",
+                "e": "long"
+              },
+              {
+                "t": ", I "
+              },
+              {
+                "t": "cut",
+                "z": "切了",
+                "j": "切った",
+                "e": "cut"
+              },
+              {
+                "t": " it in "
+              },
+              {
+                "t": "half",
+                "z": "一半",
+                "j": "半分",
+                "e": "half"
+              },
+              {
+                "t": " before "
+              },
+              {
+                "t": "putting",
+                "z": "放入",
+                "j": "入れる",
+                "e": "putting"
+              },
+              {
+                "t": " it in the "
+              },
+              {
+                "t": "pot",
+                "z": "鍋",
+                "j": "鍋",
+                "e": "pot"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "ちくわ",
+                "z": "竹輪",
+                "j": "ちくわ",
+                "e": "chikuwa",
+                "r": "ちくわ"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "長かった",
+                "z": "很長",
+                "j": "長かった",
+                "e": "was long",
+                "r": "ながかった"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "半分",
+                "z": "一半",
+                "j": "半分",
+                "e": "half",
+                "r": "はんぶん"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "切って",
+                "z": "切了",
+                "j": "切った",
+                "e": "cut",
+                "r": "きって"
+              },
+              {
+                "t": "から"
+              },
+              {
+                "t": "鍋",
+                "z": "鍋",
+                "j": "鍋",
+                "e": "pot",
+                "r": "なべ"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "入れました",
+                "z": "放入了",
+                "j": "入れた",
+                "e": "put in",
+                "r": "いれました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "chikuwa:1",
+              "wordId": "chikuwa",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+              "sourceLanguage": "en",
+              "sourceDigest": "105cdf93fe4b111eb4edc8fccc65ba69d82513159614b3f9d50f1c658f496231",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/105cdf93fe4b111eb4edc8fccc65ba69d82513159614b3f9d50f1c658f496231.mp3",
+              "bytes": 17856,
+              "contentSha256": "8f0c0eab2631bd3360009f47f6617524f2ce33bbaf28ed1005f1c753719831b4",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/8f0c0eab2631bd336000.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "chikuwa:1",
+              "wordId": "chikuwa",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+              "sourceLanguage": "en",
+              "sourceDigest": "01a602d16bc111052c0055f5343654e0bda658fd2c4981d0a05e1f7b2d34b32e",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/01a602d16bc111052c0055f5343654e0bda658fd2c4981d0a05e1f7b2d34b32e.mp3",
+              "bytes": 21792,
+              "contentSha256": "6d94c0ee416239b111b96abc92c48e66e21f1a246f83d2d075040c0a1fe08f46",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/6d94c0ee416239b111b9.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "chikuwa:1",
+              "wordId": "chikuwa",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "ちくわが長かったので、半分に切ってから鍋に入れました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "dbcbf87d5e42c8e84ec1fd280756a9ea824a0be60f87ec6556d611576e722b59",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/dbcbf87d5e42c8e84ec1fd280756a9ea824a0be60f87ec6556d611576e722b59.mp3",
+              "bytes": 16416,
+              "contentSha256": "a02a09356021c36604ed8caae052fdfb8e3a78b59669ace50c993c635f1e956e",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/a02a09356021c36604ed.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "e53302edc9feaef99a5ec74c11ff55e1f49270e1e4596978d97d4d4b559cd148",
+      "word": {
+        "id": "hanpen",
+        "word": "hanpen",
+        "chinese": "半片魚板",
+        "chineseDefinition": "以魚漿等材料製成、口感蓬鬆柔軟的日式魚漿製品，常見為白色方形。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈhɑːn.pen/",
+        "cefrLevel": "B1",
+        "ja": "はんぺん",
+        "jaReading": "はんぺん",
+        "jaReadingSegments": [
+          {
+            "text": "はんぺん",
+            "ruby": null
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "半片魚板",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A soft, airy Japanese fish cake made from fish paste and other ingredients, often white and square.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "魚のすり身などから作る、白くてふんわりした柔らかい練り物。四角い形のものが多い。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "關東煮常見食材之一；這裡採常見白色蓬鬆型，不將所有地區的はんぺん都描述成相同顏色或形狀。",
+        "localizedNotes": {
+          "en": "This entry shows the common white, airy form used in oden. Regional versions may differ in colour, shape and texture.",
+          "ja": "おでんの具にもなる。ここでは一般的な白く柔らかいものを扱うが、地域によって色や形、食感が異なるものもある。"
+        },
+        "relatedWords": [
+          "oden"
+        ],
+        "examples": [
+          {
+            "en": "This hanpen is soft.",
+            "ja": "このはんぺんは柔らかいです。",
+            "zh": "這塊半片魚板很柔軟。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I added the hanpen last so that it would not fall apart while simmering.",
+            "ja": "煮ている間に崩れないように、はんぺんは最後に入れました。",
+            "zh": "為了避免燉煮時散掉，我最後才放入半片魚板。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/hanpen-v1-ce2b653a5485.webp"
+      },
+      "image": {
+        "id": "hanpen",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/hanpen-v1-ce2b653a5485.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/hanpen-v1-ce2b653a5485.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/hanpen-v1-ce2b653a5485.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/hanpen-v1.png",
+        "bytes": 17638,
+        "contentSha256": "ce2b653a5485f61a507c4eea21e0db22dc81744e477067748e798aee7bb05151",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "hanpen",
+          "wordId": "hanpen",
+          "locale": "en-US",
+          "sourceText": "hanpen",
+          "sourceLanguage": "en",
+          "sourceDigest": "6586fe7cbacf0cc57b196229a650e941829e9cec3a501c83b6a261841b328de2",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/6586fe7cbacf0cc57b196229a650e941829e9cec3a501c83b6a261841b328de2.mp3",
+          "bytes": 4224,
+          "contentSha256": "c2ad480e1165fa87452f73b25ab7480ea0450fc11d10328ed11cabe1dee2842f",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "hanpen/en-US/c2ad480e1165fa87452f.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "hanpen",
+          "wordId": "hanpen",
+          "locale": "en-GB",
+          "sourceText": "hanpen",
+          "sourceLanguage": "en",
+          "sourceDigest": "227930774e34bdc4e65eb737ad4b57e32e8abdfab9020ec5ac623d507c4da9f6",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/227930774e34bdc4e65eb737ad4b57e32e8abdfab9020ec5ac623d507c4da9f6.mp3",
+          "bytes": 4896,
+          "contentSha256": "bbb07d602fd85883bd4fda717d4ff5942134425059ae1a187d0f16a5325793a0",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "hanpen/en-GB/bbb07d602fd85883bd4f.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "hanpen",
+          "wordId": "hanpen",
+          "locale": "ja-JP",
+          "sourceText": "はんぺん",
+          "sourceLanguage": "ja",
+          "sourceDigest": "749216ad5649330f859409a4e059d59a492dec26d823a6961aaa719d471636cf",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/749216ad5649330f859409a4e059d59a492dec26d823a6961aaa719d471636cf.mp3",
+          "bytes": 4896,
+          "contentSha256": "afc34777c0671ad70c3db1c98aad2a8cb8c6df4591a170396c3be7b10ec0e4e9",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "hanpen/ja-JP/afc34777c0671ad70c3d.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "hanpen:0",
+          "sortOrder": 0,
+          "en": "This hanpen is soft.",
+          "ja": "このはんぺんは柔らかいです。",
+          "zh": "這塊半片魚板很柔軟。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "This "
+              },
+              {
+                "t": "hanpen",
+                "z": "半片魚板",
+                "j": "はんぺん",
+                "e": "hanpen"
+              },
+              {
+                "t": " is "
+              },
+              {
+                "t": "soft",
+                "z": "柔軟",
+                "j": "柔らかい",
+                "e": "soft"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "この"
+              },
+              {
+                "t": "はんぺん",
+                "z": "半片魚板",
+                "j": "はんぺん",
+                "e": "hanpen",
+                "r": "はんぺん"
+              },
+              {
+                "t": "は"
+              },
+              {
+                "t": "柔らかいです",
+                "z": "柔軟",
+                "j": "柔らかい",
+                "e": "is soft",
+                "r": "やわらかいです"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "hanpen:0",
+              "wordId": "hanpen",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "This hanpen is soft.",
+              "sourceLanguage": "en",
+              "sourceDigest": "c7def61496f100298c178f2317bba950058f6e6354db8d09dcd616e22f7335a3",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/c7def61496f100298c178f2317bba950058f6e6354db8d09dcd616e22f7335a3.mp3",
+              "bytes": 8544,
+              "contentSha256": "c111d55e3db6bf6423e24f19155755a114315a99364ce07531dbad8f8ffb9c5c",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/c111d55e3db6bf6423e2.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "hanpen:0",
+              "wordId": "hanpen",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "This hanpen is soft.",
+              "sourceLanguage": "en",
+              "sourceDigest": "eefb221c466f45d890c73fa3c7d6df6a492f47a25b548580e685757bff0d4247",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/eefb221c466f45d890c73fa3c7d6df6a492f47a25b548580e685757bff0d4247.mp3",
+              "bytes": 6624,
+              "contentSha256": "f3ac31d7c07979e077e9b9e4074a11d03c3206c80398e0bd6d19f7046b604252",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/f3ac31d7c07979e077e9.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "hanpen:0",
+              "wordId": "hanpen",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "このはんぺんは柔らかいです。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "56290ceaabc3fdb6d33db2c4a67b90c277a5b4107924e93bbf13d78c6a0e5f5a",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/56290ceaabc3fdb6d33db2c4a67b90c277a5b4107924e93bbf13d78c6a0e5f5a.mp3",
+              "bytes": 9984,
+              "contentSha256": "1012a4bab05950db7d9ce2a07a526482c18a464acefcd4cc9311a9c31eddc5fe",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/1012a4bab05950db7d9c.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "hanpen:1",
+          "sortOrder": 1,
+          "en": "I added the hanpen last so that it would not fall apart while simmering.",
+          "ja": "煮ている間に崩れないように、はんぺんは最後に入れました。",
+          "zh": "為了避免燉煮時散掉，我最後才放入半片魚板。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "added",
+                "z": "放入了",
+                "j": "入れた",
+                "e": "added"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "hanpen",
+                "z": "半片魚板",
+                "j": "はんぺん",
+                "e": "hanpen"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "last",
+                "z": "最後",
+                "j": "最後に",
+                "e": "last"
+              },
+              {
+                "t": " so that it would not "
+              },
+              {
+                "t": "fall apart",
+                "z": "散掉",
+                "j": "崩れる",
+                "e": "fall apart"
+              },
+              {
+                "t": " while "
+              },
+              {
+                "t": "simmering",
+                "z": "燉煮",
+                "j": "煮る",
+                "e": "simmering"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "煮ている",
+                "z": "正在燉煮",
+                "j": "煮ている",
+                "e": "simmering",
+                "r": "にている"
+              },
+              {
+                "t": "間に"
+              },
+              {
+                "t": "崩れない",
+                "z": "不散掉",
+                "j": "崩れない",
+                "e": "not fall apart",
+                "r": "くずれない"
+              },
+              {
+                "t": "ように、"
+              },
+              {
+                "t": "はんぺん",
+                "z": "半片魚板",
+                "j": "はんぺん",
+                "e": "hanpen",
+                "r": "はんぺん"
+              },
+              {
+                "t": "は"
+              },
+              {
+                "t": "最後",
+                "z": "最後",
+                "j": "最後",
+                "e": "last",
+                "r": "さいご"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "入れました",
+                "z": "放入了",
+                "j": "入れた",
+                "e": "added",
+                "r": "いれました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "hanpen:1",
+              "wordId": "hanpen",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I added the hanpen last so that it would not fall apart while simmering.",
+              "sourceLanguage": "en",
+              "sourceDigest": "ae7f5c51ec95fed66af5f4dfaead25e494550ce74b583b7843fc81ceb3621e09",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/ae7f5c51ec95fed66af5f4dfaead25e494550ce74b583b7843fc81ceb3621e09.mp3",
+              "bytes": 17952,
+              "contentSha256": "05a769b3246e616e4a4a8f952ba0bffd90300ebc20c62b6c65e4ae466e95b818",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/05a769b3246e616e4a4a.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "hanpen:1",
+              "wordId": "hanpen",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I added the hanpen last so that it would not fall apart while simmering.",
+              "sourceLanguage": "en",
+              "sourceDigest": "8fa54bb6fe2510ede17f0b6631f9fe944a95378e5cce71fdc638a89e2ff1d86f",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/8fa54bb6fe2510ede17f0b6631f9fe944a95378e5cce71fdc638a89e2ff1d86f.mp3",
+              "bytes": 18144,
+              "contentSha256": "605f18729517e847f44b2534d304a56d47d477c2b73b4a9786336497d67ad55c",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/605f18729517e847f44b.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "hanpen:1",
+              "wordId": "hanpen",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "煮ている間に崩れないように、はんぺんは最後に入れました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "414574bade519f0472437afa1c47b81de7751739c1f4b9b0c3f23c842fe1edc7",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/414574bade519f0472437afa1c47b81de7751739c1f4b9b0c3f23c842fe1edc7.mp3",
+              "bytes": 18624,
+              "contentSha256": "76c298577fcefcd394db46b9bb2391dcfac7a66b44053770447e10de4b873ace",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/76c298577fcefcd394db.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "9a32d9b14a2453d9812f94d7048da867cf814d3a7084152b2b31e5c8d877dd4f",
+      "word": {
+        "id": "konjac",
+        "word": "konjac",
+        "chinese": "蒟蒻",
+        "chineseDefinition": "以蒟蒻原料加工成、有彈性且近似凝膠的食材，常見為灰色帶斑點的塊狀，也有其他顏色與形態。",
+        "category": "convenience-store",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ˈkɒn.dʒæk/",
+        "cefrLevel": "B1",
+        "ja": "こんにゃく",
+        "jaReading": "こんにゃく",
+        "jaReadingSegments": [
+          {
+            "text": "こんにゃく",
+            "ruby": null
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "蒟蒻",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A springy, gel-like food made from konjac, commonly sold as grey speckled blocks, though other colours and forms exist.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "こんにゃくいもなどを原料に作る、弾力のある食べ物。灰色で粒の見える板状のものなどがある。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "此詞聚焦可切塊的蒟蒻食材，關東煮常切成三角塊等形狀；不是把蒟蒻植物或所有蒟蒻製品都當作同一張圖。",
+        "localizedNotes": {
+          "en": "The pictured food is block konjac, which can be cut into pieces such as triangles for oden. Konjac plants and other konjac products have different appearances.",
+          "ja": "画像は切り分けて使う板状のこんにゃく。おでんでは三角形などに切ることがある。原料の植物や他のこんにゃく製品とは見た目が異なる。"
+        },
+        "relatedWords": [
+          "oden"
+        ],
+        "examples": [
+          {
+            "en": "Please give me one piece of konjac.",
+            "ja": "こんにゃくを一つお願いします。",
+            "zh": "請給我一塊蒟蒻。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+            "ja": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。",
+            "zh": "為了讓蒟蒻更容易吸收高湯的味道，我在表面劃了淺刀痕。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-food-2026-10/konjac-v1-e0b8566c2f12.webp"
+      },
+      "image": {
+        "id": "konjac",
+        "bucket": "word-images",
+        "storagePath": "winter-food-2026-10/konjac-v1-e0b8566c2f12.webp",
+        "url": "https://img.nexflow.team/word-images/winter-food-2026-10/konjac-v1-e0b8566c2f12.webp",
+        "localFile": "output/winter-food-2026-10/images/webp/konjac-v1-e0b8566c2f12.webp",
+        "sourceFile": "output/winter-food-2026-10/images/source/konjac-v1.png",
+        "bytes": 55844,
+        "contentSha256": "e0b8566c2f125258cdb6f688c65d2e7f5785d20b7c92c761800d3de7e775d974",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "konjac",
+          "wordId": "konjac",
+          "locale": "en-US",
+          "sourceText": "konjac",
+          "sourceLanguage": "en",
+          "sourceDigest": "ca5a67fd91138ce8e8573866fe6c23a5bacd45b87752e90eb0bc1cd08fd9dff6",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/ca5a67fd91138ce8e8573866fe6c23a5bacd45b87752e90eb0bc1cd08fd9dff6.mp3",
+          "bytes": 3264,
+          "contentSha256": "779bad9064fe6c81582b689a3e9a50392a9f3a87a5a13f695af4944493009659",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "konjac/en-US/779bad9064fe6c81582b.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "konjac",
+          "wordId": "konjac",
+          "locale": "en-GB",
+          "sourceText": "konjac",
+          "sourceLanguage": "en",
+          "sourceDigest": "747bd233f6b53f240a9c75a5b89f5f875af83239a8707dd283c5a910a9a93eec",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/747bd233f6b53f240a9c75a5b89f5f875af83239a8707dd283c5a910a9a93eec.mp3",
+          "bytes": 4512,
+          "contentSha256": "cd954516b1722832517cc445ab97c0c928f75f01d326b21775a2a370ba6a749a",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "konjac/en-GB/cd954516b1722832517c.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "konjac",
+          "wordId": "konjac",
+          "locale": "ja-JP",
+          "sourceText": "こんにゃく",
+          "sourceLanguage": "ja",
+          "sourceDigest": "4388259f1599d26fb9ca063a530240505f213f2836d2eedac64d3ad5e0f3e060",
+          "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/4388259f1599d26fb9ca063a530240505f213f2836d2eedac64d3ad5e0f3e060.mp3",
+          "bytes": 4416,
+          "contentSha256": "6b8743a1182ebd1d214f19d9cafe912d56edd7f206dbc6d4649e13985d2421c3",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "konjac/ja-JP/6b8743a1182ebd1d214f.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "konjac:0",
+          "sortOrder": 0,
+          "en": "Please give me one piece of konjac.",
+          "ja": "こんにゃくを一つお願いします。",
+          "zh": "請給我一塊蒟蒻。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "Please "
+              },
+              {
+                "t": "give",
+                "z": "提供",
+                "j": "渡す",
+                "e": "give"
+              },
+              {
+                "t": " me "
+              },
+              {
+                "t": "one piece",
+                "z": "一塊",
+                "j": "一つ",
+                "e": "one piece"
+              },
+              {
+                "t": " of "
+              },
+              {
+                "t": "konjac",
+                "z": "蒟蒻",
+                "j": "こんにゃく",
+                "e": "konjac"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "こんにゃく",
+                "z": "蒟蒻",
+                "j": "こんにゃく",
+                "e": "konjac",
+                "r": "こんにゃく"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "一つ",
+                "z": "一塊",
+                "j": "一つ",
+                "e": "one piece",
+                "r": "ひとつ"
+              },
+              {
+                "t": "お願いします",
+                "z": "麻煩給我",
+                "j": "お願いします",
+                "e": "please give me",
+                "r": "おねがいします"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "konjac:0",
+              "wordId": "konjac",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "Please give me one piece of konjac.",
+              "sourceLanguage": "en",
+              "sourceDigest": "6a912859760a9ed42b357a98c45a79970216e04b24761acb17ee5bd3b4ccca8a",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/6a912859760a9ed42b357a98c45a79970216e04b24761acb17ee5bd3b4ccca8a.mp3",
+              "bytes": 7296,
+              "contentSha256": "566dd67f6b9b3ea1660135783dd8f7d86abcc2b2d52ec0a96233291fc7f09309",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/566dd67f6b9b3ea16601.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "konjac:0",
+              "wordId": "konjac",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "Please give me one piece of konjac.",
+              "sourceLanguage": "en",
+              "sourceDigest": "794d3c68ed7f80f8e5167e122a13fee15391129e7917e634149a00b69bdb551f",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/794d3c68ed7f80f8e5167e122a13fee15391129e7917e634149a00b69bdb551f.mp3",
+              "bytes": 11904,
+              "contentSha256": "f467cf8e2d6e8a507ba22b796860bbd17b18ecb0ae8b8f147a04940333b8b376",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/f467cf8e2d6e8a507ba2.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "konjac:0",
+              "wordId": "konjac",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "こんにゃくを一つお願いします。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "0de7f19085209777b6a5e72258a16797b1eddfbf8dbdd0f949c4f20c97a0e73f",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/0de7f19085209777b6a5e72258a16797b1eddfbf8dbdd0f949c4f20c97a0e73f.mp3",
+              "bytes": 9696,
+              "contentSha256": "66b36195a40954db9843df67a68c181b5e20a38cbb6d3533bbbe73b7e3d3410b",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/66b36195a40954db9843.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "konjac:1",
+          "sortOrder": 1,
+          "en": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+          "ja": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。",
+          "zh": "為了讓蒟蒻更容易吸收高湯的味道，我在表面劃了淺刀痕。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "made",
+                "z": "做了",
+                "j": "入れた",
+                "e": "made"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "shallow",
+                "z": "淺的",
+                "j": "浅い",
+                "e": "shallow"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "cuts",
+                "z": "刀痕",
+                "j": "切り込み",
+                "e": "cuts"
+              },
+              {
+                "t": " on the "
+              },
+              {
+                "t": "surface",
+                "z": "表面",
+                "j": "表面",
+                "e": "surface"
+              },
+              {
+                "t": " of the "
+              },
+              {
+                "t": "konjac",
+                "z": "蒟蒻",
+                "j": "こんにゃく",
+                "e": "konjac"
+              },
+              {
+                "t": " so that it would "
+              },
+              {
+                "t": "absorb",
+                "z": "吸收",
+                "j": "吸う",
+                "e": "absorb"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "broth",
+                "z": "高湯",
+                "j": "だし",
+                "e": "broth"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "more easily",
+                "z": "更容易地",
+                "j": "より簡単に",
+                "e": "more easily"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "だし",
+                "z": "高湯",
+                "j": "だし",
+                "e": "broth",
+                "r": "だし"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "しみ込みやすい",
+                "z": "容易滲入",
+                "j": "しみ込みやすい",
+                "e": "soak in easily",
+                "r": "しみこみやすい"
+              },
+              {
+                "t": "ように、"
+              },
+              {
+                "t": "こんにゃく",
+                "z": "蒟蒻",
+                "j": "こんにゃく",
+                "e": "konjac",
+                "r": "こんにゃく"
+              },
+              {
+                "t": "の"
+              },
+              {
+                "t": "表面",
+                "z": "表面",
+                "j": "表面",
+                "e": "surface",
+                "r": "ひょうめん"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "浅い",
+                "z": "淺的",
+                "j": "浅い",
+                "e": "shallow",
+                "r": "あさい"
+              },
+              {
+                "t": "切り込み",
+                "z": "刀痕",
+                "j": "切り込み",
+                "e": "cuts",
+                "r": "きりこみ"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "入れました",
+                "z": "劃了",
+                "j": "入れた",
+                "e": "made",
+                "r": "いれました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "konjac:1",
+              "wordId": "konjac",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+              "sourceLanguage": "en",
+              "sourceDigest": "56bd62f9970bd90e5e142865d3676895c78b917cd8b7d115ab4d2f8492784535",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/56bd62f9970bd90e5e142865d3676895c78b917cd8b7d115ab4d2f8492784535.mp3",
+              "bytes": 21216,
+              "contentSha256": "da6ee255be9c95fb501f75f791bde7fe66e01b3e1473971e6a1e25c2214ab3ba",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/da6ee255be9c95fb501f.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "konjac:1",
+              "wordId": "konjac",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+              "sourceLanguage": "en",
+              "sourceDigest": "654665a4d50a85ccf6a02ed382ea9ea5f5ad8c45ac39070e8ae7ba709743bf39",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/654665a4d50a85ccf6a02ed382ea9ea5f5ad8c45ac39070e8ae7ba709743bf39.mp3",
+              "bytes": 19872,
+              "contentSha256": "4384ffc595fec6924c428db9a4b13ca86288226b4b086a6e05e80a8cbe5fc8b9",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/4384ffc595fec6924c42.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "konjac:1",
+              "wordId": "konjac",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "478a05504bf993523612ff8f41662713278f1f66c57ff314cb3b76e9868b0b93",
+              "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/478a05504bf993523612ff8f41662713278f1f66c57ff314cb3b76e9868b0b93.mp3",
+              "bytes": 23904,
+              "contentSha256": "c31c094dec5796ebb35213502433b35b855f40f89210323b07f475071a3afd79",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/c31c094dec5796ebb352.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "independentReviews": {
+    "semantic": "pass",
+    "visual": "pass",
+    "audio": "pass"
+  },
+  "summary": {
+    "words": 8,
+    "baseNoteRows": 8,
+    "localizedNoteRows": 16,
+    "definitions": 24,
+    "examples": 16,
+    "spanSentences": 32,
+    "wordImages": 8,
+    "categoryImages": 0,
+    "audioClips": 72,
+    "storageObjects": 80
+  },
+  "applyContract": [
+    "Fresh SELECT-only preflight; confirm logical DB and physical Storage targets immediately before separately authorized apply.",
+    "Reserve PostgreSQL example IDs and journal owner-key mapping before constructing example-audio paths; candidate word:slot keys are not database IDs.",
+    "Create-only immutable media; full remote bytes verification before a single content/publication transaction.",
+    "Reuse existing category unchanged; no category creation, translation update, cover upload, or rollback deletion.",
+    "Verify production content, remote bytes, API projections and ordinary/cache-busting user routes before recording release."
+  ],
+  "limitations": [
+    "Images show generic food or ingredient concepts rather than a guaranteed retailer product or universal preparation.",
+    "No subjective full-clip listening review or production/device verification is claimed."
+  ],
+  "postPublicationIntegration": {
+    "status": "deferred-until-db-published-and-verified",
+    "canonicalImagePatch": {
+      "file": "data/winter-food-2026-10-canonical-images.patch",
+      "sha256": "9df3c433674f3fe7b22b596b9f16ad72a2855e62b20b1c1f62911e81db3f7bea",
+      "applied": false
+    },
+    "pairAndSpanPatch": {
+      "file": "data/winter-food-2026-10-postpublication-integration.patch",
+      "sha256": "3d227b99fa1ae454a7f83d7de24cd0243599f847a1369fe3e83900f5e15a7eb9",
+      "applied": false
+    },
+    "integrationMetadata": {
+      "file": "data/winter-food-2026-10-postpublication-integration.json",
+      "sha256": "4205726d88ef5cb2c426d3f73bdb47e802917815c8a8a16c633acb8078ed98ad"
+    },
+    "wordIds": [
+      "oden",
+      "steamed-meat-bun",
+      "roasted-sweet-potato",
+      "daikon-radish",
+      "egg",
+      "chikuwa",
+      "hanpen",
+      "konjac"
+    ],
+    "requiredOrder": [
+      "DB完整發布並驗證後，才可在本地套用本批canonical image映射補丁；不得提前增加公開首頁用來計算詞數的映射key。",
+      "套用前重新確認補丁仍適用且保留其他映射；commit、push及deploy均須另外授權。",
+      "正式上線後的圖片全層稽核，須等待canonical image映射層同步完成，不能以DB已發布代稱全部圖片來源一致。"
+    ]
+  },
+  "planDigest": "1a1a29bee89c7526f7226ab0b0a6414ec819142f2d2affd5e9bdeaffdb0d64a4",
+  "createdAt": "2026-10-30T15:04:12.060Z",
+  "status": "prepared",
+  "databasePreflight": {
+    "checkedAt": "2026-10-30T14:59:02.533Z",
+    "transactionReadOnly": true,
+    "databaseHostFingerprint": "15749fae6d13",
+    "logicalTargetFingerprint": "ff5cae26be7059d0d2127c76395c4b1b07d0a8902ecae30dad8ba03558975fe7",
+    "publishedCount": 1245,
+    "collisionRows": [],
+    "japaneseCollisions": [],
+    "categories": [
+      {
+        "id": "convenience-store",
+        "name": "Convenience Store",
+        "name_zh": "便利商店",
+        "emoji": "🏪",
+        "description": "認識日本便利商店裡常見的設備、服務與商品",
+        "description_en": "Everyday equipment, services, and food found in Japanese convenience stores",
+        "color": "from-sky-100 to-orange-100",
+        "image_url": "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp"
+      }
+    ],
+    "categoryTranslations": [
+      {
+        "category_id": "convenience-store",
+        "language": "ja",
+        "name": "コンビニ",
+        "description": "日本のコンビニで見かける設備・サービス・商品"
+      }
+    ],
+    "related": [
+      {
+        "id": "egg-carton",
+        "word": "egg carton",
+        "status": "published",
+        "term": "卵パック"
+      },
+      {
+        "id": "oden-warmer",
+        "word": "oden warmer",
+        "status": "published",
+        "term": "おでんウォーマー"
+      },
+      {
+        "id": "steamed-bun-warmer",
+        "word": "steamed bun warmer",
+        "status": "published",
+        "term": "中華まんスチーマー"
+      }
+    ],
+    "sentenceCollisions": [],
+    "passed": true
+  },
+  "storageTarget": {
+    "backend": "r2",
+    "fingerprint": "767c84c9d992"
+  }
+}

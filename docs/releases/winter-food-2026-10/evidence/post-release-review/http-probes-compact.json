@@ -1,0 +1,4322 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-11-06T09:54:18.568Z",
+  "counts": {
+    "word-list": 8,
+    "detail": 64,
+    "search": 64,
+    "category-api": 4,
+    "category-page": 4,
+    "detail-page": 32
+  },
+  "probes": [
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:27 GMT",
+        "etag": "W/\"xJTIwieXaNJ4/8V25z4VkS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "14681a070b3c0503f9aa6c65df28248bb4e7eca8e4e3250cd43aec2c489b6104",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "53",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:53:25 GMT",
+        "etag": "W/\"4Yx99lxh+cq1RY3771MDB8\"",
+        "x-vercel-cache": "HIT"
+      },
+      "bodySha256": "1e4755b21681ce6c2305966b995941c580d363906c880139642d5551c0f11b71",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=oden",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "oden"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:27 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "177db6c6cbd72aabdec7ab32a58acb0f8301e5462923d49d6502fc532abec5e1",
+      "resultIds": [
+        "whiskey",
+        "vaulting-box",
+        "oden",
+        "oden-warmer",
+        "geta",
+        "taiko-drum",
+        "shoji-screen",
+        "carpenter",
+        "disposable-chopsticks"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:28 GMT",
+        "etag": "W/\"5iTFE8j/f+YyLFjd9XAP1U\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "a1b3679c0a5dd4dbbbc7219cfcd3424166e19121e1e9f462517410dba97cd26a",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=steamed+meat+bun",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "steamed meat bun"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:28 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d7170585b7677da6f46484723616a00723c874ccf3c2e0c4ee0d52900940dcd6",
+      "resultIds": [
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:28 GMT",
+        "etag": "W/\"9QVrwL9Z+v4G9ntgWWz9T0\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e2f1d8d0b7d798ebf166b1b6b4c88a97ccec05b1baa14668e13aaee877e8e90e",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=roasted+sweet+potato",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "roasted sweet potato"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:29 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b557be4e6ff5d6b2f07b8d875c19aa8ff4261823b9bfc9ba14655dcec088d338",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/daikon-radish?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:29 GMT",
+        "etag": "W/\"QQI7SQsIZ8hVWOIay728hp\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7defd08c2bcefe8b48be8cc3a28ff7cf6a012854f95a762b982de7ab1ff35e25",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=daikon+radish",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "daikon radish"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:29 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4561c6302bc4f037866b2256743e101b784c7097cd77d54ffc94b36cf2599ee7",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/egg?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:29 GMT",
+        "etag": "W/\"gdrDEs71q8fxdAJ4a3DYTV\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "acfe8867016a10fd324075879cf8990dc2b8ab313e84c23b38b403cf268e9c7a",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=egg",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "egg"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:30 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "04d49eaee46414f5cfe11c470e660c918eb0b739b65c0ddf1f0d1a015ed22b41",
+      "resultIds": [
+        "drawing-compass",
+        "leggings",
+        "shorts",
+        "tights",
+        "egg",
+        "oden",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/chikuwa?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:30 GMT",
+        "etag": "W/\"jqg51bIILRwR6HM5P1kElH\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "30575c36f1358520c130f7d0cd897c60bfa81c4bb2e0ce1009f4022f177218d1",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=chikuwa",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "chikuwa"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:30 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "086d60b99bd9682c553fc8619882b031772863a32862aea6e12ab3482a86e259",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/hanpen?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:31 GMT",
+        "etag": "W/\"yb2Dh511oDoAJeruGtj+tS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "87242581ea2814bc651dd5dfea5d115f3277b11a2812a1018c4ff8bc2a092543",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=hanpen",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "hanpen"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:31 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9a945dd9d47b034d2c646596917e0398003930488c091833db50ae9d1204594e",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/konjac?lang=zh-Hant&learning=zh-en",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:31 GMT",
+        "etag": "W/\"OSMmryfu7nH+8PD9ahusJA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7f222e1dff259ecea03153f97acf653d2a9bd649a63baf29bf107b40d0e79b45",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=konjac",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "konjac"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:31 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4961cea4f8e03a0386f4ffd76491f94132a9187eec2fa6627650c64d1f0388b7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:32 GMT",
+        "etag": "W/\"QBalx3EE2vxU9sCtLnR0OA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5e857662ab19b50a2fef3865ea88d07657a21404d129a86295fb1599e53b9c2e",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "53",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:53:25 GMT",
+        "etag": "W/\"bs4qlA+gul6cHvQ0M3ogE6\"",
+        "x-vercel-cache": "HIT"
+      },
+      "bodySha256": "0ec513f69589299c95562f039f499a05a398cebf5cf18eb2da094b58c2da5ae8",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%8A%E3%81%A7%E3%82%93",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "おでん"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:32 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "75471df55bcf8be3b430c7d30b1ec87b61f1e687cf7ad5897e7ddcf39bab5ee6",
+      "resultIds": [
+        "oden",
+        "oden-warmer"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:32 GMT",
+        "etag": "W/\"uw2CdBGuW66UrSxtK/irhg\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4f04d26dd98953c3940e660817aac71e8efdc3ad34d5d5388c53d68d72e7013f",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E8%82%89%E3%81%BE%E3%82%93",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "肉まん"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:33 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6bb6899eff2b7d614450248bccfc724e489e7b449abea1a5e907f4cd327fd4ba",
+      "resultIds": [
+        "steamed-bun-warmer",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:33 GMT",
+        "etag": "W/\"W82XYYFwTAZtijOgmraDBZ\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "80e71a06668edf488253bae7d4d19da90ca8b5ab81539e995a49338b0708c065",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E7%84%BC%E3%81%8D%E8%8A%8B",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "焼き芋"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:33 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6de0794d39fd1c1ca22255409547d595c795802bba1263c428422685ac73575e",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/daikon-radish?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:33 GMT",
+        "etag": "W/\"UqUZkMr9ll0y0HAmEhOBvd\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9c133b8009e8d48c4baa7ebff8bcb3226d7293b9adcfde0866817c1a7996cfa5",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%A4%A7%E6%A0%B9",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "大根"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:34 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b3c10f8e57ba4b3bd41b6caf56b6e2757a09ecc28aac0834ac2fb9f2c22fc37b",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/egg?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:34 GMT",
+        "etag": "W/\"ggrnOhGYObu45+kk+4QTz1\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "44741fb7a438fb54324f72c24d5e9cb2e0635bb0fc12871996c21e17466e4cd9",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%8D%B5",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "卵"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:34 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "39b58d581546e2e38f4ff86d3f43074c431f90fc87cfb736466f988cc1e723d2",
+      "resultIds": [
+        "egg",
+        "oden",
+        "furikake",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/chikuwa?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:34 GMT",
+        "etag": "W/\"43cCpRaKjVHQtvLUyk6Nmy\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "1afdce0880c8bd450bb1cfd3a1a33f555501bf8b7340b50c9161e420631acf78",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%A1%E3%81%8F%E3%82%8F",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "ちくわ"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:35 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "428df6c42ca058ad305b4033e566279ec268667d76fbf790d6144d5393d69d75",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/hanpen?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:35 GMT",
+        "etag": "W/\"AmyAbzoEGid7vGchY0AxeO\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0df4279779a97a18d9d0e868eaedd8156b684d8d9ba3442f1a8b483a0e67b1c3",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%AF%E3%82%93%E3%81%BA%E3%82%93",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "はんぺん"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:35 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "cf3ca8e76aeb0b08fa60968609d53e21ec1ba989221d9cf52258b608a1787f53",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/konjac?lang=zh-Hant&learning=zh-ja",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:35 GMT",
+        "etag": "W/\"MxiM8O04fxfTBJijOjCJVr\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5b77f84e786583b181ee7cbd0b2401dea88e398f90385a5d252d751fec4832b4",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "こんにゃく"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:36 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "3a5e0afa130e41e25a8ab1378049d0267bad41d8dcc87f794a9d023e146ecfc7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/categories?lang=zh-Hant",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/categories",
+      "parameters": {
+        "lang": "zh-Hant"
+      },
+      "cache": "ordinary",
+      "kind": "category-api",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:36 GMT",
+        "etag": "W/\"uUWR2ZHk8Ye0TS2mNc6M40\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d87acb9d6d0581afb56aa10d4af570be98f94db000e5ce413747fea900b39a20",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/category/convenience-store",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/category/convenience-store",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "category-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:37 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "29e44fb55304bb890202dcff9472926a2d60d5cb8baae577f3a3e3828a0d06bf",
+      "visibleIds": [
+        "oden",
+        "steamed-meat-bun",
+        "roasted-sweet-potato",
+        "daikon-radish",
+        "egg",
+        "chikuwa",
+        "hanpen",
+        "konjac"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/oden",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/oden",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:38 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "f2e649b8617bfa38353b9d9b645e1eac5d817a5c523250af91d3f6005304a4f0",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/steamed-meat-bun",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/steamed-meat-bun",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:38 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "77acb8511cfde24657b4ff18b6e0768fc250fee27bfc16e3f608917b881b7d1e",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/roasted-sweet-potato",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/roasted-sweet-potato",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:39 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6b28fc626d0473b1d4cae33616cbcd49e146794771a52863679f290bf1df181a",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/daikon-radish",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/daikon-radish",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:39 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d71c826930a364583da4994111929283cd539ff6b9ffbb213157da25e2c75a4b",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/egg",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/egg",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:39 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "57d7d5668d7a280e313cd4a94a4c70ecf327075fa461e5571826eba6a11672ba",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/chikuwa",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/chikuwa",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:40 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "38b95cf920efd145b1f1c41dc253fde75962f0d894bf1bb2a4907cad94d73351",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/hanpen",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/hanpen",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:40 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "409f9fb271dc98b7354412a1e2963e8ed625111bb2b946dc1362506ea53b0e0e",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/konjac",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/konjac",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:41 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6ba04f84cacd936a1cfcdbb9a6e164bff5b48c0b9c15eea425278912b439e83a",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:41 GMT",
+        "etag": "W/\"xJTIwieXaNJ4/8V25z4VkS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "14681a070b3c0503f9aa6c65df28248bb4e7eca8e4e3250cd43aec2c489b6104",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/oden?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "40",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:01 GMT",
+        "etag": "W/\"4Yx99lxh+cq1RY3771MDB8\"",
+        "x-vercel-cache": "HIT"
+      },
+      "bodySha256": "1e4755b21681ce6c2305966b995941c580d363906c880139642d5551c0f11b71",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=oden",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "oden"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:42 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "177db6c6cbd72aabdec7ab32a58acb0f8301e5462923d49d6502fc532abec5e1",
+      "resultIds": [
+        "whiskey",
+        "vaulting-box",
+        "oden",
+        "oden-warmer",
+        "geta",
+        "taiko-drum",
+        "shoji-screen",
+        "carpenter",
+        "disposable-chopsticks"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:42 GMT",
+        "etag": "W/\"5iTFE8j/f+YyLFjd9XAP1U\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "a1b3679c0a5dd4dbbbc7219cfcd3424166e19121e1e9f462517410dba97cd26a",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=steamed+meat+bun",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "steamed meat bun"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:42 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d7170585b7677da6f46484723616a00723c874ccf3c2e0c4ee0d52900940dcd6",
+      "resultIds": [
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:42 GMT",
+        "etag": "W/\"9QVrwL9Z+v4G9ntgWWz9T0\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e2f1d8d0b7d798ebf166b1b6b4c88a97ccec05b1baa14668e13aaee877e8e90e",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=roasted+sweet+potato",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "roasted sweet potato"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:43 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b557be4e6ff5d6b2f07b8d875c19aa8ff4261823b9bfc9ba14655dcec088d338",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/daikon-radish?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:43 GMT",
+        "etag": "W/\"QQI7SQsIZ8hVWOIay728hp\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7defd08c2bcefe8b48be8cc3a28ff7cf6a012854f95a762b982de7ab1ff35e25",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=daikon+radish",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "daikon radish"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:43 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4561c6302bc4f037866b2256743e101b784c7097cd77d54ffc94b36cf2599ee7",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/egg?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:43 GMT",
+        "etag": "W/\"gdrDEs71q8fxdAJ4a3DYTV\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "acfe8867016a10fd324075879cf8990dc2b8ab313e84c23b38b403cf268e9c7a",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=egg",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "egg"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:44 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "04d49eaee46414f5cfe11c470e660c918eb0b739b65c0ddf1f0d1a015ed22b41",
+      "resultIds": [
+        "drawing-compass",
+        "leggings",
+        "shorts",
+        "tights",
+        "egg",
+        "oden",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/chikuwa?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:44 GMT",
+        "etag": "W/\"jqg51bIILRwR6HM5P1kElH\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "30575c36f1358520c130f7d0cd897c60bfa81c4bb2e0ce1009f4022f177218d1",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=chikuwa",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "chikuwa"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:44 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "086d60b99bd9682c553fc8619882b031772863a32862aea6e12ab3482a86e259",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/hanpen?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:44 GMT",
+        "etag": "W/\"yb2Dh511oDoAJeruGtj+tS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "87242581ea2814bc651dd5dfea5d115f3277b11a2812a1018c4ff8bc2a092543",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=hanpen",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "hanpen"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:45 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9a945dd9d47b034d2c646596917e0398003930488c091833db50ae9d1204594e",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/konjac?lang=zh-Hant&learning=zh-en",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:45 GMT",
+        "etag": "W/\"OSMmryfu7nH+8PD9ahusJA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7f222e1dff259ecea03153f97acf653d2a9bd649a63baf29bf107b40d0e79b45",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=konjac",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "konjac"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:45 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4961cea4f8e03a0386f4ffd76491f94132a9187eec2fa6627650c64d1f0388b7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:45 GMT",
+        "etag": "W/\"QBalx3EE2vxU9sCtLnR0OA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5e857662ab19b50a2fef3865ea88d07657a21404d129a86295fb1599e53b9c2e",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/oden?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:46 GMT",
+        "etag": "W/\"bs4qlA+gul6cHvQ0M3ogE6\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0ec513f69589299c95562f039f499a05a398cebf5cf18eb2da094b58c2da5ae8",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%8A%E3%81%A7%E3%82%93",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "おでん"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:46 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "75471df55bcf8be3b430c7d30b1ec87b61f1e687cf7ad5897e7ddcf39bab5ee6",
+      "resultIds": [
+        "oden",
+        "oden-warmer"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:46 GMT",
+        "etag": "W/\"uw2CdBGuW66UrSxtK/irhg\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4f04d26dd98953c3940e660817aac71e8efdc3ad34d5d5388c53d68d72e7013f",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E8%82%89%E3%81%BE%E3%82%93",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "肉まん"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:47 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6bb6899eff2b7d614450248bccfc724e489e7b449abea1a5e907f4cd327fd4ba",
+      "resultIds": [
+        "steamed-bun-warmer",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:47 GMT",
+        "etag": "W/\"W82XYYFwTAZtijOgmraDBZ\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "80e71a06668edf488253bae7d4d19da90ca8b5ab81539e995a49338b0708c065",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E7%84%BC%E3%81%8D%E8%8A%8B",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "焼き芋"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:47 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6de0794d39fd1c1ca22255409547d595c795802bba1263c428422685ac73575e",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/daikon-radish?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:47 GMT",
+        "etag": "W/\"UqUZkMr9ll0y0HAmEhOBvd\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9c133b8009e8d48c4baa7ebff8bcb3226d7293b9adcfde0866817c1a7996cfa5",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%A4%A7%E6%A0%B9",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "大根"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:48 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b3c10f8e57ba4b3bd41b6caf56b6e2757a09ecc28aac0834ac2fb9f2c22fc37b",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/egg?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:48 GMT",
+        "etag": "W/\"ggrnOhGYObu45+kk+4QTz1\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "44741fb7a438fb54324f72c24d5e9cb2e0635bb0fc12871996c21e17466e4cd9",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%8D%B5",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "卵"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:48 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "39b58d581546e2e38f4ff86d3f43074c431f90fc87cfb736466f988cc1e723d2",
+      "resultIds": [
+        "egg",
+        "oden",
+        "furikake",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/chikuwa?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:48 GMT",
+        "etag": "W/\"43cCpRaKjVHQtvLUyk6Nmy\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "1afdce0880c8bd450bb1cfd3a1a33f555501bf8b7340b50c9161e420631acf78",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%A1%E3%81%8F%E3%82%8F",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "ちくわ"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:49 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "428df6c42ca058ad305b4033e566279ec268667d76fbf790d6144d5393d69d75",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/hanpen?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:49 GMT",
+        "etag": "W/\"AmyAbzoEGid7vGchY0AxeO\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0df4279779a97a18d9d0e868eaedd8156b684d8d9ba3442f1a8b483a0e67b1c3",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%AF%E3%82%93%E3%81%BA%E3%82%93",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "はんぺん"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:49 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "cf3ca8e76aeb0b08fa60968609d53e21ec1ba989221d9cf52258b608a1787f53",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/konjac?lang=zh-Hant&learning=zh-ja",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "ordinary",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:49 GMT",
+        "etag": "W/\"MxiM8O04fxfTBJijOjCJVr\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5b77f84e786583b181ee7cbd0b2401dea88e398f90385a5d252d751fec4832b4",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "こんにゃく"
+      },
+      "cache": "ordinary",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:50 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "3a5e0afa130e41e25a8ab1378049d0267bad41d8dcc87f794a9d023e146ecfc7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/categories?lang=zh-Hant",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/categories",
+      "parameters": {
+        "lang": "zh-Hant"
+      },
+      "cache": "ordinary",
+      "kind": "category-api",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:50 GMT",
+        "etag": "W/\"uUWR2ZHk8Ye0TS2mNc6M40\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d87acb9d6d0581afb56aa10d4af570be98f94db000e5ce413747fea900b39a20",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/category/convenience-store",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/category/convenience-store",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "category-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:50 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "17d67bfe101623ea2355ffc6d1171e4a2fae569ca235d4405af1e13fd7ce7c4e",
+      "visibleIds": [
+        "oden",
+        "steamed-meat-bun",
+        "roasted-sweet-potato",
+        "daikon-radish",
+        "egg",
+        "chikuwa",
+        "hanpen",
+        "konjac"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/oden",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/oden",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:51 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "42bc72cf0ca6c183d1cc075c0e0764bd1c149369f3ca2bba3c4bcc014c871aac",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/steamed-meat-bun",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/steamed-meat-bun",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:51 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "ad70973235a74712c537a7fcd46c783a5c8ae95e39573ee0caf20607b0f98e46",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/roasted-sweet-potato",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/roasted-sweet-potato",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:52 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b562362fb35fa88576e23923890b856d5b9ee2d61b01acb60bf48e9381cc5cf0",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/daikon-radish",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/daikon-radish",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:52 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "63717a8c12315ac4a47aa9785148676ddc1c75337f3ccd33b56a253a368c5833",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/egg",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/egg",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:52 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "20281f7321251156876c12415ff98134b6a03a9d7b838265c2f2cc11ca8bd277",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/chikuwa",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/chikuwa",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:53 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "bf3b75b8d9e9c9713f775cfbf791a62261d2133a245464f5d0419f41469b6615",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/hanpen",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/hanpen",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:53 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "abe83d95fc149b5a4039becb6f9b361047d295b589034e6fcee1660061403c50",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/konjac",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/konjac",
+      "parameters": {},
+      "cache": "ordinary",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:49:54 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6ba04f84cacd936a1cfcdbb9a6e164bff5b48c0b9c15eea425278912b439e83a",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:54 GMT",
+        "etag": "W/\"xJTIwieXaNJ4/8V25z4VkS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "14681a070b3c0503f9aa6c65df28248bb4e7eca8e4e3250cd43aec2c489b6104",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:54 GMT",
+        "etag": "W/\"4Yx99lxh+cq1RY3771MDB8\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "1e4755b21681ce6c2305966b995941c580d363906c880139642d5551c0f11b71",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=oden&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "oden"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:54 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "177db6c6cbd72aabdec7ab32a58acb0f8301e5462923d49d6502fc532abec5e1",
+      "resultIds": [
+        "whiskey",
+        "vaulting-box",
+        "oden",
+        "oden-warmer",
+        "geta",
+        "taiko-drum",
+        "shoji-screen",
+        "carpenter",
+        "disposable-chopsticks"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:55 GMT",
+        "etag": "W/\"5iTFE8j/f+YyLFjd9XAP1U\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "a1b3679c0a5dd4dbbbc7219cfcd3424166e19121e1e9f462517410dba97cd26a",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=steamed+meat+bun&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "steamed meat bun"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:55 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d7170585b7677da6f46484723616a00723c874ccf3c2e0c4ee0d52900940dcd6",
+      "resultIds": [
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:55 GMT",
+        "etag": "W/\"9QVrwL9Z+v4G9ntgWWz9T0\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e2f1d8d0b7d798ebf166b1b6b4c88a97ccec05b1baa14668e13aaee877e8e90e",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=roasted+sweet+potato&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "roasted sweet potato"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:55 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b557be4e6ff5d6b2f07b8d875c19aa8ff4261823b9bfc9ba14655dcec088d338",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/daikon-radish?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:56 GMT",
+        "etag": "W/\"QQI7SQsIZ8hVWOIay728hp\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7defd08c2bcefe8b48be8cc3a28ff7cf6a012854f95a762b982de7ab1ff35e25",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=daikon+radish&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "daikon radish"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:56 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4561c6302bc4f037866b2256743e101b784c7097cd77d54ffc94b36cf2599ee7",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/egg?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:56 GMT",
+        "etag": "W/\"gdrDEs71q8fxdAJ4a3DYTV\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "acfe8867016a10fd324075879cf8990dc2b8ab313e84c23b38b403cf268e9c7a",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=egg&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "egg"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:56 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "04d49eaee46414f5cfe11c470e660c918eb0b739b65c0ddf1f0d1a015ed22b41",
+      "resultIds": [
+        "drawing-compass",
+        "leggings",
+        "shorts",
+        "tights",
+        "egg",
+        "oden",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/chikuwa?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:57 GMT",
+        "etag": "W/\"jqg51bIILRwR6HM5P1kElH\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "30575c36f1358520c130f7d0cd897c60bfa81c4bb2e0ce1009f4022f177218d1",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=chikuwa&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "chikuwa"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:57 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "086d60b99bd9682c553fc8619882b031772863a32862aea6e12ab3482a86e259",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/hanpen?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:57 GMT",
+        "etag": "W/\"yb2Dh511oDoAJeruGtj+tS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "87242581ea2814bc651dd5dfea5d115f3277b11a2812a1018c4ff8bc2a092543",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=hanpen&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "hanpen"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:57 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9a945dd9d47b034d2c646596917e0398003930488c091833db50ae9d1204594e",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/konjac?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:58 GMT",
+        "etag": "W/\"OSMmryfu7nH+8PD9ahusJA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7f222e1dff259ecea03153f97acf653d2a9bd649a63baf29bf107b40d0e79b45",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-en&q=konjac&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "konjac"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:58 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4961cea4f8e03a0386f4ffd76491f94132a9187eec2fa6627650c64d1f0388b7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:58 GMT",
+        "etag": "W/\"QBalx3EE2vxU9sCtLnR0OA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5e857662ab19b50a2fef3865ea88d07657a21404d129a86295fb1599e53b9c2e",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:58 GMT",
+        "etag": "W/\"bs4qlA+gul6cHvQ0M3ogE6\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0ec513f69589299c95562f039f499a05a398cebf5cf18eb2da094b58c2da5ae8",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%8A%E3%81%A7%E3%82%93&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "おでん"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:59 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "75471df55bcf8be3b430c7d30b1ec87b61f1e687cf7ad5897e7ddcf39bab5ee6",
+      "resultIds": [
+        "oden",
+        "oden-warmer"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:59 GMT",
+        "etag": "W/\"uw2CdBGuW66UrSxtK/irhg\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4f04d26dd98953c3940e660817aac71e8efdc3ad34d5d5388c53d68d72e7013f",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E8%82%89%E3%81%BE%E3%82%93&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "肉まん"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:59 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6bb6899eff2b7d614450248bccfc724e489e7b449abea1a5e907f4cd327fd4ba",
+      "resultIds": [
+        "steamed-bun-warmer",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:49:59 GMT",
+        "etag": "W/\"W82XYYFwTAZtijOgmraDBZ\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "80e71a06668edf488253bae7d4d19da90ca8b5ab81539e995a49338b0708c065",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E7%84%BC%E3%81%8D%E8%8A%8B&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "焼き芋"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:00 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6de0794d39fd1c1ca22255409547d595c795802bba1263c428422685ac73575e",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/daikon-radish?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:00 GMT",
+        "etag": "W/\"UqUZkMr9ll0y0HAmEhOBvd\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9c133b8009e8d48c4baa7ebff8bcb3226d7293b9adcfde0866817c1a7996cfa5",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%A4%A7%E6%A0%B9&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "大根"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:00 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b3c10f8e57ba4b3bd41b6caf56b6e2757a09ecc28aac0834ac2fb9f2c22fc37b",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/egg?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:01 GMT",
+        "etag": "W/\"ggrnOhGYObu45+kk+4QTz1\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "44741fb7a438fb54324f72c24d5e9cb2e0635bb0fc12871996c21e17466e4cd9",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%8D%B5&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "卵"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:01 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "39b58d581546e2e38f4ff86d3f43074c431f90fc87cfb736466f988cc1e723d2",
+      "resultIds": [
+        "egg",
+        "oden",
+        "furikake",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/chikuwa?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:01 GMT",
+        "etag": "W/\"43cCpRaKjVHQtvLUyk6Nmy\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "1afdce0880c8bd450bb1cfd3a1a33f555501bf8b7340b50c9161e420631acf78",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%A1%E3%81%8F%E3%82%8F&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "ちくわ"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:01 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "428df6c42ca058ad305b4033e566279ec268667d76fbf790d6144d5393d69d75",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/hanpen?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:02 GMT",
+        "etag": "W/\"AmyAbzoEGid7vGchY0AxeO\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0df4279779a97a18d9d0e868eaedd8156b684d8d9ba3442f1a8b483a0e67b1c3",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%AF%E3%82%93%E3%81%BA%E3%82%93&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "はんぺん"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:02 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "cf3ca8e76aeb0b08fa60968609d53e21ec1ba989221d9cf52258b608a1787f53",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/words/konjac?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:02 GMT",
+        "etag": "W/\"MxiM8O04fxfTBJijOjCJVr\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5b77f84e786583b181ee7cbd0b2401dea88e398f90385a5d252d751fec4832b4",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "こんにゃく"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:02 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "3a5e0afa130e41e25a8ab1378049d0267bad41d8dcc87f794a9d023e146ecfc7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/categories?lang=zh-Hant&review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/api/categories",
+      "parameters": {
+        "lang": "zh-Hant"
+      },
+      "cache": "busting",
+      "kind": "category-api",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:03 GMT",
+        "etag": "W/\"uUWR2ZHk8Ye0TS2mNc6M40\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d87acb9d6d0581afb56aa10d4af570be98f94db000e5ce413747fea900b39a20",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/category/convenience-store?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/category/convenience-store",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "category-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:03 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e3f4b03be273d9f4018379441b0c8c32d26e72ef648e47f2225f862a91e3674a",
+      "visibleIds": [
+        "oden",
+        "steamed-meat-bun",
+        "roasted-sweet-potato",
+        "daikon-radish",
+        "egg",
+        "chikuwa",
+        "hanpen",
+        "konjac"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/oden?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/oden",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:04 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "c150c4d7939da5f8b8caf203eb102733cebd8d34e491cf0311b56c77d15a630c",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/steamed-meat-bun?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/steamed-meat-bun",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:04 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0d7590ca9c18127bf095cfe42bf74d18d95aff6586d81a6d6542fb712fd51e29",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/roasted-sweet-potato?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/roasted-sweet-potato",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:04 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7c5c6fd31053440f16d346f996a2fcfe91811fcff232d226d7d95410a592a712",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/daikon-radish?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/daikon-radish",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:05 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7f58a0808be5a366183866abf638457734e62b862a5e1b83493a8c0d2366f55e",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/egg?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/egg",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:05 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e2166ec5b5d300c9b0e2132ee7590358a346b64e352a769295d2fb31d1a75492",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/chikuwa?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/chikuwa",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:05 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9afcf44616d49a3ed40c750249700ede61e4829c433abe612d7d9da5ba407b96",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/hanpen?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/hanpen",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:06 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5bd8eeaec1113d773d77e572a41fe96291c158c6bd52793cb57d2067891179d7",
+      "status": "passed"
+    },
+    {
+      "url": "https://tuji.nexflow.team/word/konjac?review=1793958566962",
+      "host": "https://tuji.nexflow.team",
+      "pathname": "/word/konjac",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:06 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "3ce67cbaafcd71ced6ec82193943ba172251801601cc64254b7f5da519828f3e",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:06 GMT",
+        "etag": "W/\"xJTIwieXaNJ4/8V25z4VkS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "14681a070b3c0503f9aa6c65df28248bb4e7eca8e4e3250cd43aec2c489b6104",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/oden?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:07 GMT",
+        "etag": "W/\"4Yx99lxh+cq1RY3771MDB8\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "1e4755b21681ce6c2305966b995941c580d363906c880139642d5551c0f11b71",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=oden&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "oden"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:07 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "177db6c6cbd72aabdec7ab32a58acb0f8301e5462923d49d6502fc532abec5e1",
+      "resultIds": [
+        "whiskey",
+        "vaulting-box",
+        "oden",
+        "oden-warmer",
+        "geta",
+        "taiko-drum",
+        "shoji-screen",
+        "carpenter",
+        "disposable-chopsticks"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:07 GMT",
+        "etag": "W/\"5iTFE8j/f+YyLFjd9XAP1U\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "a1b3679c0a5dd4dbbbc7219cfcd3424166e19121e1e9f462517410dba97cd26a",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=steamed+meat+bun&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "steamed meat bun"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:08 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d7170585b7677da6f46484723616a00723c874ccf3c2e0c4ee0d52900940dcd6",
+      "resultIds": [
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:08 GMT",
+        "etag": "W/\"9QVrwL9Z+v4G9ntgWWz9T0\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e2f1d8d0b7d798ebf166b1b6b4c88a97ccec05b1baa14668e13aaee877e8e90e",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=roasted+sweet+potato&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "roasted sweet potato"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:08 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b557be4e6ff5d6b2f07b8d875c19aa8ff4261823b9bfc9ba14655dcec088d338",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/daikon-radish?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:08 GMT",
+        "etag": "W/\"QQI7SQsIZ8hVWOIay728hp\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7defd08c2bcefe8b48be8cc3a28ff7cf6a012854f95a762b982de7ab1ff35e25",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=daikon+radish&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "daikon radish"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:09 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4561c6302bc4f037866b2256743e101b784c7097cd77d54ffc94b36cf2599ee7",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/egg?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:09 GMT",
+        "etag": "W/\"gdrDEs71q8fxdAJ4a3DYTV\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "acfe8867016a10fd324075879cf8990dc2b8ab313e84c23b38b403cf268e9c7a",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=egg&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "egg"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:09 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "04d49eaee46414f5cfe11c470e660c918eb0b739b65c0ddf1f0d1a015ed22b41",
+      "resultIds": [
+        "drawing-compass",
+        "leggings",
+        "shorts",
+        "tights",
+        "egg",
+        "oden",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/chikuwa?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:09 GMT",
+        "etag": "W/\"jqg51bIILRwR6HM5P1kElH\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "30575c36f1358520c130f7d0cd897c60bfa81c4bb2e0ce1009f4022f177218d1",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=chikuwa&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "chikuwa"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:10 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "086d60b99bd9682c553fc8619882b031772863a32862aea6e12ab3482a86e259",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/hanpen?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:10 GMT",
+        "etag": "W/\"yb2Dh511oDoAJeruGtj+tS\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "87242581ea2814bc651dd5dfea5d115f3277b11a2812a1018c4ff8bc2a092543",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=hanpen&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "hanpen"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:10 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9a945dd9d47b034d2c646596917e0398003930488c091833db50ae9d1204594e",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/konjac?lang=zh-Hant&learning=zh-en&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:10 GMT",
+        "etag": "W/\"OSMmryfu7nH+8PD9ahusJA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7f222e1dff259ecea03153f97acf653d2a9bd649a63baf29bf107b40d0e79b45",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-en&q=konjac&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-en",
+        "q": "konjac"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:11 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4961cea4f8e03a0386f4ffd76491f94132a9187eec2fa6627650c64d1f0388b7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "word-list",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:11 GMT",
+        "etag": "W/\"QBalx3EE2vxU9sCtLnR0OA\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5e857662ab19b50a2fef3865ea88d07657a21404d129a86295fb1599e53b9c2e",
+      "total": 1253,
+      "visibleIds": [
+        "chikuwa",
+        "daikon-radish",
+        "egg",
+        "hanpen",
+        "konjac",
+        "oden",
+        "roasted-sweet-potato",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/oden?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/oden",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:11 GMT",
+        "etag": "W/\"bs4qlA+gul6cHvQ0M3ogE6\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0ec513f69589299c95562f039f499a05a398cebf5cf18eb2da094b58c2da5ae8",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%8A%E3%81%A7%E3%82%93&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "おでん"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:12 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "75471df55bcf8be3b430c7d30b1ec87b61f1e687cf7ad5897e7ddcf39bab5ee6",
+      "resultIds": [
+        "oden",
+        "oden-warmer"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/steamed-meat-bun?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/steamed-meat-bun",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:12 GMT",
+        "etag": "W/\"uw2CdBGuW66UrSxtK/irhg\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "4f04d26dd98953c3940e660817aac71e8efdc3ad34d5d5388c53d68d72e7013f",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E8%82%89%E3%81%BE%E3%82%93&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "肉まん"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:12 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6bb6899eff2b7d614450248bccfc724e489e7b449abea1a5e907f4cd327fd4ba",
+      "resultIds": [
+        "steamed-bun-warmer",
+        "steamed-meat-bun"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/roasted-sweet-potato?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/roasted-sweet-potato",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:12 GMT",
+        "etag": "W/\"W82XYYFwTAZtijOgmraDBZ\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "80e71a06668edf488253bae7d4d19da90ca8b5ab81539e995a49338b0708c065",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E7%84%BC%E3%81%8D%E8%8A%8B&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "焼き芋"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:13 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "6de0794d39fd1c1ca22255409547d595c795802bba1263c428422685ac73575e",
+      "resultIds": [
+        "roasted-sweet-potato"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/daikon-radish?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/daikon-radish",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:13 GMT",
+        "etag": "W/\"UqUZkMr9ll0y0HAmEhOBvd\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9c133b8009e8d48c4baa7ebff8bcb3226d7293b9adcfde0866817c1a7996cfa5",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%A4%A7%E6%A0%B9&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "大根"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:13 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "b3c10f8e57ba4b3bd41b6caf56b6e2757a09ecc28aac0834ac2fb9f2c22fc37b",
+      "resultIds": [
+        "daikon-radish",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/egg?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/egg",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:13 GMT",
+        "etag": "W/\"ggrnOhGYObu45+kk+4QTz1\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "44741fb7a438fb54324f72c24d5e9cb2e0635bb0fc12871996c21e17466e4cd9",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E5%8D%B5&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "卵"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:14 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "39b58d581546e2e38f4ff86d3f43074c431f90fc87cfb736466f988cc1e723d2",
+      "resultIds": [
+        "egg",
+        "oden",
+        "furikake",
+        "mayonnaise",
+        "egg-carton"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/chikuwa?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/chikuwa",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:14 GMT",
+        "etag": "W/\"43cCpRaKjVHQtvLUyk6Nmy\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "1afdce0880c8bd450bb1cfd3a1a33f555501bf8b7340b50c9161e420631acf78",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%A1%E3%81%8F%E3%82%8F&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "ちくわ"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:14 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "428df6c42ca058ad305b4033e566279ec268667d76fbf790d6144d5393d69d75",
+      "resultIds": [
+        "chikuwa"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/hanpen?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/hanpen",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:14 GMT",
+        "etag": "W/\"AmyAbzoEGid7vGchY0AxeO\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0df4279779a97a18d9d0e868eaedd8156b684d8d9ba3442f1a8b483a0e67b1c3",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%AF%E3%82%93%E3%81%BA%E3%82%93&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "はんぺん"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:15 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "cf3ca8e76aeb0b08fa60968609d53e21ec1ba989221d9cf52258b608a1787f53",
+      "resultIds": [
+        "hanpen"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/words/konjac?lang=zh-Hant&learning=zh-ja&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/words/konjac",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja"
+      },
+      "cache": "busting",
+      "kind": "detail",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:15 GMT",
+        "etag": "W/\"MxiM8O04fxfTBJijOjCJVr\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5b77f84e786583b181ee7cbd0b2401dea88e398f90385a5d252d751fec4832b4",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/search?lang=zh-Hant&learning=zh-ja&q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/search",
+      "parameters": {
+        "lang": "zh-Hant",
+        "learning": "zh-ja",
+        "q": "こんにゃく"
+      },
+      "cache": "busting",
+      "kind": "search",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:15 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "3a5e0afa130e41e25a8ab1378049d0267bad41d8dcc87f794a9d023e146ecfc7",
+      "resultIds": [
+        "konjac",
+        "oden"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/api/categories?lang=zh-Hant&review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/api/categories",
+      "parameters": {
+        "lang": "zh-Hant"
+      },
+      "cache": "busting",
+      "kind": "category-api",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "public, max-age=60",
+        "content-type": "application/json",
+        "date": "Fri, 06 Nov 2026 09:50:15 GMT",
+        "etag": "W/\"uUWR2ZHk8Ye0TS2mNc6M40\"",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "d87acb9d6d0581afb56aa10d4af570be98f94db000e5ce413747fea900b39a20",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/category/convenience-store?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/category/convenience-store",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "category-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:16 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e3f4b03be273d9f4018379441b0c8c32d26e72ef648e47f2225f862a91e3674a",
+      "visibleIds": [
+        "oden",
+        "steamed-meat-bun",
+        "roasted-sweet-potato",
+        "daikon-radish",
+        "egg",
+        "chikuwa",
+        "hanpen",
+        "konjac"
+      ],
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/oden?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/oden",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:16 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "c150c4d7939da5f8b8caf203eb102733cebd8d34e491cf0311b56c77d15a630c",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/steamed-meat-bun?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/steamed-meat-bun",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:17 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "0d7590ca9c18127bf095cfe42bf74d18d95aff6586d81a6d6542fb712fd51e29",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/roasted-sweet-potato?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/roasted-sweet-potato",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:17 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7c5c6fd31053440f16d346f996a2fcfe91811fcff232d226d7d95410a592a712",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/daikon-radish?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/daikon-radish",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:17 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "7f58a0808be5a366183866abf638457734e62b862a5e1b83493a8c0d2366f55e",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/egg?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/egg",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:18 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "e2166ec5b5d300c9b0e2132ee7590358a346b64e352a769295d2fb31d1a75492",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/chikuwa?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/chikuwa",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:18 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "9afcf44616d49a3ed40c750249700ede61e4829c433abe612d7d9da5ba407b96",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/hanpen?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/hanpen",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:18 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "5bd8eeaec1113d773d77e572a41fe96291c158c6bd52793cb57d2067891179d7",
+      "status": "passed"
+    },
+    {
+      "url": "https://everyday-english-picture-dictionary.vercel.app/word/konjac?review=1793958566962",
+      "host": "https://everyday-english-picture-dictionary.vercel.app",
+      "pathname": "/word/konjac",
+      "parameters": {},
+      "cache": "busting",
+      "kind": "detail-page",
+      "http": 200,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Fri, 06 Nov 2026 09:50:19 GMT",
+        "x-vercel-cache": "MISS"
+      },
+      "bodySha256": "3ce67cbaafcd71ced6ec82193943ba172251801601cc64254b7f5da519828f3e",
+      "status": "passed"
+    }
+  ],
+  "ordinaryAndBustingExactProjections": 36,
+  "differentProjections": [],
+  "firstAndFollowupEvidence": [
+    {
+      "file": "http-probes-1793958566962.json",
+      "sha256": "68408f2eaf25e43671865ac5630aad3410be94a7fe2feeeb23adf474f63e1326",
+      "checkedAt": "2026-11-06T09:50:19.312Z",
+      "failures": [
+        {
+          "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-en",
+          "host": "https://tuji.nexflow.team",
+          "pathname": "/api/words/oden",
+          "parameters": {
+            "lang": "zh-Hant",
+            "learning": "zh-en"
+          },
+          "cache": "ordinary",
+          "kind": "detail",
+          "http": 404,
+          "headers": {
+            "age": "78",
+            "cache-control": "public, max-age=60",
+            "content-type": "application/json",
+            "date": "Fri, 06 Nov 2026 09:48:09 GMT",
+            "x-vercel-cache": "HIT"
+          },
+          "bodySha256": "51d0a9e3bd9ffc25483790aaffe7a3597e642edd040dddb16aafc324e6e922ed",
+          "errorResponse": "{\"error\":\"not found\"}",
+          "status": "failed",
+          "issue": "HTTP 404"
+        },
+        {
+          "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-ja",
+          "host": "https://tuji.nexflow.team",
+          "pathname": "/api/words/oden",
+          "parameters": {
+            "lang": "zh-Hant",
+            "learning": "zh-ja"
+          },
+          "cache": "ordinary",
+          "kind": "detail",
+          "http": 404,
+          "headers": {
+            "age": "80",
+            "cache-control": "public, max-age=60",
+            "content-type": "application/json",
+            "date": "Fri, 06 Nov 2026 09:48:12 GMT",
+            "x-vercel-cache": "HIT"
+          },
+          "bodySha256": "51d0a9e3bd9ffc25483790aaffe7a3597e642edd040dddb16aafc324e6e922ed",
+          "errorResponse": "{\"error\":\"not found\"}",
+          "status": "failed",
+          "issue": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "file": "http-probes-1793958690728.json",
+      "sha256": "c8cf239ee547196be1dc2b4ac2556e40a77d90d3cb50d8ca3b02d139f6fb4af4",
+      "checkedAt": "2026-11-06T09:51:31.007Z",
+      "failures": [
+        {
+          "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-en",
+          "host": "https://tuji.nexflow.team",
+          "pathname": "/api/words/oden",
+          "parameters": {
+            "lang": "zh-Hant",
+            "learning": "zh-en"
+          },
+          "cache": "ordinary",
+          "kind": "detail",
+          "http": 404,
+          "headers": {
+            "age": "201",
+            "cache-control": "public, max-age=60",
+            "content-type": "application/json",
+            "date": "Fri, 06 Nov 2026 09:48:09 GMT",
+            "x-vercel-cache": "HIT"
+          },
+          "bodySha256": "51d0a9e3bd9ffc25483790aaffe7a3597e642edd040dddb16aafc324e6e922ed",
+          "errorResponse": "{\"error\":\"not found\"}",
+          "status": "failed",
+          "issue": "HTTP 404"
+        },
+        {
+          "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-ja",
+          "host": "https://tuji.nexflow.team",
+          "pathname": "/api/words/oden",
+          "parameters": {
+            "lang": "zh-Hant",
+            "learning": "zh-ja"
+          },
+          "cache": "ordinary",
+          "kind": "detail",
+          "http": 404,
+          "headers": {
+            "age": "199",
+            "cache-control": "public, max-age=60",
+            "content-type": "application/json",
+            "date": "Fri, 06 Nov 2026 09:48:12 GMT",
+            "x-vercel-cache": "HIT"
+          },
+          "bodySha256": "51d0a9e3bd9ffc25483790aaffe7a3597e642edd040dddb16aafc324e6e922ed",
+          "errorResponse": "{\"error\":\"not found\"}",
+          "status": "failed",
+          "issue": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "file": "http-probes-1793958805180.json",
+      "sha256": "ad9472490b6916e3e02029f4ad501fd126b33969aa47eeab291f6f92c646c928",
+      "checkedAt": "2026-11-06T09:53:25.440Z",
+      "failures": [
+        {
+          "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-en",
+          "host": "https://tuji.nexflow.team",
+          "pathname": "/api/words/oden",
+          "parameters": {
+            "lang": "zh-Hant",
+            "learning": "zh-en"
+          },
+          "cache": "ordinary",
+          "kind": "detail",
+          "http": 404,
+          "headers": {
+            "age": "316",
+            "cache-control": "public, max-age=60",
+            "content-type": "application/json",
+            "date": "Fri, 06 Nov 2026 09:48:09 GMT",
+            "x-vercel-cache": "STALE"
+          },
+          "bodySha256": "51d0a9e3bd9ffc25483790aaffe7a3597e642edd040dddb16aafc324e6e922ed",
+          "errorResponse": "{\"error\":\"not found\"}",
+          "status": "failed",
+          "issue": "HTTP 404"
+        },
+        {
+          "url": "https://tuji.nexflow.team/api/words/oden?lang=zh-Hant&learning=zh-ja",
+          "host": "https://tuji.nexflow.team",
+          "pathname": "/api/words/oden",
+          "parameters": {
+            "lang": "zh-Hant",
+            "learning": "zh-ja"
+          },
+          "cache": "ordinary",
+          "kind": "detail",
+          "http": 404,
+          "headers": {
+            "age": "313",
+            "cache-control": "public, max-age=60",
+            "content-type": "application/json",
+            "date": "Fri, 06 Nov 2026 09:48:12 GMT",
+            "x-vercel-cache": "STALE"
+          },
+          "bodySha256": "51d0a9e3bd9ffc25483790aaffe7a3597e642edd040dddb16aafc324e6e922ed",
+          "errorResponse": "{\"error\":\"not found\"}",
+          "status": "failed",
+          "issue": "HTTP 404"
+        }
+      ]
+    }
+  ],
+  "productionWrites": 0
+}

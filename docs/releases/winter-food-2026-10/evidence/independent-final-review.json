@@ -1,0 +1,129 @@
+{
+  "status": "pass-prepublication-preparation",
+  "reviewDate": "2026-11-06",
+  "scope": "Tuji 2026 winter batch 3 food and ordering terms, independent local and read-only release review",
+  "plan": {
+    "file": "output/winter-food-2026-10/publish-plan-bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c.json",
+    "sha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c",
+    "digest": "1a1a29bee89c7526f7226ab0b0a6414ec819142f2d2affd5e9bdeaffdb0d64a4",
+    "sourceHashesMatched": 17,
+    "mediaByteHashesMatched": 80
+  },
+  "repository": {
+    "worktreeBase": "f88c1aa0dbcd0ad9cd6c57818570a7ab4bd2e5aa",
+    "observedRemoteMain": "af59d7f8631948fb8ce5489aea63345e5b1d7e4a",
+    "baseDrift": "Four story files only. Current main integration before-hashes match and both deferred patches pass apply --check."
+  },
+  "findings": [],
+  "layers": {
+    "contentAndSpans": {
+      "status": "pass",
+      "words": 8,
+      "examples": 16,
+      "spanSentences": 32
+    },
+    "media": {
+      "status": "pass-local",
+      "imagesVisuallyReviewed": 8,
+      "pngAndWebPFilesVisuallyReviewed": 16,
+      "audioFilesDecodedAndFrameVerified": 72
+    },
+    "publisher": {
+      "status": "pass-code-and-read-only-path",
+      "notes": {
+        "base": 8,
+        "localized": 16
+      },
+      "relations": {
+        "internal": 10,
+        "external": 3
+      },
+      "noExistingWordOrCategoryUpdates": true,
+      "controls": [
+        "Default path uses a read-only PostgreSQL transaction and read-only Storage capability probes.",
+        "Explicit logical database and physical Storage confirmation gate apply or rollback. Resume binds exact plan and manifest, target, reserved example IDs, and concrete media inventory.",
+        "Versioned keys and create-only R2 precondition prevent replacement; remote MIME and complete bytes are checked before the single publication transaction.",
+        "Serializable transaction locks affected tables and repeats fresh preflight, including live external targets, before any content writes. All eight rows are inserted before new-to-new links.",
+        "Stored-content comparison includes base and localized notes. Rollback checks exact rows and resolved example IDs, user references and outside sentence/definition/relation/span usage, retaining existing category and media."
+      ]
+    },
+    "productionPreflight": {
+      "status": "pass-read-only",
+      "words": 8,
+      "examples": 16,
+      "storageObjects": 80,
+      "candidateRows": 0,
+      "headwordConflicts": 0,
+      "japaneseConflicts": 0,
+      "spanCollisions": 0,
+      "externalRelationsMatch": true,
+      "existingCategoryAndTranslationsMatch": true
+    },
+    "integration": {
+      "status": "pass-local-deferred",
+      "verifiedNotesProjections": 48,
+      "verifiedMigrationFixtures": 4,
+      "typecheck": "pass",
+      "standaloneNextBuild": "pass",
+      "initialBuild": "failed fetching Google font files; standalone rerun passed",
+      "deferredCanonicalImageKeys": 8,
+      "deferredExamplePairAndSpanFiles": 3
+    },
+    "productionApplyAndPostpublication": {
+      "status": "pending-separate-authorization-and-live-verification"
+    }
+  },
+  "authorization": {
+    "productionWriteAuthorized": false,
+    "productionWritesPerformed": 0,
+    "idReservationsPerformed": 0,
+    "storageObjectsUploaded": 0,
+    "deferredPatchesAppliedToReleaseWorktree": false
+  },
+  "limitations": [
+    "The local audio audit verified source metadata, MIME, exact bytes, frame continuity and complete decoding. Subjective listening was outside this check.",
+    "Formal URLs, live projections, device playback, cache paths and actual apply or rollback remain unverified. Read-only Storage probing does not prove write credentials."
+  ],
+  "evidence": {
+    "concepts": {
+      "file": "output/winter-food-2026-10/independent-review-concepts.json",
+      "sha256": "dea01e122907ab9ccdf82d59d0a4bcfa5b1a7363195beb8e0ddce4b8da288276"
+    },
+    "contentAndSpans": {
+      "file": "output/winter-food-2026-10/independent-review-content.json",
+      "sha256": "40bca1c61d865e8028fecb7bc0c456ede1a88c99446ac0a6c91c9ca2cd16cb3e"
+    },
+    "officialChecker": {
+      "file": "output/winter-food-2026-10/independent-official-checker/audit.json",
+      "sha256": "03656dadba7cf2a972105bbb0bfeff4dd6bb2e8979e99b62ee42acbf6ebeb383"
+    },
+    "images": {
+      "file": "output/winter-food-2026-10/independent-review-images.json",
+      "sha256": "114a2ebcd42015f9c28916af8b02ef3745be4729234ee178a8b6eeb173ba4d69"
+    },
+    "audio": {
+      "file": "output/winter-food-2026-10/independent-review-audio.json",
+      "sha256": "b171d274b73305b66fbffa30ffb761aa69668776e6195e6477d5ec6acbb89463"
+    },
+    "readOnlyProductionPreflight": {
+      "file": "output/winter-food-2026-10/independent-final-dry-run.log",
+      "sha256": "c38e2ec9453ceb44e9d13e602b0d2bd7f8d46b76d7c303c85a4b95995e6b1a1d"
+    },
+    "initialBuildFontFailure": {
+      "file": "output/winter-food-2026-10/integration-fixture-build.log",
+      "sha256": "c7cb0c1614e62ffca8bd72ce7a8000f04ed9d68b3af6a0baf61627124fc4fcfc"
+    },
+    "standaloneBuild": {
+      "file": "output/winter-food-2026-10/integration-standalone-build.log",
+      "sha256": "a0c982b29fa64ca400d85fe943808bc1880eac37c47b7ddf0acd1b2eb400ac87"
+    },
+    "standaloneTypecheck": {
+      "file": "output/winter-food-2026-10/integration-standalone-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "standaloneTests": {
+      "file": "output/winter-food-2026-10/integration-standalone-tests.log",
+      "sha256": "6f6b0439711a2139274061673e283fd5a1e7cbecb29a6d73cdc7751c2af2f1a3"
+    }
+  }
+}

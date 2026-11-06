@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "checkedAt": "2026-10-30T14:58:00.293Z",
+  "source": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker/source.json",
+  "scope": {
+    "publishedMainWordsOnly": true,
+    "customWords": false,
+    "savedWords": false,
+    "publicApiExamplesChecked": false
+  },
+  "counts": {
+    "words": 8,
+    "examples": 16,
+    "batches": 1,
+    "reviewedWords": 8,
+    "reviewedExamples": 16,
+    "reviewHints": 0
+  },
+  "mechanicalStatus": "passed",
+  "semanticReviewStatus": "passed",
+  "summary": {
+    "total": 0,
+    "categories": {}
+  },
+  "issues": [],
+  "reviewHints": [],
+  "artifacts": {
+    "outputDir": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker",
+    "auditFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker/audit.json",
+    "markdownFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker/audit.md",
+    "examplesFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker/examples.json",
+    "reviewFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker/semantic-review.json"
+  }
+}

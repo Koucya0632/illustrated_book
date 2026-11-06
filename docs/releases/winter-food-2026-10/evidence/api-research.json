@@ -1,0 +1,306 @@
+{
+  "checkedAt": "2026-10-30T14:48:17.779Z",
+  "productionWrites": 0,
+  "probes": [
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%8A%E3%81%A7%E3%82%93&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "oden-warmer",
+            "word": "おでんウォーマー",
+            "chinese": "關東煮保溫鍋",
+            "imageUrl": "https://img.nexflow.team/word-images/oden-warmer-ai-6a955f982b80.webp",
+            "category": "convenience-store",
+            "pronunciation": "おでんウォーマー",
+            "reading": "おでんウォーマー",
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/oden-warmer/ja-JP/6c4d03f739f17470e3a1.mp3"
+            }
+          }
+        ],
+        "query": "おでん",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%8A%E3%81%A7%E3%82%93&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "oden-warmer",
+            "word": "oden warmer",
+            "chinese": "關東煮保溫鍋",
+            "imageUrl": "https://img.nexflow.team/word-images/oden-warmer-ai-6a955f982b80.webp",
+            "category": "convenience-store",
+            "pronunciation": "/ˈoʊ.den ˈwɔːr.mɚ/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/oden-warmer/en-US/af35bccbecef0cf29d17.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/oden-warmer/en-GB/38c63fede1d45682de67.mp3"
+            }
+          }
+        ],
+        "query": "おでん",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E8%82%89%E3%81%BE%E3%82%93&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "steamed-bun-warmer",
+            "word": "中華まんスチーマー",
+            "chinese": "包子保溫蒸櫃",
+            "imageUrl": "https://img.nexflow.team/word-images/steamed-bun-warmer-ai-b70e0319fd87.webp",
+            "category": "convenience-store",
+            "pronunciation": "ちゅうかまんスチーマー",
+            "reading": "ちゅうかまんスチーマー",
+            "readingSegments": [
+              {
+                "ruby": "ちゅうか",
+                "text": "中華"
+              },
+              {
+                "ruby": null,
+                "text": "まんスチーマー"
+              }
+            ],
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/steamed-bun-warmer/ja-JP/32aa91ddf93365c5d225.mp3"
+            }
+          }
+        ],
+        "query": "肉まん",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E8%82%89%E3%81%BE%E3%82%93&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "steamed-bun-warmer",
+            "word": "steamed bun warmer",
+            "chinese": "包子保溫蒸櫃",
+            "imageUrl": "https://img.nexflow.team/word-images/steamed-bun-warmer-ai-b70e0319fd87.webp",
+            "category": "convenience-store",
+            "pronunciation": "/ˌstiːmd bʌn ˈwɔːr.mɚ/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/steamed-bun-warmer/en-US/7ee1abb172c34bfc61db.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/steamed-bun-warmer/en-GB/67bb2a3d943f43d55015.mp3"
+            }
+          }
+        ],
+        "query": "肉まん",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E7%84%BC%E3%81%8D%E8%8A%8B&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "焼き芋",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E7%84%BC%E3%81%8D%E8%8A%8B&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "焼き芋",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%A4%A7%E6%A0%B9&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "大根",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%A4%A7%E6%A0%B9&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "大根",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%8D%B5&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "furikake",
+            "word": "ふりかけ",
+            "chinese": "日式香鬆",
+            "imageUrl": "https://img.nexflow.team/word-images/furikake.webp",
+            "category": "seasonings",
+            "pronunciation": "ふりかけ",
+            "reading": "ふりかけ",
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/furikake/ja-JP/ed06e91478c2ac30f38f.mp3"
+            }
+          },
+          {
+            "id": "mayonnaise",
+            "word": "マヨネーズ",
+            "chinese": "美乃滋 / 蛋黃醬",
+            "imageUrl": "https://img.nexflow.team/word-images/mayonnaise.webp",
+            "category": "seasonings",
+            "pronunciation": "マヨネーズ",
+            "reading": "マヨネーズ",
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/mayonnaise/ja-JP.mp3"
+            }
+          },
+          {
+            "id": "egg-carton",
+            "word": "卵パック",
+            "chinese": "雞蛋盒",
+            "imageUrl": "https://img.nexflow.team/word-images/egg-carton.webp",
+            "category": "supermarket",
+            "pronunciation": "たまごパック",
+            "reading": "たまごパック",
+            "readingSegments": [
+              {
+                "ruby": "たまご",
+                "text": "卵"
+              },
+              {
+                "ruby": null,
+                "text": "パック"
+              }
+            ],
+            "targetLanguage": "ja",
+            "audioUrls": {
+              "ja-JP": "https://img.nexflow.team/word-audio/egg-carton/ja-JP/d7f8068ac3fed18663ba.mp3"
+            }
+          }
+        ],
+        "query": "卵",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E5%8D%B5&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [
+          {
+            "id": "furikake",
+            "word": "furikake",
+            "chinese": "日式香鬆",
+            "imageUrl": "https://img.nexflow.team/word-images/furikake.webp",
+            "category": "seasonings",
+            "pronunciation": "/ˌfʊr.ɪˈkɑː.keɪ/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/furikake/en-US/6dcd93cf50d183d3737c.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/furikake/en-GB/835ad6c98f85da883df5.mp3"
+            }
+          },
+          {
+            "id": "mayonnaise",
+            "word": "mayonnaise",
+            "chinese": "美乃滋 / 蛋黃醬",
+            "imageUrl": "https://img.nexflow.team/word-images/mayonnaise.webp",
+            "category": "seasonings",
+            "pronunciation": "/ˌmeɪ.əˈneɪz/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/mayonnaise/en-US.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/mayonnaise/en-GB.mp3"
+            }
+          },
+          {
+            "id": "egg-carton",
+            "word": "egg carton",
+            "chinese": "雞蛋盒",
+            "imageUrl": "https://img.nexflow.team/word-images/egg-carton.webp",
+            "category": "supermarket",
+            "pronunciation": "/ˈeɡ ˌkɑːr.tən/",
+            "targetLanguage": "en",
+            "audioUrls": {
+              "en-US": "https://img.nexflow.team/word-audio/egg-carton/en-US/9be5e4083359953058cc.mp3",
+              "en-GB": "https://img.nexflow.team/word-audio/egg-carton/en-GB/629f1937aba9666514e7.mp3"
+            }
+          }
+        ],
+        "query": "卵",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%A1%E3%81%8F%E3%82%8F&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "ちくわ",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%A1%E3%81%8F%E3%82%8F&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "ちくわ",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%AF%E3%82%93%E3%81%BA%E3%82%93&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "はんぺん",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%AF%E3%82%93%E3%81%BA%E3%82%93&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "はんぺん",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F&limit=200&lang=zh-Hant&learning=zh-ja",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "こんにゃく",
+        "limit": 200
+      }
+    },
+    {
+      "url": "https://tuji.nexflow.team/api/search?q=%E3%81%93%E3%82%93%E3%81%AB%E3%82%83%E3%81%8F&limit=200&lang=zh-Hant&learning=zh-en",
+      "status": 200,
+      "payload": {
+        "results": [],
+        "query": "こんにゃく",
+        "limit": 200
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-06T09:48:17.526Z",
+  "sourceFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/post-release-review/scoped-official-checker/examples.json",
+  "words": [
+    {
+      "id": "chikuwa",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3725",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3726",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "daikon-radish",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3721",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3722",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "egg",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3723",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3724",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "hanpen",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3727",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3728",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "konjac",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3729",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3730",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "oden",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3715",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3716",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3719",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3720",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "id": "steamed-meat-bun",
+      "pairVerdict": "pending",
+      "pairCategories": [],
+      "pairReason": "",
+      "examples": [
+        {
+          "exampleId": "3717",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        },
+        {
+          "exampleId": "3718",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pending",
+          "categories": [],
+          "reason": ""
+        }
+      ]
+    }
+  ]
+}

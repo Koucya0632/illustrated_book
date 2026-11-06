@@ -1,0 +1,32 @@
+{
+  "mode": "apply",
+  "databaseHostFingerprint": "15749fae6d13",
+  "storageBackend": "r2",
+  "storageTargetFingerprint": "767c84c9d992",
+  "words": 8,
+  "examples": 16,
+  "storageObjects": 80,
+  "missingTables": [],
+  "candidateRows": 0,
+  "candidateStates": {},
+  "headwordConflicts": 0,
+  "japaneseConflicts": 0,
+  "spanCollisions": 0,
+  "externalRelatedMatches": true,
+  "categoryExists": true,
+  "categoryMatches": true,
+  "categoryTranslationMatches": true,
+  "databaseWriteReady": true,
+  "storageCapability": {
+    "configured": true,
+    "readOnlyProbePassed": true,
+    "atomicCreateOnlyTransport": true
+  },
+  "storageCreateOnlyReady": true,
+  "writeReady": true
+}
+[winter-food-2026-10:publish] Storage 25/80
+[winter-food-2026-10:publish] Storage 50/80
+[winter-food-2026-10:publish] Storage 75/80
+[winter-food-2026-10:publish] Storage 80/80
+[winter-food-2026-10:publish] published 8 words; manifest: output/winter-food-2026-10/apply-manifest-2026-11-06T09-45-50-844Z.json

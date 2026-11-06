@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "winter_food_reviewer",
+  "reviewedAt": "2026-10-30T15:00:21.239550+00:00",
+  "status": "pass-local-images",
+  "manifestSha256": "5bb3372afcecd49586f26611b8a3af56ef9f93a85140e5e972456a595e626348",
+  "counts": {
+    "words": 8,
+    "sourcePngViewed": 8,
+    "encodedWebpViewed": 8
+  },
+  "scope": "Exact eight local candidate PNGs and eight formal encoded WebPs; no remote/publication layer claimed.",
+  "entries": [
+    {
+      "id": "oden",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "改版已保留完整碗與清高湯，厚切蘿蔔、剝殼蛋、中心通孔燒竹輪、灰點蒟蒻與昆布各可辨；主體縮小後四周白邊明顯，非保溫設備。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/oden-v2.png",
+          "sha256": "2bd62390e1918724eb72f6512b19ca3a63a7703e859e77681062b2f4b03f4e06",
+          "bytes": 1294646,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/oden-v2-5fa7defa0bb8.webp",
+          "sha256": "5fa7defa0bb86396e7790740060ce80eee20ed6c5588375e2f54482fd0dbcf57",
+          "bytes": 34898,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/oden-v2-5fa7defa0bb8.webp"
+    },
+    {
+      "id": "steamed-meat-bun",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "白色摺紋麵皮、打開處露出熟碎肉餡，鹹肉包身分清楚且無甜豆餡/設備；v2主體尺度適中且全形完整，有充分白邊。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/steamed-meat-bun-v2.png",
+          "sha256": "d8387f17002be27d2f915a3fce319bdacc6122522c837bfdc6542f0e25ecb783",
+          "bytes": 1356524,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/steamed-meat-bun-v2-8822b71eab8e.webp",
+          "sha256": "8822b71eab8e0ec914fbfe22824acccfe3f42576fdb8873fec386d9551140dac",
+          "bytes": 39018,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp"
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "紅紫皺皮與掰開黃金熟甘藷肉顯示烤熟食物，兩端完整；v2橫向留白充分，沒有包裝、配料或盤子造成概念混淆。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/roasted-sweet-potato-v2.png",
+          "sha256": "8bb7615f6f4ae09ef3beb433b21421520c8db4c97f5152f84dfe9461548409d9",
+          "bytes": 1683518,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+          "sha256": "ed5e9d35dd9390c9586f383c9ce016c110a38c58a54ca40ee86ad6ad83e73d22",
+          "bytes": 43028,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp"
+    },
+    {
+      "id": "daikon-radish",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "長而粗的白根、微綠肩部、細尾與葉冠符合常見日本大根，完整原食材而非已煮厚片；對角構圖端點仍有清楚白邊。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/daikon-radish-v1.png",
+          "sha256": "cdf47e0cfb8bbacb27e35d1dd9bc4408dcd15b8a1a29e6eff7c807b0340fa949",
+          "bytes": 1320235,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/daikon-radish-v1-c1b8aab7e672.webp",
+          "sha256": "c1b8aab7e672c50d8c4d7b6396f2edfaead99598bf663bca7a39a9e2e0e21112",
+          "bytes": 30904,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp"
+    },
+    {
+      "id": "egg",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "單顆橢圓帶殼褐色雞蛋，沒有盒裝或熟蛋切面限制泛食材概念；乾淨背景與克制陰影，留白充足。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/egg-v1.png",
+          "sha256": "3be22c1d348c9108d38c862a17d07ee183098327c546f7f8a52b5cd35c023643",
+          "bytes": 1363651,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/egg-v1-c014f21f1b36.webp",
+          "sha256": "c014f21f1b3674daff39f7292cdf66e7a7c881181d109f93763d5dc2050e94bf",
+          "bytes": 33208,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/egg-v1-c014f21f1b36.webp"
+    },
+    {
+      "id": "chikuwa",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "燒褐外皮及白魚漿肉的中空管，旁邊切片也有同一通孔，與香腸/實心魚糕/竹輪麩區分；兩端與切片完整，白邊清楚。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/chikuwa-v1.png",
+          "sha256": "77abafc0f5a451c42a986a15881dec56ef40949e9314313d97c1224d755423f2",
+          "bytes": 1534652,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/chikuwa-v1-adfcd55e054d.webp",
+          "sha256": "adfcd55e054d21de743279d0e166b061f3266197166dd0ad19195c68212f7823",
+          "bytes": 59080,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp"
+    },
+    {
+      "id": "hanpen",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "白色蓬鬆圓角方塊及切片的細微氣孔支持軟魚漿餅，非硬豆腐或大根；白背景靠輕陰影保持辨識，完整未貼邊。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/hanpen-v1.png",
+          "sha256": "604a95df558c1e122f289a548ea42638302f90a4a0a92ca61a93a0d9c74f9575",
+          "bytes": 1342045,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/hanpen-v1-ce2b653a5485.webp",
+          "sha256": "ce2b653a5485f61a507c4eea21e0db22dc81744e477067748e798aee7bb05151",
+          "bytes": 17638,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/hanpen-v1-ce2b653a5485.webp"
+    },
+    {
+      "id": "konjac",
+      "verdict": "pass",
+      "semanticIdentity": "pass",
+      "japaneseDailyLife": "pass",
+      "catalogStyle": "pass",
+      "usability": "pass",
+      "reason": "灰褐細點、略濕潤凝膠般的板塊與三角切片是常見板蒟蒻，非透明甜果凍/麵條/生芋；外形完整且留白清楚。",
+      "files": [
+        {
+          "role": "sourceFile",
+          "file": "output/winter-food-2026-10/images/source/konjac-v1.png",
+          "sha256": "9eed8e77a0aef03a3e06ada435d2e4dfe4114c4286bc44aed2fab7aea3db6634",
+          "bytes": 1464485,
+          "format": "PNG",
+          "width": 1254,
+          "height": 1254,
+          "visuallyViewed": true
+        },
+        {
+          "role": "localFile",
+          "file": "output/winter-food-2026-10/images/webp/konjac-v1-e0b8566c2f12.webp",
+          "sha256": "e0b8566c2f125258cdb6f688c65d2e7f5785d20b7c92c761800d3de7e775d974",
+          "bytes": 55844,
+          "format": "WEBP",
+          "width": 1200,
+          "height": 1200,
+          "visuallyViewed": true
+        }
+      ],
+      "storagePath": "winter-food-2026-10/konjac-v1-e0b8566c2f12.webp"
+    }
+  ],
+  "resolvedFindings": [
+    "Initial three main-food v1 PNGs had approximately2–3% horizontal padding. Exact revised v2 PNG/WebP pairs were viewed and generous white padding now passes.",
+    "Optional PNG/WebP edges judged visually rather than requiring arbitrary15% threshold; approximately8–10% on some objects remains clean, complete and well isolated."
+  ],
+  "initialReviewFile": "independent-review-images-initial-v1.json",
+  "references": [
+    "https://www.family.co.jp/goods/chukaman/0240161.html",
+    "https://www.kibun.co.jp/brand/hanpen/lineup/index.html",
+    "https://www.kibun.co.jp/brand/chikuwa/",
+    "https://www.konnyaku.or.jp/know/type/"
+  ],
+  "issues": [],
+  "productionWrites": 0
+}

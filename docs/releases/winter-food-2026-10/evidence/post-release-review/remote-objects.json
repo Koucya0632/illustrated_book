@@ -1,0 +1,3130 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-11-06T09:48:17.099618+00:00",
+  "objects": [
+    {
+      "key": "word-images|winter-food-2026-10/oden-v2-5fa7defa0bb8.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/oden-v2-5fa7defa0bb8.webp",
+      "bytes": 34898,
+      "sha256": "5fa7defa0bb86396e7790740060ce80eee20ed6c5588375e2f54482fd0dbcf57",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:09 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "34898",
+        "Connection": "close",
+        "ETag": "\"debd3b894778d4a5efed38fb11f659ce\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:45:56 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "132",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wVbPmwEOhuqX5xr1QyBRaBDzW7g5A6f6gsxGHh42DHxbT8ElTtux4C5bGI5laHG1coGlhV95jmMDkbIp%2BCwCX0gXsWdnm5Ul7tjcT7yAGg1d9%2FhP1tGCcFgVVxSFi5PJ3FQQ9%2FS7ZY3ekoreFJuz\"}]}",
+        "CF-RAY": "a5632e4e4ef5af2e-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-5fa7defa0bb86396e7790740060ce80eee20ed6c5588375e2f54482fd0dbcf57.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|oden/en-US/8021c7b5a5ed303e3b9c.mp3",
+      "url": "https://img.nexflow.team/word-audio/oden/en-US/8021c7b5a5ed303e3b9c.mp3",
+      "bytes": 4512,
+      "sha256": "8021c7b5a5ed303e3b9c42e152199de5e0604f7915425393c10c534833ba520c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:09 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4512",
+        "Connection": "close",
+        "ETag": "\"91238cf3090228429bcf02e15f78090b\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:45:56 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "132",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=VkxHhm9ybq1fJ%2Fehp3HDXjQkxPi2GYwVWli%2B7UGfkEC4EnzXlZ9KW1DMUC6osUXVHyO%2BjLg9uSdAns%2BAxC1woLHsoXhdbAFWVAGYuNGdchSLY4%2BEAzgPqKYoEdYn9bToLUqMhpW171UpK62AO9PV\"}]}",
+        "CF-RAY": "a5632e4fa8ccd758-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-8021c7b5a5ed303e3b9c42e152199de5e0604f7915425393c10c534833ba520c.mp3",
+      "frames": {
+        "frames": 47,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4512,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|oden/en-GB/f4dc0f08129741346669.mp3",
+      "url": "https://img.nexflow.team/word-audio/oden/en-GB/f4dc0f08129741346669.mp3",
+      "bytes": 4896,
+      "sha256": "f4dc0f081297413466691c226eda4dd818c04d93a4b854856dfa29919728c754",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:09 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4896",
+        "Connection": "close",
+        "ETag": "\"21a90c943ee3381153b3414b288d7583\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:45:57 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "131",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=mN4q9ZdDaKE84VhiiEZ7M8ehyax4F%2FLIRg9FFDOJagtH26FiPldtRssibbEJYnAsVEZmcxOt6Pkt0RrDPDXQTCMsIrzfzNgAYX%2BDGB%2BH7fTnk77Xv5Qcn5l%2BUviqtDZCeAF94eQbhdCtPmn6WmWz\"}]}",
+        "CF-RAY": "a5632e50d991a447-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-f4dc0f081297413466691c226eda4dd818c04d93a4b854856dfa29919728c754.mp3",
+      "frames": {
+        "frames": 51,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4896,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|oden/ja-JP/596025af639c86e592a7.mp3",
+      "url": "https://img.nexflow.team/word-audio/oden/ja-JP/596025af639c86e592a7.mp3",
+      "bytes": 3936,
+      "sha256": "596025af639c86e592a7fa56464ef173382834123504e8bcd6ce09efe2845236",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:09 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "3936",
+        "Connection": "close",
+        "ETag": "\"1d68eba6ae9dfae93957c815af5cdba4\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:45:58 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "131",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=WxO2FJsCYMpExs6tdcH3LuEzOErDVC9LzpJskW8cUXchh1RtfXvsSFe5Tbp4SeM%2BQQKPRlqHo%2B2qpgMwGb1nPQdtO5EU2a2nxpOgAYsHegzahiPZVvwbJd6A51Jq4xd%2FllCS5wAl02HXTjD0NBgq\"}]}",
+        "CF-RAY": "a5632e517b6eae80-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-596025af639c86e592a7fa56464ef173382834123504e8bcd6ce09efe2845236.mp3",
+      "frames": {
+        "frames": 41,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 3936,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3715/en-US/6b07599d18c3a49d12ae.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3715/en-US/6b07599d18c3a49d12ae.mp3",
+      "bytes": 7584,
+      "sha256": "6b07599d18c3a49d12aee3b4776a9d9969233211bedc6740210281775c56329c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:09 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7584",
+        "Connection": "close",
+        "ETag": "\"0ae677a193288e489d43866dbb97fe9e\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:45:58 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "130",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=fOSVLMTK3dCqRaCa0Uit8UPes%2Fg0vuuKLUBbe%2BLLNMfzsQRd07AFKIimZksCmkJjnT0xlrVvXQZniXQWULPn1EwT4U2mian%2FZrnUAYNsLHBTxnPTS3V2jzsTL9m8Fn4QLGRTeVwJX3oVrcfX34D1\"}]}",
+        "CF-RAY": "a5632e522f36f6c5-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-6b07599d18c3a49d12aee3b4776a9d9969233211bedc6740210281775c56329c.mp3",
+      "frames": {
+        "frames": 79,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7584,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3715/en-GB/88366355079904e3826b.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3715/en-GB/88366355079904e3826b.mp3",
+      "bytes": 8736,
+      "sha256": "88366355079904e3826b89f7182060c99553b5fd4fbd8bd3a16d1b9c8a2bbb92",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8736",
+        "Connection": "close",
+        "ETag": "\"1a1e33d4db4b0e3dfd9696f86573bfac\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:45:59 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "130",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0m75mqJmKtA0wsfXR5ni8leO6Dq1NmdJLX1R27J4OGRcB52Jv%2FPZhExa%2F%2BoqZozz9QEtZphSYVUjyz027wAICK9NX2CLrbW5YQcX6cFK8YAcBiCTz17g7B7TPTb05DsG4xIGQQfy3SouJRrH4aYc\"}]}",
+        "CF-RAY": "a5632e52cbb725f8-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-88366355079904e3826b89f7182060c99553b5fd4fbd8bd3a16d1b9c8a2bbb92.mp3",
+      "frames": {
+        "frames": 91,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8736,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3715/ja-JP/aad8c56978318d18eb47.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3715/ja-JP/aad8c56978318d18eb47.mp3",
+      "bytes": 11424,
+      "sha256": "aad8c56978318d18eb471be777b31bba75a4fe7e90dbb7f53d5366530fe04fce",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "11424",
+        "Connection": "close",
+        "ETag": "\"0d582b364963779be6bd2fd43c9afa6d\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:00 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "129",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RudLiuZ0%2FBKs19QA1VsMNHp7e6srdukIFhsz%2FAvlfJLj0dF2uEHc5bjJEsgsGt6aVldVViQWHL4BsAV8yYCNDCNJq5MnGrrVvl6zi6t77t%2FoTKxr9MItLhs%2B9ExvSNGzIiYjVwxk8Czabko4UQ2e\"}]}",
+        "CF-RAY": "a5632e5369da099a-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-aad8c56978318d18eb471be777b31bba75a4fe7e90dbb7f53d5366530fe04fce.mp3",
+      "frames": {
+        "frames": 119,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 11424,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3716/en-US/994f907f42fa406e4df4.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3716/en-US/994f907f42fa406e4df4.mp3",
+      "bytes": 16512,
+      "sha256": "994f907f42fa406e4df487ebadedb862a9f4f7d3bae550e2bc7bf1d179434420",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "16512",
+        "Connection": "close",
+        "ETag": "\"ee59e516f2a64982c2152922b4980e35\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:01 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "127",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=FjYI8QAC8Lib0CEtehp4NI44q6KIVhn%2BAx7DCIXfTp5NadTL4G9Wg9dFwQGHTEHgbY0ExM7Q2HvGh50QNqkgdoiLh9mK1Q0%2B1DQy%2FALSAQ6B8l91RTsLEQT9KwWPjxXoM7JTgOErX5csfJXIvPtO\"}]}",
+        "CF-RAY": "a5632e53ef80b9dd-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-994f907f42fa406e4df487ebadedb862a9f4f7d3bae550e2bc7bf1d179434420.mp3",
+      "frames": {
+        "frames": 172,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 16512,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3716/en-GB/fcb881c387a22c5df7f6.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3716/en-GB/fcb881c387a22c5df7f6.mp3",
+      "bytes": 14784,
+      "sha256": "fcb881c387a22c5df7f61cd40c05266d52d9c541f84b5387a68d556ce98c565a",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "14784",
+        "Connection": "close",
+        "ETag": "\"f8e0aa39e099bd375622d1afb4a4e5ea\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:03 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "125",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=idFNhUdjZ3dyF1KvEGh8hTb3%2F%2FsPvMZjOjF8SfWKz1j%2FbOvRf39Sox49murEZStZzpb%2BN%2FIJD96CXK3HEVzXI8b%2BNo%2FUFqNvdbv7sR1NmugufFTwxECXu3FzOcENOXyrDFAfaTl4WhjWkXDHuk%2Fk\"}]}",
+        "CF-RAY": "a5632e548d6457f4-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-fcb881c387a22c5df7f61cd40c05266d52d9c541f84b5387a68d556ce98c565a.mp3",
+      "frames": {
+        "frames": 154,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 14784,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3716/ja-JP/a632a2188c20e56b075a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3716/ja-JP/a632a2188c20e56b075a.mp3",
+      "bytes": 15072,
+      "sha256": "a632a2188c20e56b075a07dfcf06972a79ab08106817894ad19aab686789b904",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "15072",
+        "Connection": "close",
+        "ETag": "\"e7dcc5fb8ab7ddde4287e8303faff426\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:04 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "125",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=QO0%2F%2B4GhFwy28P9ftZK2Ms8hUzTiRMOeTJNGkEXucchV7zzH1W2KPFA5FlVjvqaiLHkus3kkr%2B9wbZfnvJQCCovw%2Baa6Fj%2BijRptEtlioIwz%2F2f96KESWEipXptcIMp%2BOE6LT%2FlDlROAXGqShNcq\"}]}",
+        "CF-RAY": "a5632e551a9e7c41-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-a632a2188c20e56b075a07dfcf06972a79ab08106817894ad19aab686789b904.mp3",
+      "frames": {
+        "frames": 157,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 15072,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp",
+      "bytes": 39018,
+      "sha256": "8822b71eab8e0ec914fbfe22824acccfe3f42576fdb8873fec386d9551140dac",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "39018",
+        "Connection": "close",
+        "ETag": "\"33da2be6c2773839a3f5cb2261811821\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:05 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "124",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ef6ev0%2BBmymlz0mhsgS0qprZ0YcW6wTfUWkLt6irDGLjmiL4E%2Fq1LIbVyUhq9QwohBrWxOc8lAz6qhFmi4udbHTYjKGX1QXIMgXXpDQQ0TqKIO6Wpxj7ulBXjXFlPM039IJ0OzE5Pl9sO%2BE%2BtZnu\"}]}",
+        "CF-RAY": "a5632e559f985db3-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-8822b71eab8e0ec914fbfe22824acccfe3f42576fdb8873fec386d9551140dac.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|steamed-meat-bun/en-US/fcdd1c630ce013e3135b.mp3",
+      "url": "https://img.nexflow.team/word-audio/steamed-meat-bun/en-US/fcdd1c630ce013e3135b.mp3",
+      "bytes": 4896,
+      "sha256": "fcdd1c630ce013e3135b18f0bfaaaa8297286490da9eede315b387656a9a7c34",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4896",
+        "Connection": "close",
+        "ETag": "\"176dd77ba265e1ae86ee6a77e0a43bd9\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:05 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "124",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=4hWoZbx0JZGpnwLSY5EfH2pbMUGC6wKXletC07HiccqC%2FjC9xxzEeQdqO8qEfFdy8yTwDvhZeBtSTeWAggCmNY8BD7lPpd2ZPJBl2tlpA79yX2t41v9iRlwyA%2F620xmpxLLuLDI%2FZ4frI6zaSV7h\"}]}",
+        "CF-RAY": "a5632e560c553018-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-fcdd1c630ce013e3135b18f0bfaaaa8297286490da9eede315b387656a9a7c34.mp3",
+      "frames": {
+        "frames": 51,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4896,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|steamed-meat-bun/en-GB/3f9ba9883cb29effbada.mp3",
+      "url": "https://img.nexflow.team/word-audio/steamed-meat-bun/en-GB/3f9ba9883cb29effbada.mp3",
+      "bytes": 5664,
+      "sha256": "3f9ba9883cb29effbadab8a152731a166cb8fc0e7acb375d884a82af9d7bbf5c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "5664",
+        "Connection": "close",
+        "ETag": "\"74125a6a88971fc9c0c3aed90be64dc7\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:07 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "123",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7VHrAenSAQaHHfCgundtfOWCHpOPoJgPOWqqtXBM9j4w5VCHfdsvd48WOcvMo3x%2BtnW4t8steja8AQsqeWg0PDPHeeVFrjFujHKfRPHCs5MPhr8Kl%2BSGWW7uX2ahqgCIG8tP9Hni2Cm3aKMDNhve\"}]}",
+        "CF-RAY": "a5632e568d18d75c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-3f9ba9883cb29effbadab8a152731a166cb8fc0e7acb375d884a82af9d7bbf5c.mp3",
+      "frames": {
+        "frames": 59,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 5664,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|steamed-meat-bun/ja-JP/5e043f3ba65c451ee7a4.mp3",
+      "url": "https://img.nexflow.team/word-audio/steamed-meat-bun/ja-JP/5e043f3ba65c451ee7a4.mp3",
+      "bytes": 4896,
+      "sha256": "5e043f3ba65c451ee7a41dae09bd155350fbf56452806abe7aa24d7db990b00a",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4896",
+        "Connection": "close",
+        "ETag": "\"2ea60181f0fcd55270d7488d445aac8f\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:07 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "122",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RoWAJm%2FV2%2FOA19mBKGzmWz1Mb005CuoIOX3IwlcIQc3rA0UECe0Xg4wdScYNbTBB9DYL%2B2Tbg0krNPfy5380rHFDcM9XztqKyhXmZvLP%2Fa%2FhxOzD5aL0o8NpD0wIpc%2FToGK3HtRKsl8l4UtgZCdP\"}]}",
+        "CF-RAY": "a5632e571d06f831-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-5e043f3ba65c451ee7a41dae09bd155350fbf56452806abe7aa24d7db990b00a.mp3",
+      "frames": {
+        "frames": 51,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4896,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3717/en-US/bb547eb88d6ffe0235eb.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3717/en-US/bb547eb88d6ffe0235eb.mp3",
+      "bytes": 8544,
+      "sha256": "bb547eb88d6ffe0235ebddc06823c1ca9fa4c1d38e4e26115d23fa4113c9713f",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8544",
+        "Connection": "close",
+        "ETag": "\"c558f2e6774217d1bf1c6d5036c8b85c\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:09 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "121",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=QQjysmxyd9LztX1RR9VYf8WaqbL2W8CZNGSO4Rj6%2BEVSj9tiQkZQupP4s8BoeexgwHX0p%2BHAwQJuaSjcY9uQvvaC1lWXbOuQ6uWpwAF45JJPBOqiAqMjql%2FO5%2FZE6lBjG9pMPjK0nlv2v1%2BLtO8z\"}]}",
+        "CF-RAY": "a5632e5799bdf393-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-bb547eb88d6ffe0235ebddc06823c1ca9fa4c1d38e4e26115d23fa4113c9713f.mp3",
+      "frames": {
+        "frames": 89,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8544,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3717/en-GB/a594e954a22575299479.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3717/en-GB/a594e954a22575299479.mp3",
+      "bytes": 12576,
+      "sha256": "a594e954a225752994799fbd1577c933584519451848439402d0d466a2d09a41",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:10 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "12576",
+        "Connection": "close",
+        "ETag": "\"fec47eb6b6a1e65c42a2ac05b13eaaed\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:09 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "121",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=w5OHfq5sdW%2FrbJQVRfWa%2B9OqvypmFNsVKor2stZZfENtnKAjoiAh2hDD6S8P%2BZp9y1CWqpVD6gEg3XPMSk%2FDwalh85sHQQya2P33j6dV4RhurkGN6qeZIpuR%2BLWAA0QdchIENGZyVyNPlsTfNUvj\"}]}",
+        "CF-RAY": "a5632e581f73d4f0-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-a594e954a225752994799fbd1577c933584519451848439402d0d466a2d09a41.mp3",
+      "frames": {
+        "frames": 131,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 12576,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3717/ja-JP/e39f67066595a5a701ed.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3717/ja-JP/e39f67066595a5a701ed.mp3",
+      "bytes": 8544,
+      "sha256": "e39f67066595a5a701ed9c99a4cbd7f4a2454e94d4f60306654ebe54952944db",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8544",
+        "Connection": "close",
+        "ETag": "\"d9872d4d5f42106dc8e3472a936a807e\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:09 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "120",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ETgbf9f8kPEsGaN%2FvqOowRDquTVuk4VdDqLnM0DygzcjKFd%2FwE6rc%2Fi8NLef7cyOxZCaRGHw03QTiha1pRKPhZrsnL8GwM6ktXA9GDF9DXsRhm5QftvdITKVnQF7XDwli7f%2FSUoIv%2B1xkynt9xx2\"}]}",
+        "CF-RAY": "a5632e58bd04c0c6-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-e39f67066595a5a701ed9c99a4cbd7f4a2454e94d4f60306654ebe54952944db.mp3",
+      "frames": {
+        "frames": 89,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8544,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3718/en-US/7f59669019ccaf2ab0a2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3718/en-US/7f59669019ccaf2ab0a2.mp3",
+      "bytes": 19392,
+      "sha256": "7f59669019ccaf2ab0a269aa36fff44b1389c6cc4c0dd0819842e1f7f8fffb96",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "19392",
+        "Connection": "close",
+        "ETag": "\"fa7427a7f6b9a04c8451b81775f5f853\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:10 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "120",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=eWgXFGpaHts0U%2BcZld4yL645NH0mdjIzegfXaOfgHg2ZRP09d0KWNol%2BLTgzVDjOeMT7FQTrQFtmP4OPNE1iO5NOIeThcBSqWqLPAwWCD2iLzHakt2JIeB69PWpE0L%2F5NIVESso9EazorD%2FWTRaB\"}]}",
+        "CF-RAY": "a5632e593aa9b23f-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-7f59669019ccaf2ab0a269aa36fff44b1389c6cc4c0dd0819842e1f7f8fffb96.mp3",
+      "frames": {
+        "frames": 202,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 19392,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3718/en-GB/ca4b574fb69bcd1ea796.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3718/en-GB/ca4b574fb69bcd1ea796.mp3",
+      "bytes": 17376,
+      "sha256": "ca4b574fb69bcd1ea796350b4c144b4ec46a57033cd001dbf757d058f14214c1",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "17376",
+        "Connection": "close",
+        "ETag": "\"50ced8acf699d4faaf8c22eacb15028e\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:10 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "119",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=3dt9PBjsUHUxVDcV1C1xNYfIIZn1SBWqycCKVzNBE4F%2F3ipQMPEJk00V%2FFpBXFVFfKWgyMhO8w0QZvxxKRV8J7WHH2RCbhyh17UdTgrfYs7W%2FB0Ub1vmqvg%2BZcQyiSn0%2FJ%2FyMWcrWHMOyKO0a%2BR6\"}]}",
+        "CF-RAY": "a5632e59d9052848-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-ca4b574fb69bcd1ea796350b4c144b4ec46a57033cd001dbf757d058f14214c1.mp3",
+      "frames": {
+        "frames": 181,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17376,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3718/ja-JP/8d738111a3ba19beac9c.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3718/ja-JP/8d738111a3ba19beac9c.mp3",
+      "bytes": 20352,
+      "sha256": "8d738111a3ba19beac9c456b9433c19390e86a6dcc9880254b5a1ce221988a64",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "20352",
+        "Connection": "close",
+        "ETag": "\"b3af57a6139befe368a6e211b48597b3\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:11 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "119",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=lTHgXeeSPBug7azc295qLVtW%2B0QsKh%2BX3DfGqWHjQFd5QRhUFaoXzWUgyjIrweBZr4y6qOpa8ujwGk41PPOWQ772AB0%2F3t2I4nlAQ%2Fn40f%2FWR4%2BXroygEOt9WWWco94%2B3RX6RRK%2FA63aFyZFsC2L\"}]}",
+        "CF-RAY": "a5632e5a5dd3d29b-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-8d738111a3ba19beac9c456b9433c19390e86a6dcc9880254b5a1ce221988a64.mp3",
+      "frames": {
+        "frames": 212,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 20352,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+      "bytes": 43028,
+      "sha256": "ed5e9d35dd9390c9586f383c9ce016c110a38c58a54ca40ee86ad6ad83e73d22",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "43028",
+        "Connection": "close",
+        "ETag": "\"2811a63cc8afa4251f1a4f02268695af\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:12 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "119",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Z%2FQAd82kfNi26R%2FX7nvIfwZledvY3oYOD6v7YhiPeXyaou%2F%2FbUXrOo6M10le67GNBzQusDxO%2B0w%2FmxduyTdpEp5oxe%2FNYyXnhjOK5n8V1A4ie3c2DskT8H5PB0S%2Flli68uwWafJYxri%2FNyq%2FDK2O\"}]}",
+        "CF-RAY": "a5632e5af922b5fb-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-ed5e9d35dd9390c9586f383c9ce016c110a38c58a54ca40ee86ad6ad83e73d22.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|roasted-sweet-potato/en-US/0042cda1adec9773dd31.mp3",
+      "url": "https://img.nexflow.team/word-audio/roasted-sweet-potato/en-US/0042cda1adec9773dd31.mp3",
+      "bytes": 7296,
+      "sha256": "0042cda1adec9773dd31d5a2ed03616ed229967ea890ee69046057149d4c336c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7296",
+        "Connection": "close",
+        "ETag": "\"37a0bbd4e5644b550c1ef713e940458f\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:12 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "118",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=co4h5uqgPl4WMBsVYuAgAQl9gcnpfNnd5%2FhBSqxW4wNS2feyNolBzAPP1AgKsLSPjUsGQ%2BKIbSsGLpWLb8OfQ5tiB9tGXSC4GM5bgHXhu%2BKEoCOyrbRXZ4VvYbTo7TbWWSWhtzz8x%2BtUsHnfdNf2\"}]}",
+        "CF-RAY": "a5632e5b88bbf728-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-0042cda1adec9773dd31d5a2ed03616ed229967ea890ee69046057149d4c336c.mp3",
+      "frames": {
+        "frames": 76,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7296,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|roasted-sweet-potato/en-GB/5b69f32abe23860332fc.mp3",
+      "url": "https://img.nexflow.team/word-audio/roasted-sweet-potato/en-GB/5b69f32abe23860332fc.mp3",
+      "bytes": 8064,
+      "sha256": "5b69f32abe23860332fca248d5b58b579007ea89a906a05cc413aad0edb9bdcd",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8064",
+        "Connection": "close",
+        "ETag": "\"8f674cfaed4e59dc672977e1ee964a7f\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:13 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "118",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=T1diQXP5Wram%2FdpAPbdS2yI7KjG%2BXz4pRD9mbotcL8%2Fr%2FopNx0OQ3CB8rltMtQUgChiE%2BvSh7ucxcyiaSLThDwWgJDxjzvocMh%2FRA%2FxU2aMkzh%2FiFmlVaBhXrQn6F3F%2FvKuPhawwIm%2BEqFZzmHlo\"}]}",
+        "CF-RAY": "a5632e5c0b4bfe4f-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-5b69f32abe23860332fca248d5b58b579007ea89a906a05cc413aad0edb9bdcd.mp3",
+      "frames": {
+        "frames": 84,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8064,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|roasted-sweet-potato/ja-JP/fba7c41d5580413f7b54.mp3",
+      "url": "https://img.nexflow.team/word-audio/roasted-sweet-potato/ja-JP/fba7c41d5580413f7b54.mp3",
+      "bytes": 4704,
+      "sha256": "fba7c41d5580413f7b54a0923f3c720e4aa86459953dffe92588eaf0d0f5b6e5",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4704",
+        "Connection": "close",
+        "ETag": "\"915f2a52e48a867e2b9cd28d7fc08107\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:13 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "117",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=07GFuEXtayupuTuN97fTu5LtZPjPcpYCTthsJ%2FAKV4BbvVnw%2FUTuWaKN3%2FdC590%2BY%2BAVXONg0We4g1st8j8Zcs%2FygxXtBITjDPFuiAJMYvPlfy%2BuLZr3smYbiJfBuXxDoCeJjQgHLXa0uGo5U34X\"}]}",
+        "CF-RAY": "a5632e5ca89eaf58-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-fba7c41d5580413f7b54a0923f3c720e4aa86459953dffe92588eaf0d0f5b6e5.mp3",
+      "frames": {
+        "frames": 49,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4704,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3719/en-US/7d0d1fd5cdb35a7de793.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3719/en-US/7d0d1fd5cdb35a7de793.mp3",
+      "bytes": 12864,
+      "sha256": "7d0d1fd5cdb35a7de7933ae20af81d7bdb285b7a59ba2a4e3ec445d8e52f9848",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "12864",
+        "Connection": "close",
+        "ETag": "\"687db47cd652e5dce1d38a2362203481\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:14 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "117",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=V57NrSo%2BjP5gGTwVaPFqPD8or5%2B5uLBtGgCkO6TRhZWGygJdRmYlE6xSe2dh8JmOx2OajlllELC0UAQr6OtsR1nFqPm5UjGG8tycbru52KZXjcReZ%2FKhsmribqk6uz62f29r8TKj8iVc3tYEik9K\"}]}",
+        "CF-RAY": "a5632e5d3807709d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-7d0d1fd5cdb35a7de7933ae20af81d7bdb285b7a59ba2a4e3ec445d8e52f9848.mp3",
+      "frames": {
+        "frames": 134,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 12864,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3719/en-GB/31fd2ac4b90575ad3af0.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3719/en-GB/31fd2ac4b90575ad3af0.mp3",
+      "bytes": 11712,
+      "sha256": "31fd2ac4b90575ad3af026e9c6473da2c5c496973c0ac19c403467759a82cd17",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "11712",
+        "Connection": "close",
+        "ETag": "\"005b675d60d8f7ab9e92c23f395d5439\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:14 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "116",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=j6ZliU9VsVlI2llv9Hlw%2FjRl9FyJClqeWzO3h%2BRtBG8It3okmySm8MfjMBwB41q%2BkzpqDb20NykroLrjW6GLkfRb53spxkWMSLSRA7yxM%2BDJymi2ngl7A13vNE6et8KYzEXyzQWoby5LLu%2FxxWOS\"}]}",
+        "CF-RAY": "a5632e5de9d278c1-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-31fd2ac4b90575ad3af026e9c6473da2c5c496973c0ac19c403467759a82cd17.mp3",
+      "frames": {
+        "frames": 122,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 11712,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3719/ja-JP/47b0e5e4b29555974732.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3719/ja-JP/47b0e5e4b29555974732.mp3",
+      "bytes": 9792,
+      "sha256": "47b0e5e4b29555974732f74a58bf2490295208e358bb6b5aa1eccb22a2ab26c2",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:11 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9792",
+        "Connection": "close",
+        "ETag": "\"37fb28d08efe4ab863e8842c6a5f3fda\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:16 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "115",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=BSglCJZIcEKAooaNK2uRJtapivG9NcWrOdFUeBDyYyABuZ%2BUDlgfG5gktGu2qlXaHN9J4bQkVXujcsm%2F7eNQ2LB6XF0kA8lZdfAruf2d5YrYwQapYtlDsSoEE96KpT4r5h8wdYggkVFrwQLq0%2Fnx\"}]}",
+        "CF-RAY": "a5632e5e7dba4324-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-47b0e5e4b29555974732f74a58bf2490295208e358bb6b5aa1eccb22a2ab26c2.mp3",
+      "frames": {
+        "frames": 102,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9792,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3720/en-US/8a1fea6df1e74fb0910c.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3720/en-US/8a1fea6df1e74fb0910c.mp3",
+      "bytes": 19296,
+      "sha256": "8a1fea6df1e74fb0910c73af039c39fab03800392aa06cd4f7b583d4e20177bb",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "19296",
+        "Connection": "close",
+        "ETag": "\"3ae817f0b775f0657f8857d48895c011\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:17 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "114",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=qWTy1bCd%2FBOAbi%2BJgt6A98E8wzDeP3aNZTiQqeVfFBtmIcFEP%2FGbG45WZ%2FrXZLyZvlzd9O758MYjB1SV%2BFDar9rXDKaCWprk%2B19%2B%2F%2BW7nDVTfPTe%2FNhFaD8DPyqQWCSdYs%2FOi994v0VXXtyKh98u\"}]}",
+        "CF-RAY": "a5632e5f0db3067d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-8a1fea6df1e74fb0910c73af039c39fab03800392aa06cd4f7b583d4e20177bb.mp3",
+      "frames": {
+        "frames": 201,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 19296,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3720/en-GB/a6a8f2a34058a786fd67.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3720/en-GB/a6a8f2a34058a786fd67.mp3",
+      "bytes": 16032,
+      "sha256": "a6a8f2a34058a786fd67388f26e5f5ea014f9ff57f27b04f9368c3f87816d846",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "16032",
+        "Connection": "close",
+        "ETag": "\"8e7760cb87860763a41860f292bd0da3\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:17 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "114",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=WKZKd78hGz9ccn%2BjGotVP1al6JGGeGG2Pi407J%2BM7b%2BPL8b2Dt9WpAx5gScNa5H573T72qBwZsii5lLxShKMidQxK7NYPSkiQ1HGBKRpV%2B5rFURn7s7XBIffdDl0Oyrbid5i%2FP9enAwyZiOjgMtd\"}]}",
+        "CF-RAY": "a5632e5fab37915d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-a6a8f2a34058a786fd67388f26e5f5ea014f9ff57f27b04f9368c3f87816d846.mp3",
+      "frames": {
+        "frames": 167,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 16032,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3720/ja-JP/42741a5e5e8584155fb3.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3720/ja-JP/42741a5e5e8584155fb3.mp3",
+      "bytes": 18816,
+      "sha256": "42741a5e5e8584155fb3c723de7390e093c5a48131dfc44ad8b3621d3e818110",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "18816",
+        "Connection": "close",
+        "ETag": "\"8fd751c3e462d52f093f1fd92eb1b88b\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:18 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "113",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=3yW7f4WoJjenzLoBy80X0A8wtclmSrlmvlbqw7vhy6EE%2BoIFaeEwBA8U76OSvlSUcqg95XCFX9%2Fx8ErWPxwmPseJv710JrV2Qs8U3kHtf0K4AqltlLo6rlkh%2FhpRjZrY6f%2Bvfq4oi6KeFO7SyS%2Fb\"}]}",
+        "CF-RAY": "a5632e604ad7c582-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-42741a5e5e8584155fb3c723de7390e093c5a48131dfc44ad8b3621d3e818110.mp3",
+      "frames": {
+        "frames": 196,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 18816,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp",
+      "bytes": 30904,
+      "sha256": "c1b8aab7e672c50d8c4d7b6396f2edfaead99598bf663bca7a39a9e2e0e21112",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "30904",
+        "Connection": "close",
+        "ETag": "\"6a6bc418f6f545671cfe59f00601eabc\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:18 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "113",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=3uBUBpDpY22TykvS9edioPZSSA4Hyv4hCV4McYGe782Ezi2GbjEBpT1XV0rd483rb8xRHjDCuwS7AriAhtJKY%2F45uKbI1Gv83rRHgJDgf%2BYSeHDZ5g186K5fU6fMgiHHUPqFpsy3All6FFVkem4z\"}]}",
+        "CF-RAY": "a5632e60dcbef9b0-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c1b8aab7e672c50d8c4d7b6396f2edfaead99598bf663bca7a39a9e2e0e21112.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|daikon-radish/en-US/2a94a091101b2e121b2d.mp3",
+      "url": "https://img.nexflow.team/word-audio/daikon-radish/en-US/2a94a091101b2e121b2d.mp3",
+      "bytes": 6816,
+      "sha256": "2a94a091101b2e121b2db962960740c245ea8b01a25787e28b1fceb240977524",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "6816",
+        "Connection": "close",
+        "ETag": "\"ce5f64f6fae3262a5b881571c41d3e11\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:19 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "112",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=1fyehBkuyI4KAtXsHEpSvEHYDB%2F38yQnFYoHQbYwVsbCIEJSV4MRzs1r2IODBqFPAD%2FnDA1vs7gYU07OPSrbbKrCCslPgyO58MmWVmY3HVIm0QcljwFUUvgRD%2Fv%2FzdYDI4FbemgbozsmYW7TePeM\"}]}",
+        "CF-RAY": "a5632e614de3d5bd-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-2a94a091101b2e121b2db962960740c245ea8b01a25787e28b1fceb240977524.mp3",
+      "frames": {
+        "frames": 71,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6816,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|daikon-radish/en-GB/88d57f530da35255cca7.mp3",
+      "url": "https://img.nexflow.team/word-audio/daikon-radish/en-GB/88d57f530da35255cca7.mp3",
+      "bytes": 4512,
+      "sha256": "88d57f530da35255cca72bfded0f8e1d116942dfe2729fd6e148276e8ea182b2",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4512",
+        "Connection": "close",
+        "ETag": "\"aad7a0f1aa6b66c3670f4cc651fb1a8c\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:21 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "111",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=NSgveHyEkX%2FYwzcWItRyRl%2BWRzGUVDEh8pWp56WNRkdkKvKvXqAd0Y0hfDNAXGbx8sPL7%2FIVRzNm4XPoiiMfTiSuPkJ7wz55H2soFKffcZmKTmM%2BJn1BUbGWrcOHmPab%2F7yzs3KAl5fySEsM2RC6\"}]}",
+        "CF-RAY": "a5632e61dbf1d861-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-88d57f530da35255cca72bfded0f8e1d116942dfe2729fd6e148276e8ea182b2.mp3",
+      "frames": {
+        "frames": 47,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4512,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|daikon-radish/ja-JP/00e57429efbf8dcf1acc.mp3",
+      "url": "https://img.nexflow.team/word-audio/daikon-radish/ja-JP/00e57429efbf8dcf1acc.mp3",
+      "bytes": 6144,
+      "sha256": "00e57429efbf8dcf1acc23114c30c43e9e40474cfff03d61d437582185129345",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "6144",
+        "Connection": "close",
+        "ETag": "\"4e5a3b2a4e11696c57933e4c3cb7ed1a\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:21 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "110",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2FjVM8UV2kZM%2FFbhUBzhl%2BCsPwIdUV%2BwzfRwcCpDILcs7PWPUwspKpRH6fSNDFhLk%2BlOPtQHjwXSwSvv%2B4W7lqL0gEv%2BgYXzFQcYywHle102k%2Fkwmy0beum5CyJ23igKFyjF4Bk9djKSNsdNKSQ9I\"}]}",
+        "CF-RAY": "a5632e625a501ca8-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-00e57429efbf8dcf1acc23114c30c43e9e40474cfff03d61d437582185129345.mp3",
+      "frames": {
+        "frames": 64,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6144,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3721/en-US/cc2aabaeb94373c3d8a3.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3721/en-US/cc2aabaeb94373c3d8a3.mp3",
+      "bytes": 11232,
+      "sha256": "cc2aabaeb94373c3d8a3aa4a61b4fb678ecaed105cbbb21027d936e72b94746c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "11232",
+        "Connection": "close",
+        "ETag": "\"9da8f2e3e18415b5702d062a6c4d2b08\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:22 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "110",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=aGG5gnqWWh8nVlEMqMQS%2Fj%2Bsg%2BaFs94oU09mkq3rjpSw%2FUvXsHkvM1bcwszhEoIvTMnY7zFv7Gcjh6bAU57w1Yf8nin%2BmLEOThudJ0ZVk7URJWXNKk0tKcFCK8wY5Rdk%2FmcJcXVxHBbDhAp%2BLsdr\"}]}",
+        "CF-RAY": "a5632e62f8a67364-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-cc2aabaeb94373c3d8a3aa4a61b4fb678ecaed105cbbb21027d936e72b94746c.mp3",
+      "frames": {
+        "frames": 117,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 11232,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3721/en-GB/d258293675778e7ef844.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3721/en-GB/d258293675778e7ef844.mp3",
+      "bytes": 12672,
+      "sha256": "d258293675778e7ef8447948ad53ddb9dbe6e9890373ce3f9e1fc06c55e6863b",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "12672",
+        "Connection": "close",
+        "ETag": "\"ec472a0706a672264684f3af77aecfae\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:23 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "109",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=9S%2B3D9kLF3HKj822KsHqQ4xG%2B7wU0zwoX2AgpTKIyql0jmlNbAD4WLa%2Fl3zQ1CvoeAAInAGrA4n%2Fw5ypiqCr%2Fx5vq6C2pbWw79lDvICtOouJ43UaHAnkx0tCOgJjRwajo2y1%2FpulRh%2BNh0FiuX0B\"}]}",
+        "CF-RAY": "a5632e63aad1ca53-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-d258293675778e7ef8447948ad53ddb9dbe6e9890373ce3f9e1fc06c55e6863b.mp3",
+      "frames": {
+        "frames": 132,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 12672,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3721/ja-JP/24c103f196fe9c4e1e5e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3721/ja-JP/24c103f196fe9c4e1e5e.mp3",
+      "bytes": 9984,
+      "sha256": "24c103f196fe9c4e1e5ea5d410c836c2df8bcde0cd586227ba078fb755e69e61",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:12 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9984",
+        "Connection": "close",
+        "ETag": "\"a5f5f6d712cb8d2b5b0450b229728f2a\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:23 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "108",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Ewn7lJEJRg4em%2F%2FnvzLfjyWJho%2FuYjIR0vz0G6%2F1QibrY7S21LRSmpBqg%2BGZ7e5CMc0OZygzLvVZjczIYAS559sDA5Kuofa%2FkEzKEKHg936Gd7l9ykoyVJ2D951qjy7XMBF4CUJI97eyXCFUXhiq\"}]}",
+        "CF-RAY": "a5632e642e56d844-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-24c103f196fe9c4e1e5ea5d410c836c2df8bcde0cd586227ba078fb755e69e61.mp3",
+      "frames": {
+        "frames": 104,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9984,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3722/en-US/ed4c5ab6111c69529397.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3722/en-US/ed4c5ab6111c69529397.mp3",
+      "bytes": 14784,
+      "sha256": "ed4c5ab6111c69529397d17f5ed18b3fc58851db9d27a79b408f9a6d285a00bd",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "14784",
+        "Connection": "close",
+        "ETag": "\"20e6e943575d4bf6846cbf520996149b\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:24 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "108",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=jOiXuMeh8w0D5K%2BhNe4BfPxvQawfXD9Hn07P9ql%2B428Bx%2B4fjvWq3N%2BgVBsTuWYezko5ODmGYWEQ1l8igkVFRXc9Y9VlBFReasTdCJ5dbWofI8lHe87V0WjBT9ad1GxyOCWUrEVlePhPneWXjH7V\"}]}",
+        "CF-RAY": "a5632e653a9caa93-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-ed4c5ab6111c69529397d17f5ed18b3fc58851db9d27a79b408f9a6d285a00bd.mp3",
+      "frames": {
+        "frames": 154,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 14784,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3722/en-GB/173f644f86864e565049.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3722/en-GB/173f644f86864e565049.mp3",
+      "bytes": 15552,
+      "sha256": "173f644f86864e565049ed88787f75a24d9d071929bc583d94aee62d3b717979",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "15552",
+        "Connection": "close",
+        "ETag": "\"b85ae03e360dd9adb6ad6aea16eeca05\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:24 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "107",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=aGFAgldCJ2AzQBtWxpS%2FwefDOdP4ts0UhTzFRqXgc8RclGn%2BiyYulgSEhpoPG27Q4UXnYF5Zo30nx1FMN7Qj1x8V%2BqwrBUX%2FT28VpbkW0VKEVfMz9nuyL8bKIqaj8CKATG7izixvqHLdVimuXSBN\"}]}",
+        "CF-RAY": "a5632e65ed4bd778-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-173f644f86864e565049ed88787f75a24d9d071929bc583d94aee62d3b717979.mp3",
+      "frames": {
+        "frames": 162,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 15552,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3722/ja-JP/bf7afc6663a75d44ffa3.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3722/ja-JP/bf7afc6663a75d44ffa3.mp3",
+      "bytes": 13536,
+      "sha256": "bf7afc6663a75d44ffa34f5b352869b7e95251f5f0dcad93dadc119b6ee8bdcd",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "13536",
+        "Connection": "close",
+        "ETag": "\"3c73b013c57e7273268ae8b8be1a3f62\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:25 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "107",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=PjM89edQa%2BCcUXFksfLpMlSibupHsERTo49sx4oJNJPM7X%2FEW7i8arrLEs9CCz4FmQuqAN4ZQi%2BsRNichAuMpXaIl10YWzjjYGfUKwoI9x07rvIGK4hiyH5v22Cc%2BOOvH2nGjZ5eWGLm%2BHcA8Ued\"}]}",
+        "CF-RAY": "a5632e669fc2acf2-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-bf7afc6663a75d44ffa34f5b352869b7e95251f5f0dcad93dadc119b6ee8bdcd.mp3",
+      "frames": {
+        "frames": 141,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 13536,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/egg-v1-c014f21f1b36.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/egg-v1-c014f21f1b36.webp",
+      "bytes": 33208,
+      "sha256": "c014f21f1b3674daff39f7292cdf66e7a7c881181d109f93763d5dc2050e94bf",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "33208",
+        "Connection": "close",
+        "ETag": "\"de17ffda963bf7e7bb999445eca32e62\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:26 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "106",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=yL4gV2GtHGilkyPSJ49%2FVA89OBxK2j%2B1sk9tn2hzyTd43H3090LMZejMlgqHKMkdNJ3bt5UbVUo2WcqkXrshBT14w1kgj900tL%2FI4p%2FgaIVlzbUfaBILbk4CXXAIV4oH5c9pPds6d3sfAN%2FbFuVv\"}]}",
+        "CF-RAY": "a5632e673adcdb4c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c014f21f1b3674daff39f7292cdf66e7a7c881181d109f93763d5dc2050e94bf.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|egg/en-US/0e31cb8abc753c263d45.mp3",
+      "url": "https://img.nexflow.team/word-audio/egg/en-US/0e31cb8abc753c263d45.mp3",
+      "bytes": 3456,
+      "sha256": "0e31cb8abc753c263d4580f0e2d06222ea8c685242f17d9efc193b02d650c698",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "3456",
+        "Connection": "close",
+        "ETag": "\"be4d3c3ce4118de3c9866cce17718a22\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:26 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "106",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=DEHhUa9LjljSUpZf5B%2F5LY8oWd2Phq7U56o%2BQMY77rPnTEoZDYQ5zoRf8AFJy9pD3ndQk658yfgujRFGleI3xYBP00Q020Qvb8r8L7bVEw0HefsSfnBwo5H2WTSnuv46FfVqNsjwgQ%2FJ5CKH3h8Q\"}]}",
+        "CF-RAY": "a5632e67ce551022-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-0e31cb8abc753c263d4580f0e2d06222ea8c685242f17d9efc193b02d650c698.mp3",
+      "frames": {
+        "frames": 36,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 3456,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|egg/en-GB/d626c2483ce85fb2d52d.mp3",
+      "url": "https://img.nexflow.team/word-audio/egg/en-GB/d626c2483ce85fb2d52d.mp3",
+      "bytes": 2112,
+      "sha256": "d626c2483ce85fb2d52d113d3b438a4cf09eff4c4be53f06691f095315f178c7",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "2112",
+        "Connection": "close",
+        "ETag": "\"6536884cc2af9267e4a2befe694d9bfc\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:27 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "105",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=l3VU97YiNegG2NVBsTIPUwMGzAjHC15tcCIJfxKVJhRgug4iTpBqwRuErDBUoA0BruAuWLRSjzXffXCzYmS6SxIHeQuu5KmNCWwknHdsAHjGuaBhyaczfVRcgFaQ5W44UONIL%2Fu6QS8zz6qyKA1%2B\"}]}",
+        "CF-RAY": "a5632e684f1db00c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-d626c2483ce85fb2d52d113d3b438a4cf09eff4c4be53f06691f095315f178c7.mp3",
+      "frames": {
+        "frames": 22,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 2112,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|egg/ja-JP/7db3da20a0ce31a9ce0c.mp3",
+      "url": "https://img.nexflow.team/word-audio/egg/ja-JP/7db3da20a0ce31a9ce0c.mp3",
+      "bytes": 4992,
+      "sha256": "7db3da20a0ce31a9ce0c0c096a1d1fd24827ce7c1fdddfc94549d3fac434ca3c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4992",
+        "Connection": "close",
+        "ETag": "\"a430c699666a2ddc14c4a429e69c4b37\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:28 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "105",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=2RkzqpNcvRgU03V4NeCyLHV0Z7EWAY8kiOca0Df8F09xoRMhb2V4OYrvOOaJMteKS0cNDO%2BChYfQGbyLyO73YqkITW%2Bozg40Y%2Bq6Y3djxBhrHxeQl5GhS8%2BHPEJUSOEFDKqfRYVP799ZpPYYhxEk\"}]}",
+        "CF-RAY": "a5632e690a8dd790-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-7db3da20a0ce31a9ce0c0c096a1d1fd24827ce7c1fdddfc94549d3fac434ca3c.mp3",
+      "frames": {
+        "frames": 52,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4992,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3723/en-US/13610f6753810f74d393.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3723/en-US/13610f6753810f74d393.mp3",
+      "bytes": 8064,
+      "sha256": "13610f6753810f74d3934219407e7a1736bcee4fc7ecb762e77fe4f5b54de457",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8064",
+        "Connection": "close",
+        "ETag": "\"bfa403b78f97291118adef4592d46cf0\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:28 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "104",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=uKjAc69bGypdzwnf2%2FbcwSqk6jOKwShWu%2B%2FOo6ncl6%2BoyPkJpH6me4u9Ki6AZV9EAhLLphJUHAgj4JdbdxEqzhBYmYF%2FfTpmF1S7Dc%2BfHeKpOcopmTH8EgMeBAik1xZTglWaUyCTn0PtPAuYbKge\"}]}",
+        "CF-RAY": "a5632e69ad20d55b-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-13610f6753810f74d3934219407e7a1736bcee4fc7ecb762e77fe4f5b54de457.mp3",
+      "frames": {
+        "frames": 84,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8064,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3723/en-GB/2aae4ce5e8c537c23646.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3723/en-GB/2aae4ce5e8c537c23646.mp3",
+      "bytes": 6912,
+      "sha256": "2aae4ce5e8c537c23646c6a9cc5a0d68837bd127f01e666e5fb8bb80fa9d45c8",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "6912",
+        "Connection": "close",
+        "ETag": "\"bb3b2146d5e28df432c107187c238311\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:29 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "104",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=JbO6sry37fNQ6oflZUST6e6Cr%2FNqG2qmig%2BndgvbaqKZX0oHR4UHA1Mmnzun44TyZ242xFwjKgMyUSutFNh5WyYjWJZN5%2B8Bwiek1EHLUHWNiS9lKV7yPm3LPOCKJN73a78VK28wyYJmSdtwGPYP\"}]}",
+        "CF-RAY": "a5632e6a6e9a3868-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-2aae4ce5e8c537c23646c6a9cc5a0d68837bd127f01e666e5fb8bb80fa9d45c8.mp3",
+      "frames": {
+        "frames": 72,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6912,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3723/ja-JP/4a8ed6396eb8cafe868d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3723/ja-JP/4a8ed6396eb8cafe868d.mp3",
+      "bytes": 10944,
+      "sha256": "4a8ed6396eb8cafe868dcaf7734823b6e289cd86e8ff072ab37ad75325fc1d6c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:13 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "10944",
+        "Connection": "close",
+        "ETag": "\"34748e5459aa232739647f9f39cf953b\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:29 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "104",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=XVBNQUMMFDSx66DX1S%2FR4cAYWwDibrGkA4GELXRxOR0FgdJzz4sXUzG2SbVjJdSAasi4EO2V%2B5KCfhvJv%2FatLhYvQHvg114pCZVUNks6msxt0y6nleqcG690%2FP3GuKvD1gKRqUpo7bsbiP4xfIiX\"}]}",
+        "CF-RAY": "a5632e6afb88c64c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-4a8ed6396eb8cafe868dcaf7734823b6e289cd86e8ff072ab37ad75325fc1d6c.mp3",
+      "frames": {
+        "frames": 114,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 10944,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3724/en-US/c188d02257cc8bec2264.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3724/en-US/c188d02257cc8bec2264.mp3",
+      "bytes": 18816,
+      "sha256": "c188d02257cc8bec22647ae263f2ca1f21e12c1934c4e866389779e13e132ba2",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "18816",
+        "Connection": "close",
+        "ETag": "\"c3be77bd56d4c431199f1d117a70085c\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:30 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "103",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=BfjXrrow3U7ecvzrTD%2B9P3ziBJwvbWyr26QTGb2VnlBW9DpEnhwWPI8W1RUqDRcRWiuPc4sHfKADeusVYSIFCKfpL2IYb7tlr4edF5aL9R7zpgRTfZale%2FbsFpdrTL%2Fs8fYU%2B7iiOLua3r3diq7z\"}]}",
+        "CF-RAY": "a5632e6b9b591314-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c188d02257cc8bec22647ae263f2ca1f21e12c1934c4e866389779e13e132ba2.mp3",
+      "frames": {
+        "frames": 196,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 18816,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3724/en-GB/4c5e6850ad71a81911da.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3724/en-GB/4c5e6850ad71a81911da.mp3",
+      "bytes": 20544,
+      "sha256": "4c5e6850ad71a81911da8d3a571cf9d52343b3c4e9c9c5714833e71209dade17",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "20544",
+        "Connection": "close",
+        "ETag": "\"60724e6f49bd13cb99c396b5c4099f3b\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:30 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "103",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=zjyCHeOwcd052eNulfhoDrLrtb0dcRAygvLg8cDbfa%2FZ1Ub%2Fv%2BcOV8wOIdyQTg2Ge%2FXQcOqk7eACNGpBm70T83ce%2FrG9DUf9fG8jdSGIwxty9%2BPyAC70Cc%2B19m7K3a%2BAusEobFhGb6SaOC6JBjio\"}]}",
+        "CF-RAY": "a5632e6c1bacd763-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-4c5e6850ad71a81911da8d3a571cf9d52343b3c4e9c9c5714833e71209dade17.mp3",
+      "frames": {
+        "frames": 214,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 20544,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3724/ja-JP/c5337e6f61300a9fb654.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3724/ja-JP/c5337e6f61300a9fb654.mp3",
+      "bytes": 19584,
+      "sha256": "c5337e6f61300a9fb6549019ddcf9007a46cb205370435459c1ed444cfd58050",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "19584",
+        "Connection": "close",
+        "ETag": "\"3e611d795d052076aa2e2ca9990b8214\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:31 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "102",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=giwanzu1A0FSaG65Zh73JnfCSWCq%2FmrviXst3CfWJ7NiQvEtUA5F2ZfWdElhmDIqyf5VbxK15Me9M3w6AHtIfj%2BBDW86gdWHvaCuAUlq1N4zuBQ9Bx3HrGvjAqAu7UCOm7Ussq4XAXIIiP2QBhb8\"}]}",
+        "CF-RAY": "a5632e6cb9a90c15-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c5337e6f61300a9fb6549019ddcf9007a46cb205370435459c1ed444cfd58050.mp3",
+      "frames": {
+        "frames": 204,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 19584,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp",
+      "bytes": 59080,
+      "sha256": "adfcd55e054d21de743279d0e166b061f3266197166dd0ad19195c68212f7823",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "59080",
+        "Connection": "close",
+        "ETag": "\"aaac8043e54a08c52c35b8f72558e6cb\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:31 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "102",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=lnxplsGCxmdrZ21yCW1o0jehwu0WqWwKc6LRfvz8%2BZ71iTcykkniv%2FPRGEWGWRfLzyN3d5waZBtLr7jKcjYUoiIW9MedvG%2B9s6B9S3Gt3pr%2BdJk%2FeW7njzvuZWB416lYB3WDuYJzDwemjwvjE%2BGM\"}]}",
+        "CF-RAY": "a5632e6d3becf27d-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-adfcd55e054d21de743279d0e166b061f3266197166dd0ad19195c68212f7823.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|chikuwa/en-US/79e3b7d1a666487c9691.mp3",
+      "url": "https://img.nexflow.team/word-audio/chikuwa/en-US/79e3b7d1a666487c9691.mp3",
+      "bytes": 4896,
+      "sha256": "79e3b7d1a666487c969114e4265d1928b091ab129a309a81731233f55774a4a6",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4896",
+        "Connection": "close",
+        "ETag": "\"435bc2c2e0ca851a71fb798d020f4714\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:32 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "101",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=5kqLTlCaV2aD6YaU7bSq8wS8tm%2BQMPJqdMd8JiDC4r%2ByHosCM2AkRyl7%2FGCiqquZlBVyjV8L6HLwhhd4o5inCc%2B%2BTt9K4voQA6WCuIpFLD%2BS6xgOmgkJjn%2FnR68rBL66xfFw0cmAy2dkmJsvk5zM\"}]}",
+        "CF-RAY": "a5632e6d8ccb5992-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-79e3b7d1a666487c969114e4265d1928b091ab129a309a81731233f55774a4a6.mp3",
+      "frames": {
+        "frames": 51,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4896,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|chikuwa/en-GB/4486d207ec72c9831218.mp3",
+      "url": "https://img.nexflow.team/word-audio/chikuwa/en-GB/4486d207ec72c9831218.mp3",
+      "bytes": 5184,
+      "sha256": "4486d207ec72c9831218e271de0332767ae94eeed0b7cd27b779a69ed3280e17",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "5184",
+        "Connection": "close",
+        "ETag": "\"ea78ef2452789d24fead3ec394d14345\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:32 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "101",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=oJz4VcnXyakzMvKURudaRhlGvz%2BASaeHmJPCKpoupEL6%2B795PnDWObCfAy6WyjIx6oQWLr4djXd2myjqHGRIr4gSMtMPRqZ5WqkQjUAQwjBAURJVz5CP%2Fc6kdjSxkp1Rb72P6aOrdDYRTjkdScFt\"}]}",
+        "CF-RAY": "a5632e6e085ad576-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-4486d207ec72c9831218e271de0332767ae94eeed0b7cd27b779a69ed3280e17.mp3",
+      "frames": {
+        "frames": 54,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 5184,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|chikuwa/ja-JP/83b5658348ebb104f739.mp3",
+      "url": "https://img.nexflow.team/word-audio/chikuwa/ja-JP/83b5658348ebb104f739.mp3",
+      "bytes": 5472,
+      "sha256": "83b5658348ebb104f7392f213e5418de997ad719d17be961bc0dd64026b51a8f",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "5472",
+        "Connection": "close",
+        "ETag": "\"e9c0802aef860f82d747c6fe1e37570a\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:33 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "100",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=j%2B8YWU3jPwkEfzn%2FVrHX7hi%2FECMkyj6XS3v8M4FDxbfrW%2FpRKhk7z%2FfQ3AglDUxL8GftyXimqea4mVxBLs0JfxsR5ye1fKsYoxhR0hhpfgZgmuwi%2BunsNxr7mbpU%2BXm5CkzvhhDjkwqXGttWuKh6\"}]}",
+        "CF-RAY": "a5632e6eaaad8a5a-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-83b5658348ebb104f7392f213e5418de997ad719d17be961bc0dd64026b51a8f.mp3",
+      "frames": {
+        "frames": 57,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 5472,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3725/en-US/b1c169688ba1c8b49acc.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3725/en-US/b1c169688ba1c8b49acc.mp3",
+      "bytes": 12192,
+      "sha256": "b1c169688ba1c8b49accd6502538ec121824d6aeb1c9f5bb9c93debdee679fde",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "12192",
+        "Connection": "close",
+        "ETag": "\"068249203e28c6b3c1378de106a23046\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:35 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "98",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=g26N%2FTP9fMvZyjhTdUFT6pUbvtUw%2Fj7B8clF8I73h5i9pK9cdxO9q5Cq6b3qJvDKRDWTKhOvKkUDzqI7jnbfgJnCEUfFNiYlX1uK7a51OdM2yCgvKot2mVvBbSHbi%2BAGT5LCGxbrmrKKNjHVyhtx\"}]}",
+        "CF-RAY": "a5632e6f4820e363-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-b1c169688ba1c8b49accd6502538ec121824d6aeb1c9f5bb9c93debdee679fde.mp3",
+      "frames": {
+        "frames": 127,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 12192,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3725/en-GB/65d0729c366ed3ae0c34.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3725/en-GB/65d0729c366ed3ae0c34.mp3",
+      "bytes": 9792,
+      "sha256": "65d0729c366ed3ae0c34058acabe23cf0a208e18edb424c3d8707d3444414318",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9792",
+        "Connection": "close",
+        "ETag": "\"e1fb51869a975a5fa90241e09f9d1842\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:35 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "98",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=xseBpiXmMMsdaZ%2FzuDBnsgSD5jrULrDGzueLsxdbtpy7p4%2B%2Bhzk4tQoKJ%2BFimXxgAyi%2BdeUCReFWPfO37%2BXV%2F7OkqLJWFDsnMYEjaCqO9qU%2BCf6%2BDgXo2LgBcP8eYxpfXtjRQOuA72%2BJBdExRYO8\"}]}",
+        "CF-RAY": "a5632e6fd855cbbd-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-65d0729c366ed3ae0c34058acabe23cf0a208e18edb424c3d8707d3444414318.mp3",
+      "frames": {
+        "frames": 102,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9792,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3725/ja-JP/a041399f175327549676.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3725/ja-JP/a041399f175327549676.mp3",
+      "bytes": 10656,
+      "sha256": "a041399f1753275496764febce0e6b50319c89ad329690f0cd4bd26ddc93db1b",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "10656",
+        "Connection": "close",
+        "ETag": "\"22601971bfa7f7c1d9721cfdfc34b2b3\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:36 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "98",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=sW7j6dSazSwrQ0QLXuxt8hMDWTsUAy115dYfrQWXcqxBPjaxXKGofh%2FEjuG8NjeS5QCm3rl6hSh9b1MYbbjOFLDF0GFWxDmxZY3iLmvaDWlZ%2FuDOQ1JtGGsDS3%2F%2BsOMmuqJ2%2BSw2Wz5AlBQaaCD2\"}]}",
+        "CF-RAY": "a5632e706b08d5c1-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-a041399f1753275496764febce0e6b50319c89ad329690f0cd4bd26ddc93db1b.mp3",
+      "frames": {
+        "frames": 111,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 10656,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3726/en-US/8f0c0eab2631bd336000.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3726/en-US/8f0c0eab2631bd336000.mp3",
+      "bytes": 17856,
+      "sha256": "8f0c0eab2631bd3360009f47f6617524f2ce33bbaf28ed1005f1c753719831b4",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:14 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "17856",
+        "Connection": "close",
+        "ETag": "\"0214169a1d298e741cb44d89518c64f8\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:37 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "97",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=31uKhrpFf9g7V3aIJZXtNi86z5oo3t%2FwxXNh%2BeEcTROLNRfylU7aeK%2BoBJCSJUtUW6hOq7VqVmx%2BYkmKHrdrCBVPgcqcc%2BnZTzmG16dMSDIiu8truFzEfdLFb2UKKlh%2Fhd4R5j4g6oH5682JQbw3\"}]}",
+        "CF-RAY": "a5632e711f2fc087-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-8f0c0eab2631bd3360009f47f6617524f2ce33bbaf28ed1005f1c753719831b4.mp3",
+      "frames": {
+        "frames": 186,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17856,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3726/en-GB/6d94c0ee416239b111b9.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3726/en-GB/6d94c0ee416239b111b9.mp3",
+      "bytes": 21792,
+      "sha256": "6d94c0ee416239b111b96abc92c48e66e21f1a246f83d2d075040c0a1fe08f46",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "21792",
+        "Connection": "close",
+        "ETag": "\"f1710ec858fbcae626c313e62aa207bd\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:37 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "96",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=jRNa7DDuhDRessieCeJ2Dzohg3kaolTLbsFvlvbXww%2FDOgO8UXLMfcFCdjYQBH3raOdoPbw4Dg0g1BC3TNWz%2BtV0JqHGOC3ArHuHtllT3gpVrI6t%2B1b%2BpYi6OIzTEYkFkzWzPtPMbr6BwHm%2B4Kwx\"}]}",
+        "CF-RAY": "a5632e71decee358-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-6d94c0ee416239b111b96abc92c48e66e21f1a246f83d2d075040c0a1fe08f46.mp3",
+      "frames": {
+        "frames": 227,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 21792,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3726/ja-JP/a02a09356021c36604ed.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3726/ja-JP/a02a09356021c36604ed.mp3",
+      "bytes": 16416,
+      "sha256": "a02a09356021c36604ed8caae052fdfb8e3a78b59669ace50c993c635f1e956e",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "16416",
+        "Connection": "close",
+        "ETag": "\"daf67a8dd98f02fc7a9a30ea9bd3337d\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:38 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "95",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=q%2BMLnLR2rcjuXTIxHyNbpIjdncm3MGekufksUmHjFd2zeNi9syhV80MUQc0B2MGhCwHWdCK5Giq27fOgM2E2L3ZWPdcMrRiOcbvYsXfs4dCtJc%2Bu8K%2BFCOGGET%2B9OcMGvzyPlfJpuWJzYMZhw50v\"}]}",
+        "CF-RAY": "a5632e7289554712-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-a02a09356021c36604ed8caae052fdfb8e3a78b59669ace50c993c635f1e956e.mp3",
+      "frames": {
+        "frames": 171,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 16416,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/hanpen-v1-ce2b653a5485.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/hanpen-v1-ce2b653a5485.webp",
+      "bytes": 17638,
+      "sha256": "ce2b653a5485f61a507c4eea21e0db22dc81744e477067748e798aee7bb05151",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "17638",
+        "Connection": "close",
+        "ETag": "\"9088efca22185bff8f4947c0bb5dbc56\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:39 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "95",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=rM6fTIDygV1P%2F2b6n1blE99TteLR3WqPIM6pN1y4Y6nmYlQtzC7rAoifGZ1QCscEoseToCmcMOQ%2F6CpJQK%2FjlePZy5c1N4btk0csM32cwPx7%2BXvq5cOBxSbkrV3yzU6xii7C44PN%2BC8L5euRHdiD\"}]}",
+        "CF-RAY": "a5632e734da1e38c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-ce2b653a5485f61a507c4eea21e0db22dc81744e477067748e798aee7bb05151.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|hanpen/en-US/c2ad480e1165fa87452f.mp3",
+      "url": "https://img.nexflow.team/word-audio/hanpen/en-US/c2ad480e1165fa87452f.mp3",
+      "bytes": 4224,
+      "sha256": "c2ad480e1165fa87452f73b25ab7480ea0450fc11d10328ed11cabe1dee2842f",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4224",
+        "Connection": "close",
+        "ETag": "\"18d5cae7bcfbc951ccf2adc2b8a297ad\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:39 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "95",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=rA9K8ujWv%2FLVw3jkd%2F4gu4Qsn85iLLFGegw0wgaQAWAbNf%2F1lmGroLM3r%2BsJdePOhvFZG2%2B%2FMyZOua23b%2BG4hzbyXjUkQFGXsZVFGX1DJRMQymZ%2BqhS1ctqLy7RQuAhwf988nu0NGBBboEDyld9w\"}]}",
+        "CF-RAY": "a5632e73dd64ccca-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c2ad480e1165fa87452f73b25ab7480ea0450fc11d10328ed11cabe1dee2842f.mp3",
+      "frames": {
+        "frames": 44,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4224,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|hanpen/en-GB/bbb07d602fd85883bd4f.mp3",
+      "url": "https://img.nexflow.team/word-audio/hanpen/en-GB/bbb07d602fd85883bd4f.mp3",
+      "bytes": 4896,
+      "sha256": "bbb07d602fd85883bd4fda717d4ff5942134425059ae1a187d0f16a5325793a0",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4896",
+        "Connection": "close",
+        "ETag": "\"5b664db048ea20cf07662f93b11ca437\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:40 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "94",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2Fwd%2Fca2hflHpgZwZzH0lBH6IqujlSKIjw%2F2Hp%2BvXvolSSWByDU%2FAiMiCzG2EyMXPNVa3H%2F8QB3dTxRtFBtGcP76R2roY6TWiMKGoTlu6uM%2B4Kpy%2Fw0eXIYxfHBssOd8sN7ewVQ41ZLDCgqoKBGIJ\"}]}",
+        "CF-RAY": "a5632e747e8225d7-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-bbb07d602fd85883bd4fda717d4ff5942134425059ae1a187d0f16a5325793a0.mp3",
+      "frames": {
+        "frames": 51,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4896,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|hanpen/ja-JP/afc34777c0671ad70c3d.mp3",
+      "url": "https://img.nexflow.team/word-audio/hanpen/ja-JP/afc34777c0671ad70c3d.mp3",
+      "bytes": 4896,
+      "sha256": "afc34777c0671ad70c3db1c98aad2a8cb8c6df4591a170396c3be7b10ec0e4e9",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4896",
+        "Connection": "close",
+        "ETag": "\"3369256352c11b17b66997dd27048e77\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:41 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "94",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RHPu62rUdpIwqJ%2FrYXECu3rNi8NFI7r33Xw0irY2b%2FvZvkIiXll7LwCkx1waNrcxmkNU3E8UiR2qhblsuTqXls%2BW9YN408rkvhDIUGv7llUaot816kLGC%2F%2FowZAKuvUSx9EjQLdVJJr5LfR4xSch\"}]}",
+        "CF-RAY": "a5632e750eb3a2fe-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-afc34777c0671ad70c3db1c98aad2a8cb8c6df4591a170396c3be7b10ec0e4e9.mp3",
+      "frames": {
+        "frames": 51,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4896,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3727/en-US/c111d55e3db6bf6423e2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3727/en-US/c111d55e3db6bf6423e2.mp3",
+      "bytes": 8544,
+      "sha256": "c111d55e3db6bf6423e24f19155755a114315a99364ce07531dbad8f8ffb9c5c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "8544",
+        "Connection": "close",
+        "ETag": "\"d442600fa4c456b9f3591059411d64c7\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:41 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "93",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ugKoiBGjm8zgRgitxJ%2BiIgFYrr%2BfEwXO2ruMAM7%2FVGym%2FpFN42WuBIwRpIwDUEU82220ZMXKB4wARpmDt%2FA7RN0X2H0X68ZT40OJm%2F73ZrfJ4tlagH8iqO5R7R5chApQU3ueGk1gWtx9ti1iVTAi\"}]}",
+        "CF-RAY": "a5632e759c733868-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c111d55e3db6bf6423e24f19155755a114315a99364ce07531dbad8f8ffb9c5c.mp3",
+      "frames": {
+        "frames": 89,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 8544,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3727/en-GB/f3ac31d7c07979e077e9.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3727/en-GB/f3ac31d7c07979e077e9.mp3",
+      "bytes": 6624,
+      "sha256": "f3ac31d7c07979e077e9b9e4074a11d03c3206c80398e0bd6d19f7046b604252",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "6624",
+        "Connection": "close",
+        "ETag": "\"934f6f4538515c89dfad89a5c84706dd\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:42 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "93",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=gdgWBHemKwzIoGlXXmSME1q4W4GKTC8HRnZjYBlFmNpVPP56PwaKPYuPmFs9RR51fwn3t7Nh2XE2TDX2WEZuimQ2Auq8D0ZWcXE1f2f%2Flm%2Fa9ohuEXbzV8oPlKwimB7Iv%2FfMmPbyvUiGqwJyYQIW\"}]}",
+        "CF-RAY": "a5632e761cee3c11-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-f3ac31d7c07979e077e9b9e4074a11d03c3206c80398e0bd6d19f7046b604252.mp3",
+      "frames": {
+        "frames": 69,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 6624,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3727/ja-JP/1012a4bab05950db7d9c.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3727/ja-JP/1012a4bab05950db7d9c.mp3",
+      "bytes": 9984,
+      "sha256": "1012a4bab05950db7d9ce2a07a526482c18a464acefcd4cc9311a9c31eddc5fe",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9984",
+        "Connection": "close",
+        "ETag": "\"df8119c1cf202a05c6a9882d9742df4f\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:42 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "93",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=KOYxeefRR5kTJ%2BoaS6Dkw5B6UVN9RhRUwAsys4hwFhkMdpUO3ddJgoT5%2Bo2ckAA04KML3n%2F9VkueegP1oDo7QrW8wEqiA4DwX8MX5FT9%2BOm6choJQk2Sfjbak3JAhTo303iwv5vf5q92CVmGl4vr\"}]}",
+        "CF-RAY": "a5632e76c986e37e-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-1012a4bab05950db7d9ce2a07a526482c18a464acefcd4cc9311a9c31eddc5fe.mp3",
+      "frames": {
+        "frames": 104,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9984,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3728/en-US/05a769b3246e616e4a4a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3728/en-US/05a769b3246e616e4a4a.mp3",
+      "bytes": 17952,
+      "sha256": "05a769b3246e616e4a4a8f952ba0bffd90300ebc20c62b6c65e4ae466e95b818",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:15 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "17952",
+        "Connection": "close",
+        "ETag": "\"67ab5b9bbda01fdee940b1eda8afca79\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:43 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "92",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=KXTuME%2Bcc%2BX00r0LO23C9xrhYWS0l2azoIdE4QazpF2mJYbG%2BPFmYaxPFkfXHoG2%2FKUIOFFHb8cExxC6K%2FX3TEKyPNpjr4ZMhULZgBT7xDmA8bgud7mCt%2FSBaR%2B3Fhm7Qmoxi9cIUr6pAcKCNOiQ\"}]}",
+        "CF-RAY": "a5632e775843c1a7-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-05a769b3246e616e4a4a8f952ba0bffd90300ebc20c62b6c65e4ae466e95b818.mp3",
+      "frames": {
+        "frames": 187,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 17952,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3728/en-GB/605f18729517e847f44b.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3728/en-GB/605f18729517e847f44b.mp3",
+      "bytes": 18144,
+      "sha256": "605f18729517e847f44b2534d304a56d47d477c2b73b4a9786336497d67ad55c",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "18144",
+        "Connection": "close",
+        "ETag": "\"9e8c13217f1c113e276622fe0a062fde\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:43 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "92",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=kNh4sZYsScC6Y5i0yU18OvKpmvsSJH4viekZx4fwaIWYAQsEi14V0z7m8Ooi8YcvuPOhXmN4eU5kIS1MAUl41OFBv1nTc7ehBRonRaaDIDVgQepg0NR1RGQumop%2FSA6pNYdtAjFo2pVTwrJ7a60d\"}]}",
+        "CF-RAY": "a5632e77e98dd76c-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-605f18729517e847f44b2534d304a56d47d477c2b73b4a9786336497d67ad55c.mp3",
+      "frames": {
+        "frames": 189,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 18144,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3728/ja-JP/76c298577fcefcd394db.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3728/ja-JP/76c298577fcefcd394db.mp3",
+      "bytes": 18624,
+      "sha256": "76c298577fcefcd394db46b9bb2391dcfac7a66b44053770447e10de4b873ace",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "18624",
+        "Connection": "close",
+        "ETag": "\"96d62d66fc7f5143d913b03b5d5f20d6\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:44 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "91",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=NEEzIjv1ubNIQrKvgPgLeR7h59N%2FiTHB%2FYsZyHeGCqJP636OYtRhKUoZSVw1jFhgFOYQsuFCHq0RJr%2FWr5hmTgepFqp2RyiCTtMz%2F%2FCx0xovv6O8ZModbWt5irDY1TNDl9bGn74hx6%2B9qKGaDVtG\"}]}",
+        "CF-RAY": "a5632e787cc5fd4f-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-76c298577fcefcd394db46b9bb2391dcfac7a66b44053770447e10de4b873ace.mp3",
+      "frames": {
+        "frames": 194,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 18624,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-images|winter-food-2026-10/konjac-v1-e0b8566c2f12.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/konjac-v1-e0b8566c2f12.webp",
+      "bytes": 55844,
+      "sha256": "e0b8566c2f125258cdb6f688c65d2e7f5785d20b7c92c761800d3de7e775d974",
+      "mimeType": "image/webp",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "image/webp",
+        "Content-Length": "55844",
+        "Connection": "close",
+        "ETag": "\"6d72e8c69fc57d7a0253cdf4156bb807\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:44 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "90",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=3vdNlbvzwCoZHbB8BPmNxwfCdt5YTV%2FwaznGyyoEePr3XXQ6aYodfVJ2S1ZopaHvbk8ko3k1QMPkUsZ7thwvuukNt9yALVNbPBBHlX5h7i0kXO%2FmnC64KQ9SFfWneMdrARZK0l8ukg%2Bb6XHGF07R\"}]}",
+        "CF-RAY": "a5632e790b5d4712-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-e0b8566c2f125258cdb6f688c65d2e7f5785d20b7c92c761800d3de7e775d974.webp",
+      "dimensions": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "key": "word-audio|konjac/en-US/779bad9064fe6c81582b.mp3",
+      "url": "https://img.nexflow.team/word-audio/konjac/en-US/779bad9064fe6c81582b.mp3",
+      "bytes": 3264,
+      "sha256": "779bad9064fe6c81582b689a3e9a50392a9f3a87a5a13f695af4944493009659",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "3264",
+        "Connection": "close",
+        "ETag": "\"19a9fb3303eb0cd19b297d497e6f345d\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:45 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "90",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=JnoyRf6nuKrbBVLUgZPTkyJGMRlqC2SbpMd3N7IyYsGtMnTSqWVBpzkD9L4mmKQ%2FxHl6xOM546K4JPUP8pXjhi7iwXAtkO7q4xUtrKgsZGoJ64WADZCW6S%2F2dUVRB7u8p68B6Hs9VhaXVdUsqhZ3\"}]}",
+        "CF-RAY": "a5632e799afba0ff-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-779bad9064fe6c81582b689a3e9a50392a9f3a87a5a13f695af4944493009659.mp3",
+      "frames": {
+        "frames": 34,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 3264,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|konjac/en-GB/cd954516b1722832517c.mp3",
+      "url": "https://img.nexflow.team/word-audio/konjac/en-GB/cd954516b1722832517c.mp3",
+      "bytes": 4512,
+      "sha256": "cd954516b1722832517cc445ab97c0c928f75f01d326b21775a2a370ba6a749a",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4512",
+        "Connection": "close",
+        "ETag": "\"bafe0784b309f5f6b3b6d5cc88a51b8e\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:45 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "90",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=rq8Xag42xNFKhH%2FL9%2B80mScLd%2FHorYQoHx25scMxYYy%2By9b8FOTI%2FbqBYchhL9YFsmYMpZWiJmZrI0a0a48hpsUFfGNSG6VtSOaw%2Bv2gjF0%2BimPSe5cWV5bdcQUPAEV0VTezjuFTjopCqY3Xd4ng\"}]}",
+        "CF-RAY": "a5632e7a2f3bd797-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-cd954516b1722832517cc445ab97c0c928f75f01d326b21775a2a370ba6a749a.mp3",
+      "frames": {
+        "frames": 47,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4512,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|konjac/ja-JP/6b8743a1182ebd1d214f.mp3",
+      "url": "https://img.nexflow.team/word-audio/konjac/ja-JP/6b8743a1182ebd1d214f.mp3",
+      "bytes": 4416,
+      "sha256": "6b8743a1182ebd1d214f19d9cafe912d56edd7f206dbc6d4649e13985d2421c3",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "4416",
+        "Connection": "close",
+        "ETag": "\"4623da3a463aa3e60a0e4901aa773bb7\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:46 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "89",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=W9ChmBKQDXpcR9dN9MvLFvmWupNIwe7%2BtHTOqLNggls6%2BMn03CAi8s%2FPt4AO6qXTTBPenGNS3mUnRDwz8FHwyySEmkYJC%2F14fxfbGG%2FJObYVN9Z24KExTRg6R8DLqpS7i%2B1upifWOv7vRmeULJmg\"}]}",
+        "CF-RAY": "a5632e7adce7deb5-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-6b8743a1182ebd1d214f19d9cafe912d56edd7f206dbc6d4649e13985d2421c3.mp3",
+      "frames": {
+        "frames": 46,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 4416,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3729/en-US/566dd67f6b9b3ea16601.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3729/en-US/566dd67f6b9b3ea16601.mp3",
+      "bytes": 7296,
+      "sha256": "566dd67f6b9b3ea1660135783dd8f7d86abcc2b2d52ec0a96233291fc7f09309",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "7296",
+        "Connection": "close",
+        "ETag": "\"b1463b69a90fb688ffe5a39836031258\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:51 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "84",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=IOsJyltjhBBgtNGZkGvKtCtZLPUQClE66VaZd9BeZj99vC%2FprTLtcdE0pFOlT2x%2F37WHYoqIQjijJh3%2F0zHwbGNgsUXJpMozz1XaI4rV3jSxM3Vjeg07csSV%2B1gaPXGe4TpGXTScnPwDfAYRhWJv\"}]}",
+        "CF-RAY": "a5632e7b586bafb5-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-566dd67f6b9b3ea1660135783dd8f7d86abcc2b2d52ec0a96233291fc7f09309.mp3",
+      "frames": {
+        "frames": 76,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 7296,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3729/en-GB/f467cf8e2d6e8a507ba2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3729/en-GB/f467cf8e2d6e8a507ba2.mp3",
+      "bytes": 11904,
+      "sha256": "f467cf8e2d6e8a507ba22b796860bbd17b18ecb0ae8b8f147a04940333b8b376",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "11904",
+        "Connection": "close",
+        "ETag": "\"fbb81445002bd9de2103a292e417dde6\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:53 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "82",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=En5CisFG%2FSdVf%2BYv1i3jJR8aGiqJs0Z4ELetoYjLNV1LWo9pyo6wHCET6da3kuXGLCSO%2FI30Prb7iBOfpBm8eosj%2FekB19qLJ7lanOyeNN57CaLxZU2SKrjZmyzGqFKKe7Khcev2fJgYj5ANY0Uq\"}]}",
+        "CF-RAY": "a5632e7c09847966-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-f467cf8e2d6e8a507ba22b796860bbd17b18ecb0ae8b8f147a04940333b8b376.mp3",
+      "frames": {
+        "frames": 124,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 11904,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3729/ja-JP/66b36195a40954db9843.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3729/ja-JP/66b36195a40954db9843.mp3",
+      "bytes": 9696,
+      "sha256": "66b36195a40954db9843df67a68c181b5e20a38cbb6d3533bbbe73b7e3d3410b",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "9696",
+        "Connection": "close",
+        "ETag": "\"567ad9b4a12f0d7b2b11cf4d0b044177\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:54 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "82",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=j5sL5C5rTqINYDjVhxBBQvJG%2F2ZU8NKGqYHZSbWJG%2FlcvMzuoNuZv%2FdKCpiCZcjIGM835odXibJiGtTy0hCL9%2Fgzz%2B6eC4otmSJHFHETnWGt922TCnF2Fyrh0idAaVQzcJj%2FPk1mgmDy1tcN7RbR\"}]}",
+        "CF-RAY": "a5632e7c98a53d20-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-66b36195a40954db9843df67a68c181b5e20a38cbb6d3533bbbe73b7e3d3410b.mp3",
+      "frames": {
+        "frames": 101,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 9696,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3730/en-US/da6ee255be9c95fb501f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3730/en-US/da6ee255be9c95fb501f.mp3",
+      "bytes": 21216,
+      "sha256": "da6ee255be9c95fb501f75f791bde7fe66e01b3e1473971e6a1e25c2214ab3ba",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "21216",
+        "Connection": "close",
+        "ETag": "\"77bb40c17ea51ef47a090f5aa401ba9f\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:54 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "82",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=GGcC5sRZJhkXsxLoNMUs7KGiJD7O43QI20WqcyQVnGjrTgRiIaXRq7cdqa07TmpEsw%2FUjkNV1pAzUE1t14aA0kyksqsQ9h1vaQ6gHnLl9DW7Q5FqX2uxfIdpjZ%2BtsHrLj3p5mKxslNm3l%2FOIDsm5\"}]}",
+        "CF-RAY": "a5632e7d2d9fd4dc-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-da6ee255be9c95fb501f75f791bde7fe66e01b3e1473971e6a1e25c2214ab3ba.mp3",
+      "frames": {
+        "frames": 221,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 21216,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3730/en-GB/4384ffc595fec6924c42.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3730/en-GB/4384ffc595fec6924c42.mp3",
+      "bytes": 19872,
+      "sha256": "4384ffc595fec6924c428db9a4b13ca86288226b4b086a6e05e80a8cbe5fc8b9",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:16 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "19872",
+        "Connection": "close",
+        "ETag": "\"79623adff1c3e5eacefacfe2bcfef210\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:55 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "81",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=v0W3DFaGU2DkUj%2FWpqvXHiiY8zYyqKROPjz7LbsyyWeAyHcKapc%2BP3YsQqaYpvRue%2B6B%2B8H%2Bor12Akpc3v7hWkztw88zzwsE1ueAaO0D1yDdV%2BuT93cldf2Mkiqa3qKka8HV11FzRSKAZcuuGZJg\"}]}",
+        "CF-RAY": "a5632e7ddbca612f-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-4384ffc595fec6924c428db9a4b13ca86288226b4b086a6e05e80a8cbe5fc8b9.mp3",
+      "frames": {
+        "frames": 207,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 19872,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    },
+    {
+      "key": "word-audio|examples/3730/ja-JP/c31c094dec5796ebb352.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3730/ja-JP/c31c094dec5796ebb352.mp3",
+      "bytes": 23904,
+      "sha256": "c31c094dec5796ebb35213502433b35b855f40f89210323b07f475071a3afd79",
+      "mimeType": "audio/mpeg",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 09:48:17 GMT",
+        "Content-Type": "audio/mpeg",
+        "Content-Length": "23904",
+        "Connection": "close",
+        "ETag": "\"da70785065077b8146186223e27e87bb\"",
+        "Last-Modified": "Fri, 06 Nov 2026 09:46:55 GMT",
+        "Vary": "Origin",
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "public, max-age=31536000, immutable",
+        "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+        "Server": "cloudflare",
+        "Age": "80",
+        "cf-cache-status": "HIT",
+        "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=9NNkWd9FGLcF713bZYOj0y5AZbrochF0a6WDGTLkA7S4EJWAcFUtHoinYRHZ4qM%2FXDbJ8wSuSLDZL5IBoD4M%2BZDUJ3yhyRgdwnTZXbAL16j%2Fg4fOlVhWWAojioc9vXCfjuc85IowU3oomeHfOA6S\"}]}",
+        "CF-RAY": "a5632e7e6a78e0a4-NRT"
+      },
+      "verdict": "pass",
+      "file": "output/winter-food-2026-10/post-release-review/remote-c31c094dec5796ebb35213502433b35b855f40f89210323b07f475071a3afd79.mp3",
+      "frames": {
+        "frames": 249,
+        "firstFrameOffset": 0,
+        "parsedThroughByte": 23904,
+        "trailingBytes": 0,
+        "formats": [
+          [
+            2,
+            32,
+            24000
+          ]
+        ]
+      },
+      "fullDecode": "pass"
+    }
+  ],
+  "allRemoteHashesMatchManifest": true,
+  "errors": [],
+  "subjectiveListening": "not checked",
+  "productionWrites": 0
+}

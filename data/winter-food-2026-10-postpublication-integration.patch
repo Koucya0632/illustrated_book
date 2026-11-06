@@ -1,0 +1,42 @@
+--- /dev/null
++++ b/lib/main-word-winter-food-2026-10.ts
+@@ -0,0 +1,14 @@
++import type { CEFRLevel } from "@/types";
++import candidate from "../data/winter-food-2026-10.json";
++import type { MainWordExamplePair } from "./main-word-example-pairs";
++
++// Published example maintenance only; never exports words/category seeds.
++export const MAIN_WORD_WINTER_FOOD_IDS = candidate.entries.map(({ id }) => id);
++export const MAIN_WORD_WINTER_FOOD_EXAMPLE_PAIRS: MainWordExamplePair[] =
++  candidate.entries.map(({ id, examples }) => ({
++    id,
++    examples: [
++      { ...examples[0], cefrLevel: examples[0].cefrLevel as CEFRLevel, sortOrder: 0 },
++      { ...examples[1], cefrLevel: examples[1].cefrLevel as CEFRLevel, sortOrder: 1 },
++    ],
++  }));
+--- a/lib/main-word-example-pairs.ts
++++ b/lib/main-word-example-pairs.ts
+@@ -1,3 +1,4 @@
++import { MAIN_WORD_WINTER_FOOD_EXAMPLE_PAIRS } from "./main-word-winter-food-2026-10";
+ import { MAIN_WORD_WINTER_CHECKOUT_EXAMPLE_PAIRS } from "./main-word-winter-checkout-2026-10";
+ import { MAIN_WORD_DENTAL_CLINIC_EXAMPLE_PAIRS } from "./main-word-dental-clinic-2026-10";
+ import { MAIN_WORD_WINTER_POSTAL_EXAMPLE_PAIRS } from "./main-word-winter-postal-2026-10";
+@@ -207,6 +208,7 @@
+     MAIN_WORD_DENTAL_CLINIC_EXAMPLE_PAIRS,
+     MAIN_WORD_WINTER_POSTAL_EXAMPLE_PAIRS,
+     MAIN_WORD_WINTER_CHECKOUT_EXAMPLE_PAIRS,
++    MAIN_WORD_WINTER_FOOD_EXAMPLE_PAIRS,
+   );
+ 
+ export function selectMainWordExamplePairs(
+--- a/lib/example-span-corpus.ts
++++ b/lib/example-span-corpus.ts
+@@ -290,6 +290,7 @@
+   new URL("../data/example-spans-dental-clinic-2026-10.json", import.meta.url),
+   new URL("../data/example-spans-winter-postal-2026-10-v2.json", import.meta.url),
+   new URL("../data/example-spans-winter-checkout-2026-10.json", import.meta.url),
++  new URL("../data/example-spans-winter-food-2026-10.json", import.meta.url),
+ ];
+ 
+ function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {

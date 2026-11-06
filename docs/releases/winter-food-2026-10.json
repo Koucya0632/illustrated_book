@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "workBatch": "winter-2026-03",
+  "series": "winter-food-2026-10",
+  "planSha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c",
+  "manifestSha256": "a072e60ae5acf47df39a5c0151360c4bc739cf055f4ad2fe8e3d1c0001963bff",
+  "manifest": {
+    "status": "applied",
+    "appliedAt": "2026-11-06T09:47:14.927Z",
+    "resolvedExampleIds": {
+      "oden:0": "3715",
+      "oden:1": "3716",
+      "steamed-meat-bun:0": "3717",
+      "steamed-meat-bun:1": "3718",
+      "roasted-sweet-potato:0": "3719",
+      "roasted-sweet-potato:1": "3720",
+      "daikon-radish:0": "3721",
+      "daikon-radish:1": "3722",
+      "egg:0": "3723",
+      "egg:1": "3724",
+      "chikuwa:0": "3725",
+      "chikuwa:1": "3726",
+      "hanpen:0": "3727",
+      "hanpen:1": "3728",
+      "konjac:0": "3729",
+      "konjac:1": "3730"
+    },
+    "originalPath": "output/winter-food-2026-10/apply-manifest-2026-11-06T09-45-50-844Z.json",
+    "portablePath": "docs/releases/winter-food-2026-10/evidence/apply-manifest-2026-11-06T09-45-50-844Z.json"
+  },
+  "summary": {
+    "words": 8,
+    "baseNoteRows": 8,
+    "localizedNoteRows": 16,
+    "definitions": 24,
+    "examples": 16,
+    "spanSentences": 32,
+    "wordImages": 8,
+    "categoryImages": 0,
+    "audioClips": 72,
+    "storageObjects": 80
+  },
+  "publishedWordIds": [
+    "chikuwa",
+    "daikon-radish",
+    "egg",
+    "hanpen",
+    "konjac",
+    "oden",
+    "roasted-sweet-potato",
+    "steamed-meat-bun"
+  ]
+}

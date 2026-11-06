@@ -1,0 +1,620 @@
+{
+  "checkedAt": "2026-10-30T14:47:00.916Z",
+  "mode": "READ ONLY",
+  "databaseHostFingerprint": "4982c8162697",
+  "publishedCount": 1245,
+  "matches": [
+    {
+      "word": {
+        "id": "egg-carton",
+        "note": null,
+        "word": "egg carton",
+        "forms": [],
+        "status": "published",
+        "category": "supermarket",
+        "audio_url": "https://img.nexflow.team/word-audio/egg-carton/en-US/9be5e4083359953058cc.mp3",
+        "etymology": null,
+        "image_url": "https://img.nexflow.team/word-images/egg-carton.webp",
+        "cefr_level": null,
+        "created_at": "2026-09-07T11:57:56.584485+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-10-30T14:01:19.99409+00:00",
+        "collocations": [],
+        "image_credit": null,
+        "also_known_as": [],
+        "image_license": null,
+        "pronunciation": "/ˈeɡ ˌkɑːr.tən/",
+        "part_of_speech": "noun",
+        "image_source_url": null,
+        "chinese_definition": "有獨立凹槽固定每顆雞蛋的包裝盒，日本超市常見透明塑膠款。"
+      },
+      "terms": [
+        {
+          "term": "egg carton",
+          "reading": null,
+          "word_id": "egg-carton",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-30T14:01:16.962384+00:00",
+          "pronunciation": "/ˈeɡ ˌkɑːr.tən/",
+          "reading_segments": null
+        },
+        {
+          "term": "卵パック",
+          "reading": "たまごパック",
+          "word_id": "egg-carton",
+          "language": "ja",
+          "audio_url": "https://img.nexflow.team/word-audio/egg-carton/ja-JP/d7f8068ac3fed18663ba.mp3",
+          "updated_at": "2026-10-30T14:01:19.99409+00:00",
+          "pronunciation": "たまごパック",
+          "reading_segments": [
+            {
+              "ruby": "たまご",
+              "text": "卵"
+            },
+            {
+              "ruby": null,
+              "text": "パック"
+            }
+          ]
+        }
+      ],
+      "definitions": [
+        {
+          "id": 3094,
+          "word_id": "egg-carton",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-09-07T11:57:57.188952+00:00",
+          "definition": "A container with separate spaces that hold and protect individual eggs.",
+          "sort_order": 0,
+          "updated_at": "2026-09-07T11:57:57.188952+00:00"
+        },
+        {
+          "id": 3095,
+          "word_id": "egg-carton",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-09-07T11:57:57.491142+00:00",
+          "definition": "「卵パック」とは、一個ずつのくぼみに卵を入れ、割れにくくするための包装容器です。",
+          "sort_order": 0,
+          "updated_at": "2026-10-30T14:01:19.99409+00:00"
+        },
+        {
+          "id": 3093,
+          "word_id": "egg-carton",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-09-07T11:57:56.886779+00:00",
+          "definition": "雞蛋盒",
+          "sort_order": 0,
+          "updated_at": "2026-09-07T11:57:56.886779+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 2191,
+          "word_id": "egg-carton",
+          "sentence": "I open the egg carton.",
+          "cefr_level": "A2",
+          "created_at": "2026-09-07T11:57:57.800556+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 2192,
+          "word_id": "egg-carton",
+          "sentence": "When packing my shopping bag, I put the egg carton on top so the eggs do not break.",
+          "cefr_level": "B1",
+          "created_at": "2026-09-07T11:57:58.712043+00:00",
+          "sort_order": 1
+        }
+      ]
+    },
+    {
+      "word": {
+        "id": "hot-spring-bun",
+        "note": null,
+        "word": "hot spring bun",
+        "forms": [],
+        "status": "published",
+        "category": "onsen-ryokan",
+        "audio_url": "https://img.nexflow.team/word-audio/hot-spring-bun/en-US/0ea4951d4707afad4fc8.mp3",
+        "etymology": null,
+        "image_url": "https://img.nexflow.team/word-images/onsen-ryokan-2026-10/hot-spring-bun-v1-f7ea23146611.webp",
+        "cefr_level": "B1",
+        "created_at": "2026-10-22T03:41:40.640341+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-10-30T14:01:19.99409+00:00",
+        "collocations": [],
+        "image_credit": "Tuji",
+        "also_known_as": [],
+        "image_license": "AI-generated for Tuji",
+        "pronunciation": "/ˌhɑːt ˈsprɪŋ bʌn/",
+        "part_of_speech": "noun",
+        "image_source_url": null,
+        "chinese_definition": "溫泉地常見、通常包紅豆餡的日式饅頭伴手禮，不表示一定用溫泉水製作。"
+      },
+      "terms": [
+        {
+          "term": "hot spring bun",
+          "reading": null,
+          "word_id": "hot-spring-bun",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-30T14:01:16.962384+00:00",
+          "pronunciation": "/ˌhɑːt ˈsprɪŋ bʌn/",
+          "reading_segments": null
+        },
+        {
+          "term": "温泉まんじゅう",
+          "reading": "おんせんまんじゅう",
+          "word_id": "hot-spring-bun",
+          "language": "ja",
+          "audio_url": "https://img.nexflow.team/word-audio/hot-spring-bun/ja-JP/3915d23c7783a79b3b63.mp3",
+          "updated_at": "2026-10-30T14:01:19.99409+00:00",
+          "pronunciation": "おんせんまんじゅう",
+          "reading_segments": [
+            {
+              "ruby": "おんせんまんじゅう",
+              "text": "温泉まんじゅう"
+            }
+          ]
+        }
+      ],
+      "definitions": [
+        {
+          "id": 4951,
+          "word_id": "hot-spring-bun",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-10-22T03:41:40.640341+00:00",
+          "definition": "A Japanese sweet bun, usually filled with sweet bean paste, sold as a souvenir in hot spring towns.",
+          "sort_order": 0,
+          "updated_at": "2026-10-22T03:41:40.640341+00:00"
+        },
+        {
+          "id": 4952,
+          "word_id": "hot-spring-bun",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-10-22T03:41:40.640341+00:00",
+          "definition": "温泉地の土産として売られる、あんを包んだまんじゅう。必ず温泉の湯で作るわけではない。",
+          "sort_order": 0,
+          "updated_at": "2026-10-30T14:01:19.99409+00:00"
+        },
+        {
+          "id": 4950,
+          "word_id": "hot-spring-bun",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-10-22T03:41:40.640341+00:00",
+          "definition": "溫泉饅頭",
+          "sort_order": 0,
+          "updated_at": "2026-10-22T03:41:40.640341+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 3423,
+          "word_id": "hot-spring-bun",
+          "sentence": "I bought a hot spring bun.",
+          "cefr_level": "A2",
+          "created_at": "2026-10-22T03:41:40.640341+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 3424,
+          "word_id": "hot-spring-bun",
+          "sentence": "Before checking out, I bought a box of hot spring buns for my family.",
+          "cefr_level": "B1",
+          "created_at": "2026-10-22T03:41:40.640341+00:00",
+          "sort_order": 1
+        }
+      ]
+    },
+    {
+      "word": {
+        "id": "leggings",
+        "note": null,
+        "word": "leggings",
+        "forms": [],
+        "status": "published",
+        "category": "clothing",
+        "audio_url": "https://img.nexflow.team/word-audio/leggings/en-US/67dfe7e5501439ac18cd.mp3",
+        "etymology": null,
+        "image_url": "https://img.nexflow.team/word-images/leggings-ai-b3b9fbd58e06.webp",
+        "cefr_level": null,
+        "created_at": "2026-09-25T05:50:38.275911+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-10-30T14:01:19.99409+00:00",
+        "collocations": [],
+        "image_credit": "Tuji",
+        "also_known_as": [],
+        "image_license": "AI-generated for Tuji",
+        "pronunciation": "/ˈlɛɡ.ɪŋz/",
+        "part_of_speech": "noun",
+        "image_source_url": null,
+        "chinese_definition": "貼身的褲型服飾，通常作為休閒穿著單穿或搭配其他服裝，與包襪褲襪不同。"
+      },
+      "terms": [
+        {
+          "term": "leggings",
+          "reading": null,
+          "word_id": "leggings",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-30T14:01:16.962384+00:00",
+          "pronunciation": "/ˈlɛɡ.ɪŋz/",
+          "reading_segments": null
+        },
+        {
+          "term": "レギンス",
+          "reading": "レギンス",
+          "word_id": "leggings",
+          "language": "ja",
+          "audio_url": "https://img.nexflow.team/word-audio/leggings/ja-JP/b7ee7a783a619bf509d3.mp3",
+          "updated_at": "2026-10-30T14:01:19.99409+00:00",
+          "pronunciation": "レギンス",
+          "reading_segments": null
+        }
+      ],
+      "definitions": [
+        {
+          "id": 4174,
+          "word_id": "leggings",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-09-25T05:50:38.275911+00:00",
+          "definition": "Close-fitting stretchy trousers that cover the legs, worn as casual wear or under other garments; different from footed tights.",
+          "sort_order": 0,
+          "updated_at": "2026-09-25T05:50:38.275911+00:00"
+        },
+        {
+          "id": 4175,
+          "word_id": "leggings",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-09-25T05:50:38.275911+00:00",
+          "definition": "足にぴったりとフィットするカジュアル用のレギンス。単独や重ね着で使い、タイツとは異なる。",
+          "sort_order": 0,
+          "updated_at": "2026-10-30T14:01:19.99409+00:00"
+        },
+        {
+          "id": 4173,
+          "word_id": "leggings",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-09-25T05:50:38.275911+00:00",
+          "definition": "內搭褲",
+          "sort_order": 0,
+          "updated_at": "2026-09-25T05:50:38.275911+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 2905,
+          "word_id": "leggings",
+          "sentence": "She wore black leggings to the park.",
+          "cefr_level": "A2",
+          "created_at": "2026-09-25T05:50:38.275911+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 2906,
+          "word_id": "leggings",
+          "sentence": "When it got colder in autumn, he started wearing leggings under his jeans to stay warm.",
+          "cefr_level": "B1",
+          "created_at": "2026-09-25T05:50:38.275911+00:00",
+          "sort_order": 1
+        }
+      ]
+    },
+    {
+      "word": {
+        "id": "oden-warmer",
+        "note": null,
+        "word": "oden warmer",
+        "forms": [],
+        "status": "published",
+        "category": "convenience-store",
+        "audio_url": "https://img.nexflow.team/word-audio/oden-warmer/en-US/af35bccbecef0cf29d17.mp3",
+        "etymology": null,
+        "image_url": "https://img.nexflow.team/word-images/oden-warmer-ai-6a955f982b80.webp",
+        "cefr_level": null,
+        "created_at": "2026-09-21T00:14:06.242816+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-10-30T14:01:19.99409+00:00",
+        "collocations": [],
+        "image_credit": "OpenAI ImageGen",
+        "also_known_as": [],
+        "image_license": "ai-generated",
+        "pronunciation": "/ˈoʊ.den ˈwɔːr.mɚ/",
+        "part_of_speech": "noun",
+        "image_source_url": null,
+        "chinese_definition": "以分隔槽盛裝高湯與各種關東煮食材，持續加熱保溫的櫃台設備。"
+      },
+      "terms": [
+        {
+          "term": "oden warmer",
+          "reading": null,
+          "word_id": "oden-warmer",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-30T14:01:16.962384+00:00",
+          "pronunciation": "/ˈoʊ.den ˈwɔːr.mɚ/",
+          "reading_segments": null
+        },
+        {
+          "term": "おでんウォーマー",
+          "reading": "おでんウォーマー",
+          "word_id": "oden-warmer",
+          "language": "ja",
+          "audio_url": "https://img.nexflow.team/word-audio/oden-warmer/ja-JP/6c4d03f739f17470e3a1.mp3",
+          "updated_at": "2026-10-30T14:01:19.99409+00:00",
+          "pronunciation": "おでんウォーマー",
+          "reading_segments": null
+        }
+      ],
+      "definitions": [
+        {
+          "id": 3832,
+          "word_id": "oden-warmer",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "definition": "A divided heated pot that keeps oden ingredients simmering in broth at a store counter.",
+          "sort_order": 0,
+          "updated_at": "2026-09-21T00:14:06.242816+00:00"
+        },
+        {
+          "id": 3833,
+          "word_id": "oden-warmer",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "definition": "「おでんウォーマー」とは、仕切りのある鍋で具材をだしに入れ、温かく保つための売り場設備です。",
+          "sort_order": 0,
+          "updated_at": "2026-10-30T14:01:19.99409+00:00"
+        },
+        {
+          "id": 3831,
+          "word_id": "oden-warmer",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "definition": "關東煮保溫鍋",
+          "sort_order": 0,
+          "updated_at": "2026-09-21T00:14:06.242816+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 2679,
+          "word_id": "oden-warmer",
+          "sentence": "Daikon is simmering in the oden warmer.",
+          "cefr_level": "A2",
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 2680,
+          "word_id": "oden-warmer",
+          "sentence": "After looking inside the oden warmer, I asked the clerk for an egg and konjac.",
+          "cefr_level": "B1",
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "sort_order": 1
+        }
+      ]
+    },
+    {
+      "word": {
+        "id": "steamed-bun-warmer",
+        "note": null,
+        "word": "steamed bun warmer",
+        "forms": [],
+        "status": "published",
+        "category": "convenience-store",
+        "audio_url": "https://img.nexflow.team/word-audio/steamed-bun-warmer/en-US/7ee1abb172c34bfc61db.mp3",
+        "etymology": null,
+        "image_url": "https://img.nexflow.team/word-images/steamed-bun-warmer-ai-b70e0319fd87.webp",
+        "cefr_level": null,
+        "created_at": "2026-09-21T00:14:06.242816+00:00",
+        "deleted_at": null,
+        "updated_at": "2026-10-30T14:01:19.99409+00:00",
+        "collocations": [],
+        "image_credit": "OpenAI ImageGen",
+        "also_known_as": [],
+        "image_license": "ai-generated",
+        "pronunciation": "/ˌstiːmd bʌn ˈwɔːr.mɚ/",
+        "part_of_speech": "noun",
+        "image_source_url": null,
+        "chinese_definition": "以蒸氣加熱並保溫肉包、紅豆包等中華包子的透明展示設備。"
+      },
+      "terms": [
+        {
+          "term": "steamed bun warmer",
+          "reading": null,
+          "word_id": "steamed-bun-warmer",
+          "language": "en",
+          "audio_url": null,
+          "updated_at": "2026-10-30T14:01:16.962384+00:00",
+          "pronunciation": "/ˌstiːmd bʌn ˈwɔːr.mɚ/",
+          "reading_segments": null
+        },
+        {
+          "term": "中華まんスチーマー",
+          "reading": "ちゅうかまんスチーマー",
+          "word_id": "steamed-bun-warmer",
+          "language": "ja",
+          "audio_url": "https://img.nexflow.team/word-audio/steamed-bun-warmer/ja-JP/32aa91ddf93365c5d225.mp3",
+          "updated_at": "2026-10-30T14:01:19.99409+00:00",
+          "pronunciation": "ちゅうかまんスチーマー",
+          "reading_segments": [
+            {
+              "ruby": "ちゅうか",
+              "text": "中華"
+            },
+            {
+              "ruby": null,
+              "text": "まんスチーマー"
+            }
+          ]
+        }
+      ],
+      "definitions": [
+        {
+          "id": 3829,
+          "word_id": "steamed-bun-warmer",
+          "language": "en",
+          "cefr_level": null,
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "definition": "A glass-fronted steamer that heats and holds filled buns for sale.",
+          "sort_order": 0,
+          "updated_at": "2026-09-21T00:14:06.242816+00:00"
+        },
+        {
+          "id": 3830,
+          "word_id": "steamed-bun-warmer",
+          "language": "ja",
+          "cefr_level": null,
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "definition": "「中華まんスチーマー」とは、肉まんやあんまんを蒸気で温め、保温しながら販売するための設備です。",
+          "sort_order": 0,
+          "updated_at": "2026-10-30T14:01:19.99409+00:00"
+        },
+        {
+          "id": 3828,
+          "word_id": "steamed-bun-warmer",
+          "language": "zh",
+          "cefr_level": null,
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "definition": "包子保溫蒸櫃",
+          "sort_order": 0,
+          "updated_at": "2026-09-21T00:14:06.242816+00:00"
+        }
+      ],
+      "examples": [
+        {
+          "id": 2677,
+          "word_id": "steamed-bun-warmer",
+          "sentence": "The steamed bun warmer is beside the register.",
+          "cefr_level": "A2",
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "sort_order": 0
+        },
+        {
+          "id": 2678,
+          "word_id": "steamed-bun-warmer",
+          "sentence": "Since it was cold outside, I bought a pork bun from the steamed bun warmer.",
+          "cefr_level": "B1",
+          "created_at": "2026-09-21T00:14:06.242816+00:00",
+          "sort_order": 1
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "category": {
+        "id": "supermarket",
+        "name": "Supermarket",
+        "color": "from-emerald-100 to-lime-100",
+        "emoji": "🛒",
+        "name_zh": "超市",
+        "image_url": "https://img.nexflow.team/word-images/category-supermarket.webp",
+        "created_at": "2026-05-26T00:01:02.344155+00:00",
+        "sort_order": 8,
+        "description": "日常採購的好夥伴",
+        "description_en": "Your everyday shopping run"
+      }
+    },
+    {
+      "category": {
+        "id": "convenience-store",
+        "name": "Convenience Store",
+        "color": "from-sky-100 to-orange-100",
+        "emoji": "🏪",
+        "name_zh": "便利商店",
+        "image_url": "https://img.nexflow.team/word-images/category-convenience-store-ai-39210eed4daa.webp",
+        "created_at": "2026-09-21T00:14:06.242816+00:00",
+        "sort_order": 14,
+        "description": "認識日本便利商店裡常見的設備、服務與商品",
+        "description_en": "Everyday equipment, services, and food found in Japanese convenience stores"
+      }
+    }
+  ],
+  "categorySchema": [
+    {
+      "table_name": "categories",
+      "column_name": "id"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "name"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "name_zh"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "emoji"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "description"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "color"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "image_url"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "sort_order"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "created_at"
+    },
+    {
+      "table_name": "categories",
+      "column_name": "description_en"
+    },
+    {
+      "table_name": "category_translations",
+      "column_name": "category_id"
+    },
+    {
+      "table_name": "category_translations",
+      "column_name": "language"
+    },
+    {
+      "table_name": "category_translations",
+      "column_name": "name"
+    },
+    {
+      "table_name": "category_translations",
+      "column_name": "description"
+    },
+    {
+      "table_name": "word_categories",
+      "column_name": "word_id"
+    },
+    {
+      "table_name": "word_categories",
+      "column_name": "category_id"
+    },
+    {
+      "table_name": "word_categories",
+      "column_name": "is_primary"
+    },
+    {
+      "table_name": "word_categories",
+      "column_name": "created_at"
+    }
+  ]
+}

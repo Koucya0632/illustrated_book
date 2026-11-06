@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-30T14:58:00.253973+00:00",
+  "sourceFile": "/Users/rex/Desktop/tuji/output/worktrees/winter-food-preparation/output/winter-food-2026-10/independent-official-checker/source.json",
+  "words": [
+    {
+      "id": "oden",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "成品高湯料理與保溫設備清楚分開；點一份與燙食稍等後食用是不同日常用例，簡單請求與原因/先後關係有難度差。",
+      "examples": [
+        {
+          "exampleId": "oden:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "一人前點餐請求自然，三語都要求一份而非一鍋；一人前與お願いします為完整單位。"
+        },
+        {
+          "exampleId": "oden:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "因關東煮燙而等待再吃的事件、原因與時間順序三語相同；熱かった/待って/食べました等讀音與語境義完整。"
+        }
+      ]
+    },
+    {
+      "id": "steamed-meat-bun",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "鹹肉餡包子、常見但非絕對豬肉的範圍準確；裝袋與等車肚餓購買是不同情境，沒有與中華まん泛稱或設備混淆。",
+      "examples": [
+        {
+          "exampleId": "steamed-meat-bun:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "請把肉包裝袋是可直接使用的口語，三語受詞/動作相同；入れてください包含完整請求不拆ください。"
+        },
+        {
+          "exampleId": "steamed-meat-bun:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "等公車時肚子餓導致買肉包的因果自然，バスを待っている間與おなかがすいた對應英文/繁中；相關動詞分開點譯。"
+        }
+      ]
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "定義指烤熟甘藷，供應明確非每店皆有；品嘗甜度與售罄轉店有實質用例差別，複雜句具原因結果。",
+      "examples": [
+        {
+          "exampleId": "roasted-sweet-potato:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "對手上這條烤地瓜的甜味評價是合理品嘗話語，並非單純字典定義；甘いです完整且とても獨立。"
+        },
+        {
+          "exampleId": "roasted-sweet-potato:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "那家店售罄所以改去另一店的條件與事件三語一致；売り切れていた讀音覆蓋完整過去狀態。"
+        }
+      ]
+    },
+    {
+      "id": "daikon-radish",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "泛白蘿蔔食材定義保留生食/醃/煮可能，note另交代關東煮厚切情境；加一塊與未軟續煮區分清楚。",
+      "examples": [
+        {
+          "exampleId": "daikon-radish:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "加一塊大根在已交代的關東煮情境可用，非新建熟蘿蔔同義主詞；名詞/數量/完整請求分開。"
+        },
+        {
+          "exampleId": "daikon-radish:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "還硬所以多煮十分鐘的因果與追加時長一致，さらに/10分/煮ました與英中語境對應，じゅっぷん完整。"
+        }
+      ]
+    },
+    {
+      "id": "egg",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "泛雞蛋與egg-carton包裝分開，也未把卵窄化成ゆで卵；note交代關東煮通常先煮熟剝殼，點餐與吸味準備用途有差。",
+      "examples": [
+        {
+          "exampleId": "egg:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "在關東煮加一顆蛋的數量與處所三語一致，名詞/數量/入れてください拆分自然。"
+        },
+        {
+          "exampleId": "egg:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "為讓高湯入味先剝殼再入鍋的目的與順序一致；日句しみ込む以高湯為主語，英詞absorb的日gloss已改吸う。"
+        }
+      ]
+    },
+    {
+      "id": "chikuwa",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "魚漿中空管與小麥ちくわぶ有清楚區別；切薄片與因太長先切半入鍋的不同備料目的支持簡繁難度。",
+      "examples": [
+        {
+          "exampleId": "chikuwa:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "請切薄片自然且可實際料理，薄く與完整切ってください分開；三語都是切薄而非切半。"
+        },
+        {
+          "exampleId": "chikuwa:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "因竹輪太長而先切半再入鍋，原因/時間關係明確且三語一致；半分及兩主要動詞分開點譯。"
+        }
+      ]
+    },
+    {
+      "id": "hanpen",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "白色蓬鬆軟魚漿製品形態有地域差異註記，不混成豆腐/硬魚板；質地評價與避免煮散的料理安排是不同用法。",
+      "examples": [
+        {
+          "exampleId": "hanpen:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "對這塊半片魚板質地柔軟的品嘗評價合理，柔らかいです含完整讀音，沒有把は/この等文法碎片設可點。"
+        },
+        {
+          "exampleId": "hanpen:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "為避免燉煮時散掉而最後放入，三語目的與最後順序一致；崩れない保持否定在同一完整動詞塊。"
+        }
+      ]
+    },
+    {
+      "id": "konjac",
+      "pairVerdict": "pass",
+      "pairCategories": [],
+      "pairReason": "食品蒟蒻與原植物/麵條/甜果凍分清，灰塊只是常見外觀；點一塊與表面劃淺刀助入味有不同目的與難度。",
+      "examples": [
+        {
+          "exampleId": "konjac:0",
+          "sortOrder": 0,
+          "role": "simple",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "點一塊蒟蒻是自然購買用句，數量與名詞三語相同，お願いします為完整固定請求。"
+        },
+        {
+          "exampleId": "konjac:1",
+          "sortOrder": 1,
+          "role": "complex",
+          "verdict": "pass",
+          "categories": [],
+          "reason": "表面淺切口為更易吸味的目的關係明確，淺/表面/切口與動詞各自點譯；英absorb的日gloss改吸う，日しみ込みやすい完整。"
+        }
+      ]
+    }
+  ]
+}

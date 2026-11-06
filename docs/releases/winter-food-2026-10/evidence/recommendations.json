@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-30T14:47:00.916Z",
+  "status": "reviewed-concept-proposal-awaiting-content",
+  "scope": "8 new convenience-store words; no existing-word updates",
+  "publishedCount": 1245,
+  "category": {
+    "id": "convenience-store",
+    "free": true,
+    "proof": "lib/study-membership.ts FREE_STUDY_CATEGORIES; live category exists"
+  },
+  "sources": {
+    "database": {
+      "file": "database-research.json",
+      "sha256": "de3b1f2fd4d28fb68dfa0e7f5d4058a80b547c4a3a4b678a8c56d1ae561e510d"
+    },
+    "api": {
+      "file": "api-research.json",
+      "sha256": "163f00426fb4939c30d07b9cb196df649d77c369134a592c725289ab25f3c20a"
+    }
+  },
+  "entries": [
+    {
+      "id": "oden",
+      "word": "oden",
+      "ja": "おでん",
+      "jaReading": "おでん",
+      "chinese": "關東煮",
+      "concept": "prepared-dish",
+      "relatedWords": [
+        "oden-warmer"
+      ]
+    },
+    {
+      "id": "steamed-meat-bun",
+      "word": "steamed meat bun",
+      "ja": "肉まん",
+      "jaReading": "にくまん",
+      "chinese": "肉包",
+      "concept": "prepared-food",
+      "relatedWords": [
+        "steamed-bun-warmer"
+      ]
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "word": "roasted sweet potato",
+      "ja": "焼き芋",
+      "jaReading": "やきいも",
+      "chinese": "烤地瓜",
+      "concept": "prepared-food",
+      "relatedWords": []
+    },
+    {
+      "id": "daikon-radish",
+      "word": "daikon radish",
+      "ja": "大根",
+      "jaReading": "だいこん",
+      "chinese": "白蘿蔔",
+      "concept": "generic-ingredient",
+      "relatedWords": [
+        "oden"
+      ]
+    },
+    {
+      "id": "egg",
+      "word": "egg",
+      "ja": "卵",
+      "jaReading": "たまご",
+      "chinese": "雞蛋",
+      "concept": "generic-ingredient",
+      "relatedWords": [
+        "egg-carton",
+        "oden"
+      ]
+    },
+    {
+      "id": "chikuwa",
+      "word": "chikuwa",
+      "ja": "ちくわ",
+      "jaReading": "ちくわ",
+      "chinese": "竹輪",
+      "concept": "generic-ingredient",
+      "relatedWords": [
+        "oden"
+      ]
+    },
+    {
+      "id": "hanpen",
+      "word": "hanpen",
+      "ja": "はんぺん",
+      "jaReading": "はんぺん",
+      "chinese": "半片魚板",
+      "concept": "generic-ingredient",
+      "relatedWords": [
+        "oden"
+      ]
+    },
+    {
+      "id": "konjac",
+      "word": "konjac",
+      "ja": "こんにゃく",
+      "jaReading": "こんにゃく",
+      "chinese": "蒟蒻",
+      "concept": "generic-ingredient",
+      "relatedWords": [
+        "oden"
+      ]
+    }
+  ],
+  "decisions": [
+    "Prefer meat bun rather than broad chukaman; usually pork, not guaranteed exclusively pork.",
+    "Daikon and egg remain generic ingredient concepts; oden contextual notes describe thick daikon slices and peeled boiled eggs. No separate boiled-egg entry.",
+    "Egg-carton is packaging, not an egg; existing image/content/paid supermarket rights unchanged.",
+    "Oden/steamed-meat-bun are food rather than warmer equipment.",
+    "All eight new primary categories convenience-store, a free study category. No new category or public fallback/seed integration.",
+    "Retailer availability varies; no claim that every convenience store stocks any item."
+  ],
+  "references": [
+    "https://www.family.co.jp/goods/chukaman/0240161.html",
+    "https://www.inq.family.co.jp/familymart/QA_Customer/web/knowledge14857.html",
+    "https://www.maff.go.jp/j/keikaku/syokubunka/culture/wagohan/articles/2302/spe14_02.html",
+    "https://www.kibun.co.jp/brand/nabe/oden/teiban.html"
+  ],
+  "productionWrites": 0
+}

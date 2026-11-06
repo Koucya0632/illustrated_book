@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "indexSha256": "f2de3f1a5dcd7620e280ce9bf675e18ae747f4d483471cc91b15c5e173462182",
+  "initialCheckout": "no env, dependencies or original output",
+  "verifiedArtifacts": 52,
+  "restoredExactFiles": 52,
+  "idempotentRestoredFiles": 0,
+  "modifiedDestinationRefusedWithoutOverwrite": true,
+  "networkRequests": 0,
+  "productionWrites": 0
+}

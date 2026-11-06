@@ -1,0 +1,57 @@
+{
+  "status": "passed-local-integration",
+  "baseCommit": "af59d7f8631948fb8ce5489aea63345e5b1d7e4a",
+  "planSha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c",
+  "manifestSha256": "a072e60ae5acf47df39a5c0151360c4bc739cf055f4ad2fe8e3d1c0001963bff",
+  "unchangedPlanSources": 17,
+  "actualPublishedFixtureIds": [
+    "chikuwa",
+    "daikon-radish",
+    "egg",
+    "hanpen",
+    "konjac",
+    "oden",
+    "roasted-sweet-potato",
+    "steamed-meat-bun"
+  ],
+  "addedCanonicalUrls": {
+    "oden": "https://img.nexflow.team/word-images/winter-food-2026-10/oden-v2-5fa7defa0bb8.webp",
+    "steamed-meat-bun": "https://img.nexflow.team/word-images/winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp",
+    "roasted-sweet-potato": "https://img.nexflow.team/word-images/winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+    "daikon-radish": "https://img.nexflow.team/word-images/winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp",
+    "egg": "https://img.nexflow.team/word-images/winter-food-2026-10/egg-v1-c014f21f1b36.webp",
+    "chikuwa": "https://img.nexflow.team/word-images/winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp",
+    "hanpen": "https://img.nexflow.team/word-images/winter-food-2026-10/hanpen-v1-ce2b653a5485.webp",
+    "konjac": "https://img.nexflow.team/word-images/winter-food-2026-10/konjac-v1-e0b8566c2f12.webp"
+  },
+  "fixtureSourceHashes": {
+    "lib/main-word-winter-food-2026-10.ts": "00608739f560fd26aee58ccafcaf3010e9115994d8082d9e930ac13230def26c",
+    "lib/main-word-example-pairs.ts": "75d51f43672b9ece45c6cead70abb53cdd77c694891c0ac5f3b68bfc9a23ab95",
+    "lib/example-span-corpus.ts": "8f781278a42330d4f56715893c590f4dcb9a9a4caf289282d4b644a4f4efe9ba",
+    "lib/image-urls.json": "d635f72a2a01a7891aaeed4cc87fb4e77974c450e49d5011254a7d9f4e0a739c",
+    "data/winter-food-2026-10.json": "d16af799f1eb99ce70ac88c3a9638a5b84f7cc34a6006c4421d8b8c5631f44f7",
+    "data/example-spans-winter-food-2026-10.json": "c797f84ea3b6ee8084ddd00d7c40bdb0002e15fb35af50d0c919cbc46dffc33f",
+    "docs/releases/winter-food-2026-10.json": "91112e174e21a5ed52aa1c4bf9259a2b25fd8b943b46219c16c22e27c6648572",
+    "tests/main-word-example-pairs.test.ts": "133abac4273e89a55c553f1e4f2c9e0a8fba5a6eca5a779e22124a205566d37e",
+    "tests/winter-food-2026-10-migration.test.ts": "debf85ca043da447041654157fb985363883f88b082f201a9c304732915a422b"
+  },
+  "tests": {
+    "passed": 69,
+    "failed": 0,
+    "log": "postpublication-integration-tests.log"
+  },
+  "typecheckExitCode": 0,
+  "build": {
+    "exitCode": 0,
+    "scope": "standalone checkout with same current app and actual published fixture, DATABASE_URL empty, next build only",
+    "log": "postpublication-standalone-build.log",
+    "transientFontResolverFailure": "Earlier nested fixture and direct worktree attempts failed in Turbopack Google font resolution. Standalone retry succeeded with project configuration preserved."
+  },
+  "localIntegrationActions": {
+    "productionDatabaseWrites": 0,
+    "productionUploads": 0,
+    "commits": 0,
+    "pushes": 0,
+    "deployments": 0
+  }
+}

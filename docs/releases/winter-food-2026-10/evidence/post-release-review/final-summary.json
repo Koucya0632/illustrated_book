@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "workBatch": "winter-2026-03",
+  "scope": "Third winter batch only, eight new published convenience-store food concepts",
+  "checkedAt": "2026-11-06T09:54:18.568Z",
+  "status": "passed",
+  "planSha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c",
+  "manifest": {
+    "file": "output/winter-food-2026-10/apply-manifest-2026-11-06T09-45-50-844Z.json",
+    "sha256": "a072e60ae5acf47df39a5c0151360c4bc739cf055f4ad2fe8e3d1c0001963bff",
+    "exampleIds": [
+      3715,
+      3716,
+      3717,
+      3718,
+      3719,
+      3720,
+      3721,
+      3722,
+      3723,
+      3724,
+      3725,
+      3726,
+      3727,
+      3728,
+      3729,
+      3730
+    ]
+  },
+  "reviewerProductionWrites": 0,
+  "cacheOperationsByRoot": {
+    "cache-invalidate-words.log": "81c754afeb1d1fd37d43d77d46f25870e2215b3c7e5e4957c323e08b2ef2d4ec",
+    "cache-delete-words.log": "5fc7bc396890288ac835c17157631216dd0341d4145766c5deb52bafd1d97d22"
+  },
+  "layers": {
+    "database": {
+      "status": "passed",
+      "exactSelects": 17,
+      "words": 8,
+      "examples": 16,
+      "spanSentences": 32,
+      "baseNotes": 8,
+      "localizedNotes": 16,
+      "relations": 13
+    },
+    "officialScopedExamples": {
+      "status": "passed",
+      "mechanical": "passed",
+      "semantic": "passed",
+      "issues": 0
+    },
+    "formalMedia": {
+      "status": "passed",
+      "images": 8,
+      "headwordMp3": 24,
+      "exampleMp3": 48,
+      "shaMimeAndFullDecodeMatched": 80,
+      "mp3FrameChecks": 72
+    },
+    "publicHTTP": {
+      "status": "passed",
+      "probes": 176,
+      "passed": 176,
+      "counts": {
+        "word-list": 8,
+        "detail": 64,
+        "search": 64,
+        "category-api": 4,
+        "category-page": 4,
+        "detail-page": 32
+      },
+      "ordinaryAndBustingExactProjections": 36,
+      "ordinaryCacheIncidentRecovered": true
+    },
+    "iOSWireDecode": {
+      "detailPayloadsDecoded": 64,
+      "deviceRuntime": "not checked",
+      "issues": [],
+      "listPayloadsDecoded": 8,
+      "status": "passed"
+    },
+    "repositoryIntegrationDeployment": {
+      "status": "pending-separate-authorization"
+    },
+    "subjectiveListening": {
+      "status": "not-checked"
+    },
+    "physicalDevice": {
+      "status": "not-checked"
+    }
+  },
+  "unresolvedBlockingIssues": [],
+  "evidenceHashes": {
+    "output/winter-food-2026-10/apply-manifest-2026-11-06T09-45-50-844Z.json": "a072e60ae5acf47df39a5c0151360c4bc739cf055f4ad2fe8e3d1c0001963bff",
+    "output/winter-food-2026-10/post-release-review/database-exact.json": "8d8101edd967700815662746492de9f53b4979ee63de257225b848861fdb7682",
+    "output/winter-food-2026-10/post-release-review/remote-objects.json": "8da68c45ffa0b43836a72da975d1c034b2a72ad099b0cf4c0918d0f972d334e0",
+    "output/winter-food-2026-10/post-release-review/scoped-official-checker/audit.json": "9bf11b84d16a045428e5327186d1a4ca97be704826446fe1624fe26d38937ad4",
+    "output/winter-food-2026-10/post-release-review/http-probes-compact.json": "51ce35bdd909942c286abaa539e436a1e5df6bd6377abf16b89e66a597b0b7f8",
+    "output/winter-food-2026-10/post-release-review/http-probes-1793958566962.json": "68408f2eaf25e43671865ac5630aad3410be94a7fe2feeeb23adf474f63e1326",
+    "output/winter-food-2026-10/post-release-review/http-probes-1793958690728.json": "c8cf239ee547196be1dc2b4ac2556e40a77d90d3cb50d8ca3b02d139f6fb4af4",
+    "output/winter-food-2026-10/post-release-review/http-probes-1793958805180.json": "ad9472490b6916e3e02029f4ad501fd126b33969aa47eeab291f6f92c646c928",
+    "output/winter-food-2026-10/post-release-review/http-probes-1793958858263.json": "67cc36c982a950b5dfe9ff450ebf8dee40216c4f78c4f23932480d852a3f9c51",
+    "output/winter-food-2026-10/post-release-review/ios-decode-final.json": "a3d40d1c52ed5d68f660bd219cb81d384e3175ef4183bc03130599b2cded1e61"
+  }
+}

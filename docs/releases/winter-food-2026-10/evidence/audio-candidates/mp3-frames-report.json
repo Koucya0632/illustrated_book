@@ -1,0 +1,1158 @@
+{
+  "passed": true,
+  "clips": 72,
+  "results": [
+    {
+      "key": "headword|oden|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 47,
+      "parsedBytes": 4512,
+      "trailingBytes": 0,
+      "bytes": 4512
+    },
+    {
+      "key": "headword|oden|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 51,
+      "parsedBytes": 4896,
+      "trailingBytes": 0,
+      "bytes": 4896
+    },
+    {
+      "key": "headword|oden|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 41,
+      "parsedBytes": 3936,
+      "trailingBytes": 0,
+      "bytes": 3936
+    },
+    {
+      "key": "example|oden:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 79,
+      "parsedBytes": 7584,
+      "trailingBytes": 0,
+      "bytes": 7584
+    },
+    {
+      "key": "example|oden:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 91,
+      "parsedBytes": 8736,
+      "trailingBytes": 0,
+      "bytes": 8736
+    },
+    {
+      "key": "example|oden:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 119,
+      "parsedBytes": 11424,
+      "trailingBytes": 0,
+      "bytes": 11424
+    },
+    {
+      "key": "example|oden:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 172,
+      "parsedBytes": 16512,
+      "trailingBytes": 0,
+      "bytes": 16512
+    },
+    {
+      "key": "example|oden:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 154,
+      "parsedBytes": 14784,
+      "trailingBytes": 0,
+      "bytes": 14784
+    },
+    {
+      "key": "example|oden:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 157,
+      "parsedBytes": 15072,
+      "trailingBytes": 0,
+      "bytes": 15072
+    },
+    {
+      "key": "headword|steamed-meat-bun|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 51,
+      "parsedBytes": 4896,
+      "trailingBytes": 0,
+      "bytes": 4896
+    },
+    {
+      "key": "headword|steamed-meat-bun|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 59,
+      "parsedBytes": 5664,
+      "trailingBytes": 0,
+      "bytes": 5664
+    },
+    {
+      "key": "headword|steamed-meat-bun|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 51,
+      "parsedBytes": 4896,
+      "trailingBytes": 0,
+      "bytes": 4896
+    },
+    {
+      "key": "example|steamed-meat-bun:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 89,
+      "parsedBytes": 8544,
+      "trailingBytes": 0,
+      "bytes": 8544
+    },
+    {
+      "key": "example|steamed-meat-bun:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 131,
+      "parsedBytes": 12576,
+      "trailingBytes": 0,
+      "bytes": 12576
+    },
+    {
+      "key": "example|steamed-meat-bun:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 89,
+      "parsedBytes": 8544,
+      "trailingBytes": 0,
+      "bytes": 8544
+    },
+    {
+      "key": "example|steamed-meat-bun:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 202,
+      "parsedBytes": 19392,
+      "trailingBytes": 0,
+      "bytes": 19392
+    },
+    {
+      "key": "example|steamed-meat-bun:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 181,
+      "parsedBytes": 17376,
+      "trailingBytes": 0,
+      "bytes": 17376
+    },
+    {
+      "key": "example|steamed-meat-bun:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 212,
+      "parsedBytes": 20352,
+      "trailingBytes": 0,
+      "bytes": 20352
+    },
+    {
+      "key": "headword|roasted-sweet-potato|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 76,
+      "parsedBytes": 7296,
+      "trailingBytes": 0,
+      "bytes": 7296
+    },
+    {
+      "key": "headword|roasted-sweet-potato|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 84,
+      "parsedBytes": 8064,
+      "trailingBytes": 0,
+      "bytes": 8064
+    },
+    {
+      "key": "headword|roasted-sweet-potato|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 49,
+      "parsedBytes": 4704,
+      "trailingBytes": 0,
+      "bytes": 4704
+    },
+    {
+      "key": "example|roasted-sweet-potato:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 134,
+      "parsedBytes": 12864,
+      "trailingBytes": 0,
+      "bytes": 12864
+    },
+    {
+      "key": "example|roasted-sweet-potato:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 122,
+      "parsedBytes": 11712,
+      "trailingBytes": 0,
+      "bytes": 11712
+    },
+    {
+      "key": "example|roasted-sweet-potato:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 102,
+      "parsedBytes": 9792,
+      "trailingBytes": 0,
+      "bytes": 9792
+    },
+    {
+      "key": "example|roasted-sweet-potato:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 201,
+      "parsedBytes": 19296,
+      "trailingBytes": 0,
+      "bytes": 19296
+    },
+    {
+      "key": "example|roasted-sweet-potato:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 167,
+      "parsedBytes": 16032,
+      "trailingBytes": 0,
+      "bytes": 16032
+    },
+    {
+      "key": "example|roasted-sweet-potato:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 196,
+      "parsedBytes": 18816,
+      "trailingBytes": 0,
+      "bytes": 18816
+    },
+    {
+      "key": "headword|daikon-radish|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 71,
+      "parsedBytes": 6816,
+      "trailingBytes": 0,
+      "bytes": 6816
+    },
+    {
+      "key": "headword|daikon-radish|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 47,
+      "parsedBytes": 4512,
+      "trailingBytes": 0,
+      "bytes": 4512
+    },
+    {
+      "key": "headword|daikon-radish|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 64,
+      "parsedBytes": 6144,
+      "trailingBytes": 0,
+      "bytes": 6144
+    },
+    {
+      "key": "example|daikon-radish:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 117,
+      "parsedBytes": 11232,
+      "trailingBytes": 0,
+      "bytes": 11232
+    },
+    {
+      "key": "example|daikon-radish:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 132,
+      "parsedBytes": 12672,
+      "trailingBytes": 0,
+      "bytes": 12672
+    },
+    {
+      "key": "example|daikon-radish:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 104,
+      "parsedBytes": 9984,
+      "trailingBytes": 0,
+      "bytes": 9984
+    },
+    {
+      "key": "example|daikon-radish:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 154,
+      "parsedBytes": 14784,
+      "trailingBytes": 0,
+      "bytes": 14784
+    },
+    {
+      "key": "example|daikon-radish:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 162,
+      "parsedBytes": 15552,
+      "trailingBytes": 0,
+      "bytes": 15552
+    },
+    {
+      "key": "example|daikon-radish:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 141,
+      "parsedBytes": 13536,
+      "trailingBytes": 0,
+      "bytes": 13536
+    },
+    {
+      "key": "headword|egg|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 36,
+      "parsedBytes": 3456,
+      "trailingBytes": 0,
+      "bytes": 3456
+    },
+    {
+      "key": "headword|egg|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 22,
+      "parsedBytes": 2112,
+      "trailingBytes": 0,
+      "bytes": 2112
+    },
+    {
+      "key": "headword|egg|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 52,
+      "parsedBytes": 4992,
+      "trailingBytes": 0,
+      "bytes": 4992
+    },
+    {
+      "key": "example|egg:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 84,
+      "parsedBytes": 8064,
+      "trailingBytes": 0,
+      "bytes": 8064
+    },
+    {
+      "key": "example|egg:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 72,
+      "parsedBytes": 6912,
+      "trailingBytes": 0,
+      "bytes": 6912
+    },
+    {
+      "key": "example|egg:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 114,
+      "parsedBytes": 10944,
+      "trailingBytes": 0,
+      "bytes": 10944
+    },
+    {
+      "key": "example|egg:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 196,
+      "parsedBytes": 18816,
+      "trailingBytes": 0,
+      "bytes": 18816
+    },
+    {
+      "key": "example|egg:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 214,
+      "parsedBytes": 20544,
+      "trailingBytes": 0,
+      "bytes": 20544
+    },
+    {
+      "key": "example|egg:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 204,
+      "parsedBytes": 19584,
+      "trailingBytes": 0,
+      "bytes": 19584
+    },
+    {
+      "key": "headword|chikuwa|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 51,
+      "parsedBytes": 4896,
+      "trailingBytes": 0,
+      "bytes": 4896
+    },
+    {
+      "key": "headword|chikuwa|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 54,
+      "parsedBytes": 5184,
+      "trailingBytes": 0,
+      "bytes": 5184
+    },
+    {
+      "key": "headword|chikuwa|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 57,
+      "parsedBytes": 5472,
+      "trailingBytes": 0,
+      "bytes": 5472
+    },
+    {
+      "key": "example|chikuwa:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 127,
+      "parsedBytes": 12192,
+      "trailingBytes": 0,
+      "bytes": 12192
+    },
+    {
+      "key": "example|chikuwa:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 102,
+      "parsedBytes": 9792,
+      "trailingBytes": 0,
+      "bytes": 9792
+    },
+    {
+      "key": "example|chikuwa:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 111,
+      "parsedBytes": 10656,
+      "trailingBytes": 0,
+      "bytes": 10656
+    },
+    {
+      "key": "example|chikuwa:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 186,
+      "parsedBytes": 17856,
+      "trailingBytes": 0,
+      "bytes": 17856
+    },
+    {
+      "key": "example|chikuwa:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 227,
+      "parsedBytes": 21792,
+      "trailingBytes": 0,
+      "bytes": 21792
+    },
+    {
+      "key": "example|chikuwa:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 171,
+      "parsedBytes": 16416,
+      "trailingBytes": 0,
+      "bytes": 16416
+    },
+    {
+      "key": "headword|hanpen|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 44,
+      "parsedBytes": 4224,
+      "trailingBytes": 0,
+      "bytes": 4224
+    },
+    {
+      "key": "headword|hanpen|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 51,
+      "parsedBytes": 4896,
+      "trailingBytes": 0,
+      "bytes": 4896
+    },
+    {
+      "key": "headword|hanpen|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 51,
+      "parsedBytes": 4896,
+      "trailingBytes": 0,
+      "bytes": 4896
+    },
+    {
+      "key": "example|hanpen:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 89,
+      "parsedBytes": 8544,
+      "trailingBytes": 0,
+      "bytes": 8544
+    },
+    {
+      "key": "example|hanpen:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 69,
+      "parsedBytes": 6624,
+      "trailingBytes": 0,
+      "bytes": 6624
+    },
+    {
+      "key": "example|hanpen:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 104,
+      "parsedBytes": 9984,
+      "trailingBytes": 0,
+      "bytes": 9984
+    },
+    {
+      "key": "example|hanpen:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 187,
+      "parsedBytes": 17952,
+      "trailingBytes": 0,
+      "bytes": 17952
+    },
+    {
+      "key": "example|hanpen:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 189,
+      "parsedBytes": 18144,
+      "trailingBytes": 0,
+      "bytes": 18144
+    },
+    {
+      "key": "example|hanpen:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 194,
+      "parsedBytes": 18624,
+      "trailingBytes": 0,
+      "bytes": 18624
+    },
+    {
+      "key": "headword|konjac|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 34,
+      "parsedBytes": 3264,
+      "trailingBytes": 0,
+      "bytes": 3264
+    },
+    {
+      "key": "headword|konjac|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 47,
+      "parsedBytes": 4512,
+      "trailingBytes": 0,
+      "bytes": 4512
+    },
+    {
+      "key": "headword|konjac|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 46,
+      "parsedBytes": 4416,
+      "trailingBytes": 0,
+      "bytes": 4416
+    },
+    {
+      "key": "example|konjac:0|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 76,
+      "parsedBytes": 7296,
+      "trailingBytes": 0,
+      "bytes": 7296
+    },
+    {
+      "key": "example|konjac:0|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 124,
+      "parsedBytes": 11904,
+      "trailingBytes": 0,
+      "bytes": 11904
+    },
+    {
+      "key": "example|konjac:0|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 101,
+      "parsedBytes": 9696,
+      "trailingBytes": 0,
+      "bytes": 9696
+    },
+    {
+      "key": "example|konjac:1|en-US",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 221,
+      "parsedBytes": 21216,
+      "trailingBytes": 0,
+      "bytes": 21216
+    },
+    {
+      "key": "example|konjac:1|en-GB",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 207,
+      "parsedBytes": 19872,
+      "trailingBytes": 0,
+      "bytes": 19872
+    },
+    {
+      "key": "example|konjac:1|ja-JP",
+      "valid": true,
+      "firstFrame": {
+        "offset": 0,
+        "version": 2,
+        "layer": 3,
+        "bitrateKbps": 32,
+        "sampleRate": 24000,
+        "frameLength": 96
+      },
+      "frames": 249,
+      "parsedBytes": 23904,
+      "trailingBytes": 0,
+      "bytes": 23904
+    }
+  ]
+}

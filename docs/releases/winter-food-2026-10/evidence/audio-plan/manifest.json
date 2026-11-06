@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-food-2026-10",
+  "state": "candidate-audio-planned",
+  "productionWriteAllowed": false,
+  "note": "Example ownerKey values are candidate references, not production example IDs. Resolve them inside the guarded publisher transaction.",
+  "summary": {
+    "words": 8,
+    "examples": 16,
+    "clips": 72,
+    "headwords": {
+      "total": 24,
+      "en-US": 8,
+      "en-GB": 8,
+      "ja-JP": 8
+    },
+    "examplesByLocale": {
+      "total": 48,
+      "en-US": 16,
+      "en-GB": 16,
+      "ja-JP": 16
+    }
+  },
+  "issues": [],
+  "jobs": [
+    {
+      "kind": "headword",
+      "ownerKey": "oden",
+      "wordId": "oden",
+      "locale": "en-US",
+      "text": "oden"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "oden",
+      "wordId": "oden",
+      "locale": "en-GB",
+      "text": "oden"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "oden",
+      "wordId": "oden",
+      "locale": "ja-JP",
+      "text": "おでん"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "oden:0",
+      "wordId": "oden",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "Please give me one serving of oden."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "oden:0",
+      "wordId": "oden",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "Please give me one serving of oden."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "oden:0",
+      "wordId": "oden",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "おでんを一人前お願いします。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "oden:1",
+      "wordId": "oden",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "The oden was hot, so I waited a little before eating it."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "oden:1",
+      "wordId": "oden",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "The oden was hot, so I waited a little before eating it."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "oden:1",
+      "wordId": "oden",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "おでんが熱かったので、少し待ってから食べました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "steamed-meat-bun",
+      "wordId": "steamed-meat-bun",
+      "locale": "en-US",
+      "text": "steamed meat bun"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "steamed-meat-bun",
+      "wordId": "steamed-meat-bun",
+      "locale": "en-GB",
+      "text": "steamed meat bun"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "steamed-meat-bun",
+      "wordId": "steamed-meat-bun",
+      "locale": "ja-JP",
+      "text": "肉まん"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "steamed-meat-bun:0",
+      "wordId": "steamed-meat-bun",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "Please put the steamed meat bun in a bag."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "steamed-meat-bun:0",
+      "wordId": "steamed-meat-bun",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "Please put the steamed meat bun in a bag."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "steamed-meat-bun:0",
+      "wordId": "steamed-meat-bun",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "肉まんを袋に入れてください。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "steamed-meat-bun:1",
+      "wordId": "steamed-meat-bun",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "I bought a steamed meat bun because I was hungry while waiting for the bus."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "steamed-meat-bun:1",
+      "wordId": "steamed-meat-bun",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "I bought a steamed meat bun because I was hungry while waiting for the bus."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "steamed-meat-bun:1",
+      "wordId": "steamed-meat-bun",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "バスを待っている間におなかがすいたので、肉まんを買いました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "roasted-sweet-potato",
+      "wordId": "roasted-sweet-potato",
+      "locale": "en-US",
+      "text": "roasted sweet potato"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "roasted-sweet-potato",
+      "wordId": "roasted-sweet-potato",
+      "locale": "en-GB",
+      "text": "roasted sweet potato"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "roasted-sweet-potato",
+      "wordId": "roasted-sweet-potato",
+      "locale": "ja-JP",
+      "text": "焼き芋"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "roasted-sweet-potato:0",
+      "wordId": "roasted-sweet-potato",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "This roasted sweet potato is very sweet."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "roasted-sweet-potato:0",
+      "wordId": "roasted-sweet-potato",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "This roasted sweet potato is very sweet."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "roasted-sweet-potato:0",
+      "wordId": "roasted-sweet-potato",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "この焼き芋はとても甘いです。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "roasted-sweet-potato:1",
+      "wordId": "roasted-sweet-potato",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "The store had sold out of roasted sweet potatoes, so I went to another store."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "roasted-sweet-potato:1",
+      "wordId": "roasted-sweet-potato",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "The store had sold out of roasted sweet potatoes, so I went to another store."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "roasted-sweet-potato:1",
+      "wordId": "roasted-sweet-potato",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "その店では焼き芋が売り切れていたので、別の店に行きました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "daikon-radish",
+      "wordId": "daikon-radish",
+      "locale": "en-US",
+      "text": "daikon radish"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "daikon-radish",
+      "wordId": "daikon-radish",
+      "locale": "en-GB",
+      "text": "daikon radish"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "daikon-radish",
+      "wordId": "daikon-radish",
+      "locale": "ja-JP",
+      "text": "大根"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "daikon-radish:0",
+      "wordId": "daikon-radish",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "Please add one piece of daikon radish."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "daikon-radish:0",
+      "wordId": "daikon-radish",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "Please add one piece of daikon radish."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "daikon-radish:0",
+      "wordId": "daikon-radish",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "大根を一つ入れてください。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "daikon-radish:1",
+      "wordId": "daikon-radish",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "The daikon radish was still hard, so I simmered it for another ten minutes."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "daikon-radish:1",
+      "wordId": "daikon-radish",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "The daikon radish was still hard, so I simmered it for another ten minutes."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "daikon-radish:1",
+      "wordId": "daikon-radish",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "大根がまだ硬かったので、さらに10分煮ました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "egg",
+      "wordId": "egg",
+      "locale": "en-US",
+      "text": "egg"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "egg",
+      "wordId": "egg",
+      "locale": "en-GB",
+      "text": "egg"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "egg",
+      "wordId": "egg",
+      "locale": "ja-JP",
+      "text": "卵"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "egg:0",
+      "wordId": "egg",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "Please add one egg to the oden."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "egg:0",
+      "wordId": "egg",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "Please add one egg to the oden."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "egg:0",
+      "wordId": "egg",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "おでんに卵を一つ入れてください。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "egg:1",
+      "wordId": "egg",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "I peeled the eggs before putting them in the oden so that they could absorb the broth."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "egg:1",
+      "wordId": "egg",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "I peeled the eggs before putting them in the oden so that they could absorb the broth."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "egg:1",
+      "wordId": "egg",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "chikuwa",
+      "wordId": "chikuwa",
+      "locale": "en-US",
+      "text": "chikuwa"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "chikuwa",
+      "wordId": "chikuwa",
+      "locale": "en-GB",
+      "text": "chikuwa"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "chikuwa",
+      "wordId": "chikuwa",
+      "locale": "ja-JP",
+      "text": "ちくわ"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "chikuwa:0",
+      "wordId": "chikuwa",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "Please slice the chikuwa thinly."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "chikuwa:0",
+      "wordId": "chikuwa",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "Please slice the chikuwa thinly."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "chikuwa:0",
+      "wordId": "chikuwa",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "ちくわを薄く切ってください。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "chikuwa:1",
+      "wordId": "chikuwa",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "Because the chikuwa was long, I cut it in half before putting it in the pot."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "chikuwa:1",
+      "wordId": "chikuwa",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "Because the chikuwa was long, I cut it in half before putting it in the pot."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "chikuwa:1",
+      "wordId": "chikuwa",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "ちくわが長かったので、半分に切ってから鍋に入れました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "hanpen",
+      "wordId": "hanpen",
+      "locale": "en-US",
+      "text": "hanpen"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "hanpen",
+      "wordId": "hanpen",
+      "locale": "en-GB",
+      "text": "hanpen"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "hanpen",
+      "wordId": "hanpen",
+      "locale": "ja-JP",
+      "text": "はんぺん"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "hanpen:0",
+      "wordId": "hanpen",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "This hanpen is soft."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "hanpen:0",
+      "wordId": "hanpen",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "This hanpen is soft."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "hanpen:0",
+      "wordId": "hanpen",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "このはんぺんは柔らかいです。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "hanpen:1",
+      "wordId": "hanpen",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "I added the hanpen last so that it would not fall apart while simmering."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "hanpen:1",
+      "wordId": "hanpen",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "I added the hanpen last so that it would not fall apart while simmering."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "hanpen:1",
+      "wordId": "hanpen",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "煮ている間に崩れないように、はんぺんは最後に入れました。"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "konjac",
+      "wordId": "konjac",
+      "locale": "en-US",
+      "text": "konjac"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "konjac",
+      "wordId": "konjac",
+      "locale": "en-GB",
+      "text": "konjac"
+    },
+    {
+      "kind": "headword",
+      "ownerKey": "konjac",
+      "wordId": "konjac",
+      "locale": "ja-JP",
+      "text": "こんにゃく"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "konjac:0",
+      "wordId": "konjac",
+      "slot": 0,
+      "locale": "en-US",
+      "text": "Please give me one piece of konjac."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "konjac:0",
+      "wordId": "konjac",
+      "slot": 0,
+      "locale": "en-GB",
+      "text": "Please give me one piece of konjac."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "konjac:0",
+      "wordId": "konjac",
+      "slot": 0,
+      "locale": "ja-JP",
+      "text": "こんにゃくを一つお願いします。"
+    },
+    {
+      "kind": "example",
+      "ownerKey": "konjac:1",
+      "wordId": "konjac",
+      "slot": 1,
+      "locale": "en-US",
+      "text": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "konjac:1",
+      "wordId": "konjac",
+      "slot": 1,
+      "locale": "en-GB",
+      "text": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily."
+    },
+    {
+      "kind": "example",
+      "ownerKey": "konjac:1",
+      "wordId": "konjac",
+      "slot": 1,
+      "locale": "ja-JP",
+      "text": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。"
+    }
+  ]
+}

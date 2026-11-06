@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-food-2026-10",
+  "verifiedAt": "2026-10-30T14:59:40.776Z",
+  "sourceManifest": "generated-manifest.json",
+  "clipsVerified": 72,
+  "breakdown": {
+    "headwords": {
+      "en-US": 8,
+      "en-GB": 8,
+      "ja-JP": 8
+    },
+    "examples": {
+      "en-US": 16,
+      "en-GB": 16,
+      "ja-JP": 16
+    }
+  },
+  "durationSeconds": {
+    "minimum": 0.528,
+    "maximum": 5.976,
+    "total": 198.28800000000004
+  },
+  "checks": [
+    "plan membership",
+    "exact spoken source and owner",
+    "path containment",
+    "byte count",
+    "SHA-256",
+    "MP3 header",
+    "ffprobe metadata",
+    "full ffmpeg decode"
+  ],
+  "issues": [],
+  "passed": true
+}

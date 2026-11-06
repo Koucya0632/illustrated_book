@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-food-2026-10",
+  "workBatch": "winter-2026-03",
+  "state": "local-candidate-awaiting-independent-review",
+  "scopeNote": "Eight new food/ingredient concepts in existing free convenience-store category. Existing words and categories unchanged; no public seed/fallback registration.",
+  "category": {
+    "id": "convenience-store",
+    "existing": true,
+    "free": true
+  },
+  "references": [
+    "https://www.family.co.jp/goods/chukaman/0240161.html",
+    "https://www.inq.family.co.jp/familymart/QA_Customer/web/knowledge14857.html",
+    "https://www.maff.go.jp/j/keikaku/syokubunka/culture/wagohan/articles/2302/spe14_02.html",
+    "https://www.kibun.co.jp/brand/nabe/oden/teiban.html"
+  ],
+  "editorialDecisions": [
+    {
+      "candidate": "肉まん",
+      "decision": "specific-steamed-meat-bun",
+      "reason": "A subtype of chukaman; usually pork in Japan, not a claim that every product contains exclusively pork."
+    },
+    {
+      "candidate": "大根／卵",
+      "decision": "generic-ingredient-with-oden-context",
+      "reason": "Keep generic vegetable/egg concepts. Contextual notes and examples explain thick simmered daikon slices and peeled boiled eggs in oden; no duplicate boiled-egg entry."
+    },
+    {
+      "candidate": "optional-oden-ingredients",
+      "decision": "include-all-five",
+      "reason": "No duplicate published concepts; supports the original ordering pain point. Existing egg-carton is packaging, not egg."
+    },
+    {
+      "candidate": "availability",
+      "decision": "shop-region-season-qualified",
+      "reason": "Retailer products vary; no all-shops availability, price, or promotion claim."
+    }
+  ],
+  "entries": [
+    {
+      "id": "oden",
+      "word": "oden",
+      "chinese": "關東煮",
+      "chineseDefinition": "把白蘿蔔、蛋、蒟蒻或魚漿製品等食材放入調味高湯中燉煮的日式料理。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈoʊ.den/",
+      "cefrLevel": "B1",
+      "ja": "おでん",
+      "jaReading": "おでん",
+      "jaReadingSegments": [
+        {
+          "text": "おでん",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "關東煮",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese dish of ingredients such as daikon radish, eggs, konjac and fish cakes simmered in seasoned broth.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "大根や卵、こんにゃく、練り物などを、味をつけただしで煮た料理。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "指煮好的料理，不是保溫設備。用料依地區與店家不同；供應情況也因季節與店鋪而異。",
+      "localizedNotes": {
+        "en": "This is the prepared dish, rather than the equipment that keeps it warm. Ingredients and availability vary by region, shop and season.",
+        "ja": "料理そのものを指し、保温する機械とは異なる。具や販売状況は地域・店・季節によって異なる。"
+      },
+      "relatedWords": [
+        "oden-warmer",
+        "daikon-radish",
+        "egg",
+        "chikuwa",
+        "hanpen",
+        "konjac"
+      ],
+      "examples": [
+        {
+          "en": "Please give me one serving of oden.",
+          "ja": "おでんを一人前お願いします。",
+          "zh": "請給我一人份的關東煮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The oden was hot, so I waited a little before eating it.",
+          "ja": "おでんが熱かったので、少し待ってから食べました。",
+          "zh": "關東煮很燙，所以我稍等了一下才吃。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "steamed-meat-bun",
+      "word": "steamed meat bun",
+      "chinese": "肉包",
+      "chineseDefinition": "以柔軟麵皮包入調味肉餡後蒸熟的包子；在日本常見豬肉餡。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/stiːmd miːt bʌn/",
+      "cefrLevel": "A2",
+      "ja": "肉まん",
+      "jaReading": "にくまん",
+      "jaReadingSegments": [
+        {
+          "text": "肉",
+          "ruby": "にく"
+        },
+        {
+          "text": "まん",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "肉包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soft bun filled with seasoned meat and cooked by steaming, commonly with pork in Japan.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "味をつけた肉の具を柔らかい生地で包んで蒸したもの。日本では豚肉を使うことが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "肉まん是中華まん的一種，不是中華まん整類；餡料可能還含蔬菜等配料。實際品項與供應因店而異。",
+      "localizedNotes": {
+        "en": "Nikuman is one kind of chukaman, rather than the whole category. The filling may also include vegetables and other ingredients, and availability varies by shop.",
+        "ja": "肉まんは中華まんの一種で、中華まん全体を指す言葉ではない。野菜などが入ることもあり、商品や販売状況は店によって異なる。"
+      },
+      "relatedWords": [
+        "steamed-bun-warmer"
+      ],
+      "examples": [
+        {
+          "en": "Please put the steamed meat bun in a bag.",
+          "ja": "肉まんを袋に入れてください。",
+          "zh": "請把肉包裝進袋子裡。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+          "ja": "バスを待っている間におなかがすいたので、肉まんを買いました。",
+          "zh": "等公車時肚子餓了，所以我買了一個肉包。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "word": "roasted sweet potato",
+      "chinese": "烤地瓜",
+      "chineseDefinition": "把地瓜整條烤熟的食物，常連皮販售，剖開後能看到香甜的地瓜肉。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈroʊ.stɪd swiːt pəˈteɪ.toʊ/",
+      "cefrLevel": "A2",
+      "ja": "焼き芋",
+      "jaReading": "やきいも",
+      "jaReadingSegments": [
+        {
+          "text": "焼き",
+          "ruby": "やき"
+        },
+        {
+          "text": "芋",
+          "ruby": "いも"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "烤地瓜",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A sweet potato roasted whole, often sold with its skin on and split open to reveal the cooked flesh.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "さつまいもを丸ごと焼いた食べ物。皮がついたまま売られることも多い。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "有些便利商店供應烤地瓜，但並非每個地區或每家店都有販售。",
+      "localizedNotes": {
+        "en": "Some convenience stores sell roasted sweet potatoes, but they are not available in every area or shop.",
+        "ja": "焼き芋を販売するコンビニもあるが、すべての地域や店舗で扱っているわけではない。"
+      },
+      "relatedWords": [],
+      "examples": [
+        {
+          "en": "This roasted sweet potato is very sweet.",
+          "ja": "この焼き芋はとても甘いです。",
+          "zh": "這條烤地瓜很甜。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+          "ja": "その店では焼き芋が売り切れていたので、別の店に行きました。",
+          "zh": "那家店的烤地瓜賣完了，所以我去了另一家店。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "daikon-radish",
+      "word": "daikon radish",
+      "chinese": "白蘿蔔",
+      "chineseDefinition": "根部大而多為白色的蘿蔔，可用來生食、醃漬或烹煮。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈdaɪ.kɒn ˈræd.ɪʃ/",
+      "cefrLevel": "B1",
+      "ja": "大根",
+      "jaReading": "だいこん",
+      "jaReadingSegments": [
+        {
+          "text": "大根",
+          "ruby": "だいこん"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "白蘿蔔",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A large radish with a usually white root, eaten raw, pickled or cooked.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "大きく、多くは白い根を食べる野菜。生で食べたり、漬物や煮物にしたりする。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "大根指蔬菜本身；在關東煮點餐時，通常指切成厚圓片後燉煮的白蘿蔔。",
+      "localizedNotes": {
+        "en": "Daikon names the vegetable itself. When ordering oden, it usually means a thick slice of the radish simmered in the broth.",
+        "ja": "大根は野菜そのものの名前。おでんを注文するときは、厚めの輪切りにして煮た大根を指すことが多い。"
+      },
+      "relatedWords": [
+        "oden"
+      ],
+      "examples": [
+        {
+          "en": "Please add one piece of daikon radish.",
+          "ja": "大根を一つ入れてください。",
+          "zh": "請加一塊白蘿蔔。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+          "ja": "大根がまだ硬かったので、さらに10分煮ました。",
+          "zh": "白蘿蔔還很硬，所以我又煮了十分鐘。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "egg",
+      "word": "egg",
+      "chinese": "雞蛋",
+      "chineseDefinition": "雞產下、由蛋殼包住蛋白與蛋黃的食材，可用不同方式烹調。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/eɡ/",
+      "cefrLevel": "A1",
+      "ja": "卵",
+      "jaReading": "たまご",
+      "jaReadingSegments": [
+        {
+          "text": "卵",
+          "ruby": "たまご"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "雞蛋",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A food laid by a hen, with a shell around the white and yolk, which can be prepared in different ways.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "鶏が産む、殻の中に白身と黄身が入っている食べ物。さまざまな料理に使う。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "這裡指雞蛋本身，不是裝蛋的卵パック。卵並不只指水煮蛋；關東煮中的卵通常是煮熟並剝殼後再入鍋的蛋。",
+      "localizedNotes": {
+        "en": "This is the egg itself, not an egg carton. Tamago does not mean only boiled egg; in oden it usually refers to an egg that has been boiled and peeled before simmering.",
+        "ja": "ここでは卵そのものを指し、卵パックとは区別する。卵はゆで卵だけを意味しないが、おでんでは、ゆでて殻をむいた卵を使うことが多い。"
+      },
+      "relatedWords": [
+        "egg-carton",
+        "oden"
+      ],
+      "examples": [
+        {
+          "en": "Please add one egg to the oden.",
+          "ja": "おでんに卵を一つ入れてください。",
+          "zh": "請在關東煮裡加一顆蛋。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+          "ja": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。",
+          "zh": "為了讓蛋吸收高湯的味道，我先剝殼才放進關東煮。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "chikuwa",
+      "word": "chikuwa",
+      "chinese": "竹輪",
+      "chineseDefinition": "把魚漿做成中空管狀並加熱成形的日式魚漿製品，常見外層帶烤褐色。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/tʃɪˈkuː.wə/",
+      "cefrLevel": "B1",
+      "ja": "ちくわ",
+      "jaReading": "ちくわ",
+      "jaReadingSegments": [
+        {
+          "text": "ちくわ",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "竹輪",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese tube-shaped fish cake with a hollow centre, made from fish paste and often browned on the outside.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "魚のすり身を筒状にして加熱した練り物。中心に穴があり、表面に焼き色がついたものが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "關東煮常用燉煮竹輪；ちくわ與以小麥粉製成的ちくわぶ是不同食物。",
+      "localizedNotes": {
+        "en": "Chikuwa is used in oden. It is different from chikuwabu, a wheat-flour food with a similar name.",
+        "ja": "おでんの具にも使う。名前が似ているちくわぶは小麦粉から作る別の食べ物。"
+      },
+      "relatedWords": [
+        "oden"
+      ],
+      "examples": [
+        {
+          "en": "Please slice the chikuwa thinly.",
+          "ja": "ちくわを薄く切ってください。",
+          "zh": "請把竹輪切成薄片。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+          "ja": "ちくわが長かったので、半分に切ってから鍋に入れました。",
+          "zh": "竹輪很長，所以我先切成兩半才放進鍋裡。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "hanpen",
+      "word": "hanpen",
+      "chinese": "半片魚板",
+      "chineseDefinition": "以魚漿等材料製成、口感蓬鬆柔軟的日式魚漿製品，常見為白色方形。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈhɑːn.pen/",
+      "cefrLevel": "B1",
+      "ja": "はんぺん",
+      "jaReading": "はんぺん",
+      "jaReadingSegments": [
+        {
+          "text": "はんぺん",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "半片魚板",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A soft, airy Japanese fish cake made from fish paste and other ingredients, often white and square.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "魚のすり身などから作る、白くてふんわりした柔らかい練り物。四角い形のものが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "關東煮常見食材之一；這裡採常見白色蓬鬆型，不將所有地區的はんぺん都描述成相同顏色或形狀。",
+      "localizedNotes": {
+        "en": "This entry shows the common white, airy form used in oden. Regional versions may differ in colour, shape and texture.",
+        "ja": "おでんの具にもなる。ここでは一般的な白く柔らかいものを扱うが、地域によって色や形、食感が異なるものもある。"
+      },
+      "relatedWords": [
+        "oden"
+      ],
+      "examples": [
+        {
+          "en": "This hanpen is soft.",
+          "ja": "このはんぺんは柔らかいです。",
+          "zh": "這塊半片魚板很柔軟。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I added the hanpen last so that it would not fall apart while simmering.",
+          "ja": "煮ている間に崩れないように、はんぺんは最後に入れました。",
+          "zh": "為了避免燉煮時散掉，我最後才放入半片魚板。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "konjac",
+      "word": "konjac",
+      "chinese": "蒟蒻",
+      "chineseDefinition": "以蒟蒻原料加工成、有彈性且近似凝膠的食材，常見為灰色帶斑點的塊狀，也有其他顏色與形態。",
+      "category": "convenience-store",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈkɒn.dʒæk/",
+      "cefrLevel": "B1",
+      "ja": "こんにゃく",
+      "jaReading": "こんにゃく",
+      "jaReadingSegments": [
+        {
+          "text": "こんにゃく",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "蒟蒻",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A springy, gel-like food made from konjac, commonly sold as grey speckled blocks, though other colours and forms exist.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "こんにゃくいもなどを原料に作る、弾力のある食べ物。灰色で粒の見える板状のものなどがある。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "此詞聚焦可切塊的蒟蒻食材，關東煮常切成三角塊等形狀；不是把蒟蒻植物或所有蒟蒻製品都當作同一張圖。",
+      "localizedNotes": {
+        "en": "The pictured food is block konjac, which can be cut into pieces such as triangles for oden. Konjac plants and other konjac products have different appearances.",
+        "ja": "画像は切り分けて使う板状のこんにゃく。おでんでは三角形などに切ることがある。原料の植物や他のこんにゃく製品とは見た目が異なる。"
+      },
+      "relatedWords": [
+        "oden"
+      ],
+      "examples": [
+        {
+          "en": "Please give me one piece of konjac.",
+          "ja": "こんにゃくを一つお願いします。",
+          "zh": "請給我一塊蒟蒻。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+          "ja": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。",
+          "zh": "為了讓蒟蒻更容易吸收高湯的味道，我在表面劃了淺刀痕。",
+          "cefrLevel": "B1"
+        }
+      ]
+    }
+  ]
+}

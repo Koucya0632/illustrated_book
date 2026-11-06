@@ -1,0 +1,921 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-food-2026-10",
+  "workBatch": "winter-2026-03",
+  "planSha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c",
+  "manifestSha256": "a072e60ae5acf47df39a5c0151360c4bc739cf055f4ad2fe8e3d1c0001963bff",
+  "sources": [
+    {
+      "file": "data/winter-food-2026-10.json",
+      "sha256": "d16af799f1eb99ce70ac88c3a9638a5b84f7cc34a6006c4421d8b8c5631f44f7"
+    },
+    {
+      "file": "data/example-spans-winter-food-2026-10.json",
+      "sha256": "c797f84ea3b6ee8084ddd00d7c40bdb0002e15fb35af50d0c919cbc46dffc33f"
+    },
+    {
+      "file": "data/winter-food-2026-10-image-prompts.json",
+      "sha256": "2554fb7708f6252736eb66acb3e0f5ad5da5760111c5bf6d1d6227b7ee8f316f"
+    },
+    {
+      "file": "scripts/publish-winter-food-2026-10.ts",
+      "sha256": "71f5474db2846e4152640b8c9b1527b443bc2fdaa4d455f50ee89f8930a67696"
+    },
+    {
+      "file": "scripts/prepare-winter-food-2026-10-publish-plan.mjs",
+      "sha256": "41ac33e9766c37cd55ab92288464e09ba46d67827011c8902df7a39a333193b7"
+    },
+    {
+      "file": "scripts/prepare-winter-food-2026-10.mjs",
+      "sha256": "c892d08e29300c9f5cf1eccc8350d13787ed93aecb2ccb07f1f075ea83ee311c"
+    },
+    {
+      "file": "data/winter-food-2026-10-canonical-images.patch",
+      "sha256": "9df3c433674f3fe7b22b596b9f16ad72a2855e62b20b1c1f62911e81db3f7bea"
+    },
+    {
+      "file": "data/winter-food-2026-10-postpublication-integration.patch",
+      "sha256": "3d227b99fa1ae454a7f83d7de24cd0243599f847a1369fe3e83900f5e15a7eb9"
+    },
+    {
+      "file": "data/winter-food-2026-10-postpublication-integration.json",
+      "sha256": "4205726d88ef5cb2c426d3f73bdb47e802917815c8a8a16c633acb8078ed98ad"
+    }
+  ],
+  "artifacts": [
+    {
+      "originalPath": "output/winter-food-2026-10/api-research.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/api-research.json",
+      "bytes": 10490,
+      "sha256": "163f00426fb4939c30d07b9cb196df649d77c369134a592c725289ab25f3c20a"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/apply-manifest-2026-11-06T09-45-50-844Z.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/apply-manifest-2026-11-06T09-45-50-844Z.json",
+      "bytes": 55790,
+      "sha256": "a072e60ae5acf47df39a5c0151360c4bc739cf055f4ad2fe8e3d1c0001963bff"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/audio-candidates/generated-manifest.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/audio-candidates/generated-manifest.json",
+      "bytes": 35973,
+      "sha256": "33db7472ffb1a1ec8639c3d3f6f900da2534296a7190fbeda985ffe342713e60"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/audio-candidates/mp3-frames-report.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/audio-candidates/mp3-frames-report.json",
+      "bytes": 25005,
+      "sha256": "d102ba12c96524df323116a66e2a3c839d39d557a2a91dde06aa738da0de3ffb"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/audio-candidates/verification-report.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/audio-candidates/verification-report.json",
+      "bytes": 696,
+      "sha256": "672b64de5939f3cec445cae89454e557291cbfd684063d97b6d486cbce8d3e85"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/audio-plan/manifest.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/audio-plan/manifest.json",
+      "bytes": 14668,
+      "sha256": "c0e665bb9c6c2774996f9d3ae074e75a9da3c051e61b64749f877c12854ad082"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/cache-delete-words.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/cache-delete-words.log",
+      "bytes": 84,
+      "sha256": "5fc7bc396890288ac835c17157631216dd0341d4145766c5deb52bafd1d97d22"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/cache-invalidate-words.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/cache-invalidate-words.log",
+      "bytes": 88,
+      "sha256": "81c754afeb1d1fd37d43d77d46f25870e2215b3c7e5e4957c323e08b2ef2d4ec"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/database-main-word-audit.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/database-main-word-audit.log",
+      "bytes": 63,
+      "sha256": "5aab14b7c6a4f974c9947baec321d883cba7cdd9fd4136506bdfbba20946012f"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/database-preflight.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/database-preflight.json",
+      "bytes": 1511,
+      "sha256": "8dad089429e95292a6bc063247a1d2e13110898b422d05937601674c533f5063"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/database-research.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/database-research.json",
+      "bytes": 21083,
+      "sha256": "de3b1f2fd4d28fb68dfa0e7f5d4058a80b547c4a3a4b678a8c56d1ae561e510d"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/image-manifest.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/image-manifest.json",
+      "bytes": 4959,
+      "sha256": "5bb3372afcecd49586f26611b8a3af56ef9f93a85140e5e972456a595e626348"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-final-review.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-final-review.json",
+      "bytes": 5726,
+      "sha256": "80fa3ea7a3579f9c4d9e148bd972396069c32b08a266867ea8ec11865d27ce39"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-final-review.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-final-review.md",
+      "bytes": 1774,
+      "sha256": "e0a73c654aa4a62166c9fe2b314aa558fc2749065d0066f477be75ff96257f74"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-official-checker/audit.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-official-checker/audit.json",
+      "bytes": 1447,
+      "sha256": "03656dadba7cf2a972105bbb0bfeff4dd6bb2e8979e99b62ee42acbf6ebeb383"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-official-checker/semantic-review.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-official-checker/semantic-review.json",
+      "bytes": 7727,
+      "sha256": "4383836f070ef2946b1d240b4e3ef0966c43dede98c921102781b3865dd627f0"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-audio.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-audio.json",
+      "bytes": 81754,
+      "sha256": "b171d274b73305b66fbffa30ffb761aa69668776e6195e6477d5ec6acbb89463"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-audio.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-audio.md",
+      "bytes": 691,
+      "sha256": "1e4e2519c3688090fce85f56caaa30a676161c3d0f66514601150d6f061ba9bc"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-concepts.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-concepts.json",
+      "bytes": 5376,
+      "sha256": "dea01e122907ab9ccdf82d59d0a4bcfa5b1a7363195beb8e0ddce4b8da288276"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-concepts.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-concepts.md",
+      "bytes": 2567,
+      "sha256": "36f7d682b3a6c588e81649f7b6769490d273b000b14cce79cfac8944e0677b6a"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-content.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-content.json",
+      "bytes": 10840,
+      "sha256": "40bca1c61d865e8028fecb7bc0c456ede1a88c99446ac0a6c91c9ca2cd16cb3e"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-content.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-content.md",
+      "bytes": 1661,
+      "sha256": "afeb2f1469044db4b1ea283cb73fd4e7e350f8b1a1e9f597a5254de1003ba9c9"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-images.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-images.json",
+      "bytes": 10676,
+      "sha256": "114a2ebcd42015f9c28916af8b02ef3745be4729234ee178a8b6eeb173ba4d69"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/independent-review-images.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/independent-review-images.md",
+      "bytes": 1805,
+      "sha256": "160084f4e095e77d537d3d1afce7ebc4f54e9800b53315a105cd9119665ecfa4"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/integration-standalone-build.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/integration-standalone-build.log",
+      "bytes": 5871,
+      "sha256": "a0c982b29fa64ca400d85fe943808bc1880eac37c47b7ddf0acd1b2eb400ac87"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/integration-standalone-tests.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/integration-standalone-tests.log",
+      "bytes": 3781,
+      "sha256": "6f6b0439711a2139274061673e283fd5a1e7cbecb29a6d73cdc7751c2af2f1a3"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/latest-plan.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/latest-plan.json",
+      "bytes": 287,
+      "sha256": "961a521ad487cdbd5eb77408d8db4e176726320bb5c930a5035e95d238400787"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/local-integration-proof.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/local-integration-proof.json",
+      "bytes": 3093,
+      "sha256": "11d49d74b7e19ef0bb88b9530fb46dff27afb05e27c03eb0d6dd14e134aca69f"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/database-exact.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/database-exact.json",
+      "bytes": 526316,
+      "sha256": "8d8101edd967700815662746492de9f53b4979ee63de257225b848861fdb7682"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/final-summary.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/final-summary.json",
+      "bytes": 3855,
+      "sha256": "1562a875816305987fea5157749fa2e27e2e552e6c807cf73a3a8f66493e973b"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/final-summary.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/final-summary.md",
+      "bytes": 1168,
+      "sha256": "dd038ab6c8c6c3c225a6651f24af3f5981944810fddb7f89e35ab4ff4db8beec"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/http-probes-compact.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/http-probes-compact.json",
+      "bytes": 143724,
+      "sha256": "51ce35bdd909942c286abaa539e436a1e5df6bd6377abf16b89e66a597b0b7f8"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/ios-decode-final.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/ios-decode-final.json",
+      "bytes": 143,
+      "sha256": "a3d40d1c52ed5d68f660bd219cb81d384e3175ef4183bc03130599b2cded1e61"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/remote-objects.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/remote-objects.json",
+      "bytes": 133767,
+      "sha256": "8da68c45ffa0b43836a72da975d1c034b2a72ad099b0cf4c0918d0f972d334e0"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/scoped-examples-source.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/scoped-examples-source.json",
+      "bytes": 44963,
+      "sha256": "9387be1fe9910041422d4c8fd60d55303159d03d366de0f471122f8d797c1c46"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/scoped-official-checker/audit.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/scoped-official-checker/audit.json",
+      "bytes": 1529,
+      "sha256": "9bf11b84d16a045428e5327186d1a4ca97be704826446fe1624fe26d38937ad4"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/scoped-official-checker/audit.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/scoped-official-checker/audit.md",
+      "bytes": 265,
+      "sha256": "a7e9a501d3b8172cb24e5214980d00f9d086c0d262567d24476a937127c5151a"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/post-release-review/scoped-official-checker/semantic-review.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/post-release-review/scoped-official-checker/semantic-review.json",
+      "bytes": 4475,
+      "sha256": "74c95b03d4a3853a82f3a3601201b1337fcbe7927c537aaf3e90db937027abc8"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/postpublication-build.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/postpublication-build.log",
+      "bytes": 36935,
+      "sha256": "1862bc024da0d8cc315cdb168fe3be5e204c6b30755633dd33cbf1759b2c3517"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/postpublication-integration-tests.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/postpublication-integration-tests.log",
+      "bytes": 5342,
+      "sha256": "7e90718e6f961f6c806780ead6be0f74e912567c57141a6f586a6d1dd75a91bd"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/postpublication-standalone-build.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/postpublication-standalone-build.log",
+      "bytes": 5684,
+      "sha256": "629cee855f13438f63ac194d1d8473aa9a71dcc33022f2219fffbe0d69f59850"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/postpublication-typecheck.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/postpublication-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/preparation-finalize.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/preparation-finalize.log",
+      "bytes": 1068,
+      "sha256": "e2b37472dd2fb48e9b3350ac3876518fcbe5f93c5c3a3c26fabc0c9dd3c36873"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/preparation-report.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/preparation-report.json",
+      "bytes": 612,
+      "sha256": "ec13013f1f87d47746e17d95ef7654ae0fea47846605c9d7ff25f05943b9ad49"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/preview.html",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/preview.html",
+      "bytes": 34585,
+      "sha256": "ed83f97d3bb463c8b9be6bae2317441735e01a2e5b8a7bfc025fc38bd79a80bc"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/publish-plan-bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/publish-plan-bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c.json",
+      "bytes": 148612,
+      "sha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/publish-plan.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/publish-plan.json",
+      "bytes": 148612,
+      "sha256": "bdeb6d1444d2f124615d4b35727fcd2f03a5a781486db8ec8357253548caed5c"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/publisher-apply-authorized.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/publisher-apply-authorized.log",
+      "bytes": 983,
+      "sha256": "41717dff3cdfa3b9637689a6ca5db4b3277bff1fcf87d46c44dc44dc70fbba68"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/publisher-dry-run-2026-11-06.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/publisher-dry-run-2026-11-06.log",
+      "bytes": 861,
+      "sha256": "c38e2ec9453ceb44e9d13e602b0d2bd7f8d46b76d7c303c85a4b95995e6b1a1d"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/publisher-dry-run-authorized.log",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/publisher-dry-run-authorized.log",
+      "bytes": 861,
+      "sha256": "c38e2ec9453ceb44e9d13e602b0d2bd7f8d46b76d7c303c85a4b95995e6b1a1d"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/recommendations.json",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/recommendations.json",
+      "bytes": 3625,
+      "sha256": "70de1932b43dd4bc275689e0504cc94ab6ac03b3c7f64c6c3ed55b027597b0f1"
+    },
+    {
+      "originalPath": "output/winter-food-2026-10/research-summary.md",
+      "portablePath": "docs/releases/winter-food-2026-10/evidence/research-summary.md",
+      "bytes": 1317,
+      "sha256": "6a40f35c57b4adde3afa5174648e9a3c0a4298dc2708efcda5378046434fb7e6"
+    }
+  ],
+  "media": [
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/oden-v2-5fa7defa0bb8.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/oden-v2-5fa7defa0bb8.webp",
+      "bytes": 34898,
+      "contentSha256": "5fa7defa0bb86396e7790740060ce80eee20ed6c5588375e2f54482fd0dbcf57",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/93cc50fa19626f360c4b1c9aeed7d273f6f557bbc6a8cf10847fa0989fa487a8.mp3",
+      "url": "https://img.nexflow.team/word-audio/oden/en-US/8021c7b5a5ed303e3b9c.mp3",
+      "bytes": 4512,
+      "contentSha256": "8021c7b5a5ed303e3b9c42e152199de5e0604f7915425393c10c534833ba520c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/48d074dcf0e9ff8168b24025f8efefbb27e610464db3f8d6a0ae836a648cbcc0.mp3",
+      "url": "https://img.nexflow.team/word-audio/oden/en-GB/f4dc0f08129741346669.mp3",
+      "bytes": 4896,
+      "contentSha256": "f4dc0f081297413466691c226eda4dd818c04d93a4b854856dfa29919728c754",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/0aeaea2cf1089b2c341452f80985c828a6667fa16882b641b119f30856e28fdb.mp3",
+      "url": "https://img.nexflow.team/word-audio/oden/ja-JP/596025af639c86e592a7.mp3",
+      "bytes": 3936,
+      "contentSha256": "596025af639c86e592a7fa56464ef173382834123504e8bcd6ce09efe2845236",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/78f43a5cda682736d7f0551b87e2488d234ffdf94c3fa07e7e42133463768648.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3715/en-US/6b07599d18c3a49d12ae.mp3",
+      "bytes": 7584,
+      "contentSha256": "6b07599d18c3a49d12aee3b4776a9d9969233211bedc6740210281775c56329c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/dac2a023d6fce0efb06d93d184b071ca3f2808cd809c1d8929999cf06d2dd173.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3715/en-GB/88366355079904e3826b.mp3",
+      "bytes": 8736,
+      "contentSha256": "88366355079904e3826b89f7182060c99553b5fd4fbd8bd3a16d1b9c8a2bbb92",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/8387ea744219dff23aa60a5581b017afb712a4c5c0b703c36e1c43ff5440ac82.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3715/ja-JP/aad8c56978318d18eb47.mp3",
+      "bytes": 11424,
+      "contentSha256": "aad8c56978318d18eb471be777b31bba75a4fe7e90dbb7f53d5366530fe04fce",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/c4fc3b61b9c61c96605e8a110cdd62698c8cfbbe921f969b01d27bdc5bba0514.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3716/en-US/994f907f42fa406e4df4.mp3",
+      "bytes": 16512,
+      "contentSha256": "994f907f42fa406e4df487ebadedb862a9f4f7d3bae550e2bc7bf1d179434420",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/6cffbf5bef4e5fb35104b0ba85d97881f34aa0a160009899738fa71a6373e7c8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3716/en-GB/fcb881c387a22c5df7f6.mp3",
+      "bytes": 14784,
+      "contentSha256": "fcb881c387a22c5df7f61cd40c05266d52d9c541f84b5387a68d556ce98c565a",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/94d69980c38e815d9fcd55d6ebe88007f7c0bc900b194836699eb2a61c937f9b.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3716/ja-JP/a632a2188c20e56b075a.mp3",
+      "bytes": 15072,
+      "contentSha256": "a632a2188c20e56b075a07dfcf06972a79ab08106817894ad19aab686789b904",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/steamed-meat-bun-v2-8822b71eab8e.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/steamed-meat-bun-v2-8822b71eab8e.webp",
+      "bytes": 39018,
+      "contentSha256": "8822b71eab8e0ec914fbfe22824acccfe3f42576fdb8873fec386d9551140dac",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/67bf8c82343674a90628aae44c84ef00bc61c230f044a2c4dc3a6cde917f1292.mp3",
+      "url": "https://img.nexflow.team/word-audio/steamed-meat-bun/en-US/fcdd1c630ce013e3135b.mp3",
+      "bytes": 4896,
+      "contentSha256": "fcdd1c630ce013e3135b18f0bfaaaa8297286490da9eede315b387656a9a7c34",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/17c2c1a9c8c7ebec3f5a18c092fdc623ab26aee34c481405ff4f1644e5840879.mp3",
+      "url": "https://img.nexflow.team/word-audio/steamed-meat-bun/en-GB/3f9ba9883cb29effbada.mp3",
+      "bytes": 5664,
+      "contentSha256": "3f9ba9883cb29effbadab8a152731a166cb8fc0e7acb375d884a82af9d7bbf5c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/a0b9f8e951a8851cb8e9c0d8e5ccdc7ec481d0001a992dc2d7eb79430c38a5d8.mp3",
+      "url": "https://img.nexflow.team/word-audio/steamed-meat-bun/ja-JP/5e043f3ba65c451ee7a4.mp3",
+      "bytes": 4896,
+      "contentSha256": "5e043f3ba65c451ee7a41dae09bd155350fbf56452806abe7aa24d7db990b00a",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/e0148d90eeb43a477326aa218e413e43c1be0dbad7bcbc6926c491b9ba4bc9da.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3717/en-US/bb547eb88d6ffe0235eb.mp3",
+      "bytes": 8544,
+      "contentSha256": "bb547eb88d6ffe0235ebddc06823c1ca9fa4c1d38e4e26115d23fa4113c9713f",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/52ca8025d98b7a3a43a514abe1f2fdefc1cd70c3d3d0fca76f72964b116eda6d.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3717/en-GB/a594e954a22575299479.mp3",
+      "bytes": 12576,
+      "contentSha256": "a594e954a225752994799fbd1577c933584519451848439402d0d466a2d09a41",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/2bed0b8da90a6c7e55dbf9e8782e645c75a5c901f0aed52b626196971f2bf482.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3717/ja-JP/e39f67066595a5a701ed.mp3",
+      "bytes": 8544,
+      "contentSha256": "e39f67066595a5a701ed9c99a4cbd7f4a2454e94d4f60306654ebe54952944db",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/eccd19746b27fabf5872ef6dd9702067b84f18384fa88a9fe53d9ac5b188536e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3718/en-US/7f59669019ccaf2ab0a2.mp3",
+      "bytes": 19392,
+      "contentSha256": "7f59669019ccaf2ab0a269aa36fff44b1389c6cc4c0dd0819842e1f7f8fffb96",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/828fc56f97870454c991178167d38c23e72796fddf346876ae49f9ff3e25736b.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3718/en-GB/ca4b574fb69bcd1ea796.mp3",
+      "bytes": 17376,
+      "contentSha256": "ca4b574fb69bcd1ea796350b4c144b4ec46a57033cd001dbf757d058f14214c1",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/88a4b08f430730312d176da44f46ef3180dcd1ab14c537aef3304bb029542144.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3718/ja-JP/8d738111a3ba19beac9c.mp3",
+      "bytes": 20352,
+      "contentSha256": "8d738111a3ba19beac9c456b9433c19390e86a6dcc9880254b5a1ce221988a64",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/roasted-sweet-potato-v2-ed5e9d35dd93.webp",
+      "bytes": 43028,
+      "contentSha256": "ed5e9d35dd9390c9586f383c9ce016c110a38c58a54ca40ee86ad6ad83e73d22",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/e43f9d7902c8e6a97e5a24c86ae4d358e754bbab5bee3a8a560dd47ef1c48845.mp3",
+      "url": "https://img.nexflow.team/word-audio/roasted-sweet-potato/en-US/0042cda1adec9773dd31.mp3",
+      "bytes": 7296,
+      "contentSha256": "0042cda1adec9773dd31d5a2ed03616ed229967ea890ee69046057149d4c336c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/c964bc70f1ae505d36dd3c5e9017ac2082d866fdeee16db18b908665816c136a.mp3",
+      "url": "https://img.nexflow.team/word-audio/roasted-sweet-potato/en-GB/5b69f32abe23860332fc.mp3",
+      "bytes": 8064,
+      "contentSha256": "5b69f32abe23860332fca248d5b58b579007ea89a906a05cc413aad0edb9bdcd",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/65e8758145e2a2613ccbace4e4f9abe04ba402edad1ef4757e6712c92cf45c36.mp3",
+      "url": "https://img.nexflow.team/word-audio/roasted-sweet-potato/ja-JP/fba7c41d5580413f7b54.mp3",
+      "bytes": 4704,
+      "contentSha256": "fba7c41d5580413f7b54a0923f3c720e4aa86459953dffe92588eaf0d0f5b6e5",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/72dee00adc17e4f7c8a366c33318d7acffe7a55258a4eb645b2bb27d56c633b8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3719/en-US/7d0d1fd5cdb35a7de793.mp3",
+      "bytes": 12864,
+      "contentSha256": "7d0d1fd5cdb35a7de7933ae20af81d7bdb285b7a59ba2a4e3ec445d8e52f9848",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/a034dc4abad390c03ad0e7a8f3dec58b276ec4384dbc09b06f42fd336bfd2de7.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3719/en-GB/31fd2ac4b90575ad3af0.mp3",
+      "bytes": 11712,
+      "contentSha256": "31fd2ac4b90575ad3af026e9c6473da2c5c496973c0ac19c403467759a82cd17",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/30a1301e2704c8a0d7a4036f6e51654e035cc3b1f19872b9c528cc3f002fe288.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3719/ja-JP/47b0e5e4b29555974732.mp3",
+      "bytes": 9792,
+      "contentSha256": "47b0e5e4b29555974732f74a58bf2490295208e358bb6b5aa1eccb22a2ab26c2",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/e7acb18672fc04feb67bd3e30cf454b1a899ba3ae08f82eca4820b3f086c3dd5.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3720/en-US/8a1fea6df1e74fb0910c.mp3",
+      "bytes": 19296,
+      "contentSha256": "8a1fea6df1e74fb0910c73af039c39fab03800392aa06cd4f7b583d4e20177bb",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/7cebf66022f8a21e1566525afce87607ff02d83509881d2dade0773e7a5601c8.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3720/en-GB/a6a8f2a34058a786fd67.mp3",
+      "bytes": 16032,
+      "contentSha256": "a6a8f2a34058a786fd67388f26e5f5ea014f9ff57f27b04f9368c3f87816d846",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/05142a39331451368117f145fd3b57bb3f6e58ba05c79ec7b54695c8b8b2b1ac.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3720/ja-JP/42741a5e5e8584155fb3.mp3",
+      "bytes": 18816,
+      "contentSha256": "42741a5e5e8584155fb3c723de7390e093c5a48131dfc44ad8b3621d3e818110",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/daikon-radish-v1-c1b8aab7e672.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/daikon-radish-v1-c1b8aab7e672.webp",
+      "bytes": 30904,
+      "contentSha256": "c1b8aab7e672c50d8c4d7b6396f2edfaead99598bf663bca7a39a9e2e0e21112",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/e23d3e9fd751ddaee685d3ef7a862ef56f9a1fee47b66606af6c96886dbdb51b.mp3",
+      "url": "https://img.nexflow.team/word-audio/daikon-radish/en-US/2a94a091101b2e121b2d.mp3",
+      "bytes": 6816,
+      "contentSha256": "2a94a091101b2e121b2db962960740c245ea8b01a25787e28b1fceb240977524",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/602b5b4f071f90bd080881f964cfee74dc8c39c9fbbf40152a101372a66e1acd.mp3",
+      "url": "https://img.nexflow.team/word-audio/daikon-radish/en-GB/88d57f530da35255cca7.mp3",
+      "bytes": 4512,
+      "contentSha256": "88d57f530da35255cca72bfded0f8e1d116942dfe2729fd6e148276e8ea182b2",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/6c30d608ab51ee8979bef1b035c266a2ca5353f06bd8df63b209efe3a9bca6a6.mp3",
+      "url": "https://img.nexflow.team/word-audio/daikon-radish/ja-JP/00e57429efbf8dcf1acc.mp3",
+      "bytes": 6144,
+      "contentSha256": "00e57429efbf8dcf1acc23114c30c43e9e40474cfff03d61d437582185129345",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/a01b401e4d246a21e76736daed4b44d0bcffdc0739c98567f4abcd221ff1f5af.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3721/en-US/cc2aabaeb94373c3d8a3.mp3",
+      "bytes": 11232,
+      "contentSha256": "cc2aabaeb94373c3d8a3aa4a61b4fb678ecaed105cbbb21027d936e72b94746c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/cb22ea300b57df36cadf057324a9aa856289735fb9bb4b096e7d3ad289906ca6.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3721/en-GB/d258293675778e7ef844.mp3",
+      "bytes": 12672,
+      "contentSha256": "d258293675778e7ef8447948ad53ddb9dbe6e9890373ce3f9e1fc06c55e6863b",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/a05d892b5a556ff4e1b4ec2fece43896278c4e5277b7708a919fb3f7fd6f64de.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3721/ja-JP/24c103f196fe9c4e1e5e.mp3",
+      "bytes": 9984,
+      "contentSha256": "24c103f196fe9c4e1e5ea5d410c836c2df8bcde0cd586227ba078fb755e69e61",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/657b719343c054786f20022639adf94affa35d1956bfa39352b716939e33f693.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3722/en-US/ed4c5ab6111c69529397.mp3",
+      "bytes": 14784,
+      "contentSha256": "ed4c5ab6111c69529397d17f5ed18b3fc58851db9d27a79b408f9a6d285a00bd",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/46e7aaae2411c8e020fa1cc529aad191f9468866aa0e401dfac08d5ce7d5d16f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3722/en-GB/173f644f86864e565049.mp3",
+      "bytes": 15552,
+      "contentSha256": "173f644f86864e565049ed88787f75a24d9d071929bc583d94aee62d3b717979",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/486fb4a763b91f1e8210820b6ee6e4e1c04515ef2742042e6334072b3f1a7458.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3722/ja-JP/bf7afc6663a75d44ffa3.mp3",
+      "bytes": 13536,
+      "contentSha256": "bf7afc6663a75d44ffa34f5b352869b7e95251f5f0dcad93dadc119b6ee8bdcd",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/egg-v1-c014f21f1b36.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/egg-v1-c014f21f1b36.webp",
+      "bytes": 33208,
+      "contentSha256": "c014f21f1b3674daff39f7292cdf66e7a7c881181d109f93763d5dc2050e94bf",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/de477a7b5372978e5aa4f64fc8e6284d09416232d3a6047b4d8d05d4e40f0639.mp3",
+      "url": "https://img.nexflow.team/word-audio/egg/en-US/0e31cb8abc753c263d45.mp3",
+      "bytes": 3456,
+      "contentSha256": "0e31cb8abc753c263d4580f0e2d06222ea8c685242f17d9efc193b02d650c698",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/e8b046f2036853372ebae6bc14d24ce0c01f536288fa529ebf0f617c6e424fb9.mp3",
+      "url": "https://img.nexflow.team/word-audio/egg/en-GB/d626c2483ce85fb2d52d.mp3",
+      "bytes": 2112,
+      "contentSha256": "d626c2483ce85fb2d52d113d3b438a4cf09eff4c4be53f06691f095315f178c7",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/12679529aa62b7e2409c98301ff7dc4e365ed104108103021b4fe35cf15712be.mp3",
+      "url": "https://img.nexflow.team/word-audio/egg/ja-JP/7db3da20a0ce31a9ce0c.mp3",
+      "bytes": 4992,
+      "contentSha256": "7db3da20a0ce31a9ce0c0c096a1d1fd24827ce7c1fdddfc94549d3fac434ca3c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/84fce9d2c6c7f84e374113616d80b3c988d1d442bb552caeb8494acd08df67a2.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3723/en-US/13610f6753810f74d393.mp3",
+      "bytes": 8064,
+      "contentSha256": "13610f6753810f74d3934219407e7a1736bcee4fc7ecb762e77fe4f5b54de457",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/a4046ee0ca0ee8a35e642b40f76e60ff36285a7d956e5e33d1a5f224ae4ac182.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3723/en-GB/2aae4ce5e8c537c23646.mp3",
+      "bytes": 6912,
+      "contentSha256": "2aae4ce5e8c537c23646c6a9cc5a0d68837bd127f01e666e5fb8bb80fa9d45c8",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/82841bb1b9be51cc58d6284202bc24769be9ec69687475e99f3ca5c1ec3b82ce.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3723/ja-JP/4a8ed6396eb8cafe868d.mp3",
+      "bytes": 10944,
+      "contentSha256": "4a8ed6396eb8cafe868dcaf7734823b6e289cd86e8ff072ab37ad75325fc1d6c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/209fd2e3a1360d21d9d7b72db1c7c574488c01a2d0678a501f5634bdce9d2f1f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3724/en-US/c188d02257cc8bec2264.mp3",
+      "bytes": 18816,
+      "contentSha256": "c188d02257cc8bec22647ae263f2ca1f21e12c1934c4e866389779e13e132ba2",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/82bc5efe682d2d6de3e9373fd52e1674f4fc2f984d775b96ff847b95b35015d9.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3724/en-GB/4c5e6850ad71a81911da.mp3",
+      "bytes": 20544,
+      "contentSha256": "4c5e6850ad71a81911da8d3a571cf9d52343b3c4e9c9c5714833e71209dade17",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/494f7d614f78f959d01136d414cd74b1c97070d503cbeb5aa27c1a265560977e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3724/ja-JP/c5337e6f61300a9fb654.mp3",
+      "bytes": 19584,
+      "contentSha256": "c5337e6f61300a9fb6549019ddcf9007a46cb205370435459c1ed444cfd58050",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/chikuwa-v1-adfcd55e054d.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/chikuwa-v1-adfcd55e054d.webp",
+      "bytes": 59080,
+      "contentSha256": "adfcd55e054d21de743279d0e166b061f3266197166dd0ad19195c68212f7823",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/3ae6ad89192c996e44f9d48242f67f36e168db6fc64638fa86e79dd7389d4033.mp3",
+      "url": "https://img.nexflow.team/word-audio/chikuwa/en-US/79e3b7d1a666487c9691.mp3",
+      "bytes": 4896,
+      "contentSha256": "79e3b7d1a666487c969114e4265d1928b091ab129a309a81731233f55774a4a6",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/097178180818c6396665eb763303d74561b8fde1038dade2eed17fe7fcb2424b.mp3",
+      "url": "https://img.nexflow.team/word-audio/chikuwa/en-GB/4486d207ec72c9831218.mp3",
+      "bytes": 5184,
+      "contentSha256": "4486d207ec72c9831218e271de0332767ae94eeed0b7cd27b779a69ed3280e17",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/d4dc7b56832120fd9acf45ed5116b323ca58cc4763095d9b23fe3586febc1c52.mp3",
+      "url": "https://img.nexflow.team/word-audio/chikuwa/ja-JP/83b5658348ebb104f739.mp3",
+      "bytes": 5472,
+      "contentSha256": "83b5658348ebb104f7392f213e5418de997ad719d17be961bc0dd64026b51a8f",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/ae76ad2787ded94980cf3c6ee7852e1efa6b0ea92ff9644d02099c467a25ed57.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3725/en-US/b1c169688ba1c8b49acc.mp3",
+      "bytes": 12192,
+      "contentSha256": "b1c169688ba1c8b49accd6502538ec121824d6aeb1c9f5bb9c93debdee679fde",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/51c72438f4bb263eaddd9e0d4f9c12e670a06a7d7290bed4d0986ea56370d768.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3725/en-GB/65d0729c366ed3ae0c34.mp3",
+      "bytes": 9792,
+      "contentSha256": "65d0729c366ed3ae0c34058acabe23cf0a208e18edb424c3d8707d3444414318",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/27361c82244fd01d507f4905ae36d204198f48bbebd69ebb15c2fbb8bbab7063.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3725/ja-JP/a041399f175327549676.mp3",
+      "bytes": 10656,
+      "contentSha256": "a041399f1753275496764febce0e6b50319c89ad329690f0cd4bd26ddc93db1b",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/105cdf93fe4b111eb4edc8fccc65ba69d82513159614b3f9d50f1c658f496231.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3726/en-US/8f0c0eab2631bd336000.mp3",
+      "bytes": 17856,
+      "contentSha256": "8f0c0eab2631bd3360009f47f6617524f2ce33bbaf28ed1005f1c753719831b4",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/01a602d16bc111052c0055f5343654e0bda658fd2c4981d0a05e1f7b2d34b32e.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3726/en-GB/6d94c0ee416239b111b9.mp3",
+      "bytes": 21792,
+      "contentSha256": "6d94c0ee416239b111b96abc92c48e66e21f1a246f83d2d075040c0a1fe08f46",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/dbcbf87d5e42c8e84ec1fd280756a9ea824a0be60f87ec6556d611576e722b59.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3726/ja-JP/a02a09356021c36604ed.mp3",
+      "bytes": 16416,
+      "contentSha256": "a02a09356021c36604ed8caae052fdfb8e3a78b59669ace50c993c635f1e956e",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/hanpen-v1-ce2b653a5485.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/hanpen-v1-ce2b653a5485.webp",
+      "bytes": 17638,
+      "contentSha256": "ce2b653a5485f61a507c4eea21e0db22dc81744e477067748e798aee7bb05151",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/6586fe7cbacf0cc57b196229a650e941829e9cec3a501c83b6a261841b328de2.mp3",
+      "url": "https://img.nexflow.team/word-audio/hanpen/en-US/c2ad480e1165fa87452f.mp3",
+      "bytes": 4224,
+      "contentSha256": "c2ad480e1165fa87452f73b25ab7480ea0450fc11d10328ed11cabe1dee2842f",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/227930774e34bdc4e65eb737ad4b57e32e8abdfab9020ec5ac623d507c4da9f6.mp3",
+      "url": "https://img.nexflow.team/word-audio/hanpen/en-GB/bbb07d602fd85883bd4f.mp3",
+      "bytes": 4896,
+      "contentSha256": "bbb07d602fd85883bd4fda717d4ff5942134425059ae1a187d0f16a5325793a0",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/749216ad5649330f859409a4e059d59a492dec26d823a6961aaa719d471636cf.mp3",
+      "url": "https://img.nexflow.team/word-audio/hanpen/ja-JP/afc34777c0671ad70c3d.mp3",
+      "bytes": 4896,
+      "contentSha256": "afc34777c0671ad70c3db1c98aad2a8cb8c6df4591a170396c3be7b10ec0e4e9",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/c7def61496f100298c178f2317bba950058f6e6354db8d09dcd616e22f7335a3.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3727/en-US/c111d55e3db6bf6423e2.mp3",
+      "bytes": 8544,
+      "contentSha256": "c111d55e3db6bf6423e24f19155755a114315a99364ce07531dbad8f8ffb9c5c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/eefb221c466f45d890c73fa3c7d6df6a492f47a25b548580e685757bff0d4247.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3727/en-GB/f3ac31d7c07979e077e9.mp3",
+      "bytes": 6624,
+      "contentSha256": "f3ac31d7c07979e077e9b9e4074a11d03c3206c80398e0bd6d19f7046b604252",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/56290ceaabc3fdb6d33db2c4a67b90c277a5b4107924e93bbf13d78c6a0e5f5a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3727/ja-JP/1012a4bab05950db7d9c.mp3",
+      "bytes": 9984,
+      "contentSha256": "1012a4bab05950db7d9ce2a07a526482c18a464acefcd4cc9311a9c31eddc5fe",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/ae7f5c51ec95fed66af5f4dfaead25e494550ce74b583b7843fc81ceb3621e09.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3728/en-US/05a769b3246e616e4a4a.mp3",
+      "bytes": 17952,
+      "contentSha256": "05a769b3246e616e4a4a8f952ba0bffd90300ebc20c62b6c65e4ae466e95b818",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/8fa54bb6fe2510ede17f0b6631f9fe944a95378e5cce71fdc638a89e2ff1d86f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3728/en-GB/605f18729517e847f44b.mp3",
+      "bytes": 18144,
+      "contentSha256": "605f18729517e847f44b2534d304a56d47d477c2b73b4a9786336497d67ad55c",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/414574bade519f0472437afa1c47b81de7751739c1f4b9b0c3f23c842fe1edc7.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3728/ja-JP/76c298577fcefcd394db.mp3",
+      "bytes": 18624,
+      "contentSha256": "76c298577fcefcd394db46b9bb2391dcfac7a66b44053770447e10de4b873ace",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/images/webp/konjac-v1-e0b8566c2f12.webp",
+      "url": "https://img.nexflow.team/word-images/winter-food-2026-10/konjac-v1-e0b8566c2f12.webp",
+      "bytes": 55844,
+      "contentSha256": "e0b8566c2f125258cdb6f688c65d2e7f5785d20b7c92c761800d3de7e775d974",
+      "mimeType": "image/webp"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-US/ca5a67fd91138ce8e8573866fe6c23a5bacd45b87752e90eb0bc1cd08fd9dff6.mp3",
+      "url": "https://img.nexflow.team/word-audio/konjac/en-US/779bad9064fe6c81582b.mp3",
+      "bytes": 3264,
+      "contentSha256": "779bad9064fe6c81582b689a3e9a50392a9f3a87a5a13f695af4944493009659",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/en-GB/747bd233f6b53f240a9c75a5b89f5f875af83239a8707dd283c5a910a9a93eec.mp3",
+      "url": "https://img.nexflow.team/word-audio/konjac/en-GB/cd954516b1722832517c.mp3",
+      "bytes": 4512,
+      "contentSha256": "cd954516b1722832517cc445ab97c0c928f75f01d326b21775a2a370ba6a749a",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/headword/ja-JP/4388259f1599d26fb9ca063a530240505f213f2836d2eedac64d3ad5e0f3e060.mp3",
+      "url": "https://img.nexflow.team/word-audio/konjac/ja-JP/6b8743a1182ebd1d214f.mp3",
+      "bytes": 4416,
+      "contentSha256": "6b8743a1182ebd1d214f19d9cafe912d56edd7f206dbc6d4649e13985d2421c3",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/6a912859760a9ed42b357a98c45a79970216e04b24761acb17ee5bd3b4ccca8a.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3729/en-US/566dd67f6b9b3ea16601.mp3",
+      "bytes": 7296,
+      "contentSha256": "566dd67f6b9b3ea1660135783dd8f7d86abcc2b2d52ec0a96233291fc7f09309",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/794d3c68ed7f80f8e5167e122a13fee15391129e7917e634149a00b69bdb551f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3729/en-GB/f467cf8e2d6e8a507ba2.mp3",
+      "bytes": 11904,
+      "contentSha256": "f467cf8e2d6e8a507ba22b796860bbd17b18ecb0ae8b8f147a04940333b8b376",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/0de7f19085209777b6a5e72258a16797b1eddfbf8dbdd0f949c4f20c97a0e73f.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3729/ja-JP/66b36195a40954db9843.mp3",
+      "bytes": 9696,
+      "contentSha256": "66b36195a40954db9843df67a68c181b5e20a38cbb6d3533bbbe73b7e3d3410b",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-US/56bd62f9970bd90e5e142865d3676895c78b917cd8b7d115ab4d2f8492784535.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3730/en-US/da6ee255be9c95fb501f.mp3",
+      "bytes": 21216,
+      "contentSha256": "da6ee255be9c95fb501f75f791bde7fe66e01b3e1473971e6a1e25c2214ab3ba",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/en-GB/654665a4d50a85ccf6a02ed382ea9ea5f5ad8c45ac39070e8ae7ba709743bf39.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3730/en-GB/4384ffc595fec6924c42.mp3",
+      "bytes": 19872,
+      "contentSha256": "4384ffc595fec6924c428db9a4b13ca86288226b4b086a6e05e80a8cbe5fc8b9",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "localFile": "output/winter-food-2026-10/audio-candidates/example/ja-JP/478a05504bf993523612ff8f41662713278f1f66c57ff314cb3b76e9868b0b93.mp3",
+      "url": "https://img.nexflow.team/word-audio/examples/3730/ja-JP/c31c094dec5796ebb352.mp3",
+      "bytes": 23904,
+      "contentSha256": "c31c094dec5796ebb35213502433b35b855f40f89210323b07f475071a3afd79",
+      "mimeType": "audio/mpeg"
+    }
+  ]
+}

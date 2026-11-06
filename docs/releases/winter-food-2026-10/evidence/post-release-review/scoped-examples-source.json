@@ -1,0 +1,1587 @@
+{
+  "version": 1,
+  "scope": "Actual published DB scoped to current batch 3 new words; complete word/example/span/gloss equality to immutable reviewed source independently proved by exact comparator.",
+  "parentDbEvidenceSha256": "8d8101edd967700815662746492de9f53b4979ee63de257225b848861fdb7682",
+  "words": [
+    {
+      "id": "chikuwa",
+      "enTerm": "chikuwa",
+      "jaTerm": "ちくわ",
+      "zhDefinition": "把魚漿做成中空管狀並加熱成形的日式魚漿製品，常見外層帶烤褐色。",
+      "examples": [
+        {
+          "id": "3725",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please slice the chikuwa thinly.",
+          "ja": "ちくわを薄く切ってください。",
+          "zh": "請把竹輪切成薄片。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please slice the chikuwa thinly.",
+              "texts": [
+                "Please ",
+                "slice",
+                " the ",
+                "chikuwa",
+                " ",
+                "thinly",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 5,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "ちくわを薄く切ってください。",
+              "texts": [
+                "ちくわ",
+                "を",
+                "薄く",
+                "切ってください",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "ちくわ",
+                null,
+                "うすく",
+                "きってください",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3726",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+          "ja": "ちくわが長かったので、半分に切ってから鍋に入れました。",
+          "zh": "竹輪很長，所以我先切成兩半才放進鍋裡。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 13,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 6,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Because the chikuwa was long, I cut it in half before putting it in the pot.",
+              "texts": [
+                "Because the ",
+                "chikuwa",
+                " was ",
+                "long",
+                ", I ",
+                "cut",
+                " it in ",
+                "half",
+                " before ",
+                "putting",
+                " it in the ",
+                "pot",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 12,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 6,
+              "reconstructed": "ちくわが長かったので、半分に切ってから鍋に入れました。",
+              "texts": [
+                "ちくわ",
+                "が",
+                "長かった",
+                "ので、",
+                "半分",
+                "に",
+                "切って",
+                "から",
+                "鍋",
+                "に",
+                "入れました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "ちくわ",
+                null,
+                "ながかった",
+                null,
+                "はんぶん",
+                null,
+                "きって",
+                null,
+                "なべ",
+                null,
+                "いれました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daikon-radish",
+      "enTerm": "daikon radish",
+      "jaTerm": "大根",
+      "zhDefinition": "根部大而多為白色的蘿蔔，可用來生食、醃漬或烹煮。",
+      "examples": [
+        {
+          "id": "3721",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please add one piece of daikon radish.",
+          "ja": "大根を一つ入れてください。",
+          "zh": "請加一塊白蘿蔔。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please add one piece of daikon radish.",
+              "texts": [
+                "Please ",
+                "add",
+                " ",
+                "one piece",
+                " of ",
+                "daikon radish",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 5,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "大根を一つ入れてください。",
+              "texts": [
+                "大根",
+                "を",
+                "一つ",
+                "入れてください",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "だいこん",
+                null,
+                "ひとつ",
+                "いれてください",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3722",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+          "ja": "大根がまだ硬かったので、さらに10分煮ました。",
+          "zh": "白蘿蔔還很硬，所以我又煮了十分鐘。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 11,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 5,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "The daikon radish was still hard, so I simmered it for another ten minutes.",
+              "texts": [
+                "The ",
+                "daikon radish",
+                " was ",
+                "still",
+                " ",
+                "hard",
+                ", so I ",
+                "simmered",
+                " it for ",
+                "another ten minutes",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 9,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 6,
+              "reconstructed": "大根がまだ硬かったので、さらに10分煮ました。",
+              "texts": [
+                "大根",
+                "が",
+                "まだ",
+                "硬かった",
+                "ので、",
+                "さらに",
+                "10分",
+                "煮ました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "だいこん",
+                null,
+                "まだ",
+                "かたかった",
+                null,
+                "さらに",
+                "じゅっぷん",
+                "にました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "egg",
+      "enTerm": "egg",
+      "jaTerm": "卵",
+      "zhDefinition": "雞產下、由蛋殼包住蛋白與蛋黃的食材，可用不同方式烹調。",
+      "examples": [
+        {
+          "id": "3723",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please add one egg to the oden.",
+          "ja": "おでんに卵を一つ入れてください。",
+          "zh": "請在關東煮裡加一顆蛋。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 9,
+              "glossedSpanCount": 4,
+              "partialGlossCount": 0,
+              "missingReadingCount": 4,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please add one egg to the oden.",
+              "texts": [
+                "Please ",
+                "add",
+                " ",
+                "one",
+                " ",
+                "egg",
+                " to the ",
+                "oden",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 7,
+              "glossedSpanCount": 4,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 4,
+              "reconstructed": "おでんに卵を一つ入れてください。",
+              "texts": [
+                "おでん",
+                "に",
+                "卵",
+                "を",
+                "一つ",
+                "入れてください",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "おでん",
+                null,
+                "たまご",
+                null,
+                "ひとつ",
+                "いれてください",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3724",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+          "ja": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。",
+          "zh": "為了讓蛋吸收高湯的味道，我先剝殼才放進關東煮。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 13,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 6,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I peeled the eggs before putting them in the oden so that they could absorb the broth.",
+              "texts": [
+                "I ",
+                "peeled",
+                " the ",
+                "eggs",
+                " before ",
+                "putting",
+                " them in the ",
+                "oden",
+                " so that they could ",
+                "absorb",
+                " the ",
+                "broth",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 14,
+              "glossedSpanCount": 7,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 7,
+              "reconstructed": "だしがしみ込むように、卵の殻をむいてからおでんに入れました。",
+              "texts": [
+                "だし",
+                "が",
+                "しみ込む",
+                "ように、",
+                "卵",
+                "の",
+                "殻",
+                "を",
+                "むいて",
+                "から",
+                "おでん",
+                "に",
+                "入れました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "だし",
+                null,
+                "しみこむ",
+                null,
+                "たまご",
+                null,
+                "から",
+                null,
+                "むいて",
+                null,
+                "おでん",
+                null,
+                "いれました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanpen",
+      "enTerm": "hanpen",
+      "jaTerm": "はんぺん",
+      "zhDefinition": "以魚漿等材料製成、口感蓬鬆柔軟的日式魚漿製品，常見為白色方形。",
+      "examples": [
+        {
+          "id": "3727",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "This hanpen is soft.",
+          "ja": "このはんぺんは柔らかいです。",
+          "zh": "這塊半片魚板很柔軟。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 5,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 2,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "This hanpen is soft.",
+              "texts": [
+                "This ",
+                "hanpen",
+                " is ",
+                "soft",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 5,
+              "glossedSpanCount": 2,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 2,
+              "reconstructed": "このはんぺんは柔らかいです。",
+              "texts": [
+                "この",
+                "はんぺん",
+                "は",
+                "柔らかいです",
+                "。"
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                "はんぺん",
+                null,
+                "やわらかいです",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3728",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I added the hanpen last so that it would not fall apart while simmering.",
+          "ja": "煮ている間に崩れないように、はんぺんは最後に入れました。",
+          "zh": "為了避免燉煮時散掉，我最後才放入半片魚板。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 11,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 5,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I added the hanpen last so that it would not fall apart while simmering.",
+              "texts": [
+                "I ",
+                "added",
+                " the ",
+                "hanpen",
+                " ",
+                "last",
+                " so that it would not ",
+                "fall apart",
+                " while ",
+                "simmering",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 10,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 5,
+              "reconstructed": "煮ている間に崩れないように、はんぺんは最後に入れました。",
+              "texts": [
+                "煮ている",
+                "間に",
+                "崩れない",
+                "ように、",
+                "はんぺん",
+                "は",
+                "最後",
+                "に",
+                "入れました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "にている",
+                null,
+                "くずれない",
+                null,
+                "はんぺん",
+                null,
+                "さいご",
+                null,
+                "いれました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "konjac",
+      "enTerm": "konjac",
+      "jaTerm": "こんにゃく",
+      "zhDefinition": "以蒟蒻原料加工成、有彈性且近似凝膠的食材，常見為灰色帶斑點的塊狀，也有其他顏色與形態。",
+      "examples": [
+        {
+          "id": "3729",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please give me one piece of konjac.",
+          "ja": "こんにゃくを一つお願いします。",
+          "zh": "請給我一塊蒟蒻。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please give me one piece of konjac.",
+              "texts": [
+                "Please ",
+                "give",
+                " me ",
+                "one piece",
+                " of ",
+                "konjac",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 5,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "こんにゃくを一つお願いします。",
+              "texts": [
+                "こんにゃく",
+                "を",
+                "一つ",
+                "お願いします",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "こんにゃく",
+                null,
+                "ひとつ",
+                "おねがいします",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3730",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+          "ja": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。",
+          "zh": "為了讓蒟蒻更容易吸收高湯的味道，我在表面劃了淺刀痕。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 17,
+              "glossedSpanCount": 8,
+              "partialGlossCount": 0,
+              "missingReadingCount": 8,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I made shallow cuts on the surface of the konjac so that it would absorb the broth more easily.",
+              "texts": [
+                "I ",
+                "made",
+                " ",
+                "shallow",
+                " ",
+                "cuts",
+                " on the ",
+                "surface",
+                " of the ",
+                "konjac",
+                " so that it would ",
+                "absorb",
+                " the ",
+                "broth",
+                " ",
+                "more easily",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 13,
+              "glossedSpanCount": 7,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 7,
+              "reconstructed": "だしがしみ込みやすいように、こんにゃくの表面に浅い切り込みを入れました。",
+              "texts": [
+                "だし",
+                "が",
+                "しみ込みやすい",
+                "ように、",
+                "こんにゃく",
+                "の",
+                "表面",
+                "に",
+                "浅い",
+                "切り込み",
+                "を",
+                "入れました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "だし",
+                null,
+                "しみこみやすい",
+                null,
+                "こんにゃく",
+                null,
+                "ひょうめん",
+                null,
+                "あさい",
+                "きりこみ",
+                null,
+                "いれました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "oden",
+      "enTerm": "oden",
+      "jaTerm": "おでん",
+      "zhDefinition": "把白蘿蔔、蛋、蒟蒻或魚漿製品等食材放入調味高湯中燉煮的日式料理。",
+      "examples": [
+        {
+          "id": "3715",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please give me one serving of oden.",
+          "ja": "おでんを一人前お願いします。",
+          "zh": "請給我一人份的關東煮。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please give me one serving of oden.",
+              "texts": [
+                "Please ",
+                "give",
+                " me ",
+                "one serving",
+                " of ",
+                "oden",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 5,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "おでんを一人前お願いします。",
+              "texts": [
+                "おでん",
+                "を",
+                "一人前",
+                "お願いします",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                "おでん",
+                null,
+                "いちにんまえ",
+                "おねがいします",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3716",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "The oden was hot, so I waited a little before eating it.",
+          "ja": "おでんが熱かったので、少し待ってから食べました。",
+          "zh": "關東煮很燙，所以我稍等了一下才吃。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 11,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 5,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "The oden was hot, so I waited a little before eating it.",
+              "texts": [
+                "The ",
+                "oden",
+                " was ",
+                "hot",
+                ", so I ",
+                "waited",
+                " ",
+                "a little",
+                " before ",
+                "eating",
+                " it."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 9,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 5,
+              "reconstructed": "おでんが熱かったので、少し待ってから食べました。",
+              "texts": [
+                "おでん",
+                "が",
+                "熱かった",
+                "ので、",
+                "少し",
+                "待って",
+                "から",
+                "食べました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "おでん",
+                null,
+                "あつかった",
+                null,
+                "すこし",
+                "まって",
+                null,
+                "たべました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "roasted-sweet-potato",
+      "enTerm": "roasted sweet potato",
+      "jaTerm": "焼き芋",
+      "zhDefinition": "把地瓜整條烤熟的食物，常連皮販售，剖開後能看到香甜的地瓜肉。",
+      "examples": [
+        {
+          "id": "3719",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "This roasted sweet potato is very sweet.",
+          "ja": "この焼き芋はとても甘いです。",
+          "zh": "這條烤地瓜很甜。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "This roasted sweet potato is very sweet.",
+              "texts": [
+                "This ",
+                "roasted sweet potato",
+                " is ",
+                "very",
+                " ",
+                "sweet",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 6,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "この焼き芋はとても甘いです。",
+              "texts": [
+                "この",
+                "焼き芋",
+                "は",
+                "とても",
+                "甘いです",
+                "。"
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                "やきいも",
+                null,
+                "とても",
+                "あまいです",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3720",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+          "ja": "その店では焼き芋が売り切れていたので、別の店に行きました。",
+          "zh": "那家店的烤地瓜賣完了，所以我去了另一家店。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 13,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 6,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "The store had sold out of roasted sweet potatoes, so I went to another store.",
+              "texts": [
+                "The ",
+                "store",
+                " had ",
+                "sold out",
+                " of ",
+                "roasted sweet potatoes",
+                ", so I ",
+                "went",
+                " to ",
+                "another",
+                " ",
+                "store",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 13,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 6,
+              "reconstructed": "その店では焼き芋が売り切れていたので、別の店に行きました。",
+              "texts": [
+                "その",
+                "店",
+                "では",
+                "焼き芋",
+                "が",
+                "売り切れていた",
+                "ので、",
+                "別",
+                "の",
+                "店",
+                "に",
+                "行きました",
+                "。"
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                "みせ",
+                null,
+                "やきいも",
+                null,
+                "うりきれていた",
+                null,
+                "べつ",
+                null,
+                "みせ",
+                null,
+                "いきました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "steamed-meat-bun",
+      "enTerm": "steamed meat bun",
+      "jaTerm": "肉まん",
+      "zhDefinition": "以柔軟麵皮包入調味肉餡後蒸熟的包子；在日本常見豬肉餡。",
+      "examples": [
+        {
+          "id": "3717",
+          "sortOrder": 0,
+          "cefrLevel": "A2",
+          "en": "Please put the steamed meat bun in a bag.",
+          "ja": "肉まんを袋に入れてください。",
+          "zh": "請把肉包裝進袋子裡。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 7,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 3,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "Please put the steamed meat bun in a bag.",
+              "texts": [
+                "Please ",
+                "put",
+                " the ",
+                "steamed meat bun",
+                " in a ",
+                "bag",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 6,
+              "glossedSpanCount": 3,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 3,
+              "reconstructed": "肉まんを袋に入れてください。",
+              "texts": [
+                "肉まん",
+                "を",
+                "袋",
+                "に",
+                "入れてください",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "にくまん",
+                null,
+                "ふくろ",
+                null,
+                "いれてください",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        },
+        {
+          "id": "3718",
+          "sortOrder": 1,
+          "cefrLevel": "B1",
+          "en": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+          "ja": "バスを待っている間におなかがすいたので、肉まんを買いました。",
+          "zh": "等公車時肚子餓了，所以我買了一個肉包。",
+          "clickTranslations": {
+            "en": {
+              "spanCount": 11,
+              "glossedSpanCount": 5,
+              "partialGlossCount": 0,
+              "missingReadingCount": 5,
+              "unexpectedReadingCount": 0,
+              "reconstructed": "I bought a steamed meat bun because I was hungry while waiting for the bus.",
+              "texts": [
+                "I ",
+                "bought",
+                " a ",
+                "steamed meat bun",
+                " because I was ",
+                "hungry",
+                " while ",
+                "waiting",
+                " for the ",
+                "bus",
+                "."
+              ],
+              "glossed": [
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "metaGlossCount": 0
+            },
+            "ja": {
+              "spanCount": 12,
+              "glossedSpanCount": 6,
+              "partialGlossCount": 0,
+              "missingReadingCount": 0,
+              "unexpectedReadingCount": 6,
+              "reconstructed": "バスを待っている間におなかがすいたので、肉まんを買いました。",
+              "texts": [
+                "バス",
+                "を",
+                "待っている",
+                "間に",
+                "おなか",
+                "が",
+                "すいた",
+                "ので、",
+                "肉まん",
+                "を",
+                "買いました",
+                "。"
+              ],
+              "glossed": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                true,
+                false
+              ],
+              "readings": [
+                "バス",
+                null,
+                "まっている",
+                null,
+                "おなか",
+                null,
+                "すいた",
+                null,
+                "にくまん",
+                null,
+                "かいました",
+                null
+              ],
+              "metaGlossCount": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

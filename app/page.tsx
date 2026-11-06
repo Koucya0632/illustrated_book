@@ -35,7 +35,7 @@ const appJsonLd = {
   description:
     "看圖學日文、英文生活單字的 App：圖片記憶、真人發音、例句、間隔複習，以及用 AI 把自己拍的照片變成單字卡。",
   applicationCategory: "EducationalApplication",
-  operatingSystem: "iOS",
+  operatingSystem: "iOS, Android",
   inLanguage: ["zh-TW", "ja", "en"],
   url: SITE_URL,
   downloadUrl: `https://apps.apple.com/app/id${APP_STORE_ID}`,
@@ -117,6 +117,14 @@ function AppleLogo({ className }: { className?: string }) {
   );
 }
 
+function PlayLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M4.3 2.2c-.2.2-.3.6-.3 1v17.6c0 .4.1.8.3 1l9.8-9.8L4.3 2.2zm10.7 10.7 2.9 2.9-11.9 6.8 9-9.7zm0-1.8-9-9.7 11.9 6.8-2.9 2.9zm3.9-2.2 3 1.7c.9.5.9 1.4 0 1.9l-3 1.7-3.1-2.6 3.1-2.7z" />
+    </svg>
+  );
+}
+
 function MarqueeCard({ item, lang }: { item: { id: string; en: string }; lang: UiLang }) {
   const gloss = mt(lang, `mq.${item.id}`);
   return (
@@ -194,10 +202,16 @@ export default async function MarketingHomePage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/download"
+                href="/download?platform=ios"
                 className="tuji-press inline-flex items-center justify-center gap-2 bg-tuji-current px-7 py-4 text-lg font-extrabold text-tuji-ink"
               >
                 {mt(lang, "cta.download")}
+              </Link>
+              <Link
+                href="/download?platform=android"
+                className="inline-flex items-center justify-center gap-2 bg-tuji-paper3 px-7 py-4 text-lg font-extrabold text-tuji-ink transition duration-120 hover:bg-tuji-ink hover:text-tuji-paper"
+              >
+                {mt(lang, "cta.downloadAndroid")}
               </Link>
             </div>
             <div className="mt-10 grid max-w-lg grid-cols-3 gap-px bg-tuji-rule">
@@ -466,10 +480,11 @@ export default async function MarketingHomePage() {
             {mt(lang, "dl.subhead")}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            {/* The one primary action on the page, so it is the one thing
-                wearing 瞳黃. Ink text on yellow — never white (≈11:1). */}
+            {/* The store badges are the one primary action on the page, so they
+                are the only things wearing 瞳黃. Ink text on yellow — never
+                white (≈11:1). */}
             <a
-              href="/download"
+              href="/download?platform=ios"
               className="tuji-press inline-flex items-center gap-3 bg-tuji-current px-7 py-4 text-tuji-ink"
             >
               <AppleLogo className="h-8 w-8" />
@@ -479,6 +494,20 @@ export default async function MarketingHomePage() {
                 </span>
                 <span className="block font-display text-lg font-extrabold leading-tight">
                   App Store
+                </span>
+              </span>
+            </a>
+            <a
+              href="/download?platform=android"
+              className="tuji-press inline-flex items-center gap-3 bg-tuji-current px-7 py-4 text-tuji-ink"
+            >
+              <PlayLogo className="h-8 w-8" />
+              <span className="text-left">
+                <span className="block text-[13px] font-bold text-tuji-ink/70">
+                  GET IT ON
+                </span>
+                <span className="block font-display text-lg font-extrabold leading-tight">
+                  Google Play
                 </span>
               </span>
             </a>

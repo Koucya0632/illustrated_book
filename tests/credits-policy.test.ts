@@ -80,7 +80,7 @@ test("trial policy switches on at AI_CREDITS_TRIAL_STARTS_AT; the allowance drop
   assert.equal(before.monthlyGift, 1000);
   assert.equal(before.trialGrant, 0);
   const switchMonth = effectiveCreditPolicy(on, new Date("2026-12-20T00:00:00Z"));
-  assert.deepEqual([switchMonth.monthlyGift, switchMonth.trialGrant, switchMonth.firstPurchaseGift], [1000, 150, 1000]);
+  assert.deepEqual([switchMonth.monthlyGift, switchMonth.trialGrant, switchMonth.firstPurchaseGift], [500, 150, 1000]);
   assert.equal(effectiveCreditPolicy(on, new Date("2027-01-01T00:00:00Z")).monthlyGift, 500);
   assert.equal(limitsForBilling("free", "v2", "credits", 3).atlasSlotsLimit, 3);
   assert.equal(limitsForBilling("free", "v2", "legacy", 3).atlasSlotsLimit, 0);

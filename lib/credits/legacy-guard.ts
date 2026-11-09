@@ -13,7 +13,7 @@ export async function isCreditAccount(sql: postgres.Sql | null, userId: string, 
     const [row] = await sql`SELECT billing_mode FROM credit_user_policies
       WHERE user_id = ${userId} AND environment = ${config.environment}`;
     if (row?.billing_mode === "credits") return true;
-    return config.mode === "live" && config.replaceLegacyEnabled && await canReplaceLegacy(sql, userId);
+    return config.mode === "live" && config.replaceLegacyEnabled && await canReplaceLegacy(sql, userId, config, new Date());
   } catch (error) {
     // Only a not-yet-migrated database with all credit features off is legacy.
     if (!active && typeof error === "object" && error !== null && "code" in error && error.code === "42P01") return false;

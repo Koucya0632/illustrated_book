@@ -1,6 +1,7 @@
 /** Prices are integer points. Store prices and legacy membership limits stay separate. */
 export const CREDIT_POLICY = {
   version: "credits-2026-10-precision-upgrade",
+  /** Before the trial switch (`AI_CREDITS_TRIAL_STARTS_AT`); see `TRIAL_POLICY` for after it. */
   monthlyGift: 1000,
   checkInDaily: 10,
   checkInMonthlyCap: 300,
@@ -11,8 +12,48 @@ export const CREDIT_POLICY = {
   lifetimeAtlasSlots: 200,
 } as const;
 
+/**
+ * From `AI_CREDITS_TRIAL_STARTS_AT` (docs/adr/0001 in the parent repo): free accounts
+ * get one never-expiring 試用點數 grant, a lifetime bought after the switch brings a
+ * never-expiring 首購禮 that replaces that month's allowance, and the allowance drops
+ * to 500 from the month after the switch.
+ */
+export const TRIAL_POLICY = {
+  version: "credits-2026-11-trial",
+  trialGrant: 150,
+  firstPurchaseGift: 1000,
+  monthlyGift: 500,
+  freeAtlasSlots: 3,
+} as const;
+
+export function trialActive(config: Pick<CreditConfig, "trialStartsAt">, now: Date): boolean {
+  return config.trialStartsAt !== null && now >= config.trialStartsAt;
+}
+
+/** The allowance for a UTC month ("2026-12"); the switch month keeps the old amount. */
+export function monthlyGiftFor(config: Pick<CreditConfig, "trialStartsAt">, month: string) {
+  const start = config.trialStartsAt;
+  return start && month > start.toISOString().slice(0, 7)
+    ? { amount: TRIAL_POLICY.monthlyGift, version: TRIAL_POLICY.version }
+    : { amount: CREDIT_POLICY.monthlyGift, version: CREDIT_POLICY.version };
+}
+
+/** 自製圖鑑 slots of a free credit account. */
+export function freeCreditAtlasSlots(config: Pick<CreditConfig, "trialStartsAt">, now: Date): number {
+  return trialActive(config, now) ? TRIAL_POLICY.freeAtlasSlots : 0;
+}
+
+/** What clients are told: the numbers in force at `now`. */
+export function effectiveCreditPolicy(config: Pick<CreditConfig, "trialStartsAt">, now: Date) {
+  const monthly = monthlyGiftFor(config, utcPeriod(now).month);
+  if (!trialActive(config, now)) return { ...CREDIT_POLICY, trialGrant: 0, firstPurchaseGift: 0, freeAtlasSlots: 0 };
+  return { ...CREDIT_POLICY, version: TRIAL_POLICY.version, monthlyGift: monthly.amount,
+    trialGrant: TRIAL_POLICY.trialGrant, firstPurchaseGift: TRIAL_POLICY.firstPurchaseGift,
+    freeAtlasSlots: TRIAL_POLICY.freeAtlasSlots };
+}
+
 export type CreditEnvironment = "production" | "sandbox";
-export type CreditSource = "monthly" | "check_in" | "purchase" | "adjustment";
+export type CreditSource = "monthly" | "check_in" | "purchase" | "adjustment" | "trial" | "first_purchase";
 export type CreditErrorCode =
   | "credits_disabled" | "credits_unavailable" | "credits_not_enrolled"
   | "benefit_disabled" | "benefit_ineligible" | "invalid_credit_configuration"
@@ -53,13 +94,17 @@ export interface CreditConfig {
   replaceLegacyEnabled: boolean;
   monthlyExpiry: "none" | "month_end" | null;
   checkInExpiryDays: number | "none" | null;
+  /** When free accounts join the points system with 試用點數; null keeps the October policy. */
+  trialStartsAt: Date | null;
 }
 
 /** Approved policy: monthly allowance resets; check-in credits never expire. */
 export function creditConfig(env: Record<string, string | undefined> = process.env): CreditConfig {
   const mode = env.AI_CREDITS_MODE ?? "off";
   const environment = env.AI_CREDITS_ENVIRONMENT ?? "production";
+  const trialStartsAt = env.AI_CREDITS_TRIAL_STARTS_AT ? new Date(env.AI_CREDITS_TRIAL_STARTS_AT) : null;
   if (!["off", "shadow", "live"].includes(mode) ||
+      (trialStartsAt !== null && !Number.isFinite(trialStartsAt.getTime())) ||
       !["production", "sandbox"].includes(environment) ||
       (mode !== "off" && !env.AI_CREDITS_ENVIRONMENT)) {
     throw new CreditError("invalid_credit_configuration");
@@ -72,6 +117,7 @@ export function creditConfig(env: Record<string, string | undefined> = process.e
     replaceLegacyEnabled: env.AI_CREDITS_REPLACE_LEGACY_ENABLED === "true",
     monthlyExpiry: "month_end",
     checkInExpiryDays: "none",
+    trialStartsAt,
   };
 }
 

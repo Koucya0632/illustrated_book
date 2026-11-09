@@ -386,3 +386,14 @@ SELECT date_trunc('day', created_at) AS day,
 - **計價不設上限**：`storyPoints` = 實際 token 成本 × 3 ÷ US$0.0007，無條件進位、至少 1 點。`STORY_PRICING` 的 3–10 只是事前告訴使用者的常見範圍，以及開始寫之前要求的最低餘額（10 點）；超過剩餘點數時扣到 0 為止。計價版本 `assistant-story-2026-10c`。
 - **Moira**：貓在每種語言都叫 Moira；模型音譯成 モイラ／莫伊拉 會被改回。
 - `max_tokens` 由 4096 提高到 8192（思考也算在內，樣本曾在 4096 被截斷）。
+
+## 試用點數與首購禮（AI_CREDITS_TRIAL_STARTS_AT）
+
+未設定時維持 10 月政策。設定為 ISO 時間後，自該時刻起：
+
+- 所有帳號自動進入點數制；從未持有點數、也從未持有永久會員的錢包拿一次 150 點試用點數（source `trial`，不過期）。免費帳號不能簽到、看不到點數包，自製圖鑑 3 格。
+- 該時刻後在 App Store／Google Play 買下的永久會員，帳號第一次讀錢包時拿 1,000 點首購禮（source `first_purchase`，不過期），並取代當月月贈（記一筆 0 點的月贈領取）。每個帳號一次、每筆購買跨帳號一次。
+- 首購禮記成一筆 `credit_store_transactions`：永久會員被撤銷（退款）時視為全額退款，未用的收回、已用的走既有人工退款核對；撤銷回復時歸還。
+- 月贈：切換當月仍為 1,000，下個月起 500（`policy_version` `credits-2026-11-trial`）。
+
+切換前須先以 `npm run migrate` 套用 `credit_lots_source_check` 的新來源。決策紀錄見主 repo 的 `docs/adr/0001-free-accounts-get-trial-points-only.md` 與 `docs/AI_CREDITS_PRODUCT_DECISIONS.md`。

@@ -1,7 +1,8 @@
 import { randomUUID } from "node:crypto";
 import type postgres from "postgres";
 import { createCreditWallet, type CreditAccount, type CreditTransaction } from "../credits/wallet";
-import { CreditError } from "../credits/policy";
+import { userCreditConfig } from "../credits/policy";
+import { creditAtlasSlots } from "../credits/atlas-slots";
 import { OperationError } from "./contracts";
 
 export const UPLOAD_LIMITS = { count: 20, bytes: 100 * 1024 * 1024, retentionMs: 7 * 86_400_000, leaseMs: 15 * 60_000 } as const;
@@ -29,8 +30,7 @@ export function createCreditUploads(sql: postgres.Sql, clock = () => new Date())
           input.byteSize > 9 * 1024 * 1024 || !Number.isSafeInteger(input.width) || !Number.isSafeInteger(input.height) ||
           input.width < 1 || input.height < 1 || input.width > 1600 || input.height > 1600) throw new UploadError("invalid_upload");
       return transact(a, async s => {
-        const [permanent] = await s.sql`SELECT id FROM user_lifetime_entitlements WHERE user_id = ${a.userId} AND revoked_at IS NULL LIMIT 1`;
-        if (!permanent) throw new CreditError("benefit_ineligible");
+        await creditAtlasSlots(s.sql, a.userId, userCreditConfig(a.userId), s.now);
         const [existing] = await s.sql`SELECT * FROM user_atlas_images WHERE user_id = ${a.userId}
           AND sha256 = ${input.sha256} AND deleted_at IS NULL ORDER BY created_at DESC LIMIT 1`;
         // Dedup returns only the image. Results are obtained through a language-bound quote.

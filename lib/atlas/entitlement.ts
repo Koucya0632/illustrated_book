@@ -32,6 +32,8 @@
 
 import { getSql } from "@/lib/db";
 import { usesCreditBilling } from "@/lib/credits/legacy-server";
+import { freeCreditAtlasSlots, userCreditConfig } from "@/lib/credits/policy";
+
 import {
   decideStoreKitBinding,
   decideStoreKitState,
@@ -49,6 +51,9 @@ import {
   type MembershipSourceRow,
   type MembershipTier,
 } from "@/lib/atlas/membership";
+
+/** 自製圖鑑 slots of a free credit account under the trial policy in force. */
+const freeSlots = (userId: string) => freeCreditAtlasSlots(userCreditConfig(userId), new Date());
 
 export type { AtlasLimits };
 
@@ -251,7 +256,7 @@ export async function getAtlasGateContext(userId: string): Promise<{
   const billingMode = await usesCreditBilling(userId) ? "credits" : "legacy";
   const tier = membershipTierOf(row, billingMode);
   return { tier, pro: tier === "pro" ? "pro" : "free", policy, billingMode,
-    limits: limitsForBilling(tier, policy, billingMode) };
+    limits: limitsForBilling(tier, policy, billingMode, freeSlots(userId)) };
 }
 
 /**
@@ -284,7 +289,7 @@ export async function getLockedAtlasItemIds(userId: string): Promise<string[]> {
     if (tier === "pro") return [];
     const graceActive =
       billingMode === "legacy" && tier === "lifetime" && (await readMembership(userId, row)).graceEndsAt !== null;
-    const keep = limitsForBilling(tier, policy, billingMode).atlasSlotsLimit;
+    const keep = limitsForBilling(tier, policy, billingMode, freeSlots(userId)).atlasSlotsLimit;
     if (graceActive) return [];
     const rows = (await sql`
       SELECT id FROM user_atlas_items
@@ -424,7 +429,7 @@ export async function getAtlasEntitlement(userId: string): Promise<AtlasEntitlem
   const [row, usage] = await Promise.all([getEntitlementRow(userId), getAtlasUsage(userId)]);
   const billingMode = await usesCreditBilling(userId) ? "credits" : "legacy";
   const membership = membershipForBilling(await readMembership(userId, row), billingMode);
-  const limits = limitsForBilling(membershipTierOf(row, billingMode), membershipPolicy(), billingMode);
+  const limits = limitsForBilling(membershipTierOf(row, billingMode), membershipPolicy(), billingMode, freeSlots(userId));
   return {
     plan: billingMode === "credits" ? "free" : row.tier,
     billingMode,

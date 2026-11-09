@@ -4,8 +4,8 @@ import { refundReviewCondition } from "./refund-review";
 import { DEFAULT_TIMEZONE, zonedPeriod } from "../timezone";
 import { creditGrantKey } from "./store-contracts";
 import {
-  assertCreditKey, assertPoints, CREDIT_POLICY, CreditError, userCreditConfig, utcPeriod,
-  type CreditConfig, type CreditEnvironment, type CreditSource,
+  assertCreditKey, assertPoints, CREDIT_POLICY, CreditError, monthlyGiftFor, TRIAL_POLICY, trialActive,
+  userCreditConfig, utcPeriod, type CreditConfig, type CreditEnvironment, type CreditSource,
 } from "./policy";
 
 type Tx = postgres.TransactionSql;
@@ -38,6 +38,8 @@ export interface CreditBalance {
   giftAvailable: number;
   monthlyAvailable: number;
   checkInAvailable: number;
+  /** Unspent 試用點數; part of giftAvailable. */
+  trialAvailable: number;
   /** A decimal string avoids truncating PostgreSQL BIGINT in clients. */
   walletVersion: string;
   environment: CreditEnvironment;
@@ -72,13 +74,18 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
       const now = clock();
       const config = configuration(account.userId);
       if (policy?.billing_mode !== "credits" && !(config.mode === 'live' && config.replaceLegacyEnabled &&
-          config.environment === account.environment && await replaceLegacyInTransaction(tx, account, now))) {
+          config.environment === account.environment && await replaceLegacyInTransaction(tx, account, now, config))) {
         throw new CreditError("credits_not_enrolled");
       }
       await expire(tx, account, now);
+      await syncFirstPurchaseRefunds(tx, account, now);
       await reconcileRefunds(tx, account, now);
+      if (config.mode === "live" && config.environment === account.environment && trialActive(config, now)) {
+        await grantFirstPurchaseInTransaction(tx, account, now, config);
+        await grantTrialInTransaction(tx, account, now);
+      }
       if (config.mode === "live" && config.monthlyEnabled && config.environment === account.environment) {
-        await refreshMonthlyInTransaction(tx, account, now, false);
+        await refreshMonthlyInTransaction(tx, account, now, false, config);
       }
       return run(tx, now);
     }) as Promise<T>;
@@ -129,10 +136,12 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
       COALESCE(sum(remaining - reserved) FILTER (WHERE source <> 'purchase' AND (expires_at IS NULL OR expires_at > ${now})), 0) AS gift
       ,COALESCE(sum(remaining - reserved) FILTER (WHERE source = 'monthly' AND expires_at > ${now}), 0) AS monthly
       ,COALESCE(sum(remaining - reserved) FILTER (WHERE source = 'check_in' AND (expires_at IS NULL OR expires_at > ${now})), 0) AS check_in
+      ,COALESCE(sum(remaining - reserved) FILTER (WHERE source = 'trial'), 0) AS trial
       FROM credit_lots WHERE user_id = ${a.userId} AND environment = ${a.environment}`;
     const [account] = await tx`SELECT wallet_version FROM credit_accounts
       WHERE user_id = ${a.userId} AND environment = ${a.environment}`;
-    const values = [totals.available, totals.reserved, totals.paid, totals.gift, totals.monthly, totals.check_in].map(Number);
+    const values = [totals.available, totals.reserved, totals.paid, totals.gift, totals.monthly, totals.check_in, totals.trial]
+      .map(Number);
     if (values.some(n => !Number.isSafeInteger(n) || n < 0)) throw new CreditError("credits_unavailable");
     const { month, nextMonth } = utcPeriod(now);
     const checkInTimezone = a.timezone ?? DEFAULT_TIMEZONE;
@@ -148,7 +157,7 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
       WHERE user_id = ${a.userId} AND revoked_at IS NULL) AS held`;
     return {
       available: values[0], reserved: values[1], paidAvailable: values[2], giftAvailable: values[3],
-      monthlyAvailable: values[4], checkInAvailable: values[5],
+      monthlyAvailable: values[4], checkInAvailable: values[5], trialAvailable: values[6],
       walletVersion: String(account.wallet_version), environment: a.environment,
       serverNow: now.toISOString(), periodTimezone: "UTC", checkInTimezone,
       nextDailyResetAt: checkIn.nextDay.toISOString(),
@@ -181,7 +190,80 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
     return true;
   }
 
-  async function refreshMonthlyInTransaction(tx: Tx, a: Account, now: Date, required: boolean) {
+  /**
+   * 試用點數: only into a wallet that has never held points (which makes it once per
+   * account) and never for one holding a lifetime. Caller checked the switch.
+   */
+  async function grantTrialInTransaction(tx: Tx, a: Account, now: Date) {
+    const [held] = await tx`SELECT 1 FROM credit_lots
+      WHERE user_id = ${a.userId} AND environment = ${a.environment} LIMIT 1`;
+    if (held) return;
+    const [member] = await tx`SELECT 1 FROM user_lifetime_entitlements WHERE user_id = ${a.userId} LIMIT 1`;
+    if (member) return;
+    await grantInTransaction(tx, a, now, { key: "benefit:trial", source: "trial", amount: TRIAL_POLICY.trialGrant, expiresAt: null });
+  }
+
+  /**
+   * 首購禮: a store lifetime bought after the switch, once per account and once per
+   * purchase across accounts (a restore onto another account finds the purchase
+   * row). It is recorded as a store transaction so a refund withdraws it through
+   * the same reconciliation and manual review as a refunded point pack.
+   */
+  async function grantFirstPurchaseInTransaction(tx: Tx, a: Account, now: Date, config: CreditConfig) {
+    const [holding] = await tx`SELECT original_transaction_id, product_id FROM user_lifetime_entitlements
+      WHERE user_id = ${a.userId} AND revoked_at IS NULL AND source IN ('appstore','play')
+        AND original_transaction_id IS NOT NULL AND acquired_at >= ${config.trialStartsAt} LIMIT 1`;
+    if (!holding) return;
+    const [given] = await tx`SELECT 1 FROM credit_lots WHERE user_id = ${a.userId}
+      AND environment = ${a.environment} AND source = 'first_purchase' LIMIT 1`;
+    if (given) return;
+    const transactionId = holding.original_transaction_id as string;
+    await tx`SELECT pg_advisory_xact_lock(hashtextextended(${`credit-store:${a.environment}:${transactionId}`}, 0))`;
+    const [recorded] = await tx`SELECT 1 FROM credit_store_transactions
+      WHERE environment = ${a.environment} AND transaction_id = ${transactionId}`;
+    if (recorded) return;
+    const key = `benefit:first_purchase:${transactionId}`;
+    const points = TRIAL_POLICY.firstPurchaseGift;
+    await grantInTransaction(tx, a, now, { key, source: "first_purchase", amount: points, expiresAt: null });
+    const [lot] = await tx`SELECT id FROM credit_lots WHERE user_id = ${a.userId}
+      AND environment = ${a.environment} AND grant_key = ${key}`;
+    await tx`INSERT INTO credit_store_transactions
+      (environment, transaction_id, user_id, product_id, quantity, points, catalog_version, lot_id, last_event_at)
+      VALUES (${a.environment}, ${transactionId}, ${a.userId}, ${holding.product_id ?? "lifetime"}, 1, ${points},
+        ${TRIAL_POLICY.version}, ${lot.id}, ${now})`;
+  }
+
+  /**
+   * A refunded lifetime marks its 首購禮 fully refunded; reconcileRefunds then
+   * withdraws what is unspent and leaves the rest to manual review. A reversed
+   * refund (the holding is live again) restores what was withdrawn.
+   */
+  async function syncFirstPurchaseRefunds(tx: Tx, a: Account, now: Date) {
+    const rows = await tx`SELECT t.transaction_id, t.points, t.refund_points, t.withdrawn_points, t.lot_id,
+        e.id AS holding_id, e.revoked_at
+      FROM credit_store_transactions t
+      JOIN credit_lots l ON l.id = t.lot_id AND l.source = 'first_purchase'
+      LEFT JOIN user_lifetime_entitlements e ON e.original_transaction_id = t.transaction_id
+      WHERE t.user_id = ${a.userId} AND t.environment = ${a.environment}`;
+    for (const row of rows) {
+      const refunded = row.holding_id === null || row.revoked_at !== null;
+      if (refunded && row.refund_points === 0) {
+        await tx`UPDATE credit_store_transactions SET refund_points = points, consumed_points = 0,
+          last_event_at = ${row.revoked_at ?? now}
+          WHERE environment = ${a.environment} AND transaction_id = ${row.transaction_id}`;
+      } else if (!refunded && row.refund_points > 0) {
+        if (row.withdrawn_points) {
+          await tx`UPDATE credit_lots SET remaining = remaining + ${row.withdrawn_points} WHERE id = ${row.lot_id}`;
+          await record(tx, a, now, "refund_reverse", row.withdrawn_points, 0, creditGrantKey(row.transaction_id));
+        }
+        await tx`UPDATE credit_store_transactions SET refund_points = 0, withdrawn_points = 0, consumed_points = 0,
+          last_event_at = ${now}
+          WHERE environment = ${a.environment} AND transaction_id = ${row.transaction_id}`;
+      }
+    }
+  }
+
+  async function refreshMonthlyInTransaction(tx: Tx, a: Account, now: Date, required: boolean, config: CreditConfig) {
     const { month, nextMonth } = utcPeriod(now);
     const [holding] = await tx`SELECT id FROM user_lifetime_entitlements WHERE user_id = ${a.userId} AND revoked_at IS NULL LIMIT 1`;
     if (!holding) {
@@ -204,10 +286,15 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
         AND expires_at IS DISTINCT FROM ${nextMonth}`;
       return { claimed: false, amount: existing.amount, period: month };
     }
+    const gift = monthlyGiftFor(config, month);
+    // The 首購禮 stands in for the allowance of the month it was given.
+    const [welcomed] = await tx`SELECT 1 FROM credit_lots WHERE user_id = ${a.userId}
+      AND environment = ${a.environment} AND source = 'first_purchase' AND created_at >= ${start} LIMIT 1`;
+    const amount = welcomed ? 0 : gift.amount;
     await tx`INSERT INTO credit_benefit_claims (user_id, environment, kind, period, month, amount, policy_version, created_at)
-      VALUES (${a.userId}, ${a.environment}, 'monthly', ${month}, ${month}, ${CREDIT_POLICY.monthlyGift}, ${CREDIT_POLICY.version}, ${now})`;
-    await grantInTransaction(tx, a, now, { key, source: 'monthly', amount: CREDIT_POLICY.monthlyGift, expiresAt: nextMonth });
-    return { claimed: true, amount: CREDIT_POLICY.monthlyGift, period: month };
+      VALUES (${a.userId}, ${a.environment}, 'monthly', ${month}, ${month}, ${amount}, ${gift.version}, ${now})`;
+    if (amount) await grantInTransaction(tx, a, now, { key, source: 'monthly', amount, expiresAt: nextMonth });
+    return { claimed: true, amount, period: month };
   }
 
   async function reserveInTransaction(tx: Tx, a: Account, now: Date, operationKey: string, amount: number): Promise<Reservation> {
@@ -340,7 +427,7 @@ export function createCreditWallet(sql: postgres.Sql, clock: () => Date = () => 
       }
       return locked(a, async (tx, now) => {
         if (kind === "monthly") {
-          const result = await refreshMonthlyInTransaction(tx, a, now, true);
+          const result = await refreshMonthlyInTransaction(tx, a, now, true, config);
           return { ...result, wallet: await balance(tx, a, now) };
         }
         const { day, month } = zonedPeriod(now, a.timezone ?? DEFAULT_TIMEZONE);

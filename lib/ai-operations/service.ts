@@ -1,7 +1,8 @@
 import { createHash, randomUUID } from "node:crypto";
 import { isDeepStrictEqual } from "node:util";
 import type postgres from "postgres";
-import { assertCreditKey, CREDIT_POLICY, CreditError } from "../credits/policy";
+import { assertCreditKey, CREDIT_POLICY, CreditError, userCreditConfig } from "../credits/policy";
+import { creditAtlasSlots } from "../credits/atlas-slots";
 import { captureForm } from "../atlas/gloss";
 import { confirmedNames, recordAiUsage, saveConfirmedItem } from "../atlas/item-writes";
 import { createCreditWallet, type CreditAccount, type CreditTransaction } from "../credits/wallet";
@@ -25,12 +26,8 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
       return run(scope);
     });
   }
-  async function holding(scope: CreditTransaction, a: CreditAccount): Promise<number> {
-    const tx = scope.sql;
-    const [permanent] = await tx`SELECT id FROM user_lifetime_entitlements
-      WHERE user_id = ${a.userId} AND revoked_at IS NULL LIMIT 1`;
-    if (!permanent) throw new CreditError("benefit_ineligible");
-    return CREDIT_POLICY.lifetimeAtlasSlots;
+  function holding(scope: CreditTransaction, a: CreditAccount): Promise<number> {
+    return creditAtlasSlots(scope.sql, a.userId, userCreditConfig(a.userId), scope.now);
   }
   async function image(scope: CreditTransaction, a: CreditAccount, id: string) {
     const [row] = await scope.sql`SELECT * FROM user_atlas_images

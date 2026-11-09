@@ -1,12 +1,15 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { assertPoints, assertCreditKey, CREDIT_POLICY, creditConfig, userCreditConfig, creditRecoveryEnvironments, utcPeriod } from "../lib/credits/policy";
+import {
+  assertPoints, assertCreditKey, CREDIT_POLICY, creditConfig, userCreditConfig, creditRecoveryEnvironments, utcPeriod,
+  effectiveCreditPolicy, freeCreditAtlasSlots, monthlyGiftFor, TRIAL_POLICY, trialActive,
+} from "../lib/credits/policy";
 import { limitsForBilling } from "../lib/atlas/membership-limits";
 
 test("credit features default off with approved monthly reset and permanent check-in policy", () => {
   assert.deepEqual(creditConfig({}), {
     mode: "off", readEnabled: false, environment: "production", monthlyEnabled: false, checkInEnabled: false, replaceLegacyEnabled: false,
-    monthlyExpiry: "month_end", checkInExpiryDays: "none",
+    monthlyExpiry: "month_end", checkInExpiryDays: "none", trialStartsAt: null,
   });
   assert.equal(CREDIT_POLICY.monthlyGift, 1000);
   assert.equal(CREDIT_POLICY.checkInDaily, 10);
@@ -59,4 +62,27 @@ test("only deployment-selected review identities use sandbox while public produc
   assert.equal(userCreditConfig(id, { ...env, AI_CREDITS_REVIEW_ENABLED: "false" }).mode, "off");
   assert.throws(() => userCreditConfig(id, { ...env, AI_CREDITS_REVIEW_USER_IDS: "not-a-user" }));
   assert.throws(() => creditRecoveryEnvironments({ ...env, AI_CREDITS_REVIEW_USER_IDS: "" }));
+});
+
+test("trial policy switches on at AI_CREDITS_TRIAL_STARTS_AT; the allowance drops from the following month", () => {
+  const off = creditConfig({});
+  const on = creditConfig({ AI_CREDITS_TRIAL_STARTS_AT: "2026-12-10T00:00:00Z" });
+  assert.throws(() => creditConfig({ AI_CREDITS_TRIAL_STARTS_AT: "soon" }));
+  assert.equal(trialActive(off, new Date("2030-01-01T00:00:00Z")), false);
+  assert.equal(trialActive(on, new Date("2026-12-09T23:59:59Z")), false);
+  assert.equal(trialActive(on, new Date("2026-12-10T00:00:00Z")), true);
+  assert.deepEqual(monthlyGiftFor(off, "2027-01"), { amount: 1000, version: CREDIT_POLICY.version });
+  assert.deepEqual(monthlyGiftFor(on, "2026-12"), { amount: 1000, version: CREDIT_POLICY.version });
+  assert.deepEqual(monthlyGiftFor(on, "2027-01"), { amount: 500, version: TRIAL_POLICY.version });
+  assert.equal(freeCreditAtlasSlots(on, new Date("2026-12-09T00:00:00Z")), 0);
+  assert.equal(freeCreditAtlasSlots(on, new Date("2026-12-11T00:00:00Z")), 3);
+  const before = effectiveCreditPolicy(on, new Date("2026-12-01T00:00:00Z"));
+  assert.equal(before.monthlyGift, 1000);
+  assert.equal(before.trialGrant, 0);
+  const switchMonth = effectiveCreditPolicy(on, new Date("2026-12-20T00:00:00Z"));
+  assert.deepEqual([switchMonth.monthlyGift, switchMonth.trialGrant, switchMonth.firstPurchaseGift], [1000, 150, 1000]);
+  assert.equal(effectiveCreditPolicy(on, new Date("2027-01-01T00:00:00Z")).monthlyGift, 500);
+  assert.equal(limitsForBilling("free", "v2", "credits", 3).atlasSlotsLimit, 3);
+  assert.equal(limitsForBilling("free", "v2", "legacy", 3).atlasSlotsLimit, 0);
+  assert.equal(limitsForBilling("lifetime", "v2", "credits", 3).atlasSlotsLimit, 200);
 });

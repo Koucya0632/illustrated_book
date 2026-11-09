@@ -6,7 +6,7 @@ import { membershipPolicy } from "@/lib/atlas/membership";
 import { limitsForBilling } from "@/lib/atlas/membership-limits";
 import MemberEntitlementActions from "./MemberEntitlementActions";
 import { usesCreditBilling } from "@/lib/credits/legacy-server";
-import { userCreditConfig } from "@/lib/credits/policy";
+import { freeCreditAtlasSlots, userCreditConfig } from "@/lib/credits/policy";
 import { createAdminCreditGrants } from "@/lib/credits/admin-grants";
 import { getSql } from "@/lib/db";
 import MemberCreditRefunds from "./MemberCreditRefunds";
@@ -39,7 +39,8 @@ export default async function MemberDetailPage(props: { params: Promise<{ id: st
   const config = userCreditConfig(summary.userId);
   const billingMode = await usesCreditBilling(summary.userId) ? "credits" : "legacy";
   const tier = membershipTierOf(effective, billingMode);
-  const limits = limitsForBilling(tier, membershipPolicy(), billingMode);
+  const limits = limitsForBilling(tier, membershipPolicy(), billingMode,
+    freeCreditAtlasSlots(userCreditConfig(summary.userId), new Date()));
   const sql = getSql();
   const credits = sql ? await createAdminCreditGrants(sql).read({ userId: summary.userId, environment: config.environment }) : null;
 

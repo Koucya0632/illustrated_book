@@ -43,11 +43,14 @@ export function freeCreditAtlasSlots(config: Pick<CreditConfig, "trialStartsAt">
   return trialActive(config, now) ? TRIAL_POLICY.freeAtlasSlots : 0;
 }
 
-/** What clients are told: the numbers in force at `now`. */
+/**
+ * What clients are told: the policy in force at `now`. From the switch `monthlyGift` is the
+ * new allowance, even in the switch month whose grants were still 1,000 — it is the promise a
+ * buyer is shown ("首購送 1,000 點，之後每月 500 點"); the wallet says what a month really holds.
+ */
 export function effectiveCreditPolicy(config: Pick<CreditConfig, "trialStartsAt">, now: Date) {
-  const monthly = monthlyGiftFor(config, utcPeriod(now).month);
   if (!trialActive(config, now)) return { ...CREDIT_POLICY, trialGrant: 0, firstPurchaseGift: 0, freeAtlasSlots: 0 };
-  return { ...CREDIT_POLICY, version: TRIAL_POLICY.version, monthlyGift: monthly.amount,
+  return { ...CREDIT_POLICY, version: TRIAL_POLICY.version, monthlyGift: TRIAL_POLICY.monthlyGift,
     trialGrant: TRIAL_POLICY.trialGrant, firstPurchaseGift: TRIAL_POLICY.firstPurchaseGift,
     freeAtlasSlots: TRIAL_POLICY.freeAtlasSlots };
 }

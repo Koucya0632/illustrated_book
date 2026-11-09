@@ -99,7 +99,9 @@ export default function CreditAtlasClient({ userId }: { userId: string }) {
     <section className="rounded-2xl bg-white p-5 shadow-soft">
       <div className="flex items-center gap-3"><Image src="/icons/credit-can.png" width={52} height={52} alt="" /><div><h2 className="font-bold">罐頭點數</h2><p className="text-2xl font-extrabold">{wallet?.available.toLocaleString() ?? "—"}<span className="ml-2 text-sm font-normal">點可用</span></p></div></div>
       {wallet && <p className="mt-2 text-sm text-tuji-ink3">預留 {wallet.reserved} 點 · 贈點 {wallet.giftAvailable} · 購買點 {wallet.paidAvailable}</p>}
-      <p className="mt-3 font-bold">每月免費贈送 1,000 點</p>
+      {wallet && !wallet.benefits.hasLifetime
+        ? <p className="mt-3 font-bold">試用點數剩餘 {wallet.trialAvailable ?? 0} 點</p>
+        : <p className="mt-3 font-bold">每月免費贈送 {(catalog?.policy?.monthlyGift ?? 1000).toLocaleString()} 點</p>}
       <p className="mt-1 text-sm text-tuji-ink3">免費額度剩餘 {wallet?.monthlyAvailable ?? "—"} 點 · 簽到點 {wallet?.checkInAvailable ?? "—"} 點</p>
       <p className="mt-1 text-sm text-tuji-ink3">每月自動補滿，不累積。簽到點與購買點數不過期。</p>
       {wallet?.reconciliationRequired && <p role="status" className="mt-3">退款點數正在核對，新增 AI 工作暫停。</p>}

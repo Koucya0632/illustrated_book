@@ -169,6 +169,10 @@ export const CREDIT_DDL = [
     PRIMARY KEY (user_id, environment, request_key),
     FOREIGN KEY (lot_id, user_id, environment) REFERENCES credit_lots(id, user_id, environment) ON DELETE CASCADE
   )`,
+  // 試用點數 and 首購禮 (docs/adr/0001 in the parent repo) are their own sources so reports can tell them apart.
+  `ALTER TABLE credit_lots DROP CONSTRAINT IF EXISTS credit_lots_source_check`,
+  `ALTER TABLE credit_lots ADD CONSTRAINT credit_lots_source_check
+    CHECK (source IN ('monthly','check_in','purchase','adjustment','trial','first_purchase'))`,
   `CREATE INDEX IF NOT EXISTS credit_store_notifications_work_idx ON credit_store_notifications(next_attempt_at)
     WHERE state = 'pending'`,
   ...CREDIT_TABLES.map(table => `ALTER TABLE ${table} ENABLE ROW LEVEL SECURITY`),

@@ -1,17 +1,25 @@
 import type postgres from "postgres";
-import { CREDIT_POLICY } from "./policy";
+import { CREDIT_POLICY, trialActive, type CreditConfig } from "./policy";
 import type { CreditAccount } from "./wallet";
 
-/** Valid lifetime holdings switch immediately, including accounts with active Pro. */
-export async function canReplaceLegacy(sql: postgres.Sql | postgres.TransactionSql, userId: string) {
+/**
+ * Valid lifetime holdings switch immediately, including accounts with active Pro.
+ * After the trial switch every account does: free ones hold only 試用點數.
+ */
+export async function canReplaceLegacy(
+  sql: postgres.Sql | postgres.TransactionSql, userId: string, config: Pick<CreditConfig, "trialStartsAt">, now: Date,
+) {
+  if (trialActive(config, now)) return true;
   const [row] = await sql`SELECT
     EXISTS (SELECT 1 FROM user_lifetime_entitlements WHERE user_id = ${userId} AND revoked_at IS NULL) AS eligible`;
   return row.eligible === true;
 }
 
 /** Caller holds the credit account lock; policy and the first automatic allowance share one commit. */
-export async function replaceLegacyInTransaction(tx: postgres.TransactionSql, account: CreditAccount, now: Date) {
-  if (!await canReplaceLegacy(tx, account.userId)) return false;
+export async function replaceLegacyInTransaction(
+  tx: postgres.TransactionSql, account: CreditAccount, now: Date, config: Pick<CreditConfig, "trialStartsAt">,
+) {
+  if (!await canReplaceLegacy(tx, account.userId, config, now)) return false;
   const [previous] = await tx`SELECT billing_mode FROM credit_user_policies
     WHERE user_id = ${account.userId} AND environment = ${account.environment}`;
   await tx`INSERT INTO credit_user_policies(user_id, environment, billing_mode, updated_at)

@@ -56,7 +56,7 @@ export async function auditCredits(sql: postgres.Sql, environment: CreditEnviron
         SELECT 'store_grant', s.user_id, s.transaction_id FROM credit_store_transactions s
         JOIN accounts a USING(user_id, environment) LEFT JOIN credit_lots l
           ON l.id = s.lot_id AND l.user_id = s.user_id AND l.environment = s.environment
-        WHERE l.id IS NULL OR l.source <> 'purchase' OR l.issued <> s.points OR l.expires_at IS NOT NULL
+        WHERE l.id IS NULL OR l.source NOT IN ('purchase','first_purchase') OR l.issued <> s.points OR l.expires_at IS NOT NULL
         UNION ALL
         SELECT 'compensation', c.user_id, c.operation_key FROM credit_compensations c
         JOIN accounts a USING(user_id, environment) JOIN credit_reservations r USING(user_id, environment, operation_key)

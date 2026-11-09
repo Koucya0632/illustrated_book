@@ -7,6 +7,9 @@ export interface CreditOperation {
 export interface CreditCatalog {
   billingMode: string; environment: string; purchaseEnabled: boolean; proNewPurchaseEnabled: boolean;
   operationsEnabled: boolean; monthlyEnabled: boolean; checkInEnabled: boolean;
+  /** Absent from servers before the trial release. */
+  trialEnabled?: boolean;
+  policy?: { monthlyGift: number; trialGrant: number; firstPurchaseGift: number };
 }
 /** A pause/auth failure says nothing about whether an earlier request committed. */
 export const acceptanceRejected = (code: string) => ["quote_expired", "quote_not_found", "invalid_ai_request",

@@ -84,10 +84,18 @@ export function limitsFor(tier: MembershipTier, policy: MembershipPolicy): Atlas
   return policy === "v2" ? { ...V2[tier] } : v1(tier);
 }
 
-/** Credit enrollment uses the permanent plan, including former active Pro members. */
-export function limitsForBilling(tier: MembershipTier, policy: MembershipPolicy, billingMode: "legacy" | "credits"): AtlasLimits {
+/**
+ * Credit enrollment uses the permanent plan, including former active Pro members.
+ * A free credit account gets `freeCreditSlots` (freeCreditAtlasSlots: a few after the trial switch).
+ */
+export function limitsForBilling(
+  tier: MembershipTier, policy: MembershipPolicy, billingMode: "legacy" | "credits", freeCreditSlots = 0,
+): AtlasLimits {
   const effectiveTier = membershipTierForBilling(tier, billingMode);
   const limits = limitsFor(effectiveTier, policy);
+  if (billingMode === "credits" && effectiveTier === "free" && policy === "v2") {
+    return { ...limits, atlasSlotsLimit: freeCreditSlots };
+  }
   if (billingMode !== "credits" || effectiveTier !== "lifetime") return limits;
   return { ...limits, atlasSlotsLimit: CREDIT_POLICY.lifetimeAtlasSlots,
     primaryAiSoftLimitMonthly: 0, precisionAiLimitMonthly: 0 };

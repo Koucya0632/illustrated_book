@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Mascot from "@/components/tuji/Mascot";
 import PublicShell from "@/components/marketing/PublicShell";
-import imageUrls from "@/lib/image-urls.json";
+import SceneTry from "@/components/marketing/SceneTry";
 import { getPublicLang } from "@/lib/public-lang";
 import { mt } from "@/lib/marketing-i18n";
-import type { UiLang } from "@/lib/settings";
 import { APP_STORE_ID } from "@/lib/app-store-link";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { SITE_URL, isPublicTopicCategory } from "@/lib/site";
-
-// Word images live in Supabase Storage (see next.config.js). `/public/word-images/`
-// is gitignored and never deployed, so local paths 404 in prod — resolve the
-// deployed URL from the canonical id→URL map instead.
-const wordImg = (id: string) => (imageUrls as Record<string, string>)[id];
+import { FREE_STUDY_CATEGORIES } from "@/lib/study-membership";
+import { localizeTopicPresets } from "@/lib/topic-presets";
 
 export async function generateMetadata(): Promise<Metadata> {
   const lang = await getPublicLang();
@@ -31,83 +26,43 @@ const appJsonLd = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
   name: "Tuji",
-  alternateName: "Tuji 看圖學日文",
+  alternateName: "Tuji 日本的圖鑑與場面練習",
   description:
-    "看圖學日文、英文生活單字的 App：圖片記憶、真人發音、例句、間隔複習，以及用 AI 把自己拍的照片變成單字卡。",
+    "給留學、打工度假和旅遊的人：日本的圖鑑看圖認識當地的東西，場面練習聽懂店員和機器在問什麼。學日文，也能用同一本圖鑑學英文。",
   applicationCategory: "EducationalApplication",
   operatingSystem: "iOS, Android",
-  inLanguage: ["zh-TW", "ja", "en"],
+  inLanguage: ["zh-TW", "zh-CN", "ja", "en"],
   url: SITE_URL,
   downloadUrl: `https://apps.apple.com/app/id${APP_STORE_ID}`,
   image: `${SITE_URL}/brand/tuji-app-icon.png`,
-  offers: { "@type": "Offer", price: "0", priceCurrency: "TWD" },
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-const APP_ICON_SRC = "/brand/tuji-app-icon.png";
-const HERO_CAPTURE_IMAGE = "/marketing/atlas-capture-cards.webp";
-
-// Marquee showcase: English headword (constant) + a per-language gloss looked up
-// as `mq.<id>` (hidden for the English UI). `src` resolves from the word id.
-const marqueeRowA = [
-  { id: "alarm-clock", en: "alarm clock" },
-  { id: "headphones", en: "headphones" },
-  { id: "rice-cooker", en: "rice cooker" },
-  { id: "bicycle", en: "bicycle" },
-  { id: "mug", en: "mug" },
-  { id: "vending-machine", en: "vending machine" },
-  { id: "scissors", en: "scissors" },
-  { id: "toaster", en: "toaster" },
+// Scene groups as released in tuji-ios Scenes/index.json (origin/main,
+// 2026-11-11, iOS 1.5.0). Update together with "scene.listNote" when scenes ship.
+const SCENE_GROUPS = [
+  { id: "konbini-cafe", count: 3 },
+  { id: "restaurants", count: 4 },
+  { id: "airport", count: 2 },
+  { id: "getting-around", count: 2 },
+  { id: "hotels", count: 5 },
+  { id: "shopping", count: 6 },
 ];
+const SCENE_TOTAL = SCENE_GROUPS.reduce((n, g) => n + g.count, 0);
 
-const marqueeRowB = [
-  { id: "convenience-store", en: "convenience store" },
-  { id: "subway", en: "subway" },
-  { id: "pan", en: "pan" },
-  { id: "towel", en: "towel" },
-  { id: "bookshelf", en: "bookshelf" },
-  { id: "taxi", en: "taxi" },
-  { id: "kettle", en: "kettle" },
-  { id: "shopping-cart", en: "shopping cart" },
-];
-
-const howSteps = [
-  { step: "01", tKey: "how.s1t", bKey: "how.s1b", pose: "face" as const },
-  { step: "02", tKey: "how.s2t", bKey: "how.s2b", pose: "think" as const },
-  { step: "03", tKey: "how.s3t", bKey: "how.s3b", pose: "cheer" as const },
-];
-
-const features = [
-  { icon: "🖼️", tKey: "feat.f1t", bKey: "feat.f1b" },
-  { icon: "⏰", tKey: "feat.f2t", bKey: "feat.f2b" },
-  { icon: "✏️", tKey: "feat.f3t", bKey: "feat.f3b" },
-  { icon: "🔊", tKey: "feat.f4t", bKey: "feat.f4b" },
-  { icon: "🌏", tKey: "feat.f5t", bKey: "feat.f5b" },
-  { icon: "📈", tKey: "feat.f6t", bKey: "feat.f6b" },
-];
-
-const atlasTagKeys = ["atlas.tag1", "atlas.tag2", "atlas.tag3", "atlas.tag4"];
-
-const atlasSteps = [
-  { step: "1", tKey: "atlas.s1t", bKey: "atlas.s1b" },
-  { step: "2", tKey: "atlas.s2t", bKey: "atlas.s2b" },
-  { step: "3", tKey: "atlas.s3t", bKey: "atlas.s3b" },
-  { step: "4", tKey: "atlas.s4t", bKey: "atlas.s4b" },
-];
-
-const commSteps = [
-  { step: "1", tKey: "comm.s1t", bKey: "comm.s1b" },
-  { step: "2", tKey: "comm.s2t", bKey: "comm.s2b" },
-  { step: "3", tKey: "comm.s3t", bKey: "comm.s3b" },
-  { step: "4", tKey: "comm.s4t", bKey: "comm.s4b" },
-];
-
-// Keep the public count in sync with the generated canonical image map instead
-// of baking a catalog size into the marketing page.
-const heroStats = [
-  { value: String(Object.keys(imageUrls).length), lKey: "hero.stat1l" },
-  { value: "EN·JA", lKey: "hero.stat2l" },
-  { value: "AI", lKey: "hero.stat3l" },
-];
+function SectionHead({ eyebrow, title, sub, dark }: { eyebrow: string; title: React.ReactNode; sub?: string; dark?: boolean }) {
+  return (
+    <div className="max-w-2xl">
+      <div className={`text-[13px] font-bold uppercase tracking-[0.04em] ${dark ? "text-tuji-paper/60" : "text-tuji-ink3"}`}>
+        {eyebrow}
+      </div>
+      <h2 className={`mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl ${dark ? "text-tuji-paper" : "text-tuji-ink"}`}>
+        {title}
+      </h2>
+      {sub && <p className={`mt-4 text-base leading-7 ${dark ? "text-tuji-paper/80" : "text-tuji-ink2"}`}>{sub}</p>}
+    </div>
+  );
+}
 
 function AppleLogo({ className }: { className?: string }) {
   return (
@@ -125,81 +80,32 @@ function PlayLogo({ className }: { className?: string }) {
   );
 }
 
-function MarqueeCard({ item, lang }: { item: { id: string; en: string }; lang: UiLang }) {
-  const gloss = mt(lang, `mq.${item.id}`);
-  return (
-    <div className="flex w-44 shrink-0 items-center gap-3 bg-tuji-paper2 p-2.5">
-      {/* `next/image`, not `<img>`: these render at 48x48 but the bucket objects
-          are ~1.5MB at 1536x1024, and this page is public and crawlable — a
-          single view pulled ~24MB straight from Supabase Storage, which is what
-          exhausted the egress quota on 2026-08-19. The optimizer serves an
-          actual 48px WebP and bills the transfer to Vercel instead. */}
-      <Image
-        src={wordImg(item.id)}
-        alt=""
-        width={48}
-        height={48}
-        loading="lazy"
-        className="h-12 w-12 shrink-0 bg-tuji-paper3 object-cover"
-      />
-      <div className="min-w-0">
-        <div className="truncate text-sm font-bold text-tuji-ink">{item.en}</div>
-        {gloss && <div className="truncate text-[13px] text-tuji-ink3">{gloss}</div>}
-      </div>
-    </div>
-  );
-}
-
-function MarqueeRow({
-  items,
-  lang,
-  reverse,
-}: {
-  items: { id: string; en: string }[];
-  lang: UiLang;
-  reverse?: boolean;
-}) {
-  const track = [...items, ...items];
-  return (
-    <div className="overflow-hidden" aria-hidden="true">
-      <div className={`flex w-max gap-3 ${reverse ? "tuji-marquee-reverse" : "tuji-marquee"}`}>
-        {track.map((item, index) => (
-          <MarqueeCard key={`${item.id}-${index}`} item={item} lang={lang} />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default async function MarketingHomePage() {
   const lang = await getPublicLang();
   const topics = (await getCategoriesFromDb(lang)).filter((c) => isPublicTopicCategory(c.id));
+  const topicName = new Map(topics.map((c) => [c.id, c.nameZh]));
+  const presets = localizeTopicPresets(lang, new Set(topicName.keys()));
+  const free = new Set(FREE_STUDY_CATEGORIES);
+
   return (
     <PublicShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }} />
+
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="overflow-hidden">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-16 pt-12 lg:grid-cols-[0.94fr_1.06fr] lg:pb-24 lg:pt-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-16 pt-12 lg:grid-cols-[1fr_1fr] lg:pb-24 lg:pt-20">
           <div>
-            {/* Status label: 3px leading edge (bw3) instead of a pill. The dot
-                stays round — status dots are one of the three things allowed
-                to be circular. */}
+            {/* Status label: 3px leading edge instead of a pill. */}
             <div className="inline-flex items-center gap-2 border-l-3 border-tuji-current bg-tuji-paper2 py-1.5 pl-3 pr-3.5 text-[13px] font-bold tracking-[0.04em] text-tuji-ink2">
               <span className="h-2 w-2 rounded-full bg-tuji-current" />
               {mt(lang, "hero.badge")}
             </div>
-            <h1 className="mt-6 max-w-2xl font-display text-5xl font-extrabold leading-[1.08] tracking-tight text-tuji-ink sm:text-6xl">
+            <h1 className="mt-6 max-w-2xl font-display text-[2.1rem] font-extrabold leading-[1.15] tracking-tight text-tuji-ink sm:text-6xl">
               {mt(lang, "hero.title1")}
               <br />
               {mt(lang, "hero.title2")}
-              <span className="text-tuji-brand">{mt(lang, "hero.accent")}</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-tuji-ink2">
-              {mt(lang, "hero.subhead")}
-            </p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-tuji-ink2">{mt(lang, "hero.subhead")}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/download?platform=ios"
@@ -214,308 +120,280 @@ export default async function MarketingHomePage() {
                 {mt(lang, "cta.downloadAndroid")}
               </Link>
             </div>
-            <div className="mt-10 grid max-w-lg grid-cols-3 gap-px bg-tuji-rule">
-              {heroStats.map((stat) => (
-                <div key={stat.lKey} className="bg-tuji-paper2 p-4">
-                  <div className="font-display text-2xl font-extrabold text-tuji-ink">
-                    {stat.value}
-                  </div>
-                  <div className="mt-1 text-[13px] text-tuji-ink3">{mt(lang, stat.lKey)}</div>
+            <p className="mt-5 text-sm text-tuji-ink3">
+              {mt(lang, "hero.browse")}{" "}
+              <Link href="/cards" className="font-bold text-tuji-ink underline underline-offset-4">
+                {mt(lang, "hero.browseLink")}
+              </Link>
+            </p>
+          </div>
+
+          {/* A real counter photo with the clerk's line, and the app's own
+              topic screen butted against it. No float shadow: depth is the
+              ink frame of the phone. */}
+          <div className="relative mx-auto h-[460px] w-full max-w-[540px] sm:h-[560px]">
+            <Image
+              src="/marketing/scene-konbini.webp"
+              alt={mt(lang, "hero.sceneAlt")}
+              width={900}
+              height={1350}
+              priority
+              className="absolute left-0 top-0 h-full w-[76%] object-cover"
+            />
+            <div className="absolute left-4 top-5 max-w-[60%] bg-tuji-paper px-4 py-3 sm:left-6 sm:top-7">
+              <div className="text-[12px] font-bold tracking-[0.04em] text-tuji-ink3">{mt(lang, "hero.clerk")}</div>
+              <p lang="ja" className="font-ja text-2xl font-bold leading-snug text-tuji-ink">
+                温めますか？
+              </p>
+            </div>
+            <Image
+              src="/marketing/atlas-topic-konbini.webp"
+              alt={mt(lang, "hero.screenAlt")}
+              width={660}
+              height={1434}
+              className="absolute bottom-0 right-0 w-[42%] border-[6px] border-tuji-ink"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── 主題組合 ─────────────────────────────────────────── */}
+      {presets.length > 0 && (
+        <section id="presets" className="scroll-mt-20 bg-tuji-paper2 py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <SectionHead eyebrow={mt(lang, "who.eyebrow")} title={mt(lang, "who.title")} sub={mt(lang, "who.subtitle")} />
+            <div className="mt-10 grid gap-px bg-tuji-rule md:grid-cols-3">
+              {presets.map((p) => {
+                const allFree = p.categoryIds.every((id) => free.has(id));
+                return (
+                  <article key={p.id} className="flex flex-col bg-tuji-paper p-7">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <h3 className="font-display text-2xl font-extrabold tracking-tight text-tuji-ink">{p.name}</h3>
+                      {allFree && (
+                        <span className="bg-tuji-ink px-3 py-1 text-[13px] font-bold text-tuji-paper">
+                          {mt(lang, "who.allFree")}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-3 text-[15px] leading-7 text-tuji-ink2">{mt(lang, `who.${p.id}`)}</p>
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {p.categoryIds.map((id) => (
+                        <li key={id}>
+                          <Link
+                            href={`/category/${id}`}
+                            className="inline-block bg-tuji-paper2 px-3 py-1.5 text-sm font-bold text-tuji-ink transition duration-120 hover:bg-tuji-paper3"
+                          >
+                            {topicName.get(id)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── 圖鑑 ─────────────────────────────────────────────── */}
+      <section id="atlas" className="scroll-mt-20 py-16 lg:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1fr_1fr]">
+          <div className="flex justify-center gap-4 sm:gap-6">
+            <Image
+              src="/marketing/atlas-topic-konbini.webp"
+              alt={mt(lang, "atlas.alt1")}
+              width={660}
+              height={1434}
+              className="w-[46%] max-w-[250px] self-start"
+            />
+            <Image
+              src="/marketing/atlas-word.webp"
+              alt={mt(lang, "atlas.alt2")}
+              width={660}
+              height={1434}
+              className="mt-14 w-[46%] max-w-[250px] self-start"
+            />
+          </div>
+          <div>
+            <SectionHead
+              eyebrow={mt(lang, "atlas.eyebrow")}
+              title={
+                <>
+                  {mt(lang, "atlas.title1")}
+                  <br />
+                  {mt(lang, "atlas.title2")}
+                </>
+              }
+              sub={mt(lang, "atlas.body")}
+            />
+            <dl className="mt-8 border-t border-tuji-rule">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="flex gap-4 border-b border-tuji-rule py-3.5">
+                  <dt className="w-24 shrink-0 font-bold text-tuji-ink">{mt(lang, `atlas.r${i}t`)}</dt>
+                  <dd className="text-tuji-ink2">{mt(lang, `atlas.r${i}b`)}</dd>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* 拍照轉單字卡展示 */}
-          <div className="relative mx-auto w-full max-w-2xl lg:mr-0">
-            <div className="relative bg-tuji-paper2 p-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={HERO_CAPTURE_IMAGE}
-                alt={mt(lang, "hero.imgAlt")}
-                className="aspect-[16/9] w-full object-cover object-center"
-                decoding="async"
-              />
-              <div className="absolute left-4 top-4 hidden items-center gap-2 bg-tuji-paper px-3.5 py-2 text-[13px] font-bold text-tuji-ink sm:flex">
-                <span className="h-2 w-2 rounded-full bg-tuji-current" />
-                {mt(lang, "hero.aiBadge")}
-              </div>
-            </div>
-
-            {/* Two blocks butted straight against the image — no float, no
-                rotation, no shadow. Depth here is the ink block itself. */}
-            <div className="flex flex-col sm:flex-row">
-              <div className="flex-1 bg-tuji-ink p-4 text-tuji-paper">
-                <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-paper/60">
-                  {mt(lang, "hero.floatLabel")}
-                </div>
-                <div className="mt-0.5 font-display text-lg font-extrabold leading-tight">
-                  mug · apple · notebook
-                </div>
-              </div>
-              <div className="flex items-center bg-tuji-current px-4 py-3 text-sm font-extrabold text-tuji-ink">
-                {mt(lang, "hero.floatTag")}
-              </div>
-            </div>
+            </dl>
+            <Link
+              href="/cards"
+              className="tuji-press mt-8 inline-flex items-center gap-2 bg-tuji-current px-6 py-3.5 font-extrabold text-tuji-ink"
+            >
+              {mt(lang, "atlas.cta")}
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
           </div>
         </div>
-      </section>
 
-      {/* ── 單字牆跑馬燈 ─────────────────────────────────────── */}
-      <section className="space-y-3 pb-16">
-        <MarqueeRow items={marqueeRowA} lang={lang} />
-        <MarqueeRow items={marqueeRowB} lang={lang} reverse />
-      </section>
-
-      {/* ── 怎麼學 ───────────────────────────────────────────── */}
-      <section id="how" className="scroll-mt-20 bg-tuji-paper2 py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-2xl">
-            <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
-              {mt(lang, "how.eyebrow")}
-            </div>
-            <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
-              {mt(lang, "how.title")}
-            </h2>
-            <p className="mt-4 text-base leading-7 text-tuji-ink2">{mt(lang, "how.subtitle")}</p>
-          </div>
-          {/* gap-px on a rule-coloured grid: the separators ARE the 1px line,
-              so three blocks read as one object instead of three cards. */}
-          <div className="mt-10 grid gap-px bg-tuji-rule md:grid-cols-3">
-            {howSteps.map((item) => (
-              <div key={item.step} className="relative overflow-hidden bg-tuji-paper p-7">
-                <div className="flex items-center justify-between">
-                  <div className="font-display text-5xl font-extrabold text-tuji-ink">
-                    {item.step}
-                  </div>
-                  <Mascot pose={item.pose} size={56} />
-                </div>
-                <h3 className="mt-5 text-lg font-bold tracking-tight text-tuji-ink">
-                  {mt(lang, item.tKey)}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-tuji-ink2">{mt(lang, item.bKey)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 產品特色 ─────────────────────────────────────────── */}
-      <section id="features" className="scroll-mt-20 py-16 lg:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-2xl">
-            <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
-              {mt(lang, "feat.eyebrow")}
-            </div>
-            <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
-              {mt(lang, "feat.title")}
-            </h2>
-            <p className="mt-4 text-base leading-7 text-tuji-ink2">{mt(lang, "feat.subtitle")}</p>
-          </div>
-          <div className="mt-10 grid gap-px bg-tuji-rule sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((item) => (
-              <div key={item.tKey} className="bg-tuji-paper p-7">
-                <div className="flex h-12 w-12 items-center justify-center bg-tuji-paper2 text-2xl">
-                  {item.icon}
-                </div>
-                <h3 className="mt-5 text-lg font-bold tracking-tight text-tuji-ink">
-                  {mt(lang, item.tKey)}
-                </h3>
-                <p className="mt-2.5 text-sm leading-6 text-tuji-ink2">{mt(lang, item.bKey)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 生活單字分類 ─────────────────────────────────────── */}
-      {/* Plain links into /category/* — the only path a crawler has from the
-          homepage into the ~1,100 public word pages. */}
-      {topics.length > 0 && (
-        <section id="words" className="scroll-mt-20 pb-16 lg:pb-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="max-w-2xl">
-              <div className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">
-                {mt(lang, "browse.eyebrow")}
-              </div>
-              <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
-                {mt(lang, "browse.title")}
-              </h2>
-              <p className="mt-4 text-base leading-7 text-tuji-ink2">{mt(lang, "browse.subtitle")}</p>
-            </div>
-            <ul className="mt-8 grid grid-cols-2 gap-px bg-tuji-rule sm:grid-cols-3 lg:grid-cols-4">
+        {/* Plain links into /category/* — the only path a crawler has from the
+            homepage into the public word pages. Kept, quieter, below the atlas. */}
+        {topics.length > 0 && (
+          <div className="mx-auto mt-16 max-w-6xl px-6">
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.04em] text-tuji-ink3">{mt(lang, "atlas.all")}</h3>
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
               {topics.map((c) => (
                 <li key={c.id}>
-                  <Link
-                    href={`/category/${c.id}`}
-                    className="flex h-full items-center gap-3 bg-tuji-paper p-4 transition duration-120 hover:bg-tuji-paper2"
-                  >
-                    <span className="text-2xl" aria-hidden="true">
-                      {c.emoji}
-                    </span>
-                    <span className="min-w-0 truncate text-[15px] font-bold text-tuji-ink">
-                      {lang === "en" ? c.name : c.nameZh}
-                    </span>
+                  <Link href={`/category/${c.id}`} className="text-[15px] font-bold text-tuji-ink2 transition duration-120 hover:text-tuji-ink">
+                    {c.nameZh}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </section>
-      )}
+        )}
+      </section>
 
-      {/* ── 自製圖鑑 ─────────────────────────────────────────── */}
-      <section id="atlas" className="scroll-mt-20 pb-16 lg:pb-20">
+      {/* ── 場面 ─────────────────────────────────────────────── */}
+      <section id="scenes" className="scroll-mt-20 bg-tuji-ink py-16 text-tuji-paper lg:py-24">
         <div className="mx-auto max-w-6xl px-6">
-          {/* Cocoa is the app icon's own ground — the supporting brand surface.
-              It replaces the teal block: teal now means 積累 (mastery) only,
-              and a marketing page has nobody's mastery to show. */}
-          <div className="bg-tuji-cocoa">
-            <div className="grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[1fr_1.1fr] lg:p-14">
-              <div className="text-tuji-paper">
-                <div className="inline-flex items-center gap-2 border-l-3 border-tuji-current bg-tuji-ink/20 py-1.5 pl-3 pr-3.5 text-[13px] font-bold tracking-[0.04em]">
-                  {mt(lang, "atlas.badge")}
-                </div>
-                <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                  {mt(lang, "atlas.title1")}
-                  <br />
-                  {mt(lang, "atlas.title2")}
-                </h2>
-                <p className="mt-5 max-w-md text-base leading-7 text-tuji-paper/85">
-                  {mt(lang, "atlas.body")}
-                </p>
-                {/* Real gaps, not the gap-px hairline trick: this row wraps,
-                    and a wrapper background would show through the leftover
-                    space on the last line. An unselected chip is a change of
-                    ground, which needs no wrapper. */}
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {atlasTagKeys.map((tagKey) => (
-                    <span
-                      key={tagKey}
-                      className="bg-tuji-ink/20 px-3.5 py-1.5 text-sm font-bold text-tuji-paper"
-                    >
-                      {mt(lang, tagKey)}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-8 hidden lg:block">
-                  <Mascot pose="think" size={104} />
-                </div>
-              </div>
-              <div className="grid gap-px bg-tuji-paper/20 sm:grid-cols-2">
-                {atlasSteps.map((item) => (
-                  <div key={item.step} className="bg-tuji-paper p-6">
-                    <div className="flex h-9 w-9 items-center justify-center bg-tuji-current font-display text-base font-extrabold text-tuji-ink">
-                      {item.step}
-                    </div>
-                    <h3 className="mt-4 text-lg font-bold tracking-tight text-tuji-ink">
-                      {mt(lang, item.tKey)}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-tuji-ink2">{mt(lang, item.bKey)}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Plan and points, no prices: store pricing is per-region. */}
-            <div className="px-6 pb-6 sm:px-10 sm:pb-10 lg:px-14 lg:pb-12">
-              <p className="border-t border-tuji-paper/20 pt-6 text-sm leading-6 text-tuji-paper/75">
-                {mt(lang, "atlas.proNote")}
+          <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.05fr]">
+            <div>
+              <SectionHead dark eyebrow={mt(lang, "scene.eyebrow")} title={mt(lang, "scene.title")} sub={mt(lang, "scene.body1")} />
+              <p className="mt-4 max-w-2xl text-base leading-7 text-tuji-paper/80">{mt(lang, "scene.body2")}</p>
+              <p className="mt-6 max-w-2xl border-t border-tuji-paper/15 pt-4 text-sm leading-6 text-tuji-paper/60">
+                {mt(lang, "scene.note")}
               </p>
             </div>
+            <SceneTry
+              question="温めますか？"
+              response="お願いします／そのままで大丈夫です"
+              choices={[
+                { id: "a", text: mt(lang, "scene.choiceA"), correct: true },
+                { id: "b", text: mt(lang, "scene.choiceB"), correct: false },
+                { id: "c", text: mt(lang, "scene.choiceC"), correct: false },
+              ]}
+              copy={{
+                label: mt(lang, "scene.tryLabel"),
+                tag: mt(lang, "scene.tryTag"),
+                asks: mt(lang, "scene.asks"),
+                groupLabel: mt(lang, "scene.groupLabel"),
+                prompt: mt(lang, "scene.prompt"),
+                right: mt(lang, "scene.right"),
+                wrong: mt(lang, "scene.wrong"),
+                reply: mt(lang, "scene.reply"),
+                explain: mt(lang, "scene.explain"),
+              }}
+            />
+          </div>
+
+          <div className="mt-16">
+            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+              <h3 className="font-display text-xl font-extrabold">{mt(lang, "scene.listTitle", { n: SCENE_TOTAL })}</h3>
+              <p className="text-sm text-tuji-paper/60">{mt(lang, "scene.listNote")}</p>
+            </div>
+            <ul className="mt-5 grid grid-cols-2 gap-px bg-tuji-paper/15 sm:grid-cols-3 lg:grid-cols-6">
+              {SCENE_GROUPS.map((g) => (
+                <li key={g.id} className="bg-tuji-ink p-5">
+                  <div className="font-bold">{mt(lang, `scene.g.${g.id}`)}</div>
+                  <div className="mt-1 text-sm text-tuji-paper/60">{mt(lang, "scene.count", { n: g.count })}</div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* ── 物見 ─────────────────────────────────────────────── */}
-      <section id="community" className="scroll-mt-20 pb-16 lg:pb-20">
+      {/* ── 還有：自製圖鑑、物見、Moira ─────────────────────────── */}
+      <section id="more" className="scroll-mt-20 py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="bg-tuji-paper2 p-6 sm:p-10 lg:p-14">
-            <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr]">
-              <div>
-                <div className="inline-flex items-center gap-2 border-l-3 border-tuji-current bg-tuji-paper py-1.5 pl-3 pr-3.5 text-[13px] font-bold tracking-[0.04em] text-tuji-ink2">
-                  {mt(lang, "comm.badge")}
-                </div>
-                <h2 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-4xl">
-                  {mt(lang, "comm.title1")}
-                  <br />
-                  {mt(lang, "comm.title2")}
-                </h2>
-                <p className="mt-5 max-w-md text-base leading-7 text-tuji-ink2">
-                  {mt(lang, "comm.body")}
-                </p>
-                <div className="mt-8 hidden lg:block">
-                  <Mascot pose="peek" size={104} />
-                </div>
+          <SectionHead eyebrow={mt(lang, "more.eyebrow")} title={mt(lang, "more.title")} />
+          <div className="mt-10 grid gap-px bg-tuji-rule md:grid-cols-3">
+            <article id="atlas-custom" className="scroll-mt-20 bg-tuji-paper2 p-7">
+              <h3 className="text-xl font-extrabold tracking-tight text-tuji-ink">{mt(lang, "nav.custom")}</h3>
+              <p className="mt-3 text-[15px] leading-7 text-tuji-ink2">{mt(lang, "more.customBody")}</p>
+            </article>
+            <article id="community" className="scroll-mt-20 bg-tuji-paper2 p-7">
+              <h3 className="text-xl font-extrabold tracking-tight text-tuji-ink">{mt(lang, "nav.community")}</h3>
+              <p className="mt-3 text-[15px] leading-7 text-tuji-ink2">{mt(lang, "more.commBody")}</p>
+            </article>
+            <article className="bg-tuji-paper2 p-7">
+              <h3 className="text-xl font-extrabold tracking-tight text-tuji-ink">Moira</h3>
+              <p className="mt-3 text-[15px] leading-7 text-tuji-ink2">{mt(lang, "more.moiraBody")}</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 費用 ─────────────────────────────────────────────── */}
+      <section id="pricing" className="scroll-mt-20 pb-16 lg:pb-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <SectionHead eyebrow={mt(lang, "price.eyebrow")} title={mt(lang, "price.title")} />
+          <div className="mt-10 grid gap-px bg-tuji-rule md:grid-cols-2">
+            <article className="bg-tuji-paper2 p-7 sm:p-9">
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <h3 className="font-display text-2xl font-extrabold text-tuji-ink">{mt(lang, "price.free")}</h3>
+                <span className="text-sm text-tuji-ink3">{mt(lang, "price.freeTag")}</span>
               </div>
-              <div className="grid gap-px bg-tuji-rule sm:grid-cols-2">
-                {commSteps.map((item) => (
-                  <div key={item.step} className="bg-tuji-paper p-6">
-                    <div className="flex h-9 w-9 items-center justify-center bg-tuji-ink font-display text-base font-extrabold text-tuji-paper">
-                      {item.step}
-                    </div>
-                    <h3 className="mt-4 text-lg font-bold tracking-tight text-tuji-ink">
-                      {mt(lang, item.tKey)}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-tuji-ink2">{mt(lang, item.bKey)}</p>
-                  </div>
-                ))}
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-tuji-ink2">
+                <li>{mt(lang, "price.free1")}</li>
+                <li>{mt(lang, "price.free2")}</li>
+                <li>{mt(lang, "price.free3")}</li>
+              </ul>
+            </article>
+            <article className="bg-tuji-ink p-7 text-tuji-paper sm:p-9">
+              <div className="flex flex-wrap items-baseline justify-between gap-3">
+                <h3 className="font-display text-2xl font-extrabold">{mt(lang, "price.member")}</h3>
+                <span className="font-display text-2xl font-extrabold">US$1.99</span>
               </div>
-            </div>
+              <ul className="mt-5 list-disc space-y-2 pl-5 text-tuji-paper/85">
+                <li>{mt(lang, "price.member1")}</li>
+                <li>{mt(lang, "price.member2")}</li>
+                <li>{mt(lang, "price.member3")}</li>
+              </ul>
+              <p className="mt-5 text-sm text-tuji-paper/60">{mt(lang, "price.memberNote")}</p>
+            </article>
           </div>
         </div>
       </section>
 
       {/* ── 下載 ─────────────────────────────────────────────── */}
-      <section id="download" className="scroll-mt-20 bg-tuji-ink py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <div className="mx-auto flex h-28 w-28 items-center justify-center overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={APP_ICON_SRC} alt="Tuji app icon" className="h-full w-full object-cover" />
+      <section id="download" className="scroll-mt-20 bg-tuji-current py-16 lg:py-20">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 className="font-display text-3xl font-extrabold tracking-tight text-tuji-ink sm:text-5xl">{mt(lang, "dl.title")}</h2>
+            <p className="mt-3 text-lg text-tuji-ink2">{mt(lang, "dl.subhead")}</p>
           </div>
-          <h2 className="mt-7 font-display text-3xl font-extrabold tracking-tight text-tuji-paper sm:text-5xl">
-            {mt(lang, "dl.title")}
-            <span className="text-tuji-brand">{mt(lang, "dl.accent")}</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-tuji-paper/80">
-            {mt(lang, "dl.subhead")}
-          </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            {/* The store badges are the one primary action on the page, so they
-                are the only things wearing 瞳黃. Ink text on yellow — never
-                white (≈11:1). */}
-            <a
-              href="/download?platform=ios"
-              className="tuji-press inline-flex items-center gap-3 bg-tuji-current px-7 py-4 text-tuji-ink"
-            >
-              <AppleLogo className="h-8 w-8" />
+          {/* The section is the yellow; the badges are ink blocks on it. */}
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <a href="/download?platform=ios" className="tuji-press inline-flex items-center gap-3 bg-tuji-ink px-6 py-3.5 text-tuji-paper">
+              <AppleLogo className="h-7 w-7" />
               <span className="text-left">
-                <span className="block text-[13px] font-bold text-tuji-ink/70">
-                  Download on the
-                </span>
-                <span className="block font-display text-lg font-extrabold leading-tight">
-                  App Store
-                </span>
+                <span className="block text-[12px] font-bold text-tuji-paper/70">Download on the</span>
+                <span className="block font-display text-lg font-extrabold leading-tight">App Store</span>
               </span>
             </a>
-            <a
-              href="/download?platform=android"
-              className="tuji-press inline-flex items-center gap-3 bg-tuji-current px-7 py-4 text-tuji-ink"
-            >
-              <PlayLogo className="h-8 w-8" />
+            <a href="/download?platform=android" className="tuji-press inline-flex items-center gap-3 bg-tuji-ink px-6 py-3.5 text-tuji-paper">
+              <PlayLogo className="h-7 w-7" />
               <span className="text-left">
-                <span className="block text-[13px] font-bold text-tuji-ink/70">
-                  GET IT ON
-                </span>
-                <span className="block font-display text-lg font-extrabold leading-tight">
-                  Google Play
-                </span>
+                <span className="block text-[12px] font-bold text-tuji-paper/70">GET IT ON</span>
+                <span className="block font-display text-lg font-extrabold leading-tight">Google Play</span>
               </span>
             </a>
-            {/* Secondary action on an ink ground: a lighter ground, not an
-                outline. A resting element carries no border in this system. */}
             <Link
               href="/support"
-              className="inline-flex items-center justify-center bg-tuji-paper/10 px-7 py-4 text-base font-bold text-tuji-paper transition duration-120 hover:bg-tuji-paper hover:text-tuji-ink"
+              className="inline-flex items-center justify-center bg-tuji-paper/40 px-6 py-3.5 font-bold text-tuji-ink transition duration-120 hover:bg-tuji-paper"
             >
               {mt(lang, "dl.contact")}
             </Link>

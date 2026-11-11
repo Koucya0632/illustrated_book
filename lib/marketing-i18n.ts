@@ -6,7 +6,12 @@
 // Server + client safe (pure data + a lookup fn, no hooks, no Node imports).
 // Strings are grouped by key so all four languages stay side-by-side and in
 // sync. zh-Hans is authored by hand (not OpenCC) because the copy carries
-// Taiwan-specific vocab (腳踏車/捷運/販賣機/計程車) that needs Mainland wording.
+// Taiwan-specific vocab that needs Mainland wording.
+//
+// What the page may claim (prices, what is free, scenes) follows
+// docs/marketing/CLAIMS.md in the parent repo. Positioning (2026-11-11): Tuji
+// is a picture atlas and scene practice per destination, for students,
+// working-holiday makers and travellers. Japan is the only destination live.
 import type { UiLang } from "./settings";
 
 // Cookie that stores the marketing-page language choice. Lives here (not in the
@@ -26,42 +31,29 @@ type Row = Record<UiLang, string>;
 const STRINGS: Record<string, Row> = {
   // ── Metadata ────────────────────────────────────────────────
   "meta.title": {
-    "zh-Hant": "Tuji · 學日文、英文單字 App｜看圖記住生活單字",
-    "zh-Hans": "Tuji · 图鉴式单词学习",
-    ja: "Tuji · 図鑑で覚える単語学習",
-    en: "Tuji · Japanese & English words, picture-first",
+    "zh-Hant": "Tuji｜日本的圖鑑與場面練習",
+    "zh-Hans": "Tuji｜日本的图鉴与场景练习",
+    ja: "Tuji｜日本の図鑑と場面練習",
+    en: "Tuji · A picture atlas and scene practice for Japan",
   },
   "meta.desc": {
     "zh-Hant":
-      "便利商店、藥妝店、超市——在日本生活會遇到的東西，看圖就記住。Tuji 用圖片、間隔複習與 AI 自製圖鑑，幫你學會生活日文和英文。",
+      "留學、打工度假、旅遊，到了日本會遇到的東西和問句。圖鑑看圖認東西，場面練習聽懂店員在問什麼。",
     "zh-Hans":
-      "看得见的单词，记得住的语言。Tuji 用日常生活的图片、间隔复习与 AI 自制图鉴，帮中文用户学会生活英语和日语。",
-    ja: "見える単語は、忘れにくい。Tuji は日常の写真・間隔反復・AI 図鑑で、実生活の英語と日本語が身につく単語学習アプリです。",
-    en: "The everyday things you run into living in Japan, as picture cards. Tuji teaches everyday Japanese and English with real-life photos, spaced repetition, and an AI-built picture atlas.",
-  },
-
-  // ── 生活單字分類 (crawlable index of the public word pages) ───
-  "browse.eyebrow": { "zh-Hant": "單字圖鑑", "zh-Hans": "单词图鉴", ja: "単語図鑑", en: "Word atlas" },
-  "browse.title": {
-    "zh-Hant": "按場景瀏覽生活單字",
-    "zh-Hans": "按场景浏览生活单词",
-    ja: "場面別に生活の単語を見る",
-    en: "Browse everyday words by place",
-  },
-  "browse.subtitle": {
-    "zh-Hant": "每個單字都有圖片、日文與英文、發音和例句，不用下載也能先看看。",
-    "zh-Hans": "每个单词都有图片、日语与英语、发音和例句，不用下载也能先看看。",
-    ja: "どの単語にも写真・日本語と英語・発音・例文つき。アプリなしでも見られます。",
-    en: "Every word has a picture, Japanese and English, audio and example sentences. No download needed to look around.",
+      "留学、打工度假、旅游，到了日本会遇到的东西和问句。图鉴看图认东西，场景练习听懂店员在问什么。",
+    ja: "留学、ワーキングホリデー、旅行。日本で出会うものと、店で聞かれること。図鑑で物を覚え、場面練習で店員の質問を聞き取る。",
+    en: "What you run into in Japan as a student, on a working holiday, or on a trip. The atlas shows you the things. Scenes train you to catch what the clerk is asking.",
   },
 
   // ── Header / footer nav ─────────────────────────────────────
-  "nav.features": { "zh-Hant": "產品特色", "zh-Hans": "产品特色", ja: "特長", en: "Features" },
-  "nav.atlas": { "zh-Hant": "自製圖鑑", "zh-Hans": "自制图鉴", ja: "自作図鑑", en: "Custom Atlas" },
+  "nav.presets": { "zh-Hant": "主題組合", "zh-Hans": "主题组合", ja: "テーマセット", en: "Topic sets" },
+  "nav.atlas": { "zh-Hant": "圖鑑", "zh-Hans": "图鉴", ja: "図鑑", en: "Atlas" },
+  "nav.scenes": { "zh-Hant": "場面", "zh-Hans": "场景", ja: "場面", en: "Scenes" },
+  "nav.custom": { "zh-Hant": "自製圖鑑", "zh-Hans": "自制图鉴", ja: "自作図鑑", en: "Custom Atlas" },
   // 物見 is the in-app name for the community surface; the app catalog renders it
   // as Sightings / 物見 / 物见, so the marketing page must say the same words.
   "nav.community": { "zh-Hant": "物見", "zh-Hans": "物见", ja: "物見", en: "Sightings" },
-  "nav.how": { "zh-Hant": "怎麼學", "zh-Hans": "怎么学", ja: "使い方", en: "How it works" },
+  "nav.pricing": { "zh-Hant": "費用", "zh-Hans": "费用", ja: "料金", en: "Pricing" },
   "nav.support": { "zh-Hant": "支援", "zh-Hans": "支持", ja: "サポート", en: "Support" },
 
   "cta.getApp": {
@@ -84,353 +76,363 @@ const STRINGS: Record<string, Row> = {
   },
 
   // ── Hero ────────────────────────────────────────────────────
-  "hero.badge": {
-    "zh-Hant": "圖鑑式單字學習 · Picture-first",
-    "zh-Hans": "图鉴式单词学习 · Picture-first",
-    ja: "図鑑で覚える単語学習 · Picture-first",
-    en: "Picture-first vocabulary",
-  },
+  "hero.badge": { "zh-Hant": "目的地：日本", "zh-Hans": "目的地：日本", ja: "行き先：日本", en: "Destination: Japan" },
   "hero.title1": {
-    "zh-Hant": "看見什麼，",
-    "zh-Hans": "看见什么，",
-    ja: "見たものを、",
-    en: "See it,",
+    "zh-Hant": "到了日本會遇到的，",
+    "zh-Hans": "到了日本会遇到的，",
+    ja: "日本で出会うものを、",
+    en: "What you'll run into in Japan,",
   },
   "hero.title2": {
-    "zh-Hant": "就學什麼",
-    "zh-Hans": "就学什么",
-    ja: "そのまま覚える",
-    en: "learn it",
+    "zh-Hant": "先看過一遍。",
+    "zh-Hans": "先看过一遍。",
+    ja: "先にひと通り。",
+    en: "seen once before you go.",
   },
-  "hero.accent": { "zh-Hant": "。", "zh-Hans": "。", ja: "。", en: "." },
   "hero.subhead": {
     "zh-Hant":
-      "Tuji 把日常生活變成你的單字圖鑑——圖片記憶、真人發音、間隔複習，再加上 AI 幫你把自己拍的照片變成單字卡。學日文和英文，從你眼前的世界開始。",
+      "Tuji 有兩樣東西。圖鑑，看圖認識當地的東西；場面，練習聽懂店員在問什麼。留學、打工度假、旅遊各有一組主題。",
     "zh-Hans":
-      "Tuji 把日常生活变成你的单词图鉴——图片记忆、真人发音、间隔复习，再加上 AI 帮你把自己拍的照片变成单词卡。学英语和日语，从你眼前的世界开始。",
-    ja: "Tuji は日常を単語図鑑に変えます。写真で記憶し、ネイティブ音声で聞き、間隔反復で復習。さらに AI が自分で撮った写真を単語カードに変換。英語も日本語も、目の前の世界から学べます。",
-    en: "Tuji turns everyday life into your own picture dictionary — image-based memory, native audio, and spaced review, plus an AI that turns your own photos into flashcards. Learn Japanese and English, starting with the world in front of you.",
+      "Tuji 有两样东西。图鉴，看图认识当地的东西；场景，练习听懂店员在问什么。留学、打工度假、旅游各有一组主题。",
+    ja: "Tuji にあるのは二つ。図鑑で現地の物を写真で覚え、場面で店員の質問を聞き取る練習をする。留学、ワーキングホリデー、旅行、それぞれにテーマのセットがあります。",
+    en: "Tuji does two things. The atlas shows you the things you'll see there, in pictures. Scenes train you to catch what the clerk is asking. Students, working-holiday makers and travellers each get their own set of topics.",
   },
-  "hero.stat1l": { "zh-Hant": "生活單字", "zh-Hans": "生活单词", ja: "生活の単語", en: "everyday words" },
-  "hero.stat2l": { "zh-Hant": "雙語言學習", "zh-Hans": "双语言学习", ja: "2 言語対応", en: "two languages" },
-  "hero.stat3l": { "zh-Hant": "圖鑑辨識", "zh-Hans": "图鉴识别", ja: "AI 認識", en: "photo recognition" },
-  "hero.imgAlt": {
-    "zh-Hant": "用手機拍攝桌上的物品，Tuji 將馬克杯、蘋果與筆記本轉成學習卡片",
-    "zh-Hans": "用手机拍摄桌上的物品，Tuji 将马克杯、苹果与笔记本转成学习卡片",
-    ja: "スマホで机の上の物を撮影し、Tuji がマグカップ・りんご・ノートを学習カードに変換",
-    en: "Photographing objects on a desk with a phone; Tuji turns the mug, apple, and notebook into study cards",
+  "hero.browse": {
+    "zh-Hant": "不用下載也能先看",
+    "zh-Hans": "不用下载也能先看",
+    ja: "ダウンロードなしでも見られます：",
+    en: "No download needed to look at the",
   },
-  "hero.aiBadge": {
-    "zh-Hant": "AI 圖鑑辨識中",
-    "zh-Hans": "AI 图鉴识别中",
-    ja: "AI が認識中",
-    en: "AI recognizing…",
+  "hero.browseLink": { "zh-Hant": "圖鑑", "zh-Hans": "图鉴", ja: "図鑑", en: "atlas" },
+  "hero.sceneAlt": {
+    "zh-Hant": "日本便利商店的結帳櫃檯",
+    "zh-Hans": "日本便利店的收银台",
+    ja: "コンビニのレジカウンター",
+    en: "A convenience store checkout counter in Japan",
   },
-  "hero.floatLabel": {
-    "zh-Hant": "拍照學習",
-    "zh-Hans": "拍照学习",
-    ja: "撮って学ぶ",
-    en: "Snap to learn",
+  "hero.screenAlt": {
+    "zh-Hant": "Tuji 圖鑑的便利商店主題畫面",
+    "zh-Hans": "Tuji 图鉴的便利店主题画面",
+    ja: "Tuji 図鑑のコンビニのテーマ画面",
+    en: "The Convenience Store topic in the Tuji atlas",
   },
-  "hero.floatTag": {
-    "zh-Hant": "新增單字卡 3 張 ✓",
-    "zh-Hans": "新增单词卡 3 张 ✓",
-    ja: "単語カード 3 枚追加 ✓",
-    en: "3 cards added ✓",
+  "hero.clerk": { "zh-Hant": "店員", "zh-Hans": "店员", ja: "店員", en: "Clerk" },
+
+  // ── 主題組合 (topic presets: student / working holiday / travel) ──
+  "who.eyebrow": { "zh-Hant": "主題組合", "zh-Hans": "主题组合", ja: "テーマセット", en: "Topic sets" },
+  "who.title": {
+    "zh-Hant": "你是去做什麼的",
+    "zh-Hans": "你是去做什么的",
+    ja: "日本へは何をしに？",
+    en: "What are you going for?",
+  },
+  "who.subtitle": {
+    "zh-Hant": "選一個，Tuji 幫你排好先學的六個主題。之後隨時能換。",
+    "zh-Hans": "选一个，Tuji 帮你排好先学的六个主题。之后随时能换。",
+    ja: "一つ選ぶと、最初に学ぶ 6 つのテーマがそろいます。あとからいつでも変えられます。",
+    en: "Pick one and Tuji lines up six topics to start with. You can switch any time.",
+  },
+  "who.allFree": { "zh-Hant": "六個都免費", "zh-Hans": "六个都免费", ja: "6 つとも無料", en: "All six free" },
+  "who.student": {
+    "zh-Hant": "開戶、辦證件、寄東西，剛到的頭幾週都在跑這些。",
+    "zh-Hans": "开户、办证件、寄东西，刚到的头几周都在跑这些。",
+    ja: "口座開設、在留カード、郵便。着いて最初の数週間はこればかり。",
+    en: "Bank account, residence card, the post office. The first few weeks are mostly this.",
+  },
+  "who.working-holiday": {
+    "zh-Hant": "手續一樣要辦，還多了餐廳和超市。",
+    "zh-Hans": "手续一样要办，还多了餐厅和超市。",
+    ja: "手続きは同じ。そこに飲食店とスーパーが加わる。",
+    en: "The same paperwork, plus restaurants and the supermarket.",
+  },
+  "who.travel": {
+    "zh-Hant": "待幾天就走。現有的場面都是旅客會遇到的。",
+    "zh-Hans": "待几天就走。现有的场景都是旅客会遇到的。",
+    ja: "数日いて帰る。今ある場面はどれも旅行者が出会うもの。",
+    en: "A few days and you're gone. Every scene so far is one a traveller runs into.",
   },
 
-  // ── How it works ────────────────────────────────────────────
-  "how.eyebrow": { "zh-Hant": "使用方式", "zh-Hans": "使用方式", ja: "使い方", en: "How it works" },
-  "how.title": {
-    "zh-Hant": "每天幾分鐘，讓複習自己找上門。",
-    "zh-Hans": "每天几分钟，让复习自己找上门。",
-    ja: "1 日数分。復習の方から会いに来ます。",
-    en: "A few minutes a day — the reviews come to you.",
-  },
-  "how.subtitle": {
-    "zh-Hant": "Tuji 的流程刻意保持簡單：打開、學習、離開。剩下的排程交給演算法。",
-    "zh-Hans": "Tuji 的流程刻意保持简单：打开、学习、离开。剩下的排程交给算法。",
-    ja: "Tuji の流れはあえてシンプル。開いて、学んで、閉じるだけ。スケジュールはアルゴリズムにお任せ。",
-    en: "Tuji keeps the flow deliberately simple: open, learn, leave. The algorithm handles the scheduling.",
-  },
-  "how.s1t": {
-    "zh-Hant": "打開 App，領取今日單字",
-    "zh-Hans": "打开 App，领取今日单词",
-    ja: "アプリを開いて、今日の単語を受け取る",
-    en: "Open the app, get today's words",
-  },
-  "how.s1b": {
-    "zh-Hant": "每天一份剛剛好的學習量。單字來自你選的生活分類——廚房、車站、超市，都是你真的會遇到的東西。",
-    "zh-Hans": "每天一份刚刚好的学习量。单词来自你选的生活分类——厨房、车站、超市，都是你真的会遇到的东西。",
-    ja: "毎日ちょうどいい量だけ。単語はあなたが選んだ生活シーン（キッチン、駅、スーパー）から。ぜんぶ実際に出会うものばかり。",
-    en: "A right-sized batch each day. Words come from the everyday categories you pick — kitchen, station, supermarket — things you'll actually run into.",
-  },
-  "how.s2t": {
-    "zh-Hant": "看圖記憶，一次記牢",
-    "zh-Hans": "看图记忆，一次记牢",
-    ja: "画像で覚えて、しっかり定着",
-    en: "Learn by image, make it stick",
-  },
-  "how.s2b": {
-    "zh-Hant": "每個單字都有圖片、發音與例句。用眼睛建立連結，比死背單字表記得更久。",
-    "zh-Hans": "每个单词都有图片、发音与例句。用眼睛建立连结，比死背单词表记得更久。",
-    ja: "どの単語にも画像・発音・例文つき。目で結びつけるから、単語帳の丸暗記より長く覚えていられます。",
-    en: "Every word comes with an image, audio, and an example. Building the link visually lasts far longer than memorizing a word list.",
-  },
-  "how.s3t": {
-    "zh-Hant": "到期自動複習",
-    "zh-Hans": "到期自动复习",
-    ja: "期限が来たら自動で復習",
-    en: "Reviews resurface automatically",
-  },
-  "how.s3b": {
-    "zh-Hant": "間隔重複演算法在你快忘記之前安排複習。你只要出現，Tuji 負責記得該複習什麼。",
-    "zh-Hans": "间隔重复算法在你快忘记之前安排复习。你只要出现，Tuji 负责记得该复习什么。",
-    ja: "間隔反復アルゴリズムが、忘れそうなタイミングで復習を用意。あなたは開くだけ。何を復習するかは Tuji が覚えています。",
-    en: "The spaced-repetition algorithm schedules reviews right before you'd forget. Just show up — Tuji remembers what needs reviewing.",
-  },
-
-  // ── Features ────────────────────────────────────────────────
-  "feat.eyebrow": { "zh-Hant": "主要特色", "zh-Hans": "主要特色", ja: "特長", en: "Features" },
-  "feat.title": {
-    "zh-Hant": "為了「每天都想打開」而設計。",
-    "zh-Hans": "为了「每天都想打开」而设计。",
-    ja: "「毎日開きたくなる」ために設計しました。",
-    en: "Designed to make you want to open it every day.",
-  },
-  "feat.subtitle": {
-    "zh-Hant": "從拍下真實物品、生成單字卡，到安排複習，Tuji 把學習流程做得像整理照片一樣自然。",
-    "zh-Hans": "从拍下真实物品、生成单词卡，到安排复习，Tuji 把学习流程做得像整理照片一样自然。",
-    ja: "実物を撮って単語カードを作り、復習を組むまで。Tuji は学習の流れを写真整理のように自然にします。",
-    en: "From snapping real objects to generating cards and scheduling reviews, Tuji makes learning feel as natural as organizing your photos.",
-  },
-  "feat.f1t": {
-    "zh-Hant": "圖像優先記憶",
-    "zh-Hans": "图像优先记忆",
-    ja: "画像優先の記憶",
-    en: "Image-first memory",
-  },
-  "feat.f1b": {
-    "zh-Hant": "從真實生活物品學單字，不是抽象的單字列表。看見圖片，想起單字。",
-    "zh-Hans": "从真实生活物品学单词，不是抽象的单词列表。看见图片，想起单词。",
-    ja: "抽象的な単語リストではなく、実物から学ぶ。画像を見れば、単語がよみがえる。",
-    en: "Learn from real-life objects, not an abstract word list. See the picture, recall the word.",
-  },
-  "feat.f2t": {
-    "zh-Hant": "間隔重複複習",
-    "zh-Hans": "间隔重复复习",
-    ja: "間隔反復の復習",
-    en: "Spaced repetition",
-  },
-  "feat.f2b": {
-    "zh-Hant": "科學化的複習排程，在遺忘曲線的關鍵點提醒你，讓短期記憶變成長期記憶。",
-    "zh-Hans": "科学化的复习排程，在遗忘曲线的关键点提醒你，让短期记忆变成长期记忆。",
-    ja: "科学的な復習スケジュールが、忘却曲線の要所でリマインド。短期記憶を長期記憶へ変えます。",
-    en: "A science-based review schedule nudges you at the key points on the forgetting curve, turning short-term memory into long-term.",
-  },
-  "feat.f3t": {
-    "zh-Hant": "多種練習模式",
-    "zh-Hans": "多种练习模式",
-    ja: "多彩な練習モード",
-    en: "Multiple practice modes",
-  },
-  "feat.f3b": {
-    "zh-Hant": "認圖、辨識、拼寫輪流上陣，同一個單字用不同角度練習，記憶更立體。",
-    "zh-Hans": "认图、辨识、拼写轮流上阵，同一个单词用不同角度练习，记忆更立体。",
-    ja: "画像認識・選択・スペルを順番に。同じ単語を違う角度で練習して、記憶が立体的に。",
-    en: "Picture recall, recognition, and spelling take turns — practicing the same word from different angles makes memory stick.",
-  },
-  "feat.f4t": { "zh-Hant": "發音與例句", "zh-Hans": "发音与例句", ja: "発音と例文", en: "Audio & examples" },
-  "feat.f4b": {
-    "zh-Hant": "每個單字都能聽發音、看例句，學會怎麼念、怎麼用，而不只是認得。",
-    "zh-Hans": "每个单词都能听发音、看例句，学会怎么念、怎么用，而不只是认得。",
-    ja: "どの単語も発音を聞き、例文を読める。読み方・使い方まで身につき、ただ「見覚えがある」で終わりません。",
-    en: "Hear the pronunciation and read an example for every word — learn how to say and use it, not just recognize it.",
-  },
-  "feat.f5t": { "zh-Hant": "日文・英文", "zh-Hans": "英语・日语", ja: "英語・日本語", en: "Japanese & English" },
-  "feat.f5b": {
-    "zh-Hant": "同一套圖鑑，支援日文與英文兩種學習目標，隨時切換學習方向。",
-    "zh-Hans": "同一套图鉴，支持英语与日语两种学习目标，随时切换学习方向。",
-    ja: "同じ図鑑で、英語と日本語の 2 つの学習目標に対応。いつでも学習の方向を切り替えられます。",
-    en: "One picture atlas supports both Japanese and English as learning targets — switch direction anytime.",
-  },
-  "feat.f6t": { "zh-Hant": "進度看得見", "zh-Hans": "进度看得见", ja: "進捗が見える", en: "Visible progress" },
-  "feat.f6b": {
-    "zh-Hant": "每個單字的熟練度、每天的學習紀錄一目瞭然，累積的努力不會消失。",
-    "zh-Hans": "每个单词的熟练度、每天的学习记录一目了然，累积的努力不会消失。",
-    ja: "単語ごとの習熟度も毎日の学習記録もひと目で。積み重ねた努力は消えません。",
-    en: "See each word's mastery and your daily record at a glance — the effort you build up never disappears.",
-  },
-
-  // ── Custom Atlas ────────────────────────────────────────────
-  "atlas.badge": {
-    "zh-Hant": "自製圖鑑 · Custom Atlas",
-    "zh-Hans": "自制图鉴 · Custom Atlas",
-    ja: "自作図鑑 · Custom Atlas",
-    en: "Custom Atlas",
-  },
+  // ── 圖鑑 ────────────────────────────────────────────────────
+  "atlas.eyebrow": { "zh-Hant": "圖鑑", "zh-Hans": "图鉴", ja: "図鑑", en: "Atlas" },
   "atlas.title1": {
-    "zh-Hant": "拍下你的世界，",
-    "zh-Hans": "拍下你的世界，",
-    ja: "あなたの世界を撮って、",
-    en: "Photograph your world,",
+    "zh-Hant": "藥妝店那一排，",
+    "zh-Hans": "药妆店那一排，",
+    ja: "ドラッグストアの棚、",
+    en: "That drugstore aisle,",
   },
   "atlas.title2": {
-    "zh-Hant": "變成你的單字卡。",
-    "zh-Hans": "变成你的单词卡。",
-    ja: "単語カードに変える。",
-    en: "turn it into flashcards.",
+    "zh-Hant": "不再只靠猜。",
+    "zh-Hans": "不再只靠猜。",
+    ja: "もう勘で選ばない。",
+    en: "no more guessing.",
   },
   "atlas.body": {
-    "zh-Hant":
-      "課本不會教你家廚房裡的東西。用相機把身邊的物品收進圖鑑，AI 幫你辨識命名，一起加入每天的複習。照片預設私人，只有你決定要不要分享。",
-    "zh-Hans":
-      "课本不会教你家厨房里的东西。用相机把身边的物品收进图鉴，AI 帮你识别命名，一起加入每天的复习。照片默认私密，只有你决定要不要分享。",
-    ja: "教科書は家のキッチンにある物までは教えてくれません。カメラで身の回りの物を図鑑に収めれば、AI が認識して名前をつけ、毎日の復習に加わります。写真は初期設定で非公開。共有するかはあなた次第。",
-    en: "Textbooks won't teach you what's in your own kitchen. Capture the objects around you into your atlas; AI recognizes and names them, and they join your daily review. Photos are private by default — you decide whether to share.",
+    "zh-Hant": "按地方分主題：便利商店、車站、銀行、溫泉旅館。每個單字有圖片、日文和英文、發音、例句。",
+    "zh-Hans": "按地方分主题：便利店、车站、银行、温泉旅馆。每个单词有图片、日语和英语、发音、例句。",
+    ja: "テーマは場所ごと。コンビニ、駅、銀行、温泉旅館。どの単語にも写真、日本語と英語、発音、例文。",
+    en: "Topics go by place: convenience store, station, bank, ryokan. Every word has a picture, Japanese and English, audio and an example.",
   },
-  "atlas.tag1": { "zh-Hant": "預設私人", "zh-Hans": "默认私密", ja: "初期設定で非公開", en: "Private by default" },
-  "atlas.tag2": {
-    "zh-Hant": "AI 輔助辨識",
-    "zh-Hans": "AI 辅助识别",
-    ja: "AI 認識サポート",
-    en: "AI-assisted recognition",
+  "atlas.r1t": { "zh-Hant": "看圖", "zh-Hans": "看图", ja: "写真で", en: "Pictures" },
+  "atlas.r1b": {
+    "zh-Hant": "叫不出名字的，先從圖片認識。",
+    "zh-Hans": "叫不出名字的，先从图片认识。",
+    ja: "名前が出てこない物は、まず写真から。",
+    en: "Can't name it? Start from the picture.",
   },
-  "atlas.tag3": { "zh-Hant": "手動修正", "zh-Hans": "手动修正", ja: "手動で修正", en: "Manual corrections" },
-  "atlas.tag4": {
-    "zh-Hant": "分享自主控制",
-    "zh-Hans": "分享自主控制",
-    ja: "共有はあなたが管理",
-    en: "You control sharing",
+  "atlas.r2t": { "zh-Hant": "練", "zh-Hans": "练", ja: "練習", en: "Practice" },
+  "atlas.r2b": {
+    "zh-Hant": "看圖、選字、拼寫，輪著來。",
+    "zh-Hans": "看图、选词、拼写，轮着来。",
+    ja: "写真、選択、スペル。順番に。",
+    en: "Picture, pick, spell. In turns.",
   },
-  "atlas.s1t": { "zh-Hant": "拍下照片", "zh-Hans": "拍下照片", ja: "写真を撮る", en: "Take a photo" },
-  "atlas.s1b": {
-    "zh-Hant": "廚房的鍋子、巷口的招牌，拍下你想學的東西。",
-    "zh-Hans": "厨房的锅子、巷口的招牌，拍下你想学的东西。",
-    ja: "キッチンの鍋、路地の看板。学びたいものを撮るだけ。",
-    en: "The pot in your kitchen, the sign on the corner — snap whatever you want to learn.",
+  "atlas.r3t": { "zh-Hant": "複習", "zh-Hans": "复习", ja: "復習", en: "Review" },
+  "atlas.r3b": {
+    "zh-Hant": "快忘的時候會自己排回來。",
+    "zh-Hans": "快忘的时候会自己排回来。",
+    ja: "忘れかけた頃に、また出てくる。",
+    en: "Comes back around when you're about to forget.",
   },
-  "atlas.s2t": {
-    "zh-Hant": "AI 辨識物品",
-    "zh-Hans": "AI 识别物品",
-    ja: "AI が物を認識",
-    en: "AI identifies the object",
+  "atlas.r4t": { "zh-Hant": "學英文", "zh-Hans": "学英语", ja: "英語も", en: "English" },
+  "atlas.r4b": {
+    "zh-Hant": "用的是同一本圖鑑。",
+    "zh-Hans": "用的是同一本图鉴。",
+    ja: "同じ図鑑で学べます。",
+    en: "Same atlas, other direction.",
   },
-  "atlas.s2b": {
-    "zh-Hant": "AI 自動辨認照片裡的物品，並給出對應的單字。",
-    "zh-Hans": "AI 自动识别照片里的物品，并给出对应的单词。",
-    ja: "AI が写真の中の物を自動で認識し、対応する単語を提案します。",
-    en: "AI automatically recognizes the object in the photo and gives you the matching word.",
+  "atlas.cta": { "zh-Hant": "瀏覽圖鑑", "zh-Hans": "浏览图鉴", ja: "図鑑を見る", en: "Browse the atlas" },
+  "atlas.all": { "zh-Hant": "全部主題", "zh-Hans": "全部主题", ja: "すべてのテーマ", en: "All topics" },
+  "atlas.alt1": {
+    "zh-Hant": "圖鑑的便利商店主題，列出店裡的設備與商品",
+    "zh-Hans": "图鉴的便利店主题，列出店里的设备与商品",
+    ja: "図鑑のコンビニのテーマ。店内の設備や商品が並ぶ",
+    en: "The Convenience Store topic, listing what's in the shop",
   },
-  "atlas.s3t": { "zh-Hant": "確認與修正", "zh-Hans": "确认与修正", ja: "確認と修正", en: "Confirm & correct" },
-  "atlas.s3b": {
-    "zh-Hant": "AI 猜錯了？直接改。你永遠有最後決定權。",
-    "zh-Hans": "AI 猜错了？直接改。你永远有最后决定权。",
-    ja: "AI が間違えた？その場で直せます。最終決定権はいつもあなたに。",
-    en: "AI guessed wrong? Just fix it. You always have the final say.",
-  },
-  "atlas.s4t": { "zh-Hant": "變成單字卡", "zh-Hans": "变成单词卡", ja: "単語カードになる", en: "Becomes a flashcard" },
-  "atlas.s4b": {
-    "zh-Hant": "照片進入你的專屬圖鑑，加入每天的學習與複習。",
-    "zh-Hans": "照片进入你的专属图鉴，加入每天的学习与复习。",
-    ja: "写真はあなた専用の図鑑に入り、毎日の学習と復習に加わります。",
-    en: "The photo joins your personal atlas and enters your daily study and review.",
-  },
-  // Numbers mirror CREDIT_POLICY in lib/credits/policy.ts (Pro stopped selling
-  // 2026-10-06). Deliberately no prices: store prices are per-region,
-  // so anything written here would be wrong for most visitors.
-  "atlas.proNote": {
-    "zh-Hant":
-      "部分官方圖鑑免費學。永久會員一次購買，解鎖全部官方圖鑑和 200 格自製圖鑑，每月送 1,000 點，學習後簽到每天再送 10 點；AI 辨識一次 100 點，不夠可以加購。價格請見 App Store 或 Google Play。",
-    "zh-Hans":
-      "部分官方图鉴免费学。永久会员一次购买，解锁全部官方图鉴和 200 格自制图鉴，每月送 1,000 点，学习后签到每天再送 10 点；AI 识别一次 100 点，不够可以加购。价格请见 App Store 或 Google Play。",
-    ja: "公式図鑑の一部は無料で学べます。永久会員は一回の購入で、すべての公式図鑑と自作図鑑 200 枠が使えます。毎月 1,000 ポイント、学習後のチェックインで毎日 10 ポイント。AI 認識は 1 回 100 ポイントで、足りなければ追加購入できます。価格は App Store または Google Play でご確認ください。",
-    en: "Some official series are free. Lifetime membership is a one-time purchase that unlocks every official series and 200 custom atlas slots, with 1,000 points a month plus 10 for each day you check in after studying. An AI recognition costs 100 points, and you can buy more. See the App Store or Google Play for pricing.",
+  "atlas.alt2": {
+    "zh-Hant": "單字頁：絆創膏的圖片、讀音與說明",
+    "zh-Hans": "单词页：絆創膏的图片、读音与说明",
+    ja: "単語ページ：絆創膏の写真、読み、説明",
+    en: "A word page: 絆創膏 (adhesive bandage) with picture, reading and notes",
   },
 
-  // ── Sightings (community) ───────────────────────────────────
-  "comm.badge": {
-    "zh-Hant": "物見 · Sightings",
-    "zh-Hans": "物见 · Sightings",
-    ja: "物見 · Sightings",
-    en: "Sightings",
+  // ── 場面 (scene practice; Japanese learners only, synthetic voices) ──
+  "scene.eyebrow": { "zh-Hant": "場面", "zh-Hans": "场景", ja: "場面", en: "Scenes" },
+  "scene.title": {
+    "zh-Hant": "店員開口的那一下",
+    "zh-Hans": "店员开口的那一下",
+    ja: "店員に話しかけられた、その一瞬",
+    en: "The moment the clerk speaks",
   },
-  "comm.title1": {
-    "zh-Hant": "別人拍下的世界，",
-    "zh-Hans": "别人拍下的世界，",
-    ja: "誰かが撮った世界も、",
-    en: "Someone else's photos,",
-  },
-  "comm.title2": {
-    "zh-Hant": "也能變成你的教材。",
-    "zh-Hans": "也能变成你的教材。",
-    ja: "あなたの教材になる。",
-    en: "your next flashcards.",
-  },
-  "comm.body": {
+  "scene.body1": {
     "zh-Hant":
-      "物見是大家公開出來的圖鑑。看到喜歡的卡片就收進自己的複習排程，或整本收藏別人整理好的合集。所有公開內容都經過審核，你也隨時能檢舉或封鎖。",
+      "單字都認得，被問話還是愣住。場面練的是這個：聽一句店員或機器的問句，選怎麼回，或是照著操作付款機、食券機。",
     "zh-Hans":
-      "物见是大家公开出来的图鉴。看到喜欢的卡片就收进自己的复习排程，或整本收藏别人整理好的合集。所有公开内容都经过审核，你也随时能举报或屏蔽。",
-    ja: "物見は、みんなが公開した図鑑です。気に入ったカードは自分の復習に取り込み、誰かがまとめたコレクションはまるごと保存。公開される内容はすべて審査を通り、報告やブロックもいつでもできます。",
-    en: "Sightings is everyone's published atlas. Take any card you like into your own review queue, or save a whole collection someone else curated. Everything public passes review, and you can report or block at any time.",
+      "单词都认得，被问话还是愣住。场景练的是这个：听一句店员或机器的问句，选怎么回，或是照着操作付款机、餐券机。",
+    ja: "単語はわかるのに、聞かれると固まる。場面で練習するのはそこです。店員や機械の問いかけを聞いて答えを選ぶ。支払い機や券売機の操作も。",
+    en: "You know the words, and still freeze when asked. That's what scenes practise: hear a clerk or a machine, pick your reply, or work the payment terminal or ticket machine.",
   },
-  "comm.s1t": { "zh-Hant": "逛物見", "zh-Hans": "逛物见", ja: "物見をのぞく", en: "Browse Sightings" },
-  "comm.s1b": {
-    "zh-Hant": "別人拍下的真實物品，課本上不會有的那些。",
-    "zh-Hans": "别人拍下的真实物品，课本上不会有的那些。",
-    ja: "誰かが撮った実物の写真。教科書には載っていないものばかり。",
-    en: "Real objects other people photographed — the ones no textbook covers.",
+  "scene.body2": {
+    "zh-Hant": "複習的時候會換成你沒聽過的問法。",
+    "zh-Hans": "复习的时候会换成你没听过的问法。",
+    ja: "復習では、聞いたことのない言い方に変わります。",
+    en: "On review, it's asked a way you haven't heard yet.",
   },
-  "comm.s2t": { "zh-Hant": "一鍵收進來", "zh-Hans": "一键收进来", ja: "ワンタップで取り込む", en: "Take it in" },
-  "comm.s2b": {
-    "zh-Hant": "收藏的卡片直接進入每日複習，跟自己拍的一起排程。",
-    "zh-Hans": "收藏的卡片直接进入每日复习，跟自己拍的一起排程。",
-    ja: "取り込んだカードは毎日の復習に入り、自分で撮ったものと一緒に出題されます。",
-    en: "Saved cards drop straight into your daily review, scheduled alongside your own.",
+  "scene.note": {
+    "zh-Hant": "學日文才有場面。問句和回應是合成語音。",
+    "zh-Hans": "学日语才有场景。问句和回应是合成语音。",
+    ja: "場面は日本語を学ぶときだけ。質問と応答は合成音声です。",
+    en: "Scenes are for learning Japanese only. Questions and replies use synthetic voices.",
   },
-  "comm.s3t": { "zh-Hant": "整本合集", "zh-Hans": "整本合集", ja: "コレクション単位で", en: "Whole collections" },
-  "comm.s3b": {
-    "zh-Hant": "同主題的卡片收成一本，整本收藏、整本追蹤進度。",
-    "zh-Hans": "同主题的卡片收成一本，整本收藏、整本追踪进度。",
-    ja: "同じテーマのカードを一冊に。まるごと保存して、まるごと進捗を追えます。",
-    en: "Cards on one theme, bound into a book — save it whole, track it whole.",
+  "scene.tryLabel": {
+    "zh-Hant": "便利商店結帳",
+    "zh-Hans": "便利店结账",
+    ja: "コンビニのレジ",
+    en: "Convenience store checkout",
   },
-  "comm.s4t": {
-    "zh-Hant": "公開與否你決定",
-    "zh-Hans": "公开与否你决定",
-    ja: "公開するかはあなた次第",
-    en: "You decide what's public",
+  "scene.tryTag": { "zh-Hant": "試一題", "zh-Hans": "试一题", ja: "1 問やってみる", en: "Try one" },
+  "scene.asks": { "zh-Hant": "店員問你", "zh-Hans": "店员问你", ja: "店員の質問", en: "The clerk asks" },
+  "scene.groupLabel": {
+    "zh-Hant": "店員在問什麼",
+    "zh-Hans": "店员在问什么",
+    ja: "店員は何を聞いている？",
+    en: "What is the clerk asking?",
   },
-  "comm.s4b": {
-    "zh-Hant": "拍下的東西預設私人。公開需經審核，遇到不舒服的內容可以檢舉或封鎖作者。",
-    "zh-Hans": "拍下的东西默认私密。公开需经审核，遇到不舒服的内容可以举报或屏蔽作者。",
-    ja: "撮ったものは初期設定で非公開。公開には審査があり、不快な内容は報告や作者のブロックができます。",
-    en: "What you capture stays private by default. Publishing goes through review, and you can report content or block an author.",
+  "scene.prompt": {
+    "zh-Hant": "店員在問什麼？選一個。",
+    "zh-Hans": "店员在问什么？选一个。",
+    ja: "店員は何を聞いている？一つ選んで。",
+    en: "What is the clerk asking? Pick one.",
+  },
+  "scene.right": { "zh-Hant": "是這句", "zh-Hans": "是这句", ja: "これ", en: "This one" },
+  "scene.wrong": { "zh-Hant": "不是", "zh-Hans": "不是", ja: "違う", en: "No" },
+  "scene.reply": { "zh-Hant": "可以這樣回", "zh-Hans": "可以这样回", ja: "こう返せます", en: "You can reply" },
+  // Choices and explanation come from tuji-ios Scenes/konbini-checkout.json
+  // (question konbini-checkout.heat). ja is written here: the scene file has none.
+  "scene.choiceA": {
+    "zh-Hant": "要不要幫你加熱",
+    "zh-Hans": "要不要帮你加热",
+    ja: "温めるかどうか",
+    en: "Do you want it heated",
+  },
+  "scene.choiceB": { "zh-Hant": "要不要袋子", "zh-Hans": "要不要袋子", ja: "袋が要るかどうか", en: "Do you need a bag" },
+  "scene.choiceC": {
+    "zh-Hant": "要不要附筷子或湯匙",
+    "zh-Hans": "要不要附筷子或勺子",
+    ja: "箸やスプーンが要るかどうか",
+    en: "Do you need chopsticks or a spoon",
+  },
+  "scene.explain": {
+    "zh-Hant": "「温める」是加熱。要的話說「お願いします」，不用就說「そのままで大丈夫です」。",
+    "zh-Hans": "「温める」是加热。要的话说「お願いします」，不用就说「そのままで大丈夫です」。",
+    ja: "「温める」は加熱すること。お願いするなら「お願いします」、いらなければ「そのままで大丈夫です」。",
+    en: "温める means to heat up. Say お願いします for yes, or そのままで大丈夫です to take it as it is.",
+  },
+  "scene.listTitle": {
+    "zh-Hant": "現有 {n} 個場面",
+    "zh-Hans": "现有 {n} 个场景",
+    ja: "いまある場面は {n} 個",
+    en: "{n} scenes so far",
+  },
+  "scene.listNote": {
+    "zh-Hant": "2026 年 11 月。「便利商店結帳」「餐廳」免費，其餘給永久會員。",
+    "zh-Hans": "2026 年 11 月。「便利店结账」「餐厅」免费，其余给永久会员。",
+    ja: "2026 年 11 月時点。「コンビニのレジ」「レストラン」は無料、ほかは永久会員向け。",
+    en: "As of November 2026. Convenience store checkout and Restaurant are free; the rest come with Lifetime Membership.",
+  },
+  "scene.count": { "zh-Hant": "{n} 個", "zh-Hans": "{n} 个", ja: "{n} 個", en: "{n} scenes" },
+  // Group names from tuji-ios Scenes/index.json; ja written here.
+  "scene.g.konbini-cafe": {
+    "zh-Hant": "便利商店與咖啡",
+    "zh-Hans": "便利店与咖啡",
+    ja: "コンビニとカフェ",
+    en: "Convenience stores and cafés",
+  },
+  "scene.g.restaurants": { "zh-Hant": "餐廳", "zh-Hans": "餐厅", ja: "飲食店", en: "Restaurants" },
+  "scene.g.airport": {
+    "zh-Hant": "機場與進城",
+    "zh-Hans": "机场与进城",
+    ja: "空港から市内へ",
+    en: "Airport and getting into town",
+  },
+  "scene.g.getting-around": {
+    "zh-Hant": "車站與市區交通",
+    "zh-Hans": "车站与市内交通",
+    ja: "駅と市内の移動",
+    en: "Stations and getting around",
+  },
+  "scene.g.hotels": { "zh-Hant": "飯店與溫泉", "zh-Hans": "酒店与温泉", ja: "ホテルと旅館", en: "Hotels and ryokan" },
+  "scene.g.shopping": {
+    "zh-Hant": "購物與生活",
+    "zh-Hans": "购物与生活",
+    ja: "買い物と用事",
+    en: "Shopping and errands",
+  },
+
+  // ── 還有 (custom atlas, Sightings, Moira) ───────────────────
+  "more.eyebrow": { "zh-Hant": "還有", "zh-Hans": "还有", ja: "ほかにも", en: "Also" },
+  "more.title": {
+    "zh-Hant": "圖鑑裡沒有的",
+    "zh-Hans": "图鉴里没有的",
+    ja: "図鑑にないもの",
+    en: "For what the atlas doesn't have",
+  },
+  "more.customBody": {
+    "zh-Hant": "拍下來，AI 幫你認、幫你取名，進到每天的複習。認錯了自己改。照片預設只有你看得到。",
+    "zh-Hans": "拍下来，AI 帮你认、帮你取名，进到每天的复习。认错了自己改。照片默认只有你看得到。",
+    ja: "撮れば AI が認識して名前をつけ、毎日の復習に入ります。間違っていたら自分で直せます。写真は初期設定で自分だけ。",
+    en: "Snap it, AI recognises and names it, and it joins your daily review. Fix it if it's wrong. Photos are only visible to you by default.",
+  },
+  "more.commBody": {
+    "zh-Hant": "別人在日本拍到的東西。喜歡的卡片收進自己的複習，整本合集也能收。公開的內容都審過。",
+    "zh-Hans": "别人在日本拍到的东西。喜欢的卡片收进自己的复习，整本合集也能收。公开的内容都审过。",
+    ja: "誰かが日本で撮った物。気に入ったカードは自分の復習へ、コレクションごと保存も。公開されたものはすべて審査済み。",
+    en: "Things other people photographed in Japan. Take cards you like into your review, or save a whole collection. Everything public is reviewed.",
+  },
+  "more.moiraBody": {
+    "zh-Hant": "不懂的日文，問問 Moira。查詞、看語法，用點數。",
+    "zh-Hans": "不懂的日语，问问 Moira。查词、看语法，用点数。",
+    ja: "わからない日本語は Moira に。単語や文法を調べられます。ポイントを使います。",
+    en: "Stuck on some Japanese? Ask Moira. Look up words and grammar, using points.",
+  },
+
+  // ── 費用 ────────────────────────────────────────────────────
+  // Per docs/marketing/CLAIMS.md: the US price with a regional note, and no
+  // monthly point figure — it changes when AI_CREDITS_TRIAL_STARTS_AT is set
+  // (lib/credits/policy.ts), and a static page would go stale.
+  "price.eyebrow": { "zh-Hant": "費用", "zh-Hans": "费用", ja: "料金", en: "Pricing" },
+  "price.title": {
+    "zh-Hant": "先免費學，要全部再買一次",
+    "zh-Hans": "先免费学，要全部再买一次",
+    ja: "まず無料で。全部ほしくなったら一度だけ購入",
+    en: "Start free. Buy once if you want everything.",
+  },
+  "price.free": { "zh-Hant": "免費", "zh-Hans": "免费", ja: "無料", en: "Free" },
+  "price.freeTag": { "zh-Hant": "登入就有", "zh-Hans": "登录就有", ja: "ログインで利用可", en: "Just sign in" },
+  "price.free1": {
+    "zh-Hant": "8 個主題可以學：「水果」「臥室」和留學生組合的 6 個",
+    "zh-Hans": "8 个主题可以学：「水果」「卧室」和留学生组合的 6 个",
+    ja: "8 つのテーマを学べます：「果物」「寝室」と留学生セットの 6 つ",
+    en: "8 topics to learn: Fruits, Bedroom, and the six in the Student set",
+  },
+  "price.free2": {
+    "zh-Hant": "其他官方主題可以瀏覽",
+    "zh-Hans": "其他官方主题可以浏览",
+    ja: "ほかの公式テーマは閲覧できます",
+    en: "Browse every other official topic",
+  },
+  "price.free3": {
+    "zh-Hant": "場面「便利商店結帳」「餐廳」",
+    "zh-Hans": "场景「便利店结账」「餐厅」",
+    ja: "場面「コンビニのレジ」「レストラン」",
+    en: "Scenes: Convenience store checkout, Restaurant",
+  },
+  "price.member": { "zh-Hant": "永久會員", "zh-Hans": "永久会员", ja: "永久会員", en: "Lifetime Membership" },
+  "price.member1": {
+    "zh-Hant": "全部官方主題、全部場面",
+    "zh-Hans": "全部官方主题、全部场景",
+    ja: "すべての公式テーマ、すべての場面",
+    en: "Every official topic and every scene",
+  },
+  "price.member2": {
+    "zh-Hant": "自製圖鑑 200 格、個人詞表 20 張、單字筆記",
+    "zh-Hans": "自制图鉴 200 格、个人词表 20 张、单词笔记",
+    ja: "自作図鑑 200 枠、単語リスト 20 個、単語メモ",
+    en: "200 custom atlas slots, 20 word lists, word notes",
+  },
+  "price.member3": {
+    "zh-Hant": "每月送點數；AI 拍照辨識一次 100 點",
+    "zh-Hans": "每月送点数；AI 拍照识别一次 100 点",
+    ja: "毎月ポイント付与。AI 写真認識は 1 回 100 ポイント",
+    en: "Monthly points; an AI photo recognition costs 100",
+  },
+  "price.memberNote": {
+    "zh-Hant": "一次購買，在 App 裡買。美國售價，其他地區依 App Store 或 Google Play 顯示。",
+    "zh-Hans": "一次购买，在 App 里买。美国售价，其他地区以 App Store 或 Google Play 显示为准。",
+    ja: "買い切り。アプリ内で購入できます。米国での価格です。ほかの地域は App Store または Google Play の表示をご確認ください。",
+    en: "One-time purchase, inside the app. US price; other regions as shown in the App Store or Google Play.",
   },
 
   // ── Download CTA ────────────────────────────────────────────
   "dl.title": {
-    "zh-Hant": "iPhone、Android 都能下載",
-    "zh-Hans": "iPhone、Android 都能下载",
-    ja: "iPhone でも Android でも",
-    en: "On iPhone and Android",
+    "zh-Hant": "出發前裝起來",
+    "zh-Hans": "出发前装起来",
+    ja: "出発前に入れておく",
+    en: "Install it before you fly",
   },
-  "dl.accent": { "zh-Hant": "。", "zh-Hans": "。", ja: "。", en: "." },
   "dl.subhead": {
-    "zh-Hant": "立即下載 Tuji，用生活中的圖片開始學日文和英文。",
-    "zh-Hans": "立即下载 Tuji，用生活中的图片开始学英语和日语。",
-    ja: "今すぐ Tuji をダウンロードして、暮らしの中の写真で英語と日本語を学び始めましょう。",
-    en: "Download Tuji now and start learning Japanese and English with pictures from everyday life.",
+    "zh-Hant": "iPhone、Android 都能下載。",
+    "zh-Hans": "iPhone、Android 都能下载。",
+    ja: "iPhone でも Android でも。",
+    en: "On iPhone and Android.",
   },
   "dl.contact": { "zh-Hant": "聯絡我們", "zh-Hans": "联系我们", ja: "お問い合わせ", en: "Contact us" },
 
   // ── Footer ──────────────────────────────────────────────────
   "foot.tagline": {
-    "zh-Hant": "圖鑑式單字學習。用日常生活的圖片，把日文和英文單字真正記進腦袋。",
-    "zh-Hans": "图鉴式单词学习。用日常生活的图片，把英语和日语单词真正记进脑袋。",
-    ja: "図鑑で覚える単語学習。日常の写真で、英語と日本語の単語を本当に頭に残します。",
-    en: "Picture-first vocabulary. Use everyday photos to make Japanese and English words truly stick.",
+    "zh-Hant": "日本的圖鑑與場面練習。給留學、打工度假和旅遊的人。",
+    "zh-Hans": "日本的图鉴与场景练习。给留学、打工度假和旅游的人。",
+    ja: "日本の図鑑と場面練習。留学、ワーキングホリデー、旅行の人へ。",
+    en: "A picture atlas and scene practice for Japan. For students, working holidays and trips.",
   },
   "foot.product": { "zh-Hant": "產品", "zh-Hans": "产品", ja: "プロダクト", en: "Product" },
   "foot.iosApp": { "zh-Hant": "iOS App", "zh-Hans": "iOS App", ja: "iOS App", en: "iOS App" },
@@ -454,29 +456,12 @@ const STRINGS: Record<string, Row> = {
     en: "Privacy Policy",
   },
   "foot.terms": { "zh-Hant": "服務條款", "zh-Hans": "服务条款", ja: "利用規約", en: "Terms of Service" },
-
-  // ── Marquee glosses (keyed by word id; en hides the gloss line) ──
-  "mq.alarm-clock": { "zh-Hant": "鬧鐘", "zh-Hans": "闹钟", ja: "目覚まし時計", en: "" },
-  "mq.headphones": { "zh-Hant": "耳機", "zh-Hans": "耳机", ja: "ヘッドホン", en: "" },
-  "mq.rice-cooker": { "zh-Hant": "電鍋", "zh-Hans": "电饭煲", ja: "炊飯器", en: "" },
-  "mq.bicycle": { "zh-Hant": "腳踏車", "zh-Hans": "自行车", ja: "自転車", en: "" },
-  "mq.mug": { "zh-Hant": "馬克杯", "zh-Hans": "马克杯", ja: "マグカップ", en: "" },
-  "mq.vending-machine": { "zh-Hant": "販賣機", "zh-Hans": "自动售货机", ja: "自動販売機", en: "" },
-  "mq.scissors": { "zh-Hant": "剪刀", "zh-Hans": "剪刀", ja: "はさみ", en: "" },
-  "mq.toaster": { "zh-Hant": "烤麵包機", "zh-Hans": "烤面包机", ja: "トースター", en: "" },
-  "mq.convenience-store": { "zh-Hant": "便利商店", "zh-Hans": "便利店", ja: "コンビニ", en: "" },
-  "mq.subway": { "zh-Hant": "捷運", "zh-Hans": "地铁", ja: "地下鉄", en: "" },
-  "mq.pan": { "zh-Hant": "平底鍋", "zh-Hans": "平底锅", ja: "フライパン", en: "" },
-  "mq.towel": { "zh-Hant": "毛巾", "zh-Hans": "毛巾", ja: "タオル", en: "" },
-  "mq.bookshelf": { "zh-Hant": "書櫃", "zh-Hans": "书柜", ja: "本棚", en: "" },
-  "mq.taxi": { "zh-Hant": "計程車", "zh-Hans": "出租车", ja: "タクシー", en: "" },
-  "mq.kettle": { "zh-Hant": "熱水壺", "zh-Hans": "热水壶", ja: "やかん", en: "" },
-  "mq.shopping-cart": { "zh-Hant": "購物車", "zh-Hans": "购物车", ja: "ショッピングカート", en: "" },
 };
 
 /** Look up a marketing string; per-key fallback to zh-Hant, then the key itself. */
-export function mt(lang: UiLang, key: string): string {
+export function mt(lang: UiLang, key: string, vars?: Record<string, string | number>): string {
   const row = STRINGS[key];
   if (!row) return key;
-  return row[lang] ?? row["zh-Hant"] ?? key;
+  const s = row[lang] ?? row["zh-Hant"] ?? key;
+  return vars ? s.replace(/\{(\w+)\}/g, (m, k: string) => (k in vars ? String(vars[k]) : m)) : s;
 }

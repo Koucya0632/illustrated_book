@@ -406,10 +406,10 @@ const STRINGS: Record<string, Row> = {
     en: "Monthly points; an AI photo recognition costs 100",
   },
   "price.memberNote": {
-    "zh-Hant": "一次購買。美國售價，其他地區依 App Store 顯示。",
-    "zh-Hans": "一次购买。美国售价，其他地区以 App Store 显示为准。",
-    ja: "買い切り。米国での価格です。ほかの地域は App Store の表示をご確認ください。",
-    en: "One-time purchase. US price; other regions as shown in the App Store.",
+    "zh-Hant": "一次購買，在 App 裡買。美國售價，其他地區依 App Store 或 Google Play 顯示。",
+    "zh-Hans": "一次购买，在 App 里买。美国售价，其他地区以 App Store 或 Google Play 显示为准。",
+    ja: "買い切り。アプリ内で購入できます。米国での価格です。ほかの地域は App Store または Google Play の表示をご確認ください。",
+    en: "One-time purchase, inside the app. US price; other regions as shown in the App Store or Google Play.",
   },
 
   // ── Download CTA ────────────────────────────────────────────

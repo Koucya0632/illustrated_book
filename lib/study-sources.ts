@@ -37,6 +37,12 @@ export interface QueueThemeScope {
   wantsCommunity: boolean;
   /** Whether the public dictionary is queried at all. */
   shouldFetchPublic: boolean;
+  /**
+   * Words that are reviewed even though their category is outside
+   * `publicCategories` — a non-member's 免費景點 words (study-membership.ts).
+   * Absent means none. Review only: it never widens what is taught as new.
+   */
+  reviewWordIds?: string[];
 }
 
 /**

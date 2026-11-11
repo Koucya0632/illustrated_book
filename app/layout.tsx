@@ -43,15 +43,15 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Tuji · 看圖學日文、英文單字",
+  title: "Tuji｜日本的圖鑑與場面練習",
   description:
-    "看得見的單字，記得住的語言。透過圖片、分類、發音、例句與測驗，學會生活日文和英文。",
+    "留學、打工度假、旅遊，到了日本會遇到的東西和問句。圖鑑看圖認東西，場面練習聽懂店員在問什麼。",
   applicationName: "Tuji",
   openGraph: {
     type: "website",
     siteName: "Tuji",
     locale: "zh_TW",
-    images: [{ url: "/marketing/og-home.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/marketing/og-home.jpg?v=2", width: 1200, height: 630, alt: "Tuji：到了日本會遇到的，先看過一遍。日本的圖鑑與場面練習" }],
   },
   twitter: { card: "summary_large_image" },
   // Smart App Banner: iPhone Safari shows an "open in the App Store" strip at

@@ -6,10 +6,11 @@ import LangSwitcher from "./LangSwitcher";
 const APP_ICON_SRC = "/brand/tuji-app-icon.png";
 
 const NAV = [
-  { href: "/#features", key: "nav.features" },
+  { href: "/#presets", key: "nav.presets" },
   { href: "/#atlas", key: "nav.atlas" },
-  { href: "/#community", key: "nav.community" },
-  { href: "/#how", key: "nav.how" },
+  { href: "/#scenes", key: "nav.scenes" },
+  { href: "/#atlas-custom", key: "nav.custom" },
+  { href: "/#pricing", key: "nav.pricing" },
   { href: "/support", key: "nav.support" },
 ];
 
@@ -80,11 +81,14 @@ export default async function PublicShell({ children }: { children: React.ReactN
                 {mt(lang, "foot.product")}
               </div>
               <div className="mt-4 flex flex-col gap-3 text-sm font-bold text-tuji-paper/80">
-                <Link href="/#features" className="transition duration-120 hover:text-tuji-brand">
-                  {mt(lang, "nav.features")}
-                </Link>
                 <Link href="/#atlas" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "nav.atlas")}
+                </Link>
+                <Link href="/#scenes" className="transition duration-120 hover:text-tuji-brand">
+                  {mt(lang, "nav.scenes")}
+                </Link>
+                <Link href="/#atlas-custom" className="transition duration-120 hover:text-tuji-brand">
+                  {mt(lang, "nav.custom")}
                 </Link>
                 <Link href="/#community" className="transition duration-120 hover:text-tuji-brand">
                   {mt(lang, "nav.community")}

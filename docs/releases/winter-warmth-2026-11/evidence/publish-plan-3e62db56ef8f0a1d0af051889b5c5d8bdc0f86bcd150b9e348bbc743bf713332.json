@@ -1,0 +1,1163 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-warmth-2026-11",
+  "workBatch": "winter-2026-04",
+  "mode": "existing-category-expansion",
+  "productionWriteAllowed": false,
+  "releaseShape": {
+    "insertWordIds": [
+      "disposable-heat-pack",
+      "electric-blanket"
+    ],
+    "updateWordIds": []
+  },
+  "categories": [
+    {
+      "id": "drugstore",
+      "existing": true,
+      "free": false
+    },
+    {
+      "id": "bedroom",
+      "existing": true,
+      "free": true
+    }
+  ],
+  "categoriesBefore": {
+    "categories": [
+      {
+        "id": "bedroom",
+        "name": "Bedroom",
+        "name_zh": "臥室",
+        "emoji": "🛏️",
+        "description": "休息與睡眠的角落",
+        "description_en": "The corner for rest and sleep",
+        "color": "from-purple-100 to-pink-100",
+        "image_url": "https://img.nexflow.team/word-images/category-bedroom.webp"
+      },
+      {
+        "id": "drugstore",
+        "name": "Drugstore",
+        "name_zh": "藥妝店",
+        "emoji": "🧴",
+        "description": "日本藥妝店裡常見的藥品、衛生用品與美妝產品",
+        "description_en": "Medicines, health essentials, and beauty products in Japanese drugstores",
+        "color": "from-pink-100 to-sky-100",
+        "image_url": "https://img.nexflow.team/word-images/category-drugstore-ai-ce824db7d9b8.webp"
+      }
+    ],
+    "translations": [
+      {
+        "category_id": "bedroom",
+        "language": "ja",
+        "name": "寝室",
+        "description": "休息と睡眠の場所"
+      },
+      {
+        "category_id": "drugstore",
+        "language": "ja",
+        "name": "ドラッグストア",
+        "description": "日本のドラッグストアで見かける医薬品・日用品・化粧品"
+      }
+    ]
+  },
+  "sources": {
+    "content": {
+      "file": "data/winter-warmth-2026-11.json",
+      "sha256": "85386b435d588bee5e0ee434228c3a217117ffa3c797bddfe9699b17e02498f8"
+    },
+    "spans": {
+      "file": "data/example-spans-winter-warmth-2026-11.json",
+      "sha256": "ca60b86e7765e75ed4ef2dd218f6441546a98f9808b13b8b842a0486607d74e2"
+    },
+    "imagePrompts": {
+      "file": "data/winter-warmth-2026-11-image-prompts.json",
+      "sha256": "5cb354ae300929e066d686f572bce44e6370c9a5cd19644f53a60dd2d1572334"
+    },
+    "images": {
+      "file": "output/winter-warmth-2026-11/image-manifest.json",
+      "sha256": "4ff0a8ccd0cdefc8fac03e9086e50427e1aa45aecc52d66b4a9d29e3be2b55c5"
+    },
+    "audioPlan": {
+      "file": "output/winter-warmth-2026-11/audio-plan/manifest.json",
+      "sha256": "ca7a3b0765f0943db22ac3aa07286dd45a09c3ac159afb85b87ff3f645649ed3"
+    },
+    "audio": {
+      "file": "output/winter-warmth-2026-11/audio-candidates/generated-manifest.json",
+      "sha256": "e0af88b14ae065dc9e90a46d2f7ac4a2a509d37bbaa6261d2d83d5216761c4ed"
+    },
+    "audioVerification": {
+      "file": "output/winter-warmth-2026-11/audio-candidates/verification-report.json",
+      "sha256": "93c574f0ed8075e8b01bb68f0b72d9a7bec3a9642f9338e0702097caf9dcbd1d"
+    },
+    "frameVerification": {
+      "file": "output/winter-warmth-2026-11/audio-candidates/mp3-frames-report.json",
+      "sha256": "3580f235b94f0cc05a0b8eb7284a1b389e392fa20d1875d8a8b2037af63d3030"
+    },
+    "semanticReview": {
+      "file": "output/winter-warmth-2026-11/independent-review-content.json",
+      "sha256": "558d85e780968eca2127217f8e9b3fab761ab1d7d213ec957413b6b12b571c7d"
+    },
+    "visualReview": {
+      "file": "output/winter-warmth-2026-11/independent-review-images.json",
+      "sha256": "0f910fdb25fed5a8c5786f896768f41b5f06a5caab3be4b28a2d2d8b3cfe0425"
+    },
+    "audioReview": {
+      "file": "output/winter-warmth-2026-11/independent-review-audio.json",
+      "sha256": "ac06a4414eed4d58b808625161305ca863467fe5f77fa7171e98106d872b92f4"
+    },
+    "publisher": {
+      "file": "scripts/publish-winter-warmth-2026-11.ts",
+      "sha256": "e79efd19029b25eb7ff59df12d6bda6e6601f2b1a360ab83f416ce12ced96a5b"
+    },
+    "planner": {
+      "file": "scripts/prepare-winter-warmth-2026-11-publish-plan.mjs",
+      "sha256": "34aafab2f2fa604192830de123871fc854b8378634cac2a56b50cd6649534b7c"
+    },
+    "preparation": {
+      "file": "scripts/prepare-winter-warmth-2026-11.mjs",
+      "sha256": "25e0edf13d4e69f6a400717f914ace7807e413d1bbf689ba080c04607ac47568"
+    },
+    "canonicalImageIntegrationPatch": {
+      "file": "data/winter-warmth-2026-11-canonical-images.patch",
+      "sha256": "e63fddc096c68438246cc2f2e3852539fcaf496348bdabcdf01b149edf20f358"
+    },
+    "postPublicationIntegrationPatch": {
+      "file": "data/winter-warmth-2026-11-postpublication-integration.patch",
+      "sha256": "0685baf820da22b7530dc660629b83d9cd2bb58134d7cf642739a94e7f91bd1e"
+    },
+    "postPublicationIntegrationMetadata": {
+      "file": "data/winter-warmth-2026-11-postpublication-integration.json",
+      "sha256": "1cb33b75a2d9751bfb763c64f1f3a1836218a5c1e9467b24915e35eeb4793efc"
+    }
+  },
+  "entries": [
+    {
+      "operation": "insert",
+      "contentDigest": "559758f2618cd4e8311289cfaab4b41b48d0b66324ddc60361a7c6d506473e7d",
+      "word": {
+        "id": "disposable-heat-pack",
+        "word": "disposable heat pack",
+        "chinese": "暖暖包",
+        "chineseDefinition": "用來為手部或身體保暖的一次性小包，常見款接觸空氣後會發熱。",
+        "category": "drugstore",
+        "partOfSpeech": "noun",
+        "pronunciation": "/dɪˈspoʊ.zə.bəl hiːt pæk/",
+        "cefrLevel": "A2",
+        "ja": "使い捨てカイロ",
+        "jaReading": "つかいすてカイロ",
+        "jaReadingSegments": [
+          {
+            "text": "使い捨て",
+            "ruby": "つかいすて"
+          },
+          {
+            "text": "カイロ",
+            "ruby": null
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "暖暖包",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A small, single-use pack that provides warmth for the hands or body. Common types give off heat when exposed to air.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "手や体を温めるための使い切りの小さなカイロ。空気に触れると発熱するタイプがよく見られる。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "暖暖包有黏貼式和非黏貼式，圖中是非黏貼式。",
+        "localizedNotes": {
+          "en": "Disposable heat packs come in stick-on and non-adhesive types. The illustration shows a non-adhesive pack.",
+          "ja": "貼るタイプと貼らないタイプがある。図は貼らないタイプ。"
+        },
+        "relatedWords": [],
+        "examples": [
+          {
+            "en": "I bought a disposable heat pack at the drugstore.",
+            "ja": "ドラッグストアで使い捨てカイロを買いました。",
+            "zh": "我在藥妝店買了一個暖暖包。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+            "ja": "外が寒かったので、出かける前に使い捨てカイロをかばんに入れました。",
+            "zh": "因為外面很冷，我出門前把暖暖包放進包包裡。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-warmth-2026-11/disposable-heat-pack-v1-e9c79094eda6.webp"
+      },
+      "image": {
+        "id": "disposable-heat-pack",
+        "bucket": "word-images",
+        "storagePath": "winter-warmth-2026-11/disposable-heat-pack-v1-e9c79094eda6.webp",
+        "url": "https://img.nexflow.team/word-images/winter-warmth-2026-11/disposable-heat-pack-v1-e9c79094eda6.webp",
+        "localFile": "output/winter-warmth-2026-11/images/webp/disposable-heat-pack-v1-e9c79094eda6.webp",
+        "sourceFile": "output/winter-warmth-2026-11/images/source/disposable-heat-pack-v1.png",
+        "bytes": 58110,
+        "contentSha256": "e9c79094eda637f5e2329b1401619e3b48c5881dd9af7a2972314651a16262bf",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "disposable-heat-pack",
+          "wordId": "disposable-heat-pack",
+          "locale": "en-US",
+          "sourceText": "disposable heat pack",
+          "sourceLanguage": "en",
+          "sourceDigest": "a6b8e81dd02b798015274d638f2745a73d7b959362304ba1b84405567af01582",
+          "localFile": "output/winter-warmth-2026-11/audio-candidates/headword/en-US/a6b8e81dd02b798015274d638f2745a73d7b959362304ba1b84405567af01582.mp3",
+          "bytes": 7776,
+          "contentSha256": "1c243abf26300213bf463ace459f15f714bb6e06159bba7efc7380fbe2c97e3d",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "disposable-heat-pack/en-US/1c243abf26300213bf46.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "disposable-heat-pack",
+          "wordId": "disposable-heat-pack",
+          "locale": "en-GB",
+          "sourceText": "disposable heat pack",
+          "sourceLanguage": "en",
+          "sourceDigest": "a638fa0ae81c47bb7f1b0a4ba2af18620b3d8e2219226f5d3a7d973b333a454f",
+          "localFile": "output/winter-warmth-2026-11/audio-candidates/headword/en-GB/a638fa0ae81c47bb7f1b0a4ba2af18620b3d8e2219226f5d3a7d973b333a454f.mp3",
+          "bytes": 7392,
+          "contentSha256": "c9c62a1eb039f171d986cef86ad1d80b4c07e1a2bd8ecd6e5a1d19fc4b9d16aa",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "disposable-heat-pack/en-GB/c9c62a1eb039f171d986.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "disposable-heat-pack",
+          "wordId": "disposable-heat-pack",
+          "locale": "ja-JP",
+          "sourceText": "使い捨てカイロ",
+          "sourceLanguage": "ja",
+          "sourceDigest": "8b811deb11c8bc5ce8c90df2e02f15d8da482587a61afa02d58559ac2f578bfa",
+          "localFile": "output/winter-warmth-2026-11/audio-candidates/headword/ja-JP/8b811deb11c8bc5ce8c90df2e02f15d8da482587a61afa02d58559ac2f578bfa.mp3",
+          "bytes": 7296,
+          "contentSha256": "df5210c4379f35978fd9781a80e39cc7551dc863e60ae473970b5f95fd1e6068",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "disposable-heat-pack/ja-JP/df5210c4379f35978fd9.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "disposable-heat-pack:0",
+          "sortOrder": 0,
+          "en": "I bought a disposable heat pack at the drugstore.",
+          "ja": "ドラッグストアで使い捨てカイロを買いました。",
+          "zh": "我在藥妝店買了一個暖暖包。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "bought",
+                "z": "買了",
+                "j": "買った",
+                "e": "bought"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "disposable heat pack",
+                "z": "暖暖包",
+                "j": "使い捨てカイロ",
+                "e": "disposable heat pack"
+              },
+              {
+                "t": " at the "
+              },
+              {
+                "t": "drugstore",
+                "z": "藥妝店",
+                "j": "ドラッグストア",
+                "e": "drugstore"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "ドラッグストア",
+                "z": "藥妝店",
+                "j": "ドラッグストア",
+                "e": "drugstore",
+                "r": "ドラッグストア"
+              },
+              {
+                "t": "で"
+              },
+              {
+                "t": "使い捨てカイロ",
+                "z": "暖暖包",
+                "j": "使い捨てカイロ",
+                "e": "disposable heat pack",
+                "r": "つかいすてカイロ"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "買いました",
+                "z": "買了",
+                "j": "買った",
+                "e": "bought",
+                "r": "かいました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "disposable-heat-pack:0",
+              "wordId": "disposable-heat-pack",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "I bought a disposable heat pack at the drugstore.",
+              "sourceLanguage": "en",
+              "sourceDigest": "5c3635ba6cda4a0587dd1dcaa932a49fdb211dab28f11a65c8950c3d54a5204c",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-US/5c3635ba6cda4a0587dd1dcaa932a49fdb211dab28f11a65c8950c3d54a5204c.mp3",
+              "bytes": 11232,
+              "contentSha256": "3a2327c44a1b76143cd126df40ff58d6842ade02e5741b7445c46eb377410644",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/3a2327c44a1b76143cd1.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "disposable-heat-pack:0",
+              "wordId": "disposable-heat-pack",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "I bought a disposable heat pack at the drugstore.",
+              "sourceLanguage": "en",
+              "sourceDigest": "b135bfc19fe3170ccc13ab2ba15d6a492c1facd0f10f3da1dd6448885e855d9e",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-GB/b135bfc19fe3170ccc13ab2ba15d6a492c1facd0f10f3da1dd6448885e855d9e.mp3",
+              "bytes": 12576,
+              "contentSha256": "a9abacacfc0a78166237dde96a9ba22cdb825248e3c25e13f2c7d41f3b028478",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/a9abacacfc0a78166237.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "disposable-heat-pack:0",
+              "wordId": "disposable-heat-pack",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "ドラッグストアで使い捨てカイロを買いました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "6b19fb83d592b67f3c5a8cd1c13cb482cd91be582d67b79152f3352ac553211d",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/ja-JP/6b19fb83d592b67f3c5a8cd1c13cb482cd91be582d67b79152f3352ac553211d.mp3",
+              "bytes": 15264,
+              "contentSha256": "745dfaa2151b079ce499365a3900b524fb5337d211ee44b086059294dfac1fcf",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/745dfaa2151b079ce499.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "disposable-heat-pack:1",
+          "sortOrder": 1,
+          "en": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+          "ja": "外が寒かったので、出かける前に使い捨てカイロをかばんに入れました。",
+          "zh": "因為外面很冷，我出門前把暖暖包放進包包裡。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "I "
+              },
+              {
+                "t": "put",
+                "z": "放進了",
+                "j": "入れた",
+                "e": "put"
+              },
+              {
+                "t": " a "
+              },
+              {
+                "t": "disposable heat pack",
+                "z": "暖暖包",
+                "j": "使い捨てカイロ",
+                "e": "disposable heat pack"
+              },
+              {
+                "t": " in my "
+              },
+              {
+                "t": "bag",
+                "z": "包包",
+                "j": "かばん",
+                "e": "bag"
+              },
+              {
+                "t": " before "
+              },
+              {
+                "t": "leaving",
+                "z": "出門",
+                "j": "出かける",
+                "e": "leaving"
+              },
+              {
+                "t": " because it was "
+              },
+              {
+                "t": "cold",
+                "z": "冷",
+                "j": "寒い",
+                "e": "cold"
+              },
+              {
+                "t": " "
+              },
+              {
+                "t": "outside",
+                "z": "外面",
+                "j": "外",
+                "e": "outside"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "外",
+                "z": "外面",
+                "j": "外",
+                "e": "outside",
+                "r": "そと"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "寒かった",
+                "z": "很冷",
+                "j": "寒かった",
+                "e": "was cold",
+                "r": "さむかった"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "出かける",
+                "z": "出門",
+                "j": "出かける",
+                "e": "go out",
+                "r": "でかける"
+              },
+              {
+                "t": "前に"
+              },
+              {
+                "t": "使い捨てカイロ",
+                "z": "暖暖包",
+                "j": "使い捨てカイロ",
+                "e": "disposable heat pack",
+                "r": "つかいすてカイロ"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "かばん",
+                "z": "包包",
+                "j": "かばん",
+                "e": "bag",
+                "r": "かばん"
+              },
+              {
+                "t": "に"
+              },
+              {
+                "t": "入れました",
+                "z": "放進了",
+                "j": "入れた",
+                "e": "put in",
+                "r": "いれました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "disposable-heat-pack:1",
+              "wordId": "disposable-heat-pack",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+              "sourceLanguage": "en",
+              "sourceDigest": "d96cccb37e739190a1f214ba9414aae029c44990f7a2118da65c71631d78fd44",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-US/d96cccb37e739190a1f214ba9414aae029c44990f7a2118da65c71631d78fd44.mp3",
+              "bytes": 19296,
+              "contentSha256": "f802373980abb0316b778c32639ed57165ee47136c6c0b96f04d74fbd89bfaf1",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/f802373980abb0316b77.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "disposable-heat-pack:1",
+              "wordId": "disposable-heat-pack",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+              "sourceLanguage": "en",
+              "sourceDigest": "7e0cdc0b339e1a9893fefd979565f945cbb23808baa0bdf2004d24e21d0516ba",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-GB/7e0cdc0b339e1a9893fefd979565f945cbb23808baa0bdf2004d24e21d0516ba.mp3",
+              "bytes": 17664,
+              "contentSha256": "5c0035b3d34a38662bb665acc7ff9787f57f9134c347e4b6a38d33aa4a605806",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/5c0035b3d34a38662bb6.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "disposable-heat-pack:1",
+              "wordId": "disposable-heat-pack",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "外が寒かったので、出かける前に使い捨てカイロをかばんに入れました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "cb8ba1ce0f805ab46f6b7153b4d4b45ea50ad70c88273dc67d8c54bd487cc077",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/ja-JP/cb8ba1ce0f805ab46f6b7153b4d4b45ea50ad70c88273dc67d8c54bd487cc077.mp3",
+              "bytes": 23232,
+              "contentSha256": "52910f34b55bddd24ee2d33f1690cae1e93320089b5070630837bdbf0c82f94d",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/52910f34b55bddd24ee2.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "insert",
+      "contentDigest": "3358ab6e30a151c3bafb0f8afb9d96b6c01f01e5cbf2c35634c59c35327d9502",
+      "word": {
+        "id": "electric-blanket",
+        "word": "electric blanket",
+        "chinese": "電熱毯",
+        "chineseDefinition": "內部有發熱元件，可以通電加熱的毯子。",
+        "category": "bedroom",
+        "partOfSpeech": "noun",
+        "pronunciation": "/ɪˈlek.trɪk ˈblæŋ.kɪt/",
+        "cefrLevel": "A2",
+        "ja": "電気毛布",
+        "jaReading": "でんきもうふ",
+        "jaReadingSegments": [
+          {
+            "text": "電気",
+            "ruby": "でんき"
+          },
+          {
+            "text": "毛布",
+            "ruby": "もうふ"
+          }
+        ],
+        "definitions": [
+          {
+            "language": "zh",
+            "definition": "電熱毯",
+            "sortOrder": 0
+          },
+          {
+            "language": "en",
+            "definition": "A blanket with built-in heating elements that warm it when it is powered.",
+            "sortOrder": 0
+          },
+          {
+            "language": "ja",
+            "definition": "内部に発熱体があり、電気で温まる毛布。",
+            "sortOrder": 0
+          }
+        ],
+        "note": "電熱毯有蓋在身上、鋪在身下和兩用的款式，依型號而異。",
+        "localizedNotes": {
+          "en": "Depending on the model, an electric blanket can go over you, under you, or be designed for either use.",
+          "ja": "製品によって、掛け用、敷き用、掛け敷き両用がある。"
+        },
+        "relatedWords": [
+          "blanket"
+        ],
+        "examples": [
+          {
+            "en": "This electric blanket is warm.",
+            "ja": "この電気毛布は暖かいです。",
+            "zh": "這條電熱毯很暖和。",
+            "cefrLevel": "A2"
+          },
+          {
+            "en": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+            "ja": "電気毛布が暖かすぎたので、本を読む前に温度設定を下げました。",
+            "zh": "電熱毯太暖了，所以我看書前調低了溫度設定。",
+            "cefrLevel": "B1"
+          }
+        ],
+        "imageUrl": "https://img.nexflow.team/word-images/winter-warmth-2026-11/electric-blanket-v3-2d62aedee4bc.webp"
+      },
+      "image": {
+        "id": "electric-blanket",
+        "bucket": "word-images",
+        "storagePath": "winter-warmth-2026-11/electric-blanket-v3-2d62aedee4bc.webp",
+        "url": "https://img.nexflow.team/word-images/winter-warmth-2026-11/electric-blanket-v3-2d62aedee4bc.webp",
+        "localFile": "output/winter-warmth-2026-11/images/webp/electric-blanket-v3-2d62aedee4bc.webp",
+        "sourceFile": "output/winter-warmth-2026-11/images/source/electric-blanket-v3.png",
+        "bytes": 46800,
+        "contentSha256": "2d62aedee4bc029f757544e34fd16333ea26fb0513e05a2e23f4b015c775a353",
+        "mimeType": "image/webp",
+        "width": 1200,
+        "height": 1200,
+        "license": "AI-generated",
+        "credit": "OpenAI image generation",
+        "uploadRequired": true
+      },
+      "headwordAudio": [
+        {
+          "kind": "headword",
+          "ownerKey": "electric-blanket",
+          "wordId": "electric-blanket",
+          "locale": "en-US",
+          "sourceText": "electric blanket",
+          "sourceLanguage": "en",
+          "sourceDigest": "c2004b37894534c552483621951c1c19be5bb83623f8304971032ccac8280862",
+          "localFile": "output/winter-warmth-2026-11/audio-candidates/headword/en-US/c2004b37894534c552483621951c1c19be5bb83623f8304971032ccac8280862.mp3",
+          "bytes": 6816,
+          "contentSha256": "ece7c11c2900cd118cc4274f8ab9a1d7a5e79ef4dcb3dc812c55dca586012e7a",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-US-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "electric-blanket/en-US/ece7c11c2900cd118cc4.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "electric-blanket",
+          "wordId": "electric-blanket",
+          "locale": "en-GB",
+          "sourceText": "electric blanket",
+          "sourceLanguage": "en",
+          "sourceDigest": "a10a9fe2100469ae879b883c8a48a98054a7a5875d01efad19db00e6db5ac894",
+          "localFile": "output/winter-warmth-2026-11/audio-candidates/headword/en-GB/a10a9fe2100469ae879b883c8a48a98054a7a5875d01efad19db00e6db5ac894.mp3",
+          "bytes": 6816,
+          "contentSha256": "e2b05592e3e07f3600f1befe7ed29db1e559398844a86a804b8eaf4c151ffd5b",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "en-GB-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "electric-blanket/en-GB/e2b05592e3e07f3600f1.mp3",
+          "uploadRequired": true
+        },
+        {
+          "kind": "headword",
+          "ownerKey": "electric-blanket",
+          "wordId": "electric-blanket",
+          "locale": "ja-JP",
+          "sourceText": "電気毛布",
+          "sourceLanguage": "ja",
+          "sourceDigest": "0b3b06dcfd10144b7d0aa54759cafcd7041d137b6e52479a72c8ba91285f46db",
+          "localFile": "output/winter-warmth-2026-11/audio-candidates/headword/ja-JP/0b3b06dcfd10144b7d0aa54759cafcd7041d137b6e52479a72c8ba91285f46db.mp3",
+          "bytes": 5952,
+          "contentSha256": "2278f1bb799db1f03e9876ef7288b5220412ad6cbef51dcc9c9ae51d454eccd2",
+          "mimeType": "audio/mpeg",
+          "model": "chirp-3-hd",
+          "voice": "ja-JP-Chirp3-HD-Aoede",
+          "bucket": "word-audio",
+          "storagePath": "electric-blanket/ja-JP/2278f1bb799db1f03e98.mp3",
+          "uploadRequired": true
+        }
+      ],
+      "examples": [
+        {
+          "ownerKey": "electric-blanket:0",
+          "sortOrder": 0,
+          "en": "This electric blanket is warm.",
+          "ja": "この電気毛布は暖かいです。",
+          "zh": "這條電熱毯很暖和。",
+          "cefrLevel": "A2",
+          "spans": {
+            "en": [
+              {
+                "t": "This "
+              },
+              {
+                "t": "electric blanket",
+                "z": "電熱毯",
+                "j": "電気毛布",
+                "e": "electric blanket"
+              },
+              {
+                "t": " is "
+              },
+              {
+                "t": "warm",
+                "z": "暖和",
+                "j": "暖かい",
+                "e": "warm"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "この"
+              },
+              {
+                "t": "電気毛布",
+                "z": "電熱毯",
+                "j": "電気毛布",
+                "e": "electric blanket",
+                "r": "でんきもうふ"
+              },
+              {
+                "t": "は"
+              },
+              {
+                "t": "暖かいです",
+                "z": "很暖和",
+                "j": "暖かい",
+                "e": "is warm",
+                "r": "あたたかいです"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "electric-blanket:0",
+              "wordId": "electric-blanket",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-US",
+              "sourceText": "This electric blanket is warm.",
+              "sourceLanguage": "en",
+              "sourceDigest": "3b97cab8f50cf5914a4330825665948dd75a7ab86b25c2c731a4115e92eb16fa",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-US/3b97cab8f50cf5914a4330825665948dd75a7ab86b25c2c731a4115e92eb16fa.mp3",
+              "bytes": 7104,
+              "contentSha256": "30308b976698528cc2e564e108e24b151874d0d304d01308d0b559759be70b30",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/30308b976698528cc2e5.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "electric-blanket:0",
+              "wordId": "electric-blanket",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "en-GB",
+              "sourceText": "This electric blanket is warm.",
+              "sourceLanguage": "en",
+              "sourceDigest": "95f6466702163d69648883bc2553d3723d627b54ca737e8448981f2487a84a67",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-GB/95f6466702163d69648883bc2553d3723d627b54ca737e8448981f2487a84a67.mp3",
+              "bytes": 8256,
+              "contentSha256": "68f3ae65c4a5b410bdd395d61bae83bd2b3fadf9aff0bc389bb801890c2b12c3",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/68f3ae65c4a5b410bdd3.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "electric-blanket:0",
+              "wordId": "electric-blanket",
+              "slot": 0,
+              "sortOrder": 0,
+              "locale": "ja-JP",
+              "sourceText": "この電気毛布は暖かいです。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "b2084ff0db6fd7326d989d0f37849caf05b913d28c7ff00cd5f69e41f9e454d5",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/ja-JP/b2084ff0db6fd7326d989d0f37849caf05b913d28c7ff00cd5f69e41f9e454d5.mp3",
+              "bytes": 10176,
+              "contentSha256": "19253bdef4f6dc6b50734286377d18f369c96a2122293ce2126e3f457d70a2d2",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/19253bdef4f6dc6b5073.mp3",
+              "uploadRequired": true
+            }
+          ]
+        },
+        {
+          "ownerKey": "electric-blanket:1",
+          "sortOrder": 1,
+          "en": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+          "ja": "電気毛布が暖かすぎたので、本を読む前に温度設定を下げました。",
+          "zh": "電熱毯太暖了，所以我看書前調低了溫度設定。",
+          "cefrLevel": "B1",
+          "spans": {
+            "en": [
+              {
+                "t": "The "
+              },
+              {
+                "t": "electric blanket",
+                "z": "電熱毯",
+                "j": "電気毛布",
+                "e": "electric blanket"
+              },
+              {
+                "t": " felt too "
+              },
+              {
+                "t": "warm",
+                "z": "暖和",
+                "j": "暖かい",
+                "e": "warm"
+              },
+              {
+                "t": ", so I "
+              },
+              {
+                "t": "lowered",
+                "z": "調低了",
+                "j": "下げた",
+                "e": "lowered"
+              },
+              {
+                "t": " the "
+              },
+              {
+                "t": "heat setting",
+                "z": "溫度設定",
+                "j": "温度設定",
+                "e": "heat setting"
+              },
+              {
+                "t": " before "
+              },
+              {
+                "t": "reading",
+                "z": "看書",
+                "j": "本を読む",
+                "e": "reading"
+              },
+              {
+                "t": "."
+              }
+            ],
+            "ja": [
+              {
+                "t": "電気毛布",
+                "z": "電熱毯",
+                "j": "電気毛布",
+                "e": "electric blanket",
+                "r": "でんきもうふ"
+              },
+              {
+                "t": "が"
+              },
+              {
+                "t": "暖かすぎた",
+                "z": "太暖了",
+                "j": "暖かすぎた",
+                "e": "felt too warm",
+                "r": "あたたかすぎた"
+              },
+              {
+                "t": "ので、"
+              },
+              {
+                "t": "本",
+                "z": "書",
+                "j": "本",
+                "e": "book",
+                "r": "ほん"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "読む",
+                "z": "閱讀",
+                "j": "読む",
+                "e": "read",
+                "r": "よむ"
+              },
+              {
+                "t": "前に"
+              },
+              {
+                "t": "温度設定",
+                "z": "溫度設定",
+                "j": "温度設定",
+                "e": "heat setting",
+                "r": "おんどせってい"
+              },
+              {
+                "t": "を"
+              },
+              {
+                "t": "下げました",
+                "z": "調低了",
+                "j": "下げた",
+                "e": "lowered",
+                "r": "さげました"
+              },
+              {
+                "t": "。"
+              }
+            ]
+          },
+          "audio": [
+            {
+              "kind": "example",
+              "ownerKey": "electric-blanket:1",
+              "wordId": "electric-blanket",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-US",
+              "sourceText": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+              "sourceLanguage": "en",
+              "sourceDigest": "b6aa58c6e258d2226da100e77cb1ee2ceaa407c912745ad81779a9adeee6000e",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-US/b6aa58c6e258d2226da100e77cb1ee2ceaa407c912745ad81779a9adeee6000e.mp3",
+              "bytes": 21792,
+              "contentSha256": "0943ddd48e491e19946e15a5bb6a0b38aafc6e60ae931cc645bfe4e42ca3860b",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-US-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-US/0943ddd48e491e19946e.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "electric-blanket:1",
+              "wordId": "electric-blanket",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "en-GB",
+              "sourceText": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+              "sourceLanguage": "en",
+              "sourceDigest": "68097175008246c3505c75b32b923452ef1243f9a49e48a96c8daf626de1b220",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/en-GB/68097175008246c3505c75b32b923452ef1243f9a49e48a96c8daf626de1b220.mp3",
+              "bytes": 18624,
+              "contentSha256": "24bc239d89ecdad51baed1900b1f2e9225c40517b41ab1e99fbadad3e348ade2",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "en-GB-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/en-GB/24bc239d89ecdad51bae.mp3",
+              "uploadRequired": true
+            },
+            {
+              "kind": "example",
+              "ownerKey": "electric-blanket:1",
+              "wordId": "electric-blanket",
+              "slot": 1,
+              "sortOrder": 1,
+              "locale": "ja-JP",
+              "sourceText": "電気毛布が暖かすぎたので、本を読む前に温度設定を下げました。",
+              "sourceLanguage": "ja",
+              "sourceDigest": "896d079553174ce8600e6c14257a5cae1b8f3f0371d08164dc73bcb800a30f8a",
+              "localFile": "output/winter-warmth-2026-11/audio-candidates/example/ja-JP/896d079553174ce8600e6c14257a5cae1b8f3f0371d08164dc73bcb800a30f8a.mp3",
+              "bytes": 24384,
+              "contentSha256": "b5d48b61829090afe4fe175c945286af3455717c9bef69cd2053f725fb1fc032",
+              "mimeType": "audio/mpeg",
+              "model": "chirp-3-hd",
+              "voice": "ja-JP-Chirp3-HD-Aoede",
+              "bucket": "word-audio",
+              "storagePath": "examples/{exampleId}/ja-JP/b5d48b61829090afe4fe.mp3",
+              "uploadRequired": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "independentReviews": {
+    "semantic": "pass",
+    "visual": "pass",
+    "audio": "pass"
+  },
+  "summary": {
+    "words": 2,
+    "baseNoteRows": 2,
+    "localizedNoteRows": 4,
+    "definitions": 6,
+    "examples": 4,
+    "spanSentences": 8,
+    "wordImages": 2,
+    "categoryImages": 0,
+    "audioClips": 18,
+    "storageObjects": 20
+  },
+  "applyContract": [
+    "Fresh SELECT-only preflight; confirm logical DB and physical Storage targets immediately before separately authorized apply.",
+    "Reserve PostgreSQL example IDs and journal owner-key mapping before constructing example-audio paths; candidate word:slot keys are not database IDs.",
+    "Create-only immutable media; full remote bytes verification before a single content/publication transaction.",
+    "Reuse both existing categories unchanged; no category creation, translation update, cover upload, or rollback deletion.",
+    "Verify production content, remote bytes, API projections and ordinary/cache-busting user routes before recording release."
+  ],
+  "limitations": [
+    "Images depict generic products and do not identify a brand or model.",
+    "No subjective full-clip listening review or production/device verification is claimed."
+  ],
+  "postPublicationIntegration": {
+    "status": "deferred-until-db-published-and-verified",
+    "canonicalImagePatch": {
+      "file": "data/winter-warmth-2026-11-canonical-images.patch",
+      "sha256": "e63fddc096c68438246cc2f2e3852539fcaf496348bdabcdf01b149edf20f358",
+      "applied": false
+    },
+    "pairAndSpanPatch": {
+      "file": "data/winter-warmth-2026-11-postpublication-integration.patch",
+      "sha256": "0685baf820da22b7530dc660629b83d9cd2bb58134d7cf642739a94e7f91bd1e",
+      "applied": false
+    },
+    "integrationMetadata": {
+      "file": "data/winter-warmth-2026-11-postpublication-integration.json",
+      "sha256": "1cb33b75a2d9751bfb763c64f1f3a1836218a5c1e9467b24915e35eeb4793efc"
+    },
+    "wordIds": [
+      "disposable-heat-pack",
+      "electric-blanket"
+    ],
+    "requiredOrder": [
+      "DB完整發布並驗證後，才可在本地套用本批canonical image映射補丁；不得提前增加公開首頁用來計算詞數的映射key。",
+      "套用前重新確認補丁仍適用且保留其他映射；commit、push及deploy均須另外授權。",
+      "正式上線後的圖片全層稽核，須等待canonical image映射層同步完成，不能以DB已發布代稱全部圖片來源一致。"
+    ]
+  },
+  "planDigest": "c94cd8a5470587df85f05a2e021b05656f60a12f973cb9d54dad94b99ed5e2a7",
+  "createdAt": "2026-11-12T10:19:23.668Z",
+  "status": "prepared",
+  "databasePreflight": {
+    "checkedAt": "2026-11-12T10:18:45.606Z",
+    "transactionReadOnly": true,
+    "databaseHostFingerprint": "15749fae6d13",
+    "logicalTargetFingerprint": "ff5cae26be7059d0d2127c76395c4b1b07d0a8902ecae30dad8ba03558975fe7",
+    "publishedCount": 1253,
+    "collisionRows": [],
+    "japaneseCollisions": [],
+    "categories": [
+      {
+        "id": "bedroom",
+        "name": "Bedroom",
+        "name_zh": "臥室",
+        "emoji": "🛏️",
+        "description": "休息與睡眠的角落",
+        "description_en": "The corner for rest and sleep",
+        "color": "from-purple-100 to-pink-100",
+        "image_url": "https://img.nexflow.team/word-images/category-bedroom.webp"
+      },
+      {
+        "id": "drugstore",
+        "name": "Drugstore",
+        "name_zh": "藥妝店",
+        "emoji": "🧴",
+        "description": "日本藥妝店裡常見的藥品、衛生用品與美妝產品",
+        "description_en": "Medicines, health essentials, and beauty products in Japanese drugstores",
+        "color": "from-pink-100 to-sky-100",
+        "image_url": "https://img.nexflow.team/word-images/category-drugstore-ai-ce824db7d9b8.webp"
+      }
+    ],
+    "categoryTranslations": [
+      {
+        "category_id": "bedroom",
+        "language": "ja",
+        "name": "寝室",
+        "description": "休息と睡眠の場所"
+      },
+      {
+        "category_id": "drugstore",
+        "language": "ja",
+        "name": "ドラッグストア",
+        "description": "日本のドラッグストアで見かける医薬品・日用品・化粧品"
+      }
+    ],
+    "related": [
+      {
+        "id": "blanket",
+        "word": "blanket",
+        "status": "published",
+        "term": "毛布"
+      }
+    ],
+    "sentenceCollisions": [],
+    "passed": true
+  },
+  "storageTarget": {
+    "backend": "r2",
+    "fingerprint": "767c84c9d992"
+  }
+}

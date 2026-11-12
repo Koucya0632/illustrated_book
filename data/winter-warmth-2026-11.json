@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-warmth-2026-11",
+  "workBatch": "winter-2026-04",
+  "state": "local-candidate-awaiting-independent-review",
+  "region": "Japan",
+  "scopeNote": "Two new concepts with distinct primary categories already in the public catalogue.",
+  "categories": [
+    {
+      "id": "drugstore",
+      "existing": true,
+      "free": false
+    },
+    {
+      "id": "bedroom",
+      "existing": true,
+      "free": true
+    }
+  ],
+  "references": [
+    "https://www.kobayashi.co.jp/seihin/kk_nhw/",
+    "https://panasonic.jp/manualdl/p-db/DB/DB-R22M.pdf"
+  ],
+  "editorialDecisions": [
+    {
+      "candidate": "使い捨てカイロ",
+      "decision": "single-use heat pack",
+      "reason": "呈現常見的非黏貼式暖暖包，並在詞條備註說明另有黏貼款。"
+    },
+    {
+      "candidate": "電気毛布",
+      "decision": "electric blanket related to blanket",
+      "reason": "以可通電發熱的功能區分電熱毯與一般毛毯，並連回既有毛布詞條。"
+    }
+  ],
+  "entries": [
+    {
+      "id": "disposable-heat-pack",
+      "word": "disposable heat pack",
+      "chinese": "暖暖包",
+      "chineseDefinition": "用來為手部或身體保暖的一次性小包，常見款接觸空氣後會發熱。",
+      "category": "drugstore",
+      "partOfSpeech": "noun",
+      "pronunciation": "/dɪˈspoʊ.zə.bəl hiːt pæk/",
+      "cefrLevel": "A2",
+      "ja": "使い捨てカイロ",
+      "jaReading": "つかいすてカイロ",
+      "jaReadingSegments": [
+        {
+          "text": "使い捨て",
+          "ruby": "つかいすて"
+        },
+        {
+          "text": "カイロ",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "暖暖包",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small, single-use pack that provides warmth for the hands or body. Common types give off heat when exposed to air.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "手や体を温めるための使い切りの小さなカイロ。空気に触れると発熱するタイプがよく見られる。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "暖暖包有黏貼式和非黏貼式，圖中是非黏貼式。",
+      "localizedNotes": {
+        "en": "Disposable heat packs come in stick-on and non-adhesive types. The illustration shows a non-adhesive pack.",
+        "ja": "貼るタイプと貼らないタイプがある。図は貼らないタイプ。"
+      },
+      "relatedWords": [],
+      "examples": [
+        {
+          "en": "I bought a disposable heat pack at the drugstore.",
+          "ja": "ドラッグストアで使い捨てカイロを買いました。",
+          "zh": "我在藥妝店買了一個暖暖包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+          "ja": "外が寒かったので、出かける前に使い捨てカイロをかばんに入れました。",
+          "zh": "因為外面很冷，我出門前把暖暖包放進包包裡。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "electric-blanket",
+      "word": "electric blanket",
+      "chinese": "電熱毯",
+      "chineseDefinition": "內部有發熱元件，可以通電加熱的毯子。",
+      "category": "bedroom",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ɪˈlek.trɪk ˈblæŋ.kɪt/",
+      "cefrLevel": "A2",
+      "ja": "電気毛布",
+      "jaReading": "でんきもうふ",
+      "jaReadingSegments": [
+        {
+          "text": "電気",
+          "ruby": "でんき"
+        },
+        {
+          "text": "毛布",
+          "ruby": "もうふ"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "電熱毯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A blanket with built-in heating elements that warm it when it is powered.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "内部に発熱体があり、電気で温まる毛布。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "電熱毯有蓋在身上、鋪在身下和兩用的款式，依型號而異。",
+      "localizedNotes": {
+        "en": "Depending on the model, an electric blanket can go over you, under you, or be designed for either use.",
+        "ja": "製品によって、掛け用、敷き用、掛け敷き両用がある。"
+      },
+      "relatedWords": [
+        "blanket"
+      ],
+      "examples": [
+        {
+          "en": "This electric blanket is warm.",
+          "ja": "この電気毛布は暖かいです。",
+          "zh": "這條電熱毯很暖和。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+          "ja": "電気毛布が暖かすぎたので、本を読む前に温度設定を下げました。",
+          "zh": "電熱毯太暖了，所以我看書前調低了溫度設定。",
+          "cefrLevel": "B1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "status": "pass-prepublication-preparation",
+  "workBatch": "winter-2026-04",
+  "reviewedAt": "2026-11-12T10:21:23.935651+00:00",
+  "baseCommit": "72672f76bc8c906be293df898ad9a8c7664413c2",
+  "plan": {
+    "file": "output/winter-warmth-2026-11/publish-plan-3e62db56ef8f0a1d0af051889b5c5d8bdc0f86bcd150b9e348bbc743bf713332.json",
+    "sha256": "3e62db56ef8f0a1d0af051889b5c5d8bdc0f86bcd150b9e348bbc743bf713332",
+    "digest": "c94cd8a5470587df85f05a2e021b05656f60a12f973cb9d54dad94b99ed5e2a7",
+    "sourcesExact": 17,
+    "mediaFilesExact": 20
+  },
+  "layers": {
+    "concepts": {
+      "status": "passed",
+      "candidates": 2,
+      "publishedResearchCount": 1253,
+      "region": "Japan"
+    },
+    "content": {
+      "status": "passed",
+      "words": 2,
+      "examples": 4,
+      "spanSentences": 8,
+      "officialCheckerIssues": 0,
+      "localizedNotes": 4
+    },
+    "images": {
+      "status": "passed-local",
+      "sourcePngVisuallyReviewed": 2,
+      "webpVisuallyReviewed": 2
+    },
+    "audio": {
+      "status": "passed-local",
+      "headwordClips": 6,
+      "exampleClips": 12,
+      "mp3FrameAndFullDecodeChecks": 18
+    },
+    "publisher": {
+      "status": "passed-code-and-read-only-path",
+      "singleDatabaseTransaction": true,
+      "existingCategoriesSnapshotLockedAndExact": true,
+      "categoryWrites": 0,
+      "existingWordWrites": 0,
+      "studyAccess": {
+        "drugstore": "v2 member study",
+        "bedroom": "v2 free study"
+      },
+      "categoryByWord": {
+        "disposable-heat-pack": "drugstore",
+        "electric-blanket": "bedroom"
+      },
+      "requiredRelatedTarget": "blanket",
+      "controls": [
+        "Explicit target confirmations and exact-plan recovery manifest",
+        "Create-only media and final remote byte check",
+        "Serializable locked recheck followed by inserts and complete publication",
+        "Exact stored comparison of category rows, category translations, word category links, notes and media",
+        "Rollback compare-and-swap with outside references and original category protection"
+      ]
+    },
+    "formalPreflight": {
+      "status": "passed-read-only",
+      "candidateRows": 0,
+      "headwordConflicts": 0,
+      "japaneseConflicts": 0,
+      "spanCollisions": 0,
+      "existingCategoryRows": 2,
+      "categoryTranslationsMatch": true,
+      "externalRelatedMatches": true
+    },
+    "deferredIntegration": {
+      "status": "passed-isolated",
+      "integrationFiles": 3,
+      "newCanonicalMappings": 2,
+      "patchesUnappliedInPreparationWorktree": true,
+      "testCasesPassed": 37,
+      "noteProjectionCasesPassed": 12,
+      "typecheck": "passed",
+      "build": "passed",
+      "initialFixtureFinding": "The first isolated run used a published-ID fixture missing both simulated new IDs. The final isolated-only fixture explicitly included them; all 37 tests passed on independent rerun."
+    },
+    "formalPublication": {
+      "status": "pending",
+      "productionUploads": 0,
+      "idReservations": 0,
+      "productionDatabaseWrites": 0
+    }
+  },
+  "limitations": [
+    "Local MP3 checks establish frame integrity, full decode and source metadata. Subjective listening remains unchecked.",
+    "Live apply, formal URLs, ordinary/cache-busting behavior and device playback remain unverified."
+  ],
+  "evidence": {
+    "independent-review-concepts.json": "8fef82309c03632b715f64721dd50aab2d331ab81d678bbf1499bfc0485431d2",
+    "independent-membership-concepts.jsonl": "ecfbeaeee8ca3b8be94c24d875aad32fd1d670af572403de5401fdf6a179d014",
+    "independent-review-content.json": "558d85e780968eca2127217f8e9b3fab761ab1d7d213ec957413b6b12b571c7d",
+    "independent-review-images.json": "0f910fdb25fed5a8c5786f896768f41b5f06a5caab3be4b28a2d2d8b3cfe0425",
+    "independent-review-audio.json": "ac06a4414eed4d58b808625161305ca863467fe5f77fa7171e98106d872b92f4",
+    "independent-official-checker/audit.json": "253074c730fcbe2aaf1abfa2d73435447cf74091a32dd752f268bed5307cc9f8",
+    "independent-final-dry-run.log": "0ff11c34ecc6bc8d277d8bca228dbc7b238529559363489496f90d05e9f9a150",
+    "independent-verify-plan.log": "cee20cf22d964dfffaec902013abdded031004496e0fbff4ab882d81037f6fae",
+    "independent-note-projection.log": "a41d1dec3e2726f96c0d3c5a0368ad251c58dcdf04e21a9a1117a361d35bd436",
+    "independent-isolation-tests.log": "8c8e809001bfe0a59144aa80ef64748d3cce859678ac8c7a333ffc6334b53bdb",
+    "isolation-exit-status.txt": "5ee3f66443cd723f9faa707251ad3cde060db29e674752ec8396972d74a6faa0",
+    "isolation-tests-initial.log": "af9743c5cdcaada536935821a323c246e4080af6867f27908ce9cb4fe50744f0",
+    "isolation-build.log": "3ba3a73339b0e3d2cd5ce8f30f9089da3156bf9f88aecc87c3e1b0f8e0b06b70",
+    "isolation-typecheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

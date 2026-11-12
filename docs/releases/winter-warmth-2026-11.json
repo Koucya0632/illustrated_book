@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "series": "winter-warmth-2026-11",
+  "workBatch": "winter-2026-04",
+  "planSha256": "3e62db56ef8f0a1d0af051889b5c5d8bdc0f86bcd150b9e348bbc743bf713332",
+  "manifestSha256": "6632085882f0177cd38e846291e9a8634ea1ac1651209eac400cf585b1bc5c46",
+  "manifest": {
+    "status": "applied",
+    "appliedAt": "2026-11-12T10:28:26.551Z",
+    "resolvedExampleIds": {
+      "disposable-heat-pack:0": "3731",
+      "disposable-heat-pack:1": "3732",
+      "electric-blanket:0": "3733",
+      "electric-blanket:1": "3734"
+    },
+    "originalPath": "output/winter-warmth-2026-11/apply-manifest-2026-11-12T10-24-45-574Z.json",
+    "portablePath": "docs/releases/winter-warmth-2026-11/evidence/apply-manifest-2026-11-12T10-24-45-574Z.json"
+  },
+  "verification": {
+    "status": "passed",
+    "checkedAt": "2026-11-12T10:28:36.910Z",
+    "databaseReportSha256": "6808efaf91630370a168f06394c1e488458a7a4e5e81ac93eb8a0c832096580d",
+    "comparisonQueries": 17,
+    "catalogPublishedCount": 1255,
+    "independentReviewSha256": "a6792f47d8f4d52854808b3994f1e8970652d5204a4fd33a7ec423cadf81adbe"
+  },
+  "summary": {
+    "words": 2,
+    "baseNoteRows": 2,
+    "localizedNoteRows": 4,
+    "definitions": 6,
+    "examples": 4,
+    "spanSentences": 8,
+    "wordImages": 2,
+    "categoryImages": 0,
+    "audioClips": 18,
+    "storageObjects": 20
+  },
+  "publishedWordIds": [
+    "disposable-heat-pack",
+    "electric-blanket"
+  ],
+  "migrationFixture": {
+    "provenance": "Rows observed by the independent read-only database verification. Example IDs are production IDs.",
+    "examples": [
+      {
+        "id": "3731",
+        "word_id": "disposable-heat-pack",
+        "sentence": "I bought a disposable heat pack at the drugstore.",
+        "cefr_level": "A2",
+        "sort_order": 0,
+        "ja": "ドラッグストアで使い捨てカイロを買いました。",
+        "zh": "我在藥妝店買了一個暖暖包。"
+      },
+      {
+        "id": "3732",
+        "word_id": "disposable-heat-pack",
+        "sentence": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+        "cefr_level": "B1",
+        "sort_order": 1,
+        "ja": "外が寒かったので、出かける前に使い捨てカイロをかばんに入れました。",
+        "zh": "因為外面很冷，我出門前把暖暖包放進包包裡。"
+      },
+      {
+        "id": "3733",
+        "word_id": "electric-blanket",
+        "sentence": "This electric blanket is warm.",
+        "cefr_level": "A2",
+        "sort_order": 0,
+        "ja": "この電気毛布は暖かいです。",
+        "zh": "這條電熱毯很暖和。"
+      },
+      {
+        "id": "3734",
+        "word_id": "electric-blanket",
+        "sentence": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+        "cefr_level": "B1",
+        "sort_order": 1,
+        "ja": "電気毛布が暖かすぎたので、本を読む前に温度設定を下げました。",
+        "zh": "電熱毯太暖了，所以我看書前調低了溫度設定。"
+      }
+    ],
+    "spans": [
+      {
+        "sentence_language": "en",
+        "sentence": "I bought a disposable heat pack at the drugstore.",
+        "span_count": 7,
+        "gloss_count": 9,
+        "version": 11
+      },
+      {
+        "sentence_language": "en",
+        "sentence": "I put a disposable heat pack in my bag before leaving because it was cold outside.",
+        "span_count": 13,
+        "gloss_count": 18,
+        "version": 11
+      },
+      {
+        "sentence_language": "en",
+        "sentence": "The electric blanket felt too warm, so I lowered the heat setting before reading.",
+        "span_count": 11,
+        "gloss_count": 15,
+        "version": 11
+      },
+      {
+        "sentence_language": "en",
+        "sentence": "This electric blanket is warm.",
+        "span_count": 5,
+        "gloss_count": 6,
+        "version": 11
+      },
+      {
+        "sentence_language": "ja",
+        "sentence": "この電気毛布は暖かいです。",
+        "span_count": 5,
+        "gloss_count": 6,
+        "version": 11
+      },
+      {
+        "sentence_language": "ja",
+        "sentence": "ドラッグストアで使い捨てカイロを買いました。",
+        "span_count": 6,
+        "gloss_count": 9,
+        "version": 11
+      },
+      {
+        "sentence_language": "ja",
+        "sentence": "外が寒かったので、出かける前に使い捨てカイロをかばんに入れました。",
+        "span_count": 12,
+        "gloss_count": 18,
+        "version": 11
+      },
+      {
+        "sentence_language": "ja",
+        "sentence": "電気毛布が暖かすぎたので、本を読む前に温度設定を下げました。",
+        "span_count": 12,
+        "gloss_count": 18,
+        "version": 11
+      }
+    ]
+  }
+}

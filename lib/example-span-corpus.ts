@@ -291,6 +291,7 @@ const EXAMPLE_SPAN_OVERLAY_PATHS = [
   new URL("../data/example-spans-winter-postal-2026-10-v2.json", import.meta.url),
   new URL("../data/example-spans-winter-checkout-2026-10.json", import.meta.url),
   new URL("../data/example-spans-winter-food-2026-10.json", import.meta.url),
+  new URL("../data/example-spans-winter-warmth-2026-11.json", import.meta.url),
 ];
 
 function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {

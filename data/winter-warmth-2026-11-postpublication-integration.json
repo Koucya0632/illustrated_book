@@ -1,0 +1,27 @@
+{
+  "state": "unapplied-until-complete-publication-and-verification",
+  "scope": "Register two published example pairs and eight authored span arrays. Canonical image mapping is a separate deferred patch. Neither patch adds word/category seeds or public fallback registration.",
+  "changes": [
+    {
+      "file": "lib/main-word-winter-warmth-2026-11.ts",
+      "beforeSha256": null,
+      "afterSha256": "1646e2189cf1dde6783b1631a45430f71369f406c723072fd426a29bdd9458d5"
+    },
+    {
+      "file": "lib/main-word-example-pairs.ts",
+      "beforeSha256": "75d51f43672b9ece45c6cead70abb53cdd77c694891c0ac5f3b68bfc9a23ab95",
+      "afterSha256": "aef74bffdf2951e1a21d75447c299eebf8e21cf83533cfd8a158c6c913e2ac9e"
+    },
+    {
+      "file": "lib/example-span-corpus.ts",
+      "beforeSha256": "8f781278a42330d4f56715893c590f4dcb9a9a4caf289282d4b644a4f4efe9ba",
+      "afterSha256": "63e1c3e8375993342dca40d0ffd8917d9b5f44189ce76b49274a2bce94575225"
+    }
+  ],
+  "canonicalImages": {
+    "file": "lib/image-urls.json",
+    "beforeSha256": "d635f72a2a01a7891aaeed4cc87fb4e77974c450e49d5011254a7d9f4e0a739c",
+    "afterSha256": "2d4bbab2d84f62ba903fc98368d6b334eb390d3dc8099838fe8221a3819b37e3"
+  },
+  "notesPersistence": "Static etymology-en.json has neither candidate ID. New base/en/ja notes are owned by the dedicated publisher and normal migration does not rewrite them."
+}

@@ -107,7 +107,7 @@ test("the study queue gates ?list= with the same study rule", () => {
   assert.ok(src.includes('searchParams.get("list")'));
   assert.ok(src.includes("checkStudyList("), "queue must ask checkStudyList");
   assert.ok(src.includes("getWordList(userId,"), "list must be looked up as the caller's own");
-  assert.ok(src.includes("wordListId }"), "fetchDue must receive the list filter");
+  assert.match(src, /fetchDue\([\s\S]*?\bwordListId,[\s\S]*?\bmode,\s*\)/, "fetchDue must receive the list filter");
 });
 
 test("fetchDue applies the list filter to both new and review cards", () => {

@@ -21,7 +21,7 @@ import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { fetchStudyExamples } from "@/lib/study-examples";
 import { resolveQueueThemeScope } from "@/lib/study-sources";
-import { applyMembershipStudyScope } from "@/lib/study-membership";
+import { applyMembershipStudyScope, checkStudySpot, studySpotWordIds } from "@/lib/study-membership";
 import { getLockedAtlasItemIds, getMembershipAccess } from "@/lib/atlas/entitlement";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
 import { getWordList, wordListIndex } from "@/lib/word-lists/db";
@@ -225,9 +225,34 @@ export async function GET(req: Request) {
     }
     wordListId = list.id;
   }
-  const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic } = wordListId
-    ? { publicCategories: [], wantsCustom: false, wantsCommunity: false, shouldFetchPublic: true }
-    : applyMembershipStudyScope(resolveQueueThemeScope(categories, reviewOnly), access);
+  // `?spot=<id>`: study one 景點 (lib/travel/destinations.ts). Like a list, the
+  // spot's words are the whole filter and 自製 and 物見 are off. Unlike a list
+  // it is not the user's own, so the gate is the spot's: a non-member may study
+  // a free spot and no other. `list` wins when both are sent.
+  const spotParam = wordListId ? "" : (searchParams.get("spot") ?? "").trim();
+  let spotWordIds: string[] | undefined;
+  if (spotParam) {
+    const ids = studySpotWordIds(spotParam);
+    if (!ids) return NextResponse.json({ error: "not_found" }, { status: 404 });
+    const refusal = checkStudySpot(access, spotParam);
+    if (refusal) {
+      return NextResponse.json(
+        { error: refusal.error, upgradeTo: refusal.upgradeTo },
+        { status: refusal.status },
+      );
+    }
+    spotWordIds = ids;
+  }
+  const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic, reviewWordIds } =
+    wordListId || spotWordIds
+      ? {
+          publicCategories: [],
+          wantsCustom: false,
+          wantsCommunity: false,
+          shouldFetchPublic: true,
+          reviewWordIds: undefined,
+        }
+      : applyMembershipStudyScope(resolveQueueThemeScope(categories, reviewOnly), access);
 
   try {
     // The selected learning direction determines both the card deck and the
@@ -246,6 +271,11 @@ export async function GET(req: Request) {
     // Learning direction is authoritative. Legacy client deck filters must
     // never widen a Japanese queue back to all decks when they disagree.
     const effectiveDecks = [directionDeck];
+    // 景點 are 日文 only, as /api/travel is: the same ids in the English deck
+    // would be a spot nobody was shown.
+    if (spotWordIds && targetLanguage !== "ja") {
+      return NextResponse.json({ error: "not_found" }, { status: 404 });
+    }
     // Items over the slot cap after Pro ended (v2); [] and no query under v1.
     const lockedItemIds = wantsCustom ? await getLockedAtlasItemIds(userId) : [];
     const [
@@ -262,12 +292,20 @@ export async function GET(req: Request) {
             userId,
             limit,
             newLimit,
-            { cefr, tags, categories: publicCategories, deckKeys: effectiveDecks, wordListId },
+            {
+              cefr,
+              tags,
+              categories: publicCategories,
+              deckKeys: effectiveDecks,
+              wordListId,
+              wordIds: spotWordIds,
+              reviewWordIds,
+            },
             mode,
           )
         : Promise.resolve([]),
       shouldFetchPublic
-        ? studyStats(userId, publicCategories, directionDeck, readTimezone(req))
+        ? studyStats(userId, publicCategories, directionDeck, readTimezone(req), reviewWordIds)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       getAllMastery(userId, targetLanguage),
       wantsCustom

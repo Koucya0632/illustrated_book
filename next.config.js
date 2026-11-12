@@ -74,6 +74,7 @@ const nextConfig = {
       // Membership-aware 詞條延伸內容: the only per-caller slice of a word.
       privateEntry("/api/words/:id/insights"),
       publicEntry("/api/categories"),
+      publicEntry("/api/travel"),
       // /api/search is public or per-user depending on the request. With
       // `learning` the URL carries the whole identity — the same URL means the
       // same rows for everyone — so the edge may cache it. Without it the rows

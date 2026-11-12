@@ -177,6 +177,17 @@ export interface QueueFilter {
    * list is the user's and may be studied (lib/word-lists/policy.ts).
    */
   wordListId?: string;
+  /**
+   * Restrict to exactly these words — one 景點's (lib/travel/destinations.ts).
+   * The caller has already checked the account may study the spot.
+   */
+  wordIds?: string[];
+  /**
+   * Words reviewed regardless of `categories`: due cards match when the
+   * category is listed OR the word is. Never applies to new cards, and does
+   * nothing without `categories` (no category filter already means every word).
+   */
+  reviewWordIds?: string[];
 }
 
 export type QueueMode = "new" | "review" | "both";
@@ -206,6 +217,14 @@ export async function fetchDue(
         SELECT word_id FROM user_word_list_items WHERE list_id = ${filter.wordListId}::uuid
       )`
     : sql``;
+  const wordIds = filter.wordIds;
+  const wordFilter = wordIds ? sql`AND c.word_id = ANY(${wordIds})` : sql``;
+  const reviewWordIds = (filter.reviewWordIds ?? []).filter((id) => id.length > 0);
+  const reviewCatFilter = !cats.length
+    ? sql``
+    : reviewWordIds.length
+    ? sql`AND (w.category = ANY(${cats}) OR c.word_id = ANY(${reviewWordIds}))`
+    : sql`AND w.category = ANY(${cats})`;
 
   // Review queue: ordered by due date asc. The chinese display label comes
   // from a LATERAL pick of the first zh definition (sort_order asc).
@@ -247,9 +266,10 @@ export async function fetchDue(
             )
           )`
         : sql``}
-      ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
+      ${reviewCatFilter}
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
       ${listFilter}
+      ${wordFilter}
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
   `) as unknown as Record<string, unknown>[]);
@@ -302,6 +322,7 @@ export async function fetchDue(
       ${cats.length ? sql`AND w.category = ANY(${cats})` : sql``}
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
       ${listFilter}
+      ${wordFilter}
     ORDER BY c.id ASC
     LIMIT ${newBudget}
   `) as unknown as Record<string, unknown>[]) : [];
@@ -497,13 +518,20 @@ export function studyStats(
   deckKey = "image-en",
   /** Whose midnight `todayNew` rolls over at — lib/timezone.ts. */
   tz = "Asia/Taipei",
+  /**
+   * Words counted as due whatever their category — the queue's
+   * `reviewWordIds`, so the due chip and the review it opens agree. Only
+   * `due` widens: `total`, `seen` and `new` stay a statement about the themes.
+   */
+  dueWordIds: string[] = [],
 ) {
   const cats = (categories ?? [])
     .filter((c) => c.length > 0 && c !== "all")
     .sort();
+  const alsoDue = cats.length ? [...dueWordIds].sort() : [];
   return unstable_cache(
-    () => studyStatsRaw(userId, cats, deckKey, tz),
-    ["studyStats", userId, deckKey, cats.join(","), tz],
+    () => studyStatsRaw(userId, cats, deckKey, tz, alsoDue),
+    ["studyStats", userId, deckKey, cats.join(","), tz, alsoDue.join(",")],
     { tags: [`stats:${userId}`], revalidate: 30 },
   )();
 }
@@ -513,6 +541,7 @@ async function studyStatsRaw(
   categories: string[],
   deckKey: string,
   tz: string,
+  dueWordIds: string[],
 ) {
   const sql = requireSql();
   // Five COUNTs in parallel — postgres-js dispatches them on independent
@@ -534,6 +563,10 @@ async function studyStatsRaw(
   const cats = (categories ?? []).filter((c) => c.length > 0 && c !== "all");
   const catFilter = cats.length ? sql`AND w.category = ANY(${cats})` : sql``;
   const ucCatFilter = cats.length ? sql`AND w.category = ANY(${cats})` : sql``;
+  const dueFilter =
+    cats.length && dueWordIds.length
+      ? sql`AND (w.category = ANY(${cats}) OR c.word_id = ANY(${dueWordIds}))`
+      : ucCatFilter;
   const [totalRows, seenRows, dueRows, todayNewRows, byStatus] = await Promise.all([
     sql`
       SELECT count(*)::int AS total
@@ -559,7 +592,7 @@ async function studyStatsRaw(
       JOIN words w ON w.id = c.word_id
       WHERE uc.user_id = ${userId}::uuid AND uc.next_review_at <= now()
         AND c.deck_key = ${deckKey}
-      ${ucCatFilter}
+      ${dueFilter}
     ` as Promise<{ due: number }[]>,
     sql`
       SELECT count(*)::int AS "todayNew"

@@ -13,6 +13,8 @@
 
 import type { MembershipPolicy, MembershipTier } from "@/lib/atlas/membership";
 import type { QueueThemeScope } from "@/lib/study-sources";
+import { allTravelSpots, findTravelSpot } from "@/lib/travel/destinations";
+import { upgradeTarget } from "@/lib/atlas/membership-limits";
 
 /**
  * Category ids (words.category), not word lists: newly published words join automatically.
@@ -32,6 +34,23 @@ export const FREE_STUDY_CATEGORIES: readonly string[] = [
   "station-commuting",
   "convenience-store",
 ];
+
+/**
+ * 景點 (lib/travel/destinations.ts) a non-member may study, by spot id. Its
+ * words belong to paid themes; they are free *here*, as this spot's words, and
+ * nowhere else — the themes themselves stay locked.
+ *
+ * Kept beside the free themes for the same reason: what is free is pricing.
+ */
+export const FREE_STUDY_SPOTS: readonly string[] = ["akihabara"];
+
+/** Every word of every free spot. Follows the spot's word list, so re-curating the spot re-prices its words. */
+export function freeSpotWordIds(): string[] {
+  const ids = allTravelSpots()
+    .filter((s) => FREE_STUDY_SPOTS.includes(s.id))
+    .flatMap((s) => [...s.wordIds]);
+  return [...new Set(ids)];
+}
 
 export interface StudyAccess {
   tier: MembershipTier;
@@ -55,7 +74,36 @@ export function applyMembershipStudyScope(scope: QueueThemeScope, access: StudyA
     wantsCustom: false,
     wantsCommunity: false,
     shouldFetchPublic: scope.shouldFetchPublic && allowed.length > 0,
+    // What was learned at a free spot comes back in the everyday review like
+    // any other learned word; without this it would only ever be due on the
+    // spot's own page, and look lost everywhere else.
+    reviewWordIds: freeSpotWordIds(),
   };
+}
+
+export type StudySpotRefusal = {
+  status: 402;
+  error: "membership_required";
+  upgradeTo: MembershipTier | null;
+};
+
+/**
+ * Whether this account may study a 景點 (`/api/study/queue?spot=`). The caller
+ * has already resolved the id; an unknown spot is its 404, not a refusal.
+ */
+export function checkStudySpot(access: StudyAccess, spotId: string): StudySpotRefusal | null {
+  if (!gated(access) || FREE_STUDY_SPOTS.includes(spotId)) return null;
+  return {
+    status: 402,
+    error: "membership_required",
+    upgradeTo: upgradeTarget(access.tier, access.policy),
+  };
+}
+
+/** A spot's words, or null when no spot has that id. */
+export function studySpotWordIds(spotId: string): string[] | null {
+  const spot = findTravelSpot(spotId);
+  return spot ? [...spot.wordIds] : null;
 }
 
 /**
@@ -69,9 +117,14 @@ export function studyableCategories(access: StudyAccess): readonly string[] | nu
 
 export function canStudyCard(
   access: StudyAccess,
-  card: { source: "public"; category: string | null } | { source: "custom" | "community" },
+  card:
+    | { source: "public"; category: string | null; wordId?: string | null }
+    | { source: "custom" | "community" },
 ): boolean {
   if (!gated(access)) return true;
   if (card.source !== "public") return false;
-  return card.category !== null && FREE_STUDY_CATEGORIES.includes(card.category);
+  if (card.category !== null && FREE_STUDY_CATEGORIES.includes(card.category)) return true;
+  // A free spot's words, whichever screen the answer comes from: the spot's
+  // own session and the everyday review both write through here.
+  return !!card.wordId && freeSpotWordIds().includes(card.wordId);
 }

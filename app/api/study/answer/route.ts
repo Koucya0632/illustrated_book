@@ -395,7 +395,7 @@ export async function POST(req: Request) {
 
   const card = await getCardById(cardId, userId);
   if (!card) return NextResponse.json({ error: "card not found" }, { status: 404 });
-  if (!canStudyCard(access, { source: "public", category: card.word.category ?? null })) {
+  if (!canStudyCard(access, { source: "public", category: card.word.category ?? null, wordId: card.word.id })) {
     return gatedReply();
   }
   const targetLanguage = card.word.target_language;

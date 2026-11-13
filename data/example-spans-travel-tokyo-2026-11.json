@@ -1,0 +1,4280 @@
+{
+  "en": {
+    "I drew a fortune slip at the temple.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "drew",
+        "z": "抽了",
+        "j": "引きました",
+        "e": "drew"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "fortune slip",
+        "z": "籤詩",
+        "j": "おみくじ",
+        "e": "fortune slip"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "temple",
+        "z": "寺院",
+        "j": "お寺",
+        "e": "temple"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put away the fortune slip in my wallet so I could read it again later.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put away",
+        "z": "收起",
+        "j": "しまいました",
+        "e": "put away"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "fortune slip",
+        "z": "籤詩",
+        "j": "おみくじ",
+        "e": "fortune slip"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "wallet",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet"
+      },
+      {
+        "t": " so I could "
+      },
+      {
+        "t": "read",
+        "z": "讀",
+        "j": "読む",
+        "e": "read"
+      },
+      {
+        "t": " it "
+      },
+      {
+        "t": "again",
+        "z": "再一次",
+        "j": "もう一度",
+        "e": "again"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "later",
+        "z": "之後",
+        "j": "あとで",
+        "e": "later"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I dropped a coin into the offering box.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "dropped",
+        "z": "投了",
+        "j": "入れました",
+        "e": "dropped"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "coin",
+        "z": "硬幣",
+        "j": "硬貨",
+        "e": "coin"
+      },
+      {
+        "t": " into the "
+      },
+      {
+        "t": "offering box",
+        "z": "香油錢箱",
+        "j": "賽銭箱",
+        "e": "offering box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before I prayed, I took some change out of my pocket and put it in the offering box.": [
+      {
+        "t": "Before I "
+      },
+      {
+        "t": "prayed",
+        "z": "祈禱",
+        "j": "お参りしました",
+        "e": "prayed"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "took",
+        "z": "拿出",
+        "j": "出しました",
+        "e": "took"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "change",
+        "z": "零錢",
+        "j": "小銭",
+        "e": "change"
+      },
+      {
+        "t": " out of my "
+      },
+      {
+        "t": "pocket",
+        "z": "口袋",
+        "j": "ポケット",
+        "e": "pocket"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "put",
+        "z": "投了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " it in the "
+      },
+      {
+        "t": "offering box",
+        "z": "香油錢箱",
+        "j": "賽銭箱",
+        "e": "offering box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought some ningyo-yaki as a souvenir.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "ningyo-yaki",
+        "z": "人形燒",
+        "j": "人形焼",
+        "e": "ningyo-yaki"
+      },
+      {
+        "t": " as a "
+      },
+      {
+        "t": "souvenir",
+        "z": "伴手禮",
+        "j": "お土産",
+        "e": "souvenir"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I shared the ningyo-yaki with my friend while it was still warm.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "shared",
+        "z": "分著吃",
+        "j": "分けて食べました",
+        "e": "shared"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "ningyo-yaki",
+        "z": "人形燒",
+        "j": "人形焼",
+        "e": "ningyo-yaki"
+      },
+      {
+        "t": " with my "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " while it was still "
+      },
+      {
+        "t": "warm",
+        "z": "溫熱",
+        "j": "温かい",
+        "e": "warm"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The ducks are swimming in the pond.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "ducks",
+        "z": "鴨子",
+        "j": "カモ",
+        "e": "ducks"
+      },
+      {
+        "t": " are "
+      },
+      {
+        "t": "swimming",
+        "z": "游泳",
+        "j": "泳いでいます",
+        "e": "swimming"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "pond",
+        "z": "池塘",
+        "j": "池",
+        "e": "pond"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "When the rain stopped, we walked around the pond.": [
+      {
+        "t": "When the "
+      },
+      {
+        "t": "rain",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "stopped",
+        "z": "停了",
+        "j": "やみました",
+        "e": "stopped"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "walked",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked"
+      },
+      {
+        "t": " around the "
+      },
+      {
+        "t": "pond",
+        "z": "池塘",
+        "j": "池",
+        "e": "pond"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We went to the zoo on Sunday.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "went",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "zoo",
+        "z": "動物園",
+        "j": "動物園",
+        "e": "zoo"
+      },
+      {
+        "t": " on "
+      },
+      {
+        "t": "Sunday",
+        "z": "星期日",
+        "j": "日曜日",
+        "e": "sunday"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We left the zoo early because the kids were tired.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "left",
+        "z": "離開",
+        "j": "出ました",
+        "e": "left"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "zoo",
+        "z": "動物園",
+        "j": "動物園",
+        "e": "zoo"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "early",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early"
+      },
+      {
+        "t": " because the "
+      },
+      {
+        "t": "kids",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "kids"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "tired",
+        "z": "累了",
+        "j": "疲れました",
+        "e": "tired"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I saw a dinosaur skeleton at the museum.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "saw",
+        "z": "看到了",
+        "j": "見ました",
+        "e": "saw"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "dinosaur",
+        "z": "恐龍",
+        "j": "恐竜",
+        "e": "dinosaur"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "skeleton",
+        "z": "骨架",
+        "j": "骨格標本",
+        "e": "skeleton"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "museum",
+        "z": "博物館",
+        "j": "博物館",
+        "e": "museum"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "It started raining, so we went to the museum instead of the park.": [
+      {
+        "t": "It "
+      },
+      {
+        "t": "started raining",
+        "z": "開始下雨",
+        "j": "雨が降り始めました",
+        "e": "started raining"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "went",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "museum",
+        "z": "博物館",
+        "j": "博物館",
+        "e": "museum"
+      },
+      {
+        "t": " instead of the "
+      },
+      {
+        "t": "park",
+        "z": "公園",
+        "j": "公園",
+        "e": "park"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I bought some tuna at the fish shop.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "tuna",
+        "z": "鮪魚",
+        "j": "まぐろ",
+        "e": "tuna"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "fish shop",
+        "z": "魚店",
+        "j": "魚屋",
+        "e": "fish shop"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The tuna looked fresh at the market, so I bought some for dinner.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "tuna",
+        "z": "鮪魚",
+        "j": "まぐろ",
+        "e": "tuna"
+      },
+      {
+        "t": " looked "
+      },
+      {
+        "t": "fresh",
+        "z": "新鮮",
+        "j": "新鮮",
+        "e": "fresh"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "market",
+        "z": "市場",
+        "j": "市場",
+        "e": "market"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " some for "
+      },
+      {
+        "t": "dinner",
+        "z": "晚餐",
+        "j": "晩ご飯",
+        "e": "dinner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I ordered a seafood rice bowl for lunch.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "ordered",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "seafood rice bowl",
+        "z": "海鮮蓋飯",
+        "j": "海鮮丼",
+        "e": "seafood rice bowl"
+      },
+      {
+        "t": " for "
+      },
+      {
+        "t": "lunch",
+        "z": "午餐",
+        "j": "お昼",
+        "e": "lunch"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My friend recommended the seafood rice bowl, so I tried it for the first time.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "recommended",
+        "z": "推薦",
+        "j": "勧めてくれました",
+        "e": "recommended"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "seafood rice bowl",
+        "z": "海鮮蓋飯",
+        "j": "海鮮丼",
+        "e": "seafood rice bowl"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "tried",
+        "z": "試吃了",
+        "j": "食べてみました",
+        "e": "tried"
+      },
+      {
+        "t": " it for the "
+      },
+      {
+        "t": "first time",
+        "z": "第一次",
+        "j": "初めて",
+        "e": "first time"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put a slice of rolled omelette in my lunch box.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "slice",
+        "z": "一片",
+        "j": "一切れ",
+        "e": "slice"
+      },
+      {
+        "t": " of "
+      },
+      {
+        "t": "rolled omelette",
+        "z": "玉子燒",
+        "j": "卵焼き",
+        "e": "rolled omelette"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "lunch box",
+        "z": "便當盒",
+        "j": "お弁当箱",
+        "e": "lunch box"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I let the rolled omelette cool a little before slicing it so it would hold its shape.": [
+      {
+        "t": "I let the "
+      },
+      {
+        "t": "rolled omelette",
+        "z": "玉子燒",
+        "j": "卵焼き",
+        "e": "rolled omelette"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "cool",
+        "z": "放涼",
+        "j": "冷める",
+        "e": "cool"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "a little",
+        "z": "稍微",
+        "j": "少し",
+        "e": "a little"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "slicing",
+        "z": "切片",
+        "j": "切る",
+        "e": "slicing"
+      },
+      {
+        "t": " it so it would "
+      },
+      {
+        "t": "hold",
+        "z": "維持",
+        "j": "保つ",
+        "e": "hold"
+      },
+      {
+        "t": " its "
+      },
+      {
+        "t": "shape",
+        "z": "形狀",
+        "j": "形",
+        "e": "shape"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We walked through the torii gate together.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "walked",
+        "z": "走過",
+        "j": "くぐりました",
+        "e": "walked"
+      },
+      {
+        "t": " through the "
+      },
+      {
+        "t": "torii gate",
+        "z": "鳥居",
+        "j": "鳥居",
+        "e": "torii gate"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "together",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We decided to meet by the torii gate because it was easy to find.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "decided",
+        "z": "決定",
+        "j": "ことにしました",
+        "e": "decided"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "meet",
+        "z": "碰面",
+        "j": "待ち合わせる",
+        "e": "meet"
+      },
+      {
+        "t": " by the "
+      },
+      {
+        "t": "torii gate",
+        "z": "鳥居",
+        "j": "鳥居",
+        "e": "torii gate"
+      },
+      {
+        "t": " because it was "
+      },
+      {
+        "t": "easy",
+        "z": "容易",
+        "j": "やすい",
+        "e": "easy"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "find",
+        "z": "找到",
+        "j": "見つける",
+        "e": "find"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We walked along the shrine approach together.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "walked",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked"
+      },
+      {
+        "t": " along the "
+      },
+      {
+        "t": "shrine approach",
+        "z": "參道",
+        "j": "参道",
+        "e": "shrine approach"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "together",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The shrine approach was crowded, so we took a quieter path back.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "shrine approach",
+        "z": "參道",
+        "j": "参道",
+        "e": "shrine approach"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠",
+        "j": "混んでいました",
+        "e": "crowded"
+      },
+      {
+        "t": ", so we "
+      },
+      {
+        "t": "took",
+        "z": "走了",
+        "j": "通りました",
+        "e": "took"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "quieter",
+        "z": "更安靜的",
+        "j": "もっと静かな",
+        "e": "quieter"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "path",
+        "z": "路",
+        "j": "道",
+        "e": "path"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "back",
+        "z": "回去",
+        "j": "帰りに",
+        "e": "back"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I washed my hands at the purification pavilion.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "washed",
+        "z": "洗了",
+        "j": "洗いました",
+        "e": "washed"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "hands",
+        "z": "手",
+        "j": "手",
+        "e": "hands"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "purification pavilion",
+        "z": "手水舍",
+        "j": "手水舎",
+        "e": "purification pavilion"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "There was a line at the purification pavilion, so I waited until it was my turn.": [
+      {
+        "t": "There was a "
+      },
+      {
+        "t": "line",
+        "z": "隊伍",
+        "j": "列",
+        "e": "line"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "purification pavilion",
+        "z": "手水舍",
+        "j": "手水舎",
+        "e": "purification pavilion"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " until it was my "
+      },
+      {
+        "t": "turn",
+        "z": "輪到我",
+        "j": "自分の番",
+        "e": "turn"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I wrote a wish on a votive plaque.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "wrote",
+        "z": "寫了",
+        "j": "書きました",
+        "e": "wrote"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "wish",
+        "z": "願望",
+        "j": "願い事",
+        "e": "wish"
+      },
+      {
+        "t": " on a "
+      },
+      {
+        "t": "votive plaque",
+        "z": "繪馬",
+        "j": "絵馬",
+        "e": "votive plaque"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "After I finished writing on my votive plaque, I hung it next to the others.": [
+      {
+        "t": "After I "
+      },
+      {
+        "t": "finished writing",
+        "z": "寫完",
+        "j": "書き終えました",
+        "e": "finished writing"
+      },
+      {
+        "t": " on my "
+      },
+      {
+        "t": "votive plaque",
+        "z": "繪馬",
+        "j": "絵馬",
+        "e": "votive plaque"
+      },
+      {
+        "t": ", I "
+      },
+      {
+        "t": "hung",
+        "z": "掛了",
+        "j": "掛けました",
+        "e": "hung"
+      },
+      {
+        "t": " it next to the "
+      },
+      {
+        "t": "others",
+        "z": "其他繪馬",
+        "j": "ほかの絵馬",
+        "e": "others"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I keep an amulet in my bag.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "keep",
+        "z": "放著",
+        "j": "入れています",
+        "e": "keep"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "amulet",
+        "z": "御守",
+        "j": "お守り",
+        "e": "amulet"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My friend gave me an amulet because I had an exam coming up.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "friend",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "gave",
+        "z": "送了",
+        "j": "くれました",
+        "e": "gave"
+      },
+      {
+        "t": " me an "
+      },
+      {
+        "t": "amulet",
+        "z": "御守",
+        "j": "お守り",
+        "e": "amulet"
+      },
+      {
+        "t": " because I had an "
+      },
+      {
+        "t": "exam",
+        "z": "考試",
+        "j": "試験",
+        "e": "exam"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "coming up",
+        "z": "快到了",
+        "j": "近い",
+        "e": "coming up"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "At the shrine, sake barrels are lined up.": [
+      {
+        "t": "At the "
+      },
+      {
+        "t": "shrine",
+        "z": "神社",
+        "j": "神社",
+        "e": "shrine"
+      },
+      {
+        "t": ", "
+      },
+      {
+        "t": "sake barrels",
+        "z": "酒樽",
+        "j": "酒樽",
+        "e": "sake barrels"
+      },
+      {
+        "t": " are "
+      },
+      {
+        "t": "lined up",
+        "z": "成排擺放",
+        "j": "並んでいます",
+        "e": "lined up"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The patterns on the sake barrels were all different, so I looked closely at each one.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "patterns",
+        "z": "圖案",
+        "j": "模様",
+        "e": "patterns"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "sake barrels",
+        "z": "酒樽",
+        "j": "酒樽",
+        "e": "sake barrels"
+      },
+      {
+        "t": " were all "
+      },
+      {
+        "t": "different",
+        "z": "不同",
+        "j": "違いました",
+        "e": "different"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "looked closely",
+        "z": "仔細看",
+        "j": "じっくり見ました",
+        "e": "looked closely"
+      },
+      {
+        "t": " at "
+      },
+      {
+        "t": "each one",
+        "z": "每一個",
+        "j": "一つずつ",
+        "e": "each one"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The large video screen is showing an ad.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "large video screen",
+        "z": "大型電視牆",
+        "j": "大型ビジョン",
+        "e": "large video screen"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "showing",
+        "z": "正在播",
+        "j": "流しています",
+        "e": "showing"
+      },
+      {
+        "t": " an "
+      },
+      {
+        "t": "ad",
+        "z": "廣告",
+        "j": "広告",
+        "e": "ad"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "A video started playing on the large video screen, so I stopped to see what it was.": [
+      {
+        "t": "A "
+      },
+      {
+        "t": "video",
+        "z": "影片",
+        "j": "映像",
+        "e": "video"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "started playing",
+        "z": "開始播放",
+        "j": "流れ始めました",
+        "e": "started playing"
+      },
+      {
+        "t": " on the "
+      },
+      {
+        "t": "large video screen",
+        "z": "大型電視牆",
+        "j": "大型ビジョン",
+        "e": "large video screen"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "stopped",
+        "z": "停下",
+        "j": "立ち止まりました",
+        "e": "stopped"
+      },
+      {
+        "t": " to "
+      },
+      {
+        "t": "see",
+        "z": "看",
+        "j": "見る",
+        "e": "see"
+      },
+      {
+        "t": " what it was."
+      }
+    ],
+    "There's a bronze statue of a dog in the square.": [
+      {
+        "t": "There's a "
+      },
+      {
+        "t": "bronze statue",
+        "z": "銅像",
+        "j": "銅像",
+        "e": "bronze statue"
+      },
+      {
+        "t": " of a "
+      },
+      {
+        "t": "dog",
+        "z": "狗",
+        "j": "犬",
+        "e": "dog"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "square",
+        "z": "廣場",
+        "j": "広場",
+        "e": "square"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I took a photo of the bronze statue before I left the park.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "took",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "photo",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "bronze statue",
+        "z": "銅像",
+        "j": "銅像",
+        "e": "bronze statue"
+      },
+      {
+        "t": " before I "
+      },
+      {
+        "t": "left",
+        "z": "離開",
+        "j": "出ました",
+        "e": "left"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "park",
+        "z": "公園",
+        "j": "公園",
+        "e": "park"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We paid our respects at a Shinto shrine on New Year's Day.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "paid our respects",
+        "z": "參拜了",
+        "j": "お参りしました",
+        "e": "paid our respects"
+      },
+      {
+        "t": " at a "
+      },
+      {
+        "t": "Shinto shrine",
+        "z": "神社",
+        "j": "神社",
+        "e": "Shinto shrine"
+      },
+      {
+        "t": " on "
+      },
+      {
+        "t": "New Year's Day",
+        "z": "元旦",
+        "j": "元日",
+        "e": "new year's day"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The path to the Shinto shrine was crowded, so I took a different route home.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "path",
+        "z": "路",
+        "j": "道",
+        "e": "path"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "Shinto shrine",
+        "z": "神社",
+        "j": "神社",
+        "e": "Shinto shrine"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "crowded",
+        "z": "擁擠",
+        "j": "混んでいました",
+        "e": "crowded"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "took",
+        "z": "走了",
+        "j": "通りました",
+        "e": "took"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "different",
+        "z": "另一條",
+        "j": "別の",
+        "e": "different"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "route",
+        "z": "路線",
+        "j": "道",
+        "e": "route"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "home",
+        "z": "回家",
+        "j": "家へ",
+        "e": "home"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "There's a Buddhist temple near the station.": [
+      {
+        "t": "There's a "
+      },
+      {
+        "t": "Buddhist temple",
+        "z": "寺",
+        "j": "お寺",
+        "e": "Buddhist temple"
+      },
+      {
+        "t": " near the "
+      },
+      {
+        "t": "station",
+        "z": "車站",
+        "j": "駅",
+        "e": "station"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The gate of the Buddhist temple was closed, so I turned back.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "gate",
+        "z": "門",
+        "j": "門",
+        "e": "gate"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "Buddhist temple",
+        "z": "寺",
+        "j": "お寺",
+        "e": "Buddhist temple"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "closed",
+        "z": "關著",
+        "j": "閉まっていました",
+        "e": "closed"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "turned back",
+        "z": "折返",
+        "j": "引き返しました",
+        "e": "turned back"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The temple main hall is straight ahead.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "temple main hall",
+        "z": "本堂",
+        "j": "本堂",
+        "e": "temple main hall"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "straight ahead",
+        "z": "就在正前方",
+        "j": "正面",
+        "e": "straight ahead"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "We took off our shoes before entering the temple main hall, as the sign instructed.": [
+      {
+        "t": "We "
+      },
+      {
+        "t": "took off",
+        "z": "脫下",
+        "j": "脱ぎました",
+        "e": "took off"
+      },
+      {
+        "t": " our "
+      },
+      {
+        "t": "shoes",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes"
+      },
+      {
+        "t": " before "
+      },
+      {
+        "t": "entering",
+        "z": "進入",
+        "j": "入る",
+        "e": "entering"
+      },
+      {
+        "t": " the "
+      },
+      {
+        "t": "temple main hall",
+        "z": "本堂",
+        "j": "本堂",
+        "e": "temple main hall"
+      },
+      {
+        "t": ", as the "
+      },
+      {
+        "t": "sign",
+        "z": "告示",
+        "j": "掲示",
+        "e": "sign"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "instructed",
+        "z": "指示",
+        "j": "指示しました",
+        "e": "instructed"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I prayed in front of the shrine worship hall.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "prayed",
+        "z": "參拜了",
+        "j": "お参りしました",
+        "e": "prayed"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "front",
+        "z": "前方",
+        "j": "前",
+        "e": "front"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "shrine worship hall",
+        "z": "拜殿",
+        "j": "拝殿",
+        "e": "shrine worship hall"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "People were praying in front of the shrine worship hall, so I waited off to one side.": [
+      {
+        "t": "People",
+        "z": "人們",
+        "j": "人",
+        "e": "people"
+      },
+      {
+        "t": " were "
+      },
+      {
+        "t": "praying",
+        "z": "參拜",
+        "j": "お参りしていました",
+        "e": "praying"
+      },
+      {
+        "t": " in "
+      },
+      {
+        "t": "front",
+        "z": "前方",
+        "j": "前",
+        "e": "front"
+      },
+      {
+        "t": " of the "
+      },
+      {
+        "t": "shrine worship hall",
+        "z": "拜殿",
+        "j": "拝殿",
+        "e": "shrine worship hall"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "waited",
+        "z": "等候",
+        "j": "待ちました",
+        "e": "waited"
+      },
+      {
+        "t": " off to one "
+      },
+      {
+        "t": "side",
+        "z": "旁邊",
+        "j": "脇",
+        "e": "side"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Smoke is rising from the incense burner.": [
+      {
+        "t": "Smoke",
+        "z": "煙",
+        "j": "煙",
+        "e": "smoke"
+      },
+      {
+        "t": " is "
+      },
+      {
+        "t": "rising",
+        "z": "升起",
+        "j": "上がっています",
+        "e": "rising"
+      },
+      {
+        "t": " from the "
+      },
+      {
+        "t": "incense burner",
+        "z": "香爐",
+        "j": "香炉",
+        "e": "incense burner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "Before we went to the temple main hall, we lit some incense sticks and placed them upright in the incense burner.": [
+      {
+        "t": "Before we "
+      },
+      {
+        "t": "went",
+        "z": "前往",
+        "j": "向かいました",
+        "e": "went"
+      },
+      {
+        "t": " to the "
+      },
+      {
+        "t": "temple main hall",
+        "z": "本堂",
+        "j": "本堂",
+        "e": "temple main hall"
+      },
+      {
+        "t": ", we "
+      },
+      {
+        "t": "lit",
+        "z": "點燃",
+        "j": "火をつけました",
+        "e": "lit"
+      },
+      {
+        "t": " some "
+      },
+      {
+        "t": "incense sticks",
+        "z": "線香",
+        "j": "線香",
+        "e": "incense sticks"
+      },
+      {
+        "t": " and "
+      },
+      {
+        "t": "placed",
+        "z": "放入",
+        "j": "入れました",
+        "e": "placed"
+      },
+      {
+        "t": " them "
+      },
+      {
+        "t": "upright",
+        "z": "直立",
+        "j": "立てて",
+        "e": "upright"
+      },
+      {
+        "t": " in the "
+      },
+      {
+        "t": "incense burner",
+        "z": "香爐",
+        "j": "香炉",
+        "e": "incense burner"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I received a goshuin at the Buddhist temple.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "received",
+        "z": "領到了",
+        "j": "いただきました",
+        "e": "received"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "goshuin",
+        "z": "御朱印",
+        "j": "御朱印",
+        "e": "goshuin"
+      },
+      {
+        "t": " at the "
+      },
+      {
+        "t": "Buddhist temple",
+        "z": "寺",
+        "j": "お寺",
+        "e": "buddhist temple"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "The goshuin I received was on a separate sheet, so I pasted it into my goshuin book when I got home.": [
+      {
+        "t": "The "
+      },
+      {
+        "t": "goshuin",
+        "z": "御朱印",
+        "j": "御朱印",
+        "e": "goshuin"
+      },
+      {
+        "t": " I "
+      },
+      {
+        "t": "received",
+        "z": "領到",
+        "j": "いただきました",
+        "e": "received"
+      },
+      {
+        "t": " was on a "
+      },
+      {
+        "t": "separate",
+        "z": "單獨的",
+        "j": "別の",
+        "e": "separate"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "sheet",
+        "z": "紙",
+        "j": "紙",
+        "e": "sheet"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "pasted",
+        "z": "貼了",
+        "j": "貼りました",
+        "e": "pasted"
+      },
+      {
+        "t": " it into my "
+      },
+      {
+        "t": "goshuin book",
+        "z": "御朱印帳",
+        "j": "御朱印帳",
+        "e": "goshuin book"
+      },
+      {
+        "t": " when I "
+      },
+      {
+        "t": "got home",
+        "z": "回到家",
+        "j": "家に帰りました",
+        "e": "got home"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "I put my goshuin book in my bag.": [
+      {
+        "t": "I "
+      },
+      {
+        "t": "put",
+        "z": "放了",
+        "j": "入れました",
+        "e": "put"
+      },
+      {
+        "t": " my "
+      },
+      {
+        "t": "goshuin book",
+        "z": "御朱印帳",
+        "j": "御朱印帳",
+        "e": "goshuin book"
+      },
+      {
+        "t": " in my "
+      },
+      {
+        "t": "bag",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag"
+      },
+      {
+        "t": "."
+      }
+    ],
+    "My goshuin book was nearly full, so I bought a spare.": [
+      {
+        "t": "My "
+      },
+      {
+        "t": "goshuin book",
+        "z": "御朱印帳",
+        "j": "御朱印帳",
+        "e": "goshuin book"
+      },
+      {
+        "t": " was "
+      },
+      {
+        "t": "nearly",
+        "z": "快要",
+        "j": "もうすぐ",
+        "e": "nearly"
+      },
+      {
+        "t": " "
+      },
+      {
+        "t": "full",
+        "z": "滿",
+        "j": "いっぱい",
+        "e": "full"
+      },
+      {
+        "t": ", so I "
+      },
+      {
+        "t": "bought",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought"
+      },
+      {
+        "t": " a "
+      },
+      {
+        "t": "spare",
+        "z": "備用的",
+        "j": "予備",
+        "e": "spare"
+      },
+      {
+        "t": "."
+      }
+    ]
+  },
+  "ja": {
+    "お寺でおみくじを引きました。": [
+      {
+        "t": "お寺",
+        "z": "寺院",
+        "j": "お寺",
+        "e": "temple",
+        "r": "おてら"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "おみくじ",
+        "z": "籤詩",
+        "j": "おみくじ",
+        "e": "fortune slip",
+        "r": "おみくじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "引きました",
+        "z": "抽了",
+        "j": "引きました",
+        "e": "drew",
+        "r": "ひきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "あとで読み返せるように、おみくじを財布にしまいました。": [
+      {
+        "t": "あとで",
+        "z": "之後",
+        "j": "あとで",
+        "e": "later",
+        "r": "あとで"
+      },
+      {
+        "t": "読み返せる",
+        "z": "能重讀",
+        "j": "読み返せる",
+        "e": "can reread",
+        "r": "よみかえせる"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "おみくじ",
+        "z": "籤詩",
+        "j": "おみくじ",
+        "e": "fortune slip",
+        "r": "おみくじ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "財布",
+        "z": "錢包",
+        "j": "財布",
+        "e": "wallet",
+        "r": "さいふ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "しまいました",
+        "z": "收起來了",
+        "j": "しまいました",
+        "e": "put away",
+        "r": "しまいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "賽銭箱に硬貨を一枚入れました。": [
+      {
+        "t": "賽銭箱",
+        "z": "香油錢箱",
+        "j": "賽銭箱",
+        "e": "offering box",
+        "r": "さいせんばこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "硬貨",
+        "z": "硬幣",
+        "j": "硬貨",
+        "e": "coin",
+        "r": "こうか"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一枚",
+        "z": "一枚",
+        "j": "一枚",
+        "e": "one",
+        "r": "いちまい"
+      },
+      {
+        "t": "入れました",
+        "z": "投了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お参りする前に、ポケットから小銭を出して、賽銭箱に入れました。": [
+      {
+        "t": "お参りする",
+        "z": "參拜",
+        "j": "お参りする",
+        "e": "pray",
+        "r": "おまいりする"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "ポケット",
+        "z": "口袋",
+        "j": "ポケット",
+        "e": "pocket",
+        "r": "ポケット"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "小銭",
+        "z": "零錢",
+        "j": "小銭",
+        "e": "change",
+        "r": "こぜに"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出して",
+        "z": "拿出來",
+        "j": "出して",
+        "e": "took out",
+        "r": "だして"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "賽銭箱",
+        "z": "香油錢箱",
+        "j": "賽銭箱",
+        "e": "offering box",
+        "r": "さいせんばこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "投進去",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お土産に人形焼を買いました。": [
+      {
+        "t": "お土産",
+        "z": "伴手禮",
+        "j": "お土産",
+        "e": "souvenir",
+        "r": "おみやげ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "人形焼",
+        "z": "人形燒",
+        "j": "人形焼",
+        "e": "ningyo-yaki",
+        "r": "にんぎょうやき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "人形焼が温かいうちに、友達と分けて食べました。": [
+      {
+        "t": "人形焼",
+        "z": "人形燒",
+        "j": "人形焼",
+        "e": "ningyo-yaki",
+        "r": "にんぎょうやき"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "温かい",
+        "z": "溫熱",
+        "j": "温かい",
+        "e": "warm",
+        "r": "あたたかい"
+      },
+      {
+        "t": "うち",
+        "z": "趁還……時",
+        "j": "うち",
+        "e": "while",
+        "r": "うち"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "分けて",
+        "z": "分著",
+        "j": "分けて",
+        "e": "shared",
+        "r": "わけて"
+      },
+      {
+        "t": "食べました",
+        "z": "吃了",
+        "j": "食べました",
+        "e": "ate",
+        "r": "たべました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "カモが池で泳いでいます。": [
+      {
+        "t": "カモ",
+        "z": "鴨子",
+        "j": "カモ",
+        "e": "ducks",
+        "r": "カモ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "池",
+        "z": "池塘",
+        "j": "池",
+        "e": "pond",
+        "r": "いけ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "泳いでいます",
+        "z": "正在游泳",
+        "j": "泳いでいます",
+        "e": "are swimming",
+        "r": "およいでいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨がやんでから、池の周りを歩きました。": [
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "やんで",
+        "z": "停了",
+        "j": "やんで",
+        "e": "stopped",
+        "r": "やんで"
+      },
+      {
+        "t": "から、"
+      },
+      {
+        "t": "池",
+        "z": "池塘",
+        "j": "池",
+        "e": "pond",
+        "r": "いけ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "周り",
+        "z": "周圍",
+        "j": "周り",
+        "e": "around",
+        "r": "まわり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "歩きました",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked",
+        "r": "あるきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "日曜日に動物園へ行きました。": [
+      {
+        "t": "日曜日",
+        "z": "星期日",
+        "j": "日曜日",
+        "e": "Sunday",
+        "r": "にちようび"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "動物園",
+        "z": "動物園",
+        "j": "動物園",
+        "e": "zoo",
+        "r": "どうぶつえん"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "行きました",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went",
+        "r": "いきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "子どもたちが疲れたので、早めに動物園を出ました。": [
+      {
+        "t": "子どもたち",
+        "z": "孩子們",
+        "j": "子どもたち",
+        "e": "kids",
+        "r": "こどもたち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "疲れた",
+        "z": "累了",
+        "j": "疲れた",
+        "e": "got tired",
+        "r": "つかれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "早めに",
+        "z": "提早",
+        "j": "早めに",
+        "e": "early",
+        "r": "はやめに"
+      },
+      {
+        "t": "動物園",
+        "z": "動物園",
+        "j": "動物園",
+        "e": "zoo",
+        "r": "どうぶつえん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出ました",
+        "z": "離開了",
+        "j": "出ました",
+        "e": "left",
+        "r": "でました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "博物館で恐竜の骨格標本を見ました。": [
+      {
+        "t": "博物館",
+        "z": "博物館",
+        "j": "博物館",
+        "e": "museum",
+        "r": "はくぶつかん"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "恐竜",
+        "z": "恐龍",
+        "j": "恐竜",
+        "e": "dinosaur",
+        "r": "きょうりゅう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "骨格標本",
+        "z": "骨架標本",
+        "j": "骨格標本",
+        "e": "skeleton specimen",
+        "r": "こっかくひょうほん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "見ました",
+        "z": "看到了",
+        "j": "見ました",
+        "e": "saw",
+        "r": "みました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "雨が降り始めたので、公園に行くのをやめて、博物館へ行きました。": [
+      {
+        "t": "雨",
+        "z": "雨",
+        "j": "雨",
+        "e": "rain",
+        "r": "あめ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "降り始めた",
+        "z": "開始下",
+        "j": "降り始めた",
+        "e": "started falling",
+        "r": "ふりはじめた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "公園",
+        "z": "公園",
+        "j": "公園",
+        "e": "park",
+        "r": "こうえん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "行く",
+        "z": "去",
+        "j": "行く",
+        "e": "go",
+        "r": "いく"
+      },
+      {
+        "t": "のを"
+      },
+      {
+        "t": "やめて",
+        "z": "取消",
+        "j": "やめて",
+        "e": "decided against",
+        "r": "やめて"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "博物館",
+        "z": "博物館",
+        "j": "博物館",
+        "e": "museum",
+        "r": "はくぶつかん"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "行きました",
+        "z": "去了",
+        "j": "行きました",
+        "e": "went",
+        "r": "いきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "魚屋でまぐろを買いました。": [
+      {
+        "t": "魚屋",
+        "z": "魚店",
+        "j": "魚屋",
+        "e": "fish shop",
+        "r": "さかなや"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "まぐろ",
+        "z": "鮪魚",
+        "j": "まぐろ",
+        "e": "tuna",
+        "r": "まぐろ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "市場のまぐろが新鮮そうだったので、晩ご飯用に少し買いました。": [
+      {
+        "t": "市場",
+        "z": "市場",
+        "j": "市場",
+        "e": "market",
+        "r": "いちば"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "まぐろ",
+        "z": "鮪魚",
+        "j": "まぐろ",
+        "e": "tuna",
+        "r": "まぐろ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "新鮮そうだった",
+        "z": "看起來很新鮮",
+        "j": "新鮮そうだった",
+        "e": "looked fresh",
+        "r": "しんせんそうだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "晩ご飯用",
+        "z": "晚餐用",
+        "j": "晩ご飯用",
+        "e": "for dinner",
+        "r": "ばんごはんよう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "少し",
+        "z": "一些",
+        "j": "少し",
+        "e": "some",
+        "r": "すこし"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お昼に海鮮丼を注文しました。": [
+      {
+        "t": "お昼",
+        "z": "午餐",
+        "j": "お昼",
+        "e": "lunch",
+        "r": "おひる"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "海鮮丼",
+        "z": "海鮮蓋飯",
+        "j": "海鮮丼",
+        "e": "seafood rice bowl",
+        "r": "かいせんどん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "注文しました",
+        "z": "點了",
+        "j": "注文しました",
+        "e": "ordered",
+        "r": "ちゅうもんしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "友達が海鮮丼を勧めてくれたので、初めて食べてみました。": [
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "海鮮丼",
+        "z": "海鮮蓋飯",
+        "j": "海鮮丼",
+        "e": "seafood rice bowl",
+        "r": "かいせんどん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "勧めてくれた",
+        "z": "推薦給我",
+        "j": "勧めてくれた",
+        "e": "recommended to me",
+        "r": "すすめてくれた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "初めて",
+        "z": "第一次",
+        "j": "初めて",
+        "e": "for the first time",
+        "r": "はじめて"
+      },
+      {
+        "t": "食べてみました",
+        "z": "試著吃了",
+        "j": "食べてみました",
+        "e": "tried eating",
+        "r": "たべてみました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お弁当箱に卵焼きを一切れ入れました。": [
+      {
+        "t": "お弁当箱",
+        "z": "便當盒",
+        "j": "お弁当箱",
+        "e": "lunch box",
+        "r": "おべんとうばこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "卵焼き",
+        "z": "玉子燒",
+        "j": "卵焼き",
+        "e": "rolled omelette",
+        "r": "たまごやき"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一切れ",
+        "z": "一片",
+        "j": "一切れ",
+        "e": "one slice",
+        "r": "ひときれ"
+      },
+      {
+        "t": "入れました",
+        "z": "放了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "形が崩れないように、卵焼きは少し冷ましてから切りました。": [
+      {
+        "t": "形",
+        "z": "形狀",
+        "j": "形",
+        "e": "shape",
+        "r": "かたち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "崩れない",
+        "z": "不會散掉",
+        "j": "崩れない",
+        "e": "won’t fall apart",
+        "r": "くずれない"
+      },
+      {
+        "t": "ように、"
+      },
+      {
+        "t": "卵焼き",
+        "z": "玉子燒",
+        "j": "卵焼き",
+        "e": "rolled omelette",
+        "r": "たまごやき"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "少し",
+        "z": "稍微",
+        "j": "少し",
+        "e": "a little",
+        "r": "すこし"
+      },
+      {
+        "t": "冷まして",
+        "z": "放涼",
+        "j": "冷まして",
+        "e": "let it cool",
+        "r": "さまして"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "切りました",
+        "z": "切了",
+        "j": "切りました",
+        "e": "sliced it",
+        "r": "きりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "一緒に鳥居をくぐりました。": [
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together",
+        "r": "いっしょに"
+      },
+      {
+        "t": "鳥居",
+        "z": "鳥居",
+        "j": "鳥居",
+        "e": "torii gate",
+        "r": "とりい"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "くぐりました",
+        "z": "走過",
+        "j": "くぐりました",
+        "e": "walked through",
+        "r": "くぐりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "鳥居は見つけやすいので、そのそばで待ち合わせることにしました。": [
+      {
+        "t": "鳥居",
+        "z": "鳥居",
+        "j": "鳥居",
+        "e": "torii gate",
+        "r": "とりい"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "見つけやすい",
+        "z": "容易找到",
+        "j": "見つけやすい",
+        "e": "easy to find",
+        "r": "みつけやすい"
+      },
+      {
+        "t": "ので、その"
+      },
+      {
+        "t": "そば",
+        "z": "旁邊",
+        "j": "そば",
+        "e": "nearby",
+        "r": "そば"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ち合わせる",
+        "z": "碰面",
+        "j": "待ち合わせる",
+        "e": "meet up",
+        "r": "まちあわせる"
+      },
+      {
+        "t": "ことにしました。"
+      }
+    ],
+    "一緒に参道を歩きました。": [
+      {
+        "t": "一緒に",
+        "z": "一起",
+        "j": "一緒に",
+        "e": "together",
+        "r": "いっしょに"
+      },
+      {
+        "t": "参道",
+        "z": "參道",
+        "j": "参道",
+        "e": "shrine approach",
+        "r": "さんどう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "歩きました",
+        "z": "走了",
+        "j": "歩きました",
+        "e": "walked along",
+        "r": "あるきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "参道が混んでいたので、帰りはもっと静かな道を通りました。": [
+      {
+        "t": "参道",
+        "z": "參道",
+        "j": "参道",
+        "e": "shrine approach",
+        "r": "さんどう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "很擁擠",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "帰り",
+        "z": "回程",
+        "j": "帰り",
+        "e": "the way back",
+        "r": "かえり"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "もっと",
+        "z": "更",
+        "j": "もっと",
+        "e": "more",
+        "r": "もっと"
+      },
+      {
+        "t": "静かな",
+        "z": "安靜的",
+        "j": "静かな",
+        "e": "quiet",
+        "r": "しずかな"
+      },
+      {
+        "t": "道",
+        "z": "路",
+        "j": "道",
+        "e": "path",
+        "r": "みち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "通りました",
+        "z": "走了",
+        "j": "通りました",
+        "e": "took",
+        "r": "とおりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "手水舎で手を洗いました。": [
+      {
+        "t": "手水舎",
+        "z": "手水舍",
+        "j": "手水舎",
+        "e": "purification pavilion",
+        "r": "てみずや"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "手",
+        "z": "手",
+        "j": "手",
+        "e": "hands",
+        "r": "て"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "洗いました",
+        "z": "洗了",
+        "j": "洗いました",
+        "e": "washed",
+        "r": "あらいました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "手水舎に列ができていたので、自分の番まで待ちました。": [
+      {
+        "t": "手水舎",
+        "z": "手水舍",
+        "j": "手水舎",
+        "e": "purification pavilion",
+        "r": "てみずや"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "列",
+        "z": "隊伍",
+        "j": "列",
+        "e": "line",
+        "r": "れつ"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "できていた",
+        "z": "排了隊",
+        "j": "できていた",
+        "e": "had formed",
+        "r": "できていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "自分",
+        "z": "自己",
+        "j": "自分",
+        "e": "myself",
+        "r": "じぶん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "番",
+        "z": "順序",
+        "j": "番",
+        "e": "turn",
+        "r": "ばん"
+      },
+      {
+        "t": "まで"
+      },
+      {
+        "t": "待ちました",
+        "z": "等了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "絵馬に願い事を書きました。": [
+      {
+        "t": "絵馬",
+        "z": "繪馬",
+        "j": "絵馬",
+        "e": "votive plaque",
+        "r": "えま"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "願い事",
+        "z": "願望",
+        "j": "願い事",
+        "e": "wish",
+        "r": "ねがいごと"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書きました",
+        "z": "寫了",
+        "j": "書きました",
+        "e": "wrote",
+        "r": "かきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "絵馬を書き終えたあと、ほかの人の絵馬の横に掛けました。": [
+      {
+        "t": "絵馬",
+        "z": "繪馬",
+        "j": "絵馬",
+        "e": "votive plaque",
+        "r": "えま"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "書き終えた",
+        "z": "寫完了",
+        "j": "書き終えた",
+        "e": "finished writing",
+        "r": "かきおえた"
+      },
+      {
+        "t": "あと、"
+      },
+      {
+        "t": "ほか",
+        "z": "其他",
+        "j": "ほか",
+        "e": "other",
+        "r": "ほか"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "people",
+        "r": "ひと"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "絵馬",
+        "z": "繪馬",
+        "j": "絵馬",
+        "e": "votive plaque",
+        "r": "えま"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "横",
+        "z": "旁邊",
+        "j": "横",
+        "e": "beside",
+        "r": "よこ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "掛けました",
+        "z": "掛了",
+        "j": "掛けました",
+        "e": "hung",
+        "r": "かけました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "かばんにお守りを入れています。": [
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お守り",
+        "z": "御守",
+        "j": "お守り",
+        "e": "amulet",
+        "r": "おまもり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "入れています",
+        "z": "放著",
+        "j": "入れています",
+        "e": "keep in",
+        "r": "いれています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "試験が近かったので、友達がお守りをくれました。": [
+      {
+        "t": "試験",
+        "z": "考試",
+        "j": "試験",
+        "e": "exam",
+        "r": "しけん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "近かった",
+        "z": "快到了",
+        "j": "近かった",
+        "e": "was coming up",
+        "r": "ちかかった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "友達",
+        "z": "朋友",
+        "j": "友達",
+        "e": "friend",
+        "r": "ともだち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "お守り",
+        "z": "御守",
+        "j": "お守り",
+        "e": "amulet",
+        "r": "おまもり"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "くれました",
+        "z": "送給我",
+        "j": "くれました",
+        "e": "gave me",
+        "r": "くれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "神社に酒樽が並んでいます。": [
+      {
+        "t": "神社",
+        "z": "神社",
+        "j": "神社",
+        "e": "shrine",
+        "r": "じんじゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "酒樽",
+        "z": "酒樽",
+        "j": "酒樽",
+        "e": "sake barrel",
+        "r": "さかだる"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "並んでいます",
+        "z": "成排擺放",
+        "j": "並んでいます",
+        "e": "are lined up",
+        "r": "ならんでいます"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "酒樽の模様がそれぞれ違ったので、一つずつじっくり見ました。": [
+      {
+        "t": "酒樽",
+        "z": "酒樽",
+        "j": "酒樽",
+        "e": "sake barrel",
+        "r": "さかだる"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "模様",
+        "z": "圖案",
+        "j": "模様",
+        "e": "patterns",
+        "r": "もよう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "それぞれ",
+        "z": "各自",
+        "j": "それぞれ",
+        "e": "each",
+        "r": "それぞれ"
+      },
+      {
+        "t": "違った",
+        "z": "不同",
+        "j": "違った",
+        "e": "were different",
+        "r": "ちがった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "一つずつ",
+        "z": "一個一個",
+        "j": "一つずつ",
+        "e": "one by one",
+        "r": "ひとつずつ"
+      },
+      {
+        "t": "じっくり",
+        "z": "仔細地",
+        "j": "じっくり",
+        "e": "closely",
+        "r": "じっくり"
+      },
+      {
+        "t": "見ました",
+        "z": "看了",
+        "j": "見ました",
+        "e": "looked at",
+        "r": "みました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大型ビジョンで広告が流れています。": [
+      {
+        "t": "大型ビジョン",
+        "z": "大型電視牆",
+        "j": "大型ビジョン",
+        "e": "large video screen",
+        "r": "おおがたビジョン"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "広告",
+        "z": "廣告",
+        "j": "広告",
+        "e": "ad",
+        "r": "こうこく"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "流れています",
+        "z": "正在播放",
+        "j": "流れています",
+        "e": "is playing",
+        "r": "ながれています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "大型ビジョンで映像が流れ始めたので、何の映像か見ようと立ち止まりました。": [
+      {
+        "t": "大型ビジョン",
+        "z": "大型電視牆",
+        "j": "大型ビジョン",
+        "e": "large video screen",
+        "r": "おおがたビジョン"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "映像",
+        "z": "影片",
+        "j": "映像",
+        "e": "video",
+        "r": "えいぞう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "流れ始めた",
+        "z": "開始播放",
+        "j": "流れ始めた",
+        "e": "started playing",
+        "r": "ながれはじめた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "何",
+        "z": "什麼",
+        "j": "何",
+        "e": "what",
+        "r": "なん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "映像",
+        "z": "影片",
+        "j": "映像",
+        "e": "video",
+        "r": "えいぞう"
+      },
+      {
+        "t": "か"
+      },
+      {
+        "t": "見よう",
+        "z": "想看",
+        "j": "見よう",
+        "e": "wanted to see",
+        "r": "みよう"
+      },
+      {
+        "t": "と"
+      },
+      {
+        "t": "立ち止まりました",
+        "z": "停了下來",
+        "j": "立ち止まりました",
+        "e": "stopped",
+        "r": "たちどまりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "広場に犬の銅像があります。": [
+      {
+        "t": "広場",
+        "z": "廣場",
+        "j": "広場",
+        "e": "square",
+        "r": "ひろば"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "犬",
+        "z": "狗",
+        "j": "犬",
+        "e": "dog",
+        "r": "いぬ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "銅像",
+        "z": "銅像",
+        "j": "銅像",
+        "e": "bronze statue",
+        "r": "どうぞう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "z": "有",
+        "j": "あります",
+        "e": "there is",
+        "r": "あります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "公園を出る前に、銅像の写真を撮りました。": [
+      {
+        "t": "公園",
+        "z": "公園",
+        "j": "公園",
+        "e": "park",
+        "r": "こうえん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "出る",
+        "z": "離開",
+        "j": "出る",
+        "e": "leave",
+        "r": "でる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "銅像",
+        "z": "銅像",
+        "j": "銅像",
+        "e": "bronze statue",
+        "r": "どうぞう"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "写真",
+        "z": "照片",
+        "j": "写真",
+        "e": "photo",
+        "r": "しゃしん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "撮りました",
+        "z": "拍了",
+        "j": "撮りました",
+        "e": "took",
+        "r": "とりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "元日に神社にお参りしました。": [
+      {
+        "t": "元日",
+        "z": "元旦",
+        "j": "元日",
+        "e": "New Year's Day",
+        "r": "がんじつ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "神社",
+        "z": "神社",
+        "j": "神社",
+        "e": "Shinto shrine",
+        "r": "じんじゃ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お参りしました",
+        "z": "參拜了",
+        "j": "お参りしました",
+        "e": "paid our respects",
+        "r": "おまいりしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "神社へ続く道が混んでいたので、別の道を通って帰りました。": [
+      {
+        "t": "神社",
+        "z": "神社",
+        "j": "神社",
+        "e": "Shinto shrine",
+        "r": "じんじゃ"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "続く",
+        "z": "通往",
+        "j": "続く",
+        "e": "leads to",
+        "r": "つづく"
+      },
+      {
+        "t": "道",
+        "z": "路",
+        "j": "道",
+        "e": "path",
+        "r": "みち"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "混んでいた",
+        "z": "很擁擠",
+        "j": "混んでいた",
+        "e": "was crowded",
+        "r": "こんでいた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "別",
+        "z": "另一條",
+        "j": "別",
+        "e": "different",
+        "r": "べつ"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "道",
+        "z": "路",
+        "j": "道",
+        "e": "route",
+        "r": "みち"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "通って",
+        "z": "走了",
+        "j": "通って",
+        "e": "took",
+        "r": "とおって"
+      },
+      {
+        "t": "帰りました",
+        "z": "回家了",
+        "j": "帰りました",
+        "e": "went home",
+        "r": "かえりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "駅の近くにお寺があります。": [
+      {
+        "t": "駅",
+        "z": "車站",
+        "j": "駅",
+        "e": "station",
+        "r": "えき"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "近く",
+        "z": "附近",
+        "j": "近く",
+        "e": "nearby",
+        "r": "ちかく"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "お寺",
+        "z": "寺",
+        "j": "お寺",
+        "e": "Buddhist temple",
+        "r": "おてら"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "あります",
+        "z": "有",
+        "j": "あります",
+        "e": "there is",
+        "r": "あります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お寺の門が閉まっていたので、引き返しました。": [
+      {
+        "t": "お寺",
+        "z": "寺",
+        "j": "お寺",
+        "e": "Buddhist temple",
+        "r": "おてら"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "門",
+        "z": "門",
+        "j": "門",
+        "e": "gate",
+        "r": "もん"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "閉まっていた",
+        "z": "關著",
+        "j": "閉まっていた",
+        "e": "was closed",
+        "r": "しまっていた"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "引き返しました",
+        "z": "折返了",
+        "j": "引き返しました",
+        "e": "turned back",
+        "r": "ひきかえしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "本堂は正面にあります。": [
+      {
+        "t": "本堂",
+        "z": "本堂",
+        "j": "本堂",
+        "e": "temple main hall",
+        "r": "ほんどう"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "正面",
+        "z": "正前方",
+        "j": "正面",
+        "e": "straight ahead",
+        "r": "しょうめん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "あります",
+        "z": "位於",
+        "j": "あります",
+        "e": "is",
+        "r": "あります"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "掲示に従って、本堂に入る前に靴を脱ぎました。": [
+      {
+        "t": "掲示",
+        "z": "告示",
+        "j": "掲示",
+        "e": "sign",
+        "r": "けいじ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "従って",
+        "z": "按照",
+        "j": "従って",
+        "e": "following",
+        "r": "したがって"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "本堂",
+        "z": "本堂",
+        "j": "本堂",
+        "e": "temple main hall",
+        "r": "ほんどう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入る",
+        "z": "進入",
+        "j": "入る",
+        "e": "enter",
+        "r": "はいる"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "靴",
+        "z": "鞋子",
+        "j": "靴",
+        "e": "shoes",
+        "r": "くつ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "脱ぎました",
+        "z": "脫了",
+        "j": "脱ぎました",
+        "e": "took off",
+        "r": "ぬぎました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "拝殿の前でお参りしました。": [
+      {
+        "t": "拝殿",
+        "z": "拜殿",
+        "j": "拝殿",
+        "e": "shrine worship hall",
+        "r": "はいでん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "前",
+        "z": "前方",
+        "j": "前",
+        "e": "in front of",
+        "r": "まえ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "お参りしました",
+        "z": "參拜了",
+        "j": "お参りしました",
+        "e": "prayed",
+        "r": "おまいりしました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "拝殿の前でお参りしている人がいたので、脇で待ちました。": [
+      {
+        "t": "拝殿",
+        "z": "拜殿",
+        "j": "拝殿",
+        "e": "shrine worship hall",
+        "r": "はいでん"
+      },
+      {
+        "t": "の"
+      },
+      {
+        "t": "前",
+        "z": "前方",
+        "j": "前",
+        "e": "in front of",
+        "r": "まえ"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "お参りしている",
+        "z": "正在參拜",
+        "j": "お参りしている",
+        "e": "praying",
+        "r": "おまいりしている"
+      },
+      {
+        "t": "人",
+        "z": "人",
+        "j": "人",
+        "e": "people",
+        "r": "ひと"
+      },
+      {
+        "t": "がいたので、"
+      },
+      {
+        "t": "脇",
+        "z": "旁邊",
+        "j": "脇",
+        "e": "to one side",
+        "r": "わき"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "待ちました",
+        "z": "等候了",
+        "j": "待ちました",
+        "e": "waited",
+        "r": "まちました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "香炉から煙が上がっています。": [
+      {
+        "t": "香炉",
+        "z": "香爐",
+        "j": "香炉",
+        "e": "incense burner",
+        "r": "こうろ"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "煙",
+        "z": "煙",
+        "j": "煙",
+        "e": "smoke",
+        "r": "けむり"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "上がっています",
+        "z": "正升起",
+        "j": "上がっています",
+        "e": "is rising",
+        "r": "あがっています"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "本堂へ向かう前に、線香に火をつけて、香炉に立てました。": [
+      {
+        "t": "本堂",
+        "z": "本堂",
+        "j": "本堂",
+        "e": "temple main hall",
+        "r": "ほんどう"
+      },
+      {
+        "t": "へ"
+      },
+      {
+        "t": "向かう",
+        "z": "前往",
+        "j": "向かう",
+        "e": "head to",
+        "r": "むかう"
+      },
+      {
+        "t": "前",
+        "z": "之前",
+        "j": "前",
+        "e": "before",
+        "r": "まえ"
+      },
+      {
+        "t": "に、"
+      },
+      {
+        "t": "線香",
+        "z": "線香",
+        "j": "線香",
+        "e": "incense sticks",
+        "r": "せんこう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "火",
+        "z": "火",
+        "j": "火",
+        "e": "fire",
+        "r": "ひ"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "つけて",
+        "z": "點燃",
+        "j": "つけて",
+        "e": "lit",
+        "r": "つけて"
+      },
+      {
+        "t": "、"
+      },
+      {
+        "t": "香炉",
+        "z": "香爐",
+        "j": "香炉",
+        "e": "incense burner",
+        "r": "こうろ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "立てました",
+        "z": "直立插入",
+        "j": "立てました",
+        "e": "placed upright",
+        "r": "たてました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "お寺で御朱印をいただきました。": [
+      {
+        "t": "お寺",
+        "z": "寺",
+        "j": "お寺",
+        "e": "Buddhist temple",
+        "r": "おてら"
+      },
+      {
+        "t": "で"
+      },
+      {
+        "t": "御朱印",
+        "z": "御朱印",
+        "j": "御朱印",
+        "e": "goshuin",
+        "r": "ごしゅいん"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "いただきました",
+        "z": "領到了",
+        "j": "いただきました",
+        "e": "received",
+        "r": "いただきました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "いただいた御朱印は書き置きだったので、家に帰ってから御朱印帳に貼りました。": [
+      {
+        "t": "いただいた",
+        "z": "領到的",
+        "j": "いただいた",
+        "e": "received",
+        "r": "いただいた"
+      },
+      {
+        "t": "御朱印",
+        "z": "御朱印",
+        "j": "御朱印",
+        "e": "goshuin",
+        "r": "ごしゅいん"
+      },
+      {
+        "t": "は"
+      },
+      {
+        "t": "書き置き",
+        "z": "預先寫好的另紙",
+        "j": "書き置き",
+        "e": "prepared on a separate sheet",
+        "r": "かきおき"
+      },
+      {
+        "t": "だったので、"
+      },
+      {
+        "t": "家",
+        "z": "家",
+        "j": "家",
+        "e": "home",
+        "r": "いえ"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "帰って",
+        "z": "回到",
+        "j": "帰って",
+        "e": "got back",
+        "r": "かえって"
+      },
+      {
+        "t": "から"
+      },
+      {
+        "t": "御朱印帳",
+        "z": "御朱印帳",
+        "j": "御朱印帳",
+        "e": "goshuin book",
+        "r": "ごしゅいんちょう"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "貼りました",
+        "z": "貼了",
+        "j": "貼りました",
+        "e": "pasted in",
+        "r": "はりました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "御朱印帳をかばんに入れました。": [
+      {
+        "t": "御朱印帳",
+        "z": "御朱印帳",
+        "j": "御朱印帳",
+        "e": "goshuin book",
+        "r": "ごしゅいんちょう"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "かばん",
+        "z": "包包",
+        "j": "かばん",
+        "e": "bag",
+        "r": "かばん"
+      },
+      {
+        "t": "に"
+      },
+      {
+        "t": "入れました",
+        "z": "放了",
+        "j": "入れました",
+        "e": "put in",
+        "r": "いれました"
+      },
+      {
+        "t": "。"
+      }
+    ],
+    "御朱印帳がもうすぐいっぱいになりそうだったので、予備を一冊買いました。": [
+      {
+        "t": "御朱印帳",
+        "z": "御朱印帳",
+        "j": "御朱印帳",
+        "e": "goshuin book",
+        "r": "ごしゅいんちょう"
+      },
+      {
+        "t": "が"
+      },
+      {
+        "t": "もうすぐ",
+        "z": "快要",
+        "j": "もうすぐ",
+        "e": "nearly",
+        "r": "もうすぐ"
+      },
+      {
+        "t": "いっぱいになりそうだった",
+        "z": "看來就快用滿了",
+        "j": "いっぱいになりそうだった",
+        "e": "looked nearly full",
+        "r": "いっぱいになりそうだった"
+      },
+      {
+        "t": "ので、"
+      },
+      {
+        "t": "予備",
+        "z": "備用的",
+        "j": "予備",
+        "e": "spare",
+        "r": "よび"
+      },
+      {
+        "t": "を"
+      },
+      {
+        "t": "一冊",
+        "z": "一本",
+        "j": "一冊",
+        "e": "one",
+        "r": "いっさつ"
+      },
+      {
+        "t": "買いました",
+        "z": "買了",
+        "j": "買いました",
+        "e": "bought",
+        "r": "かいました"
+      },
+      {
+        "t": "。"
+      }
+    ]
+  }
+}

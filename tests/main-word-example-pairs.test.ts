@@ -39,11 +39,12 @@ import winterPostalRelease from "../docs/releases/winter-postal-2026-10.json";
 import winterCheckoutRelease from "../docs/releases/winter-checkout-2026-10.json";
 import winterFoodRelease from "../docs/releases/winter-food-2026-10.json";
 import winterWarmthRelease from "../docs/releases/winter-warmth-2026-11.json";
+import travelTokyoRelease from "../docs/releases/travel-tokyo-2026-11.json";
 
 test("every published main word has one complete simple/complex example pair", () => {
   // Winter words are already published in the DB, but deliberately absent
   // from public static seeds. The published fixture includes those releases.
-  const releases = [winterPostalRelease, winterCheckoutRelease, winterFoodRelease, winterWarmthRelease];
+  const releases = [winterPostalRelease, winterCheckoutRelease, winterFoodRelease, winterWarmthRelease, travelTokyoRelease];
   const releasedWinterIds = new Set(releases.flatMap(({ manifest }) => {
     assert.equal(manifest.status, "applied");
     return Object.keys(manifest.resolvedExampleIds).map((owner) => owner.split(":")[0]);

@@ -1,0 +1,1523 @@
+{
+  "schemaVersion": 1,
+  "series": "travel-tokyo-2026-11",
+  "workBatches": [
+    "travel-tokyo-01",
+    "travel-tokyo-02",
+    "travel-tokyo-03"
+  ],
+  "region": "Japan",
+  "scopeNote": "跟著 Moira 去旅遊的東京景點詞條，以及新主題「神社與寺」。",
+  "newCategory": {
+    "id": "shrines-and-temples",
+    "labels": {
+      "zh-Hant": "神社與寺",
+      "en": "Shrines and Temples",
+      "ja": "神社とお寺"
+    },
+    "isFree": false,
+    "descriptions": {
+      "zh-Hant": "走進日本神社與寺院時，會遇到的建築、參拜用具和物品。",
+      "en": "Buildings, objects and offerings you may see at Japanese shrines and Buddhist temples.",
+      "ja": "日本の神社やお寺で見かける建物や、参拝にまつわるもの。"
+    }
+  },
+  "nativeReview": "2026-11-13 使用者決定不經母語者核對直接發佈。",
+  "sources": {
+    "travel-tokyo:candidates": {
+      "file": "docs/content/travel-tokyo/candidates.json",
+      "sha256": "9aab6112f8d66af22f3434150fb53c293b010b07941af73e1db29ea81b8e4acb"
+    },
+    "travel-tokyo:mediaManifest": {
+      "file": "output/travel-tokyo/media-manifest.json",
+      "sha256": "61d1d819698c6782904712937cf04e20e91bbdd159bc19dd1ef1e962fb23a5f3"
+    },
+    "travel-tokyo:uploadReceipt": {
+      "file": "output/travel-tokyo/upload-receipt.json",
+      "sha256": "d744220aca3d3d2fb3f13a951928a0b3a8b6245f0baf56c674ea810793532cb0"
+    },
+    "travel-tokyo:independent-review-content.json": {
+      "file": "docs/content/travel-tokyo/independent-review-content.json",
+      "sha256": "1981a35d56ecac06c53ed24d0f9a3811c27e7dfe4a3c3f40ac160ee1525f0a2b"
+    },
+    "travel-tokyo:independent-review-images.json": {
+      "file": "docs/content/travel-tokyo/independent-review-images.json",
+      "sha256": "94dbc9d58c7518933fb5e9c1195c5e73b7d2dbb4f39c9c9cd98b96acd3f21df2"
+    },
+    "travel-tokyo:independent-review-audio.json": {
+      "file": "docs/content/travel-tokyo/independent-review-audio.json",
+      "sha256": "4aa6d0d336d7d03fbdf26949f8a8f89024397decb98d982226417a93ad68915b"
+    },
+    "travel-tokyo-03:candidates": {
+      "file": "docs/content/travel-tokyo-03/candidates.json",
+      "sha256": "c8b2fca9d42f4499521d593fd1eda8a9a43007c77b2371763234798aefc154fe"
+    },
+    "travel-tokyo-03:mediaManifest": {
+      "file": "output/travel-tokyo-03/media-manifest.json",
+      "sha256": "a1dac12480c02d225e197744215c341a6c943ef2e00cfa12a6b70689a3ff8571"
+    },
+    "travel-tokyo-03:uploadReceipt": {
+      "file": "output/travel-tokyo-03/upload-receipt.json",
+      "sha256": "9209874560c30d1b55638c0ff18f6b6d93271447c9421f04f286bb31a15e15b4"
+    },
+    "travel-tokyo-03:independent-review-content.json": {
+      "file": "docs/content/travel-tokyo-03/independent-review-content.json",
+      "sha256": "934a8c0d4925334abc53ee33755a92d35096979230b7ae2e864575de5f53ce7f"
+    },
+    "travel-tokyo-03:independent-review-images.json": {
+      "file": "docs/content/travel-tokyo-03/independent-review-images.json",
+      "sha256": "471d57a178fff608dae7748dca740052cf279b052c6e5ad67083c1210c3a89c2"
+    },
+    "travel-tokyo-03:independent-review-audio.json": {
+      "file": "docs/content/travel-tokyo-03/independent-review-audio.json",
+      "sha256": "1492ed70a7d808ec20aecbed3147d6f60222fd8d4d8d53c5c198283ca31d6bd6"
+    }
+  },
+  "entries": [
+    {
+      "id": "fortune-slip",
+      "word": "fortune slip",
+      "chinese": "籤詩",
+      "chineseDefinition": "在日本神社或寺院抽到的紙籤，上面寫有運勢或勸語。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈfɔːr.tʃən slɪp/",
+      "cefrLevel": "B1",
+      "ja": "おみくじ",
+      "jaReading": "おみくじ",
+      "jaReadingSegments": [
+        {
+          "text": "おみくじ",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "籤詩",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A slip of paper drawn at a Japanese shrine or temple with a fortune or advice written on it.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社やお寺で引く、運勢や助言などが書かれた紙。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "常說「おみくじを引く」（抽籤）。抽獎活動的「くじ引き」是另一個概念。",
+      "relatedWords": [
+        "offering-box",
+        "votive-plaque",
+        "amulet"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "淺草",
+      "examples": [
+        {
+          "en": "I drew a fortune slip at the temple.",
+          "ja": "お寺でおみくじを引きました。",
+          "zh": "我在寺裡抽了一張籤詩。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I put away the fortune slip in my wallet so I could read it again later.",
+          "ja": "あとで読み返せるように、おみくじを財布にしまいました。",
+          "zh": "我把籤詩收進錢包，好讓自己之後可以再讀。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "offering-box",
+      "word": "offering box",
+      "chinese": "香油錢箱",
+      "chineseDefinition": "日本神社或寺院供參拜者投入香油錢的箱子，常見木製、上方有格柵。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɑː.fɚ.ɪŋ bɑːks/",
+      "cefrLevel": "B1",
+      "ja": "賽銭箱",
+      "jaReading": "さいせんばこ",
+      "jaReadingSegments": [
+        {
+          "text": "賽銭",
+          "ruby": "さいせん"
+        },
+        {
+          "text": "箱",
+          "ruby": "ばこ"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "香油錢箱",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A box at a shrine or temple where visitors put money as an offering.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社やお寺で、参拝する人が賽銭を入れる箱。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "「お賽銭」指供奉的錢。「賽銭箱」指容器。",
+      "relatedWords": [
+        "fortune-slip",
+        "torii-gate"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "淺草",
+      "examples": [
+        {
+          "en": "I dropped a coin into the offering box.",
+          "ja": "賽銭箱に硬貨を一枚入れました。",
+          "zh": "我投了一枚硬幣進香油錢箱。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before I prayed, I took some change out of my pocket and put it in the offering box.",
+          "ja": "お参りする前に、ポケットから小銭を出して、賽銭箱に入れました。",
+          "zh": "參拜前，我從口袋拿出零錢，投進香油錢箱。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "ningyo-yaki",
+      "word": "ningyo-yaki",
+      "chinese": "人形燒",
+      "chineseDefinition": "用人偶等造型模具烤成的小蛋糕，常包有紅豆餡，也有無餡的款式。",
+      "category": "festivals",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌnɪŋ.ɡjoʊˈjɑː.ki/",
+      "cefrLevel": "B1",
+      "ja": "人形焼",
+      "jaReading": "にんぎょうやき",
+      "jaReadingSegments": [
+        {
+          "text": "人形",
+          "ruby": "にんぎょう"
+        },
+        {
+          "text": "焼",
+          "ruby": "やき"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "人形燒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small Japanese sponge cake baked in a patterned mold, often filled with sweet red bean paste.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "人形などの形をした型で焼く小さなカステラ風の菓子。あんが入ったものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "英文使用日文借詞，讀音欄為英語近似讀法。日本也見「人形焼き」，詞頭採常見商品寫法「人形焼」。",
+      "relatedWords": [
+        "takoyaki",
+        "sakura-mochi"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "淺草",
+      "examples": [
+        {
+          "en": "I bought some ningyo-yaki as a souvenir.",
+          "ja": "お土産に人形焼を買いました。",
+          "zh": "我買了人形燒當伴手禮。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I shared the ningyo-yaki with my friend while it was still warm.",
+          "ja": "人形焼が温かいうちに、友達と分けて食べました。",
+          "zh": "趁人形燒還熱著，我和朋友分著吃。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "pond",
+      "word": "pond",
+      "chinese": "池塘",
+      "chineseDefinition": "積著水的地方，通常比湖小，例如公園裡的池塘。",
+      "category": "street",
+      "partOfSpeech": "noun",
+      "pronunciation": "/pɑːnd/",
+      "cefrLevel": "A2",
+      "ja": "池",
+      "jaReading": "いけ",
+      "jaReadingSegments": [
+        {
+          "text": "池",
+          "ruby": "いけ"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "池塘",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A body of still water, usually smaller than a lake.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "水がたまっている場所で、一般に湖より小さい。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "用「池」介紹不忍池這類水域。「池塘」是通用詞。",
+      "relatedWords": [
+        "park",
+        "boat"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "上野",
+      "examples": [
+        {
+          "en": "The ducks are swimming in the pond.",
+          "ja": "カモが池で泳いでいます。",
+          "zh": "鴨子正在池塘裡游泳。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "When the rain stopped, we walked around the pond.",
+          "ja": "雨がやんでから、池の周りを歩きました。",
+          "zh": "雨停後，我們繞著池塘走。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "zoo",
+      "word": "zoo",
+      "chinese": "動物園",
+      "chineseDefinition": "飼養各種動物並讓訪客觀察的設施。",
+      "category": "street",
+      "partOfSpeech": "noun",
+      "pronunciation": "/zuː/",
+      "cefrLevel": "A2",
+      "ja": "動物園",
+      "jaReading": "どうぶつえん",
+      "jaReadingSegments": [
+        {
+          "text": "動物",
+          "ruby": "どうぶつ"
+        },
+        {
+          "text": "園",
+          "ruby": "えん"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "動物園",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A place where animals are cared for and people can come to see them.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "さまざまな動物を飼育し、来園者がその姿を見られる施設。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "詞條教通用設施名稱，圖和例句不承諾展示特定動物。",
+      "relatedWords": [
+        "park",
+        "museum"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "上野",
+      "examples": [
+        {
+          "en": "We went to the zoo on Sunday.",
+          "ja": "日曜日に動物園へ行きました。",
+          "zh": "我們星期日去了動物園。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We left the zoo early because the kids were tired.",
+          "ja": "子どもたちが疲れたので、早めに動物園を出ました。",
+          "zh": "孩子們累了，所以我們提早離開動物園。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "museum",
+      "word": "museum",
+      "chinese": "博物館",
+      "chineseDefinition": "收藏、保存與展示歷史、科學或文化等資料與物件的設施。",
+      "category": "street",
+      "partOfSpeech": "noun",
+      "pronunciation": "/mjuˈziː.əm/",
+      "cefrLevel": "A2",
+      "ja": "博物館",
+      "jaReading": "はくぶつかん",
+      "jaReadingSegments": [
+        {
+          "text": "博物",
+          "ruby": "はくぶつ"
+        },
+        {
+          "text": "館",
+          "ruby": "かん"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "博物館",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A place that keeps and displays objects of historical, scientific or cultural interest.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "歴史、科学、文化などに関する資料を集めて保存し、展示する施設。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "和職業「博物館ガイド」互為相關概念，名稱和圖像可清楚區分。",
+      "relatedWords": [
+        "museum-guide",
+        "zoo"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "上野",
+      "examples": [
+        {
+          "en": "I saw a dinosaur skeleton at the museum.",
+          "ja": "博物館で恐竜の骨格標本を見ました。",
+          "zh": "我在博物館看到了恐龍骨架。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "It started raining, so we went to the museum instead of the park.",
+          "ja": "雨が降り始めたので、公園に行くのをやめて、博物館へ行きました。",
+          "zh": "開始下雨了，所以我們沒去公園，改去博物館。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "tuna",
+      "word": "tuna",
+      "chinese": "鮪魚",
+      "chineseDefinition": "一類大型海魚。魚肉可做成生魚片、壽司，也可煮熟食用。",
+      "category": "supermarket",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtuː.nə/",
+      "cefrLevel": "B1",
+      "ja": "まぐろ",
+      "jaReading": "まぐろ",
+      "jaReadingSegments": [
+        {
+          "text": "まぐろ",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鮪魚",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A large sea fish whose flesh is eaten raw or cooked.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "海にすむ大型の魚。刺身や寿司のほか、加熱した料理にも使われる。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "也常寫「マグロ」，漢字是「鮪」。詞頭教魚及其魚肉。",
+      "relatedWords": [
+        "seafood-section",
+        "fishmonger",
+        "sushi-chef",
+        "seafood-rice-bowl"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "築地",
+      "examples": [
+        {
+          "en": "I bought some tuna at the fish shop.",
+          "ja": "魚屋でまぐろを買いました。",
+          "zh": "我在魚店買了鮪魚。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The tuna looked fresh at the market, so I bought some for dinner.",
+          "ja": "市場のまぐろが新鮮そうだったので、晩ご飯用に少し買いました。",
+          "zh": "市場的鮪魚看起來很新鮮，所以我買了一些，打算晚餐吃。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "seafood-rice-bowl",
+      "word": "seafood rice bowl",
+      "chinese": "海鮮蓋飯",
+      "chineseDefinition": "以碗盛飯，上面鋪生魚片、魚卵或其他海鮮的日式料理。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsiː.fuːd raɪs boʊl/",
+      "cefrLevel": "B1",
+      "ja": "海鮮丼",
+      "jaReading": "かいせんどん",
+      "jaReadingSegments": [
+        {
+          "text": "海鮮",
+          "ruby": "かいせん"
+        },
+        {
+          "text": "丼",
+          "ruby": "どん"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "海鮮蓋飯",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese dish of rice topped with seafood, often sliced raw fish or roe.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "丼に盛ったご飯に、刺身や魚卵などの魚介類をのせた料理。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "「丼」在海鮮丼讀「どん」。這裡指整道料理，飯碗本身是「茶碗」等容器。",
+      "relatedWords": [
+        "tuna",
+        "rice-bowl",
+        "wasabi"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "築地",
+      "examples": [
+        {
+          "en": "I ordered a seafood rice bowl for lunch.",
+          "ja": "お昼に海鮮丼を注文しました。",
+          "zh": "我午餐點了一碗海鮮蓋飯。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My friend recommended the seafood rice bowl, so I tried it for the first time.",
+          "ja": "友達が海鮮丼を勧めてくれたので、初めて食べてみました。",
+          "zh": "朋友推薦了海鮮蓋飯，所以我第一次試吃了這道料理。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "rolled-omelette",
+      "word": "rolled omelette",
+      "chinese": "玉子燒",
+      "chineseDefinition": "將蛋液分次薄煎並捲起、層層疊成的日式煎蛋，調味因家庭或店家而異。",
+      "category": "restaurant",
+      "partOfSpeech": "noun",
+      "pronunciation": "/roʊld ˈɑː.mə.lət/",
+      "cefrLevel": "B1",
+      "ja": "卵焼き",
+      "jaReading": "たまごやき",
+      "jaReadingSegments": [
+        {
+          "text": "卵",
+          "ruby": "たまご"
+        },
+        {
+          "text": "焼",
+          "ruby": "や"
+        },
+        {
+          "text": "き",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "玉子燒",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A Japanese omelette made by rolling thin layers of cooked beaten egg together in a pan.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "溶き卵を薄く焼き、巻き重ねて作る料理。味付けは家庭や店によって異なる。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "日文也寫作「玉子焼き」或「玉子焼」。同一詞條用「卵焼き」作主詞。",
+      "relatedWords": [
+        "egg",
+        "kitchen-knife"
+      ],
+      "batch": "travel-tokyo-01",
+      "spot": "築地",
+      "examples": [
+        {
+          "en": "I put a slice of rolled omelette in my lunch box.",
+          "ja": "お弁当箱に卵焼きを一切れ入れました。",
+          "zh": "我在便當盒裡放了一片玉子燒。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I let the rolled omelette cool a little before slicing it so it would hold its shape.",
+          "ja": "形が崩れないように、卵焼きは少し冷ましてから切りました。",
+          "zh": "為了讓玉子燒保持形狀，我先放涼一下再切片。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "torii-gate",
+      "word": "torii gate",
+      "chinese": "鳥居",
+      "chineseDefinition": "主要立在神社入口等處，由兩根立柱和橫木構成的日式門，常用來標示神域。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtɔːr.i ɡeɪt/",
+      "cefrLevel": "B1",
+      "ja": "鳥居",
+      "jaReading": "とりい",
+      "jaReadingSegments": [
+        {
+          "text": "鳥居",
+          "ruby": "とりい"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "鳥居",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A traditional Japanese gate, typically marking the entrance to the sacred grounds of a Shinto shrine.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "主に神社の境内の入り口などに立つ、二本の柱に横木を渡した門。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "鳥居有木造、石造等不同外觀。詞條示例用常見的木造樣式。",
+      "relatedWords": [
+        "shrine-approach",
+        "purification-pavilion"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "明治神宮",
+      "examples": [
+        {
+          "en": "We walked through the torii gate together.",
+          "ja": "一緒に鳥居をくぐりました。",
+          "zh": "我們一起走過鳥居。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We decided to meet by the torii gate because it was easy to find.",
+          "ja": "鳥居は見つけやすいので、そのそばで待ち合わせることにしました。",
+          "zh": "鳥居很容易找到，所以我們決定在鳥居旁碰面。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "shrine-approach",
+      "word": "shrine approach",
+      "chinese": "參道",
+      "chineseDefinition": "參拜者通往神社或寺院的道路。此卡的英語和圖示以神社為例。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃraɪn əˈproʊtʃ/",
+      "cefrLevel": "B1",
+      "ja": "参道",
+      "jaReading": "さんどう",
+      "jaReadingSegments": [
+        {
+          "text": "参",
+          "ruby": "さん"
+        },
+        {
+          "text": "道",
+          "ruby": "どう"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "參道",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A path leading to a shrine. The Japanese word sandō also applies to paths leading to Buddhist temples.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社やお寺にお参りする人が通る、社殿やお堂に向かう道。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "寺院的參道可說 a path leading to the temple。",
+      "relatedWords": [
+        "torii-gate",
+        "purification-pavilion"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "明治神宮",
+      "examples": [
+        {
+          "en": "We walked along the shrine approach together.",
+          "ja": "一緒に参道を歩きました。",
+          "zh": "我們一起沿著參道走。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The shrine approach was crowded, so we took a quieter path back.",
+          "ja": "参道が混んでいたので、帰りはもっと静かな道を通りました。",
+          "zh": "參道很擠，所以我們回程走了一條比較安靜的路。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "purification-pavilion",
+      "word": "purification pavilion",
+      "chinese": "手水舍",
+      "chineseDefinition": "日本神社或寺院設有水鉢的小亭，供參拜者在參拜前潔淨雙手和口。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌpjʊr.ə.fəˈkeɪ.ʃən pəˈvɪl.jən/",
+      "cefrLevel": "B2",
+      "ja": "手水舎",
+      "jaReading": "てみずや",
+      "jaReadingSegments": [
+        {
+          "text": "手水",
+          "ruby": "てみず"
+        },
+        {
+          "text": "舎",
+          "ruby": "や"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "手水舍",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A shelter with a water basin for ritually cleansing the hands and mouth before worship at a Japanese shrine or temple.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社やお寺でお参りの前に手や口を清めるための、水盤がある建物。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "本卡採明治神宮境內英文導覽的 temizuya（てみずや）。也讀「ちょうずや」或「てみずしゃ」等，後者見於明治神宮指定建物的文化財名稱。",
+      "relatedWords": [
+        "shrine-approach",
+        "torii-gate"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "明治神宮",
+      "examples": [
+        {
+          "en": "I washed my hands at the purification pavilion.",
+          "ja": "手水舎で手を洗いました。",
+          "zh": "我在手水舍洗了手。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "There was a line at the purification pavilion, so I waited until it was my turn.",
+          "ja": "手水舎に列ができていたので、自分の番まで待ちました。",
+          "zh": "手水舍有人排隊，所以我等到輪到自己。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "votive-plaque",
+      "word": "votive plaque",
+      "chinese": "繪馬",
+      "chineseDefinition": "供奉於日本神社或寺院的小木牌，常寫有願望或謝意。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈvoʊ.tɪv plæk/",
+      "cefrLevel": "B2",
+      "ja": "絵馬",
+      "jaReading": "えま",
+      "jaReadingSegments": [
+        {
+          "text": "絵",
+          "ruby": "え"
+        },
+        {
+          "text": "馬",
+          "ruby": "ま"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "繪馬",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small wooden plaque offered at a Japanese shrine or temple, often with a wish or a message of thanks written on it.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "願い事やお礼などを書いて神社やお寺に奉納する、小さな木の板。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "常見搭配「絵馬に願い事を書く」。牌面也可能畫有馬以外的圖案。",
+      "relatedWords": [
+        "fortune-slip",
+        "amulet"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "明治神宮",
+      "examples": [
+        {
+          "en": "I wrote a wish on a votive plaque.",
+          "ja": "絵馬に願い事を書きました。",
+          "zh": "我在繪馬上寫了願望。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "After I finished writing on my votive plaque, I hung it next to the others.",
+          "ja": "絵馬を書き終えたあと、ほかの人の絵馬の横に掛けました。",
+          "zh": "寫完後，我把自己的繪馬掛在其他繪馬旁邊。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "amulet",
+      "word": "amulet",
+      "chinese": "御守",
+      "chineseDefinition": "隨身攜帶、用來祈求平安或心願成真的護身物。這裡指日本神社或寺院常見的小布袋式御守。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈæm.jə.lət/",
+      "cefrLevel": "B1",
+      "ja": "お守り",
+      "jaReading": "おまもり",
+      "jaReadingSegments": [
+        {
+          "text": "お",
+          "ruby": null
+        },
+        {
+          "text": "守",
+          "ruby": "まも"
+        },
+        {
+          "text": "り",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "御守",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A small object carried for protection or good fortune. In Japan, shrine or temple amulets often come in small fabric pouches.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "災いを避けたり、願いがかなったりするように身につけるもの。神社やお寺では、小さな布袋に入ったものをよく見かける。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "英文 amulet 的範圍較廣，也可指其他文化中的護身物。",
+      "relatedWords": [
+        "votive-plaque",
+        "fortune-slip"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "明治神宮",
+      "examples": [
+        {
+          "en": "I keep an amulet in my bag.",
+          "ja": "かばんにお守りを入れています。",
+          "zh": "我在包包裡放了一個御守。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My friend gave me an amulet because I had an exam coming up.",
+          "ja": "試験が近かったので、友達がお守りをくれました。",
+          "zh": "因為我快要考試了，朋友送了我一個御守。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "sake-barrel",
+      "word": "sake barrel",
+      "chinese": "酒樽",
+      "chineseDefinition": "用來盛裝清酒等酒類的桶。神社有時會陳列裹著草蓆的奉納酒樽。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈsɑː.keɪ ˈbær.əl/",
+      "cefrLevel": "B1",
+      "ja": "酒樽",
+      "jaReading": "さかだる",
+      "jaReadingSegments": [
+        {
+          "text": "酒",
+          "ruby": "さか"
+        },
+        {
+          "text": "樽",
+          "ruby": "だる"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "酒樽",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A cask for sake. At shrines, decorative straw-wrapped versions may be displayed as offerings.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "日本酒などの酒を入れる樽。神社では、奉納されたこも巻きの樽が飾られていることもある。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "神社奉納陳列用的桶有時為空桶，圖片不暗示可以取酒。",
+      "relatedWords": [
+        "sake",
+        "sake-flask"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "明治神宮",
+      "examples": [
+        {
+          "en": "At the shrine, sake barrels are lined up.",
+          "ja": "神社に酒樽が並んでいます。",
+          "zh": "神社裡擺著一排酒樽。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The patterns on the sake barrels were all different, so I looked closely at each one.",
+          "ja": "酒樽の模様がそれぞれ違ったので、一つずつじっくり見ました。",
+          "zh": "酒樽上的圖案各不相同，所以我一個一個仔細看。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "large-video-screen",
+      "word": "large video screen",
+      "chinese": "大型電視牆",
+      "chineseDefinition": "設在大樓外牆等公共場所、能播放影片或影像的大型電子螢幕。",
+      "category": "street",
+      "partOfSpeech": "noun",
+      "pronunciation": "/lɑːrdʒ ˈvɪd.i.oʊ skriːn/",
+      "cefrLevel": "B1",
+      "ja": "大型ビジョン",
+      "jaReading": "おおがたビジョン",
+      "jaReadingSegments": [
+        {
+          "text": "大型",
+          "ruby": "おおがた"
+        },
+        {
+          "text": "ビジョン",
+          "ruby": null
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "大型電視牆",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A large electronic display for showing videos or images in a public place, often mounted on a building.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "ビルの壁面などに設置され、映像や画像を流す大きな電子画面。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "「大型ビジョン」是公共場所的大型電子顯示設備。「広告看板」側重廣告用途，材質也可以是紙張或固定板面。",
+      "relatedWords": [
+        "billboard",
+        "signboard"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "澀谷",
+      "examples": [
+        {
+          "en": "The large video screen is showing an ad.",
+          "ja": "大型ビジョンで広告が流れています。",
+          "zh": "大型電視牆正在播放廣告。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "A video started playing on the large video screen, so I stopped to see what it was.",
+          "ja": "大型ビジョンで映像が流れ始めたので、何の映像か見ようと立ち止まりました。",
+          "zh": "大型電視牆開始播放一段影片，所以我停下來看看那是什麼。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "bronze-statue",
+      "word": "bronze statue",
+      "chinese": "銅像",
+      "chineseDefinition": "以青銅等材料製成、塑成人或動物等形象的立體雕像。",
+      "category": "street",
+      "partOfSpeech": "noun",
+      "pronunciation": "/brɑːnz ˈstætʃ.uː/",
+      "cefrLevel": "B1",
+      "ja": "銅像",
+      "jaReading": "どうぞう",
+      "jaReadingSegments": [
+        {
+          "text": "銅",
+          "ruby": "どう"
+        },
+        {
+          "text": "像",
+          "ruby": "ぞう"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "銅像",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A statue made of bronze, typically depicting a person or an animal.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "青銅などで作られた、人や動物などの像。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "澀谷以忠犬八公為選詞線索。詞條教通用概念，配圖採不具名的動物造型。",
+      "relatedWords": [
+        "park",
+        "museum"
+      ],
+      "batch": "travel-tokyo-02",
+      "spot": "澀谷",
+      "examples": [
+        {
+          "en": "There's a bronze statue of a dog in the square.",
+          "ja": "広場に犬の銅像があります。",
+          "zh": "廣場上有一尊狗的銅像。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "I took a photo of the bronze statue before I left the park.",
+          "ja": "公園を出る前に、銅像の写真を撮りました。",
+          "zh": "離開公園前，我拍了張銅像的照片。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "shinto-shrine",
+      "word": "Shinto shrine",
+      "chinese": "神社",
+      "chineseDefinition": "日本神道祭祀神明、供人參拜的場所，可以包含社殿和周圍的境內空間。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈʃɪn.toʊ ʃraɪn/",
+      "cefrLevel": "B1",
+      "ja": "神社",
+      "jaReading": "じんじゃ",
+      "jaReadingSegments": [
+        {
+          "text": "神",
+          "ruby": "じん"
+        },
+        {
+          "text": "社",
+          "ruby": "じゃ"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "神社",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A place where kami are enshrined and worshipped in the Japanese Shinto tradition.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神道の神々をまつり、人々がお参りする場所。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "指整個參拜場所。境內的鳥居與拜殿有各自的名稱。",
+      "relatedWords": [
+        "buddhist-temple",
+        "torii-gate",
+        "shrine-worship-hall",
+        "shrine-approach"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "We paid our respects at a Shinto shrine on New Year's Day.",
+          "ja": "元日に神社にお参りしました。",
+          "zh": "我們元旦去神社參拜了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The path to the Shinto shrine was crowded, so I took a different route home.",
+          "ja": "神社へ続く道が混んでいたので、別の道を通って帰りました。",
+          "zh": "通往神社的路很擠，所以我走另一條路回家。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "buddhist-temple",
+      "word": "Buddhist temple",
+      "chinese": "寺",
+      "chineseDefinition": "供奉佛、舉行佛教法會與修行的場所，通常可見本堂等建築。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈbʊd.ɪst ˈtem.pəl/",
+      "cefrLevel": "B1",
+      "ja": "お寺",
+      "jaReading": "おてら",
+      "jaReadingSegments": [
+        {
+          "text": "お",
+          "ruby": null
+        },
+        {
+          "text": "寺",
+          "ruby": "てら"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "寺",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A place of Buddhist worship and practice, often with a hall that houses a principal object of devotion.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "仏さまをまつり、仏教の法要や修行を行う場所。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "お寺是日常常用的說法，也會看到較正式的「寺院（じいん）」。",
+      "relatedWords": [
+        "shinto-shrine",
+        "temple-main-hall",
+        "incense-burner"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "There's a Buddhist temple near the station.",
+          "ja": "駅の近くにお寺があります。",
+          "zh": "車站附近有一間佛寺。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The gate of the Buddhist temple was closed, so I turned back.",
+          "ja": "お寺の門が閉まっていたので、引き返しました。",
+          "zh": "寺門關著，所以我就折返了。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "temple-main-hall",
+      "word": "temple main hall",
+      "chinese": "本堂",
+      "chineseDefinition": "佛寺的主要殿堂，通常供奉該寺的本尊。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈtem.pəl meɪn hɔːl/",
+      "cefrLevel": "B1",
+      "ja": "本堂",
+      "jaReading": "ほんどう",
+      "jaReadingSegments": [
+        {
+          "text": "本",
+          "ruby": "ほん"
+        },
+        {
+          "text": "堂",
+          "ruby": "どう"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "本堂",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "The principal hall of a Buddhist temple, usually housing its main object of devotion.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "お寺の中心となる建物で、一般にご本尊がまつられているお堂。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "日語「本堂」用於佛寺。神社常見「本殿（ほんでん）」和「拝殿（はいでん）」，兩者用途不同。",
+      "relatedWords": [
+        "buddhist-temple",
+        "shrine-worship-hall",
+        "incense-burner"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "The temple main hall is straight ahead.",
+          "ja": "本堂は正面にあります。",
+          "zh": "本堂就在正前方。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "We took off our shoes before entering the temple main hall, as the sign instructed.",
+          "ja": "掲示に従って、本堂に入る前に靴を脱ぎました。",
+          "zh": "我們照告示的指示，進本堂前先脫鞋。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "shrine-worship-hall",
+      "word": "shrine worship hall",
+      "chinese": "拜殿",
+      "chineseDefinition": "神社中供參拜或舉行祭儀的殿堂，參拜者常在殿前行禮。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ʃraɪn ˈwɝː.ʃɪp hɔːl/",
+      "cefrLevel": "B2",
+      "ja": "拝殿",
+      "jaReading": "はいでん",
+      "jaReadingSegments": [
+        {
+          "text": "拝",
+          "ruby": "はい"
+        },
+        {
+          "text": "殿",
+          "ruby": "でん"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "拜殿",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A hall at a Shinto shrine where prayers or ceremonies take place. Visitors often pray in front of it.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社で拝礼や神事を行うための建物。参拝者がその前でお参りすることも多い。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "「拝殿」供參拜和祭儀使用。「本殿」用來奉祀神明，通常位於拜殿後方。",
+      "relatedWords": [
+        "shinto-shrine",
+        "temple-main-hall",
+        "offering-box"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "I prayed in front of the shrine worship hall.",
+          "ja": "拝殿の前でお参りしました。",
+          "zh": "我在拜殿前參拜了。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "People were praying in front of the shrine worship hall, so I waited off to one side.",
+          "ja": "拝殿の前でお参りしている人がいたので、脇で待ちました。",
+          "zh": "有人正在拜殿前參拜，所以我在一旁等候。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "incense-burner",
+      "word": "incense burner",
+      "chinese": "香爐",
+      "chineseDefinition": "用來焚燒香或線香的容器。佛寺常見可供參拜者插立線香的大型香爐。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˈɪn.sens ˈbɝː.nɚ/",
+      "cefrLevel": "B1",
+      "ja": "香炉",
+      "jaReading": "こうろ",
+      "jaReadingSegments": [
+        {
+          "text": "香",
+          "ruby": "こう"
+        },
+        {
+          "text": "炉",
+          "ruby": "ろ"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "香爐",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A vessel in which incense is burned. A temple may have a large one for visitors' incense sticks.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "香や線香をたくための器。お寺には参拝者が線香を供える大きなものもある。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "香爐是容器，「線香」指其中燃燒的細長香條。圖片採日本寺院的公共香爐。",
+      "relatedWords": [
+        "buddhist-temple",
+        "temple-main-hall"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "Smoke is rising from the incense burner.",
+          "ja": "香炉から煙が上がっています。",
+          "zh": "香爐正在冒煙。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "Before we went to the temple main hall, we lit some incense sticks and placed them upright in the incense burner.",
+          "ja": "本堂へ向かう前に、線香に火をつけて、香炉に立てました。",
+          "zh": "我們去本堂前，先點燃線香，再把它們直立插進香爐。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "goshuin",
+      "word": "goshuin",
+      "chinese": "御朱印",
+      "chineseDefinition": "在日本神社或寺院參拜後可領取的印記，常見朱紅色印章搭配墨書日期或寺社名稱。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌɡoʊ.ʃuːˈɪn/",
+      "cefrLevel": "B2",
+      "ja": "御朱印",
+      "jaReading": "ごしゅいん",
+      "jaReadingSegments": [
+        {
+          "text": "御",
+          "ruby": "ご"
+        },
+        {
+          "text": "朱印",
+          "ruby": "しゅいん"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "御朱印",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A seal impression issued at a Japanese shrine or temple as a record of a visit, often accompanied by calligraphy.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社やお寺で参拝の証として授けられる印。朱色の印に、日付や寺社の名前などの墨書きが添えられることが多い。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "英文採日語借詞 goshuin。可直接在御朱印帳的頁面上題字、蓋印，也有另紙形式。",
+      "relatedWords": [
+        "goshuin-book",
+        "shinto-shrine",
+        "buddhist-temple"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "I received a goshuin at the Buddhist temple.",
+          "ja": "お寺で御朱印をいただきました。",
+          "zh": "我在寺裡領到了御朱印。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "The goshuin I received was on a separate sheet, so I pasted it into my goshuin book when I got home.",
+          "ja": "いただいた御朱印は書き置きだったので、家に帰ってから御朱印帳に貼りました。",
+          "zh": "我領到的是另外一張紙上的御朱印，所以回家後就把它貼進御朱印帳。",
+          "cefrLevel": "B1"
+        }
+      ]
+    },
+    {
+      "id": "goshuin-book",
+      "word": "goshuin book",
+      "chinese": "御朱印帳",
+      "chineseDefinition": "專門用來收集日本神社與寺院御朱印的冊子，常見有手風琴式折頁。",
+      "category": "shrines-and-temples",
+      "partOfSpeech": "noun",
+      "pronunciation": "/ˌɡoʊ.ʃuːˈɪn bʊk/",
+      "cefrLevel": "B2",
+      "ja": "御朱印帳",
+      "jaReading": "ごしゅいんちょう",
+      "jaReadingSegments": [
+        {
+          "text": "御",
+          "ruby": "ご"
+        },
+        {
+          "text": "朱印",
+          "ruby": "しゅいん"
+        },
+        {
+          "text": "帳",
+          "ruby": "ちょう"
+        }
+      ],
+      "definitions": [
+        {
+          "language": "zh",
+          "definition": "御朱印帳",
+          "sortOrder": 0
+        },
+        {
+          "language": "en",
+          "definition": "A book for collecting goshuin received at Japanese shrines and temples.",
+          "sortOrder": 0
+        },
+        {
+          "language": "ja",
+          "definition": "神社やお寺でいただく御朱印を収めるための帳面。",
+          "sortOrder": 0
+        }
+      ],
+      "note": "「御朱印」是印記，「御朱印帳」是收集印記的本子。",
+      "relatedWords": [
+        "goshuin"
+      ],
+      "batch": "travel-tokyo-03",
+      "spot": null,
+      "examples": [
+        {
+          "en": "I put my goshuin book in my bag.",
+          "ja": "御朱印帳をかばんに入れました。",
+          "zh": "我把御朱印帳放進包包。",
+          "cefrLevel": "A2"
+        },
+        {
+          "en": "My goshuin book was nearly full, so I bought a spare.",
+          "ja": "御朱印帳がもうすぐいっぱいになりそうだったので、予備を一冊買いました。",
+          "zh": "我的御朱印帳快用滿了，所以買了一本備用。",
+          "cefrLevel": "B1"
+        }
+      ]
+    }
+  ]
+}

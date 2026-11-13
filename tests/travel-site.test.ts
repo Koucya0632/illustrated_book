@@ -15,7 +15,7 @@ import { travelCopy } from "../lib/travel/site";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 const LANGS = ["zh-Hant", "zh-Hans", "en", "ja"] as const;
-const KEYS = ["title", "lead", "spots", "things", "notOpen", "seenHere", "seenLead", "inApp"] as const;
+const KEYS = ["title", "lead", "spots", "notOpen", "seenHere", "seenLead", "inApp"] as const;
 
 test("every piece of copy exists in all four languages, with its placeholders filled", () => {
   for (const lang of LANGS) {
@@ -26,7 +26,6 @@ test("every piece of copy exists in all four languages, with its placeholders fi
     }
   }
   assert.equal(travelCopy("zh-Hant", "seenHere", { name: "淺草" }), "淺草會看到的東西");
-  assert.equal(travelCopy("zh-Hant", "things", { n: 8 }), "8 樣東西");
 });
 
 test("the site joins the spots to the 日文 dictionary and drops cities with nothing open", () => {

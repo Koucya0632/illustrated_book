@@ -37,14 +37,13 @@ export async function loadTravelSite(lang: UiLang): Promise<TravelSite> {
   };
 }
 
-type Copy = Record<"title" | "lead" | "spots" | "things" | "notOpen" | "seenHere" | "seenLead" | "inApp", string>;
+type Copy = Record<"title" | "lead" | "spots" | "notOpen" | "seenHere" | "seenLead" | "inApp", string>;
 
 const COPY: Record<UiLang, Copy> = {
   "zh-Hant": {
     title: "跟著 Moira 去旅遊",
     lead: "挑一個地方，看那裡會遇到什麼。",
     spots: "{n} 個景點",
-    things: "{n} 樣東西",
     notOpen: "還沒開",
     seenHere: "{name}會看到的東西",
     seenLead: "到了{name}會遇到的 {n} 樣東西，日文怎麼說。",
@@ -54,7 +53,6 @@ const COPY: Record<UiLang, Copy> = {
     title: "跟着 Moira 去旅游",
     lead: "挑一个地方，看那里会遇到什么。",
     spots: "{n} 个景点",
-    things: "{n} 样东西",
     notOpen: "还没开",
     seenHere: "{name}会看到的东西",
     seenLead: "到了{name}会遇到的 {n} 样东西，日语怎么说。",
@@ -64,7 +62,6 @@ const COPY: Record<UiLang, Copy> = {
     title: "Travel with Moira",
     lead: "Pick a place and see what you will run into there.",
     spots: "{n} to visit",
-    things: "{n} things",
     notOpen: "Not open yet",
     seenHere: "What you'll see in {name}",
     seenLead: "{n} things you will meet in {name}, and what they are called in Japanese.",
@@ -74,7 +71,6 @@ const COPY: Record<UiLang, Copy> = {
     title: "Moiraと旅に出る",
     lead: "場所を選んで、そこで出会うものを見てみましょう。",
     spots: "スポット {n}件",
-    things: "{n}個",
     notOpen: "準備中",
     seenHere: "{name}で見かけるもの",
     seenLead: "{name}で出会う{n}個のものと、その日本語。",

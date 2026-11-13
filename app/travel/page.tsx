@@ -61,7 +61,6 @@ export default async function TravelPage() {
                       className="block rounded-[18px] bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
                     >
                       <div className="text-lg font-extrabold text-tuji-ink">{spot.name}</div>
-                      <div className="mt-1 text-xs text-tuji-ink3">{c("things", { n: spot.wordIds.length })}</div>
                     </Link>
                   </li>
                 ) : (

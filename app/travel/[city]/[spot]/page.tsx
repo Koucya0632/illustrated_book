@@ -6,6 +6,7 @@ import { getCurrentUserId } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS, type UiLang } from "@/lib/settings";
 import { loadTravelSite, travelCopy } from "@/lib/travel/site";
+import PeopleShot from "./PeopleShot";
 
 export const dynamic = "force-dynamic";
 
@@ -88,6 +89,12 @@ export default async function TravelSpotPage(props: Props) {
           ))}
         </div>
       </section>
+
+      <PeopleShot
+        spotId={spot.id}
+        title={c("peopleShot")}
+        lead={c("peopleShotLead", { name: spot.name })}
+      />
 
       <p className="mt-10 text-center text-sm text-tuji-ink3">{c("inApp")}</p>
     </div>

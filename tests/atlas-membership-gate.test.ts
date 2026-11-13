@@ -47,6 +47,7 @@ const gated: [string, string][] = [
   ["app/api/atlas/collections/[id]/avatar/route.ts", "POST"],
   ["app/api/atlas/collections/[id]/publish/route.ts", "POST"],
   ["app/api/atlas/items/[id]/publish/route.ts", "POST"],
+  ["app/api/atlas/items/[id]/spot/route.ts", "PUT"],
   ["app/api/atlas/public/[slug]/save/route.ts", "POST"],
   ["app/api/atlas/public/collections/[slug]/save/route.ts", "POST"],
   ["app/api/atlas/public/collections/[slug]/learn/route.ts", "POST"],
@@ -64,6 +65,7 @@ const open: [string, string][] = [
   ["app/api/atlas/public/[slug]/save/route.ts", "DELETE"],
   ["app/api/atlas/public/collections/[slug]/save/route.ts", "DELETE"],
   ["app/api/atlas/public/[slug]/report/route.ts", "POST"],
+  ["app/api/atlas/items/[id]/spot/route.ts", "DELETE"],
   ["app/api/atlas/public/collections/[slug]/report/route.ts", "POST"],
 ];
 for (const [file, method] of open) {

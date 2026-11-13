@@ -65,8 +65,8 @@ export function createAiHandler(deps: Dependencies) {
             action === "list" ? await operations.list(account) :
             action === "cancel" ? await operations.cancel(account, id!) :
               await (async () => {
-                const { candidateId, ...correction } = parse(confirmCandidateInput, await body(request));
-                return operations.confirm(account, id!, candidateId, correction);
+                const { candidateId, spotId, ...correction } = parse(confirmCandidateInput, await body(request));
+                return operations.confirm(account, id!, candidateId, correction, spotId);
               })();
       const reserved = action === "accept" && "state" in result && result.state === "reserved";
       if (reserved && "id" in result && typeof result.id === "string") deps.dispatch?.("operation", account, result.id);

@@ -1133,6 +1133,15 @@ export async function getAtlasReviewItem(itemId: string): Promise<AtlasItemRow |
 }
 
 /**
+ * The 景點 the public row shows the card at: the item's spot, only while the
+ * owner shares it there and an admin has not taken it off that spot.
+ */
+function sharedSpotOf(item: AtlasItemRow): string | null {
+  const spot = item.spot_id ?? null;
+  return spot && item.spot_shared && item.spot_share_revoked !== spot ? spot : null;
+}
+
+/**
  * Publish (or re-publish) the public row for an approved item.
  *
  * Deliberately writes no author name: identity is joined live from `profiles`
@@ -1150,7 +1159,7 @@ export async function approveAtlasPublicItem(input: {
   const rows = await sql<AtlasPublicItemRow[]>`
     INSERT INTO atlas_public_items (
       source_item_id, owner_user_id, public_slug, lemma, display_zh_hant,
-      target_language, category, image_public_path,
+      target_language, category, image_public_path, spot_id,
       review_status, published_at, updated_at
     )
     VALUES (
@@ -1162,6 +1171,7 @@ export async function approveAtlasPublicItem(input: {
       ${item.target_language},
       ${item.category},
       ${input.imagePublicPath},
+      ${sharedSpotOf(item)},
       'approved',
       now(),
       now()
@@ -1172,6 +1182,7 @@ export async function approveAtlasPublicItem(input: {
       target_language = EXCLUDED.target_language,
       category = EXCLUDED.category,
       image_public_path = EXCLUDED.image_public_path,
+      spot_id = EXCLUDED.spot_id,
       review_status = 'approved',
       updated_at = now()
     RETURNING *
@@ -1314,10 +1325,13 @@ export async function withdrawAtlasPublicItem(
         AND owner_user_id = ${userId}::uuid
       LIMIT 1
     `;
+    // Sharing to a 景點 ends with publication: a card made public again
+    // must be opted in again, not reappear at the spot on its own.
     await tx`
       UPDATE atlas_public_items
       SET review_status = 'withdrawn',
           image_public_path = NULL,
+          spot_id = NULL,
           updated_at = now()
       WHERE source_item_id = ${itemId}::uuid
         AND owner_user_id = ${userId}::uuid
@@ -1326,6 +1340,7 @@ export async function withdrawAtlasPublicItem(
       UPDATE user_atlas_items
       SET review_status = 'withdrawn',
           visibility = 'private',
+          spot_shared = false,
           updated_at = now()
       WHERE id = ${itemId}::uuid
         AND user_id = ${userId}::uuid
@@ -1341,16 +1356,88 @@ export async function takedownAtlasPublicItem(itemId: string): Promise<void> {
       UPDATE user_atlas_items
       SET review_status = 'takedown',
           visibility = 'private',
+          spot_shared = false,
           updated_at = now()
       WHERE id = ${itemId}::uuid
     `;
     await tx`
       UPDATE atlas_public_items
       SET review_status = 'takedown',
+          spot_id = NULL,
           updated_at = now()
       WHERE source_item_id = ${itemId}::uuid
     `;
   });
+}
+
+// MARK: - 景點 (lib/travel/spot-tagging.ts)
+
+/** The owner's live card with the columns the spot rules read, or null. */
+export async function getOwnedAtlasItemForSpot(
+  userId: string,
+  itemId: string,
+): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  const rows = await sql<AtlasItemRow[]>`
+    SELECT * FROM user_atlas_items
+    WHERE id = ${itemId}::uuid
+      AND user_id = ${userId}::uuid
+      AND deleted_at IS NULL
+    LIMIT 1
+  `;
+  return rows[0] ?? null;
+}
+
+/**
+ * Tag the owner's card to a spot (or clear it with null) and say whether it is
+ * shared there. The caller has applied the rules; this writes them, bumping
+ * `updated_at` so /api/atlas/sync carries the change, and mirrors the public
+ * row in the same transaction so 「大家拍的」 never lags the owner's choice.
+ */
+export async function setAtlasItemSpot(input: {
+  userId: string;
+  itemId: string;
+  spotId: string | null;
+  shared: boolean;
+}): Promise<AtlasItemRow | null> {
+  const sql = requireSql();
+  return sql.begin(async (tx) => {
+    const [item] = await tx<AtlasItemRow[]>`
+      UPDATE user_atlas_items
+      SET spot_id = ${input.spotId},
+          spot_shared = ${input.spotId !== null && input.shared},
+          updated_at = now()
+      WHERE id = ${input.itemId}::uuid
+        AND user_id = ${input.userId}::uuid
+        AND deleted_at IS NULL
+      RETURNING *
+    `;
+    if (!item) return null;
+    await tx`
+      UPDATE atlas_public_items
+      SET spot_id = ${sharedSpotOf(item)}, updated_at = now()
+      WHERE source_item_id = ${input.itemId}::uuid
+        AND owner_user_id = ${input.userId}::uuid
+    `;
+    return item;
+  }) as Promise<AtlasItemRow | null>;
+}
+
+/** 「大家拍的」: approved cards their owners shared to this spot, newest first. */
+export async function listAtlasPublicItemsAtSpot(
+  spotId: string,
+  limit = 24,
+): Promise<AtlasPublicItemWithAuthorRow[]> {
+  const sql = requireSql();
+  return sql<AtlasPublicItemWithAuthorRow[]>`
+    SELECT ${publicItemWithAuthorSelect(sql)}
+    FROM atlas_public_items pi
+    LEFT JOIN profiles pr ON pr.id = pi.owner_user_id
+    WHERE pi.spot_id = ${spotId}
+      AND pi.review_status = 'approved'
+    ORDER BY pi.published_at DESC
+    LIMIT ${Math.min(60, Math.max(1, Math.floor(limit)))}
+  `;
 }
 
 /**
@@ -1440,10 +1527,13 @@ export async function maybeEscalateAtlasReport(input: {
     let escalate = highRisk;
 
     if (!escalate) {
+      // 「不是在這裡拍的」 is about where the card sits, not whether it may be
+      // public: it never counts toward taking the card off 物見.
       const rows = await sql<{ count: number }[]>`
         SELECT count(*)::int AS count
         FROM atlas_reports
         WHERE public_item_id = ${input.publicItemId}::uuid
+          AND reason <> 'not_here'
       `;
       escalate = (rows[0]?.count ?? 0) >= reportEscalationThreshold();
     }
@@ -2106,7 +2196,9 @@ export type AtlasReportReason =
   | "inappropriate"
   | "copyright"
   | "wrong"
-  | "other";
+  | "other"
+  /** 「不是在這裡拍的」 — only against a card shared to a 景點, filed as target `item_spot`. */
+  | "not_here";
 export type AtlasReportStatus = "open" | "reviewed" | "dismissed";
 
 /**
@@ -2114,7 +2206,7 @@ export type AtlasReportStatus = "open" | "reviewed" | "dismissed";
  * write themselves needs an out: the photo, the 合集 that curates it, and the
  * author identity (暱稱/簽名/頭像) attached to both.
  */
-export type AtlasReportTarget = "item" | "collection" | "author";
+export type AtlasReportTarget = "item" | "collection" | "author" | "item_spot";
 
 /**
  * Just enough of a public 合集 to file a report against it — deliberately not
@@ -2264,6 +2356,54 @@ export async function updateAtlasReportStatus(
   await sql`
     UPDATE atlas_reports SET status = ${status} WHERE id = ${id}::bigint
   `;
+}
+
+/**
+ * Admin: uphold a 「不是在這裡拍的」 report — take the card off its 景點.
+ *
+ * Only the spot: the card stays on 物見 and the owner keeps their private tag.
+ * It may not be shared to that spot again (`spot_share_revoked`). Closes every
+ * open spot report on the same card, as the takedown does.
+ */
+export async function removeAtlasReportFromSpot(
+  reportId: string,
+): Promise<"ok" | "not_found" | "unsupported"> {
+  const sql = requireSql();
+  const rows = await sql<
+    { target_type: AtlasReportTarget; target_id: string | null; source_item_id: string | null }[]
+  >`
+    SELECT target_type, target_id, source_item_id
+    FROM atlas_reports
+    WHERE id = ${reportId}::bigint
+  `;
+  const report = rows[0];
+  if (!report) return "not_found";
+  if (report.target_type !== "item_spot") return "unsupported";
+  if (!report.source_item_id) return "not_found";
+  const sourceItemId = report.source_item_id;
+  await sql.begin(async (tx) => {
+    await tx`
+      UPDATE user_atlas_items
+      SET spot_share_revoked = spot_id,
+          spot_shared = false,
+          updated_at = now()
+      WHERE id = ${sourceItemId}::uuid
+        AND spot_id IS NOT NULL
+    `;
+    await tx`
+      UPDATE atlas_public_items
+      SET spot_id = NULL, updated_at = now()
+      WHERE source_item_id = ${sourceItemId}::uuid
+    `;
+    await tx`
+      UPDATE atlas_reports
+      SET status = 'reviewed'
+      WHERE target_type = 'item_spot'
+        AND source_item_id = ${sourceItemId}::uuid
+        AND status = 'open'
+    `;
+  });
+  return "ok";
 }
 
 /**

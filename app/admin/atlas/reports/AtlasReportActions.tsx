@@ -6,9 +6,12 @@ import { useState } from "react";
 export default function AtlasReportActions({
   id,
   canTakeDown,
+  canRemoveFromSpot = false,
 }: {
   id: string;
   canTakeDown: boolean;
+  /** A 「不是在這裡拍的」 report: take the card off its 景點, keep it on 物見. */
+  canRemoveFromSpot?: boolean;
 }) {
   const router = useRouter();
   const [busy, setBusy] = useState(false);
@@ -17,7 +20,9 @@ export default function AtlasReportActions({
   const [confirming, setConfirming] = useState(false);
   const [error, setError] = useState("");
 
-  async function post(body: { status: "reviewed" | "dismissed" } | { action: "takedown" }) {
+  async function post(
+    body: { status: "reviewed" | "dismissed" } | { action: "takedown" | "remove_from_spot" },
+  ) {
     setBusy(true);
     setError("");
     try {
@@ -55,6 +60,16 @@ export default function AtlasReportActions({
       >
         忽略
       </button>
+      {canRemoveFromSpot && (
+        <button
+          type="button"
+          disabled={busy}
+          onClick={() => post({ action: "remove_from_spot" })}
+          className="rounded-lg bg-amber-100 px-3 py-1.5 text-xs font-semibold text-amber-800 disabled:opacity-60"
+        >
+          {busy ? "處理中..." : "撤出景點"}
+        </button>
+      )}
       {canTakeDown && !confirming && (
         <button
           type="button"

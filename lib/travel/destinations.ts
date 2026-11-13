@@ -32,6 +32,19 @@ interface Names {
 /** A position inside a map, 0–1 on each axis, origin top-left. */
 type Point = readonly [x: number, y: number];
 
+/**
+ * Where a spot is on the ground: a centre and how far from it a photo still
+ * counts as taken there. Only the iOS app uses it, on the device, to suggest a
+ * spot for a photo that carries its own location — the coordinates of a photo
+ * never reach the server (parent repo docs/adr/0002). Circles of neighbouring
+ * spots must not overlap, so a point matches at most one.
+ */
+export interface SpotGeo {
+  lat: number;
+  lng: number;
+  radiusM: number;
+}
+
 export interface TravelSpot {
   id: string;
   name: Names;
@@ -42,6 +55,7 @@ export interface TravelSpot {
   /** Which side of the marker the name sits on, so neighbours don't collide. */
   label: "left" | "right";
   wordIds: readonly string[];
+  geo: SpotGeo;
 }
 
 /** What a city map is made of. Positions are 0–1 inside `aspect`. */
@@ -72,6 +86,11 @@ export interface TravelRegion {
 export interface TravelDestination {
   id: string;
   name: Names;
+  /**
+   * The language of the place. A 自製圖鑑 card may be tagged to a spot here
+   * only when it is a card for this language (lib/travel/spot-tagging.ts).
+   */
+  language: "ja" | "en";
   grid: { columns: number; rows: number };
   regions: readonly TravelRegion[];
   cities: readonly TravelCity[];
@@ -115,6 +134,7 @@ const TOKYO: TravelCity = {
         "paper-lantern", "rickshaw", "shop", "kimono", "folding-fan",
         "fortune-slip", "offering-box", "ningyo-yaki",
       ],
+      geo: { lat: 35.7148, lng: 139.7967, radiusM: 600 },
     },
     {
       id: "ueno",
@@ -127,6 +147,7 @@ const TOKYO: TravelCity = {
         "park", "boat", "cherry-tree-avenue", "cherry-blossom-viewing", "picnic-sheet",
         "pond", "zoo", "museum",
       ],
+      geo: { lat: 35.7146, lng: 139.7732, radiusM: 700 },
     },
     {
       id: "akihabara",
@@ -139,6 +160,7 @@ const TOKYO: TravelCity = {
         "capsule-toy-machine", "claw-machine", "character-figure", "acrylic-stand",
         "trading-card", "plastic-model-kit", "photo-sticker-booth", "pin-badge",
       ],
+      geo: { lat: 35.6984, lng: 139.7731, radiusM: 500 },
     },
     {
       id: "tsukiji",
@@ -151,6 +173,7 @@ const TOKYO: TravelCity = {
         "kitchen-knife", "wasabi", "dipping-dish", "sushi-chef", "fishmonger",
         "tuna", "seafood-rice-bowl", "rolled-omelette",
       ],
+      geo: { lat: 35.6654, lng: 139.7707, radiusM: 400 },
     },
     {
       id: "shibuya",
@@ -163,6 +186,7 @@ const TOKYO: TravelCity = {
         "intersection", "crosswalk", "traffic-light", "billboard", "pedestrian",
         "photo-sticker-booth", "large-video-screen", "bronze-statue",
       ],
+      geo: { lat: 35.6595, lng: 139.7005, radiusM: 500 },
     },
     {
       id: "meiji-jingu",
@@ -175,6 +199,7 @@ const TOKYO: TravelCity = {
         "tree", "sake", "torii-gate", "shrine-approach", "purification-pavilion",
         "votive-plaque", "amulet", "sake-barrel",
       ],
+      geo: { lat: 35.6764, lng: 139.6993, radiusM: 700 },
     },
   ],
 };
@@ -183,6 +208,7 @@ export const TRAVEL_DESTINATIONS: readonly TravelDestination[] = [
   {
     id: "japan",
     name: { zh: "日本", ja: "日本", en: "Japan" },
+    language: "ja",
     grid: { columns: 14, rows: 16 },
     regions: [
       {
@@ -251,6 +277,14 @@ export function allTravelSpots(
   return destinations.flatMap((d) => d.cities.flatMap((c) => [...c.spots]));
 }
 
+/** The destination a spot belongs to, for its language. */
+export function destinationOfSpot(
+  spotId: string,
+  destinations: readonly TravelDestination[] = TRAVEL_DESTINATIONS,
+): TravelDestination | null {
+  return destinations.find((d) => d.cities.some((c) => c.spots.some((s) => s.id === spotId))) ?? null;
+}
+
 export function findTravelSpot(
   id: string,
   destinations: readonly TravelDestination[] = TRAVEL_DESTINATIONS,
@@ -275,6 +309,7 @@ function named(names: Names, lang: UiLang): string {
 export interface LocalizedTravelDestination {
   id: string;
   name: string;
+  language: "ja" | "en";
   grid: { columns: number; rows: number };
   regions: { id: string; name: string; tiles: Point[]; nameAt: Point; cityIds: string[] }[];
   cities: {
@@ -298,6 +333,7 @@ export interface LocalizedTravelDestination {
       open: boolean;
       /** A non-member may study this spot. */
       free: boolean;
+      geo: SpotGeo;
     }[];
   }[];
 }
@@ -339,6 +375,7 @@ export function localizeTravelDestinations(
         wordIds: [...s.wordIds],
         open: s.wordIds.every((id) => servedWordIds.has(id)),
         free: freeSpotIds.includes(s.id),
+        geo: { ...s.geo },
       })),
     }));
     if (!cities.some((c) => c.spots.some((s) => s.open))) return [];
@@ -346,6 +383,7 @@ export function localizeTravelDestinations(
       {
         id: d.id,
         name: named(d.name, lang),
+        language: d.language,
         grid: d.grid,
         regions: d.regions.map((r) => ({
           id: r.id,

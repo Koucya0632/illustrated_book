@@ -19,6 +19,7 @@ import type { StoreSnapshot } from "../lib/credits/store-contracts";
 import { creditOperationsReport } from "../lib/credits/operations-report";
 import { migrateAssistantSchema } from "../lib/assistant/schema";
 import { backfillCaptureUsage } from "../lib/ai-operations/usage";
+import { ATLAS_SPOT_DDL } from "../lib/atlas/spot-schema";
 
 const databaseUrl = process.env.CREDIT_TEST_DATABASE_URL;
 const errorCode = (code: string) => (error: unknown) =>
@@ -57,6 +58,10 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
     for (const column of ["enrichment", "definition_ja", "definition_en", "reading_segments", "backfill_attempts", "backfill_attempts_version"]) {
       const statement = migration.match(new RegExp("`(ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS " + column + " [^`]+)`"))?.[1];
       assert.ok(statement); await sql.unsafe(statement);
+    }
+    // The 景點 columns, from the same list migrate.ts spreads (this test has no public items or reports).
+    for (const statement of ATLAS_SPOT_DDL.filter(s => s.includes("ALTER TABLE user_atlas_items"))) {
+      await sql.unsafe(statement); await sql.unsafe(statement);
     }
     await sql`ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_revoked_at TIMESTAMPTZ`;
     await sql`ALTER TABLE user_lifetime_entitlements ADD COLUMN IF NOT EXISTS source TEXT`;
@@ -558,6 +563,38 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       assert.equal(calls, 1); assert.equal((await f.wallet.readWallet(f.account)).available, 1000);
       assert.equal((await f.operations.read(f.account, op.id)).fulfillmentState, "compensated");
     });
+    await t.test("a 景點 from the photo rides on the confirm; one the card may not carry is dropped", async () => {
+      const f = await fixture();
+      const ja = { ...f.input, targetLanguage: "ja" as const };
+      const op = await f.accept("spot-ja", ja);
+      const shown = await f.finish(op.id), picked = shown.result.candidates[0];
+      const confirmed = await f.operations.confirm(f.account, op.id, picked.id, {}, "asakusa");
+      assert.equal(confirmed.item.spot_id, "asakusa");
+      assert.equal(confirmed.item.spot_shared, false);
+      // A replay answers with the saved card, whatever spot it names.
+      const replay = await f.operations.confirm(f.account, op.id, picked.id, {}, "ueno");
+      assert.equal(replay.item.spot_id, "asakusa");
+      // Recognising the same photo again keeps where it was taken.
+      const again = await f.accept("spot-ja-again", ja);
+      const shownAgain = await f.finish(again.id);
+      const reconfirmed = await f.operations.confirm(f.account, again.id, shownAgain.result.candidates[0].id);
+      assert.equal(reconfirmed.item.id, confirmed.item.id);
+      assert.equal(reconfirmed.item.spot_id, "asakusa");
+
+      // An English card cannot sit at a Japanese spot, and an unknown spot is no spot; the card is still made.
+      const en = await fixture();
+      const enOp = await en.accept();
+      const enShown = await en.finish(enOp.id);
+      const enCard = await en.operations.confirm(en.account, enOp.id, enShown.result.candidates[0].id, {}, "asakusa");
+      assert.equal(enCard.item.spot_id, null);
+      const unknown = await fixture();
+      const unknownOp = await unknown.accept("spot-unknown", { ...unknown.input, targetLanguage: "ja" });
+      const unknownShown = await unknown.finish(unknownOp.id);
+      const unknownCard = await unknown.operations.confirm(unknown.account, unknownOp.id,
+        unknownShown.result.candidates[0].id, {}, "dotonbori");
+      assert.equal(unknownCard.item.spot_id, null);
+    });
+
     await t.test("re-recognition clears old details and fences the old included supplement", async () => {
       const f = await fixture(), first = await included(f);
       const lease = await f.fulfillments.claim(f.account, first.op.id); assert.ok(lease);

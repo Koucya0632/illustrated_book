@@ -19,8 +19,10 @@ export const confirmCandidateInput = z.object({
   lemma: correctedName.optional(),
   displayZhHant: correctedName.optional(),
   displayGloss: correctedName.nullable().optional(),
+  /** The 景點 the app matched from the photo's own location, on the device (parent repo docs/adr/0002). */
+  spotId: z.string().trim().min(1).max(64).optional(),
 }).strict();
-export type CandidateCorrection = Omit<z.infer<typeof confirmCandidateInput>, "candidateId">;
+export type CandidateCorrection = Omit<z.infer<typeof confirmCandidateInput>, "candidateId" | "spotId">;
 
 const candidate = z.object({
   label: z.string().trim().min(1).max(120),

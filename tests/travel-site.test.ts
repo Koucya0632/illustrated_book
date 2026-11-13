@@ -15,7 +15,9 @@ import { travelCopy } from "../lib/travel/site";
 
 const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 const LANGS = ["zh-Hant", "zh-Hans", "en", "ja"] as const;
-const KEYS = ["title", "lead", "spots", "notOpen", "seenHere", "seenLead", "inApp"] as const;
+const KEYS = [
+  "title", "lead", "spots", "notOpen", "seenHere", "seenLead", "inApp", "peopleShot", "peopleShotLead",
+] as const;
 
 test("every piece of copy exists in all four languages, with its placeholders filled", () => {
   for (const lang of LANGS) {

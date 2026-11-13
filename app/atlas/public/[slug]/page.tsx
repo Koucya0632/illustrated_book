@@ -92,7 +92,7 @@ export default async function PublicAtlasDetailPage(
             </div>
           )}
           <div className="mt-6 border-t border-black/5 pt-4">
-            <ReportButton slug={item.public_slug} />
+            <ReportButton slug={item.public_slug} atSpot={Boolean(item.spot_id)} />
           </div>
         </section>
       </article>

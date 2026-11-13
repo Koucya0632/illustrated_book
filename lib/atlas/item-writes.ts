@@ -64,6 +64,10 @@ export function confirmedNames(input: {
  * A re-confirm is a different card: everything 補充 wrote for the previous
  * name is cleared and its budget restarts, so definitions of the old word can
  * never sit under the new one.
+ *
+ * The 景點 is where the photo was taken, so a re-confirm keeps it unless this
+ * confirm names one — except when the card changes language, which the spot's
+ * place may no longer match. Sharing survives only if the spot is unchanged.
  */
 export async function saveConfirmedItem(tx: Tx, input: {
   itemId: string;
@@ -74,6 +78,8 @@ export async function saveConfirmedItem(tx: Tx, input: {
   targetLanguage: AtlasTargetLanguage;
   primaryLabel: string;
   names: ConfirmedNames;
+  /** Already checked against the card's language (spotForCard). */
+  spotId: string | null;
   now: Date;
 }): Promise<AtlasItemRow> {
   const { names: n } = input;
@@ -87,12 +93,18 @@ export async function saveConfirmedItem(tx: Tx, input: {
         example_target = NULL, example_zh_hant = NULL, note_zh_hant = NULL,
         enrichment = '{}'::jsonb, backfill_status = 'pending', backfill_error = NULL,
         backfill_attempts = 0, backfill_attempts_version = 0,
+        spot_shared = CASE WHEN target_language = ${input.targetLanguage}
+          AND (${input.spotId}::text IS NULL OR spot_id IS NOT DISTINCT FROM ${input.spotId}::text)
+          THEN spot_shared ELSE false END,
+        spot_id = CASE WHEN target_language = ${input.targetLanguage}
+          THEN COALESCE(${input.spotId}::text, spot_id) ELSE ${input.spotId}::text END,
         correction_source = ${n.source}, updated_at = ${input.now}
         WHERE id = ${input.itemId} AND user_id = ${input.userId} RETURNING *`
     : await tx`INSERT INTO user_atlas_items (id, user_id, image_id, selected_candidate_id, target_language,
-        primary_label, lemma, display_zh_hant, display_ja, display_en, correction_source)
+        primary_label, lemma, display_zh_hant, display_ja, display_en, correction_source, spot_id)
         VALUES (${input.itemId}, ${input.userId}, ${input.imageId}, ${input.candidateId}, ${input.targetLanguage},
-          ${input.primaryLabel}, ${n.lemma}, ${n.displayZhHant}, ${n.displayJa}, ${n.displayEn}, ${n.source})
+          ${input.primaryLabel}, ${n.lemma}, ${n.displayZhHant}, ${n.displayJa}, ${n.displayEn}, ${n.source},
+          ${input.spotId})
         RETURNING *`;
   await tx`UPDATE user_atlas_images SET status = 'confirmed', updated_at = ${input.now} WHERE id = ${input.imageId}`;
   return item as AtlasItemRow;

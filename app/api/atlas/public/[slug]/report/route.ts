@@ -19,6 +19,7 @@ const REASONS = new Set<AtlasReportReason>([
   "copyright",
   "wrong",
   "other",
+  "not_here",
 ]);
 
 export async function POST(req: Request, props: { params: Promise<{ slug: string }> }) {
@@ -63,8 +64,16 @@ export async function POST(req: Request, props: { params: Promise<{ slug: string
   const item = await getAtlasPublicItem(slug);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });
 
+  // 「不是在這裡拍的」 is about the card at its 景點, not the card: a target of
+  // its own, it only exists while the card is shared there, and it never
+  // counts toward taking the card off 物見 — an admin removes it from the spot.
+  const atSpot = reason === "not_here";
+  if (atSpot && !item.spot_id) {
+    return NextResponse.json({ error: "invalid reason" }, { status: 400 });
+  }
+
   const result = await createAtlasReport({
-    targetType: "item",
+    targetType: atSpot ? "item_spot" : "item",
     targetId: item.id,
     publicItemId: item.id,
     sourceItemId: item.source_item_id ?? null,
@@ -76,18 +85,20 @@ export async function POST(req: Request, props: { params: Promise<{ slug: string
 
   // Only a new report can move the needle; a duplicate must not re-trigger.
   if (!result.already) {
-    const escalated = await maybeEscalateAtlasReport({
-      publicItemId: item.id,
-      sourceItemId: item.source_item_id ?? null,
-      reason,
-    });
+    const escalated = atSpot
+      ? false
+      : await maybeEscalateAtlasReport({
+          publicItemId: item.id,
+          sourceItemId: item.source_item_id ?? null,
+          reason,
+        });
     // After escalation, so the message can say whether anything already
     // happened — an item that auto-hid needs a different kind of attention from
     // one still sitting live on the feed.
     await notifyModeration(
       [
         escalated ? "🚨 檢舉（已自動下架）" : "⚠️ 新檢舉",
-        `項目：${item.lemma} (${item.public_slug})`,
+        `項目：${item.lemma} (${item.public_slug})${atSpot ? `，景點：${item.spot_id}` : ""}`,
         `原因：${reason}${detail ? ` — ${detail}` : ""}`,
         adminReportsUrl(),
       ].join("\n"),

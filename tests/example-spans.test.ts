@@ -920,3 +920,13 @@ test("the audited living-room click translations expose content words with conte
   assert.ok(!authored.en[wallArt.en].some(({ t, z }) => t === "Before hanging" && z));
   assert.equal(tappable("en", wallArt.en, "hanging").z, "懸掛");
 });
+
+test("mug's warm gloss describes heating the cup", () => {
+  const corpus = JSON.parse(
+    readFileSync(new URL("../data/example-spans.json", import.meta.url), "utf8"),
+  ) as Record<"en" | "ja", Record<string, Array<Record<string, string>>>>;
+  const sentence = "Before pouring in hot water, I warm the mug so the coffee stays hot longer.";
+  const spans = corpus.en[sentence];
+  assert.equal(spans.map((span) => span.t).join(""), sentence);
+  assert.equal(spans.find((span) => span.t === "warm")?.z, "溫熱");
+});

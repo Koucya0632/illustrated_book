@@ -1,10 +1,3 @@
-import { MAIN_WORD_DENTAL_CLINIC_IDS } from "../lib/main-word-dental-clinic-2026-10";
-import { MAIN_WORD_PHONE_INTERNET_IDS } from "../lib/main-word-phone-internet-2026-10";
-import { MAIN_WORD_IDENTITY_DOCUMENTS_IDS } from "../lib/main-word-identity-documents-2026-10";
-import { MAIN_WORD_AIRPORT_IDS } from "../lib/main-word-airport-2026-10";
-import { MAIN_WORD_POSTAL_SERVICES_IDS } from "../lib/main-word-postal-services-2026-10";
-import { MAIN_WORD_BANK_IDS } from "../lib/main-word-bank-2026-10";
-import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS } from "../lib/main-word-anime-fan-merch-expansion-2026-10";
 // Idempotent: creates tables if missing, seeds the words table if empty,
 // generates cards. Targets Supabase Postgres (or any standard Postgres URL
 // in DATABASE_URL). Runs at build time via the `vercel-build` script.
@@ -17,26 +10,9 @@ import postgres from "postgres";
 import { assertPublishedChoiceCoverage } from "../lib/study-choice-catalog";
 import { categories as seedCategories } from "../lib/categories";
 import { words as seedWords } from "../lib/words";
+import { createCatalogueSync } from "../lib/catalogue/sync";
 import { runAtlasTextModeration } from "../lib/atlas/moderation";
-import { applyMainWordCorrections } from "../lib/main-word-corrections";
 import { applyMainWordMerges } from "../lib/main-word-merges";
-import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
-import { MAIN_WORD_ALCOHOLIC_DRINKS_IDS } from "../lib/main-word-alcoholic-drinks-2026-09";
-import { MAIN_WORD_CONVENIENCE_STORE_IDS } from "../lib/main-word-convenience-store-2026-09";
-import { MAIN_WORD_DRUGSTORE_IDS } from "../lib/main-word-drugstore-2026-09";
-import { MAIN_WORD_CLOTHING_IDS } from "../lib/main-word-clothing-2026-09";
-import { MAIN_WORD_RESTAURANT_IDS } from "../lib/main-word-restaurant-2026-10";
-import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS } from "../lib/main-word-concert-fan-support-2026-10";
-import { MAIN_WORD_STATION_COMMUTING_IDS } from "../lib/main-word-station-commuting-2026-10";
-import { MAIN_WORD_FESTIVALS_IDS } from "../lib/main-word-festivals-2026-10";
-import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS } from "../lib/main-word-cherry-blossom-season-2026-10";
-import { MAIN_WORD_HAIR_SALON_IDS } from "../lib/main-word-hair-salon-2026-10";
-import { MAIN_WORD_EMERGENCY_KIT_IDS } from "../lib/main-word-emergency-kit-2026-10";
-import { MAIN_WORD_ARCADE_IDS } from "../lib/main-word-arcade-2026-10";
-import { MAIN_WORD_CAMPUS_IDS } from "../lib/main-word-campus-2026-10";
-import { MAIN_WORD_ONSEN_RYOKAN_IDS } from "../lib/main-word-onsen-ryokan-2026-10";
-import { MAIN_WORD_COLLECTING_HOBBIES_IDS } from "../lib/main-word-collecting-hobbies-2026-10";
-import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 import { lockDownPublicTables } from "../lib/rls-lockdown";
 import { ATLAS_SPOT_DDL } from "../lib/atlas/spot-schema";
@@ -49,49 +25,17 @@ import { migrateVocabularySchema } from "../lib/assistant/vocabulary/schema";
 import { migrateGrammarSchema } from "../lib/assistant/grammar/schema";
 import { migrateTopicChatSchema } from "../lib/topic-chat/schema";
 
-const GUARDED_PUBLISH_SERIES = [
-  { category: "professions", ids: MAIN_WORD_PROFESSIONS_IDS },
-  { category: "alcoholic-drinks", ids: MAIN_WORD_ALCOHOLIC_DRINKS_IDS },
-  { category: "convenience-store", ids: MAIN_WORD_CONVENIENCE_STORE_IDS },
-  { category: "drugstore", ids: MAIN_WORD_DRUGSTORE_IDS },
-  { category: "clothing", ids: MAIN_WORD_CLOTHING_IDS },
-  { category: "restaurant", ids: MAIN_WORD_RESTAURANT_IDS },
-  { category: "concert-fan-support", ids: MAIN_WORD_CONCERT_FAN_SUPPORT_IDS },
-  { category: "concert-fan-support", ids: MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS },
-  { category: "station-commuting", ids: MAIN_WORD_STATION_COMMUTING_IDS },
-  { category: "festivals", ids: MAIN_WORD_FESTIVALS_IDS },
-  { category: "cherry-blossom-season", ids: MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS },
-  { category: "collecting-hobbies", ids: MAIN_WORD_COLLECTING_HOBBIES_IDS },
-  { category: "campus", ids: MAIN_WORD_CAMPUS_IDS },
-  { category: "arcade", ids: MAIN_WORD_ARCADE_IDS },
-  { category: "onsen-ryokan", ids: MAIN_WORD_ONSEN_RYOKAN_IDS },
-  { category: "emergency-kit", ids: MAIN_WORD_EMERGENCY_KIT_IDS },
-  { category: "hair-salon", ids: MAIN_WORD_HAIR_SALON_IDS },
-  { category: "bank", ids: MAIN_WORD_BANK_IDS },
-  { category: "postal-services", ids: MAIN_WORD_POSTAL_SERVICES_IDS },
-  { category: "identity-documents", ids: MAIN_WORD_IDENTITY_DOCUMENTS_IDS },
-  { category: "airport", ids: MAIN_WORD_AIRPORT_IDS },
-  { category: "phone-internet", ids: MAIN_WORD_PHONE_INTERNET_IDS },
-  { category: "dental-clinic", ids: MAIN_WORD_DENTAL_CLINIC_IDS },
-] as const;
-const GUARDED_PUBLISH_WORD_IDS = new Set<string>(
-  GUARDED_PUBLISH_SERIES.flatMap(({ ids }) => ids),
-);
-const isGuardedPublishWord = (word: { id: string; category: string }) =>
-  GUARDED_PUBLISH_WORD_IDS.has(word.id) ||
-  GUARDED_PUBLISH_SERIES.some(({ category }) => category === word.category);
-
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
   `CREATE TABLE IF NOT EXISTS words (
      id              TEXT PRIMARY KEY,
      word            TEXT NOT NULL,
      also_known_as   TEXT[] NOT NULL DEFAULT '{}',
-     -- Legacy column being phased out: seedV2 already inserts Chinese
+     -- Legacy column being phased out: seeding already inserts Chinese
      -- into word_definitions (lang='zh-Hant', sort_order=0), and the
      -- POST_BACKFILL_DROPS step at the end of main() removes this
      -- column. Leaving it NOT NULL caused fresh-DB seeding to fail
-     -- because seedV2's INSERT no longer populates it. Existing DBs are
+     -- because the seed INSERT no longer populates it. Existing DBs are
      -- unaffected (CREATE TABLE IF NOT EXISTS won't alter columns).
      chinese         TEXT,
      category        TEXT NOT NULL,
@@ -503,7 +447,7 @@ const DDL = [
      created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
    )`,
   // FK words.category → categories.id is added in backfillSchemaV2, after
-  // seedCategoriesIntoDb has populated the table — adding it here would fail
+  // catalogue.seedCategories() has populated the table — adding it here would fail
   // because the categories table is empty when the DDL batch runs.
 
   // ---- tags: free-form labels (no hardcoded list) ----
@@ -2092,92 +2036,8 @@ async function legacyColumnsPresent(sql: any): Promise<boolean> {
   return c > 0;
 }
 
-// Seed the categories reference table from the static TS source
-// (`lib/categories.ts`). Idempotent and additive: adding a new category to that
-// file just inserts one more row on the next deploy.
-//
-// On conflict, **every display field** is refreshed, so the seed file is the
-// source of truth for all of them. It used to refresh only image_url and
-// sort_order, which quietly made the other fields code-shaped decoration: an
-// edit to a name or a description was a no-op against any database that already
-// had the row, and since `/api/categories` serves DB rows (the static list is
-// just the no-DB fallback), production kept serving the original seed forever.
-// Renaming the 社群圖鑑 theme to 物見 is the bug that found it — the code said
-// 物見, production said 社群圖鑑, and nothing in between complained. Adding a
-// display field to `Category` means adding it to the conflict clause too.
-//
-// Nothing else writes this table (only this function and `translate.ts`, which
-// touches `category_translations`), so there are no hand-made edits to clobber.
-//
-// MUST run before word seeding so words.category never references a category
-// that isn't in the table yet (the words_category_fk would reject it).
-//
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function readGuardedSeriesPublicationState(
-  sql: any,
-): Promise<Map<string, boolean>> {
-  const guardedPublishedRows = await sql<{ id: string; category: string }[]>`
-    SELECT id, category FROM words
-    WHERE id = ANY(${Array.from(GUARDED_PUBLISH_WORD_IDS)})
-      AND status = 'published'
-      AND deleted_at IS NULL
-  `;
-  const guardedPublishedKeys = new Set(
-    guardedPublishedRows.map(
-      ({ id, category }: { id: string; category: string }) =>
-        `${category}:${id}`,
-    ),
-  );
-  // A category may have several independently guarded expansion batches.
-  // Metadata is safe to seed only after every batch is fully published.
-  const states = new Map<string, boolean>();
-  for (const { category, ids } of GUARDED_PUBLISH_SERIES) {
-    states.set(category, (states.get(category) ?? true) &&
-      ids.every((id) => guardedPublishedKeys.has(`${category}:${id}`)));
-  }
-  return states;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function seedCategoriesIntoDb(sql: any) {
-  const guardedPublicationState = await readGuardedSeriesPublicationState(sql);
-  for (const c of seedCategories) {
-    // A guarded category and all its planned words are released together by a
-    // dedicated publisher. Routine deploys must not expose an empty or partial
-    // category, or become an alternate path around that publisher.
-    if (guardedPublicationState.get(c.id) === false) continue;
-    await sql`
-      INSERT INTO categories
-        (id, name, name_zh, emoji, description, description_en, color, image_url, sort_order)
-      VALUES (
-        ${c.id}, ${c.name}, ${c.nameZh}, ${c.emoji},
-        ${c.description}, ${c.descriptionEn ?? null}, ${c.color}, ${c.imageUrl},
-        ${seedCategories.indexOf(c)}
-      )
-      ON CONFLICT (id) DO UPDATE SET
-        name = EXCLUDED.name,
-        name_zh = EXCLUDED.name_zh,
-        emoji = EXCLUDED.emoji,
-        description = EXCLUDED.description,
-        description_en = EXCLUDED.description_en,
-        color = EXCLUDED.color,
-        image_url = EXCLUDED.image_url,
-        sort_order = EXCLUDED.sort_order
-      WHERE (categories.name, categories.name_zh, categories.emoji,
-             categories.description, categories.description_en, categories.color,
-             categories.image_url, categories.sort_order)
-        IS DISTINCT FROM
-            (EXCLUDED.name, EXCLUDED.name_zh, EXCLUDED.emoji,
-             EXCLUDED.description, EXCLUDED.description_en, EXCLUDED.color,
-             EXCLUDED.image_url, EXCLUDED.sort_order)
-    `;
-  }
-  const [{ c: catCount }] = await sql`SELECT count(*)::int AS c FROM categories`;
-  console.log(`[migrate] categories: ${catCount} rows`);
-}
-
 // These rows depend on categories, so they must run after
-// seedCategoriesIntoDb. Keeping them in the DDL batch makes a clean database
+// catalogue.seedCategories(). Keeping them in the DDL batch makes a clean database
 // fail its category_translations foreign key before the seed rows exist.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function seedCategoryTranslationsIntoDb(sql: any) {
@@ -2251,7 +2111,7 @@ async function seedCategoryTranslationsIntoDb(sql: any) {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function backfillSchemaV2(sql: any) {
-  // categories are already seeded (see seedCategoriesIntoDb in the main run);
+  // categories are already seeded (see catalogue.seedCategories() in the main run);
   // now that the table has rows, attach the FK (idempotent).
   await sql.unsafe(`
     DO $$ BEGIN
@@ -2675,69 +2535,6 @@ async function setupStudyLogsPartitioning(sql: any) {
   );
 }
 
-// Seeds the given words + all v2 sub-tables from the static seedWords list
-// (already normalized to v2 shape by legacyToV2 in lib/words.ts). `list`
-// defaults to every seed word (fresh DB); main() passes only the words missing
-// from the DB so this is idempotent and re-runnable on every deploy. The
-// example insert assumes the word has no existing examples — true for missing
-// words — so don't call this with words already present.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function seedV2(sql: any, list: typeof seedWords = seedWords) {
-  for (const w of list) {
-    // Guard the write boundary too: no caller may accidentally publish a
-    // dedicated series by passing the full static seed or a renamed category.
-    if (isGuardedPublishWord(w)) continue;
-    // words row (new columns only — no legacy after Phase 3 drop).
-    await sql`
-      INSERT INTO words (
-        id, word, also_known_as, category, part_of_speech,
-        pronunciation, image_url, status, collocations, note, chinese_definition
-      ) VALUES (
-        ${w.id}, ${w.word}, ${w.alsoKnownAs ?? []}, ${w.category},
-        ${w.partOfSpeech}, ${w.pronunciation}, ${w.imageUrl},
-        'published', ${w.collocations ?? []}, ${w.note ?? null}, ${w.chineseDefinition ?? null}
-      )
-      ON CONFLICT (id) DO NOTHING
-    `;
-    // definitions
-    for (const d of w.definitions ?? []) {
-      if (!d.definition) continue;
-      await sql`
-        INSERT INTO word_definitions (word_id, language, definition, sort_order)
-        VALUES (${w.id}, ${d.language}, ${d.definition}, ${d.sortOrder})
-        ON CONFLICT (word_id, language, sort_order) DO NOTHING
-      `;
-    }
-    // examples + translations
-    for (let i = 0; i < (w.examples ?? []).length; i++) {
-      const ex = w.examples[i];
-      if (!ex.en) continue;
-      const [{ id: exId }] = await sql`
-        INSERT INTO word_examples (word_id, sentence, cefr_level, sort_order)
-        VALUES (${w.id}, ${ex.en}, ${ex.cefrLevel ?? null}, ${ex.sortOrder ?? i})
-        RETURNING id
-      `;
-      for (const [lang, text] of Object.entries(ex.translations ?? {})) {
-        if (!text) continue;
-        await sql`
-          INSERT INTO word_example_translations (example_id, language, translation)
-          VALUES (${exId}, ${lang}, ${text})
-          ON CONFLICT (example_id, language) DO NOTHING
-        `;
-      }
-    }
-    // relations
-    for (const r of w.relations ?? []) {
-      if (!r.wordId || r.wordId === w.id) continue;
-      await sql`
-        INSERT INTO word_relations (source_word_id, target_word_id, relation_type, note)
-        VALUES (${w.id}, ${r.wordId}, ${r.type}, ${r.note ?? null})
-        ON CONFLICT (source_word_id, target_word_id, relation_type) DO NOTHING
-      `;
-    }
-  }
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function generateCards(sql: any) {
   // One-time + idempotent cleanup of the pre-image-en deck world.
@@ -2845,16 +2642,6 @@ async function generateCards(sql: any) {
   console.log(`[migrate] cards: ${inserted} inserted, ${skipped} already existed`);
 }
 
-// Push seed imageUrl edits to existing rows. seedV2 only ever sees words
-// missing from the DB, so without this step editing an imageUrl in
-// lib/words.ts / supplemental-words.json would silently do nothing.
-//
-// Guard: a row whose image already lives in our Supabase Storage bucket
-// (migrated by scripts/upload-images.ts or uploaded via admin) is never
-// reverted to a non-Storage URL — the seed file usually still holds the
-// original hotlink, and every deploy runs this. Pointing the seed at a new
-// Storage URL, or editing a word still on an external URL, does propagate.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 /// Push the declared storage-bucket rules at the bucket that is supposed to
 /// obey them. `WORD_IMAGE_BUCKET_RULES` says "webp only, 2 MB", and its comment
 /// promises that "a future uploader that forgets encodeWordImage is rejected by
@@ -2893,37 +2680,6 @@ async function syncStorageBucketRules(sql: any) {
     } else {
       console.log(`[migrate] bucket rules: ${r.id} already matches.`);
     }
-  }
-}
-
-async function syncSeedWordImages(sql: any) {
-  const publicationState = await readGuardedSeriesPublicationState(sql);
-  const seeded = seedWords.filter(
-    (w) => w.imageUrl && (!isGuardedPublishWord(w) || publicationState.get(w.category) === true),
-  );
-  const ids = seeded.map((w) => w.id);
-  const urls = seeded.map((w) => w.imageUrl);
-  const updated = await sql`
-    UPDATE words w
-    SET image_url = s.image_url
-    FROM unnest(${ids}::text[], ${urls}::text[]) AS s(id, image_url)
-    WHERE w.id = s.id
-      AND w.status = 'published'
-      AND w.deleted_at IS NULL
-      AND w.image_url IS DISTINCT FROM s.image_url
-      AND (
-        w.image_url IS NULL
-        OR w.image_url NOT LIKE '%/word-images/%'
-        OR s.image_url LIKE '%/word-images/%'
-      )
-    RETURNING w.id
-  `;
-  if (updated.length > 0) {
-    console.log(
-      `[migrate] image_url synced from seed: ${updated.map((r: { id: string }) => r.id).join(", ")}`,
-    );
-  } else {
-    console.log(`[migrate] image_url: no seed changes to sync.`);
   }
 }
 
@@ -2968,76 +2724,21 @@ async function main() {
     // Seed categories BEFORE words: words.category is FK-constrained to
     // categories.id, so any newly added category must exist first or word
     // seeding would fail on an existing DB where the FK is already attached.
-    await seedCategoriesIntoDb(sql);
+    const catalogue = createCatalogueSync(sql, { categories: seedCategories, words: seedWords });
+    await catalogue.seedCategories();
     await seedCategoryTranslationsIntoDb(sql);
 
-    // Seed only the words missing from the DB — idempotent, so newly added
-    // seed entries (e.g. supplemental-words.json) get inserted on every deploy
-    // instead of only on an empty DB. This also guarantees every seed word's
-    // row exists before generateCards (which would otherwise FK-fail).
-    const existingRows = await sql<{ id: string }[]>`SELECT id FROM words`;
-    const have = new Set(existingRows.map((r) => r.id));
-    const guardedMissing = seedWords.filter(
-      (w) => isGuardedPublishWord(w) && !have.has(w.id),
-    );
-    const missing = seedWords.filter(
-      (w) => !isGuardedPublishWord(w) && !have.has(w.id),
-    );
-    if (guardedMissing.length > 0) {
-      console.log(
-        `[migrate] deferring ${guardedMissing.length} guarded series word(s) to its dedicated publisher.`,
-      );
-    }
-    if (missing.length === 0) {
-      console.log(
-        guardedMissing.length > 0
-          ? "[migrate] all routine seed words present; guarded series remain deferred."
-          : `[migrate] all ${seedWords.length} seed words present — nothing to seed.`,
-      );
-    } else {
-      console.log(`[migrate] seeding ${missing.length} missing word(s) of ${seedWords.length}...`);
-      // New words are expected to ship a Supabase Storage image (loremflickr
-      // and other hotlinks are retired — WORD_IMPORT.md §6). Warn, don't fail:
-      // a content slip shouldn't block a prod deploy.
-      const badImg = missing.filter(
-        (w) => !w.imageUrl || !w.imageUrl.includes("/word-images/"),
-      );
-      if (badImg.length > 0) {
-        console.warn(
-          `[migrate] WARNING: ${badImg.length} new word(s) without a Storage image: ${badImg
-            .map((w) => w.id)
-            .join(", ")}`,
-        );
-      }
-      await seedV2(sql, missing);
-      console.log(`[migrate] seed complete.`);
-    }
-
-    // Runs against ALL seed words (not just missing ones) so image edits in
-    // the seed files reach rows that already exist.
-    await syncSeedWordImages(sql);
+    // Seed only the words missing from the DB, so new seed entries land on
+    // every deploy; every seed word's row then exists before generateCards.
+    // Image sync runs against ALL seed words so image edits reach old rows.
+    await catalogue.seedMissingWords();
+    await catalogue.syncWordImages();
 
     await generateCards(sql);
     const mergedWords = await applyMainWordMerges(sql);
     console.log(`[migrate] main-word merges checked (${mergedWords} rows).`);
-    const publishedWordRows = await sql<{ id: string }[]>`
-      SELECT id FROM words WHERE status = 'published' AND deleted_at IS NULL
-    `;
-    const publishedWordIds = new Set(publishedWordRows.map(({ id }) => id));
-    const guardedPublicationState = await readGuardedSeriesPublicationState(sql);
-    for (const { category, ids } of GUARDED_PUBLISH_SERIES) {
-      if (guardedPublicationState.get(category)) continue;
-      for (const id of ids) publishedWordIds.delete(id);
-    }
-    const correctedWords = await applyMainWordCorrections(sql, publishedWordIds);
-    console.log(`[migrate] main-word corrections checked (${correctedWords} rows).`);
-    const pairedExamples = await applyMainWordExamplePairs(
-      sql,
-      publishedWordIds,
-    );
-    console.log(
-      `[migrate] main-word examples checked (${pairedExamples.updated} updated, ${pairedExamples.unchanged} unchanged, ${pairedExamples.spanSentencesUpdated} span sentences updated).`,
-    );
+    // Warns about, and skips, published words with no registered example pair.
+    await catalogue.syncReleasedContent();
     await backfillSchemaV2(sql);
     await backfillSchemaV3(sql);
     await moderateExistingProfileNicknames(sql);

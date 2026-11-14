@@ -9,11 +9,11 @@
 
 import "server-only";
 import {
-  publishAtlasCollectionAtomically,
   markAtlasCollectionContentApproved,
   recordAtlasCollectionModerationEvent,
   setAtlasCollectionReviewStatus,
 } from "../atlas-db";
+import { atlasPublication } from "./publication-live";
 import { decideAtlasModeration, runAtlasTextModeration, type AtlasModerationHit } from "./moderation";
 import type { AtlasCollectionRow } from "./types";
 
@@ -61,7 +61,7 @@ export async function processAtlasCollectionSubmission(
     }
 
     await markAtlasCollectionContentApproved(collection.id);
-    const published = await publishAtlasCollectionAtomically(collection.id);
+    const published = await atlasPublication().publishCollection(collection.id);
     if (!published) {
       await setAtlasCollectionReviewStatus(collection.id, "pending_review");
       return { reviewStatus: "pending_review", published: false, categories };

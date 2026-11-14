@@ -12,6 +12,7 @@
 
 import type postgres from "postgres";
 import { confirmedChineseName } from "./gloss";
+import { mirrorPublicSpot } from "./publication";
 import type { AtlasEnrichment, AtlasItemRow, AtlasTargetLanguage } from "./types";
 import type { FuriganaSegment } from "../kana";
 
@@ -107,6 +108,9 @@ export async function saveConfirmedItem(tx: Tx, input: {
           ${input.spotId})
         RETURNING *`;
   await tx`UPDATE user_atlas_images SET status = 'confirmed', updated_at = ${input.now} WHERE id = ${input.imageId}`;
+  // A re-confirm can move or unshare the spot of a card already on 物見; its
+  // public row follows in the same transaction (lib/atlas/publication.ts).
+  if (input.exists) await mirrorPublicSpot(tx, input.itemId);
   return item as AtlasItemRow;
 }
 

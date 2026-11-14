@@ -29,6 +29,9 @@ export function serializeAtlasPublicItem(row: AtlasPublicItemWithAuthorRow) {
     category: row.category,
     imageUrl: atlasPublicImageUrl(row.image_public_path),
     author: publicAuthor(row),
+    // Non-null only while the owner shares it to that 景點 — their opt-in is
+    // what lets the place leave the server (lib/travel/spot-tagging.ts).
+    spotId: row.spot_id ?? null,
     publishedAt: row.published_at,
   };
 }

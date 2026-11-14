@@ -193,6 +193,14 @@ export interface AtlasItemRow {
   public_slug: string | null;
   share_image_path: string | null;
   cdn_cache_key: string | null;
+  // The 景點 columns (lib/travel/spot-tagging.ts) — present on full-row reads,
+  // omitted by the aliased study mappers, like `enrichment`.
+  /** The 景點 this card is tagged to. Private to the owner. */
+  spot_id?: string | null;
+  /** The owner opted in: others see it at that spot once it is public. */
+  spot_shared?: boolean;
+  /** The spot an admin removed it from after a 「不是在這裡拍的」 report; it may not go back there. */
+  spot_share_revoked?: string | null;
   created_at: string;
   updated_at: string;
   deleted_at: string | null;
@@ -274,6 +282,8 @@ export interface AtlasPublicItemRow {
    */
   attribution_name: string | null;
   review_status: "approved" | "takedown" | "withdrawn";
+  /** Set only while the owner shares it to this 景點; null otherwise. */
+  spot_id: string | null;
   published_at: string;
   updated_at: string;
 }

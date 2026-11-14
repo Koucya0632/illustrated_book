@@ -37,7 +37,10 @@ export async function loadTravelSite(lang: UiLang): Promise<TravelSite> {
   };
 }
 
-type Copy = Record<"title" | "lead" | "spots" | "notOpen" | "seenHere" | "seenLead" | "inApp", string>;
+type Copy = Record<
+  "title" | "lead" | "spots" | "notOpen" | "seenHere" | "seenLead" | "inApp" | "peopleShot" | "peopleShotLead",
+  string
+>;
 
 const COPY: Record<UiLang, Copy> = {
   "zh-Hant": {
@@ -48,6 +51,8 @@ const COPY: Record<UiLang, Copy> = {
     seenHere: "{name}會看到的東西",
     seenLead: "到了{name}會遇到的 {n} 樣東西，日文怎麼說。",
     inApp: "在 App 的物見裡可以照著地圖一個一個學。",
+    peopleShot: "大家拍的",
+    peopleShotLead: "其他人在{name}拍下、分享到這裡的東西。",
   },
   "zh-Hans": {
     title: "跟着 Moira 去旅游",
@@ -57,6 +62,8 @@ const COPY: Record<UiLang, Copy> = {
     seenHere: "{name}会看到的东西",
     seenLead: "到了{name}会遇到的 {n} 样东西，日语怎么说。",
     inApp: "在 App 的物见里可以照着地图一个一个学。",
+    peopleShot: "大家拍的",
+    peopleShotLead: "其他人在{name}拍下、分享到这里的东西。",
   },
   en: {
     title: "Travel with Moira",
@@ -66,6 +73,8 @@ const COPY: Record<UiLang, Copy> = {
     seenHere: "What you'll see in {name}",
     seenLead: "{n} things you will meet in {name}, and what they are called in Japanese.",
     inApp: "In the app, Sightings has the map to study them one by one.",
+    peopleShot: "Shot here by others",
+    peopleShotLead: "Things other learners photographed in {name} and shared here.",
   },
   ja: {
     title: "Moiraと旅に出る",
@@ -75,6 +84,8 @@ const COPY: Record<UiLang, Copy> = {
     seenHere: "{name}で見かけるもの",
     seenLead: "{name}で出会う{n}個のものと、その日本語。",
     inApp: "アプリの物見では、地図をたどって一つずつ学べます。",
+    peopleShot: "みんなが撮ったもの",
+    peopleShotLead: "ほかの人が{name}で撮って、ここに共有したもの。",
   },
 };
 

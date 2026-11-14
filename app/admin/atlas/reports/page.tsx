@@ -14,6 +14,7 @@ const REASON_LABELS: Record<string, string> = {
   copyright: "侵權",
   wrong: "資訊錯誤",
   other: "其他",
+  not_here: "不是在這裡拍的",
 };
 
 const STATUS_LABELS: Record<string, string> = {
@@ -26,6 +27,7 @@ const TARGET_LABELS: Record<string, string> = {
   item: "項目",
   collection: "合集",
   author: "作者身分",
+  item_spot: "景點上的項目",
 };
 
 /** One queue, three kinds of target — each row has to say what it is about. */
@@ -176,7 +178,11 @@ export default async function AdminAtlasReportsPage(
                 </Link>
               )}
               {r.status === "open" && (
-                <AtlasReportActions id={r.id} canTakeDown={canTakeDown(r)} />
+                <AtlasReportActions
+                  id={r.id}
+                  canTakeDown={canTakeDown(r)}
+                  canRemoveFromSpot={r.target_type === "item_spot" && r.source_item_id !== null}
+                />
               )}
             </div>
           </article>

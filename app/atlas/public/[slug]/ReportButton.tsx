@@ -12,7 +12,11 @@ const REASONS: { value: string; label: string }[] = [
 
 type Status = "idle" | "submitting" | "done" | "error";
 
-export default function ReportButton({ slug }: { slug: string }) {
+/** Only for a card its owner shared to a 景點 (lib/travel/spot-tagging.ts). */
+const NOT_HERE = { value: "not_here", label: "不是在這裡拍的" };
+
+export default function ReportButton({ slug, atSpot = false }: { slug: string; atSpot?: boolean }) {
+  const reasons = atSpot ? [...REASONS, NOT_HERE] : REASONS;
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState("inappropriate");
   const [detail, setDetail] = useState("");
@@ -75,7 +79,7 @@ export default function ReportButton({ slug }: { slug: string }) {
             onChange={(e) => setReason(e.target.value)}
             className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm"
           >
-            {REASONS.map((r) => (
+            {reasons.map((r) => (
               <option key={r.value} value={r.value}>
                 {r.label}
               </option>

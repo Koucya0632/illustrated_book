@@ -39,6 +39,7 @@ import { MAIN_WORD_COLLECTING_HOBBIES_IDS } from "../lib/main-word-collecting-ho
 import { MAIN_WORD_PROFESSIONS_IDS } from "../lib/main-word-professions-2026-09";
 import { WORD_IMAGE_BUCKET_RULES } from "../lib/word-image-encode";
 import { lockDownPublicTables } from "../lib/rls-lockdown";
+import { ATLAS_SPOT_DDL } from "../lib/atlas/spot-schema";
 import { WORD_INSIGHTS_DDL } from "../lib/word-insights-schema";
 import { migrateCreditSchema } from "../lib/credits/schema";
 import { migrateAiOperationsSchema } from "../lib/ai-operations/schema";
@@ -2001,6 +2002,9 @@ const DDL = [
      updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
      PRIMARY KEY (user_id, word_id)
    )`,
+
+  // ---- 自製圖鑑掛景點 (lib/travel/spot-tagging.ts) ----
+  ...ATLAS_SPOT_DDL,
 
 ];
 

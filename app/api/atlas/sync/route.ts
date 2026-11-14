@@ -3,6 +3,7 @@ import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAtlasSyncBundle } from "@/lib/atlas-db";
 import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
+import { spotShareBlocked } from "@/lib/travel/spot-tagging";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -99,6 +100,13 @@ export async function GET(req: Request) {
         visibility: item.visibility,
         reviewStatus: item.review_status,
         publicSlug: item.public_slug,
+        // 景點 (lib/travel/spot-tagging.ts): private to the owner, so only sync carries it.
+        spotId: item.spot_id ?? null,
+        spotShared: item.spot_shared ?? false,
+        spotShareBlocked: spotShareBlocked({
+          spot_id: item.spot_id ?? null,
+          spot_share_revoked: item.spot_share_revoked ?? null,
+        }),
         createdAt: item.created_at,
         updatedAt: item.updated_at,
         deletedAt: item.deleted_at,

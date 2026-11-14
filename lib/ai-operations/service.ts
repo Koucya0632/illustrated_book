@@ -11,6 +11,7 @@ import {
   type CandidateCorrection, type RecognitionInput, type RecognitionDelivery,
 } from "./contracts";
 import { recordCaptureUsage } from "./usage";
+import { spotForCard } from "../travel/spot-tagging";
 
 type Row = Record<string, any>;
 export interface WorkLease { operation: Row; token: string; stagedResult: RecognitionDelivery | null }
@@ -315,7 +316,7 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
       });
     },
 
-    confirm(a: CreditAccount, id: string, candidateId: string, correction: CandidateCorrection = {}) {
+    confirm(a: CreditAccount, id: string, candidateId: string, correction: CandidateCorrection = {}, spotId?: string) {
       return transact(a, async scope => {
         const tx = scope.sql;
         const op = await operation(scope, a, id);
@@ -343,8 +344,12 @@ export function createAiOperations(sql: postgres.Sql, clock: () => Date = () => 
         const names = confirmedNames({ candidate: { label: candidate.label, zh_hant: candidate.zh_hant, gloss: candidate.gloss },
           correction, glossLanguage, chineseFieldHidden });
         const lemma = names.lemma;
+        // A spot the card may not carry (unknown, or another language's) is dropped rather than
+        // refused: the card is what the user paid for, the spot only a suggestion from their photo.
+        const spot = spotId ? spotForCard(spotId, op.input.targetLanguage) : null;
         const item = await saveConfirmedItem(tx, { itemId, exists: Boolean(existing), userId: a.userId, imageId: op.image_id,
-          candidateId, targetLanguage: op.input.targetLanguage, primaryLabel: candidate.label, names, now: scope.now });
+          candidateId, targetLanguage: op.input.targetLanguage, primaryLabel: candidate.label, names,
+          spotId: spot?.id ?? null, now: scope.now });
         await tx`UPDATE ai_operations SET confirmed_item_id = ${itemId}, confirmed_candidate_id = ${candidateId}, confirmed_lemma = ${lemma},
           fulfillment_state = 'pending', updated_at = ${scope.now} WHERE id = ${op.id}`;
         await tx`INSERT INTO ai_fulfillments (operation_id, state, next_attempt_at, deadline_at, created_at, updated_at)

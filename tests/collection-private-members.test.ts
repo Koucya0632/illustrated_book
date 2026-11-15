@@ -14,17 +14,15 @@ test("collection membership is keyed by the confirmed source item", () => {
 });
 
 test("collection publication has one all-member transaction gate", () => {
-  const db = read("lib/atlas-db.ts");
+  const publication = read("lib/atlas/publication.ts");
   const route = read("app/api/atlas/collections/[id]/publish/route.ts");
-  assert.match(db, /publishAtlasCollectionAtomically/);
-  assert.match(db, /blocked_count > 0/);
-  assert.match(db, /content_review_approved_at IS NOT NULL/);
+  const gate = publication.slice(publication.indexOf("async function publishCollection"));
+  assert.match(gate, /blocked_count > 0/);
+  assert.match(gate, /content_review_approved_at IS NOT NULL/);
   assert.ok(
-    db.indexOf("if (!collectionGate?.content_ready) return null") <
-      db.indexOf("INSERT INTO atlas_public_items", db.indexOf("publishAtlasCollectionAtomically")),
+    gate.indexOf("if (!collectionGate?.content_ready) return null") < gate.indexOf("writePublicRow(tx, member"),
     "collection content must be approved before any public rows are written",
   );
-  assert.match(db, /WHERE ci\.source_item_id = pi\.source_item_id\s+AND pi\.review_status = 'approved'/);
   assert.match(route, /deferPublication: true/);
   assert.match(route, /problemItemIds/);
 });

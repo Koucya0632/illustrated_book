@@ -6,13 +6,10 @@ import { isAtlasItemLocked } from "@/lib/atlas/entitlement";
 import { getSettings } from "@/lib/users-db";
 import { readLang } from "@/lib/cache-headers";
 import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
+import { isUuid } from "@/lib/http/ids";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
 
 // Full per-word detail for a custom atlas item, in the same shape as
 // /api/words/[id] (the iOS `Word`). Auth-gated (user-owned); no-store.
@@ -20,7 +17,7 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  if (!isUuid(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   const item = await getAtlasItem(userId, params.id);
   if (!item) return NextResponse.json({ error: "not found" }, { status: 404 });

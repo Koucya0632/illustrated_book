@@ -20,6 +20,7 @@ import {
 import { MAIN_WORD_CORRECTIONS } from "../lib/main-word-corrections";
 import { MAIN_WORD_EXAMPLE_PAIRS } from "../lib/main-word-example-pairs";
 import { getWord, getWordsByCategory, publicFallbackWords, words } from "../lib/words";
+import { GUARDED_SERIES, isGuardedWord } from "../lib/catalogue/releases";
 
 test("drugstore contains 50 distinct reviewed concepts and hides the unreleased series", () => {
   assert.equal(MAIN_WORD_DRUGSTORE_RELEASE_ENTRIES.length, 50);
@@ -76,13 +77,15 @@ test("all drugstore example spans reconstruct the reviewed English and Japanese 
 });
 
 test("ordinary migration defers drugstore IDs, category, and image synchronization", () => {
-  const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-  assert.match(migration, /MAIN_WORD_DRUGSTORE_IDS/);
-  assert.match(migration, /category: "drugstore"/);
-  assert.match(migration, /guardedMissing = seedWords\.filter/);
-  assert.match(migration, /!isGuardedPublishWord\(w\)/);
-  assert.match(migration, /syncSeedWordImages\(sql\)/);
-  assert.match(migration, /publicationState\.get\(w\.category\) === true/);
-  assert.match(migration, /guardedPublicationState\.get\(c\.id\) === false/);
-  assert.match(migration, /publishedWordIds\.delete\(id\)/);
+  const guard = GUARDED_SERIES.find(({ release }) => release === "drugstore-2026-09");
+  assert.equal(guard?.category, "drugstore");
+  assert.deepEqual(guard?.ids, MAIN_WORD_DRUGSTORE_IDS);
+  for (const word of words.filter(({ id }) => MAIN_WORD_DRUGSTORE_IDS.includes(id))) {
+    assert.equal(isGuardedWord(word), true, word.id);
+  }
+  // Seeding, image sync and the topic record all wait on the same guard state.
+  const sync = readFileSync(new URL("../lib/catalogue/sync.ts", import.meta.url), "utf8");
+  assert.match(sync, /const missing = words\.filter\(\(w\) => !isGuardedWord\(w\)/);
+  assert.match(sync, /!isGuardedWord\(w\) \|\| state\.get\(w\.category\) === true/);
+  assert.match(sync, /if \(state\.get\(c\.id\) === false\) continue/);
 });

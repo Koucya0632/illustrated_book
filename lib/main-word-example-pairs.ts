@@ -1,36 +1,5 @@
-import { MAIN_WORD_WINTER_WARMTH_EXAMPLE_PAIRS } from "./main-word-winter-warmth-2026-11";
-import { MAIN_WORD_TRAVEL_TOKYO_EXAMPLE_PAIRS } from "./main-word-travel-tokyo-2026-11";
-import { MAIN_WORD_WINTER_FOOD_EXAMPLE_PAIRS } from "./main-word-winter-food-2026-10";
-import { MAIN_WORD_WINTER_CHECKOUT_EXAMPLE_PAIRS } from "./main-word-winter-checkout-2026-10";
-import { MAIN_WORD_DENTAL_CLINIC_EXAMPLE_PAIRS } from "./main-word-dental-clinic-2026-10";
-import { MAIN_WORD_WINTER_POSTAL_EXAMPLE_PAIRS } from "./main-word-winter-postal-2026-10";
-import { MAIN_WORD_PHONE_INTERNET_EXAMPLE_PAIRS } from "./main-word-phone-internet-2026-10";
-import { MAIN_WORD_IDENTITY_DOCUMENTS_EXAMPLE_PAIRS } from "./main-word-identity-documents-2026-10";
-import { MAIN_WORD_AIRPORT_EXAMPLE_PAIRS } from "./main-word-airport-2026-10";
-import { MAIN_WORD_POSTAL_SERVICES_EXAMPLE_PAIRS } from "./main-word-postal-services-2026-10";
-import { MAIN_WORD_BANK_EXAMPLE_PAIRS } from "./main-word-bank-2026-10";
-import { MAIN_WORD_HAIR_SALON_EXAMPLE_PAIRS } from "./main-word-hair-salon-2026-10";
-import { MAIN_WORD_ARCADE_EXAMPLE_PAIRS } from "./main-word-arcade-2026-10";
-import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_EXAMPLE_PAIRS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type { CEFRLevel } from "@/types";
-import { MAIN_WORD_ALCOHOLIC_DRINKS_EXAMPLE_PAIRS } from "./main-word-alcoholic-drinks-2026-09";
-import { MAIN_WORD_CONVENIENCE_STORE_EXAMPLE_PAIRS } from "./main-word-convenience-store-2026-09";
-import { MAIN_WORD_DRUGSTORE_EXAMPLE_PAIRS } from "./main-word-drugstore-2026-09";
-import { MAIN_WORD_CLOTHING_EXAMPLE_PAIRS } from "./main-word-clothing-2026-09";
-import { MAIN_WORD_RESTAURANT_EXAMPLE_PAIRS } from "./main-word-restaurant-2026-10";
-import { MAIN_WORD_CONCERT_FAN_SUPPORT_EXAMPLE_PAIRS } from "./main-word-concert-fan-support-2026-10";
-import { MAIN_WORD_STATION_COMMUTING_EXAMPLE_PAIRS } from "./main-word-station-commuting-2026-10";
-import { MAIN_WORD_FESTIVALS_EXAMPLE_PAIRS } from "./main-word-festivals-2026-10";
-import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_EXAMPLE_PAIRS } from "./main-word-cherry-blossom-season-2026-10";
-import { MAIN_WORD_EMERGENCY_KIT_EXAMPLE_PAIRS } from "./main-word-emergency-kit-2026-10";
-import { MAIN_WORD_CAMPUS_EXAMPLE_PAIRS } from "./main-word-campus-2026-10";
-import { MAIN_WORD_ONSEN_RYOKAN_EXAMPLE_PAIRS } from "./main-word-onsen-ryokan-2026-10";
-import { MAIN_WORD_COLLECTING_HOBBIES_EXAMPLE_PAIRS } from "./main-word-collecting-hobbies-2026-10";
-import { MAIN_WORD_FRUITS_EXAMPLE_PAIRS } from "./main-word-fruits-2026-09";
-import { MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS } from "./main-word-professions-2026-09";
-import { MAIN_WORD_EXPANSION_BATCH_3_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-3";
-import { MAIN_WORD_EXPANSION_BATCH_2_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09-batch-2";
-import { MAIN_WORD_EXPANSION_EXAMPLE_PAIRS } from "./main-word-expansion-2026-09";
+import { RELEASE_EXAMPLE_PAIRS } from "./catalogue/releases";
 import { MAIN_WORD_LEGACY_EXAMPLE_SETS } from "./main-word-legacy-example-sets";
 import {
   BATHROOM_COMPLEX_EXAMPLES,
@@ -180,40 +149,7 @@ export const MAIN_WORD_EXAMPLE_PAIRS: MainWordExamplePair[] =
         { en: complex.en, ja: complex.ja, zh: complex.zh, cefrLevel: "B1", sortOrder: 1 },
       ],
     };
-  }).concat(
-    MAIN_WORD_EXPANSION_EXAMPLE_PAIRS,
-    MAIN_WORD_EXPANSION_BATCH_2_EXAMPLE_PAIRS,
-    MAIN_WORD_EXPANSION_BATCH_3_EXAMPLE_PAIRS,
-    MAIN_WORD_FRUITS_EXAMPLE_PAIRS,
-    MAIN_WORD_PROFESSIONS_EXAMPLE_PAIRS,
-    MAIN_WORD_ALCOHOLIC_DRINKS_EXAMPLE_PAIRS,
-    MAIN_WORD_CONVENIENCE_STORE_EXAMPLE_PAIRS,
-    MAIN_WORD_DRUGSTORE_EXAMPLE_PAIRS,
-    MAIN_WORD_CLOTHING_EXAMPLE_PAIRS,
-    MAIN_WORD_RESTAURANT_EXAMPLE_PAIRS,
-    MAIN_WORD_CONCERT_FAN_SUPPORT_EXAMPLE_PAIRS,
-    MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_EXAMPLE_PAIRS,
-    MAIN_WORD_STATION_COMMUTING_EXAMPLE_PAIRS,
-    MAIN_WORD_FESTIVALS_EXAMPLE_PAIRS,
-    MAIN_WORD_CHERRY_BLOSSOM_SEASON_EXAMPLE_PAIRS,
-    MAIN_WORD_COLLECTING_HOBBIES_EXAMPLE_PAIRS,
-    MAIN_WORD_CAMPUS_EXAMPLE_PAIRS,
-    MAIN_WORD_ARCADE_EXAMPLE_PAIRS,
-    MAIN_WORD_ONSEN_RYOKAN_EXAMPLE_PAIRS,
-    MAIN_WORD_EMERGENCY_KIT_EXAMPLE_PAIRS,
-    MAIN_WORD_HAIR_SALON_EXAMPLE_PAIRS,
-    MAIN_WORD_BANK_EXAMPLE_PAIRS,
-    MAIN_WORD_POSTAL_SERVICES_EXAMPLE_PAIRS,
-    MAIN_WORD_IDENTITY_DOCUMENTS_EXAMPLE_PAIRS,
-    MAIN_WORD_AIRPORT_EXAMPLE_PAIRS,
-    MAIN_WORD_PHONE_INTERNET_EXAMPLE_PAIRS,
-    MAIN_WORD_DENTAL_CLINIC_EXAMPLE_PAIRS,
-    MAIN_WORD_WINTER_POSTAL_EXAMPLE_PAIRS,
-    MAIN_WORD_WINTER_CHECKOUT_EXAMPLE_PAIRS,
-    MAIN_WORD_WINTER_FOOD_EXAMPLE_PAIRS,
-    MAIN_WORD_WINTER_WARMTH_EXAMPLE_PAIRS,
-    MAIN_WORD_TRAVEL_TOKYO_EXAMPLE_PAIRS,
-  );
+  }).concat(RELEASE_EXAMPLE_PAIRS);
 
 export function selectMainWordExamplePairs(
   wordIds?: ReadonlySet<string>,

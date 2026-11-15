@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { categories } from "../lib/categories";
 import { localizeCategory } from "../lib/word-localize";
 import type { Category } from "../types";
+const catalogueSync = readFileSync(new URL("../lib/catalogue/sync.ts", import.meta.url), "utf8");
 
 const migrate = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
 
@@ -72,5 +73,5 @@ test("deploys create and refresh the description columns", () => {
     migrate,
     /ALTER TABLE category_translations ADD COLUMN IF NOT EXISTS description TEXT/,
   );
-  assert.match(migrate, /description_en = EXCLUDED\.description_en/);
+  assert.match(catalogueSync, /description_en = EXCLUDED\.description_en/);
 });

@@ -1,22 +1,9 @@
-import dentalClinicCandidate from "../data/dental-clinic-series-2026-10.json";
-import phoneInternetCandidate from "../data/phone-internet-series-2026-10.json";
-import identityDocumentsCandidate from "../data/identity-documents-series-2026-10.json";
-import airportCandidate from "../data/airport-series-2026-10.json";
-import postalServicesCandidate from "../data/postal-services-series-2026-10.json";
-import bankCandidate from "../data/bank-series-2026-10.json";
-import hairSalonCandidate from "../data/hair-salon-series-2026-10.json";
-import arcadeCandidate from "../data/arcade-series-2026-10.json";
-import emergencyKitCandidate from "../data/emergency-kit-series-2026-10.json";
-import campusCandidate from "../data/campus-series-2026-10.json";
-import onsenRyokanCandidate from "../data/onsen-ryokan-series-2026-10.json";
-import collectingHobbiesCandidate from "../data/collecting-hobbies-series-2026-10.json";
-import cherryBlossomSeasonCandidate from "../data/cherry-blossom-season-series-2026-10.json";
-import festivalsCandidate from "../data/festivals-series-2026-10.json";
 import type { Category } from "@/types";
+import { GUARDED_CATEGORY_IDS, RELEASE_CATEGORY_RECORDS } from "./catalogue/releases";
 
-// IMPORTANT: This module is imported by client components (SearchClient,
-// WordsTable, ProgressClient, etc.). It must stay server/client neutral —
-// no Node-only imports. The DB-aware loader lives in `categories-db.ts`.
+// Server-side static list: lib/categories-db.ts (the DB-aware loader) and
+// scripts/migrate.ts import it. Guarded topics and the topic records that ship
+// in release candidate files come from lib/catalogue/releases.ts.
 //
 // This list is the source of truth for the display fields, but **nothing here
 // reaches a user until migrate.ts syncs it into the `categories` table** —
@@ -281,49 +268,14 @@ export const categories: Category[] = [
     color: "from-sky-100 to-blue-100",
     imageUrl: "https://img.nexflow.team/word-images/station-commuting-2026-10/category-station-commuting-v1-cf0c0f64b246.webp",
   },
-  festivalsCandidate.category,
-  cherryBlossomSeasonCandidate.category,
-  collectingHobbiesCandidate.category,
-  campusCandidate.category,
-  arcadeCandidate.category,
-  onsenRyokanCandidate.category,
-  emergencyKitCandidate.category,
-  hairSalonCandidate.category,
-  bankCandidate.category,
-  postalServicesCandidate.category,
-  identityDocumentsCandidate.category,
-  airportCandidate.category,
-  phoneInternetCandidate.category,
-  dentalClinicCandidate.category,
+  ...RELEASE_CATEGORY_RECORDS,
 ];
 
 // This list is used only when the database is unavailable. A fallback cannot
 // establish that a guarded one-time series has completed publication, so keep
 // its category hidden along with its guarded words.
 export const publicFallbackCategories: Category[] = categories.filter(
-  (category) =>
-    category.id !== "professions" &&
-    category.id !== "alcoholic-drinks" &&
-    category.id !== "convenience-store" &&
-    category.id !== "drugstore" &&
-    category.id !== "clothing" &&
-    category.id !== "restaurant" &&
-    category.id !== "concert-fan-support" &&
-    category.id !== "station-commuting" &&
-    category.id !== "festivals" &&
-    category.id !== "cherry-blossom-season" &&
-    category.id !== "collecting-hobbies" &&
-    category.id !== "campus" &&
-    category.id !== "arcade" &&
-    category.id !== "onsen-ryokan" &&
-    category.id !== "emergency-kit" &&
-    category.id !== "hair-salon" &&
-    category.id !== "bank" &&
-    category.id !== "postal-services" &&
-    category.id !== "identity-documents" &&
-    category.id !== "airport" &&
-    category.id !== "phone-internet" &&
-    category.id !== "dental-clinic",
+  (category) => !GUARDED_CATEGORY_IDS.has(category.id),
 );
 
 export const getCategory = (id: string): Category | undefined =>

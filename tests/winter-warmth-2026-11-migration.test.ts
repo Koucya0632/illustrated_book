@@ -4,9 +4,10 @@ import { loadExampleSpanCorpus } from "../lib/example-span-corpus";
 import { SPANS_VERSION } from "../lib/example-spans";
 import { applyMainWordExamplePairs } from "../lib/main-word-example-pair-apply";
 import { MAIN_WORD_EXAMPLE_PAIRS, selectMainWordExamplePairs } from "../lib/main-word-example-pairs";
-import { MAIN_WORD_WINTER_WARMTH_IDS } from "../lib/main-word-winter-warmth-2026-11";
+import { releaseWordIds } from "../lib/catalogue/releases";
 import { words } from "../lib/words";
 import release from "../docs/releases/winter-warmth-2026-11.json";
+const MAIN_WORD_WINTER_WARMTH_IDS = releaseWordIds("winter-warmth-2026-11");
 
 // Exercise the real normal-migration example synchronizer. This fixture SQL
 // allows SELECT only and fails any DML before it could touch a real database.

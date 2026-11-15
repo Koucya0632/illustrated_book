@@ -1,33 +1,7 @@
-import { MAIN_WORD_DENTAL_CLINIC_CORRECTIONS } from "./main-word-dental-clinic-2026-10";
-import { MAIN_WORD_PHONE_INTERNET_CORRECTIONS } from "./main-word-phone-internet-2026-10";
-import { MAIN_WORD_IDENTITY_DOCUMENTS_CORRECTIONS } from "./main-word-identity-documents-2026-10";
-import { MAIN_WORD_AIRPORT_CORRECTIONS } from "./main-word-airport-2026-10";
-import { MAIN_WORD_POSTAL_SERVICES_CORRECTIONS } from "./main-word-postal-services-2026-10";
-import { MAIN_WORD_BANK_CORRECTIONS } from "./main-word-bank-2026-10";
-import { MAIN_WORD_HAIR_SALON_CORRECTIONS } from "./main-word-hair-salon-2026-10";
-import { MAIN_WORD_ARCADE_CORRECTIONS } from "./main-word-arcade-2026-10";
-import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_CORRECTIONS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type postgres from "postgres";
-import { MAIN_WORD_ALCOHOLIC_DRINKS_CORRECTIONS } from "./main-word-alcoholic-drinks-2026-09";
-import { MAIN_WORD_CONVENIENCE_STORE_CORRECTIONS } from "./main-word-convenience-store-2026-09";
-import { MAIN_WORD_DRUGSTORE_CORRECTIONS } from "./main-word-drugstore-2026-09";
-import { MAIN_WORD_CLOTHING_CORRECTIONS } from "./main-word-clothing-2026-09";
-import { MAIN_WORD_RESTAURANT_CORRECTIONS } from "./main-word-restaurant-2026-10";
-import { MAIN_WORD_CONCERT_FAN_SUPPORT_CORRECTIONS } from "./main-word-concert-fan-support-2026-10";
-import { MAIN_WORD_STATION_COMMUTING_CORRECTIONS } from "./main-word-station-commuting-2026-10";
-import { MAIN_WORD_FESTIVALS_CORRECTIONS } from "./main-word-festivals-2026-10";
-import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_CORRECTIONS } from "./main-word-cherry-blossom-season-2026-10";
-import { MAIN_WORD_EMERGENCY_KIT_CORRECTIONS } from "./main-word-emergency-kit-2026-10";
-import { MAIN_WORD_CAMPUS_CORRECTIONS } from "./main-word-campus-2026-10";
-import { MAIN_WORD_ONSEN_RYOKAN_CORRECTIONS } from "./main-word-onsen-ryokan-2026-10";
-import { MAIN_WORD_COLLECTING_HOBBIES_CORRECTIONS } from "./main-word-collecting-hobbies-2026-10";
-import { MAIN_WORD_FRUITS_CORRECTIONS } from "./main-word-fruits-2026-09";
-import { MAIN_WORD_PROFESSIONS_CORRECTIONS } from "./main-word-professions-2026-09";
-import { MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS } from "./main-word-expansion-2026-09-batch-3";
 import { segmentFurigana } from "./kana";
+import { RELEASE_CORRECTIONS } from "./catalogue/releases";
 import { LIVING_ROOM_MAIN_WORD_CORRECTIONS } from "./living-room-main-word-corrections";
-import { MAIN_WORD_EXPANSION_BATCH_2_CORRECTIONS } from "./main-word-expansion-2026-09-batch-2";
-import { MAIN_WORD_EXPANSION_CORRECTIONS } from "./main-word-expansion-2026-09";
 import { OFFICE_MAIN_WORD_CORRECTIONS } from "./office-main-word-corrections";
 import { SUPERMARKET_MAIN_WORD_CORRECTIONS } from "./supermarket-main-word-corrections";
 
@@ -116,33 +90,7 @@ function dailyStreetExample(
 }
 
 export const MAIN_WORD_CORRECTIONS: MainWordCorrection[] = [
-  ...MAIN_WORD_EXPANSION_CORRECTIONS,
-  ...MAIN_WORD_EXPANSION_BATCH_2_CORRECTIONS,
-  ...MAIN_WORD_EXPANSION_BATCH_3_CORRECTIONS,
-  ...MAIN_WORD_FRUITS_CORRECTIONS,
-  ...MAIN_WORD_PROFESSIONS_CORRECTIONS,
-  ...MAIN_WORD_ALCOHOLIC_DRINKS_CORRECTIONS,
-  ...MAIN_WORD_CONVENIENCE_STORE_CORRECTIONS,
-  ...MAIN_WORD_DRUGSTORE_CORRECTIONS,
-  ...MAIN_WORD_CLOTHING_CORRECTIONS,
-  ...MAIN_WORD_RESTAURANT_CORRECTIONS,
-  ...MAIN_WORD_CONCERT_FAN_SUPPORT_CORRECTIONS,
-  ...MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_CORRECTIONS,
-  ...MAIN_WORD_STATION_COMMUTING_CORRECTIONS,
-  ...MAIN_WORD_FESTIVALS_CORRECTIONS,
-  ...MAIN_WORD_CHERRY_BLOSSOM_SEASON_CORRECTIONS,
-  ...MAIN_WORD_COLLECTING_HOBBIES_CORRECTIONS,
-  ...MAIN_WORD_CAMPUS_CORRECTIONS,
-  ...MAIN_WORD_ARCADE_CORRECTIONS,
-  ...MAIN_WORD_ONSEN_RYOKAN_CORRECTIONS,
-  ...MAIN_WORD_EMERGENCY_KIT_CORRECTIONS,
-  ...MAIN_WORD_HAIR_SALON_CORRECTIONS,
-  ...MAIN_WORD_BANK_CORRECTIONS,
-  ...MAIN_WORD_POSTAL_SERVICES_CORRECTIONS,
-  ...MAIN_WORD_IDENTITY_DOCUMENTS_CORRECTIONS,
-  ...MAIN_WORD_AIRPORT_CORRECTIONS,
-  ...MAIN_WORD_PHONE_INTERNET_CORRECTIONS,
-  ...MAIN_WORD_DENTAL_CLINIC_CORRECTIONS,
+  ...RELEASE_CORRECTIONS,
   {
     id: "bowl",
     oldZh: "碗",
@@ -2519,7 +2467,15 @@ export async function applyMainWordCorrections(
 
   await sql.begin(async (tx) => {
     for (const correction of corrections) {
-      const rows = await tx`
+      const [present] = await tx`
+        SELECT 1 FROM words WHERE id = ${correction.id} AND deleted_at IS NULL
+      `;
+      if (!present) continue;
+      touched.add(correction.id);
+
+      // Each field moves only from its reviewed old value; a row already
+      // corrected is left alone so a redeploy does not bump updated_at.
+      await tx`
         UPDATE words
         SET
           word = CASE
@@ -2546,10 +2502,18 @@ export async function applyMainWordCorrections(
           updated_at = now()
         WHERE id = ${correction.id}
           AND deleted_at IS NULL
-        RETURNING id
+          AND (
+            (${correction.word ?? null}::text IS NOT NULL
+              AND word = ${correction.oldWord ?? null}
+              AND word IS DISTINCT FROM ${correction.word ?? null})
+            OR (${correction.category ?? null}::text IS NOT NULL
+              AND category = ${correction.oldCategory ?? null}
+              AND category IS DISTINCT FROM ${correction.category ?? null})
+            OR (${correction.pronunciation ?? null}::text IS NOT NULL
+              AND pronunciation = ${correction.oldPronunciation ?? correction.pronunciation ?? null}
+              AND pronunciation IS DISTINCT FROM ${correction.pronunciation ?? null})
+          )
       `;
-      if (rows.length === 0) continue;
-      touched.add(correction.id);
 
       if (correction.zh) {
         await tx`
@@ -2562,6 +2526,7 @@ export async function applyMainWordCorrections(
               WHERE word_id = ${correction.id} AND language = 'zh'
             )
             AND definition IN (${correction.oldZh ?? correction.zh}, ${correction.zh})
+            AND definition IS DISTINCT FROM ${correction.zh}
         `;
       }
 
@@ -2580,6 +2545,7 @@ export async function applyMainWordCorrections(
               WHERE word_id = ${correction.id} AND language = ${language}
             )
             AND definition IN (${definition.old}, ${definition.value})
+            AND definition IS DISTINCT FROM ${definition.value}
         `;
       }
 
@@ -2589,6 +2555,11 @@ export async function applyMainWordCorrections(
         correction.oldJa !== correction.ja &&
         !correction.jaDefinition
       ) {
+        // The second branch repairs a doubled replacement (old 駅 → 駅前前).
+        // When the headword does not contain the old one there is nothing to
+        // repair, and the branch would only rewrite already-corrected rows.
+        const repairsDoubledJa =
+          correction.ja.replace(correction.oldJa, correction.ja) !== correction.ja;
         await tx`
           UPDATE word_definitions
           SET definition = CASE
@@ -2609,7 +2580,8 @@ export async function applyMainWordCorrections(
             AND language = 'ja'
             AND definition LIKE ${`「${correction.oldJa}」%`}
              OR (
-               word_id = ${correction.id}
+               ${repairsDoubledJa}::boolean
+               AND word_id = ${correction.id}
                AND language = 'ja'
                AND definition LIKE ${`「${correction.ja.replace(correction.oldJa, correction.ja)}」%`}
              )
@@ -2633,7 +2605,8 @@ export async function applyMainWordCorrections(
             AND t.translation LIKE ${`%${correction.oldJa}%`}
             AND t.translation NOT LIKE ${`%${correction.ja}%`}
              OR (
-               t.example_id = e.id
+               ${repairsDoubledJa}::boolean
+               AND t.example_id = e.id
                AND e.word_id = ${correction.id}
                AND t.language = 'ja'
                AND t.translation LIKE ${`%${correction.ja.replace(correction.oldJa, correction.ja)}%`}
@@ -2650,6 +2623,7 @@ export async function applyMainWordCorrections(
               ${correction.chineseDefinition.old},
               ${correction.chineseDefinition.value}
             )
+            AND chinese_definition IS DISTINCT FROM ${correction.chineseDefinition.value}
         `;
       }
 
@@ -2691,6 +2665,11 @@ export async function applyMainWordCorrections(
                 ${reading}
               )
             )
+            AND (word_terms.term, word_terms.reading, word_terms.pronunciation,
+                 word_terms.reading_segments)
+              IS DISTINCT FROM
+                (EXCLUDED.term, EXCLUDED.reading, EXCLUDED.pronunciation,
+                 EXCLUDED.reading_segments)
         `;
 
         // New words initially seed the long Japanese definition as their term,
@@ -2706,6 +2685,8 @@ export async function applyMainWordCorrections(
             AND c.word_id = ${correction.id}
             AND c.deck_key = 'image-ja'
             AND wt.language = 'ja'
+            AND (c.back, c.explanation)
+              IS DISTINCT FROM (wt.term, concat_ws(' ', wt.term, NULLIF(wt.reading, '')))
         `;
       }
 
@@ -2718,6 +2699,8 @@ export async function applyMainWordCorrections(
             pronunciation = EXCLUDED.pronunciation,
             updated_at = now()
           WHERE word_terms.term IN (${correction.oldWord ?? correction.word}, ${correction.word})
+            AND (word_terms.term, word_terms.pronunciation)
+              IS DISTINCT FROM (EXCLUDED.term, EXCLUDED.pronunciation)
         `;
 
       }
@@ -2730,6 +2713,7 @@ export async function applyMainWordCorrections(
             AND field = ${text.field}
             AND language = ${text.language}
             AND value IN (${text.old}, ${text.value})
+            AND value IS DISTINCT FROM ${text.value}
         `;
       }
 
@@ -2762,6 +2746,7 @@ export async function applyMainWordCorrections(
             ${example.previousZh ?? example.oldZh},
             ${example.zh}
           )
+            AND word_example_translations.translation IS DISTINCT FROM EXCLUDED.translation
         `;
 
         if (example.ja) {
@@ -2775,6 +2760,7 @@ export async function applyMainWordCorrections(
               ${example.previousJa ?? example.oldJa ?? example.ja},
               ${example.ja}
             )
+              AND word_example_translations.translation IS DISTINCT FROM EXCLUDED.translation
           `;
         }
       }
@@ -2796,6 +2782,8 @@ export async function applyMainWordCorrections(
           WHERE c.word_id = w.id
             AND c.word_id = ${correction.id}
             AND c.deck_key = 'image-en'
+            AND (c.back, c.explanation)
+              IS DISTINCT FROM (w.word, concat(w.word, ' ', w.pronunciation, ' — ', d.definition))
         `;
       }
     }

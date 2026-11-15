@@ -226,20 +226,19 @@ test("the professions category and deploy migration are wired before catalogue c
   );
 
   const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-  const categoriesAt = migration.indexOf("await seedCategoriesIntoDb(sql)");
+  const categoriesAt = migration.indexOf("await catalogue.seedCategories()");
   const categoryTranslationsAt = migration.indexOf("await seedCategoryTranslationsIntoDb(sql)");
-  const wordsAt = migration.indexOf("const missing = seedWords.filter");
-  const correctionsAt = migration.indexOf(
-    "const correctedWords = await applyMainWordCorrections(sql, publishedWordIds)",
-  );
-  const examplesAt = migration.indexOf(
-    "const pairedExamples = await applyMainWordExamplePairs(",
-  );
+  const wordsAt = migration.indexOf("await catalogue.seedMissingWords()");
+  const releasedContentAt = migration.indexOf("await catalogue.syncReleasedContent()");
+  const sync = readFileSync(new URL("../lib/catalogue/sync.ts", import.meta.url), "utf8");
+  const correctionsAt = sync.indexOf("await applyMainWordCorrections(sql, scoped)");
+  const examplesAt = sync.indexOf("await applyMainWordExamplePairs(sql, scoped)");
 
   for (const [label, offset] of [
     ["category seed", categoriesAt],
     ["category translations", categoryTranslationsAt],
     ["word seed", wordsAt],
+    ["released content", releasedContentAt],
     ["main-word corrections", correctionsAt],
     ["main-word examples", examplesAt],
   ] as const) {
@@ -247,7 +246,7 @@ test("the professions category and deploy migration are wired before catalogue c
   }
   assert.ok(categoriesAt < categoryTranslationsAt);
   assert.ok(categoryTranslationsAt < wordsAt);
-  assert.ok(wordsAt < correctionsAt);
+  assert.ok(wordsAt < releasedContentAt);
   assert.ok(correctionsAt < examplesAt);
   assert.match(migration, /\('professions', '職業'\)/);
   assert.match(migration, /\('professions',\s*'日常生活を支えるさまざまな仕事'\)/);

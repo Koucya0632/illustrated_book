@@ -5,6 +5,7 @@
   "scripts": {
     "test": "tsx --test tests/**/*.test.ts",
     "test:credits:integration": "node scripts/test-credits-integration.mjs",
+    "catalogue:check": "tsx scripts/catalogue-check.ts",
     "eval": "node evals/run-eval.mjs",
     "eval:db": "node evals/run-eval.mjs --source database",
     "eval:spans": "node evals/run-generation-eval.mjs",

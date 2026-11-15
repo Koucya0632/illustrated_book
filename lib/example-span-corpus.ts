@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { spansCoverSentence } from "./example-spans";
+import { RELEASE_SPAN_OVERLAYS } from "./catalogue/releases";
 import type { MainWordExamplePair } from "./main-word-example-pairs";
 
 export type SentenceLanguage = "en" | "ja";
@@ -256,44 +257,9 @@ export function validateLearningSpanQuality(
   return issues;
 }
 
-const EXAMPLE_SPAN_OVERLAY_PATHS = [
-  new URL("../data/example-spans-expansion-2026-09.json", import.meta.url),
-  new URL("../data/example-spans-expansion-2026-09-batch-2.json", import.meta.url),
-  new URL("../data/example-spans-expansion-2026-09-batch-3.json", import.meta.url),
-  new URL("../data/example-spans-fruits-2026-09.json", import.meta.url),
-  new URL("../data/example-spans-professions-2026-09-batch-a.json", import.meta.url),
-  new URL("../data/example-spans-professions-2026-09-batch-b.json", import.meta.url),
-  new URL("../data/example-spans-professions-2026-09-batch-c.json", import.meta.url),
-  new URL("../data/example-spans-professions-2026-09-batch-d.json", import.meta.url),
-  new URL("../data/example-spans-professions-2026-09-batch-e.json", import.meta.url),
-  new URL("../data/example-spans-alcoholic-drinks-2026-09.json", import.meta.url),
-  new URL("../data/example-spans-convenience-store-2026-09.json", import.meta.url),
-  new URL("../data/example-spans-drugstore-2026-09.json", import.meta.url),
-  new URL("../data/example-spans-clothing-2026-09.json", import.meta.url),
-  new URL("../data/example-spans-restaurant-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-concert-fan-support-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-anime-fan-merch-expansion-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-station-commuting-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-festivals-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-cherry-blossom-season-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-collecting-hobbies-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-campus-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-arcade-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-onsen-ryokan-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-emergency-kit-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-hair-salon-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-bank-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-postal-services-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-identity-documents-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-airport-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-phone-internet-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-dental-clinic-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-winter-postal-2026-10-v2.json", import.meta.url),
-  new URL("../data/example-spans-winter-checkout-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-winter-food-2026-10.json", import.meta.url),
-  new URL("../data/example-spans-winter-warmth-2026-11.json", import.meta.url),
-  new URL("../data/example-spans-travel-tokyo-2026-11.json", import.meta.url),
-];
+const EXAMPLE_SPAN_OVERLAY_PATHS = RELEASE_SPAN_OVERLAYS.map(
+  (file) => new URL(`../data/${file}`, import.meta.url),
+);
 
 function readExampleSpanCorpus(path: URL): ExampleSpanCorpus {
   return JSON.parse(readFileSync(path, "utf8")) as ExampleSpanCorpus;

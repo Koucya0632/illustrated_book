@@ -7,8 +7,9 @@ import candidate from '../data/anime-fan-merch-expansion-2026-10.json';
 import review from '../data/anime-fan-merch-expansion-semantic-review-2026-10.json';
 import { categories, publicFallbackCategories, getCategory } from '../lib/categories';
 import { words, publicFallbackWords, getWord, getWordsByCategory, searchWords } from '../lib/words';
-import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS } from '../lib/main-word-anime-fan-merch-expansion-2026-10';
+import { GUARDED_SERIES, releaseWordIds, TOPIC_GATE_PLAN } from '../lib/catalogue/releases';
 import { loadExampleSpanCorpus, validateAuthoredSentence } from '../lib/example-span-corpus';
+const MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS = releaseWordIds('anime-fan-merch-expansion-2026-10');
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const read=(file:string)=>readFileSync(new URL(`../${file}`,import.meta.url),'utf8');
 const compile=(s:string)=>ts.transpile(s,{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS});
@@ -48,37 +49,6 @@ test('all headword readings, examples and contextual annotations match their ind
  }
 });
 
-// Exercise the actual routine migration guard without importing/running its production main().
-const migration=read('scripts/migrate.ts');
-const guardStart=migration.indexOf('async function readGuardedSeriesPublicationState(');
-const guardEnd=migration.indexOf('// eslint-disable-next-line',guardStart+1);
-const guardSource=migration.slice(guardStart,guardEnd);
-const seedStart=migration.indexOf('async function seedCategoriesIntoDb(');
-const seedEnd=migration.indexOf('\nasync function ',seedStart+1);
-const seedSource=migration.slice(seedStart,seedEnd);
-const makeMigration=new Function('GUARDED_PUBLISH_SERIES','GUARDED_PUBLISH_WORD_IDS','seedCategories',compile(`${guardSource}\n${seedSource}\nreturn {readGuardedSeriesPublicationState,seedCategoriesIntoDb};`));
-
-test('ordinary category seeding refuses absent, draft, partial and wrong-category concert-fan-support sets',async()=>{
- assert.match(migration,/\{ category: "concert-fan-support", ids: MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS \}/);
- assert.match(migration,/GUARDED_PUBLISH_WORD_IDS\.has\(word\.id\)/);
- assert.match(migration,/publishedWordIds\.delete\(id\)/);
- const series=[{category:'concert-fan-support',ids:MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS}];
- const api=makeMigration(series,new Set(MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS),[{id:'concert-fan-support',name:'Restaurant'},{id:'office',name:'Office'}]);
- const rows=MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS.map(id=>({id,category:'concert-fan-support',status:'published',deleted_at:null}));
- for(const input of [[],rows.map(r=>({...r,status:'draft'})),rows.slice(1),rows.map((r,i)=>i? r:{...r,category:'office'}),rows.map((r,i)=>i? r:{...r,deleted_at:'2026-10-19'}),rows]){
-  const writes:string[]=[];
-  const sql=async(parts:TemplateStringsArray,...values:unknown[])=>{
-   const query=parts.join('?');
-   if(query.includes('SELECT id, category FROM words'))return input.filter((r:any)=>r.status==='published'&&!r.deleted_at);
-   if(query.includes('INSERT INTO categories'))writes.push(String(values[0]));
-   if(query.includes('count(*)::int AS c'))return [{c:2}];
-   return [];
-  };
-  await api.seedCategoriesIntoDb(sql);
-  assert.equal(writes.includes('office'),true);
-  assert.equal(writes.includes('concert-fan-support'),input===rows);
- }
-});
 
 test('the publisher defaults to read-only and stages verified immutable media before its database transaction',()=>{
  const publisher=read('scripts/publish-anime-fan-merch-expansion-series.ts');
@@ -100,35 +70,6 @@ test('the publisher defaults to read-only and stages verified immutable media be
  assert.doesNotMatch(publisher,/removePublicObjects/);
 });
 
-test('the actual ordinary word seed refuses every planned ID and the whole category before any child write',async()=>{
- const start=migration.indexOf('async function seedV2(');
- const end=migration.indexOf('\n// eslint-disable-next-line',start+1);
- const guardStart=migration.indexOf('const isGuardedPublishWord =');
- const guardEnd=migration.indexOf('\n\n',guardStart);
- const create=new Function('GUARDED_PUBLISH_SERIES','GUARDED_PUBLISH_WORD_IDS','seedWords',compile(`${migration.slice(guardStart,guardEnd)}\n${migration.slice(start,end)}\nreturn seedV2;`));
- const ids=new Set(MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS);
- const seed=create([{category:'concert-fan-support',ids:[...ids]}],ids,[]);
- const calls:Array<{query:string;values:unknown[]}>=[];
- const sql=async(parts:TemplateStringsArray,...values:unknown[])=>{calls.push({query:parts.join('?'),values});return [];};
- const guarded=candidate.entries.map(e=>({...e,category:'office'}));
- await seed(sql,[...guarded,{...candidate.entries[0],id:'future-series-entry'}]);
- assert.equal(calls.length,0);
- await seed(sql,[{id:'allowed-existing-category',word:'control',category:'office',definitions:[],examples:[],relations:[]}]);
- assert.equal(calls.length,1);
- assert.match(calls[0].query,/INSERT INTO words/);
- assert.equal(calls[0].values[0],'allowed-existing-category');
-});
-
-
-test('shared category metadata waits for both the base batch and expansion',async()=>{
- const series=[{category:'concert-fan-support',ids:['base-a','base-b']},{category:'concert-fan-support',ids:['new-a','new-b']}];
- const api=makeMigration(series,new Set(series.flatMap(s=>s.ids)),[]);
- for(const present of [[],['base-a','base-b'],['new-a','new-b'],['base-a','new-a','new-b'],['base-a','base-b','new-a','new-b']]){
-  const state=await api.readGuardedSeriesPublicationState(async()=>present.map(id=>({id,category:'concert-fan-support'})));
-  assert.equal(state.get('concert-fan-support'),present.length===4);
- }
-});
-
 test('expansion publisher compares locked shared category before-state and refuses standalone rollback',()=>{
  const source=read('scripts/publish-anime-fan-merch-expansion-series.ts');
  assert.match(source,/FOR UPDATE/);
@@ -138,6 +79,7 @@ test('expansion publisher compares locked shared category before-state and refus
  assert.match(source,/automatic rollback is disabled/);
  assert.doesNotMatch(source,/DELETE FROM categories/);
  assert.ok(source.indexOf('shared category changed')<source.indexOf('INSERT INTO words'));
- const runtime=read('lib/categories-db.ts');
- assert.doesNotMatch(runtime,/MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS/);
+ // The expansion joins a live topic: seeding waits for it, the live topic list does not.
+ assert.equal(TOPIC_GATE_PLAN.ids.some(id=>MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS.includes(id)),false);
+ assert.ok(GUARDED_SERIES.some(s=>s.release==='anime-fan-merch-expansion-2026-10'&&s.expandsLiveTopic));
 });

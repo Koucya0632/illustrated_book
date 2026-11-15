@@ -1,35 +1,6 @@
-import { MAIN_WORD_DENTAL_CLINIC_IDS, MAIN_WORD_DENTAL_CLINIC_WORDS } from "./main-word-dental-clinic-2026-10";
-import { MAIN_WORD_PHONE_INTERNET_IDS, MAIN_WORD_PHONE_INTERNET_WORDS } from "./main-word-phone-internet-2026-10";
-import { MAIN_WORD_IDENTITY_DOCUMENTS_IDS, MAIN_WORD_IDENTITY_DOCUMENTS_WORDS } from "./main-word-identity-documents-2026-10";
-import { MAIN_WORD_AIRPORT_IDS, MAIN_WORD_AIRPORT_WORDS } from "./main-word-airport-2026-10";
-import { MAIN_WORD_POSTAL_SERVICES_IDS, MAIN_WORD_POSTAL_SERVICES_WORDS } from "./main-word-postal-services-2026-10";
-import { MAIN_WORD_BANK_IDS, MAIN_WORD_BANK_WORDS } from "./main-word-bank-2026-10";
-import { MAIN_WORD_HAIR_SALON_IDS, MAIN_WORD_HAIR_SALON_WORDS } from "./main-word-hair-salon-2026-10";
-import { MAIN_WORD_ARCADE_IDS, MAIN_WORD_ARCADE_WORDS } from "./main-word-arcade-2026-10";
-import { MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS, MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS } from "./main-word-anime-fan-merch-expansion-2026-10";
 import type { Example, Word, WordRelation } from "@/types";
 import imageUrls from "./image-urls.json";
-import { MAIN_WORD_ALCOHOLIC_DRINKS_WORDS } from "./main-word-alcoholic-drinks-2026-09";
-import {
-  MAIN_WORD_CONVENIENCE_STORE_IDS,
-  MAIN_WORD_CONVENIENCE_STORE_WORDS,
-} from "./main-word-convenience-store-2026-09";
-import { MAIN_WORD_DRUGSTORE_IDS, MAIN_WORD_DRUGSTORE_WORDS } from "./main-word-drugstore-2026-09";
-import { MAIN_WORD_CLOTHING_IDS, MAIN_WORD_CLOTHING_WORDS } from "./main-word-clothing-2026-09";
-import { MAIN_WORD_RESTAURANT_IDS, MAIN_WORD_RESTAURANT_WORDS } from "./main-word-restaurant-2026-10";
-import { MAIN_WORD_CONCERT_FAN_SUPPORT_IDS, MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS } from "./main-word-concert-fan-support-2026-10";
-import { MAIN_WORD_STATION_COMMUTING_IDS, MAIN_WORD_STATION_COMMUTING_WORDS } from "./main-word-station-commuting-2026-10";
-import { MAIN_WORD_FESTIVALS_IDS, MAIN_WORD_FESTIVALS_WORDS } from "./main-word-festivals-2026-10";
-import { MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS, MAIN_WORD_CHERRY_BLOSSOM_SEASON_WORDS } from "./main-word-cherry-blossom-season-2026-10";
-import { MAIN_WORD_EMERGENCY_KIT_IDS, MAIN_WORD_EMERGENCY_KIT_WORDS } from "./main-word-emergency-kit-2026-10";
-import { MAIN_WORD_CAMPUS_IDS, MAIN_WORD_CAMPUS_WORDS } from "./main-word-campus-2026-10";
-import { MAIN_WORD_ONSEN_RYOKAN_IDS, MAIN_WORD_ONSEN_RYOKAN_WORDS } from "./main-word-onsen-ryokan-2026-10";
-import { MAIN_WORD_COLLECTING_HOBBIES_IDS, MAIN_WORD_COLLECTING_HOBBIES_WORDS } from "./main-word-collecting-hobbies-2026-10";
-import { MAIN_WORD_FRUITS_WORDS } from "./main-word-fruits-2026-09";
-import { MAIN_WORD_PROFESSIONS_WORDS } from "./main-word-professions-2026-09";
-import { MAIN_WORD_EXPANSION_BATCH_3_WORDS } from "./main-word-expansion-2026-09-batch-3";
-import { MAIN_WORD_EXPANSION_BATCH_2_WORDS } from "./main-word-expansion-2026-09-batch-2";
-import { MAIN_WORD_EXPANSION_WORDS } from "./main-word-expansion-2026-09";
+import { isGuardedWord, RELEASE_SEED_WORDS } from "./catalogue/releases";
 import supplementalRawWords from "./supplemental-words.json";
 
 // Internal: the inline seed below uses the pre-v2 shape (single Chinese
@@ -1758,33 +1729,7 @@ function legacyToV2(legacy: LegacyWord): Word {
 export const words: Word[] = [
   ...rawWords,
   ...supplementalWords,
-  ...(MAIN_WORD_EXPANSION_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_EXPANSION_BATCH_2_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_EXPANSION_BATCH_3_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_FRUITS_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_PROFESSIONS_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_ALCOHOLIC_DRINKS_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_CONVENIENCE_STORE_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_DRUGSTORE_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_CLOTHING_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_RESTAURANT_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_CONCERT_FAN_SUPPORT_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_STATION_COMMUTING_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_FESTIVALS_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_CHERRY_BLOSSOM_SEASON_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_COLLECTING_HOBBIES_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_CAMPUS_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_ARCADE_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_ONSEN_RYOKAN_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_EMERGENCY_KIT_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_HAIR_SALON_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_BANK_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_POSTAL_SERVICES_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_IDENTITY_DOCUMENTS_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_AIRPORT_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_PHONE_INTERNET_WORDS as LegacyWord[]),
-  ...(MAIN_WORD_DENTAL_CLINIC_WORDS as LegacyWord[]),
+  ...(RELEASE_SEED_WORDS as readonly LegacyWord[]),
 ].map((w) => {
   const withImage = imageMap[w.id] ? { ...w, imageUrl: imageMap[w.id] } : w;
   return legacyToV2(withImage);
@@ -1795,31 +1740,7 @@ export const words: Word[] = [
 // fallback cannot prove that the matching database rows have been published.
 // Once published, production reads the database; during an outage it is safer
 // to serve an incomplete catalogue than to expose an unreleased series.
-export const publicFallbackWords: Word[] = words.filter(
-  (word) =>
-    !["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing", "restaurant", "concert-fan-support", "station-commuting", "festivals", "cherry-blossom-season", "collecting-hobbies", "campus", "arcade", "emergency-kit", "onsen-ryokan", "hair-salon", "bank", "postal-services", "identity-documents", "airport", "phone-internet", "dental-clinic"].includes(word.category) &&
-    !MAIN_WORD_CONVENIENCE_STORE_IDS.includes(word.id) &&
-    !MAIN_WORD_DRUGSTORE_IDS.includes(word.id) &&
-    !MAIN_WORD_CLOTHING_IDS.includes(word.id) &&
-    !MAIN_WORD_RESTAURANT_IDS.includes(word.id) &&
-    !MAIN_WORD_CONCERT_FAN_SUPPORT_IDS.includes(word.id) &&
-    !MAIN_WORD_ANIME_FAN_MERCH_EXPANSION_IDS.includes(word.id) &&
-    !MAIN_WORD_STATION_COMMUTING_IDS.includes(word.id) &&
-    !MAIN_WORD_FESTIVALS_IDS.includes(word.id) &&
-    !MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS.includes(word.id) &&
-    !MAIN_WORD_COLLECTING_HOBBIES_IDS.includes(word.id) &&
-    !MAIN_WORD_CAMPUS_IDS.includes(word.id) &&
-    !MAIN_WORD_ARCADE_IDS.includes(word.id) &&
-    !MAIN_WORD_ONSEN_RYOKAN_IDS.includes(word.id) &&
-    !MAIN_WORD_EMERGENCY_KIT_IDS.includes(word.id) &&
-    !MAIN_WORD_HAIR_SALON_IDS.includes(word.id) &&
-    !MAIN_WORD_BANK_IDS.includes(word.id) &&
-    !MAIN_WORD_POSTAL_SERVICES_IDS.includes(word.id) &&
-    !MAIN_WORD_IDENTITY_DOCUMENTS_IDS.includes(word.id) &&
-    !MAIN_WORD_PHONE_INTERNET_IDS.includes(word.id) &&
-    !MAIN_WORD_DENTAL_CLINIC_IDS.includes(word.id) &&
-    !MAIN_WORD_AIRPORT_IDS.includes(word.id),
-);
+export const publicFallbackWords: Word[] = words.filter((word) => !isGuardedWord(word));
 
 export const getWord = (id: string): Word | undefined =>
   publicFallbackWords.find((w) => w.id === id);

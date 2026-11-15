@@ -70,6 +70,7 @@ Admin 單筆新增適合臨時內容，但要確認是否已產生 cards；沒�
 - `guarded`：一般部署不寫它的詞、圖片與主題，直到它計畫的每個詞都在該主題發佈；主題在那之前也不出現在 `/api/categories`。加詞到已上線主題的批次標 `expandsLiveTopic`，主題照常顯示。
 - `post-publication`：沒有種子詞，部署只維護它的例句對。
 - 部署時，資料庫已發佈但沒有登記例句對的詞只會在 build log 列出 WARNING 並略過，不會讓部署失敗。上線前用 `DATABASE_URL=… npm run catalogue:check`（唯讀）看有哪些缺口、哪些主題還在等。
+- 新主題用共用 publisher 上線（登記時加 `sharedPublisher: true`）：`npm run release:audio:*`、`release:prepare-publish`、`release:publish`，步驟見 `docs/releases/README.md`。以前每批各自的 publisher 腳本凍結為證據，不再修改。
 
 ## 5. 分類
 

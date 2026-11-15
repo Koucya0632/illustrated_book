@@ -32,7 +32,7 @@ try {
     "tests/credits-preflight-postgres.test.ts", "tests/credit-refund-review-postgres.test.ts", "tests/credit-refund-review-http.test.ts", "tests/credit-admin-grants-http.test.ts",
     "tests/assistant-usage-postgres.test.ts", "tests/vocabulary-postgres.test.ts", "tests/vocabulary.test.ts",
     "tests/grammar-postgres.test.ts", "tests/grammar.test.ts",
-    "tests/catalogue-sync-postgres.test.ts"], {
+    "tests/catalogue-sync-postgres.test.ts", "tests/release-publisher-postgres.test.ts"], {
     stdio: "inherit",
     env: { ...process.env, CREDIT_TEST_DATABASE_URL: `postgres://postgres:${password}@127.0.0.1:${port}/tuji_credits_test` },
   });

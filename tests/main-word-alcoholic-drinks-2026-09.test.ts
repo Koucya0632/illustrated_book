@@ -28,6 +28,7 @@ import {
   publicFallbackWords,
   words,
 } from "../lib/words";
+import { GUARDED_SERIES, GUARDED_WORD_IDS } from "../lib/catalogue/releases";
 
 test("alcoholic drinks defines 34 guarded concepts with 33 new catalogue rows", () => {
   assert.equal(MAIN_WORD_ALCOHOLIC_DRINKS_RELEASE_ENTRIES.length, 34);
@@ -112,11 +113,10 @@ test("the category and routine migration preserve the guarded publication bounda
   assert.equal(publicFallbackCategories.some(({ id }) => id === "alcoholic-drinks"), false);
 
   const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-  assert.match(migration, /MAIN_WORD_ALCOHOLIC_DRINKS_IDS/);
-  assert.match(migration, /category: "alcoholic-drinks"/);
-  assert.match(migration, /readGuardedSeriesPublicationState/);
-  assert.match(migration, /guardedPublicationState\.get\(c\.id\) === false/);
-  assert.match(migration, /publishedWordIds\.delete\(id\)/);
+  const guard = GUARDED_SERIES.find(({ release }) => release === "alcoholic-drinks-2026-09");
+  assert.equal(guard?.category, "alcoholic-drinks");
+  assert.deepEqual(guard?.ids, MAIN_WORD_ALCOHOLIC_DRINKS_IDS);
+  assert.equal(MAIN_WORD_ALCOHOLIC_DRINKS_IDS.every((id) => GUARDED_WORD_IDS.has(id)), true);
   assert.match(migration, /\('alcoholic-drinks', '酒類'\)/);
   assert.match(migration, /\('alcoholic-drinks', '日本酒から世界各地の身近なお酒まで'\)/);
 });

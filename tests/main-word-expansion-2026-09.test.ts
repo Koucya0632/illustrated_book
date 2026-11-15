@@ -78,10 +78,10 @@ test("every expansion word ships complete multilingual learning content", () => 
 });
 
 test("new-word migration persists explanations and CEFR levels", () => {
-  const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-  assert.match(migration, /note, chinese_definition/);
-  assert.match(migration, /INSERT INTO word_examples \(word_id, sentence, cefr_level, sort_order\)/);
-  assert.match(migration, /ex\.cefrLevel \?\? null/);
+  const sync = readFileSync(new URL("../lib/catalogue/sync.ts", import.meta.url), "utf8");
+  assert.match(sync, /note, chinese_definition/);
+  assert.match(sync, /INSERT INTO word_examples \(word_id, sentence, cefr_level, sort_order\)/);
+  assert.match(sync, /ex\.cefrLevel \?\? null/);
 });
 
 test("expansion spans stay in their reviewable overlay without losing generator updates", () => {

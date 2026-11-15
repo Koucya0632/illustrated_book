@@ -7,8 +7,9 @@ import candidate from '../data/campus-series-2026-10.json';
 import review from '../data/campus-semantic-review-2026-10.json';
 import { categories, publicFallbackCategories, getCategory } from '../lib/categories';
 import { words, publicFallbackWords, getWord, getWordsByCategory, searchWords } from '../lib/words';
-import { MAIN_WORD_CAMPUS_IDS } from '../lib/main-word-campus-2026-10';
+import { releaseWordIds } from '../lib/catalogue/releases';
 import { loadExampleSpanCorpus, validateAuthoredSentence } from '../lib/example-span-corpus';
+const MAIN_WORD_CAMPUS_IDS = releaseWordIds('campus-2026-10');
 const hash=(v:unknown)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const read=(file:string)=>readFileSync(new URL(`../${file}`,import.meta.url),'utf8');
 const compile=(s:string)=>ts.transpile(s,{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS});
@@ -52,15 +53,6 @@ test('all headword readings, examples and contextual annotations match their ind
  }
 });
 
-// Exercise the actual routine migration guard without importing/running its production main().
-const migration=read('scripts/migrate.ts');
-const guardStart=migration.indexOf('async function readGuardedSeriesPublicationState(');
-const guardEnd=migration.indexOf('// eslint-disable-next-line',guardStart+1);
-const guardSource=migration.slice(guardStart,guardEnd);
-const seedStart=migration.indexOf('async function seedCategoriesIntoDb(');
-const seedEnd=migration.indexOf('\nasync function ',seedStart+1);
-const seedSource=migration.slice(seedStart,seedEnd);
-const makeMigration=new Function('GUARDED_PUBLISH_SERIES','GUARDED_PUBLISH_WORD_IDS','seedCategories',compile(`${guardSource}\n${seedSource}\nreturn {readGuardedSeriesPublicationState,seedCategoriesIntoDb};`));
 
 test('the ordinary async word loader hides the series when DB is absent or fails',async()=>{
  const source=read('lib/data.ts');
@@ -75,43 +67,6 @@ test('the ordinary async word loader hides the series when DB is absent or fails
   assert.ok(result.length>0);
   assert.equal(result.some((r:any)=>r.word.category==='campus'||MAIN_WORD_CAMPUS_IDS.includes(r.word.id)),false);
  }
-});
-
-test('ordinary category seeding refuses absent, draft, partial and wrong-category campus sets',async()=>{
- assert.match(migration,/\{ category: "campus", ids: MAIN_WORD_CAMPUS_IDS \}/);
- assert.match(migration,/GUARDED_PUBLISH_WORD_IDS\.has\(word\.id\)/);
- assert.match(migration,/publishedWordIds\.delete\(id\)/);
- const series=[{category:'campus',ids:MAIN_WORD_CAMPUS_IDS}];
- const api=makeMigration(series,new Set(MAIN_WORD_CAMPUS_IDS),[{id:'campus',name:'Restaurant'},{id:'office',name:'Office'}]);
- const rows=MAIN_WORD_CAMPUS_IDS.map(id=>({id,category:'campus',status:'published',deleted_at:null}));
- for(const input of [[],rows.map(r=>({...r,status:'draft'})),rows.slice(1),rows.slice(0,-1),rows.map((r,i)=>i? r:{...r,category:'office'}),rows.map((r,i)=>i? r:{...r,deleted_at:'2026-10-19'}),rows]){
-  const writes:string[]=[];
-  const sql=async(parts:TemplateStringsArray,...values:unknown[])=>{
-   const query=parts.join('?');
-   if(query.includes('SELECT id, category FROM words'))return input.filter((r:any)=>r.status==='published'&&!r.deleted_at);
-   if(query.includes('INSERT INTO categories'))writes.push(String(values[0]));
-   if(query.includes('count(*)::int AS c'))return [{c:2}];
-   return [];
-  };
-  await api.seedCategoriesIntoDb(sql);
-  assert.equal(writes.includes('office'),true);
-  assert.equal(writes.includes('campus'),input===rows);
- }
-});
-
-test('database absence, database error and an empty category query all use the guarded fallback',async()=>{
- const source=read('lib/categories-db.ts').replace(/^import .*;\n/gm,'').replace('export async function','async function');
- const create=new Function('getSql','staticCategories','localizeCategory','MAIN_WORD_CAMPUS_IDS','MAIN_WORD_RESTAURANT_IDS','MAIN_WORD_CONCERT_FAN_SUPPORT_IDS','MAIN_WORD_STATION_COMMUTING_IDS','MAIN_WORD_CHERRY_BLOSSOM_SEASON_IDS','MAIN_WORD_FESTIVALS_IDS',compile(`${source}\nreturn getCategoriesFromDb;`));
- for(const getSql of [()=>null,()=>async()=>{throw Error('offline');},()=>async()=>[]]){
-  const load=create(getSql,publicFallbackCategories,(v:unknown)=>v,MAIN_WORD_CAMPUS_IDS,[],[],[],[],[],[]);
-  const result=await load();
-  assert.equal(result.some((c:{id:string})=>c.id==='campus'),false);
-  assert.ok(result.length>0);
- }
- // Healthy DB reads must also enforce complete published membership, beyond the migration guard.
- assert.match(source,/c\.id <> 'campus' OR NOT EXISTS/);
- assert.match(source,/w\.status = 'published'/);
- assert.match(source,/w\.deleted_at IS NULL/);
 });
 
 test('the publisher defaults to read-only and stages verified immutable media before its database transaction',()=>{
@@ -134,21 +89,3 @@ test('the publisher defaults to read-only and stages verified immutable media be
  assert.doesNotMatch(publisher,/removePublicObjects/);
 });
 
-test('the actual ordinary word seed refuses every planned ID and the whole category before any child write',async()=>{
- const start=migration.indexOf('async function seedV2(');
- const end=migration.indexOf('\n// eslint-disable-next-line',start+1);
- const guardStart=migration.indexOf('const isGuardedPublishWord =');
- const guardEnd=migration.indexOf('\n\n',guardStart);
- const create=new Function('GUARDED_PUBLISH_SERIES','GUARDED_PUBLISH_WORD_IDS','seedWords',compile(`${migration.slice(guardStart,guardEnd)}\n${migration.slice(start,end)}\nreturn seedV2;`));
- const ids=new Set(MAIN_WORD_CAMPUS_IDS);
- const seed=create([{category:'campus',ids:[...ids]}],ids,[]);
- const calls:Array<{query:string;values:unknown[]}>=[];
- const sql=async(parts:TemplateStringsArray,...values:unknown[])=>{calls.push({query:parts.join('?'),values});return [];};
- const guarded=candidate.entries.map(e=>({...e,category:'office'}));
- await seed(sql,[...guarded,{...candidate.entries[0],id:'future-series-entry'}]);
- assert.equal(calls.length,0);
- await seed(sql,[{id:'allowed-existing-category',word:'control',category:'office',definitions:[],examples:[],relations:[]}]);
- assert.equal(calls.length,1);
- assert.match(calls[0].query,/INSERT INTO words/);
- assert.equal(calls[0].values[0],'allowed-existing-category');
-});

@@ -116,7 +116,7 @@ test("fresh deploys seed fruit category overlays before creating corrected Japan
     new URL("../lib/main-word-corrections.ts", import.meta.url),
     "utf8",
   );
-  const categoriesAt = migration.indexOf("await seedCategoriesIntoDb(sql)");
+  const categoriesAt = migration.indexOf("await catalogue.seedCategories()");
   const translationsAt = migration.indexOf(
     "await seedCategoryTranslationsIntoDb(sql)",
   );

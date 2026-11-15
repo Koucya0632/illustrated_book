@@ -2602,6 +2602,8 @@ async function generateCards(sql: any) {
       term = EXCLUDED.term,
       pronunciation = EXCLUDED.pronunciation,
       updated_at = now()
+    WHERE (word_terms.term, word_terms.pronunciation)
+      IS DISTINCT FROM (EXCLUDED.term, EXCLUDED.pronunciation)
   `;
   await sql`
     INSERT INTO word_terms (word_id, language, term)

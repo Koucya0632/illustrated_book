@@ -63,6 +63,14 @@
 
 Admin 單筆新增適合臨時內容，但要確認是否已產生 cards；沒有 cards 的詞不會進入 Study。
 
+### 4.1 工作批（release）
+
+一批由專屬 publisher 上線的詞（例如一個新主題）要登記在 `lib/catalogue/releases.ts`：候選檔放 `data/`，在清單尾端加一筆。種子詞、守門、無資料庫時的備援、主題列表的門檻、日文校正、例句對與 span overlay 都從這份清單衍生，不必再改其他檔。
+
+- `guarded`：一般部署不寫它的詞、圖片與主題，直到它計畫的每個詞都在該主題發佈；主題在那之前也不出現在 `/api/categories`。加詞到已上線主題的批次標 `expandsLiveTopic`，主題照常顯示。
+- `post-publication`：沒有種子詞，部署只維護它的例句對。
+- 部署時，資料庫已發佈但沒有登記例句對的詞只會在 build log 列出 WARNING 並略過，不會讓部署失敗。上線前用 `DATABASE_URL=… npm run catalogue:check`（唯讀）看有哪些缺口、哪些主題還在等。
+
 ## 5. 分類
 
 分類由 `categories` 資料控制。新增分類時：

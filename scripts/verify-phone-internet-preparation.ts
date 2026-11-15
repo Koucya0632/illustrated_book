@@ -40,14 +40,11 @@ async function main(){
 
  // Execute the actual category SQL with all current membership guards in a
  // READ ONLY transaction, rather than relying on a mock SQL implementation.
- const source=read('lib/categories-db.ts');
- const imports=[...source.matchAll(/import \{ (MAIN_WORD_[A-Z_]+_IDS) \} from "(.+)";/g)];
- const dependencies=await Promise.all(imports.map(async([,name,relative])=>{const module=await import(pathToFileURL(new URL(`../lib/${relative}.ts`,import.meta.url).pathname).href);return module[name];}));
- const create=new Function('getSql','staticCategories','localizeCategory',...imports.map(m=>m[1]),compile(source.replace(/^import .*;\n/gm,'').replace('export async function','async function')+'\nreturn getCategoriesFromDb;'));
+ // The live topic query (lib/catalogue/topics.ts) with every current guard.
+ const { readCatalogueTopics } = await import(pathToFileURL(new URL('../lib/catalogue/topics.ts', import.meta.url).pathname).href);
  const sql=postgres(process.env.DATABASE_URL!,{ssl:'require',prepare:false,max:1});
  try{await sql.begin('read only',async tx=>{
-  const load=create(()=>tx,publicFallbackCategories,localizeCategory,...dependencies);
-  const categories=await load();
+  const categories=await readCatalogueTopics(tx);
   assert.ok(categories.length>0);assert.equal(categories.some((c:any)=>c.id===candidate.series),false);
   write('category-query-probe.json',{checkedAt:new Date().toISOString(),transaction:'read only',query:'actual getCategoriesFromDb query',categoriesReturned:categories.length,newCategoryVisible:false,passed:true});
  });}finally{await sql.end();}

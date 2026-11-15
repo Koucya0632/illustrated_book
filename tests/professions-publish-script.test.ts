@@ -2,6 +2,9 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { publicFallbackWords } from "../lib/words";
+import { publicFallbackCategories } from "../lib/categories";
+const releases = readFileSync(new URL("../lib/catalogue/releases.ts", import.meta.url), "utf8");
+const catalogueSync = readFileSync(new URL("../lib/catalogue/sync.ts", import.meta.url), "utf8");
 
 const source = readFileSync(
   new URL("../scripts/publish-professions-series.ts", import.meta.url),
@@ -60,11 +63,10 @@ test("public fallbacks cannot expose the guarded series before database publicat
     assert.equal(publicFallbackWords.some((word) => word.category === category), false, category);
   }
   assert.match(publicData, /import \{ publicFallbackWords as staticWords \} from "\.\/words"/);
-  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "professions"/);
-  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "alcoholic-drinks"/);
-  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "convenience-store"/);
-  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "drugstore"/);
-  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*category\.id !== "clothing"/);
+  assert.match(categoriesSource, /export const publicFallbackCategories:[\s\S]*!GUARDED_CATEGORY_IDS\.has\(category\.id\)/);
+  for (const category of ["professions", "alcoholic-drinks", "convenience-store", "drugstore", "clothing"]) {
+    assert.equal(publicFallbackCategories.some(({ id }) => id === category), false, category);
+  }
   assert.match(
     categoriesDb,
     /import \{ publicFallbackCategories as staticCategories \} from "\.\/categories"/,
@@ -149,15 +151,14 @@ test("interrupted applies reuse one journal and rollback remains retryable", () 
 });
 
 test("routine deploys defer the guarded series and touch only published catalogue rows", () => {
-  assert.match(migration, /GUARDED_PUBLISH_WORD_IDS\.has\(word\.id\)/);
-  assert.match(migration, /GUARDED_PUBLISH_SERIES\.some/);
-  assert.match(migration, /ids\.every\(\(id\) => guardedPublishedKeys\.has/);
-  assert.match(migration, /deferring \$\{guardedMissing\.length\} guarded series word/);
-  assert.match(migration, /publishedWordIds\.delete\(id\)/);
+  assert.match(releases, /GUARDED_WORD_IDS\.has\(word\.id\) \|\| GUARDED_CATEGORY_IDS\.has\(word\.category\)/);
+  assert.match(releases, /ids\.every\(\(id\) => keys\.has/);
+  assert.match(catalogueSync, /deferring \$\{deferred\.length\} guarded series word/);
+  assert.match(catalogueSync, /unpublishedGuardedWordIds\(await readGuardState\(\)\)\) scoped\.delete\(id\)/);
   assert.match(migration, /if \(!publishedIds\.has\(w\.id\)\) continue/);
   assert.match(migration, /SELECT id FROM words WHERE status = 'published' AND deleted_at IS NULL/);
-  assert.match(migration, /applyMainWordExamplePairs\([\s\S]*publishedWordIds/);
-  assert.match(migration, /applyMainWordCorrections\(sql, publishedWordIds\)/);
+  assert.match(catalogueSync, /applyMainWordExamplePairs\(sql, scoped\)/);
+  assert.match(catalogueSync, /applyMainWordCorrections\(sql, scoped\)/);
   assert.match(mainWordMerges, /WHERE id = \$\{entry\.sourceId\}\s+AND status = 'published'/);
   assert.match(migration, /async function backfillSchemaV2[\s\S]*status = 'published'/);
   assert.match(migration, /async function backfillSchemaV3[\s\S]*w\.status = 'published'/);

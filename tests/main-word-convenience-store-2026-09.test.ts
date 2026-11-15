@@ -28,6 +28,7 @@ import {
   publicFallbackWords,
   words,
 } from "../lib/words";
+import { GUARDED_SERIES, GUARDED_WORD_IDS } from "../lib/catalogue/releases";
 
 test("convenience store defines 34 guarded concepts with 33 new catalogue rows", () => {
   assert.equal(MAIN_WORD_CONVENIENCE_STORE_RELEASE_ENTRIES.length, 34);
@@ -112,11 +113,10 @@ test("the category and routine migration preserve the guarded publication bounda
   assert.equal(publicFallbackCategories.some(({ id }) => id === "convenience-store"), false);
 
   const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-  assert.match(migration, /MAIN_WORD_CONVENIENCE_STORE_IDS/);
-  assert.match(migration, /category: "convenience-store"/);
-  assert.match(migration, /readGuardedSeriesPublicationState/);
-  assert.match(migration, /guardedPublicationState\.get\(c\.id\) === false/);
-  assert.match(migration, /publishedWordIds\.delete\(id\)/);
+  const guard = GUARDED_SERIES.find(({ release }) => release === "convenience-store-2026-09");
+  assert.equal(guard?.category, "convenience-store");
+  assert.deepEqual(guard?.ids, MAIN_WORD_CONVENIENCE_STORE_IDS);
+  assert.equal(MAIN_WORD_CONVENIENCE_STORE_IDS.every((id) => GUARDED_WORD_IDS.has(id)), true);
   assert.match(migration, /\('convenience-store', 'コンビニ'\)/);
   assert.match(migration, /\('convenience-store', '日本のコンビニで見かける設備・サービス・商品'\)/);
 });

@@ -262,6 +262,15 @@ export function findRelease(id: string): CatalogueRelease {
   return release;
 }
 
+/** Every word a release plans: its whole plan for a seeded release, the
+ * words it maintains example pairs for after publication. */
+export function releaseWordIds(id: string): string[] {
+  const release = findRelease(id);
+  return release.kind === "post-publication"
+    ? release.examplePairs.map((pair) => pair.id)
+    : [...release.series.ids];
+}
+
 /** Words routine seeding may add, before the guard filters them. */
 export const RELEASE_SEED_WORDS: readonly ReleaseSeedWord[] = CATALOGUE_RELEASES.flatMap(
   (release) => seriesOf(release)?.words ?? [],

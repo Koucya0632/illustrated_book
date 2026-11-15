@@ -46,8 +46,9 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
     await sql`CREATE TABLE IF NOT EXISTS words (id TEXT PRIMARY KEY)`;
     // Use the actual additive atlas DDL, not a test copy with weaker constraints.
     const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
+    // atlas_public_items: a re-confirm keeps a published card's public row on its 景點 (lib/atlas/publication.ts).
     for (const table of ["user_atlas_images", "user_atlas_recognition_jobs", "user_atlas_candidates", "user_atlas_items",
-      "user_atlas_ai_usage", "user_entitlements", "user_entitlement_grants", "user_lifetime_entitlements"]) {
+      "atlas_public_items", "user_atlas_ai_usage", "user_entitlements", "user_entitlement_grants", "user_lifetime_entitlements"]) {
       const statement = migration.match(new RegExp("`(CREATE TABLE IF NOT EXISTS " + table + " \\([\\s\\S]*?)`"))?.[1];
       assert.ok(statement, `missing real DDL for ${table}`);
       await sql.unsafe(statement);
@@ -59,8 +60,8 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       const statement = migration.match(new RegExp("`(ALTER TABLE user_atlas_items ADD COLUMN IF NOT EXISTS " + column + " [^`]+)`"))?.[1];
       assert.ok(statement); await sql.unsafe(statement);
     }
-    // The 景點 columns, from the same list migrate.ts spreads (this test has no public items or reports).
-    for (const statement of ATLAS_SPOT_DDL.filter(s => s.includes("ALTER TABLE user_atlas_items"))) {
+    // The 景點 columns, from the same list migrate.ts spreads (this test has no reports).
+    for (const statement of ATLAS_SPOT_DDL.filter(s => /ALTER TABLE (user_atlas_items|atlas_public_items)/.test(s))) {
       await sql.unsafe(statement); await sql.unsafe(statement);
     }
     await sql`ALTER TABLE user_entitlements ADD COLUMN IF NOT EXISTS storekit_revoked_at TIMESTAMPTZ`;

@@ -10,6 +10,7 @@ import {
 } from "@/lib/atlas-db";
 import { applyAnswer, masteryLevel } from "@/lib/mastery";
 import { humanizeInterval, schedule, type Rating } from "@/lib/srs";
+import { isUuid } from "@/lib/http/ids";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -30,10 +31,6 @@ const VALID_ACTIVITIES = new Set([
   "reading",
 ]);
 
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
-
 export async function POST(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
@@ -53,7 +50,7 @@ export async function POST(req: Request) {
 
   const cardId = typeof body.cardId === "string" ? body.cardId : "";
   const rating = body.rating as Rating;
-  if (invalidId(cardId) || !VALID_RATINGS.includes(rating)) {
+  if (!isUuid(cardId) || !VALID_RATINGS.includes(rating)) {
     return NextResponse.json({ error: "missing/invalid cardId or rating" }, { status: 400 });
   }
 

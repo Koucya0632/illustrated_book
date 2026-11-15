@@ -5,22 +5,15 @@
 import { NextResponse } from "next/server";
 import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
-import {
-  getOwnedAtlasCollection,
-  isAtlasAuthorBlocked,
-  prepareAtlasItemForCollectionPublication,
-  submitAtlasItemForReview,
-} from "@/lib/atlas-db";
+import { getOwnedAtlasCollection } from "@/lib/atlas-db";
 import { processAtlasCollectionSubmission } from "@/lib/atlas/collection-submit-pipeline";
-import { processAtlasSubmission } from "@/lib/atlas/submit-pipeline";
+import { canSubmit } from "@/lib/atlas/lifecycle-rules";
+import { atlasPublication } from "@/lib/atlas/publication-live";
 import { publishAtlasShareImage, removeAtlasPublicObjects } from "@/lib/atlas/storage";
+import { isUuid } from "@/lib/http/ids";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
 
 export async function POST(_req: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
@@ -28,10 +21,11 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const membershipRefusal = await communityWriteRefusal(userId);
   if (membershipRefusal) return membershipRefusal;
-  if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  if (!isUuid(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   // Repeat offenders lose publishing (docs/COMMUNITY_ATLAS_PLAN.md §5.5).
-  if (await isAtlasAuthorBlocked(userId)) {
+  const publication = atlasPublication();
+  if (await publication.isAuthorRestricted(userId)) {
     return NextResponse.json(
       { error: "publishing_restricted", message: "你的帳號目前無法公開內容。" },
       { status: 403, headers: { "Cache-Control": "private, no-store" } },
@@ -40,10 +34,14 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
 
   const owned = await getOwnedAtlasCollection(params.id, userId);
   if (!owned) return NextResponse.json({ error: "not found" }, { status: 404 });
-  // A moderation takedown is not re-submittable. The client hides the button;
+  // A moderation takedown is not re-submittable, and a 合集 in review — or one
+  // reports pulled back — waits for its decision. The client hides the button;
   // this is what actually stops a plain POST from re-publishing it.
   if (owned.collection.review_status === "takedown") {
     return NextResponse.json({ error: "not found" }, { status: 404 });
+  }
+  if (!canSubmit(owned.collection.review_status)) {
+    return NextResponse.json({ error: "not_submittable" }, { status: 409, headers: { "Cache-Control": "private, no-store" } });
   }
   const items = owned.members;
   if (items.length === 0) {
@@ -73,15 +71,8 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
       continue;
     }
     if (member.review_status === "approved") continue;
-    const submitted = await submitAtlasItemForReview(userId, member.id, {
-      deferPublication: true,
-    });
-    if (!submitted) {
-      problemItemIds.push(member.id);
-      continue;
-    }
-    const itemOutcome = await processAtlasSubmission(submitted, { deferPublication: true });
-    if (itemOutcome.reviewStatus !== "approved") problemItemIds.push(member.id);
+    const itemOutcome = await publication.submit(userId, member.id, { deferPublication: true });
+    if (!itemOutcome.ok || itemOutcome.reviewStatus !== "approved") problemItemIds.push(member.id);
   }
 
   if (problemItemIds.length === 0) {
@@ -97,7 +88,7 @@ export async function POST(_req: Request, props: { params: Promise<{ id: string 
         uploaded.push({ itemId: member.id, path: image.path });
       }
       for (const image of uploaded) {
-        await prepareAtlasItemForCollectionPublication(image.itemId, image.path);
+        await publication.prepareForCollection(image.itemId, image.path);
       }
     } catch {
       if (uploadingItemId) problemItemIds.push(uploadingItemId);

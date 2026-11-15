@@ -15,16 +15,13 @@
 import { NextResponse } from "next/server";
 import { communityWriteRefusal } from "@/lib/atlas/community-gate";
 import { getCurrentUserId } from "@/lib/current-user";
-import { addAtlasCollectionItem, isAtlasAuthorBlocked, submitAtlasItemForReview } from "@/lib/atlas-db";
+import { addAtlasCollectionItem } from "@/lib/atlas-db";
+import { atlasPublication } from "@/lib/atlas/publication-live";
+import { isUuid } from "@/lib/http/ids";
 import { messageForRefusal } from "@/lib/atlas/collection-membership";
-import { processAtlasSubmission } from "@/lib/atlas/submit-pipeline";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
 
 export async function POST(req: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
@@ -32,7 +29,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const membershipRefusal = await communityWriteRefusal(userId);
   if (membershipRefusal) return membershipRefusal;
-  if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  if (!isUuid(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   let body: { sourceItemId?: unknown; publicItemId?: unknown };
   try {
@@ -48,7 +45,7 @@ export async function POST(req: Request, props: { params: Promise<{ id: string }
       : typeof body.publicItemId === "string"
         ? body.publicItemId
         : "";
-  if (invalidId(sourceItemId)) return NextResponse.json({ error: "invalid item" }, { status: 400 });
+  if (!isUuid(sourceItemId)) return NextResponse.json({ error: "invalid item" }, { status: 400 });
 
   const outcome = await addAtlasCollectionItem({
     collectionId: params.id,
@@ -92,12 +89,11 @@ async function submitNewMemberForReview(
   sourceItemId: string,
 ): Promise<{ reviewStatus: string; published: boolean } | null> {
   try {
-    // Publishing is a privilege this account may have lost. The item stays a
-    // member; it simply never becomes visible.
-    if (await isAtlasAuthorBlocked(userId)) return null;
-    const item = await submitAtlasItemForReview(userId, sourceItemId);
-    if (!item) return null;
-    const outcome = await processAtlasSubmission(item);
+    // Publishing is a privilege this account may have lost (`restricted`), and
+    // a member already under review stays there: either way the item stays a
+    // member and simply does not become visible.
+    const outcome = await atlasPublication().submit(userId, sourceItemId);
+    if (!outcome.ok) return null;
     return { reviewStatus: outcome.reviewStatus, published: outcome.published };
   } catch {
     return null;

@@ -5,17 +5,11 @@ import {
   type AtlasReportStatus,
 } from "@/lib/atlas-db";
 import AtlasReportActions from "./AtlasReportActions";
+import { REPORT_REASON_LABELS } from "@/lib/atlas/report-reasons";
 
 export const dynamic = "force-dynamic";
 
-const REASON_LABELS: Record<string, string> = {
-  spam: "垃圾／廣告",
-  inappropriate: "不當內容",
-  copyright: "侵權",
-  wrong: "資訊錯誤",
-  other: "其他",
-  not_here: "不是在這裡拍的",
-};
+const REASON_LABELS = REPORT_REASON_LABELS;
 
 const STATUS_LABELS: Record<string, string> = {
   open: "待處理",

@@ -1,24 +1,15 @@
 "use client";
 
 import { useState } from "react";
-
-const REASONS: { value: string; label: string }[] = [
-  { value: "inappropriate", label: "不當內容" },
-  { value: "copyright", label: "侵權" },
-  { value: "wrong", label: "資訊錯誤" },
-  { value: "spam", label: "垃圾／廣告" },
-  { value: "other", label: "其他" },
-];
+import { reasonsFor } from "@/lib/atlas/report-reasons";
 
 type Status = "idle" | "submitting" | "done" | "error";
 
-/** Only for a card its owner shared to a 景點 (lib/travel/spot-tagging.ts). */
-const NOT_HERE = { value: "not_here", label: "不是在這裡拍的" };
-
 export default function ReportButton({ slug, atSpot = false }: { slug: string; atSpot?: boolean }) {
-  const reasons = atSpot ? [...REASONS, NOT_HERE] : REASONS;
+  // 「不是在這裡拍的」 only for a card its owner shared to a 景點.
+  const reasons = [...reasonsFor("item"), ...(atSpot ? reasonsFor("item_spot") : [])];
   const [open, setOpen] = useState(false);
-  const [reason, setReason] = useState("inappropriate");
+  const [reason, setReason] = useState(reasons[0].value);
   const [detail, setDetail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState<string | null>(null);

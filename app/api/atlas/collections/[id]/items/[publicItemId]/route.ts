@@ -3,13 +3,10 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/current-user";
 import { removeAtlasCollectionItem } from "@/lib/atlas-db";
+import { isUuid } from "@/lib/http/ids";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
 
 export async function DELETE(
   _req: Request,
@@ -18,7 +15,7 @@ export async function DELETE(
   const params = await props.params;
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  if (invalidId(params.id) || invalidId(params.publicItemId)) {
+  if (!isUuid(params.id) || !isUuid(params.publicItemId)) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
 

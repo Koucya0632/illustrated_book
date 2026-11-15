@@ -5,6 +5,7 @@
 // (lib/ddl.ts): an unconditional one deadlocked a production migrate.
 
 import { onlyIf } from "../ddl";
+import { REPORT_REASON_VALUES, REPORT_TARGETS } from "./report-reasons";
 
 const column = (table: string, name: string, definition: string) =>
   onlyIf(
@@ -13,8 +14,9 @@ const column = (table: string, name: string, definition: string) =>
     `ALTER TABLE ${table} ADD COLUMN ${name} ${definition}`,
   );
 
-export const ATLAS_REPORT_REASONS = ["spam", "inappropriate", "copyright", "wrong", "other", "not_here"] as const;
-export const ATLAS_REPORT_TARGETS = ["item", "collection", "author", "item_spot"] as const;
+// The CHECKs allow exactly what lib/atlas/report-reasons.ts lists.
+const ATLAS_REPORT_REASONS = REPORT_REASON_VALUES;
+const ATLAS_REPORT_TARGETS = REPORT_TARGETS;
 
 const list = (values: readonly string[]) => values.map((v) => `'${v}'`).join(",");
 

@@ -6,19 +6,16 @@ import {
   removeAtlasPrivateObjects,
   removeAtlasPublicObjects,
 } from "@/lib/atlas/storage";
+import { isUuid } from "@/lib/http/ids";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function invalidId(id: string): boolean {
-  return !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id);
-}
 
 export async function GET(_req: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  if (!isUuid(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   const image = await getAtlasImage(userId, params.id);
   if (!image) return NextResponse.json({ error: "not found" }, { status: 404 });
@@ -62,7 +59,7 @@ export async function DELETE(_req: Request, props: { params: Promise<{ id: strin
   const params = await props.params;
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  if (invalidId(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
+  if (!isUuid(params.id)) return NextResponse.json({ error: "not found" }, { status: 404 });
 
   const paths = await deleteAtlasImageCascade(userId, params.id);
   if (!paths) return NextResponse.json({ error: "not found" }, { status: 404 });

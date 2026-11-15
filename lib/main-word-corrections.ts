@@ -2466,16 +2466,24 @@ export async function applyMainWordCorrections(
   const corrections = selectMainWordCorrections(wordIds);
 
   await sql.begin(async (tx) => {
+    // Every deploy runs this over the network, one statement at a time, for
+    // ~1,000 corrections, and it is most of the build's migrate time. Read which
+    // words exist once; nothing below can delete or restore a word.
+    const present = new Set(
+      (await tx<{ id: string }[]>`
+        SELECT id FROM words
+        WHERE id = ANY(${[...new Set(corrections.map(({ id }) => id))]})
+          AND deleted_at IS NULL
+      `).map(({ id }) => id),
+    );
     for (const correction of corrections) {
-      const [present] = await tx`
-        SELECT 1 FROM words WHERE id = ${correction.id} AND deleted_at IS NULL
-      `;
-      if (!present) continue;
+      if (!present.has(correction.id)) continue;
       touched.add(correction.id);
 
       // Each field moves only from its reviewed old value; a row already
       // corrected is left alone so a redeploy does not bump updated_at.
-      await tx`
+      // Most corrections set none of these three, so they skip the statement.
+      if (correction.word != null || correction.category != null || correction.pronunciation != null) await tx`
         UPDATE words
         SET
           word = CASE

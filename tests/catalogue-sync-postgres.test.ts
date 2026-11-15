@@ -6,6 +6,7 @@ import { GUARDED_SERIES, RELEASE_EXAMPLE_PAIRS } from "../lib/catalogue/releases
 import { createCatalogueSync, readCatalogueGaps } from "../lib/catalogue/sync";
 import { readCatalogueTopics } from "../lib/catalogue/topics";
 import { categories } from "../lib/categories";
+import { MAIN_WORD_CORRECTIONS } from "../lib/main-word-corrections";
 import { words } from "../lib/words";
 import { CATALOGUE_TABLES, migrateDdlFor } from "./helpers/migrate-ddl";
 
@@ -19,7 +20,14 @@ test("catalogue sync against real PostgreSQL", { skip: !databaseUrl }, async () 
   const schema = `catalogue_sync_${randomUUID().slice(0, 8)}`;
   const admin = postgres(databaseUrl!, { max: 1, onnotice: () => {} });
   await admin.unsafe(`CREATE SCHEMA ${schema}`);
-  const sql = postgres(databaseUrl!, { max: 1, onnotice: () => {}, connection: { search_path: schema } });
+  // Every statement is one network round trip on a production deploy.
+  let statements: string[] | null = null;
+  const sql = postgres(databaseUrl!, {
+    max: 1,
+    onnotice: () => {},
+    connection: { search_path: schema },
+    debug: (_connection, query) => statements?.push(query.replace(/\s+/g, " ").trim()),
+  });
   try {
     const ddl = migrateDdlFor(CATALOGUE_TABLES);
     assert.ok(ddl.some((s) => s.startsWith("CREATE TABLE IF NOT EXISTS words")));
@@ -140,7 +148,24 @@ test("catalogue sync against real PostgreSQL", { skip: !databaseUrl }, async () 
     await again.seedCategories();
     assert.deepEqual((await again.seedMissingWords()).seeded, []);
     assert.deepEqual(await again.syncWordImages(), []);
+    statements = [];
     const rerun = await again.syncReleasedContent();
+    const issued = statements;
+    statements = null;
+    // The corrections step must stay a fixed cost per correction: existence is
+    // read once, and only corrections that move word/category/pronunciation
+    // issue a words UPDATE (the Vercel build has a hard time limit).
+    const presentIds = new Set((await sql`SELECT id FROM words WHERE deleted_at IS NULL`).map(({ id }) => id as string));
+    const scopedCorrections = MAIN_WORD_CORRECTIONS.filter(
+      ({ id }) => presentIds.has(id) && !professions.ids.includes(id),
+    );
+    assert.ok(scopedCorrections.length >= bank.ids.length);
+    assert.equal(issued.filter((q) => q.startsWith("SELECT id FROM words WHERE id = ANY")).length, 1);
+    assert.equal(issued.filter((q) => /^SELECT 1 FROM words WHERE id = \$/.test(q)).length, 0);
+    assert.equal(
+      issued.filter((q) => q.startsWith("UPDATE words SET word = CASE")).length,
+      scopedCorrections.filter((c) => c.word != null || c.category != null || c.pronunciation != null).length,
+    );
     assert.equal(rerun.examples.updated, 0);
     assert.equal(rerun.examples.spanSentencesUpdated, 0);
     assert.deepEqual(await stamps(), before);

@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
-import { readFileSync } from "node:fs";
 import test from "node:test";
 import postgres from "postgres";
 import { GUARDED_SERIES, RELEASE_EXAMPLE_PAIRS } from "../lib/catalogue/releases";
@@ -8,33 +7,9 @@ import { createCatalogueSync, readCatalogueGaps } from "../lib/catalogue/sync";
 import { readCatalogueTopics } from "../lib/catalogue/topics";
 import { categories } from "../lib/categories";
 import { words } from "../lib/words";
+import { CATALOGUE_TABLES, migrateDdlFor } from "./helpers/migrate-ddl";
 
 const databaseUrl = process.env.CREDIT_TEST_DATABASE_URL;
-
-const CATALOGUE_TABLES = new Set([
-  "words", "categories", "category_translations", "word_definitions", "word_terms",
-  "word_examples", "word_example_translations", "sentence_spans", "sentence_span_glosses",
-  "word_relations", "word_localized_texts", "cards", "word_categories",
-]);
-
-/** The real DDL for the catalogue tables, in migrate.ts order: table, column,
- * constraint and index statements only (no RLS, policies or backfills). */
-function catalogueDdl(): string[] {
-  const migration = readFileSync(new URL("../scripts/migrate.ts", import.meta.url), "utf8");
-  const start = migration.indexOf("const DDL = [");
-  const end = migration.indexOf("\n];\n", start);
-  const statements = [...migration.slice(start, end).matchAll(/`([^`]*)`/g)].map(([, body]) => body.trim());
-  const target = (statement: string) =>
-    statement.match(/^CREATE TABLE IF NOT EXISTS (\w+)/)?.[1] ??
-    statement.match(/^ALTER TABLE (\w+)\s+(ADD|ALTER|DROP) /)?.[1] ??
-    statement.match(/^CREATE (?:UNIQUE )?INDEX IF NOT EXISTS \w+\s+ON (\w+)/)?.[1] ??
-    statement.match(/^DO \$\$[\s\S]*?ALTER TABLE (\w+)/)?.[1];
-  return statements.filter((statement) => {
-    const table = target(statement);
-    return table !== undefined && CATALOGUE_TABLES.has(table) &&
-      !statement.includes("${") && !/ROW LEVEL SECURITY|POLICY|gin_trgm_ops/.test(statement);
-  });
-}
 
 test("catalogue sync against real PostgreSQL", { skip: !databaseUrl }, async () => {
   const url = new URL(databaseUrl!);
@@ -46,7 +21,7 @@ test("catalogue sync against real PostgreSQL", { skip: !databaseUrl }, async () 
   await admin.unsafe(`CREATE SCHEMA ${schema}`);
   const sql = postgres(databaseUrl!, { max: 1, onnotice: () => {}, connection: { search_path: schema } });
   try {
-    const ddl = catalogueDdl();
+    const ddl = migrateDdlFor(CATALOGUE_TABLES);
     assert.ok(ddl.some((s) => s.startsWith("CREATE TABLE IF NOT EXISTS words")));
     assert.ok(ddl.some((s) => s.includes("ADD COLUMN IF NOT EXISTS status")));
     for (const statement of ddl) await sql.unsafe(statement);

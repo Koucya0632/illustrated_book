@@ -13,6 +13,8 @@
 // Adding a release: add its candidate file under data/, append one entry here,
 // and nothing else — seed words, the guard, the no-database fallback, the
 // topic filter, corrections, example pairs and span overlays all read this list.
+// A new topic is published with the shared publisher: mark it
+// `sharedPublisher: true` and follow docs/releases/README.md.
 //
 // Server only in practice (it imports every candidate file); nothing in a
 // client bundle may import it.
@@ -81,6 +83,9 @@ export type CatalogueRelease =
       /** Adds words to a topic that is already live. Seeding still waits for
        * it, but the topic itself is not hidden while it is being published. */
       expandsLiveTopic?: true;
+      /** Published with the shared publisher (lib/catalogue/publish). Every
+       * release before it ships with its own frozen publisher script. */
+      publisher?: "shared";
       series: CatalogueSeries;
       spans: readonly string[];
     }
@@ -121,6 +126,7 @@ function guardedCandidate(
   options: {
     ownsCategoryRecord?: boolean;
     expandsLiveTopic?: boolean;
+    sharedPublisher?: boolean;
     spans?: readonly string[];
     series?: CatalogueSeries;
   } = {},
@@ -131,6 +137,7 @@ function guardedCandidate(
     category: candidate.category.id,
     ...(options.ownsCategoryRecord ? { categoryRecord: candidate.category } : {}),
     ...(options.expandsLiveTopic ? { expandsLiveTopic: true as const } : {}),
+    ...(options.sharedPublisher ? { publisher: "shared" as const } : {}),
     series: options.series ?? candidateSeries(candidate),
     spans: options.spans ?? [`example-spans-${id}.json`],
   };

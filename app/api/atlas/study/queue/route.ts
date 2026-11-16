@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { parseIntParam } from "@/lib/http/int-param";
 import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { fetchAtlasDue } from "@/lib/atlas-db";
@@ -12,7 +13,7 @@ export async function GET(req: Request) {
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const { searchParams } = new URL(req.url);
-  const limit = Math.min(100, Math.max(1, Number(searchParams.get("limit") || 20)));
+  const limit = parseIntParam(searchParams.get("limit"), 20);
   const modeParam = (searchParams.get("mode") ?? "both").trim();
   const mode = modeParam === "new" || modeParam === "review" ? modeParam : "both";
 

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { parseIntParam } from "@/lib/http/int-param";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { refuseLegacyAtlasWrite } from "@/lib/credits/legacy-server";
 import { listAtlasImages } from "@/lib/atlas-db";
@@ -30,7 +31,7 @@ export async function GET(req: Request) {
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const { searchParams } = new URL(req.url);
-  const limit = Math.min(100, Math.max(1, Number(searchParams.get("limit") || 30)));
+  const limit = parseIntParam(searchParams.get("limit"), 30);
   const rows = await listAtlasImages(userId, limit);
   const images = await Promise.all(rows.map(serializeImage));
   return NextResponse.json(

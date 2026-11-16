@@ -10,6 +10,7 @@
 // normally decide.
 
 import { NextResponse } from "next/server";
+import { parseIntParam } from "@/lib/http/int-param";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import { getAllLearningWords } from "@/lib/data";
@@ -32,10 +33,7 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const typeParam = (searchParams.get("type") ?? "best").trim();
   const type: TopType = typeParam === "weak" ? "weak" : "best";
-  const limitRaw = Number(searchParams.get("limit") ?? "5");
-  const limit = Number.isFinite(limitRaw)
-    ? Math.max(1, Math.min(limitRaw, 20))
-    : 5;
+  const limit = parseIntParam(searchParams.get("limit"), 5, { max: 20 });
 
   const settings = await getSettings(userId);
   const direction = readLearningDirection(req, settings.learningDirection);

@@ -26,6 +26,7 @@ import {
   readLearningDirection,
 } from "@/lib/cache-headers";
 import { NextResponse } from "next/server";
+import { parseIntParam } from "@/lib/http/int-param";
 
 export const runtime = "nodejs";
 // Per-user settings can still influence the payload (a caller that sends no
@@ -40,12 +41,9 @@ async function readCallerSettings() {
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const q = (url.searchParams.get("q") ?? "").trim();
-  const limitRaw = Number(url.searchParams.get("limit") ?? "50");
   // Ceiling matches DAILY_GOAL_MAX-style upper bound: SearchClient's "顯示
   // 更多" path may bump limit by 50 each click up to 200.
-  const limit = Number.isFinite(limitRaw)
-    ? Math.max(1, Math.min(limitRaw, 200))
-    : 50;
+  const limit = parseIntParam(url.searchParams.get("limit"), 50, { max: 200 });
 
   if (!q) {
     return NextResponse.json({ results: [], query: "", limit });

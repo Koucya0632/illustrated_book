@@ -4,6 +4,7 @@
 
 import { NextResponse } from "next/server";
 import { communityWriteRefusal } from "@/lib/atlas/community-gate";
+import { collectionDescriptionFrom } from "@/lib/atlas/collection-description";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import { createAtlasCollection, listMyAtlasCollections, type AtlasMyCollectionRow } from "@/lib/atlas-db";
@@ -64,8 +65,7 @@ export async function POST(req: Request) {
   if (!title || title.length > 60) {
     return NextResponse.json({ error: "invalid title" }, { status: 400 });
   }
-  const description =
-    typeof body.description === "string" ? body.description.trim().slice(0, 500) || null : null;
+  const description = collectionDescriptionFrom(body);
   const lang = targetLanguage(body.targetLanguage);
   if (!lang) return NextResponse.json({ error: "invalid targetLanguage" }, { status: 400 });
 

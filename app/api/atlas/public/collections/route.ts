@@ -5,7 +5,7 @@
 import { NextResponse } from "next/server";
 import { listPublicAtlasCollections } from "@/lib/atlas-db";
 import { serializeAtlasPublicCollectionCard } from "@/lib/atlas/public-serialize";
-import { parseLimit } from "@/lib/http/limit";
+import { parseIntParam } from "@/lib/http/int-param";
 import type { AtlasTargetLanguage } from "@/lib/atlas/types";
 
 export const runtime = "nodejs";
@@ -19,7 +19,7 @@ export async function GET(req: Request) {
   const lang = targetLanguage(searchParams.get("lang"));
   if (!lang) return NextResponse.json({ error: "invalid lang" }, { status: 400 });
 
-  const limit = parseLimit(searchParams.get("limit"), 60);
+  const limit = parseIntParam(searchParams.get("limit"), 60);
   const rows = await listPublicAtlasCollections(lang, limit);
   return NextResponse.json(
     { collections: rows.map(serializeAtlasPublicCollectionCard) },

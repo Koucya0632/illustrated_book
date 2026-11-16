@@ -8,6 +8,7 @@ import {targetLanguageFor, type LearningDirection, type UiLang} from "../lib/set
 import {localizeWord, localizeSpans, type LocalizedTextMap} from "../lib/word-localize";
 import {spansCoverSentence, unlinkSelfReference} from "../lib/example-spans";
 import {canStudyCard} from "../lib/study-membership";
+import {applyAustralianVariant, australianVariant, visibleInDirection} from "../lib/australian-word-variants";
 
 // Invoke the real DB-row adapter and detail projection with a local DB-shaped
 // fixture, so note language selection is checked without loading Next/DB.
@@ -24,10 +25,10 @@ const terms=candidates.entries.flatMap(e=>[
  {word_id:e.id,language:"ja",term:e.ja,pronunciation:e.jaReading,reading:e.jaReading,reading_segments:e.jaReadingSegments},
 ]);
 const raw=candidates.entries.map(e=>rowToWord({id:e.id,word:e.word,category:e.category,part_of_speech:e.partOfSpeech,pronunciation:e.pronunciation,image_url:`https://example.invalid/${e.id}.webp`,also_known_as:[],collocations:[],forms:[],note:e.note,chinese_definition:e.chineseDefinition,definitions:e.definitions.map(d=>({...d,sort_order:d.sortOrder})),examples:e.examples.map((x,i)=>({id:`${e.id}:${i}`,sentence:x.en,cefr_level:x.cefrLevel,sort_order:i,translations:{ja:x.ja,zh:x.zh}})),localized_texts:{"note|en":e.localizedNotes.en,"note|ja":e.localizedNotes.ja},audio_by_locale:{},relations:[],tags:[]}));
-const getLearningWord=new Function("getAllRawEntries","jaGlossTermMap","localizeWord","targetLanguageFor","targetTermMap","spansForSentences","spansCoverSentence","localizeSpans","unlinkSelfReference",actualFunctions(["getLearningWord"])+"\nreturn getLearningWord;")(
+const getLearningWord=new Function("getAllRawEntries","jaGlossTermMap","localizeWord","targetLanguageFor","targetTermMap","spansForSentences","spansCoverSentence","localizeSpans","unlinkSelfReference","applyAustralianVariant","australianVariant","visibleInDirection",actualFunctions(["getLearningWord"])+"\nreturn getLearningWord;")(
  async()=>raw,async()=>new Map(terms.filter(t=>t.language==="ja").map(t=>[t.word_id,t])),localizeWord,targetLanguageFor,
  async(direction:LearningDirection)=>new Map(terms.filter(t=>t.language===targetLanguageFor(direction)).map(t=>[t.word_id,t])),
- async()=>new Map(),spansCoverSentence,localizeSpans,unlinkSelfReference,
+ async()=>new Map(),spansCoverSentence,localizeSpans,unlinkSelfReference,applyAustralianVariant,australianVariant,visibleInDirection,
 ) as (id:string,lang:UiLang,direction:LearningDirection)=>Promise<Word>;
 for(const entry of candidates.entries)for(const lang of ["zh-Hant","en","ja"] as const)for(const direction of ["zh-en","zh-ja"] as const){
  test(`actual detail note projection ${entry.id}/${lang}/${direction}`,async()=>{

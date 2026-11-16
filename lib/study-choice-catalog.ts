@@ -1,3 +1,4 @@
+import { australianVariant, visibleInDirection } from "./australian-word-variants";
 import type { Sql, TransactionSql } from "postgres";
 import { attachChoiceExclusions, candidateWord, type CandidateMeta, type RelationEdge } from "./distractors";
 import { assembleStudyChoices, choiceReserve, choicesConflict, type ChoiceLanguage } from "./study-choices";
@@ -23,11 +24,19 @@ export async function readChoiceCatalog(sql: Sql | TransactionSql, languages: Ch
   const edges = relations as unknown as RelationEdge[];
   const pools = new Map<ChoiceLanguage, CandidateMeta[]>();
   for (const language of languages) {
-    const pool: CandidateMeta[] = rows.filter(r => r.language === language).map(r => ({
-      cardId: String(r.word_id), wordId: String(r.word_id), word: String(r.label), back: String(r.label),
-      category: r.category ?? "", pos: r.pos ?? "", cefr: r.cefr ?? null,
-      pronunciation: r.pronunciation ?? "", gloss: r.gloss ?? "", language, exclusions: r.aliases ?? [],
-    }));
+    const direction = language === "ja" ? "zh-ja" : "zh-en";
+    const pool: CandidateMeta[] = rows
+      .filter(r => r.language === language && visibleInDirection(String(r.word_id), direction))
+      .map(r => {
+        const variant = australianVariant(String(r.word_id), direction);
+        const label = variant?.headword ?? String(r.label);
+        return {
+          cardId: String(r.word_id), wordId: String(r.word_id), word: label, back: label,
+          category: r.category ?? "", pos: r.pos ?? "", cefr: r.cefr ?? null,
+          pronunciation: variant?.pronunciation ?? r.pronunciation ?? "",
+          gloss: variant?.gloss["zh-Hant"] ?? r.gloss ?? "", language, exclusions: r.aliases ?? [],
+        };
+      });
     pools.set(language, attachChoiceExclusions(pool, edges));
   }
   return { pools, relations: edges };

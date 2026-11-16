@@ -69,34 +69,12 @@ const nextConfig = {
       headers: [{ key: "Cache-Control", value: "private, no-store" }],
     });
     return [
-      publicEntry("/api/words"),
-      publicEntry("/api/words/:id"),
+      // Word/search routes set cache headers on each response. A static rule
+      // here would overwrite no-store on a database failure and cache the 503.
       // Membership-aware 詞條延伸內容: the only per-caller slice of a word.
       privateEntry("/api/words/:id/insights"),
       publicEntry("/api/categories"),
       publicEntry("/api/travel"),
-      // /api/search is public or per-user depending on the request. With
-      // `learning` the URL carries the whole identity — the same URL means the
-      // same rows for everyone — so the edge may cache it. Without it the rows
-      // follow the caller's stored 學習語言, so only the requesting device may.
-      //
-      // It used to be in neither list, which is how it ended up serving a bare
-      // `Cache-Control: public`: the handler asked for `public, s-maxage=60,
-      // stale-while-revalidate=300`, Next stripped the bounds off a
-      // searchParam-reading handler, and the unbounded grant survived.
-      {
-        ...publicEntry("/api/search"),
-        has: [{ type: "query", key: "learning" }],
-      },
-      {
-        source: "/api/search",
-        missing: [{ type: "query", key: "learning" }],
-        // `private` and not `no-store`: these are public catalogue rows, and
-        // the device that asked is allowed to reuse its own copy. What must
-        // never happen is a *shared* cache handing one user's language slice
-        // to another.
-        headers: [{ key: "Cache-Control", value: "private, max-age=60" }],
-      },
       privateEntry("/api/users/:path*"),
       privateEntry("/api/study/:path*"),
       privateEntry("/api/events"),

@@ -46,7 +46,7 @@ export async function POST(req: Request, ctx: Ctx) {
     return NextResponse.json({ ok: true });
   }
   // Official words only: 自製 (atlas:) and 物見 (saved:) ids are not in `words`.
-  if (!(await wordExists(wordId))) {
+  if (!(await wordExists(wordId, list.targetLanguage))) {
     return NextResponse.json({ error: "unknown_word" }, { status: 400 });
   }
   const locked = (await wordListIndex(userId, list)) >= wordListLimits(access).lists;

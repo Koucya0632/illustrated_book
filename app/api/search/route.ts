@@ -12,15 +12,17 @@
 // searchParam-reading handler but kept the bare `public`, so the grant was live
 // in production and the s-maxage that was supposed to bound it was not.
 //
-// Cache headers now live in next.config.js, split on whether `learning` is
-// present: with it the URL is the whole identity and the edge may cache; without
-// it the response is per-user and only the requesting device may.
+// Successful responses are shared-cacheable only when both language parameters
+// are present; failures use no-store so an outage cannot be cached.
 
 import { searchCardWordsAsync } from "@/lib/data";
+import { dbEnabled } from "@/lib/db";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
 import { DEFAULT_SETTINGS } from "@/lib/settings";
 import {
+  CATALOGUE_CLIENT_CACHE,
+  CATALOGUE_EDGE_CACHE,
   hasExplicitLanguageScope,
   readLang,
   readLearningDirection,
@@ -56,15 +58,21 @@ export async function GET(req: Request) {
       ? DEFAULT_SETTINGS
       : await readCallerSettings();
 
+    const direction = readLearningDirection(req, settings.learningDirection);
+    if (direction === "zh-ja" && !dbEnabled()) throw new Error("Japanese catalogue requires the database");
     const results = await searchCardWordsAsync(
       q,
       { limit },
       readLang(req, settings.uiLang),
-      readLearningDirection(req, settings.learningDirection),
+      direction,
     );
-    return NextResponse.json({ results, query: q, limit });
+    return NextResponse.json({ results, query: q, limit }, {
+      headers: hasExplicitLanguageScope(req)
+        ? { "Cache-Control": CATALOGUE_CLIENT_CACHE, "Vercel-CDN-Cache-Control": CATALOGUE_EDGE_CACHE }
+        : { "Cache-Control": "private, max-age=60" },
+    });
   } catch (err) {
     console.warn("[api/search] failed", err);
-    return NextResponse.json({ error: "search failed" }, { status: 500 });
+    return NextResponse.json({ error: "search failed" }, { status: 503, headers: { "Cache-Control": "no-store", "Vercel-CDN-Cache-Control": "no-store" } });
   }
 }

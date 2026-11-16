@@ -6,6 +6,7 @@
 // `available: false` without touching the database.
 
 import { NextResponse } from "next/server";
+import { visibleInDirection } from "@/lib/australian-word-variants";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getMembershipAccess } from "@/lib/atlas/entitlement";
 import { membershipPolicy } from "@/lib/atlas/membership";
@@ -25,7 +26,11 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   }
   const { id } = await props.params;
   const lang = readLang(req) as UiLang;
-  const language = readLearningDirection(req) === "zh-ja" ? "ja" : "en";
+  const direction = readLearningDirection(req);
+  if (!visibleInDirection(id, direction)) {
+    return NextResponse.json({ error: "not found" }, { status: 404, headers });
+  }
+  const language = direction === "zh-ja" ? "ja" : "en";
   const [stored, userId] = await Promise.all([readStoredWordInsights(id, language), getCurrentUserId()]);
   const tier = userId ? (await getMembershipAccess(userId)).tier : "free";
   const hasMembership = tier === "lifetime" || tier === "pro";

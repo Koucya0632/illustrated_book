@@ -113,6 +113,8 @@ export interface Example {
    *  anything the annotation backfill has not reached, which is normal and
    *  renders as the plain sentence. */
   spans?: GlossSpan[];
+  /** Optional recordings of this exact sentence, keyed by voice locale. */
+  audioUrls?: Record<string, string>;
   cefrLevel?: CEFRLevel;
   sortOrder: number;
 }

@@ -3,11 +3,13 @@
 // pronunciation) — heavy fields like definitions / examples / relations
 // stay behind the per-word /api/words/[id] endpoint.
 //
-// CDN-cacheable: the only input is `lang`, so the same (lang, payload) pair
-// is shared across all callers. `getAllCardWords`'s `unstable_cache` layer
+// Successful responses are CDN-cacheable by their language-scoped URL.
+// `getAllCardWords`'s `unstable_cache` layer
 // keeps origin DB hits amortized.
 
 import { getAllCardWords } from "@/lib/data";
+import { NextResponse } from "next/server";
+import { dbEnabled } from "@/lib/db";
 import type { LearningDirection, UiLang } from "@/lib/settings";
 import {
   publicJson,
@@ -24,6 +26,12 @@ export const revalidate = 300;
 export async function GET(req: Request) {
   const lang = readLang(req) as UiLang;
   const learning = readLearningDirection(req) as LearningDirection;
-  const words = await getAllCardWords(lang, learning);
-  return publicJson({ words, total: words.length }, req);
+  try {
+    if (learning === "zh-ja" && !dbEnabled()) throw new Error("Japanese catalogue requires the database");
+    const words = await getAllCardWords(lang, learning);
+    return publicJson({ words, total: words.length }, req, true);
+  } catch (error) {
+    console.warn("[api/words] catalogue unavailable", error);
+    return NextResponse.json({ error: "catalogue unavailable" }, { status: 503, headers: { "Cache-Control": "no-store", "Vercel-CDN-Cache-Control": "no-store" } });
+  }
 }

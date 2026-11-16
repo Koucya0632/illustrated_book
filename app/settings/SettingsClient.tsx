@@ -359,11 +359,11 @@ export default function SettingsClient({
           {sec === "learn" && (
             <SetCard title={t("tab.learn")}>
               <SetRow
-                label="學習語言"
-                desc="英文與日文的學習進度會分開保留"
+                label={t("set.atlas")}
+                desc={t("set.atlasDesc")}
                 options={[
-                  { value: "zh-en", label: "中文學英文" },
-                  { value: "zh-ja", label: "中文學日文" },
+                  { value: "zh-en", label: t("set.atlasAustralia") },
+                  { value: "zh-ja", label: t("set.atlasJapan") },
                 ]}
                 current={draft.learningDirection}
                 onSelect={(v) =>
@@ -385,6 +385,7 @@ export default function SettingsClient({
                   options={[
                     { value: "us", label: t("set.accentUS") },
                     { value: "uk", label: t("set.accentUK") },
+                    { value: "au", label: t("set.accentAU") },
                   ]}
                   current={draft.accent}
                   onSelect={(v) => set("accent", v as UserSettings["accent"])}

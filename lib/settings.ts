@@ -11,7 +11,7 @@ export type LearningDirection = "zh-en" | "zh-ja";
 
 export interface UserSettings {
   dailyGoal: number;
-  accent: "us" | "uk";
+  accent: "us" | "uk" | "au";
   showZh: boolean;
   // Study themes: any of these category ids (words.category). Empty array
   // means "no theme picked" — home + study gate the daily-task UI behind
@@ -60,9 +60,11 @@ export const DAILY_GOAL_MAX = 100;
 export const ACCENT_OPTIONS: { value: UserSettings["accent"]; label: string }[] = [
   { value: "us", label: "美式英語" },
   { value: "uk", label: "英式英語" },
+  { value: "au", label: "澳式英語" },
 ];
 
 export function accentToLang(accent: UserSettings["accent"]): string {
+  if (accent === "au") return "en-AU";
   return accent === "uk" ? "en-GB" : "en-US";
 }
 
@@ -111,7 +113,7 @@ export function studyDeckFor(direction: LearningDirection): "image-en" | "image-
 export function normalizeSettings(raw: Partial<UserSettings> | null | undefined): UserSettings {
   return {
     dailyGoal: clampDailyGoal(Number(raw?.dailyGoal)),
-    accent: raw?.accent === "uk" ? "uk" : "us",
+    accent: raw?.accent === "uk" || raw?.accent === "au" ? raw.accent : "us",
     showZh: typeof raw?.showZh === "boolean" ? raw.showZh : DEFAULT_SETTINGS.showZh,
     studyCategories: normalizeStudyCategories(raw?.studyCategories),
     studyDecks: normalizeStudyDecks(raw?.studyDecks),

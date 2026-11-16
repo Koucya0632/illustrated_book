@@ -9,6 +9,7 @@
 import "server-only";
 import type postgres from "postgres";
 import { getSql } from "@/lib/db";
+import { hiddenAustralianIds, visibleInDirection } from "@/lib/australian-word-variants";
 import type { WordListRefusal } from "./policy";
 
 type Lang = "en" | "ja";
@@ -67,13 +68,15 @@ export async function listWordLists(
   wordId?: string,
 ): Promise<WordListRow[]> {
   const sql = requireSql();
+  const hiddenIds = hiddenAustralianIds(lang === "ja" ? "zh-ja" : "zh-en");
+  const visibleItem = hiddenIds.length ? sql`AND NOT (i.word_id = ANY(${hiddenIds}))` : sql``;
   const rows = (await sql`
     SELECT l.id, l.name, l.target_language, l.position, l.created_at, l.updated_at,
-           (SELECT count(*)::int FROM user_word_list_items i WHERE i.list_id = l.id) AS word_count
+           (SELECT count(*)::int FROM user_word_list_items i WHERE i.list_id = l.id ${visibleItem}) AS word_count
            ${wordId
              ? sql`, EXISTS (
                  SELECT 1 FROM user_word_list_items i
-                  WHERE i.list_id = l.id AND i.word_id = ${wordId}
+                  WHERE i.list_id = l.id AND i.word_id = ${wordId} ${visibleItem}
                ) AS contains_word`
              : sql``}
       FROM user_word_lists l
@@ -94,9 +97,13 @@ async function orderedIds(exec: Exec, userId: string, lang: Lang): Promise<strin
 
 export async function getWordList(userId: string, listId: string): Promise<WordListRow | null> {
   const sql = requireSql();
+  const hiddenJa = hiddenAustralianIds("zh-ja");
+  const hiddenEn = hiddenAustralianIds("zh-en");
   const rows = (await sql`
     SELECT l.id, l.name, l.target_language, l.position, l.created_at, l.updated_at,
-           (SELECT count(*)::int FROM user_word_list_items i WHERE i.list_id = l.id) AS word_count
+           (SELECT count(*)::int FROM user_word_list_items i WHERE i.list_id = l.id
+             ${hiddenJa.length ? sql`AND NOT (l.target_language = 'ja' AND i.word_id = ANY(${hiddenJa}))` : sql``}
+             ${hiddenEn.length ? sql`AND NOT (l.target_language = 'en' AND i.word_id = ANY(${hiddenEn}))` : sql``}) AS word_count
       FROM user_word_lists l
      WHERE l.id = ${listId}::uuid AND l.user_id = ${userId}::uuid
   `) as unknown as RawListRow[];
@@ -191,8 +198,10 @@ export async function addWordToList(
     `) as unknown as { x: number }[];
     // Already there: adding again is a no-op, not a cap question.
     if (present) return { ok: true as const };
+    const hiddenIds = hiddenAustralianIds(list.targetLanguage === "ja" ? "zh-ja" : "zh-en");
+    const visibleItem = hiddenIds.length ? tx`AND NOT (i.word_id = ANY(${hiddenIds}))` : tx``;
     const [{ c }] = (await tx`
-      SELECT count(*)::int AS c FROM user_word_list_items WHERE list_id = ${list.id}::uuid
+      SELECT count(*)::int AS c FROM user_word_list_items i WHERE i.list_id = ${list.id}::uuid ${visibleItem}
     `) as unknown as { c: number }[];
     const refusal = gate(Number(c));
     if (refusal) return { refusal };
@@ -214,7 +223,8 @@ export async function removeWordFromList(listId: string, wordId: string): Promis
 }
 
 /** Only published, undeleted words — a retired word stops counting silently. */
-export async function wordExists(wordId: string): Promise<boolean> {
+export async function wordExists(wordId: string, language: Lang): Promise<boolean> {
+  if (!visibleInDirection(wordId, language === "ja" ? "zh-ja" : "zh-en")) return false;
   const sql = requireSql();
   const rows = await sql`
     SELECT 1 FROM words WHERE id = ${wordId} AND deleted_at IS NULL AND status = 'published'
@@ -231,12 +241,15 @@ export interface WordListWords {
 export async function wordListWords(userId: string, list: WordListRow): Promise<WordListWords> {
   const sql = requireSql();
   const deckKey = list.targetLanguage === "ja" ? "image-ja" : "image-en";
+  const hiddenIds = hiddenAustralianIds(list.targetLanguage === "ja" ? "zh-ja" : "zh-en");
+  const visibleItem = hiddenIds.length ? sql`AND NOT (i.word_id = ANY(${hiddenIds}))` : sql``;
   const [ids, [stats]] = await Promise.all([
     sql`
       SELECT i.word_id
         FROM user_word_list_items i
         JOIN words w ON w.id = i.word_id
        WHERE i.list_id = ${list.id}::uuid AND w.deleted_at IS NULL AND w.status = 'published'
+       ${visibleItem}
        ORDER BY i.added_at DESC, i.word_id ASC
     ` as unknown as Promise<{ word_id: string }[]>,
     sql`
@@ -248,6 +261,7 @@ export async function wordListWords(userId: string, list: WordListRow): Promise<
         JOIN cards c ON c.word_id = i.word_id AND c.deck_key = ${deckKey}
         LEFT JOIN user_cards uc ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
        WHERE i.list_id = ${list.id}::uuid
+       ${visibleItem}
     ` as unknown as Promise<{ total: number; seen: number; due: number }[]>,
   ]);
   return {

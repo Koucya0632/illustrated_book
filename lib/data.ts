@@ -3,6 +3,7 @@
 // static lib/words.ts (this keeps `npm run dev` working without a DB).
 
 import { unstable_cache } from "next/cache";
+import { applyAustralianVariant, australianVariant, visibleInDirection } from "./australian-word-variants";
 import { dbEnabled, getSql } from "./db";
 import { CATALOGUE_REVALIDATE_SECONDS } from "./catalogue-cache";
 import { publicFallbackWords as staticWords } from "./words";
@@ -258,11 +259,14 @@ async function fetchAllFromDb(): Promise<RawEntry[]> {
     .map((s) => s.entry);
 }
 
-async function getAllRawEntries(): Promise<RawEntry[]> {
-  if (!dbEnabled()) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
+async function getAllRawEntries(requireDatabase = false): Promise<RawEntry[]> {
+  if (!dbEnabled()) {
+    return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
+  }
   try {
     return await fetchAllFromDb();
   } catch (err) {
+    if (requireDatabase) throw err;
     console.warn("[data] DB read failed, falling back to static:", err);
     return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
   }
@@ -273,27 +277,44 @@ async function getAllRawEntries(): Promise<RawEntry[]> {
 // runs cheaply on JSON-deserialized data.
 export async function getAllWords(lang: UiLang = "zh-Hant"): Promise<Word[]> {
   const raw = await getAllRawEntries();
-  return raw.map((r) => localizeWord(r.word, lang, r.localizedTexts));
+  return raw
+    .filter((r) => visibleInDirection(r.word.id, "zh-en"))
+    .map((r) => localizeWord(r.word, lang, r.localizedTexts));
 }
 
 export async function getAllLearningWords(
   lang: UiLang = "zh-Hant",
   direction: LearningDirection = "zh-en",
 ): Promise<Word[]> {
-  const raw = await getAllRawEntries();
+  const raw = await getAllRawEntries(direction === "zh-ja");
   const targetLanguage = targetLanguageFor(direction);
   const terms = await targetTermMap(direction);
   const jaGloss = await jaGlossTermMap(lang);
   return raw.flatMap((r) => {
-    const word = localizeWord(r.word, lang, r.localizedTexts, jaGloss?.get(r.word.id)?.term);
+    if (!visibleInDirection(r.word.id, direction)) return [];
+    const variant = australianVariant(r.word.id, direction);
+    const word = applyAustralianVariant(
+      localizeWord(r.word, lang, r.localizedTexts, jaGloss?.get(r.word.id)?.term),
+      lang,
+      variant,
+    );
     const term = terms.get(word.id);
     if (targetLanguage === "ja" && !term) return [];
     return [{
       ...word,
-      word: term?.term ?? word.word,
+      audioUrls: targetLanguage === "ja" && word.audioUrls
+        ? Object.fromEntries(Object.entries(word.audioUrls).filter(([locale]) => locale !== "en-AU"))
+        : word.audioUrls,
+      examples: targetLanguage === "ja" ? word.examples.map((example) => ({
+        ...example,
+        audioUrls: example.audioUrls
+          ? Object.fromEntries(Object.entries(example.audioUrls).filter(([locale]) => locale !== "en-AU"))
+          : example.audioUrls,
+      })) : word.examples,
+      word: variant?.headword ?? term?.term ?? word.word,
       reading: term?.reading ?? undefined,
       readingSegments: term?.reading_segments ?? undefined,
-      pronunciation: term?.pronunciation ?? term?.reading ?? word.pronunciation,
+      pronunciation: variant?.pronunciation ?? term?.pronunciation ?? term?.reading ?? word.pronunciation,
       targetLanguage,
     }];
   });
@@ -302,7 +323,7 @@ export async function getAllLearningWords(
 export async function getWord(id: string, lang: UiLang = "zh-Hant"): Promise<Word | undefined> {
   const raw = await getAllRawEntries();
   const hit = raw.find((r) => r.word.id === id);
-  return hit ? localizeWord(hit.word, lang, hit.localizedTexts) : undefined;
+  return hit && visibleInDirection(id, "zh-en") ? localizeWord(hit.word, lang, hit.localizedTexts) : undefined;
 }
 
 interface TermRow {
@@ -457,13 +478,18 @@ export async function getLearningWord(
   lang: UiLang = "zh-Hant",
   direction: LearningDirection = "zh-en",
 ): Promise<Word | undefined> {
-  const raw = await getAllRawEntries();
+  const raw = await getAllRawEntries(direction === "zh-ja");
   const hit = raw.find((r) => r.word.id === id);
-  if (!hit) return undefined;
+  if (!hit || !visibleInDirection(id, direction)) return undefined;
   // Same gloss rule as the two list paths: the headline is the ja headword,
   // and the explanatory ja definition drops to the explainer line under it.
   const jaGloss = await jaGlossTermMap(lang);
-  const base = localizeWord(hit.word, lang, hit.localizedTexts, jaGloss?.get(id)?.term);
+  const variant = australianVariant(id, direction);
+  const base = applyAustralianVariant(
+    localizeWord(hit.word, lang, hit.localizedTexts, jaGloss?.get(id)?.term),
+    lang,
+    variant,
+  );
   const targetLanguage = targetLanguageFor(direction);
   const term = (await targetTermMap(direction)).get(id);
   if (!term && targetLanguage === "ja") return undefined;
@@ -477,13 +503,16 @@ export async function getLearningWord(
         japaneseDefinition.trim() !== term?.term.trim()
         ? japaneseDefinition
         : undefined
-      : hit.word.englishDefinition;
+      : base.englishDefinition;
   let examples =
     targetLanguage === "ja"
       ? base.examples
           .filter((example) => Boolean(example.translations.ja?.trim()))
           .map((example) => ({
             ...example,
+            audioUrls: example.audioUrls
+              ? Object.fromEntries(Object.entries(example.audioUrls).filter(([locale]) => locale !== "en-AU"))
+              : example.audioUrls,
             // Japanese detail consumers must never fall back to rendering
             // the English source sentence.
             en: "",
@@ -535,16 +564,19 @@ export async function getLearningWord(
 
   return {
     ...base,
+    audioUrls: targetLanguage === "ja" && base.audioUrls
+      ? Object.fromEntries(Object.entries(base.audioUrls).filter(([locale]) => locale !== "en-AU"))
+      : base.audioUrls,
     // A 日文 learner already reads the ja definition as the 譯義 line above; the
     // explainer would repeat it word for word.
     chineseDefinition:
       base.chineseDefinition && base.chineseDefinition === targetDefinition
         ? undefined
         : base.chineseDefinition,
-    word: term?.term ?? base.word,
+    word: variant?.headword ?? term?.term ?? base.word,
     reading: term?.reading ?? undefined,
     readingSegments: term?.reading_segments ?? undefined,
-    pronunciation: term?.pronunciation ?? term?.reading ?? base.pronunciation,
+    pronunciation: variant?.pronunciation ?? term?.pronunciation ?? term?.reading ?? base.pronunciation,
     targetLanguage,
     targetDefinition,
     targetDefinitionSpans,
@@ -576,7 +608,7 @@ export async function getAllCardWords(
   lang: UiLang = "zh-Hant",
   direction: LearningDirection = "zh-en",
 ): Promise<CardWord[]> {
-  const raw = await getAllRawEntries();
+  const raw = await getAllRawEntries(direction === "zh-ja");
   const targetLanguage = targetLanguageFor(direction);
   const terms = await targetTermMap(direction);
   const jaGloss = await jaGlossTermMap(lang);
@@ -584,9 +616,15 @@ export async function getAllCardWords(
   // the ja-JP clip, English words the US/UK pair (the on-device accent
   // setting picks between them). Keeps the lite payload — and its CDN cache
   // key — independent of the client's accent choice.
-  const wanted = targetLanguage === "ja" ? ["ja-JP"] : ["en-US", "en-GB"];
+  const wanted = targetLanguage === "ja" ? ["ja-JP"] : ["en-US", "en-GB", "en-AU"];
   return raw.flatMap((r) => {
-    const w = localizeWord(r.word, lang, r.localizedTexts, jaGloss?.get(r.word.id)?.term);
+    if (!visibleInDirection(r.word.id, direction)) return [];
+    const variant = australianVariant(r.word.id, direction);
+    const w = applyAustralianVariant(
+      localizeWord(r.word, lang, r.localizedTexts, jaGloss?.get(r.word.id)?.term),
+      lang,
+      variant,
+    );
     const term = terms.get(w.id);
     // Japanese mode only exposes concepts with a real Japanese target term.
     if (targetLanguage === "ja" && !term) return [];
@@ -595,11 +633,11 @@ export async function getAllCardWords(
       : {};
     return [{
       id: w.id,
-      word: term?.term ?? w.word,
+      word: variant?.headword ?? term?.term ?? w.word,
       chinese: w.chinese,
       imageUrl: w.imageUrl,
       category: w.category,
-      pronunciation: term?.pronunciation ?? term?.reading ?? w.pronunciation,
+      pronunciation: variant?.pronunciation ?? term?.pronunciation ?? term?.reading ?? w.pronunciation,
       reading: term?.reading ?? undefined,
       readingSegments: term?.reading_segments ?? undefined,
       targetLanguage,
@@ -750,7 +788,15 @@ export async function searchCardWordsAsync(
     `) as unknown as { id: string }[];
 
     const ids = new Set(rows.map((r) => r.id));
-    return all.filter((w) => ids.has(w.id));
+    // Regional headwords are absent from the SQL index. Keep SQL's existing
+    // order for ordinary matches and prioritize matching regional cards.
+    const needle = q.toLowerCase();
+    const regional = all.filter((word) =>
+      australianVariant(word.id, direction) &&
+      [word.word, word.chinese].some((value) => value.toLowerCase().includes(needle)),
+    );
+    const regionalIds = new Set(regional.map((word) => word.id));
+    return regional.concat(all.filter((word) => ids.has(word.id) && !regionalIds.has(word.id))).slice(0, limit);
   } catch (err) {
     console.warn("[data] card search SQL failed, falling back to in-memory:", err);
     return inMemoryMatchCard(all, q).slice(0, limit);

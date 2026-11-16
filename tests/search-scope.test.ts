@@ -92,12 +92,10 @@ test("the route pays for a user lookup only when the request was silent", () => 
 
 // MARK: - Who may cache the answer
 
-test("the handler no longer sets its own Cache-Control", () => {
-  // Next mangles handler-set cache headers on a dynamic route — that is how an
-  // `s-maxage=60` turned into an unbounded `public`. next.config.js owns this.
-  // Quoted form only: the header name appears in this file's own prose.
-  assert.doesNotMatch(routeCode, /"Cache-Control"/);
-  assert.doesNotMatch(routeCode, /s-maxage/);
+test("the handler gates shared caching on both explicit language parameters", () => {
+  assert.match(routeCode, /hasExplicitLanguageScope\(req\)[\s\S]*CATALOGUE_CLIENT_CACHE/);
+  assert.match(routeCode, /private, max-age=60/);
+  assert.match(routeCode, /no-store/);
 });
 
 async function searchHeaderEntries() {
@@ -120,30 +118,15 @@ function cacheControl(entry: { headers: { key: string; value: string }[] }) {
   return entry.headers.find((h) => h.key === "Cache-Control")?.value ?? "";
 }
 
-test("the edge may cache a search only when the URL carries the direction", async () => {
+test("static headers cannot override search failure caching", async () => {
   const entries = await searchHeaderEntries();
-  const shared = entries.filter((e) => cacheControl(e).includes("public"));
-
-  assert.equal(shared.length, 1, "exactly one entry may grant a shared cache");
-  assert.deepEqual(shared[0].has, [{ type: "query", key: "learning" }]);
-});
-
-test("without the direction the answer is private to the device that asked", async () => {
-  const entries = await searchHeaderEntries();
-  const unscoped = entries.find((e) => e.missing?.some((m) => m.key === "learning"));
-
-  assert.ok(unscoped, "the no-direction case must be covered");
-  const value = cacheControl(unscoped);
-  assert.match(value, /private/);
-  assert.doesNotMatch(value, /public/);
+  assert.deepEqual(entries, []);
 });
 
 test("no entry hands /api/search to a shared cache unconditionally", async () => {
   // The regression that shipped: /api/search was in neither header list, so
   // nothing here contradicted the handler's `public`.
   const entries = await searchHeaderEntries();
-  assert.ok(entries.length > 0, "/api/search must be covered by a header rule");
-
   for (const entry of entries) {
     if (!cacheControl(entry).includes("public")) continue;
     assert.ok(

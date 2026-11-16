@@ -107,12 +107,15 @@ export async function fetchStudyExamples(
   for (const row of usable) {
     const sentence = row.sentence as string;
     const list = out.get(row.word_id) ?? [];
+    const audioByLocale = row.audio_by_locale && language === "ja"
+      ? Object.fromEntries(Object.entries(row.audio_by_locale).filter(([locale]) => locale !== "en-AU"))
+      : row.audio_by_locale;
     list.push({
       sentence,
       cefrLevel: row.cefr_level,
       audioUrls:
-        row.audio_by_locale && Object.keys(row.audio_by_locale).length > 0
-          ? row.audio_by_locale
+        audioByLocale && Object.keys(audioByLocale).length > 0
+          ? audioByLocale
           : null,
       // The target word itself is included. The client needs it in the set
       // anyway (a distractor equal to the answer is the one exclusion it

@@ -1,5 +1,6 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
+import { hiddenAustralianIds, australianVariantsCacheKey } from "./australian-word-variants";
 import { getSql } from "./db";
 import { CATALOGUE_REVALIDATE_SECONDS } from "./catalogue-cache";
 import { buildChoiceCandidates, candidateWord, type TargetMeta } from "./distractors";
@@ -115,7 +116,7 @@ export async function attachMasteryAndSort(
 
 // Published vocabulary, shared across users. Cache JSON rather than Map so
 // Next's persistent cache retains the complete multilingual pool.
-const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[]) => {
+const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[], _variantsCacheKey: string) => {
   const catalog = await readChoiceCatalog(requireSql(), languages);
   return { pools: Object.fromEntries(catalog.pools), relations: catalog.relations };
 }, ["study-choice-catalog-v2"], { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS });
@@ -123,7 +124,7 @@ const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[]) => {
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
   if (!due.length) return due;
   const languages = [...new Set(due.map(d => d.word.target_language))].sort();
-  const { pools, relations } = await getChoiceCatalog(languages);
+  const { pools, relations } = await getChoiceCatalog(languages, australianVariantsCacheKey);
   const { generateMisspellings } = await import("./misspellings");
   for (const d of due) {
     const language = d.word.target_language;
@@ -212,6 +213,12 @@ export async function fetchDue(
   const tags = (filter.tags ?? []).filter((t) => t.length > 0);
   const cats = (filter.categories ?? []).filter((c) => c.length > 0 && c !== "all");
   const decks = (filter.deckKeys ?? []).filter((d) => d.length > 0 && d !== "all");
+  const hiddenJapanese = hiddenAustralianIds("zh-ja");
+  const hiddenEnglish = hiddenAustralianIds("zh-en");
+  const regionFilter = sql`
+    ${hiddenJapanese.length ? sql`AND NOT (c.deck_key = 'image-ja' AND c.word_id = ANY(${hiddenJapanese}))` : sql``}
+    ${hiddenEnglish.length ? sql`AND NOT (c.deck_key <> 'image-ja' AND c.word_id = ANY(${hiddenEnglish}))` : sql``}
+  `;
   const listFilter = filter.wordListId
     ? sql`AND c.word_id IN (
         SELECT word_id FROM user_word_list_items WHERE list_id = ${filter.wordListId}::uuid
@@ -270,6 +277,7 @@ export async function fetchDue(
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
       ${listFilter}
       ${wordFilter}
+      ${regionFilter}
     ORDER BY uc.next_review_at ASC
     LIMIT ${limit}
   `) as unknown as Record<string, unknown>[]);
@@ -323,6 +331,7 @@ export async function fetchDue(
       ${decks.length ? sql`AND c.deck_key = ANY(${decks})` : sql``}
       ${listFilter}
       ${wordFilter}
+      ${regionFilter}
     ORDER BY c.id ASC
     LIMIT ${newBudget}
   `) as unknown as Record<string, unknown>[]) : [];
@@ -531,7 +540,7 @@ export function studyStats(
   const alsoDue = cats.length ? [...dueWordIds].sort() : [];
   return unstable_cache(
     () => studyStatsRaw(userId, cats, deckKey, tz, alsoDue),
-    ["studyStats", userId, deckKey, cats.join(","), tz, alsoDue.join(",")],
+    ["studyStats", userId, deckKey, cats.join(","), tz, alsoDue.join(","), australianVariantsCacheKey],
     { tags: [`stats:${userId}`], revalidate: 30 },
   )();
 }
@@ -567,6 +576,8 @@ async function studyStatsRaw(
     cats.length && dueWordIds.length
       ? sql`AND (w.category = ANY(${cats}) OR c.word_id = ANY(${dueWordIds}))`
       : ucCatFilter;
+  const hiddenIds = hiddenAustralianIds(deckKey === "image-ja" ? "zh-ja" : "zh-en");
+  const regionFilter = hiddenIds.length ? sql`AND NOT (c.word_id = ANY(${hiddenIds}))` : sql``;
   const [totalRows, seenRows, dueRows, todayNewRows, byStatus] = await Promise.all([
     sql`
       SELECT count(*)::int AS total
@@ -575,6 +586,7 @@ async function studyStatsRaw(
       WHERE w.deleted_at IS NULL AND w.status = 'published'
         AND c.deck_key = ${deckKey}
       ${catFilter}
+      ${regionFilter}
     ` as Promise<{ total: number }[]>,
     sql`
       SELECT count(*)::int AS seen
@@ -584,6 +596,7 @@ async function studyStatsRaw(
       WHERE uc.user_id = ${userId}::uuid
         AND c.deck_key = ${deckKey}
       ${ucCatFilter}
+      ${regionFilter}
     ` as Promise<{ seen: number }[]>,
     sql`
       SELECT count(*)::int AS due
@@ -593,6 +606,7 @@ async function studyStatsRaw(
       WHERE uc.user_id = ${userId}::uuid AND uc.next_review_at <= now()
         AND c.deck_key = ${deckKey}
       ${dueFilter}
+      ${regionFilter}
     ` as Promise<{ due: number }[]>,
     sql`
       SELECT count(*)::int AS "todayNew"
@@ -604,6 +618,7 @@ async function studyStatsRaw(
         AND (uc.created_at AT TIME ZONE ${tz})::date
           = (now() AT TIME ZONE ${tz})::date
       ${ucCatFilter}
+      ${regionFilter}
     ` as Promise<{ todayNew: number }[]>,
     sql`
       SELECT uc.status, count(*)::int AS c
@@ -613,6 +628,7 @@ async function studyStatsRaw(
       WHERE uc.user_id = ${userId}::uuid
         AND c.deck_key = ${deckKey}
       ${ucCatFilter}
+      ${regionFilter}
       GROUP BY uc.status
     ` as Promise<{ status: Status; c: number }[]>,
   ]);
@@ -642,7 +658,7 @@ export function categoryProgress(
 ): Promise<CategoryProgressRow[]> {
   return unstable_cache(
     () => categoryProgressRaw(userId, deckKey),
-    ["categoryProgress", userId, deckKey],
+    ["categoryProgress", userId, deckKey, australianVariantsCacheKey],
     { tags: [`stats:${userId}`], revalidate: 30 },
   )();
 }
@@ -652,6 +668,8 @@ async function categoryProgressRaw(
   deckKey: string,
 ): Promise<CategoryProgressRow[]> {
   const sql = requireSql();
+  const hiddenIds = hiddenAustralianIds(deckKey === "image-ja" ? "zh-ja" : "zh-en");
+  const regionFilter = hiddenIds.length ? sql`AND NOT (c.word_id = ANY(${hiddenIds}))` : sql``;
   return sql<CategoryProgressRow[]>`
     SELECT w.category                 AS category,
            count(*)::int              AS total,
@@ -662,6 +680,7 @@ async function categoryProgressRaw(
       ON uc.card_id = c.id AND uc.user_id = ${userId}::uuid
     WHERE w.deleted_at IS NULL AND w.status = 'published'
       AND c.deck_key = ${deckKey}
+      ${regionFilter}
     GROUP BY w.category
   `;
 }

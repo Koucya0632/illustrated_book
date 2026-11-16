@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { parseIntParam } from "@/lib/http/int-param";
+import { australianStudyHint, australianVariant } from "@/lib/australian-word-variants";
+import { toZhHans } from "@/lib/opencc";
 import { readTimezone } from "@/lib/timezone";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import {
@@ -346,7 +348,23 @@ export async function GET(req: Request) {
     const atlasStudyQueue = wantsCustom
       ? await atlasDueToStudyQueue(userId, dedupedAtlasQueue, uiLang)
       : [];
-    const localizedPublic = await localizeStudyQueue(queue, uiLang);
+    const localizedPublic = (await localizeStudyQueue(queue, uiLang)).map((item) => {
+      const variant = australianVariant(item.word.id, direction);
+      if (!variant) return item;
+      const gloss = uiLang === "zh-Hans" ? toZhHans(variant.gloss["zh-Hant"]) : variant.gloss[uiLang];
+      return {
+        ...item,
+        card: { ...item.card, back: variant.headword },
+        word: {
+          ...item.word,
+          word: variant.headword,
+          chinese: gloss,
+          image_url: variant.imageUrl,
+          pronunciation: variant.pronunciation,
+          definition: australianStudyHint(variant, uiLang, gloss),
+        },
+      };
+    });
     const localizedAtlas = await localizeStudyQueue(atlasStudyQueue, uiLang);
     // Saved community cards carry the publisher's own gloss; they are not part
     // of the localizable dictionary, so they skip localizeStudyQueue.
@@ -382,7 +400,15 @@ export async function GET(req: Request) {
       .map((row) => row.word.id);
     const examplesByWord = await fetchStudyExamples(publicIds, targetLanguage);
     const withExamples = localized.map((row) => {
-      const examples = examplesByWord.get(row.word.id);
+      const variant = australianVariant(row.word.id, direction);
+      const examples = variant
+        ? variant.examples.map((example) => ({
+            sentence: example.en,
+            cefrLevel: example.cefrLevel ?? null,
+            audioUrls: example.audioUrls,
+            mentionedWordIds: example.mentionedWordIds,
+          }))
+        : examplesByWord.get(row.word.id);
       return examples?.length ? { ...row, examples } : row;
     });
 

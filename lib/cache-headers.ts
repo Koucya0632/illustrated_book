@@ -1,8 +1,8 @@
 // ETag + 304 helpers for public GET endpoints.
 //
-// `Cache-Control` / `Vercel-CDN-Cache-Control` for these paths is set in
-// `next.config.js` — Next.js strips handler-set cache headers when the
-// handler reads dynamic input like searchParams.
+// Most static public routes use `next.config.js`. Catalogue routes pass
+// `cacheCatalogue` so only successes and 304s are cacheable; a fixed config
+// header would also overwrite no-store on an error response.
 //
 // Per-user endpoints must NOT use these — use `Cache-Control: private,
 // no-store` instead.
@@ -11,12 +11,19 @@ import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
 import { normalizeUiLang, type UiLang } from "./settings";
 
-export function publicJson(payload: unknown, req: Request): Response {
+export const CATALOGUE_CLIENT_CACHE = "public, max-age=60";
+export const CATALOGUE_EDGE_CACHE = "public, s-maxage=300, stale-while-revalidate=3600";
+
+export function publicJson(payload: unknown, req: Request, cacheCatalogue = false): Response {
   const body = JSON.stringify(payload);
   const etag = `"${createHash("sha1").update(body).digest("base64").slice(0, 22)}"`;
+  const cacheHeaders: Record<string, string> = cacheCatalogue ? {
+    "Cache-Control": CATALOGUE_CLIENT_CACHE,
+    "Vercel-CDN-Cache-Control": CATALOGUE_EDGE_CACHE,
+  } : {};
 
   if (req.headers.get("if-none-match") === etag) {
-    return new Response(null, { status: 304, headers: { ETag: etag } });
+    return new Response(null, { status: 304, headers: { ETag: etag, ...cacheHeaders } });
   }
 
   return new NextResponse(body, {
@@ -24,6 +31,7 @@ export function publicJson(payload: unknown, req: Request): Response {
     headers: {
       "Content-Type": "application/json",
       ETag: etag,
+      ...cacheHeaders,
     },
   });
 }
@@ -49,8 +57,7 @@ export function readLearningDirection(
  * intended to scope itself, and `readLearningDirection` clamps it. The
  * distinction decides two things at once — whether the route pays for a user
  * lookup, and whether the URL is a complete cache key. Anything reading this
- * for the second reason must agree with the `has`/`missing` split in
- * next.config.js, which is keyed on `learning`.
+ * for the second reason must agree with the response's caching decision.
  */
 export function hasExplicitLanguageScope(req: Request): boolean {
   const params = new URL(req.url).searchParams;

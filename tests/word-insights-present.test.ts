@@ -50,10 +50,10 @@ const read = (p: string) => readFileSync(new URL(`../${p}`, import.meta.url), "u
 
 test("the word detail stays public and carries no insights", () => {
   const detail = read("app/api/words/[id]/route.ts");
-  assert.ok(detail.includes("publicJson("), "detail must stay publicJson");
+  assert.ok(detail.includes("publicJson(word, req, true)"), "successful detail must remain publicly cacheable");
   assert.ok(!detail.includes("Insights"), "detail must not read insights");
   const config = read("next.config.js");
-  assert.ok(config.includes('publicEntry("/api/words/:id")'));
+  assert.ok(!config.includes('publicEntry("/api/words/:id")'), "static headers must not cache errors");
   assert.ok(config.includes('privateEntry("/api/words/:id/insights")'));
 });
 

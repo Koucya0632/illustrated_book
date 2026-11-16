@@ -4,6 +4,7 @@
 
 import { NextResponse } from "next/server";
 import { communityWriteRefusal } from "@/lib/atlas/community-gate";
+import { collectionDescriptionFrom } from "@/lib/atlas/collection-description";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSql } from "@/lib/db";
 import {
@@ -105,12 +106,8 @@ export async function PATCH(req: Request, props: { params: Promise<{ id: string 
 
   const title = typeof body.title === "string" ? body.title.trim() : owned.collection.title;
   if (!title || title.length > 60) return NextResponse.json({ error: "invalid title" }, { status: 400 });
-  const description =
-    body.description === undefined
-      ? owned.collection.description
-      : typeof body.description === "string"
-        ? body.description.trim().slice(0, 500) || null
-        : null;
+  // Not "unchanged" when missing: the apps leave it out when the field is empty.
+  const description = collectionDescriptionFrom(body);
 
   // Cover must be one of this collection's members (or cleared).
   let coverPublicItemId = owned.collection.cover_public_item_id;

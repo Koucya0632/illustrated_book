@@ -83,8 +83,8 @@ test("a point matches the spot whose circle holds it, in the card's language onl
   assert.equal(spotAt({ lat: 35.6595, lng: 139.7005 }, "ja")?.id, "shibuya");
   // 御徒町, between 上野 and 秋葉原, is neither.
   assert.equal(spotAt({ lat: 35.7075, lng: 139.7745 }, "ja"), null);
-  // The middle of 琵琶湖, and an English card, are nowhere.
-  assert.equal(spotAt({ lat: 35.25, lng: 136.07 }, "ja"), null);
+  const lakeBiwaMiddle = { lat: 35.25, lng: 136.07 };
+  assert.equal(spotAt(lakeBiwaMiddle, "ja"), null);
   assert.equal(spotAt({ lat: 35.7148, lng: 139.7967 }, "en"), null);
   // One kilometre is about one kilometre.
   const d = distanceMeters({ lat: 35.0, lng: 139.0 }, { lat: 35.009, lng: 139.0 });
@@ -99,7 +99,6 @@ test("/api/travel serves each destination's language, and the place of each open
   assert.equal(japan.language, "ja");
   for (const s of spotsOf(every)) assert.deepEqual(s.geo, findTravelSpot(s.id)?.geo, s.id);
 
-  // A closed spot is never suggested for a photo: its city is hidden, so nobody could see the card there.
   const withoutTorii = new Set(every);
   withoutTorii.delete("torii-gate");
   for (const s of spotsOf(withoutTorii)) assert.equal(s.geo === undefined, !s.open, s.id);

@@ -36,10 +36,9 @@ export const FREE_STUDY_CATEGORIES: readonly string[] = [
 ];
 
 /**
- * 景點 (lib/travel/destinations.ts) a non-member may study, by spot id: one in
- * every city, so each city can be tried before paying. Its words belong to
- * paid themes; they are free *here*, as this spot's words, and nowhere else —
- * the themes themselves stay locked.
+ * 景點 (lib/travel/destinations.ts) a non-member may study, by spot id, one in
+ * every city. Its words belong to paid themes; they are free *here*, as this
+ * spot's words, and nowhere else — the themes themselves stay locked.
  *
  * Kept beside the free themes for the same reason: what is free is pricing.
  */

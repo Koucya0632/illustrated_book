@@ -78,21 +78,21 @@ test("a spot is open only when all of its words are served", () => {
   const withoutOne = new Set(everyWord);
   withoutOne.delete("torii-gate");
   const partial = spotsOf(localizeTravelDestinations("zh-Hant", withoutOne, []));
-  assert.deepEqual(
-    partial.filter((s) => !s.open).map((s) => s.id),
-    allTravelSpots().filter((s) => s.wordIds.includes("torii-gate")).map((s) => s.id),
-  );
+  for (const s of partial) assert.equal(s.open, !s.wordIds.includes("torii-gate"), s.id);
   assert.ok(partial.some((s) => s.id === "meiji-jingu" && !s.open));
 });
 
-test("a closed spot stays listed, but a destination with nothing open is dropped", () => {
+test("a closed spot stays listed in an open city, but a city or destination with nothing open is dropped", () => {
   const akihabara = new Set(studySpotWordIds("akihabara"));
   const out = localizeTravelDestinations("zh-Hant", akihabara, []);
   assert.equal(out.length, 1);
+  assert.deepEqual(out[0].cities.map((c) => c.id), ["tokyo"]);
+  assert.deepEqual(out[0].regions.filter((r) => r.cityIds.length).map((r) => [r.id, r.cityIds]), [["kanto", ["tokyo"]]]);
+  const tokyo = TRAVEL_DESTINATIONS.flatMap((d) => d.cities).find((c) => c.id === "tokyo");
   // 秋葉原 and 澀谷 share one word, which must not open 澀谷.
   assert.deepEqual(
     spotsOf(out).map((s) => [s.id, s.open]),
-    allTravelSpots().map((s) => [s.id, s.id === "akihabara"]),
+    tokyo?.spots.map((s) => [s.id, s.id === "akihabara"]),
   );
   assert.deepEqual(localizeTravelDestinations("zh-Hant", new Set(), []), []);
 });
@@ -159,7 +159,6 @@ test("a free spot frees its own words, not the themes they belong to", () => {
     canStudyCard(free2, { source: "public", category: "collecting-hobbies", wordId: "dollhouse" }),
     false,
   );
-  // nor may a word that only paid spots list.
   const freeWords = new Set(freeSpotWordIds());
   assert.ok(!freeWords.has("dollhouse"));
   const paidOnly = (studySpotWordIds("asakusa") ?? []).find((id) => !freeWords.has(id));

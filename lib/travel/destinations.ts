@@ -4,18 +4,11 @@
 // content: every id in `wordIds` is an ordinary dictionary word that lives in
 // its own theme, so a spot is a second way into words that already exist.
 //
-// Code, not a table, for the reason lib/topic-presets.ts gives: short lists
-// only a developer edits. Served by /api/travel so adding a spot is a deploy,
-// not an app release, and all three clients read the same list.
+// Code, not a table: the list changes only with a deploy, never by an admin
+// edit. Served by /api/travel so adding a spot is a deploy, not an app
+// release, and all three clients read the same list.
 //
-// A spot is OPEN only when every one of its words is served. Content ships on
-// its own schedule (docs/content/travel-spots-*-request.md in the parent repo),
-// so a spot whose words are not published yet answers `open: false` and opens
-// by itself the moment they are — nobody has to flip it. A city with nothing
-// open is hidden by every client, so cities can land long before their words.
-//
-// Japan's cities are generated into ./japan/<region>.ts from the parent repo's
-// docs/content/travel-japan/selection.json (tools/travel-japan/emit.mjs).
+// A spot is OPEN only when every one of its words is served.
 //
 // Which spots a non-member may study is pricing, kept in study-membership.ts.
 //
@@ -238,11 +231,7 @@ export interface LocalizedTravelDestination {
       open: boolean;
       /** A non-member may study this spot. */
       free: boolean;
-      /**
-       * Only on an open spot. The iOS app suggests a spot for a photo from
-       * this, and a city whose spots are all closed is hidden, so a closed
-       * spot must never be suggested.
-       */
+      /** Only on an open spot. */
       geo?: SpotGeo;
     }[];
   }[];
@@ -251,9 +240,10 @@ export interface LocalizedTravelDestination {
 /**
  * The destinations as a client should see them.
  *
- * A destination with no open spot is dropped, so a client can show the entry
- * exactly when the list is non-empty. Inside a destination that is listed,
- * closed spots and empty regions stay — the map draws them as 還沒開.
+ * A city with no open spot is dropped, and so is a destination with no city
+ * left, so a client can show the entry exactly when the list is non-empty.
+ * Inside a listed city closed spots stay, and so do empty regions — the map
+ * draws them as 還沒開.
  *
  * - Parameter servedWordIds: the ids the dictionary serves right now.
  * - Parameter freeSpotIds: `FREE_STUDY_SPOTS` (lib/study-membership.ts).
@@ -291,7 +281,8 @@ export function localizeTravelDestinations(
         };
       }),
     }));
-    if (!cities.some((c) => c.spots.some((s) => s.open))) return [];
+    const listed = cities.filter((c) => c.spots.some((s) => s.open));
+    if (!listed.length) return [];
     return [
       {
         id: d.id,
@@ -303,9 +294,9 @@ export function localizeTravelDestinations(
           name: named(r.name, lang),
           tiles: [...r.tiles],
           nameAt: r.nameAt,
-          cityIds: d.cities.filter((c) => c.regionId === r.id).map((c) => c.id),
+          cityIds: listed.filter((c) => c.regionId === r.id).map((c) => c.id),
         })),
-        cities,
+        cities: listed,
       },
     ];
   });

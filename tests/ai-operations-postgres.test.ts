@@ -592,7 +592,7 @@ test("durable AI operations with real PostgreSQL", { skip: !databaseUrl }, async
       const unknownOp = await unknown.accept("spot-unknown", { ...unknown.input, targetLanguage: "ja" });
       const unknownShown = await unknown.finish(unknownOp.id);
       const unknownCard = await unknown.operations.confirm(unknown.account, unknownOp.id,
-        unknownShown.result.candidates[0].id, {}, "dotonbori");
+        unknownShown.result.candidates[0].id, {}, "atlantis");
       assert.equal(unknownCard.item.spot_id, null);
     });
 

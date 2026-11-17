@@ -4,14 +4,11 @@
 // content: every id in `wordIds` is an ordinary dictionary word that lives in
 // its own theme, so a spot is a second way into words that already exist.
 //
-// Code, not a table, for the reason lib/topic-presets.ts gives: short lists
-// only a developer edits. Served by /api/travel so adding a spot is a deploy,
-// not an app release, and all three clients read the same list.
+// Code, not a table: the list changes only with a deploy, never by an admin
+// edit. Served by /api/travel so adding a spot is a deploy, not an app
+// release, and all three clients read the same list.
 //
-// A spot is OPEN only when every one of its words is served. Content ships on
-// its own schedule (docs/content/travel-spots-tokyo-request.md in the parent
-// repo), so a spot whose words are not published yet answers `open: false`
-// and opens by itself the moment they are — nobody has to flip it.
+// A spot is OPEN only when every one of its words is served.
 //
 // Which spots a non-member may study is pricing, kept in study-membership.ts.
 //
@@ -21,6 +18,15 @@
 
 import { toZhHans } from "../opencc";
 import type { UiLang } from "../settings";
+import { CHUBU } from "./japan/chubu";
+import { CHUGOKU } from "./japan/chugoku";
+import { HOKKAIDO } from "./japan/hokkaido";
+import { KANSAI } from "./japan/kansai";
+import { KANTO } from "./japan/kanto";
+import { KYUSHU } from "./japan/kyushu";
+import { OKINAWA } from "./japan/okinawa";
+import { SHIKOKU } from "./japan/shikoku";
+import { TOHOKU } from "./japan/tohoku";
 
 /** zh-Hant base; zh-Hans is converted at read time like every other name. */
 interface Names {
@@ -96,114 +102,6 @@ export interface TravelDestination {
   cities: readonly TravelCity[];
 }
 
-const TOKYO: TravelCity = {
-  id: "tokyo",
-  name: { zh: "東京", ja: "東京", en: "Tokyo" },
-  regionId: "kanto",
-  aspect: 390 / 270,
-  shapes: [
-    {
-      kind: "water",
-      points: [[0.641, 1], [0.697, 0.844], [1, 0.785], [1, 1]],
-      name: { zh: "東京灣", ja: "東京湾", en: "Tokyo Bay" },
-      nameAt: [0.88, 0.92],
-    },
-    {
-      kind: "river",
-      points: [[0.826, 0], [0.79, 0.3], [0.83, 0.56], [0.759, 0.86]],
-      name: { zh: "隅田川", ja: "隅田川", en: "Sumida River" },
-      nameAt: [0.9, 0.43],
-    },
-    {
-      kind: "ring",
-      center: [0.449, 0.5],
-      radius: [0.2, 0.326],
-      name: { zh: "山手線", ja: "山手線", en: "Yamanote Line" },
-      nameAt: [0.449, 0.5],
-    },
-  ],
-  spots: [
-    {
-      id: "asakusa",
-      name: { zh: "淺草", ja: "浅草", en: "Asakusa" },
-      native: "浅草",
-      reading: "あさくさ",
-      at: [0.733, 0.193],
-      label: "right",
-      wordIds: [
-        "paper-lantern", "rickshaw", "shop", "kimono", "folding-fan",
-        "fortune-slip", "offering-box", "ningyo-yaki",
-      ],
-      geo: { lat: 35.7148, lng: 139.7967, radiusM: 600 },
-    },
-    {
-      id: "ueno",
-      name: { zh: "上野", ja: "上野", en: "Ueno" },
-      native: "上野",
-      reading: "うえの",
-      at: [0.577, 0.252],
-      label: "left",
-      wordIds: [
-        "park", "boat", "cherry-tree-avenue", "cherry-blossom-viewing", "picnic-sheet",
-        "pond", "zoo", "museum",
-      ],
-      geo: { lat: 35.7146, lng: 139.7732, radiusM: 700 },
-    },
-    {
-      id: "akihabara",
-      name: { zh: "秋葉原", ja: "秋葉原", en: "Akihabara" },
-      native: "秋葉原",
-      reading: "あきはばら",
-      at: [0.636, 0.389],
-      label: "right",
-      wordIds: [
-        "capsule-toy-machine", "claw-machine", "character-figure", "acrylic-stand",
-        "trading-card", "plastic-model-kit", "photo-sticker-booth", "pin-badge",
-      ],
-      geo: { lat: 35.6984, lng: 139.7731, radiusM: 500 },
-    },
-    {
-      id: "tsukiji",
-      name: { zh: "築地", ja: "築地", en: "Tsukiji" },
-      native: "築地",
-      reading: "つきじ",
-      at: [0.672, 0.763],
-      label: "right",
-      wordIds: [
-        "kitchen-knife", "wasabi", "dipping-dish", "sushi-chef", "fishmonger",
-        "tuna", "seafood-rice-bowl", "rolled-omelette",
-      ],
-      geo: { lat: 35.6654, lng: 139.7707, radiusM: 400 },
-    },
-    {
-      id: "shibuya",
-      name: { zh: "澀谷", ja: "渋谷", en: "Shibuya" },
-      native: "渋谷",
-      reading: "しぶや",
-      at: [0.295, 0.711],
-      label: "left",
-      wordIds: [
-        "intersection", "crosswalk", "traffic-light", "billboard", "pedestrian",
-        "photo-sticker-booth", "large-video-screen", "bronze-statue",
-      ],
-      geo: { lat: 35.6595, lng: 139.7005, radiusM: 500 },
-    },
-    {
-      id: "meiji-jingu",
-      name: { zh: "明治神宮", ja: "明治神宮", en: "Meiji Jingu" },
-      native: "明治神宮",
-      reading: "めいじじんぐう",
-      at: [0.249, 0.53],
-      label: "left",
-      wordIds: [
-        "tree", "sake", "torii-gate", "shrine-approach", "purification-pavilion",
-        "votive-plaque", "amulet", "sake-barrel",
-      ],
-      geo: { lat: 35.6764, lng: 139.6993, radiusM: 700 },
-    },
-  ],
-};
-
 export const TRAVEL_DESTINATIONS: readonly TravelDestination[] = [
   {
     id: "japan",
@@ -266,7 +164,7 @@ export const TRAVEL_DESTINATIONS: readonly TravelDestination[] = [
         nameAt: [1.8, 15.5],
       },
     ],
-    cities: [TOKYO],
+    cities: [...HOKKAIDO, ...TOHOKU, ...KANTO, ...CHUBU, ...KANSAI, ...CHUGOKU, ...SHIKOKU, ...KYUSHU, ...OKINAWA],
   },
 ];
 
@@ -333,7 +231,8 @@ export interface LocalizedTravelDestination {
       open: boolean;
       /** A non-member may study this spot. */
       free: boolean;
-      geo: SpotGeo;
+      /** Only on an open spot. */
+      geo?: SpotGeo;
     }[];
   }[];
 }
@@ -341,9 +240,10 @@ export interface LocalizedTravelDestination {
 /**
  * The destinations as a client should see them.
  *
- * A destination with no open spot is dropped, so a client can show the entry
- * exactly when the list is non-empty. Inside a destination that is listed,
- * closed spots and empty regions stay — the map draws them as 還沒開.
+ * A city with no open spot is dropped, and so is a destination with no city
+ * left, so a client can show the entry exactly when the list is non-empty.
+ * Inside a listed city closed spots stay, and so do empty regions — the map
+ * draws them as 還沒開.
  *
  * - Parameter servedWordIds: the ids the dictionary serves right now.
  * - Parameter freeSpotIds: `FREE_STUDY_SPOTS` (lib/study-membership.ts).
@@ -365,20 +265,24 @@ export function localizeTravelDestinations(
           ? { kind: s.kind, center: s.center, radius: s.radius, name: named(s.name, lang), nameAt: s.nameAt }
           : { kind: s.kind, points: [...s.points], name: named(s.name, lang), nameAt: s.nameAt },
       ),
-      spots: c.spots.map((s) => ({
-        id: s.id,
-        name: named(s.name, lang),
-        native: s.native,
-        reading: s.reading,
-        at: s.at,
-        label: s.label,
-        wordIds: [...s.wordIds],
-        open: s.wordIds.every((id) => servedWordIds.has(id)),
-        free: freeSpotIds.includes(s.id),
-        geo: { ...s.geo },
-      })),
+      spots: c.spots.map((s) => {
+        const open = s.wordIds.every((id) => servedWordIds.has(id));
+        return {
+          id: s.id,
+          name: named(s.name, lang),
+          native: s.native,
+          reading: s.reading,
+          at: s.at,
+          label: s.label,
+          wordIds: [...s.wordIds],
+          open,
+          free: freeSpotIds.includes(s.id),
+          ...(open ? { geo: { ...s.geo } } : {}),
+        };
+      }),
     }));
-    if (!cities.some((c) => c.spots.some((s) => s.open))) return [];
+    const listed = cities.filter((c) => c.spots.some((s) => s.open));
+    if (!listed.length) return [];
     return [
       {
         id: d.id,
@@ -390,9 +294,9 @@ export function localizeTravelDestinations(
           name: named(r.name, lang),
           tiles: [...r.tiles],
           nameAt: r.nameAt,
-          cityIds: d.cities.filter((c) => c.regionId === r.id).map((c) => c.id),
+          cityIds: listed.filter((c) => c.regionId === r.id).map((c) => c.id),
         })),
-        cities,
+        cities: listed,
       },
     ];
   });

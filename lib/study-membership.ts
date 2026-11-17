@@ -36,13 +36,27 @@ export const FREE_STUDY_CATEGORIES: readonly string[] = [
 ];
 
 /**
- * 景點 (lib/travel/destinations.ts) a non-member may study, by spot id. Its
- * words belong to paid themes; they are free *here*, as this spot's words, and
- * nowhere else — the themes themselves stay locked.
+ * 景點 (lib/travel/destinations.ts) a non-member may study, by spot id: one in
+ * every city, so each city can be tried before paying. Its words belong to
+ * paid themes; they are free *here*, as this spot's words, and nowhere else —
+ * the themes themselves stay locked.
  *
  * Kept beside the free themes for the same reason: what is free is pricing.
  */
-export const FREE_STUDY_SPOTS: readonly string[] = ["akihabara"];
+export const FREE_STUDY_SPOTS: readonly string[] = [
+  "odori-park", "otaru-canal", "hakodate-morning-market", "farm-tomita",
+  "noboribetsu-onsen-town", "grand-hirafu", "sendai-castle-site", "matsushima-island-cruise",
+  "nebuta-museum-wa-rasse", "ginzan-onsen-street", "zao-onsen", "kakunodate-samurai-district",
+  "akihabara", "yokohama-chinatown", "komachi-dori", "hakone-yumoto", "nikko-toshogu",
+  "kawagoe-ichibangai", "nagoya-castle", "kenrokuen", "takayama-sanmachi",
+  "ogimachi-gassho-village", "oishi-park", "matsumoto-castle", "kyu-karuizawa-ginza", "murodo",
+  "nishiki-market", "dotonbori", "nara-park", "kobe-port", "himeji-castle",
+  "byodo-in-omotesando", "hiroshima-hondori", "miyajima-omotesando", "okayama-korakuen",
+  "kurashiki-bikan", "tottori-sand-dunes", "shinmon-dori", "ritsurin-garden", "dogo-onsen",
+  "awa-odori-kaikan-bizan", "hirome-market", "nakasu-yatai", "dazaifu-omotesando", "beppu-hells",
+  "yunotsubo-kaido", "shinchi-chinatown", "kumamoto-castle", "tenmonkan", "kokusai-dori",
+  "churaumi-aquarium", "manzamo", "kabira-bay",
+];
 
 /** Every word of every free spot. Follows the spot's word list, so re-curating the spot re-prices its words. */
 export function freeSpotWordIds(): string[] {

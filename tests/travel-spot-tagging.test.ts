@@ -11,8 +11,12 @@
 
 import assert from "node:assert/strict";
 import test from "node:test";
-import { readFileSync } from "node:fs";
-import { TRAVEL_DESTINATIONS, allTravelSpots } from "../lib/travel/destinations";
+import {
+  TRAVEL_DESTINATIONS,
+  allTravelSpots,
+  findTravelSpot,
+  localizeTravelDestinations,
+} from "../lib/travel/destinations";
 import {
   canShareToSpot,
   distanceMeters,
@@ -25,7 +29,7 @@ import {
 test("a card is tagged only to a spot in its own language", () => {
   assert.equal(spotForCard("asakusa", "ja")?.id, "asakusa");
   assert.equal(spotForCard("asakusa", "en"), null);
-  assert.equal(spotForCard("dotonbori", "ja"), null);
+  assert.equal(spotForCard("atlantis", "ja"), null);
   for (const d of TRAVEL_DESTINATIONS) assert.ok(["ja", "en"].includes(d.language), d.id);
 });
 
@@ -79,16 +83,25 @@ test("a point matches the spot whose circle holds it, in the card's language onl
   assert.equal(spotAt({ lat: 35.6595, lng: 139.7005 }, "ja")?.id, "shibuya");
   // 御徒町, between 上野 and 秋葉原, is neither.
   assert.equal(spotAt({ lat: 35.7075, lng: 139.7745 }, "ja"), null);
-  // 大阪 and an English card are nowhere.
-  assert.equal(spotAt({ lat: 34.6687, lng: 135.5013 }, "ja"), null);
+  // The middle of 琵琶湖, and an English card, are nowhere.
+  assert.equal(spotAt({ lat: 35.25, lng: 136.07 }, "ja"), null);
   assert.equal(spotAt({ lat: 35.7148, lng: 139.7967 }, "en"), null);
   // One kilometre is about one kilometre.
   const d = distanceMeters({ lat: 35.0, lng: 139.0 }, { lat: 35.009, lng: 139.0 });
   assert.ok(d > 990 && d < 1010, String(d));
 });
 
-test("/api/travel serves each spot's place and each destination's language", () => {
-  const src = readFileSync(new URL("../lib/travel/destinations.ts", import.meta.url), "utf8");
-  assert.ok(src.includes("geo: { ...s.geo }"));
-  assert.ok(src.includes("language: d.language"));
+test("/api/travel serves each destination's language, and the place of each open spot only", () => {
+  const every = new Set(allTravelSpots().flatMap((s) => [...s.wordIds]));
+  const spotsOf = (served: ReadonlySet<string>) =>
+    localizeTravelDestinations("zh-Hant", served, []).flatMap((d) => d.cities.flatMap((c) => c.spots));
+  const [japan] = localizeTravelDestinations("zh-Hant", every, []);
+  assert.equal(japan.language, "ja");
+  for (const s of spotsOf(every)) assert.deepEqual(s.geo, findTravelSpot(s.id)?.geo, s.id);
+
+  // A closed spot is never suggested for a photo: its city is hidden, so nobody could see the card there.
+  const withoutTorii = new Set(every);
+  withoutTorii.delete("torii-gate");
+  for (const s of spotsOf(withoutTorii)) assert.equal(s.geo === undefined, !s.open, s.id);
+  assert.ok(spotsOf(withoutTorii).some((s) => !s.open));
 });

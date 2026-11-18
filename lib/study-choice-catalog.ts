@@ -1,3 +1,4 @@
+import { australianRentalGate } from "./catalogue/australian-rental-gate";
 import { australianVariant, visibleInDirection } from "./australian-word-variants";
 import type { Sql, TransactionSql } from "postgres";
 import { attachChoiceExclusions, candidateWord, type CandidateMeta, type RelationEdge } from "./distractors";
@@ -16,6 +17,7 @@ export async function readChoiceCatalog(sql: Sql | TransactionSql, languages: Ch
         LEFT JOIN LATERAL (SELECT definition FROM word_definitions
           WHERE word_id = w.id AND language = 'zh' ORDER BY sort_order LIMIT 1) zh ON true
         WHERE w.status = 'published' AND w.deleted_at IS NULL
+          AND ${australianRentalGate(sql, sql`w.id`)}
           AND (lang.language = 'en' OR NULLIF(wt.term, '') IS NOT NULL)
         ORDER BY lang.language, w.id`,
     sql`SELECT source_word_id AS source, target_word_id AS target, relation_type AS type

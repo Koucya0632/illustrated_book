@@ -1,3 +1,5 @@
+import { australianRentalGate } from "@/lib/catalogue/australian-rental-gate";
+import { AUSTRALIAN_RENTAL_WORDS } from "@/lib/australian-categories";
 // 個人詞表 storage. Every query is scoped to the owner — a list id alone never
 // reaches a row. Caps are per learning language, like everything else a
 // learning direction owns (progress, 自製圖鑑): the two languages are separate
@@ -69,7 +71,7 @@ export async function listWordLists(
 ): Promise<WordListRow[]> {
   const sql = requireSql();
   const hiddenIds = hiddenAustralianIds(lang === "ja" ? "zh-ja" : "zh-en");
-  const visibleItem = hiddenIds.length ? sql`AND NOT (i.word_id = ANY(${hiddenIds}))` : sql``;
+  const visibleItem = sql`AND ${australianRentalGate(sql, sql`i.word_id`)} ${hiddenIds.length ? sql`AND NOT (i.word_id = ANY(${hiddenIds}))` : sql``}`;
   const rows = (await sql`
     SELECT l.id, l.name, l.target_language, l.position, l.created_at, l.updated_at,
            (SELECT count(*)::int FROM user_word_list_items i WHERE i.list_id = l.id ${visibleItem}) AS word_count
@@ -102,6 +104,7 @@ export async function getWordList(userId: string, listId: string): Promise<WordL
   const rows = (await sql`
     SELECT l.id, l.name, l.target_language, l.position, l.created_at, l.updated_at,
            (SELECT count(*)::int FROM user_word_list_items i WHERE i.list_id = l.id
+             AND ${australianRentalGate(sql, sql`i.word_id`)}
              ${hiddenJa.length ? sql`AND NOT (l.target_language = 'ja' AND i.word_id = ANY(${hiddenJa}))` : sql``}
              ${hiddenEn.length ? sql`AND NOT (l.target_language = 'en' AND i.word_id = ANY(${hiddenEn}))` : sql``}) AS word_count
       FROM user_word_lists l
@@ -189,7 +192,7 @@ export async function addWordToList(
   list: WordListRow,
   wordId: string,
   gate: (currentWords: number) => WordListRefusal | null,
-): Promise<{ ok: true } | { refusal: WordListRefusal }> {
+) : Promise<{ ok: true } | { refusal: WordListRefusal } | { unknownWord: true }> {
   const sql = requireSql();
   return sql.begin(async (tx) => {
     await tx`SELECT pg_advisory_xact_lock(hashtext(${`word-lists:${userId}`}))`;
@@ -199,17 +202,30 @@ export async function addWordToList(
     // Already there: adding again is a no-op, not a cap question.
     if (present) return { ok: true as const };
     const hiddenIds = hiddenAustralianIds(list.targetLanguage === "ja" ? "zh-ja" : "zh-en");
-    const visibleItem = hiddenIds.length ? tx`AND NOT (i.word_id = ANY(${hiddenIds}))` : tx``;
+    const visibleItem = tx`AND ${australianRentalGate(tx, tx`i.word_id`)} ${hiddenIds.length ? tx`AND NOT (i.word_id = ANY(${hiddenIds}))` : tx``}`;
     const [{ c }] = (await tx`
       SELECT count(*)::int AS c FROM user_word_list_items i WHERE i.list_id = ${list.id}::uuid ${visibleItem}
     `) as unknown as { c: number }[];
     const refusal = gate(Number(c));
     if (refusal) return { refusal };
-    await tx`
+    // Serialize with updates or deletes of existing batch rows. A withdrawal
+    // waits until the addition finishes; if it committed first, INSERT sees
+    // the incomplete batch and refuses. Existing list entries are retained.
+    if ((AUSTRALIAN_RENTAL_WORDS as readonly string[]).includes(wordId)) {
+      await tx`SELECT id FROM words WHERE id = ANY(${AUSTRALIAN_RENTAL_WORDS}::text[]) ORDER BY id FOR SHARE`;
+    }
+    const inserted = await tx`
       INSERT INTO user_word_list_items (list_id, word_id)
-      VALUES (${list.id}::uuid, ${wordId})
-      ON CONFLICT DO NOTHING
+      SELECT ${list.id}::uuid, w.id FROM words w
+      WHERE w.id = ${wordId} AND w.deleted_at IS NULL AND w.status = 'published'
+        AND ${australianRentalGate(tx, tx`w.id`)}
+      ON CONFLICT DO NOTHING RETURNING word_id
     `;
+    if (!inserted.length) {
+      const [concurrent] = await tx`SELECT 1 FROM user_word_list_items WHERE list_id = ${list.id}::uuid AND word_id = ${wordId}`;
+      if (!concurrent) return { unknownWord: true as const };
+      return { ok: true as const };
+    }
     await tx`UPDATE user_word_lists SET updated_at = now() WHERE id = ${list.id}::uuid`;
     return { ok: true as const };
   });
@@ -227,7 +243,7 @@ export async function wordExists(wordId: string, language: Lang): Promise<boolea
   if (!visibleInDirection(wordId, language === "ja" ? "zh-ja" : "zh-en")) return false;
   const sql = requireSql();
   const rows = await sql`
-    SELECT 1 FROM words WHERE id = ${wordId} AND deleted_at IS NULL AND status = 'published'
+    SELECT 1 FROM words WHERE id = ${wordId} AND deleted_at IS NULL AND status = 'published' AND ${australianRentalGate(sql, sql`words.id`)}
   `;
   return rows.length > 0;
 }
@@ -242,7 +258,7 @@ export async function wordListWords(userId: string, list: WordListRow): Promise<
   const sql = requireSql();
   const deckKey = list.targetLanguage === "ja" ? "image-ja" : "image-en";
   const hiddenIds = hiddenAustralianIds(list.targetLanguage === "ja" ? "zh-ja" : "zh-en");
-  const visibleItem = hiddenIds.length ? sql`AND NOT (i.word_id = ANY(${hiddenIds}))` : sql``;
+  const visibleItem = sql`AND ${australianRentalGate(sql, sql`i.word_id`)} ${hiddenIds.length ? sql`AND NOT (i.word_id = ANY(${hiddenIds}))` : sql``}`;
   const [ids, [stats]] = await Promise.all([
     sql`
       SELECT i.word_id

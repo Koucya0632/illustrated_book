@@ -1,8 +1,10 @@
 import { createHash } from "node:crypto";
 import variants from "@/data/australian-word-variants.json";
+import images from "@/data/australian-image-variants.json";
 import australianOnlyIds from "@/data/australian-only-word-ids.json";
 import { toZhHans } from "./opencc";
 import { hintDefinition } from "./study-hint";
+import { AUSTRALIAN_RENTAL_WORDS, australianRentalBatchActive } from "./australian-categories";
 import type { LearningDirection, UiLang } from "./settings";
 import type { Example, Word } from "@/types";
 
@@ -66,10 +68,33 @@ export function validateAustralianVariants(
     }
   }
 }
+export type AustralianImageVariants = Record<string, string>;
+
+/** Image-only overlays keep live definitions, examples and audio intact. */
+export function validateAustralianImages(source: AustralianImageVariants, reservedIds: readonly string[] = australianOnlyIds, full: AustralianWordVariants = variants as AustralianWordVariants): void {
+  for (const [id, url] of Object.entries(source)) {
+    let validUrl = false;
+    try { validUrl = new URL(url).protocol === "https:"; } catch { /* invalid input */ }
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || reservedIds.includes(id) || id in full || !validUrl) {
+      throw new Error(`invalid Australian image variant: ${id}`);
+    }
+  }
+}
+export function australianImage(wordId: string, direction: LearningDirection, source: AustralianImageVariants = images): string | undefined {
+  return direction === "zh-en" ? source[wordId] : undefined;
+}
+export function applyAustralianImage(word: Word, direction: LearningDirection, source: AustralianImageVariants = images): Word {
+  const imageUrl = australianImage(word.id, direction, source);
+  return imageUrl ? { ...word, imageUrl } : word;
+}
+
 const publishedVariants: AustralianWordVariants = variants as AustralianWordVariants;
 validateAustralianVariants(publishedVariants);
+validateAustralianImages(images);
+/** Region-dependent projections must bypass shared caches when activated. */
+export const regionalCatalogueActive = Object.keys(publishedVariants).length > 0 || Object.keys(images).length > 0;
 export const australianVariantsCacheKey = createHash("sha256")
-  .update(JSON.stringify([publishedVariants, australianOnlyIds]))
+  .update(JSON.stringify([publishedVariants, australianOnlyIds, images]))
   .digest("hex");
 
 export function australianVariant(
@@ -77,7 +102,9 @@ export function australianVariant(
   direction: LearningDirection,
   source: AustralianWordVariants = publishedVariants,
 ): AustralianWordVariant | undefined {
-  return direction === "zh-en" ? source[wordId] : undefined;
+  if (direction !== "zh-en") return undefined;
+  if ((AUSTRALIAN_RENTAL_WORDS as readonly string[]).includes(wordId) && !australianRentalBatchActive(source)) return undefined;
+  return source[wordId];
 }
 
 export function visibleInDirection(
@@ -86,6 +113,7 @@ export function visibleInDirection(
   source: AustralianWordVariants = publishedVariants,
   reservedIds: readonly string[] = australianOnlyIds,
 ): boolean {
+  if ((AUSTRALIAN_RENTAL_WORDS as readonly string[]).includes(wordId) && !australianRentalBatchActive(source)) return false;
   const australianOnly = reservedIds.includes(wordId) || source[wordId]?.visibility === "australia-only";
   if (!australianOnly) return true;
   return direction === "zh-en" && source[wordId]?.visibility === "australia-only";

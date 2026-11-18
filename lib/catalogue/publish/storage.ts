@@ -172,25 +172,38 @@ export async function stageStorage(
     const existing = existingByBucket.get(object.bucket)!.has(object.storagePath);
     if (existing) {
       await verifyRemoteObject(storage, object);
-      // An earlier interrupted attempt may have completed the PUT after it
-      // journaled intent but before it journaled success.
-      if (object.uploadIntent) object.uploadedByRun = true;
-      else object.existedBefore = true;
+      // Intent alone cannot prove whether this run or a competing writer
+      // created the object. Keep an unknown owner conservatively as existing.
+      if (!object.uploadedByRun) object.existedBefore = true;
     } else {
       const localBytes = fs.readFileSync(path.resolve(root, object.localFile));
+      if (localBytes.length !== object.bytes || sha256(localBytes) !== object.contentSha256) {
+        throw new Error(`${object.key}: local artifact changed before upload`);
+      }
       object.existedBefore = false;
       object.uploadIntent = true;
       manifest.updatedAt = new Date().toISOString();
       journal();
-      const url = await storage.put(
-        object.bucket,
-        object.storagePath,
-        localBytes,
-        object.bucket === "word-images" ? WORD_IMAGE_CONTENT_TYPE : object.mimeType,
-      );
-      if (url !== object.url) throw new Error(`${object.key}: writer returned an unexpected URL`);
-      object.uploadedByRun = true;
-      await verifyRemoteObject(storage, object);
+      try {
+        const url = await storage.put(
+          object.bucket,
+          object.storagePath,
+          localBytes,
+          object.bucket === "word-images" ? WORD_IMAGE_CONTENT_TYPE : object.mimeType,
+        );
+        if (url !== object.url) throw new Error(`${object.key}: writer returned an unexpected URL`);
+        object.uploadedByRun = true;
+        await verifyRemoteObject(storage, object);
+      } catch (error) {
+        // A concurrent or earlier interrupted create can win after listing.
+        // A 412 is safe to reconcile only by reading the complete object; its
+        // ownership is unknown and must never be treated as ours to delete.
+        const status = (error as { $metadata?: { httpStatusCode?: number } } | null)?.$metadata?.httpStatusCode;
+        if (status !== 412) throw error;
+        await verifyRemoteObject(storage, object);
+        object.existedBefore = true;
+        object.uploadedByRun = false;
+      }
     }
     object.verified = true;
     manifest.updatedAt = new Date().toISOString();

@@ -7,10 +7,12 @@
 // `computeNewLimit(base, stats.due)` and decide which buttons to enable.
 import { NextResponse } from "next/server";
 import { readTimezone } from "@/lib/timezone";
-import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
+import { resolveDirectionThemeScope } from "@/lib/study-sources";
+import { applyMembershipStudyScope } from "@/lib/study-membership";
+import { getLockedAtlasItemIds, getMembershipAccess } from "@/lib/atlas/entitlement";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { studyStats } from "@/lib/cards-db";
-import { atlasStudyStats } from "@/lib/atlas-db";
+import { atlasStudyStats, savedCommunityDueCount, savedCommunityNewCount, savedCommunityStats } from "@/lib/atlas-db";
 import { getSettings } from "@/lib/users-db";
 import { studyDeckFor, targetLanguageFor } from "@/lib/settings";
 import { readLearningDirection } from "@/lib/cache-headers";
@@ -29,39 +31,43 @@ export async function GET(req: Request) {
     .split(",")
     .map((s) => s.trim())
     .filter((s) => s && s !== "all");
-  const publicCategories = categories.filter((category) => category !== "custom");
-  // Mirror /api/study/queue: no public theme filter (全部 / global stats) counts
-  // custom cards too, so Today's due/new tiles and the review batch size include
-  // 自制圖鑑 cards. A specific public theme still excludes them.
-  const wantsCustom = categories.includes("custom") || publicCategories.length === 0;
   try {
     const t0 = performance.now();
     const settings = await getSettings(userId);
     // `?learning=` wins over the stored setting — see /api/users/mastery.
     const direction = readLearningDirection(req, settings.learningDirection);
+    const access = await getMembershipAccess(userId);
+    const scope = applyMembershipStudyScope(resolveDirectionThemeScope(categories, false, direction), access);
+    const reviewScope = applyMembershipStudyScope(resolveDirectionThemeScope(categories, true, direction), access);
+    const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic, reviewWordIds } = scope;
     const tz = readTimezone(req);
-    const [publicStats, customStats] = await Promise.all([
-      categories.length === 0 || publicCategories.length > 0
-        ? studyStats(userId, publicCategories, studyDeckFor(direction), tz)
+    const [publicStats, customStats, communityStats, publicReview, customReview, communityDue, communityNew] = await Promise.all([
+      shouldFetchPublic
+        ? studyStats(userId, publicCategories, studyDeckFor(direction), tz, reviewWordIds)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
       wantsCustom
         ? atlasStudyStats(userId, targetLanguageFor(direction), await getLockedAtlasItemIds(userId), tz)
         : Promise.resolve({ total: 0, seen: 0, due: 0, new: 0, todayNew: 0, byStatus: [] }),
+      wantsCommunity ? savedCommunityStats(userId, targetLanguageFor(direction)) : Promise.resolve({ total: 0, seen: 0 }),
+      reviewScope.shouldFetchPublic ? studyStats(userId, reviewScope.publicCategories, studyDeckFor(direction), tz, reviewScope.reviewWordIds) : Promise.resolve({ due: 0 }),
+      reviewScope.wantsCustom ? atlasStudyStats(userId, targetLanguageFor(direction), await getLockedAtlasItemIds(userId), tz) : Promise.resolve({ due: 0 }),
+      reviewScope.wantsCommunity ? savedCommunityDueCount(userId, targetLanguageFor(direction)) : Promise.resolve(0),
+      wantsCommunity ? savedCommunityNewCount(userId, targetLanguageFor(direction)) : Promise.resolve(0),
     ]);
     const byStatus = new Map<string, number>();
     for (const row of publicStats.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
     for (const row of customStats.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
     const stats = {
-      total: publicStats.total + customStats.total,
-      seen: publicStats.seen + customStats.seen,
-      due: publicStats.due + customStats.due,
-      new: publicStats.new + customStats.new,
+      total: publicStats.total + customStats.total + communityStats.total,
+      seen: publicStats.seen + customStats.seen + communityStats.seen,
+      due: publicReview.due + customReview.due + communityDue,
+      new: publicStats.new + customStats.new + communityNew,
       todayNew: publicStats.todayNew + customStats.todayNew,
       byStatus: Array.from(byStatus, ([status, c]) => ({ status, c })),
     };
     const dbMs = Math.round(performance.now() - t0);
     return NextResponse.json(
-      { stats },
+      { stats, ...(wantsCommunity ? { communityStats } : {}) },
       { headers: { "Server-Timing": `db;dur=${dbMs}` } },
     );
   } catch (err) {

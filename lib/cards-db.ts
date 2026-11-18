@@ -1,6 +1,7 @@
+import { australianRentalGate } from "./catalogue/australian-rental-gate";
 import "server-only";
 import { unstable_cache } from "next/cache";
-import { hiddenAustralianIds, australianVariantsCacheKey } from "./australian-word-variants";
+import { hiddenAustralianIds, australianVariantsCacheKey, regionalCatalogueActive } from "./australian-word-variants";
 import { getSql } from "./db";
 import { CATALOGUE_REVALIDATE_SECONDS } from "./catalogue-cache";
 import { buildChoiceCandidates, candidateWord, type TargetMeta } from "./distractors";
@@ -124,7 +125,10 @@ const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[], _var
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
   if (!due.length) return due;
   const languages = [...new Set(due.map(d => d.word.target_language))].sort();
-  const { pools, relations } = await getChoiceCatalog(languages, australianVariantsCacheKey);
+  const liveCatalog = regionalCatalogueActive ? await readChoiceCatalog(requireSql(), languages) : null;
+  const { pools, relations } = liveCatalog
+    ? { pools: Object.fromEntries(liveCatalog.pools), relations: liveCatalog.relations }
+    : await getChoiceCatalog(languages, australianVariantsCacheKey);
   const { generateMisspellings } = await import("./misspellings");
   for (const d of due) {
     const language = d.word.target_language;
@@ -216,6 +220,7 @@ export async function fetchDue(
   const hiddenJapanese = hiddenAustralianIds("zh-ja");
   const hiddenEnglish = hiddenAustralianIds("zh-en");
   const regionFilter = sql`
+    AND ${australianRentalGate(sql, sql`c.word_id`)}
     ${hiddenJapanese.length ? sql`AND NOT (c.deck_key = 'image-ja' AND c.word_id = ANY(${hiddenJapanese}))` : sql``}
     ${hiddenEnglish.length ? sql`AND NOT (c.deck_key <> 'image-ja' AND c.word_id = ANY(${hiddenEnglish}))` : sql``}
   `;
@@ -538,6 +543,7 @@ export function studyStats(
     .filter((c) => c.length > 0 && c !== "all")
     .sort();
   const alsoDue = cats.length ? [...dueWordIds].sort() : [];
+  if (regionalCatalogueActive) return studyStatsRaw(userId, cats, deckKey, tz, alsoDue);
   return unstable_cache(
     () => studyStatsRaw(userId, cats, deckKey, tz, alsoDue),
     ["studyStats", userId, deckKey, cats.join(","), tz, alsoDue.join(","), australianVariantsCacheKey],
@@ -577,7 +583,7 @@ async function studyStatsRaw(
       ? sql`AND (w.category = ANY(${cats}) OR c.word_id = ANY(${dueWordIds}))`
       : ucCatFilter;
   const hiddenIds = hiddenAustralianIds(deckKey === "image-ja" ? "zh-ja" : "zh-en");
-  const regionFilter = hiddenIds.length ? sql`AND NOT (c.word_id = ANY(${hiddenIds}))` : sql``;
+  const regionFilter = sql`AND ${australianRentalGate(sql, sql`c.word_id`)} ${hiddenIds.length ? sql`AND NOT (c.word_id = ANY(${hiddenIds}))` : sql``}`;
   const [totalRows, seenRows, dueRows, todayNewRows, byStatus] = await Promise.all([
     sql`
       SELECT count(*)::int AS total
@@ -656,6 +662,7 @@ export function categoryProgress(
   userId: string,
   deckKey = "image-en",
 ): Promise<CategoryProgressRow[]> {
+  if (regionalCatalogueActive) return categoryProgressRaw(userId, deckKey);
   return unstable_cache(
     () => categoryProgressRaw(userId, deckKey),
     ["categoryProgress", userId, deckKey, australianVariantsCacheKey],
@@ -669,7 +676,7 @@ async function categoryProgressRaw(
 ): Promise<CategoryProgressRow[]> {
   const sql = requireSql();
   const hiddenIds = hiddenAustralianIds(deckKey === "image-ja" ? "zh-ja" : "zh-en");
-  const regionFilter = hiddenIds.length ? sql`AND NOT (c.word_id = ANY(${hiddenIds}))` : sql``;
+  const regionFilter = sql`AND ${australianRentalGate(sql, sql`c.word_id`)} ${hiddenIds.length ? sql`AND NOT (c.word_id = ANY(${hiddenIds}))` : sql``}`;
   return sql<CategoryProgressRow[]>`
     SELECT w.category                 AS category,
            count(*)::int              AS total,

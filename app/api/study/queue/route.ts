@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { parseIntParam } from "@/lib/http/int-param";
-import { australianStudyHint, australianVariant } from "@/lib/australian-word-variants";
+import { australianImage, australianStudyHint, australianVariant } from "@/lib/australian-word-variants";
 import { toZhHans } from "@/lib/opencc";
 import { readTimezone } from "@/lib/timezone";
 import { getCurrentUserIdFast } from "@/lib/current-user";
@@ -17,13 +17,15 @@ import {
   atlasStudyStats,
   fetchSavedCommunityDue,
   savedCommunityStats,
+  savedCommunityNewCount,
+  savedCommunityDueCount,
 } from "@/lib/atlas-db";
 import { atlasPublicImageUrl } from "@/lib/atlas/storage";
 import { createAtlasImageSignedUrlsBatch } from "@/lib/atlas/storage";
 import { getAllMastery, getSettings } from "@/lib/users-db";
 import { localizeStudyQueue } from "@/lib/study-localize";
 import { fetchStudyExamples } from "@/lib/study-examples";
-import { resolveQueueThemeScope } from "@/lib/study-sources";
+import { resolveDirectionThemeScope } from "@/lib/study-sources";
 import { applyMembershipStudyScope, checkStudySpot, studySpotWordIds } from "@/lib/study-membership";
 import { getLockedAtlasItemIds, getMembershipAccess } from "@/lib/atlas/entitlement";
 import { studyDeckFor, targetLanguageFor, type UiLang } from "@/lib/settings";
@@ -39,15 +41,16 @@ export const dynamic = "force-dynamic";
 function addStats(
   a: Awaited<ReturnType<typeof studyStats>>,
   b: Awaited<ReturnType<typeof atlasStudyStats>>,
+  community: { total: number; seen: number; due: number; new: number },
 ) {
   const byStatus = new Map<string, number>();
   for (const row of a.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
   for (const row of b.byStatus ?? []) byStatus.set(row.status, (byStatus.get(row.status) ?? 0) + row.c);
   return {
-    total: a.total + b.total,
-    seen: a.seen + b.seen,
-    due: a.due + b.due,
-    new: a.new + b.new,
+    total: a.total + b.total + community.total,
+    seen: a.seen + b.seen + community.seen,
+    due: a.due + b.due + community.due,
+    new: a.new + b.new + community.new,
     todayNew: a.todayNew + b.todayNew,
     byStatus: Array.from(byStatus, ([status, c]) => ({ status, c })),
   };
@@ -246,16 +249,7 @@ export async function GET(req: Request) {
     }
     spotWordIds = ids;
   }
-  const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic, reviewWordIds } =
-    wordListId || spotWordIds
-      ? {
-          publicCategories: [],
-          wantsCustom: false,
-          wantsCommunity: false,
-          shouldFetchPublic: true,
-          reviewWordIds: undefined,
-        }
-      : applyMembershipStudyScope(resolveQueueThemeScope(categories, reviewOnly), access);
+
 
   try {
     // The selected learning direction determines both the card deck and the
@@ -269,6 +263,16 @@ export async function GET(req: Request) {
     // fetched in the seconds after a 學習語言 switch would otherwise be built
     // from the deck the user just left.
     const direction = readLearningDirection(req, settings.learningDirection);
+    const { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic, reviewWordIds } =
+      wordListId || spotWordIds
+        ? {
+            publicCategories: [],
+            wantsCustom: false,
+            wantsCommunity: false,
+            shouldFetchPublic: true,
+            reviewWordIds: undefined,
+          }
+        : applyMembershipStudyScope(resolveDirectionThemeScope(categories, reviewOnly, direction), access);
     const directionDeck = studyDeckFor(direction);
     const targetLanguage = targetLanguageFor(direction);
     // Learning direction is authoritative. Legacy client deck filters must
@@ -289,6 +293,8 @@ export async function GET(req: Request) {
       customStats,
       savedQueue,
       savedStats,
+      savedNew,
+      savedDue,
     ] = await Promise.all([
       shouldFetchPublic
         ? fetchDue(
@@ -323,6 +329,8 @@ export async function GET(req: Request) {
       wantsCommunity
         ? savedCommunityStats(userId, targetLanguage)
         : Promise.resolve({ total: 0, seen: 0 }),
+      wantsCommunity ? savedCommunityNewCount(userId, targetLanguage) : Promise.resolve(0),
+      wantsCommunity ? savedCommunityDueCount(userId, targetLanguage) : Promise.resolve(0),
     ]);
     const dbMs = Math.round(performance.now() - tDb);
 
@@ -350,7 +358,10 @@ export async function GET(req: Request) {
       : [];
     const localizedPublic = (await localizeStudyQueue(queue, uiLang)).map((item) => {
       const variant = australianVariant(item.word.id, direction);
-      if (!variant) return item;
+      if (!variant) {
+        const image = australianImage(item.word.id, direction);
+        return image ? { ...item, word: { ...item.word, image_url: image } } : item;
+      }
       const gloss = uiLang === "zh-Hans" ? toZhHans(variant.gloss["zh-Hant"]) : variant.gloss[uiLang];
       return {
         ...item,
@@ -416,7 +427,7 @@ export async function GET(req: Request) {
     return NextResponse.json(
       {
         queue: withExamples,
-        stats: addStats(stats, customStats),
+        stats: addStats(stats, customStats, { ...savedStats, new: savedNew, due: savedDue }),
         communityStats: wantsCommunity ? savedStats : undefined,
       },
       {

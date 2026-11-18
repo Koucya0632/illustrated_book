@@ -1,3 +1,4 @@
+import { regionalCatalogueActive } from "@/lib/australian-word-variants";
 // Public listing of every published word, localized via `?lang=`. Returns
 // the lite CardWord shape (id / word / chinese / imageUrl / category /
 // pronunciation) — heavy fields like definitions / examples / relations
@@ -8,6 +9,7 @@
 // keeps origin DB hits amortized.
 
 import { getAllCardWords } from "@/lib/data";
+import { legacyRentalWordVisible } from "@/lib/australian-categories";
 import { NextResponse } from "next/server";
 import { dbEnabled } from "@/lib/db";
 import type { LearningDirection, UiLang } from "@/lib/settings";
@@ -28,8 +30,8 @@ export async function GET(req: Request) {
   const learning = readLearningDirection(req) as LearningDirection;
   try {
     if (learning === "zh-ja" && !dbEnabled()) throw new Error("Japanese catalogue requires the database");
-    const words = await getAllCardWords(lang, learning);
-    return publicJson({ words, total: words.length }, req, true);
+    const words = (await getAllCardWords(lang, learning)).filter((word) => legacyRentalWordVisible(word.id, req.url));
+    return publicJson({ words, total: words.length }, req, true, regionalCatalogueActive);
   } catch (error) {
     console.warn("[api/words] catalogue unavailable", error);
     return NextResponse.json({ error: "catalogue unavailable" }, { status: 503, headers: { "Cache-Control": "no-store", "Vercel-CDN-Cache-Control": "no-store" } });

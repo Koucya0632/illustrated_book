@@ -71,7 +71,7 @@ export default async function RootLayout({
   // shipped all 478 word objects in its HTML: ~295KB of a 376KB homepage, 78%
   // of the bytes. `useWords()` has exactly five consumers, so each of them now
   // provides it from its own layout. See app/cards/layout.tsx.
-  const categories = await getCategoriesFromDb(settings.uiLang);
+  const categories = await getCategoriesFromDb(settings.uiLang, settings.learningDirection);
   // Logged-in users get their saved UI language; anonymous visitors (e.g. the
   // marketing page) get the cookie-based public language so <html lang> is
   // correct for SEO/screen-readers.

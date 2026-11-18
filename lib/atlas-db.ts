@@ -2864,3 +2864,35 @@ export async function recordAtlasCollectionModerationEvent(input: {
     // Audit logging must never break the submission path.
   }
 }
+
+/** Number of distinct saved community words currently due for review.
+ * Uses the same approval, language and due predicates as the study queue. */
+export async function savedCommunityDueCount(userId: string, targetLanguage: AtlasTargetLanguage): Promise<number> {
+  const sql = requireSql();
+  const rows = await sql<{ due: number }[]>`
+    SELECT count(DISTINCT sc.public_item_id)::int AS due
+    FROM atlas_saved_cards sc
+    JOIN atlas_public_items p ON p.id = sc.public_item_id
+    WHERE sc.user_id = ${userId}::uuid AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage}
+      AND sc.status <> '新卡' AND sc.next_review_at <= now()
+  `;
+  return Number(rows[0]?.due ?? 0);
+}
+
+/** Distinct saved community words eligible for a new-card queue. */
+export async function savedCommunityNewCount(userId: string, targetLanguage: AtlasTargetLanguage): Promise<number> {
+  const sql = requireSql();
+  const rows = await sql<{ total: number }[]>`
+    SELECT count(DISTINCT sc.public_item_id)::int AS total
+    FROM atlas_saved_cards sc
+    JOIN atlas_public_items p ON p.id = sc.public_item_id
+    WHERE sc.user_id = ${userId}::uuid AND p.review_status = 'approved'
+      AND p.target_language = ${targetLanguage} AND sc.status = '新卡'
+      AND NOT EXISTS (
+        SELECT 1 FROM atlas_saved_cards sc2 WHERE sc2.user_id = sc.user_id
+          AND sc2.public_item_id = sc.public_item_id AND sc2.status <> '新卡'
+      )
+  `;
+  return Number(rows[0]?.total ?? 0);
+}

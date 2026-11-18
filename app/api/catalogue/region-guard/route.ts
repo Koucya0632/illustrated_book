@@ -18,7 +18,7 @@ export async function GET() {
     .update(JSON.stringify([...reservedIds].sort()))
     .digest("hex");
   return NextResponse.json({
-    guardProtocol: "tuji-australia-catalogue-v1",
+    guardProtocol: "tuji-australia-catalogue-v2",
     deploymentCommit,
     deploymentCommitSource: "vercel-environment-self-reported",
     reservedIdCount: reservedIds.length,

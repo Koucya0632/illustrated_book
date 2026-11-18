@@ -14,10 +14,13 @@ import { normalizeUiLang, type UiLang } from "./settings";
 export const CATALOGUE_CLIENT_CACHE = "public, max-age=60";
 export const CATALOGUE_EDGE_CACHE = "public, s-maxage=300, stale-while-revalidate=3600";
 
-export function publicJson(payload: unknown, req: Request, cacheCatalogue = false): Response {
+export function publicJson(payload: unknown, req: Request, cacheCatalogue = false, noStore = false): Response {
   const body = JSON.stringify(payload);
   const etag = `"${createHash("sha1").update(body).digest("base64").slice(0, 22)}"`;
-  const cacheHeaders: Record<string, string> = cacheCatalogue ? {
+  const cacheHeaders: Record<string, string> = noStore ? {
+    "Cache-Control": "no-store",
+    "Vercel-CDN-Cache-Control": "no-store",
+  } : cacheCatalogue ? {
     "Cache-Control": CATALOGUE_CLIENT_CACHE,
     "Vercel-CDN-Cache-Control": CATALOGUE_EDGE_CACHE,
   } : {};

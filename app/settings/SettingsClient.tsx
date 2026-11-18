@@ -1,5 +1,7 @@
 "use client";
 
+import { studyCategoriesForDirection, updateStudyCategoriesForDirection } from "@/lib/australian-categories";
+
 // Draft model: edits change a local draft; nothing takes effect until "保存"
 // (persisted to /api/users/settings, then router.refresh() re-runs the server
 // tree so server-rendered language/scale/categories pick up the new value
@@ -391,17 +393,17 @@ export default function SettingsClient({
                   onSelect={(v) => set("accent", v as UserSettings["accent"])}
                 />
               )}
-              <ThemeChipGrid
+              {draft.learningDirection === settings.learningDirection ? <ThemeChipGrid
                 label={t("set.studyTheme")}
                 desc={t("set.studyThemeDesc")}
                 countLabel={t("set.studyThemeCount", {
-                  n: draft.studyCategories.length,
+                  n: studyCategoriesForDirection(draft.studyCategories, draft.learningDirection).length,
                   total: categories.length,
                 })}
                 allLabel={t("set.studyThemeAll")}
                 clearLabel={t("set.studyThemeClear")}
                 options={categories.map((c) => ({ id: c.id, name: c.nameZh, emoji: c.emoji }))}
-                selected={draft.studyCategories}
+                selected={studyCategoriesForDirection(draft.studyCategories, draft.learningDirection)}
                 onToggle={(id) =>
                   set(
                     "studyCategories",
@@ -410,9 +412,9 @@ export default function SettingsClient({
                       : [...draft.studyCategories, id],
                   )
                 }
-                onSelectAll={() => set("studyCategories", categories.map((c) => c.id))}
-                onClearAll={() => set("studyCategories", [])}
-              />
+                onSelectAll={() => set("studyCategories", updateStudyCategoriesForDirection(draft.studyCategories, categories.map((c) => c.id), draft.learningDirection))}
+                onClearAll={() => set("studyCategories", updateStudyCategoriesForDirection(draft.studyCategories, [], draft.learningDirection))}
+              /> : <p className="text-sm text-muted-foreground">{t("set.studyThemeSaveDirection")}</p>}
               <SetRow
                 label={t("set.showZh")}
                 desc={t("set.showZhDesc")}

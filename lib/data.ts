@@ -3,7 +3,12 @@
 // static lib/words.ts (this keeps `npm run dev` working without a DB).
 
 import { unstable_cache } from "next/cache";
-import { applyAustralianVariant, australianVariant, visibleInDirection } from "./australian-word-variants";
+import australianVariants from "@/data/australian-word-variants.json";
+import australianOnlyIds from "@/data/australian-only-word-ids.json";
+import type { AustralianWordVariants } from "./australian-word-variants";
+import { australianRentalBatchReady, australianRentalGate } from "./catalogue/australian-rental-gate";
+import { AUSTRALIAN_RENTAL_WORDS, australianRentalBatchActive, filterIncompleteRentalRows } from "./australian-categories";
+import { applyAustralianImage, applyAustralianVariant, australianVariant, visibleInDirection } from "./australian-word-variants";
 import { dbEnabled, getSql } from "./db";
 import { CATALOGUE_REVALIDATE_SECONDS } from "./catalogue-cache";
 import { publicFallbackWords as staticWords } from "./words";
@@ -224,6 +229,7 @@ const fetchShardFromDb = unstable_cache(
         SELECT w.id, row_number() OVER (ORDER BY w.category, w.word)::int AS ord
         FROM words w
         WHERE w.deleted_at IS NULL AND w.status = 'published'
+          AND ${australianRentalGate(sql, sql`w.id`)}
       ) o
       JOIN words w ON w.id = o.id
       WHERE mod(abs(hashtext(o.id)), ${CATALOGUE_SHARDS}) = ${shard}
@@ -253,22 +259,31 @@ async function fetchAllFromDb(): Promise<RawEntry[]> {
   const shards = await Promise.all(
     Array.from({ length: CATALOGUE_SHARDS }, (_, shard) => fetchShardFromDb(shard)),
   );
-  return shards
+  return filterIncompleteRentalRows(shards
     .flat()
     .sort((a, b) => a.ord - b.ord)
-    .map((s) => s.entry);
+    .map((s) => s.entry));
 }
 
 async function getAllRawEntries(requireDatabase = false): Promise<RawEntry[]> {
   if (!dbEnabled()) {
-    return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
+    return staticWords.filter((w) => !australianOnlyIds.includes(w.id)).map((w) => ({ word: w, localizedTexts: {} }));
   }
   try {
-    return await fetchAllFromDb();
+    const rows = await fetchAllFromDb();
+    // Shards are cached independently; a fresh gate prevents six stale cache
+    // entries from remaining visible after a database batch becomes incomplete.
+    if (australianRentalBatchActive(australianVariants as AustralianWordVariants)) {
+      const sql = getSql();
+      if (!sql || !(await australianRentalBatchReady(sql))) {
+        return rows.filter((row) => !(AUSTRALIAN_RENTAL_WORDS as readonly string[]).includes(row.word.id));
+      }
+    }
+    return rows;
   } catch (err) {
     if (requireDatabase) throw err;
     console.warn("[data] DB read failed, falling back to static:", err);
-    return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
+    return staticWords.filter((w) => !australianOnlyIds.includes(w.id)).map((w) => ({ word: w, localizedTexts: {} }));
   }
 }
 
@@ -293,11 +308,11 @@ export async function getAllLearningWords(
   return raw.flatMap((r) => {
     if (!visibleInDirection(r.word.id, direction)) return [];
     const variant = australianVariant(r.word.id, direction);
-    const word = applyAustralianVariant(
+    const word = applyAustralianImage(applyAustralianVariant(
       localizeWord(r.word, lang, r.localizedTexts, jaGloss?.get(r.word.id)?.term),
       lang,
       variant,
-    );
+    ), direction);
     const term = terms.get(word.id);
     if (targetLanguage === "ja" && !term) return [];
     return [{
@@ -485,11 +500,11 @@ export async function getLearningWord(
   // and the explanatory ja definition drops to the explainer line under it.
   const jaGloss = await jaGlossTermMap(lang);
   const variant = australianVariant(id, direction);
-  const base = applyAustralianVariant(
+  const base = applyAustralianImage(applyAustralianVariant(
     localizeWord(hit.word, lang, hit.localizedTexts, jaGloss?.get(id)?.term),
     lang,
     variant,
-  );
+  ), direction);
   const targetLanguage = targetLanguageFor(direction);
   const term = (await targetTermMap(direction)).get(id);
   if (!term && targetLanguage === "ja") return undefined;
@@ -620,11 +635,11 @@ export async function getAllCardWords(
   return raw.flatMap((r) => {
     if (!visibleInDirection(r.word.id, direction)) return [];
     const variant = australianVariant(r.word.id, direction);
-    const w = applyAustralianVariant(
+    const w = applyAustralianImage(applyAustralianVariant(
       localizeWord(r.word, lang, r.localizedTexts, jaGloss?.get(r.word.id)?.term),
       lang,
       variant,
-    );
+    ), direction);
     const term = terms.get(w.id);
     // Japanese mode only exposes concepts with a real Japanese target term.
     if (targetLanguage === "ja" && !term) return [];
@@ -676,6 +691,8 @@ function inMemoryMatch(all: Word[], q: string): Word[] {
 
 export interface SearchOptions {
   limit?: number;
+  /** IDs excluded before search result limits are applied. */
+  excludeIds?: readonly string[];
 }
 
 export async function searchWordsAsync(
@@ -755,7 +772,8 @@ export async function searchCardWordsAsync(
   const q = query.trim();
   if (!q) return [];
   const limit = Math.max(1, Math.min(options.limit ?? 50, 200));
-  const all = await getAllCardWords(lang, direction);
+  const excluded = new Set(options.excludeIds ?? []);
+  const all = (await getAllCardWords(lang, direction)).filter((word) => !excluded.has(word.id));
   if (!dbEnabled()) return inMemoryMatchCard(all, q).slice(0, limit);
   try {
     const sql = getSql();
@@ -784,6 +802,8 @@ export async function searchCardWordsAsync(
         WHERE w2.deleted_at IS NULL AND w2.status = 'published'
           AND d.definition ILIKE ${pattern}
       ) AS m
+      WHERE id <> ALL(${[...excluded]}::text[])
+        AND ${australianRentalGate(sql, sql`m.id`)}
       LIMIT ${limit}
     `) as unknown as { id: string }[];
 

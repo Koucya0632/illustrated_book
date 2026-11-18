@@ -4,6 +4,8 @@
 // to the themes this response serves (lib/topic-presets.ts).
 
 import { getCategoriesFromDb } from "@/lib/categories-db";
+import { regionalCatalogueActive } from "@/lib/australian-word-variants";
+import { NextResponse } from "next/server";
 import type { UiLang } from "@/lib/settings";
 import { publicJson, readLang } from "@/lib/cache-headers";
 import { localizeTopicPresets } from "@/lib/topic-presets";
@@ -13,7 +15,13 @@ export const revalidate = 300;
 
 export async function GET(req: Request) {
   const lang = readLang(req) as UiLang;
-  const categories = await getCategoriesFromDb(lang);
-  const presets = localizeTopicPresets(lang, new Set(categories.map((c) => c.id)));
-  return publicJson({ categories, presets }, req);
+  const rawDirection = new URL(req.url).searchParams.get("learning");
+  const direction = rawDirection === "zh-en" || rawDirection === "zh-ja" ? rawDirection : undefined;
+  try {
+    const categories = await getCategoriesFromDb(lang, direction);
+    const presets = localizeTopicPresets(lang, new Set(categories.map((c) => c.id)));
+    return publicJson({ categories, presets }, req, true, regionalCatalogueActive);
+  } catch {
+    return NextResponse.json({ error: "categories unavailable" }, { status: 503, headers: { "Cache-Control": "no-store", "Vercel-CDN-Cache-Control": "no-store" } });
+  }
 }

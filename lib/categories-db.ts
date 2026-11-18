@@ -6,17 +6,27 @@ import "server-only";
 import type { Category } from "@/types";
 import { publicFallbackCategories as staticCategories } from "./categories";
 import { localizeCategory } from "./word-localize";
-import type { UiLang } from "./settings";
+import type { LearningDirection, UiLang } from "./settings";
+import variants from "@/data/australian-word-variants.json";
+import { regionalCatalogueActive, type AustralianWordVariants } from "./australian-word-variants";
+import { filterAustralianCategories } from "./australian-categories";
 import { getSql } from "./db";
 import { readCatalogueTopics } from "./catalogue/topics";
 
-export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Category[]> {
+export async function getCategoriesFromDb(lang: UiLang = "zh-Hant", direction?: LearningDirection): Promise<Category[]> {
+  const scoped = (categories: Category[]) => filterAustralianCategories(categories, direction, variants as AustralianWordVariants);
   const sql = getSql();
-  if (!sql) return staticCategories.map((c) => localizeCategory(c, lang));
+  if (!sql) {
+    if (regionalCatalogueActive && direction === "zh-en") throw new Error("regional categories require database");
+    return scoped(staticCategories.map((c) => localizeCategory(c, lang)));
+  }
   try {
     const rows = await readCatalogueTopics(sql);
-    if (rows.length === 0) return staticCategories.map((c) => localizeCategory(c, lang));
-    return rows.map((r) => {
+    if (rows.length === 0) {
+      if (regionalCatalogueActive && direction === "zh-en") throw new Error("regional categories unavailable");
+      return scoped(staticCategories.map((c) => localizeCategory(c, lang)));
+    }
+    return scoped(rows.map((r) => {
       const base: Category = {
         id: r.id,
         name: r.name,
@@ -28,8 +38,9 @@ export async function getCategoriesFromDb(lang: UiLang = "zh-Hant"): Promise<Cat
         imageUrl: r.image_url ?? "",
       };
       return localizeCategory(base, lang, r.translations ?? undefined);
-    });
-  } catch {
-    return staticCategories.map((c) => localizeCategory(c, lang));
+    }));
+  } catch (error) {
+    if (regionalCatalogueActive && direction === "zh-en") throw error;
+    return scoped(staticCategories.map((c) => localizeCategory(c, lang)));
   }
 }

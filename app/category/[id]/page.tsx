@@ -59,7 +59,7 @@ export default async function CategoryPage(props: { params: Promise<{ id: string
   const tr = (key: string, vars?: Record<string, string | number>) => t(lang, key, vars);
 
   const [cats, items] = await Promise.all([
-    getCategoriesFromDb(lang),
+    getCategoriesFromDb(lang, settings.learningDirection),
     getWordsByCategory(params.id, lang, settings.learningDirection),
   ]);
   const category = cats.find((c) => c.id === params.id);

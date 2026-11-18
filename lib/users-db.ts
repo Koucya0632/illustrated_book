@@ -9,6 +9,8 @@
 import "server-only";
 import { unstable_cache } from "next/cache";
 import { getSql } from "./db";
+import { australianRentalGate } from "./catalogue/australian-rental-gate";
+import { hiddenAustralianIds } from "./australian-word-variants";
 import { DEFAULT_SETTINGS, normalizeSettings, type UserSettings } from "./settings";
 import type { StreakMilestoneFacts } from "./streak-milestone";
 
@@ -289,10 +291,13 @@ export async function getAllMastery(
   targetLanguage: "en" | "ja" = "en",
 ): Promise<MasteryRow[]> {
   const sql = requireSql();
+  const hidden = hiddenAustralianIds(targetLanguage === "ja" ? "zh-ja" : "zh-en");
   return sql<MasteryRow[]>`
-    SELECT word_id, target_language, mastery::float8 AS mastery, last_reviewed_at, review_count
-    FROM user_words
-    WHERE user_id = ${userId}::uuid AND target_language = ${targetLanguage}
+    SELECT uw.word_id, uw.target_language, uw.mastery::float8 AS mastery, uw.last_reviewed_at, uw.review_count
+    FROM user_words uw
+    WHERE uw.user_id = ${userId}::uuid AND uw.target_language = ${targetLanguage}
+      AND ${australianRentalGate(sql, sql`uw.word_id`)}
+      ${hidden.length ? sql`AND NOT (uw.word_id = ANY(${hidden}))` : sql``}
   `;
 }
 
@@ -310,6 +315,7 @@ export async function getAllMasteryWithSchedule(
   targetLanguage: "en" | "ja" = "en",
 ): Promise<MasteryScheduleRow[]> {
   const sql = requireSql();
+  const hidden = hiddenAustralianIds(targetLanguage === "ja" ? "zh-ja" : "zh-en");
   return sql<MasteryScheduleRow[]>`
     SELECT
       uw.word_id,
@@ -328,6 +334,8 @@ export async function getAllMasteryWithSchedule(
     FROM user_words uw
     WHERE uw.user_id = ${userId}::uuid
       AND uw.target_language = ${targetLanguage}
+      AND ${australianRentalGate(sql, sql`uw.word_id`)}
+      ${hidden.length ? sql`AND NOT (uw.word_id = ANY(${hidden}))` : sql``}
   `;
 }
 

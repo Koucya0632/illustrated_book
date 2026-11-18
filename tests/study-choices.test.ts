@@ -99,7 +99,9 @@ test('read-only audit is transaction-scoped and cannot alter pooled session defa
   let mode = '';
   const queries: string[] = [];
   const tx = (strings: TemplateStringsArray) => {
-    const query = strings.join(''); queries.push(query);
+    const query = strings.join('');
+    if (query === 'w.id' || query.trimStart().startsWith('(')) return query;
+    queries.push(query);
     return Promise.resolve(query.includes('FROM words w')
       ? [{word_id: 'apple', label: 'apple', language: 'en', gloss: '蘋果', aliases: []}] : []);
   };

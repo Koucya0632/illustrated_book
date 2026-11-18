@@ -1,1 +1,1262 @@
-{}
+{
+  "share-house": {
+    "visibility": "australia-only",
+    "headword": "share house",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/share-house/6408e84a6fd9d6c9bcb8e182de3b9d86f0c39cc8842fb8826947d85fc706abde.webp",
+    "gloss": {
+      "zh-Hant": "合租房",
+      "ja": "シェアハウス",
+      "en": "share house"
+    },
+    "explanation": {
+      "en": "A home shared by people who live together and share some spaces.",
+      "zh-Hant": "多人一起居住並共用部分空間的房屋。",
+      "ja": "複数の人が一緒に住み、共用スペースを使う住まい。"
+    },
+    "englishDefinition": "A home shared by people who live together and share some spaces.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-US/c47e57ff79467c132f0b025d0ea300d2b9fc835ba759633c0824f4e3eb84829d.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-GB/6e1e2c9b94d7874b2cf71f28735747eb67d23b83652c972767ab1512b0020d2e.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-AU/b11410ca817803bce43252503f07a73b140e9cc97eb1b9ed0c5fa87d4cbcc3f6.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/share-house/ja-JP/1218faf0cc101a8e77a5ecf4e49dad73a2dcab6e4c023907827c296bec8d3cb3.mp3"
+    },
+    "examples": [
+      {
+        "en": "I live in a share house.",
+        "zh": "我住在合租房。",
+        "translations": {
+          "zh": "我住在合租房。",
+          "ja": "私はシェアハウスに住んでいます。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-US/a49c1626a61bacf9cd96ba011c1e9e57569487c695bdb3ad786eace2b08181ad.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-GB/8d9f2fc2360839d4d6c81adfbf11229998fed8aba6f4eb1cc4ba61538bdea31a.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-AU/9125709a32356e30172c5e95b291c336da69c60d7dd2ed305c43193b46120dd1.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/share-house/ja-JP/43e893f308520c5bb3a611101d4f741322649cf6c5ff41d3686027a65c01d1fc.mp3"
+        },
+        "mentionedWordIds": [
+          "share-house"
+        ]
+      },
+      {
+        "en": "I chose a share house near the station because it is easy to get to work.",
+        "zh": "我選了車站附近的合租房，因為去上班很方便。",
+        "translations": {
+          "zh": "我選了車站附近的合租房，因為去上班很方便。",
+          "ja": "仕事に行きやすいので、駅の近くのシェアハウスを選びました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-US/d999c2643474450dc72cd5172d7f1df471324e529434d4886f308ec609214967.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-GB/00728f3a1e33dc5a9a97bdc3fc95af5a405d36ebc12b4ab659da78e33be0f692.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/share-house/en-AU/bb0f4b2a7d327d0bd0d79a7ed01af445f9656d09276d3d00fc53b96fa1de65dd.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/share-house/ja-JP/7276a7ac932ee6957f00b4e7b1dcbabd3b3c7a79d2afd97986b565b917953d6b.mp3"
+        },
+        "mentionedWordIds": [
+          "share-house"
+        ]
+      }
+    ]
+  },
+  "view-a-room": {
+    "visibility": "australia-only",
+    "headword": "view a room",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/view-a-room/f263ccb96f249e444f9174e6be1ce19f8aa8a7ab1810099deaa18760742b3793.webp",
+    "gloss": {
+      "zh-Hant": "看房間",
+      "ja": "部屋を見に行く",
+      "en": "view a room"
+    },
+    "explanation": {
+      "en": "To visit a room offered for rent and look at it before deciding.",
+      "zh-Hant": "在決定是否租住之前，前往察看出租的房間。",
+      "ja": "借りるか決める前に、貸し出されている部屋を見に行くこと。"
+    },
+    "englishDefinition": "To visit a room offered for rent and look at it before deciding.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-US/b9c1c0f8d54ee6a4bc76506cdf863a53cc8723e7e2b403340a01218f147292c0.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-GB/a16db1c580cde0b7909c94e30c7299aeb880c61826245b6e45c14856ac30612c.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-AU/f3fdb6c159782a206042da82abb186d125bbabf623cf37a5681d9987b3451614.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/ja-JP/589dbf42836f105336d4f42d39e2b83e6d6c718a19fdd08b441df0145c13bd52.mp3"
+    },
+    "examples": [
+      {
+        "en": "Can I view the room tomorrow?",
+        "zh": "我可以明天去看房間嗎？",
+        "translations": {
+          "zh": "我可以明天去看房間嗎？",
+          "ja": "明日、部屋を見に行ってもいいですか。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-US/30318f52208b3103843f97c963c10067867e0ed4f7b50bc0a929d5ce01f2d430.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-GB/fd1cc935ceb721be244654316dae7540313a927f41ff264b4dafa7d99e8a97ab.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-AU/1ef228b5df5ebfcf5e102856aac84a277e6c43e9936bf01c8fc1feb464794cff.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/ja-JP/ddcb4ffaf9eb711c6f93e1c87ca71366c20b349bc4117417948350a5e6ec4538.mp3"
+        },
+        "mentionedWordIds": [
+          "view-a-room"
+        ]
+      },
+      {
+        "en": "I asked to view the room after work so I could check the shared kitchen too.",
+        "zh": "我提出下班後看房的請求，這樣也能看看共用廚房。",
+        "translations": {
+          "zh": "我提出下班後看房的請求，這樣也能看看共用廚房。",
+          "ja": "共用キッチンも確認できるように、仕事の後に部屋を見に行きたいと頼みました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-US/85aa96a04650dd21954fd3ecfc09b7702065eb0fc652f68e00b05e2b6707254a.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-GB/9a714213d88a2799dd76f73707e22894258d3530725f07b2fface508b10dbba2.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/en-AU/9e0896dd8695b4ac4f74235b8aad1e73950e8fb76ffa25199f61b497671e29bd.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/view-a-room/ja-JP/b873f36f556c91f3dcfe63e68306fb99a4ce601518f06bd80f2747b9826ca99d.mp3"
+        },
+        "mentionedWordIds": [
+          "view-a-room"
+        ]
+      }
+    ]
+  },
+  "bills-included": {
+    "visibility": "australia-only",
+    "headword": "bills included",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/bills-included/dd81367f4a29c9d54aba7d6b0a1df16502bdb2b9613790d1c2ca6717f0f92bf5.webp",
+    "gloss": {
+      "zh-Hant": "已含帳單費用",
+      "ja": "光熱費など込み",
+      "en": "bills included"
+    },
+    "explanation": {
+      "en": "A rental listing phrase meaning the stated rent includes specified household bills.",
+      "zh-Hant": "租屋廣告中的說法，表示列明的租金包含指定生活費用。",
+      "ja": "家賃に指定された光熱費などが含まれることを示す賃貸広告の表現。"
+    },
+    "englishDefinition": "A rental listing phrase meaning the stated rent includes specified household bills.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-US/de380490d1f88b22a6c9a827009b7ba9fd41b657c5eb1ffa556c12bb31322e52.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-GB/96d191c2171954edd318ff76fdf005efd937a8eedf74cfcccf13c077c8137ccf.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-AU/97f0800e0b8fd7b4d4bd5deb350702afc98ab5cebe663adada2ec14cb9f8574c.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/bills-included/ja-JP/0133cbc77e33c0ebe354ca3abf820da666b89da69b181be3242987a630472dc1.mp3"
+    },
+    "examples": [
+      {
+        "en": "The ad says bills are included.",
+        "zh": "廣告上說租金已含帳單費用。",
+        "translations": {
+          "zh": "廣告上說租金已含帳單費用。",
+          "ja": "広告には光熱費などが含まれると書いてあります。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-US/112cafdac5708333661ac34b4046a71b9d6c4340dd98f65c95d0457c24b861ed.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-GB/a20d9ab53b0447ff996b66417812a80bb971473281f1c24b07753551d966bb43.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-AU/df7daf1f7641127d163e3e97e47a783f126b8910dbba811c3269c78a2ea2e8ff.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/bills-included/ja-JP/d930660bc425a3eacf26824ffc8de2b5ad1911d3591547d5c8dd68000477b932.mp3"
+        },
+        "mentionedWordIds": [
+          "bills-included"
+        ]
+      },
+      {
+        "en": "I asked which bills were included before I agreed to rent the room.",
+        "zh": "決定租這間房之前，我問清楚包含哪些帳單費用。",
+        "translations": {
+          "zh": "決定租這間房之前，我問清楚包含哪些帳單費用。",
+          "ja": "部屋を借りると決める前に、どの費用が含まれるか聞きました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-US/3d99753662c59e4c2fbd470b068aaed33fee18fbe8ee4fae167ef7e6cdd2cf02.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-GB/e70c190311bc5997826a91c2e3c9126df18548e8a29041d450caed5890574cd6.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/bills-included/en-AU/ff54921306fc5c3a28541530046e7ba14c892881a71e25bcadc70c4bd92830a0.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/bills-included/ja-JP/5ed117e186d6c72ca06afca4419e7173be92673405e272cf178bd7f38ce6cb53.mp3"
+        },
+        "mentionedWordIds": [
+          "bills-included"
+        ]
+      }
+    ]
+  },
+  "rental-bond": {
+    "visibility": "australia-only",
+    "headword": "rental bond",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/rental-bond/6ea630102a82cbcb5611afb78170a311ab574d7f2df8d13037d5b4e7b9dbedc9.webp",
+    "gloss": {
+      "zh-Hant": "租屋押金",
+      "ja": "賃貸保証金",
+      "en": "rental bond"
+    },
+    "explanation": {
+      "en": "Money paid as security under a residential tenancy agreement.",
+      "zh-Hant": "住宅租賃時，作為履行租約保障而支付的押金。",
+      "ja": "住宅の賃貸借契約において、契約上の義務を守るための担保として支払うお金。"
+    },
+    "englishDefinition": "Money paid as security under a residential tenancy agreement.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-US/0d6cc1f8f69014d4887ff38ff0e19929b10f0c2825e4ca94fd4e4a736e19d2d2.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-GB/e07108ef12e930d2acec6ebae23b0a7cd5331404d3f08a3e2d2ef805b9e93825.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-AU/88e00fbb83f4172d482788012bf0dccc9aa36ceb6cccde8f490397912d3e9b1e.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/ja-JP/e78fac10f6dbc5a17cf4af410bc24d680e2697bf02c36c80099f1780e4c24391.mp3"
+    },
+    "examples": [
+      {
+        "en": "I paid the rental bond.",
+        "zh": "我付了租屋押金。",
+        "translations": {
+          "zh": "我付了租屋押金。",
+          "ja": "私は賃貸保証金を払いました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-US/aa29006ffe8b5b066d0185bb5aef6254930ba38b1f90245068c30a324eff176a.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-GB/b2bbe30897228a677d95ab313e9019516210bdff2d308482e8c089a13b60fe7b.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-AU/4dd1619071a4e3a48e117ccb325c1d74025018517563ea2b7736df3b5e37f926.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/ja-JP/39446bf386e02090b14403f6130d2ffa38745eb773bb8821e11e3275573fc3a2.mp3"
+        },
+        "mentionedWordIds": [
+          "rental-bond"
+        ]
+      },
+      {
+        "en": "Before signing the lease, I checked how to pay the rental bond.",
+        "zh": "簽租約前，我確認了如何支付租屋押金。",
+        "translations": {
+          "zh": "簽租約前，我確認了如何支付租屋押金。",
+          "ja": "賃貸契約に署名する前に、賃貸保証金の支払い方法を確認しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-US/0b39586dcbf14df402c00c0ae5b96d639a3874843cd280ac4eed89adfa55fca3.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-GB/955f639dfc6606bad2b511388d7fd51ff46e0930c2b5a3587fbcf2025c0e5f6e.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/en-AU/98bf2675a628aa284bf218a7febaa4adbc18cb41bd317771c2ecffc7357b3882.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/rental-bond/ja-JP/694081f718f76458a572601daaa0daaee6bea9a2efcb4c8314ff691f60408e15.mp3"
+        },
+        "mentionedWordIds": [
+          "rental-bond"
+        ]
+      }
+    ]
+  },
+  "condition-report": {
+    "visibility": "australia-only",
+    "headword": "condition report",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/condition-report/ef064e7ebf2453a9b09ea8a55235ff0212f8a0548aeaaac3249783ffee176421.webp",
+    "gloss": {
+      "zh-Hant": "屋況報告",
+      "ja": "物件の状態報告書",
+      "en": "condition report"
+    },
+    "explanation": {
+      "en": "A record of the condition of a rental property, completed around the start and end of a tenancy.",
+      "zh-Hant": "記錄出租房屋在租期開始和結束時狀況的文件。",
+      "ja": "賃貸物件の入居時や退去時の状態を記録する書類。"
+    },
+    "englishDefinition": "A record of the condition of a rental property, completed around the start and end of a tenancy.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-US/17fae588082dda19c85962adf83de09989e66ed571646aa77ebe3dd7978fddd0.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-GB/5fc0a563a4d6455b1a5a1863b6583d4d094c520aed572f8e1b8c819e69edcb7a.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-AU/3f49ae0672ee9cb599472c51668769e88972a0a28d8ff68847f3a90f23bb8b6f.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/condition-report/ja-JP/5df77c60d1d76e08bc6171c335a69f965319810927e19bab7b7a5f899f34adc0.mp3"
+    },
+    "examples": [
+      {
+        "en": "I read the condition report.",
+        "zh": "我閱讀了屋況報告。",
+        "translations": {
+          "zh": "我閱讀了屋況報告。",
+          "ja": "物件の状態報告書を読みました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-US/146936c024d7ad4510ec449d86601e5ad4a2550f299d5a48219923bff402cc09.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-GB/a93d115e64ddff13cf925a0db66728c5d313e9721d06fd92f7ba5d56200f15f2.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-AU/7764e6110539b6b40a9b9c4cd075ead99e73c0c9764dda44384af1b49231f7ce.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/condition-report/ja-JP/d5e34a0ae2494e75edfcab7f112fa551b594813a98a3f728e917f53bbd7e5915.mp3"
+        },
+        "mentionedWordIds": [
+          "condition-report"
+        ]
+      },
+      {
+        "en": "I took photos of the scratches on the wall before completing the condition report.",
+        "zh": "填寫屋況報告前，我先拍下牆上的刮痕。",
+        "translations": {
+          "zh": "填寫屋況報告前，我先拍下牆上的刮痕。",
+          "ja": "物件の状態報告書に記入する前に、壁の傷の写真を撮りました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-US/cfd224e804d148018e1aa00a03920856e814c0462c625dd4e26ef68b62ec9eae.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-GB/7531398befee9e36ba459c80d52f52a5e9abd38a899e986b17e7adc56cbc83c9.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/condition-report/en-AU/897c849dafdd971fed6605ce1ea4576bbf864e6da077ea002fa722196f998988.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/condition-report/ja-JP/e986139c3797241e4e5619b68a2da2448c8b88a1643c616b61e7f71c9e236e43.mp3"
+        },
+        "mentionedWordIds": [
+          "condition-report"
+        ]
+      }
+    ]
+  },
+  "tenancy-agreement": {
+    "visibility": "australia-only",
+    "headword": "tenancy agreement",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/tenancy-agreement/7eac5b9fff3b4821db5b0c800822dfb1cf325dd5bfe60e5ddad72e4b207cea72.webp",
+    "gloss": {
+      "zh-Hant": "租賃合約",
+      "ja": "賃貸借契約書",
+      "en": "tenancy agreement"
+    },
+    "explanation": {
+      "en": "An agreement setting out the terms for renting a home.",
+      "zh-Hant": "訂明租住住宅條件的契約。",
+      "ja": "住まいを借りる条件を定めた契約書。"
+    },
+    "englishDefinition": "An agreement setting out the terms for renting a home.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-US/07e70becaaef349a96c07dca9df6088338b1f1a99c26aea8fd7a14cae0a23fcd.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-GB/065c18f1cffa39322b8cd5d743b5279e61c269ad53f53d14760a7ea8afc4cb8e.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-AU/e8f67f65ded8400b61c2f8b626a8a9f685fc89f3231fd2f235b210c37836fa84.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/ja-JP/1d1fcd0e712fbd609671038da8bfd7e5913b8b82be30ca37abcb8f5e56867e5c.mp3"
+    },
+    "examples": [
+      {
+        "en": "I read the tenancy agreement.",
+        "zh": "我閱讀了租賃合約。",
+        "translations": {
+          "zh": "我閱讀了租賃合約。",
+          "ja": "賃貸借契約書を読みました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-US/5f654d7d502844bc73334856e4143260168d5f4bfbc34b6a5c45692391e9ac5e.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-GB/e178eb947568974103b89fb2ca1ebc28a469912e692032f791a7c397137b6395.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-AU/3f499629673fde1380c4b437df981d4cf643fe972109841ccfb187bdbff43eb7.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/ja-JP/4e1fe25f46bb8a3205bd5cb593664d353b8df9a9b6f956c1101135eb0b662d20.mp3"
+        },
+        "mentionedWordIds": [
+          "tenancy-agreement"
+        ]
+      },
+      {
+        "en": "I checked the tenancy agreement to see whether water was included in the rent.",
+        "zh": "我查看租賃合約，確認租金是否包含水費。",
+        "translations": {
+          "zh": "我查看租賃合約，確認租金是否包含水費。",
+          "ja": "水道代が家賃に含まれるかどうか、賃貸借契約書を確認しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-US/ac84ee777cf8cb9125bae5b01cc9d17c4b99abb523fd50774518c6de92337ef1.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-GB/ca31113c0efe45c3d866943db9dd62ab05f4c97ad333a34a5220c9516a026b2d.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/en-AU/4f691918e0d5ee30700813bd24d1e49820e22664a54e423c43b117ec769e0cc4.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/tenancy-agreement/ja-JP/e67480714a4c37efd4dc995fb2091b0f33371c36a7fddac4794136b9a9dd2f54.mp3"
+        },
+        "mentionedWordIds": [
+          "tenancy-agreement"
+        ]
+      }
+    ]
+  },
+  "availability": {
+    "visibility": "australia-only",
+    "headword": "availability",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/availability/230acbd0ed14f810845dcc8da1484284f4590d3458a7605e9072cad4f57be18d.webp",
+    "gloss": {
+      "zh-Hant": "可上班時段",
+      "ja": "勤務可能な時間",
+      "en": "availability"
+    },
+    "explanation": {
+      "en": "The times when someone is available to work.",
+      "zh-Hant": "一個人可以上班的時段。",
+      "ja": "仕事に入ることができる時間帯。"
+    },
+    "englishDefinition": "The times when someone is available to work.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/availability/en-US/3dddcc06f5e23b503233b5c6f3e16dee4e0862aba161c39e23e4d055eb726feb.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/availability/en-GB/469212c7e9c3fe683b94a42d81bbcd5590c7bb8b4d58ea4058d6ac03924a46c3.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/availability/en-AU/0b065f0ea8d018b9507edd33fdae5a19f4a0188cec12448b0464c641268f3433.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/availability/ja-JP/169b80d58a150f9967fcd9e5df8d37496cbfedd47c5f34d95c89f300b0aec603.mp3"
+    },
+    "examples": [
+      {
+        "en": "I sent my availability to the manager.",
+        "zh": "我把可以上班的時段傳給經理。",
+        "translations": {
+          "zh": "我把可以上班的時段傳給經理。",
+          "ja": "勤務可能な時間を店長に送りました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/availability/en-US/e8420fe857c13c2c24906a8b600948d6e05e7116cc1b04484a6e73293e09b0a4.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/availability/en-GB/74b8b22c3157f2371b64260656e067b5d9e8fbd6b6f39b772ac096ab5793991d.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/availability/en-AU/a9e0413a9b538bbaa58cc0fa837642835f4a2bab9cd35668d4d6de08c1b76094.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/availability/ja-JP/bfc57a5fcae62b9f0ca183fa3e6ff1cabd1b0ed261b3fc9286a3a9cb81fc25ee.mp3"
+        },
+        "mentionedWordIds": [
+          "availability"
+        ]
+      },
+      {
+        "en": "I updated my availability because my class schedule changed.",
+        "zh": "因為課表改了，我更新了可上班時段。",
+        "translations": {
+          "zh": "因為課表改了，我更新了可上班時段。",
+          "ja": "授業の時間割が変わったので、勤務可能な時間を更新しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/availability/en-US/54b5e33ca5a46e2842cf50c5e15e933dee8b447cc172d95d9093b96ab2e3230e.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/availability/en-GB/31d542a08c0bc229fbd9360b68f8a1cf54ba432adc54d15927c5acff6b46d9e3.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/availability/en-AU/7fae5e34a0ae171160ecc518002c943e9ab4cf041f49013efa5033a9cd1efa13.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/availability/ja-JP/b65cec2ffc74beb8ba984167e715766f940ba4de6c8bf1da11b3323c32d461a9.mp3"
+        },
+        "mentionedWordIds": [
+          "availability"
+        ]
+      }
+    ]
+  },
+  "casual-employee": {
+    "visibility": "australia-only",
+    "headword": "casual employee",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/casual-employee/47e11816b7d34c73a56fd05b9f7bf970d5dd334591ea0a937e6e62d2fee1f19a.webp",
+    "gloss": {
+      "zh-Hant": "casual 員工",
+      "ja": "カジュアル従業員",
+      "en": "casual employee"
+    },
+    "explanation": {
+      "en": "An employee engaged on a casual basis; for employees starting from 26 August 2024, this generally involves no firm advance commitment to ongoing work and an entitlement to casual loading or a specific casual pay rate.",
+      "zh-Hant": "以 casual 方式受僱的員工；2024 年 8 月 26 日起開始受僱者，一般是指沒有事先確定持續工作承諾，並有權獲得 casual 加給或專屬薪資的員工。",
+      "ja": "カジュアルとして雇われる従業員。2024年8月26日以降に雇用を開始した人については、一般に継続的な仕事の確約がなく、カジュアル加算または専用賃金を受ける権利がある。"
+    },
+    "englishDefinition": "An employee engaged on a casual basis; for employees starting from 26 August 2024, this generally involves no firm advance commitment to ongoing work and an entitlement to casual loading or a specific casual pay rate.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-US/a5320ef342da59e15c87b90337cfcb687b66d691ba9a6b564338dcc729c3adc8.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-GB/42fdf7ce988f09925679961d085e9158f188973f281f3cf6e236595a189842c3.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-AU/0f06fb8b9e1e76f78d6a7db6291b587a392a3212cec18485296e662960810265.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/ja-JP/957859cad372b210975a9b517e1b8364386226b99148917b5094b7fa2e2167a9.mp3"
+    },
+    "examples": [
+      {
+        "en": "I work at the café as a casual employee.",
+        "zh": "我在咖啡廳以 casual 員工身分工作。",
+        "translations": {
+          "zh": "我在咖啡廳以 casual 員工身分工作。",
+          "ja": "私はカフェでカジュアル従業員として働いています。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-US/173cdb00c5aad34669bd910d5cbf790c5ee85f35ed1b547557a25635f26db599.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-GB/7e7ca0a32d28f5f339612440b7b2002b1cbc3190d8d33d0bdda541c6132e75dc.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-AU/d605764bde60d6c36b3a08911af8ffcdbc2589ae745a8086f7cf10286c0687ed.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/ja-JP/8d7975e3ba5337281137675a176c309275826b2abee49f0a99b487f8b87081c6.mp3"
+        },
+        "mentionedWordIds": [
+          "casual-employee"
+        ]
+      },
+      {
+        "en": "As a casual employee, I check the roster to see when I am working next.",
+        "zh": "身為 casual 員工，我會看班表確認下次什麼時候上班。",
+        "translations": {
+          "zh": "身為 casual 員工，我會看班表確認下次什麼時候上班。",
+          "ja": "カジュアル従業員なので、次の勤務日をシフト表で確認します。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-US/e0ca596d2347fd6877b9b5a147885c231e4b95397b84488df521e0963638bc7c.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-GB/0b2b11ef6a0f36c4d6abd583c46faea7b0c9147a1f6776381d9ca8b14f3bf947.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/en-AU/87a041c61c3d65e8368319b1239e6af249e5c01b4f5d311a9239e3cc5bb0da7e.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/casual-employee/ja-JP/1d9379fe72ee79d6f9e35eb2794686ce4acb25325f991dedd836904a1e26321a.mp3"
+        },
+        "mentionedWordIds": [
+          "casual-employee"
+        ]
+      }
+    ]
+  },
+  "trial-shift": {
+    "visibility": "australia-only",
+    "headword": "trial shift",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/trial-shift/76cdd0c6a1793fb9e133706daa42dbd36c9cf3710e872c032cb19186d4230120.webp",
+    "gloss": {
+      "zh-Hant": "試工班次",
+      "ja": "トライアルシフト",
+      "en": "trial shift"
+    },
+    "explanation": {
+      "en": "A short period of work used to assess a candidate for a position.",
+      "zh-Hant": "用於評估應徵者是否適合工作的一段試工。",
+      "ja": "応募者が仕事に適しているかを確認するための試しの勤務。"
+    },
+    "englishDefinition": "A short period of work used to assess a candidate for a position.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-US/1ccd72c09ee69b590cdece25bd861a3767d980b7509d393eeb3cbfd05f480989.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-GB/0071d8b8afba6bca55647b4ad2452c099ca6c650fc85067d57b4424b93679e58.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-AU/943cef37387659577e60c4eb4bc6911bd1f41fb7417302511b484cf39cdd05f4.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/ja-JP/9fb31dce270466c828cc147cbd857f5f8d27a6a955f53418c1db39ae9ec47b93.mp3"
+    },
+    "examples": [
+      {
+        "en": "My trial shift is on Tuesday.",
+        "zh": "我的試工班次在星期二。",
+        "translations": {
+          "zh": "我的試工班次在星期二。",
+          "ja": "トライアルシフトは火曜日です。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-US/60feb346dc4edb85cb8beaef569e323c192b353474511d49e4cf2a53e183985f.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-GB/5d63ec0434178b3fc403aa1eb057aa20617735a7cbe61229ed1f6be1928061b5.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-AU/261109888d4e7318d9edc0c51a4727f13d279d24600a6a094038770f03a14be7.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/ja-JP/247b6ea5093309c3e5efb2f1dbd025b8d5ddfac30f6078257a5880b2f3f8f653.mp3"
+        },
+        "mentionedWordIds": [
+          "trial-shift"
+        ]
+      },
+      {
+        "en": "Before the trial shift, I asked the manager how long it would take.",
+        "zh": "試工前，我問經理大約需要多久。",
+        "translations": {
+          "zh": "試工前，我問經理大約需要多久。",
+          "ja": "トライアルシフトの前に、どのくらいかかるか店長に聞きました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-US/715a4fb34cb8ebf3b0cc1c736facb413c0f66b3b3af19826c6640a2179082b3c.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-GB/fba4638790779e55c15eb34d30a9100cf4ed9312b42da18849e2756f608c9b1b.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/en-AU/6eb15d41d173524edb703a2409ddefd826217e5bb933638d252fc3cf438f0b4a.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/trial-shift/ja-JP/9a7987893d5a0894c508c4ba55d9265c5a2017387c2e7f969cb8d490e123ecf5.mp3"
+        },
+        "mentionedWordIds": [
+          "trial-shift"
+        ]
+      }
+    ]
+  },
+  "roster": {
+    "visibility": "australia-only",
+    "headword": "roster",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/roster/83facbaa0d3008be755bfe86f30b7150ad30a5de414a5b2f7406c37ebadd8171.webp",
+    "gloss": {
+      "zh-Hant": "班表",
+      "ja": "シフト表",
+      "en": "roster"
+    },
+    "explanation": {
+      "en": "A schedule showing when employees are expected to work.",
+      "zh-Hant": "列出員工上班時段的表。",
+      "ja": "従業員の勤務日時を示す表。"
+    },
+    "englishDefinition": "A schedule showing when employees are expected to work.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/roster/en-US/3dd47b6d001e2bc5bd508533f29ec59b334384fa7fc0c39268f9648e57c1050e.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/roster/en-GB/b325068182d5dd9f6aa426eb55ced1eda9147e576ebcb2a3c2054f97709712a8.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/roster/en-AU/b15aa992d25f3b6ff3787a753d37ca9b0584f8c16d6a0c1adcedbdb944f4ef64.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/roster/ja-JP/145179aca145b4053f5e6e106ea491ad278bc47a14f599a5f00db9d6a58e0f4f.mp3"
+    },
+    "examples": [
+      {
+        "en": "The roster is on the wall.",
+        "zh": "班表貼在牆上。",
+        "translations": {
+          "zh": "班表貼在牆上。",
+          "ja": "シフト表は壁に貼ってあります。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/roster/en-US/e782e9c3fd0862a595ed959d538b4571ccd44f668b0e40f08510e33bf7826b65.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/roster/en-GB/f599fa8ce867d1da35be6ea9e508f974e697e937cce6407986ac719af94645d7.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/roster/en-AU/70cc615637c9cc4bab239c779816cb7b2e0a878ec7c23ccb0b1828e8393c85c4.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/roster/ja-JP/d310b4c7c0e46217f35b52ce1dd1133f26fa01770c679d056a8440a6fe22c8da.mp3"
+        },
+        "mentionedWordIds": [
+          "roster"
+        ]
+      },
+      {
+        "en": "I checked the roster before making plans for the weekend.",
+        "zh": "安排週末行程前，我先查看班表。",
+        "translations": {
+          "zh": "安排週末行程前，我先查看班表。",
+          "ja": "週末の予定を立てる前に、シフト表を確認しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/roster/en-US/29c8f528c8ab9b655633698173610336fe6de1e005f3cfc134460a0b0c416778.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/roster/en-GB/460d9705d393d9e5b0863b71efd25514e3bf5f159a773ad5844774cf990690e9.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/roster/en-AU/9537ca153b839d49f3b49cda7f5287ae7b34ef0bc855fd5f12834aa7d5b8fc3f.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/roster/ja-JP/650fc24ddb31291d17761bef14c49b24aa8f223a63c3333d3689f5bd4989c68a.mp3"
+        },
+        "mentionedWordIds": [
+          "roster"
+        ]
+      }
+    ]
+  },
+  "shift-handover": {
+    "visibility": "australia-only",
+    "headword": "shift handover",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/shift-handover/c01bb4d5cc888ffad8696a492b58e688f196af723b953b2a68cfad9e52f810c1.webp",
+    "gloss": {
+      "zh-Hant": "交班",
+      "ja": "勤務の引き継ぎ",
+      "en": "shift handover"
+    },
+    "explanation": {
+      "en": "The passing of work information from one shift to the next.",
+      "zh-Hant": "把工作資訊由一班傳給下一班的交接。",
+      "ja": "一つの勤務から次の勤務へ仕事の情報を伝えること。"
+    },
+    "englishDefinition": "The passing of work information from one shift to the next.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-US/2f24bf9d45f3ec57d45debc221f38a643881bec662e8ab8f129c1e878e50fa42.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-GB/5c70572598e2e7d2effe9395af778225355e1665e3e2839e5554c87d4fc27277.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-AU/7d1b0ba9b7498dca95e1bedb913b913a3bd75a53b526132b40c830d6f77981ed.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/ja-JP/5a68552c41d9342fe642710f6655afcf558a44106494aaf51250a3024b6f3aa6.mp3"
+    },
+    "examples": [
+      {
+        "en": "We have a shift handover at three.",
+        "zh": "我們三點交班。",
+        "translations": {
+          "zh": "我們三點交班。",
+          "ja": "三時に勤務の引き継ぎをします。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-US/707daa3c9f874680df5b021655fbd36eb83a71a63e31407a679d3821421c28c2.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-GB/761d9d2bef8000b09d992e08f7d53037de50a7e31f1b89177a430499df8556b8.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-AU/1afb2b3bb416dda0228dded031362b363545f673421a73adc6d00e2446d9ff57.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/ja-JP/1a48f89da6f0d54f8b835c158c839dde92cd9683409074f7b84097d64c13231a.mp3"
+        },
+        "mentionedWordIds": [
+          "shift-handover"
+        ]
+      },
+      {
+        "en": "During the shift handover, my colleague told me which tables were waiting.",
+        "zh": "交班時，同事告訴我哪些桌還在等候。",
+        "translations": {
+          "zh": "交班時，同事告訴我哪些桌還在等候。",
+          "ja": "勤務の引き継ぎのとき、同僚がどのテーブルが待っているか教えてくれました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-US/1d1deae35b4236772f2036ba5741d0ccb8048724ad5a03054ce0d48e5d04b0f3.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-GB/dc7f1b97b181dea82e71747fe950dd37e459ac911dd2358350a71836a1e9b3cb.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/en-AU/46fdc3489d6d4801144f0338bcc7f6704c4a0d0b04cf65b32837f9c747418873.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/shift-handover/ja-JP/0dcb6c1406c89dcec36ccbc8eaa0b524291f54d44acbdb5d0699f29a10802c7c.mp3"
+        },
+        "mentionedWordIds": [
+          "shift-handover"
+        ]
+      }
+    ]
+  },
+  "pay-slip": {
+    "visibility": "australia-only",
+    "headword": "pay slip",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/pay-slip/642815e4e59aae4f865fb07786ea078aca8a0f6a52b25e1e1fc25478617f1497.webp",
+    "gloss": {
+      "zh-Hant": "薪資單",
+      "ja": "給与明細",
+      "en": "pay slip"
+    },
+    "explanation": {
+      "en": "A record showing an employee's pay and related details for a pay period.",
+      "zh-Hant": "列出員工一個薪資期間薪酬及相關明細的紀錄。",
+      "ja": "給与期間の支払額や関連する明細を示す記録。"
+    },
+    "englishDefinition": "A record showing an employee's pay and related details for a pay period.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-US/8db6eb13ad523541f2d568e549cde6f0d1477edd10027dae7d6fc624d6350752.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-GB/fc9d18be1518f67f525c30c7d3418dd90f7445d19e67b137e45f17a4833f67f8.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-AU/ed1f7308510bb669191dbca06ddfa8b3e54b69d1eb52671cb7979311be0c91a9.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/ja-JP/327c2a50264c59d73ec39989f517b9a3e8ee6232ab35b87ca744830afe69d6fe.mp3"
+    },
+    "examples": [
+      {
+        "en": "I checked my pay slip.",
+        "zh": "我查看了薪資單。",
+        "translations": {
+          "zh": "我查看了薪資單。",
+          "ja": "給与明細を確認しました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-US/1399d7648914c1837125710e9cd1f5f66cc3eca99956b51f4bdca2b4fd48ac5f.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-GB/3c9c0d41ed0bf857262154b351ec29bc16a208aca30ea4de957c8580ae938771.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-AU/ad8b581fb740532a094b4b561733649efa5c2ee045212e91c26e862e940fa1c1.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/ja-JP/a34ea11465598aebb835b238c00108855c12c433e6b8cf17b3365630087c1d95.mp3"
+        },
+        "mentionedWordIds": [
+          "pay-slip"
+        ]
+      },
+      {
+        "en": "I checked my pay slip to make sure my hours were recorded correctly.",
+        "zh": "我查看薪資單，確認上班時數記錄正確。",
+        "translations": {
+          "zh": "我查看薪資單，確認上班時數記錄正確。",
+          "ja": "勤務時間が正しく記録されているか、給与明細を確認しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-US/72b7682ef5d0fba78d37b7d3139b8b740ea60c91fd541d2ffb47f84b436e2b07.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-GB/1868f35ce5b97da79baa27e57892ce9f376f4d60a87325c90253d195e643aee6.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/en-AU/63287227a625d4a773635d5be9076bd4b48c9ce4f02a8791a175c3ef3f12d385.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/pay-slip/ja-JP/ffa85add8b6aeb6c66cf9b6faaaf159673c1dbcedc4c9d0dfb4e0656aef82d48.mp3"
+        },
+        "mentionedWordIds": [
+          "pay-slip"
+        ]
+      }
+    ]
+  },
+  "payment-terminal": {
+    "visibility": "australia-only",
+    "headword": "payment terminal",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/payment-terminal/dd3945dcaaea5c7bcf37ae7b3efc214d0a7f622cf3e910315f8b5aadccf68574.webp",
+    "gloss": {
+      "zh-Hant": "付款終端機",
+      "ja": "決済端末",
+      "en": "payment terminal"
+    },
+    "explanation": {
+      "en": "A device used by a business to accept electronic card payments.",
+      "zh-Hant": "店家收取電子卡片付款的設備。",
+      "ja": "店がカードなどの電子決済を受け付ける機器。"
+    },
+    "englishDefinition": "A device used by a business to accept electronic card payments.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-US/a9c73e0f9df3f78616954a429c621c63b128ad4723ea08f0e44d007bfc89c215.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-GB/5b318c6395635cc750a4b5bd93f69fee4e16b3d562033dbf9f345f90b4f09554.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-AU/f66f225788f9256b40a750bd39bd81220a167c7c70cb0ac34a508375830073ca.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/ja-JP/9c9bc1dda2acbed971d081942a02115183074f1dcf57e2a483afadac5902bc78.mp3"
+    },
+    "examples": [
+      {
+        "en": "Please tap your card on the payment terminal.",
+        "zh": "請在付款終端機上感應卡片。",
+        "translations": {
+          "zh": "請在付款終端機上感應卡片。",
+          "ja": "決済端末にカードをタッチしてください。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-US/820698bc1427ea21465f73bca59ba4b18b846a3545179b0c4f6cab4547e78c93.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-GB/17ea5d8e5b369f25da4d3b22b1f57aa65fd86d4446008c7c408308e6d36f751e.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-AU/4ceea98f4366a738e6800680fa3b5a55c06e1f9eb1b9c38f20e65b306d12b001.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/ja-JP/22baa9b22be01f7bc9b4b9e5a9358b81fb403feeed1c4ee469d464a1e5e1a1c3.mp3"
+        },
+        "mentionedWordIds": [
+          "payment-terminal"
+        ]
+      },
+      {
+        "en": "The payment terminal asked me to enter my PIN after I inserted my card.",
+        "zh": "我插入卡片後，付款終端機要求我輸入密碼。",
+        "translations": {
+          "zh": "我插入卡片後，付款終端機要求我輸入密碼。",
+          "ja": "カードを差し込むと、決済端末に暗証番号を入力するよう表示されました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-US/2a5fcc226f095a99279fc9df92025f88dff42b571fda123fc6d9d8151e6ed176.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-GB/06daa7ab66ccd7e7a952a000e1f5a10d59619dd12340b7fcf51fe4d56e96b245.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/en-AU/28c042a98bb3086c1d2d2effb8a8d011977cd5e118785688dfe669b3cd7e1b9c.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/payment-terminal/ja-JP/6e317b810cc98a26f4bcf47fc2823e3f0b5b88c5c498209bb18036579fa8323c.mp3"
+        },
+        "mentionedWordIds": [
+          "payment-terminal"
+        ]
+      }
+    ]
+  },
+  "tax-file-number": {
+    "visibility": "australia-only",
+    "headword": "tax file number",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/tax-file-number/5a5628fb51efff2e8be27bb1e7e2ec02122e8611de4858176d7e6e2412ade22a.webp",
+    "gloss": {
+      "zh-Hant": "稅務檔案號碼",
+      "ja": "タックスファイルナンバー",
+      "en": "tax file number"
+    },
+    "explanation": {
+      "en": "An Australian Taxation Office number used in a person's tax and superannuation records.",
+      "zh-Hant": "澳洲稅務局用於個人稅務及退休金紀錄的號碼。",
+      "ja": "オーストラリア税務局が個人の税金や年金の記録に用いる番号。"
+    },
+    "englishDefinition": "An Australian Taxation Office number used in a person's tax and superannuation records.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-US/f77f8a590a49cee1e2272b15018742235332364d1879d8d661d0d0f160ddfcc1.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-GB/7bd71005e89aa2fcbb93675ec2808f507eb15231b2bf6f600dfd1956fc9530aa.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-AU/79fc5d4c3ac8e34a4c5dabe6c7cc452f016b5128c1034b14823f5903d273727a.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/ja-JP/1fc8d8661b3bbd9856f7f37bd7166e74000c9abd19181086df8076835463710f.mp3"
+    },
+    "examples": [
+      {
+        "en": "I have a tax file number.",
+        "zh": "我有稅務檔案號碼。",
+        "translations": {
+          "zh": "我有稅務檔案號碼。",
+          "ja": "私はタックスファイルナンバーを持っています。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-US/3aa9db03a02f45f94ffa171b0e76ba7f0bf5a3467971ae3dc59857b4e8ec7a8a.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-GB/1f06f3b3ebe26ebd0a6ebf4ffdbe3a601979473f93d9e513013c6f0a4b494a62.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-AU/088b073ffbc0da428d9f63d6ecb6583ac12ac2a6eaa645a0c022904a603ba827.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/ja-JP/3dc34517406fc67db63993f5f47d215efc7fe948837353c172f05ec182edbd8a.mp3"
+        },
+        "mentionedWordIds": [
+          "tax-file-number"
+        ]
+      },
+      {
+        "en": "I checked where to find my tax file number before completing the form.",
+        "zh": "填表之前，我先確認在哪裡找我的稅務檔案號碼。",
+        "translations": {
+          "zh": "填表之前，我先確認在哪裡找我的稅務檔案號碼。",
+          "ja": "書類に記入する前に、タックスファイルナンバーをどこで確認できるか調べました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-US/289282c125242ca5b1aba7cb0699bf16d77eacfdc9fecb6bdf6258f2ee005c00.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-GB/fffc016a0216fda7792e501d164ab6766a4de49c1eebe8c4d891abc015dcc667.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/en-AU/1424d6e7287e4d902642805b156b724329cc9113c834cac6c610d70c07a9fdec.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/tax-file-number/ja-JP/4089d8662648dbe239a2b9a4f38a15d616a60e2eb570de3e1500d2dd5181c426.mp3"
+        },
+        "mentionedWordIds": [
+          "tax-file-number"
+        ]
+      }
+    ]
+  },
+  "superannuation": {
+    "visibility": "australia-only",
+    "headword": "superannuation",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/superannuation/a39f16e8a7c2f1a2ef04c708536b5645d225eb216959f4e4faf7933b671cf6f9.webp",
+    "gloss": {
+      "zh-Hant": "退休金",
+      "ja": "退職年金",
+      "en": "superannuation"
+    },
+    "explanation": {
+      "en": "Money saved in Australia's retirement savings system, often called super.",
+      "zh-Hant": "澳洲退休儲蓄制度中的錢，常簡稱 super。",
+      "ja": "オーストラリアの退職後のための積立制度で貯めるお金。super と略されることが多い。"
+    },
+    "englishDefinition": "Money saved in Australia's retirement savings system, often called super.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-US/4297c15beabf4964caf39dc64727ee922cc361fa5ac93f7bb817359261d423de.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-GB/ce0d2c6ce73b1a39ed36b62a5a7c19fe664f069358268346088f96619a9ef9e0.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-AU/24feb20b159d9fb5bb61b3d062746d98e266f28969ef3043b89aae4927eb17bb.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/superannuation/ja-JP/de794f16c40f9fb9d3873c07e9e60bb3ae654e95a6bd81eb166ceeef47e4502b.mp3"
+    },
+    "examples": [
+      {
+        "en": "I checked my superannuation account.",
+        "zh": "我查看了退休金帳戶。",
+        "translations": {
+          "zh": "我查看了退休金帳戶。",
+          "ja": "退職年金の口座を確認しました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-US/7509a3d4a29c17d771aa2ceeb744f35a17afefa7421baf39bb0ac3a879462ba5.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-GB/accc14d1ede6dd40a8f3e71f6322e981d3da0b09719fe603ff7e52d89b9b83e1.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-AU/87860de314bf244c2292a086536c71d7c71c876de9f387ea4a1ffb0c373cd8f8.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/superannuation/ja-JP/c1c5bf39ba3c60defc3da8a39b0372985813e9da7a67a010e6f1b9bbff0d3baa.mp3"
+        },
+        "mentionedWordIds": [
+          "superannuation"
+        ]
+      },
+      {
+        "en": "I looked at my pay slip to check the superannuation contribution.",
+        "zh": "我查看薪資單，確認退休金提繳。",
+        "translations": {
+          "zh": "我查看薪資單，確認退休金提繳。",
+          "ja": "退職年金の拠出額を確認するため、給与明細を見ました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-US/b2949fcaa01351d3ceaddd552885208b3e7a3699edcd9385534aa3bd6531c959.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-GB/0dac1e511d8165e002e861bfa8fb46543f6e6a6f563592271ec8ae5e710efa82.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/superannuation/en-AU/276639d839ad0f45c56e6c51ca450dc83493f56bd6d7cacc72d6821f0bc00c6d.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/superannuation/ja-JP/2c248734fd22de885aa74666393d1ca22045250712b20815bf1216d9cce326d8.mp3"
+        },
+        "mentionedWordIds": [
+          "superannuation"
+        ]
+      }
+    ]
+  },
+  "orientation": {
+    "visibility": "australia-only",
+    "headword": "orientation",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/orientation/647b2e1481a462e324105bf6b126bd1b0836ca09c561e50c0090650063eb14a1.webp",
+    "gloss": {
+      "zh-Hant": "新生說明會",
+      "ja": "オリエンテーション",
+      "en": "orientation"
+    },
+    "explanation": {
+      "en": "An introductory event where new students learn about their school and its services.",
+      "zh-Hant": "讓新生認識學校與服務的介紹活動。",
+      "ja": "新入生が学校や利用できるサービスを知るための案内行事。"
+    },
+    "englishDefinition": "An introductory event where new students learn about their school and its services.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-US/2cc18284437e998227618194335ac055ae5d09cf2cb428f2fc421b76be34700b.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-GB/b8efe621858f6b55f07636c12ec52e863e2da355268895624d5bd8e3c58bdc81.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-AU/32a9021690572c69a79d97fab9ed5bb37e9063c316e771509134e53c70d57ba4.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/orientation/ja-JP/00bd8ba723e4deae86b52f25ae85c8c4dc09b64195641d39bb6ab6ca6d807dce.mp3"
+    },
+    "examples": [
+      {
+        "en": "Orientation starts at nine.",
+        "zh": "新生說明會九點開始。",
+        "translations": {
+          "zh": "新生說明會九點開始。",
+          "ja": "オリエンテーションは九時に始まります。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-US/7c45ba8cba65d96acefcc9a690f8f3ae04175688290669115502155151554ef4.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-GB/acd4d1283354ba8175e07cb11662718f350e9810b4b6d3a06af19647d7921d24.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-AU/19142e9f521c3f44f02e0ef7492436b269bc3a58c975f18b88207a0b26e67676.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/orientation/ja-JP/de5e6b3f482c360b9467b8f9c386d721e3e0b7dd7715f4b9d04a4a4d419a166f.mp3"
+        },
+        "mentionedWordIds": [
+          "orientation"
+        ]
+      },
+      {
+        "en": "I attended orientation so I could learn where to get help on campus.",
+        "zh": "我參加新生說明會，了解在校園裡可以去哪裡尋求協助。",
+        "translations": {
+          "zh": "我參加新生說明會，了解在校園裡可以去哪裡尋求協助。",
+          "ja": "キャンパスでどこに相談できるか知るため、オリエンテーションに参加しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-US/44d1814ff5588cc1b172c7b98bcf705834f5e4ef759da835041a8810653df51a.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-GB/0582fe41a36c12fe6891119e8a67d56bc9b93cf702c21c0f79d4de3980a84e77.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/orientation/en-AU/901bfb607a71704aac7e3e09cec38bbcf0db8838f0a65cacdaf4af881c71af01.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/orientation/ja-JP/2dd2eec61164b2ab698f1c4bd87488861de3244b77c25291d6855b3434842dd1.mp3"
+        },
+        "mentionedWordIds": [
+          "orientation"
+        ]
+      }
+    ]
+  },
+  "student-services-desk": {
+    "visibility": "australia-only",
+    "headword": "student services desk",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/student-services-desk/cfb790d024fd1e4e6b9810d250455b674e96b229e6b15829da0ae261f6f294bc.webp",
+    "gloss": {
+      "zh-Hant": "學生服務櫃台",
+      "ja": "学生サービス窓口",
+      "en": "student services desk"
+    },
+    "explanation": {
+      "en": "A campus desk where students can ask for information and support.",
+      "zh-Hant": "學生可詢問資訊或尋求協助的校園櫃台。",
+      "ja": "学生が情報を尋ねたり支援を受けたりできる学内の窓口。"
+    },
+    "englishDefinition": "A campus desk where students can ask for information and support.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-US/5c05fc90d3b47a84e48c084f86c6e65e49b1c5ce519b5d76594b270e2604fdce.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-GB/aea0b64fe958ee3367186fc3f001ca9267abd22d219489d0b748fe91629d10f2.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-AU/f32ca1ab1c7a5cec8a676db0e906ef303e285680c42d40611eafc9f82a6ec9c7.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/ja-JP/5bb451193735dcecf5978df6b478342581ea6203573e560f23ad71a384b2353d.mp3"
+    },
+    "examples": [
+      {
+        "en": "The student services desk is upstairs.",
+        "zh": "學生服務櫃台在樓上。",
+        "translations": {
+          "zh": "學生服務櫃台在樓上。",
+          "ja": "学生サービス窓口は上の階にあります。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-US/1b5d9ec969c5ff803b51175983a9c103d47d3c9e4cf5410160589387e29d5583.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-GB/efb97e3453711c4c0e73352a004b33cfc74bdf17777abc1b928dd68d304761d7.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-AU/d650a78271c0014c6cc11d250647b80972f5d7ebac3710de30098ed410afb7bc.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/ja-JP/8b9c77fcd2e5e2d5e946a1c43c118e9e0ce13f6a0b60b2d1ad896a8dec3065bc.mp3"
+        },
+        "mentionedWordIds": [
+          "student-services-desk"
+        ]
+      },
+      {
+        "en": "I went to the student services desk because I could not log in to my student portal.",
+        "zh": "我無法登入學生入口網站，所以去了學生服務櫃台。",
+        "translations": {
+          "zh": "我無法登入學生入口網站，所以去了學生服務櫃台。",
+          "ja": "学生ポータルにログインできなかったので、学生サービス窓口に行きました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-US/232030ca04f9530626b4b8def60478ec5f20739d556fc8b06612e2542265ae47.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-GB/7eac95db87faa3bb9dd57d08760f69be0e526eca3f4d69d1717030918721596e.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/en-AU/d2c083346c91675876755707c1c78327d10f62bce412694c5a86bac2085254c4.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/student-services-desk/ja-JP/473cd996d8044cce27290994b748f04df7dab5527e2c1adfa77191d57021e793.mp3"
+        },
+        "mentionedWordIds": [
+          "student-services-desk"
+        ]
+      }
+    ]
+  },
+  "student-portal": {
+    "visibility": "australia-only",
+    "headword": "student portal",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/student-portal/b6459b6a2d1a9e616c6a15c3c193989d18089c4a1f02a280fee47f4352056840.webp",
+    "gloss": {
+      "zh-Hant": "學生入口網站",
+      "ja": "学生ポータル",
+      "en": "student portal"
+    },
+    "explanation": {
+      "en": "A school's online service where students can access information and services.",
+      "zh-Hant": "學生可使用校方資訊與服務的線上入口。",
+      "ja": "学生が学校の情報やサービスを利用できるオンライン窓口。"
+    },
+    "englishDefinition": "A school's online service where students can access information and services.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-US/2fdbb74e0f85ff7d276dacbfab49507e81678624c35ec2f848973dc5ff33266b.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-GB/238d4433d9309d3251815fe348a3a1ebfe68c42f8d0f273f644775d4a650fa69.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-AU/0d3f4eb653f7cc8fb549c896d8b7c60187926f2f27f00ae961535dd0560eda33.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/student-portal/ja-JP/2f468b2fe45612bfb5c220274979d68d6543d7df2cbab2fb58f8ef3876320710.mp3"
+    },
+    "examples": [
+      {
+        "en": "I opened the student portal.",
+        "zh": "我開啟了學生入口網站。",
+        "translations": {
+          "zh": "我開啟了學生入口網站。",
+          "ja": "学生ポータルを開きました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-US/04dbd4fa661c63cb8a07cb45a53108fb03f4d35c5e18e3c9371e90d17df4d7c7.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-GB/5c3d992b797b043c66ad7b54aeaf11ed7bea4aee647a500137eac44d7e10226c.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-AU/0362b62a1476463e64d4dd03292635530329ad6f04bbb9e36c9554075e618b26.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/student-portal/ja-JP/fb4ff3666f954ddd0a1bd8a868d1a2eed961dc90b02967a5dd32905e519cd67b.mp3"
+        },
+        "mentionedWordIds": [
+          "student-portal"
+        ]
+      },
+      {
+        "en": "I checked the student portal to find my class timetable.",
+        "zh": "我查看學生入口網站，找我的課表。",
+        "translations": {
+          "zh": "我查看學生入口網站，找我的課表。",
+          "ja": "授業の時間割を探すために、学生ポータルを確認しました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-US/b856719bfc46ce9c2fa06aa5e8fa50b5b8002f3e2edd988c97e8ec52a0309bfe.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-GB/f2be1ac6d8115cb0781a0e87b8b394920c7277a50db7b11ef20a2c413a39b0f2.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/student-portal/en-AU/47e7f2cdc226097c3d03029dcba02a991b4672909f1c4ca75230328450a37161.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/student-portal/ja-JP/478609631a9433e02d7789ddc7c10d79b98a8655161ee4e46b07981707051809.mp3"
+        },
+        "mentionedWordIds": [
+          "student-portal"
+        ]
+      }
+    ]
+  },
+  "proof-of-enrolment": {
+    "visibility": "australia-only",
+    "headword": "proof of enrolment",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/proof-of-enrolment/66b5bd9e58f27d2faea65fbcc2cc7c74a51e7ea7588f17d46bb18462047c248b.webp",
+    "gloss": {
+      "zh-Hant": "在學證明",
+      "ja": "在学証明書",
+      "en": "proof of enrolment"
+    },
+    "explanation": {
+      "en": "A document showing that a student is enrolled at an institution.",
+      "zh-Hant": "證明學生已在某個機構註冊就讀的文件。",
+      "ja": "学生が教育機関に在籍していることを示す書類。"
+    },
+    "englishDefinition": "A document showing that a student is enrolled at an institution.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-US/51d0104dbb1ebcaa56f78bf8fcbb37976e3a740e5c487ad4116e812682de6d11.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-GB/8a9e772fdffa8654f48a614495d20f8633b2df6adb16fa909d59b7a67e449302.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-AU/019a480eab92458b6a00ef3434fb1a9f52e8a4a6f55cb3e77c84f9a4bf0b5ddf.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/ja-JP/948eecdd93c1d9ed93b6e1b28fa0e97d7eda139c71f9c5f44957152e36284dc0.mp3"
+    },
+    "examples": [
+      {
+        "en": "I downloaded my proof of enrolment.",
+        "zh": "我下載了在學證明。",
+        "translations": {
+          "zh": "我下載了在學證明。",
+          "ja": "在学証明書をダウンロードしました。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-US/49a64fb8d19e338d67b0d6ec4798ba3a0e83c3a7c98f9f6bf93b5441e74c43a6.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-GB/435fb344d247e4d260be84e0d09e8cd0dccdc59d2efb41146e7f15667d7e1bae.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-AU/2c383c4c444df785fdfa1d7bf1b73d952caa04c64bc46971199b6086c9b405b4.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/ja-JP/2b44e1e7ef3e172255954ff7400df8b7be4ff5607c2e97c2b6a14f13d4aba94c.mp3"
+        },
+        "mentionedWordIds": [
+          "proof-of-enrolment"
+        ]
+      },
+      {
+        "en": "I asked the school for proof of enrolment because I needed it for an application.",
+        "zh": "因為申請需要，我向學校索取在學證明。",
+        "translations": {
+          "zh": "因為申請需要，我向學校索取在學證明。",
+          "ja": "申請に必要だったので、学校に在学証明書をお願いしました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-US/526775f6a7218c7dc1a73ebdacc1b91470c50ababca3611d2f9c266093736749.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-GB/8c6ecde7743bf77f4f48633af6f8b20bc5cb3a96cd5a64c51039ac1b1863c18a.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/en-AU/8eca8922afbf4bc8f56466f988a1eae7494570989cbc7424ba9c3e4dd59e6326.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/proof-of-enrolment/ja-JP/34153b34c497f0ac9aaca08b3ca6f66ad2e91c69d47a9f6b8938348ef0d857f1.mp3"
+        },
+        "mentionedWordIds": [
+          "proof-of-enrolment"
+        ]
+      }
+    ]
+  },
+  "transit-ic-card": {
+    "visibility": "shared",
+    "headword": "Opal card",
+    "pronunciation": "",
+    "imageUrl": "https://img.nexflow.team/word-images/australia/words/transit-ic-card-au/4c6ad050247c1fe453b95a13cacc5287973c6b9c0ed479d934d9da1b61599563.webp",
+    "gloss": {
+      "zh-Hant": "Opal 交通卡",
+      "ja": "オパールカード",
+      "en": "Opal card"
+    },
+    "explanation": {
+      "en": "A reusable travel card used to pay fares on the Opal network in Sydney and surrounding areas.",
+      "zh-Hant": "在雪梨及周邊 Opal 網路搭乘公共交通時可使用的交通卡。",
+      "ja": "シドニーと周辺のオパールネットワークで、公共交通機関の運賃の支払いに使う交通カード。"
+    },
+    "englishDefinition": "A reusable travel card used to pay fares on the Opal network in Sydney and surrounding areas.",
+    "audioUrls": {
+      "en-US": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-US/f1cc29fc6babbb0d8b3d2390f75d8914758a328045fc4771da0c42539c377edd.mp3",
+      "en-GB": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-GB/f9af57661c1f601a23f8be9c2e81891b0aa37adf4c1789bd70d5f9c8ee93f4c7.mp3",
+      "en-AU": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-AU/53d0a9fc5897a5d36c722007f8e605c6120d5fb0bad7cb40c6eee32ccb5c0d2f.mp3",
+      "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/ja-JP/69b6105d479791c1241c7518324e302fad5ad88c12cf99bf595e18ac33c7fc74.mp3"
+    },
+    "examples": [
+      {
+        "en": "Tap your Opal card here.",
+        "zh": "請在這裡感應你的 Opal 卡。",
+        "translations": {
+          "zh": "請在這裡感應你的 Opal 卡。",
+          "ja": "オパールカードをここにタッチしてください。"
+        },
+        "sortOrder": 0,
+        "cefrLevel": "A2",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-US/3ee4f7dac181013ea00ebc6f90c968ae26b09bedc089f6791a58f7b0ded7607a.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-GB/cbf9ae28b6fed2b04bef381d3db40a389d7338dee65961dde1ed6b77e183c76b.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-AU/885caf2fb3faea389e176376a2815b93d057dbda23929c396707c1190bcb89e2.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/ja-JP/ec02ed67938382ad82e641b01608f3508f562d1c39c93f44b28c847929ad7be3.mp3"
+        },
+        "mentionedWordIds": [
+          "transit-ic-card"
+        ]
+      },
+      {
+        "en": "I topped up my Opal card before boarding because the balance was low.",
+        "zh": "因為餘額偏低，我在搭車前替 Opal 卡儲值。",
+        "translations": {
+          "zh": "因為餘額偏低，我在搭車前替 Opal 卡儲值。",
+          "ja": "残高が少なかったので、乗車する前にオパールカードにチャージしました。"
+        },
+        "sortOrder": 1,
+        "cefrLevel": "B1",
+        "audioUrls": {
+          "en-US": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-US/928dfc5e473944ed00e520dbbf30502712a7c9350729187a0337beffaaae452f.mp3",
+          "en-GB": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-GB/22a50662614268d4189067a731d6a53f14c7a75e368979b2da09e054693f2951.mp3",
+          "en-AU": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/en-AU/f16ba2c9dbf0b607b77fbf0f31ffc63b163e22e83459439413b819eb3bae9c3f.mp3",
+          "ja-JP": "https://img.nexflow.team/word-audio/australia/audio/transit-ic-card/ja-JP/4aff8ae7d1ec7aefcf7b258be4f17bc7cfb22eca16e3e276822a63a9cfe6d172.mp3"
+        },
+        "mentionedWordIds": [
+          "transit-ic-card"
+        ]
+      }
+    ]
+  }
+}

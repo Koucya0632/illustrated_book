@@ -9,11 +9,14 @@ export const dynamic = 'force-dynamic';
 export const maxDuration = 15;
 const headers = { 'Cache-Control': 'private, no-store', 'Vercel-CDN-Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' };
 
-export async function POST() {
+export async function POST(request: Request) {
+  const authorization = request.headers.get('authorization');
   const result = await runTargetDiagnostic({
     now: Date.now, production: process.env.VERCEL_ENV === 'production',
-    from: process.env.DATABASE_TARGET_DIAGNOSTIC_FROM_MS,
-    until: process.env.DATABASE_TARGET_DIAGNOSTIC_UNTIL_MS,
+    activation: authorization?.startsWith('Bearer ') ? authorization.slice(7) : undefined,
+    key: process.env.DATABASE_TARGET_DIAGNOSTIC_KEY_HEX,
+    keyFrom: process.env.DATABASE_TARGET_DIAGNOSTIC_KEY_FROM_MS,
+    keyExpires: process.env.DATABASE_TARGET_DIAGNOSTIC_KEY_EXPIRES_MS,
     ref: process.env.DATABASE_TARGET_DIAGNOSTIC_REF,
     expectedDigest: process.env.DATABASE_TARGET_DIAGNOSTIC_IDENTITY_SHA256,
     authorized: async () => verifyAdminToken((await cookies()).get(ADMIN_COOKIE)?.value),

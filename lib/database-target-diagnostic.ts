@@ -1,4 +1,4 @@
-import { createHash, timingSafeEqual } from 'node:crypto';
+import { createHash, createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
 
 // An operational diagnostic, not an authorization or a proof of fleet-wide
 // identity. No connection details, SQL errors or fingerprints leave this module.
@@ -26,6 +26,24 @@ export function databaseIdentityDigest(systemId: string, databaseName: string): 
   return createHash('sha256').update(JSON.stringify([systemId, databaseName])).digest('hex');
 }
 
+/** Dedicated activation key; never use the admin password or cookie key. */
+export function mintDiagnosticActivation(keyHex: string, ref: string, digest: string, now: number, lifetimeMs = 60_000): string {
+  if (!/^[a-f0-9]{64}$/.test(keyHex) || !/^[a-z0-9]{16,32}$/.test(ref) || !/^[a-f0-9]{64}$/.test(digest) || !Number.isSafeInteger(now) || !Number.isSafeInteger(lifetimeMs) || lifetimeMs < 1 || lifetimeMs > 300_000) throw new Error('invalid activation parameters');
+  const payload = `v2.${now}.${now + lifetimeMs}.${randomBytes(16).toString('hex')}.${ref}.${digest}`;
+  return `${payload}.${createHmac('sha256', Buffer.from(keyHex, 'hex')).update(payload).digest('hex')}`;
+}
+
+export function validDiagnosticActivation(token: string | undefined, keyHex: string | undefined, keyFrom: string | undefined, keyExpires: string | undefined, expectedRef: string, expectedDigest: string, now: number): boolean {
+  if (!token || token.length > 256 || !keyHex || !/^[a-f0-9]{64}$/.test(keyHex) || !keyFrom || !/^\d{13}$/.test(keyFrom) || !keyExpires || !/^\d{13}$/.test(keyExpires) || !Number.isSafeInteger(now)) return false;
+  const match = /^v2\.(\d{13})\.(\d{13})\.([a-f0-9]{32})\.([a-z0-9]{16,32})\.([a-f0-9]{64})\.([a-f0-9]{64})$/.exec(token);
+  if (!match) return false;
+  const issued = Number(match[1]), expires = Number(match[2]), keyStart = Number(keyFrom), keyDeadline = Number(keyExpires);
+  if (keyDeadline <= keyStart || keyDeadline - keyStart > 24 * 60 * 60_000 || issued < keyStart || issued > now || now < keyStart || expires <= now || expires <= issued || expires - issued > 300_000 || expires > keyDeadline || now >= keyDeadline || match[4] !== expectedRef || match[5] !== expectedDigest) return false;
+  const payload = `v2.${match[1]}.${match[2]}.${match[3]}.${match[4]}.${match[5]}`;
+  const expected = createHmac('sha256', Buffer.from(keyHex, 'hex')).update(payload).digest();
+  return timingSafeEqual(expected, Buffer.from(match[6], 'hex'));
+}
+
 export async function inspectDatabaseTarget(sql: TargetDiagnosticSql, ref: string, expectedDigest: string) {
   const configuredRefMatches = configuredProjectMatches(sql.options.host, sql.options.user, ref);
   let databaseIdentityMatches: boolean | null = null;
@@ -45,20 +63,17 @@ export async function inspectDatabaseTarget(sql: TargetDiagnosticSql, ref: strin
 }
 
 export async function runTargetDiagnostic(deps: {
-  now: () => number; production: boolean; from: string | undefined; until: string | undefined;
+  now: () => number; production: boolean; activation: string | undefined; key: string | undefined; keyFrom: string | undefined; keyExpires: string | undefined;
   ref: string | undefined; expectedDigest: string | undefined;
   authorized: () => Promise<boolean>; sql: () => TargetDiagnosticSql | null;
 }) {
-  const from = deps.from && /^\d{13}$/.test(deps.from) ? Number(deps.from) : NaN;
-  const until = deps.until && /^\d{13}$/.test(deps.until) ? Number(deps.until) : NaN;
-  const now = deps.now();
-  if (!deps.production || !Number.isFinite(from) || !Number.isFinite(until) || until <= from || until - from > 5 * 60_000 || now < from || now >= until ||
-      !deps.ref || !/^[a-z0-9]{16,32}$/.test(deps.ref) || !deps.expectedDigest || !/^[a-f0-9]{64}$/.test(deps.expectedDigest)) return null;
+  if (!deps.production || !deps.ref || !/^[a-z0-9]{16,32}$/.test(deps.ref) || !deps.expectedDigest || !/^[a-f0-9]{64}$/.test(deps.expectedDigest)) return null;
   try { if (!await deps.authorized()) return null; } catch { return null; }
-  if (deps.now() >= until) return null;
+  const activated = () => validDiagnosticActivation(deps.activation, deps.key, deps.keyFrom, deps.keyExpires, deps.ref!, deps.expectedDigest!, deps.now());
+  if (!activated()) return null;
   try {
     const sql = deps.sql();
     const result = sql ? await inspectDatabaseTarget(sql, deps.ref, deps.expectedDigest) : { configuredRefMatches: null, databaseIdentityMatches: null };
-    return deps.now() < until ? result : null;
-  } catch { return deps.now() < until ? { configuredRefMatches: null, databaseIdentityMatches: null } : null; }
+    return activated() ? result : null;
+  } catch { return activated() ? { configuredRefMatches: null, databaseIdentityMatches: null } : null; }
 }

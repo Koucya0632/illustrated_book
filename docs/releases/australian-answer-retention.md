@@ -1,6 +1,6 @@
 # 澳洲詞條撤回與舊版手機答案
 
-正式啟用澳洲專屬詞前，必須先部署並在目標資料庫核實 `installAustralianAnswerRetention` 的兩個觸發器。啟用前未建立的保護無法追溯已刪除的卡片或答案；部署後也不涵蓋其他國家的未來新詞。這份說明與本機測試不代表已部署或發布。
+正式啟用澳洲專屬詞前，必須先在已確認的目標資料庫受控安裝並核實 `installAustralianAnswerRetention` 的兩個觸發器。本批程式部署不會自動安裝它們；安裝前需另完成目標、權限及對現有資料與表鎖影響的檢查。啟用前未建立的保護無法追溯已刪除的卡片或答案；部署後也不涵蓋其他國家的未來新詞。這份說明與本機測試不代表已部署或發布。
 
 撤回時只將詞條設為 `status = 'archived'` 並設定 `deleted_at`，不要刪除詞列、卡列或改變 ID／牌組。現行 `softDeleteWord` 使用這個方式；澳洲租屋分類也必須維持 `australia-housing`，因為免費會員的舊答案透過原分類判斷是否可寫入。公開目錄及新學／複習佇列應繼續按地區守門隱藏撤回內容，`/api/study/answer` 需要保留對既有卡片的寫入能力。恢復公開要走完整批次檢查。
 
@@ -14,6 +14,6 @@
 
 ## 正式開放前的資料庫唯讀阻擋條件
 
-部署完成不等於資料庫保護已安裝：`scripts/migrate.ts` 缺少 `DATABASE_URL` 時會略過。開放六詞前，必須對確認為 App 正式寫入的主資料庫，使用具唯讀權限的連線，執行 `npx tsx scripts/verify-australian-answer-retention.ts`。設定 `AU_RETENTION_VERIFY_DATABASE_URL` 為該資料庫連線、`AU_RETENTION_EXPECTED_HOST` 和 `AU_RETENTION_EXPECTED_DATABASE` 為獨立核對的目標主機與資料庫名稱；不要把連線字串或密碼寫進文件、日誌或聊天。任一設定缺少、目標不符、無法查證、連到副本或回傳非零退出碼，都視為未通過，禁止開放。
+部署完成不等於資料庫保護已安裝：一般 `scripts/migrate.ts` 不會安裝此保護。開放六詞前，必須對確認為 App 正式寫入的主資料庫，使用具唯讀權限的連線，執行 `npx tsx scripts/verify-australian-answer-retention.ts`。設定 `AU_RETENTION_VERIFY_DATABASE_URL` 為該資料庫連線、`AU_RETENTION_EXPECTED_HOST` 和 `AU_RETENTION_EXPECTED_DATABASE` 為獨立核對的目標主機與資料庫名稱；不要把連線字串或密碼寫進文件、日誌或聊天。任一設定缺少、目標不符、無法查證、連到副本或回傳非零退出碼，都視為未通過，禁止開放。
 
 工具在唯讀交易檢查 `public.words`、`public.cards` 上各自的觸發器已啟用、事件與欄位正確、綁定預期函式，且函式內容和程式中全部保留 ID 完全一致。也檢查連線不是讀取副本且該連線使用正常觸發器模式。它不證明 App 部署實際連向同一資料庫、其他帳號不會以特殊複寫模式或高權限操作、或其他觸發器不會干擾；這些需要在正式環境另行核對，並在切換或回復資料庫後重驗。任何跳過、失敗或不確定都不能以部署成功代替。

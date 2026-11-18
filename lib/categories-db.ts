@@ -6,6 +6,7 @@ import "server-only";
 import type { Category } from "@/types";
 import { publicFallbackCategories as staticCategories } from "./categories";
 import { localizeCategory } from "./word-localize";
+import { applyAustralianCategoryCopy } from "./australian-category-copy";
 import type { LearningDirection, UiLang } from "./settings";
 import variants from "@/data/australian-word-variants.json";
 import { regionalCatalogueActive, type AustralianWordVariants } from "./australian-word-variants";
@@ -14,7 +15,8 @@ import { getSql } from "./db";
 import { readCatalogueTopics } from "./catalogue/topics";
 
 export async function getCategoriesFromDb(lang: UiLang = "zh-Hant", direction?: LearningDirection): Promise<Category[]> {
-  const scoped = (categories: Category[]) => filterAustralianCategories(categories, direction, variants as AustralianWordVariants);
+  const scoped = (categories: Category[]) => filterAustralianCategories(categories, direction, variants as AustralianWordVariants)
+    .map((category) => applyAustralianCategoryCopy(category, lang, direction));
   const sql = getSql();
   if (!sql) {
     if (regionalCatalogueActive && direction === "zh-en") throw new Error("regional categories require database");

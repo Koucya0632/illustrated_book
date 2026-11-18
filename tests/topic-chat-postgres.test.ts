@@ -153,10 +153,10 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
         wallet: () => wallet.wallet,
         store: () => createTopicChatStore(sql),
         model: () => control.model,
-        loadTopic: async topicId => ["street", "zoo"].includes(topicId)
+        loadTopic: async topicId => ["street", "zoo", "australia-housing"].includes(topicId)
           ? { id: topicId, name: `${topicId}-name`, nameEn: topicId, words: [{ id: `${topicId}-1`, word: "駅", meaning: "車站" }] }
           : null,
-        topicNames: async () => new Map([["street", "街上"], ["zoo", "動物"]]),
+        topicNames: async (_lang, direction) => new Map([["street", direction === "zh-en" ? "街上-澳洲" : "街上"], ["zoo", "動物"], ...(direction === "zh-en" ? [["australia-housing", "租屋與合租"] as [string,string]] : [])]),
         rateLimit: async () => {},
         record: async entry => { records.push(entry); },
         reportError: () => {},
@@ -193,6 +193,33 @@ test("topic chat against isolated PostgreSQL", { skip: !databaseUrl }, async t =
       assert.equal(h.control.calls.filter(c => c.kind === "opening").length, 1);
       // Openings are free.
       assert.equal(h.wallet.charges.size, 0);
+    });
+
+    await t.test("list and detail use the conversation direction for topic names", async () => {
+      const h = await harness();
+      const jp = (await h.start()).json;
+      const au = (await h.call("POST", "/api/topic-chat", { action: "start" },
+        { requestId: randomUUID(), uiLanguage: "zh-Hant", learningDirection: "zh-en", topicId: "street" })).json;
+      assert.equal(jp.chat.topicName, "街上"); assert.equal(au.chat.topicName, "街上-澳洲");
+      const listJp = await h.call("GET", "/api/topic-chat?learningDirection=zh-ja", { action: "list" });
+      const listAu = await h.call("GET", "/api/topic-chat?learningDirection=zh-en", { action: "list" });
+      const jpRows = listJp.json.chats as unknown as {id:string;topicName:string}[];
+      const auRows = listAu.json.chats as unknown as {id:string;topicName:string}[];
+      assert.deepEqual(jpRows.map(c => [c.id,c.topicName]), [[jp.chat.id,"街上"]]);
+      assert.deepEqual(auRows.map(c => [c.id,c.topicName]), [[au.chat.id,"街上-澳洲"]]);
+      const jpDetail = await h.call("GET", `/api/topic-chat/${jp.chat.id}?learningDirection=zh-en`, { action: "read", chatId: jp.chat.id });
+      const auDetail = await h.call("GET", `/api/topic-chat/${au.chat.id}?learningDirection=zh-ja`, { action: "read", chatId: au.chat.id });
+      assert.equal(jpDetail.json.chat.topicName,"街上");assert.equal(auDetail.json.chat.topicName,"街上-澳洲");
+      assert.equal(jpDetail.json.messages.find(m=>m.kind==="topic")?.topic?.name,"街上");
+      assert.equal(auDetail.json.messages.find(m=>m.kind==="topic")?.topic?.name,"街上-澳洲");
+      const housing = (await h.call("POST", "/api/topic-chat", { action: "start" },
+        { requestId: randomUUID(), uiLanguage: "zh-Hant", learningDirection: "zh-en", topicId: "australia-housing" })).json;
+      assert.equal(housing.chat.topicName,"租屋與合租");
+      const housingDetail = await h.call("GET", `/api/topic-chat/${housing.chat.id}?learningDirection=zh-ja`, { action: "read", chatId: housing.chat.id });
+      assert.equal(housingDetail.json.chat.topicName,"租屋與合租");
+      assert.equal(housingDetail.json.messages.find(m=>m.kind==="topic")?.topic?.name,"租屋與合租");
+      const housingJpList = await h.call("GET", "/api/topic-chat?learningDirection=zh-ja", { action: "list" });
+      assert.ok(!(housingJpList.json.chats as unknown as {id:string}[]).some(c=>c.id===housing.chat.id));
     });
 
     await t.test("an answer and its reply land together and are charged once, however often it is resent", async () => {

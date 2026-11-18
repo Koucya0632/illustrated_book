@@ -49,7 +49,8 @@ export function validateAustralianVariants(
         !variant || typeof variant !== "object" ||
         !["shared", "australia-only"].includes(variant.visibility) ||
         (variant.visibility === "australia-only") !== reservedIds.includes(id) ||
-        !nonempty(variant.headword) || !nonempty(variant.pronunciation) ||
+        !nonempty(variant.headword) || typeof variant.pronunciation !== "string" ||
+        (variant.pronunciation !== "" && !nonempty(variant.pronunciation)) ||
         !https(variant.imageUrl) || !nonempty(variant.englishDefinition) ||
         !variant.gloss || !variant.explanation ||
         !["zh-Hant", "ja", "en"].every((lang) =>

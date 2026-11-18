@@ -19,8 +19,11 @@ test("word-list addition rejects hidden words before querying the database", asy
     () => "gate",
   );
   assert.equal(await fn("rental-bond", "ja"), false);
-  assert.equal(await fn("rental-bond", "en"), false);
   assert.equal(queries, 0);
-  assert.equal(await fn("mug", "ja"), true);
+  // The complete Australian allowlist is active in this candidate. The
+  // Australian direction must reach the database's atomic six-word gate.
+  assert.equal(await fn("rental-bond", "en"), true);
   assert.equal(queries, 1);
+  assert.equal(await fn("mug", "ja"), true);
+  assert.equal(queries, 2);
 });

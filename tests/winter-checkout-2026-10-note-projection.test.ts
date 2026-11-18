@@ -8,7 +8,7 @@ import { targetLanguageFor, type LearningDirection, type UiLang } from "../lib/s
 import { localizeWord, localizeSpans, type LocalizedTextMap } from "../lib/word-localize";
 import { spansCoverSentence, unlinkSelfReference } from "../lib/example-spans";
 import { canStudyCard } from "../lib/study-membership";
-import { applyAustralianVariant, australianVariant, visibleInDirection } from "../lib/australian-word-variants";
+import { applyAustralianImage, applyAustralianVariant, australianVariant, visibleInDirection } from "../lib/australian-word-variants";
 
 // Extract the actual private DB-row adapter and detail function rather than
 // duplicating their implementation or importing Next's cache/DB runtime.
@@ -37,7 +37,7 @@ const raw = rowToWord({
 const getLearningWord = new Function(
   "getAllRawEntries", "jaGlossTermMap", "localizeWord", "targetLanguageFor", "targetTermMap",
   "spansForSentences", "spansCoverSentence", "localizeSpans", "unlinkSelfReference",
-  "applyAustralianVariant", "australianVariant", "visibleInDirection",
+  "applyAustralianImage", "applyAustralianVariant", "australianVariant", "visibleInDirection",
   actualFunctions(["getLearningWord"]) + "\nreturn getLearningWord;",
 )(
   async () => [raw],
@@ -45,7 +45,7 @@ const getLearningWord = new Function(
   localizeWord, targetLanguageFor,
   async (direction: LearningDirection) => new Map(after.terms.filter((t) => t.language === targetLanguageFor(direction)).map((t) => [t.word_id, t])),
   async () => new Map(), spansCoverSentence, localizeSpans, unlinkSelfReference,
-  applyAustralianVariant, australianVariant, visibleInDirection,
+  applyAustralianImage, applyAustralianVariant, australianVariant, visibleInDirection,
 ) as (id: string, lang: UiLang, direction: LearningDirection) => Promise<Word>;
 
 for (const lang of ["zh-Hant", "en", "ja"] as const) {

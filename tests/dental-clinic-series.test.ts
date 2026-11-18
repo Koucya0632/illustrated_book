@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import australianOnlyIds from '../data/australian-only-word-ids.json';
 import ts from 'typescript';
 import candidate from '../data/dental-clinic-series-2026-10.json';
 import review from '../data/dental-clinic-semantic-review-2026-10.json';
@@ -60,11 +61,12 @@ test('the ordinary async word loader hides the series when DB is absent or fails
  assert.match(source,/WHERE w\.deleted_at IS NULL AND w\.status = 'published'/);
  const start=source.indexOf('async function getAllRawEntries(');
  const end=source.indexOf('\n}',start)+2;
- const makeLoader=new Function('dbEnabled','fetchAllFromDb','staticWords','console',compile(`${source.slice(start,end)}\nreturn getAllRawEntries;`));
+ const makeLoader=new Function('dbEnabled','fetchAllFromDb','staticWords','australianOnlyIds','console',compile(`${source.slice(start,end)}\nreturn getAllRawEntries;`));
  for(const enabled of [false,true]){
-  const load=makeLoader(()=>enabled,async()=>{throw Error('simulated DB outage');},publicFallbackWords,{warn:()=>{}});
+  const load=makeLoader(()=>enabled,async()=>{throw Error('simulated DB outage');},publicFallbackWords,australianOnlyIds,{warn:()=>{}});
   const result=await load();
   assert.ok(result.length>0);
+  assert.equal(result.some((r:any)=>australianOnlyIds.includes(r.word.id)),false);
   assert.equal(result.some((r:any)=>r.word.category==='dental-clinic'||MAIN_WORD_DENTAL_CLINIC_IDS.includes(r.word.id)),false);
  }
 });

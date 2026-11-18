@@ -47,7 +47,7 @@ export const handleTopicChatRequest = createTopicChatHandler({
       words: words.map(word => ({ id: word.id, word: word.word, reading: word.reading, meaning: word.chinese })),
     };
   },
-  topicNames: async uiLanguage => new Map((await getCategoriesFromDb(uiLanguage)).map(c => [c.id, c.nameZh])),
+  topicNames: async (uiLanguage, direction) => new Map((await getCategoriesFromDb(uiLanguage, direction)).map(c => [c.id, c.nameZh])),
   rateLimit: async (userId, bucket) => {
     try {
       await (bucket === "reply" ? replyLimit : freeLimit)(userId);

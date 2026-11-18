@@ -63,7 +63,7 @@ export interface TopicChatDependencies {
   /** The category with its words in this direction, or null when it cannot be a topic. */
   loadTopic: (topicId: string, uiLanguage: UiLanguage, direction: LearningDirection) => Promise<TopicMaterial | null>;
   /** Category names in the interface language, for chats listed or read. */
-  topicNames: (uiLanguage: UiLanguage) => Promise<Map<string, string>>;
+  topicNames: (uiLanguage: UiLanguage, direction: LearningDirection) => Promise<Map<string, string>>;
   /** "free": openings, assists and reviews. "reply": paid answers. Throws `rate_limited`. */
   rateLimit: (userId: string, bucket: "free" | "reply") => Promise<void>;
   record: (entry: AssistantUsageRecord) => Promise<void>;
@@ -98,8 +98,9 @@ function directionOf(request: Request): LearningDirection {
   return new URL(request.url).searchParams.get("learningDirection") === "zh-ja" ? "zh-ja" : "zh-en";
 }
 
-function toMessage(row: MessageRow): ChatMessage {
+function toMessage(row: MessageRow, names: Map<string, string>): ChatMessage {
   let body = row.body;
+  if (row.kind === "topic" && names.has(row.topicId)) body = { ...body, name: names.get(row.topicId) };
   if (row.kind === "ai" && "spot" in body) {
     const { spot: _spot, ...shown } = body;
     body = shown;
@@ -227,11 +228,11 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
     if (!chat) throw new TopicChatError("chat_not_found");
     const [messages, pending, assists, names] = await Promise.all([
       s.store.messages(chat.id, STATE_MESSAGES), s.store.pending(chat.id),
-      s.store.assistsSinceAnswer(chat.id), deps.topicNames(uiLanguage),
+      s.store.assistsSinceAnswer(chat.id), deps.topicNames(uiLanguage, chat.learningDirection),
     ]);
     return {
       chat: summary(chat, names),
-      messages: messages.map(toMessage),
+      messages: messages.map(row => toMessage(row, names)),
       ...(pending ? {
         pending: {
           requestId: pending.requestId, kind: pending.kind,
@@ -379,7 +380,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
     async list(request: Request, s: Session) {
       const direction = directionOf(request);
       const [chats, names] = await Promise.all([
-        s.store.listChats(s.userId, direction, LIST_LIMIT), deps.topicNames(uiLanguageOf(request)),
+        s.store.listChats(s.userId, direction, LIST_LIMIT), deps.topicNames(uiLanguageOf(request), direction),
       ]);
       return Response.json({
         chats: chats.map(chat => summary(chat, names)),

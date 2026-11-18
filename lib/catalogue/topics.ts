@@ -1,5 +1,6 @@
 import type { CategoryTranslation } from "../word-localize";
 import { TOPIC_GATE_PLAN } from "./releases";
+import { AUSTRALIAN_RENTAL_CATEGORY, AUSTRALIAN_RENTAL_WORDS } from "../australian-categories";
 
 export interface CatalogueTopicRow {
   id: string;
@@ -22,6 +23,8 @@ export interface CatalogueTopicRow {
  * the routine migration guard is the other half of the same rule. */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function readCatalogueTopics(sql: any): Promise<CatalogueTopicRow[]> {
+  const categoryGate = [...TOPIC_GATE_PLAN.categories, ...AUSTRALIAN_RENTAL_WORDS.map(() => AUSTRALIAN_RENTAL_CATEGORY)];
+  const wordGate = [...TOPIC_GATE_PLAN.ids, ...AUSTRALIAN_RENTAL_WORDS];
   return (await sql`
     SELECT c.id, c.name, c.name_zh, c.emoji, c.description, c.description_en,
            c.color, c.image_url, c.sort_order,
@@ -32,7 +35,7 @@ export async function readCatalogueTopics(sql: any): Promise<CatalogueTopicRow[]
     FROM categories c
     WHERE NOT EXISTS (
       SELECT 1
-      FROM unnest(${TOPIC_GATE_PLAN.categories}::text[], ${TOPIC_GATE_PLAN.ids}::text[])
+      FROM unnest(${categoryGate}::text[], ${wordGate}::text[])
         AS planned(category, id)
       WHERE planned.category = c.id
         AND NOT EXISTS (

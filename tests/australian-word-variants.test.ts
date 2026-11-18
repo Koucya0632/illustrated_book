@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { applyAustralianVariant, australianStudyHint, hiddenAustralianIds, australianVariant, validateAustralianVariants, visibleInDirection } from "../lib/australian-word-variants";
+import { AUSTRALIAN_RENTAL_WORDS } from "../lib/australian-categories";
 import type { AustralianWordVariants } from "../lib/australian-word-variants";
 import type { Word } from "../types";
 
@@ -32,6 +33,10 @@ const variants: AustralianWordVariants = {
     audioUrls: audio,
   },
 };
+// Model the intended atomic activation of all six housing entries.
+for (const id of AUSTRALIAN_RENTAL_WORDS) {
+  if (!variants[id]) variants[id] = { ...variants["rental-bond"], examples: variants["rental-bond"].examples.map((example) => ({ ...example, mentionedWordIds: [id] })) };
+}
 const base = {
   id: "transit-ic-card", word: "transit IC card", imageUrl: "https://example.test/japan.webp",
   chinese: "交通卡", pronunciation: "old", audioUrls: { "en-US": "old.mp3" },
@@ -53,7 +58,7 @@ test("Australian-only words do not appear in Japanese and no partial variant can
   assert(visibleInDirection("transit-ic-card", "zh-ja", variants));
   assert(!visibleInDirection("rental-bond", "zh-ja", variants));
   assert(visibleInDirection("rental-bond", "zh-en", variants));
-  assert.deepEqual(hiddenAustralianIds("zh-ja", variants, ["rental-bond"]), ["rental-bond"]);
+  assert.deepEqual(new Set(hiddenAustralianIds("zh-ja", variants, ["rental-bond"])), new Set(AUSTRALIAN_RENTAL_WORDS));
   assert(!visibleInDirection("rental-bond", "zh-en", {}));
   assert.deepEqual(hiddenAustralianIds("zh-en", {}, ["rental-bond"]), ["rental-bond"]);
   const unreserved = structuredClone(variants);
@@ -71,4 +76,27 @@ test("Australian study hints localize explanations without revealing the English
   assert.equal(australianStudyHint(variant, "ja", "オパールカード"), "シドニーの交通カード");
   assert.equal(australianStudyHint(variant, "en", "Opal card"), undefined);
   assert.equal(australianStudyHint(variant, "zh-Hant", "雪梨交通卡"), undefined);
+});
+
+test("image-only Australian variants retain live shared text and audio", async () => {
+  const { applyAustralianImage, validateAustralianImages } = await import("../lib/australian-word-variants");
+  const images = { "transit-ic-card": "https://example.test/au.webp" };
+  validateAustralianImages(images, ["rental-bond"], {});
+  const aus = applyAustralianImage(base, "zh-en", images);
+  assert.equal(aus.imageUrl, images["transit-ic-card"]);
+  assert.equal(aus.word, base.word);
+  assert.equal(aus.audioUrls, base.audioUrls);
+  assert.equal(aus.examples, base.examples);
+  assert.equal(applyAustralianImage(base, "zh-ja", images), base);
+  assert.throws(() => validateAustralianImages({ "rental-bond": "https://example.test/img.webp" }, ["rental-bond"], {}));
+  assert.throws(() => validateAustralianImages({ "transit-ic-card": "http://example.test/img.webp" }, [], {}));
+  assert.throws(() => validateAustralianImages(images, [], variants));
+});
+
+
+test("partially activated housing entries stay hidden in both directions", () => {
+ const partial = { "rental-bond": variants["rental-bond"] };
+ assert.equal(australianVariant("rental-bond", "zh-en", partial), undefined);
+ assert.equal(visibleInDirection("rental-bond", "zh-en", partial, ["rental-bond"]), false);
+ assert.equal(visibleInDirection("rental-bond", "zh-ja", partial, ["rental-bond"]), false);
 });

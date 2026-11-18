@@ -36,7 +36,7 @@ export const handleTopicChatRequest = createTopicChatHandler({
   store: () => createTopicChatStore(sqlOrThrow()),
   model: () => (model ??= createTopicChatModel()),
   loadTopic: async (topicId, uiLanguage, direction) => {
-    const category = (await getCategoriesFromDb(uiLanguage)).find(c => c.id === topicId);
+    const category = (await getCategoriesFromDb(uiLanguage, direction)).find(c => c.id === topicId);
     if (!category || topicId === "community") return null;
     const words = (await getAllCardWords(uiLanguage, direction)).filter(word => word.category === topicId);
     if (words.length < MIN_TOPIC_WORDS) return null;

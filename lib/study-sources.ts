@@ -1,3 +1,5 @@
+import { studyCategoriesForDirection } from "./australian-categories";
+
 // Which sources a study queue draws from, given the user's theme selection.
 //
 // The theme picker mixes two kinds of thing in one list. Most entries are real
@@ -93,4 +95,16 @@ export function resolveQueueThemeScope(
     reviewOnly || categories.length === 0 || publicCategories.length > 0;
 
   return { publicCategories, wantsCustom, wantsCommunity, shouldFetchPublic };
+}
+
+/** An unavailable regional selection is not an instruction to study every
+ * theme. Reviews remain global so scheduled cards are never abandoned. */
+export function resolveDirectionThemeScope(
+  categories: string[], reviewOnly: boolean, direction: "zh-en" | "zh-ja",
+): QueueThemeScope {
+  const applicable = studyCategoriesForDirection(categories, direction);
+  if (!reviewOnly && categories.length > 0 && applicable.length === 0) {
+    return { publicCategories: [], wantsCustom: false, wantsCommunity: false, shouldFetchPublic: false };
+  }
+  return resolveQueueThemeScope(applicable, reviewOnly);
 }

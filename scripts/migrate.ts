@@ -24,6 +24,7 @@ import { backfillCaptureUsage } from "../lib/ai-operations/usage";
 import { migrateVocabularySchema } from "../lib/assistant/vocabulary/schema";
 import { migrateGrammarSchema } from "../lib/assistant/grammar/schema";
 import { migrateTopicChatSchema } from "../lib/topic-chat/schema";
+import { installAustralianAnswerRetention } from "../lib/catalogue/australian-answer-retention";
 
 const DDL = [
   // ---- Word dictionary (public read; admin-only write via service role) ----
@@ -2713,6 +2714,7 @@ async function main() {
       await sql.unsafe(stmt);
     }
     console.log(`[migrate] DDL applied (${DDL.length} statements).`);
+    await installAustralianAnswerRetention(sql);
     await migrateAiOperationsSchema(sql);
     await migrateAssistantSchema(sql);
     console.log(`[migrate] capture usage backfill: ${await backfillCaptureUsage(sql)} row(s).`);

@@ -7,6 +7,9 @@
 
 import { NextResponse } from "next/server";
 import { visibleInDirection } from "@/lib/australian-word-variants";
+import { AUSTRALIAN_RENTAL_WORDS, legacyRentalWordVisible } from "@/lib/australian-categories";
+import { australianRentalBatchReady } from "@/lib/catalogue/australian-rental-gate";
+import { getSql } from "@/lib/db";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getMembershipAccess } from "@/lib/atlas/entitlement";
 import { membershipPolicy } from "@/lib/atlas/membership";
@@ -27,8 +30,17 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   const { id } = await props.params;
   const lang = readLang(req) as UiLang;
   const direction = readLearningDirection(req);
-  if (!visibleInDirection(id, direction)) {
+  if (!legacyRentalWordVisible(id, req.url) || !visibleInDirection(id, direction)) {
     return NextResponse.json({ error: "not found" }, { status: 404, headers });
+  }
+  if ((AUSTRALIAN_RENTAL_WORDS as readonly string[]).includes(id)) {
+    try {
+      const sql = getSql();
+      if (!sql) throw new Error("regional catalogue database unavailable");
+      if (!(await australianRentalBatchReady(sql))) return NextResponse.json({ error: "not found" }, { status: 404, headers });
+    } catch {
+      return NextResponse.json({ error: "catalogue unavailable" }, { status: 503, headers });
+    }
   }
   const language = direction === "zh-ja" ? "ja" : "en";
   const [stored, userId] = await Promise.all([readStoredWordInsights(id, language), getCurrentUserId()]);

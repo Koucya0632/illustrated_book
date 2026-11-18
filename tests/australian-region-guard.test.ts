@@ -36,8 +36,8 @@ test("deployed guard probe rejects wrong commits and detects leaked reserved IDs
   const fetcher: typeof fetch = async (value) => {
     const url = new URL(value instanceof Request ? value.url : value);
     if (url.pathname === "/api/catalogue/region-guard") {
-      return Response.json({ guardProtocol: "tuji-australia-catalogue-v1", deploymentCommit: commit, deploymentCommitSource: "vercel-environment-self-reported",
-        reservedIdCount: 1, reservedIdsSha256: digest(ids), configurationSha256: digest([variants, ids]),
+      return Response.json({ guardProtocol: "tuji-australia-catalogue-v2", deploymentCommit: commit, deploymentCommitSource: "vercel-environment-self-reported",
+        reservedIdCount: 1, reservedIdsSha256: digest(ids), configurationSha256: digest([variants, ids, {}]),
       }, { headers: { "cache-control": "no-store", "vercel-cdn-cache-control": "no-store" } });
     }
     if (url.pathname === "/api/words") return Response.json({ words: leak ? [{ id: ids[0] }] : [] });
@@ -64,7 +64,7 @@ test("shared variants require and compare the reviewed Japanese baseline and bot
   const fetcher: typeof fetch = async (value) => {
     const url = new URL(value instanceof Request ? value.url : value);
     const ja = url.searchParams.get("learning") === "zh-ja";
-    if (url.pathname === "/api/catalogue/region-guard") return Response.json({ guardProtocol: "tuji-australia-catalogue-v1", deploymentCommit: commit, deploymentCommitSource: "vercel-environment-self-reported", reservedIdCount: 1, reservedIdsSha256: digest(ids), configurationSha256: digest([variants, ids]) }, { headers: { "cache-control": "no-store", "vercel-cdn-cache-control": "no-store" } });
+    if (url.pathname === "/api/catalogue/region-guard") return Response.json({ guardProtocol: "tuji-australia-catalogue-v2", deploymentCommit: commit, deploymentCommitSource: "vercel-environment-self-reported", reservedIdCount: 1, reservedIdsSha256: digest(ids), configurationSha256: digest([variants, ids, {}]) }, { headers: { "cache-control": "no-store", "vercel-cdn-cache-control": "no-store" } });
     const word = ja ? { id: "transit-ic-card", word: baseline.word, imageUrl: baseline.imageUrl, audioUrls: { "ja-JP": baseline.audioUrl }, examples: baseline.examples.map((target) => ({ target })) }
       : { id: "transit-ic-card", word: variant.headword, imageUrl: variant.imageUrl, audioUrls: wrongAuAudio ? { ...audio, "en-AU": "https://media.test/stale" } : audio, examples: variant.examples.map((example) => ({ ...example, target: example.en })) };
     if (url.pathname === "/api/words") return Response.json({ words: missingShared ? [] : [word] });
@@ -81,4 +81,32 @@ test("shared variants require and compare the reviewed Japanese baseline and bot
   missingShared = false;
   wrongAuAudio = true;
   assert((await auditAustralianGuard(input, fetcher)).problems.some((issue: string) => issue.includes("shared list audio mismatch")));
+});
+
+test("image-only guard checks Japanese original and Australian replacement", async () => {
+  const ids = ["rental-bond"], variants = {}, images = { "route-map": "https://media.test/aus.webp" };
+  const baseline = { "route-map": { word: "路線図", imageUrl: "https://media.test/japan.webp", audioUrl: "https://media.test/ja.mp3", examples: ["文１", "文２"] } };
+  const englishBaseline = { "route-map": { word: "route map", audioUrls: { "en-US": "https://media.test/us.mp3", "en-GB": "https://media.test/gb.mp3", "ja-JP": "https://media.test/ja.mp3" }, examples: [{ en: "One.", zh: "一。", translations: { zh: "一。", ja: "一。" }, audioUrls: {} }, { en: "Two.", zh: "二。", translations: { zh: "二。", ja: "二。" }, audioUrls: {} }] } };
+  let leak = false, wrongAudio = false, wrongEnglish = false;
+  const fetcher: typeof fetch = async (value) => {
+    const url = new URL(value instanceof Request ? value.url : value);
+    if (url.pathname === "/api/catalogue/region-guard") return Response.json({ guardProtocol: "tuji-australia-catalogue-v2", deploymentCommit: commit, deploymentCommitSource: "vercel-environment-self-reported", reservedIdCount: 1, reservedIdsSha256: digest(ids), configurationSha256: digest([variants, ids, images]) }, { headers: { "cache-control": "no-store", "vercel-cdn-cache-control": "no-store" } });
+    const ja = url.searchParams.get("learning") === "zh-ja";
+    const word = ja ? { id: "route-map", word: baseline["route-map"].word, imageUrl: !leak ? baseline["route-map"].imageUrl : images["route-map"], audioUrls: { "ja-JP": wrongAudio ? "https://media.test/wrong.mp3" : baseline["route-map"].audioUrl }, examples: baseline["route-map"].examples.map((target) => ({ target })) } : { id: "route-map", ...englishBaseline["route-map"], word: wrongEnglish ? "incorrect" : englishBaseline["route-map"].word, imageUrl: images["route-map"] };
+    if (url.pathname === "/api/words") return Response.json({ words: [word] });
+    if (url.pathname === "/api/words/route-map") return Response.json(word);
+    if (url.pathname === "/api/words/rental-bond") return new Response(null, { status: 404 });
+    if (url.pathname === "/api/search") return Response.json({ results: [] });
+    throw new Error(`unexpected request ${url}`);
+  };
+  const input = { baseUrl: "https://example.test", expectedCommit: commit, reservedIds: ids, variants, images, japaneseBaseline: baseline, englishBaseline };
+  assert.deepEqual((await auditAustralianGuard(input, fetcher)).problems, []);
+  assert((await auditAustralianGuard({ ...input, japaneseBaseline: {} }, fetcher)).problems.some((issue: string) => issue.includes("baseline")));
+  leak = true;
+  assert((await auditAustralianGuard(input, fetcher)).problems.some((issue: string) => issue.includes("zh-ja image-only")));
+  leak = false; wrongAudio = true;
+  assert((await auditAustralianGuard(input, fetcher)).problems.some((issue: string) => issue.includes("zh-ja image-only baseline mismatch")));
+  wrongAudio = false; wrongEnglish = true;
+  assert((await auditAustralianGuard(input, fetcher)).problems.some((issue: string) => issue.includes("zh-en image-only baseline mismatch")));
+  assert((await auditAustralianGuard({ ...input, englishBaseline: {} }, fetcher)).problems.some((issue: string) => issue.includes("English baseline")));
 });

@@ -1,3 +1,4 @@
+import { regionalCatalogueActive } from "@/lib/australian-word-variants";
 // Word search. The result set is scoped to a learning direction — the SQL
 // resolves ids, then filters them against `getAllCardWords(lang, direction)` —
 // so 搜尋日文 and 搜尋英文 return different rows for the same query.
@@ -16,6 +17,7 @@
 // are present; failures use no-store so an outage cannot be cached.
 
 import { searchCardWordsAsync } from "@/lib/data";
+import { AUSTRALIAN_RENTAL_WORDS, legacyRentalWordVisible } from "@/lib/australian-categories";
 import { dbEnabled } from "@/lib/db";
 import { getCurrentUserId } from "@/lib/current-user";
 import { getSettings } from "@/lib/users-db";
@@ -48,7 +50,9 @@ export async function GET(req: Request) {
   const limit = parseIntParam(url.searchParams.get("limit"), 50, { max: 200 });
 
   if (!q) {
-    return NextResponse.json({ results: [], query: "", limit });
+    return NextResponse.json({ results: [], query: "", limit }, regionalCatalogueActive
+      ? { headers: { "Cache-Control": "no-store", "Vercel-CDN-Cache-Control": "no-store" } }
+      : undefined);
   }
 
   try {
@@ -60,14 +64,17 @@ export async function GET(req: Request) {
 
     const direction = readLearningDirection(req, settings.learningDirection);
     if (direction === "zh-ja" && !dbEnabled()) throw new Error("Japanese catalogue requires the database");
-    const results = await searchCardWordsAsync(
+    const candidates = await searchCardWordsAsync(
       q,
-      { limit },
+      { limit, excludeIds: legacyRentalWordVisible(AUSTRALIAN_RENTAL_WORDS[0], req.url) ? [] : AUSTRALIAN_RENTAL_WORDS },
       readLang(req, settings.uiLang),
       direction,
     );
+    const results = candidates.filter((word) => legacyRentalWordVisible(word.id, req.url));
     return NextResponse.json({ results, query: q, limit }, {
-      headers: hasExplicitLanguageScope(req)
+      headers: regionalCatalogueActive
+        ? { "Cache-Control": "no-store", "Vercel-CDN-Cache-Control": "no-store" }
+        : hasExplicitLanguageScope(req)
         ? { "Cache-Control": CATALOGUE_CLIENT_CACHE, "Vercel-CDN-Cache-Control": CATALOGUE_EDGE_CACHE }
         : { "Cache-Control": "private, max-age=60" },
     });

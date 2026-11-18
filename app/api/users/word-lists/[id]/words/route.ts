@@ -54,5 +54,6 @@ export async function POST(req: Request, ctx: Ctx) {
     checkAddWord(access, locked, count),
   );
   if ("refusal" in result) return refusalResponse(result.refusal);
+  if ("unknownWord" in result) return NextResponse.json({ error: "unknown_word" }, { status: 400 });
   return NextResponse.json({ ok: true });
 }

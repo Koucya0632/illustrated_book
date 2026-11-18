@@ -73,7 +73,7 @@ const nextConfig = {
       // here would overwrite no-store on a database failure and cache the 503.
       // Membership-aware 詞條延伸內容: the only per-caller slice of a word.
       privateEntry("/api/words/:id/insights"),
-      publicEntry("/api/categories"),
+      // Category route manages no-store when regional content is active.
       publicEntry("/api/travel"),
       privateEntry("/api/users/:path*"),
       privateEntry("/api/study/:path*"),

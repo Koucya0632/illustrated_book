@@ -11,6 +11,7 @@
 // rule per card, so a stale client queue can't write progress the queue
 // wouldn't have served.
 
+import { AUSTRALIAN_RENTAL_CATEGORY } from "@/lib/australian-categories";
 import type { MembershipPolicy, MembershipTier } from "@/lib/atlas/membership";
 import type { QueueThemeScope } from "@/lib/study-sources";
 import { allTravelSpots, findTravelSpot } from "@/lib/travel/destinations";
@@ -25,6 +26,7 @@ import { upgradeTarget } from "@/lib/atlas/membership-limits";
  * non-member's reviews too.
  */
 export const FREE_STUDY_CATEGORIES: readonly string[] = [
+  AUSTRALIAN_RENTAL_CATEGORY,
   "fruits",
   "bedroom",
   "campus",

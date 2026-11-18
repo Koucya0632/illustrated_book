@@ -13,9 +13,10 @@ test("word-list addition rejects hidden words before querying the database", asy
     compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.None },
   }).outputText;
   let queries = 0;
-  const fn = new Function("visibleInDirection", "requireSql", `${code}\nreturn wordExists;`)(
+  const fn = new Function("visibleInDirection", "requireSql", "australianRentalGate", `${code}\nreturn wordExists;`)(
     visibleInDirection,
-    () => async () => { queries++; return [{ id: "mug" }]; },
+    () => (strings: TemplateStringsArray) => { if (strings.join("") === "words.id") return "trusted-id"; queries++; return Promise.resolve([{ id: "mug" }]); },
+    () => "gate",
   );
   assert.equal(await fn("rental-bond", "ja"), false);
   assert.equal(await fn("rental-bond", "en"), false);

@@ -9,7 +9,7 @@ import { pathToFileURL } from "node:url";
 
 const hash = (value) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 
-export async function auditAustralianGuard({ baseUrl, expectedCommit, reservedIds, variants, japaneseBaseline = {} }, fetcher = fetch) {
+export async function auditAustralianGuard({ baseUrl, expectedCommit, reservedIds, variants, images = {}, japaneseBaseline = {}, englishBaseline = {} }, fetcher = fetch) {
   const problems = [];
   if (!/^[a-f0-9]{40}$/i.test(expectedCommit ?? "")) throw new Error("expected commit must be a full 40-character Git SHA");
   if (!Array.isArray(reservedIds) || !reservedIds.length || new Set(reservedIds).size !== reservedIds.length ||
@@ -18,6 +18,19 @@ export async function auditAustralianGuard({ baseUrl, expectedCommit, reservedId
   }
   if (!variants || typeof variants !== "object" || Array.isArray(variants)) throw new Error("invalid reviewed variants");
   if (!japaneseBaseline || typeof japaneseBaseline !== "object" || Array.isArray(japaneseBaseline)) throw new Error("invalid Japanese baseline");
+  if (!images || typeof images !== "object" || Array.isArray(images)) throw new Error("invalid reviewed image variants");
+  if (!englishBaseline || typeof englishBaseline !== "object" || Array.isArray(englishBaseline)) throw new Error("invalid English baseline");
+  const imageIds = Object.keys(images);
+  for (const id of imageIds) {
+    const baseline = japaneseBaseline[id];
+    const en = englishBaseline[id];
+    if (!en || typeof en.word !== "string" || !en.word.trim() || !en.audioUrls?.["en-US"]?.startsWith("https://") || !en.audioUrls?.["en-GB"]?.startsWith("https://") ||
+        !Array.isArray(en.examples) || en.examples.length !== 2 || en.examples.some((e) => !e.en || !e.zh || !e.translations?.ja || !e.translations?.zh)) problems.push(`missing English baseline: ${id}`);
+    if (!/^https:\/\//.test(images[id]) || reservedIds.includes(id) || variants[id] ||
+        !baseline?.imageUrl?.startsWith("https://") || !baseline?.audioUrl?.startsWith("https://") ||
+        typeof baseline?.word !== "string" || !baseline.word.trim() || !Array.isArray(baseline.examples) ||
+        baseline.examples.length !== 2 || baseline.examples.some((sentence) => typeof sentence !== "string" || !sentence.trim())) problems.push(`invalid image or missing Japanese baseline: ${id}`);
+  }
   const sharedIds = Object.keys(variants).filter((id) => variants[id]?.visibility === "shared");
   for (const id of sharedIds) {
     const baseline = japaneseBaseline[id];
@@ -37,14 +50,13 @@ export async function auditAustralianGuard({ baseUrl, expectedCommit, reservedId
   const guardResponse = await request(new URL("/api/catalogue/region-guard", base));
   if (!guardResponse.ok) throw new Error(`guard endpoint HTTP ${guardResponse.status}`);
   const guard = await guardResponse.json();
-  if (guard.guardProtocol !== "tuji-australia-catalogue-v1") problems.push("unexpected guard protocol");
+  if (guard.guardProtocol !== "tuji-australia-catalogue-v2") problems.push("unexpected guard protocol");
   if (guard.deploymentCommitSource !== "vercel-environment-self-reported") problems.push("unexpected deployment commit source");
   if (guard.deploymentCommit !== expectedCommit.toLowerCase()) problems.push("deployment commit absent or different");
   if (guard.reservedIdCount !== reservedIds.length || guard.reservedIdsSha256 !== hash([...reservedIds].sort())) problems.push("reserved ID digest differs");
-  if (guard.configurationSha256 !== hash([variants, reservedIds])) problems.push("regional configuration digest differs");
-  if (!/\bno-store\b/i.test(guardResponse.headers.get("cache-control") ?? "") ||
-      !/\bno-store\b/i.test(guardResponse.headers.get("vercel-cdn-cache-control") ?? "")) {
-    problems.push("guard response is not marked no-store for both client and CDN");
+  if (guard.configurationSha256 !== hash([variants, reservedIds, images])) problems.push("regional configuration digest differs");
+  if (!/\bno-store\b/i.test(guardResponse.headers.get("cache-control") ?? "")) {
+    problems.push("guard response is not marked no-store for clients");
   }
   if (problems.length) return { problems, scopedIds: reservedIds.length, sharedVariantCount: sharedIds.length, directionsProbed: [], publicChecks: "not run: guard or Japanese baseline mismatch" };
 
@@ -61,6 +73,31 @@ export async function auditAustralianGuard({ baseUrl, expectedCommit, reservedId
       const visible = direction === "zh-en" && variants[id]?.visibility === "australia-only";
       const matches = body.words.filter((word) => word.id === id);
       if (matches.length !== (visible ? 1 : 0)) problems.push(`${direction} list visibility mismatch: ${id}`);
+    }
+    for (const id of imageIds) {
+      const expected = direction === "zh-en" ? images[id] : japaneseBaseline[id].imageUrl;
+      const matches = body.words.filter((word) => word.id === id);
+      if (matches.length !== 1 || matches[0].imageUrl !== expected) problems.push(`${direction} image-only list mismatch: ${id}`);
+      const detail = new URL(`/api/words/${encodeURIComponent(id)}`, base);
+      detail.searchParams.set("lang", "zh-Hant"); detail.searchParams.set("learning", direction);
+      const response = await request(detail);
+      if (!response.ok) { problems.push(`${direction} image-only detail HTTP ${response.status}: ${id}`); continue; }
+      const word = await response.json();
+      if (word.imageUrl !== expected) problems.push(`${direction} image-only detail mismatch: ${id}`);
+      const baseline = japaneseBaseline[id];
+      const en = englishBaseline[id];
+      if (direction === "zh-en") {
+        const projectedExamples = (word.examples ?? []).map((e) => ({ en: e.en, zh: e.zh, translations: e.translations,
+          audioUrls: Object.fromEntries(["en-US", "en-GB"].filter((locale) => e.audioUrls?.[locale]).map((locale) => [locale, e.audioUrls[locale]])) }));
+        const expectedExamples = en.examples.map((e) => ({ ...e,
+          audioUrls: Object.fromEntries(["en-US", "en-GB"].filter((locale) => e.audioUrls?.[locale]).map((locale) => [locale, e.audioUrls[locale]])) }));
+        if (word.word !== en.word || ["en-US", "en-GB", "ja-JP"].some((locale) => word.audioUrls?.[locale] !== en.audioUrls?.[locale]) ||
+            JSON.stringify(projectedExamples) !== JSON.stringify(expectedExamples)) problems.push(`${direction} image-only baseline mismatch: ${id}`);
+      }
+      if (direction === "zh-ja" && (word.word !== baseline.word || word.audioUrls?.["ja-JP"] !== baseline.audioUrl ||
+          word.audioUrls?.["en-AU"] || JSON.stringify((word.examples ?? []).map((x) => x.target ?? x.en)) !== JSON.stringify(baseline.examples))) {
+        problems.push(`${direction} image-only baseline mismatch: ${id}`);
+      }
     }
     for (const id of sharedIds) {
       const variant = variants[id];
@@ -132,12 +169,14 @@ export async function auditAustralianGuard({ baseUrl, expectedCommit, reservedId
 }
 
 async function main() {
-  const [baseUrl, expectedCommit, root = process.cwd(), baselinePath] = process.argv.slice(2);
-  if (!baseUrl || !expectedCommit || process.argv.length > 6) throw new Error("usage: node scripts/audit-australian-guard.mjs <base-url> <expected-commit> [project-root] [reviewed-japanese-baseline.json]");
+  const [baseUrl, expectedCommit, root = process.cwd(), baselinePath, englishBaselinePath] = process.argv.slice(2);
+  if (!baseUrl || !expectedCommit || process.argv.length > 7) throw new Error("usage: node scripts/audit-australian-guard.mjs <base-url> <expected-commit> [project-root] [reviewed-japanese-baseline.json] [reviewed-english-baseline.json]");
   const reservedIds = JSON.parse(await readFile(path.join(root, "data/australian-only-word-ids.json"), "utf8"));
   const variants = JSON.parse(await readFile(path.join(root, "data/australian-word-variants.json"), "utf8"));
+  const images = JSON.parse(await readFile(path.join(root, "data/australian-image-variants.json"), "utf8"));
   const japaneseBaseline = baselinePath ? JSON.parse(await readFile(baselinePath, "utf8")) : {};
-  const result = await auditAustralianGuard({ baseUrl, expectedCommit, reservedIds, variants, japaneseBaseline });
+  const englishBaseline = englishBaselinePath ? JSON.parse(await readFile(englishBaselinePath, "utf8")) : {};
+  const result = await auditAustralianGuard({ baseUrl, expectedCommit, reservedIds, variants, images, japaneseBaseline, englishBaseline });
   console.log(JSON.stringify(result, null, 2));
   if (result.problems.length) process.exitCode = 1;
 }

@@ -23,6 +23,7 @@ test("Japanese catalogue refuses a failed database instead of publishing static 
     dbEnabled: () => true,
     fetchAllFromDb: async () => { throw failure; },
     staticWords: [{ id: "mug" }],
+    australianOnlyIds: ["rental-bond"],
   });
   await assert.rejects(getRaw(true), failure);
   const oldWarn = console.warn;
@@ -30,8 +31,10 @@ test("Japanese catalogue refuses a failed database instead of publishing static 
     console.warn = () => {};
     assert.deepEqual(await getRaw(false), [{ word: { id: "mug" }, localizedTexts: {} }]);
   } finally { console.warn = oldWarn; }
-  const unconfigured = loadFunction("getAllRawEntries", { dbEnabled: () => false, staticWords: [] });
+  const unconfigured = loadFunction("getAllRawEntries", { dbEnabled: () => false, staticWords: [], australianOnlyIds: ["rental-bond"] });
   assert.deepEqual(await unconfigured(true), []);
+  const staticWithRental = loadFunction("getAllRawEntries", { dbEnabled: () => false, staticWords: [{ id: "mug" }, { id: "rental-bond" }, { id: "pay-slip" }], australianOnlyIds: ["rental-bond", "pay-slip"] });
+  assert.deepEqual(await staticWithRental(), [{ word: { id: "mug" }, localizedTexts: {} }]);
 });
 
 test("Japanese list and detail require the database before returning data or 404", async () => {
@@ -67,4 +70,15 @@ test("successful catalogue responses retain bounded cache headers, including 304
   const notModified = publicJson({ words: [] }, new Request(req, { headers: { "if-none-match": etag } }), true);
   assert.equal(notModified.status, 304);
   assert.equal(notModified.headers.get("cache-control"), "public, max-age=60");
+});
+
+test("activated regional catalogue is never cached, including conditional responses", () => {
+  const request = new Request("https://example.test/api/words?learning=zh-en");
+  const response = publicJson({ words: [{ id: "rental-bond" }] }, request, true, true);
+  assert.equal(response.headers.get("cache-control"), "no-store");
+  assert.equal(response.headers.get("vercel-cdn-cache-control"), "no-store");
+  const conditional = publicJson({ words: [{ id: "rental-bond" }] }, new Request(request, { headers: { "if-none-match": response.headers.get("etag")! } }), true, true);
+  assert.equal(conditional.status, 304);
+  assert.equal(conditional.headers.get("cache-control"), "no-store");
+  assert.equal(conditional.headers.get("vercel-cdn-cache-control"), "no-store");
 });

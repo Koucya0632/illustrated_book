@@ -20,13 +20,14 @@ import {
   applyMembershipStudyScope,
   canStudyCard,
 } from "../lib/study-membership";
-import { resolveQueueThemeScope } from "../lib/study-sources";
+import { resolveDirectionThemeScope, resolveQueueThemeScope } from "../lib/study-sources";
 
 const free2 = { tier: "free" as const, policy: "v2" as const };
 const life2 = { tier: "lifetime" as const, policy: "v2" as const };
 const free1 = { tier: "free" as const, policy: "v1" as const };
 
 const FREE = [
+  "australia-housing",
   "bank",
   "bedroom",
   "campus",
@@ -87,7 +88,7 @@ import { readFileSync } from "node:fs";
 const route = (p: string) => readFileSync(new URL(`../app/api/study/${p}/route.ts`, import.meta.url), "utf8");
 
 test("the queue applies the gate on top of the user's theme scope", () => {
-  assert.match(route("queue"), /applyMembershipStudyScope\(\s*resolveQueueThemeScope\(/);
+  assert.match(route("queue"), /applyMembershipStudyScope\(\s*resolveDirectionThemeScope\(/);
 });
 
 test("the answer route checks every source, and refuses with 200 — never a 4xx that wedges the iOS outbox", () => {
@@ -110,4 +111,25 @@ test("clients are told the whitelist only when the gate applies; null means ever
 test("the entitlement snapshot carries it, from the same rule as the gate", () => {
   const src = readFileSync(new URL("../lib/atlas/entitlement.ts", import.meta.url), "utf8");
   assert.match(src, /studyableCategories: studyableCategories\(/);
+});
+
+
+test("regional-only selections do not widen new learning; review remains global", () => {
+ const filtered=resolveDirectionThemeScope(["australia-housing"],false,"zh-ja");
+ assert.deepEqual(filtered,{publicCategories:[],wantsCustom:false,wantsCommunity:false,shouldFetchPublic:false});
+ assert.equal(applyMembershipStudyScope(filtered,free2).shouldFetchPublic,false);
+ assert.equal(resolveDirectionThemeScope(["australia-housing"],true,"zh-ja").shouldFetchPublic,true);
+ const community=resolveDirectionThemeScope(["australia-housing","community"],false,"zh-ja");
+ assert.equal(community.wantsCommunity,true); assert.equal(community.shouldFetchPublic,false);
+ const custom=resolveDirectionThemeScope(["australia-housing","custom"],false,"zh-ja");
+ assert.equal(custom.wantsCustom,true); assert.equal(custom.shouldFetchPublic,false);
+ assert.equal(applyMembershipStudyScope(community,free2).wantsCommunity,false);
+ assert.equal(applyMembershipStudyScope(custom,free2).wantsCustom,false);
+});
+
+
+test("free members may study the Australian rental topic once it is visible", () => {
+ const scope=applyMembershipStudyScope(resolveDirectionThemeScope(["australia-housing"],false,"zh-en"),free2);
+ assert.equal(scope.shouldFetchPublic,true);assert.deepEqual(scope.publicCategories,["australia-housing"]);
+ assert.equal(canStudyCard(free2,{source:"public",category:"australia-housing",wordId:"rental-bond"}),true);
 });

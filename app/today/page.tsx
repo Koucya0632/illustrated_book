@@ -30,7 +30,7 @@ export default async function TodayPage() {
     : null;
   const [words, categories] = await Promise.all([
     getAllLearningWords(settings.uiLang, settings.learningDirection),
-    getCategoriesFromDb(settings.uiLang),
+    getCategoriesFromDb(settings.uiLang, settings.learningDirection),
   ]);
   const goal = settings.dailyGoal;
   const goalMinutes = Math.max(1, Math.round(goal * 0.6));

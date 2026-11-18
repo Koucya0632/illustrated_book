@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { studyCategoriesForDirection } from "@/lib/australian-categories";
 import { StudyChoiceSession, prepareChoiceCandidates, localChoiceCandidate, choiceReserve, choiceKey, type ChoiceWord, type StudyChoiceCandidate } from "@/lib/study-choices";
 import { useCallback, useEffect, useRef, useState } from "react";
 import PronunciationButton from "@/components/PronunciationButton";
@@ -638,7 +639,10 @@ export default function StudyClient() {
     // Show 0 when the daily quota is already met so the tile doesn't claim
     // the user has more new cards than they'd actually start with. Override
     // would unlock another base-worth via the modal.
-    const newCount = reachedDaily ? 0 : Math.max(0, newLimit);
+    const noApplicableTheme = studyCategories.length > 0 && studyCategoriesForDirection(studyCategories, learningDirection).length === 0;
+    const noNewCards = stats !== null && stats.new <= 0;
+    const availableNew = stats === null ? newLimit : Math.min(newLimit, stats.new);
+    const newCount = reachedDaily || noApplicableTheme ? 0 : Math.max(0, availableNew);
     const reviewCount = stats?.due ?? 0;
     const minutesPer = 0.6; // ~36s per card heuristic, matches home tile
     // Modal copy: backlog overrules dailyDone when both fire (review-first
@@ -676,7 +680,7 @@ export default function StudyClient() {
             {/* 新學 */}
             <button
               onClick={() => pickNewLearn()}
-              disabled={(newCount === 0 && !needsConfirm) || loadingMode !== null}
+              disabled={noApplicableTheme || noNewCards || (newCount === 0 && !needsConfirm) || loadingMode !== null}
               aria-busy={loadingMode === "new"}
               className="tuji-press group flex flex-col items-start gap-2 rounded-3xl p-5 text-left shadow-card transition disabled:cursor-not-allowed disabled:opacity-50"
               style={{
@@ -700,7 +704,7 @@ export default function StudyClient() {
                   ? t("study.loading")
                   : newCount > 0
                   ? t("study.landing.minutes", { n: Math.max(1, Math.round(newCount * minutesPer)) })
-                  : t("study.landing.newEmpty")}
+                   : noApplicableTheme ? t("study.landing.chooseTheme") : t("study.landing.newEmpty")}
               </div>
               <div className="mt-1 flex w-full items-center justify-between text-[11px] font-extrabold uppercase tracking-[0.1em] text-tuji-ink3">
                 <span>{t("study.daily.chip", { n: todayNew, g: base })}</span>

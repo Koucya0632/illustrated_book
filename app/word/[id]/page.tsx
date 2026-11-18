@@ -93,7 +93,7 @@ export default async function WordDetailPage(props: { params: Promise<{ id: stri
   const [w, counterpart, cats] = await Promise.all([
     getLearningWord(params.id, lang, settings.learningDirection),
     getLearningWord(params.id, lang, counterpartDirection),
-    getCategoriesFromDb(lang),
+    getCategoriesFromDb(lang, settings.learningDirection),
   ]);
   if (!w) notFound();
   const cat = cats.find((c) => c.id === w.category);

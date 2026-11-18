@@ -13,6 +13,9 @@ export async function proxy(req: NextRequest) {
     const ok = await verifyAdminToken(token);
     if (ok) return NextResponse.next();
     if (pathname.startsWith("/api/")) {
+      if (pathname === "/api/admin/database-target-diagnostic") {
+        return NextResponse.json({ error: "unauthorized" }, { status: 401, headers: { "Cache-Control": "private, no-store", "Vercel-CDN-Cache-Control": "no-store" } });
+      }
       return NextResponse.json({ error: "unauthorized" }, { status: 401 });
     }
     const loginUrl = new URL("/login", req.url);

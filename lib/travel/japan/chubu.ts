@@ -145,8 +145,8 @@ export const CHUBU: readonly TravelCity[] = [
         at: [0.709, 0.22],
         label: "left",
         wordIds: [
-          "tea-house", "lattice-window", "stone-pavement", "gold-leaf", "soft-serve",
-          "wagashi", "matcha", "kimono",
+          "tea-house", "lattice", "stone-pavement", "gold-leaf", "soft-serve", "wagashi",
+          "matcha", "kimono",
         ],
         geo: { lat: 36.5726, lng: 136.6665, radiusM: 200 },
       },
@@ -200,8 +200,8 @@ export const CHUBU: readonly TravelCity[] = [
         at: [0.55, 0.611],
         label: "left",
         wordIds: [
-          "lattice-window", "sake-brewery", "cedar-ball", "sake", "rickshaw",
-          "mitarashi-dango", "wagyu", "waterway",
+          "lattice", "sake-brewery", "cedar-ball", "sake", "rickshaw", "mitarashi-dango",
+          "wagyu", "waterway",
         ],
         geo: { lat: 36.142, lng: 137.2602, radiusM: 200 },
       },

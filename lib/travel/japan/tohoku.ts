@@ -321,7 +321,7 @@ export const TOHOKU: readonly TravelCity[] = [
         label: "left",
         wordIds: [
           "samurai-residence", "black-wooden-fence", "weeping-cherry-tree", "rickshaw",
-          "armor", "cherry-bark-craft", "japanese-garden", "autumn-leaves",
+          "samurai-armor", "cherry-bark-craft", "japanese-garden", "autumn-leaves",
         ],
         geo: { lat: 39.6015, lng: 140.5614, radiusM: 300 },
       },

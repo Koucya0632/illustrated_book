@@ -62,11 +62,13 @@ export function isFavorite(id: string): boolean {
   return safeRead().favoriteIds.includes(id);
 }
 
-export function markLearned(id: string) {
+// Anonymous visitors only keep the local mirror: the server answers them 401,
+// and crawlers opening word pages sent about a thousand of those a day.
+export function markLearned(id: string, signedIn: boolean) {
   const p = safeRead();
   if (p.learnedIds.includes(id)) return;
   write({ ...p, learnedIds: [...p.learnedIds, id] });
-  post("/api/users/learned", { wordId: id });
+  if (signedIn) post("/api/users/learned", { wordId: id });
 }
 
 export function setLastCategory(category: CategoryId) {

@@ -16,7 +16,9 @@ export default function WordCard({ word }: { word: CardWord }) {
 
   return (
     <div className="flex flex-col rounded-[18px] bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover">
-      <Link href={`/word/${word.id}`} className="relative block">
+      {/* No prefetch: word pages render per request, so a grid of tiles in view
+          cost one server render each before anyone clicked. */}
+      <Link href={`/word/${word.id}`} prefetch={false} className="relative block">
         <div className="absolute right-1 top-1 z-10">
           <FavoriteButton id={word.id} size="sm" />
         </div>
@@ -25,7 +27,7 @@ export default function WordCard({ word }: { word: CardWord }) {
 
       <div className="mt-2.5 flex flex-1 flex-col">
         <div className="flex items-start justify-between gap-2">
-          <Link href={`/word/${word.id}`} className="min-w-0">
+          <Link href={`/word/${word.id}`} prefetch={false} className="min-w-0">
             <h3 className="truncate text-[15px] font-extrabold tracking-tight text-tuji-ink">{word.word}</h3>
             {word.reading && (
               <p className="truncate text-xs font-semibold text-tuji-ink3">{word.reading}</p>

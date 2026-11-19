@@ -52,6 +52,13 @@ export async function updateSupabaseSession(req: NextRequest) {
   }
   // ─────────────────────────────────────────────────────────────────────
 
+  // Without a Supabase cookie there is no session to refresh, and getUser()
+  // would only answer null. That is every anonymous page view and every
+  // crawler hit, so skip building the client for them.
+  if (!req.cookies.getAll().some((c) => c.name.startsWith("sb-"))) {
+    return { response: NextResponse.next({ request: req }), user: null };
+  }
+
   let response = NextResponse.next({ request: req });
 
   const supabase = createServerClient(

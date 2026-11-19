@@ -77,7 +77,7 @@ export default function TujiShell({
     return (
       <div className="flex min-h-screen flex-col">
         <header className="px-5 py-4 sm:px-8">
-          <Link href="/" className="inline-flex items-center gap-2.5">
+          <Link href="/" prefetch={false} className="inline-flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-soft">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
@@ -96,7 +96,7 @@ export default function TujiShell({
     <div className="flex min-h-screen">
       {/* ── Desktop sidebar ── */}
       <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col gap-5 bg-tuji-ink p-4 text-white md:flex">
-        <Link href="/" className="flex items-center gap-2.5 px-1">
+        <Link href="/" prefetch={false} className="flex items-center gap-2.5 px-1">
           <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl shadow-soft">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
@@ -113,6 +113,7 @@ export default function TujiShell({
               <Link
                 key={it.id}
                 href={it.href}
+                prefetch={false}
                 className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${
                   on
                     ? "bg-tuji-teal font-extrabold text-white"
@@ -162,7 +163,7 @@ export default function TujiShell({
       {/* ── Mobile top header ── */}
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 flex items-center justify-between border-b border-black/5 bg-tuji-bg/85 px-4 py-3 backdrop-blur md:hidden">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" prefetch={false} className="flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg shadow-soft">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={APP_ICON_SRC} alt="" className="h-full w-full object-cover" />
@@ -173,6 +174,7 @@ export default function TujiShell({
           </Link>
           <Link
             href="/search"
+            prefetch={false}
             aria-label={t("common.search")}
             className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-tuji-ink shadow-soft"
           >
@@ -191,7 +193,7 @@ export default function TujiShell({
             const center = it.id === "play";
             if (center) {
               return (
-                <Link key={it.id} href={it.href} className="flex justify-start" aria-label={t(it.labelKey)}>
+                <Link key={it.id} href={it.href} prefetch={false} className="flex justify-start" aria-label={t(it.labelKey)}>
                   <span className="mx-auto -mt-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-tuji-teal shadow-[0_6px_18px_rgba(0,111,114,0.35)]">
                     <span className="text-2xl" aria-hidden="true">{it.icon}</span>
                   </span>
@@ -202,6 +204,7 @@ export default function TujiShell({
               <Link
                 key={it.id}
                 href={it.href}
+                prefetch={false}
                 className="flex flex-col items-center gap-0.5 pb-5"
                 aria-label={t(it.labelKey)}
               >

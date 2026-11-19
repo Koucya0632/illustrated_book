@@ -185,7 +185,7 @@ export default async function WordDetailPage(props: { params: Promise<{ id: stri
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-6 sm:px-7">
-      <MarkLearned id={w.id} />
+      <MarkLearned id={w.id} signedIn={userId !== null} />
       <EventTracker wordId={w.id} category={w.category} />
 
       {/* Mastery progress bar */}

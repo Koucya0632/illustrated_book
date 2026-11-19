@@ -52,11 +52,29 @@ test("Japanese list and detail require the database before returning data or 404
 
 test("failed term reads propagate instead of becoming empty cached terms", async () => {
   const failure = new Error("terms unavailable");
-  const dependencies = { dbEnabled: () => true, targetLanguageFor: () => "ja", getTermRowsCached: async () => { throw failure; } };
-  const terms = loadFunction("targetTermMap", dependencies);
-  const glosses = loadFunction("jaGlossTermMap", dependencies);
-  await assert.rejects(terms("zh-ja"), failure);
-  await assert.rejects(glosses("ja"), failure);
+  let available = false;
+  const getTermRowsCached = async () => {
+    if (!available) throw failure;
+    return [{ word_id: "mug", term: "マグ" }];
+  };
+  const previousRuntime = process.env.NEXT_RUNTIME;
+  // Memoize the way the Next server does; outside it the memo is skipped.
+  process.env.NEXT_RUNTIME = "nodejs";
+  try {
+    const memoizeOnInstance = loadFunction("memoizeOnInstance", { INSTANCE_MEMO_MS: 60_000 });
+    const termMapFor = memoizeOnInstance(loadFunction("loadTermMap", { getTermRowsCached }));
+    const dependencies = { dbEnabled: () => true, targetLanguageFor: () => "ja", termMapFor };
+    const terms = loadFunction("targetTermMap", dependencies);
+    const glosses = loadFunction("jaGlossTermMap", dependencies);
+    await assert.rejects(terms("zh-ja"), failure);
+    await assert.rejects(glosses("ja"), failure);
+    // The instance memo must not keep the failure: the next read retries.
+    available = true;
+    assert.equal((await terms("zh-ja")).get("mug")?.term, "マグ");
+  } finally {
+    if (previousRuntime === undefined) delete process.env.NEXT_RUNTIME;
+    else process.env.NEXT_RUNTIME = previousRuntime;
+  }
 });
 
 test("successful catalogue responses retain bounded cache headers, including 304", () => {

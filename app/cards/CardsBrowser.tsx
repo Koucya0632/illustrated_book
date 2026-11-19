@@ -95,6 +95,7 @@ export default function CardsBrowser() {
               <Link
                 key={w.id}
                 href={`/word/${w.id}`}
+                prefetch={false}
                 className="group relative rounded-[18px] bg-white p-3 shadow-card transition hover:-translate-y-0.5 hover:shadow-cardHover"
               >
                 <div className="absolute right-4 top-4 z-10">

@@ -254,7 +254,32 @@ const fetchShardFromDb = unstable_cache(
   { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS },
 );
 
-async function fetchAllFromDb(): Promise<RawEntry[]> {
+// `unstable_cache` hands back a fresh JSON.parse of its entry on every call,
+// and a word page reads the catalogue four times (metadata and page, both
+// directions). On Vercel that parse, merge and sort was most of a page's
+// Active CPU. A warm instance keeps the merged result for a minute instead, so
+// a `revalidateTag("words")` reaches every instance within that minute.
+// Callers get shared objects: never mutate what these return.
+const INSTANCE_MEMO_MS = 60_000;
+
+function memoizeOnInstance<K, V>(load: (key: K) => Promise<V>): (key: K) => Promise<V> {
+  // Outside the Next server (tests, scripts) `unstable_cache` does not cache
+  // either, and tests rewrite the database between reads.
+  if (!process.env.NEXT_RUNTIME) return load;
+  const memo = new Map<K, { at: number; value: Promise<V> }>();
+  return (key) => {
+    const hit = memo.get(key);
+    if (hit && Date.now() - hit.at < INSTANCE_MEMO_MS) return hit.value;
+    const value = load(key);
+    memo.set(key, { at: Date.now(), value });
+    value.catch(() => {
+      if (memo.get(key)?.value === value) memo.delete(key);
+    });
+    return value;
+  };
+}
+
+const fetchAllFromDb = memoizeOnInstance<void, RawEntry[]>(async () => {
   if (!getSql()) return staticWords.map((w) => ({ word: w, localizedTexts: {} }));
   const shards = await Promise.all(
     Array.from({ length: CATALOGUE_SHARDS }, (_, shard) => fetchShardFromDb(shard)),
@@ -263,7 +288,7 @@ async function fetchAllFromDb(): Promise<RawEntry[]> {
     .flat()
     .sort((a, b) => a.ord - b.ord)
     .map((s) => s.entry));
-}
+});
 
 async function getAllRawEntries(requireDatabase = false): Promise<RawEntry[]> {
   if (!dbEnabled()) {
@@ -363,12 +388,18 @@ const getTermRowsCached = unstable_cache(
   { tags: ["words"], revalidate: CATALOGUE_REVALIDATE_SECONDS },
 );
 
+async function loadTermMap(language: "en" | "ja"): Promise<Map<string, TermRow>> {
+  const rows = await getTermRowsCached(language);
+  return new Map(rows.map((r) => [r.word_id, r]));
+}
+
+const termMapFor = memoizeOnInstance(loadTermMap);
+
 async function targetTermMap(
   direction: LearningDirection,
 ): Promise<Map<string, TermRow>> {
   if (!dbEnabled()) return new Map();
-  const rows = await getTermRowsCached(targetLanguageFor(direction));
-  return new Map(rows.map((r) => [r.word_id, r]));
+  return termMapFor(targetLanguageFor(direction));
 }
 
 // ---- 詞塊 (sentence annotation) -----------------------------------------
@@ -484,8 +515,7 @@ async function spansForSentences(
  */
 async function jaGlossTermMap(lang: UiLang): Promise<Map<string, TermRow> | null> {
   if (lang !== "ja" || !dbEnabled()) return null;
-  const rows = await getTermRowsCached("ja");
-  return new Map(rows.map((r) => [r.word_id, r]));
+  return termMapFor("ja");
 }
 
 export async function getLearningWord(

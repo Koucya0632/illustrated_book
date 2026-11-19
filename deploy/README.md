@@ -1,8 +1,11 @@
 # Production deploy
 
 Production runs on Cloud Run (`tuji-web`, project `tuji-web-prod`, region `asia-northeast1`).
-`tuji.nexflow.team` maps to it through a Cloud Run domain mapping. The DNS record is a
-DNS-only CNAME to `ghs.googlehosted.com` in Cloudflare.
+`tuji.nexflow.team` maps to it through a Cloud Run domain mapping. In Cloudflare the record is
+a proxied CNAME to `ghs.googlehosted.com`. Configuration rules set SSL to Full for this host
+(Full, not Strict, so a missed Google certificate renewal does not take the site down) and turn
+off Browser Integrity Check for `/api/`. Two WAF custom rules block the 2026-11-19 crawler on
+non-`/api` paths. Bot Fight Mode must stay off, because it challenges the apps' API calls.
 
 Every push to `main` runs `.github/workflows/deploy-cloud-run.yml`. Cloud Build builds the
 image from `Dockerfile`, which runs `scripts/migrate.ts` against production before

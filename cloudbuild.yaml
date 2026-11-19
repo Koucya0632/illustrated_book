@@ -17,3 +17,4 @@ availableSecrets:
   secretManager:
     - versionName: projects/tuji-web-prod/secrets/build-env/versions/latest
       env: BUILD_ENV
+timeout: 1800s

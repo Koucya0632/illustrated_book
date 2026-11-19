@@ -16,7 +16,6 @@
     "eval:spans": "node evals/run-generation-eval.mjs",
     "dev": "next dev",
     "build": "next build",
-    "vercel-build": "tsx scripts/migrate.ts && next build",
     "start": "next start",
     "migrate": "tsx scripts/migrate.ts",
     "insights:load": "tsx --env-file=.env.local scripts/load-word-insights.ts",

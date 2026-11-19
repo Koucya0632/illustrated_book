@@ -48,6 +48,11 @@ const EDGE_CACHE = "public, s-maxage=300, stale-while-revalidate=3600";
 
 const nextConfig = {
   reactStrictMode: true,
+  output: "standalone",
+  outputFileTracingIncludes: {
+    "/privacy": ["./content/legal/**"],
+    "/terms": ["./content/legal/**"],
+  },
   images: {
     remotePatterns,
   },

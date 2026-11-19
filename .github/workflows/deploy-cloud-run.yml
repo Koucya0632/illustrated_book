@@ -1,0 +1,40 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  PROJECT: tuji-web-prod
+  REGION: asia-northeast1
+  IMAGE: asia-northeast1-docker.pkg.dev/tuji-web-prod/web/tuji-web:${{ github.sha }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1015084004318/locations/global/workloadIdentityPools/github/providers/github
+          service_account: github-deploy@tuji-web-prod.iam.gserviceaccount.com
+      - uses: google-github-actions/setup-gcloud@v2
+      # Builds run migrate against production first, like Vercel's production build did.
+      - run: >
+          gcloud builds submit --project="$PROJECT" --region="$REGION"
+          --config=cloudbuild.yaml --substitutions=_IMAGE="$IMAGE" .
+      # Runtime env lives on the service; a deploy only swaps the image and the commit.
+      - run: >
+          gcloud run deploy tuji-web --project="$PROJECT" --region="$REGION"
+          --image="$IMAGE" --update-env-vars=VERCEL_GIT_COMMIT_SHA="$GITHUB_SHA"
+      - run: curl -sf -o /dev/null https://tuji.nexflow.team/robots.txt

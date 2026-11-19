@@ -1,0 +1,19 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    env: [DOCKER_BUILDKIT=1]
+    secretEnv: [BUILD_ENV]
+    args:
+      - -c
+      - |
+        printf '%s' "$$BUILD_ENV" > /workspace/build.env
+        # next/font/google downloads hundreds of Noto subsets; one flaky fetch fails the build.
+        ok=0; for i in 1 2 3; do docker build --secret id=env,src=/workspace/build.env -t ${_IMAGE} . && { ok=1; break; }; done
+        rm -f /workspace/build.env
+        [ "$$ok" = 1 ]
+images:
+  - ${_IMAGE}
+availableSecrets:
+  secretManager:
+    - versionName: projects/tuji-web-prod/secrets/build-env/versions/latest
+      env: BUILD_ENV

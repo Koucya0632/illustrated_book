@@ -107,7 +107,7 @@ export const SHIKOKU: readonly TravelCity[] = [
         at: [0.584, 0.367],
         label: "left",
         wordIds: [
-          "hot-spring", "public-bathhouse", "taiko-drum", "footbath", "karakuri-clock",
+          "hot-spring", "public-bath", "taiko-drum", "footbath", "karakuri-clock",
           "shopping-arcade", "yukata", "tram",
         ],
         geo: { lat: 33.8515, lng: 132.786, radiusM: 250 },

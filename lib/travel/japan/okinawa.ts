@@ -210,8 +210,8 @@ export const OKINAWA: readonly TravelCity[] = [
         at: [0.301, 0.536],
         label: "left",
         wordIds: [
-          "glass-bottom-boat", "beach", "sea", "coral", "tropical-fish", "sea-turtle", "islet",
-          "observation-deck",
+          "glass-bottom-boat", "beach", "sea", "coral", "tropical-fish", "sea-turtle",
+          "island", "observation-deck",
         ],
         geo: { lat: 24.459, lng: 124.1432, radiusM: 500 },
       },
@@ -262,7 +262,7 @@ export const OKINAWA: readonly TravelCity[] = [
         at: [0.699, 0.158],
         label: "left",
         wordIds: [
-          "lighthouse", "cape", "sea", "cow", "ranch", "islet", "sunset", "starry-sky",
+          "lighthouse", "cape", "sea", "cow", "ranch", "island", "sunset", "starry-sky",
         ],
         geo: { lat: 24.6089, lng: 124.315, radiusM: 400 },
       },

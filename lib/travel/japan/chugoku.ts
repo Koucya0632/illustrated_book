@@ -33,7 +33,7 @@ export const CHUGOKU: readonly TravelCity[] = [
         label: "right",
         wordIds: [
           "park", "museum", "river", "bridge", "bronze-statue", "paper-crane",
-          "memorial-monument", "bell",
+          "memorial-monument", "temple-bell",
         ],
         geo: { lat: 34.3933, lng: 132.4527, radiusM: 300 },
       },

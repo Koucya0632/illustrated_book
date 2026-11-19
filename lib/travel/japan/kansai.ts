@@ -366,8 +366,8 @@ export const KANSAI: readonly TravelCity[] = [
         at: [0.31, 0.792],
         label: "left",
         wordIds: [
-          "tower", "observation-deck", "harbor", "ferris-wheel", "red-brick-warehouse",
-          "night-view", "sea", "cruise-ship",
+          "tower", "observation-deck", "harbor", "ferris-wheel", "warehouse", "night-view",
+          "sea", "cruise-ship",
         ],
         geo: { lat: 34.6808, lng: 135.1845, radiusM: 400 },
       },

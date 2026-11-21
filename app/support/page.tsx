@@ -91,10 +91,11 @@ export default function SupportPage() {
             <h2 className="mt-1 text-2xl font-extrabold tracking-tight text-tuji-ink">Lifetime membership</h2>
             <div className="mt-5 space-y-4 text-sm leading-7 text-tuji-ink2">
               <p>
-                <strong>Lifetime membership</strong> (永久會員) is a one-time App Store or Google
-                Play purchase, not a subscription. It unlocks every official picture-dictionary
-                series, 200 personal atlas cards, personal word lists and notes, and saving,
-                studying and publishing in 物見. Prices are shown in the store for your region.
+                <strong>Lifetime Membership</strong> (永久會員) is a one-time App Store or Google
+                Play purchase, not a subscription. It unlocks every official atlas topic and
+                every scene, 200 personal atlas cards, personal word lists and notes, and saving,
+                studying and publishing on Sightings. Prices are shown in the store for your
+                region.
               </p>
               <p>
                 AI recognition runs on points. Members get 1,000 points every month (unused ones

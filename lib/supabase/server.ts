@@ -33,12 +33,25 @@ export async function createClient() {
 // NEVER expose to the browser. Service role bypasses RLS.
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 
-export function createServiceRoleClient() {
+export function createServiceRoleClient(options: { timeoutMs?: number } = {}) {
+  const { timeoutMs } = options;
   return createSupabaseClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     {
       auth: { autoRefreshToken: false, persistSession: false },
+      // supabase-js has no per-call timeout; a hung request otherwise holds the
+      // route until Cloud Run's 300 s limit.
+      ...(timeoutMs
+        ? {
+            global: {
+              fetch: (input: RequestInfo | URL, init?: RequestInit) => {
+                const timeout = AbortSignal.timeout(timeoutMs);
+                return fetch(input, { ...init, signal: init?.signal ? AbortSignal.any([init.signal, timeout]) : timeout });
+              },
+            },
+          }
+        : {}),
     },
   );
 }

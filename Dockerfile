@@ -21,6 +21,10 @@ ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 PORT=8080 HOSTNAME=0.0.0.0
 COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
 COPY --from=build /app/public ./public
+# Next writes unstable_cache entries (word catalogue, choices, examples) under
+# .next/cache. /app is root-owned, so without this every write fails with EACCES
+# and each study-queue request rebuilds the catalogue from the DB (16-45 s).
+RUN mkdir -p .next/cache && chown -R node:node .next/cache
 USER node
 EXPOSE 8080
 CMD ["node", "server.js"]

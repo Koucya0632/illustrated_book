@@ -125,10 +125,9 @@ const getChoiceCatalog = unstable_cache(async (languages: ChoiceLanguage[], _var
 export async function attachChoices(due: DueCard[]): Promise<DueCard[]> {
   if (!due.length) return due;
   const languages = [...new Set(due.map(d => d.word.target_language))].sort();
-  const liveCatalog = regionalCatalogueActive ? await readChoiceCatalog(requireSql(), languages) : null;
-  const { pools, relations } = liveCatalog
-    ? { pools: Object.fromEntries(liveCatalog.pools), relations: liveCatalog.relations }
-    : await getChoiceCatalog(languages, australianVariantsCacheKey);
+  // Always cached: the key carries the Australian variants, and a live read of
+  // the whole catalogue per queue took ~10 s and timed out the apps.
+  const { pools, relations } = await getChoiceCatalog(languages, australianVariantsCacheKey);
   const { generateMisspellings } = await import("./misspellings");
   for (const d of due) {
     const language = d.word.target_language;

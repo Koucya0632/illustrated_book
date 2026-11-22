@@ -18,25 +18,51 @@ export interface StudyChoiceCandidate extends ChoiceWord {
   weight: number;
 }
 
-export function choiceKey(label: string): string {
-  // Pd includes hyphens, but NOT the Japanese prolonged sound mark (ー).
-  return label.normalize("NFKC").toLowerCase().replace(/[\s\p{Pd}]/gu, "");
+// The server compares one answer against the whole catalogue per card, so the
+// same labels are normalised thousands of times per queue. Results are pure
+// functions of the string; the returned Sets are shared and must not be mutated.
+function memo<T>(fn: (text: string) => T): (text: string) => T {
+  const cache = new Map<string, T>();
+  return (text) => {
+    let value = cache.get(text);
+    if (value === undefined) {
+      if (cache.size >= 50_000) cache.clear();
+      value = fn(text);
+      cache.set(text, value);
+    }
+    return value;
+  };
 }
 
-function glosses(gloss: string): Set<string> {
-  return new Set(gloss.normalize("NFKC").toLowerCase().split(/[/、,，;；]/u).map(s => s.trim()).filter(Boolean));
+export const choiceKey = memo((label: string): string =>
+  // Pd includes hyphens, but NOT the Japanese prolonged sound mark (ー).
+  label.normalize("NFKC").toLowerCase().replace(/[\s\p{Pd}]/gu, ""));
+
+const glosses = memo((gloss: string): ReadonlySet<string> =>
+  new Set(gloss.normalize("NFKC").toLowerCase().split(/[/、,，;；]/u).map(s => s.trim()).filter(Boolean)));
+const tokens = memo((label: string): ReadonlySet<string> =>
+  new Set(label.normalize("NFKC").toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean)));
+const aliasGroups = new Map<string, Set<number>>();
+data.aliases.forEach((group, i) => {
+  for (const key of group.map(choiceKey)) {
+    const groups = aliasGroups.get(key) ?? new Set<number>();
+    groups.add(i);
+    aliasGroups.set(key, groups);
+  }
+});
+function sameAliasGroup(a: string, b: string): boolean {
+  const ag = aliasGroups.get(a), bg = aliasGroups.get(b);
+  if (!ag || !bg) return false;
+  for (const i of ag) if (bg.has(i)) return true;
+  return false;
 }
-function tokens(label: string): Set<string> {
-  return new Set(label.normalize("NFKC").toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean));
-}
-const aliases = data.aliases.map(group => new Set(group.map(choiceKey)));
 
 /** Symmetric: also checked between the three distractors, not just the answer. */
 export function choicesConflict(a: ChoiceWord, b: ChoiceWord): boolean {
   const ak = choiceKey(a.label), bk = choiceKey(b.label);
   if (!ak || !bk || ak === bk) return true;
   if (a.wordId === b.wordId && a.wordId !== "") return true;
-  if (aliases.some(group => group.has(ak) && group.has(bk))) return true;
+  if (sameAliasGroup(ak, bk)) return true;
   if (a.exclusions?.some(x => choiceKey(x) === bk) || b.exclusions?.some(x => choiceKey(x) === ak)) return true;
   const at = tokens(a.label), bt = tokens(b.label);
   if (at.size && bt.size && ([...at].every(x => bt.has(x)) || [...bt].every(x => at.has(x)))) return true;

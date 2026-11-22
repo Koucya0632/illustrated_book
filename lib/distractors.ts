@@ -71,6 +71,30 @@ function normalizedSimilarity(a: string, b: string): number {
   return Math.max(0, 1 - levenshtein(a, b) / maxLen);
 }
 
+// Every candidate is scored against every relation edge, once per card in a
+// queue: scanning the edge list there made a 30-card review take seconds.
+// Index each relation list once; the types keep edge order and duplicates.
+const relationIndexes = new WeakMap<RelationEdge[], Map<string, string[]>>();
+const NO_TYPES: string[] = [];
+
+function linkedTypes(relations: RelationEdge[], a: string, b: string): string[] {
+  let index = relationIndexes.get(relations);
+  if (!index) {
+    index = new Map();
+    const add = (key: string, type: string) => {
+      const types = index!.get(key);
+      if (types) types.push(type);
+      else index!.set(key, [type]);
+    };
+    for (const r of relations) {
+      add(`${r.source}\u0000${r.target}`, r.type);
+      if (r.source !== r.target) add(`${r.target}\u0000${r.source}`, r.type);
+    }
+    relationIndexes.set(relations, index);
+  }
+  return index.get(`${a}\u0000${b}`) ?? NO_TYPES;
+}
+
 function scoreCandidate(
   target: TargetMeta,
   cand: CandidateMeta,
@@ -82,14 +106,10 @@ function scoreCandidate(
   let score = 0;
 
   // Curated relation edges (bidirectional — symmetric for confusing/synonym).
-  for (const r of relations) {
-    const linked =
-      (r.source === target.wordId && r.target === cand.wordId) ||
-      (r.target === target.wordId && r.source === cand.wordId);
-    if (!linked) continue;
-    if (r.type === "confusing") score += W.confusing;
-    else if (r.type === "synonym") return -Infinity;
-    else if (r.type === "see-also") score += W.seeAlso;
+  for (const type of linkedTypes(relations, target.wordId, cand.wordId)) {
+    if (type === "confusing") score += W.confusing;
+    else if (type === "synonym") return -Infinity;
+    else if (type === "see-also") score += W.seeAlso;
   }
 
   if (cand.category && cand.category === target.category) score += W.sameCategory;
@@ -138,7 +158,7 @@ export function buildChoiceCandidates(target: TargetMeta, pool: CandidateMeta[],
     const sameCategory = !!target.category && target.category === c.category;
     const close = normalizedSimilarity(target.back.toLowerCase(), c.back.toLowerCase()) >= 0.45 ||
       (!!target.pronunciation && !!c.pronunciation && normalizedSimilarity(stripIPA(target.pronunciation), stripIPA(c.pronunciation)) >= 0.55) ||
-      relations.some(r => r.type === "confusing" && ((r.source === target.wordId && r.target === c.wordId) || (r.target === target.wordId && r.source === c.wordId)));
+      linkedTypes(relations, target.wordId, c.wordId).includes("confusing");
     return [{ ...word, tier: sameCategory ? (close ? 1 : 2) : 3,
       weight: 1 + score + (!sameCategory && !!target.pos && target.pos === c.pos ? 32 : 0) }];
   });

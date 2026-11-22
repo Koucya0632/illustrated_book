@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAtlasSyncBundle } from "@/lib/atlas-db";
 import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
-import { createAtlasImageSignedUrls } from "@/lib/atlas/storage";
+import { createAtlasSignedUrlMap } from "@/lib/atlas/storage";
 import { spotShareBlocked } from "@/lib/travel/spot-tagging";
 
 export const runtime = "nodejs";
@@ -26,6 +26,7 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const since = parseSince(searchParams.get("since"));
   const limit = cleanLimit(searchParams.get("limit"));
+  const t0 = performance.now();
   const [bundle, lockedItemIds] = await Promise.all([
     getAtlasSyncBundle(userId, since, limit),
     // The FULL current set, not a delta: an item can become locked (the Pro
@@ -34,24 +35,25 @@ export async function GET(req: Request) {
     getLockedAtlasItemIds(userId),
   ]);
 
-  const imageUrls = new Map<string, { imageUrl: string; thumbUrl: string }>();
-  await Promise.all(
-    bundle.images
-      .filter((image) => image.deleted_at == null)
-      .map(async (image) => {
-        try {
-          imageUrls.set(
-            image.id,
-            await createAtlasImageSignedUrls({
-              imagePath: image.original_path,
-              thumbPath: image.thumb_path,
-            }),
-          );
-        } catch {
-          imageUrls.set(image.id, { imageUrl: "", thumbUrl: "" });
-        }
-      }),
+  const dbMs = Math.round(performance.now() - t0);
+
+  // One batched, time-limited signing call instead of one per image; an image
+  // left unsigned goes out with null URLs, as a failed signature did before.
+  const liveImages = bundle.images.filter((image) => image.deleted_at == null);
+  const signed = await createAtlasSignedUrlMap(
+    liveImages.flatMap((image) => [image.original_path, image.thumb_path]),
   );
+  const signMs = Math.round(performance.now() - t0) - dbMs;
+  if (dbMs + signMs > 5_000) {
+    console.warn("[atlas/sync] slow", { dbMs, signMs, images: liveImages.length, signed: signed.size });
+  }
+  const imageUrls = new Map<string, { imageUrl: string; thumbUrl: string }>();
+  for (const image of liveImages) {
+    const imageUrl = signed.get(image.original_path);
+    const thumbUrl = signed.get(image.thumb_path);
+    // Same all-or-nothing pair as createAtlasImageSignedUrls.
+    if (imageUrl && thumbUrl) imageUrls.set(image.id, { imageUrl, thumbUrl });
+  }
 
   return NextResponse.json(
     {

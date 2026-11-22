@@ -165,6 +165,40 @@ export async function createAtlasImageSignedUrlsBatch(
   });
 }
 
+// Sync signs up to 1000 images per page. One request per image (the old way)
+// fanned out hundreds of parallel storage calls with no timeout, and one stuck
+// call held the whole sync until Cloud Run's 300 s limit (504).
+const SIGN_BATCH_SIZE = 500;
+const SIGN_TIMEOUT_MS = 10_000;
+
+/**
+ * Best-effort signing for many paths: one storage request per 500 paths, each
+ * bounded by a timeout. A path whose batch fails or times out is simply absent
+ * from the map, so callers fall back per image instead of failing the response.
+ */
+export async function createAtlasSignedUrlMap(paths: string[]): Promise<Map<string, string>> {
+  const unique = Array.from(new Set(paths.filter(Boolean)));
+  const signed = new Map<string, string>();
+  if (unique.length === 0) return signed;
+  const supabase = createServiceRoleClient({ timeoutMs: SIGN_TIMEOUT_MS });
+  const batches: string[][] = [];
+  for (let i = 0; i < unique.length; i += SIGN_BATCH_SIZE) batches.push(unique.slice(i, i + SIGN_BATCH_SIZE));
+  await Promise.all(
+    batches.map(async (batch) => {
+      try {
+        const { data, error } = await supabase.storage
+          .from(ATLAS_PRIVATE_BUCKET)
+          .createSignedUrls(batch, SIGNED_URL_TTL_SECONDS);
+        if (error) throw error;
+        for (const row of data ?? []) if (row.path && row.signedUrl) signed.set(row.path, row.signedUrl);
+      } catch (error) {
+        console.error("[atlas] signing batch failed", { paths: batch.length, error: String(error) });
+      }
+    }),
+  );
+  return signed;
+}
+
 export async function downloadAtlasObject(path: string): Promise<Buffer> {
   const supabase = createServiceRoleClient();
   const { data, error } = await supabase.storage

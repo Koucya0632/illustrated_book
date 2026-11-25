@@ -67,7 +67,7 @@ export interface TopicChatDependencies {
   /** "free": openings, assists and reviews. "reply": paid answers. Throws `rate_limited`. */
   rateLimit: (userId: string, bucket: "free" | "reply") => Promise<void>;
   record: (entry: AssistantUsageRecord) => Promise<void>;
-  reportError: () => void;
+  reportError: (error?: unknown) => void;
   newId?: () => string;
 }
 
@@ -251,8 +251,8 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         account: s.account, requestId, feature: "chat", pricingVersion: TOPIC_CHAT_PRICING.version,
         inScope, usage, charged,
       });
-    } catch {
-      deps.reportError();
+    } catch (error) {
+      deps.reportError(error);
     }
   }
 
@@ -620,7 +620,7 @@ export function createTopicChatHandler(deps: TopicChatDependencies) {
         return Response.json({ error: error.code, minPoints: TOPIC_CHAT_PRICING.minPoints, maxPoints: TOPIC_CHAT_PRICING.maxPoints },
           { status, headers });
       }
-      deps.reportError();
+      deps.reportError(error);
       return Response.json({ error: "assistant_unavailable" }, { status: 503, headers });
     }
   };

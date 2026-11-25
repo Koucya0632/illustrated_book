@@ -1,3 +1,4 @@
+import { aiErrorSummary } from "@/lib/assistant/error-summary";
 import { getCurrentUserIdFast } from "../../current-user";
 import { getSql } from "../../db";
 import { CreditError, userCreditConfig } from "../../credits/policy";
@@ -17,5 +18,5 @@ export const handleGrammarRequest = createGrammarHandler({
   store: () => { const db = sql(); return createGrammarStore(db, createCreditWallet(db)); },
   generate: input => (model ??= createGrammarModel())(input),
   rateLimit: rateLimiter("assistant-grammar", 10, 300, "ASSISTANT_GRAMMAR_DAILY_GLOBAL", 5000),
-  reportError: () => console.error("[grammar] request failed"),
+  reportError: error => console.error("[grammar] request failed", aiErrorSummary(error)),
 });

@@ -6,6 +6,9 @@ import { isHiddenRoute } from "@/lib/features";
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // The liveness probe needs no session, and must not depend on Supabase Auth.
+  if (pathname === "/api/health") return NextResponse.next();
+
   // Admin tree: keep our existing single-password gate (admin auth is
   // separate from Supabase user auth, per project decision).
   if (pathname.startsWith("/admin") || pathname.startsWith("/api/admin")) {

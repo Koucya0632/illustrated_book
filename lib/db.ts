@@ -4,8 +4,10 @@
 // suit serverless functions.
 
 import postgres from "postgres";
+import { watchTransactions, type TransactionWatch } from "./db-watch";
 
 let cached: ReturnType<typeof postgres> | null = null;
+let transactions: TransactionWatch | null = null;
 
 export function getSql(): ReturnType<typeof postgres> | null {
   if (cached) return cached;
@@ -39,7 +41,16 @@ export function getSql(): ReturnType<typeof postgres> | null {
       },
     },
   });
+  // Log long-held and long-waiting transactions (lib/db-watch.ts). The timer
+  // never keeps a process alive, and only runs inside the Next server.
+  transactions = watchTransactions(cached as unknown as Parameters<typeof watchTransactions>[0]);
+  if (process.env.NEXT_RUNTIME) setInterval(() => transactions?.check(), 15_000).unref();
   return cached;
+}
+
+/** Open transactions on this instance's pool, for diagnostics (/api/health). */
+export function dbTransactionSummary(): Record<string, unknown> | null {
+  return transactions?.summary() ?? null;
 }
 
 export const dbEnabled = () => Boolean(process.env.DATABASE_URL);

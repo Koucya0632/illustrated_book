@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getSql } from "@/lib/db";
+import { dbTransactionSummary, getSql } from "@/lib/db";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -26,7 +26,11 @@ export async function GET() {
     ]);
     return NextResponse.json({ ok: true, dbMs: Math.round(performance.now() - started) }, { headers });
   } catch (error) {
-    console.error("[health] db check failed", { error: String(error), ms: Math.round(performance.now() - started) });
+    console.error("[health] db check failed", JSON.stringify({
+      error: String(error),
+      ms: Math.round(performance.now() - started),
+      transactions: dbTransactionSummary(),
+    }));
     return NextResponse.json({ ok: false }, { status: 503, headers });
   } finally {
     clearTimeout(timer);

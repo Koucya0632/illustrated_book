@@ -25,6 +25,24 @@ A new or changed variable usually belongs in both. Add a secret version with
 
 The `VERCEL_ENV`, `VERCEL_URL` and `VERCEL_GIT_COMMIT_SHA` names are kept because code reads them.
 
+## Service settings
+
+A deploy only swaps the image, so these live on the service and survive deploys. Recreating the
+service must set them again.
+
+- 1 vCPU, 1 GiB, concurrency 80, max 10 instances, startup CPU boost.
+- Request timeout 150 s. AI 語法 can take about 120 s and the iOS app waits 130 s. Next's
+  `maxDuration` exports do nothing on Cloud Run.
+- Liveness probe: `GET /api/health` on port 8080, every 30 s, 5 s timeout, 3 failures. The route
+  runs `SELECT 1` through the shared postgres pool with a 3 s limit. On 2026-11-24 one instance's
+  pool filled with queries that never returned and its DB routes hung for two hours; the probe
+  now restarts such an instance.
+
+```
+gcloud run services update tuji-web --region=asia-northeast1 --timeout=150 \
+  --liveness-probe=httpGet.path=/api/health,httpGet.port=8080,initialDelaySeconds=10,periodSeconds=30,timeoutSeconds=5,failureThreshold=3
+```
+
 ## Scheduled jobs
 
 Cloud Scheduler calls the daily crons with `Authorization: Bearer $CRON_SECRET`. The jobs are

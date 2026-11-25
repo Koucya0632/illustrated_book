@@ -14,7 +14,7 @@ export interface VocabularyDependencies {
   store(): VocabularyStore;
   generate: VocabularyModel;
   rateLimit(userId: string): Promise<void>;
-  reportError(): void;
+  reportError(error?: unknown): void;
 }
 export type VocabularyAction = "offer" | "generate" | "list" | "read" | "favorite" | "delete";
 const headers = { "Cache-Control": "private, no-store", "Vary": "Authorization, Cookie" };
@@ -99,7 +99,7 @@ export function createVocabularyHandler(deps: VocabularyDependencies) {
         const code = error instanceof CreditError ? error.code : "generation_failed";
         await store.fail(account, input.requestId, code);
         const saved = await store.read(account, input.requestId);
-        deps.reportError();
+        deps.reportError(error);
         if (saved) return json({ record: saved.record });
         throw error;
       }
@@ -111,7 +111,7 @@ export function createVocabularyHandler(deps: VocabularyDependencies) {
         return json({ error: "invalid_vocabulary_request" }, 400);
       }
       if ((error as { code?: string })?.code === "rate_limited") return json({ error: "rate_limited" }, 429);
-      deps.reportError();
+      deps.reportError(error);
       return json({ error: "vocabulary_unavailable" }, 503);
     }
   };

@@ -1,3 +1,4 @@
+import { aiErrorSummary } from "@/lib/assistant/error-summary";
 import { getCurrentUserIdFast } from "../../current-user";
 import { getSql } from "../../db";
 import { CreditError, userCreditConfig } from "../../credits/policy";
@@ -17,5 +18,5 @@ export const handleVocabularyRequest = createVocabularyHandler({
   store: () => { const db = sql(); return createVocabularyStore(db, createCreditWallet(db)); },
   generate: input => (model ??= createVocabularyModel())(input),
   rateLimit: rateLimiter("assistant-vocabulary", 10, 300, "ASSISTANT_VOCABULARY_DAILY_GLOBAL", 5000),
-  reportError: () => console.error("[vocabulary] request failed"),
+  reportError: error => console.error("[vocabulary] request failed", aiErrorSummary(error)),
 });

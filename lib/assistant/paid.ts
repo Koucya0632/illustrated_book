@@ -28,7 +28,7 @@ export interface PaidDependencies {
   rateLimit: (userId: string) => Promise<void>;
   /** One row per result the model produced: its tokens against the points charged. */
   record: (entry: AssistantUsageRecord) => Promise<void>;
-  reportError: () => void;
+  reportError: (error?: unknown) => void;
 }
 
 /** What the model produced, before anything is charged. */
@@ -168,7 +168,7 @@ export function createPaidHandler<Body extends { requestId: string }>(deps: Paid
             ? { type: "error", error: result.failed }
             : { type: "done", ...result.body, charged, available, ...pricing };
         } catch (error) {
-          if (!(error instanceof AssistantError)) deps.reportError();
+          if (!(error instanceof AssistantError)) deps.reportError(error);
           last = { type: "error", error: error instanceof AssistantError ? error.code : "assistant_unavailable" };
         }
         send(line(last));
@@ -235,8 +235,8 @@ export function createPaidHandler<Body extends { requestId: string }>(deps: Paid
             account, requestId: body.requestId, feature: step.feature, pricingVersion: step.pricingVersion,
             inScope: delivered && produced.billable, usage: produced.usage, charged,
           });
-        } catch {
-          deps.reportError();
+        } catch (error) {
+          deps.reportError(error);
         }
         return { charged, available };
       };
@@ -261,7 +261,7 @@ export function createPaidHandler<Body extends { requestId: string }>(deps: Paid
             error.code === "insufficient_credits" ? 409 : 503;
         return Response.json({ error: error.code, ...pricing }, { status, headers });
       }
-      deps.reportError();
+      deps.reportError(error);
       return Response.json({ error: "assistant_unavailable" }, { status: 503, headers });
     }
   };

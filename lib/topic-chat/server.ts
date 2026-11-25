@@ -1,3 +1,4 @@
+import { aiErrorSummary } from "@/lib/assistant/error-summary";
 import { getCategoriesFromDb } from "@/lib/categories-db";
 import { getCurrentUserIdFast } from "@/lib/current-user";
 import { getAllCardWords } from "@/lib/data";
@@ -57,5 +58,5 @@ export const handleTopicChatRequest = createTopicChatHandler({
     }
   },
   record: entry => createAssistantUsageLog(sqlOrThrow())(entry),
-  reportError: () => console.error("[topic-chat] request failed"),
+  reportError: error => console.error("[topic-chat] request failed", aiErrorSummary(error)),
 });

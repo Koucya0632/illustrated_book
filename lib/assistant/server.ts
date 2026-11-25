@@ -1,3 +1,4 @@
+import { aiErrorSummary } from "@/lib/assistant/error-summary";
 import { getAtlasItem, listStorySavedItems } from "@/lib/atlas-db";
 import { pickAtlasGloss } from "@/lib/atlas/gloss";
 import { getCurrentUserIdFast } from "@/lib/current-user";
@@ -84,5 +85,5 @@ export const handleStoryRequest = createStoryHandler({
     return wordIds.flatMap(id => found.get(id) ?? []);
   },
   write: (request, onPart) => (storyModel ??= createStoryModel())(request, onPart),
-  reportError: () => console.error("[assistant-story] request failed"),
+  reportError: error => console.error("[assistant-story] request failed", aiErrorSummary(error)),
 });

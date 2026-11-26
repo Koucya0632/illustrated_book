@@ -4,6 +4,7 @@ import { getAtlasSyncBundle } from "@/lib/atlas-db";
 import { getLockedAtlasItemIds } from "@/lib/atlas/entitlement";
 import { createAtlasSignedUrlMap } from "@/lib/atlas/storage";
 import { spotShareBlocked } from "@/lib/travel/spot-tagging";
+import { createDeadline, DeadlineError } from "@/lib/deadline";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -19,6 +20,11 @@ function cleanLimit(value: string | null): number {
   return Number.isFinite(n) ? Math.min(1000, Math.max(1, Math.floor(n))) : 500;
 }
 
+// Normally well under a second. A query on a connection that never answers
+// would otherwise hold the request until Cloud Run's 150s cut-off; past this,
+// answer 503 so the app retries on a fresh request, and log what was pending.
+const DB_DEADLINE_MS = 15_000;
+
 export async function GET(req: Request) {
   const userId = await getCurrentUserIdFast();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
@@ -27,13 +33,30 @@ export async function GET(req: Request) {
   const since = parseSince(searchParams.get("since"));
   const limit = cleanLimit(searchParams.get("limit"));
   const t0 = performance.now();
-  const [bundle, lockedItemIds] = await Promise.all([
-    getAtlasSyncBundle(userId, since, limit),
-    // The FULL current set, not a delta: an item can become locked (the Pro
-    // grace ends) without the item itself changing, so `since` cannot carry it.
-    // [] and no query under policy v1.
-    getLockedAtlasItemIds(userId),
-  ]);
+  const deadline = createDeadline(DB_DEADLINE_MS);
+  let bundle: Awaited<ReturnType<typeof getAtlasSyncBundle>>;
+  let lockedItemIds: string[];
+  try {
+    [bundle, lockedItemIds] = await deadline.run(
+      Promise.all([
+        getAtlasSyncBundle(userId, since, limit, deadline.track),
+        // The FULL current set, not a delta: an item can become locked (the Pro
+        // grace ends) without the item itself changing, so `since` cannot carry it.
+        // [] and no query under policy v1.
+        deadline.track("locked", getLockedAtlasItemIds(userId)),
+      ]),
+    );
+  } catch (err) {
+    if (!(err instanceof DeadlineError)) throw err;
+    console.error(
+      "[atlas/sync] db deadline " +
+        JSON.stringify({ ms: err.ms, pending: err.pending, full: since === null, limit }),
+    );
+    return NextResponse.json(
+      { error: "sync_timeout" },
+      { status: 503, headers: { "Cache-Control": "private, no-store", "Retry-After": "2" } },
+    );
+  }
 
   const dbMs = Math.round(performance.now() - t0);
 

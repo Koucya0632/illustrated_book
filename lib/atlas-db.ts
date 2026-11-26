@@ -1,5 +1,6 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
+import { untracked, type Track } from "./deadline";
 import { getSql } from "./db";
 import type { Rating, Status } from "./srs";
 import type { FuriganaSegment } from "./kana";
@@ -998,36 +999,37 @@ export async function getAtlasSyncBundle(
   userId: string,
   since: Date | null,
   limit = 500,
+  track: Track = untracked,
 ): Promise<AtlasSyncBundle> {
   const sql = requireSql();
   const maxRows = Math.min(1000, Math.max(1, Math.floor(limit)));
   const sinceIso = syncSinceClause(since);
   const [images, items, cards, cardStates, mastery, nowRows] = await Promise.all([
-    sql<AtlasImageRow[]>`
+    track("images", sql<AtlasImageRow[]>`
       SELECT *
       FROM user_atlas_images
       WHERE user_id = ${userId}::uuid
         AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
       ORDER BY updated_at ASC
       LIMIT ${maxRows}
-    `,
-    sql<AtlasItemRow[]>`
+    `),
+    track("items", sql<AtlasItemRow[]>`
       SELECT *
       FROM user_atlas_items
       WHERE user_id = ${userId}::uuid
         AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
       ORDER BY updated_at ASC
       LIMIT ${maxRows}
-    `,
-    sql<AtlasCardRow[]>`
+    `),
+    track("cards", sql<AtlasCardRow[]>`
       SELECT *
       FROM user_atlas_cards
       WHERE user_id = ${userId}::uuid
         AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
       ORDER BY updated_at ASC
       LIMIT ${maxRows}
-    `,
-    sql<AtlasCardStateRow[]>`
+    `),
+    track("cardStates", sql<AtlasCardStateRow[]>`
       SELECT user_id, card_id, status, interval_days::float8 AS interval_days,
              next_review_at, review_count, mistake_count, last_rating,
              last_reviewed_at, created_at, updated_at
@@ -1036,8 +1038,8 @@ export async function getAtlasSyncBundle(
         AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
       ORDER BY updated_at ASC
       LIMIT ${maxRows}
-    `,
-    sql<AtlasMasteryRow[]>`
+    `),
+    track("mastery", sql<AtlasMasteryRow[]>`
       SELECT user_id, item_id, target_language, mastery::float8 AS mastery,
              last_reviewed_at, review_count, updated_at
       FROM user_atlas_item_mastery
@@ -1045,8 +1047,8 @@ export async function getAtlasSyncBundle(
         AND (${sinceIso}::timestamptz IS NULL OR updated_at > ${sinceIso}::timestamptz)
       ORDER BY updated_at ASC
       LIMIT ${maxRows}
-    `,
-    sql<{ now: string }[]>`SELECT now()::text AS now`,
+    `),
+    track("now", sql<{ now: string }[]>`SELECT now()::text AS now`),
   ]);
 
   return {

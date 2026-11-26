@@ -237,7 +237,7 @@ export const KANTO: readonly TravelCity[] = [
         at: [0.484, 0.234],
         label: "right",
         wordIds: [
-          "warehouse", "pier", "cruise-ship", "harbor", "sea", "seagull", "cafe",
+          "red-brick-warehouse", "pier", "cruise-ship", "harbor", "sea", "seagull", "cafe",
           "souvenir-shop",
         ],
         geo: { lat: 35.452, lng: 139.645, radiusM: 350 },

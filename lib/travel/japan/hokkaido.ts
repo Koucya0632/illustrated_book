@@ -201,7 +201,7 @@ export const HOKKAIDO: readonly TravelCity[] = [
         at: [0.386, 0.685],
         label: "right",
         wordIds: [
-          "warehouse", "canal", "harbor", "boat", "draft-beer", "souvenir-shop", "seagull",
+          "red-brick-warehouse", "canal", "harbor", "boat", "draft-beer", "souvenir-shop", "seagull",
           "christmas-tree",
         ],
         geo: { lat: 41.7663, lng: 140.7168, radiusM: 200 },

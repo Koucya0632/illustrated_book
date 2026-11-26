@@ -15,6 +15,13 @@
 // The maps are drawn by the client from the shapes here, not shipped as
 // images: no text is baked in, so one description serves every UI language,
 // and a new city is a few shapes rather than an illustration.
+//
+// Two generations of map ride in one answer. App versions before 2026-11 draw
+// the country from `grid`/`tiles` and a city from `at`/`label` (spots nudged
+// apart so names fit beside them). Later ones draw the country from `map`
+// (real outlines, one colour per region, a card per open region) and a city
+// from `pin`/`tag` (every marker on its true place, its name on a tag joined
+// by a line). Both come from tools/travel-japan in the parent repo.
 
 import { toZhHans } from "../opencc";
 import type { UiLang } from "../settings";
@@ -27,6 +34,8 @@ import { KYUSHU } from "./japan/kyushu";
 import { OKINAWA } from "./japan/okinawa";
 import { SHIKOKU } from "./japan/shikoku";
 import { TOHOKU } from "./japan/tohoku";
+import { SPOT_LAYOUT } from "./japan/layout";
+import { JAPAN_MAP } from "./japan/map";
 
 /** zh-Hant base; zh-Hans is converted at read time like every other name. */
 interface Names {
@@ -89,6 +98,43 @@ export interface TravelRegion {
   nameAt: Point;
 }
 
+/** Where a spot goes on the 2026-11 city map, 0–1 inside the city's map. */
+export interface SpotLayout {
+  /** The true place (two markers that would touch are spread a few points). */
+  pin: Point;
+  /** The centre of the tag carrying the spot's number and name, per language. */
+  tag: { zh: Point; ja: Point; en: Point };
+  /** Languages where the name has no room, so the tag carries only the number. */
+  short?: readonly ("zh" | "ja" | "en")[];
+}
+
+/** A region on the 2026-11 country map. */
+export interface CountryMapRegion {
+  /** Which of the clients' map colours fills it while it has an open city. */
+  tone: number;
+  /** Closed areas, 0–1 inside the map. */
+  shapes: readonly (readonly Point[])[];
+  /** Where the plain name goes when there is no card. */
+  labelAt: Point;
+  /** Where the card's line ends, on the region. */
+  pointAt: Point;
+  /** Top-left corner and width (share of the map's width); null: never a card. */
+  card: { at: Point; width: number } | null;
+}
+
+/** The 2026-11 country map. Positions are 0–1; `aspect` is width over height. */
+export interface CountryMap {
+  aspect: number;
+  /** Closed outlines of every island, drawn as the coast line. */
+  coast: readonly (readonly Point[])[];
+  /** Boxes drawn round an inset at its own scale (沖繩), top-left and size. */
+  frames: readonly { at: Point; size: Point }[];
+  seas: readonly { name: Names; at: Point }[];
+  regions: Readonly<Record<string, CountryMapRegion>>;
+  /** Each city's dot. */
+  cityAt: Readonly<Record<string, Point>>;
+}
+
 export interface TravelDestination {
   id: string;
   name: Names;
@@ -100,6 +146,9 @@ export interface TravelDestination {
   grid: { columns: number; rows: number };
   regions: readonly TravelRegion[];
   cities: readonly TravelCity[];
+  map?: CountryMap;
+  /** Keyed by spot id. */
+  spotLayout?: Readonly<Record<string, SpotLayout>>;
 }
 
 export const TRAVEL_DESTINATIONS: readonly TravelDestination[] = [
@@ -165,6 +214,8 @@ export const TRAVEL_DESTINATIONS: readonly TravelDestination[] = [
       },
     ],
     cities: [...HOKKAIDO, ...TOHOKU, ...KANTO, ...CHUBU, ...KANSAI, ...CHUGOKU, ...SHIKOKU, ...KYUSHU, ...OKINAWA],
+    map: JAPAN_MAP,
+    spotLayout: SPOT_LAYOUT,
   },
 ];
 
@@ -203,17 +254,83 @@ function named(names: Names, lang: UiLang): string {
   }
 }
 
+/** Which of a layout's three languages a UI language reads. */
+function layoutLang(lang: UiLang): "zh" | "ja" | "en" {
+  return lang === "ja" ? "ja" : lang === "en" ? "en" : "zh";
+}
+
+// A card on the country map: 2pt border and 10pt padding each side, the
+// cities in 13pt. Matches tuji-ios TravelCountryMap.
+const COUNTRY_MAP_WIDTH_PT = 358;
+const CARD_INSET_PT = 2 + 10;
+const CARD_LINE_PT = 13;
+const CARD_MAX_LINES = 2;
+
+function estimatedWidth(text: string, size: number): number {
+  let w = 0;
+  for (const ch of text) {
+    const c = ch.codePointAt(0) ?? 0;
+    w += c >= 0x2e80 ? size : ch === " " ? size * 0.28 : size * 0.6;
+  }
+  return w;
+}
+
+/**
+ * The open cities' names broken into at most two lines that fit a card this
+ * wide; what does not fit becomes "+N" at the end. Broken here rather than on
+ * the device so a name never splits between two lines.
+ */
+export function cardLines(names: readonly string[], width: number, lang: UiLang): string[] {
+  const sep = lang === "en" ? " · " : "  ";
+  const room = width * COUNTRY_MAP_WIDTH_PT - 2 * CARD_INSET_PT;
+  const fits = (line: string) => estimatedWidth(line, CARD_LINE_PT) <= room;
+  const lines: string[][] = [[]];
+  for (const name of names) {
+    const line = lines[lines.length - 1];
+    if (!line.length || fits([...line, name].join(sep))) line.push(name);
+    else lines.push([name]);
+  }
+  if (lines.length <= CARD_MAX_LINES) return lines.map((l) => l.join(sep));
+  const kept = lines.slice(0, CARD_MAX_LINES);
+  const last = kept[CARD_MAX_LINES - 1];
+  const shown = () => kept.reduce((a, l) => a + l.length, 0);
+  const more = () => `+${names.length - shown()}`;
+  while (last.length > 1 && !fits([...last, more()].join(sep))) last.pop();
+  return kept.map((l, i) => (i === CARD_MAX_LINES - 1 ? [...l, more()] : l).join(sep));
+}
+
 /** What a client receives: one name per thing, in the request's language. */
 export interface LocalizedTravelDestination {
   id: string;
   name: string;
   language: "ja" | "en";
   grid: { columns: number; rows: number };
-  regions: { id: string; name: string; tiles: Point[]; nameAt: Point; cityIds: string[] }[];
+  /** The 2026-11 country map; missing from a destination without one. */
+  map?: {
+    aspect: number;
+    coast: Point[][];
+    frames: { at: Point; size: Point }[];
+    seas: { name: string; at: Point }[];
+  };
+  regions: {
+    id: string;
+    name: string;
+    tiles: Point[];
+    nameAt: Point;
+    cityIds: string[];
+    /** The rest is the 2026-11 map's, present when the destination has `map`. */
+    tone?: number;
+    shapes?: Point[][];
+    labelAt?: Point;
+    /** Only for a region with an open city. `lines` name those cities. */
+    card?: { at: Point; width: number; pointAt: Point; lines: string[] };
+  }[];
   cities: {
     id: string;
     name: string;
     regionId: string;
+    /** The city's dot on the country map. */
+    mapAt?: Point;
     aspect: number;
     shapes: (
       | { kind: "ring"; center: Point; radius: Point; name: string; nameAt: Point }
@@ -233,6 +350,11 @@ export interface LocalizedTravelDestination {
       free: boolean;
       /** Only on an open spot. */
       geo?: SpotGeo;
+      /** The 2026-11 city map: the true place, and the tag's centre. */
+      pin?: Point;
+      tag?: Point;
+      /** The tag carries only the number; the name had no room. */
+      tagShort?: true;
     }[];
   }[];
 }
@@ -254,11 +376,13 @@ export function localizeTravelDestinations(
   freeSpotIds: readonly string[],
   destinations: readonly TravelDestination[] = TRAVEL_DESTINATIONS,
 ): LocalizedTravelDestination[] {
+  const ll = layoutLang(lang);
   return destinations.flatMap((d) => {
     const cities = d.cities.map((c) => ({
       id: c.id,
       name: named(c.name, lang),
       regionId: c.regionId,
+      ...(d.map?.cityAt[c.id] ? { mapAt: d.map.cityAt[c.id] } : {}),
       aspect: c.aspect,
       shapes: c.shapes.map((s) =>
         s.kind === "ring"
@@ -267,6 +391,7 @@ export function localizeTravelDestinations(
       ),
       spots: c.spots.map((s) => {
         const open = s.wordIds.every((id) => servedWordIds.has(id));
+        const layout = d.spotLayout?.[s.id];
         return {
           id: s.id,
           name: named(s.name, lang),
@@ -278,6 +403,9 @@ export function localizeTravelDestinations(
           open,
           free: freeSpotIds.includes(s.id),
           ...(open ? { geo: { ...s.geo } } : {}),
+          ...(layout
+            ? { pin: layout.pin, tag: layout.tag[ll], ...(layout.short?.includes(ll) ? { tagShort: true as const } : {}) }
+            : {}),
         };
       }),
     }));
@@ -289,13 +417,44 @@ export function localizeTravelDestinations(
         name: named(d.name, lang),
         language: d.language,
         grid: d.grid,
-        regions: d.regions.map((r) => ({
-          id: r.id,
-          name: named(r.name, lang),
-          tiles: [...r.tiles],
-          nameAt: r.nameAt,
-          cityIds: listed.filter((c) => c.regionId === r.id).map((c) => c.id),
-        })),
+        ...(d.map
+          ? {
+              map: {
+                aspect: d.map.aspect,
+                coast: d.map.coast.map((s) => [...s]),
+                frames: d.map.frames.map((f) => ({ ...f })),
+                seas: d.map.seas.map((x) => ({ name: named(x.name, lang), at: x.at })),
+              },
+            }
+          : {}),
+        regions: d.regions.map((r) => {
+          const open = listed.filter((c) => c.regionId === r.id);
+          const m = d.map?.regions[r.id];
+          return {
+            id: r.id,
+            name: named(r.name, lang),
+            tiles: [...r.tiles],
+            nameAt: r.nameAt,
+            cityIds: open.map((c) => c.id),
+            ...(m
+              ? {
+                  tone: m.tone,
+                  shapes: m.shapes.map((s) => [...s]),
+                  labelAt: m.labelAt,
+                  ...(m.card && open.length
+                    ? {
+                        card: {
+                          at: m.card.at,
+                          width: m.card.width,
+                          pointAt: m.pointAt,
+                          lines: cardLines(open.map((c) => c.name), m.card.width, lang),
+                        },
+                      }
+                    : {}),
+                }
+              : {}),
+          };
+        }),
         cities: listed,
       },
     ];

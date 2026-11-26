@@ -29,6 +29,7 @@ import { resolveQueueThemeScope } from "../lib/study-sources";
 import {
   TRAVEL_DESTINATIONS,
   allTravelSpots,
+  cardLines,
   localizeTravelDestinations,
 } from "../lib/travel/destinations";
 
@@ -215,4 +216,40 @@ test("/api/travel is 日文 only, served from the dictionary, and cached as publ
   assert.match(route, /localizeTravelDestinations\(/);
   const config = readFileSync(new URL("../next.config.js", import.meta.url), "utf8");
   assert.ok(config.includes('publicEntry("/api/travel")'));
+});
+
+test("a region's card names its open cities in at most two lines, never splitting a name", () => {
+  const names = ["京都", "大阪", "奈良", "神戶", "姬路", "宇治"];
+  const lines = cardLines(names, 122 / 358, "zh-Hant");
+  assert.deepEqual(lines, ["京都  大阪  奈良", "神戶  姬路  宇治"]);
+  const many = ["名古屋", "金澤", "高山", "白川鄉", "河口湖", "松本", "輕井澤", "立山黑部"];
+  const cut = cardLines(many, 80 / 358, "zh-Hant");
+  assert.equal(cut.length, 2);
+  assert.match(cut[1], /\+\d+$/);
+  const shown = cut.join("  ").split("  ").filter((x) => !x.startsWith("+"));
+  assert.equal(shown.length + Number(cut[1].split("+")[1]), many.length);
+  assert.ok(shown.every((n) => many.includes(n)), "a name was split");
+  assert.deepEqual(cardLines(["Sapporo", "Hakodate"], 96 / 358, "en"), ["Sapporo", "Hakodate"]);
+});
+
+test("/api/travel sends the 2026-11 map: outlines, a card only where a city is open, and every spot's place and tag", () => {
+  const kyotoOnly = new Set(TRAVEL_DESTINATIONS[0].cities.find((c) => c.id === "kyoto")!.spots.flatMap((s) => [...s.wordIds]));
+  const [japan] = localizeTravelDestinations("zh-Hant", kyotoOnly, FREE_STUDY_SPOTS);
+  assert.ok(japan.map && japan.map.coast.length > 0 && japan.map.seas.length > 0);
+  for (const r of japan.regions) {
+    assert.equal(typeof r.tone, "number", r.id);
+    assert.ok(r.shapes?.length, r.id);
+    // Kyoto's words open a few spots elsewhere too (北海道神宮 shares all of its own).
+    if (r.cityIds.length && r.id !== "okinawa") assert.equal(r.card?.lines.join("  ").split("  ").length, r.cityIds.length, r.id);
+    else assert.equal(r.card, undefined, `${r.id} has a card with nothing open`);
+  }
+  assert.deepEqual(japan.regions.find((r) => r.id === "kansai")?.card?.lines, ["京都"]);
+  const kyoto = japan.cities.find((c) => c.id === "kyoto")!;
+  assert.ok(kyoto.mapAt);
+  for (const s of kyoto.spots) assert.ok(s.pin && s.tag && s.tagShort === undefined, s.id);
+  const [en] = localizeTravelDestinations("en", everyWord, FREE_STUDY_SPOTS);
+  const shortEn = en.cities.flatMap((c) => c.spots).filter((s) => s.tagShort);
+  assert.ok(shortEn.length > 0 && shortEn.length < 40);
+  const [ja] = localizeTravelDestinations("ja", everyWord, FREE_STUDY_SPOTS);
+  assert.equal(ja.cities.flatMap((c) => c.spots).filter((s) => s.tagShort).length, 0);
 });
